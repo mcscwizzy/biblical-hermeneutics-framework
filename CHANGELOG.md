@@ -13,6 +13,14 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
 
 ### Added
 
+- **Prerequisite modules for the Book-layer expansion** (method only,
+  denomination-neutral): `language.hebrew` (Biblical Hebrew and Aramaic, paired
+  with `language.greek`); `genre.law` (legal/covenant material, the eighth genre
+  named by `core.genre-awareness`); and four Context modules —
+  `context.israelite-monarchy`, `context.exile-and-restoration`,
+  `context.greco-roman-world`, and `context.wisdom-tradition` — supplying
+  background reused across the remaining canonical books. The `scholar` profile
+  now foregrounds all of them.
 - **Book modules** (hermeneutic profiles, the top framework layer):
   `book.genesis`, `book.psalms`, `book.matthew`, `book.revelation`, and a
   rewritten `book.romans`. Each assumes Core/Genre/Context/Language are already

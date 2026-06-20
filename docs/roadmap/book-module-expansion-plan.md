@@ -144,9 +144,10 @@ changes expected.
 
 ## Execution log (update as work proceeds)
 
-- [ ] Step 0 — prerequisite modules (`language.hebrew`, `genre.law`,
+- [x] Step 0 — prerequisite modules (`language.hebrew`, `genre.law`,
       `context.israelite-monarchy`, `context.exile-and-restoration`,
       `context.greco-roman-world`, `context.wisdom-tradition`) + scholar profile
+      — done 2026-06-20; 33 modules valid, scholar.md regenerated (~16k tokens).
 - [ ] Step 1 — Torah (Exodus, Leviticus, Numbers, Deuteronomy)
 - [ ] Step 2 — Historical Books (Joshua … Esther, 12)
 - [ ] Step 3 — Wisdom (Job, Proverbs, Ecclesiastes, Song of Songs)

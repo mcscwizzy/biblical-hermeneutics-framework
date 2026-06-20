@@ -44,7 +44,7 @@ profiles:
       - core.intertextuality
       - core.epistemic-humility
       - core.anti-hallucination
-      # genre (all seven)
+      # genre (all eight)
       - genre.narrative
       - genre.poetry
       - genre.wisdom
@@ -52,7 +52,8 @@ profiles:
       - genre.gospel
       - genre.apocalyptic
       - genre.epistle
-      # context (all seven)
+      - genre.law
+      # context (all eleven)
       - context.ancient-near-east
       - context.second-temple-judaism
       - context.roman-empire
@@ -60,5 +61,10 @@ profiles:
       - context.covenant
       - context.honor-shame
       - context.patronage
+      - context.israelite-monarchy
+      - context.exile-and-restoration
+      - context.greco-roman-world
+      - context.wisdom-tradition
       # language
       - language.greek
+      - language.hebrew
