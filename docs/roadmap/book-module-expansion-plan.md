@@ -162,7 +162,9 @@ changes expected.
       — done 2026-06-20; 74 modules valid.
 - [x] Step 7 — Pauline Letters (1 Corinthians … Philemon, 12)
       — done 2026-06-20; 86 modules valid.
-- [ ] Step 8 — General Epistles (Hebrews … Jude, 8)
+- [x] Step 8 — General Epistles (Hebrews … Jude, 8)
+      — done 2026-06-20; 94 modules valid. **Book layer complete: all 66
+      canonical books now have modules.**
 
 Reference anchors: `framework/books/genesis.md`, `framework/books/revelation.md`.
 Tooling: activate venv (`source .venv/bin/activate`) or use `.venv/bin/python`.

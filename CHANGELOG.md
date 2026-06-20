@@ -30,6 +30,15 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
   `book.leviticus`, `book.numbers`, and `book.deuteronomy` (joining
   `book.genesis`). Each is a hermeneutic profile keyed to the book's mix of
   narrative, law, and ritual; method only, denomination-neutral.
+- **General Epistles Book modules** (8): `book.hebrews` (homiletic; temple,
+  heavy intertextuality), `book.james` (epistle + wisdom; honor-shame),
+  `book.1-peter`, `book.2-peter`, `book.jude`, `book.1-john`, `book.2-john`, and
+  `book.3-john`. This **completes the Book layer for all 66 canonical books.**
+  Jude's use of extra-canonical Jewish tradition (1 Enoch, the Moses tradition)
+  is presented as an observation whose bearing on canon/inspiration "is read
+  differently across traditions and is not settled here"; the Petrine/Pastoral/
+  Johannine authorship and Jude–2 Peter relationship questions are likewise left
+  to the reader.
 - **Pauline Book modules** (12): `book.1-corinthians`, `book.2-corinthians`,
   `book.galatians`, `book.ephesians`, `book.philippians`, `book.colossians`,
   `book.1-thessalonians`, `book.2-thessalonians`, `book.1-timothy`,
