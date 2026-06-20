@@ -13,6 +13,11 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
 
 ### Added
 
+- **Genre modules** completing the set of seven: `genre.narrative`,
+  `genre.poetry`, `genre.wisdom`, `genre.prophecy`, `genre.gospel`, and
+  `genre.apocalyptic` (joining the existing `genre.epistle`). Each follows the
+  genre template and `genre.epistle`'s structure: how the genre communicates,
+  common misreadings, and uncertainty handling — method only, no doctrine.
 - **Core module `core.genre-awareness`** — identify literary genre before
   interpreting (the universal reflex; depth stays in the `genre/` modules).
 - **Core module `core.intertextuality`** — recognize where a text quotes,
