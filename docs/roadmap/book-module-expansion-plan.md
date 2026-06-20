@@ -158,7 +158,8 @@ changes expected.
       — done 2026-06-20; 58 modules valid.
 - [x] Step 5 — Minor Prophets (Hosea … Malachi, 12)
       — done 2026-06-20; 70 modules valid.
-- [ ] Step 6 — Gospels & Acts (Mark, Luke, John, Acts)
+- [x] Step 6 — Gospels & Acts (Mark, Luke, John, Acts)
+      — done 2026-06-20; 74 modules valid.
 - [ ] Step 7 — Pauline Letters (1 Corinthians … Philemon, 12)
 - [ ] Step 8 — General Epistles (Hebrews … Jude, 8)
 

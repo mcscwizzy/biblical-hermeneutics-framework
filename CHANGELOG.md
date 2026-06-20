@@ -30,6 +30,14 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
   `book.leviticus`, `book.numbers`, and `book.deuteronomy` (joining
   `book.genesis`). Each is a hermeneutic profile keyed to the book's mix of
   narrative, law, and ritual; method only, denomination-neutral.
+- **Gospels & Acts Book modules** (4): `book.mark`, `book.luke`, `book.john`
+  (primary `genre.gospel`, joining the existing `book.matthew`), and `book.acts`
+  (primary `genre.narrative`). All wired to `context.second-temple-judaism`,
+  `context.roman-empire`/`context.greco-roman-world`, `language.greek`, and
+  `core.intertextuality`. John is treated on its own distinctive terms (signs,
+  discourses, "I am" sayings) rather than as a Synoptic variant; Luke and Acts
+  are presented as the two-volume Luke–Acts, with Acts flagging the
+  description-versus-prescription question.
 - **Minor Prophets Book modules** (12): `book.hosea`, `book.joel`, `book.amos`,
   `book.obadiah`, `book.jonah`, `book.micah`, `book.nahum`, `book.habakkuk`,
   `book.zephaniah`, `book.haggai`, `book.zechariah`, and `book.malachi`. Primary
