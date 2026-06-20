@@ -154,7 +154,8 @@ changes expected.
       — done 2026-06-20; 49 modules valid.
 - [x] Step 3 — Wisdom (Job, Proverbs, Ecclesiastes, Song of Songs)
       — done 2026-06-20; 53 modules valid.
-- [ ] Step 4 — Major Prophets (Isaiah, Jeremiah, Lamentations, Ezekiel, Daniel)
+- [x] Step 4 — Major Prophets (Isaiah, Jeremiah, Lamentations, Ezekiel, Daniel)
+      — done 2026-06-20; 58 modules valid.
 - [ ] Step 5 — Minor Prophets (Hosea … Malachi, 12)
 - [ ] Step 6 — Gospels & Acts (Mark, Luke, John, Acts)
 - [ ] Step 7 — Pauline Letters (1 Corinthians … Philemon, 12)

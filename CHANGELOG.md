@@ -30,6 +30,14 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
   `book.leviticus`, `book.numbers`, and `book.deuteronomy` (joining
   `book.genesis`). Each is a hermeneutic profile keyed to the book's mix of
   narrative, law, and ritual; method only, denomination-neutral.
+- **Major Prophets Book modules** (5): `book.isaiah`, `book.jeremiah` (prophecy +
+  poetry; monarchy into exile), `book.lamentations` (poetry, not prophecy —
+  communal lament over the fallen city), `book.ezekiel` (prophecy + apocalyptic;
+  exile, temple), and `book.daniel` (apocalyptic + narrative; exile, Second
+  Temple). All reference `core.intertextuality` and note the Aramaic portions
+  where relevant (Daniel). Contested matters — Isaiah's composition and the
+  Servant songs, Daniel's date, Ezekiel's closing temple vision — presented via
+  the major approaches with the conclusion left to the reader.
 - **Wisdom Book modules** (4): `book.job`, `book.proverbs`, `book.ecclesiastes`
   (all primary `genre.wisdom`), and `book.song-of-songs` (primary
   `genre.poetry`). Each draws on the new `context.wisdom-tradition` and reads the
