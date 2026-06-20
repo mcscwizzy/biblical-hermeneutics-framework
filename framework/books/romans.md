@@ -2,11 +2,11 @@
 id: book.romans
 title: Romans (Book Module)
 type: book
-version: 0.1.0
+version: 0.2.0
 status: stable
-tokens: 881
+tokens: 846
 requires: [core.core-framework, genre.epistle]
-recommends: [context.roman-empire, context.patronage, language.greek]
+recommends: [context.roman-empire, context.patronage, context.second-temple-judaism, language.greek, core.intertextuality]
 tags: [romans, paul, epistle, new-testament]
 sources_required: true
 maintainers: []
@@ -15,72 +15,70 @@ license: CC-BY-4.0
 
 ## Purpose
 
-This module orients you to interpreting Paul's letter to the Romans: a long,
-carefully argued letter to a community Paul had not yet visited. It helps you
-read Romans as a sustained argument with a specific audience and purpose,
-without resolving its many debated passages by appeal to one tradition.
+This module helps you approach Romans as a long, carefully argued letter to a
+community Paul had not yet visited. It is a hermeneutic profile, not a
+commentary: it tells you what to notice and ask, assuming Core, Genre, and
+Context are already loaded. It does not tell you what Romans means, and it does
+not adjudicate its famous debates.
 
 ## When to apply
 
-When interpreting any passage in Romans. Load it alongside [[genre.epistle]] and,
-for the social setting, [[context.roman-empire]] and [[context.patronage]].
-
-## Interpretive moves
-
-1. **Read whole units, not isolated verses.** Romans builds a cumulative
-   argument; follow the connectors and trace how each section advances the case.
-2. **Keep the letter's audience in view.** Attend to the relationship between the
-   Jewish and Gentile members of the Roman congregations, a thread that runs
-   through the letter.
-3. **Locate the passage in the letter's flow** before drawing conclusions, and
-   note where Paul anticipates and answers objections (diatribe-style questions).
-4. **Distinguish Paul's quotations and Old Testament citations** from his own
-   argument, and read each in light of its source context.
-5. **Hold debated passages with method, not verdicts** (see cruxes below).
+When interpreting any passage in Romans, on top of [[genre.epistle]] and the
+social world of [[context.roman-empire]] and [[context.patronage]].
 
 ## Genre signals
 
-- Romans is an **epistle**: apply [[genre.epistle]]. It has the standard letter
-  features (opening, thanksgiving, body, exhortation, closing) but an unusually
-  developed body of argument.
-- It contains stretches of **diatribe** (rhetorical questions and answers),
-  **scriptural argument** (chains of Old Testament citations), and **paraenesis**
-  (ethical exhortation), especially in the later chapters.
+An **epistle** ([[genre.epistle]]) with an unusually developed body of argument.
+Within it, watch for stretches of **diatribe** (rhetorical question-and-answer),
+sustained **scriptural argument** (chains of Old Testament citation), and
+**paraenesis** (ethical exhortation, especially in the later chapters). Read each
+according to its form.
 
 ## Historical anchors
 
-- Written to believers in **Rome**, a community Paul did not found and had not
-  yet visited — which shapes his tone and purpose. (Authorship by Paul is the
-  scholarly **consensus**.)
-- The **social setting** of the imperial capital — status, patronage, and a mixed
-  Jewish/Gentile audience — informs many passages
-  (see [[context.roman-empire]], [[context.patronage]]).
-- Specific questions of exact date, the precise makeup of the audience, and
-  Paul's full purpose are **debated**; hold them with appropriate confidence
-  (see [[core.epistemic-humility]]).
+The **Roman** imperial capital ([[context.roman-empire]]) — status, mixed
+Jewish and Gentile believers, and **patronage** ([[context.patronage]]) — and the
+**Second Temple Jewish** matrix of Paul's argument
+([[context.second-temple-judaism]]). Pauline authorship is the scholarly
+consensus; exact date, audience composition, and Paul's full purpose are debated
+(see [[core.epistemic-humility]]).
 
-## Key interpretive cruxes (method, not verdicts)
+## Literary features
 
-For well-known debated passages (for example, the function of the law, the
-identity of the "I" in chapter 7, and the argument of chapters 9–11), **present
-the major responsible interpretations and their textual basis rather than
-selecting one as the definitive reading.** Show how each option follows from the
-argument, label scholarly support (see [[core.epistemic-humility]]), and leave
-the doctrinal conclusion to the reader and their tradition.
+Look for **logical connectors** ("therefore," "for," "but," "so that") that carry
+the argument, **diatribe** questions and answers, **Old Testament quotations and
+allusions** (see [[core.intertextuality]]) and how Paul uses them, **repeated key
+terms**, **rhetorical structure** across whole sections, and **Greek** wording
+that bears on contested phrases (see [[language.greek]]). Do not assume every
+feature is present in a given passage; look for them.
 
-## Common errors to avoid
+## Key interpretive questions
 
-- Lifting a single verse out of Paul's argument to settle a doctrinal dispute.
+Pose, do not answer:
+
+- How does this passage function within Paul's larger argument, and what precedes and follows it?
+- What earlier Scripture is Paul citing or echoing, and how is he using it in context?
+- How do the relationships between Jewish and Gentile believers in Rome bear on the passage?
+- Is Paul stating his own view, voicing an objection, or answering one (diatribe)?
+- What does a debated term or construction mean in this context, and what are the options?
+- How does the social setting (status, patronage) illuminate the passage?
+
+## Common misreadings
+
+- Reading isolated verses apart from Paul's larger, sustained argument.
 - Importing a later theological system and reading it back into the letter.
-- Ignoring the Jew–Gentile dynamics that motivate much of the argument.
-- Presenting one tradition's reading of a contested passage as the plain meaning.
+- Resolving a contested passage by appeal to a tradition's doctrine rather than
+  the argument and the evidence.
+- Ignoring the Jew–Gentile dynamics that drive much of the letter.
+- Mistaking a diatribe objection for Paul's own assertion.
 
 ## Handling uncertainty
 
-Romans is among the most interpreted and most debated books. Be explicit about
-which readings are widely shared and which are contested, separate secure
-observations from debated inferences, and resist collapsing genuine debate into
-a single answer (see [[core.epistemic-humility]]).
+Romans is among the most debated books. The function of the law, the identity of
+the "I" in chapter 7, the argument of chapters 9–11, and the letter's overall
+purpose are read differently across traditions. Present the major responsible
+interpretations and their textual basis, label scholarly support and confidence
+(see [[core.epistemic-humility]]), and leave the conclusion to the reader.
 
 ## Cross-references
 
@@ -88,4 +86,6 @@ a single answer (see [[core.epistemic-humility]]).
 - [[genre.epistle]]
 - [[context.roman-empire]]
 - [[context.patronage]]
+- [[context.second-temple-judaism]]
 - [[language.greek]]
+- [[core.intertextuality]]

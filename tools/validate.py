@@ -27,6 +27,7 @@ from bhf_lib import (
     resolve,
 )
 
+# Section contract for non-book modules (core, genre, context, language).
 REQUIRED_SECTIONS = [
     "Purpose",
     "When to apply",
@@ -36,10 +37,17 @@ REQUIRED_SECTIONS = [
     "Cross-references",
 ]
 
-BOOK_EXTRA_SECTIONS = [
+# Book modules are hermeneutic profiles and use their own section contract.
+BOOK_REQUIRED_SECTIONS = [
+    "Purpose",
+    "When to apply",
     "Genre signals",
     "Historical anchors",
-    "Key interpretive cruxes (method, not verdicts)",
+    "Literary features",
+    "Key interpretive questions",
+    "Common misreadings",
+    "Handling uncertainty",
+    "Cross-references",
 ]
 
 TOKEN_TOLERANCE = 0.35  # declared `tokens` must be within this fraction of measured.
@@ -89,12 +97,7 @@ def validate_module(path: Path, errors: list[str]) -> "object | None":
 
     # --- required body sections + ordering ---
     headings = heading_order(mod.body)
-    required = list(REQUIRED_SECTIONS)
-    if mod.type == "book":
-        # extra book sections must appear after "Interpretive moves"
-        for s in BOOK_EXTRA_SECTIONS:
-            if s not in headings:
-                err(f"missing required book section '## {s}'")
+    required = BOOK_REQUIRED_SECTIONS if mod.type == "book" else REQUIRED_SECTIONS
     present_required = [h for h in headings if h in required]
     for s in required:
         if s not in headings:

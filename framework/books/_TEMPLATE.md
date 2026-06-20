@@ -5,8 +5,8 @@ type: book
 version: 0.1.0
 status: draft
 tokens: 0                      # update to ~chars/4 of the body
-requires: [core.core-framework]   # add the relevant genre module, e.g. genre.narrative
-recommends: []                    # relevant context/language modules
+requires: [core.core-framework]   # add the primary genre module, e.g. genre.narrative
+recommends: []                    # relevant context/language modules + secondary genres
 tags: []
 sources_required: true
 maintainers: []
@@ -15,40 +15,47 @@ license: CC-BY-4.0
 
 ## Purpose
 
-One paragraph orienting the reader to interpreting this book, without resolving
-its debated passages by appeal to one tradition.
+How this module helps the AI approach this book. A book module is a hermeneutic
+profile, not a commentary: it teaches *how to approach* the book and assumes the
+Core, Genre, Context, and Language layers are already loaded. Do not repeat them.
 
 ## When to apply
 
-When interpreting any passage in this book; name the companion modules to load.
-
-## Interpretive moves
-
-1. Book-level guidance (read whole units, follow the argument/plot, etc.).
-2. Reference companion modules with `[[id]]`.
+When interpreting any passage in this book, loaded on top of Core, the relevant
+Genre module(s), and the Context modules named below.
 
 ## Genre signals
 
-- The book's genre(s) and which genre module(s) to apply (`[[genre.SLUG]]`).
+The dominant genre(s) and where each appears in the book; name the genre
+module(s) to apply (`[[genre.SLUG]]`). Do not oversimplify a mixed book.
 
 ## Historical anchors
 
-- Audience, setting, occasion, and authorship — each labeled for confidence
-  (see [[core.epistemic-humility]]). Source claims (see [[core.anti-hallucination]]).
+The historical and cultural worlds most relevant to this book, **referencing**
+Context modules (e.g. [[context.ancient-near-east]]) rather than repeating them.
+Label authorship/date/setting for confidence (see [[core.epistemic-humility]]).
 
-## Key interpretive cruxes (method, not verdicts)
+## Literary features
 
-- For famous debated passages, present the major responsible interpretations and
-  their textual basis; do **not** select one as the definitive reading. Leave
-  doctrinal conclusions to the reader.
+What to look for (e.g. repeated words, narrative patterns, speeches, poetry,
+symbolism, genealogy, chiasm, inclusio, irony, parallelism, quotations,
+allusions). Teach the AI to look; do not claim every feature is present.
 
-## Common errors to avoid
+## Key interpretive questions
 
-- Proof-texting, anachronism, and presenting one tradition's reading as plain.
+Questions an interpreter should ask of this book — to improve observation.
+**Pose them; do not answer them.**
+
+## Common misreadings
+
+Frequent method mistakes, described neutrally (the mistake itself, not a
+critique of any tradition).
 
 ## Handling uncertainty
 
-Separate secure observations from debated inferences; label confidence.
+Where scholarship is divided (authorship, dating, structure, literary
+boundaries, historical reconstruction). Label uncertainty; do not feign
+certainty (see [[core.epistemic-humility]]).
 
 ## Cross-references
 

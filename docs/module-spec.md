@@ -59,12 +59,24 @@ The body must contain these level-2 headings, in this order:
 5. `## Handling uncertainty` — how to label and qualify claims for this topic.
 6. `## Cross-references` — links to related modules using `[[id]]` syntax.
 
-### Additional required sections by type
+### Book modules use a different section contract
 
-- **`book`** modules additionally require, after `## Interpretive moves`:
-  - `## Genre signals`
-  - `## Historical anchors`
-  - `## Key interpretive cruxes (method, not verdicts)`
+Book modules are **hermeneutic profiles**, not commentaries. They do not use the
+`Interpretive moves` / `Common errors to avoid` sections above. Instead they must
+contain these level-2 headings, in this order:
+
+1. `## Purpose` — how this module helps the AI approach this book.
+2. `## When to apply` — when to load it (on top of Core, Genre, Context, Language).
+3. `## Genre signals` — the dominant genre(s) and where each appears.
+4. `## Historical anchors` — the relevant worlds, **referencing** Context modules.
+5. `## Literary features` — what to look for (do not claim every feature exists).
+6. `## Key interpretive questions` — questions to ask; **do not answer them**.
+7. `## Common misreadings` — frequent method mistakes, described neutrally.
+8. `## Handling uncertainty` — where scholarship is divided.
+9. `## Cross-references` — `[[id]]` links to Core, Genre, Context, Language modules.
+
+Book modules assume the earlier layers are already loaded and must not duplicate
+their content; they specialize for the specific book.
 
 ## 3. Cross-reference syntax
 

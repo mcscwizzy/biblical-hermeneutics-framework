@@ -13,6 +13,11 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
 
 ### Added
 
+- **Book modules** (hermeneutic profiles, the top framework layer):
+  `book.genesis`, `book.psalms`, `book.matthew`, `book.revelation`, and a
+  rewritten `book.romans`. Each assumes Core/Genre/Context/Language are already
+  loaded and specializes — teaching what to notice and what questions to ask,
+  not what the book means. Method only; denomination-neutral.
 - **Context layer** (`framework/context/`): a category for historical, cultural,
   and literary background reusable across books and genres. New modules:
   `context.ancient-near-east`, `context.second-temple-judaism`, `context.temple`,
@@ -38,6 +43,11 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
 
 ### Changed
 
+- **Book module section contract** redefined as a hermeneutic profile:
+  Purpose, When to apply, Genre signals, Historical anchors, Literary features,
+  Key interpretive questions, Common misreadings, Handling uncertainty,
+  Cross-references (replacing the v0.1 placeholder book sections). `validate.py`
+  and `docs/module-spec.md` updated accordingly.
 - Reordered and renumbered the `core/` modules to a workflow sequence:
   framework → genre awareness → original audience → observe/interpret/apply →
   intertextuality → epistemic humility → anti-hallucination.
