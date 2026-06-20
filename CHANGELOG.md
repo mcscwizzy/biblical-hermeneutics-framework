@@ -30,6 +30,17 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
   `book.leviticus`, `book.numbers`, and `book.deuteronomy` (joining
   `book.genesis`). Each is a hermeneutic profile keyed to the book's mix of
   narrative, law, and ritual; method only, denomination-neutral.
+- **Pauline Book modules** (12): `book.1-corinthians`, `book.2-corinthians`,
+  `book.galatians`, `book.ephesians`, `book.philippians`, `book.colossians`,
+  `book.1-thessalonians`, `book.2-thessalonians`, `book.1-timothy`,
+  `book.2-timothy`, `book.titus`, and `book.philemon` (joining the existing
+  `book.romans`). All primary `genre.epistle`, wired to the Greco-Roman social
+  world (`context.greco-roman-world`, `context.roman-empire`,
+  `context.patronage`, `context.honor-shame`), `language.greek`, and
+  `core.intertextuality`; Galatians foregrounds `context.second-temple-judaism`.
+  Authorship debates (Ephesians, Colossians, 2 Thessalonians, the Pastorals) are
+  presented as approaches to weigh, not verdicts to assume; Philemon centers the
+  ancient slavery/patronage setting. Conclusions left to the reader.
 - **Gospels & Acts Book modules** (4): `book.mark`, `book.luke`, `book.john`
   (primary `genre.gospel`, joining the existing `book.matthew`), and `book.acts`
   (primary `genre.narrative`). All wired to `context.second-temple-judaism`,

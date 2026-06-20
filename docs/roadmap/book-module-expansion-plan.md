@@ -160,7 +160,8 @@ changes expected.
       — done 2026-06-20; 70 modules valid.
 - [x] Step 6 — Gospels & Acts (Mark, Luke, John, Acts)
       — done 2026-06-20; 74 modules valid.
-- [ ] Step 7 — Pauline Letters (1 Corinthians … Philemon, 12)
+- [x] Step 7 — Pauline Letters (1 Corinthians … Philemon, 12)
+      — done 2026-06-20; 86 modules valid.
 - [ ] Step 8 — General Epistles (Hebrews … Jude, 8)
 
 Reference anchors: `framework/books/genesis.md`, `framework/books/revelation.md`.
