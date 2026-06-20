@@ -29,7 +29,9 @@ It is the one rule everything else serves: *BHF teaches method, never doctrine.*
    (American English, plain language, second-person instructions to the AI).
 4. **Declare dependencies** (`requires` / `recommends`) and an approximate
    `tokens` count.
-5. **Validate locally:**
+5. **Validate locally** (use a virtualenv if `pip` reports a PEP 668
+   "externally-managed-environment" error — see
+   [`tools/README.md`](tools/README.md)):
    ```bash
    pip install -r tools/requirements.txt
    python tools/validate.py framework/

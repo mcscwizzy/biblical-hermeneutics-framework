@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Validate BHF modules against docs/module-spec.md.
 
 Usage:
@@ -82,7 +83,9 @@ def validate_module(path: Path, errors: list[str]) -> "object | None":
         "historical": "historical", "language": "language", "profile": "profiles",
     }
     if mod.type in expected_folders and folder != expected_folders[mod.type]:
-        err(f"type '{mod.type}' but file is in '{folder}/' (expected '{expected_folders[mod.type]}/')")
+        expected = expected_folders[mod.type]
+        err(f"type '{mod.type}' but file is in '{folder}/' "
+            f"(expected '{expected}/')")
 
     # --- required body sections + ordering ---
     headings = heading_order(mod.body)
@@ -129,14 +132,20 @@ def main(argv: list[str]) -> int:
         if mod is None:
             continue
         if mod.id in seen_ids:
-            errors.append(f"{path}: duplicate id '{mod.id}' (also in {seen_ids[mod.id]})")
+            errors.append(
+                f"{path}: duplicate id '{mod.id}' "
+                f"(also in {seen_ids[mod.id]})")
         else:
             seen_ids[mod.id] = path
             modules[mod.id] = mod
 
     # --- cross-module reference resolution + acyclicity ---
     for mid, mod in modules.items():
-        for ref_kind, refs in (("requires", mod.requires), ("recommends", mod.recommends)):
+        ref_groups = (
+            ("requires", mod.requires),
+            ("recommends", mod.recommends),
+        )
+        for ref_kind, refs in ref_groups:
             for ref in refs:
                 if ref not in modules:
                     errors.append(f"{mod.path}: {ref_kind} unknown module '{ref}'")

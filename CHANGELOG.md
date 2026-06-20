@@ -11,6 +11,22 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
 
 ## [Unreleased]
 
+### Changed
+
+- `LICENSE` now contains the canonical MIT text (no preamble) so GitHub's
+  license detection recognizes it; the code/content split is documented in
+  `README.md`.
+- `LICENSE-CONTENT` now contains the full official CC BY 4.0 legal code.
+- Reformatted the Python tooling to PEP 8 (88-column limit); composed output is
+  byte-for-byte unchanged.
+
+### Added
+
+- `SPDX-License-Identifier` headers to the Python tooling (MIT) and to
+  `LICENSE-CONTENT` (CC-BY-4.0).
+- Contributor notes: virtualenv/PEP 668 setup tip and a documented code-style
+  convention in `tools/README.md` and `CONTRIBUTING.md`.
+
 ## [0.1.0] — 2026-06-19
 
 ### Added

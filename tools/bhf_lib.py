@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """Shared helpers for BHF tooling (loading, parsing, dependency resolution).
 
 Used by validate.py and compose.py. Depends only on PyYAML + the standard
@@ -65,7 +66,9 @@ def parse_frontmatter(text: str) -> tuple[dict, str]:
     """Return (metadata, body). Raises ValueError if frontmatter is missing."""
     match = FRONTMATTER_RE.match(text)
     if not match:
-        raise ValueError("missing or malformed YAML frontmatter (expected leading '---' block)")
+        raise ValueError(
+            "missing or malformed YAML frontmatter "
+            "(expected leading '---' block)")
     meta = yaml.safe_load(match.group(1)) or {}
     if not isinstance(meta, dict):
         raise ValueError("frontmatter did not parse to a mapping")

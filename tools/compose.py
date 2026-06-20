@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Compose BHF modules into a single prompt.
 
 Usage:
@@ -42,7 +43,8 @@ def load_profiles() -> dict[str, list[str]]:
     if not PROFILES_FILE.exists():
         return {}
     data = yaml.safe_load(PROFILES_FILE.read_text(encoding="utf-8")) or {}
-    return {name: list(spec.get("modules", [])) for name, spec in (data.get("profiles") or {}).items()}
+    profiles = (data.get("profiles") or {}).items()
+    return {name: list(spec.get("modules", [])) for name, spec in profiles}
 
 
 def compose(selected: list[str], profile_label: str) -> tuple[str, int]:
@@ -50,7 +52,9 @@ def compose(selected: list[str], profile_label: str) -> tuple[str, int]:
     ordered = resolve(modules, selected)
     parts: list[str] = []
     for mod in ordered:
-        parts.append(f"<!-- {mod.id} v{mod.version} -->\n# {mod.title}\n{mod.body.strip()}\n")
+        parts.append(
+            f"<!-- {mod.id} v{mod.version} -->\n"
+            f"# {mod.title}\n{mod.body.strip()}\n")
     body = "\n---\n\n".join(parts)
     total = sum(estimate_tokens(m.body) for m in ordered)
     header = HEADER.format(
@@ -74,7 +78,8 @@ def main() -> int:
     if args.profile:
         profiles = load_profiles()
         if args.profile not in profiles:
-            print(f"unknown profile '{args.profile}'. Known: {', '.join(profiles) or '(none)'}")
+            known = ", ".join(profiles) or "(none)"
+            print(f"unknown profile '{args.profile}'. Known: {known}")
             return 1
         selected = profiles[args.profile]
         label = args.profile
