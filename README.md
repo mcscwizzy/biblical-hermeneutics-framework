@@ -91,10 +91,10 @@ model. See [`docs/architecture.md`](docs/architecture.md).
 
 ## Contributing
 
-New genre, book, context, and language modules are welcome — there are 66
-books to cover. Start with [`CONTRIBUTING.md`](CONTRIBUTING.md) and the relevant
-`_TEMPLATE.md`. Every contribution must pass `validate.py` and the
-**neutrality + sourcing** review.
+All 66 books now have modules — refinements to existing modules and new genre,
+context, and language modules are welcome. Start with
+[`CONTRIBUTING.md`](CONTRIBUTING.md) and the relevant `_TEMPLATE.md`. Every
+contribution must pass `validate.py` and the **neutrality + sourcing** review.
 
 ## License
 
