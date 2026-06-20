@@ -26,6 +26,10 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
   rewritten `book.romans`. Each assumes Core/Genre/Context/Language are already
   loaded and specializes — teaching what to notice and what questions to ask,
   not what the book means. Method only; denomination-neutral.
+- **Torah Book modules** completing the Pentateuch: `book.exodus`,
+  `book.leviticus`, `book.numbers`, and `book.deuteronomy` (joining
+  `book.genesis`). Each is a hermeneutic profile keyed to the book's mix of
+  narrative, law, and ritual; method only, denomination-neutral.
 - **Context layer** (`framework/context/`): a category for historical, cultural,
   and literary background reusable across books and genres. New modules:
   `context.ancient-near-east`, `context.second-temple-judaism`, `context.temple`,
