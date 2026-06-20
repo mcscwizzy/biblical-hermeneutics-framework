@@ -116,6 +116,11 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
 
 ### Changed
 
+- Cross-reference wiring follow-ups now that the new modules exist:
+  `core.genre-awareness` recommends and links `genre.law` (the eighth genre it
+  names), and the Old Testament genre modules (`genre.poetry`, `genre.wisdom`,
+  `genre.prophecy`) now recommend `language.hebrew` — matching how `genre.epistle`
+  already recommends `language.greek`. `scholar.md` regenerated.
 - **Book module section contract** redefined as a hermeneutic profile:
   Purpose, When to apply, Genre signals, Historical anchors, Literary features,
   Key interpretive questions, Common misreadings, Handling uncertainty,

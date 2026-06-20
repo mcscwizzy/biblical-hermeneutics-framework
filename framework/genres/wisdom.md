@@ -4,9 +4,9 @@ title: Wisdom Genre Module
 type: genre
 version: 0.1.0
 status: stable
-tokens: 469
+tokens: 474
 requires: [core.core-framework]
-recommends: [core.epistemic-humility, core.intertextuality]
+recommends: [core.epistemic-humility, core.intertextuality, language.hebrew]
 tags: [wisdom, proverbs, job, ecclesiastes]
 sources_required: true
 maintainers: []
@@ -60,3 +60,4 @@ confidence (see [[core.epistemic-humility]]).
 - [[core.genre-awareness]]
 - [[core.epistemic-humility]]
 - [[core.intertextuality]]
+- [[language.hebrew]]

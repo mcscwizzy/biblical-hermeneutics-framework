@@ -137,8 +137,11 @@ changes expected.
 
 ## Out of scope
 - No theology/doctrine/commentary. Books not added to minimal-7b/standard profiles.
-- Optional later: add `genre.law` to `core.genre-awareness` xrefs; add
-  `language.hebrew` to OT genre modules' `recommends`.
+- ~~Optional later: add `genre.law` to `core.genre-awareness` xrefs; add
+  `language.hebrew` to OT genre modules' `recommends`.~~ Done 2026-06-20
+  (`genre.law` linked + recommended in `core.genre-awareness`; `language.hebrew`
+  added to `genre.poetry`/`genre.wisdom`/`genre.prophecy`; `genre.law` already
+  shipped with it).
 
 ---
 

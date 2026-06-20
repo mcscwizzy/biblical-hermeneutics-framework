@@ -4,9 +4,9 @@ title: Poetry Genre Module
 type: genre
 version: 0.1.0
 status: stable
-tokens: 465
+tokens: 470
 requires: [core.core-framework]
-recommends: [core.intertextuality, core.epistemic-humility]
+recommends: [core.intertextuality, core.epistemic-humility, language.hebrew]
 tags: [poetry, psalms, parallelism, imagery]
 sources_required: true
 maintainers: []
@@ -60,3 +60,4 @@ confidence (see [[core.epistemic-humility]]).
 - [[core.genre-awareness]]
 - [[core.intertextuality]]
 - [[core.epistemic-humility]]
+- [[language.hebrew]]

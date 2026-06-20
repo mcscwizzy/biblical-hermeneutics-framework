@@ -5,9 +5,9 @@ type: core
 version: 0.1.0
 status: stable
 order: 2
-tokens: 726
+tokens: 735
 requires: [core.core-framework]
-recommends: [genre.epistle]
+recommends: [genre.epistle, genre.law]
 tags: [core, genre, literary]
 sources_required: true
 maintainers: []
@@ -35,7 +35,8 @@ matching genre module for depth (for example, [[genre.epistle]] for a letter).
    differently:
    - **Narrative** — tells what happened; meaning often emerges through the story
      rather than direct statement, and not every action narrated is endorsed.
-   - **Law** — covenant stipulations set in a specific historical context.
+   - **Law** ([[genre.law]]) — covenant stipulations set in a specific historical
+     context.
    - **Poetry** — communicates through imagery, figurative language, and
      parallelism; it is not flat description.
    - **Wisdom** — generally expresses observed principles and tendencies rather
@@ -73,4 +74,5 @@ than forcing a single label (see [[core.epistemic-humility]]).
 
 - [[core.core-framework]]
 - [[genre.epistle]]
+- [[genre.law]]
 - [[core.epistemic-humility]]

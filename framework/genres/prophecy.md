@@ -4,9 +4,9 @@ title: Prophecy Genre Module
 type: genre
 version: 0.1.0
 status: stable
-tokens: 499
+tokens: 505
 requires: [core.core-framework]
-recommends: [core.original-audience, core.intertextuality, core.epistemic-humility]
+recommends: [core.original-audience, core.intertextuality, core.epistemic-humility, language.hebrew]
 tags: [prophecy, prophets, oracle, covenant]
 sources_required: true
 maintainers: []
@@ -63,3 +63,4 @@ the reader.
 - [[core.original-audience]]
 - [[core.intertextuality]]
 - [[core.epistemic-humility]]
+- [[language.hebrew]]
