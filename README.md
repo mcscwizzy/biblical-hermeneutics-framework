@@ -65,7 +65,7 @@ python tools/compose.py --profile standard
 
 | Path | What's there |
 |------|--------------|
-| [`framework/`](framework/) | The product: `core/`, `genres/`, `books/`, `historical/`, `language/` modules (CC BY 4.0) |
+| [`framework/`](framework/) | The product: `core/`, `genres/`, `books/`, `context/`, `language/` modules (CC BY 4.0) |
 | [`profiles/`](profiles/) | Pre-assembled, copy/paste-ready prompt bundles |
 | [`docs/`](docs/) | Philosophy, architecture, the authoritative [module spec](docs/module-spec.md), style guide, how-to guides |
 | [`tools/`](tools/) | `validate.py`, `compose.py` (MIT) |
@@ -82,7 +82,7 @@ model. See [`docs/architecture.md`](docs/architecture.md).
 
 ## Contributing
 
-New genre, book, historical, and language modules are welcome — there are 66
+New genre, book, context, and language modules are welcome — there are 66
 books to cover. Start with [`CONTRIBUTING.md`](CONTRIBUTING.md) and the relevant
 `_TEMPLATE.md`. Every contribution must pass `validate.py` and the
 **neutrality + sourcing** review.

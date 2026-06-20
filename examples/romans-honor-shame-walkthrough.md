@@ -5,7 +5,7 @@ well-guided response moves through the interpretive steps. It does **not**
 declare the right doctrinal conclusion — that is left to the reader.
 
 - **Modules used:** `core.core-framework`, `genre.epistle`, `book.romans`,
-  `historical.roman-empire` (compose with `--modules book.romans` and add the
+  `context.roman-empire` (compose with `--modules book.romans` and add the
   Roman-setting module).
 - **Question:** "What is Paul getting at when he says he is 'not ashamed of the
   gospel' near the start of Romans?"
@@ -30,7 +30,7 @@ Consider how "shame" and "honor" functioned in the first-century Roman world,
 where public honor and status were central social currencies, and "gospel"
 (good news) also carried public, imperial overtones. Ask how the original
 audience in Rome might have heard a claim about *not being ashamed*.
-(`core.original-audience`, `historical.roman-empire`)
+(`core.original-audience`, `context.roman-empire`)
 
 ## 4. Interpret in context
 

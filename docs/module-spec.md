@@ -22,7 +22,7 @@ status: stable                 # REQUIRED. draft | review | stable | deprecated
 order: 100                     # OPTIONAL. Within-type sequencing hint (lower = earlier).
 tokens: 450                    # REQUIRED. Approximate token cost (integer).
 requires: [core.core-framework]            # OPTIONAL. Hard deps, auto-loaded.
-recommends: [historical.roman-empire]      # OPTIONAL. Suggested companions.
+recommends: [context.roman-empire]      # OPTIONAL. Suggested companions.
 tags: [epistle, letters]       # OPTIONAL. List of strings.
 sources_required: true         # OPTIONAL (default true). Claims need citations.
 maintainers: ["@handle"]       # OPTIONAL. List of GitHub handles.
@@ -34,9 +34,9 @@ license: CC-BY-4.0             # OPTIONAL (default CC-BY-4.0).
 
 | Field | Required | Rule |
 |-------|----------|------|
-| `id` | yes | Matches `^(core|genre|book|historical|language|profile)\.[a-z0-9-]+$`. Must equal `<type>.<slug>`. Unique across the repo. |
+| `id` | yes | Matches `^(core|genre|book|context|language|profile)\.[a-z0-9-]+$`. Must equal `<type>.<slug>`. Unique across the repo. |
 | `title` | yes | Non-empty string. |
-| `type` | yes | One of: `core`, `genre`, `book`, `historical`, `language`, `profile`. Must be the prefix of `id`. |
+| `type` | yes | One of: `core`, `genre`, `book`, `context`, `language`, `profile`. Must be the prefix of `id`. |
 | `version` | yes | SemVer `MAJOR.MINOR.PATCH`. |
 | `status` | yes | One of: `draft`, `review`, `stable`, `deprecated`. |
 | `order` | no | Integer sequencing hint (default `100`); composition orders modules by `(type, order, id)`, so dependencies always precede dependents. Used mainly to sequence the `core` modules into a hermeneutical workflow. |

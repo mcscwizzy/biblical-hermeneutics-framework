@@ -9,7 +9,7 @@ It is the one rule everything else serves: *BHF teaches method, never doctrine.*
 
 ## Ways to contribute
 
-- **Add a module** (a genre, book, historical, or language module).
+- **Add a module** (a genre, book, context, or language module).
 - **Correct a factual error** in an existing module (open a *Module correction*
   issue and include a source).
 - **Improve docs, examples, or rubrics.**
@@ -20,10 +20,10 @@ It is the one rule everything else serves: *BHF teaches method, never doctrine.*
 1. **Pick the category** and copy its template:
    - Genre → [`framework/genres/_TEMPLATE.md`](framework/genres/_TEMPLATE.md)
    - Book → [`framework/books/_TEMPLATE.md`](framework/books/_TEMPLATE.md)
-   - Historical → [`framework/historical/_TEMPLATE.md`](framework/historical/_TEMPLATE.md)
+   - Context → [`framework/context/_TEMPLATE.md`](framework/context/_TEMPLATE.md)
    - Language → [`framework/language/_TEMPLATE.md`](framework/language/_TEMPLATE.md)
 2. **Name the file** in kebab-case (e.g., `honor-shame.md`) and set the module
-   `id` as `<type>.<slug>` (e.g., `historical.honor-shame`). See the
+   `id` as `<type>.<slug>` (e.g., `context.honor-shame`). See the
    [module spec](docs/module-spec.md).
 3. **Fill every required section.** Follow the [style guide](docs/style-guide.md)
    (American English, plain language, second-person instructions to the AI).

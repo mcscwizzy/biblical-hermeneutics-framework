@@ -80,7 +80,7 @@ def validate_module(path: Path, errors: list[str]) -> "object | None":
     folder = path.parent.name
     expected_folders = {
         "core": "core", "genre": "genres", "book": "books",
-        "historical": "historical", "language": "language", "profile": "profiles",
+        "context": "context", "language": "language", "profile": "profiles",
     }
     if mod.type in expected_folders and folder != expected_folders[mod.type]:
         expected = expected_folders[mod.type]

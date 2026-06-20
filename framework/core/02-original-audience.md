@@ -7,7 +7,7 @@ status: stable
 order: 3
 tokens: 512
 requires: [core.core-framework]
-recommends: [historical.roman-empire]
+recommends: [context.roman-empire]
 tags: [core, context, audience]
 sources_required: true
 maintainers: []
@@ -61,4 +61,4 @@ conclusions on a reconstructed setting that the evidence cannot bear.
 
 - [[core.core-framework]]
 - [[core.observe-interpret-apply]]
-- [[historical.roman-empire]]
+- [[context.roman-empire]]

@@ -1,12 +1,12 @@
 ---
-id: historical.roman-empire
+id: context.roman-empire
 title: The Roman Empire (First-Century Setting)
-type: historical
+type: context
 version: 0.1.0
 status: stable
-tokens: 543
+tokens: 542
 requires: [core.core-framework]
-recommends: [historical.patronage]
+recommends: [context.patronage]
 tags: [rome, empire, first-century, context]
 sources_required: true
 maintainers: []
@@ -60,5 +60,5 @@ readings, and label your confidence (see [[core.epistemic-humility]]).
 ## Cross-references
 
 - [[core.core-framework]]
-- [[historical.patronage]]
+- [[context.patronage]]
 - [[core.anti-hallucination]]

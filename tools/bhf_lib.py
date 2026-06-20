@@ -17,13 +17,13 @@ import yaml
 TYPE_PRIORITY = {
     "core": 0,
     "language": 1,
-    "historical": 2,
+    "context": 2,
     "genre": 3,
     "book": 4,
     "profile": 5,
 }
 
-ID_PATTERN = re.compile(r"^(core|genre|book|historical|language|profile)\.[a-z0-9-]+$")
+ID_PATTERN = re.compile(r"^(core|genre|book|context|language|profile)\.[a-z0-9-]+$")
 SEMVER_PATTERN = re.compile(r"^\d+\.\d+\.\d+$")
 STATUSES = {"draft", "review", "stable", "deprecated"}
 XREF_PATTERN = re.compile(r"\[\[([a-z]+\.[a-z0-9-]+)\]\]")

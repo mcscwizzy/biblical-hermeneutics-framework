@@ -1,5 +1,5 @@
 name: New module proposal
-description: Propose a new genre, book, historical, or language module.
+description: Propose a new genre, book, context, or language module.
 title: "[module] <type>.<slug>: <short description>"
 labels: ["module", "needs-triage"]
 body:
@@ -12,15 +12,15 @@ body:
     id: type
     attributes:
       label: Module type
-      options: [genre, book, historical, language]
+      options: [genre, book, context, language]
     validations:
       required: true
   - type: input
     id: id
     attributes:
       label: Proposed module id
-      description: "<type>.<slug>, e.g. historical.second-temple-judaism"
-      placeholder: historical.second-temple-judaism
+      description: "<type>.<slug>, e.g. context.second-temple-judaism"
+      placeholder: context.second-temple-judaism
     validations:
       required: true
   - type: textarea

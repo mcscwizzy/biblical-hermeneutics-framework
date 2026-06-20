@@ -13,6 +13,14 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
 
 ### Added
 
+- **Context layer** (`framework/context/`): a category for historical, cultural,
+  and literary background reusable across books and genres. New modules:
+  `context.ancient-near-east`, `context.second-temple-judaism`, `context.temple`,
+  `context.covenant`, and `context.honor-shame` (joining the migrated
+  `context.roman-empire` and `context.patronage`). Method only — they teach what
+  questions to ask about the world behind the text, not what a passage concludes.
+- **`scholar` profile** — full-depth assembly (all core, genre, and context
+  modules plus `language.greek`) for frontier models with large context windows.
 - **Genre modules** completing the set of seven: `genre.narrative`,
   `genre.poetry`, `genre.wisdom`, `genre.prophecy`, `genre.gospel`, and
   `genre.apocalyptic` (joining the existing `genre.epistle`). Each follows the
@@ -35,6 +43,14 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
   intertextuality → epistemic humility → anti-hallucination.
 - Profiles updated: `minimal-7b` now includes genre awareness; `standard`
   includes all seven core modules in workflow order.
+- **Renamed the `historical` module type/category to `context`** (folder
+  `framework/historical/` → `framework/context/`; type `historical` → `context`).
+  This is a pre-1.0 breaking change to two module ids
+  (`historical.roman-empire` → `context.roman-empire`,
+  `historical.patronage` → `context.patronage`); all cross-references, tooling,
+  spec, and docs were updated. "Context" better fits a layer that includes
+  cultural systems (honor/shame, patronage) and literary themes (temple,
+  covenant), not only history.
 
 - `LICENSE` now contains the canonical MIT text (no preamble) so GitHub's
   license detection recognizes it; the code/content split is documented in
@@ -59,7 +75,8 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
   `core.epistemic-humility`, `core.anti-hallucination`.
 - **Genre module:** `genre.epistle`.
 - **Book module:** `book.romans`.
-- **Historical modules:** `historical.roman-empire`, `historical.patronage`.
+- **Historical modules:** `historical.roman-empire`, `historical.patronage`
+  (renamed to `context.*` in a later release — see Unreleased).
 - **Language module:** `language.greek`.
 - **Tooling:** `tools/validate.py` (frontmatter + structure + dependency +
   link + token-budget validation) and `tools/compose.py` (dependency-resolving

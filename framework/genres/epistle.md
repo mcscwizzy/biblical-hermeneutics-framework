@@ -4,9 +4,9 @@ title: Epistle (Letter) Genre Module
 type: genre
 version: 0.1.0
 status: stable
-tokens: 594
+tokens: 592
 requires: [core.core-framework]
-recommends: [historical.roman-empire, historical.patronage, language.greek]
+recommends: [context.roman-empire, context.patronage, language.greek]
 tags: [epistle, letters, paul]
 sources_required: true
 maintainers: []
@@ -24,7 +24,7 @@ a particular community, not as a collection of detached maxims.
 
 When interpreting any New Testament letter (e.g., Romans, the Corinthian
 correspondence, the General Epistles). Pair it with the relevant book module and
-with [[historical.roman-empire]] for the social setting.
+with [[context.roman-empire]] for the social setting.
 
 ## Interpretive moves
 
@@ -62,6 +62,6 @@ speculative backstory drive a strong conclusion.
 ## Cross-references
 
 - [[core.core-framework]]
-- [[historical.roman-empire]]
-- [[historical.patronage]]
+- [[context.roman-empire]]
+- [[context.patronage]]
 - [[language.greek]]

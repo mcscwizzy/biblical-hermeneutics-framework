@@ -4,9 +4,9 @@ title: Gospel Genre Module
 type: genre
 version: 0.1.0
 status: stable
-tokens: 486
+tokens: 485
 requires: [core.core-framework]
-recommends: [historical.roman-empire, language.greek, core.intertextuality]
+recommends: [context.roman-empire, language.greek, core.intertextuality]
 tags: [gospel, jesus, biography, narrative]
 sources_required: true
 maintainers: []
@@ -31,7 +31,7 @@ When interpreting Matthew, Mark, Luke, or John, or passages within them.
 2. **Read each Gospel on its own terms first.** Note an author's selection,
    arrangement, and emphases before harmonizing the accounts.
 3. **Attend to the first-century setting** — Jewish and Greco-Roman
-   (see [[historical.roman-empire]]) — and the earlier Scripture the Gospels
+   (see [[context.roman-empire]]) — and the earlier Scripture the Gospels
    invoke (see [[core.intertextuality]]).
 4. **Interpret parables for their central point** in context, and resist
    allegorizing every detail.
@@ -58,5 +58,5 @@ your confidence (see [[core.epistemic-humility]]).
 - [[core.core-framework]]
 - [[core.genre-awareness]]
 - [[core.intertextuality]]
-- [[historical.roman-empire]]
+- [[context.roman-empire]]
 - [[language.greek]]

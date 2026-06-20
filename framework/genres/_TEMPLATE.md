@@ -6,7 +6,7 @@ version: 0.1.0
 status: draft
 tokens: 0                      # update to ~chars/4 of the body (validator will tell you the range)
 requires: [core.core-framework]
-recommends: []                 # related historical/language modules
+recommends: []                 # related context/language modules
 tags: []
 sources_required: true
 maintainers: []

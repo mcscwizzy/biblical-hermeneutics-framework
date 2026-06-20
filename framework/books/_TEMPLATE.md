@@ -6,7 +6,7 @@ version: 0.1.0
 status: draft
 tokens: 0                      # update to ~chars/4 of the body
 requires: [core.core-framework]   # add the relevant genre module, e.g. genre.narrative
-recommends: []                    # relevant historical/language modules
+recommends: []                    # relevant context/language modules
 tags: []
 sources_required: true
 maintainers: []

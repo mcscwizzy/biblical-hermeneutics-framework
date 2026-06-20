@@ -1,7 +1,7 @@
 ---
-id: historical.SLUG            # e.g. historical.second-temple-judaism
+id: context.SLUG               # e.g. context.second-temple-judaism
 title: TITLE
-type: historical
+type: context
 version: 0.1.0
 status: draft
 tokens: 0                      # update to ~chars/4 of the body

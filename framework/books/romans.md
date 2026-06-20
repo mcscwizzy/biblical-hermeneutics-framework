@@ -4,9 +4,9 @@ title: Romans (Book Module)
 type: book
 version: 0.1.0
 status: stable
-tokens: 886
+tokens: 881
 requires: [core.core-framework, genre.epistle]
-recommends: [historical.roman-empire, historical.patronage, language.greek]
+recommends: [context.roman-empire, context.patronage, language.greek]
 tags: [romans, paul, epistle, new-testament]
 sources_required: true
 maintainers: []
@@ -23,7 +23,7 @@ without resolving its many debated passages by appeal to one tradition.
 ## When to apply
 
 When interpreting any passage in Romans. Load it alongside [[genre.epistle]] and,
-for the social setting, [[historical.roman-empire]] and [[historical.patronage]].
+for the social setting, [[context.roman-empire]] and [[context.patronage]].
 
 ## Interpretive moves
 
@@ -54,7 +54,7 @@ for the social setting, [[historical.roman-empire]] and [[historical.patronage]]
   scholarly **consensus**.)
 - The **social setting** of the imperial capital — status, patronage, and a mixed
   Jewish/Gentile audience — informs many passages
-  (see [[historical.roman-empire]], [[historical.patronage]]).
+  (see [[context.roman-empire]], [[context.patronage]]).
 - Specific questions of exact date, the precise makeup of the audience, and
   Paul's full purpose are **debated**; hold them with appropriate confidence
   (see [[core.epistemic-humility]]).
@@ -86,6 +86,6 @@ a single answer (see [[core.epistemic-humility]]).
 
 - [[core.core-framework]]
 - [[genre.epistle]]
-- [[historical.roman-empire]]
-- [[historical.patronage]]
+- [[context.roman-empire]]
+- [[context.patronage]]
 - [[language.greek]]

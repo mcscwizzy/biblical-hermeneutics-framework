@@ -15,7 +15,7 @@ Modules fall into six types:
 | `core` | `framework/core/` | The always-on interpretive posture. |
 | `genre` | `framework/genres/` | How to read a literary genre. |
 | `book` | `framework/books/` | How to read a specific book. |
-| `historical` | `framework/historical/` | Background context (setting, institutions, social systems). |
+| `context` | `framework/context/` | Historical, cultural, and literary background (setting, institutions, social systems, recurring themes). |
 | `language` | `framework/language/` | Original-language and literary-device guidance. |
 | `profile` | (generated to `profiles/`) | Pre-assembled bundles of the above. |
 

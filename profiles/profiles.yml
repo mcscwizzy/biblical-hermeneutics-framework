@@ -27,3 +27,38 @@ profiles:
       - core.intertextuality
       - core.epistemic-humility
       - core.anti-hallucination
+
+  scholar:
+    description: >-
+      Full-depth assembly for frontier models with large context windows: the
+      entire reusable framework (all core, genre, and context modules plus
+      original-language guidance). Token-heavy by design; for a specific book,
+      add its book module. Genre and context modules are conditional — apply the
+      ones the passage calls for.
+    modules:
+      # core (all seven, workflow-ordered by `order`)
+      - core.core-framework
+      - core.genre-awareness
+      - core.original-audience
+      - core.observe-interpret-apply
+      - core.intertextuality
+      - core.epistemic-humility
+      - core.anti-hallucination
+      # genre (all seven)
+      - genre.narrative
+      - genre.poetry
+      - genre.wisdom
+      - genre.prophecy
+      - genre.gospel
+      - genre.apocalyptic
+      - genre.epistle
+      # context (all seven)
+      - context.ancient-near-east
+      - context.second-temple-judaism
+      - context.roman-empire
+      - context.temple
+      - context.covenant
+      - context.honor-shame
+      - context.patronage
+      # language
+      - language.greek

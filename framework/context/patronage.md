@@ -1,12 +1,12 @@
 ---
-id: historical.patronage
+id: context.patronage
 title: Patronage and Benefaction
-type: historical
+type: context
 version: 0.1.0
 status: stable
-tokens: 520
+tokens: 524
 requires: [core.core-framework]
-recommends: [historical.roman-empire]
+recommends: [context.roman-empire, context.honor-shame]
 tags: [patronage, benefaction, honor, social]
 sources_required: true
 maintainers: []
@@ -37,7 +37,7 @@ gratitude that may draw on social reciprocity.
    patron; watch for figures who function as go-betweens.
 4. **Connect to honor and status.** Benefaction generated public honor and
    obligation; this intersects with the broader honor–shame culture
-   (see [[historical.roman-empire]]).
+   (see [[context.honor-shame]]).
 5. **Ask whether a text affirms, redirects, or subverts** the conventional
    patronage expectations rather than assuming one or the other.
 
@@ -59,5 +59,6 @@ argument, and label your confidence (see [[core.epistemic-humility]]).
 ## Cross-references
 
 - [[core.core-framework]]
-- [[historical.roman-empire]]
+- [[context.roman-empire]]
+- [[context.honor-shame]]
 - [[core.epistemic-humility]]
