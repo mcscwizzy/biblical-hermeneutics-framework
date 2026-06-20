@@ -152,7 +152,8 @@ changes expected.
       — done 2026-06-20; 37 modules valid.
 - [x] Step 2 — Historical Books (Joshua … Esther, 12)
       — done 2026-06-20; 49 modules valid.
-- [ ] Step 3 — Wisdom (Job, Proverbs, Ecclesiastes, Song of Songs)
+- [x] Step 3 — Wisdom (Job, Proverbs, Ecclesiastes, Song of Songs)
+      — done 2026-06-20; 53 modules valid.
 - [ ] Step 4 — Major Prophets (Isaiah, Jeremiah, Lamentations, Ezekiel, Daniel)
 - [ ] Step 5 — Minor Prophets (Hosea … Malachi, 12)
 - [ ] Step 6 — Gospels & Acts (Mark, Luke, John, Acts)

@@ -30,6 +30,13 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
   `book.leviticus`, `book.numbers`, and `book.deuteronomy` (joining
   `book.genesis`). Each is a hermeneutic profile keyed to the book's mix of
   narrative, law, and ritual; method only, denomination-neutral.
+- **Wisdom Book modules** (4): `book.job`, `book.proverbs`, `book.ecclesiastes`
+  (all primary `genre.wisdom`), and `book.song-of-songs` (primary
+  `genre.poetry`). Each draws on the new `context.wisdom-tradition` and reads the
+  book within the tradition's internal debate. Contested matters — the speakers'
+  standing in Job, the limits of a proverb, the sense of *hevel*, and above all
+  the major interpretive approaches to the Song of Songs (human love poetry vs.
+  allegory vs. drama) — are presented as approaches to argue, not presupposed.
 - **Historical Books Book modules** (12): `book.joshua`, `book.judges`,
   `book.ruth`, `book.1-samuel`, `book.2-samuel`, `book.1-kings`, `book.2-kings`,
   `book.1-chronicles`, `book.2-chronicles`, `book.ezra`, `book.nehemiah`, and
