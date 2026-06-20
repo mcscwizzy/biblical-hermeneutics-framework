@@ -1,0 +1,32 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install tooling dependencies
+        run: pip install -r tools/requirements.txt
+
+      - name: Validate modules
+        run: python tools/validate.py framework/
+
+      - name: Verify committed profiles are up to date
+        run: |
+          python tools/compose.py --profile minimal-7b --write
+          python tools/compose.py --profile standard --write
+          if ! git diff --quiet -- profiles/; then
+            echo "::error::Committed profiles are stale. Run 'python tools/compose.py --profile <name> --write' and commit the result."
+            git --no-pager diff -- profiles/
+            exit 1
+          fi

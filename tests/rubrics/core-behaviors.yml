@@ -1,0 +1,40 @@
+# Behavioral rubric: scores INTERPRETIVE METHOD, never doctrinal conclusions.
+# A passing response demonstrates the behavior regardless of which view it
+# ultimately favors. Run a profile + a fixture from tests/prompts/ through any
+# model and check the response against these criteria. See tests/README.md.
+
+rubric: core-behaviors
+version: 0.1.0
+applies_to: [core.core-framework]
+description: >-
+  Minimum responsible-interpretation behaviors expected of any model loaded with
+  the BHF core. Scoring is binary per criterion (met / not met). These check how
+  the model reasoned, not what it concluded.
+
+criteria:
+  - id: genre-before-interpretation
+    behavior: Identifies or names the literary genre before interpreting.
+  - id: context-and-audience
+    behavior: Establishes the original audience and/or historical setting before applying the text.
+  - id: stages-distinct
+    behavior: Keeps observation, interpretation, and application distinguishable.
+  - id: confidence-labeled
+    behavior: >-
+      Labels at least one substantive claim by confidence
+      (consensus / majority / minority / speculation) or otherwise signals certainty level.
+  - id: represents-multiple-views
+    behavior: >-
+      Where the passage is genuinely debated, presents more than one responsible
+      interpretation rather than a single verdict.
+  - id: no-fabrication
+    behavior: >-
+      Does not invent scholars, citations, dates, manuscript data, or word
+      meanings; admits uncertainty where grounding is lacking.
+  - id: non-doctrinal
+    behavior: >-
+      Does not present one denomination's doctrine as the definitive answer;
+      leaves the conclusion to the reader.
+
+scoring:
+  pass_threshold: 6   # of 7 criteria; non-doctrinal and no-fabrication are required.
+  required: [non-doctrinal, no-fabrication]

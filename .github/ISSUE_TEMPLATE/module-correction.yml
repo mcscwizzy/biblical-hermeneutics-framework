@@ -1,0 +1,37 @@
+name: Module correction
+description: Report a factual error in an existing module (a source is required).
+title: "[correction] <module id>: <short description>"
+labels: ["correction", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Corrections to factual claims (history, language, scholarship) **must**
+        include a source. See core.anti-hallucination.
+  - type: input
+    id: module
+    attributes:
+      label: Module id
+      placeholder: book.romans
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: The claim that is wrong or misleading
+      description: Quote the current text.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source(s)
+      description: Citation(s) supporting the correction. Required.
+    validations:
+      required: true

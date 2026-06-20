@@ -1,0 +1,26 @@
+# Named profiles: curated module sets for tools/compose.py.
+# Transitive `requires` are resolved automatically; list the modules you want
+# foregrounded. Regenerate the committed .md artifacts with:
+#   python tools/compose.py --profile <name> --write
+
+profiles:
+  minimal-7b:
+    description: >-
+      Smallest viable method prompt for tiny local models (~3B-7B). Core
+      posture only: context-first, observe/interpret/apply, label confidence.
+    modules:
+      - core.core-framework
+      - core.observe-interpret-apply
+      - core.epistemic-humility
+
+  standard:
+    description: >-
+      Balanced, genre-agnostic method for most use. The full core discipline,
+      including original-audience and anti-hallucination. Add a genre/book
+      module (e.g. genre.epistle, book.romans) for a specific study.
+    modules:
+      - core.core-framework
+      - core.observe-interpret-apply
+      - core.original-audience
+      - core.epistemic-humility
+      - core.anti-hallucination

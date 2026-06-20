@@ -1,0 +1,36 @@
+name: Behavioral eval (manual)
+
+# Behavioral evaluations score interpretive METHOD, not doctrine. They are
+# optional and run only on manual dispatch so required CI never depends on a
+# model API key or any specific vendor. See tests/README.md.
+
+on:
+  workflow_dispatch:
+    inputs:
+      note:
+        description: "Optional note for this eval run"
+        required: false
+        default: ""
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install tooling dependencies
+        run: pip install -r tools/requirements.txt
+
+      - name: List fixtures and rubrics
+        run: |
+          echo "Fixtures:"; ls -1 tests/prompts/ || true
+          echo "Rubrics:";  ls -1 tests/rubrics/ || true
+
+      - name: Placeholder — wire up a model runner here
+        run: |
+          echo "Behavioral evals are run manually against any model; see tests/README.md."
+          echo "To automate: compose a fixture's modules, send to a model API, score against the rubric."

@@ -1,0 +1,29 @@
+name: Bug report (tooling)
+description: Report a problem with validate.py, compose.py, or CI.
+title: "[bug] <short description>"
+labels: ["bug", "needs-triage"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you run and what went wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Exact command(s) and any error output.
+      render: shell
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      description: OS and Python version (`python --version`).

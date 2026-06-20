@@ -1,0 +1,49 @@
+name: New module proposal
+description: Propose a new genre, book, historical, or language module.
+title: "[module] <type>.<slug>: <short description>"
+labels: ["module", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing a module! Please skim GOVERNANCE.md (the Neutrality
+        Charter) and docs/module-spec.md first. BHF teaches **method, not doctrine**.
+  - type: dropdown
+    id: type
+    attributes:
+      label: Module type
+      options: [genre, book, historical, language]
+    validations:
+      required: true
+  - type: input
+    id: id
+    attributes:
+      label: Proposed module id
+      description: "<type>.<slug>, e.g. historical.second-temple-judaism"
+      placeholder: historical.second-temple-judaism
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Purpose
+      description: What interpretive habit or background would this module add?
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Likely `requires` and `recommends` module ids.
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Reference works you would draw on (factual claims must be sourceable).
+  - type: checkboxes
+    id: neutrality
+    attributes:
+      label: Neutrality
+      options:
+        - label: This module will describe method and the range of views, not prescribe doctrine.
+          required: true
