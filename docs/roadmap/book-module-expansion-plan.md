@@ -150,7 +150,8 @@ changes expected.
       — done 2026-06-20; 33 modules valid, scholar.md regenerated (~16k tokens).
 - [x] Step 1 — Torah (Exodus, Leviticus, Numbers, Deuteronomy)
       — done 2026-06-20; 37 modules valid.
-- [ ] Step 2 — Historical Books (Joshua … Esther, 12)
+- [x] Step 2 — Historical Books (Joshua … Esther, 12)
+      — done 2026-06-20; 49 modules valid.
 - [ ] Step 3 — Wisdom (Job, Proverbs, Ecclesiastes, Song of Songs)
 - [ ] Step 4 — Major Prophets (Isaiah, Jeremiah, Lamentations, Ezekiel, Daniel)
 - [ ] Step 5 — Minor Prophets (Hosea … Malachi, 12)

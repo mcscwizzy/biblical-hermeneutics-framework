@@ -30,6 +30,15 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
   `book.leviticus`, `book.numbers`, and `book.deuteronomy` (joining
   `book.genesis`). Each is a hermeneutic profile keyed to the book's mix of
   narrative, law, and ritual; method only, denomination-neutral.
+- **Historical Books Book modules** (12): `book.joshua`, `book.judges`,
+  `book.ruth`, `book.1-samuel`, `book.2-samuel`, `book.1-kings`, `book.2-kings`,
+  `book.1-chronicles`, `book.2-chronicles`, `book.ezra`, `book.nehemiah`, and
+  `book.esther`. All primary `genre.narrative`, drawing on the new
+  `context.israelite-monarchy` and `context.exile-and-restoration` modules as
+  each book's setting requires. Method only, denomination-neutral; sensitive
+  material (conquest/ḥerem, the separation texts in Ezra–Nehemiah, the violence
+  and divine silence in Esther) is handled by presenting the major approaches
+  and leaving the conclusion to the reader.
 - **Context layer** (`framework/context/`): a category for historical, cultural,
   and literary background reusable across books and genres. New modules:
   `context.ancient-near-east`, `context.second-temple-judaism`, `context.temple`,
