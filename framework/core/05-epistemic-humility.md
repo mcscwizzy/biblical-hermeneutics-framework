@@ -4,6 +4,7 @@ title: Epistemic Humility and Confidence Labels
 type: core
 version: 0.1.0
 status: stable
+order: 6
 tokens: 514
 requires: [core.core-framework]
 recommends: [core.anti-hallucination]

@@ -30,10 +30,14 @@ Modules declare relationships in frontmatter:
   model's budget.
 
 `tools/compose.py` takes a set of module ids (or a named profile), computes the
-transitive `requires` closure, topologically orders the result (core first, via
-the type-priority tiebreak in `tools/bhf_lib.py`), and concatenates the bodies
-into a single prompt. The dependency graph is guaranteed acyclic by
-`validate.py`.
+transitive `requires` closure, topologically orders the result, and concatenates
+the bodies into a single prompt. Dependencies always precede dependents; among
+modules with no ordering constraint between them, the sort key is
+`(type, order, id)` — so `core` comes before `genre` before `book`, and the
+optional `order` field sequences the core modules into a hermeneutical workflow
+(framework → genre awareness → original audience → observe/interpret/apply →
+intertextuality → epistemic humility → anti-hallucination). The dependency graph
+is guaranteed acyclic by `validate.py`.
 
 ```
 selected ids ──► resolve requires (transitive) ──► topological order ──► one prompt

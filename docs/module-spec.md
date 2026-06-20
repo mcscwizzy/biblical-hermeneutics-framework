@@ -19,6 +19,7 @@ title: Epistle Genre Module    # REQUIRED. Human-readable.
 type: genre                    # REQUIRED. One of the enum below.
 version: 0.1.0                 # REQUIRED. SemVer (per-module).
 status: stable                 # REQUIRED. draft | review | stable | deprecated
+order: 100                     # OPTIONAL. Within-type sequencing hint (lower = earlier).
 tokens: 450                    # REQUIRED. Approximate token cost (integer).
 requires: [core.core-framework]            # OPTIONAL. Hard deps, auto-loaded.
 recommends: [historical.roman-empire]      # OPTIONAL. Suggested companions.
@@ -38,6 +39,7 @@ license: CC-BY-4.0             # OPTIONAL (default CC-BY-4.0).
 | `type` | yes | One of: `core`, `genre`, `book`, `historical`, `language`, `profile`. Must be the prefix of `id`. |
 | `version` | yes | SemVer `MAJOR.MINOR.PATCH`. |
 | `status` | yes | One of: `draft`, `review`, `stable`, `deprecated`. |
+| `order` | no | Integer sequencing hint (default `100`); composition orders modules by `(type, order, id)`, so dependencies always precede dependents. Used mainly to sequence the `core` modules into a hermeneutical workflow. |
 | `tokens` | yes | Positive integer; approximate, used for budget-aware composition. Should be within ~25% of the validator's measured estimate. |
 | `requires` | no | List of existing module ids. Must resolve; no cycles. |
 | `recommends` | no | List of existing module ids. Must resolve. |

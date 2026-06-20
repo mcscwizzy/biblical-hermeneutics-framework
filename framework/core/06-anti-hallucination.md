@@ -4,6 +4,7 @@ title: Anti-Hallucination and Sourcing Discipline
 type: core
 version: 0.1.0
 status: stable
+order: 7
 tokens: 527
 requires: [core.core-framework]
 recommends: [core.epistemic-humility]

@@ -9,9 +9,14 @@ Neutral, working definitions of terms used across BHF modules. These describe
   context (the goal).
 - **Eisegesis** — reading meaning *into* a text from outside it (the error to
   avoid).
-- **Genre** — the kind of literature a text is (narrative, poetry, wisdom,
+- **Genre** — the kind of literature a text is (narrative, law, poetry, wisdom,
   prophecy, apocalyptic, gospel, epistle, etc.); genre sets the rules for how a
   text communicates.
+- **Intertextuality** — the literary relationship between texts, where one text
+  quotes, alludes to, echoes, or develops another; in BHF, an observable feature
+  of how biblical authors use earlier Scripture, not a doctrinal claim.
+- **Allusion** — an indirect reference to another text through shared wording or
+  imagery, weaker than a direct quotation and stronger than a faint echo.
 - **Pericope** — a self-contained unit of text (a scene, a paragraph, a saying)
   treated as a whole.
 - **Original audience** — the people to whom a text was first addressed, whose

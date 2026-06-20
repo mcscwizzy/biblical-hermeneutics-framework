@@ -47,6 +47,10 @@ class Module:
     sources_required: bool = True
     maintainers: list[str] = field(default_factory=list)
     license: str = "CC-BY-4.0"
+    # Optional within-type sequencing hint (lower = earlier). Controls the
+    # order modules appear in a composed prompt; defaults late so unordered
+    # modules fall back to id ordering. See docs/module-spec.md.
+    order: int = 100
 
     @property
     def xrefs(self) -> list[str]:
@@ -92,6 +96,7 @@ def load_module(path: Path) -> Module:
         sources_required=bool(meta.get("sources_required", True)),
         maintainers=list(meta.get("maintainers", []) or []),
         license=meta.get("license", "CC-BY-4.0"),
+        order=int(meta.get("order", 100)),
     )
 
 
@@ -135,8 +140,9 @@ def resolve(modules: dict[str, Module], selected: list[str]) -> list[Module]:
             indegree[mid] += 1
             dependents[dep].append(mid)
 
-    def sort_key(mid: str) -> tuple[int, str]:
-        return (TYPE_PRIORITY.get(modules[mid].type, 99), mid)
+    def sort_key(mid: str) -> tuple[int, int, str]:
+        mod = modules[mid]
+        return (TYPE_PRIORITY.get(mod.type, 99), mod.order, mid)
 
     ready = sorted((m for m in needed if indegree[m] == 0), key=sort_key)
     ordered: list[str] = []

@@ -11,7 +11,25 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
 
 ## [Unreleased]
 
+### Added
+
+- **Core module `core.genre-awareness`** — identify literary genre before
+  interpreting (the universal reflex; depth stays in the `genre/` modules).
+- **Core module `core.intertextuality`** — recognize where a text quotes,
+  alludes to, or develops earlier Scripture, framed as literary observation
+  (a neutral reframing of the proposed "Scripture interprets Scripture"; the
+  doctrinal canonical-unity assumption was deliberately not adopted).
+- Optional `order` frontmatter field: a within-type sequencing hint so the
+  composed prompt follows a hermeneutical workflow instead of alphabetical id
+  order. Composition now sorts by `(type, order, id)`.
+
 ### Changed
+
+- Reordered and renumbered the `core/` modules to a workflow sequence:
+  framework → genre awareness → original audience → observe/interpret/apply →
+  intertextuality → epistemic humility → anti-hallucination.
+- Profiles updated: `minimal-7b` now includes genre awareness; `standard`
+  includes all seven core modules in workflow order.
 
 - `LICENSE` now contains the canonical MIT text (no preamble) so GitHub's
   license detection recognizes it; the code/content split is documented in

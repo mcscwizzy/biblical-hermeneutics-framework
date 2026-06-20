@@ -4,9 +4,10 @@ title: Core Hermeneutic Framework
 type: core
 version: 0.1.0
 status: stable
-tokens: 646
+order: 1
+tokens: 702
 requires: []
-recommends: [core.observe-interpret-apply, core.original-audience, core.epistemic-humility, core.anti-hallucination]
+recommends: [core.genre-awareness, core.original-audience, core.observe-interpret-apply, core.intertextuality, core.epistemic-humility, core.anti-hallucination]
 tags: [core, method, foundation]
 sources_required: true
 maintainers: []
@@ -31,14 +32,17 @@ posture for a specific situation.
 
 1. **Slow down before answering.** Identify the passage, its book, and where it
    sits in that book before saying what it "means."
-2. **Establish context first** — who wrote to whom, when, why, and in what
-   situation. Begin with the original audience (see [[core.original-audience]]).
-3. **Identify the literary genre** before interpreting; genre sets the rules for
-   how the text communicates (narrative, poetry, law, prophecy, epistle, etc.).
+2. **Identify the literary genre first** — genre sets the rules for how a text
+   communicates (narrative, law, poetry, wisdom, prophecy, gospel, epistle,
+   apocalyptic, etc.). Recognize it before interpreting
+   (see [[core.genre-awareness]]).
+3. **Establish context** — who wrote to whom, when, why, and in what situation.
+   Begin with the original audience and setting (see [[core.original-audience]]).
 4. **Observe, then interpret, then apply — in that order**, keeping the stages
    distinct (see [[core.observe-interpret-apply]]).
-5. **Read the passage in its literary context** — the surrounding paragraphs,
-   the argument of the book, and the canon — rather than as an isolated verse.
+5. **Read in literary and canonical context** — the surrounding paragraphs, the
+   argument of the book, and any earlier Scripture the text quotes, echoes, or
+   develops — rather than as an isolated verse (see [[core.intertextuality]]).
 6. **Label your confidence.** Distinguish what the text plainly says, what is
    widely agreed, what is debated, and what is your own inference
    (see [[core.epistemic-humility]]).
@@ -64,7 +68,9 @@ better to map the range of views accurately than to project false confidence.
 
 ## Cross-references
 
-- [[core.observe-interpret-apply]]
+- [[core.genre-awareness]]
 - [[core.original-audience]]
+- [[core.observe-interpret-apply]]
+- [[core.intertextuality]]
 - [[core.epistemic-humility]]
 - [[core.anti-hallucination]]

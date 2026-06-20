@@ -4,6 +4,7 @@ title: Begin with the Original Audience
 type: core
 version: 0.1.0
 status: stable
+order: 3
 tokens: 512
 requires: [core.core-framework]
 recommends: [historical.roman-empire]

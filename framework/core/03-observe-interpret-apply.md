@@ -4,9 +4,10 @@ title: Observation, Interpretation, Application
 type: core
 version: 0.1.0
 status: stable
+order: 4
 tokens: 541
 requires: [core.core-framework]
-recommends: []
+recommends: [core.intertextuality]
 tags: [core, method, inductive]
 sources_required: true
 maintainers: []

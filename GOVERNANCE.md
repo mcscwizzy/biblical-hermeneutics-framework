@@ -17,7 +17,7 @@ principles:
 2. **Represent the spread fairly.** Where scholarship is genuinely divided, a
    module presents the major positions in proportion to their support, labeled
    (consensus / majority / minority / speculative) per
-   [`core.epistemic-humility`](framework/core/03-epistemic-humility.md).
+   [`core.epistemic-humility`](framework/core/05-epistemic-humility.md).
 3. **Method over conclusion.** Tests and rubrics evaluate whether a model
    *reasoned well* (identified genre, separated observation from application,
    admitted uncertainty), never whether it reached a particular answer.

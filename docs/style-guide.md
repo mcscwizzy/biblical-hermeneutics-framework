@@ -16,7 +16,7 @@ these conventions when writing or editing content.
 - Describe **method and the range of views**, never a doctrinal verdict.
 - Do not use a tradition's in-house framing as if it were neutral. When a view is
   contested, attribute it and label its support
-  (see [`../framework/core/03-epistemic-humility.md`](../framework/core/03-epistemic-humility.md)).
+  (see [`../framework/core/05-epistemic-humility.md`](../framework/core/05-epistemic-humility.md)).
 - Avoid first-person plural that implies a shared creed ("we believe…").
 
 ## Sourcing
@@ -24,7 +24,7 @@ these conventions when writing or editing content.
 - Any factual claim about history, language, dating, authorship, or scholarship
   must be **sourceable** or **explicitly framed as uncertain**.
 - Never invent a scholar, citation, date, statistic, or manuscript detail
-  (see [`../framework/core/04-anti-hallucination.md`](../framework/core/04-anti-hallucination.md)).
+  (see [`../framework/core/06-anti-hallucination.md`](../framework/core/06-anti-hallucination.md)).
 
 ## Structure
 
