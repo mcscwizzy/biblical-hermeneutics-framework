@@ -30,6 +30,15 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
   `book.leviticus`, `book.numbers`, and `book.deuteronomy` (joining
   `book.genesis`). Each is a hermeneutic profile keyed to the book's mix of
   narrative, law, and ritual; method only, denomination-neutral.
+- **Minor Prophets Book modules** (12): `book.hosea`, `book.joel`, `book.amos`,
+  `book.obadiah`, `book.jonah`, `book.micah`, `book.nahum`, `book.habakkuk`,
+  `book.zephaniah`, `book.haggai`, `book.zechariah`, and `book.malachi`. Primary
+  `genre.prophecy` (most with `genre.poetry`), wired to `context.israelite-monarchy`
+  (pre-exilic) or `context.exile-and-restoration` (post-exilic) by setting.
+  Exceptions per design: `book.jonah` is primary `genre.narrative` (prophetic
+  story carried by irony); `book.zechariah` adds `genre.apocalyptic` for its
+  night-visions. Joel's and Obadiah's debated dates are held loosely. All
+  reference `core.intertextuality`.
 - **Major Prophets Book modules** (5): `book.isaiah`, `book.jeremiah` (prophecy +
   poetry; monarchy into exile), `book.lamentations` (poetry, not prophecy —
   communal lament over the fallen city), `book.ezekiel` (prophecy + apocalyptic;
