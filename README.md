@@ -35,16 +35,25 @@ encourage a model to:
 
 ## Quick start
 
-### Option A — copy/paste a ready-made profile (no tools needed)
+### Option A — use the hosted GPT (nothing to install)
+
+Try BHF instantly in the
+[**Biblical Hermeneutics Framework (BHF) GPT**](https://chatgpt.com/g/g-6a36d3641a1c8191afa101ed50a927e9-biblical-hermeneutics-framework-bhf)
+— a public ChatGPT custom GPT preloaded with the full-depth
+[`scholar`](profiles/scholar.md) profile. Just open it and ask your question.
+(Requires a ChatGPT account; powered by the same open modules in this repo.)
+
+### Option B — copy/paste a ready-made profile (no tools needed)
 
 1. Open a pre-assembled prompt in [`profiles/`](profiles/):
    - [`profiles/minimal-7b.md`](profiles/minimal-7b.md) — smallest, for tiny local models.
    - [`profiles/standard.md`](profiles/standard.md) — balanced, for most use.
+   - [`profiles/scholar.md`](profiles/scholar.md) — full-depth, for frontier models with large context windows (this powers the hosted GPT above).
 2. Paste it into your model's **system prompt** / **custom instructions** /
    **Modelfile** / **Project** instructions.
 3. Ask your question. See [`docs/how-to-use/`](docs/how-to-use/) for per-runtime guides.
 
-### Option B — compose your own from modules (light tooling)
+### Option C — compose your own from modules (light tooling)
 
 ```bash
 pip install -r tools/requirements.txt
