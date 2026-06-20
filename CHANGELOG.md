@@ -31,5 +31,5 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
 - **Tests:** behavioral rubric (`core-behaviors`) + Romans fixture.
 - **Licensing:** dual CC BY 4.0 (content) + MIT (code).
 
-[Unreleased]: https://github.com/OWNER/biblical-hermeneutic-framework/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/OWNER/biblical-hermeneutic-framework/releases/tag/v0.1.0
+[Unreleased]: https://github.com/mcscwizzy/biblical-hermeneutics-framework/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/mcscwizzy/biblical-hermeneutics-framework/releases/tag/v0.1.0

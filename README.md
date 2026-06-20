@@ -2,7 +2,7 @@
 
 **A model-agnostic, open-source framework that teaches AI models *how* to interpret Scripture responsibly — not *what* to believe.**
 
-[![Validate](https://github.com/OWNER/biblical-hermeneutic-framework/actions/workflows/validate.yml/badge.svg)](https://github.com/OWNER/biblical-hermeneutic-framework/actions/workflows/validate.yml)
+[![Validate](https://github.com/mcscwizzy/biblical-hermeneutics-framework/actions/workflows/validate.yml/badge.svg)](https://github.com/mcscwizzy/biblical-hermeneutics-framework/actions/workflows/validate.yml)
 &nbsp; Content: **CC BY 4.0** · Code: **MIT** · Version: see [`VERSION`](VERSION)
 
 ---
