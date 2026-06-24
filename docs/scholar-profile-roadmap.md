@@ -12,7 +12,7 @@ The 28 modules in [scholar.md](file:///home/johnwalker/Documents/github/biblical
 
 ```mermaid
 graph TD
-    subgraph Layer 1: Foundational Engine
+    subgraph L1 ["Layer 1: Foundational Engine"]
         Core[Core Framework] --> GenreAw[Genre Awareness]
         Core --> Audience[Original Audience]
         Core --> Observe[Observe-Interpret-Apply]
@@ -21,12 +21,12 @@ graph TD
         Core --> AntiHal[Anti-Hallucination]
     end
 
-    subgraph Layer 2: Original Languages
+    subgraph L2 ["Layer 2: Original Languages"]
         Greek[Koine Greek]
         Hebrew[Biblical Hebrew & Aramaic]
     end
 
-    subgraph Layer 3: Historical & Cultural Contexts
+    subgraph L3 ["Layer 3: Historical & Cultural Contexts"]
         ANE[Ancient Near East]
         Cov[Covenants]
         Exile[Exile & Restoration]
@@ -40,7 +40,7 @@ graph TD
         Patron[Patronage & Benefaction]
     end
 
-    subgraph Layer 4: Literary Genres
+    subgraph L4 ["Layer 4: Literary Genres"]
         GenApoc[Apocalyptic]
         GenEpis[Epistle]
         GenGosp[Gospel]
@@ -51,9 +51,9 @@ graph TD
         GenWis[Wisdom]
     end
 
-    Layer 1 --> Layer 2
-    Layer 1 --> Layer 3
-    Layer 1 --> Layer 4
+    L1 --> L2
+    L1 --> L3
+    L1 --> L4
 ```
 
 ---
