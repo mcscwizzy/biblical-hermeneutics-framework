@@ -8,6 +8,12 @@ from .adapters import ChatAdapter, OpenAICompatibleAdapter
 from .config import AgentConfig, ConfigError
 from .genre import classify_genre
 from .knowledge import LocalKnowledgeBundle, lookup_local_knowledge
+from .memory import (
+    SessionMemory,
+    append_session_turn,
+    load_session_memory,
+    save_session_memory,
+)
 from .models import (
     AgentResult,
     ChatRequest,
@@ -43,12 +49,14 @@ class BHFAgent:
         ctx = self._classify_question_type(ctx)
         ctx = self._load_profile(ctx)
         ctx = self._lookup_local_knowledge(ctx)
+        ctx = self._load_session_memory(ctx)
         ctx = self._build_prompts(ctx)
         ctx = self._call_model(ctx)
         ctx = self._clean_output(ctx)
         ctx = self._validate_response(ctx)
         ctx = self._repair_response(ctx)
         ctx = self._finalize_result(ctx)
+        ctx = self._save_session_turn(ctx)
         return self._to_agent_result(ctx)
 
     def _initialize_context(self, question: str) -> PipelineContext:
@@ -71,6 +79,10 @@ class BHFAgent:
                 "max_repair_attempts": self.config.max_repair_attempts,
                 "repair_attempted": False,
                 "repair_applied": False,
+                "memory_enabled": self.config.memory_enabled,
+                "session_id": self.config.session_id or "default",
+                "memory_turns_loaded": 0,
+                "memory_saved": False,
             },
         )
         return self._mark_stage(ctx, "initialize_context")
@@ -118,6 +130,23 @@ class BHFAgent:
         ctx.debug_metadata["local_knowledge_keys"] = bundle.keys()
         return self._mark_stage(ctx, "lookup_local_knowledge")
 
+    def _load_session_memory(self, ctx: PipelineContext) -> PipelineContext:
+        if not self.config.memory_enabled:
+            ctx.session_memory = None
+            return self._mark_stage(ctx, "load_session_memory")
+        memory, warnings = load_session_memory(
+            self.config.memory_path,
+            self.config.session_id,
+            int(self.config.memory_max_turns),
+        )
+        ctx.session_memory = memory
+        ctx.warnings.extend(warnings)
+        ctx.debug_metadata["session_id"] = memory.session_id
+        ctx.debug_metadata["memory_turns_loaded"] = len(memory.turns)
+        if warnings:
+            ctx.debug_metadata["memory_warnings"] = warnings
+        return self._mark_stage(ctx, "load_session_memory")
+
     def _build_prompts(self, ctx: PipelineContext) -> PipelineContext:
         if (
             ctx.reference_context is None
@@ -136,6 +165,7 @@ class BHFAgent:
             ctx.original_question,
             show_method_notes=self.config.show_method_notes,
             local_knowledge=ctx.local_knowledge,
+            session_memory=ctx.session_memory,
             answer_mode=ctx.answer_mode,
         )
         return self._mark_stage(ctx, "build_prompts")
@@ -164,6 +194,9 @@ class BHFAgent:
                 "local_knowledge_keys": ctx.debug_metadata.get(
                     "local_knowledge_keys", []
                 ),
+                "memory_enabled": self.config.memory_enabled,
+                "session_id": ctx.debug_metadata.get("session_id"),
+                "memory_turns_loaded": ctx.debug_metadata.get("memory_turns_loaded", 0),
             },
         )
         chat_response = self.adapter.chat(chat_request)
@@ -323,6 +356,42 @@ class BHFAgent:
         ctx.final_answer = ctx.cleaned_answer_text or ""
         return self._mark_stage(ctx, "finalize_result")
 
+    def _save_session_turn(self, ctx: PipelineContext) -> PipelineContext:
+        if not self.config.memory_enabled:
+            return self._mark_stage(ctx, "save_session_turn")
+        if (
+            ctx.reference_context is None
+            or ctx.genre_context is None
+            or ctx.question_context is None
+            or ctx.profile_name is None
+        ):
+            raise RuntimeError("pipeline context is incomplete before saving memory")
+        memory = ctx.session_memory
+        if not isinstance(memory, SessionMemory):
+            memory = SessionMemory(session_id=self.config.session_id or "default")
+        append_session_turn(
+            memory,
+            question=ctx.original_question,
+            answer_text=ctx.final_answer or "",
+            reference_context=ctx.reference_context,
+            genre_context=ctx.genre_context,
+            question_context=ctx.question_context,
+            profile=ctx.profile_name,
+            answer_mode=ctx.answer_mode,
+            max_turns=int(self.config.memory_max_turns),
+        )
+        path = save_session_memory(
+            memory,
+            self.config.memory_path,
+            int(self.config.memory_max_turns),
+        )
+        ctx.session_memory = memory
+        ctx.memory_path = str(path)
+        ctx.debug_metadata["memory_saved"] = True
+        ctx.debug_metadata["memory_path"] = str(path)
+        ctx.debug_metadata["memory_turns_saved"] = len(memory.turns)
+        return self._mark_stage(ctx, "save_session_turn")
+
     def _to_agent_result(self, ctx: PipelineContext) -> AgentResult:
         if (
             ctx.reference_context is None
@@ -342,6 +411,11 @@ class BHFAgent:
             "base_url": self.config.base_url,
             "configured_model": self.config.model,
             "answer_mode": ctx.answer_mode,
+            "memory_enabled": self.config.memory_enabled,
+            "session_id": ctx.debug_metadata.get("session_id"),
+            "memory_path": ctx.debug_metadata.get("memory_path"),
+            "memory_turns_loaded": ctx.debug_metadata.get("memory_turns_loaded", 0),
+            "memory_turns_saved": ctx.debug_metadata.get("memory_turns_saved", 0),
             "model": chat_response.model,
             "usage": chat_response.usage,
             "cleanup_applied": ctx.debug_metadata.get("output_cleanup_applied", False),

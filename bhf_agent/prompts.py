@@ -9,6 +9,7 @@ from .knowledge import (
     LocalKnowledgeBundle,
     format_local_knowledge_for_prompt,
 )
+from .memory import SessionMemory, format_session_memory_for_prompt
 from .models import GenreContext, QuestionContext, ReferenceContext
 
 
@@ -370,6 +371,7 @@ def build_prompt(
     show_method_notes: bool = True,
     lexical_entries: list[LexicalEntry] | None = None,
     local_knowledge: LocalKnowledgeBundle | None = None,
+    session_memory: SessionMemory | None = None,
     answer_mode: str = "study",
 ) -> tuple[str, str]:
     """Return `(system_prompt, user_prompt)` for a BHF agent call."""
@@ -403,6 +405,9 @@ def build_prompt(
     local_knowledge_prompt = format_local_knowledge_for_prompt(local_knowledge)
     if local_knowledge_prompt:
         system_sections.append(local_knowledge_prompt)
+    session_memory_prompt = format_session_memory_for_prompt(session_memory)
+    if session_memory_prompt:
+        system_sections.append(session_memory_prompt)
 
     system_prompt = "\n\n".join(system_sections)
     user_prompt = strategy.user_prompt(

@@ -11,5 +11,10 @@ env/
 .idea/
 .vscode/
 
+# Local BHF Agent sessions/config/output
+.bhf/
+local.config.json
+output.txt
+
 # Composed scratch output (committed profiles live in profiles/*.md)
 /tmp-prompt.md

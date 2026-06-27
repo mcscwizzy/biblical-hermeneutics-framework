@@ -95,6 +95,31 @@ class CLITests(unittest.TestCase):
 
         self.assertEqual(args.answer_mode, "teaching")
 
+    def test_memory_flags_parse(self):
+        parser = build_parser()
+
+        args = parser.parse_args(
+            [
+                "--memory",
+                "--session-id",
+                "lesson-1",
+                "--memory-path",
+                "/tmp/bhf-sessions",
+                "--memory-max-turns",
+                "3",
+                "What does Proverbs 3 mean?",
+            ]
+        )
+        no_memory_args = parser.parse_args(
+            ["--no-memory", "What does Proverbs 3 mean?"]
+        )
+
+        self.assertTrue(args.memory_enabled)
+        self.assertEqual(args.session_id, "lesson-1")
+        self.assertEqual(args.memory_path, "/tmp/bhf-sessions")
+        self.assertEqual(args.memory_max_turns, 3)
+        self.assertFalse(no_memory_args.memory_enabled)
+
     def test_default_output_does_not_expose_pipeline_internals(self):
         stdout = io.StringIO()
 
@@ -180,6 +205,8 @@ class CLITests(unittest.TestCase):
         self.assertIn("Max repair attempts: 1", output)
         self.assertIn("Repair attempted: false", output)
         self.assertIn("Repair applied: false", output)
+        self.assertIn("Memory enabled: false", output)
+        self.assertIn("Memory max turns: 8", output)
         self.assertIn("Local knowledge used: ruach", output)
         self.assertIn("Output cleanup applied: true", output)
         self.assertNotIn("secret", output)

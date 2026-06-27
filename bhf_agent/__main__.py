@@ -53,6 +53,28 @@ def build_parser() -> argparse.ArgumentParser:
         type=int,
         help="Validation score below which repair should be attempted",
     )
+    memory_group = parser.add_mutually_exclusive_group()
+    memory_group.add_argument(
+        "--memory",
+        dest="memory_enabled",
+        action="store_true",
+        default=None,
+        help="Enable local session memory for this run",
+    )
+    memory_group.add_argument(
+        "--no-memory",
+        dest="memory_enabled",
+        action="store_false",
+        default=None,
+        help="Disable local session memory for this run",
+    )
+    parser.add_argument("--session-id", help="Local memory session id")
+    parser.add_argument("--memory-path", help="Directory for local session memory files")
+    parser.add_argument(
+        "--memory-max-turns",
+        type=int,
+        help="Maximum prior turns to keep in local session memory",
+    )
     parser.add_argument(
         "--show-debug",
         action="store_true",
@@ -73,6 +95,10 @@ def config_from_args(args: argparse.Namespace) -> AgentConfig:
         auto_repair=getattr(args, "auto_repair", None),
         max_repair_attempts=getattr(args, "max_repair_attempts", None),
         repair_threshold=getattr(args, "repair_threshold", None),
+        memory_enabled=getattr(args, "memory_enabled", None),
+        session_id=getattr(args, "session_id", None),
+        memory_path=getattr(args, "memory_path", None),
+        memory_max_turns=getattr(args, "memory_max_turns", None),
         debug=True if args.show_debug else None,
     )
 
@@ -134,6 +160,9 @@ def main(argv: Optional[list[str]] = None) -> int:
         print("Repair decision:", result.repair_reason or "none")
         print("Repair attempted:", str(result.repair_attempted).lower())
         print("Repair applied:", str(result.repair_applied).lower())
+        print("Memory enabled:", str(config.memory_enabled).lower())
+        print("Session id:", config.session_id or "default")
+        print("Memory max turns:", config.memory_max_turns)
         original_score = (
             result.original_validation_result.score
             if result.original_validation_result

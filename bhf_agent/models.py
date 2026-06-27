@@ -137,6 +137,8 @@ class PipelineContext(Serializable):
     profile_name: Optional[str] = None
     profile_content: Optional[str] = None
     local_knowledge: Optional[Any] = None
+    session_memory: Optional[Any] = None
+    memory_path: Optional[str] = None
     system_prompt: Optional[str] = None
     user_prompt: Optional[str] = None
     raw_model_response: Optional[ChatResponse] = None

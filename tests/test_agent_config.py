@@ -88,6 +88,10 @@ class AgentConfigTests(unittest.TestCase):
         self.assertEqual(config.max_repair_attempts, 1)
         self.assertEqual(config.repair_threshold, 80)
         self.assertEqual(config.answer_mode, "study")
+        self.assertFalse(config.memory_enabled)
+        self.assertIsNone(config.session_id)
+        self.assertIsNone(config.memory_path)
+        self.assertEqual(config.memory_max_turns, 8)
 
     def test_config_accepts_valid_answer_modes(self):
         for answer_mode in ("concise", "study", "teaching", "scholar"):
@@ -208,6 +212,60 @@ class AgentConfigTests(unittest.TestCase):
         config = config_from_args(args)
 
         self.assertFalse(config.auto_repair)
+
+    def test_cli_memory_overrides_config_values(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "agent.json"
+            path.write_text(
+                json.dumps(
+                    {
+                        "config_version": 1,
+                        "adapter": "openai_compatible",
+                        "base_url": "http://localhost:1234/v1",
+                        "model": "local-model",
+                        "profile": "standard",
+                        "memory_enabled": False,
+                        "memory_max_turns": 8,
+                    }
+                ),
+                encoding="utf-8",
+            )
+            args = argparse.Namespace(
+                config=str(path),
+                profile=None,
+                answer_mode=None,
+                base_url=None,
+                model=None,
+                temperature=None,
+                max_tokens=None,
+                auto_repair=None,
+                max_repair_attempts=None,
+                repair_threshold=None,
+                memory_enabled=True,
+                session_id="lesson-1",
+                memory_path=str(Path(tmp) / "sessions"),
+                memory_max_turns=3,
+                show_debug=False,
+            )
+
+            config = config_from_args(args)
+
+        self.assertTrue(config.memory_enabled)
+        self.assertEqual(config.session_id, "lesson-1")
+        self.assertEqual(config.memory_max_turns, 3)
+
+    def test_config_rejects_invalid_memory_max_turns(self):
+        with self.assertRaisesRegex(ConfigError, "memory_max_turns"):
+            AgentConfig.from_mapping(
+                {
+                    "config_version": 1,
+                    "adapter": "openai_compatible",
+                    "base_url": "http://localhost:1234/v1",
+                    "model": "local-model",
+                    "profile": "standard",
+                    "memory_max_turns": 0,
+                }
+            )
 
     def test_missing_required_openai_compatible_values_are_clear(self):
         with self.assertRaisesRegex(ConfigError, "base_url is required"):

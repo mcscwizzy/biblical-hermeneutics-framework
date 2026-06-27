@@ -2,6 +2,7 @@ import unittest
 
 from bhf_agent.genre import classify_genre
 from bhf_agent.knowledge import lookup_lexical_entries, lookup_local_knowledge
+from bhf_agent.memory import SessionMemory, SessionTurn
 from bhf_agent.prompts import build_prompt
 from bhf_agent.question_types import classify_question_type
 from bhf_agent.references import detect_reference
@@ -231,6 +232,39 @@ class PromptBuildingTests(unittest.TestCase):
         self.assertIn("Genre: wisdom literature", system_prompt)
         self.assertIn("Genre guide (genre:wisdom literature)", system_prompt)
         self.assertIn("not automatic formulas", system_prompt)
+
+    def test_prompt_includes_local_session_memory_when_available(self):
+        memory = SessionMemory(
+            session_id="lesson",
+            turns=[
+                SessionTurn(
+                    question="What does Proverbs 3 mean?",
+                    answer_summary="Prior answer about wisdom context.",
+                    reference_context={"book": "Proverbs", "is_reference_based": True},
+                    genre_context={"primary_genre": "wisdom literature"},
+                    question_type="passage_study",
+                    profile="standard",
+                    answer_mode="study",
+                    timestamp="2026-06-27T00:00:00+00:00",
+                )
+            ],
+        )
+
+        system_prompt, _ = build_prompt(
+            "standard",
+            "PROFILE",
+            self.reference,
+            self.genre,
+            "What does Proverbs 3 mean?",
+            session_memory=memory,
+        )
+
+        self.assertIn("Local Session Memory", system_prompt)
+        self.assertIn(
+            "The following is local session context from prior turns. Use it only to maintain continuity.",
+            system_prompt,
+        )
+        self.assertIn("Prior answer about wisdom context.", system_prompt)
 
     def test_standard_word_study_includes_non_rigid_guidance(self):
         question = "What does logos mean?"

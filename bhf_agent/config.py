@@ -32,6 +32,10 @@ class AgentConfig:
     auto_repair: bool = False
     max_repair_attempts: int = 1
     repair_threshold: int = 80
+    memory_enabled: bool = False
+    session_id: Optional[str] = None
+    memory_path: Optional[str] = None
+    memory_max_turns: int = 8
 
     @classmethod
     def from_json_file(cls, path: Union[str, Path]) -> "AgentConfig":
@@ -96,6 +100,8 @@ class AgentConfig:
             raise ConfigError("max_repair_attempts must be greater than or equal to 0")
         if not 0 <= int(self.repair_threshold) <= 100:
             raise ConfigError("repair_threshold must be between 0 and 100")
+        if int(self.memory_max_turns) <= 0:
+            raise ConfigError("memory_max_turns must be greater than 0")
 
     def to_dict(self, redact_secrets: bool = True) -> dict[str, Any]:
         data = asdict(self)

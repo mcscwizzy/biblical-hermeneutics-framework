@@ -68,6 +68,34 @@ python tools/compose.py --modules genre.epistle,book.romans
 python tools/compose.py --profile standard
 ```
 
+### Option D — use the local BHF Agent
+
+The Python agent wraps a local OpenAI-compatible model with BHF method,
+deterministic reference/genre detection, local curated context, optional repair,
+offline evals, and disabled-by-default local session memory.
+
+```bash
+python -m bhf_agent \
+  --config examples/config.local-openai-compatible.json \
+  --answer-mode study \
+  "What should I know about the context of Proverbs 3?"
+
+python tools/eval_local.py \
+  --fixture tests/prompts/proverbs-context-basic.json \
+  --answer-file output.txt
+
+python -m bhf_agent \
+  --config examples/config.local-openai-compatible.json \
+  --memory \
+  --session-id sunday-school-proverbs \
+  --memory-max-turns 4 \
+  "How should I teach Proverbs 3?"
+```
+
+Answer modes (`concise`, `study`, `teaching`, `scholar`) shape answer format and
+depth independently from BHF profiles. Session memory is local-only, stores
+compact summaries under `.bhf/sessions/`, and is ignored by git.
+
 ---
 
 ## Repository layout
