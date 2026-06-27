@@ -31,6 +31,7 @@ class BHFAgent:
         genre_context = classify_genre(reference_context)
         profile = self.profile_loader.load(self.config.profile)
         system_prompt, user_prompt = build_prompt(
+            profile.name,
             profile.content,
             reference_context,
             genre_context,

@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from typing import ClassVar
+
 from .models import GenreContext, ReferenceContext
 
 
@@ -9,30 +11,91 @@ AGENT_INSTRUCTIONS = """# BHF Agent Runtime Instructions
 
 Use the BHF profile as method guidance, not as a doctrinal conclusion.
 
-For the response:
-- Begin with original audience, ancient context, and literary setting when relevant.
-- Identify the genre before drawing interpretive conclusions.
-- Separate observation, interpretation, and application.
-- Distinguish consensus, majority view, minority view, and speculation.
-- Admit uncertainty where evidence is limited or disputed.
-- Avoid hallucinated Hebrew, Greek, history, archaeology, or scholarly claims.
-- Avoid denominational overreach; present responsible ranges of interpretation.
-- Do not treat contemporary application as the text's original meaning.
-- Teach interpretation method rather than forcing conclusions.
+The profile content is the source of hermeneutics.
+The prompt strategy only shapes runtime answer format and model steering.
 """
 
 
-def build_prompt(
-    profile_content: str,
+class PromptStrategy:
+    """Base prompt strategy for profile-aware runtime steering."""
+
+    profile_names: ClassVar[tuple[str, ...]] = ()
+
+    def runtime_instructions(self, show_method_notes: bool) -> str:
+        raise NotImplementedError
+
+    def detected_context(self, reference_context: ReferenceContext, genre_context: GenreContext, show_method_notes: bool) -> str:
+        return build_detected_context(reference_context, genre_context, show_method_notes)
+
+
+class MinimalPromptStrategy(PromptStrategy):
+    profile_names: ClassVar[tuple[str, ...]] = ("minimal-7b",)
+
+    def runtime_instructions(self, show_method_notes: bool) -> str:
+        return "\n".join(
+            [
+                "# Minimal Runtime Strategy",
+                "- Keep answers short.",
+                "- Use simple sentences.",
+                "- Avoid scholarly surveys.",
+                "- Avoid precise dates unless they are supplied in the question or profile.",
+                "- Say uncertain instead of guessing.",
+                "- Use this required answer order and headings exactly: Genre; Original Audience / Ancient Context; Observation; Interpretation; Application; Cautions / Uncertainty.",
+                "- Keep each section brief.",
+                "- Do not add extra sections or long caveats.",
+            ]
+        )
+
+
+class StandardPromptStrategy(PromptStrategy):
+    profile_names: ClassVar[tuple[str, ...]] = ("standard",)
+
+    def runtime_instructions(self, show_method_notes: bool) -> str:
+        lines = [
+            "# Standard Runtime Strategy",
+            "- Use a structured answer with clear headings.",
+            "- Include brief method notes when enabled.",
+            "- Mention major interpretive views when they are relevant.",
+            "- Avoid denominational overreach.",
+            "- Stay grounded in the supplied profile and detected context.",
+            "- Do not invent scholars, citations, dates, or language claims.",
+        ]
+        if not show_method_notes:
+            lines.append("- Keep method notes concise or omit them if they would interrupt the answer.")
+        return "\n".join(lines)
+
+
+class ScholarPromptStrategy(PromptStrategy):
+    profile_names: ClassVar[tuple[str, ...]] = ("scholar",)
+
+    def runtime_instructions(self, show_method_notes: bool) -> str:
+        lines = [
+            "# Scholar Runtime Strategy",
+            "- Allow deeper answers with historical context and careful interpretation.",
+            "- Discuss intertextuality when it helps the reading.",
+            "- Note language cautions when relevant.",
+            "- Present multiple interpretive options when the evidence supports them.",
+            "- Use careful confidence labels for claims and alternatives.",
+            "- Do not invent scholars, citations, dates, manuscripts, or language claims.",
+            "- Do not overstate certainty when the evidence is mixed or incomplete.",
+        ]
+        if not show_method_notes:
+            lines.append("- Keep method notes concise if you include them.")
+        return "\n".join(lines)
+
+
+STRATEGY_CLASSES: tuple[type[PromptStrategy], ...] = (
+    MinimalPromptStrategy,
+    StandardPromptStrategy,
+    ScholarPromptStrategy,
+)
+
+
+def build_detected_context(
     reference_context: ReferenceContext,
     genre_context: GenreContext,
-    question: str,
-    show_method_notes: bool = True,
-) -> tuple[str, str]:
-    """Return `(system_prompt, user_prompt)` for a BHF agent call."""
-
-    # TODO: Add context-window-aware profile/module selection before loading
-    # large profile content into small local runtimes.
+    show_method_notes: bool,
+) -> str:
     context_lines = [
         "# Detected Context",
         f"- Reference based: {reference_context.is_reference_based}",
@@ -52,12 +115,36 @@ def build_prompt(
         context_lines.append(
             "- Keep method notes concise; prioritize the answer while preserving method."
         )
+    return "\n".join(context_lines)
+
+
+def strategy_for_profile(profile_name: str) -> PromptStrategy:
+    for strategy_cls in STRATEGY_CLASSES:
+        if profile_name in strategy_cls.profile_names:
+            return strategy_cls()
+    return StandardPromptStrategy()
+
+
+def build_prompt(
+    profile_name: str,
+    profile_content: str,
+    reference_context: ReferenceContext,
+    genre_context: GenreContext,
+    question: str,
+    show_method_notes: bool = True,
+) -> tuple[str, str]:
+    """Return `(system_prompt, user_prompt)` for a BHF agent call."""
+
+    # TODO: Add context-window-aware profile/module selection before loading
+    # large profile content into small local runtimes.
+    strategy = strategy_for_profile(profile_name)
 
     system_prompt = "\n\n".join(
         [
             profile_content.strip(),
             AGENT_INSTRUCTIONS.strip(),
-            "\n".join(context_lines),
+            strategy.runtime_instructions(show_method_notes).strip(),
+            strategy.detected_context(reference_context, genre_context, show_method_notes).strip(),
         ]
     )
     user_prompt = question.strip()
