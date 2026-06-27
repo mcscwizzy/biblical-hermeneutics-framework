@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from .knowledge import lookup_book_context
 from .models import GenreContext, ReferenceContext
 
 
@@ -212,7 +213,17 @@ def classify_genre(reference: ReferenceContext) -> GenreContext:
             confidence=0.35,
         )
     if reference.book in GENRE_MAP:
-        return GENRE_MAP[reference.book]
+        genre = GENRE_MAP[reference.book]
+        book_context = lookup_book_context(reference)
+        if book_context:
+            return GenreContext(
+                primary_genre=genre.primary_genre,
+                secondary_genres=list(genre.secondary_genres),
+                historical_context_hint=book_context.historical_context_hint,
+                recommended_modules=list(genre.recommended_modules),
+                confidence=genre.confidence,
+            )
+        return genre
     if reference.book in NARRATIVE_BOOKS:
         return GenreContext(
             "narrative",

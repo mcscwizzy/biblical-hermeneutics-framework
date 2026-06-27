@@ -7,7 +7,7 @@ from typing import Any, Optional
 from .adapters import ChatAdapter, OpenAICompatibleAdapter
 from .config import AgentConfig, ConfigError
 from .genre import classify_genre
-from .knowledge import lookup_lexical_entries
+from .knowledge import LocalKnowledgeBundle, lookup_local_knowledge
 from .models import (
     AgentResult,
     ChatRequest,
@@ -103,13 +103,19 @@ class BHFAgent:
         return self._mark_stage(ctx, "load_profile")
 
     def _lookup_local_knowledge(self, ctx: PipelineContext) -> PipelineContext:
-        if ctx.question_context is None:
-            raise RuntimeError("question_context must be set before local knowledge lookup")
-        lexical_entries = lookup_lexical_entries(ctx.question_context)
-        ctx.local_knowledge = lexical_entries
-        ctx.debug_metadata["local_knowledge_keys"] = [
-            entry.key for entry in lexical_entries
-        ]
+        if (
+            ctx.reference_context is None
+            or ctx.genre_context is None
+            or ctx.question_context is None
+        ):
+            raise RuntimeError("pipeline context is incomplete before local knowledge lookup")
+        bundle = lookup_local_knowledge(
+            ctx.reference_context,
+            ctx.genre_context,
+            ctx.question_context,
+        )
+        ctx.local_knowledge = bundle
+        ctx.debug_metadata["local_knowledge_keys"] = bundle.keys()
         return self._mark_stage(ctx, "lookup_local_knowledge")
 
     def _build_prompts(self, ctx: PipelineContext) -> PipelineContext:
@@ -129,7 +135,7 @@ class BHFAgent:
             ctx.question_context,
             ctx.original_question,
             show_method_notes=self.config.show_method_notes,
-            lexical_entries=ctx.local_knowledge or [],
+            local_knowledge=ctx.local_knowledge,
             answer_mode=ctx.answer_mode,
         )
         return self._mark_stage(ctx, "build_prompts")
@@ -327,7 +333,9 @@ class BHFAgent:
             or ctx.raw_model_response is None
         ):
             raise RuntimeError("pipeline context is incomplete before result conversion")
-        lexical_entries = ctx.local_knowledge or []
+        local_knowledge = ctx.local_knowledge
+        if not isinstance(local_knowledge, LocalKnowledgeBundle):
+            local_knowledge = LocalKnowledgeBundle(lexical_entries=[])
         chat_response = ctx.raw_model_response
         model_metadata: dict[str, Any] = {
             "adapter_type": self.config.adapter,
@@ -342,7 +350,7 @@ class BHFAgent:
             ),
             "local_knowledge_keys": ctx.debug_metadata.get("local_knowledge_keys", []),
             "local_knowledge_terms": [
-                entry.transliteration for entry in lexical_entries
+                entry.transliteration for entry in local_knowledge.lexical_entries
             ],
             "repair_applied": ctx.repair_applied,
             "repair_attempted": bool(ctx.repair_attempts),

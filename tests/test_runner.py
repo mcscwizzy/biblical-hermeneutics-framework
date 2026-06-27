@@ -77,6 +77,7 @@ class RunnerTests(unittest.TestCase):
         profiles_dir = Path(tempfile.mkdtemp())
         self.addCleanup(shutil.rmtree, profiles_dir, ignore_errors=True)
         (profiles_dir / "minimal-7b.md").write_text("PROFILE", encoding="utf-8")
+        (profiles_dir / "standard.md").write_text("PROFILE", encoding="utf-8")
         values = {
             "base_url": "http://localhost:1234/v1",
             "model": "fake-model",
@@ -162,6 +163,25 @@ class RunnerTests(unittest.TestCase):
         self.assertIn("Answer Mode: Teaching", adapter.request.system_prompt)
         self.assertEqual(result.model_metadata["answer_mode"], "teaching")
         self.assertEqual(result.model_metadata["pipeline"]["answer_mode"], "teaching")
+
+    def test_debug_metadata_includes_local_book_and_genre_keys(self):
+        adapter = RecordingAdapter()
+        agent = self.make_agent(adapter, profile="standard")
+
+        result = agent.ask("What does Proverbs 3 mean?")
+
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertIn("Book context (book:Proverbs)", adapter.request.system_prompt)
+        self.assertIn(
+            "Genre guide (genre:wisdom literature)",
+            adapter.request.system_prompt,
+        )
+        self.assertIn("book:Proverbs", result.model_metadata["local_knowledge_keys"])
+        self.assertIn(
+            "genre:wisdom literature",
+            result.model_metadata["pipeline"]["local_knowledge_keys"],
+        )
 
     def test_agent_result_uses_cleaned_answer_and_debug_metadata(self):
         with tempfile.TemporaryDirectory() as tmp:

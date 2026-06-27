@@ -136,7 +136,7 @@ class PipelineContext(Serializable):
     question_context: Optional[QuestionContext] = None
     profile_name: Optional[str] = None
     profile_content: Optional[str] = None
-    local_knowledge: Optional[list[Any]] = None
+    local_knowledge: Optional[Any] = None
     system_prompt: Optional[str] = None
     user_prompt: Optional[str] = None
     raw_model_response: Optional[ChatResponse] = None

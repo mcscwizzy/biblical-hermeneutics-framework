@@ -1,7 +1,7 @@
 import unittest
 
 from bhf_agent.genre import classify_genre
-from bhf_agent.knowledge import lookup_lexical_entries
+from bhf_agent.knowledge import lookup_lexical_entries, lookup_local_knowledge
 from bhf_agent.prompts import build_prompt
 from bhf_agent.question_types import classify_question_type
 from bhf_agent.references import detect_reference
@@ -206,6 +206,31 @@ class PromptBuildingTests(unittest.TestCase):
         self.assertIn("qol", system_prompt)
         self.assertIn("not the normal Hebrew word for wind", system_prompt)
         self.assertIn("not the normal Hebrew word for spirit or wind", system_prompt)
+
+    def test_prompt_includes_local_book_and_genre_context_when_book_detected(self):
+        question = "What does Proverbs 3 mean?"
+        reference = detect_reference(question)
+        genre = classify_genre(reference)
+        question_context = classify_question_type(question, reference)
+        bundle = lookup_local_knowledge(reference, genre, question_context)
+
+        system_prompt, _ = build_prompt(
+            "standard",
+            "PROFILE",
+            reference,
+            genre,
+            question_context,
+            question,
+            local_knowledge=bundle,
+        )
+
+        self.assertIn("Local Curated Knowledge", system_prompt)
+        self.assertIn("Use this local curated knowledge as grounding", system_prompt)
+        self.assertIn("Do not treat it as a doctrinal conclusion", system_prompt)
+        self.assertIn("Book context (book:Proverbs)", system_prompt)
+        self.assertIn("Genre: wisdom literature", system_prompt)
+        self.assertIn("Genre guide (genre:wisdom literature)", system_prompt)
+        self.assertIn("not automatic formulas", system_prompt)
 
     def test_standard_word_study_includes_non_rigid_guidance(self):
         question = "What does logos mean?"

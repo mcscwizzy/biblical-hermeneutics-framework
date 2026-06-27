@@ -4,7 +4,11 @@ from __future__ import annotations
 
 from typing import ClassVar
 
-from .knowledge import LexicalEntry, format_lexical_entries_for_prompt
+from .knowledge import (
+    LexicalEntry,
+    LocalKnowledgeBundle,
+    format_local_knowledge_for_prompt,
+)
 from .models import GenreContext, QuestionContext, ReferenceContext
 
 
@@ -365,6 +369,7 @@ def build_prompt(
     question: str | None = None,
     show_method_notes: bool = True,
     lexical_entries: list[LexicalEntry] | None = None,
+    local_knowledge: LocalKnowledgeBundle | None = None,
     answer_mode: str = "study",
 ) -> tuple[str, str]:
     """Return `(system_prompt, user_prompt)` for a BHF agent call."""
@@ -393,12 +398,18 @@ def build_prompt(
             show_method_notes,
         ).strip(),
     ]
-    local_knowledge = format_lexical_entries_for_prompt(lexical_entries or [])
-    if local_knowledge and _question_type(question_context) == "word_study":
-        system_sections.append(local_knowledge)
+    if local_knowledge is None:
+        local_knowledge = LocalKnowledgeBundle(lexical_entries=lexical_entries or [])
+    local_knowledge_prompt = format_local_knowledge_for_prompt(local_knowledge)
+    if local_knowledge_prompt:
+        system_sections.append(local_knowledge_prompt)
 
     system_prompt = "\n\n".join(system_sections)
-    user_prompt = strategy.user_prompt(question, question_context, lexical_entries)
+    user_prompt = strategy.user_prompt(
+        question,
+        question_context,
+        local_knowledge.lexical_entries,
+    )
     return system_prompt, user_prompt
 
 

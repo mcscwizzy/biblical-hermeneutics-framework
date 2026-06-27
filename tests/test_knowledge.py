@@ -1,7 +1,13 @@
 import unittest
 
-from bhf_agent.knowledge import lookup_lexical_entries
-from bhf_agent.models import QuestionContext
+from bhf_agent.genre import classify_genre
+from bhf_agent.knowledge import (
+    lookup_book_context,
+    lookup_genre_guide,
+    lookup_lexical_entries,
+    lookup_local_knowledge,
+)
+from bhf_agent.models import QuestionContext, ReferenceContext
 
 
 class KnowledgeLookupTests(unittest.TestCase):
@@ -55,6 +61,32 @@ class KnowledgeLookupTests(unittest.TestCase):
         )
 
         self.assertEqual([entry.key for entry in entries], ["qol"])
+
+    def test_proverbs_returns_wisdom_literature_book_context(self):
+        entry = lookup_book_context(ReferenceContext(book="Proverbs"))
+
+        self.assertIsNotNone(entry)
+        assert entry is not None
+        self.assertEqual(entry.genre, "wisdom literature")
+        self.assertIn("wisdom", entry.historical_context_hint.lower())
+
+    def test_revelation_returns_apocalyptic_genre_guide(self):
+        genre = classify_genre(ReferenceContext(book="Revelation"))
+        entry = lookup_genre_guide(genre)
+
+        self.assertIsNotNone(entry)
+        assert entry is not None
+        self.assertEqual(entry.key, "genre:apocalyptic")
+        self.assertIn("Symbolic visionary literature", entry.description)
+
+    def test_topic_only_question_does_not_crash(self):
+        bundle = lookup_local_knowledge(
+            ReferenceContext(topic="leadership", confidence=0.5),
+            classify_genre(ReferenceContext(topic="leadership", confidence=0.5)),
+            QuestionContext(question_type="topic_study", confidence=0.7),
+        )
+
+        self.assertEqual(bundle.keys(), [])
 
 
 if __name__ == "__main__":
