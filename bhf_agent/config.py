@@ -23,7 +23,7 @@ class AgentConfig:
     temperature: float = 0.3
     max_tokens: int = 2048
     show_method_notes: bool = True
-    timeout_seconds: Optional[float] = 120
+    timeout_seconds: Optional[float] = 360
     debug: bool = False
 
     @classmethod
