@@ -62,6 +62,29 @@ class PromptBuildingTests(unittest.TestCase):
         self.assertIn("Include brief method notes when enabled", system_prompt)
         self.assertIn("Mention major interpretive views when they are relevant", system_prompt)
         self.assertIn("Avoid denominational overreach", system_prompt)
+        self.assertIn("Answer Mode: Study", system_prompt)
+        self.assertIn("default balanced BHF answer shape", system_prompt)
+
+    def test_answer_mode_adds_mode_specific_instructions(self):
+        expected = {
+            "concise": "Give a direct, short answer",
+            "study": "default balanced BHF answer shape",
+            "teaching": "small group, Sunday school, or youth teaching",
+            "scholar": "Use confidence labels for major claims and alternatives",
+        }
+        for answer_mode, expected_text in expected.items():
+            with self.subTest(answer_mode=answer_mode):
+                system_prompt, _ = build_prompt(
+                    "standard",
+                    "PROFILE",
+                    self.reference,
+                    self.genre,
+                    "What does Proverbs 3 mean?",
+                    answer_mode=answer_mode,
+                )
+
+                self.assertIn(f"Answer Mode: {answer_mode.title()}", system_prompt)
+                self.assertIn(expected_text, system_prompt)
 
     def test_scholar_profile_gets_deeper_research_style_instructions(self):
         system_prompt, _ = build_prompt(

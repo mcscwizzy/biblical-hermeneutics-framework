@@ -56,11 +56,13 @@ class BHFAgent:
             original_question=question,
             normalized_question=" ".join(question.strip().split()),
             config_profile=self.config.profile,
+            answer_mode=self.config.answer_mode,
             debug_metadata={
                 "stages_completed": [],
                 "adapter_type": self.config.adapter,
                 "model": self.config.model,
                 "profile": self.config.profile,
+                "answer_mode": self.config.answer_mode,
                 "local_knowledge_keys": [],
                 "output_cleanup_applied": False,
                 "validation_score": None,
@@ -128,6 +130,7 @@ class BHFAgent:
             ctx.original_question,
             show_method_notes=self.config.show_method_notes,
             lexical_entries=ctx.local_knowledge or [],
+            answer_mode=ctx.answer_mode,
         )
         return self._mark_stage(ctx, "build_prompts")
 
@@ -148,6 +151,7 @@ class BHFAgent:
             max_tokens=self.config.max_tokens,
             metadata={
                 "profile": ctx.profile_name,
+                "answer_mode": ctx.answer_mode,
                 "reference_context": ctx.reference_context.to_dict(),
                 "genre_context": ctx.genre_context.to_dict(),
                 "question_context": ctx.question_context.to_dict(),
@@ -225,6 +229,7 @@ class BHFAgent:
             metadata={
                 "repair": True,
                 "profile": ctx.profile_name,
+                "answer_mode": ctx.answer_mode,
                 "question_context": ctx.question_context.to_dict(),
                 "reference_context": ctx.reference_context.to_dict(),
                 "genre_context": ctx.genre_context.to_dict(),
@@ -328,6 +333,7 @@ class BHFAgent:
             "adapter_type": self.config.adapter,
             "base_url": self.config.base_url,
             "configured_model": self.config.model,
+            "answer_mode": ctx.answer_mode,
             "model": chat_response.model,
             "usage": chat_response.usage,
             "cleanup_applied": ctx.debug_metadata.get("output_cleanup_applied", False),

@@ -17,6 +17,37 @@ The prompt strategy only shapes runtime answer format and model steering.
 """
 
 
+ANSWER_MODE_INSTRUCTIONS: dict[str, tuple[str, ...]] = {
+    "concise": (
+        "# Answer Mode: Concise",
+        "- Give a direct, short answer.",
+        "- Use minimal headings.",
+        "- Do not dump the BHF method unless it is needed to answer responsibly.",
+        "- Keep caveats brief while still naming uncertainty where it matters.",
+    ),
+    "study": (
+        "# Answer Mode: Study",
+        "- Use the default balanced BHF answer shape.",
+        "- Include enough method, context, and cautions for a careful study answer.",
+        "- Use clear headings without turning the answer into a full lecture.",
+    ),
+    "teaching": (
+        "# Answer Mode: Teaching",
+        "- Explain step by step in plain language.",
+        "- Define technical terms simply.",
+        "- Shape the answer so it is useful for a small group, Sunday school, or youth teaching setting.",
+        "- Keep application responsible and tied to observation and interpretation.",
+    ),
+    "scholar": (
+        "# Answer Mode: Scholar",
+        "- Give the deepest version of the answer the evidence supports.",
+        "- Include more historical context, genre awareness, intertextuality, and interpretive options.",
+        "- Use confidence labels for major claims and alternatives.",
+        "- Do not invent scholars, citations, dates, manuscripts, or unsupported historical claims.",
+    ),
+}
+
+
 class PromptStrategy:
     """Base prompt strategy for profile-aware runtime steering."""
 
@@ -334,6 +365,7 @@ def build_prompt(
     question: str | None = None,
     show_method_notes: bool = True,
     lexical_entries: list[LexicalEntry] | None = None,
+    answer_mode: str = "study",
 ) -> tuple[str, str]:
     """Return `(system_prompt, user_prompt)` for a BHF agent call."""
 
@@ -353,6 +385,7 @@ def build_prompt(
         profile_content.strip(),
         AGENT_INSTRUCTIONS.strip(),
         strategy.runtime_instructions(show_method_notes, question_context).strip(),
+        answer_mode_instructions(answer_mode).strip(),
         strategy.detected_context(
             reference_context,
             genre_context,
@@ -367,6 +400,11 @@ def build_prompt(
     system_prompt = "\n\n".join(system_sections)
     user_prompt = strategy.user_prompt(question, question_context, lexical_entries)
     return system_prompt, user_prompt
+
+
+def answer_mode_instructions(answer_mode: str) -> str:
+    lines = ANSWER_MODE_INSTRUCTIONS.get(answer_mode, ANSWER_MODE_INSTRUCTIONS["study"])
+    return "\n".join(lines)
 
 
 def prompt_leakage_guardrails(question_context: QuestionContext | None) -> list[str]:

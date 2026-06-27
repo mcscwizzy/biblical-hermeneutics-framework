@@ -7,7 +7,7 @@ import sys
 from typing import Optional
 from urllib.parse import urlsplit, urlunsplit
 
-from .config import AgentConfig, ConfigError
+from .config import ALLOWED_ANSWER_MODES, AgentConfig, ConfigError
 from .profiles import ProfileError
 from .runner import BHFAgent
 
@@ -19,6 +19,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("question", help="Biblical interpretation question")
     parser.add_argument("--config", help="Path to agent JSON config")
     parser.add_argument("--profile", help="BHF profile name")
+    parser.add_argument(
+        "--answer-mode",
+        choices=ALLOWED_ANSWER_MODES,
+        help="Answer shape independent of BHF profile depth",
+    )
     parser.add_argument("--base-url", help="OpenAI-compatible local base URL")
     parser.add_argument("--model", help="Local model name")
     parser.add_argument("--temperature", type=float, help="Sampling temperature")
@@ -60,6 +65,7 @@ def config_from_args(args: argparse.Namespace) -> AgentConfig:
     config = AgentConfig.from_json_file(args.config) if args.config else AgentConfig()
     return config.with_overrides(
         profile=args.profile,
+        answer_mode=getattr(args, "answer_mode", None),
         base_url=args.base_url,
         model=args.model,
         temperature=args.temperature,
@@ -84,6 +90,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     print(result.answer_text or "(no answer returned)")
     print()
     print("Profile:", result.profile_used)
+    print("Answer mode:", result.model_metadata.get("answer_mode") or config.answer_mode)
     print("Detected question type:", _format_question_type(result))
     print("Detected reference:", _format_reference(result))
     print("Detected genre:", result.genre_context.primary_genre or "not detected")
@@ -116,6 +123,7 @@ def main(argv: Optional[list[str]] = None) -> int:
             or "not configured",
         )
         print("Profile:", result.profile_used)
+        print("Answer mode:", result.model_metadata.get("answer_mode") or config.answer_mode)
         print("Question type:", _format_question_type(result))
         print("Detected reference:", _format_reference(result))
         print("Detected genre:", result.genre_context.primary_genre or "not detected")

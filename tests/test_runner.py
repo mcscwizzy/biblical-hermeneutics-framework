@@ -114,6 +114,7 @@ class RunnerTests(unittest.TestCase):
             adapter.request.metadata["question_context"]["question_type"],
             "word_study",
         )
+        self.assertEqual(adapter.request.metadata["answer_mode"], "study")
         self.assertIn("Question type: word_study", adapter.request.system_prompt)
         self.assertIn("Answer using the word-study format exactly", adapter.request.user_prompt)
         self.assertFalse(result.reference_context.is_reference_based)
@@ -145,7 +146,22 @@ class RunnerTests(unittest.TestCase):
             result.model_metadata["pipeline"]["prompt_strategy"],
             "MinimalPromptStrategy",
         )
+        self.assertEqual(result.model_metadata["answer_mode"], "study")
+        self.assertEqual(result.model_metadata["pipeline"]["answer_mode"], "study")
         self.assertEqual(result.model_metadata["pipeline"]["validation_score"], 100)
+
+    def test_answer_mode_threads_to_prompt_request_and_result_metadata(self):
+        adapter = RecordingAdapter()
+        agent = self.make_agent(adapter, answer_mode="teaching")
+
+        result = agent.ask("What does Proverbs 3 mean?")
+
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertEqual(adapter.request.metadata["answer_mode"], "teaching")
+        self.assertIn("Answer Mode: Teaching", adapter.request.system_prompt)
+        self.assertEqual(result.model_metadata["answer_mode"], "teaching")
+        self.assertEqual(result.model_metadata["pipeline"]["answer_mode"], "teaching")
 
     def test_agent_result_uses_cleaned_answer_and_debug_metadata(self):
         with tempfile.TemporaryDirectory() as tmp:

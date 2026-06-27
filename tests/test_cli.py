@@ -86,6 +86,15 @@ class CLITests(unittest.TestCase):
         self.assertEqual(repair_args.repair_threshold, 80)
         self.assertFalse(no_repair_args.auto_repair)
 
+    def test_answer_mode_flag_parses(self):
+        parser = build_parser()
+
+        args = parser.parse_args(
+            ["--answer-mode", "teaching", "What does Proverbs 3 mean?"]
+        )
+
+        self.assertEqual(args.answer_mode, "teaching")
+
     def test_default_output_does_not_expose_pipeline_internals(self):
         stdout = io.StringIO()
 
@@ -107,6 +116,7 @@ class CLITests(unittest.TestCase):
         self.assertEqual(exit_code, 0)
         self.assertIn("## 1. Short Answer", output)
         self.assertIn("Profile: minimal-7b", output)
+        self.assertIn("Answer mode: study", output)
         self.assertIn("Detected question type: word_study [Hebrew]", output)
         self.assertNotIn("Debug:", output)
         self.assertNotIn("PipelineContext", output)
@@ -164,6 +174,7 @@ class CLITests(unittest.TestCase):
             output,
         )
         self.assertIn("Prompt strategy: MinimalPromptStrategy", output)
+        self.assertIn("Answer mode: study", output)
         self.assertIn("Auto repair: false", output)
         self.assertIn("Repair threshold: 80", output)
         self.assertIn("Max repair attempts: 1", output)

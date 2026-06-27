@@ -55,6 +55,7 @@ class AgentConfigTests(unittest.TestCase):
             args = argparse.Namespace(
                 config=str(path),
                 profile="scholar",
+                answer_mode=None,
                 base_url=None,
                 model="override-model",
                 temperature=0.1,
@@ -86,6 +87,36 @@ class AgentConfigTests(unittest.TestCase):
         self.assertFalse(config.auto_repair)
         self.assertEqual(config.max_repair_attempts, 1)
         self.assertEqual(config.repair_threshold, 80)
+        self.assertEqual(config.answer_mode, "study")
+
+    def test_config_accepts_valid_answer_modes(self):
+        for answer_mode in ("concise", "study", "teaching", "scholar"):
+            with self.subTest(answer_mode=answer_mode):
+                config = AgentConfig.from_mapping(
+                    {
+                        "config_version": 1,
+                        "adapter": "openai_compatible",
+                        "base_url": "http://localhost:1234/v1",
+                        "model": "local-model",
+                        "profile": "standard",
+                        "answer_mode": answer_mode,
+                    }
+                )
+
+                self.assertEqual(config.answer_mode, answer_mode)
+
+    def test_config_rejects_invalid_answer_mode(self):
+        with self.assertRaisesRegex(ConfigError, "answer_mode must be one of"):
+            AgentConfig.from_mapping(
+                {
+                    "config_version": 1,
+                    "adapter": "openai_compatible",
+                    "base_url": "http://localhost:1234/v1",
+                    "model": "local-model",
+                    "profile": "standard",
+                    "answer_mode": "doctrine",
+                }
+            )
 
     def test_cli_repair_overrides_config_values(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -108,6 +139,7 @@ class AgentConfigTests(unittest.TestCase):
             args = argparse.Namespace(
                 config=str(path),
                 profile=None,
+                answer_mode=None,
                 base_url=None,
                 model=None,
                 temperature=None,
@@ -124,10 +156,45 @@ class AgentConfigTests(unittest.TestCase):
         self.assertEqual(config.max_repair_attempts, 1)
         self.assertEqual(config.repair_threshold, 85)
 
+    def test_cli_answer_mode_overrides_config(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "agent.json"
+            path.write_text(
+                json.dumps(
+                    {
+                        "config_version": 1,
+                        "adapter": "openai_compatible",
+                        "base_url": "http://localhost:1234/v1",
+                        "model": "local-model",
+                        "profile": "standard",
+                        "answer_mode": "study",
+                    }
+                ),
+                encoding="utf-8",
+            )
+            args = argparse.Namespace(
+                config=str(path),
+                profile=None,
+                answer_mode="teaching",
+                base_url=None,
+                model=None,
+                temperature=None,
+                max_tokens=None,
+                auto_repair=None,
+                max_repair_attempts=None,
+                repair_threshold=None,
+                show_debug=False,
+            )
+
+            config = config_from_args(args)
+
+        self.assertEqual(config.answer_mode, "teaching")
+
     def test_cli_no_repair_disables_repair(self):
         args = argparse.Namespace(
             config=None,
             profile=None,
+            answer_mode=None,
             base_url="http://localhost:1234/v1",
             model="local-model",
             temperature=None,

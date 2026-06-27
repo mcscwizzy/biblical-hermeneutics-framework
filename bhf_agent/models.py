@@ -130,6 +130,7 @@ class PipelineContext(Serializable):
     original_question: str
     normalized_question: Optional[str] = None
     config_profile: Optional[str] = None
+    answer_mode: str = "study"
     reference_context: Optional[ReferenceContext] = None
     genre_context: Optional[GenreContext] = None
     question_context: Optional[QuestionContext] = None

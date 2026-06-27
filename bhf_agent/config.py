@@ -12,11 +12,15 @@ class ConfigError(ValueError):
     """Raised when agent configuration is missing or invalid."""
 
 
+ALLOWED_ANSWER_MODES = ("concise", "study", "teaching", "scholar")
+
+
 @dataclass(frozen=True)
 class AgentConfig:
     config_version: int = 1
     adapter: str = "openai_compatible"
     profile: str = "standard"
+    answer_mode: str = "study"
     model: Optional[str] = None
     base_url: Optional[str] = None
     api_key: Optional[str] = None
@@ -78,6 +82,10 @@ class AgentConfig:
             raise ConfigError("model is required")
         if not self.profile:
             raise ConfigError("profile is required")
+        if self.answer_mode not in ALLOWED_ANSWER_MODES:
+            raise ConfigError(
+                "answer_mode must be one of: " + ", ".join(ALLOWED_ANSWER_MODES)
+            )
         if not 0 <= float(self.temperature) <= 2:
             raise ConfigError("temperature must be between 0 and 2")
         if int(self.max_tokens) <= 0:
