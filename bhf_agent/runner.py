@@ -8,11 +8,18 @@ from .adapters import ChatAdapter, OpenAICompatibleAdapter
 from .config import AgentConfig, ConfigError
 from .genre import classify_genre
 from .knowledge import lookup_lexical_entries
-from .models import AgentResult, ChatRequest, PipelineContext
+from .models import (
+    AgentResult,
+    ChatRequest,
+    PipelineContext,
+    RepairAttempt,
+    ValidationResult,
+)
 from .output_cleaner import clean_model_output
 from .profiles import ProfileLoader
 from .prompts import build_prompt, strategy_for_profile
 from .question_types import classify_question_type
+from .repair import build_repair_prompt, decide_repair
 from .references import detect_reference
 from .validation import validate_response
 
@@ -40,6 +47,7 @@ class BHFAgent:
         ctx = self._call_model(ctx)
         ctx = self._clean_output(ctx)
         ctx = self._validate_response(ctx)
+        ctx = self._repair_response(ctx)
         ctx = self._finalize_result(ctx)
         return self._to_agent_result(ctx)
 
@@ -56,6 +64,11 @@ class BHFAgent:
                 "local_knowledge_keys": [],
                 "output_cleanup_applied": False,
                 "validation_score": None,
+                "auto_repair": self.config.auto_repair,
+                "repair_threshold": self.config.repair_threshold,
+                "max_repair_attempts": self.config.max_repair_attempts,
+                "repair_attempted": False,
+                "repair_applied": False,
             },
         )
         return self._mark_stage(ctx, "initialize_context")
@@ -171,6 +184,130 @@ class BHFAgent:
         ctx.debug_metadata["validation_score"] = ctx.validation_result.score
         return self._mark_stage(ctx, "validate_response")
 
+    def _repair_response(self, ctx: PipelineContext) -> PipelineContext:
+        if (
+            ctx.validation_result is None
+            or ctx.question_context is None
+            or ctx.reference_context is None
+            or ctx.genre_context is None
+        ):
+            raise RuntimeError("pipeline context is incomplete before repair")
+
+        decision = decide_repair(ctx.validation_result, self.config)
+        ctx.repair_decision = decision
+        ctx.debug_metadata["repair_decision"] = decision.to_dict()
+        ctx.debug_metadata["repair_reason"] = decision.reason
+        ctx.debug_metadata["repair_attempted"] = False
+        ctx.debug_metadata["repair_applied"] = False
+
+        if not decision.should_repair:
+            return self._mark_stage(ctx, "repair_response")
+
+        attempts_allowed = min(int(self.config.max_repair_attempts), 1)
+        if attempts_allowed <= 0:
+            return self._mark_stage(ctx, "repair_response")
+
+        ctx.original_validation_result = ctx.validation_result
+        system_prompt, user_prompt = build_repair_prompt(
+            original_question=ctx.original_question,
+            question_context=ctx.question_context,
+            reference_context=ctx.reference_context,
+            genre_context=ctx.genre_context,
+            original_answer=ctx.cleaned_answer_text or "",
+            validation_result=ctx.validation_result,
+        )
+        chat_request = ChatRequest(
+            system_prompt=system_prompt,
+            user_prompt=user_prompt,
+            model=self.config.model or "",
+            temperature=self.config.temperature,
+            max_tokens=self.config.max_tokens,
+            metadata={
+                "repair": True,
+                "profile": ctx.profile_name,
+                "question_context": ctx.question_context.to_dict(),
+                "reference_context": ctx.reference_context.to_dict(),
+                "genre_context": ctx.genre_context.to_dict(),
+                "original_validation_score": ctx.validation_result.score,
+                "repair_threshold": self.config.repair_threshold,
+            },
+        )
+        chat_response = self.adapter.chat(chat_request)
+        ctx.debug_metadata["repair_attempted"] = True
+        ctx.warnings.extend(chat_response.warnings)
+        ctx.errors.extend(chat_response.errors)
+
+        cleanup_result = clean_model_output(chat_response.text)
+        repaired_answer = cleanup_result.text.strip()
+        if not repaired_answer:
+            attempt = RepairAttempt(
+                attempt_number=1,
+                repair_prompt=None,
+                repaired_answer=repaired_answer,
+                validation_result=None,
+                accepted=False,
+                reason="repair output was empty",
+            )
+            ctx.repair_attempts.append(attempt)
+            ctx.warnings.append("Repair was attempted but returned an empty answer.")
+            ctx.debug_metadata["repair_attempts"] = [
+                attempt.to_dict() for attempt in ctx.repair_attempts
+            ]
+            return self._mark_stage(ctx, "repair_response")
+
+        repaired_validation = validate_response(
+            repaired_answer,
+            question_context=ctx.question_context,
+            reference_context=ctx.reference_context,
+            genre_context=ctx.genre_context,
+        )
+        accepted, reason = self._should_accept_repair(
+            original=ctx.validation_result,
+            repaired=repaired_validation,
+        )
+        attempt = RepairAttempt(
+            attempt_number=1,
+            repair_prompt=None,
+            repaired_answer=repaired_answer if self.config.debug else None,
+            validation_result=repaired_validation,
+            accepted=accepted,
+            reason=reason,
+        )
+        ctx.repair_attempts.append(attempt)
+        ctx.repaired_answer_text = repaired_answer
+        ctx.repaired_validation_result = repaired_validation
+        ctx.debug_metadata["repaired_validation_score"] = repaired_validation.score
+
+        if accepted:
+            ctx.cleaned_answer_text = repaired_answer
+            ctx.validation_result = repaired_validation
+            ctx.repair_applied = True
+            ctx.debug_metadata["validation_score"] = repaired_validation.score
+            ctx.debug_metadata["repair_applied"] = True
+        else:
+            ctx.warnings.append(f"Repair was attempted but rejected: {reason}.")
+
+        ctx.debug_metadata["repair_attempts"] = [
+            attempt.to_dict() for attempt in ctx.repair_attempts
+        ]
+        return self._mark_stage(ctx, "repair_response")
+
+    def _should_accept_repair(
+        self,
+        original: ValidationResult,
+        repaired: ValidationResult,
+    ) -> tuple[bool, str]:
+        if repaired.score > original.score:
+            return True, "repaired validation score improved"
+        if repaired.passed and not original.passed:
+            return True, "repaired answer passed validation"
+        if (
+            repaired.score >= int(self.config.repair_threshold)
+            and repaired.score >= original.score
+        ):
+            return True, "repaired score meets repair threshold"
+        return False, "repaired answer did not improve validation"
+
     def _finalize_result(self, ctx: PipelineContext) -> PipelineContext:
         ctx.final_answer = ctx.cleaned_answer_text or ""
         return self._mark_stage(ctx, "finalize_result")
@@ -201,6 +338,17 @@ class BHFAgent:
             "local_knowledge_terms": [
                 entry.transliteration for entry in lexical_entries
             ],
+            "repair_applied": ctx.repair_applied,
+            "repair_attempted": bool(ctx.repair_attempts),
+            "repair_reason": ctx.repair_decision.reason if ctx.repair_decision else None,
+            "original_validation_score": (
+                ctx.repair_decision.original_score if ctx.repair_decision else None
+            ),
+            "repaired_validation_score": (
+                ctx.repaired_validation_result.score
+                if ctx.repaired_validation_result
+                else None
+            ),
             "pipeline": dict(ctx.debug_metadata),
         }
         if self.config.debug:
@@ -217,6 +365,11 @@ class BHFAgent:
             model_metadata=model_metadata,
             warnings=ctx.warnings,
             errors=ctx.errors,
+            repair_applied=ctx.repair_applied,
+            repair_attempted=bool(ctx.repair_attempts),
+            repair_reason=ctx.repair_decision.reason if ctx.repair_decision else None,
+            original_validation_result=ctx.original_validation_result,
+            repaired_validation_result=ctx.repaired_validation_result,
         )
 
     def _mark_stage(self, ctx: PipelineContext, stage: str) -> PipelineContext:

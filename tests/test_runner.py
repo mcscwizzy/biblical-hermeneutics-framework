@@ -1,3 +1,4 @@
+import shutil
 import tempfile
 import unittest
 from pathlib import Path
@@ -24,6 +25,18 @@ class RecordingAdapter(ChatAdapter):
             ),
             model="fake-model",
         )
+
+
+class SequenceAdapter(ChatAdapter):
+    def __init__(self, responses: list[str]) -> None:
+        self.responses = responses
+        self.requests: list[ChatRequest] = []
+
+    def chat(self, request: ChatRequest) -> ChatResponse:
+        self.requests.append(request)
+        index = len(self.requests) - 1
+        text = self.responses[index] if index < len(self.responses) else self.responses[-1]
+        return ChatResponse(text=text, model="fake-model")
 
 
 class LeakyAdapter(ChatAdapter):
@@ -60,6 +73,22 @@ class PromptStageAssertingAgent(BHFAgent):
 
 
 class RunnerTests(unittest.TestCase):
+    def make_agent(self, adapter: ChatAdapter, **config_overrides) -> BHFAgent:
+        profiles_dir = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, profiles_dir, ignore_errors=True)
+        (profiles_dir / "minimal-7b.md").write_text("PROFILE", encoding="utf-8")
+        values = {
+            "base_url": "http://localhost:1234/v1",
+            "model": "fake-model",
+            "profile": "minimal-7b",
+        }
+        values.update(config_overrides)
+        return BHFAgent(
+            AgentConfig(**values),
+            adapter=adapter,
+            profile_loader=ProfileLoader(profiles_dir),
+        )
+
     def test_agent_result_includes_question_context_and_prompt_receives_it(self):
         with tempfile.TemporaryDirectory() as tmp:
             profiles_dir = Path(tmp)
@@ -153,6 +182,105 @@ class RunnerTests(unittest.TestCase):
             "finalize_result",
             result.model_metadata["pipeline"]["stages_completed"],
         )
+
+    def test_repair_disabled_calls_adapter_once(self):
+        adapter = SequenceAdapter(["The Hebrew word is ruach."])
+        agent = self.make_agent(adapter, auto_repair=False)
+
+        result = agent.ask("What is the Hebrew word for spirit or wind?")
+
+        self.assertEqual(len(adapter.requests), 1)
+        self.assertFalse(result.repair_attempted)
+        self.assertFalse(result.repair_applied)
+        self.assertEqual(result.answer_text, "The Hebrew word is ruach.")
+
+    def test_repair_enabled_but_validation_passes_calls_adapter_once(self):
+        adapter = SequenceAdapter(
+            [
+                "Short Answer: The Hebrew word is ruach. Basic Meaning: its "
+                "semantic range can include wind, breath, or spirit. Context "
+                "Matters: meaning depends on passage context. Cautions: this "
+                "may not always refer to the Holy Spirit."
+            ]
+        )
+        agent = self.make_agent(adapter, auto_repair=True)
+
+        result = agent.ask("What is the Hebrew word for spirit or wind?")
+
+        self.assertEqual(len(adapter.requests), 1)
+        self.assertFalse(result.repair_attempted)
+        self.assertFalse(result.repair_applied)
+
+    def test_repair_enabled_and_validation_fails_calls_adapter_twice(self):
+        adapter = SequenceAdapter(
+            [
+                "The Hebrew word is ruach.",
+                "Short Answer: The Hebrew word is ruach. Basic Meaning: its "
+                "semantic range can include wind, breath, or spirit. Context "
+                "Matters: meaning depends on passage context. Cautions: this "
+                "may not always refer to the Holy Spirit.",
+            ]
+        )
+        agent = self.make_agent(adapter, auto_repair=True)
+
+        result = agent.ask("What is the Hebrew word for spirit or wind?")
+
+        self.assertEqual(len(adapter.requests), 2)
+        self.assertTrue(adapter.requests[1].metadata["repair"])
+        self.assertTrue(result.repair_attempted)
+        self.assertTrue(result.repair_applied)
+
+    def test_better_repaired_answer_is_accepted_and_validation_is_final(self):
+        adapter = SequenceAdapter(
+            [
+                "The Hebrew word is ruach.",
+                "Short Answer: The Hebrew word is ruach. Basic Meaning: its "
+                "semantic range can include wind, breath, or spirit. Context "
+                "Matters: meaning depends on passage context. Cautions: this "
+                "may not always refer to the Holy Spirit.",
+            ]
+        )
+        agent = self.make_agent(adapter, auto_repair=True)
+
+        result = agent.ask("What is the Hebrew word for spirit or wind?")
+
+        self.assertIn("semantic range", result.answer_text)
+        self.assertTrue(result.validation_result.passed)
+        self.assertEqual(result.validation_result.score, 100)
+        self.assertIsNotNone(result.original_validation_result)
+        assert result.original_validation_result is not None
+        self.assertLess(result.original_validation_result.score, result.validation_result.score)
+        self.assertIsNotNone(result.repaired_validation_result)
+
+    def test_worse_repaired_answer_is_rejected(self):
+        adapter = SequenceAdapter(
+            [
+                "The Hebrew word is ruach. Its semantic range can include wind, "
+                "breath, or spirit.",
+                "I am uncertain.",
+            ]
+        )
+        agent = self.make_agent(adapter, auto_repair=True)
+
+        result = agent.ask("What is the Hebrew word for spirit or wind?")
+
+        self.assertEqual(len(adapter.requests), 2)
+        self.assertFalse(result.repair_applied)
+        self.assertIn("semantic range", result.answer_text)
+        self.assertTrue(
+            any("Repair was attempted but rejected" in warning for warning in result.warnings)
+        )
+
+    def test_empty_repaired_answer_is_rejected(self):
+        adapter = SequenceAdapter(["The Hebrew word is ruach.", "   "])
+        agent = self.make_agent(adapter, auto_repair=True)
+
+        result = agent.ask("What is the Hebrew word for spirit or wind?")
+
+        self.assertEqual(len(adapter.requests), 2)
+        self.assertFalse(result.repair_applied)
+        self.assertEqual(result.answer_text, "The Hebrew word is ruach.")
+        self.assertIn("Repair was attempted but returned an empty answer.", result.warnings)
 
     def test_pipeline_stores_prompts_before_model_call(self):
         with tempfile.TemporaryDirectory() as tmp:

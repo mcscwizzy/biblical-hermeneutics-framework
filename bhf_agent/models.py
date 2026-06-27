@@ -83,6 +83,24 @@ class ValidationResult(Serializable):
 
 
 @dataclass
+class RepairDecision(Serializable):
+    should_repair: bool
+    reason: str
+    warnings_used: list[str] = field(default_factory=list)
+    original_score: Optional[int] = None
+
+
+@dataclass
+class RepairAttempt(Serializable):
+    attempt_number: int
+    repair_prompt: Optional[str] = None
+    repaired_answer: Optional[str] = None
+    validation_result: Optional[ValidationResult] = None
+    accepted: bool = False
+    reason: str = ""
+
+
+@dataclass
 class AgentResult(Serializable):
     answer_text: str
     reference_context: ReferenceContext
@@ -93,6 +111,11 @@ class AgentResult(Serializable):
     model_metadata: dict[str, Any] = field(default_factory=dict)
     warnings: list[str] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)
+    repair_applied: bool = False
+    repair_attempted: bool = False
+    repair_reason: Optional[str] = None
+    original_validation_result: Optional[ValidationResult] = None
+    repaired_validation_result: Optional[ValidationResult] = None
 
 
 @dataclass
@@ -119,6 +142,12 @@ class PipelineContext(Serializable):
     raw_answer_text: Optional[str] = None
     cleaned_answer_text: Optional[str] = None
     validation_result: Optional[ValidationResult] = None
+    original_validation_result: Optional[ValidationResult] = None
+    repair_decision: Optional[RepairDecision] = None
+    repair_attempts: list[RepairAttempt] = field(default_factory=list)
+    repaired_answer_text: Optional[str] = None
+    repaired_validation_result: Optional[ValidationResult] = None
+    repair_applied: bool = False
     final_answer: Optional[str] = None
     debug_metadata: dict[str, Any] = field(default_factory=dict)
     warnings: list[str] = field(default_factory=list)

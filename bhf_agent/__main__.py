@@ -23,6 +23,31 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--model", help="Local model name")
     parser.add_argument("--temperature", type=float, help="Sampling temperature")
     parser.add_argument("--max-tokens", type=int, help="Maximum response tokens")
+    repair_group = parser.add_mutually_exclusive_group()
+    repair_group.add_argument(
+        "--repair",
+        dest="auto_repair",
+        action="store_true",
+        default=None,
+        help="Enable one optional validation-guided repair pass",
+    )
+    repair_group.add_argument(
+        "--no-repair",
+        dest="auto_repair",
+        action="store_false",
+        default=None,
+        help="Disable the optional repair pass",
+    )
+    parser.add_argument(
+        "--max-repair-attempts",
+        type=int,
+        help="Maximum repair calls for this run; v2.1 supports 0 or 1",
+    )
+    parser.add_argument(
+        "--repair-threshold",
+        type=int,
+        help="Validation score below which repair should be attempted",
+    )
     parser.add_argument(
         "--show-debug",
         action="store_true",
@@ -39,6 +64,9 @@ def config_from_args(args: argparse.Namespace) -> AgentConfig:
         model=args.model,
         temperature=args.temperature,
         max_tokens=args.max_tokens,
+        auto_repair=getattr(args, "auto_repair", None),
+        max_repair_attempts=getattr(args, "max_repair_attempts", None),
+        repair_threshold=getattr(args, "repair_threshold", None),
         debug=True if args.show_debug else None,
     )
 
@@ -59,6 +87,8 @@ def main(argv: Optional[list[str]] = None) -> int:
     print("Detected question type:", _format_question_type(result))
     print("Detected reference:", _format_reference(result))
     print("Detected genre:", result.genre_context.primary_genre or "not detected")
+    if result.repair_applied:
+        print("Repair applied: yes")
 
     if result.validation_result.warnings:
         print()
@@ -90,6 +120,30 @@ def main(argv: Optional[list[str]] = None) -> int:
         print("Detected reference:", _format_reference(result))
         print("Detected genre:", result.genre_context.primary_genre or "not detected")
         print("Validation score:", result.validation_result.score)
+        print("Auto repair:", str(config.auto_repair).lower())
+        print("Repair threshold:", config.repair_threshold)
+        print("Max repair attempts:", config.max_repair_attempts)
+        print("Repair decision:", result.repair_reason or "none")
+        print("Repair attempted:", str(result.repair_attempted).lower())
+        print("Repair applied:", str(result.repair_applied).lower())
+        original_score = (
+            result.original_validation_result.score
+            if result.original_validation_result
+            else result.model_metadata.get("original_validation_score")
+        )
+        repaired_score = (
+            result.repaired_validation_result.score
+            if result.repaired_validation_result
+            else result.model_metadata.get("repaired_validation_score")
+        )
+        print(
+            "Original validation score:",
+            original_score if original_score is not None else "not available",
+        )
+        print(
+            "Repaired validation score:",
+            repaired_score if repaired_score is not None else "not available",
+        )
         print(
             "Pipeline stages completed:",
             ", ".join(pipeline_debug.get("stages_completed", [])) or "none",

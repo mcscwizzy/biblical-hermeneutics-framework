@@ -9,5 +9,8 @@
   "max_tokens": 2048,
   "timeout_seconds": 120,
   "show_method_notes": true,
-  "debug": false
+  "debug": false,
+  "auto_repair": false,
+  "max_repair_attempts": 1,
+  "repair_threshold": 80
 }

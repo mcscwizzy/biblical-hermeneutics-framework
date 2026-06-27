@@ -25,6 +25,9 @@ class AgentConfig:
     show_method_notes: bool = True
     timeout_seconds: Optional[float] = 360
     debug: bool = False
+    auto_repair: bool = False
+    max_repair_attempts: int = 1
+    repair_threshold: int = 80
 
     @classmethod
     def from_json_file(cls, path: Union[str, Path]) -> "AgentConfig":
@@ -81,6 +84,10 @@ class AgentConfig:
             raise ConfigError("max_tokens must be greater than 0")
         if self.timeout_seconds is not None and float(self.timeout_seconds) <= 0:
             raise ConfigError("timeout_seconds must be greater than 0")
+        if int(self.max_repair_attempts) < 0:
+            raise ConfigError("max_repair_attempts must be greater than or equal to 0")
+        if not 0 <= int(self.repair_threshold) <= 100:
+            raise ConfigError("repair_threshold must be between 0 and 100")
 
     def to_dict(self, redact_secrets: bool = True) -> dict[str, Any]:
         data = asdict(self)

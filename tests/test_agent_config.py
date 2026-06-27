@@ -59,6 +59,9 @@ class AgentConfigTests(unittest.TestCase):
                 model="override-model",
                 temperature=0.1,
                 max_tokens=None,
+                auto_repair=None,
+                max_repair_attempts=None,
+                repair_threshold=None,
                 show_debug=True,
             )
 
@@ -68,6 +71,76 @@ class AgentConfigTests(unittest.TestCase):
         self.assertEqual(config.model, "override-model")
         self.assertEqual(config.temperature, 0.1)
         self.assertTrue(config.debug)
+
+    def test_old_config_without_repair_fields_uses_defaults(self):
+        config = AgentConfig.from_mapping(
+            {
+                "config_version": 1,
+                "adapter": "openai_compatible",
+                "base_url": "http://localhost:1234/v1",
+                "model": "local-model",
+                "profile": "minimal-7b",
+            }
+        )
+
+        self.assertFalse(config.auto_repair)
+        self.assertEqual(config.max_repair_attempts, 1)
+        self.assertEqual(config.repair_threshold, 80)
+
+    def test_cli_repair_overrides_config_values(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "agent.json"
+            path.write_text(
+                json.dumps(
+                    {
+                        "config_version": 1,
+                        "adapter": "openai_compatible",
+                        "base_url": "http://localhost:1234/v1",
+                        "model": "local-model",
+                        "profile": "standard",
+                        "auto_repair": False,
+                        "max_repair_attempts": 0,
+                        "repair_threshold": 70,
+                    }
+                ),
+                encoding="utf-8",
+            )
+            args = argparse.Namespace(
+                config=str(path),
+                profile=None,
+                base_url=None,
+                model=None,
+                temperature=None,
+                max_tokens=None,
+                auto_repair=True,
+                max_repair_attempts=1,
+                repair_threshold=85,
+                show_debug=False,
+            )
+
+            config = config_from_args(args)
+
+        self.assertTrue(config.auto_repair)
+        self.assertEqual(config.max_repair_attempts, 1)
+        self.assertEqual(config.repair_threshold, 85)
+
+    def test_cli_no_repair_disables_repair(self):
+        args = argparse.Namespace(
+            config=None,
+            profile=None,
+            base_url="http://localhost:1234/v1",
+            model="local-model",
+            temperature=None,
+            max_tokens=None,
+            auto_repair=False,
+            max_repair_attempts=None,
+            repair_threshold=None,
+            show_debug=False,
+        )
+
+        config = config_from_args(args)
+
+        self.assertFalse(config.auto_repair)
 
     def test_missing_required_openai_compatible_values_are_clear(self):
         with self.assertRaisesRegex(ConfigError, "base_url is required"):

@@ -3,7 +3,7 @@ import io
 import unittest
 from unittest.mock import patch
 
-from bhf_agent.__main__ import main
+from bhf_agent.__main__ import build_parser, main
 from bhf_agent.models import (
     AgentResult,
     GenreContext,
@@ -48,7 +48,44 @@ class FakeAgent:
         )
 
 
+class RepairAppliedAgent(FakeAgent):
+    def ask(self, question):
+        result = super().ask(question)
+        result.repair_applied = True
+        result.repair_attempted = True
+        result.repair_reason = "validation score is below repair threshold"
+        result.original_validation_result = ValidationResult(
+            passed=False,
+            score=50,
+            warnings=["missing caution"],
+        )
+        result.repaired_validation_result = result.validation_result
+        return result
+
+
 class CLITests(unittest.TestCase):
+    def test_repair_flags_parse(self):
+        parser = build_parser()
+
+        repair_args = parser.parse_args(
+            [
+                "--repair",
+                "--max-repair-attempts",
+                "1",
+                "--repair-threshold",
+                "80",
+                "What does ruach mean?",
+            ]
+        )
+        no_repair_args = parser.parse_args(
+            ["--no-repair", "What does ruach mean?"]
+        )
+
+        self.assertTrue(repair_args.auto_repair)
+        self.assertEqual(repair_args.max_repair_attempts, 1)
+        self.assertEqual(repair_args.repair_threshold, 80)
+        self.assertFalse(no_repair_args.auto_repair)
+
     def test_default_output_does_not_expose_pipeline_internals(self):
         stdout = io.StringIO()
 
@@ -74,7 +111,31 @@ class CLITests(unittest.TestCase):
         self.assertNotIn("Debug:", output)
         self.assertNotIn("PipelineContext", output)
         self.assertNotIn("Pipeline stages completed", output)
+        self.assertNotIn("Repair attempted:", output)
         self.assertNotIn("raw_provider_response", output)
+
+    def test_default_output_shows_repair_applied_when_accepted(self):
+        stdout = io.StringIO()
+
+        with patch("bhf_agent.__main__.BHFAgent", RepairAppliedAgent):
+            with contextlib.redirect_stdout(stdout):
+                exit_code = main(
+                    [
+                        "--base-url",
+                        "http://localhost:1234/v1",
+                        "--model",
+                        "fake-model",
+                        "--profile",
+                        "minimal-7b",
+                        "--repair",
+                        "What does ruach mean?",
+                    ]
+                )
+
+        output = stdout.getvalue()
+        self.assertEqual(exit_code, 0)
+        self.assertIn("Repair applied: yes", output)
+        self.assertNotIn("Repair attempted:", output)
 
     def test_show_debug_prints_safe_metadata(self):
         stdout = io.StringIO()
@@ -103,9 +164,42 @@ class CLITests(unittest.TestCase):
             output,
         )
         self.assertIn("Prompt strategy: MinimalPromptStrategy", output)
+        self.assertIn("Auto repair: false", output)
+        self.assertIn("Repair threshold: 80", output)
+        self.assertIn("Max repair attempts: 1", output)
+        self.assertIn("Repair attempted: false", output)
+        self.assertIn("Repair applied: false", output)
         self.assertIn("Local knowledge used: ruach", output)
         self.assertIn("Output cleanup applied: true", output)
         self.assertNotIn("secret", output)
+        self.assertNotIn("raw_provider_response", output)
+
+    def test_show_debug_prints_repair_metadata(self):
+        stdout = io.StringIO()
+
+        with patch("bhf_agent.__main__.BHFAgent", RepairAppliedAgent):
+            with contextlib.redirect_stdout(stdout):
+                exit_code = main(
+                    [
+                        "--base-url",
+                        "http://localhost:1234/v1",
+                        "--model",
+                        "fake-model",
+                        "--profile",
+                        "minimal-7b",
+                        "--repair",
+                        "--show-debug",
+                        "What does ruach mean?",
+                    ]
+                )
+
+        output = stdout.getvalue()
+        self.assertEqual(exit_code, 0)
+        self.assertIn("Auto repair: true", output)
+        self.assertIn("Repair attempted: true", output)
+        self.assertIn("Repair applied: true", output)
+        self.assertIn("Original validation score: 50", output)
+        self.assertIn("Repaired validation score: 90", output)
         self.assertNotIn("raw_provider_response", output)
 
 
