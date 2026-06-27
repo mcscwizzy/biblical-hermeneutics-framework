@@ -1,0 +1,9 @@
+{
+  "id": "local-eval-sample-rubric",
+  "description": "Sample deterministic BHF eval rubric. These checks score method, not doctrine.",
+  "scoring": {
+    "expected_behavior": "Each matched expected behavior contributes an equal share of the base score.",
+    "forbidden_behavior": "Each matched forbidden behavior subtracts 20 points.",
+    "judge": "No LLM judge is used; checks are local regex or keyword heuristics."
+  }
+}

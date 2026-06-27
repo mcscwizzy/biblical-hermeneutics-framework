@@ -25,12 +25,17 @@ jobs:
       - name: Install tooling dependencies
         run: pip install -r tools/requirements.txt
 
-      - name: List fixtures and rubrics
+      - name: Validate JSON fixtures and rubrics
         run: |
-          echo "Fixtures:"; ls -1 tests/prompts/ || true
-          echo "Rubrics:";  ls -1 tests/rubrics/ || true
+          python -m json.tool tests/prompts/proverbs-context-basic.json >/dev/null
+          python -m json.tool tests/rubrics/local-eval-sample.json >/dev/null
 
-      - name: Placeholder — wire up a model runner here
+      - name: Run sample saved-answer eval
         run: |
-          echo "Behavioral evals are run manually against any model; see tests/README.md."
-          echo "To automate: compose a fixture's modules, send to a model API, score against the rubric."
+          cat > /tmp/bhf-sample-answer.txt <<'EOF'
+          Proverbs is wisdom literature. A proverb is not a mechanical promise.
+          Start with genre and context before moving to application.
+          EOF
+          python tools/eval_local.py \
+            --fixture tests/prompts/proverbs-context-basic.json \
+            --answer-file /tmp/bhf-sample-answer.txt

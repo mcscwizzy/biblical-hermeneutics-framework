@@ -1,0 +1,36 @@
+{
+  "id": "proverbs-context-basic",
+  "question": "What should I know about the context of Proverbs 3?",
+  "profile": "standard",
+  "answer_mode": "study",
+  "expected_behaviors": [
+    {
+      "id": "identifies-wisdom-genre",
+      "description": "Identifies Proverbs as wisdom literature.",
+      "pattern": "\\b(wisdom literature|wisdom)\\b"
+    },
+    {
+      "id": "avoids-mechanical-promise",
+      "description": "Explains that proverbs should not be read as mechanical promises.",
+      "keywords": ["proverb", "not", "promise"]
+    },
+    {
+      "id": "method-before-application",
+      "description": "Moves from context or observation before application.",
+      "pattern": "\\b(context|observation|genre)\\b.*\\b(application|apply)\\b"
+    }
+  ],
+  "forbidden_behaviors": [
+    {
+      "id": "doctrinally-forces-outcome",
+      "description": "Forces a doctrinal conclusion instead of teaching method.",
+      "pattern": "\\b(the only faithful interpretation|BHF proves|must conclude)\\b"
+    },
+    {
+      "id": "unconditional-prosperity",
+      "description": "Treats Proverbs as an unconditional prosperity guarantee.",
+      "pattern": "\\b(always guarantees|unconditional guarantee|guarantees prosperity)\\b"
+    }
+  ],
+  "pass_threshold": 70
+}
