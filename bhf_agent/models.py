@@ -67,6 +67,14 @@ class GenreContext(Serializable):
 
 
 @dataclass
+class QuestionContext(Serializable):
+    question_type: str
+    target_language: Optional[str] = None
+    target_terms: list[str] = field(default_factory=list)
+    confidence: float = 0.0
+
+
+@dataclass
 class ValidationResult(Serializable):
     passed: bool
     score: int
@@ -79,8 +87,39 @@ class AgentResult(Serializable):
     answer_text: str
     reference_context: ReferenceContext
     genre_context: GenreContext
+    question_context: QuestionContext
     profile_used: str
     validation_result: ValidationResult
     model_metadata: dict[str, Any] = field(default_factory=dict)
+    warnings: list[str] = field(default_factory=list)
+    errors: list[str] = field(default_factory=list)
+
+
+@dataclass
+class PipelineContext(Serializable):
+    """Mutable state for one BHF agent run.
+
+    The context is intentionally simple and dataclass-based so future app/API
+    boundaries can serialize or inspect it without coupling to a workflow
+    framework.
+    """
+
+    original_question: str
+    normalized_question: Optional[str] = None
+    config_profile: Optional[str] = None
+    reference_context: Optional[ReferenceContext] = None
+    genre_context: Optional[GenreContext] = None
+    question_context: Optional[QuestionContext] = None
+    profile_name: Optional[str] = None
+    profile_content: Optional[str] = None
+    local_knowledge: Optional[list[Any]] = None
+    system_prompt: Optional[str] = None
+    user_prompt: Optional[str] = None
+    raw_model_response: Optional[ChatResponse] = None
+    raw_answer_text: Optional[str] = None
+    cleaned_answer_text: Optional[str] = None
+    validation_result: Optional[ValidationResult] = None
+    final_answer: Optional[str] = None
+    debug_metadata: dict[str, Any] = field(default_factory=dict)
     warnings: list[str] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)

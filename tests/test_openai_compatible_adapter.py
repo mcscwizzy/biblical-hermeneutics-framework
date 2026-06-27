@@ -131,6 +131,52 @@ class OpenAICompatibleAdapterTests(unittest.TestCase):
         self.assertEqual(response.text, "")
         self.assertIn("did not include message text", response.errors[0])
 
+    def test_wrong_base_url_404_includes_v1_hint(self):
+        def fake_urlopen(request, timeout=None):
+            raise urllib.error.HTTPError(
+                request.full_url,
+                404,
+                "not found",
+                hdrs=None,
+                fp=FakeHTTPResponse(b"not found"),
+            )
+
+        adapter = OpenAICompatibleAdapter("http://localhost:11434")
+        request = ChatRequest("system", "user", "local-model")
+
+        with patch("urllib.request.urlopen", fake_urlopen):
+            response = adapter.chat(request)
+
+        self.assertEqual(response.text, "")
+        self.assertIn("HTTP 404", response.errors[0])
+        self.assertIn("base URL ending in /v1", response.errors[0])
+
+    def test_malformed_json_returns_helpful_error(self):
+        def fake_urlopen(request, timeout=None):
+            return FakeHTTPResponse(b"{")
+
+        adapter = OpenAICompatibleAdapter("http://localhost:1234/v1")
+        request = ChatRequest("system", "user", "local-model")
+
+        with patch("urllib.request.urlopen", fake_urlopen):
+            response = adapter.chat(request)
+
+        self.assertEqual(response.text, "")
+        self.assertIn("malformed JSON", response.errors[0])
+
+    def test_empty_message_content_returns_helpful_error(self):
+        def fake_urlopen(request, timeout=None):
+            return FakeHTTPResponse(b'{"choices":[{"message":{"content":"   "}}]}')
+
+        adapter = OpenAICompatibleAdapter("http://localhost:1234/v1")
+        request = ChatRequest("system", "user", "local-model")
+
+        with patch("urllib.request.urlopen", fake_urlopen):
+            response = adapter.chat(request)
+
+        self.assertEqual(response.text, "")
+        self.assertIn("empty message content", response.errors[0])
+
 
 if __name__ == "__main__":
     unittest.main()

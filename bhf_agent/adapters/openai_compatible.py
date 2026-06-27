@@ -60,11 +60,12 @@ class OpenAICompatibleAdapter(ChatAdapter):
                 raw_body = response.read().decode("utf-8")
         except urllib.error.HTTPError as exc:
             error_body = _safe_read_error(exc)
+            hint = _http_error_hint(exc.code, self.base_url)
             return ChatResponse(
                 text="",
                 errors=[
                     f"OpenAI-compatible endpoint returned HTTP {exc.code}: "
-                    f"{error_body or exc.reason}"
+                    f"{error_body or exc.reason}{hint}"
                 ],
                 raw_provider_response=error_body,
             )
@@ -74,9 +75,17 @@ class OpenAICompatibleAdapter(ChatAdapter):
                 errors=[f"OpenAI-compatible endpoint timed out: {exc}"],
             )
         except urllib.error.URLError as exc:
+            reason = exc.reason
+            if isinstance(reason, ConnectionRefusedError):
+                message = (
+                    "Connection refused by OpenAI-compatible endpoint. "
+                    "Check that the local model server is running and the base URL is correct."
+                )
+            else:
+                message = f"Could not connect to OpenAI-compatible endpoint: {reason}"
             return ChatResponse(
                 text="",
-                errors=[f"Could not connect to OpenAI-compatible endpoint: {exc.reason}"],
+                errors=[message],
             )
         except OSError as exc:
             return ChatResponse(
@@ -93,14 +102,14 @@ class OpenAICompatibleAdapter(ChatAdapter):
                 raw_provider_response=raw_body,
             )
 
-        text = _extract_text(data)
-        if text is None:
+        text, extraction_error = _extract_text(data)
+        if extraction_error:
             return ChatResponse(
                 text="",
                 model=data.get("model") if isinstance(data, dict) else None,
                 usage=data.get("usage") if isinstance(data, dict) else None,
                 raw_provider_response=data,
-                errors=["OpenAI-compatible endpoint response did not include message text"],
+                errors=[extraction_error],
             )
 
         return ChatResponse(
@@ -118,18 +127,37 @@ def _safe_read_error(exc: urllib.error.HTTPError) -> str:
         return ""
 
 
-def _extract_text(data: Any) -> Optional[str]:
+def _http_error_hint(status_code: int, base_url: str) -> str:
+    if status_code == 404 and not base_url.rstrip("/").endswith("/v1"):
+        return (
+            " Hint: OpenAI-compatible endpoints usually need a base URL ending "
+            "in /v1, such as http://host:11434/v1."
+        )
+    if status_code == 404:
+        return " Hint: check that the local server exposes /chat/completions under this base URL."
+    return ""
+
+
+def _extract_text(data: Any) -> tuple[Optional[str], Optional[str]]:
     if not isinstance(data, dict):
-        return None
+        return None, "OpenAI-compatible endpoint returned malformed response: top-level JSON is not an object"
     choices = data.get("choices")
-    if not isinstance(choices, list) or not choices:
-        return None
+    if not isinstance(choices, list):
+        return None, "OpenAI-compatible endpoint returned malformed response: choices is missing or not a list"
+    if not choices:
+        return None, "OpenAI-compatible endpoint returned empty choices; response did not include message text"
     first = choices[0]
     if not isinstance(first, dict):
-        return None
+        return None, "OpenAI-compatible endpoint returned malformed response: first choice is not an object"
     message = first.get("message")
     if isinstance(message, dict) and isinstance(message.get("content"), str):
-        return message["content"]
+        content = message["content"]
+        if not content.strip():
+            return None, "OpenAI-compatible endpoint returned empty message content"
+        return content, None
     if isinstance(first.get("text"), str):
-        return first["text"]
-    return None
+        text = first["text"]
+        if not text.strip():
+            return None, "OpenAI-compatible endpoint returned empty text content"
+        return text, None
+    return None, "OpenAI-compatible endpoint response did not include message text"

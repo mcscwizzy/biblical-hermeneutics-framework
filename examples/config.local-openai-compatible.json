@@ -1,0 +1,13 @@
+{
+  "config_version": 1,
+  "adapter": "openai_compatible",
+  "base_url": "http://localhost:1234/v1",
+  "api_key": "local",
+  "model": "local-model",
+  "profile": "minimal-7b",
+  "temperature": 0.3,
+  "max_tokens": 2048,
+  "timeout_seconds": 120,
+  "show_method_notes": true,
+  "debug": false
+}

@@ -12,10 +12,12 @@ The agent teaches method. It does not force theological conclusions.
 - A library-first agent runner in `bhf_agent/`.
 - A deterministic reference detector for first-pass Bible references.
 - A broad book-to-genre classifier.
+- A deterministic question-type classifier for routing broad answer workflows.
 - A profile loader for the existing committed profiles in `profiles/`.
 - A prompt builder that combines BHF method, reference context, genre context,
-  and the user question.
-- A lightweight response validator that checks whether the method was followed.
+  question type, and the user question.
+- A lightweight response validator that checks whether the selected method was
+  followed.
 - A generic `ChatAdapter` interface with one v1 implementation:
   `OpenAICompatibleAdapter`.
 - A thin CLI wrapper via `python -m bhf_agent`.
@@ -32,6 +34,74 @@ The agent teaches method. It does not force theological conclusions.
 - Not a Bible text lookup engine.
 
 No copyrighted Bible text is bundled or looked up in v1.
+
+## v1.1 question type routing
+
+The v1.1 runner classifies the question before prompt construction and
+validation. The supported question types are:
+
+- `passage_study`
+- `word_study`
+- `topic_study`
+- `historical_context`
+- `unknown`
+
+The route is deterministic and local. It uses simple phrase and term rules, not
+a model call, external lexicon, Bible text lookup, or cloud service.
+
+Word studies need a different prompt shape than passage studies. A question like
+"What is the Hebrew word for spirit or wind?" is primarily lexical, so the agent
+asks for:
+
+- Short Answer
+- Basic Meaning
+- Context Matters
+- Examples
+- Cautions
+
+This avoids forcing passage-study categories such as genre, original audience,
+observation, interpretation, and application onto a lexical question. It also
+adds guardrails against overclaiming, mixing Hebrew and Greek categories without
+explanation, inventing lexical claims, or turning every use of `ruach`/`pneuma`
+directly into the later theological category "Holy Spirit."
+
+Historical-context questions use a context-focused format. Topic questions use a
+topic-focused format. Passage-study questions keep the original BHF passage
+interpretation format.
+
+### Limitations
+
+The classifier is intentionally conservative and imperfect. It recognizes common
+forms such as "What does ruach mean?", "What is the Greek word for love?",
+"Explain John 3:16", "What is the historical context of Jonah?", and "What does
+the Bible say about hell?"
+
+v1.1 does not include:
+
+- external Hebrew or Greek lexicons
+- bundled Bible text lookup
+- local retrieval over dictionaries or commentaries
+- scholarly citation verification
+
+The model may still make lexical mistakes. The validator can warn about common
+method problems, but it is not a substitute for a sourced lexicon.
+
+### Future: local safe glossary
+
+A later version may include a small local curated glossary for common Hebrew and
+Greek terms such as:
+
+- `ruach`
+- `nephesh`
+- `hesed`
+- `shalom`
+- `logos`
+- `pneuma`
+- `agape`
+
+That glossary should be local, optional, carefully sourced, and designed to help
+small models avoid common word-study errors without pretending to be a full
+lexicon.
 
 ## Runtime model
 
@@ -107,6 +177,7 @@ CLI output includes:
 
 - answer text
 - profile used
+- detected question type
 - detected reference or topic
 - detected genre
 - validation warnings

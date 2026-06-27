@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import sys
 from typing import Optional
+from urllib.parse import urlsplit, urlunsplit
 
 from .config import AgentConfig, ConfigError
 from .profiles import ProfileError
@@ -55,6 +56,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     print(result.answer_text or "(no answer returned)")
     print()
     print("Profile:", result.profile_used)
+    print("Detected question type:", _format_question_type(result))
     print("Detected reference:", _format_reference(result))
     print("Detected genre:", result.genre_context.primary_genre or "not detected")
 
@@ -71,9 +73,43 @@ def main(argv: Optional[list[str]] = None) -> int:
             print(f"- {error}")
 
     if config.debug:
+        pipeline_debug = result.model_metadata.get("pipeline", {})
         print()
-        print("Debug metadata:")
-        print(result.model_metadata)
+        print("Debug:")
+        print("Adapter type:", result.model_metadata.get("adapter_type") or config.adapter)
+        print("Base URL:", _safe_base_url(config.base_url))
+        print(
+            "Model:",
+            result.model_metadata.get("model")
+            or result.model_metadata.get("configured_model")
+            or config.model
+            or "not configured",
+        )
+        print("Profile:", result.profile_used)
+        print("Question type:", _format_question_type(result))
+        print("Detected reference:", _format_reference(result))
+        print("Detected genre:", result.genre_context.primary_genre or "not detected")
+        print("Validation score:", result.validation_result.score)
+        print(
+            "Pipeline stages completed:",
+            ", ".join(pipeline_debug.get("stages_completed", [])) or "none",
+        )
+        print(
+            "Prompt strategy:",
+            pipeline_debug.get("prompt_strategy") or "not detected",
+        )
+        print(
+            "Validation warnings:",
+            "; ".join(result.validation_result.warnings) or "none",
+        )
+        print(
+            "Local knowledge used:",
+            ", ".join(result.model_metadata.get("local_knowledge_keys", [])) or "none",
+        )
+        print(
+            "Output cleanup applied:",
+            str(bool(result.model_metadata.get("cleanup_applied"))).lower(),
+        )
 
     return 1 if result.errors else 0
 
@@ -90,6 +126,24 @@ def _format_reference(result) -> str:
     if ref.testament:
         location += f" [{ref.testament}]"
     return location
+
+
+def _format_question_type(result) -> str:
+    context = result.question_context
+    formatted = context.question_type or "unknown"
+    if context.target_language:
+        formatted += f" [{context.target_language}]"
+    return formatted
+
+
+def _safe_base_url(base_url: Optional[str]) -> str:
+    if not base_url:
+        return "not configured"
+    parts = urlsplit(base_url)
+    netloc = parts.hostname or ""
+    if parts.port is not None:
+        netloc += f":{parts.port}"
+    return urlunsplit((parts.scheme, netloc, parts.path, "", ""))
 
 
 if __name__ == "__main__":
