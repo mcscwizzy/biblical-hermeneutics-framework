@@ -35,6 +35,14 @@ checking local knowledge, building the prompt, contacting the model backend,
 waiting for the model response, cleaning, validating, finalizing, and
 completion.
 
+While a job is running, the UI shows a playful rotating waiting line instead of
+a progress bar or live timer. The text changes locally while the backend is
+blocked waiting for LM Studio, Ollama, or another OpenAI-compatible model
+runtime, and each phrase pauses for about 3 seconds with a small random jitter.
+After a successful answer render, the active status panel collapses to a compact
+completion summary with the total response time. On errors, the panel stays open
+with the failed step and error message.
+
 The non-JavaScript fallback still posts to `/ask` and renders the same answer
 partial after the agent finishes. Job status is local process memory only, so
 active jobs and old status history reset when the FastAPI app restarts.

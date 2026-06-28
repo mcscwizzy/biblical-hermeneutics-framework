@@ -3,6 +3,7 @@ import json
 import os
 import time
 import unittest
+from pathlib import Path
 from urllib.parse import urlencode
 from unittest.mock import patch
 
@@ -18,11 +19,12 @@ from bhf_web.forms import config_from_form
 from bhf_web.forms import load_web_defaults
 
 try:
-    from bhf_web.app import app
+    from bhf_web.app import AskJob, app
 
     HAS_WEB_DEPS = True
 except ModuleNotFoundError:
     app = None
+    AskJob = None
     HAS_WEB_DEPS = False
 
 
@@ -149,10 +151,34 @@ class WebFormTests(unittest.TestCase):
         self.assertEqual(config.timeout_seconds, 360)
 
 
+class WebAssetTests(unittest.TestCase):
+    def test_status_script_collapses_active_panel_after_success(self):
+        script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
+
+        self.assertIn("function markStatusComplete", script)
+        self.assertIn('querySelector(".status-active").hidden = true', script)
+        self.assertIn("stopWaiting();", script)
+        self.assertIn("setRunning(form, submitButton, false);", script)
+
+    def test_status_script_uses_rotating_waiting_text(self):
+        script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
+
+        self.assertIn("WAITING_MESSAGES", script)
+        self.assertIn("deflibberlating", script.lower())
+        self.assertIn("shenaniganizing", script.lower())
+        self.assertIn("calling the schwartz", script.lower())
+        self.assertIn("WAITING_MESSAGE_BASE_DELAY_MS", script)
+        self.assertIn("Math.random()", script)
+        self.assertNotIn("The agent is running. Status updates will appear above.", script)
+        self.assertNotIn("progress-track", script)
+        self.assertNotIn("toFixed(3)", script)
+
+
 @unittest.skipUnless(HAS_WEB_DEPS, "FastAPI test dependencies are not installed")
 class WebAppTests(unittest.TestCase):
     def setUp(self):
         assert app is not None
+        assert AskJob is not None
 
     def test_get_index_returns_200(self):
         response = asgi_request("GET", "/")
@@ -160,6 +186,11 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(response["status"], 200)
         self.assertIn("BHF Agent", response["body"])
         self.assertIn("name=\"question\"", response["body"])
+        self.assertIn("status-summary", response["body"])
+        self.assertIn("status-current", response["body"])
+        self.assertNotIn("progress-track", response["body"])
+        self.assertNotIn("data-total-elapsed", response["body"])
+        self.assertNotIn("status-percent", response["body"])
 
     def test_health_route_returns_ok(self):
         response = asgi_request("GET", "/api/health")
@@ -203,11 +234,35 @@ class WebAppTests(unittest.TestCase):
         self.assertIsNone(status["error"])
         self.assertEqual(status["stage"], "complete")
         self.assertIn("Waiting for model response", _history_messages(status))
+        self.assertEqual(status["percent_complete"], 100.0)
+        self.assertEqual(status["status"], "complete")
+        self.assertIn("elapsed_total_seconds", status)
+        self.assertTrue(
+            all("step_index" in entry for entry in status["history"])
+        )
+        self.assertTrue(
+            all("elapsed_current_stage_seconds" in entry for entry in status["history"])
+        )
 
         result = asgi_request("GET", f"/ask/result/{job['job_id']}")
         self.assertEqual(result["status"], 200)
         self.assertIn("Short Answer", result["body"])
         self.assertIn("Metadata", result["body"])
+
+    def test_ask_job_marks_previous_running_step_complete(self):
+        job = AskJob(job_id="job-1")
+        job.emit(status_event("queued", "Queued", 1, status="running"))
+        job.emit(
+            status_event(
+                "loading_profile",
+                "Loading BHF profile",
+                6,
+                status="running",
+            )
+        )
+
+        self.assertEqual(job.history[0].status, "complete")
+        self.assertEqual(job.history[1].status, "running")
 
     def test_ask_job_surfaces_agent_errors_with_failed_stage(self):
         with patch("bhf_web.app.BHFAgent", ErrorAgent):
@@ -219,12 +274,13 @@ class WebAppTests(unittest.TestCase):
 
         self.assertTrue(status["done"])
         self.assertIn("timed out", status["error"])
-        self.assertEqual(status["failed_stage"], "waiting_for_model")
+        self.assertEqual(status["failed_stage"], "waiting_for_model_response")
+        self.assertEqual(status["status"], "error")
 
         result = asgi_request("GET", f"/ask/result/{job['job_id']}")
         self.assertEqual(result["status"], 502)
         self.assertIn("timed out", result["body"])
-        self.assertIn("failed during waiting for model", result["body"])
+        self.assertIn("failed during waiting for model response", result["body"])
 
 
 class FakeAgent:
@@ -233,32 +289,26 @@ class FakeAgent:
 
     def ask(self, question, status_callback=None):
         if status_callback is not None:
-            status_callback({"stage": "load_profile", "message": "Loading BHF profile"})
+            status_callback(status_event("loading_profile", "Loading BHF profile", 6))
             status_callback(
-                {
-                    "stage": "call_model_start",
-                    "message": "Contacting model backend",
-                }
+                status_event(
+                    "contacting_model_backend",
+                    "Contacting model backend",
+                    10,
+                    status="running",
+                )
             )
             status_callback(
-                {
-                    "stage": "waiting_for_model",
-                    "message": "Waiting for model response",
-                }
+                status_event(
+                    "waiting_for_model_response",
+                    "Waiting for model response",
+                    11,
+                    status="running",
+                )
             )
-            status_callback(
-                {
-                    "stage": "validate_response",
-                    "message": "Validating response",
-                }
-            )
-            status_callback(
-                {
-                    "stage": "finalize_result",
-                    "message": "Finalizing answer",
-                }
-            )
-            status_callback({"stage": "complete", "message": "Complete"})
+            status_callback(status_event("validating_response", "Validating response", 14))
+            status_callback(status_event("formatting_answer", "Finalizing answer", 15))
+            status_callback(status_event("complete", "Complete", 16, status="complete"))
         return fake_result(self.config, errors=["example adapter error"])
 
 
@@ -266,23 +316,34 @@ class ErrorAgent(FakeAgent):
     def ask(self, question, status_callback=None):
         if status_callback is not None:
             status_callback(
-                {
-                    "stage": "call_model_start",
-                    "message": "Contacting model backend",
-                }
+                status_event(
+                    "contacting_model_backend",
+                    "Contacting model backend",
+                    10,
+                    status="running",
+                )
             )
             status_callback(
-                {
-                    "stage": "waiting_for_model",
-                    "message": "Waiting for model response",
-                }
+                status_event(
+                    "waiting_for_model_response",
+                    "Waiting for model response",
+                    11,
+                    status="running",
+                )
             )
             status_callback(
                 {
                     "stage": "error",
                     "message": "Model backend error",
+                    "step_index": 11,
+                    "total_steps": 16,
+                    "percent_complete": 68.8,
+                    "timestamp": "2026-01-01T00:00:00Z",
+                    "elapsed_total_seconds": 1.0,
+                    "elapsed_current_stage_seconds": 0.5,
+                    "status": "error",
                     "details": {
-                        "failed_stage": "waiting_for_model",
+                        "failed_stage": "waiting_for_model_response",
                         "errors": ["OpenAI-compatible endpoint timed out: timed out"],
                     },
                 }
@@ -296,21 +357,39 @@ class ErrorAgent(FakeAgent):
 class SuccessfulJobAgent(FakeAgent):
     def ask(self, question, status_callback=None):
         if status_callback is not None:
-            status_callback({"stage": "load_profile", "message": "Loading BHF profile"})
+            status_callback(status_event("loading_profile", "Loading BHF profile", 6))
             status_callback(
-                {
-                    "stage": "call_model_start",
-                    "message": "Contacting model backend",
-                }
+                status_event(
+                    "contacting_model_backend",
+                    "Contacting model backend",
+                    10,
+                    status="running",
+                )
             )
             status_callback(
-                {
-                    "stage": "waiting_for_model",
-                    "message": "Waiting for model response",
-                }
+                status_event(
+                    "waiting_for_model_response",
+                    "Waiting for model response",
+                    11,
+                    status="running",
+                )
             )
-            status_callback({"stage": "complete", "message": "Complete"})
+            status_callback(status_event("complete", "Complete", 16, status="complete"))
         return fake_result(self.config, errors=[])
+
+
+def status_event(stage, message, step_index, status="complete"):
+    return {
+        "stage": stage,
+        "message": message,
+        "step_index": step_index,
+        "total_steps": 16,
+        "percent_complete": round((step_index / 16) * 100, 1),
+        "timestamp": "2026-01-01T00:00:00Z",
+        "elapsed_total_seconds": float(step_index),
+        "elapsed_current_stage_seconds": 0.25,
+        "status": status,
+    }
 
 
 def fake_result(config, errors):

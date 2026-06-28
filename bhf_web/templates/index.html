@@ -110,9 +110,15 @@
 
       <div class="result-column">
         <section id="status-panel" class="status-panel" aria-live="polite" hidden>
-          <div class="status-heading">Agent status</div>
-          <div class="status-current">Preparing request</div>
-          <ol class="status-history"></ol>
+          <div class="status-summary" hidden></div>
+          <div class="status-active">
+            <div class="status-topline">
+              <div>
+                <div class="status-heading">Agent status</div>
+                <div class="status-current">Preparing request</div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section id="answer-panel" class="answer-panel" aria-live="polite">

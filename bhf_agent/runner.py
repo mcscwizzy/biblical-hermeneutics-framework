@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import time
 from datetime import datetime, timezone
 from typing import Any, Callable, Optional
 
@@ -33,25 +34,48 @@ from .validation import validate_response
 
 StatusCallback = Callable[[dict[str, Any]], None]
 
-STATUS_MESSAGES = {
-    "initialize_context": "Preparing request",
-    "detect_reference": "Detecting biblical reference",
-    "classify_genre": "Classifying genre",
-    "classify_question_type": "Classifying question type",
-    "load_profile": "Loading BHF profile",
-    "lookup_local_knowledge": "Checking local knowledge",
-    "load_session_memory": "Loading session memory",
-    "build_prompts": "Building BHF prompt",
-    "call_model_start": "Contacting model backend",
-    "waiting_for_model": "Waiting for model response",
-    "call_model_complete": "Model response received",
-    "clean_output": "Cleaning model output",
-    "validate_response": "Validating response",
-    "repair_response": "Checking answer repair",
-    "finalize_result": "Finalizing answer",
-    "save_session_turn": "Saving session memory",
-    "complete": "Complete",
-    "error": "Agent request failed",
+PIPELINE_STEPS: tuple[tuple[str, str], ...] = (
+    ("queued", "Queued"),
+    ("preparing_request", "Preparing request"),
+    ("detecting_reference", "Detecting biblical reference"),
+    ("classifying_genre", "Classifying genre"),
+    ("classifying_question_type", "Classifying question type"),
+    ("loading_profile", "Loading BHF profile"),
+    ("checking_local_knowledge", "Checking local knowledge"),
+    ("loading_session_memory", "Loading session memory"),
+    ("building_prompt", "Building BHF prompt"),
+    ("contacting_model_backend", "Contacting model backend"),
+    ("waiting_for_model_response", "Waiting for model response"),
+    ("model_response_received", "Model response received"),
+    ("cleaning_output", "Cleaning model output"),
+    ("validating_response", "Validating response"),
+    ("formatting_answer", "Finalizing answer"),
+    ("complete", "Complete"),
+)
+
+STEP_MESSAGES = dict(PIPELINE_STEPS)
+STEP_INDEX = {stage: index + 1 for index, (stage, _message) in enumerate(PIPELINE_STEPS)}
+TOTAL_STEPS = len(PIPELINE_STEPS)
+
+STAGE_TO_STEP = {
+    "initialize_context": "preparing_request",
+    "detect_reference": "detecting_reference",
+    "classify_genre": "classifying_genre",
+    "classify_question_type": "classifying_question_type",
+    "load_profile": "loading_profile",
+    "lookup_local_knowledge": "checking_local_knowledge",
+    "load_session_memory": "loading_session_memory",
+    "build_prompts": "building_prompt",
+    "call_model_start": "contacting_model_backend",
+    "waiting_for_model": "waiting_for_model_response",
+    "call_model_complete": "model_response_received",
+    "clean_output": "cleaning_output",
+    "validate_response": "validating_response",
+    "repair_response": "validating_response",
+    "finalize_result": "formatting_answer",
+    "save_session_turn": "formatting_answer",
+    "complete": "complete",
+    "error": "error",
 }
 
 
@@ -67,6 +91,9 @@ class BHFAgent:
         self.profile_loader = profile_loader or ProfileLoader()
         self.adapter = adapter or self._build_adapter(config)
         self._status_callback: Optional[StatusCallback] = None
+        self._status_run_started_at: float | None = None
+        self._status_stage_started_at: float | None = None
+        self._status_current_stage: str | None = None
 
     def ask(
         self,
@@ -74,8 +101,15 @@ class BHFAgent:
         status_callback: Optional[StatusCallback] = None,
     ) -> AgentResult:
         previous_callback = self._status_callback
+        previous_run_started_at = self._status_run_started_at
+        previous_stage_started_at = self._status_stage_started_at
+        previous_current_stage = self._status_current_stage
         self._status_callback = status_callback
+        self._status_run_started_at = time.monotonic()
+        self._status_stage_started_at = self._status_run_started_at
+        self._status_current_stage = None
         try:
+            self._emit_status("queued", status="running")
             ctx = self._initialize_context(question)
             ctx = self._detect_reference(ctx)
             ctx = self._classify_genre(ctx)
@@ -95,18 +129,20 @@ class BHFAgent:
                 self._emit_status(
                     "error",
                     "Model backend error",
+                    status="error",
                     details={
-                        "failed_stage": "waiting_for_model",
+                        "failed_stage": "waiting_for_model_response",
                         "errors": list(result.errors),
                     },
                 )
                 return result
-            self._emit_status("complete", "Complete")
+            self._emit_status("complete", "Complete", status="complete")
             return result
         except Exception as exc:
             self._emit_status(
                 "error",
                 "Agent request failed",
+                status="error",
                 details={
                     "error": str(exc),
                     "error_type": exc.__class__.__name__,
@@ -115,6 +151,9 @@ class BHFAgent:
             raise
         finally:
             self._status_callback = previous_callback
+            self._status_run_started_at = previous_run_started_at
+            self._status_stage_started_at = previous_stage_started_at
+            self._status_current_stage = previous_current_stage
 
     def _initialize_context(self, question: str) -> PipelineContext:
         ctx = PipelineContext(
@@ -231,6 +270,7 @@ class BHFAgent:
         self._emit_status(
             "call_model_start",
             "Contacting model backend",
+            status="running",
             details={
                 "adapter": self.config.adapter,
                 "model": self.config.model,
@@ -265,7 +305,11 @@ class BHFAgent:
                 "memory_turns_loaded": ctx.debug_metadata.get("memory_turns_loaded", 0),
             },
         )
-        self._emit_status("waiting_for_model", "Waiting for model response")
+        self._emit_status(
+            "waiting_for_model",
+            "Waiting for model response",
+            status="running",
+        )
         chat_response = self.adapter.chat(chat_request)
         ctx.raw_model_response = chat_response
         ctx.raw_answer_text = chat_response.text
@@ -558,16 +602,38 @@ class BHFAgent:
         self,
         stage: str,
         message: str | None = None,
+        status: str = "complete",
         details: dict[str, Any] | None = None,
     ) -> None:
         if self._status_callback is None:
             return
+        now = time.monotonic()
+        canonical_stage = STAGE_TO_STEP.get(stage, stage)
+        step_index = STEP_INDEX.get(canonical_stage, TOTAL_STEPS)
+        run_started_at = self._status_run_started_at or now
+        stage_started_at = self._status_stage_started_at or now
+        if canonical_stage != self._status_current_stage:
+            if status == "running":
+                elapsed_current_stage_seconds = 0.0
+            else:
+                elapsed_current_stage_seconds = now - stage_started_at
+            self._status_current_stage = canonical_stage
+            self._status_stage_started_at = now
+        else:
+            elapsed_current_stage_seconds = now - stage_started_at
         event: dict[str, Any] = {
-            "stage": stage,
-            "message": message or STATUS_MESSAGES.get(stage, stage.replace("_", " ")),
+            "stage": canonical_stage,
+            "message": message
+            or STEP_MESSAGES.get(canonical_stage, canonical_stage.replace("_", " ")),
+            "step_index": step_index,
+            "total_steps": TOTAL_STEPS,
+            "percent_complete": round((step_index / TOTAL_STEPS) * 100, 1),
             "timestamp": datetime.now(timezone.utc)
             .isoformat()
             .replace("+00:00", "Z"),
+            "elapsed_total_seconds": round(now - run_started_at, 3),
+            "elapsed_current_stage_seconds": round(elapsed_current_stage_seconds, 3),
+            "status": status,
         }
         if details:
             event["details"] = details

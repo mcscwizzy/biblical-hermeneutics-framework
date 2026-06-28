@@ -209,19 +209,20 @@ class RunnerTests(unittest.TestCase):
 
         stages = [event["stage"] for event in events]
         required_order = [
-            "initialize_context",
-            "detect_reference",
-            "classify_genre",
-            "classify_question_type",
-            "load_profile",
-            "lookup_local_knowledge",
-            "build_prompts",
-            "call_model_start",
-            "waiting_for_model",
-            "call_model_complete",
-            "clean_output",
-            "validate_response",
-            "finalize_result",
+            "queued",
+            "preparing_request",
+            "detecting_reference",
+            "classifying_genre",
+            "classifying_question_type",
+            "loading_profile",
+            "checking_local_knowledge",
+            "building_prompt",
+            "contacting_model_backend",
+            "waiting_for_model_response",
+            "model_response_received",
+            "cleaning_output",
+            "validating_response",
+            "formatting_answer",
             "complete",
         ]
         positions = [stages.index(stage) for stage in required_order]
@@ -234,14 +235,22 @@ class RunnerTests(unittest.TestCase):
         self.assertIn("Checking local knowledge", [event["message"] for event in events])
         self.assertIn("Building BHF prompt", [event["message"] for event in events])
         self.assertIn("Contacting model backend", [event["message"] for event in events])
-        self.assertIn("waiting_for_model", stages)
+        self.assertIn("waiting_for_model_response", stages)
         self.assertIn("Waiting for model response", [event["message"] for event in events])
         self.assertIn("Model response received", [event["message"] for event in events])
         self.assertIn("Cleaning model output", [event["message"] for event in events])
         self.assertIn("Validating response", [event["message"] for event in events])
         self.assertIn("Finalizing answer", [event["message"] for event in events])
         self.assertTrue(all("timestamp" in event for event in events))
+        self.assertTrue(all("step_index" in event for event in events))
+        self.assertTrue(all("total_steps" in event for event in events))
+        self.assertTrue(all("percent_complete" in event for event in events))
+        self.assertTrue(all("elapsed_total_seconds" in event for event in events))
+        self.assertTrue(all("elapsed_current_stage_seconds" in event for event in events))
+        self.assertTrue(all("status" in event for event in events))
         self.assertEqual(stages[-1], "complete")
+        self.assertEqual(events[-1]["percent_complete"], 100.0)
+        self.assertEqual(events[-1]["status"], "complete")
 
     def test_adapter_errors_emit_error_status(self):
         events = []
@@ -253,7 +262,11 @@ class RunnerTests(unittest.TestCase):
         error_events = [event for event in events if event["stage"] == "error"]
         self.assertTrue(error_events)
         self.assertIn("timed out", str(error_events[-1]["details"]["errors"]))
-        self.assertEqual(error_events[-1]["details"]["failed_stage"], "waiting_for_model")
+        self.assertEqual(
+            error_events[-1]["details"]["failed_stage"],
+            "waiting_for_model_response",
+        )
+        self.assertEqual(error_events[-1]["status"], "error")
 
     def test_exceptions_emit_error_status_before_raising(self):
         events = []

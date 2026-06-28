@@ -1,4 +1,22 @@
 const POLL_INTERVAL_MS = 750;
+const WAITING_MESSAGE_BASE_DELAY_MS = 3000;
+const WAITING_MESSAGE_JITTER_MS = 900;
+const WAITING_MESSAGES = [
+  "Deflibberlating…",
+  "Shenaniganizing…",
+  "Thinkle-sparking…",
+  "Context-wrangling…",
+  "Token-juggling…",
+  "Braincell-brewing…",
+  "Meaning-munching…",
+  "Prompt-polishing…",
+  "Calling the Schwartz…",
+  "Noodle-calibrating…",
+];
+
+let waitingTimerId = null;
+let waitingMessageIndex = 0;
+let latestStatus = null;
 
 document.addEventListener("submit", async function (event) {
   const form = event.target;
@@ -18,7 +36,8 @@ document.addEventListener("submit", async function (event) {
 
   setRunning(form, submitButton, true);
   resetStatus(statusPanel);
-  answerPanel.innerHTML = "<p class=\"empty\">The agent is running. Status updates will appear above.</p>";
+  startWaiting(statusPanel);
+  answerPanel.innerHTML = "";
   answerPanel.setAttribute("aria-busy", "true");
 
   try {
@@ -35,10 +54,17 @@ document.addEventListener("submit", async function (event) {
     const finalStatus = await pollJob(form, statusPanel, job.job_id);
     const resultResponse = await fetch(form.dataset.resultBase + finalStatus.job_id);
     answerPanel.innerHTML = await resultResponse.text();
+
+    if (finalStatus.error || !resultResponse.ok) {
+      markStatusFailed(statusPanel, finalStatus.error || "Request failed.");
+    } else {
+      markStatusComplete(statusPanel, finalStatus);
+    }
   } catch (error) {
     markStatusFailed(statusPanel, error.message || "Request failed.");
     answerPanel.innerHTML = errorHtml(error.message || "Request failed.");
   } finally {
+    stopWaiting();
     answerPanel.removeAttribute("aria-busy");
     setRunning(form, submitButton, false);
   }
@@ -63,40 +89,83 @@ async function pollJob(form, statusPanel, jobId) {
 }
 
 function resetStatus(statusPanel) {
+  latestStatus = null;
+  waitingMessageIndex = 0;
   statusPanel.hidden = false;
   statusPanel.classList.remove("complete", "failed");
+  statusPanel.querySelector(".status-active").hidden = false;
+  statusPanel.querySelector(".status-summary").hidden = true;
+  statusPanel.querySelector(".status-summary").textContent = "";
   statusPanel.querySelector(".status-current").textContent = "Preparing request";
-  statusPanel.querySelector(".status-history").innerHTML = "";
 }
 
 function renderStatus(statusPanel, status) {
+  latestStatus = status;
   statusPanel.hidden = false;
+  statusPanel.classList.toggle("failed", Boolean(status.error || status.status === "error"));
   statusPanel.classList.toggle("complete", Boolean(status.done && !status.error));
-  statusPanel.classList.toggle("failed", Boolean(status.error));
-  statusPanel.querySelector(".status-current").textContent = status.error
-    ? "Failed"
-    : status.message;
-
-  const history = statusPanel.querySelector(".status-history");
-  history.innerHTML = "";
-  for (const entry of status.history || []) {
-    const item = document.createElement("li");
-    item.textContent = entry.message;
-    item.dataset.stage = entry.stage;
-    history.appendChild(item);
+  if (status.error || status.status === "error") {
+    statusPanel.querySelector(".status-current").textContent = "Failed";
+  } else if (status.done) {
+    statusPanel.querySelector(".status-current").textContent = status.message;
   }
 }
 
+function startWaiting(statusPanel) {
+  stopWaiting();
+  setWaitingMessage(statusPanel);
+  scheduleNextWaitingMessage(statusPanel);
+}
+
+function stopWaiting() {
+  if (waitingTimerId !== null) {
+    window.clearTimeout(waitingTimerId);
+    waitingTimerId = null;
+  }
+}
+
+function setWaitingMessage(statusPanel) {
+  const current = statusPanel.querySelector(".status-current");
+  if (!current) {
+    return;
+  }
+  current.textContent = WAITING_MESSAGES[waitingMessageIndex % WAITING_MESSAGES.length];
+  waitingMessageIndex += 1;
+}
+
+function scheduleNextWaitingMessage(statusPanel) {
+  waitingTimerId = window.setTimeout(() => {
+    setWaitingMessage(statusPanel);
+    if (!latestStatus || !latestStatus.done) {
+      scheduleNextWaitingMessage(statusPanel);
+    }
+  }, randomWaitingDelay());
+}
+
+function randomWaitingDelay() {
+  const jitter = Math.floor((Math.random() * 2 - 1) * WAITING_MESSAGE_JITTER_MS);
+  return WAITING_MESSAGE_BASE_DELAY_MS + jitter;
+}
+
+function markStatusComplete(statusPanel, status) {
+  stopWaiting();
+  const elapsed = Number(status.elapsed_total_seconds || 0);
+  statusPanel.classList.remove("failed");
+  statusPanel.classList.add("complete");
+  statusPanel.querySelector(".status-active").hidden = true;
+  const summary = statusPanel.querySelector(".status-summary");
+  summary.hidden = false;
+  summary.textContent = `Complete - finished in ${formatSeconds(elapsed)}`;
+}
+
 function markStatusFailed(statusPanel, message) {
+  stopWaiting();
   statusPanel.hidden = false;
   statusPanel.classList.remove("complete");
   statusPanel.classList.add("failed");
+  statusPanel.querySelector(".status-active").hidden = false;
+  statusPanel.querySelector(".status-summary").hidden = true;
   statusPanel.querySelector(".status-current").textContent = "Failed";
-  const history = statusPanel.querySelector(".status-history");
-  const item = document.createElement("li");
-  item.textContent = `Failed: ${message}`;
-  item.dataset.stage = "failed";
-  history.appendChild(item);
 }
 
 function setRunning(form, submitButton, running) {
@@ -119,6 +188,11 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll("\"", "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function formatSeconds(value) {
+  const seconds = Math.max(0, Number(value) || 0);
+  return `${seconds.toFixed(1)}s`;
 }
 
 function delay(ms) {

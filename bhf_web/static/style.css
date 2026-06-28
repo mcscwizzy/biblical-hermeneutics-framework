@@ -149,6 +149,13 @@ button:disabled {
   text-transform: uppercase;
 }
 
+.status-topline {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: start;
+}
+
 .status-current {
   margin-top: 6px;
   color: #1b4666;
@@ -156,24 +163,14 @@ button:disabled {
   font-weight: 750;
 }
 
-.status-history {
-  display: grid;
-  gap: 8px;
-  margin: 14px 0 0;
-  padding-left: 22px;
-}
-
-.status-history li {
-  color: #354250;
-}
-
-.status-history li::marker {
-  color: #245b82;
-}
-
 .status-panel.complete {
   border-color: #7fb28a;
   background: #f2fbf4;
+}
+
+.status-summary {
+  color: #245b36;
+  font-weight: 750;
 }
 
 .status-panel.failed {
@@ -181,8 +178,7 @@ button:disabled {
   background: #fff1f1;
 }
 
-.status-panel.failed .status-current,
-.status-panel.failed .status-history li::marker {
+.status-panel.failed .status-current {
   color: #9a2c2c;
 }
 

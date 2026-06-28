@@ -38,14 +38,37 @@ class StatusEntry:
     stage: str
     message: str
     timestamp: str
+    step_index: int = 1
+    total_steps: int = 1
+    percent_complete: float = 0.0
+    elapsed_total_seconds: float = 0.0
+    elapsed_current_stage_seconds: float = 0.0
+    status: str = "running"
     details: dict[str, Any] | None = None
 
     @classmethod
     def from_event(cls, event: dict[str, Any]) -> "StatusEntry":
+        total_steps = _int_value(event.get("total_steps"), 1)
+        step_index = _int_value(event.get("step_index"), 1)
         return cls(
             stage=str(event.get("stage") or "unknown"),
             message=str(event.get("message") or "Working"),
             timestamp=str(event.get("timestamp") or _timestamp()),
+            step_index=step_index,
+            total_steps=total_steps,
+            percent_complete=_float_value(
+                event.get("percent_complete"),
+                (step_index / max(total_steps, 1)) * 100,
+            ),
+            elapsed_total_seconds=_float_value(
+                event.get("elapsed_total_seconds"),
+                0.0,
+            ),
+            elapsed_current_stage_seconds=_float_value(
+                event.get("elapsed_current_stage_seconds"),
+                0.0,
+            ),
+            status=str(event.get("status") or "running"),
             details=event.get("details") if isinstance(event.get("details"), dict) else None,
         )
 
@@ -54,6 +77,12 @@ class StatusEntry:
             "stage": self.stage,
             "message": self.message,
             "timestamp": self.timestamp,
+            "step_index": self.step_index,
+            "total_steps": self.total_steps,
+            "percent_complete": self.percent_complete,
+            "elapsed_total_seconds": self.elapsed_total_seconds,
+            "elapsed_current_stage_seconds": self.elapsed_current_stage_seconds,
+            "status": self.status,
         }
         if self.details:
             data["details"] = self.details
@@ -71,15 +100,28 @@ class AskJob:
     failed_stage: str | None = None
     result: Any = None
     status_code: int = 200
+    percent_complete: float = 0.0
+    elapsed_total_seconds: float = 0.0
+    elapsed_current_stage_seconds: float = 0.0
+    status: str = "running"
 
     def emit(self, event: dict[str, Any]) -> None:
         entry = StatusEntry.from_event(event)
         if self.history and self.history[-1].stage == entry.stage:
             self.message = entry.message
-            return
+            self.history[-1] = entry
+        else:
+            if self.history and self.history[-1].status == "running":
+                self.history[-1].status = "complete"
+            self.history.append(entry)
         self.stage = entry.stage
         self.message = entry.message
-        self.history.append(entry)
+        self.percent_complete = entry.percent_complete
+        self.elapsed_total_seconds = entry.elapsed_total_seconds
+        self.elapsed_current_stage_seconds = entry.elapsed_current_stage_seconds
+        self.status = entry.status
+        if entry.status == "error":
+            self.failed_stage = _failed_stage(entry) or self.stage
 
     def fail(
         self,
@@ -93,11 +135,18 @@ class AskJob:
         self.stage = "failed"
         self.message = f"Failed: {error}"
         self.done = True
+        self.status = "error"
         self.history.append(
             StatusEntry(
                 stage="error",
                 message=f"Failed: {error}",
                 timestamp=_timestamp(),
+                step_index=self.history[-1].step_index if self.history else 1,
+                total_steps=self.history[-1].total_steps if self.history else 1,
+                percent_complete=self.percent_complete,
+                elapsed_total_seconds=self.elapsed_total_seconds,
+                elapsed_current_stage_seconds=self.elapsed_current_stage_seconds,
+                status="error",
                 details={"failed_stage": self.failed_stage},
             )
         )
@@ -105,6 +154,7 @@ class AskJob:
     def complete(self, result: Any) -> None:
         self.result = result
         self.done = True
+        self.status = "complete"
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -115,6 +165,10 @@ class AskJob:
             "done": self.done,
             "error": self.error,
             "failed_stage": self.failed_stage,
+            "percent_complete": self.percent_complete,
+            "elapsed_total_seconds": self.elapsed_total_seconds,
+            "elapsed_current_stage_seconds": self.elapsed_current_stage_seconds,
+            "status": self.status,
         }
 
 
@@ -130,6 +184,12 @@ class AskJobStore:
                 "stage": "queued",
                 "message": "Queued",
                 "timestamp": _timestamp(),
+                "step_index": 1,
+                "total_steps": 16,
+                "percent_complete": 0,
+                "elapsed_total_seconds": 0,
+                "elapsed_current_stage_seconds": 0,
+                "status": "running",
             }
         )
         with self._lock:
@@ -146,6 +206,27 @@ job_store = AskJobStore()
 
 def _timestamp() -> str:
     return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def _int_value(value: Any, default: int) -> int:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def _float_value(value: Any, default: float) -> float:
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def _failed_stage(entry: StatusEntry) -> str | None:
+    if not isinstance(entry.details, dict):
+        return None
+    value = entry.details.get("failed_stage")
+    return str(value) if value else None
 
 
 def create_app() -> FastAPI:
@@ -298,7 +379,7 @@ def _run_ask_job(job: AskJob, form: dict[str, Any]) -> None:
         job.fail(
             "; ".join(str(error) for error in result.errors),
             status_code=502,
-            failed_stage="waiting_for_model",
+            failed_stage=job.failed_stage or "waiting_for_model_response",
         )
         job.result = result
         return
