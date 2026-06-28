@@ -1,0 +1,22 @@
+{% if error %}
+  <div class="error" role="alert">
+    <h2>Could not ask BHF</h2>
+    <p>{{ error }}</p>
+  </div>
+{% else %}
+  <article class="answer">
+    <h2>Answer</h2>
+    <div class="answer-body">{{ answer_html | safe }}</div>
+  </article>
+
+  <aside class="metadata">
+    <h2>Metadata</h2>
+    <dl>
+      {% for label, value in metadata.items() %}
+        <dt>{{ label }}</dt>
+        <dd>{{ value }}</dd>
+      {% endfor %}
+    </dl>
+  </aside>
+{% endif %}
+

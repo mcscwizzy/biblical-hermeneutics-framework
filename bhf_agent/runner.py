@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Any, Optional
+from typing import Any, Callable, Optional
 
 from .adapters import ChatAdapter, OpenAICompatibleAdapter
 from .config import AgentConfig, ConfigError
@@ -30,17 +30,22 @@ from .references import detect_reference
 from .validation import validate_response
 
 
+ProgressCallback = Callable[[str, str], None]
+
+
 class BHFAgent:
     def __init__(
         self,
         config: AgentConfig,
         adapter: Optional[ChatAdapter] = None,
         profile_loader: Optional[ProfileLoader] = None,
+        progress_callback: Optional[ProgressCallback] = None,
     ) -> None:
         config.validate()
         self.config = config
         self.profile_loader = profile_loader or ProfileLoader()
         self.adapter = adapter or self._build_adapter(config)
+        self.progress_callback = progress_callback
 
     def ask(self, question: str) -> AgentResult:
         ctx = self._initialize_context(question)
@@ -57,9 +62,12 @@ class BHFAgent:
         ctx = self._repair_response(ctx)
         ctx = self._finalize_result(ctx)
         ctx = self._save_session_turn(ctx)
-        return self._to_agent_result(ctx)
+        result = self._to_agent_result(ctx)
+        self._emit_status("complete", "Complete")
+        return result
 
     def _initialize_context(self, question: str) -> PipelineContext:
+        self._emit_status("preparing_request", "Preparing request")
         ctx = PipelineContext(
             original_question=question,
             normalized_question=" ".join(question.strip().split()),
@@ -88,6 +96,7 @@ class BHFAgent:
         return self._mark_stage(ctx, "initialize_context")
 
     def _detect_reference(self, ctx: PipelineContext) -> PipelineContext:
+        self._emit_status("detecting_reference", "Detecting biblical reference")
         ctx.reference_context = detect_reference(ctx.original_question)
         return self._mark_stage(ctx, "detect_reference")
 
@@ -105,6 +114,7 @@ class BHFAgent:
         return self._mark_stage(ctx, "classify_question_type")
 
     def _load_profile(self, ctx: PipelineContext) -> PipelineContext:
+        self._emit_status("selecting_profile", "Selecting profile")
         profile = self.profile_loader.load(self.config.profile)
         ctx.profile_name = profile.name
         ctx.profile_content = profile.content
@@ -115,6 +125,7 @@ class BHFAgent:
         return self._mark_stage(ctx, "load_profile")
 
     def _lookup_local_knowledge(self, ctx: PipelineContext) -> PipelineContext:
+        self._emit_status("applying_framework", "Applying BHF framework")
         if (
             ctx.reference_context is None
             or ctx.genre_context is None
@@ -171,6 +182,7 @@ class BHFAgent:
         return self._mark_stage(ctx, "build_prompts")
 
     def _call_model(self, ctx: PipelineContext) -> PipelineContext:
+        self._emit_status("contacting_model", "Contacting model backend")
         if (
             ctx.system_prompt is None
             or ctx.user_prompt is None
@@ -199,6 +211,7 @@ class BHFAgent:
                 "memory_turns_loaded": ctx.debug_metadata.get("memory_turns_loaded", 0),
             },
         )
+        self._emit_status("waiting_for_model", "Waiting for model response")
         chat_response = self.adapter.chat(chat_request)
         ctx.raw_model_response = chat_response
         ctx.raw_answer_text = chat_response.text
@@ -216,6 +229,7 @@ class BHFAgent:
         return self._mark_stage(ctx, "clean_output")
 
     def _validate_response(self, ctx: PipelineContext) -> PipelineContext:
+        self._emit_status("validating_response", "Validating response")
         if ctx.question_context is None:
             raise RuntimeError("question_context must be set before validation")
         ctx.validation_result = validate_response(
@@ -353,6 +367,7 @@ class BHFAgent:
         return False, "repaired answer did not improve validation"
 
     def _finalize_result(self, ctx: PipelineContext) -> PipelineContext:
+        self._emit_status("formatting_answer", "Formatting answer")
         ctx.final_answer = ctx.cleaned_answer_text or ""
         return self._mark_stage(ctx, "finalize_result")
 
@@ -465,6 +480,11 @@ class BHFAgent:
         if isinstance(stages, list):
             stages.append(stage)
         return ctx
+
+    def _emit_status(self, stage: str, message: str) -> None:
+        if self.progress_callback is None:
+            return
+        self.progress_callback(stage, message)
 
     def _build_adapter(self, config: AgentConfig) -> ChatAdapter:
         if config.adapter == "openai_compatible":

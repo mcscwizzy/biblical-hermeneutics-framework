@@ -25,6 +25,19 @@ Then open:
 http://127.0.0.1:8000
 ```
 
+## Live Status
+
+When JavaScript is enabled, the form starts an in-memory ask job and polls the
+FastAPI app for backend status while the agent runs. The status panel shows
+real pipeline stages such as preparing the request, detecting the biblical
+reference, selecting the profile, applying the BHF framework, contacting the
+model backend, waiting for the model response, validating, formatting, and
+completion.
+
+The non-JavaScript fallback still posts to `/ask` and renders the same answer
+partial after the agent finishes. Job status is local process memory only, so
+active jobs and old status history reset when the FastAPI app restarts.
+
 ## Local Defaults
 
 The UI reads optional defaults from `.bhf/web-config.json`. This path is
@@ -47,6 +60,10 @@ If the file is missing or invalid, the UI uses built-in local defaults:
   "show_method_notes": true
 }
 ```
+
+`timeout_seconds` controls the outbound OpenAI-compatible model request timeout.
+You can set it in `.bhf/web-config.json`, with `BHF_TIMEOUT_SECONDS`, or in the
+form for quick local testing.
 
 Example Ollama base URL:
 

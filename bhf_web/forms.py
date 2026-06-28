@@ -20,6 +20,7 @@ ENV_CONFIG_FIELDS = {
     "BHF_ANSWER_MODE": "answer_mode",
     "BHF_TEMPERATURE": "temperature",
     "BHF_MAX_TOKENS": "max_tokens",
+    "BHF_TIMEOUT_SECONDS": "timeout_seconds",
     "BHF_SHOW_METHOD_NOTES": "show_method_notes",
     "BHF_MEMORY_ENABLED": "memory_enabled",
     "BHF_MEMORY_PATH": "memory_path",
@@ -103,6 +104,7 @@ def config_from_form(
         "base_url": _required_text(form, "base_url"),
         "temperature": _float_value(form, "temperature"),
         "max_tokens": _int_value(form, "max_tokens"),
+        "timeout_seconds": _optional_float_value(form, "timeout_seconds"),
         "show_method_notes": _checked(form, "show_method_notes"),
         "memory_enabled": _checked(form, "memory_enabled"),
         "session_id": _optional_text(form, "session_id"),
@@ -124,6 +126,7 @@ def form_values_from_config(config: AgentConfig, question: str = "") -> dict[str
         "base_url": config.base_url or "",
         "temperature": config.temperature,
         "max_tokens": config.max_tokens,
+        "timeout_seconds": config.timeout_seconds or "",
         "show_method_notes": config.show_method_notes,
         "memory_enabled": config.memory_enabled,
         "session_id": config.session_id or "",
@@ -159,6 +162,16 @@ def _float_value(form: Mapping[str, Any], name: str) -> float:
         raise ConfigError(f"{name.replace('_', ' ')} must be a number") from exc
 
 
+def _optional_float_value(form: Mapping[str, Any], name: str) -> float | None:
+    value = str(form.get(name) or "").strip()
+    if not value:
+        return None
+    try:
+        return float(value)
+    except ValueError as exc:
+        raise ConfigError(f"{name.replace('_', ' ')} must be a number") from exc
+
+
 def _int_value(form: Mapping[str, Any], name: str) -> int:
     value = str(form.get(name) or "").strip()
     try:
@@ -185,7 +198,7 @@ def _apply_env_overrides(values: dict[str, Any], environ: Mapping[str, str]) -> 
 
 
 def _env_value(field_name: str, raw_value: str) -> Any:
-    if field_name in {"temperature"}:
+    if field_name in {"temperature", "timeout_seconds"}:
         try:
             return float(raw_value)
         except ValueError as exc:

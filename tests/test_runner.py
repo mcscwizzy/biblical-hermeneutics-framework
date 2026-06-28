@@ -164,6 +164,35 @@ class RunnerTests(unittest.TestCase):
         self.assertEqual(result.model_metadata["answer_mode"], "teaching")
         self.assertEqual(result.model_metadata["pipeline"]["answer_mode"], "teaching")
 
+    def test_progress_callback_receives_pipeline_statuses(self):
+        events = []
+        profiles_dir = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, profiles_dir, ignore_errors=True)
+        (profiles_dir / "minimal-7b.md").write_text("PROFILE", encoding="utf-8")
+        agent = BHFAgent(
+            AgentConfig(
+                base_url="http://localhost:1234/v1",
+                model="fake-model",
+                profile="minimal-7b",
+            ),
+            adapter=RecordingAdapter(),
+            profile_loader=ProfileLoader(profiles_dir),
+            progress_callback=lambda stage, message: events.append((stage, message)),
+        )
+
+        agent.ask("What does Proverbs 3 mean?")
+
+        stages = [stage for stage, _message in events]
+        self.assertIn("preparing_request", stages)
+        self.assertIn("detecting_reference", stages)
+        self.assertIn("selecting_profile", stages)
+        self.assertIn("applying_framework", stages)
+        self.assertIn("contacting_model", stages)
+        self.assertIn("waiting_for_model", stages)
+        self.assertIn("validating_response", stages)
+        self.assertIn("formatting_answer", stages)
+        self.assertEqual(stages[-1], "complete")
+
     def test_debug_metadata_includes_local_book_and_genre_keys(self):
         adapter = RecordingAdapter()
         agent = self.make_agent(adapter, profile="standard")

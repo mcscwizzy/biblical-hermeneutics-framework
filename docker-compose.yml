@@ -1,0 +1,28 @@
+services:
+  bhf-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${BHF_PORT:-8080}:8080"
+    environment:
+      BHF_BASE_URL: "${BHF_BASE_URL:-http://host.docker.internal:11434/v1}"
+      BHF_MODEL: "${BHF_MODEL:-qwen2.5:7b}"
+      BHF_PROFILE: "${BHF_PROFILE:-standard}"
+      BHF_ANSWER_MODE: "${BHF_ANSWER_MODE:-study}"
+      BHF_TEMPERATURE: "${BHF_TEMPERATURE:-0.3}"
+      BHF_MAX_TOKENS: "${BHF_MAX_TOKENS:-2048}"
+      BHF_SHOW_METHOD_NOTES: "${BHF_SHOW_METHOD_NOTES:-true}"
+      BHF_MEMORY_ENABLED: "${BHF_MEMORY_ENABLED:-false}"
+      BHF_MEMORY_PATH: /app/.bhf/sessions
+    volumes:
+      - ./.bhf:/app/.bhf
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import json, urllib.request; data=json.load(urllib.request.urlopen('http://127.0.0.1:8080/api/health', timeout=3)); raise SystemExit(0 if data.get('status') == 'ok' else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+

@@ -27,7 +27,7 @@ class AgentConfig:
     temperature: float = 0.3
     max_tokens: int = 2048
     show_method_notes: bool = True
-    timeout_seconds: Optional[float] = 360
+    timeout_seconds: Optional[float] = 600
     debug: bool = False
     auto_repair: bool = False
     max_repair_attempts: int = 1

@@ -1,5 +1,7 @@
 import asyncio
+import json
 import os
+import time
 import unittest
 from urllib.parse import urlencode
 from unittest.mock import patch
@@ -89,6 +91,7 @@ class WebFormTests(unittest.TestCase):
             "BHF_ANSWER_MODE": "concise",
             "BHF_TEMPERATURE": "0.2",
             "BHF_MAX_TOKENS": "1024",
+            "BHF_TIMEOUT_SECONDS": "45",
             "BHF_SHOW_METHOD_NOTES": "false",
             "BHF_MEMORY_ENABLED": "true",
             "BHF_MEMORY_PATH": "/app/.bhf/sessions",
@@ -104,6 +107,7 @@ class WebFormTests(unittest.TestCase):
         self.assertEqual(config.answer_mode, "concise")
         self.assertEqual(config.temperature, 0.2)
         self.assertEqual(config.max_tokens, 1024)
+        self.assertEqual(config.timeout_seconds, 45)
         self.assertFalse(config.show_method_notes)
         self.assertTrue(config.memory_enabled)
         self.assertEqual(config.memory_path, "/app/.bhf/sessions")
@@ -142,6 +146,7 @@ class WebFormTests(unittest.TestCase):
         self.assertEqual(config.model, "form-model")
         self.assertEqual(config.profile, "minimal-7b")
         self.assertEqual(config.answer_mode, "concise")
+        self.assertEqual(config.timeout_seconds, 600)
 
 
 @unittest.skipUnless(HAS_WEB_DEPS, "FastAPI test dependencies are not installed")
@@ -186,12 +191,55 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("Could not ask BHF", response["body"])
         self.assertIn("max_tokens must be greater than 0", response["body"])
 
+    def test_ask_job_reports_status_and_returns_result(self):
+        with patch("bhf_web.app.BHFAgent", SuccessfulJobAgent):
+            response = asgi_request("POST", "/ask/jobs", data=_valid_form())
+
+        self.assertEqual(response["status"], 202)
+        job = json.loads(response["body"])
+        status = wait_for_job(job["job_id"])
+
+        self.assertTrue(status["done"])
+        self.assertIsNone(status["error"])
+        self.assertEqual(status["stage"], "complete")
+        self.assertIn("Waiting for model response", _history_messages(status))
+
+        result = asgi_request("GET", f"/ask/result/{job['job_id']}")
+        self.assertEqual(result["status"], 200)
+        self.assertIn("Short Answer", result["body"])
+        self.assertIn("Metadata", result["body"])
+
+    def test_ask_job_surfaces_agent_errors_with_failed_stage(self):
+        with patch("bhf_web.app.BHFAgent", ErrorAgent):
+            response = asgi_request("POST", "/ask/jobs", data=_valid_form())
+
+        self.assertEqual(response["status"], 202)
+        job = json.loads(response["body"])
+        status = wait_for_job(job["job_id"])
+
+        self.assertTrue(status["done"])
+        self.assertIn("timed out", status["error"])
+        self.assertEqual(status["failed_stage"], "waiting_for_model")
+
+        result = asgi_request("GET", f"/ask/result/{job['job_id']}")
+        self.assertEqual(result["status"], 502)
+        self.assertIn("timed out", result["body"])
+        self.assertIn("failed during waiting for model", result["body"])
+
 
 class FakeAgent:
-    def __init__(self, config):
+    def __init__(self, config, progress_callback=None):
         self.config = config
+        self.progress_callback = progress_callback
 
     def ask(self, question):
+        if self.progress_callback is not None:
+            self.progress_callback("selecting_profile", "Selecting profile")
+            self.progress_callback("contacting_model", "Contacting model backend")
+            self.progress_callback("waiting_for_model", "Waiting for model response")
+            self.progress_callback("validating_response", "Validating response")
+            self.progress_callback("formatting_answer", "Formatting answer")
+            self.progress_callback("complete", "Complete")
         return AgentResult(
             answer_text="## Short Answer\nAnswer with **method**.",
             reference_context=ReferenceContext(
@@ -218,6 +266,23 @@ class FakeAgent:
         )
 
 
+class ErrorAgent(FakeAgent):
+    def ask(self, question):
+        if self.progress_callback is not None:
+            self.progress_callback("contacting_model", "Contacting model backend")
+            self.progress_callback("waiting_for_model", "Waiting for model response")
+        result = super().ask(question)
+        result.errors = ["OpenAI-compatible endpoint timed out: timed out"]
+        return result
+
+
+class SuccessfulJobAgent(FakeAgent):
+    def ask(self, question):
+        result = super().ask(question)
+        result.errors = []
+        return result
+
+
 def _valid_form():
     return {
         "question": "What does Romans 12:1 mean?",
@@ -227,9 +292,24 @@ def _valid_form():
         "base_url": "http://localhost:1234/v1",
         "temperature": "0.3",
         "max_tokens": "1024",
+        "timeout_seconds": "600",
         "show_method_notes": "on",
         "memory_max_turns": "8",
     }
+
+
+def wait_for_job(job_id):
+    for _attempt in range(20):
+        response = asgi_request("GET", f"/ask/status/{job_id}")
+        status = json.loads(response["body"])
+        if status.get("done"):
+            return status
+        time.sleep(0.01)
+    raise AssertionError(f"job did not complete: {job_id}")
+
+
+def _history_messages(status):
+    return [entry["message"] for entry in status["history"]]
 
 
 def asgi_request(method, path, data=None):
