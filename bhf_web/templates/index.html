@@ -3,112 +3,165 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BHF Agent Local UI</title>
+  <title>BHF ASV Reader</title>
   <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
   <script src="{{ url_for('static', path='/htmx-lite.js') }}" defer></script>
 </head>
 <body>
-  <main class="page">
+  <main class="page reader-page">
     <header class="header">
-      <h1>BHF Agent</h1>
-      <p>Local UI for asking your configured OpenAI-compatible model through the existing BHF Agent pipeline.</p>
+      <div>
+        <h1>BHF ASV Reader</h1>
+        <p>Read the public-domain American Standard Version, select a passage, ask BHF, and keep local notes.</p>
+      </div>
     </header>
 
     {% if config_warning %}
       <div class="notice" role="status">{{ config_warning }}</div>
     {% endif %}
 
-    <section class="layout">
-      <form
-        class="ask-form"
-        method="post"
-        action="/ask"
-        data-job-post="/ask/jobs"
-        data-status-base="/ask/status/"
-        data-result-base="/ask/result/"
-        data-target="#answer-panel"
-        data-status-target="#status-panel"
-      >
-        <label class="full">
-          <span>Question</span>
-          <textarea name="question" rows="8" required>{{ form.question }}</textarea>
-        </label>
-
-        <label>
-          <span>Profile</span>
-          <select name="profile">
-            {% for profile in profiles %}
-              <option value="{{ profile }}" {% if profile == form.profile %}selected{% endif %}>{{ profile }}</option>
-            {% endfor %}
-          </select>
-        </label>
-
-        <label>
-          <span>Answer mode</span>
-          <select name="answer_mode">
-            {% for mode in answer_modes %}
-              <option value="{{ mode }}" {% if mode == form.answer_mode %}selected{% endif %}>{{ mode }}</option>
-            {% endfor %}
-          </select>
-        </label>
-
-        <label>
-          <span>Model</span>
-          <input type="text" name="model" value="{{ form.model }}" required>
-        </label>
-
-        <label>
-          <span>Base URL</span>
-          <input type="url" name="base_url" value="{{ form.base_url }}" required>
-        </label>
-
-        <label>
-          <span>Temperature</span>
-          <input type="number" name="temperature" min="0" max="2" step="0.1" value="{{ form.temperature }}" required>
-        </label>
-
-        <label>
-          <span>Max tokens</span>
-          <input type="number" name="max_tokens" min="1" step="1" value="{{ form.max_tokens }}" required>
-        </label>
-
-        <label>
-          <span>Timeout seconds</span>
-          <input type="number" name="timeout_seconds" min="1" step="1" value="{{ form.timeout_seconds }}" required>
-        </label>
-
-        <label class="check full">
-          <input type="checkbox" name="show_method_notes" {% if form.show_method_notes %}checked{% endif %}>
-          <span>Show method notes</span>
-        </label>
-
-        <fieldset class="full">
-          <legend>Local session memory</legend>
-          <label class="check">
-            <input type="checkbox" name="memory_enabled" {% if form.memory_enabled %}checked{% endif %}>
-            <span>Enable memory</span>
-          </label>
-
-          <div class="grid">
+    <section class="reader-layout">
+      <section class="reader-column" aria-labelledby="reader-heading">
+        <div class="reader-toolbar">
+          <h2 id="reader-heading">ASV Bible</h2>
+          <div class="reader-controls">
             <label>
-              <span>Session ID</span>
-              <input type="text" name="session_id" value="{{ form.session_id }}">
+              <span>Book</span>
+              <select id="book-select" data-reader-book>
+                {% for book in books %}
+                  <option value="{{ book.name }}" data-chapters="{{ book.chapters }}" {% if book.name == "John" %}selected{% endif %}>{{ book.name }}</option>
+                {% endfor %}
+              </select>
             </label>
             <label>
-              <span>Memory path</span>
-              <input type="text" name="memory_path" value="{{ form.memory_path }}">
-            </label>
-            <label>
-              <span>Memory max turns</span>
-              <input type="number" name="memory_max_turns" min="1" step="1" value="{{ form.memory_max_turns }}">
+              <span>Chapter</span>
+              <select id="chapter-select" data-reader-chapter></select>
             </label>
           </div>
-        </fieldset>
+        </div>
 
-        <button type="submit">Ask BHF</button>
-      </form>
+        <article
+          id="chapter-reader"
+          class="chapter-reader"
+          aria-live="polite"
+          data-default-book="John"
+          data-default-chapter="1"
+        >
+          <p class="empty">Loading ASV text...</p>
+        </article>
+      </section>
 
-      <div class="result-column">
+      <aside class="study-panel" aria-label="Study panel">
+        <form
+          class="ask-form"
+          method="post"
+          action="/ask"
+          data-job-post="/ask/jobs"
+          data-status-base="/ask/status/"
+          data-result-base="/ask/result/"
+          data-target="#answer-panel"
+          data-status-target="#status-panel"
+        >
+          <input type="hidden" name="reader_book" value="John">
+          <input type="hidden" name="reader_chapter" value="1">
+          <input type="hidden" name="reader_start_verse" value="">
+          <input type="hidden" name="reader_end_verse" value="">
+          <input type="hidden" name="reader_selected_text" value="">
+          <input type="hidden" name="ask_mode" value="">
+          <input type="hidden" name="study_action" value="">
+
+          <section class="selection-card" aria-live="polite">
+            <h2>Ask BHF</h2>
+            <p id="selection-summary" class="selection-summary">Ask about John 1, or select verse text for a focused question.</p>
+          </section>
+
+          <label class="full question-field">
+            <span>Question</span>
+            <textarea name="question" rows="4" placeholder="Optional: ask a specific question about the chapter or selection.">{{ form.question }}</textarea>
+          </label>
+
+          <details class="settings full">
+            <summary>Model settings</summary>
+            <div class="config-fields" data-config-fields>
+            <label>
+              <span>Profile</span>
+              <select name="profile">
+                {% for profile in profiles %}
+                  <option value="{{ profile }}" {% if profile == form.profile %}selected{% endif %}>{{ profile }}</option>
+                {% endfor %}
+              </select>
+            </label>
+
+            <label>
+              <span>Answer mode</span>
+              <select name="answer_mode">
+                {% for mode in answer_modes %}
+                  <option value="{{ mode }}" {% if mode == form.answer_mode %}selected{% endif %}>{{ mode }}</option>
+                {% endfor %}
+              </select>
+            </label>
+
+            <label>
+              <span>Model</span>
+              <input type="text" name="model" value="{{ form.model }}" required>
+            </label>
+
+            <label>
+              <span>Base URL</span>
+              <input type="url" name="base_url" value="{{ form.base_url }}" required>
+            </label>
+
+            <label>
+              <span>Temperature</span>
+              <input type="number" name="temperature" min="0" max="2" step="0.1" value="{{ form.temperature }}" required>
+            </label>
+
+            <label>
+              <span>Max tokens</span>
+              <input type="number" name="max_tokens" min="1" step="1" value="{{ form.max_tokens }}" required>
+            </label>
+
+            <label>
+              <span>Timeout seconds</span>
+              <input type="number" name="timeout_seconds" min="1" step="1" value="{{ form.timeout_seconds }}" required>
+            </label>
+
+            <label class="check">
+              <input type="checkbox" name="show_method_notes" {% if form.show_method_notes %}checked{% endif %}>
+              <span>Show method notes</span>
+            </label>
+
+            <fieldset>
+              <legend>Local session memory</legend>
+              <label class="check">
+                <input type="checkbox" name="memory_enabled" {% if form.memory_enabled %}checked{% endif %}>
+                <span>Enable memory</span>
+              </label>
+
+              <div class="grid">
+                <label>
+                  <span>Session ID</span>
+                  <input type="text" name="session_id" value="{{ form.session_id }}">
+                </label>
+                <label>
+                  <span>Memory path</span>
+                  <input type="text" name="memory_path" value="{{ form.memory_path }}">
+                </label>
+                <label>
+                  <span>Memory max turns</span>
+                  <input type="number" name="memory_max_turns" min="1" step="1" value="{{ form.memory_max_turns }}">
+                </label>
+              </div>
+            </fieldset>
+            </div>
+          </details>
+
+          <div class="action-row">
+            <button type="submit">Ask BHF</button>
+            <button type="button" class="secondary" data-add-note>Add note</button>
+          </div>
+        </form>
+
         <section id="status-panel" class="status-panel" aria-live="polite" hidden>
           <div class="status-summary" hidden></div>
           <div class="status-active">
@@ -122,10 +175,66 @@
         </section>
 
         <section id="answer-panel" class="answer-panel" aria-live="polite">
-          <p class="empty">Submit a question to see the answer and run metadata.</p>
+          <p class="empty">Ask about the current chapter or a selected passage to see the answer and run metadata.</p>
         </section>
-      </div>
+
+        <section class="saved-studies-panel" aria-labelledby="saved-studies-heading">
+          <div class="panel-heading">
+            <h2 id="saved-studies-heading">Saved Studies</h2>
+            <span id="saved-studies-count" class="count">0</span>
+          </div>
+          <div id="saved-studies-list" class="saved-studies-list">
+            <p class="empty">No saved studies for this chapter yet.</p>
+          </div>
+        </section>
+
+        <section class="highlights-panel" aria-labelledby="highlights-heading">
+          <div class="panel-heading">
+            <h2 id="highlights-heading">Highlights</h2>
+            <span id="highlights-count" class="count">0</span>
+          </div>
+          <div id="highlights-list" class="highlights-list">
+            <p class="empty">No highlights for this chapter yet.</p>
+          </div>
+        </section>
+
+        <section class="notes-panel" aria-labelledby="notes-heading">
+          <div class="panel-heading">
+            <h2 id="notes-heading">Notes</h2>
+            <span id="notes-count" class="count">0</span>
+          </div>
+          <form id="note-editor" class="note-editor" hidden>
+            <input type="hidden" name="id" value="">
+            <label>
+              <span id="note-reference">Note</span>
+              <textarea name="body" rows="4" required></textarea>
+            </label>
+            <div class="note-actions">
+              <button type="submit">Save note</button>
+              <button type="button" class="secondary" data-cancel-note>Cancel</button>
+            </div>
+          </form>
+          <div id="notes-list" class="notes-list">
+            <p class="empty">No notes for this chapter yet.</p>
+          </div>
+        </section>
+      </aside>
     </section>
+
+    <nav id="reader-context-menu" class="context-menu" aria-label="Verse actions" hidden>
+      <button type="button" data-context-action="ancient_context">Ancient Context</button>
+      <button type="button" data-context-action="literary_context">Literary Context</button>
+      <button type="button" data-context-action="cross_references">Cross References</button>
+      <button type="button" data-context-action="related_ot_themes">Related OT Themes</button>
+      <button type="button" data-context-action="fulfillment_nt">Fulfillment in the NT</button>
+      <button type="button" data-context-action="compare_translations">Compare Translations</button>
+      <button type="button" data-context-action="timeline">Timeline</button>
+      <button type="button" data-context-action="maps">Maps</button>
+      <button type="button" data-context-action="save_study">Save Study</button>
+      <button type="button" data-context-action="note">Add note to this verse</button>
+      <button type="button" data-context-action="highlight">Highlight this verse</button>
+      <button type="button" data-context-action="word_study">Word Study</button>
+    </nav>
   </main>
 </body>
 </html>

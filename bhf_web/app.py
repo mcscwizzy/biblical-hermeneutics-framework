@@ -16,9 +16,35 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
+from bhf_agent.bible import (
+    BibleError,
+    compare_translation_passages,
+    build_selected_passage_context,
+    geography_for_book,
+    list_books,
+    resolve_chapter,
+    timeline_for_book,
+    testament_for_book,
+)
 from bhf_agent.config import ConfigError
 from bhf_agent.profiles import ProfileError, ProfileLoader
 from bhf_agent.runner import BHFAgent
+from bhf_agent.study_db import (
+    DEFAULT_DB_PATH,
+    StudyDataError,
+    create_highlight,
+    create_note,
+    create_saved_study,
+    delete_highlight,
+    delete_note,
+    delete_saved_study,
+    get_saved_study,
+    list_highlights,
+    list_notes,
+    list_saved_studies,
+    record_study_action,
+    update_note,
+)
 
 from .forms import (
     ANSWER_MODES,
@@ -30,6 +56,7 @@ from .forms import (
 
 
 PACKAGE_DIR = Path(__file__).resolve().parent
+STUDY_DB_PATH = DEFAULT_DB_PATH
 templates = Jinja2Templates(directory=str(PACKAGE_DIR / "templates"))
 
 
@@ -99,6 +126,10 @@ class AskJob:
     error: str | None = None
     failed_stage: str | None = None
     result: Any = None
+    reader_reference: str | None = None
+    study_type: str | None = None
+    question: str | None = None
+    study_context: dict[str, Any] | None = None
     status_code: int = 200
     percent_complete: float = 0.0
     elapsed_total_seconds: float = 0.0
@@ -169,6 +200,8 @@ class AskJob:
             "elapsed_total_seconds": self.elapsed_total_seconds,
             "elapsed_current_stage_seconds": self.elapsed_current_stage_seconds,
             "status": self.status,
+            "reader_reference": self.reader_reference,
+            "study_type": self.study_type,
         }
 
 
@@ -252,15 +285,101 @@ def create_app() -> FastAPI:
                 "profiles": _available_profiles(loaded.config.profile),
                 "answer_modes": ANSWER_MODES,
                 "config_warning": loaded.warning,
+                "books": list_books(),
             },
         )
+
+    @web_app.get("/api/bible/books", response_class=JSONResponse)
+    async def bible_books() -> JSONResponse:
+        return JSONResponse({"books": list_books()})
+
+    @web_app.get("/api/bible/{book}/{chapter}", response_class=JSONResponse)
+    async def bible_chapter(book: str, chapter: int) -> JSONResponse:
+        try:
+            return JSONResponse(resolve_chapter(book, chapter))
+        except BibleError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
+
+    @web_app.get("/api/saved-studies", response_class=JSONResponse)
+    async def saved_studies(book: str | None = None, chapter: int | None = None) -> JSONResponse:
+        try:
+            return JSONResponse(
+                {"saved_studies": list_saved_studies(book, chapter, path=STUDY_DB_PATH)}
+            )
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+
+    @web_app.get("/api/saved-studies/{study_id}", response_class=HTMLResponse)
+    async def saved_study(request: Request, study_id: str) -> HTMLResponse:
+        try:
+            study = get_saved_study(study_id, path=STUDY_DB_PATH)
+        except StudyDataError as exc:
+            return templates.TemplateResponse(
+                request,
+                "partials/answer.html",
+                {
+                    "error": str(exc),
+                    "result": None,
+                    "saved_study": None,
+                    "answer_html": "",
+                    "metadata": {},
+                    "reader_reference": None,
+                },
+                status_code=404,
+            )
+
+        reference = f"{study['book']} {study['chapter']}"
+        if study["start_verse"]:
+            suffix = (
+                str(study["start_verse"])
+                if study["start_verse"] == study["end_verse"]
+                else f"{study['start_verse']}-{study['end_verse']}"
+            )
+            reference = f"{reference}:{suffix}"
+
+        return templates.TemplateResponse(
+            request,
+            "partials/answer.html",
+            {
+                "error": None,
+                "result": None,
+                "saved_study": study,
+                "answer_html": render_safe_markdown(study["answer"]),
+                "metadata": {
+                    "Title": study["title"],
+                    "Study type": study["study_type"],
+                    "Created": study["created_at"],
+                    "Updated": study["updated_at"],
+                },
+                "reader_reference": reference,
+            },
+        )
+
+    @web_app.post("/api/saved-studies", response_class=JSONResponse)
+    async def post_saved_study(request: Request) -> JSONResponse:
+        try:
+            payload = await _request_payload(request)
+            study = _saved_study_payload_from_request(payload)
+            saved = create_saved_study(study, path=STUDY_DB_PATH)
+            _record_action("study_saved", saved)
+            return JSONResponse(saved, status_code=201)
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+
+    @web_app.delete("/api/saved-studies/{study_id}", response_class=JSONResponse)
+    async def remove_saved_study(study_id: str) -> JSONResponse:
+        try:
+            delete_saved_study(study_id, path=STUDY_DB_PATH)
+            return JSONResponse({"deleted": True})
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
 
     @web_app.post("/ask", response_class=HTMLResponse)
     async def ask(request: Request) -> HTMLResponse:
         form = await request.form()
         loaded = load_web_defaults()
         try:
-            question = validate_question(form)
+            question, reader_reference = _question_from_form(form)
             config = config_from_form(form, loaded.config)
             result = BHFAgent(config).ask(question)
         except (ConfigError, ProfileError, ValueError) as exc:
@@ -272,6 +391,7 @@ def create_app() -> FastAPI:
                     "result": None,
                     "answer_html": "",
                     "metadata": {},
+                    "reader_reference": None,
                 },
                 status_code=400,
             )
@@ -284,6 +404,7 @@ def create_app() -> FastAPI:
                 "result": result,
                 "answer_html": render_safe_markdown(result.answer_text),
                 "metadata": result_metadata(result),
+                "reader_reference": reader_reference,
             },
         )
 
@@ -292,9 +413,10 @@ def create_app() -> FastAPI:
         form = await request.form()
         job = job_store.create()
         form_values = dict(form)
+        agent_class = BHFAgent
         thread = threading.Thread(
             target=_run_ask_job,
-            args=(job, form_values),
+            args=(job, form_values, agent_class),
             daemon=True,
         )
         thread.start()
@@ -319,6 +441,7 @@ def create_app() -> FastAPI:
                     "result": None,
                     "answer_html": "",
                     "metadata": {},
+                    "reader_reference": None,
                 },
                 status_code=404,
             )
@@ -331,6 +454,7 @@ def create_app() -> FastAPI:
                     "result": None,
                     "answer_html": "",
                     "metadata": {},
+                    "reader_reference": None,
                 },
                 status_code=202,
             )
@@ -343,6 +467,7 @@ def create_app() -> FastAPI:
                     "result": None,
                     "answer_html": "",
                     "metadata": {},
+                    "reader_reference": job.reader_reference,
                 },
                 status_code=job.status_code,
             )
@@ -356,18 +481,84 @@ def create_app() -> FastAPI:
                 "result": result,
                 "answer_html": render_safe_markdown(result.answer_text),
                 "metadata": result_metadata(result),
+                "reader_reference": job.reader_reference,
             },
         )
+
+    @web_app.get("/api/notes/{book}/{chapter}", response_class=JSONResponse)
+    async def get_notes(book: str, chapter: int) -> JSONResponse:
+        try:
+            return JSONResponse({"notes": list_notes(book, chapter, path=STUDY_DB_PATH)})
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+
+    @web_app.post("/api/notes", response_class=JSONResponse)
+    async def post_note(request: Request) -> JSONResponse:
+        try:
+            payload = await _request_payload(request)
+            note = create_note(payload, path=STUDY_DB_PATH)
+            _record_action("note_created", note)
+            return JSONResponse(note, status_code=201)
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+
+    @web_app.put("/api/notes/{note_id}", response_class=JSONResponse)
+    async def put_note(request: Request, note_id: str) -> JSONResponse:
+        try:
+            payload = await _request_payload(request)
+            return JSONResponse(update_note(note_id, payload, path=STUDY_DB_PATH))
+        except StudyDataError as exc:
+            status = 404 if "not found" in str(exc) else 400
+            return JSONResponse({"error": str(exc)}, status_code=status)
+
+    @web_app.delete("/api/notes/{note_id}", response_class=JSONResponse)
+    async def remove_note(note_id: str) -> JSONResponse:
+        try:
+            delete_note(note_id, path=STUDY_DB_PATH)
+            return JSONResponse({"deleted": True})
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
+
+    @web_app.get("/api/highlights/{book}/{chapter}", response_class=JSONResponse)
+    async def get_highlights(book: str, chapter: int) -> JSONResponse:
+        try:
+            return JSONResponse(
+                {"highlights": list_highlights(book, chapter, path=STUDY_DB_PATH)}
+            )
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+
+    @web_app.post("/api/highlights", response_class=JSONResponse)
+    async def post_highlight(request: Request) -> JSONResponse:
+        try:
+            payload = await _request_payload(request)
+            highlight = create_highlight(payload, path=STUDY_DB_PATH)
+            _record_action("highlight_created", highlight)
+            return JSONResponse(highlight, status_code=201)
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+
+    @web_app.delete("/api/highlights/{highlight_id}", response_class=JSONResponse)
+    async def remove_highlight(highlight_id: str) -> JSONResponse:
+        try:
+            delete_highlight(highlight_id, path=STUDY_DB_PATH)
+            return JSONResponse({"deleted": True})
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
 
     return web_app
 
 
-def _run_ask_job(job: AskJob, form: dict[str, Any]) -> None:
+def _run_ask_job(job: AskJob, form: dict[str, Any], agent_class: Any = BHFAgent) -> None:
     try:
         loaded = load_web_defaults()
-        question = validate_question(form)
+        job.study_type = _study_type_from_form(form)
+        job.study_context = _reader_context_from_form(form)
+        question, reader_reference = _question_from_form(form)
+        job.question = question
+        job.reader_reference = reader_reference
         config = config_from_form(form, loaded.config)
-        result = BHFAgent(config).ask(question, status_callback=job.emit)
+        result = agent_class(config).ask(question, status_callback=job.emit)
     except (ConfigError, ProfileError, ValueError) as exc:
         job.fail(str(exc), status_code=400)
         return
@@ -385,6 +576,536 @@ def _run_ask_job(job: AskJob, form: dict[str, Any]) -> None:
         return
 
     job.complete(result)
+
+
+def _question_from_form(form: dict[str, Any] | Any) -> tuple[str, str | None]:
+    if not _is_reader_submission(form):
+        return validate_question(form), None
+
+    ask_mode = str(form.get("ask_mode") or "").strip()
+    context = _reader_context_from_form(form)
+    if context is None:
+        return validate_question(form), None
+    study_action = str(form.get("study_action") or "").strip()
+    if study_action:
+        _record_action(study_action, context)
+    if ask_mode == "ancient_context":
+        return _ancient_context_question(form, context), str(context["reference"])
+    if ask_mode == "literary_context":
+        return _literary_context_question(form, context), str(context["reference"])
+    if ask_mode == "cross_references":
+        return _cross_references_question(form, context), str(context["reference"])
+    if ask_mode == "related_ot_themes":
+        return _related_ot_themes_question(form, context), str(context["reference"])
+    if ask_mode == "fulfillment_nt":
+        return _fulfillment_nt_question(form, context), str(context["reference"])
+    if ask_mode == "compare_translations":
+        return _compare_translations_question(form, context), str(context["reference"])
+    if ask_mode == "timeline":
+        return _timeline_question(form, context), str(context["reference"])
+    if ask_mode == "maps":
+        return _maps_question(form, context), str(context["reference"])
+    if ask_mode == "word_study":
+        return _word_study_question(form, context), str(context["reference"])
+
+    user_question = str(form.get("question") or "").strip()
+    if not user_question:
+        user_question = f"Explain {context['reference']} using BHF."
+
+    lines = [
+        f"Using BHF, explain ASV {context['reference']}.",
+        f"User question: {user_question}",
+        "",
+        f"Selected text (ASV {context['reference']}):",
+        context["selected_text"],
+    ]
+    if context.get("chapter_context"):
+        lines.extend(
+            [
+                "",
+                f"Full chapter context (ASV {context['book']} {context['chapter']}):",
+                str(context["chapter_context"]),
+            ]
+        )
+    lines.extend(
+        [
+            "",
+            "Method reminder: observe the text before interpreting it, and apply only after observation and interpretation.",
+        ]
+    )
+    return "\n".join(lines), str(context["reference"])
+
+
+def _reader_context_from_form(form: dict[str, Any] | Any) -> dict[str, Any] | None:
+    if not _is_reader_submission(form):
+        return None
+    return build_selected_passage_context(
+        str(form.get("reader_book") or ""),
+        str(form.get("reader_chapter") or ""),
+        _optional_form_value(form, "reader_start_verse"),
+        _optional_form_value(form, "reader_end_verse"),
+        _optional_form_value(form, "reader_selected_text"),
+        include_chapter_context=True,
+    )
+
+
+def _study_type_from_form(form: dict[str, Any] | Any) -> str:
+    ask_mode = str(form.get("ask_mode") or "").strip()
+    if ask_mode:
+        return ask_mode
+    if _is_reader_submission(form):
+        return "question"
+    return "general_question"
+
+
+def _ancient_context_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
+    user_question = str(form.get("question") or "").strip()
+    testament = testament_for_book(str(context["book"]))
+    background = (
+        "Ancient Near Eastern context, covenant setting, and Israel's original audience concerns"
+        if testament == "Old Testament"
+        else "Second Temple Jewish and Greco-Roman context where relevant, including the original audience's concerns"
+    )
+    lines = [
+        f"Using BHF, explain the ancient context of ASV {context['reference']}.",
+        f"Testament context: {testament}. Use {background}.",
+    ]
+    if user_question:
+        lines.append(f"User question: {user_question}")
+    lines.extend(
+        [
+            "",
+            "Focus on the passage's ancient setting, original audience, cultural background, and covenant setting when relevant.",
+            "Avoid modern assumptions and anachronistic readings.",
+            "Clearly distinguish background that is certain from background that is probable or debated.",
+            "",
+            f"Selected text (ASV {context['reference']}):",
+            context["selected_text"],
+        ]
+    )
+    if context.get("chapter_context"):
+        lines.extend(
+            [
+                "",
+                f"Full chapter context (ASV {context['book']} {context['chapter']}):",
+                str(context["chapter_context"]),
+            ]
+        )
+    lines.extend(
+        [
+            "",
+            "Use BHF method: observe first, interpret with genre and original audience in view, and reserve application until after interpretation.",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def _literary_context_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
+    user_question = str(form.get("question") or "").strip()
+    lines = [
+        f"Using BHF, explain the literary context of ASV {context['reference']}.",
+    ]
+    if user_question:
+        lines.append(f"User question: {user_question}")
+    lines.extend(
+        [
+            "",
+            "Explain how the selected passage functions within the immediate paragraph, chapter, book, genre, and argument or narrative flow.",
+            "Emphasize what comes before and after the selected passage.",
+            "Avoid isolating the verse from the surrounding passage.",
+            "Include genre awareness and explain how genre shapes interpretation.",
+            "",
+            f"Selected text (ASV {context['reference']}):",
+            context["selected_text"],
+        ]
+    )
+    if context.get("chapter_context"):
+        lines.extend(
+            [
+                "",
+                f"Full chapter context (ASV {context['book']} {context['chapter']}):",
+                str(context["chapter_context"]),
+            ]
+        )
+    lines.extend(
+        [
+            "",
+            "Use BHF method: observe the literary flow before interpreting, and apply only after interpretation.",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def _cross_references_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
+    user_question = str(form.get("question") or "").strip()
+    testament = testament_for_book(str(context["book"]))
+    lines = [
+        f"Using BHF, give cross references for ASV {context['reference']}.",
+        f"Testament context: {testament}. Prioritize direct quotations, clear allusions, repeated phrases, canonical themes, and OT/NT connections when relevant.",
+    ]
+    if user_question:
+        lines.append(f"User question: {user_question}")
+    lines.extend(
+        [
+            "",
+            "Separate strong references from possible references.",
+            "Briefly explain why each reference matters.",
+            "Do not dump a huge list.",
+            "Avoid speculative links and label uncertainty clearly.",
+            "",
+            f"Selected text (ASV {context['reference']}):",
+            context["selected_text"],
+        ]
+    )
+    if context.get("chapter_context"):
+        lines.extend(
+            [
+                "",
+                f"Full chapter context (ASV {context['book']} {context['chapter']}):",
+                str(context["chapter_context"]),
+            ]
+        )
+    lines.extend(
+        [
+            "",
+            "Use BHF method: observation first, then interpretation, then application only if useful.",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def _related_ot_themes_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
+    user_question = str(form.get("question") or "").strip()
+    testament = testament_for_book(str(context["book"]))
+    lines = [
+        f"Using BHF, identify related Old Testament themes for ASV {context['reference']}.",
+        f"Testament context: {testament}. Especially important for New Testament passages, but still note canonical patterns carefully.",
+    ]
+    if user_question:
+        lines.append(f"User question: {user_question}")
+    lines.extend(
+        [
+            "",
+            "Include themes such as covenant, temple, exile/restoration, creation/new creation, wisdom, kingship, priesthood, sacrifice, Spirit, land, blessing/curse, and other earlier canonical patterns when they are genuinely relevant.",
+            "Clearly mark strong versus possible thematic links.",
+            "Avoid speculative connections.",
+            "",
+            f"Selected text (ASV {context['reference']}):",
+            context["selected_text"],
+        ]
+    )
+    if context.get("chapter_context"):
+        lines.extend(
+            [
+                "",
+                f"Full chapter context (ASV {context['book']} {context['chapter']}):",
+                str(context["chapter_context"]),
+            ]
+        )
+    lines.extend(
+        [
+            "",
+            "Use BHF method: observe the text, interpret within genre and audience, and distinguish strong links from possible ones.",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def _fulfillment_nt_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
+    user_question = str(form.get("question") or "").strip()
+    testament = testament_for_book(str(context["book"]))
+    lines = [
+        f"Using BHF, evaluate fulfillment in the NT for ASV {context['reference']}.",
+        f"Testament context: {testament}. Do not force a fulfillment reading where the text does not support it.",
+    ]
+    if user_question:
+        lines.append(f"User question: {user_question}")
+    if testament == "Old Testament":
+        lines.extend(
+            [
+                "",
+                "Assess whether the passage is quoted, echoed, developed, fulfilled, typologically reused, or thematically carried into the New Testament.",
+                "Separate direct NT citation from strong allusion, typological pattern, thematic development, and speculative or weak connection.",
+                "State clearly when the NT does not make or imply a connection.",
+            ]
+        )
+    else:
+        lines.extend(
+            [
+                "",
+                "For a New Testament passage, explain how it may fulfill or develop earlier Old Testament themes instead of forcing a direct prophetic fulfillment.",
+                "Separate direct OT citation from strong allusion, typological pattern, thematic development, and speculative or weak connection.",
+                "State clearly when the passage is not directly tied to a specific Old Testament text.",
+            ]
+        )
+    lines.extend(
+        [
+            "",
+            "Avoid forcing Christological or prophetic readings where unsupported.",
+            "Distinguish clear fulfillment from possible thematic resonance.",
+            "Briefly explain why each link matters.",
+            "",
+            f"Selected text (ASV {context['reference']}):",
+            context["selected_text"],
+        ]
+    )
+    if context.get("chapter_context"):
+        lines.extend(
+            [
+                "",
+                f"Full chapter context (ASV {context['book']} {context['chapter']}):",
+                str(context["chapter_context"]),
+            ]
+        )
+    lines.extend(
+        [
+            "",
+            "Use BHF method: observe the text first, interpret in literary and canonical context, and keep uncertainty explicit.",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def _compare_translations_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
+    user_question = str(form.get("question") or "").strip()
+    comparison = compare_translation_passages(
+        str(context["book"]),
+        int(context["chapter"]),
+        context.get("start_verse"),
+        context.get("end_verse"),
+    )
+    translation_names = ", ".join(
+        f"{item['id']} ({item['name']})" for item in comparison["translations"]
+    )
+    lines = [
+        f"Using BHF, compare the local public-domain translations for ASV {comparison['reference']}.",
+        f"Available translations: {translation_names}. Use only the bundled local texts.",
+        "Explain wording differences and how they may affect interpretation.",
+        "Do not rely on copyrighted Bible APIs.",
+        "Do not overstate the significance of minor wording differences.",
+        "Separate clear interpretive differences from stylistic variation.",
+    ]
+    if user_question:
+        lines.append(f"User question: {user_question}")
+    lines.extend(
+        [
+            "",
+            "Comparison data by verse:",
+        ]
+    )
+    for row in comparison["verse_rows"]:
+        lines.append(f"Verse {row['verse']}:")
+        for translation in comparison["translations"]:
+            text = row["texts"].get(translation["id"], "")
+            lines.append(f"- {translation['id']}: {text}")
+        lines.append("")
+    if context.get("chapter_context"):
+        lines.extend(
+            [
+                f"Full chapter context (ASV {context['book']} {context['chapter']}):",
+                str(context["chapter_context"]),
+                "",
+            ]
+        )
+    lines.extend(
+        [
+            f"Selected text (ASV {context['reference']}):",
+            context["selected_text"],
+            "",
+            "Use BHF method: observe the wording first, interpret in literary and canonical context, and keep uncertainty explicit.",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def _timeline_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
+    user_question = str(form.get("question") or "").strip()
+    guide = timeline_for_book(str(context["book"]))
+    testament = testament_for_book(str(context["book"]))
+    lines = [
+        f"Using BHF, place ASV {context['reference']} on the biblical timeline.",
+        f"Testament context: {testament}. Broad period: {guide['period']}.",
+    ]
+    if user_question:
+        lines.append(f"User question: {user_question}")
+    lines.extend(
+        [
+            "",
+            "Show where the passage fits in biblical history, the major covenant period, and the relation to surrounding biblical events.",
+            "Prefer broad historical placement over fake precision.",
+            "If exact dating is uncertain, say so plainly.",
+            guide["notes"],
+            "",
+            f"Selected text (ASV {context['reference']}):",
+            context["selected_text"],
+        ]
+    )
+    if context.get("chapter_context"):
+        lines.extend(
+            [
+                "",
+                f"Full chapter context (ASV {context['book']} {context['chapter']}):",
+                str(context["chapter_context"]),
+            ]
+        )
+    lines.extend(
+        [
+            "",
+            "Use BHF method: observe first, interpret in literary and canonical context, and keep chronological claims broad and careful.",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def _maps_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
+    user_question = str(form.get("question") or "").strip()
+    guide = geography_for_book(str(context["book"]))
+    testament = testament_for_book(str(context["book"]))
+    lines = [
+        f"Using BHF, give geography notes for ASV {context['reference']}.",
+        f"Testament context: {testament}. Broad region: {guide['region']}.",
+    ]
+    if user_question:
+        lines.append(f"User question: {user_question}")
+    lines.extend(
+        [
+            "",
+            "Identify places named or implied in the passage and keep the result text-based for now.",
+            "Mention when a place's exact location is debated.",
+            "Do not invent locations if uncertain.",
+            "Keep this as a geography helper until real map data is added.",
+            guide["notes"],
+            "",
+            f"Selected text (ASV {context['reference']}):",
+            context["selected_text"],
+        ]
+    )
+    if context.get("chapter_context"):
+        lines.extend(
+            [
+                "",
+                f"Full chapter context (ASV {context['book']} {context['chapter']}):",
+                str(context["chapter_context"]),
+            ]
+        )
+    lines.extend(
+        [
+            "",
+            "Use BHF method: observe the passage first, then note geography that is explicit, probable, or uncertain.",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def _word_study_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
+    selected_text = context["selected_text"]
+    user_question = str(form.get("question") or "").strip()
+    testament = testament_for_book(str(context["book"]))
+    source_language = "Hebrew" if testament == "Old Testament" else "Greek"
+    lines = [
+        f"Using BHF, provide a cautious word study helper for ASV {context['reference']}.",
+        f"The selected word or phrase is from the ASV English text: {selected_text}",
+    ]
+    if user_question:
+        lines.append(f"User question: {user_question}")
+    lines.extend(
+        [
+            "",
+            f"Testament context: {testament}. Discuss possible {source_language} terms only as possibilities.",
+            "The selected word is from the ASV English text.",
+            "Do not claim exact Hebrew/Greek alignment unless the app has source-language data.",
+            "Do not invent Strong's numbers.",
+            "Offer likely Hebrew or Greek terms only as possibilities, with uncertainty.",
+            "Recommend checking an actual lexicon/interlinear for confirmation.",
+            "Explain semantic range, usage, and context cautiously.",
+            "",
+            f"Selected text (ASV {context['reference']}):",
+            selected_text,
+        ]
+    )
+    if context.get("chapter_context"):
+        lines.extend(
+            [
+                "",
+                f"Full chapter context (ASV {context['book']} {context['chapter']}):",
+                str(context["chapter_context"]),
+            ]
+        )
+    lines.extend(
+        [
+            "",
+            "Use BHF method: original audience, literary context, genre awareness, intertextuality when relevant, theological caution, and application only after interpretation.",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def _is_reader_submission(form: dict[str, Any] | Any) -> bool:
+    return bool(str(form.get("reader_book") or "").strip()) and bool(
+        str(form.get("reader_chapter") or "").strip()
+    )
+
+
+def _optional_form_value(form: dict[str, Any] | Any, name: str) -> str | None:
+    value = str(form.get(name) or "").strip()
+    return value or None
+
+
+async def _request_payload(request: Request) -> dict[str, Any]:
+    content_type = request.headers.get("content-type", "")
+    if "application/json" in content_type:
+        payload = await request.json()
+        if isinstance(payload, dict):
+            return payload
+        raise StudyDataError("JSON body must be an object")
+    form = await request.form()
+    return dict(form)
+
+
+def _record_action(action_type: str, data: dict[str, Any]) -> None:
+    try:
+        record_study_action(action_type, data, path=STUDY_DB_PATH)
+    except StudyDataError:
+        return
+
+
+def _saved_study_payload_from_request(payload: dict[str, Any]) -> dict[str, Any]:
+    job_id = str(payload.get("job_id") or "").strip()
+    if job_id:
+        job = job_store.get(job_id)
+        if job is None:
+            raise StudyDataError("job not found")
+        if not job.done:
+            raise StudyDataError("job is not complete")
+        if job.error:
+            raise StudyDataError("cannot save a failed study")
+        if job.result is None:
+            raise StudyDataError("job result is not available")
+        if not job.study_context:
+            raise StudyDataError("study context is not available")
+        return {
+            "title": payload.get("title"),
+            "book": job.study_context["book"],
+            "chapter": job.study_context["chapter"],
+            "start_verse": job.study_context["start_verse"],
+            "end_verse": job.study_context["end_verse"],
+            "selected_text": job.study_context["selected_text"],
+            "study_type": job.study_type or "question",
+            "question": job.question or "",
+            "answer": getattr(job.result, "answer_text", ""),
+        }
+
+    return {
+        "title": payload.get("title"),
+        "book": payload.get("book"),
+        "chapter": payload.get("chapter"),
+        "start_verse": payload.get("start_verse") or payload.get("verse_start"),
+        "end_verse": payload.get("end_verse") or payload.get("verse_end"),
+        "selected_text": payload.get("selected_text"),
+        "study_type": payload.get("study_type") or payload.get("ask_mode"),
+        "question": payload.get("question"),
+        "answer": payload.get("answer") or payload.get("answer_html"),
+    }
 
 
 def _job_error_message(job: AskJob) -> str:

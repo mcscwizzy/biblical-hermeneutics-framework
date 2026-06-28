@@ -1,6 +1,7 @@
 import asyncio
 import json
 import os
+import tempfile
 import time
 import unittest
 from pathlib import Path
@@ -173,6 +174,29 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn("progress-track", script)
         self.assertNotIn("toFixed(3)", script)
 
+    def test_reader_script_has_context_menu_and_highlight_actions(self):
+        script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
+
+        self.assertIn("createStudyAction", script)
+        self.assertIn("dispatchStudyAction", script)
+        self.assertIn("sourceTranslation: \"ASV\"", script)
+        self.assertIn("ancient_context", script)
+        self.assertIn("literary_context", script)
+        self.assertIn("cross_references", script)
+        self.assertIn("related_ot_themes", script)
+        self.assertIn("fulfillment_nt", script)
+        self.assertIn("compare_translations", script)
+        self.assertIn("timeline", script)
+        self.assertIn("maps", script)
+        self.assertIn("BHF_STUDY_ACTIONS", script)
+        self.assertIn("contextmenu", script)
+        self.assertIn("handleReaderContextMenu", script)
+        self.assertIn("closeContextMenuOnEscape", script)
+        self.assertIn("/api/highlights", script)
+        self.assertIn("word_study", script)
+        self.assertIn("saveLatestStudy", script)
+        self.assertIn("loadSavedStudies", script)
+
 
 @unittest.skipUnless(HAS_WEB_DEPS, "FastAPI test dependencies are not installed")
 class WebAppTests(unittest.TestCase):
@@ -184,10 +208,26 @@ class WebAppTests(unittest.TestCase):
         response = asgi_request("GET", "/")
 
         self.assertEqual(response["status"], 200)
-        self.assertIn("BHF Agent", response["body"])
+        self.assertIn("BHF ASV Reader", response["body"])
+        self.assertIn("ASV Bible", response["body"])
+        self.assertIn("book-select", response["body"])
+        self.assertIn("reader-context-menu", response["body"])
+        self.assertIn("data-context-action=\"ancient_context\"", response["body"])
+        self.assertIn("data-context-action=\"literary_context\"", response["body"])
+        self.assertIn("data-context-action=\"cross_references\"", response["body"])
+        self.assertIn("data-context-action=\"related_ot_themes\"", response["body"])
+        self.assertIn("data-context-action=\"fulfillment_nt\"", response["body"])
+        self.assertIn("data-context-action=\"compare_translations\"", response["body"])
+        self.assertIn("data-context-action=\"timeline\"", response["body"])
+        self.assertIn("data-context-action=\"maps\"", response["body"])
+        self.assertIn("data-context-action=\"save_study\"", response["body"])
+        self.assertIn("data-context-action=\"word_study\"", response["body"])
+        self.assertIn("highlights-list", response["body"])
+        self.assertIn("saved-studies-list", response["body"])
         self.assertIn("name=\"question\"", response["body"])
         self.assertIn("status-summary", response["body"])
         self.assertIn("status-current", response["body"])
+        self.assertIn("Save Study", response["body"])
         self.assertNotIn("progress-track", response["body"])
         self.assertNotIn("data-total-elapsed", response["body"])
         self.assertNotIn("status-percent", response["body"])
@@ -198,6 +238,23 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(response["status"], 200)
         self.assertIn('"status":"ok"', response["body"])
         self.assertIn('"service":"bhf-web"', response["body"])
+
+    def test_bible_books_route_returns_asv_books(self):
+        response = asgi_request("GET", "/api/bible/books")
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(data["books"][0]["name"], "Genesis")
+        self.assertEqual(data["books"][-1]["name"], "Revelation")
+
+    def test_bible_chapter_route_returns_verses(self):
+        response = asgi_request("GET", "/api/bible/Romans/12")
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(data["book"], "Romans")
+        self.assertEqual(data["chapter"], 12)
+        self.assertIn("living sacrifice", data["verses"][0]["text"])
 
     def test_post_ask_handles_mocked_agent_result(self):
         with patch("bhf_web.app.BHFAgent", FakeAgent):
@@ -248,6 +305,406 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(result["status"], 200)
         self.assertIn("Short Answer", result["body"])
         self.assertIn("Metadata", result["body"])
+
+    def test_reader_ask_job_builds_server_side_question(self):
+        CapturingAgent.questions = []
+        data = _valid_form()
+        data.update(
+            {
+                "question": "What should I observe before interpreting?",
+                "reader_book": "Romans",
+                "reader_chapter": "12",
+                "reader_start_verse": "1",
+                "reader_end_verse": "2",
+                "reader_selected_text": "present your bodies a living sacrifice",
+            }
+        )
+
+        with patch("bhf_web.app.BHFAgent", CapturingAgent):
+            response = asgi_request("POST", "/ask/jobs", data=data)
+
+        self.assertEqual(response["status"], 202)
+        job = json.loads(response["body"])
+        status = wait_for_job(job["job_id"])
+        self.assertTrue(status["done"])
+        self.assertEqual(status["reader_reference"], "Romans 12:1-2")
+        self.assertEqual(len(CapturingAgent.questions), 1)
+        question = CapturingAgent.questions[0]
+        self.assertIn("Using BHF, explain ASV Romans 12:1-2.", question)
+        self.assertIn("Selected text (ASV Romans 12:1-2):", question)
+        self.assertIn("Full chapter context (ASV Romans 12):", question)
+        self.assertIn("observe the text before interpreting", question)
+
+        result = asgi_request("GET", f"/ask/result/{job['job_id']}")
+        self.assertEqual(result["status"], 200)
+        self.assertIn("ASV Romans 12:1-2", result["body"])
+
+    def test_ancient_context_reader_job_builds_phase_one_prompt(self):
+        CapturingAgent.questions = []
+        data = _valid_form()
+        data.update(
+            {
+                "question": "",
+                "reader_book": "Genesis",
+                "reader_chapter": "1",
+                "reader_start_verse": "1",
+                "reader_end_verse": "2",
+                "reader_selected_text": "In the beginning God created the heavens and the earth.",
+                "ask_mode": "ancient_context",
+            }
+        )
+
+        with patch("bhf_web.app.BHFAgent", CapturingAgent):
+            response = asgi_request("POST", "/ask/jobs", data=data)
+
+        self.assertEqual(response["status"], 202)
+        status = wait_for_job(json.loads(response["body"])["job_id"])
+        self.assertTrue(status["done"])
+        self.assertEqual(status["reader_reference"], "Genesis 1:1-2")
+        question = CapturingAgent.questions[0]
+        self.assertIn("explain the ancient context of ASV Genesis 1:1-2", question)
+        self.assertIn("Ancient Near Eastern context", question)
+        self.assertIn("original audience", question)
+        self.assertIn("covenant setting", question)
+        self.assertIn("certain from background that is probable", question)
+
+    def test_literary_context_reader_job_builds_phase_one_prompt(self):
+        CapturingAgent.questions = []
+        data = _valid_form()
+        data.update(
+            {
+                "question": "",
+                "reader_book": "Romans",
+                "reader_chapter": "12",
+                "reader_start_verse": "1",
+                "reader_end_verse": "2",
+                "reader_selected_text": "present your bodies a living sacrifice",
+                "ask_mode": "literary_context",
+            }
+        )
+
+        with patch("bhf_web.app.BHFAgent", CapturingAgent):
+            response = asgi_request("POST", "/ask/jobs", data=data)
+
+        self.assertEqual(response["status"], 202)
+        status = wait_for_job(json.loads(response["body"])["job_id"])
+        self.assertTrue(status["done"])
+        self.assertEqual(status["reader_reference"], "Romans 12:1-2")
+        question = CapturingAgent.questions[0]
+        self.assertIn("explain the literary context of ASV Romans 12:1-2", question)
+        self.assertIn("immediate paragraph, chapter, book, genre", question)
+        self.assertIn("what comes before and after", question)
+        self.assertIn("Avoid isolating the verse", question)
+        self.assertIn("genre awareness", question)
+
+    def test_cross_references_reader_job_builds_phase_two_prompt(self):
+        CapturingAgent.questions = []
+        data = _valid_form()
+        data.update(
+            {
+                "question": "",
+                "reader_book": "John",
+                "reader_chapter": "1",
+                "reader_start_verse": "1",
+                "reader_end_verse": "2",
+                "reader_selected_text": "In the beginning was the Word",
+                "ask_mode": "cross_references",
+            }
+        )
+
+        with patch("bhf_web.app.BHFAgent", CapturingAgent):
+            response = asgi_request("POST", "/ask/jobs", data=data)
+
+        self.assertEqual(response["status"], 202)
+        status = wait_for_job(json.loads(response["body"])["job_id"])
+        self.assertTrue(status["done"])
+        self.assertEqual(status["reader_reference"], "John 1:1-2")
+        question = CapturingAgent.questions[0]
+        self.assertIn("give cross references for ASV John 1:1-2", question)
+        self.assertIn("direct quotations", question)
+        self.assertIn("strong references from possible references", question)
+        self.assertIn("Do not dump a huge list", question)
+
+    def test_related_ot_themes_reader_job_builds_phase_two_prompt(self):
+        CapturingAgent.questions = []
+        data = _valid_form()
+        data.update(
+            {
+                "question": "",
+                "reader_book": "Romans",
+                "reader_chapter": "12",
+                "reader_start_verse": "1",
+                "reader_end_verse": "2",
+                "reader_selected_text": "present your bodies a living sacrifice",
+                "ask_mode": "related_ot_themes",
+            }
+        )
+
+        with patch("bhf_web.app.BHFAgent", CapturingAgent):
+            response = asgi_request("POST", "/ask/jobs", data=data)
+
+        self.assertEqual(response["status"], 202)
+        status = wait_for_job(json.loads(response["body"])["job_id"])
+        self.assertTrue(status["done"])
+        self.assertEqual(status["reader_reference"], "Romans 12:1-2")
+        question = CapturingAgent.questions[0]
+        self.assertIn("identify related Old Testament themes", question)
+        self.assertIn("covenant", question)
+        self.assertIn("strong versus possible thematic links", question)
+        self.assertIn("Avoid speculative connections", question)
+
+    def test_fulfillment_nt_reader_job_builds_phase_three_prompt(self):
+        CapturingAgent.questions = []
+        data = _valid_form()
+        data.update(
+            {
+                "question": "",
+                "reader_book": "Isaiah",
+                "reader_chapter": "53",
+                "reader_start_verse": "4",
+                "reader_end_verse": "6",
+                "reader_selected_text": "he was wounded for our transgressions",
+                "ask_mode": "fulfillment_nt",
+            }
+        )
+
+        with patch("bhf_web.app.BHFAgent", CapturingAgent):
+            response = asgi_request("POST", "/ask/jobs", data=data)
+
+        self.assertEqual(response["status"], 202)
+        status = wait_for_job(json.loads(response["body"])["job_id"])
+        self.assertTrue(status["done"])
+        self.assertEqual(status["reader_reference"], "Isaiah 53:4-6")
+        question = CapturingAgent.questions[0]
+        self.assertIn("evaluate fulfillment in the NT for ASV Isaiah 53:4-6", question)
+        self.assertIn("quoted, echoed, developed, fulfilled", question)
+        self.assertIn("direct NT citation", question)
+        self.assertIn("Avoid forcing Christological or prophetic readings", question)
+
+    def test_compare_translations_reader_job_builds_phase_four_prompt(self):
+        CapturingAgent.questions = []
+        data = _valid_form()
+        data.update(
+            {
+                "question": "",
+                "reader_book": "John",
+                "reader_chapter": "1",
+                "reader_start_verse": "1",
+                "reader_end_verse": "2",
+                "reader_selected_text": "In the beginning was the Word",
+                "ask_mode": "compare_translations",
+            }
+        )
+
+        with patch("bhf_web.app.BHFAgent", CapturingAgent):
+            response = asgi_request("POST", "/ask/jobs", data=data)
+
+        self.assertEqual(response["status"], 202)
+        status = wait_for_job(json.loads(response["body"])["job_id"])
+        self.assertTrue(status["done"])
+        self.assertEqual(status["reader_reference"], "John 1:1-2")
+        question = CapturingAgent.questions[0]
+        self.assertIn("compare the local public-domain translations for ASV John 1:1-2", question)
+        self.assertIn("Available translations: ASV (American Standard Version), KJV (King James Version)", question)
+        self.assertIn("Comparison data by verse", question)
+        self.assertIn("- ASV:", question)
+        self.assertIn("- KJV:", question)
+        self.assertIn("Do not overstate the significance of minor wording differences", question)
+
+    def test_timeline_reader_job_builds_phase_five_prompt(self):
+        CapturingAgent.questions = []
+        data = _valid_form()
+        data.update(
+            {
+                "question": "",
+                "reader_book": "Exodus",
+                "reader_chapter": "12",
+                "reader_start_verse": "1",
+                "reader_end_verse": "2",
+                "reader_selected_text": "Speak ye unto all the congregation of Israel",
+                "ask_mode": "timeline",
+            }
+        )
+
+        with patch("bhf_web.app.BHFAgent", CapturingAgent):
+            response = asgi_request("POST", "/ask/jobs", data=data)
+
+        self.assertEqual(response["status"], 202)
+        status = wait_for_job(json.loads(response["body"])["job_id"])
+        self.assertTrue(status["done"])
+        self.assertEqual(status["reader_reference"], "Exodus 12:1-2")
+        question = CapturingAgent.questions[0]
+        self.assertIn("place ASV Exodus 12:1-2 on the biblical timeline", question)
+        self.assertIn("Broad period", question)
+        self.assertIn("Prefer broad historical placement over fake precision", question)
+        self.assertIn("If exact dating is uncertain, say so plainly", question)
+
+    def test_maps_reader_job_builds_phase_six_prompt(self):
+        CapturingAgent.questions = []
+        data = _valid_form()
+        data.update(
+            {
+                "question": "",
+                "reader_book": "Acts",
+                "reader_chapter": "16",
+                "reader_start_verse": "6",
+                "reader_end_verse": "10",
+                "reader_selected_text": "they were forbidden of the Holy Spirit to speak the word in Asia",
+                "ask_mode": "maps",
+            }
+        )
+
+        with patch("bhf_web.app.BHFAgent", CapturingAgent):
+            response = asgi_request("POST", "/ask/jobs", data=data)
+
+        self.assertEqual(response["status"], 202)
+        status = wait_for_job(json.loads(response["body"])["job_id"])
+        self.assertTrue(status["done"])
+        self.assertEqual(status["reader_reference"], "Acts 16:6-10")
+        question = CapturingAgent.questions[0]
+        self.assertIn("give geography notes for ASV Acts 16:6-10", question)
+        self.assertIn("Broad region", question)
+        self.assertIn("Do not invent locations if uncertain", question)
+        self.assertIn("Keep this as a geography helper until real map data is added", question)
+
+    def test_note_routes_create_update_delete_and_filter(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            db_path = Path(tmpdir) / "study.sqlite"
+            with patch("bhf_web.app.STUDY_DB_PATH", db_path):
+                create = asgi_request(
+                    "POST",
+                    "/api/notes",
+                    json_data={
+                        "book": "Rom",
+                        "chapter": 12,
+                        "start_verse": 1,
+                        "end_verse": 2,
+                        "selected_text": "living sacrifice",
+                        "body": "Observation first.",
+                    },
+                )
+                self.assertEqual(create["status"], 201)
+                note = json.loads(create["body"])
+                self.assertEqual(note["book"], "Romans")
+
+                list_response = asgi_request("GET", "/api/notes/Romans/12")
+                self.assertEqual(list_response["status"], 200)
+                self.assertEqual(len(json.loads(list_response["body"])["notes"]), 1)
+
+                update = asgi_request(
+                    "PUT",
+                    f"/api/notes/{note['id']}",
+                    json_data={"body": "Updated observation."},
+                )
+                self.assertEqual(update["status"], 200)
+                self.assertEqual(json.loads(update["body"])["body"], "Updated observation.")
+
+                delete = asgi_request("DELETE", f"/api/notes/{note['id']}")
+                self.assertEqual(delete["status"], 200)
+                self.assertIn('"deleted":true', delete["body"])
+
+                empty = asgi_request("GET", "/api/notes/Romans/12")
+                self.assertEqual(json.loads(empty["body"])["notes"], [])
+
+    def test_highlight_routes_create_delete_and_filter(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            db_path = Path(tmpdir) / "study.sqlite"
+            with patch("bhf_web.app.STUDY_DB_PATH", db_path):
+                create = asgi_request(
+                    "POST",
+                    "/api/highlights",
+                    json_data={
+                        "book": "Rom",
+                        "chapter": 12,
+                        "start_verse": 1,
+                        "end_verse": 2,
+                        "selected_text": "living sacrifice",
+                        "color": "yellow",
+                    },
+                )
+                self.assertEqual(create["status"], 201)
+                highlight = json.loads(create["body"])
+                self.assertEqual(highlight["book"], "Romans")
+                self.assertEqual(highlight["color"], "yellow")
+
+                list_response = asgi_request("GET", "/api/highlights/Romans/12")
+                self.assertEqual(list_response["status"], 200)
+                self.assertEqual(
+                    len(json.loads(list_response["body"])["highlights"]),
+                    1,
+                )
+
+                delete = asgi_request("DELETE", f"/api/highlights/{highlight['id']}")
+                self.assertEqual(delete["status"], 200)
+                self.assertIn('"deleted":true', delete["body"])
+
+                empty = asgi_request("GET", "/api/highlights/Romans/12")
+                self.assertEqual(json.loads(empty["body"])["highlights"], [])
+
+    def test_saved_study_routes_create_list_open_and_delete(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            db_path = Path(tmpdir) / "study.sqlite"
+            with patch("bhf_web.app.STUDY_DB_PATH", db_path), patch(
+                "bhf_web.app.BHFAgent", SuccessfulJobAgent
+            ):
+                job_response = asgi_request(
+                    "POST",
+                    "/ask/jobs",
+                    data={**_valid_form(), "ask_mode": "literary_context", "reader_book": "Romans", "reader_chapter": "12", "reader_start_verse": "1", "reader_end_verse": "2", "reader_selected_text": "present your bodies a living sacrifice"},
+                )
+                self.assertEqual(job_response["status"], 202)
+                job_id = json.loads(job_response["body"])["job_id"]
+                wait_for_job(job_id)
+
+                save = asgi_request("POST", "/api/saved-studies", json_data={"job_id": job_id})
+                self.assertEqual(save["status"], 201)
+                study = json.loads(save["body"])
+                self.assertEqual(study["book"], "Romans")
+                self.assertEqual(study["study_type"], "literary_context")
+
+                list_response = asgi_request("GET", "/api/saved-studies?book=Romans&chapter=12")
+                self.assertEqual(list_response["status"], 200)
+                studies = json.loads(list_response["body"])["saved_studies"]
+                self.assertEqual(len(studies), 1)
+
+                open_response = asgi_request("GET", f"/api/saved-studies/{study['id']}")
+                self.assertEqual(open_response["status"], 200)
+                self.assertIn("Saved study", open_response["body"])
+                self.assertIn("Romans 12:1-2", open_response["body"])
+
+                delete = asgi_request("DELETE", f"/api/saved-studies/{study['id']}")
+                self.assertEqual(delete["status"], 200)
+                self.assertIn('"deleted":true', delete["body"])
+
+    def test_word_study_reader_job_builds_guarded_prompt(self):
+        CapturingAgent.questions = []
+        data = _valid_form()
+        data.update(
+            {
+                "question": "",
+                "reader_book": "John",
+                "reader_chapter": "1",
+                "reader_start_verse": "1",
+                "reader_end_verse": "1",
+                "reader_selected_text": "Word",
+                "ask_mode": "word_study",
+            }
+        )
+
+        with patch("bhf_web.app.BHFAgent", CapturingAgent):
+            response = asgi_request("POST", "/ask/jobs", data=data)
+
+        self.assertEqual(response["status"], 202)
+        job = json.loads(response["body"])
+        status = wait_for_job(job["job_id"])
+        self.assertTrue(status["done"])
+        self.assertEqual(status["reader_reference"], "John 1:1")
+        question = CapturingAgent.questions[0]
+        self.assertIn("selected word or phrase is from the ASV English text", question)
+        self.assertIn("Do not claim exact Hebrew/Greek alignment", question)
+        self.assertIn("Do not invent Strong's numbers", question)
+        self.assertIn("actual lexicon/interlinear", question)
+        self.assertIn("possible Greek terms", question)
 
     def test_ask_job_marks_previous_running_step_complete(self):
         job = AskJob(job_id="job-1")
@@ -378,6 +835,14 @@ class SuccessfulJobAgent(FakeAgent):
         return fake_result(self.config, errors=[])
 
 
+class CapturingAgent(SuccessfulJobAgent):
+    questions = []
+
+    def ask(self, question, status_callback=None):
+        self.__class__.questions.append(question)
+        return super().ask(question, status_callback=status_callback)
+
+
 def status_event(stage, message, step_index, status="complete"):
     return {
         "stage": stage,
@@ -448,18 +913,27 @@ def _history_messages(status):
     return [entry["message"] for entry in status["history"]]
 
 
-def asgi_request(method, path, data=None):
+def asgi_request(method, path, data=None, json_data=None):
     assert app is not None
-    return asyncio.run(_asgi_request(method, path, data))
+    return asyncio.run(_asgi_request(method, path, data, json_data))
 
 
-async def _asgi_request(method, path, data=None):
-    body = urlencode(data or {}).encode("utf-8")
+async def _asgi_request(method, path, data=None, json_data=None):
+    if "?" in path:
+        path, query_string = path.split("?", 1)
+    else:
+        query_string = ""
+    if json_data is not None:
+        body = json.dumps(json_data).encode("utf-8")
+        content_type = b"application/json"
+    else:
+        body = urlencode(data or {}).encode("utf-8")
+        content_type = b"application/x-www-form-urlencoded"
     headers = [(b"host", b"testserver")]
     if body:
         headers.extend(
             [
-                (b"content-type", b"application/x-www-form-urlencoded"),
+                (b"content-type", content_type),
                 (b"content-length", str(len(body)).encode("ascii")),
             ]
         )
@@ -471,7 +945,7 @@ async def _asgi_request(method, path, data=None):
         "scheme": "http",
         "path": path,
         "raw_path": path.encode("ascii"),
-        "query_string": b"",
+        "query_string": query_string.encode("ascii"),
         "headers": headers,
         "client": ("127.0.0.1", 123),
         "server": ("testserver", 80),

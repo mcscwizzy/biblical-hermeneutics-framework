@@ -5,7 +5,22 @@
   </div>
 {% else %}
   <article class="answer">
-    <h2>Answer</h2>
+    <div class="answer-header">
+      {% if saved_study %}
+        <div>
+          <p class="saved-study-label">Saved study</p>
+          <h2>{{ saved_study.title }}</h2>
+        </div>
+      {% else %}
+        <h2>Answer</h2>
+      {% endif %}
+      {% if result %}
+        <button type="button" class="secondary answer-save" data-save-study>Save Study</button>
+      {% endif %}
+    </div>
+    {% if reader_reference %}
+      <p class="answer-reference">ASV {{ reader_reference }}</p>
+    {% endif %}
     <div class="answer-body">{{ answer_html | safe }}</div>
   </article>
 
@@ -19,4 +34,3 @@
     </dl>
   </aside>
 {% endif %}
-
