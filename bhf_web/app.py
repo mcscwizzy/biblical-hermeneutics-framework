@@ -7,6 +7,7 @@ import re
 import threading
 import uuid
 from dataclasses import dataclass, field
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -36,9 +37,27 @@ templates = Jinja2Templates(directory=str(PACKAGE_DIR / "templates"))
 class StatusEntry:
     stage: str
     message: str
+    timestamp: str
+    details: dict[str, Any] | None = None
 
-    def to_dict(self) -> dict[str, str]:
-        return {"stage": self.stage, "message": self.message}
+    @classmethod
+    def from_event(cls, event: dict[str, Any]) -> "StatusEntry":
+        return cls(
+            stage=str(event.get("stage") or "unknown"),
+            message=str(event.get("message") or "Working"),
+            timestamp=str(event.get("timestamp") or _timestamp()),
+            details=event.get("details") if isinstance(event.get("details"), dict) else None,
+        )
+
+    def to_dict(self) -> dict[str, Any]:
+        data: dict[str, Any] = {
+            "stage": self.stage,
+            "message": self.message,
+            "timestamp": self.timestamp,
+        }
+        if self.details:
+            data["details"] = self.details
+        return data
 
 
 @dataclass
@@ -53,13 +72,14 @@ class AskJob:
     result: Any = None
     status_code: int = 200
 
-    def emit(self, stage: str, message: str) -> None:
-        if self.history and self.history[-1].stage == stage:
-            self.message = message
+    def emit(self, event: dict[str, Any]) -> None:
+        entry = StatusEntry.from_event(event)
+        if self.history and self.history[-1].stage == entry.stage:
+            self.message = entry.message
             return
-        self.stage = stage
-        self.message = message
-        self.history.append(StatusEntry(stage=stage, message=message))
+        self.stage = entry.stage
+        self.message = entry.message
+        self.history.append(entry)
 
     def fail(
         self,
@@ -73,7 +93,14 @@ class AskJob:
         self.stage = "failed"
         self.message = f"Failed: {error}"
         self.done = True
-        self.history.append(StatusEntry(stage="failed", message=f"Failed: {error}"))
+        self.history.append(
+            StatusEntry(
+                stage="error",
+                message=f"Failed: {error}",
+                timestamp=_timestamp(),
+                details={"failed_stage": self.failed_stage},
+            )
+        )
 
     def complete(self, result: Any) -> None:
         self.result = result
@@ -98,7 +125,13 @@ class AskJobStore:
 
     def create(self) -> AskJob:
         job = AskJob(job_id=uuid.uuid4().hex)
-        job.emit("preparing_request", "Preparing request")
+        job.emit(
+            {
+                "stage": "queued",
+                "message": "Queued",
+                "timestamp": _timestamp(),
+            }
+        )
         with self._lock:
             self._jobs[job.job_id] = job
         return job
@@ -109,6 +142,10 @@ class AskJobStore:
 
 
 job_store = AskJobStore()
+
+
+def _timestamp() -> str:
+    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
 
 
 def create_app() -> FastAPI:
@@ -249,7 +286,7 @@ def _run_ask_job(job: AskJob, form: dict[str, Any]) -> None:
         loaded = load_web_defaults()
         question = validate_question(form)
         config = config_from_form(form, loaded.config)
-        result = BHFAgent(config, progress_callback=job.emit).ask(question)
+        result = BHFAgent(config).ask(question, status_callback=job.emit)
     except (ConfigError, ProfileError, ValueError) as exc:
         job.fail(str(exc), status_code=400)
         return

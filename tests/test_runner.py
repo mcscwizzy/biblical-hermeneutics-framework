@@ -60,6 +60,19 @@ class LeakyAdapter(ChatAdapter):
         )
 
 
+class ErrorAdapter(ChatAdapter):
+    def chat(self, request: ChatRequest) -> ChatResponse:
+        return ChatResponse(
+            text="",
+            errors=["OpenAI-compatible endpoint timed out: timed out"],
+        )
+
+
+class RaisingAdapter(ChatAdapter):
+    def chat(self, request: ChatRequest) -> ChatResponse:
+        raise RuntimeError("adapter failed")
+
+
 class PromptStageAssertingAgent(BHFAgent):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
@@ -164,7 +177,20 @@ class RunnerTests(unittest.TestCase):
         self.assertEqual(result.model_metadata["answer_mode"], "teaching")
         self.assertEqual(result.model_metadata["pipeline"]["answer_mode"], "teaching")
 
-    def test_progress_callback_receives_pipeline_statuses(self):
+    def test_agent_ask_works_without_status_callback(self):
+        adapter = RecordingAdapter()
+        agent = self.make_agent(adapter)
+
+        result = agent.ask("What does Proverbs 3 mean?")
+
+        self.assertIn("Short Answer", result.answer_text)
+        self.assertIn("pipeline", result.model_metadata)
+        self.assertIn(
+            "finalize_result",
+            result.model_metadata["pipeline"]["stages_completed"],
+        )
+
+    def test_status_callback_receives_ordered_pipeline_events(self):
         events = []
         profiles_dir = Path(tempfile.mkdtemp())
         self.addCleanup(shutil.rmtree, profiles_dir, ignore_errors=True)
@@ -177,21 +203,67 @@ class RunnerTests(unittest.TestCase):
             ),
             adapter=RecordingAdapter(),
             profile_loader=ProfileLoader(profiles_dir),
-            progress_callback=lambda stage, message: events.append((stage, message)),
         )
 
-        agent.ask("What does Proverbs 3 mean?")
+        agent.ask("What does Proverbs 3 mean?", status_callback=events.append)
 
-        stages = [stage for stage, _message in events]
-        self.assertIn("preparing_request", stages)
-        self.assertIn("detecting_reference", stages)
-        self.assertIn("selecting_profile", stages)
-        self.assertIn("applying_framework", stages)
-        self.assertIn("contacting_model", stages)
+        stages = [event["stage"] for event in events]
+        required_order = [
+            "initialize_context",
+            "detect_reference",
+            "classify_genre",
+            "classify_question_type",
+            "load_profile",
+            "lookup_local_knowledge",
+            "build_prompts",
+            "call_model_start",
+            "waiting_for_model",
+            "call_model_complete",
+            "clean_output",
+            "validate_response",
+            "finalize_result",
+            "complete",
+        ]
+        positions = [stages.index(stage) for stage in required_order]
+        self.assertEqual(positions, sorted(positions))
+        self.assertIn("Preparing request", [event["message"] for event in events])
+        self.assertIn("Detecting biblical reference", [event["message"] for event in events])
+        self.assertIn("Classifying genre", [event["message"] for event in events])
+        self.assertIn("Classifying question type", [event["message"] for event in events])
+        self.assertIn("Loading BHF profile", [event["message"] for event in events])
+        self.assertIn("Checking local knowledge", [event["message"] for event in events])
+        self.assertIn("Building BHF prompt", [event["message"] for event in events])
+        self.assertIn("Contacting model backend", [event["message"] for event in events])
         self.assertIn("waiting_for_model", stages)
-        self.assertIn("validating_response", stages)
-        self.assertIn("formatting_answer", stages)
+        self.assertIn("Waiting for model response", [event["message"] for event in events])
+        self.assertIn("Model response received", [event["message"] for event in events])
+        self.assertIn("Cleaning model output", [event["message"] for event in events])
+        self.assertIn("Validating response", [event["message"] for event in events])
+        self.assertIn("Finalizing answer", [event["message"] for event in events])
+        self.assertTrue(all("timestamp" in event for event in events))
         self.assertEqual(stages[-1], "complete")
+
+    def test_adapter_errors_emit_error_status(self):
+        events = []
+        agent = self.make_agent(ErrorAdapter())
+
+        result = agent.ask("What does Proverbs 3 mean?", status_callback=events.append)
+
+        self.assertTrue(result.errors)
+        error_events = [event for event in events if event["stage"] == "error"]
+        self.assertTrue(error_events)
+        self.assertIn("timed out", str(error_events[-1]["details"]["errors"]))
+        self.assertEqual(error_events[-1]["details"]["failed_stage"], "waiting_for_model")
+
+    def test_exceptions_emit_error_status_before_raising(self):
+        events = []
+        agent = self.make_agent(RaisingAdapter())
+
+        with self.assertRaisesRegex(RuntimeError, "adapter failed"):
+            agent.ask("What does Proverbs 3 mean?", status_callback=events.append)
+
+        self.assertEqual(events[-1]["stage"], "error")
+        self.assertEqual(events[-1]["details"]["error_type"], "RuntimeError")
 
     def test_debug_metadata_includes_local_book_and_genre_keys(self):
         adapter = RecordingAdapter()

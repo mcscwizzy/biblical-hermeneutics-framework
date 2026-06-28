@@ -112,10 +112,10 @@ class WebFormTests(unittest.TestCase):
         self.assertTrue(config.memory_enabled)
         self.assertEqual(config.memory_path, "/app/.bhf/sessions")
 
-    def test_web_defaults_use_600_second_timeout(self):
+    def test_web_defaults_use_360_second_timeout(self):
         loaded = load_web_defaults(path="/tmp/bhf-web-config-does-not-exist.json")
 
-        self.assertEqual(loaded.config.timeout_seconds, 600)
+        self.assertEqual(loaded.config.timeout_seconds, 360)
 
     def test_form_values_override_environment_defaults(self):
         env = {
@@ -146,7 +146,7 @@ class WebFormTests(unittest.TestCase):
         self.assertEqual(config.model, "form-model")
         self.assertEqual(config.profile, "minimal-7b")
         self.assertEqual(config.answer_mode, "concise")
-        self.assertEqual(config.timeout_seconds, 600)
+        self.assertEqual(config.timeout_seconds, 360)
 
 
 @unittest.skipUnless(HAS_WEB_DEPS, "FastAPI test dependencies are not installed")
@@ -228,59 +228,116 @@ class WebAppTests(unittest.TestCase):
 
 
 class FakeAgent:
-    def __init__(self, config, progress_callback=None):
+    def __init__(self, config):
         self.config = config
-        self.progress_callback = progress_callback
 
-    def ask(self, question):
-        if self.progress_callback is not None:
-            self.progress_callback("selecting_profile", "Selecting profile")
-            self.progress_callback("contacting_model", "Contacting model backend")
-            self.progress_callback("waiting_for_model", "Waiting for model response")
-            self.progress_callback("validating_response", "Validating response")
-            self.progress_callback("formatting_answer", "Formatting answer")
-            self.progress_callback("complete", "Complete")
-        return AgentResult(
-            answer_text="## Short Answer\nAnswer with **method**.",
-            reference_context=ReferenceContext(
-                book="Romans",
-                chapter=12,
-                verse=1,
-                testament="NT",
-                is_reference_based=True,
-                confidence=0.9,
-            ),
-            genre_context=GenreContext(primary_genre="epistle"),
-            question_context=QuestionContext(question_type="context", confidence=0.8),
-            profile_used=self.config.profile,
-            validation_result=ValidationResult(
-                passed=True,
-                score=90,
-                warnings=["example warning"],
-            ),
-            model_metadata={
-                "answer_mode": self.config.answer_mode,
-                "local_knowledge_keys": ["ruach"],
-            },
-            errors=["example adapter error"],
-        )
+    def ask(self, question, status_callback=None):
+        if status_callback is not None:
+            status_callback({"stage": "load_profile", "message": "Loading BHF profile"})
+            status_callback(
+                {
+                    "stage": "call_model_start",
+                    "message": "Contacting model backend",
+                }
+            )
+            status_callback(
+                {
+                    "stage": "waiting_for_model",
+                    "message": "Waiting for model response",
+                }
+            )
+            status_callback(
+                {
+                    "stage": "validate_response",
+                    "message": "Validating response",
+                }
+            )
+            status_callback(
+                {
+                    "stage": "finalize_result",
+                    "message": "Finalizing answer",
+                }
+            )
+            status_callback({"stage": "complete", "message": "Complete"})
+        return fake_result(self.config, errors=["example adapter error"])
 
 
 class ErrorAgent(FakeAgent):
-    def ask(self, question):
-        if self.progress_callback is not None:
-            self.progress_callback("contacting_model", "Contacting model backend")
-            self.progress_callback("waiting_for_model", "Waiting for model response")
-        result = super().ask(question)
-        result.errors = ["OpenAI-compatible endpoint timed out: timed out"]
-        return result
+    def ask(self, question, status_callback=None):
+        if status_callback is not None:
+            status_callback(
+                {
+                    "stage": "call_model_start",
+                    "message": "Contacting model backend",
+                }
+            )
+            status_callback(
+                {
+                    "stage": "waiting_for_model",
+                    "message": "Waiting for model response",
+                }
+            )
+            status_callback(
+                {
+                    "stage": "error",
+                    "message": "Model backend error",
+                    "details": {
+                        "failed_stage": "waiting_for_model",
+                        "errors": ["OpenAI-compatible endpoint timed out: timed out"],
+                    },
+                }
+            )
+        return fake_result(
+            self.config,
+            errors=["OpenAI-compatible endpoint timed out: timed out"],
+        )
 
 
 class SuccessfulJobAgent(FakeAgent):
-    def ask(self, question):
-        result = super().ask(question)
-        result.errors = []
-        return result
+    def ask(self, question, status_callback=None):
+        if status_callback is not None:
+            status_callback({"stage": "load_profile", "message": "Loading BHF profile"})
+            status_callback(
+                {
+                    "stage": "call_model_start",
+                    "message": "Contacting model backend",
+                }
+            )
+            status_callback(
+                {
+                    "stage": "waiting_for_model",
+                    "message": "Waiting for model response",
+                }
+            )
+            status_callback({"stage": "complete", "message": "Complete"})
+        return fake_result(self.config, errors=[])
+
+
+def fake_result(config, errors):
+    return AgentResult(
+        answer_text="## Short Answer\nAnswer with **method**.",
+        reference_context=ReferenceContext(
+            book="Romans",
+            chapter=12,
+            verse=1,
+            testament="NT",
+            is_reference_based=True,
+            confidence=0.9,
+        ),
+        genre_context=GenreContext(primary_genre="epistle"),
+        question_context=QuestionContext(question_type="context", confidence=0.8),
+        profile_used=config.profile,
+        validation_result=ValidationResult(
+            passed=True,
+            score=90,
+            warnings=["example warning"],
+        ),
+        model_metadata={
+            "answer_mode": config.answer_mode,
+            "local_knowledge_keys": ["ruach"],
+        },
+        errors=errors,
+    )
 
 
 def _valid_form():

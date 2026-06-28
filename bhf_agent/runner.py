@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from datetime import datetime, timezone
 from typing import Any, Callable, Optional
 
 from .adapters import ChatAdapter, OpenAICompatibleAdapter
@@ -30,7 +31,28 @@ from .references import detect_reference
 from .validation import validate_response
 
 
-ProgressCallback = Callable[[str, str], None]
+StatusCallback = Callable[[dict[str, Any]], None]
+
+STATUS_MESSAGES = {
+    "initialize_context": "Preparing request",
+    "detect_reference": "Detecting biblical reference",
+    "classify_genre": "Classifying genre",
+    "classify_question_type": "Classifying question type",
+    "load_profile": "Loading BHF profile",
+    "lookup_local_knowledge": "Checking local knowledge",
+    "load_session_memory": "Loading session memory",
+    "build_prompts": "Building BHF prompt",
+    "call_model_start": "Contacting model backend",
+    "waiting_for_model": "Waiting for model response",
+    "call_model_complete": "Model response received",
+    "clean_output": "Cleaning model output",
+    "validate_response": "Validating response",
+    "repair_response": "Checking answer repair",
+    "finalize_result": "Finalizing answer",
+    "save_session_turn": "Saving session memory",
+    "complete": "Complete",
+    "error": "Agent request failed",
+}
 
 
 class BHFAgent:
@@ -39,35 +61,62 @@ class BHFAgent:
         config: AgentConfig,
         adapter: Optional[ChatAdapter] = None,
         profile_loader: Optional[ProfileLoader] = None,
-        progress_callback: Optional[ProgressCallback] = None,
     ) -> None:
         config.validate()
         self.config = config
         self.profile_loader = profile_loader or ProfileLoader()
         self.adapter = adapter or self._build_adapter(config)
-        self.progress_callback = progress_callback
+        self._status_callback: Optional[StatusCallback] = None
 
-    def ask(self, question: str) -> AgentResult:
-        ctx = self._initialize_context(question)
-        ctx = self._detect_reference(ctx)
-        ctx = self._classify_genre(ctx)
-        ctx = self._classify_question_type(ctx)
-        ctx = self._load_profile(ctx)
-        ctx = self._lookup_local_knowledge(ctx)
-        ctx = self._load_session_memory(ctx)
-        ctx = self._build_prompts(ctx)
-        ctx = self._call_model(ctx)
-        ctx = self._clean_output(ctx)
-        ctx = self._validate_response(ctx)
-        ctx = self._repair_response(ctx)
-        ctx = self._finalize_result(ctx)
-        ctx = self._save_session_turn(ctx)
-        result = self._to_agent_result(ctx)
-        self._emit_status("complete", "Complete")
-        return result
+    def ask(
+        self,
+        question: str,
+        status_callback: Optional[StatusCallback] = None,
+    ) -> AgentResult:
+        previous_callback = self._status_callback
+        self._status_callback = status_callback
+        try:
+            ctx = self._initialize_context(question)
+            ctx = self._detect_reference(ctx)
+            ctx = self._classify_genre(ctx)
+            ctx = self._classify_question_type(ctx)
+            ctx = self._load_profile(ctx)
+            ctx = self._lookup_local_knowledge(ctx)
+            ctx = self._load_session_memory(ctx)
+            ctx = self._build_prompts(ctx)
+            ctx = self._call_model(ctx)
+            ctx = self._clean_output(ctx)
+            ctx = self._validate_response(ctx)
+            ctx = self._repair_response(ctx)
+            ctx = self._finalize_result(ctx)
+            ctx = self._save_session_turn(ctx)
+            result = self._to_agent_result(ctx)
+            if result.errors:
+                self._emit_status(
+                    "error",
+                    "Model backend error",
+                    details={
+                        "failed_stage": "waiting_for_model",
+                        "errors": list(result.errors),
+                    },
+                )
+                return result
+            self._emit_status("complete", "Complete")
+            return result
+        except Exception as exc:
+            self._emit_status(
+                "error",
+                "Agent request failed",
+                details={
+                    "error": str(exc),
+                    "error_type": exc.__class__.__name__,
+                },
+            )
+            raise
+        finally:
+            self._status_callback = previous_callback
 
     def _initialize_context(self, question: str) -> PipelineContext:
-        self._emit_status("preparing_request", "Preparing request")
         ctx = PipelineContext(
             original_question=question,
             normalized_question=" ".join(question.strip().split()),
@@ -96,7 +145,6 @@ class BHFAgent:
         return self._mark_stage(ctx, "initialize_context")
 
     def _detect_reference(self, ctx: PipelineContext) -> PipelineContext:
-        self._emit_status("detecting_reference", "Detecting biblical reference")
         ctx.reference_context = detect_reference(ctx.original_question)
         return self._mark_stage(ctx, "detect_reference")
 
@@ -114,7 +162,6 @@ class BHFAgent:
         return self._mark_stage(ctx, "classify_question_type")
 
     def _load_profile(self, ctx: PipelineContext) -> PipelineContext:
-        self._emit_status("selecting_profile", "Selecting profile")
         profile = self.profile_loader.load(self.config.profile)
         ctx.profile_name = profile.name
         ctx.profile_content = profile.content
@@ -125,7 +172,6 @@ class BHFAgent:
         return self._mark_stage(ctx, "load_profile")
 
     def _lookup_local_knowledge(self, ctx: PipelineContext) -> PipelineContext:
-        self._emit_status("applying_framework", "Applying BHF framework")
         if (
             ctx.reference_context is None
             or ctx.genre_context is None
@@ -182,7 +228,15 @@ class BHFAgent:
         return self._mark_stage(ctx, "build_prompts")
 
     def _call_model(self, ctx: PipelineContext) -> PipelineContext:
-        self._emit_status("contacting_model", "Contacting model backend")
+        self._emit_status(
+            "call_model_start",
+            "Contacting model backend",
+            details={
+                "adapter": self.config.adapter,
+                "model": self.config.model,
+                "timeout_seconds": self.config.timeout_seconds,
+            },
+        )
         if (
             ctx.system_prompt is None
             or ctx.user_prompt is None
@@ -219,7 +273,20 @@ class BHFAgent:
         ctx.errors.extend(chat_response.errors)
         if chat_response.model:
             ctx.debug_metadata["model"] = chat_response.model
-        return self._mark_stage(ctx, "call_model")
+        if chat_response.errors:
+            return self._mark_stage(
+                ctx,
+                "call_model",
+                event_stage="call_model_complete",
+                message="Model backend returned an error",
+                details={"errors": list(chat_response.errors)},
+            )
+        return self._mark_stage(
+            ctx,
+            "call_model",
+            event_stage="call_model_complete",
+            message="Model response received",
+        )
 
     def _clean_output(self, ctx: PipelineContext) -> PipelineContext:
         cleanup_result = clean_model_output(ctx.raw_answer_text or "")
@@ -229,7 +296,6 @@ class BHFAgent:
         return self._mark_stage(ctx, "clean_output")
 
     def _validate_response(self, ctx: PipelineContext) -> PipelineContext:
-        self._emit_status("validating_response", "Validating response")
         if ctx.question_context is None:
             raise RuntimeError("question_context must be set before validation")
         ctx.validation_result = validate_response(
@@ -367,7 +433,6 @@ class BHFAgent:
         return False, "repaired answer did not improve validation"
 
     def _finalize_result(self, ctx: PipelineContext) -> PipelineContext:
-        self._emit_status("formatting_answer", "Formatting answer")
         ctx.final_answer = ctx.cleaned_answer_text or ""
         return self._mark_stage(ctx, "finalize_result")
 
@@ -475,16 +540,38 @@ class BHFAgent:
             repaired_validation_result=ctx.repaired_validation_result,
         )
 
-    def _mark_stage(self, ctx: PipelineContext, stage: str) -> PipelineContext:
+    def _mark_stage(
+        self,
+        ctx: PipelineContext,
+        stage: str,
+        event_stage: str | None = None,
+        message: str | None = None,
+        details: dict[str, Any] | None = None,
+    ) -> PipelineContext:
         stages = ctx.debug_metadata.setdefault("stages_completed", [])
         if isinstance(stages, list):
             stages.append(stage)
+        self._emit_status(event_stage or stage, message, details=details)
         return ctx
 
-    def _emit_status(self, stage: str, message: str) -> None:
-        if self.progress_callback is None:
+    def _emit_status(
+        self,
+        stage: str,
+        message: str | None = None,
+        details: dict[str, Any] | None = None,
+    ) -> None:
+        if self._status_callback is None:
             return
-        self.progress_callback(stage, message)
+        event: dict[str, Any] = {
+            "stage": stage,
+            "message": message or STATUS_MESSAGES.get(stage, stage.replace("_", " ")),
+            "timestamp": datetime.now(timezone.utc)
+            .isoformat()
+            .replace("+00:00", "Z"),
+        }
+        if details:
+            event["details"] = details
+        self._status_callback(event)
 
     def _build_adapter(self, config: AgentConfig) -> ChatAdapter:
         if config.adapter == "openai_compatible":

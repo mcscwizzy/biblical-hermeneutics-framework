@@ -30,8 +30,9 @@ http://127.0.0.1:8000
 When JavaScript is enabled, the form starts an in-memory ask job and polls the
 FastAPI app for backend status while the agent runs. The status panel shows
 real pipeline stages such as preparing the request, detecting the biblical
-reference, selecting the profile, applying the BHF framework, contacting the
-model backend, waiting for the model response, validating, formatting, and
+reference, classifying genre and question type, loading the BHF profile,
+checking local knowledge, building the prompt, contacting the model backend,
+waiting for the model response, cleaning, validating, finalizing, and
 completion.
 
 The non-JavaScript fallback still posts to `/ask` and renders the same answer
@@ -56,7 +57,7 @@ If the file is missing or invalid, the UI uses built-in local defaults:
   "answer_mode": "study",
   "temperature": 0.3,
   "max_tokens": 2048,
-  "timeout_seconds": 600,
+  "timeout_seconds": 360,
   "show_method_notes": true
 }
 ```

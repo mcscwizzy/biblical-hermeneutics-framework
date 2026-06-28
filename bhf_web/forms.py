@@ -38,7 +38,7 @@ DEFAULT_CONFIG_VALUES: dict[str, Any] = {
     "temperature": 0.3,
     "max_tokens": 2048,
     "show_method_notes": True,
-    "timeout_seconds": 600,
+    "timeout_seconds": 360,
     "debug": False,
     "auto_repair": False,
     "max_repair_attempts": 1,
