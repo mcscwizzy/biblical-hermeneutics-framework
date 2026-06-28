@@ -7,11 +7,13 @@ profiles:
   minimal-7b:
     description: >-
       Smallest viable method prompt for tiny local models (~3B-7B). Core
-      posture only: genre-first, observe/interpret/apply, label confidence.
+      posture only: genre-first, observe/interpret/apply, basic
+      intertextuality, label confidence.
     modules:
       - core.core-framework
       - core.genre-awareness
       - core.observe-interpret-apply
+      - core.intertextuality
       - core.epistemic-humility
 
   standard:

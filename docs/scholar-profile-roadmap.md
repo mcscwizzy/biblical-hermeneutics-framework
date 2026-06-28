@@ -1,6 +1,6 @@
 # Roadmap of the Scholar Profile Instruction Set
 
-The file [scholar.md](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md) is a large, composed prompt (~16,108 tokens, 1,609 lines) containing **28 individual modules**. It serves as a unified instruction set that teaches an AI how to behave like a responsible, neutral biblical scholar.
+The file [scholar.md](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md) is a large, composed prompt (~16,731 tokens, 1,644 lines) containing **28 individual modules**. It serves as a unified instruction set that teaches an AI how to behave like a responsible, neutral biblical scholar.
 
 Because the file contains so many sections, this roadmap breaks down its architecture into logical layers, visualizes how they interact, and provides a sitemap with exact line numbers for easy navigation.
 
@@ -64,7 +64,7 @@ These modules set the **default posture** for all interpretation. They run in th
 * **Genre Awareness:** The reflex to name the style of writing before trying to interpret it.
 * **Original Audience:** Anchors the meaning in what the first hearers would have understood.
 * **Observe, Interpret, Apply:** Keeps description, explanation, and modern application strictly separated.
-* **Intertextuality:** Traces how biblical authors quote or reference earlier scriptures.
+* **Intertextuality:** Traces quotations, citations, allusions, typology, and canonical themes without forcing connections.
 * **Epistemic Humility:** Enforces labeling claims as consensus, majority, minority, or speculation.
 * **Anti-Hallucination:** Prohibits making up names, dates, citations, or manuscript details.
 
@@ -99,27 +99,27 @@ Use this index to jump directly to any module within the file:
 | **`core.genre-awareness`** | [Genre Awareness](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L76-L140) | Line 76 | Line 140 |
 | **`core.original-audience`** | [Begin with the Original Audience](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L143-L193) | Line 143 | Line 193 |
 | **`core.observe-interpret-apply`** | [Observation, Interpretation, Application](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L196-L247) | Line 196 | Line 247 |
-| **`core.intertextuality`** | [Intertextuality and Scriptural Connections](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L250-L307) | Line 250 | Line 307 |
-| **`core.epistemic-humility`** | [Epistemic Humility and Confidence Labels](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L310-L360) | Line 310 | Line 360 |
-| **`core.anti-hallucination`** | [Anti-Hallucination and Sourcing Discipline](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L363-L412) | Line 363 | Line 412 |
-| **`language.greek`** | [Koine Greek for Interpretation](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L415-L466) | Line 415 | Line 466 |
-| **`language.hebrew`** | [Biblical Hebrew for Interpretation](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L469-L526) | Line 469 | Line 526 |
-| **`context.ancient-near-east`** | [The Ancient Near East](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L529-L586) | Line 529 | Line 586 |
-| **`context.covenant`** | [Covenant and Treaty Forms](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L589-L642) | Line 589 | Line 642 |
-| **`context.exile-and-restoration`** | [Exile and Restoration](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L645-L703) | Line 645 | Line 703 |
-| **`context.greco-roman-world`** | [The Greco-Roman World](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L706-L768) | Line 706 | Line 768 |
-| **`context.honor-shame`** | [Honor and Shame Cultures](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L771-L822) | Line 771 | Line 822 |
-| **`context.israelite-monarchy`** | [The Israelite Monarchy](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L825-L882) | Line 825 | Line 882 |
-| **`context.patronage`** | [Patronage and Benefaction](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L885-L936) | Line 885 | Line 936 |
-| **`context.roman-empire`** | [The Roman Empire](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L939-L990) | Line 939 | Line 990 |
-| **`context.second-temple-judaism`** | [Second Temple Judaism](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L993-L1050) | Line 993 | Line 1050 |
-| **`context.temple`** | [Temple, Sacred Space, and Presence](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L1053-L1110) | Line 1053 | Line 1110 |
-| **`context.wisdom-tradition`** | [The Wisdom Tradition](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L1113-L1170) | Line 1113 | Line 1170 |
-| **`genre.apocalyptic`** | [Apocalyptic Genre Module](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L1173-L1222) | Line 1173 | Line 1222 |
-| **`genre.epistle`** | [Epistle (Letter) Genre Module](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L1225-L1279) | Line 1225 | Line 1279 |
-| **`genre.gospel`** | [Gospel Genre Module](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L1282-L1331) | Line 1282 | Line 1331 |
-| **`genre.law`** | [Law Genre Module](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L1334-L1395) | Line 1334 | Line 1395 |
-| **`genre.narrative`** | [Narrative Genre Module](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L1398-L1447) | Line 1398 | Line 1447 |
-| **`genre.poetry`** | [Poetry Genre Module](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L1450-L1500) | Line 1450 | Line 1500 |
-| **`genre.prophecy`** | [Prophecy Genre Module](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L1503-L1556) | Line 1503 | Line 1556 |
-| **`genre.wisdom`** | [Wisdom Genre Module](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L1559-L1609) | Line 1559 | Line 1609 |
+| **`core.intertextuality`** | [Intertextuality and Scriptural Connections](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L250-L343) | Line 250 | Line 343 |
+| **`core.epistemic-humility`** | [Epistemic Humility and Confidence Labels](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L346-L396) | Line 346 | Line 396 |
+| **`core.anti-hallucination`** | [Anti-Hallucination and Sourcing Discipline](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L399-L448) | Line 399 | Line 448 |
+| **`language.greek`** | [Koine Greek for Interpretation](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L451-L502) | Line 451 | Line 502 |
+| **`language.hebrew`** | [Biblical Hebrew for Interpretation](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L505-L562) | Line 505 | Line 562 |
+| **`context.ancient-near-east`** | [The Ancient Near East](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L565-L622) | Line 565 | Line 622 |
+| **`context.covenant`** | [Covenant and Treaty Forms](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L625-L678) | Line 625 | Line 678 |
+| **`context.exile-and-restoration`** | [Exile and Restoration](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L681-L739) | Line 681 | Line 739 |
+| **`context.greco-roman-world`** | [The Greco-Roman World](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L742-L804) | Line 742 | Line 804 |
+| **`context.honor-shame`** | [Honor and Shame Cultures](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L807-L858) | Line 807 | Line 858 |
+| **`context.israelite-monarchy`** | [The Israelite Monarchy](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L861-L918) | Line 861 | Line 918 |
+| **`context.patronage`** | [Patronage and Benefaction](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L921-L972) | Line 921 | Line 972 |
+| **`context.roman-empire`** | [The Roman Empire](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L975-L1026) | Line 975 | Line 1026 |
+| **`context.second-temple-judaism`** | [Second Temple Judaism](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L1029-L1086) | Line 1029 | Line 1086 |
+| **`context.temple`** | [Temple, Sacred Space, and Presence](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L1089-L1146) | Line 1089 | Line 1146 |
+| **`context.wisdom-tradition`** | [The Wisdom Tradition](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L1149-L1206) | Line 1149 | Line 1206 |
+| **`genre.apocalyptic`** | [Apocalyptic Genre Module](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L1209-L1258) | Line 1209 | Line 1258 |
+| **`genre.epistle`** | [Epistle (Letter) Genre Module](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L1261-L1315) | Line 1261 | Line 1315 |
+| **`genre.gospel`** | [Gospel Genre Module](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L1318-L1367) | Line 1318 | Line 1367 |
+| **`genre.law`** | [Law Genre Module](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L1370-L1431) | Line 1370 | Line 1431 |
+| **`genre.narrative`** | [Narrative Genre Module](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L1434-L1483) | Line 1434 | Line 1483 |
+| **`genre.poetry`** | [Poetry Genre Module](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L1486-L1536) | Line 1486 | Line 1536 |
+| **`genre.prophecy`** | [Prophecy Genre Module](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L1539-L1592) | Line 1539 | Line 1592 |
+| **`genre.wisdom`** | [Wisdom Genre Module](file:///home/johnwalker/Documents/github/biblical-hermeneutics-framework/profiles/scholar.md#L1595-L1644) | Line 1595 | Line 1644 |

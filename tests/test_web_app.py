@@ -164,9 +164,9 @@ class WebAssetTests(unittest.TestCase):
         script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
 
         self.assertIn("WAITING_MESSAGES", script)
-        self.assertIn("deflibberlating", script.lower())
-        self.assertIn("shenaniganizing", script.lower())
-        self.assertIn("calling the schwartz", script.lower())
+        self.assertIn("Consulting the scrolls...", script)
+        self.assertIn("Calling the Schwartz of Solomon...", script)
+        self.assertIn("Waiting on the answer...", script)
         self.assertIn("WAITING_MESSAGE_BASE_DELAY_MS", script)
         self.assertIn("Math.random()", script)
         self.assertNotIn("The agent is running. Status updates will appear above.", script)

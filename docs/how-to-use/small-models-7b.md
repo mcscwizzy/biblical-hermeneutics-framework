@@ -8,7 +8,7 @@ degrade gracefully to this setting.
 
 Start with [`../../profiles/minimal-7b.md`](../../profiles/minimal-7b.md). It
 loads only the core posture (context-first, observe/interpret/apply, label
-confidence) and is deliberately short.
+confidence, and basic intertextual discipline) and is deliberately short.
 
 ```bash
 python tools/compose.py --profile minimal-7b

@@ -26,6 +26,8 @@ from bhf_lib import estimate_tokens, load_modules, resolve
 REPO_ROOT = Path(__file__).resolve().parent.parent
 FRAMEWORK_DIR = REPO_ROOT / "framework"
 PROFILES_FILE = REPO_ROOT / "profiles" / "profiles.yml"
+CORE_FRAMEWORK_ID = "core.core-framework"
+CORE_FRAMEWORK_IMPLIED_MODULES = ["core.intertextuality"]
 
 HEADER = """# Biblical Hermeneutics Framework — Composed Prompt
 
@@ -50,6 +52,12 @@ def load_profiles() -> dict[str, list[str]]:
 def compose(selected: list[str], profile_label: str) -> tuple[str, int]:
     modules = load_modules(FRAMEWORK_DIR)
     ordered = resolve(modules, selected)
+    ordered_ids = {mod.id for mod in ordered}
+    if CORE_FRAMEWORK_ID in ordered_ids:
+        implied = [mid for mid in CORE_FRAMEWORK_IMPLIED_MODULES
+                   if mid not in ordered_ids]
+        if implied:
+            ordered = resolve(modules, selected + implied)
     parts: list[str] = []
     for mod in ordered:
         parts.append(
