@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import html
 import re
 import threading
@@ -34,18 +35,31 @@ from bhf_agent.study_db import (
     StudyDataError,
     create_highlight,
     create_note,
+    create_map_note,
+    create_saved_map_study,
     create_saved_study,
     delete_highlight,
     delete_note,
+    delete_saved_map_study,
     delete_saved_study,
     get_saved_study,
+    get_saved_map_study,
     list_highlights,
     list_notes,
+    list_saved_map_studies,
     list_saved_studies,
     record_study_action,
     update_note,
 )
 
+from .map_service import (
+    get_archaeology_markers,
+    get_biblical_place_markers,
+    get_historical_layers,
+    get_map_routes_for_passage,
+    resolve_archaeology_for_passage,
+    resolve_places_for_passage,
+)
 from .forms import (
     ANSWER_MODES,
     config_from_form,
@@ -300,12 +314,141 @@ def create_app() -> FastAPI:
         except BibleError as exc:
             return JSONResponse({"error": str(exc)}, status_code=404)
 
+    @web_app.get("/api/maps/biblical-places", response_class=JSONResponse)
+    async def maps_biblical_places() -> JSONResponse:
+        return JSONResponse({"markers": get_biblical_place_markers(path=STUDY_DB_PATH)})
+
+    @web_app.get("/api/maps/archaeology", response_class=JSONResponse)
+    async def maps_archaeology() -> JSONResponse:
+        return JSONResponse({"markers": get_archaeology_markers(path=STUDY_DB_PATH)})
+
+    @web_app.get("/api/maps/routes", response_class=JSONResponse)
+    async def maps_routes() -> JSONResponse:
+        return JSONResponse({"routes": get_map_routes_for_passage(path=STUDY_DB_PATH)["routes"]})
+
+    @web_app.get("/api/maps/historical-layers", response_class=JSONResponse)
+    async def maps_historical_layers(period: str | None = None) -> JSONResponse:
+        return JSONResponse({"layers": get_historical_layers(period=period, path=STUDY_DB_PATH)})
+
+    @web_app.get("/api/maps/routes-for-passage", response_class=JSONResponse)
+    async def maps_routes_for_passage(
+        book: str | None = None,
+        chapter: int | None = None,
+        verse_start: int | None = None,
+        verse_end: int | None = None,
+        passage_text: str | None = None,
+    ) -> JSONResponse:
+        try:
+            result = get_map_routes_for_passage(
+                book=book,
+                chapter=chapter,
+                verse_start=verse_start,
+                verse_end=verse_end,
+                passage_text=passage_text,
+                path=STUDY_DB_PATH,
+            )
+        except BibleError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
+        return JSONResponse(result)
+
+    @web_app.get("/api/maps/places-for-passage", response_class=JSONResponse)
+    async def maps_places_for_passage(
+        book: str | None = None,
+        chapter: int | None = None,
+        verse_start: int | None = None,
+        verse_end: int | None = None,
+        passage_text: str | None = None,
+    ) -> JSONResponse:
+        try:
+            result = resolve_places_for_passage(
+                book=book,
+                chapter=chapter,
+                verse_start=verse_start,
+                verse_end=verse_end,
+                passage_text=passage_text,
+                path=STUDY_DB_PATH,
+            )
+        except BibleError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
+        return JSONResponse(result)
+
+    @web_app.get("/api/maps/archaeology-for-passage", response_class=JSONResponse)
+    async def maps_archaeology_for_passage(
+        book: str | None = None,
+        chapter: int | None = None,
+        verse_start: int | None = None,
+        verse_end: int | None = None,
+        passage_text: str | None = None,
+    ) -> JSONResponse:
+        try:
+            result = resolve_archaeology_for_passage(
+                book=book,
+                chapter=chapter,
+                verse_start=verse_start,
+                verse_end=verse_end,
+                passage_text=passage_text,
+                path=STUDY_DB_PATH,
+            )
+        except BibleError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
+        return JSONResponse(result)
+
+    @web_app.get("/api/maps/sample-markers", response_class=JSONResponse)
+    async def maps_sample_markers() -> JSONResponse:
+        return JSONResponse({"markers": get_biblical_place_markers(path=STUDY_DB_PATH)})
+
     @web_app.get("/api/saved-studies", response_class=JSONResponse)
     async def saved_studies(book: str | None = None, chapter: int | None = None) -> JSONResponse:
         try:
             return JSONResponse(
                 {"saved_studies": list_saved_studies(book, chapter, path=STUDY_DB_PATH)}
             )
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+
+    @web_app.get("/api/map-studies", response_class=JSONResponse)
+    async def map_studies(book: str | None = None, chapter: int | None = None) -> JSONResponse:
+        try:
+            return JSONResponse(
+                {"saved_map_studies": list_saved_map_studies(book, chapter, path=STUDY_DB_PATH)}
+            )
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+
+    @web_app.get("/api/map-studies/{study_id}", response_class=JSONResponse)
+    async def map_study(study_id: str) -> JSONResponse:
+        try:
+            return JSONResponse(get_saved_map_study(study_id, path=STUDY_DB_PATH))
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
+
+    @web_app.post("/api/map-studies", response_class=JSONResponse)
+    async def post_map_study(request: Request) -> JSONResponse:
+        try:
+            payload = await _request_payload(request)
+            study = _map_study_payload_from_request(payload)
+            saved = create_saved_map_study(study, path=STUDY_DB_PATH)
+            _record_action("map_study_saved", saved)
+            return JSONResponse(saved, status_code=201)
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+
+    @web_app.delete("/api/map-studies/{study_id}", response_class=JSONResponse)
+    async def remove_map_study(study_id: str) -> JSONResponse:
+        try:
+            delete_saved_map_study(study_id, path=STUDY_DB_PATH)
+            return JSONResponse({"deleted": True})
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
+
+    @web_app.post("/api/map-notes", response_class=JSONResponse)
+    async def post_map_note(request: Request) -> JSONResponse:
+        try:
+            payload = await _request_payload(request)
+            note = _map_note_payload_from_request(payload)
+            saved = create_map_note(note, path=STUDY_DB_PATH)
+            _record_action("map_note_added", saved)
+            return JSONResponse(saved, status_code=201)
         except StudyDataError as exc:
             return JSONResponse({"error": str(exc)}, status_code=400)
 
@@ -961,10 +1104,19 @@ def _maps_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
     user_question = str(form.get("question") or "").strip()
     guide = geography_for_book(str(context["book"]))
     testament = testament_for_book(str(context["book"]))
+    map_context = _optional_map_context(form)
     lines = [
         f"Using BHF, give geography notes for ASV {context['reference']}.",
         f"Testament context: {testament}. Broad region: {guide['region']}.",
     ]
+    if map_context:
+        lines.extend(
+            [
+                "",
+                "Structured map context retrieved from the local map layer:",
+                map_context,
+            ]
+        )
     if user_question:
         lines.append(f"User question: {user_question}")
     lines.extend(
@@ -1051,6 +1203,34 @@ def _optional_form_value(form: dict[str, Any] | Any, name: str) -> str | None:
     return value or None
 
 
+def _optional_map_context(form: dict[str, Any] | Any) -> str | None:
+    value = str(form.get("map_context") or "").strip()
+    if not value:
+        return None
+    try:
+        parsed = json.loads(value)
+    except json.JSONDecodeError:
+        return None
+    if not isinstance(parsed, dict):
+        return None
+    parts: list[str] = []
+    for key in (
+        "selected_place_name",
+        "selected_route_name",
+        "selected_layer_name",
+        "passage_reference",
+        "confidence",
+        "modern_location",
+        "ancient_region",
+    ):
+        item = parsed.get(key)
+        if item:
+            parts.append(f"{key.replace('_', ' ').title()}: {item}")
+    if not parts:
+        return None
+    return "\n".join(f"- {part}" for part in parts)
+
+
 async def _request_payload(request: Request) -> dict[str, Any]:
     content_type = request.headers.get("content-type", "")
     if "application/json" in content_type:
@@ -1105,6 +1285,51 @@ def _saved_study_payload_from_request(payload: dict[str, Any]) -> dict[str, Any]
         "study_type": payload.get("study_type") or payload.get("ask_mode"),
         "question": payload.get("question"),
         "answer": payload.get("answer") or payload.get("answer_html"),
+    }
+
+
+def _map_study_payload_from_request(payload: dict[str, Any]) -> dict[str, Any]:
+    view_state = payload.get("map_view_state") or {}
+    selected_layers = payload.get("selected_layers") or []
+    if isinstance(selected_layers, str):
+        try:
+            selected_layers = json.loads(selected_layers)
+        except json.JSONDecodeError:
+            selected_layers = [selected_layers]
+    if isinstance(view_state, str):
+        try:
+            view_state = json.loads(view_state)
+        except json.JSONDecodeError:
+            view_state = {}
+    return {
+        "book": payload.get("book"),
+        "chapter": payload.get("chapter"),
+        "start_verse": payload.get("start_verse") or payload.get("verse_start"),
+        "end_verse": payload.get("end_verse") or payload.get("verse_end"),
+        "passage_reference": payload.get("passage_reference"),
+        "selected_place_id": payload.get("selected_place_id"),
+        "selected_route_id": payload.get("selected_route_id"),
+        "selected_layer_id": payload.get("selected_layer_id"),
+        "selected_archaeology_id": payload.get("selected_archaeology_id"),
+        "selected_layers": selected_layers,
+        "map_view_state": view_state,
+        "generated_summary": payload.get("generated_summary"),
+        "user_notes": payload.get("user_notes"),
+    }
+
+
+def _map_note_payload_from_request(payload: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "book": payload.get("book"),
+        "chapter": payload.get("chapter"),
+        "start_verse": payload.get("start_verse") or payload.get("verse_start"),
+        "end_verse": payload.get("end_verse") or payload.get("verse_end"),
+        "passage_reference": payload.get("passage_reference"),
+        "place_id": payload.get("place_id"),
+        "route_id": payload.get("route_id"),
+        "layer_id": payload.get("layer_id"),
+        "archaeology_id": payload.get("archaeology_id"),
+        "note_body": payload.get("note_body") or payload.get("body"),
     }
 
 

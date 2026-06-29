@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BHF ASV Reader</title>
   <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <script src="{{ url_for('static', path='/htmx-lite.js') }}" defer></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script type="module" src="{{ url_for('static', path='/maps/MapPanel.js') }}"></script>
 </head>
 <body>
   <main class="page reader-page">
@@ -69,6 +72,7 @@
           <input type="hidden" name="reader_selected_text" value="">
           <input type="hidden" name="ask_mode" value="">
           <input type="hidden" name="study_action" value="">
+          <input type="hidden" name="map_context" value="">
 
           <section class="selection-card" aria-live="polite">
             <h2>Ask BHF</h2>
@@ -218,6 +222,58 @@
             <p class="empty">No notes for this chapter yet.</p>
           </div>
         </section>
+
+        <section id="map-panel" class="map-panel" aria-labelledby="map-panel-heading" hidden>
+          <div class="panel-heading map-panel-heading">
+            <div>
+              <h2 id="map-panel-heading">Maps</h2>
+              <p id="map-panel-reference" class="map-panel-reference"></p>
+            </div>
+            <div class="map-panel-actions">
+              <label class="check map-toggle">
+                <input type="checkbox" data-archaeology-toggle>
+                <span>Show archaeology</span>
+              </label>
+              <label class="check map-toggle">
+                <input type="checkbox" data-route-toggle>
+                <span>Show routes</span>
+              </label>
+              <label class="map-period">
+                <span>Period</span>
+                <select data-historical-period>
+                  <option value="all" selected>All periods</option>
+                  <option value="Divided Kingdom">Divided Kingdom</option>
+                  <option value="Assyrian period">Assyrian period</option>
+                  <option value="Babylonian period">Babylonian period</option>
+                  <option value="Persian period">Persian period</option>
+                  <option value="Hellenistic period">Hellenistic period</option>
+                  <option value="NT / Roman period">NT / Roman period</option>
+                </select>
+              </label>
+              <button type="button" class="secondary" data-map-reset>Reset view</button>
+              <button type="button" class="secondary" data-map-close>Close</button>
+            </div>
+          </div>
+          <div id="map-panel-status" class="map-panel-status" hidden aria-live="polite"></div>
+          <div class="map-panel-body">
+            <div id="map-stage" class="map-stage" role="application" aria-label="Bible map"></div>
+            <aside id="map-details" class="map-details-panel" aria-live="polite">
+              <p class="empty map-details-empty">Click a marker to view place details.</p>
+            </aside>
+          </div>
+          <section id="saved-map-studies" class="saved-map-studies-panel" aria-labelledby="saved-map-studies-heading">
+            <div class="panel-heading">
+              <h3 id="saved-map-studies-heading">Saved map studies</h3>
+              <span id="saved-map-studies-count" class="count">0</span>
+            </div>
+            <div id="saved-map-studies-list" class="saved-map-studies-list">
+              <p class="empty">No saved map studies for this passage yet.</p>
+            </div>
+          </section>
+          <div class="map-attribution">
+            Map data uses OpenStreetMap tiles for local/dev use only.
+          </div>
+        </section>
       </aside>
     </section>
 
@@ -230,6 +286,13 @@
       <button type="button" data-context-action="compare_translations">Compare Translations</button>
       <button type="button" data-context-action="timeline">Timeline</button>
       <button type="button" data-context-action="maps">Maps</button>
+      <button type="button" data-context-action="ask_location">Ask about this location</button>
+      <button type="button" data-context-action="show_on_map">Show on map</button>
+      <button type="button" data-context-action="save_map_study">Save map study</button>
+      <button type="button" data-context-action="map_note">Add map note</button>
+      <button type="button" data-context-action="compare_archaeology">Compare with archaeology</button>
+      <button type="button" data-context-action="related_passages">View related passages</button>
+      <button type="button" data-context-action="view_historical_layer">View historical layer</button>
       <button type="button" data-context-action="save_study">Save Study</button>
       <button type="button" data-context-action="note">Add note to this verse</button>
       <button type="button" data-context-action="highlight">Highlight this verse</button>
