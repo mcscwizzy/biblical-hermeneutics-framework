@@ -29,6 +29,8 @@ let loadedSavedMapStudies = [];
 let historicalPeriod = "all";
 let archaeologyVisible = false;
 let manuscriptsVisible = false;
+let mapModalOpen = false;
+let lastModalTrigger = null;
 const visibleHistoricalLayerIds = new Set();
 const visiblePoliticalContextLayerIds = new Set();
 
@@ -47,6 +49,9 @@ function getPanelElements() {
   return {
     panel: document.querySelector("#map-panel"),
     status: document.querySelector("#map-panel-status"),
+    pinHint: document.querySelector("#map-pin-hint"),
+    pinHintSummary: document.querySelector("#map-pin-hint-summary"),
+    pinHintText: document.querySelector("#map-pin-hint-text"),
     stage: document.querySelector("#map-stage"),
     reference: document.querySelector("#map-panel-reference"),
     details: document.querySelector("#map-details"),
@@ -56,6 +61,10 @@ function getPanelElements() {
     manuscriptToggle: document.querySelector("[data-manuscript-toggle]"),
     routeToggle: document.querySelector("[data-route-toggle]"),
     historicalPeriod: document.querySelector("[data-historical-period]"),
+    workspace: document.querySelector("#map-workspace"),
+    inlineHost: document.querySelector("#map-workspace-inline-host"),
+    modal: document.querySelector("#map-modal"),
+    modalHost: document.querySelector("#map-workspace-modal-host"),
   };
 }
 
@@ -140,15 +149,107 @@ function clearStatus() {
   delete status.dataset.state;
 }
 
+function setPinHint(message = "", options = {}) {
+  const { pinHint, pinHintSummary, pinHintText } = getPanelElements();
+  if (!pinHint || !pinHintSummary || !pinHintText) {
+    return;
+  }
+  const { open = false, summary = "Why no pin?" } = options;
+  if (!message) {
+    pinHint.hidden = true;
+    pinHint.open = false;
+    pinHintSummary.textContent = "Why no pin?";
+    pinHintText.textContent = "";
+    return;
+  }
+  pinHint.hidden = false;
+  pinHint.open = Boolean(open);
+  pinHintSummary.textContent = summary;
+  pinHintText.textContent = message;
+}
+
 function ensurePanelVisible(context) {
   const { panel, reference } = getPanelElements();
+  const emptyState = document.querySelector("[data-map-pane-empty]");
   if (!panel) {
     throw new Error("Map panel is missing.");
   }
   panel.hidden = false;
+  if (emptyState) {
+    emptyState.hidden = true;
+  }
   if (reference) {
     reference.textContent = formatReference(context);
   }
+  document.dispatchEvent(new CustomEvent("bhf:map-panel-opened"));
+}
+
+function syncMapViewport() {
+  if (!mapController || typeof mapController.invalidateSize !== "function") {
+    return;
+  }
+  window.requestAnimationFrame(() => {
+    mapController.invalidateSize();
+  });
+}
+
+function moveWorkspaceToHost(hostType) {
+  const { workspace, inlineHost, modalHost } = getPanelElements();
+  if (!workspace || !inlineHost || !modalHost) {
+    return;
+  }
+  const targetHost = hostType === "modal" ? modalHost : inlineHost;
+  if (!targetHost || workspace.parentElement === targetHost) {
+    workspace.dataset.mapHost = hostType;
+    syncMapViewport();
+    return;
+  }
+  targetHost.appendChild(workspace);
+  workspace.dataset.mapHost = hostType;
+  syncMapViewport();
+}
+
+function openMapModal() {
+  const { modal } = getPanelElements();
+  if (!modal || mapModalOpen) {
+    return;
+  }
+  lastModalTrigger = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+  moveWorkspaceToHost("modal");
+  if (typeof modal.showModal === "function") {
+    modal.showModal();
+  } else {
+    modal.setAttribute("open", "");
+  }
+  document.body.classList.add("map-modal-open");
+  mapModalOpen = true;
+  syncMapViewport();
+}
+
+function closeMapModal() {
+  const { modal } = getPanelElements();
+  if (!modal || !mapModalOpen) {
+    return;
+  }
+  if (typeof modal.close === "function" && modal.open) {
+    modal.close();
+  } else {
+    modal.removeAttribute("open");
+    finalizeMapModalClose();
+  }
+}
+
+function finalizeMapModalClose() {
+  if (!mapModalOpen) {
+    return;
+  }
+  moveWorkspaceToHost("inline");
+  document.body.classList.remove("map-modal-open");
+  mapModalOpen = false;
+  if (lastModalTrigger && typeof lastModalTrigger.focus === "function") {
+    lastModalTrigger.focus({ preventScroll: true });
+  }
+  lastModalTrigger = null;
 }
 
 function ensureMapController(
@@ -266,6 +367,7 @@ async function openMapPanel(context = {}) {
   }
   lastPassageContext = context;
   ensurePanelVisible(context);
+  setPinHint("");
   setStatus("Loading map data...", "loading");
   renderEmptyDetails("Loading place, archaeology, manuscript, route, historical, and political context details...");
 
@@ -354,26 +456,74 @@ async function openMapPanel(context = {}) {
     ) {
       renderSelectedPoliticalContext(selectedPoliticalContext, context);
       clearStatus();
+    } else if (placeResult.empty_state && loadedPoliticalContextLayers.length > 0) {
+      selectedPoliticalContext = loadedPoliticalContextLayers[0];
+      visiblePoliticalContextLayerIds.add(selectedPoliticalContext.id);
+      if (mapController && typeof mapController.setPoliticalContextLayerVisibility === "function") {
+        mapController.setPoliticalContextLayerVisibility(selectedPoliticalContext.id, true);
+      }
+      renderSelectedPoliticalContext(selectedPoliticalContext, context);
+      setPinHint(
+        `${selectedPoliticalContext.name || "This passage"} does not have a curated point-place pin here. It is mapped as broader political or regional context because the reference fits a territory, empire, or people-group better than one exact site.`,
+        { open: true, summary: "Why this is a region" }
+      );
+      setStatus(
+        `No curated point-place marker matched this passage. Showing political context for ${selectedPoliticalContext.name || "the matched region"} instead, because this reference maps more naturally to a broader region or governing power.`,
+        "empty"
+      );
     } else {
       clearStatus();
       if (placeResult.empty_state) {
+        const noCuratedMatches =
+          loadedRoutes.length === 0 &&
+          loadedArchaeologyMarkers.length === 0 &&
+          loadedManuscriptMarkers.length === 0 &&
+          loadedHistoricalLayers.length === 0 &&
+          loadedPoliticalContextLayers.length === 0;
         renderEmptyDetails(
-          "No curated biblical places were matched in this passage. Historical, political, archaeology, and manuscript layers remain available as study overlays."
+          "No curated point-place match was found for this passage. You can still study any available region, empire, historical, archaeology, or manuscript layers below."
         );
-        setStatus(
-          "No curated biblical places were matched in this passage. Showing the historical, political, archaeology, and manuscript map framework for reference.",
-          "empty"
-        );
+        if (noCuratedMatches) {
+          setPinHint(
+            "The local map dataset does not contain a curated place pin for this passage, so the map is falling back to a text-only geography explanation.",
+            { summary: "Why there is no local map data" }
+          );
+          setStatus(
+            "No curated local map data matched this passage. Asking BHF for a text-based geography fallback inside this Maps tab.",
+            "empty"
+          );
+          if (window.BHFWorkspace && typeof window.BHFWorkspace.requestMapAIFallback === "function") {
+            window.BHFWorkspace.requestMapAIFallback(
+              {
+                ...context,
+                passage_reference: formatReference(context),
+              },
+              {
+                localSummary:
+                  "No curated local map places, routes, archaeology markers, manuscript witnesses, historical layers, or political-context overlays matched this passage.",
+              }
+            );
+          }
+        } else {
+          setPinHint(
+            "This passage did not resolve to a local point pin. It may map better to a broader region, empire, or study overlay than to one exact location."
+          );
+          setStatus(
+            "No local place pin matched this passage. Showing the available map framework so you can still study broader context.",
+            "empty"
+          );
+        }
       } else {
-        renderEmptyDetails("Click a marker, archaeology item, manuscript, route, historical layer, or political context layer to view details.");
+        setPinHint("");
+        renderEmptyDetails("Select a place pin, route, archaeology item, manuscript, or overlay to inspect its details here.");
       }
     }
 
     if (routeVisibility && loadedRoutes.length === 0) {
-      setStatus("No curated routes matched this passage.", "empty");
+      setStatus("Route view is on, but no curated routes are stored for this passage.", "empty");
     }
     if (archaeologyVisible && loadedArchaeologyMarkers.length === 0) {
-      setStatus("No curated archaeology markers matched this passage.", "empty");
+      setStatus("Archaeology view is on, but no curated archaeology items are stored for this passage.", "empty");
     }
     if (
       !loadedHistoricalLayers.length &&
@@ -384,7 +534,7 @@ async function openMapPanel(context = {}) {
       !selectedHistoricalLayer &&
       !selectedPoliticalContext
     ) {
-      setStatus("No historical or political layers matched the selected period.", "empty");
+      setStatus("No historical or political overlays matched the selected period.", "empty");
     }
     if (offline) {
       setStatus(
@@ -393,6 +543,7 @@ async function openMapPanel(context = {}) {
       );
     }
   } catch (error) {
+    setPinHint("");
     setStatus(error.message || "Could not load the map.", "error");
     renderEmptyDetails("Could not load place, archaeology, manuscript, route, and layer details.");
   }
@@ -497,9 +648,15 @@ async function applySavedMapStudyState(study) {
 
 function closeMapPanel() {
   const { panel } = getPanelElements();
+  const emptyState = document.querySelector("[data-map-pane-empty]");
   if (panel) {
     panel.hidden = true;
   }
+  if (emptyState) {
+    emptyState.hidden = false;
+  }
+  setPinHint("");
+  document.dispatchEvent(new CustomEvent("bhf:map-panel-closed"));
 }
 
 function resetMapView() {
@@ -515,7 +672,7 @@ function setRouteVisibility(visible) {
   }
   mapController.setRouteVisibility(visible);
   if (visible && loadedRoutes.length === 0) {
-    setStatus("No curated routes matched this passage.", "empty");
+    setStatus("Route view is on, but no curated routes are stored for this passage.", "empty");
   } else if (visible) {
     clearStatus();
   }
@@ -532,7 +689,7 @@ function setArchaeologyVisibility(visible) {
   }
   mapController.setArchaeologyVisibility(archaeologyVisible);
   if (archaeologyVisible && loadedArchaeologyMarkers.length === 0) {
-    setStatus("No curated archaeology markers matched this passage.", "empty");
+    setStatus("Archaeology view is on, but no curated archaeology items are stored for this passage.", "empty");
   } else if (archaeologyVisible) {
     clearStatus();
     if (selectedMarker) {
@@ -560,7 +717,7 @@ function setManuscriptVisibility(visible) {
   }
   mapController.setManuscriptVisibility(manuscriptsVisible);
   if (manuscriptsVisible && loadedManuscriptMarkers.length === 0) {
-    setStatus("No curated manuscript markers matched this passage.", "empty");
+    setStatus("Manuscript view is on, but no curated manuscript items are stored for this passage.", "empty");
   } else if (manuscriptsVisible) {
     clearStatus();
     if (selectedMarker) {
@@ -664,7 +821,7 @@ async function setHistoricalPeriod(period) {
     }
     renderSavedMapStudies();
     if (!loadedHistoricalLayers.length && !loadedPoliticalContextLayers.length) {
-      setStatus("No historical or political layers matched the selected period.", "empty");
+      setStatus("No historical or political overlays matched the selected period.", "empty");
     } else {
       clearStatus();
     }
@@ -1265,7 +1422,7 @@ function renderHistoricalLayerOverview() {
           ? `<div class="map-layer-list">${items}</div>`
           : `<p class="empty map-details-empty">No historical layers match the selected period.</p>`
       }
-      <p class="map-layer-note">The boundaries are schematic. They are intended to frame the passage, not to claim exact borders.</p>
+      <p class="map-layer-note">These borders are broad study overlays. Use them to understand the setting and period, not as exact boundary claims.</p>
     </section>
   `;
 }
@@ -1304,7 +1461,7 @@ function renderPoliticalContextLayerOverview() {
           ? `<div class="map-layer-list">${items}</div>`
           : `<p class="empty map-details-empty">No political context layers match the selected period.</p>`
       }
-      <p class="map-layer-note">These overlays show the dominant political background as a study frame. They are schematic and intentionally broad.</p>
+      <p class="map-layer-note">These overlays explain the larger world behind the passage. They are intentionally broad and may represent a region or empire rather than one exact place.</p>
     </section>
   `;
 }
@@ -1335,9 +1492,9 @@ function renderArchaeologyLayerOverview() {
       ${
         markers.length
           ? `<div class="map-layer-list">${items}</div>`
-          : `<p class="empty map-details-empty">No curated archaeology markers match the selected passage.</p>`
+          : `<p class="empty map-details-empty">No curated archaeology items are stored for this passage right now.</p>`
       }
-      <p class="map-layer-note">Archaeology markers are displayed as study aids. They are not proof of interpretation and should be read with the attached cautions.</p>
+      <p class="map-layer-note">Archaeology items are optional study aids. They can add historical texture, but they do not prove one interpretation by themselves.</p>
     </section>
   `;
 }
@@ -1368,9 +1525,9 @@ function renderManuscriptLayerOverview() {
       ${
         markers.length
           ? `<div class="map-layer-list">${items}</div>`
-          : `<p class="empty map-details-empty">No curated manuscript markers match the selected passage.</p>`
+          : `<p class="empty map-details-empty">No curated manuscript items are stored for this passage right now.</p>`
       }
-      <p class="map-layer-note">Manuscripts are textual witnesses, kept separate from archaeology. Discovery and repository locations are shown cautiously where known.</p>
+      <p class="map-layer-note">Manuscripts are textual witnesses, not archaeology finds. Locations are shown cautiously when the local record includes them.</p>
     </section>
   `;
 }
@@ -1719,13 +1876,53 @@ async function deleteSavedMapStudy(studyId) {
   await refreshSavedMapStudies();
 }
 
+function renderMapOrientationCard(options = {}) {
+  const {
+    title = "How to read this map",
+    summary = "This workspace combines exact place pins with broader study overlays. Some passages match a city or site. Others only match a region, empire, route, or historical frame.",
+    callout = "",
+  } = options;
+  const calloutMarkup = callout
+    ? `<p class="map-orientation-callout">${escapeHtml(callout)}</p>`
+    : "";
+  return `
+    <section class="map-detail-section map-orientation-card">
+      <div class="map-section-header map-section-header-stack">
+        <h4>${escapeHtml(title)}</h4>
+        <p class="map-orientation-summary">${escapeHtml(summary)}</p>
+      </div>
+      ${calloutMarkup}
+      <div class="map-orientation-list">
+        <div class="map-orientation-item">
+          <strong>Place pins</strong>
+          <p>Use these when the passage matches a curated location with coordinates.</p>
+        </div>
+        <div class="map-orientation-item">
+          <strong>Historical and political layers</strong>
+          <p>Use these when the passage is better understood as a region, kingdom, empire, or broad time-setting rather than one pin.</p>
+        </div>
+        <div class="map-orientation-item">
+          <strong>Routes, archaeology, and manuscripts</strong>
+          <p>These are optional study layers. Some passages have them; many do not.</p>
+        </div>
+      </div>
+      <div class="map-next-steps">
+        <strong>What to do next</strong>
+        <p>Click a marker or overlay, toggle layers on the right, or use Expand for a larger map. If no local map data exists, BHF can still show a text-only geography fallback below.</p>
+      </div>
+    </section>
+  `;
+}
+
 function renderEmptyDetails(message) {
   const { details } = getPanelElements();
   if (!details) {
     return;
   }
   details.innerHTML = `
-    <p class="empty map-details-empty">${escapeHtml(message)}</p>
+    ${renderMapOrientationCard({
+      callout: message,
+    })}
     ${renderHistoricalLayerOverview()}
     ${renderPoliticalContextLayerOverview()}
     ${renderArchaeologyLayerOverview()}
@@ -1979,7 +2176,7 @@ function renderMapActionBar(kind, item) {
             : '<button type="button" class="secondary" data-map-action="view_historical_layer">View historical layer</button>'
         }
       </div>
-      <p class="map-layer-note">Selected ${escapeHtml(kind)} confidence: ${escapeHtml(selectedLabel)}. Map actions use the curated local data only.</p>
+      <p class="map-layer-note">Selected ${escapeHtml(kind)} confidence: ${escapeHtml(selectedLabel)}. These actions use the local curated map record for the current selection.</p>
     </section>
   `;
 }
@@ -2173,10 +2370,13 @@ function syncHistoricalPeriod() {
 function wirePanelButtons() {
   const closeButton = document.querySelector("[data-map-close]");
   const resetButton = document.querySelector("[data-map-reset]");
+  const expandButton = document.querySelector("[data-map-expand]");
+  const modalCloseButton = document.querySelector("[data-map-modal-close]");
   const archaeologyToggle = document.querySelector("[data-archaeology-toggle]");
   const manuscriptToggle = document.querySelector("[data-manuscript-toggle]");
   const routeToggle = document.querySelector("[data-route-toggle]");
   const historicalPeriodSelect = document.querySelector("[data-historical-period]");
+  const { modal } = getPanelElements();
   const details = document.querySelector("#map-details");
 
   if (closeButton) {
@@ -2184,6 +2384,20 @@ function wirePanelButtons() {
   }
   if (resetButton) {
     resetButton.addEventListener("click", resetMapView);
+  }
+  if (expandButton) {
+    expandButton.addEventListener("click", openMapModal);
+  }
+  if (modalCloseButton) {
+    modalCloseButton.addEventListener("click", closeMapModal);
+  }
+  if (modal) {
+    modal.addEventListener("close", finalizeMapModalClose);
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeMapModal();
+      }
+    });
   }
   if (archaeologyToggle) {
     archaeologyToggle.addEventListener("change", (event) => {
@@ -2265,7 +2479,7 @@ function wirePanelButtons() {
 
 function initializeMapPanel() {
   wirePanelButtons();
-  renderEmptyDetails("Click a marker, archaeology item, manuscript, route, or historical layer to view details.");
+  renderEmptyDetails("Select a place pin, route, archaeology item, manuscript, or overlay to inspect its details here.");
   syncArchaeologyToggle();
   syncManuscriptToggle();
   syncHistoricalPeriod();
@@ -2275,6 +2489,8 @@ if (typeof window !== "undefined") {
   window.BHFMaps = {
     openMapPanel,
     closeMapPanel,
+    openMapModal,
+    closeMapModal,
     resetMapView,
     initializeMapPanel,
   };

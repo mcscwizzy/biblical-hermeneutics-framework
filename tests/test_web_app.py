@@ -718,6 +718,50 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(data["chapter"], 12)
         self.assertIn("living sacrifice", data["verses"][0]["text"])
 
+    def test_bible_search_route_returns_local_results(self):
+        response = asgi_request("GET", "/api/bible/search?q=living+sacrifice")
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertGreater(data["total_results"], 0)
+        self.assertEqual(data["results"][0]["reference"], "Romans 12:1")
+        self.assertFalse(data["direct_reference"])
+
+    def test_bible_search_route_flags_topic_fallback_for_no_hit(self):
+        response = asgi_request("GET", "/api/bible/search?q=perichoresis+hypostasis+theosis")
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(data["results"], [])
+        self.assertTrue(data["ai_fallback_eligible"])
+
+    def test_bible_search_route_resolves_direct_reference(self):
+        response = asgi_request("GET", "/api/bible/search?q=John+1%3A1-2")
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertTrue(data["direct_reference"])
+        self.assertEqual(data["results"][0]["reference"], "John 1:1-2")
+
+    def test_bible_search_fallback_job_returns_structured_candidates(self):
+        data = _valid_form()
+        data["query"] = "Egypt in Exodus"
+
+        with patch("bhf_web.app.BHFAgent", SearchFallbackAgent):
+            response = asgi_request("POST", "/api/bible/search/fallback/jobs", data=data)
+
+        self.assertEqual(response["status"], 202)
+        job = json.loads(response["body"])
+        status = wait_for_search_job(job["job_id"])
+        self.assertTrue(status["done"])
+
+        result = asgi_request("GET", f"/api/bible/search/fallback/result/{job['job_id']}")
+        self.assertEqual(result["status"], 200)
+        payload = json.loads(result["body"])
+        self.assertEqual(payload["source"], "ai_fallback")
+        self.assertEqual(payload["results"][0]["reference"], "Exodus 1")
+        self.assertEqual(payload["results"][1]["reference"], "Exodus 12:37-42")
+
     def test_post_ask_handles_mocked_agent_result(self):
         with patch("bhf_web.app.BHFAgent", FakeAgent):
             response = asgi_request("POST", "/ask", data=_valid_form())
@@ -1305,6 +1349,63 @@ class CapturingAgent(SuccessfulJobAgent):
         return super().ask(question, status_callback=status_callback)
 
 
+class SearchFallbackAgent(SuccessfulJobAgent):
+    def ask(self, question, status_callback=None):
+        if status_callback is not None:
+            status_callback(status_event("loading_profile", "Loading BHF profile", 6))
+            status_callback(
+                status_event(
+                    "waiting_for_model_response",
+                    "Waiting for model response",
+                    11,
+                    status="running",
+                )
+            )
+            status_callback(status_event("complete", "Complete", 16, status="complete"))
+        return AgentResult(
+            answer_text=json.dumps(
+                {
+                    "results": [
+                        {
+                            "book": "Exodus",
+                            "chapter": 1,
+                            "reason": "Egypt frames Israel's oppression at the start of Exodus.",
+                            "confidence": "likely",
+                        },
+                        {
+                            "book": "Exodus",
+                            "chapter": 12,
+                            "verse_start": 37,
+                            "verse_end": 42,
+                            "reason": "This passage narrates Israel leaving Egypt.",
+                            "confidence": "strong",
+                        },
+                    ]
+                }
+            ),
+            reference_context=ReferenceContext(
+                book="Exodus",
+                chapter=1,
+                verse=None,
+                testament="OT",
+                is_reference_based=False,
+                confidence=0.6,
+            ),
+            genre_context=GenreContext(primary_genre="narrative"),
+            question_context=QuestionContext(question_type="topic_study", confidence=0.8),
+            profile_used=self.config.profile,
+            validation_result=ValidationResult(
+                passed=True,
+                score=90,
+                warnings=[],
+            ),
+            model_metadata={
+                "answer_mode": self.config.answer_mode,
+            },
+            errors=[],
+        )
+
+
 def status_event(stage, message, step_index, status="complete"):
     return {
         "stage": stage,
@@ -1369,6 +1470,16 @@ def wait_for_job(job_id):
             return status
         time.sleep(0.01)
     raise AssertionError(f"job did not complete: {job_id}")
+
+
+def wait_for_search_job(job_id):
+    for _attempt in range(20):
+        response = asgi_request("GET", f"/api/bible/search/fallback/status/{job_id}")
+        status = json.loads(response["body"])
+        if status.get("done"):
+            return status
+        time.sleep(0.01)
+    raise AssertionError(f"search job did not complete: {job_id}")
 
 
 def _history_messages(status):

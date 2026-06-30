@@ -5,12 +5,15 @@ from bhf_agent.bible import (
     compare_translation_passages,
     build_selected_passage_context,
     geography_for_book,
+    is_topic_style_search_query,
     list_books,
     load_asv_bible,
     load_kjv_bible,
     normalize_book_name,
+    parse_reference_query,
     resolve_chapter,
     resolve_passage,
+    search_bible_text,
     timeline_for_book,
     verse_range_reference,
 )
@@ -122,6 +125,47 @@ class BibleDatasetTests(unittest.TestCase):
         self.assertEqual(guide["region"], "Jerusalem, Samaria, Syria, Asia Minor, Greece, and Rome")
         self.assertIn("Follow the mission outward", guide["notes"])
         self.assertEqual(geography_for_book("Exodus")["region"], "Egypt, the wilderness, and Sinai")
+
+    def test_search_bible_text_returns_phrase_matches(self):
+        result = search_bible_text("living sacrifice")
+
+        self.assertFalse(result["direct_reference"])
+        self.assertGreater(result["total_results"], 0)
+        self.assertEqual(result["results"][0]["reference"], "Romans 12:1")
+        self.assertEqual(result["results"][0]["match_type"], "phrase")
+
+    def test_search_bible_text_resolves_direct_reference(self):
+        result = search_bible_text("John 1:1-2")
+
+        self.assertTrue(result["direct_reference"])
+        self.assertEqual(result["results"][0]["reference"], "John 1:1-2")
+        self.assertFalse(result["ai_fallback_eligible"])
+
+    def test_parse_reference_query_handles_ranges(self):
+        parsed = parse_reference_query("Rom 12:1-2")
+
+        self.assertEqual(
+            parsed,
+            {"book": "Romans", "chapter": 12, "verse_start": 1, "verse_end": 2},
+        )
+
+    def test_topic_style_search_query_detection(self):
+        self.assertTrue(is_topic_style_search_query("Egypt in Exodus"))
+        self.assertTrue(is_topic_style_search_query("forgiveness"))
+        self.assertFalse(is_topic_style_search_query("living sacrifice"))
+        self.assertFalse(is_topic_style_search_query('"living sacrifice"'))
+
+    def test_search_bible_text_marks_topic_fallback_eligible_on_no_hit(self):
+        result = search_bible_text("perichoresis hypostasis theosis")
+
+        self.assertEqual(result["results"], [])
+        self.assertTrue(result["ai_fallback_eligible"])
+
+    def test_search_bible_text_does_not_mark_literal_no_hit_as_topic_fallback(self):
+        result = search_bible_text("zzzxxyyqq")
+
+        self.assertEqual(result["results"], [])
+        self.assertFalse(result["ai_fallback_eligible"])
 
 
 if __name__ == "__main__":

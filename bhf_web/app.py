@@ -23,9 +23,11 @@ from bhf_agent.bible import (
     build_selected_passage_context,
     geography_for_book,
     list_books,
+    search_bible_text,
     resolve_chapter,
     timeline_for_book,
     testament_for_book,
+    verse_range_reference,
 )
 from bhf_agent.config import ConfigError
 from bhf_agent.profiles import ProfileError, ProfileLoader
@@ -460,6 +462,44 @@ def create_app() -> FastAPI:
             return JSONResponse(resolve_chapter(book, chapter))
         except BibleError as exc:
             return JSONResponse({"error": str(exc)}, status_code=404)
+
+    @web_app.get("/api/bible/search", response_class=JSONResponse)
+    async def bible_search(q: str, limit: int = 25) -> JSONResponse:
+        try:
+            return JSONResponse(search_bible_text(q, limit=limit))
+        except (BibleError, ValueError) as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+
+    @web_app.post("/api/bible/search/fallback/jobs", response_class=JSONResponse)
+    async def create_bible_search_fallback_job(request: Request) -> JSONResponse:
+        form = await request.form()
+        job = job_store.create()
+        form_values = dict(form)
+        thread = threading.Thread(
+            target=_run_search_fallback_job,
+            args=(job, form_values, BHFAgent),
+            daemon=True,
+        )
+        thread.start()
+        return JSONResponse(job.to_dict(), status_code=202)
+
+    @web_app.get("/api/bible/search/fallback/status/{job_id}", response_class=JSONResponse)
+    async def bible_search_fallback_status(job_id: str) -> JSONResponse:
+        job = job_store.get(job_id)
+        if job is None:
+            return JSONResponse({"error": "job not found"}, status_code=404)
+        return JSONResponse(job.to_dict())
+
+    @web_app.get("/api/bible/search/fallback/result/{job_id}", response_class=JSONResponse)
+    async def bible_search_fallback_result(job_id: str) -> JSONResponse:
+        job = job_store.get(job_id)
+        if job is None:
+            return JSONResponse({"error": "job not found"}, status_code=404)
+        if not job.done:
+            return JSONResponse({"error": "search fallback is still running"}, status_code=202)
+        if job.error:
+            return JSONResponse({"error": _job_error_message(job)}, status_code=job.status_code)
+        return JSONResponse(job.result)
 
     @web_app.get("/api/maps/biblical-places", response_class=JSONResponse)
     async def maps_biblical_places(period: str | None = None) -> JSONResponse:
@@ -943,6 +983,40 @@ def _run_ask_job(job: AskJob, form: dict[str, Any], agent_class: Any = BHFAgent)
     job.complete(result)
 
 
+def _run_search_fallback_job(
+    job: AskJob,
+    form: dict[str, Any],
+    agent_class: Any = BHFAgent,
+) -> None:
+    try:
+        query = str(form.get("query") or "").strip()
+        if not query:
+            raise ConfigError("search query is required")
+        job.study_type = "search_fallback"
+        job.question = query
+        loaded = load_web_defaults()
+        config = config_from_form(form, loaded.config)
+        prompt = _bible_search_fallback_prompt(query)
+        result = agent_class(config).ask(prompt, status_callback=job.emit)
+        if getattr(result, "errors", None):
+            job.fail(
+                "; ".join(str(error) for error in result.errors),
+                status_code=502,
+                failed_stage=job.failed_stage or "waiting_for_model_response",
+            )
+            job.result = result
+            return
+        payload = _parse_search_fallback_payload(result.answer_text, query)
+    except (ConfigError, ProfileError, ValueError, json.JSONDecodeError) as exc:
+        job.fail(str(exc), status_code=400)
+        return
+    except Exception as exc:
+        job.fail(f"Unexpected agent error: {exc}", status_code=500)
+        return
+
+    job.complete(payload)
+
+
 def _question_from_form(form: dict[str, Any] | Any) -> tuple[str, str | None]:
     if not _is_reader_submission(form):
         return validate_question(form), None
@@ -999,6 +1073,104 @@ def _question_from_form(form: dict[str, Any] | Any) -> tuple[str, str | None]:
         ]
     )
     return "\n".join(lines), str(context["reference"])
+
+
+def _bible_search_fallback_prompt(query: str) -> str:
+    return "\n".join(
+        [
+            "Using BHF, suggest likely Bible passages for this topical Bible search.",
+            f"Search query: {query}",
+            "",
+            "Return JSON only. Do not wrap it in markdown fences. Do not add commentary before or after the JSON.",
+            'Use this schema: {"results":[{"book":"Romans","chapter":12,"verse_start":1,"verse_end":2,"reason":"...","confidence":"likely"}]}',
+            "Rules:",
+            "- Return 0 to 8 likely passage candidates.",
+            "- Use canonical Protestant book names.",
+            "- Include verse_start and verse_end when a verse-level match is likely; omit both when only a chapter-level candidate is appropriate.",
+            "- confidence must be one of: strong, likely, possible.",
+            "- Keep reason brief and cautious.",
+            "- Do not claim exhaustive search coverage.",
+        ]
+    )
+
+
+def _parse_search_fallback_payload(answer_text: str, query: str) -> dict[str, Any]:
+    raw = _extract_json_block(answer_text)
+    parsed = json.loads(raw)
+    if not isinstance(parsed, dict):
+        raise ValueError("search fallback did not return a JSON object")
+    items = parsed.get("results")
+    if not isinstance(items, list):
+        raise ValueError("search fallback JSON must include a results list")
+    results: list[dict[str, Any]] = []
+    for item in items[:8]:
+        if not isinstance(item, dict):
+            continue
+        normalized = _normalize_search_fallback_candidate(item)
+        if normalized:
+            results.append(normalized)
+    return {
+        "query": query,
+        "results": results,
+        "message": "BHF suggested likely passages because the local ASV search found no direct matches." if results else "BHF could not identify confident passage candidates for this search.",
+        "source": "ai_fallback",
+    }
+
+
+def _extract_json_block(answer_text: str) -> str:
+    stripped = str(answer_text or "").strip()
+    if stripped.startswith("```"):
+        fenced = re.sub(r"^```(?:json)?\s*", "", stripped)
+        fenced = re.sub(r"\s*```$", "", fenced)
+        return fenced.strip()
+    start = stripped.find("{")
+    end = stripped.rfind("}")
+    if start != -1 and end != -1 and end > start:
+        return stripped[start : end + 1]
+    return stripped
+
+
+def _normalize_search_fallback_candidate(item: dict[str, Any]) -> dict[str, Any] | None:
+    try:
+        book = str(item.get("book") or "").strip()
+        chapter = int(item.get("chapter"))
+    except (TypeError, ValueError):
+        return None
+    if not book or chapter <= 0:
+        return None
+    try:
+        canonical_book = build_selected_passage_context(book, chapter)["book"]
+    except BibleError:
+        return None
+    verse_start = item.get("verse_start")
+    verse_end = item.get("verse_end")
+    normalized_start: int | None = None
+    normalized_end: int | None = None
+    if verse_start not in (None, ""):
+        try:
+            normalized_start = int(verse_start)
+            normalized_end = int(verse_end) if verse_end not in (None, "") else normalized_start
+        except (TypeError, ValueError):
+            return None
+        if normalized_start <= 0 or normalized_end <= 0 or normalized_end < normalized_start:
+            return None
+    reference = (
+        verse_range_reference(canonical_book, chapter, normalized_start, normalized_end)
+        if normalized_start
+        else f"{canonical_book} {chapter}"
+    )
+    confidence = str(item.get("confidence") or "possible").strip().lower()
+    if confidence not in {"strong", "likely", "possible"}:
+        confidence = "possible"
+    return {
+        "book": canonical_book,
+        "chapter": chapter,
+        "verse_start": normalized_start,
+        "verse_end": normalized_end,
+        "reference": reference,
+        "reason": str(item.get("reason") or "").strip(),
+        "confidence": confidence,
+    }
 
 
 def _reader_context_from_form(form: dict[str, Any] | Any) -> dict[str, Any] | None:
@@ -1444,6 +1616,7 @@ def _optional_map_context(form: dict[str, Any] | Any) -> str | None:
         "confidence",
         "modern_location",
         "ancient_region",
+        "local_map_summary",
     ):
         item = parsed.get(key)
         if item:

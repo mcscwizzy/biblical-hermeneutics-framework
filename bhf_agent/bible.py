@@ -48,6 +48,29 @@ def load_kjv_bible(path: str | Path = KJV_DATA_PATH) -> dict[str, Any]:
     return load_bible_dataset(path)
 
 
+@lru_cache(maxsize=2)
+def build_bible_search_index(path: str | Path = DATA_PATH) -> list[dict[str, Any]]:
+    """Build a flattened per-verse search index for the committed Bible dataset."""
+
+    bible = load_bible_dataset(path)
+    entries: list[dict[str, Any]] = []
+    for book in bible.get("books", []):
+        for chapter in book.get("chapters", []):
+            for verse in chapter.get("verses", []):
+                text = str(verse.get("text") or "").strip()
+                entries.append(
+                    {
+                        "book": str(verse.get("book") or book.get("name") or ""),
+                        "chapter": int(verse.get("chapter") or chapter.get("chapter") or 0),
+                        "verse": int(verse.get("verse") or 0),
+                        "text": text,
+                        "normalized_text": _normalize_search_text(text),
+                        "tokens": _tokenize_search_query(text),
+                    }
+                )
+    return entries
+
+
 def _normalize_dataset(data: dict[str, Any], bible_path: Path) -> dict[str, Any]:
     resultset = data.get("resultset")
     if not isinstance(resultset, dict) or not isinstance(resultset.get("row"), list):
@@ -345,9 +368,160 @@ def geography_for_book(book: str) -> dict[str, str]:
     return _GEOGRAPHY_GUIDES.get(canonical, _GEOGRAPHY_GUIDES["Default"])
 
 
+def search_bible_text(
+    query: str,
+    *,
+    limit: int = 25,
+    data: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    normalized_query = _normalize_search_text(query)
+    if not normalized_query:
+        raise BibleError("search query is required")
+
+    capped_limit = max(1, min(int(limit), 100))
+    direct_reference = parse_reference_query(query)
+    if direct_reference:
+        passage = resolve_passage(
+            direct_reference["book"],
+            direct_reference["chapter"],
+            direct_reference.get("verse_start"),
+            direct_reference.get("verse_end"),
+            data=data,
+        )
+        return {
+            "query": query,
+            "normalized_query": normalized_query,
+            "results": [_passage_to_search_result(passage, match_type="direct_reference", score=1000)],
+            "total_results": 1,
+            "direct_reference": True,
+            "ai_fallback_eligible": False,
+        }
+
+    tokens = _tokenize_search_query(normalized_query)
+    index = build_bible_search_index()
+    scored: list[dict[str, Any]] = []
+    canonical_books = list(BOOKS)
+    for entry in index:
+        phrase_hit = normalized_query in str(entry["normalized_text"])
+        entry_tokens = set(entry["tokens"])
+        overlap = len([token for token in tokens if token in entry_tokens])
+        if not phrase_hit and overlap == 0:
+            continue
+        score = 0
+        match_type = "term"
+        if phrase_hit:
+            match_type = "phrase"
+            score += 500 + min(len(normalized_query), 180)
+        if overlap:
+            score += overlap * 20
+            score += int((overlap / max(len(tokens), 1)) * 100)
+        if entry_tokens == set(tokens):
+            score += 25
+        scored.append(
+            {
+                "book": entry["book"],
+                "chapter": entry["chapter"],
+                "verse_start": entry["verse"],
+                "verse_end": entry["verse"],
+                "reference": verse_range_reference(entry["book"], entry["chapter"], entry["verse"], entry["verse"]),
+                "excerpt": entry["text"],
+                "match_type": match_type,
+                "score": score,
+            }
+        )
+    scored.sort(
+        key=lambda item: (
+            -int(item["score"]),
+            canonical_books.index(str(item["book"])),
+            int(item["chapter"]),
+            int(item["verse_start"]),
+        )
+    )
+    results = scored[:capped_limit]
+    return {
+        "query": query,
+        "normalized_query": normalized_query,
+        "results": results,
+        "total_results": len(scored),
+        "direct_reference": False,
+        "ai_fallback_eligible": not results and is_topic_style_search_query(query),
+        "no_results_message": "No local ASV matches were found." if not results else None,
+    }
+
+
+def parse_reference_query(query: str) -> dict[str, Any] | None:
+    normalized = " ".join(str(query or "").strip().split())
+    if not normalized:
+        return None
+    match = _SEARCH_REFERENCE_RE.fullmatch(normalized)
+    if not match:
+        return None
+    try:
+        book = normalize_book_name(match.group("book"))
+        chapter = _positive_int(match.group("chapter"), "chapter")
+        verse_start = match.group("verse_start")
+        verse_end = match.group("verse_end")
+        result: dict[str, Any] = {"book": book, "chapter": chapter}
+        if verse_start:
+            result["verse_start"] = _positive_int(verse_start, "verse_start")
+            result["verse_end"] = _positive_int(verse_end, "verse_end") if verse_end else result["verse_start"]
+        return result
+    except BibleError:
+        return None
+
+
+def is_topic_style_search_query(query: str) -> bool:
+    normalized = " ".join(str(query or "").strip().split())
+    lowered = normalized.lower()
+    if not lowered:
+        return False
+    if parse_reference_query(normalized):
+        return False
+    if '"' in normalized or "'" in normalized:
+        return False
+    if lowered.endswith("?"):
+        return True
+    tokens = _tokenize_search_query(normalized)
+    if not tokens:
+        return False
+    if any(token in _TOPIC_HINT_WORDS for token in tokens):
+        return True
+    if len(tokens) >= 3:
+        return True
+    if len(tokens) == 1 and tokens[0] in _TOPICAL_SINGLE_TERMS:
+        return True
+    return False
+
+
+def _passage_to_search_result(
+    passage: dict[str, Any],
+    *,
+    match_type: str,
+    score: int,
+) -> dict[str, Any]:
+    return {
+        "book": passage["book"],
+        "chapter": passage["chapter"],
+        "verse_start": passage.get("start_verse"),
+        "verse_end": passage.get("end_verse"),
+        "reference": passage["reference"],
+        "excerpt": passage["selected_text"],
+        "match_type": match_type,
+        "score": score,
+    }
+
+
 def _alias_key(value: str) -> str:
     compact = re.sub(r"\s+", " ", value.strip().lower().replace(".", ""))
     return compact
+
+
+def _normalize_search_text(value: str) -> str:
+    return " ".join(re.sub(r"[^\w\s:.-]", " ", str(value).lower()).split())
+
+
+def _tokenize_search_query(value: str) -> list[str]:
+    return [token for token in re.split(r"\W+", _normalize_search_text(value)) if token]
 
 
 def _positive_int(value: int | str, label: str) -> int:
@@ -560,4 +734,48 @@ _GEOGRAPHY_GUIDES: dict[str, dict[str, str]] = {
         "region": "Asia Minor churches and symbolic geography",
         "notes": "Distinguish the seven churches and other real locations from the book's symbolic geography.",
     },
+}
+
+_SEARCH_REFERENCE_RE = re.compile(
+    rf"(?P<book>{'|'.join(re.escape(name) for name in sorted(BOOK_ALIASES, key=len, reverse=True))})\.?\s+"
+    r"(?P<chapter>\d{1,3})"
+    r"(?:\s*:\s*(?P<verse_start>\d{1,3})(?:\s*-\s*(?P<verse_end>\d{1,3}))?)?$",
+    re.IGNORECASE,
+)
+
+_TOPIC_HINT_WORDS = {
+    "about",
+    "where",
+    "verses",
+    "passages",
+    "mentions",
+    "mentioned",
+    "topic",
+    "themes",
+    "theme",
+    "regarding",
+    "concerning",
+    "what",
+    "who",
+    "why",
+    "how",
+}
+
+_TOPICAL_SINGLE_TERMS = {
+    "forgiveness",
+    "mercy",
+    "grace",
+    "faith",
+    "hope",
+    "love",
+    "sin",
+    "salvation",
+    "egypt",
+    "exodus",
+    "covenant",
+    "temple",
+    "kingdom",
+    "wisdom",
+    "babylon",
+    "jerusalem",
 }

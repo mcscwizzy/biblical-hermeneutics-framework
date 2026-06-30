@@ -58,11 +58,9 @@ def resolve_places_for_passage(
 ) -> dict[str, Any]:
     """Resolve curated places from a passage using deterministic matching only."""
 
-    places = (
-        list_biblical_places(period=period, path=path)
-        if path
-        else list_biblical_places(period=period)
-    )
+    # Passage-to-place resolution should stay stable regardless of any
+    # historical-layer period filter currently active in the map UI.
+    places = list_biblical_places(path=path) if path else list_biblical_places()
     if passage_text and passage_text.strip():
         text_source = passage_text
     elif book is not None and chapter is not None:
@@ -93,7 +91,7 @@ def resolve_places_for_passage(
             path=path,
         )
 
-    markers = [_place_to_marker(place, period=period, path=path) for place in matched_places]
+    markers = [_place_to_marker(place, path=path) for place in matched_places]
     return {
         "reference": _format_reference(book, chapter, verse_start, verse_end),
         "passage_text": text_source,

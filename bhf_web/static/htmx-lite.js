@@ -1,6 +1,8 @@
 const POLL_INTERVAL_MS = 750;
 const WAITING_MESSAGE_BASE_DELAY_MS = 3000;
 const WAITING_MESSAGE_JITTER_MS = 900;
+const READER_LONG_PRESS_DELAY_MS = 550;
+const READER_LONG_PRESS_MOVE_THRESHOLD_PX = 14;
 const WAITING_MESSAGES = [
   "Consulting the scrolls...",
   "Parting the data sea...",
@@ -77,9 +79,15 @@ let currentSelection = null;
 let noteContext = null;
 let currentHighlights = [];
 let contextMenuState = null;
+let lastMapAIFallbackKey = null;
+let activeLiveAnswerPanel = null;
+let readerLongPressState = null;
+let latestBibleSearchRequestId = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
+  initializeWorkspaceTabs();
   initializeReader();
+  initializeWorkspaceBridge();
 });
 
 document.addEventListener("submit", async function (event) {
@@ -90,14 +98,17 @@ document.addEventListener("submit", async function (event) {
 
   event.preventDefault();
 
-  const answerPanel = document.querySelector(form.dataset.target);
-  const statusPanel = document.querySelector(form.dataset.statusTarget);
+  const targets = resolveSubmitTargets(form);
+  const answerPanel = targets.answerPanel;
+  const statusPanel = targets.statusPanel;
   const submitButton = form.querySelector("button[type='submit']");
   if (!answerPanel || !statusPanel) {
     form.submit();
     return;
   }
 
+  activeLiveAnswerPanel = answerPanel;
+  updateSaveButtons();
   setRunning(form, submitButton, true);
   resetStatus(statusPanel);
   startWaiting(statusPanel);
@@ -127,7 +138,7 @@ document.addEventListener("submit", async function (event) {
     } else {
       markStatusComplete(statusPanel, finalStatus);
       latestJobComplete = true;
-      wireAnswerPanelControls();
+      wireAnswerPanelControls(answerPanel);
       await loadSavedStudies(currentChapter?.book, currentChapter?.chapter);
     }
   } catch (error) {
@@ -137,6 +148,7 @@ document.addEventListener("submit", async function (event) {
   } finally {
     stopWaiting();
     answerPanel.removeAttribute("aria-busy");
+    resetSubmitTargets(form);
     setFormValue("ask_mode", "");
     setFormValue("study_action", "");
     setRunning(form, submitButton, false);
@@ -169,9 +181,26 @@ async function initializeReader() {
   document.addEventListener("keydown", closeContextMenuOnEscape);
   window.addEventListener("scroll", hideContextMenu, true);
   reader.addEventListener("contextmenu", handleReaderContextMenu);
+  reader.addEventListener("pointerdown", handleReaderPointerDown);
+  reader.addEventListener("pointermove", handleReaderPointerMove);
+  reader.addEventListener("pointerup", cancelReaderLongPress);
+  reader.addEventListener("pointercancel", cancelReaderLongPress);
+  reader.addEventListener("pointerleave", handleReaderPointerLeave);
   const contextMenu = document.querySelector("#reader-context-menu");
+  const searchForm = document.querySelector("[data-bible-search]");
+  const searchResultsBody = document.querySelector("#reader-search-results-body");
   if (contextMenu) {
     contextMenu.addEventListener("click", handleContextMenuAction);
+  }
+  if (searchForm) {
+    searchForm.addEventListener("submit", submitBibleSearch);
+    const clearButton = searchForm.querySelector("[data-search-clear]");
+    if (clearButton) {
+      clearButton.addEventListener("click", clearBibleSearchResults);
+    }
+  }
+  if (searchResultsBody) {
+    searchResultsBody.addEventListener("click", handleBibleSearchResultAction);
   }
   const addNoteButton = document.querySelector("[data-add-note]");
   if (addNoteButton) {
@@ -186,7 +215,102 @@ async function initializeReader() {
   if (cancelNote) {
     cancelNote.addEventListener("click", closeNoteEditor);
   }
-  wireAnswerPanelControls();
+  document.addEventListener("bhf:map-panel-opened", () => activateWorkspaceTab("maps"));
+  document.addEventListener("bhf:map-panel-closed", syncMapWorkspaceEmptyState);
+  wireAnswerPanelControls(document.querySelector("#answer-panel"));
+  wireAnswerPanelControls(document.querySelector("#map-ai-answer-panel"));
+  syncMapWorkspaceEmptyState();
+}
+
+function initializeWorkspaceTabs() {
+  const workspace = document.querySelector("[data-workspace-tabs]");
+  if (!workspace) {
+    return;
+  }
+  const tabs = Array.from(workspace.querySelectorAll("[data-workspace-tab]"));
+  const defaultTab = workspace.dataset.defaultTab || "ask";
+  for (const tab of tabs) {
+    tab.addEventListener("click", () => activateWorkspaceTab(tab.dataset.workspaceTab));
+    tab.addEventListener("keydown", (event) => handleWorkspaceTabKeydown(event, tabs));
+  }
+  activateWorkspaceTab(defaultTab);
+}
+
+function initializeWorkspaceBridge() {
+  if (typeof window === "undefined") {
+    return;
+  }
+  window.BHFWorkspace = {
+    requestMapAIFallback,
+  };
+}
+
+function resolveSubmitTargets(form) {
+  const answerSelector = form.dataset.activeTarget || form.dataset.target;
+  const statusSelector = form.dataset.activeStatusTarget || form.dataset.statusTarget;
+  return {
+    answerPanel: answerSelector ? document.querySelector(answerSelector) : null,
+    statusPanel: statusSelector ? document.querySelector(statusSelector) : null,
+  };
+}
+
+function resetSubmitTargets(form) {
+  delete form.dataset.activeTarget;
+  delete form.dataset.activeStatusTarget;
+}
+
+function handleWorkspaceTabKeydown(event, tabs) {
+  const currentIndex = tabs.indexOf(event.currentTarget);
+  if (currentIndex === -1) {
+    return;
+  }
+
+  let nextIndex = null;
+  if (event.key === "ArrowRight") {
+    nextIndex = (currentIndex + 1) % tabs.length;
+  } else if (event.key === "ArrowLeft") {
+    nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+  } else if (event.key === "Home") {
+    nextIndex = 0;
+  } else if (event.key === "End") {
+    nextIndex = tabs.length - 1;
+  }
+
+  if (nextIndex === null) {
+    return;
+  }
+
+  event.preventDefault();
+  const nextTab = tabs[nextIndex];
+  if (!nextTab) {
+    return;
+  }
+  activateWorkspaceTab(nextTab.dataset.workspaceTab);
+  nextTab.focus();
+}
+
+function activateWorkspaceTab(tabId) {
+  const workspace = document.querySelector("[data-workspace-tabs]");
+  if (!workspace || !tabId) {
+    return;
+  }
+  workspace.querySelectorAll("[data-workspace-tab]").forEach((tab) => {
+    const isActive = tab.dataset.workspaceTab === tabId;
+    tab.setAttribute("aria-selected", String(isActive));
+    tab.tabIndex = isActive ? 0 : -1;
+  });
+  workspace.querySelectorAll("[data-workspace-pane]").forEach((pane) => {
+    pane.hidden = pane.dataset.workspacePane !== tabId;
+  });
+}
+
+function syncMapWorkspaceEmptyState() {
+  const mapPanel = document.querySelector("#map-panel");
+  const emptyState = document.querySelector("[data-map-pane-empty]");
+  if (!emptyState) {
+    return;
+  }
+  emptyState.hidden = Boolean(mapPanel) && !mapPanel.hidden;
 }
 
 function populateChapterOptions(bookSelect, chapterSelect) {
@@ -234,6 +358,31 @@ async function loadReaderChapter(book, chapter) {
   }
 }
 
+async function navigateToPassage(book, chapter, verseStart, verseEnd) {
+  const bookSelect = document.querySelector("[data-reader-book]");
+  const chapterSelect = document.querySelector("[data-reader-chapter]");
+  if (bookSelect && chapterSelect) {
+    bookSelect.value = book;
+    populateChapterOptions(bookSelect, chapterSelect);
+    chapterSelect.value = String(chapter);
+  }
+  await loadReaderChapter(book, chapter);
+  if (!verseStart) {
+    clearReaderSelection();
+    return;
+  }
+  const context = {
+    book,
+    chapter: Number(chapter),
+    startVerse: Number(verseStart),
+    endVerse: Number(verseEnd || verseStart),
+    text: collectSelectedVerseText(Number(verseStart), Number(verseEnd || verseStart)),
+    isSelection: Number(verseEnd || verseStart) !== Number(verseStart),
+  };
+  applySelectionContext(context);
+  scrollToVerse(Number(verseStart));
+}
+
 function renderChapter(data) {
   const reader = document.querySelector("#chapter-reader");
   const heading = document.createElement("h3");
@@ -262,6 +411,29 @@ function renderChapter(data) {
   reader.appendChild(paragraph);
 }
 
+function collectSelectedVerseText(startVerse, endVerse) {
+  const reader = document.querySelector("#chapter-reader");
+  if (!reader) {
+    return "";
+  }
+  return Array.from(reader.querySelectorAll("[data-verse]"))
+    .filter((verse) => {
+      const number = Number(verse.dataset.verse);
+      return startVerse <= number && number <= endVerse;
+    })
+    .map((verse) => verse.querySelector(".verse-text")?.textContent.trim() || "")
+    .join(" ")
+    .trim();
+}
+
+function scrollToVerse(verseNumber) {
+  const verse = document.querySelector(`#chapter-reader [data-verse="${String(verseNumber)}"]`);
+  if (!verse) {
+    return;
+  }
+  verse.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
 function handleReaderContextMenu(event) {
   const verse = event.target.closest("[data-verse]");
   const reader = document.querySelector("#chapter-reader");
@@ -278,6 +450,81 @@ function handleReaderContextMenu(event) {
   contextMenuState = context;
   applySelectionContext(context);
   showContextMenu(event.clientX, event.clientY, context);
+}
+
+function handleReaderPointerDown(event) {
+  if (event.pointerType !== "touch") {
+    cancelReaderLongPress();
+    return;
+  }
+  const verse = event.target.closest("[data-verse]");
+  const reader = document.querySelector("#chapter-reader");
+  if (!verse || !reader || !reader.contains(verse) || !currentChapter) {
+    cancelReaderLongPress();
+    return;
+  }
+  cancelReaderLongPress();
+  readerLongPressState = {
+    pointerId: event.pointerId,
+    startX: event.clientX,
+    startY: event.clientY,
+    clientX: event.clientX,
+    clientY: event.clientY,
+    verse,
+    triggered: false,
+    timerId: window.setTimeout(() => {
+      triggerReaderLongPress();
+    }, READER_LONG_PRESS_DELAY_MS),
+  };
+}
+
+function handleReaderPointerMove(event) {
+  if (!readerLongPressState || event.pointerId !== readerLongPressState.pointerId) {
+    return;
+  }
+  const deltaX = Math.abs(event.clientX - readerLongPressState.startX);
+  const deltaY = Math.abs(event.clientY - readerLongPressState.startY);
+  if (deltaX > READER_LONG_PRESS_MOVE_THRESHOLD_PX || deltaY > READER_LONG_PRESS_MOVE_THRESHOLD_PX) {
+    cancelReaderLongPress();
+    return;
+  }
+  readerLongPressState.clientX = event.clientX;
+  readerLongPressState.clientY = event.clientY;
+}
+
+function handleReaderPointerLeave(event) {
+  if (!readerLongPressState || event.pointerId !== readerLongPressState.pointerId) {
+    return;
+  }
+  cancelReaderLongPress();
+}
+
+function triggerReaderLongPress() {
+  if (!readerLongPressState || readerLongPressState.triggered) {
+    return;
+  }
+  const context = selectionContextFromDocument() || contextFromVerse(readerLongPressState.verse);
+  if (!context) {
+    cancelReaderLongPress();
+    return;
+  }
+  readerLongPressState.triggered = true;
+  contextMenuState = context;
+  applySelectionContext(context);
+  showContextMenu(readerLongPressState.clientX, readerLongPressState.clientY, context);
+  if (window.navigator?.vibrate) {
+    window.navigator.vibrate(10);
+  }
+}
+
+function cancelReaderLongPress() {
+  if (!readerLongPressState) {
+    return;
+  }
+  if (readerLongPressState.timerId) {
+    window.clearTimeout(readerLongPressState.timerId);
+  }
+  readerLongPressState = null;
 }
 
 function selectionContextFromDocument() {
@@ -388,6 +635,7 @@ function createStudyAction(type, context) {
 async function dispatchStudyAction(studyAction) {
   applyStudyActionContext(studyAction);
   if (BHF_STUDY_ACTIONS.has(studyAction.type)) {
+    activateWorkspaceTab("ask");
     const askMode = studyAction.type === "ask_location" ? "maps" : studyAction.type;
     if (studyAction.type === "ask_location") {
       setFormValue("question", "What does the geography of this passage suggest?");
@@ -409,12 +657,14 @@ async function dispatchStudyAction(studyAction) {
     setFormValue("study_action", "");
     openMapPanel(studyAction);
   } else if (studyAction.type === "save_map_study") {
+    activateWorkspaceTab("maps");
     if (window.BHFMaps && typeof window.BHFMaps.saveCurrentMapStudy === "function") {
       await window.BHFMaps.saveCurrentMapStudy();
     } else {
       openMapPanel(studyAction);
     }
   } else if (studyAction.type === "map_note") {
+    activateWorkspaceTab("maps");
     if (window.BHFMaps && typeof window.BHFMaps.focusMapNoteEditor === "function") {
       window.BHFMaps.focusMapNoteEditor();
     } else {
@@ -457,6 +707,50 @@ function submitAskForm() {
   } else {
     form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
   }
+}
+
+function requestMapAIFallback(mapContext = {}, options = {}) {
+  const form = document.querySelector(".ask-form");
+  if (!form) {
+    return false;
+  }
+  const reference =
+    mapContext.passage_reference ||
+    [mapContext.book, mapContext.chapter].filter(Boolean).join(" ") ||
+    "the selected passage";
+  const localSummary =
+    options.localSummary ||
+    "No curated local map places, routes, archaeology, manuscripts, historical layers, or political-context overlays matched this passage.";
+  const key = JSON.stringify({
+    reference,
+    summary: localSummary,
+  });
+  if (lastMapAIFallbackKey === key) {
+    return false;
+  }
+  lastMapAIFallbackKey = key;
+  form.dataset.activeTarget = "#map-ai-answer-panel";
+  form.dataset.activeStatusTarget = "#map-ai-status-panel";
+  activateWorkspaceTab("maps");
+  setFormValue(
+    "question",
+    options.question ||
+      `The local curated map dataset has no direct match for ${reference}. Give a cautious text-only geography explanation, identify any explicit or implied locations or regions, and clearly label uncertainty.`
+  );
+  setFormValue("ask_mode", "maps");
+  setFormValue("study_action", "ask_location");
+  setMapContextValue({
+    ...mapContext,
+    local_map_fallback: true,
+    local_map_summary: localSummary,
+  });
+  const mapAnswerPanel = document.querySelector("#map-ai-answer-panel");
+  if (mapAnswerPanel) {
+    activeLiveAnswerPanel = mapAnswerPanel;
+  }
+  updateSaveButtons();
+  submitAskForm();
+  return true;
 }
 
 function closeContextMenuOnOutside(event) {
@@ -515,6 +809,282 @@ function clearReaderSelection() {
   }
   currentSelection = null;
   syncAskFields();
+}
+
+async function submitBibleSearch(event) {
+  event.preventDefault();
+  const form = event.target;
+  syncBibleSearchConfig(form);
+  const queryInput = form.querySelector("[name='query']");
+  const query = queryInput ? queryInput.value.trim() : "";
+  if (!query) {
+    setBibleSearchStatus("Enter a search term or reference.", "empty");
+    showBibleSearchResults();
+    renderBibleSearchResults([]);
+    updateBibleSearchSummary("");
+    return;
+  }
+
+  const requestId = ++latestBibleSearchRequestId;
+  showBibleSearchResults();
+  updateBibleSearchSummary(`Searching ASV for “${query}”`);
+  setBibleSearchStatus("Searching local ASV text...", "loading");
+  renderBibleSearchResults([]);
+
+  try {
+    const response = await fetch(`/api/bible/search?${new URLSearchParams({ q: query, limit: "25" })}`);
+    const data = await response.json();
+    if (requestId !== latestBibleSearchRequestId) {
+      return;
+    }
+    if (!response.ok) {
+      throw new Error(data.error || "Could not search the ASV text.");
+    }
+    if (Array.isArray(data.results) && data.results.length > 0) {
+      updateBibleSearchSummary(`${data.total_results} local result${data.total_results === 1 ? "" : "s"} for “${query}”`);
+      clearBibleSearchStatus();
+      renderBibleSearchResults(data.results, { source: "local" });
+      return;
+    }
+
+    renderBibleSearchResults([]);
+    if (data.ai_fallback_eligible) {
+      updateBibleSearchSummary(`No local ASV matches for “${query}”. Asking BHF for likely passages.`);
+      setBibleSearchStatus("No local match found. Asking BHF for likely passages...", "loading");
+      await runBibleSearchFallback(form, query, requestId);
+      return;
+    }
+
+    updateBibleSearchSummary(`No local ASV matches for “${query}”`);
+    setBibleSearchStatus(data.no_results_message || "No local ASV matches were found.", "empty");
+  } catch (error) {
+    if (requestId !== latestBibleSearchRequestId) {
+      return;
+    }
+    setBibleSearchStatus(error.message || "Could not search the ASV text.", "error");
+  }
+}
+
+async function runBibleSearchFallback(form, query, requestId) {
+  const payload = new FormData(form);
+  const response = await fetch("/api/bible/search/fallback/jobs", {
+    method: "POST",
+    body: payload,
+    headers: { Accept: "application/json" },
+  });
+  const job = await response.json();
+  if (!response.ok || !job.job_id) {
+    throw new Error(job.error || "Could not start the BHF search fallback.");
+  }
+  const result = await pollBibleSearchFallback(job.job_id, requestId);
+  if (requestId !== latestBibleSearchRequestId) {
+    return;
+  }
+  if (Array.isArray(result.results) && result.results.length > 0) {
+    updateBibleSearchSummary(`BHF suggested ${result.results.length} likely passage${result.results.length === 1 ? "" : "s"} for “${query}”`);
+    clearBibleSearchStatus();
+    renderBibleSearchResults(result.results, { source: "ai" });
+    return;
+  }
+  renderBibleSearchResults([]);
+  setBibleSearchStatus(result.message || "BHF could not identify likely passage candidates.", "empty");
+}
+
+function syncBibleSearchConfig(searchForm) {
+  const askForm = document.querySelector(".ask-form");
+  if (!askForm || !searchForm) {
+    return;
+  }
+  for (const name of [
+    "profile",
+    "answer_mode",
+    "model",
+    "base_url",
+    "temperature",
+    "max_tokens",
+    "timeout_seconds",
+    "memory_max_turns",
+    "session_id",
+    "memory_path",
+  ]) {
+    const askInput = askForm.querySelector(`[name="${name}"]`);
+    let searchInput = searchForm.querySelector(`[name="${name}"]`);
+    if (!searchInput) {
+      searchInput = document.createElement("input");
+      searchInput.type = "hidden";
+      searchInput.name = name;
+      searchForm.appendChild(searchInput);
+    }
+    searchInput.value = askInput ? askInput.value : "";
+  }
+  syncBibleSearchCheckbox(searchForm, askForm, "show_method_notes");
+  syncBibleSearchCheckbox(searchForm, askForm, "memory_enabled");
+}
+
+function syncBibleSearchCheckbox(searchForm, askForm, name) {
+  const existing = searchForm.querySelector(`[name="${name}"]`);
+  const askInput = askForm.querySelector(`[name="${name}"]`);
+  const checked = Boolean(askInput && askInput.checked);
+  if (!checked && existing) {
+    existing.remove();
+    return;
+  }
+  if (checked && !existing) {
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = name;
+    input.value = "on";
+    searchForm.appendChild(input);
+    return;
+  }
+  if (existing) {
+    existing.value = "on";
+  }
+}
+
+async function pollBibleSearchFallback(jobId, requestId) {
+  while (true) {
+    const statusResponse = await fetch(`/api/bible/search/fallback/status/${encodeURIComponent(jobId)}`);
+    const status = await statusResponse.json();
+    if (requestId !== latestBibleSearchRequestId) {
+      return { results: [], message: "" };
+    }
+    if (!statusResponse.ok) {
+      throw new Error(status.error || "Could not check BHF fallback search status.");
+    }
+    if (status.done) {
+      const resultResponse = await fetch(`/api/bible/search/fallback/result/${encodeURIComponent(jobId)}`);
+      const result = await resultResponse.json();
+      if (!resultResponse.ok) {
+        throw new Error(result.error || "BHF search fallback failed.");
+      }
+      return result;
+    }
+    await new Promise((resolve) => window.setTimeout(resolve, POLL_INTERVAL_MS));
+  }
+}
+
+function showBibleSearchResults() {
+  const panel = document.querySelector("#reader-search-results");
+  if (panel) {
+    panel.hidden = false;
+  }
+}
+
+function clearBibleSearchResults() {
+  latestBibleSearchRequestId += 1;
+  const panel = document.querySelector("#reader-search-results");
+  const body = document.querySelector("#reader-search-results-body");
+  const summary = document.querySelector("#reader-search-summary");
+  const status = document.querySelector("#reader-search-status");
+  if (panel) {
+    panel.hidden = true;
+  }
+  if (body) {
+    body.innerHTML = "";
+  }
+  if (summary) {
+    summary.textContent = "";
+  }
+  if (status) {
+    status.hidden = true;
+    status.textContent = "";
+    status.classList.remove("is-empty", "is-error");
+  }
+}
+
+function updateBibleSearchSummary(text) {
+  const summary = document.querySelector("#reader-search-summary");
+  if (summary) {
+    summary.textContent = text || "";
+  }
+}
+
+function setBibleSearchStatus(message, state) {
+  const status = document.querySelector("#reader-search-status");
+  if (!status) {
+    return;
+  }
+  status.hidden = false;
+  status.textContent = message;
+  status.classList.toggle("is-empty", state === "empty");
+  status.classList.toggle("is-error", state === "error");
+}
+
+function clearBibleSearchStatus() {
+  const status = document.querySelector("#reader-search-status");
+  if (!status) {
+    return;
+  }
+  status.hidden = true;
+  status.textContent = "";
+  status.classList.remove("is-empty", "is-error");
+}
+
+function renderBibleSearchResults(results, options = {}) {
+  const body = document.querySelector("#reader-search-results-body");
+  if (!body) {
+    return;
+  }
+  if (!Array.isArray(results) || results.length === 0) {
+    body.innerHTML = "";
+    return;
+  }
+  const source = options.source || "local";
+  body.innerHTML = `
+    <div class="search-results-list">
+      ${results.map((result) => renderBibleSearchResultCard(result, source)).join("")}
+    </div>
+  `;
+}
+
+function renderBibleSearchResultCard(result, source) {
+  const canGoToVerse = Boolean(result.verse_start);
+  const sourceBadge = source === "ai" ? "BHF likely passage" : result.match_type === "direct_reference" ? "Direct reference" : "ASV";
+  const confidenceBadge = source === "ai" && result.confidence ? `<span class="search-badge">${escapeHtml(String(result.confidence))}</span>` : "";
+  const subtitle = source === "ai"
+    ? escapeHtml(result.reason || "Likely topical connection.")
+    : escapeHtml(result.excerpt || "");
+  return `
+    <article class="search-result-card">
+      <div class="search-result-header">
+        <div>
+          <h4>${escapeHtml(result.reference || "")}</h4>
+          <p class="search-result-meta">${subtitle}</p>
+        </div>
+        <div class="search-result-badges">
+          <span class="search-badge ${source === "ai" ? "source-ai" : ""}">${escapeHtml(sourceBadge)}</span>
+          ${confidenceBadge}
+        </div>
+      </div>
+      <div class="search-result-actions">
+        ${canGoToVerse ? `<button type="button" class="secondary" data-search-action="go-to-verse" data-book="${escapeHtml(result.book || "")}" data-chapter="${escapeHtml(String(result.chapter || ""))}" data-verse-start="${escapeHtml(String(result.verse_start || ""))}" data-verse-end="${escapeHtml(String(result.verse_end || ""))}">Go to verse</button>` : ""}
+        <button type="button" class="secondary" data-search-action="open-chapter" data-book="${escapeHtml(result.book || "")}" data-chapter="${escapeHtml(String(result.chapter || ""))}">Open chapter</button>
+      </div>
+    </article>
+  `;
+}
+
+async function handleBibleSearchResultAction(event) {
+  const button = event.target.closest("[data-search-action]");
+  if (!button) {
+    return;
+  }
+  const book = button.getAttribute("data-book") || "";
+  const chapter = Number(button.getAttribute("data-chapter") || "0");
+  if (!book || !chapter) {
+    return;
+  }
+  if (button.getAttribute("data-search-action") === "go-to-verse") {
+    await navigateToPassage(
+      book,
+      chapter,
+      Number(button.getAttribute("data-verse-start") || "0"),
+      Number(button.getAttribute("data-verse-end") || button.getAttribute("data-verse-start") || "0")
+    );
+    return;
+  }
+  await navigateToPassage(book, chapter, null, null);
 }
 
 function syncAskFields() {
@@ -582,10 +1152,12 @@ function buildReaderMapContext(studyAction) {
 }
 
 function openMapPanel(context) {
+  activateWorkspaceTab("maps");
   const panel = document.querySelector("#map-panel");
   if (panel) {
     panel.hidden = false;
   }
+  syncMapWorkspaceEmptyState();
   if (window.BHFMaps && typeof window.BHFMaps.openMapPanel === "function") {
     window.BHFMaps.openMapPanel(context);
     return;
@@ -720,6 +1292,7 @@ async function createHighlight(context) {
     window.alert(data.error || "Could not save highlight.");
     return;
   }
+  activateWorkspaceTab("highlights");
   await loadHighlights(currentChapter.book, currentChapter.chapter);
 }
 
@@ -772,6 +1345,7 @@ function openNoteEditor(existingNote) {
   if (!currentChapter) {
     return;
   }
+  activateWorkspaceTab("notes");
   const editor = document.querySelector("#note-editor");
   if (!editor) {
     return;
@@ -953,6 +1527,7 @@ function renderSavedStudies(studies) {
 }
 
 async function openSavedStudy(studyId) {
+  activateWorkspaceTab("ask");
   const answerPanel = document.querySelector("#answer-panel");
   if (!answerPanel) {
     return;
@@ -966,8 +1541,9 @@ async function openSavedStudy(studyId) {
     return;
   }
   answerPanel.innerHTML = html;
+  activeLiveAnswerPanel = answerPanel;
   latestJobComplete = false;
-  wireAnswerPanelControls();
+  wireAnswerPanelControls(answerPanel);
 }
 
 async function deleteSavedStudy(studyId) {
@@ -991,7 +1567,7 @@ async function saveLatestStudy() {
     window.alert("Run a study first, then save it.");
     return;
   }
-  const saveButton = document.querySelector("#answer-panel [data-save-study]");
+  const saveButton = activeLiveAnswerPanel?.querySelector("[data-save-study]") || null;
   if (saveButton) {
     saveButton.disabled = true;
     saveButton.textContent = "Saving...";
@@ -1018,18 +1594,34 @@ async function saveLatestStudy() {
   if (saveButton) {
     saveButton.textContent = "Saved";
   }
+  activateWorkspaceTab("saved");
   if (currentChapter) {
     await loadSavedStudies(currentChapter.book, currentChapter.chapter);
   }
+  updateSaveButtons();
 }
 
-function wireAnswerPanelControls() {
-  const button = document.querySelector("#answer-panel [data-save-study]");
+function wireAnswerPanelControls(answerPanel) {
+  if (!answerPanel) {
+    return;
+  }
+  const button = answerPanel.querySelector("[data-save-study]");
   if (!button) {
     return;
   }
-  button.disabled = !(latestJobId && latestJobComplete);
-  button.addEventListener("click", saveLatestStudy);
+  if (!button.dataset.saveBound) {
+    button.addEventListener("click", saveLatestStudy);
+    button.dataset.saveBound = "true";
+  }
+  updateSaveButtons();
+}
+
+function updateSaveButtons() {
+  document.querySelectorAll("[data-save-study]").forEach((button) => {
+    const panel = button.closest(".answer-panel");
+    const isActive = Boolean(activeLiveAnswerPanel) && panel === activeLiveAnswerPanel;
+    button.disabled = !(latestJobId && latestJobComplete && isActive);
+  });
 }
 
 function formatReference(book, chapter, startVerse, endVerse) {

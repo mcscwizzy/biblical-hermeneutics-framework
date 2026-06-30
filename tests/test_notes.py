@@ -361,6 +361,22 @@ class StudyDatabaseTests(unittest.TestCase):
         self.assertTrue(empty_result["empty_state"])
         self.assertEqual(empty_result["markers"], [])
 
+    def test_resolve_places_for_passage_ignores_period_filter_for_direct_passage_matching(self):
+        initialize_database(path=self.path)
+
+        result = resolve_places_for_passage(
+            book="Acts",
+            chapter=10,
+            verse_start=1,
+            verse_end=48,
+            passage_text="Cornelius is described in the passage without naming the city.",
+            period="Assyrian period",
+            path=self.path,
+        )
+
+        self.assertFalse(result["empty_state"])
+        self.assertIn("caesarea-maritima", result["matched_place_ids"])
+
     def test_resolve_routes_for_passage_matches_references(self):
         from bhf_web.map_service import get_map_routes_for_passage
 
