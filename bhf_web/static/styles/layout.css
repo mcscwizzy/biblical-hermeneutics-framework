@@ -1,0 +1,252 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1d252d;
+  background: #f6f7f8;
+}
+
+body.map-modal-open {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+.page-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.secondary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid #c8d1d9;
+  border-radius: 999px;
+  background: #fff;
+  text-decoration: none;
+  color: #24313b;
+  font-weight: 650;
+}
+
+.secondary-link:hover {
+  background: #eef3f7;
+}
+
+.page {
+  width: min(1440px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0 0 6px;
+  font-size: 1.8rem;
+}
+
+.header p {
+  margin: 0;
+  max-width: 780px;
+  color: #52616f;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #6d5e46;
+}
+
+.reader-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 460px);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.curation-page {
+  width: min(1320px, calc(100% - 32px));
+}
+
+.curation-header {
+  align-items: center;
+}
+
+.curation-notice {
+  margin-bottom: 18px;
+}
+
+.curation-actions {
+  margin-bottom: 18px;
+}
+
+.curation-import,
+.curation-section,
+.curation-record {
+  background: #fff;
+  border: 1px solid #d8dee4;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.curation-sections {
+  display: grid;
+  gap: 16px;
+}
+
+.curation-section {
+  display: grid;
+  gap: 14px;
+}
+
+.section-meta,
+.record-id {
+  margin: 4px 0 0;
+  color: #66727e;
+  font-size: 0.9rem;
+}
+
+.curation-records {
+  display: grid;
+  gap: 14px;
+}
+
+.curation-record {
+  display: grid;
+  gap: 12px;
+}
+
+.record-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.record-header h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.curation-record textarea,
+.curation-import textarea {
+  min-height: 12rem;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace;
+  font-size: 0.88rem;
+}
+
+.record-attribution,
+.source-card,
+.source-detail-card {
+  border: 1px solid #d8dee4;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.record-attribution {
+  padding: 12px 14px;
+  background: #f9fbfc;
+}
+
+.record-attribution.missing {
+  border-color: #d7a8a8;
+  background: #fff4f4;
+}
+
+.source-page {
+  width: min(1200px, calc(100% - 32px));
+}
+
+.source-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.source-card {
+  padding: 16px;
+}
+
+.source-card h2 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+.source-meta,
+.source-notes {
+  margin: 0 0 8px;
+  color: #52616f;
+}
+
+.source-detail-card {
+  padding: 18px;
+  display: grid;
+  gap: 18px;
+}
+
+.attribution-panel,
+.source-reference-list {
+  border: 1px solid #e2e7ec;
+  border-radius: 8px;
+  padding: 14px;
+  background: #fbfcfd;
+}
+
+.attribution-panel h2,
+.source-reference-list h2 {
+  margin-top: 0;
+}
+
+.map-attribution {
+  background: #fbfcfd;
+}
+
+.map-details-card .compact {
+  gap: 8px;
+}
+
+.map-details-card .compact p,
+.map-details-card .compact .map-attribution-source,
+.map-details-card .compact .map-attribution-url,
+.map-details-card .compact .map-attribution-license,
+.map-details-card .compact .map-attribution-link {
+  margin-bottom: 4px;
+}
+
+.map-attribution-source,
+.map-attribution-url,
+.map-attribution-license,
+.map-attribution-link {
+  margin: 0 0 6px;
+}
+
+.map-source-warning {
+  margin: 8px 0 0;
+  color: #8b2f2f;
+  font-weight: 650;
+}
+
+.danger {
+  border-color: #d7a8a8;
+  color: #8b2f2f;
+}
+

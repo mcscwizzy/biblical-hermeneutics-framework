@@ -1,6 +1,7 @@
 import asyncio
 import json
 import os
+import re
 import tempfile
 import time
 import unittest
@@ -28,6 +29,27 @@ except ModuleNotFoundError:
     app = None
     AskJob = None
     HAS_WEB_DEPS = False
+
+
+def read_stylesheet_bundle(path: Path) -> str:
+    seen = set()
+
+    def load(file_path: Path) -> str:
+        resolved = file_path.resolve()
+        if resolved in seen:
+            return ""
+        seen.add(resolved)
+        text = file_path.read_text(encoding="utf-8")
+        chunks = []
+        for line in text.splitlines():
+            match = re.match(r'@import url\(["\'](.+)["\']\);', line.strip())
+            if match:
+                chunks.append(load(file_path.parent / match.group(1)))
+            else:
+                chunks.append(line)
+        return "\n".join(chunks)
+
+    return load(path)
 
 
 class WebFormTests(unittest.TestCase):
@@ -155,15 +177,16 @@ class WebFormTests(unittest.TestCase):
 
 class WebAssetTests(unittest.TestCase):
     def test_status_script_collapses_active_panel_after_success(self):
-        script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
+        status_script = Path("bhf_web/static/htmx-status.js").read_text(encoding="utf-8")
+        controller_script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
 
-        self.assertIn("function markStatusComplete", script)
-        self.assertIn('querySelector(".status-active").hidden = true', script)
-        self.assertIn("stopWaiting();", script)
-        self.assertIn("setRunning(form, submitButton, false);", script)
+        self.assertIn("function markStatusComplete", status_script)
+        self.assertIn('querySelector(".status-active").hidden = true', status_script)
+        self.assertIn("stopWaiting();", status_script)
+        self.assertIn("setRunning(form, submitButton, false);", controller_script)
 
     def test_status_script_uses_rotating_waiting_text(self):
-        script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
+        script = Path("bhf_web/static/htmx-status.js").read_text(encoding="utf-8")
 
         self.assertIn("WAITING_MESSAGES", script)
         self.assertIn("Consulting the scrolls...", script)
@@ -193,43 +216,60 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("contextmenu", script)
         self.assertIn("handleReaderContextMenu", script)
         self.assertIn("closeContextMenuOnEscape", script)
-        self.assertIn("/api/highlights", script)
         self.assertIn("word_study", script)
-        self.assertIn("saveLatestStudy", script)
-        self.assertIn("loadSavedStudies", script)
         self.assertIn("open_map_panel", script)
         self.assertNotIn("studyAction.type === \"maps\"", script)
+
+        study_script = Path("bhf_web/static/htmx-study-panels.js").read_text(encoding="utf-8")
+        self.assertIn("/api/highlights", study_script)
+        self.assertIn("saveLatestStudy", study_script)
+        self.assertIn("loadSavedStudies", study_script)
+        self.assertIn("formatReference", study_script)
+        self.assertIn("prettyStudyType", study_script)
+
+        search_script = Path("bhf_web/static/htmx-search.js").read_text(encoding="utf-8")
+        self.assertIn("submitBibleSearch", search_script)
+        self.assertIn("runBibleSearchFallback", search_script)
+        self.assertIn("syncBibleSearchConfig", search_script)
+        self.assertIn("renderBibleSearchResults", search_script)
+        self.assertIn("handleBibleSearchResultAction", search_script)
 
         map_script = Path("bhf_web/static/maps/MapPanel.js").read_text(encoding="utf-8")
         self.assertIn("renderSelectedMarker", map_script)
         self.assertIn("renderSelectedArchaeology", map_script)
         self.assertIn("buildCautionNote", map_script)
         self.assertIn("buildArchaeologyCautionNote", map_script)
-        self.assertIn("renderRelatedVerses", map_script)
         self.assertIn("renderSelectedRoute", map_script)
         self.assertIn("buildRouteCautionNote", map_script)
         self.assertIn("loadArchaeologyForPassage", map_script)
         self.assertIn("loadManuscriptsForPassage", map_script)
         self.assertIn("loadRoutesForPassage", map_script)
-        self.assertIn("renderRelatedPassages", map_script)
-        self.assertIn("renderRelatedPassagesList", map_script)
         self.assertIn("renderSelectedHistoricalLayer", map_script)
         self.assertIn("buildHistoricalLayerCautionNote", map_script)
         self.assertIn("loadHistoricalLayers", map_script)
         self.assertIn("saveCurrentMapStudy", map_script)
         self.assertIn("renderSavedMapStudies", map_script)
         self.assertIn("openSavedMapStudy", map_script)
+        self.assertIn("buildCurrentMapStudyPayload", Path("bhf_web/static/maps/MapPanelStateHelpers.js").read_text(encoding="utf-8"))
+        self.assertIn("getCurrentMapSelection", Path("bhf_web/static/maps/MapPanelStateHelpers.js").read_text(encoding="utf-8"))
+        self.assertIn("normalizeHistoricalPeriod", Path("bhf_web/static/maps/MapPanelStateHelpers.js").read_text(encoding="utf-8"))
+
+        map_content_script = Path("bhf_web/static/maps/MapPanelContent.js").read_text(encoding="utf-8")
+        self.assertIn("renderRelatedVerses", map_content_script)
+        self.assertIn("renderRelatedPassages", map_content_script)
+        self.assertIn("renderRelatedPassagesList", map_content_script)
         self.assertIn("addCurrentMapNote", map_script)
         self.assertIn("renderSelectedManuscript", map_script)
         self.assertIn("buildManuscriptCautionNote", map_script)
         self.assertIn("setManuscriptVisibility", map_script)
-        self.assertIn("renderSourceAttribution", map_script)
-        self.assertIn("/sources/", map_script)
-        self.assertIn("map-attribution", map_script)
         self.assertIn("reset_map_view", map_script)
         self.assertIn("data-passage-shortcut", map_script)
         self.assertIn("submitRelatedPassageShortcut", map_script)
         self.assertIn("setReaderPassageContext", map_script)
+        self.assertIn("renderSourceAttribution", map_content_script)
+        self.assertIn("map-attribution", map_content_script)
+        map_text_script = Path("bhf_web/static/maps/MapPanelText.js").read_text(encoding="utf-8")
+        self.assertIn("/sources/", map_text_script)
         bible_map_script = Path("bhf_web/static/maps/BibleMap.js").read_text(encoding="utf-8")
         self.assertIn("map-entity-marker", bible_map_script)
         self.assertIn("entityMarkerIcon", bible_map_script)
@@ -239,7 +279,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn('data-context-action="show_on_map"', index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
-        style = Path("bhf_web/static/style.css").read_text(encoding="utf-8")
+        style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
 
         self.assertIn(".map-entity-marker", style)
         self.assertIn(".map-entity-marker--place", style)
