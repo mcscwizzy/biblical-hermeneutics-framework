@@ -25,6 +25,7 @@ class PromptBuildingTests(unittest.TestCase):
         self.assertIn("PROFILE CONTENT", system_prompt)
         self.assertIn("BHF Agent Runtime Instructions", system_prompt)
         self.assertIn("Standard Runtime Strategy", system_prompt)
+        self.assertIn("retrieve the curated local map data before answering", system_prompt.lower())
         self.assertIn("Book: Proverbs", system_prompt)
         self.assertIn("Primary genre: wisdom literature", system_prompt)
         self.assertEqual(user_prompt, "What does Proverbs 3 mean?")

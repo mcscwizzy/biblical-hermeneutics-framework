@@ -9,6 +9,35 @@ body {
   background: #f6f7f8;
 }
 
+a {
+  color: inherit;
+}
+
+.page-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.secondary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid #c8d1d9;
+  border-radius: 999px;
+  background: #fff;
+  text-decoration: none;
+  color: #24313b;
+  font-weight: 650;
+}
+
+.secondary-link:hover {
+  background: #eef3f7;
+}
+
 .page {
   width: min(1440px, calc(100% - 32px));
   margin: 0 auto;
@@ -34,11 +63,187 @@ body {
   color: #52616f;
 }
 
+.eyebrow {
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #6d5e46;
+}
+
 .reader-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(360px, 460px);
   gap: 20px;
   align-items: start;
+}
+
+.curation-page {
+  width: min(1320px, calc(100% - 32px));
+}
+
+.curation-header {
+  align-items: center;
+}
+
+.curation-notice {
+  margin-bottom: 18px;
+}
+
+.curation-actions {
+  margin-bottom: 18px;
+}
+
+.curation-import,
+.curation-section,
+.curation-record {
+  background: #fff;
+  border: 1px solid #d8dee4;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.curation-sections {
+  display: grid;
+  gap: 16px;
+}
+
+.curation-section {
+  display: grid;
+  gap: 14px;
+}
+
+.section-meta,
+.record-id {
+  margin: 4px 0 0;
+  color: #66727e;
+  font-size: 0.9rem;
+}
+
+.curation-records {
+  display: grid;
+  gap: 14px;
+}
+
+.curation-record {
+  display: grid;
+  gap: 12px;
+}
+
+.record-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.record-header h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.curation-record textarea,
+.curation-import textarea {
+  min-height: 12rem;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace;
+  font-size: 0.88rem;
+}
+
+.record-attribution,
+.source-card,
+.source-detail-card {
+  border: 1px solid #d8dee4;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.record-attribution {
+  padding: 12px 14px;
+  background: #f9fbfc;
+}
+
+.record-attribution.missing {
+  border-color: #d7a8a8;
+  background: #fff4f4;
+}
+
+.source-page {
+  width: min(1200px, calc(100% - 32px));
+}
+
+.source-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.source-card {
+  padding: 16px;
+}
+
+.source-card h2 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+.source-meta,
+.source-notes {
+  margin: 0 0 8px;
+  color: #52616f;
+}
+
+.source-detail-card {
+  padding: 18px;
+  display: grid;
+  gap: 18px;
+}
+
+.attribution-panel,
+.source-reference-list {
+  border: 1px solid #e2e7ec;
+  border-radius: 8px;
+  padding: 14px;
+  background: #fbfcfd;
+}
+
+.attribution-panel h2,
+.source-reference-list h2 {
+  margin-top: 0;
+}
+
+.map-attribution {
+  background: #fbfcfd;
+}
+
+.map-details-card .compact {
+  gap: 8px;
+}
+
+.map-details-card .compact p,
+.map-details-card .compact .map-attribution-source,
+.map-details-card .compact .map-attribution-url,
+.map-details-card .compact .map-attribution-license,
+.map-details-card .compact .map-attribution-link {
+  margin-bottom: 4px;
+}
+
+.map-attribution-source,
+.map-attribution-url,
+.map-attribution-license,
+.map-attribution-link {
+  margin: 0 0 6px;
+}
+
+.map-source-warning {
+  margin: 8px 0 0;
+  color: #8b2f2f;
+  font-weight: 650;
+}
+
+.danger {
+  border-color: #d7a8a8;
+  color: #8b2f2f;
 }
 
 .reader-column,
@@ -217,9 +422,21 @@ body {
   background: #fff1f1;
 }
 
+.map-panel-status[data-state="warning"] {
+  color: #6b5c16;
+  background: #fff9e6;
+}
+
 .map-panel-status[data-state="empty"] {
   color: #5b4b19;
   background: #fff9e6;
+}
+
+.map-tiles-failed {
+  background:
+    linear-gradient(180deg, rgba(248, 249, 251, 0.92), rgba(238, 242, 246, 0.92)),
+    radial-gradient(circle at 20% 20%, rgba(36, 91, 130, 0.08), transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(154, 44, 44, 0.08), transparent 24%);
 }
 
 .map-panel-body {
@@ -347,6 +564,23 @@ body {
   padding-inline: 10px;
 }
 
+.map-shortcut {
+  justify-self: start;
+  width: fit-content;
+  margin-top: 2px;
+  padding-inline: 10px;
+  font-size: 0.84rem;
+}
+
+.map-related-item {
+  display: grid;
+  gap: 4px;
+}
+
+.map-related-item p {
+  margin: 0;
+}
+
 .map-details-header {
   display: flex;
   justify-content: space-between;
@@ -426,6 +660,42 @@ body {
   padding: 0;
 }
 
+.map-related-passages {
+  display: grid;
+  gap: 12px;
+}
+
+.map-related-passages-total,
+.map-related-group-summary,
+.map-related-group-count,
+.map-related-source {
+  color: #52616f;
+  font-size: 0.84rem;
+}
+
+.map-related-passages-group {
+  display: grid;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid #d8dee4;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.map-related-passages-group h5,
+.map-related-group h5 {
+  margin: 0;
+  font-size: 0.83rem;
+  color: #245b82;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.map-related-group {
+  display: grid;
+  gap: 6px;
+}
+
 .map-related-verses li {
   border-left: 3px solid #d8dee4;
   padding-left: 10px;
@@ -475,6 +745,39 @@ body {
 .map-popup-description {
   margin: 0;
   line-height: 1.45;
+}
+
+.map-entity-marker {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 2px solid #203040;
+  background: linear-gradient(180deg, #ffffff, #e9eef4);
+  box-shadow: 0 6px 18px rgba(21, 32, 43, 0.16);
+}
+
+.map-entity-marker__label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #203040;
+}
+
+.map-entity-marker--place {
+  border-color: #245b82;
+  background: linear-gradient(180deg, #f3f9fd, #d4e8f7);
+}
+
+.map-entity-marker--archaeology {
+  border-color: #9a5a00;
+  background: linear-gradient(180deg, #fff6e4, #ffd89a);
+}
+
+.map-entity-marker--manuscript {
+  border-color: #1b4f72;
+  background: linear-gradient(180deg, #edf6fd, #c3def0);
 }
 
 .full,
@@ -893,12 +1196,32 @@ code {
     height: 280px;
   }
 
+  .map-panel-actions {
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  .map-panel-actions .secondary-link,
+  .map-panel-actions button,
+  .map-panel-actions select {
+    width: 100%;
+  }
+
   .map-details-header {
     flex-direction: column;
   }
 
   .map-panel-actions {
     justify-content: flex-start;
+  }
+
+  .map-panel-body {
+    gap: 10px;
+  }
+
+  .map-details-panel,
+  .saved-map-study {
+    padding: 12px;
   }
 
   .map-period {
@@ -908,5 +1231,9 @@ code {
 
   .map-action-buttons {
     flex-direction: column;
+  }
+
+  .map-shortcut {
+    width: 100%;
   }
 }

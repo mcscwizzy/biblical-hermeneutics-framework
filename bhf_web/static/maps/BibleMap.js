@@ -46,6 +46,23 @@ function historicalLayerStyle(layerItem) {
   };
 }
 
+function politicalContextStyle(layerItem) {
+  const confidence = String(layerItem.confidence || "unknown").toLowerCase();
+  const palette = {
+    strong: { color: "#7a2f2f", fillColor: "#f4c7c7", weight: 2, dashArray: "0" },
+    likely: { color: "#8b5a00", fillColor: "#f7dfb0", weight: 2, dashArray: "4 6" },
+    possible: { color: "#245b82", fillColor: "#d6e8f8", weight: 2, dashArray: "8 8" },
+    disputed: { color: "#8a3d73", fillColor: "#f1d2ea", weight: 2, dashArray: "2 6" },
+    unknown: { color: "#52616f", fillColor: "#dce3ea", weight: 2, dashArray: "6 8" },
+  };
+  const base = palette[confidence] || palette.unknown;
+  return {
+    ...base,
+    opacity: 0.9,
+    fillOpacity: 0.18,
+  };
+}
+
 function archaeologyMarkerStyle(item) {
   const confidence = String(item.confidence || "unknown").toLowerCase();
   const palette = {
@@ -63,6 +80,48 @@ function archaeologyMarkerStyle(item) {
     opacity: 1,
     fillOpacity: 0.9,
   };
+}
+
+function manuscriptMarkerStyle(item) {
+  const confidence = String(item.confidence || "unknown").toLowerCase();
+  const palette = {
+    strong: { color: "#1b4f72", fillColor: "#bcdaf0" },
+    likely: { color: "#175d8c", fillColor: "#cde4f5" },
+    possible: { color: "#4c7091", fillColor: "#dceaf4" },
+    disputed: { color: "#6b4a7c", fillColor: "#eadcf0" },
+    unknown: { color: "#4f6472", fillColor: "#d9e3ea" },
+  };
+  const base = palette[confidence] || palette.unknown;
+  return {
+    ...base,
+    radius: 7,
+    weight: 2,
+    opacity: 1,
+    fillOpacity: 0.92,
+  };
+}
+
+function entityMarkerIcon(item) {
+  const kind = String(item?.marker_kind || "place").toLowerCase();
+  const labelByKind = {
+    place: "PL",
+    archaeology: "AR",
+    manuscript: "MS",
+  };
+  const classByKind = {
+    place: "map-entity-marker--place",
+    archaeology: "map-entity-marker--archaeology",
+    manuscript: "map-entity-marker--manuscript",
+  };
+  const label = labelByKind[kind] || labelByKind.place;
+  const className = classByKind[kind] || classByKind.place;
+  return window.L.divIcon({
+    className: `map-entity-marker ${className}`,
+    html: `<span class="map-entity-marker__label">${label}</span>`,
+    iconSize: [34, 34],
+    iconAnchor: [17, 34],
+    popupAnchor: [0, -30],
+  });
 }
 
 function renderRoutePopup(route) {
@@ -96,6 +155,21 @@ function renderHistoricalLayerPopup(layerItem) {
   `;
 }
 
+function renderPoliticalContextPopup(layerItem) {
+  const name = escapeHtml(layerItem.name || "Unnamed context");
+  const entityType = escapeHtml(layerItem.entity_type || "political context");
+  const period = escapeHtml(layerItem.period || "Unknown period");
+  const summary = escapeHtml(layerItem.summary || "No summary available.");
+  return `
+    <article class="map-popup">
+      <h3>${name}</h3>
+      <p class="map-popup-region">${entityType}</p>
+      <p class="map-popup-confidence">${period}</p>
+      <p class="map-popup-description">${summary}</p>
+    </article>
+  `;
+}
+
 function renderArchaeologyPopup(item) {
   const name = escapeHtml(item.name || "Unnamed archaeology item");
   const siteName = escapeHtml(item.site_name || "Unknown site");
@@ -109,6 +183,22 @@ function renderArchaeologyPopup(item) {
       <p class="map-popup-region">${siteName}</p>
       <p class="map-popup-confidence">${period} · ${itemType}</p>
       <p class="map-popup-description">${relationship ? `${relationship}. ` : ""}${whyItMatters}</p>
+    </article>
+  `;
+}
+
+function renderManuscriptPopup(item) {
+  const name = escapeHtml(item.name || "Unnamed manuscript");
+  const manuscriptType = escapeHtml(item.manuscript_type || "manuscript");
+  const language = escapeHtml(item.language || "Unknown language");
+  const date = escapeHtml(item.date || "Unknown date");
+  const significance = escapeHtml(item.significance || "No summary available.");
+  return `
+    <article class="map-popup">
+      <h3>${name}</h3>
+      <p class="map-popup-region">${manuscriptType}</p>
+      <p class="map-popup-confidence">${language} · ${date}</p>
+      <p class="map-popup-description">${significance}</p>
     </article>
   `;
 }
@@ -147,11 +237,15 @@ export function createBibleMap(container, markers, options = {}) {
   const markerLayer = window.L.layerGroup().addTo(map);
   const archaeologyLayer = window.L.layerGroup();
   const archaeologyLayers = new Map();
+  const manuscriptLayer = window.L.layerGroup();
+  const manuscriptLayers = new Map();
   const routeLayer = window.L.layerGroup();
   const routeLayers = new Map();
   let routeVisibility = Boolean(options.routeVisibility);
   let archaeologyVisibility = Boolean(options.archaeologyVisibility);
+  let manuscriptVisibility = Boolean(options.manuscriptVisibility);
   let archaeologyItems = Array.isArray(options.archaeologyMarkers) ? options.archaeologyMarkers.slice() : [];
+  let manuscriptItems = Array.isArray(options.manuscriptMarkers) ? options.manuscriptMarkers.slice() : [];
   let routeItems = Array.isArray(options.routes) ? options.routes.slice() : [];
   const historicalLayerGroup = window.L.layerGroup();
   const historicalLayers = new Map();
@@ -159,6 +253,14 @@ export function createBibleMap(container, markers, options = {}) {
     Array.isArray(options.historicalLayerIds) ? options.historicalLayerIds.map((value) => String(value)) : []
   );
   let historicalItems = Array.isArray(options.historicalLayers) ? options.historicalLayers.slice() : [];
+  const politicalContextLayerGroup = window.L.layerGroup();
+  const politicalContextLayers = new Map();
+  const politicalContextVisibleIds = new Set(
+    Array.isArray(options.politicalContextLayerIds)
+      ? options.politicalContextLayerIds.map((value) => String(value))
+      : []
+  );
+  let politicalContextItems = Array.isArray(options.politicalContextLayers) ? options.politicalContextLayers.slice() : [];
 
   function currentMarkerBounds() {
     return buildBounds(markers);
@@ -186,6 +288,17 @@ export function createBibleMap(container, markers, options = {}) {
     return archaeologyBoundsList;
   }
 
+  function currentManuscriptBounds() {
+    const manuscriptBoundsList = [];
+    for (const manuscript of manuscriptLayers.values()) {
+      const layerBounds = manuscript.layer.getBounds ? manuscript.layer.getBounds() : null;
+      if (layerBounds && layerBounds.isValid()) {
+        manuscriptBoundsList.push(layerBounds);
+      }
+    }
+    return manuscriptBoundsList;
+  }
+
   function currentHistoricalBounds() {
     const boundsList = [];
     for (const historical of historicalLayers.values()) {
@@ -193,6 +306,20 @@ export function createBibleMap(container, markers, options = {}) {
         continue;
       }
       const layerBounds = historical.layer.getBounds ? historical.layer.getBounds() : null;
+      if (layerBounds && layerBounds.isValid()) {
+        boundsList.push(layerBounds);
+      }
+    }
+    return boundsList;
+  }
+
+  function currentPoliticalContextBounds() {
+    const boundsList = [];
+    for (const politicalContext of politicalContextLayers.values()) {
+      if (!politicalContextVisibleIds.has(politicalContext.item.id)) {
+        continue;
+      }
+      const layerBounds = politicalContext.layer.getBounds ? politicalContext.layer.getBounds() : null;
       if (layerBounds && layerBounds.isValid()) {
         boundsList.push(layerBounds);
       }
@@ -233,6 +360,29 @@ export function createBibleMap(container, markers, options = {}) {
     }
   }
 
+  function applyPoliticalContextVisibility() {
+    const anyVisible = Array.from(politicalContextLayers.values()).some((politicalContext) =>
+      politicalContextVisibleIds.has(politicalContext.item.id)
+    );
+    if (anyVisible) {
+      if (!map.hasLayer(politicalContextLayerGroup)) {
+        politicalContextLayerGroup.addTo(map);
+      }
+    } else if (map.hasLayer(politicalContextLayerGroup)) {
+      map.removeLayer(politicalContextLayerGroup);
+    }
+
+    for (const politicalContext of politicalContextLayers.values()) {
+      const shouldShow = politicalContextVisibleIds.has(politicalContext.item.id);
+      const hasLayer = politicalContextLayerGroup.hasLayer(politicalContext.layer);
+      if (shouldShow && !hasLayer) {
+        politicalContextLayerGroup.addLayer(politicalContext.layer);
+      } else if (!shouldShow && hasLayer) {
+        politicalContextLayerGroup.removeLayer(politicalContext.layer);
+      }
+    }
+  }
+
   function applyArchaeologyVisibility() {
     if (archaeologyVisibility) {
       if (!map.hasLayer(archaeologyLayer)) {
@@ -253,11 +403,33 @@ export function createBibleMap(container, markers, options = {}) {
     }
   }
 
+  function applyManuscriptVisibility() {
+    if (manuscriptVisibility) {
+      if (!map.hasLayer(manuscriptLayer)) {
+        manuscriptLayer.addTo(map);
+      }
+    } else if (map.hasLayer(manuscriptLayer)) {
+      map.removeLayer(manuscriptLayer);
+    }
+
+    for (const manuscript of manuscriptLayers.values()) {
+      const shouldShow = manuscriptVisibility;
+      const hasLayer = manuscriptLayer.hasLayer(manuscript.layer);
+      if (shouldShow && !hasLayer) {
+        manuscriptLayer.addLayer(manuscript.layer);
+      } else if (!shouldShow && hasLayer) {
+        manuscriptLayer.removeLayer(manuscript.layer);
+      }
+    }
+  }
+
   function fitToContent() {
     const markerBounds = currentMarkerBounds();
     const routeBoundsList = routeVisibility ? currentRouteBounds() : [];
     const historicalBoundsList = currentHistoricalBounds();
+    const politicalContextBoundsList = currentPoliticalContextBounds();
     const archaeologyBoundsList = archaeologyVisibility ? currentArchaeologyBounds() : [];
+    const manuscriptBoundsList = manuscriptVisibility ? currentManuscriptBounds() : [];
     const allBounds = [];
 
     if (markerBounds) {
@@ -278,7 +450,21 @@ export function createBibleMap(container, markers, options = {}) {
       );
     }
 
+    for (const layerBounds of politicalContextBoundsList) {
+      allBounds.push(
+        [layerBounds.getSouthWest().lat, layerBounds.getSouthWest().lng],
+        [layerBounds.getNorthEast().lat, layerBounds.getNorthEast().lng]
+      );
+    }
+
     for (const layerBounds of archaeologyBoundsList) {
+      allBounds.push(
+        [layerBounds.getSouthWest().lat, layerBounds.getSouthWest().lng],
+        [layerBounds.getNorthEast().lat, layerBounds.getNorthEast().lng]
+      );
+    }
+
+    for (const layerBounds of manuscriptBoundsList) {
       allBounds.push(
         [layerBounds.getSouthWest().lat, layerBounds.getSouthWest().lng],
         [layerBounds.getNorthEast().lat, layerBounds.getNorthEast().lng]
@@ -335,7 +521,10 @@ export function createBibleMap(container, markers, options = {}) {
       if (!Number.isFinite(item?.latitude) || !Number.isFinite(item?.longitude)) {
         continue;
       }
-      const archaeologyMarker = window.L.circleMarker([item.latitude, item.longitude], archaeologyMarkerStyle(item));
+      const archaeologyMarker = window.L.marker([item.latitude, item.longitude], {
+        icon: entityMarkerIcon(item),
+        title: item.name || "Unnamed archaeology item",
+      });
       archaeologyMarker.bindPopup(renderArchaeologyPopup(item), {
         maxWidth: 360,
         closeButton: true,
@@ -349,6 +538,34 @@ export function createBibleMap(container, markers, options = {}) {
     }
 
     applyArchaeologyVisibility();
+  }
+
+  function refreshManuscriptMarkers(markersList) {
+    manuscriptItems = Array.isArray(markersList) ? markersList.slice() : [];
+    manuscriptLayer.clearLayers();
+    manuscriptLayers.clear();
+
+    for (const item of manuscriptItems) {
+      if (!Number.isFinite(item?.latitude) || !Number.isFinite(item?.longitude)) {
+        continue;
+      }
+      const manuscriptMarker = window.L.marker([item.latitude, item.longitude], {
+        icon: entityMarkerIcon(item),
+        title: item.name || "Unnamed manuscript",
+      });
+      manuscriptMarker.bindPopup(renderManuscriptPopup(item), {
+        maxWidth: 360,
+        closeButton: true,
+      });
+      manuscriptMarker.on("click", () => {
+        if (typeof options.onManuscriptClick === "function") {
+          options.onManuscriptClick(item);
+        }
+      });
+      manuscriptLayers.set(item.id, { item, layer: manuscriptMarker });
+    }
+
+    applyManuscriptVisibility();
   }
 
   function refreshHistoricalLayers(layers) {
@@ -380,11 +597,41 @@ export function createBibleMap(container, markers, options = {}) {
     applyHistoricalVisibility();
   }
 
+  function refreshPoliticalContextLayers(layers) {
+    politicalContextItems = Array.isArray(layers) ? layers.slice() : [];
+    politicalContextLayerGroup.clearLayers();
+    politicalContextLayers.clear();
+
+    for (const layerItem of politicalContextItems) {
+      if (!layerItem?.geojson) {
+        continue;
+      }
+      const geoJsonLayer = window.L.geoJSON(layerItem.geojson, {
+        style: () => politicalContextStyle(layerItem),
+        onEachFeature(feature, layer) {
+          layer.on("click", () => {
+            if (typeof options.onPoliticalContextClick === "function") {
+              options.onPoliticalContextClick(layerItem);
+            }
+          });
+          layer.bindPopup(renderPoliticalContextPopup(layerItem), {
+            maxWidth: 360,
+            closeButton: true,
+          });
+        },
+      });
+      politicalContextLayers.set(layerItem.id, { item: layerItem, layer: geoJsonLayer });
+    }
+
+    applyPoliticalContextVisibility();
+  }
+
   for (const marker of markers) {
     if (!Number.isFinite(marker.latitude) || !Number.isFinite(marker.longitude)) {
       continue;
     }
     const leafletMarker = window.L.marker([marker.latitude, marker.longitude], {
+      icon: entityMarkerIcon(marker),
       title: marker.name || "Unnamed place",
     });
     leafletMarker.bindPopup(renderMapMarkerPopup(marker), {
@@ -409,7 +656,9 @@ export function createBibleMap(container, markers, options = {}) {
 
   refreshRoutes(routeItems);
   refreshArchaeologyMarkers(archaeologyItems);
+  refreshManuscriptMarkers(manuscriptItems);
   refreshHistoricalLayers(historicalItems);
+  refreshPoliticalContextLayers(Array.isArray(options.politicalContextLayers) ? options.politicalContextLayers : []);
   fitToContent();
 
   let tileErrorRaised = false;
@@ -418,8 +667,9 @@ export function createBibleMap(container, markers, options = {}) {
       return;
     }
     tileErrorRaised = true;
+    map.getContainer().classList.add("map-tiles-failed");
     if (typeof options.onTileError === "function") {
-      options.onTileError(new Error("Map tiles could not be loaded."));
+      options.onTileError(new Error("Map tiles could not be loaded. Structured local data remains available."));
     }
   });
 
@@ -432,7 +682,9 @@ export function createBibleMap(container, markers, options = {}) {
         zoom: map.getZoom(),
         routeVisibility,
         archaeologyVisibility,
+        manuscriptVisibility,
         historicalLayerIds: Array.from(historicalVisibleIds),
+        politicalContextLayerIds: Array.from(politicalContextVisibleIds),
       };
     },
     getRouteVisibility() {
@@ -459,6 +711,21 @@ export function createBibleMap(container, markers, options = {}) {
       refreshArchaeologyMarkers(markersList);
       fitToContent();
     },
+    getManuscriptVisibility() {
+      return manuscriptVisibility;
+    },
+    setManuscriptVisibility(visible) {
+      manuscriptVisibility = Boolean(visible);
+      applyManuscriptVisibility();
+      fitToContent();
+    },
+    setManuscriptMarkers(markersList) {
+      refreshManuscriptMarkers(markersList);
+      fitToContent();
+    },
+    getManuscriptMarkers() {
+      return manuscriptItems.slice();
+    },
     getHistoricalLayerVisibility(layerId) {
       return historicalVisibleIds.has(String(layerId));
     },
@@ -478,6 +745,32 @@ export function createBibleMap(container, markers, options = {}) {
     setHistoricalLayers(layers) {
       refreshHistoricalLayers(layers);
       fitToContent();
+    },
+    getPoliticalContextLayerVisibility(layerId) {
+      return politicalContextVisibleIds.has(String(layerId));
+    },
+    setPoliticalContextLayerVisibility(layerId, visible) {
+      const normalizedId = String(layerId);
+      if (!normalizedId) {
+        return;
+      }
+      if (visible) {
+        politicalContextVisibleIds.add(normalizedId);
+      } else {
+        politicalContextVisibleIds.delete(normalizedId);
+      }
+      applyPoliticalContextVisibility();
+      fitToContent();
+    },
+    setPoliticalContextLayers(layers) {
+      refreshPoliticalContextLayers(layers);
+      fitToContent();
+    },
+    getPoliticalContextLayerIds() {
+      return Array.from(politicalContextVisibleIds);
+    },
+    getPoliticalContextLayers() {
+      return politicalContextItems.slice();
     },
     getHistoricalLayerIds() {
       return Array.from(historicalVisibleIds);

@@ -17,6 +17,10 @@
         <h1>BHF ASV Reader</h1>
         <p>Read the public-domain American Standard Version, select a passage, ask BHF, and keep local notes.</p>
       </div>
+      <nav class="page-links">
+        <a class="secondary-link" href="/curation">Curation</a>
+        <a class="secondary-link" href="/sources">Sources</a>
+      </nav>
     </header>
 
     {% if config_warning %}
@@ -235,6 +239,10 @@
                 <span>Show archaeology</span>
               </label>
               <label class="check map-toggle">
+                <input type="checkbox" data-manuscript-toggle>
+                <span>Show manuscripts</span>
+              </label>
+              <label class="check map-toggle">
                 <input type="checkbox" data-route-toggle>
                 <span>Show routes</span>
               </label>
@@ -242,6 +250,7 @@
                 <span>Period</span>
                 <select data-historical-period>
                   <option value="all" selected>All periods</option>
+                  <option value="Broad / uncertain period">Broad / uncertain period</option>
                   <option value="Divided Kingdom">Divided Kingdom</option>
                   <option value="Assyrian period">Assyrian period</option>
                   <option value="Babylonian period">Babylonian period</option>
@@ -285,9 +294,8 @@
       <button type="button" data-context-action="fulfillment_nt">Fulfillment in the NT</button>
       <button type="button" data-context-action="compare_translations">Compare Translations</button>
       <button type="button" data-context-action="timeline">Timeline</button>
-      <button type="button" data-context-action="maps">Maps</button>
       <button type="button" data-context-action="ask_location">Ask about this location</button>
-      <button type="button" data-context-action="show_on_map">Show on map</button>
+      <button type="button" data-context-action="open_map_panel">Open map panel</button>
       <button type="button" data-context-action="save_map_study">Save map study</button>
       <button type="button" data-context-action="map_note">Add map note</button>
       <button type="button" data-context-action="compare_archaeology">Compare with archaeology</button>

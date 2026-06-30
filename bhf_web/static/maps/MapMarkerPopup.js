@@ -12,11 +12,15 @@ export function renderMapMarkerPopup(marker) {
   const region = escapeHtml(marker.region || "Unknown region");
   const description = escapeHtml(marker.description || "No description available.");
   const confidence = escapeHtml(marker.confidence || "unknown");
+  const periods = Array.isArray(marker.periods) && marker.periods.length
+    ? escapeHtml(marker.periods.join(" · "))
+    : "Unknown period";
 
   return `
     <article class="map-popup">
       <h3>${name}</h3>
       <p class="map-popup-region">${region}</p>
+      <p class="map-popup-confidence">Periods: ${periods}</p>
       <p class="map-popup-confidence">Confidence: ${confidence}</p>
       <p class="map-popup-description">${description}</p>
     </article>

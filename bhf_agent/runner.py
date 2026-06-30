@@ -10,6 +10,7 @@ from .adapters import ChatAdapter, OpenAICompatibleAdapter
 from .config import AgentConfig, ConfigError
 from .genre import classify_genre
 from .knowledge import LocalKnowledgeBundle, lookup_local_knowledge
+from .map_tools import build_map_tool_context
 from .memory import (
     SessionMemory,
     append_session_turn,
@@ -168,6 +169,7 @@ class BHFAgent:
                 "profile": self.config.profile,
                 "answer_mode": self.config.answer_mode,
                 "local_knowledge_keys": [],
+                "map_tool_keys": [],
                 "output_cleanup_applied": False,
                 "validation_score": None,
                 "auto_repair": self.config.auto_repair,
@@ -252,6 +254,14 @@ class BHFAgent:
             or ctx.profile_content is None
         ):
             raise RuntimeError("pipeline context is incomplete before prompt building")
+        map_context = build_map_tool_context(
+            ctx.original_question,
+            reference_context=ctx.reference_context,
+            question_context=ctx.question_context,
+        )
+        if map_context:
+            ctx.debug_metadata["map_tool_keys"] = list(map_context.get("requested_tools", []))
+            ctx.debug_metadata["map_tool_context"] = map_context
         ctx.system_prompt, ctx.user_prompt = build_prompt(
             ctx.profile_name,
             ctx.profile_content,
@@ -261,6 +271,7 @@ class BHFAgent:
             ctx.original_question,
             show_method_notes=self.config.show_method_notes,
             local_knowledge=ctx.local_knowledge,
+            map_context=map_context,
             session_memory=ctx.session_memory,
             answer_mode=ctx.answer_mode,
         )
@@ -300,6 +311,7 @@ class BHFAgent:
                 "local_knowledge_keys": ctx.debug_metadata.get(
                     "local_knowledge_keys", []
                 ),
+                "map_tool_keys": ctx.debug_metadata.get("map_tool_keys", []),
                 "memory_enabled": self.config.memory_enabled,
                 "session_id": ctx.debug_metadata.get("session_id"),
                 "memory_turns_loaded": ctx.debug_metadata.get("memory_turns_loaded", 0),

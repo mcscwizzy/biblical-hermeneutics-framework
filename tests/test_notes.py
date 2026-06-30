@@ -15,6 +15,7 @@ from bhf_agent.study_db import (
     get_biblical_place,
     get_archaeology_item,
     get_archaeology_site,
+    get_manuscript_item,
     get_saved_map_study,
     delete_highlight,
     delete_note,
@@ -29,7 +30,10 @@ from bhf_agent.study_db import (
     list_biblical_places,
     list_historical_layers,
     list_map_routes,
+    list_political_context_layers,
     list_map_notes,
+    list_manuscript_items,
+    list_manuscript_scripture_links,
     list_place_references,
     list_route_references,
     list_notes,
@@ -37,7 +41,13 @@ from bhf_agent.study_db import (
     list_saved_studies,
     update_note,
 )
-from bhf_web.map_service import resolve_archaeology_for_passage, resolve_places_for_passage
+from bhf_web.map_service import (
+    resolve_archaeology_for_passage,
+    resolve_places_for_passage,
+    resolve_political_context_for_passage,
+    resolve_manuscripts_for_passage,
+    get_related_passages_for_place,
+)
 
 
 class StudyDatabaseTests(unittest.TestCase):
@@ -59,7 +69,7 @@ class StudyDatabaseTests(unittest.TestCase):
                 )
             ]
 
-        self.assertEqual(versions, [1, 2, 3, 4, 5, 6, 7])
+        self.assertEqual(versions, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
 
         with sqlite3.connect(self.path) as connection:
             saved_studies = connection.execute(
@@ -106,7 +116,7 @@ class StudyDatabaseTests(unittest.TestCase):
                 """
             ).fetchone()
 
-        self.assertEqual(versions, [1, 2, 3, 4, 5, 6, 7])
+        self.assertEqual(versions, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
         self.assertIsNotNone(saved_studies)
 
     def test_biblical_places_seed_and_references_load_from_database(self):
@@ -117,8 +127,29 @@ class StudyDatabaseTests(unittest.TestCase):
         jerusalem = next(place for place in places if place["id"] == "jerusalem")
         self.assertIn("Zion", jerusalem["aliases"])
         self.assertEqual(jerusalem["confidence"], "strong")
+        self.assertIn("NT / Roman period", jerusalem["periods"])
         self.assertIsNotNone(jerusalem["latitude"])
         self.assertIsNotNone(jerusalem["longitude"])
+
+        roman_places = list_biblical_places(period="NT / Roman period", path=self.path)
+        self.assertIn("capernaum", {place["id"] for place in roman_places})
+        self.assertIn("jerusalem", {place["id"] for place in roman_places})
+
+        related = get_related_passages_for_place("jerusalem", path=self.path)
+        self.assertEqual(related["place_id"], "jerusalem")
+        self.assertGreaterEqual(related["count"], 4)
+        direct_group = next(group for group in related["groups"] if group["group_type"] == "directly_mentioned")
+        self.assertEqual(direct_group["count"], 2)
+        self.assertEqual(
+            [group["count"] for group in direct_group["testament_groups"]],
+            [1, 1],
+        )
+        self.assertTrue(
+            any(group["group_type"] == "same_route" for group in related["groups"])
+        )
+        self.assertTrue(
+            any(group["group_type"] == "same_empire_period" for group in related["groups"])
+        )
 
         references = list_place_references("jerusalem", path=self.path)
         self.assertGreaterEqual(len(references), 2)
@@ -134,6 +165,10 @@ class StudyDatabaseTests(unittest.TestCase):
         route = next(route for route in routes if route["id"] == "pauls-first-missionary-journey")
         self.assertEqual(route["confidence"], "likely")
         self.assertEqual(route["geojson"]["geometry"]["type"], "LineString")
+        self.assertIn("NT / Roman period", route["periods"])
+
+        roman_routes = list_map_routes(period="NT / Roman period", path=self.path)
+        self.assertEqual([route["id"] for route in roman_routes], ["pauls-first-missionary-journey"])
 
         route_refs = list_route_references("pauls-first-missionary-journey", path=self.path)
         self.assertGreaterEqual(len(route_refs), 2)
@@ -143,26 +178,69 @@ class StudyDatabaseTests(unittest.TestCase):
         self.assertGreaterEqual(len(layers), 4)
         divided_kingdom = next(layer for layer in layers if layer["id"] == "divided-kingdom-israel")
         self.assertEqual(divided_kingdom["period"], "Divided Kingdom")
+        self.assertIn("Divided Kingdom", divided_kingdom["periods"])
         self.assertEqual(divided_kingdom["geojson"]["geometry"]["type"], "Polygon")
         self.assertIn("schematic", divided_kingdom["notes"].lower())
 
         roman_layers = list_historical_layers(period="NT / Roman period", path=self.path)
         self.assertEqual([layer["id"] for layer in roman_layers], ["roman-judea-galilee"])
 
+    def test_political_context_seed_and_passage_resolution_load_from_database(self):
+        initialize_database(path=self.path)
+
+        layers = list_political_context_layers(path=self.path)
+        self.assertGreaterEqual(len(layers), 8)
+        assyria = next(layer for layer in layers if layer["id"] == "assyria")
+        self.assertEqual(assyria["name"], "Assyria")
+        self.assertIn("Assyrian period", assyria["periods"])
+        self.assertGreaterEqual(assyria["reference_count"], 1)
+
+        roman_layers = list_political_context_layers(period="NT / Roman period", path=self.path)
+        self.assertIn("rome", {layer["id"] for layer in roman_layers})
+
+        resolved = resolve_political_context_for_passage(
+            book="John",
+            chapter=19,
+            verse_start=1,
+            verse_end=16,
+            passage_text="Then they led Jesus to Pilate.",
+            period="NT / Roman period",
+            path=self.path,
+        )
+        self.assertFalse(resolved["empty_state"])
+        self.assertIn("rome", resolved["matched_political_context_ids"])
+        self.assertIn("scripture_links", resolved["layers"][0])
+
     def test_archaeology_seed_and_passage_resolution_load_from_database(self):
         initialize_database(path=self.path)
 
         sites = list_archaeology_sites(path=self.path)
         self.assertGreaterEqual(len(sites), 5)
+        for site in sites:
+            self.assertTrue(site["source_id"])
+            self.assertIsInstance(site["source"], dict)
+            self.assertEqual(site["source"]["id"], site["source_id"])
         jerusalem_site = next(site for site in sites if site["id"] == "hezekiahs-tunnel")
         self.assertEqual(jerusalem_site["name"], "Hezekiah's Tunnel")
         self.assertGreaterEqual(jerusalem_site["reference_count"], 1)
+        self.assertIn("Assyrian period", jerusalem_site["periods"])
+
+        roman_sites = list_archaeology_sites(period="NT / Roman period", path=self.path)
+        self.assertIn("caesarea-maritima", {site["id"] for site in roman_sites})
 
         items = list_archaeology_items(path=self.path)
         self.assertGreaterEqual(len(items), 8)
+        for item in items:
+            self.assertTrue(item["source_id"])
+            self.assertIsInstance(item["source"], dict)
+            self.assertEqual(item["source"]["id"], item["source_id"])
         pilate = next(item for item in items if item["id"] == "pilate-stone")
         self.assertEqual(pilate["item_type"], "dedication inscription")
+        self.assertIn("NT / Roman period", pilate["periods"])
         self.assertGreaterEqual(pilate["reference_count"], 1)
+
+        roman_items = list_archaeology_items(period="NT / Roman period", path=self.path)
+        self.assertIn("pilate-stone", {item["id"] for item in roman_items})
 
         links = list_archaeology_scripture_links("pilate-stone", path=self.path)
         self.assertGreaterEqual(len(links), 2)
@@ -174,10 +252,49 @@ class StudyDatabaseTests(unittest.TestCase):
             verse_start=7,
             verse_end=11,
             passage_text="Then he sent him away to the pool of Siloam.",
+            period="NT / Roman period",
             path=self.path,
         )
         self.assertFalse(resolved["empty_state"])
         self.assertIn("pool-of-siloam", resolved["matched_archaeology_ids"])
+        self.assertIn("scripture_links", resolved["markers"][0])
+
+        routes = list_map_routes(path=self.path)
+        self.assertGreaterEqual(len(routes), 1)
+        for route in routes:
+            self.assertIn(route["geojson"]["geometry"]["type"], {"LineString", "MultiLineString"})
+            self.assertTrue(route["source_id"])
+
+    def test_manuscript_seed_and_passage_resolution_load_from_database(self):
+        initialize_database(path=self.path)
+
+        items = list_manuscript_items(path=self.path)
+        self.assertGreaterEqual(len(items), 4)
+        sinaiticus = next(item for item in items if item["id"] == "codex-sinaiticus")
+        self.assertEqual(sinaiticus["manuscript_type"], "codex")
+        self.assertEqual(sinaiticus["confidence"], "strong")
+        self.assertIn("NT / Roman period", sinaiticus["periods"])
+        self.assertIn("John", sinaiticus["related_books"])
+        self.assertEqual(get_manuscript_item("codex-sinaiticus", path=self.path)["name"], "Codex Sinaiticus")
+
+        roman_items = list_manuscript_items(period="NT / Roman period", path=self.path)
+        self.assertIn("codex-sinaiticus", {item["id"] for item in roman_items})
+
+        links = list_manuscript_scripture_links("codex-sinaiticus", path=self.path)
+        self.assertGreaterEqual(len(links), 1)
+        self.assertEqual(links[0]["item_id"], "codex-sinaiticus")
+
+        resolved = resolve_manuscripts_for_passage(
+            book="John",
+            chapter=1,
+            verse_start=1,
+            verse_end=18,
+            passage_text="In the beginning was the Word.",
+            period="NT / Roman period",
+            path=self.path,
+        )
+        self.assertFalse(resolved["empty_state"])
+        self.assertIn("codex-sinaiticus", resolved["matched_manuscript_ids"])
         self.assertIn("scripture_links", resolved["markers"][0])
 
     def test_biblical_place_with_missing_coordinates_is_returned_cleanly(self):
@@ -367,6 +484,7 @@ class StudyDatabaseTests(unittest.TestCase):
                     "passage_reference": "Romans 12:1-2",
                     "selected_place_id": "jerusalem",
                     "selected_archaeology_id": "pilate-stone",
+                    "selected_manuscript_id": "codex-sinaiticus",
                     "selected_layers": ["roman-judea-galilee"],
                     "map_view_state": {"center": [31.78, 35.23], "zoom": 8, "routeVisibility": True},
                     "generated_summary": "Jerusalem study overlay.",
@@ -378,6 +496,7 @@ class StudyDatabaseTests(unittest.TestCase):
         self.assertTrue(study["id"])
         self.assertEqual(study["selected_place_id"], "jerusalem")
         self.assertEqual(study["selected_archaeology_id"], "pilate-stone")
+        self.assertEqual(study["selected_manuscript_id"], "codex-sinaiticus")
         self.assertEqual(study["selected_layers"], ["roman-judea-galilee"])
 
         fetched = get_saved_map_study(study["id"], path=self.path)
@@ -394,7 +513,7 @@ class StudyDatabaseTests(unittest.TestCase):
     def test_create_map_note_rejects_missing_target(self):
         initialize_database(path=self.path)
 
-        with self.assertRaisesRegex(StudyDataError, "select a place, route, historical layer, or archaeology item"):
+        with self.assertRaisesRegex(StudyDataError, "select a place, route, historical layer, archaeology item, or manuscript"):
             create_map_note(
                 {
                     "book": "Romans",
@@ -427,6 +546,26 @@ class StudyDatabaseTests(unittest.TestCase):
         self.assertEqual(note["place_id"], "jerusalem")
         self.assertEqual(note["archaeology_id"], "pilate-stone")
         self.assertEqual(list_map_notes(place_id="jerusalem", path=self.path)[0]["id"], note["id"])
+
+    def test_create_map_note_accepts_manuscript_target(self):
+        initialize_database(path=self.path)
+
+        note = create_map_note(
+            {
+                "book": "John",
+                "chapter": 1,
+                "start_verse": 1,
+                "end_verse": 18,
+                "passage_reference": "John 1:1-18",
+                "manuscript_id": "codex-sinaiticus",
+                "note_body": "Track the textual witness here.",
+            },
+            path=self.path,
+        )
+
+        self.assertTrue(note["id"])
+        self.assertEqual(note["manuscript_id"], "codex-sinaiticus")
+        self.assertEqual(list_map_notes(manuscript_id="codex-sinaiticus", path=self.path)[0]["id"], note["id"])
 
 
 def _note_data():

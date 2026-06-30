@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BHF Source</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+</head>
+<body>
+  <main class="page source-page">
+    <header class="header">
+      <div>
+        <p class="eyebrow">Source detail</p>
+        <h1>{{ source.label }}</h1>
+        <p>Canonical attribution record for the curated data registry.</p>
+      </div>
+      <nav class="page-links">
+        <a class="secondary-link" href="/sources">Back to sources</a>
+        <a class="secondary-link" href="/curation">Curation</a>
+      </nav>
+    </header>
+
+    <section class="source-detail-card">
+      <div class="attribution-panel">
+        <h2>Attribution</h2>
+        <p><strong>Label:</strong> {{ source.label }}</p>
+        <p><strong>URL:</strong> {{ source.url or "Not recorded" }}</p>
+        <p><strong>License:</strong> {{ source.license or "Not recorded" }}</p>
+        <p><strong>Notes:</strong> {{ source.notes or "No notes recorded." }}</p>
+        <p><strong>References:</strong> {{ source.reference_count }}</p>
+      </div>
+
+      <section class="source-reference-list">
+        <h2>Linked Items</h2>
+        {% if source.references %}
+          <ul>
+            {% for ref in source.references %}
+              <li>{{ ref.item_type }}: {{ ref.name }} ({{ ref.id }})</li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p>No linked curated items.</p>
+        {% endif %}
+      </section>
+    </section>
+  </main>
+</body>
+</html>

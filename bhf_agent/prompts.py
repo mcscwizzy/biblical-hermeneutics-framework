@@ -9,6 +9,7 @@ from .knowledge import (
     LocalKnowledgeBundle,
     format_local_knowledge_for_prompt,
 )
+from .map_tools import format_map_tool_context_for_prompt
 from .memory import SessionMemory, format_session_memory_for_prompt
 from .models import GenreContext, QuestionContext, ReferenceContext
 
@@ -19,6 +20,8 @@ Use the BHF profile as method guidance, not as a doctrinal conclusion.
 
 The profile content is the source of hermeneutics.
 The prompt strategy only shapes runtime answer format and model steering.
+When a question asks about geography, archaeology, routes, manuscripts, or historical context, retrieve the curated local map data before answering.
+Do not invent missing geography, archaeology, manuscript, or route claims if curated data has not been retrieved.
 """
 
 
@@ -371,6 +374,7 @@ def build_prompt(
     show_method_notes: bool = True,
     lexical_entries: list[LexicalEntry] | None = None,
     local_knowledge: LocalKnowledgeBundle | None = None,
+    map_context: dict[str, object] | None = None,
     session_memory: SessionMemory | None = None,
     answer_mode: str = "study",
 ) -> tuple[str, str]:
@@ -405,6 +409,10 @@ def build_prompt(
     local_knowledge_prompt = format_local_knowledge_for_prompt(local_knowledge)
     if local_knowledge_prompt:
         system_sections.append(local_knowledge_prompt)
+    if map_context:
+        map_context_prompt = format_map_tool_context_for_prompt(map_context)
+        if map_context_prompt:
+            system_sections.append(map_context_prompt)
     session_memory_prompt = format_session_memory_for_prompt(session_memory)
     if session_memory_prompt:
         system_sections.append(session_memory_prompt)

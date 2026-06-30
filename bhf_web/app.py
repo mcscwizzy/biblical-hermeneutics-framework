@@ -44,12 +44,24 @@ from bhf_agent.study_db import (
     delete_saved_study,
     get_saved_study,
     get_saved_map_study,
+    get_source,
     list_highlights,
     list_notes,
     list_saved_map_studies,
     list_saved_studies,
+    list_sources,
     record_study_action,
     update_note,
+)
+from bhf_agent.curation import (
+    CURATION_COLLECTIONS,
+    delete_curation_record,
+    export_curation_bundle,
+    get_curation_record,
+    import_curation_bundle,
+    list_curation_collections,
+    list_curation_records,
+    save_curation_record,
 )
 
 from .map_service import (
@@ -57,7 +69,12 @@ from .map_service import (
     get_biblical_place_markers,
     get_historical_layers,
     get_map_routes_for_passage,
+    get_manuscript_markers,
+    get_political_context_layers,
+    get_related_passages_for_place,
+    resolve_political_context_for_passage,
     resolve_archaeology_for_passage,
+    resolve_manuscripts_for_passage,
     resolve_places_for_passage,
 )
 from .forms import (
@@ -288,6 +305,136 @@ def create_app() -> FastAPI:
     async def health() -> dict[str, str]:
         return {"status": "ok", "service": "bhf-web"}
 
+    @web_app.get("/sources", response_class=HTMLResponse)
+    async def sources_index(request: Request) -> HTMLResponse:
+        sources = list_sources(path=STUDY_DB_PATH)
+        return templates.TemplateResponse(
+            request,
+            "sources.html",
+            {
+                "sources": sources,
+            },
+        )
+
+    @web_app.get("/sources/{source_id}", response_class=HTMLResponse)
+    async def source_detail(request: Request, source_id: str) -> HTMLResponse:
+        try:
+            source = get_source(source_id, path=STUDY_DB_PATH)
+        except StudyDataError as exc:
+            return templates.TemplateResponse(
+                request,
+                "sources.html",
+                {
+                    "sources": list_sources(path=STUDY_DB_PATH),
+                    "error": str(exc),
+                },
+                status_code=404,
+            )
+        return templates.TemplateResponse(
+            request,
+            "source.html",
+            {
+                "source": source,
+            },
+        )
+
+    @web_app.get("/api/sources", response_class=JSONResponse)
+    async def api_sources() -> JSONResponse:
+        return JSONResponse({"sources": list_sources(path=STUDY_DB_PATH)})
+
+    @web_app.get("/api/sources/{source_id}", response_class=JSONResponse)
+    async def api_source(source_id: str) -> JSONResponse:
+        try:
+            return JSONResponse(get_source(source_id, path=STUDY_DB_PATH))
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
+
+    @web_app.get("/curation", response_class=HTMLResponse)
+    async def curation(request: Request, collection: str | None = None) -> HTMLResponse:
+        return templates.TemplateResponse(
+            request,
+            "curation.html",
+            {
+                "collections": _curation_template_sections(STUDY_DB_PATH),
+                "collection": collection or "",
+                "export_json": json.dumps(
+                    export_curation_bundle(path=STUDY_DB_PATH),
+                    indent=2,
+                    sort_keys=True,
+                    ensure_ascii=False,
+                ),
+            },
+        )
+
+    @web_app.get("/api/curation/export", response_class=JSONResponse)
+    async def curation_export() -> JSONResponse:
+        return JSONResponse(export_curation_bundle(path=STUDY_DB_PATH))
+
+    @web_app.post("/api/curation/import", response_class=JSONResponse)
+    async def curation_import(request: Request) -> JSONResponse:
+        try:
+            payload = await _request_payload(request)
+            if "record_json" in payload:
+                raw = str(payload["record_json"])
+                payload = json.loads(raw)
+            result = import_curation_bundle(payload, path=STUDY_DB_PATH)
+            return JSONResponse(result)
+        except (json.JSONDecodeError, StudyDataError) as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+
+    @web_app.get("/api/curation/{collection}", response_class=JSONResponse)
+    async def curation_collection(collection: str) -> JSONResponse:
+        try:
+            return JSONResponse({"records": list_curation_records(collection, path=STUDY_DB_PATH)})
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
+
+    @web_app.get("/api/curation/{collection}/{record_id}", response_class=JSONResponse)
+    async def curation_record(collection: str, record_id: str) -> JSONResponse:
+        try:
+            return JSONResponse(get_curation_record(collection, record_id, path=STUDY_DB_PATH))
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
+
+    @web_app.post("/api/curation/{collection}", response_class=JSONResponse)
+    async def curation_save(collection: str, request: Request) -> JSONResponse:
+        try:
+            payload = await _request_payload(request)
+            if "record_json" in payload:
+                payload = json.loads(str(payload["record_json"]))
+            saved = save_curation_record(collection, payload, path=STUDY_DB_PATH)
+            return JSONResponse(saved, status_code=201)
+        except (json.JSONDecodeError, StudyDataError) as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+
+    @web_app.put("/api/curation/{collection}/{record_id}", response_class=JSONResponse)
+    async def curation_update(collection: str, record_id: str, request: Request) -> JSONResponse:
+        try:
+            payload = await _request_payload(request)
+            if "record_json" in payload:
+                payload = json.loads(str(payload["record_json"]))
+            payload["id"] = record_id
+            saved = save_curation_record(collection, payload, path=STUDY_DB_PATH)
+            return JSONResponse(saved)
+        except (json.JSONDecodeError, StudyDataError) as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+
+    @web_app.delete("/api/curation/{collection}/{record_id}", response_class=JSONResponse)
+    async def curation_delete(collection: str, record_id: str) -> JSONResponse:
+        try:
+            delete_curation_record(collection, record_id, path=STUDY_DB_PATH)
+            return JSONResponse({"deleted": True})
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
+
+    @web_app.post("/api/curation/{collection}/{record_id}/delete", response_class=JSONResponse)
+    async def curation_delete_post(collection: str, record_id: str) -> JSONResponse:
+        try:
+            delete_curation_record(collection, record_id, path=STUDY_DB_PATH)
+            return JSONResponse({"deleted": True})
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
+
     @web_app.get("/", response_class=HTMLResponse)
     async def index(request: Request) -> HTMLResponse:
         loaded = load_web_defaults()
@@ -315,20 +462,28 @@ def create_app() -> FastAPI:
             return JSONResponse({"error": str(exc)}, status_code=404)
 
     @web_app.get("/api/maps/biblical-places", response_class=JSONResponse)
-    async def maps_biblical_places() -> JSONResponse:
-        return JSONResponse({"markers": get_biblical_place_markers(path=STUDY_DB_PATH)})
+    async def maps_biblical_places(period: str | None = None) -> JSONResponse:
+        return JSONResponse({"markers": get_biblical_place_markers(period=period, path=STUDY_DB_PATH)})
 
     @web_app.get("/api/maps/archaeology", response_class=JSONResponse)
-    async def maps_archaeology() -> JSONResponse:
-        return JSONResponse({"markers": get_archaeology_markers(path=STUDY_DB_PATH)})
+    async def maps_archaeology(period: str | None = None) -> JSONResponse:
+        return JSONResponse({"markers": get_archaeology_markers(period=period, path=STUDY_DB_PATH)})
+
+    @web_app.get("/api/maps/manuscripts", response_class=JSONResponse)
+    async def maps_manuscripts(period: str | None = None) -> JSONResponse:
+        return JSONResponse({"markers": get_manuscript_markers(period=period, path=STUDY_DB_PATH)})
 
     @web_app.get("/api/maps/routes", response_class=JSONResponse)
-    async def maps_routes() -> JSONResponse:
-        return JSONResponse({"routes": get_map_routes_for_passage(path=STUDY_DB_PATH)["routes"]})
+    async def maps_routes(period: str | None = None) -> JSONResponse:
+        return JSONResponse({"routes": get_map_routes_for_passage(period=period, path=STUDY_DB_PATH)["routes"]})
 
     @web_app.get("/api/maps/historical-layers", response_class=JSONResponse)
     async def maps_historical_layers(period: str | None = None) -> JSONResponse:
         return JSONResponse({"layers": get_historical_layers(period=period, path=STUDY_DB_PATH)})
+
+    @web_app.get("/api/maps/political-context", response_class=JSONResponse)
+    async def maps_political_context(period: str | None = None) -> JSONResponse:
+        return JSONResponse({"layers": get_political_context_layers(period=period, path=STUDY_DB_PATH)})
 
     @web_app.get("/api/maps/routes-for-passage", response_class=JSONResponse)
     async def maps_routes_for_passage(
@@ -337,6 +492,7 @@ def create_app() -> FastAPI:
         verse_start: int | None = None,
         verse_end: int | None = None,
         passage_text: str | None = None,
+        period: str | None = None,
     ) -> JSONResponse:
         try:
             result = get_map_routes_for_passage(
@@ -345,6 +501,7 @@ def create_app() -> FastAPI:
                 verse_start=verse_start,
                 verse_end=verse_end,
                 passage_text=passage_text,
+                period=period,
                 path=STUDY_DB_PATH,
             )
         except BibleError as exc:
@@ -358,6 +515,7 @@ def create_app() -> FastAPI:
         verse_start: int | None = None,
         verse_end: int | None = None,
         passage_text: str | None = None,
+        period: str | None = None,
     ) -> JSONResponse:
         try:
             result = resolve_places_for_passage(
@@ -366,9 +524,25 @@ def create_app() -> FastAPI:
                 verse_start=verse_start,
                 verse_end=verse_end,
                 passage_text=passage_text,
+                period=period,
                 path=STUDY_DB_PATH,
             )
         except BibleError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
+        return JSONResponse(result)
+
+    @web_app.get("/api/maps/related-passages-for-place", response_class=JSONResponse)
+    async def maps_related_passages_for_place(
+        place_id: str,
+        period: str | None = None,
+    ) -> JSONResponse:
+        try:
+            result = get_related_passages_for_place(
+                place_id=place_id,
+                period=period,
+                path=STUDY_DB_PATH,
+            )
+        except StudyDataError as exc:
             return JSONResponse({"error": str(exc)}, status_code=404)
         return JSONResponse(result)
 
@@ -379,6 +553,7 @@ def create_app() -> FastAPI:
         verse_start: int | None = None,
         verse_end: int | None = None,
         passage_text: str | None = None,
+        period: str | None = None,
     ) -> JSONResponse:
         try:
             result = resolve_archaeology_for_passage(
@@ -387,6 +562,53 @@ def create_app() -> FastAPI:
                 verse_start=verse_start,
                 verse_end=verse_end,
                 passage_text=passage_text,
+                period=period,
+                path=STUDY_DB_PATH,
+            )
+        except BibleError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
+        return JSONResponse(result)
+
+    @web_app.get("/api/maps/manuscripts-for-passage", response_class=JSONResponse)
+    async def maps_manuscripts_for_passage(
+        book: str | None = None,
+        chapter: int | None = None,
+        verse_start: int | None = None,
+        verse_end: int | None = None,
+        passage_text: str | None = None,
+        period: str | None = None,
+    ) -> JSONResponse:
+        try:
+            result = resolve_manuscripts_for_passage(
+                book=book,
+                chapter=chapter,
+                verse_start=verse_start,
+                verse_end=verse_end,
+                passage_text=passage_text,
+                period=period,
+                path=STUDY_DB_PATH,
+            )
+        except BibleError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
+        return JSONResponse(result)
+
+    @web_app.get("/api/maps/political-context-for-passage", response_class=JSONResponse)
+    async def maps_political_context_for_passage(
+        book: str | None = None,
+        chapter: int | None = None,
+        verse_start: int | None = None,
+        verse_end: int | None = None,
+        passage_text: str | None = None,
+        period: str | None = None,
+    ) -> JSONResponse:
+        try:
+            result = resolve_political_context_for_passage(
+                book=book,
+                chapter=chapter,
+                verse_start=verse_start,
+                verse_end=verse_end,
+                passage_text=passage_text,
+                period=period,
                 path=STUDY_DB_PATH,
             )
         except BibleError as exc:
@@ -1229,6 +1451,70 @@ def _optional_map_context(form: dict[str, Any] | Any) -> str | None:
     if not parts:
         return None
     return "\n".join(f"- {part}" for part in parts)
+
+
+def _curation_template_sections(path: str | Path) -> list[dict[str, Any]]:
+    sections: list[dict[str, Any]] = []
+    for spec in CURATION_COLLECTIONS.values():
+        records = list_curation_records(spec.key, path=path)
+        sections.append(
+            {
+                "key": spec.key,
+                "title": spec.title,
+                "count": len(records),
+                "summary_fields": spec.summary_fields,
+                "records": [
+                    {
+                        "id": record.get("id", ""),
+                        "summary": _curation_record_summary(record, spec.summary_fields),
+                        "source_summary": record.get("source_summary", "Missing source metadata"),
+                        "missing_source": "Missing source metadata" in str(record.get("source_summary", "")),
+                        "json": json.dumps(
+                            record,
+                            indent=2,
+                            sort_keys=True,
+                            ensure_ascii=False,
+                        ),
+                    }
+                    for record in records
+                ],
+                "new_record_json": json.dumps(
+                    _curation_blank_record(spec),
+                    indent=2,
+                    sort_keys=True,
+                    ensure_ascii=False,
+                ),
+            }
+        )
+    return sections
+
+
+def _curation_record_summary(record: dict[str, Any], fields: tuple[str, ...]) -> str:
+    values = [str(record.get(field) or "").strip() for field in fields]
+    values = [value for value in values if value]
+    if values:
+        return " · ".join(values)
+    if record.get("id"):
+        return str(record["id"])
+    return "Record"
+
+
+def _curation_blank_record(spec: Any) -> dict[str, Any]:
+    blank: dict[str, Any] = {}
+    for field in spec.fields:
+        if field.name == "id":
+            blank[field.name] = ""
+        elif field.kind == "json_list":
+            blank[field.name] = []
+        elif field.kind == "json_object":
+            blank[field.name] = {}
+        elif field.kind == "int":
+            blank[field.name] = 0
+        elif field.kind == "float":
+            blank[field.name] = None
+        else:
+            blank[field.name] = ""
+    return blank
 
 
 async def _request_payload(request: Request) -> dict[str, Any]:

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import sqlite3
+import re
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
@@ -15,7 +16,82 @@ from .bible import BibleError, normalize_book_name
 DEFAULT_DB_PATH = Path(".bhf") / "study.sqlite"
 HIGHLIGHT_COLORS = {"yellow", "green", "blue", "pink"}
 DEFAULT_HIGHLIGHT_COLOR = "yellow"
-SCHEMA_VERSION = 7
+SCHEMA_VERSION = 12
+BROAD_PERIOD_LABEL = "Broad / uncertain period"
+CANONICAL_PERIOD_LABELS = (
+    BROAD_PERIOD_LABEL,
+    "Divided Kingdom",
+    "Assyrian period",
+    "Babylonian period",
+    "Persian period",
+    "Hellenistic period",
+    "NT / Roman period",
+)
+
+_PERIOD_NORMALIZATION_MAP = {
+    "new testament / roman period": "NT / Roman period",
+    "new testament / roman": "NT / Roman period",
+    "roman period": "NT / Roman period",
+    "nt / roman": "NT / Roman period",
+    "broad / uncertain": BROAD_PERIOD_LABEL,
+    "broad / uncertain period": BROAD_PERIOD_LABEL,
+    "uncertain / broad period": BROAD_PERIOD_LABEL,
+    "uncertain": BROAD_PERIOD_LABEL,
+    "broad": BROAD_PERIOD_LABEL,
+}
+
+_LEGACY_PERIOD_BUCKETS = {
+    "iron age ii": ["Divided Kingdom", "Assyrian period"],
+    "late iron age": ["Assyrian period", "Babylonian period"],
+    "9th century bc": ["Divided Kingdom", "Assyrian period"],
+    "late 8th century bc": ["Assyrian period"],
+    "late 7th century bc": ["Babylonian period"],
+    "6th century bc": ["Babylonian period", "Persian period"],
+    "neo-assyrian period": ["Assyrian period"],
+    "neo-babylonian / persian period": ["Babylonian period", "Persian period"],
+    "herodian / roman period": ["NT / Roman period"],
+    "second temple period": ["Hellenistic period", "NT / Roman period"],
+    "second temple / roman period": ["NT / Roman period"],
+    "2nd century bc to 1st century ad": ["Hellenistic period", "NT / Roman period"],
+    "1st century ad": ["NT / Roman period"],
+    "new testament / roman period": ["NT / Roman period"],
+    "divided kingdom": ["Divided Kingdom"],
+    "assyrian period": ["Assyrian period"],
+    "babylonian period": ["Babylonian period"],
+    "persian period": ["Persian period"],
+    "hellenistic period": ["Hellenistic period"],
+}
+
+_BIBLICAL_PLACE_PERIODS = {
+    "jerusalem": ["Divided Kingdom", "Assyrian period", "Babylonian period", "Persian period", "NT / Roman period"],
+    "bethlehem": ["Divided Kingdom", "Assyrian period", "Babylonian period", "Persian period", "NT / Roman period"],
+    "capernaum": ["NT / Roman period"],
+    "caesarea-maritima": ["NT / Roman period"],
+    "babylon": ["Babylonian period", "Persian period"],
+}
+
+_POLITICAL_CONTEXT_PERIODS = {
+    "egypt": ["Broad / uncertain period", "Divided Kingdom", "Assyrian period", "Babylonian period", "Persian period", "Hellenistic period", "NT / Roman period"],
+    "canaanite-city-states": ["Broad / uncertain period", "Divided Kingdom"],
+    "philistia": ["Divided Kingdom", "Assyrian period"],
+    "israel": ["Divided Kingdom", "Assyrian period"],
+    "judah": ["Divided Kingdom", "Assyrian period", "Babylonian period", "Persian period"],
+    "aram-damascus": ["Divided Kingdom", "Assyrian period"],
+    "assyria": ["Assyrian period"],
+    "babylon": ["Babylonian period"],
+    "persia": ["Persian period"],
+    "greece": ["Hellenistic period"],
+    "rome": ["NT / Roman period"],
+}
+
+_MANUSCRIPT_PERIODS = {
+    "dead-sea-scrolls": ["Hellenistic period", "NT / Roman period"],
+    "nash-papyrus": ["Hellenistic period"],
+    "codex-sinaiticus": ["NT / Roman period"],
+    "codex-vaticanus": ["NT / Roman period"],
+    "aleppo-codex": ["NT / Roman period"],
+    "chester-beatty-papyri": ["NT / Roman period"],
+}
 
 
 class StudyDataError(ValueError):
@@ -349,7 +425,10 @@ def record_study_action(
     return action
 
 
-def list_biblical_places(path: str | Path = DEFAULT_DB_PATH) -> list[dict[str, Any]]:
+def list_biblical_places(
+    period: str | None = None,
+    path: str | Path = DEFAULT_DB_PATH,
+) -> list[dict[str, Any]]:
     with _connect(path) as connection:
         _ensure_schema(connection)
         rows = connection.execute(
@@ -359,7 +438,8 @@ def list_biblical_places(path: str | Path = DEFAULT_DB_PATH) -> list[dict[str, A
             ORDER BY confidence_rank DESC, name
             """
         ).fetchall()
-    return [_biblical_place_from_row(row) for row in rows]
+    places = [_attach_source(_biblical_place_from_row(row), path=path) for row in rows]
+    return [place for place in places if _period_filter_matches(place["periods"], period)]
 
 
 def get_biblical_place(place_id: str, path: str | Path = DEFAULT_DB_PATH) -> dict[str, Any]:
@@ -371,7 +451,7 @@ def get_biblical_place(place_id: str, path: str | Path = DEFAULT_DB_PATH) -> dic
         ).fetchone()
     if row is None:
         raise StudyDataError("biblical place not found")
-    return _biblical_place_from_row(row)
+    return _attach_source(_biblical_place_from_row(row), path=path)
 
 
 def list_place_references(
@@ -396,7 +476,10 @@ def list_place_references(
     return [_place_reference_from_row(row) for row in rows]
 
 
-def list_map_routes(path: str | Path = DEFAULT_DB_PATH) -> list[dict[str, Any]]:
+def list_map_routes(
+    period: str | None = None,
+    path: str | Path = DEFAULT_DB_PATH,
+) -> list[dict[str, Any]]:
     with _connect(path) as connection:
         _ensure_schema(connection)
         rows = connection.execute(
@@ -406,11 +489,11 @@ def list_map_routes(path: str | Path = DEFAULT_DB_PATH) -> list[dict[str, Any]]:
             ORDER BY confidence_rank DESC, name
             """
         ).fetchall()
-    routes = [_map_route_from_row(row) for row in rows]
+    routes = [_attach_source(_map_route_from_row(row), path=path) for row in rows]
     for route in routes:
         route["scripture_links"] = list_route_references(route["id"], path=path)
         route["reference_count"] = len(route["scripture_links"])
-    return routes
+    return [route for route in routes if _period_filter_matches(route["periods"], period)]
 
 
 def list_route_references(
@@ -441,28 +524,141 @@ def list_historical_layers(
 ) -> list[dict[str, Any]]:
     with _connect(path) as connection:
         _ensure_schema(connection)
-        if period is None or not str(period).strip() or str(period).strip().lower() == "all":
+        rows = connection.execute(
+            """
+            SELECT *
+            FROM historical_layers
+            ORDER BY confidence_rank DESC, period, name
+            """
+        ).fetchall()
+    layers = [_attach_source(_historical_layer_from_row(row), path=path) for row in rows]
+    return [layer for layer in layers if _period_filter_matches(layer["periods"], period)]
+
+
+def list_political_context_layers(
+    period: str | None = None,
+    path: str | Path = DEFAULT_DB_PATH,
+) -> list[dict[str, Any]]:
+    with _connect(path) as connection:
+        _ensure_schema(connection)
+        rows = connection.execute(
+            """
+            SELECT *
+            FROM political_context_layers
+            ORDER BY confidence_rank DESC, sort_order, name
+            """
+        ).fetchall()
+    layers = [_attach_source(_political_context_layer_from_row(row), path=path) for row in rows]
+    for layer in layers:
+        layer["scripture_links"] = list_political_context_references(layer["id"], path=path)
+        layer["reference_count"] = len(layer["scripture_links"])
+    return [layer for layer in layers if _period_filter_matches(layer["periods"], period)]
+
+
+def get_political_context_layer(
+    layer_id: str,
+    path: str | Path = DEFAULT_DB_PATH,
+) -> dict[str, Any]:
+    with _connect(path) as connection:
+        _ensure_schema(connection)
+        row = connection.execute(
+            "SELECT * FROM political_context_layers WHERE id = ?",
+            (layer_id,),
+        ).fetchone()
+    if row is None:
+        raise StudyDataError("political context layer not found")
+    layer = _political_context_layer_from_row(row)
+    layer["scripture_links"] = list_political_context_references(layer["id"], path=path)
+    layer["reference_count"] = len(layer["scripture_links"])
+    return _attach_source(layer, path=path)
+
+
+def list_political_context_references(
+    layer_id: str | None = None,
+    path: str | Path = DEFAULT_DB_PATH,
+) -> list[dict[str, Any]]:
+    with _connect(path) as connection:
+        _ensure_schema(connection)
+        if layer_id is None:
             rows = connection.execute(
-                """
-                SELECT *
-                FROM historical_layers
-                ORDER BY confidence_rank DESC, period, name
-                """
+                "SELECT * FROM political_context_references ORDER BY book, chapter, verse_start, verse_end"
             ).fetchall()
         else:
             rows = connection.execute(
                 """
-                SELECT *
-                FROM historical_layers
-                WHERE lower(period) = lower(?)
-                ORDER BY confidence_rank DESC, period, name
+                SELECT * FROM political_context_references
+                WHERE context_id = ?
+                ORDER BY book, chapter, verse_start, verse_end
                 """,
-                (period,),
+                (layer_id,),
             ).fetchall()
-    return [_historical_layer_from_row(row) for row in rows]
+    return [_political_context_reference_from_row(row) for row in rows]
 
 
-def list_archaeology_sites(path: str | Path = DEFAULT_DB_PATH) -> list[dict[str, Any]]:
+def list_manuscript_items(
+    period: str | None = None,
+    path: str | Path = DEFAULT_DB_PATH,
+) -> list[dict[str, Any]]:
+    with _connect(path) as connection:
+        _ensure_schema(connection)
+        rows = connection.execute(
+            """
+            SELECT *
+            FROM manuscript_items
+            ORDER BY confidence_rank DESC, name
+            """
+        ).fetchall()
+    items = [_attach_source(_manuscript_item_from_row(row), path=path) for row in rows]
+    for item in items:
+        item["scripture_links"] = list_manuscript_scripture_links(item["id"], path=path)
+        item["reference_count"] = len(item["scripture_links"])
+    return [item for item in items if _period_filter_matches(item["periods"], period)]
+
+
+def get_manuscript_item(
+    item_id: str,
+    path: str | Path = DEFAULT_DB_PATH,
+) -> dict[str, Any]:
+    with _connect(path) as connection:
+        _ensure_schema(connection)
+        row = connection.execute(
+            "SELECT * FROM manuscript_items WHERE id = ?",
+            (item_id,),
+        ).fetchone()
+    if row is None:
+        raise StudyDataError("manuscript item not found")
+    item = _attach_source(_manuscript_item_from_row(row), path=path)
+    item["scripture_links"] = list_manuscript_scripture_links(item["id"], path=path)
+    item["reference_count"] = len(item["scripture_links"])
+    return item
+
+
+def list_manuscript_scripture_links(
+    item_id: str | None = None,
+    path: str | Path = DEFAULT_DB_PATH,
+) -> list[dict[str, Any]]:
+    with _connect(path) as connection:
+        _ensure_schema(connection)
+        if item_id is None:
+            rows = connection.execute(
+                "SELECT * FROM manuscript_scripture_links ORDER BY book, chapter, verse_start, verse_end"
+            ).fetchall()
+        else:
+            rows = connection.execute(
+                """
+                SELECT * FROM manuscript_scripture_links
+                WHERE item_id = ?
+                ORDER BY book, chapter, verse_start, verse_end
+                """,
+                (item_id,),
+            ).fetchall()
+    return [_manuscript_scripture_link_from_row(row) for row in rows]
+
+
+def list_archaeology_sites(
+    period: str | None = None,
+    path: str | Path = DEFAULT_DB_PATH,
+) -> list[dict[str, Any]]:
     with _connect(path) as connection:
         _ensure_schema(connection)
         rows = connection.execute(
@@ -472,16 +668,16 @@ def list_archaeology_sites(path: str | Path = DEFAULT_DB_PATH) -> list[dict[str,
             ORDER BY confidence_rank DESC, name
             """
         ).fetchall()
-    sites = [_archaeology_site_from_row(row) for row in rows]
+    sites = [_attach_source(_archaeology_site_from_row(row), path=path) for row in rows]
     for site in sites:
-        site["archaeology_items"] = list_archaeology_items(site["id"], path=path)
+        site["archaeology_items"] = list_archaeology_items(site["id"], period=period, path=path)
         site["scripture_links"] = [
             link
             for item in site["archaeology_items"]
             for link in item.get("scripture_links", [])
         ]
         site["reference_count"] = len(site["scripture_links"])
-    return sites
+    return [site for site in sites if _period_filter_matches(site["periods"], period)]
 
 
 def get_archaeology_site(site_id: str, path: str | Path = DEFAULT_DB_PATH) -> dict[str, Any]:
@@ -493,7 +689,7 @@ def get_archaeology_site(site_id: str, path: str | Path = DEFAULT_DB_PATH) -> di
         ).fetchone()
     if row is None:
         raise StudyDataError("archaeology site not found")
-    site = _archaeology_site_from_row(row)
+    site = _attach_source(_archaeology_site_from_row(row), path=path)
     site["archaeology_items"] = list_archaeology_items(site_id, path=path)
     site["scripture_links"] = [
         link
@@ -506,6 +702,7 @@ def get_archaeology_site(site_id: str, path: str | Path = DEFAULT_DB_PATH) -> di
 
 def list_archaeology_items(
     site_id: str | None = None,
+    period: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> list[dict[str, Any]]:
     with _connect(path) as connection:
@@ -523,11 +720,11 @@ def list_archaeology_items(
                 """,
                 (site_id,),
             ).fetchall()
-    items = [_archaeology_item_from_row(row) for row in rows]
+    items = [_attach_source(_archaeology_item_from_row(row), path=path) for row in rows]
     for item in items:
         item["scripture_links"] = list_archaeology_scripture_links(item["id"], path=path)
         item["reference_count"] = len(item["scripture_links"])
-    return items
+    return [item for item in items if _period_filter_matches(item["periods"], period)]
 
 
 def get_archaeology_item(item_id: str, path: str | Path = DEFAULT_DB_PATH) -> dict[str, Any]:
@@ -539,7 +736,7 @@ def get_archaeology_item(item_id: str, path: str | Path = DEFAULT_DB_PATH) -> di
         ).fetchone()
     if row is None:
         raise StudyDataError("archaeology item not found")
-    item = _archaeology_item_from_row(row)
+    item = _attach_source(_archaeology_item_from_row(row), path=path)
     item["scripture_links"] = list_archaeology_scripture_links(item_id, path=path)
     item["reference_count"] = len(item["scripture_links"])
     return item
@@ -565,6 +762,30 @@ def list_archaeology_scripture_links(
                 (item_id,),
             ).fetchall()
     return [_archaeology_scripture_link_from_row(row) for row in rows]
+
+
+def list_sources(path: str | Path = DEFAULT_DB_PATH) -> list[dict[str, Any]]:
+    with _connect(path) as connection:
+        _ensure_schema(connection)
+        rows = connection.execute(
+            "SELECT * FROM sources ORDER BY label"
+        ).fetchall()
+    return [_source_from_row(row) for row in rows]
+
+
+def get_source(source_id: str, path: str | Path = DEFAULT_DB_PATH) -> dict[str, Any]:
+    with _connect(path) as connection:
+        _ensure_schema(connection)
+        row = connection.execute(
+            "SELECT * FROM sources WHERE id = ?",
+            (source_id,),
+        ).fetchone()
+    if row is None:
+        raise StudyDataError("source not found")
+    source = _source_from_row(row)
+    source["reference_count"] = _source_reference_count(source_id, path=path)
+    source["references"] = _source_references(source_id, path=path)
+    return source
 
 
 def list_saved_map_studies(
@@ -595,6 +816,7 @@ def list_saved_map_studies(
             route_id=study["selected_route_id"],
             layer_id=study["selected_layer_id"],
             archaeology_id=study["selected_archaeology_id"],
+            manuscript_id=study["selected_manuscript_id"],
             path=path,
         )
     return studies
@@ -618,6 +840,7 @@ def get_saved_map_study(
         route_id=study["selected_route_id"],
         layer_id=study["selected_layer_id"],
         archaeology_id=study["selected_archaeology_id"],
+        manuscript_id=study["selected_manuscript_id"],
         path=path,
     )
     return study
@@ -637,10 +860,10 @@ def create_saved_map_study(
             INSERT INTO saved_map_studies (
                 id, book, chapter, verse_start, verse_end, passage_reference,
                 selected_place_id, selected_route_id, selected_layer_id,
-                archaeology_id,
+                archaeology_id, manuscript_id,
                 selected_layers, map_view_state, generated_summary, user_notes,
                 created_at, updated_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 study_id,
@@ -653,6 +876,7 @@ def create_saved_map_study(
                 study["selected_route_id"],
                 study["selected_layer_id"],
                 study["selected_archaeology_id"],
+                study["selected_manuscript_id"],
                 json.dumps(study["selected_layers"]),
                 json.dumps(study["map_view_state"]),
                 study["generated_summary"],
@@ -697,8 +921,9 @@ def create_map_note(
             """
             INSERT INTO map_notes (
                 id, book, chapter, verse_start, verse_end, passage_reference,
-                place_id, route_id, layer_id, archaeology_id, note_body, created_at, updated_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                place_id, route_id, layer_id, archaeology_id, manuscript_id,
+                note_body, created_at, updated_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 note_id,
@@ -711,6 +936,7 @@ def create_map_note(
                 note["route_id"],
                 note["layer_id"],
                 note["archaeology_id"],
+                note["manuscript_id"],
                 note["note_body"],
                 now,
                 now,
@@ -729,6 +955,7 @@ def list_map_notes(
     route_id: str | None = None,
     layer_id: str | None = None,
     archaeology_id: str | None = None,
+    manuscript_id: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> list[dict[str, Any]]:
     with _connect(path) as connection:
@@ -747,6 +974,9 @@ def list_map_notes(
         if archaeology_id is not None:
             clauses.append("archaeology_id = ?")
             params.append(archaeology_id)
+        if manuscript_id is not None:
+            clauses.append("manuscript_id = ?")
+            params.append(manuscript_id)
         where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
         rows = connection.execute(
             f"SELECT * FROM map_notes {where} ORDER BY created_at DESC",
@@ -772,6 +1002,89 @@ def _add_column_if_missing(connection: sqlite3.Connection, table: str, column_sq
     }
     if column_name not in columns:
         connection.execute(f"ALTER TABLE {table} ADD COLUMN {column_sql}")
+
+
+def _normalized_period_label(value: str) -> str:
+    cleaned = str(value or "").strip()
+    if not cleaned:
+        return ""
+    return _PERIOD_NORMALIZATION_MAP.get(cleaned.lower(), cleaned)
+
+
+def _periods_from_value(value: Any, fallback: Any = None) -> list[str]:
+    raw_values: list[Any]
+    if isinstance(value, str):
+        stripped = value.strip()
+        if not stripped:
+            raw_values = []
+        else:
+            try:
+                decoded = json.loads(stripped)
+            except json.JSONDecodeError:
+                raw_values = [stripped]
+            else:
+                raw_values = decoded if isinstance(decoded, list) else [decoded]
+    elif isinstance(value, list):
+        raw_values = value
+    elif value is None:
+        raw_values = []
+    else:
+        raw_values = [value]
+
+    periods = [_normalized_period_label(str(item)) for item in raw_values if str(item).strip()]
+    periods = [period for period in periods if period in CANONICAL_PERIOD_LABELS]
+    if not periods and fallback:
+        if isinstance(fallback, list):
+            periods = _periods_from_value(fallback)
+        else:
+            normalized_fallback = _normalized_period_label(fallback)
+            if normalized_fallback in CANONICAL_PERIOD_LABELS:
+                periods = [normalized_fallback]
+            else:
+                periods = _legacy_period_buckets(fallback)
+    if not periods:
+        periods = [BROAD_PERIOD_LABEL]
+    return _unique_preserve_order(periods)
+
+
+def _legacy_period_buckets(period: str | None) -> list[str]:
+    normalized = str(period or "").strip().lower()
+    if not normalized:
+        return [BROAD_PERIOD_LABEL]
+    return _unique_preserve_order(
+        [label for label in _LEGACY_PERIOD_BUCKETS.get(normalized, [BROAD_PERIOD_LABEL]) if label in CANONICAL_PERIOD_LABELS]
+    )
+
+
+def _period_filter_matches(periods: list[str], period: str | None) -> bool:
+    normalized = normalize_period_filter(period)
+    if normalized is None:
+        return True
+    if normalized == BROAD_PERIOD_LABEL:
+        return BROAD_PERIOD_LABEL in periods
+    if BROAD_PERIOD_LABEL in periods:
+        return True
+    return normalized in periods
+
+
+def normalize_period_filter(period: str | None) -> str | None:
+    normalized = _normalized_period_label(period or "")
+    if not normalized or normalized.lower() == "all":
+        return None
+    if normalized not in CANONICAL_PERIOD_LABELS:
+        return BROAD_PERIOD_LABEL
+    return normalized
+
+
+def _unique_preserve_order(values: list[str]) -> list[str]:
+    seen: set[str] = set()
+    unique: list[str] = []
+    for value in values:
+        if value in seen:
+            continue
+        seen.add(value)
+        unique.append(value)
+    return unique
 
 
 def _ensure_schema(connection: sqlite3.Connection) -> None:
@@ -828,6 +1141,36 @@ def _ensure_schema(connection: sqlite3.Connection) -> None:
         connection.execute(
             "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
             (7, _timestamp()),
+        )
+    if 8 not in applied:
+        _apply_v8_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (8, _timestamp()),
+        )
+    if 9 not in applied:
+        _apply_v9_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (9, _timestamp()),
+        )
+    if 10 not in applied:
+        _apply_v10_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (10, _timestamp()),
+        )
+    if 11 not in applied:
+        _apply_v11_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (11, _timestamp()),
+        )
+    if 12 not in applied:
+        _apply_v12_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (12, _timestamp()),
         )
 
 
@@ -912,6 +1255,7 @@ def _apply_v3_schema(connection: sqlite3.Connection) -> None:
             id TEXT PRIMARY KEY,
             name TEXT NOT NULL,
             aliases TEXT NOT NULL DEFAULT '[]',
+            periods TEXT NOT NULL DEFAULT '[]',
             latitude REAL,
             longitude REAL,
             modern_location TEXT NOT NULL DEFAULT '',
@@ -961,6 +1305,7 @@ def _apply_v4_schema(connection: sqlite3.Connection) -> None:
             name TEXT NOT NULL,
             description TEXT NOT NULL DEFAULT '',
             period TEXT NOT NULL DEFAULT '',
+            periods TEXT NOT NULL DEFAULT '[]',
             route_type TEXT NOT NULL DEFAULT '',
             geojson TEXT NOT NULL,
             confidence TEXT NOT NULL DEFAULT 'unknown',
@@ -1002,6 +1347,7 @@ def _apply_v5_schema(connection: sqlite3.Connection) -> None:
             id TEXT PRIMARY KEY,
             name TEXT NOT NULL,
             period TEXT NOT NULL DEFAULT '',
+            periods TEXT NOT NULL DEFAULT '[]',
             description TEXT NOT NULL DEFAULT '',
             layer_type TEXT NOT NULL DEFAULT '',
             geojson TEXT NOT NULL,
@@ -1091,6 +1437,7 @@ def _apply_v7_schema(connection: sqlite3.Connection) -> None:
             name TEXT NOT NULL,
             site_type TEXT NOT NULL DEFAULT '',
             period TEXT NOT NULL DEFAULT '',
+            periods TEXT NOT NULL DEFAULT '[]',
             latitude REAL,
             longitude REAL,
             modern_location TEXT NOT NULL DEFAULT '',
@@ -1116,6 +1463,7 @@ def _apply_v7_schema(connection: sqlite3.Connection) -> None:
             name TEXT NOT NULL,
             item_type TEXT NOT NULL DEFAULT '',
             period TEXT NOT NULL DEFAULT '',
+            periods TEXT NOT NULL DEFAULT '[]',
             relationship TEXT NOT NULL DEFAULT '',
             why_it_matters TEXT NOT NULL DEFAULT '',
             bhf_caution TEXT NOT NULL DEFAULT '',
@@ -1154,6 +1502,335 @@ def _apply_v7_schema(connection: sqlite3.Connection) -> None:
         """
     )
     _seed_archaeology(connection)
+
+
+def _apply_v8_schema(connection: sqlite3.Connection) -> None:
+    _add_column_if_missing(
+        connection,
+        "biblical_places",
+        "periods TEXT NOT NULL DEFAULT '[]'",
+    )
+    _add_column_if_missing(
+        connection,
+        "map_routes",
+        "periods TEXT NOT NULL DEFAULT '[]'",
+    )
+    _add_column_if_missing(
+        connection,
+        "historical_layers",
+        "periods TEXT NOT NULL DEFAULT '[]'",
+    )
+    _add_column_if_missing(
+        connection,
+        "archaeology_sites",
+        "periods TEXT NOT NULL DEFAULT '[]'",
+    )
+    _add_column_if_missing(
+        connection,
+        "archaeology_items",
+        "periods TEXT NOT NULL DEFAULT '[]'",
+    )
+    _backfill_period_columns(connection)
+
+
+def _apply_v9_schema(connection: sqlite3.Connection) -> None:
+    connection.executescript(
+        """
+        CREATE TABLE IF NOT EXISTS political_context_layers (
+            id TEXT PRIMARY KEY,
+            name TEXT NOT NULL,
+            entity_type TEXT NOT NULL DEFAULT '',
+            period TEXT NOT NULL DEFAULT '',
+            periods TEXT NOT NULL DEFAULT '[]',
+            summary TEXT NOT NULL DEFAULT '',
+            description TEXT NOT NULL DEFAULT '',
+            layer_type TEXT NOT NULL DEFAULT 'political_context',
+            sort_order INTEGER NOT NULL DEFAULT 0,
+            geojson TEXT NOT NULL,
+            confidence TEXT NOT NULL DEFAULT 'unknown',
+            confidence_rank INTEGER NOT NULL DEFAULT 0,
+            source_name TEXT NOT NULL DEFAULT '',
+            source_url TEXT NOT NULL DEFAULT '',
+            notes TEXT NOT NULL DEFAULT ''
+        );
+
+        CREATE INDEX IF NOT EXISTS idx_political_context_layers_period
+            ON political_context_layers(period);
+
+        CREATE INDEX IF NOT EXISTS idx_political_context_layers_confidence
+            ON political_context_layers(confidence_rank);
+
+        CREATE TABLE IF NOT EXISTS political_context_references (
+            id TEXT PRIMARY KEY,
+            context_id TEXT NOT NULL,
+            book TEXT NOT NULL,
+            chapter INTEGER NOT NULL,
+            verse_start INTEGER NOT NULL,
+            verse_end INTEGER NOT NULL,
+            relationship_type TEXT NOT NULL,
+            notes TEXT NOT NULL DEFAULT '',
+            FOREIGN KEY(context_id) REFERENCES political_context_layers(id)
+        );
+
+        CREATE INDEX IF NOT EXISTS idx_political_context_references_context
+            ON political_context_references(context_id);
+
+        CREATE INDEX IF NOT EXISTS idx_political_context_references_reference
+            ON political_context_references(book, chapter, verse_start, verse_end);
+        """
+    )
+    _seed_political_context(connection)
+
+
+def _apply_v10_schema(connection: sqlite3.Connection) -> None:
+    _add_column_if_missing(
+        connection,
+        "saved_map_studies",
+        "manuscript_id TEXT NOT NULL DEFAULT ''",
+    )
+    _add_column_if_missing(
+        connection,
+        "map_notes",
+        "manuscript_id TEXT NOT NULL DEFAULT ''",
+    )
+    connection.executescript(
+        """
+        CREATE TABLE IF NOT EXISTS manuscript_items (
+            id TEXT PRIMARY KEY,
+            name TEXT NOT NULL,
+            manuscript_type TEXT NOT NULL DEFAULT '',
+            language TEXT NOT NULL DEFAULT '',
+            date TEXT NOT NULL DEFAULT '',
+            material TEXT NOT NULL DEFAULT '',
+            discovery_location TEXT NOT NULL DEFAULT '',
+            current_location TEXT NOT NULL DEFAULT '',
+            latitude REAL,
+            longitude REAL,
+            related_books TEXT NOT NULL DEFAULT '[]',
+            period TEXT NOT NULL DEFAULT '',
+            periods TEXT NOT NULL DEFAULT '[]',
+            significance TEXT NOT NULL DEFAULT '',
+            confidence TEXT NOT NULL DEFAULT 'unknown',
+            confidence_rank INTEGER NOT NULL DEFAULT 0,
+            source_name TEXT NOT NULL DEFAULT '',
+            source_url TEXT NOT NULL DEFAULT '',
+            license TEXT NOT NULL DEFAULT '',
+            notes TEXT NOT NULL DEFAULT '',
+            bhf_caution TEXT NOT NULL DEFAULT ''
+        );
+
+        CREATE INDEX IF NOT EXISTS idx_manuscript_items_confidence
+            ON manuscript_items(confidence_rank);
+
+        CREATE INDEX IF NOT EXISTS idx_manuscript_items_period
+            ON manuscript_items(period);
+
+        CREATE TABLE IF NOT EXISTS manuscript_scripture_links (
+            id TEXT PRIMARY KEY,
+            item_id TEXT NOT NULL,
+            book TEXT NOT NULL,
+            chapter INTEGER NOT NULL,
+            verse_start INTEGER NOT NULL,
+            verse_end INTEGER NOT NULL,
+            relationship_type TEXT NOT NULL,
+            notes TEXT NOT NULL DEFAULT '',
+            FOREIGN KEY(item_id) REFERENCES manuscript_items(id)
+        );
+
+        CREATE INDEX IF NOT EXISTS idx_manuscript_scripture_links_item
+            ON manuscript_scripture_links(item_id);
+
+        CREATE INDEX IF NOT EXISTS idx_manuscript_scripture_links_reference
+            ON manuscript_scripture_links(book, chapter, verse_start, verse_end);
+        """
+    )
+    _seed_manuscripts(connection)
+
+
+def _apply_v11_schema(connection: sqlite3.Connection) -> None:
+    connection.executescript(
+        """
+        CREATE TABLE IF NOT EXISTS sources (
+            id TEXT PRIMARY KEY,
+            label TEXT NOT NULL,
+            url TEXT NOT NULL DEFAULT '',
+            license TEXT NOT NULL DEFAULT '',
+            notes TEXT NOT NULL DEFAULT ''
+        );
+
+        CREATE INDEX IF NOT EXISTS idx_sources_label
+            ON sources(label);
+
+        CREATE TABLE IF NOT EXISTS confidence_labels (
+            id TEXT PRIMARY KEY,
+            label TEXT NOT NULL,
+            rank INTEGER NOT NULL DEFAULT 0,
+            description TEXT NOT NULL DEFAULT '',
+            notes TEXT NOT NULL DEFAULT ''
+        );
+
+        CREATE INDEX IF NOT EXISTS idx_confidence_labels_rank
+            ON confidence_labels(rank);
+        """
+    )
+    _seed_confidence_labels(connection)
+
+
+def _apply_v12_schema(connection: sqlite3.Connection) -> None:
+    for table in (
+        "biblical_places",
+        "map_routes",
+        "historical_layers",
+        "political_context_layers",
+        "archaeology_sites",
+        "archaeology_items",
+        "manuscript_items",
+    ):
+        _add_column_if_missing(connection, table, "source_id TEXT NOT NULL DEFAULT ''")
+    _backfill_source_registry(connection)
+
+
+def _backfill_source_registry(connection: sqlite3.Connection) -> None:
+    source_columns = {
+        "biblical_places": ("source_name", "source_url", "license"),
+        "map_routes": ("source_name", "source_url", None),
+        "historical_layers": ("source_name", "source_url", None),
+        "political_context_layers": ("source_name", "source_url", None),
+        "archaeology_sites": ("source_name", "source_url", "license"),
+        "archaeology_items": ("source_name", "source_url", "license"),
+        "manuscript_items": ("source_name", "source_url", "license"),
+    }
+    for table, fields in source_columns.items():
+        rows = connection.execute(f"SELECT id, source_id, {', '.join(column for column in fields if column)} FROM {table}").fetchall()
+        for row in rows:
+            source_name = str(row["source_name"] or "").strip()
+            source_url = str(row["source_url"] or "").strip()
+            license = str(row["license"] or "").strip() if "license" in fields else ""
+            source_id = _register_source(connection, source_name, source_url, license)
+            if source_id:
+                connection.execute(
+                    f"UPDATE {table} SET source_id = ? WHERE id = ?",
+                    (source_id, row["id"]),
+                )
+    _seed_sources_from_existing_records(connection)
+
+
+def _seed_sources_from_existing_records(connection: sqlite3.Connection) -> None:
+    rows = connection.execute(
+        """
+        SELECT DISTINCT source_name, source_url, license
+        FROM (
+            SELECT source_name, source_url, license FROM biblical_places
+            UNION ALL SELECT source_name, source_url, '' FROM map_routes
+            UNION ALL SELECT source_name, source_url, '' FROM historical_layers
+            UNION ALL SELECT source_name, source_url, '' FROM political_context_layers
+            UNION ALL SELECT source_name, source_url, license FROM archaeology_sites
+            UNION ALL SELECT source_name, source_url, license FROM archaeology_items
+            UNION ALL SELECT source_name, source_url, license FROM manuscript_items
+        )
+        WHERE trim(COALESCE(source_name, '')) != '' OR trim(COALESCE(source_url, '')) != '' OR trim(COALESCE(license, '')) != ''
+        ORDER BY source_name, source_url, license
+        """
+    ).fetchall()
+    for row in rows:
+        _register_source(
+            connection,
+            str(row["source_name"] or "").strip(),
+            str(row["source_url"] or "").strip(),
+            str(row["license"] or "").strip(),
+        )
+
+
+def _source_identifier(source_name: str, source_url: str, license: str) -> str:
+    normalized = "|".join(
+        part.strip().lower()
+        for part in (source_name, source_url, license)
+        if part and str(part).strip()
+    )
+    if not normalized:
+        return ""
+    safe = re.sub(r"[^a-z0-9]+", "-", normalized).strip("-")
+    return safe[:80] or uuid.uuid4().hex
+
+
+def _register_source(
+    connection: sqlite3.Connection,
+    source_name: str,
+    source_url: str,
+    license: str,
+    notes: str = "",
+) -> str:
+    source_name = source_name.strip()
+    source_url = source_url.strip()
+    license = license.strip()
+    notes = notes.strip()
+    source_id = _source_identifier(source_name, source_url, license)
+    if not source_id:
+        return ""
+    label = source_name or source_url or license or source_id
+    connection.execute(
+        """
+        INSERT OR IGNORE INTO sources (id, label, url, license, notes)
+        VALUES (?, ?, ?, ?, ?)
+        """,
+        (source_id, label, source_url, license, notes),
+    )
+    if notes:
+        connection.execute(
+            "UPDATE sources SET notes = CASE WHEN notes = '' THEN ? ELSE notes END WHERE id = ?",
+            (notes, source_id),
+        )
+    return source_id
+
+
+def _seed_confidence_labels(connection: sqlite3.Connection) -> None:
+    existing = connection.execute("SELECT COUNT(*) FROM confidence_labels").fetchone()[0]
+    if existing:
+        return
+    for label in (
+        {
+            "id": "unknown",
+            "label": "unknown",
+            "rank": 0,
+            "description": "Not enough information to evaluate confidence.",
+            "notes": "Default fallback label.",
+        },
+        {
+            "id": "possible",
+            "label": "possible",
+            "rank": 2,
+            "description": "A plausible identification or relationship.",
+            "notes": "",
+        },
+        {
+            "id": "likely",
+            "label": "likely",
+            "rank": 4,
+            "description": "Supported by strong local evidence, though not certain.",
+            "notes": "",
+        },
+        {
+            "id": "strong",
+            "label": "strong",
+            "rank": 5,
+            "description": "Well-supported and broadly accepted in the local dataset.",
+            "notes": "",
+        },
+    ):
+        connection.execute(
+            """
+            INSERT INTO confidence_labels (
+                id, label, rank, description, notes
+            ) VALUES (?, ?, ?, ?, ?)
+            """,
+            (
+                label["id"],
+                label["label"],
+                label["rank"],
+                label["description"],
+                label["notes"],
+            ),
+        )
 
 
 def _validated_note(data: dict[str, Any]) -> dict[str, Any]:
@@ -1226,6 +1903,7 @@ def _validated_saved_map_study(data: dict[str, Any]) -> dict[str, Any]:
     selected_route_id = str(data.get("selected_route_id") or "").strip()
     selected_layer_id = str(data.get("selected_layer_id") or "").strip()
     selected_archaeology_id = str(data.get("selected_archaeology_id") or "").strip()
+    selected_manuscript_id = str(data.get("selected_manuscript_id") or "").strip()
     selected_layers = data.get("selected_layers") or []
     if isinstance(selected_layers, str):
         try:
@@ -1240,6 +1918,7 @@ def _validated_saved_map_study(data: dict[str, Any]) -> dict[str, Any]:
         and not selected_route_id
         and not selected_layer_id
         and not selected_archaeology_id
+        and not selected_manuscript_id
         and not selected_layers
     ):
         raise StudyDataError("select a place, route, historical layer, or archaeology item before saving a map study")
@@ -1260,6 +1939,7 @@ def _validated_saved_map_study(data: dict[str, Any]) -> dict[str, Any]:
         "selected_route_id": selected_route_id,
         "selected_layer_id": selected_layer_id,
         "selected_archaeology_id": selected_archaeology_id,
+        "selected_manuscript_id": selected_manuscript_id,
         "selected_layers": selected_layers,
         "map_view_state": map_view_state,
         "generated_summary": generated_summary,
@@ -1276,8 +1956,9 @@ def _validated_map_note(data: dict[str, Any]) -> dict[str, Any]:
     route_id = str(data.get("route_id") or "").strip()
     layer_id = str(data.get("layer_id") or "").strip()
     archaeology_id = str(data.get("archaeology_id") or "").strip()
-    if not place_id and not route_id and not layer_id and not archaeology_id:
-        raise StudyDataError("select a place, route, historical layer, or archaeology item for the note")
+    manuscript_id = str(data.get("manuscript_id") or "").strip()
+    if not place_id and not route_id and not layer_id and not archaeology_id and not manuscript_id:
+        raise StudyDataError("select a place, route, historical layer, archaeology item, or manuscript for the note")
     passage_reference = str(
         data.get("passage_reference")
         or _default_map_passage_reference(
@@ -1294,6 +1975,7 @@ def _validated_map_note(data: dict[str, Any]) -> dict[str, Any]:
         "route_id": route_id,
         "layer_id": layer_id,
         "archaeology_id": archaeology_id,
+        "manuscript_id": manuscript_id,
         "note_body": note_body,
     }
 
@@ -1400,10 +2082,12 @@ def _biblical_place_from_row(row: sqlite3.Row) -> dict[str, Any]:
         aliases = []
     if not isinstance(aliases, list):
         aliases = []
+    periods = _periods_from_value(row["periods"], fallback=_BIBLICAL_PLACE_PERIODS.get(row["id"], []))
     return {
         "id": row["id"],
         "name": row["name"],
         "aliases": [str(alias) for alias in aliases if str(alias).strip()],
+        "periods": periods,
         "latitude": float(row["latitude"]) if row["latitude"] is not None else None,
         "longitude": float(row["longitude"]) if row["longitude"] is not None else None,
         "modern_location": row["modern_location"],
@@ -1411,6 +2095,7 @@ def _biblical_place_from_row(row: sqlite3.Row) -> dict[str, Any]:
         "description": row["description"],
         "confidence": row["confidence"],
         "confidence_rank": int(row["confidence_rank"]),
+        "source_id": row["source_id"] if "source_id" in row.keys() else "",
         "source_name": row["source_name"],
         "source_url": row["source_url"],
         "license": row["license"],
@@ -1431,6 +2116,126 @@ def _place_reference_from_row(row: sqlite3.Row) -> dict[str, Any]:
     }
 
 
+def _source_from_row(row: sqlite3.Row) -> dict[str, Any]:
+    return {
+        "id": row["id"],
+        "label": row["label"],
+        "url": row["url"],
+        "license": row["license"],
+        "notes": row["notes"],
+    }
+
+
+def _source_reference_count(source_id: str, path: str | Path = DEFAULT_DB_PATH) -> int:
+    tables = (
+        "biblical_places",
+        "map_routes",
+        "historical_layers",
+        "political_context_layers",
+        "archaeology_sites",
+        "archaeology_items",
+        "manuscript_items",
+    )
+    total = 0
+    with _connect(path) as connection:
+        _ensure_schema(connection)
+        for table in tables:
+            row = connection.execute(
+                f"SELECT COUNT(*) AS count FROM {table} WHERE source_id = ?",
+                (source_id,),
+            ).fetchone()
+            total += int(row["count"]) if row else 0
+    return total
+
+
+def _source_references(source_id: str, path: str | Path = DEFAULT_DB_PATH) -> list[dict[str, Any]]:
+    references: list[dict[str, Any]] = []
+    with _connect(path) as connection:
+        _ensure_schema(connection)
+        for table, item_type in (
+            ("biblical_places", "place"),
+            ("map_routes", "route"),
+            ("historical_layers", "historical_layer"),
+            ("political_context_layers", "political_context_layer"),
+            ("archaeology_sites", "archaeology_site"),
+            ("archaeology_items", "archaeology_item"),
+            ("manuscript_items", "manuscript_item"),
+        ):
+            rows = connection.execute(
+                f"SELECT id, name FROM {table} WHERE source_id = ? ORDER BY name",
+                (source_id,),
+            ).fetchall()
+            for row in rows:
+                references.append(
+                    {
+                        "item_type": item_type,
+                        "id": row["id"],
+                        "name": row["name"],
+                    }
+                )
+    return references
+
+
+def _source_summary_from_row(
+    row: sqlite3.Row,
+    path: str | Path = DEFAULT_DB_PATH,
+) -> dict[str, Any]:
+    source_id = str(row["source_id"] or "").strip()
+    if not source_id:
+        source_id = _source_identifier(
+            str(row["source_name"] or "").strip(),
+            str(row["source_url"] or "").strip(),
+            str(row["license"] or "").strip(),
+        )
+    source = get_source(source_id, path=path) if source_id else None
+    return {
+        "source_id": source_id,
+        "source": source,
+    }
+
+
+def _attach_source(record: dict[str, Any], path: str | Path = DEFAULT_DB_PATH) -> dict[str, Any]:
+    source_id = str(record.get("source_id") or "").strip()
+    source = None
+    if source_id:
+        try:
+            source = get_source(source_id, path=path)
+        except StudyDataError:
+            source = None
+    if source is None:
+        fallback_id = _source_identifier(
+            str(record.get("source_name") or "").strip(),
+            str(record.get("source_url") or "").strip(),
+            str(record.get("license") or "").strip(),
+        )
+        if fallback_id and fallback_id != source_id:
+            try:
+                source = get_source(fallback_id, path=path)
+                source_id = fallback_id
+            except StudyDataError:
+                source = None
+    record["source_id"] = source_id
+    record["source"] = source
+    record["source_summary"] = _source_summary_text(record, source)
+    return record
+
+
+def _source_summary_text(record: dict[str, Any], source: dict[str, Any] | None) -> str:
+    if source:
+        parts = [str(source.get("label") or "").strip()]
+        if source.get("license"):
+            parts.append(f"License: {source['license']}")
+        if source.get("url"):
+            parts.append(str(source["url"]))
+        return " · ".join(part for part in parts if part)
+    parts = [
+        str(record.get("source_name") or "").strip(),
+        str(record.get("source_url") or "").strip(),
+        str(record.get("license") or "").strip(),
+    ]
+    return " · ".join(part for part in parts if part) or "Missing source metadata"
+
+
 def _map_route_from_row(row: sqlite3.Row) -> dict[str, Any]:
     geojson_raw = row["geojson"] or "{}"
     try:
@@ -1439,17 +2244,20 @@ def _map_route_from_row(row: sqlite3.Row) -> dict[str, Any]:
         geojson = {}
     if not isinstance(geojson, dict):
         geojson = {}
+    periods = _periods_from_value(row["periods"], fallback=row["period"])
     return {
         "id": row["id"],
         "name": row["name"],
         "description": row["description"],
         "period": row["period"],
+        "periods": periods,
         "route_type": row["route_type"],
         "geojson": geojson,
         "confidence": row["confidence"],
         "confidence_rank": int(row["confidence_rank"]),
         "source_name": row["source_name"],
         "source_url": row["source_url"],
+        "source_id": row["source_id"] if "source_id" in row.keys() else "",
         "notes": row["notes"],
     }
 
@@ -1475,15 +2283,47 @@ def _historical_layer_from_row(row: sqlite3.Row) -> dict[str, Any]:
         geojson = {}
     if not isinstance(geojson, dict):
         geojson = {}
+    periods = _periods_from_value(row["periods"], fallback=row["period"])
     return {
         "id": row["id"],
         "name": row["name"],
         "period": row["period"],
+        "periods": periods,
         "description": row["description"],
         "layer_type": row["layer_type"],
         "geojson": geojson,
         "confidence": row["confidence"],
         "confidence_rank": int(row["confidence_rank"]),
+        "source_id": row["source_id"] if "source_id" in row.keys() else "",
+        "source_name": row["source_name"],
+        "source_url": row["source_url"],
+        "notes": row["notes"],
+    }
+
+
+def _political_context_layer_from_row(row: sqlite3.Row) -> dict[str, Any]:
+    geojson_raw = row["geojson"] or "{}"
+    try:
+        geojson = json.loads(geojson_raw)
+    except json.JSONDecodeError:
+        geojson = {}
+    if not isinstance(geojson, dict):
+        geojson = {}
+    periods = _periods_from_value(row["periods"], fallback=row["period"])
+    return {
+        "id": row["id"],
+        "name": row["name"],
+        "entity_type": row["entity_type"],
+        "period": row["period"],
+        "periods": periods,
+        "summary": row["summary"],
+        "description": row["description"],
+        "layer_type": row["layer_type"],
+        "sort_order": int(row["sort_order"]),
+        "geojson": geojson,
+        "confidence": row["confidence"],
+        "confidence_rank": int(row["confidence_rank"]),
+        "source_id": row["source_id"] if "source_id" in row.keys() else "",
         "source_name": row["source_name"],
         "source_url": row["source_url"],
         "notes": row["notes"],
@@ -1491,11 +2331,13 @@ def _historical_layer_from_row(row: sqlite3.Row) -> dict[str, Any]:
 
 
 def _archaeology_site_from_row(row: sqlite3.Row) -> dict[str, Any]:
+    periods = _periods_from_value(row["periods"], fallback=row["period"])
     return {
         "id": row["id"],
         "name": row["name"],
         "site_type": row["site_type"],
         "period": row["period"],
+        "periods": periods,
         "latitude": float(row["latitude"]) if row["latitude"] is not None else None,
         "longitude": float(row["longitude"]) if row["longitude"] is not None else None,
         "modern_location": row["modern_location"],
@@ -1503,6 +2345,7 @@ def _archaeology_site_from_row(row: sqlite3.Row) -> dict[str, Any]:
         "description": row["description"],
         "confidence": row["confidence"],
         "confidence_rank": int(row["confidence_rank"]),
+        "source_id": row["source_id"] if "source_id" in row.keys() else "",
         "source_name": row["source_name"],
         "source_url": row["source_url"],
         "license": row["license"],
@@ -1511,17 +2354,20 @@ def _archaeology_site_from_row(row: sqlite3.Row) -> dict[str, Any]:
 
 
 def _archaeology_item_from_row(row: sqlite3.Row) -> dict[str, Any]:
+    periods = _periods_from_value(row["periods"], fallback=row["period"])
     return {
         "id": row["id"],
         "site_id": row["site_id"],
         "name": row["name"],
         "item_type": row["item_type"],
         "period": row["period"],
+        "periods": periods,
         "relationship": row["relationship"],
         "why_it_matters": row["why_it_matters"],
         "bhf_caution": row["bhf_caution"],
         "confidence": row["confidence"],
         "confidence_rank": int(row["confidence_rank"]),
+        "source_id": row["source_id"] if "source_id" in row.keys() else "",
         "source_name": row["source_name"],
         "source_url": row["source_url"],
         "license": row["license"],
@@ -1530,6 +2376,67 @@ def _archaeology_item_from_row(row: sqlite3.Row) -> dict[str, Any]:
 
 
 def _archaeology_scripture_link_from_row(row: sqlite3.Row) -> dict[str, Any]:
+    return {
+        "id": row["id"],
+        "item_id": row["item_id"],
+        "book": row["book"],
+        "chapter": int(row["chapter"]),
+        "verse_start": int(row["verse_start"]),
+        "verse_end": int(row["verse_end"]),
+        "relationship_type": row["relationship_type"],
+        "notes": row["notes"],
+    }
+
+
+def _political_context_reference_from_row(row: sqlite3.Row) -> dict[str, Any]:
+    return {
+        "id": row["id"],
+        "context_id": row["context_id"],
+        "book": row["book"],
+        "chapter": int(row["chapter"]),
+        "verse_start": int(row["verse_start"]),
+        "verse_end": int(row["verse_end"]),
+        "relationship_type": row["relationship_type"],
+        "notes": row["notes"],
+    }
+
+
+def _manuscript_item_from_row(row: sqlite3.Row) -> dict[str, Any]:
+    related_books_raw = row["related_books"] or "[]"
+    try:
+        related_books = json.loads(related_books_raw)
+    except json.JSONDecodeError:
+        related_books = []
+    if not isinstance(related_books, list):
+        related_books = []
+    periods = _periods_from_value(row["periods"], fallback=row["period"])
+    return {
+        "id": row["id"],
+        "name": row["name"],
+        "manuscript_type": row["manuscript_type"],
+        "language": row["language"],
+        "date": row["date"],
+        "material": row["material"],
+        "discovery_location": row["discovery_location"],
+        "current_location": row["current_location"],
+        "latitude": float(row["latitude"]) if row["latitude"] is not None else None,
+        "longitude": float(row["longitude"]) if row["longitude"] is not None else None,
+        "related_books": [str(book) for book in related_books if str(book).strip()],
+        "period": row["period"],
+        "periods": periods,
+        "significance": row["significance"],
+        "confidence": row["confidence"],
+        "confidence_rank": int(row["confidence_rank"]),
+        "source_id": row["source_id"] if "source_id" in row.keys() else "",
+        "source_name": row["source_name"],
+        "source_url": row["source_url"],
+        "license": row["license"],
+        "notes": row["notes"],
+        "bhf_caution": row["bhf_caution"],
+    }
+
+
+def _manuscript_scripture_link_from_row(row: sqlite3.Row) -> dict[str, Any]:
     return {
         "id": row["id"],
         "item_id": row["item_id"],
@@ -1568,6 +2475,7 @@ def _saved_map_study_from_row(row: sqlite3.Row) -> dict[str, Any]:
         "selected_route_id": row["selected_route_id"],
         "selected_layer_id": row["selected_layer_id"],
         "selected_archaeology_id": row["archaeology_id"],
+        "selected_manuscript_id": row["manuscript_id"],
         "selected_layers": [str(value) for value in selected_layers if str(value).strip()],
         "map_view_state": map_view_state,
         "generated_summary": row["generated_summary"],
@@ -1589,6 +2497,7 @@ def _map_note_from_row(row: sqlite3.Row) -> dict[str, Any]:
         "route_id": row["route_id"],
         "layer_id": row["layer_id"],
         "archaeology_id": row["archaeology_id"],
+        "manuscript_id": row["manuscript_id"],
         "note_body": row["note_body"],
         "created_at": row["created_at"],
         "updated_at": row["updated_at"],
@@ -1601,6 +2510,7 @@ def _map_notes_for_ids(
     route_id: str = "",
     layer_id: str = "",
     archaeology_id: str = "",
+    manuscript_id: str = "",
     path: str | Path = DEFAULT_DB_PATH,
 ) -> list[dict[str, Any]]:
     notes: list[dict[str, Any]] = []
@@ -1612,6 +2522,8 @@ def _map_notes_for_ids(
         notes.extend(list_map_notes(layer_id=layer_id, path=path))
     if archaeology_id:
         notes.extend(list_map_notes(archaeology_id=archaeology_id, path=path))
+    if manuscript_id:
+        notes.extend(list_map_notes(manuscript_id=manuscript_id, path=path))
     unique: list[dict[str, Any]] = []
     seen: set[str] = set()
     for note in notes:
@@ -1661,15 +2573,16 @@ def _seed_biblical_places(connection: sqlite3.Connection) -> None:
         connection.execute(
             """
             INSERT INTO biblical_places (
-                id, name, aliases, latitude, longitude, modern_location,
+                id, name, aliases, periods, latitude, longitude, modern_location,
                 ancient_region, description, confidence, confidence_rank,
                 source_name, source_url, license, notes
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 place["id"],
                 place["name"],
                 json.dumps(place["aliases"]),
+                json.dumps(_BIBLICAL_PLACE_PERIODS.get(place["id"], [BROAD_PERIOD_LABEL])),
                 place["latitude"],
                 place["longitude"],
                 place["modern_location"],
@@ -1714,15 +2627,16 @@ def _seed_map_routes(connection: sqlite3.Connection) -> None:
         connection.execute(
             """
             INSERT INTO map_routes (
-                id, name, description, period, route_type, geojson,
+                id, name, description, period, periods, route_type, geojson,
                 confidence, confidence_rank, source_name, source_url, notes
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 route["id"],
                 route["name"],
                 route["description"],
                 route["period"],
+                json.dumps(_periods_from_value(route.get("periods"), fallback=route["period"])),
                 route["route_type"],
                 json.dumps(route["geojson"]),
                 route["confidence"],
@@ -1763,14 +2677,15 @@ def _seed_historical_layers(connection: sqlite3.Connection) -> None:
         connection.execute(
             """
             INSERT INTO historical_layers (
-                id, name, period, description, layer_type, geojson,
+                id, name, period, periods, description, layer_type, geojson,
                 confidence, confidence_rank, source_name, source_url, notes
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 layer["id"],
                 layer["name"],
                 layer["period"],
+                json.dumps(_periods_from_value(layer.get("periods"), fallback=layer["period"])),
                 layer["description"],
                 layer["layer_type"],
                 json.dumps(layer["geojson"]),
@@ -1779,6 +2694,122 @@ def _seed_historical_layers(connection: sqlite3.Connection) -> None:
                 layer["source_name"],
                 layer["source_url"],
                 layer["notes"],
+            ),
+        )
+
+
+def _seed_political_context(connection: sqlite3.Connection) -> None:
+    existing = connection.execute("SELECT COUNT(*) FROM political_context_layers").fetchone()[0]
+    if existing:
+        return
+
+    for layer in _POLITICAL_CONTEXT_LAYERS_SEED:
+        connection.execute(
+            """
+            INSERT INTO political_context_layers (
+                id, name, entity_type, period, periods, summary, description,
+                layer_type, sort_order, geojson, confidence, confidence_rank,
+                source_name, source_url, notes
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                layer["id"],
+                layer["name"],
+                layer["entity_type"],
+                layer["period"],
+                json.dumps(_periods_from_value(layer.get("periods"), fallback=layer["period"])),
+                layer["summary"],
+                layer["description"],
+                layer["layer_type"],
+                layer["sort_order"],
+                json.dumps(layer["geojson"]),
+                layer["confidence"],
+                layer["confidence_rank"],
+                layer["source_name"],
+                layer["source_url"],
+                layer["notes"],
+            ),
+        )
+
+    for reference in _POLITICAL_CONTEXT_REFERENCES_SEED:
+        connection.execute(
+            """
+            INSERT INTO political_context_references (
+                id, context_id, book, chapter, verse_start, verse_end,
+                relationship_type, notes
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                reference["id"],
+                reference["context_id"],
+                reference["book"],
+                reference["chapter"],
+                reference["verse_start"],
+                reference["verse_end"],
+                reference["relationship_type"],
+                reference["notes"],
+            ),
+        )
+
+
+def _seed_manuscripts(connection: sqlite3.Connection) -> None:
+    existing = connection.execute("SELECT COUNT(*) FROM manuscript_items").fetchone()[0]
+    if existing:
+        return
+
+    for item in _MANUSCRIPT_ITEMS_SEED:
+        connection.execute(
+            """
+            INSERT INTO manuscript_items (
+                id, name, manuscript_type, language, date, material,
+                discovery_location, current_location, latitude, longitude,
+                related_books, period, periods, significance, confidence,
+                confidence_rank, source_name, source_url, license, notes,
+                bhf_caution
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                item["id"],
+                item["name"],
+                item["manuscript_type"],
+                item["language"],
+                item["date"],
+                item["material"],
+                item["discovery_location"],
+                item["current_location"],
+                item["latitude"],
+                item["longitude"],
+                json.dumps(item["related_books"]),
+                item["period"],
+                json.dumps(_periods_from_value(item.get("periods"), fallback=item["period"])),
+                item["significance"],
+                item["confidence"],
+                item["confidence_rank"],
+                item["source_name"],
+                item["source_url"],
+                item["license"],
+                item["notes"],
+                item["bhf_caution"],
+            ),
+        )
+
+    for link in _MANUSCRIPT_SCRIPTURE_LINKS_SEED:
+        connection.execute(
+            """
+            INSERT INTO manuscript_scripture_links (
+                id, item_id, book, chapter, verse_start, verse_end,
+                relationship_type, notes
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                link["id"],
+                link["item_id"],
+                link["book"],
+                link["chapter"],
+                link["verse_start"],
+                link["verse_end"],
+                link["relationship_type"],
+                link["notes"],
             ),
         )
 
@@ -1792,16 +2823,17 @@ def _seed_archaeology(connection: sqlite3.Connection) -> None:
         connection.execute(
             """
             INSERT INTO archaeology_sites (
-                id, name, site_type, period, latitude, longitude,
+                id, name, site_type, period, periods, latitude, longitude,
                 modern_location, ancient_region, description, confidence,
                 confidence_rank, source_name, source_url, license, notes
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 site["id"],
                 site["name"],
                 site["site_type"],
                 site["period"],
+                json.dumps(_periods_from_value(site.get("periods"), fallback=site["period"])),
                 site["latitude"],
                 site["longitude"],
                 site["modern_location"],
@@ -1820,10 +2852,10 @@ def _seed_archaeology(connection: sqlite3.Connection) -> None:
         connection.execute(
             """
             INSERT INTO archaeology_items (
-                id, site_id, name, item_type, period, relationship,
+                id, site_id, name, item_type, period, periods, relationship,
                 why_it_matters, bhf_caution, confidence, confidence_rank,
                 source_name, source_url, license, notes
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 item["id"],
@@ -1831,6 +2863,7 @@ def _seed_archaeology(connection: sqlite3.Connection) -> None:
                 item["name"],
                 item["item_type"],
                 item["period"],
+                json.dumps(_periods_from_value(item.get("periods"), fallback=item["period"])),
                 item["relationship"],
                 item["why_it_matters"],
                 item["bhf_caution"],
@@ -1862,6 +2895,23 @@ def _seed_archaeology(connection: sqlite3.Connection) -> None:
                 link["notes"],
             ),
         )
+
+
+def _backfill_period_columns(connection: sqlite3.Connection) -> None:
+    for place_id, periods in _BIBLICAL_PLACE_PERIODS.items():
+        connection.execute(
+            "UPDATE biblical_places SET periods = ? WHERE id = ? AND (periods IS NULL OR periods = '' OR periods = '[]')",
+            (json.dumps(periods), place_id),
+        )
+
+    for table in ("map_routes", "historical_layers", "archaeology_sites", "archaeology_items"):
+        rows = connection.execute(f"SELECT id, period, periods FROM {table}").fetchall()
+        for row in rows:
+            normalized_periods = _periods_from_value(row["periods"], fallback=row["period"])
+            connection.execute(
+                f"UPDATE {table} SET periods = ? WHERE id = ?",
+                (json.dumps(normalized_periods), row["id"]),
+            )
 
 
 _BIBLICAL_PLACES_SEED: list[dict[str, Any]] = [
@@ -2180,6 +3230,664 @@ _HISTORICAL_LAYERS_SEED: list[dict[str, Any]] = [
         "source_name": "BHF curated local seed; schematic provincial overlay",
         "source_url": "",
         "notes": "This is a broad Roman-period background layer, not a claim about exact administrative borders at a single date.",
+    },
+]
+
+
+_POLITICAL_CONTEXT_LAYERS_SEED: list[dict[str, Any]] = [
+    {
+        "id": "egypt",
+        "name": "Egypt",
+        "entity_type": "kingdom / empire",
+        "period": "Broad / uncertain period",
+        "periods": _POLITICAL_CONTEXT_PERIODS["egypt"],
+        "summary": "Egypt repeatedly appears as a place of refuge, oppression, diplomacy, and symbolic memory.",
+        "description": "A broad political background layer for the Nile kingdom and later imperial Egypt. The footprint is schematic and intentionally coarse.",
+        "layer_type": "political_context",
+        "sort_order": 10,
+        "geojson": {
+            "type": "Feature",
+            "properties": {"title": "Egypt", "confidence": "possible"},
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[[24.0, 31.5], [24.0, 21.0], [36.5, 21.0], [36.5, 31.5], [24.0, 31.5]]],
+            },
+        },
+        "confidence": "possible",
+        "confidence_rank": 2,
+        "source_name": "BHF curated local seed; schematic political context",
+        "source_url": "",
+        "notes": "Use as a broad setting cue, not as a precise boundary reconstruction.",
+    },
+    {
+        "id": "canaanite-city-states",
+        "name": "Canaanite City-States",
+        "entity_type": "city-state network",
+        "period": "Broad / uncertain period",
+        "periods": _POLITICAL_CONTEXT_PERIODS["canaanite-city-states"],
+        "summary": "Late Bronze and early Iron Age Canaan featured overlapping city-state control rather than one clean border map.",
+        "description": "A schematic pre-monarchic political backdrop for Joshua and Judges. This is intentionally broad because the evidence is fragmentary and shifting.",
+        "layer_type": "political_context",
+        "sort_order": 20,
+        "geojson": {
+            "type": "Feature",
+            "properties": {"title": "Canaanite city-states", "confidence": "possible"},
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[[34.0, 34.8], [34.0, 30.5], [36.2, 30.5], [36.2, 34.8], [34.0, 34.8]]],
+            },
+        },
+        "confidence": "possible",
+        "confidence_rank": 2,
+        "source_name": "BHF curated local seed; schematic political context",
+        "source_url": "",
+        "notes": "A broad teaching layer for the overlapping local powers of the land.",
+    },
+    {
+        "id": "philistia",
+        "name": "Philistia",
+        "entity_type": "regional polity",
+        "period": "Divided Kingdom",
+        "periods": _POLITICAL_CONTEXT_PERIODS["philistia"],
+        "summary": "Philistia forms the western coastal political backdrop for many stories in Samuel and Kings.",
+        "description": "A cautious regional overlay for the Philistine coastal plain. It is useful for narrative geography, not for exact border claims.",
+        "layer_type": "political_context",
+        "sort_order": 30,
+        "geojson": {
+            "type": "Feature",
+            "properties": {"title": "Philistia", "confidence": "likely"},
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[[34.1, 32.1], [34.1, 31.0], [35.2, 31.0], [35.2, 32.1], [34.1, 32.1]]],
+            },
+        },
+        "confidence": "likely",
+        "confidence_rank": 4,
+        "source_name": "BHF curated local seed; schematic political context",
+        "source_url": "",
+        "notes": "The coastal plain shifted over time; the layer is deliberately broad.",
+    },
+    {
+        "id": "israel",
+        "name": "Israel",
+        "entity_type": "kingdom",
+        "period": "Divided Kingdom",
+        "periods": _POLITICAL_CONTEXT_PERIODS["israel"],
+        "summary": "The northern kingdom provides the historical frame for many prophetic and royal narratives.",
+        "description": "A schematic northern kingdom layer that highlights the broad historical setting of Israel after the division of the monarchy.",
+        "layer_type": "political_context",
+        "sort_order": 40,
+        "geojson": {
+            "type": "Feature",
+            "properties": {"title": "Israel", "confidence": "possible"},
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[[34.05, 33.8], [34.05, 31.6], [35.95, 31.6], [35.95, 33.8], [34.05, 33.8]]],
+            },
+        },
+        "confidence": "possible",
+        "confidence_rank": 3,
+        "source_name": "BHF curated local seed; schematic political context",
+        "source_url": "",
+        "notes": "The borders are schematic and should not be treated as exact administrative lines.",
+    },
+    {
+        "id": "judah",
+        "name": "Judah",
+        "entity_type": "kingdom",
+        "period": "Divided Kingdom",
+        "periods": _POLITICAL_CONTEXT_PERIODS["judah"],
+        "summary": "Judah is the southern monarchy and the setting for much of the late monarchic and exilic material.",
+        "description": "A cautious Judah overlay for late monarchic, exile, and return-period study. The shape is intentionally broad.",
+        "layer_type": "political_context",
+        "sort_order": 50,
+        "geojson": {
+            "type": "Feature",
+            "properties": {"title": "Judah", "confidence": "possible"},
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[[34.55, 32.8], [34.55, 30.8], [35.9, 30.8], [35.9, 32.8], [34.55, 32.8]]],
+            },
+        },
+        "confidence": "possible",
+        "confidence_rank": 3,
+        "source_name": "BHF curated local seed; schematic political context",
+        "source_url": "",
+        "notes": "Real borders changed over time, so the overlay stays intentionally approximate.",
+    },
+    {
+        "id": "aram-damascus",
+        "name": "Aram-Damascus",
+        "entity_type": "regional kingdom",
+        "period": "Assyrian period",
+        "periods": _POLITICAL_CONTEXT_PERIODS["aram-damascus"],
+        "summary": "Aram-Damascus is a key northern neighbor in the prophetic and monarchic narratives.",
+        "description": "A schematic overlay for the Aramean political sphere around Damascus. It is useful for conflict context and diplomatic framing.",
+        "layer_type": "political_context",
+        "sort_order": 60,
+        "geojson": {
+            "type": "Feature",
+            "properties": {"title": "Aram-Damascus", "confidence": "possible"},
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[[35.4, 37.2], [35.4, 32.0], [40.0, 32.0], [40.0, 37.2], [35.4, 37.2]]],
+            },
+        },
+        "confidence": "possible",
+        "confidence_rank": 3,
+        "source_name": "BHF curated local seed; schematic political context",
+        "source_url": "",
+        "notes": "Use as a regional cue for Assyrian-era conflicts and alliances.",
+    },
+    {
+        "id": "assyria",
+        "name": "Assyria",
+        "entity_type": "empire",
+        "period": "Assyrian period",
+        "periods": _POLITICAL_CONTEXT_PERIODS["assyria"],
+        "summary": "Assyria is the dominant imperial background for the fall of the northern kingdom and the Assyrian crisis.",
+        "description": "A broad imperial overlay for the Neo-Assyrian sphere. It is schematic and intentionally oversized for study orientation.",
+        "layer_type": "political_context",
+        "sort_order": 70,
+        "geojson": {
+            "type": "Feature",
+            "properties": {"title": "Assyria", "confidence": "likely"},
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[[35.0, 38.5], [35.0, 28.5], [48.5, 28.5], [48.5, 38.5], [35.0, 38.5]]],
+            },
+        },
+        "confidence": "likely",
+        "confidence_rank": 4,
+        "source_name": "BHF curated local seed; schematic political context",
+        "source_url": "",
+        "notes": "The imperial extent changed by reign and decade; this is a broad study layer only.",
+    },
+    {
+        "id": "babylon",
+        "name": "Babylon",
+        "entity_type": "empire",
+        "period": "Babylonian period",
+        "periods": _POLITICAL_CONTEXT_PERIODS["babylon"],
+        "summary": "Babylon frames exile, imperial displacement, and return-from-exile narratives.",
+        "description": "A broad imperial overlay for the Neo-Babylonian sphere. It is intended to anchor exilic study passages without overstating precision.",
+        "layer_type": "political_context",
+        "sort_order": 80,
+        "geojson": {
+            "type": "Feature",
+            "properties": {"title": "Babylon", "confidence": "likely"},
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[[42.5, 36.0], [42.5, 29.0], [49.5, 29.0], [49.5, 36.0], [42.5, 36.0]]],
+            },
+        },
+        "confidence": "likely",
+        "confidence_rank": 4,
+        "source_name": "BHF curated local seed; schematic political context",
+        "source_url": "",
+        "notes": "A broad frame for exilic material; do not read it as a precise border reconstruction.",
+    },
+    {
+        "id": "persia",
+        "name": "Persia",
+        "entity_type": "empire",
+        "period": "Persian period",
+        "periods": _POLITICAL_CONTEXT_PERIODS["persia"],
+        "summary": "Persia is the imperial context for return, rebuilding, and post-exilic administration.",
+        "description": "A broad imperial overlay for the Persian period. The layer is schematic and intended only for historical orientation.",
+        "layer_type": "political_context",
+        "sort_order": 90,
+        "geojson": {
+            "type": "Feature",
+            "properties": {"title": "Persia", "confidence": "possible"},
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[[44.0, 40.0], [44.0, 24.0], [63.0, 24.0], [63.0, 40.0], [44.0, 40.0]]],
+            },
+        },
+        "confidence": "possible",
+        "confidence_rank": 3,
+        "source_name": "BHF curated local seed; schematic political context",
+        "source_url": "",
+        "notes": "The Persian imperial span is intentionally broad and simplified.",
+    },
+    {
+        "id": "greece",
+        "name": "Greece",
+        "entity_type": "empire / cultural sphere",
+        "period": "Hellenistic period",
+        "periods": _POLITICAL_CONTEXT_PERIODS["greece"],
+        "summary": "Greece marks the Hellenistic world that reshaped the eastern Mediterranean after Alexander.",
+        "description": "A broad Hellenistic political-cultural overlay for study of the intertestamental world and related texts.",
+        "layer_type": "political_context",
+        "sort_order": 100,
+        "geojson": {
+            "type": "Feature",
+            "properties": {"title": "Greece", "confidence": "possible"},
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[[20.0, 42.0], [20.0, 30.0], [42.0, 30.0], [42.0, 42.0], [20.0, 42.0]]],
+            },
+        },
+        "confidence": "possible",
+        "confidence_rank": 2,
+        "source_name": "BHF curated local seed; schematic political context",
+        "source_url": "",
+        "notes": "A broad Hellenistic frame rather than a claim about precise control lines.",
+    },
+    {
+        "id": "rome",
+        "name": "Rome",
+        "entity_type": "empire",
+        "period": "NT / Roman period",
+        "periods": _POLITICAL_CONTEXT_PERIODS["rome"],
+        "summary": "Rome is the imperial context for the Gospels and Acts.",
+        "description": "A broad Roman imperial overlay for New Testament study. It keeps the map context careful and schematic.",
+        "layer_type": "political_context",
+        "sort_order": 110,
+        "geojson": {
+            "type": "Feature",
+            "properties": {"title": "Rome", "confidence": "likely"},
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[[10.0, 45.0], [10.0, 30.0], [45.0, 30.0], [45.0, 45.0], [10.0, 45.0]]],
+            },
+        },
+        "confidence": "likely",
+        "confidence_rank": 4,
+        "source_name": "BHF curated local seed; schematic political context",
+        "source_url": "",
+        "notes": "A broad imperial frame for the New Testament rather than a reconstruction of province-by-province borders.",
+    },
+]
+
+
+_POLITICAL_CONTEXT_REFERENCES_SEED: list[dict[str, Any]] = [
+    {
+        "id": "pcr-egypt-1",
+        "context_id": "egypt",
+        "book": "Exodus",
+        "chapter": 1,
+        "verse_start": 8,
+        "verse_end": 14,
+        "relationship_type": "historical_context",
+        "notes": "Background of oppression and state power in Egypt.",
+    },
+    {
+        "id": "pcr-egypt-2",
+        "context_id": "egypt",
+        "book": "Matthew",
+        "chapter": 2,
+        "verse_start": 13,
+        "verse_end": 15,
+        "relationship_type": "historical_context",
+        "notes": "Egypt as a refuge setting in the infancy narrative.",
+    },
+    {
+        "id": "pcr-canaan-1",
+        "context_id": "canaanite-city-states",
+        "book": "Joshua",
+        "chapter": 11,
+        "verse_start": 1,
+        "verse_end": 23,
+        "relationship_type": "historical_context",
+        "notes": "Shows the network of local powers in the land before monarchy.",
+    },
+    {
+        "id": "pcr-philistia-1",
+        "context_id": "philistia",
+        "book": "1 Samuel",
+        "chapter": 4,
+        "verse_start": 1,
+        "verse_end": 22,
+        "relationship_type": "historical_context",
+        "notes": "Philistine pressure and conflict with Israel.",
+    },
+    {
+        "id": "pcr-israel-1",
+        "context_id": "israel",
+        "book": "1 Kings",
+        "chapter": 12,
+        "verse_start": 16,
+        "verse_end": 33,
+        "relationship_type": "historical_context",
+        "notes": "The northern kingdom emerges after the division of the monarchy.",
+    },
+    {
+        "id": "pcr-judah-1",
+        "context_id": "judah",
+        "book": "2 Kings",
+        "chapter": 18,
+        "verse_start": 13,
+        "verse_end": 37,
+        "relationship_type": "historical_context",
+        "notes": "Judah under Assyrian pressure in the late monarchic period.",
+    },
+    {
+        "id": "pcr-aram-1",
+        "context_id": "aram-damascus",
+        "book": "2 Kings",
+        "chapter": 8,
+        "verse_start": 7,
+        "verse_end": 15,
+        "relationship_type": "historical_context",
+        "notes": "Aram-Damascus in the wider monarchic conflict world.",
+    },
+    {
+        "id": "pcr-assyria-1",
+        "context_id": "assyria",
+        "book": "Isaiah",
+        "chapter": 36,
+        "verse_start": 1,
+        "verse_end": 22,
+        "relationship_type": "historical_context",
+        "notes": "Assyrian invasion and diplomatic pressure.",
+    },
+    {
+        "id": "pcr-babylon-1",
+        "context_id": "babylon",
+        "book": "2 Kings",
+        "chapter": 24,
+        "verse_start": 10,
+        "verse_end": 17,
+        "relationship_type": "historical_context",
+        "notes": "Beginning of the exile setting.",
+    },
+    {
+        "id": "pcr-persia-1",
+        "context_id": "persia",
+        "book": "Ezra",
+        "chapter": 1,
+        "verse_start": 1,
+        "verse_end": 4,
+        "relationship_type": "historical_context",
+        "notes": "Persian policy frame for return and rebuilding.",
+    },
+    {
+        "id": "pcr-greece-1",
+        "context_id": "greece",
+        "book": "Daniel",
+        "chapter": 8,
+        "verse_start": 20,
+        "verse_end": 22,
+        "relationship_type": "historical_context",
+        "notes": "Hellenistic imperial background in apocalyptic imagery.",
+    },
+    {
+        "id": "pcr-rome-1",
+        "context_id": "rome",
+        "book": "Luke",
+        "chapter": 2,
+        "verse_start": 1,
+        "verse_end": 7,
+        "relationship_type": "historical_context",
+        "notes": "Roman administrative setting for the infancy narrative.",
+    },
+    {
+        "id": "pcr-rome-2",
+        "context_id": "rome",
+        "book": "John",
+        "chapter": 19,
+        "verse_start": 1,
+        "verse_end": 16,
+        "relationship_type": "historical_context",
+        "notes": "Roman provincial power in the passion narrative.",
+    },
+]
+
+
+_MANUSCRIPT_ITEMS_SEED: list[dict[str, Any]] = [
+    {
+        "id": "dead-sea-scrolls",
+        "name": "Dead Sea Scrolls",
+        "manuscript_type": "manuscript corpus",
+        "language": "Hebrew / Aramaic / Greek",
+        "date": "3rd century BC to 1st century AD",
+        "material": "parchment, papyrus, and leather",
+        "discovery_location": "Qumran caves, Dead Sea region",
+        "current_location": "Multiple repositories, including the Israel Museum and other institutions",
+        "latitude": 31.745,
+        "longitude": 35.459,
+        "related_books": ["Isaiah", "Psalms", "Deuteronomy", "Daniel"],
+        "period": "Second Temple period",
+        "periods": _MANUSCRIPT_PERIODS["dead-sea-scrolls"],
+        "significance": "A major textual witness to Jewish scripture and Second Temple scribal practice.",
+        "confidence": "strong",
+        "confidence_rank": 5,
+        "source_name": "BHF curated local seed",
+        "source_url": "",
+        "license": "Local curated data",
+        "notes": "The corpus is diverse; no single scroll should be treated as representative of the whole collection.",
+        "bhf_caution": "Use the corpus as textual evidence, not as a shortcut to uniformity or certainty on every reading.",
+    },
+    {
+        "id": "nash-papyrus",
+        "name": "Nash Papyrus",
+        "manuscript_type": "papyrus fragment",
+        "language": "Hebrew",
+        "date": "2nd century BC to 1st century BC",
+        "material": "papyrus",
+        "discovery_location": "Egypt, exact provenance uncertain",
+        "current_location": "Cambridge University Library",
+        "latitude": 30.044,
+        "longitude": 31.236,
+        "related_books": ["Exodus", "Deuteronomy"],
+        "period": "Hellenistic period",
+        "periods": _MANUSCRIPT_PERIODS["nash-papyrus"],
+        "significance": "An early Hebrew witness to the Decalogue and the Shema tradition.",
+        "confidence": "possible",
+        "confidence_rank": 3,
+        "source_name": "BHF curated local seed",
+        "source_url": "",
+        "license": "Local curated data",
+        "notes": "The manuscript's discovery history is less secure than some other witnesses, so the map keeps its placement cautious.",
+        "bhf_caution": "Treat the location as a study approximation and avoid overclaiming provenance precision.",
+    },
+    {
+        "id": "codex-sinaiticus",
+        "name": "Codex Sinaiticus",
+        "manuscript_type": "codex",
+        "language": "Greek",
+        "date": "4th century AD",
+        "material": "parchment",
+        "discovery_location": "St Catherine's Monastery, Sinai",
+        "current_location": "Split between the British Library, Leipzig University Library, St Catherine's Monastery, and the National Library of Russia",
+        "latitude": 28.558,
+        "longitude": 33.976,
+        "related_books": ["Genesis", "Psalms", "Matthew", "John", "Romans", "Hebrews", "Revelation"],
+        "period": "NT / Roman period",
+        "periods": _MANUSCRIPT_PERIODS["codex-sinaiticus"],
+        "significance": "A major early continuous-text witness to the Christian scriptures.",
+        "confidence": "strong",
+        "confidence_rank": 5,
+        "source_name": "BHF curated local seed",
+        "source_url": "",
+        "license": "Local curated data",
+        "notes": "The codex is now divided among repositories, so the map uses its discovery location for orientation.",
+        "bhf_caution": "The codex is important evidence, but it does not by itself settle every textual question.",
+    },
+    {
+        "id": "codex-vaticanus",
+        "name": "Codex Vaticanus",
+        "manuscript_type": "codex",
+        "language": "Greek",
+        "date": "4th century AD",
+        "material": "parchment",
+        "discovery_location": "Unknown / not securely recorded",
+        "current_location": "Vatican Library",
+        "latitude": 41.903,
+        "longitude": 12.454,
+        "related_books": ["Genesis", "Psalms", "Isaiah", "Matthew", "John", "Romans"],
+        "period": "NT / Roman period",
+        "periods": _MANUSCRIPT_PERIODS["codex-vaticanus"],
+        "significance": "One of the most important early biblical codices.",
+        "confidence": "strong",
+        "confidence_rank": 5,
+        "source_name": "BHF curated local seed",
+        "source_url": "",
+        "license": "Local curated data",
+        "notes": "The discovery history is unclear, so the marker uses the current repository for map orientation.",
+        "bhf_caution": "A major witness does not mean a complete answer; keep it as evidence within the wider textual tradition.",
+    },
+    {
+        "id": "aleppo-codex",
+        "name": "Aleppo Codex",
+        "manuscript_type": "codex",
+        "language": "Hebrew",
+        "date": "10th century AD",
+        "material": "parchment",
+        "discovery_location": "Aleppo, Syria",
+        "current_location": "Israel Museum, Jerusalem",
+        "latitude": 36.202,
+        "longitude": 37.134,
+        "related_books": ["Deuteronomy", "Psalms", "Isaiah", "Malachi"],
+        "period": "NT / Roman period",
+        "periods": _MANUSCRIPT_PERIODS["aleppo-codex"],
+        "significance": "A landmark Masoretic manuscript for the Hebrew Bible textual tradition.",
+        "confidence": "strong",
+        "confidence_rank": 5,
+        "source_name": "BHF curated local seed",
+        "source_url": "",
+        "license": "Local curated data",
+        "notes": "The map uses the historical discovery context; the manuscript is now held in Jerusalem.",
+        "bhf_caution": "A later medieval manuscript can still be an important witness without being the earliest possible reading.",
+    },
+    {
+        "id": "chester-beatty-papyri",
+        "name": "Chester Beatty Papyri",
+        "manuscript_type": "papyrus codices",
+        "language": "Greek",
+        "date": "2nd to 4th century AD",
+        "material": "papyrus",
+        "discovery_location": "Egypt, likely the Fayum region",
+        "current_location": "Various repositories",
+        "latitude": 29.31,
+        "longitude": 30.84,
+        "related_books": ["Genesis", "Psalms", "Isaiah", "Matthew", "Mark", "John", "Acts", "Pauline Epistles"],
+        "period": "NT / Roman period",
+        "periods": _MANUSCRIPT_PERIODS["chester-beatty-papyri"],
+        "significance": "An important early papyrus group for Old and New Testament textual study.",
+        "confidence": "likely",
+        "confidence_rank": 4,
+        "source_name": "BHF curated local seed",
+        "source_url": "",
+        "license": "Local curated data",
+        "notes": "The collection is multiple codices rather than a single unified manuscript.",
+        "bhf_caution": "Use the collection as witness data, not as a blanket rule for every book or reading.",
+    },
+]
+
+
+_MANUSCRIPT_SCRIPTURE_LINKS_SEED: list[dict[str, Any]] = [
+    {
+        "id": "msl-dss-isaiah",
+        "item_id": "dead-sea-scrolls",
+        "book": "Isaiah",
+        "chapter": 40,
+        "verse_start": 1,
+        "verse_end": 11,
+        "relationship_type": "textual_witness",
+        "notes": "Representative prophetic text among the scroll corpus.",
+    },
+    {
+        "id": "msl-dss-deut",
+        "item_id": "dead-sea-scrolls",
+        "book": "Deuteronomy",
+        "chapter": 6,
+        "verse_start": 4,
+        "verse_end": 9,
+        "relationship_type": "textual_witness",
+        "notes": "Representative Torah text among the scroll corpus.",
+    },
+    {
+        "id": "msl-nash-exodus",
+        "item_id": "nash-papyrus",
+        "book": "Exodus",
+        "chapter": 20,
+        "verse_start": 1,
+        "verse_end": 17,
+        "relationship_type": "textual_witness",
+        "notes": "The Decalogue tradition is part of the papyrus's textual significance.",
+    },
+    {
+        "id": "msl-sinaiticus-matthew",
+        "item_id": "codex-sinaiticus",
+        "book": "Matthew",
+        "chapter": 1,
+        "verse_start": 1,
+        "verse_end": 25,
+        "relationship_type": "textual_witness",
+        "notes": "Representative Gospel text from the codex.",
+    },
+    {
+        "id": "msl-sinaiticus-john",
+        "item_id": "codex-sinaiticus",
+        "book": "John",
+        "chapter": 1,
+        "verse_start": 1,
+        "verse_end": 18,
+        "relationship_type": "textual_witness",
+        "notes": "Representative Johannine text from the codex.",
+    },
+    {
+        "id": "msl-vaticanus-psalms",
+        "item_id": "codex-vaticanus",
+        "book": "Psalms",
+        "chapter": 23,
+        "verse_start": 1,
+        "verse_end": 6,
+        "relationship_type": "textual_witness",
+        "notes": "Representative Old Testament witness from the codex.",
+    },
+    {
+        "id": "msl-vaticanus-romans",
+        "item_id": "codex-vaticanus",
+        "book": "Romans",
+        "chapter": 8,
+        "verse_start": 1,
+        "verse_end": 39,
+        "relationship_type": "textual_witness",
+        "notes": "Representative Pauline witness from the codex.",
+    },
+    {
+        "id": "msl-aleppo-isaiah",
+        "item_id": "aleppo-codex",
+        "book": "Isaiah",
+        "chapter": 53,
+        "verse_start": 1,
+        "verse_end": 12,
+        "relationship_type": "textual_witness",
+        "notes": "Representative prophetic witness from the Aleppo Codex.",
+    },
+    {
+        "id": "msl-aleppo-psalms",
+        "item_id": "aleppo-codex",
+        "book": "Psalms",
+        "chapter": 119,
+        "verse_start": 1,
+        "verse_end": 176,
+        "relationship_type": "textual_witness",
+        "notes": "Representative Psalms witness from the Aleppo Codex.",
+    },
+    {
+        "id": "msl-chester-beatty-gospels",
+        "item_id": "chester-beatty-papyri",
+        "book": "Mark",
+        "chapter": 1,
+        "verse_start": 1,
+        "verse_end": 20,
+        "relationship_type": "textual_witness",
+        "notes": "Representative Gospel text for the papyrus collection.",
+    },
+    {
+        "id": "msl-chester-beatty-acts",
+        "item_id": "chester-beatty-papyri",
+        "book": "Acts",
+        "chapter": 1,
+        "verse_start": 1,
+        "verse_end": 26,
+        "relationship_type": "textual_witness",
+        "notes": "Representative Acts text for the papyrus collection.",
     },
 ]
 

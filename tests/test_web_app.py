@@ -18,6 +18,7 @@ from bhf_agent.models import (
 )
 from bhf_web.forms import config_from_form
 from bhf_web.forms import load_web_defaults
+from bhf_agent.study_db import get_source, initialize_database, list_sources
 
 try:
     from bhf_web.app import AskJob, app
@@ -196,6 +197,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("word_study", script)
         self.assertIn("saveLatestStudy", script)
         self.assertIn("loadSavedStudies", script)
+        self.assertIn("open_map_panel", script)
+        self.assertNotIn("studyAction.type === \"maps\"", script)
 
         map_script = Path("bhf_web/static/maps/MapPanel.js").read_text(encoding="utf-8")
         self.assertIn("renderSelectedMarker", map_script)
@@ -206,7 +209,10 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("renderSelectedRoute", map_script)
         self.assertIn("buildRouteCautionNote", map_script)
         self.assertIn("loadArchaeologyForPassage", map_script)
+        self.assertIn("loadManuscriptsForPassage", map_script)
         self.assertIn("loadRoutesForPassage", map_script)
+        self.assertIn("renderRelatedPassages", map_script)
+        self.assertIn("renderRelatedPassagesList", map_script)
         self.assertIn("renderSelectedHistoricalLayer", map_script)
         self.assertIn("buildHistoricalLayerCautionNote", map_script)
         self.assertIn("loadHistoricalLayers", map_script)
@@ -214,6 +220,50 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("renderSavedMapStudies", map_script)
         self.assertIn("openSavedMapStudy", map_script)
         self.assertIn("addCurrentMapNote", map_script)
+        self.assertIn("renderSelectedManuscript", map_script)
+        self.assertIn("buildManuscriptCautionNote", map_script)
+        self.assertIn("setManuscriptVisibility", map_script)
+        self.assertIn("renderSourceAttribution", map_script)
+        self.assertIn("/sources/", map_script)
+        self.assertIn("map-attribution", map_script)
+        self.assertIn("reset_map_view", map_script)
+        self.assertIn("data-passage-shortcut", map_script)
+        self.assertIn("submitRelatedPassageShortcut", map_script)
+        self.assertIn("setReaderPassageContext", map_script)
+        bible_map_script = Path("bhf_web/static/maps/BibleMap.js").read_text(encoding="utf-8")
+        self.assertIn("map-entity-marker", bible_map_script)
+        self.assertIn("entityMarkerIcon", bible_map_script)
+        index_html = Path("bhf_web/templates/index.html").read_text(encoding="utf-8")
+        self.assertNotIn('data-context-action="maps"', index_html)
+        self.assertIn('data-context-action="open_map_panel"', index_html)
+        self.assertNotIn('data-context-action="show_on_map"', index_html)
+
+    def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
+        style = Path("bhf_web/static/style.css").read_text(encoding="utf-8")
+
+        self.assertIn(".map-entity-marker", style)
+        self.assertIn(".map-entity-marker--place", style)
+        self.assertIn(".map-entity-marker--archaeology", style)
+        self.assertIn(".map-entity-marker--manuscript", style)
+        self.assertIn(".map-shortcut", style)
+        self.assertIn(".map-details-card .compact", style)
+        self.assertIn("@media (max-width: 680px)", style)
+        self.assertIn(".map-panel-body {\n    gap: 10px;", style)
+        self.assertIn(".map-details-panel,\n  .saved-map-study {\n    padding: 12px;", style)
+
+
+class SourceRegistryTests(unittest.TestCase):
+    def test_sources_are_seeded_and_resolve_attribution(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            db_path = Path(tmpdir) / "study.sqlite"
+            initialize_database(db_path)
+            sources = list_sources(path=db_path)
+
+            self.assertGreaterEqual(len(sources), 1)
+            source = get_source(sources[0]["id"], path=db_path)
+            self.assertIn("reference_count", source)
+            self.assertIn("references", source)
+            self.assertGreaterEqual(source["reference_count"], 0)
 
 
 @unittest.skipUnless(HAS_WEB_DEPS, "FastAPI test dependencies are not installed")
@@ -227,6 +277,7 @@ class WebAppTests(unittest.TestCase):
 
         self.assertEqual(response["status"], 200)
         self.assertIn("BHF ASV Reader", response["body"])
+        self.assertIn("/curation", response["body"])
         self.assertIn("ASV Bible", response["body"])
         self.assertIn("book-select", response["body"])
         self.assertIn("reader-context-menu", response["body"])
@@ -237,9 +288,8 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("data-context-action=\"fulfillment_nt\"", response["body"])
         self.assertIn("data-context-action=\"compare_translations\"", response["body"])
         self.assertIn("data-context-action=\"timeline\"", response["body"])
-        self.assertIn("data-context-action=\"maps\"", response["body"])
         self.assertIn("data-context-action=\"ask_location\"", response["body"])
-        self.assertIn("data-context-action=\"show_on_map\"", response["body"])
+        self.assertIn("data-context-action=\"open_map_panel\"", response["body"])
         self.assertIn("data-context-action=\"save_map_study\"", response["body"])
         self.assertIn("data-context-action=\"map_note\"", response["body"])
         self.assertIn("data-context-action=\"compare_archaeology\"", response["body"])
@@ -251,8 +301,10 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("map-stage", response["body"])
         self.assertIn("map-details", response["body"])
         self.assertIn("data-archaeology-toggle", response["body"])
+        self.assertIn("data-manuscript-toggle", response["body"])
         self.assertIn("data-route-toggle", response["body"])
         self.assertIn("data-historical-period", response["body"])
+        self.assertIn("Broad / uncertain period", response["body"])
         self.assertIn("saved-map-studies", response["body"])
         self.assertIn("map_context", response["body"])
         self.assertIn("leaflet.css", response["body"])
@@ -266,6 +318,91 @@ class WebAppTests(unittest.TestCase):
         self.assertNotIn("data-total-elapsed", response["body"])
         self.assertNotIn("status-percent", response["body"])
 
+    def test_get_curation_page_returns_200(self):
+        with self._temp_curation_db() as db_path:
+            initialize_database(db_path)
+            with patch("bhf_web.app.STUDY_DB_PATH", db_path):
+                response = asgi_request("GET", "/curation")
+
+        self.assertEqual(response["status"], 200)
+        self.assertIn("BHF Curation", response["body"])
+        self.assertIn("Places", response["body"])
+        self.assertIn("Confidence Labels", response["body"])
+
+    def test_curation_record_crud_and_bundle_import(self):
+        with self._temp_curation_db() as db_path:
+            initialize_database(db_path)
+            with patch("bhf_web.app.STUDY_DB_PATH", db_path):
+                create = asgi_request(
+                    "POST",
+                    "/api/curation/confidence_labels",
+                    data={
+                        "record_json": json.dumps(
+                            {
+                                "label": "reviewed",
+                                "rank": 6,
+                                "description": "Manually reviewed entry",
+                                "notes": "local test",
+                            }
+                        )
+                    },
+                )
+                self.assertEqual(create["status"], 201)
+                created = json.loads(create["body"])
+                self.assertEqual(created["label"], "reviewed")
+                created_id = created["id"]
+
+                listed = json.loads(
+                    asgi_request("GET", "/api/curation/confidence_labels")["body"]
+                )["records"]
+                self.assertTrue(any(record["id"] == created_id for record in listed))
+
+                export = json.loads(asgi_request("GET", "/api/curation/export")["body"])
+                self.assertIn("collections", export)
+                self.assertIn("confidence_labels", export["collections"])
+
+                delete = asgi_request(
+                    "POST",
+                    f"/api/curation/confidence_labels/{created_id}/delete",
+                )
+                self.assertEqual(delete["status"], 200)
+
+                after_delete = json.loads(
+                    asgi_request("GET", "/api/curation/confidence_labels")["body"]
+                )["records"]
+                self.assertFalse(any(record["id"] == created_id for record in after_delete))
+
+                bundle = {
+                    "collections": {
+                        "confidence_labels": [
+                            {
+                                "id": "curated-review",
+                                "label": "curated-review",
+                                "rank": 7,
+                                "description": "Imported review label",
+                                "notes": "",
+                            }
+                        ]
+                    }
+                }
+                imported = asgi_request(
+                    "POST",
+                    "/api/curation/import",
+                    data={"record_json": json.dumps(bundle)},
+                )
+                self.assertEqual(imported["status"], 200)
+                imported_payload = json.loads(imported["body"])
+                self.assertEqual(imported_payload["imported"]["confidence_labels"], 1)
+
+                imported_records = json.loads(
+                    asgi_request("GET", "/api/curation/confidence_labels")["body"]
+                )["records"]
+                self.assertEqual(len(imported_records), 1)
+                self.assertEqual(imported_records[0]["id"], "curated-review")
+
+    def _temp_curation_db(self):
+        return tempfile.TemporaryDirectory()
+
     def test_sample_maps_route_returns_markers(self):
         response = asgi_request("GET", "/api/maps/biblical-places")
 
@@ -278,7 +415,10 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("longitude", jerusalem)
         self.assertIn("aliases", jerusalem)
         self.assertIn("confidence", jerusalem)
+        self.assertIn("periods", jerusalem)
         self.assertIn("related_references", jerusalem)
+        self.assertIn("related_passages", jerusalem)
+        self.assertIn("groups", jerusalem["related_passages"])
         self.assertGreaterEqual(jerusalem["reference_count"], 1)
 
     def test_archaeology_route_returns_markers(self):
@@ -289,8 +429,22 @@ class WebAppTests(unittest.TestCase):
         self.assertGreaterEqual(len(data["markers"]), 8)
         pilate = next(marker for marker in data["markers"] if marker["id"] == "pilate-stone")
         self.assertEqual(pilate["item_type"], "dedication inscription")
+        self.assertIn("periods", pilate)
         self.assertIn("scripture_links", pilate)
+        self.assertTrue(pilate["source_id"])
+        self.assertIn("source", pilate)
         self.assertEqual(pilate["marker_kind"], "archaeology")
+
+    def test_manuscripts_route_returns_markers(self):
+        response = asgi_request("GET", "/api/maps/manuscripts")
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertGreaterEqual(len(data["markers"]), 4)
+        sinaiticus = next(marker for marker in data["markers"] if marker["id"] == "codex-sinaiticus")
+        self.assertEqual(sinaiticus["manuscript_type"], "codex")
+        self.assertIn("scripture_links", sinaiticus)
+        self.assertEqual(sinaiticus["marker_kind"], "manuscript")
 
     def test_routes_route_returns_seeded_route(self):
         response = asgi_request("GET", "/api/maps/routes")
@@ -300,8 +454,38 @@ class WebAppTests(unittest.TestCase):
         self.assertGreaterEqual(len(data["routes"]), 1)
         route = next(route for route in data["routes"] if route["id"] == "pauls-first-missionary-journey")
         self.assertEqual(route["route_type"], "missionary_journey")
+        self.assertIn("periods", route)
         self.assertEqual(route["geojson"]["geometry"]["type"], "LineString")
         self.assertIn("scripture_links", route)
+
+    def test_period_filter_applies_to_all_map_endpoints(self):
+        places_response = asgi_request("GET", "/api/maps/biblical-places?period=NT+%2F+Roman+period")
+        self.assertEqual(places_response["status"], 200)
+        places_data = json.loads(places_response["body"])
+        self.assertIn("capernaum", {marker["id"] for marker in places_data["markers"]})
+
+        archaeology_response = asgi_request("GET", "/api/maps/archaeology?period=NT+%2F+Roman+period")
+        self.assertEqual(archaeology_response["status"], 200)
+        archaeology_data = json.loads(archaeology_response["body"])
+        self.assertIn("pilate-stone", {marker["id"] for marker in archaeology_data["markers"]})
+
+        routes_response = asgi_request("GET", "/api/maps/routes?period=NT+%2F+Roman+period")
+        self.assertEqual(routes_response["status"], 200)
+        routes_data = json.loads(routes_response["body"])
+        self.assertEqual(
+            {route["id"] for route in routes_data["routes"]},
+            {"pauls-first-missionary-journey"},
+        )
+
+        manuscripts_response = asgi_request("GET", "/api/maps/manuscripts?period=NT+%2F+Roman+period")
+        self.assertEqual(manuscripts_response["status"], 200)
+        manuscripts_data = json.loads(manuscripts_response["body"])
+        self.assertIn("codex-sinaiticus", {marker["id"] for marker in manuscripts_data["markers"]})
+
+        layers_response = asgi_request("GET", "/api/maps/historical-layers?period=Broad+%2F+uncertain+period")
+        self.assertEqual(layers_response["status"], 200)
+        layers_data = json.loads(layers_response["body"])
+        self.assertEqual(layers_data["layers"], [])
 
     def test_places_for_passage_route_filters_and_handles_empty_state(self):
         alias_response = asgi_request(
@@ -324,6 +508,19 @@ class WebAppTests(unittest.TestCase):
         empty_data = json.loads(empty_response["body"])
         self.assertTrue(empty_data["empty_state"])
         self.assertEqual(empty_data["markers"], [])
+
+    def test_related_passages_for_place_route_groups_location_links(self):
+        response = asgi_request("GET", "/api/maps/related-passages-for-place?place_id=jerusalem")
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(data["place_id"], "jerusalem")
+        self.assertGreaterEqual(data["count"], 4)
+
+        direct = next(group for group in data["groups"] if group["group_type"] == "directly_mentioned")
+        self.assertEqual(direct["count"], 2)
+        self.assertEqual([group["count"] for group in direct["testament_groups"]], [1, 1])
+        self.assertTrue(any(group["group_type"] == "same_route" for group in data["groups"]))
+        self.assertTrue(any(group["group_type"] == "same_empire_period" for group in data["groups"]))
 
     def test_routes_for_passage_route_filters_and_handles_empty_state(self):
         route_response = asgi_request(
@@ -366,6 +563,26 @@ class WebAppTests(unittest.TestCase):
         self.assertTrue(empty_archaeology_data["empty_state"])
         self.assertEqual(empty_archaeology_data["markers"], [])
 
+    def test_manuscripts_for_passage_route_filters_and_handles_empty_state(self):
+        manuscript_response = asgi_request(
+            "GET",
+            "/api/maps/manuscripts-for-passage?book=John&chapter=1&verse_start=1&verse_end=18&passage_text="
+            + quote_plus("In the beginning was the Word."),
+        )
+        self.assertEqual(manuscript_response["status"], 200)
+        manuscript_data = json.loads(manuscript_response["body"])
+        self.assertFalse(manuscript_data["empty_state"])
+        self.assertIn("codex-sinaiticus", manuscript_data["matched_manuscript_ids"])
+
+        empty_manuscript_response = asgi_request(
+            "GET",
+            "/api/maps/manuscripts-for-passage?passage_text=" + quote_plus("No manuscript matches here."),
+        )
+        self.assertEqual(empty_manuscript_response["status"], 200)
+        empty_manuscript_data = json.loads(empty_manuscript_response["body"])
+        self.assertTrue(empty_manuscript_data["empty_state"])
+        self.assertEqual(empty_manuscript_data["markers"], [])
+
     def test_historical_layers_route_returns_curated_layers(self):
         response = asgi_request("GET", "/api/maps/historical-layers")
 
@@ -383,6 +600,41 @@ class WebAppTests(unittest.TestCase):
             {layer["period"] for layer in filtered_data["layers"]},
             {"Divided Kingdom"},
         )
+
+    def test_political_context_route_returns_curated_layers(self):
+        response = asgi_request("GET", "/api/maps/political-context")
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertGreaterEqual(len(data["layers"]), 8)
+        rome = next(layer for layer in data["layers"] if layer["id"] == "rome")
+        self.assertEqual(rome["entity_type"], "empire")
+        self.assertEqual(rome["geojson"]["geometry"]["type"], "Polygon")
+        self.assertIn("scripture_links", rome)
+
+        filtered_response = asgi_request("GET", "/api/maps/political-context?period=NT+%2F+Roman+period")
+        self.assertEqual(filtered_response["status"], 200)
+        filtered_data = json.loads(filtered_response["body"])
+        self.assertEqual({layer["id"] for layer in filtered_data["layers"]}, {"rome"})
+
+    def test_political_context_for_passage_route_filters_and_handles_empty_state(self):
+        response = asgi_request(
+            "GET",
+            "/api/maps/political-context-for-passage?book=John&chapter=19&verse_start=1&verse_end=16&passage_text="
+            + quote_plus("Then they led Jesus to Pilate."),
+        )
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertFalse(data["empty_state"])
+        self.assertIn("rome", data["matched_political_context_ids"])
+
+        empty_response = asgi_request(
+            "GET",
+            "/api/maps/political-context-for-passage?passage_text=" + quote_plus("No political context matches here."),
+        )
+        self.assertEqual(empty_response["status"], 200)
+        empty_data = json.loads(empty_response["body"])
+        self.assertTrue(empty_data["empty_state"])
+        self.assertEqual(empty_data["layers"], [])
 
     def test_map_studies_route_creates_lists_and_deletes(self):
         with tempfile.TemporaryDirectory() as tmpdir:

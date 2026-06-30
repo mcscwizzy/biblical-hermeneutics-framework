@@ -333,9 +333,8 @@ function showContextMenu(x, y, context) {
   setContextLabel("fulfillment_nt", isSelection ? "Fulfillment in the NT" : "Fulfillment in the NT");
   setContextLabel("compare_translations", isSelection ? "Compare Translations" : "Compare Translations");
   setContextLabel("timeline", isSelection ? "Timeline" : "Timeline");
-  setContextLabel("maps", isSelection ? "Show on map" : "Show on map");
   setContextLabel("ask_location", isSelection ? "Ask about this location" : "Ask about this location");
-  setContextLabel("show_on_map", isSelection ? "Show on map" : "Show on map");
+  setContextLabel("open_map_panel", isSelection ? "Open map panel" : "Open map panel");
   setContextLabel("save_map_study", "Save map study");
   setContextLabel("map_note", "Add map note");
   setContextLabel("compare_archaeology", "Compare with archaeology");
@@ -405,11 +404,9 @@ async function dispatchStudyAction(studyAction) {
     await createHighlight(studyAction);
   } else if (studyAction.type === "save_study") {
     await saveLatestStudy();
-  } else if (studyAction.type === "maps") {
+  } else if (studyAction.type === "open_map_panel") {
     setFormValue("ask_mode", "");
     setFormValue("study_action", "");
-    openMapPanel(studyAction);
-  } else if (studyAction.type === "show_on_map") {
     openMapPanel(studyAction);
   } else if (studyAction.type === "save_map_study") {
     if (window.BHFMaps && typeof window.BHFMaps.saveCurrentMapStudy === "function") {
@@ -585,11 +582,14 @@ function buildReaderMapContext(studyAction) {
 }
 
 function openMapPanel(context) {
+  const panel = document.querySelector("#map-panel");
+  if (panel) {
+    panel.hidden = false;
+  }
   if (window.BHFMaps && typeof window.BHFMaps.openMapPanel === "function") {
     window.BHFMaps.openMapPanel(context);
     return;
   }
-  window.alert("Map panel is not available yet.");
 }
 
 async function loadNotes(book, chapter) {
