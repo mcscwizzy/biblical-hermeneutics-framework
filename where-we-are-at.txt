@@ -1,0 +1,6 @@
+• Phase 2D is in progress and the first thinning pass is done. I extracted the route-adjacent request/render/curation/ask helpers into bhf_web/services/web_helpers.py, and bhf_web/app.py is down to 1,046 lines
+  from 1,909.
+
+  Verification passed with python3 -m py_compile bhf_web/app.py bhf_web/services/*.py and python3 -m unittest tests.test_web_app tests.test_map_tools (56 tests run, 42 skipped, OK).
+
+  If you want, I can keep going on Phase 2D and do the next pass by splitting the route definitions themselves into a routes/ module instead of leaving them all in app.py.

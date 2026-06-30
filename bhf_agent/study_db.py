@@ -6,16 +6,22 @@ import json
 import sqlite3
 import re
 import uuid
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from .bible import BibleError, normalize_book_name
+from .db.common import (
+    DEFAULT_DB_PATH,
+    StudyDataError,
+    timestamp as _timestamp,
+    validated_reference as _validated_reference,
+)
+from .db.repositories import archaeology as _archaeology_repo
+from .db.repositories import map_notes as _map_notes_repo
+from .db.repositories import maps as _maps_repo
+from .db.repositories import manuscripts as _manuscripts_repo
+from .db.repositories import reader_state as _reader_state_repo
+from .db.repositories import sources as _sources_repo
 
-
-DEFAULT_DB_PATH = Path(".bhf") / "study.sqlite"
-HIGHLIGHT_COLORS = {"yellow", "green", "blue", "pink"}
-DEFAULT_HIGHLIGHT_COLOR = "yellow"
 SCHEMA_VERSION = 12
 BROAD_PERIOD_LABEL = "Broad / uncertain period"
 CANONICAL_PERIOD_LABELS = (
@@ -93,14 +99,8 @@ _MANUSCRIPT_PERIODS = {
     "chester-beatty-papyri": ["NT / Roman period"],
 }
 
-
-class StudyDataError(ValueError):
-    """Raised when study data input or storage cannot be resolved."""
-
-
 def initialize_database(path: str | Path = DEFAULT_DB_PATH) -> None:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
+    _reader_state_repo.initialize_database(path=path, ensure_schema=_ensure_schema)
 
 
 def list_notes(
@@ -108,59 +108,23 @@ def list_notes(
     chapter: int | str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> list[dict[str, Any]]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        if book is None and chapter is None:
-            rows = connection.execute(
-                "SELECT * FROM notes ORDER BY book, chapter, verse_start, created_at"
-            ).fetchall()
-        else:
-            canonical, chapter_number = _reference_filter(book, chapter)
-            rows = connection.execute(
-                """
-                SELECT * FROM notes
-                WHERE book = ? AND chapter = ?
-                ORDER BY verse_start, verse_end, created_at
-                """,
-                (canonical, chapter_number),
-            ).fetchall()
-    return [_note_from_row(row) for row in rows]
+    return _reader_state_repo.list_notes(
+        book=book,
+        chapter=chapter,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 
 
 def create_note(
     data: dict[str, Any],
     path: str | Path = DEFAULT_DB_PATH,
 ) -> dict[str, Any]:
-    note = _validated_note(data)
-    now = _timestamp()
-    note_id = uuid.uuid4().hex
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        connection.execute(
-            """
-            INSERT INTO notes (
-                id, book, chapter, verse_start, verse_end, selected_text,
-                note_body, created_at, updated_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """,
-            (
-                note_id,
-                note["book"],
-                note["chapter"],
-                note["start_verse"],
-                note["end_verse"],
-                note["selected_text"],
-                note["body"],
-                now,
-                now,
-            ),
-        )
-    return {
-        **note,
-        "id": note_id,
-        "created_at": now,
-        "updated_at": now,
-    }
+    return _reader_state_repo.create_note(
+        data,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 
 
 def update_note(
@@ -168,57 +132,20 @@ def update_note(
     updates: dict[str, Any],
     path: str | Path = DEFAULT_DB_PATH,
 ) -> dict[str, Any]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        current_row = connection.execute(
-            "SELECT * FROM notes WHERE id = ?",
-            (note_id,),
-        ).fetchone()
-        if current_row is None:
-            raise StudyDataError("note not found")
-
-        current = _note_from_row(current_row)
-        merged = {**current, **updates}
-        if "note_body" in updates and "body" not in updates:
-            merged["body"] = updates["note_body"]
-        if "verse_start" in updates and "start_verse" not in updates:
-            merged["start_verse"] = updates["verse_start"]
-        if "verse_end" in updates and "end_verse" not in updates:
-            merged["end_verse"] = updates["verse_end"]
-        note = _validated_note(merged)
-        updated_at = _timestamp()
-        connection.execute(
-            """
-            UPDATE notes
-            SET book = ?, chapter = ?, verse_start = ?, verse_end = ?,
-                selected_text = ?, note_body = ?, updated_at = ?
-            WHERE id = ?
-            """,
-            (
-                note["book"],
-                note["chapter"],
-                note["start_verse"],
-                note["end_verse"],
-                note["selected_text"],
-                note["body"],
-                updated_at,
-                note_id,
-            ),
-        )
-        row = connection.execute(
-            "SELECT * FROM notes WHERE id = ?",
-            (note_id,),
-        ).fetchone()
-    return _note_from_row(row)
+    return _reader_state_repo.update_note(
+        note_id,
+        updates,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 
 
 def delete_note(note_id: str, path: str | Path = DEFAULT_DB_PATH) -> bool:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        cursor = connection.execute("DELETE FROM notes WHERE id = ?", (note_id,))
-        if cursor.rowcount == 0:
-            raise StudyDataError("note not found")
-    return True
+    return _reader_state_repo.delete_note(
+        note_id,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 
 
 def list_highlights(
@@ -226,71 +153,31 @@ def list_highlights(
     chapter: int | str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> list[dict[str, Any]]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        if book is None and chapter is None:
-            rows = connection.execute(
-                "SELECT * FROM highlights ORDER BY book, chapter, verse_start, created_at"
-            ).fetchall()
-        else:
-            canonical, chapter_number = _reference_filter(book, chapter)
-            rows = connection.execute(
-                """
-                SELECT * FROM highlights
-                WHERE book = ? AND chapter = ?
-                ORDER BY verse_start, verse_end, created_at
-                """,
-                (canonical, chapter_number),
-            ).fetchall()
-    return [_highlight_from_row(row) for row in rows]
+    return _reader_state_repo.list_highlights(
+        book=book,
+        chapter=chapter,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 
 
 def create_highlight(
     data: dict[str, Any],
     path: str | Path = DEFAULT_DB_PATH,
 ) -> dict[str, Any]:
-    highlight = _validated_highlight(data)
-    now = _timestamp()
-    highlight_id = uuid.uuid4().hex
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        connection.execute(
-            """
-            INSERT INTO highlights (
-                id, book, chapter, verse_start, verse_end, selected_text,
-                color, created_at, updated_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """,
-            (
-                highlight_id,
-                highlight["book"],
-                highlight["chapter"],
-                highlight["start_verse"],
-                highlight["end_verse"],
-                highlight["selected_text"],
-                highlight["color"],
-                now,
-                now,
-            ),
-        )
-    return {
-        **highlight,
-        "id": highlight_id,
-        "created_at": now,
-        "updated_at": now,
-    }
+    return _reader_state_repo.create_highlight(
+        data,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 
 
 def delete_highlight(highlight_id: str, path: str | Path = DEFAULT_DB_PATH) -> bool:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        cursor = connection.execute(
-            "DELETE FROM highlights WHERE id = ?",
-            (highlight_id,),
-        )
-        if cursor.rowcount == 0:
-            raise StudyDataError("highlight not found")
-    return True
+    return _reader_state_repo.delete_highlight(
+        highlight_id,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 
 
 def list_saved_studies(
@@ -298,92 +185,45 @@ def list_saved_studies(
     chapter: int | str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> list[dict[str, Any]]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        if book is None and chapter is None:
-            rows = connection.execute(
-                "SELECT * FROM saved_studies ORDER BY created_at DESC"
-            ).fetchall()
-        else:
-            canonical, chapter_number = _reference_filter(book, chapter)
-            rows = connection.execute(
-                """
-                SELECT * FROM saved_studies
-                WHERE book = ? AND chapter = ?
-                ORDER BY created_at DESC
-                """,
-                (canonical, chapter_number),
-            ).fetchall()
-    return [_saved_study_from_row(row) for row in rows]
+    return _reader_state_repo.list_saved_studies(
+        book=book,
+        chapter=chapter,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 
 
 def get_saved_study(
     study_id: str,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> dict[str, Any]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        row = connection.execute(
-            "SELECT * FROM saved_studies WHERE id = ?",
-            (study_id,),
-        ).fetchone()
-    if row is None:
-        raise StudyDataError("saved study not found")
-    return _saved_study_from_row(row)
+    return _reader_state_repo.get_saved_study(
+        study_id,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 
 
 def create_saved_study(
     data: dict[str, Any],
     path: str | Path = DEFAULT_DB_PATH,
 ) -> dict[str, Any]:
-    study = _validated_saved_study(data)
-    now = _timestamp()
-    study_id = uuid.uuid4().hex
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        connection.execute(
-            """
-            INSERT INTO saved_studies (
-                id, title, book, chapter, verse_start, verse_end, selected_text,
-                study_type, question, answer, created_at, updated_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """,
-            (
-                study_id,
-                study["title"],
-                study["book"],
-                study["chapter"],
-                study["start_verse"],
-                study["end_verse"],
-                study["selected_text"],
-                study["study_type"],
-                study["question"],
-                study["answer"],
-                now,
-                now,
-            ),
-        )
-    return {
-        **study,
-        "id": study_id,
-        "created_at": now,
-        "updated_at": now,
-    }
+    return _reader_state_repo.create_saved_study(
+        data,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 
 
 def delete_saved_study(
     study_id: str,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> bool:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        cursor = connection.execute(
-            "DELETE FROM saved_studies WHERE id = ?",
-            (study_id,),
-        )
-        if cursor.rowcount == 0:
-            raise StudyDataError("saved study not found")
-    return True
+    return _reader_state_repo.delete_saved_study(
+        study_id,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 
 
 def record_study_action(
@@ -391,313 +231,207 @@ def record_study_action(
     data: dict[str, Any],
     path: str | Path = DEFAULT_DB_PATH,
 ) -> dict[str, Any]:
-    reference = _validated_reference(data)
-    now = _timestamp()
-    action_id = uuid.uuid4().hex
-    action = {
-        "id": action_id,
-        "action_type": str(action_type).strip(),
-        **reference,
-        "created_at": now,
-    }
-    if not action["action_type"]:
-        raise StudyDataError("action_type is required")
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        connection.execute(
-            """
-            INSERT INTO study_actions (
-                id, action_type, book, chapter, verse_start, verse_end,
-                selected_text, created_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-            """,
-            (
-                action["id"],
-                action["action_type"],
-                action["book"],
-                action["chapter"],
-                action["start_verse"],
-                action["end_verse"],
-                action["selected_text"],
-                action["created_at"],
-            ),
-        )
-    return action
+    return _reader_state_repo.record_study_action(
+        action_type,
+        data,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 
 
 def list_biblical_places(
     period: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> list[dict[str, Any]]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        rows = connection.execute(
-            """
-            SELECT *
-            FROM biblical_places
-            ORDER BY confidence_rank DESC, name
-            """
-        ).fetchall()
-    places = [_attach_source(_biblical_place_from_row(row), path=path) for row in rows]
-    return [place for place in places if _period_filter_matches(place["periods"], period)]
+    return _maps_repo.list_biblical_places(
+        period=period,
+        path=path,
+        ensure_schema=_ensure_schema,
+        attach_source=_attach_source,
+        period_filter_matches=_period_filter_matches,
+        periods_from_value=_periods_from_value,
+        biblical_place_periods=_BIBLICAL_PLACE_PERIODS,
+    )
 
 
 def get_biblical_place(place_id: str, path: str | Path = DEFAULT_DB_PATH) -> dict[str, Any]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        row = connection.execute(
-            "SELECT * FROM biblical_places WHERE id = ?",
-            (place_id,),
-        ).fetchone()
-    if row is None:
-        raise StudyDataError("biblical place not found")
-    return _attach_source(_biblical_place_from_row(row), path=path)
+    return _maps_repo.get_biblical_place(
+        place_id,
+        path=path,
+        ensure_schema=_ensure_schema,
+        attach_source=_attach_source,
+        periods_from_value=_periods_from_value,
+        biblical_place_periods=_BIBLICAL_PLACE_PERIODS,
+    )
 
 
 def list_place_references(
     place_id: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> list[dict[str, Any]]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        if place_id is None:
-            rows = connection.execute(
-                "SELECT * FROM place_references ORDER BY book, chapter, verse_start, verse_end"
-            ).fetchall()
-        else:
-            rows = connection.execute(
-                """
-                SELECT * FROM place_references
-                WHERE place_id = ?
-                ORDER BY book, chapter, verse_start, verse_end
-                """,
-                (place_id,),
-            ).fetchall()
-    return [_place_reference_from_row(row) for row in rows]
+    return _maps_repo.list_place_references(
+        place_id,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 
 
 def list_map_routes(
     period: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> list[dict[str, Any]]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        rows = connection.execute(
-            """
-            SELECT *
-            FROM map_routes
-            ORDER BY confidence_rank DESC, name
-            """
-        ).fetchall()
-    routes = [_attach_source(_map_route_from_row(row), path=path) for row in rows]
-    for route in routes:
-        route["scripture_links"] = list_route_references(route["id"], path=path)
-        route["reference_count"] = len(route["scripture_links"])
-    return [route for route in routes if _period_filter_matches(route["periods"], period)]
+    return _maps_repo.list_map_routes(
+        period=period,
+        path=path,
+        ensure_schema=_ensure_schema,
+        attach_source=_attach_source,
+        list_route_references=lambda route_id, db_path: list_route_references(route_id, path=db_path),
+        period_filter_matches=_period_filter_matches,
+        periods_from_value=_periods_from_value,
+    )
 
 
 def list_route_references(
     route_id: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> list[dict[str, Any]]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        if route_id is None:
-            rows = connection.execute(
-                "SELECT * FROM route_references ORDER BY book, chapter, verse_start, verse_end"
-            ).fetchall()
-        else:
-            rows = connection.execute(
-                """
-                SELECT * FROM route_references
-                WHERE route_id = ?
-                ORDER BY book, chapter, verse_start, verse_end
-                """,
-                (route_id,),
-            ).fetchall()
-    return [_route_reference_from_row(row) for row in rows]
+    return _maps_repo.list_route_references(
+        route_id,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 
 
 def list_historical_layers(
     period: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> list[dict[str, Any]]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        rows = connection.execute(
-            """
-            SELECT *
-            FROM historical_layers
-            ORDER BY confidence_rank DESC, period, name
-            """
-        ).fetchall()
-    layers = [_attach_source(_historical_layer_from_row(row), path=path) for row in rows]
-    return [layer for layer in layers if _period_filter_matches(layer["periods"], period)]
+    return _maps_repo.list_historical_layers(
+        period=period,
+        path=path,
+        ensure_schema=_ensure_schema,
+        attach_source=_attach_source,
+        period_filter_matches=_period_filter_matches,
+        periods_from_value=_periods_from_value,
+    )
 
 
 def list_political_context_layers(
     period: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> list[dict[str, Any]]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        rows = connection.execute(
-            """
-            SELECT *
-            FROM political_context_layers
-            ORDER BY confidence_rank DESC, sort_order, name
-            """
-        ).fetchall()
-    layers = [_attach_source(_political_context_layer_from_row(row), path=path) for row in rows]
-    for layer in layers:
-        layer["scripture_links"] = list_political_context_references(layer["id"], path=path)
-        layer["reference_count"] = len(layer["scripture_links"])
-    return [layer for layer in layers if _period_filter_matches(layer["periods"], period)]
+    return _maps_repo.list_political_context_layers(
+        period=period,
+        path=path,
+        ensure_schema=_ensure_schema,
+        attach_source=_attach_source,
+        list_political_context_references=lambda layer_id, db_path: list_political_context_references(
+            layer_id, path=db_path
+        ),
+        period_filter_matches=_period_filter_matches,
+        periods_from_value=_periods_from_value,
+    )
 
 
 def get_political_context_layer(
     layer_id: str,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> dict[str, Any]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        row = connection.execute(
-            "SELECT * FROM political_context_layers WHERE id = ?",
-            (layer_id,),
-        ).fetchone()
-    if row is None:
-        raise StudyDataError("political context layer not found")
-    layer = _political_context_layer_from_row(row)
-    layer["scripture_links"] = list_political_context_references(layer["id"], path=path)
-    layer["reference_count"] = len(layer["scripture_links"])
-    return _attach_source(layer, path=path)
+    return _maps_repo.get_political_context_layer(
+        layer_id,
+        path=path,
+        ensure_schema=_ensure_schema,
+        attach_source=_attach_source,
+        list_political_context_references=lambda current_layer_id, db_path: list_political_context_references(
+            current_layer_id, path=db_path
+        ),
+        periods_from_value=_periods_from_value,
+    )
 
 
 def list_political_context_references(
     layer_id: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> list[dict[str, Any]]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        if layer_id is None:
-            rows = connection.execute(
-                "SELECT * FROM political_context_references ORDER BY book, chapter, verse_start, verse_end"
-            ).fetchall()
-        else:
-            rows = connection.execute(
-                """
-                SELECT * FROM political_context_references
-                WHERE context_id = ?
-                ORDER BY book, chapter, verse_start, verse_end
-                """,
-                (layer_id,),
-            ).fetchall()
-    return [_political_context_reference_from_row(row) for row in rows]
+    return _maps_repo.list_political_context_references(
+        layer_id,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 
 
 def list_manuscript_items(
     period: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> list[dict[str, Any]]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        rows = connection.execute(
-            """
-            SELECT *
-            FROM manuscript_items
-            ORDER BY confidence_rank DESC, name
-            """
-        ).fetchall()
-    items = [_attach_source(_manuscript_item_from_row(row), path=path) for row in rows]
-    for item in items:
-        item["scripture_links"] = list_manuscript_scripture_links(item["id"], path=path)
-        item["reference_count"] = len(item["scripture_links"])
-    return [item for item in items if _period_filter_matches(item["periods"], period)]
+    return _manuscripts_repo.list_manuscript_items(
+        period=period,
+        path=path,
+        ensure_schema=_ensure_schema,
+        attach_source=_attach_source,
+        list_manuscript_scripture_links=lambda item_id, db_path: list_manuscript_scripture_links(
+            item_id, path=db_path
+        ),
+        period_filter_matches=_period_filter_matches,
+        periods_from_value=_periods_from_value,
+    )
 
 
 def get_manuscript_item(
     item_id: str,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> dict[str, Any]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        row = connection.execute(
-            "SELECT * FROM manuscript_items WHERE id = ?",
-            (item_id,),
-        ).fetchone()
-    if row is None:
-        raise StudyDataError("manuscript item not found")
-    item = _attach_source(_manuscript_item_from_row(row), path=path)
-    item["scripture_links"] = list_manuscript_scripture_links(item["id"], path=path)
-    item["reference_count"] = len(item["scripture_links"])
-    return item
+    return _manuscripts_repo.get_manuscript_item(
+        item_id,
+        path=path,
+        ensure_schema=_ensure_schema,
+        attach_source=_attach_source,
+        list_manuscript_scripture_links=lambda current_item_id, db_path: list_manuscript_scripture_links(
+            current_item_id, path=db_path
+        ),
+        periods_from_value=_periods_from_value,
+    )
 
 
 def list_manuscript_scripture_links(
     item_id: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> list[dict[str, Any]]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        if item_id is None:
-            rows = connection.execute(
-                "SELECT * FROM manuscript_scripture_links ORDER BY book, chapter, verse_start, verse_end"
-            ).fetchall()
-        else:
-            rows = connection.execute(
-                """
-                SELECT * FROM manuscript_scripture_links
-                WHERE item_id = ?
-                ORDER BY book, chapter, verse_start, verse_end
-                """,
-                (item_id,),
-            ).fetchall()
-    return [_manuscript_scripture_link_from_row(row) for row in rows]
+    return _manuscripts_repo.list_manuscript_scripture_links(
+        item_id,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 
 
 def list_archaeology_sites(
     period: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> list[dict[str, Any]]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        rows = connection.execute(
-            """
-            SELECT *
-            FROM archaeology_sites
-            ORDER BY confidence_rank DESC, name
-            """
-        ).fetchall()
-    sites = [_attach_source(_archaeology_site_from_row(row), path=path) for row in rows]
-    for site in sites:
-        site["archaeology_items"] = list_archaeology_items(site["id"], period=period, path=path)
-        site["scripture_links"] = [
-            link
-            for item in site["archaeology_items"]
-            for link in item.get("scripture_links", [])
-        ]
-        site["reference_count"] = len(site["scripture_links"])
-    return [site for site in sites if _period_filter_matches(site["periods"], period)]
+    return _archaeology_repo.list_archaeology_sites(
+        period=period,
+        path=path,
+        ensure_schema=_ensure_schema,
+        attach_source=_attach_source,
+        list_archaeology_items=lambda site_id, current_period, db_path: list_archaeology_items(
+            site_id, period=current_period, path=db_path
+        ),
+        period_filter_matches=_period_filter_matches,
+        periods_from_value=_periods_from_value,
+    )
 
 
 def get_archaeology_site(site_id: str, path: str | Path = DEFAULT_DB_PATH) -> dict[str, Any]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        row = connection.execute(
-            "SELECT * FROM archaeology_sites WHERE id = ?",
-            (site_id,),
-        ).fetchone()
-    if row is None:
-        raise StudyDataError("archaeology site not found")
-    site = _attach_source(_archaeology_site_from_row(row), path=path)
-    site["archaeology_items"] = list_archaeology_items(site_id, path=path)
-    site["scripture_links"] = [
-        link
-        for item in site["archaeology_items"]
-        for link in item.get("scripture_links", [])
-    ]
-    site["reference_count"] = len(site["scripture_links"])
-    return site
+    return _archaeology_repo.get_archaeology_site(
+        site_id,
+        path=path,
+        ensure_schema=_ensure_schema,
+        attach_source=_attach_source,
+        list_archaeology_items=lambda current_site_id, current_period, db_path: list_archaeology_items(
+            current_site_id, period=current_period, path=db_path
+        ),
+        periods_from_value=_periods_from_value,
+    )
 
 
 def list_archaeology_items(
@@ -705,87 +439,57 @@ def list_archaeology_items(
     period: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> list[dict[str, Any]]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        if site_id is None:
-            rows = connection.execute(
-                "SELECT * FROM archaeology_items ORDER BY confidence_rank DESC, period, name"
-            ).fetchall()
-        else:
-            rows = connection.execute(
-                """
-                SELECT * FROM archaeology_items
-                WHERE site_id = ?
-                ORDER BY confidence_rank DESC, period, name
-                """,
-                (site_id,),
-            ).fetchall()
-    items = [_attach_source(_archaeology_item_from_row(row), path=path) for row in rows]
-    for item in items:
-        item["scripture_links"] = list_archaeology_scripture_links(item["id"], path=path)
-        item["reference_count"] = len(item["scripture_links"])
-    return [item for item in items if _period_filter_matches(item["periods"], period)]
+    return _archaeology_repo.list_archaeology_items(
+        site_id,
+        period,
+        path=path,
+        ensure_schema=_ensure_schema,
+        attach_source=_attach_source,
+        list_archaeology_scripture_links=lambda item_id, db_path: list_archaeology_scripture_links(
+            item_id, path=db_path
+        ),
+        period_filter_matches=_period_filter_matches,
+        periods_from_value=_periods_from_value,
+    )
 
 
 def get_archaeology_item(item_id: str, path: str | Path = DEFAULT_DB_PATH) -> dict[str, Any]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        row = connection.execute(
-            "SELECT * FROM archaeology_items WHERE id = ?",
-            (item_id,),
-        ).fetchone()
-    if row is None:
-        raise StudyDataError("archaeology item not found")
-    item = _attach_source(_archaeology_item_from_row(row), path=path)
-    item["scripture_links"] = list_archaeology_scripture_links(item_id, path=path)
-    item["reference_count"] = len(item["scripture_links"])
-    return item
+    return _archaeology_repo.get_archaeology_item(
+        item_id,
+        path=path,
+        ensure_schema=_ensure_schema,
+        attach_source=_attach_source,
+        list_archaeology_scripture_links=lambda current_item_id, db_path: list_archaeology_scripture_links(
+            current_item_id, path=db_path
+        ),
+        periods_from_value=_periods_from_value,
+    )
 
 
 def list_archaeology_scripture_links(
     item_id: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> list[dict[str, Any]]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        if item_id is None:
-            rows = connection.execute(
-                "SELECT * FROM archaeology_scripture_links ORDER BY book, chapter, verse_start, verse_end"
-            ).fetchall()
-        else:
-            rows = connection.execute(
-                """
-                SELECT * FROM archaeology_scripture_links
-                WHERE item_id = ?
-                ORDER BY book, chapter, verse_start, verse_end
-                """,
-                (item_id,),
-            ).fetchall()
-    return [_archaeology_scripture_link_from_row(row) for row in rows]
+    return _archaeology_repo.list_archaeology_scripture_links(
+        item_id,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 
 
 def list_sources(path: str | Path = DEFAULT_DB_PATH) -> list[dict[str, Any]]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        rows = connection.execute(
-            "SELECT * FROM sources ORDER BY label"
-        ).fetchall()
-    return [_source_from_row(row) for row in rows]
+    return _sources_repo.list_sources(
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 
 
 def get_source(source_id: str, path: str | Path = DEFAULT_DB_PATH) -> dict[str, Any]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        row = connection.execute(
-            "SELECT * FROM sources WHERE id = ?",
-            (source_id,),
-        ).fetchone()
-    if row is None:
-        raise StudyDataError("source not found")
-    source = _source_from_row(row)
-    source["reference_count"] = _source_reference_count(source_id, path=path)
-    source["references"] = _source_references(source_id, path=path)
-    return source
+    return _sources_repo.get_source(
+        source_id,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 
 
 def list_saved_map_studies(
@@ -793,161 +497,58 @@ def list_saved_map_studies(
     chapter: int | str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> list[dict[str, Any]]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        if book is None and chapter is None:
-            rows = connection.execute(
-                "SELECT * FROM saved_map_studies ORDER BY created_at DESC"
-            ).fetchall()
-        else:
-            canonical, chapter_number = _reference_filter(book, chapter)
-            rows = connection.execute(
-                """
-                SELECT * FROM saved_map_studies
-                WHERE book = ? AND chapter = ?
-                ORDER BY created_at DESC
-                """,
-                (canonical, chapter_number),
-            ).fetchall()
-    studies = [_saved_map_study_from_row(row) for row in rows]
-    for study in studies:
-        study["map_notes"] = _map_notes_for_ids(
-            place_id=study["selected_place_id"],
-            route_id=study["selected_route_id"],
-            layer_id=study["selected_layer_id"],
-            archaeology_id=study["selected_archaeology_id"],
-            manuscript_id=study["selected_manuscript_id"],
-            path=path,
-        )
-    return studies
+    return _map_notes_repo.list_saved_map_studies(
+        book=book,
+        chapter=chapter,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 
 
 def get_saved_map_study(
     study_id: str,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> dict[str, Any]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        row = connection.execute(
-            "SELECT * FROM saved_map_studies WHERE id = ?",
-            (study_id,),
-        ).fetchone()
-    if row is None:
-        raise StudyDataError("saved map study not found")
-    study = _saved_map_study_from_row(row)
-    study["map_notes"] = _map_notes_for_ids(
-        place_id=study["selected_place_id"],
-        route_id=study["selected_route_id"],
-        layer_id=study["selected_layer_id"],
-        archaeology_id=study["selected_archaeology_id"],
-        manuscript_id=study["selected_manuscript_id"],
+    return _map_notes_repo.get_saved_map_study(
+        study_id,
         path=path,
+        ensure_schema=_ensure_schema,
     )
-    return study
 
 
 def create_saved_map_study(
     data: dict[str, Any],
     path: str | Path = DEFAULT_DB_PATH,
 ) -> dict[str, Any]:
-    study = _validated_saved_map_study(data)
-    now = _timestamp()
-    study_id = uuid.uuid4().hex
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        connection.execute(
-            """
-            INSERT INTO saved_map_studies (
-                id, book, chapter, verse_start, verse_end, passage_reference,
-                selected_place_id, selected_route_id, selected_layer_id,
-                archaeology_id, manuscript_id,
-                selected_layers, map_view_state, generated_summary, user_notes,
-                created_at, updated_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """,
-            (
-                study_id,
-                study["book"],
-                study["chapter"],
-                study["start_verse"],
-                study["end_verse"],
-                study["passage_reference"],
-                study["selected_place_id"],
-                study["selected_route_id"],
-                study["selected_layer_id"],
-                study["selected_archaeology_id"],
-                study["selected_manuscript_id"],
-                json.dumps(study["selected_layers"]),
-                json.dumps(study["map_view_state"]),
-                study["generated_summary"],
-                study["user_notes"],
-                now,
-                now,
-            ),
-        )
-    return {
-        **study,
-        "id": study_id,
-        "created_at": now,
-        "updated_at": now,
-    }
+    return _map_notes_repo.create_saved_map_study(
+        data,
+        path=path,
+        ensure_schema=_ensure_schema,
+        validate_saved_map_study=_validated_saved_map_study,
+    )
 
 
 def delete_saved_map_study(
     study_id: str,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> bool:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        cursor = connection.execute(
-            "DELETE FROM saved_map_studies WHERE id = ?",
-            (study_id,),
-        )
-        if cursor.rowcount == 0:
-            raise StudyDataError("saved map study not found")
-    return True
+    return _map_notes_repo.delete_saved_map_study(
+        study_id,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 
 
 def create_map_note(
     data: dict[str, Any],
     path: str | Path = DEFAULT_DB_PATH,
 ) -> dict[str, Any]:
-    note = _validated_map_note(data)
-    now = _timestamp()
-    note_id = uuid.uuid4().hex
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        connection.execute(
-            """
-            INSERT INTO map_notes (
-                id, book, chapter, verse_start, verse_end, passage_reference,
-                place_id, route_id, layer_id, archaeology_id, manuscript_id,
-                note_body, created_at, updated_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """,
-            (
-                note_id,
-                note["book"],
-                note["chapter"],
-                note["start_verse"],
-                note["end_verse"],
-                note["passage_reference"],
-                note["place_id"],
-                note["route_id"],
-                note["layer_id"],
-                note["archaeology_id"],
-                note["manuscript_id"],
-                note["note_body"],
-                now,
-                now,
-            ),
-        )
-    return {
-        **note,
-        "id": note_id,
-        "created_at": now,
-        "updated_at": now,
-    }
+    return _map_notes_repo.create_map_note(
+        data,
+        path=path,
+        ensure_schema=_ensure_schema,
+        validate_map_note=_validated_map_note,
+    )
 
 
 def list_map_notes(
@@ -958,42 +559,15 @@ def list_map_notes(
     manuscript_id: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
 ) -> list[dict[str, Any]]:
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        clauses: list[str] = []
-        params: list[Any] = []
-        if place_id is not None:
-            clauses.append("place_id = ?")
-            params.append(place_id)
-        if route_id is not None:
-            clauses.append("route_id = ?")
-            params.append(route_id)
-        if layer_id is not None:
-            clauses.append("layer_id = ?")
-            params.append(layer_id)
-        if archaeology_id is not None:
-            clauses.append("archaeology_id = ?")
-            params.append(archaeology_id)
-        if manuscript_id is not None:
-            clauses.append("manuscript_id = ?")
-            params.append(manuscript_id)
-        where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
-        rows = connection.execute(
-            f"SELECT * FROM map_notes {where} ORDER BY created_at DESC",
-            params,
-        ).fetchall()
-    return [_map_note_from_row(row) for row in rows]
-
-
-def _connect(path: str | Path) -> sqlite3.Connection:
-    db_path = Path(path)
-    db_path.parent.mkdir(parents=True, exist_ok=True)
-    connection = sqlite3.connect(db_path)
-    connection.row_factory = sqlite3.Row
-    connection.execute("PRAGMA foreign_keys = ON")
-    return connection
-
-
+    return _map_notes_repo.list_map_notes(
+        place_id=place_id,
+        route_id=route_id,
+        layer_id=layer_id,
+        archaeology_id=archaeology_id,
+        manuscript_id=manuscript_id,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
 def _add_column_if_missing(connection: sqlite3.Connection, table: str, column_sql: str) -> None:
     column_name = column_sql.split()[0]
     columns = {
@@ -1831,63 +1405,6 @@ def _seed_confidence_labels(connection: sqlite3.Connection) -> None:
                 label["notes"],
             ),
         )
-
-
-def _validated_note(data: dict[str, Any]) -> dict[str, Any]:
-    reference = _validated_reference(data)
-    body = str(data.get("body") or data.get("note_body") or "").strip()
-    if not body:
-        raise StudyDataError("note body is required")
-    return {
-        **reference,
-        "body": body,
-    }
-
-
-def _validated_highlight(data: dict[str, Any]) -> dict[str, Any]:
-    reference = _validated_reference(data)
-    color = str(data.get("color") or DEFAULT_HIGHLIGHT_COLOR).strip().lower()
-    if color not in HIGHLIGHT_COLORS:
-        raise StudyDataError(
-            "highlight color must be one of: " + ", ".join(sorted(HIGHLIGHT_COLORS))
-        )
-    return {
-        **reference,
-        "color": color,
-    }
-
-
-def _validated_saved_study(data: dict[str, Any]) -> dict[str, Any]:
-    reference = _validated_reference(data)
-    study_type = str(
-        data.get("study_type") or data.get("ask_mode") or data.get("type") or ""
-    ).strip()
-    if not study_type:
-        raise StudyDataError("study_type is required")
-    question = str(data.get("question") or "").strip()
-    if not question:
-        raise StudyDataError("question is required")
-    answer = str(data.get("answer") or data.get("answer_html") or "").strip()
-    if not answer:
-        raise StudyDataError("answer is required")
-    title = str(data.get("title") or "").strip()
-    if not title:
-        title = _default_saved_study_title(
-            reference["book"],
-            reference["chapter"],
-            reference["start_verse"],
-            reference["end_verse"],
-            study_type,
-        )
-    return {
-        **reference,
-        "study_type": study_type,
-        "question": question,
-        "answer": answer,
-        "title": title,
-    }
-
-
 def _validated_saved_map_study(data: dict[str, Any]) -> dict[str, Any]:
     reference = _validated_reference(data)
     passage_reference = str(
@@ -1978,33 +1495,6 @@ def _validated_map_note(data: dict[str, Any]) -> dict[str, Any]:
         "manuscript_id": manuscript_id,
         "note_body": note_body,
     }
-
-
-def _validated_reference(data: dict[str, Any]) -> dict[str, Any]:
-    try:
-        book = normalize_book_name(str(data.get("book", "")))
-    except BibleError as exc:
-        raise StudyDataError(str(exc)) from exc
-    chapter = _positive_int(data.get("chapter"), "chapter")
-    start_verse = _positive_int(
-        data.get("start_verse") or data.get("verse_start"),
-        "start_verse",
-    )
-    end_verse = _positive_int(
-        data.get("end_verse") or data.get("verse_end") or start_verse,
-        "end_verse",
-    )
-    if end_verse < start_verse:
-        raise StudyDataError("end_verse must be greater than or equal to start_verse")
-    return {
-        "book": book,
-        "chapter": chapter,
-        "start_verse": start_verse,
-        "end_verse": end_verse,
-        "selected_text": str(data.get("selected_text") or "").strip(),
-    }
-
-
 def _default_map_passage_reference(
     book: str,
     chapter: int,
@@ -2014,186 +1504,6 @@ def _default_map_passage_reference(
     reference = f"{book} {chapter}"
     suffix = str(start_verse) if start_verse == end_verse else f"{start_verse}-{end_verse}"
     return f"{reference}:{suffix}"
-
-
-def _reference_filter(
-    book: str | None,
-    chapter: int | str | None,
-) -> tuple[str, int]:
-    if book is None or chapter is None:
-        raise StudyDataError("book and chapter are both required when filtering study data")
-    try:
-        canonical = normalize_book_name(str(book))
-    except BibleError as exc:
-        raise StudyDataError(str(exc)) from exc
-    return canonical, _positive_int(chapter, "chapter")
-
-
-def _note_from_row(row: sqlite3.Row) -> dict[str, Any]:
-    return {
-        "id": row["id"],
-        "book": row["book"],
-        "chapter": int(row["chapter"]),
-        "start_verse": int(row["verse_start"]),
-        "end_verse": int(row["verse_end"]),
-        "selected_text": row["selected_text"],
-        "body": row["note_body"],
-        "created_at": row["created_at"],
-        "updated_at": row["updated_at"],
-    }
-
-
-def _highlight_from_row(row: sqlite3.Row) -> dict[str, Any]:
-    return {
-        "id": row["id"],
-        "book": row["book"],
-        "chapter": int(row["chapter"]),
-        "start_verse": int(row["verse_start"]),
-        "end_verse": int(row["verse_end"]),
-        "selected_text": row["selected_text"],
-        "color": row["color"],
-        "created_at": row["created_at"],
-        "updated_at": row["updated_at"],
-    }
-
-
-def _saved_study_from_row(row: sqlite3.Row) -> dict[str, Any]:
-    return {
-        "id": row["id"],
-        "title": row["title"],
-        "book": row["book"],
-        "chapter": int(row["chapter"]),
-        "start_verse": int(row["verse_start"]),
-        "end_verse": int(row["verse_end"]),
-        "selected_text": row["selected_text"],
-        "study_type": row["study_type"],
-        "question": row["question"],
-        "answer": row["answer"],
-        "created_at": row["created_at"],
-        "updated_at": row["updated_at"],
-    }
-
-
-def _biblical_place_from_row(row: sqlite3.Row) -> dict[str, Any]:
-    aliases_raw = row["aliases"] or "[]"
-    try:
-        aliases = json.loads(aliases_raw)
-    except json.JSONDecodeError:
-        aliases = []
-    if not isinstance(aliases, list):
-        aliases = []
-    periods = _periods_from_value(row["periods"], fallback=_BIBLICAL_PLACE_PERIODS.get(row["id"], []))
-    return {
-        "id": row["id"],
-        "name": row["name"],
-        "aliases": [str(alias) for alias in aliases if str(alias).strip()],
-        "periods": periods,
-        "latitude": float(row["latitude"]) if row["latitude"] is not None else None,
-        "longitude": float(row["longitude"]) if row["longitude"] is not None else None,
-        "modern_location": row["modern_location"],
-        "ancient_region": row["ancient_region"],
-        "description": row["description"],
-        "confidence": row["confidence"],
-        "confidence_rank": int(row["confidence_rank"]),
-        "source_id": row["source_id"] if "source_id" in row.keys() else "",
-        "source_name": row["source_name"],
-        "source_url": row["source_url"],
-        "license": row["license"],
-        "notes": row["notes"],
-    }
-
-
-def _place_reference_from_row(row: sqlite3.Row) -> dict[str, Any]:
-    return {
-        "id": row["id"],
-        "place_id": row["place_id"],
-        "book": row["book"],
-        "chapter": int(row["chapter"]),
-        "verse_start": int(row["verse_start"]),
-        "verse_end": int(row["verse_end"]),
-        "relationship_type": row["relationship_type"],
-        "notes": row["notes"],
-    }
-
-
-def _source_from_row(row: sqlite3.Row) -> dict[str, Any]:
-    return {
-        "id": row["id"],
-        "label": row["label"],
-        "url": row["url"],
-        "license": row["license"],
-        "notes": row["notes"],
-    }
-
-
-def _source_reference_count(source_id: str, path: str | Path = DEFAULT_DB_PATH) -> int:
-    tables = (
-        "biblical_places",
-        "map_routes",
-        "historical_layers",
-        "political_context_layers",
-        "archaeology_sites",
-        "archaeology_items",
-        "manuscript_items",
-    )
-    total = 0
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        for table in tables:
-            row = connection.execute(
-                f"SELECT COUNT(*) AS count FROM {table} WHERE source_id = ?",
-                (source_id,),
-            ).fetchone()
-            total += int(row["count"]) if row else 0
-    return total
-
-
-def _source_references(source_id: str, path: str | Path = DEFAULT_DB_PATH) -> list[dict[str, Any]]:
-    references: list[dict[str, Any]] = []
-    with _connect(path) as connection:
-        _ensure_schema(connection)
-        for table, item_type in (
-            ("biblical_places", "place"),
-            ("map_routes", "route"),
-            ("historical_layers", "historical_layer"),
-            ("political_context_layers", "political_context_layer"),
-            ("archaeology_sites", "archaeology_site"),
-            ("archaeology_items", "archaeology_item"),
-            ("manuscript_items", "manuscript_item"),
-        ):
-            rows = connection.execute(
-                f"SELECT id, name FROM {table} WHERE source_id = ? ORDER BY name",
-                (source_id,),
-            ).fetchall()
-            for row in rows:
-                references.append(
-                    {
-                        "item_type": item_type,
-                        "id": row["id"],
-                        "name": row["name"],
-                    }
-                )
-    return references
-
-
-def _source_summary_from_row(
-    row: sqlite3.Row,
-    path: str | Path = DEFAULT_DB_PATH,
-) -> dict[str, Any]:
-    source_id = str(row["source_id"] or "").strip()
-    if not source_id:
-        source_id = _source_identifier(
-            str(row["source_name"] or "").strip(),
-            str(row["source_url"] or "").strip(),
-            str(row["license"] or "").strip(),
-        )
-    source = get_source(source_id, path=path) if source_id else None
-    return {
-        "source_id": source_id,
-        "source": source,
-    }
-
-
 def _attach_source(record: dict[str, Any], path: str | Path = DEFAULT_DB_PATH) -> dict[str, Any]:
     source_id = str(record.get("source_id") or "").strip()
     source = None
@@ -2234,336 +1544,6 @@ def _source_summary_text(record: dict[str, Any], source: dict[str, Any] | None) 
         str(record.get("license") or "").strip(),
     ]
     return " · ".join(part for part in parts if part) or "Missing source metadata"
-
-
-def _map_route_from_row(row: sqlite3.Row) -> dict[str, Any]:
-    geojson_raw = row["geojson"] or "{}"
-    try:
-        geojson = json.loads(geojson_raw)
-    except json.JSONDecodeError:
-        geojson = {}
-    if not isinstance(geojson, dict):
-        geojson = {}
-    periods = _periods_from_value(row["periods"], fallback=row["period"])
-    return {
-        "id": row["id"],
-        "name": row["name"],
-        "description": row["description"],
-        "period": row["period"],
-        "periods": periods,
-        "route_type": row["route_type"],
-        "geojson": geojson,
-        "confidence": row["confidence"],
-        "confidence_rank": int(row["confidence_rank"]),
-        "source_name": row["source_name"],
-        "source_url": row["source_url"],
-        "source_id": row["source_id"] if "source_id" in row.keys() else "",
-        "notes": row["notes"],
-    }
-
-
-def _route_reference_from_row(row: sqlite3.Row) -> dict[str, Any]:
-    return {
-        "id": row["id"],
-        "route_id": row["route_id"],
-        "book": row["book"],
-        "chapter": int(row["chapter"]),
-        "verse_start": int(row["verse_start"]),
-        "verse_end": int(row["verse_end"]),
-        "relationship_type": row["relationship_type"],
-        "notes": row["notes"],
-    }
-
-
-def _historical_layer_from_row(row: sqlite3.Row) -> dict[str, Any]:
-    geojson_raw = row["geojson"] or "{}"
-    try:
-        geojson = json.loads(geojson_raw)
-    except json.JSONDecodeError:
-        geojson = {}
-    if not isinstance(geojson, dict):
-        geojson = {}
-    periods = _periods_from_value(row["periods"], fallback=row["period"])
-    return {
-        "id": row["id"],
-        "name": row["name"],
-        "period": row["period"],
-        "periods": periods,
-        "description": row["description"],
-        "layer_type": row["layer_type"],
-        "geojson": geojson,
-        "confidence": row["confidence"],
-        "confidence_rank": int(row["confidence_rank"]),
-        "source_id": row["source_id"] if "source_id" in row.keys() else "",
-        "source_name": row["source_name"],
-        "source_url": row["source_url"],
-        "notes": row["notes"],
-    }
-
-
-def _political_context_layer_from_row(row: sqlite3.Row) -> dict[str, Any]:
-    geojson_raw = row["geojson"] or "{}"
-    try:
-        geojson = json.loads(geojson_raw)
-    except json.JSONDecodeError:
-        geojson = {}
-    if not isinstance(geojson, dict):
-        geojson = {}
-    periods = _periods_from_value(row["periods"], fallback=row["period"])
-    return {
-        "id": row["id"],
-        "name": row["name"],
-        "entity_type": row["entity_type"],
-        "period": row["period"],
-        "periods": periods,
-        "summary": row["summary"],
-        "description": row["description"],
-        "layer_type": row["layer_type"],
-        "sort_order": int(row["sort_order"]),
-        "geojson": geojson,
-        "confidence": row["confidence"],
-        "confidence_rank": int(row["confidence_rank"]),
-        "source_id": row["source_id"] if "source_id" in row.keys() else "",
-        "source_name": row["source_name"],
-        "source_url": row["source_url"],
-        "notes": row["notes"],
-    }
-
-
-def _archaeology_site_from_row(row: sqlite3.Row) -> dict[str, Any]:
-    periods = _periods_from_value(row["periods"], fallback=row["period"])
-    return {
-        "id": row["id"],
-        "name": row["name"],
-        "site_type": row["site_type"],
-        "period": row["period"],
-        "periods": periods,
-        "latitude": float(row["latitude"]) if row["latitude"] is not None else None,
-        "longitude": float(row["longitude"]) if row["longitude"] is not None else None,
-        "modern_location": row["modern_location"],
-        "ancient_region": row["ancient_region"],
-        "description": row["description"],
-        "confidence": row["confidence"],
-        "confidence_rank": int(row["confidence_rank"]),
-        "source_id": row["source_id"] if "source_id" in row.keys() else "",
-        "source_name": row["source_name"],
-        "source_url": row["source_url"],
-        "license": row["license"],
-        "notes": row["notes"],
-    }
-
-
-def _archaeology_item_from_row(row: sqlite3.Row) -> dict[str, Any]:
-    periods = _periods_from_value(row["periods"], fallback=row["period"])
-    return {
-        "id": row["id"],
-        "site_id": row["site_id"],
-        "name": row["name"],
-        "item_type": row["item_type"],
-        "period": row["period"],
-        "periods": periods,
-        "relationship": row["relationship"],
-        "why_it_matters": row["why_it_matters"],
-        "bhf_caution": row["bhf_caution"],
-        "confidence": row["confidence"],
-        "confidence_rank": int(row["confidence_rank"]),
-        "source_id": row["source_id"] if "source_id" in row.keys() else "",
-        "source_name": row["source_name"],
-        "source_url": row["source_url"],
-        "license": row["license"],
-        "notes": row["notes"],
-    }
-
-
-def _archaeology_scripture_link_from_row(row: sqlite3.Row) -> dict[str, Any]:
-    return {
-        "id": row["id"],
-        "item_id": row["item_id"],
-        "book": row["book"],
-        "chapter": int(row["chapter"]),
-        "verse_start": int(row["verse_start"]),
-        "verse_end": int(row["verse_end"]),
-        "relationship_type": row["relationship_type"],
-        "notes": row["notes"],
-    }
-
-
-def _political_context_reference_from_row(row: sqlite3.Row) -> dict[str, Any]:
-    return {
-        "id": row["id"],
-        "context_id": row["context_id"],
-        "book": row["book"],
-        "chapter": int(row["chapter"]),
-        "verse_start": int(row["verse_start"]),
-        "verse_end": int(row["verse_end"]),
-        "relationship_type": row["relationship_type"],
-        "notes": row["notes"],
-    }
-
-
-def _manuscript_item_from_row(row: sqlite3.Row) -> dict[str, Any]:
-    related_books_raw = row["related_books"] or "[]"
-    try:
-        related_books = json.loads(related_books_raw)
-    except json.JSONDecodeError:
-        related_books = []
-    if not isinstance(related_books, list):
-        related_books = []
-    periods = _periods_from_value(row["periods"], fallback=row["period"])
-    return {
-        "id": row["id"],
-        "name": row["name"],
-        "manuscript_type": row["manuscript_type"],
-        "language": row["language"],
-        "date": row["date"],
-        "material": row["material"],
-        "discovery_location": row["discovery_location"],
-        "current_location": row["current_location"],
-        "latitude": float(row["latitude"]) if row["latitude"] is not None else None,
-        "longitude": float(row["longitude"]) if row["longitude"] is not None else None,
-        "related_books": [str(book) for book in related_books if str(book).strip()],
-        "period": row["period"],
-        "periods": periods,
-        "significance": row["significance"],
-        "confidence": row["confidence"],
-        "confidence_rank": int(row["confidence_rank"]),
-        "source_id": row["source_id"] if "source_id" in row.keys() else "",
-        "source_name": row["source_name"],
-        "source_url": row["source_url"],
-        "license": row["license"],
-        "notes": row["notes"],
-        "bhf_caution": row["bhf_caution"],
-    }
-
-
-def _manuscript_scripture_link_from_row(row: sqlite3.Row) -> dict[str, Any]:
-    return {
-        "id": row["id"],
-        "item_id": row["item_id"],
-        "book": row["book"],
-        "chapter": int(row["chapter"]),
-        "verse_start": int(row["verse_start"]),
-        "verse_end": int(row["verse_end"]),
-        "relationship_type": row["relationship_type"],
-        "notes": row["notes"],
-    }
-
-
-def _saved_map_study_from_row(row: sqlite3.Row) -> dict[str, Any]:
-    selected_layers_raw = row["selected_layers"] or "[]"
-    map_view_state_raw = row["map_view_state"] or "{}"
-    try:
-        selected_layers = json.loads(selected_layers_raw)
-    except json.JSONDecodeError:
-        selected_layers = []
-    if not isinstance(selected_layers, list):
-        selected_layers = []
-    try:
-        map_view_state = json.loads(map_view_state_raw)
-    except json.JSONDecodeError:
-        map_view_state = {}
-    if not isinstance(map_view_state, dict):
-        map_view_state = {}
-    return {
-        "id": row["id"],
-        "book": row["book"],
-        "chapter": int(row["chapter"]),
-        "start_verse": int(row["verse_start"]),
-        "end_verse": int(row["verse_end"]),
-        "passage_reference": row["passage_reference"],
-        "selected_place_id": row["selected_place_id"],
-        "selected_route_id": row["selected_route_id"],
-        "selected_layer_id": row["selected_layer_id"],
-        "selected_archaeology_id": row["archaeology_id"],
-        "selected_manuscript_id": row["manuscript_id"],
-        "selected_layers": [str(value) for value in selected_layers if str(value).strip()],
-        "map_view_state": map_view_state,
-        "generated_summary": row["generated_summary"],
-        "user_notes": row["user_notes"],
-        "created_at": row["created_at"],
-        "updated_at": row["updated_at"],
-    }
-
-
-def _map_note_from_row(row: sqlite3.Row) -> dict[str, Any]:
-    return {
-        "id": row["id"],
-        "book": row["book"],
-        "chapter": int(row["chapter"]),
-        "start_verse": int(row["verse_start"]),
-        "end_verse": int(row["verse_end"]),
-        "passage_reference": row["passage_reference"],
-        "place_id": row["place_id"],
-        "route_id": row["route_id"],
-        "layer_id": row["layer_id"],
-        "archaeology_id": row["archaeology_id"],
-        "manuscript_id": row["manuscript_id"],
-        "note_body": row["note_body"],
-        "created_at": row["created_at"],
-        "updated_at": row["updated_at"],
-    }
-
-
-def _map_notes_for_ids(
-    *,
-    place_id: str = "",
-    route_id: str = "",
-    layer_id: str = "",
-    archaeology_id: str = "",
-    manuscript_id: str = "",
-    path: str | Path = DEFAULT_DB_PATH,
-) -> list[dict[str, Any]]:
-    notes: list[dict[str, Any]] = []
-    if place_id:
-        notes.extend(list_map_notes(place_id=place_id, path=path))
-    if route_id:
-        notes.extend(list_map_notes(route_id=route_id, path=path))
-    if layer_id:
-        notes.extend(list_map_notes(layer_id=layer_id, path=path))
-    if archaeology_id:
-        notes.extend(list_map_notes(archaeology_id=archaeology_id, path=path))
-    if manuscript_id:
-        notes.extend(list_map_notes(manuscript_id=manuscript_id, path=path))
-    unique: list[dict[str, Any]] = []
-    seen: set[str] = set()
-    for note in notes:
-        note_id = note["id"]
-        if note_id in seen:
-            continue
-        seen.add(note_id)
-        unique.append(note)
-    return unique
-
-
-def _positive_int(value: Any, label: str) -> int:
-    try:
-        number = int(value)
-    except (TypeError, ValueError) as exc:
-        raise StudyDataError(f"{label} must be a positive integer") from exc
-    if number <= 0:
-        raise StudyDataError(f"{label} must be a positive integer")
-    return number
-
-
-def _timestamp() -> str:
-    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
-
-
-def _default_saved_study_title(
-    book: str,
-    chapter: int,
-    start_verse: int,
-    end_verse: int,
-    study_type: str,
-) -> str:
-    reference = f"{book} {chapter}"
-    if start_verse:
-        suffix = str(start_verse) if start_verse == end_verse else f"{start_verse}-{end_verse}"
-        reference = f"{reference}:{suffix}"
-    label = study_type.replace("_", " ").strip().title()
-    return f"{reference} - {label}"
-
-
 def _seed_biblical_places(connection: sqlite3.Connection) -> None:
     existing = connection.execute("SELECT COUNT(*) FROM biblical_places").fetchone()[0]
     if existing:
