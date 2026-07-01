@@ -1,4 +1,6 @@
-let latestBibleSearchRequestId = 0;
+const BHF_BIBLE_SEARCH_STATE = window.BHFBibleSearchState || (window.BHFBibleSearchState = {
+  latestBibleSearchRequestId: 0,
+});
 
 async function submitBibleSearch(event) {
   event.preventDefault();
@@ -14,7 +16,7 @@ async function submitBibleSearch(event) {
     return;
   }
 
-  const requestId = ++latestBibleSearchRequestId;
+  const requestId = ++BHF_BIBLE_SEARCH_STATE.latestBibleSearchRequestId;
   showBibleSearchResults();
   updateBibleSearchSummary(`Searching ASV for “${query}”`);
   setBibleSearchStatus("Searching local ASV text...", "loading");
@@ -22,7 +24,7 @@ async function submitBibleSearch(event) {
 
   try {
     const data = await requestJson(`/api/bible/search?${new URLSearchParams({ q: query, limit: "25" })}`, {}, "Could not search the ASV text.");
-    if (requestId !== latestBibleSearchRequestId) {
+    if (requestId !== BHF_BIBLE_SEARCH_STATE.latestBibleSearchRequestId) {
       return;
     }
     if (Array.isArray(data.results) && data.results.length > 0) {
@@ -43,7 +45,7 @@ async function submitBibleSearch(event) {
     updateBibleSearchSummary(`No local ASV matches for “${query}”`);
     setBibleSearchStatus(data.no_results_message || "No local ASV matches were found.", "empty");
   } catch (error) {
-    if (requestId !== latestBibleSearchRequestId) {
+    if (requestId !== BHF_BIBLE_SEARCH_STATE.latestBibleSearchRequestId) {
       return;
     }
     setBibleSearchStatus(error.message || "Could not search the ASV text.", "error");
@@ -61,7 +63,7 @@ async function runBibleSearchFallback(form, query, requestId) {
     throw new Error("Could not start the BHF search fallback.");
   }
   const result = await pollBibleSearchFallback(job.job_id, requestId);
-  if (requestId !== latestBibleSearchRequestId) {
+  if (requestId !== BHF_BIBLE_SEARCH_STATE.latestBibleSearchRequestId) {
     return;
   }
   if (Array.isArray(result.results) && result.results.length > 0) {
@@ -129,7 +131,7 @@ function syncBibleSearchCheckbox(searchForm, askForm, name) {
 async function pollBibleSearchFallback(jobId, requestId) {
   while (true) {
     const status = await requestJson(`/api/bible/search/fallback/status/${encodeURIComponent(jobId)}`, {}, "Could not check BHF fallback search status.");
-    if (requestId !== latestBibleSearchRequestId) {
+    if (requestId !== BHF_BIBLE_SEARCH_STATE.latestBibleSearchRequestId) {
       return { results: [], message: "" };
     }
     if (status.done) {
@@ -148,7 +150,7 @@ function showBibleSearchResults() {
 }
 
 function clearBibleSearchResults() {
-  latestBibleSearchRequestId += 1;
+  BHF_BIBLE_SEARCH_STATE.latestBibleSearchRequestId += 1;
   const panel = document.querySelector("#reader-search-results");
   const body = document.querySelector("#reader-search-results-body");
   const summary = document.querySelector("#reader-search-summary");

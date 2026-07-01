@@ -265,6 +265,11 @@
   flex-direction: column;
 }
 
+.workspace-drawer-toggle,
+.workspace-mobile-header {
+  display: none;
+}
+
 .workspace-pane {
   flex: 1;
   min-height: 0;
@@ -580,3 +585,128 @@
   gap: 8px;
 }
 
+@media (max-width: 900px) {
+  .page {
+    width: min(100%, calc(100% - 20px));
+    padding: 14px 0 20px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .reader-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .study-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    z-index: 9999;
+    width: 100vw;
+    max-width: 100vw;
+    max-height: none;
+    transform: translateX(104%);
+    visibility: hidden;
+    transition: transform 220ms ease, visibility 0s linear 220ms;
+    background: #fff;
+  }
+
+  .study-panel.is-open {
+    transform: translateX(0);
+    visibility: visible;
+    transition: transform 220ms ease;
+  }
+
+  .workspace-panel {
+    height: 100dvh;
+    border-radius: 0;
+    box-shadow: -20px 0 48px rgb(17 30 41 / 20%);
+  }
+
+  .workspace-mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-bottom: 1px solid #d8dee4;
+    background: linear-gradient(180deg, rgb(251 252 253 / 98%), rgb(245 249 252 / 96%));
+  }
+
+  .workspace-drawer-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    z-index: 10;
+    min-height: 46px;
+    padding: 0 16px;
+    border-radius: 999px;
+    border: 1px solid #c7d1da;
+    background: #fff;
+    color: #24313b;
+    font-weight: 750;
+    box-shadow: 0 10px 20px rgb(17 30 41 / 12%);
+  }
+
+  .workspace-drawer-icon {
+    display: inline-grid;
+    gap: 4px;
+    width: 18px;
+  }
+
+  .workspace-drawer-icon span {
+    display: block;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+  }
+
+  .workspace-pane {
+    padding: 12px;
+  }
+
+  .reader-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .reader-toolbar .workspace-drawer-toggle {
+    width: 100%;
+  }
+
+  .reader-controls,
+  .reader-search {
+    grid-template-columns: 1fr;
+  }
+
+  .map-panel-actions {
+    justify-content: flex-start;
+  }
+
+  .map-panel-body {
+    grid-template-columns: 1fr;
+  }
+
+  .map-stage {
+    height: 320px;
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 540px) {
+  .study-panel {
+    width: 100vw;
+    max-width: 100vw;
+  }
+
+  .map-modal-body .map-stage {
+    min-height: 48vh;
+    height: 48vh;
+  }
+}

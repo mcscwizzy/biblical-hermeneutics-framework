@@ -498,6 +498,38 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(route["geojson"]["geometry"]["type"], "LineString")
         self.assertIn("scripture_links", route)
 
+    def test_map_catalog_route_returns_browse_friendly_sections(self):
+        response = asgi_request("GET", "/api/maps/catalog?period=NT+%2F+Roman+period")
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertIn("places", data)
+        self.assertIn("routes", data)
+        self.assertIn("archaeology", data)
+        self.assertIn("manuscripts", data)
+        self.assertIn("historical_layers", data)
+        self.assertIn("political_context", data)
+        self.assertIn("saved_map_studies", data)
+        self.assertTrue(any(item["id"] == "capernaum" for item in data["places"]))
+        self.assertTrue(any(item["id"] == "pilate-stone" for item in data["archaeology"]))
+
+    def test_map_search_route_filters_by_kind_and_query(self):
+        response = asgi_request("GET", "/api/maps/search?q=Jerusalem")
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(data["query"], "Jerusalem")
+        self.assertGreater(data["total_results"], 0)
+        self.assertTrue(any(item["id"] == "jerusalem" for item in data["results"]))
+        self.assertTrue(all("search_score" in item for item in data["results"]))
+
+        archaeology_response = asgi_request("GET", "/api/maps/search?q=Pilate&kind=archaeology")
+        self.assertEqual(archaeology_response["status"], 200)
+        archaeology_data = json.loads(archaeology_response["body"])
+        self.assertEqual(archaeology_data["kind"], "archaeology")
+        self.assertTrue(all(item["kind"] == "archaeology" for item in archaeology_data["results"]))
+        self.assertTrue(any(item["id"] == "pilate-stone" for item in archaeology_data["results"]))
+
     def test_period_filter_applies_to_all_map_endpoints(self):
         places_response = asgi_request("GET", "/api/maps/biblical-places?period=NT+%2F+Roman+period")
         self.assertEqual(places_response["status"], 200)

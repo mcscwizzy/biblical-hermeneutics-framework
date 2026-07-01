@@ -299,6 +299,66 @@ export function createBibleMap(container, markers, options = {}) {
     map.fitBounds(allBounds, { padding: [32, 32] });
   }
 
+  function focusLayerBounds(layer, zoomFallback = 9) {
+    if (!layer) {
+      return false;
+    }
+    const bounds = layer.getBounds ? layer.getBounds() : null;
+    if (bounds && bounds.isValid && bounds.isValid()) {
+      map.fitBounds(bounds, { padding: [24, 24] });
+      return true;
+    }
+    const center = layer.getLatLng ? layer.getLatLng() : null;
+    if (center) {
+      map.setView([center.lat, center.lng], zoomFallback);
+      return true;
+    }
+    return false;
+  }
+
+  function focusSelection(kind, item) {
+    if (!item) {
+      return;
+    }
+    if (kind === "place" && Number.isFinite(item.latitude) && Number.isFinite(item.longitude)) {
+      map.setView([item.latitude, item.longitude], 10);
+      return;
+    }
+    if (kind === "archaeology") {
+      const archaeology = archaeologyLayers.get(item.id);
+      if (focusLayerBounds(archaeology?.layer, 10)) {
+        return;
+      }
+    }
+    if (kind === "manuscript") {
+      const manuscript = manuscriptLayers.get(item.id);
+      if (focusLayerBounds(manuscript?.layer, 10)) {
+        return;
+      }
+    }
+    if (kind === "route") {
+      const route = routeLayers.get(item.id);
+      if (focusLayerBounds(route, 9)) {
+        return;
+      }
+    }
+    if (kind === "historical_layer") {
+      const layer = historicalLayers.get(item.id);
+      if (focusLayerBounds(layer?.layer, 8)) {
+        return;
+      }
+    }
+    if (kind === "political_context") {
+      const layer = politicalContextLayers.get(item.id);
+      if (focusLayerBounds(layer?.layer, 8)) {
+        return;
+      }
+    }
+    if (Number.isFinite(item.latitude) && Number.isFinite(item.longitude)) {
+      map.setView([item.latitude, item.longitude], 9);
+    }
+  }
+
   function refreshRoutes(routes) {
     routeItems = Array.isArray(routes) ? routes.slice() : [];
     routeLayer.clearLayers();
@@ -598,6 +658,7 @@ export function createBibleMap(container, markers, options = {}) {
     fitToMarkers() {
       fitToContent();
     },
+    focusSelection,
     fitToContent,
     invalidateSize() {
       map.invalidateSize();

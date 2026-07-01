@@ -18,7 +18,7 @@ from bhf_agent.curation import (
 )
 from bhf_agent.study_db import StudyDataError
 
-from ..services.web_helpers import curation_template_sections, request_payload
+from ..services.web_helpers import curations_template_sections, request_payload
 
 
 def register_curation_routes(app: FastAPI, *, study_db_path: str, templates: Any) -> None:
@@ -28,7 +28,7 @@ def register_curation_routes(app: FastAPI, *, study_db_path: str, templates: Any
             request,
             "curation.html",
             {
-                "collections": curation_template_sections(study_db_path),
+                "collections": curations_template_sections(study_db_path),
                 "collection": collection or "",
                 "export_json": json.dumps(
                     export_curation_bundle(path=study_db_path),

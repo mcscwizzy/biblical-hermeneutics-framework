@@ -29,13 +29,13 @@ let contextMenuState = null;
 let lastMapAIFallbackKey = null;
 let activeLiveAnswerPanel = null;
 let readerLongPressState = null;
-let latestBibleSearchRequestId = 0;
 const BHF_HTTP = window.BHFApi || {};
 
 document.addEventListener("DOMContentLoaded", function () {
   initializeWorkspaceTabs();
   initializeReader();
   initializeWorkspaceBridge();
+  initializeWorkspaceDrawer();
 });
 
 document.addEventListener("submit", async function (event) {
@@ -111,9 +111,18 @@ async function initializeReader() {
     return;
   }
 
+  const defaultBook = reader.dataset.defaultBook || bookSelect.value || "John";
+  if (!bookSelect.value && defaultBook) {
+    bookSelect.value = defaultBook;
+  }
   populateChapterOptions(bookSelect, chapterSelect);
-  chapterSelect.value = reader.dataset.defaultChapter || "1";
-  await loadReaderChapter(bookSelect.value, chapterSelect.value);
+  if (!chapterSelect.options.length) {
+    reader.innerHTML = `<p class="empty">No chapter data is available for ${escapeHtml(bookSelect.value || defaultBook)}.</p>`;
+    return;
+  }
+  const defaultChapter = reader.dataset.defaultChapter || chapterSelect.options[0].value || "1";
+  chapterSelect.value = defaultChapter;
+  await loadReaderChapter(bookSelect.value || defaultBook, chapterSelect.value || defaultChapter);
 
   bookSelect.addEventListener("change", async () => {
     populateChapterOptions(bookSelect, chapterSelect);
@@ -163,7 +172,10 @@ async function initializeReader() {
     cancelNote.addEventListener("click", closeNoteEditor);
   }
   document.addEventListener("bhf:map-panel-opened", () => activateWorkspaceTab("maps"));
-  document.addEventListener("bhf:map-panel-closed", syncMapWorkspaceEmptyState);
+  document.addEventListener("bhf:map-panel-closed", () => {
+    syncMapWorkspaceEmptyState();
+    closeWorkspaceDrawer();
+  });
   wireAnswerPanelControls(document.querySelector("#answer-panel"));
   wireAnswerPanelControls(document.querySelector("#map-ai-answer-panel"));
   syncMapWorkspaceEmptyState();
@@ -277,6 +289,41 @@ function activateWorkspaceTab(tabId) {
   });
 }
 
+function initializeWorkspaceDrawer() {
+  const toggle = document.querySelector("[data-workspace-drawer-toggle]");
+  const close = document.querySelector("[data-workspace-drawer-close]");
+  const panel = document.querySelector("#study-panel");
+  if (panel && window.matchMedia("(max-width: 900px)").matches) {
+    panel.classList.remove("is-open");
+  }
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      setWorkspaceDrawerOpen(!panel?.classList.contains("is-open"));
+    });
+  }
+  if (close) {
+    close.addEventListener("click", () => setWorkspaceDrawerOpen(false));
+  }
+  window.addEventListener("resize", () => {
+    if (window.matchMedia("(min-width: 901px)").matches) {
+      setWorkspaceDrawerOpen(false);
+    }
+  });
+}
+
+function setWorkspaceDrawerOpen(open) {
+  const toggle = document.querySelector("[data-workspace-drawer-toggle]");
+  const panel = document.querySelector("#study-panel");
+  const nextOpen = Boolean(open);
+  document.body.classList.toggle("workspace-drawer-open", nextOpen);
+  if (panel) {
+    panel.classList.toggle("is-open", nextOpen);
+  }
+  if (toggle) {
+    toggle.setAttribute("aria-expanded", String(nextOpen));
+  }
+}
+
 function syncMapWorkspaceEmptyState() {
   const mapPanel = document.querySelector("#map-panel");
   const emptyState = document.querySelector("[data-map-pane-empty]");
@@ -284,11 +331,31 @@ function syncMapWorkspaceEmptyState() {
     return;
   }
   emptyState.hidden = Boolean(mapPanel) && !mapPanel.hidden;
+  if (emptyState.hidden) {
+    return;
+  }
+  const button = emptyState.querySelector("[data-open-map-browser]");
+  if (button && !button.dataset.bound) {
+    button.dataset.bound = "true";
+    button.addEventListener("click", () => openMapPanel({ mode: "browse" }));
+  }
+}
+
+function closeWorkspaceDrawer() {
+  const toggle = document.querySelector("[data-workspace-drawer-toggle]");
+  const panel = document.querySelector("#study-panel");
+  document.body.classList.remove("workspace-drawer-open");
+  if (panel) {
+    panel.classList.remove("is-open");
+  }
+  if (toggle) {
+    toggle.setAttribute("aria-expanded", "false");
+  }
 }
 
 function populateChapterOptions(bookSelect, chapterSelect) {
-  const selected = bookSelect.options[bookSelect.selectedIndex];
-  const chapterCount = Number(selected.dataset.chapters || 1);
+  const selected = bookSelect.selectedOptions[0] || bookSelect.options[0];
+  const chapterCount = Number(selected?.dataset.chapters || 1);
   chapterSelect.innerHTML = "";
   for (let chapter = 1; chapter <= chapterCount; chapter += 1) {
     const option = document.createElement("option");
@@ -846,13 +913,17 @@ function buildReaderMapContext(studyAction) {
 
 function openMapPanel(context) {
   activateWorkspaceTab("maps");
+  if (window.matchMedia("(max-width: 900px)").matches) {
+    setWorkspaceDrawerOpen(true);
+  }
   const panel = document.querySelector("#map-panel");
   if (panel) {
     panel.hidden = false;
   }
   syncMapWorkspaceEmptyState();
   if (window.BHFMaps && typeof window.BHFMaps.openMapPanel === "function") {
-    window.BHFMaps.openMapPanel(context);
+    const hasPassageContext = Boolean(context && (context.book || context.chapter || context.savedMapStudy));
+    window.BHFMaps.openMapPanel(hasPassageContext ? context : { mode: "browse" });
     return;
   }
 }

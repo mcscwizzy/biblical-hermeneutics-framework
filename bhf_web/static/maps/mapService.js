@@ -276,6 +276,31 @@ export async function loadManuscriptsForPassage(context = {}) {
   return loadCachedJson(url, "Could not load manuscript markers.");
 }
 
+export async function loadMapCatalog(context = {}) {
+  const params = new URLSearchParams();
+  if (context.period && String(context.period).trim().toLowerCase() !== "all") {
+    params.set("period", String(context.period));
+  }
+  const url = params.toString() ? `/api/maps/catalog?${params.toString()}` : "/api/maps/catalog";
+  return loadCachedJson(url, "Could not load map catalog.");
+}
+
+export async function searchMapCatalog(query, context = {}) {
+  const params = new URLSearchParams();
+  params.set("q", String(query || ""));
+  if (context.kind && String(context.kind).trim()) {
+    params.set("kind", String(context.kind));
+  }
+  if (context.period && String(context.period).trim().toLowerCase() !== "all") {
+    params.set("period", String(context.period));
+  }
+  if (context.limit) {
+    params.set("limit", String(context.limit));
+  }
+  const url = `/api/maps/search?${params.toString()}`;
+  return loadCachedJson(url, "Could not search the map catalog.", { allowOfflineFallback: false });
+}
+
 export async function loadSavedMapStudies(context = {}) {
   const params = new URLSearchParams();
   if (context.book) {

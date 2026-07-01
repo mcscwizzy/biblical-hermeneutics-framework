@@ -374,7 +374,7 @@ code {
   background: #245b82;
 }
 
-@media (max-width: 980px) {
+@media (min-width: 901px) and (max-width: 980px) {
   .reader-layout {
     grid-template-columns: 1fr;
   }

@@ -15,9 +15,9 @@ from .curation_schema import (
 from .study_db import (
     DEFAULT_DB_PATH,
     StudyDataError,
-    _connect,
     _ensure_schema,
 )
+from .db.connection import connect
 
 
 def list_curation_collections(path: str | None = None) -> list[dict[str, Any]]:
@@ -38,7 +38,7 @@ def list_curation_records(collection: str, path: str | None = None) -> list[dict
     spec = spec_for(collection)
     if spec.list_fn is not None:
         return spec.list_fn(None, None, path or DEFAULT_DB_PATH)
-    with _connect(path or DEFAULT_DB_PATH) as connection:
+    with connect(path or DEFAULT_DB_PATH) as connection:
         _ensure_schema(connection)
         rows = connection.execute(f"SELECT * FROM {spec.table} ORDER BY {spec.order_by}").fetchall()
     return [row_to_record(spec, row) for row in rows]
@@ -48,7 +48,7 @@ def get_curation_record(collection: str, record_id: str, path: str | None = None
     spec = spec_for(collection)
     if spec.get_fn is not None:
         return spec.get_fn(record_id, path or DEFAULT_DB_PATH)
-    with _connect(path or DEFAULT_DB_PATH) as connection:
+    with connect(path or DEFAULT_DB_PATH) as connection:
         _ensure_schema(connection)
         row = connection.execute(f"SELECT * FROM {spec.table} WHERE id = ?", (record_id,)).fetchone()
     if row is None:
@@ -67,7 +67,7 @@ def save_curation_record(
     now = _timestamp()
     columns = [field.name for field in spec.fields]
     values = [value_for_db(record.get(field.name), field) for field in spec.fields]
-    with _connect(resolved) as connection:
+    with connect(resolved) as connection:
         _ensure_schema(connection)
         existing = connection.execute(
             f"SELECT id FROM {spec.table} WHERE id = ?",
@@ -96,7 +96,7 @@ def save_curation_record(
 def delete_curation_record(collection: str, record_id: str, path: str | None = None) -> bool:
     spec = spec_for(collection)
     resolved = path or DEFAULT_DB_PATH
-    with _connect(resolved) as connection:
+    with connect(resolved) as connection:
         _ensure_schema(connection)
         cursor = connection.execute(f"DELETE FROM {spec.table} WHERE id = ?", (record_id,))
         if cursor.rowcount == 0:
@@ -122,7 +122,7 @@ def import_curation_bundle(payload: dict[str, Any], path: str | None = None) -> 
         raise StudyDataError("import payload must include a collections object")
     resolved = path or DEFAULT_DB_PATH
     imported: dict[str, int] = {}
-    with _connect(resolved) as connection:
+    with connect(resolved) as connection:
         _ensure_schema(connection)
         for collection, records in collections.items():
             spec = spec_for(collection)

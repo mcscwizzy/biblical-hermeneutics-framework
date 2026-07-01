@@ -20,6 +20,7 @@ from bhf_agent.study_db import (
     list_political_context_references,
     list_place_references,
     list_route_references,
+    list_saved_map_studies,
 )
 from .services.map_matching import (
     format_reference as _format_reference,
@@ -41,6 +42,315 @@ from .services.map_serializers import (
     related_passages_for_place as _related_passages_for_place,
     route_to_item as _route_to_item,
 )
+
+
+_MAP_SEARCH_KIND_ALIASES = {
+    "all": "all",
+    "topic": "all",
+    "place": "place",
+    "places": "place",
+    "location": "place",
+    "locations": "place",
+    "route": "route",
+    "routes": "route",
+    "archaeology": "archaeology",
+    "archaeological": "archaeology",
+    "manuscript": "manuscript",
+    "manuscripts": "manuscript",
+    "historical layer": "historical_layer",
+    "historical_layer": "historical_layer",
+    "historical layers": "historical_layer",
+    "historical": "historical_layer",
+    "political context": "political_context",
+    "political_context": "political_context",
+    "context": "political_context",
+}
+
+
+def _normalize_map_search_kind(kind: str | None) -> str:
+    normalized = _normalize_for_match(str(kind or "all"))
+    return _MAP_SEARCH_KIND_ALIASES.get(normalized, "all")
+
+
+def _search_text(value: Any) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, str):
+        return value
+    if isinstance(value, (list, tuple, set)):
+        return " ".join(_search_text(item) for item in value)
+    if isinstance(value, dict):
+        return " ".join(_search_text(item) for item in value.values())
+    return str(value)
+
+
+def _first_text(item: dict[str, Any], fields: list[str]) -> str:
+    for field in fields:
+        value = _search_text(item.get(field, "")).strip()
+        if value:
+            return value
+    return ""
+
+
+def _score_match(query: str, item: dict[str, Any], fields: list[tuple[str, int]]) -> tuple[int, list[str]]:
+    normalized_query = _normalize_for_match(query)
+    if not normalized_query:
+        return 0, []
+
+    query_terms = [term for term in normalized_query.split(" ") if term]
+    score = 0
+    matched_fields: list[str] = []
+
+    for field_name, weight in fields:
+        value = _search_text(item.get(field_name, ""))
+        normalized_value = _normalize_for_match(value)
+        if not normalized_value:
+            continue
+        if normalized_query in normalized_value:
+            score += weight * 3
+            matched_fields.append(field_name)
+            continue
+        if any(term in normalized_value for term in query_terms):
+            score += weight
+            matched_fields.append(field_name)
+
+    return score, matched_fields
+
+
+def _search_catalog_items(
+    query: str,
+    items: list[dict[str, Any]],
+    *,
+    kind: str,
+    kind_label: str,
+    fields: list[tuple[str, int]],
+    subtitle_fields: list[str],
+    summary_fields: list[str],
+) -> list[dict[str, Any]]:
+    hits: list[dict[str, Any]] = []
+    for item in items:
+        score, matched_fields = _score_match(query, item, fields)
+        if score <= 0:
+            continue
+        subtitle = _first_text(item, subtitle_fields)
+        summary = _first_text(item, summary_fields)
+        hits.append(
+            {
+                "kind": kind,
+                "kind_label": kind_label,
+                "id": item.get("id", ""),
+                "title": item.get("name") or item.get("title") or item.get("reference") or "Unnamed item",
+                "subtitle": subtitle,
+                "summary": summary,
+                "period": item.get("period") or "",
+                "confidence": item.get("confidence") or "",
+                "reference_count": int(item.get("reference_count") or 0),
+                "marker_kind": item.get("marker_kind") or kind,
+                "has_coordinates": bool(item.get("has_coordinates")),
+                "search_score": score,
+                "matched_fields": matched_fields,
+                "item": item,
+            }
+        )
+    hits.sort(key=lambda hit: (-int(hit["search_score"]), str(hit["title"]).lower(), str(hit["id"])))
+    return hits
+
+
+def get_map_catalog(
+    period: str | None = None,
+    path: str | Path | None = None,
+) -> dict[str, Any]:
+    return {
+        "places": get_biblical_place_markers(period=period, path=path),
+        "routes": get_map_routes(period=period, path=path),
+        "archaeology": get_archaeology_markers(period=period, path=path),
+        "manuscripts": get_manuscript_markers(period=period, path=path),
+        "historical_layers": get_historical_layers(period=period, path=path),
+        "political_context": get_political_context_layers(period=period, path=path),
+        "saved_map_studies": list_saved_map_studies(path=path),
+    }
+
+
+def search_map_catalog(
+    query: str,
+    *,
+    kind: str | None = None,
+    period: str | None = None,
+    limit: int = 25,
+    path: str | Path | None = None,
+) -> dict[str, Any]:
+    normalized_query = str(query or "").strip()
+    if not normalized_query:
+        return {
+            "query": "",
+            "kind": _normalize_map_search_kind(kind),
+            "period": period or "all",
+            "results": [],
+            "total_results": 0,
+        }
+
+    catalog = get_map_catalog(period=period, path=path)
+    search_kind = _normalize_map_search_kind(kind)
+    allowed_kinds = {
+        "all": {"place", "route", "archaeology", "manuscript", "historical_layer", "political_context"},
+        "place": {"place"},
+        "route": {"route"},
+        "archaeology": {"archaeology"},
+        "manuscript": {"manuscript"},
+        "historical_layer": {"historical_layer"},
+        "political_context": {"political_context"},
+    }[search_kind]
+
+    all_hits: list[dict[str, Any]] = []
+    if "place" in allowed_kinds:
+        all_hits.extend(
+            _search_catalog_items(
+                normalized_query,
+                catalog["places"],
+                kind="place",
+                kind_label="Location",
+                fields=[
+                    ("name", 5),
+                    ("aliases", 4),
+                    ("description", 2),
+                    ("ancient_region", 2),
+                    ("modern_location", 2),
+                    ("periods", 1),
+                    ("confidence", 1),
+                    ("notes", 1),
+                ],
+                subtitle_fields=["ancient_region", "modern_location"],
+                summary_fields=["description", "notes"],
+            )
+        )
+    if "route" in allowed_kinds:
+        all_hits.extend(
+            _search_catalog_items(
+                normalized_query,
+                catalog["routes"],
+                kind="route",
+                kind_label="Route",
+                fields=[
+                    ("name", 5),
+                    ("description", 2),
+                    ("route_type", 3),
+                    ("period", 2),
+                    ("periods", 1),
+                    ("confidence", 1),
+                    ("notes", 1),
+                ],
+                subtitle_fields=["route_type", "period"],
+                summary_fields=["summary", "description", "notes"],
+            )
+        )
+    if "archaeology" in allowed_kinds:
+        all_hits.extend(
+            _search_catalog_items(
+                normalized_query,
+                catalog["archaeology"],
+                kind="archaeology",
+                kind_label="Archaeology evidence",
+                fields=[
+                    ("name", 5),
+                    ("site_name", 4),
+                    ("site_type", 3),
+                    ("item_type", 2),
+                    ("relationship", 2),
+                    ("why_it_matters", 2),
+                    ("location", 1),
+                    ("ancient_region", 1),
+                    ("description", 1),
+                    ("periods", 1),
+                    ("confidence", 1),
+                    ("notes", 1),
+                ],
+                subtitle_fields=["site_name", "location", "ancient_region"],
+                summary_fields=["relationship", "why_it_matters", "notes"],
+            )
+        )
+    if "manuscript" in allowed_kinds:
+        all_hits.extend(
+            _search_catalog_items(
+                normalized_query,
+                catalog["manuscripts"],
+                kind="manuscript",
+                kind_label="Textual witness",
+                fields=[
+                    ("name", 5),
+                    ("manuscript_type", 3),
+                    ("language", 2),
+                    ("material", 2),
+                    ("discovery_location", 2),
+                    ("current_location", 2),
+                    ("location", 2),
+                    ("significance", 2),
+                    ("related_books", 2),
+                    ("periods", 1),
+                    ("confidence", 1),
+                    ("notes", 1),
+                ],
+                subtitle_fields=["discovery_location", "current_location", "location"],
+                summary_fields=["significance", "notes"],
+            )
+        )
+    if "historical_layer" in allowed_kinds:
+        all_hits.extend(
+            _search_catalog_items(
+                normalized_query,
+                catalog["historical_layers"],
+                kind="historical_layer",
+                kind_label="Historical layer",
+                fields=[
+                    ("name", 5),
+                    ("description", 2),
+                    ("layer_type", 3),
+                    ("period", 2),
+                    ("periods", 1),
+                    ("confidence", 1),
+                    ("notes", 1),
+                ],
+                subtitle_fields=["period", "layer_type"],
+                summary_fields=["description", "notes"],
+            )
+        )
+    if "political_context" in allowed_kinds:
+        all_hits.extend(
+            _search_catalog_items(
+                normalized_query,
+                catalog["political_context"],
+                kind="political_context",
+                kind_label="Political context",
+                fields=[
+                    ("name", 5),
+                    ("summary", 3),
+                    ("description", 2),
+                    ("entity_type", 3),
+                    ("period", 2),
+                    ("periods", 1),
+                    ("confidence", 1),
+                    ("notes", 1),
+                ],
+                subtitle_fields=["entity_type", "period"],
+                summary_fields=["summary", "description", "notes"],
+            )
+        )
+
+    total_results = len(all_hits)
+    return {
+        "query": normalized_query,
+        "kind": search_kind,
+        "period": period or "all",
+        "results": all_hits[: max(0, int(limit))],
+        "total_results": total_results,
+    }
+
+
+def get_map_routes(
+    period: str | None = None,
+    path: str | Path | None = None,
+) -> list[dict[str, Any]]:
+    routes = list_map_routes(period=period, path=path) if path else list_map_routes(period=period)
+    return [_route_to_item(route, list_route_references, path=path) for route in routes]
 
 
 def get_biblical_place_markers(

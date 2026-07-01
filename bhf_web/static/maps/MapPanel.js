@@ -1,6 +1,7 @@
 import { createBibleMap } from "./BibleMap.js";
 import {
   loadArchaeologyForPassage,
+  loadMapCatalog,
   loadHistoricalLayers,
   invalidateMapCache,
   loadPlacesForPassage,
@@ -9,22 +10,9 @@ import {
   loadRoutesForPassage,
   loadSavedMapStudy,
   loadSavedMapStudies,
-} from "./mapService.js";
+  searchMapCatalog,
+} from "./mapService.js?v=20260630";
 import {
-  buildArchaeologyCautionNote,
-  buildArchaeologyExplanation,
-  buildCautionNote,
-  buildMapStudySummary,
-  buildHistoricalLayerCautionNote,
-  buildHistoricalLayerExplanation,
-  buildManuscriptCautionNote,
-  buildManuscriptExplanation,
-  buildPlaceExplanation,
-  buildPoliticalContextCautionNote,
-  buildPoliticalContextExplanation,
-  buildRouteCautionNote,
-  buildRouteExplanation,
-  buildSourceText,
   renderHistoricalLayerOverview as renderHistoricalLayerOverviewHtml,
   renderMapOrientationCard,
   renderSavedMapStudies,
@@ -38,6 +26,23 @@ import {
   renderArchaeologyLayerOverview as renderArchaeologyLayerOverviewHtml,
   renderManuscriptLayerOverview as renderManuscriptLayerOverviewHtml,
 } from "./MapPanelContent.js";
+import {
+  buildArchaeologyCautionNote,
+  buildArchaeologyExplanation,
+  buildCautionNote,
+  buildHistoricalLayerCautionNote,
+  buildHistoricalLayerExplanation,
+  buildMapStudySummary,
+  buildManuscriptCautionNote,
+  buildManuscriptExplanation,
+  buildPlaceExplanation,
+  buildPoliticalContextCautionNote,
+  buildPoliticalContextExplanation,
+  buildRouteCautionNote,
+  buildRouteExplanation,
+  escapeHtml,
+  buildSourceText,
+} from "./MapPanelText.js";
 import {
   buildCurrentMapStudyPayload,
   getCurrentMapSelection,
@@ -59,6 +64,7 @@ let selectedManuscript = null;
 let selectedRoute = null;
 let selectedHistoricalLayer = null;
 let selectedPoliticalContext = null;
+let mapMode = "passage";
 let lastPassageContext = null;
 let loadedMarkers = [];
 let loadedArchaeologyMarkers = [];
@@ -67,6 +73,10 @@ let loadedRoutes = [];
 let loadedHistoricalLayers = [];
 let loadedPoliticalContextLayers = [];
 let loadedSavedMapStudies = [];
+let browseSearchResults = [];
+let browseSearchQuery = "";
+let browseSearchKind = "all";
+let browseSearchPeriod = "all";
 let historicalPeriod = "all";
 let archaeologyVisible = false;
 let manuscriptsVisible = false;
@@ -115,6 +125,16 @@ function getPanelElements() {
     manuscriptToggle: document.querySelector("[data-manuscript-toggle]"),
     routeToggle: document.querySelector("[data-route-toggle]"),
     historicalPeriod: document.querySelector("[data-historical-period]"),
+    mapBrowser: document.querySelector("[data-map-browser]"),
+    mapModeButtons: document.querySelectorAll("[data-map-mode-switch]"),
+    mapSearchQuery: document.querySelector("[data-map-search-query]"),
+    mapSearchKind: document.querySelector("[data-map-search-kind]"),
+    mapSearchPeriod: document.querySelector("[data-map-search-period]"),
+    mapSearchSubmit: document.querySelector("[data-map-search-submit]"),
+    mapSearchClear: document.querySelector("[data-map-search-clear]"),
+    mapSearchResults: document.querySelector("#map-search-results"),
+    mapSearchResultsCount: document.querySelector("#map-search-results-count"),
+    mapSearchResultsList: document.querySelector("#map-search-results-list"),
     workspace: document.querySelector("#map-workspace"),
     inlineHost: document.querySelector("#map-workspace-inline-host"),
     modal: document.querySelector("#map-modal"),
@@ -143,7 +163,7 @@ function getLoadContext(context = {}) {
   };
 }
 
-async function loadMapData(context = {}) {
+async function loadPassageMapData(context = {}) {
   const loadContext = getLoadContext(context);
   const [
     placeResult,
@@ -181,6 +201,30 @@ async function loadMapData(context = {}) {
     savedMapStudiesResult,
     offline,
   };
+}
+
+async function loadBrowseMapData() {
+  const [
+    catalog,
+    savedMapStudiesResult,
+  ] = await Promise.all([
+    loadMapCatalog({ period: browseSearchPeriod }),
+    loadSavedMapStudies(),
+  ]);
+  return {
+    placeResult: { markers: catalog.places || [] },
+    archaeologyResult: { markers: catalog.archaeology || [] },
+    manuscriptResult: { markers: catalog.manuscripts || [] },
+    routeResult: { routes: catalog.routes || [] },
+    layerResult: { layers: catalog.historical_layers || [] },
+    politicalContextResult: { layers: catalog.political_context || [] },
+    savedMapStudiesResult: savedMapStudiesResult || { saved_map_studies: [] },
+    offline: Boolean(catalog.offline || savedMapStudiesResult?.offline),
+  };
+}
+
+async function loadMapData(context = {}) {
+  return mapMode === "browse" ? loadBrowseMapData() : loadPassageMapData(context);
 }
 
 function setStatus(message, kind = "loading") {
@@ -261,6 +305,205 @@ function moveWorkspaceToHost(hostType) {
   targetHost.appendChild(workspace);
   workspace.dataset.mapHost = hostType;
   syncMapViewport();
+}
+
+function setMapMode(nextMode) {
+  mapMode = nextMode === "browse" ? "browse" : "passage";
+  const { mapBrowser, mapModeButtons, mapSearchResults } = getPanelElements();
+  if (mapBrowser) {
+    mapBrowser.hidden = mapMode !== "browse";
+  }
+  if (mapSearchResults) {
+    mapSearchResults.hidden = mapMode !== "browse";
+  }
+  mapModeButtons.forEach((button) => {
+    const isActive = button.getAttribute("data-map-mode-switch") === mapMode;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+}
+
+function getMapSearchState() {
+  const { mapSearchQuery, mapSearchKind, mapSearchPeriod } = getPanelElements();
+  return {
+    query: mapSearchQuery?.value?.trim() || "",
+    kind: mapSearchKind?.value || "all",
+    period: mapSearchPeriod?.value || historicalPeriod || "all",
+  };
+}
+
+function syncMapSearchState() {
+  const { mapSearchPeriod } = getPanelElements();
+  if (mapSearchPeriod && mapSearchPeriod.value !== browseSearchPeriod) {
+    mapSearchPeriod.value = browseSearchPeriod;
+  }
+}
+
+function renderBrowseInstructions(message = "Browse the curated map catalog without choosing a chapter first.") {
+  const { mapSearchResults, mapSearchResultsList, mapSearchResultsCount } = getPanelElements();
+  browseSearchResults = [];
+  if (mapSearchResultsCount) {
+    mapSearchResultsCount.textContent = "0";
+  }
+  if (mapSearchResultsList) {
+    mapSearchResultsList.innerHTML = `
+      <p class="empty">${message}</p>
+      <ul class="map-search-hints">
+        <li>Search a topic, place, route, archaeology item, manuscript, historical layer, or political context.</li>
+        <li>Use the Type dropdown to narrow the catalog before you search.</li>
+        <li>Select a result to center the map and open its details.</li>
+      </ul>
+    `;
+  }
+  if (mapSearchResults) {
+    mapSearchResults.hidden = false;
+  }
+}
+
+function renderBrowseSearchResults(results, query = "") {
+  const { mapSearchResults, mapSearchResultsList, mapSearchResultsCount } = getPanelElements();
+  browseSearchResults = Array.isArray(results) ? results.slice() : [];
+  browseSearchQuery = query;
+  if (!mapSearchResults || !mapSearchResultsList || !mapSearchResultsCount) {
+    return;
+  }
+  mapSearchResults.hidden = mapMode !== "browse";
+  mapSearchResultsCount.textContent = String(browseSearchResults.length);
+  if (browseSearchResults.length === 0) {
+    const searchLabel = query ? ` for “${escapeHtml(query)}”` : "";
+    mapSearchResultsList.innerHTML = `
+      <p class="empty">No browse results${searchLabel}.</p>
+    `;
+    return;
+  }
+  mapSearchResultsList.innerHTML = browseSearchResults
+    .map((result, index) => {
+      const score = Number(result.search_score || 0);
+      return `
+        <article class="map-search-result" data-map-search-result data-search-index="${index}">
+          <button type="button" class="map-search-result-button" data-map-search-result-button data-search-index="${index}">
+            <div class="map-search-result-topline">
+              <strong>${escapeHtml(String(result.title || result.id || "Untitled"))}</strong>
+              <span>${escapeHtml(String(result.kind_label || result.kind || "Result"))}</span>
+            </div>
+            <div class="map-search-result-subtitle">${escapeHtml(String(result.subtitle || result.period || ""))}</div>
+            <p class="map-search-result-summary">${escapeHtml(String(result.summary || ""))}</p>
+            <div class="map-search-result-meta">
+              <span>${escapeHtml(String(result.kind_label || result.kind || ""))}</span>
+              <span>Score ${escapeHtml(String(score))}</span>
+            </div>
+          </button>
+        </article>
+      `;
+    })
+    .join("");
+}
+
+function setBrowseSearchControls({ query = "", kind = "all", period = "all" } = {}) {
+  const { mapSearchQuery, mapSearchKind, mapSearchPeriod } = getPanelElements();
+  if (mapSearchQuery) {
+    mapSearchQuery.value = query;
+  }
+  if (mapSearchKind) {
+    mapSearchKind.value = kind;
+  }
+  if (mapSearchPeriod) {
+    mapSearchPeriod.value = period;
+  }
+  browseSearchQuery = query;
+  browseSearchKind = kind;
+  browseSearchPeriod = period;
+  syncMapSearchState();
+}
+
+function setSelectedSearchResult(result) {
+  if (!result || !result.item) {
+    return;
+  }
+  selectedMarker = null;
+  selectedArchaeology = null;
+  selectedManuscript = null;
+  selectedRoute = null;
+  selectedHistoricalLayer = null;
+  selectedPoliticalContext = null;
+
+  if (result.kind === "place") {
+    selectedMarker = result.item;
+    renderSelectedMarker(selectedMarker, null);
+    focusMapSelection(result);
+    return;
+  }
+  if (result.kind === "route") {
+    selectedRoute = result.item;
+    renderSelectedRoute(selectedRoute, null);
+    focusMapSelection(result);
+    return;
+  }
+  if (result.kind === "archaeology") {
+    selectedArchaeology = result.item;
+    renderSelectedArchaeology(selectedArchaeology, null);
+    focusMapSelection(result);
+    return;
+  }
+  if (result.kind === "manuscript") {
+    selectedManuscript = result.item;
+    renderSelectedManuscript(selectedManuscript, null);
+    focusMapSelection(result);
+    return;
+  }
+  if (result.kind === "historical_layer") {
+    selectedHistoricalLayer = result.item;
+    renderSelectedHistoricalLayer(selectedHistoricalLayer, null);
+    focusMapSelection(result);
+    return;
+  }
+  if (result.kind === "political_context") {
+    selectedPoliticalContext = result.item;
+    renderSelectedPoliticalContext(selectedPoliticalContext, null);
+    focusMapSelection(result);
+  }
+}
+
+async function runBrowseSearch() {
+  const { query, kind, period } = getMapSearchState();
+  browseSearchKind = kind;
+  browseSearchPeriod = normalizeHistoricalPeriod(period);
+  setBrowseSearchControls({ query, kind, period: browseSearchPeriod });
+
+  if (!query) {
+    renderBrowseInstructions();
+    clearStatus();
+    return;
+  }
+
+  setStatus(`Searching the map catalog for "${query}"...`, "loading");
+  try {
+    const result = await searchMapCatalog(query, {
+      kind,
+      period: browseSearchPeriod,
+      limit: 30,
+    });
+    renderBrowseSearchResults(result.results || [], query);
+    if ((result.results || []).length === 0) {
+      setStatus(`No curated map results matched "${query}".`, "empty");
+    } else {
+      clearStatus();
+    }
+  } catch (error) {
+    setStatus(error.message || "Could not search the map catalog.", "error");
+    renderBrowseInstructions("The map catalog search is temporarily unavailable.");
+  }
+}
+
+function clearBrowseSearch() {
+  const { mapSearchQuery } = getPanelElements();
+  if (mapSearchQuery) {
+    mapSearchQuery.value = "";
+  }
+  browseSearchQuery = "";
+  browseSearchResults = [];
+  renderBrowseInstructions();
+  clearStatus();
 }
 
 function openMapModal() {
@@ -400,15 +643,33 @@ function ensureMapController(
 }
 
 async function openMapPanel(context = {}) {
-  const nextReference = formatReference(context);
-  const previousReference = formatReference(lastPassageContext);
-  if (nextReference !== previousReference) {
+  const browseMode = context.mode === "browse" || (!context.book && !context.chapter && !context.savedMapStudy);
+  setMapMode(browseMode ? "browse" : "passage");
+  if (browseMode) {
     selectedMarker = null;
     selectedArchaeology = null;
     selectedManuscript = null;
     selectedRoute = null;
     selectedHistoricalLayer = null;
     selectedPoliticalContext = null;
+    lastPassageContext = null;
+    browseSearchPeriod = normalizeHistoricalPeriod(context.period || historicalPeriod || "all");
+    setBrowseSearchControls({
+      query: browseSearchQuery,
+      kind: browseSearchKind,
+      period: browseSearchPeriod,
+    });
+  } else {
+    const nextReference = formatReference(context);
+    const previousReference = formatReference(lastPassageContext);
+    if (nextReference !== previousReference) {
+      selectedMarker = null;
+      selectedArchaeology = null;
+      selectedManuscript = null;
+      selectedRoute = null;
+      selectedHistoricalLayer = null;
+      selectedPoliticalContext = null;
+    }
   }
   if (context.savedMapStudy?.map_view_state?.historicalPeriod) {
     historicalPeriod = normalizeHistoricalPeriod(context.savedMapStudy.map_view_state.historicalPeriod);
@@ -419,11 +680,17 @@ async function openMapPanel(context = {}) {
   if (context.savedMapStudy?.map_view_state && Object.prototype.hasOwnProperty.call(context.savedMapStudy.map_view_state, "manuscriptVisibility")) {
     manuscriptsVisible = Boolean(context.savedMapStudy.map_view_state.manuscriptVisibility);
   }
-  lastPassageContext = context;
+  if (!browseMode) {
+    lastPassageContext = context;
+  }
   ensurePanelVisible(context);
   setPinHint("");
-  setStatus("Loading map data...", "loading");
-  renderEmptyDetails("Loading place, archaeology, manuscript, route, historical, and political context details...");
+  setStatus(browseMode ? "Loading map catalog..." : "Loading map data...", "loading");
+  renderEmptyDetails(
+    browseMode
+      ? "Loading the curated map catalog so you can search by topic, location, or archaeological evidence."
+      : "Loading place, archaeology, manuscript, route, historical, and political context details..."
+  );
 
   try {
     const routeToggle = getPanelElements().routeToggle;
@@ -485,6 +752,16 @@ async function openMapPanel(context = {}) {
     syncHistoricalLayerToggles();
     syncPoliticalContextLayerToggles();
     await refreshSavedMapStudies();
+
+    if (browseMode) {
+      clearStatus();
+      if (browseSearchResults.length > 0) {
+        renderBrowseSearchResults(browseSearchResults, browseSearchQuery);
+      } else {
+        renderBrowseInstructions("Browse the catalog, or search by topic, location, or archaeology evidence.");
+      }
+      return;
+    }
 
     if (selectedMarker && (placeResult.markers || []).some((marker) => marker.id === selectedMarker.id)) {
       renderSelectedMarker(selectedMarker, context);
@@ -798,12 +1075,20 @@ async function setHistoricalPeriod(period) {
   if (historicalPeriodSelect) {
     historicalPeriodSelect.value = historicalPeriod;
   }
-  if (!lastPassageContext) {
+  if (mapMode === "browse") {
+    browseSearchPeriod = historicalPeriod;
+    syncMapSearchState();
+    setStatus("Loading map catalog...", "loading");
+  } else if (!lastPassageContext) {
     return;
   }
 
   try {
-    setStatus("Loading historical layers...", "loading");
+    if (mapMode === "browse") {
+      setStatus("Loading map catalog...", "loading");
+    } else {
+      setStatus("Loading historical layers...", "loading");
+    }
     const {
       placeResult,
       archaeologyResult,
@@ -858,7 +1143,14 @@ async function setHistoricalPeriod(period) {
     syncManuscriptToggle();
     syncRouteToggle();
     syncHistoricalLayerToggles();
-    if (selectedMarker) {
+    if (mapMode === "browse") {
+      clearStatus();
+      if (browseSearchResults.length > 0) {
+        renderBrowseSearchResults(browseSearchResults, browseSearchQuery);
+      } else {
+        renderBrowseInstructions("Browse the catalog, or search by topic, location, or archaeology evidence.");
+      }
+    } else if (selectedMarker) {
       renderSelectedMarker(selectedMarker, lastPassageContext);
     } else if (selectedArchaeology) {
       renderSelectedArchaeology(selectedArchaeology, lastPassageContext);
@@ -1059,6 +1351,19 @@ function renderArchaeologyLayerOverview() {
 
 function renderManuscriptLayerOverview() {
   return renderManuscriptLayerOverviewHtml(loadedManuscriptMarkers, manuscriptsVisible);
+}
+
+function focusMapSelection(result) {
+  if (!mapController || !result) {
+    return;
+  }
+  if (typeof mapController.focusSelection === "function") {
+    mapController.focusSelection(result.kind, result.item);
+    return;
+  }
+  if (mapController.map && Number.isFinite(result.item?.latitude) && Number.isFinite(result.item?.longitude)) {
+    mapController.map.setView([result.item.latitude, result.item.longitude], 9);
+  }
 }
 
 async function saveCurrentMapStudy() {
@@ -1313,12 +1618,18 @@ function submitStudyForm(form) {
 }
 
 async function refreshSavedMapStudies() {
+  const { savedMapStudiesList, savedMapStudiesCount } = getPanelElements();
   if (!lastPassageContext) {
+    if (savedMapStudiesCount) {
+      savedMapStudiesCount.textContent = String(loadedSavedMapStudies.length);
+    }
+    if (savedMapStudiesList) {
+      savedMapStudiesList.innerHTML = renderSavedMapStudies(loadedSavedMapStudies);
+    }
     return;
   }
   const response = await loadSavedMapStudies(lastPassageContext);
   loadedSavedMapStudies = response.saved_map_studies || [];
-  const { savedMapStudiesList, savedMapStudiesCount } = getPanelElements();
   if (savedMapStudiesCount) {
     savedMapStudiesCount.textContent = String(loadedSavedMapStudies.length);
   }
@@ -1375,6 +1686,13 @@ function wirePanelButtons() {
   const resetButton = document.querySelector("[data-map-reset]");
   const expandButton = document.querySelector("[data-map-expand]");
   const modalCloseButton = document.querySelector("[data-map-modal-close]");
+  const mapModeButtons = document.querySelectorAll("[data-map-mode-switch]");
+  const mapSearchQuery = document.querySelector("[data-map-search-query]");
+  const mapSearchKind = document.querySelector("[data-map-search-kind]");
+  const mapSearchPeriod = document.querySelector("[data-map-search-period]");
+  const mapSearchSubmit = document.querySelector("[data-map-search-submit]");
+  const mapSearchClear = document.querySelector("[data-map-search-clear]");
+  const mapSearchResultsList = document.querySelector("#map-search-results-list");
   const archaeologyToggle = document.querySelector("[data-archaeology-toggle]");
   const manuscriptToggle = document.querySelector("[data-manuscript-toggle]");
   const routeToggle = document.querySelector("[data-route-toggle]");
@@ -1394,6 +1712,48 @@ function wirePanelButtons() {
   }
   if (modalCloseButton) {
     modalCloseButton.addEventListener("click", closeMapModal);
+  }
+  mapModeButtons.forEach((button) => {
+    button.addEventListener("click", async () => {
+      const nextMode = button.getAttribute("data-map-mode-switch");
+      setMapMode(nextMode);
+      if (nextMode === "browse") {
+        await openMapPanel({ mode: "browse" });
+      } else if (lastPassageContext) {
+        await openMapPanel(lastPassageContext);
+      }
+    });
+  });
+  if (mapSearchQuery) {
+    mapSearchQuery.addEventListener("keydown", async (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        await runBrowseSearch();
+      }
+    });
+  }
+  if (mapSearchKind) {
+    mapSearchKind.addEventListener("change", async () => {
+      await runBrowseSearch();
+    });
+  }
+  if (mapSearchPeriod) {
+    mapSearchPeriod.addEventListener("change", async (event) => {
+      await setHistoricalPeriod(event.target.value);
+      if (mapMode === "browse") {
+        await runBrowseSearch();
+      }
+    });
+  }
+  if (mapSearchSubmit) {
+    mapSearchSubmit.addEventListener("click", async () => {
+      await runBrowseSearch();
+    });
+  }
+  if (mapSearchClear) {
+    mapSearchClear.addEventListener("click", () => {
+      clearBrowseSearch();
+    });
   }
   if (modal) {
     modal.addEventListener("close", finalizeMapModalClose);
@@ -1477,6 +1837,19 @@ function wirePanelButtons() {
         return;
       }
       setHistoricalLayerVisibility(toggle.getAttribute("data-layer-id"), Boolean(toggle.checked));
+    });
+  }
+  if (mapSearchResultsList) {
+    mapSearchResultsList.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-map-search-result-button]");
+      if (!button) {
+        return;
+      }
+      const index = Number(button.getAttribute("data-search-index"));
+      if (!Number.isInteger(index) || index < 0 || index >= browseSearchResults.length) {
+        return;
+      }
+      setSelectedSearchResult(browseSearchResults[index]);
     });
   }
   if (savedMapStudiesList) {

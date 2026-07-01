@@ -16,13 +16,16 @@ from bhf_agent.study_db import (
 )
 
 from ..map_service import (
+    get_map_catalog,
     get_archaeology_markers,
     get_biblical_place_markers,
     get_historical_layers,
+    get_map_routes,
     get_map_routes_for_passage,
     get_manuscript_markers,
     get_political_context_layers,
     get_related_passages_for_place,
+    search_map_catalog,
     resolve_archaeology_for_passage,
     resolve_manuscripts_for_passage,
     resolve_places_for_passage,
@@ -37,6 +40,10 @@ from ..services.web_helpers import (
 
 
 def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object | None = None) -> None:
+    @app.get("/api/maps/catalog", response_class=JSONResponse)
+    async def maps_catalog(period: str | None = None) -> JSONResponse:
+        return JSONResponse(get_map_catalog(period=period, path=study_db_path))
+
     @app.get("/api/maps/biblical-places", response_class=JSONResponse)
     async def maps_biblical_places(period: str | None = None) -> JSONResponse:
         return JSONResponse({"markers": get_biblical_place_markers(period=period, path=study_db_path)})
@@ -51,7 +58,7 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
 
     @app.get("/api/maps/routes", response_class=JSONResponse)
     async def maps_routes(period: str | None = None) -> JSONResponse:
-        return JSONResponse({"routes": get_map_routes_for_passage(period=period, path=study_db_path)["routes"]})
+        return JSONResponse({"routes": get_map_routes(period=period, path=study_db_path)})
 
     @app.get("/api/maps/historical-layers", response_class=JSONResponse)
     async def maps_historical_layers(period: str | None = None) -> JSONResponse:
@@ -60,6 +67,25 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
     @app.get("/api/maps/political-context", response_class=JSONResponse)
     async def maps_political_context(period: str | None = None) -> JSONResponse:
         return JSONResponse({"layers": get_political_context_layers(period=period, path=study_db_path)})
+
+    @app.get("/api/maps/search", response_class=JSONResponse)
+    async def maps_search(
+        q: str,
+        kind: str | None = None,
+        period: str | None = None,
+        limit: int = 25,
+    ) -> JSONResponse:
+        try:
+            result = search_map_catalog(
+                q,
+                kind=kind,
+                period=period,
+                limit=limit,
+                path=study_db_path,
+            )
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+        return JSONResponse(result)
 
     @app.get("/api/maps/routes-for-passage", response_class=JSONResponse)
     async def maps_routes_for_passage(

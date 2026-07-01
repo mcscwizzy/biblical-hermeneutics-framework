@@ -13,6 +13,10 @@ body.map-modal-open {
   overflow: hidden;
 }
 
+body.workspace-drawer-open {
+  overflow: hidden;
+}
+
 a {
   color: inherit;
 }
@@ -249,4 +253,3 @@ a {
   border-color: #d7a8a8;
   color: #8b2f2f;
 }
-

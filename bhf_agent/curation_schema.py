@@ -13,7 +13,6 @@ from .bible import BibleError, normalize_book_name
 from .study_db import (
     DEFAULT_DB_PATH,
     StudyDataError,
-    _connect,
     _ensure_schema,
     get_archaeology_item,
     get_archaeology_site,
@@ -27,6 +26,7 @@ from .study_db import (
     list_place_references,
     list_route_references,
 )
+from .db.connection import connect
 
 
 def _timestamp() -> str:
@@ -121,7 +121,7 @@ def _core_get(kind: str) -> Callable[[str, str | None], dict[str, Any]]:
         if kind == "archaeology_items":
             return get_archaeology_item(item_id, path=resolved)
         if kind == "routes":
-            with _connect(resolved) as connection:
+            with connect(resolved) as connection:
                 _ensure_schema(connection)
                 row = connection.execute("SELECT * FROM map_routes WHERE id = ?", (item_id,)).fetchone()
             if row is None:
@@ -133,7 +133,7 @@ def _core_get(kind: str) -> Callable[[str, str | None], dict[str, Any]]:
             route["reference_count"] = len(route["scripture_links"])
             return route
         if kind == "historical_layers":
-            with _connect(resolved) as connection:
+            with connect(resolved) as connection:
                 _ensure_schema(connection)
                 row = connection.execute(
                     "SELECT * FROM historical_layers WHERE id = ?",
