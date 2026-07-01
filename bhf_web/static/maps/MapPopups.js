@@ -42,7 +42,7 @@ function renderPoliticalContextPopup(layerItem) {
   const name = escapeHtml(layerItem.name || "Unnamed context");
   const entityType = escapeHtml(layerItem.entity_type || "political context");
   const period = escapeHtml(layerItem.period || "Unknown period");
-  const summary = escapeHtml(layerItem.summary || "No summary available.");
+  const summary = escapeHtml(layerItem.summary || layerItem.description || "No summary available.");
   return `
     <article class="map-popup">
       <h3>${name}</h3>

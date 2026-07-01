@@ -1,0 +1,105 @@
+{
+  "id": "biblical-regions",
+  "title": "Biblical Regions",
+  "description": "Broad regional study zones used for biblical orientation and narrative geography.",
+  "type": "polygons",
+  "defaultVisible": true,
+  "features": [
+    {
+      "id": "galilee",
+      "name": "Galilee",
+      "points": [
+        [33.30, 34.80],
+        [33.30, 35.95],
+        [32.30, 36.05],
+        [32.00, 35.15],
+        [32.20, 34.70]
+      ],
+      "periods": ["NT / Roman period"],
+      "description": "Northern highlands and the lake region central to Jesus' ministry.",
+      "passages": ["Matthew 4:12-25"],
+      "confidence": "possible",
+      "caution": "The region is broad and its exact edge is schematic."
+    },
+    {
+      "id": "samaria",
+      "name": "Samaria",
+      "points": [
+        [32.30, 34.95],
+        [32.30, 35.55],
+        [31.95, 35.60],
+        [31.80, 35.20],
+        [32.00, 34.85]
+      ],
+      "periods": ["Divided Kingdom", "NT / Roman period"],
+      "description": "The central hill country between Galilee and Judea.",
+      "passages": ["1 Kings 16:24", "John 4:1-42"],
+      "confidence": "possible",
+      "caution": "The boundaries changed across periods and are simplified here."
+    },
+    {
+      "id": "judea",
+      "name": "Judea",
+      "points": [
+        [32.00, 34.75],
+        [32.00, 35.55],
+        [31.15, 35.55],
+        [31.15, 34.85],
+        [31.50, 34.60]
+      ],
+      "periods": ["United Monarchy", "Babylonian period", "NT / Roman period"],
+      "description": "The southern hill country around Jerusalem and Bethlehem.",
+      "passages": ["Joshua 15", "Luke 1:5"],
+      "confidence": "possible",
+      "caution": "This is a broad study overlay, not a precise provincial map."
+    },
+    {
+      "id": "decalpolis",
+      "name": "Decapolis",
+      "points": [
+        [33.35, 35.55],
+        [33.25, 36.25],
+        [32.55, 36.55],
+        [31.95, 36.10],
+        [32.05, 35.55]
+      ],
+      "periods": ["NT / Roman period"],
+      "description": "A loose eastern network of Greco-Roman cities referenced in the Gospels.",
+      "passages": ["Matthew 4:25", "Mark 5:20"],
+      "confidence": "possible",
+      "caution": "The Decapolis was a network, not one fixed border, so this polygon is intentionally approximate."
+    },
+    {
+      "id": "moab",
+      "name": "Moab",
+      "points": [
+        [31.70, 35.20],
+        [31.70, 36.05],
+        [31.00, 36.00],
+        [30.80, 35.35],
+        [31.10, 35.00]
+      ],
+      "periods": ["Exodus / Wilderness", "United Monarchy"],
+      "description": "The Transjordan region east of the Dead Sea associated with the Moabites.",
+      "passages": ["Numbers 22-24", "Ruth 1:1-6"],
+      "confidence": "possible",
+      "caution": "The location is broad and should be read as a geographic guide only."
+    },
+    {
+      "id": "edom",
+      "name": "Edom",
+      "points": [
+        [31.05, 34.85],
+        [31.05, 35.80],
+        [29.90, 35.75],
+        [29.70, 34.95],
+        [30.10, 34.60]
+      ],
+      "periods": ["Exodus / Wilderness", "United Monarchy"],
+      "description": "The southern Transjordan and Negev-adjacent highlands associated with Edom.",
+      "passages": ["Numbers 20:14-21", "Obadiah 1"],
+      "confidence": "possible",
+      "caution": "This is a broad reconstructed region rather than a precise ancient border."
+    }
+  ]
+}

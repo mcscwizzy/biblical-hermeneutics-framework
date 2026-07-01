@@ -69,7 +69,7 @@ class StudyDatabaseTests(unittest.TestCase):
                 )
             ]
 
-        self.assertEqual(versions, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+        self.assertEqual(versions, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
 
         with sqlite3.connect(self.path) as connection:
             saved_studies = connection.execute(
@@ -116,14 +116,14 @@ class StudyDatabaseTests(unittest.TestCase):
                 """
             ).fetchone()
 
-        self.assertEqual(versions, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+        self.assertEqual(versions, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
         self.assertIsNotNone(saved_studies)
 
     def test_biblical_places_seed_and_references_load_from_database(self):
         initialize_database(path=self.path)
 
         places = list_biblical_places(path=self.path)
-        self.assertGreaterEqual(len(places), 5)
+        self.assertGreaterEqual(len(places), 1000)
         jerusalem = next(place for place in places if place["id"] == "jerusalem")
         self.assertIn("Zion", jerusalem["aliases"])
         self.assertEqual(jerusalem["confidence"], "strong")
@@ -134,6 +134,14 @@ class StudyDatabaseTests(unittest.TestCase):
         roman_places = list_biblical_places(period="NT / Roman period", path=self.path)
         self.assertIn("capernaum", {place["id"] for place in roman_places})
         self.assertIn("jerusalem", {place["id"] for place in roman_places})
+        self.assertIn("openbible-af5884f", {place["id"] for place in roman_places})
+
+        nazareth = next(place for place in places if place["id"] == "openbible-af5884f")
+        self.assertEqual(nazareth["name"], "Nazareth")
+        self.assertEqual(nazareth["source_name"], "OpenBible.info Bible Geocoding Data")
+        self.assertEqual(nazareth["license"], "CC-BY-4.0")
+        self.assertIsNotNone(nazareth["latitude"])
+        self.assertIsNotNone(nazareth["longitude"])
 
         related = get_related_passages_for_place("jerusalem", path=self.path)
         self.assertEqual(related["place_id"], "jerusalem")

@@ -163,6 +163,32 @@ class WebUiSeleniumTests(unittest.TestCase):
         results = self.driver.find_elements(By.CSS_SELECTOR, "#map-search-results-list .map-search-result")
         self.assertGreater(len(results), 0)
 
+    def test_reader_search_selection_navigation_and_next_chapter_are_mobile_usable(self):
+        self.open_mobile_workspace()
+        query_input = self.driver.find_element(By.CSS_SELECTOR, "[data-bible-search] input[name='query']")
+        query_input.clear()
+        query_input.send_keys("John 1:1")
+        self.driver.find_element(By.CSS_SELECTOR, "[data-bible-search] button[type='submit']").click()
+
+        WebDriverWait(self.driver, 20).until(
+            lambda driver: len(driver.find_elements(By.CSS_SELECTOR, "#reader-search-results-body .search-result-card")) > 0
+        )
+
+        self.driver.find_element(By.CSS_SELECTOR, "#reader-search-results-body [data-search-action='open-chapter']").click()
+        WebDriverWait(self.driver, 20).until(
+            lambda driver: "John 1" in driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text
+        )
+        search_panel = self.driver.find_element(By.ID, "reader-search-results")
+        self.assertFalse(search_panel.is_displayed())
+
+        next_button = self.driver.find_element(By.CSS_SELECTOR, "[data-next-chapter]")
+        self.assertFalse(next_button.get_attribute("disabled"))
+        next_button.click()
+        WebDriverWait(self.driver, 20).until(
+            lambda driver: "John 2" in driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text
+        )
+        self.assertFalse(self.driver.find_element(By.ID, "reader-search-results").is_displayed())
+
 
 if __name__ == "__main__":
     unittest.main()

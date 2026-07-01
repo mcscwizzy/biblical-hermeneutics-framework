@@ -6,6 +6,11 @@
   overflow: hidden;
 }
 
+html[data-theme="dark"] .map-stage {
+  border-color: var(--border);
+  background: #0d1217;
+}
+
 .map-details-panel {
   min-width: 0;
   border: 1px solid #d8dee4;
@@ -175,25 +180,35 @@
   text-transform: uppercase;
 }
 
+.confidence-established,
 .confidence-strong {
   color: #245b36;
   background: #f2fbf4;
 }
 
+.confidence-well-supported,
 .confidence-likely {
   color: #245b82;
   background: #eef6fb;
 }
 
+.confidence-reasonably-supported,
 .confidence-possible {
   color: #7d5c13;
   background: #fff9e6;
 }
 
+.confidence-tentative,
 .confidence-disputed,
 .confidence-unknown {
   color: #9a2c2c;
   background: #fff1f1;
+}
+
+.confidence-traditional-identification,
+.confidence-traditional {
+  color: #52616f;
+  background: #eef2f5;
 }
 
 .map-detail-section {
@@ -337,13 +352,102 @@
   background: linear-gradient(180deg, #f3f9fd, #d4e8f7);
 }
 
-.map-entity-marker--archaeology {
-  border-color: #9a5a00;
-  background: linear-gradient(180deg, #fff6e4, #ffd89a);
+html[data-theme="dark"] .map-details-panel {
+  border-color: var(--border);
+  background: var(--surface);
 }
 
-.map-entity-marker--manuscript {
-  border-color: #1b4f72;
-  background: linear-gradient(180deg, #edf6fd, #c3def0);
+html[data-theme="dark"] .map-orientation-card,
+html[data-theme="dark"] .map-layer-toggle,
+html[data-theme="dark"] .map-orientation-item,
+html[data-theme="dark"] .map-related-passages-group {
+  border-color: var(--border);
+  background: var(--surface-alt);
 }
 
+html[data-theme="dark"] .map-orientation-summary,
+html[data-theme="dark"] .map-details-subtitle,
+html[data-theme="dark"] .map-layer-toggle span span,
+html[data-theme="dark"] .map-layer-note,
+html[data-theme="dark"] .map-detail-section h4,
+html[data-theme="dark"] .map-related-passages-total,
+html[data-theme="dark"] .map-related-group-summary,
+html[data-theme="dark"] .map-related-group-count,
+html[data-theme="dark"] .map-related-source,
+html[data-theme="dark"] .map-related-verses span,
+html[data-theme="dark"] .map-popup-confidence,
+html[data-theme="dark"] .map-attribution,
+html[data-theme="dark"] .map-popup-region {
+  color: var(--page-muted);
+}
+
+html[data-theme="dark"] .map-confidence {
+  color: var(--accent-text);
+  background: var(--accent-soft);
+}
+
+html[data-theme="dark"] .map-orientation-callout {
+  border-left-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--page-text);
+}
+
+html[data-theme="dark"] .map-detail-section p,
+html[data-theme="dark"] .map-detail-section ul {
+  color: var(--page-text);
+}
+
+html[data-theme="dark"] .confidence-established,
+html[data-theme="dark"] .confidence-strong {
+  color: var(--success-text);
+  background: var(--success-bg);
+}
+
+html[data-theme="dark"] .confidence-well-supported,
+html[data-theme="dark"] .confidence-likely {
+  color: var(--accent-text);
+  background: var(--accent-soft);
+}
+
+html[data-theme="dark"] .confidence-reasonably-supported,
+html[data-theme="dark"] .confidence-possible {
+  color: var(--warning-text);
+  background: var(--warning-bg);
+}
+
+html[data-theme="dark"] .confidence-tentative,
+html[data-theme="dark"] .confidence-disputed,
+html[data-theme="dark"] .confidence-unknown {
+  color: var(--danger-text);
+  background: var(--danger-bg);
+}
+
+html[data-theme="dark"] .confidence-traditional-identification,
+html[data-theme="dark"] .confidence-traditional {
+  color: var(--page-muted);
+  background: var(--surface-muted);
+}
+
+html[data-theme="dark"] .map-related-passages-group h5,
+html[data-theme="dark"] .map-related-group h5 {
+  color: var(--accent);
+}
+
+html[data-theme="dark"] .map-related-verses li {
+  border-left-color: var(--border);
+}
+
+html[data-theme="dark"] .map-entity-marker {
+  border-color: var(--border-strong);
+  background: linear-gradient(180deg, var(--surface), var(--surface-alt));
+  box-shadow: 0 6px 18px rgb(0 0 0 / 28%);
+}
+
+html[data-theme="dark"] .map-entity-marker__label {
+  color: var(--page-text);
+}
+
+html[data-theme="dark"] .map-entity-marker--place {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, #21425a, #163347);
+}

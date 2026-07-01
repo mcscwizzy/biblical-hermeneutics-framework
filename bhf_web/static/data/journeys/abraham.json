@@ -1,0 +1,77 @@
+{
+  "id": "abraham",
+  "title": "Abraham's Journey",
+  "description": "A first-pass route from Ur to Haran to Canaan, designed to prove the 3D Journey data model and stop interactions.",
+  "category": "Patriarchs",
+  "testament": "Old Testament",
+  "bookRange": ["Genesis"],
+  "era": "Patriarchal Period",
+  "tags": ["covenant", "migration", "promise"],
+  "period": "Patriarchal period",
+  "primaryPassages": ["Genesis 11:31-12:9", "Genesis 13:14-18", "Hebrews 11:8-10"],
+  "confidence": "moderate",
+  "caution": "Route and stop placement are simplified for an MVP and should not be treated as a precise historical reconstruction.",
+  "stops": [
+    {
+      "id": "ur",
+      "name": "Ur",
+      "order": 1,
+      "region": "Southern Mesopotamia",
+      "modernLocation": "Tell el-Muqayyar, Iraq",
+      "lat": 30.9619,
+      "lng": 46.1038,
+      "passages": ["Genesis 11:31"],
+      "description": "The starting point of Abraham's family journey in southern Mesopotamia.",
+      "confidence": "moderate",
+      "notes": "Starting point from the Genesis narrative and later interpretive tradition."
+    },
+    {
+      "id": "haran",
+      "name": "Haran",
+      "order": 2,
+      "region": "Upper Mesopotamia",
+      "modernLocation": "Harran, Turkey",
+      "lat": 36.8671,
+      "lng": 39.0319,
+      "passages": ["Genesis 11:31-32"],
+      "description": "The northern stop where Abraham's household remained before the call to continue.",
+      "confidence": "moderate",
+      "notes": "A major staging point for movement between Mesopotamia and the Levant."
+    },
+    {
+      "id": "shechem-canaan",
+      "name": "Shechem / Canaan",
+      "order": 3,
+      "region": "Central hill country",
+      "modernLocation": "Nablus, West Bank",
+      "lat": 32.2211,
+      "lng": 35.2627,
+      "passages": ["Genesis 12:6-7"],
+      "description": "The land where Abraham arrived and the promise was reaffirmed.",
+      "confidence": "moderate",
+      "notes": "Representative arrival point in the land of Canaan."
+    }
+  ],
+  "segments": [
+    {
+      "id": "ur-to-haran",
+      "from": "ur",
+      "to": "haran",
+      "label": "South to Haran",
+      "passages": ["Genesis 11:31"],
+      "description": "Abram's family leaves Ur and settles in Haran.",
+      "confidence": "traditional",
+      "caution": "The exact route is reconstructed from geography and ancient travel corridors."
+    },
+    {
+      "id": "haran-to-canaan",
+      "from": "haran",
+      "to": "shechem-canaan",
+      "label": "Into Canaan",
+      "passages": ["Genesis 12:4-7"],
+      "description": "Abram continues from Haran into the land of Canaan.",
+      "confidence": "traditional",
+      "caution": "This leg summarizes a longer migration movement rather than a single known road."
+    }
+  ]
+}

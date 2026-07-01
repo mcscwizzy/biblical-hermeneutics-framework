@@ -1,0 +1,169 @@
+{
+  "id": "paul-second-missionary",
+  "title": "Paul's Second Missionary Journey",
+  "description": "A modest Acts-based route from Syria through Asia Minor into Macedonia and Greece.",
+  "category": "Pauline Missions",
+  "testament": "New Testament",
+  "bookRange": ["Acts"],
+  "era": "Apostolic Era",
+  "tags": ["mission", "greece", "vision"],
+  "period": "Early church",
+  "primaryPassages": ["Acts 15:36-18:22"],
+  "confidence": "moderate",
+  "caution": "The route follows Acts closely but still compresses overland segments and includes reconstructed waypoints.",
+  "stops": [
+    {
+      "id": "antioch-syria",
+      "name": "Antioch in Syria",
+      "order": 1,
+      "region": "Roman Syria",
+      "modernLocation": "Antakya, Turkey",
+      "lat": 36.2021,
+      "lng": 36.1606,
+      "passages": ["Acts 15:35-40"],
+      "description": "The sending church for the second journey.",
+      "confidence": "moderate",
+      "notes": "A familiar launching point."
+    },
+    {
+      "id": "derbe",
+      "name": "Derbe",
+      "order": 2,
+      "region": "Lycaonia",
+      "modernLocation": "Kerti Huyuk area, Turkey",
+      "lat": 37.353,
+      "lng": 33.2194,
+      "passages": ["Acts 16:1"],
+      "description": "A revisited inland stop in Asia Minor.",
+      "confidence": "moderate",
+      "notes": "Reused from the first journey as a continuation point."
+    },
+    {
+      "id": "troas",
+      "name": "Troas",
+      "order": 3,
+      "region": "Aegean coast",
+      "modernLocation": "Near Hisarlik, Turkey",
+      "lat": 39.872,
+      "lng": 26.238,
+      "passages": ["Acts 16:8-11"],
+      "description": "The Macedonian call setting.",
+      "confidence": "moderate",
+      "notes": "Acts gives this stop a key narrative role."
+    },
+    {
+      "id": "philippi",
+      "name": "Philippi",
+      "order": 4,
+      "region": "Macedonia",
+      "modernLocation": "Near Kavala, Greece",
+      "lat": 41.0167,
+      "lng": 24.2867,
+      "passages": ["Acts 16:12-40"],
+      "description": "An important Macedonian city in the mission.",
+      "confidence": "high",
+      "notes": "A more secure urban waypoint."
+    },
+    {
+      "id": "thessalonica",
+      "name": "Thessalonica",
+      "order": 5,
+      "region": "Macedonia",
+      "modernLocation": "Thessaloniki, Greece",
+      "lat": 40.6401,
+      "lng": 22.9444,
+      "passages": ["Acts 17:1-9"],
+      "description": "A major city where the message spread.",
+      "confidence": "high",
+      "notes": "A core missionary city in Acts."
+    },
+    {
+      "id": "athens",
+      "name": "Athens",
+      "order": 6,
+      "region": "Achaia",
+      "modernLocation": "Athens, Greece",
+      "lat": 37.9838,
+      "lng": 23.7275,
+      "passages": ["Acts 17:16-34"],
+      "description": "The Areopagus setting.",
+      "confidence": "high",
+      "notes": "A key location for the sermon to the philosophers."
+    },
+    {
+      "id": "corinth",
+      "name": "Corinth",
+      "order": 7,
+      "region": "Achaia",
+      "modernLocation": "Corinth, Greece",
+      "lat": 37.94,
+      "lng": 22.95,
+      "passages": ["Acts 18:1-17"],
+      "description": "A major ministry center in Greece.",
+      "confidence": "high",
+      "notes": "Acts and Paul's letters both highlight Corinth."
+    }
+  ],
+  "segments": [
+    {
+      "id": "antioch-to-derbe",
+      "from": "antioch-syria",
+      "to": "derbe",
+      "label": "Revisiting the churches",
+      "passages": ["Acts 16:1-5"],
+      "description": "Paul and Silas strengthen the churches.",
+      "confidence": "moderate",
+      "caution": "The inland route is highly compressed."
+    },
+    {
+      "id": "derbe-to-troas",
+      "from": "derbe",
+      "to": "troas",
+      "label": "Toward the sea",
+      "passages": ["Acts 16:6-11"],
+      "description": "The mission moves west to the coast.",
+      "confidence": "moderate",
+      "caution": "A representative line stands for the route through Asia Minor."
+    },
+    {
+      "id": "troas-to-philippi",
+      "from": "troas",
+      "to": "philippi",
+      "label": "Crossing to Macedonia",
+      "passages": ["Acts 16:8-12"],
+      "description": "The Macedonian call sends the team across the Aegean.",
+      "confidence": "high",
+      "caution": "Maritime travel is simplified."
+    },
+    {
+      "id": "philippi-to-thessalonica",
+      "from": "philippi",
+      "to": "thessalonica",
+      "label": "Macedonian corridor",
+      "passages": ["Acts 17:1-9"],
+      "description": "The journey continues westward across Macedonia.",
+      "confidence": "high",
+      "caution": "The Egnatian road is represented schematically."
+    },
+    {
+      "id": "thessalonica-to-athens",
+      "from": "thessalonica",
+      "to": "athens",
+      "label": "Into Achaia",
+      "passages": ["Acts 17:10-15"],
+      "description": "The mission heads south into Greece.",
+      "confidence": "high",
+      "caution": "The overland route is not fully specified in Acts."
+    },
+    {
+      "id": "athens-to-corinth",
+      "from": "athens",
+      "to": "corinth",
+      "label": "Achaian ministry",
+      "passages": ["Acts 18:1-17"],
+      "description": "Paul moves from Athens to Corinth.",
+      "confidence": "high",
+      "caution": "A direct line summarizes the regional move."
+    }
+  ]
+}

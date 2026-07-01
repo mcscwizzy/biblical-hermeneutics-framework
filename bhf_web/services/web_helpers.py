@@ -19,6 +19,21 @@ from bhf_agent.study_db import StudyDataError, record_study_action
 from ..forms import validate_question, config_from_form, load_web_defaults
 
 
+GENERAL_QUESTION_MODE = "general_question"
+GENERAL_QUESTION_SCOPE = "general_question"
+SPECIAL_QUESTION_MODES = {
+    "ancient_context",
+    "literary_context",
+    "cross_references",
+    "related_ot_themes",
+    "fulfillment_nt",
+    "compare_translations",
+    "timeline",
+    "maps",
+    "word_study",
+}
+
+
 def timestamp() -> str:
     from datetime import datetime, timezone
 
@@ -318,10 +333,16 @@ def build_ask_question(
     *,
     path: str | Path | None = None,
 ) -> tuple[str, str | None]:
+    ask_mode = str(form.get("ask_mode") or "").strip()
+    question_scope = str(form.get("question_scope") or "").strip()
+    if ask_mode == GENERAL_QUESTION_MODE or (
+        question_scope == GENERAL_QUESTION_SCOPE and ask_mode not in SPECIAL_QUESTION_MODES
+    ):
+        return validate_question(form), None
+
     if not is_reader_submission(form):
         return validate_question(form), None
 
-    ask_mode = str(form.get("ask_mode") or "").strip()
     context = reader_context_from_form(form)
     if context is None:
         return validate_question(form), None
@@ -370,6 +391,12 @@ def is_reader_submission(form: dict[str, Any] | Any) -> bool:
 def reader_context_from_form(form: dict[str, Any] | Any) -> dict[str, Any] | None:
     if not is_reader_submission(form):
         return None
+    ask_mode = str(form.get("ask_mode") or "").strip()
+    question_scope = str(form.get("question_scope") or "").strip()
+    if ask_mode == GENERAL_QUESTION_MODE or (
+        question_scope == GENERAL_QUESTION_SCOPE and ask_mode not in SPECIAL_QUESTION_MODES
+    ):
+        return None
     return build_selected_passage_context(
         str(form.get("reader_book") or ""),
         str(form.get("reader_chapter") or ""),
@@ -384,6 +411,8 @@ def study_type_from_form(form: dict[str, Any] | Any) -> str:
     ask_mode = str(form.get("ask_mode") or "").strip()
     if ask_mode:
         return ask_mode
+    if str(form.get("question_scope") or "").strip() == GENERAL_QUESTION_SCOPE:
+        return "general_question"
     if is_reader_submission(form):
         return "question"
     return "general_question"

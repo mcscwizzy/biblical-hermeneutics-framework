@@ -7,6 +7,8 @@ from typing import Any
 
 from bhf_agent.bible import BibleError, resolve_passage
 from bhf_agent.study_db import (
+    BROAD_PERIOD_LABEL,
+    CANONICAL_PERIOD_LABELS,
     get_biblical_place,
     list_archaeology_items,
     list_archaeology_sites,
@@ -161,10 +163,22 @@ def get_map_catalog(
     path: str | Path | None = None,
 ) -> dict[str, Any]:
     return {
+        "timeline": {
+            "default_period": "all",
+            "period_options": [
+                {"value": "all", "label": "All periods"},
+                {"value": BROAD_PERIOD_LABEL, "label": BROAD_PERIOD_LABEL},
+                *[
+                    {"value": label, "label": label}
+                    for label in CANONICAL_PERIOD_LABELS
+                    if label != BROAD_PERIOD_LABEL
+                ],
+            ],
+            "canonical_periods": list(CANONICAL_PERIOD_LABELS),
+            "broad_period_label": BROAD_PERIOD_LABEL,
+        },
         "places": get_biblical_place_markers(period=period, path=path),
         "routes": get_map_routes(period=period, path=path),
-        "archaeology": get_archaeology_markers(period=period, path=path),
-        "manuscripts": get_manuscript_markers(period=period, path=path),
         "historical_layers": get_historical_layers(period=period, path=path),
         "political_context": get_political_context_layers(period=period, path=path),
         "saved_map_studies": list_saved_map_studies(path=path),
@@ -192,11 +206,11 @@ def search_map_catalog(
     catalog = get_map_catalog(period=period, path=path)
     search_kind = _normalize_map_search_kind(kind)
     allowed_kinds = {
-        "all": {"place", "route", "archaeology", "manuscript", "historical_layer", "political_context"},
+        "all": {"place", "route", "historical_layer", "political_context"},
         "place": {"place"},
         "route": {"route"},
-        "archaeology": {"archaeology"},
-        "manuscript": {"manuscript"},
+        "archaeology": set(),
+        "manuscript": set(),
         "historical_layer": {"historical_layer"},
         "political_context": {"political_context"},
     }[search_kind]
@@ -241,56 +255,6 @@ def search_map_catalog(
                 ],
                 subtitle_fields=["route_type", "period"],
                 summary_fields=["summary", "description", "notes"],
-            )
-        )
-    if "archaeology" in allowed_kinds:
-        all_hits.extend(
-            _search_catalog_items(
-                normalized_query,
-                catalog["archaeology"],
-                kind="archaeology",
-                kind_label="Archaeology evidence",
-                fields=[
-                    ("name", 5),
-                    ("site_name", 4),
-                    ("site_type", 3),
-                    ("item_type", 2),
-                    ("relationship", 2),
-                    ("why_it_matters", 2),
-                    ("location", 1),
-                    ("ancient_region", 1),
-                    ("description", 1),
-                    ("periods", 1),
-                    ("confidence", 1),
-                    ("notes", 1),
-                ],
-                subtitle_fields=["site_name", "location", "ancient_region"],
-                summary_fields=["relationship", "why_it_matters", "notes"],
-            )
-        )
-    if "manuscript" in allowed_kinds:
-        all_hits.extend(
-            _search_catalog_items(
-                normalized_query,
-                catalog["manuscripts"],
-                kind="manuscript",
-                kind_label="Textual witness",
-                fields=[
-                    ("name", 5),
-                    ("manuscript_type", 3),
-                    ("language", 2),
-                    ("material", 2),
-                    ("discovery_location", 2),
-                    ("current_location", 2),
-                    ("location", 2),
-                    ("significance", 2),
-                    ("related_books", 2),
-                    ("periods", 1),
-                    ("confidence", 1),
-                    ("notes", 1),
-                ],
-                subtitle_fields=["discovery_location", "current_location", "location"],
-                summary_fields=["significance", "notes"],
             )
         )
     if "historical_layer" in allowed_kinds:
@@ -356,6 +320,7 @@ def get_map_routes(
 def get_biblical_place_markers(
     period: str | None = None,
     path: str | Path | None = None,
+    include_related_passages: bool = False,
 ) -> list[dict[str, Any]]:
     """Return places from the local SQLite data store in map-marker shape."""
 
@@ -367,6 +332,7 @@ def get_biblical_place_markers(
             _related_passages_for_place,
             period=period,
             path=path,
+            include_related_passages=include_related_passages,
         )
         for place in places
     ]
@@ -440,6 +406,7 @@ def resolve_places_for_passage(
             list_place_references,
             _related_passages_for_place,
             path=path,
+            include_related_passages=True,
         )
         for place in matched_places
     ]

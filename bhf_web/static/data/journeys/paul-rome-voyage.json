@@ -1,0 +1,192 @@
+{
+  "id": "paul-rome-voyage",
+  "title": "Paul's Voyage to Rome",
+  "description": "A compact route tracing the Acts voyage from Caesarea to Rome, with a few representative ports.",
+  "category": "Pauline Missions",
+  "testament": "New Testament",
+  "bookRange": ["Acts"],
+  "era": "Apostolic Era",
+  "tags": ["voyage", "trial", "shipwreck"],
+  "period": "Early church",
+  "primaryPassages": ["Acts 27-28"],
+  "confidence": "moderate",
+  "caution": "The voyage is a narrative summary. Weather, ports, and routing details are simplified for clarity.",
+  "stops": [
+    {
+      "id": "caesarea",
+      "name": "Caesarea",
+      "order": 1,
+      "region": "Judean coast",
+      "modernLocation": "Caesarea, Israel",
+      "lat": 32.5,
+      "lng": 34.89,
+      "passages": ["Acts 23-27"],
+      "description": "The departure point under Roman custody.",
+      "confidence": "high",
+      "notes": "A secure coastal starting point."
+    },
+    {
+      "id": "sidon",
+      "name": "Sidon",
+      "order": 2,
+      "region": "Phoenicia",
+      "modernLocation": "Sidon, Lebanon",
+      "lat": 33.56,
+      "lng": 35.37,
+      "passages": ["Acts 27:3"],
+      "description": "A stop for refreshment on the voyage.",
+      "confidence": "high",
+      "notes": "A recognisable coastal waypoint."
+    },
+    {
+      "id": "myra",
+      "name": "Myra",
+      "order": 3,
+      "region": "Lycia",
+      "modernLocation": "Demre, Turkey",
+      "lat": 36.25,
+      "lng": 29.98,
+      "passages": ["Acts 27:5"],
+      "description": "The transfer point to the Alexandrian grain ship.",
+      "confidence": "high",
+      "notes": "A key port in the voyage narrative."
+    },
+    {
+      "id": "fair-havens",
+      "name": "Fair Havens",
+      "order": 4,
+      "region": "Crete",
+      "modernLocation": "Near Loutro, Crete",
+      "lat": 34.94,
+      "lng": 24.74,
+      "passages": ["Acts 27:8-12"],
+      "description": "A dangerous harbor where the crew debates wintering.",
+      "confidence": "moderate",
+      "notes": "The exact location is debated."
+    },
+    {
+      "id": "malta",
+      "name": "Malta",
+      "order": 5,
+      "region": "Central Mediterranean",
+      "modernLocation": "Malta",
+      "lat": 35.94,
+      "lng": 14.38,
+      "passages": ["Acts 28:1-10"],
+      "description": "The shipwreck island.",
+      "confidence": "high",
+      "notes": "One of the clearest waypoints in the voyage."
+    },
+    {
+      "id": "syracuse",
+      "name": "Syracuse",
+      "order": 6,
+      "region": "Sicily",
+      "modernLocation": "Syracuse, Italy",
+      "lat": 37.07,
+      "lng": 15.29,
+      "passages": ["Acts 28:12"],
+      "description": "A port call on the way to Rome.",
+      "confidence": "high",
+      "notes": "A strong historical port marker."
+    },
+    {
+      "id": "puteoli",
+      "name": "Puteoli",
+      "order": 7,
+      "region": "Campania",
+      "modernLocation": "Pozzuoli, Italy",
+      "lat": 40.82,
+      "lng": 14.09,
+      "passages": ["Acts 28:13-14"],
+      "description": "The mainland landing before the final approach to Rome.",
+      "confidence": "high",
+      "notes": "A very plausible and well-known port."
+    },
+    {
+      "id": "rome",
+      "name": "Rome",
+      "order": 8,
+      "region": "Italy",
+      "modernLocation": "Rome, Italy",
+      "lat": 41.9028,
+      "lng": 12.4964,
+      "passages": ["Acts 28:16-31"],
+      "description": "The destination of the voyage and the final Acts setting.",
+      "confidence": "high",
+      "notes": "The final destination is explicit."
+    }
+  ],
+  "segments": [
+    {
+      "id": "caesarea-to-sidon",
+      "from": "caesarea",
+      "to": "sidon",
+      "label": "Leaving Judea",
+      "passages": ["Acts 27:3"],
+      "description": "The voyage begins north along the coast.",
+      "confidence": "high",
+      "caution": "The coastal leg is simplified."
+    },
+    {
+      "id": "sidon-to-myra",
+      "from": "sidon",
+      "to": "myra",
+      "label": "Coastal sail",
+      "passages": ["Acts 27:5"],
+      "description": "The ship heads for Asia Minor ports.",
+      "confidence": "high",
+      "caution": "Exact intermediate ports are omitted."
+    },
+    {
+      "id": "myra-to-fair-havens",
+      "from": "myra",
+      "to": "fair-havens",
+      "label": "Across the Aegean",
+      "passages": ["Acts 27:6-12"],
+      "description": "The voyage moves toward Crete.",
+      "confidence": "moderate",
+      "caution": "Weather and sail lines are generalized."
+    },
+    {
+      "id": "fair-havens-to-malta",
+      "from": "fair-havens",
+      "to": "malta",
+      "label": "Shipwreck and landing",
+      "passages": ["Acts 27-28"],
+      "description": "The storm and shipwreck land the party on Malta.",
+      "confidence": "high",
+      "caution": "The storm path is heavily compressed."
+    },
+    {
+      "id": "malta-to-syracuse",
+      "from": "malta",
+      "to": "syracuse",
+      "label": "To Sicily",
+      "passages": ["Acts 28:11-12"],
+      "description": "The journey resumes toward Italy.",
+      "confidence": "high",
+      "caution": "The post-shipwreck sail is simplified."
+    },
+    {
+      "id": "syracuse-to-puteoli",
+      "from": "syracuse",
+      "to": "puteoli",
+      "label": "Final sail north",
+      "passages": ["Acts 28:13-14"],
+      "description": "The ship reaches the mainland of Italy.",
+      "confidence": "high",
+      "caution": "Exact sailing details are omitted."
+    },
+    {
+      "id": "puteoli-to-rome",
+      "from": "puteoli",
+      "to": "rome",
+      "label": "Into Rome",
+      "passages": ["Acts 28:15-31"],
+      "description": "The mission concludes in Rome.",
+      "confidence": "high",
+      "caution": "The final overland approach is summarized."
+    }
+  ]
+}

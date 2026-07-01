@@ -5,6 +5,10 @@
 const POLL_INTERVAL_MS = 750;
 const READER_LONG_PRESS_DELAY_MS = 550;
 const READER_LONG_PRESS_MOVE_THRESHOLD_PX = 14;
+const GENERAL_QUESTION_MODE = "general_question";
+const THEME_STORAGE_KEY = "bhf-theme";
+const READER_MODE_STORAGE_KEY = "bhf-reader-mode";
+const WORKSPACE_EXPANDED_STORAGE_KEY = "bhf-workspace-expanded";
 const BHF_STUDY_ACTIONS = new Set([
   "ancient_context",
   "literary_context",
@@ -32,6 +36,9 @@ let readerLongPressState = null;
 const BHF_HTTP = window.BHFApi || {};
 
 document.addEventListener("DOMContentLoaded", function () {
+  initializeTheme();
+  initializeReaderMode();
+  initializeWorkspaceExpansion();
   initializeWorkspaceTabs();
   initializeReader();
   initializeWorkspaceBridge();
@@ -142,6 +149,7 @@ async function initializeReader() {
   reader.addEventListener("pointerup", cancelReaderLongPress);
   reader.addEventListener("pointercancel", cancelReaderLongPress);
   reader.addEventListener("pointerleave", handleReaderPointerLeave);
+  document.addEventListener("click", handleNextChapterClick);
   const contextMenu = document.querySelector("#reader-context-menu");
   const searchForm = document.querySelector("[data-bible-search]");
   const searchResultsBody = document.querySelector("#reader-search-results-body");
@@ -181,6 +189,14 @@ async function initializeReader() {
   syncMapWorkspaceEmptyState();
 }
 
+function handleNextChapterClick(event) {
+  const button = event.target.closest("[data-next-chapter]");
+  if (!button) {
+    return;
+  }
+  goToNextChapter();
+}
+
 function initializeWorkspaceTabs() {
   const workspace = document.querySelector("[data-workspace-tabs]");
   if (!workspace) {
@@ -202,6 +218,163 @@ function initializeWorkspaceBridge() {
   window.BHFWorkspace = {
     requestMapAIFallback,
   };
+  window.BHFReader = {
+    navigateToPassage,
+    openPassageReference,
+  };
+}
+
+function initializeTheme() {
+  const toggle = document.querySelector("[data-theme-toggle]");
+  if (!toggle) {
+    return;
+  }
+  const savedTheme = readThemePreference();
+  applyTheme(savedTheme, { persist: false });
+  toggle.addEventListener("click", toggleTheme);
+}
+
+function initializeReaderMode() {
+  const toggle = document.querySelector("[data-reader-mode-toggle]");
+  if (!toggle) {
+    return;
+  }
+  const savedMode = readReaderModePreference();
+  applyReaderMode(savedMode, { persist: false });
+  toggle.addEventListener("click", toggleReaderMode);
+}
+
+function initializeWorkspaceExpansion() {
+  const toggle = document.querySelector("[data-workspace-expand-toggle]");
+  const collapseToggle = document.querySelector("[data-workspace-collapse-toggle]");
+  if (!toggle && !collapseToggle) {
+    return;
+  }
+  const savedExpanded = readWorkspaceExpansionPreference();
+  applyWorkspaceExpansion(savedExpanded, { persist: false });
+  if (toggle) {
+    toggle.addEventListener("click", toggleWorkspaceExpansion);
+  }
+  if (collapseToggle) {
+    collapseToggle.addEventListener("click", () => applyWorkspaceExpansion(false));
+  }
+}
+
+function readWorkspaceExpansionPreference() {
+  try {
+    const saved = window.localStorage.getItem(WORKSPACE_EXPANDED_STORAGE_KEY);
+    if (saved === "on" || saved === "off") {
+      return saved === "on";
+    }
+  } catch (_error) {
+    return false;
+  }
+  return false;
+}
+
+function applyWorkspaceExpansion(enabled, options = {}) {
+  const nextEnabled = Boolean(enabled);
+  document.body.classList.toggle("workspace-expanded", nextEnabled);
+  if (nextEnabled) {
+    closeWorkspaceDrawer();
+  }
+  const toggle = document.querySelector("[data-workspace-expand-toggle]");
+  if (toggle) {
+    toggle.textContent = nextEnabled ? "Collapse workspace" : "Expand workspace";
+    toggle.setAttribute("aria-pressed", String(nextEnabled));
+    toggle.setAttribute("aria-expanded", String(nextEnabled));
+  }
+  const collapseToggle = document.querySelector("[data-workspace-collapse-toggle]");
+  if (collapseToggle) {
+    collapseToggle.hidden = !nextEnabled;
+    collapseToggle.setAttribute("aria-expanded", String(nextEnabled));
+  }
+  const drawerToggle = document.querySelector("[data-workspace-drawer-toggle]");
+  if (drawerToggle) {
+    drawerToggle.setAttribute("aria-expanded", String(document.body.classList.contains("workspace-drawer-open")));
+  }
+  if (options.persist !== false) {
+    try {
+      window.localStorage.setItem(WORKSPACE_EXPANDED_STORAGE_KEY, nextEnabled ? "on" : "off");
+    } catch (_error) {
+      // Ignore storage errors in restricted environments.
+    }
+  }
+}
+
+function toggleWorkspaceExpansion() {
+  applyWorkspaceExpansion(!document.body.classList.contains("workspace-expanded"));
+}
+
+function readReaderModePreference() {
+  try {
+    const saved = window.localStorage.getItem(READER_MODE_STORAGE_KEY);
+    if (saved === "on" || saved === "off") {
+      return saved === "on";
+    }
+  } catch (_error) {
+    return false;
+  }
+  return false;
+}
+
+function applyReaderMode(enabled, options = {}) {
+  const nextEnabled = Boolean(enabled);
+  document.body.classList.toggle("reader-mode", nextEnabled);
+  if (nextEnabled) {
+    closeWorkspaceDrawer();
+  }
+  const toggle = document.querySelector("[data-reader-mode-toggle]");
+  if (toggle) {
+    toggle.textContent = nextEnabled ? "Full view" : "Reader mode";
+    toggle.setAttribute("aria-pressed", String(nextEnabled));
+  }
+  if (options.persist !== false) {
+    try {
+      window.localStorage.setItem(READER_MODE_STORAGE_KEY, nextEnabled ? "on" : "off");
+    } catch (_error) {
+      // Ignore storage errors in restricted environments.
+    }
+  }
+}
+
+function toggleReaderMode() {
+  applyReaderMode(!document.body.classList.contains("reader-mode"));
+}
+
+function readThemePreference() {
+  try {
+    const saved = window.localStorage.getItem(THEME_STORAGE_KEY);
+    if (saved === "light" || saved === "dark") {
+      return saved;
+    }
+  } catch (_error) {
+    return "light";
+  }
+  return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function applyTheme(theme, options = {}) {
+  const nextTheme = theme === "dark" ? "dark" : "light";
+  document.documentElement.dataset.theme = nextTheme;
+  const toggle = document.querySelector("[data-theme-toggle]");
+  if (toggle) {
+    const isDark = nextTheme === "dark";
+    toggle.textContent = isDark ? "Light mode" : "Dark mode";
+    toggle.setAttribute("aria-pressed", String(isDark));
+  }
+  if (options.persist !== false) {
+    try {
+      window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+    } catch (_error) {
+      // Ignore storage errors in restricted environments.
+    }
+  }
+}
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+  applyTheme(currentTheme === "dark" ? "light" : "dark");
 }
 
 function resolveSubmitTargets(form) {
@@ -287,6 +460,11 @@ function activateWorkspaceTab(tabId) {
   workspace.querySelectorAll("[data-workspace-pane]").forEach((pane) => {
     pane.hidden = pane.dataset.workspacePane !== tabId;
   });
+  document.dispatchEvent(
+    new CustomEvent("bhf:workspace-tab-changed", {
+      detail: { tabId },
+    })
+  );
 }
 
 function initializeWorkspaceDrawer() {
@@ -381,7 +559,9 @@ async function loadReaderChapter(book, chapter) {
     latestJobComplete = false;
     currentHighlights = [];
     renderChapter(data);
+    clearReaderSearchState();
     syncAskFields();
+    updateChapterNavigationState();
     await Promise.all([
       loadNotes(data.book, data.chapter),
       loadHighlights(data.book, data.chapter),
@@ -391,6 +571,12 @@ async function loadReaderChapter(book, chapter) {
     reader.innerHTML = errorHtml(error.message || "Could not load chapter.");
   } finally {
     reader.removeAttribute("aria-busy");
+  }
+}
+
+function clearReaderSearchState() {
+  if (typeof clearBibleSearchResults === "function") {
+    clearBibleSearchResults();
   }
 }
 
@@ -419,6 +605,70 @@ async function navigateToPassage(book, chapter, verseStart, verseEnd) {
   scrollToVerse(Number(verseStart));
 }
 
+function goToNextChapter() {
+  const bookSelect = document.querySelector("[data-reader-book]");
+  const chapterSelect = document.querySelector("[data-reader-chapter]");
+  if (!bookSelect || !chapterSelect) {
+    return;
+  }
+  const selectedBook = bookSelect.selectedOptions[0] || bookSelect.options[0];
+  const chapterCount = Number(selectedBook?.dataset.chapters || 0);
+  const currentChapterNumber = Number(chapterSelect.value || "0");
+  if (!chapterCount || !currentChapterNumber || currentChapterNumber >= chapterCount) {
+    return;
+  }
+  const nextChapter = currentChapterNumber + 1;
+  chapterSelect.value = String(nextChapter);
+  loadReaderChapter(bookSelect.value, nextChapter);
+}
+
+function parsePassageReference(reference) {
+  const rawReference = String(reference || "").trim();
+  if (!rawReference) {
+    return null;
+  }
+
+  const chapterMatch = rawReference.match(/^(?<book>.+?)\s+(?<chapter>\d+)(?::(?<verseStart>\d+)(?:-(?<verseEnd>\d+))?|-(?<chapterEnd>\d+))?$/);
+  if (!chapterMatch?.groups) {
+    return {
+      book: rawReference,
+      chapter: 1,
+      verseStart: null,
+      verseEnd: null,
+      reference: rawReference,
+    };
+  }
+
+  const chapter = Number(chapterMatch.groups.chapter);
+  const verseStart = chapterMatch.groups.verseStart ? Number(chapterMatch.groups.verseStart) : null;
+  const verseEnd = chapterMatch.groups.verseEnd ? Number(chapterMatch.groups.verseEnd) : verseStart;
+
+  return {
+    book: chapterMatch.groups.book.trim(),
+    chapter: Number.isFinite(chapter) && chapter > 0 ? chapter : 1,
+    verseStart,
+    verseEnd,
+    reference: rawReference,
+  };
+}
+
+async function openPassageReference(reference) {
+  const parsed = parsePassageReference(reference);
+  if (!parsed) {
+    return false;
+  }
+  await navigateToPassage(parsed.book, parsed.chapter, parsed.verseStart, parsed.verseEnd);
+  return true;
+}
+
+function handleNextChapterClick(event) {
+  const button = event.target.closest("[data-next-chapter]");
+  if (!button) {
+    return;
+  }
+  goToNextChapter();
+}
+
 function renderChapter(data) {
   const reader = document.querySelector("#chapter-reader");
   const heading = document.createElement("h3");
@@ -445,6 +695,17 @@ function renderChapter(data) {
   reader.innerHTML = "";
   reader.appendChild(heading);
   reader.appendChild(paragraph);
+  const footer = document.createElement("div");
+  footer.className = "reader-next-chapter-footer";
+  const nextButton = document.createElement("button");
+  nextButton.type = "button";
+  nextButton.className = "secondary reader-next-chapter";
+  nextButton.dataset.nextChapter = "";
+  nextButton.setAttribute("aria-label", "Next chapter");
+  nextButton.title = "Next chapter";
+  nextButton.textContent = ">>>";
+  footer.appendChild(nextButton);
+  reader.appendChild(footer);
 }
 
 function collectSelectedVerseText(startVerse, endVerse) {
@@ -880,6 +1141,27 @@ function syncAskFields() {
       addNoteButton.disabled = true;
     }
   }
+}
+
+function updateChapterNavigationState() {
+  const bookSelect = document.querySelector("[data-reader-book]");
+  const chapterSelect = document.querySelector("[data-reader-chapter]");
+  const nextButtons = document.querySelectorAll("[data-next-chapter]");
+  if (!bookSelect || !chapterSelect || nextButtons.length === 0) {
+    return;
+  }
+  const selectedBook = bookSelect.selectedOptions[0] || bookSelect.options[0];
+  const chapterCount = Number(selectedBook?.dataset.chapters || chapterSelect.options.length || 0);
+  const currentChapterNumber = Number(chapterSelect.value || "0");
+  const available = Boolean(chapterCount && currentChapterNumber && currentChapterNumber < chapterCount);
+  nextButtons.forEach((button) => {
+    button.disabled = !available;
+    button.setAttribute(
+      "aria-label",
+      available ? `Go to chapter ${currentChapterNumber + 1}` : "No next chapter available"
+    );
+    button.title = available ? "Next chapter" : "No next chapter available";
+  });
 }
 
 function setFormValue(name, value) {

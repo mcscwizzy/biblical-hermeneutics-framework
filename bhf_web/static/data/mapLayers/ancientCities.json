@@ -1,0 +1,119 @@
+{
+  "id": "ancient-cities",
+  "title": "Ancient Cities",
+  "description": "Major biblical and historical cities used for orientation in the 3D Journey panel.",
+  "type": "points",
+  "defaultVisible": true,
+  "features": [
+    {
+      "id": "jerusalem",
+      "name": "Jerusalem",
+      "lat": 31.778,
+      "lng": 35.235,
+      "periods": ["United Monarchy", "Divided Kingdom", "Babylonian period", "Persian period", "NT / Roman period"],
+      "description": "The central city of worship, kingship, and later temple-centered life.",
+      "passages": ["2 Samuel 5:6-10", "Psalm 122", "Luke 19:28-44"],
+      "confidence": "strong",
+      "caution": "The site is secure, but the precise footprint of older city phases changed over time."
+    },
+    {
+      "id": "jericho",
+      "name": "Jericho",
+      "lat": 31.867,
+      "lng": 35.444,
+      "periods": ["Conquest", "NT / Roman period"],
+      "description": "An oasis city near the Jordan valley and a recurring waypoint in biblical narrative.",
+      "passages": ["Joshua 6", "Luke 19:1-10"],
+      "confidence": "strong",
+      "caution": "The city is well located, though the exact ancient mound level varies by period."
+    },
+    {
+      "id": "bethlehem",
+      "name": "Bethlehem",
+      "lat": 31.705,
+      "lng": 35.203,
+      "periods": ["Patriarchal Period", "United Monarchy", "NT / Roman period"],
+      "description": "A small Judean town associated with David and later the birth narratives of Jesus.",
+      "passages": ["Ruth 1:1", "1 Samuel 16:1", "Matthew 2:1-6"],
+      "confidence": "strong",
+      "caution": "The location is secure, but the ancient settlement extent is approximate."
+    },
+    {
+      "id": "nazareth",
+      "name": "Nazareth",
+      "lat": 32.699,
+      "lng": 35.303,
+      "periods": ["NT / Roman period"],
+      "description": "The Galilean town associated with Jesus' upbringing.",
+      "passages": ["Matthew 2:23", "Luke 2:39-40", "Mark 6:1-6"],
+      "confidence": "likely",
+      "caution": "The settlement is well known from the New Testament period, though first-century extent is modest."
+    },
+    {
+      "id": "capernaum",
+      "name": "Capernaum",
+      "lat": 32.879,
+      "lng": 35.574,
+      "periods": ["NT / Roman period"],
+      "description": "A major base for Jesus' Galilean ministry on the north shore of the Sea of Galilee.",
+      "passages": ["Matthew 4:13", "Mark 1:21-34"],
+      "confidence": "strong",
+      "caution": "The archaeological site is clear, but the Gospel narratives compress repeated visits."
+    },
+    {
+      "id": "shechem",
+      "name": "Shechem",
+      "lat": 32.217,
+      "lng": 35.254,
+      "periods": ["Patriarchal Period", "United Monarchy", "Divided Kingdom"],
+      "description": "An important central highland city linked with covenant scenes and later national gatherings.",
+      "passages": ["Genesis 12:6-7", "Joshua 24"],
+      "confidence": "strong",
+      "caution": "The biblical city is secure, though the exact ancient tell and nearby settlements shifted over time."
+    },
+    {
+      "id": "hebron",
+      "name": "Hebron",
+      "lat": 31.532,
+      "lng": 35.099,
+      "periods": ["Patriarchal Period", "United Monarchy"],
+      "description": "A southern hill country city associated with the patriarchs and David's early reign.",
+      "passages": ["Genesis 23:19", "2 Samuel 2:1-4"],
+      "confidence": "strong",
+      "caution": "The general location is secure, but the ancient urban footprint is layered."
+    },
+    {
+      "id": "damascus",
+      "name": "Damascus",
+      "lat": 33.514,
+      "lng": 36.276,
+      "periods": ["Divided Kingdom", "Assyrian period", "NT / Roman period"],
+      "description": "A major northern city and trade hub that appears frequently in prophetic and apostolic contexts.",
+      "passages": ["1 Kings 19:15", "Acts 9:1-19"],
+      "confidence": "strong",
+      "caution": "The city is secure, though its ancient center evolved across many imperial periods."
+    },
+    {
+      "id": "babylon",
+      "name": "Babylon",
+      "lat": 32.54,
+      "lng": 44.42,
+      "periods": ["Babylonian period", "Persian period"],
+      "description": "The imperial city tied to exile, court life, and later restoration memory.",
+      "passages": ["2 Kings 24-25", "Psalm 137", "Daniel 1"],
+      "confidence": "strong",
+      "caution": "The city is historically secure, but the biblical setting often refers to the wider imperial center rather than one district."
+    },
+    {
+      "id": "rome",
+      "name": "Rome",
+      "lat": 41.903,
+      "lng": 12.496,
+      "periods": ["NT / Roman period"],
+      "description": "The imperial capital that frames the later New Testament world.",
+      "passages": ["Acts 28:14-31", "Romans 1:7"],
+      "confidence": "strong",
+      "caution": "The city is certain; the local locations in Paul's Roman stay are more reconstructed."
+    }
+  ]
+}

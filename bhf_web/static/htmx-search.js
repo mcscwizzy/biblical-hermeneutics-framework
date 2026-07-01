@@ -9,18 +9,13 @@ async function submitBibleSearch(event) {
   const queryInput = form.querySelector("[name='query']");
   const query = queryInput ? queryInput.value.trim() : "";
   if (!query) {
-    setBibleSearchStatus("Enter a search term or reference.", "empty");
-    showBibleSearchResults();
-    renderBibleSearchResults([]);
-    updateBibleSearchSummary("");
+    clearBibleSearchResults();
     return;
   }
 
   const requestId = ++BHF_BIBLE_SEARCH_STATE.latestBibleSearchRequestId;
-  showBibleSearchResults();
   updateBibleSearchSummary(`Searching ASV for “${query}”`);
   setBibleSearchStatus("Searching local ASV text...", "loading");
-  renderBibleSearchResults([]);
 
   try {
     const data = await requestJson(`/api/bible/search?${new URLSearchParams({ q: query, limit: "25" })}`, {}, "Could not search the ASV text.");
@@ -28,13 +23,13 @@ async function submitBibleSearch(event) {
       return;
     }
     if (Array.isArray(data.results) && data.results.length > 0) {
+      showBibleSearchResults();
       updateBibleSearchSummary(`${data.total_results} local result${data.total_results === 1 ? "" : "s"} for “${query}”`);
       clearBibleSearchStatus();
       renderBibleSearchResults(data.results, { source: "local" });
       return;
     }
 
-    renderBibleSearchResults([]);
     if (data.ai_fallback_eligible) {
       updateBibleSearchSummary(`No local ASV matches for “${query}”. Asking BHF for likely passages.`);
       setBibleSearchStatus("No local match found. Asking BHF for likely passages...", "loading");
@@ -43,7 +38,7 @@ async function submitBibleSearch(event) {
     }
 
     updateBibleSearchSummary(`No local ASV matches for “${query}”`);
-    setBibleSearchStatus(data.no_results_message || "No local ASV matches were found.", "empty");
+    clearBibleSearchResults();
   } catch (error) {
     if (requestId !== BHF_BIBLE_SEARCH_STATE.latestBibleSearchRequestId) {
       return;
@@ -67,13 +62,13 @@ async function runBibleSearchFallback(form, query, requestId) {
     return;
   }
   if (Array.isArray(result.results) && result.results.length > 0) {
+    showBibleSearchResults();
     updateBibleSearchSummary(`BHF suggested ${result.results.length} likely passage${result.results.length === 1 ? "" : "s"} for “${query}”`);
     clearBibleSearchStatus();
     renderBibleSearchResults(result.results, { source: "ai" });
     return;
   }
-  renderBibleSearchResults([]);
-  setBibleSearchStatus(result.message || "BHF could not identify likely passage candidates.", "empty");
+  clearBibleSearchResults();
 }
 
 function syncBibleSearchConfig(searchForm) {

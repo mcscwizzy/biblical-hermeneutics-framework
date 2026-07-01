@@ -1,0 +1,100 @@
+{
+  "id": "exile-return",
+  "title": "Exile and Return",
+  "description": "A concise route showing the movement from Jerusalem to Babylon and back through Persian-period restoration.",
+  "category": "Exile and Return",
+  "testament": "Old Testament",
+  "bookRange": ["2 Kings", "Jeremiah", "Ezra", "Nehemiah"],
+  "era": "Exilic / Persian Period",
+  "tags": ["exile", "return", "restoration"],
+  "period": "Exilic and Persian period",
+  "primaryPassages": ["2 Kings 24-25", "Jeremiah 29", "Ezra 1-6", "Nehemiah 1-8"],
+  "confidence": "moderate",
+  "caution": "This is a combined exile-and-return outline rather than a single continuous trip. The data intentionally compresses separate historical moments into one teaching route.",
+  "stops": [
+    {
+      "id": "jerusalem-exile",
+      "name": "Jerusalem",
+      "order": 1,
+      "region": "Judah",
+      "modernLocation": "Jerusalem",
+      "lat": 31.778,
+      "lng": 35.235,
+      "passages": ["2 Kings 24-25"],
+      "description": "The city before the exile.",
+      "confidence": "high",
+      "notes": "The starting point is secure."
+    },
+    {
+      "id": "babylon",
+      "name": "Babylon",
+      "order": 2,
+      "region": "Mesopotamia",
+      "modernLocation": "Iraq",
+      "lat": 32.535,
+      "lng": 44.421,
+      "passages": ["Psalm 137", "Jeremiah 29"],
+      "description": "The center of exile for Judah's captives.",
+      "confidence": "high",
+      "notes": "A very well-known exile destination."
+    },
+    {
+      "id": "ahava",
+      "name": "Ahava",
+      "order": 3,
+      "region": "Return assembly point",
+      "modernLocation": "Debated river or canal site",
+      "lat": 32.1,
+      "lng": 44.3,
+      "passages": ["Ezra 8:21-31"],
+      "description": "The gathering point before the return.",
+      "confidence": "low",
+      "notes": "The location of Ahava is debated."
+    },
+    {
+      "id": "jerusalem-return",
+      "name": "Jerusalem",
+      "order": 4,
+      "region": "Judah",
+      "modernLocation": "Jerusalem",
+      "lat": 31.778,
+      "lng": 35.235,
+      "passages": ["Ezra 1-6", "Nehemiah 1-8"],
+      "description": "The restored city after the return.",
+      "confidence": "high",
+      "notes": "Represents the restoration phase after exile."
+    }
+  ],
+  "segments": [
+    {
+      "id": "jerusalem-to-babylon",
+      "from": "jerusalem-exile",
+      "to": "babylon",
+      "label": "Into exile",
+      "passages": ["2 Kings 24-25"],
+      "description": "The deportation into Babylon.",
+      "confidence": "high",
+      "caution": "The exile occurred in stages, not a single transfer."
+    },
+    {
+      "id": "babylon-to-ahava",
+      "from": "babylon",
+      "to": "ahava",
+      "label": "Return preparations",
+      "passages": ["Ezra 8"],
+      "description": "The returnees assemble and prepare.",
+      "confidence": "low",
+      "caution": "Ahava is not securely identified."
+    },
+    {
+      "id": "ahava-to-jerusalem",
+      "from": "ahava",
+      "to": "jerusalem-return",
+      "label": "Back to Jerusalem",
+      "passages": ["Ezra 7-8", "Nehemiah 2"],
+      "description": "The restoration party returns to Judah.",
+      "confidence": "moderate",
+      "caution": "The journey combines several restoration episodes."
+    }
+  ]
+}

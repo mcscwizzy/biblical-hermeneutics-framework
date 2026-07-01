@@ -1,0 +1,146 @@
+{
+  "id": "david-fleeing-saul",
+  "title": "David Fleeing Saul",
+  "description": "A compact route through David's movements while escaping Saul, using representative stops from 1 Samuel.",
+  "category": "Kings and Royal Conflict",
+  "testament": "Old Testament",
+  "bookRange": ["1 Samuel"],
+  "era": "United Monarchy / Saul",
+  "tags": ["persecution", "refuge", "kingdom"],
+  "period": "Early monarchy",
+  "primaryPassages": ["1 Samuel 19-26"],
+  "confidence": "moderate",
+  "caution": "The itinerary compresses many moves and safe houses. Several locations are approximate or represent narrative clusters.",
+  "stops": [
+    {
+      "id": "gibeah",
+      "name": "Gibeah",
+      "order": 1,
+      "region": "Benjamin hill country",
+      "modernLocation": "Near modern Jerusalem north",
+      "lat": 31.85,
+      "lng": 35.24,
+      "passages": ["1 Samuel 19:1-2"],
+      "description": "Saul's center of power and the starting pressure point.",
+      "confidence": "moderate",
+      "notes": "The narrative base is clear even though the exact site is debated."
+    },
+    {
+      "id": "ramah",
+      "name": "Ramah / Naioth",
+      "order": 2,
+      "region": "Ephraim hill country",
+      "modernLocation": "Near modern er-Ram",
+      "lat": 31.94,
+      "lng": 35.21,
+      "passages": ["1 Samuel 19:18-24"],
+      "description": "A prophetic refuge for David.",
+      "confidence": "moderate",
+      "notes": "Represents the prophetic safe haven cluster."
+    },
+    {
+      "id": "keilah",
+      "name": "Keilah",
+      "order": 3,
+      "region": "Shephelah",
+      "modernLocation": "Southwest of Hebron",
+      "lat": 31.55,
+      "lng": 35.0,
+      "passages": ["1 Samuel 23"],
+      "description": "A town David helps defend.",
+      "confidence": "moderate",
+      "notes": "A more traceable stop in the text."
+    },
+    {
+      "id": "ziph",
+      "name": "Ziph",
+      "order": 4,
+      "region": "Judean wilderness edge",
+      "modernLocation": "South of Hebron",
+      "lat": 31.37,
+      "lng": 35.14,
+      "passages": ["1 Samuel 23:14-24"],
+      "description": "A wilderness area where Saul continues the pursuit.",
+      "confidence": "moderate",
+      "notes": "Used here as a representative refuge zone."
+    },
+    {
+      "id": "engedi",
+      "name": "En Gedi",
+      "order": 5,
+      "region": "West of the Dead Sea",
+      "modernLocation": "En Gedi oasis, Israel",
+      "lat": 31.45,
+      "lng": 35.39,
+      "passages": ["1 Samuel 24"],
+      "description": "The cave episode by the Dead Sea.",
+      "confidence": "moderate",
+      "notes": "A memorable and relatively well-known location."
+    },
+    {
+      "id": "ziklag",
+      "name": "Ziklag",
+      "order": 6,
+      "region": "Negev",
+      "modernLocation": "Debated southern site",
+      "lat": 31.28,
+      "lng": 34.73,
+      "passages": ["1 Samuel 27-30"],
+      "description": "David's Philistine base during part of the exile from Saul.",
+      "confidence": "low",
+      "notes": "The identification of Ziklag is debated."
+    }
+  ],
+  "segments": [
+    {
+      "id": "gibeah-to-ramah",
+      "from": "gibeah",
+      "to": "ramah",
+      "label": "Pressure and refuge",
+      "passages": ["1 Samuel 19"],
+      "description": "David flees toward prophetic refuge.",
+      "confidence": "moderate",
+      "caution": "This leg summarizes several escapes."
+    },
+    {
+      "id": "ramah-to-keilah",
+      "from": "ramah",
+      "to": "keilah",
+      "label": "Into the foothills",
+      "passages": ["1 Samuel 23"],
+      "description": "David moves to defend Keilah.",
+      "confidence": "moderate",
+      "caution": "The exact roads are not described."
+    },
+    {
+      "id": "keilah-to-ziph",
+      "from": "keilah",
+      "to": "ziph",
+      "label": "Wilderness hiding",
+      "passages": ["1 Samuel 23:14-24"],
+      "description": "David keeps moving through the wilderness.",
+      "confidence": "moderate",
+      "caution": "A representative route is used."
+    },
+    {
+      "id": "ziph-to-engedi",
+      "from": "ziph",
+      "to": "engedi",
+      "label": "By the Dead Sea",
+      "passages": ["1 Samuel 24"],
+      "description": "The pursuit reaches the Dead Sea region.",
+      "confidence": "moderate",
+      "caution": "The terrain is simplified."
+    },
+    {
+      "id": "engedi-to-ziklag",
+      "from": "engedi",
+      "to": "ziklag",
+      "label": "Southern refuge",
+      "passages": ["1 Samuel 27-30"],
+      "description": "David relocates to Ziklag.",
+      "confidence": "low",
+      "caution": "Ziklag is not securely identified."
+    }
+  ]
+}
