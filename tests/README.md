@@ -44,6 +44,18 @@ compare how well each follows the method — independent of any AI vendor.
 evaluations against a model API. It is **not** part of required CI, so the test
 suite never depends on API keys or a specific vendor.
 
+## Browser Smoke Tests
+
+`tests/test_web_ui_selenium.py` covers browser-level smoke tests for the
+workspace drawer and map browse flow. They are skipped unless `selenium` is
+installed and a compatible Firefox + `geckodriver` setup is present locally.
+
+Install the dependency with:
+
+```bash
+pip install -r tools/requirements.txt
+```
+
 ## `golden/`
 
 Reference annotations of good and poor responses for selected fixtures, used to

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BHF Sources</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+</head>
+<body>
+  <main class="page source-page">
+    <header class="header">
+      <div>
+        <p class="eyebrow">Attribution</p>
+        <h1>Sources</h1>
+        <p>Central registry for curated source records used across places, routes, archaeology, manuscripts, and historical layers.</p>
+      </div>
+      <nav class="page-links">
+        <a class="secondary-link" href="/">Reader</a>
+        <a class="secondary-link" href="/curation">Curation</a>
+      </nav>
+    </header>
+
+    {% if error %}
+      <section class="notice">{{ error }}</section>
+    {% endif %}
+
+    <section class="source-grid">
+      {% for source in sources %}
+        <article class="source-card">
+          <h2><a href="/sources/{{ source.id }}">{{ source.label }}</a></h2>
+          <p class="source-meta">{{ source.license or "No license recorded" }}</p>
+          <p>{{ source.url or "No URL recorded" }}</p>
+          <p class="source-notes">{{ source.notes or "No notes recorded." }}</p>
+        </article>
+      {% endfor %}
+    </section>
+  </main>
+</body>
+</html>

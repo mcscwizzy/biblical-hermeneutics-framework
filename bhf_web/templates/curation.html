@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BHF Curation</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+</head>
+<body>
+  <main class="page curation-page">
+    <header class="header curation-header">
+      <div>
+        <p class="eyebrow">Local admin</p>
+        <h1>BHF Curation</h1>
+        <p>Edit local study data without touching source files. Records are stored in the SQLite study database and exported as sorted JSON for commits.</p>
+      </div>
+      <nav class="page-links">
+        <a class="secondary-link" href="/">Reader</a>
+        <a class="secondary-link" href="/sources">Sources</a>
+        <a class="secondary-link" href="/api/curation/export">Raw export</a>
+      </nav>
+    </header>
+
+    <section class="notice curation-notice">
+      <strong>Workflow:</strong> edit a record JSON blob, submit it to save, or use the bundle import form to replace the current curated dataset. Keep IDs stable when you want clean diffs.
+    </section>
+
+    <section class="curation-actions">
+      <form class="curation-import" method="post" action="/api/curation/import">
+        <label class="full">
+          <span>Bundle import JSON</span>
+          <textarea name="record_json" rows="10" placeholder="{{ export_json | e }}">{{ export_json }}</textarea>
+        </label>
+        <div class="action-row">
+          <button type="submit">Import bundle</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="curation-sections">
+      {% for section in collections %}
+        <article class="curation-section" id="{{ section.key }}">
+              <div class="panel-heading">
+                <div>
+                  <h2>{{ section.title }}</h2>
+                  <p class="section-meta">{{ section.count }} record{% if section.count != 1 %}s{% endif %}</p>
+                </div>
+              </div>
+
+          <div class="curation-records">
+            <form class="curation-record new-record" method="post" action="/api/curation/{{ section.key }}">
+              <div class="record-header">
+                <h3>New {{ section.title[:-1] if section.title.endswith('s') else section.title }}</h3>
+              </div>
+              <label>
+                <span>Record JSON</span>
+                <textarea name="record_json" rows="12">{{ section.new_record_json }}</textarea>
+              </label>
+              <div class="action-row">
+                <button type="submit">Save new record</button>
+              </div>
+            </form>
+
+            {% for record in section.records %}
+              <form class="curation-record" method="post" action="/api/curation/{{ section.key }}/{{ record.id }}">
+                <div class="record-header">
+                  <h3>{{ record.summary }}</h3>
+                  <span class="record-id">{{ record.id }}</span>
+                </div>
+                <div class="record-attribution{% if record.missing_source %} missing{% endif %}">
+                    <strong>Attribution</strong>
+                    <p>{{ record.source_summary }}</p>
+                  </div>
+                <label>
+                  <span>Record JSON</span>
+                  <textarea name="record_json" rows="12">{{ record.json }}</textarea>
+                </label>
+                <div class="action-row">
+                  <button type="submit">Save</button>
+                  <button type="submit" class="secondary danger" formaction="/api/curation/{{ section.key }}/{{ record.id }}/delete">Delete</button>
+                </div>
+              </form>
+            {% endfor %}
+          </div>
+        </article>
+      {% endfor %}
+    </section>
+  </main>
+</body>
+</html>

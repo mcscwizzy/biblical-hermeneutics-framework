@@ -68,6 +68,46 @@ python tools/compose.py --modules genre.epistle,book.romans
 python tools/compose.py --profile standard
 ```
 
+### Option D — use the local BHF Agent
+
+The Python agent wraps a local OpenAI-compatible model with BHF method,
+deterministic reference/genre detection, local curated context, optional repair,
+offline evals, and disabled-by-default local session memory.
+
+```bash
+python -m bhf_agent \
+  --config examples/config.local-openai-compatible.json \
+  --answer-mode study \
+  "What should I know about the context of Proverbs 3?"
+
+python tools/eval_local.py \
+  --fixture tests/prompts/proverbs-context-basic.json \
+  --answer-file output.txt
+
+python -m bhf_agent \
+  --config examples/config.local-openai-compatible.json \
+  --memory \
+  --session-id sunday-school-proverbs \
+  --memory-max-turns 4 \
+  "How should I teach Proverbs 3?"
+```
+
+Answer modes (`concise`, `study`, `teaching`, `scholar`) shape answer format and
+depth independently from BHF profiles. Session memory is local-only, stores
+compact summaries under `.bhf/sessions/`, and is ignored by git.
+
+The optional FastAPI web UI includes an offline ASV reader. Run
+`uvicorn bhf_web.app:app --reload --host 127.0.0.1 --port 8000`, open
+`http://127.0.0.1:8000`, select public-domain ASV text, ask BHF about the
+chapter or selected verses, and keep local-only study notes under
+`.bhf/study.sqlite`. The reader also supports right-click study actions,
+persisted highlights, and saved studies.
+
+Current right-click study actions include Ancient Context, Literary Context,
+Cross References, Related OT Themes, Fulfillment in the NT, Compare
+Translations, Timeline, Maps, Save Study, and a guarded Word Study helper for
+ASV English selections.
+
 ---
 
 ## Repository layout
@@ -100,3 +140,5 @@ contribution must pass `validate.py` and the **neutrality + sourcing** review.
 
 - **Content** (`framework/`, `docs/`, `profiles/`, `examples/`): [CC BY 4.0](LICENSE-CONTENT)
 - **Code** (`tools/`, CI): [MIT](LICENSE)
+- **Bundled ASV Bible text** (`bhf_agent/data/asv_bible.json`): American
+  Standard Version, public domain in the United States.

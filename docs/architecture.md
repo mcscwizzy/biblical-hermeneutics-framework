@@ -30,9 +30,12 @@ Modules declare relationships in frontmatter:
   model's budget.
 
 `tools/compose.py` takes a set of module ids (or a named profile), computes the
-transitive `requires` closure, topologically orders the result, and concatenates
-the bodies into a single prompt. Dependencies always precede dependents; among
-modules with no ordering constraint between them, the sort key is
+transitive `requires` closure, applies core framework inclusions, topologically
+orders the result, and concatenates the bodies into a single prompt.
+`core.intertextuality` is included whenever `core.core-framework` is present so
+the core prompt always includes basic intertextual discipline. Dependencies
+always precede dependents; among modules with no ordering constraint between
+them, the sort key is
 `(type, order, id)` — so `core` comes before `genre` before `book`, and the
 optional `order` field sequences the core modules into a hermeneutical workflow
 (framework → genre awareness → original audience → observe/interpret/apply →

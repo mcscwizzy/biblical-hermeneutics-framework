@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BHF ASV Reader</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}?v=20260630e">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="{{ url_for('static', path='/api/http.js') }}" defer></script>
+  <script src="{{ url_for('static', path='/htmx-status.js') }}" defer></script>
+  <script src="{{ url_for('static', path='/htmx-study-panels.js') }}" defer></script>
+  <script src="{{ url_for('static', path='/htmx-search.js') }}" defer></script>
+  <script src="{{ url_for('static', path='/htmx-lite.js') }}?v=20260630c" defer></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script type="module" src="{{ url_for('static', path='/maps/MapPanel.js') }}?v=20260630"></script>
+</head>
+<body>
+  <main class="page reader-page">
+    <header class="header">
+      <div>
+        <h1>BHF ASV Reader</h1>
+        <p>Read the public-domain American Standard Version, select a passage, ask BHF, and keep local notes.</p>
+      </div>
+      <nav class="page-links">
+        <button type="button" class="secondary-link workspace-drawer-toggle" data-workspace-drawer-toggle aria-controls="study-panel" aria-expanded="false">
+          <span class="workspace-drawer-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+          Workspace
+        </button>
+      </nav>
+    </header>
+
+    {% if config_warning %}
+      <div class="notice" role="status">{{ config_warning }}</div>
+    {% endif %}
+
+    <section class="reader-layout">
+      <section class="reader-column" aria-labelledby="reader-heading">
+        <div class="reader-toolbar">
+          <div class="reader-toolbar-main">
+            <h2 id="reader-heading">ASV Bible</h2>
+            <div class="reader-controls">
+              <label>
+                <span>Book</span>
+                <select id="book-select" data-reader-book>
+                  {% for book in books %}
+                    <option value="{{ book.name }}" data-chapters="{{ book.chapters }}" {% if book.name == "John" %}selected{% endif %}>{{ book.name }}</option>
+                  {% endfor %}
+                </select>
+              </label>
+              <label>
+                <span>Chapter</span>
+                <select id="chapter-select" data-reader-chapter></select>
+              </label>
+            </div>
+          </div>
+          <form class="reader-search" data-bible-search>
+            <label class="reader-search-field">
+              <span>Search ASV</span>
+              <input type="search" name="query" placeholder="living sacrifice, Egypt, John 1:1" autocomplete="off">
+            </label>
+            <div class="reader-search-actions">
+              <button type="submit">Search</button>
+              <button type="button" class="secondary" data-search-clear>Clear</button>
+            </div>
+            <input type="hidden" name="profile" value="{{ form.profile }}">
+            <input type="hidden" name="answer_mode" value="{{ form.answer_mode }}">
+            <input type="hidden" name="model" value="{{ form.model }}">
+            <input type="hidden" name="base_url" value="{{ form.base_url }}">
+            <input type="hidden" name="temperature" value="{{ form.temperature }}">
+            <input type="hidden" name="max_tokens" value="{{ form.max_tokens }}">
+            <input type="hidden" name="timeout_seconds" value="{{ form.timeout_seconds }}">
+            <input type="hidden" name="memory_max_turns" value="{{ form.memory_max_turns }}">
+            {% if form.show_method_notes %}<input type="hidden" name="show_method_notes" value="on">{% endif %}
+            {% if form.memory_enabled %}<input type="hidden" name="memory_enabled" value="on">{% endif %}
+            {% if form.session_id %}<input type="hidden" name="session_id" value="{{ form.session_id }}">{% endif %}
+            {% if form.memory_path %}<input type="hidden" name="memory_path" value="{{ form.memory_path }}">{% endif %}
+          </form>
+        </div>
+
+        <section id="reader-search-results" class="reader-search-results" hidden aria-live="polite">
+          <div class="reader-search-results-header">
+            <div>
+              <h3>Search Results</h3>
+              <p id="reader-search-summary" class="reader-search-summary"></p>
+            </div>
+          </div>
+          <div id="reader-search-status" class="reader-search-status" hidden></div>
+          <div id="reader-search-results-body"></div>
+        </section>
+
+        <article
+          id="chapter-reader"
+          class="chapter-reader"
+          aria-live="polite"
+          data-default-book="John"
+          data-default-chapter="1"
+        >
+          <p class="empty">Loading ASV text...</p>
+        </article>
+      </section>
+
+      <aside class="study-panel" id="study-panel" aria-label="Study panel">
+        <div class="workspace-panel" data-workspace-tabs data-default-tab="ask">
+          <div class="workspace-mobile-header">
+            <strong>Workspace</strong>
+            <button type="button" class="secondary" data-workspace-drawer-close aria-label="Close workspace">Close</button>
+          </div>
+          <div class="workspace-tab-bar" role="tablist" aria-label="Study workspace">
+            <button type="button" class="workspace-tab is-ask" id="workspace-tab-ask" role="tab" aria-selected="true" aria-controls="workspace-pane-ask" data-workspace-tab="ask">Ask</button>
+            <button type="button" class="workspace-tab" id="workspace-tab-notes" role="tab" aria-selected="false" aria-controls="workspace-pane-notes" data-workspace-tab="notes" tabindex="-1">Notes</button>
+            <button type="button" class="workspace-tab" id="workspace-tab-highlights" role="tab" aria-selected="false" aria-controls="workspace-pane-highlights" data-workspace-tab="highlights" tabindex="-1">Highlights</button>
+            <button type="button" class="workspace-tab" id="workspace-tab-saved" role="tab" aria-selected="false" aria-controls="workspace-pane-saved" data-workspace-tab="saved" tabindex="-1">Saved</button>
+            <button type="button" class="workspace-tab" id="workspace-tab-maps" role="tab" aria-selected="false" aria-controls="workspace-pane-maps" data-workspace-tab="maps" tabindex="-1">Maps</button>
+          </div>
+
+          <div class="workspace-pane-group">
+            <section class="workspace-pane ask-pane" id="workspace-pane-ask" role="tabpanel" aria-labelledby="workspace-tab-ask" data-workspace-pane="ask">
+              <form
+                class="ask-form"
+                method="post"
+                action="/ask"
+                data-job-post="/ask/jobs"
+                data-status-base="/ask/status/"
+                data-result-base="/ask/result/"
+                data-target="#answer-panel"
+                data-status-target="#status-panel"
+              >
+                <input type="hidden" name="reader_book" value="John">
+                <input type="hidden" name="reader_chapter" value="1">
+                <input type="hidden" name="reader_start_verse" value="">
+                <input type="hidden" name="reader_end_verse" value="">
+                <input type="hidden" name="reader_selected_text" value="">
+                <input type="hidden" name="ask_mode" value="">
+                <input type="hidden" name="study_action" value="">
+                <input type="hidden" name="map_context" value="">
+
+                <section class="selection-card" aria-live="polite">
+                  <h2>Ask BHF</h2>
+                  <p id="selection-summary" class="selection-summary">Ask about John 1, or select verse text for a focused question.</p>
+                </section>
+
+                <label class="full question-field">
+                  <span>Question</span>
+                  <textarea name="question" rows="4" placeholder="Optional: ask a specific question about the chapter or selection.">{{ form.question }}</textarea>
+                </label>
+
+                <details class="settings full">
+                  <summary>Model settings</summary>
+                  <div class="config-fields" data-config-fields>
+                  <label>
+                    <span>Profile</span>
+                    <select name="profile">
+                      {% for profile in profiles %}
+                        <option value="{{ profile }}" {% if profile == form.profile %}selected{% endif %}>{{ profile }}</option>
+                      {% endfor %}
+                    </select>
+                  </label>
+
+                  <label>
+                    <span>Answer mode</span>
+                    <select name="answer_mode">
+                      {% for mode in answer_modes %}
+                        <option value="{{ mode }}" {% if mode == form.answer_mode %}selected{% endif %}>{{ mode }}</option>
+                      {% endfor %}
+                    </select>
+                  </label>
+
+                  <label>
+                    <span>Model</span>
+                    <input type="text" name="model" value="{{ form.model }}" required>
+                  </label>
+
+                  <label>
+                    <span>Base URL</span>
+                    <input type="url" name="base_url" value="{{ form.base_url }}" required>
+                  </label>
+
+                  <label>
+                    <span>Temperature</span>
+                    <input type="number" name="temperature" min="0" max="2" step="0.1" value="{{ form.temperature }}" required>
+                  </label>
+
+                  <label>
+                    <span>Max tokens</span>
+                    <input type="number" name="max_tokens" min="1" step="1" value="{{ form.max_tokens }}" required>
+                  </label>
+
+                  <label>
+                    <span>Timeout seconds</span>
+                    <input type="number" name="timeout_seconds" min="1" step="1" value="{{ form.timeout_seconds }}" required>
+                  </label>
+
+                  <label class="check">
+                    <input type="checkbox" name="show_method_notes" {% if form.show_method_notes %}checked{% endif %}>
+                    <span>Show method notes</span>
+                  </label>
+
+                  <fieldset>
+                    <legend>Local session memory</legend>
+                    <label class="check">
+                      <input type="checkbox" name="memory_enabled" {% if form.memory_enabled %}checked{% endif %}>
+                      <span>Enable memory</span>
+                    </label>
+
+                    <div class="grid">
+                      <label>
+                        <span>Session ID</span>
+                        <input type="text" name="session_id" value="{{ form.session_id }}">
+                      </label>
+                      <label>
+                        <span>Memory path</span>
+                        <input type="text" name="memory_path" value="{{ form.memory_path }}">
+                      </label>
+                      <label>
+                        <span>Memory max turns</span>
+                        <input type="number" name="memory_max_turns" min="1" step="1" value="{{ form.memory_max_turns }}">
+                      </label>
+                    </div>
+                  </fieldset>
+                  </div>
+                </details>
+
+                <div class="action-row">
+                  <button type="submit">Ask BHF</button>
+                  <button type="button" class="secondary" data-add-note>Add note</button>
+                </div>
+              </form>
+
+              <section id="status-panel" class="status-panel" aria-live="polite" hidden>
+                <div class="status-summary" hidden></div>
+                <div class="status-active">
+                  <div class="status-topline">
+                    <div>
+                      <div class="status-heading">Agent status</div>
+                      <div class="status-current">Preparing request</div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section id="answer-panel" class="answer-panel" aria-live="polite">
+                <p class="empty">Ask about the current chapter or a selected passage to see the answer and run metadata.</p>
+              </section>
+            </section>
+
+            <section class="workspace-pane" id="workspace-pane-notes" role="tabpanel" aria-labelledby="workspace-tab-notes" data-workspace-pane="notes" hidden>
+              <section class="notes-panel" aria-labelledby="notes-heading">
+                <div class="panel-heading">
+                  <h2 id="notes-heading">Notes</h2>
+                  <span id="notes-count" class="count">0</span>
+                </div>
+                <form id="note-editor" class="note-editor" hidden>
+                  <input type="hidden" name="id" value="">
+                  <label>
+                    <span id="note-reference">Note</span>
+                    <textarea name="body" rows="4" required></textarea>
+                  </label>
+                  <div class="note-actions">
+                    <button type="submit">Save note</button>
+                    <button type="button" class="secondary" data-cancel-note>Cancel</button>
+                  </div>
+                </form>
+                <div id="notes-list" class="notes-list">
+                  <p class="empty">No notes for this chapter yet.</p>
+                </div>
+              </section>
+            </section>
+
+            <section class="workspace-pane" id="workspace-pane-highlights" role="tabpanel" aria-labelledby="workspace-tab-highlights" data-workspace-pane="highlights" hidden>
+              <section class="highlights-panel" aria-labelledby="highlights-heading">
+                <div class="panel-heading">
+                  <h2 id="highlights-heading">Highlights</h2>
+                  <span id="highlights-count" class="count">0</span>
+                </div>
+                <div id="highlights-list" class="highlights-list">
+                  <p class="empty">No highlights for this chapter yet.</p>
+                </div>
+              </section>
+            </section>
+
+            <section class="workspace-pane" id="workspace-pane-saved" role="tabpanel" aria-labelledby="workspace-tab-saved" data-workspace-pane="saved" hidden>
+              <section class="saved-studies-panel" aria-labelledby="saved-studies-heading">
+                <div class="panel-heading">
+                  <h2 id="saved-studies-heading">Saved Studies</h2>
+                  <span id="saved-studies-count" class="count">0</span>
+                </div>
+                <div id="saved-studies-list" class="saved-studies-list">
+                  <p class="empty">No saved studies for this chapter yet.</p>
+                </div>
+              </section>
+            </section>
+
+            <section class="workspace-pane" id="workspace-pane-maps" role="tabpanel" aria-labelledby="workspace-tab-maps" data-workspace-pane="maps" hidden>
+              <p class="empty workspace-pane-empty" data-map-pane-empty>
+                Open a verse action to load the map workspace, or browse the map catalog directly.
+                <button type="button" class="secondary" data-open-map-browser>Browse maps</button>
+              </p>
+              <div id="map-workspace-inline-host" class="map-workspace-host">
+                <div id="map-workspace" class="map-workspace" data-map-host="inline">
+                  <section id="map-panel" class="map-panel" aria-labelledby="map-panel-heading" hidden>
+                    <div class="panel-heading map-panel-heading">
+                      <div>
+                        <h2 id="map-panel-heading">Maps</h2>
+                        <p id="map-panel-reference" class="map-panel-reference"></p>
+                      </div>
+                      <div class="map-panel-actions">
+                        <div class="map-mode-switch" role="group" aria-label="Map mode">
+                          <button type="button" class="secondary is-active" data-map-mode-switch="passage">Passage</button>
+                          <button type="button" class="secondary" data-map-mode-switch="browse">Browse</button>
+                        </div>
+                        <label class="check map-toggle">
+                          <input type="checkbox" data-archaeology-toggle>
+                          <span>Show archaeology</span>
+                        </label>
+                        <label class="check map-toggle">
+                          <input type="checkbox" data-manuscript-toggle>
+                          <span>Show manuscripts</span>
+                        </label>
+                        <label class="check map-toggle">
+                          <input type="checkbox" data-route-toggle>
+                          <span>Show routes</span>
+                        </label>
+                        <label class="map-period">
+                          <span>Period</span>
+                          <select data-historical-period>
+                            <option value="all" selected>All periods</option>
+                            <option value="Broad / uncertain period">Broad / uncertain period</option>
+                            <option value="Divided Kingdom">Divided Kingdom</option>
+                            <option value="Assyrian period">Assyrian period</option>
+                            <option value="Babylonian period">Babylonian period</option>
+                            <option value="Persian period">Persian period</option>
+                            <option value="Hellenistic period">Hellenistic period</option>
+                            <option value="NT / Roman period">NT / Roman period</option>
+                          </select>
+                        </label>
+                        <button type="button" class="secondary" data-map-reset>Reset view</button>
+                        <button type="button" class="secondary" data-map-expand>Expand</button>
+                        <button type="button" class="secondary" data-map-close>Close</button>
+                      </div>
+                    </div>
+                    <div class="map-browser" data-map-browser hidden>
+                      <div class="map-browser-toolbar">
+                        <label class="map-browser-field">
+                          <span>Search</span>
+                          <input type="search" data-map-search-query placeholder="Search topic, location, or archaeology evidence">
+                        </label>
+                        <label class="map-browser-field">
+                          <span>Type</span>
+                          <select data-map-search-kind>
+                            <option value="all" selected>All data</option>
+                            <option value="place">Locations</option>
+                            <option value="route">Routes</option>
+                            <option value="archaeology">Archaeology evidence</option>
+                            <option value="manuscript">Textual witnesses</option>
+                            <option value="historical_layer">Historical layers</option>
+                            <option value="political_context">Political context</option>
+                          </select>
+                        </label>
+                        <label class="map-browser-field">
+                          <span>Period</span>
+                          <select data-map-search-period>
+                            <option value="all" selected>All periods</option>
+                            <option value="Broad / uncertain period">Broad / uncertain period</option>
+                            <option value="Divided Kingdom">Divided Kingdom</option>
+                            <option value="Assyrian period">Assyrian period</option>
+                            <option value="Babylonian period">Babylonian period</option>
+                            <option value="Persian period">Persian period</option>
+                            <option value="Hellenistic period">Hellenistic period</option>
+                            <option value="NT / Roman period">NT / Roman period</option>
+                          </select>
+                        </label>
+                        <div class="map-browser-actions">
+                          <button type="button" class="secondary" data-map-search-submit>Search</button>
+                          <button type="button" class="secondary" data-map-search-clear>Clear</button>
+                        </div>
+                      </div>
+                      <p class="map-browser-hint">Browse the curated map catalog without choosing a chapter first.</p>
+                    </div>
+                    <div id="map-panel-status" class="map-panel-status" hidden aria-live="polite"></div>
+                    <details id="map-pin-hint" class="map-pin-hint" hidden>
+                      <summary id="map-pin-hint-summary">Why no pin?</summary>
+                      <p id="map-pin-hint-text"></p>
+                    </details>
+                    <div class="map-panel-body">
+                      <div id="map-stage" class="map-stage" role="application" aria-label="Bible map"></div>
+                      <aside class="map-details-column" aria-live="polite">
+                        <section id="map-search-results" class="map-search-results" hidden>
+                          <div class="panel-heading">
+                            <h3 id="map-search-results-heading">Browse results</h3>
+                            <span id="map-search-results-count" class="count">0</span>
+                          </div>
+                          <div id="map-search-results-list" class="map-search-results-list"></div>
+                        </section>
+                        <section id="map-details" class="map-details-panel" aria-live="polite">
+                          <p class="empty map-details-empty">Select a place pin, route, archaeology item, manuscript, or overlay to inspect its details here.</p>
+                        </section>
+                      </aside>
+                    </div>
+                    <section id="saved-map-studies" class="saved-map-studies-panel" aria-labelledby="saved-map-studies-heading">
+                      <div class="panel-heading">
+                        <h3 id="saved-map-studies-heading">Saved map studies</h3>
+                        <span id="saved-map-studies-count" class="count">0</span>
+                      </div>
+                      <div id="saved-map-studies-list" class="saved-map-studies-list">
+                        <p class="empty">No saved map studies for this passage yet.</p>
+                      </div>
+                    </section>
+                    <div class="map-attribution">
+                      Map data uses OpenStreetMap tiles for local/dev use only.
+                    </div>
+                  </section>
+                  <section class="map-ai-panel" aria-labelledby="map-ai-heading">
+                    <div class="panel-heading">
+                      <h2 id="map-ai-heading">BHF Geography Fallback</h2>
+                    </div>
+                    <section id="map-ai-status-panel" class="status-panel" aria-live="polite" hidden>
+                      <div class="status-summary" hidden></div>
+                      <div class="status-active">
+                        <div class="status-topline">
+                          <div>
+                            <div class="status-heading">Agent status</div>
+                            <div class="status-current">Preparing request</div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                    <section id="map-ai-answer-panel" class="answer-panel map-ai-answer-panel" aria-live="polite">
+                      <p class="empty">If local map data is missing, BHF will add a text-only geography fallback here.</p>
+                    </section>
+                  </section>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <dialog id="map-modal" class="map-modal" aria-labelledby="map-modal-heading">
+      <div class="map-modal-shell">
+        <div class="map-modal-header">
+          <div>
+            <h2 id="map-modal-heading">Expanded Map Workspace</h2>
+            <p class="map-modal-subtitle">Review map context, details, saved map studies, and BHF fallback notes with more room.</p>
+          </div>
+          <button type="button" class="secondary" data-map-modal-close>Close</button>
+        </div>
+        <div id="map-workspace-modal-host" class="map-modal-body"></div>
+      </div>
+    </dialog>
+
+    <nav id="reader-context-menu" class="context-menu" aria-label="Verse actions" hidden>
+      <button type="button" data-context-action="ancient_context">Ancient Context</button>
+      <button type="button" data-context-action="literary_context">Literary Context</button>
+      <button type="button" data-context-action="cross_references">Cross References</button>
+      <button type="button" data-context-action="related_ot_themes">Related OT Themes</button>
+      <button type="button" data-context-action="fulfillment_nt">Fulfillment in the NT</button>
+      <button type="button" data-context-action="compare_translations">Compare Translations</button>
+      <button type="button" data-context-action="timeline">Timeline</button>
+      <button type="button" data-context-action="ask_location">Ask about this location</button>
+      <button type="button" data-context-action="open_map_panel">Open map panel</button>
+      <button type="button" data-context-action="save_map_study">Save map study</button>
+      <button type="button" data-context-action="map_note">Add map note</button>
+      <button type="button" data-context-action="compare_archaeology">Compare with archaeology</button>
+      <button type="button" data-context-action="related_passages">View related passages</button>
+      <button type="button" data-context-action="view_historical_layer">View historical layer</button>
+      <button type="button" data-context-action="save_study">Save Study</button>
+      <button type="button" data-context-action="note">Add note to this verse</button>
+      <button type="button" data-context-action="highlight">Highlight this verse</button>
+      <button type="button" data-context-action="word_study">Word Study</button>
+    </nav>
+  </main>
+</body>
+</html>
