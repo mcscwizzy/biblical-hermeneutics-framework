@@ -13,6 +13,7 @@ class ConfigError(ValueError):
 
 
 ALLOWED_ANSWER_MODES = ("concise", "study", "teaching", "scholar")
+ALLOWED_ADAPTERS = ("openai_compatible", "ollama")
 
 
 @dataclass(frozen=True)
@@ -80,8 +81,12 @@ class AgentConfig:
             raise ConfigError("only config_version 1 is supported")
         if not self.adapter:
             raise ConfigError("adapter is required")
-        if self.adapter == "openai_compatible" and not self.base_url:
-            raise ConfigError("base_url is required for openai_compatible adapter")
+        if self.adapter not in ALLOWED_ADAPTERS:
+            raise ConfigError(
+                "adapter must be one of: " + ", ".join(ALLOWED_ADAPTERS)
+            )
+        if self.adapter in {"openai_compatible", "ollama"} and not self.base_url:
+            raise ConfigError(f"base_url is required for {self.adapter} adapter")
         if not self.model:
             raise ConfigError("model is required")
         if not self.profile:

@@ -14,6 +14,7 @@ from bhf_agent.config import ALLOWED_ANSWER_MODES, AgentConfig, ConfigError
 WEB_CONFIG_PATH = Path(".bhf") / "web-config.json"
 
 ENV_CONFIG_FIELDS = {
+    "LLM_PROVIDER": "adapter",
     "BHF_BASE_URL": "base_url",
     "BHF_MODEL": "model",
     "BHF_PROFILE": "profile",
@@ -26,6 +27,8 @@ ENV_CONFIG_FIELDS = {
     "BHF_MEMORY_PATH": "memory_path",
     "BHF_SESSION_ID": "session_id",
     "BHF_API_KEY": "api_key",
+    "OLLAMA_BASE_URL": "base_url",
+    "OLLAMA_MODEL": "model",
 }
 
 DEFAULT_CONFIG_VALUES: dict[str, Any] = {

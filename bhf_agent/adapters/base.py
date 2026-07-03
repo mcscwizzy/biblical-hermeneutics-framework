@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
+from typing import Any, Optional
 
 from bhf_agent.models import ChatRequest, ChatResponse
 
@@ -22,3 +23,11 @@ class ChatAdapter(ABC):
     @abstractmethod
     def chat(self, request: ChatRequest) -> ChatResponse:
         raise NotImplementedError
+
+    def health_check(self, model: Optional[str] = None) -> dict[str, Any]:
+        return {
+            "ok": False,
+            "provider": self.__class__.__name__,
+            "model": model,
+            "error": "health check not implemented",
+        }

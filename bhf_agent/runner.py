@@ -6,7 +6,7 @@ import time
 from datetime import datetime, timezone
 from typing import Any, Callable, Optional
 
-from .adapters import ChatAdapter, OpenAICompatibleAdapter
+from .adapters import ChatAdapter, OllamaAdapter, OpenAICompatibleAdapter
 from .config import AgentConfig, ConfigError
 from .genre import classify_genre
 from .knowledge import LocalKnowledgeBundle, lookup_local_knowledge
@@ -614,6 +614,13 @@ class BHFAgent:
             return OpenAICompatibleAdapter(
                 base_url=config.base_url,
                 api_key=config.api_key,
+                timeout_seconds=config.timeout_seconds,
+            )
+        if config.adapter == "ollama":
+            if not config.base_url:
+                raise ConfigError("base_url is required for ollama adapter")
+            return OllamaAdapter(
+                base_url=config.base_url,
                 timeout_seconds=config.timeout_seconds,
             )
         raise ConfigError(f"unsupported adapter: {config.adapter}")

@@ -6,6 +6,7 @@ import tempfile
 import time
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from urllib.parse import quote_plus, urlencode
 from unittest.mock import patch
 
@@ -138,6 +139,25 @@ class WebFormTests(unittest.TestCase):
         self.assertFalse(config.show_method_notes)
         self.assertTrue(config.memory_enabled)
         self.assertEqual(config.memory_path, "/app/.bhf/sessions")
+
+    def test_web_defaults_read_ollama_environment_variables(self):
+        env = {
+            "LLM_PROVIDER": "ollama",
+            "OLLAMA_BASE_URL": "http://ollama:11434",
+            "OLLAMA_MODEL": "qwen2.5:0.5b",
+            "BHF_PROFILE": "standard",
+            "BHF_ANSWER_MODE": "study",
+        }
+
+        with patch.dict(os.environ, env, clear=False):
+            loaded = load_web_defaults(path="/tmp/bhf-web-config-does-not-exist.json")
+
+        config = loaded.config
+        self.assertEqual(config.adapter, "ollama")
+        self.assertEqual(config.base_url, "http://ollama:11434")
+        self.assertEqual(config.model, "qwen2.5:0.5b")
+        self.assertEqual(config.profile, "standard")
+        self.assertEqual(config.answer_mode, "study")
 
     def test_web_defaults_use_360_second_timeout(self):
         loaded = load_web_defaults(path="/tmp/bhf-web-config-does-not-exist.json")
@@ -1022,6 +1042,40 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(response["status"], 200)
         self.assertIn('"status":"ok"', response["body"])
         self.assertIn('"service":"bhf-web"', response["body"])
+
+    def test_llm_health_route_reports_provider_status(self):
+        class FakeAdapter:
+            def health_check(self, model=None):
+                return {
+                    "ok": True,
+                    "provider": "ollama",
+                    "model": model,
+                    "base_url": "http://ollama:11434",
+                }
+
+        class FakeAgent:
+            def __init__(self, config):
+                self.adapter = FakeAdapter()
+
+        with patch(
+            "bhf_web.app.load_web_defaults",
+            return_value=SimpleNamespace(
+                config=AgentConfig(
+                    adapter="ollama",
+                    base_url="http://ollama:11434",
+                    model="qwen2.5:0.5b",
+                    profile="standard",
+                ),
+                warning=None,
+            ),
+        ), patch("bhf_web.app.BHFAgent", FakeAgent):
+            response = asgi_request("GET", "/api/llm/health")
+
+        self.assertEqual(response["status"], 200)
+        body = json.loads(response["body"])
+        self.assertTrue(body["ok"])
+        self.assertEqual(body["provider"], "ollama")
+        self.assertEqual(body["model"], "qwen2.5:0.5b")
 
     def test_bible_books_route_returns_asv_books(self):
         response = asgi_request("GET", "/api/bible/books")

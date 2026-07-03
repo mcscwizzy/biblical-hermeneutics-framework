@@ -119,6 +119,33 @@ class OpenAICompatibleAdapter(ChatAdapter):
             raw_provider_response=data,
         )
 
+    def health_check(self, model: Optional[str] = None) -> dict[str, Any]:
+        try:
+            with urllib.request.urlopen(
+                urllib.request.Request(f"{self.base_url}/models", method="GET"),
+                timeout=self.timeout_seconds,
+            ) as response:
+                raw_body = response.read().decode("utf-8")
+            data = json.loads(raw_body)
+        except Exception as exc:  # pragma: no cover - defensive health reporting
+            return {
+                "ok": False,
+                "provider": "openai_compatible",
+                "model": model,
+                "base_url": self.base_url,
+                "error": str(exc),
+            }
+
+        available_models = _available_models(data)
+        return {
+            "ok": True,
+            "provider": "openai_compatible",
+            "model": model,
+            "base_url": self.base_url,
+            "model_present": model is None or model in available_models,
+            "available_models": available_models,
+        }
+
 
 def _safe_read_error(exc: urllib.error.HTTPError) -> str:
     try:
@@ -161,3 +188,20 @@ def _extract_text(data: Any) -> tuple[Optional[str], Optional[str]]:
             return None, "OpenAI-compatible endpoint returned empty text content"
         return text, None
     return None, "OpenAI-compatible endpoint response did not include message text"
+
+
+def _available_models(data: Any) -> list[str]:
+    if not isinstance(data, dict):
+        return []
+    models = data.get("data")
+    if not isinstance(models, list):
+        models = data.get("models")
+    if not isinstance(models, list):
+        return []
+    names: list[str] = []
+    for model in models:
+        if isinstance(model, dict):
+            name = model.get("id") or model.get("name")
+            if isinstance(name, str):
+                names.append(name)
+    return names

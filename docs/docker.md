@@ -1,11 +1,13 @@
 # Docker
 
-The Docker setup runs only the BHF web/API server. It includes the Python BHF
-agent package, web UI, framework modules, profiles, and agent data files. It
-does not include a local model runtime.
+The default Docker setup runs the BHF web/API server and a lightweight local
+Ollama runtime for development and testing. It includes the Python BHF agent
+package, web UI, framework modules, profiles, agent data files, and a persistent
+Ollama volume for model reuse.
 
-Use an external OpenAI-compatible endpoint such as Ollama, LM Studio, or another
-server on your machine or LAN.
+The app can still point at an external OpenAI-compatible endpoint such as LM
+Studio, llama.cpp, or another server on your machine or LAN by changing the
+environment variables in `.env`.
 
 ## Build And Run
 
@@ -15,10 +17,10 @@ Copy the example environment file if you want to customize defaults:
 cp .env.example .env
 ```
 
-Start the web app:
+Start the full stack:
 
 ```bash
-docker compose up --build
+docker compose up -d
 ```
 
 Open:
@@ -37,25 +39,27 @@ uvicorn bhf_web.app:app --host 0.0.0.0 --port 8080
 
 Run Ollama on your host machine and make sure the model is available:
 
-```bash
-ollama pull qwen2.5:7b
-ollama serve
-```
-
-Use this base URL from inside Docker:
+The app container talks to Ollama over the Compose network at:
 
 ```text
-http://host.docker.internal:11434/v1
+http://ollama:11434
 ```
 
-On Linux, `docker-compose.yml` includes:
+The host can reach the same Ollama service at:
 
-```yaml
-extra_hosts:
-  - "host.docker.internal:host-gateway"
+```bash
+curl http://localhost:11434/api/tags
 ```
 
-That lets the container reach services running on the Docker host.
+On first start, the `ollama-init` service waits for Ollama, then pulls the
+default lightweight model:
+
+```text
+qwen2.5:0.5b
+```
+
+Because the model lives in the named Docker volume `ollama`, it is reused on
+subsequent starts instead of being pulled again.
 
 ## LM Studio On The Host
 
@@ -69,8 +73,28 @@ http://host.docker.internal:1234/v1
 Set it in `.env`:
 
 ```dotenv
+LLM_PROVIDER=openai_compatible
 BHF_BASE_URL=http://host.docker.internal:1234/v1
 BHF_MODEL=local-model
+```
+
+If you want to use LM Studio instead of Ollama, set `LLM_PROVIDER` to
+`openai_compatible` and point `BHF_BASE_URL` at the LM Studio server. The
+Ollama services can be removed from `docker-compose.yml` or ignored if you do
+not need the local containerized model runtime.
+
+## Swap Models
+
+Change the default local model by updating:
+
+```dotenv
+OLLAMA_MODEL=qwen2.5:0.5b
+```
+
+To pull another model manually:
+
+```bash
+docker exec -it <ollama-container-name> ollama pull llama3.2:1b
 ```
 
 ## Persistent Data
@@ -125,4 +149,3 @@ http://YOUR_HOST_LAN_IP:8080
 This setup is intended for trusted local or LAN use only. It has no
 authentication, HTTPS termination, account system, rate limiting, or public
 internet hardening. Do not expose it directly to the public internet.
-

@@ -109,6 +109,20 @@ class AgentConfigTests(unittest.TestCase):
 
                 self.assertEqual(config.answer_mode, answer_mode)
 
+    def test_config_accepts_ollama_adapter(self):
+        config = AgentConfig.from_mapping(
+            {
+                "config_version": 1,
+                "adapter": "ollama",
+                "base_url": "http://ollama:11434",
+                "model": "qwen2.5:0.5b",
+                "profile": "standard",
+            }
+        )
+
+        self.assertEqual(config.adapter, "ollama")
+        self.assertEqual(config.base_url, "http://ollama:11434")
+
     def test_config_rejects_invalid_answer_mode(self):
         with self.assertRaisesRegex(ConfigError, "answer_mode must be one of"):
             AgentConfig.from_mapping(
@@ -270,6 +284,16 @@ class AgentConfigTests(unittest.TestCase):
     def test_missing_required_openai_compatible_values_are_clear(self):
         with self.assertRaisesRegex(ConfigError, "base_url is required"):
             AgentConfig.from_mapping({"model": "local-model"})
+
+    def test_missing_required_ollama_values_are_clear(self):
+        with self.assertRaisesRegex(ConfigError, "base_url is required"):
+            AgentConfig.from_mapping(
+                {
+                    "adapter": "ollama",
+                    "model": "qwen2.5:0.5b",
+                    "profile": "standard",
+                }
+            )
 
     def test_api_key_is_redacted_when_serialized(self):
         config = AgentConfig(

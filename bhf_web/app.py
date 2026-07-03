@@ -65,6 +65,26 @@ def create_app() -> FastAPI:
     async def health() -> dict[str, str]:
         return {"status": "ok", "service": "bhf-web"}
 
+    @web_app.get("/api/llm/health", response_class=JSONResponse)
+    async def llm_health() -> JSONResponse:
+        loaded = load_web_defaults()
+        try:
+            agent = BHFAgent(loaded.config)
+            report = agent.adapter.health_check(loaded.config.model)
+        except Exception as exc:  # pragma: no cover - defensive route
+            return JSONResponse(
+                {
+                    "ok": False,
+                    "provider": loaded.config.adapter,
+                    "model": loaded.config.model,
+                    "base_url": loaded.config.base_url,
+                    "error": str(exc),
+                },
+                status_code=503,
+            )
+        status_code = 200 if report.get("ok") else 503
+        return JSONResponse(report, status_code=status_code)
+
     @web_app.get("/sources", response_class=HTMLResponse)
     async def sources_index(request: Request) -> HTMLResponse:
         sources = list_sources(path=STUDY_DB_PATH)
