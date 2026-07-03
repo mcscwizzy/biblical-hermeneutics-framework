@@ -352,6 +352,10 @@ body.workspace-expanded .workspace-panel-actions {
   display: none;
 }
 
+.mobile-answer-close {
+  display: none;
+}
+
 .workspace-pane {
   flex: 1;
   min-height: 0;
@@ -941,6 +945,53 @@ html[data-theme="dark"] .map-panel-body {
     padding: 12px;
   }
 
+  .ask-pane {
+    grid-template-rows: auto auto minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  body.workspace-expanded .ask-pane {
+    height: 100%;
+  }
+
+  body.workspace-expanded .workspace-pane[data-workspace-pane="ask"] {
+    overflow: hidden;
+  }
+
+  .answer-panel,
+  .status-panel {
+    min-height: 0;
+  }
+
+  .answer-panel {
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-answer-close {
+    position: sticky;
+    top: 8px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    width: 34px;
+    height: 34px;
+    margin: 0 0 10px;
+    padding: 0;
+    border-radius: 999px;
+    font-size: 1.25rem;
+    line-height: 1;
+    box-shadow: 0 8px 18px rgb(17 30 41 / 14%);
+  }
+
+  body.workspace-expanded .answer-panel {
+    max-height: none;
+    height: 100%;
+  }
+
   .action-row,
   .note-actions {
     flex-direction: column;
@@ -1032,6 +1083,53 @@ html[data-theme="dark"] .map-panel-body {
   .map-panel,
   .map-ai-panel {
     padding: 10px;
+  }
+
+  .ask-pane {
+    grid-template-rows: auto auto minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  body.workspace-expanded .ask-pane {
+    height: 100%;
+  }
+
+  body.workspace-expanded .workspace-pane[data-workspace-pane="ask"] {
+    overflow: hidden;
+  }
+
+  .answer-panel,
+  .status-panel {
+    min-height: 0;
+  }
+
+  .answer-panel {
+    max-height: calc(100dvh - 360px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-answer-close {
+    position: sticky;
+    top: 8px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    width: 34px;
+    height: 34px;
+    margin: 0 0 10px;
+    padding: 0;
+    border-radius: 999px;
+    font-size: 1.25rem;
+    line-height: 1;
+    box-shadow: 0 8px 18px rgb(17 30 41 / 14%);
+  }
+
+  body.workspace-expanded .answer-panel {
+    max-height: none;
+    height: 100%;
   }
 
   .map-panel-actions {

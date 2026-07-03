@@ -91,6 +91,8 @@ document.addEventListener("submit", async function (event) {
     } else {
       markStatusComplete(statusPanel, finalStatus);
       latestJobComplete = true;
+      expandWorkspaceForMobileAnswer();
+      addMobileAnswerCloseControl(answerPanel);
       wireAnswerPanelControls(answerPanel);
       revealAnswerPanel(answerPanel);
       await loadSavedStudies(currentChapter?.book, currentChapter?.chapter);
@@ -98,6 +100,8 @@ document.addEventListener("submit", async function (event) {
   } catch (error) {
     markStatusFailed(statusPanel, error.message || "Request failed.");
     answerPanel.innerHTML = errorHtml(error.message || "Request failed.");
+    expandWorkspaceForMobileAnswer();
+    addMobileAnswerCloseControl(answerPanel);
     revealAnswerPanel(answerPanel);
     latestJobComplete = false;
   } finally {
@@ -301,6 +305,42 @@ function revealAnswerPanel(answerPanel) {
       answerPanel.scrollIntoView({ block: "start", behavior: "smooth" });
     }
   });
+}
+
+function expandWorkspaceForMobileAnswer() {
+  if (!window.matchMedia("(max-width: 900px)").matches) {
+    return;
+  }
+  if (document.body.classList.contains("workspace-expanded")) {
+    return;
+  }
+  applyWorkspaceExpansion(true);
+}
+
+function addMobileAnswerCloseControl(answerPanel) {
+  if (!answerPanel || !window.matchMedia("(max-width: 900px)").matches) {
+    return;
+  }
+  if (answerPanel.querySelector("[data-mobile-answer-close]")) {
+    return;
+  }
+  const closeButton = document.createElement("button");
+  closeButton.type = "button";
+  closeButton.className = "secondary mobile-answer-close";
+  closeButton.textContent = "×";
+  closeButton.setAttribute("aria-label", "Close answer and return to the reader");
+  closeButton.setAttribute("title", "Close answer");
+  closeButton.setAttribute("data-testid", "mobile-answer-close");
+  closeButton.setAttribute("data-mobile-answer-close", "true");
+  closeButton.addEventListener("click", closeMobileAnswerView);
+  answerPanel.insertAdjacentElement("afterbegin", closeButton);
+}
+
+function closeMobileAnswerView() {
+  if (!window.matchMedia("(max-width: 900px)").matches) {
+    return;
+  }
+  applyWorkspaceExpansion(false);
 }
 
 function readReaderModePreference() {
