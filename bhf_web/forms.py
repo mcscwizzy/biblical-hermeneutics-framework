@@ -10,8 +10,9 @@ from typing import Any, Mapping
 
 from bhf_agent.config import ALLOWED_ANSWER_MODES, AgentConfig, ConfigError
 
+from . import settings
 
-WEB_CONFIG_PATH = Path(".bhf") / "web-config.json"
+WEB_CONFIG_PATH = settings.WEB_CONFIG_PATH
 
 ENV_CONFIG_FIELDS = {
     "LLM_PROVIDER": "adapter",
@@ -59,12 +60,12 @@ class LoadedDefaults:
     warning: str | None = None
 
 
-def load_web_defaults(path: Path | str = WEB_CONFIG_PATH) -> LoadedDefaults:
+def load_web_defaults(path: Path | str | None = None) -> LoadedDefaults:
     """Load optional local web defaults, falling back to safe local values."""
 
     values = dict(DEFAULT_CONFIG_VALUES)
     warning = None
-    config_path = Path(path)
+    config_path = Path(path) if path is not None else WEB_CONFIG_PATH
 
     if config_path.exists():
         try:

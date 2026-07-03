@@ -12,6 +12,7 @@ from bhf_agent.config import ConfigError
 from bhf_agent.profiles import ProfileError
 
 from ..forms import config_from_form, load_web_defaults
+from ..jobs import _fake_result
 from ..services.web_helpers import (
     build_ask_question as _question_from_form,
     job_error_message as _job_error_message,
@@ -28,6 +29,7 @@ def register_ask_routes(
     agent_factory: Callable[[], Any],
     ask_job_runner: Callable[[Any, dict[str, Any], Any], None],
     search_fallback_job_runner: Callable[[Any, dict[str, Any], Any], None],
+    test_mode: bool = False,
 ) -> None:
     @app.post("/ask", response_class=HTMLResponse)
     async def ask(request: Request) -> HTMLResponse:
@@ -49,6 +51,20 @@ def register_ask_routes(
                     "reader_reference": None,
                 },
                 status_code=400,
+            )
+
+        if test_mode:
+            result = _fake_result(question, reader_reference)
+            return templates.TemplateResponse(
+                request,
+                "partials/answer.html",
+                {
+                    "error": None,
+                    "result": result,
+                    "answer_html": render_safe_markdown(result.answer_text),
+                    "metadata": result_metadata(result),
+                    "reader_reference": reader_reference,
+                },
             )
 
         return templates.TemplateResponse(

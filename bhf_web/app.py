@@ -6,7 +6,7 @@ import os
 from pathlib import Path
 
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.responses import HTMLResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
@@ -18,7 +18,6 @@ from bhf_agent.bible import (
 )
 from bhf_agent.runner import BHFAgent
 from bhf_agent.study_db import (
-    DEFAULT_DB_PATH,
     StudyDataError,
     get_source,
     list_sources,
@@ -29,6 +28,7 @@ from .forms import (
     form_values_from_config,
     load_web_defaults,
 )
+from . import settings
 from .routes.ask import register_ask_routes
 from .routes.curation import register_curation_routes
 from .routes.maps import register_map_routes
@@ -42,7 +42,6 @@ from .services.web_helpers import available_profiles as _available_profiles
 
 
 PACKAGE_DIR = Path(__file__).resolve().parent
-STUDY_DB_PATH = DEFAULT_DB_PATH
 templates = Jinja2Templates(directory=str(PACKAGE_DIR / "templates"))
 
 
@@ -64,6 +63,10 @@ def create_app() -> FastAPI:
     @web_app.get("/api/health", response_class=JSONResponse)
     async def health() -> dict[str, str]:
         return {"status": "ok", "service": "bhf-web"}
+
+    @web_app.get("/favicon.ico", include_in_schema=False)
+    async def favicon() -> Response:
+        return Response(content=b"", media_type="image/x-icon")
 
     @web_app.get("/api/llm/health", response_class=JSONResponse)
     async def llm_health() -> JSONResponse:
@@ -142,6 +145,7 @@ def create_app() -> FastAPI:
                 "config_warning": loaded.warning,
                 "cesium_ion_token": os.environ.get("BHF_CESIUM_ION_TOKEN", "").strip(),
                 "books": list_books(),
+                "test_mode": settings.TEST_MODE,
             },
         )
 
@@ -163,11 +167,11 @@ def create_app() -> FastAPI:
         except (BibleError, ValueError) as exc:
             return JSONResponse({"error": str(exc)}, status_code=400)
 
-    register_curation_routes(web_app, study_db_path=str(STUDY_DB_PATH), templates=templates)
-    register_map_routes(web_app, study_db_path=str(STUDY_DB_PATH))
+    register_curation_routes(web_app, study_db_path=str(settings.STUDY_DB_PATH), templates=templates)
+    register_map_routes(web_app, study_db_path=str(settings.STUDY_DB_PATH))
     register_study_routes(
         web_app,
-        study_db_path=str(STUDY_DB_PATH),
+        study_db_path=str(settings.STUDY_DB_PATH),
         templates=templates,
         job_store=job_store,
     )
@@ -178,6 +182,7 @@ def create_app() -> FastAPI:
         agent_factory=lambda: BHFAgent,
         ask_job_runner=_run_ask_job,
         search_fallback_job_runner=_run_search_fallback_job,
+        test_mode=settings.TEST_MODE,
     )
 
     return web_app

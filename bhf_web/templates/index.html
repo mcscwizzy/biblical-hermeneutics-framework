@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-test-mode="{{ 'true' if test_mode else 'false' }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,30 +19,35 @@
   </script>
   <script>
     window.BHFCesiumIonToken = {{ cesium_ion_token|tojson }};
+    window.BHFTestMode = {{ test_mode|tojson }};
   </script>
   <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}?v=20260703a">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <script src="{{ url_for('static', path='/api/http.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-status.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-study-panels.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-search.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-lite.js') }}?v=20260703a" defer></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
-  <script type="module" src="{{ url_for('static', path='/maps/MapPanel.js') }}?v=20260630"></script>
-  <script type="module" src="{{ url_for('static', path='/maps/Map3DPanel.js') }}?v=20260702a"></script>
+  {% if not test_mode %}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script type="module" src="{{ url_for('static', path='/maps/MapPanel.js') }}?v=20260630"></script>
+    <script type="module" src="{{ url_for('static', path='/maps/Map3DPanel.js') }}?v=20260702a"></script>
+  {% else %}
+    <script type="module" src="{{ url_for('static', path='/maps/MapPanel.js') }}?v=20260630"></script>
+  {% endif %}
 </head>
 <body>
-  <main class="page reader-page">
-    <header class="header">
+  <main class="page reader-page" data-testid="app-shell">
+    <header class="header" data-testid="app-header">
       <div>
-        <h1>BHF ASV Reader</h1>
+        <h1 data-testid="app-title">BHF ASV Reader</h1>
         <p>Read the public-domain American Standard Version, select a passage, ask BHF, and keep local notes.</p>
       </div>
       <nav class="page-links">
-        <button type="button" class="secondary-link" data-theme-toggle aria-pressed="false">Dark mode</button>
-        <button type="button" class="secondary-link" data-reader-mode-toggle aria-pressed="false">Reader mode</button>
-        <button type="button" class="secondary-link" data-workspace-expand-toggle aria-controls="study-panel" aria-expanded="false">Expand workspace</button>
-        <button type="button" class="secondary-link workspace-drawer-toggle" data-workspace-drawer-toggle aria-controls="study-panel" aria-expanded="false">
+        <button type="button" class="secondary-link" data-theme-toggle data-testid="theme-toggle" aria-pressed="false">Dark mode</button>
+        <button type="button" class="secondary-link" data-reader-mode-toggle data-testid="reader-mode-toggle" aria-pressed="false">Reader mode</button>
+        <button type="button" class="secondary-link" data-workspace-expand-toggle data-testid="workspace-expand-toggle" aria-controls="study-panel" aria-expanded="false">Expand workspace</button>
+        <button type="button" class="secondary-link workspace-drawer-toggle" data-workspace-drawer-toggle data-testid="workspace-drawer-toggle" aria-controls="study-panel" aria-expanded="false">
           <span class="workspace-drawer-icon" aria-hidden="true"><span></span><span></span><span></span></span>
           Workspace
         </button>
@@ -57,6 +62,7 @@
       type="button"
       class="secondary workspace-mobile-minimize"
       data-workspace-collapse-toggle
+      data-testid="workspace-collapse-toggle"
       aria-label="Collapse panel"
     >
       Minimize
@@ -70,7 +76,7 @@
               <div class="reader-controls">
                 <label>
                   <span>Book</span>
-                  <select id="book-select" data-reader-book>
+                  <select id="book-select" data-reader-book data-testid="book-select">
                   {% for book in books %}
                     <option value="{{ book.name }}" data-chapters="{{ book.chapters }}" {% if book.name == "John" %}selected{% endif %}>{{ book.name }}</option>
                   {% endfor %}
@@ -78,19 +84,20 @@
               </label>
                 <label>
                   <span>Chapter</span>
-                  <select id="chapter-select" data-reader-chapter></select>
+                  <select id="chapter-select" data-reader-chapter data-testid="chapter-input"></select>
                 </label>
-                <button type="button" class="secondary reader-next-chapter" data-next-chapter aria-label="Next chapter" title="Next chapter">&gt;&gt;&gt;</button>
+                <button type="button" class="secondary reader-prev-chapter" data-prev-chapter data-testid="chapter-prev" aria-label="Previous chapter" title="Previous chapter">&lt;&lt;&lt;</button>
+                <button type="button" class="secondary reader-next-chapter" data-next-chapter data-testid="chapter-next" aria-label="Next chapter" title="Next chapter">&gt;&gt;&gt;</button>
               </div>
             </div>
           <form class="reader-search" data-bible-search>
             <label class="reader-search-field">
               <span>Search ASV</span>
-              <input type="search" name="query" placeholder="living sacrifice, Egypt, John 1:1" autocomplete="off">
+              <input type="search" name="query" placeholder="living sacrifice, Egypt, John 1:1" autocomplete="off" data-testid="bible-search-input">
             </label>
             <div class="reader-search-actions">
-              <button type="submit">Search</button>
-              <button type="button" class="secondary" data-search-clear>Clear</button>
+              <button type="submit" data-testid="bible-search-button">Search</button>
+              <button type="button" class="secondary" data-search-clear data-testid="bible-search-clear">Clear</button>
             </div>
             <input type="hidden" name="profile" value="{{ form.profile }}">
             <input type="hidden" name="answer_mode" value="{{ form.answer_mode }}">
@@ -124,6 +131,7 @@
           aria-live="polite"
           data-default-book="John"
           data-default-chapter="1"
+          data-testid="reader-passage"
         >
           <p class="empty">Loading ASV text...</p>
         </article>
@@ -135,12 +143,12 @@
             <button type="button" class="secondary" data-workspace-collapse-toggle aria-label="Minimize workspace">Minimize workspace</button>
           </div>
           <div class="workspace-tab-bar" role="tablist" aria-label="Study tabs">
-            <button type="button" class="workspace-tab is-ask" id="workspace-tab-ask" role="tab" aria-selected="true" aria-controls="workspace-pane-ask" data-workspace-tab="ask">Ask</button>
-            <button type="button" class="workspace-tab" id="workspace-tab-notes" role="tab" aria-selected="false" aria-controls="workspace-pane-notes" data-workspace-tab="notes" tabindex="-1">Notes</button>
-            <button type="button" class="workspace-tab" id="workspace-tab-highlights" role="tab" aria-selected="false" aria-controls="workspace-pane-highlights" data-workspace-tab="highlights" tabindex="-1">Highlights</button>
-            <button type="button" class="workspace-tab" id="workspace-tab-saved" role="tab" aria-selected="false" aria-controls="workspace-pane-saved" data-workspace-tab="saved" tabindex="-1">Saved</button>
-            <button type="button" class="workspace-tab" id="workspace-tab-maps" role="tab" aria-selected="false" aria-controls="workspace-pane-maps" data-workspace-tab="maps" tabindex="-1">Maps</button>
-            <button type="button" class="workspace-tab" id="workspace-tab-journey" role="tab" aria-selected="false" aria-controls="workspace-pane-journey" data-workspace-tab="journey" tabindex="-1">3D Journey</button>
+            <button type="button" class="workspace-tab is-ask" id="workspace-tab-ask" role="tab" aria-selected="true" aria-controls="workspace-pane-ask" data-workspace-tab="ask" data-testid="ask-tab">Ask</button>
+            <button type="button" class="workspace-tab" id="workspace-tab-notes" role="tab" aria-selected="false" aria-controls="workspace-pane-notes" data-workspace-tab="notes" tabindex="-1" data-testid="notes-tab">Notes</button>
+            <button type="button" class="workspace-tab" id="workspace-tab-highlights" role="tab" aria-selected="false" aria-controls="workspace-pane-highlights" data-workspace-tab="highlights" tabindex="-1" data-testid="highlights-tab">Highlights</button>
+            <button type="button" class="workspace-tab" id="workspace-tab-saved" role="tab" aria-selected="false" aria-controls="workspace-pane-saved" data-workspace-tab="saved" tabindex="-1" data-testid="saved-tab">Saved</button>
+            <button type="button" class="workspace-tab" id="workspace-tab-maps" role="tab" aria-selected="false" aria-controls="workspace-pane-maps" data-workspace-tab="maps" tabindex="-1" data-testid="maps-tab">Maps</button>
+            <button type="button" class="workspace-tab" id="workspace-tab-journey" role="tab" aria-selected="false" aria-controls="workspace-pane-journey" data-workspace-tab="journey" tabindex="-1" data-testid="journey-tab">3D Journey</button>
           </div>
 
           <div class="workspace-pane-group">
@@ -179,7 +187,7 @@
 
                 <label class="full question-field">
                   <span>Question</span>
-                  <textarea name="question" rows="4" placeholder="Ask a passage-specific or general question.">{{ form.question }}</textarea>
+                  <textarea name="question" rows="4" placeholder="Ask a passage-specific or general question." data-testid="question-input">{{ form.question }}</textarea>
                 </label>
 
                 <details class="settings full">
@@ -259,12 +267,12 @@
                 </details>
 
                 <div class="action-row">
-                  <button type="submit">Ask BHF</button>
-                  <button type="button" class="secondary" data-add-note>Add note</button>
+                  <button type="submit" data-testid="ask-submit">Ask BHF</button>
+                  <button type="button" class="secondary" data-add-note data-testid="add-note-button">Add note</button>
                 </div>
               </form>
 
-              <section id="status-panel" class="status-panel" aria-live="polite" hidden>
+              <section id="status-panel" class="status-panel" aria-live="polite" hidden data-testid="agent-status">
                 <div class="status-summary" hidden></div>
                 <div class="status-active">
                   <div class="status-topline">
@@ -276,7 +284,7 @@
                 </div>
               </section>
 
-              <section id="answer-panel" class="answer-panel" aria-live="polite">
+              <section id="answer-panel" class="answer-panel" aria-live="polite" data-testid="answer-output">
                 <p class="empty">Ask about the current chapter, a selected passage, or ask a general question to see the answer and run metadata.</p>
               </section>
             </section>
@@ -287,15 +295,15 @@
                   <h2 id="notes-heading">Notes</h2>
                   <span id="notes-count" class="count">0</span>
                 </div>
-                <form id="note-editor" class="note-editor" hidden>
+                <form id="note-editor" class="note-editor" hidden data-testid="note-editor">
                   <input type="hidden" name="id" value="">
                   <label>
                     <span id="note-reference">Note</span>
-                    <textarea name="body" rows="4" required></textarea>
+                    <textarea name="body" rows="4" required data-testid="note-textarea"></textarea>
                   </label>
                   <div class="note-actions">
-                    <button type="submit">Save note</button>
-                    <button type="button" class="secondary" data-cancel-note>Cancel</button>
+                    <button type="submit" data-testid="save-note-button">Save note</button>
+                    <button type="button" class="secondary" data-cancel-note data-testid="cancel-note-button">Cancel</button>
                   </div>
                 </form>
                 <div id="notes-list" class="notes-list">
@@ -348,7 +356,7 @@
                 <div class="journey-library-controls" aria-label="Journey library filters">
                   <label class="journey-library-search">
                     <span>Search</span>
-                    <input type="search" data-journey-search placeholder="Search journeys">
+                          <input type="search" data-journey-search data-testid="journey-search-input" placeholder="Search journeys">
                   </label>
                   <label class="journey-library-filter">
                     <span>Testament</span>
@@ -449,7 +457,7 @@
             <section class="workspace-pane" id="workspace-pane-maps" role="tabpanel" aria-labelledby="workspace-tab-maps" data-workspace-pane="maps" hidden>
               <p class="empty workspace-pane-empty" data-map-pane-empty>
                 Open a verse action to load the map workspace, or browse the map catalog directly.
-                <button type="button" class="secondary" data-open-map-browser>Browse maps</button>
+                <button type="button" class="secondary" data-open-map-browser data-testid="map-browse-button">Browse maps</button>
               </p>
               <div id="map-workspace-inline-host" class="map-workspace-host">
                 <div id="map-workspace" class="map-workspace" data-map-host="inline">
@@ -490,7 +498,7 @@
                       <div class="map-browser-toolbar">
                         <label class="map-browser-field">
                           <span>Search</span>
-                          <input type="search" data-map-search-query placeholder="Search topic, location, route, or region">
+                          <input type="search" data-map-search-query data-testid="map-search-input" placeholder="Search topic, location, route, or region">
                         </label>
                         <label class="map-browser-field">
                           <span>Type</span>
@@ -516,8 +524,8 @@
                           </select>
                         </label>
                         <div class="map-browser-actions">
-                          <button type="button" class="secondary" data-map-search-submit>Search</button>
-                          <button type="button" class="secondary" data-map-search-clear>Clear</button>
+                          <button type="button" class="secondary" data-map-search-submit data-testid="map-search-button">Search</button>
+                          <button type="button" class="secondary" data-map-search-clear data-testid="map-search-clear">Clear</button>
                         </div>
                       </div>
                       <p class="map-browser-hint">Browse the curated map catalog without choosing a chapter first.</p>

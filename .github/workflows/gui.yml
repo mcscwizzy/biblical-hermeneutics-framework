@@ -1,0 +1,29 @@
+name: GUI tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  gui:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prepare artifacts directory
+        run: mkdir -p tests/gui/artifacts
+
+      - name: Start GUI stack and run browser tests
+        run: docker compose -f docker-compose.yml -f docker-compose.selenium.yml up --build --abort-on-container-exit --exit-code-from gui-tests gui-tests
+
+      - name: Upload screenshots and browser logs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gui-test-artifacts
+          path: tests/gui/artifacts
+
+      - name: Tear down stack
+        if: always()
+        run: docker compose -f docker-compose.yml -f docker-compose.selenium.yml down -v

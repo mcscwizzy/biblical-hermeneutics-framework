@@ -7,13 +7,14 @@ import threading
 import uuid
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
+from types import SimpleNamespace
 from typing import Any
 
 from bhf_agent.config import ConfigError
 from bhf_agent.profiles import ProfileError
 from bhf_agent.runner import BHFAgent
-from bhf_agent.study_db import DEFAULT_DB_PATH
 
+from . import settings
 from .forms import config_from_form, load_web_defaults
 from .services.web_helpers import (
     build_ask_question as _question_from_form,
@@ -224,11 +225,27 @@ def run_ask_job(job: AskJob, form: dict[str, Any], agent_class: Any = BHFAgent) 
         loaded = load_web_defaults()
         job.study_type = _study_type_from_form(form)
         job.study_context = _reader_context_from_form(form)
-        question, reader_reference = _question_from_form(form, path=DEFAULT_DB_PATH)
+        question, reader_reference = _question_from_form(form, path=settings.STUDY_DB_PATH)
         job.question = question
         job.reader_reference = reader_reference
         if job.study_context and str(form.get("study_action") or "").strip():
-            record_action(str(form.get("study_action") or "").strip(), job.study_context, path=DEFAULT_DB_PATH)
+            record_action(str(form.get("study_action") or "").strip(), job.study_context, path=settings.STUDY_DB_PATH)
+        if settings.TEST_MODE:
+            job.emit(
+                {
+                    "stage": "test_mode",
+                    "message": "Deterministic test answer ready",
+                    "timestamp": timestamp(),
+                    "step_index": 16,
+                    "total_steps": 16,
+                    "percent_complete": 100,
+                    "elapsed_total_seconds": 0.1,
+                    "elapsed_current_stage_seconds": 0.1,
+                    "status": "running",
+                }
+            )
+            job.complete(_fake_result(job.question, job.reader_reference))
+            return
         config = config_from_form(form, loaded.config)
         result = agent_class(config).ask(question, status_callback=job.emit)
     except (ConfigError, ProfileError, ValueError) as exc:
@@ -248,6 +265,46 @@ def run_ask_job(job: AskJob, form: dict[str, Any], agent_class: Any = BHFAgent) 
         return
 
     job.complete(result)
+
+
+def _fake_result(question: str | None, reader_reference: str | None) -> Any:
+    reference = reader_reference or "the requested question"
+    answer_text = "\n".join(
+        [
+            "# Test answer",
+            f"Question: {question or 'not provided'}",
+            f"Reference: {reference}",
+            "",
+            "This is a deterministic GUI test response.",
+        ]
+    )
+    reference_context = SimpleNamespace(
+        is_reference_based=bool(reader_reference),
+        book=None,
+        chapter=None,
+        verse=None,
+        testament=None,
+        topic=None,
+    )
+    if reader_reference:
+        parts = str(reader_reference).split()
+        if len(parts) >= 2:
+            reference_context.book = parts[0]
+            chapter_part = parts[1].split(":", 1)[0]
+            try:
+                reference_context.chapter = int(chapter_part)
+            except ValueError:
+                reference_context.chapter = None
+    return SimpleNamespace(
+        answer_text=answer_text,
+        profile_used="gui-test-mode",
+        model_metadata={"answer_mode": "gui-test-mode", "local_knowledge_keys": ["test-mode"]},
+        validation_result=SimpleNamespace(warnings=[]),
+        reference_context=reference_context,
+        genre_context=SimpleNamespace(primary_genre="test"),
+        question_context=SimpleNamespace(question_type="test"),
+        errors=[],
+    )
 
 
 def run_search_fallback_job(

@@ -150,7 +150,7 @@ async function initializeReader() {
   reader.addEventListener("pointerup", cancelReaderLongPress);
   reader.addEventListener("pointercancel", cancelReaderLongPress);
   reader.addEventListener("pointerleave", handleReaderPointerLeave);
-  document.addEventListener("click", handleNextChapterClick);
+  document.addEventListener("click", handleChapterNavigationClick);
   const contextMenu = document.querySelector("#reader-context-menu");
   const searchForm = document.querySelector("[data-bible-search]");
   const searchResultsBody = document.querySelector("#reader-search-results-body");
@@ -190,9 +190,13 @@ async function initializeReader() {
   syncMapWorkspaceEmptyState();
 }
 
-function handleNextChapterClick(event) {
-  const button = event.target.closest("[data-next-chapter]");
+function handleChapterNavigationClick(event) {
+  const button = event.target.closest("[data-next-chapter], [data-prev-chapter]");
   if (!button) {
+    return;
+  }
+  if (button.matches("[data-prev-chapter]")) {
+    goToPreviousChapter();
     return;
   }
   goToNextChapter();
@@ -609,6 +613,21 @@ function goToNextChapter() {
   const nextChapter = currentChapterNumber + 1;
   chapterSelect.value = String(nextChapter);
   loadReaderChapter(bookSelect.value, nextChapter);
+}
+
+function goToPreviousChapter() {
+  const bookSelect = document.querySelector("[data-reader-book]");
+  const chapterSelect = document.querySelector("[data-reader-chapter]");
+  if (!bookSelect || !chapterSelect) {
+    return;
+  }
+  const currentChapterNumber = Number(chapterSelect.value || "0");
+  if (!currentChapterNumber || currentChapterNumber <= 1) {
+    return;
+  }
+  const previousChapter = currentChapterNumber - 1;
+  chapterSelect.value = String(previousChapter);
+  loadReaderChapter(bookSelect.value, previousChapter);
 }
 
 function parsePassageReference(reference) {
@@ -1136,13 +1155,15 @@ function updateChapterNavigationState() {
   const bookSelect = document.querySelector("[data-reader-book]");
   const chapterSelect = document.querySelector("[data-reader-chapter]");
   const nextButtons = document.querySelectorAll("[data-next-chapter]");
-  if (!bookSelect || !chapterSelect || nextButtons.length === 0) {
+  const prevButtons = document.querySelectorAll("[data-prev-chapter]");
+  if (!bookSelect || !chapterSelect || (nextButtons.length === 0 && prevButtons.length === 0)) {
     return;
   }
   const selectedBook = bookSelect.selectedOptions[0] || bookSelect.options[0];
   const chapterCount = Number(selectedBook?.dataset.chapters || chapterSelect.options.length || 0);
   const currentChapterNumber = Number(chapterSelect.value || "0");
   const available = Boolean(chapterCount && currentChapterNumber && currentChapterNumber < chapterCount);
+  const canGoBack = Boolean(currentChapterNumber && currentChapterNumber > 1);
   nextButtons.forEach((button) => {
     button.disabled = !available;
     button.setAttribute(
@@ -1150,6 +1171,14 @@ function updateChapterNavigationState() {
       available ? `Go to chapter ${currentChapterNumber + 1}` : "No next chapter available"
     );
     button.title = available ? "Next chapter" : "No next chapter available";
+  });
+  prevButtons.forEach((button) => {
+    button.disabled = !canGoBack;
+    button.setAttribute(
+      "aria-label",
+      canGoBack ? `Go to chapter ${currentChapterNumber - 1}` : "No previous chapter available"
+    );
+    button.title = canGoBack ? "Previous chapter" : "No previous chapter available";
   });
 }
 

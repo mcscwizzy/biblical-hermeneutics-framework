@@ -53,8 +53,30 @@ installed and a compatible Firefox + `geckodriver` setup is present locally.
 Install the dependency with:
 
 ```bash
-pip install -r tools/requirements.txt
+pip install -r tools/requirements.txt -r requirements-gui.txt
 ```
+
+## GUI Regression Suite
+
+The `tests/gui/` suite is the stable Selenium harness for the BHF web UI.
+It uses `data-testid` hooks, isolated study databases, and deterministic
+`BHF_TEST_MODE=true` Ask responses so browser tests do not depend on a live
+model.
+
+Recommended local setup:
+
+```bash
+pip install -r tools/requirements.txt -r requirements-gui.txt
+pytest tests/gui -m "not slow"
+```
+
+Guardrails for future UI work:
+
+- Any new major UI control should get a `data-testid`.
+- Any new tab or panel should get at least one smoke test.
+- Any JS-heavy behavior should get a regression test.
+- Any LLM-dependent UI should support deterministic test mode.
+- Failed Selenium tests should save screenshots and browser logs.
 
 ## `golden/`
 

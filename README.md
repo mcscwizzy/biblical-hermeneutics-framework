@@ -103,6 +103,10 @@ chapter or selected verses, and keep local-only study notes under
 `.bhf/study.sqlite`. The reader also supports right-click study actions,
 persisted highlights, and saved studies.
 
+Browser regression tests for the web UI live under `tests/gui/` and use a
+deterministic test mode so they can run without a live LLM. See
+[`tests/README.md`](tests/README.md) for the required selectors and guardrails.
+
 For the containerized local-dev stack, see [`docs/docker.md`](docs/docker.md).
 It starts both the app and Ollama with `docker compose up -d`, uses
 `qwen2.5:0.5b` by default, and keeps the model in a persistent Docker volume.
