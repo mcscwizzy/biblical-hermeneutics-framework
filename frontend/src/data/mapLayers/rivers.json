@@ -1,0 +1,70 @@
+{
+  "id": "rivers",
+  "title": "Major Rivers",
+  "description": "Large river systems that frame travel, boundary language, and key biblical crossings.",
+  "type": "lines",
+  "defaultVisible": true,
+  "features": [
+    {
+      "id": "jordan-river",
+      "name": "Jordan River",
+      "points": [
+        [33.25, 35.86],
+        [32.97, 35.63],
+        [32.25, 35.56],
+        [31.87, 35.50],
+        [31.33, 35.56]
+      ],
+      "periods": ["Conquest", "United Monarchy", "NT / Roman period"],
+      "description": "The river crossing from the northern highlands into the Dead Sea basin.",
+      "passages": ["Joshua 3-4", "2 Kings 2:6-14", "Mark 1:9-11"],
+      "confidence": "strong",
+      "caution": "The river course shifts over time, so this line is schematic."
+    },
+    {
+      "id": "nile-river",
+      "name": "Nile River",
+      "points": [
+        [30.10, 31.24],
+        [29.85, 31.22],
+        [29.45, 31.20],
+        [28.90, 31.18]
+      ],
+      "periods": ["Exodus / Wilderness", "Exilic / Persian"],
+      "description": "Egypt's major river and the backbone of its agricultural life.",
+      "passages": ["Exodus 1:22", "Exodus 7-14"],
+      "confidence": "strong",
+      "caution": "Only the lower river is shown here, not the entire Nile system."
+    },
+    {
+      "id": "euphrates-river",
+      "name": "Euphrates River",
+      "points": [
+        [36.95, 38.78],
+        [35.85, 39.00],
+        [34.72, 39.30],
+        [33.45, 41.05]
+      ],
+      "periods": ["Patriarchal Period", "Assyrian period", "Babylonian period"],
+      "description": "A great northern Mesopotamian river often used as an imperial boundary marker.",
+      "passages": ["Genesis 15:18", "Jeremiah 46:2"],
+      "confidence": "strong",
+      "caution": "The course is generalized across a broad corridor rather than traced precisely."
+    },
+    {
+      "id": "tigris-river",
+      "name": "Tigris River",
+      "points": [
+        [37.15, 42.00],
+        [35.95, 43.00],
+        [34.70, 43.80],
+        [33.25, 44.20]
+      ],
+      "periods": ["Assyrian period", "Babylonian period", "Persian period"],
+      "description": "The eastern Mesopotamian river associated with the imperial world of the prophets and exiles.",
+      "passages": ["Daniel 10:4"],
+      "confidence": "strong",
+      "caution": "This is a broad river trace for study orientation, not a hydrological survey."
+    }
+  ]
+}

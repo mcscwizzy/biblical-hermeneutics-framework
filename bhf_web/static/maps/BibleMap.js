@@ -52,6 +52,7 @@ export function createBibleMap(container, markers, options = {}) {
   tileLayer.addTo(map);
 
   const markerLayer = window.L.layerGroup().addTo(map);
+  const placeLayers = new Map();
   const archaeologyLayer = window.L.layerGroup();
   const archaeologyLayers = new Map();
   const manuscriptLayer = window.L.layerGroup();
@@ -321,36 +322,47 @@ export function createBibleMap(container, markers, options = {}) {
       return;
     }
     if (kind === "place" && Number.isFinite(item.latitude) && Number.isFinite(item.longitude)) {
+      const placeLayer = placeLayers.get(item.id);
+      if (placeLayer) {
+        map.setView([item.latitude, item.longitude], 10);
+        placeLayer.openPopup();
+        return;
+      }
       map.setView([item.latitude, item.longitude], 10);
       return;
     }
     if (kind === "archaeology") {
       const archaeology = archaeologyLayers.get(item.id);
       if (focusLayerBounds(archaeology?.layer, 10)) {
+        archaeology?.layer?.openPopup?.();
         return;
       }
     }
     if (kind === "manuscript") {
       const manuscript = manuscriptLayers.get(item.id);
       if (focusLayerBounds(manuscript?.layer, 10)) {
+        manuscript?.layer?.openPopup?.();
         return;
       }
     }
     if (kind === "route") {
       const route = routeLayers.get(item.id);
       if (focusLayerBounds(route, 9)) {
+        route?.openPopup?.();
         return;
       }
     }
     if (kind === "historical_layer") {
       const layer = historicalLayers.get(item.id);
       if (focusLayerBounds(layer?.layer, 8)) {
+        layer?.layer?.openPopup?.();
         return;
       }
     }
     if (kind === "political_context") {
       const layer = politicalContextLayers.get(item.id);
       if (focusLayerBounds(layer?.layer, 8)) {
+        layer?.layer?.openPopup?.();
         return;
       }
     }
@@ -522,6 +534,7 @@ export function createBibleMap(container, markers, options = {}) {
       }
     });
     leafletMarker.addTo(markerLayer);
+    placeLayers.set(marker.id, leafletMarker);
   }
 
   const markerBounds = currentMarkerBounds();

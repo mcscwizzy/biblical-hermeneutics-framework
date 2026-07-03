@@ -37,13 +37,10 @@ def list_biblical_places(
             """
         ).fetchall()
     places = [
-        attach_source(
-            biblical_place_from_row(
-                row,
-                periods_from_value=periods_from_value,
-                biblical_place_periods=biblical_place_periods,
-            ),
-            path,
+        biblical_place_from_row(
+            row,
+            periods_from_value=periods_from_value,
+            biblical_place_periods=biblical_place_periods,
         )
         for row in rows
     ]

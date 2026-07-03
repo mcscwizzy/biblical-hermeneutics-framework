@@ -1,0 +1,64 @@
+{
+  "id": "mountains",
+  "title": "Mountains",
+  "description": "Prominent mountains and high places that frame journeys, revelation, and worship.",
+  "type": "points",
+  "defaultVisible": false,
+  "features": [
+    {
+      "id": "sinai-horeb",
+      "name": "Mount Sinai / Horeb",
+      "lat": 28.54,
+      "lng": 33.97,
+      "periods": ["Exodus / Wilderness"],
+      "description": "The mountain of covenant, law, and prophetic encounter.",
+      "passages": ["Exodus 19-20", "1 Kings 19:8-18"],
+      "confidence": "possible",
+      "caution": "The precise mountain identification is debated, so the marker is intentionally cautious."
+    },
+    {
+      "id": "carmel",
+      "name": "Mount Carmel",
+      "lat": 32.742,
+      "lng": 35.040,
+      "periods": ["Divided Kingdom"],
+      "description": "A coastal ridge famous for Elijah's confrontation with the prophets of Baal.",
+      "passages": ["1 Kings 18"],
+      "confidence": "strong",
+      "caution": "The ridge is secure, though the narrative includes a broader contest area on the slopes."
+    },
+    {
+      "id": "zion",
+      "name": "Mount Zion",
+      "lat": 31.777,
+      "lng": 35.231,
+      "periods": ["United Monarchy", "NT / Roman period"],
+      "description": "The hill associated with Jerusalem's sacred and royal center.",
+      "passages": ["Psalm 48", "Hebrews 12:22"],
+      "confidence": "strong",
+      "caution": "The term can refer to the hill, the city, or the broader theological symbol."
+    },
+    {
+      "id": "mount-of-olives",
+      "name": "Mount of Olives",
+      "lat": 31.778,
+      "lng": 35.243,
+      "periods": ["NT / Roman period"],
+      "description": "The ridge east of Jerusalem associated with prayer, teaching, and the Passion Week.",
+      "passages": ["Matthew 24-25", "Luke 22:39"],
+      "confidence": "strong",
+      "caution": "The location is clear, though individual event spots on the ridge are reconstructed."
+    },
+    {
+      "id": "hermon",
+      "name": "Mount Hermon",
+      "lat": 33.416,
+      "lng": 35.864,
+      "periods": ["NT / Roman period"],
+      "description": "A high northern mountain that marks the upper end of the land's topography.",
+      "passages": ["Psalm 133:3"],
+      "confidence": "strong",
+      "caution": "The mountain is secure, but the symbolic associations are broader than the summit itself."
+    }
+  ]
+}

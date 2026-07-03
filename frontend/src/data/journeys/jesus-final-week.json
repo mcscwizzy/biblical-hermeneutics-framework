@@ -1,0 +1,169 @@
+{
+  "id": "jesus-final-week",
+  "title": "Jesus' Final Week",
+  "description": "A compact Passion Week journey from Bethany into Jerusalem and toward the cross and tomb.",
+  "category": "Gospels",
+  "testament": "New Testament",
+  "bookRange": ["Matthew", "Mark", "Luke", "John"],
+  "era": "Passion Week",
+  "tags": ["passover", "cross", "resurrection"],
+  "period": "Second Temple period",
+  "primaryPassages": ["Matthew 21-28", "Mark 11-16", "Luke 19-24", "John 12-21"],
+  "confidence": "moderate",
+  "caution": "The final-week route is built from harmonized Gospel narratives and should be treated as a teaching outline, not a day-by-day reconstruction.",
+  "stops": [
+    {
+      "id": "bethany",
+      "name": "Bethany",
+      "order": 1,
+      "region": "East of Jerusalem",
+      "modernLocation": "Al-Eizariya, West Bank",
+      "lat": 31.77,
+      "lng": 35.26,
+      "passages": ["John 12:1-11"],
+      "description": "A home base in the final week.",
+      "confidence": "high",
+      "notes": "Strongly tied to the Gospel passion narrative."
+    },
+    {
+      "id": "bethphage",
+      "name": "Bethphage / Mount of Olives",
+      "order": 2,
+      "region": "East ridge of Jerusalem",
+      "modernLocation": "Mount of Olives area",
+      "lat": 31.78,
+      "lng": 35.25,
+      "passages": ["Matthew 21:1-11"],
+      "description": "The place of the triumphal entry preparations.",
+      "confidence": "moderate",
+      "notes": "Bethphage is a traditional designation rather than a fixed modern site."
+    },
+    {
+      "id": "jerusalem",
+      "name": "Jerusalem",
+      "order": 3,
+      "region": "Judean highlands",
+      "modernLocation": "Jerusalem",
+      "lat": 31.778,
+      "lng": 35.235,
+      "passages": ["Matthew 21-23"],
+      "description": "The city center of the Passion Week events.",
+      "confidence": "high",
+      "notes": "A secure location for the major narrative events."
+    },
+    {
+      "id": "upper-room",
+      "name": "Upper Room",
+      "order": 4,
+      "region": "Jerusalem",
+      "modernLocation": "Traditional upper room location",
+      "lat": 31.773,
+      "lng": 35.227,
+      "passages": ["Luke 22:7-38"],
+      "description": "The meal and farewell discourse setting.",
+      "confidence": "moderate",
+      "notes": "The exact room is not known."
+    },
+    {
+      "id": "gethsemane",
+      "name": "Gethsemane",
+      "order": 5,
+      "region": "Mount of Olives",
+      "modernLocation": "Kidron Valley / Mount of Olives",
+      "lat": 31.7785,
+      "lng": 35.2419,
+      "passages": ["Matthew 26:36-56"],
+      "description": "The place of prayer and arrest.",
+      "confidence": "high",
+      "notes": "A well-known and widely recognized site."
+    },
+    {
+      "id": "golgotha",
+      "name": "Golgotha",
+      "order": 6,
+      "region": "Jerusalem",
+      "modernLocation": "Traditional crucifixion site",
+      "lat": 31.779,
+      "lng": 35.229,
+      "passages": ["Matthew 27", "John 19"],
+      "description": "The crucifixion location.",
+      "confidence": "moderate",
+      "notes": "The exact location is debated."
+    },
+    {
+      "id": "tomb",
+      "name": "The Tomb",
+      "order": 7,
+      "region": "Jerusalem",
+      "modernLocation": "Traditional burial and resurrection site",
+      "lat": 31.78,
+      "lng": 35.227,
+      "passages": ["Matthew 28", "John 20"],
+      "description": "The burial and resurrection setting.",
+      "confidence": "moderate",
+      "notes": "The precise burial location is not certain."
+    }
+  ],
+  "segments": [
+    {
+      "id": "bethany-to-bethphage",
+      "from": "bethany",
+      "to": "bethphage",
+      "label": "Entry preparations",
+      "passages": ["Matthew 21:1-11"],
+      "description": "Jesus approaches Jerusalem.",
+      "confidence": "moderate",
+      "caution": "The precise route and staging are harmonized."
+    },
+    {
+      "id": "bethphage-to-jerusalem",
+      "from": "bethphage",
+      "to": "jerusalem",
+      "label": "Triumphal entry",
+      "passages": ["Matthew 21"],
+      "description": "The procession into the city.",
+      "confidence": "high",
+      "caution": "A celebratory route is compressed to a single path."
+    },
+    {
+      "id": "jerusalem-to-upper-room",
+      "from": "jerusalem",
+      "to": "upper-room",
+      "label": "Passover meal",
+      "passages": ["Luke 22"],
+      "description": "The meal and final instructions.",
+      "confidence": "moderate",
+      "caution": "The room is traditional rather than certain."
+    },
+    {
+      "id": "upper-room-to-gethsemane",
+      "from": "upper-room",
+      "to": "gethsemane",
+      "label": "Night prayer",
+      "passages": ["Matthew 26"],
+      "description": "The move to the garden.",
+      "confidence": "high",
+      "caution": "The exact path is not detailed."
+    },
+    {
+      "id": "gethsemane-to-golgotha",
+      "from": "gethsemane",
+      "to": "golgotha",
+      "label": "Arrest to cross",
+      "passages": ["Matthew 26-27", "John 19"],
+      "description": "The arrest leads to crucifixion.",
+      "confidence": "moderate",
+      "caution": "A single line represents multiple legal and ritual steps."
+    },
+    {
+      "id": "golgotha-to-tomb",
+      "from": "golgotha",
+      "to": "tomb",
+      "label": "Burial and rising",
+      "passages": ["Matthew 27-28", "John 20"],
+      "description": "The burial and empty tomb narrative.",
+      "confidence": "moderate",
+      "caution": "The burial and resurrection sites are traditionally connected."
+    }
+  ]
+}

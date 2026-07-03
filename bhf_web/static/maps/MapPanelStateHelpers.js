@@ -21,20 +21,6 @@ function syncRouteToggle(mapController, routeToggle) {
   routeToggle.checked = mapController.getRouteVisibility();
 }
 
-function syncArchaeologyToggle(mapController, archaeologyToggle) {
-  if (!archaeologyToggle || !mapController) {
-    return;
-  }
-  archaeologyToggle.checked = mapController.getArchaeologyVisibility();
-}
-
-function syncManuscriptToggle(mapController, manuscriptToggle) {
-  if (!manuscriptToggle || !mapController) {
-    return;
-  }
-  manuscriptToggle.checked = mapController.getManuscriptVisibility();
-}
-
 function syncHistoricalLayerToggles(details, visibleHistoricalLayerIds) {
   if (!details) {
     return;
@@ -68,18 +54,6 @@ function getCurrentMapSelection(state) {
     return {
       kind: "place",
       item: state.selectedMarker,
-    };
-  }
-  if (state.selectedArchaeology) {
-    return {
-      kind: "archaeology",
-      item: state.selectedArchaeology,
-    };
-  }
-  if (state.selectedManuscript) {
-    return {
-      kind: "manuscript",
-      item: state.selectedManuscript,
     };
   }
   if (state.selectedRoute) {
@@ -121,20 +95,20 @@ function buildCurrentMapStudyPayload(state) {
     end_verse: context.verseEnd || context.endVerse || context.verseStart || context.startVerse,
     passage_reference: state.formatReference ? state.formatReference(context) : "",
     selected_place_id: selection?.kind === "place" ? selection.item.id : "",
-    selected_archaeology_id: selection?.kind === "archaeology" ? selection.item.id : "",
-    selected_manuscript_id: selection?.kind === "manuscript" ? selection.item.id : "",
+    selected_archaeology_id: "",
+    selected_manuscript_id: "",
     selected_route_id: selection?.kind === "route" ? selection.item.id : "",
     selected_layer_id:
       selection?.kind === "layer" || selection?.kind === "political_context" ? selection.item.id : "",
     selected_place_name: selection?.kind === "place" ? selection.item.name : "",
-    selected_archaeology_name: selection?.kind === "archaeology" ? selection.item.name : "",
-    selected_manuscript_name: selection?.kind === "manuscript" ? selection.item.name : "",
+    selected_archaeology_name: "",
+    selected_manuscript_name: "",
     selected_route_name: selection?.kind === "route" ? selection.item.name : "",
     selected_layer_name:
       selection?.kind === "layer" || selection?.kind === "political_context" ? selection.item.name : "",
     modern_location: selection?.kind === "place" ? selection.item.modern_location : "",
     ancient_region: selection?.kind === "place" ? selection.item.ancient_region : "",
-    archaeology_location: selection?.kind === "archaeology" ? selection.item.location : "",
+    archaeology_location: "",
     confidence: selection?.item?.confidence || "",
     description: selection?.item?.description || "",
     period:
@@ -142,10 +116,6 @@ function buildCurrentMapStudyPayload(state) {
         ? selection.item.period
         : selection?.kind === "route"
           ? selection.item.period
-          : selection?.kind === "archaeology"
-            ? selection.item.period
-            : selection?.kind === "manuscript"
-              ? selection.item.period
             : "",
     selected_layers: Array.from(new Set(selectedLayers)),
     map_view_state: {
@@ -161,9 +131,7 @@ export {
   buildCurrentMapStudyPayload,
   getCurrentMapSelection,
   normalizeHistoricalPeriod,
-  syncArchaeologyToggle,
   syncHistoricalLayerToggles,
-  syncManuscriptToggle,
   syncPoliticalContextLayerToggles,
   syncRouteToggle,
 };

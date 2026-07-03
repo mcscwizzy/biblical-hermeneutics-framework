@@ -1,0 +1,146 @@
+{
+  "id": "exodus",
+  "title": "The Exodus Journey",
+  "description": "A compact route from Egypt into the wilderness and toward Sinai, kept deliberately modest because the exact route is debated.",
+  "category": "Exodus",
+  "testament": "Old Testament",
+  "bookRange": ["Exodus", "Numbers", "Deuteronomy"],
+  "era": "Wilderness Period",
+  "tags": ["deliverance", "wilderness", "covenant"],
+  "period": "Late Bronze Age / Wilderness",
+  "primaryPassages": ["Exodus 12-20", "Numbers 13-14", "Deuteronomy 1-2"],
+  "confidence": "moderate",
+  "caution": "The route is a teaching outline. The sequence of wilderness stations and the location of Sinai remain debated.",
+  "stops": [
+    {
+      "id": "rameses",
+      "name": "Rameses",
+      "order": 1,
+      "region": "Eastern Nile Delta",
+      "modernLocation": "Northern Egypt",
+      "lat": 30.8167,
+      "lng": 31.8333,
+      "passages": ["Exodus 12:37"],
+      "description": "The departure point named in the Exodus narrative.",
+      "confidence": "low",
+      "notes": "The site is widely discussed and not nailed down with certainty."
+    },
+    {
+      "id": "succoth",
+      "name": "Succoth",
+      "order": 2,
+      "region": "Wilderness edge",
+      "modernLocation": "Eastern Nile Delta / Sinai approach",
+      "lat": 30.9667,
+      "lng": 32.0167,
+      "passages": ["Exodus 12:37"],
+      "description": "A first encampment after leaving Egypt.",
+      "confidence": "low",
+      "notes": "Included as a route marker rather than a precise archaeological point."
+    },
+    {
+      "id": "red-sea-crossing",
+      "name": "Red Sea Crossing",
+      "order": 3,
+      "region": "Sinai boundary",
+      "modernLocation": "Debated crossing corridor",
+      "lat": 29.7,
+      "lng": 32.9,
+      "passages": ["Exodus 14"],
+      "description": "The crossing point where Israel passed through the waters.",
+      "confidence": "traditional",
+      "notes": "The exact crossing location is debated and should be treated cautiously."
+    },
+    {
+      "id": "mount-sinai",
+      "name": "Mount Sinai",
+      "order": 4,
+      "region": "Sinai Peninsula",
+      "modernLocation": "Debated traditional site",
+      "lat": 28.5383,
+      "lng": 33.9756,
+      "passages": ["Exodus 19-20"],
+      "description": "The mountain of covenant and lawgiving.",
+      "confidence": "traditional",
+      "notes": "The mountain identification is contested in scholarship."
+    },
+    {
+      "id": "kadesh-barnea",
+      "name": "Kadesh-barnea",
+      "order": 5,
+      "region": "Negev / wilderness border",
+      "modernLocation": "Northwest Sinai / Negev border area",
+      "lat": 30.627,
+      "lng": 34.479,
+      "passages": ["Numbers 13-14"],
+      "description": "The staging point associated with the spying of the land.",
+      "confidence": "moderate",
+      "notes": "A well-known wilderness location, but route details remain simplified."
+    },
+    {
+      "id": "plains-of-moab",
+      "name": "Plains of Moab",
+      "order": 6,
+      "region": "East of the Jordan",
+      "modernLocation": "Opposite Jericho, Jordan",
+      "lat": 31.84,
+      "lng": 35.57,
+      "passages": ["Numbers 22:1", "Deuteronomy 34:1"],
+      "description": "The final encampment before entering the land.",
+      "confidence": "moderate",
+      "notes": "Represents the later phase of the wilderness journey."
+    }
+  ],
+  "segments": [
+    {
+      "id": "rameses-to-succoth",
+      "from": "rameses",
+      "to": "succoth",
+      "label": "Departure",
+      "passages": ["Exodus 12:37"],
+      "description": "Israel leaves Egypt and moves toward the wilderness edge.",
+      "confidence": "moderate",
+      "caution": "This leg compresses multiple departure details."
+    },
+    {
+      "id": "succoth-to-red-sea-crossing",
+      "from": "succoth",
+      "to": "red-sea-crossing",
+      "label": "Toward the waters",
+      "passages": ["Exodus 13-14"],
+      "description": "The people travel to the crossing point.",
+      "confidence": "moderate",
+      "caution": "The route is simplified for clarity."
+    },
+    {
+      "id": "red-sea-crossing-to-mount-sinai",
+      "from": "red-sea-crossing",
+      "to": "mount-sinai",
+      "label": "Into the wilderness",
+      "passages": ["Exodus 15-20"],
+      "description": "The journey continues toward the mountain of covenant.",
+      "confidence": "moderate",
+      "caution": "Exact station sequence is debated."
+    },
+    {
+      "id": "mount-sinai-to-kadesh-barnea",
+      "from": "mount-sinai",
+      "to": "kadesh-barnea",
+      "label": "Wilderness wandering",
+      "passages": ["Numbers 10-14"],
+      "description": "The camp moves through the wilderness toward Kadesh-barnea.",
+      "confidence": "moderate",
+      "caution": "This leg summarizes years of travel."
+    },
+    {
+      "id": "kadesh-barnea-to-plains-of-moab",
+      "from": "kadesh-barnea",
+      "to": "plains-of-moab",
+      "label": "Approaching the land",
+      "passages": ["Numbers 20-36", "Deuteronomy 1-2"],
+      "description": "The generation reaches the plains opposite Jericho.",
+      "confidence": "moderate",
+      "caution": "The route is compressed and not intended as a precise itinerary."
+    }
+  ]
+}

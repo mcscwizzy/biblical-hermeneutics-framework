@@ -67,11 +67,12 @@ def place_to_marker(
     related_passages_for_place: Any,
     period: str | None = None,
     path: str | Path | None = None,
+    include_related_passages: bool = True,
 ) -> dict[str, Any]:
     latitude = place.get("latitude")
     longitude = place.get("longitude")
     references = list_place_references(place["id"], path=path) if path else list_place_references(place["id"])
-    return {
+    marker = {
         "id": place["id"],
         "name": place["name"],
         "marker_kind": "place",
@@ -92,10 +93,12 @@ def place_to_marker(
         "license": place["license"],
         "notes": place["notes"],
         "related_references": references,
-        "related_passages": related_passages_for_place(place, period=period, path=path),
         "reference_count": len(references),
         "has_coordinates": latitude is not None and longitude is not None,
     }
+    if include_related_passages:
+        marker["related_passages"] = related_passages_for_place(place, period=period, path=path)
+    return marker
 
 
 def route_to_item(

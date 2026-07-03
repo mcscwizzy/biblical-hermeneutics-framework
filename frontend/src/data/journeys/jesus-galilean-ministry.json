@@ -1,0 +1,146 @@
+{
+  "id": "jesus-galilean-ministry",
+  "title": "Jesus' Galilean Ministry",
+  "description": "A curated teaching route through representative locations from the Galilean ministry narratives.",
+  "category": "Gospels",
+  "testament": "New Testament",
+  "bookRange": ["Matthew", "Mark", "Luke", "John"],
+  "era": "Galilean Ministry",
+  "tags": ["kingdom", "healings", "discipleship"],
+  "period": "Second Temple period",
+  "primaryPassages": ["Matthew 4-15", "Mark 1-7", "Luke 4-9"],
+  "confidence": "moderate",
+  "caution": "The ministry itinerary is reconstructed from multiple Gospel accounts and should be used as a teaching outline rather than a single day-by-day travel log.",
+  "stops": [
+    {
+      "id": "nazareth",
+      "name": "Nazareth",
+      "order": 1,
+      "region": "Lower Galilee",
+      "modernLocation": "Nazareth, Israel",
+      "lat": 32.6996,
+      "lng": 35.3035,
+      "passages": ["Luke 4:16-30"],
+      "description": "Jesus' hometown setting and early rejection scene.",
+      "confidence": "high",
+      "notes": "A secure and familiar starting point."
+    },
+    {
+      "id": "capernaum",
+      "name": "Capernaum",
+      "order": 2,
+      "region": "Northwest Galilee",
+      "modernLocation": "Kfar Nahum, Israel",
+      "lat": 32.8794,
+      "lng": 35.5733,
+      "passages": ["Matthew 4:13", "Mark 1:21"],
+      "description": "A central base for Jesus' early ministry.",
+      "confidence": "high",
+      "notes": "A core ministry hub in the Gospel narratives."
+    },
+    {
+      "id": "sea-of-galilee",
+      "name": "Sea of Galilee",
+      "order": 3,
+      "region": "Galilee",
+      "modernLocation": "Lake Kinneret, Israel",
+      "lat": 32.83,
+      "lng": 35.58,
+      "passages": ["Mark 4:35-41"],
+      "description": "The setting for teaching, miracles, and crossings.",
+      "confidence": "high",
+      "notes": "A geographic center for the Galilean narratives."
+    },
+    {
+      "id": "nain",
+      "name": "Nain",
+      "order": 4,
+      "region": "Lower Galilee",
+      "modernLocation": "Near modern Nein",
+      "lat": 32.64,
+      "lng": 35.32,
+      "passages": ["Luke 7:11-17"],
+      "description": "The village of the widow's son.",
+      "confidence": "moderate",
+      "notes": "A representative healing stop."
+    },
+    {
+      "id": "gadara",
+      "name": "Gadara / Gerasa region",
+      "order": 5,
+      "region": "Decapolis",
+      "modernLocation": "Debated eastern shore region",
+      "lat": 32.68,
+      "lng": 35.68,
+      "passages": ["Mark 5:1-20"],
+      "description": "A Gentile-region ministry setting on the eastern side of the lake.",
+      "confidence": "low",
+      "notes": "The exact site depends on harmonization and manuscript tradition."
+    },
+    {
+      "id": "caesarea-philippi",
+      "name": "Caesarea Philippi",
+      "order": 6,
+      "region": "Northern borderlands",
+      "modernLocation": "Banias, Israel",
+      "lat": 33.248,
+      "lng": 35.691,
+      "passages": ["Matthew 16:13-20"],
+      "description": "The setting for Peter's confession.",
+      "confidence": "high",
+      "notes": "A more secure northern waypoint."
+    }
+  ],
+  "segments": [
+    {
+      "id": "nazareth-to-capernaum",
+      "from": "nazareth",
+      "to": "capernaum",
+      "label": "Early ministry base",
+      "passages": ["Matthew 4:12-17"],
+      "description": "Jesus moves from Nazareth toward Capernaum.",
+      "confidence": "high",
+      "caution": "The move is well attested but not exhaustively timed."
+    },
+    {
+      "id": "capernaum-to-sea-of-galilee",
+      "from": "capernaum",
+      "to": "sea-of-galilee",
+      "label": "By the lake",
+      "passages": ["Mark 1-4"],
+      "description": "Teaching and miracles around the sea.",
+      "confidence": "high",
+      "caution": "A general region is represented by a single line."
+    },
+    {
+      "id": "sea-of-galilee-to-nain",
+      "from": "sea-of-galilee",
+      "to": "nain",
+      "label": "Healing work",
+      "passages": ["Luke 7:11-17"],
+      "description": "The ministry extends to nearby villages.",
+      "confidence": "moderate",
+      "caution": "The Gospels do not provide a continuous travel diary."
+    },
+    {
+      "id": "nain-to-gadara",
+      "from": "nain",
+      "to": "gadara",
+      "label": "Crossing the lake",
+      "passages": ["Mark 5:1-20"],
+      "description": "A movement to the eastern shore region.",
+      "confidence": "low",
+      "caution": "This is a harmonized approximation."
+    },
+    {
+      "id": "gadara-to-caesarea-philippi",
+      "from": "gadara",
+      "to": "caesarea-philippi",
+      "label": "Northward teaching",
+      "passages": ["Matthew 16:13-20"],
+      "description": "The narrative shifts to the northern borderlands.",
+      "confidence": "moderate",
+      "caution": "The route is reconstructed for teaching value."
+    }
+  ]
+}

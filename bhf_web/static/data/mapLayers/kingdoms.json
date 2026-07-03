@@ -1,0 +1,225 @@
+{
+  "id": "kingdoms",
+  "title": "Kingdoms / Empires",
+  "description": "Broad political overlays for major biblical kingdoms and empires.",
+  "type": "polygons",
+  "defaultVisible": false,
+  "features": [
+    {
+      "id": "united-israel",
+      "name": "United Israel",
+      "summary": "A broad study zone for the united monarchy.",
+      "points": [
+        [33.2, 34.7],
+        [33.2, 35.95],
+        [31.1, 35.95],
+        [31.1, 34.7]
+      ],
+      "periods": ["Broad / uncertain period"],
+      "description": "A broad study zone for Saul, David, and Solomon-era Israel. The exact footprint is schematic and should be treated as orientation, not as a fixed border.",
+      "passages": ["1 Samuel 8", "2 Samuel 5-8", "1 Kings 1-11"],
+      "confidence": "possible",
+      "caution": "This overlay is schematic and reflects a broad historical imagination, not a fixed border."
+    },
+    {
+      "id": "egypt",
+      "name": "Egypt",
+      "summary": "A recurring imperial and refuge backdrop across the biblical story.",
+      "points": [
+        [24.0, 31.5],
+        [24.0, 21.0],
+        [36.5, 21.0],
+        [36.5, 31.5]
+      ],
+      "periods": [
+        "Broad / uncertain period",
+        "Divided Kingdom",
+        "Assyrian period",
+        "Babylonian period",
+        "Persian period",
+        "Hellenistic period",
+        "NT / Roman period"
+      ],
+      "description": "Egypt repeatedly appears as a place of refuge, oppression, diplomacy, and symbolic memory. The footprint is schematic and intentionally coarse.",
+      "passages": ["Genesis 12-50", "Exodus 1-15", "Matthew 2:13-15"],
+      "confidence": "likely",
+      "caution": "This is a broad background layer. It helps orient the reader to the biblical world but should not be read as a precise border reconstruction."
+    },
+    {
+      "id": "canaanite-city-states",
+      "name": "Canaanite City-States",
+      "summary": "A fragmented network of local powers in the land before monarchy.",
+      "points": [
+        [34.0, 34.8],
+        [34.0, 30.5],
+        [36.2, 30.5],
+        [36.2, 34.8]
+      ],
+      "periods": ["Broad / uncertain period"],
+      "description": "A schematic pre-monarchic political backdrop for Joshua and Judges. The layer stays intentionally broad because the evidence is fragmentary and shifting.",
+      "passages": ["Joshua 11", "Judges 1"],
+      "confidence": "possible",
+      "caution": "The evidence for local control patterns is fragmented, so this layer is a cautious teaching aid rather than a settled political map."
+    },
+    {
+      "id": "philistia",
+      "name": "Philistia",
+      "summary": "The western coastal polity that frames many Samuel and Kings narratives.",
+      "points": [
+        [34.1, 32.1],
+        [34.1, 31.0],
+        [35.2, 31.0],
+        [35.2, 32.1]
+      ],
+      "periods": ["Divided Kingdom", "Assyrian period"],
+      "description": "A cautious regional overlay for the Philistine coastal plain. It is useful for narrative geography, not for exact border claims.",
+      "passages": ["1 Samuel 4-7", "1 Samuel 17", "2 Samuel 5"],
+      "confidence": "likely",
+      "caution": "The coastal plain shifted over time; the layer is deliberately broad."
+    },
+    {
+      "id": "northern-kingdom",
+      "name": "Northern Kingdom of Israel",
+      "summary": "The northern kingdom centered on Samaria.",
+      "points": [
+        [33.3, 34.85],
+        [33.3, 35.95],
+        [31.7, 35.95],
+        [31.7, 34.85]
+      ],
+      "periods": ["Divided Kingdom", "Assyrian period"],
+      "description": "The northern kingdom centered around Samaria and the hill-country core of the divided monarchy.",
+      "passages": ["1 Kings 12-22", "2 Kings 15-17"],
+      "confidence": "possible",
+      "caution": "Borders are simplified and intentionally broad."
+    },
+    {
+      "id": "judah",
+      "name": "Kingdom of Judah",
+      "summary": "The southern monarchy centered on Jerusalem.",
+      "points": [
+        [32.2, 34.7],
+        [32.2, 35.55],
+        [31.0, 35.55],
+        [31.0, 34.7]
+      ],
+      "periods": ["Divided Kingdom", "Babylonian period"],
+      "description": "The southern kingdom centered on Jerusalem and the Judean hill country. The exact extent shifted over time and is represented broadly here.",
+      "passages": ["1 Kings 12-25", "2 Kings 18-25"],
+      "confidence": "possible",
+      "caution": "The exact extent shifted over time and is represented broadly here."
+    },
+    {
+      "id": "aram-damascus",
+      "name": "Aram-Damascus",
+      "summary": "A key northern neighbor in monarchic conflict and diplomacy.",
+      "points": [
+        [35.4, 37.2],
+        [35.4, 32.0],
+        [40.0, 32.0],
+        [40.0, 37.2]
+      ],
+      "periods": ["Divided Kingdom", "Assyrian period"],
+      "description": "A schematic overlay for the Aramean political sphere around Damascus. It is useful for conflict context and diplomatic framing.",
+      "passages": ["2 Kings 8-13", "2 Kings 16", "Isaiah 7-8"],
+      "confidence": "possible",
+      "caution": "Use this as a regional cue for Assyrian-era conflicts and alliances."
+    },
+    {
+      "id": "assyria",
+      "name": "Assyria",
+      "summary": "The dominant imperial backdrop for the fall of the northern kingdom.",
+      "points": [
+        [37.2, 41.5],
+        [37.2, 45.2],
+        [34.8, 45.2],
+        [34.8, 41.5]
+      ],
+      "periods": ["Assyrian period"],
+      "description": "A broad imperial overlay for the Neo-Assyrian sphere. It is schematic and intentionally oversized for study orientation.",
+      "passages": ["2 Kings 17-19", "Isaiah 36-37"],
+      "confidence": "likely",
+      "caution": "The imperial extent changed by reign and decade; this is a broad study layer only."
+    },
+    {
+      "id": "babylon",
+      "name": "Babylon",
+      "summary": "The imperial setting for exile and return-from-exile narratives.",
+      "points": [
+        [34.8, 43.0],
+        [34.8, 45.6],
+        [31.5, 45.6],
+        [31.5, 43.0]
+      ],
+      "periods": ["Babylonian period", "Persian period"],
+      "description": "The imperial power that carried Judah into exile and ruled the Neo-Babylonian world. This is a broad imperial zone rather than an exact border.",
+      "passages": ["2 Kings 24-25", "Jeremiah 29"],
+      "confidence": "likely",
+      "caution": "This is a broad imperial zone rather than an exact border."
+    },
+    {
+      "id": "persia",
+      "name": "Persia",
+      "summary": "The imperial context for return, rebuilding, and post-exilic administration.",
+      "points": [
+        [38.0, 46.0],
+        [38.0, 52.0],
+        [31.0, 52.0],
+        [31.0, 46.0]
+      ],
+      "periods": ["Persian period"],
+      "description": "The empire under which the return from exile occurred. The imperial area is schematic and reflects broad historical geography.",
+      "passages": ["Ezra 1-6", "Nehemiah 2"],
+      "confidence": "likely",
+      "caution": "The imperial area is schematic and reflects broad historical geography."
+    },
+    {
+      "id": "greece",
+      "name": "Greece",
+      "summary": "The Hellenistic world that reshaped the eastern Mediterranean after Alexander.",
+      "points": [
+        [20.0, 42.0],
+        [20.0, 30.0],
+        [42.0, 30.0],
+        [42.0, 42.0]
+      ],
+      "periods": ["Hellenistic period"],
+      "description": "A broad Hellenistic political-cultural overlay for study of the intertestamental world and related texts.",
+      "passages": ["Daniel 8", "Daniel 10-11"],
+      "confidence": "possible",
+      "caution": "This is a broad Hellenistic frame rather than a claim about precise control lines."
+    },
+    {
+      "id": "rome",
+      "name": "Rome",
+      "summary": "The imperial context for the Gospels and Acts.",
+      "points": [
+        [10.0, 45.0],
+        [10.0, 30.0],
+        [45.0, 30.0],
+        [45.0, 45.0]
+      ],
+      "periods": ["NT / Roman period"],
+      "description": "A broad Roman imperial overlay for New Testament study. It keeps the map context careful and schematic.",
+      "passages": ["Luke 2:1-2", "John 19:1-16", "Acts 25-28"],
+      "confidence": "likely",
+      "caution": "This is a broad imperial frame for the New Testament rather than a reconstruction of province-by-province borders."
+    },
+    {
+      "id": "roman-judea",
+      "name": "Roman Judea",
+      "summary": "The Roman provincial setting behind much of the Gospels and Acts.",
+      "points": [
+        [33.3, 34.65],
+        [33.3, 35.85],
+        [30.9, 35.85],
+        [30.9, 34.65]
+      ],
+      "periods": ["NT / Roman period"],
+      "description": "The Roman provincial setting behind much of the Gospels and Acts. Borders changed and the layer remains only a study approximation.",
+      "passages": ["Luke 2:1-2", "Acts 23-28"],
+      "confidence": "possible",
+      "caution": "Roman provincial borders changed and this overlay is only a study approximation."
+    }
+  ]
+}

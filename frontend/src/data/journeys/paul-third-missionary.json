@@ -1,0 +1,169 @@
+{
+  "id": "paul-third-missionary",
+  "title": "Paul's Third Missionary Journey",
+  "description": "A teaching route for Paul's later ministry with emphasis on Ephesus, Macedonia, and the return to Jerusalem.",
+  "category": "Pauline Missions",
+  "testament": "New Testament",
+  "bookRange": ["Acts", "1 Corinthians", "2 Corinthians", "Romans"],
+  "era": "Apostolic Era",
+  "tags": ["mission", "ephesus", "discipleship"],
+  "period": "Early church",
+  "primaryPassages": ["Acts 18:23-21:17"],
+  "confidence": "moderate",
+  "caution": "This route combines Acts' travel narrative with later epistolary context. It is a concise teaching map, not a complete itinerary.",
+  "stops": [
+    {
+      "id": "antioch-syria",
+      "name": "Antioch in Syria",
+      "order": 1,
+      "region": "Roman Syria",
+      "modernLocation": "Antakya, Turkey",
+      "lat": 36.2021,
+      "lng": 36.1606,
+      "passages": ["Acts 18:22-23"],
+      "description": "The journey begins again in Antioch.",
+      "confidence": "moderate",
+      "notes": "Starting point after a return from prior ministry."
+    },
+    {
+      "id": "ephesus",
+      "name": "Ephesus",
+      "order": 2,
+      "region": "Asia Minor",
+      "modernLocation": "Selcuk, Turkey",
+      "lat": 37.939,
+      "lng": 27.341,
+      "passages": ["Acts 19"],
+      "description": "The long teaching ministry in Ephesus.",
+      "confidence": "high",
+      "notes": "A key center for the third journey."
+    },
+    {
+      "id": "troas",
+      "name": "Troas",
+      "order": 3,
+      "region": "Aegean coast",
+      "modernLocation": "Near Hisarlik, Turkey",
+      "lat": 39.872,
+      "lng": 26.238,
+      "passages": ["Acts 20:5-12"],
+      "description": "A brief but important stop on the way west.",
+      "confidence": "moderate",
+      "notes": "The text gives this stop special attention."
+    },
+    {
+      "id": "philippi",
+      "name": "Philippi",
+      "order": 4,
+      "region": "Macedonia",
+      "modernLocation": "Near Kavala, Greece",
+      "lat": 41.0167,
+      "lng": 24.2867,
+      "passages": ["Acts 20:6"],
+      "description": "A return visit to Macedonia.",
+      "confidence": "high",
+      "notes": "A familiar city from the second journey."
+    },
+    {
+      "id": "corinth",
+      "name": "Corinth",
+      "order": 5,
+      "region": "Achaia",
+      "modernLocation": "Corinth, Greece",
+      "lat": 37.94,
+      "lng": 22.95,
+      "passages": ["Romans 15:25-26", "1 Corinthians"],
+      "description": "A major pastoral and correspondence center.",
+      "confidence": "high",
+      "notes": "Letters and Acts both make this a significant waypoint."
+    },
+    {
+      "id": "miletus",
+      "name": "Miletus",
+      "order": 6,
+      "region": "Asia Minor coast",
+      "modernLocation": "Near Balat, Turkey",
+      "lat": 37.53,
+      "lng": 27.28,
+      "passages": ["Acts 20:13-38"],
+      "description": "The farewell speech to the Ephesian elders.",
+      "confidence": "high",
+      "notes": "A strong narrative anchor."
+    },
+    {
+      "id": "jerusalem",
+      "name": "Jerusalem",
+      "order": 7,
+      "region": "Judea",
+      "modernLocation": "Jerusalem",
+      "lat": 31.778,
+      "lng": 35.235,
+      "passages": ["Acts 21:17"],
+      "description": "The return to Jerusalem.",
+      "confidence": "high",
+      "notes": "A secure final stop in this teaching outline."
+    }
+  ],
+  "segments": [
+    {
+      "id": "antioch-to-ephesus",
+      "from": "antioch-syria",
+      "to": "ephesus",
+      "label": "Strengthening the churches",
+      "passages": ["Acts 18:23", "Acts 19"],
+      "description": "Paul travels to Ephesus and establishes a long ministry there.",
+      "confidence": "moderate",
+      "caution": "The inland leg is simplified."
+    },
+    {
+      "id": "ephesus-to-troas",
+      "from": "ephesus",
+      "to": "troas",
+      "label": "Toward the coast",
+      "passages": ["Acts 20:1-12"],
+      "description": "The mission heads northwest.",
+      "confidence": "moderate",
+      "caution": "A direct line compresses multiple steps."
+    },
+    {
+      "id": "troas-to-philippi",
+      "from": "troas",
+      "to": "philippi",
+      "label": "Macedonia revisit",
+      "passages": ["Acts 20:5-6"],
+      "description": "Paul revisits Philippi.",
+      "confidence": "high",
+      "caution": "The maritime route is simplified."
+    },
+    {
+      "id": "philippi-to-corinth",
+      "from": "philippi",
+      "to": "corinth",
+      "label": "South to Greece",
+      "passages": ["Acts 20:2-3", "Romans 15"],
+      "description": "The route swings south toward Corinth.",
+      "confidence": "moderate",
+      "caution": "This leg combines several regional moves."
+    },
+    {
+      "id": "corinth-to-miletus",
+      "from": "corinth",
+      "to": "miletus",
+      "label": "Farewell route",
+      "passages": ["Acts 20:13-38"],
+      "description": "Paul heads to Miletus for the farewell speech.",
+      "confidence": "high",
+      "caution": "The exact sailings are compressed."
+    },
+    {
+      "id": "miletus-to-jerusalem",
+      "from": "miletus",
+      "to": "jerusalem",
+      "label": "Return to Jerusalem",
+      "passages": ["Acts 21:17"],
+      "description": "The journey concludes in Jerusalem.",
+      "confidence": "high",
+      "caution": "Acts summarizes the final travel sequence."
+    }
+  ]
+}

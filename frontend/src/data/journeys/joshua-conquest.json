@@ -1,0 +1,123 @@
+{
+  "id": "joshua-conquest",
+  "title": "Joshua's Conquest Journey",
+  "description": "A modest route tracing key locations in the entry and early settlement of the land.",
+  "category": "Conquest and Settlement",
+  "testament": "Old Testament",
+  "bookRange": ["Joshua"],
+  "era": "Conquest Period",
+  "tags": ["inheritance", "battle", "land"],
+  "period": "Conquest and early settlement",
+  "primaryPassages": ["Joshua 3-8", "Joshua 10-12", "Joshua 24"],
+  "confidence": "moderate",
+  "caution": "Several conquest locations are debated, and the campaign sequence is simplified for teaching purposes.",
+  "stops": [
+    {
+      "id": "shittim",
+      "name": "Shittim",
+      "order": 1,
+      "region": "East of the Jordan",
+      "modernLocation": "Plain of Moab",
+      "lat": 31.84,
+      "lng": 35.58,
+      "passages": ["Joshua 2:1"],
+      "description": "The staging area before crossing the Jordan.",
+      "confidence": "moderate",
+      "notes": "A narrative starting point rather than a fixed archaeological site."
+    },
+    {
+      "id": "jordan-crossing",
+      "name": "Jordan Crossing",
+      "order": 2,
+      "region": "Jordan Valley",
+      "modernLocation": "Opposite Jericho",
+      "lat": 31.87,
+      "lng": 35.52,
+      "passages": ["Joshua 3-4"],
+      "description": "The crossing into the land.",
+      "confidence": "traditional",
+      "notes": "The crossing site is not precise in the text."
+    },
+    {
+      "id": "jericho",
+      "name": "Jericho",
+      "order": 3,
+      "region": "Jordan Valley",
+      "modernLocation": "Tell es-Sultan area",
+      "lat": 31.8667,
+      "lng": 35.45,
+      "passages": ["Joshua 6"],
+      "description": "The first major city in the campaign narrative.",
+      "confidence": "moderate",
+      "notes": "A classic conquest location with strong narrative importance."
+    },
+    {
+      "id": "ai",
+      "name": "Ai",
+      "order": 4,
+      "region": "Hill country",
+      "modernLocation": "East of Bethel",
+      "lat": 31.94,
+      "lng": 35.28,
+      "passages": ["Joshua 7-8"],
+      "description": "The site of defeat and later victory.",
+      "confidence": "low",
+      "notes": "The identification of Ai remains debated."
+    },
+    {
+      "id": "shechem",
+      "name": "Shechem",
+      "order": 5,
+      "region": "Central hill country",
+      "modernLocation": "Nablus, West Bank",
+      "lat": 32.2211,
+      "lng": 35.2627,
+      "passages": ["Joshua 8:30-35", "Joshua 24"],
+      "description": "The covenant renewal and farewell setting.",
+      "confidence": "moderate",
+      "notes": "Represents the settlement and covenant stage."
+    }
+  ],
+  "segments": [
+    {
+      "id": "shittim-to-jordan-crossing",
+      "from": "shittim",
+      "to": "jordan-crossing",
+      "label": "Approach to the river",
+      "passages": ["Joshua 3"],
+      "description": "Israel approaches the Jordan.",
+      "confidence": "moderate",
+      "caution": "The approach is schematic."
+    },
+    {
+      "id": "jordan-crossing-to-jericho",
+      "from": "jordan-crossing",
+      "to": "jericho",
+      "label": "First city",
+      "passages": ["Joshua 6"],
+      "description": "The campaign turns toward Jericho.",
+      "confidence": "moderate",
+      "caution": "A single line represents the campaign approach."
+    },
+    {
+      "id": "jericho-to-ai",
+      "from": "jericho",
+      "to": "ai",
+      "label": "Into the hills",
+      "passages": ["Joshua 7-8"],
+      "description": "The route moves into the highlands.",
+      "confidence": "low",
+      "caution": "The geography and identification are debated."
+    },
+    {
+      "id": "ai-to-shechem",
+      "from": "ai",
+      "to": "shechem",
+      "label": "Covenant renewal",
+      "passages": ["Joshua 8:30-35", "Joshua 24"],
+      "description": "Joshua leads the people to Shechem.",
+      "confidence": "moderate",
+      "caution": "The settlement sequence is simplified."
+    }
+  ]
+}

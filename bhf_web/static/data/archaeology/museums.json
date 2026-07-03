@@ -1,0 +1,57 @@
+[
+  {
+    "id": "israel-museum",
+    "name": "Israel Museum",
+    "country": "Israel",
+    "city": "Jerusalem",
+    "description": "Home to major biblical archaeology holdings including the Shrine of the Book and several key inscriptions.",
+    "website": "https://www.imj.org.il/",
+    "featuredArtifacts": ["tel-dan-stele", "pilate-stone", "dead-sea-scrolls", "ketef-hinnom-silver-scrolls"],
+    "featuredSites": ["jerusalem", "qumran", "capernaum"]
+  },
+  {
+    "id": "british-museum",
+    "name": "British Museum",
+    "country": "United Kingdom",
+    "city": "London",
+    "description": "A major repository for Neo-Assyrian, Persian, and Levantine inscriptions and reliefs relevant to biblical studies.",
+    "website": "https://www.britishmuseum.org/",
+    "featuredArtifacts": ["cyrus-cylinder", "taylor-prism", "black-obelisk", "lachish-reliefs"]
+  },
+  {
+    "id": "louvre",
+    "name": "Louvre Museum",
+    "country": "France",
+    "city": "Paris",
+    "description": "Houses the Mesha Stele, a foundational inscription for Moabite and Israelite history.",
+    "website": "https://www.louvre.fr/",
+    "featuredArtifacts": ["mesha-stele"]
+  },
+  {
+    "id": "egyptian-museum-cairo",
+    "name": "Egyptian Museum",
+    "country": "Egypt",
+    "city": "Cairo",
+    "description": "Preserves major Egyptian monuments including the Merneptah Stele.",
+    "website": "https://egymonuments.gov.eg/en/museums/egyptian-museum",
+    "featuredArtifacts": ["merneptah-stele"]
+  },
+  {
+    "id": "istanbul-archaeology-museums",
+    "name": "Istanbul Archaeology Museums",
+    "country": "Turkey",
+    "city": "Istanbul",
+    "description": "Holds the original Siloam Inscription and several related Levantine inscriptions.",
+    "website": "https://muze.gov.tr/",
+    "featuredArtifacts": ["siloam-inscription"]
+  },
+  {
+    "id": "private-collection",
+    "name": "Private collection",
+    "country": "Unknown",
+    "city": "Unknown",
+    "description": "Placeholder record for disputed or privately held items that should not be treated as settled public museum holdings.",
+    "website": "",
+    "featuredArtifacts": ["james-ossuary"]
+  }
+]

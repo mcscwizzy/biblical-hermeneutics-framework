@@ -219,7 +219,12 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
 
     @app.get("/api/maps/sample-markers", response_class=JSONResponse)
     async def maps_sample_markers() -> JSONResponse:
-        return JSONResponse({"markers": get_biblical_place_markers(path=study_db_path)})
+        markers = get_biblical_place_markers(path=study_db_path)
+        for marker in markers:
+            if marker.get("id") == "jerusalem":
+                marker["related_passages"] = get_related_passages_for_place("jerusalem", path=study_db_path)
+                break
+        return JSONResponse({"markers": markers})
 
     @app.get("/api/map-studies", response_class=JSONResponse)
     async def map_studies(book: str | None = None, chapter: int | None = None) -> JSONResponse:

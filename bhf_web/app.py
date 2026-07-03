@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 from fastapi import FastAPI, Request
@@ -52,6 +53,13 @@ def create_app() -> FastAPI:
         StaticFiles(directory=str(PACKAGE_DIR / "static")),
         name="static",
     )
+    frontend_dir = PACKAGE_DIR.parent / "frontend"
+    if frontend_dir.exists():
+        web_app.mount(
+            "/frontend",
+            StaticFiles(directory=str(frontend_dir)),
+            name="frontend",
+        )
 
     @web_app.get("/api/health", response_class=JSONResponse)
     async def health() -> dict[str, str]:
@@ -112,6 +120,7 @@ def create_app() -> FastAPI:
                 "profiles": _available_profiles(loaded.config.profile),
                 "answer_modes": ANSWER_MODES,
                 "config_warning": loaded.warning,
+                "cesium_ion_token": os.environ.get("BHF_CESIUM_ION_TOKEN", "").strip(),
                 "books": list_books(),
             },
         )

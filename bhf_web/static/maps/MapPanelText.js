@@ -31,6 +31,50 @@ function formatStudyReference(study) {
   return suffix && suffix !== "-" ? `${study.book} ${study.chapter}:${suffix}` : `${study.book} ${study.chapter}`;
 }
 
+const ARCHAEOLOGY_CONFIDENCE_ALIASES = {
+  established: "Established",
+  strong: "Established",
+  "well supported": "Well Supported",
+  likely: "Well Supported",
+  "reasonably supported": "Reasonably Supported",
+  moderate: "Reasonably Supported",
+  tentative: "Tentative",
+  possible: "Tentative",
+  disputed: "Tentative",
+  "traditional identification": "Traditional Identification",
+  traditional: "Traditional Identification",
+  "well-supported": "Well Supported",
+  "reasonably-supported": "Reasonably Supported",
+};
+
+function normalizeArchaeologyConfidence(value) {
+  const normalized = String(value || "").trim();
+  if (!normalized) {
+    return "Tentative";
+  }
+  return ARCHAEOLOGY_CONFIDENCE_ALIASES[normalized.toLowerCase()] || normalized;
+}
+
+function archaeologyConfidenceNote(value) {
+  const confidence = normalizeArchaeologyConfidence(value);
+  if (confidence === "Established") {
+    return "This identification has broad scholarly agreement and is useful as stable historical context.";
+  }
+  if (confidence === "Well Supported") {
+    return "The evidence is strong, with limited disagreement, so the item can be used confidently as background context.";
+  }
+  if (confidence === "Reasonably Supported") {
+    return "The evidence is good, but important questions still remain, so the item should be presented with some caution.";
+  }
+  if (confidence === "Tentative") {
+    return "The evidence is limited or significantly debated, so the item should be treated as a cautious study aid.";
+  }
+  if (confidence === "Traditional Identification") {
+    return "The identification rests mainly on historical tradition rather than conclusive archaeology.";
+  }
+  return "The evidence is uncertain, so the item should be read cautiously and without overclaiming what it proves.";
+}
+
 function buildPlaceExplanation(marker, passageContext) {
   const passageReference = formatReference(passageContext);
   const passagePhrase = passageReference ? ` in ${passageReference}` : "";
@@ -168,17 +212,7 @@ function buildHistoricalLayerCautionNote(layer) {
 }
 
 function buildArchaeologyCautionNote(marker) {
-  const confidence = String(marker.confidence || "unknown").toLowerCase();
-  if (confidence === "strong" || confidence === "likely") {
-    return "This is a curated archaeology witness with a clear local data source, but it still functions as historical background rather than direct proof of interpretation.";
-  }
-  if (confidence === "possible") {
-    return "This archaeology item is approximate or debated. Treat it as a study aid, not a settled identification.";
-  }
-  if (confidence === "disputed") {
-    return "This archaeology item is disputed. Use it only as a debated historical reference point.";
-  }
-  return "The archaeology data is uncertain. Read it cautiously and avoid overclaiming what it proves.";
+  return archaeologyConfidenceNote(marker?.confidence);
 }
 
 function renderMapActionBar(kind, item) {
@@ -195,7 +229,6 @@ function renderMapActionBar(kind, item) {
         <button type="button" class="secondary" data-map-action="ask_location">${escapeHtml(primaryLabel)}</button>
         <button type="button" class="secondary" data-map-action="save_map_study">Save map study</button>
         <button type="button" class="secondary" data-map-action="map_note">Add map note</button>
-        <button type="button" class="secondary" data-map-action="compare_archaeology">Compare with archaeology</button>
         <button type="button" class="secondary" data-map-action="related_passages">View related passages</button>
         <button type="button" class="secondary" data-map-action="reset_map_view">Reset map view</button>
         ${
@@ -241,8 +274,7 @@ function renderSourceAttribution(item, sourceText) {
 }
 
 function prettyConfidence(value) {
-  const normalized = String(value || "unknown").toLowerCase();
-  return normalized.charAt(0).toUpperCase() + normalized.slice(1);
+  return normalizeArchaeologyConfidence(value);
 }
 
 function formatPeriodList(periods) {
@@ -373,12 +405,6 @@ function buildMapStudySummary(selection, context) {
   if (selection.kind === "route") {
     return `${name} in ${reference} with route confidence ${prettyConfidence(item.confidence)}.`;
   }
-  if (selection.kind === "archaeology") {
-    return `${name} in ${reference} as an archaeology witness with confidence ${prettyConfidence(item.confidence)}.`;
-  }
-  if (selection.kind === "manuscript") {
-    return `${name} in ${reference} as a textual witness with confidence ${prettyConfidence(item.confidence)}.`;
-  }
   if (selection.kind === "layer") {
     return `${name} in ${reference} as a ${item.period || "historical"} study layer.`;
   }
@@ -408,6 +434,7 @@ export {
   formatReference,
   formatStudyReference,
   prettyConfidence,
+  normalizeArchaeologyConfidence,
   renderMapActionBar,
   renderRelatedPassages,
   renderRelatedPassagesList,

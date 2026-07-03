@@ -1,0 +1,146 @@
+{
+  "id": "elijah-elisha",
+  "title": "Elijah and Elisha",
+  "description": "A modest prophetic route linking key settings in the ministries of Elijah and Elisha.",
+  "category": "Prophets",
+  "testament": "Old Testament",
+  "bookRange": ["1 Kings", "2 Kings"],
+  "era": "Divided Kingdom",
+  "tags": ["prophet", "miracle", "carmel"],
+  "period": "Monarchic period",
+  "primaryPassages": ["1 Kings 17-19", "2 Kings 2-6"],
+  "confidence": "moderate",
+  "caution": "This route is a narrative outline. Several prophetic locations are symbolic or approximate rather than exact archaeological sites.",
+  "stops": [
+    {
+      "id": "tishbe",
+      "name": "Tishbe",
+      "order": 1,
+      "region": "Gilead",
+      "modernLocation": "Transjordan",
+      "lat": 32.33,
+      "lng": 35.75,
+      "passages": ["1 Kings 17:1"],
+      "description": "Elijah's homeland setting.",
+      "confidence": "low",
+      "notes": "The exact location is uncertain."
+    },
+    {
+      "id": "samaria",
+      "name": "Samaria",
+      "order": 2,
+      "region": "Northern kingdom capital",
+      "modernLocation": "Sebastia, West Bank",
+      "lat": 32.275,
+      "lng": 35.2,
+      "passages": ["1 Kings 18:2", "2 Kings 3:13"],
+      "description": "The royal center in the northern kingdom.",
+      "confidence": "moderate",
+      "notes": "A major prophetic stage in the narrative."
+    },
+    {
+      "id": "mount-carmel",
+      "name": "Mount Carmel",
+      "order": 3,
+      "region": "Coastal ridge",
+      "modernLocation": "Haifa area, Israel",
+      "lat": 32.75,
+      "lng": 35.02,
+      "passages": ["1 Kings 18"],
+      "description": "The contest site between Elijah and the prophets of Baal.",
+      "confidence": "high",
+      "notes": "One of the clearer geographic references in the story."
+    },
+    {
+      "id": "horeb",
+      "name": "Horeb",
+      "order": 4,
+      "region": "Sinai",
+      "modernLocation": "Traditional Sinai area",
+      "lat": 28.54,
+      "lng": 33.98,
+      "passages": ["1 Kings 19"],
+      "description": "The mountain of the still small voice.",
+      "confidence": "traditional",
+      "notes": "Often treated as the same mountain tradition as Sinai."
+    },
+    {
+      "id": "jericho",
+      "name": "Jericho",
+      "order": 5,
+      "region": "Jordan Valley",
+      "modernLocation": "Jericho, West Bank",
+      "lat": 31.8667,
+      "lng": 35.45,
+      "passages": ["2 Kings 2:4-5"],
+      "description": "The city where Elijah and Elisha depart together.",
+      "confidence": "moderate",
+      "notes": "A narrative junction before Elijah's departure."
+    },
+    {
+      "id": "gilgal",
+      "name": "Gilgal",
+      "order": 6,
+      "region": "Jordan Valley / hill country edge",
+      "modernLocation": "Debated severalfold",
+      "lat": 31.87,
+      "lng": 35.47,
+      "passages": ["2 Kings 2:1-2"],
+      "description": "A recurring prophetic stop before the whirlwind departure.",
+      "confidence": "low",
+      "notes": "The name may refer to more than one locality."
+    }
+  ],
+  "segments": [
+    {
+      "id": "tishbe-to-samaria",
+      "from": "tishbe",
+      "to": "samaria",
+      "label": "Prophetic confrontation",
+      "passages": ["1 Kings 17-18"],
+      "description": "Elijah moves toward the royal court.",
+      "confidence": "moderate",
+      "caution": "The route is representative."
+    },
+    {
+      "id": "samaria-to-mount-carmel",
+      "from": "samaria",
+      "to": "mount-carmel",
+      "label": "To Carmel",
+      "passages": ["1 Kings 18"],
+      "description": "The dramatic contest at Mount Carmel.",
+      "confidence": "high",
+      "caution": "A direct line summarizes the narrative movement."
+    },
+    {
+      "id": "mount-carmel-to-horeb",
+      "from": "mount-carmel",
+      "to": "horeb",
+      "label": "Into the wilderness",
+      "passages": ["1 Kings 19"],
+      "description": "Elijah journeys to Horeb.",
+      "confidence": "moderate",
+      "caution": "The exact path is not specified."
+    },
+    {
+      "id": "horeb-to-jericho",
+      "from": "horeb",
+      "to": "jericho",
+      "label": "Return north",
+      "passages": ["2 Kings 2"],
+      "description": "The prophetic succession narrative turns back toward the Jordan valley.",
+      "confidence": "moderate",
+      "caution": "The route is summarized."
+    },
+    {
+      "id": "jericho-to-gilgal",
+      "from": "jericho",
+      "to": "gilgal",
+      "label": "Succession path",
+      "passages": ["2 Kings 2:1-5"],
+      "description": "Elijah and Elisha continue together.",
+      "confidence": "low",
+      "caution": "Gilgal's exact identification is uncertain."
+    }
+  ]
+}

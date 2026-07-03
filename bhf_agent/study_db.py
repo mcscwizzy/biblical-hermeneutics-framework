@@ -22,7 +22,8 @@ from .db.repositories import manuscripts as _manuscripts_repo
 from .db.repositories import reader_state as _reader_state_repo
 from .db.repositories import sources as _sources_repo
 
-SCHEMA_VERSION = 12
+SCHEMA_VERSION = 13
+OPENBIBLE_PLACES_PATH = Path(__file__).resolve().parent / "data" / "openbible_places.json"
 BROAD_PERIOD_LABEL = "Broad / uncertain period"
 CANONICAL_PERIOD_LABELS = (
     BROAD_PERIOD_LABEL,
@@ -746,6 +747,12 @@ def _ensure_schema(connection: sqlite3.Connection) -> None:
             "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
             (12, _timestamp()),
         )
+    if 13 not in applied:
+        _apply_v13_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (13, _timestamp()),
+        )
 
 
 def _apply_v1_schema(connection: sqlite3.Connection) -> None:
@@ -1264,6 +1271,10 @@ def _apply_v12_schema(connection: sqlite3.Connection) -> None:
     _backfill_source_registry(connection)
 
 
+def _apply_v13_schema(connection: sqlite3.Connection) -> None:
+    _seed_openbible_places(connection)
+
+
 def _backfill_source_registry(connection: sqlite3.Connection) -> None:
     source_columns = {
         "biblical_places": ("source_name", "source_url", "license"),
@@ -1596,6 +1607,98 @@ def _seed_biblical_places(connection: sqlite3.Connection) -> None:
                 reference["notes"],
             ),
         )
+
+
+def _load_openbible_places(path: Path = OPENBIBLE_PLACES_PATH) -> list[dict[str, Any]]:
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        return []
+    if not isinstance(data, list):
+        return []
+    return [item for item in data if isinstance(item, dict)]
+
+
+def _seed_openbible_places(connection: sqlite3.Connection) -> None:
+    imported_places = _load_openbible_places()
+    if not imported_places:
+        return
+
+    existing_local_names = {
+        _normalize_seed_name(place["name"])
+        for place in _BIBLICAL_PLACES_SEED
+    }
+    source_id = _register_source(
+        connection,
+        "OpenBible.info Bible Geocoding Data",
+        "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+        "CC-BY-4.0",
+        "Imported compact point dataset for biblical place lookup and map pinning.",
+    )
+
+    place_rows = []
+    reference_rows = []
+    for place in imported_places:
+        if _normalize_seed_name(str(place.get("name") or "")) in existing_local_names:
+            continue
+        place_rows.append(
+            (
+                place["id"],
+                place["name"],
+                json.dumps(place.get("aliases", [])),
+                json.dumps([BROAD_PERIOD_LABEL]),
+                place["latitude"],
+                place["longitude"],
+                place.get("modern_location", ""),
+                place.get("ancient_region", ""),
+                place.get("description", ""),
+                place.get("confidence", "unknown"),
+                int(place.get("confidence_rank") or 0),
+                place.get("source_name", "OpenBible.info Bible Geocoding Data"),
+                place.get("source_url", "https://github.com/openbibleinfo/Bible-Geocoding-Data"),
+                place.get("license", "CC-BY-4.0"),
+                place.get("notes", ""),
+                source_id,
+            )
+        )
+        for index, reference in enumerate(place.get("references", []), start=1):
+            reference_rows.append(
+                (
+                    f"openbible-ref-{place['id']}-{index}",
+                    place["id"],
+                    reference["book"],
+                    int(reference["chapter"]),
+                    int(reference["verse_start"]),
+                    int(reference.get("verse_end") or reference["verse_start"]),
+                    "directly_named",
+                    "Imported from OpenBible.info Bible Geocoding Data.",
+                )
+            )
+    connection.executemany(
+        """
+        INSERT OR IGNORE INTO biblical_places (
+            id, name, aliases, periods, latitude, longitude, modern_location,
+            ancient_region, description, confidence, confidence_rank,
+            source_name, source_url, license, notes, source_id
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """,
+        place_rows,
+    )
+    connection.executemany(
+        """
+        INSERT OR IGNORE INTO place_references (
+            id, place_id, book, chapter, verse_start, verse_end,
+            relationship_type, notes
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        """,
+        reference_rows,
+    )
+
+
+def _normalize_seed_name(value: str) -> str:
+    normalized = value.lower().replace("'", "")
+    normalized = re.sub(r"[^a-z0-9]+", " ", normalized)
+    return re.sub(r"\s+", " ", normalized).strip()
 
 
 def _seed_map_routes(connection: sqlite3.Connection) -> None:

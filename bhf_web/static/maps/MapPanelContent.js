@@ -15,6 +15,7 @@ import {
   escapeHtml,
   formatPeriodList,
   formatStudyReference,
+  normalizeArchaeologyConfidence,
   prettyConfidence,
   renderMapActionBar,
   renderRelatedPassages,
@@ -49,8 +50,8 @@ function renderMapOrientationCard(options = {}) {
           <p>Use these when the passage is better understood as a region, kingdom, empire, or broad time-setting rather than one pin.</p>
         </div>
         <div class="map-orientation-item">
-          <strong>Routes, archaeology, and manuscripts</strong>
-          <p>These are optional study layers. Some passages have them; many do not.</p>
+          <strong>Routes</strong>
+          <p>Use these when the passage follows a journey or movement pattern rather than a single point.</p>
         </div>
       </div>
       <div class="map-next-steps">
@@ -61,6 +62,10 @@ function renderMapOrientationCard(options = {}) {
   `;
 }
 
+function confidenceClassName(value) {
+  return String(normalizeArchaeologyConfidence(value) || "Tentative").toLowerCase().replaceAll(" ", "-");
+}
+
 function renderSavedMapStudies(studies) {
   if (!Array.isArray(studies) || studies.length === 0) {
     return `<p class="empty">No saved map studies for this passage yet.</p>`;
@@ -69,8 +74,6 @@ function renderSavedMapStudies(studies) {
     .map((study) => {
       const meta = [
         study.selected_place_id ? `Place: ${study.selected_place_id}` : null,
-        study.selected_archaeology_id ? `Archaeology: ${study.selected_archaeology_id}` : null,
-        study.selected_manuscript_id ? `Manuscript: ${study.selected_manuscript_id}` : null,
         study.selected_route_id ? `Route: ${study.selected_route_id}` : null,
         study.selected_layer_id ? `Layer: ${study.selected_layer_id}` : null,
       ].filter(Boolean).join(" · ") || "Map study";
@@ -109,7 +112,7 @@ function renderSelectedMarker(marker, passageContext, options = {}) {
           <h3>${escapeHtml(marker.name || "Unnamed place")}</h3>
           <div class="map-details-subtitle">${escapeHtml(marker.region || marker.ancient_region || "Unknown region")}</div>
         </div>
-        <span class="map-confidence confidence-${escapeHtml(String(marker.confidence || "unknown"))}">
+        <span class="map-confidence confidence-${escapeHtml(confidenceClassName(marker.confidence))}">
           ${escapeHtml(confidenceLabel)}
         </span>
       </div>
@@ -172,6 +175,16 @@ function renderSelectedArchaeology(marker, passageContext, options = {}) {
   const explanation = buildArchaeologyExplanation(marker, passageContext);
   const sourceText = buildSourceText(marker);
   const archaeologyOverview = options.archaeologyOverview || "";
+  const discoveries = Array.isArray(marker.discoveries) ? marker.discoveries : Array.isArray(marker.major_discoveries) ? marker.major_discoveries : [];
+  const confidenceExplanation =
+    marker.confidenceExplanation ||
+    marker.confidence_explanation ||
+    "";
+  const museum = marker.museum || marker.current_location || marker.currentLocation || "";
+  const discoveryLocation = marker.discoveryLocation || marker.discovery_location || "";
+  const excavationSummary = marker.excavationSummary || marker.excavation_history || "";
+  const siteOverview = marker.site_overview || marker.historical_significance || "";
+  const biblicalConnections = marker.biblical_connections || marker.biblicalConnections || "";
 
   return `
     <div class="map-details-card">
@@ -180,7 +193,7 @@ function renderSelectedArchaeology(marker, passageContext, options = {}) {
           <h3>${escapeHtml(marker.name || "Unnamed archaeology item")}</h3>
           <div class="map-details-subtitle">${escapeHtml(marker.site_name || marker.location || "Unknown location")}</div>
         </div>
-        <span class="map-confidence confidence-${escapeHtml(String(marker.confidence || "unknown"))}">
+        <span class="map-confidence confidence-${escapeHtml(confidenceClassName(marker.confidence))}">
           ${escapeHtml(confidenceLabel)}
         </span>
       </div>
@@ -200,6 +213,39 @@ function renderSelectedArchaeology(marker, passageContext, options = {}) {
         <p>${escapeHtml(marker.location || marker.site_name || "Not supplied in the local data.")}</p>
       </section>
 
+      ${
+        discoveryLocation
+          ? `
+        <section class="map-detail-section">
+          <h4>Discovery location</h4>
+          <p>${escapeHtml(discoveryLocation)}</p>
+        </section>
+      `
+          : ""
+      }
+
+      ${
+        museum
+          ? `
+        <section class="map-detail-section">
+          <h4>Current museum</h4>
+          <p>${escapeHtml(museum)}</p>
+        </section>
+      `
+          : ""
+      }
+
+      ${
+        marker.dateDiscovered || marker.date_discovered
+          ? `
+        <section class="map-detail-section">
+          <h4>Discovery date</h4>
+          <p>${escapeHtml(marker.dateDiscovered || marker.date_discovered)}</p>
+        </section>
+      `
+          : ""
+      }
+
       <section class="map-detail-section">
         <h4>Related passages</h4>
         ${renderRelatedVerses(scriptureLinks)}
@@ -214,6 +260,61 @@ function renderSelectedArchaeology(marker, passageContext, options = {}) {
         <h4>Attribution</h4>
         ${renderSourceAttribution(marker, sourceText)}
       </section>
+
+      ${
+        siteOverview
+          ? `
+        <section class="map-detail-section">
+          <h4>Site overview</h4>
+          <p>${escapeHtml(siteOverview)}</p>
+        </section>
+      `
+          : ""
+      }
+
+      ${
+        excavationSummary
+          ? `
+        <section class="map-detail-section">
+          <h4>Excavation history</h4>
+          <p>${escapeHtml(excavationSummary)}</p>
+        </section>
+      `
+          : ""
+      }
+
+      ${
+        discoveries.length
+          ? `
+        <section class="map-detail-section">
+          <h4>Major discoveries</h4>
+          <p>${discoveries.map(escapeHtml).join(", ")}</p>
+        </section>
+      `
+          : ""
+      }
+
+      ${
+        biblicalConnections
+          ? `
+        <section class="map-detail-section">
+          <h4>Biblical connections</h4>
+          <p>${escapeHtml(biblicalConnections)}</p>
+        </section>
+      `
+          : ""
+      }
+
+      ${
+        confidenceExplanation
+          ? `
+        <section class="map-detail-section">
+          <h4>Confidence level</h4>
+          <p>${escapeHtml(confidenceLabel)}. ${escapeHtml(confidenceExplanation)}</p>
+        </section>
+      `
+          : ""
+      }
 
       <section class="map-detail-section">
         <h4>Why this matters</h4>
@@ -252,7 +353,7 @@ function renderSelectedManuscript(marker, passageContext, options = {}) {
           <h3>${escapeHtml(marker.name || "Unnamed manuscript")}</h3>
           <div class="map-details-subtitle">${escapeHtml(marker.discovery_location || marker.current_location || "Unknown location")}</div>
         </div>
-        <span class="map-confidence confidence-${escapeHtml(String(marker.confidence || "unknown"))}">
+        <span class="map-confidence confidence-${escapeHtml(confidenceClassName(marker.confidence))}">
           ${escapeHtml(confidenceLabel)}
         </span>
       </div>
@@ -343,7 +444,7 @@ function renderSelectedRoute(route, passageContext, options = {}) {
           <h3>${escapeHtml(route.name || "Unnamed route")}</h3>
           <div class="map-details-subtitle">${escapeHtml(route.period || "Unknown period")}</div>
         </div>
-        <span class="map-confidence confidence-${escapeHtml(String(route.confidence || "unknown"))}">
+        <span class="map-confidence confidence-${escapeHtml(confidenceClassName(route.confidence))}">
           ${escapeHtml(confidenceLabel)}
         </span>
       </div>
@@ -398,7 +499,7 @@ function renderSelectedHistoricalLayer(layer, passageContext, options = {}) {
           <h3>${escapeHtml(layer.name || "Unnamed layer")}</h3>
           <div class="map-details-subtitle">${escapeHtml(layer.period || "Unknown period")}</div>
         </div>
-        <span class="map-confidence confidence-${escapeHtml(String(layer.confidence || "unknown"))}">
+        <span class="map-confidence confidence-${escapeHtml(confidenceClassName(layer.confidence))}">
           ${escapeHtml(confidenceLabel)}
         </span>
       </div>
@@ -453,7 +554,7 @@ function renderSelectedPoliticalContext(layer, passageContext, options = {}) {
           <h3>${escapeHtml(layer.name || "Unnamed political context")}</h3>
           <div class="map-details-subtitle">${escapeHtml(layer.entity_type || layer.period || "Unknown period")}</div>
         </div>
-        <span class="map-confidence confidence-${escapeHtml(String(layer.confidence || "unknown"))}">
+        <span class="map-confidence confidence-${escapeHtml(confidenceClassName(layer.confidence))}">
           ${escapeHtml(confidenceLabel)}
         </span>
       </div>
@@ -557,6 +658,7 @@ function renderPoliticalContextLayerOverview(layers, visiblePoliticalContextLaye
           <span>
             <strong>${escapeHtml(layer.name || "Unnamed context")}</strong>
             <span>${escapeHtml(layer.entity_type || layer.period || "Unknown period")} · ${escapeHtml(prettyConfidence(layer.confidence))}</span>
+            <span>${escapeHtml(layer.summary || layer.description || "No summary available.")}</span>
           </span>
         </label>
       `;
