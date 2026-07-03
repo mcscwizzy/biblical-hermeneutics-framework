@@ -20,13 +20,13 @@
   <script>
     window.BHFCesiumIonToken = {{ cesium_ion_token|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}?v=20260702a">
+  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}?v=20260703a">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <script src="{{ url_for('static', path='/api/http.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-status.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-study-panels.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-search.js') }}" defer></script>
-  <script src="{{ url_for('static', path='/htmx-lite.js') }}?v=20260702a" defer></script>
+  <script src="{{ url_for('static', path='/htmx-lite.js') }}?v=20260703a" defer></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
   <script type="module" src="{{ url_for('static', path='/maps/MapPanel.js') }}?v=20260630"></script>
   <script type="module" src="{{ url_for('static', path='/maps/Map3DPanel.js') }}?v=20260702a"></script>
@@ -52,6 +52,15 @@
     {% if config_warning %}
       <div class="notice" role="status">{{ config_warning }}</div>
     {% endif %}
+
+    <button
+      type="button"
+      class="secondary workspace-mobile-minimize"
+      data-workspace-collapse-toggle
+      aria-label="Collapse panel"
+    >
+      Minimize
+    </button>
 
     <section class="reader-layout">
       <section class="reader-column" aria-labelledby="reader-heading">
@@ -122,12 +131,10 @@
 
       <aside class="study-panel" id="study-panel" aria-label="Study panel">
         <div class="workspace-panel" data-workspace-tabs data-default-tab="ask">
-          <div class="workspace-mobile-header">
-            <strong>Workspace</strong>
-            <button type="button" class="secondary" data-workspace-collapse-toggle aria-label="Collapse workspace">Minimize</button>
-            <button type="button" class="secondary" data-workspace-drawer-close aria-label="Close workspace">Close</button>
+          <div class="workspace-panel-actions" aria-label="Workspace actions">
+            <button type="button" class="secondary" data-workspace-collapse-toggle aria-label="Minimize workspace">Minimize workspace</button>
           </div>
-          <div class="workspace-tab-bar" role="tablist" aria-label="Study workspace">
+          <div class="workspace-tab-bar" role="tablist" aria-label="Study tabs">
             <button type="button" class="workspace-tab is-ask" id="workspace-tab-ask" role="tab" aria-selected="true" aria-controls="workspace-pane-ask" data-workspace-tab="ask">Ask</button>
             <button type="button" class="workspace-tab" id="workspace-tab-notes" role="tab" aria-selected="false" aria-controls="workspace-pane-notes" data-workspace-tab="notes" tabindex="-1">Notes</button>
             <button type="button" class="workspace-tab" id="workspace-tab-highlights" role="tab" aria-selected="false" aria-controls="workspace-pane-highlights" data-workspace-tab="highlights" tabindex="-1">Highlights</button>

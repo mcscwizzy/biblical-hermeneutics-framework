@@ -92,11 +92,13 @@ document.addEventListener("submit", async function (event) {
       markStatusComplete(statusPanel, finalStatus);
       latestJobComplete = true;
       wireAnswerPanelControls(answerPanel);
+      revealAnswerPanel(answerPanel);
       await loadSavedStudies(currentChapter?.book, currentChapter?.chapter);
     }
   } catch (error) {
     markStatusFailed(statusPanel, error.message || "Request failed.");
     answerPanel.innerHTML = errorHtml(error.message || "Request failed.");
+    revealAnswerPanel(answerPanel);
     latestJobComplete = false;
   } finally {
     stopWaiting();
@@ -245,15 +247,15 @@ function initializeReaderMode() {
 
 function initializeWorkspaceExpansion() {
   const toggle = document.querySelector("[data-workspace-expand-toggle]");
-  const collapseToggle = document.querySelector("[data-workspace-collapse-toggle]");
-  if (!toggle && !collapseToggle) {
+  const collapseToggles = Array.from(document.querySelectorAll("[data-workspace-collapse-toggle]"));
+  if (!toggle && collapseToggles.length === 0) {
     return;
   }
   applyWorkspaceExpansion(false);
   if (toggle) {
     toggle.addEventListener("click", toggleWorkspaceExpansion);
   }
-  if (collapseToggle) {
+  for (const collapseToggle of collapseToggles) {
     collapseToggle.addEventListener("click", () => applyWorkspaceExpansion(false));
   }
 }
@@ -263,6 +265,8 @@ function applyWorkspaceExpansion(enabled) {
   document.body.classList.toggle("workspace-expanded", nextEnabled);
   if (nextEnabled) {
     closeWorkspaceDrawer();
+  } else if (window.matchMedia("(max-width: 900px)").matches) {
+    closeWorkspaceDrawer();
   }
   const toggle = document.querySelector("[data-workspace-expand-toggle]");
   if (toggle) {
@@ -270,9 +274,8 @@ function applyWorkspaceExpansion(enabled) {
     toggle.setAttribute("aria-pressed", String(nextEnabled));
     toggle.setAttribute("aria-expanded", String(nextEnabled));
   }
-  const collapseToggle = document.querySelector("[data-workspace-collapse-toggle]");
-  if (collapseToggle) {
-    collapseToggle.hidden = !nextEnabled;
+  const collapseToggles = document.querySelectorAll("[data-workspace-collapse-toggle]");
+  for (const collapseToggle of collapseToggles) {
     collapseToggle.setAttribute("aria-expanded", String(nextEnabled));
   }
   const drawerToggle = document.querySelector("[data-workspace-drawer-toggle]");
@@ -283,6 +286,17 @@ function applyWorkspaceExpansion(enabled) {
 
 function toggleWorkspaceExpansion() {
   applyWorkspaceExpansion(!document.body.classList.contains("workspace-expanded"));
+}
+
+function revealAnswerPanel(answerPanel) {
+  if (!answerPanel || !window.matchMedia("(max-width: 900px)").matches) {
+    return;
+  }
+  window.requestAnimationFrame(() => {
+    if (answerPanel.isConnected) {
+      answerPanel.scrollIntoView({ block: "start", behavior: "smooth" });
+    }
+  });
 }
 
 function readReaderModePreference() {
@@ -448,7 +462,6 @@ function activateWorkspaceTab(tabId) {
 
 function initializeWorkspaceDrawer() {
   const toggle = document.querySelector("[data-workspace-drawer-toggle]");
-  const close = document.querySelector("[data-workspace-drawer-close]");
   const panel = document.querySelector("#study-panel");
   if (panel && window.matchMedia("(max-width: 900px)").matches) {
     panel.classList.remove("is-open");
@@ -457,9 +470,6 @@ function initializeWorkspaceDrawer() {
     toggle.addEventListener("click", () => {
       setWorkspaceDrawerOpen(!panel?.classList.contains("is-open"));
     });
-  }
-  if (close) {
-    close.addEventListener("click", () => setWorkspaceDrawerOpen(false));
   }
   window.addEventListener("resize", () => {
     if (window.matchMedia("(min-width: 901px)").matches) {

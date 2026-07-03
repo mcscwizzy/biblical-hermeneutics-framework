@@ -255,6 +255,20 @@ body.reader-mode .chapter-text {
   box-shadow: 0 14px 28px rgb(26 42 56 / 8%);
 }
 
+.workspace-panel-actions {
+  display: none;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid #d8dee4;
+  background:
+    linear-gradient(180deg, rgb(251 252 253 / 98%), rgb(245 249 252 / 96%));
+}
+
+body.workspace-expanded .workspace-panel-actions {
+  display: flex;
+}
+
 .workspace-tab-bar {
   position: sticky;
   top: 0;
@@ -265,8 +279,30 @@ body.reader-mode .chapter-text {
   border-bottom: 1px solid #d8dee4;
   background:
     linear-gradient(180deg, rgb(251 252 253 / 98%), rgb(245 249 252 / 96%));
-  overflow-x: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-gutter: stable both-edges;
   scrollbar-width: thin;
+}
+
+.workspace-tab-bar::after {
+  content: "";
+  flex: 0 0 24px;
+}
+
+.workspace-tab-bar::-webkit-scrollbar {
+  height: 12px;
+}
+
+.workspace-tab-bar::-webkit-scrollbar-track {
+  background: #e1e8ee;
+  border-radius: 999px;
+}
+
+.workspace-tab-bar::-webkit-scrollbar-thumb {
+  background: #9fb6c8;
+  border-radius: 999px;
+  border: 3px solid #e1e8ee;
 }
 
 .workspace-tab {
@@ -309,6 +345,10 @@ body.reader-mode .chapter-text {
 
 .workspace-drawer-toggle,
 .workspace-mobile-header {
+  display: none;
+}
+
+.workspace-mobile-minimize {
   display: none;
 }
 
@@ -792,19 +832,38 @@ html[data-theme="dark"] .map-panel-body {
     box-shadow: -20px 0 48px rgb(17 30 41 / 20%);
   }
 
+  .workspace-panel-actions {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 4;
+  }
+
   body.workspace-expanded .workspace-panel {
     height: calc(100dvh - 16px);
     border-radius: 12px;
   }
 
-  .workspace-mobile-header {
-    display: flex;
-    justify-content: space-between;
+  .workspace-mobile-minimize {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 10001;
+    display: none;
+    min-height: 44px;
+    padding: 0 14px;
+    border-radius: 999px;
+    border: 1px solid #c7d1da;
+    background: #fff;
+    color: #24313b;
+    font-weight: 750;
+    box-shadow: 0 10px 24px rgb(17 30 41 / 18%);
+  }
+
+  body.workspace-expanded .workspace-mobile-minimize {
+    display: inline-flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px;
-    border-bottom: 1px solid #d8dee4;
-    background: linear-gradient(180deg, rgb(251 252 253 / 98%), rgb(245 249 252 / 96%));
+    justify-content: center;
   }
 
   .workspace-drawer-toggle {
