@@ -4,6 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BHF ASV Reader</title>
+  <meta name="theme-color" content="{{ runtime_config.themeColor }}">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="{{ url_for('static', path='/icons/icon-192.png') }}" type="image/png">
+  <link rel="apple-touch-icon" href="{{ url_for('static', path='/icons/apple-touch-icon.png') }}">
   <script>
     (() => {
       try {
@@ -20,6 +24,7 @@
   <script>
     window.BHFCesiumIonToken = {{ cesium_ion_token|tojson }};
     window.BHFTestMode = {{ test_mode|tojson }};
+    window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
   <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}?v=20260703a">
   <script src="{{ url_for('static', path='/api/http.js') }}" defer></script>
@@ -27,6 +32,7 @@
   <script src="{{ url_for('static', path='/htmx-study-panels.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-search.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-lite.js') }}?v=20260703a" defer></script>
+  <script src="{{ url_for('static', path='/pwa.js') }}" defer></script>
   {% if not test_mode %}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
@@ -636,5 +642,12 @@
       <button type="button" data-context-action="word_study">Word Study</button>
     </nav>
   </main>
+  <nav class="mobile-bottom-nav" aria-label="Mobile navigation" data-mobile-nav>
+    <button type="button" class="mobile-bottom-nav-item is-active" data-mobile-section="bible" data-testid="mobile-nav-bible" aria-pressed="true">Bible</button>
+    <button type="button" class="mobile-bottom-nav-item" data-mobile-section="ask" data-testid="mobile-nav-ask" aria-pressed="false">Ask</button>
+    <button type="button" class="mobile-bottom-nav-item" data-mobile-section="notes" data-testid="mobile-nav-notes" aria-pressed="false">Notes</button>
+    <button type="button" class="mobile-bottom-nav-item" data-mobile-section="studies" data-testid="mobile-nav-studies" aria-pressed="false">Studies</button>
+    <button type="button" class="mobile-bottom-nav-item" data-mobile-section="maps" data-testid="mobile-nav-maps" aria-pressed="false">Maps</button>
+  </nav>
 </body>
 </html>

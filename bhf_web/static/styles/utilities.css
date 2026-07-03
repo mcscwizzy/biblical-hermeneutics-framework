@@ -374,6 +374,10 @@ code {
   background: #245b82;
 }
 
+.mobile-bottom-nav {
+  display: none;
+}
+
 @media (min-width: 901px) and (max-width: 980px) {
   .reader-layout {
     grid-template-columns: 1fr;
@@ -398,6 +402,7 @@ code {
   .page {
     width: min(100% - 20px, 1440px);
     padding-top: 16px;
+    padding-bottom: calc(20px + var(--mobile-nav-height) + env(safe-area-inset-bottom));
   }
 
   .header,
@@ -545,6 +550,109 @@ code {
 
   .map-shortcut {
     width: 100%;
+  }
+
+  button {
+    min-height: 44px;
+  }
+
+  .mobile-bottom-nav {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: 10002;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 6px;
+    padding: 8px max(8px, env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left));
+    border-top: 1px solid var(--border);
+    background: linear-gradient(180deg, rgb(252 253 254 / 98%), rgb(245 249 252 / 98%));
+    box-shadow: 0 -10px 24px rgb(17 30 41 / 10%);
+    backdrop-filter: blur(10px);
+  }
+
+  .mobile-bottom-nav-item {
+    min-height: 46px;
+    padding: 0 8px;
+    border: 1px solid var(--border-strong);
+    border-radius: 14px;
+    background: var(--surface);
+    color: var(--page-muted);
+    font-size: 0.82rem;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+
+  .mobile-bottom-nav-item.is-active,
+  .mobile-bottom-nav-item[aria-pressed="true"] {
+    border-color: var(--accent);
+    color: var(--accent-text);
+    background: var(--accent-soft);
+  }
+
+  .context-menu {
+    min-width: min(260px, calc(100vw - 16px));
+    max-height: calc(100dvh - var(--mobile-nav-height) - 24px);
+    overflow: auto;
+  }
+
+  .verse-actions-button {
+    display: inline-flex;
+  }
+
+  body[data-mobile-section="bible"] .study-panel {
+    display: none;
+  }
+
+  body[data-mobile-section="ask"] .reader-column,
+  body[data-mobile-section="notes"] .reader-column,
+  body[data-mobile-section="studies"] .reader-column,
+  body[data-mobile-section="maps"] .reader-column {
+    display: none;
+  }
+
+  body[data-mobile-section="ask"] .study-panel,
+  body[data-mobile-section="notes"] .study-panel,
+  body[data-mobile-section="studies"] .study-panel,
+  body[data-mobile-section="maps"] .study-panel {
+    display: block;
+  }
+
+  body[data-mobile-section="bible"] .workspace-drawer-toggle {
+    display: inline-flex;
+  }
+
+  body[data-mobile-section="bible"] .reader-column {
+    display: block;
+  }
+
+  body.reader-mode[data-mobile-section="ask"] .study-panel,
+  body.reader-mode[data-mobile-section="notes"] .study-panel,
+  body.reader-mode[data-mobile-section="studies"] .study-panel,
+  body.reader-mode[data-mobile-section="maps"] .study-panel {
+    display: block;
+  }
+
+  body.reader-mode[data-mobile-section="ask"] .reader-column,
+  body.reader-mode[data-mobile-section="notes"] .reader-column,
+  body.reader-mode[data-mobile-section="studies"] .reader-column,
+  body.reader-mode[data-mobile-section="maps"] .reader-column {
+    display: none;
+  }
+
+  .notes-list,
+  .highlights-list,
+  .saved-studies-list {
+    gap: 10px;
+  }
+
+  .note,
+  .highlight-item,
+  .saved-study {
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
   }
 }
 

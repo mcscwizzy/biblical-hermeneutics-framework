@@ -5,6 +5,9 @@
 const POLL_INTERVAL_MS = 750;
 const READER_LONG_PRESS_DELAY_MS = 550;
 const READER_LONG_PRESS_MOVE_THRESHOLD_PX = 14;
+const MOBILE_SECTION_STORAGE_KEY = "bhf-mobile-section";
+const BHF_RUNTIME = window.BHFRuntimeConfig || {};
+const PHONE_BREAKPOINT = Number(BHF_RUNTIME.breakpoints?.phone || 680);
 const GENERAL_QUESTION_MODE = "general_question";
 const THEME_STORAGE_KEY = "bhf-theme";
 const READER_MODE_STORAGE_KEY = "bhf-reader-mode";
@@ -32,6 +35,7 @@ let contextMenuState = null;
 let lastMapAIFallbackKey = null;
 let activeLiveAnswerPanel = null;
 let readerLongPressState = null;
+let mobileSection = null;
 const BHF_HTTP = window.BHFApi || {};
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -39,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeReaderMode();
   initializeWorkspaceExpansion();
   initializeWorkspaceTabs();
+  initializeMobileNavigation();
   initializeReader();
   initializeWorkspaceBridge();
   initializeWorkspaceDrawer();
@@ -154,6 +159,7 @@ async function initializeReader() {
   reader.addEventListener("pointerup", cancelReaderLongPress);
   reader.addEventListener("pointercancel", cancelReaderLongPress);
   reader.addEventListener("pointerleave", handleReaderPointerLeave);
+  reader.addEventListener("click", handleReaderActionButtonClick);
   document.addEventListener("click", handleChapterNavigationClick);
   const contextMenu = document.querySelector("#reader-context-menu");
   const searchForm = document.querySelector("[data-bible-search]");
@@ -220,6 +226,49 @@ function initializeWorkspaceTabs() {
   activateWorkspaceTab(defaultTab);
 }
 
+function initializeMobileNavigation() {
+  const nav = document.querySelector("[data-mobile-nav]");
+  const buttons = Array.from(nav?.querySelectorAll("[data-mobile-section]") || []);
+  if (!nav || buttons.length === 0) {
+    return;
+  }
+
+  const savedSection = readMobileSectionPreference();
+  const initialSection = resolveInitialMobileSection(savedSection);
+  applyMobileSection(initialSection, {
+    persist: false,
+    updateWorkspace: initialSection !== "bible",
+  });
+
+  for (const button of buttons) {
+    button.addEventListener("click", () => {
+      activateMobileSection(button.dataset.mobileSection || "bible");
+    });
+  }
+
+  document.addEventListener("bhf:workspace-tab-changed", (event) => {
+    if (!isPhoneViewport()) {
+      return;
+    }
+    const nextSection = mobileSectionFromWorkspaceTab(event.detail?.tabId);
+    if (nextSection) {
+      applyMobileSection(nextSection, { persist: false, updateWorkspace: false });
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (!isPhoneViewport()) {
+      updateMobileNavState(null);
+      return;
+    }
+    const nextSection = mobileSection || initialSection;
+    applyMobileSection(nextSection, {
+      persist: false,
+      updateWorkspace: !mobileSection && nextSection !== "bible",
+    });
+  });
+}
+
 function initializeWorkspaceBridge() {
   if (typeof window === "undefined") {
     return;
@@ -231,6 +280,107 @@ function initializeWorkspaceBridge() {
     navigateToPassage,
     openPassageReference,
   };
+}
+
+function activateMobileSection(sectionId) {
+  applyMobileSection(sectionId, { persist: true, updateWorkspace: true });
+}
+
+function applyMobileSection(sectionId, options = {}) {
+  if (!isPhoneViewport()) {
+    return;
+  }
+
+  const nextSection = normalizeMobileSection(sectionId);
+  mobileSection = nextSection;
+  document.body.dataset.mobileSection = nextSection;
+  updateMobileNavState(nextSection);
+
+  if (options.persist !== false) {
+    try {
+      window.localStorage.setItem(MOBILE_SECTION_STORAGE_KEY, nextSection);
+    } catch (_error) {
+      // Ignore storage errors in restricted environments.
+    }
+  }
+
+  if (nextSection === "bible") {
+    closeWorkspaceDrawer();
+    return;
+  }
+
+  setWorkspaceDrawerOpen(true);
+  if (options.updateWorkspace !== false) {
+    const workspaceTab = mobileSectionToWorkspaceTab(nextSection);
+    if (workspaceTab) {
+      activateWorkspaceTab(workspaceTab);
+    }
+  }
+}
+
+function updateMobileNavState(sectionId) {
+  const activeSection = normalizeMobileSection(sectionId || mobileSection || "bible");
+  document.querySelectorAll("[data-mobile-section]").forEach((button) => {
+    const isActive = button.dataset.mobileSection === activeSection;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+}
+
+function mobileSectionFromWorkspaceTab(tabId) {
+  if (!tabId) {
+    return null;
+  }
+  if (tabId === "ask" || tabId === "notes" || tabId === "maps") {
+    return tabId;
+  }
+  if (tabId === "highlights" || tabId === "saved" || tabId === "journey") {
+    return "studies";
+  }
+  return null;
+}
+
+function mobileSectionToWorkspaceTab(sectionId) {
+  const normalized = normalizeMobileSection(sectionId);
+  if (normalized === "studies") {
+    const currentWorkspaceTab = getCurrentWorkspaceTab();
+    if (["highlights", "saved", "journey"].includes(currentWorkspaceTab)) {
+      return currentWorkspaceTab;
+    }
+    return "saved";
+  }
+  return normalized === "bible" ? null : normalized;
+}
+
+function getCurrentWorkspaceTab() {
+  const activeTab = document.querySelector(".workspace-tab[aria-selected='true']");
+  return activeTab?.dataset.workspaceTab || null;
+}
+
+function normalizeMobileSection(sectionId) {
+  const normalized = String(sectionId || "bible").toLowerCase();
+  if (["bible", "ask", "notes", "studies", "maps"].includes(normalized)) {
+    return normalized;
+  }
+  return "bible";
+}
+
+function isPhoneViewport() {
+  return window.matchMedia(`(max-width: ${PHONE_BREAKPOINT}px)`).matches;
+}
+
+function readMobileSectionPreference() {
+  try {
+    const saved = window.localStorage.getItem(MOBILE_SECTION_STORAGE_KEY);
+    return normalizeMobileSection(saved || "bible");
+  } catch (_error) {
+    return "bible";
+  }
+}
+
+function resolveInitialMobileSection(savedSection) {
+  const saved = normalizeMobileSection(savedSection || "bible");
+  return saved;
 }
 
 function initializeTheme() {
@@ -432,7 +582,7 @@ function requestJson(url, options = {}, fallbackMessage = "Request failed.") {
   if (typeof BHF_HTTP.requestJson === "function") {
     return BHF_HTTP.requestJson(url, options, fallbackMessage);
   }
-  return fetch(url, options).then(async (response) => {
+  return fetch(resolveBackendUrl(url), options).then(async (response) => {
     const data = await response.json();
     if (!response.ok) {
       throw new Error(data.error || fallbackMessage);
@@ -445,13 +595,31 @@ function requestText(url, options = {}, fallbackMessage = "Request failed.") {
   if (typeof BHF_HTTP.requestText === "function") {
     return BHF_HTTP.requestText(url, options, fallbackMessage);
   }
-  return fetch(url, options).then(async (response) => {
+  return fetch(resolveBackendUrl(url), options).then(async (response) => {
     const data = await response.text();
     if (!response.ok) {
       throw new Error(data || fallbackMessage);
     }
     return data;
   });
+}
+
+function resolveBackendUrl(url) {
+  if (typeof BHF_HTTP.resolveUrl === "function") {
+    return BHF_HTTP.resolveUrl(url);
+  }
+  const raw = String(url || "");
+  if (/^(?:[a-z]+:)?\/\//i.test(raw) || raw.startsWith("data:") || raw.startsWith("blob:")) {
+    return raw;
+  }
+  const base = String(BHF_RUNTIME.apiBaseUrl || "").replace(/\/+$/, "");
+  if (!base) {
+    return raw;
+  }
+  if (raw.startsWith("/")) {
+    return `${base}${raw}`;
+  }
+  return `${base}/${raw}`;
 }
 
 function handleWorkspaceTabKeydown(event, tabs) {
@@ -736,8 +904,16 @@ function renderChapter(data) {
     text.className = "verse-text";
     text.textContent = verse.text + " ";
 
+    const actions = document.createElement("button");
+    actions.type = "button";
+    actions.className = "secondary verse-actions-button";
+    actions.dataset.verseActions = "true";
+    actions.textContent = "Actions";
+    actions.setAttribute("aria-label", `Open actions for ${data.book} ${data.chapter}:${verse.verse}`);
+
     verseSpan.appendChild(number);
     verseSpan.appendChild(text);
+    verseSpan.appendChild(actions);
     paragraph.appendChild(verseSpan);
   }
   reader.innerHTML = "";
@@ -754,6 +930,27 @@ function renderChapter(data) {
   nextButton.textContent = ">>>";
   footer.appendChild(nextButton);
   reader.appendChild(footer);
+}
+
+function handleReaderActionButtonClick(event) {
+  const button = event.target.closest("[data-verse-actions]");
+  if (!button) {
+    return;
+  }
+  const verse = button.closest("[data-verse]");
+  if (!verse || !currentChapter) {
+    return;
+  }
+  const context = selectionContextFromDocument() || contextFromVerse(verse);
+  if (!context) {
+    return;
+  }
+  event.preventDefault();
+  event.stopPropagation();
+  contextMenuState = context;
+  applySelectionContext(context);
+  const rect = button.getBoundingClientRect();
+  showContextMenu(rect.left + rect.width / 2, rect.bottom + 8, context);
 }
 
 function collectSelectedVerseText(startVerse, endVerse) {

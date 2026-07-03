@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import os
 from pathlib import Path
 
@@ -38,6 +39,7 @@ from .jobs import (
     run_ask_job as _run_ask_job,
     run_search_fallback_job as _run_search_fallback_job,
 )
+from .runtime import load_runtime_config
 from .services.web_helpers import available_profiles as _available_profiles
 
 
@@ -46,7 +48,8 @@ templates = Jinja2Templates(directory=str(PACKAGE_DIR / "templates"))
 
 
 def create_app() -> FastAPI:
-    web_app = FastAPI(title="BHF Agent Local UI")
+    runtime_config = load_runtime_config()
+    web_app = FastAPI(title="Biblical Hermeneutics Framework")
     web_app.mount(
         "/static",
         StaticFiles(directory=str(PACKAGE_DIR / "static")),
@@ -60,6 +63,50 @@ def create_app() -> FastAPI:
             name="frontend",
         )
 
+    def shared_context(extra: dict[str, object] | None = None) -> dict[str, object]:
+        context: dict[str, object] = {
+            "runtime_config": runtime_config,
+        }
+        if extra:
+            context.update(extra)
+        return context
+
+    @web_app.get("/manifest.webmanifest", include_in_schema=False)
+    async def manifest() -> Response:
+        manifest_data = {
+            "name": runtime_config["appName"],
+            "short_name": runtime_config["shortName"],
+            "start_url": "/",
+            "scope": "/",
+            "display": "standalone",
+            "background_color": runtime_config["backgroundColor"],
+            "theme_color": runtime_config["themeColor"],
+            "icons": [
+                {
+                    "src": "/static/icons/icon-192.png",
+                    "sizes": "192x192",
+                    "type": "image/png",
+                },
+                {
+                    "src": "/static/icons/maskable.png",
+                    "sizes": "512x512",
+                    "type": "image/png",
+                    "purpose": "maskable any",
+                },
+            ],
+        }
+        return Response(
+            content=json.dumps(manifest_data, separators=(",", ":")),
+            media_type="application/manifest+json",
+        )
+
+    @web_app.get("/sw.js", include_in_schema=False)
+    async def service_worker() -> Response:
+        return Response(
+            content=(PACKAGE_DIR / "static" / "sw.js").read_text(encoding="utf-8"),
+            media_type="application/javascript",
+        )
+
     @web_app.get("/api/health", response_class=JSONResponse)
     async def health() -> dict[str, str]:
         return {"status": "ok", "service": "bhf-web"}
@@ -67,6 +114,14 @@ def create_app() -> FastAPI:
     @web_app.get("/favicon.ico", include_in_schema=False)
     async def favicon() -> Response:
         return Response(content=b"", media_type="image/x-icon")
+
+    @web_app.get("/offline", response_class=HTMLResponse)
+    async def offline(request: Request) -> HTMLResponse:
+        return templates.TemplateResponse(
+            request,
+            "offline.html",
+            shared_context(),
+        )
 
     @web_app.get("/api/llm/health", response_class=JSONResponse)
     async def llm_health() -> JSONResponse:
@@ -138,15 +193,17 @@ def create_app() -> FastAPI:
         return templates.TemplateResponse(
             request,
             "index.html",
-            {
-                "form": form_values_from_config(loaded.config),
-                "profiles": _available_profiles(loaded.config.profile),
-                "answer_modes": ANSWER_MODES,
-                "config_warning": loaded.warning,
-                "cesium_ion_token": os.environ.get("BHF_CESIUM_ION_TOKEN", "").strip(),
-                "books": list_books(),
-                "test_mode": settings.TEST_MODE,
-            },
+            shared_context(
+                {
+                    "form": form_values_from_config(loaded.config),
+                    "profiles": _available_profiles(loaded.config.profile),
+                    "answer_modes": ANSWER_MODES,
+                    "config_warning": loaded.warning,
+                    "cesium_ion_token": os.environ.get("BHF_CESIUM_ION_TOKEN", "").strip(),
+                    "books": list_books(),
+                    "test_mode": settings.TEST_MODE,
+                }
+            ),
         )
 
     @web_app.get("/api/bible/books", response_class=JSONResponse)

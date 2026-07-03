@@ -21,6 +21,7 @@ from bhf_agent.models import (
 from bhf_web.forms import config_from_form
 from bhf_web.forms import load_web_defaults
 from bhf_agent.study_db import get_source, initialize_database, list_sources
+from bhf_web.runtime import load_runtime_config
 
 try:
     from bhf_web.app import AskJob, app
@@ -194,6 +195,25 @@ class WebFormTests(unittest.TestCase):
         self.assertEqual(config.profile, "minimal-7b")
         self.assertEqual(config.answer_mode, "concise")
         self.assertEqual(config.timeout_seconds, 360)
+
+
+class RuntimeConfigTests(unittest.TestCase):
+    def test_runtime_config_defaults_and_overrides(self):
+        env = {
+            "BHF_RUNTIME_MODE": "capacitor",
+            "BHF_API_BASE_URL": "https://example.com/bhf",
+            "BHF_PROVIDER_LABELS_JSON": '{"local":"On-device","openai":"Cloud"}',
+        }
+
+        with patch.dict(os.environ, env, clear=False):
+            runtime = load_runtime_config()
+
+        self.assertEqual(runtime["mode"], "capacitor")
+        self.assertEqual(runtime["apiBaseUrl"], "https://example.com/bhf")
+        self.assertEqual(runtime["providerLabels"]["local"], "On-device")
+        self.assertEqual(runtime["providerLabels"]["openai"], "Cloud")
+        self.assertEqual(runtime["providerLabels"]["ollama"], "Ollama")
+        self.assertEqual(runtime["providerLabels"]["apple-native-placeholder"], "Apple Native Placeholder")
 
 
 class WebAssetTests(unittest.TestCase):
@@ -552,6 +572,10 @@ class WebAppTests(unittest.TestCase):
 
         self.assertEqual(response["status"], 200)
         self.assertIn("BHF ASV Reader", response["body"])
+        self.assertIn("BHFRuntimeConfig", response["body"])
+        self.assertIn("manifest.webmanifest", response["body"])
+        self.assertIn("apple-touch-icon", response["body"])
+        self.assertIn("pwa.js", response["body"])
         self.assertIn("/curation", response["body"])
         self.assertIn("ASV Bible", response["body"])
         self.assertIn("book-select", response["body"])
@@ -601,6 +625,12 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("leaflet.css", response["body"])
         self.assertIn("highlights-list", response["body"])
         self.assertIn("saved-studies-list", response["body"])
+        self.assertIn("mobile-bottom-nav", response["body"])
+        self.assertIn("mobile-nav-bible", response["body"])
+        self.assertIn("mobile-nav-ask", response["body"])
+        self.assertIn("mobile-nav-notes", response["body"])
+        self.assertIn("mobile-nav-studies", response["body"])
+        self.assertIn("mobile-nav-maps", response["body"])
         self.assertIn("name=\"question\"", response["body"])
         self.assertIn("data-question-scope", response["body"])
         self.assertIn("data-next-chapter", response["body"])
@@ -610,6 +640,30 @@ class WebAppTests(unittest.TestCase):
         self.assertNotIn("progress-track", response["body"])
         self.assertNotIn("data-total-elapsed", response["body"])
         self.assertNotIn("status-percent", response["body"])
+
+    def test_manifest_and_offline_assets_load(self):
+        manifest = asgi_request("GET", "/manifest.webmanifest")
+        offline = asgi_request("GET", "/offline")
+        service_worker = asgi_request("GET", "/sw.js")
+
+        self.assertEqual(manifest["status"], 200)
+        manifest_data = json.loads(manifest["body"])
+        self.assertEqual(manifest_data["name"], "Biblical Hermeneutics Framework")
+        self.assertEqual(manifest_data["short_name"], "BHF")
+        self.assertEqual(manifest_data["display"], "standalone")
+        self.assertEqual(manifest_data["start_url"], "/")
+        self.assertEqual(manifest_data["scope"], "/")
+        self.assertEqual(manifest_data["theme_color"], "#245b82")
+        self.assertEqual(manifest_data["background_color"], "#f6f7f8")
+        self.assertGreaterEqual(len(manifest_data["icons"]), 1)
+
+        self.assertEqual(offline["status"], 200)
+        self.assertIn("Biblical Hermeneutics Framework", offline["body"])
+        self.assertIn("offline-card", offline["body"])
+
+        self.assertEqual(service_worker["status"], 200)
+        self.assertIn("networkFirstNavigation", service_worker["body"])
+        self.assertIn("networkFirstAsset", service_worker["body"])
 
     def test_get_curation_page_returns_200(self):
         with self._temp_curation_db() as db_path:

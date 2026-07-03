@@ -11,12 +11,19 @@ class WorkspacePage(BasePage):
         self.click(f'[data-testid="{name}-tab"]')
         return self
 
+    def open_mobile_section(self, name: str):
+        self.click(f'[data-testid="mobile-nav-{name}"]')
+        return self
+
     def assert_tab_visible(self, name: str):
         tab = self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, f'[data-testid="{name}-tab"]')))
         pane = self.wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, f'#workspace-pane-{name}')))
         self.wait.until(lambda driver: pane.is_displayed())
         self.wait.until(lambda driver: tab.get_attribute("aria-selected") == "true")
         return self
+
+    def active_mobile_section(self):
+        return self.driver.execute_script("return document.body.dataset.mobileSection || ''")
 
     def toggle_dark_mode(self):
         self.click('[data-testid="theme-toggle"]')

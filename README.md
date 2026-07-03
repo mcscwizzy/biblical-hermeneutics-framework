@@ -103,6 +103,10 @@ chapter or selected verses, and keep local-only study notes under
 `.bhf/study.sqlite`. The reader also supports right-click study actions,
 persisted highlights, and saved studies.
 
+For mobile/PWA details, see [`docs/local-ui.md`](docs/local-ui.md). It covers
+the phone-width bottom navigation, runtime config, and install steps for iOS
+and Android.
+
 Browser regression tests for the web UI live under `tests/gui/` and use a
 deterministic test mode so they can run without a live LLM. See
 [`tests/README.md`](tests/README.md) for the required selectors and guardrails.

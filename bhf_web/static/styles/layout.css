@@ -23,6 +23,11 @@
   --warning-text: #6b5c16;
   --danger-bg: #fff1f1;
   --danger-text: #9a2c2c;
+  --mobile-space: 14px;
+  --mobile-header-height: 72px;
+  --mobile-nav-height: 70px;
+  --mobile-panel-gap: 12px;
+  --mobile-panel-min-height: 280px;
   --shadow-soft: 0 14px 28px rgb(26 42 56 / 8%);
   --shadow-strong: 0 28px 56px rgb(17 30 41 / 22%);
 }
@@ -57,6 +62,7 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--page-text);
   background: var(--app-bg);
+  overflow-x: hidden;
 }
 
 body.map-modal-open {

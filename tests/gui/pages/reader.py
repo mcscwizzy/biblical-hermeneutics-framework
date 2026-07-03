@@ -59,3 +59,7 @@ class BibleReaderPage(BasePage):
         self.wait.until(lambda driver: driver.execute_script(script, verse_number))
         self.wait.until(lambda driver: driver.find_element(By.CSS_SELECTOR, f'#chapter-reader [data-verse="{verse_number}"]').get_attribute("class").find("selected") != -1)
         return self
+
+    def open_verse_actions(self, verse_number: int | str):
+        self.click(f'#chapter-reader [data-verse="{int(verse_number)}"] [data-verse-actions]')
+        return self

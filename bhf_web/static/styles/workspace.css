@@ -200,6 +200,16 @@ body.reader-mode .chapter-text {
   padding: 2px 1px;
 }
 
+.verse-actions-button {
+  display: none;
+  margin-inline-start: 8px;
+  min-height: 32px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  vertical-align: middle;
+}
+
 .verse.selected {
   background: #d9ecfa;
 }
@@ -1165,4 +1175,19 @@ html[data-theme="dark"] .map-panel-body {
   .saved-map-study {
     padding: 12px;
   }
+}
+
+.offline-page {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+}
+
+.offline-card {
+  width: min(680px, 100%);
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
 }

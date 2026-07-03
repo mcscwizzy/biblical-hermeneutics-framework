@@ -26,6 +26,10 @@ Then open:
 http://127.0.0.1:8000
 ```
 
+The shell serves a PWA manifest at `/manifest.webmanifest`, registers a
+service worker from `/sw.js`, and provides a basic offline fallback page at
+`/offline`.
+
 ## ASV Reader
 
 The first screen is a reader for the bundled American Standard Version dataset
@@ -36,6 +40,26 @@ dataset records its upstream source in its translation metadata.
 Choose a book and chapter with the reader controls. The chapter text is the
 primary workspace. On desktop, Ask BHF, status, answer output, and notes appear
 in the right study panel; on smaller screens they stack below the reader.
+
+### Mobile Layout
+
+The UI is now mobile-first on phone widths:
+
+- The Bible reader stays readable with tighter spacing and larger touch targets.
+- The study workspace is reachable from a bottom navigation bar with Bible,
+  Ask, Notes, Studies, and Maps tabs.
+- Verse actions have both long-press and button-based touch entry points.
+- Horizontal scrolling is avoided by default on phone widths.
+
+To test phone layouts in a browser:
+
+1. Open the app in Chrome, Firefox, or Safari dev tools.
+2. Switch to a phone viewport such as 390 x 844.
+3. Verify the bottom nav appears.
+4. Switch between Bible and Ask, then confirm the reader and study panel still
+   retain their state.
+5. Use the verse action button to open note/highlight actions on touch-sized
+   screens.
 
 ## Ask BHF From A Passage
 
@@ -176,6 +200,16 @@ If the file is missing or invalid, the UI uses built-in local defaults:
 }
 ```
 
+Runtime behavior can also be controlled with environment variables:
+
+- `BHF_RUNTIME_MODE` sets the shell mode to `web`, `pwa`, or `capacitor`.
+- `BHF_API_BASE_URL` points the browser helper at a different backend origin or
+  path prefix.
+- `BHF_PROVIDER_LABELS_JSON` can override provider labels for future UI
+  surfaces.
+
+If `BHF_API_BASE_URL` is unset, the browser keeps using same-origin requests.
+
 `timeout_seconds` controls the outbound OpenAI-compatible model request timeout.
 You can set it in `.bhf/web-config.json`, with `BHF_TIMEOUT_SECONDS`, or in the
 form for quick local testing.
@@ -200,3 +234,34 @@ If your local runtime requires an API key, place it only in
 If memory is enabled in the form, the agent uses the existing local session
 memory support. By default, session files are written under `.bhf/sessions/`,
 which is also ignored by git.
+
+## PWA Install
+
+### Android
+
+Open the site in Chrome, wait for the install prompt or use the browser menu to
+install the app, and confirm the app launches in standalone mode.
+
+### iOS
+
+Open the site in Safari, use the Share button, and choose Add to Home Screen.
+iOS does not use the same install prompt as Android, so the manual share flow is
+the normal path.
+
+The current PWA setup caches the app shell and static assets conservatively. It
+does not aggressively cache API responses, so study data still comes from the
+backend when the device is online.
+
+## Known Limitations
+
+- The Maps tab is mobile-safe, but some map workflows still depend on the
+  existing desktop-oriented panels and external tile/data sources.
+- The Apple native AI bridge is only a placeholder in the runtime config.
+- Offline mode covers the shell and static assets, not live agent responses or
+  map data that requires the backend.
+
+## Future Path
+
+- Keep tightening the PWA shell without changing the backend contract.
+- Wrap the same browser app with Capacitor once the mobile shell stabilizes.
+- Add a native Apple AI bridge later, behind the runtime abstraction point.
