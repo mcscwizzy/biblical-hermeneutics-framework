@@ -8,7 +8,6 @@ const READER_LONG_PRESS_MOVE_THRESHOLD_PX = 14;
 const GENERAL_QUESTION_MODE = "general_question";
 const THEME_STORAGE_KEY = "bhf-theme";
 const READER_MODE_STORAGE_KEY = "bhf-reader-mode";
-const WORKSPACE_EXPANDED_STORAGE_KEY = "bhf-workspace-expanded";
 const BHF_STUDY_ACTIONS = new Set([
   "ancient_context",
   "literary_context",
@@ -250,8 +249,7 @@ function initializeWorkspaceExpansion() {
   if (!toggle && !collapseToggle) {
     return;
   }
-  const savedExpanded = readWorkspaceExpansionPreference();
-  applyWorkspaceExpansion(savedExpanded, { persist: false });
+  applyWorkspaceExpansion(false);
   if (toggle) {
     toggle.addEventListener("click", toggleWorkspaceExpansion);
   }
@@ -260,19 +258,7 @@ function initializeWorkspaceExpansion() {
   }
 }
 
-function readWorkspaceExpansionPreference() {
-  try {
-    const saved = window.localStorage.getItem(WORKSPACE_EXPANDED_STORAGE_KEY);
-    if (saved === "on" || saved === "off") {
-      return saved === "on";
-    }
-  } catch (_error) {
-    return false;
-  }
-  return false;
-}
-
-function applyWorkspaceExpansion(enabled, options = {}) {
+function applyWorkspaceExpansion(enabled) {
   const nextEnabled = Boolean(enabled);
   document.body.classList.toggle("workspace-expanded", nextEnabled);
   if (nextEnabled) {
@@ -292,13 +278,6 @@ function applyWorkspaceExpansion(enabled, options = {}) {
   const drawerToggle = document.querySelector("[data-workspace-drawer-toggle]");
   if (drawerToggle) {
     drawerToggle.setAttribute("aria-expanded", String(document.body.classList.contains("workspace-drawer-open")));
-  }
-  if (options.persist !== false) {
-    try {
-      window.localStorage.setItem(WORKSPACE_EXPANDED_STORAGE_KEY, nextEnabled ? "on" : "off");
-    } catch (_error) {
-      // Ignore storage errors in restricted environments.
-    }
   }
 }
 

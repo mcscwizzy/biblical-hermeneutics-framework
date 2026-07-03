@@ -28,11 +28,7 @@ const MAP_LAYER_FILES = [
 const MAP_LAYER_DATA_BASE_PATHS = [
   "/static/data/mapLayers",
 ];
-const PLAYBACK_SPEEDS = {
-  slow: { label: "Slow", intervalMs: 2200 },
-  normal: { label: "Normal", intervalMs: 1400 },
-  fast: { label: "Fast", intervalMs: 800 },
-};
+const JOURNEY_TEXTURE_TILE_URL = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
 
 let cesiumAssetsPromise = null;
 let journeyCatalogPromise = null;
@@ -49,13 +45,6 @@ const journeyState = {
   selectedStopId: "",
   selectedSegmentId: "",
   selectedLayerFeatureId: "",
-  activeStopId: "",
-  activeSegmentId: "",
-  isPlaying: false,
-  currentStopIndex: 0,
-  playbackSpeed: "normal",
-  playbackTimerId: null,
-  playbackModeEnabled: true,
   journeySearch: "",
   journeyTestament: "",
   journeyCategory: "",
@@ -117,17 +106,6 @@ function getElements() {
     eraFilter: document.querySelector("[data-journey-filter-era]"),
     visibleCount: document.querySelector("[data-journey-visible-count]"),
     zoomButton: document.querySelector("[data-journey-zoom]"),
-    playbackState: document.querySelector("[data-journey-playback-state]"),
-    playButton: document.querySelector("[data-journey-playback-play]"),
-    pauseButton: document.querySelector("[data-journey-playback-pause]"),
-    previousButton: document.querySelector("[data-journey-playback-prev]"),
-    nextButton: document.querySelector("[data-journey-playback-next]"),
-    restartButton: document.querySelector("[data-journey-playback-restart]"),
-    speedSelect: document.querySelector("[data-journey-playback-speed]"),
-    progressLabel: document.querySelector("[data-journey-playback-label]"),
-    progressBar: document.querySelector("[data-journey-playback-bar]"),
-    progressPercent: document.querySelector("[data-journey-playback-percent]"),
-    progressValue: document.querySelector("[data-journey-playback-value]"),
     stopList: document.querySelector("[data-journey-stop-list]"),
     stopCount: document.querySelector("[data-journey-stop-count]"),
     segmentList: document.querySelector("[data-journey-segment-list]"),
@@ -246,7 +224,7 @@ function syncJourneySelectionToVisibleJourneys() {
   if (visibleJourneys.length === 0) {
     if (journeyState.selectedJourneyId) {
       journeyState.selectedJourneyId = "";
-      resetPlaybackForJourney(null);
+      resetSelectionForJourney(null);
       renderJourneyUi();
       if (journeyState.viewerReady && journeyState.viewer) {
         removeJourneyEntities();
@@ -329,32 +307,11 @@ function getOrderedJourneyStops(journey) {
     .map((entry) => entry.stop);
 }
 
-function getPlaybackStopIndex(journey, stopId) {
-  return getOrderedJourneyStops(journey).findIndex((stop) => stop.id === stopId);
-}
-
-function getPlaybackSegmentBetweenStops(journey, previousStopId, currentStopId) {
-  if (!journey || !previousStopId || !currentStopId) {
-    return null;
-  }
-  return (
-    journey.segments.find(
-      (segment) =>
-        (segment.from === previousStopId && segment.to === currentStopId) ||
-        (segment.from === currentStopId && segment.to === previousStopId)
-    ) || null
-  );
-}
-
-function getPlaybackIntervalMs() {
-  return PLAYBACK_SPEEDS[journeyState.playbackSpeed]?.intervalMs || PLAYBACK_SPEEDS.normal.intervalMs;
-}
-
-function buildStopPinSvg(stop, { selected = false, active = false } = {}) {
-  const fill = selected ? "#d18a16" : active ? "#0f7c7b" : "#245b82";
-  const stroke = selected ? "#8e5c0a" : active ? "#0a4a49" : "#153f5d";
-  const ring = active
-    ? `<circle cx="28" cy="27" r="16" fill="none" stroke="${selected ? "#f1d28a" : "#7dd9d6"}" stroke-width="3" opacity="0.95"/>`
+function buildStopPinSvg(stop, { selected = false } = {}) {
+  const fill = selected ? "#d18a16" : "#245b82";
+  const stroke = selected ? "#8e5c0a" : "#153f5d";
+  const ring = selected
+    ? '<circle cx="28" cy="27" r="16" fill="none" stroke="#f1d28a" stroke-width="3" opacity="0.95"/>'
     : "";
   const orderText = Number.isFinite(stop.order) ? String(stop.order) : "";
   const label = orderText
@@ -371,15 +328,11 @@ function buildStopPinSvg(stop, { selected = false, active = false } = {}) {
   return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
 }
 
-function buildSegmentMaterial({ selected = false, active = false } = {}) {
+function buildSegmentMaterial({ selected = false } = {}) {
   const Cesium = window.Cesium;
-  const color = selected
-    ? Cesium.Color.fromCssColorString("#d18a16")
-    : active
-      ? Cesium.Color.fromCssColorString("#0f7c7b")
-    : Cesium.Color.fromCssColorString("#245b82");
+  const color = Cesium.Color.fromCssColorString(selected ? "#d18a16" : "#245b82");
   return new Cesium.PolylineGlowMaterialProperty({
-    glowPower: selected ? 0.3 : active ? 0.24 : 0.18,
+    glowPower: selected ? 0.3 : 0.18,
     color,
   });
 }
@@ -457,137 +410,12 @@ function buildFallbackGlobeImageryProvider(Cesium) {
   });
 }
 
-function clearPlaybackTimer() {
-  if (journeyState.playbackTimerId !== null) {
-    window.clearTimeout(journeyState.playbackTimerId);
-    journeyState.playbackTimerId = null;
-  }
-}
-
-function pausePlayback({ preserveTimer = false } = {}) {
-  journeyState.isPlaying = false;
-  if (!preserveTimer) {
-    clearPlaybackTimer();
-  }
-}
-
-function schedulePlaybackAdvance() {
-  clearPlaybackTimer();
-  if (!journeyState.isPlaying) {
-    return;
-  }
-  journeyState.playbackTimerId = window.setTimeout(() => {
-    advancePlayback(1, { autoplay: true });
-  }, getPlaybackIntervalMs());
-}
-
-function setPlaybackStepByIndex(index, { flyTo = true, updateSelection = true, previousStopId = null, focusRouteSegment = true } = {}) {
-  const journey = getSelectedJourney();
-  if (!journey) {
-    return;
-  }
-
-  const orderedStops = getOrderedJourneyStops(journey);
-  const nextStop = orderedStops[index] || null;
-  if (!nextStop) {
-    return;
-  }
-
-  journeyState.currentStopIndex = index;
-  journeyState.activeStopId = nextStop.id;
-  journeyState.selectedStopId = updateSelection ? nextStop.id : journeyState.selectedStopId;
-  journeyState.selectedSegmentId = "";
-
-  const previousStop = previousStopId ? journey.stops.find((stop) => stop.id === previousStopId) : orderedStops[index - 1] || null;
-  const segment = focusRouteSegment ? getPlaybackSegmentBetweenStops(journey, previousStop?.id || "", nextStop.id) : null;
-  journeyState.activeSegmentId = segment?.id || "";
-
-  refreshJourneyUi({ zoom: false });
-
-  if (flyTo && journeyState.viewerReady && journeyState.viewer) {
-    if (segment) {
-      focusSegment(segment);
-    } else {
-      flyToStop(nextStop);
-    }
-  }
-}
-
-function advancePlayback(delta, { autoplay = false } = {}) {
-  const journey = getSelectedJourney();
-  if (!journey) {
-    return;
-  }
-
-  const orderedStops = getOrderedJourneyStops(journey);
-  if (orderedStops.length === 0) {
-    pausePlayback();
-    return;
-  }
-
-  const currentIndex = Math.max(0, journeyState.currentStopIndex || 0);
-  const nextIndex = Math.min(Math.max(currentIndex + delta, 0), orderedStops.length - 1);
-  const previousStop = orderedStops[currentIndex] || null;
-
-  if (nextIndex === currentIndex) {
-    pausePlayback();
-    refreshJourneyUi({ zoom: false });
-    return;
-  }
-
-  setPlaybackStepByIndex(nextIndex, {
-    flyTo: true,
-    updateSelection: true,
-    previousStopId: previousStop?.id || null,
-    focusRouteSegment: true,
+function buildTexturedGlobeImageryProvider(Cesium) {
+  return new Cesium.UrlTemplateImageryProvider({
+    url: JOURNEY_TEXTURE_TILE_URL,
+    maximumLevel: 19,
+    credit: "OpenStreetMap contributors",
   });
-
-  if (autoplay && nextIndex < orderedStops.length - 1) {
-    schedulePlaybackAdvance();
-    return;
-  }
-
-  pausePlayback();
-  refreshJourneyUi({ zoom: false });
-}
-
-function playPlayback() {
-  const journey = getSelectedJourney();
-  if (!journey) {
-    return;
-  }
-  const orderedStops = getOrderedJourneyStops(journey);
-  if (orderedStops.length === 0) {
-    return;
-  }
-  journeyState.isPlaying = true;
-  if (journeyState.currentStopIndex >= orderedStops.length) {
-    journeyState.currentStopIndex = 0;
-  }
-  schedulePlaybackAdvance();
-  refreshJourneyUi({ zoom: false });
-}
-
-function restartPlayback() {
-  const journey = getSelectedJourney();
-  if (!journey) {
-    return;
-  }
-  pausePlayback();
-  const orderedStops = getOrderedJourneyStops(journey);
-  if (orderedStops.length === 0) {
-    refreshJourneyUi({ zoom: false });
-    return;
-  }
-  setPlaybackStepByIndex(0, { flyTo: true, updateSelection: true, previousStopId: null, focusRouteSegment: false });
-}
-
-function handlePlaybackSpeedChange(event) {
-  journeyState.playbackSpeed = event.target.value in PLAYBACK_SPEEDS ? event.target.value : "normal";
-  if (journeyState.isPlaying) {
-    schedulePlaybackAdvance();
-  }
-  refreshJourneyUi({ zoom: false });
 }
 
 function setStatus(message, kind = "loading") {
@@ -1258,56 +1086,6 @@ function renderLayerFeatureDetail() {
   layerOpenPassage.dataset.kind = "layer";
 }
 
-function renderPlaybackControls(journey) {
-  const {
-    playButton,
-    pauseButton,
-    previousButton,
-    nextButton,
-    restartButton,
-    speedSelect,
-    progressLabel,
-    progressBar,
-    progressPercent,
-    progressValue,
-    playbackState,
-  } = getElements();
-
-  if (!playButton || !pauseButton || !previousButton || !nextButton || !restartButton || !speedSelect || !progressLabel || !progressBar || !progressPercent || !progressValue || !playbackState) {
-    return;
-  }
-
-  const orderedStops = getOrderedJourneyStops(journey);
-  const totalStops = orderedStops.length;
-  const hasStops = totalStops > 0;
-  const activeIndex = Math.max(0, Math.min(journeyState.currentStopIndex || 0, Math.max(totalStops - 1, 0)));
-  const activeStop = orderedStops[activeIndex] || null;
-
-  playButton.disabled = !hasStops || journeyState.isPlaying;
-  pauseButton.disabled = !hasStops || !journeyState.isPlaying;
-  previousButton.disabled = !hasStops || activeIndex <= 0;
-  nextButton.disabled = !hasStops || activeIndex >= totalStops - 1;
-  restartButton.disabled = !hasStops;
-  speedSelect.disabled = !hasStops;
-
-  if (speedSelect.value !== journeyState.playbackSpeed) {
-    speedSelect.value = journeyState.playbackSpeed;
-  }
-
-  const playbackLabel = hasStops && activeStop
-    ? `Stop ${activeIndex + 1} of ${totalStops} — ${activeStop.name}`
-    : "No journey stops available";
-  const progress = totalStops > 1 ? Math.round((activeIndex / (totalStops - 1)) * 100) : hasStops ? 100 : 0;
-
-  playbackState.textContent = journeyState.isPlaying ? "Playing" : "Paused";
-  progressLabel.textContent = playbackLabel;
-  progressPercent.textContent = `${progress}%`;
-  progressValue.style.width = `${progress}%`;
-  progressBar.setAttribute("aria-valuenow", String(progress));
-  progressBar.setAttribute("aria-valuetext", playbackLabel);
-  progressBar.setAttribute("aria-disabled", String(!hasStops));
-}
-
 function renderStopList(journey) {
   const { stopList, stopCount } = getElements();
   if (!stopList) {
@@ -1321,7 +1099,7 @@ function renderStopList(journey) {
     button.type = "button";
     button.className = "journey-list-item";
     button.dataset.stopId = stop.id;
-    button.setAttribute("aria-pressed", String(stop.id === journeyState.selectedStopId || stop.id === journeyState.activeStopId));
+    button.setAttribute("aria-pressed", String(stop.id === journeyState.selectedStopId));
     button.addEventListener("click", () => selectStop(stop.id, { flyTo: true }));
 
     const order = document.createElement("span");
@@ -1373,7 +1151,7 @@ function renderSegmentList(journey) {
     button.type = "button";
     button.className = "journey-list-item";
     button.dataset.segmentId = segment.id;
-    button.setAttribute("aria-pressed", String(segment.id === journeyState.selectedSegmentId || segment.id === journeyState.activeSegmentId));
+    button.setAttribute("aria-pressed", String(segment.id === journeyState.selectedSegmentId));
     button.addEventListener("click", () => selectSegment(segment.id, { focus: true }));
 
     const meta = document.createElement("div");
@@ -1557,7 +1335,6 @@ function renderJourneyUi() {
   renderJourneySelector(visibleJourneys);
   renderJourneyOverview(journey);
   renderLayerControls();
-  renderPlaybackControls(journey);
   renderStopList(journey);
   renderSegmentList(journey);
   renderSelectedDetail(journey);
@@ -1590,19 +1367,15 @@ function syncListStates() {
   if (stopList) {
     stopList.querySelectorAll("[data-stop-id]").forEach((button) => {
       const isSelected = button.dataset.stopId === journeyState.selectedStopId;
-      const isActive = button.dataset.stopId === journeyState.activeStopId;
       button.classList.toggle("is-selected", isSelected);
-      button.classList.toggle("is-active", isActive);
-      button.setAttribute("aria-pressed", String(isSelected || isActive));
+      button.setAttribute("aria-pressed", String(isSelected));
     });
   }
   if (segmentList) {
     segmentList.querySelectorAll("[data-segment-id]").forEach((button) => {
       const isSelected = button.dataset.segmentId === journeyState.selectedSegmentId;
-      const isActive = button.dataset.segmentId === journeyState.activeSegmentId;
       button.classList.toggle("is-selected", isSelected);
-      button.classList.toggle("is-active", isActive);
-      button.setAttribute("aria-pressed", String(isSelected || isActive));
+      button.setAttribute("aria-pressed", String(isSelected));
     });
   }
 }
@@ -1621,7 +1394,6 @@ function syncEntityStyles() {
       }
       entity.billboard.image = buildStopPinSvg(stop, {
         selected: stop.id === journeyState.selectedStopId,
-        active: stop.id === journeyState.activeStopId,
       });
     }
     for (const segment of journey.segments) {
@@ -1631,9 +1403,8 @@ function syncEntityStyles() {
       }
       entity.polyline.material = buildSegmentMaterial({
         selected: segment.id === journeyState.selectedSegmentId,
-        active: segment.id === journeyState.activeSegmentId,
       });
-      entity.polyline.width = segment.id === journeyState.selectedSegmentId ? 8 : segment.id === journeyState.activeSegmentId ? 7 : 5;
+      entity.polyline.width = segment.id === journeyState.selectedSegmentId ? 8 : 5;
     }
   }
 
@@ -1873,10 +1644,10 @@ function showGlobeOverview() {
   journeyState.viewer.scene.globe.show = true;
   journeyState.viewer.scene.skyBox.show = false;
   journeyState.viewer.camera.flyTo({
-    destination: window.Cesium.Cartesian3.fromDegrees(18, 24, 12000000),
+    destination: window.Cesium.Cartesian3.fromDegrees(18, 24, 15500000),
     orientation: {
       heading: window.Cesium.Math.toRadians(0),
-      pitch: window.Cesium.Math.toRadians(-55),
+      pitch: window.Cesium.Math.toRadians(-50),
       roll: 0,
     },
     duration: 0.8,
@@ -1999,20 +1770,17 @@ async function openLayerPassagePlaceholder() {
   return false;
 }
 
-function resetPlaybackForJourney(journey) {
-  pausePlayback();
+function resetSelectionForJourney(journey) {
   const orderedStops = journey ? getOrderedJourneyStops(journey) : [];
   const firstStop = orderedStops[0] || null;
-  journeyState.currentStopIndex = 0;
-  journeyState.activeStopId = firstStop?.id || "";
-  journeyState.activeSegmentId = "";
   journeyState.selectedStopId = firstStop?.id || "";
   journeyState.selectedSegmentId = "";
+  journeyState.selectedLayerFeatureId = "";
 }
 
 function clearSelectionsForJourneyChange(journey) {
   journeyState.selectedJourneyId = journey?.id || "";
-  resetPlaybackForJourney(journey);
+  resetSelectionForJourney(journey);
 }
 
 function loadJourneyIntoViewer(journey) {
@@ -2033,7 +1801,6 @@ function loadJourneyIntoViewer(journey) {
       billboard: {
         image: buildStopPinSvg(stop, {
           selected: stop.id === journeyState.selectedStopId,
-          active: stop.id === journeyState.activeStopId,
         }),
         verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
         width: 30,
@@ -2061,11 +1828,8 @@ function loadJourneyIntoViewer(journey) {
     journeyState.journeyEntities.add(entity);
   }
 
-  // Future phase: playback animation can follow the active stop step more precisely.
   // Future phase: timeline synchronization can tie journey steps to scripture dates.
   // Future phase: scripture reader synchronization can highlight passages per step.
-  // Future phase: smooth route-following animation can move along route legs.
-  // Future phase: AI narration can attach guidance to each playback step.
   // Future phase: archaeology layer synchronization can attach context to stops.
   for (const segment of journey.segments) {
     const from = stopById.get(segment.from);
@@ -2082,12 +1846,11 @@ function loadJourneyIntoViewer(journey) {
           Cesium.Cartesian3.fromDegrees(from.lng, from.lat, 22000),
           Cesium.Cartesian3.fromDegrees(to.lng, to.lat, 22000),
         ],
-        width: segment.id === journeyState.selectedSegmentId ? 8 : segment.id === journeyState.activeSegmentId ? 7 : 5,
+        width: segment.id === journeyState.selectedSegmentId ? 8 : 5,
         arcType: Cesium.ArcType.NONE,
         clampToGround: false,
         material: buildSegmentMaterial({
           selected: segment.id === journeyState.selectedSegmentId,
-          active: segment.id === journeyState.activeSegmentId,
         }),
       },
     });
@@ -2132,18 +1895,14 @@ function selectStop(stopId, { flyTo = false } = {}) {
   if (!journey) {
     return;
   }
-  pausePlayback();
   const orderedStops = getOrderedJourneyStops(journey);
   const stop = orderedStops.find((item) => item.id === stopId) || journey.stops.find((item) => item.id === stopId);
   if (!stop) {
     return;
   }
   journeyState.selectedStopId = stop.id;
-  journeyState.activeStopId = stop.id;
-  journeyState.activeSegmentId = "";
   journeyState.selectedSegmentId = "";
   journeyState.selectedLayerFeatureId = "";
-  journeyState.currentStopIndex = Math.max(0, getPlaybackStopIndex(journey, stop.id));
   refreshJourneyUi({ zoom: false });
   if (flyTo) {
     flyToStop(stop);
@@ -2155,14 +1914,12 @@ function selectSegment(segmentId, { focus = false } = {}) {
   if (!journey) {
     return;
   }
-  pausePlayback();
   const segment = journey.segments.find((item) => item.id === segmentId);
   if (!segment) {
     return;
   }
   journeyState.selectedSegmentId = segment.id;
   journeyState.selectedStopId = "";
-  journeyState.activeSegmentId = segment.id;
   journeyState.selectedLayerFeatureId = "";
   refreshJourneyUi({ zoom: false });
   if (focus) {
@@ -2180,12 +1937,9 @@ function selectLayerFeature(layerId, featureId, { flyTo = false } = {}) {
     return;
   }
 
-  pausePlayback();
   journeyState.selectedLayerFeatureId = getLayerFeatureKey(layer.id, feature.id);
   journeyState.selectedStopId = "";
   journeyState.selectedSegmentId = "";
-  journeyState.activeStopId = "";
-  journeyState.activeSegmentId = "";
   refreshJourneyUi({ zoom: false });
   if (flyTo && journeyState.viewerReady && journeyState.viewer) {
     flyToLayerFeature(layer, feature);
@@ -2266,7 +2020,7 @@ function createViewer(Cesium) {
   viewer.scene.globe.baseColor = Cesium.Color.fromCssColorString("#f4f7fa");
   viewer.scene.globe.translucency.enabled = false;
   viewer.scene.screenSpaceCameraController.enableCollisionDetection = true;
-  viewer.cesiumWidget.creditContainer.style.display = "none";
+  viewer.imageryLayers.addImageryProvider(buildTexturedGlobeImageryProvider(Cesium));
 
   const handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
   handler.setInputAction(handleViewerClick, Cesium.ScreenSpaceEventType.LEFT_CLICK);
@@ -2290,12 +2044,6 @@ async function initializeJourneyPanel() {
     openPassage,
     layerOpenPassage,
     layerControls,
-    playButton,
-    pauseButton,
-    previousButton,
-    nextButton,
-    restartButton,
-    speedSelect,
     zoomButton,
     searchInput,
     testamentFilter,
@@ -2375,39 +2123,6 @@ async function initializeJourneyPanel() {
       }
     });
   }
-  if (playButton && !playButton.dataset.bound) {
-    playButton.dataset.bound = "true";
-    playButton.addEventListener("click", playPlayback);
-  }
-  if (pauseButton && !pauseButton.dataset.bound) {
-    pauseButton.dataset.bound = "true";
-    pauseButton.addEventListener("click", () => {
-      pausePlayback();
-      refreshJourneyUi({ zoom: false });
-    });
-  }
-  if (previousButton && !previousButton.dataset.bound) {
-    previousButton.dataset.bound = "true";
-    previousButton.addEventListener("click", () => {
-      pausePlayback();
-      advancePlayback(-1, { autoplay: false });
-    });
-  }
-  if (nextButton && !nextButton.dataset.bound) {
-    nextButton.dataset.bound = "true";
-    nextButton.addEventListener("click", () => {
-      pausePlayback();
-      advancePlayback(1, { autoplay: false });
-    });
-  }
-  if (restartButton && !restartButton.dataset.bound) {
-    restartButton.dataset.bound = "true";
-    restartButton.addEventListener("click", restartPlayback);
-  }
-  if (speedSelect && !speedSelect.dataset.bound) {
-    speedSelect.dataset.bound = "true";
-    speedSelect.addEventListener("change", handlePlaybackSpeedChange);
-  }
   if (zoomButton && !zoomButton.dataset.bound) {
     zoomButton.dataset.bound = "true";
     zoomButton.addEventListener("click", fitJourney);
@@ -2452,7 +2167,7 @@ async function initializeJourneyPanel() {
       tags: getJourneyFacetValues(journeyState.journeys, "tags"),
     };
     journeyState.selectedJourneyId = "";
-    resetPlaybackForJourney(null);
+    resetSelectionForJourney(null);
     renderJourneyUi();
     clearStatus();
   } catch (error) {
@@ -2491,14 +2206,7 @@ async function initializeJourneyPanel() {
   };
 }
 
-function disposeJourneyPanel() {
-  clearPlaybackTimer();
-  journeyState.isPlaying = false;
-}
-
 document.addEventListener("bhf:workspace-tab-changed", handleWorkspaceTabChange);
-window.addEventListener("pagehide", disposeJourneyPanel);
-window.addEventListener("beforeunload", disposeJourneyPanel);
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initializeJourneyPanel);
@@ -2506,6 +2214,5 @@ if (document.readyState === "loading") {
   initializeJourneyPanel();
 }
 
-// Future phase: journey playback, timeline synchronization, scripture reader
-// sync, archaeology overlays, smooth route-following, and AI narration will
+// Future phase: timeline synchronization, scripture reader sync, and archaeology overlays will
 // extend this data model without reintroducing hardcoded journey logic.

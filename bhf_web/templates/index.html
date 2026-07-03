@@ -20,16 +20,16 @@
   <script>
     window.BHFCesiumIonToken = {{ cesium_ion_token|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}?v=20260630h">
+  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}?v=20260702a">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <script src="{{ url_for('static', path='/api/http.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-status.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-study-panels.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-search.js') }}" defer></script>
-  <script src="{{ url_for('static', path='/htmx-lite.js') }}?v=20260630e" defer></script>
+  <script src="{{ url_for('static', path='/htmx-lite.js') }}?v=20260702a" defer></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
   <script type="module" src="{{ url_for('static', path='/maps/MapPanel.js') }}?v=20260630"></script>
-  <script type="module" src="{{ url_for('static', path='/maps/Map3DPanel.js') }}?v=20260630g"></script>
+  <script type="module" src="{{ url_for('static', path='/maps/Map3DPanel.js') }}?v=20260702a"></script>
 </head>
 <body>
   <main class="page reader-page">
@@ -389,39 +389,6 @@
                       <p class="journey-card-description">Toggle curated cities, regions, rivers, routes, kingdoms, and mountains around the selected journey.</p>
                       <div class="journey-layer-controls" data-journey-layer-controls></div>
                     </details>
-                    <section class="journey-card journey-playback-card">
-                      <div class="panel-heading journey-playback-heading">
-                        <div>
-                          <p class="journey-card-kicker">Playback</p>
-                          <h3>Step through journey</h3>
-                        </div>
-                        <span class="journey-playback-state" data-journey-playback-state>Paused</span>
-                      </div>
-                      <div class="journey-playback-controls" role="group" aria-label="Journey playback controls">
-                        <button type="button" class="secondary" data-journey-playback-prev>Previous stop</button>
-                        <button type="button" class="secondary" data-journey-playback-play>Play</button>
-                        <button type="button" class="secondary" data-journey-playback-pause>Pause</button>
-                        <button type="button" class="secondary" data-journey-playback-next>Next stop</button>
-                        <button type="button" class="secondary" data-journey-playback-restart>Restart journey</button>
-                      </div>
-                      <label class="journey-playback-speed">
-                        <span>Playback speed</span>
-                        <select data-journey-playback-speed>
-                          <option value="slow">Slow</option>
-                          <option value="normal" selected>Normal</option>
-                          <option value="fast">Fast</option>
-                        </select>
-                      </label>
-                      <div class="journey-playback-progress">
-                        <div class="journey-playback-label" data-journey-playback-label>Stop 1 of 0</div>
-                        <div class="journey-progress-track" data-journey-playback-bar role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="No journey stops available">
-                          <div class="journey-progress-value" data-journey-playback-value></div>
-                        </div>
-                        <div class="journey-playback-progress-row">
-                          <span class="journey-playback-progress-percent" data-journey-playback-percent>0%</span>
-                        </div>
-                      </div>
-                    </section>
                     <section class="journey-lists">
                       <section class="journey-list-card">
                         <div class="panel-heading journey-list-heading">
@@ -626,7 +593,7 @@
         <div class="map-modal-header journey-modal-header">
           <div>
             <h2 id="journey-modal-heading">Expanded 3D Journey</h2>
-            <p class="map-modal-subtitle">Explore the journey globe, stops, route segments, playback, and context layers with more room.</p>
+            <p class="map-modal-subtitle">Explore the journey globe, stops, route segments, and context layers with more room.</p>
           </div>
           <button type="button" class="secondary" data-journey-modal-close>Close</button>
         </div>
