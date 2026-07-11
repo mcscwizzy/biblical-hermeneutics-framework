@@ -40,6 +40,7 @@ let readerLongPressState = null;
 let appSection = null;
 let lastStudiesWorkspaceTab = "saved";
 let lastExploreWorkspaceTab = "maps";
+let readerControlsTrigger = null;
 const BHF_HTTP = window.BHFApi || {};
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -48,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeWorkspaceExpansion();
   initializeWorkspaceTabs();
   initializeAppNavigation();
+  initializeReaderControlsSheet();
   initializeReader();
   initializeWorkspaceBridge();
   initializeWorkspaceDrawer();
@@ -173,6 +175,11 @@ async function initializeReader() {
   }
   if (searchForm) {
     searchForm.addEventListener("submit", submitBibleSearch);
+    const queryInput = searchForm.querySelector("[name='query']");
+    if (queryInput && typeof syncBibleSearchClearState === "function") {
+      queryInput.addEventListener("input", syncBibleSearchClearState);
+      syncBibleSearchClearState();
+    }
     const clearButton = searchForm.querySelector("[data-search-clear]");
     if (clearButton) {
       clearButton.addEventListener("click", clearBibleSearchResults);
@@ -280,6 +287,7 @@ function activateAppSection(sectionId, options = {}) {
   appSection = nextSection;
   document.body.dataset.appSection = nextSection;
   syncAppDockState(nextSection);
+  syncReaderControlsSheetAvailability();
 
   if (options.persist !== false) {
     persistAppSection(nextSection);
@@ -294,6 +302,7 @@ function activateAppSection(sectionId, options = {}) {
   } else {
     applyDesktopSectionLayout(nextSection, options);
   }
+  syncReaderControlsSheetAvailability();
 }
 
 function syncAppDockState(sectionId) {
@@ -442,33 +451,37 @@ function resolveInitialAppSection(savedSection) {
 }
 
 function initializeTheme() {
-  const toggle = document.querySelector("[data-theme-toggle]");
-  if (!toggle) {
+  const toggles = Array.from(document.querySelectorAll("[data-theme-toggle]"));
+  if (toggles.length === 0) {
     return;
   }
   const savedTheme = readThemePreference();
   applyTheme(savedTheme, { persist: false });
-  toggle.addEventListener("click", toggleTheme);
+  for (const toggle of toggles) {
+    toggle.addEventListener("click", toggleTheme);
+  }
 }
 
 function initializeReaderMode() {
-  const toggle = document.querySelector("[data-reader-mode-toggle]");
-  if (!toggle) {
+  const toggles = Array.from(document.querySelectorAll("[data-reader-mode-toggle]"));
+  if (toggles.length === 0) {
     return;
   }
   const savedMode = readReaderModePreference();
   applyReaderMode(savedMode, { persist: false });
-  toggle.addEventListener("click", toggleReaderMode);
+  for (const toggle of toggles) {
+    toggle.addEventListener("click", toggleReaderMode);
+  }
 }
 
 function initializeWorkspaceExpansion() {
-  const toggle = document.querySelector("[data-workspace-expand-toggle]");
+  const toggles = Array.from(document.querySelectorAll("[data-workspace-expand-toggle]"));
   const collapseToggles = Array.from(document.querySelectorAll("[data-workspace-collapse-toggle]"));
-  if (!toggle && collapseToggles.length === 0) {
+  if (toggles.length === 0 && collapseToggles.length === 0) {
     return;
   }
   applyWorkspaceExpansion(false);
-  if (toggle) {
+  for (const toggle of toggles) {
     toggle.addEventListener("click", toggleWorkspaceExpansion);
   }
   for (const collapseToggle of collapseToggles) {
@@ -484,9 +497,14 @@ function applyWorkspaceExpansion(enabled) {
   } else if (isCompactViewport()) {
     closeWorkspaceDrawer();
   }
-  const toggle = document.querySelector("[data-workspace-expand-toggle]");
-  if (toggle) {
-    toggle.textContent = nextEnabled ? "Collapse workspace" : "Expand workspace";
+  const toggles = document.querySelectorAll("[data-workspace-expand-toggle]");
+  for (const toggle of toggles) {
+    setControlLabel(
+      toggle,
+      nextEnabled ? "Collapse" : "Expand",
+      nextEnabled ? "Collapse workspace" : "Expand workspace"
+    );
+    setControlStatus(toggle, `Current value: ${nextEnabled ? "Expanded" : "Collapsed"}`);
     toggle.setAttribute("aria-pressed", String(nextEnabled));
     toggle.setAttribute("aria-expanded", String(nextEnabled));
   }
@@ -498,6 +516,7 @@ function applyWorkspaceExpansion(enabled) {
   if (drawerToggle) {
     drawerToggle.setAttribute("aria-expanded", String(document.body.classList.contains("workspace-drawer-open")));
   }
+  syncReaderControlsSheetAvailability();
 }
 
 function toggleWorkspaceExpansion() {
@@ -569,9 +588,10 @@ function applyReaderMode(enabled, options = {}) {
   if (nextEnabled) {
     closeWorkspaceDrawer();
   }
-  const toggle = document.querySelector("[data-reader-mode-toggle]");
-  if (toggle) {
-    toggle.textContent = nextEnabled ? "Full view" : "Reader mode";
+  const toggles = document.querySelectorAll("[data-reader-mode-toggle]");
+  for (const toggle of toggles) {
+    setControlLabel(toggle, nextEnabled ? "Full view" : "Reader mode");
+    setControlStatus(toggle, `Current value: ${nextEnabled ? "On" : "Off"}`);
     toggle.setAttribute("aria-pressed", String(nextEnabled));
   }
   if (options.persist !== false) {
@@ -602,10 +622,11 @@ function readThemePreference() {
 function applyTheme(theme, options = {}) {
   const nextTheme = theme === "dark" ? "dark" : "light";
   document.documentElement.dataset.theme = nextTheme;
-  const toggle = document.querySelector("[data-theme-toggle]");
-  if (toggle) {
-    const isDark = nextTheme === "dark";
-    toggle.textContent = isDark ? "Light mode" : "Dark mode";
+  const toggles = document.querySelectorAll("[data-theme-toggle]");
+  const isDark = nextTheme === "dark";
+  for (const toggle of toggles) {
+    setControlLabel(toggle, isDark ? "Light mode" : "Dark mode");
+    setControlStatus(toggle, `Current value: ${isDark ? "Dark" : "Light"}`);
     toggle.setAttribute("aria-pressed", String(isDark));
   }
   if (options.persist !== false) {
@@ -620,6 +641,115 @@ function applyTheme(theme, options = {}) {
 function toggleTheme() {
   const currentTheme = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
   applyTheme(currentTheme === "dark" ? "light" : "dark");
+}
+
+function setControlLabel(control, compactLabel, fallbackLabel = compactLabel) {
+  const label = control.querySelector("[data-control-label]");
+  if (label) {
+    label.textContent = compactLabel;
+    return;
+  }
+  control.textContent = fallbackLabel;
+}
+
+function setControlStatus(control, text) {
+  const status = control.querySelector("[data-control-status]");
+  if (status) {
+    status.textContent = text;
+  }
+}
+
+function initializeReaderControlsSheet() {
+  const sheet = document.querySelector("[data-reader-controls-sheet]");
+  const triggers = Array.from(document.querySelectorAll("[data-reader-controls-trigger]"));
+  if (!sheet || triggers.length === 0) {
+    return;
+  }
+
+  for (const trigger of triggers) {
+    trigger.addEventListener("click", () => openReaderControlsSheet(trigger));
+  }
+
+  sheet.querySelectorAll("[data-reader-controls-close]").forEach((button) => {
+    button.addEventListener("click", closeReaderControlsSheet);
+  });
+
+  sheet.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeReaderControlsSheet();
+  });
+
+  sheet.addEventListener("click", (event) => {
+    if (event.target === sheet) {
+      closeReaderControlsSheet();
+      return;
+    }
+    const action = event.target.closest("[data-theme-toggle], [data-reader-mode-toggle], [data-workspace-expand-toggle]");
+    if (action && sheet.contains(action) && !action.disabled) {
+      window.setTimeout(closeReaderControlsSheet, 0);
+    }
+  });
+
+  sheet.addEventListener("close", () => {
+    document.body.classList.remove("reader-controls-sheet-open");
+    if (readerControlsTrigger?.isConnected) {
+      readerControlsTrigger.focus();
+    }
+    readerControlsTrigger = null;
+  });
+
+  syncReaderControlsSheetAvailability();
+}
+
+function openReaderControlsSheet(trigger) {
+  const sheet = document.querySelector("[data-reader-controls-sheet]");
+  if (!sheet) {
+    return;
+  }
+  readerControlsTrigger = trigger || document.activeElement;
+  syncReaderControlsSheetAvailability();
+  if (sheet.open) {
+    return;
+  }
+  document.body.classList.add("reader-controls-sheet-open");
+  if (typeof sheet.showModal === "function") {
+    sheet.showModal();
+  } else {
+    sheet.setAttribute("open", "");
+  }
+}
+
+function closeReaderControlsSheet() {
+  const sheet = document.querySelector("[data-reader-controls-sheet]");
+  if (!sheet || !sheet.open) {
+    return;
+  }
+  if (typeof sheet.close === "function") {
+    sheet.close();
+  } else {
+    sheet.removeAttribute("open");
+    document.body.classList.remove("reader-controls-sheet-open");
+    if (readerControlsTrigger?.isConnected) {
+      readerControlsTrigger.focus();
+    }
+    readerControlsTrigger = null;
+  }
+}
+
+function syncReaderControlsSheetAvailability() {
+  const compact = isCompactViewport();
+  const activeSection = normalizeAppSection(appSection || document.body.dataset.appSection || "bible");
+  const workspaceUnavailable = compact && activeSection === "bible";
+  document.querySelectorAll("[data-reader-settings-workspace]").forEach((button) => {
+    button.disabled = workspaceUnavailable;
+    button.setAttribute("aria-disabled", String(workspaceUnavailable));
+    const hint = button.querySelector("[data-control-hint]");
+    if (!hint) {
+      return;
+    }
+    hint.hidden = !workspaceUnavailable;
+    hint.textContent = workspaceUnavailable ? "Open Ask, Notes, Studies, or Explore first." : "";
+  });
 }
 
 function resolveSubmitTargets(form) {
@@ -949,11 +1079,22 @@ function renderChapter(data) {
   const header = document.createElement("div");
   header.className = "reader-chapter-header";
 
+  const passageHeading = document.createElement("div");
+  passageHeading.className = "reader-passage-heading";
+
   const heading = document.createElement("h3");
   heading.textContent = `${data.book} ${data.chapter}`;
 
+  const translationBadge = document.createElement("span");
+  translationBadge.className = "reader-translation-badge";
+  translationBadge.textContent = "ASV";
+  translationBadge.setAttribute("aria-label", "Translation: ASV");
+
+  passageHeading.appendChild(heading);
+  passageHeading.appendChild(translationBadge);
+
   header.appendChild(createChapterNavButton("prev", "◀ Previous Chapter"));
-  header.appendChild(heading);
+  header.appendChild(passageHeading);
   header.appendChild(createChapterNavButton("next", "Next Chapter ▶"));
 
   const paragraph = document.createElement("p");

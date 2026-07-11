@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BHF ASV Reader</title>
+  <title>BHF Bible Reader</title>
   <meta name="theme-color" content="{{ runtime_config.themeColor }}">
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="icon" href="{{ url_for('static', path='/icons/icon-192.png') }}" type="image/png">
@@ -46,8 +46,8 @@
   <main class="page reader-page" data-testid="app-shell">
     <header class="header" data-testid="app-header">
       <div>
-        <h1 data-testid="app-title">BHF ASV Reader</h1>
-        <p>Read the public-domain American Standard Version, select a passage, ask BHF, and keep local notes.</p>
+        <h1 data-testid="app-title">BHF Bible Reader</h1>
+        <p class="app-subtitle" data-testid="app-subtitle">Read Scripture. Explore context. Ask deeper questions.</p>
       </div>
       <nav class="page-links">
         <button type="button" class="secondary-link" data-theme-toggle data-testid="theme-toggle" aria-pressed="false">Dark mode</button>
@@ -79,29 +79,29 @@
         <div class="reader-toolbar">
           <div class="reader-toolbar-main">
             <h2 id="reader-heading">ASV Bible</h2>
-              <div class="reader-controls">
-                <label>
-                  <span>Book</span>
-                  <select id="book-select" data-reader-book data-testid="book-select">
+            <div class="reader-controls">
+              <label>
+                <span>Book</span>
+                <select id="book-select" data-reader-book data-testid="book-select">
                   {% for book in books %}
                     <option value="{{ book.name }}" data-chapters="{{ book.chapters }}" {% if book.name == "John" %}selected{% endif %}>{{ book.name }}</option>
                   {% endfor %}
                 </select>
               </label>
-                <label>
-                  <span>Chapter</span>
-                  <select id="chapter-select" data-reader-chapter data-testid="chapter-input"></select>
-                </label>
-              </div>
+              <label>
+                <span>Chapter</span>
+                <select id="chapter-select" data-reader-chapter data-testid="chapter-input"></select>
+              </label>
             </div>
+          </div>
           <form class="reader-search" data-bible-search>
             <label class="reader-search-field">
-              <span>Search ASV</span>
-              <input type="search" name="query" placeholder="living sacrifice, Egypt, John 1:1" autocomplete="off" data-testid="bible-search-input">
+              <span>Search Scripture</span>
+              <input type="search" name="query" placeholder="Search Scripture" autocomplete="off" data-testid="bible-search-input">
             </label>
             <div class="reader-search-actions">
               <button type="submit" data-testid="bible-search-button">Search</button>
-              <button type="button" class="secondary" data-search-clear data-testid="bible-search-clear">Clear</button>
+              <button type="button" class="secondary" data-search-clear data-testid="bible-search-clear" hidden>Clear</button>
             </div>
             <input type="hidden" name="profile" value="{{ form.profile }}">
             <input type="hidden" name="answer_mode" value="{{ form.answer_mode }}">
@@ -656,6 +656,39 @@
     <button type="button" class="app-dock-item" data-app-section="notes" data-testid="app-dock-notes" aria-pressed="false">Notes</button>
     <button type="button" class="app-dock-item" data-app-section="studies" data-testid="app-dock-studies" aria-pressed="false">Studies</button>
     <button type="button" class="app-dock-item" data-app-section="explore" data-testid="app-dock-explore" aria-pressed="false">Explore</button>
+    <button type="button" class="app-dock-utility" data-reader-controls-trigger data-testid="reader-controls-trigger" aria-haspopup="dialog" aria-controls="reader-controls-sheet" aria-label="Reader settings">⚙</button>
   </nav>
+  <dialog id="reader-controls-sheet" class="reader-controls-sheet" data-reader-controls-sheet aria-labelledby="reader-controls-sheet-title">
+    <div class="reader-controls-sheet-panel">
+      <header class="reader-controls-sheet-header">
+        <h2 id="reader-controls-sheet-title">Reader settings</h2>
+        <button type="button" class="secondary reader-controls-sheet-close" data-reader-controls-close aria-label="Close reader settings">×</button>
+      </header>
+      <div class="reader-settings-list">
+        <button type="button" class="reader-setting-action" data-theme-toggle data-testid="mobile-theme-toggle" aria-pressed="false">
+          <span class="reader-setting-copy">
+            <span class="reader-setting-title">Appearance</span>
+            <span class="reader-setting-status" data-control-status>Current value: Light</span>
+          </span>
+          <span class="reader-setting-value" data-control-label>Dark mode</span>
+        </button>
+        <button type="button" class="reader-setting-action" data-reader-mode-toggle data-testid="mobile-reader-mode-toggle" aria-pressed="false">
+          <span class="reader-setting-copy">
+            <span class="reader-setting-title">Reader mode</span>
+            <span class="reader-setting-status" data-control-status>Current value: Off</span>
+          </span>
+          <span class="reader-setting-value" data-control-label>Reader mode</span>
+        </button>
+        <button type="button" class="reader-setting-action" data-workspace-expand-toggle data-reader-settings-workspace data-testid="mobile-workspace-expand-toggle" aria-controls="study-panel" aria-expanded="false" aria-pressed="false">
+          <span class="reader-setting-copy">
+            <span class="reader-setting-title">Expand workspace</span>
+            <span class="reader-setting-status" data-control-status>Current value: Collapsed</span>
+            <span class="reader-setting-hint" data-control-hint hidden></span>
+          </span>
+          <span class="reader-setting-value" data-control-label>Expand</span>
+        </button>
+      </div>
+    </div>
+  </dialog>
 </body>
 </html>

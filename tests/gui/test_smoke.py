@@ -22,8 +22,8 @@ def _assert_no_severe_browser_errors(driver):
 def test_home_page_loads(driver, wait, base_url):
     page = HomePage(driver, wait, base_url)
     page.open().wait_loaded().assert_shell_visible()
-    assert "BHF" in page.driver.title
-    assert "ASV Reader" in page.find('[data-testid="app-title"]').text
+    assert "BHF Bible Reader" in page.driver.title
+    assert "BHF Bible Reader" in page.find('[data-testid="app-title"]').text
 
 
 def test_health_endpoint_available(base_url):

@@ -35,6 +35,7 @@ from .routes.curation import register_curation_routes
 from .routes.maps import register_map_routes
 from .routes.study import register_study_routes
 from .jobs import (
+    AskJob,
     job_store,
     run_ask_job as _run_ask_job,
     run_search_fallback_job as _run_search_fallback_job,
@@ -45,11 +46,12 @@ from .services.web_helpers import available_profiles as _available_profiles
 
 PACKAGE_DIR = Path(__file__).resolve().parent
 templates = Jinja2Templates(directory=str(PACKAGE_DIR / "templates"))
+STUDY_DB_PATH = settings.STUDY_DB_PATH
 
 
 def create_app() -> FastAPI:
     runtime_config = load_runtime_config()
-    web_app = FastAPI(title="Biblical Hermeneutics Framework")
+    web_app = FastAPI(title="BHF Bible Reader")
     web_app.mount(
         "/static",
         StaticFiles(directory=str(PACKAGE_DIR / "static")),
@@ -224,11 +226,11 @@ def create_app() -> FastAPI:
         except (BibleError, ValueError) as exc:
             return JSONResponse({"error": str(exc)}, status_code=400)
 
-    register_curation_routes(web_app, study_db_path=str(settings.STUDY_DB_PATH), templates=templates)
-    register_map_routes(web_app, study_db_path=str(settings.STUDY_DB_PATH))
+    register_curation_routes(web_app, study_db_path=str(STUDY_DB_PATH), templates=templates)
+    register_map_routes(web_app, study_db_path=str(STUDY_DB_PATH))
     register_study_routes(
         web_app,
-        study_db_path=str(settings.STUDY_DB_PATH),
+        study_db_path=str(STUDY_DB_PATH),
         templates=templates,
         job_store=job_store,
     )
