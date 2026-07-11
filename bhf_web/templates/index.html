@@ -623,23 +623,33 @@
     </dialog>
 
     <nav id="reader-context-menu" class="context-menu" aria-label="Verse actions" hidden>
-      <button type="button" data-context-action="ancient_context">Ancient Context</button>
-      <button type="button" data-context-action="literary_context">Literary Context</button>
-      <button type="button" data-context-action="cross_references">Cross References</button>
-      <button type="button" data-context-action="related_ot_themes">Related OT Themes</button>
-      <button type="button" data-context-action="fulfillment_nt">Fulfillment in the NT</button>
-      <button type="button" data-context-action="compare_translations">Compare Translations</button>
-      <button type="button" data-context-action="timeline">Timeline</button>
-      <button type="button" data-context-action="ask_location">Ask about this location</button>
-      <button type="button" data-context-action="open_map_panel">Open map panel</button>
-      <button type="button" data-context-action="save_map_study">Save map study</button>
-      <button type="button" data-context-action="map_note">Add map note</button>
-      <button type="button" data-context-action="related_passages">View related passages</button>
-      <button type="button" data-context-action="view_historical_layer">View historical layer</button>
-      <button type="button" data-context-action="save_study">Save Study</button>
-      <button type="button" data-context-action="note">Add note to this verse</button>
-      <button type="button" data-context-action="highlight">Highlight this verse</button>
-      <button type="button" data-context-action="word_study">Word Study</button>
+      <div class="context-menu-section" role="group" aria-labelledby="context-menu-study-heading">
+        <p id="context-menu-study-heading" class="context-menu-heading">Study</p>
+        <button type="button" data-context-action="ask_bhf">Ask BHF</button>
+        <button type="button" data-context-action="ancient_context">Ancient Context</button>
+        <button type="button" data-context-action="literary_context">Literary Context</button>
+        <button type="button" data-context-action="word_study">Word Study</button>
+      </div>
+      <div class="context-menu-section" role="group" aria-labelledby="context-menu-reference-heading">
+        <p id="context-menu-reference-heading" class="context-menu-heading">Reference</p>
+        <button type="button" data-context-action="cross_references">Cross References</button>
+        <button type="button" data-context-action="related_ot_themes">Related OT Themes</button>
+        <button type="button" data-context-action="fulfillment_nt">Fulfillment in the NT</button>
+        <button type="button" data-context-action="compare_translations">Compare Translations</button>
+        <button type="button" data-context-action="timeline">Timeline</button>
+        <button type="button" data-context-action="open_map_panel">Maps</button>
+        <button type="button" data-context-action="ask_location">Ask about this location</button>
+        <button type="button" data-context-action="related_passages">View related passages</button>
+        <button type="button" data-context-action="view_historical_layer">View historical layer</button>
+      </div>
+      <div class="context-menu-section" role="group" aria-labelledby="context-menu-actions-heading">
+        <p id="context-menu-actions-heading" class="context-menu-heading">Study Actions</p>
+        <button type="button" data-context-action="highlight">Highlight Verse</button>
+        <button type="button" data-context-action="note">Add Note</button>
+        <button type="button" data-context-action="save_study">Save Study</button>
+        <button type="button" data-context-action="save_map_study">Save map study</button>
+        <button type="button" data-context-action="map_note">Add map note</button>
+      </div>
     </nav>
   </main>
   <nav class="app-dock" aria-label="Application navigation" data-app-dock>

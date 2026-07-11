@@ -25,7 +25,7 @@
 
 .reader-controls {
   display: grid;
-  grid-template-columns: minmax(180px, 260px) minmax(90px, 120px) auto;
+  grid-template-columns: minmax(180px, 260px) minmax(90px, 120px) auto auto;
   gap: 12px;
 }
 
@@ -49,10 +49,11 @@
   line-height: 1;
 }
 
-.reader-next-chapter-footer {
+.reader-chapter-footer {
   display: flex;
-  justify-content: flex-end;
-  margin-top: 14px;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 18px;
 }
 
 .reader-search {
@@ -177,9 +178,19 @@
   padding: 22px 0 40px;
 }
 
+.reader-chapter-header {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr) minmax(0, auto);
+  gap: 12px;
+  align-items: center;
+  max-width: 78ch;
+  margin-bottom: 16px;
+}
+
 .chapter-reader h3 {
-  margin: 0 0 16px;
+  margin: 0;
   font-size: 1.35rem;
+  text-align: center;
 }
 
 .chapter-text {
@@ -210,15 +221,22 @@ body.reader-mode .chapter-text {
 .verse {
   border-radius: 4px;
   padding: 2px 1px;
+  scroll-margin-block: 16px calc(var(--app-dock-height) + 32px);
 }
 
 .verse-actions-button {
   display: none;
-  margin-inline-start: 8px;
-  min-height: 32px;
-  padding: 4px 10px;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  min-width: 34px;
+  min-height: 34px;
+  margin-inline: 2px 4px;
+  padding: 0;
   border-radius: 999px;
-  font-size: 0.8rem;
+  font-size: 1.15rem;
+  line-height: 1;
+  scroll-margin-block: 16px calc(var(--app-dock-height) + 32px);
   vertical-align: middle;
 }
 
@@ -251,10 +269,69 @@ body.reader-mode .chapter-text {
 
 .verse-number {
   margin-right: 4px;
+  border: 0;
+  border-radius: 999px;
+  padding: 0 3px;
+  min-width: 1.35em;
+  min-height: 1.35em;
+  color: #245b82;
+  background: transparent;
   color: #245b82;
   font-size: 0.72rem;
   font-weight: 800;
+  line-height: 1.2;
   user-select: none;
+  vertical-align: super;
+}
+
+.verse-number:hover,
+.verse-number:focus {
+  color: #163f5d;
+  background: #e8f1f8;
+}
+
+.verse-state-indicators {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+  margin-right: 4px;
+  vertical-align: text-top;
+}
+
+.verse-state-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 1px solid rgb(36 91 130 / 28%);
+  border-radius: 3px;
+  color: #245b82;
+  background: #f8fbfd;
+  font-size: 0.52rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.verse-state-highlight {
+  border-radius: 999px;
+  background: #d3a820;
+}
+
+.verse-state-highlight.highlight-yellow {
+  background: #d3a820;
+}
+
+.verse-state-highlight.highlight-green {
+  background: #70a84a;
+}
+
+.verse-state-highlight.highlight-blue {
+  background: #589ac8;
+}
+
+.verse-state-highlight.highlight-pink {
+  background: #d36c95;
 }
 
 .study-panel {
@@ -780,6 +857,26 @@ html[data-theme="dark"] .verse.selected.highlight-pink {
   outline-color: #8cc5ff;
 }
 
+html[data-theme="dark"] .verse-number {
+  color: var(--accent-strong);
+}
+
+html[data-theme="dark"] .verse-number:hover,
+html[data-theme="dark"] .verse-number:focus {
+  color: var(--accent-text);
+  background: var(--accent-soft);
+}
+
+html[data-theme="dark"] .verse-state-indicator {
+  border-color: rgb(156 200 239 / 28%);
+  color: var(--accent-text);
+  background: var(--surface-muted);
+}
+
+html[data-theme="dark"] .verse-state-highlight.highlight-yellow {
+  background: #b39435;
+}
+
 html[data-theme="dark"] .map-modal {
   background: transparent;
 }
@@ -1068,11 +1165,25 @@ html[data-theme="dark"] .map-panel-body {
     grid-template-columns: 1fr;
   }
 
-  .reader-next-chapter-footer {
-    justify-content: stretch;
+  .reader-chapter-header {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 12px;
   }
 
-  .reader-next-chapter-footer .reader-next-chapter {
+  .chapter-reader h3 {
+    text-align: left;
+  }
+
+  .reader-chapter-footer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .reader-chapter-header .reader-prev-chapter,
+  .reader-chapter-header .reader-next-chapter,
+  .reader-chapter-footer .reader-prev-chapter,
+  .reader-chapter-footer .reader-next-chapter {
     width: 100%;
   }
 

@@ -357,6 +357,22 @@ code {
   box-shadow: 0 12px 28px rgb(20 31 43 / 18%);
 }
 
+.context-menu-section + .context-menu-section {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid #e2e7ec;
+}
+
+.context-menu-heading {
+  margin: 0 0 4px;
+  padding: 2px 8px;
+  color: #52616f;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .context-menu button {
   display: block;
   width: 100%;
@@ -640,13 +656,24 @@ html[data-theme="dark"] .app-dock {
   }
 
   .context-menu {
+    left: 8px !important;
+    right: 8px;
+    top: auto !important;
+    bottom: calc(var(--app-dock-height) + 12px + env(safe-area-inset-bottom));
+    z-index: 10004;
+    width: auto;
     min-width: min(260px, calc(100vw - 16px));
-    max-height: calc(100dvh - var(--app-dock-height) - 24px);
-    overflow: auto;
+    max-height: min(72dvh, calc(100dvh - var(--app-dock-height) - 24px));
+    overflow-y: auto;
   }
 
   .verse-actions-button {
     display: inline-flex;
+    width: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    height: 36px;
+    padding: 0;
   }
 
   .notes-list,
@@ -732,6 +759,14 @@ html[data-theme="dark"] .note,
 html[data-theme="dark"] .highlight-item {
   background: var(--surface);
   border-color: var(--border);
+}
+
+html[data-theme="dark"] .context-menu-section + .context-menu-section {
+  border-top-color: var(--border);
+}
+
+html[data-theme="dark"] .context-menu-heading {
+  color: var(--page-muted);
 }
 
 html[data-theme="dark"] .workspace-tab[aria-selected="true"] {

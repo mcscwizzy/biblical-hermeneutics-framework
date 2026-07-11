@@ -34,5 +34,8 @@ class WorkspacePage(BasePage):
         return self
 
     def toggle_expand_workspace(self):
-        self.click('[data-testid="workspace-expand-toggle"]')
+        if "workspace-expanded" in self.driver.find_element(By.TAG_NAME, "body").get_attribute("class"):
+            self.click('[data-workspace-collapse-toggle][aria-label="Minimize workspace"]')
+        else:
+            self.click('[data-testid="workspace-expand-toggle"]')
         return self
