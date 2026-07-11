@@ -643,7 +643,8 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("data-app-section=\"explore\"", response["body"])
         self.assertIn("name=\"question\"", response["body"])
         self.assertIn("data-question-scope", response["body"])
-        self.assertIn("data-next-chapter", response["body"])
+        self.assertNotIn("data-testid=\"chapter-prev\"", response["body"])
+        self.assertNotIn("data-testid=\"chapter-next\"", response["body"])
         self.assertIn("status-summary", response["body"])
         self.assertIn("status-current", response["body"])
         self.assertIn("Save Study", response["body"])
@@ -1683,12 +1684,12 @@ class WebAppTests(unittest.TestCase):
         self.assertNotIn("Save Study", result["body"])
         self.assertNotIn("ASV Romans 12:1-2", result["body"])
 
-    def test_chapter_navigation_button_is_present(self):
+    def test_reader_toolbar_omits_duplicate_chapter_buttons(self):
         response = asgi_request("GET", "/")
 
         self.assertEqual(response["status"], 200)
-        self.assertIn("data-next-chapter", response["body"])
-        self.assertIn("Next chapter", response["body"])
+        self.assertNotIn("data-testid=\"chapter-prev\"", response["body"])
+        self.assertNotIn("data-testid=\"chapter-next\"", response["body"])
 
     def test_ask_job_marks_previous_running_step_complete(self):
         job = AskJob(job_id="job-1")

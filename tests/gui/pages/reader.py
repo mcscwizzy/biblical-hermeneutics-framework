@@ -16,11 +16,11 @@ class BibleReaderPage(BasePage):
         return self
 
     def next_chapter(self):
-        self.click('[data-testid="chapter-next"]')
+        self.click('#chapter-reader [data-next-chapter]')
         return self
 
     def previous_chapter(self):
-        self.click('[data-testid="chapter-prev"]')
+        self.click('#chapter-reader [data-prev-chapter]')
         return self
 
     def search(self, text: str):

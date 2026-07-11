@@ -25,7 +25,7 @@
 
 .reader-controls {
   display: grid;
-  grid-template-columns: minmax(180px, 260px) minmax(90px, 120px) auto auto;
+  grid-template-columns: minmax(180px, 260px) minmax(90px, 120px);
   gap: 12px;
 }
 
