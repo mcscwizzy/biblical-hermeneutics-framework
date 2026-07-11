@@ -5,9 +5,10 @@
 const POLL_INTERVAL_MS = 750;
 const READER_LONG_PRESS_DELAY_MS = 550;
 const READER_LONG_PRESS_MOVE_THRESHOLD_PX = 14;
-const MOBILE_SECTION_STORAGE_KEY = "bhf-mobile-section";
+const APP_SECTION_STORAGE_KEY = "bhf-app-section";
+const LEGACY_MOBILE_SECTION_STORAGE_KEY = "bhf-mobile-section";
 const BHF_RUNTIME = window.BHFRuntimeConfig || {};
-const PHONE_BREAKPOINT = Number(BHF_RUNTIME.breakpoints?.phone || 680);
+const TABLET_BREAKPOINT = Number(BHF_RUNTIME.breakpoints?.tablet || 900);
 const GENERAL_QUESTION_MODE = "general_question";
 const THEME_STORAGE_KEY = "bhf-theme";
 const READER_MODE_STORAGE_KEY = "bhf-reader-mode";
@@ -35,7 +36,9 @@ let contextMenuState = null;
 let lastMapAIFallbackKey = null;
 let activeLiveAnswerPanel = null;
 let readerLongPressState = null;
-let mobileSection = null;
+let appSection = null;
+let lastStudiesWorkspaceTab = "saved";
+let lastExploreWorkspaceTab = "maps";
 const BHF_HTTP = window.BHFApi || {};
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -43,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeReaderMode();
   initializeWorkspaceExpansion();
   initializeWorkspaceTabs();
-  initializeMobileNavigation();
+  initializeAppNavigation();
   initializeReader();
   initializeWorkspaceBridge();
   initializeWorkspaceDrawer();
@@ -226,47 +229,36 @@ function initializeWorkspaceTabs() {
   activateWorkspaceTab(defaultTab);
 }
 
-function initializeMobileNavigation() {
-  const nav = document.querySelector("[data-mobile-nav]");
-  const buttons = Array.from(nav?.querySelectorAll("[data-mobile-section]") || []);
-  if (!nav || buttons.length === 0) {
+function initializeAppNavigation() {
+  const dock = document.querySelector("[data-app-dock]");
+  const buttons = Array.from(dock?.querySelectorAll("[data-app-section]") || []);
+  if (!dock || buttons.length === 0) {
     return;
   }
 
-  const savedSection = readMobileSectionPreference();
-  const initialSection = resolveInitialMobileSection(savedSection);
-  applyMobileSection(initialSection, {
+  const initialSection = resolveInitialAppSection(readAppSectionPreference());
+  activateAppSection(initialSection, {
     persist: false,
     updateWorkspace: initialSection !== "bible",
+    focusReader: false,
   });
 
   for (const button of buttons) {
     button.addEventListener("click", () => {
-      activateMobileSection(button.dataset.mobileSection || "bible");
+      activateAppSection(button.dataset.appSection || "bible");
     });
   }
 
   document.addEventListener("bhf:workspace-tab-changed", (event) => {
-    if (!isPhoneViewport()) {
-      return;
-    }
-    const nextSection = mobileSectionFromWorkspaceTab(event.detail?.tabId);
+    const tabId = event.detail?.tabId;
+    rememberWorkspaceSubtab(tabId);
+    const nextSection = appSectionFromWorkspaceTab(tabId);
     if (nextSection) {
-      applyMobileSection(nextSection, { persist: false, updateWorkspace: false });
+      activateAppSection(nextSection, { updateWorkspace: false });
     }
   });
 
-  window.addEventListener("resize", () => {
-    if (!isPhoneViewport()) {
-      updateMobileNavState(null);
-      return;
-    }
-    const nextSection = mobileSection || initialSection;
-    applyMobileSection(nextSection, {
-      persist: false,
-      updateWorkspace: !mobileSection && nextSection !== "bible",
-    });
-  });
+  window.addEventListener("resize", handleAppViewportChange);
 }
 
 function initializeWorkspaceBridge() {
@@ -282,74 +274,127 @@ function initializeWorkspaceBridge() {
   };
 }
 
-function activateMobileSection(sectionId) {
-  applyMobileSection(sectionId, { persist: true, updateWorkspace: true });
-}
-
-function applyMobileSection(sectionId, options = {}) {
-  if (!isPhoneViewport()) {
-    return;
-  }
-
-  const nextSection = normalizeMobileSection(sectionId);
-  mobileSection = nextSection;
-  document.body.dataset.mobileSection = nextSection;
-  updateMobileNavState(nextSection);
+function activateAppSection(sectionId, options = {}) {
+  const nextSection = normalizeAppSection(sectionId);
+  appSection = nextSection;
+  document.body.dataset.appSection = nextSection;
+  syncAppDockState(nextSection);
 
   if (options.persist !== false) {
-    try {
-      window.localStorage.setItem(MOBILE_SECTION_STORAGE_KEY, nextSection);
-    } catch (_error) {
-      // Ignore storage errors in restricted environments.
-    }
+    persistAppSection(nextSection);
   }
 
-  if (nextSection === "bible") {
-    closeWorkspaceDrawer();
-    return;
-  }
-
-  setWorkspaceDrawerOpen(true);
   if (options.updateWorkspace !== false) {
-    const workspaceTab = mobileSectionToWorkspaceTab(nextSection);
-    if (workspaceTab) {
-      activateWorkspaceTab(workspaceTab);
-    }
+    activateWorkspaceForAppSection(nextSection);
+  }
+
+  if (isCompactViewport()) {
+    applyCompactSectionLayout(nextSection);
+  } else {
+    applyDesktopSectionLayout(nextSection, options);
   }
 }
 
-function updateMobileNavState(sectionId) {
-  const activeSection = normalizeMobileSection(sectionId || mobileSection || "bible");
-  document.querySelectorAll("[data-mobile-section]").forEach((button) => {
-    const isActive = button.dataset.mobileSection === activeSection;
+function syncAppDockState(sectionId) {
+  const activeSection = normalizeAppSection(sectionId || appSection || "bible");
+  document.querySelectorAll("[data-app-section]").forEach((button) => {
+    const isActive = button.dataset.appSection === activeSection;
     button.classList.toggle("is-active", isActive);
     button.setAttribute("aria-pressed", String(isActive));
   });
 }
 
-function mobileSectionFromWorkspaceTab(tabId) {
+function activateWorkspaceForAppSection(sectionId) {
+  const workspaceTab = appSectionToWorkspaceTab(sectionId);
+  if (workspaceTab) {
+    activateWorkspaceTab(workspaceTab);
+  }
+}
+
+function applyCompactSectionLayout(sectionId) {
+  if (sectionId === "bible") {
+    applyWorkspaceExpansion(false);
+    closeWorkspaceDrawer();
+    return;
+  }
+
+  setWorkspaceDrawerOpen(true);
+}
+
+function applyDesktopSectionLayout(sectionId, options = {}) {
+  closeWorkspaceDrawer();
+  if (sectionId === "bible") {
+    applyWorkspaceExpansion(false);
+    if (options.focusReader !== false) {
+      focusReaderArea();
+    }
+    return;
+  }
+
+  if (document.body.classList.contains("reader-mode")) {
+    applyReaderMode(false, { persist: false });
+  }
+  applyWorkspaceExpansion(false);
+}
+
+function handleAppViewportChange() {
+  const nextSection = normalizeAppSection(appSection || readAppSectionPreference() || "bible");
+  activateAppSection(nextSection, {
+    persist: false,
+    updateWorkspace: nextSection !== "bible",
+    focusReader: false,
+  });
+}
+
+function focusReaderArea() {
+  const reader = document.querySelector(".reader-column");
+  if (!reader) {
+    return;
+  }
+  reader.scrollIntoView({ block: "start", behavior: "smooth" });
+}
+
+function appSectionFromWorkspaceTab(tabId) {
   if (!tabId) {
     return null;
   }
-  if (tabId === "ask" || tabId === "notes" || tabId === "maps") {
+  if (tabId === "ask" || tabId === "notes") {
     return tabId;
   }
-  if (tabId === "highlights" || tabId === "saved" || tabId === "journey") {
+  if (tabId === "highlights" || tabId === "saved") {
     return "studies";
+  }
+  if (tabId === "maps" || tabId === "journey") {
+    return "explore";
   }
   return null;
 }
 
-function mobileSectionToWorkspaceTab(sectionId) {
-  const normalized = normalizeMobileSection(sectionId);
+function appSectionToWorkspaceTab(sectionId) {
+  const normalized = normalizeAppSection(sectionId);
   if (normalized === "studies") {
     const currentWorkspaceTab = getCurrentWorkspaceTab();
-    if (["highlights", "saved", "journey"].includes(currentWorkspaceTab)) {
+    if (currentWorkspaceTab === "highlights" || currentWorkspaceTab === "saved") {
       return currentWorkspaceTab;
     }
-    return "saved";
+    return lastStudiesWorkspaceTab || "saved";
+  }
+  if (normalized === "explore") {
+    const currentWorkspaceTab = getCurrentWorkspaceTab();
+    if (currentWorkspaceTab === "maps" || currentWorkspaceTab === "journey") {
+      return currentWorkspaceTab;
+    }
+    return lastExploreWorkspaceTab || "maps";
   }
   return normalized === "bible" ? null : normalized;
+}
+
+function rememberWorkspaceSubtab(tabId) {
+  if (tabId === "highlights" || tabId === "saved") {
+    lastStudiesWorkspaceTab = tabId;
+  } else if (tabId === "maps" || tabId === "journey") {
+    lastExploreWorkspaceTab = tabId;
+  }
 }
 
 function getCurrentWorkspaceTab() {
@@ -357,29 +402,41 @@ function getCurrentWorkspaceTab() {
   return activeTab?.dataset.workspaceTab || null;
 }
 
-function normalizeMobileSection(sectionId) {
+function normalizeAppSection(sectionId) {
   const normalized = String(sectionId || "bible").toLowerCase();
-  if (["bible", "ask", "notes", "studies", "maps"].includes(normalized)) {
+  if (normalized === "maps" || normalized === "journey") {
+    return "explore";
+  }
+  if (["bible", "ask", "notes", "studies", "explore"].includes(normalized)) {
     return normalized;
   }
   return "bible";
 }
 
-function isPhoneViewport() {
-  return window.matchMedia(`(max-width: ${PHONE_BREAKPOINT}px)`).matches;
+function isCompactViewport() {
+  return window.matchMedia(`(max-width: ${TABLET_BREAKPOINT}px)`).matches;
 }
 
-function readMobileSectionPreference() {
+function readAppSectionPreference() {
   try {
-    const saved = window.localStorage.getItem(MOBILE_SECTION_STORAGE_KEY);
-    return normalizeMobileSection(saved || "bible");
+    const saved = window.localStorage.getItem(APP_SECTION_STORAGE_KEY);
+    const legacySaved = window.localStorage.getItem(LEGACY_MOBILE_SECTION_STORAGE_KEY);
+    return normalizeAppSection(saved || legacySaved || "bible");
   } catch (_error) {
     return "bible";
   }
 }
 
-function resolveInitialMobileSection(savedSection) {
-  const saved = normalizeMobileSection(savedSection || "bible");
+function persistAppSection(sectionId) {
+  try {
+    window.localStorage.setItem(APP_SECTION_STORAGE_KEY, normalizeAppSection(sectionId));
+  } catch (_error) {
+    // Ignore storage errors in restricted environments.
+  }
+}
+
+function resolveInitialAppSection(savedSection) {
+  const saved = normalizeAppSection(savedSection || "bible");
   return saved;
 }
 
@@ -423,7 +480,7 @@ function applyWorkspaceExpansion(enabled) {
   document.body.classList.toggle("workspace-expanded", nextEnabled);
   if (nextEnabled) {
     closeWorkspaceDrawer();
-  } else if (window.matchMedia("(max-width: 900px)").matches) {
+  } else if (isCompactViewport()) {
     closeWorkspaceDrawer();
   }
   const toggle = document.querySelector("[data-workspace-expand-toggle]");
@@ -447,7 +504,7 @@ function toggleWorkspaceExpansion() {
 }
 
 function revealAnswerPanel(answerPanel) {
-  if (!answerPanel || !window.matchMedia("(max-width: 900px)").matches) {
+  if (!answerPanel || !isCompactViewport()) {
     return;
   }
   window.requestAnimationFrame(() => {
@@ -458,7 +515,7 @@ function revealAnswerPanel(answerPanel) {
 }
 
 function expandWorkspaceForMobileAnswer() {
-  if (!window.matchMedia("(max-width: 900px)").matches) {
+  if (!isCompactViewport()) {
     return;
   }
   if (document.body.classList.contains("workspace-expanded")) {
@@ -468,7 +525,7 @@ function expandWorkspaceForMobileAnswer() {
 }
 
 function addMobileAnswerCloseControl(answerPanel) {
-  if (!answerPanel || !window.matchMedia("(max-width: 900px)").matches) {
+  if (!answerPanel || !isCompactViewport()) {
     return;
   }
   if (answerPanel.querySelector("[data-mobile-answer-close]")) {
@@ -487,7 +544,7 @@ function addMobileAnswerCloseControl(answerPanel) {
 }
 
 function closeMobileAnswerView() {
-  if (!window.matchMedia("(max-width: 900px)").matches) {
+  if (!isCompactViewport()) {
     return;
   }
   applyWorkspaceExpansion(false);
@@ -675,7 +732,7 @@ function activateWorkspaceTab(tabId) {
 function initializeWorkspaceDrawer() {
   const toggle = document.querySelector("[data-workspace-drawer-toggle]");
   const panel = document.querySelector("#study-panel");
-  if (panel && window.matchMedia("(max-width: 900px)").matches) {
+  if (panel && isCompactViewport()) {
     panel.classList.remove("is-open");
   }
   if (toggle) {
@@ -684,7 +741,7 @@ function initializeWorkspaceDrawer() {
     });
   }
   window.addEventListener("resize", () => {
-    if (window.matchMedia("(min-width: 901px)").matches) {
+    if (!isCompactViewport()) {
       setWorkspaceDrawerOpen(false);
     }
   });
@@ -1450,7 +1507,7 @@ function buildReaderMapContext(studyAction) {
 
 function openMapPanel(context) {
   activateWorkspaceTab("maps");
-  if (window.matchMedia("(max-width: 900px)").matches) {
+  if (isCompactViewport()) {
     setWorkspaceDrawerOpen(true);
   }
   const panel = document.querySelector("#map-panel");

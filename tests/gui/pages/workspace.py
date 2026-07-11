@@ -11,8 +11,8 @@ class WorkspacePage(BasePage):
         self.click(f'[data-testid="{name}-tab"]')
         return self
 
-    def open_mobile_section(self, name: str):
-        self.click(f'[data-testid="mobile-nav-{name}"]')
+    def open_app_section(self, name: str):
+        self.click(f'[data-testid="app-dock-{name}"]')
         return self
 
     def assert_tab_visible(self, name: str):
@@ -22,8 +22,8 @@ class WorkspacePage(BasePage):
         self.wait.until(lambda driver: tab.get_attribute("aria-selected") == "true")
         return self
 
-    def active_mobile_section(self):
-        return self.driver.execute_script("return document.body.dataset.mobileSection || ''")
+    def active_app_section(self):
+        return self.driver.execute_script("return document.body.dataset.appSection || ''")
 
     def toggle_dark_mode(self):
         self.click('[data-testid="theme-toggle"]')

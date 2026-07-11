@@ -26,12 +26,12 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}?v=20260703a">
+  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}?v=20260711a">
   <script src="{{ url_for('static', path='/api/http.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-status.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-study-panels.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-search.js') }}" defer></script>
-  <script src="{{ url_for('static', path='/htmx-lite.js') }}?v=20260703a" defer></script>
+  <script src="{{ url_for('static', path='/htmx-lite.js') }}?v=20260711a" defer></script>
   <script src="{{ url_for('static', path='/pwa.js') }}" defer></script>
   {% if not test_mode %}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -92,8 +92,8 @@
                   <span>Chapter</span>
                   <select id="chapter-select" data-reader-chapter data-testid="chapter-input"></select>
                 </label>
-                <button type="button" class="secondary reader-prev-chapter" data-prev-chapter data-testid="chapter-prev" aria-label="Previous chapter" title="Previous chapter">&lt;&lt;&lt;</button>
-                <button type="button" class="secondary reader-next-chapter" data-next-chapter data-testid="chapter-next" aria-label="Next chapter" title="Next chapter">&gt;&gt;&gt;</button>
+                <button type="button" class="secondary reader-prev-chapter" data-prev-chapter data-testid="chapter-prev" aria-label="Previous chapter" title="Previous chapter">&lt;</button>
+                <button type="button" class="secondary reader-next-chapter" data-next-chapter data-testid="chapter-next" aria-label="Next chapter" title="Next chapter">&gt;</button>
               </div>
             </div>
           <form class="reader-search" data-bible-search>
@@ -642,12 +642,12 @@
       <button type="button" data-context-action="word_study">Word Study</button>
     </nav>
   </main>
-  <nav class="mobile-bottom-nav" aria-label="Mobile navigation" data-mobile-nav>
-    <button type="button" class="mobile-bottom-nav-item is-active" data-mobile-section="bible" data-testid="mobile-nav-bible" aria-pressed="true">Bible</button>
-    <button type="button" class="mobile-bottom-nav-item" data-mobile-section="ask" data-testid="mobile-nav-ask" aria-pressed="false">Ask</button>
-    <button type="button" class="mobile-bottom-nav-item" data-mobile-section="notes" data-testid="mobile-nav-notes" aria-pressed="false">Notes</button>
-    <button type="button" class="mobile-bottom-nav-item" data-mobile-section="studies" data-testid="mobile-nav-studies" aria-pressed="false">Studies</button>
-    <button type="button" class="mobile-bottom-nav-item" data-mobile-section="maps" data-testid="mobile-nav-maps" aria-pressed="false">Maps</button>
+  <nav class="app-dock" aria-label="Application navigation" data-app-dock>
+    <button type="button" class="app-dock-item is-active" data-app-section="bible" data-testid="app-dock-bible" aria-pressed="true">Bible</button>
+    <button type="button" class="app-dock-item" data-app-section="ask" data-testid="app-dock-ask" aria-pressed="false">Ask</button>
+    <button type="button" class="app-dock-item" data-app-section="notes" data-testid="app-dock-notes" aria-pressed="false">Notes</button>
+    <button type="button" class="app-dock-item" data-app-section="studies" data-testid="app-dock-studies" aria-pressed="false">Studies</button>
+    <button type="button" class="app-dock-item" data-app-section="explore" data-testid="app-dock-explore" aria-pressed="false">Explore</button>
   </nav>
 </body>
 </html>

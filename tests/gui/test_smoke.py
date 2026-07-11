@@ -38,7 +38,7 @@ def test_static_assets_load(driver, wait, base_url):
     _assert_no_severe_browser_errors(driver)
     assert page.find('[data-testid="book-select"]').is_displayed()
     assert page.find('[data-testid="chapter-input"]').is_displayed()
-    assert not page.find('[data-testid="mobile-nav-bible"]').is_displayed()
+    assert page.find('[data-testid="app-dock-bible"]').is_displayed()
     WorkspacePage(driver, wait, base_url).toggle_dark_mode()
     assert driver.execute_script("return document.documentElement.dataset.theme") == "dark"
     WorkspacePage(driver, wait, base_url).toggle_dark_mode()

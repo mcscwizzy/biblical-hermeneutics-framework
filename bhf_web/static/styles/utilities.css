@@ -374,35 +374,118 @@ code {
   background: #245b82;
 }
 
-.mobile-bottom-nav {
-  display: none;
+.reader-page {
+  padding-bottom: calc(24px + var(--app-dock-height) + env(safe-area-inset-bottom));
 }
 
-@media (min-width: 901px) and (max-width: 980px) {
-  .reader-layout {
-    grid-template-columns: 1fr;
+.app-dock {
+  position: fixed;
+  left: 50%;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  z-index: 10002;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(76px, 1fr));
+  gap: 6px;
+  width: min(540px, calc(100% - 24px));
+  min-height: var(--app-dock-height);
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgb(252 253 254 / 98%), rgb(245 249 252 / 98%));
+  box-shadow: 0 14px 34px rgb(17 30 41 / 18%);
+  transform: translateX(-50%);
+  backdrop-filter: blur(10px);
+}
+
+.app-dock-item {
+  min-height: 46px;
+  padding: 0 8px;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--page-muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.app-dock-item.is-active,
+.app-dock-item[aria-pressed="true"] {
+  border-color: var(--accent);
+  color: var(--accent-text);
+  background: var(--accent-soft);
+}
+
+html[data-theme="dark"] .app-dock {
+  background: linear-gradient(180deg, rgb(18 26 34 / 96%), rgb(15 21 28 / 96%));
+  box-shadow: 0 14px 34px rgb(0 0 0 / 36%);
+}
+
+@media (max-width: 900px) {
+  .reader-page {
+    padding-bottom: calc(20px + var(--app-dock-height) + env(safe-area-inset-bottom));
   }
 
-  .study-panel {
-    position: static;
-    max-height: none;
+  .app-dock {
+    inset-inline: 0;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    min-height: var(--app-dock-height);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    padding: 8px max(8px, env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left));
+    border-inline: 0;
+    border-bottom: 0;
+    border-radius: 0;
+    box-shadow: 0 -10px 24px rgb(17 30 41 / 10%);
+    transform: none;
   }
 
-  .workspace-panel {
-    height: auto;
-    max-height: none;
+  body[data-app-section="bible"] .study-panel {
+    display: none;
   }
 
-  .map-panel-body {
-    grid-template-columns: 1fr;
+  body[data-app-section="ask"] .reader-column,
+  body[data-app-section="notes"] .reader-column,
+  body[data-app-section="studies"] .reader-column,
+  body[data-app-section="explore"] .reader-column {
+    display: none;
+  }
+
+  body[data-app-section="ask"] .study-panel,
+  body[data-app-section="notes"] .study-panel,
+  body[data-app-section="studies"] .study-panel,
+  body[data-app-section="explore"] .study-panel {
+    display: block;
+  }
+
+  body[data-app-section="bible"] .workspace-drawer-toggle {
+    display: inline-flex;
+  }
+
+  body[data-app-section="bible"] .reader-column {
+    display: block;
+  }
+
+  body.reader-mode[data-app-section="ask"] .study-panel,
+  body.reader-mode[data-app-section="notes"] .study-panel,
+  body.reader-mode[data-app-section="studies"] .study-panel,
+  body.reader-mode[data-app-section="explore"] .study-panel {
+    display: block;
+  }
+
+  body.reader-mode[data-app-section="ask"] .reader-column,
+  body.reader-mode[data-app-section="notes"] .reader-column,
+  body.reader-mode[data-app-section="studies"] .reader-column,
+  body.reader-mode[data-app-section="explore"] .reader-column {
+    display: none;
   }
 }
 
 @media (max-width: 680px) {
-  .page {
+  .reader-page {
     width: min(100% - 20px, 1440px);
     padding-top: 16px;
-    padding-bottom: calc(20px + var(--mobile-nav-height) + env(safe-area-inset-bottom));
   }
 
   .header,
@@ -556,88 +639,14 @@ code {
     min-height: 44px;
   }
 
-  .mobile-bottom-nav {
-    position: fixed;
-    inset-inline: 0;
-    bottom: 0;
-    z-index: 10002;
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 6px;
-    padding: 8px max(8px, env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left));
-    border-top: 1px solid var(--border);
-    background: linear-gradient(180deg, rgb(252 253 254 / 98%), rgb(245 249 252 / 98%));
-    box-shadow: 0 -10px 24px rgb(17 30 41 / 10%);
-    backdrop-filter: blur(10px);
-  }
-
-  .mobile-bottom-nav-item {
-    min-height: 46px;
-    padding: 0 8px;
-    border: 1px solid var(--border-strong);
-    border-radius: 14px;
-    background: var(--surface);
-    color: var(--page-muted);
-    font-size: 0.82rem;
-    font-weight: 800;
-    line-height: 1.1;
-  }
-
-  .mobile-bottom-nav-item.is-active,
-  .mobile-bottom-nav-item[aria-pressed="true"] {
-    border-color: var(--accent);
-    color: var(--accent-text);
-    background: var(--accent-soft);
-  }
-
   .context-menu {
     min-width: min(260px, calc(100vw - 16px));
-    max-height: calc(100dvh - var(--mobile-nav-height) - 24px);
+    max-height: calc(100dvh - var(--app-dock-height) - 24px);
     overflow: auto;
   }
 
   .verse-actions-button {
     display: inline-flex;
-  }
-
-  body[data-mobile-section="bible"] .study-panel {
-    display: none;
-  }
-
-  body[data-mobile-section="ask"] .reader-column,
-  body[data-mobile-section="notes"] .reader-column,
-  body[data-mobile-section="studies"] .reader-column,
-  body[data-mobile-section="maps"] .reader-column {
-    display: none;
-  }
-
-  body[data-mobile-section="ask"] .study-panel,
-  body[data-mobile-section="notes"] .study-panel,
-  body[data-mobile-section="studies"] .study-panel,
-  body[data-mobile-section="maps"] .study-panel {
-    display: block;
-  }
-
-  body[data-mobile-section="bible"] .workspace-drawer-toggle {
-    display: inline-flex;
-  }
-
-  body[data-mobile-section="bible"] .reader-column {
-    display: block;
-  }
-
-  body.reader-mode[data-mobile-section="ask"] .study-panel,
-  body.reader-mode[data-mobile-section="notes"] .study-panel,
-  body.reader-mode[data-mobile-section="studies"] .study-panel,
-  body.reader-mode[data-mobile-section="maps"] .study-panel {
-    display: block;
-  }
-
-  body.reader-mode[data-mobile-section="ask"] .reader-column,
-  body.reader-mode[data-mobile-section="notes"] .reader-column,
-  body.reader-mode[data-mobile-section="studies"] .reader-column,
-  body.reader-mode[data-mobile-section="maps"] .reader-column {
-    display: none;
   }
 
   .notes-list,

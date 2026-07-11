@@ -31,10 +31,22 @@
 
 .reader-next-chapter {
   align-self: end;
-  min-height: 40px;
-  min-width: 72px;
+  min-height: 36px;
+  min-width: 44px;
+  padding-inline: 10px;
   font-size: 1rem;
   letter-spacing: 0;
+  line-height: 1;
+}
+
+.reader-prev-chapter {
+  align-self: end;
+  min-height: 36px;
+  min-width: 44px;
+  padding-inline: 10px;
+  font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 1;
 }
 
 .reader-next-chapter-footer {
@@ -1062,6 +1074,12 @@ html[data-theme="dark"] .map-panel-body {
 
   .reader-next-chapter-footer .reader-next-chapter {
     width: 100%;
+  }
+
+  .reader-controls .reader-prev-chapter,
+  .reader-controls .reader-next-chapter {
+    width: auto;
+    min-width: 42px;
   }
 
   .chapter-reader {

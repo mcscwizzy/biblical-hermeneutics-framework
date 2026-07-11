@@ -39,15 +39,22 @@ dataset records its upstream source in its translation metadata.
 
 Choose a book and chapter with the reader controls. The chapter text is the
 primary workspace. On desktop, Ask BHF, status, answer output, and notes appear
-in the right study panel; on smaller screens they stack below the reader.
+in the right study panel; on compact screens the app dock switches between the
+reader and workspace views.
 
-### Mobile Layout
+### App Dock And Compact Layout
 
-The UI is now mobile-first on phone widths:
+The UI uses a shared application dock on phone, tablet, desktop, PWA, and
+future wrapper layouts:
 
 - The Bible reader stays readable with tighter spacing and larger touch targets.
-- The study workspace is reachable from a bottom navigation bar with Bible,
-  Ask, Notes, Studies, and Maps tabs.
+- Primary navigation uses Bible, Ask, Notes, Studies, and Explore destinations.
+- On phone and compact tablet widths, the dock switches between full-screen
+  reader and workspace sections.
+- On desktop widths, the dock activates the workspace tool while preserving the
+  side-by-side reader and study workspace.
+- Studies groups Highlights and Saved Studies; Explore groups Maps and 3D
+  Journey.
 - Verse actions have both long-press and button-based touch entry points.
 - Horizontal scrolling is avoided by default on phone widths.
 
@@ -55,7 +62,7 @@ To test phone layouts in a browser:
 
 1. Open the app in Chrome, Firefox, or Safari dev tools.
 2. Switch to a phone viewport such as 390 x 844.
-3. Verify the bottom nav appears.
+3. Verify the app dock appears.
 4. Switch between Bible and Ask, then confirm the reader and study panel still
    retain their state.
 5. Use the verse action button to open note/highlight actions on touch-sized
@@ -254,7 +261,7 @@ backend when the device is online.
 
 ## Known Limitations
 
-- The Maps tab is mobile-safe, but some map workflows still depend on the
+- The Explore Maps view is mobile-safe, but some map workflows still depend on the
   existing desktop-oriented panels and external tile/data sources.
 - The Apple native AI bridge is only a placeholder in the runtime config.
 - Offline mode covers the shell and static assets, not live agent responses or
