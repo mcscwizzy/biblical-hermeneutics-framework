@@ -81,7 +81,8 @@ function requestJson(url, options = {}, fallbackMessage = "Request failed.") {
   if (typeof BHF_HTTP.requestJson === "function") {
     return BHF_HTTP.requestJson(url, options, fallbackMessage);
   }
-  return fetch(url, options).then(async (response) => {
+  const resolvedUrl = typeof BHF_HTTP.resolveUrl === "function" ? BHF_HTTP.resolveUrl(url) : url;
+  return fetch(resolvedUrl, options).then(async (response) => {
     const data = await response.json();
     if (!response.ok) {
       throw new Error(data.error || fallbackMessage);

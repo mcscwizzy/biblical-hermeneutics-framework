@@ -1,6 +1,22 @@
 (function () {
+  function resolveUrl(url) {
+    const raw = String(url || "");
+    if (/^(?:[a-z]+:)?\/\//i.test(raw) || raw.startsWith("data:") || raw.startsWith("blob:")) {
+      return raw;
+    }
+    const runtime = window.BHFRuntimeConfig || {};
+    const base = String(runtime.apiBaseUrl || "").replace(/\/+$/, "");
+    if (!base) {
+      return raw;
+    }
+    if (raw.startsWith("/")) {
+      return `${base}${raw}`;
+    }
+    return `${base}/${raw}`;
+  }
+
   async function requestJson(url, options = {}, fallbackMessage = "Request failed.") {
-    const response = await fetch(url, options);
+    const response = await fetch(resolveUrl(url), options);
     const data = await response.json();
     if (!response.ok) {
       throw new Error(data.error || fallbackMessage);
@@ -9,7 +25,7 @@
   }
 
   async function requestText(url, options = {}, fallbackMessage = "Request failed.") {
-    const response = await fetch(url, options);
+    const response = await fetch(resolveUrl(url), options);
     const data = await response.text();
     if (!response.ok) {
       throw new Error(data || fallbackMessage);
@@ -20,5 +36,6 @@
   window.BHFApi = {
     requestJson,
     requestText,
+    resolveUrl,
   };
 })();

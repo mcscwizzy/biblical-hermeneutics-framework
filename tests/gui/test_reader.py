@@ -31,6 +31,17 @@ def test_change_book_and_chapter(driver, wait, base_url):
     assert "Genesis 1" in driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text
 
 
+def test_clicking_verse_number_selects_entire_verse(driver, wait, base_url):
+    HomePage(driver, wait, base_url).open().wait_loaded()
+
+    driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="1"] [data-verse-select]').click()
+
+    wait.until(lambda _driver: "selected" in _driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="1"]').get_attribute("class"))
+    assert driver.find_element(By.CSS_SELECTOR, '.ask-form [name="reader_start_verse"]').get_attribute("value") == "1"
+    assert driver.find_element(By.CSS_SELECTOR, '.ask-form [name="reader_end_verse"]').get_attribute("value") == "1"
+    assert driver.find_element(By.CSS_SELECTOR, '.ask-form [name="reader_selected_text"]').get_attribute("value")
+
+
 def test_bible_search(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
     page = BibleReaderPage(driver, wait, base_url)

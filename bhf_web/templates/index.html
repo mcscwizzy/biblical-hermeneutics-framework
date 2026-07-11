@@ -4,6 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BHF ASV Reader</title>
+  <meta name="theme-color" content="{{ runtime_config.themeColor }}">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="{{ url_for('static', path='/icons/icon-192.png') }}" type="image/png">
+  <link rel="apple-touch-icon" href="{{ url_for('static', path='/icons/apple-touch-icon.png') }}">
   <script>
     (() => {
       try {
@@ -20,13 +24,15 @@
   <script>
     window.BHFCesiumIonToken = {{ cesium_ion_token|tojson }};
     window.BHFTestMode = {{ test_mode|tojson }};
+    window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}?v=20260703a">
+  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}?v=20260711a">
   <script src="{{ url_for('static', path='/api/http.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-status.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-study-panels.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-search.js') }}" defer></script>
-  <script src="{{ url_for('static', path='/htmx-lite.js') }}?v=20260703a" defer></script>
+  <script src="{{ url_for('static', path='/htmx-lite.js') }}?v=20260711a" defer></script>
+  <script src="{{ url_for('static', path='/pwa.js') }}" defer></script>
   {% if not test_mode %}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
@@ -86,8 +92,8 @@
                   <span>Chapter</span>
                   <select id="chapter-select" data-reader-chapter data-testid="chapter-input"></select>
                 </label>
-                <button type="button" class="secondary reader-prev-chapter" data-prev-chapter data-testid="chapter-prev" aria-label="Previous chapter" title="Previous chapter">&lt;&lt;&lt;</button>
-                <button type="button" class="secondary reader-next-chapter" data-next-chapter data-testid="chapter-next" aria-label="Next chapter" title="Next chapter">&gt;&gt;&gt;</button>
+                <button type="button" class="secondary reader-prev-chapter" data-prev-chapter data-testid="chapter-prev" aria-label="Previous chapter" title="Previous chapter">&lt;</button>
+                <button type="button" class="secondary reader-next-chapter" data-next-chapter data-testid="chapter-next" aria-label="Next chapter" title="Next chapter">&gt;</button>
               </div>
             </div>
           <form class="reader-search" data-bible-search>
@@ -617,24 +623,41 @@
     </dialog>
 
     <nav id="reader-context-menu" class="context-menu" aria-label="Verse actions" hidden>
-      <button type="button" data-context-action="ancient_context">Ancient Context</button>
-      <button type="button" data-context-action="literary_context">Literary Context</button>
-      <button type="button" data-context-action="cross_references">Cross References</button>
-      <button type="button" data-context-action="related_ot_themes">Related OT Themes</button>
-      <button type="button" data-context-action="fulfillment_nt">Fulfillment in the NT</button>
-      <button type="button" data-context-action="compare_translations">Compare Translations</button>
-      <button type="button" data-context-action="timeline">Timeline</button>
-      <button type="button" data-context-action="ask_location">Ask about this location</button>
-      <button type="button" data-context-action="open_map_panel">Open map panel</button>
-      <button type="button" data-context-action="save_map_study">Save map study</button>
-      <button type="button" data-context-action="map_note">Add map note</button>
-      <button type="button" data-context-action="related_passages">View related passages</button>
-      <button type="button" data-context-action="view_historical_layer">View historical layer</button>
-      <button type="button" data-context-action="save_study">Save Study</button>
-      <button type="button" data-context-action="note">Add note to this verse</button>
-      <button type="button" data-context-action="highlight">Highlight this verse</button>
-      <button type="button" data-context-action="word_study">Word Study</button>
+      <div class="context-menu-section" role="group" aria-labelledby="context-menu-study-heading">
+        <p id="context-menu-study-heading" class="context-menu-heading">Study</p>
+        <button type="button" data-context-action="ask_bhf">Ask BHF</button>
+        <button type="button" data-context-action="ancient_context">Ancient Context</button>
+        <button type="button" data-context-action="literary_context">Literary Context</button>
+        <button type="button" data-context-action="word_study">Word Study</button>
+      </div>
+      <div class="context-menu-section" role="group" aria-labelledby="context-menu-reference-heading">
+        <p id="context-menu-reference-heading" class="context-menu-heading">Reference</p>
+        <button type="button" data-context-action="cross_references">Cross References</button>
+        <button type="button" data-context-action="related_ot_themes">Related OT Themes</button>
+        <button type="button" data-context-action="fulfillment_nt">Fulfillment in the NT</button>
+        <button type="button" data-context-action="compare_translations">Compare Translations</button>
+        <button type="button" data-context-action="timeline">Timeline</button>
+        <button type="button" data-context-action="open_map_panel">Maps</button>
+        <button type="button" data-context-action="ask_location">Ask about this location</button>
+        <button type="button" data-context-action="related_passages">View related passages</button>
+        <button type="button" data-context-action="view_historical_layer">View historical layer</button>
+      </div>
+      <div class="context-menu-section" role="group" aria-labelledby="context-menu-actions-heading">
+        <p id="context-menu-actions-heading" class="context-menu-heading">Study Actions</p>
+        <button type="button" data-context-action="highlight">Highlight Verse</button>
+        <button type="button" data-context-action="note">Add Note</button>
+        <button type="button" data-context-action="save_study">Save Study</button>
+        <button type="button" data-context-action="save_map_study">Save map study</button>
+        <button type="button" data-context-action="map_note">Add map note</button>
+      </div>
     </nav>
   </main>
+  <nav class="app-dock" aria-label="Application navigation" data-app-dock>
+    <button type="button" class="app-dock-item is-active" data-app-section="bible" data-testid="app-dock-bible" aria-pressed="true">Bible</button>
+    <button type="button" class="app-dock-item" data-app-section="ask" data-testid="app-dock-ask" aria-pressed="false">Ask</button>
+    <button type="button" class="app-dock-item" data-app-section="notes" data-testid="app-dock-notes" aria-pressed="false">Notes</button>
+    <button type="button" class="app-dock-item" data-app-section="studies" data-testid="app-dock-studies" aria-pressed="false">Studies</button>
+    <button type="button" class="app-dock-item" data-app-section="explore" data-testid="app-dock-explore" aria-pressed="false">Explore</button>
+  </nav>
 </body>
 </html>

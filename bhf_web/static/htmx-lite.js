@@ -5,6 +5,10 @@
 const POLL_INTERVAL_MS = 750;
 const READER_LONG_PRESS_DELAY_MS = 550;
 const READER_LONG_PRESS_MOVE_THRESHOLD_PX = 14;
+const APP_SECTION_STORAGE_KEY = "bhf-app-section";
+const LEGACY_MOBILE_SECTION_STORAGE_KEY = "bhf-mobile-section";
+const BHF_RUNTIME = window.BHFRuntimeConfig || {};
+const TABLET_BREAKPOINT = Number(BHF_RUNTIME.breakpoints?.tablet || 900);
 const GENERAL_QUESTION_MODE = "general_question";
 const THEME_STORAGE_KEY = "bhf-theme";
 const READER_MODE_STORAGE_KEY = "bhf-reader-mode";
@@ -27,11 +31,15 @@ let latestJobComplete = false;
 let currentChapter = null;
 let currentSelection = null;
 let noteContext = null;
+let currentNotes = [];
 let currentHighlights = [];
 let contextMenuState = null;
 let lastMapAIFallbackKey = null;
 let activeLiveAnswerPanel = null;
 let readerLongPressState = null;
+let appSection = null;
+let lastStudiesWorkspaceTab = "saved";
+let lastExploreWorkspaceTab = "maps";
 const BHF_HTTP = window.BHFApi || {};
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -39,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeReaderMode();
   initializeWorkspaceExpansion();
   initializeWorkspaceTabs();
+  initializeAppNavigation();
   initializeReader();
   initializeWorkspaceBridge();
   initializeWorkspaceDrawer();
@@ -147,13 +156,14 @@ async function initializeReader() {
   document.addEventListener("selectionchange", updateSelectionFromDocument);
   document.addEventListener("click", closeContextMenuOnOutside);
   document.addEventListener("keydown", closeContextMenuOnEscape);
-  window.addEventListener("scroll", hideContextMenu, true);
+  window.addEventListener("scroll", closeContextMenuOnReaderScroll, true);
   reader.addEventListener("contextmenu", handleReaderContextMenu);
   reader.addEventListener("pointerdown", handleReaderPointerDown);
   reader.addEventListener("pointermove", handleReaderPointerMove);
   reader.addEventListener("pointerup", cancelReaderLongPress);
   reader.addEventListener("pointercancel", cancelReaderLongPress);
   reader.addEventListener("pointerleave", handleReaderPointerLeave);
+  reader.addEventListener("click", handleReaderActionButtonClick);
   document.addEventListener("click", handleChapterNavigationClick);
   const contextMenu = document.querySelector("#reader-context-menu");
   const searchForm = document.querySelector("[data-bible-search]");
@@ -220,6 +230,38 @@ function initializeWorkspaceTabs() {
   activateWorkspaceTab(defaultTab);
 }
 
+function initializeAppNavigation() {
+  const dock = document.querySelector("[data-app-dock]");
+  const buttons = Array.from(dock?.querySelectorAll("[data-app-section]") || []);
+  if (!dock || buttons.length === 0) {
+    return;
+  }
+
+  const initialSection = resolveInitialAppSection(readAppSectionPreference());
+  activateAppSection(initialSection, {
+    persist: false,
+    updateWorkspace: initialSection !== "bible",
+    focusReader: false,
+  });
+
+  for (const button of buttons) {
+    button.addEventListener("click", () => {
+      activateAppSection(button.dataset.appSection || "bible");
+    });
+  }
+
+  document.addEventListener("bhf:workspace-tab-changed", (event) => {
+    const tabId = event.detail?.tabId;
+    rememberWorkspaceSubtab(tabId);
+    const nextSection = appSectionFromWorkspaceTab(tabId);
+    if (nextSection) {
+      activateAppSection(nextSection, { updateWorkspace: false });
+    }
+  });
+
+  window.addEventListener("resize", handleAppViewportChange);
+}
+
 function initializeWorkspaceBridge() {
   if (typeof window === "undefined") {
     return;
@@ -231,6 +273,172 @@ function initializeWorkspaceBridge() {
     navigateToPassage,
     openPassageReference,
   };
+}
+
+function activateAppSection(sectionId, options = {}) {
+  const nextSection = normalizeAppSection(sectionId);
+  appSection = nextSection;
+  document.body.dataset.appSection = nextSection;
+  syncAppDockState(nextSection);
+
+  if (options.persist !== false) {
+    persistAppSection(nextSection);
+  }
+
+  if (options.updateWorkspace !== false) {
+    activateWorkspaceForAppSection(nextSection);
+  }
+
+  if (isCompactViewport()) {
+    applyCompactSectionLayout(nextSection);
+  } else {
+    applyDesktopSectionLayout(nextSection, options);
+  }
+}
+
+function syncAppDockState(sectionId) {
+  const activeSection = normalizeAppSection(sectionId || appSection || "bible");
+  document.querySelectorAll("[data-app-section]").forEach((button) => {
+    const isActive = button.dataset.appSection === activeSection;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+}
+
+function activateWorkspaceForAppSection(sectionId) {
+  const workspaceTab = appSectionToWorkspaceTab(sectionId);
+  if (workspaceTab) {
+    activateWorkspaceTab(workspaceTab);
+  }
+}
+
+function applyCompactSectionLayout(sectionId) {
+  if (sectionId === "bible") {
+    applyWorkspaceExpansion(false);
+    closeWorkspaceDrawer();
+    return;
+  }
+
+  setWorkspaceDrawerOpen(true);
+}
+
+function applyDesktopSectionLayout(sectionId, options = {}) {
+  closeWorkspaceDrawer();
+  if (sectionId === "bible") {
+    applyWorkspaceExpansion(false);
+    if (options.focusReader !== false) {
+      focusReaderArea();
+    }
+    return;
+  }
+
+  if (document.body.classList.contains("reader-mode")) {
+    applyReaderMode(false, { persist: false });
+  }
+  applyWorkspaceExpansion(false);
+}
+
+function handleAppViewportChange() {
+  const nextSection = normalizeAppSection(appSection || readAppSectionPreference() || "bible");
+  activateAppSection(nextSection, {
+    persist: false,
+    updateWorkspace: nextSection !== "bible",
+    focusReader: false,
+  });
+}
+
+function focusReaderArea() {
+  const reader = document.querySelector(".reader-column");
+  if (!reader) {
+    return;
+  }
+  reader.scrollIntoView({ block: "start", behavior: "smooth" });
+}
+
+function appSectionFromWorkspaceTab(tabId) {
+  if (!tabId) {
+    return null;
+  }
+  if (tabId === "ask" || tabId === "notes") {
+    return tabId;
+  }
+  if (tabId === "highlights" || tabId === "saved") {
+    return "studies";
+  }
+  if (tabId === "maps" || tabId === "journey") {
+    return "explore";
+  }
+  return null;
+}
+
+function appSectionToWorkspaceTab(sectionId) {
+  const normalized = normalizeAppSection(sectionId);
+  if (normalized === "studies") {
+    const currentWorkspaceTab = getCurrentWorkspaceTab();
+    if (currentWorkspaceTab === "highlights" || currentWorkspaceTab === "saved") {
+      return currentWorkspaceTab;
+    }
+    return lastStudiesWorkspaceTab || "saved";
+  }
+  if (normalized === "explore") {
+    const currentWorkspaceTab = getCurrentWorkspaceTab();
+    if (currentWorkspaceTab === "maps" || currentWorkspaceTab === "journey") {
+      return currentWorkspaceTab;
+    }
+    return lastExploreWorkspaceTab || "maps";
+  }
+  return normalized === "bible" ? null : normalized;
+}
+
+function rememberWorkspaceSubtab(tabId) {
+  if (tabId === "highlights" || tabId === "saved") {
+    lastStudiesWorkspaceTab = tabId;
+  } else if (tabId === "maps" || tabId === "journey") {
+    lastExploreWorkspaceTab = tabId;
+  }
+}
+
+function getCurrentWorkspaceTab() {
+  const activeTab = document.querySelector(".workspace-tab[aria-selected='true']");
+  return activeTab?.dataset.workspaceTab || null;
+}
+
+function normalizeAppSection(sectionId) {
+  const normalized = String(sectionId || "bible").toLowerCase();
+  if (normalized === "maps" || normalized === "journey") {
+    return "explore";
+  }
+  if (["bible", "ask", "notes", "studies", "explore"].includes(normalized)) {
+    return normalized;
+  }
+  return "bible";
+}
+
+function isCompactViewport() {
+  return window.matchMedia(`(max-width: ${TABLET_BREAKPOINT}px)`).matches;
+}
+
+function readAppSectionPreference() {
+  try {
+    const saved = window.localStorage.getItem(APP_SECTION_STORAGE_KEY);
+    const legacySaved = window.localStorage.getItem(LEGACY_MOBILE_SECTION_STORAGE_KEY);
+    return normalizeAppSection(saved || legacySaved || "bible");
+  } catch (_error) {
+    return "bible";
+  }
+}
+
+function persistAppSection(sectionId) {
+  try {
+    window.localStorage.setItem(APP_SECTION_STORAGE_KEY, normalizeAppSection(sectionId));
+  } catch (_error) {
+    // Ignore storage errors in restricted environments.
+  }
+}
+
+function resolveInitialAppSection(savedSection) {
+  const saved = normalizeAppSection(savedSection || "bible");
+  return saved;
 }
 
 function initializeTheme() {
@@ -273,7 +481,7 @@ function applyWorkspaceExpansion(enabled) {
   document.body.classList.toggle("workspace-expanded", nextEnabled);
   if (nextEnabled) {
     closeWorkspaceDrawer();
-  } else if (window.matchMedia("(max-width: 900px)").matches) {
+  } else if (isCompactViewport()) {
     closeWorkspaceDrawer();
   }
   const toggle = document.querySelector("[data-workspace-expand-toggle]");
@@ -297,7 +505,7 @@ function toggleWorkspaceExpansion() {
 }
 
 function revealAnswerPanel(answerPanel) {
-  if (!answerPanel || !window.matchMedia("(max-width: 900px)").matches) {
+  if (!answerPanel || !isCompactViewport()) {
     return;
   }
   window.requestAnimationFrame(() => {
@@ -308,7 +516,7 @@ function revealAnswerPanel(answerPanel) {
 }
 
 function expandWorkspaceForMobileAnswer() {
-  if (!window.matchMedia("(max-width: 900px)").matches) {
+  if (!isCompactViewport()) {
     return;
   }
   if (document.body.classList.contains("workspace-expanded")) {
@@ -318,7 +526,7 @@ function expandWorkspaceForMobileAnswer() {
 }
 
 function addMobileAnswerCloseControl(answerPanel) {
-  if (!answerPanel || !window.matchMedia("(max-width: 900px)").matches) {
+  if (!answerPanel || !isCompactViewport()) {
     return;
   }
   if (answerPanel.querySelector("[data-mobile-answer-close]")) {
@@ -337,7 +545,7 @@ function addMobileAnswerCloseControl(answerPanel) {
 }
 
 function closeMobileAnswerView() {
-  if (!window.matchMedia("(max-width: 900px)").matches) {
+  if (!isCompactViewport()) {
     return;
   }
   applyWorkspaceExpansion(false);
@@ -432,7 +640,7 @@ function requestJson(url, options = {}, fallbackMessage = "Request failed.") {
   if (typeof BHF_HTTP.requestJson === "function") {
     return BHF_HTTP.requestJson(url, options, fallbackMessage);
   }
-  return fetch(url, options).then(async (response) => {
+  return fetch(resolveBackendUrl(url), options).then(async (response) => {
     const data = await response.json();
     if (!response.ok) {
       throw new Error(data.error || fallbackMessage);
@@ -445,13 +653,31 @@ function requestText(url, options = {}, fallbackMessage = "Request failed.") {
   if (typeof BHF_HTTP.requestText === "function") {
     return BHF_HTTP.requestText(url, options, fallbackMessage);
   }
-  return fetch(url, options).then(async (response) => {
+  return fetch(resolveBackendUrl(url), options).then(async (response) => {
     const data = await response.text();
     if (!response.ok) {
       throw new Error(data || fallbackMessage);
     }
     return data;
   });
+}
+
+function resolveBackendUrl(url) {
+  if (typeof BHF_HTTP.resolveUrl === "function") {
+    return BHF_HTTP.resolveUrl(url);
+  }
+  const raw = String(url || "");
+  if (/^(?:[a-z]+:)?\/\//i.test(raw) || raw.startsWith("data:") || raw.startsWith("blob:")) {
+    return raw;
+  }
+  const base = String(BHF_RUNTIME.apiBaseUrl || "").replace(/\/+$/, "");
+  if (!base) {
+    return raw;
+  }
+  if (raw.startsWith("/")) {
+    return `${base}${raw}`;
+  }
+  return `${base}/${raw}`;
 }
 
 function handleWorkspaceTabKeydown(event, tabs) {
@@ -507,7 +733,7 @@ function activateWorkspaceTab(tabId) {
 function initializeWorkspaceDrawer() {
   const toggle = document.querySelector("[data-workspace-drawer-toggle]");
   const panel = document.querySelector("#study-panel");
-  if (panel && window.matchMedia("(max-width: 900px)").matches) {
+  if (panel && isCompactViewport()) {
     panel.classList.remove("is-open");
   }
   if (toggle) {
@@ -516,7 +742,7 @@ function initializeWorkspaceDrawer() {
     });
   }
   window.addEventListener("resize", () => {
-    if (window.matchMedia("(min-width: 901px)").matches) {
+    if (!isCompactViewport()) {
       setWorkspaceDrawerOpen(false);
     }
   });
@@ -590,6 +816,7 @@ async function loadReaderChapter(book, chapter) {
     currentSelection = null;
     latestJobId = null;
     latestJobComplete = false;
+    currentNotes = [];
     currentHighlights = [];
     renderChapter(data);
     clearReaderSearchState();
@@ -719,8 +946,16 @@ function handleNextChapterClick(event) {
 
 function renderChapter(data) {
   const reader = document.querySelector("#chapter-reader");
+  const header = document.createElement("div");
+  header.className = "reader-chapter-header";
+
   const heading = document.createElement("h3");
   heading.textContent = `${data.book} ${data.chapter}`;
+
+  header.appendChild(createChapterNavButton("prev", "◀ Previous Chapter"));
+  header.appendChild(heading);
+  header.appendChild(createChapterNavButton("next", "Next Chapter ▶"));
+
   const paragraph = document.createElement("p");
   paragraph.className = "chapter-text";
   for (const verse of data.verses) {
@@ -728,32 +963,92 @@ function renderChapter(data) {
     verseSpan.className = "verse";
     verseSpan.dataset.verse = String(verse.verse);
 
-    const number = document.createElement("sup");
+    const number = document.createElement("button");
+    number.type = "button";
     number.className = "verse-number";
+    number.dataset.verseSelect = "true";
     number.textContent = String(verse.verse);
+    number.setAttribute("aria-label", `Select ${data.book} ${data.chapter}:${verse.verse}`);
+
+    const actions = document.createElement("button");
+    actions.type = "button";
+    actions.className = "secondary verse-actions-button";
+    actions.dataset.verseActions = "true";
+    actions.textContent = "⋮";
+    actions.setAttribute("aria-label", "Verse actions");
+    actions.title = `Verse actions for ${data.book} ${data.chapter}:${verse.verse}`;
+
+    const indicators = document.createElement("span");
+    indicators.className = "verse-state-indicators";
+    indicators.dataset.verseIndicators = "true";
 
     const text = document.createElement("span");
     text.className = "verse-text";
     text.textContent = verse.text + " ";
 
     verseSpan.appendChild(number);
+    verseSpan.appendChild(actions);
+    verseSpan.appendChild(indicators);
     verseSpan.appendChild(text);
     paragraph.appendChild(verseSpan);
   }
   reader.innerHTML = "";
-  reader.appendChild(heading);
+  reader.appendChild(header);
   reader.appendChild(paragraph);
   const footer = document.createElement("div");
-  footer.className = "reader-next-chapter-footer";
-  const nextButton = document.createElement("button");
-  nextButton.type = "button";
-  nextButton.className = "secondary reader-next-chapter";
-  nextButton.dataset.nextChapter = "";
-  nextButton.setAttribute("aria-label", "Next chapter");
-  nextButton.title = "Next chapter";
-  nextButton.textContent = ">>>";
-  footer.appendChild(nextButton);
+  footer.className = "reader-chapter-footer reader-next-chapter-footer";
+  footer.appendChild(createChapterNavButton("prev", "◀ Previous Chapter"));
+  footer.appendChild(createChapterNavButton("next", "Next Chapter ▶"));
   reader.appendChild(footer);
+}
+
+function createChapterNavButton(direction, label) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = `secondary reader-${direction}-chapter`;
+  if (direction === "prev") {
+    button.dataset.prevChapter = "";
+    button.setAttribute("aria-label", "Previous chapter");
+    button.title = "Previous chapter";
+  } else {
+    button.dataset.nextChapter = "";
+    button.setAttribute("aria-label", "Next chapter");
+    button.title = "Next chapter";
+  }
+  button.textContent = label;
+  return button;
+}
+
+function handleReaderActionButtonClick(event) {
+  const button = event.target.closest("[data-verse-actions]");
+  const verseSelect = event.target.closest("[data-verse-select]");
+  if (!button && !verseSelect) {
+    return;
+  }
+  const verse = (button || verseSelect).closest("[data-verse]");
+  if (!verse || !currentChapter) {
+    return;
+  }
+  event.preventDefault();
+  event.stopPropagation();
+
+  if (verseSelect) {
+    const context = contextFromVerse(verse);
+    if (context) {
+      clearDocumentSelection();
+      applySelectionContext(context);
+    }
+    return;
+  }
+
+  const context = contextForVerseAction(verse);
+  if (!context) {
+    return;
+  }
+  contextMenuState = context;
+  applySelectionContext(context);
+  const rect = button.getBoundingClientRect();
+  showContextMenu(rect.left + rect.width / 2, rect.bottom + 8, context);
 }
 
 function collectSelectedVerseText(startVerse, endVerse) {
@@ -786,7 +1081,7 @@ function handleReaderContextMenu(event) {
     return;
   }
 
-  const context = selectionContextFromDocument() || contextFromVerse(verse);
+  const context = contextForVerseAction(verse);
   if (!context) {
     return;
   }
@@ -848,7 +1143,7 @@ function triggerReaderLongPress() {
   if (!readerLongPressState || readerLongPressState.triggered) {
     return;
   }
-  const context = selectionContextFromDocument() || contextFromVerse(readerLongPressState.verse);
+  const context = contextForVerseAction(readerLongPressState.verse);
   if (!context) {
     cancelReaderLongPress();
     return;
@@ -912,12 +1207,33 @@ function contextFromVerse(verse) {
   };
 }
 
+function contextForVerseAction(verse) {
+  const verseNumber = Number(verse?.dataset?.verse || "0");
+  const documentContext = selectionContextFromDocument();
+  if (contextIncludesVerse(documentContext, verseNumber)) {
+    return documentContext;
+  }
+  if (contextIncludesVerse(currentSelection, verseNumber)) {
+    return currentSelection;
+  }
+  return contextFromVerse(verse);
+}
+
+function contextIncludesVerse(context, verseNumber) {
+  if (!context || !verseNumber) {
+    return false;
+  }
+  return Number(context.startVerse) <= verseNumber && verseNumber <= Number(context.endVerse || context.startVerse);
+}
+
 function showContextMenu(x, y, context) {
   const menu = document.querySelector("#reader-context-menu");
   if (!menu) {
     return;
   }
   const isSelection = Boolean(context.isSelection);
+  const isHighlighted = isContextHighlighted(context);
+  setContextLabel("ask_bhf", "Ask BHF");
   setContextLabel("ancient_context", isSelection ? "Ancient Context" : "Ancient Context");
   setContextLabel("literary_context", isSelection ? "Literary Context" : "Literary Context");
   setContextLabel("cross_references", isSelection ? "Cross References" : "Cross References");
@@ -926,15 +1242,15 @@ function showContextMenu(x, y, context) {
   setContextLabel("compare_translations", isSelection ? "Compare Translations" : "Compare Translations");
   setContextLabel("timeline", isSelection ? "Timeline" : "Timeline");
   setContextLabel("ask_location", isSelection ? "Ask about this location" : "Ask about this location");
-  setContextLabel("open_map_panel", isSelection ? "Open map panel" : "Open map panel");
+  setContextLabel("open_map_panel", isSelection ? "Maps" : "Maps");
   setContextLabel("save_map_study", "Save map study");
   setContextLabel("map_note", "Add map note");
   setContextLabel("compare_archaeology", "Compare with archaeology");
   setContextLabel("related_passages", "View related passages");
   setContextLabel("view_historical_layer", "View historical layer");
   setContextLabel("save_study", "Save Study");
-  setContextLabel("note", isSelection ? "Add note to selection" : "Add note to this verse");
-  setContextLabel("highlight", isSelection ? "Highlight selection" : "Highlight this verse");
+  setContextLabel("note", isSelection ? "Add Note" : "Add Note");
+  setContextLabel("highlight", isHighlighted ? "Remove Highlight" : (isSelection ? "Highlight Selection" : "Highlight Verse"));
   menu.hidden = false;
   const rect = menu.getBoundingClientRect();
   const left = Math.min(x, window.innerWidth - rect.width - 8);
@@ -959,10 +1275,17 @@ async function handleContextMenuAction(event) {
   if (!button || !contextMenuState) {
     return;
   }
-  const actionType = button.dataset.contextAction;
+  const actionType = resolveContextAction(button.dataset.contextAction, contextMenuState);
   const context = contextMenuState;
   hideContextMenu();
   await dispatchStudyAction(createStudyAction(actionType, context));
+}
+
+function resolveContextAction(actionType, context) {
+  if (actionType === "highlight" && isContextHighlighted(context)) {
+    return "remove_highlight";
+  }
+  return actionType;
 }
 
 function createStudyAction(type, context) {
@@ -973,13 +1296,23 @@ function createStudyAction(type, context) {
     verseStart: Number(context.startVerse),
     verseEnd: Number(context.endVerse || context.startVerse),
     selectedText: context.text || "",
+    isSelection: Boolean(context.isSelection),
     sourceTranslation: "ASV"
   };
 }
 
 async function dispatchStudyAction(studyAction) {
   applyStudyActionContext(studyAction);
-  if (BHF_STUDY_ACTIONS.has(studyAction.type)) {
+  if (studyAction.type === "ask_bhf") {
+    activateWorkspaceTab("ask");
+    setFormValue("ask_mode", "");
+    setFormValue("study_action", "");
+    setMapContextValue("");
+    const question = document.querySelector('.ask-form [name="question"]');
+    if (question) {
+      question.focus();
+    }
+  } else if (BHF_STUDY_ACTIONS.has(studyAction.type)) {
     activateWorkspaceTab("ask");
     const askMode = studyAction.type === "ask_location" ? "maps" : studyAction.type;
     if (studyAction.type === "ask_location") {
@@ -995,6 +1328,8 @@ async function dispatchStudyAction(studyAction) {
     openNoteEditor();
   } else if (studyAction.type === "highlight") {
     await createHighlight(studyAction);
+  } else if (studyAction.type === "remove_highlight") {
+    await removeHighlightsForContext(studyAction);
   } else if (studyAction.type === "save_study") {
     await saveLatestStudy();
   } else if (studyAction.type === "open_map_panel") {
@@ -1038,7 +1373,7 @@ function applyStudyActionContext(studyAction) {
     startVerse: studyAction.verseStart,
     endVerse: studyAction.verseEnd,
     text: studyAction.selectedText,
-    isSelection: studyAction.verseStart !== studyAction.verseEnd || Boolean(studyAction.selectedText)
+    isSelection: Boolean(studyAction.isSelection) || studyAction.verseStart !== studyAction.verseEnd
   });
 }
 
@@ -1111,12 +1446,27 @@ function closeContextMenuOnEscape(event) {
   }
 }
 
+function closeContextMenuOnReaderScroll(event) {
+  const menu = document.querySelector("#reader-context-menu");
+  if (menu && menu.contains(event.target)) {
+    return;
+  }
+  hideContextMenu();
+}
+
 function hideContextMenu() {
   const menu = document.querySelector("#reader-context-menu");
   if (menu) {
     menu.hidden = true;
   }
   contextMenuState = null;
+}
+
+function clearDocumentSelection() {
+  const selection = window.getSelection();
+  if (selection) {
+    selection.removeAllRanges();
+  }
 }
 
 function updateSelectionFromDocument() {
@@ -1154,6 +1504,107 @@ function clearReaderSelection() {
   }
   currentSelection = null;
   syncAskFields();
+}
+
+function isContextHighlighted(context) {
+  if (!context || !currentHighlights.length) {
+    return false;
+  }
+  const startVerse = Number(context.startVerse || context.verseStart || 0);
+  const endVerse = Number(context.endVerse || context.verseEnd || startVerse);
+  if (!startVerse || !endVerse) {
+    return false;
+  }
+  for (let verseNumber = startVerse; verseNumber <= endVerse; verseNumber += 1) {
+    if (!currentHighlights.some((highlight) => highlightContainsVerse(highlight, verseNumber))) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function highlightsForContext(context) {
+  if (!context || !currentHighlights.length) {
+    return [];
+  }
+  const startVerse = Number(context.startVerse || context.verseStart || 0);
+  const endVerse = Number(context.endVerse || context.verseEnd || startVerse);
+  if (!startVerse || !endVerse) {
+    return [];
+  }
+  return currentHighlights.filter((highlight) => rangesOverlap(
+    startVerse,
+    endVerse,
+    Number(highlight.start_verse),
+    Number(highlight.end_verse || highlight.start_verse)
+  ));
+}
+
+function notesForVerse(verseNumber) {
+  return currentNotes.filter((note) => highlightContainsVerse(note, verseNumber));
+}
+
+function highlightsForVerse(verseNumber) {
+  return currentHighlights.filter((highlight) => highlightContainsVerse(highlight, verseNumber));
+}
+
+function highlightContainsVerse(record, verseNumber) {
+  const startVerse = Number(record.start_verse || record.verseStart || 0);
+  const endVerse = Number(record.end_verse || record.verseEnd || startVerse);
+  return Boolean(startVerse && endVerse && startVerse <= verseNumber && verseNumber <= endVerse);
+}
+
+function rangesOverlap(startA, endA, startB, endB) {
+  return startA <= endB && startB <= endA;
+}
+
+function applyVerseStateIndicatorsToReader() {
+  const reader = document.querySelector("#chapter-reader");
+  if (!reader) {
+    return;
+  }
+  reader.querySelectorAll("[data-verse]").forEach((verse) => {
+    const verseNumber = Number(verse.dataset.verse);
+    const indicatorContainer = verse.querySelector("[data-verse-indicators]");
+    if (!indicatorContainer) {
+      return;
+    }
+    const notes = notesForVerse(verseNumber);
+    const highlights = highlightsForVerse(verseNumber);
+    const highlightColors = Array.from(new Set(highlights.map((highlight) => String(highlight.color || "").trim()).filter(Boolean)));
+
+    verse.classList.toggle("has-notes", notes.length > 0);
+    verse.classList.toggle("has-highlights", highlightColors.length > 0);
+    indicatorContainer.innerHTML = "";
+    const indicatorLabels = [];
+
+    if (notes.length > 0) {
+      const noteIndicator = document.createElement("span");
+      noteIndicator.className = "verse-state-indicator verse-state-note";
+      noteIndicator.title = notes.length === 1 ? "Has note" : `Has ${notes.length} notes`;
+      noteIndicator.textContent = "N";
+      noteIndicator.setAttribute("aria-hidden", "true");
+      indicatorLabels.push(notes.length === 1 ? "Has note" : `Has ${notes.length} notes`);
+      indicatorContainer.appendChild(noteIndicator);
+    }
+
+    highlightColors.forEach((color) => {
+      const highlightIndicator = document.createElement("span");
+      highlightIndicator.className = `verse-state-indicator verse-state-highlight highlight-${color}`;
+      highlightIndicator.dataset.highlightColor = color;
+      highlightIndicator.title = `${color} highlight`;
+      highlightIndicator.setAttribute("aria-hidden", "true");
+      indicatorLabels.push(`${color} highlight`);
+      indicatorContainer.appendChild(highlightIndicator);
+    });
+    if (indicatorLabels.length > 0) {
+      indicatorContainer.setAttribute("role", "img");
+      indicatorContainer.setAttribute("aria-label", indicatorLabels.join(", "));
+    } else {
+      indicatorContainer.removeAttribute("role");
+      indicatorContainer.removeAttribute("aria-label");
+    }
+  });
 }
 
 function syncAskFields() {
@@ -1253,7 +1704,7 @@ function buildReaderMapContext(studyAction) {
 
 function openMapPanel(context) {
   activateWorkspaceTab("maps");
-  if (window.matchMedia("(max-width: 900px)").matches) {
+  if (isCompactViewport()) {
     setWorkspaceDrawerOpen(true);
   }
   const panel = document.querySelector("#map-panel");

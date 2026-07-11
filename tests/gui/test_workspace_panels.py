@@ -13,9 +13,19 @@ def test_workspace_tabs_switch(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
     page = WorkspacePage(driver, wait, base_url)
     tabs = ["ask", "notes", "highlights", "saved", "maps", "journey"]
+    expected_sections = {
+        "ask": "ask",
+        "notes": "notes",
+        "highlights": "studies",
+        "saved": "studies",
+        "maps": "explore",
+        "journey": "explore",
+    }
     for name in tabs:
         page.open_tab(name)
         page.assert_tab_visible(name)
+        active_section = driver.find_element(By.CSS_SELECTOR, "[data-app-section][aria-pressed='true']")
+        assert active_section.get_attribute("data-app-section") == expected_sections[name]
         for other in tabs:
             tab = driver.find_element(By.CSS_SELECTOR, f'[data-testid="{other}-tab"]')
             pane = driver.find_element(By.CSS_SELECTOR, f"#workspace-pane-{other}")
@@ -25,6 +35,24 @@ def test_workspace_tabs_switch(driver, wait, base_url):
             else:
                 assert tab.get_attribute("aria-selected") == "false"
                 assert not pane.is_displayed()
+
+
+def test_app_dock_desktop_preserves_reader_split(driver, wait, base_url):
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = WorkspacePage(driver, wait, base_url)
+
+    expected_tabs = {
+        "ask": "ask",
+        "notes": "notes",
+        "studies": "saved",
+        "explore": "maps",
+    }
+    for section, tab_name in expected_tabs.items():
+        page.open_app_section(section)
+        wait.until(lambda _driver: page.active_app_section() == section)
+        page.assert_tab_visible(tab_name)
+        assert driver.find_element(By.CSS_SELECTOR, '[data-testid="reader-passage"]').is_displayed()
+        assert driver.find_element(By.ID, "study-panel").is_displayed()
 
 
 def test_workspace_expand_and_minimize(driver, wait, base_url):

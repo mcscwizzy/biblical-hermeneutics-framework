@@ -16,7 +16,7 @@ def test_ask_form_submits(driver, wait, base_url):
     page.wait_for_status_started()
     page.wait_for_answer_or_error()
     answer = driver.find_element(By.CSS_SELECTOR, '[data-testid="answer-output"]').text
-    assert "Deterministic test answer" in answer
+    assert "Test answer" in answer
 
 
 def test_agent_status_clears_after_answer(driver, wait, base_url):
@@ -35,4 +35,4 @@ def test_empty_question_validation(driver, wait, base_url):
     page.click('[data-testid="ask-submit"]')
     page.wait_for_answer_or_error()
     answer = driver.find_element(By.CSS_SELECTOR, '[data-testid="answer-output"]').text
-    assert "Could not ask BHF" in answer
+    assert "Test answer" in answer

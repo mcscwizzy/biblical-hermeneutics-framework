@@ -6,9 +6,11 @@ function loadNotes(book, chapter) {
   }
   return requestJson(`/api/notes/${encodeURIComponent(book)}/${encodeURIComponent(chapter)}`, {}, "Could not load notes.")
     .then((data) => {
-      renderNotes(data.notes || []);
+      currentNotes = data.notes || [];
+      renderNotes(currentNotes);
+      applyVerseStateIndicatorsToReader();
       if (count) {
-        count.textContent = String((data.notes || []).length);
+        count.textContent = String(currentNotes.length);
       }
     })
     .catch((error) => {
@@ -27,6 +29,7 @@ function loadHighlights(book, chapter) {
       currentHighlights = data.highlights || [];
       renderHighlights(currentHighlights);
       applyHighlightsToReader(currentHighlights);
+      applyVerseStateIndicatorsToReader();
       if (count) {
         count.textContent = String(currentHighlights.length);
       }
@@ -84,7 +87,9 @@ function applyHighlightsToReader(highlights) {
     return;
   }
   reader.querySelectorAll("[data-verse]").forEach((verse) => {
-    verse.classList.remove("highlight-yellow", "highlight-green", "highlight-blue", "highlight-pink");
+    Array.from(verse.classList)
+      .filter((className) => className.startsWith("highlight-"))
+      .forEach((className) => verse.classList.remove(className));
   });
   for (const highlight of highlights) {
     reader.querySelectorAll("[data-verse]").forEach((verse) => {
@@ -119,6 +124,21 @@ function createHighlight(context) {
       activateWorkspaceTab("highlights");
       return loadHighlights(currentChapter.book, currentChapter.chapter);
     });
+}
+
+function removeHighlightsForContext(context) {
+  if (!currentChapter) {
+    return Promise.resolve();
+  }
+  const highlights = highlightsForContext(context);
+  if (highlights.length === 0) {
+    return Promise.resolve();
+  }
+  return Promise.all(highlights.map((highlight) => requestJson(`/api/highlights/${encodeURIComponent(highlight.id)}`, {
+    method: "DELETE",
+    headers: { "Accept": "application/json" }
+  }, "Could not remove highlight.")))
+    .then(() => loadHighlights(currentChapter.book, currentChapter.chapter));
 }
 
 function renderNotes(notes) {

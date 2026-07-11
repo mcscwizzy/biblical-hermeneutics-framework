@@ -22,7 +22,10 @@ class BasePage:
         return self.driver.find_elements(By.CSS_SELECTOR, selector)
 
     def click(self, selector: str):
-        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, selector))).click()
+        element = self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, selector)))
+        self.driver.execute_script("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", element)
+        self.wait.until(lambda _driver: element.is_displayed() and element.is_enabled())
+        element.click()
 
     def type_into(self, selector: str, text: str, clear: bool = True):
         element = self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, selector)))

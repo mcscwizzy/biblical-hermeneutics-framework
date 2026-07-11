@@ -25,6 +25,7 @@ class AskPage(BasePage):
             lambda driver: (
                 "Could not ask BHF" in driver.find_element(By.CSS_SELECTOR, '[data-testid="answer-output"]').text
                 or "Deterministic test answer" in driver.find_element(By.CSS_SELECTOR, '[data-testid="answer-output"]').text
+                or "Test answer" in driver.find_element(By.CSS_SELECTOR, '[data-testid="answer-output"]').text
                 or "Answer" in driver.find_element(By.CSS_SELECTOR, '[data-testid="answer-output"]').text
             )
         )
