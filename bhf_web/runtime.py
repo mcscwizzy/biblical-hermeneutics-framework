@@ -27,8 +27,8 @@ def load_runtime_config() -> dict[str, Any]:
     provider_labels = _load_provider_labels()
 
     return {
-        "appName": "Biblical Hermeneutics Framework",
-        "shortName": "BHF",
+        "appName": "BHF Bible Reader",
+        "shortName": "BHF Bible",
         "mode": mode,
         "apiBaseUrl": api_base_url,
         "providerLabels": provider_labels,

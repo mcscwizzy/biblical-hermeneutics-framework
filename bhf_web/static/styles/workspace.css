@@ -187,10 +187,39 @@
   margin-bottom: 16px;
 }
 
+.reader-passage-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 0;
+}
+
 .chapter-reader h3 {
   margin: 0;
   font-size: 1.35rem;
   text-align: center;
+}
+
+.reader-translation-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 26px;
+  padding: 0 9px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--surface-muted);
+  color: var(--page-muted);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.reader-search-actions [hidden] {
+  display: none !important;
 }
 
 .chapter-text {

@@ -142,14 +142,19 @@ function showBibleSearchResults() {
   if (panel) {
     panel.hidden = false;
   }
+  syncBibleSearchClearState();
 }
 
 function clearBibleSearchResults() {
   BHF_BIBLE_SEARCH_STATE.latestBibleSearchRequestId += 1;
+  const queryInput = document.querySelector("[data-bible-search] [name='query']");
   const panel = document.querySelector("#reader-search-results");
   const body = document.querySelector("#reader-search-results-body");
   const summary = document.querySelector("#reader-search-summary");
   const status = document.querySelector("#reader-search-status");
+  if (queryInput) {
+    queryInput.value = "";
+  }
   if (panel) {
     panel.hidden = true;
   }
@@ -164,6 +169,7 @@ function clearBibleSearchResults() {
     status.textContent = "";
     status.classList.remove("is-empty", "is-error");
   }
+  syncBibleSearchClearState();
 }
 
 function updateBibleSearchSummary(text) {
@@ -171,6 +177,7 @@ function updateBibleSearchSummary(text) {
   if (summary) {
     summary.textContent = text || "";
   }
+  syncBibleSearchClearState();
 }
 
 function setBibleSearchStatus(message, state) {
@@ -182,6 +189,7 @@ function setBibleSearchStatus(message, state) {
   status.textContent = message;
   status.classList.toggle("is-empty", state === "empty");
   status.classList.toggle("is-error", state === "error");
+  syncBibleSearchClearState();
 }
 
 function clearBibleSearchStatus() {
@@ -192,6 +200,20 @@ function clearBibleSearchStatus() {
   status.hidden = true;
   status.textContent = "";
   status.classList.remove("is-empty", "is-error");
+  syncBibleSearchClearState();
+}
+
+function syncBibleSearchClearState() {
+  const form = document.querySelector("[data-bible-search]");
+  const clearButton = form?.querySelector("[data-search-clear]");
+  if (!clearButton) {
+    return;
+  }
+  const queryInput = form.querySelector("[name='query']");
+  const panel = document.querySelector("#reader-search-results");
+  const hasQuery = Boolean(queryInput && queryInput.value.trim());
+  const hasVisibleResults = Boolean(panel && !panel.hidden);
+  clearButton.hidden = !(hasQuery || hasVisibleResults);
 }
 
 function renderBibleSearchResults(results, options = {}) {

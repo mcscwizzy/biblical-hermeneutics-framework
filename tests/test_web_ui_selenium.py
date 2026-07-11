@@ -33,9 +33,10 @@ try:
     from selenium import webdriver
     from selenium.common.exceptions import WebDriverException
     from selenium.webdriver.common.by import By
+    from selenium.webdriver.common.keys import Keys
     from selenium.webdriver.firefox.options import Options as FirefoxOptions
     from selenium.webdriver.support import expected_conditions as EC
-    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support.ui import Select, WebDriverWait
 
     HAS_SELENIUM = True
 except ImportError:  # pragma: no cover - optional local dependency
@@ -124,15 +125,17 @@ class WebUiSeleniumTests(unittest.TestCase):
             EC.presence_of_element_located((By.CSS_SELECTOR, "[data-workspace-drawer-toggle]"))
         )
 
-    def open_mobile_workspace(self):
+    def open_mobile_workspace(self, section: str = "ask"):
         self.open_home()
-        self.driver.find_element(By.CSS_SELECTOR, "[data-workspace-drawer-toggle]").click()
+        if section == "bible":
+            return
+        self.driver.find_element(By.CSS_SELECTOR, f'[data-testid="app-dock-{section}"]').click()
         WebDriverWait(self.driver, 20).until(
-            lambda driver: "is-open" in driver.find_element(By.ID, "study-panel").get_attribute("class")
+            lambda driver: driver.execute_script("return document.body.dataset.appSection") == section
         )
 
     def test_mobile_workspace_drawer_opens_at_the_top(self):
-        self.open_mobile_workspace()
+        self.open_mobile_workspace("ask")
         panel = self.driver.find_element(By.ID, "study-panel")
         rect = panel.rect
 
@@ -141,7 +144,7 @@ class WebUiSeleniumTests(unittest.TestCase):
         self.assertTrue(panel.is_displayed())
 
     def test_map_browse_search_is_available_without_selection(self):
-        self.open_mobile_workspace()
+        self.open_mobile_workspace("explore")
         self.driver.find_element(By.ID, "workspace-tab-maps").click()
         WebDriverWait(self.driver, 20).until(
             EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-open-map-browser]"))
@@ -153,8 +156,7 @@ class WebUiSeleniumTests(unittest.TestCase):
 
         search_input = self.driver.find_element(By.CSS_SELECTOR, "[data-map-search-query]")
         search_input.clear()
-        search_input.send_keys("Jerusalem")
-        self.driver.find_element(By.CSS_SELECTOR, "[data-map-search-submit]").click()
+        search_input.send_keys("Jerusalem", Keys.ENTER)
 
         WebDriverWait(self.driver, 20).until(
             lambda driver: len(driver.find_elements(By.CSS_SELECTOR, "#map-search-results-list .map-search-result")) > 0
@@ -164,7 +166,10 @@ class WebUiSeleniumTests(unittest.TestCase):
         self.assertGreater(len(results), 0)
 
     def test_reader_search_selection_navigation_and_next_chapter_are_mobile_usable(self):
-        self.open_mobile_workspace()
+        self.open_home()
+        WebDriverWait(self.driver, 20).until(
+            lambda driver: driver.execute_script("return document.body.dataset.appSection") == "bible"
+        )
         query_input = self.driver.find_element(By.CSS_SELECTOR, "[data-bible-search] input[name='query']")
         query_input.clear()
         query_input.send_keys("John 1:1")
@@ -183,7 +188,8 @@ class WebUiSeleniumTests(unittest.TestCase):
 
         next_button = self.driver.find_element(By.CSS_SELECTOR, "[data-next-chapter]")
         self.assertFalse(next_button.get_attribute("disabled"))
-        next_button.click()
+        chapter_select = self.driver.find_element(By.CSS_SELECTOR, "[data-testid='chapter-input']")
+        Select(chapter_select).select_by_value("2")
         WebDriverWait(self.driver, 20).until(
             lambda driver: "John 2" in driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text
         )
