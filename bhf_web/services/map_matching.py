@@ -8,6 +8,22 @@ from typing import Any
 
 from bhf_agent.bible import BibleError, normalize_book_name
 
+_STOPWORD_TERMS = {
+    "a",
+    "an",
+    "and",
+    "at",
+    "by",
+    "for",
+    "in",
+    "no",
+    "of",
+    "on",
+    "or",
+    "the",
+    "to",
+}
+
 
 def format_reference(
     book: str | None,
@@ -35,7 +51,7 @@ def normalize_for_match(text: str) -> str:
 
 def term_in_text(term: str, normalized_text: str) -> bool:
     normalized_term = normalize_for_match(term)
-    if not normalized_term:
+    if not normalized_term or normalized_term in _STOPWORD_TERMS:
         return False
     pattern = rf"(?:^| )" + re.escape(normalized_term).replace(r"\ ", r"\s+") + r"(?: |$)"
     return bool(re.search(pattern, normalized_text))

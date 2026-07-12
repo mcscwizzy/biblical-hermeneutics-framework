@@ -130,12 +130,14 @@ def _search_catalog_items(
     summary_fields: list[str],
 ) -> list[dict[str, Any]]:
     hits: list[dict[str, Any]] = []
+    normalized_query = _normalize_for_match(query)
     for item in items:
         score, matched_fields = _score_match(query, item, fields)
         if score <= 0:
             continue
         subtitle = _first_text(item, subtitle_fields)
         summary = _first_text(item, summary_fields)
+        exact_title_match = _normalize_for_match(_first_text(item, ["name", "title", "reference"])) == normalized_query
         hits.append(
             {
                 "kind": kind,
@@ -152,9 +154,17 @@ def _search_catalog_items(
                 "search_score": score,
                 "matched_fields": matched_fields,
                 "item": item,
+                "exact_title_match": exact_title_match,
             }
         )
-    hits.sort(key=lambda hit: (-int(hit["search_score"]), str(hit["title"]).lower(), str(hit["id"])))
+    hits.sort(
+        key=lambda hit: (
+            0 if hit["exact_title_match"] else 1,
+            -int(hit["search_score"]),
+            str(hit["title"]).lower(),
+            str(hit["id"]),
+        )
+    )
     return hits
 
 

@@ -38,7 +38,7 @@ let lastMapAIFallbackKey = null;
 let activeLiveAnswerPanel = null;
 let readerLongPressState = null;
 let appSection = null;
-let lastStudiesWorkspaceTab = "saved";
+let lastNotesWorkspaceTab = "notes";
 let lastExploreWorkspaceTab = "maps";
 let readerControlsTrigger = null;
 const BHF_HTTP = window.BHFApi || {};
@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeReaderControlsSheet();
   initializeReader();
   initializeWorkspaceBridge();
-  initializeWorkspaceDrawer();
 });
 
 document.addEventListener("submit", async function (event) {
@@ -232,9 +231,9 @@ function initializeWorkspaceTabs() {
   const defaultTab = workspace.dataset.defaultTab || "ask";
   for (const tab of tabs) {
     tab.addEventListener("click", () => activateWorkspaceTab(tab.dataset.workspaceTab));
-    tab.addEventListener("keydown", (event) => handleWorkspaceTabKeydown(event, tabs));
+    tab.addEventListener("keydown", (event) => handleWorkspaceTabKeydown(event, tabs.filter((candidate) => !candidate.hidden)));
   }
-  activateWorkspaceTab(defaultTab);
+  setActiveWorkspaceTab(defaultTab);
 }
 
 function initializeAppNavigation() {
@@ -247,7 +246,6 @@ function initializeAppNavigation() {
   const initialSection = resolveInitialAppSection(readAppSectionPreference());
   activateAppSection(initialSection, {
     persist: false,
-    updateWorkspace: initialSection !== "bible",
     focusReader: false,
   });
 
@@ -262,7 +260,7 @@ function initializeAppNavigation() {
     rememberWorkspaceSubtab(tabId);
     const nextSection = appSectionFromWorkspaceTab(tabId);
     if (nextSection) {
-      activateAppSection(nextSection, { updateWorkspace: false });
+      activateAppSection(nextSection);
     }
   });
 
@@ -287,14 +285,11 @@ function activateAppSection(sectionId, options = {}) {
   appSection = nextSection;
   document.body.dataset.appSection = nextSection;
   syncAppDockState(nextSection);
+  syncWorkspaceTabsForSection(nextSection);
   syncReaderControlsSheetAvailability();
 
   if (options.persist !== false) {
     persistAppSection(nextSection);
-  }
-
-  if (options.updateWorkspace !== false) {
-    activateWorkspaceForAppSection(nextSection);
   }
 
   if (isCompactViewport()) {
@@ -312,13 +307,6 @@ function syncAppDockState(sectionId) {
     button.classList.toggle("is-active", isActive);
     button.setAttribute("aria-pressed", String(isActive));
   });
-}
-
-function activateWorkspaceForAppSection(sectionId) {
-  const workspaceTab = appSectionToWorkspaceTab(sectionId);
-  if (workspaceTab) {
-    activateWorkspaceTab(workspaceTab);
-  }
 }
 
 function applyCompactSectionLayout(sectionId) {
@@ -351,7 +339,6 @@ function handleAppViewportChange() {
   const nextSection = normalizeAppSection(appSection || readAppSectionPreference() || "bible");
   activateAppSection(nextSection, {
     persist: false,
-    updateWorkspace: nextSection !== "bible",
     focusReader: false,
   });
 }
@@ -368,10 +355,13 @@ function appSectionFromWorkspaceTab(tabId) {
   if (!tabId) {
     return null;
   }
-  if (tabId === "ask" || tabId === "notes") {
+  if (tabId === "ask") {
     return tabId;
   }
-  if (tabId === "highlights" || tabId === "saved") {
+  if (tabId === "notes" || tabId === "highlights") {
+    return "notes";
+  }
+  if (tabId === "saved") {
     return "studies";
   }
   if (tabId === "maps" || tabId === "journey") {
@@ -382,12 +372,18 @@ function appSectionFromWorkspaceTab(tabId) {
 
 function appSectionToWorkspaceTab(sectionId) {
   const normalized = normalizeAppSection(sectionId);
-  if (normalized === "studies") {
+  if (normalized === "ask" || normalized === "bible") {
+    return "ask";
+  }
+  if (normalized === "notes") {
     const currentWorkspaceTab = getCurrentWorkspaceTab();
-    if (currentWorkspaceTab === "highlights" || currentWorkspaceTab === "saved") {
+    if (currentWorkspaceTab === "notes" || currentWorkspaceTab === "highlights") {
       return currentWorkspaceTab;
     }
-    return lastStudiesWorkspaceTab || "saved";
+    return lastNotesWorkspaceTab || "notes";
+  }
+  if (normalized === "studies") {
+    return "saved";
   }
   if (normalized === "explore") {
     const currentWorkspaceTab = getCurrentWorkspaceTab();
@@ -400,8 +396,8 @@ function appSectionToWorkspaceTab(sectionId) {
 }
 
 function rememberWorkspaceSubtab(tabId) {
-  if (tabId === "highlights" || tabId === "saved") {
-    lastStudiesWorkspaceTab = tabId;
+  if (tabId === "notes" || tabId === "highlights") {
+    lastNotesWorkspaceTab = tabId;
   } else if (tabId === "maps" || tabId === "journey") {
     lastExploreWorkspaceTab = tabId;
   }
@@ -476,16 +472,12 @@ function initializeReaderMode() {
 
 function initializeWorkspaceExpansion() {
   const toggles = Array.from(document.querySelectorAll("[data-workspace-expand-toggle]"));
-  const collapseToggles = Array.from(document.querySelectorAll("[data-workspace-collapse-toggle]"));
-  if (toggles.length === 0 && collapseToggles.length === 0) {
+  if (toggles.length === 0) {
     return;
   }
   applyWorkspaceExpansion(false);
   for (const toggle of toggles) {
     toggle.addEventListener("click", toggleWorkspaceExpansion);
-  }
-  for (const collapseToggle of collapseToggles) {
-    collapseToggle.addEventListener("click", () => applyWorkspaceExpansion(false));
   }
 }
 
@@ -507,14 +499,6 @@ function applyWorkspaceExpansion(enabled) {
     setControlStatus(toggle, `Current value: ${nextEnabled ? "Expanded" : "Collapsed"}`);
     toggle.setAttribute("aria-pressed", String(nextEnabled));
     toggle.setAttribute("aria-expanded", String(nextEnabled));
-  }
-  const collapseToggles = document.querySelectorAll("[data-workspace-collapse-toggle]");
-  for (const collapseToggle of collapseToggles) {
-    collapseToggle.setAttribute("aria-expanded", String(nextEnabled));
-  }
-  const drawerToggle = document.querySelector("[data-workspace-drawer-toggle]");
-  if (drawerToggle) {
-    drawerToggle.setAttribute("aria-expanded", String(document.body.classList.contains("workspace-drawer-open")));
   }
   syncReaderControlsSheetAvailability();
 }
@@ -752,6 +736,72 @@ function syncReaderControlsSheetAvailability() {
   });
 }
 
+function workspaceTabsForSection(sectionId) {
+  const normalized = normalizeAppSection(sectionId);
+  if (normalized === "ask" || normalized === "bible") {
+    return ["ask"];
+  }
+  if (normalized === "notes") {
+    return ["notes", "highlights"];
+  }
+  if (normalized === "studies") {
+    return ["saved"];
+  }
+  if (normalized === "explore") {
+    return ["maps", "journey"];
+  }
+  return ["ask"];
+}
+
+function syncWorkspaceTabsForSection(sectionId) {
+  const workspace = document.querySelector("[data-workspace-tabs]");
+  if (!workspace) {
+    return;
+  }
+  const visibleTabs = new Set(workspaceTabsForSection(sectionId));
+  let visibleCount = 0;
+  workspace.querySelectorAll("[data-workspace-tab]").forEach((tab) => {
+    const isVisible = visibleTabs.has(tab.dataset.workspaceTab);
+    tab.hidden = !isVisible;
+    tab.tabIndex = isVisible && tab.getAttribute("aria-selected") === "true" ? 0 : -1;
+    if (isVisible) {
+      visibleCount += 1;
+    }
+  });
+  const currentWorkspaceTab = getCurrentWorkspaceTab();
+  if (!currentWorkspaceTab || !visibleTabs.has(currentWorkspaceTab)) {
+    const fallbackTab = appSectionToWorkspaceTab(sectionId);
+    if (fallbackTab) {
+      setActiveWorkspaceTab(fallbackTab);
+    }
+  }
+  const tabBar = workspace.querySelector("[data-workspace-tab-bar]");
+  if (tabBar) {
+    tabBar.hidden = visibleCount <= 1;
+  }
+}
+
+function setActiveWorkspaceTab(tabId) {
+  const workspace = document.querySelector("[data-workspace-tabs]");
+  if (!workspace || !tabId) {
+    return false;
+  }
+  const tabs = Array.from(workspace.querySelectorAll("[data-workspace-tab]"));
+  const nextTab = tabs.find((tab) => tab.dataset.workspaceTab === tabId);
+  if (!nextTab) {
+    return false;
+  }
+  workspace.querySelectorAll("[data-workspace-tab]").forEach((tab) => {
+    const isActive = tab.dataset.workspaceTab === tabId;
+    tab.setAttribute("aria-selected", String(isActive));
+    tab.tabIndex = isActive && !tab.hidden ? 0 : -1;
+  });
+  workspace.querySelectorAll("[data-workspace-pane]").forEach((pane) => {
+    pane.hidden = pane.dataset.workspacePane !== tabId;
+  });
+  return true;
+}
+
 function resolveSubmitTargets(form) {
   const answerSelector = form.dataset.activeTarget || form.dataset.target;
   const statusSelector = form.dataset.activeStatusTarget || form.dataset.statusTarget;
@@ -841,18 +891,9 @@ function handleWorkspaceTabKeydown(event, tabs) {
 }
 
 function activateWorkspaceTab(tabId) {
-  const workspace = document.querySelector("[data-workspace-tabs]");
-  if (!workspace || !tabId) {
+  if (!setActiveWorkspaceTab(tabId)) {
     return;
   }
-  workspace.querySelectorAll("[data-workspace-tab]").forEach((tab) => {
-    const isActive = tab.dataset.workspaceTab === tabId;
-    tab.setAttribute("aria-selected", String(isActive));
-    tab.tabIndex = isActive ? 0 : -1;
-  });
-  workspace.querySelectorAll("[data-workspace-pane]").forEach((pane) => {
-    pane.hidden = pane.dataset.workspacePane !== tabId;
-  });
   document.dispatchEvent(
     new CustomEvent("bhf:workspace-tab-changed", {
       detail: { tabId },
@@ -860,34 +901,12 @@ function activateWorkspaceTab(tabId) {
   );
 }
 
-function initializeWorkspaceDrawer() {
-  const toggle = document.querySelector("[data-workspace-drawer-toggle]");
-  const panel = document.querySelector("#study-panel");
-  if (panel && isCompactViewport()) {
-    panel.classList.remove("is-open");
-  }
-  if (toggle) {
-    toggle.addEventListener("click", () => {
-      setWorkspaceDrawerOpen(!panel?.classList.contains("is-open"));
-    });
-  }
-  window.addEventListener("resize", () => {
-    if (!isCompactViewport()) {
-      setWorkspaceDrawerOpen(false);
-    }
-  });
-}
-
 function setWorkspaceDrawerOpen(open) {
-  const toggle = document.querySelector("[data-workspace-drawer-toggle]");
   const panel = document.querySelector("#study-panel");
   const nextOpen = Boolean(open);
   document.body.classList.toggle("workspace-drawer-open", nextOpen);
   if (panel) {
     panel.classList.toggle("is-open", nextOpen);
-  }
-  if (toggle) {
-    toggle.setAttribute("aria-expanded", String(nextOpen));
   }
 }
 
@@ -909,14 +928,10 @@ function syncMapWorkspaceEmptyState() {
 }
 
 function closeWorkspaceDrawer() {
-  const toggle = document.querySelector("[data-workspace-drawer-toggle]");
   const panel = document.querySelector("#study-panel");
   document.body.classList.remove("workspace-drawer-open");
   if (panel) {
     panel.classList.remove("is-open");
-  }
-  if (toggle) {
-    toggle.setAttribute("aria-expanded", "false");
   }
 }
 
@@ -1066,14 +1081,6 @@ async function openPassageReference(reference) {
   return true;
 }
 
-function handleNextChapterClick(event) {
-  const button = event.target.closest("[data-next-chapter]");
-  if (!button) {
-    return;
-  }
-  goToNextChapter();
-}
-
 function renderChapter(data) {
   const reader = document.querySelector("#chapter-reader");
   const header = document.createElement("div");
@@ -1093,9 +1100,7 @@ function renderChapter(data) {
   passageHeading.appendChild(heading);
   passageHeading.appendChild(translationBadge);
 
-  header.appendChild(createChapterNavButton("prev", "◀ Previous Chapter"));
   header.appendChild(passageHeading);
-  header.appendChild(createChapterNavButton("next", "Next Chapter ▶"));
 
   const paragraph = document.createElement("p");
   paragraph.className = "chapter-text";

@@ -120,8 +120,30 @@ a {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  align-items: start;
+  align-items: center;
   margin-bottom: 20px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.header-controls-button {
+  gap: 8px;
+  padding-inline: 12px;
+  min-height: 42px;
+}
+
+.header-controls-button-label {
+  font-weight: 700;
+}
+
+.header-controls-button-icon {
+  font-size: 1rem;
+  line-height: 1;
 }
 
 .header h1 {
@@ -146,8 +168,8 @@ a {
 
 .reader-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 460px);
-  gap: 20px;
+  grid-template-columns: minmax(0, 1fr) clamp(400px, 32vw, 500px);
+  gap: 24px;
   align-items: stretch;
 }
 
@@ -160,7 +182,6 @@ body.reader-mode .reader-column {
   margin: 0 auto;
 }
 
-body.reader-mode .page-links .workspace-drawer-toggle,
 body.reader-mode .study-panel,
 body.reader-mode .reader-search,
 body.reader-mode .reader-search-results {
@@ -186,10 +207,6 @@ body.workspace-expanded .workspace-panel {
   width: 100%;
   height: calc(100dvh - 24px);
   border-radius: 12px;
-}
-
-body.workspace-expanded .workspace-mobile-header {
-  display: flex;
 }
 
 .curation-page {

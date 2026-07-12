@@ -16,26 +16,39 @@ class WorkspacePage(BasePage):
         return self
 
     def assert_tab_visible(self, name: str):
-        tab = self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, f'[data-testid="{name}-tab"]')))
         pane = self.wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, f'#workspace-pane-{name}')))
         self.wait.until(lambda driver: pane.is_displayed())
-        self.wait.until(lambda driver: tab.get_attribute("aria-selected") == "true")
+        tabs = self.driver.find_elements(By.CSS_SELECTOR, f'[data-testid="{name}-tab"]')
+        if tabs and tabs[0].is_displayed():
+            self.wait.until(lambda driver: tabs[0].get_attribute("aria-selected") == "true")
         return self
 
     def active_app_section(self):
         return self.driver.execute_script("return document.body.dataset.appSection || ''")
 
+    def open_reader_settings(self):
+        triggers = self.driver.find_elements(By.CSS_SELECTOR, "[data-reader-controls-trigger]")
+        for trigger in triggers:
+            if trigger.is_displayed() and trigger.is_enabled():
+                self.driver.execute_script("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", trigger)
+                self.driver.execute_script("arguments[0].click();", trigger)
+                return self
+        raise AssertionError("No reader settings trigger is visible")
+
     def toggle_dark_mode(self):
-        self.click('[data-testid="theme-toggle"]')
+        self.open_reader_settings()
+        self.click('[data-testid="mobile-theme-toggle"]')
+        self.wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "#reader-controls-sheet[open]")))
         return self
 
     def toggle_reader_mode(self):
-        self.click('[data-testid="reader-mode-toggle"]')
+        self.open_reader_settings()
+        self.click('[data-testid="mobile-reader-mode-toggle"]')
+        self.wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "#reader-controls-sheet[open]")))
         return self
 
     def toggle_expand_workspace(self):
-        if "workspace-expanded" in self.driver.find_element(By.TAG_NAME, "body").get_attribute("class"):
-            self.click('[data-workspace-collapse-toggle][aria-label="Minimize workspace"]')
-        else:
-            self.click('[data-testid="workspace-expand-toggle"]')
+        self.open_reader_settings()
+        self.click('[data-testid="mobile-workspace-expand-toggle"]')
+        self.wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "#reader-controls-sheet[open]")))
         return self

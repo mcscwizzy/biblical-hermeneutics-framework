@@ -26,12 +26,12 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}?v=20260711a">
+  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}?v=20260711b">
   <script src="{{ url_for('static', path='/api/http.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-status.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-study-panels.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-search.js') }}" defer></script>
-  <script src="{{ url_for('static', path='/htmx-lite.js') }}?v=20260711a" defer></script>
+  <script src="{{ url_for('static', path='/htmx-lite.js') }}?v=20260711b" defer></script>
   <script src="{{ url_for('static', path='/pwa.js') }}" defer></script>
   {% if not test_mode %}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -49,36 +49,32 @@
         <h1 data-testid="app-title">BHF Bible Reader</h1>
         <p class="app-subtitle" data-testid="app-subtitle">Read Scripture. Explore context. Ask deeper questions.</p>
       </div>
-      <nav class="page-links">
-        <button type="button" class="secondary-link" data-theme-toggle data-testid="theme-toggle" aria-pressed="false">Dark mode</button>
-        <button type="button" class="secondary-link" data-reader-mode-toggle data-testid="reader-mode-toggle" aria-pressed="false">Reader mode</button>
-        <button type="button" class="secondary-link" data-workspace-expand-toggle data-testid="workspace-expand-toggle" aria-controls="study-panel" aria-expanded="false">Expand workspace</button>
-        <button type="button" class="secondary-link workspace-drawer-toggle" data-workspace-drawer-toggle data-testid="workspace-drawer-toggle" aria-controls="study-panel" aria-expanded="false">
-          <span class="workspace-drawer-icon" aria-hidden="true"><span></span><span></span><span></span></span>
-          Workspace
+      <div class="header-actions">
+        <button
+          type="button"
+          class="secondary-link header-controls-button"
+          data-reader-controls-trigger
+          data-testid="desktop-reader-controls-trigger"
+          aria-haspopup="dialog"
+          aria-controls="reader-controls-sheet"
+          aria-label="Open reader settings"
+          title="Open reader settings"
+        >
+          <span class="header-controls-button-label">Reader settings</span>
+          <span class="header-controls-button-icon" aria-hidden="true">⚙</span>
         </button>
-      </nav>
+      </div>
     </header>
 
     {% if config_warning %}
       <div class="notice" role="status">{{ config_warning }}</div>
     {% endif %}
 
-    <button
-      type="button"
-      class="secondary workspace-mobile-minimize"
-      data-workspace-collapse-toggle
-      data-testid="workspace-collapse-toggle"
-      aria-label="Collapse panel"
-    >
-      Minimize
-    </button>
-
     <section class="reader-layout">
       <section class="reader-column" aria-labelledby="reader-heading">
         <div class="reader-toolbar">
           <div class="reader-toolbar-main">
-            <h2 id="reader-heading">ASV Bible</h2>
+            <h2 id="reader-heading">Scripture</h2>
             <div class="reader-controls">
               <label>
                 <span>Book</span>
@@ -143,10 +139,7 @@
 
       <aside class="study-panel" id="study-panel" aria-label="Study panel">
         <div class="workspace-panel" data-workspace-tabs data-default-tab="ask">
-          <div class="workspace-panel-actions" aria-label="Workspace actions">
-            <button type="button" class="secondary" data-workspace-collapse-toggle aria-label="Minimize workspace">Minimize workspace</button>
-          </div>
-          <div class="workspace-tab-bar" role="tablist" aria-label="Study tabs">
+          <div class="workspace-tab-bar" data-workspace-tab-bar role="tablist" aria-label="Workspace tabs">
             <button type="button" class="workspace-tab is-ask" id="workspace-tab-ask" role="tab" aria-selected="true" aria-controls="workspace-pane-ask" data-workspace-tab="ask" data-testid="ask-tab">Ask</button>
             <button type="button" class="workspace-tab" id="workspace-tab-notes" role="tab" aria-selected="false" aria-controls="workspace-pane-notes" data-workspace-tab="notes" tabindex="-1" data-testid="notes-tab">Notes</button>
             <button type="button" class="workspace-tab" id="workspace-tab-highlights" role="tab" aria-selected="false" aria-controls="workspace-pane-highlights" data-workspace-tab="highlights" tabindex="-1" data-testid="highlights-tab">Highlights</button>
