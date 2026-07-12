@@ -1,4 +1,5 @@
 import asyncio
+from contextlib import contextmanager
 import json
 import os
 import re
@@ -24,7 +25,7 @@ from bhf_agent.study_db import get_source, initialize_database, list_sources
 from bhf_web.runtime import load_runtime_config
 
 try:
-    from bhf_web.app import AskJob, app
+    from bhf_web.app import AskJob, app, create_app
 
     HAS_WEB_DEPS = True
 except ModuleNotFoundError:
@@ -265,12 +266,14 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("word_study", script)
         self.assertIn("open_map_panel", script)
         self.assertNotIn("studyAction.type === \"maps\"", script)
+        self.assertIn("workspaceTabsForSection", script)
+        self.assertIn("syncWorkspaceTabsForSection", script)
+        self.assertIn("setActiveWorkspaceTab", script)
         self.assertIn("applyWorkspaceExpansion(false);", script)
         self.assertNotIn("bhf-workspace-expanded", script)
         self.assertNotIn("readWorkspaceExpansionPreference", script)
-        self.assertNotIn("data-workspace-drawer-close", script)
-        self.assertIn('querySelectorAll("[data-workspace-collapse-toggle]")', script)
-        self.assertNotIn("collapseToggle.hidden", script)
+        self.assertNotIn("data-workspace-drawer-toggle", script)
+        self.assertNotIn("data-workspace-collapse-toggle", script)
         self.assertIn("revealAnswerPanel(answerPanel);", script)
         self.assertIn("const TABLET_BREAKPOINT", script)
         self.assertIn("function isCompactViewport()", script)
@@ -502,11 +505,11 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn("data-journey-playback-speed", index_html)
         self.assertNotIn("data-journey-playback-label", index_html)
         self.assertNotIn("data-workspace-drawer-close", index_html)
-        self.assertIn("workspace-panel-actions", index_html)
-        self.assertIn("Minimize workspace", index_html)
-        self.assertIn("workspace-mobile-minimize", index_html)
-        self.assertNotIn("workspace-mobile-minimize\"\n      data-workspace-collapse-toggle\n      aria-label=\"Collapse panel\"\n      hidden", index_html)
-        self.assertIn('aria-label="Study tabs"', index_html)
+        self.assertNotIn("workspace-panel-actions", index_html)
+        self.assertNotIn("workspace-mobile-minimize", index_html)
+        self.assertNotIn("data-workspace-collapse-toggle", index_html)
+        self.assertIn("data-workspace-tab-bar", index_html)
+        self.assertIn('aria-label="Workspace tabs"', index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
@@ -526,13 +529,14 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn(".journey-stage .cesium-widget canvas", style)
         self.assertIn("aspect-ratio: 16 / 10;", style)
         self.assertIn(".journey-library-controls", style)
-        self.assertIn(".workspace-tab-bar::after", style)
-        self.assertIn(".workspace-panel-actions", style)
-        self.assertIn("z-index: 4;", style)
-        self.assertIn("flex: 0 0 24px;", style)
+        self.assertIn(".workspace-tab-bar", style)
+        self.assertIn(".workspace-tab[aria-selected=\"true\"]", style)
+        self.assertIn("box-shadow: 0 12px 24px rgb(26 42 56 / 6%);", style)
         self.assertIn("position: sticky;", style)
         self.assertIn("position: fixed;", style)
-        self.assertIn(".workspace-mobile-minimize", style)
+        self.assertNotIn(".workspace-panel-actions", style)
+        self.assertNotIn(".workspace-mobile-minimize", style)
+        self.assertNotIn(".workspace-tab-bar::after", style)
         self.assertNotIn("max-height: 50vh;", style)
         self.assertIn(".journey-metadata-chip", style)
         self.assertIn(".journey-passage-pill--button", style)
@@ -541,8 +545,6 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn(".journey-layer-detail-card", style)
         self.assertIn(".journey-modal", style)
         self.assertIn(".journey-modal-body .journey-stage", style)
-        self.assertIn("overflow-x: scroll;", style)
-        self.assertIn("scrollbar-gutter: stable both-edges;", style)
         self.assertIn(".journey-list-item", style)
         self.assertIn(".journey-list-item.is-selected", style)
         self.assertIn(".journey-detail-card", style)
@@ -585,8 +587,9 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("manifest.webmanifest", response["body"])
         self.assertIn("apple-touch-icon", response["body"])
         self.assertIn("pwa.js", response["body"])
-        self.assertIn("/curation", response["body"])
-        self.assertIn("ASV Bible", response["body"])
+        self.assertIn("Scripture", response["body"])
+        self.assertIn("desktop-reader-controls-trigger", response["body"])
+        self.assertIn("data-workspace-tab-bar", response["body"])
         self.assertIn("book-select", response["body"])
         self.assertIn("data-theme-toggle", response["body"])
         self.assertIn("reader-context-menu", response["body"])
@@ -684,7 +687,8 @@ class WebAppTests(unittest.TestCase):
         with self._temp_curation_db() as db_path:
             initialize_database(db_path)
             with patch("bhf_web.app.STUDY_DB_PATH", db_path):
-                response = asgi_request("GET", "/curation")
+                test_app = create_app()
+                response = asgi_request("GET", "/curation", test_app=test_app)
 
         self.assertEqual(response["status"], 200)
         self.assertIn("BHF Curation", response["body"])
@@ -695,6 +699,7 @@ class WebAppTests(unittest.TestCase):
         with self._temp_curation_db() as db_path:
             initialize_database(db_path)
             with patch("bhf_web.app.STUDY_DB_PATH", db_path):
+                test_app = create_app()
                 create = asgi_request(
                     "POST",
                     "/api/curation/confidence_labels",
@@ -708,6 +713,7 @@ class WebAppTests(unittest.TestCase):
                             }
                         )
                     },
+                    test_app=test_app,
                 )
                 self.assertEqual(create["status"], 201)
                 created = json.loads(create["body"])
@@ -715,22 +721,23 @@ class WebAppTests(unittest.TestCase):
                 created_id = created["id"]
 
                 listed = json.loads(
-                    asgi_request("GET", "/api/curation/confidence_labels")["body"]
+                    asgi_request("GET", "/api/curation/confidence_labels", test_app=test_app)["body"]
                 )["records"]
                 self.assertTrue(any(record["id"] == created_id for record in listed))
 
-                export = json.loads(asgi_request("GET", "/api/curation/export")["body"])
+                export = json.loads(asgi_request("GET", "/api/curation/export", test_app=test_app)["body"])
                 self.assertIn("collections", export)
                 self.assertIn("confidence_labels", export["collections"])
 
                 delete = asgi_request(
                     "POST",
                     f"/api/curation/confidence_labels/{created_id}/delete",
+                    test_app=test_app,
                 )
                 self.assertEqual(delete["status"], 200)
 
                 after_delete = json.loads(
-                    asgi_request("GET", "/api/curation/confidence_labels")["body"]
+                    asgi_request("GET", "/api/curation/confidence_labels", test_app=test_app)["body"]
                 )["records"]
                 self.assertFalse(any(record["id"] == created_id for record in after_delete))
 
@@ -751,22 +758,25 @@ class WebAppTests(unittest.TestCase):
                     "POST",
                     "/api/curation/import",
                     data={"record_json": json.dumps(bundle)},
+                    test_app=test_app,
                 )
                 self.assertEqual(imported["status"], 200)
                 imported_payload = json.loads(imported["body"])
                 self.assertEqual(imported_payload["imported"]["confidence_labels"], 1)
 
                 imported_records = json.loads(
-                    asgi_request("GET", "/api/curation/confidence_labels")["body"]
+                    asgi_request("GET", "/api/curation/confidence_labels", test_app=test_app)["body"]
                 )["records"]
                 self.assertEqual(len(imported_records), 1)
                 self.assertEqual(imported_records[0]["id"], "curated-review")
 
+    @contextmanager
     def _temp_curation_db(self):
-        return tempfile.TemporaryDirectory()
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yield Path(tmpdir) / "study.sqlite"
 
     def test_sample_maps_route_returns_markers(self):
-        response = asgi_request("GET", "/api/maps/biblical-places")
+        response = asgi_request("GET", "/api/maps/sample-markers")
 
         self.assertEqual(response["status"], 200)
         data = json.loads(response["body"])
@@ -1025,7 +1035,10 @@ class WebAppTests(unittest.TestCase):
         filtered_response = asgi_request("GET", "/api/maps/political-context?period=NT+%2F+Roman+period")
         self.assertEqual(filtered_response["status"], 200)
         filtered_data = json.loads(filtered_response["body"])
-        self.assertEqual({layer["id"] for layer in filtered_data["layers"]}, {"rome"})
+        self.assertEqual(
+            {layer["id"] for layer in filtered_data["layers"]},
+            {"rome", "egypt", "canaanite-city-states"},
+        )
 
     def test_political_context_for_passage_route_filters_and_handles_empty_state(self):
         response = asgi_request(
@@ -1050,7 +1063,9 @@ class WebAppTests(unittest.TestCase):
     def test_map_studies_route_creates_lists_and_deletes(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             db_path = Path(tmpdir) / "study.sqlite"
+            initialize_database(db_path)
             with patch("bhf_web.app.STUDY_DB_PATH", db_path):
+                test_app = create_app()
                 create_response = asgi_request(
                     "POST",
                     "/api/map-studies",
@@ -1066,18 +1081,19 @@ class WebAppTests(unittest.TestCase):
                         "generated_summary": "Jerusalem study overlay.",
                         "user_notes": "Focus on the temple setting.",
                     },
+                    test_app=test_app,
                 )
                 self.assertEqual(create_response["status"], 201)
                 study = json.loads(create_response["body"])
                 self.assertEqual(study["selected_place_id"], "jerusalem")
 
-                list_response = asgi_request("GET", "/api/map-studies?book=Romans&chapter=12")
+                list_response = asgi_request("GET", "/api/map-studies?book=Romans&chapter=12", test_app=test_app)
                 self.assertEqual(list_response["status"], 200)
                 studies = json.loads(list_response["body"])["saved_map_studies"]
                 self.assertEqual(len(studies), 1)
                 self.assertEqual(studies[0]["map_notes"], [])
 
-                open_response = asgi_request("GET", f"/api/map-studies/{study['id']}")
+                open_response = asgi_request("GET", f"/api/map-studies/{study['id']}", test_app=test_app)
                 self.assertEqual(open_response["status"], 200)
                 self.assertIn("Jerusalem study overlay.", open_response["body"])
 
@@ -1093,16 +1109,17 @@ class WebAppTests(unittest.TestCase):
                         "place_id": "jerusalem",
                         "note_body": "Tie this to the temple backdrop.",
                     },
+                    test_app=test_app,
                 )
                 self.assertEqual(note_response["status"], 201)
                 note = json.loads(note_response["body"])
                 self.assertEqual(note["place_id"], "jerusalem")
 
-                updated_list = asgi_request("GET", "/api/map-studies?book=Romans&chapter=12")
+                updated_list = asgi_request("GET", "/api/map-studies?book=Romans&chapter=12", test_app=test_app)
                 updated_studies = json.loads(updated_list["body"])["saved_map_studies"]
                 self.assertEqual(len(updated_studies[0]["map_notes"]), 1)
 
-                delete_response = asgi_request("DELETE", f"/api/map-studies/{study['id']}")
+                delete_response = asgi_request("DELETE", f"/api/map-studies/{study['id']}", test_app=test_app)
                 self.assertEqual(delete_response["status"], 200)
 
     def test_health_route_returns_ok(self):
@@ -1969,12 +1986,13 @@ def _history_messages(status):
     return [entry["message"] for entry in status["history"]]
 
 
-def asgi_request(method, path, data=None, json_data=None):
-    assert app is not None
-    return asyncio.run(_asgi_request(method, path, data, json_data))
+def asgi_request(method, path, data=None, json_data=None, test_app=None):
+    target_app = test_app or app
+    assert target_app is not None
+    return asyncio.run(_asgi_request(target_app, method, path, data, json_data))
 
 
-async def _asgi_request(method, path, data=None, json_data=None):
+async def _asgi_request(target_app, method, path, data=None, json_data=None):
     if "?" in path:
         path, query_string = path.split("?", 1)
     else:
@@ -2020,7 +2038,7 @@ async def _asgi_request(method, path, data=None, json_data=None):
     async def send(message):
         messages.append(message)
 
-    await app(scope, receive, send)
+    await target_app(scope, receive, send)
     status = next(
         message["status"]
         for message in messages

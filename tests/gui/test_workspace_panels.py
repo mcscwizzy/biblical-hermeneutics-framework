@@ -12,29 +12,43 @@ pytestmark = [pytest.mark.gui]
 def test_workspace_tabs_switch(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
     page = WorkspacePage(driver, wait, base_url)
-    tabs = ["ask", "notes", "highlights", "saved", "maps", "journey"]
-    expected_sections = {
-        "ask": "ask",
-        "notes": "notes",
-        "highlights": "studies",
-        "saved": "studies",
-        "maps": "explore",
-        "journey": "explore",
-    }
-    for name in tabs:
-        page.open_tab(name)
-        page.assert_tab_visible(name)
-        active_section = driver.find_element(By.CSS_SELECTOR, "[data-app-section][aria-pressed='true']")
-        assert active_section.get_attribute("data-app-section") == expected_sections[name]
-        for other in tabs:
-            tab = driver.find_element(By.CSS_SELECTOR, f'[data-testid="{other}-tab"]')
-            pane = driver.find_element(By.CSS_SELECTOR, f"#workspace-pane-{other}")
-            if other == name:
-                assert pane.is_displayed()
-                assert tab.get_attribute("aria-selected") == "true"
-            else:
-                assert tab.get_attribute("aria-selected") == "false"
-                assert not pane.is_displayed()
+    tab_bar = lambda: driver.find_element(By.CSS_SELECTOR, "[data-workspace-tab-bar]")
+
+    page.open_app_section("bible")
+    wait.until(lambda _driver: page.active_app_section() == "bible")
+    page.assert_tab_visible("ask")
+    wait.until(lambda _driver: not tab_bar().is_displayed())
+
+    page.open_app_section("notes")
+    wait.until(lambda _driver: page.active_app_section() == "notes")
+    wait.until(lambda _driver: tab_bar().is_displayed())
+    page.open_tab("highlights")
+    page.assert_tab_visible("highlights")
+    assert page.active_app_section() == "notes"
+
+    page.open_app_section("bible")
+    wait.until(lambda _driver: page.active_app_section() == "bible")
+    page.assert_tab_visible("ask")
+    wait.until(lambda _driver: not tab_bar().is_displayed())
+
+    page.open_app_section("notes")
+    wait.until(lambda _driver: page.active_app_section() == "notes")
+    page.assert_tab_visible("highlights")
+    page.open_tab("notes")
+    page.assert_tab_visible("notes")
+    assert page.active_app_section() == "notes"
+
+    page.open_app_section("studies")
+    wait.until(lambda _driver: page.active_app_section() == "studies")
+    page.assert_tab_visible("saved")
+    wait.until(lambda _driver: not tab_bar().is_displayed())
+
+    page.open_app_section("explore")
+    wait.until(lambda _driver: page.active_app_section() == "explore")
+    wait.until(lambda _driver: tab_bar().is_displayed())
+    page.open_tab("journey")
+    page.assert_tab_visible("journey")
+    assert page.active_app_section() == "explore"
 
 
 def test_app_dock_desktop_preserves_reader_split(driver, wait, base_url):

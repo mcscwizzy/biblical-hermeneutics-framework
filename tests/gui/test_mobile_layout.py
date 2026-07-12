@@ -48,6 +48,7 @@ def test_mobile_branding_and_header_controls_are_compact(driver, wait, base_url)
     assert "BHF ASV Reader" not in driver.find_element(By.TAG_NAME, "body").text
     assert driver.find_element(By.CSS_SELECTOR, '[data-testid="app-subtitle"]').is_displayed()
     assert "Read Scripture. Explore context. Ask deeper questions." in driver.find_element(By.CSS_SELECTOR, '[data-testid="app-subtitle"]').text
+    assert _hidden_or_absent(driver, '[data-testid="desktop-reader-controls-trigger"]')
     assert _hidden_or_absent(driver, '[data-testid="theme-toggle"]')
     assert _hidden_or_absent(driver, '[data-testid="reader-mode-toggle"]')
     assert _hidden_or_absent(driver, '[data-testid="workspace-expand-toggle"]')
@@ -172,10 +173,11 @@ def test_reader_responsive_widths_do_not_overflow(driver, wait, base_url, width,
     if is_phone:
         assert abs(metrics["bookTop"] - metrics["chapterTop"]) <= 2
         assert metrics["verseTop"] < metrics["viewportHeight"]
+        assert _hidden_or_absent(driver, '[data-testid="desktop-reader-controls-trigger"]')
         assert _hidden_or_absent(driver, '[data-testid="theme-toggle"]')
         assert driver.find_element(By.CSS_SELECTOR, '[data-testid="reader-controls-trigger"]').is_displayed()
     else:
-        assert driver.find_element(By.CSS_SELECTOR, '[data-testid="theme-toggle"]').is_displayed()
+        assert driver.find_element(By.CSS_SELECTOR, '[data-testid="desktop-reader-controls-trigger"]').is_displayed()
 
 
 def test_app_dock_switches_between_bible_and_ask_on_mobile(driver, wait, base_url):
@@ -250,18 +252,33 @@ def test_app_dock_remembers_group_subtabs_on_mobile(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
 
     page = WorkspacePage(driver, wait, base_url)
-    page.open_app_section("studies")
+    tab_bar = lambda: driver.find_element(By.CSS_SELECTOR, "[data-workspace-tab-bar]")
+
+    page.open_app_section("notes")
+    wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "notes")
+    wait.until(lambda _driver: tab_bar().is_displayed())
     page.open_tab("highlights")
-    wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "studies")
     page.open_app_section("bible")
     wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "bible")
-    page.open_app_section("studies")
+    page.open_app_section("notes")
+    wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "notes")
     page.assert_tab_visible("highlights")
+    page.open_tab("notes")
+    page.open_app_section("bible")
+    wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "bible")
+    page.open_app_section("notes")
+    page.assert_tab_visible("notes")
 
     page.open_app_section("explore")
-    page.open_tab("journey")
     wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "explore")
+    wait.until(lambda _driver: tab_bar().is_displayed())
+    page.open_tab("journey")
     page.open_app_section("bible")
     wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "bible")
     page.open_app_section("explore")
     page.assert_tab_visible("journey")
+
+    page.open_app_section("studies")
+    wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "studies")
+    page.assert_tab_visible("saved")
+    wait.until(lambda _driver: not tab_bar().is_displayed())

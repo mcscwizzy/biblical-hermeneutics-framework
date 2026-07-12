@@ -122,7 +122,7 @@ class WebUiSeleniumTests(unittest.TestCase):
     def open_home(self):
         self.driver.get(self._base_url + "/")
         WebDriverWait(self.driver, 20).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "[data-workspace-drawer-toggle]"))
+            EC.presence_of_element_located((By.CSS_SELECTOR, '[data-testid="reader-passage"]'))
         )
 
     def open_mobile_workspace(self, section: str = "ask"):
