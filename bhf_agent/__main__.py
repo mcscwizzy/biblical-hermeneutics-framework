@@ -198,6 +198,15 @@ def main(argv: Optional[list[str]] = None) -> int:
             ", ".join(result.model_metadata.get("local_knowledge_keys", [])) or "none",
         )
         print(
+            "Canonical object IDs:",
+            ", ".join(result.model_metadata.get("canonical_library_object_ids", []))
+            or "none",
+        )
+        print(
+            "Canonical retrieval method:",
+            result.model_metadata.get("canonical_library_retrieval_method") or "none",
+        )
+        print(
             "Output cleanup applied:",
             str(bool(result.model_metadata.get("cleanup_applied"))).lower(),
         )

@@ -160,8 +160,14 @@ class CanonicalLibrary:
         approved_only: bool = False,
         exclude_deprecated: bool = True,
         exclude_rejected: bool = True,
+        include_placeholders: bool = True,
+        allowed_statuses: tuple[str, ...] | None = None,
     ) -> bool:
         if approved_only and obj.review_status != "approved":
+            return False
+        if not include_placeholders and obj.content_status == "placeholder":
+            return False
+        if allowed_statuses is not None and obj.review_status not in allowed_statuses:
             return False
         if exclude_deprecated and obj.content_status == "deprecated":
             return False
@@ -176,6 +182,8 @@ class CanonicalLibrary:
         approved_only: bool = False,
         exclude_deprecated: bool = True,
         exclude_rejected: bool = True,
+        include_placeholders: bool = True,
+        allowed_statuses: tuple[str, ...] | None = None,
     ) -> RetrievalResult | None:
         self._ensure_loaded()
         normalized = normalize_id(object_id)
@@ -185,6 +193,8 @@ class CanonicalLibrary:
             approved_only=approved_only,
             exclude_deprecated=exclude_deprecated,
             exclude_rejected=exclude_rejected,
+            include_placeholders=include_placeholders,
+            allowed_statuses=allowed_statuses,
         ):
             return None
         return RetrievalResult(
@@ -202,6 +212,8 @@ class CanonicalLibrary:
         approved_only: bool = False,
         exclude_deprecated: bool = True,
         exclude_rejected: bool = True,
+        include_placeholders: bool = True,
+        allowed_statuses: tuple[str, ...] | None = None,
     ) -> RetrievalResult | None:
         self._ensure_loaded()
         normalized = normalize_alias(alias)
@@ -217,6 +229,8 @@ class CanonicalLibrary:
                     approved_only=approved_only,
                     exclude_deprecated=exclude_deprecated,
                     exclude_rejected=exclude_rejected,
+                    include_placeholders=include_placeholders,
+                    allowed_statuses=allowed_statuses,
                 )
             ),
             None,
@@ -246,6 +260,8 @@ class CanonicalLibrary:
         approved_only: bool = False,
         exclude_deprecated: bool = True,
         exclude_rejected: bool = True,
+        include_placeholders: bool = True,
+        allowed_statuses: tuple[str, ...] | None = None,
     ) -> list[RetrievalResult]:
         self._ensure_loaded()
         if limit <= 0:
@@ -264,6 +280,8 @@ class CanonicalLibrary:
                 approved_only=approved_only,
                 exclude_deprecated=exclude_deprecated,
                 exclude_rejected=exclude_rejected,
+                include_placeholders=include_placeholders,
+                allowed_statuses=allowed_statuses,
             ):
                 continue
             field_terms = self.field_keyword_index.get(object_id, {})
@@ -300,6 +318,8 @@ class CanonicalLibrary:
         approved_only: bool = False,
         exclude_deprecated: bool = True,
         exclude_rejected: bool = True,
+        include_placeholders: bool = True,
+        allowed_statuses: tuple[str, ...] | None = None,
     ) -> RetrievalResult | None:
         self._ensure_loaded()
         normalized_id = normalize_id(query)
@@ -310,6 +330,8 @@ class CanonicalLibrary:
                 approved_only=approved_only,
                 exclude_deprecated=exclude_deprecated,
                 exclude_rejected=exclude_rejected,
+                include_placeholders=include_placeholders,
+                allowed_statuses=allowed_statuses,
             ):
                 return None
             return RetrievalResult(
@@ -328,6 +350,8 @@ class CanonicalLibrary:
                 approved_only=approved_only,
                 exclude_deprecated=exclude_deprecated,
                 exclude_rejected=exclude_rejected,
+                include_placeholders=include_placeholders,
+                allowed_statuses=allowed_statuses,
             )
             if alias_result is not None:
                 return alias_result
@@ -342,6 +366,8 @@ class CanonicalLibrary:
                     approved_only=approved_only,
                     exclude_deprecated=exclude_deprecated,
                     exclude_rejected=exclude_rejected,
+                    include_placeholders=include_placeholders,
+                    allowed_statuses=allowed_statuses,
                 ):
                     continue
                 matched_terms = tokenize_query(query)
@@ -360,6 +386,8 @@ class CanonicalLibrary:
             approved_only=approved_only,
             exclude_deprecated=exclude_deprecated,
             exclude_rejected=exclude_rejected,
+            include_placeholders=include_placeholders,
+            allowed_statuses=allowed_statuses,
         )
         return keyword_matches[0] if keyword_matches else None
 

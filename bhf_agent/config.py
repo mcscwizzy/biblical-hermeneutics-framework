@@ -7,6 +7,8 @@ from dataclasses import asdict, dataclass, fields, replace
 from pathlib import Path
 from typing import Any, Optional, Union
 
+from framework.canonical_library import REVIEW_STATUS_VALUES
+
 
 class ConfigError(ValueError):
     """Raised when agent configuration is missing or invalid."""
@@ -14,6 +16,36 @@ class ConfigError(ValueError):
 
 ALLOWED_ANSWER_MODES = ("concise", "study", "teaching", "scholar")
 ALLOWED_ADAPTERS = ("openai_compatible", "ollama")
+
+
+@dataclass(frozen=True)
+class CanonicalLibraryConfig:
+    enabled: bool = True
+    max_results: int = 5
+    max_context_tokens: int = 1200
+    include_placeholders: bool = True
+    allowed_statuses: tuple[str, ...] = (
+        "unreviewed",
+        "in_review",
+        "reviewed",
+        "approved",
+    )
+
+    def validate(self) -> None:
+        if int(self.max_results) <= 0:
+            raise ConfigError("canonical_library.max_results must be greater than 0")
+        if int(self.max_context_tokens) <= 0:
+            raise ConfigError(
+                "canonical_library.max_context_tokens must be greater than 0"
+            )
+        if not self.allowed_statuses:
+            raise ConfigError("canonical_library.allowed_statuses must not be empty")
+        invalid = sorted(set(self.allowed_statuses) - set(REVIEW_STATUS_VALUES))
+        if invalid:
+            raise ConfigError(
+                "canonical_library.allowed_statuses must be one of: "
+                + ", ".join(REVIEW_STATUS_VALUES)
+            )
 
 
 @dataclass(frozen=True)
@@ -37,6 +69,7 @@ class AgentConfig:
     session_id: Optional[str] = None
     memory_path: Optional[str] = None
     memory_max_turns: int = 8
+    canonical_library: CanonicalLibraryConfig = CanonicalLibraryConfig()
 
     @classmethod
     def from_json_file(cls, path: Union[str, Path]) -> "AgentConfig":
@@ -59,6 +92,10 @@ class AgentConfig:
         unknown = sorted(set(data) - known)
         if unknown:
             raise ConfigError(f"unknown config field(s): {', '.join(unknown)}")
+        data = dict(data)
+        data["canonical_library"] = _canonical_library_config_from_value(
+            data.get("canonical_library")
+        )
         try:
             config = cls(**data)
         except TypeError as exc:
@@ -72,6 +109,11 @@ class AgentConfig:
         unknown = sorted(set(clean) - known)
         if unknown:
             raise ConfigError(f"unknown override field(s): {', '.join(unknown)}")
+        if "canonical_library" in clean:
+            clean["canonical_library"] = _canonical_library_config_from_value(
+                clean["canonical_library"],
+                base=self.canonical_library,
+            )
         config = replace(self, **clean)
         config.validate()
         return config
@@ -107,9 +149,89 @@ class AgentConfig:
             raise ConfigError("repair_threshold must be between 0 and 100")
         if int(self.memory_max_turns) <= 0:
             raise ConfigError("memory_max_turns must be greater than 0")
+        self.canonical_library.validate()
 
     def to_dict(self, redact_secrets: bool = True) -> dict[str, Any]:
         data = asdict(self)
         if redact_secrets and data.get("api_key"):
             data["api_key"] = "<redacted>"
         return data
+
+
+def _canonical_library_config_from_value(
+    value: Any,
+    *,
+    base: CanonicalLibraryConfig | None = None,
+) -> CanonicalLibraryConfig:
+    if isinstance(value, CanonicalLibraryConfig):
+        config = value
+    elif value is None:
+        config = base or CanonicalLibraryConfig()
+    elif isinstance(value, dict):
+        base_config = base or CanonicalLibraryConfig()
+        known = {field.name for field in fields(CanonicalLibraryConfig)}
+        unknown = sorted(set(value) - known)
+        if unknown:
+            raise ConfigError(
+                f"unknown canonical_library field(s): {', '.join(unknown)}"
+            )
+        merged = asdict(base_config)
+        merged.update(value)
+        config = CanonicalLibraryConfig(
+            enabled=_coerce_bool(merged["enabled"], field_name="canonical_library.enabled"),
+            max_results=_coerce_int(merged["max_results"], field_name="canonical_library.max_results"),
+            max_context_tokens=_coerce_int(
+                merged["max_context_tokens"],
+                field_name="canonical_library.max_context_tokens",
+            ),
+            include_placeholders=_coerce_bool(
+                merged["include_placeholders"],
+                field_name="canonical_library.include_placeholders",
+            ),
+            allowed_statuses=_coerce_statuses(
+                merged["allowed_statuses"],
+                field_name="canonical_library.allowed_statuses",
+            ),
+        )
+    else:
+        raise ConfigError("canonical_library must be an object")
+
+    config.validate()
+    return config
+
+
+def _coerce_bool(value: Any, *, field_name: str) -> bool:
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, str):
+        normalized = value.strip().lower()
+        if normalized in {"1", "true", "yes", "on"}:
+            return True
+        if normalized in {"0", "false", "no", "off"}:
+            return False
+    raise ConfigError(f"{field_name} must be true or false")
+
+
+def _coerce_int(value: Any, *, field_name: str) -> int:
+    try:
+        return int(value)
+    except (TypeError, ValueError) as exc:
+        raise ConfigError(f"{field_name} must be an integer") from exc
+
+
+def _coerce_statuses(value: Any, *, field_name: str) -> tuple[str, ...]:
+    if isinstance(value, str):
+        items = [value]
+    elif isinstance(value, (list, tuple)):
+        items = [str(item).strip().lower() for item in value if str(item).strip()]
+    else:
+        raise ConfigError(f"{field_name} must be a list of review statuses")
+    deduped = tuple(dict.fromkeys(items))
+    if not deduped:
+        raise ConfigError(f"{field_name} must not be empty")
+    invalid = sorted(set(deduped) - set(REVIEW_STATUS_VALUES))
+    if invalid:
+        raise ConfigError(
+            f"{field_name} must be one of: " + ", ".join(REVIEW_STATUS_VALUES)
+        )
+    return deduped

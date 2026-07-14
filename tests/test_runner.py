@@ -320,6 +320,35 @@ class RunnerTests(unittest.TestCase):
             result.model_metadata["pipeline"]["local_knowledge_keys"],
         )
 
+    def test_agent_injects_canonical_library_context_and_debug_ids(self):
+        adapter = RecordingAdapter()
+        agent = self.make_agent(adapter, profile="standard")
+
+        result = agent.ask(
+            "Why did Israel renew the covenant where Abraham first entered the land at Shechem in Joshua 24?"
+        )
+
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertIn("# Canonical Knowledge Library", adapter.request.system_prompt)
+        self.assertIn("Retrieved object IDs:", adapter.request.system_prompt)
+        self.assertIn("Local Curated Knowledge", adapter.request.system_prompt)
+        self.assertLess(
+            adapter.request.system_prompt.index("# Canonical Knowledge Library"),
+            adapter.request.system_prompt.index("Local Curated Knowledge"),
+        )
+        self.assertIn("shechem", result.model_metadata["canonical_library_object_ids"])
+        self.assertIn("abraham", result.model_metadata["canonical_library_object_ids"])
+        self.assertIn("joshua", result.model_metadata["canonical_library_object_ids"])
+        self.assertIn(
+            "shechem",
+            result.model_metadata["pipeline"]["canonical_library_object_ids"],
+        )
+        self.assertEqual(
+            result.model_metadata["canonical_library_retrieval_method"],
+            result.model_metadata["pipeline"]["canonical_library_retrieval_method"],
+        )
+
     def test_agent_result_uses_cleaned_answer_and_debug_metadata(self):
         with tempfile.TemporaryDirectory() as tmp:
             profiles_dir = Path(tmp)

@@ -1,5 +1,6 @@
 import unittest
 
+from bhf_agent.ckl import build_canonical_context, format_canonical_context_for_prompt, load_canonical_library
 from bhf_agent.genre import classify_genre
 from bhf_agent.knowledge import lookup_lexical_entries, lookup_local_knowledge
 from bhf_agent.memory import SessionMemory, SessionTurn
@@ -233,6 +234,45 @@ class PromptBuildingTests(unittest.TestCase):
         self.assertIn("Genre: wisdom literature", system_prompt)
         self.assertIn("Genre guide (genre:wisdom literature)", system_prompt)
         self.assertIn("not automatic formulas", system_prompt)
+
+    def test_prompt_includes_canonical_library_context_before_local_knowledge(self):
+        question = "Why did Israel renew the covenant where Abraham first entered the land at Shechem in Joshua 24?"
+        reference = detect_reference(question)
+        genre = classify_genre(reference)
+        question_context = classify_question_type(question, reference)
+        bundle = lookup_local_knowledge(reference, genre, question_context)
+        canonical_context = build_canonical_context(
+            load_canonical_library(),
+            question,
+            reference_context=reference,
+            question_context=question_context,
+            max_results=4,
+            include_placeholders=True,
+            allowed_statuses=("unreviewed", "in_review", "reviewed", "approved"),
+        )
+        canonical_prompt = format_canonical_context_for_prompt(canonical_context, max_context_tokens=1200)
+
+        system_prompt, _ = build_prompt(
+            "standard",
+            "PROFILE",
+            reference,
+            genre,
+            question_context,
+            question,
+            local_knowledge=bundle,
+            canonical_context_prompt=canonical_prompt,
+        )
+
+        self.assertIn("# Canonical Knowledge Library", system_prompt)
+        self.assertIn("Retrieved object IDs:", system_prompt)
+        self.assertIn("shechem", system_prompt)
+        self.assertIn("abraham", system_prompt)
+        self.assertIn("joshua", system_prompt)
+        self.assertIn("covenant-theme", system_prompt)
+        self.assertLess(
+            system_prompt.index("# Canonical Knowledge Library"),
+            system_prompt.index("Local Curated Knowledge"),
+        )
 
     def test_prompt_includes_local_session_memory_when_available(self):
         memory = SessionMemory(

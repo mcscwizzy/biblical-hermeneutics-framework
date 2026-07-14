@@ -4,7 +4,7 @@ The Canonical Knowledge Library (CKL) is a version-controlled store of curated b
 
 ## Purpose
 
-CKL stores canonical facts, retrieval metadata, and future scholarship in a deterministic format. The current phase deliberately stops at the retrieval foundation: it does not infer theology, generate explanations, or call an LLM.
+CKL stores canonical facts, retrieval metadata, and future scholarship in a deterministic format. The CKL layer itself stops at the retrieval foundation: it does not infer theology, generate explanations, or call an LLM.
 
 ## Architectural Role
 
@@ -28,6 +28,7 @@ The CKL lives under `framework/canonical_library/` and is intentionally self-con
 - `normalization.py` provides deterministic text and ID normalization.
 - `retrieval.py` defines exact and future retrieval interfaces.
 - `context_builder.py` assembles structured prompt context from retrieved objects.
+- `authoring.py` provides template, validation, reporting, manifest, and migration helpers.
 - `public_cache.py` holds a placeholder interface for future approved-answer reuse.
 - `manifest.json` records the library version and inventory counts.
 - `objects/` stores one JSON object per file, grouped by category folder.
@@ -160,6 +161,26 @@ Safe contributor workflow:
 5. Update or regenerate `manifest.json`.
 6. Run the CKL test suite.
 
+## Authoring Tools
+
+The Phase 9 tooling under `tools/` removes most of the manual JSON friction:
+
+- `python tools/ckl_create.py --type person --id abraham --write`
+- `python tools/ckl_validate.py --path framework/canonical_library/objects/people/abraham.json`
+- `python tools/ckl_manifest.py --root framework/canonical_library --write --stamp`
+- `python tools/ckl_report.py --root framework/canonical_library`
+- `python tools/ckl_migrate.py --root framework/canonical_library --write`
+
+`ckl_create.py` generates a fresh template, `ckl_validate.py` checks either a
+single file or the whole library, `ckl_manifest.py` rebuilds the inventory
+counts, `ckl_report.py` summarizes status, and `ckl_migrate.py` rewrites legacy
+JSON into the normalized schema. None of the scripts write to disk unless
+`--write` or `--output` is supplied.
+
 ## Populating Scholarship Later
 
 Future scholarship must be curated, sourced, and reviewed before it is written into the CKL. Interpretive rules and canonical facts should remain separate so that the hermeneutical framework can guide interpretation without collapsing into the knowledge store itself.
+
+## Roadmap
+
+Implementation sequencing and phase tracking live in `docs/roadmap/canonical-knowledge-library-roadmap.md`.

@@ -20,6 +20,7 @@ Use the BHF profile as method guidance, not as a doctrinal conclusion.
 
 The profile content is the source of hermeneutics.
 The prompt strategy only shapes runtime answer format and model steering.
+When canonical library context is provided, treat it as the first curated canonical source, and respect placeholder and review-status labels.
 When a question asks about geography, archaeology, routes, manuscripts, or historical context, retrieve the curated local map data before answering.
 Do not invent missing geography, archaeology, manuscript, or route claims if curated data has not been retrieved.
 """
@@ -377,6 +378,7 @@ def build_prompt(
     map_context: dict[str, object] | None = None,
     session_memory: SessionMemory | None = None,
     answer_mode: str = "study",
+    canonical_context_prompt: str | None = None,
 ) -> tuple[str, str]:
     """Return `(system_prompt, user_prompt)` for a BHF agent call."""
 
@@ -404,6 +406,8 @@ def build_prompt(
             show_method_notes,
         ).strip(),
     ]
+    if canonical_context_prompt:
+        system_sections.append(canonical_context_prompt.strip())
     if local_knowledge is None:
         local_knowledge = LocalKnowledgeBundle(lexical_entries=lexical_entries or [])
     local_knowledge_prompt = format_local_knowledge_for_prompt(local_knowledge)

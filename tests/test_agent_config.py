@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 
 from bhf_agent.__main__ import config_from_args
-from bhf_agent.config import AgentConfig, ConfigError
+from bhf_agent.config import AgentConfig, CanonicalLibraryConfig, ConfigError
 
 
 class AgentConfigTests(unittest.TestCase):
@@ -92,6 +92,56 @@ class AgentConfigTests(unittest.TestCase):
         self.assertIsNone(config.session_id)
         self.assertIsNone(config.memory_path)
         self.assertEqual(config.memory_max_turns, 8)
+        self.assertTrue(config.canonical_library.enabled)
+        self.assertTrue(config.canonical_library.include_placeholders)
+        self.assertEqual(
+            config.canonical_library.allowed_statuses,
+            ("unreviewed", "in_review", "reviewed", "approved"),
+        )
+
+    def test_config_accepts_canonical_library_section(self):
+        config = AgentConfig.from_mapping(
+            {
+                "config_version": 1,
+                "adapter": "openai_compatible",
+                "base_url": "http://localhost:1234/v1",
+                "model": "local-model",
+                "profile": "standard",
+                "canonical_library": {
+                    "enabled": True,
+                    "max_results": 4,
+                    "max_context_tokens": 900,
+                    "include_placeholders": False,
+                    "allowed_statuses": ["approved", "reviewed"],
+                },
+            }
+        )
+
+        self.assertTrue(config.canonical_library.enabled)
+        self.assertEqual(config.canonical_library.max_results, 4)
+        self.assertEqual(config.canonical_library.max_context_tokens, 900)
+        self.assertFalse(config.canonical_library.include_placeholders)
+        self.assertEqual(config.canonical_library.allowed_statuses, ("approved", "reviewed"))
+
+    def test_config_serializes_canonical_library_section(self):
+        config = AgentConfig(
+            base_url="http://localhost:1234/v1",
+            model="local-model",
+            canonical_library=CanonicalLibraryConfig(
+                enabled=False,
+                max_results=3,
+                max_context_tokens=750,
+                include_placeholders=False,
+                allowed_statuses=("approved",),
+            ),
+        )
+
+        self.assertEqual(config.to_dict()["canonical_library"]["max_results"], 3)
+        self.assertFalse(config.to_dict()["canonical_library"]["enabled"])
+        self.assertEqual(
+            config.to_dict()["canonical_library"]["allowed_statuses"],
+            ("approved",),
+        )
 
     def test_config_accepts_valid_answer_modes(self):
         for answer_mode in ("concise", "study", "teaching", "scholar"):

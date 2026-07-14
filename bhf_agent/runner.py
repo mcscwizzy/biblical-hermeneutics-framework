@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from typing import Any, Callable, Optional
 
 from .adapters import ChatAdapter, OllamaAdapter, OpenAICompatibleAdapter
+from .ckl import build_canonical_context, format_canonical_context_for_prompt, load_canonical_library
 from .config import AgentConfig, ConfigError
 from .genre import classify_genre
 from .knowledge import LocalKnowledgeBundle, lookup_local_knowledge
@@ -32,6 +33,7 @@ from .repair import build_repair_prompt, decide_repair
 from .references import detect_reference
 from .runner_state import PIPELINE_STEPS, STEP_INDEX, STEP_MESSAGES, STAGE_TO_STEP, TOTAL_STEPS
 from .validation import validate_response
+from framework.canonical_library import CanonicalLibrary
 
 
 StatusCallback = Callable[[dict[str, Any]], None]
@@ -42,11 +44,18 @@ class BHFAgent:
         config: AgentConfig,
         adapter: Optional[ChatAdapter] = None,
         profile_loader: Optional[ProfileLoader] = None,
+        canonical_library: Optional[CanonicalLibrary] = None,
     ) -> None:
         config.validate()
         self.config = config
         self.profile_loader = profile_loader or ProfileLoader()
         self.adapter = adapter or self._build_adapter(config)
+        if canonical_library is not None:
+            self.canonical_library = canonical_library
+        elif self.config.canonical_library.enabled:
+            self.canonical_library = load_canonical_library()
+        else:
+            self.canonical_library = None
         self._status_callback: Optional[StatusCallback] = None
         self._status_run_started_at: float | None = None
         self._status_stage_started_at: float | None = None
@@ -125,6 +134,15 @@ class BHFAgent:
                 "profile": self.config.profile,
                 "answer_mode": self.config.answer_mode,
                 "local_knowledge_keys": [],
+                "canonical_library_enabled": self.config.canonical_library.enabled,
+                "canonical_library_loaded": self.canonical_library is not None,
+                "canonical_library_object_ids": [],
+                "canonical_library_retrieval_method": None,
+                "canonical_library_topic_count": 0,
+                "canonical_library_prompt_tokens": 0,
+                "canonical_library_query": None,
+                "canonical_library_include_placeholders": self.config.canonical_library.include_placeholders,
+                "canonical_library_allowed_statuses": list(self.config.canonical_library.allowed_statuses),
                 "map_tool_keys": [],
                 "output_cleanup_applied": False,
                 "validation_score": None,
@@ -182,7 +200,65 @@ class BHFAgent:
         )
         ctx.local_knowledge = bundle
         ctx.debug_metadata["local_knowledge_keys"] = bundle.keys()
+        self._lookup_canonical_library(ctx)
         return self._mark_stage(ctx, "lookup_local_knowledge")
+
+    def _lookup_canonical_library(self, ctx: PipelineContext) -> PipelineContext:
+        if self.canonical_library is None:
+            ctx.canonical_library_context = None
+            ctx.canonical_library_prompt = None
+            ctx.canonical_library_query = None
+            ctx.debug_metadata["canonical_library_loaded"] = False
+            ctx.debug_metadata["canonical_library_object_ids"] = []
+            ctx.debug_metadata["canonical_library_retrieval_method"] = None
+            ctx.debug_metadata["canonical_library_topic_count"] = 0
+            ctx.debug_metadata["canonical_library_prompt_tokens"] = 0
+            return ctx
+        if ctx.reference_context is None or ctx.question_context is None:
+            raise RuntimeError("pipeline context is incomplete before canonical lookup")
+
+        canonical_context = build_canonical_context(
+            self.canonical_library,
+            ctx.original_question,
+            ctx.reference_context,
+            ctx.question_context,
+            max_results=self.config.canonical_library.max_results,
+            include_placeholders=self.config.canonical_library.include_placeholders,
+            allowed_statuses=self.config.canonical_library.allowed_statuses,
+        )
+        ctx.canonical_library_context = canonical_context
+        ctx.canonical_library_query = (
+            str(canonical_context.get("query") or "").strip()
+            if canonical_context is not None
+            else None
+        )
+
+        if canonical_context is None:
+            ctx.canonical_library_prompt = None
+            ctx.debug_metadata["canonical_library_loaded"] = True
+            ctx.debug_metadata["canonical_library_object_ids"] = []
+            ctx.debug_metadata["canonical_library_retrieval_method"] = None
+            ctx.debug_metadata["canonical_library_topic_count"] = 0
+            ctx.debug_metadata["canonical_library_prompt_tokens"] = 0
+            ctx.debug_metadata["canonical_library_query"] = ctx.canonical_library_query
+            return ctx
+
+        canonical_prompt = format_canonical_context_for_prompt(
+            canonical_context,
+            max_context_tokens=self.config.canonical_library.max_context_tokens,
+        )
+        ctx.canonical_library_prompt = canonical_prompt
+        metadata = dict(canonical_context.get("metadata") or {})
+        object_ids = list(metadata.get("retrieved_object_ids") or [])
+        ctx.debug_metadata["canonical_library_loaded"] = True
+        ctx.debug_metadata["canonical_library_object_ids"] = object_ids
+        ctx.debug_metadata["canonical_library_retrieval_method"] = metadata.get("retrieval_method")
+        ctx.debug_metadata["canonical_library_topic_count"] = metadata.get("topic_count", 0)
+        ctx.debug_metadata["canonical_library_prompt_tokens"] = (
+            max(1, round(len(canonical_prompt) / 4)) if canonical_prompt else 0
+        )
+        ctx.debug_metadata["canonical_library_query"] = ctx.canonical_library_query
+        return ctx
 
     def _load_session_memory(self, ctx: PipelineContext) -> PipelineContext:
         if not self.config.memory_enabled:
@@ -230,6 +306,7 @@ class BHFAgent:
             map_context=map_context,
             session_memory=ctx.session_memory,
             answer_mode=ctx.answer_mode,
+            canonical_context_prompt=ctx.canonical_library_prompt,
         )
         return self._mark_stage(ctx, "build_prompts")
 
@@ -266,6 +343,17 @@ class BHFAgent:
                 "question_context": ctx.question_context.to_dict(),
                 "local_knowledge_keys": ctx.debug_metadata.get(
                     "local_knowledge_keys", []
+                ),
+                "canonical_library_enabled": ctx.debug_metadata.get("canonical_library_enabled"),
+                "canonical_library_loaded": ctx.debug_metadata.get("canonical_library_loaded"),
+                "canonical_library_object_ids": ctx.debug_metadata.get(
+                    "canonical_library_object_ids", []
+                ),
+                "canonical_library_retrieval_method": ctx.debug_metadata.get(
+                    "canonical_library_retrieval_method"
+                ),
+                "canonical_library_topic_count": ctx.debug_metadata.get(
+                    "canonical_library_topic_count", 0
                 ),
                 "map_tool_keys": ctx.debug_metadata.get("map_tool_keys", []),
                 "memory_enabled": self.config.memory_enabled,
@@ -515,6 +603,15 @@ class BHFAgent:
                 "cleanup_removed_headings", []
             ),
             "local_knowledge_keys": ctx.debug_metadata.get("local_knowledge_keys", []),
+            "canonical_library_object_ids": ctx.debug_metadata.get(
+                "canonical_library_object_ids", []
+            ),
+            "canonical_library_retrieval_method": ctx.debug_metadata.get(
+                "canonical_library_retrieval_method"
+            ),
+            "canonical_library_topic_count": ctx.debug_metadata.get(
+                "canonical_library_topic_count", 0
+            ),
             "local_knowledge_terms": [
                 entry.transliteration for entry in local_knowledge.lexical_entries
             ],

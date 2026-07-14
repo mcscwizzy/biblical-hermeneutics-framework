@@ -74,6 +74,8 @@ class CanonicalContextBuilder:
         approved_only: bool = False,
         exclude_deprecated: bool = True,
         exclude_rejected: bool = True,
+        include_placeholders: bool = True,
+        allowed_statuses: tuple[str, ...] | None = None,
     ) -> dict[str, Any]:
         self.library._ensure_loaded()
         topic_limit = self.max_topics if limit is None else max(0, min(limit, self.max_topics))
@@ -86,6 +88,8 @@ class CanonicalContextBuilder:
             approved_only=approved_only,
             exclude_deprecated=exclude_deprecated,
             exclude_rejected=exclude_rejected,
+            include_placeholders=include_placeholders,
+            allowed_statuses=allowed_statuses,
         )
         for result in primary_results:
             self._append_topic(
@@ -108,6 +112,8 @@ class CanonicalContextBuilder:
                 approved_only=approved_only,
                 exclude_deprecated=exclude_deprecated,
                 exclude_rejected=exclude_rejected,
+                include_placeholders=include_placeholders,
+                allowed_statuses=allowed_statuses,
             )
             retrieved.extend(expanded)
 
@@ -131,6 +137,9 @@ class CanonicalContextBuilder:
                 "topic_count": len(retrieved),
                 "primary_topic_count": len(primary_results),
                 "expanded_topic_count": len(expanded),
+                "requested_limit": topic_limit,
+                "include_placeholders": include_placeholders,
+                "allowed_statuses": list(allowed_statuses) if allowed_statuses is not None else None,
             },
         }
 
@@ -169,6 +178,8 @@ class CanonicalContextBuilder:
         approved_only: bool,
         exclude_deprecated: bool,
         exclude_rejected: bool,
+        include_placeholders: bool,
+        allowed_statuses: tuple[str, ...] | None,
     ) -> list[RetrievalResult]:
         primary_results: list[RetrievalResult] = []
         if limit <= 0:
@@ -179,6 +190,8 @@ class CanonicalContextBuilder:
             approved_only=approved_only,
             exclude_deprecated=exclude_deprecated,
             exclude_rejected=exclude_rejected,
+            include_placeholders=include_placeholders,
+            allowed_statuses=allowed_statuses,
         )
         if primary is not None:
             primary_results.append(primary)
@@ -190,6 +203,8 @@ class CanonicalContextBuilder:
                 approved_only=approved_only,
                 exclude_deprecated=exclude_deprecated,
                 exclude_rejected=exclude_rejected,
+                include_placeholders=include_placeholders,
+                allowed_statuses=allowed_statuses,
             ):
                 if result.object.id in {item.object.id for item in primary_results}:
                     continue
@@ -223,6 +238,26 @@ class CanonicalContextBuilder:
                 "id": obj.id,
                 "type": obj.type,
                 "title": obj.title,
+                "aliases": list(obj.aliases),
+                "summary": obj.summary,
+                "historical_context": obj.historical_context,
+                "ancient_near_east_context": obj.ancient_near_east_context,
+                "literary_context": obj.literary_context,
+                "covenantal_significance": obj.covenantal_significance,
+                "scripture_references": [
+                    reference.to_dict() if hasattr(reference, "to_dict") else reference
+                    for reference in obj.scripture_references
+                ],
+                "common_questions": list(obj.common_questions),
+                "interpretive_notes": list(obj.interpretive_notes),
+                "sources": [
+                    source.to_dict() if hasattr(source, "to_dict") else source
+                    for source in obj.sources
+                ],
+                "content_status": obj.content_status,
+                "review_status": obj.review_status,
+                "confidence": obj.confidence,
+                "importance": obj.importance,
                 "matched_alias": matched_alias,
                 "match_type": match_type,
                 "score": score,
@@ -246,6 +281,8 @@ class CanonicalContextBuilder:
         approved_only: bool,
         exclude_deprecated: bool,
         exclude_rejected: bool,
+        include_placeholders: bool,
+        allowed_statuses: tuple[str, ...] | None,
     ) -> list[dict[str, Any]]:
         expanded: list[dict[str, Any]] = []
         current_frontier = list(seed_entries)
@@ -275,6 +312,8 @@ class CanonicalContextBuilder:
                         approved_only=approved_only,
                         exclude_deprecated=exclude_deprecated,
                         exclude_rejected=exclude_rejected,
+                        include_placeholders=include_placeholders,
+                        allowed_statuses=allowed_statuses,
                     ):
                         continue
                     candidates.append(

@@ -184,6 +184,8 @@ def result_metadata(result: Any) -> dict[str, Any]:
         "Detected genre": getattr(genre, "primary_genre", None) or "not detected",
         "Question type": format_question_type(question),
         "Local knowledge used": join_or_none(metadata.get("local_knowledge_keys") or []),
+        "Canonical object IDs": join_or_none(metadata.get("canonical_library_object_ids") or []),
+        "Canonical retrieval method": metadata.get("canonical_library_retrieval_method") or "none",
         "Validation warnings": join_or_none(getattr(validation, "warnings", [])),
         "Adapter errors": join_or_none(getattr(result, "errors", [])),
     }

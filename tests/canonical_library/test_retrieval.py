@@ -237,6 +237,68 @@ class CanonicalRetrievalTests(unittest.TestCase):
 
         self.assertEqual(len(results), 1)
 
+    def test_retrieval_can_exclude_placeholder_records(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_library(
+                root,
+                [
+                    make_object(
+                        "aardvark-placeholder",
+                        "place",
+                        "Shechem Reference",
+                        ["shechem placeholder"],
+                        content_status="placeholder",
+                        review_status="unreviewed",
+                    ),
+                    make_object(
+                        "zebra-approved",
+                        "place",
+                        "Shechem Reference",
+                        ["shechem approved"],
+                        content_status="complete",
+                        review_status="approved",
+                        summary="A reviewed Shechem reference record.",
+                        reviewed_by=["alice"],
+                        last_reviewed="2024-07-13",
+                        confidence="high",
+                        scripture_references=[
+                            {
+                                "reference": "Joshua 24:1-28",
+                                "relationship": "primary",
+                                "notes": "",
+                            }
+                        ],
+                        sources=[
+                            {
+                                "title": "Joshua",
+                                "author": "",
+                                "publisher": "",
+                                "year": None,
+                                "locator": "24:1-28",
+                                "url": "",
+                                "source_type": "biblical-text",
+                                "notes": "",
+                            }
+                        ],
+                    ),
+                ],
+            )
+
+            library = CanonicalLibrary(root=root).load()
+
+        placeholder_result = library.retrieve_exact("Shechem Reference")
+        strict_result = library.retrieve_exact(
+            "Shechem Reference",
+            include_placeholders=False,
+            allowed_statuses=("approved",),
+        )
+
+        self.assertIsNotNone(placeholder_result)
+        self.assertEqual(placeholder_result.object.id, "aardvark-placeholder")
+        self.assertIsNotNone(strict_result)
+        self.assertEqual(strict_result.object.id, "zebra-approved")
+
     def test_unknown_query_returns_empty_results(self) -> None:
         self.assertEqual(self.library.retrieve_by_keywords("the and of", limit=5), [])
         self.assertIsNone(self.library.retrieve_exact(""))
