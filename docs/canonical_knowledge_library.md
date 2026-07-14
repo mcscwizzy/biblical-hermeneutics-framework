@@ -73,11 +73,12 @@ Every canonical object uses the same base schema.
 | `related_places` | array of strings | empty | Related canonical places. |
 | `related_events` | array of strings | empty | Related canonical events. |
 | `related_objects` | array of typed relationship objects | empty | Structured canonical links to other objects. |
+| `scripture_references` | array of scripture-reference objects | empty | Structured biblical reference anchors. |
 | `cross_references` | array of strings | empty | Internal reference pointers for later use. |
 | `new_testament_connections` | array of strings | empty | NT connection pointers for later use. |
 | `interpretive_notes` | array of strings | empty | Future interpreter notes and cautions. |
 | `common_questions` | array of strings | empty | Future question prompts and FAQs. |
-| `sources` | array of strings | empty | Future source citations and bibliography. |
+| `sources` | array of source objects | empty | Future source citations and bibliography. |
 | `importance` | integer | zero | Deterministic ranking hint for retrieval. |
 | `framework_version` | string | `1.0` | CKL framework version gate. |
 | `object_version` | string | `1` | Per-object schema version. |
@@ -106,7 +107,7 @@ The current inventory is intentionally thin. Each placeholder object contains:
 - `last_reviewed` as `null`
 - `confidence` set to `unrated`
 
-All other string fields are empty strings, and all collection fields are empty arrays. The governance metadata is defaulted on load for older JSON files, so the current inventory remains backward compatible while the schema grows. That means the library can be tested, indexed, and queried without pretending scholarship exists where it does not.
+All other string fields are empty strings, and all collection fields are empty arrays. The governance metadata is defaulted on load for older JSON files, and legacy string `sources` values are migrated to structured source objects, so the current inventory remains backward compatible while the schema grows. That means the library can be tested, indexed, and queried without pretending scholarship exists where it does not.
 
 ## Retrieval Flow
 

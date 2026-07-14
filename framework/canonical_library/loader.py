@@ -8,7 +8,13 @@ from pathlib import Path
 from typing import Any
 
 from .normalization import STOP_WORDS, normalize_alias, normalize_id, tokenize_query
-from .retrieval import RetrievalResult, canonical_search_terms, score_keyword_result, sort_retrieval_results
+from .retrieval import (
+    RetrievalResult,
+    canonical_search_terms,
+    collect_field_search_terms,
+    score_keyword_result,
+    sort_retrieval_results,
+)
 from .schema import (
     SUPPORTED_CATEGORIES,
     CanonicalObject,
@@ -29,6 +35,7 @@ class CanonicalLibrary:
     objects_by_alias: dict[str, list[str]] = field(default_factory=dict)
     objects_by_type: dict[str, list[str]] = field(default_factory=dict)
     keyword_index: dict[str, set[str]] = field(default_factory=dict)
+    field_keyword_index: dict[str, dict[str, set[str]]] = field(default_factory=dict)
     manifest: dict[str, Any] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
@@ -91,6 +98,7 @@ class CanonicalLibrary:
         self.objects_by_type = {category: [] for category in SUPPORTED_CATEGORIES}
         self.objects_by_alias = {}
         self.keyword_index = {}
+        self.field_keyword_index = {}
         self._source_paths_by_id = source_paths
         self._title_index = {}
         self._alias_index = {}
@@ -103,9 +111,11 @@ class CanonicalLibrary:
                 alias_key = normalize_alias(alias)
                 self.objects_by_alias.setdefault(alias_key, []).append(obj.id)
                 self._alias_index[alias_key] = (obj.id, alias)
-            search_terms = canonical_search_terms(obj.id, obj.title, *obj.aliases)
-            for term in search_terms:
-                self.keyword_index.setdefault(term, set()).add(obj.id)
+            field_terms = collect_field_search_terms(obj)
+            self.field_keyword_index[obj.id] = field_terms
+            for terms in field_terms.values():
+                for term in terms:
+                    self.keyword_index.setdefault(term, set()).add(obj.id)
 
         try:
             validate_library(objects, manifest=manifest, source_paths=source_paths)
@@ -143,21 +153,76 @@ class CanonicalLibrary:
         if not self._loaded:
             self.load()
 
-    def retrieve_by_id(self, object_id: str) -> RetrievalResult | None:
+    def _is_retrievable(
+        self,
+        obj: CanonicalObject,
+        *,
+        approved_only: bool = False,
+        exclude_deprecated: bool = True,
+        exclude_rejected: bool = True,
+    ) -> bool:
+        if approved_only and obj.review_status != "approved":
+            return False
+        if exclude_deprecated and obj.content_status == "deprecated":
+            return False
+        if exclude_rejected and obj.review_status == "rejected":
+            return False
+        return True
+
+    def retrieve_by_id(
+        self,
+        object_id: str,
+        *,
+        approved_only: bool = False,
+        exclude_deprecated: bool = True,
+        exclude_rejected: bool = True,
+    ) -> RetrievalResult | None:
         self._ensure_loaded()
         normalized = normalize_id(object_id)
         obj = self.objects_by_id.get(normalized)
-        if obj is None:
+        if obj is None or not self._is_retrievable(
+            obj,
+            approved_only=approved_only,
+            exclude_deprecated=exclude_deprecated,
+            exclude_rejected=exclude_rejected,
+        ):
             return None
-        return RetrievalResult(object=obj, score=1.0, match_type="id", matched_terms=[normalized])
+        return RetrievalResult(
+            object=obj,
+            score=1.0,
+            match_type="id",
+            matched_terms=[normalized],
+            matched_fields=["id"],
+        )
 
-    def retrieve_by_alias(self, alias: str) -> RetrievalResult | None:
+    def retrieve_by_alias(
+        self,
+        alias: str,
+        *,
+        approved_only: bool = False,
+        exclude_deprecated: bool = True,
+        exclude_rejected: bool = True,
+    ) -> RetrievalResult | None:
         self._ensure_loaded()
         normalized = normalize_alias(alias)
         ids = self.objects_by_alias.get(normalized)
         if not ids:
             return None
-        object_id = sorted(ids)[0]
+        object_id = next(
+            (
+                candidate_id
+                for candidate_id in sorted(ids)
+                if self._is_retrievable(
+                    self.objects_by_id[candidate_id],
+                    approved_only=approved_only,
+                    exclude_deprecated=exclude_deprecated,
+                    exclude_rejected=exclude_rejected,
+                )
+            ),
+            None,
+        )
+        if object_id is None:
+            return None
         obj = self.objects_by_id[object_id]
         matched_alias = self._alias_index.get(normalized, (object_id, None))[1]
         return RetrievalResult(
@@ -165,6 +230,7 @@ class CanonicalLibrary:
             score=1.0,
             match_type="alias",
             matched_terms=tokenize_query(alias),
+            matched_fields=["aliases"],
             matched_alias=matched_alias,
         )
 
@@ -172,7 +238,15 @@ class CanonicalLibrary:
         normalized = normalize_alias(query)
         return list(self._title_index.get(normalized, []))
 
-    def retrieve_by_keywords(self, query: str, limit: int = 10) -> list[RetrievalResult]:
+    def retrieve_by_keywords(
+        self,
+        query: str,
+        limit: int = 10,
+        *,
+        approved_only: bool = False,
+        exclude_deprecated: bool = True,
+        exclude_rejected: bool = True,
+    ) -> list[RetrievalResult]:
         self._ensure_loaded()
         if limit <= 0:
             return []
@@ -185,10 +259,17 @@ class CanonicalLibrary:
         results: list[RetrievalResult] = []
         for object_id in candidate_ids:
             obj = self.objects_by_id[object_id]
-            object_terms = canonical_search_terms(obj.id, obj.title, *obj.aliases)
-            score, matched_terms = score_keyword_result(
+            if not self._is_retrievable(
+                obj,
+                approved_only=approved_only,
+                exclude_deprecated=exclude_deprecated,
+                exclude_rejected=exclude_rejected,
+            ):
+                continue
+            field_terms = self.field_keyword_index.get(object_id, {})
+            score, matched_terms, matched_fields = score_keyword_result(
                 query_terms=query_terms,
-                object_terms=object_terms,
+                field_terms=field_terms,
                 importance=obj.importance,
             )
             if score <= 0:
@@ -205,35 +286,81 @@ class CanonicalLibrary:
                     score=score,
                     match_type="keyword",
                     matched_terms=matched_terms,
+                    matched_fields=matched_fields,
                     matched_alias=matched_alias,
                 )
             )
         results = sort_retrieval_results(results)
         return results[:limit]
 
-    def retrieve_exact(self, query: str) -> RetrievalResult | None:
+    def retrieve_exact(
+        self,
+        query: str,
+        *,
+        approved_only: bool = False,
+        exclude_deprecated: bool = True,
+        exclude_rejected: bool = True,
+    ) -> RetrievalResult | None:
         self._ensure_loaded()
         normalized_id = normalize_id(query)
         obj = self.objects_by_id.get(normalized_id)
         if obj is not None:
-            return RetrievalResult(object=obj, score=1.0, match_type="id", matched_terms=[normalized_id])
-
-        alias_result = self.retrieve_by_alias(query)
-        if alias_result is not None:
-            return alias_result
-
-        title_matches = self._title_matches(query)
-        if title_matches:
-            object_id = sorted(title_matches)[0]
-            obj = self.objects_by_id[object_id]
+            if not self._is_retrievable(
+                obj,
+                approved_only=approved_only,
+                exclude_deprecated=exclude_deprecated,
+                exclude_rejected=exclude_rejected,
+            ):
+                return None
             return RetrievalResult(
                 object=obj,
                 score=1.0,
-                match_type="title",
-                matched_terms=tokenize_query(query),
+                match_type="id",
+                matched_terms=[normalized_id],
+                matched_fields=["id"],
             )
 
-        keyword_matches = self.retrieve_by_keywords(query, limit=1)
+        normalized_alias = normalize_alias(query)
+        alias_ids = self.objects_by_alias.get(normalized_alias)
+        if alias_ids:
+            alias_result = self.retrieve_by_alias(
+                query,
+                approved_only=approved_only,
+                exclude_deprecated=exclude_deprecated,
+                exclude_rejected=exclude_rejected,
+            )
+            if alias_result is not None:
+                return alias_result
+            return None
+
+        title_matches = self._title_matches(query)
+        if title_matches:
+            for object_id in sorted(title_matches):
+                obj = self.objects_by_id[object_id]
+                if not self._is_retrievable(
+                    obj,
+                    approved_only=approved_only,
+                    exclude_deprecated=exclude_deprecated,
+                    exclude_rejected=exclude_rejected,
+                ):
+                    continue
+                matched_terms = tokenize_query(query)
+                return RetrievalResult(
+                    object=obj,
+                    score=1.0,
+                    match_type="title",
+                    matched_terms=matched_terms,
+                    matched_fields=["title"],
+                )
+            return None
+
+        keyword_matches = self.retrieve_by_keywords(
+            query,
+            limit=1,
+            approved_only=approved_only,
+            exclude_deprecated=exclude_deprecated,
+            exclude_rejected=exclude_rejected,
+        )
         return keyword_matches[0] if keyword_matches else None
 
     def retrieve_semantic(self, query: str, limit: int = 10) -> list[RetrievalResult]:  # noqa: ARG002

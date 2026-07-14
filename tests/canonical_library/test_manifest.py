@@ -37,6 +37,7 @@ EXPECTED_EMPTY_LIST_FIELDS = (
     "interpretive_notes",
     "common_questions",
     "sources",
+    "scripture_references",
     "reviewed_by",
     "related_objects",
 )

@@ -37,6 +37,32 @@ CONFIDENCE_VALUES: tuple[str, ...] = (
     "high",
 )
 
+SCRIPTURE_REFERENCE_RELATIONSHIP_VALUES: tuple[str, ...] = (
+    "primary",
+    "supporting",
+    "background",
+    "quotation",
+    "allusion",
+    "typology",
+    "fulfillment",
+    "contrast",
+    "parallel",
+)
+
+SOURCE_TYPE_VALUES: tuple[str, ...] = (
+    "biblical-text",
+    "book",
+    "journal",
+    "commentary",
+    "dictionary",
+    "encyclopedia",
+    "archaeological-report",
+    "museum",
+    "primary-source",
+    "website",
+    "other",
+)
+
 DEFAULT_GOVERNANCE_METADATA: dict[str, Any] = {
     "content_status": "placeholder",
     "review_status": "unreviewed",
@@ -48,6 +74,8 @@ DEFAULT_GOVERNANCE_METADATA: dict[str, Any] = {
 DEFAULT_CANONICAL_METADATA: dict[str, Any] = {
     **DEFAULT_GOVERNANCE_METADATA,
     "related_objects": [],
+    "scripture_references": [],
+    "sources": [],
 }
 
 SUPPORTED_CATEGORIES: tuple[str, ...] = (
@@ -121,10 +149,13 @@ LIST_FIELDS: tuple[str, ...] = (
     "new_testament_connections",
     "interpretive_notes",
     "common_questions",
-    "sources",
 )
 
 RELATED_OBJECT_FIELDS: tuple[str, ...] = ("related_objects",)
+
+SCRIPTURE_REFERENCE_FIELDS: tuple[str, ...] = ("scripture_references",)
+
+SOURCE_FIELDS: tuple[str, ...] = ("sources",)
 
 RELATED_OBJECT_REQUIRED_FIELDS: tuple[str, ...] = (
     "id",
@@ -135,6 +166,12 @@ RELATED_OBJECT_REQUIRED_FIELDS: tuple[str, ...] = (
 
 RELATED_OBJECT_RELATIONSHIP_PATTERN = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 
+SCRIPTURE_REFERENCE_REQUIRED_FIELDS: tuple[str, ...] = (
+    "reference",
+    "relationship",
+    "notes",
+)
+
 INT_FIELDS: tuple[str, ...] = ("importance",)
 
 OPTIONAL_FIELDS: tuple[str, ...] = ("last_reviewed",)
@@ -142,7 +179,14 @@ OPTIONAL_FIELDS: tuple[str, ...] = ("last_reviewed",)
 GOVERNANCE_LIST_FIELDS: tuple[str, ...] = ("reviewed_by",)
 
 ALL_FIELDS: tuple[str, ...] = (
-    STRING_FIELDS + LIST_FIELDS + RELATED_OBJECT_FIELDS + INT_FIELDS + OPTIONAL_FIELDS + GOVERNANCE_LIST_FIELDS
+    STRING_FIELDS
+    + LIST_FIELDS
+    + RELATED_OBJECT_FIELDS
+    + SCRIPTURE_REFERENCE_FIELDS
+    + SOURCE_FIELDS
+    + INT_FIELDS
+    + OPTIONAL_FIELDS
+    + GOVERNANCE_LIST_FIELDS
 )
 
 
@@ -218,6 +262,52 @@ class CanonicalRelationship:
 
 
 @dataclass(frozen=True)
+class CanonicalScriptureReference:
+    reference: str
+    relationship: str
+    notes: str = ""
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+    @classmethod
+    def from_mapping(cls, mapping: Mapping[str, Any]) -> "CanonicalScriptureReference":
+        if isinstance(mapping, CanonicalScriptureReference):
+            return mapping
+        return validate_scripture_reference_entry(mapping)
+
+
+@dataclass(frozen=True)
+class CanonicalSource:
+    title: str
+    author: str = ""
+    publisher: str = ""
+    year: int | None = None
+    locator: str = ""
+    url: str = ""
+    source_type: str = "other"
+    notes: str = ""
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+    @classmethod
+    def from_mapping(cls, mapping: Mapping[str, Any]) -> "CanonicalSource":
+        if isinstance(mapping, CanonicalSource):
+            return mapping
+        if isinstance(mapping, str):
+            return cls.from_legacy_string(mapping)
+        return validate_source_entry(mapping)
+
+    @classmethod
+    def from_legacy_string(cls, value: str) -> "CanonicalSource":
+        normalized = value.strip()
+        if not normalized:
+            raise CanonicalValidationError("legacy source strings must not be blank")
+        return cls(title=normalized)
+
+
+@dataclass(frozen=True)
 class CanonicalObject:
     id: str
     type: str
@@ -238,11 +328,12 @@ class CanonicalObject:
     related_places: list[str] = field(default_factory=list)
     related_events: list[str] = field(default_factory=list)
     related_objects: list[CanonicalRelationship] = field(default_factory=list)
+    scripture_references: list[CanonicalScriptureReference] = field(default_factory=list)
     cross_references: list[str] = field(default_factory=list)
     new_testament_connections: list[str] = field(default_factory=list)
     interpretive_notes: list[str] = field(default_factory=list)
     common_questions: list[str] = field(default_factory=list)
-    sources: list[str] = field(default_factory=list)
+    sources: list[CanonicalSource] = field(default_factory=list)
     importance: int = 0
     framework_version: str = SUPPORTED_FRAMEWORK_VERSION
     object_version: str = SUPPORTED_OBJECT_VERSION
@@ -256,15 +347,34 @@ class CanonicalObject:
         return asdict(self)
 
     @classmethod
-    def from_mapping(cls, mapping: Mapping[str, Any]) -> "CanonicalObject":
+    def from_mapping(
+        cls,
+        mapping: Mapping[str, Any],
+        *,
+        path: str | Path | None = None,
+    ) -> "CanonicalObject":
         values: dict[str, Any] = {}
         normalized = _apply_governance_defaults(mapping)
+        object_id = normalized.get("id") if isinstance(normalized.get("id"), str) else None
         for field_name in ALL_FIELDS:
             if field_name == "related_objects":
-                values[field_name] = [
-                    item if isinstance(item, CanonicalRelationship) else CanonicalRelationship.from_mapping(item)
-                    for item in normalized[field_name]
-                ]
+                values[field_name] = validate_related_objects_field(
+                    normalized,
+                    path=path,
+                    object_id=object_id,
+                )
+            elif field_name == "scripture_references":
+                values[field_name] = validate_scripture_references_field(
+                    normalized,
+                    path=path,
+                    object_id=object_id,
+                )
+            elif field_name == "sources":
+                values[field_name] = normalize_sources_field(
+                    normalized,
+                    path=path,
+                    object_id=object_id,
+                )
             else:
                 values[field_name] = normalized[field_name]
         return cls(**values)
@@ -374,6 +484,48 @@ def validate_field_types(
                 "related_objects",
                 "list[dict]",
                 value,
+                path=path,
+                object_id=object_id,
+            )
+    if "scripture_references" in data:
+        value = data["scripture_references"]
+        if not isinstance(value, list):
+            raise _expected_actual_error(
+                "scripture_references",
+                "list[dict]",
+                value,
+                path=path,
+                object_id=object_id,
+            )
+        if any(not isinstance(item, Mapping) for item in value):
+            raise _expected_actual_error(
+                "scripture_references",
+                "list[dict]",
+                value,
+                path=path,
+                object_id=object_id,
+            )
+    if "sources" in data:
+        value = data["sources"]
+        if not isinstance(value, list):
+            raise _expected_actual_error(
+                "sources",
+                "list[str] or list[dict]",
+                value,
+                path=path,
+                object_id=object_id,
+            )
+        if any(not isinstance(item, (str, Mapping)) for item in value):
+            raise _expected_actual_error(
+                "sources",
+                "list[str] or list[dict]",
+                value,
+                path=path,
+                object_id=object_id,
+            )
+        if any(isinstance(item, str) and not item.strip() for item in value):
+            raise _error(
+                'field "sources" cannot contain blank legacy source strings',
                 path=path,
                 object_id=object_id,
             )
@@ -548,6 +700,269 @@ def validate_related_objects_field(
     return normalized_related_objects
 
 
+def validate_scripture_reference_entry(
+    data: Mapping[str, Any],
+    *,
+    path: str | Path | None = None,
+    object_id: str | None = None,
+) -> CanonicalScriptureReference:
+    if isinstance(data, CanonicalScriptureReference):
+        return data
+    if not isinstance(data, Mapping):
+        raise _expected_actual_error(
+            "scripture_references",
+            "list[dict]",
+            data,
+            path=path,
+            object_id=object_id,
+        )
+
+    unknown_fields = sorted(set(data) - set(SCRIPTURE_REFERENCE_REQUIRED_FIELDS))
+    if unknown_fields:
+        raise _error(
+            f'unknown scripture reference field(s): {", ".join(unknown_fields)}',
+            path=path,
+            object_id=object_id,
+        )
+
+    for field_name in SCRIPTURE_REFERENCE_REQUIRED_FIELDS:
+        if field_name not in data:
+            raise _error(f'field "{field_name}" is required', path=path, object_id=object_id)
+
+    reference = data["reference"]
+    if not isinstance(reference, str) or not reference.strip():
+        raise _error(
+            'field "reference" is required and must be a non-empty string',
+            path=path,
+            object_id=object_id,
+        )
+
+    relationship = data["relationship"]
+    if not isinstance(relationship, str) or not relationship.strip():
+        raise _error(
+            'field "relationship" is required and must be a non-empty string',
+            path=path,
+            object_id=object_id,
+        )
+    if relationship not in SCRIPTURE_REFERENCE_RELATIONSHIP_VALUES:
+        raise _error(
+            f'field "relationship" must be one of {", ".join(SCRIPTURE_REFERENCE_RELATIONSHIP_VALUES)}',
+            path=path,
+            object_id=object_id,
+        )
+
+    notes = data["notes"]
+    if not isinstance(notes, str):
+        raise _expected_actual_error(
+            "notes",
+            "str",
+            notes,
+            path=path,
+            object_id=object_id,
+        )
+
+    return CanonicalScriptureReference(
+        reference=reference.strip(),
+        relationship=relationship,
+        notes=notes,
+    )
+
+
+def validate_scripture_references_field(
+    data: Mapping[str, Any],
+    *,
+    path: str | Path | None = None,
+    object_id: str | None = None,
+) -> list[CanonicalScriptureReference]:
+    if "scripture_references" not in data:
+        return []
+    scripture_references = data["scripture_references"]
+    if scripture_references is None:
+        raise _expected_actual_error(
+            "scripture_references",
+            "list[dict]",
+            scripture_references,
+            path=path,
+            object_id=object_id,
+        )
+    if not isinstance(scripture_references, list):
+        raise _expected_actual_error(
+            "scripture_references",
+            "list[dict]",
+            scripture_references,
+            path=path,
+            object_id=object_id,
+        )
+
+    normalized_scripture_references: list[CanonicalScriptureReference] = []
+    for item in scripture_references:
+        normalized_scripture_references.append(
+            validate_scripture_reference_entry(item, path=path, object_id=object_id)
+        )
+
+    return normalized_scripture_references
+
+
+def validate_source_entry(
+    data: Mapping[str, Any],
+    *,
+    path: str | Path | None = None,
+    object_id: str | None = None,
+) -> CanonicalSource:
+    if isinstance(data, CanonicalSource):
+        return data
+    if not isinstance(data, Mapping):
+        raise _expected_actual_error(
+            "sources",
+            "list[str] or list[dict]",
+            data,
+            path=path,
+            object_id=object_id,
+        )
+
+    required_fields = (
+        "title",
+        "author",
+        "publisher",
+        "year",
+        "locator",
+        "url",
+        "source_type",
+        "notes",
+    )
+    unknown_fields = sorted(set(data) - set(required_fields))
+    if unknown_fields:
+        raise _error(
+            f'unknown source field(s): {", ".join(unknown_fields)}',
+            path=path,
+            object_id=object_id,
+        )
+
+    for field_name in required_fields:
+        if field_name not in data:
+            raise _error(f'field "{field_name}" is required', path=path, object_id=object_id)
+
+    title = data["title"]
+    if not isinstance(title, str) or not title.strip():
+        raise _error(
+            'field "title" is required and must be a non-empty string',
+            path=path,
+            object_id=object_id,
+        )
+
+    for field_name in ("author", "publisher", "locator", "url", "notes"):
+        value = data[field_name]
+        if not isinstance(value, str):
+            raise _expected_actual_error(field_name, "str", value, path=path, object_id=object_id)
+
+    year = data["year"]
+    if year is not None and (isinstance(year, bool) or not isinstance(year, int)):
+        raise _expected_actual_error("year", "null or int", year, path=path, object_id=object_id)
+
+    source_type = data["source_type"]
+    if not isinstance(source_type, str) or not source_type.strip():
+        raise _error(
+            'field "source_type" is required and must be a non-empty string',
+            path=path,
+            object_id=object_id,
+        )
+    if source_type not in SOURCE_TYPE_VALUES:
+        raise _error(
+            f'field "source_type" must be one of {", ".join(SOURCE_TYPE_VALUES)}',
+            path=path,
+            object_id=object_id,
+        )
+
+    return CanonicalSource(
+        title=title.strip(),
+        author=data["author"],
+        publisher=data["publisher"],
+        year=year,
+        locator=data["locator"],
+        url=data["url"],
+        source_type=source_type,
+        notes=data["notes"],
+    )
+
+
+def normalize_sources_field(
+    data: Mapping[str, Any],
+    *,
+    path: str | Path | None = None,
+    object_id: str | None = None,
+) -> list[CanonicalSource]:
+    if "sources" not in data:
+        return []
+    sources = data["sources"]
+    if sources is None:
+        raise _expected_actual_error(
+            "sources",
+            "list[str] or list[dict]",
+            sources,
+            path=path,
+            object_id=object_id,
+        )
+    if not isinstance(sources, list):
+        raise _expected_actual_error(
+            "sources",
+            "list[str] or list[dict]",
+            sources,
+            path=path,
+            object_id=object_id,
+        )
+
+    normalized_sources: list[CanonicalSource] = []
+    for item in sources:
+        if isinstance(item, str):
+            normalized_sources.append(CanonicalSource.from_legacy_string(item))
+            continue
+        normalized_sources.append(validate_source_entry(item, path=path, object_id=object_id))
+
+    return normalized_sources
+
+
+def validate_approved_content_requirements(
+    data: Mapping[str, Any],
+    *,
+    path: str | Path | None = None,
+) -> None:
+    object_id = data.get("id") if isinstance(data.get("id"), str) else None
+    if data.get("review_status") != "approved":
+        return
+
+    summary = data.get("summary")
+    if not isinstance(summary, str) or not summary.strip():
+        raise _error(
+            'field "summary" is required when review_status is "approved"',
+            path=path,
+            object_id=object_id,
+        )
+
+    scripture_references = data.get("scripture_references")
+    if not isinstance(scripture_references, list) or not scripture_references:
+        raise _error(
+            'field "scripture_references" must contain at least one reference when review_status is "approved"',
+            path=path,
+            object_id=object_id,
+        )
+
+    sources = data.get("sources")
+    if not isinstance(sources, list) or not sources:
+        raise _error(
+            'field "sources" must contain at least one source when review_status is "approved"',
+            path=path,
+            object_id=object_id,
+        )
+
+    confidence = data.get("confidence")
+    if confidence == "unrated":
+        raise _error(
+            'field "confidence" must not be "unrated" when review_status is "approved"',
+            path=path,
+            object_id=object_id,
+        )
+
+
 def validate_governance_metadata(
     data: Mapping[str, Any],
     *,
@@ -632,7 +1047,7 @@ def validate_governance_metadata(
                 object_id=object_id,
             )
 
-    if review_status == "approved" and data.get("content_status") != "complete":
+    if review_status == "approved" and content_status != "complete":
         raise _error(
             'field "content_status" must be "complete" when review_status is "approved"',
             path=path,
@@ -719,12 +1134,8 @@ def validate_object(
     validate_field_types(normalized_data, path=path)
     validate_category_type(normalized_data, path=path)
     validate_aliases(normalized_data, path=path)
-    validate_related_objects_field(
-        normalized_data,
-        path=path,
-        object_id=object_id,
-    )
     validate_governance_metadata(normalized_data, path=path)
+    validate_approved_content_requirements(normalized_data, path=path)
 
     missing_fields = [field_name for field_name in ALL_FIELDS if field_name not in normalized_data]
     if missing_fields:
@@ -763,7 +1174,7 @@ def validate_object(
         )
     if normalized_data["importance"] < 0:
         raise _error('field "importance" must be greater than or equal to zero', path=path, object_id=object_id)
-    return CanonicalObject.from_mapping(normalized_data)
+    return CanonicalObject.from_mapping(normalized_data, path=path)
 
 
 def validate_library(
@@ -790,15 +1201,11 @@ def validate_library(
             continue
         seen_ids[obj.id] = obj
         try:
-            related_objects_lookup[obj.id] = validate_related_objects_field(
-                obj.to_dict(),
-                path=source_paths.get(obj.id) if source_paths else None,
-                object_id=obj.id,
-            )
-            validate_governance_metadata(
+            validated_obj = validate_object(
                 obj.to_dict(),
                 path=source_paths.get(obj.id) if source_paths else None,
             )
+            related_objects_lookup[obj.id] = validated_obj.related_objects
         except CanonicalValidationError as exc:
             errors.append(str(exc))
         title_key = normalize_alias(obj.title)

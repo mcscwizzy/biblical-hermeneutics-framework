@@ -5,6 +5,8 @@ import unittest
 from framework.canonical_library import (
     CanonicalObject,
     CanonicalRelationship,
+    CanonicalScriptureReference,
+    CanonicalSource,
     CanonicalValidationError,
     validate_library,
     validate_object,
@@ -35,6 +37,42 @@ def relationship_mapping(
     ).to_dict()
 
 
+def scripture_reference_mapping(
+    reference: str,
+    relationship: str,
+    *,
+    notes: str = "",
+) -> dict[str, object]:
+    return CanonicalScriptureReference(
+        reference=reference,
+        relationship=relationship,
+        notes=notes,
+    ).to_dict()
+
+
+def source_mapping(
+    title: str,
+    *,
+    source_type: str = "book",
+    author: str = "",
+    publisher: str = "",
+    year: int | None = None,
+    locator: str = "",
+    url: str = "",
+    notes: str = "",
+) -> dict[str, object]:
+    return CanonicalSource(
+        title=title,
+        author=author,
+        publisher=publisher,
+        year=year,
+        locator=locator,
+        url=url,
+        source_type=source_type,
+        notes=notes,
+    ).to_dict()
+
+
 class CanonicalSchemaTests(unittest.TestCase):
     def test_valid_canonical_object_passes_validation(self) -> None:
         obj = validate_object(valid_mapping(), path="objects/places/shechem.json")
@@ -48,6 +86,8 @@ class CanonicalSchemaTests(unittest.TestCase):
         self.assertIsNone(obj.last_reviewed)
         self.assertEqual(obj.confidence, "unrated")
         self.assertEqual(obj.related_objects, [])
+        self.assertEqual(obj.scripture_references, [])
+        self.assertEqual(obj.sources, [])
 
     def test_valid_governance_metadata_passes_validation(self) -> None:
         data = valid_mapping()
@@ -58,6 +98,17 @@ class CanonicalSchemaTests(unittest.TestCase):
                 "reviewed_by": ["alice", "bob"],
                 "last_reviewed": "2024-07-13",
                 "confidence": "high",
+                "summary": "Shechem matters as a covenant location in the patriarchal narratives.",
+                "scripture_references": [
+                    scripture_reference_mapping("Genesis 12:6-7", "primary"),
+                ],
+                "sources": [
+                    source_mapping(
+                        "Genesis",
+                        source_type="biblical-text",
+                        locator="12:6-7",
+                    ),
+                ],
             }
         )
 
@@ -68,6 +119,13 @@ class CanonicalSchemaTests(unittest.TestCase):
         self.assertEqual(obj.reviewed_by, ["alice", "bob"])
         self.assertEqual(obj.last_reviewed, "2024-07-13")
         self.assertEqual(obj.confidence, "high")
+        self.assertEqual(obj.summary, "Shechem matters as a covenant location in the patriarchal narratives.")
+        self.assertEqual(len(obj.scripture_references), 1)
+        self.assertEqual(obj.scripture_references[0].reference, "Genesis 12:6-7")
+        self.assertEqual(obj.scripture_references[0].relationship, "primary")
+        self.assertEqual(len(obj.sources), 1)
+        self.assertEqual(obj.sources[0].title, "Genesis")
+        self.assertEqual(obj.sources[0].source_type, "biblical-text")
 
     def test_invalid_governance_consistency_fails(self) -> None:
         data = valid_mapping()
@@ -87,6 +145,47 @@ class CanonicalSchemaTests(unittest.TestCase):
         ):
             validate_object(data, path="objects/places/shechem.json")
 
+    def test_approved_content_requires_structured_references_and_sources(self) -> None:
+        data = valid_mapping()
+        data.update(
+            {
+                "content_status": "complete",
+                "review_status": "approved",
+                "reviewed_by": ["alice"],
+                "last_reviewed": "2024-07-13",
+                "confidence": "high",
+                "summary": "Shechem matters as a covenant location in the patriarchal narratives.",
+            }
+        )
+
+        with self.assertRaisesRegex(
+            CanonicalValidationError,
+            'field "scripture_references" must contain at least one reference when review_status is "approved"',
+        ):
+            validate_object(data, path="objects/places/shechem.json")
+
+    def test_approved_content_requires_sources(self) -> None:
+        data = valid_mapping()
+        data.update(
+            {
+                "content_status": "complete",
+                "review_status": "approved",
+                "reviewed_by": ["alice"],
+                "last_reviewed": "2024-07-13",
+                "confidence": "high",
+                "summary": "Shechem matters as a covenant location in the patriarchal narratives.",
+                "scripture_references": [
+                    scripture_reference_mapping("Genesis 12:6-7", "primary"),
+                ],
+            }
+        )
+
+        with self.assertRaisesRegex(
+            CanonicalValidationError,
+            'field "sources" must contain at least one source when review_status is "approved"',
+        ):
+            validate_object(data, path="objects/places/shechem.json")
+
     def test_valid_related_objects_pass_validation(self) -> None:
         data = valid_mapping()
         data["related_objects"] = [
@@ -102,6 +201,91 @@ class CanonicalSchemaTests(unittest.TestCase):
         self.assertEqual(obj.related_objects[0].weight, 5)
         self.assertEqual(obj.related_objects[0].notes, "patriarch")
         self.assertIsInstance(obj.related_objects[0], CanonicalRelationship)
+
+    def test_valid_scripture_references_pass_validation(self) -> None:
+        data = valid_mapping()
+        data["scripture_references"] = [
+            scripture_reference_mapping("Genesis 12:6-7", "primary"),
+            scripture_reference_mapping("Joshua 24:1-28", "supporting", notes="covenant renewal"),
+        ]
+
+        obj = validate_object(data, path="objects/places/shechem.json")
+
+        self.assertEqual(len(obj.scripture_references), 2)
+        self.assertEqual(obj.scripture_references[0].reference, "Genesis 12:6-7")
+        self.assertEqual(obj.scripture_references[0].relationship, "primary")
+        self.assertEqual(obj.scripture_references[1].relationship, "supporting")
+        self.assertIsInstance(obj.scripture_references[0], CanonicalScriptureReference)
+
+    def test_invalid_scripture_reference_relationship_fails(self) -> None:
+        data = valid_mapping()
+        data["scripture_references"] = [
+            {
+                "reference": "Genesis 12:6-7",
+                "relationship": "primary-text",
+                "notes": "",
+            }
+        ]
+
+        with self.assertRaisesRegex(CanonicalValidationError, 'field "relationship" must be one of'):
+            validate_object(data, path="objects/places/shechem.json")
+
+    def test_valid_structured_sources_pass_validation(self) -> None:
+        data = valid_mapping()
+        data["sources"] = [
+            source_mapping(
+                "Genesis",
+                source_type="biblical-text",
+                locator="12:6-7",
+            ),
+            source_mapping(
+                "The Bible and the Ancient Near East",
+                author="John Doe",
+                publisher="Example Press",
+                year=2020,
+                locator="pp. 12-14",
+                source_type="book",
+                notes="reference sample",
+            ),
+        ]
+
+        obj = validate_object(data, path="objects/places/shechem.json")
+
+        self.assertEqual(len(obj.sources), 2)
+        self.assertEqual(obj.sources[0].title, "Genesis")
+        self.assertEqual(obj.sources[0].source_type, "biblical-text")
+        self.assertEqual(obj.sources[1].author, "John Doe")
+        self.assertEqual(obj.sources[1].year, 2020)
+        self.assertIsInstance(obj.sources[0], CanonicalSource)
+
+    def test_invalid_source_year_fails(self) -> None:
+        data = valid_mapping()
+        data["sources"] = [
+            {
+                "title": "The Bible and the Ancient Near East",
+                "author": "John Doe",
+                "publisher": "Example Press",
+                "year": "2020",
+                "locator": "pp. 12-14",
+                "url": "",
+                "source_type": "book",
+                "notes": "",
+            }
+        ]
+
+        with self.assertRaisesRegex(CanonicalValidationError, 'field "year" expected null or int'):
+            validate_object(data, path="objects/places/shechem.json")
+
+    def test_legacy_string_sources_are_migrated(self) -> None:
+        data = valid_mapping()
+        data["sources"] = ["Westermann, Genesis"]
+
+        obj = validate_object(data, path="objects/places/shechem.json")
+
+        self.assertEqual(len(obj.sources), 1)
+        self.assertEqual(obj.sources[0].title, "Westermann, Genesis")
+        self.assertEqual(obj.sources[0].source_type, "other")
+        self.assertIsInstance(obj.sources[0], CanonicalSource)
 
     def test_invalid_related_object_id_fails(self) -> None:
         data = valid_mapping()
@@ -247,6 +431,8 @@ class CanonicalSchemaTests(unittest.TestCase):
         self.assertIsNone(obj.last_reviewed)
         self.assertEqual(obj.confidence, "unrated")
         self.assertEqual(obj.related_objects, [])
+        self.assertEqual(obj.scripture_references, [])
+        self.assertEqual(obj.sources, [])
 
     def test_missing_id_fails(self) -> None:
         data = valid_mapping()

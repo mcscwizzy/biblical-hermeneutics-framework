@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from framework.canonical_library import CanonicalLibrary, CanonicalRelationship, CanonicalValidationError
+from framework.canonical_library import CanonicalLibrary, CanonicalRelationship, CanonicalSource, CanonicalValidationError
 
 from .helpers import make_object, write_library
 
@@ -101,6 +101,28 @@ class CanonicalLoaderTests(unittest.TestCase):
         self.assertEqual(library.objects_by_id["shechem"].related_objects[0].weight, 5)
         self.assertEqual(library.objects_by_id["shechem"].related_objects[0].notes, "patriarch")
 
+    def test_loads_legacy_string_sources_as_structured_sources(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_library(
+                root,
+                [
+                    make_object(
+                        "shechem",
+                        "place",
+                        "Shechem",
+                        ["where is shechem"],
+                        sources=["Westermann, Genesis"],
+                    ),
+                ],
+            )
+
+            library = CanonicalLibrary(root=root).load()
+
+        self.assertIsInstance(library.objects_by_id["shechem"].sources[0], CanonicalSource)
+        self.assertEqual(library.objects_by_id["shechem"].sources[0].title, "Westermann, Genesis")
+        self.assertEqual(library.objects_by_id["shechem"].sources[0].source_type, "other")
+
     def test_builds_indexes(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -123,6 +145,10 @@ class CanonicalLoaderTests(unittest.TestCase):
         self.assertEqual(library.objects_by_type["theme"], ["covenant-theme"])
         self.assertIn("covenant", library.keyword_index)
         self.assertIn("covenant-theme", library.keyword_index["covenant"])
+        self.assertIn("title", library.field_keyword_index["covenant-theme"])
+        self.assertIn("aliases", library.field_keyword_index["covenant-theme"])
+        self.assertIn("covenant", library.field_keyword_index["covenant-theme"]["title"])
+        self.assertIn("covenant", library.field_keyword_index["covenant-theme"]["aliases"])
 
     def test_rejects_duplicate_ids(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
