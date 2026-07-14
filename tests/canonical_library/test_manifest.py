@@ -37,7 +37,14 @@ EXPECTED_EMPTY_LIST_FIELDS = (
     "interpretive_notes",
     "common_questions",
     "sources",
+    "reviewed_by",
 )
+EXPECTED_GOVERNANCE_VALUES = {
+    "content_status": "placeholder",
+    "review_status": "unreviewed",
+    "last_reviewed": None,
+    "confidence": "unrated",
+}
 AI_IMPORT_PREFIXES = {
     "anthropic",
     "chromadb",
@@ -57,7 +64,7 @@ class CanonicalInventoryTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.library = CanonicalLibrary.load_default()
 
-    def test_all_inventory_json_files_validate_and_stay_empty(self) -> None:
+    def test_all_inventory_json_files_validate_and_receive_governance_defaults(self) -> None:
         seen_ids: set[str] = set()
         counts: Counter[str] = Counter()
 
@@ -77,6 +84,8 @@ class CanonicalInventoryTests(unittest.TestCase):
                 self.assertEqual(getattr(obj, field_name), "")
             for field_name in EXPECTED_EMPTY_LIST_FIELDS:
                 self.assertEqual(getattr(obj, field_name), [])
+            for field_name, expected in EXPECTED_GOVERNANCE_VALUES.items():
+                self.assertEqual(getattr(obj, field_name), expected)
 
             counts[obj.type] += 1
 

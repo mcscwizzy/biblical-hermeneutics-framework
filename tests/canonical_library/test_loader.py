@@ -37,6 +37,16 @@ class CanonicalLoaderTests(unittest.TestCase):
         self.assertEqual(library.manifest["schema_version"], "1.0")
         self.assertEqual(library.manifest["categories"], expected_categories)
 
+    def test_loaded_placeholder_objects_receive_governance_defaults(self) -> None:
+        library = self.default_library
+        abraham = library.objects_by_id["abraham"]
+
+        self.assertEqual(abraham.content_status, "placeholder")
+        self.assertEqual(abraham.review_status, "unreviewed")
+        self.assertEqual(abraham.reviewed_by, [])
+        self.assertIsNone(abraham.last_reviewed)
+        self.assertEqual(abraham.confidence, "unrated")
+
     def test_loads_recursively(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

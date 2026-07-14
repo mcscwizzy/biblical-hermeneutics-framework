@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
+import re
 from dataclasses import asdict, dataclass, field
+from datetime import date
 from pathlib import Path
 from typing import Any, Mapping
 
@@ -12,6 +14,36 @@ from .normalization import normalize_alias, normalize_id
 SUPPORTED_FRAMEWORK_VERSION = "1.0"
 SUPPORTED_SCHEMA_VERSION = "1.0"
 SUPPORTED_OBJECT_VERSION = "1"
+
+CONTENT_STATUS_VALUES: tuple[str, ...] = (
+    "placeholder",
+    "draft",
+    "complete",
+    "deprecated",
+)
+
+REVIEW_STATUS_VALUES: tuple[str, ...] = (
+    "unreviewed",
+    "in_review",
+    "reviewed",
+    "approved",
+    "rejected",
+)
+
+CONFIDENCE_VALUES: tuple[str, ...] = (
+    "unrated",
+    "low",
+    "medium",
+    "high",
+)
+
+DEFAULT_GOVERNANCE_METADATA: dict[str, Any] = {
+    "content_status": "placeholder",
+    "review_status": "unreviewed",
+    "reviewed_by": [],
+    "last_reviewed": None,
+    "confidence": "unrated",
+}
 
 SUPPORTED_CATEGORIES: tuple[str, ...] = (
     "theology",
@@ -64,6 +96,9 @@ STRING_FIELDS: tuple[str, ...] = (
     "covenantal_significance",
     "framework_version",
     "object_version",
+    "content_status",
+    "review_status",
+    "confidence",
 )
 
 LIST_FIELDS: tuple[str, ...] = (
@@ -86,7 +121,11 @@ LIST_FIELDS: tuple[str, ...] = (
 
 INT_FIELDS: tuple[str, ...] = ("importance",)
 
-ALL_FIELDS: tuple[str, ...] = STRING_FIELDS + LIST_FIELDS + INT_FIELDS
+OPTIONAL_FIELDS: tuple[str, ...] = ("last_reviewed",)
+
+GOVERNANCE_LIST_FIELDS: tuple[str, ...] = ("reviewed_by",)
+
+ALL_FIELDS: tuple[str, ...] = STRING_FIELDS + LIST_FIELDS + INT_FIELDS + OPTIONAL_FIELDS + GOVERNANCE_LIST_FIELDS
 
 
 class CanonicalValidationError(ValueError):
@@ -171,6 +210,11 @@ class CanonicalObject:
     importance: int = 0
     framework_version: str = SUPPORTED_FRAMEWORK_VERSION
     object_version: str = SUPPORTED_OBJECT_VERSION
+    content_status: str = DEFAULT_GOVERNANCE_METADATA["content_status"]
+    review_status: str = DEFAULT_GOVERNANCE_METADATA["review_status"]
+    reviewed_by: list[str] = field(default_factory=list)
+    last_reviewed: str | None = DEFAULT_GOVERNANCE_METADATA["last_reviewed"]
+    confidence: str = DEFAULT_GOVERNANCE_METADATA["confidence"]
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -178,9 +222,18 @@ class CanonicalObject:
     @classmethod
     def from_mapping(cls, mapping: Mapping[str, Any]) -> "CanonicalObject":
         values: dict[str, Any] = {}
+        normalized = _apply_governance_defaults(mapping)
         for field_name in ALL_FIELDS:
-            values[field_name] = mapping[field_name]
+            values[field_name] = normalized[field_name]
         return cls(**values)
+
+
+def _apply_governance_defaults(data: Mapping[str, Any]) -> dict[str, Any]:
+    normalized = dict(data)
+    for field_name, default_value in DEFAULT_GOVERNANCE_METADATA.items():
+        if field_name not in normalized:
+            normalized[field_name] = list(default_value) if isinstance(default_value, list) else default_value
+    return normalized
 
 
 def validate_required_fields(
@@ -264,6 +317,18 @@ def validate_field_types(
                 path=path,
                 object_id=object_id,
             )
+    for field_name in OPTIONAL_FIELDS:
+        if field_name not in data:
+            continue
+        value = data[field_name]
+        if value is not None and not isinstance(value, str):
+            raise _expected_actual_error(
+                field_name,
+                "null or str",
+                value,
+                path=path,
+                object_id=object_id,
+            )
     if "importance" in data and (isinstance(data["importance"], bool) or not isinstance(data["importance"], int)):
         raise _expected_actual_error(
             "importance",
@@ -272,6 +337,75 @@ def validate_field_types(
             path=path,
             object_id=object_id,
         )
+
+
+def validate_governance_metadata(
+    data: Mapping[str, Any],
+    *,
+    path: str | Path | None = None,
+) -> None:
+    object_id = data.get("id") if isinstance(data.get("id"), str) else None
+
+    for field_name, allowed_values in (
+        ("content_status", CONTENT_STATUS_VALUES),
+        ("review_status", REVIEW_STATUS_VALUES),
+        ("confidence", CONFIDENCE_VALUES),
+    ):
+        value = data.get(field_name)
+        if not isinstance(value, str) or not value.strip():
+            raise _error(
+                f'field "{field_name}" is required and must be a non-empty string',
+                path=path,
+                object_id=object_id,
+            )
+        if value not in allowed_values:
+            raise _error(
+                f'field "{field_name}" must be one of {", ".join(allowed_values)}',
+                path=path,
+                object_id=object_id,
+            )
+
+    reviewed_by = data.get("reviewed_by")
+    if not isinstance(reviewed_by, list):
+        raise _expected_actual_error(
+            "reviewed_by",
+            "list[str]",
+            reviewed_by,
+            path=path,
+            object_id=object_id,
+        )
+    if any(not isinstance(item, str) for item in reviewed_by):
+        raise _error(
+            'field "reviewed_by" must be a list of strings',
+            path=path,
+            object_id=object_id,
+        )
+
+    last_reviewed = data.get("last_reviewed")
+    if last_reviewed is None:
+        return
+    if not isinstance(last_reviewed, str):
+        raise _expected_actual_error(
+            "last_reviewed",
+            "null or YYYY-MM-DD string",
+            last_reviewed,
+            path=path,
+            object_id=object_id,
+        )
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", last_reviewed):
+        raise _error(
+            'field "last_reviewed" must use YYYY-MM-DD format',
+            path=path,
+            object_id=object_id,
+        )
+    try:
+        date.fromisoformat(last_reviewed)
+    except ValueError as exc:
+        raise _error(
+            'field "last_reviewed" must be a valid YYYY-MM-DD date',
+            path=path,
+            object_id=object_id,
+        ) from exc
 
 
 def validate_category_type(
@@ -348,12 +482,14 @@ def validate_object(
             path=path,
             object_id=object_id,
         )
-    validate_required_fields(data, path=path)
-    validate_field_types(data, path=path)
-    validate_category_type(data, path=path)
-    validate_aliases(data, path=path)
+    normalized_data = _apply_governance_defaults(data)
+    validate_required_fields(normalized_data, path=path)
+    validate_field_types(normalized_data, path=path)
+    validate_category_type(normalized_data, path=path)
+    validate_aliases(normalized_data, path=path)
+    validate_governance_metadata(normalized_data, path=path)
 
-    missing_fields = [field_name for field_name in ALL_FIELDS if field_name not in data]
+    missing_fields = [field_name for field_name in ALL_FIELDS if field_name not in normalized_data]
     if missing_fields:
         raise _error(
             f'field(s) missing: {", ".join(missing_fields)}',
@@ -361,7 +497,7 @@ def validate_object(
             object_id=object_id,
         )
 
-    object_id = str(data["id"])
+    object_id = str(normalized_data["id"])
     if object_id != object_id.lower():
         raise _error('field "id" must be lowercase', path=path, object_id=object_id)
     if normalize_id(object_id) != object_id:
@@ -376,21 +512,21 @@ def validate_object(
             path=path,
             object_id=object_id,
         )
-    if data["framework_version"] != SUPPORTED_FRAMEWORK_VERSION:
+    if normalized_data["framework_version"] != SUPPORTED_FRAMEWORK_VERSION:
         raise _error(
             f'field "framework_version" must be "{SUPPORTED_FRAMEWORK_VERSION}"',
             path=path,
             object_id=object_id,
         )
-    if data["object_version"] != SUPPORTED_OBJECT_VERSION:
+    if normalized_data["object_version"] != SUPPORTED_OBJECT_VERSION:
         raise _error(
             f'field "object_version" must be "{SUPPORTED_OBJECT_VERSION}"',
             path=path,
             object_id=object_id,
         )
-    if data["importance"] < 0:
+    if normalized_data["importance"] < 0:
         raise _error('field "importance" must be greater than or equal to zero', path=path, object_id=object_id)
-    return CanonicalObject.from_mapping(data)
+    return CanonicalObject.from_mapping(normalized_data)
 
 
 def validate_library(
@@ -415,6 +551,13 @@ def validate_library(
             errors.append(f"duplicate canonical id '{obj.id}'")
             continue
         seen_ids[obj.id] = obj
+        try:
+            validate_governance_metadata(
+                obj.to_dict(),
+                path=source_paths.get(obj.id) if source_paths else None,
+            )
+        except CanonicalValidationError as exc:
+            errors.append(str(exc))
         title_key = normalize_alias(obj.title)
         title_lookup.setdefault(title_key, set()).add(obj.id)
         id_lookup[normalize_id(obj.id)] = obj.id

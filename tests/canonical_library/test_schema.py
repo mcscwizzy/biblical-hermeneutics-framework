@@ -26,6 +26,99 @@ class CanonicalSchemaTests(unittest.TestCase):
         self.assertEqual(obj.id, "shechem")
         self.assertEqual(obj.type, "place")
         self.assertEqual(obj.title, "Shechem")
+        self.assertEqual(obj.content_status, "placeholder")
+        self.assertEqual(obj.review_status, "unreviewed")
+        self.assertEqual(obj.reviewed_by, [])
+        self.assertIsNone(obj.last_reviewed)
+        self.assertEqual(obj.confidence, "unrated")
+
+    def test_valid_governance_metadata_passes_validation(self) -> None:
+        data = valid_mapping()
+        data.update(
+            {
+                "content_status": "draft",
+                "review_status": "approved",
+                "reviewed_by": ["alice", "bob"],
+                "last_reviewed": "2024-07-13",
+                "confidence": "high",
+            }
+        )
+
+        obj = validate_object(data, path="objects/places/shechem.json")
+
+        self.assertEqual(obj.content_status, "draft")
+        self.assertEqual(obj.review_status, "approved")
+        self.assertEqual(obj.reviewed_by, ["alice", "bob"])
+        self.assertEqual(obj.last_reviewed, "2024-07-13")
+        self.assertEqual(obj.confidence, "high")
+
+    def test_invalid_content_status_fails(self) -> None:
+        data = valid_mapping()
+        data["content_status"] = "published"
+
+        with self.assertRaisesRegex(CanonicalValidationError, 'field "content_status" must be one of'):
+            validate_object(data, path="objects/places/shechem.json")
+
+    def test_invalid_review_status_fails(self) -> None:
+        data = valid_mapping()
+        data["review_status"] = "waiting"
+
+        with self.assertRaisesRegex(CanonicalValidationError, 'field "review_status" must be one of'):
+            validate_object(data, path="objects/places/shechem.json")
+
+    def test_invalid_confidence_fails(self) -> None:
+        data = valid_mapping()
+        data["confidence"] = "certain"
+
+        with self.assertRaisesRegex(CanonicalValidationError, 'field "confidence" must be one of'):
+            validate_object(data, path="objects/places/shechem.json")
+
+    def test_invalid_last_reviewed_format_fails(self) -> None:
+        data = valid_mapping()
+        data["last_reviewed"] = "2024/07/13"
+
+        with self.assertRaisesRegex(CanonicalValidationError, 'field "last_reviewed" must use YYYY-MM-DD format'):
+            validate_object(data, path="objects/places/shechem.json")
+
+    def test_invalid_last_reviewed_date_fails(self) -> None:
+        data = valid_mapping()
+        data["last_reviewed"] = "2024-02-30"
+
+        with self.assertRaisesRegex(CanonicalValidationError, 'field "last_reviewed" must be a valid YYYY-MM-DD date'):
+            validate_object(data, path="objects/places/shechem.json")
+
+    def test_invalid_reviewed_by_values_fails(self) -> None:
+        data = valid_mapping()
+        data["reviewed_by"] = "alice"
+
+        with self.assertRaisesRegex(CanonicalValidationError, 'field "reviewed_by" expected list\\[str\\]'):
+            validate_object(data, path="objects/places/shechem.json")
+
+    def test_invalid_reviewed_by_item_types_fail(self) -> None:
+        data = valid_mapping()
+        data["reviewed_by"] = ["alice", 42]
+
+        with self.assertRaisesRegex(CanonicalValidationError, 'field "reviewed_by" must be a list of strings'):
+            validate_object(data, path="objects/places/shechem.json")
+
+    def test_existing_placeholder_object_compatibility(self) -> None:
+        data = valid_mapping()
+        for field_name in (
+            "content_status",
+            "review_status",
+            "reviewed_by",
+            "last_reviewed",
+            "confidence",
+        ):
+            data.pop(field_name)
+
+        obj = validate_object(data, path="objects/places/shechem.json")
+
+        self.assertEqual(obj.content_status, "placeholder")
+        self.assertEqual(obj.review_status, "unreviewed")
+        self.assertEqual(obj.reviewed_by, [])
+        self.assertIsNone(obj.last_reviewed)
+        self.assertEqual(obj.confidence, "unrated")
 
     def test_missing_id_fails(self) -> None:
         data = valid_mapping()

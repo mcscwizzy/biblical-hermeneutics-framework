@@ -80,6 +80,11 @@ Every canonical object uses the same base schema.
 | `importance` | integer | zero | Deterministic ranking hint for retrieval. |
 | `framework_version` | string | `1.0` | CKL framework version gate. |
 | `object_version` | string | `1` | Per-object schema version. |
+| `content_status` | string | `placeholder` | Content governance state for placeholder, draft, complete, or deprecated material. |
+| `review_status` | string | `unreviewed` | Review workflow state for the canonical object. |
+| `reviewed_by` | array of strings | empty | Reviewers who have signed off on the object. |
+| `last_reviewed` | string or null | `null` | Most recent review date in `YYYY-MM-DD` format. |
+| `confidence` | string | `unrated` | Governance confidence label for review and publication state. |
 
 ## Placeholder Rules
 
@@ -92,8 +97,13 @@ The current inventory is intentionally thin. Each placeholder object contains:
 - `importance`
 - `framework_version`
 - `object_version`
+- `content_status` set to `placeholder`
+- `review_status` set to `unreviewed`
+- `reviewed_by` as an empty array
+- `last_reviewed` as `null`
+- `confidence` set to `unrated`
 
-All other string fields are empty strings, and all collection fields are empty arrays. That means the library can be tested, indexed, and queried without pretending scholarship exists where it does not.
+All other string fields are empty strings, and all collection fields are empty arrays. The governance metadata is defaulted on load for older JSON files, so the current inventory remains backward compatible while the schema grows. That means the library can be tested, indexed, and queried without pretending scholarship exists where it does not.
 
 ## Retrieval Flow
 
