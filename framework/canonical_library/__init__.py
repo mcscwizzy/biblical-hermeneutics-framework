@@ -20,6 +20,7 @@ from .schema import (
     DEFAULT_GOVERNANCE_METADATA,
     REVIEW_STATUS_VALUES,
     SUPPORTED_CATEGORIES,
+    CanonicalRelationship,
     CanonicalObject,
     CanonicalValidationError,
     validate_aliases,
@@ -28,6 +29,8 @@ from .schema import (
     validate_governance_metadata,
     validate_library,
     validate_object,
+    validate_related_object_entry,
+    validate_related_objects_field,
     validate_required_fields,
 )
 
@@ -54,6 +57,7 @@ __all__ = [
     "REVIEW_STATUS_VALUES",
     "CONFIDENCE_VALUES",
     "DEFAULT_GOVERNANCE_METADATA",
+    "CanonicalRelationship",
     "validate_object",
     "validate_library",
     "validate_required_fields",
@@ -61,4 +65,6 @@ __all__ = [
     "validate_category_type",
     "validate_aliases",
     "validate_governance_metadata",
+    "validate_related_object_entry",
+    "validate_related_objects_field",
 ]

@@ -3,9 +3,17 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Any
+from typing import Any, Mapping
 
 from .loader import CanonicalLibrary
+from .normalization import normalize_id
+
+
+LEGACY_RELATIONSHIP_TYPES: dict[str, str] = {
+    "related_people": "associated-person",
+    "related_places": "associated-place",
+    "related_events": "associated-event",
+}
 
 
 def _dedupe_extend(target: list[Any], values: list[Any], *, limit: int | None = None) -> None:
@@ -17,6 +25,32 @@ def _dedupe_extend(target: list[Any], values: list[Any], *, limit: int | None = 
         seen.add(value)
         if limit is not None and len(target) >= limit:
             return
+
+
+def _dedupe_relationships_extend(target: list[dict[str, Any]], values: list[dict[str, Any]]) -> None:
+    seen = {(item["id"], item["relationship"]) for item in target}
+    for value in values:
+        key = (value["id"], value["relationship"])
+        if key in seen:
+            continue
+        target.append(value)
+        seen.add(key)
+
+
+def _relationship_to_dict(value: Any) -> dict[str, Any]:
+    if hasattr(value, "to_dict"):
+        candidate = value.to_dict()
+    elif isinstance(value, Mapping):
+        candidate = dict(value)
+    else:
+        raise TypeError(f"unsupported related object type: {type(value).__name__}")
+
+    return {
+        "id": normalize_id(str(candidate["id"])),
+        "relationship": str(candidate["relationship"]),
+        "weight": candidate["weight"],
+        "notes": candidate["notes"],
+    }
 
 
 @dataclass
@@ -57,6 +91,7 @@ class CanonicalContextBuilder:
             "cross_references": [],
             "word_studies": [],
             "related_topics": [],
+            "related_objects": [],
             "timeline": [],
             "archaeology": [],
             "new_testament_connections": [],
@@ -81,8 +116,13 @@ class CanonicalContextBuilder:
             )
             _dedupe_extend(context["cross_references"], obj.cross_references, limit=self.max_cross_references)
             _dedupe_extend(context["word_studies"], obj.hebrew_words + obj.greek_words)
-            related = obj.related_people + obj.related_places + obj.related_events
-            _dedupe_extend(context["related_topics"], related, limit=self.max_related_topics)
+            relationships = result["related_objects"]
+            _dedupe_relationships_extend(context["related_objects"], relationships)
+            _dedupe_extend(
+                context["related_topics"],
+                [relationship["id"] for relationship in relationships],
+                limit=self.max_related_topics,
+            )
             _dedupe_extend(context["timeline"], obj.timeline, limit=self.max_timeline_entries)
             _dedupe_extend(context["archaeology"], obj.archaeology, limit=self.max_archaeology_entries)
             _dedupe_extend(context["new_testament_connections"], obj.new_testament_connections)
@@ -105,6 +145,26 @@ class CanonicalContextBuilder:
                 "matched_alias": result.matched_alias,
                 "match_type": result.match_type,
                 "score": result.score,
+                "related_objects": self._normalize_related_objects(result.object),
             }
         )
         seen_ids.add(result.object.id)
+
+    def _normalize_related_objects(self, obj: Any) -> list[dict[str, Any]]:
+        relationships: list[dict[str, Any]] = []
+        for value in getattr(obj, "related_objects", []):
+            relationships.append(_relationship_to_dict(value))
+        for field_name, relationship_type in LEGACY_RELATIONSHIP_TYPES.items():
+            for related_id in getattr(obj, field_name, []):
+                relationships.append(
+                    {
+                        "id": normalize_id(str(related_id)),
+                        "relationship": relationship_type,
+                        "weight": 1,
+                        "notes": "",
+                    }
+                )
+
+        deduped: list[dict[str, Any]] = []
+        _dedupe_relationships_extend(deduped, relationships)
+        return deduped

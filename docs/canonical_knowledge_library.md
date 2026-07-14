@@ -72,6 +72,7 @@ Every canonical object uses the same base schema.
 | `related_people` | array of strings | empty | Related canonical people. |
 | `related_places` | array of strings | empty | Related canonical places. |
 | `related_events` | array of strings | empty | Related canonical events. |
+| `related_objects` | array of typed relationship objects | empty | Structured canonical links to other objects. |
 | `cross_references` | array of strings | empty | Internal reference pointers for later use. |
 | `new_testament_connections` | array of strings | empty | NT connection pointers for later use. |
 | `interpretive_notes` | array of strings | empty | Future interpreter notes and cautions. |
@@ -85,6 +86,8 @@ Every canonical object uses the same base schema.
 | `reviewed_by` | array of strings | empty | Reviewers who have signed off on the object. |
 | `last_reviewed` | string or null | `null` | Most recent review date in `YYYY-MM-DD` format. |
 | `confidence` | string | `unrated` | Governance confidence label for review and publication state. |
+
+The legacy `related_people`, `related_places`, and `related_events` fields remain supported for now. The context builder normalizes them into typed `related_objects` entries so downstream consumers can adopt the structured form gradually without losing compatibility with the existing inventory.
 
 ## Placeholder Rules
 

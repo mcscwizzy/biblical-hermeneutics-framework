@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from framework.canonical_library import CanonicalLibrary, CanonicalValidationError
+from framework.canonical_library import CanonicalLibrary, CanonicalRelationship, CanonicalValidationError
 
 from .helpers import make_object, write_library
 
@@ -69,6 +69,38 @@ class CanonicalLoaderTests(unittest.TestCase):
         self.assertEqual(library.objects_by_id["abraham"].title, "Abraham")
         self.assertEqual(library.objects_by_id["shechem"].title, "Shechem")
 
+    def test_loads_related_objects(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_library(
+                root,
+                [
+                    make_object("abraham", "person", "Abraham", ["who is abraham"]),
+                    make_object(
+                        "shechem",
+                        "place",
+                        "Shechem",
+                        ["where is shechem"],
+                        related_objects=[
+                            {
+                                "id": "abraham",
+                                "relationship": "associated-person",
+                                "weight": 5,
+                                "notes": "patriarch",
+                            }
+                        ],
+                    ),
+                ],
+            )
+
+            library = CanonicalLibrary(root=root).load()
+
+        self.assertIsInstance(library.objects_by_id["shechem"].related_objects[0], CanonicalRelationship)
+        self.assertEqual(library.objects_by_id["shechem"].related_objects[0].id, "abraham")
+        self.assertEqual(library.objects_by_id["shechem"].related_objects[0].relationship, "associated-person")
+        self.assertEqual(library.objects_by_id["shechem"].related_objects[0].weight, 5)
+        self.assertEqual(library.objects_by_id["shechem"].related_objects[0].notes, "patriarch")
+
     def test_builds_indexes(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -104,6 +136,32 @@ class CanonicalLoaderTests(unittest.TestCase):
             )
 
             with self.assertRaisesRegex(CanonicalValidationError, "duplicate canonical id"):
+                CanonicalLibrary(root=root).load()
+
+    def test_rejects_missing_related_object_targets(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_library(
+                root,
+                [
+                    make_object(
+                        "shechem",
+                        "place",
+                        "Shechem",
+                        ["where is shechem"],
+                        related_objects=[
+                            {
+                                "id": "abraham",
+                                "relationship": "associated-person",
+                                "weight": 5,
+                                "notes": "",
+                            }
+                        ],
+                    )
+                ],
+            )
+
+            with self.assertRaisesRegex(CanonicalValidationError, 'references unknown canonical id "abraham"'):
                 CanonicalLibrary(root=root).load()
 
     def test_detects_alias_collisions(self) -> None:

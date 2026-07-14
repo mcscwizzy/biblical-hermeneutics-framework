@@ -38,6 +38,7 @@ EXPECTED_EMPTY_LIST_FIELDS = (
     "common_questions",
     "sources",
     "reviewed_by",
+    "related_objects",
 )
 EXPECTED_GOVERNANCE_VALUES = {
     "content_status": "placeholder",

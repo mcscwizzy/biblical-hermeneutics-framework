@@ -4,6 +4,7 @@ import unittest
 
 from framework.canonical_library import (
     CanonicalObject,
+    CanonicalRelationship,
     CanonicalValidationError,
     validate_library,
     validate_object,
@@ -19,6 +20,21 @@ def valid_mapping() -> dict[str, object]:
     ).to_dict()
 
 
+def relationship_mapping(
+    object_id: str,
+    relationship: str,
+    *,
+    weight: int = 5,
+    notes: str = "",
+) -> dict[str, object]:
+    return CanonicalRelationship(
+        id=object_id,
+        relationship=relationship,
+        weight=weight,
+        notes=notes,
+    ).to_dict()
+
+
 class CanonicalSchemaTests(unittest.TestCase):
     def test_valid_canonical_object_passes_validation(self) -> None:
         obj = validate_object(valid_mapping(), path="objects/places/shechem.json")
@@ -31,12 +47,13 @@ class CanonicalSchemaTests(unittest.TestCase):
         self.assertEqual(obj.reviewed_by, [])
         self.assertIsNone(obj.last_reviewed)
         self.assertEqual(obj.confidence, "unrated")
+        self.assertEqual(obj.related_objects, [])
 
     def test_valid_governance_metadata_passes_validation(self) -> None:
         data = valid_mapping()
         data.update(
             {
-                "content_status": "draft",
+                "content_status": "complete",
                 "review_status": "approved",
                 "reviewed_by": ["alice", "bob"],
                 "last_reviewed": "2024-07-13",
@@ -46,11 +63,121 @@ class CanonicalSchemaTests(unittest.TestCase):
 
         obj = validate_object(data, path="objects/places/shechem.json")
 
-        self.assertEqual(obj.content_status, "draft")
+        self.assertEqual(obj.content_status, "complete")
         self.assertEqual(obj.review_status, "approved")
         self.assertEqual(obj.reviewed_by, ["alice", "bob"])
         self.assertEqual(obj.last_reviewed, "2024-07-13")
         self.assertEqual(obj.confidence, "high")
+
+    def test_invalid_governance_consistency_fails(self) -> None:
+        data = valid_mapping()
+        data.update(
+            {
+                "content_status": "draft",
+                "review_status": "approved",
+                "reviewed_by": ["alice"],
+                "last_reviewed": "2024-07-13",
+                "confidence": "high",
+            }
+        )
+
+        with self.assertRaisesRegex(
+            CanonicalValidationError,
+            'field "content_status" must be "complete" when review_status is "approved"',
+        ):
+            validate_object(data, path="objects/places/shechem.json")
+
+    def test_valid_related_objects_pass_validation(self) -> None:
+        data = valid_mapping()
+        data["related_objects"] = [
+            relationship_mapping("abraham", "associated-person", weight=5, notes="patriarch"),
+            relationship_mapping("shechem-gate", "associated-place", weight=2, notes="nearby place"),
+        ]
+
+        obj = validate_object(data, path="objects/places/shechem.json")
+
+        self.assertEqual(len(obj.related_objects), 2)
+        self.assertEqual(obj.related_objects[0].id, "abraham")
+        self.assertEqual(obj.related_objects[0].relationship, "associated-person")
+        self.assertEqual(obj.related_objects[0].weight, 5)
+        self.assertEqual(obj.related_objects[0].notes, "patriarch")
+        self.assertIsInstance(obj.related_objects[0], CanonicalRelationship)
+
+    def test_invalid_related_object_id_fails(self) -> None:
+        data = valid_mapping()
+        data["related_objects"] = [relationship_mapping("Abraham", "associated-person")]
+
+        with self.assertRaisesRegex(CanonicalValidationError, 'field "id" must use lowercase kebab-case'):
+            validate_object(data, path="objects/places/shechem.json")
+
+    def test_invalid_related_object_relationship_fails(self) -> None:
+        data = valid_mapping()
+        data["related_objects"] = [relationship_mapping("abraham", "Associated Person")]
+
+        with self.assertRaisesRegex(CanonicalValidationError, 'field "relationship" must use lowercase kebab-case'):
+            validate_object(data, path="objects/places/shechem.json")
+
+    def test_invalid_related_object_weight_fails(self) -> None:
+        data = valid_mapping()
+        data["related_objects"] = [relationship_mapping("abraham", "associated-person", weight=11)]
+
+        with self.assertRaisesRegex(CanonicalValidationError, 'field "weight" must be an integer between 1 and 10'):
+            validate_object(data, path="objects/places/shechem.json")
+
+    def test_invalid_related_object_weight_type_fails(self) -> None:
+        data = valid_mapping()
+        data["related_objects"] = [
+            {
+                "id": "abraham",
+                "relationship": "associated-person",
+                "weight": "5",
+                "notes": "",
+            }
+        ]
+
+        with self.assertRaisesRegex(CanonicalValidationError, 'field "weight" must be an integer between 1 and 10'):
+            validate_object(data, path="objects/places/shechem.json")
+
+    def test_duplicate_related_objects_fail(self) -> None:
+        data = valid_mapping()
+        data["related_objects"] = [
+            relationship_mapping("abraham", "associated-person", notes="first"),
+            relationship_mapping("abraham", "associated-person", notes="duplicate"),
+        ]
+
+        with self.assertRaisesRegex(CanonicalValidationError, "duplicate relationship"):
+            validate_object(data, path="objects/places/shechem.json")
+
+    def test_related_object_self_reference_fails(self) -> None:
+        data = valid_mapping()
+        data["related_objects"] = [relationship_mapping("shechem", "associated-place")]
+
+        with self.assertRaisesRegex(CanonicalValidationError, "cannot reference the object itself"):
+            validate_object(data, path="objects/places/shechem.json")
+
+    def test_related_object_missing_target_fails_library_validation(self) -> None:
+        shechem = CanonicalObject(
+            id="shechem",
+            type="place",
+            title="Shechem",
+            aliases=["where is shechem"],
+            related_objects=[CanonicalRelationship(id="abraham", relationship="associated-person", weight=5, notes="")],
+        )
+
+        with self.assertRaisesRegex(CanonicalValidationError, 'references unknown canonical id "abraham"'):
+            validate_library([shechem])
+
+    def test_related_object_target_resolves_in_library(self) -> None:
+        abraham = CanonicalObject(id="abraham", type="person", title="Abraham", aliases=["who is abraham"])
+        shechem = CanonicalObject(
+            id="shechem",
+            type="place",
+            title="Shechem",
+            aliases=["where is shechem"],
+            related_objects=[CanonicalRelationship(id="abraham", relationship="associated-person", weight=5, notes="")],
+        )
+
+        validate_library([abraham, shechem])
 
     def test_invalid_content_status_fails(self) -> None:
         data = valid_mapping()
@@ -119,6 +246,7 @@ class CanonicalSchemaTests(unittest.TestCase):
         self.assertEqual(obj.reviewed_by, [])
         self.assertIsNone(obj.last_reviewed)
         self.assertEqual(obj.confidence, "unrated")
+        self.assertEqual(obj.related_objects, [])
 
     def test_missing_id_fails(self) -> None:
         data = valid_mapping()

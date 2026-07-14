@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from framework.canonical_library import CanonicalContextBuilder, CanonicalLibrary
+from framework.canonical_library import CanonicalContextBuilder, CanonicalLibrary, CanonicalRelationship
 
 from .helpers import make_object, write_library
 
@@ -30,6 +30,7 @@ class CanonicalContextBuilderTests(unittest.TestCase):
         self.assertEqual(context["cross_references"], [])
         self.assertEqual(context["word_studies"], [])
         self.assertEqual(context["related_topics"], [])
+        self.assertEqual(context["related_objects"], [])
         self.assertEqual(context["timeline"], [])
         self.assertEqual(context["archaeology"], [])
         self.assertEqual(context["new_testament_connections"], [])
@@ -108,8 +109,74 @@ class CanonicalContextBuilderTests(unittest.TestCase):
         self.assertEqual(len(first["new_testament_connections"]), 1)
         self.assertEqual(len(first["word_studies"]), 2)
         self.assertEqual(len(first["related_topics"]), 4)
+        self.assertEqual(len(first["related_objects"]), 4)
         self.assertEqual(len(set(first["historical_context"])), len(first["historical_context"]))
         self.assertEqual(len(set(first["related_topics"])), len(first["related_topics"]))
+        self.assertEqual(
+            len({(item["id"], item["relationship"]) for item in first["related_objects"]}),
+            len(first["related_objects"]),
+        )
+
+    def test_builds_normalized_related_objects_from_legacy_and_typed_fields(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_library(
+                root,
+                [
+                    make_object("abraham", "person", "Abraham", ["who is abraham"]),
+                    make_object(
+                        "covenant-theme",
+                        "theme",
+                        "Covenant Theme",
+                        ["covenant motif"],
+                        related_people=["isaac"],
+                        related_places=["shechem"],
+                        related_events=["call-of-abraham"],
+                        related_objects=[
+                            CanonicalRelationship(
+                                id="abraham",
+                                relationship="associated-person",
+                                weight=5,
+                                notes="patriarch",
+                            ),
+                        ],
+                    ),
+                ],
+            )
+            builder = CanonicalContextBuilder(CanonicalLibrary(root=root).load())
+
+            context = builder.build("covenant theme", limit=1)
+
+        expected_related_objects = [
+            {
+                "id": "abraham",
+                "relationship": "associated-person",
+                "weight": 5,
+                "notes": "patriarch",
+            },
+            {
+                "id": "isaac",
+                "relationship": "associated-person",
+                "weight": 1,
+                "notes": "",
+            },
+            {
+                "id": "shechem",
+                "relationship": "associated-place",
+                "weight": 1,
+                "notes": "",
+            },
+            {
+                "id": "call-of-abraham",
+                "relationship": "associated-event",
+                "weight": 1,
+                "notes": "",
+            },
+        ]
+
+        self.assertEqual(context["related_topics"], ["abraham", "isaac", "shechem", "call-of-abraham"])
+        self.assertEqual(context["related_objects"], expected_related_objects)
+        self.assertEqual(context["retrieved_topics"][0]["related_objects"], expected_related_objects)
 
 
 if __name__ == "__main__":

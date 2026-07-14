@@ -45,6 +45,11 @@ DEFAULT_GOVERNANCE_METADATA: dict[str, Any] = {
     "confidence": "unrated",
 }
 
+DEFAULT_CANONICAL_METADATA: dict[str, Any] = {
+    **DEFAULT_GOVERNANCE_METADATA,
+    "related_objects": [],
+}
+
 SUPPORTED_CATEGORIES: tuple[str, ...] = (
     "theology",
     "theme",
@@ -119,13 +124,26 @@ LIST_FIELDS: tuple[str, ...] = (
     "sources",
 )
 
+RELATED_OBJECT_FIELDS: tuple[str, ...] = ("related_objects",)
+
+RELATED_OBJECT_REQUIRED_FIELDS: tuple[str, ...] = (
+    "id",
+    "relationship",
+    "weight",
+    "notes",
+)
+
+RELATED_OBJECT_RELATIONSHIP_PATTERN = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+
 INT_FIELDS: tuple[str, ...] = ("importance",)
 
 OPTIONAL_FIELDS: tuple[str, ...] = ("last_reviewed",)
 
 GOVERNANCE_LIST_FIELDS: tuple[str, ...] = ("reviewed_by",)
 
-ALL_FIELDS: tuple[str, ...] = STRING_FIELDS + LIST_FIELDS + INT_FIELDS + OPTIONAL_FIELDS + GOVERNANCE_LIST_FIELDS
+ALL_FIELDS: tuple[str, ...] = (
+    STRING_FIELDS + LIST_FIELDS + RELATED_OBJECT_FIELDS + INT_FIELDS + OPTIONAL_FIELDS + GOVERNANCE_LIST_FIELDS
+)
 
 
 class CanonicalValidationError(ValueError):
@@ -183,6 +201,23 @@ def _category_folder(type_name: str) -> str | None:
 
 
 @dataclass(frozen=True)
+class CanonicalRelationship:
+    id: str
+    relationship: str
+    weight: int = 1
+    notes: str = ""
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+    @classmethod
+    def from_mapping(cls, mapping: Mapping[str, Any]) -> "CanonicalRelationship":
+        if isinstance(mapping, CanonicalRelationship):
+            return mapping
+        return validate_related_object_entry(mapping)
+
+
+@dataclass(frozen=True)
 class CanonicalObject:
     id: str
     type: str
@@ -202,6 +237,7 @@ class CanonicalObject:
     related_people: list[str] = field(default_factory=list)
     related_places: list[str] = field(default_factory=list)
     related_events: list[str] = field(default_factory=list)
+    related_objects: list[CanonicalRelationship] = field(default_factory=list)
     cross_references: list[str] = field(default_factory=list)
     new_testament_connections: list[str] = field(default_factory=list)
     interpretive_notes: list[str] = field(default_factory=list)
@@ -224,13 +260,19 @@ class CanonicalObject:
         values: dict[str, Any] = {}
         normalized = _apply_governance_defaults(mapping)
         for field_name in ALL_FIELDS:
-            values[field_name] = normalized[field_name]
+            if field_name == "related_objects":
+                values[field_name] = [
+                    item if isinstance(item, CanonicalRelationship) else CanonicalRelationship.from_mapping(item)
+                    for item in normalized[field_name]
+                ]
+            else:
+                values[field_name] = normalized[field_name]
         return cls(**values)
 
 
 def _apply_governance_defaults(data: Mapping[str, Any]) -> dict[str, Any]:
     normalized = dict(data)
-    for field_name, default_value in DEFAULT_GOVERNANCE_METADATA.items():
+    for field_name, default_value in DEFAULT_CANONICAL_METADATA.items():
         if field_name not in normalized:
             normalized[field_name] = list(default_value) if isinstance(default_value, list) else default_value
     return normalized
@@ -317,6 +359,24 @@ def validate_field_types(
                 path=path,
                 object_id=object_id,
             )
+    if "related_objects" in data:
+        value = data["related_objects"]
+        if not isinstance(value, list):
+            raise _expected_actual_error(
+                "related_objects",
+                "list[dict]",
+                value,
+                path=path,
+                object_id=object_id,
+            )
+        if any(not isinstance(item, Mapping) for item in value):
+            raise _expected_actual_error(
+                "related_objects",
+                "list[dict]",
+                value,
+                path=path,
+                object_id=object_id,
+            )
     for field_name in OPTIONAL_FIELDS:
         if field_name not in data:
             continue
@@ -337,6 +397,155 @@ def validate_field_types(
             path=path,
             object_id=object_id,
         )
+
+
+def validate_related_object_entry(
+    data: Mapping[str, Any],
+    *,
+    path: str | Path | None = None,
+    object_id: str | None = None,
+    allow_self_reference: bool = False,
+) -> CanonicalRelationship:
+    if isinstance(data, CanonicalRelationship):
+        return data
+    if not isinstance(data, Mapping):
+        raise _expected_actual_error(
+            "related_objects",
+            "list[dict]",
+            data,
+            path=path,
+            object_id=object_id,
+        )
+
+    unknown_fields = sorted(set(data) - set(RELATED_OBJECT_REQUIRED_FIELDS))
+    if unknown_fields:
+        raise _error(
+            f'unknown relationship field(s): {", ".join(unknown_fields)}',
+            path=path,
+            object_id=object_id,
+        )
+
+    for field_name in RELATED_OBJECT_REQUIRED_FIELDS:
+        if field_name not in data:
+            raise _error(f'field "{field_name}" is required', path=path, object_id=object_id)
+
+    relationship_id = data["id"]
+    if not isinstance(relationship_id, str) or not relationship_id.strip():
+        raise _error(
+            'field "id" is required and must be a non-empty string',
+            path=path,
+            object_id=object_id,
+        )
+    if relationship_id != relationship_id.lower() or normalize_id(relationship_id) != relationship_id:
+        raise _error(
+            'field "id" must use lowercase kebab-case',
+            path=path,
+            object_id=object_id,
+        )
+
+    relationship_name = data["relationship"]
+    if not isinstance(relationship_name, str) or not relationship_name.strip():
+        raise _error(
+            'field "relationship" is required and must be a non-empty string',
+            path=path,
+            object_id=object_id,
+        )
+    if relationship_name != relationship_name.lower() or not RELATED_OBJECT_RELATIONSHIP_PATTERN.fullmatch(
+        relationship_name
+    ):
+        raise _error(
+            'field "relationship" must use lowercase kebab-case',
+            path=path,
+            object_id=object_id,
+        )
+
+    weight = data["weight"]
+    if isinstance(weight, bool) or not isinstance(weight, int):
+        raise _error(
+            'field "weight" must be an integer between 1 and 10',
+            path=path,
+            object_id=object_id,
+        )
+    if weight < 1 or weight > 10:
+        raise _error(
+            'field "weight" must be an integer between 1 and 10',
+            path=path,
+            object_id=object_id,
+        )
+
+    notes = data["notes"]
+    if not isinstance(notes, str):
+        raise _expected_actual_error(
+            "notes",
+            "str",
+            notes,
+            path=path,
+            object_id=object_id,
+        )
+
+    if not allow_self_reference and object_id is not None and relationship_id == object_id:
+        raise _error(
+            f'field "related_objects" cannot reference the object itself ({relationship_id})',
+            path=path,
+            object_id=object_id,
+        )
+
+    return CanonicalRelationship(
+        id=relationship_id,
+        relationship=relationship_name,
+        weight=weight,
+        notes=notes,
+    )
+
+
+def validate_related_objects_field(
+    data: Mapping[str, Any],
+    *,
+    path: str | Path | None = None,
+    object_id: str | None = None,
+    allow_self_reference: bool = False,
+) -> list[CanonicalRelationship]:
+    if "related_objects" not in data:
+        return []
+    related_objects = data["related_objects"]
+    if related_objects is None:
+        raise _expected_actual_error(
+            "related_objects",
+            "list[dict]",
+            related_objects,
+            path=path,
+            object_id=object_id,
+        )
+    if not isinstance(related_objects, list):
+        raise _expected_actual_error(
+            "related_objects",
+            "list[dict]",
+            related_objects,
+            path=path,
+            object_id=object_id,
+        )
+
+    normalized_related_objects: list[CanonicalRelationship] = []
+    seen_relationships: set[tuple[str, str]] = set()
+    for item in related_objects:
+        relationship = validate_related_object_entry(
+            item,
+            path=path,
+            object_id=object_id,
+            allow_self_reference=allow_self_reference,
+        )
+        key = (relationship.id, relationship.relationship)
+        if key in seen_relationships:
+            raise _error(
+                f'field "related_objects" contains a duplicate relationship to "{relationship.id}" '
+                f'with type "{relationship.relationship}"',
+                path=path,
+                object_id=object_id,
+            )
+        seen_relationships.add(key)
+        normalized_related_objects.append(relationship)
+
+    return normalized_related_objects
 
 
 def validate_governance_metadata(
@@ -365,6 +574,9 @@ def validate_governance_metadata(
                 object_id=object_id,
             )
 
+    content_status = data.get("content_status")
+    review_status = data.get("review_status")
+
     reviewed_by = data.get("reviewed_by")
     if not isinstance(reviewed_by, list):
         raise _expected_actual_error(
@@ -382,30 +594,50 @@ def validate_governance_metadata(
         )
 
     last_reviewed = data.get("last_reviewed")
-    if last_reviewed is None:
-        return
-    if not isinstance(last_reviewed, str):
-        raise _expected_actual_error(
-            "last_reviewed",
-            "null or YYYY-MM-DD string",
-            last_reviewed,
+    if last_reviewed is not None:
+        if not isinstance(last_reviewed, str):
+            raise _expected_actual_error(
+                "last_reviewed",
+                "null or YYYY-MM-DD string",
+                last_reviewed,
+                path=path,
+                object_id=object_id,
+            )
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", last_reviewed):
+            raise _error(
+                'field "last_reviewed" must use YYYY-MM-DD format',
+                path=path,
+                object_id=object_id,
+            )
+        try:
+            date.fromisoformat(last_reviewed)
+        except ValueError as exc:
+            raise _error(
+                'field "last_reviewed" must be a valid YYYY-MM-DD date',
+                path=path,
+                object_id=object_id,
+            ) from exc
+
+    if review_status != "unreviewed":
+        if not reviewed_by:
+            raise _error(
+                'field "reviewed_by" must contain at least one reviewer when review_status is not "unreviewed"',
+                path=path,
+                object_id=object_id,
+            )
+        if last_reviewed is None:
+            raise _error(
+                'field "last_reviewed" is required when review_status is not "unreviewed"',
+                path=path,
+                object_id=object_id,
+            )
+
+    if review_status == "approved" and data.get("content_status") != "complete":
+        raise _error(
+            'field "content_status" must be "complete" when review_status is "approved"',
             path=path,
             object_id=object_id,
         )
-    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", last_reviewed):
-        raise _error(
-            'field "last_reviewed" must use YYYY-MM-DD format',
-            path=path,
-            object_id=object_id,
-        )
-    try:
-        date.fromisoformat(last_reviewed)
-    except ValueError as exc:
-        raise _error(
-            'field "last_reviewed" must be a valid YYYY-MM-DD date',
-            path=path,
-            object_id=object_id,
-        ) from exc
 
 
 def validate_category_type(
@@ -487,6 +719,11 @@ def validate_object(
     validate_field_types(normalized_data, path=path)
     validate_category_type(normalized_data, path=path)
     validate_aliases(normalized_data, path=path)
+    validate_related_objects_field(
+        normalized_data,
+        path=path,
+        object_id=object_id,
+    )
     validate_governance_metadata(normalized_data, path=path)
 
     missing_fields = [field_name for field_name in ALL_FIELDS if field_name not in normalized_data]
@@ -545,6 +782,7 @@ def validate_library(
     alias_lookup: dict[str, set[str]] = {}
     title_lookup: dict[str, set[str]] = {}
     id_lookup: dict[str, str] = {}
+    related_objects_lookup: dict[str, list[CanonicalRelationship]] = {}
 
     for obj in items:
         if obj.id in seen_ids:
@@ -552,6 +790,11 @@ def validate_library(
             continue
         seen_ids[obj.id] = obj
         try:
+            related_objects_lookup[obj.id] = validate_related_objects_field(
+                obj.to_dict(),
+                path=source_paths.get(obj.id) if source_paths else None,
+                object_id=obj.id,
+            )
             validate_governance_metadata(
                 obj.to_dict(),
                 path=source_paths.get(obj.id) if source_paths else None,
@@ -596,6 +839,21 @@ def validate_library(
             errors.append(
                 f'normalized alias "{alias}" collides with title for ids: {", ".join(sorted(title_lookup[alias]))}'
             )
+
+    for obj in items:
+        relationships = related_objects_lookup.get(obj.id, [])
+        path = source_paths.get(obj.id) if source_paths else None
+        for relationship in relationships:
+            if relationship.id not in seen_ids:
+                errors.append(
+                    str(
+                        _error(
+                            f'field "related_objects" references unknown canonical id "{relationship.id}"',
+                            path=path,
+                            object_id=obj.id,
+                        )
+                    )
+                )
 
     counts = {category: 0 for category in SUPPORTED_CATEGORIES}
     for obj in items:
