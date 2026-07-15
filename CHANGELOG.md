@@ -11,6 +11,8 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
 
 ## [Unreleased]
 
+## [0.2.0] — 2026-07-14
+
 ### Added
 
 - **Packaging and release plumbing for CKL**: the repository now ships a
@@ -183,5 +185,6 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
 - **Tests:** behavioral rubric (`core-behaviors`) + Romans fixture.
 - **Licensing:** dual CC BY 4.0 (content) + MIT (code).
 
-[Unreleased]: https://github.com/mcscwizzy/biblical-hermeneutics-framework/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/mcscwizzy/biblical-hermeneutics-framework/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/mcscwizzy/biblical-hermeneutics-framework/releases/tag/v0.2.0
 [0.1.0]: https://github.com/mcscwizzy/biblical-hermeneutics-framework/releases/tag/v0.1.0
