@@ -79,7 +79,7 @@ def test_canonical_browser_opens_editor_for_placeholder_object(driver, wait, bas
     editor_link.click()
 
     editor_form = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="canonical-editor-form"]')))
-    assert "CKL Draft Editor" in driver.title
+    wait.until(lambda _driver: "CKL Draft Editor" in _driver.title)
     assert "Draft inventory" in driver.find_element(By.TAG_NAME, "body").text
 
     textarea = editor_form.find_element(By.CSS_SELECTOR, '[data-testid="canonical-editor-json"]')

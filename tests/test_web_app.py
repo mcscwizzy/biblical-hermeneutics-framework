@@ -978,6 +978,14 @@ class WebAppTests(unittest.TestCase):
             self.assertIn("Saved Arad Ostraca.", saved_editor_response["body"])
             self.assertIn(object_payload["summary"], saved_editor_response["body"])
 
+            missing_editor_response = asgi_request(
+                "GET",
+                "/canonical/editor?object_id=missing-object",
+                test_app=test_app,
+            )
+            self.assertEqual(missing_editor_response["status"], 404)
+            self.assertIn("was not found", missing_editor_response["body"])
+
     def test_period_filter_applies_to_all_map_endpoints(self):
         places_response = asgi_request("GET", "/api/maps/biblical-places?period=NT+%2F+Roman+period")
         self.assertEqual(places_response["status"], 200)
