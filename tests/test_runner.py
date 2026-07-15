@@ -1,3 +1,4 @@
+import json
 import shutil
 import tempfile
 import unittest
@@ -64,6 +65,16 @@ class LeakyAdapter(ChatAdapter):
             ),
             model="fake-model",
         )
+
+
+class StructuredJsonAdapter(ChatAdapter):
+    def __init__(self, response_text: str) -> None:
+        self.response_text = response_text
+        self.request: ChatRequest | None = None
+
+    def chat(self, request: ChatRequest) -> ChatResponse:
+        self.request = request
+        return ChatResponse(text=self.response_text, model="fake-model")
 
 
 class ErrorAdapter(ChatAdapter):
@@ -389,11 +400,14 @@ class RunnerTests(unittest.TestCase):
 
         self.assertIsNotNone(adapter.request)
         assert adapter.request is not None
-        self.assertIn("# Canonical Knowledge Library", adapter.request.system_prompt)
-        self.assertIn("Retrieved object IDs:", adapter.request.system_prompt)
+        self.assertIn("# CANONICAL KNOWLEDGE CONTEXT", adapter.request.system_prompt)
+        self.assertIn("Use that context as your primary factual source", adapter.request.system_prompt)
+        self.assertIn("Entry: Shechem", adapter.request.system_prompt)
+        self.assertIn("Source ID: shechem", adapter.request.system_prompt)
+        self.assertIn("# OUTPUT REQUIREMENTS", adapter.request.system_prompt)
         self.assertIn("Local Curated Knowledge", adapter.request.system_prompt)
         self.assertLess(
-            adapter.request.system_prompt.index("# Canonical Knowledge Library"),
+            adapter.request.system_prompt.index("# CANONICAL KNOWLEDGE CONTEXT"),
             adapter.request.system_prompt.index("Local Curated Knowledge"),
         )
         self.assertIn("shechem", result.model_metadata["canonical_library_object_ids"])
@@ -486,6 +500,76 @@ class RunnerTests(unittest.TestCase):
             "finalize_result",
             result.model_metadata["pipeline"]["stages_completed"],
         )
+
+    def test_agent_extracts_structured_json_answer_before_display(self):
+        adapter = StructuredJsonAdapter(
+            json.dumps(
+                {
+                    "answer": "## 1. Short Answer\nShechem anchors covenant renewal.",
+                    "analysis": "internal details should not be shown",
+                }
+            )
+        )
+        agent = self.make_agent(adapter)
+
+        result = agent.ask("Why is Shechem important?")
+
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertEqual(
+            adapter.request.metadata["response_contract"],
+            "answer",
+        )
+        self.assertEqual(
+            adapter.request.response_format,
+            {"type": "json_object"},
+        )
+        self.assertEqual(
+            result.answer_text,
+            "## 1. Short Answer\nShechem anchors covenant renewal.",
+        )
+        self.assertNotIn("{", result.answer_text)
+        self.assertNotIn("analysis", result.answer_text.lower())
+
+    def test_search_fallback_prompt_preserves_json_results_contract(self):
+        adapter = StructuredJsonAdapter(
+            json.dumps(
+                {
+                    "results": [
+                        {
+                            "book": "Exodus",
+                            "chapter": 1,
+                            "reason": "Test candidate.",
+                            "confidence": "likely",
+                        }
+                    ]
+                }
+            )
+        )
+        agent = self.make_agent(adapter)
+        prompt = "\n".join(
+            [
+                "Using BHF, identify likely Bible passages for the following search query.",
+                "Query: Egypt in Exodus",
+                "",
+                "Return a JSON object with a results array.",
+                "Each result should include book, chapter, optional verse_start, optional verse_end, reason, and confidence.",
+                "Use only likely passages and keep the response concise.",
+                "Do not include markdown fences or extra commentary.",
+            ]
+        )
+
+        result = agent.ask(prompt)
+
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertEqual(
+            adapter.request.metadata["response_contract"],
+            "search_results",
+        )
+        payload = json.loads(result.answer_text)
+        self.assertEqual(payload["results"][0]["book"], "Exodus")
+        self.assertEqual(payload["results"][0]["chapter"], 1)
 
     def test_repair_disabled_calls_adapter_once(self):
         adapter = SequenceAdapter(["The Hebrew word is ruach."])

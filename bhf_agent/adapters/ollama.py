@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import socket
+import time
 import urllib.error
 import urllib.request
 from typing import Any, Optional
@@ -41,6 +42,8 @@ class OllamaAdapter(ChatAdapter):
                 "num_predict": request.max_tokens,
             },
         }
+        if request.response_format is not None:
+            payload["format"] = "json"
         body = json.dumps(payload).encode("utf-8")
         http_request = urllib.request.Request(
             self.endpoint,
@@ -48,6 +51,7 @@ class OllamaAdapter(ChatAdapter):
             headers={"Content-Type": "application/json"},
             method="POST",
         )
+        started_at = time.perf_counter()
 
         try:
             with urllib.request.urlopen(
@@ -59,6 +63,8 @@ class OllamaAdapter(ChatAdapter):
             error_body = _safe_read_error(exc)
             return ChatResponse(
                 text="",
+                provider="ollama",
+                latency_ms=_elapsed_ms(started_at),
                 errors=[
                     f"Ollama endpoint returned HTTP {exc.code}: "
                     f"{error_body or exc.reason}"
@@ -66,7 +72,12 @@ class OllamaAdapter(ChatAdapter):
                 raw_provider_response=error_body,
             )
         except (TimeoutError, socket.timeout) as exc:
-            return ChatResponse(text="", errors=[f"Ollama endpoint timed out: {exc}"])
+            return ChatResponse(
+                text="",
+                provider="ollama",
+                latency_ms=_elapsed_ms(started_at),
+                errors=[f"Ollama endpoint timed out: {exc}"],
+            )
         except urllib.error.URLError as exc:
             reason = exc.reason
             if isinstance(reason, ConnectionRefusedError):
@@ -76,15 +87,27 @@ class OllamaAdapter(ChatAdapter):
                 )
             else:
                 message = f"Could not connect to Ollama endpoint: {reason}"
-            return ChatResponse(text="", errors=[message])
+            return ChatResponse(
+                text="",
+                provider="ollama",
+                latency_ms=_elapsed_ms(started_at),
+                errors=[message],
+            )
         except OSError as exc:
-            return ChatResponse(text="", errors=[f"Ollama endpoint request failed: {exc}"])
+            return ChatResponse(
+                text="",
+                provider="ollama",
+                latency_ms=_elapsed_ms(started_at),
+                errors=[f"Ollama endpoint request failed: {exc}"],
+            )
 
         try:
             data = json.loads(raw_body)
         except json.JSONDecodeError as exc:
             return ChatResponse(
                 text="",
+                provider="ollama",
+                latency_ms=_elapsed_ms(started_at),
                 errors=[f"Ollama endpoint returned malformed JSON: {exc}"],
                 raw_provider_response=raw_body,
             )
@@ -94,6 +117,8 @@ class OllamaAdapter(ChatAdapter):
             return ChatResponse(
                 text="",
                 model=data.get("model") if isinstance(data, dict) else None,
+                provider="ollama",
+                latency_ms=_elapsed_ms(started_at),
                 raw_provider_response=data,
                 errors=[extraction_error],
             )
@@ -101,6 +126,8 @@ class OllamaAdapter(ChatAdapter):
         return ChatResponse(
             text=text,
             model=data.get("model"),
+            provider="ollama",
+            latency_ms=_elapsed_ms(started_at),
             raw_provider_response=data,
         )
 
@@ -138,6 +165,10 @@ def _safe_read_error(exc: urllib.error.HTTPError) -> str:
         return exc.read().decode("utf-8")
     except Exception:
         return ""
+
+
+def _elapsed_ms(started_at: float) -> int:
+    return int(round((time.perf_counter() - started_at) * 1000))
 
 
 def _extract_text(data: Any) -> tuple[Optional[str], Optional[str]]:

@@ -30,7 +30,13 @@ from .models import (
     RepairAttempt,
     ValidationResult,
 )
-from .output_cleaner import clean_model_output
+from .model_response_validation import (
+    ANSWER_CONTRACT,
+    SEARCH_RESULTS_CONTRACT,
+    ModelResponseValidationResult,
+    normalize_model_response,
+    structured_response_format,
+)
 from .profiles import ProfileLoader
 from .prompts import build_prompt, strategy_for_profile
 from .question_types import classify_question_type
@@ -118,8 +124,9 @@ class BHFAgent:
                 ctx = self._build_prompts(ctx)
                 ctx = self._call_model(ctx)
                 ctx = self._clean_output(ctx)
-                ctx = self._validate_response(ctx)
-                ctx = self._repair_response(ctx)
+                if self._response_contract(ctx.original_question) == ANSWER_CONTRACT:
+                    ctx = self._validate_response(ctx)
+                    ctx = self._repair_response(ctx)
             elif self.config.memory_enabled:
                 ctx = self._load_session_memory(ctx)
             ctx = self._finalize_result(ctx)
@@ -156,6 +163,7 @@ class BHFAgent:
             self._status_current_stage = previous_current_stage
 
     def _initialize_context(self, question: str) -> PipelineContext:
+        response_contract = self._response_contract(question)
         ctx = PipelineContext(
             original_question=question,
             normalized_question=" ".join(question.strip().split()),
@@ -169,6 +177,8 @@ class BHFAgent:
                 "answer_mode": self.config.answer_mode,
                 "framework_version": self.framework_version,
                 "framework_version_fingerprint": self.framework_version_fingerprint,
+                "response_contract": response_contract,
+                "response_format_requested": response_contract != "freeform",
                 "local_knowledge_keys": [],
                 "canonical_library_enabled": self.config.canonical_library.enabled,
                 "canonical_library_loaded": self.canonical_library is not None,
@@ -206,6 +216,12 @@ class BHFAgent:
                 "public_answer_cache_error": None,
                 "map_tool_keys": [],
                 "output_cleanup_applied": False,
+                "response_validation_passed": None,
+                "response_validation_errors": [],
+                "response_validation_warnings": [],
+                "response_validation_structured_output": False,
+                "response_validation_raw_text_was_json": False,
+                "response_validation_removed_headings": [],
                 "validation_score": None,
                 "auto_repair": self.config.auto_repair,
                 "repair_threshold": self.config.repair_threshold,
@@ -407,6 +423,8 @@ class BHFAgent:
         ctx.raw_model_response = ChatResponse(
             text=cached_answer,
             model="public-cache",
+            provider="public-cache",
+            latency_ms=0,
             usage={
                 "cached": True,
                 "usage_count": usage_count,
@@ -497,6 +515,60 @@ class BHFAgent:
         )
         return self._mark_stage(ctx, "build_prompts")
 
+    def _response_contract(self, question: str) -> str:
+        normalized = " ".join(question.strip().lower().split())
+        if "return a json object with a results array" in normalized:
+            return SEARCH_RESULTS_CONTRACT
+        if "identify likely bible passages" in normalized:
+            return SEARCH_RESULTS_CONTRACT
+        return ANSWER_CONTRACT
+
+    def _response_format_for_contract(self, ctx: PipelineContext) -> dict[str, Any] | None:
+        contract = self._response_contract(ctx.original_question)
+        if contract in {ANSWER_CONTRACT, SEARCH_RESULTS_CONTRACT}:
+            return structured_response_format()
+        return None
+
+    def _apply_model_response_validation(
+        self,
+        ctx: PipelineContext,
+        *,
+        response_text: str,
+        raw_provider_response: Any = None,
+    ) -> ModelResponseValidationResult:
+        validation_result = normalize_model_response(
+            response_text,
+            raw_provider_response=raw_provider_response,
+            response_contract=self._response_contract(ctx.original_question),
+        )
+        ctx.debug_metadata["output_cleanup_applied"] = bool(
+            validation_result.removed_headings
+            or validation_result.structured_output
+            or validation_result.raw_text_was_json
+            or validation_result.sanitized_text.strip() != (response_text or "").strip()
+        )
+        ctx.debug_metadata["cleanup_removed_headings"] = list(
+            validation_result.removed_headings
+        )
+        ctx.debug_metadata["response_validation_passed"] = validation_result.passed
+        ctx.debug_metadata["response_validation_errors"] = list(validation_result.errors)
+        ctx.debug_metadata["response_validation_warnings"] = list(validation_result.warnings)
+        ctx.debug_metadata["response_validation_structured_output"] = (
+            validation_result.structured_output
+        )
+        ctx.debug_metadata["response_validation_raw_text_was_json"] = (
+            validation_result.raw_text_was_json
+        )
+        ctx.debug_metadata["response_validation_removed_headings"] = list(
+            validation_result.removed_headings
+        )
+        if validation_result.parsed_payload is not None:
+            ctx.debug_metadata["response_validation_parsed_payload"] = validation_result.parsed_payload
+        else:
+            ctx.debug_metadata.pop("response_validation_parsed_payload", None)
+        ctx.warnings.extend(validation_result.warnings)
+        return validation_result
+
     def _call_model(self, ctx: PipelineContext) -> PipelineContext:
         self._emit_status(
             "call_model_start",
@@ -522,9 +594,11 @@ class BHFAgent:
             model=self.config.model or "",
             temperature=self.config.temperature,
             max_tokens=self.config.max_tokens,
+            response_format=self._response_format_for_contract(ctx),
             metadata={
                 "profile": ctx.profile_name,
                 "answer_mode": ctx.answer_mode,
+                "response_contract": self._response_contract(ctx.original_question),
                 "reference_context": ctx.reference_context.to_dict(),
                 "genre_context": ctx.genre_context.to_dict(),
                 "question_context": ctx.question_context.to_dict(),
@@ -558,8 +632,12 @@ class BHFAgent:
         ctx.raw_answer_text = chat_response.text
         ctx.warnings.extend(chat_response.warnings)
         ctx.errors.extend(chat_response.errors)
+        if chat_response.provider:
+            ctx.debug_metadata["provider"] = chat_response.provider
         if chat_response.model:
             ctx.debug_metadata["model"] = chat_response.model
+        if chat_response.latency_ms is not None:
+            ctx.debug_metadata["model_latency_ms"] = chat_response.latency_ms
         if chat_response.errors:
             return self._mark_stage(
                 ctx,
@@ -576,10 +654,23 @@ class BHFAgent:
         )
 
     def _clean_output(self, ctx: PipelineContext) -> PipelineContext:
-        cleanup_result = clean_model_output(ctx.raw_answer_text or "")
-        ctx.cleaned_answer_text = cleanup_result.text
-        ctx.debug_metadata["output_cleanup_applied"] = cleanup_result.applied
-        ctx.debug_metadata["cleanup_removed_headings"] = cleanup_result.removed_headings
+        response_validation = self._apply_model_response_validation(
+            ctx,
+            response_text=ctx.raw_answer_text or "",
+            raw_provider_response=(
+                ctx.raw_model_response.raw_provider_response
+                if ctx.raw_model_response is not None
+                else None
+            ),
+        )
+        ctx.cleaned_answer_text = response_validation.sanitized_text
+        if self._response_contract(ctx.original_question) == SEARCH_RESULTS_CONTRACT:
+            ctx.validation_result = ValidationResult(
+                passed=True,
+                score=100,
+                warnings=[],
+                suggestions=[],
+            )
         return self._mark_stage(ctx, "clean_output")
 
     def _validate_response(self, ctx: PipelineContext) -> PipelineContext:
@@ -648,8 +739,12 @@ class BHFAgent:
         ctx.warnings.extend(chat_response.warnings)
         ctx.errors.extend(chat_response.errors)
 
-        cleanup_result = clean_model_output(chat_response.text)
-        repaired_answer = cleanup_result.text.strip()
+        response_validation = self._apply_model_response_validation(
+            ctx,
+            response_text=chat_response.text,
+            raw_provider_response=chat_response.raw_provider_response,
+        )
+        repaired_answer = response_validation.sanitized_text.strip()
         if not repaired_answer:
             attempt = RepairAttempt(
                 attempt_number=1,
@@ -664,6 +759,7 @@ class BHFAgent:
             ctx.debug_metadata["repair_attempts"] = [
                 attempt.to_dict() for attempt in ctx.repair_attempts
             ]
+            ctx.debug_metadata["repair_response_validation"] = response_validation.to_dict()
             return self._mark_stage(ctx, "repair_response")
 
         repaired_validation = validate_response(
@@ -701,6 +797,7 @@ class BHFAgent:
         ctx.debug_metadata["repair_attempts"] = [
             attempt.to_dict() for attempt in ctx.repair_attempts
         ]
+        ctx.debug_metadata["repair_response_validation"] = response_validation.to_dict()
         return self._mark_stage(ctx, "repair_response")
 
     def _should_accept_repair(
@@ -721,6 +818,14 @@ class BHFAgent:
 
     def _finalize_result(self, ctx: PipelineContext) -> PipelineContext:
         ctx.final_answer = ctx.cleaned_answer_text or ""
+        if not ctx.final_answer.strip():
+            validation_errors = list(
+                ctx.debug_metadata.get("response_validation_errors") or []
+            )
+            if validation_errors:
+                ctx.errors.extend(str(error) for error in validation_errors)
+            elif not ctx.errors:
+                ctx.errors.append("Model response was empty after validation.")
         return self._mark_stage(ctx, "finalize_result")
 
     def _save_session_turn(self, ctx: PipelineContext) -> PipelineContext:
@@ -777,11 +882,14 @@ class BHFAgent:
             "adapter_type": self.config.adapter,
             "base_url": self.config.base_url,
             "configured_model": self.config.model,
+            "provider": chat_response.provider or self.config.adapter,
+            "latency_ms": chat_response.latency_ms,
             "framework_version": ctx.debug_metadata.get("framework_version"),
             "framework_version_fingerprint": ctx.debug_metadata.get(
                 "framework_version_fingerprint"
             ),
             "answer_mode": ctx.answer_mode,
+            "response_contract": ctx.debug_metadata.get("response_contract"),
             "memory_enabled": self.config.memory_enabled,
             "session_id": ctx.debug_metadata.get("session_id"),
             "memory_path": ctx.debug_metadata.get("memory_path"),
@@ -792,6 +900,22 @@ class BHFAgent:
             "cleanup_applied": ctx.debug_metadata.get("output_cleanup_applied", False),
             "cleanup_removed_headings": ctx.debug_metadata.get(
                 "cleanup_removed_headings", []
+            ),
+            "response_validation_passed": ctx.debug_metadata.get("response_validation_passed"),
+            "response_validation_errors": ctx.debug_metadata.get(
+                "response_validation_errors", []
+            ),
+            "response_validation_warnings": ctx.debug_metadata.get(
+                "response_validation_warnings", []
+            ),
+            "response_validation_structured_output": ctx.debug_metadata.get(
+                "response_validation_structured_output", False
+            ),
+            "response_validation_raw_text_was_json": ctx.debug_metadata.get(
+                "response_validation_raw_text_was_json", False
+            ),
+            "response_validation_removed_headings": ctx.debug_metadata.get(
+                "response_validation_removed_headings", []
             ),
             "local_knowledge_keys": ctx.debug_metadata.get("local_knowledge_keys", []),
             "canonical_library_object_ids": ctx.debug_metadata.get(

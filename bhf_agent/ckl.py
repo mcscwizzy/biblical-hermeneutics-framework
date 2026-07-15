@@ -8,7 +8,11 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
-from framework.canonical_library import CanonicalContextBuilder, CanonicalLibrary
+from framework.canonical_library import (
+    CanonicalContextBuilder,
+    CanonicalLibrary,
+    build_canonical_prompt_context,
+)
 from framework.canonical_library.normalization import normalize_text, tokenize_query
 
 from .models import QuestionContext, ReferenceContext
@@ -726,108 +730,21 @@ def format_canonical_context_for_prompt(
 
     metadata = dict(context.get("metadata") or {})
     normalized_answer_mode = _normalize_answer_mode(answer_mode or metadata.get("answer_mode") or "study")
-    detail_level = _context_detail_level(normalized_answer_mode)
-    lines: list[str] = [
-        "# Canonical Knowledge Library",
-        "Use this retrieved canonical context as grounding before inventing biblical details.",
-        "Treat placeholder or unreviewed entries as scaffolding unless review policy says otherwise.",
-        f"- Answer mode: {normalized_answer_mode}",
-        f"- Context tier: { {0: 'compact', 1: 'study', 2: 'scholar'}.get(detail_level, 'study') }",
-    ]
-
-    query = str(context.get("query") or metadata.get("query") or "").strip()
-    if query:
-        lines.append(f"- Query: {query}")
-
-    retrieval_method = str(metadata.get("retrieval_method") or "none").strip()
-    lines.append(f"- Retrieval method: {retrieval_method}")
-
-    retrieved_ids = _render_fact_list(
-        metadata.get("retrieved_object_ids") or context.get("retrieved_object_ids")
+    max_entries, max_facts_per_entry, max_scripture_references_per_entry, max_caution_notes_per_entry = _canonical_prompt_limits(
+        normalized_answer_mode
     )
-    if retrieved_ids:
-        lines.append(f"- Retrieved object IDs: {retrieved_ids}")
+    prompt_context = build_canonical_prompt_context(
+        context,
+        max_context_tokens=max_context_tokens,
+        max_entries=max_entries,
+        max_facts_per_entry=max_facts_per_entry,
+        max_scripture_references_per_entry=max_scripture_references_per_entry,
+        max_caution_notes_per_entry=max_caution_notes_per_entry,
+    )
 
-    topic_count = metadata.get("topic_count")
-    if topic_count is not None:
-        lines.append(f"- Topic count: {topic_count}")
-
-    estimated_topic_tokens = metadata.get("estimated_topic_tokens")
-    if estimated_topic_tokens is not None:
-        lines.append(f"- Estimated topic tokens: {estimated_topic_tokens}")
-
-    primary_topic_count = metadata.get("primary_topic_count")
-    if primary_topic_count is not None:
-        lines.append(f"- Primary topic count: {primary_topic_count}")
-
-    expanded_topic_count = metadata.get("expanded_topic_count")
-    if expanded_topic_count is not None:
-        lines.append(f"- Expanded topic count: {expanded_topic_count}")
-
-    include_placeholders = metadata.get("include_placeholders")
-    allowed_statuses = metadata.get("allowed_statuses")
-    if include_placeholders is not None or allowed_statuses is not None:
-        filter_bits = []
-        if include_placeholders is not None:
-            filter_bits.append(f"include_placeholders={str(bool(include_placeholders)).lower()}")
-        if allowed_statuses:
-            filter_bits.append(
-                "allowed_statuses=" + ", ".join(str(value) for value in allowed_statuses)
-            )
-        if filter_bits:
-            lines.append(f"- Status filter: {'; '.join(filter_bits)}")
-
-    lines.extend(["", "## Retrieved Objects"])
-
-    remaining_tokens = max(max_context_tokens, 1) - _estimate_tokens("\n".join(lines))
-    rendered_topics = 0
-    truncated = False
-    seen_facts: set[str] = set()
-    for topic in retrieved_topics:
-        compact = detail_level == 0
-        block = _render_topic_block(
-            topic,
-            answer_mode=normalized_answer_mode,
-            compact=compact,
-            seen_facts=seen_facts,
-        )
-        block_tokens = _estimate_tokens(block)
-        if block_tokens > remaining_tokens and not compact:
-            compact_block = _render_topic_block(
-                topic,
-                answer_mode=normalized_answer_mode,
-                compact=True,
-                seen_facts=seen_facts,
-            )
-            compact_tokens = _estimate_tokens(compact_block)
-            if compact_tokens <= remaining_tokens or rendered_topics == 0:
-                block = compact_block
-                block_tokens = compact_tokens
-        if block_tokens > remaining_tokens:
-            truncated = True
-            break
-        lines.extend(block.splitlines())
-        lines.append("")
-        remaining_tokens -= block_tokens
-        rendered_topics += 1
-
-    if truncated:
-        lines.extend(
-            [
-                "- Canonical context truncated to fit the token budget.",
-                "",
-            ]
-        )
-
-    shared_lines: list[str] = []
-    for title, field_name in _shared_sections_for_detail_level(detail_level):
-        rendered = _render_fact_list(context.get(field_name) or [], seen_facts=seen_facts)
-        if rendered:
-            shared_lines.append(f"- {title}: {rendered}")
-    if shared_lines and remaining_tokens > 0:
-        lines.extend(["## Shared Context", *shared_lines, ""])
-
-    prompt = "\n".join(line for line in lines if line is not None).strip()
+    prompt = _render_canonical_prompt_context(prompt_context)
+    if not prompt:
+        return ""
     if _estimate_tokens(prompt) > max_context_tokens:
         prompt = _shrink_prompt(prompt, max_context_tokens)
     return prompt
@@ -900,3 +817,63 @@ def _shrink_prompt(prompt: str, max_context_tokens: int) -> str:
     if trimmed and not trimmed.endswith("..."):
         trimmed = trimmed.rstrip() + "\n..."
     return trimmed
+
+
+def _canonical_prompt_limits(answer_mode: str) -> tuple[int, int, int, int]:
+    detail_level = _context_detail_level(answer_mode)
+    if detail_level <= 0:
+        return 4, 2, 3, 1
+    if detail_level == 1:
+        return 6, 3, 5, 2
+    return 8, 5, 6, 3
+
+
+def _render_canonical_prompt_context(context: Mapping[str, Any] | None) -> str:
+    if not context:
+        return ""
+
+    entries = list(context.get("entries") or [])
+    if not entries:
+        return ""
+
+    lines: list[str] = []
+    for entry in entries:
+        title = str(entry.get("title") or entry.get("id") or "unknown").strip()
+        category = str(entry.get("category") or "Unknown").strip()
+        summary = str(entry.get("summary") or "").strip()
+        facts = [str(item).strip() for item in entry.get("facts") or [] if str(item).strip()]
+        scripture_references = [
+            str(item).strip()
+            for item in entry.get("scripture_references") or []
+            if str(item).strip()
+        ]
+        caution_notes = [
+            str(item).strip()
+            for item in entry.get("caution_notes") or []
+            if str(item).strip()
+        ]
+        source_ids = [
+            str(item).strip()
+            for item in entry.get("source_ids") or []
+            if str(item).strip()
+        ]
+
+        lines.extend(["", f"## Entry: {title}", f"Category: {category}"])
+        if summary:
+            lines.append(f"Summary: {summary}")
+        if facts:
+            lines.append("Relevant facts:")
+            lines.extend(f"- {fact}" for fact in facts)
+        if scripture_references:
+            lines.append("Scripture references:")
+            lines.extend(f"- {reference}" for reference in scripture_references)
+        if caution_notes:
+            lines.append("Caution / interpretation notes:")
+            lines.extend(f"- {note}" for note in caution_notes)
+        if source_ids:
+            if len(source_ids) == 1:
+                lines.append(f"Source ID: {source_ids[0]}")
+            else:
+                lines.append("Source IDs: " + ", ".join(source_ids))
+
+    return "\n".join(line for line in lines if line is not None).strip()

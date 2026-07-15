@@ -1,3 +1,4 @@
+{% set can_save_study = can_save_study | default(false) %}
 {% set canonical_object_ids = canonical_object_ids | default([]) %}
 {% set canonical_topics = canonical_context.retrieved_topics if canonical_context and canonical_context.retrieved_topics else [] %}
 {% if error %}
@@ -16,7 +17,7 @@
       {% else %}
         <h2>Answer</h2>
       {% endif %}
-      {% if result and reader_reference %}
+      {% if can_save_study and reader_reference %}
         <button type="button" class="secondary answer-save" data-save-study>Save Study</button>
       {% endif %}
     </div>
@@ -115,13 +116,15 @@
     {% endif %}
   </article>
 
-  <aside class="metadata">
-    <h2>Metadata</h2>
-    <dl>
-      {% for label, value in metadata.items() %}
-        <dt>{{ label }}</dt>
-        <dd>{{ value }}</dd>
-      {% endfor %}
-    </dl>
-  </aside>
+  {% if metadata %}
+    <aside class="metadata">
+      <h2>Metadata</h2>
+      <dl>
+        {% for label, value in metadata.items() %}
+          <dt>{{ label }}</dt>
+          <dd>{{ value }}</dd>
+        {% endfor %}
+      </dl>
+    </aside>
+  {% endif %}
 {% endif %}

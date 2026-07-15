@@ -42,6 +42,23 @@ class OutputCleanerTests(unittest.TestCase):
         self.assertFalse(result.applied)
         self.assertEqual(result.text, answer)
 
+    def test_removes_leading_analysis_block_before_answer(self):
+        answer = (
+            "# Analysis\n\n"
+            "Thought Process\n\n"
+            "## 1. Short Answer\n"
+            "The Hebrew word is ruach."
+        )
+
+        result = clean_model_output(answer)
+
+        self.assertTrue(result.applied)
+        self.assertIn("Analysis", result.removed_headings)
+        self.assertEqual(
+            result.text,
+            "## 1. Short Answer\nThe Hebrew word is ruach.",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1346,10 +1346,10 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(response["status"], 200)
         self.assertIn("Answer", response["body"])
         self.assertIn("Short Answer", response["body"])
-        self.assertIn("Profile used", response["body"])
-        self.assertIn("minimal-7b", response["body"])
-        self.assertIn("Local knowledge used", response["body"])
-        self.assertIn("ruach", response["body"])
+        self.assertNotIn("Profile used", response["body"])
+        self.assertNotIn("Local knowledge used", response["body"])
+        self.assertNotIn("Canonical Context", response["body"])
+        self.assertNotIn("Metadata", response["body"])
         self.assertNotIn("local-secret", response["body"])
 
     def test_post_ask_invalid_config_returns_friendly_error(self):
@@ -1387,7 +1387,42 @@ class WebAppTests(unittest.TestCase):
         result = asgi_request("GET", f"/ask/result/{job['job_id']}")
         self.assertEqual(result["status"], 200)
         self.assertIn("Short Answer", result["body"])
+        self.assertNotIn("Metadata", result["body"])
+        self.assertNotIn("Canonical Context", result["body"])
+
+    def test_ask_result_shows_debug_metadata_when_enabled(self):
+        debug_defaults = SimpleNamespace(
+            config=AgentConfig(
+                base_url="http://localhost:11434/v1",
+                model="llama3.1:8b",
+                profile="minimal-7b",
+                debug=True,
+            )
+        )
+
+        with patch("bhf_web.app.BHFAgent", SuccessfulJobAgent), patch(
+            "bhf_web.routes.ask.load_web_defaults",
+            return_value=debug_defaults,
+        ):
+            response = asgi_request("POST", "/ask/jobs", data=_valid_form())
+
+        self.assertEqual(response["status"], 202)
+        job = json.loads(response["body"])
+        wait_for_job(job["job_id"])
+
+        with patch(
+            "bhf_web.routes.ask.load_web_defaults",
+            return_value=debug_defaults,
+        ):
+            result = asgi_request("GET", f"/ask/result/{job['job_id']}")
+
+        self.assertEqual(result["status"], 200)
         self.assertIn("Metadata", result["body"])
+        self.assertIn("Canonical Context", result["body"])
+        self.assertIn("canonical-object-badge-title", result["body"])
+        self.assertIn("shechem", result["body"])
+        self.assertIn("Profile used", result["body"])
+        self.assertIn("Local knowledge used", result["body"])
 
     def test_reader_ask_job_builds_server_side_question(self):
         CapturingAgent.questions = []
@@ -1741,10 +1776,10 @@ class WebAppTests(unittest.TestCase):
 
                 result_response = asgi_request("GET", f"/ask/result/{job_id}")
                 self.assertEqual(result_response["status"], 200)
-                self.assertIn("Canonical Context", result_response["body"])
-                self.assertIn("Why these objects were retrieved", result_response["body"])
-                self.assertIn("canonical-object-badge-title", result_response["body"])
-                self.assertIn("shechem", result_response["body"])
+                self.assertNotIn("Canonical Context", result_response["body"])
+                self.assertNotIn("Why these objects were retrieved", result_response["body"])
+                self.assertNotIn("canonical-object-badge-title", result_response["body"])
+                self.assertNotIn("shechem", result_response["body"])
 
                 save = asgi_request("POST", "/api/saved-studies", json_data={"job_id": job_id})
                 self.assertEqual(save["status"], 201)

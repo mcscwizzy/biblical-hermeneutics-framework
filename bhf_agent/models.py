@@ -28,6 +28,7 @@ class ChatRequest(Serializable):
     temperature: float = 0.3
     max_tokens: int = 2048
     metadata: dict[str, Any] = field(default_factory=dict)
+    response_format: Optional[dict[str, Any]] = None
 
     def messages(self) -> list[ChatMessage]:
         return [
@@ -40,10 +41,20 @@ class ChatRequest(Serializable):
 class ChatResponse(Serializable):
     text: str
     model: Optional[str] = None
+    provider: Optional[str] = None
+    latency_ms: Optional[int] = None
     usage: Optional[dict[str, Any]] = None
     raw_provider_response: Optional[Union[dict[str, Any], str]] = None
     warnings: list[str] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)
+
+    @property
+    def answer(self) -> str:
+        return self.text
+
+    @answer.setter
+    def answer(self, value: str) -> None:
+        self.text = value
 
 
 @dataclass
@@ -116,6 +127,39 @@ class AgentResult(Serializable):
     repair_reason: Optional[str] = None
     original_validation_result: Optional[ValidationResult] = None
     repaired_validation_result: Optional[ValidationResult] = None
+
+    def public_response(self) -> dict[str, str]:
+        """Return the user-facing response payload."""
+
+        return {"answer": self.answer_text}
+
+    def internal_response(self) -> dict[str, Any]:
+        """Return a compact internal response payload for diagnostics."""
+
+        metadata = self.model_metadata or {}
+        retrieval_ids = list(metadata.get("canonical_library_object_ids") or [])
+        retrieval_tokens = metadata.get("canonical_library_prompt_tokens")
+        if retrieval_tokens is None:
+            pipeline = metadata.get("pipeline")
+            if isinstance(pipeline, dict):
+                retrieval_tokens = pipeline.get("canonical_library_prompt_tokens")
+        try:
+            context_tokens = int(retrieval_tokens) if retrieval_tokens is not None else 0
+        except (TypeError, ValueError):
+            context_tokens = 0
+
+        return {
+            "answer": self.answer_text,
+            "retrieval": {
+                "result_count": len(retrieval_ids),
+                "entry_ids": retrieval_ids,
+                "context_tokens": context_tokens,
+            },
+            "model": {
+                "provider": metadata.get("adapter_type") or metadata.get("provider"),
+                "model": metadata.get("model") or metadata.get("configured_model"),
+            },
+        }
 
 
 @dataclass

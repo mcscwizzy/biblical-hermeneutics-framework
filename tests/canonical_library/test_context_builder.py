@@ -4,7 +4,12 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from framework.canonical_library import CanonicalContextBuilder, CanonicalLibrary, CanonicalRelationship
+from framework.canonical_library import (
+    CanonicalContextBuilder,
+    CanonicalLibrary,
+    CanonicalRelationship,
+    build_canonical_prompt_context,
+)
 
 from .helpers import make_object, write_library
 
@@ -520,6 +525,100 @@ class CanonicalContextBuilderTests(unittest.TestCase):
         self.assertEqual([item["id"] for item in low_budget], ["beta"])
         self.assertEqual([item["id"] for item in high_budget], ["beta", "gamma"])
         self.assertLess(len(low_budget), len(high_budget))
+
+    def test_builds_compact_prompt_context_from_retrieved_topics(self) -> None:
+        library = CanonicalLibrary.load_default()
+        builder = CanonicalContextBuilder(library)
+        rich_context = builder.build(
+            "Why is Shechem important in Joshua 24?",
+            limit=4,
+            include_placeholders=True,
+            allowed_statuses=("unreviewed", "in_review", "reviewed", "approved"),
+        )
+
+        compact = build_canonical_prompt_context(
+            rich_context,
+            max_context_tokens=600,
+            max_entries=4,
+            max_facts_per_entry=3,
+            max_scripture_references_per_entry=4,
+            max_caution_notes_per_entry=2,
+        )
+
+        self.assertGreaterEqual(compact["metadata"]["entry_count"], 1)
+        self.assertLessEqual(compact["metadata"]["entry_count"], 4)
+        self.assertLessEqual(compact["metadata"]["estimated_tokens"], 600)
+
+        shechem_entry = next(entry for entry in compact["entries"] if entry["id"] == "shechem")
+        self.assertEqual(shechem_entry["title"], "Shechem")
+        self.assertEqual(shechem_entry["category"], "Place")
+        self.assertEqual(shechem_entry["source_ids"], ["shechem"])
+        self.assertTrue(shechem_entry["summary"])
+        self.assertTrue(shechem_entry["facts"])
+        self.assertGreater(compact["metadata"]["scripture_reference_count"], 0)
+        self.assertTrue(
+            any(
+                any("Joshua 24" in reference for reference in entry["scripture_references"])
+                for entry in compact["entries"]
+            )
+        )
+        self.assertGreater(compact["metadata"]["caution_note_count"], 0)
+        self.assertNotIn("score", shechem_entry)
+        self.assertNotIn("match_type", shechem_entry)
+        self.assertNotIn("estimated_tokens", shechem_entry)
+
+    def test_builds_compact_prompt_context_deduplicating_repeated_text(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_library(
+                root,
+                [
+                    make_object(
+                        "duplicate-entry",
+                        "place",
+                        "Duplicate Entry",
+                        ["duplicate entry"],
+                        summary="Duplicate entry summary.",
+                        historical_context="Repeated factual sentence.",
+                        literary_context="Repeated factual sentence.",
+                        covenantal_significance="Repeated factual sentence.",
+                        interpretive_notes=[
+                            "Repeated caution sentence.",
+                            "Repeated caution sentence.",
+                        ],
+                        scripture_references=[
+                            {"reference": "Genesis 1:1", "relationship": "primary", "notes": "first"},
+                            {
+                                "reference": "Genesis 1:1",
+                                "relationship": "supporting",
+                                "notes": "duplicate",
+                            },
+                        ],
+                    ),
+                ],
+            )
+            library = CanonicalLibrary(root=root).load()
+            builder = CanonicalContextBuilder(library)
+            rich_context = builder.build("Duplicate entry", limit=1)
+
+        compact = build_canonical_prompt_context(
+            rich_context,
+            max_context_tokens=300,
+            max_entries=1,
+            max_facts_per_entry=5,
+            max_scripture_references_per_entry=5,
+            max_caution_notes_per_entry=5,
+        )
+
+        entry = compact["entries"][0]
+        self.assertEqual(entry["summary"], "Duplicate entry summary.")
+        self.assertEqual(entry["facts"], ["Repeated factual sentence."])
+        self.assertEqual(len(entry["scripture_references"]), 1)
+        self.assertTrue(entry["scripture_references"][0].startswith("Genesis 1:1 - "))
+        self.assertEqual(entry["caution_notes"], ["Repeated caution sentence."])
+        self.assertEqual(compact["metadata"]["fact_count"], 1)
+        self.assertEqual(compact["metadata"]["scripture_reference_count"], 1)
+        self.assertEqual(compact["metadata"]["caution_note_count"], 1)
 
 
 if __name__ == "__main__":

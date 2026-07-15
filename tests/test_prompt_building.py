@@ -24,11 +24,13 @@ class PromptBuildingTests(unittest.TestCase):
         )
 
         self.assertIn("PROFILE CONTENT", system_prompt)
+        self.assertIn("# SYSTEM INSTRUCTIONS", system_prompt)
         self.assertIn("BHF Agent Runtime Instructions", system_prompt)
         self.assertIn("Standard Runtime Strategy", system_prompt)
-        self.assertIn("retrieve the curated local map data before answering", system_prompt.lower())
+        self.assertIn("use the curated local map data if it is supplied", system_prompt.lower())
         self.assertIn("Book: Proverbs", system_prompt)
         self.assertIn("Primary genre: wisdom literature", system_prompt)
+        self.assertIn("# OUTPUT REQUIREMENTS", system_prompt)
         self.assertEqual(user_prompt, "What does Proverbs 3 mean?")
 
     def test_minimal_profile_gets_strict_small_model_instructions(self):
@@ -263,16 +265,18 @@ class PromptBuildingTests(unittest.TestCase):
             canonical_context_prompt=canonical_prompt,
         )
 
-        self.assertIn("# Canonical Knowledge Library", system_prompt)
-        self.assertIn("Retrieved object IDs:", system_prompt)
-        self.assertIn("shechem", system_prompt)
-        self.assertIn("abraham", system_prompt)
-        self.assertIn("joshua-son-of-nun", system_prompt)
-        self.assertIn("joshua", system_prompt)
+        self.assertIn("# CANONICAL KNOWLEDGE CONTEXT", system_prompt)
+        self.assertIn("You are the explanation layer for the Biblical Hermeneutics Framework.", system_prompt)
+        self.assertIn("Use that context as your primary factual source.", system_prompt)
+        self.assertIn("Entry: Shechem", system_prompt)
+        self.assertIn("Source ID: shechem", system_prompt)
+        self.assertIn("Abraham", system_prompt)
+        self.assertIn("Joshua 24", system_prompt)
         self.assertLess(
-            system_prompt.index("# Canonical Knowledge Library"),
+            system_prompt.index("# CANONICAL KNOWLEDGE CONTEXT"),
             system_prompt.index("Local Curated Knowledge"),
         )
+        self.assertIn("# OUTPUT REQUIREMENTS", system_prompt)
 
     def test_prompt_uses_scripture_reverse_lookup_for_joshua_24(self):
         question = "Which objects relate to Joshua 24?"
@@ -290,12 +294,16 @@ class PromptBuildingTests(unittest.TestCase):
         )
         canonical_prompt = format_canonical_context_for_prompt(canonical_context, max_context_tokens=1200)
 
-        self.assertIn("Retrieved object IDs:", canonical_prompt)
-        self.assertIn("shechem", canonical_prompt)
-        self.assertIn("joshua-son-of-nun", canonical_prompt)
-        self.assertIn("joshua", canonical_prompt)
-        self.assertIn("abraham", canonical_prompt)
-        self.assertIn("covenant-theme", canonical_prompt)
+        self.assertIn("## Entry: Shechem", canonical_prompt)
+        self.assertIn("Source ID: shechem", canonical_prompt)
+        self.assertIn("Joshua 24:1-28", canonical_prompt)
+        self.assertIn("Joshua 24:32", canonical_prompt)
+        self.assertIn("Abraham", canonical_prompt)
+        self.assertNotIn("Retrieved object IDs:", canonical_prompt)
+        self.assertNotIn("Score:", canonical_prompt)
+        self.assertNotIn("Match:", canonical_prompt)
+        self.assertNotIn("Status:", canonical_prompt)
+        self.assertNotIn("# Canonical Knowledge Context", canonical_prompt)
 
     def test_canonical_context_prompt_uses_answer_mode_tiers(self):
         question = "Why did Israel renew the covenant where Abraham first entered the land at Shechem in Joshua 24?"
@@ -325,12 +333,12 @@ class PromptBuildingTests(unittest.TestCase):
             answer_mode="scholar",
         )
 
-        self.assertIn("Answer mode: concise", concise_prompt)
-        self.assertIn("Context tier: compact", concise_prompt)
-        self.assertIn("Answer mode: scholar", scholar_prompt)
-        self.assertIn("Context tier: scholar", scholar_prompt)
-        self.assertIn("Estimated tokens:", scholar_prompt)
-        self.assertNotIn("Ancient Near East context", concise_prompt)
+        self.assertIn("## Entry: Shechem", concise_prompt)
+        self.assertIn("## Entry: Shechem", scholar_prompt)
+        self.assertIn("Summary:", concise_prompt)
+        self.assertIn("Relevant facts:", scholar_prompt)
+        self.assertNotIn("Retrieved object IDs:", concise_prompt)
+        self.assertNotIn("Retrieved object IDs:", scholar_prompt)
         self.assertLess(len(concise_prompt), len(scholar_prompt))
 
     def test_prompt_includes_local_session_memory_when_available(self):

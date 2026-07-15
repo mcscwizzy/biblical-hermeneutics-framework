@@ -49,6 +49,7 @@ class OllamaAdapterTests(unittest.TestCase):
             model="qwen2.5:0.5b",
             temperature=0.2,
             max_tokens=128,
+            response_format={"type": "json_object"},
         )
 
         with patch("urllib.request.urlopen", fake_urlopen):
@@ -60,8 +61,11 @@ class OllamaAdapterTests(unittest.TestCase):
         self.assertFalse(captured["body"]["stream"])
         self.assertEqual(captured["body"]["options"]["temperature"], 0.2)
         self.assertEqual(captured["body"]["options"]["num_predict"], 128)
+        self.assertEqual(captured["body"]["format"], "json")
         self.assertEqual(response.text, "answer")
         self.assertEqual(response.model, "qwen2.5:0.5b")
+        self.assertEqual(response.provider, "ollama")
+        self.assertIsNotNone(response.latency_ms)
 
     def test_health_check_reports_installed_model(self):
         def fake_urlopen(request, timeout=None):

@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
+import ast
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any, Iterable, Mapping
 
 from .normalization import normalize_alias
@@ -22,7 +24,7 @@ class ScriptureReferenceSpan:
 def build_book_alias_lookup(objects: Iterable[Any]) -> dict[str, str]:
     """Build a normalized alias -> canonical book title lookup."""
 
-    lookup: dict[str, str] = {}
+    lookup: dict[str, str] = _standard_book_alias_lookup()
     for obj in objects:
         title = str(getattr(obj, "title", "") or "").strip()
         if not title:
@@ -33,6 +35,58 @@ def build_book_alias_lookup(objects: Iterable[Any]) -> dict[str, str]:
             if alias_text:
                 lookup[normalize_alias(alias_text)] = title
     return lookup
+
+
+def _standard_book_alias_lookup() -> dict[str, str]:
+    lookup: dict[str, str] = {}
+    for canonical_book, (_testament, _genre, aliases) in LEGACY_REFERENCE_BOOKS.items():
+        canonical = normalize_alias(canonical_book)
+        if canonical:
+            lookup[canonical] = canonical_book
+        for alias in aliases:
+            alias_text = normalize_alias(alias)
+            if alias_text:
+                lookup[alias_text] = canonical_book
+    return lookup
+
+
+def _load_legacy_reference_books() -> dict[str, tuple[str, str, tuple[str, ...]]]:
+    source_path = Path(__file__).resolve().parents[2] / "bhf_agent" / "references.py"
+    if not source_path.exists():
+        return {}
+    try:
+        module = ast.parse(source_path.read_text(encoding="utf-8"), filename=str(source_path))
+    except OSError:
+        return {}
+    for node in module.body:
+        value_node = None
+        targets: list[ast.expr] = []
+        if isinstance(node, ast.Assign):
+            value_node = node.value
+            targets = list(node.targets)
+        elif isinstance(node, ast.AnnAssign):
+            value_node = node.value
+            if node.target is not None:
+                targets = [node.target]
+        else:
+            continue
+        for target in targets:
+            if not isinstance(target, ast.Name) or target.id != "BOOKS":
+                continue
+            if value_node is None:
+                return {}
+            try:
+                value = ast.literal_eval(value_node)
+            except (ValueError, SyntaxError):
+                return {}
+            if isinstance(value, dict):
+                return value
+    return {}
+
+
+LEGACY_REFERENCE_BOOKS: Mapping[str, tuple[str, str, tuple[str, ...]]] = (
+    _load_legacy_reference_books()
+)
 
 
 def parse_scripture_reference(

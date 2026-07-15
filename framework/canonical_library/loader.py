@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import logging
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Sequence
@@ -36,6 +37,9 @@ from .schema import (
     validate_library,
     validate_object,
 )
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 def _package_root() -> Path:
@@ -112,6 +116,7 @@ class CanonicalLibrary:
             try:
                 obj = validate_object(raw, path=self._relative_path(path))
             except CanonicalValidationError as exc:
+                LOGGER.error("%s", exc)
                 errors.append(str(exc))
                 continue
             if obj.id in source_paths:
@@ -168,6 +173,7 @@ class CanonicalLibrary:
         try:
             validate_library(objects, manifest=manifest, source_paths=source_paths)
         except CanonicalValidationError as exc:
+            LOGGER.error("%s", exc)
             errors.append(str(exc))
 
         if errors:

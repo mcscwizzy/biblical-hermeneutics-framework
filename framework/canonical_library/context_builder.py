@@ -3,10 +3,11 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Any, Mapping
+import re
+from typing import Any, Mapping, Sequence
 
 from .loader import CanonicalLibrary
-from .normalization import normalize_id
+from .normalization import normalize_id, normalize_text, tokenize_query
 from .retrieval import RetrievalResult
 
 
@@ -15,6 +16,29 @@ LEGACY_RELATIONSHIP_TYPES: dict[str, str] = {
     "related_places": "associated-place",
     "related_events": "associated-event",
 }
+
+CKL_MAX_CONTEXT_TOKENS = 3000
+CKL_MAX_ENTRIES = 8
+CKL_MAX_FACTS_PER_ENTRY = 5
+CKL_MAX_SCRIPTURE_REFERENCES_PER_ENTRY = 6
+CKL_MAX_CAUTIONS_PER_ENTRY = 3
+
+_PROMPT_FACT_FIELD_WEIGHTS: tuple[tuple[str, int], ...] = (
+    ("covenantal_significance", 120),
+    ("historical_context", 110),
+    ("literary_context", 100),
+    ("ancient_near_east_context", 95),
+    ("timeline", 85),
+    ("archaeology", 80),
+    ("new_testament_connections", 75),
+)
+
+_PROMPT_CAUTION_FIELD_WEIGHTS: tuple[tuple[str, int], ...] = (
+    ("interpretive_notes", 100),
+)
+
+_SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+")
+_CLAUSE_SPLIT_RE = re.compile(r"\s*;\s*")
 
 
 def _dedupe_extend(target: list[Any], values: list[Any], *, limit: int | None = None) -> None:
@@ -456,3 +480,475 @@ class CanonicalContextBuilder:
         deduped: list[dict[str, Any]] = []
         _dedupe_relationships_extend(deduped, relationships)
         return deduped
+
+
+def build_canonical_prompt_context(
+    context: Mapping[str, Any] | None,
+    *,
+    max_context_tokens: int = CKL_MAX_CONTEXT_TOKENS,
+    max_entries: int = CKL_MAX_ENTRIES,
+    max_facts_per_entry: int = CKL_MAX_FACTS_PER_ENTRY,
+    max_scripture_references_per_entry: int = CKL_MAX_SCRIPTURE_REFERENCES_PER_ENTRY,
+    max_caution_notes_per_entry: int = CKL_MAX_CAUTIONS_PER_ENTRY,
+) -> dict[str, Any]:
+    """Project rich CKL retrieval output into a compact prompt-safe structure."""
+
+    token_budget = max(0, int(max_context_tokens))
+    entry_limit = max(0, int(max_entries))
+    fact_limit = max(0, int(max_facts_per_entry))
+    reference_limit = max(0, int(max_scripture_references_per_entry))
+    caution_limit = max(0, int(max_caution_notes_per_entry))
+
+    retrieved_topics = list(context.get("retrieved_topics") or []) if context else []
+    if not retrieved_topics or token_budget <= 0 or entry_limit <= 0:
+        return {
+            "entries": [],
+            "metadata": {
+                "token_budget": token_budget,
+                "max_entries": entry_limit,
+                "max_facts_per_entry": fact_limit,
+                "max_scripture_references_per_entry": reference_limit,
+                "max_caution_notes_per_entry": caution_limit,
+                "entry_count": 0,
+                "fact_count": 0,
+                "scripture_reference_count": 0,
+                "caution_note_count": 0,
+                "estimated_tokens": 0,
+                "remaining_tokens": token_budget,
+                "truncated": False,
+                "selected_entry_ids": [],
+            },
+        }
+
+    query_source = str((context or {}).get("query") or (context or {}).get("question") or "").strip()
+    query_terms = tuple(dict.fromkeys(tokenize_query(query_source))) if query_source else ()
+
+    prompt_entries: list[dict[str, Any]] = []
+    seen_texts: set[str] = set()
+    seen_references: set[str] = set()
+    remaining_tokens = token_budget
+    truncated = False
+
+    for topic in retrieved_topics[:entry_limit]:
+        entry, entry_tokens, entry_truncated = _build_prompt_context_entry(
+            topic,
+            query_terms=query_terms,
+            remaining_tokens=remaining_tokens,
+            max_facts_per_entry=fact_limit,
+            max_scripture_references_per_entry=reference_limit,
+            max_caution_notes_per_entry=caution_limit,
+            seen_texts=seen_texts,
+            seen_references=seen_references,
+        )
+        if entry is None:
+            continue
+        if entry_tokens > remaining_tokens and prompt_entries:
+            truncated = True
+            break
+
+        prompt_entries.append(entry)
+        remaining_tokens = max(0, remaining_tokens - entry_tokens)
+        truncated = truncated or entry_truncated
+
+        for text in (entry.get("summary"), *entry.get("facts", []), *entry.get("caution_notes", [])):
+            key = normalize_text(str(text or "").strip())
+            if key:
+                seen_texts.add(key)
+        for reference in entry.get("scripture_references", []):
+            key = normalize_text(str(reference or "").strip())
+            if key:
+                seen_references.add(key)
+
+        if remaining_tokens <= 0:
+            if len(prompt_entries) < len(retrieved_topics):
+                truncated = True
+            break
+
+    metadata = {
+        "token_budget": token_budget,
+        "max_entries": entry_limit,
+        "max_facts_per_entry": fact_limit,
+        "max_scripture_references_per_entry": reference_limit,
+        "max_caution_notes_per_entry": caution_limit,
+        "entry_count": len(prompt_entries),
+        "fact_count": sum(len(entry.get("facts") or []) for entry in prompt_entries),
+        "scripture_reference_count": sum(len(entry.get("scripture_references") or []) for entry in prompt_entries),
+        "caution_note_count": sum(len(entry.get("caution_notes") or []) for entry in prompt_entries),
+        "estimated_tokens": sum(_estimate_prompt_context_entry_tokens(entry) for entry in prompt_entries),
+        "remaining_tokens": remaining_tokens,
+        "truncated": truncated or len(prompt_entries) < len(retrieved_topics),
+        "selected_entry_ids": [str(entry.get("id") or "").strip() for entry in prompt_entries if str(entry.get("id") or "").strip()],
+    }
+    return {"entries": prompt_entries, "metadata": metadata}
+
+
+def _build_prompt_context_entry(
+    topic: Mapping[str, Any],
+    *,
+    query_terms: Sequence[str],
+    remaining_tokens: int,
+    max_facts_per_entry: int,
+    max_scripture_references_per_entry: int,
+    max_caution_notes_per_entry: int,
+    seen_texts: set[str],
+    seen_references: set[str],
+) -> tuple[dict[str, Any] | None, int, bool]:
+    object_id = normalize_id(str(topic.get("id") or "").strip())
+    if not object_id or remaining_tokens <= 0:
+        return None, 0, False
+
+    title = _normalize_prompt_text(topic.get("title") or object_id) or object_id
+    category = _humanize_prompt_category(topic.get("type"))
+
+    local_seen_texts = set(seen_texts)
+    local_seen_references = set(seen_references)
+
+    summary = _first_prompt_sentence(topic.get("summary"))
+    summary = _trim_prompt_text(summary, min(remaining_tokens, 64))
+    summary_key = normalize_text(summary)
+    if summary_key:
+        local_seen_texts.add(summary_key)
+
+    fact_candidates = _collect_ranked_prompt_texts(
+        topic,
+        field_weights=_PROMPT_FACT_FIELD_WEIGHTS,
+        query_terms=query_terms,
+        seen_keys=local_seen_texts,
+    )
+    if not summary and fact_candidates:
+        summary_candidate = fact_candidates.pop(0)
+        summary = _trim_prompt_text(summary_candidate["text"], min(remaining_tokens, 64))
+        summary_key = normalize_text(summary)
+        if summary_key:
+            local_seen_texts.add(summary_key)
+
+    selected_facts = _select_ranked_prompt_texts(
+        fact_candidates,
+        limit=max_facts_per_entry,
+        seen_keys=local_seen_texts,
+    )
+
+    reference_candidates = _collect_ranked_scripture_references(
+        topic,
+        query_terms=query_terms,
+        seen_keys=local_seen_references,
+    )
+    selected_references = _select_ranked_prompt_texts(
+        reference_candidates,
+        limit=max_scripture_references_per_entry,
+        seen_keys=local_seen_references,
+    )
+
+    caution_candidates = _collect_ranked_prompt_texts(
+        topic,
+        field_weights=_PROMPT_CAUTION_FIELD_WEIGHTS,
+        query_terms=query_terms,
+        seen_keys=local_seen_texts,
+    )
+    selected_cautions = _select_ranked_prompt_texts(
+        caution_candidates,
+        limit=max_caution_notes_per_entry,
+        seen_keys=local_seen_texts,
+    )
+
+    if not selected_cautions:
+        content_status = str(topic.get("content_status") or "").strip().lower()
+        review_status = str(topic.get("review_status") or "").strip().lower()
+        if content_status and content_status not in {"complete", "approved"}:
+            selected_cautions.append(
+                "Treat this entry as provisional and confirm the cited passages before drawing a final conclusion."
+            )
+        elif review_status and review_status not in {"reviewed", "approved"}:
+            selected_cautions.append(
+                "Treat this entry carefully and confirm the cited passages before drawing a final conclusion."
+            )
+        if selected_cautions:
+            local_seen_texts.add(normalize_text(selected_cautions[0]))
+
+    entry: dict[str, Any] = {
+        "id": object_id,
+        "title": title,
+        "category": category,
+        "summary": summary,
+        "facts": selected_facts,
+        "scripture_references": selected_references,
+        "caution_notes": selected_cautions,
+        "source_ids": [object_id],
+    }
+
+    entry_tokens = _estimate_prompt_context_entry_tokens(entry)
+    truncated = False
+    entry, entry_tokens, trimmed = _shrink_prompt_context_entry(entry, remaining_tokens)
+    truncated = truncated or trimmed
+
+    if entry_tokens <= 0:
+        return None, 0, truncated
+
+    return entry, entry_tokens, truncated
+
+
+def _collect_ranked_prompt_texts(
+    topic: Mapping[str, Any],
+    *,
+    field_weights: tuple[tuple[str, int], ...],
+    query_terms: Sequence[str],
+    seen_keys: set[str],
+) -> list[dict[str, Any]]:
+    candidates: list[dict[str, Any]] = []
+    for field_order, (field_name, base_weight) in enumerate(field_weights):
+        for value_index, text in enumerate(_iter_prompt_text_segments(topic.get(field_name))):
+            normalized = normalize_text(text)
+            if not normalized or normalized in seen_keys:
+                continue
+            score = base_weight + _prompt_query_bonus(normalized, query_terms)
+            candidates.append(
+                {
+                    "score": score,
+                    "field_order": field_order,
+                    "value_index": value_index,
+                    "text": text,
+                    "key": normalized,
+                }
+            )
+    candidates.sort(key=lambda item: (-int(item["score"]), int(item["field_order"]), int(item["value_index"]), str(item["text"])))
+    return candidates
+
+
+def _collect_ranked_scripture_references(
+    topic: Mapping[str, Any],
+    *,
+    query_terms: Sequence[str],
+    seen_keys: set[str],
+) -> list[dict[str, Any]]:
+    candidates: list[dict[str, Any]] = []
+    for value_index, value in enumerate(topic.get("scripture_references") or []):
+        reference = ""
+        notes = ""
+        if isinstance(value, Mapping):
+            reference = _normalize_prompt_text(value.get("reference"))
+            notes = _normalize_prompt_text(value.get("notes"))
+        else:
+            reference = _normalize_prompt_text(value)
+        if not reference:
+            continue
+        normalized = normalize_text(reference)
+        if not normalized or normalized in seen_keys:
+            continue
+        rendered = reference if not notes else f"{reference} - {notes}"
+        score = 100 + _prompt_query_bonus(reference, query_terms) + _prompt_query_bonus(notes, query_terms)
+        candidates.append(
+            {
+                "score": score,
+                "field_order": value_index,
+                "value_index": value_index,
+                "text": rendered,
+                "key": normalized,
+            }
+        )
+    candidates.sort(key=lambda item: (-int(item["score"]), int(item["field_order"]), int(item["value_index"]), str(item["text"])))
+    return candidates
+
+
+def _select_ranked_prompt_texts(
+    candidates: list[dict[str, Any]],
+    *,
+    limit: int,
+    seen_keys: set[str],
+) -> list[str]:
+    if limit <= 0:
+        return []
+    selected: list[str] = []
+    for candidate in candidates:
+        if len(selected) >= limit:
+            break
+        key = str(candidate.get("key") or "").strip()
+        if not key or key in seen_keys:
+            continue
+        text = _normalize_prompt_text(candidate.get("text"))
+        if not text:
+            continue
+        selected.append(text)
+        seen_keys.add(key)
+    return selected
+
+
+def _normalize_prompt_text(value: Any) -> str:
+    if value is None:
+        return ""
+    return " ".join(str(value).split()).strip()
+
+
+def _prompt_query_bonus(text: str, query_terms: Sequence[str]) -> int:
+    normalized = normalize_text(text)
+    if not normalized or not query_terms:
+        return 0
+    matches = 0
+    for term in dict.fromkeys(query_terms):
+        term_text = normalize_text(str(term or "").strip())
+        if term_text and term_text in normalized:
+            matches += 1
+    return matches * 20
+
+
+def _iter_prompt_text_segments(value: Any) -> list[str]:
+    if value is None:
+        return []
+    if isinstance(value, str):
+        return _split_prompt_text_segments(value)
+    if isinstance(value, Mapping):
+        pieces: list[str] = []
+        for nested_value in value.values():
+            pieces.extend(_iter_prompt_text_segments(nested_value))
+        return pieces
+    if isinstance(value, (list, tuple)):
+        pieces: list[str] = []
+        for item in value:
+            pieces.extend(_iter_prompt_text_segments(item))
+        return pieces
+    text = _normalize_prompt_text(value)
+    return [text] if text else []
+
+
+def _split_prompt_text_segments(text: str) -> list[str]:
+    normalized = _normalize_prompt_text(text)
+    if not normalized:
+        return []
+    segments: list[str] = []
+    for sentence in _SENTENCE_SPLIT_RE.split(normalized):
+        sentence = _normalize_prompt_text(sentence)
+        if not sentence:
+            continue
+        for clause in _CLAUSE_SPLIT_RE.split(sentence):
+            clause = _normalize_prompt_text(clause)
+            if clause:
+                segments.append(clause)
+    return segments or [normalized]
+
+
+def _first_prompt_sentence(value: Any) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, str):
+        segments = _split_prompt_text_segments(value)
+        return segments[0] if segments else _normalize_prompt_text(value)
+    if isinstance(value, Mapping):
+        for nested_value in value.values():
+            sentence = _first_prompt_sentence(nested_value)
+            if sentence:
+                return sentence
+        return ""
+    if isinstance(value, (list, tuple)):
+        for item in value:
+            sentence = _first_prompt_sentence(item)
+            if sentence:
+                return sentence
+        return ""
+    return _normalize_prompt_text(value)
+
+
+def _trim_prompt_text(value: str, max_tokens: int) -> str:
+    text = _normalize_prompt_text(value)
+    if not text:
+        return ""
+    if max_tokens <= 0 or _estimate_text_tokens(text) <= max_tokens:
+        return text
+    max_chars = max(16, int(max_tokens) * 4)
+    trimmed = text[:max_chars].rstrip()
+    if not trimmed:
+        return text[:max(1, max_chars)].strip()
+    if len(trimmed) < len(text):
+        trimmed = trimmed.rstrip(" ,;:.-") + "..."
+    return trimmed
+
+
+def _humanize_prompt_category(value: Any) -> str:
+    text = _normalize_prompt_text(value)
+    if not text:
+        return "Unknown"
+    return text.replace("_", " ").title()
+
+
+def _estimate_prompt_context_entry_tokens(entry: Mapping[str, Any]) -> int:
+    lines = [
+        f"## Entry: {str(entry.get('title') or entry.get('id') or 'unknown').strip()}",
+        f"Category: {_normalize_prompt_text(entry.get('category')) or 'Unknown'}",
+    ]
+    summary = _normalize_prompt_text(entry.get("summary"))
+    if summary:
+        lines.append(f"Summary: {summary}")
+    facts = [str(item).strip() for item in entry.get("facts") or [] if str(item).strip()]
+    if facts:
+        lines.append("Relevant facts:")
+        lines.extend(f"- {fact}" for fact in facts)
+    scripture_references = [str(item).strip() for item in entry.get("scripture_references") or [] if str(item).strip()]
+    if scripture_references:
+        lines.append("Scripture references:")
+        lines.extend(f"- {reference}" for reference in scripture_references)
+    caution_notes = [str(item).strip() for item in entry.get("caution_notes") or [] if str(item).strip()]
+    if caution_notes:
+        lines.append("Caution / interpretation notes:")
+        lines.extend(f"- {note}" for note in caution_notes)
+    source_ids = [str(item).strip() for item in entry.get("source_ids") or [] if str(item).strip()]
+    if source_ids:
+        lines.append(f"Source ID: {source_ids[0]}")
+    return _estimate_text_tokens("\n".join(lines))
+
+
+def _shrink_prompt_context_entry(
+    entry: dict[str, Any],
+    max_tokens: int,
+) -> tuple[dict[str, Any], int, bool]:
+    truncated = False
+    budget = max(0, int(max_tokens))
+    if budget <= 0:
+        return entry, 0, False
+
+    entry = dict(entry)
+    entry["facts"] = list(entry.get("facts") or [])
+    entry["scripture_references"] = list(entry.get("scripture_references") or [])
+    entry["caution_notes"] = list(entry.get("caution_notes") or [])
+    entry["source_ids"] = list(entry.get("source_ids") or [])
+    entry["summary"] = _normalize_prompt_text(entry.get("summary"))
+
+    def entry_tokens() -> int:
+        return _estimate_prompt_context_entry_tokens(entry)
+
+    while entry_tokens() > budget and entry["caution_notes"]:
+        entry["caution_notes"].pop()
+        truncated = True
+    while entry_tokens() > budget and entry["scripture_references"]:
+        entry["scripture_references"].pop()
+        truncated = True
+    while entry_tokens() > budget and entry["facts"]:
+        entry["facts"].pop()
+        truncated = True
+
+    if entry["summary"]:
+        while entry_tokens() > budget:
+            shorter = _trim_prompt_text(entry["summary"], max(4, budget // 2))
+            if not shorter or shorter == entry["summary"]:
+                break
+            entry["summary"] = shorter
+            truncated = True
+    if entry["summary"] and entry_tokens() > budget:
+        entry["summary"] = ""
+        truncated = True
+
+    tokens = entry_tokens()
+    if tokens > budget:
+        minimal_entry = {
+            "id": entry.get("id"),
+            "title": entry.get("title"),
+            "category": entry.get("category"),
+            "summary": "",
+            "facts": [],
+            "scripture_references": [],
+            "caution_notes": [],
+            "source_ids": list(entry.get("source_ids") or []),
+        }
+        minimal_tokens = _estimate_prompt_context_entry_tokens(minimal_entry)
+        if minimal_tokens <= budget:
+            return minimal_entry, minimal_tokens, True
+        return entry, tokens, truncated
+
+    return entry, tokens, truncated
