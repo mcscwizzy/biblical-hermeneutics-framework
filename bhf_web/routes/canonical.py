@@ -7,7 +7,7 @@ from functools import lru_cache
 from typing import Any
 
 from fastapi import FastAPI, Query, Request
-from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
+from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse, Response
 
 from bhf_agent.ckl import build_canonical_context, load_canonical_library
 from framework.canonical_library.authoring import write_json_file
@@ -141,7 +141,7 @@ def register_canonical_editor_routes(app: FastAPI, *, templates: Any) -> None:
         )
 
     @app.post("/canonical/editor/{object_id}", response_class=HTMLResponse)
-    async def save_canonical_editor_object(request: Request, object_id: str) -> RedirectResponse | HTMLResponse:
+    async def save_canonical_editor_object(request: Request, object_id: str) -> Response:
         library = _canonical_library()
         source_path = library.source_path_for(object_id)
         if source_path is None:
