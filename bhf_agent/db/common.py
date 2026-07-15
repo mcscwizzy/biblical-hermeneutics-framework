@@ -2,11 +2,14 @@
 
 from __future__ import annotations
 
+import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 from ..bible import BibleError, normalize_book_name
+from framework.canonical_library.normalization import normalize_id
 
 
 DEFAULT_DB_PATH = Path(".bhf") / "study.sqlite"
@@ -80,6 +83,7 @@ def validated_note(data: dict[str, Any]) -> dict[str, Any]:
     return {
         **reference,
         "body": body,
+        "canonical_object_ids": _canonical_object_ids(data.get("canonical_object_ids")),
     }
 
 
@@ -124,6 +128,7 @@ def validated_saved_study(data: dict[str, Any]) -> dict[str, Any]:
         "question": question,
         "answer": answer,
         "title": title,
+        "canonical_object_ids": _canonical_object_ids(data.get("canonical_object_ids")),
     }
 
 
@@ -149,6 +154,9 @@ def note_from_row(row: Any) -> dict[str, Any]:
         "end_verse": int(row["verse_end"]),
         "selected_text": row["selected_text"],
         "body": row["note_body"],
+        "canonical_object_ids": _canonical_object_ids(
+            row["canonical_object_ids"] if "canonical_object_ids" in row.keys() else []
+        ),
         "created_at": row["created_at"],
         "updated_at": row["updated_at"],
     }
@@ -180,7 +188,47 @@ def saved_study_from_row(row: Any) -> dict[str, Any]:
         "study_type": row["study_type"],
         "question": row["question"],
         "answer": row["answer"],
+        "canonical_object_ids": _canonical_object_ids(
+            row["canonical_object_ids"] if "canonical_object_ids" in row.keys() else []
+        ),
         "created_at": row["created_at"],
         "updated_at": row["updated_at"],
     }
 
+
+def _canonical_object_ids(value: Any) -> list[str]:
+    if value is None:
+        return []
+
+    raw_values: list[Any]
+    if isinstance(value, list):
+        raw_values = value
+    elif isinstance(value, str):
+        text = value.strip()
+        if not text:
+            return []
+        if text.startswith("["):
+            try:
+                parsed = json.loads(text)
+            except json.JSONDecodeError:
+                parsed = [part for part in re.split(r"[,\n;]+", text) if part.strip()]
+            else:
+                raw_values = list(parsed) if isinstance(parsed, list) else [parsed]
+                return _canonical_object_ids(raw_values)
+        else:
+            raw_values = [part for part in re.split(r"[,\n;]+", text) if part.strip()]
+    else:
+        raw_values = [value]
+
+    normalized: list[str] = []
+    seen: set[str] = set()
+    for item in raw_values:
+        text = str(item or "").strip()
+        if not text:
+            continue
+        object_id = normalize_id(text)
+        if not object_id or object_id in seen:
+            continue
+        seen.add(object_id)
+        normalized.append(object_id)
+    return normalized

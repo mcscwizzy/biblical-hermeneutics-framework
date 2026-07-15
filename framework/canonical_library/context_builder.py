@@ -54,6 +54,64 @@ def _relationship_to_dict(value: Any) -> dict[str, Any]:
     }
 
 
+def _estimate_text_tokens(value: Any) -> int:
+    if value is None:
+        return 0
+    if hasattr(value, "to_dict"):
+        value = value.to_dict()
+    if isinstance(value, str):
+        text = value.strip()
+        if not text:
+            return 0
+        return max(1, round(len(text) / 4))
+    if isinstance(value, Mapping):
+        total = 0
+        for key in (
+            "id",
+            "reference",
+            "relationship",
+            "notes",
+            "title",
+            "locator",
+            "source_type",
+            "author",
+            "publisher",
+            "url",
+        ):
+            total += _estimate_text_tokens(value.get(key))
+        return total
+    if isinstance(value, list):
+        return sum(_estimate_text_tokens(item) for item in value)
+    text = str(value).strip()
+    if not text:
+        return 0
+    return max(1, round(len(text) / 4))
+
+
+def _estimate_object_tokens(obj: Any) -> int:
+    return sum(
+        _estimate_text_tokens(getattr(obj, field_name, None))
+        for field_name in (
+            "id",
+            "title",
+            "aliases",
+            "summary",
+            "historical_context",
+            "ancient_near_east_context",
+            "literary_context",
+            "covenantal_significance",
+            "scripture_references",
+            "common_questions",
+            "interpretive_notes",
+            "sources",
+            "related_objects",
+            "timeline",
+            "archaeology",
+            "new_testament_connections",
+        )
+    )
+
+
 @dataclass
 class CanonicalContextBuilder:
     library: CanonicalLibrary
@@ -140,6 +198,9 @@ class CanonicalContextBuilder:
                 "requested_limit": topic_limit,
                 "include_placeholders": include_placeholders,
                 "allowed_statuses": list(allowed_statuses) if allowed_statuses is not None else None,
+                "estimated_topic_tokens": sum(
+                    int(item.get("estimated_tokens") or 0) for item in retrieved
+                ),
             },
         }
 
@@ -197,7 +258,7 @@ class CanonicalContextBuilder:
             primary_results.append(primary)
 
         if len(primary_results) < limit:
-            for result in self.library.retrieve_by_keywords(
+            for result in self.library.retrieve_hybrid(
                 question,
                 limit=limit,
                 approved_only=approved_only,
@@ -269,6 +330,7 @@ class CanonicalContextBuilder:
                 "relationship": relationship,
                 "relationship_weight": relationship_weight,
                 "relationship_depth": relationship_depth,
+                "estimated_tokens": _estimate_object_tokens(obj),
             }
         )
         seen_ids.add(obj.id)
@@ -283,10 +345,12 @@ class CanonicalContextBuilder:
         exclude_rejected: bool,
         include_placeholders: bool,
         allowed_statuses: tuple[str, ...] | None,
+        token_budget: int | None = None,
     ) -> list[dict[str, Any]]:
         expanded: list[dict[str, Any]] = []
         current_frontier = list(seed_entries)
         current_depth = 0
+        remaining_tokens = None if token_budget is None else max(0, int(token_budget))
 
         while (
             current_frontier
@@ -338,6 +402,9 @@ class CanonicalContextBuilder:
                     continue
                 source_entry = current_frontier[source_index]
                 target_obj = self.library.objects_by_id[target_id]
+                estimated_tokens = _estimate_object_tokens(target_obj)
+                if remaining_tokens is not None and estimated_tokens > remaining_tokens and expanded:
+                    continue
                 self._append_topic(
                     expanded,
                     target_obj,
@@ -351,6 +418,8 @@ class CanonicalContextBuilder:
                     relationship_depth=current_depth + 1,
                 )
                 next_frontier.append(expanded[-1])
+                if remaining_tokens is not None:
+                    remaining_tokens = max(0, remaining_tokens - estimated_tokens)
 
             current_frontier = next_frontier
             current_depth += 1

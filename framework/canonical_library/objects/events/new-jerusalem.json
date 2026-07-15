@@ -7,11 +7,11 @@
     "tell me about new jerusalem",
     "why is new jerusalem important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "The eschatological city of Revelation 21-22 where God dwells with his people and creation is renewed.",
+  "historical_context": "New Jerusalem appears as the final hope of the biblical story, reshaping Zion imagery after judgment and exile.",
+  "ancient_near_east_context": "The vision reuses city and temple imagery familiar in the ancient world while transforming them around God\u2019s direct presence.",
+  "literary_context": "Revelation presents New Jerusalem as the climactic counterpart to Eden, Zion, and the temple.",
+  "covenantal_significance": "The city pictures the consummation of covenant promise: God with his people in an unbroken, holy dwelling place.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,87 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Treat the vision as theological consummation, not merely a fantasy map of the afterlife.",
+    "The city image gathers Eden, temple, and Zion imagery into one final picture of presence and renewal."
+  ],
+  "common_questions": [
+    "What is the New Jerusalem?",
+    "How does New Jerusalem relate to Eden and Zion?",
+    "Why does Revelation end with a city?"
+  ],
+  "sources": [
+    "Isaiah 65-66",
+    "Ezekiel 48",
+    "Revelation 21-22"
+  ],
+  "importance": 92,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Isaiah 65:17-25",
+      "relationship": "supporting",
+      "notes": "new heavens and new earth"
+    },
+    {
+      "reference": "Isaiah 66:22-23",
+      "relationship": "supporting",
+      "notes": "lasting worship"
+    },
+    {
+      "reference": "Ezekiel 48:30-35",
+      "relationship": "supporting",
+      "notes": "the city named the LORD is there"
+    },
+    {
+      "reference": "Revelation 21:1-27",
+      "relationship": "primary",
+      "notes": "new Jerusalem vision"
+    },
+    {
+      "reference": "Revelation 22:1-5",
+      "relationship": "supporting",
+      "notes": "river, tree, and unveiled reign"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "jerusalem",
+      "relationship": "eschatological-fulfillment",
+      "weight": 10,
+      "notes": "final Jerusalem imagery"
+    },
+    {
+      "id": "new-creation-theme",
+      "relationship": "canonical-fulfillment",
+      "weight": 10,
+      "notes": "renewed heaven and earth"
+    },
+    {
+      "id": "temple-theme",
+      "relationship": "presence-fulfillment",
+      "weight": 8,
+      "notes": "no temple because God is present"
+    },
+    {
+      "id": "resurrection-theme",
+      "relationship": "life-fulfillment",
+      "weight": 8,
+      "notes": "the world made new"
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "royal-consummation",
+      "weight": 7,
+      "notes": "God\u2019s reign fully revealed"
+    }
+  ]
 }

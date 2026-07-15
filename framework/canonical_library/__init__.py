@@ -5,7 +5,17 @@ from __future__ import annotations
 from .context_builder import CanonicalContextBuilder
 from .loader import CanonicalLibrary
 from .normalization import normalize_alias, normalize_id, normalize_text, tokenize_query
-from .public_cache import NullPublicAnswerCache, PublicAnswerCache, PublicCacheEntry
+from .public_cache import (
+    DEFAULT_PUBLIC_CACHE_PATH,
+    JsonPublicAnswerCache,
+    NullPublicAnswerCache,
+    PublicAnswerCache,
+    PublicCacheEntry,
+    load_framework_version,
+    load_framework_version_fingerprint,
+    normalize_public_question,
+    public_cache_key,
+)
 from .retrieval import (
     CanonicalRetriever,
     ExactCanonicalRetriever,
@@ -53,7 +63,13 @@ __all__ = [
     "FutureHybridRetriever",
     "PublicCacheEntry",
     "PublicAnswerCache",
+    "JsonPublicAnswerCache",
     "NullPublicAnswerCache",
+    "DEFAULT_PUBLIC_CACHE_PATH",
+    "load_framework_version",
+    "load_framework_version_fingerprint",
+    "normalize_public_question",
+    "public_cache_key",
     "normalize_text",
     "normalize_id",
     "normalize_alias",

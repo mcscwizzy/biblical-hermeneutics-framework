@@ -7,11 +7,11 @@
     "tell me about the exodus",
     "why is the exodus important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "God delivers Israel from slavery in Egypt by signs, judgment, and the Passover meal.",
+  "historical_context": "The exodus becomes the defining act of redemption in Israel's memory and the starting point for covenant nationhood.",
+  "ancient_near_east_context": "The story confronts imperial Egypt and recasts deliverance as the LORD's victory over human power and death.",
+  "literary_context": "Exodus 1-15 narrates oppression, calling, plagues, Passover, departure, and the sea crossing before the covenant at Sinai.",
+  "covenantal_significance": "The exodus establishes God as redeemer and grounds Israel's obedience in prior rescue.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,145 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "The exodus is not only a rescue from something but also a redemption into covenant relationship.",
+    "Later Scripture repeatedly uses exodus language to describe salvation and return."
+  ],
+  "common_questions": [
+    "Why is the exodus so important?",
+    "How does the exodus shape the rest of the Bible?",
+    "How does the exodus point to Jesus?"
+  ],
+  "sources": [
+    "Exodus 1-15",
+    "Deuteronomy 6",
+    "Psalm 78",
+    "Psalm 114",
+    "Isaiah 43",
+    "1 Corinthians 10",
+    "Hebrews 11"
+  ],
+  "importance": 100,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Exodus 3:1-22",
+      "relationship": "supporting",
+      "notes": "God calls Moses"
+    },
+    {
+      "reference": "Exodus 5:1-23",
+      "relationship": "supporting",
+      "notes": "Pharaoh resists Moses"
+    },
+    {
+      "reference": "Exodus 7:1-13",
+      "relationship": "supporting",
+      "notes": "signs begin"
+    },
+    {
+      "reference": "Exodus 8:1-32",
+      "relationship": "supporting",
+      "notes": "further plagues"
+    },
+    {
+      "reference": "Exodus 9:1-35",
+      "relationship": "supporting",
+      "notes": "severe plagues continue"
+    },
+    {
+      "reference": "Exodus 12:1-42",
+      "relationship": "primary",
+      "notes": "Passover and departure"
+    },
+    {
+      "reference": "Exodus 13:17-22",
+      "relationship": "supporting",
+      "notes": "pillar and guidance"
+    },
+    {
+      "reference": "Exodus 14:1-31",
+      "relationship": "supporting",
+      "notes": "sea crossing"
+    },
+    {
+      "reference": "Exodus 15:1-21",
+      "relationship": "supporting",
+      "notes": "song of deliverance"
+    },
+    {
+      "reference": "1 Corinthians 10:1-4",
+      "relationship": "supporting",
+      "notes": "Paul rereads exodus"
+    },
+    {
+      "reference": "Hebrews 11:23-29",
+      "relationship": "supporting",
+      "notes": "faith and the exodus"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "moses",
+      "relationship": "deliverer-anchor",
+      "weight": 10,
+      "notes": "Moses leads the exodus"
+    },
+    {
+      "id": "aaron",
+      "relationship": "supporting-leader",
+      "weight": 8,
+      "notes": "Aaron in the exodus"
+    },
+    {
+      "id": "egypt",
+      "relationship": "oppression-context",
+      "weight": 10,
+      "notes": "house of slavery"
+    },
+    {
+      "id": "passover",
+      "relationship": "redemption-rite",
+      "weight": 10,
+      "notes": "meal of deliverance"
+    },
+    {
+      "id": "red-sea-crossing",
+      "relationship": "deliverance-event",
+      "weight": 10,
+      "notes": "crossing through the sea"
+    },
+    {
+      "id": "wilderness-wandering",
+      "relationship": "journey-stage",
+      "weight": 8,
+      "notes": "post-exodus testing"
+    },
+    {
+      "id": "mount-sinai",
+      "relationship": "covenant-location",
+      "weight": 10,
+      "notes": "Sinai covenant follows the exodus"
+    },
+    {
+      "id": "exodus-pattern-theme",
+      "relationship": "canonical-pattern",
+      "weight": 10,
+      "notes": "deliverance motif"
+    },
+    {
+      "id": "new-exodus-theme",
+      "relationship": "fulfillment-framework",
+      "weight": 9,
+      "notes": "new exodus in Christ"
+    }
+  ]
 }

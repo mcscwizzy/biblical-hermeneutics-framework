@@ -69,7 +69,7 @@ class StudyDatabaseTests(unittest.TestCase):
                 )
             ]
 
-        self.assertEqual(versions, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
+        self.assertEqual(versions, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])
 
         with sqlite3.connect(self.path) as connection:
             saved_studies = connection.execute(
@@ -116,7 +116,7 @@ class StudyDatabaseTests(unittest.TestCase):
                 """
             ).fetchone()
 
-        self.assertEqual(versions, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
+        self.assertEqual(versions, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])
         self.assertIsNotNone(saved_studies)
 
     def test_biblical_places_seed_and_references_load_from_database(self):
@@ -416,6 +416,7 @@ class StudyDatabaseTests(unittest.TestCase):
         self.assertEqual(note["book"], "Romans")
         self.assertEqual(note["chapter"], 12)
         self.assertEqual(note["created_at"], note["updated_at"])
+        self.assertEqual(note["canonical_object_ids"], ["shechem", "abraham"])
         self.assertEqual(list_notes("Romans", 12, path=self.path), [note])
         self.assertEqual(list_notes("John", 1, path=self.path), [])
 
@@ -429,6 +430,7 @@ class StudyDatabaseTests(unittest.TestCase):
         self.assertEqual(updated["created_at"], note["created_at"])
         self.assertNotEqual(updated["updated_at"], note["updated_at"])
         self.assertEqual(updated["body"], "Updated note")
+        self.assertEqual(updated["canonical_object_ids"], ["shechem", "abraham"])
 
     def test_delete_note(self):
         note = create_note(_note_data(), path=self.path)
@@ -470,6 +472,7 @@ class StudyDatabaseTests(unittest.TestCase):
         self.assertEqual(study["book"], "Romans")
         self.assertEqual(study["chapter"], 12)
         self.assertEqual(study["study_type"], "literary_context")
+        self.assertEqual(study["canonical_object_ids"], ["shechem", "abraham"])
         self.assertEqual(list_saved_studies("Romans", 12, path=self.path), [study])
 
         fetched = get_saved_study(study["id"], path=self.path)
@@ -600,6 +603,7 @@ def _note_data():
         "end_verse": 2,
         "selected_text": "I beseech you therefore...",
         "body": "Observe the appeal before application.",
+        "canonical_object_ids": ["shechem", "abraham"],
     }
 
 
@@ -639,6 +643,7 @@ def _saved_study_data():
         "question": "Using BHF, explain the literary context of ASV Romans 12:1-2.",
         "answer": "## Short Answer\nObserve the flow before interpretation.",
         "title": "Romans 12:1-2 - Literary Context",
+        "canonical_object_ids": ["shechem", "abraham"],
     }
 
 

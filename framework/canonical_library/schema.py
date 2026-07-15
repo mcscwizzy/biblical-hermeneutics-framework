@@ -953,6 +953,23 @@ def validate_approved_content_requirements(
             path=path,
             object_id=object_id,
         )
+    if any(isinstance(source, str) for source in sources):
+        raise _error(
+            'field "sources" must use structured source objects when review_status is "approved"',
+            path=path,
+            object_id=object_id,
+        )
+    if not any(
+        isinstance(source, Mapping)
+        and isinstance(source.get("source_type"), str)
+        and source["source_type"] not in {"website", "other"}
+        for source in sources
+    ):
+        raise _error(
+            'field "sources" must include at least one substantive source when review_status is "approved"',
+            path=path,
+            object_id=object_id,
+        )
 
     confidence = data.get("confidence")
     if confidence == "unrated":

@@ -7,11 +7,11 @@
     "creation pattern",
     "creation thematic thread"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "The movement from ordered creation to renewed creation, with humanity as image-bearers under God\u2019s kingship.",
+  "historical_context": "Creation and new creation frame the Bible from Genesis to Revelation and give coherence to human vocation, fall, redemption, and hope.",
+  "ancient_near_east_context": "The motif speaks against chaos-centered or polytheistic origin stories and keeps the creator God singular and sovereign.",
+  "literary_context": "Creation language appears in narrative, poetry, prophecy, gospel, apostolic teaching, and apocalyptic vision.",
+  "covenantal_significance": "Creation gives covenant its stage: a world made by God, for God, and destined for renewal.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,105 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "This theme is theological before it is technical; Genesis 1 is about God, humanity, and the world\u2019s ordered goodness.",
+    "The New Testament uses creation language to describe redemption and future hope, not to abandon Genesis."
+  ],
+  "common_questions": [
+    "What does creation mean in the Bible?",
+    "How does creation connect to new creation?",
+    "Why does creation matter for theology?"
+  ],
+  "sources": [
+    "Genesis 1-2",
+    "Psalm 8",
+    "Psalm 104",
+    "John 1",
+    "Romans 8",
+    "Revelation 21"
+  ],
+  "importance": 96,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Genesis 1:1-31",
+      "relationship": "primary",
+      "notes": "ordered creation"
+    },
+    {
+      "reference": "Genesis 2:1-25",
+      "relationship": "supporting",
+      "notes": "human vocation and Sabbath rest"
+    },
+    {
+      "reference": "Psalm 8:1-9",
+      "relationship": "supporting",
+      "notes": "human dignity"
+    },
+    {
+      "reference": "Psalm 104:1-35",
+      "relationship": "supporting",
+      "notes": "creation praise"
+    },
+    {
+      "reference": "John 1:1-5",
+      "relationship": "supporting",
+      "notes": "Word and creation"
+    },
+    {
+      "reference": "Colossians 1:15-17",
+      "relationship": "supporting",
+      "notes": "Christ and creation"
+    },
+    {
+      "reference": "Romans 8:18-25",
+      "relationship": "supporting",
+      "notes": "creation groaning for renewal"
+    },
+    {
+      "reference": "Revelation 21:1-5",
+      "relationship": "supporting",
+      "notes": "new creation"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "creation",
+      "relationship": "narrative-anchor",
+      "weight": 10,
+      "notes": "Genesis creation event"
+    },
+    {
+      "id": "new-creation-theme",
+      "relationship": "eschatological-fulfillment",
+      "weight": 10,
+      "notes": "renewed creation"
+    },
+    {
+      "id": "the-fall",
+      "relationship": "narrative-contrast",
+      "weight": 8,
+      "notes": "creation is fractured by sin"
+    },
+    {
+      "id": "resurrection-theme",
+      "relationship": "renewal-pattern",
+      "weight": 8,
+      "notes": "life from death as new creation"
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "royal-context",
+      "weight": 7,
+      "notes": "God\u2019s rule over creation"
+    }
+  ]
 }

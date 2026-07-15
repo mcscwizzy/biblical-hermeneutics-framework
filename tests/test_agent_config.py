@@ -5,7 +5,12 @@ import unittest
 from pathlib import Path
 
 from bhf_agent.__main__ import config_from_args
-from bhf_agent.config import AgentConfig, CanonicalLibraryConfig, ConfigError
+from bhf_agent.config import (
+    AgentConfig,
+    CanonicalLibraryConfig,
+    ConfigError,
+    PublicCacheConfig,
+)
 
 
 class AgentConfigTests(unittest.TestCase):
@@ -93,10 +98,19 @@ class AgentConfigTests(unittest.TestCase):
         self.assertIsNone(config.memory_path)
         self.assertEqual(config.memory_max_turns, 8)
         self.assertTrue(config.canonical_library.enabled)
-        self.assertTrue(config.canonical_library.include_placeholders)
+        self.assertFalse(config.canonical_library.include_placeholders)
         self.assertEqual(
             config.canonical_library.allowed_statuses,
-            ("unreviewed", "in_review", "reviewed", "approved"),
+            ("in_review", "reviewed", "approved"),
+        )
+        self.assertFalse(config.public_cache.enabled)
+        self.assertEqual(
+            config.public_cache.path,
+            ".bhf/public-answer-cache.json",
+        )
+        self.assertEqual(
+            config.public_cache.allowed_review_statuses,
+            ("reviewed", "approved"),
         )
 
     def test_config_accepts_canonical_library_section(self):
@@ -142,6 +156,48 @@ class AgentConfigTests(unittest.TestCase):
             config.to_dict()["canonical_library"]["allowed_statuses"],
             ("approved",),
         )
+
+    def test_config_accepts_public_cache_section(self):
+        config = AgentConfig.from_mapping(
+            {
+                "config_version": 1,
+                "adapter": "openai_compatible",
+                "base_url": "http://localhost:1234/v1",
+                "model": "local-model",
+                "profile": "standard",
+                "public_cache": {
+                    "enabled": True,
+                    "path": ".bhf/custom-public-cache.json",
+                    "minimum_quality_score": 92.5,
+                    "default_ttl_days": 90,
+                    "allowed_review_statuses": ["approved"],
+                },
+            }
+        )
+
+        self.assertTrue(config.public_cache.enabled)
+        self.assertEqual(config.public_cache.path, ".bhf/custom-public-cache.json")
+        self.assertEqual(config.public_cache.minimum_quality_score, 92.5)
+        self.assertEqual(config.public_cache.default_ttl_days, 90)
+        self.assertEqual(config.public_cache.allowed_review_statuses, ("approved",))
+
+    def test_config_serializes_public_cache_section(self):
+        config = AgentConfig(
+            base_url="http://localhost:1234/v1",
+            model="local-model",
+            public_cache=PublicCacheConfig(
+                enabled=True,
+                path=".bhf/public-cache.json",
+                minimum_quality_score=91.0,
+                default_ttl_days=120,
+                allowed_review_statuses=("reviewed",),
+            ),
+        )
+
+        self.assertTrue(config.to_dict()["public_cache"]["enabled"])
+        self.assertEqual(config.to_dict()["public_cache"]["path"], ".bhf/public-cache.json")
+        self.assertEqual(config.to_dict()["public_cache"]["minimum_quality_score"], 91.0)
+        self.assertEqual(config.to_dict()["public_cache"]["allowed_review_statuses"], ("reviewed",))
 
     def test_config_accepts_valid_answer_modes(self):
         for answer_mode in ("concise", "study", "teaching", "scholar"):

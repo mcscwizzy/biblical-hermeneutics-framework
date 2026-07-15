@@ -7,11 +7,11 @@
     "tell me about moses",
     "why is moses important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "The prophet and mediator through whom God delivers Israel from Egypt and gives Torah at Sinai.",
+  "historical_context": "Moses stands at the center of the exodus, wilderness, and covenant-making narratives. His role frames Israel as a redeemed people shaped by divine instruction and holy presence.",
+  "ancient_near_east_context": "The Moses story engages Egyptian power, wilderness survival, and the formation of a covenant people in contrast to imperial domination.",
+  "literary_context": "Exodus through Deuteronomy present Moses as prophet, mediator, and covenant servant. Later Scripture reads him as a foundational figure for law, worship, and hope for a greater prophet.",
+  "covenantal_significance": "Moses mediates the Sinai covenant and delivers the Torah that defines Israel\u2019s corporate life before God.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,108 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Moses should be read as a covenant mediator, not merely as a lawgiver.",
+    "Later biblical writers honor Moses while also showing that his ministry anticipates something greater."
+  ],
+  "common_questions": [
+    "Why is Moses important?",
+    "How does Moses relate to the law and covenant?",
+    "How do later books use Moses as a model?"
+  ],
+  "sources": [
+    "Exodus 3-24",
+    "Deuteronomy 5-34",
+    "Acts 7",
+    "Hebrews 3"
+  ],
+  "importance": 98,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Exodus 3:1-15",
+      "relationship": "primary",
+      "notes": "burning bush call"
+    },
+    {
+      "reference": "Exodus 12:1-14",
+      "relationship": "supporting",
+      "notes": "passover instruction"
+    },
+    {
+      "reference": "Exodus 19:1-6",
+      "relationship": "supporting",
+      "notes": "covenant identity"
+    },
+    {
+      "reference": "Exodus 20:1-17",
+      "relationship": "supporting",
+      "notes": "ten words"
+    },
+    {
+      "reference": "Exodus 24:1-18",
+      "relationship": "supporting",
+      "notes": "covenant ratification"
+    },
+    {
+      "reference": "Deuteronomy 5:1-33",
+      "relationship": "supporting",
+      "notes": "covenant rehearsal"
+    },
+    {
+      "reference": "Deuteronomy 34:1-12",
+      "relationship": "supporting",
+      "notes": "death and succession"
+    },
+    {
+      "reference": "Acts 7:17-44",
+      "relationship": "supporting",
+      "notes": "Stephen\u2019s summary"
+    },
+    {
+      "reference": "Hebrews 3:1-6",
+      "relationship": "supporting",
+      "notes": "Moses contrasted with Christ"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "sinai-covenant",
+      "relationship": "covenant-mediator",
+      "weight": 10,
+      "notes": "Sinai is his defining covenant scene"
+    },
+    {
+      "id": "passover",
+      "relationship": "deliverance-event",
+      "weight": 9,
+      "notes": "exodus deliverance"
+    },
+    {
+      "id": "torah",
+      "relationship": "instruction-anchor",
+      "weight": 10,
+      "notes": "the law given through Moses"
+    },
+    {
+      "id": "covenant-assembly",
+      "relationship": "covenant-context",
+      "weight": 8,
+      "notes": "Israel gathered before God"
+    },
+    {
+      "id": "covenant-theology",
+      "relationship": "theological-anchor",
+      "weight": 8,
+      "notes": "mediator of covenant structure"
+    }
+  ]
 }

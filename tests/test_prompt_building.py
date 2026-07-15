@@ -267,12 +267,71 @@ class PromptBuildingTests(unittest.TestCase):
         self.assertIn("Retrieved object IDs:", system_prompt)
         self.assertIn("shechem", system_prompt)
         self.assertIn("abraham", system_prompt)
+        self.assertIn("joshua-son-of-nun", system_prompt)
         self.assertIn("joshua", system_prompt)
-        self.assertIn("covenant-theme", system_prompt)
         self.assertLess(
             system_prompt.index("# Canonical Knowledge Library"),
             system_prompt.index("Local Curated Knowledge"),
         )
+
+    def test_prompt_uses_scripture_reverse_lookup_for_joshua_24(self):
+        question = "Which objects relate to Joshua 24?"
+        reference = detect_reference(question)
+        genre = classify_genre(reference)
+        question_context = classify_question_type(question, reference)
+        canonical_context = build_canonical_context(
+            load_canonical_library(),
+            question,
+            reference_context=reference,
+            question_context=question_context,
+            max_results=6,
+            include_placeholders=True,
+            allowed_statuses=("unreviewed", "in_review", "reviewed", "approved"),
+        )
+        canonical_prompt = format_canonical_context_for_prompt(canonical_context, max_context_tokens=1200)
+
+        self.assertIn("Retrieved object IDs:", canonical_prompt)
+        self.assertIn("shechem", canonical_prompt)
+        self.assertIn("joshua-son-of-nun", canonical_prompt)
+        self.assertIn("joshua", canonical_prompt)
+        self.assertIn("abraham", canonical_prompt)
+        self.assertIn("covenant-theme", canonical_prompt)
+
+    def test_canonical_context_prompt_uses_answer_mode_tiers(self):
+        question = "Why did Israel renew the covenant where Abraham first entered the land at Shechem in Joshua 24?"
+        reference = detect_reference(question)
+        genre = classify_genre(reference)
+        question_context = classify_question_type(question, reference)
+        canonical_context = build_canonical_context(
+            load_canonical_library(),
+            question,
+            reference_context=reference,
+            question_context=question_context,
+            max_results=4,
+            include_placeholders=True,
+            allowed_statuses=("unreviewed", "in_review", "reviewed", "approved"),
+            answer_mode="scholar",
+            max_context_tokens=1200,
+        )
+
+        concise_prompt = format_canonical_context_for_prompt(
+            canonical_context,
+            max_context_tokens=600,
+            answer_mode="concise",
+        )
+        scholar_prompt = format_canonical_context_for_prompt(
+            canonical_context,
+            max_context_tokens=1200,
+            answer_mode="scholar",
+        )
+
+        self.assertIn("Answer mode: concise", concise_prompt)
+        self.assertIn("Context tier: compact", concise_prompt)
+        self.assertIn("Answer mode: scholar", scholar_prompt)
+        self.assertIn("Context tier: scholar", scholar_prompt)
+        self.assertIn("Estimated tokens:", scholar_prompt)
+        self.assertNotIn("Ancient Near East context", concise_prompt)
+        self.assertLess(len(concise_prompt), len(scholar_prompt))
 
     def test_prompt_includes_local_session_memory_when_available(self):
         memory = SessionMemory(

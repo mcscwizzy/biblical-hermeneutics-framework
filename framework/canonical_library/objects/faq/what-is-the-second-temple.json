@@ -7,11 +7,11 @@
     "second temple in the bible",
     "second temple overview"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "The second temple is the rebuilt temple after the exile, the worship center of Judea in the postexilic and New Testament periods.",
+  "historical_context": "The second temple begins with the return from Babylon under Persian rule, develops through the Persian and Hellenistic periods, and stands in Jesus' day before its destruction in AD 70.",
+  "ancient_near_east_context": "Imperial patronage, local governance, and temple-centered identity shaped second temple life within the wider ancient world.",
+  "literary_context": "Ezra, Nehemiah, Haggai, Zechariah, Malachi, the Gospels, Acts, and Hebrews all speak into or out of the second temple setting.",
+  "covenantal_significance": "The second temple represents restoration after judgment, but it also points beyond itself to the greater fulfillment of God's presence in Christ and the new creation.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,112 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "The second temple is a historical period and institution, not just a building.",
+    "Its significance grows in the New Testament because Jesus and the early church live in its world."
+  ],
+  "common_questions": [
+    "What was the second temple?",
+    "Why is the second temple important for the New Testament?",
+    "How is the second temple different from Solomon's temple?"
+  ],
+  "sources": [
+    "Ezra 1-6",
+    "Haggai 1-2",
+    "Zechariah 1-8",
+    "Malachi 1-4",
+    "John 2",
+    "Luke 2",
+    "Hebrews 9"
+  ],
+  "importance": 93,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Ezra 1:1-4",
+      "relationship": "supporting",
+      "notes": "return and rebuilding decree"
+    },
+    {
+      "reference": "Haggai 2:1-9",
+      "relationship": "supporting",
+      "notes": "glory of the latter house"
+    },
+    {
+      "reference": "Zechariah 4:6-10",
+      "relationship": "supporting",
+      "notes": "temple rebuilding by the Spirit"
+    },
+    {
+      "reference": "Malachi 3:1-4",
+      "relationship": "supporting",
+      "notes": "purification of the temple"
+    },
+    {
+      "reference": "John 2:13-22",
+      "relationship": "supporting",
+      "notes": "Jesus and the temple"
+    },
+    {
+      "reference": "Luke 2:22-38",
+      "relationship": "supporting",
+      "notes": "Jesus presented at the temple"
+    },
+    {
+      "reference": "Acts 3:1-10",
+      "relationship": "supporting",
+      "notes": "apostolic activity at the temple"
+    },
+    {
+      "reference": "Hebrews 9:1-14",
+      "relationship": "supporting",
+      "notes": "earthly sanctuary and fulfillment"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "temple",
+      "relationship": "institution-anchor",
+      "weight": 10,
+      "notes": "the temple institution"
+    },
+    {
+      "id": "jerusalem",
+      "relationship": "city-anchor",
+      "weight": 10,
+      "notes": "the temple city"
+    },
+    {
+      "id": "babylonian-exile",
+      "relationship": "historical-background",
+      "weight": 9,
+      "notes": "the exile that precedes restoration"
+    },
+    {
+      "id": "high-priesthood",
+      "relationship": "mediating-office",
+      "weight": 8,
+      "notes": "the office that serves the temple"
+    },
+    {
+      "id": "second-temple-administration",
+      "relationship": "governance-context",
+      "weight": 8,
+      "notes": "temple leadership in the restored period"
+    },
+    {
+      "id": "jesus",
+      "relationship": "fulfillment-anchor",
+      "weight": 9,
+      "notes": "Jesus ministers in the second temple world"
+    }
+  ]
 }

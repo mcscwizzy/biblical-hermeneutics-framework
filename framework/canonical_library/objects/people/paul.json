@@ -7,11 +7,11 @@
     "tell me about paul",
     "why is paul important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "The apostle to the Gentiles whose letters unfold the gospel, covenant inclusion, and new creation.",
+  "historical_context": "Paul writes as a first-century Jewish apostle working across the eastern Mediterranean in the Roman imperial world. His mission and letters address mixed Jewish-Gentile congregations, conflict, persecution, and church formation.",
+  "ancient_near_east_context": "Paul\u2019s setting is Greco-Roman rather than ancient Near Eastern, but he constantly re-reads Israel\u2019s Scriptures for a multinational church.",
+  "literary_context": "Acts narrates Paul\u2019s conversion and missionary journeys, while his letters present sustained theological argument and pastoral correction.",
+  "covenantal_significance": "Paul argues that the promises to Abraham are fulfilled in Christ and extended to the nations by faith, not ethnic boundary-markers.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,114 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Paul is not discarding Israel\u2019s Scriptures; he is rereading them christologically and covenantally.",
+    "His letters address real congregational problems, so theology and pastoral concern belong together."
+  ],
+  "common_questions": [
+    "Why is Paul important?",
+    "How does Paul use the Old Testament?",
+    "What does Paul teach about faith and the Gentiles?"
+  ],
+  "sources": [
+    "Acts 9-28",
+    "Romans 1-8",
+    "Galatians 1-3",
+    "1 Corinthians 15",
+    "Philippians 2"
+  ],
+  "importance": 96,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Acts 9:1-19",
+      "relationship": "primary",
+      "notes": "conversion and commissioning"
+    },
+    {
+      "reference": "Acts 13:1-3",
+      "relationship": "supporting",
+      "notes": "mission sending"
+    },
+    {
+      "reference": "Acts 17:16-34",
+      "relationship": "supporting",
+      "notes": "Athens proclamation"
+    },
+    {
+      "reference": "Acts 28:23-31",
+      "relationship": "supporting",
+      "notes": "gospel in Rome"
+    },
+    {
+      "reference": "Romans 1:1-17",
+      "relationship": "supporting",
+      "notes": "gospel thesis"
+    },
+    {
+      "reference": "Romans 8:1-39",
+      "relationship": "supporting",
+      "notes": "life in the Spirit"
+    },
+    {
+      "reference": "Galatians 1:11-24",
+      "relationship": "supporting",
+      "notes": "call and independence of the gospel"
+    },
+    {
+      "reference": "Galatians 3:6-29",
+      "relationship": "supporting",
+      "notes": "Abraham and promise"
+    },
+    {
+      "reference": "1 Corinthians 15:1-8",
+      "relationship": "supporting",
+      "notes": "resurrection proclamation"
+    },
+    {
+      "reference": "Philippians 2:5-11",
+      "relationship": "supporting",
+      "notes": "Christ hymn"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "abraham",
+      "relationship": "scriptural-ancestor",
+      "weight": 9,
+      "notes": "Paul interprets Abraham directly"
+    },
+    {
+      "id": "covenant-theology",
+      "relationship": "theological-anchor",
+      "weight": 8,
+      "notes": "promise and fulfillment"
+    },
+    {
+      "id": "resurrection-doctrine",
+      "relationship": "doctrinal-anchor",
+      "weight": 8,
+      "notes": "central apostolic hope"
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "mission-context",
+      "weight": 6,
+      "notes": "gospel proclamation of God\u2019s reign"
+    },
+    {
+      "id": "new-covenant",
+      "relationship": "theological-anchor",
+      "weight": 8,
+      "notes": "new covenant life in Christ"
+    }
+  ]
 }

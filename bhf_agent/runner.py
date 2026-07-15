@@ -7,7 +7,11 @@ from datetime import datetime, timezone
 from typing import Any, Callable, Optional
 
 from .adapters import ChatAdapter, OllamaAdapter, OpenAICompatibleAdapter
-from .ckl import build_canonical_context, format_canonical_context_for_prompt, load_canonical_library
+from .ckl import (
+    build_canonical_context,
+    format_canonical_context_for_prompt,
+    load_canonical_library,
+)
 from .config import AgentConfig, ConfigError
 from .genre import classify_genre
 from .knowledge import LocalKnowledgeBundle, lookup_local_knowledge
@@ -21,6 +25,7 @@ from .memory import (
 from .models import (
     AgentResult,
     ChatRequest,
+    ChatResponse,
     PipelineContext,
     RepairAttempt,
     ValidationResult,
@@ -33,7 +38,16 @@ from .repair import build_repair_prompt, decide_repair
 from .references import detect_reference
 from .runner_state import PIPELINE_STEPS, STEP_INDEX, STEP_MESSAGES, STAGE_TO_STEP, TOTAL_STEPS
 from .validation import validate_response
-from framework.canonical_library import CanonicalLibrary
+from framework.canonical_library import (
+    CanonicalLibrary,
+    JsonPublicAnswerCache,
+    NullPublicAnswerCache,
+    PublicAnswerCache,
+    load_framework_version,
+    load_framework_version_fingerprint,
+    normalize_public_question,
+    public_cache_key,
+)
 
 
 StatusCallback = Callable[[dict[str, Any]], None]
@@ -45,17 +59,33 @@ class BHFAgent:
         adapter: Optional[ChatAdapter] = None,
         profile_loader: Optional[ProfileLoader] = None,
         canonical_library: Optional[CanonicalLibrary] = None,
+        public_answer_cache: Optional[PublicAnswerCache] = None,
     ) -> None:
         config.validate()
         self.config = config
         self.profile_loader = profile_loader or ProfileLoader()
         self.adapter = adapter or self._build_adapter(config)
+        self.framework_version = load_framework_version()
+        self.framework_version_fingerprint = load_framework_version_fingerprint(
+            self.framework_version
+        )
         if canonical_library is not None:
             self.canonical_library = canonical_library
         elif self.config.canonical_library.enabled:
             self.canonical_library = load_canonical_library()
         else:
             self.canonical_library = None
+        if public_answer_cache is not None:
+            self.public_answer_cache = public_answer_cache
+        elif self.config.public_cache.enabled:
+            self.public_answer_cache = JsonPublicAnswerCache(
+                self.config.public_cache.path,
+                minimum_quality_score=self.config.public_cache.minimum_quality_score,
+                allowed_review_statuses=self.config.public_cache.allowed_review_statuses,
+                default_ttl_days=self.config.public_cache.default_ttl_days,
+            )
+        else:
+            self.public_answer_cache = NullPublicAnswerCache()
         self._status_callback: Optional[StatusCallback] = None
         self._status_run_started_at: float | None = None
         self._status_stage_started_at: float | None = None
@@ -82,12 +112,16 @@ class BHFAgent:
             ctx = self._classify_question_type(ctx)
             ctx = self._load_profile(ctx)
             ctx = self._lookup_local_knowledge(ctx)
-            ctx = self._load_session_memory(ctx)
-            ctx = self._build_prompts(ctx)
-            ctx = self._call_model(ctx)
-            ctx = self._clean_output(ctx)
-            ctx = self._validate_response(ctx)
-            ctx = self._repair_response(ctx)
+            ctx = self._lookup_public_answer_cache(ctx)
+            if ctx.raw_model_response is None:
+                ctx = self._load_session_memory(ctx)
+                ctx = self._build_prompts(ctx)
+                ctx = self._call_model(ctx)
+                ctx = self._clean_output(ctx)
+                ctx = self._validate_response(ctx)
+                ctx = self._repair_response(ctx)
+            elif self.config.memory_enabled:
+                ctx = self._load_session_memory(ctx)
             ctx = self._finalize_result(ctx)
             ctx = self._save_session_turn(ctx)
             result = self._to_agent_result(ctx)
@@ -133,6 +167,8 @@ class BHFAgent:
                 "model": self.config.model,
                 "profile": self.config.profile,
                 "answer_mode": self.config.answer_mode,
+                "framework_version": self.framework_version,
+                "framework_version_fingerprint": self.framework_version_fingerprint,
                 "local_knowledge_keys": [],
                 "canonical_library_enabled": self.config.canonical_library.enabled,
                 "canonical_library_loaded": self.canonical_library is not None,
@@ -143,6 +179,31 @@ class BHFAgent:
                 "canonical_library_query": None,
                 "canonical_library_include_placeholders": self.config.canonical_library.include_placeholders,
                 "canonical_library_allowed_statuses": list(self.config.canonical_library.allowed_statuses),
+                "canonical_library_version_fingerprint": None,
+                "public_answer_cache_enabled": not isinstance(
+                    self.public_answer_cache, NullPublicAnswerCache
+                ),
+                "public_answer_cache_loaded": not isinstance(
+                    self.public_answer_cache, NullPublicAnswerCache
+                ),
+                "public_answer_cache_hit": False,
+                "public_answer_cache_lookup_status": "disabled"
+                if isinstance(self.public_answer_cache, NullPublicAnswerCache)
+                else "miss",
+                "public_answer_cache_key": None,
+                "public_answer_cache_question": None,
+                "public_answer_cache_answer_mode": self.config.answer_mode,
+                "public_answer_cache_quality_score": None,
+                "public_answer_cache_usage_count": None,
+                "public_answer_cache_review_status": None,
+                "public_answer_cache_object_dependency_ids": [],
+                "public_answer_cache_framework_version": None,
+                "public_answer_cache_framework_version_fingerprint": None,
+                "public_answer_cache_ckl_version_fingerprint": None,
+                "public_answer_cache_expires_at": None,
+                "public_answer_cache_invalidated_at": None,
+                "public_answer_cache_invalidated_reason": None,
+                "public_answer_cache_error": None,
                 "map_tool_keys": [],
                 "output_cleanup_applied": False,
                 "validation_score": None,
@@ -225,6 +286,8 @@ class BHFAgent:
             max_results=self.config.canonical_library.max_results,
             include_placeholders=self.config.canonical_library.include_placeholders,
             allowed_statuses=self.config.canonical_library.allowed_statuses,
+            answer_mode=ctx.answer_mode,
+            max_context_tokens=self.config.canonical_library.max_context_tokens,
         )
         ctx.canonical_library_context = canonical_context
         ctx.canonical_library_query = (
@@ -246,6 +309,7 @@ class BHFAgent:
         canonical_prompt = format_canonical_context_for_prompt(
             canonical_context,
             max_context_tokens=self.config.canonical_library.max_context_tokens,
+            answer_mode=ctx.answer_mode,
         )
         ctx.canonical_library_prompt = canonical_prompt
         metadata = dict(canonical_context.get("metadata") or {})
@@ -254,10 +318,133 @@ class BHFAgent:
         ctx.debug_metadata["canonical_library_object_ids"] = object_ids
         ctx.debug_metadata["canonical_library_retrieval_method"] = metadata.get("retrieval_method")
         ctx.debug_metadata["canonical_library_topic_count"] = metadata.get("topic_count", 0)
+        ctx.debug_metadata["canonical_library_answer_mode"] = metadata.get("answer_mode")
+        ctx.debug_metadata["canonical_library_topic_token_budget"] = metadata.get("topic_token_budget")
         ctx.debug_metadata["canonical_library_prompt_tokens"] = (
             max(1, round(len(canonical_prompt) / 4)) if canonical_prompt else 0
         )
         ctx.debug_metadata["canonical_library_query"] = ctx.canonical_library_query
+        return ctx
+
+    def _lookup_public_answer_cache(self, ctx: PipelineContext) -> PipelineContext:
+        if (
+            self.canonical_library is None
+            or self.public_answer_cache is None
+            or isinstance(self.public_answer_cache, NullPublicAnswerCache)
+        ):
+            ctx.debug_metadata["public_answer_cache_loaded"] = not isinstance(
+                self.public_answer_cache, NullPublicAnswerCache
+            )
+            ctx.debug_metadata["public_answer_cache_lookup_status"] = "disabled"
+            ctx.debug_metadata["public_answer_cache_error"] = (
+                "canonical library is unavailable"
+                if self.canonical_library is None
+                else None
+            )
+            return ctx
+
+        if ctx.reference_context is None or ctx.question_context is None:
+            raise RuntimeError("pipeline context is incomplete before public cache lookup")
+
+        normalized_question = normalize_public_question(ctx.original_question)
+        cache_key = public_cache_key(normalized_question, ctx.answer_mode)
+        ctx.debug_metadata["public_answer_cache_loaded"] = True
+        ctx.debug_metadata["public_answer_cache_key"] = cache_key
+        ctx.debug_metadata["public_answer_cache_question"] = normalized_question
+        ctx.debug_metadata["public_answer_cache_answer_mode"] = ctx.answer_mode
+        ctx.debug_metadata["framework_version"] = self.framework_version
+        ctx.debug_metadata["framework_version_fingerprint"] = self.framework_version_fingerprint
+
+        try:
+            ckl_version_fingerprint = self.canonical_library.inventory_fingerprint()
+        except Exception as exc:  # noqa: BLE001 - public cache should degrade gracefully
+            ctx.warnings.append(f"Public answer cache lookup skipped: {exc}")
+            ctx.debug_metadata["public_answer_cache_lookup_status"] = "error"
+            ctx.debug_metadata["public_answer_cache_error"] = str(exc)
+            return ctx
+
+        ctx.debug_metadata["canonical_library_version_fingerprint"] = ckl_version_fingerprint
+
+        try:
+            entry = self.public_answer_cache.lookup(
+                normalized_question,
+                ctx.answer_mode,
+                ckl_version_fingerprint=ckl_version_fingerprint,
+                framework_version_fingerprint=self.framework_version_fingerprint,
+            )
+        except Exception as exc:  # noqa: BLE001 - cache must never block answers
+            ctx.warnings.append(f"Public answer cache lookup failed: {exc}")
+            ctx.debug_metadata["public_answer_cache_lookup_status"] = "error"
+            ctx.debug_metadata["public_answer_cache_error"] = str(exc)
+            return ctx
+
+        ctx.debug_metadata["public_answer_cache_lookup_status"] = getattr(
+            self.public_answer_cache,
+            "last_lookup_status",
+            "miss" if entry is None else "hit",
+        )
+        ctx.debug_metadata["public_answer_cache_error"] = getattr(
+            self.public_answer_cache,
+            "last_lookup_reason",
+            None,
+        )
+
+        if entry is None:
+            ctx.debug_metadata["public_answer_cache_hit"] = False
+            return ctx
+
+        usage_count = entry.usage_count
+        try:
+            self.public_answer_cache.increment_usage(normalized_question, ctx.answer_mode)
+            usage_count = entry.usage_count + 1
+        except Exception as exc:  # noqa: BLE001 - cache should not block answers
+            ctx.warnings.append(f"Public answer cache usage tracking failed: {exc}")
+            ctx.debug_metadata["public_answer_cache_error"] = str(exc)
+
+        cached_answer = entry.answer.strip()
+        cache_entry_payload = entry.to_dict()
+        cache_entry_payload["usage_count"] = usage_count
+        ctx.raw_model_response = ChatResponse(
+            text=cached_answer,
+            model="public-cache",
+            usage={
+                "cached": True,
+                "usage_count": usage_count,
+            },
+            raw_provider_response={
+                "cache_key": cache_key,
+                "entry": cache_entry_payload,
+            },
+        )
+        ctx.raw_answer_text = cached_answer
+        ctx.cleaned_answer_text = cached_answer
+        ctx.validation_result = ValidationResult(
+            passed=True,
+            score=max(0, min(100, int(round(entry.quality_score)))),
+            warnings=[],
+            suggestions=[],
+        )
+        ctx.debug_metadata["public_answer_cache_hit"] = True
+        ctx.debug_metadata["public_answer_cache_quality_score"] = entry.quality_score
+        ctx.debug_metadata["public_answer_cache_usage_count"] = usage_count
+        ctx.debug_metadata["public_answer_cache_review_status"] = entry.review_status
+        ctx.debug_metadata["public_answer_cache_object_dependency_ids"] = list(
+            entry.object_dependency_ids
+        )
+        ctx.debug_metadata["public_answer_cache_framework_version"] = entry.framework_version
+        ctx.debug_metadata["public_answer_cache_framework_version_fingerprint"] = (
+            entry.framework_version_fingerprint
+        )
+        ctx.debug_metadata["public_answer_cache_ckl_version_fingerprint"] = (
+            entry.ckl_version_fingerprint
+        )
+        ctx.debug_metadata["public_answer_cache_expires_at"] = entry.expires_at
+        ctx.debug_metadata["public_answer_cache_invalidated_at"] = entry.invalidated_at
+        ctx.debug_metadata["public_answer_cache_invalidated_reason"] = (
+            entry.invalidated_reason
+        )
+        ctx.debug_metadata["output_cleanup_applied"] = False
+        ctx.debug_metadata["validation_score"] = ctx.validation_result.score
         return ctx
 
     def _load_session_memory(self, ctx: PipelineContext) -> PipelineContext:
@@ -590,6 +777,10 @@ class BHFAgent:
             "adapter_type": self.config.adapter,
             "base_url": self.config.base_url,
             "configured_model": self.config.model,
+            "framework_version": ctx.debug_metadata.get("framework_version"),
+            "framework_version_fingerprint": ctx.debug_metadata.get(
+                "framework_version_fingerprint"
+            ),
             "answer_mode": ctx.answer_mode,
             "memory_enabled": self.config.memory_enabled,
             "session_id": ctx.debug_metadata.get("session_id"),
@@ -612,6 +803,10 @@ class BHFAgent:
             "canonical_library_topic_count": ctx.debug_metadata.get(
                 "canonical_library_topic_count", 0
             ),
+            "canonical_library_context": ctx.canonical_library_context,
+            "canonical_library_version_fingerprint": ctx.debug_metadata.get(
+                "canonical_library_version_fingerprint"
+            ),
             "local_knowledge_terms": [
                 entry.transliteration for entry in local_knowledge.lexical_entries
             ],
@@ -626,6 +821,51 @@ class BHFAgent:
                 if ctx.repaired_validation_result
                 else None
             ),
+            "public_answer_cache": {
+                "enabled": not isinstance(
+                    self.public_answer_cache, NullPublicAnswerCache
+                ),
+                "hit": ctx.debug_metadata.get("public_answer_cache_hit", False),
+                "lookup_status": ctx.debug_metadata.get(
+                    "public_answer_cache_lookup_status"
+                ),
+                "key": ctx.debug_metadata.get("public_answer_cache_key"),
+                "question": ctx.debug_metadata.get("public_answer_cache_question"),
+                "answer_mode": ctx.debug_metadata.get(
+                    "public_answer_cache_answer_mode"
+                ),
+                "quality_score": ctx.debug_metadata.get(
+                    "public_answer_cache_quality_score"
+                ),
+                "usage_count": ctx.debug_metadata.get(
+                    "public_answer_cache_usage_count"
+                ),
+                "review_status": ctx.debug_metadata.get(
+                    "public_answer_cache_review_status"
+                ),
+                "object_dependency_ids": ctx.debug_metadata.get(
+                    "public_answer_cache_object_dependency_ids", []
+                ),
+                "framework_version": ctx.debug_metadata.get(
+                    "public_answer_cache_framework_version"
+                ),
+                "framework_version_fingerprint": ctx.debug_metadata.get(
+                    "public_answer_cache_framework_version_fingerprint"
+                ),
+                "ckl_version_fingerprint": ctx.debug_metadata.get(
+                    "public_answer_cache_ckl_version_fingerprint"
+                ),
+                "expires_at": ctx.debug_metadata.get(
+                    "public_answer_cache_expires_at"
+                ),
+                "invalidated_at": ctx.debug_metadata.get(
+                    "public_answer_cache_invalidated_at"
+                ),
+                "invalidated_reason": ctx.debug_metadata.get(
+                    "public_answer_cache_invalidated_reason"
+                ),
+                "error": ctx.debug_metadata.get("public_answer_cache_error"),
+            },
             "pipeline": dict(ctx.debug_metadata),
         }
         if self.config.debug:

@@ -8,11 +8,11 @@
     "temple structure",
     "temple role"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "The cultic institution centered on God\u2019s dwelling place, priestly mediation, sacrifice, and holiness.",
+  "historical_context": "The temple develops from tabernacle patterns into Solomon\u2019s temple, survives in exilic memory, and is rebuilt in the second temple period.",
+  "ancient_near_east_context": "Ancient temples were often royal and cultic centers; Israel\u2019s temple is distinct because it foregrounds covenant holiness and atonement under one God.",
+  "literary_context": "Temple language runs from Exodus and Kings through the Psalms, the Prophets, the Gospels, Hebrews, and Revelation.",
+  "covenantal_significance": "The temple gives concrete form to divine presence among a holy people and to the sacrificial means of access.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -24,10 +24,105 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Temple language includes geography, holiness, sacrifice, and God\u2019s presence; do not reduce it to architecture alone.",
+    "The New Testament expands temple imagery to include Jesus, his people, and the final new creation."
+  ],
+  "common_questions": [
+    "What is the temple in the Bible?",
+    "Why did Jesus speak about destroying the temple?",
+    "How does the New Testament reinterpret the temple?"
+  ],
+  "sources": [
+    "Exodus 25",
+    "1 Kings 8",
+    "Psalm 84",
+    "John 2",
+    "Hebrews 8-10",
+    "Revelation 21"
+  ],
+  "importance": 98,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Exodus 25:8-9",
+      "relationship": "supporting",
+      "notes": "dwelling pattern"
+    },
+    {
+      "reference": "1 Kings 8:1-13",
+      "relationship": "primary",
+      "notes": "temple dedication"
+    },
+    {
+      "reference": "2 Chronicles 7:1-3",
+      "relationship": "supporting",
+      "notes": "glory fills the house"
+    },
+    {
+      "reference": "Psalm 84:1-12",
+      "relationship": "supporting",
+      "notes": "longing for God\u2019s house"
+    },
+    {
+      "reference": "John 2:13-22",
+      "relationship": "supporting",
+      "notes": "Jesus and the temple"
+    },
+    {
+      "reference": "Hebrews 8:1-13",
+      "relationship": "supporting",
+      "notes": "heavenly sanctuary"
+    },
+    {
+      "reference": "Hebrews 9:1-28",
+      "relationship": "supporting",
+      "notes": "earthly sanctuary and sacrifice"
+    },
+    {
+      "reference": "Revelation 21:22-27",
+      "relationship": "supporting",
+      "notes": "no temple in the city"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "temple-theme",
+      "relationship": "thematic-anchor",
+      "weight": 10,
+      "notes": "sacred-space motif"
+    },
+    {
+      "id": "priesthood",
+      "relationship": "mediating-office",
+      "weight": 10,
+      "notes": "priests serve the temple"
+    },
+    {
+      "id": "sacrifice-theme",
+      "relationship": "atonement-anchor",
+      "weight": 9,
+      "notes": "sacrifice at the altar"
+    },
+    {
+      "id": "jerusalem",
+      "relationship": "city-anchor",
+      "weight": 9,
+      "notes": "temple city"
+    },
+    {
+      "id": "new-jerusalem",
+      "relationship": "eschatological-fulfillment",
+      "weight": 8,
+      "notes": "final dwelling without a temple"
+    }
+  ]
 }

@@ -7,11 +7,11 @@
     "tell me about crucifixion",
     "why is crucifixion important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "The Roman execution of Jesus that Christians interpret as the climactic atoning death of the Messiah.",
+  "historical_context": "The crucifixion occurs in first-century Judea under Roman authority and amid Jewish expectations for redemption and deliverance.",
+  "ancient_near_east_context": "The event sits in the broader Roman imperial world but is interpreted through Israel\u2019s sacrificial, covenantal, and prophetic categories.",
+  "literary_context": "The Gospels present the crucifixion with both historical detail and theological meaning, drawing on Psalmic lament and prophetic suffering imagery.",
+  "covenantal_significance": "The crucifixion is the covenantal turning point where judgment, sacrifice, and mercy meet in Christ.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,106 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Do not reduce the cross to a single atonement model; Scripture uses multiple complementary images.",
+    "The crucifixion is both a Roman execution and a theological center of the Christian gospel."
+  ],
+  "common_questions": [
+    "Why did Jesus have to die?",
+    "How do the Gospels interpret the crucifixion?",
+    "What does the cross accomplish?"
+  ],
+  "sources": [
+    "Psalm 22",
+    "Isaiah 53",
+    "Mark 15",
+    "Luke 23",
+    "John 19",
+    "Romans 3",
+    "Hebrews 10"
+  ],
+  "importance": 100,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Psalm 22:1-31",
+      "relationship": "supporting",
+      "notes": "lament and vindication"
+    },
+    {
+      "reference": "Isaiah 53:1-12",
+      "relationship": "typology",
+      "notes": "suffering servant"
+    },
+    {
+      "reference": "Mark 15:1-47",
+      "relationship": "primary",
+      "notes": "Mark\u2019s crucifixion narrative"
+    },
+    {
+      "reference": "Luke 23:26-49",
+      "relationship": "primary",
+      "notes": "Luke\u2019s crucifixion narrative"
+    },
+    {
+      "reference": "John 19:16-37",
+      "relationship": "primary",
+      "notes": "John\u2019s crucifixion narrative"
+    },
+    {
+      "reference": "Romans 3:21-26",
+      "relationship": "supporting",
+      "notes": "atonement language"
+    },
+    {
+      "reference": "1 Peter 2:21-25",
+      "relationship": "supporting",
+      "notes": "Christ\u2019s suffering example"
+    },
+    {
+      "reference": "Hebrews 10:1-18",
+      "relationship": "supporting",
+      "notes": "once-for-all sacrifice"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "passover",
+      "relationship": "typological-connection",
+      "weight": 10,
+      "notes": "Passover and cross"
+    },
+    {
+      "id": "sacrifice-theme",
+      "relationship": "thematic-anchor",
+      "weight": 10,
+      "notes": "sacrificial logic"
+    },
+    {
+      "id": "messiah-theme",
+      "relationship": "messianic-fulfillment",
+      "weight": 10,
+      "notes": "the anointed king suffers"
+    },
+    {
+      "id": "resurrection",
+      "relationship": "narrative-contrast",
+      "weight": 10,
+      "notes": "death followed by vindication"
+    },
+    {
+      "id": "temple-theme",
+      "relationship": "atonement-context",
+      "weight": 8,
+      "notes": "sacrifice and holy presence"
+    }
+  ]
 }

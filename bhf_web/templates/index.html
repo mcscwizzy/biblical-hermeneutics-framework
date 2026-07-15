@@ -26,12 +26,12 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}?v=20260711b">
+  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}?v=20260714a">
   <script src="{{ url_for('static', path='/api/http.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-status.js') }}" defer></script>
-  <script src="{{ url_for('static', path='/htmx-study-panels.js') }}" defer></script>
+  <script src="{{ url_for('static', path='/htmx-study-panels.js') }}?v=20260714a" defer></script>
   <script src="{{ url_for('static', path='/htmx-search.js') }}" defer></script>
-  <script src="{{ url_for('static', path='/htmx-lite.js') }}?v=20260711b" defer></script>
+  <script src="{{ url_for('static', path='/htmx-lite.js') }}?v=20260714a" defer></script>
   <script src="{{ url_for('static', path='/pwa.js') }}" defer></script>
   {% if not test_mode %}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -141,6 +141,7 @@
         <div class="workspace-panel" data-workspace-tabs data-default-tab="ask">
           <div class="workspace-tab-bar" data-workspace-tab-bar role="tablist" aria-label="Workspace tabs">
             <button type="button" class="workspace-tab is-ask" id="workspace-tab-ask" role="tab" aria-selected="true" aria-controls="workspace-pane-ask" data-workspace-tab="ask" data-testid="ask-tab">Ask</button>
+            <button type="button" class="workspace-tab" id="workspace-tab-context" role="tab" aria-selected="false" aria-controls="workspace-pane-context" data-workspace-tab="context" tabindex="-1" data-testid="context-tab">Context</button>
             <button type="button" class="workspace-tab" id="workspace-tab-notes" role="tab" aria-selected="false" aria-controls="workspace-pane-notes" data-workspace-tab="notes" tabindex="-1" data-testid="notes-tab">Notes</button>
             <button type="button" class="workspace-tab" id="workspace-tab-highlights" role="tab" aria-selected="false" aria-controls="workspace-pane-highlights" data-workspace-tab="highlights" tabindex="-1" data-testid="highlights-tab">Highlights</button>
             <button type="button" class="workspace-tab" id="workspace-tab-saved" role="tab" aria-selected="false" aria-controls="workspace-pane-saved" data-workspace-tab="saved" tabindex="-1" data-testid="saved-tab">Saved</button>
@@ -286,6 +287,120 @@
               </section>
             </section>
 
+            <section class="workspace-pane" id="workspace-pane-context" role="tabpanel" aria-labelledby="workspace-tab-context" data-workspace-pane="context" hidden>
+              <section class="canonical-browser-panel" aria-labelledby="canonical-browser-heading">
+                <div class="panel-heading canonical-browser-heading">
+                  <div>
+                    <h2 id="canonical-browser-heading">Canonical Context</h2>
+                    <p class="canonical-browser-subtitle">Browse reviewed, draft, and placeholder CKL objects, inspect sources, and link them to notes.</p>
+                  </div>
+                  <div class="canonical-browser-actions">
+                    <button type="button" class="secondary" data-canonical-browser-home data-testid="canonical-browser-home">Browse top objects</button>
+                    <button type="button" class="secondary" data-canonical-browser-ask data-testid="canonical-browser-ask">Open Ask</button>
+                  </div>
+                </div>
+
+                <form class="canonical-browser-form" data-canonical-browser-form>
+                  <label class="canonical-browser-field canonical-browser-query">
+                    <span>Search</span>
+                    <input type="search" name="q" placeholder="Search person, place, theme, Scripture, or object ID" autocomplete="off" data-testid="canonical-search-input">
+                  </label>
+                  <label class="canonical-browser-field">
+                    <span>Type</span>
+                    <select name="type" data-testid="canonical-type-filter">
+                      <option value="all" selected>All types</option>
+                      <option value="theology">Theology</option>
+                      <option value="theme">Theme</option>
+                      <option value="person">Person</option>
+                      <option value="place">Place</option>
+                      <option value="event">Event</option>
+                      <option value="book">Book</option>
+                      <option value="word_study">Word study</option>
+                      <option value="archaeology">Archaeology</option>
+                      <option value="institution">Institution</option>
+                      <option value="prophecy">Prophecy</option>
+                      <option value="faq">FAQ</option>
+                    </select>
+                  </label>
+                  <label class="canonical-browser-field">
+                    <span>Review</span>
+                    <select name="review_status" data-testid="canonical-review-filter">
+                      <option value="all" selected>All review states</option>
+                      <option value="approved">Approved</option>
+                      <option value="reviewed">Reviewed</option>
+                      <option value="in_review">In review</option>
+                      <option value="unreviewed">Unreviewed</option>
+                      <option value="rejected">Rejected</option>
+                    </select>
+                  </label>
+                  <label class="canonical-browser-field">
+                    <span>Content</span>
+                    <select name="content_status" data-testid="canonical-content-filter">
+                      <option value="all" selected>All content states</option>
+                      <option value="placeholder">Placeholder</option>
+                      <option value="draft">Draft</option>
+                      <option value="complete">Complete</option>
+                      <option value="deprecated">Deprecated</option>
+                    </select>
+                  </label>
+                  <div class="canonical-browser-actions">
+                    <button type="submit" data-testid="canonical-search-button">Search</button>
+                    <button type="button" class="secondary" data-canonical-browser-clear data-testid="canonical-search-clear">Clear</button>
+                  </div>
+                </form>
+
+                <p class="canonical-browser-summary" data-canonical-browser-summary>Search or browse the canonical library.</p>
+
+                <div class="canonical-browser-layout">
+                  <section class="canonical-browser-results-card" aria-labelledby="canonical-browser-results-heading">
+                    <div class="panel-heading">
+                      <div>
+                        <h3 id="canonical-browser-results-heading">Results</h3>
+                        <p class="canonical-browser-results-summary">Retrieved objects and browse results appear here.</p>
+                      </div>
+                      <span id="canonical-browser-count" class="count" data-canonical-browser-count>0</span>
+                    </div>
+                    <div class="canonical-browser-results" data-canonical-browser-results>
+                      <p class="empty">Browse the curated canonical library or search for a topic.</p>
+                    </div>
+                  </section>
+
+                  <aside class="canonical-browser-detail-card" aria-live="polite">
+                    <div class="panel-heading canonical-browser-detail-heading">
+                      <div>
+                        <p class="canonical-browser-kicker">Selected object</p>
+                        <h3 data-canonical-detail-title>Select an object</h3>
+                      </div>
+                      <span class="canonical-status-chip" data-canonical-detail-status>--</span>
+                    </div>
+                    <p class="canonical-browser-detail-summary" data-canonical-detail-summary>Search results will populate here.</p>
+                    <div class="canonical-browser-detail-badges" data-canonical-detail-badges></div>
+                    <div class="canonical-browser-detail-reason" data-canonical-detail-reason hidden></div>
+
+                    <section class="canonical-browser-detail-section">
+                      <h4>Scripture references</h4>
+                      <div class="canonical-browser-detail-list" data-canonical-detail-scripture></div>
+                    </section>
+
+                    <section class="canonical-browser-detail-section">
+                      <h4>Related objects</h4>
+                      <div class="canonical-browser-detail-list" data-canonical-detail-related></div>
+                    </section>
+
+                    <section class="canonical-browser-detail-section">
+                      <h4>Sources</h4>
+                      <div class="canonical-browser-detail-list" data-canonical-detail-sources></div>
+                    </section>
+
+                    <div class="canonical-browser-detail-actions">
+                      <button type="button" class="secondary" data-canonical-detail-add-note data-testid="canonical-add-note">Add to note</button>
+                      <a class="secondary-link" href="/curation" data-canonical-detail-curation data-testid="canonical-open-curation">Open curation</a>
+                    </div>
+                  </aside>
+                </div>
+              </section>
+            </section>
+
             <section class="workspace-pane" id="workspace-pane-notes" role="tabpanel" aria-labelledby="workspace-tab-notes" data-workspace-pane="notes" hidden>
               <section class="notes-panel" aria-labelledby="notes-heading">
                 <div class="panel-heading">
@@ -298,6 +413,11 @@
                     <span id="note-reference">Note</span>
                     <textarea name="body" rows="4" required data-testid="note-textarea"></textarea>
                   </label>
+                  <label>
+                    <span>Canonical object IDs</span>
+                    <input type="text" name="canonical_object_ids" value="" placeholder="shechem, abraham, covenant" data-testid="note-canonical-object-ids">
+                  </label>
+                  <p class="note-editor-hint">Comma-separated CKL object IDs. Use the Canonical Context browser to add them.</p>
                   <div class="note-actions">
                     <button type="submit" data-testid="save-note-button">Save note</button>
                     <button type="button" class="secondary" data-cancel-note data-testid="cancel-note-button">Cancel</button>

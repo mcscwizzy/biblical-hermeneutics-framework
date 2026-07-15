@@ -7,11 +7,11 @@
     "read apocalyptic literature in the bible",
     "read apocalyptic literature overview"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "Apocalyptic literature uses visions and symbols to reveal God's rule, expose earthly powers, and strengthen hope.",
+  "historical_context": "Apocalyptic writing emerges in pressure, exile, and persecution as faithful communities ask how God will act.",
+  "ancient_near_east_context": "Beasts, numbers, and cosmic imagery were common ways to speak about empires and divine sovereignty.",
+  "literary_context": "Daniel and Revelation are the clearest examples, and both depend heavily on earlier Scripture.",
+  "covenantal_significance": "Apocalyptic hope assures God's people that covenant faithfulness will end in vindication and new creation.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,125 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Read symbols as symbols first, not as cipher keys for speculation.",
+    "Apocalyptic literature is pastoral before it is predictive."
+  ],
+  "common_questions": [
+    "Are apocalyptic symbols meant to be decoded literally?",
+    "Why does apocalyptic literature use so many beasts and numbers?",
+    "How does Revelation fit with Daniel?"
+  ],
+  "sources": [
+    "Daniel 7",
+    "Daniel 12",
+    "Zechariah 1",
+    "Matthew 24",
+    "1 Thessalonians 4",
+    "Revelation 1",
+    "Revelation 13",
+    "Revelation 21"
+  ],
+  "importance": 90,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Daniel 7:1-14",
+      "relationship": "primary",
+      "notes": "beasts and the Son of Man"
+    },
+    {
+      "reference": "Daniel 12:1-13",
+      "relationship": "supporting",
+      "notes": "final deliverance"
+    },
+    {
+      "reference": "Zechariah 1:7-17",
+      "relationship": "supporting",
+      "notes": "night visions"
+    },
+    {
+      "reference": "Matthew 24:29-35",
+      "relationship": "supporting",
+      "notes": "apocalyptic discourse"
+    },
+    {
+      "reference": "1 Thessalonians 4:13-18",
+      "relationship": "supporting",
+      "notes": "hope for the church"
+    },
+    {
+      "reference": "Revelation 1:9-20",
+      "relationship": "supporting",
+      "notes": "vision and interpretation"
+    },
+    {
+      "reference": "Revelation 13:1-10",
+      "relationship": "supporting",
+      "notes": "beastly empire"
+    },
+    {
+      "reference": "Revelation 21:1-5",
+      "relationship": "supporting",
+      "notes": "new creation hope"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "what-is-the-day-of-the-lord",
+      "relationship": "prophetic-horizon",
+      "weight": 9,
+      "notes": "judgment and vindication"
+    },
+    {
+      "id": "what-is-the-significance-of-the-exile",
+      "relationship": "exilic-context",
+      "weight": 9,
+      "notes": "pressure and hope"
+    },
+    {
+      "id": "new-jerusalem-theme",
+      "relationship": "eschatological-vision",
+      "weight": 10,
+      "notes": "final city and renewal"
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "royal-rule",
+      "weight": 9,
+      "notes": "God's reign over the nations"
+    },
+    {
+      "id": "revelation",
+      "relationship": "genre-anchor",
+      "weight": 10,
+      "notes": "canonical apocalyptic book"
+    },
+    {
+      "id": "daniel",
+      "relationship": "genre-precursor",
+      "weight": 9,
+      "notes": "Old Testament apocalyptic pattern"
+    },
+    {
+      "id": "hope-theme",
+      "relationship": "pastoral-purpose",
+      "weight": 8,
+      "notes": "hope sustains endurance"
+    },
+    {
+      "id": "restoration-theme",
+      "relationship": "renewal-vision",
+      "weight": 8,
+      "notes": "final restoration"
+    }
+  ]
 }

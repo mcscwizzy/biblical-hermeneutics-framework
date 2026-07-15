@@ -7,11 +7,11 @@
     "what is matthew about",
     "tell me about matthew"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "The Gospel that presents Jesus as the promised Messiah, teacher, and king who fulfills Israel's Scriptures.",
+  "historical_context": "Matthew speaks to a Jewish-Christian world that is wrestling with the meaning of Jesus in light of the law, the prophets, and the kingdom proclamation.",
+  "ancient_near_east_context": "Its setting is Second Temple Jewish and Roman imperial rather than ancient Near Eastern, but it constantly draws on Israel's older covenant story.",
+  "literary_context": "Matthew is arranged to highlight fulfillment, teaching blocks, and the spread of the kingdom through Jesus' words and deeds.",
+  "covenantal_significance": "Matthew shows that Jesus fulfills the Scriptures and announces the covenant reign of God in a new and climactic way.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,101 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Matthew's fulfillment citations are canonical readings, not mere proof-texting.",
+    "Hold together the already-arrived kingdom and the not-yet-complete kingdom."
+  ],
+  "common_questions": [
+    "Why does Matthew quote the Old Testament so much?",
+    "What is the Sermon on the Mount about?",
+    "Why is kingdom language so central in Matthew?"
+  ],
+  "sources": [
+    "Matthew 1-28",
+    "Daniel 7",
+    "Isaiah 7",
+    "Isaiah 9",
+    "Isaiah 53",
+    "Micah 5"
+  ],
+  "importance": 97,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Matthew 1:1-17",
+      "relationship": "supporting",
+      "notes": "genealogy and royal line"
+    },
+    {
+      "reference": "Matthew 5:1-20",
+      "relationship": "primary",
+      "notes": "kingdom ethics and fulfillment"
+    },
+    {
+      "reference": "Matthew 13:1-52",
+      "relationship": "supporting",
+      "notes": "parables of the kingdom"
+    },
+    {
+      "reference": "Matthew 16:13-28",
+      "relationship": "supporting",
+      "notes": "Messiah confession and the cross"
+    },
+    {
+      "reference": "Matthew 26:26-29",
+      "relationship": "supporting",
+      "notes": "new covenant meal"
+    },
+    {
+      "reference": "Matthew 28:1-20",
+      "relationship": "supporting",
+      "notes": "resurrection and mission"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "jesus",
+      "relationship": "central-subject",
+      "weight": 10,
+      "notes": "the Gospel's main figure"
+    },
+    {
+      "id": "messiah-theme",
+      "relationship": "canonical-anchor",
+      "weight": 10,
+      "notes": "royal and prophetic fulfillment"
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "major-theme",
+      "weight": 10,
+      "notes": "the kingdom proclamation"
+    },
+    {
+      "id": "temple-theme",
+      "relationship": "thematic-context",
+      "weight": 8,
+      "notes": "presence and fulfillment"
+    },
+    {
+      "id": "crucifixion",
+      "relationship": "passion-event",
+      "weight": 9,
+      "notes": "the cross in Matthew's narrative"
+    },
+    {
+      "id": "resurrection",
+      "relationship": "victory-event",
+      "weight": 9,
+      "notes": "the risen Jesus"
+    }
+  ]
 }

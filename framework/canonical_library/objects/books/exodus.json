@@ -7,11 +7,11 @@
     "what is exodus about",
     "tell me about exodus"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "The book of deliverance, covenant, and divine presence, moving Israel from slavery in Egypt to worship before God.",
+  "historical_context": "Exodus remembers Israel's bondage, liberation, wilderness journey, and covenant formation as the defining act of redemption in the Old Testament.",
+  "ancient_near_east_context": "Its conflict with Egypt, covenant making, and sanctuary instructions engage imperial power, treaty forms, and sacred-space patterns known across the ancient world.",
+  "literary_context": "Exodus continues Genesis by moving from family promise to national formation, then from rescue to covenant and tabernacle.",
+  "covenantal_significance": "Exodus shows that redemption leads to worship, and that the God who saves also forms a holy people by covenant.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,103 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "The book ties deliverance to worship; freedom from Egypt is not the final goal.",
+    "Read Passover, Sinai, and the tabernacle as one integrated movement from salvation to presence."
+  ],
+  "common_questions": [
+    "Why is Exodus central to the Bible?",
+    "How do Passover and Sinai relate to each other?",
+    "Why does the tabernacle matter?"
+  ],
+  "sources": [
+    "Exodus 1-40",
+    "Deuteronomy 5",
+    "1 Corinthians 10",
+    "Hebrews 3-4"
+  ],
+  "importance": 99,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Exodus 1:1-22",
+      "relationship": "supporting",
+      "notes": "slavery in Egypt"
+    },
+    {
+      "reference": "Exodus 3:1-15",
+      "relationship": "primary",
+      "notes": "the burning bush and divine name"
+    },
+    {
+      "reference": "Exodus 12:1-14",
+      "relationship": "supporting",
+      "notes": "Passover instruction"
+    },
+    {
+      "reference": "Exodus 19:1-6",
+      "relationship": "supporting",
+      "notes": "covenant identity"
+    },
+    {
+      "reference": "Exodus 20:1-17",
+      "relationship": "supporting",
+      "notes": "the ten words"
+    },
+    {
+      "reference": "Exodus 24:1-18",
+      "relationship": "supporting",
+      "notes": "covenant ratification"
+    },
+    {
+      "reference": "Exodus 25:8-9",
+      "relationship": "supporting",
+      "notes": "sanctuary instruction"
+    },
+    {
+      "reference": "Exodus 40:34-38",
+      "relationship": "supporting",
+      "notes": "the glory fills the tabernacle"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "moses",
+      "relationship": "covenant-mediator",
+      "weight": 10,
+      "notes": "the central human leader"
+    },
+    {
+      "id": "passover",
+      "relationship": "deliverance-event",
+      "weight": 10,
+      "notes": "the night of redemption"
+    },
+    {
+      "id": "sinai-covenant",
+      "relationship": "covenant-climax",
+      "weight": 10,
+      "notes": "Israel's covenant formation"
+    },
+    {
+      "id": "torah",
+      "relationship": "instruction-anchor",
+      "weight": 9,
+      "notes": "the law given through Moses"
+    },
+    {
+      "id": "temple-theme",
+      "relationship": "presence-pattern",
+      "weight": 8,
+      "notes": "holy presence in sacred space"
+    }
+  ]
 }

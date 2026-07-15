@@ -7,11 +7,11 @@
     "tell me about egypt",
     "why is egypt important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "The Nile empire that serves as both a place of oppression and a place of refuge in the biblical story.",
+  "historical_context": "Egypt is a major ancient civilization that shapes several biblical episodes, especially the patriarchal sojourn, Joseph's rise, and the exodus from slavery.",
+  "ancient_near_east_context": "As a powerful Nile-based empire, Egypt represents political might, agricultural abundance, and the temptation of security apart from covenant trust.",
+  "literary_context": "In Scripture, Egypt is both a concrete location and a theological symbol of bondage, judgment, and redemption.",
+  "covenantal_significance": "Egypt provides the backdrop against which God reveals himself as redeemer and forms a people for his own possession.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,93 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Egypt can function as a historical place or a theological symbol, so let the passage determine the emphasis.",
+    "The Bible uses Egypt for both danger and refuge, depending on the narrative setting."
+  ],
+  "common_questions": [
+    "Why is Egypt important in the Bible?",
+    "How does Egypt relate to the exodus?",
+    "Why does Jesus' story also mention Egypt?"
+  ],
+  "sources": [
+    "Genesis 12",
+    "Genesis 37-50",
+    "Exodus 1-15",
+    "Matthew 2"
+  ],
+  "importance": 90,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Genesis 12:10-20",
+      "relationship": "supporting",
+      "notes": "Abram's sojourn"
+    },
+    {
+      "reference": "Genesis 37:23-36",
+      "relationship": "supporting",
+      "notes": "Joseph sold into Egypt"
+    },
+    {
+      "reference": "Exodus 1:1-22",
+      "relationship": "supporting",
+      "notes": "Israel enslaved"
+    },
+    {
+      "reference": "Exodus 3:7-10",
+      "relationship": "primary",
+      "notes": "God hears and sends Moses"
+    },
+    {
+      "reference": "Exodus 12:29-42",
+      "relationship": "supporting",
+      "notes": "the exodus"
+    },
+    {
+      "reference": "Matthew 2:13-15",
+      "relationship": "supporting",
+      "notes": "Jesus taken to Egypt"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "joseph-sold-into-egypt",
+      "relationship": "family-anchor",
+      "weight": 8,
+      "notes": "Joseph's story leads into Egypt"
+    },
+    {
+      "id": "plagues-of-egypt",
+      "relationship": "judgment-event",
+      "weight": 10,
+      "notes": "the conflict that leads to liberation"
+    },
+    {
+      "id": "exodus",
+      "relationship": "deliverance-book",
+      "weight": 10,
+      "notes": "the movement out of Egypt"
+    },
+    {
+      "id": "moses",
+      "relationship": "deliverer",
+      "weight": 9,
+      "notes": "Moses leads Israel out of Egypt"
+    },
+    {
+      "id": "jesus",
+      "relationship": "narrative-echo",
+      "weight": 7,
+      "notes": "Matthew's infancy narrative echoes Israel's earlier story"
+    }
+  ]
 }

@@ -7,11 +7,11 @@
     "what is john about",
     "tell me about john"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "The Gospel that presents Jesus as the eternal Word who reveals the Father and gives life to all who believe.",
+  "historical_context": "John speaks from a late first-century Christian setting shaped by reflection on Jesus' identity, opposition, and the meaning of belief.",
+  "ancient_near_east_context": "Its setting is Second Temple Jewish and Roman imperial, yet it reuses creation, tabernacle, and wisdom imagery inherited from Israel's Scriptures.",
+  "literary_context": "John is organized around signs, discourses, and 'I am' sayings that draw readers toward belief and life.",
+  "covenantal_significance": "John shows that Jesus is the climactic revelation of God and the giver of life promised in the Scriptures.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,99 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "John's symbolism deepens historical testimony rather than replacing it.",
+    "The signs are meant to provoke belief, not merely curiosity."
+  ],
+  "common_questions": [
+    "Why are John's signs important?",
+    "What does 'the Word' mean in John?",
+    "How does John define eternal life?"
+  ],
+  "sources": [
+    "John 1-21",
+    "Exodus 33",
+    "Isaiah 40",
+    "Ezekiel 36-37",
+    "1 John 1-5"
+  ],
+  "importance": 97,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "John 1:1-18",
+      "relationship": "primary",
+      "notes": "the Word made flesh"
+    },
+    {
+      "reference": "John 3:1-21",
+      "relationship": "supporting",
+      "notes": "new birth and belief"
+    },
+    {
+      "reference": "John 6:1-71",
+      "relationship": "supporting",
+      "notes": "bread of life discourse"
+    },
+    {
+      "reference": "John 11:17-44",
+      "relationship": "supporting",
+      "notes": "sign of Lazarus and life"
+    },
+    {
+      "reference": "John 13:1-17",
+      "relationship": "supporting",
+      "notes": "foot washing and love"
+    },
+    {
+      "reference": "John 17:1-26",
+      "relationship": "supporting",
+      "notes": "high priestly prayer"
+    },
+    {
+      "reference": "John 20:1-31",
+      "relationship": "supporting",
+      "notes": "resurrection and purpose statement"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "jesus",
+      "relationship": "central-subject",
+      "weight": 10,
+      "notes": "the Gospel's main figure"
+    },
+    {
+      "id": "spirit-theme",
+      "relationship": "thematic-anchor",
+      "weight": 9,
+      "notes": "the Helper and Spirit's work"
+    },
+    {
+      "id": "resurrection-theme",
+      "relationship": "life-anchor",
+      "weight": 9,
+      "notes": "life from death"
+    },
+    {
+      "id": "temple-theme",
+      "relationship": "presence-language",
+      "weight": 8,
+      "notes": "Jesus and sacred space"
+    },
+    {
+      "id": "covenant-theology",
+      "relationship": "theological-context",
+      "weight": 7,
+      "notes": "revelation, fulfillment, and new covenant life"
+    }
+  ]
 }

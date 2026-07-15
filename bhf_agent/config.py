@@ -7,7 +7,7 @@ from dataclasses import asdict, dataclass, fields, replace
 from pathlib import Path
 from typing import Any, Optional, Union
 
-from framework.canonical_library import REVIEW_STATUS_VALUES
+from framework.canonical_library import DEFAULT_PUBLIC_CACHE_PATH, REVIEW_STATUS_VALUES
 
 
 class ConfigError(ValueError):
@@ -23,9 +23,8 @@ class CanonicalLibraryConfig:
     enabled: bool = True
     max_results: int = 5
     max_context_tokens: int = 1200
-    include_placeholders: bool = True
+    include_placeholders: bool = False
     allowed_statuses: tuple[str, ...] = (
-        "unreviewed",
         "in_review",
         "reviewed",
         "approved",
@@ -44,6 +43,34 @@ class CanonicalLibraryConfig:
         if invalid:
             raise ConfigError(
                 "canonical_library.allowed_statuses must be one of: "
+                + ", ".join(REVIEW_STATUS_VALUES)
+            )
+
+
+@dataclass(frozen=True)
+class PublicCacheConfig:
+    enabled: bool = False
+    path: str = str(DEFAULT_PUBLIC_CACHE_PATH)
+    minimum_quality_score: float = 80.0
+    default_ttl_days: int = 365
+    allowed_review_statuses: tuple[str, ...] = (
+        "reviewed",
+        "approved",
+    )
+
+    def validate(self) -> None:
+        if not str(self.path).strip():
+            raise ConfigError("public_cache.path must not be blank")
+        if not 0 <= float(self.minimum_quality_score) <= 100:
+            raise ConfigError("public_cache.minimum_quality_score must be between 0 and 100")
+        if int(self.default_ttl_days) <= 0:
+            raise ConfigError("public_cache.default_ttl_days must be greater than 0")
+        if not self.allowed_review_statuses:
+            raise ConfigError("public_cache.allowed_review_statuses must not be empty")
+        invalid = sorted(set(self.allowed_review_statuses) - set(REVIEW_STATUS_VALUES))
+        if invalid:
+            raise ConfigError(
+                "public_cache.allowed_review_statuses must be one of: "
                 + ", ".join(REVIEW_STATUS_VALUES)
             )
 
@@ -70,6 +97,7 @@ class AgentConfig:
     memory_path: Optional[str] = None
     memory_max_turns: int = 8
     canonical_library: CanonicalLibraryConfig = CanonicalLibraryConfig()
+    public_cache: PublicCacheConfig = PublicCacheConfig()
 
     @classmethod
     def from_json_file(cls, path: Union[str, Path]) -> "AgentConfig":
@@ -96,6 +124,7 @@ class AgentConfig:
         data["canonical_library"] = _canonical_library_config_from_value(
             data.get("canonical_library")
         )
+        data["public_cache"] = _public_cache_config_from_value(data.get("public_cache"))
         try:
             config = cls(**data)
         except TypeError as exc:
@@ -113,6 +142,11 @@ class AgentConfig:
             clean["canonical_library"] = _canonical_library_config_from_value(
                 clean["canonical_library"],
                 base=self.canonical_library,
+            )
+        if "public_cache" in clean:
+            clean["public_cache"] = _public_cache_config_from_value(
+                clean["public_cache"],
+                base=self.public_cache,
             )
         config = replace(self, **clean)
         config.validate()
@@ -150,6 +184,9 @@ class AgentConfig:
         if int(self.memory_max_turns) <= 0:
             raise ConfigError("memory_max_turns must be greater than 0")
         self.canonical_library.validate()
+        self.public_cache.validate()
+        if self.public_cache.enabled and not self.canonical_library.enabled:
+            raise ConfigError("public_cache requires canonical_library to be enabled")
 
     def to_dict(self, redact_secrets: bool = True) -> dict[str, Any]:
         data = asdict(self)
@@ -200,6 +237,48 @@ def _canonical_library_config_from_value(
     return config
 
 
+def _public_cache_config_from_value(
+    value: Any,
+    *,
+    base: PublicCacheConfig | None = None,
+) -> PublicCacheConfig:
+    if isinstance(value, PublicCacheConfig):
+        config = value
+    elif value is None:
+        config = base or PublicCacheConfig()
+    elif isinstance(value, dict):
+        base_config = base or PublicCacheConfig()
+        known = {field.name for field in fields(PublicCacheConfig)}
+        unknown = sorted(set(value) - known)
+        if unknown:
+            raise ConfigError(
+                f"unknown public_cache field(s): {', '.join(unknown)}"
+            )
+        merged = asdict(base_config)
+        merged.update(value)
+        config = PublicCacheConfig(
+            enabled=_coerce_bool(merged["enabled"], field_name="public_cache.enabled"),
+            path=str(merged["path"]).strip() or str(DEFAULT_PUBLIC_CACHE_PATH),
+            minimum_quality_score=_coerce_float(
+                merged["minimum_quality_score"],
+                field_name="public_cache.minimum_quality_score",
+            ),
+            default_ttl_days=_coerce_int(
+                merged["default_ttl_days"],
+                field_name="public_cache.default_ttl_days",
+            ),
+            allowed_review_statuses=_coerce_statuses(
+                merged["allowed_review_statuses"],
+                field_name="public_cache.allowed_review_statuses",
+            ),
+        )
+    else:
+        raise ConfigError("public_cache must be an object")
+
+    config.validate()
+    return config
+
+
 def _coerce_bool(value: Any, *, field_name: str) -> bool:
     if isinstance(value, bool):
         return value
@@ -217,6 +296,13 @@ def _coerce_int(value: Any, *, field_name: str) -> int:
         return int(value)
     except (TypeError, ValueError) as exc:
         raise ConfigError(f"{field_name} must be an integer") from exc
+
+
+def _coerce_float(value: Any, *, field_name: str) -> float:
+    try:
+        return float(value)
+    except (TypeError, ValueError) as exc:
+        raise ConfigError(f"{field_name} must be a number") from exc
 
 
 def _coerce_statuses(value: Any, *, field_name: str) -> tuple[str, ...]:

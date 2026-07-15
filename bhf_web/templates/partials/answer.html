@@ -1,3 +1,5 @@
+{% set canonical_object_ids = canonical_object_ids | default([]) %}
+{% set canonical_topics = canonical_context.retrieved_topics if canonical_context and canonical_context.retrieved_topics else [] %}
 {% if error %}
   <div class="error" role="alert">
     <h2>Could not ask BHF</h2>
@@ -22,6 +24,95 @@
       <p class="answer-reference">ASV {{ reader_reference }}</p>
     {% endif %}
     <div class="answer-body">{{ answer_html | safe }}</div>
+
+    {% if canonical_topics or canonical_object_ids %}
+      <section class="answer-canonical-context" aria-labelledby="answer-canonical-context-heading">
+        <div class="panel-heading answer-canonical-heading">
+          <div>
+            <h3 id="answer-canonical-context-heading">Canonical Context</h3>
+            <p class="answer-canonical-subtitle">
+              {% if canonical_topics %}
+                Retrieved CKL objects that grounded this answer.
+              {% else %}
+                Saved canonical object links associated with this study.
+              {% endif %}
+            </p>
+          </div>
+          <button type="button" class="secondary" data-open-canonical-browser>Open browser</button>
+        </div>
+
+        <div class="canonical-answer-badges">
+          {% if canonical_topics %}
+            {% for topic in canonical_topics %}
+              <button
+                type="button"
+                class="canonical-object-badge"
+                data-canonical-object-id="{{ topic.id }}"
+                data-canonical-object-title="{{ topic.title }}"
+              >
+                <span class="canonical-object-badge-title">{{ topic.title }}</span>
+                <span class="canonical-object-badge-meta">{{ topic.type }} · {{ topic.match_type or "browse" }}</span>
+              </button>
+            {% endfor %}
+          {% else %}
+            {% for object_id in canonical_object_ids %}
+              <button
+                type="button"
+                class="canonical-object-badge"
+                data-canonical-object-id="{{ object_id }}"
+                data-canonical-object-title="{{ object_id }}"
+              >
+                <span class="canonical-object-badge-title">{{ object_id }}</span>
+                <span class="canonical-object-badge-meta">saved link</span>
+              </button>
+            {% endfor %}
+          {% endif %}
+        </div>
+
+        {% if canonical_topics %}
+          <details class="canonical-context-details">
+            <summary>Why these objects were retrieved</summary>
+            <div class="canonical-context-cards">
+              {% for topic in canonical_topics %}
+                <article class="canonical-context-card" data-canonical-object-id="{{ topic.id }}">
+                  <div class="canonical-context-card-header">
+                    <h4>{{ topic.title }}</h4>
+                    <span class="canonical-status-chip">{{ topic.review_status or "unknown" }}</span>
+                  </div>
+                  <p class="canonical-context-reason">{{ topic.reason or topic.match_type or "Matched canonical search criteria." }}</p>
+                  <p class="canonical-context-meta">
+                    Content: {{ topic.content_status or "unknown" }} · Confidence: {{ topic.confidence or "unrated" }}
+                  </p>
+                  {% if topic.matched_fields %}
+                    <p class="canonical-context-meta">Fields: {{ topic.matched_fields | join(", ") }}</p>
+                  {% endif %}
+                  {% if topic.matched_terms %}
+                    <p class="canonical-context-meta">Terms: {{ topic.matched_terms | join(", ") }}</p>
+                  {% endif %}
+                  {% if topic.scripture_references %}
+                    <div class="canonical-context-scripture">
+                      {% for ref in topic.scripture_references %}
+                        <button
+                          type="button"
+                          class="scripture-link"
+                          data-bible-reference="{{ ref.reference }}"
+                          data-bible-relationship="{{ ref.relationship }}"
+                        >
+                          {{ ref.reference }}
+                        </button>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                  <div class="canonical-context-actions">
+                    <button type="button" class="secondary" data-canonical-link-note="{{ topic.id }}">Link to note</button>
+                  </div>
+                </article>
+              {% endfor %}
+            </div>
+          </details>
+        {% endif %}
+      </section>
+    {% endif %}
   </article>
 
   <aside class="metadata">

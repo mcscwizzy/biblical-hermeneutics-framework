@@ -7,11 +7,11 @@
     "paul in the bible",
     "paul overview"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "Paul is the apostle to the Gentiles whose letters interpret Christ for the churches.",
+  "historical_context": "A former persecutor turned missionary, Paul travels across Roman cities and writes to churches in the Mediterranean world.",
+  "ancient_near_east_context": "Paul operates in diaspora synagogue and Greco-Roman city contexts, translating the gospel for mixed communities.",
+  "literary_context": "Acts narrates his mission and the epistles unfold his theology and pastoral counsel.",
+  "covenantal_significance": "Paul explains how the new covenant includes Jew and Gentile in Christ by grace through faith.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,119 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Paul's mission is inseparable from his letters; Acts and the epistles belong together.",
+    "He is both a theologian and a missionary."
+  ],
+  "common_questions": [
+    "Why is Paul so important?",
+    "How does Paul connect to the Gentiles?",
+    "What books did Paul write?"
+  ],
+  "sources": [
+    "Acts 9",
+    "Acts 13",
+    "Romans 1",
+    "1 Corinthians 15",
+    "Galatians 1-2",
+    "Philippians 3",
+    "2 Timothy 4"
+  ],
+  "importance": 95,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Acts 9:1-19",
+      "relationship": "supporting",
+      "notes": "conversion and calling"
+    },
+    {
+      "reference": "Acts 13:1-3",
+      "relationship": "supporting",
+      "notes": "mission sent by the Spirit"
+    },
+    {
+      "reference": "Romans 1:1-17",
+      "relationship": "supporting",
+      "notes": "gospel summary"
+    },
+    {
+      "reference": "1 Corinthians 15:1-11",
+      "relationship": "supporting",
+      "notes": "resurrection proclamation"
+    },
+    {
+      "reference": "Galatians 1:11-24",
+      "relationship": "supporting",
+      "notes": "independent gospel call"
+    },
+    {
+      "reference": "Philippians 3:4-14",
+      "relationship": "supporting",
+      "notes": "loss and gain in Christ"
+    },
+    {
+      "reference": "2 Timothy 4:1-8",
+      "relationship": "supporting",
+      "notes": "final charge"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "paul",
+      "relationship": "apostolic-anchor",
+      "weight": 10,
+      "notes": "apostle Paul"
+    },
+    {
+      "id": "acts",
+      "relationship": "narrative-context",
+      "weight": 10,
+      "notes": "Paul in Acts"
+    },
+    {
+      "id": "romans",
+      "relationship": "epistolary-framework",
+      "weight": 10,
+      "notes": "major Pauline letter"
+    },
+    {
+      "id": "mission",
+      "relationship": "apostolic-mission",
+      "weight": 10,
+      "notes": "mission to the nations"
+    },
+    {
+      "id": "ecclesiology",
+      "relationship": "church-teaching",
+      "weight": 8,
+      "notes": "Paul on the church"
+    },
+    {
+      "id": "justification",
+      "relationship": "theological-focus",
+      "weight": 9,
+      "notes": "justification by faith"
+    },
+    {
+      "id": "new-covenant",
+      "relationship": "covenant-fulfillment",
+      "weight": 9,
+      "notes": "new covenant in Christ"
+    },
+    {
+      "id": "what-is-the-roman-empire-in-the-bible",
+      "relationship": "historical-context",
+      "weight": 8,
+      "notes": "Roman world of Paul"
+    }
+  ]
 }

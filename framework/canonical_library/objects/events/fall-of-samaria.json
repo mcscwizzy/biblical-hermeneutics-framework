@@ -7,11 +7,11 @@
     "tell me about fall of samaria",
     "why is fall of samaria important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "Assyria conquers Samaria and ends the northern kingdom of Israel.",
+  "historical_context": "The northern kingdom falls in 722/721 BC after generations of political instability, idolatry, and prophetic warning.",
+  "ancient_near_east_context": "The event occurs within Assyrian imperial expansion, where vassal states are absorbed through conquest and deportation.",
+  "literary_context": "2 Kings 17 interprets the event as covenant judgment and frames it as a turning point in Israel's story.",
+  "covenantal_significance": "Samaria's fall shows that covenant breach has national consequences, yet God preserves a remnant and future hope.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,95 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "The fall is not the end of God's purposes; it is the end of a rebellious kingdom.",
+    "Prophetic critique and historical judgment are read together in 2 Kings."
+  ],
+  "common_questions": [
+    "Why did Samaria fall?",
+    "What happened to the northern tribes?",
+    "How does Samaria's fall shape later Scripture?"
+  ],
+  "sources": [
+    "2 Kings 17",
+    "Hosea 8",
+    "Amos 5",
+    "Isaiah 7",
+    "2 Kings 18"
+  ],
+  "importance": 94,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "2 Kings 17:1-23",
+      "relationship": "primary",
+      "notes": "fall of Samaria"
+    },
+    {
+      "reference": "2 Kings 17:24-41",
+      "relationship": "supporting",
+      "notes": "settlement and syncretism"
+    },
+    {
+      "reference": "Hosea 1:1-11",
+      "relationship": "supporting",
+      "notes": "judgment on Israel"
+    },
+    {
+      "reference": "Amos 5:18-27",
+      "relationship": "supporting",
+      "notes": "warning and justice"
+    },
+    {
+      "reference": "Isaiah 7:1-17",
+      "relationship": "supporting",
+      "notes": "Assyrian horizon"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "what-is-the-kingdom-of-israel",
+      "relationship": "northern-kingdom",
+      "weight": 10,
+      "notes": "Israel falls"
+    },
+    {
+      "id": "2-kings",
+      "relationship": "book-context",
+      "weight": 10,
+      "notes": "historical source"
+    },
+    {
+      "id": "assyria",
+      "relationship": "imperial-conqueror",
+      "weight": 10,
+      "notes": "Assyrian conquest"
+    },
+    {
+      "id": "exile-theme",
+      "relationship": "canonical-theme",
+      "weight": 10,
+      "notes": "judgment and exile"
+    },
+    {
+      "id": "remnant-theme",
+      "relationship": "survival-pattern",
+      "weight": 9,
+      "notes": "the remnant survives"
+    },
+    {
+      "id": "restoration-theme",
+      "relationship": "hope-pattern",
+      "weight": 8,
+      "notes": "hope beyond collapse"
+    }
+  ]
 }

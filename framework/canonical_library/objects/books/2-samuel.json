@@ -8,11 +8,11 @@
     "tell me about 2 samuel",
     "second samuel"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "The narrative of David's reign, Jerusalem's rise, covenant promise, and royal failure.",
+  "historical_context": "2 Samuel narrates the consolidation of the monarchy under David and the pressures of sin, succession, and political unrest.",
+  "ancient_near_east_context": "The book's royal world resembles other ancient Near Eastern kingdoms, but it evaluates kings by covenant fidelity rather than propaganda.",
+  "literary_context": "The book moves from national consolidation to Davidic covenant, then to the consequences of David's sin and the turmoil of his house.",
+  "covenantal_significance": "2 Samuel establishes the Davidic covenant as a decisive step in the promise line toward the Messiah.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -24,10 +24,112 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "David's greatness never erases his sin; the book lets both realities stand.",
+    "Jerusalem, covenant, and kingship become inseparable in the rest of Scripture."
+  ],
+  "common_questions": [
+    "Why is 2 Samuel important?",
+    "What is the Davidic covenant?",
+    "How does David's failure shape the biblical story?"
+  ],
+  "sources": [
+    "2 Samuel 1-24",
+    "Psalm 2",
+    "Psalm 51",
+    "Acts 2",
+    "Luke 1"
+  ],
+  "importance": 95,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "2 Samuel 5:1-12",
+      "relationship": "supporting",
+      "notes": "David takes Jerusalem"
+    },
+    {
+      "reference": "2 Samuel 6:1-23",
+      "relationship": "supporting",
+      "notes": "ark brought to Jerusalem"
+    },
+    {
+      "reference": "2 Samuel 7:1-17",
+      "relationship": "primary",
+      "notes": "Davidic covenant"
+    },
+    {
+      "reference": "2 Samuel 11:1-27",
+      "relationship": "supporting",
+      "notes": "David and Bathsheba"
+    },
+    {
+      "reference": "2 Samuel 12:1-25",
+      "relationship": "supporting",
+      "notes": "Nathan confronts David"
+    },
+    {
+      "reference": "2 Samuel 24:1-25",
+      "relationship": "supporting",
+      "notes": "census and judgment"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "david",
+      "relationship": "king-anchor",
+      "weight": 10,
+      "notes": "David's reign"
+    },
+    {
+      "id": "jerusalem",
+      "relationship": "royal-capital",
+      "weight": 10,
+      "notes": "Jerusalem established"
+    },
+    {
+      "id": "ark-brought-to-jerusalem",
+      "relationship": "cultic-event",
+      "weight": 9,
+      "notes": "ark's relocation"
+    },
+    {
+      "id": "davidic-covenant",
+      "relationship": "covenantal-event",
+      "weight": 10,
+      "notes": "promise of enduring house"
+    },
+    {
+      "id": "bathsheba",
+      "relationship": "royal-failure-context",
+      "weight": 8,
+      "notes": "David's sin"
+    },
+    {
+      "id": "solomon",
+      "relationship": "succession-context",
+      "weight": 8,
+      "notes": "David's heir"
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "royal-framework",
+      "weight": 10,
+      "notes": "kingship under covenant"
+    },
+    {
+      "id": "covenant-theme",
+      "relationship": "covenantal-framework",
+      "weight": 9,
+      "notes": "covenant promise"
+    }
+  ]
 }

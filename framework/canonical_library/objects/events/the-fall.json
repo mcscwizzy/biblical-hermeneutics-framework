@@ -7,11 +7,11 @@
     "tell me about the fall",
     "why is the fall important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "The human rebellion in Eden that brings sin, shame, curse, and exile into the biblical story.",
+  "historical_context": "Genesis 3 functions as the interpretive root of human estrangement, death, and the need for redemption.",
+  "ancient_near_east_context": "The garden narrative uses familiar imagery of sacred space, guarded boundaries, and moral order, but it insists on one sovereign God rather than a pantheon.",
+  "literary_context": "The chapter reverses the goodness of creation with disobedience, broken trust, and expulsion from sacred space.",
+  "covenantal_significance": "The fall explains why covenant faithfulness, atonement, and restoration become necessary throughout the rest of Scripture.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,82 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Read the chapter as a theological account of human rebellion, not only as a story about curiosity or shame.",
+    "The serpent, the fruit, and the exile image together describe disorder at relational, moral, and cosmic levels."
+  ],
+  "common_questions": [
+    "What happened in the fall?",
+    "Why is Genesis 3 so important?",
+    "How does the fall explain sin and death?"
+  ],
+  "sources": [
+    "Genesis 3",
+    "Romans 5",
+    "1 Corinthians 15",
+    "James 1"
+  ],
+  "importance": 98,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Genesis 3:1-24",
+      "relationship": "primary",
+      "notes": "disobedience and exile"
+    },
+    {
+      "reference": "Romans 5:12-21",
+      "relationship": "supporting",
+      "notes": "Adam and Christ contrast"
+    },
+    {
+      "reference": "1 Corinthians 15:21-22",
+      "relationship": "supporting",
+      "notes": "death in Adam, life in Christ"
+    },
+    {
+      "reference": "James 1:13-15",
+      "relationship": "supporting",
+      "notes": "desire and sin"
+    },
+    {
+      "reference": "Revelation 20:11-15",
+      "relationship": "supporting",
+      "notes": "final judgment"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "creation",
+      "relationship": "narrative-contrast",
+      "weight": 10,
+      "notes": "the goodness that is lost"
+    },
+    {
+      "id": "exile-theme",
+      "relationship": "thematic-development",
+      "weight": 9,
+      "notes": "expulsion from sacred space"
+    },
+    {
+      "id": "resurrection-theme",
+      "relationship": "redemptive-answer",
+      "weight": 8,
+      "notes": "life overcoming death"
+    },
+    {
+      "id": "covenant-theme",
+      "relationship": "theological-context",
+      "weight": 7,
+      "notes": "covenant answers human failure"
+    }
+  ]
 }

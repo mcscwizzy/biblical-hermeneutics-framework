@@ -7,11 +7,11 @@
     "tell me about division of the kingdom",
     "why is division of the kingdom important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "After Solomon's death, the united monarchy splits into the northern kingdom of Israel and the southern kingdom of Judah.",
+  "historical_context": "The split follows political grievance, heavy labor, and fragile succession in the wake of Solomon's reign.",
+  "ancient_near_east_context": "The event reflects a common ancient pattern of dynastic fracture, but Scripture interprets it as covenant consequence.",
+  "literary_context": "1 Kings 12 uses the division to explain why later history moves toward exile and prophetic critique.",
+  "covenantal_significance": "The split shows the fragility of royal unity when covenant faithfulness is neglected.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,95 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "The division is not merely a political breakup; it is a theological turning point.",
+    "The split shapes the rest of the Deuteronomistic history."
+  ],
+  "common_questions": [
+    "Why did the kingdom divide?",
+    "What is the difference between Israel and Judah?",
+    "How does the division lead to exile?"
+  ],
+  "sources": [
+    "1 Kings 12",
+    "2 Chronicles 10",
+    "Hosea 1",
+    "Amos 7",
+    "Matthew 12"
+  ],
+  "importance": 96,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "1 Kings 12:1-24",
+      "relationship": "primary",
+      "notes": "kingdom divides"
+    },
+    {
+      "reference": "2 Chronicles 10:1-19",
+      "relationship": "supporting",
+      "notes": "parallel account"
+    },
+    {
+      "reference": "1 Kings 12:25-33",
+      "relationship": "supporting",
+      "notes": "northern cult centers"
+    },
+    {
+      "reference": "1 Kings 14:1-20",
+      "relationship": "supporting",
+      "notes": "prophetic interpretation"
+    },
+    {
+      "reference": "2 Chronicles 13:1-22",
+      "relationship": "supporting",
+      "notes": "continuing division"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "solomon",
+      "relationship": "succession-context",
+      "weight": 10,
+      "notes": "division follows Solomon"
+    },
+    {
+      "id": "1-kings",
+      "relationship": "book-context",
+      "weight": 10,
+      "notes": "primary narrative source"
+    },
+    {
+      "id": "what-is-the-kingdom-of-israel",
+      "relationship": "northern-kingdom",
+      "weight": 10,
+      "notes": "northern kingdom emerges"
+    },
+    {
+      "id": "what-is-the-kingdom-of-judah",
+      "relationship": "southern-kingdom",
+      "weight": 10,
+      "notes": "southern kingdom emerges"
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "canonical-theme",
+      "weight": 10,
+      "notes": "royal fragmentation"
+    },
+    {
+      "id": "exile-theme",
+      "relationship": "judgment-horizon",
+      "weight": 8,
+      "notes": "division leads toward exile"
+    }
+  ]
 }

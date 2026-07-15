@@ -47,6 +47,8 @@ def register_ask_routes(
                     "error": str(exc),
                     "result": None,
                     "answer_html": "",
+                    "canonical_context": None,
+                    "canonical_object_ids": [],
                     "metadata": {},
                     "reader_reference": None,
                 },
@@ -55,6 +57,7 @@ def register_ask_routes(
 
         if test_mode:
             result = _fake_result(question, reader_reference)
+            metadata = getattr(result, "model_metadata", {}) or {}
             return templates.TemplateResponse(
                 request,
                 "partials/answer.html",
@@ -63,10 +66,13 @@ def register_ask_routes(
                     "result": result,
                     "answer_html": render_safe_markdown(result.answer_text),
                     "metadata": result_metadata(result),
+                    "canonical_context": metadata.get("canonical_library_context"),
+                    "canonical_object_ids": metadata.get("canonical_library_object_ids", []),
                     "reader_reference": reader_reference,
                 },
             )
 
+        metadata = getattr(result, "model_metadata", {}) or {}
         return templates.TemplateResponse(
             request,
             "partials/answer.html",
@@ -75,6 +81,8 @@ def register_ask_routes(
                 "result": result,
                 "answer_html": render_safe_markdown(result.answer_text),
                 "metadata": result_metadata(result),
+                "canonical_context": metadata.get("canonical_library_context"),
+                "canonical_object_ids": metadata.get("canonical_library_object_ids", []),
                 "reader_reference": reader_reference,
             },
         )
@@ -111,6 +119,8 @@ def register_ask_routes(
                     "error": "job not found",
                     "result": None,
                     "answer_html": "",
+                    "canonical_context": None,
+                    "canonical_object_ids": [],
                     "metadata": {},
                     "reader_reference": None,
                 },
@@ -124,6 +134,8 @@ def register_ask_routes(
                     "error": "answer is still running",
                     "result": None,
                     "answer_html": "",
+                    "canonical_context": None,
+                    "canonical_object_ids": [],
                     "metadata": {},
                     "reader_reference": None,
                 },
@@ -137,6 +149,8 @@ def register_ask_routes(
                     "error": _job_error_message(job),
                     "result": None,
                     "answer_html": "",
+                    "canonical_context": None,
+                    "canonical_object_ids": [],
                     "metadata": {},
                     "reader_reference": job.reader_reference,
                 },
@@ -144,6 +158,7 @@ def register_ask_routes(
             )
 
         result = job.result
+        metadata = getattr(result, "model_metadata", {}) or {}
         return templates.TemplateResponse(
             request,
             "partials/answer.html",
@@ -152,6 +167,8 @@ def register_ask_routes(
                 "result": result,
                 "answer_html": render_safe_markdown(result.answer_text),
                 "metadata": result_metadata(result),
+                "canonical_context": metadata.get("canonical_library_context"),
+                "canonical_object_ids": metadata.get("canonical_library_object_ids", []),
                 "reader_reference": job.reader_reference,
             },
         )

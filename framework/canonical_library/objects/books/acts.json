@@ -7,11 +7,11 @@
     "what is acts about",
     "tell me about acts"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "A narrative of the Spirit-empowered spread of the Jesus movement from Jerusalem to the Roman world.",
+  "historical_context": "Acts reflects the earliest decades of the church as it moves through Jewish, Samaritan, and Gentile settings under Roman rule.",
+  "ancient_near_east_context": "Its setting is Greco-Roman, not ancient Near Eastern, but it remains rooted in Israel's Scriptures and Jerusalem-centered hopes.",
+  "literary_context": "Acts continues Luke's story with geographic and theological movement from Jerusalem to Judea, Samaria, and the ends of the earth.",
+  "covenantal_significance": "Acts shows the risen Jesus gathering a covenant people from the nations by the power of the Spirit.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,104 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Acts is descriptive narrative, so not every episode becomes a universal church blueprint.",
+    "The Spirit's guidance and witness are central from start to finish."
+  ],
+  "common_questions": [
+    "Why does Acts matter?",
+    "Why is Pentecost central in Acts?",
+    "How does Acts explain the mission to the Gentiles?"
+  ],
+  "sources": [
+    "Acts 1-28",
+    "Luke 24",
+    "Romans 15",
+    "Ephesians 2",
+    "1 Corinthians 12-14"
+  ],
+  "importance": 96,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Acts 1:1-11",
+      "relationship": "supporting",
+      "notes": "ascension and commission"
+    },
+    {
+      "reference": "Acts 2:1-47",
+      "relationship": "primary",
+      "notes": "Pentecost"
+    },
+    {
+      "reference": "Acts 6:1-7",
+      "relationship": "supporting",
+      "notes": "community organization"
+    },
+    {
+      "reference": "Acts 10:1-48",
+      "relationship": "supporting",
+      "notes": "Gentile inclusion"
+    },
+    {
+      "reference": "Acts 13:1-52",
+      "relationship": "supporting",
+      "notes": "mission beyond Antioch"
+    },
+    {
+      "reference": "Acts 15:1-35",
+      "relationship": "supporting",
+      "notes": "Jerusalem Council"
+    },
+    {
+      "reference": "Acts 17:16-34",
+      "relationship": "supporting",
+      "notes": "Paul in Athens"
+    },
+    {
+      "reference": "Acts 28:23-31",
+      "relationship": "supporting",
+      "notes": "the gospel reaches Rome"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "jesus",
+      "relationship": "risen-lord",
+      "weight": 10,
+      "notes": "the one who sends the Spirit"
+    },
+    {
+      "id": "paul",
+      "relationship": "missionary-anchor",
+      "weight": 10,
+      "notes": "the major apostolic missionary"
+    },
+    {
+      "id": "peter",
+      "relationship": "apostolic-anchor",
+      "weight": 9,
+      "notes": "early Jerusalem leadership"
+    },
+    {
+      "id": "spirit-theme",
+      "relationship": "driving-theme",
+      "weight": 10,
+      "notes": "the Spirit empowers the mission"
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "mission-context",
+      "weight": 8,
+      "notes": "the kingdom expands through witness"
+    }
+  ]
 }

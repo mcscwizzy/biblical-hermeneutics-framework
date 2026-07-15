@@ -7,11 +7,11 @@
     "tell me about passover",
     "why is passover important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "The deliverance meal that marks Israel\u2019s rescue from Egypt and becomes a recurring redemption pattern.",
+  "historical_context": "Passover stands at the center of the exodus tradition and the formation of Israel as a redeemed people.",
+  "ancient_near_east_context": "The narrative is set within Egypt and frames God\u2019s victory over imperial power and death through a covenant meal.",
+  "literary_context": "Exodus 12-13 combines ritual instruction, narrative deliverance, and memorial practice.",
+  "covenantal_significance": "Passover marks God\u2019s saving action that turns enslaved households into a covenant people.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,110 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Passover is not only about escape; it also forms identity, memory, and worship.",
+    "The New Testament does not erase Passover; it rereads it through the crucifixion and resurrection of Jesus."
+  ],
+  "common_questions": [
+    "Why is Passover important?",
+    "How does Passover point to Jesus?",
+    "What does the Passover meal mean in Israel\u2019s story?"
+  ],
+  "sources": [
+    "Exodus 12-13",
+    "Deuteronomy 16",
+    "Luke 22",
+    "1 Corinthians 5",
+    "John 19",
+    "Hebrews 11"
+  ],
+  "importance": 99,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Exodus 12:1-14",
+      "relationship": "primary",
+      "notes": "passover institution"
+    },
+    {
+      "reference": "Exodus 12:21-30",
+      "relationship": "supporting",
+      "notes": "the night of deliverance"
+    },
+    {
+      "reference": "Exodus 13:1-16",
+      "relationship": "supporting",
+      "notes": "memorial and firstborn"
+    },
+    {
+      "reference": "Deuteronomy 16:1-8",
+      "relationship": "supporting",
+      "notes": "festival repetition"
+    },
+    {
+      "reference": "Joshua 5:10-12",
+      "relationship": "supporting",
+      "notes": "Passover in the land"
+    },
+    {
+      "reference": "Luke 22:14-20",
+      "relationship": "typology",
+      "notes": "Jesus reuses Passover language"
+    },
+    {
+      "reference": "1 Corinthians 5:7-8",
+      "relationship": "typology",
+      "notes": "Christ our Passover"
+    },
+    {
+      "reference": "John 19:14-37",
+      "relationship": "typology",
+      "notes": "Passover timing and crucifixion"
+    },
+    {
+      "reference": "Hebrews 11:28",
+      "relationship": "supporting",
+      "notes": "Moses and Passover"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "moses",
+      "relationship": "exodus-context",
+      "weight": 9,
+      "notes": "Moses instructs Israel"
+    },
+    {
+      "id": "crucifixion",
+      "relationship": "typological-connection",
+      "weight": 10,
+      "notes": "Passover climax in Jesus"
+    },
+    {
+      "id": "resurrection",
+      "relationship": "redemptive-continuation",
+      "weight": 7,
+      "notes": "deliverance leads to life"
+    },
+    {
+      "id": "sacrifice-theme",
+      "relationship": "sacrificial-pattern",
+      "weight": 9,
+      "notes": "deliverance through blood"
+    },
+    {
+      "id": "new-covenant",
+      "relationship": "covenant-renewal",
+      "weight": 8,
+      "notes": "Passover becomes Lord\u2019s Supper context"
+    }
+  ]
 }

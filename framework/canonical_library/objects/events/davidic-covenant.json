@@ -7,11 +7,11 @@
     "tell me about davidic covenant",
     "why is davidic covenant important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "God promises David a lasting house, kingdom, and throne, shaping Israel's royal hope.",
+  "historical_context": "2 Samuel 7 frames a covenant promise to David after Jerusalem becomes the royal center.",
+  "ancient_near_east_context": "Royal covenants and dynastic promises were common in the ancient world, but this one is grounded in divine grace rather than royal achievement.",
+  "literary_context": "The covenant becomes a key interpretive anchor for Samuel, Kings, Psalms, the Prophets, and the New Testament.",
+  "covenantal_significance": "The promise of an enduring Davidic line becomes a major strand of messianic expectation.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,113 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "The covenant is about God's promise, not David's perfection.",
+    "The monarchy is redefined around covenant fidelity and future hope."
+  ],
+  "common_questions": [
+    "What does God promise David?",
+    "How does the Davidic covenant point to Jesus?",
+    "Why is this covenant so important?"
+  ],
+  "sources": [
+    "2 Samuel 7",
+    "Psalm 2",
+    "Psalm 89",
+    "Isaiah 9",
+    "Jeremiah 23",
+    "Luke 1",
+    "Acts 2",
+    "Revelation 5"
+  ],
+  "importance": 100,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "2 Samuel 7:1-17",
+      "relationship": "primary",
+      "notes": "promise to David"
+    },
+    {
+      "reference": "2 Samuel 7:18-29",
+      "relationship": "supporting",
+      "notes": "David's prayer of response"
+    },
+    {
+      "reference": "Psalm 2:1-12",
+      "relationship": "supporting",
+      "notes": "royal sonship"
+    },
+    {
+      "reference": "Psalm 89:1-37",
+      "relationship": "supporting",
+      "notes": "covenant praise and lament"
+    },
+    {
+      "reference": "Isaiah 9:1-7",
+      "relationship": "supporting",
+      "notes": "royal child and throne"
+    },
+    {
+      "reference": "Jeremiah 23:1-6",
+      "relationship": "supporting",
+      "notes": "righteous branch"
+    },
+    {
+      "reference": "Luke 1:30-33",
+      "relationship": "supporting",
+      "notes": "throne of David"
+    },
+    {
+      "reference": "Revelation 5:5-10",
+      "relationship": "supporting",
+      "notes": "root of David"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "david",
+      "relationship": "covenant-recipient",
+      "weight": 10,
+      "notes": "the promised king"
+    },
+    {
+      "id": "jerusalem",
+      "relationship": "royal-city",
+      "weight": 10,
+      "notes": "David's city"
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "royal-framework",
+      "weight": 10,
+      "notes": "throne and kingdom"
+    },
+    {
+      "id": "messiah-theme",
+      "relationship": "messianic-hope",
+      "weight": 10,
+      "notes": "future king expectation"
+    },
+    {
+      "id": "new-covenant",
+      "relationship": "fulfillment-horizon",
+      "weight": 8,
+      "notes": "covenant fulfillment in Christ"
+    },
+    {
+      "id": "solomon",
+      "relationship": "dynastic-successor",
+      "weight": 8,
+      "notes": "house continues through Solomon"
+    }
+  ]
 }

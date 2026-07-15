@@ -26,11 +26,12 @@ The CKL lives under `framework/canonical_library/` and is intentionally self-con
 - `schema.py` defines the canonical object dataclass and validation rules.
 - `loader.py` discovers JSON files, validates them, and builds in-memory indexes.
 - `normalization.py` provides deterministic text and ID normalization.
-- `retrieval.py` defines exact and future retrieval interfaces.
+- `retrieval.py` defines exact, hybrid, and future retrieval interfaces.
 - `context_builder.py` assembles structured prompt context from retrieved objects.
 - `authoring.py` provides template, validation, reporting, manifest, and migration helpers.
-- `public_cache.py` holds a placeholder interface for future approved-answer reuse.
+- `public_cache.py` implements the JSON-backed approved-answer cache.
 - `manifest.json` records the library version and inventory counts.
+- `.bhf/public-answer-cache.json` stores local cache entries when the cache is enabled.
 - `objects/` stores one JSON object per file, grouped by category folder.
 
 Supported object folders are:
@@ -110,6 +111,8 @@ The current inventory is intentionally thin. Each placeholder object contains:
 
 All other string fields are empty strings, and all collection fields are empty arrays. The governance metadata is defaulted on load for older JSON files, and legacy string `sources` values are migrated to structured source objects, so the current inventory remains backward compatible while the schema grows. That means the library can be tested, indexed, and queried without pretending scholarship exists where it does not.
 
+The agent runtime now defaults to excluding placeholder records and unreviewed content unless a workflow explicitly opts in, so production answers stay grounded in curated material.
+
 ## Retrieval Flow
 
 The deterministic retrieval path is:
@@ -118,27 +121,56 @@ The deterministic retrieval path is:
 2. Try exact ID lookup.
 3. Try exact alias lookup.
 4. Try exact title lookup.
-5. Fall back to keyword matching.
-6. Package the results into structured context.
-7. Hand that context to the downstream prompt builder and, later, to the LLM.
+5. Try scripture-reference retrieval when the question mentions a passage.
+6. Apply category-aware, phrase, fuzzy alias, and full-text ranking.
+7. Package the results into structured, tiered context with estimated token counts.
+8. Hand that context to the downstream prompt builder and, later, to the LLM.
 
 This keeps lookups predictable. For example, `shechem` can be retrieved without the caller knowing that it lives in the places category.
 
-## Token Reduction
+## Scripture and Graph Index
 
-CKL reduces prompt size by retrieving only the objects that matter for a question instead of asking the LLM to reconstruct broad biblical knowledge on every turn. The result is less prompt bloat, less duplication, and better use of limited context windows.
+CKL now keeps a local scripture reverse index and a relationship graph helper so reference questions can move through the inventory instead of relying on keyword coincidence alone.
+
+- `retrieve_by_scripture_reference()` resolves normalized book, chapter, and verse queries back to the objects that cite those passages.
+- `trace_relationship_graph()` follows `related_objects` chains outward from a seed object in a deterministic order.
+- `audit_bidirectional_relationships()` reports missing reverse links as review items instead of failing the current inventory.
+
+That gives the agent a safe way to surface Shechem, Abraham, covenant, Joshua, and Joseph together when a question is really about the Joshua 24 covenant-renewal chain.
+
+## Token Reduction and Context Compression
+
+CKL reduces prompt size by retrieving only the objects that matter for a question instead of asking the LLM to reconstruct broad biblical knowledge on every turn. The context builder now tracks estimated topic tokens, removes duplicate facts, compacts sources, and chooses a context tier based on the answer mode.
+
+- `concise` favors a small factual core.
+- `study` keeps a balanced amount of context.
+- `teaching` emphasizes plain-language support.
+- `scholar` keeps deeper historical and literary detail when the budget allows.
+
+Relationship expansion is token-aware so the library can stay compact on small models without losing the ability to open up for deeper study modes.
 
 ## Smaller Local Models
 
 Smaller models usually improve when they are given high-quality structure instead of raw open-ended prompts. CKL is designed to provide that structure so a compact local model can answer from targeted canonical data rather than improvise from memory.
 
+## Hybrid Retrieval
+
+`retrieve_hybrid()` now wraps the deterministic local retrieval stack and combines scripture, category, phrase, fuzzy alias, and keyword scoring without requiring any external vector store. It stays fully offline and deterministic.
+
 ## Future Semantic Search
 
-The retrieval layer already exposes `retrieve_semantic()` and `retrieve_hybrid()` as explicit future hooks. They currently raise `NotImplementedError`, which keeps the contract honest while leaving room for a future embedding index or other semantic retrieval engine.
+The retrieval layer still exposes `retrieve_semantic()` as the explicit future hook. It currently raises `NotImplementedError`, which keeps the contract honest while leaving room for a future embedding index or other semantic retrieval engine.
 
-## Future Public Cache
+## Public Answer Cache
 
-`public_cache.py` defines the shape of a future approved-answer cache. The intended workflow is normalized-question lookup, approved answer storage, quality scoring, usage counting, and review status tracking. Nothing is persisted yet.
+`public_cache.py` provides a small JSON-backed cache for reviewed answers. The cache is keyed by normalized question plus answer mode, and it only serves entries when the current framework fingerprint and CKL fingerprint still match.
+
+- `lookup()` returns a reviewed answer only when the cache entry is still current.
+- `store()` persists the approved answer, object dependency IDs, review state, quality score, and fingerprints.
+- `increment_usage()` tracks how often an answer is reused.
+- `update_review_status()` lets the review state move forward or be retired later.
+
+Expired, invalidated, or fingerprint-mismatched entries stay on disk for traceability but are not served.
 
 ## Versioning
 
@@ -147,6 +179,8 @@ Three version fields keep the CKL stable:
 - `framework_version` identifies the CKL framework line.
 - `schema_version` identifies the manifest/schema contract.
 - `object_version` identifies the object payload shape.
+
+The public answer cache stores the repository framework version fingerprint, the CKL inventory fingerprint, and the object dependency IDs for each approved answer so stale cache hits can be rejected when the source material changes.
 
 The loader validates these values so old or incompatible inventory files fail fast.
 
@@ -180,6 +214,8 @@ JSON into the normalized schema. None of the scripts write to disk unless
 ## Populating Scholarship Later
 
 Future scholarship must be curated, sourced, and reviewed before it is written into the CKL. Interpretive rules and canonical facts should remain separate so that the hermeneutical framework can guide interpretation without collapsing into the knowledge store itself.
+
+Approved objects should use structured source entries rather than legacy strings, and they should carry substantive source support plus review metadata before they are treated as publishable.
 
 ## Roadmap
 

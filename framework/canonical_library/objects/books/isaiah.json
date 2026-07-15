@@ -7,11 +7,11 @@
     "what is isaiah about",
     "tell me about isaiah"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "A sweeping prophetic book of judgment, consolation, messianic hope, and new creation.",
+  "historical_context": "Isaiah speaks into Judah's crises under Assyrian pressure and into the exile-and-return horizon that follows, holding judgment and hope together.",
+  "ancient_near_east_context": "The book engages imperial power, covenant lawsuit language, and royal ideology in a world shaped by Assyria, Babylon, and their rivals.",
+  "literary_context": "Isaiah combines oracles, visions, songs, and consolation speeches into a sustained prophetic vision of holy God, broken people, and future restoration.",
+  "covenantal_significance": "Isaiah frames judgment as covenant accountability and hope as covenant restoration through the servant, the remnant, and the holy city.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,110 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Keep immediate historical crisis and later messianic fulfillment in view rather than collapsing them into one layer.",
+    "Isaiah's hope is not only individual salvation but also purified worship, restored justice, and new creation."
+  ],
+  "common_questions": [
+    "Why is Isaiah so important?",
+    "Who is the suffering servant in Isaiah?",
+    "How do judgment and hope fit together in Isaiah?"
+  ],
+  "sources": [
+    "Isaiah 1-66",
+    "2 Kings 18-20",
+    "Matthew 3",
+    "Luke 4",
+    "Acts 8",
+    "Romans 9-11"
+  ],
+  "importance": 98,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Isaiah 1:1-31",
+      "relationship": "supporting",
+      "notes": "covenant lawsuit"
+    },
+    {
+      "reference": "Isaiah 6:1-13",
+      "relationship": "primary",
+      "notes": "holy vision and commissioning"
+    },
+    {
+      "reference": "Isaiah 7:10-17",
+      "relationship": "supporting",
+      "notes": "Immanuel sign"
+    },
+    {
+      "reference": "Isaiah 9:1-7",
+      "relationship": "supporting",
+      "notes": "royal hope"
+    },
+    {
+      "reference": "Isaiah 40:1-11",
+      "relationship": "supporting",
+      "notes": "comfort and new exodus"
+    },
+    {
+      "reference": "Isaiah 52:13-15",
+      "relationship": "supporting",
+      "notes": "the servant is exalted"
+    },
+    {
+      "reference": "Isaiah 53:1-12",
+      "relationship": "supporting",
+      "notes": "suffering servant"
+    },
+    {
+      "reference": "Isaiah 55:1-13",
+      "relationship": "supporting",
+      "notes": "invitation and covenant mercy"
+    },
+    {
+      "reference": "Isaiah 60:1-22",
+      "relationship": "supporting",
+      "notes": "Zion restored"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "exile-theme",
+      "relationship": "judgment-and-restoration",
+      "weight": 10,
+      "notes": "exile and return frame much of Isaiah"
+    },
+    {
+      "id": "messiah-theme",
+      "relationship": "royal-hope",
+      "weight": 10,
+      "notes": "the promised ruler"
+    },
+    {
+      "id": "covenant-theme",
+      "relationship": "thematic-anchor",
+      "weight": 9,
+      "notes": "judgment and restoration in covenant terms"
+    },
+    {
+      "id": "new-jerusalem",
+      "relationship": "restoration-vision",
+      "weight": 8,
+      "notes": "the holy city horizon"
+    },
+    {
+      "id": "resurrection-theme",
+      "relationship": "hope-anchor",
+      "weight": 7,
+      "notes": "life after judgment"
+    }
+  ]
 }

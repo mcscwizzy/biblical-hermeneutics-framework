@@ -104,6 +104,11 @@ def saved_study_payload_from_request(payload: dict[str, Any], job_store: Any = N
             "study_type": job.study_type or "question",
             "question": job.question or "",
             "answer": getattr(job.result, "answer_text", ""),
+            "canonical_object_ids": list(
+                ((getattr(job.result, "model_metadata", {}) or {}).get(
+                    "canonical_library_object_ids"
+                ) or [])
+            ),
         }
 
     return {
@@ -116,6 +121,7 @@ def saved_study_payload_from_request(payload: dict[str, Any], job_store: Any = N
         "study_type": payload.get("study_type") or payload.get("ask_mode"),
         "question": payload.get("question"),
         "answer": payload.get("answer") or payload.get("answer_html"),
+        "canonical_object_ids": payload.get("canonical_object_ids"),
     }
 
 

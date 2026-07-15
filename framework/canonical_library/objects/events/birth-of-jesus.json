@@ -7,11 +7,11 @@
     "tell me about birth of jesus",
     "why is birth of jesus important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "Jesus is born in Bethlehem under Roman rule as the promised Messiah and Son of David.",
+  "historical_context": "The nativity occurs in the first century amid Roman taxation, Herodian politics, and Jewish messianic expectation.",
+  "ancient_near_east_context": "The setting is Greco-Roman and Second Temple Jewish rather than ancient Near Eastern, but the event fulfills the older promise story of Israel.",
+  "literary_context": "Matthew and Luke narrate the birth with fulfillment motifs, angelic announcement, and royal and pastoral imagery.",
+  "covenantal_significance": "The birth of Jesus marks the incarnation of God's promised salvation and the arrival of Davidic hope.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,147 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "The nativity is not a detached sentimental scene; it is the beginning of the Messiah's mission.",
+    "Keep the promises to Abraham and David in view when reading the birth narratives."
+  ],
+  "common_questions": [
+    "Why is Jesus' birth important?",
+    "How do Matthew and Luke differ on the nativity?",
+    "How does the birth of Jesus fulfill the Old Testament?"
+  ],
+  "sources": [
+    "Matthew 1-2",
+    "Luke 1-2",
+    "Galatians 4",
+    "Philippians 2",
+    "Micah 5",
+    "Isaiah 7",
+    "Isaiah 9"
+  ],
+  "importance": 100,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Matthew 1:18-25",
+      "relationship": "supporting",
+      "notes": "Joseph and the birth of Jesus"
+    },
+    {
+      "reference": "Matthew 2:1-12",
+      "relationship": "supporting",
+      "notes": "magi and Bethlehem"
+    },
+    {
+      "reference": "Luke 1:26-38",
+      "relationship": "supporting",
+      "notes": "announcement to Mary"
+    },
+    {
+      "reference": "Luke 2:1-20",
+      "relationship": "primary",
+      "notes": "nativity narrative"
+    },
+    {
+      "reference": "Micah 5:2",
+      "relationship": "supporting",
+      "notes": "Bethlehem promise"
+    },
+    {
+      "reference": "Isaiah 7:14",
+      "relationship": "supporting",
+      "notes": "Immanuel sign"
+    },
+    {
+      "reference": "Isaiah 9:1-7",
+      "relationship": "supporting",
+      "notes": "royal child"
+    },
+    {
+      "reference": "Galatians 4:4-5",
+      "relationship": "supporting",
+      "notes": "born under the law"
+    },
+    {
+      "reference": "Philippians 2:5-11",
+      "relationship": "supporting",
+      "notes": "incarnate humility"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "jesus",
+      "relationship": "central-subject",
+      "weight": 10,
+      "notes": "the child born in Bethlehem"
+    },
+    {
+      "id": "mary-mother-of-jesus",
+      "relationship": "mother",
+      "weight": 10,
+      "notes": "Mary's role"
+    },
+    {
+      "id": "joseph-husband-of-mary",
+      "relationship": "guardian",
+      "weight": 9,
+      "notes": "Joseph's role"
+    },
+    {
+      "id": "abraham",
+      "relationship": "promise-line",
+      "weight": 9,
+      "notes": "promise to the nations"
+    },
+    {
+      "id": "david",
+      "relationship": "royal-line",
+      "weight": 10,
+      "notes": "Son of David"
+    },
+    {
+      "id": "incarnation",
+      "relationship": "theological-anchor",
+      "weight": 10,
+      "notes": "God with us"
+    },
+    {
+      "id": "messiah-theme",
+      "relationship": "messianic-hope",
+      "weight": 10,
+      "notes": "Messiah arrives"
+    },
+    {
+      "id": "bethlehem-1",
+      "relationship": "birth-place",
+      "weight": 10,
+      "notes": "Bethlehem of Judah"
+    },
+    {
+      "id": "nazareth",
+      "relationship": "childhood-place",
+      "weight": 8,
+      "notes": "Nazareth residence"
+    },
+    {
+      "id": "matthew",
+      "relationship": "infancy-narrative",
+      "weight": 9,
+      "notes": "Matthew's birth account"
+    },
+    {
+      "id": "luke",
+      "relationship": "infancy-narrative",
+      "weight": 9,
+      "notes": "Luke's birth account"
+    }
+  ]
 }

@@ -7,11 +7,11 @@
     "synagogue in the bible",
     "synagogue overview"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "The synagogue is the local assembly for reading Scripture, prayer, teaching, and communal identity.",
+  "historical_context": "Synagogues become especially important after exile and in the diaspora when Torah-centered life must continue away from the temple.",
+  "ancient_near_east_context": "Local assembly spaces were common across the ancient world, but the synagogue is defined by Scripture, prayer, and instruction.",
+  "literary_context": "The Gospels and Acts portray synagogues as places of teaching, confrontation, and mission.",
+  "covenantal_significance": "The synagogue preserves covenant memory in dispersed communities and prepares the way for Christian gathering.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,113 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "The synagogue is not a temple replacement; it is a covenantal adaptation for life in dispersion.",
+    "Its Scripture-centered pattern shapes later Christian worship and teaching."
+  ],
+  "common_questions": [
+    "How is a synagogue different from the temple?",
+    "Why were synagogues so important in Jesus' day?",
+    "Did the first Christians meet in synagogues?"
+  ],
+  "sources": [
+    "Deuteronomy 6",
+    "Psalm 74",
+    "Luke 4",
+    "Acts 13",
+    "Acts 17",
+    "James 2"
+  ],
+  "importance": 88,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Deuteronomy 6:4-9",
+      "relationship": "supporting",
+      "notes": "Scripture formation"
+    },
+    {
+      "reference": "Psalm 74:8-9",
+      "relationship": "supporting",
+      "notes": "days without signs or prophets"
+    },
+    {
+      "reference": "Luke 4:16-21",
+      "relationship": "supporting",
+      "notes": "Jesus reads in the synagogue"
+    },
+    {
+      "reference": "Acts 13:14-16",
+      "relationship": "supporting",
+      "notes": "Paul teaches in the synagogue"
+    },
+    {
+      "reference": "Acts 17:1-4",
+      "relationship": "supporting",
+      "notes": "mission through synagogue teaching"
+    },
+    {
+      "reference": "James 2:1-4",
+      "relationship": "supporting",
+      "notes": "assembly language"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "what-is-the-second-temple",
+      "relationship": "historical-context",
+      "weight": 10,
+      "notes": "second temple background"
+    },
+    {
+      "id": "second-temple-administration",
+      "relationship": "institutional-context",
+      "weight": 9,
+      "notes": "postexilic governance"
+    },
+    {
+      "id": "what-is-the-role-of-priests",
+      "relationship": "worship-context",
+      "weight": 8,
+      "notes": "priests and synagogue life"
+    },
+    {
+      "id": "what-is-the-significance-of-the-exile",
+      "relationship": "historical-foundation",
+      "weight": 8,
+      "notes": "exile and dispersion"
+    },
+    {
+      "id": "luke",
+      "relationship": "gospel-setting",
+      "weight": 8,
+      "notes": "Jesus in synagogue settings"
+    },
+    {
+      "id": "acts",
+      "relationship": "mission-setting",
+      "weight": 9,
+      "notes": "apostolic mission"
+    },
+    {
+      "id": "torah",
+      "relationship": "scripture-centered",
+      "weight": 8,
+      "notes": "Torah reading and instruction"
+    },
+    {
+      "id": "covenant-theme",
+      "relationship": "community-memory",
+      "weight": 8,
+      "notes": "covenant identity in dispersion"
+    }
+  ]
 }

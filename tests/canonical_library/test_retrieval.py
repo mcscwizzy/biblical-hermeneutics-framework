@@ -101,6 +101,28 @@ def user_facing_retrieval_objects() -> list[dict[str, object]]:
     ]
 
 
+def phrase_matching_objects() -> list[dict[str, object]]:
+    return [
+        make_object(
+            "shechem",
+            "place",
+            "Shechem",
+            ["where is shechem"],
+            summary="Shechem is a covenant location.",
+            importance=8,
+        ),
+        make_object(
+            "shechem-covenant-renewal",
+            "event",
+            "Shechem and Covenant Renewal",
+            ["covenant renewal site"],
+            summary="The covenant renewal at Shechem after Joshua's ceremony.",
+            common_questions=["How does the covenant renewal at Shechem work?"],
+            importance=9,
+        ),
+    ]
+
+
 def governance_filter_objects() -> list[dict[str, object]]:
     return [
         make_object(
@@ -307,8 +329,26 @@ class CanonicalRetrievalTests(unittest.TestCase):
         with self.assertRaises(NotImplementedError):
             self.library.retrieve_semantic("covenant")
 
-        with self.assertRaises(NotImplementedError):
-            self.library.retrieve_hybrid("covenant")
+    def test_hybrid_retrieval_prioritizes_scripture_and_fuzzy_aliases(self) -> None:
+        default_library = CanonicalLibrary.load_default()
+        scripture_results = default_library.retrieve_hybrid("Joshua 24", limit=5)
+        self.assertEqual([result.object.id for result in scripture_results[:3]], ["shechem", "joshua-son-of-nun", "joshua"])
+        self.assertEqual(scripture_results[0].match_type, "scripture")
+
+        fuzzy_result = default_library.retrieve_exact("Abram")
+        self.assertIsNotNone(fuzzy_result)
+        self.assertEqual(fuzzy_result.object.id, "abraham")
+        self.assertEqual(fuzzy_result.match_type, "fuzzy_alias")
+        self.assertEqual(fuzzy_result.matched_alias, "Abraham")
+
+    def test_phrase_matching_can_prefer_a_more_specific_object(self) -> None:
+        with loaded_library(phrase_matching_objects()) as library:
+            results = library.retrieve_by_keywords("covenant renewal at Shechem", limit=3)
+
+            self.assertGreaterEqual(len(results), 1)
+            self.assertEqual(results[0].object.id, "shechem-covenant-renewal")
+            self.assertEqual(results[0].match_type, "phrase")
+            self.assertIn("summary", results[0].matched_fields)
 
     def test_field_aware_keyword_lookup_supports_user_facing_queries(self) -> None:
         with loaded_library(user_facing_retrieval_objects()) as library:

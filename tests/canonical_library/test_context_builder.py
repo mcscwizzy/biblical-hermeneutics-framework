@@ -148,6 +148,58 @@ def cycle_fixture_objects() -> list[dict[str, object]]:
     ]
 
 
+def budget_fixture_objects() -> list[dict[str, object]]:
+    long_notes = " ".join(["token-aware context expansion should stay compact"] * 8)
+    return [
+        make_object(
+            "alpha",
+            "person",
+            "Alpha",
+            ["who is alpha"],
+            summary="Alpha is the starting object.",
+            related_objects=[
+                {
+                    "id": "beta",
+                    "relationship": "associated-person",
+                    "weight": 9,
+                    "notes": "alpha to beta",
+                }
+            ],
+        ),
+        make_object(
+            "beta",
+            "person",
+            "Beta",
+            ["who is beta"],
+            summary=f"Beta carries a very detailed summary. {long_notes}.",
+            historical_context=f"Beta also has a long historical note. {long_notes}.",
+            literary_context=f"Beta has a long literary note. {long_notes}.",
+            related_objects=[
+                {
+                    "id": "gamma",
+                    "relationship": "associated-person",
+                    "weight": 8,
+                    "notes": "beta to gamma",
+                },
+                {
+                    "id": "alpha",
+                    "relationship": "associated-person",
+                    "weight": 8,
+                    "notes": "cycle back",
+                },
+            ],
+        ),
+        make_object(
+            "gamma",
+            "person",
+            "Gamma",
+            ["who is gamma"],
+            summary=f"Gamma also carries a very detailed summary. {long_notes}.",
+            historical_context=f"Gamma also has a long historical note. {long_notes}.",
+        ),
+    ]
+
+
 def remove_loaded_object(library: CanonicalLibrary, object_id: str) -> None:
     library.objects_by_id.pop(object_id, None)
     for ids in library.objects_by_type.values():
@@ -175,10 +227,22 @@ def remove_loaded_object(library: CanonicalLibrary, object_id: str) -> None:
 
 class CanonicalContextBuilderTests(unittest.TestCase):
     def test_builds_context_package_from_placeholder_inventory(self) -> None:
-        library = CanonicalLibrary.load_default()
-        builder = CanonicalContextBuilder(library)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_library(
+                root,
+                [
+                    make_object(
+                        "shechem",
+                        "place",
+                        "Shechem",
+                        ["shechem"],
+                    ),
+                ],
+            )
+            builder = CanonicalContextBuilder(CanonicalLibrary(root=root).load())
 
-        context = builder.build("Shechem", limit=2)
+            context = builder.build("Shechem", limit=2)
 
         self.assertEqual(context["question"], "Shechem")
         self.assertEqual(context["metadata"]["retrieval_method"], "id")
@@ -413,6 +477,49 @@ class CanonicalContextBuilderTests(unittest.TestCase):
         self.assertEqual([item["id"] for item in deep_context["retrieved_topics"]], ["alpha", "beta", "gamma"])
         self.assertEqual(deep_context["metadata"]["expanded_topic_count"], 2)
         self.assertEqual(len({item["id"] for item in deep_context["retrieved_topics"]}), 3)
+
+    def test_relationship_expansion_respects_token_budget_and_tracks_estimates(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_library(root, budget_fixture_objects())
+            library = CanonicalLibrary(root=root).load()
+            seed_builder = CanonicalContextBuilder(library, max_relationship_depth=0, max_expanded_topics=0)
+            expansion_builder = CanonicalContextBuilder(
+                library,
+                max_relationship_depth=2,
+                max_expanded_topics=3,
+            )
+
+            seed_context = seed_builder.build("Alpha", limit=1)
+            seed_entries = seed_context["retrieved_topics"]
+            seen_ids = {seed_entries[0]["id"]}
+
+            low_budget = expansion_builder._expand_relationships(
+                seed_entries,
+                seen_ids.copy(),
+                approved_only=False,
+                exclude_deprecated=True,
+                exclude_rejected=True,
+                include_placeholders=True,
+                allowed_statuses=None,
+                token_budget=60,
+            )
+            high_budget = expansion_builder._expand_relationships(
+                seed_entries,
+                seen_ids.copy(),
+                approved_only=False,
+                exclude_deprecated=True,
+                exclude_rejected=True,
+                include_placeholders=True,
+                allowed_statuses=None,
+                token_budget=2000,
+            )
+
+        self.assertIn("estimated_tokens", seed_entries[0])
+        self.assertGreater(seed_entries[0]["estimated_tokens"], 0)
+        self.assertEqual([item["id"] for item in low_budget], ["beta"])
+        self.assertEqual([item["id"] for item in high_budget], ["beta", "gamma"])
+        self.assertLess(len(low_budget), len(high_budget))
 
 
 if __name__ == "__main__":

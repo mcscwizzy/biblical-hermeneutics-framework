@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import shutil
 import tempfile
 import unittest
@@ -20,7 +21,7 @@ class CanonicalLoaderTests(unittest.TestCase):
         expected_categories = {
             "theology": 50,
             "themes": 50,
-            "people": 100,
+            "people": 101,
             "places": 75,
             "events": 75,
             "books": 66,
@@ -31,21 +32,21 @@ class CanonicalLoaderTests(unittest.TestCase):
             "faq": 50,
         }
 
-        self.assertEqual(len(library.objects_by_id), 610)
-        self.assertEqual(library.manifest["object_count"], 610)
+        self.assertEqual(len(library.objects_by_id), 611)
+        self.assertEqual(library.manifest["object_count"], 611)
         self.assertEqual(library.manifest["framework_version"], "1.0")
         self.assertEqual(library.manifest["schema_version"], "1.0")
         self.assertEqual(library.manifest["categories"], expected_categories)
 
-    def test_loaded_placeholder_objects_receive_governance_defaults(self) -> None:
+    def test_loaded_complete_objects_preserve_governance_metadata(self) -> None:
         library = self.default_library
         abraham = library.objects_by_id["abraham"]
 
-        self.assertEqual(abraham.content_status, "placeholder")
-        self.assertEqual(abraham.review_status, "unreviewed")
-        self.assertEqual(abraham.reviewed_by, [])
-        self.assertIsNone(abraham.last_reviewed)
-        self.assertEqual(abraham.confidence, "unrated")
+        self.assertEqual(abraham.content_status, "complete")
+        self.assertEqual(abraham.review_status, "in_review")
+        self.assertEqual(abraham.reviewed_by, ["codex-phase-10"])
+        self.assertEqual(abraham.last_reviewed, "2026-07-14")
+        self.assertEqual(abraham.confidence, "medium")
 
     def test_loads_recursively(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -150,6 +151,47 @@ class CanonicalLoaderTests(unittest.TestCase):
         self.assertIn("covenant", library.field_keyword_index["covenant-theme"]["title"])
         self.assertIn("covenant", library.field_keyword_index["covenant-theme"]["aliases"])
 
+    def test_retrieves_objects_by_scripture_reference(self) -> None:
+        results = self.default_library.retrieve_by_scripture_reference("Joshua 24", limit=5)
+
+        self.assertGreaterEqual(len(results), 3)
+        self.assertEqual(results[0].object.id, "shechem")
+        self.assertEqual(results[0].match_type, "scripture")
+        self.assertIn("scripture_references", results[0].matched_fields)
+        self.assertTrue(
+            {result.object.id for result in results}.issuperset(
+                {"shechem", "joshua-son-of-nun", "joshua"}
+            )
+        )
+
+    def test_traces_relationship_graph_from_seed_object(self) -> None:
+        graph = self.default_library.trace_relationship_graph("Shechem", max_depth=1, limit=4)
+        retrieved_ids = [item["id"] for item in graph["retrieved_topics"]]
+
+        self.assertEqual(graph["seed_ids"], ["shechem"])
+        self.assertEqual(retrieved_ids[0], "shechem")
+        self.assertEqual(len(retrieved_ids), 4)
+        self.assertTrue(
+            set(retrieved_ids[1:]).issuperset({"abraham", "joshua-son-of-nun", "covenant-theme"})
+        )
+        self.assertEqual(graph["retrieved_topics"][1]["relationship_depth"], 1)
+
+    def test_audit_bidirectional_relationships_reports_missing_reverse_links(self) -> None:
+        issues = self.default_library.audit_bidirectional_relationships(limit=2000)
+
+        self.assertTrue(
+            any(
+                issue["source_id"] == "shechem" and issue["target_id"] == "joseph"
+                for issue in issues
+            )
+        )
+        self.assertTrue(
+            any(
+                issue["source_id"] == "joshua" and issue["target_id"] == "shechem"
+                for issue in issues
+            )
+        )
+
     def test_rejects_duplicate_ids(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -217,7 +259,32 @@ class CanonicalLoaderTests(unittest.TestCase):
             result = library.retrieve_exact("Alpha")
 
         self.assertIsNotNone(result)
-        self.assertEqual(result.object.id, "alpha")
+
+    def test_inventory_fingerprint_is_stable_for_unchanged_library(self) -> None:
+        library = self.default_library
+
+        self.assertEqual(library.inventory_fingerprint(), library.inventory_fingerprint())
+
+    def test_inventory_fingerprint_changes_when_object_content_changes(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_library(
+                root,
+                [make_object("alpha", "person", "Alpha", ["who is alpha"], summary="first")],
+            )
+            original = CanonicalLibrary(root=root).load().inventory_fingerprint()
+
+            alpha_path = root / "objects" / "people" / "alpha.json"
+            alpha_data = json.loads(alpha_path.read_text(encoding="utf-8"))
+            alpha_data["summary"] = "changed"
+            alpha_path.write_text(
+                json.dumps(alpha_data, indent=2, ensure_ascii=True) + "\n",
+                encoding="utf-8",
+            )
+
+            updated = CanonicalLibrary(root=root).load().inventory_fingerprint()
+
+        self.assertNotEqual(original, updated)
 
 
 if __name__ == "__main__":

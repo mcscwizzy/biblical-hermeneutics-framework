@@ -7,11 +7,11 @@
     "exile pattern",
     "exile thematic thread"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "The biblical pattern of judgment, displacement, longing, and eventual restoration that shapes Israel\u2019s memory and hope.",
+  "historical_context": "Exile is the crisis of the northern kingdom and especially Judah, culminating in Jerusalem\u2019s fall and the people\u2019s deportation.",
+  "ancient_near_east_context": "Imperial conquest and deportation were common in the ancient Near East, but Scripture interprets exile as covenant judgment and mercy.",
+  "literary_context": "Exile appears in law, narrative, lament, prophecy, gospel, and apocalypse as both event and motif.",
+  "covenantal_significance": "Exile shows that covenant disobedience has consequences, but also that God preserves hope through discipline and return.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,110 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Exile is not only punishment; it is also the background for restoration and new covenant hope.",
+    "Keep the historical catastrophe and the theological pattern together without collapsing one into the other."
+  ],
+  "common_questions": [
+    "Why is exile important in the Bible?",
+    "How does exile shape the prophetic books?",
+    "What is the biblical answer to exile?"
+  ],
+  "sources": [
+    "Leviticus 26",
+    "Deuteronomy 28-30",
+    "2 Kings 24-25",
+    "Jeremiah 29",
+    "Ezekiel 36",
+    "1 Peter 1"
+  ],
+  "importance": 95,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Genesis 3:23-24",
+      "relationship": "background",
+      "notes": "expulsion from Eden"
+    },
+    {
+      "reference": "Leviticus 26:33-39",
+      "relationship": "supporting",
+      "notes": "covenant curse"
+    },
+    {
+      "reference": "Deuteronomy 28:36-68",
+      "relationship": "supporting",
+      "notes": "curse of displacement"
+    },
+    {
+      "reference": "2 Kings 24:1-20",
+      "relationship": "primary",
+      "notes": "deportation begins"
+    },
+    {
+      "reference": "2 Kings 25:1-30",
+      "relationship": "supporting",
+      "notes": "Jerusalem falls"
+    },
+    {
+      "reference": "Jeremiah 29:1-14",
+      "relationship": "supporting",
+      "notes": "hope for exiles"
+    },
+    {
+      "reference": "Ezekiel 36:24-28",
+      "relationship": "supporting",
+      "notes": "return and new heart"
+    },
+    {
+      "reference": "Luke 4:16-21",
+      "relationship": "supporting",
+      "notes": "Jubilee and restoration language"
+    },
+    {
+      "reference": "1 Peter 1:1-2",
+      "relationship": "supporting",
+      "notes": "elect exiles"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "babylonian-exile",
+      "relationship": "historical-anchor",
+      "weight": 10,
+      "notes": "the central exile event"
+    },
+    {
+      "id": "new-jerusalem",
+      "relationship": "restoration-anchor",
+      "weight": 8,
+      "notes": "final return and dwelling"
+    },
+    {
+      "id": "jerusalem",
+      "relationship": "judgment-context",
+      "weight": 9,
+      "notes": "city fall and hope"
+    },
+    {
+      "id": "new-covenant",
+      "relationship": "restoration-anchor",
+      "weight": 8,
+      "notes": "promise of renewal"
+    },
+    {
+      "id": "creation-theme",
+      "relationship": "contrast-and-restoration",
+      "weight": 7,
+      "notes": "exile reverses and then heals creation"
+    }
+  ]
 }

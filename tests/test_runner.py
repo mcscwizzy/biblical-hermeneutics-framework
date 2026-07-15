@@ -8,6 +8,12 @@ from bhf_agent.config import AgentConfig
 from bhf_agent.models import ChatRequest, ChatResponse
 from bhf_agent.profiles import ProfileLoader
 from bhf_agent.runner import BHFAgent
+from framework.canonical_library import (
+    PublicCacheEntry,
+    load_framework_version,
+    load_framework_version_fingerprint,
+    normalize_public_question,
+)
 
 
 class RecordingAdapter(ChatAdapter):
@@ -73,6 +79,53 @@ class RaisingAdapter(ChatAdapter):
         raise RuntimeError("adapter failed")
 
 
+class RecordingPublicAnswerCache:
+    def __init__(self, entry: PublicCacheEntry | None = None) -> None:
+        self.entry = entry
+        self.lookup_calls: list[dict[str, str | None]] = []
+        self.increment_calls: list[tuple[str, str]] = []
+        self.last_lookup_status = "miss"
+        self.last_lookup_reason: str | None = None
+        self.last_lookup_key: str | None = None
+        self.last_lookup_entry: PublicCacheEntry | None = None
+
+    def lookup(
+        self,
+        normalized_question: str,
+        answer_mode: str = "study",
+        *,
+        ckl_version_fingerprint: str | None = None,
+        framework_version_fingerprint: str | None = None,
+    ) -> PublicCacheEntry | None:
+        self.lookup_calls.append(
+            {
+                "normalized_question": normalized_question,
+                "answer_mode": answer_mode,
+                "ckl_version_fingerprint": ckl_version_fingerprint,
+                "framework_version_fingerprint": framework_version_fingerprint,
+            }
+        )
+        self.last_lookup_key = f"{normalized_question}\u0000{answer_mode}"
+        if self.entry is None:
+            self.last_lookup_status = "miss"
+            self.last_lookup_reason = "no entry configured"
+            self.last_lookup_entry = None
+            return None
+        self.last_lookup_status = "hit"
+        self.last_lookup_reason = None
+        self.last_lookup_entry = self.entry
+        return self.entry
+
+    def store(self, entry: PublicCacheEntry) -> None:
+        self.entry = entry
+
+    def increment_usage(self, normalized_question: str, answer_mode: str = "study") -> None:
+        self.increment_calls.append((normalized_question, answer_mode))
+
+    def update_review_status(self, normalized_question: str, answer_mode: str = "study", status: str = "") -> None:
+        return None
+
+
 class PromptStageAssertingAgent(BHFAgent):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
@@ -86,7 +139,12 @@ class PromptStageAssertingAgent(BHFAgent):
 
 
 class RunnerTests(unittest.TestCase):
-    def make_agent(self, adapter: ChatAdapter, **config_overrides) -> BHFAgent:
+    def make_agent(
+        self,
+        adapter: ChatAdapter,
+        public_answer_cache=None,
+        **config_overrides,
+    ) -> BHFAgent:
         profiles_dir = Path(tempfile.mkdtemp())
         self.addCleanup(shutil.rmtree, profiles_dir, ignore_errors=True)
         (profiles_dir / "minimal-7b.md").write_text("PROFILE", encoding="utf-8")
@@ -101,6 +159,7 @@ class RunnerTests(unittest.TestCase):
             AgentConfig(**values),
             adapter=adapter,
             profile_loader=ProfileLoader(profiles_dir),
+            public_answer_cache=public_answer_cache,
         )
 
     def test_agent_result_includes_question_context_and_prompt_receives_it(self):
@@ -348,6 +407,49 @@ class RunnerTests(unittest.TestCase):
             result.model_metadata["canonical_library_retrieval_method"],
             result.model_metadata["pipeline"]["canonical_library_retrieval_method"],
         )
+
+    def test_agent_serves_cached_answers_without_calling_adapter(self):
+        adapter = RecordingAdapter()
+        question = (
+            "Why did Israel renew the covenant where Abraham first entered the land at Shechem in Joshua 24?"
+        )
+        normalized_question = normalize_public_question(question)
+        framework_version_fingerprint = load_framework_version_fingerprint()
+        cache_entry = PublicCacheEntry(
+            normalized_question=normalized_question,
+            answer_mode="study",
+            answer="The covenant renewal at Shechem reaffirms Israel's covenant identity.",
+            quality_score=96.0,
+            usage_count=3,
+            review_status="approved",
+            framework_version=load_framework_version(),
+            framework_version_fingerprint=framework_version_fingerprint,
+            ckl_version_fingerprint="ckl-fingerprint",
+            object_dependency_ids=("shechem", "abraham", "joshua"),
+            expires_at="2030-01-01T00:00:00Z",
+        )
+        cache = RecordingPublicAnswerCache(cache_entry)
+        agent = self.make_agent(adapter, public_answer_cache=cache, profile="standard")
+
+        result = agent.ask(question)
+
+        self.assertIsNone(adapter.request)
+        self.assertEqual(result.answer_text, cache_entry.answer)
+        self.assertTrue(result.model_metadata["public_answer_cache"]["hit"])
+        self.assertEqual(result.model_metadata["public_answer_cache"]["lookup_status"], "hit")
+        self.assertEqual(result.model_metadata["public_answer_cache"]["usage_count"], 4)
+        self.assertEqual(
+            result.model_metadata["public_answer_cache"]["object_dependency_ids"],
+            ["shechem", "abraham", "joshua"],
+        )
+        self.assertEqual(result.validation_result.score, 96)
+        self.assertIn("lookup_local_knowledge", result.model_metadata["pipeline"]["stages_completed"])
+        self.assertNotIn("build_prompts", result.model_metadata["pipeline"]["stages_completed"])
+        self.assertNotIn("call_model", result.model_metadata["pipeline"]["stages_completed"])
+        self.assertEqual(len(cache.lookup_calls), 1)
+        self.assertEqual(len(cache.increment_calls), 1)
+        self.assertIsNotNone(cache.lookup_calls[0]["ckl_version_fingerprint"])
+        self.assertIsNotNone(cache.lookup_calls[0]["framework_version_fingerprint"])
 
     def test_agent_result_uses_cleaned_answer_and_debug_metadata(self):
         with tempfile.TemporaryDirectory() as tmp:

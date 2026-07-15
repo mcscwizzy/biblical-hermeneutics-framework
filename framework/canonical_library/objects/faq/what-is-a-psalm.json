@@ -7,11 +7,11 @@
     "a psalm in the bible",
     "a psalm overview"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "A psalm is a prayer-song that gives voice to praise, lament, confession, and trust before God.",
+  "historical_context": "Psalms arise in Israel's worship life and are sung in both public and private devotion.",
+  "ancient_near_east_context": "Poetic prayer was common in the ancient world, but the Psalms uniquely bind emotion to covenant faith.",
+  "literary_context": "The Psalms function as both a collection and a theological gateway to the whole canon.",
+  "covenantal_significance": "They teach God's people how to speak honestly with him within the covenant.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,125 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "The Psalms form prayer before they become quotation material.",
+    "They teach both emotional honesty and theological trust."
+  ],
+  "common_questions": [
+    "Are the Psalms mainly poetry or prayer?",
+    "Why are some psalms lament and others praise?",
+    "How do the Psalms point to Jesus?"
+  ],
+  "sources": [
+    "Psalm 1",
+    "Psalm 22",
+    "Psalm 23",
+    "Psalm 110",
+    "Psalm 118",
+    "Luke 24",
+    "Acts 2",
+    "Hebrews 1"
+  ],
+  "importance": 91,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Psalm 1:1-6",
+      "relationship": "primary",
+      "notes": "wisdom gateway"
+    },
+    {
+      "reference": "Psalm 22:1-31",
+      "relationship": "supporting",
+      "notes": "lament and vindication"
+    },
+    {
+      "reference": "Psalm 23:1-6",
+      "relationship": "supporting",
+      "notes": "trust in the shepherd"
+    },
+    {
+      "reference": "Psalm 110:1-7",
+      "relationship": "supporting",
+      "notes": "messianic kingship"
+    },
+    {
+      "reference": "Psalm 118:19-29",
+      "relationship": "supporting",
+      "notes": "rejected stone and deliverance"
+    },
+    {
+      "reference": "Luke 24:44-45",
+      "relationship": "supporting",
+      "notes": "Psalms fulfilled in Christ"
+    },
+    {
+      "reference": "Acts 2:25-36",
+      "relationship": "supporting",
+      "notes": "Psalm 16 and 110 in apostolic preaching"
+    },
+    {
+      "reference": "Hebrews 1:5-14",
+      "relationship": "supporting",
+      "notes": "Psalm citations about the Son"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "psalms",
+      "relationship": "book-anchor",
+      "weight": 10,
+      "notes": "the Psalter"
+    },
+    {
+      "id": "worship-theme",
+      "relationship": "liturgical-context",
+      "weight": 9,
+      "notes": "Psalms in worship"
+    },
+    {
+      "id": "prayer-theme",
+      "relationship": "devotional-context",
+      "weight": 9,
+      "notes": "prayer before God"
+    },
+    {
+      "id": "messiah-theme",
+      "relationship": "messianic-reading",
+      "weight": 9,
+      "notes": "messianic psalms"
+    },
+    {
+      "id": "hebrews",
+      "relationship": "quotation-source",
+      "weight": 9,
+      "notes": "Psalms in Hebrews"
+    },
+    {
+      "id": "luke",
+      "relationship": "resurrection-reading",
+      "weight": 8,
+      "notes": "Luke reads the Psalms christologically"
+    },
+    {
+      "id": "acts",
+      "relationship": "apostolic-preaching",
+      "weight": 8,
+      "notes": "Psalms in Acts"
+    },
+    {
+      "id": "jesus",
+      "relationship": "fulfillment-center",
+      "weight": 10,
+      "notes": "the Psalms find their fullest voice in Christ"
+    }
+  ]
 }

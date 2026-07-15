@@ -137,6 +137,7 @@ def main(argv: Optional[list[str]] = None) -> int:
 
     if config.debug:
         pipeline_debug = result.model_metadata.get("pipeline", {})
+        public_cache = result.model_metadata.get("public_answer_cache", {})
         print()
         print("Debug:")
         print("Adapter type:", result.model_metadata.get("adapter_type") or config.adapter)
@@ -147,6 +148,11 @@ def main(argv: Optional[list[str]] = None) -> int:
             or result.model_metadata.get("configured_model")
             or config.model
             or "not configured",
+        )
+        print("Framework version:", result.model_metadata.get("framework_version") or "unknown")
+        print(
+            "Framework version fingerprint:",
+            result.model_metadata.get("framework_version_fingerprint") or "unknown",
         )
         print("Profile:", result.profile_used)
         print("Answer mode:", result.model_metadata.get("answer_mode") or config.answer_mode)
@@ -210,6 +216,26 @@ def main(argv: Optional[list[str]] = None) -> int:
             "Output cleanup applied:",
             str(bool(result.model_metadata.get("cleanup_applied"))).lower(),
         )
+        if public_cache.get("enabled"):
+            print("Public answer cache hit:", str(bool(public_cache.get("hit"))).lower())
+            print(
+                "Public answer cache lookup status:",
+                public_cache.get("lookup_status") or "none",
+            )
+            print(
+                "Public answer cache review status:",
+                public_cache.get("review_status") or "none",
+            )
+            print(
+                "Public answer cache usage count:",
+                public_cache.get("usage_count")
+                if public_cache.get("usage_count") is not None
+                else "none",
+            )
+            print(
+                "Public answer cache CKL fingerprint:",
+                public_cache.get("ckl_version_fingerprint") or "none",
+            )
 
     return 1 if result.errors else 0
 

@@ -7,11 +7,11 @@
     "what is joshua about",
     "tell me about joshua"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "The book that narrates Israel's entry into the land, the conquest of key cities, and covenant renewal under Joshua.",
+  "historical_context": "Joshua stands at the transition from wilderness wandering to settlement in Canaan, presenting the land promise as moving toward fulfillment.",
+  "ancient_near_east_context": "The book reflects a world of fortified cities, land claims, and covenant loyalty, while insisting that victory and inheritance belong to the LORD.",
+  "literary_context": "Joshua follows the Torah and bridges instruction with inheritance, closing one narrative cycle and opening another.",
+  "covenantal_significance": "Joshua shows that the land promise is inseparable from covenant faithfulness, remembrance, and obedience.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,93 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Joshua is a theological conquest narrative, so read land, judgment, and covenant together.",
+    "The covenant renewal at Shechem is as important to the book's message as the military campaigns."
+  ],
+  "common_questions": [
+    "Why does Joshua matter?",
+    "Why is Shechem important in Joshua?",
+    "How should readers understand the conquest?"
+  ],
+  "sources": [
+    "Joshua 1-24",
+    "Judges 2",
+    "Hebrews 4",
+    "Acts 7"
+  ],
+  "importance": 94,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Joshua 1:1-9",
+      "relationship": "primary",
+      "notes": "commission and courage"
+    },
+    {
+      "reference": "Joshua 3:1-17",
+      "relationship": "supporting",
+      "notes": "crossing the Jordan"
+    },
+    {
+      "reference": "Joshua 6:1-27",
+      "relationship": "supporting",
+      "notes": "Jericho"
+    },
+    {
+      "reference": "Joshua 8:30-35",
+      "relationship": "supporting",
+      "notes": "covenant reading and altar"
+    },
+    {
+      "reference": "Joshua 24:1-28",
+      "relationship": "supporting",
+      "notes": "covenant renewal at Shechem"
+    },
+    {
+      "reference": "Hebrews 4:8-11",
+      "relationship": "supporting",
+      "notes": "rest remains"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "joshua-son-of-nun",
+      "relationship": "leadership-anchor",
+      "weight": 10,
+      "notes": "the book's central figure"
+    },
+    {
+      "id": "shechem",
+      "relationship": "covenant-site",
+      "weight": 10,
+      "notes": "renewal location"
+    },
+    {
+      "id": "covenant-theme",
+      "relationship": "thematic-anchor",
+      "weight": 9,
+      "notes": "loyalty and inheritance"
+    },
+    {
+      "id": "covenant-theology",
+      "relationship": "theological-anchor",
+      "weight": 9,
+      "notes": "promise and obedience"
+    },
+    {
+      "id": "moses",
+      "relationship": "preceding-mediator",
+      "weight": 8,
+      "notes": "Joshua succeeds Moses"
+    }
+  ]
 }

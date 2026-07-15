@@ -7,11 +7,11 @@
     "what is genesis about",
     "tell me about genesis"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "The foundational book of beginnings, tracing creation, human rebellion, the flood, Babel, and the patriarchal promises.",
+  "historical_context": "Genesis gathers the Bible's opening stories and ancestral traditions into a theological account of how God's purposes for the world and for Israel begin.",
+  "ancient_near_east_context": "Its creation, flood, and covenant narratives engage common ancient Near Eastern themes while recasting them around the one sovereign Creator and covenant Lord.",
+  "literary_context": "Genesis opens the Pentateuch and moves from cosmic beginnings to family saga, linking primeval history with the story of Abraham, Isaac, Jacob, and Joseph.",
+  "covenantal_significance": "Genesis introduces the promises of seed, land, and blessing that shape the rest of Scripture and point toward the nations' blessing.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,93 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Read Genesis as theological foundation for the whole canon rather than as a detached preface.",
+    "Keep the primeval chapters and the patriarchal narratives together; they work as one unfolding promise story."
+  ],
+  "common_questions": [
+    "Why does Genesis matter?",
+    "How do creation and covenant fit together in Genesis?",
+    "What is the significance of Abraham in Genesis?"
+  ],
+  "sources": [
+    "Genesis 1-50",
+    "Romans 4",
+    "Galatians 3",
+    "Hebrews 11"
+  ],
+  "importance": 99,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Genesis 1:1-31",
+      "relationship": "primary",
+      "notes": "creation and blessing"
+    },
+    {
+      "reference": "Genesis 3:1-24",
+      "relationship": "supporting",
+      "notes": "the fall and exile from Eden"
+    },
+    {
+      "reference": "Genesis 12:1-3",
+      "relationship": "supporting",
+      "notes": "the call and promise to Abram"
+    },
+    {
+      "reference": "Genesis 15:1-21",
+      "relationship": "supporting",
+      "notes": "covenant ratification"
+    },
+    {
+      "reference": "Genesis 22:1-18",
+      "relationship": "supporting",
+      "notes": "tested faith and blessing"
+    },
+    {
+      "reference": "Genesis 50:15-21",
+      "relationship": "supporting",
+      "notes": "Joseph's providential summary"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "creation",
+      "relationship": "cosmic-beginning",
+      "weight": 10,
+      "notes": "the opening creation account"
+    },
+    {
+      "id": "the-fall",
+      "relationship": "human-rebellion",
+      "weight": 9,
+      "notes": "sin's entrance into the world"
+    },
+    {
+      "id": "call-of-abraham",
+      "relationship": "patriarchal-turn",
+      "weight": 10,
+      "notes": "the call that launches the promise line"
+    },
+    {
+      "id": "joseph-sold-into-egypt",
+      "relationship": "family-providence",
+      "weight": 8,
+      "notes": "the move into Egypt"
+    },
+    {
+      "id": "covenant-theme",
+      "relationship": "thematic-anchor",
+      "weight": 10,
+      "notes": "promise and covenant throughout Genesis"
+    }
+  ]
 }

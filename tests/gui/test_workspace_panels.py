@@ -17,7 +17,10 @@ def test_workspace_tabs_switch(driver, wait, base_url):
     page.open_app_section("bible")
     wait.until(lambda _driver: page.active_app_section() == "bible")
     page.assert_tab_visible("ask")
-    wait.until(lambda _driver: not tab_bar().is_displayed())
+    page.open_tab("context")
+    page.assert_tab_visible("context")
+    wait.until(lambda _driver: page.active_app_section() == "ask")
+    wait.until(lambda _driver: tab_bar().is_displayed())
 
     page.open_app_section("notes")
     wait.until(lambda _driver: page.active_app_section() == "notes")
@@ -29,7 +32,7 @@ def test_workspace_tabs_switch(driver, wait, base_url):
     page.open_app_section("bible")
     wait.until(lambda _driver: page.active_app_section() == "bible")
     page.assert_tab_visible("ask")
-    wait.until(lambda _driver: not tab_bar().is_displayed())
+    wait.until(lambda _driver: tab_bar().is_displayed())
 
     page.open_app_section("notes")
     wait.until(lambda _driver: page.active_app_section() == "notes")

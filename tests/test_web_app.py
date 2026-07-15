@@ -531,6 +531,15 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn(".journey-library-controls", style)
         self.assertIn(".workspace-tab-bar", style)
         self.assertIn(".workspace-tab[aria-selected=\"true\"]", style)
+        self.assertIn(".canonical-browser-panel", style)
+        self.assertIn(".canonical-browser-layout", style)
+        self.assertIn(".canonical-result-card", style)
+        self.assertIn(".canonical-object-badge", style)
+        self.assertIn(".canonical-context-details", style)
+        self.assertIn(".answer-canonical-context", style)
+        self.assertIn(".scripture-link", style)
+        self.assertIn(".canonical-note-links", style)
+        self.assertIn(".search-badge--muted", style)
         self.assertIn("box-shadow: 0 12px 24px rgb(26 42 56 / 6%);", style)
         self.assertIn("position: sticky;", style)
         self.assertIn("position: fixed;", style)
@@ -590,6 +599,8 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("Scripture", response["body"])
         self.assertIn("desktop-reader-controls-trigger", response["body"])
         self.assertIn("data-workspace-tab-bar", response["body"])
+        self.assertIn("workspace-tab-context", response["body"])
+        self.assertIn("workspace-pane-context", response["body"])
         self.assertIn("book-select", response["body"])
         self.assertIn("data-theme-toggle", response["body"])
         self.assertIn("reader-context-menu", response["body"])
@@ -647,6 +658,9 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("app-dock-explore", response["body"])
         self.assertIn("reader-controls-trigger", response["body"])
         self.assertIn("reader-controls-sheet", response["body"])
+        self.assertIn("data-canonical-browser-form", response["body"])
+        self.assertIn("data-canonical-detail-title", response["body"])
+        self.assertIn("data-testid=\"note-canonical-object-ids\"", response["body"])
         self.assertIn("data-app-section=\"explore\"", response["body"])
         self.assertIn("name=\"question\"", response["body"])
         self.assertIn("data-question-scope", response["body"])
@@ -870,6 +884,28 @@ class WebAppTests(unittest.TestCase):
         archaeology_data = json.loads(archaeology_response["body"])
         self.assertEqual(archaeology_data["kind"], "archaeology")
         self.assertEqual(archaeology_data["results"], [])
+
+    def test_canonical_browser_routes_return_search_and_object_details(self):
+        response = asgi_request("GET", "/api/canonical/search?q=Shechem&limit=5")
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(data["query"], "Shechem")
+        self.assertGreater(len(data["results"]), 0)
+        shechem = next(item for item in data["results"] if item["id"] == "shechem")
+        self.assertEqual(shechem["browse_url"], "/curation?collection=place")
+        self.assertIn("scripture_references", shechem)
+        self.assertIn("related_object_links", shechem)
+        self.assertIn("reason", shechem)
+
+        detail_response = asgi_request("GET", "/api/canonical/objects/shechem")
+        self.assertEqual(detail_response["status"], 200)
+        detail = json.loads(detail_response["body"])
+        self.assertEqual(detail["id"], "shechem")
+        self.assertEqual(detail["browse_url"], "/curation?collection=place")
+        self.assertIn("source_count", detail)
+        self.assertIn("scripture_reference_count", detail)
+        self.assertIn("related_object_links", detail)
 
     def test_period_filter_applies_to_all_map_endpoints(self):
         places_response = asgi_request("GET", "/api/maps/biblical-places?period=NT+%2F+Roman+period")
@@ -1624,21 +1660,33 @@ class WebAppTests(unittest.TestCase):
                 job_id = json.loads(job_response["body"])["job_id"]
                 wait_for_job(job_id)
 
+                result_response = asgi_request("GET", f"/ask/result/{job_id}")
+                self.assertEqual(result_response["status"], 200)
+                self.assertIn("Canonical Context", result_response["body"])
+                self.assertIn("Why these objects were retrieved", result_response["body"])
+                self.assertIn("canonical-object-badge-title", result_response["body"])
+                self.assertIn("shechem", result_response["body"])
+
                 save = asgi_request("POST", "/api/saved-studies", json_data={"job_id": job_id})
                 self.assertEqual(save["status"], 201)
                 study = json.loads(save["body"])
                 self.assertEqual(study["book"], "Romans")
                 self.assertEqual(study["study_type"], "literary_context")
+                self.assertEqual(study["canonical_object_ids"], ["shechem", "abraham"])
 
                 list_response = asgi_request("GET", "/api/saved-studies?book=Romans&chapter=12")
                 self.assertEqual(list_response["status"], 200)
                 studies = json.loads(list_response["body"])["saved_studies"]
                 self.assertEqual(len(studies), 1)
+                self.assertEqual(studies[0]["canonical_object_ids"], ["shechem", "abraham"])
 
                 open_response = asgi_request("GET", f"/api/saved-studies/{study['id']}")
                 self.assertEqual(open_response["status"], 200)
                 self.assertIn("Saved study", open_response["body"])
                 self.assertIn("Romans 12:1-2", open_response["body"])
+                self.assertIn("Saved canonical object links associated with this study.", open_response["body"])
+                self.assertIn("canonical-object-badge", open_response["body"])
+                self.assertIn("shechem", open_response["body"])
 
                 delete = asgi_request("DELETE", f"/api/saved-studies/{study['id']}")
                 self.assertEqual(delete["status"], 200)
@@ -1920,6 +1968,56 @@ def status_event(stage, message, step_index, status="complete"):
     }
 
 
+def canonical_context_stub():
+    return {
+        "query": "Shechem covenant context",
+        "retrieved_topics": [
+            {
+                "id": "shechem",
+                "title": "Shechem",
+                "type": "place",
+                "review_status": "approved",
+                "content_status": "complete",
+                "confidence": "strong",
+                "match_type": "alias",
+                "reason": "Matched alias Shechem.",
+                "matched_fields": ["aliases"],
+                "matched_terms": ["shechem"],
+                "scripture_references": [
+                    {
+                        "reference": "Joshua 24:1",
+                        "relationship": "covenant renewal",
+                        "notes": "",
+                    }
+                ],
+            },
+            {
+                "id": "abraham",
+                "title": "Abraham",
+                "type": "person",
+                "review_status": "approved",
+                "content_status": "complete",
+                "confidence": "strong",
+                "match_type": "relationship",
+                "reason": "Included through covenant background.",
+                "matched_fields": ["related_objects"],
+                "matched_terms": ["abraham"],
+                "scripture_references": [
+                    {
+                        "reference": "Genesis 12:1-7",
+                        "relationship": "promise",
+                        "notes": "",
+                    }
+                ],
+            },
+        ],
+        "metadata": {
+            "retrieval_method": "keyword",
+            "query": "Shechem covenant context",
+        },
+    }
+
+
 def fake_result(config, errors):
     return AgentResult(
         answer_text="## Short Answer\nAnswer with **method**.",
@@ -1942,6 +2040,9 @@ def fake_result(config, errors):
         model_metadata={
             "answer_mode": config.answer_mode,
             "local_knowledge_keys": ["ruach"],
+            "canonical_library_object_ids": ["shechem", "abraham"],
+            "canonical_library_retrieval_method": "keyword",
+            "canonical_library_context": canonical_context_stub(),
         },
         errors=errors,
     )

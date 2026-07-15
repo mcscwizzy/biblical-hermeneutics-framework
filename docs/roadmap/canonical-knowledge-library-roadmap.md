@@ -3,14 +3,14 @@
 > Resume aid for CKL work. Saved in-repo so the next conversation can pick up
 > from the latest completed phase.
 >
-> Last completed phase: Phase 9 - Content Authoring Pipeline.
+> Last completed phase: Phase 16 - Public Answer Cache.
 >
-> Current phase: Phase 10 - Core Content Population (pending).
+> Current phase: Phase 17 - Web and Reader Integration (in progress).
 
 ## Current State
 
 - The CKL foundation is in place.
-- The runtime now consumes CKL during startup, retrieval, prompt construction, and debug output.
+- The runtime now consumes CKL during startup, retrieval, prompt construction, cache reuse, and debug output.
 - The authoring, manifest, reporting, and validation tools are in place.
 - The next step is to populate the highest-value canonical objects.
 
@@ -58,6 +58,8 @@ Goal: Populate the highest-value material first instead of trying to finish all 
 - Wave 3: People, places, events, and institutions.
 - Wave 4: Theology, themes, prophecy, word studies, archaeology, and FAQ.
 
+Status: in progress. Wave 1 now contains 113 curated objects covering the core biblical backbone and FAQ bridge layer: Abraham, Moses, Joshua son of Nun, David, Jesus, Paul, Genesis, Exodus, Deuteronomy, Joshua, Psalms, Isaiah, Matthew, John, Acts, Romans, Hebrews, Revelation, Jerusalem, Shechem, Egypt, Mount Sinai, Babylon, covenant, kingdom, temple, exile, creation, fall, Passover, crucifixion, resurrection, Holy Spirit, Torah, Messiah, sacrifice, priesthood, tabernacle, second temple, new covenant, and the bridge FAQ anchors.
+
 Exit criteria: The most common BHF questions return genuinely useful curated context without relying on model memory.
 
 ## Phase 11 - Sources and Scholarly Governance
@@ -81,7 +83,7 @@ Exit criteria: Production retrieval only returns content meeting an explicit rev
 
 Goal: Turn isolated objects into an interconnected biblical knowledge graph.
 
-- Validate bidirectional relationships.
+- Audit bidirectional relationships and surface one-way links for review.
 - Support relationship types such as `person-in-event`, `event-at-place`, `covenant-member`, `quotation-of`, `allusion-to`, `fulfills`, `contrasts-with`, `typological-connection`, and `historical-background`.
 - Parse Scripture references and normalize book, chapter, and verse forms.
 - Support reverse Scripture lookup such as "Which objects relate to Joshua 24?".
@@ -91,6 +93,8 @@ Goal: Turn isolated objects into an interconnected biblical knowledge graph.
 
 Exit criteria: A question about Joshua 24 can retrieve Joshua, Shechem, covenant renewal, Abraham, Joseph's burial, and relevant institutional context through relationships rather than keyword coincidence.
 
+Status: complete.
+
 ## Phase 13 - Better Retrieval
 
 Goal: Move beyond exact keyword overlap while remaining deterministic and local-first.
@@ -99,6 +103,8 @@ Goal: Move beyond exact keyword overlap while remaining deterministic and local-
 - Combine scores from exact match, Scripture match, weighted keyword score, relationship relevance, semantic similarity, importance, and review or confidence modifier.
 - Keep embedding support optional so CKL continues working completely offline without a vector database.
 - Allow later backends such as SQLite FTS5, a small local embedding model, NumPy or SQLite vector storage, and optional external vector backends.
+
+Status: complete.
 
 Exit criteria: Questions such as "Why did Israel renew the covenant where Abraham first entered the land?" retrieve Shechem and Joshua 24 even when the exact title is never mentioned.
 
@@ -127,6 +133,8 @@ Goal: Prove that CKL improves answers instead of assuming it does.
 
 Exit criteria: A repeatable evaluation demonstrates lower hallucination rates and better historical and contextual accuracy.
 
+Status: complete.
+
 ## Phase 16 - Public Answer Cache
 
 Goal: Reuse reviewed answers for common questions without bypassing the framework.
@@ -141,6 +149,8 @@ Goal: Reuse reviewed answers for common questions without bypassing the framewor
 - Detect stale answers when source objects change.
 
 Exit criteria: Frequently asked, reviewed questions can bypass most generation while still remaining traceable to CKL objects and versions.
+
+Status: complete.
 
 ## Phase 17 - Web and Reader Integration
 
@@ -177,13 +187,14 @@ Goal: Make CKL a stable framework component.
 
 Exit criteria: Cloning, installing, or packaging BHF produces the same validated CKL inventory everywhere.
 
+Status: in progress.
+
 ## Immediate Next Move
 
-1. Phase 9: Build authoring, manifest, reporting, and validation tools.
-2. Phase 10 Wave 1: Populate about 40 to 60 high-value objects.
-3. Phase 15 subset: Run real answer comparisons.
-4. Adjust the schema and retrieval model based on those results.
-5. Only then scale content population.
+1. Phase 17: Finish the canonical browser, note-link, and source-viewer polish.
+2. Phase 10 Wave 2: Continue the Bible-book records after governance is in place.
+3. Adjust the schema and retrieval model based on evaluation results.
+4. Expand semantic search only if the local-only retrieval stack still leaves gaps.
 
 ## Execution Log
 
@@ -192,14 +203,14 @@ Exit criteria: Cloning, installing, or packaging BHF produces the same validated
 | 7 - CKL Retrieval Foundation | complete | CKL package exists, but runtime integration is still pending |
 | 8 - Runtime Integration | complete | CKL is wired into agent startup, retrieval, and prompt building |
 | 9 - Content Authoring Pipeline | complete | CKL create, validate, manifest, report, and migrate tools are in place |
-| 10 - Core Content Population | current | Populate the highest-value canonical objects first |
-| 11 - Sources and Scholarly Governance | pending | Enforce source and review policy |
-| 12 - Relationship Graph and Scripture Index | pending | Build graph traversal and reverse lookup |
-| 13 - Better Retrieval | pending | Add hybrid retrieval and optional semantic search |
-| 14 - Token Budgeting and Context Compression | pending | Add tiered, token-aware context assembly |
-| 15 - Evaluation and Regression Testing | pending | Measure retrieval and answer quality |
-| 16 - Public Answer Cache | pending | Cache approved answers with version fingerprints |
-| 17 - Web and Reader Integration | pending | Surface canonical context in the UI |
+| 10 - Core Content Population | in progress | Wave 1 populated 113 curated objects; continue with the remaining backbone set |
+| 11 - Sources and Scholarly Governance | complete | Safe governance defaults are in place and approved content now requires structured source support |
+| 12 - Relationship Graph and Scripture Index | complete | Scripture reverse lookup, graph tracing, and reverse-link audits are wired into CKL context retrieval |
+| 13 - Better Retrieval | complete | Add hybrid retrieval and optional semantic search |
+| 14 - Token Budgeting and Context Compression | complete | Add tiered, token-aware context assembly |
+| 15 - Evaluation and Regression Testing | complete | Metadata-aware regression suite seeded; compare CKL-enabled, filtered, and disabled runs |
+| 16 - Public Answer Cache | complete | Cache approved answers with version fingerprints |
+| 17 - Web and Reader Integration | in progress | Surface canonical context in the UI |
 | 18 - Packaging, Versioning, and Release | pending | Ship validated CKL as a stable component |
 
 Reference anchors: `framework/books/genesis.md`, `framework/books/revelation.md`.

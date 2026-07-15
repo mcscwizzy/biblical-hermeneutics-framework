@@ -1,17 +1,17 @@
 {
   "id": "why-are-genealogies-included",
   "type": "faq",
-  "title": "Why are Genealogies Included?",
+  "title": "Why are genealogies Included?",
   "aliases": [
     "genealogies included question",
     "genealogies included in the bible",
     "genealogies included overview"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "Genealogies establish identity, continuity, inheritance, and messianic promise.",
+  "historical_context": "Ancient families preserved lineages to mark belonging, rights, and memory.",
+  "ancient_near_east_context": "Genealogy was a standard social form, but Scripture uses it to trace covenant promise and providence.",
+  "literary_context": "Biblical genealogies connect sections of the story, mark transitions, and anchor the messianic line.",
+  "covenantal_significance": "They show that God's promises travel through generations and culminate in Jesus.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,125 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Genealogies are theological as well as historical.",
+    "They remind readers that covenant promises are carried through ordinary family lines."
+  ],
+  "common_questions": [
+    "Why are genealogies so long?",
+    "Do genealogies only matter for history?",
+    "How do genealogies point to Jesus?"
+  ],
+  "sources": [
+    "Genesis 5",
+    "Genesis 10",
+    "Genesis 11",
+    "Ruth 4",
+    "1 Chronicles 1",
+    "Matthew 1",
+    "Luke 3",
+    "Ezra 2"
+  ],
+  "importance": 88,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "Genesis 5:1-32",
+      "relationship": "supporting",
+      "notes": "from Adam to Noah"
+    },
+    {
+      "reference": "Genesis 10:1-32",
+      "relationship": "supporting",
+      "notes": "nations table"
+    },
+    {
+      "reference": "Genesis 11:10-32",
+      "relationship": "supporting",
+      "notes": "from Shem to Abram"
+    },
+    {
+      "reference": "Ruth 4:13-22",
+      "relationship": "supporting",
+      "notes": "Davidic lineage"
+    },
+    {
+      "reference": "1 Chronicles 1:1-27",
+      "relationship": "supporting",
+      "notes": "opening genealogical chain"
+    },
+    {
+      "reference": "Matthew 1:1-17",
+      "relationship": "primary",
+      "notes": "genealogy of Jesus"
+    },
+    {
+      "reference": "Luke 3:23-38",
+      "relationship": "supporting",
+      "notes": "genealogy of Jesus"
+    },
+    {
+      "reference": "Ezra 2:1-70",
+      "relationship": "supporting",
+      "notes": "returning community lists"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "genesis",
+      "relationship": "origin-story",
+      "weight": 10,
+      "notes": "genealogy begins in Genesis"
+    },
+    {
+      "id": "abraham",
+      "relationship": "patriarchal-anchor",
+      "weight": 9,
+      "notes": "promise line"
+    },
+    {
+      "id": "david",
+      "relationship": "royal-line",
+      "weight": 9,
+      "notes": "messianic dynasty"
+    },
+    {
+      "id": "jesus",
+      "relationship": "messianic-fulfillment",
+      "weight": 10,
+      "notes": "genealogies culminate in Christ"
+    },
+    {
+      "id": "matthew",
+      "relationship": "gospel-genealogy",
+      "weight": 9,
+      "notes": "Matthew opens with genealogy"
+    },
+    {
+      "id": "luke",
+      "relationship": "gospel-genealogy",
+      "weight": 9,
+      "notes": "Luke traces the line back to Adam"
+    },
+    {
+      "id": "covenant-theme",
+      "relationship": "promise-continuity",
+      "weight": 8,
+      "notes": "promises pass through generations"
+    },
+    {
+      "id": "promise-theme",
+      "relationship": "inheritance-continuity",
+      "weight": 8,
+      "notes": "promise carried forward"
+    }
+  ]
 }

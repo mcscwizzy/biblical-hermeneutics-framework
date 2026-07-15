@@ -186,6 +186,29 @@ class CanonicalSchemaTests(unittest.TestCase):
         ):
             validate_object(data, path="objects/places/shechem.json")
 
+    def test_approved_content_rejects_legacy_source_strings(self) -> None:
+        data = valid_mapping()
+        data.update(
+            {
+                "content_status": "complete",
+                "review_status": "approved",
+                "reviewed_by": ["alice"],
+                "last_reviewed": "2024-07-13",
+                "confidence": "high",
+                "summary": "Shechem matters as a covenant location in the patriarchal narratives.",
+                "scripture_references": [
+                    scripture_reference_mapping("Genesis 12:6-7", "primary"),
+                ],
+                "sources": ["Genesis 12-22"],
+            }
+        )
+
+        with self.assertRaisesRegex(
+            CanonicalValidationError,
+            'field "sources" must use structured source objects when review_status is "approved"',
+        ):
+            validate_object(data, path="objects/places/shechem.json")
+
     def test_valid_related_objects_pass_validation(self) -> None:
         data = valid_mapping()
         data["related_objects"] = [

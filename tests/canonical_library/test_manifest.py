@@ -80,14 +80,26 @@ class CanonicalInventoryTests(unittest.TestCase):
             self.assertIn(path.parent.name, EXPECTED_FOLDERS)
             self.assertEqual(obj.framework_version, "1.0")
             self.assertEqual(obj.object_version, "1")
-            self.assertEqual(obj.importance, 0)
+            if obj.content_status == "placeholder":
+                self.assertEqual(obj.importance, 0)
 
-            for field_name in EXPECTED_EMPTY_STRING_FIELDS:
-                self.assertEqual(getattr(obj, field_name), "")
-            for field_name in EXPECTED_EMPTY_LIST_FIELDS:
-                self.assertEqual(getattr(obj, field_name), [])
-            for field_name, expected in EXPECTED_GOVERNANCE_VALUES.items():
-                self.assertEqual(getattr(obj, field_name), expected)
+                for field_name in EXPECTED_EMPTY_STRING_FIELDS:
+                    self.assertEqual(getattr(obj, field_name), "")
+                for field_name in EXPECTED_EMPTY_LIST_FIELDS:
+                    self.assertEqual(getattr(obj, field_name), [])
+                for field_name, expected in EXPECTED_GOVERNANCE_VALUES.items():
+                    self.assertEqual(getattr(obj, field_name), expected)
+            elif obj.content_status == "complete":
+                self.assertGreater(obj.importance, 0)
+                self.assertNotEqual(obj.summary, "")
+                self.assertNotEqual(obj.sources, [])
+                self.assertNotEqual(obj.scripture_references, [])
+                self.assertNotEqual(obj.review_status, "unreviewed")
+                self.assertGreaterEqual(len(obj.reviewed_by), 1)
+                self.assertIsNotNone(obj.last_reviewed)
+                self.assertNotEqual(obj.confidence, "unrated")
+            else:
+                self.fail(f"unexpected content status {obj.content_status!r} for {obj.id}")
 
             counts[obj.type] += 1
 

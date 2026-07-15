@@ -7,11 +7,11 @@
     "tell me about david",
     "why is david important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "Israel's shepherd king, psalmist, and covenant figure whose reign shapes the royal line and messianic hope.",
+  "historical_context": "David stands in the early monarchy of Israel, where tribal leadership, royal authority, court politics, and military conflict converge.",
+  "ancient_near_east_context": "His world is the world of kingship, patronage, warfare, and dynastic succession familiar across the ancient Near East.",
+  "literary_context": "Samuel, Kings, Chronicles, and the Psalms present David as both a celebrated king and a deeply flawed human ruler.",
+  "covenantal_significance": "David embodies the covenant promise of an enduring royal line that later biblical hope connects to the Messiah.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,99 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "David should be read as both model and warning; the narrative includes genuine faith and genuine failure.",
+    "The covenant line is bigger than David's personal record and ultimately points beyond him."
+  ],
+  "common_questions": [
+    "Why is David important?",
+    "How does David relate to the Messiah?",
+    "Why are the Psalms connected to David?"
+  ],
+  "sources": [
+    "1 Samuel 16-17",
+    "2 Samuel 5-7",
+    "Psalm 51",
+    "Psalm 110",
+    "Acts 13"
+  ],
+  "importance": 97,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "1 Samuel 16:1-13",
+      "relationship": "supporting",
+      "notes": "anointing"
+    },
+    {
+      "reference": "1 Samuel 17:1-58",
+      "relationship": "supporting",
+      "notes": "David and Goliath"
+    },
+    {
+      "reference": "2 Samuel 5:1-5",
+      "relationship": "supporting",
+      "notes": "king over Israel"
+    },
+    {
+      "reference": "2 Samuel 7:1-29",
+      "relationship": "primary",
+      "notes": "the Davidic covenant"
+    },
+    {
+      "reference": "Psalm 51:1-19",
+      "relationship": "supporting",
+      "notes": "repentance"
+    },
+    {
+      "reference": "Psalm 110:1-7",
+      "relationship": "supporting",
+      "notes": "royal and priestly hope"
+    },
+    {
+      "reference": "Acts 13:22-23",
+      "relationship": "supporting",
+      "notes": "David in apostolic proclamation"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "saul",
+      "relationship": "predecessor",
+      "weight": 8,
+      "notes": "the king before David"
+    },
+    {
+      "id": "solomon",
+      "relationship": "successor",
+      "weight": 8,
+      "notes": "David's royal heir"
+    },
+    {
+      "id": "bathsheba",
+      "relationship": "narrative-link",
+      "weight": 7,
+      "notes": "David's sin and its consequences"
+    },
+    {
+      "id": "davidic-covenant",
+      "relationship": "covenant-anchor",
+      "weight": 10,
+      "notes": "the royal promise"
+    },
+    {
+      "id": "messiah-theme",
+      "relationship": "canonical-foreshadowing",
+      "weight": 9,
+      "notes": "royal hope beyond David"
+    }
+  ]
 }

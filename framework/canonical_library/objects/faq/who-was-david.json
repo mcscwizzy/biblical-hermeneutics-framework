@@ -7,11 +7,11 @@
     "david in the bible",
     "david overview"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "David is Israel's shepherd-king whose dynasty and psalms shape messianic hope.",
+  "historical_context": "David unites the tribes, establishes Jerusalem, and receives the promise of an enduring house.",
+  "ancient_near_east_context": "Kingship in the ancient world often tied ruler and deity closely together, but David is judged and upheld by the LORD.",
+  "literary_context": "Samuel, Kings, Psalms, and the New Testament portray David as both sinner and covenant king.",
+  "covenantal_significance": "The Davidic covenant undergirds messianic expectation and royal hope.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,125 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "David is not the ideal king because he is flawless; he matters because God keeps covenant promise through him.",
+    "His failures make the need for a greater king even clearer."
+  ],
+  "common_questions": [
+    "Why is David so important?",
+    "How does David connect to Jesus?",
+    "Why do the Psalms matter for David?"
+  ],
+  "sources": [
+    "1 Samuel 16",
+    "1 Samuel 17",
+    "2 Samuel 7",
+    "Psalm 2",
+    "Psalm 110",
+    "Luke 1",
+    "Acts 2",
+    "Revelation 5"
+  ],
+  "importance": 96,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "scripture_references": [
+    {
+      "reference": "1 Samuel 16:1-13",
+      "relationship": "supporting",
+      "notes": "anointing"
+    },
+    {
+      "reference": "1 Samuel 17:1-58",
+      "relationship": "supporting",
+      "notes": "Goliath and faith"
+    },
+    {
+      "reference": "2 Samuel 7:8-16",
+      "relationship": "primary",
+      "notes": "Davidic covenant"
+    },
+    {
+      "reference": "Psalm 2:1-12",
+      "relationship": "supporting",
+      "notes": "royal psalm"
+    },
+    {
+      "reference": "Psalm 110:1-7",
+      "relationship": "supporting",
+      "notes": "messianic kingship"
+    },
+    {
+      "reference": "Luke 1:30-33",
+      "relationship": "supporting",
+      "notes": "throne of David"
+    },
+    {
+      "reference": "Acts 2:25-36",
+      "relationship": "supporting",
+      "notes": "David in apostolic preaching"
+    },
+    {
+      "reference": "Revelation 5:5-10",
+      "relationship": "supporting",
+      "notes": "lion of Judah and root of David"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "david",
+      "relationship": "kingly-anchor",
+      "weight": 10,
+      "notes": "Israel's king"
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "royal-framework",
+      "weight": 10,
+      "notes": "kingdom and rule"
+    },
+    {
+      "id": "jerusalem",
+      "relationship": "capital-city",
+      "weight": 9,
+      "notes": "Davidic center"
+    },
+    {
+      "id": "psalms",
+      "relationship": "poetic-legacy",
+      "weight": 9,
+      "notes": "David and the Psalter"
+    },
+    {
+      "id": "messiah-theme",
+      "relationship": "messianic-hope",
+      "weight": 10,
+      "notes": "Davidic promise becomes messianic hope"
+    },
+    {
+      "id": "jesus",
+      "relationship": "greater-son",
+      "weight": 10,
+      "notes": "Jesus fulfills Davidic kingship"
+    },
+    {
+      "id": "covenant-theme",
+      "relationship": "covenantal-framework",
+      "weight": 8,
+      "notes": "Davidic covenant"
+    },
+    {
+      "id": "new-covenant",
+      "relationship": "kingdom-fulfillment",
+      "weight": 8,
+      "notes": "Davidic hope fulfilled"
+    }
+  ]
 }
