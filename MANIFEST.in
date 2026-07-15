@@ -1,0 +1,8 @@
+include README.md
+include CHANGELOG.md
+include VERSION
+include LICENSE
+include LICENSE-CONTENT
+recursive-include framework/canonical_library/objects *.json
+include framework/canonical_library/manifest.json
+recursive-include bhf_agent/data *.json

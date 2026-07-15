@@ -35,7 +35,7 @@ Goal: Make the BHF agent actually use the CKL.
 
 Exit criteria: Asking about Shechem, covenant, Abraham, or Joshua retrieves and injects the appropriate canonical records automatically.
 
-Status: complete.
+Status: in progress.
 
 ## Phase 9 - Content Authoring Pipeline
 
@@ -191,7 +191,7 @@ Status: complete.
 
 ## Immediate Next Move
 
-1. Phase 18: Package CKL, lock the versioning story, and prepare the first stable release tag.
+1. Phase 18: Finish the stable CKL release tag after the packaging checks land.
 2. Phase 10 Wave 2: Continue the Bible-book records after governance is in place.
 3. Adjust the schema and retrieval model based on evaluation results.
 4. Expand semantic search only if the local-only retrieval stack still leaves gaps.
@@ -211,6 +211,6 @@ Status: complete.
 | 15 - Evaluation and Regression Testing | complete | Metadata-aware regression suite seeded; compare CKL-enabled, filtered, and disabled runs |
 | 16 - Public Answer Cache | complete | Cache approved answers with version fingerprints |
 | 17 - Web and Reader Integration | complete | Surface canonical context in the UI and add the draft editor view |
-| 18 - Packaging, Versioning, and Release | in progress | Ship validated CKL as a stable component |
+| 18 - Packaging, Versioning, and Release | in progress | Packaging metadata, version command, CI artifact checks, and docs are in place; stable release tag still pending |
 
 Reference anchors: `framework/books/genesis.md`, `framework/books/revelation.md`.

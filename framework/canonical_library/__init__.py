@@ -51,7 +51,10 @@ from .schema import (
     validate_required_fields,
 )
 
+__version__ = load_framework_version()
+
 __all__ = [
+    "__version__",
     "CanonicalLibrary",
     "CanonicalContextBuilder",
     "CanonicalObject",

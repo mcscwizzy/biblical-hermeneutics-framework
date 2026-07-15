@@ -60,6 +60,16 @@ New modules require **2 maintainer approvals**, one being an explicit
 neutrality + sourcing review (see [GOVERNANCE.md](GOVERNANCE.md#3-review-process)).
 Be patient and responsive to review feedback — the bar is high on purpose.
 
+## Release and packaging changes
+
+If your PR touches `pyproject.toml`, `MANIFEST.in`, the CKL version command, or
+bundled JSON data, also verify:
+
+- `python -m build`
+- `ckl-version`
+- Installing the built wheel in a clean environment still loads
+  `CanonicalLibrary.load_default()`
+
 ## Tone
 
 Disagreements about *method* are healthy. This is not a venue for advancing or

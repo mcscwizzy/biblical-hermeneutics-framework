@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+from importlib import metadata
 from dataclasses import asdict, dataclass, field, replace
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -26,6 +27,7 @@ DEFAULT_ALLOWED_REVIEW_STATUSES: tuple[str, ...] = (
 )
 DEFAULT_MINIMUM_QUALITY_SCORE = 80.0
 DEFAULT_TTL_DAYS = 365
+_DISTRIBUTION_NAME = "biblical-hermeneutics-framework"
 
 _FRAMEWORK_VERSION_PATH = Path(__file__).resolve().parents[2] / "VERSION"
 
@@ -60,8 +62,14 @@ def _parse_iso_datetime(value: str | None) -> datetime | None:
 
 
 def load_framework_version(default: str = "unknown") -> str:
-    """Return the repository version string when available."""
+    """Return the installed release version when available."""
 
+    try:
+        version = metadata.version(_DISTRIBUTION_NAME).strip()
+    except metadata.PackageNotFoundError:
+        version = ""
+    if version:
+        return version
     try:
         version = _FRAMEWORK_VERSION_PATH.read_text(encoding="utf-8").strip()
     except FileNotFoundError:

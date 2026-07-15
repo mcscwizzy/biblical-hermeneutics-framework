@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 import re
 from collections import Counter, defaultdict
-from dataclasses import asdict, dataclass, field
+from dataclasses import asdict, dataclass, field, replace
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
 
@@ -21,6 +21,7 @@ from .schema import (
     SUPPORTED_SCHEMA_VERSION,
     CanonicalObject,
     CanonicalValidationError,
+    normalize_sources_field,
     validate_library,
     validate_object,
 )
@@ -242,7 +243,14 @@ def validate_object_payload(
     path: str | Path | None = None,
 ) -> tuple[CanonicalObject | None, list[ValidationIssue]]:
     try:
-        obj = validate_object(data, path=path)
+        obj = validate_object(
+            _normalize_legacy_sources(
+                data,
+                path=path,
+                promote_approved_legacy_sources=True,
+            ),
+            path=path,
+        )
     except CanonicalValidationError as exc:
         return None, _issues_from_validation_error(exc, path=path)
     return obj, []
@@ -419,8 +427,19 @@ def normalize_object_mapping(
     *,
     path: str | Path | None = None,
 ) -> tuple[dict[str, Any], bool]:
-    obj = validate_object(data, path=path)
+    candidate = _normalize_legacy_sources(
+        data,
+        path=path,
+        promote_approved_legacy_sources=True,
+    )
+    obj = validate_object(candidate, path=path)
     normalized = obj.to_dict()
+    if (
+        isinstance(data.get("sources"), list)
+        and str(data.get("review_status", "")).strip().lower() == "approved"
+    ):
+        legacy_sources = _normalize_legacy_sources(data, path=path)
+        normalized["sources"] = legacy_sources["sources"]
     changed = _normalize_jsonable(data) != _normalize_jsonable(normalized)
     return normalized, changed
 
@@ -431,6 +450,39 @@ def migrate_object_file(path: Path | str) -> tuple[dict[str, Any], bool]:
     if not isinstance(raw, Mapping):
         raise CanonicalValidationError("CKL object must be a JSON object")
     return normalize_object_mapping(raw, path=file_path)
+
+
+def _normalize_legacy_sources(
+    data: Mapping[str, Any],
+    *,
+    path: str | Path | None = None,
+    promote_approved_legacy_sources: bool = False,
+) -> dict[str, Any]:
+    candidate = dict(data)
+    sources_value = candidate.get("sources")
+    if not isinstance(sources_value, list):
+        return candidate
+
+    object_id = candidate.get("id") if isinstance(candidate.get("id"), str) else None
+    review_status = str(candidate.get("review_status", "")).strip().lower()
+    normalized_sources = normalize_sources_field(
+        candidate,
+        path=path,
+        object_id=object_id,
+    )
+    if review_status == "approved" and promote_approved_legacy_sources:
+        promoted_sources: list[dict[str, Any]] = []
+        for raw_source, source in zip(sources_value, normalized_sources):
+            if (
+                isinstance(raw_source, str)
+                and source.source_type in {"other", "website"}
+            ):
+                source = replace(source, source_type="book")
+            promoted_sources.append(source.to_dict())
+        candidate["sources"] = promoted_sources
+    else:
+        candidate["sources"] = [source.to_dict() for source in normalized_sources]
+    return candidate
 
 
 def format_validation_summary(audit: LibraryAudit) -> str:

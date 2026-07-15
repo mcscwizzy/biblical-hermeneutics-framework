@@ -30,3 +30,74 @@ jobs:
             git --no-pager diff -- profiles/
             exit 1
           fi
+
+      - name: Build release artifacts
+        run: |
+          python -m pip install build
+          python -m build
+
+      - name: Verify release artifact contents
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import tarfile
+          import zipfile
+
+          dist = Path("dist")
+          wheel = next(dist.glob("*.whl"))
+          sdist = next(dist.glob("*.tar.gz"))
+
+          with zipfile.ZipFile(wheel) as archive:
+              wheel_names = set(archive.namelist())
+          with tarfile.open(sdist, "r:gz") as archive:
+              sdist_names = set(archive.getnames())
+
+          required_wheel_files = {
+              "framework/canonical_library/manifest.json",
+          }
+          required_wheel_prefixes = {
+              "framework/canonical_library/objects/",
+              "bhf_agent/data/",
+          }
+          required_sdist_files = {
+              "VERSION",
+              "pyproject.toml",
+              "MANIFEST.in",
+              "framework/canonical_library/manifest.json",
+          }
+          required_sdist_prefixes = {
+              "framework/canonical_library/objects/",
+              "bhf_agent/data/",
+          }
+
+          missing = [
+              *sorted(name for name in required_wheel_files if name not in wheel_names),
+              *sorted(
+                  prefix for prefix in required_wheel_prefixes
+                  if not any(name.startswith(prefix) for name in wheel_names)
+              ),
+              *sorted(name for name in required_sdist_files if name not in sdist_names),
+              *sorted(
+                  prefix for prefix in required_sdist_prefixes
+                  if not any(name.startswith(prefix) for name in sdist_names)
+              ),
+          ]
+
+          if missing:
+              raise SystemExit("missing release artifact content: " + ", ".join(missing))
+          PY
+
+      - name: Smoke test installed wheel
+        working-directory: /tmp
+        run: |
+          python -m venv /tmp/bhf-wheel-venv
+          /tmp/bhf-wheel-venv/bin/python -m pip install --upgrade pip
+          /tmp/bhf-wheel-venv/bin/python -m pip install "$GITHUB_WORKSPACE"/dist/*.whl
+          /tmp/bhf-wheel-venv/bin/ckl-version --json
+          /tmp/bhf-wheel-venv/bin/python - <<'PY'
+          from framework.canonical_library import CanonicalLibrary
+
+          library = CanonicalLibrary.load_default()
+          assert library.manifest["object_count"] == 611
+          assert library.inventory_fingerprint()
+          PY

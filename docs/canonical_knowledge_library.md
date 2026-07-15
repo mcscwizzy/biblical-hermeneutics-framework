@@ -184,6 +184,26 @@ The public answer cache stores the repository framework version fingerprint, the
 
 The loader validates these values so old or incompatible inventory files fail fast.
 
+## Packaging and Release
+
+The release artifact now bundles the CKL inventory and the committed agent data
+needed to resolve it in an installed environment.
+
+- `framework/canonical_library/manifest.json`
+- `framework/canonical_library/objects/**/*.json`
+- `bhf_agent/data/*.json`
+
+The installed distribution exposes a `ckl-version` command
+(also `python -m framework.canonical_library`) that reports:
+
+- The BHF release version and fingerprint.
+- The CKL manifest framework/schema version.
+- The CKL object count.
+- The CKL inventory fingerprint.
+
+CI builds the source and wheel artifacts and smoke-tests the installed wheel so
+packaging regressions show up before release.
+
 ## Adding New Objects
 
 Safe contributor workflow:

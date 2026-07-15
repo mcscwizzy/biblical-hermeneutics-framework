@@ -13,6 +13,11 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
 
 ### Added
 
+- **Packaging and release plumbing for CKL**: the repository now ships a
+  `pyproject.toml`/wheel build for the agent core plus CKL inventory, includes
+  the CKL JSON payload in release artifacts, exposes a `ckl-version` command
+  (also `python -m framework.canonical_library`), and verifies the built wheel
+  in CI before release.
 - **Prerequisite modules for the Book-layer expansion** (method only,
   denomination-neutral): `language.hebrew` (Biblical Hebrew and Aramaic, paired
   with `language.greek`); `genre.law` (legal/covenant material, the eighth genre
@@ -116,6 +121,9 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
 
 ### Changed
 
+- `load_framework_version()` now prefers installed distribution metadata and
+  falls back to the repository `VERSION` file so the same version string is
+  available in a checkout and in an installed wheel.
 - Cross-reference wiring follow-ups now that the new modules exist:
   `core.genre-awareness` recommends and links `genre.law` (the eighth genre it
   names), and the Old Testament genre modules (`genre.poetry`, `genre.wisdom`,

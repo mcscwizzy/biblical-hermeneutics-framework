@@ -16,6 +16,9 @@ env/
 .env
 local.config.json
 output.txt
+dist/
+build/
+*.egg-info/
 
 # Composed scratch output (committed profiles live in profiles/*.md)
 /tmp-prompt.md
