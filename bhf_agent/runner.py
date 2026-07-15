@@ -2,13 +2,19 @@
 
 from __future__ import annotations
 
+import json
+import logging
 import time
+import uuid
 from datetime import datetime, timezone
 from typing import Any, Callable, Optional
 
 from .adapters import ChatAdapter, OllamaAdapter, OpenAICompatibleAdapter
 from .ckl import (
     build_canonical_context,
+    build_canonical_fallback_answer,
+    build_canonical_query,
+    canonical_context_has_strong_match,
     format_canonical_context_for_prompt,
     load_canonical_library,
 )
@@ -37,8 +43,9 @@ from .model_response_validation import (
     normalize_model_response,
     structured_response_format,
 )
+from .observability import render_log_record, summarize_usage
 from .profiles import ProfileLoader
-from .prompts import build_prompt, strategy_for_profile
+from .prompts import PROMPT_VERSION, build_prompt, strategy_for_profile
 from .question_types import classify_question_type
 from .repair import build_repair_prompt, decide_repair
 from .references import detect_reference
@@ -46,9 +53,15 @@ from .runner_state import PIPELINE_STEPS, STEP_INDEX, STEP_MESSAGES, STAGE_TO_ST
 from .validation import validate_response
 from framework.canonical_library import (
     CanonicalLibrary,
+    CKLRuntimeCache,
     JsonPublicAnswerCache,
     NullPublicAnswerCache,
     PublicAnswerCache,
+    build_context_cache_key,
+    build_model_signature,
+    build_prompt_context_hash,
+    build_response_cache_key,
+    build_retrieval_cache_key,
     load_framework_version,
     load_framework_version_fingerprint,
     normalize_public_question,
@@ -57,6 +70,16 @@ from framework.canonical_library import (
 
 
 StatusCallback = Callable[[dict[str, Any]], None]
+OBSERVABILITY_LOGGER = logging.getLogger("bhf_agent.observability")
+
+
+def _safe_int(value: Any) -> int | None:
+    if value is None or value == "":
+        return None
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return None
 
 class BHFAgent:
     def __init__(
@@ -66,6 +89,7 @@ class BHFAgent:
         profile_loader: Optional[ProfileLoader] = None,
         canonical_library: Optional[CanonicalLibrary] = None,
         public_answer_cache: Optional[PublicAnswerCache] = None,
+        runtime_cache: Optional[CKLRuntimeCache] = None,
     ) -> None:
         config.validate()
         self.config = config
@@ -92,6 +116,13 @@ class BHFAgent:
             )
         else:
             self.public_answer_cache = NullPublicAnswerCache()
+        if runtime_cache is not None:
+            self.runtime_cache = runtime_cache
+        else:
+            self.runtime_cache = CKLRuntimeCache(
+                enabled=self.config.canonical_library.cache_enabled,
+                max_entries=self.config.canonical_library.cache_max_entries,
+            )
         self._status_callback: Optional[StatusCallback] = None
         self._status_run_started_at: float | None = None
         self._status_stage_started_at: float | None = None
@@ -110,6 +141,9 @@ class BHFAgent:
         self._status_run_started_at = time.monotonic()
         self._status_stage_started_at = self._status_run_started_at
         self._status_current_stage = None
+        ctx: PipelineContext | None = None
+        result: AgentResult | None = None
+        request_error: Exception | None = None
         try:
             self._emit_status("queued", status="running")
             ctx = self._initialize_context(question)
@@ -119,17 +153,42 @@ class BHFAgent:
             ctx = self._load_profile(ctx)
             ctx = self._lookup_local_knowledge(ctx)
             ctx = self._lookup_public_answer_cache(ctx)
+            response_contract = self._response_contract(ctx.original_question)
             if ctx.raw_model_response is None:
                 ctx = self._load_session_memory(ctx)
+                ctx = self._lookup_response_cache(ctx)
+            if ctx.raw_model_response is None:
                 ctx = self._build_prompts(ctx)
                 ctx = self._call_model(ctx)
-                ctx = self._clean_output(ctx)
-                if self._response_contract(ctx.original_question) == ANSWER_CONTRACT:
-                    ctx = self._validate_response(ctx)
-                    ctx = self._repair_response(ctx)
+                if self._should_use_deterministic_fallback_after_model_call(ctx, response_contract):
+                    ctx = self._apply_deterministic_fallback(
+                        ctx,
+                        response_contract=response_contract,
+                        reason="model backend was unavailable or returned no usable text",
+                    )
+                else:
+                    ctx = self._clean_output(ctx)
+                    if response_contract == ANSWER_CONTRACT:
+                        ctx = self._validate_response(ctx)
+                        ctx = self._repair_response(ctx)
+                        if self._should_use_deterministic_fallback_after_validation(ctx):
+                            ctx = self._apply_deterministic_fallback(
+                                ctx,
+                                response_contract=response_contract,
+                                reason="validated model output was still invalid",
+                            )
+                    elif response_contract == SEARCH_RESULTS_CONTRACT and not bool(
+                        ctx.debug_metadata.get("response_validation_passed", True)
+                    ):
+                        ctx = self._apply_deterministic_fallback(
+                            ctx,
+                            response_contract=response_contract,
+                            reason="structured search results output was invalid",
+                        )
             elif self.config.memory_enabled:
                 ctx = self._load_session_memory(ctx)
             ctx = self._finalize_result(ctx)
+            ctx = self._store_response_cache(ctx)
             ctx = self._save_session_turn(ctx)
             result = self._to_agent_result(ctx)
             if result.errors:
@@ -146,6 +205,7 @@ class BHFAgent:
             self._emit_status("complete", "Complete", status="complete")
             return result
         except Exception as exc:
+            request_error = exc
             self._emit_status(
                 "error",
                 "Agent request failed",
@@ -157,6 +217,12 @@ class BHFAgent:
             )
             raise
         finally:
+            if ctx is not None:
+                self._log_request_observability(
+                    ctx,
+                    result=result,
+                    error=request_error,
+                )
             self._status_callback = previous_callback
             self._status_run_started_at = previous_run_started_at
             self._status_stage_started_at = previous_stage_started_at
@@ -177,6 +243,11 @@ class BHFAgent:
                 "answer_mode": self.config.answer_mode,
                 "framework_version": self.framework_version,
                 "framework_version_fingerprint": self.framework_version_fingerprint,
+                "request_id": uuid.uuid4().hex,
+                "request_started_at": datetime.now(timezone.utc)
+                .isoformat()
+                .replace("+00:00", "Z"),
+                "prompt_version": PROMPT_VERSION,
                 "response_contract": response_contract,
                 "response_format_requested": response_contract != "freeform",
                 "local_knowledge_keys": [],
@@ -190,6 +261,41 @@ class BHFAgent:
                 "canonical_library_include_placeholders": self.config.canonical_library.include_placeholders,
                 "canonical_library_allowed_statuses": list(self.config.canonical_library.allowed_statuses),
                 "canonical_library_version_fingerprint": None,
+                "canonical_library_strong_match": None,
+                "canonical_library_prompt_mode": None,
+                "canonical_library_error": None,
+                "canonical_library_retrieval_cache_enabled": self.config.canonical_library.cache_enabled,
+                "canonical_library_retrieval_cache_hit": False,
+                "canonical_library_retrieval_cache_status": "disabled"
+                if not self.config.canonical_library.cache_enabled
+                else "miss",
+                "canonical_library_retrieval_cache_key": None,
+                "canonical_library_context_cache_enabled": self.config.canonical_library.cache_enabled,
+                "canonical_library_context_cache_hit": False,
+                "canonical_library_context_cache_status": "disabled"
+                if not self.config.canonical_library.cache_enabled
+                else "miss",
+                "canonical_library_context_cache_key": None,
+                "canonical_library_response_cache_enabled": self.config.canonical_library.cache_enabled,
+                "canonical_library_response_cache_hit": False,
+                "canonical_library_response_cache_status": "disabled"
+                if not self.config.canonical_library.cache_enabled
+                else "miss",
+                "canonical_library_response_cache_key": None,
+                "canonical_library_response_context_hash": None,
+                "canonical_library_response_model_signature": None,
+                "fallback_used": False,
+                "fallback_kind": None,
+                "fallback_mode": None,
+                "fallback_reason": None,
+                "fallback_selected_entry_ids": [],
+                "fallback_entry_count": 0,
+                "fallback_context_tokens": 0,
+                "fallback_truncated": False,
+                "fallback_message": None,
+                "fallback_original_errors": [],
+                "fallback_original_validation_passed": None,
+                "fallback_original_validation_errors": [],
                 "public_answer_cache_enabled": not isinstance(
                     self.public_answer_cache, NullPublicAnswerCache
                 ),
@@ -214,6 +320,7 @@ class BHFAgent:
                 "public_answer_cache_invalidated_at": None,
                 "public_answer_cache_invalidated_reason": None,
                 "public_answer_cache_error": None,
+                "runtime_cache_enabled": self.runtime_cache.enabled,
                 "map_tool_keys": [],
                 "output_cleanup_applied": False,
                 "response_validation_passed": None,
@@ -277,10 +384,19 @@ class BHFAgent:
         )
         ctx.local_knowledge = bundle
         ctx.debug_metadata["local_knowledge_keys"] = bundle.keys()
+        map_context = build_map_tool_context(
+            ctx.original_question,
+            reference_context=ctx.reference_context,
+            question_context=ctx.question_context,
+        )
+        if map_context:
+            ctx.debug_metadata["map_tool_keys"] = list(map_context.get("requested_tools", []))
+            ctx.debug_metadata["map_tool_context"] = map_context
         self._lookup_canonical_library(ctx)
         return self._mark_stage(ctx, "lookup_local_knowledge")
 
     def _lookup_canonical_library(self, ctx: PipelineContext) -> PipelineContext:
+        retrieval_started_at = time.perf_counter()
         if self.canonical_library is None:
             ctx.canonical_library_context = None
             ctx.canonical_library_prompt = None
@@ -290,26 +406,110 @@ class BHFAgent:
             ctx.debug_metadata["canonical_library_retrieval_method"] = None
             ctx.debug_metadata["canonical_library_topic_count"] = 0
             ctx.debug_metadata["canonical_library_prompt_tokens"] = 0
+            ctx.debug_metadata["canonical_library_strong_match"] = False
+            ctx.debug_metadata["canonical_library_prompt_mode"] = "disabled"
+            ctx.debug_metadata["canonical_library_retrieval_cache_status"] = "disabled"
+            ctx.debug_metadata["canonical_library_context_cache_status"] = "disabled"
+            ctx.debug_metadata["canonical_library_response_cache_status"] = "disabled"
+            ctx.debug_metadata["canonical_library_retrieval_duration_ms"] = 0
             return ctx
         if ctx.reference_context is None or ctx.question_context is None:
             raise RuntimeError("pipeline context is incomplete before canonical lookup")
 
-        canonical_context = build_canonical_context(
-            self.canonical_library,
+        canonical_query = build_canonical_query(
             ctx.original_question,
             ctx.reference_context,
             ctx.question_context,
-            max_results=self.config.canonical_library.max_results,
-            include_placeholders=self.config.canonical_library.include_placeholders,
-            allowed_statuses=self.config.canonical_library.allowed_statuses,
-            answer_mode=ctx.answer_mode,
-            max_context_tokens=self.config.canonical_library.max_context_tokens,
         )
+        ctx.canonical_library_query = canonical_query
+        ctx.debug_metadata["canonical_library_query"] = canonical_query
+        ctx.debug_metadata["canonical_library_prompt"] = None
+        ctx.debug_metadata["canonical_library_prompt_tokens"] = 0
+        ctx.debug_metadata["canonical_library_retrieval_cache_hit"] = False
+        ctx.debug_metadata["canonical_library_context_cache_hit"] = False
+        ctx.debug_metadata["canonical_library_retrieval_cache_status"] = "miss"
+        ctx.debug_metadata["canonical_library_context_cache_status"] = "miss"
+        ctx.debug_metadata["canonical_library_context_cache_key"] = None
+
+        inventory_fingerprint: str | None = None
+        if self.runtime_cache.enabled and self.config.canonical_library.cache_enabled:
+            try:
+                inventory_fingerprint = self.canonical_library.inventory_fingerprint()
+                ctx.debug_metadata["canonical_library_version_fingerprint"] = inventory_fingerprint
+            except Exception as exc:  # noqa: BLE001 - cache should never block answers
+                ctx.warnings.append(f"Canonical library retrieval cache skipped: {exc}")
+                ctx.debug_metadata["canonical_library_retrieval_cache_status"] = "error"
+                ctx.debug_metadata["canonical_library_error"] = str(exc)
+
+        retrieval_cache_key: str | None = None
+        if inventory_fingerprint and self.runtime_cache.enabled and self.config.canonical_library.cache_enabled:
+            retrieval_cache_key = build_retrieval_cache_key(
+                canonical_query=canonical_query,
+                inventory_fingerprint=inventory_fingerprint,
+                answer_mode=ctx.answer_mode,
+                max_results=self.config.canonical_library.max_results,
+                include_placeholders=self.config.canonical_library.include_placeholders,
+                allowed_statuses=self.config.canonical_library.allowed_statuses,
+                max_context_tokens=self.config.canonical_library.max_context_tokens,
+            )
+            ctx.debug_metadata["canonical_library_retrieval_cache_key"] = retrieval_cache_key
+            cached_context = self.runtime_cache.lookup_retrieval(retrieval_cache_key)
+            if cached_context is not None:
+                canonical_context = cached_context
+                ctx.debug_metadata["canonical_library_retrieval_cache_hit"] = True
+                ctx.debug_metadata["canonical_library_retrieval_cache_status"] = "hit"
+            else:
+                canonical_context = None
+        else:
+            ctx.debug_metadata["canonical_library_retrieval_cache_key"] = retrieval_cache_key
+            canonical_context = None
+
+        try:
+            if canonical_context is None:
+                canonical_context = build_canonical_context(
+                    self.canonical_library,
+                    ctx.original_question,
+                    ctx.reference_context,
+                    ctx.question_context,
+                    max_results=self.config.canonical_library.max_results,
+                    include_placeholders=self.config.canonical_library.include_placeholders,
+                    allowed_statuses=self.config.canonical_library.allowed_statuses,
+                    answer_mode=ctx.answer_mode,
+                    max_context_tokens=self.config.canonical_library.max_context_tokens,
+                )
+        except Exception as exc:  # noqa: BLE001 - retrieval failure must degrade gracefully
+            ctx.canonical_library_context = None
+            ctx.canonical_library_prompt = None
+            ctx.debug_metadata["canonical_library_loaded"] = True
+            ctx.debug_metadata["canonical_library_object_ids"] = []
+            ctx.debug_metadata["canonical_library_retrieval_method"] = None
+            ctx.debug_metadata["canonical_library_topic_count"] = 0
+            ctx.debug_metadata["canonical_library_prompt_tokens"] = 0
+            ctx.debug_metadata["canonical_library_strong_match"] = False
+            ctx.debug_metadata["canonical_library_prompt_mode"] = "retrieval_failed"
+            ctx.debug_metadata["canonical_library_error"] = str(exc)
+            ctx.debug_metadata["canonical_library_context_cache_key"] = None
+            ctx.debug_metadata["canonical_library_context_cache_hit"] = False
+            ctx.debug_metadata["canonical_library_context_cache_status"] = "error"
+            ctx.debug_metadata["canonical_library_retrieval_duration_ms"] = int(
+                round((time.perf_counter() - retrieval_started_at) * 1000)
+            )
+            ctx.warnings.append(f"Canonical library retrieval failed: {exc}")
+            return ctx
+
         ctx.canonical_library_context = canonical_context
+        if (
+            retrieval_cache_key
+            and canonical_context is not None
+            and not ctx.debug_metadata.get("canonical_library_retrieval_cache_hit")
+            and self.runtime_cache.enabled
+            and self.config.canonical_library.cache_enabled
+        ):
+            self.runtime_cache.store_retrieval(retrieval_cache_key, canonical_context)
         ctx.canonical_library_query = (
-            str(canonical_context.get("query") or "").strip()
+            str(canonical_context.get("query") or canonical_query).strip()
             if canonical_context is not None
-            else None
+            else canonical_query
         )
 
         if canonical_context is None:
@@ -319,27 +519,109 @@ class BHFAgent:
             ctx.debug_metadata["canonical_library_retrieval_method"] = None
             ctx.debug_metadata["canonical_library_topic_count"] = 0
             ctx.debug_metadata["canonical_library_prompt_tokens"] = 0
-            ctx.debug_metadata["canonical_library_query"] = ctx.canonical_library_query
+            ctx.debug_metadata["canonical_library_strong_match"] = False
+            ctx.debug_metadata["canonical_library_prompt_mode"] = "no_match"
+            ctx.debug_metadata["canonical_library_context_cache_key"] = None
+            ctx.debug_metadata["canonical_library_context_cache_hit"] = False
+            ctx.debug_metadata["canonical_library_context_cache_status"] = "miss"
+            ctx.debug_metadata["canonical_library_response_model_signature"] = build_model_signature(
+                adapter=self.config.adapter,
+                base_url=self.config.base_url,
+                model=self.config.model,
+                temperature=self.config.temperature,
+                max_tokens=self.config.max_tokens,
+            )
+            ctx.debug_metadata["canonical_library_retrieval_duration_ms"] = int(
+                round((time.perf_counter() - retrieval_started_at) * 1000)
+            )
             return ctx
 
-        canonical_prompt = format_canonical_context_for_prompt(
-            canonical_context,
-            max_context_tokens=self.config.canonical_library.max_context_tokens,
-            answer_mode=ctx.answer_mode,
-        )
-        ctx.canonical_library_prompt = canonical_prompt
         metadata = dict(canonical_context.get("metadata") or {})
         object_ids = list(metadata.get("retrieved_object_ids") or [])
+        strong_match = canonical_context_has_strong_match(canonical_context)
+        ctx.debug_metadata["canonical_library_strong_match"] = strong_match
         ctx.debug_metadata["canonical_library_loaded"] = True
         ctx.debug_metadata["canonical_library_object_ids"] = object_ids
         ctx.debug_metadata["canonical_library_retrieval_method"] = metadata.get("retrieval_method")
         ctx.debug_metadata["canonical_library_topic_count"] = metadata.get("topic_count", 0)
         ctx.debug_metadata["canonical_library_answer_mode"] = metadata.get("answer_mode")
         ctx.debug_metadata["canonical_library_topic_token_budget"] = metadata.get("topic_token_budget")
-        ctx.debug_metadata["canonical_library_prompt_tokens"] = (
-            max(1, round(len(canonical_prompt) / 4)) if canonical_prompt else 0
-        )
         ctx.debug_metadata["canonical_library_query"] = ctx.canonical_library_query
+
+        if strong_match:
+            prompt_mode = "summary"
+        else:
+            prompt_mode = "no_strong_match"
+
+        ctx.debug_metadata["canonical_library_prompt_mode"] = prompt_mode
+        ctx.debug_metadata["canonical_library_context_cache_hit"] = False
+        ctx.debug_metadata["canonical_library_context_cache_status"] = "miss"
+        context_cache_key = build_context_cache_key(
+            canonical_query=ctx.canonical_library_query or canonical_query,
+            retrieved_topics=list(canonical_context.get("retrieved_topics") or []),
+            answer_mode=ctx.answer_mode,
+            max_context_tokens=self.config.canonical_library.max_context_tokens,
+            prompt_mode=prompt_mode,
+            prompt_version=PROMPT_VERSION,
+        )
+        ctx.debug_metadata["canonical_library_context_cache_key"] = context_cache_key
+        if self.runtime_cache.enabled and self.config.canonical_library.cache_enabled:
+            cached_prompt = self.runtime_cache.lookup_context(context_cache_key)
+            if cached_prompt is not None:
+                ctx.canonical_library_prompt = str(cached_prompt.get("prompt") or "")
+                ctx.debug_metadata["canonical_library_context_cache_hit"] = True
+                ctx.debug_metadata["canonical_library_context_cache_status"] = "hit"
+                ctx.debug_metadata["canonical_library_prompt_tokens"] = int(
+                    cached_prompt.get("prompt_tokens") or 0
+                )
+            else:
+                ctx.canonical_library_prompt = None
+        else:
+            ctx.canonical_library_prompt = None
+
+        if ctx.canonical_library_prompt is None:
+            if strong_match:
+                canonical_prompt = format_canonical_context_for_prompt(
+                    canonical_context,
+                    max_context_tokens=self.config.canonical_library.max_context_tokens,
+                    answer_mode=ctx.answer_mode,
+                )
+                ctx.canonical_library_prompt = canonical_prompt
+            else:
+                ctx.canonical_library_prompt = (
+                    "The Canonical Knowledge Library did not find a strong match for this question. "
+                    "Answer generally without inventing CKL facts, and state briefly if the library does not yet cover the topic."
+                )
+            ctx.debug_metadata["canonical_library_prompt_tokens"] = (
+                max(1, round(len(ctx.canonical_library_prompt) / 4))
+                if ctx.canonical_library_prompt
+                else 0
+            )
+            if context_cache_key and self.runtime_cache.enabled and self.config.canonical_library.cache_enabled:
+                self.runtime_cache.store_context(
+                    context_cache_key,
+                    {
+                        "prompt": ctx.canonical_library_prompt,
+                        "prompt_tokens": ctx.debug_metadata["canonical_library_prompt_tokens"],
+                        "prompt_mode": prompt_mode,
+                        "canonical_query": ctx.canonical_library_query,
+                        "selected_entry_ids": list(object_ids),
+                        "selected_entry_versions": list(
+                            metadata.get("retrieved_object_versions") or []
+                        ),
+                    },
+                )
+        ctx.debug_metadata["canonical_library_response_model_signature"] = build_model_signature(
+            adapter=self.config.adapter,
+            base_url=self.config.base_url,
+            model=self.config.model,
+            temperature=self.config.temperature,
+            max_tokens=self.config.max_tokens,
+        )
+        ctx.debug_metadata["canonical_library_response_cache_status"] = "miss"
+        ctx.debug_metadata["canonical_library_retrieval_duration_ms"] = int(
+            round((time.perf_counter() - retrieval_started_at) * 1000)
+        )
         return ctx
 
     def _lookup_public_answer_cache(self, ctx: PipelineContext) -> PipelineContext:
@@ -465,6 +747,176 @@ class BHFAgent:
         ctx.debug_metadata["validation_score"] = ctx.validation_result.score
         return ctx
 
+    def _lookup_response_cache(self, ctx: PipelineContext) -> PipelineContext:
+        if (
+            not self.runtime_cache.enabled
+            or not self.config.canonical_library.cache_enabled
+            or self.canonical_library is None
+        ):
+            ctx.debug_metadata["canonical_library_response_cache_status"] = "disabled"
+            return ctx
+        if (
+            ctx.reference_context is None
+            or ctx.genre_context is None
+            or ctx.question_context is None
+            or ctx.profile_name is None
+        ):
+            raise RuntimeError("pipeline context is incomplete before response cache lookup")
+
+        prompt_context_hash = build_prompt_context_hash(
+            normalized_question=ctx.normalized_question or ctx.original_question,
+            canonical_query=ctx.canonical_library_query or ctx.original_question,
+            canonical_context_cache_key=str(
+                ctx.debug_metadata.get("canonical_library_context_cache_key") or ""
+            ),
+            reference_context=ctx.reference_context.to_dict(),
+            genre_context=ctx.genre_context.to_dict(),
+            question_context=ctx.question_context.to_dict(),
+            local_knowledge_keys=ctx.debug_metadata.get("local_knowledge_keys", []),
+            map_tool_keys=ctx.debug_metadata.get("map_tool_keys", []),
+            session_memory=(
+                ctx.session_memory.to_dict()
+                if isinstance(ctx.session_memory, SessionMemory)
+                else None
+            ),
+            profile_name=ctx.profile_name,
+            answer_mode=ctx.answer_mode,
+            show_method_notes=self.config.show_method_notes,
+            prompt_version=PROMPT_VERSION,
+            prompt_mode=str(ctx.debug_metadata.get("canonical_library_prompt_mode") or ""),
+        )
+        ctx.debug_metadata["canonical_library_response_context_hash"] = prompt_context_hash
+
+        model_signature = dict(
+            ctx.debug_metadata.get("canonical_library_response_model_signature")
+            or build_model_signature(
+                adapter=self.config.adapter,
+                base_url=self.config.base_url,
+                model=self.config.model,
+                temperature=self.config.temperature,
+                max_tokens=self.config.max_tokens,
+            )
+        )
+        response_cache_key = build_response_cache_key(
+            normalized_question=ctx.normalized_question or ctx.original_question,
+            prompt_context_hash=prompt_context_hash,
+            model_signature=model_signature,
+            response_contract=self._response_contract(ctx.original_question),
+            prompt_version=PROMPT_VERSION,
+        )
+        ctx.debug_metadata["canonical_library_response_cache_key"] = response_cache_key
+
+        cached_response = self.runtime_cache.lookup_response(response_cache_key)
+        if cached_response is None:
+            ctx.debug_metadata["canonical_library_response_cache_hit"] = False
+            ctx.debug_metadata["canonical_library_response_cache_status"] = "miss"
+            return ctx
+
+        answer_text = str(cached_response.get("answer_text") or "").strip()
+        ctx.raw_model_response = ChatResponse(
+            text=answer_text,
+            model=self.config.model,
+            provider=self.config.adapter,
+            latency_ms=0,
+            usage={
+                "cached": True,
+                "cache_layer": "response",
+            },
+            raw_provider_response={
+                "cache_key": response_cache_key,
+                "cache_layer": "response",
+                "entry": cached_response,
+            },
+            warnings=list(cached_response.get("warnings") or []),
+            errors=[],
+        )
+        ctx.raw_answer_text = answer_text
+        ctx.cleaned_answer_text = answer_text
+        ctx.warnings.extend(list(cached_response.get("warnings") or []))
+        ctx.validation_result = ValidationResult(
+            passed=bool(cached_response.get("validation_passed", True)),
+            score=int(cached_response.get("validation_score") or 100),
+            warnings=list(cached_response.get("validation_warnings") or []),
+            suggestions=list(cached_response.get("validation_suggestions") or []),
+        )
+        ctx.errors = []
+        ctx.debug_metadata["canonical_library_response_cache_hit"] = True
+        ctx.debug_metadata["canonical_library_response_cache_status"] = "hit"
+        ctx.debug_metadata["output_cleanup_applied"] = bool(
+            cached_response.get("cleanup_applied", False)
+        )
+        ctx.debug_metadata["cleanup_removed_headings"] = list(
+            cached_response.get("cleanup_removed_headings") or []
+        )
+        ctx.debug_metadata["response_validation_passed"] = ctx.validation_result.passed
+        ctx.debug_metadata["response_validation_errors"] = []
+        ctx.debug_metadata["response_validation_warnings"] = list(
+            cached_response.get("validation_warnings") or []
+        )
+        ctx.debug_metadata["response_validation_structured_output"] = bool(
+            cached_response.get("structured_output", False)
+        )
+        ctx.debug_metadata["response_validation_raw_text_was_json"] = bool(
+            cached_response.get("raw_text_was_json", False)
+        )
+        ctx.debug_metadata["response_validation_removed_headings"] = list(
+            cached_response.get("removed_headings") or []
+        )
+        if cached_response.get("parsed_payload") is not None:
+            ctx.debug_metadata["response_validation_parsed_payload"] = cached_response.get(
+                "parsed_payload"
+            )
+        else:
+            ctx.debug_metadata.pop("response_validation_parsed_payload", None)
+        ctx.debug_metadata["validation_score"] = ctx.validation_result.score
+        return ctx
+
+    def _store_response_cache(self, ctx: PipelineContext) -> PipelineContext:
+        if (
+            not self.runtime_cache.enabled
+            or not self.config.canonical_library.cache_enabled
+            or self.canonical_library is None
+            or ctx.raw_model_response is None
+            or ctx.validation_result is None
+        ):
+            return ctx
+        if ctx.debug_metadata.get("fallback_used"):
+            return ctx
+        if ctx.debug_metadata.get("public_answer_cache_hit"):
+            return ctx
+        if ctx.debug_metadata.get("canonical_library_response_cache_hit"):
+            return ctx
+        response_cache_key = str(
+            ctx.debug_metadata.get("canonical_library_response_cache_key") or ""
+        ).strip()
+        if not response_cache_key:
+            return ctx
+        payload = {
+            "answer_text": ctx.final_answer or ctx.cleaned_answer_text or "",
+            "validation_passed": ctx.validation_result.passed,
+            "validation_score": ctx.validation_result.score,
+            "validation_warnings": list(ctx.validation_result.warnings),
+            "validation_suggestions": list(ctx.validation_result.suggestions),
+            "warnings": list(ctx.warnings),
+            "cleanup_applied": bool(ctx.debug_metadata.get("output_cleanup_applied", False)),
+            "cleanup_removed_headings": list(
+                ctx.debug_metadata.get("cleanup_removed_headings") or []
+            ),
+            "structured_output": bool(
+                ctx.debug_metadata.get("response_validation_structured_output", False)
+            ),
+            "raw_text_was_json": bool(
+                ctx.debug_metadata.get("response_validation_raw_text_was_json", False)
+            ),
+            "removed_headings": list(
+                ctx.debug_metadata.get("response_validation_removed_headings") or []
+            ),
+            "parsed_payload": ctx.debug_metadata.get("response_validation_parsed_payload"),
+        }
+        self.runtime_cache.store_response(response_cache_key, payload)
+        ctx.debug_metadata["canonical_library_response_cache_status"] = "stored"
+        return ctx
+
     def _load_session_memory(self, ctx: PipelineContext) -> PipelineContext:
         if not self.config.memory_enabled:
             ctx.session_memory = None
@@ -491,11 +943,13 @@ class BHFAgent:
             or ctx.profile_content is None
         ):
             raise RuntimeError("pipeline context is incomplete before prompt building")
-        map_context = build_map_tool_context(
-            ctx.original_question,
-            reference_context=ctx.reference_context,
-            question_context=ctx.question_context,
-        )
+        map_context = ctx.debug_metadata.get("map_tool_context")
+        if not isinstance(map_context, dict) or not map_context:
+            map_context = build_map_tool_context(
+                ctx.original_question,
+                reference_context=ctx.reference_context,
+                question_context=ctx.question_context,
+            )
         if map_context:
             ctx.debug_metadata["map_tool_keys"] = list(map_context.get("requested_tools", []))
             ctx.debug_metadata["map_tool_context"] = map_context
@@ -528,6 +982,146 @@ class BHFAgent:
         if contract in {ANSWER_CONTRACT, SEARCH_RESULTS_CONTRACT}:
             return structured_response_format()
         return None
+
+    def _should_use_deterministic_fallback_after_model_call(
+        self,
+        ctx: PipelineContext,
+        response_contract: str,
+    ) -> bool:
+        del response_contract
+        if ctx.errors:
+            return True
+        return not bool((ctx.raw_answer_text or "").strip())
+
+    def _should_use_deterministic_fallback_after_validation(
+        self,
+        ctx: PipelineContext,
+    ) -> bool:
+        if ctx.validation_result is None:
+            return True
+        return not ctx.validation_result.passed
+
+    def _deterministic_fallback_response(
+        self,
+        ctx: PipelineContext,
+        *,
+        response_contract: str,
+    ) -> dict[str, Any]:
+        if response_contract == SEARCH_RESULTS_CONTRACT:
+            payload = {
+                "results": [],
+                "message": (
+                    "BHF could not identify likely passage candidates without a working model backend."
+                ),
+            }
+            return {
+                "text": json.dumps(payload, ensure_ascii=False),
+                "kind": "search_results_empty",
+                "message": payload["message"],
+                "strong_match": False,
+                "selected_entry_ids": [],
+                "entry_count": 0,
+                "estimated_tokens": 0,
+                "truncated": False,
+                "parsed_payload": payload,
+            }
+
+        fallback = build_canonical_fallback_answer(
+            ctx.canonical_library_context,
+            max_context_tokens=self.config.canonical_library.max_context_tokens,
+            answer_mode=ctx.answer_mode,
+            retrieval_failed=bool(ctx.debug_metadata.get("canonical_library_error")),
+        )
+        fallback["parsed_payload"] = None
+        return fallback
+
+    def _apply_deterministic_fallback(
+        self,
+        ctx: PipelineContext,
+        *,
+        response_contract: str,
+        reason: str,
+    ) -> PipelineContext:
+        fallback = self._deterministic_fallback_response(
+            ctx,
+            response_contract=response_contract,
+        )
+        fallback_text = str(fallback.get("text") or "").strip()
+        if not fallback_text:
+            fallback_text = (
+                "The Canonical Knowledge Library does not currently have enough relevant material "
+                "to answer this question."
+            )
+
+        original_errors = list(ctx.errors)
+        original_validation_errors = list(ctx.debug_metadata.get("response_validation_errors") or [])
+        original_validation_warnings = list(
+            ctx.debug_metadata.get("response_validation_warnings") or []
+        )
+
+        ctx.debug_metadata["fallback_used"] = True
+        ctx.debug_metadata["fallback_reason"] = reason
+        ctx.debug_metadata["fallback_kind"] = fallback.get("kind")
+        if response_contract == SEARCH_RESULTS_CONTRACT:
+            ctx.debug_metadata["fallback_mode"] = "search_results_empty"
+        elif fallback.get("kind") == "retrieval_failed":
+            ctx.debug_metadata["fallback_mode"] = "retrieval_failed"
+        elif fallback.get("strong_match"):
+            ctx.debug_metadata["fallback_mode"] = "canonical_summary"
+        else:
+            ctx.debug_metadata["fallback_mode"] = "canonical_limitation"
+        ctx.debug_metadata["fallback_message"] = fallback.get("message")
+        ctx.debug_metadata["fallback_selected_entry_ids"] = list(
+            fallback.get("selected_entry_ids") or []
+        )
+        ctx.debug_metadata["fallback_entry_count"] = int(fallback.get("entry_count") or 0)
+        ctx.debug_metadata["fallback_context_tokens"] = int(
+            fallback.get("estimated_tokens") or 0
+        )
+        ctx.debug_metadata["fallback_truncated"] = bool(fallback.get("truncated", False))
+        ctx.debug_metadata["fallback_strong_match"] = bool(fallback.get("strong_match", False))
+        ctx.debug_metadata["fallback_original_errors"] = original_errors
+        ctx.debug_metadata["fallback_original_validation_passed"] = ctx.debug_metadata.get(
+            "response_validation_passed"
+        )
+        ctx.debug_metadata["fallback_original_validation_errors"] = original_validation_errors
+        ctx.debug_metadata["fallback_original_validation_warnings"] = original_validation_warnings
+        ctx.debug_metadata["output_cleanup_applied"] = True
+
+        ctx.cleaned_answer_text = fallback_text
+        ctx.final_answer = fallback_text
+        ctx.errors = []
+        ctx.validation_result = ValidationResult(
+            passed=True,
+            score=100,
+            warnings=[],
+            suggestions=[],
+        )
+        ctx.debug_metadata["response_validation_passed"] = True
+        ctx.debug_metadata["response_validation_errors"] = []
+        ctx.debug_metadata["response_validation_warnings"] = []
+        ctx.debug_metadata["response_validation_removed_headings"] = []
+        ctx.debug_metadata["validation_score"] = ctx.validation_result.score
+
+        if response_contract == SEARCH_RESULTS_CONTRACT:
+            ctx.debug_metadata["response_validation_structured_output"] = True
+            ctx.debug_metadata["response_validation_raw_text_was_json"] = True
+            ctx.debug_metadata["response_validation_parsed_payload"] = (
+                fallback.get("parsed_payload")
+                or {
+                    "results": [],
+                    "message": fallback.get("message"),
+                }
+            )
+        else:
+            ctx.debug_metadata["response_validation_structured_output"] = False
+            ctx.debug_metadata["response_validation_raw_text_was_json"] = False
+            ctx.debug_metadata.pop("response_validation_parsed_payload", None)
+
+        ctx.warnings.append(
+            f"Deterministic fallback used after {reason}."
+        )
+        return ctx
 
     def _apply_model_response_validation(
         self,
@@ -588,6 +1182,7 @@ class BHFAgent:
             or ctx.question_context is None
         ):
             raise RuntimeError("pipeline context is incomplete before model call")
+        model_started_at = time.perf_counter()
         chat_request = ChatRequest(
             system_prompt=ctx.system_prompt,
             user_prompt=ctx.user_prompt,
@@ -638,6 +1233,9 @@ class BHFAgent:
             ctx.debug_metadata["model"] = chat_response.model
         if chat_response.latency_ms is not None:
             ctx.debug_metadata["model_latency_ms"] = chat_response.latency_ms
+        ctx.debug_metadata["model_request_duration_ms"] = int(
+            round((time.perf_counter() - model_started_at) * 1000)
+        )
         if chat_response.errors:
             return self._mark_stage(
                 ctx,
@@ -666,9 +1264,9 @@ class BHFAgent:
         ctx.cleaned_answer_text = response_validation.sanitized_text
         if self._response_contract(ctx.original_question) == SEARCH_RESULTS_CONTRACT:
             ctx.validation_result = ValidationResult(
-                passed=True,
-                score=100,
-                warnings=[],
+                passed=response_validation.passed,
+                score=100 if response_validation.passed else 0,
+                warnings=list(response_validation.warnings),
                 suggestions=[],
             )
         return self._mark_stage(ctx, "clean_output")
@@ -826,7 +1424,12 @@ class BHFAgent:
                 ctx.errors.extend(str(error) for error in validation_errors)
             elif not ctx.errors:
                 ctx.errors.append("Model response was empty after validation.")
-        return self._mark_stage(ctx, "finalize_result")
+        message = (
+            "Finalizing fallback answer"
+            if ctx.debug_metadata.get("fallback_used")
+            else None
+        )
+        return self._mark_stage(ctx, "finalize_result", message=message)
 
     def _save_session_turn(self, ctx: PipelineContext) -> PipelineContext:
         if not self.config.memory_enabled:
@@ -1012,6 +1615,189 @@ class BHFAgent:
             original_validation_result=ctx.original_validation_result,
             repaired_validation_result=ctx.repaired_validation_result,
         )
+
+    def _log_request_observability(
+        self,
+        ctx: PipelineContext,
+        *,
+        result: AgentResult | None,
+        error: Exception | None,
+    ) -> None:
+        if not self.config.observability.enabled:
+            return
+
+        try:
+            request_id = str(ctx.debug_metadata.get("request_id") or "").strip() or uuid.uuid4().hex
+            request_duration_ms = _safe_int(
+                int(round((time.monotonic() - self._status_run_started_at) * 1000))
+                if self._status_run_started_at is not None
+                else None
+            )
+            raw_response = ctx.raw_model_response
+            usage_summary = summarize_usage(raw_response.usage if raw_response is not None else None)
+            if usage_summary["cached"] and usage_summary["input_tokens"] is None:
+                usage_summary["input_tokens"] = 0
+            if usage_summary["cached"] and usage_summary["output_tokens"] is None:
+                usage_summary["output_tokens"] = 0
+            if usage_summary["cached"] and usage_summary["total_tokens"] is None:
+                usage_summary["total_tokens"] = 0
+            if usage_summary["cached"] and usage_summary["estimated_cost"] is None:
+                usage_summary["estimated_cost"] = 0.0
+
+            model_provider = (
+                raw_response.provider
+                or ctx.debug_metadata.get("provider")
+                or self.config.adapter
+            )
+            model_name = raw_response.model or ctx.debug_metadata.get("model") or self.config.model
+            model_latency_ms = raw_response.latency_ms
+            if model_latency_ms is None:
+                model_latency_ms = _safe_int(ctx.debug_metadata.get("model_latency_ms"))
+            if model_latency_ms is None:
+                model_latency_ms = _safe_int(
+                    ctx.debug_metadata.get("model_request_duration_ms")
+                )
+
+            cache_summary = {
+                "public_answer": {
+                    "hit": bool(ctx.debug_metadata.get("public_answer_cache_hit", False)),
+                    "status": ctx.debug_metadata.get("public_answer_cache_lookup_status"),
+                },
+                "retrieval": {
+                    "hit": bool(
+                        ctx.debug_metadata.get("canonical_library_retrieval_cache_hit", False)
+                    ),
+                    "status": ctx.debug_metadata.get("canonical_library_retrieval_cache_status"),
+                },
+                "context": {
+                    "hit": bool(
+                        ctx.debug_metadata.get("canonical_library_context_cache_hit", False)
+                    ),
+                    "status": ctx.debug_metadata.get("canonical_library_context_cache_status"),
+                },
+                "response": {
+                    "hit": bool(
+                        ctx.debug_metadata.get("canonical_library_response_cache_hit", False)
+                    ),
+                    "status": ctx.debug_metadata.get("canonical_library_response_cache_status"),
+                },
+            }
+            cache_hit = any(layer["hit"] for layer in cache_summary.values())
+            cache_layer = None
+            if cache_summary["public_answer"]["hit"]:
+                cache_layer = "public_answer"
+            elif cache_summary["response"]["hit"]:
+                cache_layer = "response"
+            request_failed = error is not None or bool(result.errors if result is not None else [])
+
+            record: dict[str, Any] = {
+                "request_id": request_id,
+                "status": "error" if request_failed else "success",
+                "normalized_query": ctx.normalized_question or ctx.original_question,
+                "retrieval_duration_ms": _safe_int(
+                    ctx.debug_metadata.get("canonical_library_retrieval_duration_ms")
+                ),
+                "retrieval_result_count": _safe_int(
+                    ctx.debug_metadata.get("canonical_library_topic_count")
+                )
+                or 0,
+                "selected_entry_ids": list(
+                    ctx.debug_metadata.get("canonical_library_object_ids") or []
+                ),
+                "context_token_count": _safe_int(
+                    ctx.debug_metadata.get("canonical_library_prompt_tokens")
+                )
+                or 0,
+                "model_provider": model_provider,
+                "model_name": model_name,
+                "model_latency_ms": model_latency_ms,
+                "input_tokens": usage_summary["input_tokens"],
+                "output_tokens": usage_summary["output_tokens"],
+                "estimated_cost": usage_summary["estimated_cost"],
+                "cache_hit": cache_hit,
+                "cache_layer": cache_layer,
+                "cache": cache_summary,
+                "fallback_used": bool(ctx.debug_metadata.get("fallback_used", False)),
+                "fallback_mode": ctx.debug_metadata.get("fallback_mode"),
+                "validation_passed": ctx.validation_result.passed if ctx.validation_result else None,
+                "validation_score": ctx.validation_result.score if ctx.validation_result else None,
+                "request_duration_ms": request_duration_ms,
+            }
+
+            if error is not None:
+                record["error_type"] = error.__class__.__name__
+            elif request_failed:
+                record["error_type"] = "model_backend_error"
+
+            if self.config.observability.redact_sensitive:
+                record["redacted"] = True
+            else:
+                record["redacted"] = False
+                record["prompt_version"] = ctx.debug_metadata.get("prompt_version")
+                record["adapter_type"] = ctx.debug_metadata.get("adapter_type")
+                record["answer_mode"] = ctx.answer_mode
+                record["profile"] = ctx.profile_name
+                record["response_contract"] = ctx.debug_metadata.get("response_contract")
+                record["prompt_mode"] = ctx.debug_metadata.get(
+                    "canonical_library_prompt_mode"
+                )
+                record["stages_completed"] = list(
+                    ctx.debug_metadata.get("stages_completed") or []
+                )
+                record["validation_warnings_count"] = len(
+                    ctx.debug_metadata.get("response_validation_warnings") or []
+                )
+
+            OBSERVABILITY_LOGGER.info(render_log_record(record))
+
+            if self.config.debug and self.config.observability.verbose:
+                verbose_record = {
+                    "request_id": request_id,
+                    "status": "error" if request_failed else "success",
+                    "cache": cache_summary,
+                    "fallback": {
+                        "used": bool(ctx.debug_metadata.get("fallback_used", False)),
+                        "mode": ctx.debug_metadata.get("fallback_mode"),
+                        "kind": ctx.debug_metadata.get("fallback_kind"),
+                    },
+                    "pipeline": {
+                        "stages_completed": list(
+                            ctx.debug_metadata.get("stages_completed") or []
+                        ),
+                        "canonical_library_prompt_mode": ctx.debug_metadata.get(
+                            "canonical_library_prompt_mode"
+                        ),
+                        "canonical_library_retrieval_cache_key": ctx.debug_metadata.get(
+                            "canonical_library_retrieval_cache_key"
+                        ),
+                        "canonical_library_context_cache_key": ctx.debug_metadata.get(
+                            "canonical_library_context_cache_key"
+                        ),
+                        "canonical_library_response_cache_key": ctx.debug_metadata.get(
+                            "canonical_library_response_cache_key"
+                        ),
+                        "response_validation_passed": ctx.debug_metadata.get(
+                            "response_validation_passed"
+                        ),
+                        "response_validation_removed_headings": list(
+                            ctx.debug_metadata.get("response_validation_removed_headings")
+                            or []
+                        ),
+                    },
+                }
+                if not self.config.observability.redact_sensitive:
+                    verbose_record["pipeline"]["canonical_library_query"] = ctx.debug_metadata.get(
+                        "canonical_library_query"
+                    )
+                    verbose_record["pipeline"]["session_id"] = ctx.debug_metadata.get(
+                        "session_id"
+                    )
+                    verbose_record["pipeline"]["map_tool_keys"] = list(
+                        ctx.debug_metadata.get("map_tool_keys") or []
+                    )
+                OBSERVABILITY_LOGGER.debug(render_log_record(verbose_record))
+        except Exception as exc:  # noqa: BLE001 - observability must never break the request path
+            OBSERVABILITY_LOGGER.exception("Failed to emit request observability: %s", exc)
 
     def _mark_stage(
         self,

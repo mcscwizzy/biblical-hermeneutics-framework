@@ -225,6 +225,14 @@ class CanonicalContextBuilder:
                 "estimated_topic_tokens": sum(
                     int(item.get("estimated_tokens") or 0) for item in retrieved
                 ),
+                "retrieved_object_versions": [
+                    {
+                        "id": str(item.get("id") or "").strip(),
+                        "object_version": str(item.get("object_version") or "").strip(),
+                    }
+                    for item in retrieved
+                    if str(item.get("id") or "").strip()
+                ],
             },
         }
 
@@ -343,6 +351,7 @@ class CanonicalContextBuilder:
                 "review_status": obj.review_status,
                 "confidence": obj.confidence,
                 "importance": obj.importance,
+                "object_version": obj.object_version,
                 "matched_alias": matched_alias,
                 "match_type": match_type,
                 "score": score,
@@ -578,6 +587,14 @@ def build_canonical_prompt_context(
         "remaining_tokens": remaining_tokens,
         "truncated": truncated or len(prompt_entries) < len(retrieved_topics),
         "selected_entry_ids": [str(entry.get("id") or "").strip() for entry in prompt_entries if str(entry.get("id") or "").strip()],
+        "selected_entry_versions": [
+            {
+                "id": str(entry.get("id") or "").strip(),
+                "object_version": str(entry.get("object_version") or "").strip(),
+            }
+            for entry in prompt_entries
+            if str(entry.get("id") or "").strip()
+        ],
     }
     return {"entries": prompt_entries, "metadata": metadata}
 
@@ -669,6 +686,7 @@ def _build_prompt_context_entry(
         "id": object_id,
         "title": title,
         "category": category,
+        "object_version": str(topic.get("object_version") or "").strip(),
         "summary": summary,
         "facts": selected_facts,
         "scripture_references": selected_references,

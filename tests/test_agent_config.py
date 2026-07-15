@@ -9,6 +9,7 @@ from bhf_agent.config import (
     AgentConfig,
     CanonicalLibraryConfig,
     ConfigError,
+    ObservabilityConfig,
     PublicCacheConfig,
 )
 
@@ -143,6 +144,8 @@ class AgentConfigTests(unittest.TestCase):
             model="local-model",
             canonical_library=CanonicalLibraryConfig(
                 enabled=False,
+                cache_enabled=False,
+                cache_max_entries=96,
                 max_results=3,
                 max_context_tokens=750,
                 include_placeholders=False,
@@ -150,12 +153,50 @@ class AgentConfigTests(unittest.TestCase):
             ),
         )
 
+        self.assertFalse(config.to_dict()["canonical_library"]["cache_enabled"])
+        self.assertEqual(config.to_dict()["canonical_library"]["cache_max_entries"], 96)
         self.assertEqual(config.to_dict()["canonical_library"]["max_results"], 3)
         self.assertFalse(config.to_dict()["canonical_library"]["enabled"])
         self.assertEqual(
             config.to_dict()["canonical_library"]["allowed_statuses"],
             ("approved",),
         )
+
+    def test_config_accepts_canonical_library_cache_settings(self):
+        config = AgentConfig.from_mapping(
+            {
+                "config_version": 1,
+                "adapter": "openai_compatible",
+                "base_url": "http://localhost:1234/v1",
+                "model": "local-model",
+                "profile": "standard",
+                "canonical_library": {
+                    "enabled": True,
+                    "cache_enabled": True,
+                    "cache_max_entries": 128,
+                    "max_results": 4,
+                    "max_context_tokens": 900,
+                },
+            }
+        )
+
+        self.assertTrue(config.canonical_library.cache_enabled)
+        self.assertEqual(config.canonical_library.cache_max_entries, 128)
+
+    def test_config_rejects_invalid_canonical_library_cache_size(self):
+        with self.assertRaisesRegex(ConfigError, "cache_max_entries"):
+            AgentConfig.from_mapping(
+                {
+                    "config_version": 1,
+                    "adapter": "openai_compatible",
+                    "base_url": "http://localhost:1234/v1",
+                    "model": "local-model",
+                    "profile": "standard",
+                    "canonical_library": {
+                        "cache_max_entries": 0,
+                    },
+                }
+            )
 
     def test_config_accepts_public_cache_section(self):
         config = AgentConfig.from_mapping(
@@ -198,6 +239,41 @@ class AgentConfigTests(unittest.TestCase):
         self.assertEqual(config.to_dict()["public_cache"]["path"], ".bhf/public-cache.json")
         self.assertEqual(config.to_dict()["public_cache"]["minimum_quality_score"], 91.0)
         self.assertEqual(config.to_dict()["public_cache"]["allowed_review_statuses"], ("reviewed",))
+
+    def test_config_accepts_observability_section(self):
+        config = AgentConfig.from_mapping(
+            {
+                "config_version": 1,
+                "adapter": "openai_compatible",
+                "base_url": "http://localhost:1234/v1",
+                "model": "local-model",
+                "profile": "standard",
+                "observability": {
+                    "enabled": True,
+                    "verbose": True,
+                    "redact_sensitive": False,
+                },
+            }
+        )
+
+        self.assertTrue(config.observability.enabled)
+        self.assertTrue(config.observability.verbose)
+        self.assertFalse(config.observability.redact_sensitive)
+
+    def test_config_serializes_observability_section(self):
+        config = AgentConfig(
+            base_url="http://localhost:1234/v1",
+            model="local-model",
+            observability=ObservabilityConfig(
+                enabled=True,
+                verbose=False,
+                redact_sensitive=False,
+            ),
+        )
+
+        self.assertTrue(config.to_dict()["observability"]["enabled"])
+        self.assertFalse(config.to_dict()["observability"]["verbose"])
+        self.assertFalse(config.to_dict()["observability"]["redact_sensitive"])
 
     def test_config_accepts_valid_answer_modes(self):
         for answer_mode in ("concise", "study", "teaching", "scholar"):

@@ -72,6 +72,8 @@ ANSWER_MODE_INSTRUCTIONS: dict[str, tuple[str, ...]] = {
     ),
 }
 
+PROMPT_VERSION = "phase12-v1"
+
 
 class PromptStrategy:
     """Base prompt strategy for profile-aware runtime steering."""

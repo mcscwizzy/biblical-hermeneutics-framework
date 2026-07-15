@@ -6,6 +6,7 @@ from pathlib import Path
 
 from bhf_agent.adapters import ChatAdapter
 from bhf_agent.config import AgentConfig
+from bhf_agent.config import ObservabilityConfig
 from bhf_agent.models import ChatRequest, ChatResponse
 from bhf_agent.profiles import ProfileLoader
 from bhf_agent.runner import BHFAgent
@@ -274,7 +275,7 @@ class RunnerTests(unittest.TestCase):
         adapter = RecordingAdapter()
         agent = self.make_agent(adapter)
 
-        result = agent.ask("What does Proverbs 3 mean?")
+        result = agent.ask("What is the hebrew word for the word spirit or wind?")
 
         self.assertIn("Short Answer", result.answer_text)
         self.assertIn("pipeline", result.model_metadata)
@@ -345,21 +346,25 @@ class RunnerTests(unittest.TestCase):
         self.assertEqual(events[-1]["percent_complete"], 100.0)
         self.assertEqual(events[-1]["status"], "complete")
 
-    def test_adapter_errors_emit_error_status(self):
+    def test_model_unavailable_returns_deterministic_canonical_fallback_answer(self):
         events = []
         agent = self.make_agent(ErrorAdapter())
 
-        result = agent.ask("What does Proverbs 3 mean?", status_callback=events.append)
-
-        self.assertTrue(result.errors)
-        error_events = [event for event in events if event["stage"] == "error"]
-        self.assertTrue(error_events)
-        self.assertIn("timed out", str(error_events[-1]["details"]["errors"]))
-        self.assertEqual(
-            error_events[-1]["details"]["failed_stage"],
-            "waiting_for_model_response",
+        result = agent.ask(
+            "Why did Joshua renew the covenant at Shechem?",
+            status_callback=events.append,
         )
-        self.assertEqual(error_events[-1]["status"], "error")
+
+        self.assertFalse(result.errors)
+        self.assertTrue(result.model_metadata["pipeline"]["fallback_used"])
+        self.assertEqual(result.model_metadata["pipeline"]["fallback_mode"], "canonical_summary")
+        self.assertEqual(result.model_metadata["pipeline"]["fallback_kind"], "summary")
+        self.assertTrue(result.model_metadata["pipeline"]["canonical_library_strong_match"])
+        self.assertIn("shechem", result.model_metadata["pipeline"]["fallback_selected_entry_ids"])
+        self.assertIn("Shechem", result.answer_text)
+        self.assertIn("covenant", result.answer_text.lower())
+        self.assertEqual(events[-1]["stage"], "complete")
+        self.assertFalse(any(event["status"] == "error" for event in events))
 
     def test_exceptions_emit_error_status_before_raising(self):
         events = []
@@ -422,6 +427,22 @@ class RunnerTests(unittest.TestCase):
             result.model_metadata["pipeline"]["canonical_library_retrieval_method"],
         )
 
+    def test_agent_suppresses_canonical_context_when_no_strong_match(self):
+        adapter = RecordingAdapter()
+        agent = self.make_agent(adapter, profile="standard")
+
+        result = agent.ask("What does Proverbs 3 mean?")
+
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertIn("did not find a strong match", adapter.request.system_prompt)
+        self.assertNotIn("Entry:", adapter.request.system_prompt)
+        self.assertFalse(result.model_metadata["pipeline"]["canonical_library_strong_match"])
+        self.assertEqual(
+            result.model_metadata["pipeline"]["canonical_library_prompt_mode"],
+            "no_strong_match",
+        )
+
     def test_agent_serves_cached_answers_without_calling_adapter(self):
         adapter = RecordingAdapter()
         question = (
@@ -465,6 +486,90 @@ class RunnerTests(unittest.TestCase):
         self.assertIsNotNone(cache.lookup_calls[0]["ckl_version_fingerprint"])
         self.assertIsNotNone(cache.lookup_calls[0]["framework_version_fingerprint"])
 
+    def test_agent_reuses_response_cache_for_identical_questions(self):
+        adapter = SequenceAdapter(
+            [
+                "Short Answer: The Hebrew word is ruach. Basic Meaning: its "
+                "semantic range can include wind, breath, or spirit. Context "
+                "Matters: meaning depends on passage context. Cautions: this "
+                "may not always refer to the Holy Spirit.",
+            ]
+        )
+        agent = self.make_agent(adapter, profile="standard")
+        question = "What is the Hebrew word for spirit or wind?"
+
+        first_result = agent.ask(question)
+        second_result = agent.ask(question)
+
+        self.assertEqual(len(adapter.requests), 1)
+        self.assertEqual(first_result.answer_text, second_result.answer_text)
+        self.assertEqual(
+            first_result.model_metadata["pipeline"]["canonical_library_response_cache_status"],
+            "stored",
+        )
+        self.assertTrue(
+            second_result.model_metadata["pipeline"]["canonical_library_response_cache_hit"]
+        )
+        self.assertEqual(
+            second_result.model_metadata["pipeline"]["canonical_library_response_cache_status"],
+            "hit",
+        )
+        self.assertNotIn("build_prompts", second_result.model_metadata["pipeline"]["stages_completed"])
+        self.assertNotIn("call_model", second_result.model_metadata["pipeline"]["stages_completed"])
+
+    def test_agent_emits_redacted_observability_log(self):
+        adapter = RecordingAdapter()
+        agent = self.make_agent(
+            adapter,
+            profile="standard",
+            observability=ObservabilityConfig(enabled=True, verbose=False, redact_sensitive=True),
+        )
+
+        with self.assertLogs("bhf_agent.observability", level="INFO") as captured:
+            result = agent.ask(
+                "Why did Israel renew the covenant where Abraham first entered the land at Shechem in Joshua 24?"
+            )
+
+        self.assertIn("Shechem", result.answer_text)
+        self.assertGreaterEqual(len(captured.records), 1)
+        record = json.loads(captured.records[0].getMessage())
+        self.assertEqual(record["status"], "success")
+        self.assertIn("request_id", record)
+        self.assertEqual(record["normalized_query"], "Why did Israel renew the covenant where Abraham first entered the land at Shechem in Joshua 24?")
+        self.assertGreaterEqual(record["retrieval_duration_ms"], 0)
+        self.assertGreaterEqual(record["retrieval_result_count"], 0)
+        self.assertIn("selected_entry_ids", record)
+        self.assertIn("shechem", record["selected_entry_ids"])
+        self.assertIn("cache", record)
+        self.assertTrue(record["redacted"])
+        self.assertNotIn("Short Answer", captured.records[0].getMessage())
+        self.assertNotIn("raw_model_text", captured.records[0].getMessage())
+
+    def test_agent_emits_verbose_observability_log_in_debug_mode(self):
+        adapter = RecordingAdapter()
+        agent = self.make_agent(
+            adapter,
+            profile="standard",
+            debug=True,
+            observability=ObservabilityConfig(enabled=True, verbose=True, redact_sensitive=False),
+        )
+
+        with self.assertLogs("bhf_agent.observability", level="DEBUG") as captured:
+            agent.ask(
+                "Why did Israel renew the covenant where Abraham first entered the land at Shechem in Joshua 24?"
+            )
+
+        messages = [json.loads(record.getMessage()) for record in captured.records]
+        self.assertGreaterEqual(len(messages), 2)
+        info_record = messages[0]
+        debug_record = messages[-1]
+        self.assertFalse(info_record["redacted"])
+        self.assertEqual(debug_record["status"], "success")
+        self.assertIn("pipeline", debug_record)
+        self.assertIn("stages_completed", debug_record["pipeline"])
+        self.assertIn("canonical_library_response_cache_key", debug_record["pipeline"])
+        self.assertNotIn("raw_model_text", captured.output[0])
+
     def test_agent_result_uses_cleaned_answer_and_debug_metadata(self):
         with tempfile.TemporaryDirectory() as tmp:
             profiles_dir = Path(tmp)
@@ -505,14 +610,19 @@ class RunnerTests(unittest.TestCase):
         adapter = StructuredJsonAdapter(
             json.dumps(
                 {
-                    "answer": "## 1. Short Answer\nShechem anchors covenant renewal.",
+                    "answer": (
+                        "Short Answer: The Hebrew word is ruach. Basic Meaning: its "
+                        "semantic range can include wind, breath, or spirit. Context "
+                        "Matters: meaning depends on passage context. Cautions: this "
+                        "may not always refer to the Holy Spirit."
+                    ),
                     "analysis": "internal details should not be shown",
                 }
             )
         )
         agent = self.make_agent(adapter)
 
-        result = agent.ask("Why is Shechem important?")
+        result = agent.ask("What is the Hebrew word for spirit or wind?")
 
         self.assertIsNotNone(adapter.request)
         assert adapter.request is not None
@@ -526,7 +636,10 @@ class RunnerTests(unittest.TestCase):
         )
         self.assertEqual(
             result.answer_text,
-            "## 1. Short Answer\nShechem anchors covenant renewal.",
+            "Short Answer: The Hebrew word is ruach. Basic Meaning: its "
+            "semantic range can include wind, breath, or spirit. Context "
+            "Matters: meaning depends on passage context. Cautions: this "
+            "may not always refer to the Holy Spirit.",
         )
         self.assertNotIn("{", result.answer_text)
         self.assertNotIn("analysis", result.answer_text.lower())
@@ -570,6 +683,35 @@ class RunnerTests(unittest.TestCase):
         payload = json.loads(result.answer_text)
         self.assertEqual(payload["results"][0]["book"], "Exodus")
         self.assertEqual(payload["results"][0]["chapter"], 1)
+
+    def test_search_fallback_prompt_returns_empty_results_when_model_unavailable(self):
+        adapter = ErrorAdapter()
+        agent = self.make_agent(adapter)
+        prompt = "\n".join(
+            [
+                "Using BHF, identify likely Bible passages for the following search query.",
+                "Query: Egypt in Exodus",
+                "",
+                "Return a JSON object with a results array.",
+                "Each result should include book, chapter, optional verse_start, optional verse_end, reason, and confidence.",
+                "Use only likely passages and keep the response concise.",
+                "Do not include markdown fences or extra commentary.",
+            ]
+        )
+
+        result = agent.ask(prompt)
+
+        self.assertFalse(result.errors)
+        self.assertEqual(
+            result.model_metadata["pipeline"]["fallback_mode"],
+            "search_results_empty",
+        )
+        payload = json.loads(result.answer_text)
+        self.assertEqual(payload["results"], [])
+        self.assertIn(
+            "could not identify likely passage candidates",
+            payload["message"].lower(),
+        )
 
     def test_repair_disabled_calls_adapter_once(self):
         adapter = SequenceAdapter(["The Hebrew word is ruach."])
@@ -669,6 +811,26 @@ class RunnerTests(unittest.TestCase):
         self.assertFalse(result.repair_applied)
         self.assertEqual(result.answer_text, "The Hebrew word is ruach.")
         self.assertIn("Repair was attempted but returned an empty answer.", result.warnings)
+
+    def test_invalid_model_output_uses_canonical_fallback_after_retry(self):
+        adapter = SequenceAdapter(
+            [
+                "The answer is not valid.",
+                "Still not valid.",
+            ]
+        )
+        agent = self.make_agent(adapter, auto_repair=True)
+
+        result = agent.ask("Why did Joshua renew the covenant at Shechem?")
+
+        self.assertEqual(len(adapter.requests), 2)
+        self.assertTrue(result.model_metadata["pipeline"]["repair_attempted"])
+        self.assertFalse(result.repair_applied)
+        self.assertTrue(result.model_metadata["pipeline"]["fallback_used"])
+        self.assertEqual(result.model_metadata["pipeline"]["fallback_mode"], "canonical_summary")
+        self.assertIn("shechem", result.model_metadata["pipeline"]["fallback_selected_entry_ids"])
+        self.assertIn("Shechem", result.answer_text)
+        self.assertIn("covenant", result.answer_text.lower())
 
     def test_pipeline_stores_prompts_before_model_call(self):
         with tempfile.TemporaryDirectory() as tmp:

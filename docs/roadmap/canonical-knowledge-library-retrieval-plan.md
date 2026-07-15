@@ -17,7 +17,9 @@ Resume rule: continue from the next unchecked phase without asking for confirmat
 - Normal ask responses now surface only the answer text, while debug and saved-study views retain controlled access to metadata.
 - The model-assisted Bible search fallback route still uses the model to return structured retrieval data.
 - Model output normalization now parses structured answer envelopes, strips internal prompt leakage, and keeps the search-fallback JSON contract intact.
-- No runtime behavior was changed during the audit phase.
+- Deterministic fallback answers now replace model/provider failures with either a CKL summary or a controlled empty search-results payload.
+- Runtime caches now short-circuit repeated retrieval, context, and response work while staying keyed to CKL and prompt versions.
+- Request observability now logs CKL timing, cache behavior, model usage, and fallback outcomes without exposing prompts or model text.
 
 ## Reusable Baseline That Already Exists
 
@@ -50,9 +52,9 @@ Resume rule: continue from the next unchecked phase without asking for confirmat
 | 8 - Simplify the Model Prompt | complete | Sectioned prompt instructions now frame CKL context as explanatory input |
 | 9 - Separate Internal and User-Facing Responses | complete | Normal ask responses now return only the answer |
 | 10 - Add Model Response Validation | complete | Enforce answer-only output and a structured adapter contract |
-| 11 - Add Fallback Behavior | pending | Return deterministic CKL summaries when the model is unavailable |
-| 12 - Add Caching | pending | Add retrieval, context, and response caches keyed by CKL versions |
-| 13 - Add Observability | pending | Log retrieval timing, model timing, and cache behavior |
+| 11 - Add Fallback Behavior | complete | Deterministic CKL summary and empty search-result fallbacks now replace model/provider failures |
+| 12 - Add Caching | complete | Retrieval, context, and response caches are keyed by CKL and prompt versions |
+| 13 - Add Observability | complete | Structured per-request observability logs now capture retrieval timing, model timing, and cache behavior |
 | 14 - Create a Developer Retrieval Inspector | pending | Add a diagnostics endpoint or panel for CKL search inspection |
 | 15 - Testing | pending | Add unit, integration, and golden-query coverage |
 | 16 - Rollout Strategy | pending | Gate the new pipeline behind a feature flag and shadow mode |
@@ -87,4 +89,7 @@ Resume rule: continue from the next unchecked phase without asking for confirmat
 - Phase 8 prompt simplification is complete.
 - Phase 9 internal and user-facing response separation is complete.
 - Phase 10 model response validation is complete.
-- Continue with fallback behavior in Phase 11.
+- Phase 11 fallback behavior is complete.
+- Phase 12 caching is complete.
+- Phase 13 observability is complete.
+- Continue with the developer retrieval inspector in Phase 14.

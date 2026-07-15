@@ -22,6 +22,9 @@ def _estimate_tokens(text: str) -> int:
     return max(1, round(len(text) / 4))
 
 
+CKL_STRONG_MATCH_THRESHOLD = 0.85
+
+
 QUESTION_STARTERS = {
     "how",
     "what",
@@ -750,6 +753,149 @@ def format_canonical_context_for_prompt(
     return prompt
 
 
+def canonical_context_has_strong_match(
+    context: Mapping[str, Any] | None,
+    *,
+    minimum_score: float = CKL_STRONG_MATCH_THRESHOLD,
+) -> bool:
+    if not context:
+        return False
+
+    metadata = dict(context.get("metadata") or {})
+    if int(metadata.get("primary_topic_count") or 0) > 0:
+        return True
+
+    for topic in context.get("retrieved_topics") or []:
+        if not isinstance(topic, Mapping):
+            continue
+        try:
+            score = float(topic.get("score") or 0)
+        except (TypeError, ValueError):
+            score = 0.0
+        match_type = str(topic.get("match_type") or "").strip().lower()
+        if score >= float(minimum_score) or match_type in {"exact", "scripture"}:
+            return True
+    return False
+
+
+def build_canonical_fallback_answer(
+    context: Mapping[str, Any] | None,
+    *,
+    max_context_tokens: int = 1200,
+    answer_mode: str = "study",
+    retrieval_failed: bool = False,
+) -> dict[str, Any]:
+    """Build a deterministic user-facing CKL fallback response.
+
+    The returned text is safe for ordinary users. It intentionally omits
+    retrieval scores, source paths, and other internal metadata.
+    """
+
+    if retrieval_failed:
+        message = "The Canonical Knowledge Library could not be retrieved for this question."
+        return {
+            "text": message,
+            "kind": "retrieval_failed",
+            "message": message,
+            "strong_match": False,
+            "selected_entry_ids": [],
+            "entry_count": 0,
+            "estimated_tokens": 0,
+            "truncated": False,
+        }
+
+    if not context:
+        message = "The Canonical Knowledge Library does not currently have a strong match for this question."
+        return {
+            "text": message,
+            "kind": "no_strong_match",
+            "message": message,
+            "strong_match": False,
+            "selected_entry_ids": [],
+            "entry_count": 0,
+            "estimated_tokens": 0,
+            "truncated": False,
+        }
+
+    normalized_answer_mode = _normalize_answer_mode(answer_mode)
+    max_entries, max_facts_per_entry, max_scripture_references_per_entry, max_caution_notes_per_entry = _canonical_prompt_limits(
+        normalized_answer_mode
+    )
+    prompt_context = build_canonical_prompt_context(
+        context,
+        max_context_tokens=max_context_tokens,
+        max_entries=min(3, max_entries),
+        max_facts_per_entry=min(3, max_facts_per_entry),
+        max_scripture_references_per_entry=min(3, max_scripture_references_per_entry),
+        max_caution_notes_per_entry=min(2, max_caution_notes_per_entry),
+    )
+    metadata = dict(prompt_context.get("metadata") or {})
+    selected_entry_ids = [
+        str(entry_id).strip()
+        for entry_id in metadata.get("selected_entry_ids") or []
+        if str(entry_id).strip()
+    ]
+
+    if not canonical_context_has_strong_match(context):
+        message = "The Canonical Knowledge Library does not currently have a strong match for this question."
+        return {
+            "text": message,
+            "kind": "no_strong_match",
+            "message": message,
+            "strong_match": False,
+            "selected_entry_ids": selected_entry_ids,
+            "entry_count": int(metadata.get("entry_count") or 0),
+            "estimated_tokens": int(metadata.get("estimated_tokens") or 0),
+            "truncated": bool(metadata.get("truncated", False)),
+        }
+
+    rendered = _render_canonical_prompt_context(
+        prompt_context,
+        include_internal_details=False,
+        include_source_ids=False,
+    )
+    if not rendered:
+        message = "The Canonical Knowledge Library does not currently have a strong match for this question."
+        return {
+            "text": message,
+            "kind": "no_strong_match",
+            "message": message,
+            "strong_match": False,
+            "selected_entry_ids": selected_entry_ids,
+            "entry_count": int(metadata.get("entry_count") or 0),
+            "estimated_tokens": int(metadata.get("estimated_tokens") or 0),
+            "truncated": bool(metadata.get("truncated", False)),
+        }
+
+    return {
+        "text": rendered,
+        "kind": "summary",
+        "message": None,
+        "strong_match": True,
+        "selected_entry_ids": selected_entry_ids,
+        "entry_count": int(metadata.get("entry_count") or 0),
+        "estimated_tokens": int(metadata.get("estimated_tokens") or 0),
+        "truncated": bool(metadata.get("truncated", False)),
+    }
+
+
+def format_canonical_context_for_fallback(
+    context: Mapping[str, Any] | None,
+    *,
+    max_context_tokens: int = 1200,
+    answer_mode: str = "study",
+    retrieval_failed: bool = False,
+) -> str:
+    return str(
+        build_canonical_fallback_answer(
+            context,
+            max_context_tokens=max_context_tokens,
+            answer_mode=answer_mode,
+            retrieval_failed=retrieval_failed,
+        ).get("text", "")
+    )
+
+
 
 def _render_topic_block(
     topic: Mapping[str, Any],
@@ -828,7 +974,12 @@ def _canonical_prompt_limits(answer_mode: str) -> tuple[int, int, int, int]:
     return 8, 5, 6, 3
 
 
-def _render_canonical_prompt_context(context: Mapping[str, Any] | None) -> str:
+def _render_canonical_prompt_context(
+    context: Mapping[str, Any] | None,
+    *,
+    include_internal_details: bool = True,
+    include_source_ids: bool = True,
+) -> str:
     if not context:
         return ""
 
@@ -859,21 +1010,34 @@ def _render_canonical_prompt_context(context: Mapping[str, Any] | None) -> str:
         ]
 
         lines.extend(["", f"## Entry: {title}", f"Category: {category}"])
-        if summary:
-            lines.append(f"Summary: {summary}")
-        if facts:
-            lines.append("Relevant facts:")
-            lines.extend(f"- {fact}" for fact in facts)
-        if scripture_references:
-            lines.append("Scripture references:")
-            lines.extend(f"- {reference}" for reference in scripture_references)
-        if caution_notes:
-            lines.append("Caution / interpretation notes:")
-            lines.extend(f"- {note}" for note in caution_notes)
-        if source_ids:
-            if len(source_ids) == 1:
-                lines.append(f"Source ID: {source_ids[0]}")
-            else:
-                lines.append("Source IDs: " + ", ".join(source_ids))
+        if include_internal_details:
+            if summary:
+                lines.append(f"Summary: {summary}")
+            if facts:
+                lines.append("Relevant facts:")
+                lines.extend(f"- {fact}" for fact in facts)
+            if scripture_references:
+                lines.append("Scripture references:")
+                lines.extend(f"- {reference}" for reference in scripture_references)
+            if caution_notes:
+                lines.append("Caution / interpretation notes:")
+                lines.extend(f"- {note}" for note in caution_notes)
+            if source_ids and include_source_ids:
+                if len(source_ids) == 1:
+                    lines.append(f"Source ID: {source_ids[0]}")
+                else:
+                    lines.append("Source IDs: " + ", ".join(source_ids))
+        else:
+            if summary:
+                lines.append(summary)
+            if facts:
+                lines.append("Relevant facts:")
+                lines.extend(f"- {fact}" for fact in facts)
+            if scripture_references:
+                lines.append("Scripture references:")
+                lines.extend(f"- {reference}" for reference in scripture_references)
+            if caution_notes:
+                lines.append("Caution / interpretation notes:")
+                lines.extend(f"- {note}" for note in caution_notes)
 
     return "\n".join(line for line in lines if line is not None).strip()

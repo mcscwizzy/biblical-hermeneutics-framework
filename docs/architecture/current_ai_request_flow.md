@@ -2,17 +2,17 @@
 
 Audit date: 2026-07-15
 
-Scope: reflects the current runtime after phase 9; the original audit notes are preserved below for continuity.
+Scope: reflects the current runtime after phase 13; the original audit notes are preserved below for continuity.
 
 ## Summary
 
-The primary user-question path already performs deterministic CKL lookup before the model call. The frontend now receives only the final answer for ordinary ask responses; CKL metadata is only surfaced in explicit debug or saved-study views.
+The primary user-question path already performs deterministic CKL lookup before the model call and now short-circuits repeat requests through retrieval, context, and response caches. The request path also emits a structured observability log with request ID, CKL timing, cache behavior, model usage, and fallback status. The frontend now receives only the final answer for ordinary ask responses; CKL metadata is only surfaced in explicit debug or saved-study views. When the model backend fails or returns invalid output, the runner now substitutes a deterministic CKL fallback answer or a controlled empty search-results payload instead of surfacing the raw failure.
 
 The main request flow today is:
 
-`User question -> request route -> BHFAgent.ask() -> CKL/context build -> prompt build -> model call -> output cleanup/validation -> response render`
+`User question -> request route -> BHFAgent.ask() -> CKL retrieval cache -> CKL context cache -> response cache -> prompt build -> model call -> output cleanup/validation -> deterministic fallback if needed -> response render`
 
-There is also a separate model-assisted Bible search fallback route that asks the model to return structured JSON results.
+There is also a separate model-assisted Bible search fallback route that asks the model to return structured JSON results, and it now degrades to an empty deterministic payload if the model is unavailable or invalid.
 
 ## Entry Points
 
@@ -42,24 +42,29 @@ There is also a separate model-assisted Bible search fallback route that asks th
    - `_lookup_canonical_library`
    - `_lookup_public_answer_cache`
    - `_load_session_memory`
+   - `_lookup_response_cache`
    - `_build_prompts`
    - `_call_model`
    - `_clean_output`
    - `_validate_response`
    - `_repair_response` when enabled
+   - `_apply_deterministic_fallback` when the model output is unavailable or invalid
    - `_finalize_result`
+   - `_store_response_cache`
    - `_save_session_turn`
    - `_to_agent_result`
 5. `_lookup_canonical_library` calls `bhf_agent.ckl.build_canonical_context` and `bhf_agent.ckl.format_canonical_context_for_prompt`.
-6. `_build_prompts` calls `bhf_agent.prompts.build_prompt`, which assembles the system prompt.
-7. `_call_model` sends the prompt to the configured adapter:
+6. `_lookup_response_cache` computes a prompt-context hash from the canonical context key, local knowledge, map context, session memory, and prompt version, then returns a cached answer when the exact request has already been answered.
+7. `_build_prompts` calls `bhf_agent.prompts.build_prompt`, which assembles the system prompt.
+8. `_call_model` sends the prompt to the configured adapter:
    - `bhf_agent/adapters/openai_compatible.py::OpenAICompatibleAdapter`
    - `bhf_agent/adapters/ollama.py::OllamaAdapter`
-8. The response is normalized with `bhf_agent/model_response_validation.normalize_model_response` and the legacy cleanup helper is applied inside that normalization step.
-9. The sanitized response is validated with `bhf_agent/validation.validate_response`.
-10. The result is packaged into `bhf_agent/models.AgentResult`.
-11. `bhf_web/routes/ask.py` now sends a public answer payload to the UI by default.
-12. `bhf_web/services/web_helpers.result_metadata` and `bhf_web/templates/partials/answer.html` only render CKL metadata when a debug path or saved-study view explicitly supplies it.
+9. The response is normalized with `bhf_agent/model_response_validation.normalize_model_response` and the legacy cleanup helper is applied inside that normalization step.
+10. The sanitized response is validated with `bhf_agent/validation.validate_response`.
+11. `_store_response_cache` records the final answer, validation outcome, and cleanup details for repeat use.
+12. The result is packaged into `bhf_agent/models.AgentResult`.
+13. `bhf_web/routes/ask.py` now sends a public answer payload to the UI by default.
+14. `bhf_web/services/web_helpers.result_metadata` and `bhf_web/templates/partials/answer.html` only render CKL metadata when a debug path or saved-study view explicitly supplies it.
 
 ## Current Modules And Responsibilities
 
@@ -72,13 +77,17 @@ There is also a separate model-assisted Bible search fallback route that asks th
   - Runs background ask jobs.
   - Provides the search-fallback job path.
   - Parses the search-fallback model response as JSON.
-- `bhf_agent/runner.py`
+ - `bhf_agent/runner.py`
   - Owns the end-to-end agent pipeline.
-  - Loads CKL, builds prompts, calls the model, cleans and validates output, and converts the final result.
+  - Loads CKL, builds prompts, manages deterministic cache layers, emits request observability logs, calls the model, cleans and validates output, substitutes deterministic fallback text when needed, and converts the final result.
 - `bhf_agent/ckl.py`
   - Deterministic CKL query assembly.
   - Context selection and token budgeting.
   - CKL prompt formatting.
+- `bhf_agent/observability.py`
+  - Request-level observability config and usage normalization helpers.
+- `framework/canonical_library/runtime_cache.py`
+  - In-memory retrieval, context, and response caches keyed by CKL inventory and prompt versions.
 - `framework/canonical_library/loader.py`
   - Loads the CKL inventory from disk.
   - Builds indexes.
@@ -120,6 +129,7 @@ The main prompt path currently includes:
 - Session memory when enabled
 
 The model is not asked to perform CKL retrieval inside the main ask path, but it does see CKL-derived context that was assembled upstream.
+If CKL retrieval finds only weak matches, the prompt receives a short no-strong-match instruction instead of a full context dump.
 
 ## Where Internal Retrieval Data Reaches The UI
 
@@ -131,6 +141,7 @@ The model is not asked to perform CKL retrieval inside the main ask path, but it
   - local knowledge keys
   - adapter errors
 - `bhf_web/templates/partials/answer.html` renders the canonical context section and metadata only when those fields are supplied by the caller.
+- `bhf_agent/observability.py` emits structured per-request logs that stay redacted by default and only add verbose developer details when debug mode explicitly enables them.
 
 ## Where The Model Is Still Asked To Search Or Return Structured Retrieval Data
 
@@ -144,11 +155,12 @@ The model is not asked to perform CKL retrieval inside the main ask path, but it
 - CKL context is still appended to the model prompt as a prebuilt block, so the model can see retrieval metadata.
 - The frontend no longer sees retrieval metadata in ordinary ask responses.
 - Debug and saved-study views can still display controlled metadata.
-- The search-fallback route uses the model as a search assistant and returns structured retrieval output.
+- The search-fallback route still asks the model for structured retrieval output when available, but it now degrades to an empty deterministic result payload if the model is unavailable or invalid.
 - Output cleanup is now paired with structured-response normalization, but the model can still emit malformed output that must be rejected or repaired.
 - Validation remains method-oriented after response normalization.
-- There is no dedicated CKL-only retrieval service boundary yet under `framework/canonical_library/retrieval/`.
 - The current CKL prompt layer still mixes retrieval, prompt construction, and rendering concerns.
+- Response cache invalidation depends on CKL inventory fingerprints, selected entry versions, prompt version, model signature, and the canonical context cache key.
+- Observability logging is intentionally summary-first so it can measure latency and cache behavior without exposing raw prompts or model text.
 
 ## Notes For The Next Phase
 
@@ -156,4 +168,4 @@ The model is not asked to perform CKL retrieval inside the main ask path, but it
 - Phase 3 should formalize CKL schema validation behind a stable schema package.
 - The main ask path should keep deterministic CKL retrieval ahead of model invocation.
 - Ordinary ask responses now contain only the final answer; developer and saved-study views remain opt-in.
-- Continue with phase 10 model response validation.
+- Continue with phase 14 developer retrieval inspector.

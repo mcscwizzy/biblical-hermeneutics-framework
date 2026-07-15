@@ -16,6 +16,16 @@ from .public_cache import (
     normalize_public_question,
     public_cache_key,
 )
+from .runtime_cache import (
+    CACHE_KEY_VERSION,
+    CKLRuntimeCache,
+    CacheLayerStats,
+    build_context_cache_key,
+    build_model_signature,
+    build_prompt_context_hash,
+    build_response_cache_key,
+    build_retrieval_cache_key,
+)
 from .retrieval import (
     ALIAS_MATCH_WEIGHT,
     CATEGORY_MATCH_WEIGHT,
@@ -137,6 +147,14 @@ __all__ = [
     "load_framework_version_fingerprint",
     "normalize_public_question",
     "public_cache_key",
+    "CACHE_KEY_VERSION",
+    "CKLRuntimeCache",
+    "CacheLayerStats",
+    "build_retrieval_cache_key",
+    "build_context_cache_key",
+    "build_prompt_context_hash",
+    "build_response_cache_key",
+    "build_model_signature",
     "normalize_text",
     "normalize_id",
     "normalize_alias",

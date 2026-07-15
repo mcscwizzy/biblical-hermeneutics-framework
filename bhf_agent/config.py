@@ -9,6 +9,8 @@ from typing import Any, Optional, Union
 
 from framework.canonical_library import DEFAULT_PUBLIC_CACHE_PATH, REVIEW_STATUS_VALUES
 
+from .observability import ObservabilityConfig
+
 
 class ConfigError(ValueError):
     """Raised when agent configuration is missing or invalid."""
@@ -21,6 +23,8 @@ ALLOWED_ADAPTERS = ("openai_compatible", "ollama")
 @dataclass(frozen=True)
 class CanonicalLibraryConfig:
     enabled: bool = True
+    cache_enabled: bool = True
+    cache_max_entries: int = 512
     max_results: int = 5
     max_context_tokens: int = 1200
     include_placeholders: bool = False
@@ -31,6 +35,10 @@ class CanonicalLibraryConfig:
     )
 
     def validate(self) -> None:
+        if int(self.cache_max_entries) <= 0:
+            raise ConfigError(
+                "canonical_library.cache_max_entries must be greater than 0"
+            )
         if int(self.max_results) <= 0:
             raise ConfigError("canonical_library.max_results must be greater than 0")
         if int(self.max_context_tokens) <= 0:
@@ -98,6 +106,7 @@ class AgentConfig:
     memory_max_turns: int = 8
     canonical_library: CanonicalLibraryConfig = CanonicalLibraryConfig()
     public_cache: PublicCacheConfig = PublicCacheConfig()
+    observability: ObservabilityConfig = ObservabilityConfig()
 
     @classmethod
     def from_json_file(cls, path: Union[str, Path]) -> "AgentConfig":
@@ -125,6 +134,7 @@ class AgentConfig:
             data.get("canonical_library")
         )
         data["public_cache"] = _public_cache_config_from_value(data.get("public_cache"))
+        data["observability"] = _observability_config_from_value(data.get("observability"))
         try:
             config = cls(**data)
         except TypeError as exc:
@@ -147,6 +157,11 @@ class AgentConfig:
             clean["public_cache"] = _public_cache_config_from_value(
                 clean["public_cache"],
                 base=self.public_cache,
+            )
+        if "observability" in clean:
+            clean["observability"] = _observability_config_from_value(
+                clean["observability"],
+                base=self.observability,
             )
         config = replace(self, **clean)
         config.validate()
@@ -185,6 +200,10 @@ class AgentConfig:
             raise ConfigError("memory_max_turns must be greater than 0")
         self.canonical_library.validate()
         self.public_cache.validate()
+        try:
+            self.observability.validate()
+        except ValueError as exc:
+            raise ConfigError(str(exc)) from exc
         if self.public_cache.enabled and not self.canonical_library.enabled:
             raise ConfigError("public_cache requires canonical_library to be enabled")
 
@@ -216,6 +235,14 @@ def _canonical_library_config_from_value(
         merged.update(value)
         config = CanonicalLibraryConfig(
             enabled=_coerce_bool(merged["enabled"], field_name="canonical_library.enabled"),
+            cache_enabled=_coerce_bool(
+                merged["cache_enabled"],
+                field_name="canonical_library.cache_enabled",
+            ),
+            cache_max_entries=_coerce_int(
+                merged["cache_max_entries"],
+                field_name="canonical_library.cache_max_entries",
+            ),
             max_results=_coerce_int(merged["max_results"], field_name="canonical_library.max_results"),
             max_context_tokens=_coerce_int(
                 merged["max_context_tokens"],
@@ -233,7 +260,6 @@ def _canonical_library_config_from_value(
     else:
         raise ConfigError("canonical_library must be an object")
 
-    config.validate()
     return config
 
 
@@ -274,6 +300,40 @@ def _public_cache_config_from_value(
         )
     else:
         raise ConfigError("public_cache must be an object")
+
+    config.validate()
+    return config
+
+
+def _observability_config_from_value(
+    value: Any,
+    *,
+    base: ObservabilityConfig | None = None,
+) -> ObservabilityConfig:
+    if isinstance(value, ObservabilityConfig):
+        config = value
+    elif value is None:
+        config = base or ObservabilityConfig()
+    elif isinstance(value, dict):
+        base_config = base or ObservabilityConfig()
+        known = {field.name for field in fields(ObservabilityConfig)}
+        unknown = sorted(set(value) - known)
+        if unknown:
+            raise ConfigError(
+                f"unknown observability field(s): {', '.join(unknown)}"
+            )
+        merged = asdict(base_config)
+        merged.update(value)
+        config = ObservabilityConfig(
+            enabled=_coerce_bool(merged["enabled"], field_name="observability.enabled"),
+            verbose=_coerce_bool(merged["verbose"], field_name="observability.verbose"),
+            redact_sensitive=_coerce_bool(
+                merged["redact_sensitive"],
+                field_name="observability.redact_sensitive",
+            ),
+        )
+    else:
+        raise ConfigError("observability must be an object")
 
     config.validate()
     return config
