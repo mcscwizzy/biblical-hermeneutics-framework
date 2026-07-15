@@ -12,10 +12,9 @@ RUN groupadd --gid 1000 bhf \
 COPY tools/requirements.txt /tmp/requirements.txt
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
-COPY bhf_agent/ ./bhf_agent/
-COPY bhf_web/ ./bhf_web/
-COPY framework/ ./framework/
-COPY profiles/ ./profiles/
+# Copy the repository content after dependency install so image builds pick up
+# new runtime assets, profiles, docs, and frontend source files together.
+COPY . .
 
 RUN mkdir -p /app/.bhf/sessions /app/.bhf/exports \
     && chown -R bhf:bhf /app
