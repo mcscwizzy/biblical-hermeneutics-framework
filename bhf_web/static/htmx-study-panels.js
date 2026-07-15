@@ -667,17 +667,17 @@ function renderCanonicalBrowserResults(results) {
 
     const status = document.createElement("span");
     status.className = "canonical-status-chip";
-    status.textContent = item.review_status || "unknown";
+    status.textContent = formatCanonicalLabel(item.review_status || "unknown");
 
     header.appendChild(titleWrap);
     header.appendChild(status);
 
     const badges = document.createElement("div");
     badges.className = "canonical-result-badges";
-    appendCanonicalBadge(badges, item.type || "unknown", "search-badge");
-    appendCanonicalBadge(badges, item.content_status || "unknown", "search-badge");
-    appendCanonicalBadge(badges, item.confidence || "unrated", "search-badge");
-    appendCanonicalBadge(badges, item.match_type || "browse", "search-badge search-badge--muted");
+    appendCanonicalBadge(badges, formatCanonicalLabel(item.type || "unknown"), "search-badge");
+    appendCanonicalBadge(badges, formatCanonicalLabel(item.content_status || "unknown"), "search-badge");
+    appendCanonicalBadge(badges, formatCanonicalLabel(item.confidence || "unrated"), "search-badge");
+    appendCanonicalBadge(badges, formatCanonicalLabel(item.match_type || "browse"), "search-badge search-badge--muted");
 
     const reason = document.createElement("p");
     reason.className = "canonical-result-reason";
@@ -689,12 +689,14 @@ function renderCanonicalBrowserResults(results) {
     viewButton.type = "button";
     viewButton.className = "secondary";
     viewButton.textContent = "View details";
+    viewButton.dataset.testid = "canonical-result-view-button";
     viewButton.addEventListener("click", () => loadCanonicalObject(item.id, { preview: item }));
 
     const linkButton = document.createElement("button");
     linkButton.type = "button";
     linkButton.className = "secondary";
     linkButton.textContent = "Link to note";
+    linkButton.dataset.testid = "canonical-result-link-note";
     linkButton.addEventListener("click", () => appendCanonicalObjectToCurrentNote(item.id));
 
     actions.appendChild(viewButton);
@@ -743,6 +745,7 @@ function renderCanonicalBrowserDetail(object, options = {}) {
   const scripture = document.querySelector("[data-canonical-detail-scripture]");
   const related = document.querySelector("[data-canonical-detail-related]");
   const sources = document.querySelector("[data-canonical-detail-sources]");
+  const editor = document.querySelector("[data-canonical-detail-editor]");
   const curation = document.querySelector("[data-canonical-detail-curation]");
   const addNote = document.querySelector("[data-canonical-detail-add-note]");
   if (!title || !summary || !status || !badges || !reason || !scripture || !related || !sources) {
@@ -758,13 +761,25 @@ function renderCanonicalBrowserDetail(object, options = {}) {
 
   if (!object) {
     title.textContent = "Select an object";
-    summary.textContent = options.loading ? "Loading canonical object..." : "Search results will populate here.";
+    summary.textContent = options.error
+      ? options.error
+      : options.loading
+        ? "Loading canonical object..."
+        : "Search results will populate here.";
     status.textContent = "--";
     if (curation) {
       curation.href = "/curation";
     }
+    if (editor) {
+      editor.hidden = true;
+      editor.href = "/canonical/editor";
+    }
     if (addNote) {
       addNote.disabled = true;
+    }
+    if (options.error) {
+      reason.hidden = false;
+      reason.textContent = options.error;
     }
     return;
   }
@@ -773,18 +788,22 @@ function renderCanonicalBrowserDetail(object, options = {}) {
   currentCanonicalBrowser.selectedObjectId = normalizedId;
   title.textContent = object.title || object.id || "Canonical object";
   summary.textContent = object.summary || "No summary recorded.";
-  status.textContent = object.review_status || "unknown";
+  status.textContent = formatCanonicalLabel(object.review_status || "unknown");
   if (curation) {
     curation.href = object.browse_url || "/curation";
+  }
+  if (editor) {
+    editor.href = `/canonical/editor?object_id=${encodeURIComponent(normalizedId)}`;
+    editor.hidden = object.content_status === "complete" && object.review_status === "approved";
   }
   if (addNote) {
     addNote.disabled = false;
   }
 
-  appendCanonicalBadge(badges, object.type || "unknown", "search-badge");
-  appendCanonicalBadge(badges, object.content_status || "unknown", "search-badge");
-  appendCanonicalBadge(badges, object.review_status || "unknown", "search-badge");
-  appendCanonicalBadge(badges, object.confidence || "unrated", "search-badge");
+  appendCanonicalBadge(badges, formatCanonicalLabel(object.type || "unknown"), "search-badge");
+  appendCanonicalBadge(badges, formatCanonicalLabel(object.content_status || "unknown"), "search-badge");
+  appendCanonicalBadge(badges, formatCanonicalLabel(object.review_status || "unknown"), "search-badge");
+  appendCanonicalBadge(badges, formatCanonicalLabel(object.confidence || "unrated"), "search-badge");
   appendCanonicalBadge(badges, `importance ${object.importance ?? 0}`, "search-badge");
   if (object.source_count !== undefined) {
     appendCanonicalBadge(badges, `${object.source_count} source${Number(object.source_count) === 1 ? "" : "s"}`, "search-badge");
@@ -915,6 +934,7 @@ function showCanonicalBrowserError(message) {
   if (resultsList) {
     resultsList.innerHTML = `<div class="error" role="alert"><p>${escapeHtml(message)}</p></div>`;
   }
+  renderCanonicalBrowserDetail(null, { error: message });
 }
 
 function handleCanonicalPanelClick(event) {
@@ -1017,6 +1037,14 @@ function normalizeCanonicalObjectId(value) {
     .trim()
     .toLowerCase()
     .replace(/\s+/g, "-");
+}
+
+function formatCanonicalLabel(value) {
+  return String(value || "")
+    .trim()
+    .replace(/[_-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .replace(/\b\w/g, (match) => match.toUpperCase());
 }
 
 function appendCanonicalBadge(container, text, className) {

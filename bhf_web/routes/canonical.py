@@ -2,14 +2,17 @@
 
 from __future__ import annotations
 
+import json
 from functools import lru_cache
 from typing import Any
 
-from fastapi import FastAPI, Query
-from fastapi.responses import JSONResponse
+from fastapi import FastAPI, Query, Request
+from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 
 from bhf_agent.ckl import build_canonical_context, load_canonical_library
+from framework.canonical_library.authoring import write_json_file
 from framework.canonical_library.normalization import normalize_id
+from framework.canonical_library.schema import CanonicalValidationError, validate_object
 
 
 @lru_cache(maxsize=1)
@@ -97,6 +100,100 @@ def register_canonical_routes(app: FastAPI) -> None:
         return JSONResponse(_serialize_object_detail(obj, library))
 
 
+def register_canonical_editor_routes(app: FastAPI, *, templates: Any) -> None:
+    @app.get("/canonical/editor", response_class=HTMLResponse)
+    async def canonical_editor(
+        request: Request,
+        object_id: str | None = None,
+        saved: str | None = None,
+        error: str | None = None,
+    ) -> HTMLResponse:
+        library = _canonical_library()
+        draft_objects = _editor_candidates(library)
+        selected = _select_editor_object(library, draft_objects, object_id)
+        if object_id and selected is None:
+            return templates.TemplateResponse(
+                request,
+                "canonical_editor.html",
+                {
+                    "draft_objects": draft_objects,
+                    "selected_object": None,
+                    "selected_object_json": "",
+                    "selected_object_path": "",
+                    "saved": False,
+                    "error": f"canonical object '{object_id}' was not found",
+                },
+                status_code=404,
+            )
+        selected_payload = selected.to_dict() if selected is not None else None
+        selected_source_path = library.source_path_for(selected.id) if selected is not None else None
+        return templates.TemplateResponse(
+            request,
+            "canonical_editor.html",
+            {
+                "draft_objects": draft_objects,
+                "selected_object": selected_payload,
+                "selected_object_json": _selected_object_json(selected_payload),
+                "selected_object_path": str(selected_source_path) if selected_source_path is not None else "",
+                "saved": bool(saved),
+                "error": error,
+            },
+        )
+
+    @app.post("/canonical/editor/{object_id}", response_class=HTMLResponse)
+    async def save_canonical_editor_object(request: Request, object_id: str) -> RedirectResponse | HTMLResponse:
+        library = _canonical_library()
+        source_path = library.source_path_for(object_id)
+        if source_path is None:
+            return templates.TemplateResponse(
+                request,
+                "canonical_editor.html",
+                {
+                    "draft_objects": _editor_candidates(library),
+                    "selected_object": None,
+                    "selected_object_json": "",
+                    "selected_object_path": "",
+                    "saved": False,
+                    "error": f"canonical object '{object_id}' was not found",
+                },
+                status_code=404,
+            )
+
+        form = await request.form()
+        raw_json = str(form.get("record_json") or "").strip()
+        try:
+            payload = json.loads(raw_json)
+            if not isinstance(payload, dict):
+                raise ValueError("canonical object JSON must be an object")
+            validated = validate_object(payload, path=source_path)
+        except (json.JSONDecodeError, CanonicalValidationError, ValueError) as exc:
+            selected_payload = None
+            try:
+                selected_payload = json.loads(raw_json) if raw_json else None
+            except Exception:  # noqa: BLE001 - preserve invalid JSON for the editor
+                selected_payload = None
+            return templates.TemplateResponse(
+                request,
+                "canonical_editor.html",
+                {
+                    "draft_objects": _editor_candidates(library),
+                    "selected_object": selected_payload if isinstance(selected_payload, dict) else None,
+                    "selected_object_json": raw_json,
+                    "selected_object_path": str(source_path),
+                    "saved": False,
+                    "error": str(exc),
+                },
+                status_code=400,
+            )
+
+        write_json_file(source_path, validated.to_dict())
+        _canonical_library.cache_clear()
+        return RedirectResponse(
+            url=f"/canonical/editor?object_id={validated.id}&saved=1",
+            status_code=303,
+        )
+
+
 def _browse_topics(
     library: Any,
     *,
@@ -123,6 +220,58 @@ def _browse_topics(
         if len(results) >= limit:
             break
     return results
+
+
+def _editor_candidates(library: Any) -> list[dict[str, Any]]:
+    candidates: list[dict[str, Any]] = []
+    for obj in sorted(
+        library.objects_by_id.values(),
+        key=lambda item: (
+            _editor_content_status_rank(str(getattr(item, "content_status", ""))),
+            _editor_review_status_rank(str(getattr(item, "review_status", ""))),
+            item.type,
+            item.title,
+            item.id,
+        ),
+    ):
+        if obj.content_status not in {"placeholder", "draft"} and obj.review_status == "approved":
+            continue
+        candidates.append(
+            {
+                "id": obj.id,
+                "title": obj.title,
+                "type": obj.type,
+                "content_status": obj.content_status,
+                "review_status": obj.review_status,
+                "confidence": obj.confidence,
+                "summary": obj.summary,
+            }
+        )
+    return candidates
+
+
+def _editor_content_status_rank(status: str) -> int:
+    order = {"placeholder": 0, "draft": 1, "complete": 2}
+    return order.get(status, 3)
+
+
+def _editor_review_status_rank(status: str) -> int:
+    order = {"unreviewed": 0, "in_review": 1, "approved": 2, "deprecated": 3}
+    return order.get(status, 4)
+
+
+def _select_editor_object(library: Any, candidates: list[dict[str, Any]], object_id: str | None) -> Any:
+    normalized_id = normalize_id(object_id or "")
+    if normalized_id:
+        return library.objects_by_id.get(normalized_id)
+    first_candidate = candidates[0]["id"] if candidates else ""
+    return library.objects_by_id.get(first_candidate) if first_candidate else None
+
+
+def _selected_object_json(selected_payload: dict[str, Any] | None) -> str:
+    if selected_payload is None:
+        return ""
+    return json.dumps(selected_payload, indent=2, ensure_ascii=False) + "\n"
 
 
 def _serialize_object_detail(obj: Any, library: Any, *, browse: bool = False) -> dict[str, Any]:

@@ -51,7 +51,7 @@
                 data-canonical-object-title="{{ topic.title }}"
               >
                 <span class="canonical-object-badge-title">{{ topic.title }}</span>
-                <span class="canonical-object-badge-meta">{{ topic.type }} · {{ topic.match_type or "browse" }}</span>
+                <span class="canonical-object-badge-meta">{{ topic.type | replace("_", " ") | title }} · {{ (topic.match_type or "browse") | replace("_", " ") | title }}</span>
               </button>
             {% endfor %}
           {% else %}
@@ -77,11 +77,11 @@
                 <article class="canonical-context-card" data-canonical-object-id="{{ topic.id }}">
                   <div class="canonical-context-card-header">
                     <h4>{{ topic.title }}</h4>
-                    <span class="canonical-status-chip">{{ topic.review_status or "unknown" }}</span>
+                    <span class="canonical-status-chip">{{ (topic.review_status or "unknown") | replace("_", " ") | title }}</span>
                   </div>
                   <p class="canonical-context-reason">{{ topic.reason or topic.match_type or "Matched canonical search criteria." }}</p>
                   <p class="canonical-context-meta">
-                    Content: {{ topic.content_status or "unknown" }} · Confidence: {{ topic.confidence or "unrated" }}
+                    Content: {{ (topic.content_status or "unknown") | replace("_", " ") | title }} · Confidence: {{ (topic.confidence or "unrated") | replace("_", " ") | title }}
                   </p>
                   {% if topic.matched_fields %}
                     <p class="canonical-context-meta">Fields: {{ topic.matched_fields | join(", ") }}</p>

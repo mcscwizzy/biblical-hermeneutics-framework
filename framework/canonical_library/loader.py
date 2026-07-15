@@ -198,6 +198,12 @@ class CanonicalLibrary:
         self._inventory_fingerprint_cache = _stable_json_fingerprint(payload)
         return self._inventory_fingerprint_cache
 
+    def source_path_for(self, object_id: str) -> Path | None:
+        """Return the on-disk source path for a loaded object, if known."""
+
+        self._ensure_loaded()
+        return self._source_paths_by_id.get(normalize_id(object_id))
+
     def _read_manifest(self, errors: list[str]) -> dict[str, Any]:
         if not self.manifest_path.exists():
             errors.append(f"{self._relative_path(self.manifest_path)}: manifest is missing")

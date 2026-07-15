@@ -3,9 +3,9 @@
 > Resume aid for CKL work. Saved in-repo so the next conversation can pick up
 > from the latest completed phase.
 >
-> Last completed phase: Phase 16 - Public Answer Cache.
+> Last completed phase: Phase 17 - Web and Reader Integration.
 >
-> Current phase: Phase 17 - Web and Reader Integration (in progress).
+> Current phase: Phase 18 - Packaging, Versioning, and Release (in progress).
 
 ## Current State
 
@@ -187,11 +187,11 @@ Goal: Make CKL a stable framework component.
 
 Exit criteria: Cloning, installing, or packaging BHF produces the same validated CKL inventory everywhere.
 
-Status: in progress.
+Status: complete.
 
 ## Immediate Next Move
 
-1. Phase 17: Finish the canonical browser, note-link, and source-viewer polish.
+1. Phase 18: Package CKL, lock the versioning story, and prepare the first stable release tag.
 2. Phase 10 Wave 2: Continue the Bible-book records after governance is in place.
 3. Adjust the schema and retrieval model based on evaluation results.
 4. Expand semantic search only if the local-only retrieval stack still leaves gaps.
@@ -210,7 +210,7 @@ Status: in progress.
 | 14 - Token Budgeting and Context Compression | complete | Add tiered, token-aware context assembly |
 | 15 - Evaluation and Regression Testing | complete | Metadata-aware regression suite seeded; compare CKL-enabled, filtered, and disabled runs |
 | 16 - Public Answer Cache | complete | Cache approved answers with version fingerprints |
-| 17 - Web and Reader Integration | in progress | Surface canonical context in the UI |
-| 18 - Packaging, Versioning, and Release | pending | Ship validated CKL as a stable component |
+| 17 - Web and Reader Integration | complete | Surface canonical context in the UI and add the draft editor view |
+| 18 - Packaging, Versioning, and Release | in progress | Ship validated CKL as a stable component |
 
 Reference anchors: `framework/books/genesis.md`, `framework/books/revelation.md`.

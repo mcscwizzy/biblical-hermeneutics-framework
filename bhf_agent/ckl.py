@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+import os
 from functools import lru_cache
 from pathlib import Path
 from typing import Any, Mapping, Sequence
@@ -177,6 +178,9 @@ SOURCE_LIMITS_BY_DETAIL_LEVEL: dict[int, int] = {
 
 @lru_cache(maxsize=1)
 def _load_default_canonical_library() -> CanonicalLibrary:
+    root = os.environ.get("BHF_CKL_ROOT", "").strip()
+    if root:
+        return CanonicalLibrary(root=Path(root)).load()
     return CanonicalLibrary.load_default()
 
 

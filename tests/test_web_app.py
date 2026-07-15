@@ -3,6 +3,7 @@ from contextlib import contextmanager
 import json
 import os
 import re
+import shutil
 import tempfile
 import time
 import unittest
@@ -789,6 +790,17 @@ class WebAppTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmpdir:
             yield Path(tmpdir) / "study.sqlite"
 
+    @contextmanager
+    def _temp_canonical_root(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir) / "canonical_library"
+            shutil.copytree(
+                Path("framework/canonical_library").resolve(),
+                root,
+                ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
+            )
+            yield root
+
     def test_sample_maps_route_returns_markers(self):
         response = asgi_request("GET", "/api/maps/sample-markers")
 
@@ -906,6 +918,65 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("source_count", detail)
         self.assertIn("scripture_reference_count", detail)
         self.assertIn("related_object_links", detail)
+
+    def test_canonical_editor_routes_allow_editing_placeholder_objects(self):
+        with self._temp_canonical_root() as canonical_root, patch.dict(
+            os.environ,
+            {"BHF_CKL_ROOT": str(canonical_root)},
+            clear=False,
+        ):
+            import bhf_agent.ckl as ckl_module
+            from bhf_web.routes import canonical as canonical_routes
+
+            ckl_module._load_default_canonical_library.cache_clear()
+            canonical_routes._canonical_library.cache_clear()
+            test_app = create_app()
+            canonical_library = ckl_module.load_canonical_library(str(canonical_root))
+
+            detail_response = asgi_request("GET", "/api/canonical/objects/arad-ostraca", test_app=test_app)
+            self.assertEqual(detail_response["status"], 200)
+            detail = json.loads(detail_response["body"])
+            self.assertEqual(detail["content_status"], "placeholder")
+
+            editor_response = asgi_request(
+                "GET",
+                "/canonical/editor?object_id=arad-ostraca",
+                test_app=test_app,
+            )
+            self.assertEqual(editor_response["status"], 200)
+            self.assertIn("CKL Draft Editor", editor_response["body"])
+            self.assertIn("Draft inventory", editor_response["body"])
+            self.assertIn("canonical-editor-form", editor_response["body"])
+            self.assertIn("No summary recorded.", editor_response["body"])
+
+            object_payload = canonical_library.objects_by_id["arad-ostraca"].to_dict()
+            object_payload["summary"] = "Arad Ostraca is a draft archaeological record for the southern Judah frontier."
+            save_response = asgi_request(
+                "POST",
+                "/canonical/editor/arad-ostraca",
+                data={"record_json": json.dumps(object_payload, indent=2, ensure_ascii=False)},
+                test_app=test_app,
+            )
+            self.assertEqual(save_response["status"], 303)
+
+            refreshed_response = asgi_request(
+                "GET",
+                "/api/canonical/objects/arad-ostraca",
+                test_app=test_app,
+            )
+            self.assertEqual(
+                json.loads(refreshed_response["body"])["summary"],
+                object_payload["summary"],
+            )
+
+            saved_editor_response = asgi_request(
+                "GET",
+                "/canonical/editor?object_id=arad-ostraca&saved=1",
+                test_app=test_app,
+            )
+            self.assertEqual(saved_editor_response["status"], 200)
+            self.assertIn("Saved Arad Ostraca.", saved_editor_response["body"])
+            self.assertIn(object_payload["summary"], saved_editor_response["body"])
 
     def test_period_filter_applies_to_all_map_endpoints(self):
         places_response = asgi_request("GET", "/api/maps/biblical-places?period=NT+%2F+Roman+period")

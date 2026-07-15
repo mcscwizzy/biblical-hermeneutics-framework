@@ -32,6 +32,7 @@ from .forms import (
 from . import settings
 from .routes.ask import register_ask_routes
 from .routes.canonical import register_canonical_routes
+from .routes.canonical import register_canonical_editor_routes
 from .routes.curation import register_curation_routes
 from .routes.maps import register_map_routes
 from .routes.study import register_study_routes
@@ -229,6 +230,7 @@ def create_app() -> FastAPI:
 
     register_curation_routes(web_app, study_db_path=str(STUDY_DB_PATH), templates=templates)
     register_canonical_routes(web_app)
+    register_canonical_editor_routes(web_app, templates=templates)
     register_map_routes(web_app, study_db_path=str(STUDY_DB_PATH))
     register_study_routes(
         web_app,
