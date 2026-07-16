@@ -122,21 +122,13 @@ def build_result_inspector_payload(
     reference_context = getattr(result, "reference_context", None)
     question_context = getattr(result, "question_context", None)
     answer_mode = str(model_metadata.get("answer_mode") or pipeline.get("answer_mode") or "study").strip() or "study"
+    ckl_context_injected = bool(pipeline.get("ckl_context_injected"))
 
     canonical_query = build_canonical_query(question, reference_context, question_context)
-    canonical_context = model_metadata.get("canonical_library_context")
-    if not isinstance(canonical_context, Mapping):
-        canonical_context = None
-
-    if canonical_context is None and canonical_query:
-        canonical_library = load_canonical_library()
-        canonical_context = build_canonical_context(
-            canonical_library,
-            canonical_query,
-            max_results=resolved_limit,
-            answer_mode=answer_mode,
-            max_context_tokens=max_context_tokens,
-        )
+    raw_canonical_context = model_metadata.get("canonical_library_context")
+    if not isinstance(raw_canonical_context, Mapping):
+        raw_canonical_context = None
+    canonical_context = raw_canonical_context if ckl_context_injected else None
     rollout_mode = _canonical_library_rollout_mode(pipeline, canonical_context)
 
     retrieval_duration_ms = _safe_int(pipeline.get("canonical_library_retrieval_duration_ms"))
@@ -170,13 +162,16 @@ def build_result_inspector_payload(
         max_context_tokens=max_context_tokens,
         prompt_mode=str(pipeline.get("canonical_library_prompt_mode") or "").strip(),
         rollout_mode=rollout_mode,
+        ckl_context_injected=ckl_context_injected,
+        fallback_to_model=bool(pipeline.get("fallback_to_model")),
+        strict_mode=bool(pipeline.get("canonical_library_strict_mode")),
     )
     shadow_prompt_preview = ""
     shadow_prompt_note = None
     shadow_prompt_kind = None
-    if rollout_mode == "shadow":
+    if rollout_mode == "shadow" and raw_canonical_context is not None:
         shadow_prompt_preview, shadow_prompt_note, shadow_prompt_kind = _prompt_preview_for_context(
-            canonical_context,
+            raw_canonical_context,
             answer_mode=answer_mode,
             max_context_tokens=max_context_tokens,
         )
@@ -288,6 +283,9 @@ def _prompt_preview_for_pipeline(
     max_context_tokens: int,
     prompt_mode: str,
     rollout_mode: str,
+    ckl_context_injected: bool,
+    fallback_to_model: bool,
+    strict_mode: bool,
 ) -> tuple[str, str | None, str]:
     if rollout_mode == "shadow":
         return (
@@ -295,24 +293,30 @@ def _prompt_preview_for_pipeline(
             "CKL was retrieved in shadow mode, so the model did not receive the CKL block.",
             "disabled",
         )
-    if prompt_mode == "summary" and canonical_context:
+    if prompt_mode == "summary" and canonical_context and ckl_context_injected:
         preview = format_canonical_context_for_prompt(
             canonical_context,
             max_context_tokens=max_context_tokens,
             answer_mode=answer_mode,
         )
         return preview, None, "summary"
-    if prompt_mode == "no_strong_match":
+    if prompt_mode == "strict_no_match" or strict_mode:
         return (
             NO_STRONG_MATCH_PROMPT,
-            "The model received the CKL no-strong-match instruction instead of the full context block.",
-            "no_strong_match",
+            "CKL strict mode kept the no-match instruction in the prompt.",
+            "strict_no_match",
         )
     if prompt_mode == "retrieval_failed":
         return (
             "",
             "CKL retrieval failed, so no CKL prompt block was injected.",
             "retrieval_failed",
+        )
+    if prompt_mode == "fallback_to_model" or fallback_to_model:
+        return (
+            "",
+            "CKL returned no relevant context, so the model answered without CKL input.",
+            "fallback_to_model",
         )
     if prompt_mode == "disabled":
         return "", "CKL retrieval is disabled for this request.", "disabled"

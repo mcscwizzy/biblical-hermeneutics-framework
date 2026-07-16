@@ -61,8 +61,9 @@ def _answer_template_context(
     if show_debug and debug_result is not None:
         metadata = result_metadata(debug_result)
         debug_metadata = getattr(debug_result, "model_metadata", {}) or {}
-        canonical_context = debug_metadata.get("canonical_library_context")
-        canonical_object_ids = list(debug_metadata.get("canonical_library_object_ids") or [])
+        if bool((debug_metadata.get("pipeline") or {}).get("ckl_context_injected")):
+            canonical_context = debug_metadata.get("canonical_library_context")
+            canonical_object_ids = list(debug_metadata.get("canonical_library_object_ids") or [])
         if inspector_question:
             developer_inspector = build_result_inspector_payload(
                 inspector_question,

@@ -803,6 +803,14 @@ class WebAppTests(unittest.TestCase):
                 root,
                 ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
             )
+            placeholder_path = root / "objects" / "archaeology" / "arad-ostraca.json"
+            placeholder_data = json.loads(placeholder_path.read_text(encoding="utf-8"))
+            placeholder_data["content_status"] = "placeholder"
+            placeholder_data["summary"] = ""
+            placeholder_path.write_text(
+                json.dumps(placeholder_data, indent=2, ensure_ascii=False),
+                encoding="utf-8",
+            )
             yield root
 
     def test_sample_maps_route_returns_markers(self):
@@ -1440,6 +1448,48 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("Developer Retrieval Inspector", result["body"])
         self.assertIn("Prompt Preview", result["body"])
         self.assertIn("Selected Results", result["body"])
+
+    def test_ask_result_hides_ckl_section_when_context_was_not_injected(self):
+        debug_defaults = SimpleNamespace(
+            config=AgentConfig(
+                base_url="http://localhost:11434/v1",
+                model="llama3.1:8b",
+                profile="minimal-7b",
+                debug=True,
+            )
+        )
+
+        with patch("bhf_web.app.BHFAgent", FallbackOnlyAgent), patch(
+            "bhf_web.routes.ask.load_web_defaults",
+            return_value=debug_defaults,
+        ), patch(
+            "bhf_web.jobs.load_web_defaults",
+            return_value=debug_defaults,
+        ), patch(
+            "bhf_web.jobs.settings.TEST_MODE",
+            False,
+        ):
+            response = asgi_request("POST", "/ask/jobs", data=_valid_form())
+
+            self.assertEqual(response["status"], 202)
+            job = json.loads(response["body"])
+            wait_for_job(job["job_id"])
+
+        with patch(
+            "bhf_web.routes.ask.load_web_defaults",
+            return_value=debug_defaults,
+        ):
+            result = asgi_request("GET", f"/ask/result/{job['job_id']}")
+
+        self.assertEqual(result["status"], 200)
+        self.assertIn("Answer", result["body"])
+        self.assertIn("Developer Retrieval Inspector", result["body"])
+        self.assertNotIn("Canonical Context", result["body"])
+        self.assertNotIn("canonical-object-badge-title", result["body"])
+        self.assertNotIn("No results returned", result["body"])
+        self.assertNotIn("No CKL results", result["body"])
+        self.assertIn("CKL context injected", result["body"])
+        self.assertIn("CKL fallback reason", result["body"])
 
     def test_ask_result_shows_shadow_prompt_preview_when_ckl_runs_in_shadow_mode(self):
         debug_defaults = SimpleNamespace(
@@ -2100,6 +2150,49 @@ class SuccessfulJobAgent(FakeAgent):
         return fake_result(self.config, errors=[])
 
 
+class FallbackOnlyAgent(SuccessfulJobAgent):
+    def ask(self, question, status_callback=None):
+        if status_callback is not None:
+            status_callback(status_event("loading_profile", "Loading BHF profile", 6))
+            status_callback(
+                status_event(
+                    "contacting_model_backend",
+                    "Contacting model backend",
+                    10,
+                    status="running",
+                )
+            )
+            status_callback(
+                status_event(
+                    "waiting_for_model_response",
+                    "Waiting for model response",
+                    11,
+                    status="running",
+                )
+            )
+            status_callback(status_event("complete", "Complete", 16, status="complete"))
+        return fake_result(
+            self.config,
+            errors=[],
+            canonical_context=None,
+            canonical_object_ids=[],
+            pipeline_overrides={
+                "canonical_library_context": None,
+                "canonical_library_object_ids": [],
+                "canonical_library_retrieval_method": None,
+                "canonical_library_topic_count": 0,
+                "canonical_library_prompt_tokens": 0,
+                "canonical_library_prompt_mode": "fallback_to_model",
+                "canonical_library_strong_match": False,
+                "ckl_attempted": True,
+                "ckl_result_count": 0,
+                "ckl_context_injected": False,
+                "fallback_to_model": True,
+                "fallback_reason": "no_relevant_ckl_results",
+            },
+        )
+
+
 class CapturingAgent(SuccessfulJobAgent):
     questions = []
 
@@ -2229,12 +2322,61 @@ def canonical_context_stub():
     }
 
 
-def fake_result(config, errors):
+def fake_result(
+    config,
+    errors,
+    *,
+    answer_text: str = "## Short Answer\nAnswer with **method**.",
+    canonical_context=None,
+    canonical_object_ids=None,
+    pipeline_overrides: dict[str, object] | None = None,
+):
     canonical_library = getattr(config, "canonical_library", None)
     enabled = bool(getattr(canonical_library, "enabled", True))
     shadow_mode = bool(getattr(canonical_library, "shadow_mode", False) and not enabled)
+    injected = enabled and not shadow_mode
+    loaded = enabled or shadow_mode
+
+    if canonical_context is None and loaded:
+        canonical_context = canonical_context_stub()
+    if canonical_object_ids is None:
+        canonical_object_ids = ["shechem", "abraham"] if injected else []
+
+    pipeline = {
+        "canonical_library_enabled": enabled,
+        "canonical_library_shadow_mode": shadow_mode,
+        "canonical_library_rollout_mode": (
+            "shadow" if shadow_mode else "enabled" if enabled else "disabled"
+        ),
+        "canonical_library_loaded": loaded,
+        "canonical_library_object_ids": list(canonical_object_ids or []),
+        "canonical_library_retrieval_method": "keyword" if loaded else None,
+        "canonical_library_topic_count": 2 if injected else 0,
+        "canonical_library_prompt_tokens": 1200 if injected else 0,
+        "canonical_library_prompt_mode": "summary" if injected else "disabled",
+        "canonical_library_strong_match": injected,
+        "canonical_library_strict_mode": False,
+        "canonical_library_fallback_to_model": not injected,
+        "ckl_attempted": loaded,
+        "ckl_result_count": 2 if injected else 0,
+        "ckl_context_injected": injected,
+        "fallback_to_model": not injected,
+        "fallback_reason": None if injected else ("shadow_mode" if shadow_mode else "ckl_disabled"),
+    }
+    if shadow_mode:
+        pipeline["canonical_library_shadow_prompt_mode"] = "summary"
+    if pipeline_overrides:
+        pipeline.update(pipeline_overrides)
+        if "canonical_library_object_ids" in pipeline_overrides:
+            canonical_object_ids = list(pipeline_overrides["canonical_library_object_ids"] or [])
+        if "canonical_library_context" in pipeline_overrides:
+            canonical_context = pipeline_overrides["canonical_library_context"]
+
+    if not pipeline.get("canonical_library_loaded"):
+        canonical_context = None
+
     return AgentResult(
-        answer_text="## Short Answer\nAnswer with **method**.",
+        answer_text=answer_text,
         reference_context=ReferenceContext(
             book="Romans",
             chapter=12,
@@ -2254,26 +2396,13 @@ def fake_result(config, errors):
         model_metadata={
             "answer_mode": config.answer_mode,
             "local_knowledge_keys": ["ruach"],
-            "canonical_library_object_ids": ["shechem", "abraham"],
-            "canonical_library_retrieval_method": "keyword",
-            "canonical_library_context": canonical_context_stub(),
-            "canonical_library_rollout_mode": (
-                "shadow" if shadow_mode else "enabled" if enabled else "disabled"
-            ),
+            "canonical_library_object_ids": list(canonical_object_ids or []),
+            "canonical_library_retrieval_method": pipeline["canonical_library_retrieval_method"],
+            "canonical_library_context": canonical_context,
+            "canonical_library_rollout_mode": pipeline["canonical_library_rollout_mode"],
             "canonical_library_shadow_mode": shadow_mode,
-            "pipeline": {
-                "canonical_library_enabled": enabled,
-                "canonical_library_shadow_mode": shadow_mode,
-                "canonical_library_rollout_mode": (
-                    "shadow" if shadow_mode else "enabled" if enabled else "disabled"
-                ),
-                "canonical_library_loaded": enabled or shadow_mode,
-                "canonical_library_object_ids": ["shechem", "abraham"],
-                "canonical_library_retrieval_method": "keyword",
-                "canonical_library_topic_count": 2,
-                "canonical_library_prompt_tokens": 1200,
-                "canonical_library_prompt_mode": "disabled" if shadow_mode else "summary",
-            },
+            "canonical_library_loaded": loaded,
+            "pipeline": pipeline,
         },
         errors=errors,
     )

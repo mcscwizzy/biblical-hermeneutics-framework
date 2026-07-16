@@ -54,6 +54,7 @@ from .validation import validate_response
 from framework.canonical_library import (
     CanonicalLibrary,
     CKLRuntimeCache,
+    CKLRetrievalService,
     JsonPublicAnswerCache,
     NullPublicAnswerCache,
     PublicAnswerCache,
@@ -114,6 +115,194 @@ def _canonical_library_object_ids(metadata: dict[str, Any], canonical_context: d
             seen_ids.add(related_id)
 
     return prompt_ids, object_ids
+
+
+def _scripture_reference_text(reference: Any) -> str:
+    if hasattr(reference, "book"):
+        book = str(getattr(reference, "book", "") or "").strip()
+        start_chapter = getattr(reference, "start_chapter", None)
+        start_verse = getattr(reference, "start_verse", None)
+        end_chapter = getattr(reference, "end_chapter", None)
+        end_verse = getattr(reference, "end_verse", None)
+    elif isinstance(reference, dict):
+        book = str(reference.get("book") or "").strip()
+        start_chapter = reference.get("start_chapter")
+        start_verse = reference.get("start_verse")
+        end_chapter = reference.get("end_chapter")
+        end_verse = reference.get("end_verse")
+    else:
+        return str(reference or "").strip()
+
+    if not book:
+        return ""
+    if start_chapter is None:
+        return book
+
+    text = f"{book} {start_chapter}"
+    if start_verse is not None:
+        text += f":{start_verse}"
+        if end_chapter is not None and end_chapter != start_chapter:
+            text += f"-{end_chapter}"
+        if end_verse is not None:
+            text += f":{end_verse}"
+    return text
+
+
+def _canonical_context_result_ids(context: dict[str, Any] | None) -> list[str]:
+    if not context:
+        return []
+    ids: list[str] = []
+    for topic in context.get("retrieved_topics") or []:
+        if not isinstance(topic, dict):
+            continue
+        object_id = str(topic.get("id") or "").strip()
+        if object_id and object_id not in ids:
+            ids.append(object_id)
+    return ids
+
+
+def _search_result_match_type(result: Any) -> str:
+    value = getattr(result, "match_type", None)
+    if value is None:
+        value = getattr(result, "category", None)
+    return str(value or "").strip().lower()
+
+
+def _canonical_miss_reason(
+    *,
+    library: CanonicalLibrary,
+    canonical_query: str,
+    question: str,
+    canonical_context: dict[str, Any] | None,
+    answer_mode: str,
+    minimum_relevance_score: float,
+    include_placeholders: bool,
+    allowed_statuses: tuple[str, ...],
+    max_results: int,
+) -> dict[str, Any]:
+    gap: dict[str, Any] = {
+        "normalized_question": " ".join(str(question or "").split()),
+        "detected_scripture_references": [],
+        "detected_books": [],
+        "retrieval_terms": [],
+        "top_rejected_results": [],
+        "rejection_reasons": [],
+        "timestamp": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "answer_mode": answer_mode,
+    }
+
+    try:
+        service = CKLRetrievalService(library=library)
+        search_response = service.search(
+            canonical_query or question,
+            limit=max(max_results * 4, max_results, 12),
+            min_score=0.0,
+            debug=True,
+        )
+    except Exception as exc:  # noqa: BLE001 - diagnostics must never block answers
+        gap["rejection_reasons"] = ["retrieval_failed"]
+        gap["retrieval_error"] = str(exc)
+        return gap
+
+    analysis = search_response.analysis
+    gap["retrieval_terms"] = list(dict.fromkeys(analysis.terms or []))
+    gap["detected_scripture_references"] = [
+        _scripture_reference_text(reference)
+        for reference in analysis.scripture_references
+        if _scripture_reference_text(reference)
+    ]
+    gap["detected_books"] = list(
+        dict.fromkeys(
+            str(reference.book).strip()
+            for reference in analysis.scripture_references
+            if str(getattr(reference, "book", "") or "").strip()
+        )
+    )
+
+    selected_ids = set(_canonical_context_result_ids(canonical_context))
+    rejected_results: list[dict[str, Any]] = []
+    rejection_reasons: set[str] = set()
+
+    for result in search_response.results:
+        obj = library.objects_by_id.get(result.id)
+        if obj is None or result.id in selected_ids:
+            continue
+
+        reasons: list[str] = []
+        retrievable = library._is_retrievable(
+            obj,
+            approved_only=False,
+            exclude_deprecated=True,
+            exclude_rejected=True,
+            include_placeholders=include_placeholders,
+            allowed_statuses=allowed_statuses,
+        )
+        if not retrievable:
+            if not include_placeholders and str(getattr(obj, "content_status", "") or "") == "placeholder":
+                reasons.append("placeholder_content")
+            if allowed_statuses and str(getattr(obj, "review_status", "") or "") not in allowed_statuses:
+                reasons.append("disallowed_review_status")
+            if str(getattr(obj, "content_status", "") or "") == "deprecated":
+                reasons.append("deprecated_content")
+            if str(getattr(obj, "review_status", "") or "") == "rejected":
+                reasons.append("rejected_review_status")
+            if not reasons:
+                reasons.append("governance_filtered")
+        elif float(result.score or 0) < float(minimum_relevance_score) and _search_result_match_type(result) not in {"exact", "scripture"}:
+            reasons.append("below_relevance_threshold")
+
+        if not reasons:
+            continue
+
+        rejection_reasons.update(reasons)
+        rejected_results.append(
+                {
+                    "id": result.id,
+                    "title": result.title,
+                    "score": result.score,
+                    "match_type": _search_result_match_type(result),
+                    "matched_fields": list(result.matched_fields),
+                    "matched_terms": list(result.matched_terms),
+                    "review_status": result.review_status,
+                "content_status": result.content_status,
+                "confidence": result.confidence,
+                "rejection_reasons": reasons,
+            }
+        )
+        if len(rejected_results) >= 5:
+            break
+
+    if not search_response.results:
+        rejection_reasons.add("no_relevant_ckl_results")
+    elif not rejection_reasons:
+        rejection_reasons.add("below_relevance_threshold")
+
+    gap["top_rejected_results"] = rejected_results
+    gap["rejection_reasons"] = sorted(rejection_reasons)
+    return gap
+
+
+def _fallback_reason_from_rejection_reasons(rejection_reasons: Any) -> str:
+    reasons = {str(reason or "").strip() for reason in (rejection_reasons or [])}
+    for candidate in (
+        "placeholder_content",
+        "disallowed_review_status",
+        "deprecated_content",
+        "rejected_review_status",
+        "filtered_out",
+        "governance_filtered",
+        "below_relevance_threshold",
+        "no_relevant_ckl_results",
+    ):
+        if candidate in reasons:
+            return candidate
+    return "no_relevant_ckl_results"
+
+
+STRICT_CKL_NO_MATCH_PROMPT = (
+    "The Canonical Knowledge Library did not find a strong match for this question. "
+    "Answer generally without inventing CKL facts, and state briefly if the library does not yet cover the topic."
+)
 
 class BHFAgent:
     def __init__(
@@ -303,6 +492,16 @@ class BHFAgent:
                 "canonical_library_query": None,
                 "canonical_library_include_placeholders": self.config.canonical_library.include_placeholders,
                 "canonical_library_allowed_statuses": list(self.config.canonical_library.allowed_statuses),
+                "canonical_library_minimum_relevance_score": self.config.canonical_library.minimum_relevance_score,
+                "canonical_library_fallback_to_model": self.config.canonical_library.fallback_to_model,
+                "canonical_library_strict_mode": self.config.canonical_library.strict_mode,
+                "ckl_attempted": False,
+                "ckl_result_count": 0,
+                "ckl_context_injected": False,
+                "ckl_retrieval_usable": False,
+                "ckl_relevance_threshold": self.config.canonical_library.minimum_relevance_score,
+                "fallback_to_model": False,
+                "fallback_reason": None,
                 "canonical_library_version_fingerprint": None,
                 "canonical_library_strong_match": None,
                 "canonical_library_prompt_mode": None,
@@ -441,7 +640,25 @@ class BHFAgent:
     def _lookup_canonical_library(self, ctx: PipelineContext) -> PipelineContext:
         retrieval_started_at = time.perf_counter()
         rollout_mode = self._canonical_library_rollout_mode()
+        strict_ckl_only = bool(
+            self.config.canonical_library.strict_mode
+            or not self.config.canonical_library.fallback_to_model
+        )
         ctx.debug_metadata["canonical_library_rollout_mode"] = rollout_mode
+        ctx.debug_metadata["canonical_library_fallback_to_model"] = (
+            self.config.canonical_library.fallback_to_model
+        )
+        ctx.debug_metadata["canonical_library_strict_mode"] = self.config.canonical_library.strict_mode
+        ctx.debug_metadata["canonical_library_minimum_relevance_score"] = (
+            self.config.canonical_library.minimum_relevance_score
+        )
+        ctx.debug_metadata["ckl_attempted"] = False
+        ctx.debug_metadata["ckl_result_count"] = 0
+        ctx.debug_metadata["ckl_context_injected"] = False
+        ctx.debug_metadata["ckl_retrieval_usable"] = False
+        ctx.debug_metadata["ckl_relevance_threshold"] = self.config.canonical_library.minimum_relevance_score
+        ctx.debug_metadata["fallback_to_model"] = False
+        ctx.debug_metadata["fallback_reason"] = None
         if self.canonical_library is None:
             ctx.canonical_library_context = None
             ctx.canonical_library_prompt = None
@@ -457,6 +674,8 @@ class BHFAgent:
             ctx.debug_metadata["canonical_library_context_cache_status"] = "disabled"
             ctx.debug_metadata["canonical_library_response_cache_status"] = "disabled"
             ctx.debug_metadata["canonical_library_retrieval_duration_ms"] = 0
+            ctx.debug_metadata["fallback_to_model"] = True
+            ctx.debug_metadata["fallback_reason"] = "ckl_disabled"
             return ctx
         if ctx.reference_context is None or ctx.question_context is None:
             raise RuntimeError("pipeline context is incomplete before canonical lookup")
@@ -470,6 +689,7 @@ class BHFAgent:
         ctx.debug_metadata["canonical_library_query"] = canonical_query
         ctx.debug_metadata["canonical_library_prompt"] = None
         ctx.debug_metadata["canonical_library_prompt_tokens"] = 0
+        ctx.debug_metadata["ckl_attempted"] = True
         ctx.debug_metadata["canonical_library_retrieval_cache_hit"] = False
         ctx.debug_metadata["canonical_library_context_cache_hit"] = False
         ctx.debug_metadata["canonical_library_retrieval_cache_status"] = "miss"
@@ -540,6 +760,22 @@ class BHFAgent:
             ctx.debug_metadata["canonical_library_context_cache_key"] = None
             ctx.debug_metadata["canonical_library_context_cache_hit"] = False
             ctx.debug_metadata["canonical_library_context_cache_status"] = "error"
+            ctx.debug_metadata["ckl_result_count"] = 0
+            ctx.debug_metadata["ckl_context_injected"] = False
+            ctx.debug_metadata["ckl_retrieval_usable"] = False
+            ctx.debug_metadata["fallback_to_model"] = True
+            ctx.debug_metadata["fallback_reason"] = "retrieval_failed"
+            ctx.debug_metadata["ckl_coverage_gap"] = _canonical_miss_reason(
+                library=self.canonical_library,
+                canonical_query=canonical_query,
+                question=ctx.original_question,
+                canonical_context=None,
+                answer_mode=ctx.answer_mode,
+                minimum_relevance_score=self.config.canonical_library.minimum_relevance_score,
+                include_placeholders=self.config.canonical_library.include_placeholders,
+                allowed_statuses=self.config.canonical_library.allowed_statuses,
+                max_results=self.config.canonical_library.max_results,
+            )
             ctx.debug_metadata["canonical_library_retrieval_duration_ms"] = int(
                 round((time.perf_counter() - retrieval_started_at) * 1000)
             )
@@ -572,13 +808,32 @@ class BHFAgent:
             ctx.debug_metadata["canonical_library_prompt_tokens"] = 0
             ctx.debug_metadata["canonical_library_strong_match"] = False
             ctx.debug_metadata["canonical_library_prompt_mode"] = (
-                "disabled" if rollout_mode == "shadow" else "no_match"
+                "disabled" if rollout_mode == "shadow" else "fallback_to_model"
             )
             if rollout_mode == "shadow":
                 ctx.debug_metadata["canonical_library_shadow_prompt_mode"] = "no_match"
             ctx.debug_metadata["canonical_library_context_cache_key"] = None
             ctx.debug_metadata["canonical_library_context_cache_hit"] = False
             ctx.debug_metadata["canonical_library_context_cache_status"] = "miss"
+            ctx.debug_metadata["ckl_result_count"] = 0
+            ctx.debug_metadata["ckl_context_injected"] = False
+            ctx.debug_metadata["ckl_retrieval_usable"] = False
+            ctx.debug_metadata["fallback_to_model"] = True
+            coverage_gap = _canonical_miss_reason(
+                library=self.canonical_library,
+                canonical_query=canonical_query,
+                question=ctx.original_question,
+                canonical_context=None,
+                answer_mode=ctx.answer_mode,
+                minimum_relevance_score=self.config.canonical_library.minimum_relevance_score,
+                include_placeholders=self.config.canonical_library.include_placeholders,
+                allowed_statuses=self.config.canonical_library.allowed_statuses,
+                max_results=self.config.canonical_library.max_results,
+            )
+            ctx.debug_metadata["ckl_coverage_gap"] = coverage_gap
+            ctx.debug_metadata["fallback_reason"] = _fallback_reason_from_rejection_reasons(
+                coverage_gap.get("rejection_reasons")
+            )
             ctx.debug_metadata["canonical_library_response_model_signature"] = build_model_signature(
                 adapter=self.config.adapter,
                 base_url=self.config.base_url,
@@ -595,11 +850,14 @@ class BHFAgent:
 
         metadata = dict(canonical_context.get("metadata") or {})
         prompt_object_ids, object_ids = _canonical_library_object_ids(metadata, canonical_context)
-        strong_match = canonical_context_has_strong_match(canonical_context)
+        strong_match = canonical_context_has_strong_match(
+            canonical_context,
+            minimum_score=self.config.canonical_library.minimum_relevance_score,
+        )
         ctx.debug_metadata["canonical_library_strong_match"] = strong_match
         ctx.debug_metadata["canonical_library_loaded"] = True
         ctx.debug_metadata["canonical_library_prompt_entry_ids"] = prompt_object_ids
-        ctx.debug_metadata["canonical_library_object_ids"] = object_ids
+        ctx.debug_metadata["canonical_library_retrieved_object_ids"] = object_ids
         ctx.debug_metadata["canonical_library_retrieval_method"] = metadata.get("retrieval_method")
         ctx.debug_metadata["canonical_library_topic_count"] = metadata.get("topic_count", 0)
         ctx.debug_metadata["canonical_library_answer_mode"] = metadata.get("answer_mode")
@@ -616,6 +874,12 @@ class BHFAgent:
             ctx.debug_metadata["canonical_library_context_cache_key"] = None
             ctx.debug_metadata["canonical_library_prompt_tokens"] = 0
             ctx.canonical_library_prompt = None
+            ctx.debug_metadata["canonical_library_object_ids"] = []
+            ctx.debug_metadata["ckl_result_count"] = 0
+            ctx.debug_metadata["ckl_context_injected"] = False
+            ctx.debug_metadata["ckl_retrieval_usable"] = strong_match
+            ctx.debug_metadata["fallback_to_model"] = True
+            ctx.debug_metadata["fallback_reason"] = "shadow_mode"
             ctx.debug_metadata["canonical_library_response_model_signature"] = build_model_signature(
                 adapter=self.config.adapter,
                 base_url=self.config.base_url,
@@ -631,8 +895,10 @@ class BHFAgent:
 
         if strong_match:
             prompt_mode = "summary"
+        elif strict_ckl_only:
+            prompt_mode = "strict_no_match"
         else:
-            prompt_mode = "no_strong_match"
+            prompt_mode = "fallback_to_model"
 
         ctx.debug_metadata["canonical_library_prompt_mode"] = prompt_mode
         ctx.debug_metadata["canonical_library_context_cache_hit"] = False
@@ -668,11 +934,8 @@ class BHFAgent:
                     answer_mode=ctx.answer_mode,
                 )
                 ctx.canonical_library_prompt = canonical_prompt
-            else:
-                ctx.canonical_library_prompt = (
-                    "The Canonical Knowledge Library did not find a strong match for this question. "
-                    "Answer generally without inventing CKL facts, and state briefly if the library does not yet cover the topic."
-                )
+            elif strict_ckl_only:
+                ctx.canonical_library_prompt = STRICT_CKL_NO_MATCH_PROMPT
             ctx.debug_metadata["canonical_library_prompt_tokens"] = (
                 max(1, round(len(ctx.canonical_library_prompt) / 4))
                 if ctx.canonical_library_prompt
@@ -691,6 +954,49 @@ class BHFAgent:
                             metadata.get("retrieved_object_versions") or []
                         ),
                     },
+                )
+        if strong_match:
+            ctx.debug_metadata["canonical_library_object_ids"] = object_ids
+            ctx.debug_metadata["ckl_result_count"] = len(prompt_object_ids)
+            ctx.debug_metadata["ckl_context_injected"] = True
+            ctx.debug_metadata["ckl_retrieval_usable"] = True
+            ctx.debug_metadata["fallback_to_model"] = False
+            ctx.debug_metadata["fallback_reason"] = None
+        else:
+            ctx.debug_metadata["canonical_library_object_ids"] = []
+            ctx.debug_metadata["ckl_result_count"] = 0
+            ctx.debug_metadata["ckl_context_injected"] = False
+            ctx.debug_metadata["ckl_retrieval_usable"] = False
+            if strict_ckl_only:
+                ctx.debug_metadata["fallback_to_model"] = False
+                ctx.debug_metadata["fallback_reason"] = "strict_mode"
+                ctx.debug_metadata["ckl_coverage_gap"] = _canonical_miss_reason(
+                    library=self.canonical_library,
+                    canonical_query=canonical_query,
+                    question=ctx.original_question,
+                    canonical_context=canonical_context,
+                    answer_mode=ctx.answer_mode,
+                    minimum_relevance_score=self.config.canonical_library.minimum_relevance_score,
+                    include_placeholders=self.config.canonical_library.include_placeholders,
+                    allowed_statuses=self.config.canonical_library.allowed_statuses,
+                    max_results=self.config.canonical_library.max_results,
+                )
+            else:
+                coverage_gap = _canonical_miss_reason(
+                    library=self.canonical_library,
+                    canonical_query=canonical_query,
+                    question=ctx.original_question,
+                    canonical_context=canonical_context,
+                    answer_mode=ctx.answer_mode,
+                    minimum_relevance_score=self.config.canonical_library.minimum_relevance_score,
+                    include_placeholders=self.config.canonical_library.include_placeholders,
+                    allowed_statuses=self.config.canonical_library.allowed_statuses,
+                    max_results=self.config.canonical_library.max_results,
+                )
+                ctx.debug_metadata["ckl_coverage_gap"] = coverage_gap
+                ctx.debug_metadata["fallback_to_model"] = True
+                ctx.debug_metadata["fallback_reason"] = _fallback_reason_from_rejection_reasons(
+                    coverage_gap.get("rejection_reasons")
                 )
         ctx.debug_metadata["canonical_library_response_model_signature"] = build_model_signature(
             adapter=self.config.adapter,
@@ -967,6 +1273,8 @@ class BHFAgent:
             return ctx
         if ctx.debug_metadata.get("canonical_library_response_cache_hit"):
             return ctx
+        if ctx.errors:
+            return ctx
         response_cache_key = str(
             ctx.debug_metadata.get("canonical_library_response_cache_key") or ""
         ).strip()
@@ -1070,6 +1378,8 @@ class BHFAgent:
         response_contract: str,
     ) -> bool:
         del response_contract
+        if not bool(ctx.debug_metadata.get("ckl_context_injected")):
+            return False
         if ctx.errors:
             return True
         return not bool((ctx.raw_answer_text or "").strip())
@@ -1080,6 +1390,8 @@ class BHFAgent:
     ) -> bool:
         if ctx.validation_result is None:
             return True
+        if not bool(ctx.debug_metadata.get("ckl_context_injected")):
+            return False
         return not ctx.validation_result.passed
 
     def _deterministic_fallback_response(
@@ -1308,6 +1620,8 @@ class BHFAgent:
         ctx.raw_answer_text = chat_response.text
         ctx.warnings.extend(chat_response.warnings)
         ctx.errors.extend(chat_response.errors)
+        if chat_response.errors and not bool(ctx.debug_metadata.get("ckl_context_injected")):
+            ctx.raw_answer_text = ""
         if chat_response.provider:
             ctx.debug_metadata["provider"] = chat_response.provider
         if chat_response.model:
@@ -1786,6 +2100,20 @@ class BHFAgent:
                     ctx.debug_metadata.get("canonical_library_object_ids") or []
                 ),
                 "rollout_mode": ctx.debug_metadata.get("canonical_library_rollout_mode"),
+                "ckl": {
+                    "attempted": bool(ctx.debug_metadata.get("ckl_attempted", False)),
+                    "result_count": _safe_int(ctx.debug_metadata.get("ckl_result_count")) or 0,
+                    "context_injected": bool(
+                        ctx.debug_metadata.get("ckl_context_injected", False)
+                    ),
+                    "fallback_to_model": bool(
+                        ctx.debug_metadata.get("fallback_to_model", False)
+                    ),
+                    "fallback_reason": ctx.debug_metadata.get("fallback_reason"),
+                    "relevance_threshold": ctx.debug_metadata.get(
+                        "ckl_relevance_threshold"
+                    ),
+                },
                 "context_token_count": _safe_int(
                     ctx.debug_metadata.get("canonical_library_prompt_tokens")
                 )

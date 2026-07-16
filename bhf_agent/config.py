@@ -24,6 +24,9 @@ ALLOWED_ADAPTERS = ("openai_compatible", "ollama")
 class CanonicalLibraryConfig:
     enabled: bool = True
     shadow_mode: bool = False
+    fallback_to_model: bool = True
+    strict_mode: bool = False
+    minimum_relevance_score: float = 0.85
     cache_enabled: bool = True
     cache_max_entries: int = 512
     max_results: int = 5
@@ -36,6 +39,10 @@ class CanonicalLibraryConfig:
     )
 
     def validate(self) -> None:
+        if not 0 <= float(self.minimum_relevance_score) <= 1:
+            raise ConfigError(
+                "canonical_library.minimum_relevance_score must be between 0 and 1"
+            )
         if int(self.cache_max_entries) <= 0:
             raise ConfigError(
                 "canonical_library.cache_max_entries must be greater than 0"
@@ -245,6 +252,18 @@ def _canonical_library_config_from_value(
             shadow_mode=_coerce_bool(
                 merged["shadow_mode"],
                 field_name="canonical_library.shadow_mode",
+            ),
+            fallback_to_model=_coerce_bool(
+                merged["fallback_to_model"],
+                field_name="canonical_library.fallback_to_model",
+            ),
+            strict_mode=_coerce_bool(
+                merged["strict_mode"],
+                field_name="canonical_library.strict_mode",
+            ),
+            minimum_relevance_score=_coerce_float(
+                merged["minimum_relevance_score"],
+                field_name="canonical_library.minimum_relevance_score",
             ),
             cache_enabled=_coerce_bool(
                 merged["cache_enabled"],

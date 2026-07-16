@@ -100,6 +100,9 @@ class AgentConfigTests(unittest.TestCase):
         self.assertEqual(config.memory_max_turns, 8)
         self.assertTrue(config.canonical_library.enabled)
         self.assertFalse(config.canonical_library.shadow_mode)
+        self.assertTrue(config.canonical_library.fallback_to_model)
+        self.assertFalse(config.canonical_library.strict_mode)
+        self.assertEqual(config.canonical_library.minimum_relevance_score, 0.85)
         self.assertFalse(config.canonical_library.include_placeholders)
         self.assertEqual(
             config.canonical_library.allowed_statuses,
@@ -126,6 +129,9 @@ class AgentConfigTests(unittest.TestCase):
                 "canonical_library": {
                     "enabled": True,
                     "shadow_mode": True,
+                    "fallback_to_model": False,
+                    "strict_mode": True,
+                    "minimum_relevance_score": 0.9,
                     "max_results": 4,
                     "max_context_tokens": 900,
                     "include_placeholders": False,
@@ -136,6 +142,9 @@ class AgentConfigTests(unittest.TestCase):
 
         self.assertTrue(config.canonical_library.enabled)
         self.assertTrue(config.canonical_library.shadow_mode)
+        self.assertFalse(config.canonical_library.fallback_to_model)
+        self.assertTrue(config.canonical_library.strict_mode)
+        self.assertEqual(config.canonical_library.minimum_relevance_score, 0.9)
         self.assertEqual(config.canonical_library.max_results, 4)
         self.assertEqual(config.canonical_library.max_context_tokens, 900)
         self.assertFalse(config.canonical_library.include_placeholders)
@@ -148,6 +157,9 @@ class AgentConfigTests(unittest.TestCase):
             canonical_library=CanonicalLibraryConfig(
                 enabled=False,
                 shadow_mode=True,
+                fallback_to_model=False,
+                strict_mode=True,
+                minimum_relevance_score=0.9,
                 cache_enabled=False,
                 cache_max_entries=96,
                 max_results=3,
@@ -162,6 +174,9 @@ class AgentConfigTests(unittest.TestCase):
         self.assertEqual(config.to_dict()["canonical_library"]["max_results"], 3)
         self.assertFalse(config.to_dict()["canonical_library"]["enabled"])
         self.assertTrue(config.to_dict()["canonical_library"]["shadow_mode"])
+        self.assertFalse(config.to_dict()["canonical_library"]["fallback_to_model"])
+        self.assertTrue(config.to_dict()["canonical_library"]["strict_mode"])
+        self.assertEqual(config.to_dict()["canonical_library"]["minimum_relevance_score"], 0.9)
         self.assertEqual(
             config.to_dict()["canonical_library"]["allowed_statuses"],
             ("approved",),
@@ -199,6 +214,21 @@ class AgentConfigTests(unittest.TestCase):
                     "profile": "standard",
                     "canonical_library": {
                         "cache_max_entries": 0,
+                    },
+                }
+            )
+
+    def test_config_rejects_invalid_canonical_library_relevance_threshold(self):
+        with self.assertRaisesRegex(ConfigError, "minimum_relevance_score"):
+            AgentConfig.from_mapping(
+                {
+                    "config_version": 1,
+                    "adapter": "openai_compatible",
+                    "base_url": "http://localhost:1234/v1",
+                    "model": "local-model",
+                    "profile": "standard",
+                    "canonical_library": {
+                        "minimum_relevance_score": 1.5,
                     },
                 }
             )

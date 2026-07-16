@@ -178,6 +178,7 @@ def job_error_message(job: Any) -> str:
 
 def result_metadata(result: Any) -> dict[str, Any]:
     metadata = getattr(result, "model_metadata", {}) or {}
+    pipeline = metadata.get("pipeline") if isinstance(metadata.get("pipeline"), dict) else {}
     validation = getattr(result, "validation_result", None)
     reference = getattr(result, "reference_context", None)
     genre = getattr(result, "genre_context", None)
@@ -192,6 +193,9 @@ def result_metadata(result: Any) -> dict[str, Any]:
         "Local knowledge used": join_or_none(metadata.get("local_knowledge_keys") or []),
         "Canonical object IDs": join_or_none(metadata.get("canonical_library_object_ids") or []),
         "Canonical retrieval method": metadata.get("canonical_library_retrieval_method") or "none",
+        "CKL context injected": "yes" if pipeline.get("ckl_context_injected") else "no",
+        "CKL fallback reason": pipeline.get("fallback_reason") or "none",
+        "CKL result count": pipeline.get("ckl_result_count") or 0,
         "Validation warnings": join_or_none(getattr(validation, "warnings", [])),
         "Adapter errors": join_or_none(getattr(result, "errors", [])),
     }
