@@ -8,11 +8,11 @@
     "megiddo excavations excavation",
     "megiddo excavations find"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "Megiddo stratigraphic sequence illuminates the biblical world through material remains and historical context.",
+  "historical_context": "Megiddo Excavations helps anchor the biblical world in physical evidence and archaeological context.",
+  "ancient_near_east_context": "The item belongs to the broader imperial, cultic, and urban world of the ancient Near East and the biblical periods reflected in the dataset.",
+  "literary_context": "The biblical text uses this kind of evidence as historical background rather than as a replacement for Scripture.",
+  "covenantal_significance": "Megiddo Excavations helps anchor biblical claims in historical reality while reminding readers that archaeology supports rather than replaces interpretation.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -24,10 +24,67 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "The stratigraphy is secure, but matching strata to specific biblical events requires caution.",
+    "megiddo",
+    "Use the item as context for the biblical text, not as a shortcut around it."
+  ],
+  "common_questions": [
+    "What does Megiddo Excavations teach?",
+    "How does Megiddo Excavations fit the biblical storyline?",
+    "What should readers avoid when interpreting Megiddo Excavations?"
+  ],
+  "sources": [
+    "Megiddo stratigraphic sequence",
+    "Joshua 12:7-24",
+    "1 Kings 9:15-19",
+    "Excavation report and stratigraphic study"
+  ],
+  "importance": 90,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "scripture_references": [
+    {
+      "reference": "Joshua 12:7-24",
+      "relationship": "primary",
+      "notes": ""
+    },
+    {
+      "reference": "1 Kings 9:15-19",
+      "relationship": "supporting",
+      "notes": ""
+    },
+    {
+      "reference": "Revelation 16:12-16",
+      "relationship": "supporting",
+      "notes": ""
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "joshua",
+      "relationship": "historical-background",
+      "weight": 10,
+      "notes": ""
+    },
+    {
+      "id": "1-kings",
+      "relationship": "historical-background",
+      "weight": 9,
+      "notes": ""
+    },
+    {
+      "id": "revelation",
+      "relationship": "historical-background",
+      "weight": 8,
+      "notes": ""
+    }
+  ],
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-16",
+  "confidence": "medium"
 }

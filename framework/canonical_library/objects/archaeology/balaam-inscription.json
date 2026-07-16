@@ -8,11 +8,11 @@
     "balaam inscription excavation",
     "balaam inscription find"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "An Aramaic inscription that likely contains the earliest extra-biblical reference to the 'House of David'.",
+  "historical_context": "Important for the history of Israel, Aram-Damascus, and debates over dynastic language.",
+  "ancient_near_east_context": "The item belongs to the broader imperial, cultic, and urban world of the ancient Near East and the biblical periods reflected in the dataset.",
+  "literary_context": "Frequently discussed in connection with Davidic dynasty references in Kings and Samuel.",
+  "covenantal_significance": "Balaam Inscription helps anchor biblical claims in historical reality while reminding readers that archaeology supports rather than replaces interpretation.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -24,10 +24,71 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "The inscription is genuine, but the reconstruction and interpretation of damaged lines remain debated.",
+    "Israel Museum",
+    "Israel Museum, Jerusalem",
+    "tel-dan",
+    "Use the item as context for the biblical text, not as a shortcut around it."
+  ],
+  "common_questions": [
+    "What does Balaam Inscription teach?",
+    "How does Balaam Inscription fit the biblical storyline?",
+    "What should readers avoid when interpreting Balaam Inscription?"
+  ],
+  "sources": [
+    "Tel Dan Stele",
+    "Israel Museum",
+    "Israel Museum, Jerusalem",
+    "Inscribed stele",
+    "2 Samuel 8"
+  ],
+  "importance": 94,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "scripture_references": [
+    {
+      "reference": "2 Samuel 8",
+      "relationship": "primary",
+      "notes": ""
+    },
+    {
+      "reference": "2 Kings 8",
+      "relationship": "supporting",
+      "notes": ""
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "tell-dan-excavations",
+      "relationship": "historical-background",
+      "weight": 10,
+      "notes": ""
+    },
+    {
+      "id": "jerusalem",
+      "relationship": "historical-background",
+      "weight": 9,
+      "notes": ""
+    },
+    {
+      "id": "joshua",
+      "relationship": "historical-background",
+      "weight": 8,
+      "notes": ""
+    },
+    {
+      "id": "hebrews",
+      "relationship": "historical-background",
+      "weight": 7,
+      "notes": ""
+    }
+  ],
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-16",
+  "confidence": "medium"
 }

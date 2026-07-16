@@ -158,6 +158,27 @@ class CanonicalInventoryTests(unittest.TestCase):
                 self.assertIsNotNone(obj.last_reviewed, obj.id)
                 self.assertGreater(obj.importance, 0, obj.id)
 
+    def test_wave4_theology_themes_prophecy_word_studies_archaeology_and_faq_are_populated(
+        self,
+    ) -> None:
+        for category in ("theology", "themes", "prophecy", "word_studies", "archaeology", "faq"):
+            for path in sorted((OBJECTS_ROOT / category).glob("*.json")):
+                obj = validate_object(
+                    json.loads(path.read_text(encoding="utf-8")),
+                    path=path.relative_to(CKL_ROOT).as_posix(),
+                )
+
+                self.assertEqual(obj.content_status, "complete", obj.id)
+                self.assertNotEqual(obj.summary, "", obj.id)
+                self.assertNotEqual(obj.sources, [], obj.id)
+                self.assertNotEqual(obj.scripture_references, [], obj.id)
+                self.assertNotEqual(obj.common_questions, [], obj.id)
+                self.assertNotEqual(obj.interpretive_notes, [], obj.id)
+                self.assertNotEqual(obj.review_status, "unreviewed", obj.id)
+                self.assertGreaterEqual(len(obj.reviewed_by), 1, obj.id)
+                self.assertIsNotNone(obj.last_reviewed, obj.id)
+                self.assertGreater(obj.importance, 0, obj.id)
+
     def test_manifest_counts_match_inventory(self) -> None:
         manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
         actual_counts = Counter(obj.type for obj in self.library.objects_by_id.values())

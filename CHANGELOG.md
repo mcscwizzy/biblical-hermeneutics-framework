@@ -15,6 +15,7 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
 
 - **CKL Bible-book record metadata**: the 66 book records now carry book-level authorship, date-range, original-audience, historical-setting, genre, structure, thematic, canonical-placement, key-entity, interpretive-dispute, and primary-source fields so the book layer can be searched and ranked with consistent metadata.
 - **CKL wave 3 content population**: the people, places, events, and institutions families now carry deterministic profile-based content, explicit scripture references, and populated relationship links so the core narrative and institutional layer can be searched before model calls.
+- **CKL wave 4 content population**: the theology, themes, prophecy, word studies, and archaeology families are now fully populated with deterministic summaries, scriptural anchors, review metadata, and relationship links; the FAQ bridge layer remains complete.
 
 ## [0.2.0] — 2026-07-14
 

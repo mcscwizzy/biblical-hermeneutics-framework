@@ -8,11 +8,11 @@
     "pilate stone excavation",
     "pilate stone find"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "A Latin inscription naming Pontius Pilate and documenting Roman administration in Judea.",
+  "historical_context": "Confirms the historical name and title of Pilate as prefect in Judea.",
+  "ancient_near_east_context": "The item belongs to the broader imperial, cultic, and urban world of the ancient Near East and the biblical periods reflected in the dataset.",
+  "literary_context": "A key artifact for the historical setting of the Passion narratives.",
+  "covenantal_significance": "Pilate Stone helps anchor biblical claims in historical reality while reminding readers that archaeology supports rather than replaces interpretation.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -24,10 +24,75 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "The inscription is clear, but it does not by itself explain Pilate's actions in the Gospels.",
+    "Israel Museum",
+    "Israel Museum, Jerusalem",
+    "caesarea-maritima",
+    "Use the item as context for the biblical text, not as a shortcut around it."
+  ],
+  "common_questions": [
+    "What does Pilate Stone teach?",
+    "How does Pilate Stone fit the biblical storyline?",
+    "What should readers avoid when interpreting Pilate Stone?"
+  ],
+  "sources": [
+    "Pilate Stone",
+    "Israel Museum",
+    "Israel Museum, Jerusalem",
+    "Latin inscription",
+    "Matthew 27"
+  ],
+  "importance": 94,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "scripture_references": [
+    {
+      "reference": "Matthew 27",
+      "relationship": "primary",
+      "notes": ""
+    },
+    {
+      "reference": "Mark 15",
+      "relationship": "supporting",
+      "notes": ""
+    },
+    {
+      "reference": "Luke 23",
+      "relationship": "supporting",
+      "notes": ""
+    },
+    {
+      "reference": "John 18-19",
+      "relationship": "supporting",
+      "notes": ""
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "caesarea-maritima-excavations",
+      "relationship": "historical-background",
+      "weight": 10,
+      "notes": ""
+    },
+    {
+      "id": "matthew",
+      "relationship": "historical-background",
+      "weight": 9,
+      "notes": ""
+    },
+    {
+      "id": "john",
+      "relationship": "historical-background",
+      "weight": 8,
+      "notes": ""
+    }
+  ],
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-16",
+  "confidence": "medium"
 }

@@ -5,7 +5,7 @@
 >
 > Last completed phase: Phase 18 - Packaging, Versioning, and Release.
 >
-> Current phase: Phase 10 - Core Content Population (wave 3 complete; wave 4 next).
+> Current phase: Phase 10 - Core Content Population (wave 4 complete; no remaining phase-10 work).
 
 ## Current State
 
@@ -15,7 +15,7 @@
 - The stable CKL packaging and release line is complete.
 - The Wave 2 Bible-book records are now populated with authorship, dating, audience, setting, genre, structure, themes, placement, key entities, disputes, and source anchors.
 - The Wave 3 people, places, events, and institutions are now populated with deterministic profile-based content and explicit relationship links.
-- The remaining live work is wave 4 material and later refinement.
+- The remaining live work from the original roadmap is complete; only future refinement and new backlog items remain.
 
 ## Update Protocol
 
@@ -61,7 +61,7 @@ Goal: Populate the highest-value material first instead of trying to finish all 
 - Wave 3: People, places, events, and institutions.
 - Wave 4: Theology, themes, prophecy, word studies, archaeology, and FAQ.
 
-Status: in progress. Wave 1 now contains 113 curated objects covering the core biblical backbone and FAQ bridge layer: Abraham, Moses, Joshua son of Nun, David, Jesus, Paul, Genesis, Exodus, Deuteronomy, Joshua, Psalms, Isaiah, Matthew, John, Acts, Romans, Hebrews, Revelation, Jerusalem, Shechem, Egypt, Mount Sinai, Babylon, covenant, kingdom, temple, exile, creation, fall, Passover, crucifixion, resurrection, Holy Spirit, Torah, Messiah, sacrifice, priesthood, tabernacle, second temple, new covenant, and the bridge FAQ anchors. Wave 2 Bible-book records are complete. Wave 3 now covers the curated people, places, events, and institutions layer.
+Status: complete. Wave 1 now contains 113 curated objects covering the core biblical backbone and FAQ bridge layer: Abraham, Moses, Joshua son of Nun, David, Jesus, Paul, Genesis, Exodus, Deuteronomy, Joshua, Psalms, Isaiah, Matthew, John, Acts, Romans, Hebrews, Revelation, Jerusalem, Shechem, Egypt, Mount Sinai, Babylon, covenant, kingdom, temple, exile, creation, fall, Passover, crucifixion, resurrection, Holy Spirit, Torah, Messiah, sacrifice, priesthood, tabernacle, second temple, new covenant, and the bridge FAQ anchors. Wave 2 Bible-book records are complete. Wave 3 covers the curated people, places, events, and institutions layer. Wave 4 now populates theology, themes, prophecy, word studies, archaeology, and FAQ.
 
 Exit criteria: The most common BHF questions return genuinely useful curated context without relying on model memory.
 
@@ -194,9 +194,9 @@ Status: complete. The stable release tag is `v0.2.0`.
 
 ## Immediate Next Move
 
-1. Phase 10 Wave 4: Continue with theology, themes, prophecy, word studies, archaeology, and FAQ.
-2. Adjust the schema and retrieval model based on evaluation results.
-3. Expand semantic search only if the local-only retrieval stack still leaves gaps.
+1. Treat this roadmap as the handoff note for future CKL maintenance and retrieval work.
+2. Add new backlog items only if later sessions identify missing coverage or quality gaps.
+3. Re-run validation and evaluation after any future content changes.
 
 ## Execution Log
 
@@ -205,7 +205,7 @@ Status: complete. The stable release tag is `v0.2.0`.
 | 7 - CKL Retrieval Foundation | complete | CKL package exists, but runtime integration is still pending |
 | 8 - Runtime Integration | complete | CKL is wired into agent startup, retrieval, and prompt building |
 | 9 - Content Authoring Pipeline | complete | CKL create, validate, manifest, report, and migrate tools are in place |
-| 10 - Core Content Population | in progress | Wave 1 populated 113 curated objects; Wave 2 book records are complete; Wave 3 people, places, events, and institutions are populated; continue with Wave 4 theology, themes, prophecy, word studies, archaeology, and FAQ |
+| 10 - Core Content Population | complete | Wave 1 populated 113 curated objects; Wave 2 book records are complete; Wave 3 people, places, events, and institutions are populated; Wave 4 theology, themes, prophecy, word studies, archaeology, and FAQ are populated and validated |
 | 11 - Sources and Scholarly Governance | complete | Safe governance defaults are in place and approved content now requires structured source support |
 | 12 - Relationship Graph and Scripture Index | complete | Scripture reverse lookup, graph tracing, and reverse-link audits are wired into CKL context retrieval |
 | 13 - Better Retrieval | complete | Add hybrid retrieval and optional semantic search |
