@@ -63,6 +63,14 @@ SOURCE_TYPE_VALUES: tuple[str, ...] = (
     "other",
 )
 
+PROVENANCE_TYPE_VALUES: tuple[str, ...] = (
+    "ai",
+    "human",
+    "import",
+    "migration",
+    "other",
+)
+
 LEGACY_SOURCE_TYPE_ALIASES: dict[str, str] = {
     "biblical-text": "scripture",
     "book": "academic-book",
@@ -204,9 +212,12 @@ def default_context_applicability() -> dict[str, bool]:
 DEFAULT_GOVERNANCE_METADATA: dict[str, Any] = {
     "content_status": "placeholder",
     "review_status": "unreviewed",
+    "generated_by": [],
+    "edited_by": [],
     "reviewed_by": [],
     "last_reviewed": None,
     "confidence": "unrated",
+    "human_review_required": True,
 }
 
 DEFAULT_CANONICAL_METADATA: dict[str, Any] = {
@@ -324,6 +335,10 @@ LIST_FIELDS: tuple[str, ...] = (
     "common_questions",
 )
 
+UNIQUE_NORMALIZED_LIST_FIELDS: tuple[str, ...] = ("major_themes",)
+
+PROVENANCE_FIELDS: tuple[str, ...] = ("generated_by",)
+
 RELATED_OBJECT_FIELDS: tuple[str, ...] = ("related_objects",)
 
 SCRIPTURE_REFERENCE_FIELDS: tuple[str, ...] = ("scripture_references",)
@@ -349,18 +364,22 @@ SCRIPTURE_REFERENCE_REQUIRED_FIELDS: tuple[str, ...] = (
 
 INT_FIELDS: tuple[str, ...] = ("importance",)
 
+BOOLEAN_FIELDS: tuple[str, ...] = ("human_review_required",)
+
 OPTIONAL_FIELDS: tuple[str, ...] = ("last_reviewed",)
 
-GOVERNANCE_LIST_FIELDS: tuple[str, ...] = ("reviewed_by",)
+GOVERNANCE_LIST_FIELDS: tuple[str, ...] = ("edited_by", "reviewed_by")
 
 ALL_FIELDS: tuple[str, ...] = (
     STRING_FIELDS
     + LIST_FIELDS
+    + PROVENANCE_FIELDS
     + MAPPING_FIELDS
     + RELATED_OBJECT_FIELDS
     + SCRIPTURE_REFERENCE_FIELDS
     + SOURCE_FIELDS
     + INT_FIELDS
+    + BOOLEAN_FIELDS
     + OPTIONAL_FIELDS
     + GOVERNANCE_LIST_FIELDS
 )
@@ -560,6 +579,23 @@ class CanonicalSource:
 
 
 @dataclass(frozen=True)
+class CanonicalProvenance:
+    type: str
+    name: str
+    workflow: str
+    date: str
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+    @classmethod
+    def from_mapping(cls, mapping: Mapping[str, Any]) -> "CanonicalProvenance":
+        if isinstance(mapping, CanonicalProvenance):
+            return mapping
+        return validate_provenance_entry(mapping)
+
+
+@dataclass(frozen=True)
 class CanonicalInterpretiveNote:
     note: str
     note_type: str = "textual-observation"
@@ -636,9 +672,12 @@ class CanonicalObject:
     object_version: str = SUPPORTED_OBJECT_VERSION
     content_status: str = DEFAULT_GOVERNANCE_METADATA["content_status"]
     review_status: str = DEFAULT_GOVERNANCE_METADATA["review_status"]
+    generated_by: list[CanonicalProvenance] = field(default_factory=list)
+    edited_by: list[str] = field(default_factory=list)
     reviewed_by: list[str] = field(default_factory=list)
     last_reviewed: str | None = DEFAULT_GOVERNANCE_METADATA["last_reviewed"]
     confidence: str = DEFAULT_GOVERNANCE_METADATA["confidence"]
+    human_review_required: bool = True
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -656,6 +695,12 @@ class CanonicalObject:
         for field_name in ALL_FIELDS:
             if field_name == "related_objects":
                 values[field_name] = validate_related_objects_field(
+                    normalized,
+                    path=path,
+                    object_id=object_id,
+                )
+            elif field_name == "generated_by":
+                values[field_name] = normalize_generated_by_field(
                     normalized,
                     path=path,
                     object_id=object_id,
@@ -693,6 +738,248 @@ def _apply_governance_defaults(data: Mapping[str, Any]) -> dict[str, Any]:
                 **default_context_applicability(),
                 **dict(normalized[field_name]),
             }
+    normalized = _normalize_governance_metadata(normalized)
+    return normalized
+
+
+def _normalize_provenance_workflow_label(value: Any) -> str:
+    return re.sub(r"[\s_]+", "-", str(value).strip().lower())
+
+
+def _is_legacy_ai_reviewer(value: Any) -> bool:
+    normalized = str(value or "").strip().lower()
+    return bool(normalized) and normalized.startswith("codex")
+
+
+def _provenance_date(data: Mapping[str, Any]) -> str:
+    last_reviewed = data.get("last_reviewed")
+    if isinstance(last_reviewed, str) and re.fullmatch(r"\d{4}-\d{2}-\d{2}", last_reviewed):
+        return last_reviewed
+    return date.today().isoformat()
+
+
+def _normalize_provenance_dict(
+    data: Mapping[str, Any],
+    *,
+    path: str | Path | None = None,
+    object_id: str | None = None,
+) -> CanonicalProvenance:
+    if isinstance(data, CanonicalProvenance):
+        return data
+    if not isinstance(data, Mapping):
+        raise _expected_actual_error(
+            "generated_by",
+            "list[dict]",
+            data,
+            path=path,
+            object_id=object_id,
+        )
+
+    unknown_fields = sorted(set(data) - {"type", "name", "workflow", "date"})
+    if unknown_fields:
+        raise _error(
+            f'unknown provenance field(s): {", ".join(unknown_fields)}',
+            path=path,
+            object_id=object_id,
+        )
+
+    provenance_type = _normalize_provenance_workflow_label(data.get("type"))
+    if provenance_type not in PROVENANCE_TYPE_VALUES:
+        raise _error(
+            f'field "type" must be one of {", ".join(PROVENANCE_TYPE_VALUES)}',
+            path=path,
+            object_id=object_id,
+        )
+
+    name = data.get("name")
+    workflow = data.get("workflow")
+    provenance_date = data.get("date")
+    for field_name, value in (("name", name), ("workflow", workflow), ("date", provenance_date)):
+        if not isinstance(value, str) or not value.strip():
+            raise _error(
+                f'field "{field_name}" is required and must be a non-empty string',
+                path=path,
+                object_id=object_id,
+            )
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", provenance_date):
+        raise _error(
+            'field "date" must use YYYY-MM-DD format',
+            path=path,
+            object_id=object_id,
+        )
+    try:
+        date.fromisoformat(provenance_date)
+    except ValueError as exc:
+        raise _error(
+            'field "date" must be a valid YYYY-MM-DD date',
+            path=path,
+            object_id=object_id,
+        ) from exc
+
+    return CanonicalProvenance(
+        type=provenance_type,
+        name=name.strip(),
+        workflow=_normalize_provenance_workflow_label(workflow),
+        date=provenance_date,
+    )
+
+
+def validate_provenance_entry(
+    data: Mapping[str, Any],
+    *,
+    path: str | Path | None = None,
+    object_id: str | None = None,
+) -> CanonicalProvenance:
+    return _normalize_provenance_dict(data, path=path, object_id=object_id)
+
+
+def normalize_generated_by_field(
+    data: Mapping[str, Any],
+    *,
+    path: str | Path | None = None,
+    object_id: str | None = None,
+) -> list[CanonicalProvenance]:
+    if "generated_by" not in data:
+        return []
+    generated_by = data["generated_by"]
+    if generated_by is None:
+        raise _expected_actual_error(
+            "generated_by",
+            "list[dict]",
+            generated_by,
+            path=path,
+            object_id=object_id,
+        )
+    if not isinstance(generated_by, list):
+        raise _expected_actual_error(
+            "generated_by",
+            "list[dict]",
+            generated_by,
+            path=path,
+            object_id=object_id,
+        )
+
+    normalized_generated_by: list[CanonicalProvenance] = []
+    for item in generated_by:
+        normalized_generated_by.append(
+            validate_provenance_entry(item, path=path, object_id=object_id)
+        )
+    return normalized_generated_by
+
+
+def normalize_string_list_field(
+    values: Any,
+    *,
+    field_name: str,
+    path: str | Path | None = None,
+    object_id: str | None = None,
+) -> list[str]:
+    if values is None:
+        raise _expected_actual_error(field_name, "list[str]", values, path=path, object_id=object_id)
+    if not isinstance(values, list):
+        raise _expected_actual_error(field_name, "list[str]", values, path=path, object_id=object_id)
+
+    normalized: list[str] = []
+    for value in values:
+        if not isinstance(value, str):
+            raise _error(
+                f'field "{field_name}" must be a list of strings',
+                path=path,
+                object_id=object_id,
+            )
+        normalized_value = value.strip()
+        if not normalized_value:
+            raise _error(
+                f'field "{field_name}" cannot contain blank values',
+                path=path,
+                object_id=object_id,
+            )
+        if normalized_value not in normalized:
+            normalized.append(normalized_value)
+    return normalized
+
+
+def _build_ai_provenance_record(
+    *,
+    data: Mapping[str, Any],
+) -> dict[str, Any]:
+    return {
+        "type": "ai",
+        "name": "codex",
+        "workflow": "ane-hebraic-context-expansion",
+        "date": _provenance_date(data),
+    }
+
+
+def _merge_unique_provenance(
+    existing: list[CanonicalProvenance],
+    values: Sequence[Mapping[str, Any]],
+) -> list[CanonicalProvenance]:
+    seen = {
+        (
+            item.type,
+            item.name,
+            item.workflow,
+            item.date,
+        )
+        for item in existing
+    }
+    for value in values:
+        provenance = validate_provenance_entry(value)
+        key = (provenance.type, provenance.name, provenance.workflow, provenance.date)
+        if key in seen:
+            continue
+        existing.append(provenance)
+        seen.add(key)
+    return existing
+
+
+def _normalize_governance_metadata(data: Mapping[str, Any]) -> dict[str, Any]:
+    normalized = dict(data)
+    object_id = normalized.get("id") if isinstance(normalized.get("id"), str) else None
+
+    raw_generated_by = normalized.get("generated_by")
+    generated_by = [] if raw_generated_by is None else normalize_generated_by_field(
+        normalized,
+        object_id=object_id,
+    )
+
+    raw_edited_by = normalized.get("edited_by", [])
+    edited_by = normalize_string_list_field(
+        raw_edited_by,
+        field_name="edited_by",
+        object_id=object_id,
+    )
+
+    raw_reviewed_by = normalized.get("reviewed_by", [])
+    reviewed_by = normalize_string_list_field(
+        raw_reviewed_by,
+        field_name="reviewed_by",
+        object_id=object_id,
+    )
+
+    migrated_reviewers: list[str] = []
+    human_reviewers: list[str] = []
+    for reviewer in reviewed_by:
+        if _is_legacy_ai_reviewer(reviewer):
+            migrated_reviewers.append(reviewer)
+        else:
+            human_reviewers.append(reviewer)
+
+    if migrated_reviewers:
+        migrated_records = [
+            _build_ai_provenance_record(data=normalized)
+            for _reviewer in migrated_reviewers
+        ]
+        generated_by = _merge_unique_provenance(generated_by, migrated_records)
+
+    normalized["generated_by"] = [item.to_dict() for item in generated_by]
+    normalized["edited_by"] = edited_by
+    normalized["reviewed_by"] = human_reviewers
+
+    review_status = str(normalized.get("review_status") or "unreviewed").strip().lower()
+    normalized["human_review_required"] = review_status in {"unreviewed", "in_review"} or not human_reviewers
+
     return normalized
 
 
@@ -765,6 +1052,26 @@ def validate_field_types(
                 path=path,
                 object_id=object_id,
             )
+    for field_name in PROVENANCE_FIELDS:
+        if field_name not in data:
+            continue
+        value = data[field_name]
+        if not isinstance(value, list):
+            raise _expected_actual_error(
+                field_name,
+                "list[dict]",
+                value,
+                path=path,
+                object_id=object_id,
+            )
+        if any(not isinstance(item, Mapping) for item in value):
+            raise _expected_actual_error(
+                field_name,
+                "list[dict]",
+                value,
+                path=path,
+                object_id=object_id,
+            )
     for field_name in LIST_FIELDS:
         if field_name not in data:
             continue
@@ -805,6 +1112,36 @@ def validate_field_types(
             raise _expected_actual_error(
                 field_name,
                 "list[str]",
+                value,
+                path=path,
+                object_id=object_id,
+            )
+    for field_name in GOVERNANCE_LIST_FIELDS:
+        if field_name not in data:
+            continue
+        value = data[field_name]
+        if not isinstance(value, list):
+            raise _expected_actual_error(
+                field_name,
+                "list[str]",
+                value,
+                path=path,
+                object_id=object_id,
+            )
+        if any(not isinstance(item, str) for item in value):
+            raise _error(
+                f'field "{field_name}" must be a list of strings',
+                path=path,
+                object_id=object_id,
+            )
+    for field_name in BOOLEAN_FIELDS:
+        if field_name not in data:
+            continue
+        value = data[field_name]
+        if not isinstance(value, bool):
+            raise _expected_actual_error(
+                field_name,
+                "bool",
                 value,
                 path=path,
                 object_id=object_id,
@@ -1474,11 +1811,12 @@ def validate_approved_content_requirements(
     *,
     path: str | Path | None = None,
 ) -> None:
-    object_id = data.get("id") if isinstance(data.get("id"), str) else None
-    if data.get("review_status") != "approved":
+    normalized = _normalize_governance_metadata(data)
+    object_id = normalized.get("id") if isinstance(normalized.get("id"), str) else None
+    if normalized.get("review_status") != "approved":
         return
 
-    summary = data.get("summary")
+    summary = normalized.get("summary")
     if not isinstance(summary, str) or not summary.strip():
         raise _error(
             'field "summary" is required when review_status is "approved"',
@@ -1486,7 +1824,7 @@ def validate_approved_content_requirements(
             object_id=object_id,
         )
 
-    scripture_references = data.get("scripture_references")
+    scripture_references = normalized.get("scripture_references")
     if not isinstance(scripture_references, list) or not scripture_references:
         raise _error(
             'field "scripture_references" must contain at least one reference when review_status is "approved"',
@@ -1494,14 +1832,14 @@ def validate_approved_content_requirements(
             object_id=object_id,
         )
 
-    sources = data.get("sources")
+    sources = normalized.get("sources")
     if not isinstance(sources, list) or not sources:
         raise _error(
             'field "sources" must contain at least one source when review_status is "approved"',
             path=path,
             object_id=object_id,
         )
-    normalized_sources = normalize_sources_field(data, path=path, object_id=object_id)
+    normalized_sources = normalize_sources_field(normalized, path=path, object_id=object_id)
     if not any(
         source.source_type in SUBSTANTIVE_SOURCE_TYPE_VALUES for source in normalized_sources
     ):
@@ -1511,10 +1849,17 @@ def validate_approved_content_requirements(
             object_id=object_id,
         )
 
-    confidence = data.get("confidence")
+    confidence = normalized.get("confidence")
     if confidence == "unrated":
         raise _error(
             'field "confidence" must not be "unrated" when review_status is "approved"',
+            path=path,
+            object_id=object_id,
+        )
+
+    if normalized.get("human_review_required") is True:
+        raise _error(
+            'field "human_review_required" must be false when review_status is "approved"',
             path=path,
             object_id=object_id,
         )
@@ -1525,14 +1870,15 @@ def validate_governance_metadata(
     *,
     path: str | Path | None = None,
 ) -> None:
-    object_id = data.get("id") if isinstance(data.get("id"), str) else None
+    normalized = _normalize_governance_metadata(data)
+    object_id = normalized.get("id") if isinstance(normalized.get("id"), str) else None
 
     for field_name, allowed_values in (
         ("content_status", CONTENT_STATUS_VALUES),
         ("review_status", REVIEW_STATUS_VALUES),
         ("confidence", CONFIDENCE_VALUES),
     ):
-        value = data.get(field_name)
+        value = normalized.get(field_name)
         if not isinstance(value, str) or not value.strip():
             raise _error(
                 f'field "{field_name}" is required and must be a non-empty string',
@@ -1546,10 +1892,38 @@ def validate_governance_metadata(
                 object_id=object_id,
             )
 
-    content_status = data.get("content_status")
-    review_status = data.get("review_status")
+    content_status = normalized.get("content_status")
+    review_status = normalized.get("review_status")
 
-    reviewed_by = data.get("reviewed_by")
+    generated_by = normalized.get("generated_by")
+    if not isinstance(generated_by, list):
+        raise _expected_actual_error(
+            "generated_by",
+            "list[dict]",
+            generated_by,
+            path=path,
+            object_id=object_id,
+        )
+    for item in generated_by:
+        validate_provenance_entry(item, path=path, object_id=object_id)
+
+    edited_by = normalized.get("edited_by")
+    if not isinstance(edited_by, list):
+        raise _expected_actual_error(
+            "edited_by",
+            "list[str]",
+            edited_by,
+            path=path,
+            object_id=object_id,
+        )
+    if any(not isinstance(item, str) for item in edited_by):
+        raise _error(
+            'field "edited_by" must be a list of strings',
+            path=path,
+            object_id=object_id,
+        )
+
+    reviewed_by = normalized.get("reviewed_by")
     if not isinstance(reviewed_by, list):
         raise _expected_actual_error(
             "reviewed_by",
@@ -1565,7 +1939,17 @@ def validate_governance_metadata(
             object_id=object_id,
         )
 
-    last_reviewed = data.get("last_reviewed")
+    human_review_required = normalized.get("human_review_required")
+    if not isinstance(human_review_required, bool):
+        raise _expected_actual_error(
+            "human_review_required",
+            "bool",
+            human_review_required,
+            path=path,
+            object_id=object_id,
+        )
+
+    last_reviewed = normalized.get("last_reviewed")
     if last_reviewed is not None:
         if not isinstance(last_reviewed, str):
             raise _expected_actual_error(
@@ -1590,16 +1974,16 @@ def validate_governance_metadata(
                 object_id=object_id,
             ) from exc
 
-    if review_status != "unreviewed":
+    if review_status in {"reviewed", "approved", "rejected"}:
         if not reviewed_by:
             raise _error(
-                'field "reviewed_by" must contain at least one reviewer when review_status is not "unreviewed"',
+                'field "reviewed_by" must contain at least one reviewer when review_status is "reviewed", "approved", or "rejected"',
                 path=path,
                 object_id=object_id,
             )
         if last_reviewed is None:
             raise _error(
-                'field "last_reviewed" is required when review_status is not "unreviewed"',
+                'field "last_reviewed" is required when review_status is "reviewed", "approved", or "rejected"',
                 path=path,
                 object_id=object_id,
             )
@@ -1607,6 +1991,20 @@ def validate_governance_metadata(
     if review_status == "approved" and content_status != "complete":
         raise _error(
             'field "content_status" must be "complete" when review_status is "approved"',
+            path=path,
+            object_id=object_id,
+        )
+
+    if review_status in {"reviewed", "approved", "rejected"} and human_review_required:
+        raise _error(
+            'field "human_review_required" must be false when review_status is "reviewed", "approved", or "rejected"',
+            path=path,
+            object_id=object_id,
+        )
+
+    if review_status in {"unreviewed", "in_review"} and not human_review_required:
+        raise _error(
+            'field "human_review_required" must be true when review_status is "unreviewed" or "in_review"',
             path=path,
             object_id=object_id,
         )
@@ -1668,6 +2066,49 @@ def validate_aliases(
         seen.add(normalized)
 
 
+def validate_unique_normalized_list_field(
+    data: Mapping[str, Any],
+    *,
+    field_name: str,
+    path: str | Path | None = None,
+) -> None:
+    object_id = data.get("id") if isinstance(data.get("id"), str) else None
+    values = data.get(field_name)
+    if not isinstance(values, list):
+        raise _expected_actual_error(
+            field_name,
+            "list[str]",
+            values,
+            path=path,
+            object_id=object_id,
+        )
+
+    seen: set[str] = set()
+    for value in values:
+        if not isinstance(value, str):
+            raise _expected_actual_error(
+                field_name,
+                "list[str]",
+                values,
+                path=path,
+                object_id=object_id,
+            )
+        normalized = normalize_id(value)
+        if not normalized:
+            raise _error(
+                f'field "{field_name}" cannot contain blank values',
+                path=path,
+                object_id=object_id,
+            )
+        if normalized in seen:
+            raise _error(
+                f'field "{field_name}" contains a duplicate normalized theme id "{normalized}"',
+                path=path,
+                object_id=object_id,
+            )
+        seen.add(normalized)
+
+
 def validate_object(
     data: Mapping[str, Any],
     *,
@@ -1691,6 +2132,8 @@ def validate_object(
     validate_field_types(normalized_data, path=path)
     validate_category_type(normalized_data, path=path)
     validate_aliases(normalized_data, path=path)
+    for field_name in UNIQUE_NORMALIZED_LIST_FIELDS:
+        validate_unique_normalized_list_field(normalized_data, field_name=field_name, path=path)
     validate_governance_metadata(normalized_data, path=path)
     validate_approved_content_requirements(normalized_data, path=path)
 

@@ -328,6 +328,36 @@ class PromptBuildingTests(unittest.TestCase):
         self.assertNotIn("Status:", canonical_prompt)
         self.assertNotIn("# Canonical Knowledge Context", canonical_prompt)
 
+    def test_prompt_includes_second_temple_context_for_hebrews(self):
+        question = "How does the book of Hebrews use priesthood and sacrifice?"
+        reference = detect_reference(question)
+        genre = classify_genre(reference)
+        question_context = classify_question_type(question, reference)
+        canonical_context = build_canonical_context(
+            load_canonical_library(),
+            question,
+            reference_context=reference,
+            question_context=question_context,
+            max_results=6,
+            include_placeholders=True,
+            allowed_statuses=("unreviewed", "in_review", "reviewed", "approved"),
+            answer_mode="scholar",
+            max_context_tokens=1200,
+        )
+        canonical_prompt = format_canonical_context_for_prompt(
+            canonical_context,
+            max_context_tokens=1200,
+            answer_mode="scholar",
+        )
+
+        self.assertIn("Entry: Hebrews", canonical_prompt)
+        self.assertIn("Second Temple Context:", canonical_prompt)
+        self.assertIn("Later Christian Reception:", canonical_prompt)
+        self.assertLess(
+            canonical_prompt.index("Second Temple Context:"),
+            canonical_prompt.index("Later Christian Reception:"),
+        )
+
     def test_canonical_context_prompt_uses_answer_mode_tiers(self):
         question = "Why did Israel renew the covenant where Abraham first entered the land at Shechem in Joshua 24?"
         reference = detect_reference(question)

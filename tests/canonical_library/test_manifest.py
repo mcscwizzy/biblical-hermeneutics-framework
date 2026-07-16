@@ -27,6 +27,8 @@ EXPECTED_EMPTY_STRING_FIELDS = (
     "covenantal_significance",
 )
 EXPECTED_EMPTY_LIST_FIELDS = (
+    "generated_by",
+    "edited_by",
     "intertextuality",
     "timeline",
     "maps",
@@ -50,6 +52,7 @@ EXPECTED_GOVERNANCE_VALUES = {
     "review_status": "unreviewed",
     "last_reviewed": None,
     "confidence": "unrated",
+    "human_review_required": True,
 }
 EXPECTED_CONTEXT_APPLICABILITY = {
     "historical": True,
@@ -108,7 +111,12 @@ class CanonicalInventoryTests(unittest.TestCase):
                 self.assertNotEqual(obj.sources, [])
                 self.assertNotEqual(obj.scripture_references, [])
                 self.assertNotEqual(obj.review_status, "unreviewed")
-                self.assertGreaterEqual(len(obj.reviewed_by), 1)
+                if obj.review_status == "in_review":
+                    self.assertGreaterEqual(len(obj.generated_by), 1)
+                    self.assertTrue(obj.human_review_required)
+                else:
+                    self.assertGreaterEqual(len(obj.reviewed_by), 1)
+                    self.assertFalse(obj.human_review_required)
                 self.assertIsNotNone(obj.last_reviewed)
                 self.assertNotEqual(obj.confidence, "unrated")
             else:
@@ -167,7 +175,12 @@ class CanonicalInventoryTests(unittest.TestCase):
                 self.assertNotEqual(obj.scripture_references, [], obj.id)
                 self.assertNotEqual(obj.sources, [], obj.id)
                 self.assertNotEqual(obj.review_status, "unreviewed", obj.id)
-                self.assertGreaterEqual(len(obj.reviewed_by), 1, obj.id)
+                if obj.review_status == "in_review":
+                    self.assertGreaterEqual(len(obj.generated_by), 1, obj.id)
+                    self.assertTrue(obj.human_review_required, obj.id)
+                else:
+                    self.assertGreaterEqual(len(obj.reviewed_by), 1, obj.id)
+                    self.assertFalse(obj.human_review_required, obj.id)
                 self.assertIsNotNone(obj.last_reviewed, obj.id)
                 self.assertGreater(obj.importance, 0, obj.id)
 
@@ -188,7 +201,12 @@ class CanonicalInventoryTests(unittest.TestCase):
                 self.assertNotEqual(obj.common_questions, [], obj.id)
                 self.assertNotEqual(obj.interpretive_notes, [], obj.id)
                 self.assertNotEqual(obj.review_status, "unreviewed", obj.id)
-                self.assertGreaterEqual(len(obj.reviewed_by), 1, obj.id)
+                if obj.review_status == "in_review":
+                    self.assertGreaterEqual(len(obj.generated_by), 1, obj.id)
+                    self.assertTrue(obj.human_review_required, obj.id)
+                else:
+                    self.assertGreaterEqual(len(obj.reviewed_by), 1, obj.id)
+                    self.assertFalse(obj.human_review_required, obj.id)
                 self.assertIsNotNone(obj.last_reviewed, obj.id)
                 self.assertGreater(obj.importance, 0, obj.id)
 

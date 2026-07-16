@@ -4,7 +4,7 @@ Resume aid for the CKL expansion stream. This file is the handoff note for conti
 
 Last audited: 2026-07-16
 
-Current phase: Phase 8 complete. Next phase: Phase 9 - Fix Review Metadata.
+Current phase: Phase 12 complete. Next phase: none in this roadmap.
 
 ## Current State
 
@@ -16,6 +16,10 @@ Current phase: Phase 8 complete. Next phase: Phase 9 - Fix Review Metadata.
 - The framework prompt now carries explicit interpretive-order guardrails separate from CKL facts, covering literary, historical, Ancient Near Eastern, Hebraic, Second Temple, canonical, Christological, and application boundaries.
 - Interpretive notes are now structured but still accept legacy strings during migration so older inventory files stay valid.
 - Source records now have canonical IDs, source-type normalization, and `supports` metadata while still accepting legacy string sources during migration.
+- Review metadata now separates AI provenance from human review. `generated_by` tracks Codex or other non-human creation/migration workflows, `reviewed_by` is reserved for human reviewers, and `human_review_required` marks items that still need human sign-off.
+- Validation now reports actionable warnings for legacy inventory hygiene issues and errors for newly authored records that violate the expanded schema rules.
+- Test coverage now includes semantic warning buckets, empty applicable context detection, ordered prompt-section construction, Hebrews/Second Temple prompt regressions, and unreviewed-content retrieval filtering.
+- Documentation now explains the validation-warning split, production retrieval filtering, and authoring boundaries for the expanded context layers.
 - The next work should add structure without rewriting the whole CKL architecture.
 
 ## Update Protocol
@@ -34,11 +38,11 @@ Current phase: Phase 8 complete. Next phase: Phase 9 - Fix Review Metadata.
 - Phase 6 - Add Context Builder Ordering: complete
 - Phase 7 - Add Framework Guidance: complete
 - Phase 8 - Populate a High-Quality Pilot Set: complete
-- Phase 9 - Fix Review Metadata: pending
-- Phase 10 - Add Validation Rules: pending
-- Phase 11 - Add Tests: pending
-- Phase 12 - Documentation: pending
+- Phase 9 - Fix Review Metadata: complete
+- Phase 10 - Add Validation Rules: complete
+- Phase 11 - Add Tests: complete
+- Phase 12 - Documentation: complete
 
 ## Immediate Next Move
 
-Start Phase 9 by separating AI provenance from human review metadata while preserving backward compatibility for legacy objects.
+This roadmap is complete. Use the general CKL roadmap or a new feature brief for future expansion work.

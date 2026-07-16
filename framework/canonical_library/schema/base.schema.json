@@ -54,9 +54,12 @@
     "object_version",
     "content_status",
     "review_status",
+    "generated_by",
+    "edited_by",
     "reviewed_by",
     "last_reviewed",
-    "confidence"
+    "confidence",
+    "human_review_required"
   ],
   "$defs": {
     "canonicalId": {
@@ -198,6 +201,40 @@
         },
         "notes": {
           "type": "string"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "name",
+        "workflow",
+        "date"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "ai",
+            "human",
+            "import",
+            "migration",
+            "other"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "workflow": {
+          "type": "string",
+          "minLength": 1
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
         }
       }
     },
@@ -498,6 +535,18 @@
         "rejected"
       ]
     },
+    "generated_by": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/provenance"
+      }
+    },
+    "edited_by": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "reviewed_by": {
       "type": "array",
       "items": {
@@ -519,6 +568,9 @@
         "medium",
         "high"
       ]
+    },
+    "human_review_required": {
+      "type": "boolean"
     }
   }
 }

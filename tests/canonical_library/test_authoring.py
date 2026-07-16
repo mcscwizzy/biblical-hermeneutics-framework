@@ -86,9 +86,152 @@ class CanonicalAuthoringTests(unittest.TestCase):
         self.assertTrue(audit.duplicate_id_issues)
         self.assertTrue(any(issue.code == "duplicate_alias" for issue in audit.alias_collision_issues))
         self.assertTrue(audit.unresolved_relationship_issues)
-        self.assertTrue(audit.broken_scripture_reference_issues)
-        self.assertTrue(audit.missing_content_issues)
+        warning_codes = {issue.code for issue in audit.warning_issues}
+        self.assertIn("broken_scripture_reference", warning_codes)
+        self.assertIn("missing_required_content", warning_codes)
         self.assertTrue(audit.manifest_issues)
+
+    def test_scan_library_reports_repeated_prose_as_warning(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            repeated = "House churches, roads, cities, and Roman networks shape the background."
+            write_library(
+                root,
+                [
+                    make_object(
+                        "alpha",
+                        "place",
+                        "Alpha",
+                        ["where is alpha"],
+                        ancient_near_east_context=repeated,
+                    ),
+                    make_object(
+                        "beta",
+                        "place",
+                        "Beta",
+                        ["where is beta"],
+                        ancient_near_east_context=repeated,
+                    ),
+                    make_object(
+                        "gamma",
+                        "place",
+                        "Gamma",
+                        ["where is gamma"],
+                        ancient_near_east_context=repeated,
+                    ),
+                ],
+            )
+
+            audit = scan_library(root)
+
+        self.assertFalse(audit.has_errors)
+        self.assertTrue(any(issue.code == "repeated_prose" for issue in audit.warning_issues))
+
+    def test_scan_library_reports_semantic_validation_warnings(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_library(
+                root,
+                [
+                    make_object(
+                        "semantic-hygiene",
+                        "archaeology",
+                        "Semantic Hygiene",
+                        ["semantic hygiene"],
+                        content_status="draft",
+                        review_status="unreviewed",
+                        summary="Hebrew thought always works in concrete ways while Greek thought is abstract.",
+                        historical_context="This historical setting is described without a named scholarly source.",
+                        ancient_near_east_context="This is an Ancient Near Eastern comparison.",
+                        hebrew_words=["berit"],
+                        archaeology=["artifact"],
+                        interpretive_notes=[
+                            {
+                                "note": "The church has always treated this as a confessional truth.",
+                                "note_type": "theological-interpretation",
+                                "certainty": "high",
+                                "dispute_status": "broad-consensus",
+                                "sources": [],
+                            }
+                        ],
+                    ),
+                ],
+            )
+
+            audit = scan_library(root)
+
+        warning_codes = {issue.code for issue in audit.warning_issues}
+        self.assertFalse(audit.has_errors)
+        self.assertIn("historical_source_support", warning_codes)
+        self.assertIn("lexical_source_support", warning_codes)
+        self.assertIn("archaeological_source_support", warning_codes)
+        self.assertIn("broad_generalization", warning_codes)
+        self.assertIn("simplistic_worldview", warning_codes)
+        self.assertIn("generic_ane_comparison", warning_codes)
+        self.assertIn("confessional_consensus", warning_codes)
+
+    def test_validate_single_object_reports_empty_applicable_context_for_mature_content(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            file_path = root / "objects" / "themes" / "context-warning.json"
+            obj = make_object(
+                "context-warning",
+                "theme",
+                "Context Warning",
+                ["context warning"],
+                content_status="complete",
+                review_status="reviewed",
+                reviewed_by=["alice"],
+                last_reviewed="2026-07-16",
+                confidence="high",
+                summary="A note on context layering.",
+                historical_context="Historical setting is documented.",
+                literary_context="Literary framing is documented.",
+                context_applicability={
+                    "historical": False,
+                    "ancient_near_east": True,
+                    "hebraic_worldview": False,
+                    "second_temple": False,
+                    "canonical": False,
+                    "later_christian_reception": False,
+                },
+                scripture_references=[
+                    {
+                        "reference": "Genesis 12:6-7",
+                        "relationship": "primary",
+                        "notes": "",
+                    }
+                ],
+                related_objects=[
+                    {
+                        "id": "related-topic",
+                        "relationship": "associated-topic",
+                        "weight": 1,
+                        "notes": "",
+                    }
+                ],
+                sources=[
+                    {
+                        "id": "example-source",
+                        "title": "Example Source",
+                        "author": "",
+                        "publisher": "",
+                        "year": None,
+                        "locator": "",
+                        "url": "",
+                        "source_type": "reference-work",
+                        "notes": "",
+                    }
+                ],
+                common_questions=["How does it work?"],
+                interpretive_notes=["It is a test note."],
+            )
+            _write_json(file_path, obj)
+
+            audit = validate_single_object(file_path)
+
+        self.assertTrue(audit.has_errors)
+        self.assertTrue(any(issue.code == "empty_applicable_context" for issue in audit.validation_issues))
 
     def test_validate_single_object_and_migrate_object_file(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -103,9 +246,9 @@ class CanonicalAuthoringTests(unittest.TestCase):
                 historical_context="It appears in patriarchal narratives.",
                 literary_context="It functions as a narrative location.",
                 content_status="complete",
-                review_status="approved",
-                reviewed_by=["alice"],
-                last_reviewed="2024-07-13",
+                review_status="in_review",
+                reviewed_by=["codex-phase-10"],
+                last_reviewed="2026-07-16",
                 confidence="high",
                 related_objects=[
                     {
@@ -134,11 +277,18 @@ class CanonicalAuthoringTests(unittest.TestCase):
         self.assertEqual(audit.valid_object_count, 1)
         self.assertFalse(audit.validation_issues)
         self.assertFalse(audit.missing_content_issues)
-        self.assertEqual(len(audit.broken_scripture_reference_issues), 1)
+        warning_codes = {issue.code for issue in audit.warning_issues}
+        self.assertIn("legacy_ai_reviewer", warning_codes)
+        self.assertIn("broken_scripture_reference", warning_codes)
         self.assertTrue(changed)
         self.assertIsInstance(normalized["sources"][0], dict)
         self.assertEqual(normalized["sources"][0]["title"], "Westermann, Genesis")
         self.assertEqual(normalized["sources"][0]["source_type"], "reference-work")
+        self.assertEqual(normalized["generated_by"][0]["type"], "ai")
+        self.assertEqual(normalized["generated_by"][0]["name"], "codex")
+        self.assertEqual(normalized["generated_by"][0]["workflow"], "ane-hebraic-context-expansion")
+        self.assertEqual(normalized["reviewed_by"], [])
+        self.assertTrue(normalized["human_review_required"])
         self.assertIsInstance(normalized["interpretive_notes"][0], dict)
         self.assertEqual(
             normalized["interpretive_notes"][0]["note"],
@@ -208,7 +358,8 @@ class CanonicalAuthoringTests(unittest.TestCase):
                 capture_output=True,
                 encoding="utf-8",
             )
-            self.assertIn("Issues found: 0", validate.stdout)
+            self.assertIn("Warnings: 1", validate.stdout)
+            self.assertIn("Errors: 0", validate.stdout)
 
             report = subprocess.run(
                 [

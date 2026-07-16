@@ -119,9 +119,12 @@ Every canonical object uses the same base schema.
 | `object_version` | string | `1` | Per-object schema version. |
 | `content_status` | string | `placeholder` | Content governance state for placeholder, draft, complete, or deprecated material. |
 | `review_status` | string | `unreviewed` | Review workflow state for the canonical object. |
-| `reviewed_by` | array of strings | empty | Reviewers who have signed off on the object. |
+| `generated_by` | array of provenance objects | empty | AI, migration, or import provenance for how the object was created or rewritten. |
+| `edited_by` | array of strings | empty | Human or tool editor names recorded separately from review. |
+| `reviewed_by` | array of strings | empty | Human reviewers who have signed off on the object. |
 | `last_reviewed` | string or null | `null` | Most recent review date in `YYYY-MM-DD` format. |
 | `confidence` | string | `unrated` | Governance confidence label for review and publication state. |
+| `human_review_required` | boolean | `true` | Whether the record still needs human review before it can be treated as fully reviewed. |
 
 The legacy `related_people`, `related_places`, and `related_events` fields remain supported for now. The context builder normalizes them into typed `related_objects` entries so downstream consumers can adopt the structured form gradually without losing compatibility with the existing inventory.
 
@@ -160,6 +163,34 @@ Legacy string notes are migrated into the structured form during validation so t
 
 Legacy string sources are still accepted during migration. Scripture-like strings normalize to `source_type: "scripture"`, while other short legacy citations normalize conservatively to `reference-work`. Approved content still needs substantive sources, but the loader now preserves backward compatibility without leaving source records unstructured.
 
+AI provenance is tracked separately from human review. Legacy `reviewed_by` values that identify Codex or other AI workflows migrate into `generated_by`, while `reviewed_by` remains reserved for human reviewers and `human_review_required` records whether the item still needs human sign-off.
+
+Validation distinguishes between legacy inventory warnings and hard errors for newly authored content. The loader and authoring tools surface actionable issues for invalid schema fields, unsupported applicability metadata, generic repeated prose, weak source support, and other CKL hygiene problems without forcing the entire legacy inventory to fail migration.
+
+## Validation And Retrieval Policy
+
+The CKL validation layer now treats legacy content and new authoring content differently:
+
+- Legacy inventory issues are surfaced as warnings when they help preserve backward compatibility.
+- Newly authored content that violates the same rules should be treated as an error.
+- Historical, lexical, and archaeological claims should carry the appropriate source types rather than generic filler sources.
+- Broad generalizations, simplistic Hebrew-versus-Greek contrasts, generic ANE comparisons, and confessional claims presented as consensus are flagged for review.
+- Mature records that mark a context layer as applicable should not leave that field empty.
+
+The deterministic retrieval path also applies a production-oriented review filter:
+
+- `context_applicability` defaults to `true` for older objects so legacy records stay searchable.
+- The context builder suppresses inapplicable fields and skips empty prompt sections instead of padding them.
+- The agent configuration defaults to excluding placeholders and unreviewed records unless the caller explicitly opts in with `allowed_statuses`.
+- That keeps normal answers grounded in curated, reviewed material while still allowing development and migration workflows to inspect the fuller inventory.
+
+Authoring guidance follows the same boundary:
+
+- Prefer an accurate empty field over invented prose.
+- Name the specific culture, institution, source, or practice when making an Ancient Near Eastern comparison.
+- Keep later Christian reception separate from original historical meaning.
+- Keep `generated_by` for AI or import provenance and `reviewed_by` for human review only.
+
 ## Book Record Fields
 
 Book records carry a few extra metadata fields so canonical books can be searched and ranked more precisely:
@@ -193,9 +224,12 @@ The current inventory is intentionally thin. Each placeholder object contains:
 - `object_version`
 - `content_status` set to `placeholder`
 - `review_status` set to `unreviewed`
+- `generated_by` as an empty array
+- `edited_by` as an empty array
 - `reviewed_by` as an empty array
 - `last_reviewed` as `null`
 - `confidence` set to `unrated`
+- `human_review_required` set to `true`
 
 All other string fields are empty strings, and all collection fields are empty arrays. The governance metadata is defaulted on load for older JSON files, and legacy string `sources` values are migrated to structured source objects, so the current inventory remains backward compatible while the schema grows. That means the library can be tested, indexed, and queried without pretending scholarship exists where it does not.
 

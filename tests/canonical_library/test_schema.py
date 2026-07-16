@@ -5,6 +5,7 @@ import unittest
 from framework.canonical_library import (
     CanonicalObject,
     CanonicalInterpretiveNote,
+    CanonicalProvenance,
     CanonicalRelationship,
     CanonicalScriptureReference,
     CanonicalSource,
@@ -103,6 +104,21 @@ def source_mapping(
     ).to_dict()
 
 
+def provenance_mapping(
+    *,
+    type: str = "ai",
+    name: str = "codex",
+    workflow: str = "ane-hebraic-context-expansion",
+    date: str = "2026-07-16",
+) -> dict[str, object]:
+    return CanonicalProvenance(
+        type=type,
+        name=name,
+        workflow=workflow,
+        date=date,
+    ).to_dict()
+
+
 def interpretive_note_mapping(
     note: str,
     *,
@@ -129,9 +145,12 @@ class CanonicalSchemaTests(unittest.TestCase):
         self.assertEqual(obj.title, "Shechem")
         self.assertEqual(obj.content_status, "placeholder")
         self.assertEqual(obj.review_status, "unreviewed")
+        self.assertEqual(obj.generated_by, [])
+        self.assertEqual(obj.edited_by, [])
         self.assertEqual(obj.reviewed_by, [])
         self.assertIsNone(obj.last_reviewed)
         self.assertEqual(obj.confidence, "unrated")
+        self.assertTrue(obj.human_review_required)
         self.assertEqual(obj.related_objects, [])
         self.assertEqual(obj.scripture_references, [])
         self.assertEqual(obj.sources, [])
@@ -168,9 +187,12 @@ class CanonicalSchemaTests(unittest.TestCase):
 
         self.assertEqual(obj.content_status, "complete")
         self.assertEqual(obj.review_status, "approved")
+        self.assertEqual(obj.generated_by, [])
+        self.assertEqual(obj.edited_by, [])
         self.assertEqual(obj.reviewed_by, ["alice", "bob"])
         self.assertEqual(obj.last_reviewed, "2024-07-13")
         self.assertEqual(obj.confidence, "high")
+        self.assertFalse(obj.human_review_required)
         self.assertEqual(obj.summary, "Shechem matters as a covenant location in the patriarchal narratives.")
         self.assertEqual(len(obj.scripture_references), 1)
         self.assertEqual(obj.scripture_references[0].reference, "Genesis 12:6-7")
@@ -199,6 +221,40 @@ class CanonicalSchemaTests(unittest.TestCase):
         self.assertEqual(obj.canonical_context, "Fits the broader covenant storyline.")
         self.assertEqual(obj.later_christian_reception, "Later Christians read it typologically.")
         self.assertEqual(obj.context_applicability, EXPECTED_CONTEXT_APPLICABILITY)
+
+    def test_legacy_ai_reviewers_are_migrated_to_provenance_records(self) -> None:
+        data = valid_mapping()
+        data.update(
+            {
+                "content_status": "complete",
+                "review_status": "in_review",
+                "reviewed_by": ["codex-phase-10"],
+                "last_reviewed": "2026-07-16",
+                "confidence": "medium",
+                "summary": "Shechem matters as a covenant location in the patriarchal narratives.",
+                "scripture_references": [
+                    scripture_reference_mapping("Genesis 12:6-7", "primary"),
+                ],
+                "sources": [
+                    source_mapping(
+                        "Genesis",
+                        source_type="scripture",
+                        locator="12:6-7",
+                    ),
+                ],
+            }
+        )
+
+        obj = validate_object(data, path="objects/places/shechem.json")
+
+        self.assertEqual(obj.reviewed_by, [])
+        self.assertEqual(len(obj.generated_by), 1)
+        provenance = obj.generated_by[0]
+        self.assertEqual(provenance.type, "ai")
+        self.assertEqual(provenance.name, "codex")
+        self.assertEqual(provenance.workflow, "ane-hebraic-context-expansion")
+        self.assertEqual(provenance.date, "2026-07-16")
+        self.assertTrue(obj.human_review_required)
 
     def test_legacy_interpretive_notes_are_normalized_to_structured_notes(self) -> None:
         data = valid_mapping()
@@ -439,6 +495,24 @@ class CanonicalSchemaTests(unittest.TestCase):
         self.assertEqual(obj.sources[1].year, 2020)
         self.assertIsInstance(obj.sources[0], CanonicalSource)
 
+    def test_invalid_source_type_fails_validation(self) -> None:
+        data = valid_mapping()
+        data["sources"] = [
+            {
+                "title": "Genesis",
+                "author": "",
+                "publisher": "",
+                "year": None,
+                "locator": "12:6-7",
+                "url": "",
+                "source_type": "unsupported-source",
+                "notes": "",
+            }
+        ]
+
+        with self.assertRaisesRegex(CanonicalValidationError, 'field "source_type" must be one of'):
+            validate_object(data, path="objects/places/shechem.json")
+
     def test_legacy_structured_source_types_are_normalized(self) -> None:
         data = valid_mapping()
         data["sources"] = [
@@ -461,6 +535,16 @@ class CanonicalSchemaTests(unittest.TestCase):
         self.assertEqual(obj.sources[0].source_type, "scripture")
         self.assertEqual(obj.sources[0].id, "genesis")
         self.assertEqual(obj.sources[0].supports, [])
+
+    def test_duplicate_normalized_major_themes_fail_validation(self) -> None:
+        data = valid_mapping()
+        data["major_themes"] = ["covenant", "Covenant"]
+
+        with self.assertRaisesRegex(
+            CanonicalValidationError,
+            'field "major_themes" contains a duplicate normalized theme id "covenant"',
+        ):
+            validate_object(data, path="objects/places/shechem.json")
 
     def test_invalid_source_year_fails(self) -> None:
         data = valid_mapping()

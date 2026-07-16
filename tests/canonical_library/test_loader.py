@@ -44,9 +44,13 @@ class CanonicalLoaderTests(unittest.TestCase):
 
         self.assertEqual(abraham.content_status, "complete")
         self.assertEqual(abraham.review_status, "in_review")
-        self.assertEqual(abraham.reviewed_by, ["codex-phase-10"])
+        self.assertEqual(abraham.generated_by[0].type, "ai")
+        self.assertEqual(abraham.generated_by[0].name, "codex")
+        self.assertEqual(abraham.generated_by[0].workflow, "ane-hebraic-context-expansion")
+        self.assertEqual(abraham.reviewed_by, [])
         self.assertEqual(abraham.last_reviewed, "2026-07-14")
         self.assertEqual(abraham.confidence, "medium")
+        self.assertTrue(abraham.human_review_required)
 
     def test_loads_recursively(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

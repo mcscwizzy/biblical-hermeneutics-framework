@@ -746,6 +746,86 @@ class CanonicalContextBuilderTests(unittest.TestCase):
         self.assertNotIn("Temple-centered Jewish life should be suppressed.", prompt_entry["facts"])
         self.assertNotIn("Later Christians read it typologically.", prompt_entry["facts"])
 
+    def test_builds_prompt_context_sections_in_order_without_empty_entries(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_library(
+                root,
+                [
+                    make_object(
+                        "context-order",
+                        "theme",
+                        "Context Order",
+                        ["context order"],
+                        summary="A compact summary.",
+                        literary_context="Literary framing comes first.",
+                        historical_context="Historical setting follows.",
+                        ancient_near_east_context="Specific Hittite treaty parallels may help.",
+                        hebraic_worldview="Covenant identity matters.",
+                        second_temple_context="Second Temple readers continued the discussion.",
+                        canonical_context="The canonical storyline develops it further.",
+                        intertextuality=["genesis-15"],
+                        new_testament_connections=["hebrews-1"],
+                        scripture_references=[
+                            {
+                                "reference": "Genesis 12:6-7",
+                                "relationship": "primary",
+                                "notes": "anchor",
+                            }
+                        ],
+                        interpretive_notes=["A caution note."],
+                        sources=[
+                            {
+                                "id": "example-source",
+                                "title": "Example Source",
+                                "author": "",
+                                "publisher": "",
+                                "year": None,
+                                "locator": "",
+                                "url": "",
+                                "source_type": "reference-work",
+                                "notes": "",
+                            }
+                        ],
+                    ),
+                ],
+            )
+            library = CanonicalLibrary(root=root).load()
+            builder = CanonicalContextBuilder(library)
+
+            context = builder.build("Context Order", limit=1)
+            prompt_context = build_canonical_prompt_context(
+                context,
+                max_context_tokens=1200,
+                max_entries=1,
+                max_facts_per_entry=10,
+                max_scripture_references_per_entry=2,
+                max_caution_notes_per_entry=2,
+                answer_mode="scholar",
+            )
+
+        entry = prompt_context["entries"][0]
+        headings = [section["heading"] for section in entry["sections"]]
+
+        self.assertEqual(
+            headings,
+            [
+                "Summary",
+                "Primary Scripture References",
+                "Immediate Literary Context",
+                "Historical Context",
+                "Ancient Near Eastern Context",
+                "Hebraic Worldview",
+                "Second Temple Context",
+                "Covenant and Canonical Context",
+                "Intertextual Connections",
+                "New Testament Connections",
+                "Interpretive Disputes and Cautions",
+            ],
+        )
+        self.assertTrue(all(section["items"] for section in entry["sections"]))
+        self.assertNotIn("Later Christian Reception", headings)
+
     def test_builds_compact_prompt_context_deduplicating_repeated_text(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

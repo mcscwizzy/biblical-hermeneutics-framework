@@ -432,6 +432,56 @@ class CanonicalRetrievalTests(unittest.TestCase):
 
             self.assertIsNone(library.retrieve_exact("Covenant Shechem Note", approved_only=True))
 
+    def test_retrieval_excludes_unreviewed_content_unless_explicitly_allowed(self) -> None:
+        with loaded_library(
+            [
+                make_object(
+                    "unreviewed-shechem-note",
+                    "faq",
+                    "Unreviewed Shechem Covenant Note",
+                    ["unreviewed shechem covenant note"],
+                    summary="An unreviewed note about covenant renewal at Shechem.",
+                    common_questions=["covenant at Shechem"],
+                    content_status="draft",
+                    review_status="unreviewed",
+                    importance=95,
+                ),
+                make_object(
+                    "reviewed-shechem-note",
+                    "faq",
+                    "Reviewed Shechem Covenant Note",
+                    ["reviewed shechem covenant note"],
+                    summary="A reviewed note about covenant renewal at Shechem.",
+                    common_questions=["covenant at Shechem"],
+                    content_status="draft",
+                    review_status="reviewed",
+                    reviewed_by=["alice"],
+                    last_reviewed="2026-07-16",
+                    confidence="high",
+                    importance=80,
+                ),
+            ]
+        ) as library:
+            default_results = library.retrieve_by_keywords(
+                "covenant at Shechem",
+                limit=5,
+                include_placeholders=False,
+                allowed_statuses=("in_review", "reviewed", "approved"),
+            )
+            explicit_results = library.retrieve_by_keywords(
+                "covenant at Shechem",
+                limit=5,
+                include_placeholders=False,
+                allowed_statuses=("unreviewed", "in_review", "reviewed", "approved"),
+            )
+
+        default_ids = [result.object.id for result in default_results]
+        explicit_ids = [result.object.id for result in explicit_results]
+
+        self.assertNotIn("unreviewed-shechem-note", default_ids)
+        self.assertIn("reviewed-shechem-note", default_ids)
+        self.assertIn("unreviewed-shechem-note", explicit_ids)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -10,7 +10,7 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
-from .legacy import CanonicalValidationError, DEFAULT_CANONICAL_METADATA
+from .legacy import CanonicalValidationError, DEFAULT_CANONICAL_METADATA, _normalize_governance_metadata
 BASE_SCHEMA_PATH = Path(__file__).resolve().with_name("base.schema.json")
 
 
@@ -62,7 +62,7 @@ def _apply_defaults(data: Mapping[str, Any]) -> dict[str, Any]:
             assert isinstance(merged, dict)
             merged.update(dict(normalized[field_name]))
             normalized[field_name] = merged
-    return normalized
+    return _normalize_governance_metadata(normalized)
 
 
 def _clone_default_value(value: Any) -> Any:
