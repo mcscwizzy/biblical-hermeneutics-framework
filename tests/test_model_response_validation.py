@@ -42,6 +42,21 @@ class ModelResponseValidationTests(unittest.TestCase):
         self.assertNotIn("places/shechem.json", result.sanitized_text)
         self.assertNotIn("0.94", result.sanitized_text)
 
+    def test_answer_contract_rejects_ckl_paths_and_scores(self):
+        result = normalize_model_response(
+            "## 1. Short Answer\n"
+            "Shechem matters because it anchors covenant renewal.\n\n"
+            "Source path: framework/canonical_library/objects/places/shechem.json\n"
+            "Retrieval score: 0.94\n",
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertFalse(result.passed)
+        self.assertIn("CKL file path", result.errors[0])
+        self.assertIn("retrieval scoring metadata", " ".join(result.errors).lower())
+        self.assertIn("framework/canonical_library/objects/places/shechem.json", result.sanitized_text)
+        self.assertIn("0.94", result.sanitized_text)
+
     def test_answer_contract_rejects_json_without_answer_field(self):
         result = normalize_model_response(
             '{"analysis":"internal notes only"}',

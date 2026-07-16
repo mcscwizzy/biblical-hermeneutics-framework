@@ -99,6 +99,7 @@ class AgentConfigTests(unittest.TestCase):
         self.assertIsNone(config.memory_path)
         self.assertEqual(config.memory_max_turns, 8)
         self.assertTrue(config.canonical_library.enabled)
+        self.assertFalse(config.canonical_library.shadow_mode)
         self.assertFalse(config.canonical_library.include_placeholders)
         self.assertEqual(
             config.canonical_library.allowed_statuses,
@@ -124,6 +125,7 @@ class AgentConfigTests(unittest.TestCase):
                 "profile": "standard",
                 "canonical_library": {
                     "enabled": True,
+                    "shadow_mode": True,
                     "max_results": 4,
                     "max_context_tokens": 900,
                     "include_placeholders": False,
@@ -133,6 +135,7 @@ class AgentConfigTests(unittest.TestCase):
         )
 
         self.assertTrue(config.canonical_library.enabled)
+        self.assertTrue(config.canonical_library.shadow_mode)
         self.assertEqual(config.canonical_library.max_results, 4)
         self.assertEqual(config.canonical_library.max_context_tokens, 900)
         self.assertFalse(config.canonical_library.include_placeholders)
@@ -144,6 +147,7 @@ class AgentConfigTests(unittest.TestCase):
             model="local-model",
             canonical_library=CanonicalLibraryConfig(
                 enabled=False,
+                shadow_mode=True,
                 cache_enabled=False,
                 cache_max_entries=96,
                 max_results=3,
@@ -157,6 +161,7 @@ class AgentConfigTests(unittest.TestCase):
         self.assertEqual(config.to_dict()["canonical_library"]["cache_max_entries"], 96)
         self.assertEqual(config.to_dict()["canonical_library"]["max_results"], 3)
         self.assertFalse(config.to_dict()["canonical_library"]["enabled"])
+        self.assertTrue(config.to_dict()["canonical_library"]["shadow_mode"])
         self.assertEqual(
             config.to_dict()["canonical_library"]["allowed_statuses"],
             ("approved",),
@@ -221,6 +226,28 @@ class AgentConfigTests(unittest.TestCase):
         self.assertEqual(config.public_cache.minimum_quality_score, 92.5)
         self.assertEqual(config.public_cache.default_ttl_days, 90)
         self.assertEqual(config.public_cache.allowed_review_statuses, ("approved",))
+
+    def test_config_allows_public_cache_when_canonical_library_runs_in_shadow_mode(self):
+        config = AgentConfig.from_mapping(
+            {
+                "config_version": 1,
+                "adapter": "openai_compatible",
+                "base_url": "http://localhost:1234/v1",
+                "model": "local-model",
+                "profile": "standard",
+                "public_cache": {
+                    "enabled": True,
+                },
+                "canonical_library": {
+                    "enabled": False,
+                    "shadow_mode": True,
+                },
+            }
+        )
+
+        self.assertTrue(config.public_cache.enabled)
+        self.assertFalse(config.canonical_library.enabled)
+        self.assertTrue(config.canonical_library.shadow_mode)
 
     def test_config_serializes_public_cache_section(self):
         config = AgentConfig(

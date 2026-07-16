@@ -12,7 +12,7 @@ from types import SimpleNamespace
 from urllib.parse import quote_plus, urlencode
 from unittest.mock import patch
 
-from bhf_agent.config import AgentConfig, ConfigError
+from bhf_agent.config import AgentConfig, CanonicalLibraryConfig, ConfigError
 from bhf_agent.models import (
     AgentResult,
     GenreContext,
@@ -126,6 +126,8 @@ class WebFormTests(unittest.TestCase):
             "BHF_SHOW_METHOD_NOTES": "false",
             "BHF_MEMORY_ENABLED": "true",
             "BHF_MEMORY_PATH": "/app/.bhf/sessions",
+            "BHF_CKL_RETRIEVAL_ENABLED": "false",
+            "BHF_CKL_RETRIEVAL_SHADOW_MODE": "true",
         }
 
         with patch.dict(os.environ, env, clear=False):
@@ -142,6 +144,8 @@ class WebFormTests(unittest.TestCase):
         self.assertFalse(config.show_method_notes)
         self.assertTrue(config.memory_enabled)
         self.assertEqual(config.memory_path, "/app/.bhf/sessions")
+        self.assertFalse(config.canonical_library.enabled)
+        self.assertTrue(config.canonical_library.shadow_mode)
 
     def test_web_defaults_read_ollama_environment_variables(self):
         env = {
@@ -1389,6 +1393,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("Short Answer", result["body"])
         self.assertNotIn("Metadata", result["body"])
         self.assertNotIn("Canonical Context", result["body"])
+        self.assertNotIn("Developer Retrieval Inspector", result["body"])
 
     def test_ask_result_shows_debug_metadata_when_enabled(self):
         debug_defaults = SimpleNamespace(
@@ -1403,12 +1408,18 @@ class WebAppTests(unittest.TestCase):
         with patch("bhf_web.app.BHFAgent", SuccessfulJobAgent), patch(
             "bhf_web.routes.ask.load_web_defaults",
             return_value=debug_defaults,
+        ), patch(
+            "bhf_web.jobs.load_web_defaults",
+            return_value=debug_defaults,
+        ), patch(
+            "bhf_web.jobs.settings.TEST_MODE",
+            False,
         ):
             response = asgi_request("POST", "/ask/jobs", data=_valid_form())
 
-        self.assertEqual(response["status"], 202)
-        job = json.loads(response["body"])
-        wait_for_job(job["job_id"])
+            self.assertEqual(response["status"], 202)
+            job = json.loads(response["body"])
+            wait_for_job(job["job_id"])
 
         with patch(
             "bhf_web.routes.ask.load_web_defaults",
@@ -1423,6 +1434,89 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("shechem", result["body"])
         self.assertIn("Profile used", result["body"])
         self.assertIn("Local knowledge used", result["body"])
+        self.assertIn("Developer Retrieval Inspector", result["body"])
+        self.assertIn("Prompt Preview", result["body"])
+        self.assertIn("Selected Results", result["body"])
+
+    def test_ask_result_shows_shadow_prompt_preview_when_ckl_runs_in_shadow_mode(self):
+        debug_defaults = SimpleNamespace(
+            config=AgentConfig(
+                base_url="http://localhost:11434/v1",
+                model="llama3.1:8b",
+                profile="minimal-7b",
+                debug=True,
+                canonical_library=CanonicalLibraryConfig(
+                    enabled=False,
+                    shadow_mode=True,
+                ),
+            )
+        )
+
+        with patch("bhf_web.app.BHFAgent", SuccessfulJobAgent), patch(
+            "bhf_web.routes.ask.load_web_defaults",
+            return_value=debug_defaults,
+        ), patch(
+            "bhf_web.jobs.load_web_defaults",
+            return_value=debug_defaults,
+        ), patch(
+            "bhf_web.jobs.settings.TEST_MODE",
+            False,
+        ):
+            response = asgi_request("POST", "/ask/jobs", data=_valid_form())
+
+            self.assertEqual(response["status"], 202)
+            job = json.loads(response["body"])
+            wait_for_job(job["job_id"])
+
+        with patch(
+            "bhf_web.routes.ask.load_web_defaults",
+            return_value=debug_defaults,
+        ):
+            result = asgi_request("GET", f"/ask/result/{job['job_id']}")
+
+        self.assertEqual(result["status"], 200)
+        self.assertIn("Rollout mode", result["body"])
+        self.assertIn("Shadow Prompt Preview", result["body"])
+        self.assertIn("CKL was retrieved in shadow mode", result["body"])
+        self.assertIn("did not find a strong match", result["body"])
+
+    def test_debug_ckl_search_endpoint_is_hidden_without_debug_mode(self):
+        response = asgi_request("POST", "/api/debug/ckl-search", json_data={"query": "Shechem"})
+
+        self.assertEqual(response["status"], 404)
+
+    def test_debug_ckl_search_endpoint_returns_retrieval_trace_when_enabled(self):
+        debug_defaults = SimpleNamespace(
+            config=AgentConfig(
+                base_url="http://localhost:11434/v1",
+                model="llama3.1:8b",
+                profile="minimal-7b",
+                debug=True,
+            )
+        )
+
+        with patch(
+            "bhf_web.routes.debug.load_web_defaults",
+            return_value=debug_defaults,
+        ):
+            response = asgi_request(
+                "POST",
+                "/api/debug/ckl-search",
+                json_data={"query": "Why is Shechem important in Joshua 24?"},
+            )
+
+        self.assertEqual(response["status"], 200)
+        payload = json.loads(response["body"])
+        self.assertEqual(payload["question"], "Why is Shechem important in Joshua 24?")
+        self.assertIn("analysis", payload)
+        self.assertIn("search", payload)
+        self.assertIn("prompt", payload)
+        self.assertIn("retrieval", payload)
+        self.assertIsInstance(payload["retrieval"]["duration_ms"], int)
+        self.assertGreaterEqual(payload["retrieval"]["duration_ms"], 0)
+        self.assertEqual(payload["search"]["results"][0]["id"], "shechem")
+        self.assertTrue(payload["prompt"]["preview"])
+        self.assertIn("shechem", payload["retrieval"]["selected_entry_ids"])
 
     def test_reader_ask_job_builds_server_side_question(self):
         CapturingAgent.questions = []
@@ -2133,6 +2227,9 @@ def canonical_context_stub():
 
 
 def fake_result(config, errors):
+    canonical_library = getattr(config, "canonical_library", None)
+    enabled = bool(getattr(canonical_library, "enabled", True))
+    shadow_mode = bool(getattr(canonical_library, "shadow_mode", False) and not enabled)
     return AgentResult(
         answer_text="## Short Answer\nAnswer with **method**.",
         reference_context=ReferenceContext(
@@ -2157,6 +2254,23 @@ def fake_result(config, errors):
             "canonical_library_object_ids": ["shechem", "abraham"],
             "canonical_library_retrieval_method": "keyword",
             "canonical_library_context": canonical_context_stub(),
+            "canonical_library_rollout_mode": (
+                "shadow" if shadow_mode else "enabled" if enabled else "disabled"
+            ),
+            "canonical_library_shadow_mode": shadow_mode,
+            "pipeline": {
+                "canonical_library_enabled": enabled,
+                "canonical_library_shadow_mode": shadow_mode,
+                "canonical_library_rollout_mode": (
+                    "shadow" if shadow_mode else "enabled" if enabled else "disabled"
+                ),
+                "canonical_library_loaded": enabled or shadow_mode,
+                "canonical_library_object_ids": ["shechem", "abraham"],
+                "canonical_library_retrieval_method": "keyword",
+                "canonical_library_topic_count": 2,
+                "canonical_library_prompt_tokens": 1200,
+                "canonical_library_prompt_mode": "disabled" if shadow_mode else "summary",
+            },
         },
         errors=errors,
     )

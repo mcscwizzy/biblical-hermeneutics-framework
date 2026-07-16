@@ -35,10 +35,16 @@ def metadata_payload(
     loaded: bool = True,
     include_placeholders: bool = False,
     allowed_statuses: list[str] | None = None,
+    shadow_mode: bool = False,
+    rollout_mode: str | None = None,
 ) -> dict[str, object]:
+    if rollout_mode is None:
+        rollout_mode = "shadow" if shadow_mode and not enabled else "enabled" if enabled else "disabled"
     pipeline: dict[str, object] = {
         "canonical_library_enabled": enabled,
         "canonical_library_loaded": loaded,
+        "canonical_library_shadow_mode": shadow_mode,
+        "canonical_library_rollout_mode": rollout_mode,
         "canonical_library_include_placeholders": include_placeholders,
         "canonical_library_allowed_statuses": allowed_statuses
         or ["in_review", "reviewed", "approved"],
@@ -54,6 +60,7 @@ def metadata_payload(
         "canonical_library_object_ids": list(object_ids),
         "canonical_library_retrieval_method": retrieval_method,
         "canonical_library_topic_count": topic_count,
+        "canonical_library_rollout_mode": rollout_mode,
         "pipeline": pipeline,
     }
 
@@ -71,7 +78,11 @@ class FakeAgent:
 
     def _metadata_for(self, question: str) -> dict[str, object]:
         config = self.config
-        if question == "Shechem" and not config.canonical_library.enabled:
+        shadow_mode = bool(
+            getattr(config.canonical_library, "shadow_mode", False)
+            and not config.canonical_library.enabled
+        )
+        if question == "Shechem" and not config.canonical_library.enabled and not shadow_mode:
             return metadata_payload(
                 object_ids=[],
                 retrieval_method=None,
@@ -79,6 +90,17 @@ class FakeAgent:
                 prompt_tokens=0,
                 enabled=False,
                 loaded=False,
+            )
+        if question == "Shechem" and shadow_mode:
+            return metadata_payload(
+                object_ids=["shechem"],
+                retrieval_method="exact",
+                topic_count=1,
+                prompt_tokens=1201,
+                topic_token_budget=780,
+                enabled=False,
+                loaded=True,
+                shadow_mode=True,
             )
         if question == "Shechem" and tuple(config.canonical_library.allowed_statuses) == ("approved",):
             return metadata_payload(

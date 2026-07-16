@@ -6,6 +6,7 @@ from pathlib import Path
 
 from bhf_agent.adapters import ChatAdapter
 from bhf_agent.config import AgentConfig
+from bhf_agent.config import CanonicalLibraryConfig
 from bhf_agent.config import ObservabilityConfig
 from bhf_agent.models import ChatRequest, ChatResponse
 from bhf_agent.profiles import ProfileLoader
@@ -427,6 +428,35 @@ class RunnerTests(unittest.TestCase):
             result.model_metadata["pipeline"]["canonical_library_retrieval_method"],
         )
 
+    def test_agent_runs_canonical_library_in_shadow_mode_without_injecting_context(self):
+        adapter = RecordingAdapter()
+        agent = self.make_agent(
+            adapter,
+            profile="standard",
+            canonical_library=CanonicalLibraryConfig(
+                enabled=False,
+                shadow_mode=True,
+            ),
+        )
+
+        result = agent.ask(
+            "Why did Israel renew the covenant where Abraham first entered the land at Shechem in Joshua 24?"
+        )
+
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertNotIn("# CANONICAL KNOWLEDGE CONTEXT", adapter.request.system_prompt)
+        self.assertTrue(result.model_metadata["pipeline"]["canonical_library_loaded"])
+        self.assertFalse(result.model_metadata["pipeline"]["canonical_library_enabled"])
+        self.assertEqual(result.model_metadata["pipeline"]["canonical_library_rollout_mode"], "shadow")
+        self.assertEqual(result.model_metadata["pipeline"]["canonical_library_prompt_mode"], "disabled")
+        self.assertEqual(
+            result.model_metadata["pipeline"]["canonical_library_shadow_prompt_mode"],
+            "summary",
+        )
+        self.assertIn("shechem", result.model_metadata["canonical_library_object_ids"])
+        self.assertIn("shechem", result.model_metadata["pipeline"]["canonical_library_object_ids"])
+
     def test_agent_suppresses_canonical_context_when_no_strong_match(self):
         adapter = RecordingAdapter()
         agent = self.make_agent(adapter, profile="standard")
@@ -516,6 +546,48 @@ class RunnerTests(unittest.TestCase):
         )
         self.assertNotIn("build_prompts", second_result.model_metadata["pipeline"]["stages_completed"])
         self.assertNotIn("call_model", second_result.model_metadata["pipeline"]["stages_completed"])
+
+    def test_agent_reuses_response_cache_in_shadow_mode_without_prompt_injection(self):
+        adapter = SequenceAdapter(
+            [
+                "Short Answer: The Hebrew word is ruach. Basic Meaning: its semantic range can include wind, breath, or spirit. Context Matters: meaning depends on passage context. Cautions: this may not always refer to the Holy Spirit.",
+            ]
+        )
+        agent = self.make_agent(
+            adapter,
+            profile="standard",
+            canonical_library=CanonicalLibraryConfig(
+                enabled=False,
+                shadow_mode=True,
+            ),
+        )
+        question = "What is the Hebrew word for spirit or wind?"
+
+        first_result = agent.ask(question)
+        second_result = agent.ask(question)
+
+        self.assertEqual(len(adapter.requests), 1)
+        self.assertEqual(first_result.answer_text, second_result.answer_text)
+        self.assertEqual(
+            first_result.model_metadata["pipeline"]["canonical_library_rollout_mode"],
+            "shadow",
+        )
+        self.assertEqual(
+            second_result.model_metadata["pipeline"]["canonical_library_rollout_mode"],
+            "shadow",
+        )
+        self.assertEqual(
+            second_result.model_metadata["pipeline"]["canonical_library_prompt_mode"],
+            "disabled",
+        )
+        self.assertTrue(
+            second_result.model_metadata["pipeline"]["canonical_library_response_cache_hit"]
+        )
+        self.assertEqual(
+            second_result.model_metadata["pipeline"]["canonical_library_response_cache_status"],
+            "hit",
+        )
+        self.assertNotIn("# CANONICAL KNOWLEDGE CONTEXT", adapter.requests[0].system_prompt)
 
     def test_agent_emits_redacted_observability_log(self):
         adapter = RecordingAdapter()

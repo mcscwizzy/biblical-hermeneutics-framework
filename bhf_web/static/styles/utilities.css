@@ -240,6 +240,52 @@ button.danger {
   padding-top: 18px;
 }
 
+.developer-inspector {
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.developer-inspector-section {
+  display: grid;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid #d8dee4;
+}
+
+.developer-inspector-result,
+.developer-inspector-entry {
+  border-top: 1px solid #d8dee4;
+  padding-top: 12px;
+}
+
+.developer-inspector-result-header,
+.developer-inspector-entry-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.developer-inspector-meta {
+  margin: 0;
+  color: #52616f;
+}
+
+.developer-inspector-preview {
+  margin: 0;
+  padding: 12px;
+  border: 1px solid #d8dee4;
+  border-radius: 8px;
+  background: #f8fbfd;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.developer-inspector-entry-list ul {
+  margin: 6px 0 0 18px;
+}
+
 dl {
   display: grid;
   grid-template-columns: 150px 1fr;

@@ -101,7 +101,7 @@ class BHFAgent:
         )
         if canonical_library is not None:
             self.canonical_library = canonical_library
-        elif self.config.canonical_library.enabled:
+        elif self.config.canonical_library.enabled or self.config.canonical_library.shadow_mode:
             self.canonical_library = load_canonical_library()
         else:
             self.canonical_library = None
@@ -127,6 +127,13 @@ class BHFAgent:
         self._status_run_started_at: float | None = None
         self._status_stage_started_at: float | None = None
         self._status_current_stage: str | None = None
+
+    def _canonical_library_rollout_mode(self) -> str:
+        if self.canonical_library is None:
+            return "disabled"
+        if self.config.canonical_library.shadow_mode and not self.config.canonical_library.enabled:
+            return "shadow"
+        return "enabled"
 
     def ask(
         self,
@@ -252,6 +259,8 @@ class BHFAgent:
                 "response_format_requested": response_contract != "freeform",
                 "local_knowledge_keys": [],
                 "canonical_library_enabled": self.config.canonical_library.enabled,
+                "canonical_library_shadow_mode": self.config.canonical_library.shadow_mode,
+                "canonical_library_rollout_mode": self._canonical_library_rollout_mode(),
                 "canonical_library_loaded": self.canonical_library is not None,
                 "canonical_library_object_ids": [],
                 "canonical_library_retrieval_method": None,
@@ -397,6 +406,8 @@ class BHFAgent:
 
     def _lookup_canonical_library(self, ctx: PipelineContext) -> PipelineContext:
         retrieval_started_at = time.perf_counter()
+        rollout_mode = self._canonical_library_rollout_mode()
+        ctx.debug_metadata["canonical_library_rollout_mode"] = rollout_mode
         if self.canonical_library is None:
             ctx.canonical_library_context = None
             ctx.canonical_library_prompt = None
@@ -486,7 +497,11 @@ class BHFAgent:
             ctx.debug_metadata["canonical_library_topic_count"] = 0
             ctx.debug_metadata["canonical_library_prompt_tokens"] = 0
             ctx.debug_metadata["canonical_library_strong_match"] = False
-            ctx.debug_metadata["canonical_library_prompt_mode"] = "retrieval_failed"
+            ctx.debug_metadata["canonical_library_prompt_mode"] = (
+                "disabled" if rollout_mode == "shadow" else "retrieval_failed"
+            )
+            if rollout_mode == "shadow":
+                ctx.debug_metadata["canonical_library_shadow_prompt_mode"] = "retrieval_failed"
             ctx.debug_metadata["canonical_library_error"] = str(exc)
             ctx.debug_metadata["canonical_library_context_cache_key"] = None
             ctx.debug_metadata["canonical_library_context_cache_hit"] = False
@@ -494,6 +509,8 @@ class BHFAgent:
             ctx.debug_metadata["canonical_library_retrieval_duration_ms"] = int(
                 round((time.perf_counter() - retrieval_started_at) * 1000)
             )
+            if rollout_mode == "shadow":
+                ctx.canonical_library_query = None
             ctx.warnings.append(f"Canonical library retrieval failed: {exc}")
             return ctx
 
@@ -520,7 +537,11 @@ class BHFAgent:
             ctx.debug_metadata["canonical_library_topic_count"] = 0
             ctx.debug_metadata["canonical_library_prompt_tokens"] = 0
             ctx.debug_metadata["canonical_library_strong_match"] = False
-            ctx.debug_metadata["canonical_library_prompt_mode"] = "no_match"
+            ctx.debug_metadata["canonical_library_prompt_mode"] = (
+                "disabled" if rollout_mode == "shadow" else "no_match"
+            )
+            if rollout_mode == "shadow":
+                ctx.debug_metadata["canonical_library_shadow_prompt_mode"] = "no_match"
             ctx.debug_metadata["canonical_library_context_cache_key"] = None
             ctx.debug_metadata["canonical_library_context_cache_hit"] = False
             ctx.debug_metadata["canonical_library_context_cache_status"] = "miss"
@@ -534,6 +555,8 @@ class BHFAgent:
             ctx.debug_metadata["canonical_library_retrieval_duration_ms"] = int(
                 round((time.perf_counter() - retrieval_started_at) * 1000)
             )
+            if rollout_mode == "shadow":
+                ctx.canonical_library_query = None
             return ctx
 
         metadata = dict(canonical_context.get("metadata") or {})
@@ -547,6 +570,29 @@ class BHFAgent:
         ctx.debug_metadata["canonical_library_answer_mode"] = metadata.get("answer_mode")
         ctx.debug_metadata["canonical_library_topic_token_budget"] = metadata.get("topic_token_budget")
         ctx.debug_metadata["canonical_library_query"] = ctx.canonical_library_query
+
+        if rollout_mode == "shadow":
+            ctx.debug_metadata["canonical_library_shadow_prompt_mode"] = (
+                "summary" if strong_match else "no_strong_match"
+            )
+            ctx.debug_metadata["canonical_library_prompt_mode"] = "disabled"
+            ctx.debug_metadata["canonical_library_context_cache_hit"] = False
+            ctx.debug_metadata["canonical_library_context_cache_status"] = "disabled"
+            ctx.debug_metadata["canonical_library_context_cache_key"] = None
+            ctx.debug_metadata["canonical_library_prompt_tokens"] = 0
+            ctx.canonical_library_prompt = None
+            ctx.debug_metadata["canonical_library_response_model_signature"] = build_model_signature(
+                adapter=self.config.adapter,
+                base_url=self.config.base_url,
+                model=self.config.model,
+                temperature=self.config.temperature,
+                max_tokens=self.config.max_tokens,
+            )
+            ctx.debug_metadata["canonical_library_retrieval_duration_ms"] = int(
+                round((time.perf_counter() - retrieval_started_at) * 1000)
+            )
+            ctx.canonical_library_query = None
+            return ctx
 
         if strong_match:
             prompt_mode = "summary"
@@ -1704,6 +1750,7 @@ class BHFAgent:
                 "selected_entry_ids": list(
                     ctx.debug_metadata.get("canonical_library_object_ids") or []
                 ),
+                "rollout_mode": ctx.debug_metadata.get("canonical_library_rollout_mode"),
                 "context_token_count": _safe_int(
                     ctx.debug_metadata.get("canonical_library_prompt_tokens")
                 )
@@ -1738,8 +1785,14 @@ class BHFAgent:
                 record["answer_mode"] = ctx.answer_mode
                 record["profile"] = ctx.profile_name
                 record["response_contract"] = ctx.debug_metadata.get("response_contract")
+                record["rollout_mode"] = ctx.debug_metadata.get(
+                    "canonical_library_rollout_mode"
+                )
                 record["prompt_mode"] = ctx.debug_metadata.get(
                     "canonical_library_prompt_mode"
+                )
+                record["shadow_prompt_mode"] = ctx.debug_metadata.get(
+                    "canonical_library_shadow_prompt_mode"
                 )
                 record["stages_completed"] = list(
                     ctx.debug_metadata.get("stages_completed") or []
@@ -1766,6 +1819,12 @@ class BHFAgent:
                         ),
                         "canonical_library_prompt_mode": ctx.debug_metadata.get(
                             "canonical_library_prompt_mode"
+                        ),
+                        "canonical_library_shadow_prompt_mode": ctx.debug_metadata.get(
+                            "canonical_library_shadow_prompt_mode"
+                        ),
+                        "canonical_library_rollout_mode": ctx.debug_metadata.get(
+                            "canonical_library_rollout_mode"
                         ),
                         "canonical_library_retrieval_cache_key": ctx.debug_metadata.get(
                             "canonical_library_retrieval_cache_key"

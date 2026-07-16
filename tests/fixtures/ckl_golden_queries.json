@@ -1,0 +1,126 @@
+{
+  "version": 1,
+  "description": "Deterministic CKL retrieval golden queries used to guard ranking, filtering, and relevance thresholds.",
+  "queries": [
+    {
+      "query": "Why is Shechem important?",
+      "limit": 8,
+      "expected_results": [
+        {
+          "id": "shechem",
+          "minimum_score": 0.95
+        },
+        {
+          "id": "joshua-son-of-nun",
+          "minimum_score": 0.7
+        },
+        {
+          "id": "joshua",
+          "minimum_score": 0.7
+        }
+      ]
+    },
+    {
+      "query": "What is the significance of Joseph's bones?",
+      "limit": 8,
+      "expected_results": [
+        {
+          "id": "joseph",
+          "minimum_score": 0.45
+        },
+        {
+          "id": "shechem",
+          "minimum_score": 0.55
+        },
+        {
+          "id": "joseph-sold-into-egypt",
+          "minimum_score": 0.45
+        }
+      ]
+    },
+    {
+      "query": "Why did Joshua say Israel could not serve the Lord?",
+      "limit": 8,
+      "expected_results": [
+        {
+          "id": "joshua",
+          "minimum_score": 0.54
+        },
+        {
+          "id": "joshua-son-of-nun",
+          "minimum_score": 0.55
+        },
+        {
+          "id": "what-is-the-day-of-the-lord",
+          "minimum_score": 0.45
+        }
+      ]
+    },
+    {
+      "query": "What is covenant renewal?",
+      "limit": 8,
+      "expected_results": [
+        {
+          "id": "covenant-theme",
+          "minimum_score": 0.95
+        },
+        {
+          "id": "new-covenant",
+          "minimum_score": 0.95
+        },
+        {
+          "id": "joshua",
+          "minimum_score": 0.75
+        }
+      ]
+    },
+    {
+      "query": "How does Abraham connect to Joshua 24?",
+      "limit": 8,
+      "expected_results": [
+        {
+          "id": "joshua",
+          "minimum_score": 0.85
+        },
+        {
+          "id": "who-was-abraham",
+          "minimum_score": 0.75
+        },
+        {
+          "id": "shechem",
+          "minimum_score": 0.95
+        },
+        {
+          "id": "joshua-son-of-nun",
+          "minimum_score": 0.85
+        }
+      ]
+    },
+    {
+      "query": "What does baptism have to do with new creation?",
+      "limit": 8,
+      "expected_results": [
+        {
+          "id": "new-creation-theme",
+          "minimum_score": 0.85
+        },
+        {
+          "id": "creation",
+          "minimum_score": 0.6
+        },
+        {
+          "id": "new-jerusalem",
+          "minimum_score": 0.6
+        },
+        {
+          "id": "how-do-the-old-and-new-testaments-connect",
+          "minimum_score": 0.6
+        },
+        {
+          "id": "resurrection-theme",
+          "minimum_score": 0.55
+        }
+      ]
+    }
+  ]
+}

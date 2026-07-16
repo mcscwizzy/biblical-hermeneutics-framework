@@ -23,6 +23,7 @@ ALLOWED_ADAPTERS = ("openai_compatible", "ollama")
 @dataclass(frozen=True)
 class CanonicalLibraryConfig:
     enabled: bool = True
+    shadow_mode: bool = False
     cache_enabled: bool = True
     cache_max_entries: int = 512
     max_results: int = 5
@@ -204,8 +205,12 @@ class AgentConfig:
             self.observability.validate()
         except ValueError as exc:
             raise ConfigError(str(exc)) from exc
-        if self.public_cache.enabled and not self.canonical_library.enabled:
-            raise ConfigError("public_cache requires canonical_library to be enabled")
+        if self.public_cache.enabled and not (
+            self.canonical_library.enabled or self.canonical_library.shadow_mode
+        ):
+            raise ConfigError(
+                "public_cache requires canonical_library to be enabled or shadow_mode to be enabled"
+            )
 
     def to_dict(self, redact_secrets: bool = True) -> dict[str, Any]:
         data = asdict(self)
@@ -234,7 +239,13 @@ def _canonical_library_config_from_value(
         merged = asdict(base_config)
         merged.update(value)
         config = CanonicalLibraryConfig(
-            enabled=_coerce_bool(merged["enabled"], field_name="canonical_library.enabled"),
+            enabled=_coerce_bool(
+                merged["enabled"], field_name="canonical_library.enabled"
+            ),
+            shadow_mode=_coerce_bool(
+                merged["shadow_mode"],
+                field_name="canonical_library.shadow_mode",
+            ),
             cache_enabled=_coerce_bool(
                 merged["cache_enabled"],
                 field_name="canonical_library.cache_enabled",
@@ -243,7 +254,10 @@ def _canonical_library_config_from_value(
                 merged["cache_max_entries"],
                 field_name="canonical_library.cache_max_entries",
             ),
-            max_results=_coerce_int(merged["max_results"], field_name="canonical_library.max_results"),
+            max_results=_coerce_int(
+                merged["max_results"],
+                field_name="canonical_library.max_results",
+            ),
             max_context_tokens=_coerce_int(
                 merged["max_context_tokens"],
                 field_name="canonical_library.max_context_tokens",

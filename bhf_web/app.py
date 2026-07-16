@@ -34,6 +34,7 @@ from .routes.ask import register_ask_routes
 from .routes.canonical import register_canonical_routes
 from .routes.canonical import register_canonical_editor_routes
 from .routes.curation import register_curation_routes
+from .routes.debug import register_debug_routes
 from .routes.maps import register_map_routes
 from .routes.study import register_study_routes
 from .jobs import (
@@ -238,6 +239,7 @@ def create_app() -> FastAPI:
         templates=templates,
         job_store=job_store,
     )
+    register_debug_routes(web_app)
     register_ask_routes(
         web_app,
         templates=templates,

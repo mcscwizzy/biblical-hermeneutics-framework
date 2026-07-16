@@ -10,6 +10,7 @@ from fastapi import FastAPI, Query, Request
 from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse, Response
 
 from bhf_agent.ckl import build_canonical_context, load_canonical_library
+import bhf_agent.ckl as ckl_module
 from framework.canonical_library.authoring import write_json_file
 from framework.canonical_library.normalization import normalize_id
 from framework.canonical_library.schema import CanonicalValidationError, validate_object
@@ -188,6 +189,11 @@ def register_canonical_editor_routes(app: FastAPI, *, templates: Any) -> None:
 
         write_json_file(source_path, validated.to_dict())
         _canonical_library.cache_clear()
+        if hasattr(ckl_module, "_load_default_canonical_library"):
+            try:
+                ckl_module._load_default_canonical_library.cache_clear()
+            except AttributeError:
+                pass
         return RedirectResponse(
             url=f"/canonical/editor?object_id={validated.id}&saved=1",
             status_code=303,
@@ -317,6 +323,7 @@ def _serialize_topic(topic: dict[str, Any], library: Any, *, browse: bool) -> di
             "source_count": len(payload["sources"]),
             "scripture_reference_count": len(payload["scripture_references"]),
             "related_object_count": len(payload["related_objects"]),
+            "related_object_links": _serialize_related_object_links(obj, library),
             "browse_url": f"/curation?collection={obj.type}",
         }
     )

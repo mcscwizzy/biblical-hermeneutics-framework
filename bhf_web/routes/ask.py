@@ -13,6 +13,7 @@ from bhf_agent.profiles import ProfileError
 
 from ..forms import config_from_form, load_web_defaults
 from ..jobs import _fake_result
+from ..services.ckl_inspector import build_result_inspector_payload
 from ..services.web_helpers import (
     build_ask_question as _question_from_form,
     job_error_message as _job_error_message,
@@ -50,15 +51,25 @@ def _answer_template_context(
     saved_study: Any = None,
     debug_result: Any = None,
     show_debug: bool = False,
+    inspector_question: str | None = None,
+    inspector_max_context_tokens: int | None = None,
 ) -> dict[str, Any]:
     metadata: dict[str, Any] = {}
     canonical_context = None
     canonical_object_ids: list[str] = []
+    developer_inspector = None
     if show_debug and debug_result is not None:
         metadata = result_metadata(debug_result)
         debug_metadata = getattr(debug_result, "model_metadata", {}) or {}
         canonical_context = debug_metadata.get("canonical_library_context")
         canonical_object_ids = list(debug_metadata.get("canonical_library_object_ids") or [])
+        if inspector_question:
+            developer_inspector = build_result_inspector_payload(
+                inspector_question,
+                debug_result,
+                max_context_tokens=inspector_max_context_tokens or 3000,
+                debug=True,
+            )
 
     return {
         "error": error,
@@ -67,6 +78,7 @@ def _answer_template_context(
         "metadata": metadata,
         "canonical_context": canonical_context,
         "canonical_object_ids": canonical_object_ids,
+        "developer_inspector": developer_inspector,
         "reader_reference": reader_reference,
         "can_save_study": can_save_study,
     }
@@ -112,6 +124,8 @@ def register_ask_routes(
                     can_save_study=bool(reader_reference),
                     debug_result=result if show_debug else None,
                     show_debug=show_debug,
+                    inspector_question=question,
+                    inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
                 ),
             )
 
@@ -126,6 +140,8 @@ def register_ask_routes(
                     can_save_study=bool(reader_reference),
                     debug_result=result if show_debug else None,
                     show_debug=show_debug,
+                    inspector_question=question,
+                    inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
                 ),
                 status_code=502,
             )
@@ -139,6 +155,8 @@ def register_ask_routes(
                 can_save_study=bool(reader_reference),
                 debug_result=result if show_debug else None,
                 show_debug=show_debug,
+                inspector_question=question,
+                inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
             ),
         )
 
@@ -205,6 +223,8 @@ def register_ask_routes(
                     can_save_study=bool(job.reader_reference),
                     debug_result=result if show_debug else None,
                     show_debug=show_debug,
+                    inspector_question=job.question,
+                    inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
                 ),
                 status_code=502,
             )
@@ -218,6 +238,8 @@ def register_ask_routes(
                 can_save_study=bool(job.reader_reference),
                 debug_result=result if show_debug else None,
                 show_debug=show_debug,
+                inspector_question=job.question,
+                inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
             ),
         )
 

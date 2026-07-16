@@ -20,6 +20,9 @@ Resume rule: continue from the next unchecked phase without asking for confirmat
 - Deterministic fallback answers now replace model/provider failures with either a CKL summary or a controlled empty search-results payload.
 - Runtime caches now short-circuit repeated retrieval, context, and response work while staying keyed to CKL and prompt versions.
 - Request observability now logs CKL timing, cache behavior, model usage, and fallback outcomes without exposing prompts or model text.
+- Developer-only retrieval inspection is now available in debug-mode ask responses and at `POST /api/debug/ckl-search`.
+- Phase 15 testing coverage is now in place with deterministic golden retrieval queries and response-validation guardrails.
+- Phase 16 rollout controls are now implemented with CKL feature-flag and shadow-mode support, plus debug preview support for the shadowed prompt path.
 
 ## Reusable Baseline That Already Exists
 
@@ -55,9 +58,9 @@ Resume rule: continue from the next unchecked phase without asking for confirmat
 | 11 - Add Fallback Behavior | complete | Deterministic CKL summary and empty search-result fallbacks now replace model/provider failures |
 | 12 - Add Caching | complete | Retrieval, context, and response caches are keyed by CKL and prompt versions |
 | 13 - Add Observability | complete | Structured per-request observability logs now capture retrieval timing, model timing, and cache behavior |
-| 14 - Create a Developer Retrieval Inspector | pending | Add a diagnostics endpoint or panel for CKL search inspection |
-| 15 - Testing | pending | Add unit, integration, and golden-query coverage |
-| 16 - Rollout Strategy | pending | Gate the new pipeline behind a feature flag and shadow mode |
+| 14 - Create a Developer Retrieval Inspector | complete | Debug ask responses and `POST /api/debug/ckl-search` now expose CKL retrieval inspection |
+| 15 - Testing | complete | Golden retrieval queries and response-validation coverage added |
+| 16 - Rollout Strategy | complete | Gate the new pipeline behind a feature flag and shadow mode |
 
 ## Implementation Order
 
@@ -92,4 +95,6 @@ Resume rule: continue from the next unchecked phase without asking for confirmat
 - Phase 11 fallback behavior is complete.
 - Phase 12 caching is complete.
 - Phase 13 observability is complete.
-- Continue with the developer retrieval inspector in Phase 14.
+- Phase 14 developer retrieval inspector is complete.
+- Phase 15 testing is complete.
+- Phase 16 rollout strategy is complete.
