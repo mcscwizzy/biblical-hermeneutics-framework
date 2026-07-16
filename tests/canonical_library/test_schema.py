@@ -4,10 +4,12 @@ import unittest
 
 from framework.canonical_library import (
     CanonicalObject,
+    CanonicalInterpretiveNote,
     CanonicalRelationship,
     CanonicalScriptureReference,
     CanonicalSource,
     CanonicalValidationError,
+    normalize_id,
     validate_library,
     validate_object,
 )
@@ -20,6 +22,29 @@ def valid_mapping() -> dict[str, object]:
         title="Shechem",
         aliases=["where is shechem", "why is shechem important"],
     ).to_dict()
+
+
+EXPECTED_CONTEXT_APPLICABILITY = {
+    "historical": True,
+    "ancient_near_east": True,
+    "hebraic_worldview": True,
+    "second_temple": True,
+    "canonical": True,
+    "later_christian_reception": True,
+}
+
+SOURCE_TYPE_ALIASES = {
+    "biblical-text": "scripture",
+    "book": "academic-book",
+    "journal": "journal-article",
+    "commentary": "reference-work",
+    "dictionary": "reference-work",
+    "encyclopedia": "reference-work",
+    "archaeological-report": "excavation-report",
+    "museum": "museum-collection",
+    "primary-source": "ancient-primary-source",
+    "website": "other",
+}
 
 
 def relationship_mapping(
@@ -53,23 +78,45 @@ def scripture_reference_mapping(
 def source_mapping(
     title: str,
     *,
-    source_type: str = "book",
+    id: str | None = None,
+    source_type: str = "reference-work",
     author: str = "",
     publisher: str = "",
     year: int | None = None,
     locator: str = "",
     url: str = "",
+    supports: list[str] | None = None,
     notes: str = "",
 ) -> dict[str, object]:
+    normalized_source_type = SOURCE_TYPE_ALIASES.get(source_type, source_type)
     return CanonicalSource(
+        id=normalize_id(id or title),
         title=title,
         author=author,
         publisher=publisher,
         year=year,
         locator=locator,
         url=url,
-        source_type=source_type,
+        source_type=normalized_source_type,
+        supports=list(supports or []),
         notes=notes,
+    ).to_dict()
+
+
+def interpretive_note_mapping(
+    note: str,
+    *,
+    note_type: str = "textual-observation",
+    certainty: str = "unknown",
+    dispute_status: str = "unknown",
+    sources: list[str] | None = None,
+) -> dict[str, object]:
+    return CanonicalInterpretiveNote(
+        note=note,
+        note_type=note_type,
+        certainty=certainty,
+        dispute_status=dispute_status,
+        sources=list(sources or []),
     ).to_dict()
 
 
@@ -88,6 +135,11 @@ class CanonicalSchemaTests(unittest.TestCase):
         self.assertEqual(obj.related_objects, [])
         self.assertEqual(obj.scripture_references, [])
         self.assertEqual(obj.sources, [])
+        self.assertEqual(obj.context_applicability, EXPECTED_CONTEXT_APPLICABILITY)
+        self.assertEqual(obj.hebraic_worldview, "")
+        self.assertEqual(obj.second_temple_context, "")
+        self.assertEqual(obj.canonical_context, "")
+        self.assertEqual(obj.later_christian_reception, "")
 
     def test_valid_governance_metadata_passes_validation(self) -> None:
         data = valid_mapping()
@@ -103,13 +155,13 @@ class CanonicalSchemaTests(unittest.TestCase):
                     scripture_reference_mapping("Genesis 12:6-7", "primary"),
                 ],
                 "sources": [
-                    source_mapping(
-                        "Genesis",
-                        source_type="biblical-text",
-                        locator="12:6-7",
-                    ),
-                ],
-            }
+                source_mapping(
+                    "Genesis",
+                    source_type="scripture",
+                    locator="12:6-7",
+                ),
+            ],
+        }
         )
 
         obj = validate_object(data, path="objects/places/shechem.json")
@@ -125,7 +177,111 @@ class CanonicalSchemaTests(unittest.TestCase):
         self.assertEqual(obj.scripture_references[0].relationship, "primary")
         self.assertEqual(len(obj.sources), 1)
         self.assertEqual(obj.sources[0].title, "Genesis")
-        self.assertEqual(obj.sources[0].source_type, "biblical-text")
+        self.assertEqual(obj.sources[0].source_type, "scripture")
+        self.assertEqual(obj.sources[0].id, "genesis")
+        self.assertEqual(obj.sources[0].supports, [])
+
+    def test_new_context_layers_round_trip_through_validation(self) -> None:
+        data = valid_mapping()
+        data.update(
+            {
+                "hebraic_worldview": "Covenant identity and communal memory.",
+                "second_temple_context": "Temple-centered Jewish life in the Second Temple period.",
+                "canonical_context": "Fits the broader covenant storyline.",
+                "later_christian_reception": "Later Christians read it typologically.",
+            }
+        )
+
+        obj = validate_object(data, path="objects/places/shechem.json")
+
+        self.assertEqual(obj.hebraic_worldview, "Covenant identity and communal memory.")
+        self.assertEqual(obj.second_temple_context, "Temple-centered Jewish life in the Second Temple period.")
+        self.assertEqual(obj.canonical_context, "Fits the broader covenant storyline.")
+        self.assertEqual(obj.later_christian_reception, "Later Christians read it typologically.")
+        self.assertEqual(obj.context_applicability, EXPECTED_CONTEXT_APPLICABILITY)
+
+    def test_legacy_interpretive_notes_are_normalized_to_structured_notes(self) -> None:
+        data = valid_mapping()
+        data["interpretive_notes"] = ["This is a test note."]
+
+        obj = validate_object(data, path="objects/places/shechem.json")
+
+        self.assertEqual(len(obj.interpretive_notes), 1)
+        note = obj.interpretive_notes[0]
+        self.assertIsInstance(note, CanonicalInterpretiveNote)
+        self.assertEqual(note.note, "This is a test note.")
+        self.assertEqual(note.note_type, "textual-observation")
+        self.assertEqual(note.certainty, "unknown")
+        self.assertEqual(note.dispute_status, "unknown")
+        self.assertEqual(note.sources, [])
+
+    def test_structured_interpretive_notes_pass_validation(self) -> None:
+        data = valid_mapping()
+        data["interpretive_notes"] = [
+            interpretive_note_mapping(
+                "The covenant ceremony resembles Ancient Near Eastern treaty forms.",
+                note_type="historical-context",
+                certainty="medium",
+                dispute_status="broad-consensus",
+                sources=["source-id"],
+            )
+        ]
+
+        obj = validate_object(data, path="objects/places/shechem.json")
+
+        self.assertEqual(len(obj.interpretive_notes), 1)
+        note = obj.interpretive_notes[0]
+        self.assertEqual(note.note_type, "historical-context")
+        self.assertEqual(note.certainty, "medium")
+        self.assertEqual(note.dispute_status, "broad-consensus")
+        self.assertEqual(note.sources, ["source-id"])
+
+    def test_invalid_interpretive_note_metadata_fails_validation(self) -> None:
+        data = valid_mapping()
+        data["interpretive_notes"] = [
+            {
+                "note": "The covenant ceremony resembles Ancient Near Eastern treaty forms.",
+                "note_type": "historical-context",
+                "certainty": "certain",
+                "dispute_status": "broad-consensus",
+                "sources": ["source-id"],
+            }
+        ]
+
+        with self.assertRaisesRegex(
+            CanonicalValidationError,
+            'field "certainty" must be one of',
+        ):
+            validate_object(data, path="objects/places/shechem.json")
+
+    def test_context_applicability_merges_partial_mappings(self) -> None:
+        data = valid_mapping()
+        data["context_applicability"] = {
+            "historical": False,
+            "canonical": False,
+        }
+
+        obj = validate_object(data, path="objects/places/shechem.json")
+
+        self.assertFalse(obj.context_applicability["historical"])
+        self.assertFalse(obj.context_applicability["canonical"])
+        self.assertTrue(obj.context_applicability["ancient_near_east"])
+        self.assertTrue(obj.context_applicability["hebraic_worldview"])
+        self.assertTrue(obj.context_applicability["second_temple"])
+        self.assertTrue(obj.context_applicability["later_christian_reception"])
+
+    def test_context_applicability_rejects_unknown_flags(self) -> None:
+        data = valid_mapping()
+        data["context_applicability"] = {
+            "historical": True,
+            "mystery": False,
+        }
+
+        with self.assertRaisesRegex(
+            CanonicalValidationError,
+            "unknown context applicability field",
+        ):
+            validate_object(data, path="objects/places/shechem.json")
 
     def test_invalid_governance_consistency_fails(self) -> None:
         data = valid_mapping()
@@ -186,7 +342,7 @@ class CanonicalSchemaTests(unittest.TestCase):
         ):
             validate_object(data, path="objects/places/shechem.json")
 
-    def test_approved_content_rejects_legacy_source_strings(self) -> None:
+    def test_approved_content_normalizes_legacy_source_strings(self) -> None:
         data = valid_mapping()
         data.update(
             {
@@ -203,11 +359,12 @@ class CanonicalSchemaTests(unittest.TestCase):
             }
         )
 
-        with self.assertRaisesRegex(
-            CanonicalValidationError,
-            'field "sources" must use structured source objects when review_status is "approved"',
-        ):
-            validate_object(data, path="objects/places/shechem.json")
+        obj = validate_object(data, path="objects/places/shechem.json")
+
+        self.assertEqual(len(obj.sources), 1)
+        self.assertEqual(obj.sources[0].title, "Genesis 12-22")
+        self.assertEqual(obj.sources[0].source_type, "scripture")
+        self.assertEqual(obj.sources[0].id, "genesis-12-22")
 
     def test_valid_related_objects_pass_validation(self) -> None:
         data = valid_mapping()
@@ -258,7 +415,7 @@ class CanonicalSchemaTests(unittest.TestCase):
         data["sources"] = [
             source_mapping(
                 "Genesis",
-                source_type="biblical-text",
+                source_type="scripture",
                 locator="12:6-7",
             ),
             source_mapping(
@@ -267,7 +424,7 @@ class CanonicalSchemaTests(unittest.TestCase):
                 publisher="Example Press",
                 year=2020,
                 locator="pp. 12-14",
-                source_type="book",
+                source_type="academic-book",
                 notes="reference sample",
             ),
         ]
@@ -276,10 +433,34 @@ class CanonicalSchemaTests(unittest.TestCase):
 
         self.assertEqual(len(obj.sources), 2)
         self.assertEqual(obj.sources[0].title, "Genesis")
-        self.assertEqual(obj.sources[0].source_type, "biblical-text")
+        self.assertEqual(obj.sources[0].source_type, "scripture")
+        self.assertEqual(obj.sources[0].id, "genesis")
         self.assertEqual(obj.sources[1].author, "John Doe")
         self.assertEqual(obj.sources[1].year, 2020)
         self.assertIsInstance(obj.sources[0], CanonicalSource)
+
+    def test_legacy_structured_source_types_are_normalized(self) -> None:
+        data = valid_mapping()
+        data["sources"] = [
+            {
+                "title": "Genesis",
+                "author": "",
+                "publisher": "",
+                "year": None,
+                "locator": "12:6-7",
+                "url": "",
+                "source_type": "biblical-text",
+                "notes": "",
+            }
+        ]
+
+        obj = validate_object(data, path="objects/places/shechem.json")
+
+        self.assertEqual(len(obj.sources), 1)
+        self.assertEqual(obj.sources[0].title, "Genesis")
+        self.assertEqual(obj.sources[0].source_type, "scripture")
+        self.assertEqual(obj.sources[0].id, "genesis")
+        self.assertEqual(obj.sources[0].supports, [])
 
     def test_invalid_source_year_fails(self) -> None:
         data = valid_mapping()
@@ -291,7 +472,7 @@ class CanonicalSchemaTests(unittest.TestCase):
                 "year": "2020",
                 "locator": "pp. 12-14",
                 "url": "",
-                "source_type": "book",
+                "source_type": "academic-book",
                 "notes": "",
             }
         ]
@@ -307,7 +488,8 @@ class CanonicalSchemaTests(unittest.TestCase):
 
         self.assertEqual(len(obj.sources), 1)
         self.assertEqual(obj.sources[0].title, "Westermann, Genesis")
-        self.assertEqual(obj.sources[0].source_type, "other")
+        self.assertEqual(obj.sources[0].source_type, "reference-work")
+        self.assertEqual(obj.sources[0].id, "westermann-genesis")
         self.assertIsInstance(obj.sources[0], CanonicalSource)
 
     def test_invalid_related_object_id_fails(self) -> None:

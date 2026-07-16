@@ -477,7 +477,7 @@ def _normalize_legacy_sources(
                 isinstance(raw_source, str)
                 and source.source_type in {"other", "website"}
             ):
-                source = replace(source, source_type="book")
+                source = replace(source, source_type="reference-work")
             promoted_sources.append(source.to_dict())
         candidate["sources"] = promoted_sources
     else:

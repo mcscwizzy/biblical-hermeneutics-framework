@@ -50,18 +50,156 @@ SCRIPTURE_REFERENCE_RELATIONSHIP_VALUES: tuple[str, ...] = (
 )
 
 SOURCE_TYPE_VALUES: tuple[str, ...] = (
-    "biblical-text",
-    "book",
-    "journal",
-    "commentary",
-    "dictionary",
-    "encyclopedia",
-    "archaeological-report",
-    "museum",
-    "primary-source",
-    "website",
+    "scripture",
+    "ancient-primary-source",
+    "academic-book",
+    "journal-article",
+    "lexicon",
+    "grammar",
+    "excavation-report",
+    "museum-collection",
+    "reference-work",
+    "confessional-source",
     "other",
 )
+
+LEGACY_SOURCE_TYPE_ALIASES: dict[str, str] = {
+    "biblical-text": "scripture",
+    "book": "academic-book",
+    "journal": "journal-article",
+    "commentary": "reference-work",
+    "dictionary": "reference-work",
+    "encyclopedia": "reference-work",
+    "archaeological-report": "excavation-report",
+    "museum": "museum-collection",
+    "primary-source": "ancient-primary-source",
+    "website": "other",
+}
+
+SUBSTANTIVE_SOURCE_TYPE_VALUES: tuple[str, ...] = (
+    "scripture",
+    "ancient-primary-source",
+    "academic-book",
+    "journal-article",
+    "lexicon",
+    "grammar",
+    "excavation-report",
+    "museum-collection",
+    "reference-work",
+    "confessional-source",
+)
+
+LEGACY_SCRIPTURE_BOOK_TITLES: tuple[str, ...] = (
+    "Genesis",
+    "Exodus",
+    "Leviticus",
+    "Numbers",
+    "Deuteronomy",
+    "Joshua",
+    "Judges",
+    "Ruth",
+    "1 Samuel",
+    "2 Samuel",
+    "1 Kings",
+    "2 Kings",
+    "1 Chronicles",
+    "2 Chronicles",
+    "Ezra",
+    "Nehemiah",
+    "Esther",
+    "Job",
+    "Psalms",
+    "Proverbs",
+    "Ecclesiastes",
+    "Song of Songs",
+    "Isaiah",
+    "Jeremiah",
+    "Lamentations",
+    "Ezekiel",
+    "Daniel",
+    "Hosea",
+    "Joel",
+    "Amos",
+    "Obadiah",
+    "Jonah",
+    "Micah",
+    "Nahum",
+    "Habakkuk",
+    "Zephaniah",
+    "Haggai",
+    "Zechariah",
+    "Malachi",
+    "Matthew",
+    "Mark",
+    "Luke",
+    "John",
+    "Acts",
+    "Romans",
+    "1 Corinthians",
+    "2 Corinthians",
+    "Galatians",
+    "Ephesians",
+    "Philippians",
+    "Colossians",
+    "1 Thessalonians",
+    "2 Thessalonians",
+    "1 Timothy",
+    "2 Timothy",
+    "Titus",
+    "Philemon",
+    "Hebrews",
+    "James",
+    "1 Peter",
+    "2 Peter",
+    "1 John",
+    "2 John",
+    "3 John",
+    "Jude",
+    "Revelation",
+)
+
+INTERPRETIVE_NOTE_TYPE_VALUES: tuple[str, ...] = (
+    "textual-observation",
+    "literary-observation",
+    "historical-context",
+    "ancient-near-east-context",
+    "hebraic-worldview",
+    "second-temple-context",
+    "canonical-connection",
+    "theological-interpretation",
+    "interpretive-caution",
+    "later-reception",
+)
+
+INTERPRETIVE_NOTE_CERTAINTY_VALUES: tuple[str, ...] = (
+    "high",
+    "medium",
+    "low",
+    "unknown",
+)
+
+INTERPRETIVE_NOTE_DISPUTE_STATUS_VALUES: tuple[str, ...] = (
+    "consensus",
+    "broad-consensus",
+    "majority",
+    "disputed",
+    "minority",
+    "confessional",
+    "unknown",
+)
+
+CONTEXT_APPLICABILITY_FIELDS: tuple[str, ...] = (
+    "historical",
+    "ancient_near_east",
+    "hebraic_worldview",
+    "second_temple",
+    "canonical",
+    "later_christian_reception",
+)
+
+
+def default_context_applicability() -> dict[str, bool]:
+    return {field_name: True for field_name in CONTEXT_APPLICABILITY_FIELDS}
 
 DEFAULT_GOVERNANCE_METADATA: dict[str, Any] = {
     "content_status": "placeholder",
@@ -73,10 +211,15 @@ DEFAULT_GOVERNANCE_METADATA: dict[str, Any] = {
 
 DEFAULT_CANONICAL_METADATA: dict[str, Any] = {
     **DEFAULT_GOVERNANCE_METADATA,
+    "context_applicability": default_context_applicability(),
     "authorship_positions": [],
     "date_ranges": [],
     "original_audience": "",
     "historical_setting": "",
+    "hebraic_worldview": "",
+    "second_temple_context": "",
+    "canonical_context": "",
+    "later_christian_reception": "",
     "genre": [],
     "structure": [],
     "major_themes": [],
@@ -138,6 +281,10 @@ STRING_FIELDS: tuple[str, ...] = (
     "summary",
     "historical_context",
     "ancient_near_east_context",
+    "hebraic_worldview",
+    "second_temple_context",
+    "canonical_context",
+    "later_christian_reception",
     "literary_context",
     "covenantal_significance",
     "original_audience",
@@ -183,6 +330,8 @@ SCRIPTURE_REFERENCE_FIELDS: tuple[str, ...] = ("scripture_references",)
 
 SOURCE_FIELDS: tuple[str, ...] = ("sources",)
 
+MAPPING_FIELDS: tuple[str, ...] = ("context_applicability",)
+
 RELATED_OBJECT_REQUIRED_FIELDS: tuple[str, ...] = (
     "id",
     "relationship",
@@ -207,6 +356,7 @@ GOVERNANCE_LIST_FIELDS: tuple[str, ...] = ("reviewed_by",)
 ALL_FIELDS: tuple[str, ...] = (
     STRING_FIELDS
     + LIST_FIELDS
+    + MAPPING_FIELDS
     + RELATED_OBJECT_FIELDS
     + SCRIPTURE_REFERENCE_FIELDS
     + SOURCE_FIELDS
@@ -270,6 +420,76 @@ def _category_folder(type_name: str) -> str | None:
     return CATEGORY_FOLDERS.get(type_name)
 
 
+def _normalize_source_type_label(value: Any) -> str:
+    normalized = re.sub(r"[\s_]+", "-", str(value).strip().lower())
+    return LEGACY_SOURCE_TYPE_ALIASES.get(normalized, normalized)
+
+
+def _legacy_source_looks_like_scripture(value: str) -> bool:
+    normalized = re.sub(r"[,;()\[\]]", " ", value).strip().lower()
+    if not normalized:
+        return False
+
+    for book_title in sorted(LEGACY_SCRIPTURE_BOOK_TITLES, key=len, reverse=True):
+        alias = book_title.lower()
+        if normalized == alias:
+            return True
+        if not normalized.startswith(f"{alias} "):
+            continue
+        remainder = normalized[len(alias) :].strip()
+        if not remainder:
+            return True
+        if re.fullmatch(r"[0-9][0-9\s:,\-–;&]*", remainder):
+            return True
+
+    return False
+
+
+def _classify_legacy_source_string(value: str) -> str:
+    if _legacy_source_looks_like_scripture(value):
+        return "scripture"
+    return "reference-work"
+
+
+def _normalize_source_supports(
+    value: Any,
+    *,
+    path: str | Path | None = None,
+    object_id: str | None = None,
+) -> list[str]:
+    if value is None:
+        return []
+    if not isinstance(value, list):
+        raise _expected_actual_error(
+            "supports",
+            "list[str]",
+            value,
+            path=path,
+            object_id=object_id,
+        )
+
+    supports: list[str] = []
+    for support in value:
+        if not isinstance(support, str):
+            raise _expected_actual_error(
+                "supports",
+                "list[str]",
+                value,
+                path=path,
+                object_id=object_id,
+            )
+        normalized_support = normalize_id(support)
+        if not normalized_support:
+            raise _error(
+                'field "supports" cannot contain blank values',
+                path=path,
+                object_id=object_id,
+            )
+        supports.append(normalized_support)
+
+    return list(dict.fromkeys(supports))
+
+
 @dataclass(frozen=True)
 class CanonicalRelationship:
     id: str
@@ -312,7 +532,9 @@ class CanonicalSource:
     locator: str = ""
     url: str = ""
     source_type: str = "other"
+    supports: list[str] = field(default_factory=list)
     notes: str = ""
+    id: str = ""
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -330,7 +552,38 @@ class CanonicalSource:
         normalized = value.strip()
         if not normalized:
             raise CanonicalValidationError("legacy source strings must not be blank")
-        return cls(title=normalized)
+        return cls(
+            id=normalize_id(normalized),
+            title=normalized,
+            source_type=_classify_legacy_source_string(normalized),
+        )
+
+
+@dataclass(frozen=True)
+class CanonicalInterpretiveNote:
+    note: str
+    note_type: str = "textual-observation"
+    certainty: str = "unknown"
+    dispute_status: str = "unknown"
+    sources: list[str] = field(default_factory=list)
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+    @classmethod
+    def from_mapping(cls, mapping: Any) -> "CanonicalInterpretiveNote":
+        if isinstance(mapping, CanonicalInterpretiveNote):
+            return mapping
+        if isinstance(mapping, str):
+            return cls.from_legacy_string(mapping)
+        return validate_interpretive_note_entry(mapping)
+
+    @classmethod
+    def from_legacy_string(cls, value: str) -> "CanonicalInterpretiveNote":
+        normalized = value.strip()
+        if not normalized:
+            raise CanonicalValidationError("legacy interpretive note strings must not be blank")
+        return cls(note=normalized)
 
 
 @dataclass(frozen=True)
@@ -342,6 +595,11 @@ class CanonicalObject:
     summary: str = ""
     historical_context: str = ""
     ancient_near_east_context: str = ""
+    hebraic_worldview: str = ""
+    second_temple_context: str = ""
+    canonical_context: str = ""
+    later_christian_reception: str = ""
+    context_applicability: dict[str, bool] = field(default_factory=default_context_applicability)
     literary_context: str = ""
     covenantal_significance: str = ""
     authorship_positions: list[str] = field(default_factory=list)
@@ -370,7 +628,7 @@ class CanonicalObject:
     scripture_references: list[CanonicalScriptureReference] = field(default_factory=list)
     cross_references: list[str] = field(default_factory=list)
     new_testament_connections: list[str] = field(default_factory=list)
-    interpretive_notes: list[str] = field(default_factory=list)
+    interpretive_notes: list[CanonicalInterpretiveNote] = field(default_factory=list)
     common_questions: list[str] = field(default_factory=list)
     sources: list[CanonicalSource] = field(default_factory=list)
     importance: int = 0
@@ -414,6 +672,12 @@ class CanonicalObject:
                     path=path,
                     object_id=object_id,
                 )
+            elif field_name == "interpretive_notes":
+                values[field_name] = normalize_interpretive_notes_field(
+                    normalized,
+                    path=path,
+                    object_id=object_id,
+                )
             else:
                 values[field_name] = normalized[field_name]
         return cls(**values)
@@ -423,8 +687,21 @@ def _apply_governance_defaults(data: Mapping[str, Any]) -> dict[str, Any]:
     normalized = dict(data)
     for field_name, default_value in DEFAULT_CANONICAL_METADATA.items():
         if field_name not in normalized:
-            normalized[field_name] = list(default_value) if isinstance(default_value, list) else default_value
+            normalized[field_name] = _clone_default_value(default_value)
+        elif field_name == "context_applicability" and isinstance(normalized[field_name], Mapping):
+            normalized[field_name] = {
+                **default_context_applicability(),
+                **dict(normalized[field_name]),
+            }
     return normalized
+
+
+def _clone_default_value(value: Any) -> Any:
+    if isinstance(value, list):
+        return list(value)
+    if isinstance(value, Mapping):
+        return dict(value)
+    return value
 
 
 def validate_required_fields(
@@ -492,6 +769,30 @@ def validate_field_types(
         if field_name not in data:
             continue
         value = data[field_name]
+        if field_name == "interpretive_notes":
+            if not isinstance(value, list):
+                raise _expected_actual_error(
+                    field_name,
+                    "list[str] or list[dict]",
+                    value,
+                    path=path,
+                    object_id=object_id,
+                )
+            if any(not isinstance(item, (str, Mapping)) for item in value):
+                raise _expected_actual_error(
+                    field_name,
+                    "list[str] or list[dict]",
+                    value,
+                    path=path,
+                    object_id=object_id,
+                )
+            if any(isinstance(item, str) and not item.strip() for item in value):
+                raise _error(
+                    'field "interpretive_notes" cannot contain blank legacy note strings',
+                    path=path,
+                    object_id=object_id,
+                )
+            continue
         if not isinstance(value, list):
             raise _expected_actual_error(
                 field_name,
@@ -565,6 +866,33 @@ def validate_field_types(
         if any(isinstance(item, str) and not item.strip() for item in value):
             raise _error(
                 'field "sources" cannot contain blank legacy source strings',
+                path=path,
+                object_id=object_id,
+            )
+    if "context_applicability" in data:
+        value = data["context_applicability"]
+        if not isinstance(value, Mapping):
+            raise _expected_actual_error(
+                "context_applicability",
+                "dict[str, bool]",
+                value,
+                path=path,
+                object_id=object_id,
+            )
+        unknown_fields = sorted(set(value) - set(CONTEXT_APPLICABILITY_FIELDS))
+        if unknown_fields:
+            raise _error(
+                f'unknown context applicability field(s): {", ".join(unknown_fields)}',
+                path=path,
+                object_id=object_id,
+            )
+        for field_name, flag in value.items():
+            if isinstance(flag, bool):
+                continue
+            raise _expected_actual_error(
+                field_name,
+                "bool",
+                flag,
                 path=path,
                 object_id=object_id,
             )
@@ -869,7 +1197,8 @@ def validate_source_entry(
         "source_type",
         "notes",
     )
-    unknown_fields = sorted(set(data) - set(required_fields))
+    optional_fields = ("id", "supports")
+    unknown_fields = sorted(set(data) - set(required_fields) - set(optional_fields))
     if unknown_fields:
         raise _error(
             f'unknown source field(s): {", ".join(unknown_fields)}',
@@ -905,21 +1234,39 @@ def validate_source_entry(
             path=path,
             object_id=object_id,
         )
-    if source_type not in SOURCE_TYPE_VALUES:
+    normalized_source_type = _normalize_source_type_label(source_type)
+    if normalized_source_type not in SOURCE_TYPE_VALUES:
         raise _error(
             f'field "source_type" must be one of {", ".join(SOURCE_TYPE_VALUES)}',
             path=path,
             object_id=object_id,
         )
 
+    source_id = data.get("id")
+    if source_id is None or (isinstance(source_id, str) and not source_id.strip()):
+        source_id = normalize_id(title)
+    if not isinstance(source_id, str):
+        raise _expected_actual_error("id", "str", source_id, path=path, object_id=object_id)
+    normalized_source_id = normalize_id(source_id)
+    if not normalized_source_id:
+        raise _error(
+            'field "id" is required and must resolve to a non-empty canonical id',
+            path=path,
+            object_id=object_id,
+        )
+
+    supports = _normalize_source_supports(data.get("supports"), path=path, object_id=object_id)
+
     return CanonicalSource(
+        id=normalized_source_id,
         title=title.strip(),
         author=data["author"],
         publisher=data["publisher"],
         year=year,
         locator=data["locator"],
         url=data["url"],
-        source_type=source_type,
+        source_type=normalized_source_type,
+        supports=supports,
         notes=data["notes"],
     )
 
@@ -960,6 +1307,168 @@ def normalize_sources_field(
     return normalized_sources
 
 
+def _normalize_interpretive_note_label(value: Any) -> str:
+    return re.sub(r"[\s_]+", "-", str(value).strip().lower())
+
+
+def validate_interpretive_note_entry(
+    data: Any,
+    *,
+    path: str | Path | None = None,
+    object_id: str | None = None,
+) -> CanonicalInterpretiveNote:
+    if isinstance(data, CanonicalInterpretiveNote):
+        return data
+    if isinstance(data, str):
+        return CanonicalInterpretiveNote.from_legacy_string(data)
+    if not isinstance(data, Mapping):
+        raise _expected_actual_error(
+            "interpretive_notes",
+            "list[str] or list[dict]",
+            data,
+            path=path,
+            object_id=object_id,
+        )
+
+    required_fields = ("note",)
+    optional_fields = ("note_type", "certainty", "dispute_status", "sources")
+    unknown_fields = sorted(set(data) - set(required_fields) - set(optional_fields))
+    if unknown_fields:
+        raise _error(
+            f'unknown interpretive note field(s): {", ".join(unknown_fields)}',
+            path=path,
+            object_id=object_id,
+        )
+
+    note = data.get("note")
+    if not isinstance(note, str) or not note.strip():
+        raise _error(
+            'field "note" is required and must be a non-empty string',
+            path=path,
+            object_id=object_id,
+        )
+
+    note_type = _normalize_interpretive_note_label(data.get("note_type", "textual-observation"))
+    if note_type not in INTERPRETIVE_NOTE_TYPE_VALUES:
+        raise _error(
+            f'field "note_type" must be one of {", ".join(INTERPRETIVE_NOTE_TYPE_VALUES)}',
+            path=path,
+            object_id=object_id,
+        )
+
+    certainty = _normalize_interpretive_note_label(data.get("certainty", "unknown"))
+    if certainty not in INTERPRETIVE_NOTE_CERTAINTY_VALUES:
+        raise _error(
+            f'field "certainty" must be one of {", ".join(INTERPRETIVE_NOTE_CERTAINTY_VALUES)}',
+            path=path,
+            object_id=object_id,
+        )
+
+    dispute_status = _normalize_interpretive_note_label(data.get("dispute_status", "unknown"))
+    if dispute_status not in INTERPRETIVE_NOTE_DISPUTE_STATUS_VALUES:
+        raise _error(
+            f'field "dispute_status" must be one of {", ".join(INTERPRETIVE_NOTE_DISPUTE_STATUS_VALUES)}',
+            path=path,
+            object_id=object_id,
+        )
+
+    sources_value = data.get("sources", [])
+    if sources_value is None:
+        raise _expected_actual_error(
+            "sources",
+            "list[str]",
+            sources_value,
+            path=path,
+            object_id=object_id,
+        )
+    if not isinstance(sources_value, list):
+        raise _expected_actual_error(
+            "sources",
+            "list[str]",
+            sources_value,
+            path=path,
+            object_id=object_id,
+        )
+    sources: list[str] = []
+    for source_id in sources_value:
+        if not isinstance(source_id, str):
+            raise _expected_actual_error(
+                "sources",
+                "list[str]",
+                sources_value,
+                path=path,
+                object_id=object_id,
+            )
+        normalized_source_id = normalize_id(source_id)
+        if not normalized_source_id:
+            raise _error(
+                'field "sources" cannot contain blank values',
+                path=path,
+                object_id=object_id,
+            )
+        sources.append(normalized_source_id)
+
+    deduped_sources = list(dict.fromkeys(sources))
+    return CanonicalInterpretiveNote(
+        note=note.strip(),
+        note_type=note_type,
+        certainty=certainty,
+        dispute_status=dispute_status,
+        sources=deduped_sources,
+    )
+
+
+def normalize_interpretive_notes_field(
+    data: Mapping[str, Any],
+    *,
+    path: str | Path | None = None,
+    object_id: str | None = None,
+) -> list[CanonicalInterpretiveNote]:
+    if "interpretive_notes" not in data:
+        return []
+    interpretive_notes = data["interpretive_notes"]
+    if interpretive_notes is None:
+        raise _expected_actual_error(
+            "interpretive_notes",
+            "list[str] or list[dict]",
+            interpretive_notes,
+            path=path,
+            object_id=object_id,
+        )
+    if not isinstance(interpretive_notes, list):
+        raise _expected_actual_error(
+            "interpretive_notes",
+            "list[str] or list[dict]",
+            interpretive_notes,
+            path=path,
+            object_id=object_id,
+        )
+
+    normalized_notes: list[CanonicalInterpretiveNote] = []
+    for item in interpretive_notes:
+        normalized_notes.append(
+            validate_interpretive_note_entry(item, path=path, object_id=object_id)
+        )
+    return normalized_notes
+
+
+def interpretive_note_texts(value: Any) -> list[str]:
+    if value is None:
+        return []
+    if hasattr(value, "to_dict"):
+        value = value.to_dict()
+    if isinstance(value, Mapping):
+        note = str(value.get("note") or "").strip()
+        return [note] if note else []
+    if isinstance(value, (list, tuple)):
+        texts: list[str] = []
+        for item in value:
+            texts.extend(interpretive_note_texts(item))
+        return texts
+    text = str(value).strip()
+    return [text] if text else []
+
+
 def validate_approved_content_requirements(
     data: Mapping[str, Any],
     *,
@@ -992,17 +1501,9 @@ def validate_approved_content_requirements(
             path=path,
             object_id=object_id,
         )
-    if any(isinstance(source, str) for source in sources):
-        raise _error(
-            'field "sources" must use structured source objects when review_status is "approved"',
-            path=path,
-            object_id=object_id,
-        )
+    normalized_sources = normalize_sources_field(data, path=path, object_id=object_id)
     if not any(
-        isinstance(source, Mapping)
-        and isinstance(source.get("source_type"), str)
-        and source["source_type"] not in {"website", "other"}
-        for source in sources
+        source.source_type in SUBSTANTIVE_SOURCE_TYPE_VALUES for source in normalized_sources
     ):
         raise _error(
             'field "sources" must include at least one substantive source when review_status is "approved"',

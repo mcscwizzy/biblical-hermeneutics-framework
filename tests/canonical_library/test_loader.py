@@ -122,7 +122,7 @@ class CanonicalLoaderTests(unittest.TestCase):
 
         self.assertIsInstance(library.objects_by_id["shechem"].sources[0], CanonicalSource)
         self.assertEqual(library.objects_by_id["shechem"].sources[0].title, "Westermann, Genesis")
-        self.assertEqual(library.objects_by_id["shechem"].sources[0].source_type, "other")
+        self.assertEqual(library.objects_by_id["shechem"].sources[0].source_type, "reference-work")
 
     def test_builds_indexes(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

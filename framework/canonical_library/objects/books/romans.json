@@ -24,8 +24,20 @@
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
-    "Do not isolate justification from union with Christ, the Spirit, or Paul's question about Israel.",
-    "Chapters 9-11 are not a detour; they complete Paul's argument about God's faithfulness."
+    {
+      "note": "Do not isolate justification from union with Christ, the Spirit, or Paul's question about Israel.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    },
+    {
+      "note": "Chapters 9-11 are not a detour; they complete Paul's argument about God's faithfulness.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    }
   ],
   "common_questions": [
     "Why is Romans so important?",
@@ -33,11 +45,66 @@
     "How do Romans 9-11 fit the letter as a whole?"
   ],
   "sources": [
-    "Romans 1-16",
-    "Genesis 12",
-    "Habakkuk 2",
-    "Galatians 3",
-    "Philippians 2"
+    {
+      "id": "romans-1-16",
+      "source_type": "scripture",
+      "title": "Romans 1-16",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "genesis-12",
+      "source_type": "scripture",
+      "title": "Genesis 12",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "habakkuk-2",
+      "source_type": "scripture",
+      "title": "Habakkuk 2",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "galatians-3",
+      "source_type": "scripture",
+      "title": "Galatians 3",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "philippians-2",
+      "source_type": "scripture",
+      "title": "Philippians 2",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    }
   ],
   "authorship_positions": [
     "Traditional Pauline authorship or Pauline circle attribution",
@@ -103,7 +170,7 @@
   "reviewed_by": [
     "codex-phase-10"
   ],
-  "last_reviewed": "2026-07-14",
+  "last_reviewed": "2026-07-16",
   "confidence": "medium",
   "scripture_references": [
     {
@@ -178,5 +245,17 @@
       "weight": 8,
       "notes": "life in the Spirit"
     }
-  ]
+  ],
+  "hebraic_worldview": "Romans frames righteousness, faith, mercy, and communal identity within the story of Abraham, Israel, and the nations.",
+  "second_temple_context": "Romans belongs in a world of diaspora Judaism and mixed Jewish-Gentile churches wrestling with covenant identity.",
+  "canonical_context": "Romans re-reads the whole story from Abraham through Adam to Christ, showing how the gospel creates one people and new life in the Spirit.",
+  "later_christian_reception": "Romans has shaped Christian debates over justification, Israel, grace, and church unity.",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  }
 }

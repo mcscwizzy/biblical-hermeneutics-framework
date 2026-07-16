@@ -24,8 +24,20 @@
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
-    "Treat the warning passages as pastoral exhortation, not decorative side remarks.",
-    "The book's typology is meant to clarify fulfillment in Christ, not to dismiss the earlier covenant."
+    {
+      "note": "Treat the warning passages as pastoral exhortation, not decorative side remarks.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    },
+    {
+      "note": "The book's typology is meant to clarify fulfillment in Christ, not to dismiss the earlier covenant.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    }
   ],
   "common_questions": [
     "Why does Hebrews talk so much about sacrifice?",
@@ -33,11 +45,66 @@
     "How does Hebrews connect Jesus to the temple and priesthood?"
   ],
   "sources": [
-    "Hebrews 1-13",
-    "Psalm 110",
-    "Exodus 25-40",
-    "Leviticus 16",
-    "Jeremiah 31"
+    {
+      "id": "hebrews-1-13",
+      "source_type": "scripture",
+      "title": "Hebrews 1-13",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "psalm-110",
+      "source_type": "scripture",
+      "title": "Psalm 110",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "exodus-25-40",
+      "source_type": "scripture",
+      "title": "Exodus 25-40",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "leviticus-16",
+      "source_type": "scripture",
+      "title": "Leviticus 16",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "jeremiah-31",
+      "source_type": "scripture",
+      "title": "Jeremiah 31",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    }
   ],
   "authorship_positions": [
     "Traditional apostolic attribution where available",
@@ -105,7 +172,7 @@
   "reviewed_by": [
     "codex-phase-10"
   ],
-  "last_reviewed": "2026-07-14",
+  "last_reviewed": "2026-07-16",
   "confidence": "medium",
   "scripture_references": [
     {
@@ -185,5 +252,17 @@
       "weight": 10,
       "notes": "once-for-all sacrifice"
     }
-  ]
+  ],
+  "hebraic_worldview": "Hebrews emphasizes priestly mediation, holy access, covenant promise, endurance, and pilgrimage.",
+  "second_temple_context": "Its background is saturated with temple, priesthood, sacrifice, and the pressures of Jewish-Christian endurance.",
+  "canonical_context": "Hebrews presents Jesus as the greater priest and sacrifice who brings the promised rest and access to God.",
+  "later_christian_reception": "Christian readers have used Hebrews to think about atonement, worship, perseverance, and the relation between old and new covenant.",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  }
 }

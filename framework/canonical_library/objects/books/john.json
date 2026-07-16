@@ -24,8 +24,20 @@
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
-    "John's symbolism deepens historical testimony rather than replacing it.",
-    "The signs are meant to provoke belief, not merely curiosity."
+    {
+      "note": "John's symbolism deepens historical testimony rather than replacing it.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    },
+    {
+      "note": "The signs are meant to provoke belief, not merely curiosity.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    }
   ],
   "common_questions": [
     "Why are John's signs important?",
@@ -33,11 +45,66 @@
     "How does John define eternal life?"
   ],
   "sources": [
-    "John 1-21",
-    "Exodus 33",
-    "Isaiah 40",
-    "Ezekiel 36-37",
-    "1 John 1-5"
+    {
+      "id": "john-1-21",
+      "source_type": "scripture",
+      "title": "John 1-21",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "exodus-33",
+      "source_type": "scripture",
+      "title": "Exodus 33",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "isaiah-40",
+      "source_type": "scripture",
+      "title": "Isaiah 40",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "ezekiel-36-37",
+      "source_type": "scripture",
+      "title": "Ezekiel 36-37",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "1-john-1-5",
+      "source_type": "scripture",
+      "title": "1 John 1-5",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    }
   ],
   "authorship_positions": [
     "Traditional evangelist or Lukan authorship",
@@ -104,7 +171,7 @@
   "reviewed_by": [
     "codex-phase-10"
   ],
-  "last_reviewed": "2026-07-14",
+  "last_reviewed": "2026-07-16",
   "confidence": "medium",
   "scripture_references": [
     {
@@ -174,5 +241,17 @@
       "weight": 7,
       "notes": "revelation, fulfillment, and new covenant life"
     }
-  ]
+  ],
+  "hebraic_worldview": "Revelation, belief, life, new birth, and divine presence are framed through Israel's Scriptures.",
+  "second_temple_context": "John assumes a Second Temple world of purification, temple symbolism, and contested claims about Jesus.",
+  "canonical_context": "John reads Jesus as the eternal Word, the true tabernacle, and the giver of life, bringing creation and new creation together.",
+  "later_christian_reception": "Christian theology has drawn heavily on John for Christology, sacrament, and spiritual life.",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  }
 }

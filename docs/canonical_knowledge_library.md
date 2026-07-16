@@ -19,6 +19,34 @@ The long-term flow is:
 
 CKL supplies the curated object layer. The hermeneutical framework decides how those objects should be interpreted. The LLM then explains and synthesizes the already-retrieved material.
 
+The framework guidance keeps the interpretive order outside CKL objects themselves: literary context, historical setting, Ancient Near Eastern context when relevant, Hebraic worldview, Second Temple Jewish context when relevant, covenantal-canonical storyline, Christological development when supported by the text, and modern application.
+
+## Prompt Context
+
+When CKL content is prepared for a model prompt, the context builder emits sections in a stable order when relevant:
+
+1. Summary
+2. Primary Scripture References
+3. Immediate Literary Context
+4. Historical Context
+5. Ancient Near Eastern Context
+6. Hebraic Worldview
+7. Second Temple Context
+8. Covenant and Canonical Context
+9. Intertextual Connections
+10. New Testament Connections
+11. Interpretive Disputes and Cautions
+12. Later Christian Reception
+13. Sources
+
+Answer-mode tiers keep the prompt compact:
+
+- `concise` includes only the highest-priority context claims plus a short caution.
+- `study` and `teaching` keep the ordered context sequence compact while preserving the main canonical and historical layers.
+- `scholar` allows deeper historical, lexical, and source detail when the token budget allows it.
+
+Empty sections are skipped rather than padded with filler prose.
+
 ## Directory Structure
 
 The CKL lives under `framework/canonical_library/` and is intentionally self-contained.
@@ -63,6 +91,11 @@ Every canonical object uses the same base schema.
 | `summary` | string | empty | Short curated summary in later phases. |
 | `historical_context` | string | empty | Historical background when scholarship is added. |
 | `ancient_near_east_context` | string | empty | Ancient Near East comparison and setting. |
+| `hebraic_worldview` | string | empty | Israelite and Jewish worldview framing when relevant. |
+| `second_temple_context` | string | empty | Second Temple Jewish background for New Testament and late Second Temple material. |
+| `canonical_context` | string | empty | How the object fits the developing biblical storyline. |
+| `later_christian_reception` | string | empty | Later Christian interpretation kept distinct from original context. |
+| `context_applicability` | object | defaulted on load | Boolean flags that tell the context builder which context layers are relevant. |
 | `literary_context` | string | empty | Literary observations and genre framing. |
 | `covenantal_significance` | string | empty | How the object relates to covenant themes. |
 | `intertextuality` | array of strings | empty | Cross-book and canonical links. |
@@ -78,9 +111,9 @@ Every canonical object uses the same base schema.
 | `scripture_references` | array of scripture-reference objects | empty | Structured biblical reference anchors. |
 | `cross_references` | array of strings | empty | Internal reference pointers for later use. |
 | `new_testament_connections` | array of strings | empty | NT connection pointers for later use. |
-| `interpretive_notes` | array of strings | empty | Future interpreter notes and cautions. |
+| `interpretive_notes` | array of structured note objects | empty | Interpreter notes and cautions with optional note type, certainty, dispute status, and source IDs. Legacy strings are still accepted and normalized on load. |
 | `common_questions` | array of strings | empty | Future question prompts and FAQs. |
-| `sources` | array of source objects | empty | Future source citations and bibliography. |
+| `sources` | array of source objects | empty | Structured source citations and bibliography with `id`, `source_type`, `title`, `author`, `publisher`, `year`, `locator`, `url`, `supports`, and `notes`. |
 | `importance` | integer | zero | Deterministic ranking hint for retrieval. |
 | `framework_version` | string | `1.0` | CKL framework version gate. |
 | `object_version` | string | `1` | Per-object schema version. |
@@ -91,6 +124,41 @@ Every canonical object uses the same base schema.
 | `confidence` | string | `unrated` | Governance confidence label for review and publication state. |
 
 The legacy `related_people`, `related_places`, and `related_events` fields remain supported for now. The context builder normalizes them into typed `related_objects` entries so downstream consumers can adopt the structured form gradually without losing compatibility with the existing inventory.
+
+The `context_applicability` map is defaulted to all `true` on load for older objects. It lets authors suppress context layers that are not relevant to a particular entry without breaking the deterministic retrieval or prompt-construction pipeline.
+
+`interpretive_notes` are now stored as structured note objects with this shape:
+
+```json
+{
+  "note": "The covenant ceremony resembles Ancient Near Eastern treaty forms.",
+  "note_type": "historical-context",
+  "certainty": "medium",
+  "dispute_status": "broad-consensus",
+  "sources": ["source-id"]
+}
+```
+
+Legacy string notes are migrated into the structured form during validation so the inventory can be upgraded without breaking older files.
+
+`sources` are now stored as structured source objects with this shape:
+
+```json
+{
+  "id": "westermann-genesis",
+  "source_type": "reference-work",
+  "title": "Westermann, Genesis",
+  "author": "",
+  "publisher": "",
+  "year": null,
+  "locator": "",
+  "url": "",
+  "supports": [],
+  "notes": ""
+}
+```
+
+Legacy string sources are still accepted during migration. Scripture-like strings normalize to `source_type: "scripture"`, while other short legacy citations normalize conservatively to `reference-work`. Approved content still needs substantive sources, but the loader now preserves backward compatibility without leaving source records unstructured.
 
 ## Book Record Fields
 

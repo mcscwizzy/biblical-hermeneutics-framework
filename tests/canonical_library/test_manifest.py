@@ -19,6 +19,10 @@ EXPECTED_EMPTY_STRING_FIELDS = (
     "summary",
     "historical_context",
     "ancient_near_east_context",
+    "hebraic_worldview",
+    "second_temple_context",
+    "canonical_context",
+    "later_christian_reception",
     "literary_context",
     "covenantal_significance",
 )
@@ -46,6 +50,14 @@ EXPECTED_GOVERNANCE_VALUES = {
     "review_status": "unreviewed",
     "last_reviewed": None,
     "confidence": "unrated",
+}
+EXPECTED_CONTEXT_APPLICABILITY = {
+    "historical": True,
+    "ancient_near_east": True,
+    "hebraic_worldview": True,
+    "second_temple": True,
+    "canonical": True,
+    "later_christian_reception": True,
 }
 AI_IMPORT_PREFIXES = {
     "anthropic",
@@ -89,6 +101,7 @@ class CanonicalInventoryTests(unittest.TestCase):
                     self.assertEqual(getattr(obj, field_name), [])
                 for field_name, expected in EXPECTED_GOVERNANCE_VALUES.items():
                     self.assertEqual(getattr(obj, field_name), expected)
+                self.assertEqual(obj.context_applicability, EXPECTED_CONTEXT_APPLICABILITY)
             elif obj.content_status == "complete":
                 self.assertGreater(obj.importance, 0)
                 self.assertNotEqual(obj.summary, "")

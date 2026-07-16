@@ -63,6 +63,36 @@ class CKLRetrievalServiceTests(unittest.TestCase):
         self.assertIn("theme", response.analysis.object_categories)
         self.assertIn("event", response.analysis.object_categories)
 
+    def test_search_uses_new_context_layer_fields(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            write_library(
+                root,
+                [
+                    make_object(
+                        "context-note",
+                        "faq",
+                        "Context Note",
+                        ["context note"],
+                        summary="A note about layered context.",
+                        hebraic_worldview="Covenant identity and communal memory.",
+                        second_temple_context="Second Temple Judaism shaped the background.",
+                        canonical_context="This fits the broader covenant storyline.",
+                        later_christian_reception="Later Christian interpreters connected it to the church.",
+                        importance=10,
+                    ),
+                ],
+            )
+            service = CKLRetrievalService(library=CanonicalLibrary(root=root))
+
+            hebraic_response = service.search("communal memory")
+            second_temple_response = service.search("Second Temple Judaism")
+            reception_response = service.search("later Christian interpreters")
+
+        self.assertEqual(hebraic_response.results[0].id, "context-note")
+        self.assertEqual(second_temple_response.results[0].id, "context-note")
+        self.assertEqual(reception_response.results[0].id, "context-note")
+
     def test_search_supports_standard_scripture_abbreviations(self) -> None:
         response = self.service.search("Gen 1:1")
 

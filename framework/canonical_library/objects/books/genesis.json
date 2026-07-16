@@ -24,8 +24,20 @@
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
-    "Read Genesis as theological foundation for the whole canon rather than as a detached preface.",
-    "Keep the primeval chapters and the patriarchal narratives together; they work as one unfolding promise story."
+    {
+      "note": "Read Genesis as theological foundation for the whole canon rather than as a detached preface.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    },
+    {
+      "note": "Keep the primeval chapters and the patriarchal narratives together; they work as one unfolding promise story.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    }
   ],
   "common_questions": [
     "Why does Genesis matter?",
@@ -33,10 +45,54 @@
     "What is the significance of Abraham in Genesis?"
   ],
   "sources": [
-    "Genesis 1-50",
-    "Romans 4",
-    "Galatians 3",
-    "Hebrews 11"
+    {
+      "id": "genesis-1-50",
+      "source_type": "scripture",
+      "title": "Genesis 1-50",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "romans-4",
+      "source_type": "scripture",
+      "title": "Romans 4",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "galatians-3",
+      "source_type": "scripture",
+      "title": "Galatians 3",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "hebrews-11",
+      "source_type": "scripture",
+      "title": "Hebrews 11",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    }
   ],
   "authorship_positions": [
     "Traditional Mosaic attribution",
@@ -102,7 +158,7 @@
   "reviewed_by": [
     "codex-phase-10"
   ],
-  "last_reviewed": "2026-07-14",
+  "last_reviewed": "2026-07-16",
   "confidence": "medium",
   "scripture_references": [
     {
@@ -167,5 +223,17 @@
       "weight": 10,
       "notes": "promise and covenant throughout Genesis"
     }
-  ]
+  ],
+  "hebraic_worldview": "Creation is ordered sacred space, and the family line of promise carries blessing, memory, and land.",
+  "second_temple_context": "Second Temple readers treated Genesis as the foundational story of creation, Abrahamic promise, and hope for restoration.",
+  "canonical_context": "Genesis begins the canon with creation, fall, promise, and election so later books can read Israel's story within blessing and restoration.",
+  "later_christian_reception": "Christians have long read Genesis as the opening frame for creation, sin, covenant, and promise fulfilled in Christ.",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  }
 }

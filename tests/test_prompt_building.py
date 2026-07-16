@@ -70,6 +70,29 @@ class PromptBuildingTests(unittest.TestCase):
         self.assertIn("Answer Mode: Study", system_prompt)
         self.assertIn("default balanced BHF answer shape", system_prompt)
 
+    def test_framework_guidance_sets_interpretive_order_and_boundaries(self):
+        system_prompt, _ = build_prompt(
+            "standard",
+            "PROFILE",
+            self.reference,
+            self.genre,
+            "What does Proverbs 3 mean?",
+        )
+
+        self.assertIn("Hermeneutical Framework Guidance", system_prompt)
+        self.assertIn("Immediate literary context", system_prompt)
+        self.assertIn("Hebraic worldview", system_prompt)
+        self.assertIn("Second Temple Jewish context when relevant", system_prompt)
+        self.assertIn("Christological development when supported by the text", system_prompt)
+        self.assertIn("Modern application", system_prompt)
+        self.assertIn("Read the Old Testament as Israel's Scriptures", system_prompt)
+        self.assertIn("Read New Testament authors within their Jewish, Second Temple, Greco-Roman, and scriptural worlds", system_prompt)
+        self.assertIn("Preserve the distinction between Israel and the Church", system_prompt)
+        self.assertIn("Do not flatten Judaism into legalism", system_prompt)
+        self.assertIn("Do not describe the Old Testament as works-based and the New Testament as grace-based", system_prompt)
+        self.assertIn("similarity does not prove dependence", system_prompt)
+        self.assertIn("difference does not prove complete isolation", system_prompt)
+
     def test_answer_mode_adds_mode_specific_instructions(self):
         expected = {
             "concise": "Give a direct, short answer",
@@ -336,9 +359,38 @@ class PromptBuildingTests(unittest.TestCase):
         self.assertIn("## Entry: Shechem", concise_prompt)
         self.assertIn("## Entry: Shechem", scholar_prompt)
         self.assertIn("Summary:", concise_prompt)
-        self.assertIn("Relevant facts:", scholar_prompt)
+        self.assertIn("Primary Scripture References:", concise_prompt)
+        self.assertIn("Interpretive Disputes and Cautions:", concise_prompt)
+        self.assertIn("Sources:", concise_prompt)
+        self.assertNotIn("Ancient Near Eastern Context:", concise_prompt)
+        self.assertIn("Ancient Near Eastern Context:", scholar_prompt)
+        self.assertIn("Covenant and Canonical Context:", scholar_prompt)
+        self.assertIn("Interpretive Disputes and Cautions:", scholar_prompt)
+        self.assertIn("Sources:", scholar_prompt)
+        self.assertNotIn("Relevant facts:", concise_prompt)
+        self.assertNotIn("Relevant facts:", scholar_prompt)
         self.assertNotIn("Retrieved object IDs:", concise_prompt)
         self.assertNotIn("Retrieved object IDs:", scholar_prompt)
+        concise_order = [
+            concise_prompt.index("Summary:"),
+            concise_prompt.index("Primary Scripture References:"),
+            concise_prompt.index("Immediate Literary Context:"),
+            concise_prompt.index("Historical Context:"),
+            concise_prompt.index("Interpretive Disputes and Cautions:"),
+            concise_prompt.index("Sources:"),
+        ]
+        self.assertEqual(concise_order, sorted(concise_order))
+        scholar_order = [
+            scholar_prompt.index("Summary:"),
+            scholar_prompt.index("Primary Scripture References:"),
+            scholar_prompt.index("Immediate Literary Context:"),
+            scholar_prompt.index("Historical Context:"),
+            scholar_prompt.index("Ancient Near Eastern Context:"),
+            scholar_prompt.index("Covenant and Canonical Context:"),
+            scholar_prompt.index("Interpretive Disputes and Cautions:"),
+            scholar_prompt.index("Sources:"),
+        ]
+        self.assertEqual(scholar_order, sorted(scholar_order))
         self.assertLess(len(concise_prompt), len(scholar_prompt))
 
     def test_prompt_includes_local_session_memory_when_available(self):

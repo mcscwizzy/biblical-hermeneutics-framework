@@ -24,8 +24,20 @@
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
-    "Joshua is a theological conquest narrative, so read land, judgment, and covenant together.",
-    "The covenant renewal at Shechem is as important to the book's message as the military campaigns."
+    {
+      "note": "Joshua is a theological conquest narrative, so read land, judgment, and covenant together.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    },
+    {
+      "note": "The covenant renewal at Shechem is as important to the book's message as the military campaigns.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    }
   ],
   "common_questions": [
     "Why does Joshua matter?",
@@ -33,10 +45,54 @@
     "How should readers understand the conquest?"
   ],
   "sources": [
-    "Joshua 1-24",
-    "Judges 2",
-    "Hebrews 4",
-    "Acts 7"
+    {
+      "id": "joshua-1-24",
+      "source_type": "scripture",
+      "title": "Joshua 1-24",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "judges-2",
+      "source_type": "scripture",
+      "title": "Judges 2",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "hebrews-4",
+      "source_type": "scripture",
+      "title": "Hebrews 4",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "acts-7",
+      "source_type": "scripture",
+      "title": "Acts 7",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    }
   ],
   "authorship_positions": [
     "Traditional prophetic or courtly compilation",
@@ -102,7 +158,7 @@
   "reviewed_by": [
     "codex-phase-10"
   ],
-  "last_reviewed": "2026-07-14",
+  "last_reviewed": "2026-07-16",
   "confidence": "medium",
   "scripture_references": [
     {
@@ -167,5 +223,17 @@
       "weight": 8,
       "notes": "Joshua succeeds Moses"
     }
-  ]
+  ],
+  "hebraic_worldview": "Land inheritance, memorial, covenant loyalty, and public remembrance stand at the center.",
+  "second_temple_context": "Second Temple readers used Joshua to remember land loss, restoration hope, and covenant faithfulness.",
+  "canonical_context": "Joshua narrates promise moving toward possession, with Shechem and rest becoming lasting canonical markers.",
+  "later_christian_reception": "Christians have often read Joshua typologically as a story of entering rest, while still needing careful handling of conquest.",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  }
 }

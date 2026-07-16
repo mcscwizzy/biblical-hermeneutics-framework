@@ -25,8 +25,20 @@
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
-    "New covenant institutions are both theological signs and communal practices.",
-    "Their meaning comes from Jesus and the apostolic witness, not later tradition alone."
+    {
+      "note": "New covenant institutions are both theological signs and communal practices.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    },
+    {
+      "note": "Their meaning comes from Jesus and the apostolic witness, not later tradition alone.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    }
   ],
   "common_questions": [
     "How does this institution work in the New Testament?",
@@ -34,10 +46,54 @@
     "What new covenant theme does this institution express?"
   ],
   "sources": [
-    "Matthew 28",
-    "Acts 2",
-    "Romans 6",
-    "1 Corinthians 11"
+    {
+      "id": "matthew-28",
+      "source_type": "scripture",
+      "title": "Matthew 28",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "acts-2",
+      "source_type": "scripture",
+      "title": "Acts 2",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "romans-6",
+      "source_type": "scripture",
+      "title": "Romans 6",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "1-corinthians-11",
+      "source_type": "scripture",
+      "title": "1 Corinthians 11",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    }
   ],
   "importance": 80,
   "framework_version": "1.0",
@@ -90,5 +146,17 @@
     "codex-phase-10"
   ],
   "last_reviewed": "2026-07-16",
-  "confidence": "medium"
+  "confidence": "medium",
+  "hebraic_worldview": "Baptism belongs to purification, repentance, and new-identity language before later sacramental debates.",
+  "second_temple_context": "Purification washings, John the Baptist, and repentance shape the backdrop of baptism in the Gospels and Acts.",
+  "canonical_context": "Baptism gathers creation, flood, exodus, and Spirit themes into a rite of new identity in Christ.",
+  "later_christian_reception": "Christian traditions have debated baptism's mode and effect, but it must stay grounded in its Jewish and apostolic setting.",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  }
 }

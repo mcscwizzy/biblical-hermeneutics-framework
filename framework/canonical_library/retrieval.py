@@ -8,6 +8,7 @@ from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Any, Mapping, Protocol
 
 from .normalization import STOP_WORDS, normalize_alias, normalize_id, normalize_text, tokenize_query
+from .schema import interpretive_note_texts
 
 FIELD_WEIGHTS: dict[str, int] = {
     "id": 12,
@@ -37,6 +38,10 @@ FIELD_WEIGHTS: dict[str, int] = {
     "scripture_references": 5,
     "covenantal_significance": 5,
     "intertextuality": 5,
+    "hebraic_worldview": 6,
+    "second_temple_context": 6,
+    "canonical_context": 6,
+    "later_christian_reception": 6,
     "cross_references": 4,
     "new_testament_connections": 4,
     "archaeology": 4,
@@ -143,6 +148,10 @@ EXACT_MATCH_BONUS: dict[str, float] = {
     "ancient_near_east_context": 0.2,
     "literary_context": 0.2,
     "covenantal_significance": 0.22,
+    "hebraic_worldview": 0.18,
+    "second_temple_context": 0.18,
+    "canonical_context": 0.18,
+    "later_christian_reception": 0.12,
     "scripture_references": 0.32,
     "related_objects": 0.22,
     "related_people": 0.18,
@@ -181,6 +190,10 @@ PHRASE_MATCH_BONUS: dict[str, float] = {
     "ancient_near_east_context": 0.16,
     "literary_context": 0.16,
     "covenantal_significance": 0.18,
+    "hebraic_worldview": 0.16,
+    "second_temple_context": 0.16,
+    "canonical_context": 0.16,
+    "later_christian_reception": 0.1,
     "scripture_references": 0.22,
     "related_objects": 0.18,
     "related_people": 0.16,
@@ -508,6 +521,10 @@ def searchable_text_fields(obj: Any) -> dict[str, list[str]]:
         "primary_sources",
         "historical_context",
         "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "later_christian_reception",
         "literary_context",
         "covenantal_significance",
         "hebrew_words",
@@ -588,6 +605,10 @@ def score_text_match(
         "primary_sources",
         "historical_context",
         "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "later_christian_reception",
         "literary_context",
         "covenantal_significance",
         "scripture_references",
@@ -696,6 +717,10 @@ def field_search_terms(field_name: str, value: Any) -> set[str]:
         "canonical_placement",
         "historical_context",
         "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "later_christian_reception",
         "literary_context",
         "covenantal_significance",
     }:
@@ -718,7 +743,6 @@ def field_search_terms(field_name: str, value: Any) -> set[str]:
         "intertextuality",
         "hebrew_words",
         "greek_words",
-        "interpretive_notes",
         "related_people",
         "related_places",
         "related_events",
@@ -728,6 +752,11 @@ def field_search_terms(field_name: str, value: Any) -> set[str]:
             for item in value:
                 if isinstance(item, str):
                     terms.update(canonical_search_terms(item))
+        return terms
+    if field_name == "interpretive_notes":
+        terms: set[str] = set()
+        for item in interpretive_note_texts(value):
+            terms.update(canonical_search_terms(item))
         return terms
     if field_name == "related_objects":
         terms: set[str] = set()

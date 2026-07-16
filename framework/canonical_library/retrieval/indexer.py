@@ -17,7 +17,7 @@ from ..scripture import (
     build_book_alias_lookup,
     parse_scripture_reference,
 )
-from ..schema import CanonicalObject, CanonicalValidationError
+from ..schema import CanonicalObject, CanonicalValidationError, interpretive_note_texts
 from ..schema.validator import validate_base_object
 from .legacy import collect_field_search_terms
 from .models import CKLIndexStats
@@ -281,6 +281,10 @@ def _index_object(
         str(getattr(obj, "summary", "") or ""),
         str(getattr(obj, "historical_context", "") or ""),
         str(getattr(obj, "ancient_near_east_context", "") or ""),
+        str(getattr(obj, "hebraic_worldview", "") or ""),
+        str(getattr(obj, "second_temple_context", "") or ""),
+        str(getattr(obj, "canonical_context", "") or ""),
+        str(getattr(obj, "later_christian_reception", "") or ""),
         str(getattr(obj, "literary_context", "") or ""),
         str(getattr(obj, "covenantal_significance", "") or ""),
         " ".join(facts),
@@ -380,10 +384,14 @@ def _entry_facts(obj: CanonicalObject) -> list[str]:
         getattr(obj, "summary", ""),
         getattr(obj, "historical_context", ""),
         getattr(obj, "ancient_near_east_context", ""),
+        getattr(obj, "hebraic_worldview", ""),
+        getattr(obj, "second_temple_context", ""),
+        getattr(obj, "canonical_context", ""),
+        getattr(obj, "later_christian_reception", ""),
         getattr(obj, "literary_context", ""),
         getattr(obj, "covenantal_significance", ""),
     ]
-    candidates.extend(getattr(obj, "interpretive_notes", []) or [])
+    candidates.extend(interpretive_note_texts(getattr(obj, "interpretive_notes", [])))
     candidates.extend(getattr(obj, "common_questions", []) or [])
     facts: list[str] = []
     seen: set[str] = set()

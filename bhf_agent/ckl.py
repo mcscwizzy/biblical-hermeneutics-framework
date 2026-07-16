@@ -129,6 +129,9 @@ TOPIC_FIELDS_BY_DETAIL_LEVEL: dict[int, tuple[str, ...]] = {
         "historical_context",
         "literary_context",
         "covenantal_significance",
+        "hebraic_worldview",
+        "canonical_context",
+        "intertextuality",
         "scripture_references",
         "common_questions",
         "interpretive_notes",
@@ -153,11 +156,19 @@ TOPIC_FIELDS_BY_DETAIL_LEVEL: dict[int, tuple[str, ...]] = {
         "primary_sources",
         "historical_context",
         "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
         "literary_context",
         "covenantal_significance",
+        "canonical_context",
+        "later_christian_reception",
+        "intertextuality",
+        "cross_references",
         "scripture_references",
         "common_questions",
         "interpretive_notes",
+        "hebrew_words",
+        "greek_words",
         "timeline",
         "archaeology",
         "new_testament_connections",
@@ -170,31 +181,34 @@ SHARED_SECTION_FIELDS_BY_DETAIL_LEVEL: dict[int, tuple[tuple[str, str], ...]] = 
     0: (
         ("Historical Context", "historical_context"),
         ("Literary Context", "literary_context"),
-        ("Cross References", "cross_references"),
+        ("Intertextual Connections", "intertextuality"),
         ("Related Topics", "related_topics"),
     ),
     1: (
         ("Historical Context", "historical_context"),
-        ("Ancient Near East Context", "ancient_near_east_context"),
+        ("Ancient Near Eastern Context", "ancient_near_east_context"),
+        ("Hebraic Worldview", "hebraic_worldview"),
         ("Literary Context", "literary_context"),
         ("Covenantal Significance", "covenantal_significance"),
-        ("Cross References", "cross_references"),
-        ("Word Studies", "word_studies"),
-        ("Related Topics", "related_topics"),
-        ("Timeline", "timeline"),
+        ("Canonical Context", "canonical_context"),
+        ("Intertextual Connections", "intertextuality"),
         ("New Testament Connections", "new_testament_connections"),
     ),
     2: (
         ("Historical Context", "historical_context"),
-        ("Ancient Near East Context", "ancient_near_east_context"),
+        ("Ancient Near Eastern Context", "ancient_near_east_context"),
+        ("Hebraic Worldview", "hebraic_worldview"),
+        ("Second Temple Context", "second_temple_context"),
         ("Literary Context", "literary_context"),
         ("Covenantal Significance", "covenantal_significance"),
+        ("Canonical Context", "canonical_context"),
+        ("Intertextual Connections", "intertextuality"),
         ("Cross References", "cross_references"),
         ("Word Studies", "word_studies"),
-        ("Related Topics", "related_topics"),
         ("Timeline", "timeline"),
         ("Archaeology", "archaeology"),
         ("New Testament Connections", "new_testament_connections"),
+        ("Later Christian Reception", "later_christian_reception"),
     ),
 }
 
@@ -792,9 +806,10 @@ def format_canonical_context_for_prompt(
         max_facts_per_entry=max_facts_per_entry,
         max_scripture_references_per_entry=max_scripture_references_per_entry,
         max_caution_notes_per_entry=max_caution_notes_per_entry,
+        answer_mode=normalized_answer_mode,
     )
 
-    prompt = _render_canonical_prompt_context(prompt_context)
+    prompt = _render_canonical_prompt_context(prompt_context, answer_mode=normalized_answer_mode)
     if not prompt:
         return ""
     if _estimate_tokens(prompt) > max_context_tokens:
@@ -877,6 +892,7 @@ def build_canonical_fallback_answer(
         max_facts_per_entry=min(3, max_facts_per_entry),
         max_scripture_references_per_entry=min(3, max_scripture_references_per_entry),
         max_caution_notes_per_entry=min(2, max_caution_notes_per_entry),
+        answer_mode=normalized_answer_mode,
     )
     metadata = dict(prompt_context.get("metadata") or {})
     selected_entry_ids = [
@@ -900,6 +916,7 @@ def build_canonical_fallback_answer(
 
     rendered = _render_canonical_prompt_context(
         prompt_context,
+        answer_mode=normalized_answer_mode,
         include_internal_details=False,
         include_source_ids=False,
     )
@@ -994,11 +1011,19 @@ def _render_topic_block(
         "primary_sources": "Primary sources",
         "historical_context": "Historical context",
         "ancient_near_east_context": "Ancient Near East context",
+        "hebraic_worldview": "Hebraic worldview",
+        "second_temple_context": "Second Temple context",
         "literary_context": "Literary context",
         "covenantal_significance": "Covenantal significance",
+        "canonical_context": "Canonical context",
+        "later_christian_reception": "Later Christian reception",
+        "intertextuality": "Intertextual connections",
+        "cross_references": "Cross references",
         "scripture_references": "Scripture references",
         "common_questions": "Common questions",
         "interpretive_notes": "Interpretive notes",
+        "hebrew_words": "Hebrew words",
+        "greek_words": "Greek words",
         "timeline": "Timeline",
         "archaeology": "Archaeology",
         "new_testament_connections": "New Testament connections",
@@ -1036,9 +1061,131 @@ def _canonical_prompt_limits(answer_mode: str) -> tuple[int, int, int, int]:
     return 8, 5, 6, 3
 
 
+def _render_canonical_prompt_entry_lines(
+    entry: Mapping[str, Any],
+    *,
+    answer_mode: str,
+    include_internal_details: bool = True,
+    include_source_ids: bool = True,
+) -> list[str]:
+    title = str(entry.get("title") or entry.get("id") or "unknown").strip()
+    category = str(entry.get("category") or "Unknown").strip()
+    detail_level = _context_detail_level(answer_mode)
+    lines: list[str] = ["", f"## Entry: {title}", f"Category: {category}"]
+
+    sections = list(entry.get("sections") or [])
+    if sections:
+        rendered_sources_section = False
+        for section in sections:
+            heading = str(section.get("heading") or "").strip()
+            raw_items = list(section.get("items") or [])
+            items: list[str] = []
+            for raw_item in raw_items:
+                if heading == "Sources":
+                    text = _render_source_entry(raw_item, detail_level=detail_level)
+                else:
+                    text = str(raw_item).strip()
+                if text:
+                    items.append(text)
+            if not heading or not items:
+                continue
+            if heading == "Summary":
+                lines.append("Summary:")
+                lines.append(items[0])
+                continue
+            lines.append(f"{heading}:")
+            if heading == "Sources":
+                rendered_sources_section = True
+                if include_source_ids:
+                    source_ids = [
+                        str(item).strip()
+                        for item in entry.get("source_ids") or []
+                        if str(item).strip()
+                    ]
+                    if source_ids:
+                        if len(source_ids) == 1:
+                            lines.append(f"Source ID: {source_ids[0]}")
+                        else:
+                            lines.append("Source IDs: " + ", ".join(source_ids))
+            lines.extend(f"- {item}" for item in items)
+        if not rendered_sources_section and entry.get("sources"):
+            source_items = [
+                _render_source_entry(item, detail_level=detail_level)
+                for item in entry.get("sources") or []
+            ]
+            source_items = [item for item in source_items if item]
+            if source_items:
+                lines.append("Sources:")
+                if include_source_ids:
+                    source_ids = [
+                        str(item).strip()
+                        for item in entry.get("source_ids") or []
+                        if str(item).strip()
+                    ]
+                    if source_ids:
+                        if len(source_ids) == 1:
+                            lines.append(f"Source ID: {source_ids[0]}")
+                        else:
+                            lines.append("Source IDs: " + ", ".join(source_ids))
+                lines.extend(f"- {item}" for item in source_items)
+        return [line for line in lines if line is not None]
+
+    summary = str(entry.get("summary") or "").strip()
+    facts = [str(item).strip() for item in entry.get("facts") or [] if str(item).strip()]
+    scripture_references = [
+        str(item).strip()
+        for item in entry.get("scripture_references") or []
+        if str(item).strip()
+    ]
+    caution_notes = [
+        str(item).strip()
+        for item in entry.get("caution_notes") or []
+        if str(item).strip()
+    ]
+    source_ids = [
+        str(item).strip()
+        for item in entry.get("source_ids") or []
+        if str(item).strip()
+    ]
+
+    if include_internal_details:
+        if summary:
+            lines.append("Summary:")
+            lines.append(summary)
+        if facts:
+            lines.append("Relevant facts:")
+            lines.extend(f"- {fact}" for fact in facts)
+        if scripture_references:
+            lines.append("Primary Scripture References:")
+            lines.extend(f"- {reference}" for reference in scripture_references)
+        if caution_notes:
+            lines.append("Interpretive Disputes and Cautions:")
+            lines.extend(f"- {note}" for note in caution_notes)
+        if source_ids and include_source_ids:
+            if len(source_ids) == 1:
+                lines.append(f"Source ID: {source_ids[0]}")
+            else:
+                lines.append("Source IDs: " + ", ".join(source_ids))
+    else:
+        if summary:
+            lines.append(summary)
+        if facts:
+            lines.append("Relevant facts:")
+            lines.extend(f"- {fact}" for fact in facts)
+        if scripture_references:
+            lines.append("Primary Scripture References:")
+            lines.extend(f"- {reference}" for reference in scripture_references)
+        if caution_notes:
+            lines.append("Interpretive Disputes and Cautions:")
+            lines.extend(f"- {note}" for note in caution_notes)
+
+    return [line for line in lines if line is not None]
+
+
 def _render_canonical_prompt_context(
     context: Mapping[str, Any] | None,
     *,
+    answer_mode: str = "study",
     include_internal_details: bool = True,
     include_source_ids: bool = True,
 ) -> str:
@@ -1051,55 +1198,13 @@ def _render_canonical_prompt_context(
 
     lines: list[str] = []
     for entry in entries:
-        title = str(entry.get("title") or entry.get("id") or "unknown").strip()
-        category = str(entry.get("category") or "Unknown").strip()
-        summary = str(entry.get("summary") or "").strip()
-        facts = [str(item).strip() for item in entry.get("facts") or [] if str(item).strip()]
-        scripture_references = [
-            str(item).strip()
-            for item in entry.get("scripture_references") or []
-            if str(item).strip()
-        ]
-        caution_notes = [
-            str(item).strip()
-            for item in entry.get("caution_notes") or []
-            if str(item).strip()
-        ]
-        source_ids = [
-            str(item).strip()
-            for item in entry.get("source_ids") or []
-            if str(item).strip()
-        ]
-
-        lines.extend(["", f"## Entry: {title}", f"Category: {category}"])
-        if include_internal_details:
-            if summary:
-                lines.append(f"Summary: {summary}")
-            if facts:
-                lines.append("Relevant facts:")
-                lines.extend(f"- {fact}" for fact in facts)
-            if scripture_references:
-                lines.append("Scripture references:")
-                lines.extend(f"- {reference}" for reference in scripture_references)
-            if caution_notes:
-                lines.append("Caution / interpretation notes:")
-                lines.extend(f"- {note}" for note in caution_notes)
-            if source_ids and include_source_ids:
-                if len(source_ids) == 1:
-                    lines.append(f"Source ID: {source_ids[0]}")
-                else:
-                    lines.append("Source IDs: " + ", ".join(source_ids))
-        else:
-            if summary:
-                lines.append(summary)
-            if facts:
-                lines.append("Relevant facts:")
-                lines.extend(f"- {fact}" for fact in facts)
-            if scripture_references:
-                lines.append("Scripture references:")
-                lines.extend(f"- {reference}" for reference in scripture_references)
-            if caution_notes:
-                lines.append("Caution / interpretation notes:")
-                lines.extend(f"- {note}" for note in caution_notes)
+        lines.extend(
+            _render_canonical_prompt_entry_lines(
+                entry,
+                answer_mode=answer_mode,
+                include_internal_details=include_internal_details,
+                include_source_ids=include_source_ids,
+            )
+        )
 
     return "\n".join(line for line in lines if line is not None).strip()

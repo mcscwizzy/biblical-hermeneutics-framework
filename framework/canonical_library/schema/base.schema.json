@@ -13,6 +13,11 @@
     "summary",
     "historical_context",
     "ancient_near_east_context",
+    "hebraic_worldview",
+    "second_temple_context",
+    "canonical_context",
+    "later_christian_reception",
+    "context_applicability",
     "literary_context",
     "covenantal_significance",
     "authorship_positions",
@@ -135,16 +140,37 @@
       "type": "object",
       "additionalProperties": false,
       "required": [
+        "id",
+        "source_type",
         "title",
         "author",
         "publisher",
         "year",
         "locator",
         "url",
-        "source_type",
+        "supports",
         "notes"
       ],
       "properties": {
+        "id": {
+          "$ref": "#/$defs/canonicalId"
+        },
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "scripture",
+            "ancient-primary-source",
+            "academic-book",
+            "journal-article",
+            "lexicon",
+            "grammar",
+            "excavation-report",
+            "museum-collection",
+            "reference-work",
+            "confessional-source",
+            "other"
+          ]
+        },
         "title": {
           "type": "string",
           "minLength": 1
@@ -167,24 +193,99 @@
         "url": {
           "type": "string"
         },
-        "source_type": {
-          "type": "string",
-          "enum": [
-            "biblical-text",
-            "book",
-            "journal",
-            "commentary",
-            "dictionary",
-            "encyclopedia",
-            "archaeological-report",
-            "museum",
-            "primary-source",
-            "website",
-            "other"
-          ]
+        "supports": {
+          "$ref": "#/$defs/stringList"
         },
         "notes": {
           "type": "string"
+        }
+      }
+    },
+    "interpretiveNote": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "note"
+      ],
+      "properties": {
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "note_type": {
+          "type": "string",
+          "enum": [
+            "textual-observation",
+            "literary-observation",
+            "historical-context",
+            "ancient-near-east-context",
+            "hebraic-worldview",
+            "second-temple-context",
+            "canonical-connection",
+            "theological-interpretation",
+            "interpretive-caution",
+            "later-reception"
+          ]
+        },
+        "certainty": {
+          "type": "string",
+          "enum": [
+            "high",
+            "medium",
+            "low",
+            "unknown"
+          ]
+        },
+        "dispute_status": {
+          "type": "string",
+          "enum": [
+            "consensus",
+            "broad-consensus",
+            "majority",
+            "disputed",
+            "minority",
+            "confessional",
+            "unknown"
+          ]
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "contextApplicability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "historical",
+        "ancient_near_east",
+        "hebraic_worldview",
+        "second_temple",
+        "canonical",
+        "later_christian_reception"
+      ],
+      "properties": {
+        "historical": {
+          "type": "boolean"
+        },
+        "ancient_near_east": {
+          "type": "boolean"
+        },
+        "hebraic_worldview": {
+          "type": "boolean"
+        },
+        "second_temple": {
+          "type": "boolean"
+        },
+        "canonical": {
+          "type": "boolean"
+        },
+        "later_christian_reception": {
+          "type": "boolean"
         }
       }
     }
@@ -229,6 +330,21 @@
     },
     "ancient_near_east_context": {
       "type": "string"
+    },
+    "hebraic_worldview": {
+      "type": "string"
+    },
+    "second_temple_context": {
+      "type": "string"
+    },
+    "canonical_context": {
+      "type": "string"
+    },
+    "later_christian_reception": {
+      "type": "string"
+    },
+    "context_applicability": {
+      "$ref": "#/$defs/contextApplicability"
     },
     "literary_context": {
       "type": "string"
@@ -321,7 +437,18 @@
       "$ref": "#/$defs/stringList"
     },
     "interpretive_notes": {
-      "$ref": "#/$defs/stringList"
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "string",
+            "minLength": 1
+          },
+          {
+            "$ref": "#/$defs/interpretiveNote"
+          }
+        ]
+      }
     },
     "common_questions": {
       "$ref": "#/$defs/stringList"

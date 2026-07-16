@@ -24,8 +24,20 @@
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
-    "The book ties deliverance to worship; freedom from Egypt is not the final goal.",
-    "Read Passover, Sinai, and the tabernacle as one integrated movement from salvation to presence."
+    {
+      "note": "The book ties deliverance to worship; freedom from Egypt is not the final goal.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    },
+    {
+      "note": "Read Passover, Sinai, and the tabernacle as one integrated movement from salvation to presence.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    }
   ],
   "common_questions": [
     "Why is Exodus central to the Bible?",
@@ -33,10 +45,54 @@
     "Why does the tabernacle matter?"
   ],
   "sources": [
-    "Exodus 1-40",
-    "Deuteronomy 5",
-    "1 Corinthians 10",
-    "Hebrews 3-4"
+    {
+      "id": "exodus-1-40",
+      "source_type": "scripture",
+      "title": "Exodus 1-40",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "deuteronomy-5",
+      "source_type": "scripture",
+      "title": "Deuteronomy 5",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "1-corinthians-10",
+      "source_type": "scripture",
+      "title": "1 Corinthians 10",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "hebrews-3-4",
+      "source_type": "scripture",
+      "title": "Hebrews 3-4",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    }
   ],
   "authorship_positions": [
     "Traditional Mosaic attribution",
@@ -101,7 +157,7 @@
   "reviewed_by": [
     "codex-phase-10"
   ],
-  "last_reviewed": "2026-07-14",
+  "last_reviewed": "2026-07-16",
   "confidence": "medium",
   "scripture_references": [
     {
@@ -176,5 +232,17 @@
       "weight": 8,
       "notes": "holy presence in sacred space"
     }
-  ]
+  ],
+  "hebraic_worldview": "Liberation from slavery leads to covenant identity, holiness, memorial, and dwelling with God.",
+  "second_temple_context": "Second Temple Judaism read Exodus through Passover, temple worship, and the memory of redemption.",
+  "canonical_context": "Exodus turns promise into redemption and then into covenant presence, shaping later readings of law, worship, and salvation.",
+  "later_christian_reception": "Christian tradition has read Exodus as a redemption pattern that points to Christ, baptism, and the church.",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  }
 }

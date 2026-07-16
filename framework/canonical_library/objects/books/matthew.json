@@ -24,8 +24,20 @@
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
-    "Matthew's fulfillment citations are canonical readings, not mere proof-texting.",
-    "Hold together the already-arrived kingdom and the not-yet-complete kingdom."
+    {
+      "note": "Matthew's fulfillment citations are canonical readings, not mere proof-texting.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    },
+    {
+      "note": "Hold together the already-arrived kingdom and the not-yet-complete kingdom.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    }
   ],
   "common_questions": [
     "Why does Matthew quote the Old Testament so much?",
@@ -33,12 +45,78 @@
     "Why is kingdom language so central in Matthew?"
   ],
   "sources": [
-    "Matthew 1-28",
-    "Daniel 7",
-    "Isaiah 7",
-    "Isaiah 9",
-    "Isaiah 53",
-    "Micah 5"
+    {
+      "id": "matthew-1-28",
+      "source_type": "scripture",
+      "title": "Matthew 1-28",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "daniel-7",
+      "source_type": "scripture",
+      "title": "Daniel 7",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "isaiah-7",
+      "source_type": "scripture",
+      "title": "Isaiah 7",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "isaiah-9",
+      "source_type": "scripture",
+      "title": "Isaiah 9",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "isaiah-53",
+      "source_type": "scripture",
+      "title": "Isaiah 53",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    },
+    {
+      "id": "micah-5",
+      "source_type": "scripture",
+      "title": "Micah 5",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "supports": [],
+      "notes": ""
+    }
   ],
   "authorship_positions": [
     "Traditional evangelist or Lukan authorship",
@@ -107,7 +185,7 @@
   "reviewed_by": [
     "codex-phase-10"
   ],
-  "last_reviewed": "2026-07-14",
+  "last_reviewed": "2026-07-16",
   "confidence": "medium",
   "scripture_references": [
     {
@@ -178,5 +256,17 @@
       "weight": 9,
       "notes": "the risen Jesus"
     }
-  ]
+  ],
+  "hebraic_worldview": "Jesus fulfills Israel's Scriptures, teaches covenant righteousness, and gathers a renewed people around the kingdom.",
+  "second_temple_context": "Matthew sits squarely in Second Temple Judaism, where messianic expectation, Torah debate, and synagogue life shape the story.",
+  "canonical_context": "Matthew presents Jesus as the promised Messiah who fulfills Israel's story and inaugurates the kingdom through teaching, death, resurrection, and mission.",
+  "later_christian_reception": "Christian tradition has treated Matthew as the classic Gospel of fulfillment, discipleship, and kingdom ethics.",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  }
 }

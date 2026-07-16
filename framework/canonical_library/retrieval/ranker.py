@@ -47,6 +47,10 @@ FIELD_QUALITY_WEIGHTS: dict[str, float] = {
     "historical_context": 0.8,
     "literary_context": 0.8,
     "ancient_near_east_context": 0.75,
+    "hebraic_worldview": 0.9,
+    "second_temple_context": 0.9,
+    "canonical_context": 0.9,
+    "later_christian_reception": 0.9,
     "covenantal_significance": 0.7,
     "intertextuality": 0.75,
     "timeline": 0.75,
@@ -56,6 +60,21 @@ FIELD_QUALITY_WEIGHTS: dict[str, float] = {
     "related_places": 0.65,
     "related_events": 0.65,
     "interpretive_notes": 0.6,
+}
+
+# Context-layer prose should be treated as direct searchable content when it
+# matches query terms exactly. Otherwise these curated fields are penalized too
+# heavily compared with titles and aliases, which keeps them from surfacing even
+# for obvious exact-term queries.
+DIRECT_CONTEXT_FIELDS = {
+    "historical_context",
+    "ancient_near_east_context",
+    "hebraic_worldview",
+    "second_temple_context",
+    "canonical_context",
+    "later_christian_reception",
+    "literary_context",
+    "covenantal_significance",
 }
 
 
@@ -167,7 +186,7 @@ def score_indexed_entry(
     )
     if keyword_overlap:
         keyword_quality = _field_quality_multiplier(keyword_fields)
-        direct_keyword_fields = {"id", "title", "aliases", "scripture_references"}
+        direct_keyword_fields = {"id", "title", "aliases", "scripture_references"} | DIRECT_CONTEXT_FIELDS
         direct_keyword_hit = bool(direct_keyword_fields.intersection(keyword_fields))
         value = KEYWORD_MATCH_WEIGHT * keyword_score * keyword_quality
         if not direct_keyword_hit:

@@ -152,7 +152,7 @@ def governance_filter_objects() -> list[dict[str, object]]:
                     "year": None,
                     "locator": "24:1-28",
                     "url": "",
-                    "source_type": "biblical-text",
+                    "source_type": "scripture",
                     "notes": "",
                 }
             ],
@@ -254,6 +254,35 @@ class CanonicalRetrievalTests(unittest.TestCase):
         self.assertTrue({result.object.id for result in first}.issuperset({"abraham", "covenant-theme"}))
         self.assertGreaterEqual(first[0].score, first[1].score)
 
+    def test_keyword_lookup_uses_structured_interpretive_notes(self) -> None:
+        with loaded_library(
+            [
+                make_object(
+                    "shechem",
+                    "place",
+                    "Shechem",
+                    ["where is shechem"],
+                    summary="Shechem is a covenant location.",
+                    interpretive_notes=[
+                        {
+                            "note": "The covenant ceremony resembles Ancient Near Eastern treaty forms.",
+                            "note_type": "historical-context",
+                            "certainty": "medium",
+                            "dispute_status": "broad-consensus",
+                            "sources": ["source-id"],
+                        }
+                    ],
+                    importance=8,
+                )
+            ]
+        ) as library:
+            results = library.retrieve_by_keywords("Ancient Near Eastern treaty forms", limit=1)
+
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0].object.id, "shechem")
+        self.assertIn("treaty", results[0].matched_terms)
+        self.assertIn("interpretive_notes", results[0].matched_fields)
+
     def test_keyword_limit_is_respected(self) -> None:
         results = self.library.retrieve_by_keywords("covenant abraham shechem", limit=1)
 
@@ -299,7 +328,7 @@ class CanonicalRetrievalTests(unittest.TestCase):
                                 "year": None,
                                 "locator": "24:1-28",
                                 "url": "",
-                                "source_type": "biblical-text",
+                                "source_type": "scripture",
                                 "notes": "",
                             }
                         ],

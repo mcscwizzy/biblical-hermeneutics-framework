@@ -9,6 +9,7 @@ from typing import Any, Mapping, Sequence
 from .loader import CanonicalLibrary
 from .normalization import normalize_id, normalize_text, tokenize_query
 from .retrieval import RetrievalResult
+from .schema import interpretive_note_texts
 
 
 LEGACY_RELATIONSHIP_TYPES: dict[str, str] = {
@@ -28,6 +29,10 @@ _PROMPT_FACT_FIELD_WEIGHTS: tuple[tuple[str, int], ...] = (
     ("historical_context", 110),
     ("literary_context", 100),
     ("ancient_near_east_context", 95),
+    ("hebraic_worldview", 98),
+    ("second_temple_context", 96),
+    ("canonical_context", 94),
+    ("later_christian_reception", 72),
     ("authorship_positions", 90),
     ("date_ranges", 88),
     ("original_audience", 92),
@@ -49,6 +54,23 @@ _PROMPT_CAUTION_FIELD_WEIGHTS: tuple[tuple[str, int], ...] = (
     ("interpretive_notes", 100),
     ("interpretive_disputes", 95),
 )
+
+_CONTEXT_FIELD_APPLICABILITY_KEYS: tuple[tuple[str, str], ...] = (
+    ("historical_context", "historical"),
+    ("ancient_near_east_context", "ancient_near_east"),
+    ("hebraic_worldview", "hebraic_worldview"),
+    ("second_temple_context", "second_temple"),
+    ("canonical_context", "canonical"),
+    ("later_christian_reception", "later_christian_reception"),
+)
+
+_CONTEXT_APPLICABILITY_DEFAULTS: dict[str, bool] = {
+    applicability_key: True for _, applicability_key in _CONTEXT_FIELD_APPLICABILITY_KEYS
+}
+
+_CONTEXT_FIELD_APPLICABILITY_LOOKUP: dict[str, str] = {
+    field_name: applicability_key for field_name, applicability_key in _CONTEXT_FIELD_APPLICABILITY_KEYS
+}
 
 _SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+")
 _CLAUSE_SPLIT_RE = re.compile(r"\s*;\s*")
@@ -73,6 +95,37 @@ def _dedupe_relationships_extend(target: list[dict[str, Any]], values: list[dict
             continue
         target.append(value)
         seen.add(key)
+
+
+def _context_applicability_for(obj: Any) -> dict[str, bool]:
+    raw_value = getattr(obj, "context_applicability", None)
+    applicability = dict(_CONTEXT_APPLICABILITY_DEFAULTS)
+    if isinstance(raw_value, Mapping):
+        for _, applicability_key in _CONTEXT_FIELD_APPLICABILITY_KEYS:
+            value = raw_value.get(applicability_key)
+            if isinstance(value, bool):
+                applicability[applicability_key] = value
+    return applicability
+
+
+def _context_field_value(obj: Any, field_name: str, applicability: Mapping[str, bool]) -> str:
+    applicability_key = _CONTEXT_FIELD_APPLICABILITY_LOOKUP.get(field_name)
+    if applicability_key is not None and not applicability.get(applicability_key, True):
+        return ""
+    value = getattr(obj, field_name, "")
+    text = str(value or "").strip()
+    return text
+
+
+def _topic_applicability_for(topic: Mapping[str, Any]) -> dict[str, bool]:
+    raw_value = topic.get("context_applicability")
+    applicability = dict(_CONTEXT_APPLICABILITY_DEFAULTS)
+    if isinstance(raw_value, Mapping):
+        for _, applicability_key in _CONTEXT_FIELD_APPLICABILITY_KEYS:
+            value = raw_value.get(applicability_key)
+            if isinstance(value, bool):
+                applicability[applicability_key] = value
+    return applicability
 
 
 def _relationship_to_dict(value: Any) -> dict[str, Any]:
@@ -113,7 +166,9 @@ def _estimate_text_tokens(value: Any) -> int:
             "source_type",
             "author",
             "publisher",
+            "year",
             "url",
+            "supports",
         ):
             total += _estimate_text_tokens(value.get(key))
         return total
@@ -126,40 +181,55 @@ def _estimate_text_tokens(value: Any) -> int:
 
 
 def _estimate_object_tokens(obj: Any) -> int:
-    return sum(
-        _estimate_text_tokens(getattr(obj, field_name, None))
-        for field_name in (
-            "id",
-            "title",
-            "aliases",
-            "summary",
-            "authorship_positions",
-            "date_ranges",
-            "original_audience",
-            "historical_setting",
-            "genre",
-            "structure",
-            "major_themes",
-            "canonical_placement",
-            "key_people",
-            "key_places",
-            "key_events",
-            "interpretive_disputes",
-            "primary_sources",
-            "historical_context",
-            "ancient_near_east_context",
-            "literary_context",
-            "covenantal_significance",
-            "scripture_references",
-            "common_questions",
-            "interpretive_notes",
-            "sources",
-            "related_objects",
-            "timeline",
-            "archaeology",
-            "new_testament_connections",
-        )
-    )
+    applicability = _context_applicability_for(obj)
+    context_field_names = frozenset(_CONTEXT_FIELD_APPLICABILITY_LOOKUP)
+    total = 0
+    for field_name in (
+        "id",
+        "title",
+        "aliases",
+        "summary",
+        "authorship_positions",
+        "date_ranges",
+        "original_audience",
+        "historical_setting",
+        "genre",
+        "structure",
+        "major_themes",
+        "canonical_placement",
+        "key_people",
+        "key_places",
+        "key_events",
+        "interpretive_disputes",
+        "primary_sources",
+        "cross_references",
+        "intertextuality",
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "second_temple_context",
+        "canonical_context",
+        "later_christian_reception",
+        "literary_context",
+        "covenantal_significance",
+        "scripture_references",
+        "common_questions",
+        "interpretive_notes",
+        "sources",
+        "related_objects",
+        "hebrew_words",
+        "greek_words",
+        "timeline",
+        "archaeology",
+        "new_testament_connections",
+    ):
+        if field_name == "interpretive_notes":
+            total += _estimate_text_tokens(" ".join(interpretive_note_texts(getattr(obj, field_name, None))))
+            continue
+        if not _context_field_value(obj, field_name, applicability) and field_name in context_field_names:
+            continue
+        total += _estimate_text_tokens(getattr(obj, field_name, None))
+    return total
 
 
 @dataclass
@@ -230,9 +300,14 @@ class CanonicalContextBuilder:
             "retrieved_topics": retrieved,
             "historical_context": [],
             "ancient_near_east_context": [],
+            "hebraic_worldview": [],
+            "second_temple_context": [],
+            "canonical_context": [],
+            "later_christian_reception": [],
             "literary_context": [],
             "covenantal_significance": [],
             "cross_references": [],
+            "intertextuality": [],
             "word_studies": [],
             "related_topics": [],
             "related_objects": [],
@@ -264,17 +339,18 @@ class CanonicalContextBuilder:
 
         for result in retrieved:
             obj = self.library.objects_by_id[result["id"]]
-            _dedupe_extend(context["historical_context"], [obj.historical_context] if obj.historical_context else [])
-            _dedupe_extend(
-                context["ancient_near_east_context"],
-                [obj.ancient_near_east_context] if obj.ancient_near_east_context else [],
-            )
+            applicability = _context_applicability_for(obj)
+            for field_name, _applicability_key in _CONTEXT_FIELD_APPLICABILITY_KEYS:
+                value = _context_field_value(obj, field_name, applicability)
+                if value:
+                    _dedupe_extend(context[field_name], [value])
             _dedupe_extend(context["literary_context"], [obj.literary_context] if obj.literary_context else [])
             _dedupe_extend(
                 context["covenantal_significance"],
                 [obj.covenantal_significance] if obj.covenantal_significance else [],
             )
             _dedupe_extend(context["cross_references"], obj.cross_references, limit=self.max_cross_references)
+            _dedupe_extend(context["intertextuality"], obj.intertextuality, limit=self.max_related_topics)
             _dedupe_extend(context["word_studies"], obj.hebrew_words + obj.greek_words)
             relationships = result["related_objects"]
             _dedupe_relationships_extend(context["related_objects"], relationships)
@@ -352,6 +428,7 @@ class CanonicalContextBuilder:
     ) -> None:
         if obj.id in seen_ids:
             return
+        applicability = _context_applicability_for(obj)
         target.append(
             {
                 "id": obj.id,
@@ -372,8 +449,23 @@ class CanonicalContextBuilder:
                 "key_events": list(obj.key_events),
                 "interpretive_disputes": list(obj.interpretive_disputes),
                 "primary_sources": list(obj.primary_sources),
-                "historical_context": obj.historical_context,
-                "ancient_near_east_context": obj.ancient_near_east_context,
+                "cross_references": list(obj.cross_references),
+                "intertextuality": list(obj.intertextuality),
+                "historical_context": _context_field_value(obj, "historical_context", applicability),
+                "ancient_near_east_context": _context_field_value(
+                    obj,
+                    "ancient_near_east_context",
+                    applicability,
+                ),
+                "hebraic_worldview": _context_field_value(obj, "hebraic_worldview", applicability),
+                "second_temple_context": _context_field_value(obj, "second_temple_context", applicability),
+                "canonical_context": _context_field_value(obj, "canonical_context", applicability),
+                "later_christian_reception": _context_field_value(
+                    obj,
+                    "later_christian_reception",
+                    applicability,
+                ),
+                "context_applicability": applicability,
                 "literary_context": obj.literary_context,
                 "covenantal_significance": obj.covenantal_significance,
                 "scripture_references": [
@@ -381,11 +473,16 @@ class CanonicalContextBuilder:
                     for reference in obj.scripture_references
                 ],
                 "common_questions": list(obj.common_questions),
-                "interpretive_notes": list(obj.interpretive_notes),
+                "interpretive_notes": [
+                    note.to_dict() if hasattr(note, "to_dict") else note
+                    for note in obj.interpretive_notes
+                ],
                 "sources": [
                     source.to_dict() if hasattr(source, "to_dict") else source
                     for source in obj.sources
                 ],
+                "hebrew_words": list(obj.hebrew_words),
+                "greek_words": list(obj.greek_words),
                 "content_status": obj.content_status,
                 "review_status": obj.review_status,
                 "confidence": obj.confidence,
@@ -397,6 +494,9 @@ class CanonicalContextBuilder:
                 "matched_terms": matched_terms or [],
                 "matched_fields": matched_fields or [],
                 "related_objects": self._normalize_related_objects(obj),
+                "timeline": list(obj.timeline),
+                "archaeology": list(obj.archaeology),
+                "new_testament_connections": list(obj.new_testament_connections),
                 "inclusion_type": inclusion_type,
                 "included_from": included_from,
                 "relationship": relationship,
@@ -530,6 +630,144 @@ class CanonicalContextBuilder:
         return deduped
 
 
+_PROMPT_CONTEXT_SECTION_ORDER: tuple[str, ...] = (
+    "Immediate Literary Context",
+    "Historical Context",
+    "Ancient Near Eastern Context",
+    "Hebraic Worldview",
+    "Second Temple Context",
+    "Covenant and Canonical Context",
+    "Intertextual Connections",
+    "New Testament Connections",
+)
+
+_PROMPT_CONTEXT_MODE_LIMITS: dict[str, dict[str, int | bool]] = {
+    "concise": {
+        "context_sections": 2,
+        "section_items": 1,
+        "scripture_references": 2,
+        "caution_notes": 1,
+        "sources": 1,
+        "later_reception": 0,
+    },
+    "study": {
+        "context_sections": 8,
+        "section_items": 1,
+        "scripture_references": 2,
+        "caution_notes": 1,
+        "sources": 1,
+        "later_reception": 1,
+    },
+    "teaching": {
+        "context_sections": 8,
+        "section_items": 1,
+        "scripture_references": 2,
+        "caution_notes": 1,
+        "sources": 1,
+        "later_reception": 1,
+    },
+    "scholar": {
+        "context_sections": 8,
+        "section_items": 2,
+        "scripture_references": 3,
+        "caution_notes": 2,
+        "sources": 2,
+        "later_reception": 1,
+    },
+}
+
+_PROMPT_SECTION_FIELD_WEIGHTS: dict[str, tuple[tuple[str, int], ...]] = {
+    "Immediate Literary Context": (
+        ("literary_context", 110),
+        ("genre", 90),
+        ("structure", 85),
+    ),
+    "Historical Context": (
+        ("historical_context", 120),
+        ("historical_setting", 110),
+        ("original_audience", 100),
+        ("date_ranges", 90),
+    ),
+    "Ancient Near Eastern Context": (("ancient_near_east_context", 110),),
+    "Hebraic Worldview": (("hebraic_worldview", 110),),
+    "Second Temple Context": (("second_temple_context", 110),),
+    "Covenant and Canonical Context": (
+        ("canonical_context", 125),
+        ("covenantal_significance", 120),
+        ("canonical_placement", 90),
+    ),
+    "Intertextual Connections": (
+        ("intertextuality", 110),
+        ("cross_references", 95),
+    ),
+    "New Testament Connections": (("new_testament_connections", 110),),
+    "Interpretive Disputes and Cautions": (
+        ("interpretive_disputes", 115),
+        ("interpretive_notes", 110),
+        ("common_questions", 85),
+    ),
+    "Later Christian Reception": (("later_christian_reception", 100),),
+}
+
+
+def _normalize_prompt_answer_mode(answer_mode: str | None) -> str:
+    mode = str(answer_mode or "study").strip().lower()
+    return mode if mode in _PROMPT_CONTEXT_MODE_LIMITS else "study"
+
+
+def _prompt_context_mode_limits(answer_mode: str | None) -> dict[str, int | bool]:
+    return _PROMPT_CONTEXT_MODE_LIMITS[_normalize_prompt_answer_mode(answer_mode)]
+
+
+def _prompt_section_field_weights(answer_mode: str | None) -> dict[str, tuple[tuple[str, int], ...]]:
+    normalized = _normalize_prompt_answer_mode(answer_mode)
+    weights = {section: tuple(fields) for section, fields in _PROMPT_SECTION_FIELD_WEIGHTS.items()}
+    if normalized == "scholar":
+        weights["Historical Context"] = weights["Historical Context"] + (
+            ("timeline", 88),
+            ("archaeology", 84),
+        )
+        weights["Interpretive Disputes and Cautions"] = weights["Interpretive Disputes and Cautions"] + (
+            ("hebrew_words", 80),
+            ("greek_words", 80),
+        )
+    return weights
+
+
+def _select_prompt_sources(values: Any, *, limit: int, seen_keys: set[str]) -> list[dict[str, Any]]:
+    if limit <= 0:
+        return []
+    if not isinstance(values, (list, tuple)):
+        values = [values]
+
+    selected: list[dict[str, Any]] = []
+    for value in values:
+        if hasattr(value, "to_dict"):
+            candidate = value.to_dict()
+        elif isinstance(value, Mapping):
+            candidate = dict(value)
+        else:
+            candidate = {"title": str(value or "").strip()}
+
+        key_parts = [
+            str(candidate.get("id") or "").strip(),
+            str(candidate.get("title") or "").strip(),
+            str(candidate.get("locator") or "").strip(),
+            str(candidate.get("author") or "").strip(),
+            str(candidate.get("publisher") or "").strip(),
+            str(candidate.get("year") or "").strip(),
+            str(candidate.get("source_type") or "").strip(),
+        ]
+        key = normalize_text(" ".join(part for part in key_parts if part))
+        if not key or key in seen_keys:
+            continue
+        seen_keys.add(key)
+        selected.append(candidate)
+        if limit > 0 and len(selected) >= limit:
+            break
+    return selected
+
+
 def build_canonical_prompt_context(
     context: Mapping[str, Any] | None,
     *,
@@ -538,6 +776,7 @@ def build_canonical_prompt_context(
     max_facts_per_entry: int = CKL_MAX_FACTS_PER_ENTRY,
     max_scripture_references_per_entry: int = CKL_MAX_SCRIPTURE_REFERENCES_PER_ENTRY,
     max_caution_notes_per_entry: int = CKL_MAX_CAUTIONS_PER_ENTRY,
+    answer_mode: str = "study",
 ) -> dict[str, Any]:
     """Project rich CKL retrieval output into a compact prompt-safe structure."""
 
@@ -546,6 +785,8 @@ def build_canonical_prompt_context(
     fact_limit = max(0, int(max_facts_per_entry))
     reference_limit = max(0, int(max_scripture_references_per_entry))
     caution_limit = max(0, int(max_caution_notes_per_entry))
+    normalized_answer_mode = _normalize_prompt_answer_mode(answer_mode)
+    mode_limits = _prompt_context_mode_limits(normalized_answer_mode)
 
     retrieved_topics = list(context.get("retrieved_topics") or []) if context else []
     if not retrieved_topics or token_budget <= 0 or entry_limit <= 0:
@@ -557,6 +798,10 @@ def build_canonical_prompt_context(
                 "max_facts_per_entry": fact_limit,
                 "max_scripture_references_per_entry": reference_limit,
                 "max_caution_notes_per_entry": caution_limit,
+                "answer_mode": normalized_answer_mode,
+                "context_section_limit": int(mode_limits["context_sections"]),
+                "section_item_limit": int(mode_limits["section_items"]),
+                "source_limit": int(mode_limits["sources"]),
                 "entry_count": 0,
                 "fact_count": 0,
                 "scripture_reference_count": 0,
@@ -576,17 +821,31 @@ def build_canonical_prompt_context(
     seen_references: set[str] = set()
     remaining_tokens = token_budget
     truncated = False
+    selected_entry_count = min(entry_limit, len(retrieved_topics))
+    # Reserve a small floor for each selected entry so later entries can still keep a summary.
+    minimum_entry_budget = 0
+    if selected_entry_count > 0:
+        minimum_entry_budget = max(32, min(96, token_budget // selected_entry_count))
 
-    for topic in retrieved_topics[:entry_limit]:
+    for index, topic in enumerate(retrieved_topics[:entry_limit]):
+        remaining_selected = selected_entry_count - index - 1
+        entry_budget = remaining_tokens
+        if remaining_selected > 0 and minimum_entry_budget > 0:
+            reserved_for_later = remaining_selected * minimum_entry_budget
+            if remaining_tokens > reserved_for_later:
+                entry_budget = remaining_tokens - reserved_for_later
+            entry_budget = max(minimum_entry_budget, entry_budget)
+            entry_budget = min(entry_budget, remaining_tokens)
         entry, entry_tokens, entry_truncated = _build_prompt_context_entry(
             topic,
             query_terms=query_terms,
-            remaining_tokens=remaining_tokens,
+            remaining_tokens=entry_budget,
             max_facts_per_entry=fact_limit,
             max_scripture_references_per_entry=reference_limit,
             max_caution_notes_per_entry=caution_limit,
             seen_texts=seen_texts,
             seen_references=seen_references,
+            answer_mode=normalized_answer_mode,
         )
         if entry is None:
             continue
@@ -618,6 +877,10 @@ def build_canonical_prompt_context(
         "max_facts_per_entry": fact_limit,
         "max_scripture_references_per_entry": reference_limit,
         "max_caution_notes_per_entry": caution_limit,
+        "answer_mode": normalized_answer_mode,
+        "context_section_limit": int(mode_limits["context_sections"]),
+        "section_item_limit": int(mode_limits["section_items"]),
+        "source_limit": int(mode_limits["sources"]),
         "entry_count": len(prompt_entries),
         "fact_count": sum(len(entry.get("facts") or []) for entry in prompt_entries),
         "scripture_reference_count": sum(len(entry.get("scripture_references") or []) for entry in prompt_entries),
@@ -648,6 +911,7 @@ def _build_prompt_context_entry(
     max_caution_notes_per_entry: int,
     seen_texts: set[str],
     seen_references: set[str],
+    answer_mode: str,
 ) -> tuple[dict[str, Any] | None, int, bool]:
     object_id = normalize_id(str(topic.get("id") or "").strip())
     if not object_id or remaining_tokens <= 0:
@@ -655,6 +919,8 @@ def _build_prompt_context_entry(
 
     title = _normalize_prompt_text(topic.get("title") or object_id) or object_id
     category = _humanize_prompt_category(topic.get("type"))
+    mode_limits = _prompt_context_mode_limits(answer_mode)
+    section_weights = _prompt_section_field_weights(answer_mode)
 
     local_seen_texts = set(seen_texts)
     local_seen_references = set(seen_references)
@@ -665,25 +931,20 @@ def _build_prompt_context_entry(
     if summary_key:
         local_seen_texts.add(summary_key)
 
-    fact_candidates = _collect_ranked_prompt_texts(
-        topic,
-        field_weights=_PROMPT_FACT_FIELD_WEIGHTS,
-        query_terms=query_terms,
-        seen_keys=local_seen_texts,
-    )
-    if not summary and fact_candidates:
-        summary_candidate = fact_candidates.pop(0)
-        summary = _trim_prompt_text(summary_candidate["text"], min(remaining_tokens, 64))
-        summary_key = normalize_text(summary)
-        if summary_key:
-            local_seen_texts.add(summary_key)
-
-    selected_facts = _select_ranked_prompt_texts(
-        fact_candidates,
-        limit=max_facts_per_entry,
-        seen_keys=local_seen_texts,
+    sections: list[dict[str, Any]] = []
+    facts: list[str] = []
+    selected_references: list[str] = []
+    selected_cautions: list[str] = []
+    source_objects = _select_prompt_sources(
+        topic.get("sources"),
+        limit=int(mode_limits["sources"]),
+        seen_keys=set(),
     )
 
+    if summary:
+        sections.append({"heading": "Summary", "items": [summary]})
+
+    reference_limit = min(max_scripture_references_per_entry, int(mode_limits["scripture_references"]))
     reference_candidates = _collect_ranked_scripture_references(
         topic,
         query_terms=query_terms,
@@ -691,22 +952,70 @@ def _build_prompt_context_entry(
     )
     selected_references = _select_ranked_prompt_texts(
         reference_candidates,
-        limit=max_scripture_references_per_entry,
+        limit=reference_limit,
         seen_keys=local_seen_references,
     )
+    if selected_references:
+        sections.append({"heading": "Primary Scripture References", "items": selected_references})
+
+    context_section_limit = int(mode_limits["context_sections"])
+    context_item_limit = min(max(1, max_facts_per_entry), int(mode_limits["section_items"]))
+    context_sections_added = 0
+    summary_fallback = ""
+    for section_heading in _PROMPT_CONTEXT_SECTION_ORDER:
+        if context_sections_added >= context_section_limit:
+            break
+        candidates = _collect_ranked_prompt_texts(
+            topic,
+            field_weights=section_weights[section_heading],
+            query_terms=query_terms,
+            seen_keys=local_seen_texts,
+        )
+        selected_items = _select_ranked_prompt_texts(
+            candidates,
+            limit=context_item_limit,
+            seen_keys=local_seen_texts,
+        )
+        if not selected_items:
+            continue
+        if not summary and not summary_fallback:
+            summary_fallback = selected_items.pop(0)
+            summary = _trim_prompt_text(summary_fallback, min(remaining_tokens, 64))
+            summary_key = normalize_text(summary)
+            if summary_key:
+                local_seen_texts.add(summary_key)
+            if not selected_items:
+                continue
+        sections.append({"heading": section_heading, "items": selected_items})
+        context_sections_added += 1
+        for item in selected_items:
+            key = normalize_text(item)
+            if key:
+                local_seen_texts.add(key)
+                if len(facts) < max_facts_per_entry:
+                    facts.append(item)
+
+    if not summary and summary_fallback:
+        summary = _trim_prompt_text(summary_fallback, min(remaining_tokens, 64))
+        summary_key = normalize_text(summary)
+        if summary_key:
+            local_seen_texts.add(summary_key)
+    sections = [section for section in sections if str(section.get("heading") or "").strip() != "Summary"]
+    if summary:
+        sections.insert(0, {"heading": "Summary", "items": [summary]})
 
     caution_candidates = _collect_ranked_prompt_texts(
         topic,
-        field_weights=_PROMPT_CAUTION_FIELD_WEIGHTS,
+        field_weights=section_weights["Interpretive Disputes and Cautions"],
         query_terms=query_terms,
         seen_keys=local_seen_texts,
     )
+    caution_limit = min(max_caution_notes_per_entry, int(mode_limits["caution_notes"]))
     selected_cautions = _select_ranked_prompt_texts(
         caution_candidates,
-        limit=max_caution_notes_per_entry,
+        limit=caution_limit,
         seen_keys=local_seen_texts,
     )
-
     if not selected_cautions:
         content_status = str(topic.get("content_status") or "").strip().lower()
         review_status = str(topic.get("review_status") or "").strip().lower()
@@ -720,6 +1029,29 @@ def _build_prompt_context_entry(
             )
         if selected_cautions:
             local_seen_texts.add(normalize_text(selected_cautions[0]))
+    if selected_cautions:
+        sections.append({"heading": "Interpretive Disputes and Cautions", "items": selected_cautions})
+
+    if int(mode_limits["later_reception"]) > 0:
+        later_candidates = _collect_ranked_prompt_texts(
+            topic,
+            field_weights=section_weights["Later Christian Reception"],
+            query_terms=query_terms,
+            seen_keys=local_seen_texts,
+        )
+        selected_later = _select_ranked_prompt_texts(
+            later_candidates,
+            limit=int(mode_limits["later_reception"]),
+            seen_keys=local_seen_texts,
+        )
+        if selected_later:
+            sections.append({"heading": "Later Christian Reception", "items": selected_later})
+            for item in selected_later:
+                key = normalize_text(item)
+                if key:
+                    local_seen_texts.add(key)
+                if len(facts) < max_facts_per_entry:
+                    facts.append(item)
 
     entry: dict[str, Any] = {
         "id": object_id,
@@ -727,10 +1059,13 @@ def _build_prompt_context_entry(
         "category": category,
         "object_version": str(topic.get("object_version") or "").strip(),
         "summary": summary,
-        "facts": selected_facts,
+        "_fact_limit": max_facts_per_entry,
+        "facts": facts,
         "scripture_references": selected_references,
         "caution_notes": selected_cautions,
         "source_ids": [object_id],
+        "sections": sections,
+        "sources": source_objects,
     }
 
     entry_tokens = _estimate_prompt_context_entry_tokens(entry)
@@ -752,8 +1087,16 @@ def _collect_ranked_prompt_texts(
     seen_keys: set[str],
 ) -> list[dict[str, Any]]:
     candidates: list[dict[str, Any]] = []
+    applicability = _topic_applicability_for(topic)
     for field_order, (field_name, base_weight) in enumerate(field_weights):
-        for value_index, text in enumerate(_iter_prompt_text_segments(topic.get(field_name))):
+        applicability_key = _CONTEXT_FIELD_APPLICABILITY_LOOKUP.get(field_name)
+        if applicability_key is not None and not applicability.get(applicability_key, True):
+            continue
+        if field_name == "interpretive_notes":
+            field_values = interpretive_note_texts(topic.get(field_name))
+        else:
+            field_values = _iter_prompt_text_segments(topic.get(field_name))
+        for value_index, text in enumerate(field_values):
             normalized = normalize_text(text)
             if not normalized or normalized in seen_keys:
                 continue
@@ -926,29 +1269,7 @@ def _humanize_prompt_category(value: Any) -> str:
 
 
 def _estimate_prompt_context_entry_tokens(entry: Mapping[str, Any]) -> int:
-    lines = [
-        f"## Entry: {str(entry.get('title') or entry.get('id') or 'unknown').strip()}",
-        f"Category: {_normalize_prompt_text(entry.get('category')) or 'Unknown'}",
-    ]
-    summary = _normalize_prompt_text(entry.get("summary"))
-    if summary:
-        lines.append(f"Summary: {summary}")
-    facts = [str(item).strip() for item in entry.get("facts") or [] if str(item).strip()]
-    if facts:
-        lines.append("Relevant facts:")
-        lines.extend(f"- {fact}" for fact in facts)
-    scripture_references = [str(item).strip() for item in entry.get("scripture_references") or [] if str(item).strip()]
-    if scripture_references:
-        lines.append("Scripture references:")
-        lines.extend(f"- {reference}" for reference in scripture_references)
-    caution_notes = [str(item).strip() for item in entry.get("caution_notes") or [] if str(item).strip()]
-    if caution_notes:
-        lines.append("Caution / interpretation notes:")
-        lines.extend(f"- {note}" for note in caution_notes)
-    source_ids = [str(item).strip() for item in entry.get("source_ids") or [] if str(item).strip()]
-    if source_ids:
-        lines.append(f"Source ID: {source_ids[0]}")
-    return _estimate_text_tokens("\n".join(lines))
+    return _estimate_text_tokens("\n".join(_render_prompt_context_entry_lines(entry)))
 
 
 def _shrink_prompt_context_entry(
@@ -965,31 +1286,44 @@ def _shrink_prompt_context_entry(
     entry["scripture_references"] = list(entry.get("scripture_references") or [])
     entry["caution_notes"] = list(entry.get("caution_notes") or [])
     entry["source_ids"] = list(entry.get("source_ids") or [])
+    entry["sections"] = [
+        {
+            "heading": str(section.get("heading") or "").strip(),
+            "items": list(section.get("items") or []),
+        }
+        for section in entry.get("sections") or []
+        if str(section.get("heading") or "").strip()
+    ]
+    entry["sources"] = list(entry.get("sources") or [])
     entry["summary"] = _normalize_prompt_text(entry.get("summary"))
 
     def entry_tokens() -> int:
         return _estimate_prompt_context_entry_tokens(entry)
 
-    while entry_tokens() > budget and entry["caution_notes"]:
-        entry["caution_notes"].pop()
-        truncated = True
-    while entry_tokens() > budget and entry["scripture_references"]:
-        entry["scripture_references"].pop()
-        truncated = True
-    while entry_tokens() > budget and entry["facts"]:
-        entry["facts"].pop()
-        truncated = True
-
-    if entry["summary"]:
-        while entry_tokens() > budget:
-            shorter = _trim_prompt_text(entry["summary"], max(4, budget // 2))
-            if not shorter or shorter == entry["summary"]:
-                break
-            entry["summary"] = shorter
+    while entry_tokens() > budget:
+        if _trim_prompt_context_sections(entry):
             truncated = True
-    if entry["summary"] and entry_tokens() > budget:
-        entry["summary"] = ""
-        truncated = True
+            continue
+        if entry["summary"]:
+            shorter = _trim_prompt_text(entry["summary"], max(4, budget // 2))
+            if shorter and shorter != entry["summary"]:
+                entry["summary"] = shorter
+                for section in entry.get("sections") or []:
+                    if str(section.get("heading") or "").strip() == "Summary":
+                        section["items"] = [shorter]
+                        break
+                _sync_prompt_context_entry_fields(entry)
+                truncated = True
+                continue
+            entry["summary"] = ""
+            for section in entry.get("sections") or []:
+                if str(section.get("heading") or "").strip() == "Summary":
+                    section["items"] = []
+                    break
+            _sync_prompt_context_entry_fields(entry)
+            truncated = True
+            continue
+        break
 
     tokens = entry_tokens()
     if tokens > budget:
@@ -998,10 +1332,13 @@ def _shrink_prompt_context_entry(
             "title": entry.get("title"),
             "category": entry.get("category"),
             "summary": "",
+            "_fact_limit": entry.get("_fact_limit"),
             "facts": [],
             "scripture_references": [],
             "caution_notes": [],
             "source_ids": list(entry.get("source_ids") or []),
+            "sections": [],
+            "sources": [],
         }
         minimal_tokens = _estimate_prompt_context_entry_tokens(minimal_entry)
         if minimal_tokens <= budget:
@@ -1009,3 +1346,173 @@ def _shrink_prompt_context_entry(
         return entry, tokens, truncated
 
     return entry, tokens, truncated
+
+
+def _render_prompt_context_entry_lines(entry: Mapping[str, Any]) -> list[str]:
+    lines = [
+        f"## Entry: {str(entry.get('title') or entry.get('id') or 'unknown').strip()}",
+        f"Category: {_normalize_prompt_text(entry.get('category')) or 'Unknown'}",
+    ]
+
+    sections = list(entry.get("sections") or [])
+    if sections:
+        for section in sections:
+            heading = str(section.get("heading") or "").strip()
+            raw_items = list(section.get("items") or [])
+            items: list[str] = []
+            for raw_item in raw_items:
+                text = _render_prompt_context_source_item(raw_item) if heading == "Sources" else str(raw_item).strip()
+                if text:
+                    items.append(text)
+            if not heading or not items:
+                continue
+            if heading == "Summary":
+                lines.append(f"Summary: {items[0]}")
+                continue
+            lines.append(f"{heading}:")
+            if heading == "Sources":
+                source_ids = [str(item).strip() for item in entry.get("source_ids") or [] if str(item).strip()]
+                if source_ids:
+                    if len(source_ids) == 1:
+                        lines.append(f"Source ID: {source_ids[0]}")
+                    else:
+                        lines.append("Source IDs: " + ", ".join(source_ids))
+            lines.extend(f"- {item}" for item in items)
+        return lines
+
+    summary = _normalize_prompt_text(entry.get("summary"))
+    if summary:
+        lines.append(f"Summary: {summary}")
+    facts = [str(item).strip() for item in entry.get("facts") or [] if str(item).strip()]
+    if facts:
+        lines.append("Relevant facts:")
+        lines.extend(f"- {fact}" for fact in facts)
+    scripture_references = [
+        str(item).strip()
+        for item in entry.get("scripture_references") or []
+        if str(item).strip()
+    ]
+    if scripture_references:
+        lines.append("Scripture references:")
+        lines.extend(f"- {reference}" for reference in scripture_references)
+    caution_notes = [str(item).strip() for item in entry.get("caution_notes") or [] if str(item).strip()]
+    if caution_notes:
+        lines.append("Caution / interpretation notes:")
+        lines.extend(f"- {note}" for note in caution_notes)
+    source_ids = [str(item).strip() for item in entry.get("source_ids") or [] if str(item).strip()]
+    if source_ids:
+        lines.append(f"Source ID: {source_ids[0]}")
+    return lines
+
+
+def _render_prompt_context_source_item(value: Any) -> str:
+    if hasattr(value, "to_dict"):
+        value = value.to_dict()
+    if isinstance(value, Mapping):
+        title = str(value.get("title") or "").strip()
+        author = str(value.get("author") or "").strip()
+        publisher = str(value.get("publisher") or "").strip()
+        year = value.get("year")
+        source_type = str(value.get("source_type") or "").strip()
+        locator = str(value.get("locator") or "").strip()
+        notes = str(value.get("notes") or "").strip()
+
+        parts: list[str] = []
+        primary = title or author or source_type
+        if primary:
+            parts.append(primary)
+        if author and author not in parts:
+            parts.append(author)
+        if publisher:
+            parts.append(publisher)
+        if year is not None:
+            parts.append(str(year))
+        if source_type:
+            parts.append(source_type)
+        if locator:
+            parts.append(locator)
+        if notes:
+            parts.append(notes)
+        return " / ".join(part for part in parts if part)
+    return str(value or "").strip()
+
+
+def _trim_prompt_context_sections(entry: dict[str, Any]) -> bool:
+    sections = list(entry.get("sections") or [])
+    if not sections:
+        return False
+
+    for index in range(len(sections) - 1, -1, -1):
+        section = sections[index]
+        heading = str(section.get("heading") or "").strip()
+        items = [item for item in list(section.get("items") or []) if str(item).strip()]
+        if not heading or not items:
+            del sections[index]
+            entry["sections"] = sections
+            _sync_prompt_context_entry_fields(entry)
+            return True
+        if heading == "Summary":
+            continue
+        items.pop()
+        if items:
+            section["items"] = items
+        else:
+            del sections[index]
+        entry["sections"] = sections
+        _sync_prompt_context_entry_fields(entry)
+        return True
+    return False
+
+
+def _sync_prompt_context_entry_fields(entry: dict[str, Any]) -> None:
+    sections = list(entry.get("sections") or [])
+    if not sections:
+        return
+
+    summary = _normalize_prompt_text(entry.get("summary"))
+    facts: list[str] = []
+    scripture_references: list[str] = []
+    caution_notes: list[str] = []
+
+    for section in sections:
+        heading = str(section.get("heading") or "").strip()
+        items = [str(item).strip() for item in section.get("items") or [] if str(item).strip()]
+        if not heading or not items:
+            continue
+        if heading == "Summary":
+            summary = items[0]
+            continue
+        if heading == "Primary Scripture References":
+            scripture_references.extend(items)
+            continue
+        if heading == "Interpretive Disputes and Cautions":
+            caution_notes.extend(items)
+            continue
+        if heading == "Later Christian Reception":
+            facts.extend(items)
+            continue
+        if heading == "Sources":
+            continue
+        facts.extend(items)
+
+    entry["summary"] = summary
+    fact_limit = entry.get("_fact_limit")
+    deduped_facts = _dedupe_text_list(facts)
+    if isinstance(fact_limit, int) and fact_limit >= 0:
+        deduped_facts = deduped_facts[:fact_limit]
+    entry["facts"] = deduped_facts
+    entry["scripture_references"] = _dedupe_text_list(scripture_references)
+    entry["caution_notes"] = _dedupe_text_list(caution_notes)
+
+
+def _dedupe_text_list(values: list[str]) -> list[str]:
+    deduped: list[str] = []
+    seen: set[str] = set()
+    for value in values:
+        text = str(value or "").strip()
+        key = normalize_text(text)
+        if not text or not key or key in seen:
+            continue
+        seen.add(key)
+        deduped.append(text)
+    return deduped

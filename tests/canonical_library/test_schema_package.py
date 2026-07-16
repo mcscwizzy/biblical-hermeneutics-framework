@@ -21,10 +21,45 @@ class CanonicalSchemaPackageTests(unittest.TestCase):
         self.assertIn("scripture_references", schema["properties"])
         self.assertEqual(schema["properties"]["aliases"]["minItems"], 1)
         self.assertIn("authorship_positions", schema["required"])
+        self.assertIn("hebraic_worldview", schema["required"])
+        self.assertIn("second_temple_context", schema["required"])
+        self.assertIn("canonical_context", schema["required"])
+        self.assertIn("later_christian_reception", schema["required"])
+        self.assertIn("context_applicability", schema["required"])
+        self.assertEqual(schema["properties"]["hebraic_worldview"]["type"], "string")
+        self.assertEqual(schema["properties"]["second_temple_context"]["type"], "string")
+        self.assertEqual(schema["properties"]["canonical_context"]["type"], "string")
+        self.assertEqual(schema["properties"]["later_christian_reception"]["type"], "string")
+        self.assertEqual(schema["properties"]["context_applicability"]["$ref"], "#/$defs/contextApplicability")
         self.assertIn("major_themes", schema["properties"])
         self.assertEqual(schema["properties"]["original_audience"]["type"], "string")
         self.assertEqual(schema["properties"]["genre"]["$ref"], "#/$defs/stringList")
         self.assertEqual(schema["properties"]["primary_sources"]["$ref"], "#/$defs/stringList")
+        self.assertIn("id", schema["$defs"]["source"]["required"])
+        self.assertIn("supports", schema["$defs"]["source"]["required"])
+        self.assertEqual(schema["$defs"]["source"]["properties"]["id"]["$ref"], "#/$defs/canonicalId")
+        self.assertEqual(schema["$defs"]["source"]["properties"]["supports"]["$ref"], "#/$defs/stringList")
+        self.assertEqual(
+            schema["$defs"]["source"]["properties"]["source_type"]["enum"],
+            [
+                "scripture",
+                "ancient-primary-source",
+                "academic-book",
+                "journal-article",
+                "lexicon",
+                "grammar",
+                "excavation-report",
+                "museum-collection",
+                "reference-work",
+                "confessional-source",
+                "other",
+            ],
+        )
+        interpretive_items = schema["properties"]["interpretive_notes"]["items"]["oneOf"]
+        self.assertEqual(interpretive_items[0]["type"], "string")
+        self.assertEqual(interpretive_items[1]["$ref"], "#/$defs/interpretiveNote")
+        self.assertEqual(schema["$defs"]["interpretiveNote"]["required"], ["note"])
+        self.assertIn("certainty", schema["$defs"]["interpretiveNote"]["properties"])
 
     def test_validate_base_object_accepts_normalized_inventory_shape(self) -> None:
         obj = validate_base_object(make_object("shechem", "place", "Shechem", ["where is shechem"]))
@@ -34,6 +69,39 @@ class CanonicalSchemaPackageTests(unittest.TestCase):
         self.assertEqual(obj["review_status"], "unreviewed")
         self.assertEqual(obj["sources"], [])
         self.assertEqual(obj["related_objects"], [])
+        self.assertEqual(
+            obj["context_applicability"],
+            {
+                "historical": True,
+                "ancient_near_east": True,
+                "hebraic_worldview": True,
+                "second_temple": True,
+                "canonical": True,
+                "later_christian_reception": True,
+            },
+        )
+        self.assertEqual(obj["hebraic_worldview"], "")
+        self.assertEqual(obj["second_temple_context"], "")
+        self.assertEqual(obj["canonical_context"], "")
+        self.assertEqual(obj["later_christian_reception"], "")
+
+    def test_validate_base_object_accepts_structured_interpretive_notes(self) -> None:
+        data = make_object("shechem", "place", "Shechem", ["where is shechem"])
+        data["interpretive_notes"] = [
+            {
+                "note": "The covenant ceremony resembles Ancient Near Eastern treaty forms.",
+                "note_type": "historical-context",
+                "certainty": "medium",
+                "dispute_status": "broad-consensus",
+                "sources": ["source-id"],
+            }
+        ]
+
+        obj = validate_base_object(data, path="objects/places/shechem.json")
+
+        self.assertEqual(len(obj["interpretive_notes"]), 1)
+        self.assertEqual(obj["interpretive_notes"][0]["note"], "The covenant ceremony resembles Ancient Near Eastern treaty forms.")
+        self.assertEqual(obj["interpretive_notes"][0]["note_type"], "historical-context")
 
     def test_validate_base_object_rejects_invalid_alias_values(self) -> None:
         data = make_object("shechem", "place", "Shechem", ["where is shechem"])

@@ -138,7 +138,16 @@ class CanonicalAuthoringTests(unittest.TestCase):
         self.assertTrue(changed)
         self.assertIsInstance(normalized["sources"][0], dict)
         self.assertEqual(normalized["sources"][0]["title"], "Westermann, Genesis")
-        self.assertEqual(normalized["sources"][0]["source_type"], "other")
+        self.assertEqual(normalized["sources"][0]["source_type"], "reference-work")
+        self.assertIsInstance(normalized["interpretive_notes"][0], dict)
+        self.assertEqual(
+            normalized["interpretive_notes"][0]["note"],
+            "This is a test note.",
+        )
+        self.assertEqual(
+            normalized["interpretive_notes"][0]["note_type"],
+            "textual-observation",
+        )
 
     def test_cli_smoke_for_create_validate_manifest_report_and_migrate(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -241,6 +250,7 @@ class CanonicalAuthoringTests(unittest.TestCase):
             )
             migrated = json.loads(legacy_path.read_text(encoding="utf-8"))
             self.assertEqual(migrated["sources"][0]["title"], "Westermann, Genesis")
+            self.assertEqual(migrated["sources"][0]["source_type"], "reference-work")
             self.assertIn("updated", migrate.stdout)
 
 

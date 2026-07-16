@@ -81,6 +81,40 @@ def _safe_int(value: Any) -> int | None:
     except (TypeError, ValueError):
         return None
 
+
+def _normalize_object_id_list(values: Any) -> list[str]:
+    if not values:
+        return []
+    normalized: list[str] = []
+    seen: set[str] = set()
+    for value in values:
+        object_id = str(value or "").strip()
+        if not object_id or object_id in seen:
+            continue
+        normalized.append(object_id)
+        seen.add(object_id)
+    return normalized
+
+
+def _canonical_library_object_ids(metadata: dict[str, Any], canonical_context: dict[str, Any]) -> tuple[list[str], list[str]]:
+    prompt_ids = _normalize_object_id_list(metadata.get("retrieved_object_ids") or [])
+    object_ids = list(prompt_ids)
+    seen_ids = set(object_ids)
+
+    for topic in canonical_context.get("retrieved_topics") or []:
+        if not isinstance(topic, dict):
+            continue
+        for related in topic.get("related_objects") or []:
+            if not isinstance(related, dict):
+                continue
+            related_id = str(related.get("id") or "").strip()
+            if not related_id or related_id in seen_ids:
+                continue
+            object_ids.append(related_id)
+            seen_ids.add(related_id)
+
+    return prompt_ids, object_ids
+
 class BHFAgent:
     def __init__(
         self,
@@ -560,10 +594,11 @@ class BHFAgent:
             return ctx
 
         metadata = dict(canonical_context.get("metadata") or {})
-        object_ids = list(metadata.get("retrieved_object_ids") or [])
+        prompt_object_ids, object_ids = _canonical_library_object_ids(metadata, canonical_context)
         strong_match = canonical_context_has_strong_match(canonical_context)
         ctx.debug_metadata["canonical_library_strong_match"] = strong_match
         ctx.debug_metadata["canonical_library_loaded"] = True
+        ctx.debug_metadata["canonical_library_prompt_entry_ids"] = prompt_object_ids
         ctx.debug_metadata["canonical_library_object_ids"] = object_ids
         ctx.debug_metadata["canonical_library_retrieval_method"] = metadata.get("retrieval_method")
         ctx.debug_metadata["canonical_library_topic_count"] = metadata.get("topic_count", 0)
@@ -651,7 +686,7 @@ class BHFAgent:
                         "prompt_tokens": ctx.debug_metadata["canonical_library_prompt_tokens"],
                         "prompt_mode": prompt_mode,
                         "canonical_query": ctx.canonical_library_query,
-                        "selected_entry_ids": list(object_ids),
+                        "selected_entry_ids": list(prompt_object_ids),
                         "selected_entry_versions": list(
                             metadata.get("retrieved_object_versions") or []
                         ),

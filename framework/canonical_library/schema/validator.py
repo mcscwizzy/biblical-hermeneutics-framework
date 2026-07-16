@@ -56,8 +56,21 @@ def _apply_defaults(data: Mapping[str, Any]) -> dict[str, Any]:
     normalized = dict(data)
     for field_name, default_value in DEFAULT_CANONICAL_METADATA.items():
         if field_name not in normalized:
-            normalized[field_name] = list(default_value) if isinstance(default_value, list) else default_value
+            normalized[field_name] = _clone_default_value(default_value)
+        elif field_name == "context_applicability" and isinstance(normalized[field_name], Mapping):
+            merged = _clone_default_value(default_value)
+            assert isinstance(merged, dict)
+            merged.update(dict(normalized[field_name]))
+            normalized[field_name] = merged
     return normalized
+
+
+def _clone_default_value(value: Any) -> Any:
+    if isinstance(value, list):
+        return list(value)
+    if isinstance(value, Mapping):
+        return dict(value)
+    return value
 
 
 def _validate_schema(

@@ -24,6 +24,37 @@ When canonical library context is provided, treat it as the primary factual sour
 When a question asks about geography, archaeology, routes, manuscripts, or historical context, use the curated local map data if it is supplied.
 Do not invent missing geography, archaeology, manuscript, or route claims if curated data has not been retrieved.
 When the application requests a structured response, follow that contract exactly and return only the requested fields.
+When the question is about biblical interpretation, follow the hermeneutical framework guidance below before later theology or modern application.
+"""
+
+
+FRAMEWORK_INTERPRETIVE_GUIDANCE = """## Hermeneutical Framework Guidance
+
+Follow this interpretive order unless the question requires a narrower focus:
+1. Biblical text
+2. Immediate literary context
+3. Historical setting
+4. Ancient Near Eastern context when relevant
+5. Hebraic worldview
+6. Second Temple Jewish context when relevant
+7. Covenant and canonical storyline
+8. Intertextual connections
+9. Christological development when supported by the text
+10. Theological synthesis
+11. Modern application
+
+Keep the following guardrails in view:
+- Read the Old Testament as Israel's Scriptures, not merely as Christian proof texts.
+- Read New Testament authors within their Jewish, Second Temple, Greco-Roman, and scriptural worlds.
+- Let Christological interpretation arise from textual, canonical, typological, prophetic, or apostolic connections rather than forcing it onto unrelated details.
+- Keep modern application downstream from exegesis and canonical synthesis.
+- Preserve the distinction between Israel and the Church.
+- Do not flatten Judaism into legalism.
+- Do not describe the Old Testament as works-based and the New Testament as grace-based.
+- Do not assume later Western theological categories were the original audience's categories.
+- Do not treat all Jewish groups in the first century as identical.
+- Use Ancient Near Eastern parallels carefully: similarity does not prove dependence, and difference does not prove complete isolation.
+- Do not use Ancient Near Eastern parallels to imply the Bible merely copied surrounding cultures.
 """
 
 
@@ -72,7 +103,7 @@ ANSWER_MODE_INSTRUCTIONS: dict[str, tuple[str, ...]] = {
     ),
 }
 
-PROMPT_VERSION = "phase12-v1"
+PROMPT_VERSION = "phase13-v1"
 
 
 class PromptStrategy:
@@ -418,6 +449,7 @@ def build_prompt(
             [
                 profile_content.strip(),
                 AGENT_INSTRUCTIONS.strip(),
+                FRAMEWORK_INTERPRETIVE_GUIDANCE.strip(),
                 strategy.runtime_instructions(show_method_notes, question_context).strip(),
                 strategy.detected_context(
                     reference_context,

@@ -260,6 +260,10 @@ class CanonicalContextBuilderTests(unittest.TestCase):
         self.assertEqual(context["retrieved_topics"][0]["matched_fields"], ["id"])
         self.assertEqual(context["historical_context"], [])
         self.assertEqual(context["ancient_near_east_context"], [])
+        self.assertEqual(context["hebraic_worldview"], [])
+        self.assertEqual(context["second_temple_context"], [])
+        self.assertEqual(context["canonical_context"], [])
+        self.assertEqual(context["later_christian_reception"], [])
         self.assertEqual(context["literary_context"], [])
         self.assertEqual(context["covenantal_significance"], [])
         self.assertEqual(context["cross_references"], [])
@@ -283,6 +287,10 @@ class CanonicalContextBuilderTests(unittest.TestCase):
                         ["covenant motif"],
                         historical_context="Patriarchal covenant",
                         ancient_near_east_context="Treaty form",
+                        hebraic_worldview="Covenant identity and communal memory.",
+                        second_temple_context="Later Jewish readers saw covenant renewal through temple-centered worship.",
+                        canonical_context="The storyline moves from promise to covenant renewal.",
+                        later_christian_reception="Later Christian readers treated the theme typologically.",
                         literary_context="Narrative repetition",
                         covenantal_significance="Promise and loyalty",
                         intertextuality=["genesis-15"],
@@ -307,6 +315,10 @@ class CanonicalContextBuilderTests(unittest.TestCase):
                         ["who is abraham"],
                         historical_context="Patriarchal covenant",
                         ancient_near_east_context="Treaty form",
+                        hebraic_worldview="Covenant identity and communal memory.",
+                        second_temple_context="Later Jewish readers saw covenant renewal through temple-centered worship.",
+                        canonical_context="The storyline moves from promise to covenant renewal.",
+                        later_christian_reception="Later Christian readers treated the theme typologically.",
                         literary_context="Faithful response",
                         covenantal_significance="Promise and loyalty",
                         intertextuality=["genesis-15"],
@@ -339,7 +351,12 @@ class CanonicalContextBuilderTests(unittest.TestCase):
         self.assertEqual(len(limited["retrieved_topics"]), 2)
         self.assertEqual(len(first["historical_context"]), 1)
         self.assertEqual(len(first["ancient_near_east_context"]), 1)
+        self.assertEqual(len(first["hebraic_worldview"]), 1)
+        self.assertEqual(len(first["second_temple_context"]), 1)
+        self.assertEqual(len(first["canonical_context"]), 1)
+        self.assertEqual(len(first["later_christian_reception"]), 1)
         self.assertEqual(len(first["covenantal_significance"]), 1)
+        self.assertEqual(first["intertextuality"], ["genesis-15"])
         self.assertEqual(len(first["cross_references"]), 1)
         self.assertEqual(len(first["timeline"]), 1)
         self.assertEqual(len(first["archaeology"]), 1)
@@ -353,6 +370,51 @@ class CanonicalContextBuilderTests(unittest.TestCase):
             len({(item["id"], item["relationship"]) for item in first["related_objects"]}),
             len(first["related_objects"]),
         )
+
+    def test_structured_interpretive_notes_feed_prompt_context_without_metadata_noise(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_library(
+                root,
+                [
+                    make_object(
+                        "shechem",
+                        "place",
+                        "Shechem",
+                        ["where is shechem"],
+                        summary="Shechem is a covenant location.",
+                        interpretive_notes=[
+                            {
+                                "note": "The covenant ceremony resembles Ancient Near Eastern treaty forms.",
+                                "note_type": "historical-context",
+                                "certainty": "medium",
+                                "dispute_status": "broad-consensus",
+                                "sources": ["source-id"],
+                            }
+                        ],
+                    ),
+                ],
+            )
+            builder = CanonicalContextBuilder(CanonicalLibrary(root=root).load())
+
+            context = builder.build("Shechem covenant", limit=1)
+            prompt_context = build_canonical_prompt_context(
+                context,
+                max_entries=1,
+                max_facts_per_entry=2,
+                max_scripture_references_per_entry=2,
+                max_caution_notes_per_entry=2,
+            )
+
+        self.assertEqual(len(prompt_context["entries"]), 1)
+        self.assertEqual(
+            prompt_context["entries"][0]["caution_notes"],
+            ["The covenant ceremony resembles Ancient Near Eastern treaty forms."],
+        )
+        joined_cautions = " ".join(prompt_context["entries"][0]["caution_notes"])
+        self.assertNotIn("historical-context", joined_cautions)
+        self.assertNotIn("medium", joined_cautions)
+        self.assertNotIn("source-id", joined_cautions)
 
     def test_builds_normalized_related_objects_from_legacy_and_typed_fields(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -554,7 +616,8 @@ class CanonicalContextBuilderTests(unittest.TestCase):
         self.assertEqual(shechem_entry["category"], "Place")
         self.assertEqual(shechem_entry["source_ids"], ["shechem"])
         self.assertTrue(shechem_entry["summary"])
-        self.assertTrue(shechem_entry["facts"])
+        self.assertTrue(shechem_entry["sections"])
+        self.assertEqual([section["heading"] for section in shechem_entry["sections"][:2]], ["Summary", "Primary Scripture References"])
         self.assertGreater(compact["metadata"]["scripture_reference_count"], 0)
         self.assertTrue(
             any(
@@ -566,6 +629,122 @@ class CanonicalContextBuilderTests(unittest.TestCase):
         self.assertNotIn("score", shechem_entry)
         self.assertNotIn("match_type", shechem_entry)
         self.assertNotIn("estimated_tokens", shechem_entry)
+
+    def test_builds_compact_prompt_context_includes_new_context_layers(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_library(
+                root,
+                [
+                    make_object(
+                        "context-note",
+                        "faq",
+                        "Context Note",
+                        ["context note"],
+                        summary="A note about layered context.",
+                        historical_context="Historical background for the object.",
+                        ancient_near_east_context="Ancient Near Eastern comparison.",
+                        hebraic_worldview="Covenant identity and communal memory.",
+                        second_temple_context="Temple-centered Jewish life in the Second Temple period.",
+                        canonical_context="Fits the broader covenant storyline.",
+                        later_christian_reception="Later Christians read it typologically.",
+                        literary_context="Literary framing for the object.",
+                        covenantal_significance="Covenant loyalty and remembrance.",
+                        scripture_references=[
+                            {"reference": "Genesis 12:6-7", "relationship": "primary", "notes": "anchor"},
+                        ],
+                        sources=["Genesis"],
+                    ),
+                ],
+            )
+            library = CanonicalLibrary(root=root).load()
+            builder = CanonicalContextBuilder(library)
+            rich_context = builder.build("Context note", limit=1)
+
+        compact = build_canonical_prompt_context(
+            rich_context,
+            max_context_tokens=800,
+            max_entries=1,
+            max_facts_per_entry=10,
+            max_scripture_references_per_entry=2,
+            max_caution_notes_per_entry=2,
+        )
+
+        entry = compact["entries"][0]
+        self.assertIn("Covenant identity and communal memory.", entry["facts"])
+        self.assertIn("Temple-centered Jewish life in the Second Temple period.", entry["facts"])
+        self.assertIn("Fits the broader covenant storyline.", entry["facts"])
+        self.assertIn("Later Christians read it typologically.", entry["facts"])
+
+    def test_build_filters_inapplicable_context_layers(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_library(
+                root,
+                [
+                    make_object(
+                        "context-note",
+                        "faq",
+                        "Context Note",
+                        ["context note"],
+                        summary="A note about layered context.",
+                        historical_context="Historical background should be suppressed.",
+                        ancient_near_east_context="Ancient Near Eastern comparison should be suppressed.",
+                        hebraic_worldview="Covenant identity and communal memory.",
+                        second_temple_context="Temple-centered Jewish life should be suppressed.",
+                        canonical_context="Fits the broader covenant storyline.",
+                        later_christian_reception="Later Christians read it typologically.",
+                        context_applicability={
+                            "historical": False,
+                            "ancient_near_east": False,
+                            "hebraic_worldview": True,
+                            "second_temple": False,
+                            "canonical": True,
+                            "later_christian_reception": False,
+                        },
+                        importance=10,
+                    ),
+                ],
+            )
+            builder = CanonicalContextBuilder(CanonicalLibrary(root=root).load())
+
+            context = builder.build("Context Note", limit=1)
+            compact = build_canonical_prompt_context(
+                context,
+                max_context_tokens=800,
+                max_entries=1,
+                max_facts_per_entry=10,
+                max_scripture_references_per_entry=2,
+                max_caution_notes_per_entry=2,
+            )
+
+        entry = context["retrieved_topics"][0]
+        prompt_entry = compact["entries"][0]
+
+        self.assertEqual(entry["historical_context"], "")
+        self.assertEqual(entry["ancient_near_east_context"], "")
+        self.assertEqual(entry["hebraic_worldview"], "Covenant identity and communal memory.")
+        self.assertEqual(entry["second_temple_context"], "")
+        self.assertEqual(entry["canonical_context"], "Fits the broader covenant storyline.")
+        self.assertEqual(entry["later_christian_reception"], "")
+        self.assertFalse(entry["context_applicability"]["historical"])
+        self.assertFalse(entry["context_applicability"]["ancient_near_east"])
+        self.assertTrue(entry["context_applicability"]["hebraic_worldview"])
+        self.assertFalse(entry["context_applicability"]["second_temple"])
+        self.assertTrue(entry["context_applicability"]["canonical"])
+        self.assertFalse(entry["context_applicability"]["later_christian_reception"])
+        self.assertEqual(context["historical_context"], [])
+        self.assertEqual(context["ancient_near_east_context"], [])
+        self.assertEqual(context["hebraic_worldview"], ["Covenant identity and communal memory."])
+        self.assertEqual(context["second_temple_context"], [])
+        self.assertEqual(context["canonical_context"], ["Fits the broader covenant storyline."])
+        self.assertEqual(context["later_christian_reception"], [])
+        self.assertIn("Covenant identity and communal memory.", prompt_entry["facts"])
+        self.assertIn("Fits the broader covenant storyline.", prompt_entry["facts"])
+        self.assertNotIn("Historical background should be suppressed.", prompt_entry["facts"])
+        self.assertNotIn("Ancient Near Eastern comparison should be suppressed.", prompt_entry["facts"])
+        self.assertNotIn("Temple-centered Jewish life should be suppressed.", prompt_entry["facts"])
+        self.assertNotIn("Later Christians read it typologically.", prompt_entry["facts"])
 
     def test_builds_compact_prompt_context_deduplicating_repeated_text(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
