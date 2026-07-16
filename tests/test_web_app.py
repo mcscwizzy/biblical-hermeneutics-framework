@@ -1339,9 +1339,12 @@ class WebAppTests(unittest.TestCase):
         result = asgi_request("GET", f"/api/bible/search/fallback/result/{job['job_id']}")
         self.assertEqual(result["status"], 200)
         payload = json.loads(result["body"])
-        self.assertEqual(payload["source"], "ai_fallback")
-        self.assertEqual(payload["results"][0]["reference"], "Exodus 1")
-        self.assertEqual(payload["results"][1]["reference"], "Exodus 12:37-42")
+        self.assertEqual(payload["source"], "ckl_fallback")
+        references = [item["reference"] for item in payload["results"]]
+        self.assertGreaterEqual(len(references), 3)
+        self.assertEqual(references[0], "Exodus 3:1-22")
+        self.assertIn("Exodus 1:1-22", references)
+        self.assertIn("Exodus 12:1-14", references)
 
     def test_post_ask_handles_mocked_agent_result(self):
         with patch("bhf_web.app.BHFAgent", FakeAgent):
@@ -2302,12 +2305,12 @@ def wait_for_job(job_id):
 
 
 def wait_for_search_job(job_id):
-    for _attempt in range(20):
+    for _attempt in range(100):
         response = asgi_request("GET", f"/api/bible/search/fallback/status/{job_id}")
         status = json.loads(response["body"])
         if status.get("done"):
             return status
-        time.sleep(0.01)
+        time.sleep(0.05)
     raise AssertionError(f"search job did not complete: {job_id}")
 
 

@@ -7,11 +7,11 @@
     "tell me about judges cycle",
     "why is judges cycle important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "Judges Cycle is a land-taking or kingdom-transition event that marks settlement, victory, or leadership change.",
+  "historical_context": "The event belongs to the period of settlement and early monarchy, when Israel is consolidating life in the land.",
+  "ancient_near_east_context": "Fortified cities, tribal conflict, and military campaigns shape the background.",
+  "literary_context": "Joshua, Judges, and Samuel use Judges Cycle to show that land, leadership, and obedience belong together.",
+  "covenantal_significance": "Judges Cycle ties possession of the land to covenant faithfulness rather than raw force.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,77 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Conquest and settlement events are interpreted theologically, not just militarily.",
+    "Leadership change in these narratives often points toward a larger covenant question."
+  ],
+  "common_questions": [
+    "Why does this event matter in Israel's settlement of the land?",
+    "How does this event reveal the need for faithful leadership?",
+    "What covenant theme does this event highlight?"
+  ],
+  "sources": [
+    "Joshua 1-24",
+    "Judges 1-21",
+    "1 Samuel",
+    "2 Samuel 6-7"
+  ],
+  "importance": 78,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "scripture_references": [
+    {
+      "reference": "Joshua 1:1-24:33",
+      "relationship": "supporting",
+      "notes": "settlement and covenant"
+    },
+    {
+      "reference": "Judges 1:1-21:25",
+      "relationship": "supporting",
+      "notes": "early settlement and instability"
+    },
+    {
+      "reference": "1 Samuel 1:1-31:13",
+      "relationship": "supporting",
+      "notes": "transition to monarchy"
+    },
+    {
+      "reference": "2 Samuel 6:1-7:29",
+      "relationship": "supporting",
+      "notes": "Jerusalem and covenant"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "joshua-son-of-nun",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "david",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "jerusalem",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    }
+  ],
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-16",
+  "confidence": "medium"
 }

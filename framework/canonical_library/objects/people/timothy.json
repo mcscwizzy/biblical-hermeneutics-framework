@@ -7,11 +7,11 @@
     "tell me about timothy",
     "why is timothy important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "Timothy appears in the Gospel narratives and helps frame Jesus' identity, mission, or response to his ministry.",
+  "historical_context": "The setting is first-century Jewish life under Roman rule, especially in Galilee and Judea.",
+  "ancient_near_east_context": "Household life, synagogue life, pilgrimage, and Roman administration form the social backdrop.",
+  "literary_context": "The Gospels use Timothy to show how people encounter Jesus and respond to his kingdom proclamation.",
+  "covenantal_significance": "Timothy sits within the movement from promise to fulfillment in Christ.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,77 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Read Gospel figures within the narrative, not just as isolated character sketches.",
+    "The Gospels use these figures to reveal something about Jesus and the kingdom."
+  ],
+  "common_questions": [
+    "Why does this figure matter in the Gospels?",
+    "How does this figure respond to Jesus?",
+    "What larger Gospel theme does this figure highlight?"
+  ],
+  "sources": [
+    "Matthew 1-28",
+    "Mark 1-16",
+    "Luke 1-24",
+    "John 1-21"
+  ],
+  "importance": 70,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "scripture_references": [
+    {
+      "reference": "Matthew 1:1-28:20",
+      "relationship": "supporting",
+      "notes": "Matthew's Gospel frame"
+    },
+    {
+      "reference": "Mark 1:1-16:20",
+      "relationship": "supporting",
+      "notes": "Mark's Gospel frame"
+    },
+    {
+      "reference": "Luke 1:1-24:53",
+      "relationship": "supporting",
+      "notes": "Luke's Gospel frame"
+    },
+    {
+      "reference": "John 1:1-21:25",
+      "relationship": "supporting",
+      "notes": "John's Gospel frame"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "jesus",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "messiah-theme",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "new-covenant",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    }
+  ],
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-16",
+  "confidence": "medium"
 }

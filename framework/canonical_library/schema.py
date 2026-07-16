@@ -73,6 +73,19 @@ DEFAULT_GOVERNANCE_METADATA: dict[str, Any] = {
 
 DEFAULT_CANONICAL_METADATA: dict[str, Any] = {
     **DEFAULT_GOVERNANCE_METADATA,
+    "authorship_positions": [],
+    "date_ranges": [],
+    "original_audience": "",
+    "historical_setting": "",
+    "genre": [],
+    "structure": [],
+    "major_themes": [],
+    "canonical_placement": "",
+    "key_people": [],
+    "key_places": [],
+    "key_events": [],
+    "interpretive_disputes": [],
+    "primary_sources": [],
     "related_objects": [],
     "scripture_references": [],
     "sources": [],
@@ -127,6 +140,9 @@ STRING_FIELDS: tuple[str, ...] = (
     "ancient_near_east_context",
     "literary_context",
     "covenantal_significance",
+    "original_audience",
+    "historical_setting",
+    "canonical_placement",
     "framework_version",
     "object_version",
     "content_status",
@@ -136,6 +152,16 @@ STRING_FIELDS: tuple[str, ...] = (
 
 LIST_FIELDS: tuple[str, ...] = (
     "aliases",
+    "authorship_positions",
+    "date_ranges",
+    "genre",
+    "structure",
+    "major_themes",
+    "key_people",
+    "key_places",
+    "key_events",
+    "interpretive_disputes",
+    "primary_sources",
     "intertextuality",
     "timeline",
     "maps",
@@ -318,6 +344,19 @@ class CanonicalObject:
     ancient_near_east_context: str = ""
     literary_context: str = ""
     covenantal_significance: str = ""
+    authorship_positions: list[str] = field(default_factory=list)
+    date_ranges: list[str] = field(default_factory=list)
+    original_audience: str = ""
+    historical_setting: str = ""
+    genre: list[str] = field(default_factory=list)
+    structure: list[str] = field(default_factory=list)
+    major_themes: list[str] = field(default_factory=list)
+    canonical_placement: str = ""
+    key_people: list[str] = field(default_factory=list)
+    key_places: list[str] = field(default_factory=list)
+    key_events: list[str] = field(default_factory=list)
+    interpretive_disputes: list[str] = field(default_factory=list)
+    primary_sources: list[str] = field(default_factory=list)
     intertextuality: list[str] = field(default_factory=list)
     timeline: list[str] = field(default_factory=list)
     maps: list[str] = field(default_factory=list)

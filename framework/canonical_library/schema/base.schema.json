@@ -15,6 +15,19 @@
     "ancient_near_east_context",
     "literary_context",
     "covenantal_significance",
+    "authorship_positions",
+    "date_ranges",
+    "original_audience",
+    "historical_setting",
+    "genre",
+    "structure",
+    "major_themes",
+    "canonical_placement",
+    "key_people",
+    "key_places",
+    "key_events",
+    "interpretive_disputes",
+    "primary_sources",
     "intertextuality",
     "timeline",
     "maps",
@@ -222,6 +235,45 @@
     },
     "covenantal_significance": {
       "type": "string"
+    },
+    "authorship_positions": {
+      "$ref": "#/$defs/stringList"
+    },
+    "date_ranges": {
+      "$ref": "#/$defs/stringList"
+    },
+    "original_audience": {
+      "type": "string"
+    },
+    "historical_setting": {
+      "type": "string"
+    },
+    "genre": {
+      "$ref": "#/$defs/stringList"
+    },
+    "structure": {
+      "$ref": "#/$defs/stringList"
+    },
+    "major_themes": {
+      "$ref": "#/$defs/stringList"
+    },
+    "canonical_placement": {
+      "type": "string"
+    },
+    "key_people": {
+      "$ref": "#/$defs/stringList"
+    },
+    "key_places": {
+      "$ref": "#/$defs/stringList"
+    },
+    "key_events": {
+      "$ref": "#/$defs/stringList"
+    },
+    "interpretive_disputes": {
+      "$ref": "#/$defs/stringList"
+    },
+    "primary_sources": {
+      "$ref": "#/$defs/stringList"
     },
     "intertextuality": {
       "$ref": "#/$defs/stringList"

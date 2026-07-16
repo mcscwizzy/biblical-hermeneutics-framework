@@ -2,17 +2,17 @@
 
 Audit date: 2026-07-15
 
-Scope: reflects the current runtime after phase 16; the original audit notes are preserved below for continuity.
+Scope: reflects the current runtime after phase 17; the original audit notes are preserved below for continuity.
 
 ## Summary
 
-The primary user-question path already performs deterministic CKL lookup before the model call and now short-circuits repeat requests through retrieval, context, and response caches. The request path also emits a structured observability log with request ID, CKL timing, cache behavior, model usage, and fallback status. The frontend now receives only the final answer for ordinary ask responses; CKL metadata is only surfaced in explicit debug or saved-study views. A developer-only retrieval inspector is now available in debug ask responses and via `POST /api/debug/ckl-search`. The CKL pipeline is now gated by explicit rollout controls, including a shadow mode that performs retrieval without injecting CKL context into the model prompt. When the model backend fails or returns invalid output, the runner now substitutes a deterministic CKL fallback answer or a controlled empty search-results payload instead of surfacing the raw failure.
+The primary user-question path already performs deterministic CKL lookup before the model call and now short-circuits repeat requests through retrieval, context, and response caches. The request path also emits a structured observability log with request ID, CKL timing, cache behavior, model usage, and fallback status. The frontend now receives only the final answer for ordinary ask responses; CKL metadata is only surfaced in explicit debug or saved-study views. A developer-only retrieval inspector is now available in debug ask responses and via `POST /api/debug/ckl-search`. The CKL pipeline is now gated by explicit rollout controls, including a shadow mode that performs retrieval without injecting CKL context into the model prompt. When the model backend fails or returns invalid output, the runner now substitutes a deterministic CKL fallback answer or a controlled empty search-results payload instead of surfacing the raw failure. The separate Bible-search fallback route now uses deterministic CKL-backed passage suggestions and no longer calls the model.
 
 The main request flow today is:
 
 `User question -> request route -> BHFAgent.ask() -> CKL retrieval cache -> CKL context cache -> response cache -> prompt build -> model call -> output cleanup/validation -> deterministic fallback if needed -> response render`
 
-There is also a separate model-assisted Bible search fallback route that asks the model to return structured JSON results, and it now degrades to an empty deterministic payload if the model is unavailable or invalid.
+There is also a separate deterministic Bible search fallback route that asks the CKL for likely passages and returns a small, structured result payload without calling the model.
 
 ## Entry Points
 
@@ -23,7 +23,7 @@ There is also a separate model-assisted Bible search fallback route that asks th
 - `POST /ask/jobs`
 - `POST /api/debug/ckl-search`
 
-### Secondary model-assisted search flow
+### Secondary deterministic search flow
 
 - `bhf_web/jobs.py::run_search_fallback_job`
 - `POST /api/bible/search/fallback/jobs`
@@ -80,9 +80,9 @@ There is also a separate model-assisted Bible search fallback route that asks th
   - Returns deterministic retrieval traces without invoking the model.
 - `bhf_web/jobs.py`
   - Runs background ask jobs.
-  - Provides the search-fallback job path.
-  - Parses the search-fallback model response as JSON.
- - `bhf_agent/runner.py`
+  - Provides the deterministic search-fallback job path.
+  - Builds deterministic CKL-backed passage suggestions for the Bible-search fallback.
+- `bhf_agent/runner.py`
   - Owns the end-to-end agent pipeline.
   - Loads CKL, builds prompts, manages deterministic cache layers, emits request observability logs, calls the model, cleans and validates output, substitutes deterministic fallback text when needed, and converts the final result.
 - `bhf_agent/ckl.py`
@@ -109,7 +109,7 @@ There is also a separate model-assisted Bible search fallback route that asks th
   - Appends CKL context and local knowledge to the system prompt.
 - `bhf_agent/model_response_validation.py`
   - Normalizes model output into answer-only text for ordinary asks.
-  - Preserves structured JSON for the search fallback contract.
+  - Keeps a legacy structured JSON compatibility branch for older search callers.
   - Removes leaked runtime headings and strips internal analysis blocks before display.
 - `bhf_agent/output_cleaner.py`
   - Removes obvious leaked runtime headings after generation.
@@ -152,19 +152,18 @@ If CKL retrieval finds only weak matches, the prompt receives a short no-strong-
 - `bhf_agent/observability.py` emits structured per-request logs that stay redacted by default and only add verbose developer details when debug mode explicitly enables them.
 - `bhf_web/routes/debug.py::debug_ckl_search` returns deterministic CKL search traces without calling the model.
 
-## Where The Model Is Still Asked To Search Or Return Structured Retrieval Data
+## Deterministic Bible Search Fallback
 
-- `bhf_web/jobs.py::bible_search_fallback_prompt`
-  - Asks the model to identify likely Bible passages.
-  - Explicitly requests a JSON object with a `results` array.
-  - This is a model-assisted retrieval path, not a narrator-only answer path.
+- `bhf_web/jobs.py::run_search_fallback_job`
+  - Uses deterministic CKL retrieval and local Bible data to suggest likely passages.
+  - Returns a compact JSON payload with `results`, `reason`, and `confidence`.
+  - Does not call the model.
 
 ## Known Problems
 
 - CKL context is still appended to the model prompt as a prebuilt block, so the model can see retrieval metadata.
 - The frontend no longer sees retrieval metadata in ordinary ask responses.
 - Debug and saved-study views can still display controlled metadata.
-- The search-fallback route still asks the model for structured retrieval output when available, but it now degrades to an empty deterministic result payload if the model is unavailable or invalid.
 - Output cleanup is now paired with structured-response normalization, but the model can still emit malformed output that must be rejected or repaired.
 - Validation remains method-oriented after response normalization.
 - The current CKL prompt layer still mixes retrieval, prompt construction, and rendering concerns.
@@ -181,3 +180,4 @@ If CKL retrieval finds only weak matches, the prompt receives a short no-strong-
 - Phase 14 developer retrieval inspector is complete.
 - Phase 15 testing coverage is complete.
 - Phase 16 rollout strategy is complete.
+- Phase 17 deterministic Bible search fallback is complete.

@@ -7,11 +7,11 @@
     "tell me about ezra the scribe",
     "why is ezra the scribe important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "Ezra the Scribe is a restoration-era figure whose story centers on return, reform, providence, or renewed identity.",
+  "historical_context": "The setting is the Persian-period recovery after exile, when the people rebuild life, worship, and identity.",
+  "ancient_near_east_context": "Imperial administration, diaspora identity, and temple rebuilding shape the background.",
+  "literary_context": "Ezra-Nehemiah, Esther, and related texts use Ezra the Scribe to show faithfulness under foreign rule.",
+  "covenantal_significance": "Ezra the Scribe helps narrate the survival and renewal of the covenant people after judgment.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,83 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Restoration figures often work inside both imperial constraint and covenant hope.",
+    "These narratives emphasize providence, reform, and renewed fidelity."
+  ],
+  "common_questions": [
+    "Why does this figure matter in the restoration period?",
+    "How does this figure help explain return from exile?",
+    "What renewal theme does this figure emphasize?"
+  ],
+  "sources": [
+    "Ezra 1-10",
+    "Nehemiah 1-13",
+    "Esther 1-10",
+    "Haggai 1-2"
+  ],
+  "importance": 68,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "scripture_references": [
+    {
+      "reference": "Ezra 1:1-10:44",
+      "relationship": "supporting",
+      "notes": "return and reform"
+    },
+    {
+      "reference": "Nehemiah 1:1-13:31",
+      "relationship": "supporting",
+      "notes": "wall-building and renewal"
+    },
+    {
+      "reference": "Esther 1:1-10:3",
+      "relationship": "supporting",
+      "notes": "diaspora deliverance"
+    },
+    {
+      "reference": "Haggai 1:1-2:23",
+      "relationship": "supporting",
+      "notes": "temple renewal"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "exile-theme",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "return-from-exile",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "rebuilding-the-temple",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "rebuilding-the-walls",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "jerusalem",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    }
+  ],
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-16",
+  "confidence": "medium"
 }

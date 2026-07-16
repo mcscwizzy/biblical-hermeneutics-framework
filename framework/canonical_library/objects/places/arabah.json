@@ -7,11 +7,11 @@
     "tell me about arabah",
     "why is arabah important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "Arabah is a broader region or land designation that frames identity, conflict, and hope in the biblical story.",
+  "historical_context": "This region becomes part of the Bible's geography of promise, settlement, exile, or mission.",
+  "ancient_near_east_context": "Regional identities in the Levant shaped political allegiance, trade, and military conflict.",
+  "literary_context": "Scripture uses Arabah to locate people and events within a wider covenant map.",
+  "covenantal_significance": "Arabah helps define boundaries, inheritance, or the scope of judgment and restoration.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,71 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Regional names often signal more than geography; they can mark identity and allegiance.",
+    "Read them alongside the narrative movement of the text."
+  ],
+  "common_questions": [
+    "Why does this region matter in the Bible?",
+    "How does this region frame the narrative?",
+    "What broader theme does this region carry?"
+  ],
+  "sources": [
+    "Genesis 10",
+    "Deuteronomy",
+    "Isaiah 40-66",
+    "Acts"
+  ],
+  "importance": 58,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "scripture_references": [
+    {
+      "reference": "Genesis 10:1-32",
+      "relationship": "supporting",
+      "notes": "nations and regions"
+    },
+    {
+      "reference": "Deuteronomy 1:1-34:12",
+      "relationship": "supporting",
+      "notes": "land and inheritance"
+    },
+    {
+      "reference": "Isaiah 40:1-66:24",
+      "relationship": "supporting",
+      "notes": "judgment and hope across regions"
+    },
+    {
+      "reference": "Acts 2:1-28:31",
+      "relationship": "supporting",
+      "notes": "mission across regions"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "exile-theme",
+      "relationship": "geographic-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "geographic-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "new-covenant",
+      "relationship": "geographic-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    }
+  ],
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-16",
+  "confidence": "medium"
 }

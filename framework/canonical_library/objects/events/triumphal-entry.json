@@ -7,11 +7,11 @@
     "tell me about triumphal entry",
     "why is triumphal entry important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "Triumphal Entry is a Gospel event that reveals Jesus' identity, mission, death, or vindication.",
+  "historical_context": "The event belongs to first-century Judea and Galilee under Roman rule.",
+  "ancient_near_east_context": "Temple life, synagogue life, Roman power, and Jewish expectation frame the background.",
+  "literary_context": "The four Gospels use Triumphal Entry to reveal Jesus and shape discipleship.",
+  "covenantal_significance": "Triumphal Entry sits at the center of the movement from promise to fulfillment in Christ.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,77 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Gospel events are both historical and theological centers.",
+    "The evangelists present them to shape faith and understanding."
+  ],
+  "common_questions": [
+    "Why does this Gospel event matter?",
+    "How does this event reveal Jesus?",
+    "What theological meaning does this event carry?"
+  ],
+  "sources": [
+    "Matthew",
+    "Mark",
+    "Luke",
+    "John"
+  ],
+  "importance": 88,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "scripture_references": [
+    {
+      "reference": "Matthew 1:1-28:20",
+      "relationship": "supporting",
+      "notes": "Gospel narrative"
+    },
+    {
+      "reference": "Mark 1:1-16:20",
+      "relationship": "supporting",
+      "notes": "Gospel narrative"
+    },
+    {
+      "reference": "Luke 1:1-24:53",
+      "relationship": "supporting",
+      "notes": "Gospel narrative"
+    },
+    {
+      "reference": "John 1:1-21:25",
+      "relationship": "supporting",
+      "notes": "Gospel narrative"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "jesus",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "messiah-theme",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "new-covenant",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "resurrection",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    }
+  ],
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-16",
+  "confidence": "medium"
 }

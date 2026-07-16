@@ -7,11 +7,11 @@
     "tell me about babel",
     "why is babel important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "Babel is a foundational event in the Bible's opening chapters that establishes creation, judgment, or early grace.",
+  "historical_context": "Babel belongs to the Bible's earliest narrative world, where Genesis explains the beginning of human history theologically.",
+  "ancient_near_east_context": "The primeval narratives use ancient origin language and cosmic imagery common in the wider world, while reworking it around the one God of Israel.",
+  "literary_context": "Genesis uses Babel to set the terms for the rest of Scripture.",
+  "covenantal_significance": "Babel establishes patterns of human failure and divine response that later covenant history develops.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,77 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Primeval events establish the Bible's opening theological logic.",
+    "Later biblical writers often reuse these events as patterns, not merely history."
+  ],
+  "common_questions": [
+    "Why does this event matter at the beginning of the Bible?",
+    "How does this event shape the Bible's worldview?",
+    "What theological pattern does this event establish?"
+  ],
+  "sources": [
+    "Genesis 1-11",
+    "Romans 5",
+    "Hebrews 11",
+    "2 Peter 3"
+  ],
+  "importance": 82,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "scripture_references": [
+    {
+      "reference": "Genesis 1:1-11:32",
+      "relationship": "primary",
+      "notes": "primeval history"
+    },
+    {
+      "reference": "Romans 5:12-21",
+      "relationship": "supporting",
+      "notes": "Adam and sin"
+    },
+    {
+      "reference": "Hebrews 11:1-7",
+      "relationship": "supporting",
+      "notes": "faith and early witness"
+    },
+    {
+      "reference": "2 Peter 3:3-13",
+      "relationship": "supporting",
+      "notes": "creation, judgment, and hope"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "creation",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "the-fall",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "new-creation-theme",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "resurrection-theme",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    }
+  ],
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-16",
+  "confidence": "medium"
 }

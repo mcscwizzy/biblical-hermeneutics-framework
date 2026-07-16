@@ -7,11 +7,11 @@
     "tell me about miriam",
     "why is miriam important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "Miriam is a wilderness-era figure whose story helps shape Israel's liberation, covenant mediation, or identity.",
+  "historical_context": "Miriam belongs to the Exodus and wilderness world of Israel's formation, where deliverance and covenant define the people of God.",
+  "ancient_near_east_context": "The setting is the late second-millennium world of imperial pressure, clan migration, and desert formation.",
+  "literary_context": "Exodus, Leviticus, Numbers, and Deuteronomy use Miriam to narrate Israel's founding memory.",
+  "covenantal_significance": "Miriam contributes to Israel's liberation and covenant life under Yahweh.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,77 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Keep the figure within the wider Exodus movement rather than isolating a single episode.",
+    "Wilderness narratives often mix leadership, complaint, judgment, and grace."
+  ],
+  "common_questions": [
+    "Why does this figure matter in the Exodus story?",
+    "How does this figure shape Israel's covenant identity?",
+    "What theological role does this figure play?"
+  ],
+  "sources": [
+    "Exodus 1-40",
+    "Numbers 1-36",
+    "Deuteronomy 1-34",
+    "Hebrews 3-4"
+  ],
+  "importance": 68,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "scripture_references": [
+    {
+      "reference": "Exodus 1:1-40:38",
+      "relationship": "primary",
+      "notes": "Exodus and wilderness formation"
+    },
+    {
+      "reference": "Numbers 11:1-36:13",
+      "relationship": "supporting",
+      "notes": "wilderness testing and order"
+    },
+    {
+      "reference": "Deuteronomy 1:1-34:12",
+      "relationship": "supporting",
+      "notes": "covenant remembrance"
+    },
+    {
+      "reference": "Hebrews 3:1-4:16",
+      "relationship": "supporting",
+      "notes": "rest and wilderness theology"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "exodus",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "sinai-covenant",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "passover",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "priesthood",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    }
+  ],
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-16",
+  "confidence": "medium"
 }

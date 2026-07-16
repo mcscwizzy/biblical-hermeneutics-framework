@@ -118,6 +118,46 @@ class CanonicalInventoryTests(unittest.TestCase):
         self.assertEqual(len(expected_book_ids), 66)
         self.assertEqual(actual_book_ids, expected_book_ids)
 
+    def test_all_biblical_books_include_wave2_metadata(self) -> None:
+        for book_id in self.library.objects_by_type["book"]:
+            book = self.library.objects_by_id[book_id]
+
+            self.assertTrue(book.authorship_positions, book_id)
+            self.assertTrue(book.date_ranges, book_id)
+            self.assertTrue(book.original_audience.strip(), book_id)
+            self.assertTrue(book.historical_setting.strip(), book_id)
+            self.assertTrue(book.genre, book_id)
+            self.assertTrue(book.structure, book_id)
+            self.assertTrue(book.major_themes, book_id)
+            self.assertTrue(book.canonical_placement.strip(), book_id)
+            self.assertTrue(book.key_people, book_id)
+            self.assertTrue(book.key_places, book_id)
+            self.assertTrue(book.key_events, book_id)
+            self.assertTrue(book.interpretive_disputes, book_id)
+            self.assertTrue(book.primary_sources, book_id)
+
+    def test_wave3_people_places_events_and_institutions_are_populated(self) -> None:
+        for category in ("people", "places", "events", "institutions"):
+            for path in sorted((OBJECTS_ROOT / category).glob("*.json")):
+                obj = validate_object(
+                    json.loads(path.read_text(encoding="utf-8")),
+                    path=path.relative_to(CKL_ROOT).as_posix(),
+                )
+
+                if category == "events" and obj.title.startswith("Event Placeholder"):
+                    self.assertEqual(obj.content_status, "placeholder", obj.id)
+                    self.assertEqual(obj.review_status, "unreviewed", obj.id)
+                    continue
+
+                self.assertEqual(obj.content_status, "complete", obj.id)
+                self.assertNotEqual(obj.summary, "", obj.id)
+                self.assertNotEqual(obj.scripture_references, [], obj.id)
+                self.assertNotEqual(obj.sources, [], obj.id)
+                self.assertNotEqual(obj.review_status, "unreviewed", obj.id)
+                self.assertGreaterEqual(len(obj.reviewed_by), 1, obj.id)
+                self.assertIsNotNone(obj.last_reviewed, obj.id)
+                self.assertGreater(obj.importance, 0, obj.id)
+
     def test_manifest_counts_match_inventory(self) -> None:
         manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
         actual_counts = Counter(obj.type for obj in self.library.objects_by_id.values())

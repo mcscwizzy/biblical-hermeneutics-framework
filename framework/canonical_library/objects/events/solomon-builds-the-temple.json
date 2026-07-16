@@ -7,11 +7,11 @@
     "tell me about solomon builds the temple",
     "why is solomon builds the temple important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "Solomon Builds the Temple is a royal or kingdom event that shapes Israel's monarchy, temple life, or royal hope.",
+  "historical_context": "The event belongs to the rise and development of Israel's monarchy and its theological consequences.",
+  "ancient_near_east_context": "Royal administration, dynastic succession, and state religion shape the background.",
+  "literary_context": "Samuel, Kings, and Chronicles use Solomon Builds the Temple to narrate royal formation and covenant accountability.",
+  "covenantal_significance": "Solomon Builds the Temple connects royal power to the promises and warnings of the covenant.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,83 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Royal events are often theologically charged, not merely political.",
+    "Chronicles often rereads monarchy through covenant and temple."
+  ],
+  "common_questions": [
+    "Why does this event matter in the monarchy?",
+    "How does this event affect royal hope?",
+    "What covenant lesson does this event teach?"
+  ],
+  "sources": [
+    "2 Samuel",
+    "1 Kings",
+    "2 Kings",
+    "2 Chronicles"
+  ],
+  "importance": 80,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "scripture_references": [
+    {
+      "reference": "2 Samuel 5:1-24:25",
+      "relationship": "supporting",
+      "notes": "Davidic monarchy and covenant"
+    },
+    {
+      "reference": "1 Kings 1:1-22:53",
+      "relationship": "primary",
+      "notes": "royal succession and temple era"
+    },
+    {
+      "reference": "2 Kings 17:1-25:30",
+      "relationship": "supporting",
+      "notes": "monarchy decline and judgment"
+    },
+    {
+      "reference": "2 Chronicles 1:1-36:23",
+      "relationship": "supporting",
+      "notes": "royal memory and restoration"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "david",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "jerusalem",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "davidic-covenant",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "temple",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "narrative-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    }
+  ],
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-16",
+  "confidence": "medium"
 }

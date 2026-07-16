@@ -181,13 +181,13 @@ class CanonicalLoaderTests(unittest.TestCase):
 
         self.assertTrue(
             any(
-                issue["source_id"] == "shechem" and issue["target_id"] == "joseph"
+                issue["source_id"] == "1-samuel" and issue["target_id"] == "david"
                 for issue in issues
             )
         )
         self.assertTrue(
             any(
-                issue["source_id"] == "joshua" and issue["target_id"] == "shechem"
+                issue["source_id"] == "1-kings" and issue["target_id"] == "solomon"
                 for issue in issues
             )
         )

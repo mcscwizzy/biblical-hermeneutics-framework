@@ -7,11 +7,11 @@
     "tell me about great sea",
     "why is great sea important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "Great Sea is a geographic feature that structures travel, conflict, and covenant memory in Scripture.",
+  "historical_context": "This feature belongs to the landscapes through which Israel travels, settles, and remembers God's acts.",
+  "ancient_near_east_context": "Rivers, seas, deserts, and passes shaped movement, warfare, and trade in the ancient Near East.",
+  "literary_context": "Scripture uses Great Sea both literally and symbolically.",
+  "covenantal_significance": "Great Sea often marks deliverance, boundary, judgment, or promised inheritance.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,77 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Geographic features can function symbolically as well as literally.",
+    "A place of passage often becomes a place of memory."
+  ],
+  "common_questions": [
+    "Why does this geographic feature matter?",
+    "How does this feature shape travel or conflict?",
+    "What symbolic use does this feature have?"
+  ],
+  "sources": [
+    "Exodus",
+    "Joshua",
+    "Psalms",
+    "Isaiah"
+  ],
+  "importance": 60,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "scripture_references": [
+    {
+      "reference": "Exodus 14:1-31",
+      "relationship": "supporting",
+      "notes": "deliverance through water"
+    },
+    {
+      "reference": "Joshua 3:1-4:24",
+      "relationship": "supporting",
+      "notes": "crossing into the land"
+    },
+    {
+      "reference": "Psalm 114:1-8",
+      "relationship": "supporting",
+      "notes": "poetic memory of deliverance"
+    },
+    {
+      "reference": "Isaiah 43:1-21",
+      "relationship": "supporting",
+      "notes": "waters and restoration imagery"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "exodus",
+      "relationship": "geographic-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "joshua-son-of-nun",
+      "relationship": "geographic-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "psalms",
+      "relationship": "geographic-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "prophets",
+      "relationship": "geographic-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    }
+  ],
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-16",
+  "confidence": "medium"
 }

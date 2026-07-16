@@ -92,6 +92,26 @@ Every canonical object uses the same base schema.
 
 The legacy `related_people`, `related_places`, and `related_events` fields remain supported for now. The context builder normalizes them into typed `related_objects` entries so downstream consumers can adopt the structured form gradually without losing compatibility with the existing inventory.
 
+## Book Record Fields
+
+Book records carry a few extra metadata fields so canonical books can be searched and ranked more precisely:
+
+- `authorship_positions`
+- `date_ranges`
+- `original_audience`
+- `historical_setting`
+- `genre`
+- `structure`
+- `major_themes`
+- `canonical_placement`
+- `key_people`
+- `key_places`
+- `key_events`
+- `interpretive_disputes`
+- `primary_sources`
+
+These fields are part of the canonical book record shape and are populated across all 66 Bible-book objects.
+
 ## Placeholder Rules
 
 The current inventory is intentionally thin. Each placeholder object contains:
@@ -203,6 +223,8 @@ The installed distribution exposes a `ckl-version` command
 
 CI builds the source and wheel artifacts and smoke-tests the installed wheel so
 packaging regressions show up before release.
+
+The current stable CKL release is tagged `v0.2.0`.
 
 ## Adding New Objects
 

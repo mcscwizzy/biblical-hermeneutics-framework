@@ -7,11 +7,11 @@
     "tell me about sidon",
     "why is sidon important"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "Sidon is a strategically important city that appears in conquest, settlement, conflict, or prophetic judgment.",
+  "historical_context": "This city sits in the military and political life of Israel and its neighbors.",
+  "ancient_near_east_context": "Fortified cities controlled trade routes, defended territory, and symbolized regional power.",
+  "literary_context": "Scripture uses Sidon to narrate victory, warning, or settlement.",
+  "covenantal_significance": "Sidon often becomes a marker of covenant obedience, compromise, or judgment.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -23,10 +23,83 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "Strategic cities are often read as more than geography; they are narrative turning points.",
+    "Their significance may be military, theological, or both."
+  ],
+  "common_questions": [
+    "Why does this city matter in the Bible?",
+    "How does this city shape conquest or conflict?",
+    "What theological point does this city serve?"
+  ],
+  "sources": [
+    "Joshua 6-11",
+    "1 Samuel",
+    "2 Kings",
+    "Jeremiah 39-52"
+  ],
+  "importance": 66,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "scripture_references": [
+    {
+      "reference": "Joshua 6:1-11:23",
+      "relationship": "supporting",
+      "notes": "conquest and settlement"
+    },
+    {
+      "reference": "1 Samuel 17:1-31:13",
+      "relationship": "supporting",
+      "notes": "conflict and kingship"
+    },
+    {
+      "reference": "2 Kings 17:1-25:30",
+      "relationship": "supporting",
+      "notes": "national judgment"
+    },
+    {
+      "reference": "Jeremiah 39:1-52:34",
+      "relationship": "supporting",
+      "notes": "city fall and exile"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "joshua-son-of-nun",
+      "relationship": "geographic-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "david",
+      "relationship": "geographic-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "fall-of-jerusalem",
+      "relationship": "geographic-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "fall-of-samaria",
+      "relationship": "geographic-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "exile-theme",
+      "relationship": "geographic-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    }
+  ],
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-16",
+  "confidence": "medium"
 }

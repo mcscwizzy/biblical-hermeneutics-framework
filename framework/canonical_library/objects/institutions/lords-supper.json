@@ -8,11 +8,11 @@
     "lords supper structure",
     "lords supper role"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
+  "summary": "Lord's Supper is a new covenant practice that marks initiation, remembrance, and communal identity in the church.",
+  "historical_context": "Lord's Supper appears in the New Testament as the church reflects on Jesus' saving work and the shape of the community.",
+  "ancient_near_east_context": "Ritual washing, meal fellowship, and covenant renewal provide the wider background.",
+  "literary_context": "Gospels and epistles use Lord's Supper to connect Jesus' work to church practice.",
+  "covenantal_significance": "Lord's Supper signals that the people of God now live in the fulfillment of the covenant in Christ.",
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -24,10 +24,71 @@
   "related_events": [],
   "cross_references": [],
   "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
-  "importance": 0,
+  "interpretive_notes": [
+    "New covenant institutions are both theological signs and communal practices.",
+    "Their meaning comes from Jesus and the apostolic witness, not later tradition alone."
+  ],
+  "common_questions": [
+    "How does this institution work in the New Testament?",
+    "Why is this practice important for the church?",
+    "What new covenant theme does this institution express?"
+  ],
+  "sources": [
+    "Matthew 28",
+    "Acts 2",
+    "Romans 6",
+    "1 Corinthians 11"
+  ],
+  "importance": 80,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "scripture_references": [
+    {
+      "reference": "Matthew 28:18-20",
+      "relationship": "supporting",
+      "notes": "baptism and discipleship"
+    },
+    {
+      "reference": "Acts 2:37-41",
+      "relationship": "supporting",
+      "notes": "baptism and the new community"
+    },
+    {
+      "reference": "Romans 6:1-11",
+      "relationship": "supporting",
+      "notes": "union with Christ"
+    },
+    {
+      "reference": "1 Corinthians 11:23-26",
+      "relationship": "supporting",
+      "notes": "the Lord's Supper"
+    }
+  ],
+  "related_objects": [
+    {
+      "id": "baptism",
+      "relationship": "institutional-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "new-covenant",
+      "relationship": "institutional-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    },
+    {
+      "id": "spirit-theme",
+      "relationship": "institutional-context",
+      "weight": 8,
+      "notes": "curated canonical context"
+    }
+  ],
+  "content_status": "complete",
+  "review_status": "in_review",
+  "reviewed_by": [
+    "codex-phase-10"
+  ],
+  "last_reviewed": "2026-07-16",
+  "confidence": "medium"
 }

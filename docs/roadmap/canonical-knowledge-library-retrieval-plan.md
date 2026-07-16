@@ -15,8 +15,8 @@ Resume rule: continue from the next unchecked phase without asking for confirmat
 - The live code already performs deterministic CKL lookup before the main model call.
 - The current implementation now projects CKL retrieval results into a compact prompt-safe context block and uses sectioned prompt instructions that tell the model to narrate retrieved material rather than search or expose internals.
 - Normal ask responses now surface only the answer text, while debug and saved-study views retain controlled access to metadata.
-- The model-assisted Bible search fallback route still uses the model to return structured retrieval data.
-- Model output normalization now parses structured answer envelopes, strips internal prompt leakage, and keeps the search-fallback JSON contract intact.
+- The Bible-search fallback route now uses deterministic CKL-backed passage suggestions instead of the model.
+- Model output normalization now parses structured answer envelopes, strips internal prompt leakage, and keeps the legacy search-results compatibility path intact.
 - Deterministic fallback answers now replace model/provider failures with either a CKL summary or a controlled empty search-results payload.
 - Runtime caches now short-circuit repeated retrieval, context, and response work while staying keyed to CKL and prompt versions.
 - Request observability now logs CKL timing, cache behavior, model usage, and fallback outcomes without exposing prompts or model text.
@@ -61,6 +61,7 @@ Resume rule: continue from the next unchecked phase without asking for confirmat
 | 14 - Create a Developer Retrieval Inspector | complete | Debug ask responses and `POST /api/debug/ckl-search` now expose CKL retrieval inspection |
 | 15 - Testing | complete | Golden retrieval queries and response-validation coverage added |
 | 16 - Rollout Strategy | complete | Gate the new pipeline behind a feature flag and shadow mode |
+| 17 - Deterministic Bible Search Fallback | complete | Replace the remaining model-assisted Bible passage suggestions with CKL-backed deterministic results |
 
 ## Implementation Order
 
@@ -84,7 +85,6 @@ Resume rule: continue from the next unchecked phase without asking for confirmat
 
 - The current ask path still mixes retrieval metadata into the prompt.
 - Debug and saved-study views still render controlled canonical context and metadata, so phase 10+ must keep ordinary ask responses answer-only.
-- The search-fallback route is model-driven and does not fit the narrator-only rule.
 - CKL schema and retrieval code are split across existing modules, so the refactor will need a careful migration path.
 
 ## Next Session Start Point
@@ -98,3 +98,4 @@ Resume rule: continue from the next unchecked phase without asking for confirmat
 - Phase 14 developer retrieval inspector is complete.
 - Phase 15 testing is complete.
 - Phase 16 rollout strategy is complete.
+- Phase 17 deterministic Bible search fallback is complete.

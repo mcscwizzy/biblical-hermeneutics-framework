@@ -3,16 +3,19 @@
 > Resume aid for CKL work. Saved in-repo so the next conversation can pick up
 > from the latest completed phase.
 >
-> Last completed phase: Phase 17 - Web and Reader Integration.
+> Last completed phase: Phase 18 - Packaging, Versioning, and Release.
 >
-> Current phase: Phase 18 - Packaging, Versioning, and Release (in progress).
+> Current phase: Phase 10 - Core Content Population (wave 3 complete; wave 4 next).
 
 ## Current State
 
 - The CKL foundation is in place.
 - The runtime now consumes CKL during startup, retrieval, prompt construction, cache reuse, and debug output.
 - The authoring, manifest, reporting, and validation tools are in place.
-- The next step is to populate the highest-value canonical objects.
+- The stable CKL packaging and release line is complete.
+- The Wave 2 Bible-book records are now populated with authorship, dating, audience, setting, genre, structure, themes, placement, key entities, disputes, and source anchors.
+- The Wave 3 people, places, events, and institutions are now populated with deterministic profile-based content and explicit relationship links.
+- The remaining live work is wave 4 material and later refinement.
 
 ## Update Protocol
 
@@ -58,7 +61,7 @@ Goal: Populate the highest-value material first instead of trying to finish all 
 - Wave 3: People, places, events, and institutions.
 - Wave 4: Theology, themes, prophecy, word studies, archaeology, and FAQ.
 
-Status: in progress. Wave 1 now contains 113 curated objects covering the core biblical backbone and FAQ bridge layer: Abraham, Moses, Joshua son of Nun, David, Jesus, Paul, Genesis, Exodus, Deuteronomy, Joshua, Psalms, Isaiah, Matthew, John, Acts, Romans, Hebrews, Revelation, Jerusalem, Shechem, Egypt, Mount Sinai, Babylon, covenant, kingdom, temple, exile, creation, fall, Passover, crucifixion, resurrection, Holy Spirit, Torah, Messiah, sacrifice, priesthood, tabernacle, second temple, new covenant, and the bridge FAQ anchors.
+Status: in progress. Wave 1 now contains 113 curated objects covering the core biblical backbone and FAQ bridge layer: Abraham, Moses, Joshua son of Nun, David, Jesus, Paul, Genesis, Exodus, Deuteronomy, Joshua, Psalms, Isaiah, Matthew, John, Acts, Romans, Hebrews, Revelation, Jerusalem, Shechem, Egypt, Mount Sinai, Babylon, covenant, kingdom, temple, exile, creation, fall, Passover, crucifixion, resurrection, Holy Spirit, Torah, Messiah, sacrifice, priesthood, tabernacle, second temple, new covenant, and the bridge FAQ anchors. Wave 2 Bible-book records are complete. Wave 3 now covers the curated people, places, events, and institutions layer.
 
 Exit criteria: The most common BHF questions return genuinely useful curated context without relying on model memory.
 
@@ -187,14 +190,13 @@ Goal: Make CKL a stable framework component.
 
 Exit criteria: Cloning, installing, or packaging BHF produces the same validated CKL inventory everywhere.
 
-Status: complete.
+Status: complete. The stable release tag is `v0.2.0`.
 
 ## Immediate Next Move
 
-1. Phase 18: Finish the stable CKL release tag after the packaging checks land.
-2. Phase 10 Wave 2: Continue the Bible-book records after governance is in place.
-3. Adjust the schema and retrieval model based on evaluation results.
-4. Expand semantic search only if the local-only retrieval stack still leaves gaps.
+1. Phase 10 Wave 4: Continue with theology, themes, prophecy, word studies, archaeology, and FAQ.
+2. Adjust the schema and retrieval model based on evaluation results.
+3. Expand semantic search only if the local-only retrieval stack still leaves gaps.
 
 ## Execution Log
 
@@ -203,7 +205,7 @@ Status: complete.
 | 7 - CKL Retrieval Foundation | complete | CKL package exists, but runtime integration is still pending |
 | 8 - Runtime Integration | complete | CKL is wired into agent startup, retrieval, and prompt building |
 | 9 - Content Authoring Pipeline | complete | CKL create, validate, manifest, report, and migrate tools are in place |
-| 10 - Core Content Population | in progress | Wave 1 populated 113 curated objects; continue with the remaining backbone set |
+| 10 - Core Content Population | in progress | Wave 1 populated 113 curated objects; Wave 2 book records are complete; Wave 3 people, places, events, and institutions are populated; continue with Wave 4 theology, themes, prophecy, word studies, archaeology, and FAQ |
 | 11 - Sources and Scholarly Governance | complete | Safe governance defaults are in place and approved content now requires structured source support |
 | 12 - Relationship Graph and Scripture Index | complete | Scripture reverse lookup, graph tracing, and reverse-link audits are wired into CKL context retrieval |
 | 13 - Better Retrieval | complete | Add hybrid retrieval and optional semantic search |
@@ -211,6 +213,6 @@ Status: complete.
 | 15 - Evaluation and Regression Testing | complete | Metadata-aware regression suite seeded; compare CKL-enabled, filtered, and disabled runs |
 | 16 - Public Answer Cache | complete | Cache approved answers with version fingerprints |
 | 17 - Web and Reader Integration | complete | Surface canonical context in the UI and add the draft editor view |
-| 18 - Packaging, Versioning, and Release | in progress | Packaging metadata, version command, CI artifact checks, and docs are in place; stable release tag still pending |
+| 18 - Packaging, Versioning, and Release | complete | Packaging metadata, version command, CI artifact checks, docs, and the stable release tag are in place |
 
 Reference anchors: `framework/books/genesis.md`, `framework/books/revelation.md`.

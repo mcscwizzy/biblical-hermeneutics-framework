@@ -20,6 +20,11 @@ class CanonicalSchemaPackageTests(unittest.TestCase):
         self.assertIn("related_objects", schema["required"])
         self.assertIn("scripture_references", schema["properties"])
         self.assertEqual(schema["properties"]["aliases"]["minItems"], 1)
+        self.assertIn("authorship_positions", schema["required"])
+        self.assertIn("major_themes", schema["properties"])
+        self.assertEqual(schema["properties"]["original_audience"]["type"], "string")
+        self.assertEqual(schema["properties"]["genre"]["$ref"], "#/$defs/stringList")
+        self.assertEqual(schema["properties"]["primary_sources"]["$ref"], "#/$defs/stringList")
 
     def test_validate_base_object_accepts_normalized_inventory_shape(self) -> None:
         obj = validate_base_object(make_object("shechem", "place", "Shechem", ["where is shechem"]))
