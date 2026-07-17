@@ -346,9 +346,9 @@ class CanonicalContextBuilderTests(unittest.TestCase):
         self.assertEqual(first["metadata"]["retrieval_method"], "keyword")
         self.assertEqual(first["metadata"]["topic_count"], 2)
         self.assertEqual(limited["metadata"]["primary_topic_count"], 1)
-        self.assertEqual(limited["metadata"]["expanded_topic_count"], 1)
-        self.assertEqual(limited["metadata"]["topic_count"], 2)
-        self.assertEqual(len(limited["retrieved_topics"]), 2)
+        self.assertEqual(limited["metadata"]["expanded_topic_count"], 0)
+        self.assertEqual(limited["metadata"]["topic_count"], 1)
+        self.assertEqual(len(limited["retrieved_topics"]), 1)
         self.assertEqual(len(first["historical_context"]), 1)
         self.assertEqual(len(first["ancient_near_east_context"]), 1)
         self.assertEqual(len(first["hebraic_worldview"]), 1)
@@ -483,9 +483,9 @@ class CanonicalContextBuilderTests(unittest.TestCase):
             write_library(root, expansion_fixture_objects())
             library = CanonicalLibrary(root=root).load()
             remove_loaded_object(library, "missing-target")
-            builder = CanonicalContextBuilder(library, max_expanded_topics=3)
+            builder = CanonicalContextBuilder(library, max_expanded_topics=3, max_relationship_depth=1)
 
-            context = builder.build("Shechem", limit=1)
+            context = builder.build("Show canonical connections for Shechem", limit=1)
 
         retrieved_ids = [item["id"] for item in context["retrieved_topics"]]
         self.assertEqual(retrieved_ids, ["shechem", "joseph", "abraham"])
@@ -514,15 +514,20 @@ class CanonicalContextBuilderTests(unittest.TestCase):
             threshold_library = CanonicalLibrary(root=root).load()
             remove_loaded_object(limited_library, "missing-target")
             remove_loaded_object(threshold_library, "missing-target")
-            limited_builder = CanonicalContextBuilder(limited_library, max_expanded_topics=1)
+            limited_builder = CanonicalContextBuilder(
+                limited_library,
+                max_expanded_topics=1,
+                max_relationship_depth=1,
+            )
             threshold_builder = CanonicalContextBuilder(
                 threshold_library,
                 max_expanded_topics=3,
+                max_relationship_depth=1,
                 min_relationship_weight=5,
             )
 
-            limited_context = limited_builder.build("Shechem", limit=1)
-            threshold_context = threshold_builder.build("Shechem", limit=1)
+            limited_context = limited_builder.build("Show canonical connections for Shechem", limit=1)
+            threshold_context = threshold_builder.build("Show canonical connections for Shechem", limit=1)
 
         self.assertEqual([item["id"] for item in limited_context["retrieved_topics"]], ["shechem", "joseph"])
         self.assertEqual(limited_context["metadata"]["expanded_topic_count"], 1)
@@ -533,11 +538,19 @@ class CanonicalContextBuilderTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             write_library(root, cycle_fixture_objects())
-            shallow_builder = CanonicalContextBuilder(CanonicalLibrary(root=root).load(), max_relationship_depth=1)
-            deep_builder = CanonicalContextBuilder(CanonicalLibrary(root=root).load(), max_relationship_depth=2)
+            shallow_builder = CanonicalContextBuilder(
+                CanonicalLibrary(root=root).load(),
+                max_relationship_depth=1,
+                max_expanded_topics=3,
+            )
+            deep_builder = CanonicalContextBuilder(
+                CanonicalLibrary(root=root).load(),
+                max_relationship_depth=2,
+                max_expanded_topics=3,
+            )
 
-            shallow_context = shallow_builder.build("Alpha", limit=1)
-            deep_context = deep_builder.build("Alpha", limit=1)
+            shallow_context = shallow_builder.build("Show canonical connections for Alpha", limit=1)
+            deep_context = deep_builder.build("Show canonical connections for Alpha", limit=1)
 
         self.assertEqual([item["id"] for item in shallow_context["retrieved_topics"]], ["alpha", "beta"])
         self.assertEqual(shallow_context["metadata"]["expanded_topic_count"], 1)

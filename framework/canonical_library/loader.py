@@ -10,6 +10,10 @@ from pathlib import Path
 from typing import Any, Sequence
 
 from .normalization import normalize_alias, normalize_id, tokenize_query
+from .query_analysis import (
+    AmbiguousEntityCandidate,
+    AmbiguousEntityResolution,
+)
 from .scripture import (
     ScriptureReferenceSpan,
     build_book_alias_lookup,
@@ -24,6 +28,7 @@ from .retrieval import (
     governance_bonus,
     infer_query_categories,
     RetrievalResult,
+    apply_relevance_thresholds,
     collect_field_search_terms,
     score_keyword_result,
     score_text_match,
@@ -338,6 +343,7 @@ class CanonicalLibrary:
         query: str,
         limit: int = 10,
         *,
+        apply_thresholds: bool = False,
         approved_only: bool = False,
         exclude_deprecated: bool = True,
         exclude_rejected: bool = True,
@@ -424,6 +430,8 @@ class CanonicalLibrary:
                 )
             )
         results = sort_retrieval_results(results)
+        if apply_thresholds:
+            results = apply_relevance_thresholds(results)
         return results[:limit]
 
     def retrieve_hybrid(
@@ -431,6 +439,7 @@ class CanonicalLibrary:
         query: str,
         limit: int = 10,
         *,
+        apply_thresholds: bool = True,
         approved_only: bool = False,
         exclude_deprecated: bool = True,
         exclude_rejected: bool = True,
@@ -441,6 +450,7 @@ class CanonicalLibrary:
         return self.retrieve_by_keywords(
             query,
             limit=limit,
+            apply_thresholds=apply_thresholds,
             approved_only=approved_only,
             exclude_deprecated=exclude_deprecated,
             exclude_rejected=exclude_rejected,
@@ -696,17 +706,226 @@ class CanonicalLibrary:
                     matched_fields=["title"],
                 )
             return None
+        return None
 
-        keyword_matches = self.retrieve_hybrid(
-            query,
-            limit=1,
+    def resolve_entity(
+        self,
+        entity_candidates: Sequence[str],
+        preferred_categories: Sequence[str] = (),
+        *,
+        category_confidence: float = 1.0,
+        approved_only: bool = False,
+        exclude_deprecated: bool = True,
+        exclude_rejected: bool = True,
+        include_placeholders: bool = True,
+        allowed_statuses: tuple[str, ...] | None = None,
+    ) -> RetrievalResult | None:
+        resolution = self.resolve_entity_with_status(
+            entity_candidates,
+            preferred_categories,
+            category_confidence=category_confidence,
             approved_only=approved_only,
             exclude_deprecated=exclude_deprecated,
             exclude_rejected=exclude_rejected,
             include_placeholders=include_placeholders,
             allowed_statuses=allowed_statuses,
         )
-        return keyword_matches[0] if keyword_matches else None
+        return resolution if isinstance(resolution, RetrievalResult) else None
+
+    def resolve_entity_with_status(
+        self,
+        entity_candidates: Sequence[str],
+        preferred_categories: Sequence[str] = (),
+        *,
+        category_confidence: float = 1.0,
+        approved_only: bool = False,
+        exclude_deprecated: bool = True,
+        exclude_rejected: bool = True,
+        include_placeholders: bool = True,
+        allowed_statuses: tuple[str, ...] | None = None,
+    ) -> RetrievalResult | AmbiguousEntityResolution | None:
+        self._ensure_loaded()
+        candidates = [candidate for candidate in entity_candidates if str(candidate or "").strip()]
+        if not candidates:
+            return None
+
+        constrained_categories = tuple(
+            category for category in preferred_categories if category in self.objects_by_type
+        )
+        use_category_constraint = bool(constrained_categories and category_confidence >= 0.75)
+        categories: tuple[str, ...] | None = constrained_categories if use_category_constraint else None
+
+        for match_type in ("id", "title", "alias"):
+            matches = self._exact_entity_matches(
+                candidates,
+                match_type=match_type,
+                categories=categories,
+                approved_only=approved_only,
+                exclude_deprecated=exclude_deprecated,
+                exclude_rejected=exclude_rejected,
+                include_placeholders=include_placeholders,
+                allowed_statuses=allowed_statuses,
+            )
+            if len(matches) == 1:
+                return matches[0]
+            if len(matches) > 1:
+                return self._ambiguous_resolution(candidates[0], matches)
+
+        if not use_category_constraint:
+            for match_type in ("id", "title", "alias"):
+                matches = self._exact_entity_matches(
+                    candidates,
+                    match_type=match_type,
+                    categories=None,
+                    approved_only=approved_only,
+                    exclude_deprecated=exclude_deprecated,
+                    exclude_rejected=exclude_rejected,
+                    include_placeholders=include_placeholders,
+                    allowed_statuses=allowed_statuses,
+                )
+                if len(matches) == 1:
+                    return matches[0]
+                if len(matches) > 1:
+                    return self._ambiguous_resolution(candidates[0], matches)
+
+        if use_category_constraint:
+            ambiguous = self._partial_entity_ambiguity(
+                candidates[0],
+                categories=constrained_categories,
+                approved_only=approved_only,
+                exclude_deprecated=exclude_deprecated,
+                exclude_rejected=exclude_rejected,
+                include_placeholders=include_placeholders,
+                allowed_statuses=allowed_statuses,
+            )
+            if ambiguous is not None:
+                return ambiguous
+
+        return None
+
+    def _exact_entity_matches(
+        self,
+        entity_candidates: Sequence[str],
+        *,
+        match_type: str,
+        categories: Sequence[str] | None,
+        approved_only: bool,
+        exclude_deprecated: bool,
+        exclude_rejected: bool,
+        include_placeholders: bool,
+        allowed_statuses: tuple[str, ...] | None,
+    ) -> list[RetrievalResult]:
+        matches: dict[str, RetrievalResult] = {}
+        category_set = set(categories or ())
+        for candidate in entity_candidates:
+            if match_type == "id":
+                object_ids = [normalize_id(candidate)]
+                matched_alias = None
+                matched_fields = ["id"]
+                matched_terms = [normalize_id(candidate)]
+            elif match_type == "title":
+                object_ids = self._title_matches(candidate)
+                matched_alias = None
+                matched_fields = ["title"]
+                matched_terms = tokenize_query(candidate)
+            elif match_type == "alias":
+                normalized_alias = normalize_alias(candidate)
+                object_ids = list(self.objects_by_alias.get(normalized_alias, []))
+                matched_alias = self._alias_index.get(normalized_alias, ("", candidate))[1]
+                matched_fields = ["aliases"]
+                matched_terms = tokenize_query(candidate)
+            else:
+                object_ids = []
+                matched_alias = None
+                matched_fields = []
+                matched_terms = []
+
+            for object_id in sorted(set(object_ids)):
+                obj = self.objects_by_id.get(object_id)
+                if obj is None:
+                    continue
+                if category_set and obj.type not in category_set:
+                    continue
+                if not self._is_retrievable(
+                    obj,
+                    approved_only=approved_only,
+                    exclude_deprecated=exclude_deprecated,
+                    exclude_rejected=exclude_rejected,
+                    include_placeholders=include_placeholders,
+                    allowed_statuses=allowed_statuses,
+                ):
+                    continue
+                matches[obj.id] = RetrievalResult(
+                    object=obj,
+                    score=1.0 if match_type != "alias" else 0.98,
+                    match_type=match_type,
+                    matched_terms=matched_terms,
+                    matched_fields=matched_fields,
+                    matched_alias=matched_alias,
+                    ranking_score=1.0 if match_type != "alias" else 0.98,
+                    confidence=1.0 if match_type != "alias" else 0.98,
+                )
+        return sort_retrieval_results(list(matches.values()))
+
+    def _partial_entity_ambiguity(
+        self,
+        entity: str,
+        *,
+        categories: Sequence[str],
+        approved_only: bool,
+        exclude_deprecated: bool,
+        exclude_rejected: bool,
+        include_placeholders: bool,
+        allowed_statuses: tuple[str, ...] | None,
+    ) -> AmbiguousEntityResolution | None:
+        normalized_entity = normalize_alias(entity)
+        if not normalized_entity:
+            return None
+        candidates: list[RetrievalResult] = []
+        for object_id in sorted(self.objects_by_id):
+            obj = self.objects_by_id[object_id]
+            if obj.type not in categories:
+                continue
+            if not self._is_retrievable(
+                obj,
+                approved_only=approved_only,
+                exclude_deprecated=exclude_deprecated,
+                exclude_rejected=exclude_rejected,
+                include_placeholders=include_placeholders,
+                allowed_statuses=allowed_statuses,
+            ):
+                continue
+            normalized_title = normalize_alias(obj.title)
+            if normalized_title == normalized_entity or normalized_title.startswith(f"{normalized_entity} "):
+                candidates.append(
+                    RetrievalResult(
+                        object=obj,
+                        score=0.86,
+                        match_type="ambiguous",
+                        matched_terms=tokenize_query(entity),
+                        matched_fields=["title"],
+                        ranking_score=0.86,
+                        confidence=0.66,
+                    )
+                )
+        if len(candidates) <= 1:
+            return None
+        return self._ambiguous_resolution(entity, candidates)
+
+    def _ambiguous_resolution(
+        self,
+        entity: str,
+        matches: Sequence[RetrievalResult],
+    ) -> AmbiguousEntityResolution:
+        candidates = tuple(
+            AmbiguousEntityCandidate(
+                id=result.object.id,
+                title=result.object.title,
+                type=result.object.type,
+            )
+            for result in sort_retrieval_results(list(matches))
+        )
+        return AmbiguousEntityResolution(entity=entity, candidates=candidates)
 
     def retrieve_semantic(self, query: str, limit: int = 10) -> list[RetrievalResult]:  # noqa: ARG002
         raise NotImplementedError("semantic retrieval is not implemented yet")

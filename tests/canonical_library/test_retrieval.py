@@ -364,7 +364,10 @@ class CanonicalRetrievalTests(unittest.TestCase):
         self.assertEqual([result.object.id for result in scripture_results[:3]], ["shechem", "joshua-son-of-nun", "joshua"])
         self.assertEqual(scripture_results[0].match_type, "scripture")
 
-        fuzzy_result = default_library.retrieve_exact("Abram")
+        self.assertIsNone(default_library.retrieve_exact("Abram"))
+
+        fuzzy_results = default_library.retrieve_hybrid("Abram", limit=1)
+        fuzzy_result = fuzzy_results[0] if fuzzy_results else None
         self.assertIsNotNone(fuzzy_result)
         self.assertEqual(fuzzy_result.object.id, "abraham")
         self.assertEqual(fuzzy_result.match_type, "fuzzy_alias")

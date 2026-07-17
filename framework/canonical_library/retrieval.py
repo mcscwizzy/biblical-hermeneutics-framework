@@ -54,6 +54,9 @@ FIELD_WEIGHTS: dict[str, int] = {
 }
 
 MAX_FIELD_WEIGHT = max(FIELD_WEIGHTS.values())
+MIN_RANKED_SCORE = 0.55
+MIN_SECONDARY_SCORE = 0.68
+MAX_SCORE_DROP_FROM_TOP = 0.15
 
 MATCH_TYPE_PRIORITY: dict[str, int] = {
     "id": 0,
@@ -317,6 +320,14 @@ class RetrievalResult:
     matched_terms: list[str] = field(default_factory=list)
     matched_fields: list[str] = field(default_factory=list)
     matched_alias: str | None = None
+    ranking_score: float | None = None
+    confidence: float = 0.0
+
+    def __post_init__(self) -> None:
+        if self.ranking_score is None:
+            object.__setattr__(self, "ranking_score", self.score)
+        if self.confidence <= 0:
+            object.__setattr__(self, "confidence", default_confidence(self.match_type, self.score))
 
 
 class CanonicalRetriever(Protocol):
@@ -462,6 +473,26 @@ def governance_bonus(review_status: str, confidence: str) -> float:
         "unrated": 0.0,
     }
     return review_scores.get(review_status, 0.0) + confidence_scores.get(confidence, 0.0)
+
+
+def default_confidence(match_type: str, score: float) -> float:
+    """Return conservative retrieval confidence separate from ranking score."""
+
+    if match_type == "id":
+        return 1.0
+    if match_type == "title":
+        return 1.0
+    if match_type == "alias":
+        return 0.98
+    if match_type == "scripture":
+        return 0.92
+    if match_type == "fuzzy_alias":
+        return min(0.9, max(0.72, score))
+    if match_type == "phrase":
+        return min(0.82, max(0.55, score))
+    if match_type == "relationship":
+        return 0.45
+    return min(0.74, max(0.3, score * 0.8))
 
 
 def searchable_text_fields(obj: Any) -> dict[str, list[str]]:
@@ -829,3 +860,29 @@ def sort_retrieval_results(results: list[RetrievalResult]) -> list[RetrievalResu
             normalize_id(result.object.id),
         ),
     )
+
+
+def apply_relevance_thresholds(
+    results: list[RetrievalResult],
+    *,
+    min_ranked_score: float = MIN_RANKED_SCORE,
+    min_secondary_score: float = MIN_SECONDARY_SCORE,
+    max_score_drop_from_top: float = MAX_SCORE_DROP_FROM_TOP,
+) -> list[RetrievalResult]:
+    """Prune weak ranked results instead of filling to the requested limit."""
+
+    if not results:
+        return []
+    thresholded = [result for result in results if result.score >= min_ranked_score]
+    if not thresholded:
+        return []
+
+    top_score = thresholded[0].score
+    pruned: list[RetrievalResult] = []
+    for index, result in enumerate(thresholded):
+        if top_score - result.score > max_score_drop_from_top:
+            continue
+        if index > 0 and result.score < min_secondary_score:
+            continue
+        pruned.append(result)
+    return pruned

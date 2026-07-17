@@ -8,6 +8,14 @@ from typing import Any, Mapping, Sequence
 
 from .loader import CanonicalLibrary
 from .normalization import normalize_id, normalize_text, tokenize_query
+from .query_analysis import (
+    MULTIPLE_ENTITIES,
+    SCRIPTURE,
+    SINGLE_ENTITY,
+    AmbiguousEntityResolution,
+    QueryAnalysis,
+    analyze_query as analyze_canonical_query,
+)
 from .retrieval import RetrievalResult
 from .schema import interpretive_note_texts
 
@@ -232,6 +240,44 @@ def _estimate_object_tokens(obj: Any) -> int:
     return total
 
 
+def _prioritize_query_scripture_references(
+    retrieved: list[dict[str, Any]],
+    analysis: QueryAnalysis,
+) -> None:
+    if not analysis.scripture_references:
+        return
+    prefixes = {
+        normalize_text(
+            f"{reference.book} {reference.start_chapter}"
+            + (f" {reference.start_verse}" if reference.start_verse is not None else "")
+        )
+        for reference in analysis.scripture_references
+        if reference.start_chapter is not None
+    }
+    if not prefixes:
+        return
+    for topic in retrieved:
+        references = topic.get("scripture_references")
+        if not isinstance(references, list):
+            continue
+        topic["scripture_references"] = sorted(
+            references,
+            key=lambda reference: (
+                0 if _reference_matches_prefix(reference, prefixes) else 1,
+                str(reference.get("reference") if isinstance(reference, Mapping) else reference),
+            ),
+        )
+
+
+def _reference_matches_prefix(reference: Any, prefixes: set[str]) -> bool:
+    if isinstance(reference, Mapping):
+        text = str(reference.get("reference") or "")
+    else:
+        text = str(reference or "")
+    normalized = normalize_text(text)
+    return any(normalized.startswith(prefix) for prefix in prefixes)
+
+
 @dataclass
 class CanonicalContextBuilder:
     library: CanonicalLibrary
@@ -240,8 +286,8 @@ class CanonicalContextBuilder:
     max_related_topics: int = 10
     max_timeline_entries: int = 10
     max_archaeology_entries: int = 10
-    max_expanded_topics: int = 8
-    max_relationship_depth: int = 1
+    max_expanded_topics: int = 0
+    max_relationship_depth: int = 0
     min_relationship_weight: int = 1
 
     def build(
@@ -259,9 +305,23 @@ class CanonicalContextBuilder:
         topic_limit = self.max_topics if limit is None else max(0, min(limit, self.max_topics))
         retrieved: list[dict[str, Any]] = []
         seen_ids: set[str] = set()
+        analysis = analyze_canonical_query(
+            question,
+            book_alias_lookup=self.library._book_alias_lookup,
+        )
+        retrieval_trace: dict[str, Any] = {
+            "method": "none",
+            "primary_count": 0,
+            "expanded_count": 0,
+            "fallback_used": False,
+            "threshold_applied": False,
+        }
+        ambiguity: AmbiguousEntityResolution | None = None
 
         primary_results = self._retrieve_primary_topics(
             question,
+            analysis=analysis,
+            trace=retrieval_trace,
             limit=topic_limit,
             approved_only=approved_only,
             exclude_deprecated=exclude_deprecated,
@@ -280,10 +340,18 @@ class CanonicalContextBuilder:
                 matched_alias=result.matched_alias,
                 matched_terms=result.matched_terms,
                 matched_fields=result.matched_fields,
+                ranking_score=result.ranking_score,
+                retrieval_confidence=result.confidence,
             )
 
         expanded: list[dict[str, Any]] = []
-        if self.max_relationship_depth > 0 and self.max_expanded_topics > 0 and retrieved:
+        ambiguity = retrieval_trace.pop("ambiguity", None)
+        if (
+            analysis.include_related
+            and self.max_relationship_depth > 0
+            and self.max_expanded_topics > 0
+            and retrieved
+        ):
             expanded = self._expand_relationships(
                 retrieved,
                 seen_ids,
@@ -294,6 +362,9 @@ class CanonicalContextBuilder:
                 allowed_statuses=allowed_statuses,
             )
             retrieved.extend(expanded)
+        _prioritize_query_scripture_references(retrieved, analysis)
+        retrieval_trace["primary_count"] = len(primary_results)
+        retrieval_trace["expanded_count"] = len(expanded)
 
         context = {
             "question": question,
@@ -334,6 +405,9 @@ class CanonicalContextBuilder:
                     for item in retrieved
                     if str(item.get("id") or "").strip()
                 ],
+                "query_analysis": analysis.to_dict(),
+                "retrieval": retrieval_trace,
+                "ambiguity": ambiguity.to_dict() if ambiguity is not None else None,
             },
         }
 
@@ -369,6 +443,8 @@ class CanonicalContextBuilder:
         self,
         question: str,
         *,
+        analysis: QueryAnalysis,
+        trace: dict[str, Any],
         limit: int,
         approved_only: bool,
         exclude_deprecated: bool,
@@ -380,6 +456,53 @@ class CanonicalContextBuilder:
         if limit <= 0:
             return primary_results
 
+        if analysis.scope in {SINGLE_ENTITY, SCRIPTURE} and analysis.entity_candidates:
+            resolved = self.library.resolve_entity_with_status(
+                analysis.entity_candidates,
+                analysis.preferred_categories,
+                category_confidence=analysis.category_confidence,
+                approved_only=approved_only,
+                exclude_deprecated=exclude_deprecated,
+                exclude_rejected=exclude_rejected,
+                include_placeholders=include_placeholders,
+                allowed_statuses=allowed_statuses,
+            )
+            if isinstance(resolved, RetrievalResult):
+                trace["method"] = "exact_entity"
+                primary_results.append(resolved)
+                if resolved.match_type in {"id", "title", "alias"}:
+                    return primary_results
+            elif isinstance(resolved, AmbiguousEntityResolution):
+                trace["method"] = "ambiguous_entity"
+                trace["ambiguity"] = resolved
+                return primary_results
+
+        if analysis.scope == MULTIPLE_ENTITIES and analysis.entity_candidates:
+            trace["method"] = "exact_entities"
+            seen: set[str] = set()
+            for candidate in analysis.entity_candidates:
+                resolved = self.library.resolve_entity_with_status(
+                    (candidate,),
+                    analysis.preferred_categories,
+                    category_confidence=analysis.category_confidence,
+                    approved_only=approved_only,
+                    exclude_deprecated=exclude_deprecated,
+                    exclude_rejected=exclude_rejected,
+                    include_placeholders=include_placeholders,
+                    allowed_statuses=allowed_statuses,
+                )
+                if isinstance(resolved, AmbiguousEntityResolution):
+                    trace["ambiguity"] = resolved
+                    continue
+                if not isinstance(resolved, RetrievalResult) or resolved.object.id in seen:
+                    continue
+                primary_results.append(resolved)
+                seen.add(resolved.object.id)
+                if len(primary_results) >= limit:
+                    break
+            if primary_results:
+                return primary_results
+
         primary = self.library.retrieve_exact(
             question,
             approved_only=approved_only,
@@ -389,9 +512,14 @@ class CanonicalContextBuilder:
             allowed_statuses=allowed_statuses,
         )
         if primary is not None:
+            trace["method"] = "exact_entity"
             primary_results.append(primary)
+            return primary_results
 
         if len(primary_results) < limit:
+            trace["method"] = "ranked" if not primary_results else "exact_plus_ranked"
+            trace["fallback_used"] = bool(primary_results)
+            trace["threshold_applied"] = True
             for result in self.library.retrieve_hybrid(
                 question,
                 limit=limit,
@@ -421,6 +549,8 @@ class CanonicalContextBuilder:
         matched_alias: str | None = None,
         matched_terms: list[str] | None = None,
         matched_fields: list[str] | None = None,
+        ranking_score: float | None = None,
+        retrieval_confidence: float | None = None,
         included_from: str | None = None,
         relationship: str | None = None,
         relationship_weight: int | None = None,
@@ -491,6 +621,8 @@ class CanonicalContextBuilder:
                 "matched_alias": matched_alias,
                 "match_type": match_type,
                 "score": score,
+                "ranking_score": score if ranking_score is None else ranking_score,
+                "retrieval_confidence": retrieval_confidence,
                 "matched_terms": matched_terms or [],
                 "matched_fields": matched_fields or [],
                 "related_objects": self._normalize_related_objects(obj),
