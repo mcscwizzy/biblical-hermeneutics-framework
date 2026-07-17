@@ -1070,6 +1070,38 @@ class RunnerTests(unittest.TestCase):
         self.assertNotIn("{", result.answer_text)
         self.assertNotIn("analysis", result.answer_text.lower())
 
+    def test_agent_extracts_nested_json_answer_object_before_display(self):
+        adapter = StructuredJsonAdapter(
+            json.dumps(
+                {
+                    "result": {
+                        "answer": (
+                            "Short Answer: The Hebrew word is ruach. Basic Meaning: its "
+                            "semantic range can include wind, breath, or spirit. Context "
+                            "Matters: meaning depends on passage context. Cautions: this "
+                            "may not always refer to the Holy Spirit."
+                        ),
+                    },
+                    "usage": {"total_tokens": 12},
+                }
+            )
+        )
+        agent = self.make_agent(adapter)
+
+        result = agent.ask("What is the Hebrew word for spirit or wind?")
+
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertEqual(adapter.request.response_format, {"type": "json_object"})
+        self.assertTrue(result.validation_result.passed)
+        self.assertEqual(
+            result.answer_text,
+            "Short Answer: The Hebrew word is ruach. Basic Meaning: its "
+            "semantic range can include wind, breath, or spirit. Context "
+            "Matters: meaning depends on passage context. Cautions: this "
+            "may not always refer to the Holy Spirit.",
+        )
+
     def test_search_fallback_prompt_preserves_json_results_contract(self):
         adapter = StructuredJsonAdapter(
             json.dumps(

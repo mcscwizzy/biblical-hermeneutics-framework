@@ -11,6 +11,8 @@ from typing import Any
 from xml.etree import ElementTree
 
 from .references import BOOK_ALIASES, BOOKS
+from . import translation_storage
+from .translation_installer import install_xml_translation, list_installed_translations
 from .bible_support import (
     _GEOGRAPHY_GUIDES,
     _SEARCH_REFERENCE_RE,
@@ -23,7 +25,7 @@ from .bible_support import (
 DATA_PATH = Path(__file__).resolve().parent / "data" / "asv_bible.json"
 KJV_DATA_PATH = Path(__file__).resolve().parent / "data" / "kjv_bible.json"
 IMPORTED_TRANSLATIONS_DIR = Path(
-    os.environ.get("BHF_TRANSLATION_IMPORT_PATH", ".bhf/imported_translations")
+    os.environ.get("BHF_TRANSLATIONS_PATH", str(translation_storage.TRANSLATIONS_PATH))
 )
 
 
@@ -64,15 +66,13 @@ def load_kjv_bible(path: str | Path = KJV_DATA_PATH) -> dict[str, Any]:
 def load_translation_bible(translation_id: str) -> dict[str, Any]:
     """Load an installed local Bible dataset by catalog translation id."""
 
-    normalized = str(translation_id or "asv").strip().lower()
+    normalized = translation_storage.normalize_translation_id(translation_id or "asv")
     if normalized == "asv":
         return load_asv_bible()
-    if normalized == "kjv":
-        return load_kjv_bible()
-    imported = imported_translation_path(normalized)
-    if imported.exists():
-        return load_bible_dataset(imported)
-    raise BibleError(f"translation is not installed: {translation_id}")
+    try:
+        return translation_storage.load_installed_translation_bible(normalized)
+    except translation_storage.TranslationStorageError as exc:
+        raise BibleError(str(exc)) from exc
 
 
 def list_translation_books(translation_id: str = "asv") -> list[dict[str, Any]]:
@@ -93,7 +93,7 @@ def resolve_translation_chapter(
 
 def imported_translation_path(translation_id: str) -> Path:
     normalized = _normalize_translation_id(translation_id)
-    return IMPORTED_TRANSLATIONS_DIR / f"{normalized}.json"
+    return translation_storage.installed_translation_path(normalized)
 
 
 def save_imported_xml_translation(
@@ -106,30 +106,31 @@ def save_imported_xml_translation(
     """Normalize a user-provided XML Bible into local-only JSON storage."""
 
     normalized_id = _normalize_translation_id(translation_id)
-    dataset = parse_bible_xml(
-        xml_content,
-        translation_id=normalized_id,
-        translation_name=translation_name,
-        source_filename=source_filename,
-    )
-    IMPORTED_TRANSLATIONS_DIR.mkdir(parents=True, exist_ok=True)
-    target = imported_translation_path(normalized_id)
-    target.write_text(json.dumps(dataset, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    load_bible_dataset.cache_clear()
-    return {
-        "translation_id": normalized_id,
-        "availability": "installed",
-        "offline_supported": True,
-        "private_local_install": True,
-        "storage_path": str(target),
-        "book_count": len(dataset["books"]),
-        "verse_count": sum(
-            len(chapter.get("verses", []))
-            for book in dataset["books"]
-            for chapter in book.get("chapters", [])
-        ),
-        "translation": dataset["translation"],
+    from .translation_catalog import catalog_entry_for_id
+
+    catalog_entry = catalog_entry_for_id(normalized_id) or {
+        "id": normalized_id,
+        "name": translation_name or normalized_id.upper(),
+        "language_code": "en",
+        "language": "English",
+        "license_status": "copyrighted" if normalized_id in {"niv", "esv", "csb", "nasb", "lsb", "nlt"} else "public_domain_us",
+        "validation": {
+            "expected_book_count": 66,
+            "expected_minimum_verse_count": 31000,
+            "expected_maximum_verse_count": 31200,
+        },
     }
+    result = install_xml_translation(
+        normalized_id,
+        xml_content,
+        source_type="manual_xml_import",
+        source_url=source_filename,
+        source_repository=None,
+        source_filename=source_filename,
+        translation_name=translation_name,
+        catalog_entry=catalog_entry,
+    )
+    return result
 
 
 def parse_bible_xml(
@@ -140,29 +141,15 @@ def parse_bible_xml(
     source_filename: str = "",
 ) -> dict[str, Any]:
     """Parse common Bible XML shapes into BHF's local dataset format."""
-
     try:
-        root = ElementTree.fromstring(xml_content)
-    except ElementTree.ParseError as exc:
-        raise BibleError(f"Bible XML is not well-formed: {exc}") from exc
-
-    translation = {
-        "id": translation_id.upper(),
-        "name": translation_name
-        or root.attrib.get("biblename")
-        or root.attrib.get("name")
-        or translation_id.upper(),
-        "language": root.attrib.get("language") or root.attrib.get("language_code") or "en",
-        "publication_year": None,
-        "license": "User imported local XML; BHF does not provide or verify this file",
-        "source": source_filename,
-        "source_note": "Manual local XML import. Private to this BHF instance.",
-    }
-
-    parsed_books = _parse_nested_bible_xml(root)
-    if not parsed_books:
-        raise BibleError("Bible XML format is not supported or contains no verses")
-    return {"translation": translation, "books": parsed_books}
+        return translation_storage.parse_bible_xml(
+            xml_content,
+            translation_id=translation_id,
+            translation_name=translation_name,
+            source_filename=source_filename,
+        )
+    except translation_storage.TranslationStorageError as exc:
+        raise BibleError(str(exc)) from exc
 
 
 def _parse_nested_bible_xml(root: ElementTree.Element) -> list[dict[str, Any]]:
@@ -274,11 +261,7 @@ def _normalize_translation_id(translation_id: str) -> str:
     return normalized
 
 
-@lru_cache(maxsize=2)
-def build_bible_search_index(path: str | Path = DATA_PATH) -> list[dict[str, Any]]:
-    """Build a flattened per-verse search index for the committed Bible dataset."""
-
-    bible = load_bible_dataset(path)
+def _build_bible_search_index_from_data(bible: dict[str, Any]) -> list[dict[str, Any]]:
     entries: list[dict[str, Any]] = []
     for book in bible.get("books", []):
         for chapter in book.get("chapters", []):
@@ -295,6 +278,18 @@ def build_bible_search_index(path: str | Path = DATA_PATH) -> list[dict[str, Any
                     }
                 )
     return entries
+
+
+@lru_cache(maxsize=16)
+def build_bible_search_index(translation_id: str = "asv") -> list[dict[str, Any]]:
+    """Build a flattened per-verse search index for one installed translation."""
+
+    bible = load_translation_bible(translation_id)
+    return _build_bible_search_index_from_data(bible)
+
+
+def clear_bible_search_cache() -> None:
+    build_bible_search_index.cache_clear()
 
 
 def _normalize_dataset(data: dict[str, Any], bible_path: Path) -> dict[str, Any]:
@@ -522,10 +517,18 @@ def compare_translation_passages(
 ) -> dict[str, Any]:
     """Compare the same passage across local translation datasets."""
 
-    translation_sets = translations or [
-        ("ASV", load_asv_bible()),
-        ("KJV", load_kjv_bible()),
-    ]
+    if translations is None:
+        translation_sets = [("asv", load_asv_bible())]
+        for installation in list_installed_translations():
+            translation_id = str(installation.get("translation_id") or "").lower()
+            if translation_id == "asv":
+                continue
+            try:
+                translation_sets.append((translation_id, load_translation_bible(translation_id)))
+            except BibleError:
+                continue
+    else:
+        translation_sets = translations
     passages = []
     verse_rows: list[dict[str, Any]] = []
     reference: str | None = None
@@ -541,7 +544,7 @@ def compare_translation_passages(
         chapter_context = passage["chapter_text"]
         selected_text = passage["selected_text"]
         translation_meta = dict(bible.get("translation", {}))
-        translation_meta.setdefault("id", translation_id)
+        translation_meta.setdefault("id", translation_id.upper())
         passages.append(
             {
                 "id": translation_meta.get("id", translation_id),
@@ -561,13 +564,13 @@ def compare_translation_passages(
                     "verse": verse["verse"],
                     "book": verse["book"],
                     "chapter": verse["chapter"],
-                    "texts": {translation_id: verse["text"]},
+                    "texts": {str(translation_meta.get("id", translation_id)).upper(): verse["text"]},
                 }
                 for verse in passage["selected_verses"]
             ]
         else:
             for row, verse in zip(verse_rows, passage["selected_verses"], strict=True):
-                row["texts"][translation_id] = verse["text"]
+                row["texts"][str(translation_meta.get("id", translation_id)).upper()] = verse["text"]
     return {
         "book": normalize_book_name(book),
         "chapter": _positive_int(chapter, "chapter"),
@@ -598,6 +601,7 @@ def search_bible_text(
     query: str,
     *,
     limit: int = 25,
+    translation: str = "asv",
     data: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     normalized_query = _normalize_search_text(query)
@@ -605,6 +609,7 @@ def search_bible_text(
         raise BibleError("search query is required")
 
     capped_limit = max(1, min(int(limit), 100))
+    search_bible = data or load_translation_bible(translation)
     direct_reference = parse_reference_query(query)
     if direct_reference:
         passage = resolve_passage(
@@ -612,7 +617,7 @@ def search_bible_text(
             direct_reference["chapter"],
             direct_reference.get("verse_start"),
             direct_reference.get("verse_end"),
-            data=data,
+            data=search_bible,
         )
         return {
             "query": query,
@@ -621,12 +626,16 @@ def search_bible_text(
             "total_results": 1,
             "direct_reference": True,
             "ai_fallback_eligible": False,
+            "translation": str((passage.get("translation") or {}).get("id") or translation).upper(),
         }
 
     tokens = _tokenize_search_query(normalized_query)
-    index = build_bible_search_index()
+    bible = search_bible
+    index = _build_bible_search_index_from_data(bible)
     scored: list[dict[str, Any]] = []
     canonical_books = list(BOOKS)
+    translation_meta = dict(bible.get("translation", {}))
+    translation_label = str(translation_meta.get("id") or translation).upper()
     for entry in index:
         phrase_hit = normalized_query in str(entry["normalized_text"])
         entry_tokens = set(entry["tokens"])
@@ -666,13 +675,14 @@ def search_bible_text(
     results = scored[:capped_limit]
     return {
         "query": query,
-        "normalized_query": normalized_query,
-        "results": results,
-        "total_results": len(scored),
-        "direct_reference": False,
-        "ai_fallback_eligible": not results and is_topic_style_search_query(query),
-        "no_results_message": "No local ASV matches were found." if not results else None,
-    }
+            "normalized_query": normalized_query,
+            "results": results,
+            "total_results": len(scored),
+            "direct_reference": False,
+            "ai_fallback_eligible": not results and is_topic_style_search_query(query),
+            "no_results_message": f"No local {translation_label} matches were found." if not results else None,
+            "translation": translation_label,
+        }
 
 
 def parse_reference_query(query: str) -> dict[str, Any] | None:

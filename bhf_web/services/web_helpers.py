@@ -16,6 +16,7 @@ from bhf_agent.config import ConfigError
 from bhf_agent.profiles import ProfileLoader
 from bhf_agent.runner import BHFAgent
 from bhf_agent.study_db import StudyDataError, record_study_action
+from bhf_agent.translation_catalog import catalog_by_id
 from ..forms import validate_question, config_from_form, load_web_defaults
 
 
@@ -32,6 +33,20 @@ SPECIAL_QUESTION_MODES = {
     "maps",
     "word_study",
 }
+
+
+def reader_translation_metadata(form: dict[str, Any] | Any) -> dict[str, str]:
+    translation_id = str(form.get("reader_translation") or "asv").strip().lower() or "asv"
+    entry = catalog_by_id().get(translation_id, {})
+    return {
+        "translation_id": translation_id,
+        "translation_abbreviation": str(entry.get("abbreviation") or translation_id.upper()),
+        "translation_name": str(entry.get("name") or translation_id.upper()),
+    }
+
+
+def translation_label(context: dict[str, Any]) -> str:
+    return str(context.get("translation_abbreviation") or context.get("translation_id") or "ASV").upper()
 
 
 def timestamp() -> str:
@@ -383,15 +398,16 @@ def build_ask_question(
     user_question = str(form.get("question") or "").strip()
     if not user_question:
         user_question = f"Explain {context['reference']} using BHF."
+    label = translation_label(context)
     lines = [
-        f"Using BHF, explain ASV {context['reference']}.",
+        f"Using BHF, explain {label} {context['reference']}.",
         f"User question: {user_question}",
         "",
-        f"Selected text (ASV {context['reference']}):",
+        f"Selected text ({label} {context['reference']}):",
         context["selected_text"],
     ]
     if context.get("chapter_context"):
-        lines.extend(["", f"Full chapter context (ASV {context['book']} {context['chapter']}):", str(context["chapter_context"])])
+        lines.extend(["", f"Full chapter context ({label} {context['book']} {context['chapter']}):", str(context["chapter_context"])])
     lines.extend(["", "Method reminder: observe the text before interpreting it, and apply only after observation and interpretation."])
     return "\n".join(lines), str(context["reference"])
 
@@ -409,7 +425,7 @@ def reader_context_from_form(form: dict[str, Any] | Any) -> dict[str, Any] | Non
         question_scope == GENERAL_QUESTION_SCOPE and ask_mode not in SPECIAL_QUESTION_MODES
     ):
         return None
-    return build_selected_passage_context(
+    context = build_selected_passage_context(
         str(form.get("reader_book") or ""),
         str(form.get("reader_chapter") or ""),
         optional_form_value(form, "reader_start_verse"),
@@ -417,6 +433,8 @@ def reader_context_from_form(form: dict[str, Any] | Any) -> dict[str, Any] | Non
         optional_form_value(form, "reader_selected_text"),
         include_chapter_context=True,
     )
+    context.update(reader_translation_metadata(form))
+    return context
 
 
 def study_type_from_form(form: dict[str, Any] | Any) -> str:
@@ -437,73 +455,78 @@ def optional_form_value(form: dict[str, Any] | Any, name: str) -> str | None:
 
 def ancient_context_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
     user_question = str(form.get("question") or "").strip()
+    label = translation_label(context)
     testament = testament_for_book(str(context["book"]))
     background = (
         "Ancient Near Eastern context, covenant setting, and Israel's original audience concerns"
         if testament == "Old Testament"
         else "Second Temple Jewish and Greco-Roman context where relevant, including the original audience's concerns"
     )
-    lines = [f"Using BHF, explain the ancient context of ASV {context['reference']}.", f"Testament context: {testament}. Use {background}."]
+    lines = [f"Using BHF, explain the ancient context of {label} {context['reference']}.", f"Testament context: {testament}. Use {background}."]
     if user_question:
         lines.append(f"User question: {user_question}")
-    lines.extend(["", "Focus on the passage's ancient setting, original audience, cultural background, and covenant setting when relevant.", "Avoid modern assumptions and anachronistic readings.", "Clearly distinguish background that is certain from background that is probable or debated.", "", f"Selected text (ASV {context['reference']}):", context["selected_text"]])
+    lines.extend(["", "Focus on the passage's ancient setting, original audience, cultural background, and covenant setting when relevant.", "Avoid modern assumptions and anachronistic readings.", "Clearly distinguish background that is certain from background that is probable or debated.", "", f"Selected text ({label} {context['reference']}):", context["selected_text"]])
     if context.get("chapter_context"):
-        lines.extend(["", f"Full chapter context (ASV {context['book']} {context['chapter']}):", str(context["chapter_context"])])
+        lines.extend(["", f"Full chapter context ({label} {context['book']} {context['chapter']}):", str(context["chapter_context"])])
     lines.extend(["", "Use BHF method: observe first, interpret with genre and original audience in view, and reserve application until after interpretation."])
     return "\n".join(lines)
 
 
 def literary_context_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
     user_question = str(form.get("question") or "").strip()
-    lines = [f"Using BHF, explain the literary context of ASV {context['reference']}."]
+    label = translation_label(context)
+    lines = [f"Using BHF, explain the literary context of {label} {context['reference']}."]
     if user_question:
         lines.append(f"User question: {user_question}")
-    lines.extend(["", "Explain how the selected passage functions within the immediate paragraph, chapter, book, genre, and argument or narrative flow.", "Emphasize what comes before and after the selected passage.", "Avoid isolating the verse from the surrounding passage.", "Include genre awareness and explain how genre shapes interpretation.", "", f"Selected text (ASV {context['reference']}):", context["selected_text"]])
+    lines.extend(["", "Explain how the selected passage functions within the immediate paragraph, chapter, book, genre, and argument or narrative flow.", "Emphasize what comes before and after the selected passage.", "Avoid isolating the verse from the surrounding passage.", "Include genre awareness and explain how genre shapes interpretation.", "", f"Selected text ({label} {context['reference']}):", context["selected_text"]])
     if context.get("chapter_context"):
-        lines.extend(["", f"Full chapter context (ASV {context['book']} {context['chapter']}):", str(context["chapter_context"])])
+        lines.extend(["", f"Full chapter context ({label} {context['book']} {context['chapter']}):", str(context["chapter_context"])])
     lines.extend(["", "Use BHF method: observe the literary flow before interpreting, and apply only after interpretation."])
     return "\n".join(lines)
 
 
 def cross_references_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
     user_question = str(form.get("question") or "").strip()
+    label = translation_label(context)
     testament = testament_for_book(str(context["book"]))
-    lines = [f"Using BHF, give cross references for ASV {context['reference']}.", f"Testament context: {testament}. Prioritize direct quotations, clear allusions, repeated phrases, canonical themes, and OT/NT connections when relevant."]
+    lines = [f"Using BHF, give cross references for {label} {context['reference']}.", f"Testament context: {testament}. Prioritize direct quotations, clear allusions, repeated phrases, canonical themes, and OT/NT connections when relevant."]
     if user_question:
         lines.append(f"User question: {user_question}")
-    lines.extend(["", "Separate strong references from possible references.", "Briefly explain why each reference matters.", "Do not dump a huge list.", "Avoid speculative links and label uncertainty clearly.", "", f"Selected text (ASV {context['reference']}):", context["selected_text"]])
+    lines.extend(["", "Separate strong references from possible references.", "Briefly explain why each reference matters.", "Do not dump a huge list.", "Avoid speculative links and label uncertainty clearly.", "", f"Selected text ({label} {context['reference']}):", context["selected_text"]])
     if context.get("chapter_context"):
-        lines.extend(["", f"Full chapter context (ASV {context['book']} {context['chapter']}):", str(context["chapter_context"])])
+        lines.extend(["", f"Full chapter context ({label} {context['book']} {context['chapter']}):", str(context["chapter_context"])])
     lines.extend(["", "Use BHF method: observation first, then interpretation, then application only if useful."])
     return "\n".join(lines)
 
 
 def related_ot_themes_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
     user_question = str(form.get("question") or "").strip()
+    label = translation_label(context)
     testament = testament_for_book(str(context["book"]))
-    lines = [f"Using BHF, identify related Old Testament themes for ASV {context['reference']}.", f"Testament context: {testament}. Especially important for New Testament passages, but still note canonical patterns carefully."]
+    lines = [f"Using BHF, identify related Old Testament themes for {label} {context['reference']}.", f"Testament context: {testament}. Especially important for New Testament passages, but still note canonical patterns carefully."]
     if user_question:
         lines.append(f"User question: {user_question}")
-    lines.extend(["", "Include themes such as covenant, temple, exile/restoration, creation/new creation, wisdom, kingship, priesthood, sacrifice, Spirit, land, blessing/curse, and other earlier canonical patterns when they are genuinely relevant.", "Clearly mark strong versus possible thematic links.", "Avoid speculative connections.", "", f"Selected text (ASV {context['reference']}):", context["selected_text"]])
+    lines.extend(["", "Include themes such as covenant, temple, exile/restoration, creation/new creation, wisdom, kingship, priesthood, sacrifice, Spirit, land, blessing/curse, and other earlier canonical patterns when they are genuinely relevant.", "Clearly mark strong versus possible thematic links.", "Avoid speculative connections.", "", f"Selected text ({label} {context['reference']}):", context["selected_text"]])
     if context.get("chapter_context"):
-        lines.extend(["", f"Full chapter context (ASV {context['book']} {context['chapter']}):", str(context["chapter_context"])])
+        lines.extend(["", f"Full chapter context ({label} {context['book']} {context['chapter']}):", str(context["chapter_context"])])
     lines.extend(["", "Use BHF method: observe the text, interpret within genre and audience, and distinguish strong links from possible ones."])
     return "\n".join(lines)
 
 
 def fulfillment_nt_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
     user_question = str(form.get("question") or "").strip()
+    label = translation_label(context)
     testament = testament_for_book(str(context["book"]))
-    lines = [f"Using BHF, evaluate fulfillment in the NT for ASV {context['reference']}.", f"Testament context: {testament}. Do not force a fulfillment reading where the text does not support it."]
+    lines = [f"Using BHF, evaluate fulfillment in the NT for {label} {context['reference']}.", f"Testament context: {testament}. Do not force a fulfillment reading where the text does not support it."]
     if user_question:
         lines.append(f"User question: {user_question}")
     if testament == "Old Testament":
         lines.extend(["", "Assess whether the passage is quoted, echoed, developed, fulfilled, typologically reused, or thematically carried into the New Testament.", "Separate direct NT citation from strong allusion, typological pattern, thematic development, and speculative or weak connection.", "State clearly when the NT does not make or imply a connection."])
     else:
         lines.extend(["", "For a New Testament passage, explain how it may fulfill or develop earlier Old Testament themes instead of forcing a direct prophetic fulfillment.", "Separate direct OT citation from strong allusion, typological pattern, thematic development, and speculative or weak connection.", "State clearly when the passage is not directly tied to a specific Old Testament text."])
-    lines.extend(["", "Avoid forcing Christological or prophetic readings where unsupported.", "Distinguish clear fulfillment from possible thematic resonance.", "Briefly explain why each link matters.", "", f"Selected text (ASV {context['reference']}):", context["selected_text"]])
+    lines.extend(["", "Avoid forcing Christological or prophetic readings where unsupported.", "Distinguish clear fulfillment from possible thematic resonance.", "Briefly explain why each link matters.", "", f"Selected text ({label} {context['reference']}):", context["selected_text"]])
     if context.get("chapter_context"):
-        lines.extend(["", f"Full chapter context (ASV {context['book']} {context['chapter']}):", str(context["chapter_context"])])
+        lines.extend(["", f"Full chapter context ({label} {context['book']} {context['chapter']}):", str(context["chapter_context"])])
     lines.extend(["", "Use BHF method: observe the text first, interpret in literary and canonical context, and keep uncertainty explicit."])
     return "\n".join(lines)
 
@@ -512,7 +535,8 @@ def compare_translations_question(form: dict[str, Any] | Any, context: dict[str,
     user_question = str(form.get("question") or "").strip()
     comparison = compare_translation_passages(str(context["book"]), int(context["chapter"]), context.get("start_verse"), context.get("end_verse"))
     translation_names = ", ".join(f"{item['id']} ({item['name']})" for item in comparison["translations"])
-    lines = [f"Using BHF, compare the local public-domain translations for ASV {comparison['reference']}.", f"Available translations: {translation_names}. Use only the bundled local texts.", "Explain wording differences and how they may affect interpretation.", "Do not rely on copyrighted Bible APIs.", "Do not overstate the significance of minor wording differences.", "Separate clear interpretive differences from stylistic variation."]
+    label = translation_label(context)
+    lines = [f"Using BHF, compare the local public-domain translations for {label} {comparison['reference']}.", f"Available translations: {translation_names}. Use only the bundled local texts.", "Explain wording differences and how they may affect interpretation.", "Do not rely on copyrighted Bible APIs.", "Do not overstate the significance of minor wording differences.", "Separate clear interpretive differences from stylistic variation."]
     if user_question:
         lines.append(f"User question: {user_question}")
     lines.append("")
@@ -524,8 +548,8 @@ def compare_translations_question(form: dict[str, Any] | Any, context: dict[str,
             lines.append(f"- {translation['id']}: {text}")
         lines.append("")
     if context.get("chapter_context"):
-        lines.extend([f"Full chapter context (ASV {context['book']} {context['chapter']}):", str(context["chapter_context"]), ""])
-    lines.extend([f"Selected text (ASV {context['reference']}):", context["selected_text"], "", "Use BHF method: observe the wording first, interpret in literary and canonical context, and keep uncertainty explicit."])
+        lines.extend([f"Full chapter context ({label} {context['book']} {context['chapter']}):", str(context["chapter_context"]), ""])
+    lines.extend([f"Selected text ({label} {context['reference']}):", context["selected_text"], "", "Use BHF method: observe the wording first, interpret in literary and canonical context, and keep uncertainty explicit."])
     return "\n".join(lines)
 
 
@@ -533,12 +557,13 @@ def timeline_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> st
     user_question = str(form.get("question") or "").strip()
     guide = timeline_for_book(str(context["book"]))
     testament = testament_for_book(str(context["book"]))
-    lines = [f"Using BHF, place ASV {context['reference']} on the biblical timeline.", f"Testament context: {testament}. Broad period: {guide['period']}."]
+    label = translation_label(context)
+    lines = [f"Using BHF, place {label} {context['reference']} on the biblical timeline.", f"Testament context: {testament}. Broad period: {guide['period']}."]
     if user_question:
         lines.append(f"User question: {user_question}")
-    lines.extend(["", "Show where the passage fits in biblical history, the major covenant period, and the relation to surrounding biblical events.", "Prefer broad historical placement over fake precision.", "If exact dating is uncertain, say so plainly.", guide["notes"], "", f"Selected text (ASV {context['reference']}):", context["selected_text"]])
+    lines.extend(["", "Show where the passage fits in biblical history, the major covenant period, and the relation to surrounding biblical events.", "Prefer broad historical placement over fake precision.", "If exact dating is uncertain, say so plainly.", guide["notes"], "", f"Selected text ({label} {context['reference']}):", context["selected_text"]])
     if context.get("chapter_context"):
-        lines.extend(["", f"Full chapter context (ASV {context['book']} {context['chapter']}):", str(context["chapter_context"])])
+        lines.extend(["", f"Full chapter context ({label} {context['book']} {context['chapter']}):", str(context["chapter_context"])])
     lines.extend(["", "Use BHF method: observe first, interpret in literary and canonical context, and keep chronological claims broad and careful."])
     return "\n".join(lines)
 
@@ -548,14 +573,15 @@ def maps_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
     guide = geography_for_book(str(context["book"]))
     testament = testament_for_book(str(context["book"]))
     map_context = optional_map_context(form)
-    lines = [f"Using BHF, give geography notes for ASV {context['reference']}.", f"Testament context: {testament}. Broad region: {guide['region']}."]
+    label = translation_label(context)
+    lines = [f"Using BHF, give geography notes for {label} {context['reference']}.", f"Testament context: {testament}. Broad region: {guide['region']}."]
     if map_context:
         lines.extend(["", "Structured map context retrieved from the local map layer:", map_context])
     if user_question:
         lines.append(f"User question: {user_question}")
-    lines.extend(["", "Identify places named or implied in the passage and keep the result text-based for now.", "Mention when a place's exact location is debated.", "Do not invent locations if uncertain.", "Keep this as a geography helper until real map data is added.", guide["notes"], "", f"Selected text (ASV {context['reference']}):", context["selected_text"]])
+    lines.extend(["", "Identify places named or implied in the passage and keep the result text-based for now.", "Mention when a place's exact location is debated.", "Do not invent locations if uncertain.", "Keep this as a geography helper until real map data is added.", guide["notes"], "", f"Selected text ({label} {context['reference']}):", context["selected_text"]])
     if context.get("chapter_context"):
-        lines.extend(["", f"Full chapter context (ASV {context['book']} {context['chapter']}):", str(context["chapter_context"])])
+        lines.extend(["", f"Full chapter context ({label} {context['book']} {context['chapter']}):", str(context["chapter_context"])])
     lines.extend(["", "Use BHF method: observe the passage first, then note geography that is explicit, probable, or uncertain."])
     return "\n".join(lines)
 
@@ -565,12 +591,13 @@ def word_study_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> 
     user_question = str(form.get("question") or "").strip()
     testament = testament_for_book(str(context["book"]))
     source_language = "Hebrew" if testament == "Old Testament" else "Greek"
-    lines = [f"Using BHF, provide a cautious word study helper for ASV {context['reference']}.", f"The selected word or phrase is from the ASV English text: {selected_text}"]
+    label = translation_label(context)
+    lines = [f"Using BHF, provide a cautious word study helper for {label} {context['reference']}.", f"The selected word or phrase is from the {label} English text: {selected_text}"]
     if user_question:
         lines.append(f"User question: {user_question}")
-    lines.extend(["", f"Testament context: {testament}. Discuss possible {source_language} terms only as possibilities.", "The selected word is from the ASV English text.", "Do not claim exact Hebrew/Greek alignment unless the app has source-language data.", "Do not invent Strong's numbers.", "Offer likely Hebrew or Greek terms only as possibilities, with uncertainty.", "Recommend checking an actual lexicon/interlinear for confirmation.", "Explain semantic range, usage, and context cautiously.", "", f"Selected text (ASV {context['reference']}):", selected_text])
+    lines.extend(["", f"Testament context: {testament}. Discuss possible {source_language} terms only as possibilities.", f"The selected word is from the {label} English text.", "Do not claim exact Hebrew/Greek alignment unless the app has source-language data.", "Do not invent Strong's numbers.", "Offer likely Hebrew or Greek terms only as possibilities, with uncertainty.", "Recommend checking an actual lexicon/interlinear for confirmation.", "Explain semantic range, usage, and context cautiously.", "", f"Selected text ({label} {context['reference']}):", selected_text])
     if context.get("chapter_context"):
-        lines.extend(["", f"Full chapter context (ASV {context['book']} {context['chapter']}):", str(context["chapter_context"])])
+        lines.extend(["", f"Full chapter context ({label} {context['book']} {context['chapter']}):", str(context["chapter_context"])])
     lines.extend(["", "Use BHF method: original audience, literary context, genre awareness, intertextuality when relevant, theological caution, and application only after interpretation."])
     return "\n".join(lines)
 

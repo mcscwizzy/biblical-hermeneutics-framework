@@ -68,7 +68,11 @@ def base_url() -> str:
     temp_root = Path(temp_dir.name)
     db_path = temp_root / "study.sqlite"
     config_path = temp_root / "web-config.json"
-    port = _free_port()
+    try:
+        port = _free_port()
+    except PermissionError as exc:
+        temp_dir.cleanup()
+        pytest.skip(f"GUI tests require socket access: {exc}")
     local_base_url = f"{DEFAULT_BASE_URL.rsplit(':', 1)[0]}:{port}"
 
     canonical_root = temp_root / "canonical_library"

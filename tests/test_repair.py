@@ -120,6 +120,32 @@ class RepairPromptTests(unittest.TestCase):
         self.assertIn("Application", system_prompt)
         self.assertIn("Cautions / Uncertainty", system_prompt)
 
+    def test_json_repair_prompt_requests_single_answer_field(self):
+        system_prompt, user_prompt = build_repair_prompt(
+            original_question="What does John 3:16 mean?",
+            question_context=QuestionContext(question_type="passage_study"),
+            reference_context=ReferenceContext(
+                book="John",
+                chapter=3,
+                verse=16,
+                testament="NT",
+                is_reference_based=True,
+            ),
+            genre_context=GenreContext(primary_genre="gospel"),
+            original_answer='{"analysis":"private reasoning"}',
+            validation_result=ValidationResult(
+                passed=False,
+                score=20,
+                warnings=["No answer text was extracted."],
+            ),
+            force_json_answer=True,
+        )
+
+        combined = system_prompt + "\n" + user_prompt
+        self.assertIn('Use exactly this JSON shape: {"answer":"your complete answer here"}', combined)
+        self.assertIn("Do not include analysis, metadata, tools, sources-used sections, or additional JSON keys.", combined)
+        self.assertIn("Return the repaired answer only.", combined)
+
 
 if __name__ == "__main__":
     unittest.main()

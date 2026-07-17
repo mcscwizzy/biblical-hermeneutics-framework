@@ -98,10 +98,11 @@ compact summaries under `.bhf/sessions/`, and is ignored by git.
 
 The optional FastAPI web UI includes an offline ASV reader. Run
 `uvicorn bhf_web.app:app --reload --host 127.0.0.1 --port 8000`, open
-`http://127.0.0.1:8000`, select public-domain ASV text, ask BHF about the
-chapter or selected verses, and keep local-only study notes under
-`.bhf/study.sqlite`. The reader also supports right-click study actions,
-persisted highlights, and saved studies.
+`http://127.0.0.1:8000`, and use ASV by default or open the translation
+manager to install curated public-domain translations for offline use. The
+reader keeps local-only study notes under `.bhf/study.sqlite` and supports
+right-click study actions, persisted highlights, saved studies, and a saved
+default translation.
 
 For mobile/PWA details, see [`docs/local-ui.md`](docs/local-ui.md). It covers
 the shared app dock, runtime config, and install steps for iOS and Android.
@@ -117,7 +118,7 @@ It starts both the app and Ollama with `docker compose up -d`, uses
 Current right-click study actions include Ancient Context, Literary Context,
 Cross References, Related OT Themes, Fulfillment in the NT, Compare
 Translations, Timeline, Maps, Save Study, and a guarded Word Study helper for
-ASV English selections.
+the selected installed translation.
 
 ---
 
@@ -152,4 +153,7 @@ contribution must pass `validate.py` and the **neutrality + sourcing** review.
 - **Content** (`framework/`, `docs/`, `profiles/`, `examples/`): [CC BY 4.0](LICENSE-CONTENT)
 - **Code** (`tools/`, CI): [MIT](LICENSE)
 - **Bundled ASV Bible text** (`bhf_agent/data/asv_bible.json`): American
-  Standard Version, public domain in the United States.
+  Standard Version, public domain in the United States. Additional curated
+  translations can be downloaded or privately imported for local use, but
+  third-party availability does not by itself make a translation legally
+  redistributable.

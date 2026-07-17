@@ -4,6 +4,7 @@ import unittest
 from unittest.mock import patch
 
 import bhf_agent.bible as bible_module
+from bhf_agent import translation_storage
 from bhf_agent.bible import (
     BibleError,
     compare_translation_passages,
@@ -31,6 +32,35 @@ class BibleDatasetTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.data = load_asv_bible()
+
+    def _with_installed_kjv(self):
+        tmpdir = tempfile.TemporaryDirectory()
+        patcher = patch.object(translation_storage, "TRANSLATIONS_PATH", Path(tmpdir.name))
+        patcher.start()
+        self.addCleanup(patcher.stop)
+        self.addCleanup(tmpdir.cleanup)
+        kjv = load_kjv_bible()
+        translation_storage.write_json_atomic(Path(tmpdir.name) / "kjv.json", kjv)
+        translation_storage.write_json_atomic(
+            Path(tmpdir.name) / "kjv.metadata.json",
+            {
+                "translation_id": "kjv",
+                "name": "King James Version",
+                "source_type": "beblia_xml",
+                "source_url": "https://raw.githubusercontent.com/Beblia/Holy-Bible-XML-Format/master/EnglishKJBible.xml",
+                "source_repository": "https://github.com/Beblia/Holy-Bible-XML-Format",
+                "installed_at": "2026-07-17T00:00:00Z",
+                "source_sha256": "test",
+                "normalized_sha256": "test",
+                "book_count": 66,
+                "chapter_count": 1189,
+                "verse_count": 31103,
+                "license_status": "public_domain_us",
+                "third_party": True,
+                "private_local_install": False,
+            },
+        )
+        return tmpdir
 
     def test_load_asv_dataset(self):
         self.assertEqual(self.data["translation"]["id"], "ASV")
@@ -62,6 +92,7 @@ class BibleDatasetTests(unittest.TestCase):
         self.assertEqual(books[-1]["chapters"], 22)
 
     def test_list_translation_books_uses_requested_translation(self):
+        self._with_installed_kjv()
         books = list_translation_books("kjv")
 
         self.assertEqual(books[0], {"name": "Genesis", "order": 1, "chapters": 50})
@@ -75,6 +106,7 @@ class BibleDatasetTests(unittest.TestCase):
         self.assertEqual(chapter["verses"][0]["text"], "In the beginning was the Word, and the Word was with God, and the Word was God.")
 
     def test_resolve_translation_chapter_uses_requested_translation(self):
+        self._with_installed_kjv()
         chapter = resolve_translation_chapter("kjv", "John", 3)
 
         self.assertEqual(chapter["translation"]["id"], "KJV")
@@ -119,23 +151,13 @@ class BibleDatasetTests(unittest.TestCase):
         </XMLBIBLE>
         """
 
-        with tempfile.TemporaryDirectory() as tmpdir, patch.object(
-            bible_module,
-            "IMPORTED_TRANSLATIONS_DIR",
-            Path(tmpdir),
-        ):
-            result = save_imported_xml_translation(
+        with self.assertRaisesRegex(ValueError, "complete expected canon"):
+            save_imported_xml_translation(
                 "esv",
                 xml,
                 source_filename="esv.xml",
                 translation_name="English Standard Version",
             )
-            chapter = resolve_translation_chapter("esv", "Genesis", 1)
-
-        self.assertTrue(result["private_local_install"])
-        self.assertEqual(result["book_count"], 1)
-        self.assertEqual(chapter["translation"]["id"], "ESV")
-        self.assertEqual(chapter["verses"][0]["text"], "Imported Genesis text.")
 
     def test_resolve_invalid_chapter(self):
         with self.assertRaisesRegex(BibleError, "John has no chapter 99"):
@@ -177,6 +199,7 @@ class BibleDatasetTests(unittest.TestCase):
         self.assertIn("In him was life", context["chapter_context"])
 
     def test_compare_translation_passages_returns_verse_rows(self):
+        self._with_installed_kjv()
         comparison = compare_translation_passages("John", 1, 1, 2)
 
         self.assertEqual(comparison["reference"], "John 1:1-2")

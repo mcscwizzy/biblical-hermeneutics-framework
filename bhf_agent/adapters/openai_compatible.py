@@ -31,6 +31,9 @@ class OpenAICompatibleAdapter(ChatAdapter):
     def endpoint(self) -> str:
         return f"{self.base_url}/chat/completions"
 
+    def supports_json_schema_response_format(self) -> bool:
+        return False
+
     def chat(self, request: ChatRequest) -> ChatResponse:
         payload = {
             "model": request.model,
@@ -195,21 +198,63 @@ def _extract_text(data: Any) -> tuple[Optional[str], Optional[str]]:
         return None, "OpenAI-compatible endpoint returned malformed response: choices is missing or not a list"
     if not choices:
         return None, "OpenAI-compatible endpoint returned empty choices; response did not include message text"
-    first = choices[0]
-    if not isinstance(first, dict):
-        return None, "OpenAI-compatible endpoint returned malformed response: first choice is not an object"
-    message = first.get("message")
-    if isinstance(message, dict) and isinstance(message.get("content"), str):
-        content = message["content"]
-        if not content.strip():
-            return None, "OpenAI-compatible endpoint returned empty message content"
-        return content, None
-    if isinstance(first.get("text"), str):
-        text = first["text"]
-        if not text.strip():
+    empty_error: Optional[str] = None
+    for choice in choices:
+        text, error = _extract_choice_text(choice)
+        if text:
+            return text, None
+        if error and empty_error is None:
+            empty_error = error
+    output = data.get("output")
+    if isinstance(output, list):
+        for item in output:
+            text = _extract_block_text(item)
+            if text:
+                return text, None
+    return None, empty_error or "OpenAI-compatible endpoint response did not include message text"
+
+
+def _extract_choice_text(choice: Any) -> tuple[Optional[str], Optional[str]]:
+    if not isinstance(choice, dict):
+        return None, None
+    for key in ("message", "delta", "text", "content", "output"):
+        value = choice.get(key)
+        if value is None:
+            continue
+        if key == "message" and isinstance(value, dict):
+            content = value.get("content")
+            if isinstance(content, str) and not content.strip():
+                return None, "OpenAI-compatible endpoint returned empty message content"
+        if key in {"text", "content"} and isinstance(value, str) and not value.strip():
             return None, "OpenAI-compatible endpoint returned empty text content"
-        return text, None
-    return None, "OpenAI-compatible endpoint response did not include message text"
+        text = _extract_block_text(value)
+        if text:
+            return text, None
+    return None, None
+
+
+def _extract_block_text(value: Any) -> Optional[str]:
+    if isinstance(value, str):
+        text = value.strip()
+        return text or None
+    if isinstance(value, list):
+        blocks: list[str] = []
+        for item in value:
+            text = _extract_block_text(item)
+            if text:
+                blocks.append(text)
+        return "\n".join(blocks) if blocks else None
+    if isinstance(value, dict):
+        block_type = str(value.get("type") or value.get("role") or "").strip().lower()
+        if block_type in {"analysis", "debug", "reasoning", "tool_call", "tool_calls"}:
+            return None
+        for key in ("content", "text", "output_text", "answer", "response", "delta"):
+            if key in value:
+                text = _extract_block_text(value.get(key))
+                if text:
+                    return text
+        return None
+    return None
 
 
 def _available_models(data: Any) -> list[str]:

@@ -56,6 +56,14 @@ class ChatResponse(Serializable):
     def answer(self, value: str) -> None:
         self.text = value
 
+    @property
+    def raw_response(self) -> Optional[Union[dict[str, Any], str]]:
+        return self.raw_provider_response
+
+    @raw_response.setter
+    def raw_response(self, value: Optional[Union[dict[str, Any], str]]) -> None:
+        self.raw_provider_response = value
+
 
 @dataclass
 class ReferenceContext(Serializable):

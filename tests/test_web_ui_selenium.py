@@ -50,9 +50,12 @@ except ImportError:  # pragma: no cover - optional local dependency
 
 
 def _free_port() -> int:
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-        sock.bind(("127.0.0.1", 0))
-        return sock.getsockname()[1]
+    try:
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+            sock.bind(("127.0.0.1", 0))
+            return sock.getsockname()[1]
+    except PermissionError as exc:
+        raise unittest.SkipTest(f"Browser smoke tests require socket access: {exc}") from exc
 
 
 def _wait_for_url(url: str, timeout: float = 20.0) -> None:

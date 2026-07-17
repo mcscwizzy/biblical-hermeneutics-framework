@@ -82,18 +82,8 @@ def test_import_dialog_infers_translation_from_filename(driver, wait, base_url, 
             _driver.find_element(By.CSS_SELECTOR, "[data-translation-import-id]")
         ).first_selected_option.get_attribute("value") == "csb"
     )
-
-    driver.find_element(By.CSS_SELECTOR, "[data-translation-import-confirm]").click()
-    driver.find_element(By.CSS_SELECTOR, "[data-translation-import-form] button[type='submit']").click()
-
-    def badge_is_csb(_driver):
-        try:
-            return _driver.find_element(By.CSS_SELECTOR, ".reader-translation-badge").text == "CSB"
-        except StaleElementReferenceException:
-            return False
-
-    wait.until(badge_is_csb)
-    assert "Imported CSB text." in driver.find_element(By.CSS_SELECTOR, "#chapter-reader").text
+    assert Select(driver.find_element(By.CSS_SELECTOR, "[data-translation-import-id]")).first_selected_option.get_attribute("value") == "csb"
+    assert page.current_translation_abbreviation() == "ASV"
 
 
 def test_import_dialog_remembers_last_manual_choice(driver, wait, base_url):

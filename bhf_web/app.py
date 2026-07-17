@@ -20,12 +20,21 @@ from bhf_agent.bible import (
     resolve_translation_chapter,
 )
 from bhf_agent.translation_catalog import (
-    LICENSE_REQUIRED_EXPLANATION,
-    PROTECTED_TRANSLATION_ACTIONS,
     catalog_by_id,
-    github_download_metadata,
     import_translation,
     translation_selector_sections,
+)
+from bhf_agent.translation_installer import (
+    TranslationInstallError,
+    download_translation,
+    get_translation_installation,
+    list_installed_translations,
+    remove_translation,
+)
+from bhf_agent.translation_settings import (
+    get_default_reader_translation,
+    save_reader_settings,
+    set_default_reader_translation,
 )
 from bhf_agent.runner import BHFAgent
 from bhf_agent.study_db import (
@@ -216,64 +225,132 @@ def create_app() -> FastAPI:
                     "config_warning": loaded.warning,
                     "cesium_ion_token": os.environ.get("BHF_CESIUM_ION_TOKEN", "").strip(),
                     "books": list_books(),
+                    "default_translation": get_default_reader_translation(),
                     "test_mode": settings.TEST_MODE,
                 }
             ),
         )
 
     @web_app.get("/api/bible/books", response_class=JSONResponse)
-    async def bible_books(translation: str = "asv") -> JSONResponse:
+    async def bible_books(translation: str | None = None) -> JSONResponse:
         try:
-            return JSONResponse({"books": list_translation_books(translation)})
+            return JSONResponse({"books": list_translation_books(translation or get_default_reader_translation())})
         except BibleError as exc:
             return JSONResponse({"error": str(exc)}, status_code=404)
 
+    def _installed_translation_ids() -> list[str]:
+        return [
+            str(entry.get("translation_id") or "").lower()
+            for entry in list_installed_translations()
+            if bool(entry.get("installed"))
+        ]
+
+    def _translation_state_payload() -> dict[str, object]:
+        installed_ids = _installed_translation_ids()
+        default_translation = get_default_reader_translation()
+        sections = translation_selector_sections(
+            installed_translation_ids=installed_ids,
+            default_translation_id=default_translation,
+        )
+        translations: list[dict[str, object]] = []
+        for entry in sections["catalog"]:
+            installed = entry["id"] in installed_ids
+            translations.append(
+                {
+                    "id": entry["id"],
+                    "name": entry["name"],
+                    "abbreviation": entry["abbreviation"],
+                    "language": entry["language"],
+                    "language_code": entry["language_code"],
+                    "bundled": bool(entry.get("bundled", False)),
+                    "install_mode": entry.get("install_mode"),
+                    "license_status": entry.get("license_status"),
+                    "source": entry.get("source"),
+                    "validation": entry.get("validation"),
+                    "installed": installed,
+                    "can_select": installed,
+                    "can_download": bool(entry.get("install_mode") == "direct_download" and not installed),
+                    "can_remove": bool(installed and not entry.get("bundled", False)),
+                    "can_set_default": installed,
+                    "status_label": (
+                        "Built in"
+                        if entry["id"] == "asv"
+                        else "Installed locally"
+                        if installed
+                        else entry.get("status_label")
+                        if entry.get("status_label")
+                        else "Download from GitHub"
+                        if entry.get("install_mode") == "direct_download"
+                        else "License required"
+                    ),
+                    "third_party": bool(entry.get("third_party", False)),
+                    "third_party_notice": entry.get("third_party_notice") or "",
+                }
+            )
+        return {
+            "translations": translations,
+            "default_translation": default_translation,
+            "catalog": sections["catalog"],
+            "sections": sections["sections"],
+        }
+
+    @web_app.get("/api/translations", response_class=JSONResponse)
+    async def translations_index() -> JSONResponse:
+        return JSONResponse(_translation_state_payload())
+
     @web_app.get("/api/translations/catalog", response_class=JSONResponse)
     async def translations_catalog() -> JSONResponse:
-        return JSONResponse(translation_selector_sections())
+        return JSONResponse(_translation_state_payload())
 
     @web_app.get("/api/translations/{translation_id}", response_class=JSONResponse)
     async def translation_detail(translation_id: str) -> JSONResponse:
         entry = catalog_by_id().get(translation_id.lower())
         if not entry:
             return JSONResponse({"error": "unknown translation"}, status_code=404)
-        return JSONResponse(entry)
+        return JSONResponse(
+            {
+                "translation": entry,
+                "installation": get_translation_installation(translation_id),
+            }
+        )
 
     @web_app.post("/api/translations/{translation_id}/download", response_class=JSONResponse)
     async def translation_download(translation_id: str) -> JSONResponse:
-        translation_id = translation_id.lower()
-        entry = catalog_by_id().get(translation_id)
-        if not entry:
-            return JSONResponse({"error": "unknown translation"}, status_code=404)
-        if entry["license_status"] == "copyrighted":
-            return JSONResponse(
-                {
-                    "error": "license required",
-                    "translation_id": translation_id,
-                    "download_enabled": False,
-                    "license_explanation": LICENSE_REQUIRED_EXPLANATION,
-                    "actions": list(PROTECTED_TRANSLATION_ACTIONS),
-                },
-                status_code=403,
-            )
-        metadata = github_download_metadata(translation_id)
-        if metadata is None:
-            return JSONResponse(
-                {
-                    "error": "translation is not approved for GitHub download",
-                    "translation_id": translation_id,
-                    "download_enabled": False,
-                },
-                status_code=400,
-            )
-        return JSONResponse(
-            {
-                **metadata,
-                "download_enabled": True,
-                "availability": "installed",
-                "offline_supported": True,
-            }
-        )
+        try:
+            payload = dict(download_translation(translation_id))
+            payload.setdefault("download_enabled", True)
+            return JSONResponse(payload)
+        except TranslationInstallError as exc:
+            entry = catalog_by_id().get(translation_id.lower())
+            status_code = 403 if entry and entry.get("install_mode") == "licensed_provider" else 400
+            payload = {"error": str(exc), "translation_id": translation_id.lower(), "download_enabled": False}
+            if status_code == 403:
+                payload.update(
+                    {
+                        "license_explanation": "This translation is copyrighted and is not currently available for direct download through BHF.",
+                        "actions": ["Learn more", "Import legally obtained XML", "Configure licensed provider"],
+                    }
+                )
+            return JSONResponse(payload, status_code=status_code)
+
+    @web_app.post("/api/translations/{translation_id}/install", response_class=JSONResponse)
+    async def translation_install(translation_id: str) -> JSONResponse:
+        try:
+            payload = dict(download_translation(translation_id))
+            payload.setdefault("download_enabled", True)
+            return JSONResponse(payload)
+        except TranslationInstallError as exc:
+            entry = catalog_by_id().get(translation_id.lower())
+            status_code = 403 if entry and entry.get("install_mode") == "licensed_provider" else 400
+            payload = {"error": str(exc), "translation_id": translation_id.lower(), "download_enabled": False}
+            if status_code == 403:
+                payload.update(
+                    {
+                        "license_explanation": "This translation is copyrighted and is not currently available for direct download through BHF.",
+                        "actions": ["Learn more", "Import legally obtained XML", "Configure licensed provider"],
+                    }
+                )
+            return JSONResponse(payload, status_code=status_code)
 
     @web_app.post("/api/translations/import/notice", response_class=JSONResponse)
     async def translation_import_notice(request: Request) -> JSONResponse:
@@ -321,17 +398,41 @@ def create_app() -> FastAPI:
         except (BibleError, ValueError) as exc:
             return JSONResponse({"error": str(exc)}, status_code=400)
 
-    @web_app.get("/api/bible/{book}/{chapter}", response_class=JSONResponse)
-    async def bible_chapter(book: str, chapter: int, translation: str = "asv") -> JSONResponse:
+    @web_app.get("/api/settings/reader", response_class=JSONResponse)
+    async def reader_settings() -> JSONResponse:
+        return JSONResponse({"default_translation": get_default_reader_translation()})
+
+    @web_app.put("/api/settings/reader", response_class=JSONResponse)
+    async def update_reader_settings(request: Request) -> JSONResponse:
+        payload = await request.json()
         try:
-            return JSONResponse(resolve_translation_chapter(translation, book, chapter))
+            normalized = set_default_reader_translation(str(payload.get("default_translation") or ""))
+        except ValueError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+        return JSONResponse({"default_translation": normalized})
+
+    @web_app.delete("/api/translations/{translation_id}", response_class=JSONResponse)
+    async def translation_delete(translation_id: str) -> JSONResponse:
+        current_default = get_default_reader_translation()
+        try:
+            removed = remove_translation(translation_id)
+        except TranslationInstallError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+        if removed and current_default == translation_id.lower():
+            save_reader_settings({"default_translation": "asv"})
+        return JSONResponse({"translation_id": translation_id.lower(), "removed": removed})
+
+    @web_app.get("/api/bible/{book}/{chapter}", response_class=JSONResponse)
+    async def bible_chapter(book: str, chapter: int, translation: str | None = None) -> JSONResponse:
+        try:
+            return JSONResponse(resolve_translation_chapter(translation or get_default_reader_translation(), book, chapter))
         except BibleError as exc:
             return JSONResponse({"error": str(exc)}, status_code=404)
 
     @web_app.get("/api/bible/search", response_class=JSONResponse)
-    async def bible_search(q: str, limit: int = 25) -> JSONResponse:
+    async def bible_search(q: str, limit: int = 25, translation: str | None = None) -> JSONResponse:
         try:
-            return JSONResponse(search_bible_text(q, limit=limit))
+            return JSONResponse(search_bible_text(q, limit=limit, translation=translation or get_default_reader_translation()))
         except (BibleError, ValueError) as exc:
             return JSONResponse({"error": str(exc)}, status_code=400)
 

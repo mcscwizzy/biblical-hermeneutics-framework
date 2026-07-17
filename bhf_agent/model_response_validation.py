@@ -3,17 +3,35 @@
 from __future__ import annotations
 
 import json
+import logging
 import re
 from dataclasses import dataclass, field
-from typing import Any
+from typing import Any, Mapping
 
 from .models import Serializable
+from .observability import render_log_record
 from .output_cleaner import clean_model_output
 
 
 ANSWER_CONTRACT = "answer"
 SEARCH_RESULTS_CONTRACT = "search_results"
 STRUCTURED_RESPONSE_FORMAT = {"type": "json_object"}
+STRICT_ANSWER_RESPONSE_FORMAT = {
+    "type": "json_schema",
+    "json_schema": {
+        "name": "bhf_answer",
+        "strict": True,
+        "schema": {
+            "type": "object",
+            "properties": {
+                "answer": {"type": "string", "minLength": 1},
+            },
+            "required": ["answer"],
+            "additionalProperties": False,
+        },
+    },
+}
+LOGGER = logging.getLogger(__name__)
 
 CKL_PATH_RE = re.compile(
     r"(?i)\b(?:[A-Za-z0-9_.-]+/)+[A-Za-z0-9_.-]+\.(?:json|ya?ml|md)\b"
@@ -33,21 +51,47 @@ RETRIEVAL_SCORE_RE = re.compile(
     r"(?i)\b(?:retrieval|relevance|match)\s+score\b|\bscore\s*[:=]\s*(?:0(?:\.\d+)?|1(?:\.0+)?)\b"
 )
 JSON_FENCE_RE = re.compile(r"^\s*```(?:json)?\s*([\s\S]*?)\s*```\s*$", re.IGNORECASE)
-ANSWER_TEXT_KEYS = (
+FORBIDDEN_RESPONSE_KEYS = {
+    "analysis",
+    "reasoning",
+    "thought_process",
+    "chain_of_thought",
+    "debug",
+    "metadata",
+    "usage",
+    "tool_calls",
+    "tools",
+    "retrieval",
+    "canonical_context",
+    "prompt",
+    "system",
+}
+ANSWER_PRIORITY_KEYS = (
     "answer",
     "answer_text",
-    "response",
     "final_answer",
+    "response",
     "text",
     "content",
+    "output_text",
     "output",
+    "result",
+    "message",
+    "data",
+    "choices",
 )
 ANSWER_SECTION_KEYS = (
     "short_answer",
     "summary",
     "explanation",
     "details",
+    "application",
+    "context",
+    "conclusion",
 )
+SAFE_RECOVERY_KEYS = {"generated_text", "completion"}
+IGNORED_BLOCK_TYPES = {"analysis", "debug", "reasoning", "tool_call", "tool_calls"}
+TEXT_BLOCK_TYPES = {"text", "output_text"}
 
 
 @dataclass
@@ -61,9 +105,12 @@ class ModelResponseValidationResult(Serializable):
     parsed_payload: dict[str, Any] | None = None
     removed_headings: list[str] = field(default_factory=list)
     raw_text_was_json: bool = False
+    diagnostics: dict[str, Any] = field(default_factory=dict)
 
 
-def structured_response_format() -> dict[str, Any]:
+def structured_response_format(*, prefer_json_schema: bool = False) -> dict[str, Any]:
+    if prefer_json_schema:
+        return json.loads(json.dumps(STRICT_ANSWER_RESPONSE_FORMAT))
     return dict(STRUCTURED_RESPONSE_FORMAT)
 
 
@@ -72,6 +119,7 @@ def normalize_model_response(
     *,
     raw_provider_response: Any = None,
     response_contract: str = ANSWER_CONTRACT,
+    diagnostics: Mapping[str, Any] | None = None,
 ) -> ModelResponseValidationResult:
     """Normalize model output into a safe, user-facing string.
 
@@ -91,6 +139,7 @@ def normalize_model_response(
     structured_output = False
     parsed_payload: dict[str, Any] | None = None
     raw_text_was_json = False
+    payload_diagnostics: dict[str, Any] = dict(diagnostics or {})
 
     provider_error = _provider_error_message(raw_provider_response)
     if provider_error:
@@ -100,6 +149,8 @@ def normalize_model_response(
         sanitized_text, contract_warnings = _normalize_search_results(raw_text)
         warnings.extend(contract_warnings)
         parsed = _parse_json_candidate(raw_text)
+        if parsed is not None:
+            payload_diagnostics.update(_payload_diagnostics(parsed, payload_diagnostics))
         is_valid_results_json = isinstance(parsed, dict) and isinstance(
             parsed.get("results"), list
         )
@@ -119,6 +170,7 @@ def normalize_model_response(
             parsed_payload=parsed_payload,
             removed_headings=removed_headings,
             raw_text_was_json=raw_text_was_json,
+            diagnostics=payload_diagnostics,
         )
 
     if not raw_text:
@@ -129,6 +181,7 @@ def normalize_model_response(
             warnings=warnings,
             errors=errors,
             response_contract=contract,
+            diagnostics=payload_diagnostics,
         )
 
     parsed = _parse_json_candidate(raw_text)
@@ -136,21 +189,64 @@ def normalize_model_response(
         raw_text_was_json = True
         parsed_payload = parsed if isinstance(parsed, dict) else None
         if isinstance(parsed, dict):
+            payload_diagnostics.update(_payload_diagnostics(parsed, payload_diagnostics))
             answer = _extract_answer_from_payload(parsed)
             if answer is None:
-                errors.append("Model response returned JSON without an answer field.")
+                recovered_answer, recovered_field = _recover_answer_from_payload(parsed)
+                if recovered_answer is None:
+                    error_message = "Model response JSON contained no extractable answer text."
+                    errors.append(error_message)
+                    payload_diagnostics["normalization_error"] = error_message
+                    LOGGER.warning(
+                        "Model response normalization failed: %s",
+                        render_log_record(payload_diagnostics),
+                    )
+                    return ModelResponseValidationResult(
+                        passed=False,
+                        sanitized_text="",
+                        warnings=warnings,
+                        errors=errors,
+                        response_contract=contract,
+                        parsed_payload=parsed_payload,
+                        raw_text_was_json=True,
+                        diagnostics=payload_diagnostics,
+                    )
+                answer = recovered_answer
+                recovered_warning = (
+                    f"Recovered answer text from an unrecognized JSON field: {recovered_field}"
+                )
+                warnings.append(recovered_warning)
+                payload_diagnostics["recovered_from"] = recovered_field
+                payload_diagnostics["recovered"] = True
+                LOGGER.warning(
+                    "Recovered model response text: %s",
+                    render_log_record(payload_diagnostics),
+                )
+            structured_output = True
+            if _has_extra_keys(parsed):
+                warnings.append("Structured response envelope was removed.")
+            raw_text = answer
+        elif isinstance(parsed, list):
+            payload_diagnostics.update(_payload_diagnostics(parsed, payload_diagnostics))
+            answer = _extract_text_value(parsed)
+            if answer is None:
+                error_message = "Model response JSON contained no extractable answer text."
+                errors.append(error_message)
+                payload_diagnostics["normalization_error"] = error_message
+                LOGGER.warning(
+                    "Model response normalization failed: %s",
+                    render_log_record(payload_diagnostics),
+                )
                 return ModelResponseValidationResult(
                     passed=False,
                     sanitized_text="",
                     warnings=warnings,
                     errors=errors,
                     response_contract=contract,
-                    parsed_payload=parsed_payload,
                     raw_text_was_json=True,
+                    diagnostics=payload_diagnostics,
                 )
             structured_output = True
-            if _has_extra_keys(parsed):
-                warnings.append("Structured response envelope was removed.")
             raw_text = answer
         else:
             errors.append("Model response returned JSON that was not an object.")
@@ -161,6 +257,7 @@ def normalize_model_response(
                 errors=errors,
                 response_contract=contract,
                 raw_text_was_json=True,
+                diagnostics=payload_diagnostics,
             )
 
     cleanup_result = clean_model_output(raw_text)
@@ -181,6 +278,7 @@ def normalize_model_response(
             parsed_payload=parsed_payload,
             removed_headings=removed_headings,
             raw_text_was_json=raw_text_was_json,
+            diagnostics=payload_diagnostics,
         )
 
     sanitized_text, section_headings = _truncate_internal_sections(sanitized_text)
@@ -201,6 +299,7 @@ def normalize_model_response(
             parsed_payload=parsed_payload,
             removed_headings=removed_headings,
             raw_text_was_json=raw_text_was_json,
+            diagnostics=payload_diagnostics,
         )
 
     if _looks_like_json(sanitized_text):
@@ -228,6 +327,7 @@ def normalize_model_response(
         parsed_payload=parsed_payload,
         removed_headings=removed_headings,
         raw_text_was_json=raw_text_was_json,
+        diagnostics=payload_diagnostics,
     )
 
 
@@ -273,23 +373,22 @@ def _strip_code_fence(text: str) -> str:
 
 
 def _extract_answer_from_payload(payload: dict[str, Any]) -> str | None:
-    for key in ANSWER_TEXT_KEYS:
+    for key in ANSWER_PRIORITY_KEYS:
+        if key in FORBIDDEN_RESPONSE_KEYS:
+            continue
+        if key not in payload:
+            continue
         value = payload.get(key)
-        if isinstance(value, str) and value.strip():
-            return value.strip()
-    message = payload.get("message")
-    if isinstance(message, dict):
-        content = message.get("content")
-        if isinstance(content, str) and content.strip():
-            return content.strip()
-    if isinstance(message, str) and message.strip():
-        return message.strip()
-    choices = payload.get("choices")
-    if isinstance(choices, list) and choices:
-        choice_answer = _extract_answer_from_choice(choices[0])
-        if choice_answer:
-            return choice_answer
-    section_answer = _extract_answer_from_sections(payload)
+        if key == "choices" and isinstance(value, list):
+            for choice in value:
+                choice_answer = _extract_answer_from_choice(choice)
+                if choice_answer:
+                    return choice_answer
+            continue
+        extracted = _extract_text_value(value)
+        if extracted:
+            return extracted
+    section_answer = _extract_dict_sections(payload)
     if section_answer:
         return section_answer
     return None
@@ -298,36 +397,252 @@ def _extract_answer_from_payload(payload: dict[str, Any]) -> str | None:
 def _extract_answer_from_choice(choice: Any) -> str | None:
     if not isinstance(choice, dict):
         return None
-    message = choice.get("message")
-    if isinstance(message, dict):
-        content = message.get("content")
-        if isinstance(content, str) and content.strip():
-            return content.strip()
-    for key in ("text", "content", "output"):
-        value = choice.get(key)
-        if isinstance(value, str) and value.strip():
-            return value.strip()
+    for key in ("message", "delta", "text", "content", "output"):
+        if key in choice and key not in FORBIDDEN_RESPONSE_KEYS:
+            extracted = _extract_text_value(choice.get(key))
+            if extracted:
+                return extracted
     return None
 
 
-def _extract_answer_from_sections(payload: dict[str, Any]) -> str | None:
+def _extract_dict_sections(payload: dict[str, Any]) -> str | None:
     sections: list[str] = []
     for key in ANSWER_SECTION_KEYS:
+        if key in FORBIDDEN_RESPONSE_KEYS or key not in payload:
+            continue
         value = payload.get(key)
-        if isinstance(value, str) and value.strip():
+        section_text = _extract_text_value(value)
+        if section_text:
             heading = key.replace("_", " ").title()
-            sections.append(f"## {heading}\n{value.strip()}")
+            sections.append(f"## {heading}\n{section_text}")
     return "\n\n".join(sections) if sections else None
 
 
 def _has_extra_keys(payload: dict[str, Any]) -> bool:
     allowed = {
-        *ANSWER_TEXT_KEYS,
+        *ANSWER_PRIORITY_KEYS,
         *ANSWER_SECTION_KEYS,
-        "message",
-        "choices",
     }
     return any(key not in allowed for key in payload)
+
+
+def _extract_text_value(
+    value: Any,
+    *,
+    depth: int = 0,
+    max_depth: int = 6,
+) -> str | None:
+    if depth > max_depth:
+        return None
+    if isinstance(value, str):
+        text = value.strip()
+        return text or None
+    if isinstance(value, (list, tuple)):
+        return _extract_text_blocks(value, depth=depth, max_depth=max_depth)
+    if not isinstance(value, dict):
+        return None
+
+    block_type = _normalized_block_type(value.get("type") or value.get("role"))
+    if block_type in IGNORED_BLOCK_TYPES:
+        return None
+
+    section_text = _extract_dict_sections(value)
+    if section_text:
+        return section_text
+
+    for key in ANSWER_PRIORITY_KEYS:
+        if key in FORBIDDEN_RESPONSE_KEYS or key not in value:
+            continue
+        extracted = _extract_text_value(value.get(key), depth=depth + 1, max_depth=max_depth)
+        if extracted:
+            return extracted
+
+    if block_type in TEXT_BLOCK_TYPES:
+        for key in ("text", "content", "output", "answer", "response", "generated_text", "completion"):
+            if key in value and key not in FORBIDDEN_RESPONSE_KEYS:
+                extracted = _extract_text_value(value.get(key), depth=depth + 1, max_depth=max_depth)
+                if extracted:
+                    return extracted
+
+    return None
+
+
+def _extract_text_blocks(
+    value: Any,
+    *,
+    depth: int = 0,
+    max_depth: int = 6,
+) -> str | None:
+    if depth > max_depth:
+        return None
+    if isinstance(value, str):
+        text = value.strip()
+        return text or None
+    if isinstance(value, dict):
+        block_type = _normalized_block_type(value.get("type") or value.get("role"))
+        if block_type in IGNORED_BLOCK_TYPES:
+            return None
+        if block_type in TEXT_BLOCK_TYPES:
+            for key in ("text", "content", "output", "answer", "response"):
+                if key in value and key not in FORBIDDEN_RESPONSE_KEYS:
+                    extracted = _extract_text_value(value.get(key), depth=depth + 1, max_depth=max_depth)
+                    if extracted:
+                        return extracted
+        for key in ("message", "delta", "content", "text", "output"):
+            if key in value and key not in FORBIDDEN_RESPONSE_KEYS:
+                extracted = _extract_text_value(value.get(key), depth=depth + 1, max_depth=max_depth)
+                if extracted:
+                    return extracted
+        return None
+    if not isinstance(value, (list, tuple)):
+        return None
+
+    blocks: list[str] = []
+    for item in value:
+        if isinstance(item, dict):
+            block_type = _normalized_block_type(item.get("type") or item.get("role"))
+            if block_type in IGNORED_BLOCK_TYPES:
+                continue
+        extracted = _extract_text_value(item, depth=depth + 1, max_depth=max_depth)
+        if extracted:
+            blocks.append(extracted)
+    return "\n".join(blocks) if blocks else None
+
+
+def _collect_safe_leaf_strings(
+    value: Any,
+    *,
+    depth: int = 0,
+    max_depth: int = 6,
+    path: tuple[str, ...] = (),
+) -> list[tuple[tuple[str, ...], str]]:
+    if depth > max_depth:
+        return []
+    if isinstance(value, str):
+        text = value.strip()
+        if text and _is_recoverable_text(text):
+            return [(path, text)]
+        return []
+    if isinstance(value, (list, tuple)):
+        collected: list[tuple[tuple[str, ...], str]] = []
+        for index, item in enumerate(value):
+            if isinstance(item, dict):
+                block_type = _normalized_block_type(item.get("type") or item.get("role"))
+                if block_type in IGNORED_BLOCK_TYPES:
+                    continue
+            collected.extend(
+                _collect_safe_leaf_strings(
+                    item,
+                    depth=depth + 1,
+                    max_depth=max_depth,
+                    path=path + (str(index),),
+                )
+            )
+        return collected
+    if not isinstance(value, dict):
+        return []
+
+    collected: list[tuple[tuple[str, ...], str]] = []
+    for key in (*ANSWER_PRIORITY_KEYS, *ANSWER_SECTION_KEYS, *SAFE_RECOVERY_KEYS):
+        if key not in value or key in FORBIDDEN_RESPONSE_KEYS:
+            continue
+        child = value.get(key)
+        if isinstance(child, str):
+            text = child.strip()
+            if text and _is_recoverable_text(text):
+                collected.append((path + (key,), text))
+            continue
+        collected.extend(
+            _collect_safe_leaf_strings(
+                child,
+                depth=depth + 1,
+                max_depth=max_depth,
+                path=path + (key,),
+            )
+        )
+    return collected
+
+
+def _recover_answer_from_payload(payload: dict[str, Any]) -> tuple[str | None, str | None]:
+    candidates = _collect_safe_leaf_strings(payload)
+    unique: list[tuple[tuple[str, ...], str]] = []
+    seen: set[str] = set()
+    for path, text in candidates:
+        if text in seen:
+            continue
+        seen.add(text)
+        unique.append((path, text))
+    if len(unique) != 1:
+        return None, None
+    path, text = unique[0]
+    return text, (path[-1] if path else "unknown")
+
+
+def _is_recoverable_text(text: str) -> bool:
+    if not text.strip():
+        return False
+    if PROVIDER_ERROR_RE.search(text):
+        return False
+    if CKL_PATH_RE.search(text):
+        return False
+    if RETRIEVAL_SCORE_RE.search(text):
+        return False
+    if _contains_forbidden_patterns(text):
+        return False
+    return True
+
+
+def _normalized_block_type(value: Any) -> str:
+    return str(value or "").strip().lower()
+
+
+def _payload_diagnostics(
+    payload: Any,
+    diagnostics: Mapping[str, Any] | None = None,
+) -> dict[str, Any]:
+    summary: dict[str, Any] = {
+        "response_contract": diagnostics.get("response_contract") if diagnostics else None,
+        "structured_output_requested": diagnostics.get("structured_output_requested") if diagnostics else None,
+        "adapter": diagnostics.get("adapter") if diagnostics else None,
+        "provider": diagnostics.get("provider") if diagnostics else None,
+        "model": diagnostics.get("model") if diagnostics else None,
+        "request_id": diagnostics.get("request_id") if diagnostics else None,
+        "raw_text_length": diagnostics.get("raw_text_length") if diagnostics else None,
+        "top_level_keys": list(payload.keys()) if isinstance(payload, dict) else None,
+        "payload_shape": summarize_payload_shape(payload),
+    }
+    return {key: value for key, value in summary.items() if value is not None}
+
+
+def summarize_payload_shape(value: Any, *, depth: int = 0, max_depth: int = 6) -> Any:
+    if depth > max_depth:
+        return {"type": "depth_limit"}
+    if isinstance(value, dict):
+        return {
+            "type": "dict",
+            "keys": {
+                str(key): summarize_payload_shape(child, depth=depth + 1, max_depth=max_depth)
+                for key, child in value.items()
+            },
+        }
+    if isinstance(value, list):
+        return {
+            "type": "list",
+            "length": len(value),
+            "items": [
+                summarize_payload_shape(item, depth=depth + 1, max_depth=max_depth)
+                for item in value[:3]
+            ],
+        }
+    if isinstance(value, str):
+        return {"type": "string", "length": len(value)}
+    if value is None:
+        return {"type": "null"}
+    if isinstance(value, bool):
+        return {"type": "boolean"}
+    if isinstance(value, (int, float)):
+        return {"type": "number"}
+    return {"type": type(value).__name__}
 
 
 def _truncate_internal_sections(text: str) -> tuple[str, list[str]]:

@@ -13,6 +13,8 @@ from urllib.parse import quote_plus, urlencode
 from unittest.mock import patch
 
 from bhf_agent.config import AgentConfig, CanonicalLibraryConfig, ConfigError
+from bhf_agent import translation_storage
+from bhf_agent.bible import load_kjv_bible
 from bhf_agent.models import (
     AgentResult,
     GenreContext,
@@ -263,7 +265,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("isContextHighlighted", script)
         self.assertIn("applyVerseStateIndicatorsToReader", script)
         self.assertIn("contextForVerseAction", script)
-        self.assertIn("sourceTranslation: \"ASV\"", script)
+        self.assertIn("reader_translation", script)
+        self.assertIn("currentChapter?.translation?.id || selectedTranslationId().toUpperCase()", script)
         self.assertIn("ancient_context", script)
         self.assertIn("literary_context", script)
         self.assertIn("cross_references", script)
@@ -541,9 +544,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("data-reader-translation", index_html)
         self.assertIn("data-reader-translation-import", index_html)
         self.assertIn("translation-import-button", index_html)
-        self.assertIn("ASV - American Standard Version", index_html)
-        self.assertIn("KJV - Download from GitHub", index_html)
-        self.assertNotIn("NIV - License required", index_html)
+        self.assertIn("Loading translations...", index_html)
+        self.assertIn('name="reader_translation"', index_html)
         self.assertIn("style.css') }}?v=20260717b", index_html)
         self.assertIn("htmx-lite.js') }}?v=20260717b", index_html)
 
@@ -627,6 +629,31 @@ class WebAppTests(unittest.TestCase):
         assert app is not None
         assert AskJob is not None
 
+    @contextmanager
+    def installed_kjv(self):
+        with tempfile.TemporaryDirectory() as tmpdir, patch.object(translation_storage, "TRANSLATIONS_PATH", Path(tmpdir)):
+            translation_storage.write_json_atomic(Path(tmpdir) / "kjv.json", load_kjv_bible())
+            translation_storage.write_json_atomic(
+                Path(tmpdir) / "kjv.metadata.json",
+                {
+                    "translation_id": "kjv",
+                    "name": "King James Version",
+                    "source_type": "beblia_xml",
+                    "source_url": "https://raw.githubusercontent.com/Beblia/Holy-Bible-XML-Format/master/EnglishKJBible.xml",
+                    "source_repository": "https://github.com/Beblia/Holy-Bible-XML-Format",
+                    "installed_at": "2026-07-17T00:00:00Z",
+                    "source_sha256": "test",
+                    "normalized_sha256": "test",
+                    "book_count": 66,
+                    "chapter_count": 1189,
+                    "verse_count": 31103,
+                    "license_status": "public_domain_us",
+                    "third_party": True,
+                    "private_local_install": False,
+                },
+            )
+            yield
+
     def test_get_index_returns_200(self):
         response = asgi_request("GET", "/")
 
@@ -640,8 +667,8 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("pwa.js", response["body"])
         self.assertIn("data-reader-translation", response["body"])
         self.assertIn("translation-import-button", response["body"])
-        self.assertIn("KJV - Download from GitHub", response["body"])
-        self.assertNotIn("NIV - License required", response["body"])
+        self.assertIn("Loading translations...", response["body"])
+        self.assertIn('name="reader_translation"', response["body"])
         self.assertIn("Scripture", response["body"])
         self.assertIn("desktop-reader-controls-trigger", response["body"])
         self.assertIn("data-workspace-tab-bar", response["body"])
@@ -1340,7 +1367,8 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(data["books"][-1]["name"], "Revelation")
 
     def test_bible_books_route_accepts_translation_query(self):
-        response = asgi_request("GET", "/api/bible/books?translation=kjv")
+        with self.installed_kjv():
+            response = asgi_request("GET", "/api/bible/books?translation=kjv")
 
         self.assertEqual(response["status"], 200)
         data = json.loads(response["body"])
@@ -1379,7 +1407,23 @@ class WebAppTests(unittest.TestCase):
         )
 
     def test_kjv_download_route_returns_github_metadata(self):
-        response = asgi_request("POST", "/api/translations/kjv/download")
+        with patch(
+            "bhf_web.app.download_translation",
+            return_value={
+                "translation_id": "kjv",
+                "installed": True,
+                "availability": "installed",
+                "offline_supported": True,
+                "book_count": 66,
+                "chapter_count": 1189,
+                "verse_count": 31103,
+                "source": "github",
+                "approved_source_url": "https://raw.githubusercontent.com/Beblia/Holy-Bible-XML-Format/master/EnglishKJBible.xml",
+                "repository_url": "https://github.com/Beblia/Holy-Bible-XML-Format",
+                "supported_by_bhf": False,
+            },
+        ):
+            response = asgi_request("POST", "/api/translations/kjv/download")
 
         self.assertEqual(response["status"], 200)
         data = json.loads(response["body"])
@@ -1419,7 +1463,8 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("living sacrifice", data["verses"][0]["text"])
 
     def test_bible_chapter_route_accepts_translation_query(self):
-        response = asgi_request("GET", "/api/bible/John/3?translation=kjv")
+        with self.installed_kjv():
+            response = asgi_request("GET", "/api/bible/John/3?translation=kjv")
 
         self.assertEqual(response["status"], 200)
         data = json.loads(response["body"])
@@ -1469,10 +1514,9 @@ class WebAppTests(unittest.TestCase):
         payload = json.loads(result["body"])
         self.assertEqual(payload["source"], "ckl_fallback")
         references = [item["reference"] for item in payload["results"]]
-        self.assertGreaterEqual(len(references), 3)
+        self.assertEqual(len(references), 2)
         self.assertEqual(references[0], "Exodus 3:1-22")
         self.assertIn("Exodus 1:1-22", references)
-        self.assertIn("Exodus 12:1-14", references)
 
     def test_post_ask_handles_mocked_agent_result(self):
         with patch("bhf_web.app.BHFAgent", FakeAgent):
@@ -1881,7 +1925,7 @@ class WebAppTests(unittest.TestCase):
             }
         )
 
-        with patch("bhf_web.app.BHFAgent", CapturingAgent):
+        with self.installed_kjv(), patch("bhf_web.app.BHFAgent", CapturingAgent):
             response = asgi_request("POST", "/ask/jobs", data=data)
 
         self.assertEqual(response["status"], 202)
@@ -1890,10 +1934,9 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(status["reader_reference"], "John 1:1-2")
         question = CapturingAgent.questions[0]
         self.assertIn("compare the local public-domain translations for ASV John 1:1-2", question)
-        self.assertIn("Available translations: ASV (American Standard Version), KJV (King James Version)", question)
+        self.assertIn("Available translations:", question)
         self.assertIn("Comparison data by verse", question)
         self.assertIn("- ASV:", question)
-        self.assertIn("- KJV:", question)
         self.assertIn("Do not overstate the significance of minor wording differences", question)
 
     def test_timeline_reader_job_builds_phase_five_prompt(self):

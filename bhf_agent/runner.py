@@ -1368,7 +1368,11 @@ class BHFAgent:
 
     def _response_format_for_contract(self, ctx: PipelineContext) -> dict[str, Any] | None:
         contract = self._response_contract(ctx.original_question)
-        if contract in {ANSWER_CONTRACT, SEARCH_RESULTS_CONTRACT}:
+        if contract == ANSWER_CONTRACT:
+            if hasattr(self.adapter, "supports_json_schema_response_format") and self.adapter.supports_json_schema_response_format():
+                return structured_response_format(prefer_json_schema=True)
+            return structured_response_format()
+        if contract == SEARCH_RESULTS_CONTRACT:
             return structured_response_format()
         return None
 
@@ -1523,10 +1527,22 @@ class BHFAgent:
         response_text: str,
         raw_provider_response: Any = None,
     ) -> ModelResponseValidationResult:
+        response_contract = self._response_contract(ctx.original_question)
+        raw_response = ctx.raw_model_response
+        diagnostics = {
+            "adapter": ctx.debug_metadata.get("adapter_type"),
+            "provider": raw_response.provider if raw_response is not None else ctx.debug_metadata.get("provider"),
+            "model": raw_response.model if raw_response is not None else ctx.debug_metadata.get("model"),
+            "request_id": ctx.debug_metadata.get("request_id"),
+            "response_contract": response_contract,
+            "structured_output_requested": bool(ctx.debug_metadata.get("response_format_requested")),
+            "raw_text_length": len(response_text or ""),
+        }
         validation_result = normalize_model_response(
             response_text,
             raw_provider_response=raw_provider_response,
-            response_contract=self._response_contract(ctx.original_question),
+            response_contract=response_contract,
+            diagnostics=diagnostics,
         )
         ctx.debug_metadata["output_cleanup_applied"] = bool(
             validation_result.removed_headings
@@ -1548,6 +1564,11 @@ class BHFAgent:
         )
         ctx.debug_metadata["response_validation_removed_headings"] = list(
             validation_result.removed_headings
+        )
+        ctx.debug_metadata["response_validation_diagnostics"] = validation_result.diagnostics
+        ctx.debug_metadata["response_validation_json_without_answer"] = any(
+            "no extractable answer text" in str(error).lower()
+            for error in validation_result.errors
         )
         if validation_result.parsed_payload is not None:
             ctx.debug_metadata["response_validation_parsed_payload"] = validation_result.parsed_payload
@@ -1709,6 +1730,7 @@ class BHFAgent:
             genre_context=ctx.genre_context,
             original_answer=ctx.cleaned_answer_text or "",
             validation_result=ctx.validation_result,
+            force_json_answer=bool(ctx.debug_metadata.get("response_validation_json_without_answer")),
         )
         chat_request = ChatRequest(
             system_prompt=system_prompt,

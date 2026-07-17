@@ -5,10 +5,22 @@ from bhf_agent.model_response_validation import (
     ANSWER_CONTRACT,
     SEARCH_RESULTS_CONTRACT,
     normalize_model_response,
+    structured_response_format,
 )
 
 
 class ModelResponseValidationTests(unittest.TestCase):
+    def test_structured_response_format_can_use_json_schema(self):
+        payload = structured_response_format(prefer_json_schema=True)
+
+        self.assertEqual(payload["type"], "json_schema")
+        self.assertEqual(payload["json_schema"]["name"], "bhf_answer")
+        self.assertTrue(payload["json_schema"]["strict"])
+        self.assertEqual(
+            payload["json_schema"]["schema"]["properties"]["answer"]["minLength"],
+            1,
+        )
+
     def test_answer_contract_extracts_structured_answer_field(self):
         result = normalize_model_response(
             '```json\n{"answer":"## 1. Short Answer\\nShechem matters."}\n```',
@@ -44,6 +56,16 @@ class ModelResponseValidationTests(unittest.TestCase):
             "## 1. Short Answer\nFollow Jesus by trusting and obeying him.",
         )
 
+    def test_answer_contract_extracts_generated_text_recovery(self):
+        result = normalize_model_response(
+            '{"generated_text":"Valid answer"}',
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertTrue(result.passed)
+        self.assertEqual(result.sanitized_text, "Valid answer")
+        self.assertIn("Recovered answer text", " ".join(result.warnings))
+
     def test_answer_contract_extracts_chat_completion_shape(self):
         result = normalize_model_response(
             json.dumps(
@@ -63,6 +85,173 @@ class ModelResponseValidationTests(unittest.TestCase):
         self.assertTrue(result.passed)
         self.assertTrue(result.structured_output)
         self.assertEqual(result.sanitized_text, "## 1. Short Answer\nShechem matters.")
+
+    def test_answer_contract_extracts_nested_answer_sections(self):
+        result = normalize_model_response(
+            json.dumps(
+                {
+                    "answer": {
+                        "summary": "Yes.",
+                        "explanation": "The passage indicates covenant renewal.",
+                        "details": "It does so in a public covenant setting.",
+                    }
+                }
+            ),
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertTrue(result.passed)
+        self.assertEqual(
+            result.sanitized_text,
+            "## Summary\nYes.\n\n"
+            "## Explanation\nThe passage indicates covenant renewal.\n\n"
+            "## Details\nIt does so in a public covenant setting.",
+        )
+
+    def test_answer_contract_extracts_generic_result_envelope(self):
+        result = normalize_model_response(
+            json.dumps({"result": {"answer": "Valid answer"}}),
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertTrue(result.passed)
+        self.assertEqual(result.sanitized_text, "Valid answer")
+
+    def test_answer_contract_extracts_ollama_message_content(self):
+        result = normalize_model_response(
+            json.dumps(
+                {
+                    "message": {
+                        "role": "assistant",
+                        "content": "Valid answer",
+                    }
+                }
+            ),
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertTrue(result.passed)
+        self.assertEqual(result.sanitized_text, "Valid answer")
+
+    def test_answer_contract_extracts_responses_api_content_blocks(self):
+        result = normalize_model_response(
+            json.dumps(
+                {
+                    "output": [
+                        {
+                            "type": "message",
+                            "content": [
+                                {"type": "output_text", "text": "First paragraph."},
+                                {"type": "output_text", "text": "Second paragraph."},
+                            ],
+                        }
+                    ]
+                }
+            ),
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertTrue(result.passed)
+        self.assertEqual(result.sanitized_text, "First paragraph.\nSecond paragraph.")
+
+    def test_answer_contract_extracts_multiple_text_blocks_in_order(self):
+        result = normalize_model_response(
+            json.dumps(
+                {
+                    "message": {
+                        "role": "assistant",
+                        "content": [
+                            {"type": "text", "text": "First paragraph."},
+                            {"type": "text", "text": "Second paragraph."},
+                        ],
+                    }
+                }
+            ),
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertTrue(result.passed)
+        self.assertEqual(result.sanitized_text, "First paragraph.\nSecond paragraph.")
+
+    def test_answer_contract_ignores_reasoning_and_keeps_answer(self):
+        result = normalize_model_response(
+            json.dumps(
+                {
+                    "analysis": "private reasoning",
+                    "answer": "Valid answer",
+                }
+            ),
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertTrue(result.passed)
+        self.assertEqual(result.sanitized_text, "Valid answer")
+        self.assertNotIn("analysis", result.sanitized_text.lower())
+
+    def test_answer_contract_rejects_reasoning_only_response(self):
+        result = normalize_model_response(
+            json.dumps({"analysis": "private reasoning"}),
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertFalse(result.passed)
+        self.assertIn("no extractable answer text", result.errors[0].lower())
+
+    def test_answer_contract_rejects_tool_call_only_response(self):
+        result = normalize_model_response(
+            json.dumps(
+                {
+                    "tool_calls": [
+                        {
+                            "name": "something",
+                            "arguments": {},
+                        }
+                    ]
+                }
+            ),
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertFalse(result.passed)
+        self.assertIn("no extractable answer text", result.errors[0].lower())
+
+    def test_answer_contract_rejects_empty_nested_answer(self):
+        result = normalize_model_response(
+            json.dumps({"answer": {"summary": "", "details": ""}}),
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertFalse(result.passed)
+        self.assertIn("no extractable answer text", result.errors[0].lower())
+
+    def test_answer_contract_rejects_ambiguous_unknown_strings(self):
+        result = normalize_model_response(
+            json.dumps(
+                {
+                    "prompt": "internal prompt",
+                    "analysis": "private reasoning",
+                    "generated_text": "Valid answer",
+                    "completion": "Also valid",
+                }
+            ),
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertFalse(result.passed)
+        self.assertIn("no extractable answer text", result.errors[0].lower())
+
+    def test_answer_contract_rejects_excessive_recursion_depth(self):
+        payload: dict[str, object] = {"answer": "Valid answer"}
+        for _ in range(8):
+            payload = {"data": payload}
+
+        result = normalize_model_response(
+            json.dumps(payload),
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertFalse(result.passed)
+        self.assertIn("no extractable answer text", result.errors[0].lower())
 
     def test_answer_contract_extracts_short_answer_sections(self):
         result = normalize_model_response(
@@ -120,13 +309,16 @@ class ModelResponseValidationTests(unittest.TestCase):
         self.assertIn("0.94", result.sanitized_text)
 
     def test_answer_contract_rejects_json_without_answer_field(self):
-        result = normalize_model_response(
-            '{"analysis":"internal notes only"}',
-            response_contract=ANSWER_CONTRACT,
-        )
+        with self.assertLogs("bhf_agent.model_response_validation", level="WARNING") as logs:
+            result = normalize_model_response(
+                '{"analysis":"internal notes only"}',
+                response_contract=ANSWER_CONTRACT,
+            )
 
         self.assertFalse(result.passed)
-        self.assertIn("without an answer field", result.errors[0])
+        self.assertIn("no extractable answer text", result.errors[0].lower())
+        self.assertTrue(logs.output)
+        self.assertIn("top_level_keys", logs.output[0])
 
     def test_search_results_contract_preserves_structured_json(self):
         result = normalize_model_response(

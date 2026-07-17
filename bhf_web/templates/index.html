@@ -90,9 +90,8 @@
               </label>
               <label>
                 <span>Version</span>
-                <select id="translation-select" data-reader-translation data-testid="translation-select">
-                  <option value="asv">ASV - American Standard Version</option>
-                  <option value="kjv">KJV - Download from GitHub</option>
+                <select id="translation-select" data-reader-translation data-default-translation="{{ default_translation }}" data-testid="translation-select">
+                  <option value="{{ default_translation }}">Loading translations...</option>
                 </select>
               </label>
               <button type="button" class="secondary" data-reader-translation-import data-testid="translation-import-button">Import XML</button>
@@ -141,7 +140,7 @@
           data-default-chapter="1"
           data-testid="reader-passage"
         >
-          <p class="empty">Loading ASV text...</p>
+          <p class="empty">Loading Scripture text...</p>
         </article>
       </section>
 
@@ -174,6 +173,7 @@
                 <input type="hidden" name="reader_start_verse" value="">
                 <input type="hidden" name="reader_end_verse" value="">
                 <input type="hidden" name="reader_selected_text" value="">
+                <input type="hidden" name="reader_translation" value="{{ default_translation }}">
                 <input type="hidden" name="ask_mode" value="">
                 <input type="hidden" name="study_action" value="">
                 <input type="hidden" name="map_context" value="">

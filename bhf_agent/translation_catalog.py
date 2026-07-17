@@ -7,17 +7,8 @@ from dataclasses import dataclass
 from typing import Any, Callable
 
 
-AVAILABILITY_STATES = (
-    "bundled",
-    "installed",
-    "remote_download",
-    "license_required",
-    "import_available",
-    "unavailable",
-)
-
-PROTECTED_TRANSLATION_IDS = ("niv", "esv", "csb", "nasb", "lsb", "nlt")
 DEFAULT_TRANSLATION_ID = "asv"
+PROTECTED_TRANSLATION_IDS = ("niv", "esv", "csb", "nasb", "lsb", "nlt")
 LICENSE_REQUIRED_EXPLANATION = (
     "This translation is copyrighted and is not currently available for direct "
     "download through BHF. Support may be added through an authorized provider "
@@ -29,17 +20,15 @@ PROTECTED_IMPORT_NOTICE = (
     "device. BHF does not provide, distribute, or verify this file."
 )
 THIRD_PARTY_GITHUB_NOTICE = (
-    "This download is provided from a third-party GitHub repository. BHF does "
-    "not maintain or support that repository. Verify the translation identity, "
-    "completeness, checksum, and license before relying on it."
+    "This translation is downloaded from a third-party GitHub repository. BHF "
+    "does not maintain that repository or guarantee the translation's identity, "
+    "completeness, accuracy, or licensing. Verify the source before relying on it."
 )
-
 PROTECTED_TRANSLATION_ACTIONS = (
     "Learn more",
     "Import legally obtained XML",
     "Configure licensed provider",
 )
-
 PRIVATE_IMPORT_RESTRICTIONS = {
     "local_only": True,
     "upload_to_bhf": False,
@@ -57,11 +46,18 @@ CURATED_ENGLISH_TRANSLATION_CATALOG: tuple[dict[str, Any], ...] = (
         "abbreviation": "ASV",
         "language": "English",
         "language_code": "en",
-        "availability": "bundled",
         "bundled": True,
+        "availability": "bundled",
         "download_enabled": False,
-        "offline_supported": True,
         "license_status": "public_domain_us",
+        "install_mode": "bundled",
+        "third_party": False,
+        "source": None,
+        "validation": {
+            "expected_book_count": 66,
+            "expected_minimum_verse_count": 31103,
+            "expected_maximum_verse_count": 31103,
+        },
     },
     {
         "id": "kjv",
@@ -69,11 +65,27 @@ CURATED_ENGLISH_TRANSLATION_CATALOG: tuple[dict[str, Any], ...] = (
         "abbreviation": "KJV",
         "language": "English",
         "language_code": "en",
-        "availability": "remote_download",
         "bundled": False,
+        "availability": "remote_download",
         "download_enabled": True,
-        "offline_supported": True,
         "license_status": "public_domain_us",
+        "install_mode": "direct_download",
+        "third_party": True,
+        "source": {
+            "provider_id": "beblia_github",
+            "provider_name": "Beblia GitHub repository",
+            "repository_url": "https://github.com/Beblia/Holy-Bible-XML-Format",
+            "raw_url": (
+                "https://raw.githubusercontent.com/Beblia/Holy-Bible-XML-Format/master/"
+                "EnglishKJBible.xml"
+            ),
+            "filename": "EnglishKJBible.xml",
+        },
+        "validation": {
+            "expected_book_count": 66,
+            "expected_minimum_verse_count": 31000,
+            "expected_maximum_verse_count": 31200,
+        },
     },
     {
         "id": "niv",
@@ -81,11 +93,16 @@ CURATED_ENGLISH_TRANSLATION_CATALOG: tuple[dict[str, Any], ...] = (
         "abbreviation": "NIV",
         "language": "English",
         "language_code": "en",
-        "availability": "license_required",
         "bundled": False,
+        "availability": "license_required",
         "download_enabled": False,
-        "offline_supported": False,
         "license_status": "copyrighted",
+        "install_mode": "licensed_provider",
+        "third_party": True,
+        "source": None,
+        "validation": {
+            "expected_book_count": 66,
+        },
     },
     {
         "id": "esv",
@@ -93,11 +110,16 @@ CURATED_ENGLISH_TRANSLATION_CATALOG: tuple[dict[str, Any], ...] = (
         "abbreviation": "ESV",
         "language": "English",
         "language_code": "en",
-        "availability": "license_required",
         "bundled": False,
+        "availability": "license_required",
         "download_enabled": False,
-        "offline_supported": False,
         "license_status": "copyrighted",
+        "install_mode": "licensed_provider",
+        "third_party": True,
+        "source": None,
+        "validation": {
+            "expected_book_count": 66,
+        },
     },
     {
         "id": "csb",
@@ -105,11 +127,16 @@ CURATED_ENGLISH_TRANSLATION_CATALOG: tuple[dict[str, Any], ...] = (
         "abbreviation": "CSB",
         "language": "English",
         "language_code": "en",
-        "availability": "license_required",
         "bundled": False,
+        "availability": "license_required",
         "download_enabled": False,
-        "offline_supported": False,
         "license_status": "copyrighted",
+        "install_mode": "licensed_provider",
+        "third_party": True,
+        "source": None,
+        "validation": {
+            "expected_book_count": 66,
+        },
     },
     {
         "id": "nasb",
@@ -117,11 +144,16 @@ CURATED_ENGLISH_TRANSLATION_CATALOG: tuple[dict[str, Any], ...] = (
         "abbreviation": "NASB",
         "language": "English",
         "language_code": "en",
-        "availability": "license_required",
         "bundled": False,
+        "availability": "license_required",
         "download_enabled": False,
-        "offline_supported": False,
         "license_status": "copyrighted",
+        "install_mode": "licensed_provider",
+        "third_party": True,
+        "source": None,
+        "validation": {
+            "expected_book_count": 66,
+        },
     },
     {
         "id": "lsb",
@@ -129,11 +161,16 @@ CURATED_ENGLISH_TRANSLATION_CATALOG: tuple[dict[str, Any], ...] = (
         "abbreviation": "LSB",
         "language": "English",
         "language_code": "en",
-        "availability": "license_required",
         "bundled": False,
+        "availability": "license_required",
         "download_enabled": False,
-        "offline_supported": False,
         "license_status": "copyrighted",
+        "install_mode": "licensed_provider",
+        "third_party": True,
+        "source": None,
+        "validation": {
+            "expected_book_count": 66,
+        },
     },
     {
         "id": "nlt",
@@ -141,51 +178,27 @@ CURATED_ENGLISH_TRANSLATION_CATALOG: tuple[dict[str, Any], ...] = (
         "abbreviation": "NLT",
         "language": "English",
         "language_code": "en",
-        "availability": "license_required",
         "bundled": False,
+        "availability": "license_required",
         "download_enabled": False,
-        "offline_supported": False,
         "license_status": "copyrighted",
+        "install_mode": "licensed_provider",
+        "third_party": True,
+        "source": None,
+        "validation": {
+            "expected_book_count": 66,
+        },
     },
 )
 
-BEBLIA_APPROVED_REMOTE_MAPPINGS: dict[str, dict[str, Any]] = {
-    "kjv": {
-        "translation_id": "kjv",
-        "provider_id": "beblia_github",
-        "provider_name": "Beblia GitHub repository",
-        "repository_url": "https://github.com/Beblia/Holy-Bible-XML-Format",
-        "approved_source_path": "EnglishKJBible.xml",
-        "approved_source_url": (
-            "https://raw.githubusercontent.com/Beblia/Holy-Bible-XML-Format/master/"
-            "EnglishKJBible.xml"
-        ),
-        "expected_name": "King James Version",
-        "expected_language": "English",
-        "expected_book_count": 66,
-        "expected_minimum_verse_count": 31000,
-        "expected_maximum_verse_count": 31200,
-        "review_status": "approved",
-        "license_status": "public_domain_us",
-        "expected_verse_count": 31103,
-        "versification_note": (
-            "BHF accepts the standard 66-book Protestant canon for this source. "
-            "The selected KJV corpus has 31,103 verses; alternate KJV XML files "
-            "with apocrypha or merged/split verse records require separate review."
-        ),
-        "review_requirements": (
-            "confirm_translation_identity",
-            "confirm_complete_expected_canon",
-            "inspect_metadata_and_verse_counts",
-            "validate_sample_passages_against_trusted_kjv_source",
-            "record_repository_commit_sha_and_checksum",
-        ),
-        "reference_checksum_sha256": (
-            "07b1321a92fb1af3b26a8963ee70e667a3572d03e872a32f38c2f5d5f0beba1e"
-        ),
-        "reference_checksum_source": "bhf_agent/data/kjv_bible.json",
-    }
-}
+AVAILABILITY_STATES = (
+    "bundled",
+    "installed",
+    "direct_download",
+    "manual_import",
+    "licensed_provider",
+    "unavailable",
+)
 
 
 @dataclass(frozen=True)
@@ -242,7 +255,7 @@ class ProviderCapabilities:
 
 
 def curated_english_catalog(*, discovered_files: list[str] | None = None) -> list[dict[str, Any]]:
-    """Return only the reviewed first-release English catalog.
+    """Return only the reviewed English catalog entries.
 
     ``discovered_files`` is intentionally ignored so a repository tree scan cannot
     make a translation visible or downloadable without a reviewed catalog entry.
@@ -255,34 +268,64 @@ def catalog_by_id() -> dict[str, dict[str, Any]]:
     return {item["id"]: item for item in curated_english_catalog()}
 
 
+def catalog_entry_for_id(translation_id: str) -> dict[str, Any] | None:
+    return catalog_by_id().get(str(translation_id or "").strip().lower())
+
+
 def approved_beblia_mapping(translation_id: str) -> dict[str, Any] | None:
-    mapping = BEBLIA_APPROVED_REMOTE_MAPPINGS.get(translation_id.lower())
-    return deepcopy(mapping) if mapping else None
+    entry = catalog_entry_for_id(translation_id)
+    if not entry or entry.get("install_mode") != "direct_download":
+        return None
+    source = dict(entry.get("source") or {})
+    return {
+        "translation_id": entry["id"],
+        "provider_id": source.get("provider_id"),
+        "provider_name": source.get("provider_name"),
+        "repository_url": source.get("repository_url"),
+        "approved_source_path": source.get("filename"),
+        "approved_source_url": source.get("raw_url"),
+        "expected_name": entry.get("name"),
+        "expected_language": entry.get("language_code") or entry.get("language"),
+        "expected_book_count": entry.get("validation", {}).get("expected_book_count"),
+        "expected_minimum_verse_count": entry.get("validation", {}).get("expected_minimum_verse_count"),
+        "expected_maximum_verse_count": entry.get("validation", {}).get("expected_maximum_verse_count"),
+        "review_status": "approved",
+        "license_status": entry.get("license_status"),
+        "expected_verse_count": 31103,
+        "versification_note": (
+            "BHF accepts the standard 66-book Protestant canon for this source."
+        ),
+        "review_requirements": (
+            "confirm_translation_identity",
+            "confirm_complete_expected_canon",
+            "inspect_metadata_and_verse_counts",
+            "validate_sample_passages_against_trusted_kjv_source",
+            "record_repository_commit_sha_and_checksum",
+        ),
+        "reference_checksum_sha256": (
+            "07b1321a92fb1af3b26a8963ee70e667a3572d03e872a32f38c2f5d5f0beba1e"
+        ),
+        "reference_checksum_source": "bhf_agent/data/kjv_bible.json",
+    }
 
 
 def beblia_download_allowed(translation_id: str) -> bool:
-    entry = catalog_by_id().get(translation_id.lower())
+    entry = catalog_entry_for_id(translation_id)
     mapping = approved_beblia_mapping(translation_id)
     return bool(
         entry
         and mapping
-        and entry["availability"] == "remote_download"
-        and entry["download_enabled"]
-        and mapping["review_status"] == "approved"
-        and entry["license_status"] == mapping["license_status"] == "public_domain_us"
+        and entry.get("install_mode") == "direct_download"
+        and entry.get("license_status") == "public_domain_us"
     )
 
 
 def github_download_allowed(translation_id: str) -> bool:
-    """Return whether BHF may expose a direct GitHub download action."""
-
     return beblia_download_allowed(translation_id)
 
 
 def github_download_metadata(translation_id: str) -> dict[str, Any] | None:
-    """Return reviewed third-party GitHub source metadata for a translation."""
-
-    translation_id = translation_id.lower()
+    translation_id = str(translation_id or "").strip().lower()
     if not github_download_allowed(translation_id):
         return None
     mapping = approved_beblia_mapping(translation_id)
@@ -293,6 +336,7 @@ def github_download_metadata(translation_id: str) -> dict[str, Any] | None:
         "provider_id": mapping["provider_id"],
         "provider_name": mapping["provider_name"],
         "source": "github",
+        "source_type": "beblia_xml",
         "repository_url": mapping["repository_url"],
         "approved_source_path": mapping["approved_source_path"],
         "approved_source_url": mapping["approved_source_url"],
@@ -311,13 +355,68 @@ def github_download_metadata(translation_id: str) -> dict[str, Any] | None:
     }
 
 
-def provider_access(config: dict[str, Any]) -> dict[str, Any]:
-    provider = ProviderCapabilities.from_config(config)
-    capabilities = provider.as_dict()
-    capabilities["online_access_required"] = bool(
-        provider.can_display and not provider.can_store_offline
-    )
-    return capabilities
+def translation_selector_sections(
+    *,
+    installed_translation_ids: list[str] | tuple[str, ...] = (DEFAULT_TRANSLATION_ID,),
+    default_translation_id: str = DEFAULT_TRANSLATION_ID,
+) -> dict[str, Any]:
+    catalog = curated_english_catalog()
+    by_id = {item["id"]: item for item in catalog}
+    installed_ids = {
+        str(item).lower()
+        for item in installed_translation_ids
+        if str(item).lower() in by_id
+    }
+    installed_ids.add(DEFAULT_TRANSLATION_ID)
+    default_id = str(default_translation_id or DEFAULT_TRANSLATION_ID).lower()
+    if default_id not in installed_ids:
+        default_id = DEFAULT_TRANSLATION_ID
+
+    installed: list[dict[str, Any]] = []
+    available_to_download: list[dict[str, Any]] = []
+    license_required: list[dict[str, Any]] = []
+
+    for entry in catalog:
+        item = deepcopy(entry)
+        item["installed"] = entry["id"] in installed_ids
+        item["selected"] = entry["id"] == default_id
+        item["can_select"] = bool(item["installed"])
+        item["can_set_default"] = bool(item["installed"])
+        item["can_remove"] = bool(item["installed"] and not entry.get("bundled", False))
+        item["can_download"] = False
+        item["status_label"] = "Built in" if entry["id"] == "asv" else "Installed locally"
+
+        if entry["id"] in installed_ids:
+            installed.append(item)
+            continue
+
+        if entry.get("install_mode") == "direct_download":
+            item["can_download"] = True
+            item["status_label"] = "Download from GitHub"
+            item["third_party_notice"] = THIRD_PARTY_GITHUB_NOTICE
+            item["download_source"] = "beblia_xml"
+            item["approved_source_url"] = (entry.get("source") or {}).get("raw_url")
+            item["repository_url"] = (entry.get("source") or {}).get("repository_url")
+            available_to_download.append(item)
+            continue
+
+        item["status_label"] = "License required"
+        item["license_explanation"] = LICENSE_REQUIRED_EXPLANATION
+        item["actions"] = list(PROTECTED_TRANSLATION_ACTIONS)
+        license_required.append(item)
+
+    return {
+        "catalog": catalog,
+        "availability_states": list(AVAILABILITY_STATES),
+        "default_translation_id": default_id,
+        "fallback_translation_id": DEFAULT_TRANSLATION_ID,
+        "sections": {
+            "installed": installed,
+            "available_to_download": available_to_download,
+            "license_required": license_required,
+            "additional_english_translations": license_required,
+        },
+    }
 
 
 def translation_provider_access(
@@ -326,7 +425,7 @@ def translation_provider_access(
     translation_config: dict[str, Any],
 ) -> dict[str, Any]:
     provider = ProviderCapabilities.from_config(provider_config)
-    translation_id = translation_id.lower()
+    translation_id = str(translation_id or "").lower()
     licensed = translation_id in provider.licensed_translation_ids
     access = {
         "translation_id": translation_id,
@@ -356,74 +455,61 @@ def translation_provider_access(
     return access
 
 
-def translation_selector_sections(
+def provider_access(config: dict[str, Any]) -> dict[str, Any]:
+    provider = ProviderCapabilities.from_config(config)
+    capabilities = provider.as_dict()
+    capabilities["online_access_required"] = bool(
+        provider.can_display and not provider.can_store_offline
+    )
+    return capabilities
+
+
+def import_translation(
+    translation_id: str,
     *,
-    installed_translation_ids: list[str] | tuple[str, ...] = (DEFAULT_TRANSLATION_ID,),
-    default_translation_id: str = DEFAULT_TRANSLATION_ID,
+    confirmed: bool,
+    source_filename: str,
 ) -> dict[str, Any]:
-    catalog = curated_english_catalog()
-    by_id = {item["id"]: item for item in catalog}
-    installed_ids = {
-        item.lower()
-        for item in installed_translation_ids
-        if item.lower() in by_id and by_id[item.lower()]["availability"] in {"bundled", "remote_download", "installed"}
-    }
-    installed_ids.add(DEFAULT_TRANSLATION_ID)
-    default_id = default_translation_id.lower()
-    if default_id not in installed_ids:
-        default_id = DEFAULT_TRANSLATION_ID
-
-    installed = []
-    for translation_id in ("asv", "kjv"):
-        if translation_id not in installed_ids:
-            continue
-        entry = deepcopy(by_id[translation_id])
-        entry["availability"] = "bundled" if translation_id == "asv" else "installed"
-        entry["status_label"] = "Built in" if translation_id == "asv" else "Available offline"
-        entry["selected"] = translation_id == default_id
-        entry["can_select"] = True
-        entry["can_set_default"] = True
-        entry["can_remove"] = translation_id != "asv"
-        installed.append(entry)
-
-    available_to_download = []
-    if "kjv" not in installed_ids:
-        entry = deepcopy(by_id["kjv"])
-        entry["status_label"] = "Download from GitHub"
-        entry["can_download"] = beblia_download_allowed("kjv")
-        entry["download_source"] = "github"
-        entry["third_party_notice"] = THIRD_PARTY_GITHUB_NOTICE
-        entry["validation_required"] = True
-        metadata = github_download_metadata("kjv")
-        if metadata is not None:
-            entry["provider_id"] = metadata["provider_id"]
-            entry["provider_name"] = metadata["provider_name"]
-            entry["approved_source_url"] = metadata["approved_source_url"]
-            entry["repository_url"] = metadata["repository_url"]
-        available_to_download.append(entry)
-
-    additional = []
-    for translation_id in PROTECTED_TRANSLATION_IDS:
-        entry = deepcopy(by_id[translation_id])
-        entry["status_label"] = "License required"
-        entry["can_download"] = False
-        entry["can_select"] = False
-        entry["can_set_default"] = False
-        entry["license_explanation"] = LICENSE_REQUIRED_EXPLANATION
-        entry["actions"] = list(PROTECTED_TRANSLATION_ACTIONS)
-        additional.append(entry)
-
+    translation_id = str(translation_id or "").lower()
+    entry = catalog_entry_for_id(translation_id)
+    protected = bool(entry and entry.get("license_status") == "copyrighted")
+    if protected and not confirmed:
+        raise ValueError(PROTECTED_IMPORT_NOTICE)
     return {
-        "catalog": catalog,
-        "availability_states": list(AVAILABILITY_STATES),
-        "default_translation_id": default_id,
-        "fallback_translation_id": DEFAULT_TRANSLATION_ID,
-        "sections": {
-            "installed": installed,
-            "available_to_download": available_to_download,
-            "additional_english_translations": additional,
-        },
+        "translation_id": translation_id,
+        "source_filename": source_filename,
+        "availability": "installed",
+        "origin": "manual_xml_import",
+        "private": True,
+        "protected": protected,
+        "notice": PROTECTED_IMPORT_NOTICE if protected else "",
+        "restrictions": dict(PRIVATE_IMPORT_RESTRICTIONS),
+        "add_to_shared_catalog": False,
     }
+
+
+def set_default_translation(
+    requested_translation_id: str,
+    installed_translation_ids: list[str] | tuple[str, ...],
+) -> str:
+    requested = str(requested_translation_id or "").lower()
+    installed = {str(item).lower() for item in installed_translation_ids}
+    installed.add(DEFAULT_TRANSLATION_ID)
+    if requested not in installed:
+        raise ValueError("Only an installed translation can be selected or made default")
+    return requested
+
+
+def resolve_selectable_translation(
+    requested_translation_id: str | None,
+    installed_translation_ids: list[str] | tuple[str, ...],
+) -> str:
+    installed = {str(item).lower() for item in installed_translation_ids}
+    installed.add(DEFAULT_TRANSLATION_ID)
+    requested = str(requested_translation_id or DEFAULT_TRANSLATION_ID).lower()
+    if requested in installed:
+        return requested
+    return DEFAULT_TRANSLATION_ID
 
 
 def validate_beblia_source_for_install(
@@ -434,7 +520,7 @@ def validate_beblia_source_for_install(
     checksum_sha256: str,
     sample_validator: Callable[[dict[str, Any]], bool] | None = None,
 ) -> dict[str, Any]:
-    translation_id = translation_id.lower()
+    translation_id = str(translation_id or "").lower()
     if not beblia_download_allowed(translation_id):
         raise ValueError(f"{translation_id} is not approved for Beblia download")
     mapping = approved_beblia_mapping(translation_id)
@@ -450,10 +536,10 @@ def validate_beblia_source_for_install(
     if actual_id != translation_id and mapping["expected_name"].lower() not in actual_name.lower():
         raise ValueError("source metadata does not identify the expected translation")
     if mapping["expected_name"].lower() not in actual_name.lower():
-        raise ValueError("source name does not identify the King James Version")
+        raise ValueError("source name does not identify the expected translation")
 
-    books = bible_data.get("books", [])
-    if len(books) != mapping["expected_book_count"]:
+    books = list(bible_data.get("books", []) or [])
+    if len(books) != int(mapping["expected_book_count"] or 0):
         raise ValueError("source does not contain the complete expected canon")
     verse_count = sum(
         len(chapter.get("verses", []))
@@ -461,9 +547,9 @@ def validate_beblia_source_for_install(
         for chapter in book.get("chapters", [])
     )
     if not (
-        mapping["expected_minimum_verse_count"]
+        int(mapping["expected_minimum_verse_count"] or 0)
         <= verse_count
-        <= mapping["expected_maximum_verse_count"]
+        <= int(mapping["expected_maximum_verse_count"] or verse_count)
     ):
         raise ValueError("source verse count is outside the approved review range")
     if sample_validator is None or not sample_validator(bible_data):
@@ -498,57 +584,9 @@ def install_remote_translation(
         sample_validator=sample_validator,
     )
     return {
-        "translation_id": translation_id.lower(),
+        "translation_id": str(translation_id or "").lower(),
         "availability": "installed",
         "offline_supported": True,
         "private_local_install": True,
         "validation": validation,
     }
-
-
-def import_translation(
-    translation_id: str,
-    *,
-    confirmed: bool,
-    source_filename: str,
-) -> dict[str, Any]:
-    translation_id = translation_id.lower()
-    entry = catalog_by_id().get(translation_id)
-    protected = bool(entry and entry["license_status"] == "copyrighted")
-    if protected and not confirmed:
-        raise ValueError(PROTECTED_IMPORT_NOTICE)
-    return {
-        "translation_id": translation_id,
-        "source_filename": source_filename,
-        "availability": "installed",
-        "origin": "manual_xml_import",
-        "private": True,
-        "protected": protected,
-        "notice": PROTECTED_IMPORT_NOTICE if protected else "",
-        "restrictions": dict(PRIVATE_IMPORT_RESTRICTIONS),
-        "add_to_shared_catalog": False,
-    }
-
-
-def resolve_selectable_translation(
-    requested_translation_id: str | None,
-    installed_translation_ids: list[str] | tuple[str, ...],
-) -> str:
-    installed = {item.lower() for item in installed_translation_ids}
-    installed.add(DEFAULT_TRANSLATION_ID)
-    requested = (requested_translation_id or DEFAULT_TRANSLATION_ID).lower()
-    if requested in installed:
-        return requested
-    return DEFAULT_TRANSLATION_ID
-
-
-def set_default_translation(
-    requested_translation_id: str,
-    installed_translation_ids: list[str] | tuple[str, ...],
-) -> str:
-    requested = requested_translation_id.lower()
-    installed = {item.lower() for item in installed_translation_ids}
-    installed.add(DEFAULT_TRANSLATION_ID)
-    if requested not in installed:
-        raise ValueError("Only an installed translation can be selected or made default")
-    return requested

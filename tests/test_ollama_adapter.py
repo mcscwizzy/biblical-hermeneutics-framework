@@ -65,7 +65,38 @@ class OllamaAdapterTests(unittest.TestCase):
         self.assertEqual(response.text, "answer")
         self.assertEqual(response.model, "qwen2.5:0.5b")
         self.assertEqual(response.provider, "ollama")
+        self.assertEqual(
+            response.raw_provider_response,
+            {
+                "model": "qwen2.5:0.5b",
+                "message": {"content": "answer"},
+            },
+        )
+        self.assertEqual(response.raw_response, response.raw_provider_response)
         self.assertIsNotNone(response.latency_ms)
+
+    def test_preserves_json_string_assistant_content(self):
+        payload = {
+            "model": "qwen2.5:0.5b",
+            "created_at": "2026-07-17T00:00:00Z",
+            "message": {
+                "role": "assistant",
+                "content": '{"answer":"Valid answer"}',
+            },
+            "done": True,
+        }
+
+        def fake_urlopen(request, timeout=None):
+            return FakeHTTPResponse(json.dumps(payload).encode("utf-8"))
+
+        adapter = OllamaAdapter("http://ollama:11434", timeout_seconds=5)
+        request = ChatRequest("system", "user", "qwen2.5:0.5b")
+
+        with patch("urllib.request.urlopen", fake_urlopen):
+            response = adapter.chat(request)
+
+        self.assertEqual(response.text, '{"answer":"Valid answer"}')
+        self.assertEqual(response.raw_provider_response, payload)
 
     def test_health_check_reports_installed_model(self):
         def fake_urlopen(request, timeout=None):

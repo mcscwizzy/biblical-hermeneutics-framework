@@ -29,6 +29,9 @@ class OllamaAdapter(ChatAdapter):
     def endpoint(self) -> str:
         return f"{self.base_url}/api/chat"
 
+    def supports_json_schema_response_format(self) -> bool:
+        return False
+
     def chat(self, request: ChatRequest) -> ChatResponse:
         payload = {
             "model": request.model,
@@ -175,17 +178,38 @@ def _extract_text(data: Any) -> tuple[Optional[str], Optional[str]]:
     if not isinstance(data, dict):
         return None, "Ollama endpoint returned malformed response: top-level JSON is not an object"
     message = data.get("message")
-    if isinstance(message, dict) and isinstance(message.get("content"), str):
-        content = message["content"]
-        if not content.strip():
-            return None, "Ollama endpoint returned empty message content"
-        return content, None
-    if isinstance(data.get("response"), str):
-        response = data["response"]
-        if not response.strip():
-            return None, "Ollama endpoint returned empty response content"
+    if isinstance(message, dict):
+        content = _extract_block_text(message.get("content"))
+        if content:
+            return content, None
+    response = _extract_block_text(data.get("response"))
+    if response:
         return response, None
     return None, "Ollama endpoint response did not include message text"
+
+
+def _extract_block_text(value: Any) -> Optional[str]:
+    if isinstance(value, str):
+        text = value.strip()
+        return text or None
+    if isinstance(value, list):
+        blocks: list[str] = []
+        for item in value:
+            text = _extract_block_text(item)
+            if text:
+                blocks.append(text)
+        return "\n".join(blocks) if blocks else None
+    if isinstance(value, dict):
+        block_type = str(value.get("type") or value.get("role") or "").strip().lower()
+        if block_type in {"analysis", "debug", "reasoning", "tool_call", "tool_calls"}:
+            return None
+        for key in ("content", "text", "output_text", "answer", "response", "delta"):
+            if key in value:
+                text = _extract_block_text(value.get(key))
+                if text:
+                    return text
+        return None
+    return None
 
 
 def _model_names(models: Any) -> list[str]:

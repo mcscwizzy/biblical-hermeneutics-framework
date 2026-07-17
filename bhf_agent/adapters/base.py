@@ -24,6 +24,9 @@ class ChatAdapter(ABC):
     def chat(self, request: ChatRequest) -> ChatResponse:
         raise NotImplementedError
 
+    def supports_json_schema_response_format(self) -> bool:
+        return False
+
     def health_check(self, model: Optional[str] = None) -> dict[str, Any]:
         return {
             "ok": False,

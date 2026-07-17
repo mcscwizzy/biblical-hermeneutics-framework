@@ -71,6 +71,14 @@ class OpenAICompatibleAdapterTests(unittest.TestCase):
         self.assertEqual(response.text, "answer")
         self.assertEqual(response.model, "local-model")
         self.assertEqual(response.provider, "openai_compatible")
+        self.assertEqual(
+            response.raw_provider_response,
+            {
+                "model": "local-model",
+                "choices": [{"message": {"content": "answer"}}],
+                "usage": {"total_tokens": 3},
+            },
+        )
         self.assertIsNotNone(response.latency_ms)
 
     def test_omits_authorization_without_api_key(self):

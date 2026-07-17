@@ -1,6 +1,6 @@
 # BHF Agent Local UI
 
-The local UI is a small FastAPI ASV reader and study workspace that submits
+The local UI is a small FastAPI Bible reader and study workspace that submits
 questions to the existing `BHFAgent(config).ask(question)` pipeline. It is
 intended for localhost use with an OpenAI-compatible local model runtime.
 
@@ -33,9 +33,14 @@ service worker from `/sw.js`, and provides a basic offline fallback page at
 ## ASV Reader
 
 The first screen is a reader for the bundled American Standard Version dataset
-at `bhf_agent/data/asv_bible.json`. The ASV text is public domain in the United
-States and is committed so the UI works offline immediately. The normalized
-dataset records its upstream source in its translation metadata.
+at `bhf_agent/data/asv_bible.json`. ASV is the only translation bundled with
+BHF, and it works offline immediately with no setup. The normalized dataset
+records its upstream source in its translation metadata.
+
+Additional reviewed public-domain translations can be installed through the
+translation manager for local offline use. Copyrighted translations stay in the
+license-required section unless you configure an authorized provider or import
+lawfully obtained XML locally.
 
 Choose a book and chapter with the reader controls. The chapter text is the
 primary workspace. On desktop, Ask BHF, status, answer output, and notes appear
@@ -74,11 +79,12 @@ Select verse text in the chapter to focus the request on that verse range, then
 use **Ask BHF**. If no text is selected, the form asks about the current
 chapter. You can also type a specific question in the question box.
 
-The browser sends reader fields such as book, chapter, selected verse range, and
-selected text to the server. The server builds the actual BHF question,
-including the ASV reference, selected text, full chapter context when available,
-and a method reminder to observe before interpreting and apply last. The prompt
-wording is not owned by the UI JavaScript.
+The browser sends reader fields such as book, chapter, selected verse range,
+selected text, and the selected translation to the server. The server builds
+the actual BHF question, including the translation reference, selected text,
+full chapter context when available, and a method reminder to observe before
+interpreting and apply last. The prompt wording is not owned by the UI
+JavaScript.
 
 ## Live Status
 
@@ -123,9 +129,9 @@ Available actions:
 - **Fulfillment in the NT** asks BHF to evaluate whether a passage is cited,
   echoed, typologically reused, or thematically developed in the NT, with
   explicit caution against forcing unsupported fulfillment readings.
-- **Compare Translations** compares the bundled ASV and KJV texts, both
-  public domain, and asks BHF to explain wording differences and interpretive
-  caution.
+- **Compare Translations** compares the installed local translations available
+  for the selected passage and asks BHF to explain wording differences and
+  interpretive caution.
 - **Timeline** places the passage in a broad biblical-historical setting
   without pretending to know exact dates when the evidence is uncertain.
 - **Maps** keeps geography text-based for now by identifying places mentioned
@@ -160,10 +166,10 @@ implementation does not import older `.bhf/notes.json` files.
 ## Word Study Helper Limitations
 
 The bundled reader uses ASV English text, not a source-language or interlinear
-dataset. The **Look up Hebrew/Greek word** action sends the English ASV
-selection and verse context to BHF with strict guardrails:
+dataset. The **Look up Hebrew/Greek word** action sends the selected installed
+translation and verse context to BHF with strict guardrails:
 
-- The selected word is from the ASV English text.
+- The selected word is from the current reader translation text.
 - The answer must not claim exact Hebrew/Greek alignment unless the app has
   source-language data.
 - Possible Hebrew or Greek terms are possibilities only and should be stated
@@ -183,6 +189,21 @@ highlights, and Save Study are active in this phase.
 
 Save Study persists generated study results in the existing SQLite database
 and adds them to the Saved Studies panel for reopening or deletion.
+
+## Translation Manager
+
+The translation manager is the catalog-driven dialog behind the reader version
+control. It groups installed translations, reviewed direct-download sources,
+license-required translations, and manual XML import guidance. The quick
+selector still uses the current default translation, but opening a non-installed
+translation routes to the manager instead of trying to load missing data.
+
+Settings are persisted locally. The default translation key is
+`default_translation`, and BHF falls back to ASV if the configured translation
+is missing.
+
+See [`docs/translations.md`](translations.md) for the storage layout, install
+workflow, source notices, and supported XML structure.
 
 ## Local Defaults
 

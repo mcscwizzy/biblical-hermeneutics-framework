@@ -154,6 +154,14 @@ async function initializeReader() {
   const defaultChapter = reader.dataset.defaultChapter || chapterSelect.options[0].value || "1";
   chapterSelect.value = defaultChapter;
   if (translationSelect) {
+    try {
+      translationCatalogState = await requestJson("/api/translations", {}, "Could not load translations.");
+    } catch (_error) {
+      translationCatalogState = null;
+    }
+    if (translationCatalogState?.default_translation) {
+      setSelectedTranslationId(translationCatalogState.default_translation);
+    }
     syncTranslationSelectOptions();
     translationSelect.value = selectedTranslationId();
   }
@@ -171,8 +179,13 @@ async function initializeReader() {
     translationSelect.addEventListener("change", async () => {
       const requestedTranslation = String(translationSelect.value || "asv").toLowerCase();
       try {
-        if (requestedTranslation === "kjv" && !installedTranslationIds().has("kjv")) {
-          await downloadTranslationFromGithub("kjv");
+        const entry = translationCatalogEntry(requestedTranslation);
+        if (entry?.install_mode === "direct_download" && !installedTranslationIds().has(requestedTranslation)) {
+          await downloadTranslationFromGithub(requestedTranslation);
+        } else if (entry?.install_mode === "licensed_provider" && !installedTranslationIds().has(requestedTranslation)) {
+          await openTranslationSelector(translationSelect);
+          translationSelect.value = selectedTranslationId();
+          return;
         }
         setSelectedTranslationId(requestedTranslation);
         await loadReaderChapter(bookSelect.value, chapterSelect.value);
@@ -1292,96 +1305,68 @@ function renderTranslationSelector(state) {
 
 function translationCatalogWithLocalState(state) {
   const catalog = Array.isArray(state?.catalog) ? state.catalog : [];
-  const installedIds = installedTranslationIds();
   const selectedId = selectedTranslationId();
-  const installed = [];
-  const availableToDownload = [];
-  const protectedEntries = [];
-  const importableEntries = [];
-
-  for (const entry of catalog) {
-    const id = String(entry.id || "").toLowerCase();
-    if (!id) {
-      continue;
-    }
-    const decorated = { ...entry, selected: id === selectedId };
-    if (id === "asv") {
-      installed.push({
-        ...decorated,
-        availability: "bundled",
-        status_label: "Built in",
-        can_select: true,
-        can_set_default: true,
-        can_remove: false,
-        can_download: false,
-      });
-    } else if (installedIds.has(id) && id === "kjv") {
-      installed.push({
-        ...decorated,
-        availability: "installed",
-        status_label: "Available offline",
-        can_select: true,
-        can_set_default: true,
-        can_remove: false,
-        can_download: false,
-      });
-    } else if (entry.availability === "remote_download" && entry.can_download) {
-      availableToDownload.push({
-        ...decorated,
-        status_label: entry.status_label || "Download from GitHub",
-        can_select: false,
-        can_remove: false,
-        can_download: true,
-      });
-    } else if (entry.availability === "license_required") {
-      if (installedIds.has(id)) {
-        installed.push({
-          ...decorated,
-          availability: "installed",
-          status_label: "Imported local XML",
-          can_select: true,
-          can_set_default: true,
-          can_remove: true,
-          can_download: false,
-        });
-        continue;
-      }
-      importableEntries.push({
-        ...decorated,
-        status_label: "Import legally obtained XML",
-        can_select: false,
-        can_remove: false,
-        can_download: false,
-        can_import: true,
-      });
-      protectedEntries.push({
-        ...decorated,
-        can_select: false,
-        can_remove: false,
-        can_download: false,
-      });
-    }
-  }
+  const sections = state?.sections || {};
+  const installed = Array.isArray(sections.installed) ? sections.installed : [];
+  const availableToDownload = Array.isArray(sections.available_to_download) ? sections.available_to_download : [];
+  const licenseRequired = Array.isArray(sections.license_required) ? sections.license_required : Array.isArray(sections.additional_english_translations) ? sections.additional_english_translations : [];
+  const installedById = new Set(installed.map((entry) => String(entry.id || "").toLowerCase()));
+  const decoratedInstalled = installed.map((entry) => ({
+    ...entry,
+    selected: String(entry.id || "").toLowerCase() === selectedId,
+    can_select: true,
+    can_set_default: true,
+    can_remove: !entry.bundled,
+    can_download: false,
+    status_label: entry.id === "asv" ? "Built in" : "Installed locally",
+  }));
+  const decoratedAvailable = availableToDownload.map((entry) => ({
+    ...entry,
+    selected: String(entry.id || "").toLowerCase() === selectedId,
+    can_select: false,
+    can_remove: false,
+    can_download: true,
+    status_label: entry.status_label || "Download for offline use",
+  }));
+  const decoratedLicense = licenseRequired.map((entry) => ({
+    ...entry,
+    selected: String(entry.id || "").toLowerCase() === selectedId,
+    can_select: false,
+    can_remove: false,
+    can_download: false,
+    can_import: true,
+    status_label: "License required",
+  }));
+  const importableEntries = decoratedLicense.filter((entry) => !installedById.has(String(entry.id || "").toLowerCase()));
 
   return {
     ...state,
     sections: {
       import_local_xml: importableEntries,
-      installed,
-      available_to_download: availableToDownload,
-      additional_english_translations: protectedEntries,
+      installed: decoratedInstalled,
+      available_to_download: decoratedAvailable,
+      additional_english_translations: decoratedLicense,
+      license_required: decoratedLicense,
     },
   };
 }
 
 function installedTranslationIds() {
   const ids = new Set(["asv"]);
+  if (translationCatalogState && Array.isArray(translationCatalogState.sections?.installed)) {
+    for (const entry of translationCatalogState.sections.installed) {
+      const id = String(entry.id || "").toLowerCase();
+      if (id) {
+        ids.add(id);
+      }
+    }
+  }
   try {
     const stored = JSON.parse(readLocalStorageValue(BHF_INSTALLED_TRANSLATIONS_STORAGE_KEY) || "[]");
     if (Array.isArray(stored)) {
       for (const id of stored) {
         const normalized = String(id || "").toLowerCase();
-        if (BHF_IMPORTABLE_TRANSLATION_IDS.has(normalized)) {
+        if (normalized) {
           ids.add(normalized);
         }
       }
@@ -1395,7 +1380,7 @@ function installedTranslationIds() {
 function persistInstalledTranslationIds(ids) {
   const normalized = Array.from(ids)
     .map((id) => String(id || "").toLowerCase())
-    .filter((id) => id === "asv" || BHF_IMPORTABLE_TRANSLATION_IDS.has(id));
+    .filter((id) => Boolean(id));
   if (!normalized.includes("asv")) {
     normalized.unshift("asv");
   }
@@ -1457,13 +1442,30 @@ async function handleTranslationSelectorDialogClick(event) {
     await reloadCurrentReaderChapter();
     return;
   }
+  const makeDefault = event.target.closest("[data-translation-make-default]");
+  if (makeDefault) {
+    await requestJson(
+      "/api/settings/reader",
+      {
+        method: "PUT",
+        headers: { "Accept": "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify({ default_translation: makeDefault.dataset.translationMakeDefault }),
+      },
+      "Could not update default translation."
+    );
+    setSelectedTranslationId(makeDefault.dataset.translationMakeDefault);
+    renderTranslationSelector(translationCatalogState);
+    closeTranslationSelector();
+    await reloadCurrentReaderChapter();
+    return;
+  }
   if (importer) {
     closeTranslationSelector();
     await openTranslationImportDialog(importer.dataset.translationImport);
     return;
   }
   if (remove) {
-    removeInstalledTranslation(remove.dataset.translationRemove);
+    await removeInstalledTranslation(remove.dataset.translationRemove);
     renderTranslationSelector(translationCatalogState);
     await reloadCurrentReaderChapter();
   }
@@ -1471,9 +1473,6 @@ async function handleTranslationSelectorDialogClick(event) {
 
 function installTranslation(id) {
   const normalized = String(id || "").toLowerCase();
-  if (normalized !== "kjv") {
-    return;
-  }
   const ids = installedTranslationIds();
   ids.add(normalized);
   persistInstalledTranslationIds(ids);
@@ -1491,11 +1490,19 @@ function installImportedTranslation(id) {
   syncTranslationSelectOptions();
 }
 
-function removeInstalledTranslation(id) {
+async function removeInstalledTranslation(id) {
   const normalized = String(id || "").toLowerCase();
   if (!normalized || normalized === "asv") {
     return;
   }
+  await requestJson(
+    `/api/translations/${encodeURIComponent(normalized)}`,
+    {
+      method: "DELETE",
+      headers: { "Accept": "application/json" },
+    },
+    "Could not remove translation."
+  );
   const selectedBeforeRemoval = selectedTranslationId();
   const ids = installedTranslationIds();
   ids.delete(normalized);
@@ -1515,11 +1522,8 @@ async function reloadCurrentReaderChapter() {
 
 async function downloadTranslationFromGithub(id) {
   const normalized = String(id || "").toLowerCase();
-  if (normalized !== "kjv") {
-    throw new Error("Only KJV is approved for GitHub download.");
-  }
   const metadata = await requestJson(
-    `/api/translations/${encodeURIComponent(normalized)}/download`,
+    `/api/translations/${encodeURIComponent(normalized)}/install`,
     {
       method: "POST",
       headers: { "Accept": "application/json" },
@@ -1555,38 +1559,24 @@ function syncTranslationSelectOptions() {
   if (!translationSelect) {
     return;
   }
-  const installedIds = installedTranslationIds();
+  const state = translationCatalogState || {};
+  const translations = Array.isArray(state.translations) ? state.translations : [];
   const selectedId = String(translationSelect.value || selectedTranslationId() || "asv").toLowerCase();
-  const availableIds = new Set(["asv", "kjv"]);
-  for (const id of installedIds) {
-    if (id !== "asv") {
-      availableIds.add(id);
-    }
-  }
-
-  const orderedIds = ["asv", "kjv"];
-  for (const id of BHF_IMPORTABLE_TRANSLATION_IDS) {
-    if (id !== "kjv" && installedIds.has(id)) {
-      orderedIds.push(id);
-    }
-  }
-
   translationSelect.replaceChildren();
-  for (const id of orderedIds) {
-    if (!availableIds.has(id)) {
+  for (const entry of translations) {
+    const id = String(entry.id || "").toLowerCase();
+    if (!id) {
       continue;
     }
     const option = document.createElement("option");
     option.value = id;
-    option.textContent = translationSelectOptionLabel(id, installedIds);
+    option.textContent = translationSelectOptionLabel(id, installedTranslationIds(), entry);
     translationSelect.appendChild(option);
   }
 
-  if (availableIds.has(selectedId)) {
-    translationSelect.value = selectedId;
-  } else {
-    translationSelect.value = selectedTranslationId();
-  }
+  translationSelect.value = translations.some((entry) => String(entry.id || "").toLowerCase() === selectedId)
+    ? selectedId
+    : selectedTranslationId();
   if (!translationSelect.options.length) {
     const fallbackOption = document.createElement("option");
     fallbackOption.value = "asv";
@@ -1596,22 +1586,21 @@ function syncTranslationSelectOptions() {
   }
 }
 
-function translationSelectOptionLabel(translationId, installedIds = installedTranslationIds()) {
+function translationSelectOptionLabel(translationId, installedIds = installedTranslationIds(), entry = null) {
   const normalized = String(translationId || "").toLowerCase();
+  const resolved = entry || translationCatalogEntry(normalized);
+  const abbreviation = resolved?.abbreviation || normalized.toUpperCase();
+  const name = resolved?.name || abbreviation;
   if (normalized === "asv") {
-    return "ASV - American Standard Version";
+    return `${abbreviation} - ${name}`;
   }
-  if (normalized === "kjv") {
-    return installedIds.has("kjv")
-      ? "KJV - King James Version"
-      : "KJV - Download from GitHub";
+  if (resolved?.install_mode === "direct_download" && !installedIds.has(normalized)) {
+    return `${abbreviation} - Download for offline use`;
   }
-  const entry = translationCatalogEntry(normalized);
-  const abbreviation = entry?.abbreviation || normalized.toUpperCase();
-  const name = entry?.name || "Imported local XML";
-  return installedIds.has(normalized)
-    ? `${abbreviation} - Imported local XML`
-    : `${abbreviation} - ${name}`;
+  if (resolved?.install_mode === "licensed_provider" && !installedIds.has(normalized)) {
+    return `${abbreviation} - License required`;
+  }
+  return installedIds.has(normalized) ? `${abbreviation} - Installed locally` : `${abbreviation} - ${name}`;
 }
 
 async function importTranslationXml(id) {
@@ -1650,7 +1639,7 @@ async function openTranslationImportDialog(translationId = null) {
   const select = dialog.querySelector("[data-translation-import-id]");
   const normalized = BHF_IMPORTABLE_TRANSLATION_IDS.has(String(translationId || "").toLowerCase())
     ? String(translationId).toLowerCase()
-    : translationImportPreference() || "niv";
+    : translationImportPreference() || selectedTranslationId() || "asv";
   select.value = normalized;
   renderTranslationImportDialogDetails(normalized);
   dialog.hidden = false;
@@ -1909,7 +1898,7 @@ function renderTranslationEntry(entry) {
 
   const controls = document.createElement("div");
   controls.className = "translation-selector-entry-actions";
-  if (entry.availability === "license_required") {
+  if (entry.install_mode === "licensed_provider" || entry.availability === "license_required") {
     const lock = document.createElement("span");
     lock.className = "translation-license-indicator";
     lock.textContent = "License required";
@@ -1929,7 +1918,7 @@ function renderTranslationEntry(entry) {
     download.type = "button";
     download.className = "secondary";
     download.dataset.translationDownload = entry.id;
-    download.textContent = "Download from GitHub";
+    download.textContent = "Install for offline use";
     download.title = "Download this approved third-party source for offline reading.";
     controls.appendChild(download);
   } else if (entry.can_select) {
@@ -1940,6 +1929,15 @@ function renderTranslationEntry(entry) {
     select.textContent = entry.selected ? "Selected" : "Select";
     select.disabled = Boolean(entry.selected);
     controls.appendChild(select);
+    if (entry.can_set_default) {
+      const makeDefault = document.createElement("button");
+      makeDefault.type = "button";
+      makeDefault.className = "secondary";
+      makeDefault.dataset.translationMakeDefault = entry.id;
+      makeDefault.textContent = "Set as default";
+      makeDefault.title = "Use this translation as the reader default.";
+      controls.appendChild(makeDefault);
+    }
     if (entry.can_remove) {
       const remove = document.createElement("button");
       remove.type = "button";
@@ -2242,6 +2240,7 @@ function resolveContextAction(actionType, context) {
 }
 
 function createStudyAction(type, context) {
+  const sourceTranslation = currentChapter?.translation?.id || selectedTranslationId().toUpperCase();
   return {
     type,
     book: context.book,
@@ -2250,7 +2249,7 @@ function createStudyAction(type, context) {
     verseEnd: Number(context.endVerse || context.startVerse),
     selectedText: context.text || "",
     isSelection: Boolean(context.isSelection),
-    sourceTranslation: "ASV"
+    sourceTranslation,
   };
 }
 
@@ -2569,6 +2568,7 @@ function syncAskFields() {
   setFormValue("reader_start_verse", currentSelection ? currentSelection.startVerse : "");
   setFormValue("reader_end_verse", currentSelection ? currentSelection.endVerse : "");
   setFormValue("reader_selected_text", currentSelection ? currentSelection.text : "");
+  setFormValue("reader_translation", selectedTranslationId());
 
   const summary = document.querySelector("#selection-summary");
   const addNoteButton = document.querySelector("[data-add-note]");
@@ -2579,8 +2579,9 @@ function syncAskFields() {
       currentSelection.startVerse,
       currentSelection.endVerse
     );
+    const translationLabel = translationSelectOptionLabel(selectedTranslationId(), installedTranslationIds());
     if (summary) {
-      summary.textContent = `Selected ASV ${reference}`;
+      summary.textContent = `Selected ${translationLabel} ${reference}`;
     }
     if (addNoteButton) {
       addNoteButton.disabled = false;
@@ -2650,7 +2651,7 @@ function buildReaderMapContext(studyAction) {
     verse_start: studyAction.verseStart,
     verse_end: studyAction.verseEnd,
     selected_text: studyAction.selectedText || "",
-    source_translation: studyAction.sourceTranslation || "ASV",
+    source_translation: studyAction.sourceTranslation || translationSelectOptionLabel(selectedTranslationId(), installedTranslationIds()),
     note: "Structured map context from the reader selection. A more specific place will be supplied after the map resolves curated data.",
   };
 }

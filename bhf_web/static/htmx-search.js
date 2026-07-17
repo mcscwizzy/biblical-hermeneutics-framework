@@ -8,17 +8,21 @@ async function submitBibleSearch(event) {
   syncBibleSearchConfig(form);
   const queryInput = form.querySelector("[name='query']");
   const query = queryInput ? queryInput.value.trim() : "";
+  const translationId = typeof selectedTranslationId === "function" ? selectedTranslationId() : "asv";
+  const translationLabel = typeof translationSelectOptionLabel === "function"
+    ? translationSelectOptionLabel(translationId, typeof installedTranslationIds === "function" ? installedTranslationIds() : new Set([translationId]))
+    : translationId.toUpperCase();
   if (!query) {
     clearBibleSearchResults();
     return;
   }
 
   const requestId = ++BHF_BIBLE_SEARCH_STATE.latestBibleSearchRequestId;
-  updateBibleSearchSummary(`Searching ASV for “${query}”`);
-  setBibleSearchStatus("Searching local ASV text...", "loading");
+  updateBibleSearchSummary(`Searching ${translationLabel} for “${query}”`);
+  setBibleSearchStatus(`Searching local ${translationLabel} text...`, "loading");
 
   try {
-    const data = await requestJson(`/api/bible/search?${new URLSearchParams({ q: query, limit: "25" })}`, {}, "Could not search the ASV text.");
+    const data = await requestJson(`/api/bible/search?${new URLSearchParams({ q: query, limit: "25", translation: translationId })}`, {}, `Could not search the ${translationLabel} text.`);
     if (requestId !== BHF_BIBLE_SEARCH_STATE.latestBibleSearchRequestId) {
       return;
     }
@@ -26,24 +30,24 @@ async function submitBibleSearch(event) {
       showBibleSearchResults();
       updateBibleSearchSummary(`${data.total_results} local result${data.total_results === 1 ? "" : "s"} for “${query}”`);
       clearBibleSearchStatus();
-      renderBibleSearchResults(data.results, { source: "local" });
+      renderBibleSearchResults(data.results, { source: "local", translationLabel: data.translation || translationLabel });
       return;
     }
 
     if (data.ai_fallback_eligible) {
-      updateBibleSearchSummary(`No local ASV matches for “${query}”. Checking the Canonical Knowledge Library for likely passages.`);
+      updateBibleSearchSummary(`No local ${translationLabel} matches for “${query}”. Checking the Canonical Knowledge Library for likely passages.`);
       setBibleSearchStatus("No local match found. Checking the Canonical Knowledge Library...", "loading");
       await runBibleSearchFallback(form, query, requestId);
       return;
     }
 
-    updateBibleSearchSummary(`No local ASV matches for “${query}”`);
+    updateBibleSearchSummary(`No local ${translationLabel} matches for “${query}”`);
     clearBibleSearchResults();
   } catch (error) {
     if (requestId !== BHF_BIBLE_SEARCH_STATE.latestBibleSearchRequestId) {
       return;
     }
-    setBibleSearchStatus(error.message || "Could not search the ASV text.", "error");
+    setBibleSearchStatus(error.message || `Could not search the ${translationLabel} text.`, "error");
   }
 }
 
@@ -87,6 +91,7 @@ function syncBibleSearchConfig(searchForm) {
     "memory_max_turns",
     "session_id",
     "memory_path",
+    "reader_translation",
   ]) {
     const askInput = askForm.querySelector(`[name="${name}"]`);
     let searchInput = searchForm.querySelector(`[name="${name}"]`);
@@ -96,7 +101,11 @@ function syncBibleSearchConfig(searchForm) {
       searchInput.name = name;
       searchForm.appendChild(searchInput);
     }
-    searchInput.value = askInput ? askInput.value : "";
+    if (name === "reader_translation") {
+      searchInput.value = askInput && askInput.value ? askInput.value : (typeof selectedTranslationId === "function" ? selectedTranslationId() : "asv");
+    } else {
+      searchInput.value = askInput ? askInput.value : "";
+    }
   }
   syncBibleSearchCheckbox(searchForm, askForm, "show_method_notes");
   syncBibleSearchCheckbox(searchForm, askForm, "memory_enabled");
@@ -228,15 +237,17 @@ function renderBibleSearchResults(results, options = {}) {
   const source = options.source || "local";
   body.innerHTML = `
     <div class="search-results-list">
-      ${results.map((result) => renderBibleSearchResultCard(result, source)).join("")}
+      ${results.map((result) => renderBibleSearchResultCard(result, options)).join("")}
     </div>
   `;
 }
 
-function renderBibleSearchResultCard(result, source) {
+function renderBibleSearchResultCard(result, options = {}) {
   const canGoToVerse = Boolean(result.verse_start);
+  const source = options.source || "local";
   const isFallbackSource = source !== "local";
-  const sourceBadge = isFallbackSource ? "CKL suggested passage" : result.match_type === "direct_reference" ? "Direct reference" : "ASV";
+  const translationLabel = options.translationLabel || "Text";
+  const sourceBadge = isFallbackSource ? "CKL suggested passage" : result.match_type === "direct_reference" ? "Direct reference" : translationLabel;
   const confidenceBadge = isFallbackSource && result.confidence ? `<span class="search-badge">${escapeHtml(String(result.confidence))}</span>` : "";
   const subtitle = isFallbackSource
     ? escapeHtml(result.reason || result.excerpt || "Likely topical connection.")
