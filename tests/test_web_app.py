@@ -1298,6 +1298,39 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(data["books"][0]["name"], "Genesis")
         self.assertEqual(data["books"][-1]["name"], "Revelation")
 
+    def test_translation_catalog_route_returns_curated_sections(self):
+        response = asgi_request("GET", "/api/translations/catalog")
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(
+            [entry["id"] for entry in data["catalog"]],
+            ["asv", "kjv", "niv", "esv", "csb", "nasb", "lsb", "nlt"],
+        )
+        self.assertEqual(
+            [entry["id"] for entry in data["sections"]["installed"]],
+            ["asv"],
+        )
+        self.assertEqual(
+            [entry["id"] for entry in data["sections"]["available_to_download"]],
+            ["kjv"],
+        )
+        self.assertEqual(data["sections"]["additional_english_translations"][0]["id"], "niv")
+        self.assertIn(
+            "This translation is copyrighted",
+            data["sections"]["additional_english_translations"][0]["license_explanation"],
+        )
+
+    def test_protected_translation_import_notice_requires_confirmation(self):
+        response = asgi_request(
+            "POST",
+            "/api/translations/import/notice",
+            json_data={"translation_id": "niv", "source_filename": "niv.xml"},
+        )
+
+        self.assertEqual(response["status"], 400)
+        self.assertIn("obtained the file lawfully", response["body"])
+
     def test_bible_chapter_route_returns_verses(self):
         response = asgi_request("GET", "/api/bible/Romans/12")
 

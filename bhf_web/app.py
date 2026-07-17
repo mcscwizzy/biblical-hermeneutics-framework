@@ -17,6 +17,11 @@ from bhf_agent.bible import (
     search_bible_text,
     resolve_chapter,
 )
+from bhf_agent.translation_catalog import (
+    catalog_by_id,
+    import_translation,
+    translation_selector_sections,
+)
 from bhf_agent.runner import BHFAgent
 from bhf_agent.study_db import (
     StudyDataError,
@@ -214,6 +219,31 @@ def create_app() -> FastAPI:
     @web_app.get("/api/bible/books", response_class=JSONResponse)
     async def bible_books() -> JSONResponse:
         return JSONResponse({"books": list_books()})
+
+    @web_app.get("/api/translations/catalog", response_class=JSONResponse)
+    async def translations_catalog() -> JSONResponse:
+        return JSONResponse(translation_selector_sections())
+
+    @web_app.get("/api/translations/{translation_id}", response_class=JSONResponse)
+    async def translation_detail(translation_id: str) -> JSONResponse:
+        entry = catalog_by_id().get(translation_id.lower())
+        if not entry:
+            return JSONResponse({"error": "unknown translation"}, status_code=404)
+        return JSONResponse(entry)
+
+    @web_app.post("/api/translations/import/notice", response_class=JSONResponse)
+    async def translation_import_notice(request: Request) -> JSONResponse:
+        payload = await request.json()
+        try:
+            return JSONResponse(
+                import_translation(
+                    str(payload.get("translation_id") or ""),
+                    confirmed=bool(payload.get("confirmed", False)),
+                    source_filename=str(payload.get("source_filename") or ""),
+                )
+            )
+        except ValueError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
 
     @web_app.get("/api/bible/{book}/{chapter}", response_class=JSONResponse)
     async def bible_chapter(book: str, chapter: int) -> JSONResponse:

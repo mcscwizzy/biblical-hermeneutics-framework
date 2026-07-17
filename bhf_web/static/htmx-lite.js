@@ -42,6 +42,7 @@ let lastAskWorkspaceTab = "ask";
 let lastNotesWorkspaceTab = "notes";
 let lastExploreWorkspaceTab = "maps";
 let readerControlsTrigger = null;
+let translationCatalogState = null;
 const BHF_HTTP = window.BHFApi || {};
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -166,6 +167,7 @@ async function initializeReader() {
   reader.addEventListener("pointercancel", cancelReaderLongPress);
   reader.addEventListener("pointerleave", handleReaderPointerLeave);
   reader.addEventListener("click", handleReaderActionButtonClick);
+  reader.addEventListener("click", handleTranslationSelectorClick);
   document.addEventListener("click", handleChapterNavigationClick);
   const contextMenu = document.querySelector("#reader-context-menu");
   const searchForm = document.querySelector("[data-bible-search]");
@@ -961,7 +963,7 @@ async function loadReaderChapter(book, chapter) {
   }
   reader.setAttribute("aria-busy", "true");
   hideContextMenu();
-  reader.innerHTML = `<p class="empty">Loading ASV text...</p>`;
+  reader.innerHTML = `<p class="empty">Loading ${escapeHtml(currentTranslationAbbreviation())} text...</p>`;
   try {
     const data = await requestJson(`/api/bible/${encodeURIComponent(book)}/${encodeURIComponent(chapter)}`, {}, "Could not load chapter.");
     currentChapter = data;
@@ -1099,10 +1101,15 @@ function renderChapter(data) {
   const heading = document.createElement("h3");
   heading.textContent = `${data.book} ${data.chapter}`;
 
-  const translationBadge = document.createElement("span");
+  const translation = data.translation || {};
+  const abbreviation = translation.id || currentTranslationAbbreviation();
+  const translationBadge = document.createElement("button");
+  translationBadge.type = "button";
   translationBadge.className = "reader-translation-badge";
-  translationBadge.textContent = "ASV";
-  translationBadge.setAttribute("aria-label", "Translation: ASV");
+  translationBadge.dataset.translationSelectorTrigger = "true";
+  translationBadge.textContent = abbreviation;
+  translationBadge.setAttribute("aria-label", `Translation: ${abbreviation}. Open translation selector.`);
+  translationBadge.title = "Open translation selector";
 
   passageHeading.appendChild(heading);
   passageHeading.appendChild(translationBadge);
@@ -1153,6 +1160,167 @@ function renderChapter(data) {
   footer.appendChild(createChapterNavButton("prev", "◀ Previous Chapter"));
   footer.appendChild(createChapterNavButton("next", "Next Chapter ▶"));
   reader.appendChild(footer);
+}
+
+function currentTranslationAbbreviation() {
+  return currentChapter?.translation?.id || "ASV";
+}
+
+async function handleTranslationSelectorClick(event) {
+  const trigger = event.target.closest("[data-translation-selector-trigger]");
+  if (!trigger) {
+    return;
+  }
+  event.preventDefault();
+  event.stopPropagation();
+  await openTranslationSelector(trigger);
+}
+
+async function openTranslationSelector(trigger) {
+  const dialog = ensureTranslationSelectorDialog();
+  dialog.hidden = false;
+  dialog.setAttribute("aria-busy", "true");
+  dialog.querySelector("[data-translation-selector-body]").innerHTML = `<p class="empty">Loading translations...</p>`;
+  try {
+    translationCatalogState = await requestJson("/api/translations/catalog", {}, "Could not load translations.");
+    renderTranslationSelector(translationCatalogState);
+  } catch (error) {
+    dialog.querySelector("[data-translation-selector-body]").innerHTML = errorHtml(error.message || "Could not load translations.");
+  } finally {
+    dialog.removeAttribute("aria-busy");
+    const closeButton = dialog.querySelector("[data-close-translation-selector]");
+    if (closeButton) {
+      closeButton.focus();
+    }
+  }
+  dialog.dataset.triggerSelector = trigger ? "reader" : "";
+}
+
+function ensureTranslationSelectorDialog() {
+  let dialog = document.querySelector("[data-translation-selector]");
+  if (dialog) {
+    return dialog;
+  }
+  dialog = document.createElement("div");
+  dialog.className = "translation-selector-overlay";
+  dialog.dataset.translationSelector = "true";
+  dialog.hidden = true;
+  dialog.innerHTML = `
+    <div class="translation-selector" role="dialog" aria-modal="true" aria-labelledby="translation-selector-title">
+      <div class="translation-selector-header">
+        <h2 id="translation-selector-title">Translations</h2>
+        <button type="button" class="secondary icon-button" data-close-translation-selector aria-label="Close translation selector">×</button>
+      </div>
+      <div class="translation-selector-body" data-translation-selector-body></div>
+    </div>
+  `;
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog || event.target.closest("[data-close-translation-selector]")) {
+      closeTranslationSelector();
+    }
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !dialog.hidden) {
+      closeTranslationSelector();
+    }
+  });
+  document.body.appendChild(dialog);
+  return dialog;
+}
+
+function closeTranslationSelector() {
+  const dialog = document.querySelector("[data-translation-selector]");
+  if (dialog) {
+    dialog.hidden = true;
+  }
+}
+
+function renderTranslationSelector(state) {
+  const body = document.querySelector("[data-translation-selector-body]");
+  if (!body) {
+    return;
+  }
+  const sections = state.sections || {};
+  body.innerHTML = "";
+  body.appendChild(renderTranslationSection("Installed", sections.installed || []));
+  body.appendChild(renderTranslationSection("Available to Download", sections.available_to_download || []));
+  body.appendChild(renderTranslationSection("Additional English Translations", sections.additional_english_translations || []));
+}
+
+function renderTranslationSection(title, entries) {
+  const section = document.createElement("section");
+  section.className = "translation-selector-section";
+  const heading = document.createElement("h3");
+  heading.textContent = title;
+  section.appendChild(heading);
+  if (!entries.length) {
+    const empty = document.createElement("p");
+    empty.className = "empty";
+    empty.textContent = "No translations in this section.";
+    section.appendChild(empty);
+    return section;
+  }
+  const list = document.createElement("div");
+  list.className = "translation-selector-list";
+  for (const entry of entries) {
+    list.appendChild(renderTranslationEntry(entry));
+  }
+  section.appendChild(list);
+  return section;
+}
+
+function renderTranslationEntry(entry) {
+  const row = document.createElement("article");
+  row.className = "translation-selector-entry";
+  row.dataset.translationId = entry.id;
+
+  const main = document.createElement("div");
+  main.className = "translation-selector-entry-main";
+  const title = document.createElement("h4");
+  title.textContent = `${entry.abbreviation} — ${entry.status_label || entry.name}`;
+  const subtitle = document.createElement("p");
+  subtitle.textContent = entry.name;
+  main.appendChild(title);
+  main.appendChild(subtitle);
+  if (entry.license_explanation) {
+    const explanation = document.createElement("p");
+    explanation.className = "translation-license-explanation";
+    explanation.textContent = entry.license_explanation;
+    main.appendChild(explanation);
+  }
+  if (Array.isArray(entry.actions) && entry.actions.length) {
+    const actions = document.createElement("p");
+    actions.className = "translation-license-actions";
+    actions.textContent = entry.actions.join(" · ");
+    main.appendChild(actions);
+  }
+
+  const controls = document.createElement("div");
+  controls.className = "translation-selector-entry-actions";
+  if (entry.availability === "license_required") {
+    const lock = document.createElement("span");
+    lock.className = "translation-license-indicator";
+    lock.textContent = "License required";
+    controls.appendChild(lock);
+  } else if (entry.can_download) {
+    const download = document.createElement("button");
+    download.type = "button";
+    download.className = "secondary";
+    download.disabled = true;
+    download.textContent = "Download";
+    download.title = "KJV download requires source validation before installation.";
+    controls.appendChild(download);
+  } else if (entry.can_select) {
+    const select = document.createElement("button");
+    select.type = "button";
+    select.className = entry.selected ? "primary" : "secondary";
+    select.textContent = entry.selected ? "Selected" : "Select";
+    select.disabled = Boolean(entry.selected);
+    controls.appendChild(select);
+  }
+  row.appendChild(main);
+  row.appendChild(controls);
+  return row;
 }
 
 function createChapterNavButton(direction, label) {
