@@ -38,6 +38,7 @@ let lastMapAIFallbackKey = null;
 let activeLiveAnswerPanel = null;
 let readerLongPressState = null;
 let appSection = null;
+let lastAskWorkspaceTab = "ask";
 let lastNotesWorkspaceTab = "notes";
 let lastExploreWorkspaceTab = "maps";
 let readerControlsTrigger = null;
@@ -355,8 +356,8 @@ function appSectionFromWorkspaceTab(tabId) {
   if (!tabId) {
     return null;
   }
-  if (tabId === "ask") {
-    return tabId;
+  if (tabId === "ask" || tabId === "context") {
+    return "ask";
   }
   if (tabId === "notes" || tabId === "highlights") {
     return "notes";
@@ -373,7 +374,11 @@ function appSectionFromWorkspaceTab(tabId) {
 function appSectionToWorkspaceTab(sectionId) {
   const normalized = normalizeAppSection(sectionId);
   if (normalized === "ask" || normalized === "bible") {
-    return "ask";
+    const currentWorkspaceTab = getCurrentWorkspaceTab();
+    if (currentWorkspaceTab === "ask" || currentWorkspaceTab === "context") {
+      return currentWorkspaceTab;
+    }
+    return lastAskWorkspaceTab || "ask";
   }
   if (normalized === "notes") {
     const currentWorkspaceTab = getCurrentWorkspaceTab();
@@ -396,7 +401,9 @@ function appSectionToWorkspaceTab(sectionId) {
 }
 
 function rememberWorkspaceSubtab(tabId) {
-  if (tabId === "notes" || tabId === "highlights") {
+  if (tabId === "ask" || tabId === "context") {
+    lastAskWorkspaceTab = tabId;
+  } else if (tabId === "notes" || tabId === "highlights") {
     lastNotesWorkspaceTab = tabId;
   } else if (tabId === "maps" || tabId === "journey") {
     lastExploreWorkspaceTab = tabId;
@@ -739,7 +746,7 @@ function syncReaderControlsSheetAvailability() {
 function workspaceTabsForSection(sectionId) {
   const normalized = normalizeAppSection(sectionId);
   if (normalized === "ask" || normalized === "bible") {
-    return ["ask"];
+    return ["ask", "context"];
   }
   if (normalized === "notes") {
     return ["notes", "highlights"];

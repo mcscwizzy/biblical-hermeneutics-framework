@@ -1,5 +1,6 @@
 import unittest
 
+from bhf_agent.ckl import build_canonical_context, format_canonical_context_for_prompt, load_canonical_library
 from bhf_agent.genre import classify_genre
 from bhf_agent.knowledge import lookup_lexical_entries, lookup_local_knowledge
 from bhf_agent.memory import SessionMemory, SessionTurn
@@ -23,11 +24,13 @@ class PromptBuildingTests(unittest.TestCase):
         )
 
         self.assertIn("PROFILE CONTENT", system_prompt)
+        self.assertIn("# SYSTEM INSTRUCTIONS", system_prompt)
         self.assertIn("BHF Agent Runtime Instructions", system_prompt)
         self.assertIn("Standard Runtime Strategy", system_prompt)
-        self.assertIn("retrieve the curated local map data before answering", system_prompt.lower())
+        self.assertIn("use the curated local map data if it is supplied", system_prompt.lower())
         self.assertIn("Book: Proverbs", system_prompt)
         self.assertIn("Primary genre: wisdom literature", system_prompt)
+        self.assertIn("# OUTPUT REQUIREMENTS", system_prompt)
         self.assertEqual(user_prompt, "What does Proverbs 3 mean?")
 
     def test_minimal_profile_gets_strict_small_model_instructions(self):
@@ -66,6 +69,29 @@ class PromptBuildingTests(unittest.TestCase):
         self.assertIn("Avoid denominational overreach", system_prompt)
         self.assertIn("Answer Mode: Study", system_prompt)
         self.assertIn("default balanced BHF answer shape", system_prompt)
+
+    def test_framework_guidance_sets_interpretive_order_and_boundaries(self):
+        system_prompt, _ = build_prompt(
+            "standard",
+            "PROFILE",
+            self.reference,
+            self.genre,
+            "What does Proverbs 3 mean?",
+        )
+
+        self.assertIn("Hermeneutical Framework Guidance", system_prompt)
+        self.assertIn("Immediate literary context", system_prompt)
+        self.assertIn("Hebraic worldview", system_prompt)
+        self.assertIn("Second Temple Jewish context when relevant", system_prompt)
+        self.assertIn("Christological development when supported by the text", system_prompt)
+        self.assertIn("Modern application", system_prompt)
+        self.assertIn("Read the Old Testament as Israel's Scriptures", system_prompt)
+        self.assertIn("Read New Testament authors within their Jewish, Second Temple, Greco-Roman, and scriptural worlds", system_prompt)
+        self.assertIn("Preserve the distinction between Israel and the Church", system_prompt)
+        self.assertIn("Do not flatten Judaism into legalism", system_prompt)
+        self.assertIn("Do not describe the Old Testament as works-based and the New Testament as grace-based", system_prompt)
+        self.assertIn("similarity does not prove dependence", system_prompt)
+        self.assertIn("difference does not prove complete isolation", system_prompt)
 
     def test_answer_mode_adds_mode_specific_instructions(self):
         expected = {
@@ -233,6 +259,169 @@ class PromptBuildingTests(unittest.TestCase):
         self.assertIn("Genre: wisdom literature", system_prompt)
         self.assertIn("Genre guide (genre:wisdom literature)", system_prompt)
         self.assertIn("not automatic formulas", system_prompt)
+
+    def test_prompt_includes_canonical_library_context_before_local_knowledge(self):
+        question = "Why did Israel renew the covenant where Abraham first entered the land at Shechem in Joshua 24?"
+        reference = detect_reference(question)
+        genre = classify_genre(reference)
+        question_context = classify_question_type(question, reference)
+        bundle = lookup_local_knowledge(reference, genre, question_context)
+        canonical_context = build_canonical_context(
+            load_canonical_library(),
+            question,
+            reference_context=reference,
+            question_context=question_context,
+            max_results=4,
+            include_placeholders=True,
+            allowed_statuses=("unreviewed", "in_review", "reviewed", "approved"),
+        )
+        canonical_prompt = format_canonical_context_for_prompt(canonical_context, max_context_tokens=1200)
+
+        system_prompt, _ = build_prompt(
+            "standard",
+            "PROFILE",
+            reference,
+            genre,
+            question_context,
+            question,
+            local_knowledge=bundle,
+            canonical_context_prompt=canonical_prompt,
+        )
+
+        self.assertIn("# CANONICAL KNOWLEDGE CONTEXT", system_prompt)
+        self.assertIn("You are the explanation layer for the Biblical Hermeneutics Framework.", system_prompt)
+        self.assertIn("Use that context as your primary factual source.", system_prompt)
+        self.assertIn("Entry: Shechem", system_prompt)
+        self.assertIn("Source ID: shechem", system_prompt)
+        self.assertIn("Abraham", system_prompt)
+        self.assertIn("Joshua 24", system_prompt)
+        self.assertLess(
+            system_prompt.index("# CANONICAL KNOWLEDGE CONTEXT"),
+            system_prompt.index("Local Curated Knowledge"),
+        )
+        self.assertIn("# OUTPUT REQUIREMENTS", system_prompt)
+
+    def test_prompt_uses_scripture_reverse_lookup_for_joshua_24(self):
+        question = "Which objects relate to Joshua 24?"
+        reference = detect_reference(question)
+        genre = classify_genre(reference)
+        question_context = classify_question_type(question, reference)
+        canonical_context = build_canonical_context(
+            load_canonical_library(),
+            question,
+            reference_context=reference,
+            question_context=question_context,
+            max_results=6,
+            include_placeholders=True,
+            allowed_statuses=("unreviewed", "in_review", "reviewed", "approved"),
+        )
+        canonical_prompt = format_canonical_context_for_prompt(canonical_context, max_context_tokens=1200)
+
+        self.assertIn("## Entry: Shechem", canonical_prompt)
+        self.assertIn("Source ID: shechem", canonical_prompt)
+        self.assertIn("Joshua 24:1-28", canonical_prompt)
+        self.assertIn("Joshua 24:32", canonical_prompt)
+        self.assertIn("Abraham", canonical_prompt)
+        self.assertNotIn("Retrieved object IDs:", canonical_prompt)
+        self.assertNotIn("Score:", canonical_prompt)
+        self.assertNotIn("Match:", canonical_prompt)
+        self.assertNotIn("Status:", canonical_prompt)
+        self.assertNotIn("# Canonical Knowledge Context", canonical_prompt)
+
+    def test_prompt_includes_second_temple_context_for_hebrews(self):
+        question = "How does the book of Hebrews use priesthood and sacrifice?"
+        reference = detect_reference(question)
+        genre = classify_genre(reference)
+        question_context = classify_question_type(question, reference)
+        canonical_context = build_canonical_context(
+            load_canonical_library(),
+            question,
+            reference_context=reference,
+            question_context=question_context,
+            max_results=6,
+            include_placeholders=True,
+            allowed_statuses=("unreviewed", "in_review", "reviewed", "approved"),
+            answer_mode="scholar",
+            max_context_tokens=1200,
+        )
+        canonical_prompt = format_canonical_context_for_prompt(
+            canonical_context,
+            max_context_tokens=1200,
+            answer_mode="scholar",
+        )
+
+        self.assertIn("Entry: Hebrews", canonical_prompt)
+        self.assertIn("Second Temple Context:", canonical_prompt)
+        self.assertIn("Later Christian Reception:", canonical_prompt)
+        self.assertLess(
+            canonical_prompt.index("Second Temple Context:"),
+            canonical_prompt.index("Later Christian Reception:"),
+        )
+
+    def test_canonical_context_prompt_uses_answer_mode_tiers(self):
+        question = "Why did Israel renew the covenant where Abraham first entered the land at Shechem in Joshua 24?"
+        reference = detect_reference(question)
+        genre = classify_genre(reference)
+        question_context = classify_question_type(question, reference)
+        canonical_context = build_canonical_context(
+            load_canonical_library(),
+            question,
+            reference_context=reference,
+            question_context=question_context,
+            max_results=4,
+            include_placeholders=True,
+            allowed_statuses=("unreviewed", "in_review", "reviewed", "approved"),
+            answer_mode="scholar",
+            max_context_tokens=1200,
+        )
+
+        concise_prompt = format_canonical_context_for_prompt(
+            canonical_context,
+            max_context_tokens=600,
+            answer_mode="concise",
+        )
+        scholar_prompt = format_canonical_context_for_prompt(
+            canonical_context,
+            max_context_tokens=1200,
+            answer_mode="scholar",
+        )
+
+        self.assertIn("## Entry: Shechem", concise_prompt)
+        self.assertIn("## Entry: Shechem", scholar_prompt)
+        self.assertIn("Summary:", concise_prompt)
+        self.assertIn("Primary Scripture References:", concise_prompt)
+        self.assertIn("Interpretive Disputes and Cautions:", concise_prompt)
+        self.assertIn("Sources:", concise_prompt)
+        self.assertNotIn("Ancient Near Eastern Context:", concise_prompt)
+        self.assertIn("Ancient Near Eastern Context:", scholar_prompt)
+        self.assertIn("Covenant and Canonical Context:", scholar_prompt)
+        self.assertIn("Interpretive Disputes and Cautions:", scholar_prompt)
+        self.assertIn("Sources:", scholar_prompt)
+        self.assertNotIn("Relevant facts:", concise_prompt)
+        self.assertNotIn("Relevant facts:", scholar_prompt)
+        self.assertNotIn("Retrieved object IDs:", concise_prompt)
+        self.assertNotIn("Retrieved object IDs:", scholar_prompt)
+        concise_order = [
+            concise_prompt.index("Summary:"),
+            concise_prompt.index("Primary Scripture References:"),
+            concise_prompt.index("Immediate Literary Context:"),
+            concise_prompt.index("Historical Context:"),
+            concise_prompt.index("Interpretive Disputes and Cautions:"),
+            concise_prompt.index("Sources:"),
+        ]
+        self.assertEqual(concise_order, sorted(concise_order))
+        scholar_order = [
+            scholar_prompt.index("Summary:"),
+            scholar_prompt.index("Primary Scripture References:"),
+            scholar_prompt.index("Immediate Literary Context:"),
+            scholar_prompt.index("Historical Context:"),
+            scholar_prompt.index("Ancient Near Eastern Context:"),
+            scholar_prompt.index("Covenant and Canonical Context:"),
+            scholar_prompt.index("Interpretive Disputes and Cautions:"),
+            scholar_prompt.index("Sources:"),
+        ]
+        self.assertEqual(scholar_order, sorted(scholar_order))
+        self.assertLess(len(concise_prompt), len(scholar_prompt))
 
     def test_prompt_includes_local_session_memory_when_available(self):
         memory = SessionMemory(

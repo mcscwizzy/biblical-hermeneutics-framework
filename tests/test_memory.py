@@ -82,7 +82,7 @@ class MemoryTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             adapter = MemoryRecordingAdapter(
                 [
-                    "First answer summary about Proverbs wisdom.",
+                    "Genre: wisdom literature. Original audience: Israel under covenant instruction. Observation: First answer summary about Proverbs wisdom. Interpretation: Proverbs 3 calls readers to trust the Lord rather than self-reliance. Application: Teach it as practical wisdom for daily discipleship. Uncertainty: Some scholars caution that proverb application is general rather than absolute.",
                     "Second answer.",
                 ]
             )

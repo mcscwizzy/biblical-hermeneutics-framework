@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import os
 import socket
+import shutil
 import tempfile
 import threading
 import time
@@ -61,6 +62,7 @@ def base_url() -> str:
     original_db_path = web_settings.STUDY_DB_PATH
     original_web_config = web_settings.WEB_CONFIG_PATH
     original_test_mode = web_settings.TEST_MODE
+    original_ckl_root = os.environ.get("BHF_CKL_ROOT")
 
     temp_dir = tempfile.TemporaryDirectory()
     temp_root = Path(temp_dir.name)
@@ -69,10 +71,24 @@ def base_url() -> str:
     port = _free_port()
     local_base_url = f"{DEFAULT_BASE_URL.rsplit(':', 1)[0]}:{port}"
 
+    canonical_root = temp_root / "canonical_library"
+    shutil.copytree(
+        Path("framework/canonical_library").resolve(),
+        canonical_root,
+        ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
+    )
+    os.environ["BHF_CKL_ROOT"] = str(canonical_root)
+
     web_settings.STUDY_DB_PATH = db_path
     web_settings.WEB_CONFIG_PATH = config_path
     web_settings.TEST_MODE = True
     initialize_database(db_path)
+
+    import bhf_agent.ckl as ckl_module
+    from bhf_web.routes import canonical as canonical_routes
+
+    ckl_module._load_default_canonical_library.cache_clear()
+    canonical_routes._canonical_library.cache_clear()
 
     import bhf_web.app as app_module
 
@@ -96,6 +112,10 @@ def base_url() -> str:
     server.should_exit = True
     thread.join(timeout=10)
     temp_dir.cleanup()
+    if original_ckl_root is None:
+        os.environ.pop("BHF_CKL_ROOT", None)
+    else:
+        os.environ["BHF_CKL_ROOT"] = original_ckl_root
     web_settings.STUDY_DB_PATH = original_db_path
     web_settings.WEB_CONFIG_PATH = original_web_config
     web_settings.TEST_MODE = original_test_mode

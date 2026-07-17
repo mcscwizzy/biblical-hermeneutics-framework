@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import json
 import threading
 import uuid
 from dataclasses import dataclass, field
@@ -16,6 +15,7 @@ from bhf_agent.runner import BHFAgent
 
 from . import settings
 from .forms import config_from_form, load_web_defaults
+from .services.bible_search_fallback import build_bible_search_fallback_payload
 from .services.web_helpers import (
     build_ask_question as _question_from_form,
     failed_stage as _failed_stage,
@@ -320,18 +320,39 @@ def run_search_fallback_job(
         job.question = query
         loaded = load_web_defaults()
         config = config_from_form(form, loaded.config)
-        prompt = bible_search_fallback_prompt(query)
-        result = agent_class(config).ask(prompt, status_callback=job.emit)
-        if getattr(result, "errors", None):
-            job.fail(
-                "; ".join(str(error) for error in result.errors),
-                status_code=502,
-                failed_stage=job.failed_stage or "waiting_for_model_response",
-            )
-            job.result = result
-            return
-        payload = parse_search_fallback_payload(result.answer_text, query)
-    except (ConfigError, ProfileError, ValueError, json.JSONDecodeError) as exc:
+        del agent_class
+        job.emit(
+            {
+                "stage": "searching_canonical_library",
+                "message": "Searching the Canonical Knowledge Library for likely passages",
+                "timestamp": timestamp(),
+                "step_index": 11,
+                "total_steps": 16,
+                "percent_complete": 75,
+                "elapsed_total_seconds": 0.0,
+                "elapsed_current_stage_seconds": 0.0,
+                "status": "running",
+            }
+        )
+        payload = build_bible_search_fallback_payload(
+            query,
+            canonical_library=config.canonical_library,
+            limit=config.canonical_library.max_results,
+        )
+        job.emit(
+            {
+                "stage": "complete",
+                "message": "Complete",
+                "timestamp": timestamp(),
+                "step_index": 16,
+                "total_steps": 16,
+                "percent_complete": 100,
+                "elapsed_total_seconds": 0.0,
+                "elapsed_current_stage_seconds": 0.0,
+                "status": "complete",
+            }
+        )
+    except (ConfigError, ProfileError, ValueError) as exc:
         job.fail(str(exc), status_code=400)
         return
     except Exception as exc:
@@ -339,91 +360,3 @@ def run_search_fallback_job(
         return
 
     job.complete(payload)
-
-
-def bible_search_fallback_prompt(query: str) -> str:
-    return "\n".join(
-        [
-            "Using BHF, identify likely Bible passages for the following search query.",
-            f"Query: {query}",
-            "",
-            "Return a JSON object with a results array.",
-            "Each result should include book, chapter, optional verse_start, optional verse_end, reason, and confidence.",
-            "Use only likely passages and keep the response concise.",
-            "Do not include markdown fences or extra commentary.",
-        ]
-    )
-
-
-def parse_search_fallback_payload(answer_text: str, query: str) -> dict[str, Any]:
-    def _format_reference(item: dict[str, Any]) -> str:
-        reference = f"{item['book']} {item['chapter']}"
-        verse_start = item.get("verse_start")
-        verse_end = item.get("verse_end")
-        if verse_start not in (None, ""):
-            suffix = str(verse_start)
-            if verse_end not in (None, "") and str(verse_end) != str(verse_start):
-                suffix = f"{suffix}-{verse_end}"
-            reference = f"{reference}:{suffix}"
-        return reference
-
-    raw = answer_text.strip()
-    if not raw:
-        return {
-            "source": "ai_fallback",
-            "query": query,
-            "results": [],
-            "message": "BHF could not identify likely passage candidates.",
-        }
-    try:
-        parsed = json.loads(raw)
-    except json.JSONDecodeError:
-        return {
-            "source": "ai_fallback",
-            "query": query,
-            "results": [],
-            "message": "BHF returned an unreadable fallback response.",
-        }
-
-    results: list[dict[str, Any]] = []
-    if isinstance(parsed, dict):
-        candidate_results = parsed.get("results")
-        if isinstance(candidate_results, list):
-            for item in candidate_results:
-                if not isinstance(item, dict):
-                    continue
-                book = str(item.get("book") or "").strip()
-                chapter_value = item.get("chapter")
-                if not book or chapter_value in (None, ""):
-                    continue
-                try:
-                    chapter = int(chapter_value)
-                except (TypeError, ValueError):
-                    continue
-                normalized = {
-                    "book": book,
-                    "chapter": chapter,
-                    "reference": _format_reference({"book": book, "chapter": chapter, **item}),
-                    "reason": str(item.get("reason") or "Likely topical connection."),
-                    "confidence": str(item.get("confidence") or ""),
-                }
-                verse_start = item.get("verse_start")
-                verse_end = item.get("verse_end")
-                if verse_start not in (None, ""):
-                    try:
-                        normalized["verse_start"] = int(verse_start)
-                    except (TypeError, ValueError):
-                        pass
-                if verse_end not in (None, ""):
-                    try:
-                        normalized["verse_end"] = int(verse_end)
-                    except (TypeError, ValueError):
-                        pass
-                results.append(normalized)
-
-    return {
-        "source": "ai_fallback",
-        "query": query,
-        "results": results,
-        "message": str(parsed.get("message") or "BHF identified likely passage candidates.") if isinstance(parsed, dict) else "BHF identified likely passage candidates.",
-    }

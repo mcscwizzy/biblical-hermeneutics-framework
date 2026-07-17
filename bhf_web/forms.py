@@ -28,6 +28,8 @@ ENV_CONFIG_FIELDS = {
     "BHF_MEMORY_PATH": "memory_path",
     "BHF_SESSION_ID": "session_id",
     "BHF_API_KEY": "api_key",
+    "BHF_CKL_RETRIEVAL_ENABLED": "canonical_library.enabled",
+    "BHF_CKL_RETRIEVAL_SHADOW_MODE": "canonical_library.shadow_mode",
     "OLLAMA_BASE_URL": "base_url",
     "OLLAMA_MODEL": "model",
 }
@@ -195,26 +197,47 @@ def _apply_env_overrides(values: dict[str, Any], environ: Mapping[str, str]) -> 
         if raw_value is None or raw_value == "":
             continue
         try:
-            values[field_name] = _env_value(field_name, raw_value)
+            _set_nested_value(values, field_name, _env_value(field_name, raw_value))
         except ConfigError as exc:
             warnings.append(f"{env_name}: {exc}")
     return "; ".join(warnings) or None
 
 
 def _env_value(field_name: str, raw_value: str) -> Any:
-    if field_name in {"temperature", "timeout_seconds"}:
+    leaf_name = field_name.split(".")[-1]
+    if leaf_name in {"temperature", "timeout_seconds"}:
         try:
             return float(raw_value)
         except ValueError as exc:
             raise ConfigError(f"{field_name} must be a number") from exc
-    if field_name in {"max_tokens"}:
+    if leaf_name in {"max_tokens"}:
         try:
             return int(raw_value)
         except ValueError as exc:
             raise ConfigError(f"{field_name} must be an integer") from exc
-    if field_name in {"show_method_notes", "memory_enabled"}:
+    if leaf_name in {
+        "enabled",
+        "shadow_mode",
+        "cache_enabled",
+        "show_method_notes",
+        "memory_enabled",
+        "debug",
+        "auto_repair",
+    }:
         return _env_bool(raw_value, field_name)
     return raw_value.strip()
+
+
+def _set_nested_value(values: dict[str, Any], field_path: str, value: Any) -> None:
+    parts = field_path.split(".")
+    target = values
+    for part in parts[:-1]:
+        next_value = target.get(part)
+        if not isinstance(next_value, dict):
+            next_value = {}
+            target[part] = next_value
+        target = next_value
+    target[parts[-1]] = value
 
 
 def _env_bool(raw_value: str, field_name: str) -> bool:

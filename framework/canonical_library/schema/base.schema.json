@@ -1,0 +1,576 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "framework.canonical_library.schema.base",
+  "title": "Canonical Knowledge Library Base Object Schema",
+  "description": "Deterministic base schema for CKL objects after governance defaults are applied.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "type",
+    "title",
+    "aliases",
+    "summary",
+    "historical_context",
+    "ancient_near_east_context",
+    "hebraic_worldview",
+    "second_temple_context",
+    "canonical_context",
+    "later_christian_reception",
+    "context_applicability",
+    "literary_context",
+    "covenantal_significance",
+    "authorship_positions",
+    "date_ranges",
+    "original_audience",
+    "historical_setting",
+    "genre",
+    "structure",
+    "major_themes",
+    "canonical_placement",
+    "key_people",
+    "key_places",
+    "key_events",
+    "interpretive_disputes",
+    "primary_sources",
+    "intertextuality",
+    "timeline",
+    "maps",
+    "archaeology",
+    "hebrew_words",
+    "greek_words",
+    "related_people",
+    "related_places",
+    "related_events",
+    "related_objects",
+    "scripture_references",
+    "cross_references",
+    "new_testament_connections",
+    "interpretive_notes",
+    "common_questions",
+    "sources",
+    "importance",
+    "framework_version",
+    "object_version",
+    "content_status",
+    "review_status",
+    "generated_by",
+    "edited_by",
+    "reviewed_by",
+    "last_reviewed",
+    "confidence",
+    "human_review_required"
+  ],
+  "$defs": {
+    "canonicalId": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "blankableString": {
+      "type": "string"
+    },
+    "kebabCaseString": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "stringList": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "relatedObject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "relationship",
+        "weight",
+        "notes"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/canonicalId"
+        },
+        "relationship": {
+          "$ref": "#/$defs/kebabCaseString"
+        },
+        "weight": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "scriptureReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reference",
+        "relationship",
+        "notes"
+      ],
+      "properties": {
+        "reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relationship": {
+          "type": "string",
+          "enum": [
+            "primary",
+            "supporting",
+            "background",
+            "quotation",
+            "allusion",
+            "typology",
+            "fulfillment",
+            "contrast",
+            "parallel"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "source_type",
+        "title",
+        "author",
+        "publisher",
+        "year",
+        "locator",
+        "url",
+        "supports",
+        "notes"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/canonicalId"
+        },
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "scripture",
+            "ancient-primary-source",
+            "academic-book",
+            "journal-article",
+            "lexicon",
+            "grammar",
+            "excavation-report",
+            "museum-collection",
+            "reference-work",
+            "confessional-source",
+            "other"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "author": {
+          "type": "string"
+        },
+        "publisher": {
+          "type": "string"
+        },
+        "year": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "locator": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "supports": {
+          "$ref": "#/$defs/stringList"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "name",
+        "workflow",
+        "date"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "ai",
+            "human",
+            "import",
+            "migration",
+            "other"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "workflow": {
+          "type": "string",
+          "minLength": 1
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "interpretiveNote": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "note"
+      ],
+      "properties": {
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "note_type": {
+          "type": "string",
+          "enum": [
+            "textual-observation",
+            "literary-observation",
+            "historical-context",
+            "ancient-near-east-context",
+            "hebraic-worldview",
+            "second-temple-context",
+            "canonical-connection",
+            "theological-interpretation",
+            "interpretive-caution",
+            "later-reception"
+          ]
+        },
+        "certainty": {
+          "type": "string",
+          "enum": [
+            "high",
+            "medium",
+            "low",
+            "unknown"
+          ]
+        },
+        "dispute_status": {
+          "type": "string",
+          "enum": [
+            "consensus",
+            "broad-consensus",
+            "majority",
+            "disputed",
+            "minority",
+            "confessional",
+            "unknown"
+          ]
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "contextApplicability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "historical",
+        "ancient_near_east",
+        "hebraic_worldview",
+        "second_temple",
+        "canonical",
+        "later_christian_reception"
+      ],
+      "properties": {
+        "historical": {
+          "type": "boolean"
+        },
+        "ancient_near_east": {
+          "type": "boolean"
+        },
+        "hebraic_worldview": {
+          "type": "boolean"
+        },
+        "second_temple": {
+          "type": "boolean"
+        },
+        "canonical": {
+          "type": "boolean"
+        },
+        "later_christian_reception": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "properties": {
+    "id": {
+      "$ref": "#/$defs/canonicalId"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "theology",
+        "theme",
+        "person",
+        "place",
+        "event",
+        "book",
+        "word_study",
+        "archaeology",
+        "institution",
+        "prophecy",
+        "faq"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "aliases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "summary": {
+      "type": "string"
+    },
+    "historical_context": {
+      "type": "string"
+    },
+    "ancient_near_east_context": {
+      "type": "string"
+    },
+    "hebraic_worldview": {
+      "type": "string"
+    },
+    "second_temple_context": {
+      "type": "string"
+    },
+    "canonical_context": {
+      "type": "string"
+    },
+    "later_christian_reception": {
+      "type": "string"
+    },
+    "context_applicability": {
+      "$ref": "#/$defs/contextApplicability"
+    },
+    "literary_context": {
+      "type": "string"
+    },
+    "covenantal_significance": {
+      "type": "string"
+    },
+    "authorship_positions": {
+      "$ref": "#/$defs/stringList"
+    },
+    "date_ranges": {
+      "$ref": "#/$defs/stringList"
+    },
+    "original_audience": {
+      "type": "string"
+    },
+    "historical_setting": {
+      "type": "string"
+    },
+    "genre": {
+      "$ref": "#/$defs/stringList"
+    },
+    "structure": {
+      "$ref": "#/$defs/stringList"
+    },
+    "major_themes": {
+      "$ref": "#/$defs/stringList"
+    },
+    "canonical_placement": {
+      "type": "string"
+    },
+    "key_people": {
+      "$ref": "#/$defs/stringList"
+    },
+    "key_places": {
+      "$ref": "#/$defs/stringList"
+    },
+    "key_events": {
+      "$ref": "#/$defs/stringList"
+    },
+    "interpretive_disputes": {
+      "$ref": "#/$defs/stringList"
+    },
+    "primary_sources": {
+      "$ref": "#/$defs/stringList"
+    },
+    "intertextuality": {
+      "$ref": "#/$defs/stringList"
+    },
+    "timeline": {
+      "$ref": "#/$defs/stringList"
+    },
+    "maps": {
+      "$ref": "#/$defs/stringList"
+    },
+    "archaeology": {
+      "$ref": "#/$defs/stringList"
+    },
+    "hebrew_words": {
+      "$ref": "#/$defs/stringList"
+    },
+    "greek_words": {
+      "$ref": "#/$defs/stringList"
+    },
+    "related_people": {
+      "$ref": "#/$defs/stringList"
+    },
+    "related_places": {
+      "$ref": "#/$defs/stringList"
+    },
+    "related_events": {
+      "$ref": "#/$defs/stringList"
+    },
+    "related_objects": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relatedObject"
+      }
+    },
+    "scripture_references": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/scriptureReference"
+      }
+    },
+    "cross_references": {
+      "$ref": "#/$defs/stringList"
+    },
+    "new_testament_connections": {
+      "$ref": "#/$defs/stringList"
+    },
+    "interpretive_notes": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "string",
+            "minLength": 1
+          },
+          {
+            "$ref": "#/$defs/interpretiveNote"
+          }
+        ]
+      }
+    },
+    "common_questions": {
+      "$ref": "#/$defs/stringList"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "string",
+            "minLength": 1
+          },
+          {
+            "$ref": "#/$defs/source"
+          }
+        ]
+      }
+    },
+    "importance": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "framework_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "object_version": {
+      "type": "string",
+      "const": "1"
+    },
+    "content_status": {
+      "type": "string",
+      "enum": [
+        "placeholder",
+        "draft",
+        "complete",
+        "deprecated"
+      ]
+    },
+    "review_status": {
+      "type": "string",
+      "enum": [
+        "unreviewed",
+        "in_review",
+        "reviewed",
+        "approved",
+        "rejected"
+      ]
+    },
+    "generated_by": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/provenance"
+      }
+    },
+    "edited_by": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reviewed_by": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "last_reviewed": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "unrated",
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "human_review_required": {
+      "type": "boolean"
+    }
+  }
+}

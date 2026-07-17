@@ -16,6 +16,22 @@ python tools/eval_local.py \
 
 Add `--json` for machine-readable output.
 
+## Regression Suite Mode
+
+Use this when you want to run a repeatable CKL regression set with per-case
+metadata assertions:
+
+```bash
+python tools/eval_local.py \
+  --suite tests/prompts/ckl-regression-suite.json \
+  --config local.config.json
+```
+
+Suite cases can carry `config_overrides` for CKL toggles such as
+`enabled`, `allowed_statuses`, and `max_context_tokens`, plus
+`metadata_checks` for object IDs, retrieval method, topic count, and prompt
+token limits.
+
 ## Optional Model-Call Mode
 
 Use this only when you want the eval runner to call the configured local BHF
@@ -42,6 +58,10 @@ Fixtures are JSON objects with:
 - `expected_behaviors`
 - `forbidden_behaviors`
 - `pass_threshold`
+- `config_overrides` is optional and can tweak agent settings for the case.
+- `metadata_checks` is optional and can assert retrieval metadata from the agent.
 
 Behavior checks can use `pattern` for regular expressions or `keywords` for a
 list of required substrings. Forbidden matches subtract from the score.
+Metadata checks can assert equality, membership, exclusion, or numeric bounds
+against fields in the returned agent metadata.

@@ -13,12 +13,76 @@ from bhf_agent.profiles import ProfileError
 
 from ..forms import config_from_form, load_web_defaults
 from ..jobs import _fake_result
+from ..services.ckl_inspector import build_result_inspector_payload
 from ..services.web_helpers import (
     build_ask_question as _question_from_form,
     job_error_message as _job_error_message,
     render_safe_markdown,
     result_metadata,
 )
+
+
+def _public_answer_text(result: Any) -> str:
+    public_response = getattr(result, "public_response", None)
+    if callable(public_response):
+        payload = public_response()
+        if isinstance(payload, dict):
+            answer = payload.get("answer")
+        else:
+            answer = getattr(payload, "answer", None)
+        if answer is not None:
+            return str(answer)
+    return str(getattr(result, "answer_text", "") or "")
+
+
+def _result_error_message(result: Any) -> str:
+    errors = getattr(result, "errors", None) or []
+    if not errors:
+        return "Request failed."
+    return "; ".join(str(error) for error in errors)
+
+
+def _answer_template_context(
+    *,
+    error: str | None,
+    answer_text: str = "",
+    reader_reference: str | None = None,
+    can_save_study: bool = False,
+    saved_study: Any = None,
+    debug_result: Any = None,
+    show_debug: bool = False,
+    inspector_question: str | None = None,
+    inspector_max_context_tokens: int | None = None,
+) -> dict[str, Any]:
+    metadata: dict[str, Any] = {}
+    canonical_context = None
+    canonical_object_ids: list[str] = []
+    developer_inspector = None
+    if show_debug and debug_result is not None:
+        metadata = result_metadata(debug_result)
+        debug_metadata = getattr(debug_result, "model_metadata", {}) or {}
+        if bool((debug_metadata.get("pipeline") or {}).get("ckl_context_injected")):
+            canonical_context = debug_metadata.get("canonical_library_context")
+            canonical_object_ids = list(debug_metadata.get("canonical_library_object_ids") or [])
+        if inspector_question:
+            developer_inspector = build_result_inspector_payload(
+                inspector_question,
+                debug_result,
+                max_context_tokens=inspector_max_context_tokens or 3000,
+                debug=True,
+            )
+
+    return {
+        "error": error,
+        "saved_study": saved_study,
+        "answer_html": render_safe_markdown(answer_text),
+        "metadata": metadata,
+        "canonical_context": canonical_context,
+        "canonical_object_ids": canonical_object_ids,
+        "developer_inspector": developer_inspector,
+        "reader_reference": reader_reference,
+        "can_save_study": can_save_study,
+    }
 
 
 def register_ask_routes(
@@ -35,6 +99,7 @@ def register_ask_routes(
     async def ask(request: Request) -> HTMLResponse:
         form = await request.form()
         loaded = load_web_defaults()
+        show_debug = bool(getattr(loaded.config, "debug", False))
         try:
             question, reader_reference = _question_from_form(form)
             config = config_from_form(form, loaded.config)
@@ -43,40 +108,57 @@ def register_ask_routes(
             return templates.TemplateResponse(
                 request,
                 "partials/answer.html",
-                {
-                    "error": str(exc),
-                    "result": None,
-                    "answer_html": "",
-                    "metadata": {},
-                    "reader_reference": None,
-                },
+                _answer_template_context(error=str(exc)),
                 status_code=400,
             )
 
         if test_mode:
             result = _fake_result(question, reader_reference)
+            answer_text = _public_answer_text(result)
             return templates.TemplateResponse(
                 request,
                 "partials/answer.html",
-                {
-                    "error": None,
-                    "result": result,
-                    "answer_html": render_safe_markdown(result.answer_text),
-                    "metadata": result_metadata(result),
-                    "reader_reference": reader_reference,
-                },
+                _answer_template_context(
+                    error=None,
+                    answer_text=answer_text,
+                    reader_reference=reader_reference,
+                    can_save_study=bool(reader_reference),
+                    debug_result=result if show_debug else None,
+                    show_debug=show_debug,
+                    inspector_question=question,
+                    inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
+                ),
             )
 
+        answer_text = _public_answer_text(result)
+        if getattr(result, "errors", None) and not answer_text.strip():
+            return templates.TemplateResponse(
+                request,
+                "partials/answer.html",
+                _answer_template_context(
+                    error=_result_error_message(result),
+                    reader_reference=reader_reference,
+                    can_save_study=bool(reader_reference),
+                    debug_result=result if show_debug else None,
+                    show_debug=show_debug,
+                    inspector_question=question,
+                    inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
+                ),
+                status_code=502,
+            )
         return templates.TemplateResponse(
             request,
             "partials/answer.html",
-            {
-                "error": None,
-                "result": result,
-                "answer_html": render_safe_markdown(result.answer_text),
-                "metadata": result_metadata(result),
-                "reader_reference": reader_reference,
-            },
+            _answer_template_context(
+                error=None,
+                answer_text=answer_text,
+                reader_reference=reader_reference,
+                can_save_study=bool(reader_reference),
+                debug_result=result if show_debug else None,
+                show_debug=show_debug,
+                inspector_question=question,
+                inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
+            ),
         )
 
     @app.post("/ask/jobs", response_class=JSONResponse)
@@ -102,58 +184,64 @@ def register_ask_routes(
 
     @app.get("/ask/result/{job_id}", response_class=HTMLResponse)
     async def ask_result(request: Request, job_id: str) -> HTMLResponse:
+        loaded = load_web_defaults()
+        show_debug = bool(getattr(loaded.config, "debug", False))
         job = job_store.get(job_id)
         if job is None:
             return templates.TemplateResponse(
                 request,
                 "partials/answer.html",
-                {
-                    "error": "job not found",
-                    "result": None,
-                    "answer_html": "",
-                    "metadata": {},
-                    "reader_reference": None,
-                },
+                _answer_template_context(error="job not found"),
                 status_code=404,
             )
         if not job.done:
             return templates.TemplateResponse(
                 request,
                 "partials/answer.html",
-                {
-                    "error": "answer is still running",
-                    "result": None,
-                    "answer_html": "",
-                    "metadata": {},
-                    "reader_reference": None,
-                },
+                _answer_template_context(error="answer is still running"),
                 status_code=202,
             )
         if job.error:
             return templates.TemplateResponse(
                 request,
                 "partials/answer.html",
-                {
-                    "error": _job_error_message(job),
-                    "result": None,
-                    "answer_html": "",
-                    "metadata": {},
-                    "reader_reference": job.reader_reference,
-                },
+                _answer_template_context(
+                    error=_job_error_message(job),
+                    reader_reference=job.reader_reference,
+                ),
                 status_code=job.status_code,
             )
 
         result = job.result
+        answer_text = _public_answer_text(result)
+        if getattr(result, "errors", None) and not answer_text.strip():
+            return templates.TemplateResponse(
+                request,
+                "partials/answer.html",
+                _answer_template_context(
+                    error=_result_error_message(result),
+                    reader_reference=job.reader_reference,
+                    can_save_study=bool(job.reader_reference),
+                    debug_result=result if show_debug else None,
+                    show_debug=show_debug,
+                    inspector_question=job.question,
+                    inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
+                ),
+                status_code=502,
+            )
         return templates.TemplateResponse(
             request,
             "partials/answer.html",
-            {
-                "error": None,
-                "result": result,
-                "answer_html": render_safe_markdown(result.answer_text),
-                "metadata": result_metadata(result),
-                "reader_reference": job.reader_reference,
-            },
+            _answer_template_context(
+                error=None,
+                answer_text=answer_text,
+                reader_reference=job.reader_reference,
+                can_save_study=bool(job.reader_reference),
+                debug_result=result if show_debug else None,
+                show_debug=show_debug,
+                inspector_question=job.question,
+                inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
+            ),
         )
 
     @app.post("/api/bible/search/fallback/jobs", response_class=JSONResponse)

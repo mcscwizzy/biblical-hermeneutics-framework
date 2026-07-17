@@ -22,7 +22,7 @@ from .db.repositories import manuscripts as _manuscripts_repo
 from .db.repositories import reader_state as _reader_state_repo
 from .db.repositories import sources as _sources_repo
 
-SCHEMA_VERSION = 13
+SCHEMA_VERSION = 14
 OPENBIBLE_PLACES_PATH = Path(__file__).resolve().parent / "data" / "openbible_places.json"
 BROAD_PERIOD_LABEL = "Broad / uncertain period"
 CANONICAL_PERIOD_LABELS = (
@@ -579,6 +579,14 @@ def _add_column_if_missing(connection: sqlite3.Connection, table: str, column_sq
         connection.execute(f"ALTER TABLE {table} ADD COLUMN {column_sql}")
 
 
+def _table_exists(connection: sqlite3.Connection, table: str) -> bool:
+    row = connection.execute(
+        "SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = ?",
+        (table,),
+    ).fetchone()
+    return row is not None
+
+
 def _normalized_period_label(value: str) -> str:
     cleaned = str(value or "").strip()
     if not cleaned:
@@ -753,6 +761,12 @@ def _ensure_schema(connection: sqlite3.Connection) -> None:
             "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
             (13, _timestamp()),
         )
+    if 14 not in applied:
+        _apply_v14_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (14, _timestamp()),
+        )
 
 
 def _apply_v1_schema(connection: sqlite3.Connection) -> None:
@@ -766,6 +780,7 @@ def _apply_v1_schema(connection: sqlite3.Connection) -> None:
             verse_end INTEGER NOT NULL,
             selected_text TEXT NOT NULL DEFAULT '',
             note_body TEXT NOT NULL,
+            canonical_object_ids TEXT NOT NULL DEFAULT '[]',
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL
         );
@@ -819,6 +834,7 @@ def _apply_v2_schema(connection: sqlite3.Connection) -> None:
             study_type TEXT NOT NULL,
             question TEXT NOT NULL,
             answer TEXT NOT NULL,
+            canonical_object_ids TEXT NOT NULL DEFAULT '[]',
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL
         );
@@ -1273,6 +1289,17 @@ def _apply_v12_schema(connection: sqlite3.Connection) -> None:
 
 def _apply_v13_schema(connection: sqlite3.Connection) -> None:
     _seed_openbible_places(connection)
+
+
+def _apply_v14_schema(connection: sqlite3.Connection) -> None:
+    if not _table_exists(connection, "notes"):
+        _apply_v1_schema(connection)
+    _add_column_if_missing(connection, "notes", "canonical_object_ids TEXT NOT NULL DEFAULT '[]'")
+    _add_column_if_missing(
+        connection,
+        "saved_studies",
+        "canonical_object_ids TEXT NOT NULL DEFAULT '[]'",
+    )
 
 
 def _backfill_source_registry(connection: sqlite3.Connection) -> None:

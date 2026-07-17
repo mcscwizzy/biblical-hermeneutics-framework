@@ -18,11 +18,59 @@ AGENT_INSTRUCTIONS = """# BHF Agent Runtime Instructions
 
 Use the BHF profile as method guidance, not as a doctrinal conclusion.
 
-The profile content is the source of hermeneutics.
-The prompt strategy only shapes runtime answer format and model steering.
-When a question asks about geography, archaeology, routes, manuscripts, or historical context, retrieve the curated local map data before answering.
+The profile content shapes method, not final conclusions.
+Do not search the Canonical Knowledge Library yourself or decide which files to load.
+When canonical library context is provided, treat it as the primary factual source for that topic.
+When a question asks about geography, archaeology, routes, manuscripts, or historical context, use the curated local map data if it is supplied.
 Do not invent missing geography, archaeology, manuscript, or route claims if curated data has not been retrieved.
+When the application requests a structured response, follow that contract exactly and return only the requested fields.
+When the question is about biblical interpretation, follow the hermeneutical framework guidance below before later theology or modern application.
 """
+
+
+FRAMEWORK_INTERPRETIVE_GUIDANCE = """## Hermeneutical Framework Guidance
+
+Follow this interpretive order unless the question requires a narrower focus:
+1. Biblical text
+2. Immediate literary context
+3. Historical setting
+4. Ancient Near Eastern context when relevant
+5. Hebraic worldview
+6. Second Temple Jewish context when relevant
+7. Covenant and canonical storyline
+8. Intertextual connections
+9. Christological development when supported by the text
+10. Theological synthesis
+11. Modern application
+
+Keep the following guardrails in view:
+- Read the Old Testament as Israel's Scriptures, not merely as Christian proof texts.
+- Read New Testament authors within their Jewish, Second Temple, Greco-Roman, and scriptural worlds.
+- Let Christological interpretation arise from textual, canonical, typological, prophetic, or apostolic connections rather than forcing it onto unrelated details.
+- Keep modern application downstream from exegesis and canonical synthesis.
+- Preserve the distinction between Israel and the Church.
+- Do not flatten Judaism into legalism.
+- Do not describe the Old Testament as works-based and the New Testament as grace-based.
+- Do not assume later Western theological categories were the original audience's categories.
+- Do not treat all Jewish groups in the first century as identical.
+- Use Ancient Near Eastern parallels carefully: similarity does not prove dependence, and difference does not prove complete isolation.
+- Do not use Ancient Near Eastern parallels to imply the Bible merely copied surrounding cultures.
+"""
+
+
+CANONICAL_KNOWLEDGE_INSTRUCTIONS = """You are the explanation layer for the Biblical Hermeneutics Framework.
+The application has already searched its Canonical Knowledge Library and supplied relevant context below.
+Use that context as your primary factual source.
+Explain it naturally and clearly for the user.
+Distinguish facts from interpretation when it matters.
+Do not describe the retrieval process.
+Do not mention filenames, scores, context blocks, indexes, or internal system behavior.
+Do not output internal analysis.
+Do not invent facts that are not supported by the supplied context.
+When the supplied context is insufficient, state the limitation briefly.
+Do not repeat the context verbatim.
+Do not invent citations or sources.
+Do not produce JSON unless explicitly requested."""
 
 
 ANSWER_MODE_INSTRUCTIONS: dict[str, tuple[str, ...]] = {
@@ -54,6 +102,8 @@ ANSWER_MODE_INSTRUCTIONS: dict[str, tuple[str, ...]] = {
         "- Do not invent scholars, citations, dates, manuscripts, or unsupported historical claims.",
     ),
 }
+
+PROMPT_VERSION = "phase13-v1"
 
 
 class PromptStrategy:
@@ -377,6 +427,7 @@ def build_prompt(
     map_context: dict[str, object] | None = None,
     session_memory: SessionMemory | None = None,
     answer_mode: str = "study",
+    canonical_context_prompt: str | None = None,
 ) -> tuple[str, str]:
     """Return `(system_prompt, user_prompt)` for a BHF agent call."""
 
@@ -393,29 +444,52 @@ def build_prompt(
     strategy = strategy_for_profile(profile_name)
 
     system_sections = [
-        profile_content.strip(),
-        AGENT_INSTRUCTIONS.strip(),
-        strategy.runtime_instructions(show_method_notes, question_context).strip(),
-        answer_mode_instructions(answer_mode).strip(),
-        strategy.detected_context(
-            reference_context,
-            genre_context,
-            question_context,
-            show_method_notes,
-        ).strip(),
+        _prompt_section(
+            "SYSTEM INSTRUCTIONS",
+            [
+                profile_content.strip(),
+                AGENT_INSTRUCTIONS.strip(),
+                FRAMEWORK_INTERPRETIVE_GUIDANCE.strip(),
+                strategy.runtime_instructions(show_method_notes, question_context).strip(),
+                strategy.detected_context(
+                    reference_context,
+                    genre_context,
+                    question_context,
+                    show_method_notes,
+                ).strip(),
+            ],
+        )
     ]
+    if canonical_context_prompt:
+        system_sections.append(
+            _prompt_section(
+                "CANONICAL KNOWLEDGE CONTEXT",
+                [
+                    CANONICAL_KNOWLEDGE_INSTRUCTIONS.strip(),
+                    canonical_context_prompt.strip(),
+                ],
+            )
+        )
     if local_knowledge is None:
         local_knowledge = LocalKnowledgeBundle(lexical_entries=lexical_entries or [])
+    optional_context_blocks: list[str] = []
     local_knowledge_prompt = format_local_knowledge_for_prompt(local_knowledge)
     if local_knowledge_prompt:
-        system_sections.append(local_knowledge_prompt)
+        optional_context_blocks.append(local_knowledge_prompt.strip())
     if map_context:
         map_context_prompt = format_map_tool_context_for_prompt(map_context)
         if map_context_prompt:
-            system_sections.append(map_context_prompt)
+            optional_context_blocks.append(map_context_prompt.strip())
     session_memory_prompt = format_session_memory_for_prompt(session_memory)
     if session_memory_prompt:
-        system_sections.append(session_memory_prompt)
+        optional_context_blocks.append(session_memory_prompt.strip())
+    if optional_context_blocks:
+        system_sections.append(
+            _prompt_section("OPTIONAL CONVERSATION CONTEXT", optional_context_blocks)
+        )
+    system_sections.append(
+        _prompt_section("OUTPUT REQUIREMENTS", [answer_mode_instructions(answer_mode).strip()])
+    )
 
     system_prompt = "\n\n".join(system_sections)
     user_prompt = strategy.user_prompt(
@@ -429,6 +503,13 @@ def build_prompt(
 def answer_mode_instructions(answer_mode: str) -> str:
     lines = ANSWER_MODE_INSTRUCTIONS.get(answer_mode, ANSWER_MODE_INSTRUCTIONS["study"])
     return "\n".join(lines)
+
+
+def _prompt_section(title: str, blocks: list[str]) -> str:
+    body = "\n\n".join(block.strip() for block in blocks if block and block.strip())
+    if not body:
+        return ""
+    return f"# {title}\n\n{body}"
 
 
 def prompt_leakage_guardrails(question_context: QuestionContext | None) -> list[str]:

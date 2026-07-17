@@ -13,6 +13,19 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
 
 ### Added
 
+- **CKL Bible-book record metadata**: the 66 book records now carry book-level authorship, date-range, original-audience, historical-setting, genre, structure, thematic, canonical-placement, key-entity, interpretive-dispute, and primary-source fields so the book layer can be searched and ranked with consistent metadata.
+- **CKL wave 3 content population**: the people, places, events, and institutions families now carry deterministic profile-based content, explicit scripture references, and populated relationship links so the core narrative and institutional layer can be searched before model calls.
+- **CKL wave 4 content population**: the theology, themes, prophecy, word studies, and archaeology families are now fully populated with deterministic summaries, scriptural anchors, review metadata, and relationship links; the FAQ bridge layer remains complete.
+
+## [0.2.0] — 2026-07-14
+
+### Added
+
+- **Packaging and release plumbing for CKL**: the repository now ships a
+  `pyproject.toml`/wheel build for the agent core plus CKL inventory, includes
+  the CKL JSON payload in release artifacts, exposes a `ckl-version` command
+  (also `python -m framework.canonical_library`), and verifies the built wheel
+  in CI before release.
 - **Prerequisite modules for the Book-layer expansion** (method only,
   denomination-neutral): `language.hebrew` (Biblical Hebrew and Aramaic, paired
   with `language.greek`); `genre.law` (legal/covenant material, the eighth genre
@@ -116,6 +129,9 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
 
 ### Changed
 
+- `load_framework_version()` now prefers installed distribution metadata and
+  falls back to the repository `VERSION` file so the same version string is
+  available in a checkout and in an installed wheel.
 - Cross-reference wiring follow-ups now that the new modules exist:
   `core.genre-awareness` recommends and links `genre.law` (the eighth genre it
   names), and the Old Testament genre modules (`genre.poetry`, `genre.wisdom`,
@@ -175,5 +191,6 @@ frontmatter. See [`docs/architecture.md`](docs/architecture.md#versioning).
 - **Tests:** behavioral rubric (`core-behaviors`) + Romans fixture.
 - **Licensing:** dual CC BY 4.0 (content) + MIT (code).
 
-[Unreleased]: https://github.com/mcscwizzy/biblical-hermeneutics-framework/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/mcscwizzy/biblical-hermeneutics-framework/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/mcscwizzy/biblical-hermeneutics-framework/releases/tag/v0.2.0
 [0.1.0]: https://github.com/mcscwizzy/biblical-hermeneutics-framework/releases/tag/v0.1.0

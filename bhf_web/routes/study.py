@@ -57,6 +57,8 @@ def register_study_routes(
                     "result": None,
                     "saved_study": None,
                     "answer_html": "",
+                    "canonical_context": None,
+                    "canonical_object_ids": [],
                     "metadata": {},
                     "reader_reference": None,
                 },
@@ -80,11 +82,16 @@ def register_study_routes(
                 "result": None,
                 "saved_study": study,
                 "answer_html": render_safe_markdown(study["answer"]),
+                "canonical_context": None,
+                "canonical_object_ids": study.get("canonical_object_ids", []),
                 "metadata": {
                     "Title": study["title"],
                     "Study type": study["study_type"],
                     "Created": study["created_at"],
                     "Updated": study["updated_at"],
+                    "Canonical object IDs": ", ".join(study.get("canonical_object_ids", []))
+                    if study.get("canonical_object_ids")
+                    else "none",
                 },
                 "reader_reference": reference,
             },

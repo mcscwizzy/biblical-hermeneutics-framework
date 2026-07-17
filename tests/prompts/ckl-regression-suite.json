@@ -1,0 +1,687 @@
+{
+  "id": "ckl-phase-15-regression-suite",
+  "description": "Deterministic CKL retrieval regression cases for Phase 15.",
+  "cases": [
+    {
+      "id": "exact-id-shechem",
+      "question": "Shechem",
+      "profile": "standard",
+      "answer_mode": "study",
+      "expected_behaviors": [
+        {
+          "id": "genre-before-interpretation",
+          "description": "Identifies the literary genre before interpreting.",
+          "pattern": "\\b(genre|wisdom literature|narrative|epistle|poetry|gospel|letter)\\b"
+        },
+        {
+          "id": "context-and-audience",
+          "description": "Establishes the original audience or historical setting.",
+          "pattern": "\\b(original audience|ancient Israel|first-century|historical setting)\\b"
+        },
+        {
+          "id": "stages-distinct",
+          "description": "Keeps observation, interpretation, and application distinguishable.",
+          "pattern": "\\b(observation|observe|interpretation|application)\\b.*\\b(application|apply)\\b"
+        },
+        {
+          "id": "confidence-labeled",
+          "description": "Labels uncertainty or confidence level.",
+          "pattern": "\\b(confidence|likely|may|might|probably|some scholars debate)\\b"
+        }
+      ],
+      "forbidden_behaviors": [
+        {
+          "id": "doctrinal-overreach",
+          "description": "Does not force a single doctrinal verdict.",
+          "pattern": "\\b(the only faithful view|must conclude|the bible clearly settles every detail)\\b"
+        }
+      ],
+      "pass_threshold": 70,
+      "metadata_checks": [
+        {
+          "id": "shechem-object",
+          "description": "Shechem is retrieved directly.",
+          "field": "pipeline.canonical_library_object_ids",
+          "contains": ["shechem"]
+        },
+        {
+          "id": "shechem-method",
+          "description": "Exact retrieval is used for the direct title query.",
+          "field": "pipeline.canonical_library_retrieval_method",
+          "equals": "exact"
+        },
+        {
+          "id": "shechem-topic-count",
+          "description": "The canonical context contains at least one topic.",
+          "field": "pipeline.canonical_library_topic_count",
+          "at_least": 1
+        }
+      ]
+    },
+    {
+      "id": "alias-babylon",
+      "question": "Tell me about Babylon",
+      "profile": "standard",
+      "answer_mode": "study",
+      "expected_behaviors": [
+        {
+          "id": "genre-before-interpretation",
+          "description": "Identifies the literary genre before interpreting.",
+          "pattern": "\\b(genre|wisdom literature|narrative|epistle|poetry|gospel|letter)\\b"
+        },
+        {
+          "id": "context-and-audience",
+          "description": "Establishes the original audience or historical setting.",
+          "pattern": "\\b(original audience|ancient Israel|first-century|historical setting)\\b"
+        },
+        {
+          "id": "stages-distinct",
+          "description": "Keeps observation, interpretation, and application distinguishable.",
+          "pattern": "\\b(observation|observe|interpretation|application)\\b.*\\b(application|apply)\\b"
+        },
+        {
+          "id": "confidence-labeled",
+          "description": "Labels uncertainty or confidence level.",
+          "pattern": "\\b(confidence|likely|may|might|probably|some scholars debate)\\b"
+        }
+      ],
+      "forbidden_behaviors": [
+        {
+          "id": "doctrinal-overreach",
+          "description": "Does not force a single doctrinal verdict.",
+          "pattern": "\\b(the only faithful view|must conclude|the bible clearly settles every detail)\\b"
+        }
+      ],
+      "pass_threshold": 70,
+      "metadata_checks": [
+        {
+          "id": "babylon-object",
+          "description": "The Babylon place record is retrieved.",
+          "field": "pipeline.canonical_library_object_ids",
+          "contains": ["babylon-1"]
+        },
+        {
+          "id": "babylon-method",
+          "description": "Alias resolution is deterministic.",
+          "field": "pipeline.canonical_library_retrieval_method",
+          "equals": "exact"
+        }
+      ]
+    },
+    {
+      "id": "alternate-spelling-jeruselem",
+      "question": "Jeruselem",
+      "profile": "standard",
+      "answer_mode": "study",
+      "expected_behaviors": [
+        {
+          "id": "genre-before-interpretation",
+          "description": "Identifies the literary genre before interpreting.",
+          "pattern": "\\b(genre|wisdom literature|narrative|epistle|poetry|gospel|letter)\\b"
+        },
+        {
+          "id": "context-and-audience",
+          "description": "Establishes the original audience or historical setting.",
+          "pattern": "\\b(original audience|ancient Israel|first-century|historical setting)\\b"
+        },
+        {
+          "id": "stages-distinct",
+          "description": "Keeps observation, interpretation, and application distinguishable.",
+          "pattern": "\\b(observation|observe|interpretation|application)\\b.*\\b(application|apply)\\b"
+        },
+        {
+          "id": "confidence-labeled",
+          "description": "Labels uncertainty or confidence level.",
+          "pattern": "\\b(confidence|likely|may|might|probably|some scholars debate)\\b"
+        }
+      ],
+      "forbidden_behaviors": [
+        {
+          "id": "doctrinal-overreach",
+          "description": "Does not force a single doctrinal verdict.",
+          "pattern": "\\b(the only faithful view|must conclude|the bible clearly settles every detail)\\b"
+        }
+      ],
+      "pass_threshold": 70,
+      "metadata_checks": [
+        {
+          "id": "jerusalem-object",
+          "description": "The misspelled query still resolves to Jerusalem.",
+          "field": "pipeline.canonical_library_object_ids",
+          "contains": ["jerusalem"]
+        },
+        {
+          "id": "jerusalem-method",
+          "description": "Fuzzy alias handling stays deterministic.",
+          "field": "pipeline.canonical_library_retrieval_method",
+          "equals": "exact"
+        }
+      ]
+    },
+    {
+      "id": "scripture-reference-joshua-24",
+      "question": "What is Joshua 24?",
+      "profile": "standard",
+      "answer_mode": "study",
+      "expected_behaviors": [
+        {
+          "id": "genre-before-interpretation",
+          "description": "Identifies the literary genre before interpreting.",
+          "pattern": "\\b(genre|wisdom literature|narrative|epistle|poetry|gospel|letter)\\b"
+        },
+        {
+          "id": "context-and-audience",
+          "description": "Establishes the original audience or historical setting.",
+          "pattern": "\\b(original audience|ancient Israel|first-century|historical setting)\\b"
+        },
+        {
+          "id": "stages-distinct",
+          "description": "Keeps observation, interpretation, and application distinguishable.",
+          "pattern": "\\b(observation|observe|interpretation|application)\\b.*\\b(application|apply)\\b"
+        },
+        {
+          "id": "confidence-labeled",
+          "description": "Labels uncertainty or confidence level.",
+          "pattern": "\\b(confidence|likely|may|might|probably|some scholars debate)\\b"
+        }
+      ],
+      "forbidden_behaviors": [
+        {
+          "id": "doctrinal-overreach",
+          "description": "Does not force a single doctrinal verdict.",
+          "pattern": "\\b(the only faithful view|must conclude|the bible clearly settles every detail)\\b"
+        }
+      ],
+      "pass_threshold": 70,
+      "metadata_checks": [
+        {
+          "id": "joshua24-shechem",
+          "description": "Joshua 24 pulls in the covenant site at Shechem.",
+          "field": "pipeline.canonical_library_object_ids",
+          "contains": ["shechem", "joshua-son-of-nun", "joshua"]
+        },
+        {
+          "id": "joshua24-method",
+          "description": "Scripture-reference retrieval is reported.",
+          "field": "pipeline.canonical_library_retrieval_method",
+          "equals": "exact+scripture"
+        },
+        {
+          "id": "joshua24-count",
+          "description": "The canonical context keeps the full three-topic bridge.",
+          "field": "pipeline.canonical_library_topic_count",
+          "equals": 3
+        }
+      ]
+    },
+    {
+      "id": "theological-theme-covenant",
+      "question": "What is covenant in the Bible?",
+      "profile": "standard",
+      "answer_mode": "study",
+      "expected_behaviors": [
+        {
+          "id": "genre-before-interpretation",
+          "description": "Identifies the literary genre before interpreting.",
+          "pattern": "\\b(genre|wisdom literature|narrative|epistle|poetry|gospel|letter)\\b"
+        },
+        {
+          "id": "context-and-audience",
+          "description": "Establishes the original audience or historical setting.",
+          "pattern": "\\b(original audience|ancient Israel|first-century|historical setting)\\b"
+        },
+        {
+          "id": "stages-distinct",
+          "description": "Keeps observation, interpretation, and application distinguishable.",
+          "pattern": "\\b(observation|observe|interpretation|application)\\b.*\\b(application|apply)\\b"
+        },
+        {
+          "id": "confidence-labeled",
+          "description": "Labels uncertainty or confidence level.",
+          "pattern": "\\b(confidence|likely|may|might|probably|some scholars debate)\\b"
+        }
+      ],
+      "forbidden_behaviors": [
+        {
+          "id": "doctrinal-overreach",
+          "description": "Does not force a single doctrinal verdict.",
+          "pattern": "\\b(the only faithful view|must conclude|the bible clearly settles every detail)\\b"
+        }
+      ],
+      "pass_threshold": 70,
+      "metadata_checks": [
+        {
+          "id": "covenant-object",
+          "description": "The covenant theme and FAQ bridge are retrieved together.",
+          "field": "pipeline.canonical_library_object_ids",
+          "contains": ["what-is-covenant", "what-is-sacrifice-in-the-bible", "covenant-theme"]
+        },
+        {
+          "id": "covenant-method",
+          "description": "Theme retrieval stays deterministic.",
+          "field": "pipeline.canonical_library_retrieval_method",
+          "equals": "exact"
+        },
+        {
+          "id": "covenant-count",
+          "description": "The bridge stays compact.",
+          "field": "pipeline.canonical_library_topic_count",
+          "equals": 3
+        }
+      ]
+    },
+    {
+      "id": "multi-object-covenant-kingdom",
+      "question": "Tell me about covenant and kingdom",
+      "profile": "standard",
+      "answer_mode": "study",
+      "expected_behaviors": [
+        {
+          "id": "genre-before-interpretation",
+          "description": "Identifies the literary genre before interpreting.",
+          "pattern": "\\b(genre|wisdom literature|narrative|epistle|poetry|gospel|letter)\\b"
+        },
+        {
+          "id": "context-and-audience",
+          "description": "Establishes the original audience or historical setting.",
+          "pattern": "\\b(original audience|ancient Israel|first-century|historical setting)\\b"
+        },
+        {
+          "id": "stages-distinct",
+          "description": "Keeps observation, interpretation, and application distinguishable.",
+          "pattern": "\\b(observation|observe|interpretation|application)\\b.*\\b(application|apply)\\b"
+        },
+        {
+          "id": "confidence-labeled",
+          "description": "Labels uncertainty or confidence level.",
+          "pattern": "\\b(confidence|likely|may|might|probably|some scholars debate)\\b"
+        }
+      ],
+      "forbidden_behaviors": [
+        {
+          "id": "doctrinal-overreach",
+          "description": "Does not force a single doctrinal verdict.",
+          "pattern": "\\b(the only faithful view|must conclude|the bible clearly settles every detail)\\b"
+        }
+      ],
+      "pass_threshold": 70,
+      "metadata_checks": [
+        {
+          "id": "covenant-kingdom-objects",
+          "description": "Covenant and kingdom objects are retrieved together.",
+          "field": "pipeline.canonical_library_object_ids",
+          "contains": ["davidic-covenant", "covenant-theme", "kingdom-theme"]
+        },
+        {
+          "id": "covenant-kingdom-method",
+          "description": "The combined theme query stays exact and deterministic.",
+          "field": "pipeline.canonical_library_retrieval_method",
+          "equals": "exact"
+        },
+        {
+          "id": "covenant-kingdom-count",
+          "description": "The combined theme query stays compact.",
+          "field": "pipeline.canonical_library_topic_count",
+          "equals": 3
+        }
+      ]
+    },
+    {
+      "id": "relationship-expansion-shechem",
+      "question": "Why did Israel renew the covenant where Abraham first entered the land at Shechem in Joshua 24?",
+      "profile": "standard",
+      "answer_mode": "study",
+      "expected_behaviors": [
+        {
+          "id": "genre-before-interpretation",
+          "description": "Identifies the literary genre before interpreting.",
+          "pattern": "\\b(genre|wisdom literature|narrative|epistle|poetry|gospel|letter)\\b"
+        },
+        {
+          "id": "context-and-audience",
+          "description": "Establishes the original audience or historical setting.",
+          "pattern": "\\b(original audience|ancient Israel|first-century|historical setting)\\b"
+        },
+        {
+          "id": "stages-distinct",
+          "description": "Keeps observation, interpretation, and application distinguishable.",
+          "pattern": "\\b(observation|observe|interpretation|application)\\b.*\\b(application|apply)\\b"
+        },
+        {
+          "id": "confidence-labeled",
+          "description": "Labels uncertainty or confidence level.",
+          "pattern": "\\b(confidence|likely|may|might|probably|some scholars debate)\\b"
+        }
+      ],
+      "forbidden_behaviors": [
+        {
+          "id": "doctrinal-overreach",
+          "description": "Does not force a single doctrinal verdict.",
+          "pattern": "\\b(the only faithful view|must conclude|the bible clearly settles every detail)\\b"
+        }
+      ],
+      "pass_threshold": 70,
+      "metadata_checks": [
+        {
+          "id": "shechem-bridge-objects",
+          "description": "Shechem and its covenant bridge companions are surfaced.",
+          "field": "pipeline.canonical_library_object_ids",
+          "contains": ["shechem", "joshua-son-of-nun", "abraham"]
+        },
+        {
+          "id": "shechem-bridge-method",
+          "description": "The combined exact plus scripture path is reported.",
+          "field": "pipeline.canonical_library_retrieval_method",
+          "equals": "exact+scripture"
+        },
+        {
+          "id": "shechem-bridge-count",
+          "description": "The bridge remains compact but multi-topic.",
+          "field": "pipeline.canonical_library_topic_count",
+          "equals": 5
+        }
+      ]
+    },
+    {
+      "id": "status-filtering-approved-only",
+      "question": "Shechem",
+      "profile": "standard",
+      "answer_mode": "study",
+      "config_overrides": {
+        "canonical_library": {
+          "allowed_statuses": ["approved"]
+        }
+      },
+      "expected_behaviors": [
+        {
+          "id": "genre-before-interpretation",
+          "description": "Identifies the literary genre before interpreting.",
+          "pattern": "\\b(genre|wisdom literature|narrative|epistle|poetry|gospel|letter)\\b"
+        },
+        {
+          "id": "context-and-audience",
+          "description": "Establishes the original audience or historical setting.",
+          "pattern": "\\b(original audience|ancient Israel|first-century|historical setting)\\b"
+        },
+        {
+          "id": "stages-distinct",
+          "description": "Keeps observation, interpretation, and application distinguishable.",
+          "pattern": "\\b(observation|observe|interpretation|application)\\b.*\\b(application|apply)\\b"
+        },
+        {
+          "id": "confidence-labeled",
+          "description": "Labels uncertainty or confidence level.",
+          "pattern": "\\b(confidence|likely|may|might|probably|some scholars debate)\\b"
+        }
+      ],
+      "forbidden_behaviors": [
+        {
+          "id": "doctrinal-overreach",
+          "description": "Does not force a single doctrinal verdict.",
+          "pattern": "\\b(the only faithful view|must conclude|the bible clearly settles every detail)\\b"
+        }
+      ],
+      "pass_threshold": 70,
+      "metadata_checks": [
+        {
+          "id": "approved-status-empty",
+          "description": "Approved-only filtering removes the in-review Shechem record.",
+          "field": "pipeline.canonical_library_object_ids",
+          "equals": []
+        },
+        {
+          "id": "approved-status-topic-count",
+          "description": "No canonical topics should be injected when nothing is approved.",
+          "field": "pipeline.canonical_library_topic_count",
+          "equals": 0
+        },
+        {
+          "id": "approved-status-prompt-tokens",
+          "description": "No CKL prompt should be rendered when nothing is approved.",
+          "field": "pipeline.canonical_library_prompt_tokens",
+          "equals": 0
+        }
+      ]
+    },
+    {
+      "id": "token-budget-truncation",
+      "question": "Tell me about the temple, exile, and kingdom themes in Israel",
+      "profile": "standard",
+      "answer_mode": "study",
+      "config_overrides": {
+        "canonical_library": {
+          "max_context_tokens": 50
+        }
+      },
+      "expected_behaviors": [
+        {
+          "id": "genre-before-interpretation",
+          "description": "Identifies the literary genre before interpreting.",
+          "pattern": "\\b(genre|wisdom literature|narrative|epistle|poetry|gospel|letter)\\b"
+        },
+        {
+          "id": "context-and-audience",
+          "description": "Establishes the original audience or historical setting.",
+          "pattern": "\\b(original audience|ancient Israel|first-century|historical setting)\\b"
+        },
+        {
+          "id": "stages-distinct",
+          "description": "Keeps observation, interpretation, and application distinguishable.",
+          "pattern": "\\b(observation|observe|interpretation|application)\\b.*\\b(application|apply)\\b"
+        },
+        {
+          "id": "confidence-labeled",
+          "description": "Labels uncertainty or confidence level.",
+          "pattern": "\\b(confidence|likely|may|might|probably|some scholars debate)\\b"
+        }
+      ],
+      "forbidden_behaviors": [
+        {
+          "id": "doctrinal-overreach",
+          "description": "Does not force a single doctrinal verdict.",
+          "pattern": "\\b(the only faithful view|must conclude|the bible clearly settles every detail)\\b"
+        }
+      ],
+      "pass_threshold": 70,
+      "metadata_checks": [
+        {
+          "id": "token-budget-value",
+          "description": "The topic token budget is reduced for the low-context run.",
+          "field": "pipeline.canonical_library_topic_token_budget",
+          "equals": 32
+        },
+        {
+          "id": "token-budget-prompt",
+          "description": "The rendered canonical prompt stays near the configured cap.",
+          "field": "pipeline.canonical_library_prompt_tokens",
+          "at_most": 51
+        },
+        {
+          "id": "token-budget-count",
+          "description": "The low-budget context still remains bounded.",
+          "field": "pipeline.canonical_library_topic_count",
+          "equals": 5
+        }
+      ]
+    },
+    {
+      "id": "ckl-disabled",
+      "question": "Shechem",
+      "profile": "standard",
+      "answer_mode": "study",
+      "config_overrides": {
+        "canonical_library": {
+          "enabled": false
+        }
+      },
+      "expected_behaviors": [
+        {
+          "id": "genre-before-interpretation",
+          "description": "Identifies the literary genre before interpreting.",
+          "pattern": "\\b(genre|wisdom literature|narrative|epistle|poetry|gospel|letter)\\b"
+        },
+        {
+          "id": "context-and-audience",
+          "description": "Establishes the original audience or historical setting.",
+          "pattern": "\\b(original audience|ancient Israel|first-century|historical setting)\\b"
+        },
+        {
+          "id": "stages-distinct",
+          "description": "Keeps observation, interpretation, and application distinguishable.",
+          "pattern": "\\b(observation|observe|interpretation|application)\\b.*\\b(application|apply)\\b"
+        },
+        {
+          "id": "confidence-labeled",
+          "description": "Labels uncertainty or confidence level.",
+          "pattern": "\\b(confidence|likely|may|might|probably|some scholars debate)\\b"
+        }
+      ],
+      "forbidden_behaviors": [
+        {
+          "id": "doctrinal-overreach",
+          "description": "Does not force a single doctrinal verdict.",
+          "pattern": "\\b(the only faithful view|must conclude|the bible clearly settles every detail)\\b"
+        }
+      ],
+      "pass_threshold": 70,
+      "metadata_checks": [
+        {
+          "id": "ckl-disabled-flag",
+          "description": "The CKL layer is explicitly disabled.",
+          "field": "pipeline.canonical_library_enabled",
+          "equals": false
+        },
+        {
+          "id": "ckl-disabled-loaded",
+          "description": "No CKL context is loaded when the layer is disabled.",
+          "field": "pipeline.canonical_library_loaded",
+          "equals": false
+        },
+        {
+          "id": "ckl-disabled-empty",
+          "description": "No canonical objects are injected when CKL is disabled.",
+          "field": "pipeline.canonical_library_object_ids",
+          "equals": []
+        },
+        {
+          "id": "ckl-disabled-topic-count",
+          "description": "No canonical topics are counted when CKL is disabled.",
+          "field": "pipeline.canonical_library_topic_count",
+          "equals": 0
+        }
+      ]
+    },
+    {
+      "id": "empty-query",
+      "question": "",
+      "profile": "standard",
+      "answer_mode": "study",
+      "expected_behaviors": [
+        {
+          "id": "genre-before-interpretation",
+          "description": "Identifies the literary genre before interpreting.",
+          "pattern": "\\b(genre|wisdom literature|narrative|epistle|poetry|gospel|letter)\\b"
+        },
+        {
+          "id": "context-and-audience",
+          "description": "Establishes the original audience or historical setting.",
+          "pattern": "\\b(original audience|ancient Israel|first-century|historical setting)\\b"
+        },
+        {
+          "id": "stages-distinct",
+          "description": "Keeps observation, interpretation, and application distinguishable.",
+          "pattern": "\\b(observation|observe|interpretation|application)\\b.*\\b(application|apply)\\b"
+        },
+        {
+          "id": "confidence-labeled",
+          "description": "Labels uncertainty or confidence level.",
+          "pattern": "\\b(confidence|likely|may|might|probably|some scholars debate)\\b"
+        }
+      ],
+      "forbidden_behaviors": [
+        {
+          "id": "doctrinal-overreach",
+          "description": "Does not force a single doctrinal verdict.",
+          "pattern": "\\b(the only faithful view|must conclude|the bible clearly settles every detail)\\b"
+        }
+      ],
+      "pass_threshold": 70,
+      "metadata_checks": [
+        {
+          "id": "empty-query-object-ids",
+          "description": "No CKL objects are selected for an empty query.",
+          "field": "pipeline.canonical_library_object_ids",
+          "equals": []
+        },
+        {
+          "id": "empty-query-topic-count",
+          "description": "No canonical topics are counted for an empty query.",
+          "field": "pipeline.canonical_library_topic_count",
+          "equals": 0
+        },
+        {
+          "id": "empty-query-prompt-tokens",
+          "description": "No CKL prompt is rendered for an empty query.",
+          "field": "pipeline.canonical_library_prompt_tokens",
+          "equals": 0
+        }
+      ]
+    },
+    {
+      "id": "malformed-query",
+      "question": "???",
+      "profile": "standard",
+      "answer_mode": "study",
+      "expected_behaviors": [
+        {
+          "id": "genre-before-interpretation",
+          "description": "Identifies the literary genre before interpreting.",
+          "pattern": "\\b(genre|wisdom literature|narrative|epistle|poetry|gospel|letter)\\b"
+        },
+        {
+          "id": "context-and-audience",
+          "description": "Establishes the original audience or historical setting.",
+          "pattern": "\\b(original audience|ancient Israel|first-century|historical setting)\\b"
+        },
+        {
+          "id": "stages-distinct",
+          "description": "Keeps observation, interpretation, and application distinguishable.",
+          "pattern": "\\b(observation|observe|interpretation|application)\\b.*\\b(application|apply)\\b"
+        },
+        {
+          "id": "confidence-labeled",
+          "description": "Labels uncertainty or confidence level.",
+          "pattern": "\\b(confidence|likely|may|might|probably|some scholars debate)\\b"
+        }
+      ],
+      "forbidden_behaviors": [
+        {
+          "id": "doctrinal-overreach",
+          "description": "Does not force a single doctrinal verdict.",
+          "pattern": "\\b(the only faithful view|must conclude|the bible clearly settles every detail)\\b"
+        }
+      ],
+      "pass_threshold": 70,
+      "metadata_checks": [
+        {
+          "id": "malformed-query-object-ids",
+          "description": "Malformed input should not force CKL matches.",
+          "field": "pipeline.canonical_library_object_ids",
+          "equals": []
+        },
+        {
+          "id": "malformed-query-topic-count",
+          "description": "Malformed input should not surface canonical topics.",
+          "field": "pipeline.canonical_library_topic_count",
+          "equals": 0
+        },
+        {
+          "id": "malformed-query-prompt-tokens",
+          "description": "Malformed input should not render CKL prompt text.",
+          "field": "pipeline.canonical_library_prompt_tokens",
+          "equals": 0
+        }
+      ]
+    }
+  ]
+}

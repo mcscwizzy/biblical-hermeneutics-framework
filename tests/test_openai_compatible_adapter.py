@@ -55,6 +55,7 @@ class OpenAICompatibleAdapterTests(unittest.TestCase):
             model="local-model",
             temperature=0.3,
             max_tokens=2048,
+            response_format={"type": "json_object"},
         )
 
         with patch("urllib.request.urlopen", fake_urlopen):
@@ -66,8 +67,11 @@ class OpenAICompatibleAdapterTests(unittest.TestCase):
         self.assertEqual(captured["body"]["model"], "local-model")
         self.assertEqual(captured["body"]["messages"][0]["role"], "system")
         self.assertEqual(captured["body"]["messages"][1]["content"], "user")
+        self.assertEqual(captured["body"]["response_format"], {"type": "json_object"})
         self.assertEqual(response.text, "answer")
         self.assertEqual(response.model, "local-model")
+        self.assertEqual(response.provider, "openai_compatible")
+        self.assertIsNotNone(response.latency_ms)
 
     def test_omits_authorization_without_api_key(self):
         captured = {}
@@ -176,6 +180,29 @@ class OpenAICompatibleAdapterTests(unittest.TestCase):
 
         self.assertEqual(response.text, "")
         self.assertIn("empty message content", response.errors[0])
+
+    def test_structured_response_format_is_sent_with_response_contract(self):
+        captured = {}
+
+        def fake_urlopen(request, timeout=None):
+            captured["body"] = json.loads(request.data.decode("utf-8"))
+            return FakeHTTPResponse(
+                b'{"model":"local-model","choices":[{"message":{"content":"answer"}}]}'
+            )
+
+        adapter = OpenAICompatibleAdapter("http://localhost:1234/v1")
+        request = ChatRequest(
+            "system",
+            "user",
+            "local-model",
+            response_format={"type": "json_object"},
+            metadata={"response_contract": "answer"},
+        )
+
+        with patch("urllib.request.urlopen", fake_urlopen):
+            adapter.chat(request)
+
+        self.assertEqual(captured["body"]["response_format"], {"type": "json_object"})
 
 
 if __name__ == "__main__":

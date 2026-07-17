@@ -5,7 +5,13 @@ import unittest
 from pathlib import Path
 
 from bhf_agent.__main__ import config_from_args
-from bhf_agent.config import AgentConfig, ConfigError
+from bhf_agent.config import (
+    AgentConfig,
+    CanonicalLibraryConfig,
+    ConfigError,
+    ObservabilityConfig,
+    PublicCacheConfig,
+)
 
 
 class AgentConfigTests(unittest.TestCase):
@@ -92,6 +98,239 @@ class AgentConfigTests(unittest.TestCase):
         self.assertIsNone(config.session_id)
         self.assertIsNone(config.memory_path)
         self.assertEqual(config.memory_max_turns, 8)
+        self.assertTrue(config.canonical_library.enabled)
+        self.assertFalse(config.canonical_library.shadow_mode)
+        self.assertTrue(config.canonical_library.fallback_to_model)
+        self.assertFalse(config.canonical_library.strict_mode)
+        self.assertEqual(config.canonical_library.minimum_relevance_score, 0.85)
+        self.assertFalse(config.canonical_library.include_placeholders)
+        self.assertEqual(
+            config.canonical_library.allowed_statuses,
+            ("in_review", "reviewed", "approved"),
+        )
+        self.assertFalse(config.public_cache.enabled)
+        self.assertEqual(
+            config.public_cache.path,
+            ".bhf/public-answer-cache.json",
+        )
+        self.assertEqual(
+            config.public_cache.allowed_review_statuses,
+            ("reviewed", "approved"),
+        )
+
+    def test_config_accepts_canonical_library_section(self):
+        config = AgentConfig.from_mapping(
+            {
+                "config_version": 1,
+                "adapter": "openai_compatible",
+                "base_url": "http://localhost:1234/v1",
+                "model": "local-model",
+                "profile": "standard",
+                "canonical_library": {
+                    "enabled": True,
+                    "shadow_mode": True,
+                    "fallback_to_model": False,
+                    "strict_mode": True,
+                    "minimum_relevance_score": 0.9,
+                    "max_results": 4,
+                    "max_context_tokens": 900,
+                    "include_placeholders": False,
+                    "allowed_statuses": ["approved", "reviewed"],
+                },
+            }
+        )
+
+        self.assertTrue(config.canonical_library.enabled)
+        self.assertTrue(config.canonical_library.shadow_mode)
+        self.assertFalse(config.canonical_library.fallback_to_model)
+        self.assertTrue(config.canonical_library.strict_mode)
+        self.assertEqual(config.canonical_library.minimum_relevance_score, 0.9)
+        self.assertEqual(config.canonical_library.max_results, 4)
+        self.assertEqual(config.canonical_library.max_context_tokens, 900)
+        self.assertFalse(config.canonical_library.include_placeholders)
+        self.assertEqual(config.canonical_library.allowed_statuses, ("approved", "reviewed"))
+
+    def test_config_serializes_canonical_library_section(self):
+        config = AgentConfig(
+            base_url="http://localhost:1234/v1",
+            model="local-model",
+            canonical_library=CanonicalLibraryConfig(
+                enabled=False,
+                shadow_mode=True,
+                fallback_to_model=False,
+                strict_mode=True,
+                minimum_relevance_score=0.9,
+                cache_enabled=False,
+                cache_max_entries=96,
+                max_results=3,
+                max_context_tokens=750,
+                include_placeholders=False,
+                allowed_statuses=("approved",),
+            ),
+        )
+
+        self.assertFalse(config.to_dict()["canonical_library"]["cache_enabled"])
+        self.assertEqual(config.to_dict()["canonical_library"]["cache_max_entries"], 96)
+        self.assertEqual(config.to_dict()["canonical_library"]["max_results"], 3)
+        self.assertFalse(config.to_dict()["canonical_library"]["enabled"])
+        self.assertTrue(config.to_dict()["canonical_library"]["shadow_mode"])
+        self.assertFalse(config.to_dict()["canonical_library"]["fallback_to_model"])
+        self.assertTrue(config.to_dict()["canonical_library"]["strict_mode"])
+        self.assertEqual(config.to_dict()["canonical_library"]["minimum_relevance_score"], 0.9)
+        self.assertEqual(
+            config.to_dict()["canonical_library"]["allowed_statuses"],
+            ("approved",),
+        )
+
+    def test_config_accepts_canonical_library_cache_settings(self):
+        config = AgentConfig.from_mapping(
+            {
+                "config_version": 1,
+                "adapter": "openai_compatible",
+                "base_url": "http://localhost:1234/v1",
+                "model": "local-model",
+                "profile": "standard",
+                "canonical_library": {
+                    "enabled": True,
+                    "cache_enabled": True,
+                    "cache_max_entries": 128,
+                    "max_results": 4,
+                    "max_context_tokens": 900,
+                },
+            }
+        )
+
+        self.assertTrue(config.canonical_library.cache_enabled)
+        self.assertEqual(config.canonical_library.cache_max_entries, 128)
+
+    def test_config_rejects_invalid_canonical_library_cache_size(self):
+        with self.assertRaisesRegex(ConfigError, "cache_max_entries"):
+            AgentConfig.from_mapping(
+                {
+                    "config_version": 1,
+                    "adapter": "openai_compatible",
+                    "base_url": "http://localhost:1234/v1",
+                    "model": "local-model",
+                    "profile": "standard",
+                    "canonical_library": {
+                        "cache_max_entries": 0,
+                    },
+                }
+            )
+
+    def test_config_rejects_invalid_canonical_library_relevance_threshold(self):
+        with self.assertRaisesRegex(ConfigError, "minimum_relevance_score"):
+            AgentConfig.from_mapping(
+                {
+                    "config_version": 1,
+                    "adapter": "openai_compatible",
+                    "base_url": "http://localhost:1234/v1",
+                    "model": "local-model",
+                    "profile": "standard",
+                    "canonical_library": {
+                        "minimum_relevance_score": 1.5,
+                    },
+                }
+            )
+
+    def test_config_accepts_public_cache_section(self):
+        config = AgentConfig.from_mapping(
+            {
+                "config_version": 1,
+                "adapter": "openai_compatible",
+                "base_url": "http://localhost:1234/v1",
+                "model": "local-model",
+                "profile": "standard",
+                "public_cache": {
+                    "enabled": True,
+                    "path": ".bhf/custom-public-cache.json",
+                    "minimum_quality_score": 92.5,
+                    "default_ttl_days": 90,
+                    "allowed_review_statuses": ["approved"],
+                },
+            }
+        )
+
+        self.assertTrue(config.public_cache.enabled)
+        self.assertEqual(config.public_cache.path, ".bhf/custom-public-cache.json")
+        self.assertEqual(config.public_cache.minimum_quality_score, 92.5)
+        self.assertEqual(config.public_cache.default_ttl_days, 90)
+        self.assertEqual(config.public_cache.allowed_review_statuses, ("approved",))
+
+    def test_config_allows_public_cache_when_canonical_library_runs_in_shadow_mode(self):
+        config = AgentConfig.from_mapping(
+            {
+                "config_version": 1,
+                "adapter": "openai_compatible",
+                "base_url": "http://localhost:1234/v1",
+                "model": "local-model",
+                "profile": "standard",
+                "public_cache": {
+                    "enabled": True,
+                },
+                "canonical_library": {
+                    "enabled": False,
+                    "shadow_mode": True,
+                },
+            }
+        )
+
+        self.assertTrue(config.public_cache.enabled)
+        self.assertFalse(config.canonical_library.enabled)
+        self.assertTrue(config.canonical_library.shadow_mode)
+
+    def test_config_serializes_public_cache_section(self):
+        config = AgentConfig(
+            base_url="http://localhost:1234/v1",
+            model="local-model",
+            public_cache=PublicCacheConfig(
+                enabled=True,
+                path=".bhf/public-cache.json",
+                minimum_quality_score=91.0,
+                default_ttl_days=120,
+                allowed_review_statuses=("reviewed",),
+            ),
+        )
+
+        self.assertTrue(config.to_dict()["public_cache"]["enabled"])
+        self.assertEqual(config.to_dict()["public_cache"]["path"], ".bhf/public-cache.json")
+        self.assertEqual(config.to_dict()["public_cache"]["minimum_quality_score"], 91.0)
+        self.assertEqual(config.to_dict()["public_cache"]["allowed_review_statuses"], ("reviewed",))
+
+    def test_config_accepts_observability_section(self):
+        config = AgentConfig.from_mapping(
+            {
+                "config_version": 1,
+                "adapter": "openai_compatible",
+                "base_url": "http://localhost:1234/v1",
+                "model": "local-model",
+                "profile": "standard",
+                "observability": {
+                    "enabled": True,
+                    "verbose": True,
+                    "redact_sensitive": False,
+                },
+            }
+        )
+
+        self.assertTrue(config.observability.enabled)
+        self.assertTrue(config.observability.verbose)
+        self.assertFalse(config.observability.redact_sensitive)
+
+    def test_config_serializes_observability_section(self):
+        config = AgentConfig(
+            base_url="http://localhost:1234/v1",
+            model="local-model",
+            observability=ObservabilityConfig(
+                enabled=True,
+                verbose=False,
+                redact_sensitive=False,
+            ),
+        )
+
+        self.assertTrue(config.to_dict()["observability"]["enabled"])
+        self.assertFalse(config.to_dict()["observability"]["verbose"])
+        self.assertFalse(config.to_dict()["observability"]["redact_sensitive"])
 
     def test_config_accepts_valid_answer_modes(self):
         for answer_mode in ("concise", "study", "teaching", "scholar"):

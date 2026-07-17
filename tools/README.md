@@ -47,8 +47,18 @@ python tools/compose.py --profile standard --write
 
 Shared loading/parsing/dependency-resolution helpers imported by both scripts.
 
-> Note: run these from the repository root so relative paths (`framework/`,
-> `profiles/`) resolve.
+## CKL authoring tools
+
+The Canonical Knowledge Library has its own small command set in `tools/`:
+
+- `ckl_create.py` generates a normalized object template and can write it to the
+  correct `framework/canonical_library/objects/...` path.
+- `ckl_validate.py` validates either one object file or the full CKL library.
+- `ckl_manifest.py` rebuilds `manifest.json` from the current object inventory.
+- `ckl_report.py` prints a status snapshot with counts and validation issues.
+- `ckl_migrate.py` normalizes legacy object JSON into the current schema shape.
+
+Run these from the repository root so relative paths resolve correctly.
 
 ## Code style
 

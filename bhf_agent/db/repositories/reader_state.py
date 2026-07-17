@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import uuid
 from pathlib import Path
 from typing import Any, Callable
@@ -75,8 +76,8 @@ def create_note(
             """
             INSERT INTO notes (
                 id, book, chapter, verse_start, verse_end, selected_text,
-                note_body, created_at, updated_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                note_body, canonical_object_ids, created_at, updated_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 note_id,
@@ -86,6 +87,7 @@ def create_note(
                 note["end_verse"],
                 note["selected_text"],
                 note["body"],
+                json.dumps(note["canonical_object_ids"]),
                 now,
                 now,
             ),
@@ -128,7 +130,7 @@ def update_note(
             """
             UPDATE notes
             SET book = ?, chapter = ?, verse_start = ?, verse_end = ?,
-                selected_text = ?, note_body = ?, updated_at = ?
+                selected_text = ?, note_body = ?, canonical_object_ids = ?, updated_at = ?
             WHERE id = ?
             """,
             (
@@ -138,6 +140,7 @@ def update_note(
                 note["end_verse"],
                 note["selected_text"],
                 note["body"],
+                json.dumps(note["canonical_object_ids"]),
                 updated_at,
                 note_id,
             ),
@@ -302,8 +305,8 @@ def create_saved_study(
             """
             INSERT INTO saved_studies (
                 id, title, book, chapter, verse_start, verse_end, selected_text,
-                study_type, question, answer, created_at, updated_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                study_type, question, answer, canonical_object_ids, created_at, updated_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 study_id,
@@ -316,6 +319,7 @@ def create_saved_study(
                 study["study_type"],
                 study["question"],
                 study["answer"],
+                json.dumps(study["canonical_object_ids"]),
                 now,
                 now,
             ),

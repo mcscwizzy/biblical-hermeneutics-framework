@@ -104,6 +104,11 @@ def saved_study_payload_from_request(payload: dict[str, Any], job_store: Any = N
             "study_type": job.study_type or "question",
             "question": job.question or "",
             "answer": getattr(job.result, "answer_text", ""),
+            "canonical_object_ids": list(
+                ((getattr(job.result, "model_metadata", {}) or {}).get(
+                    "canonical_library_object_ids"
+                ) or [])
+            ),
         }
 
     return {
@@ -116,6 +121,7 @@ def saved_study_payload_from_request(payload: dict[str, Any], job_store: Any = N
         "study_type": payload.get("study_type") or payload.get("ask_mode"),
         "question": payload.get("question"),
         "answer": payload.get("answer") or payload.get("answer_html"),
+        "canonical_object_ids": payload.get("canonical_object_ids"),
     }
 
 
@@ -172,6 +178,7 @@ def job_error_message(job: Any) -> str:
 
 def result_metadata(result: Any) -> dict[str, Any]:
     metadata = getattr(result, "model_metadata", {}) or {}
+    pipeline = metadata.get("pipeline") if isinstance(metadata.get("pipeline"), dict) else {}
     validation = getattr(result, "validation_result", None)
     reference = getattr(result, "reference_context", None)
     genre = getattr(result, "genre_context", None)
@@ -184,6 +191,11 @@ def result_metadata(result: Any) -> dict[str, Any]:
         "Detected genre": getattr(genre, "primary_genre", None) or "not detected",
         "Question type": format_question_type(question),
         "Local knowledge used": join_or_none(metadata.get("local_knowledge_keys") or []),
+        "Canonical object IDs": join_or_none(metadata.get("canonical_library_object_ids") or []),
+        "Canonical retrieval method": metadata.get("canonical_library_retrieval_method") or "none",
+        "CKL context injected": "yes" if pipeline.get("ckl_context_injected") else "no",
+        "CKL fallback reason": pipeline.get("fallback_reason") or "none",
+        "CKL result count": pipeline.get("ckl_result_count") or 0,
         "Validation warnings": join_or_none(getattr(validation, "warnings", [])),
         "Adapter errors": join_or_none(getattr(result, "errors", [])),
     }

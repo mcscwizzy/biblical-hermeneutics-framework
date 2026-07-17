@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BHF CKL Draft Editor</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+</head>
+<body>
+  <main class="page curation-page">
+    <header class="header curation-header">
+      <div>
+        <p class="eyebrow">Local admin</p>
+        <h1>CKL Draft Editor</h1>
+        <p>Edit placeholder and in-progress canonical objects locally, then reload them in the browser without touching the reader workflow.</p>
+      </div>
+      <nav class="page-links">
+        <a class="secondary-link" href="/">Reader</a>
+        <a class="secondary-link" href="/canonical/editor">Draft editor</a>
+        <a class="secondary-link" href="/curation">Curation</a>
+      </nav>
+    </header>
+
+    {% if saved %}
+      <section class="notice curation-notice" role="status">Saved {{ selected_object.title }}.</section>
+    {% endif %}
+
+    {% if error %}
+      <section class="notice error curation-notice" role="alert">{{ error }}</section>
+    {% endif %}
+
+    <section class="curation-actions">
+      <form class="curation-import" method="get" action="/canonical/editor">
+        <label class="full">
+          <span>Open object by ID</span>
+          <input
+            type="text"
+            name="object_id"
+            value="{{ selected_object.id if selected_object else '' }}"
+            placeholder="arad-ostraca"
+            autocomplete="off"
+            data-testid="canonical-editor-object-input"
+          >
+        </label>
+        <p class="note-editor-hint">Use a draft or placeholder object ID, then load it into the editor below.</p>
+        <div class="action-row">
+          <button type="submit" data-testid="canonical-editor-load">Load object</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="curation-section">
+      <div class="panel-heading">
+        <div>
+          <h2>Draft inventory</h2>
+          <p class="section-meta">{{ draft_objects|length }} editable objects in the local CKL copy</p>
+        </div>
+      </div>
+      <div class="action-row">
+        {% for item in draft_objects[:12] %}
+          <a class="secondary-link" href="/canonical/editor?object_id={{ item.id }}">{{ item.title }}</a>
+        {% endfor %}
+      </div>
+    </section>
+
+    {% if selected_object %}
+      <section class="curation-section">
+        <div class="panel-heading">
+          <div>
+            <h2>{{ selected_object.title }}</h2>
+            <p class="section-meta">{{ selected_object.type | replace("_", " ") | title }} · {{ selected_object.content_status | replace("_", " ") | title }} · {{ selected_object.review_status | replace("_", " ") | title }}</p>
+          </div>
+          <span class="record-id">{{ selected_object.id }}</span>
+        </div>
+
+        <div class="record-attribution">
+          <strong>Source path</strong>
+          <p>{{ selected_object_path or "Not available" }}</p>
+          <p>{{ selected_object.summary or "No summary recorded." }}</p>
+        </div>
+
+        <form class="curation-record" method="post" action="/canonical/editor/{{ selected_object.id }}" data-testid="canonical-editor-form">
+          <label>
+            <span>Record JSON</span>
+            <textarea name="record_json" rows="24" data-testid="canonical-editor-json">{{ selected_object_json }}</textarea>
+          </label>
+          <div class="action-row">
+            <button type="submit" data-testid="canonical-editor-save">Save draft</button>
+            <a class="secondary-link" href="/api/canonical/objects/{{ selected_object.id }}" data-testid="canonical-editor-json-link">View JSON</a>
+          </div>
+        </form>
+      </section>
+    {% else %}
+      <section class="notice">No canonical objects are available in the current CKL copy.</section>
+    {% endif %}
+  </main>
+</body>
+</html>

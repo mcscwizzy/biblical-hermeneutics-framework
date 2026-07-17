@@ -12,11 +12,21 @@ INTERNAL_HEADINGS = (
     "Standard Runtime Strategy",
     "Scholar Runtime Strategy",
     "Answer Generation",
+    "Analysis",
+    "Thought Process",
+    "Retrieved Context",
+    "Search Results",
+    "Sources Used",
+    "Internal Notes",
+    "System Instructions",
+    "Canonical Knowledge Context",
+    "Optional Conversation Context",
+    "Output Requirements",
 )
 
 ANSWER_HEADING_RE = re.compile(
     r"^\s*#{0,6}\s*(?:1\.\s*)?"
-    r"(?:Short Answer|Genre|Historical / Cultural Setting|Key Biblical Data)\b",
+    r"(?:Short Answer|Genre|Historical / Cultural Setting|Key Biblical Data|Answer|Response)\b",
     re.IGNORECASE,
 )
 

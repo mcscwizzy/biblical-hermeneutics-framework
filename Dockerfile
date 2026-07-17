@@ -3,6 +3,9 @@ FROM python:3.12-slim
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV BHF_MEMORY_PATH=/app/.bhf/sessions
+ENV BHF_CKL_BACKEND=sqlite
+ENV BHF_CKL_DATABASE_PATH=/app/.bhf/ckl.sqlite
+ENV BHF_CKL_STALE_DATABASE_POLICY=error
 
 WORKDIR /app
 
@@ -12,12 +15,13 @@ RUN groupadd --gid 1000 bhf \
 COPY tools/requirements.txt /tmp/requirements.txt
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
-COPY bhf_agent/ ./bhf_agent/
-COPY bhf_web/ ./bhf_web/
-COPY framework/ ./framework/
-COPY profiles/ ./profiles/
+# Copy the repository content after dependency install so image builds pick up
+# new runtime assets, profiles, docs, and frontend source files together.
+COPY . .
 
 RUN mkdir -p /app/.bhf/sessions /app/.bhf/exports \
+    && python -m framework.canonical_library build-db --output /app/.bhf/ckl.sqlite \
+    && python -m framework.canonical_library verify-db --database /app/.bhf/ckl.sqlite --skip-fingerprint \
     && chown -R bhf:bhf /app
 
 USER bhf

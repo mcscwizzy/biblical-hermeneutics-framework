@@ -3,6 +3,7 @@ from contextlib import contextmanager
 import json
 import os
 import re
+import shutil
 import tempfile
 import time
 import unittest
@@ -11,7 +12,7 @@ from types import SimpleNamespace
 from urllib.parse import quote_plus, urlencode
 from unittest.mock import patch
 
-from bhf_agent.config import AgentConfig, ConfigError
+from bhf_agent.config import AgentConfig, CanonicalLibraryConfig, ConfigError
 from bhf_agent.models import (
     AgentResult,
     GenreContext,
@@ -125,6 +126,8 @@ class WebFormTests(unittest.TestCase):
             "BHF_SHOW_METHOD_NOTES": "false",
             "BHF_MEMORY_ENABLED": "true",
             "BHF_MEMORY_PATH": "/app/.bhf/sessions",
+            "BHF_CKL_RETRIEVAL_ENABLED": "false",
+            "BHF_CKL_RETRIEVAL_SHADOW_MODE": "true",
         }
 
         with patch.dict(os.environ, env, clear=False):
@@ -141,6 +144,8 @@ class WebFormTests(unittest.TestCase):
         self.assertFalse(config.show_method_notes)
         self.assertTrue(config.memory_enabled)
         self.assertEqual(config.memory_path, "/app/.bhf/sessions")
+        self.assertFalse(config.canonical_library.enabled)
+        self.assertTrue(config.canonical_library.shadow_mode)
 
     def test_web_defaults_read_ollama_environment_variables(self):
         env = {
@@ -531,6 +536,15 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn(".journey-library-controls", style)
         self.assertIn(".workspace-tab-bar", style)
         self.assertIn(".workspace-tab[aria-selected=\"true\"]", style)
+        self.assertIn(".canonical-browser-panel", style)
+        self.assertIn(".canonical-browser-layout", style)
+        self.assertIn(".canonical-result-card", style)
+        self.assertIn(".canonical-object-badge", style)
+        self.assertIn(".canonical-context-details", style)
+        self.assertIn(".answer-canonical-context", style)
+        self.assertIn(".scripture-link", style)
+        self.assertIn(".canonical-note-links", style)
+        self.assertIn(".search-badge--muted", style)
         self.assertIn("box-shadow: 0 12px 24px rgb(26 42 56 / 6%);", style)
         self.assertIn("position: sticky;", style)
         self.assertIn("position: fixed;", style)
@@ -590,6 +604,8 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("Scripture", response["body"])
         self.assertIn("desktop-reader-controls-trigger", response["body"])
         self.assertIn("data-workspace-tab-bar", response["body"])
+        self.assertIn("workspace-tab-context", response["body"])
+        self.assertIn("workspace-pane-context", response["body"])
         self.assertIn("book-select", response["body"])
         self.assertIn("data-theme-toggle", response["body"])
         self.assertIn("reader-context-menu", response["body"])
@@ -647,6 +663,9 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("app-dock-explore", response["body"])
         self.assertIn("reader-controls-trigger", response["body"])
         self.assertIn("reader-controls-sheet", response["body"])
+        self.assertIn("data-canonical-browser-form", response["body"])
+        self.assertIn("data-canonical-detail-title", response["body"])
+        self.assertIn("data-testid=\"note-canonical-object-ids\"", response["body"])
         self.assertIn("data-app-section=\"explore\"", response["body"])
         self.assertIn("name=\"question\"", response["body"])
         self.assertIn("data-question-scope", response["body"])
@@ -775,6 +794,25 @@ class WebAppTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmpdir:
             yield Path(tmpdir) / "study.sqlite"
 
+    @contextmanager
+    def _temp_canonical_root(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir) / "canonical_library"
+            shutil.copytree(
+                Path("framework/canonical_library").resolve(),
+                root,
+                ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
+            )
+            placeholder_path = root / "objects" / "archaeology" / "arad-ostraca.json"
+            placeholder_data = json.loads(placeholder_path.read_text(encoding="utf-8"))
+            placeholder_data["content_status"] = "placeholder"
+            placeholder_data["summary"] = ""
+            placeholder_path.write_text(
+                json.dumps(placeholder_data, indent=2, ensure_ascii=False),
+                encoding="utf-8",
+            )
+            yield root
+
     def test_sample_maps_route_returns_markers(self):
         response = asgi_request("GET", "/api/maps/sample-markers")
 
@@ -870,6 +908,95 @@ class WebAppTests(unittest.TestCase):
         archaeology_data = json.loads(archaeology_response["body"])
         self.assertEqual(archaeology_data["kind"], "archaeology")
         self.assertEqual(archaeology_data["results"], [])
+
+    def test_canonical_browser_routes_return_search_and_object_details(self):
+        response = asgi_request("GET", "/api/canonical/search?q=Shechem&limit=5")
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(data["query"], "Shechem")
+        self.assertGreater(len(data["results"]), 0)
+        shechem = next(item for item in data["results"] if item["id"] == "shechem")
+        self.assertEqual(shechem["browse_url"], "/curation?collection=place")
+        self.assertIn("scripture_references", shechem)
+        self.assertIn("related_object_links", shechem)
+        self.assertIn("reason", shechem)
+
+        detail_response = asgi_request("GET", "/api/canonical/objects/shechem")
+        self.assertEqual(detail_response["status"], 200)
+        detail = json.loads(detail_response["body"])
+        self.assertEqual(detail["id"], "shechem")
+        self.assertEqual(detail["browse_url"], "/curation?collection=place")
+        self.assertIn("source_count", detail)
+        self.assertIn("scripture_reference_count", detail)
+        self.assertIn("related_object_links", detail)
+
+    def test_canonical_editor_routes_allow_editing_placeholder_objects(self):
+        with self._temp_canonical_root() as canonical_root, patch.dict(
+            os.environ,
+            {"BHF_CKL_ROOT": str(canonical_root)},
+            clear=False,
+        ):
+            import bhf_agent.ckl as ckl_module
+            from bhf_web.routes import canonical as canonical_routes
+
+            ckl_module._load_default_canonical_library.cache_clear()
+            canonical_routes._canonical_library.cache_clear()
+            test_app = create_app()
+            canonical_library = ckl_module.load_canonical_library(str(canonical_root))
+
+            detail_response = asgi_request("GET", "/api/canonical/objects/arad-ostraca", test_app=test_app)
+            self.assertEqual(detail_response["status"], 200)
+            detail = json.loads(detail_response["body"])
+            self.assertEqual(detail["content_status"], "placeholder")
+
+            editor_response = asgi_request(
+                "GET",
+                "/canonical/editor?object_id=arad-ostraca",
+                test_app=test_app,
+            )
+            self.assertEqual(editor_response["status"], 200)
+            self.assertIn("CKL Draft Editor", editor_response["body"])
+            self.assertIn("Draft inventory", editor_response["body"])
+            self.assertIn("canonical-editor-form", editor_response["body"])
+            self.assertIn("No summary recorded.", editor_response["body"])
+
+            object_payload = canonical_library.objects_by_id["arad-ostraca"].to_dict()
+            object_payload["summary"] = "Arad Ostraca is a draft archaeological record for the southern Judah frontier."
+            save_response = asgi_request(
+                "POST",
+                "/canonical/editor/arad-ostraca",
+                data={"record_json": json.dumps(object_payload, indent=2, ensure_ascii=False)},
+                test_app=test_app,
+            )
+            self.assertEqual(save_response["status"], 303)
+
+            refreshed_response = asgi_request(
+                "GET",
+                "/api/canonical/objects/arad-ostraca",
+                test_app=test_app,
+            )
+            self.assertEqual(
+                json.loads(refreshed_response["body"])["summary"],
+                object_payload["summary"],
+            )
+
+            saved_editor_response = asgi_request(
+                "GET",
+                "/canonical/editor?object_id=arad-ostraca&saved=1",
+                test_app=test_app,
+            )
+            self.assertEqual(saved_editor_response["status"], 200)
+            self.assertIn("Saved Arad Ostraca.", saved_editor_response["body"])
+            self.assertIn(object_payload["summary"], saved_editor_response["body"])
+
+            missing_editor_response = asgi_request(
+                "GET",
+                "/canonical/editor?object_id=missing-object",
+                test_app=test_app,
+            )
+            self.assertEqual(missing_editor_response["status"], 404)
+            self.assertIn("was not found", missing_editor_response["body"])
 
     def test_period_filter_applies_to_all_map_endpoints(self):
         places_response = asgi_request("GET", "/api/maps/biblical-places?period=NT+%2F+Roman+period")
@@ -1220,9 +1347,12 @@ class WebAppTests(unittest.TestCase):
         result = asgi_request("GET", f"/api/bible/search/fallback/result/{job['job_id']}")
         self.assertEqual(result["status"], 200)
         payload = json.loads(result["body"])
-        self.assertEqual(payload["source"], "ai_fallback")
-        self.assertEqual(payload["results"][0]["reference"], "Exodus 1")
-        self.assertEqual(payload["results"][1]["reference"], "Exodus 12:37-42")
+        self.assertEqual(payload["source"], "ckl_fallback")
+        references = [item["reference"] for item in payload["results"]]
+        self.assertGreaterEqual(len(references), 3)
+        self.assertEqual(references[0], "Exodus 3:1-22")
+        self.assertIn("Exodus 1:1-22", references)
+        self.assertIn("Exodus 12:1-14", references)
 
     def test_post_ask_handles_mocked_agent_result(self):
         with patch("bhf_web.app.BHFAgent", FakeAgent):
@@ -1231,10 +1361,10 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(response["status"], 200)
         self.assertIn("Answer", response["body"])
         self.assertIn("Short Answer", response["body"])
-        self.assertIn("Profile used", response["body"])
-        self.assertIn("minimal-7b", response["body"])
-        self.assertIn("Local knowledge used", response["body"])
-        self.assertIn("ruach", response["body"])
+        self.assertNotIn("Profile used", response["body"])
+        self.assertNotIn("Local knowledge used", response["body"])
+        self.assertNotIn("Canonical Context", response["body"])
+        self.assertNotIn("Metadata", response["body"])
         self.assertNotIn("local-secret", response["body"])
 
     def test_post_ask_invalid_config_returns_friendly_error(self):
@@ -1272,7 +1402,174 @@ class WebAppTests(unittest.TestCase):
         result = asgi_request("GET", f"/ask/result/{job['job_id']}")
         self.assertEqual(result["status"], 200)
         self.assertIn("Short Answer", result["body"])
+        self.assertNotIn("Metadata", result["body"])
+        self.assertNotIn("Canonical Context", result["body"])
+        self.assertNotIn("Developer Retrieval Inspector", result["body"])
+
+    def test_ask_result_shows_debug_metadata_when_enabled(self):
+        debug_defaults = SimpleNamespace(
+            config=AgentConfig(
+                base_url="http://localhost:11434/v1",
+                model="llama3.1:8b",
+                profile="minimal-7b",
+                debug=True,
+            )
+        )
+
+        with patch("bhf_web.app.BHFAgent", SuccessfulJobAgent), patch(
+            "bhf_web.routes.ask.load_web_defaults",
+            return_value=debug_defaults,
+        ), patch(
+            "bhf_web.jobs.load_web_defaults",
+            return_value=debug_defaults,
+        ), patch(
+            "bhf_web.jobs.settings.TEST_MODE",
+            False,
+        ):
+            response = asgi_request("POST", "/ask/jobs", data=_valid_form())
+
+            self.assertEqual(response["status"], 202)
+            job = json.loads(response["body"])
+            wait_for_job(job["job_id"])
+
+        with patch(
+            "bhf_web.routes.ask.load_web_defaults",
+            return_value=debug_defaults,
+        ):
+            result = asgi_request("GET", f"/ask/result/{job['job_id']}")
+
+        self.assertEqual(result["status"], 200)
         self.assertIn("Metadata", result["body"])
+        self.assertIn("Canonical Context", result["body"])
+        self.assertIn("canonical-object-badge-title", result["body"])
+        self.assertIn("shechem", result["body"])
+        self.assertIn("Profile used", result["body"])
+        self.assertIn("Local knowledge used", result["body"])
+        self.assertIn("Developer Retrieval Inspector", result["body"])
+        self.assertIn("Prompt Preview", result["body"])
+        self.assertIn("Selected Results", result["body"])
+
+    def test_ask_result_hides_ckl_section_when_context_was_not_injected(self):
+        debug_defaults = SimpleNamespace(
+            config=AgentConfig(
+                base_url="http://localhost:11434/v1",
+                model="llama3.1:8b",
+                profile="minimal-7b",
+                debug=True,
+            )
+        )
+
+        with patch("bhf_web.app.BHFAgent", FallbackOnlyAgent), patch(
+            "bhf_web.routes.ask.load_web_defaults",
+            return_value=debug_defaults,
+        ), patch(
+            "bhf_web.jobs.load_web_defaults",
+            return_value=debug_defaults,
+        ), patch(
+            "bhf_web.jobs.settings.TEST_MODE",
+            False,
+        ):
+            response = asgi_request("POST", "/ask/jobs", data=_valid_form())
+
+            self.assertEqual(response["status"], 202)
+            job = json.loads(response["body"])
+            wait_for_job(job["job_id"])
+
+        with patch(
+            "bhf_web.routes.ask.load_web_defaults",
+            return_value=debug_defaults,
+        ):
+            result = asgi_request("GET", f"/ask/result/{job['job_id']}")
+
+        self.assertEqual(result["status"], 200)
+        self.assertIn("Answer", result["body"])
+        self.assertIn("Developer Retrieval Inspector", result["body"])
+        self.assertNotIn("Canonical Context", result["body"])
+        self.assertNotIn("canonical-object-badge-title", result["body"])
+        self.assertNotIn("No results returned", result["body"])
+        self.assertNotIn("No CKL results", result["body"])
+        self.assertIn("CKL context injected", result["body"])
+        self.assertIn("CKL fallback reason", result["body"])
+
+    def test_ask_result_shows_shadow_prompt_preview_when_ckl_runs_in_shadow_mode(self):
+        debug_defaults = SimpleNamespace(
+            config=AgentConfig(
+                base_url="http://localhost:11434/v1",
+                model="llama3.1:8b",
+                profile="minimal-7b",
+                debug=True,
+                canonical_library=CanonicalLibraryConfig(
+                    enabled=False,
+                    shadow_mode=True,
+                ),
+            )
+        )
+
+        with patch("bhf_web.app.BHFAgent", SuccessfulJobAgent), patch(
+            "bhf_web.routes.ask.load_web_defaults",
+            return_value=debug_defaults,
+        ), patch(
+            "bhf_web.jobs.load_web_defaults",
+            return_value=debug_defaults,
+        ), patch(
+            "bhf_web.jobs.settings.TEST_MODE",
+            False,
+        ):
+            response = asgi_request("POST", "/ask/jobs", data=_valid_form())
+
+            self.assertEqual(response["status"], 202)
+            job = json.loads(response["body"])
+            wait_for_job(job["job_id"])
+
+        with patch(
+            "bhf_web.routes.ask.load_web_defaults",
+            return_value=debug_defaults,
+        ):
+            result = asgi_request("GET", f"/ask/result/{job['job_id']}")
+
+        self.assertEqual(result["status"], 200)
+        self.assertIn("Rollout mode", result["body"])
+        self.assertIn("Shadow Prompt Preview", result["body"])
+        self.assertIn("CKL was retrieved in shadow mode", result["body"])
+        self.assertIn("did not find a strong match", result["body"])
+
+    def test_debug_ckl_search_endpoint_is_hidden_without_debug_mode(self):
+        response = asgi_request("POST", "/api/debug/ckl-search", json_data={"query": "Shechem"})
+
+        self.assertEqual(response["status"], 404)
+
+    def test_debug_ckl_search_endpoint_returns_retrieval_trace_when_enabled(self):
+        debug_defaults = SimpleNamespace(
+            config=AgentConfig(
+                base_url="http://localhost:11434/v1",
+                model="llama3.1:8b",
+                profile="minimal-7b",
+                debug=True,
+            )
+        )
+
+        with patch(
+            "bhf_web.routes.debug.load_web_defaults",
+            return_value=debug_defaults,
+        ):
+            response = asgi_request(
+                "POST",
+                "/api/debug/ckl-search",
+                json_data={"query": "Why is Shechem important in Joshua 24?"},
+            )
+
+        self.assertEqual(response["status"], 200)
+        payload = json.loads(response["body"])
+        self.assertEqual(payload["question"], "Why is Shechem important in Joshua 24?")
+        self.assertIn("analysis", payload)
+        self.assertIn("search", payload)
+        self.assertIn("prompt", payload)
+        self.assertIn("retrieval", payload)
+        self.assertIsInstance(payload["retrieval"]["duration_ms"], int)
+        self.assertGreaterEqual(payload["retrieval"]["duration_ms"], 0)
+        self.assertEqual(payload["search"]["results"][0]["id"], "shechem")
+        self.assertTrue(payload["prompt"]["preview"])
+        self.assertIn("shechem", payload["retrieval"]["selected_entry_ids"])
 
     def test_reader_ask_job_builds_server_side_question(self):
         CapturingAgent.questions = []
@@ -1624,21 +1921,33 @@ class WebAppTests(unittest.TestCase):
                 job_id = json.loads(job_response["body"])["job_id"]
                 wait_for_job(job_id)
 
+                result_response = asgi_request("GET", f"/ask/result/{job_id}")
+                self.assertEqual(result_response["status"], 200)
+                self.assertNotIn("Canonical Context", result_response["body"])
+                self.assertNotIn("Why these objects were retrieved", result_response["body"])
+                self.assertNotIn("canonical-object-badge-title", result_response["body"])
+                self.assertNotIn("shechem", result_response["body"])
+
                 save = asgi_request("POST", "/api/saved-studies", json_data={"job_id": job_id})
                 self.assertEqual(save["status"], 201)
                 study = json.loads(save["body"])
                 self.assertEqual(study["book"], "Romans")
                 self.assertEqual(study["study_type"], "literary_context")
+                self.assertEqual(study["canonical_object_ids"], ["shechem", "abraham"])
 
                 list_response = asgi_request("GET", "/api/saved-studies?book=Romans&chapter=12")
                 self.assertEqual(list_response["status"], 200)
                 studies = json.loads(list_response["body"])["saved_studies"]
                 self.assertEqual(len(studies), 1)
+                self.assertEqual(studies[0]["canonical_object_ids"], ["shechem", "abraham"])
 
                 open_response = asgi_request("GET", f"/api/saved-studies/{study['id']}")
                 self.assertEqual(open_response["status"], 200)
                 self.assertIn("Saved study", open_response["body"])
                 self.assertIn("Romans 12:1-2", open_response["body"])
+                self.assertIn("Saved canonical object links associated with this study.", open_response["body"])
+                self.assertIn("canonical-object-badge", open_response["body"])
+                self.assertIn("shechem", open_response["body"])
 
                 delete = asgi_request("DELETE", f"/api/saved-studies/{study['id']}")
                 self.assertEqual(delete["status"], 200)
@@ -1841,6 +2150,49 @@ class SuccessfulJobAgent(FakeAgent):
         return fake_result(self.config, errors=[])
 
 
+class FallbackOnlyAgent(SuccessfulJobAgent):
+    def ask(self, question, status_callback=None):
+        if status_callback is not None:
+            status_callback(status_event("loading_profile", "Loading BHF profile", 6))
+            status_callback(
+                status_event(
+                    "contacting_model_backend",
+                    "Contacting model backend",
+                    10,
+                    status="running",
+                )
+            )
+            status_callback(
+                status_event(
+                    "waiting_for_model_response",
+                    "Waiting for model response",
+                    11,
+                    status="running",
+                )
+            )
+            status_callback(status_event("complete", "Complete", 16, status="complete"))
+        return fake_result(
+            self.config,
+            errors=[],
+            canonical_context=None,
+            canonical_object_ids=[],
+            pipeline_overrides={
+                "canonical_library_context": None,
+                "canonical_library_object_ids": [],
+                "canonical_library_retrieval_method": None,
+                "canonical_library_topic_count": 0,
+                "canonical_library_prompt_tokens": 0,
+                "canonical_library_prompt_mode": "fallback_to_model",
+                "canonical_library_strong_match": False,
+                "ckl_attempted": True,
+                "ckl_result_count": 0,
+                "ckl_context_injected": False,
+                "fallback_to_model": True,
+                "fallback_reason": "no_relevant_ckl_results",
+            },
+        )
+
+
 class CapturingAgent(SuccessfulJobAgent):
     questions = []
 
@@ -1920,9 +2272,111 @@ def status_event(stage, message, step_index, status="complete"):
     }
 
 
-def fake_result(config, errors):
+def canonical_context_stub():
+    return {
+        "query": "Shechem covenant context",
+        "retrieved_topics": [
+            {
+                "id": "shechem",
+                "title": "Shechem",
+                "type": "place",
+                "review_status": "approved",
+                "content_status": "complete",
+                "confidence": "strong",
+                "match_type": "alias",
+                "reason": "Matched alias Shechem.",
+                "matched_fields": ["aliases"],
+                "matched_terms": ["shechem"],
+                "scripture_references": [
+                    {
+                        "reference": "Joshua 24:1",
+                        "relationship": "covenant renewal",
+                        "notes": "",
+                    }
+                ],
+            },
+            {
+                "id": "abraham",
+                "title": "Abraham",
+                "type": "person",
+                "review_status": "approved",
+                "content_status": "complete",
+                "confidence": "strong",
+                "match_type": "relationship",
+                "reason": "Included through covenant background.",
+                "matched_fields": ["related_objects"],
+                "matched_terms": ["abraham"],
+                "scripture_references": [
+                    {
+                        "reference": "Genesis 12:1-7",
+                        "relationship": "promise",
+                        "notes": "",
+                    }
+                ],
+            },
+        ],
+        "metadata": {
+            "retrieval_method": "keyword",
+            "query": "Shechem covenant context",
+        },
+    }
+
+
+def fake_result(
+    config,
+    errors,
+    *,
+    answer_text: str = "## Short Answer\nAnswer with **method**.",
+    canonical_context=None,
+    canonical_object_ids=None,
+    pipeline_overrides: dict[str, object] | None = None,
+):
+    canonical_library = getattr(config, "canonical_library", None)
+    enabled = bool(getattr(canonical_library, "enabled", True))
+    shadow_mode = bool(getattr(canonical_library, "shadow_mode", False) and not enabled)
+    injected = enabled and not shadow_mode
+    loaded = enabled or shadow_mode
+
+    if canonical_context is None and loaded:
+        canonical_context = canonical_context_stub()
+    if canonical_object_ids is None:
+        canonical_object_ids = ["shechem", "abraham"] if injected else []
+
+    pipeline = {
+        "canonical_library_enabled": enabled,
+        "canonical_library_shadow_mode": shadow_mode,
+        "canonical_library_rollout_mode": (
+            "shadow" if shadow_mode else "enabled" if enabled else "disabled"
+        ),
+        "canonical_library_loaded": loaded,
+        "canonical_library_object_ids": list(canonical_object_ids or []),
+        "canonical_library_retrieval_method": "keyword" if loaded else None,
+        "canonical_library_topic_count": 2 if injected else 0,
+        "canonical_library_prompt_tokens": 1200 if injected else 0,
+        "canonical_library_prompt_mode": "summary" if injected else "disabled",
+        "canonical_library_strong_match": injected,
+        "canonical_library_strict_mode": False,
+        "canonical_library_fallback_to_model": not injected,
+        "ckl_attempted": loaded,
+        "ckl_result_count": 2 if injected else 0,
+        "ckl_context_injected": injected,
+        "fallback_to_model": not injected,
+        "fallback_reason": None if injected else ("shadow_mode" if shadow_mode else "ckl_disabled"),
+    }
+    if shadow_mode:
+        pipeline["canonical_library_shadow_prompt_mode"] = "summary"
+    if pipeline_overrides:
+        pipeline.update(pipeline_overrides)
+        if "canonical_library_object_ids" in pipeline_overrides:
+            canonical_object_ids = list(pipeline_overrides["canonical_library_object_ids"] or [])
+        if "canonical_library_context" in pipeline_overrides:
+            canonical_context = pipeline_overrides["canonical_library_context"]
+
+    if not pipeline.get("canonical_library_loaded"):
+        canonical_context = None
+
     return AgentResult(
-        answer_text="## Short Answer\nAnswer with **method**.",
+        answer_text=answer_text,
         reference_context=ReferenceContext(
             book="Romans",
             chapter=12,
@@ -1942,6 +2396,13 @@ def fake_result(config, errors):
         model_metadata={
             "answer_mode": config.answer_mode,
             "local_knowledge_keys": ["ruach"],
+            "canonical_library_object_ids": list(canonical_object_ids or []),
+            "canonical_library_retrieval_method": pipeline["canonical_library_retrieval_method"],
+            "canonical_library_context": canonical_context,
+            "canonical_library_rollout_mode": pipeline["canonical_library_rollout_mode"],
+            "canonical_library_shadow_mode": shadow_mode,
+            "canonical_library_loaded": loaded,
+            "pipeline": pipeline,
         },
         errors=errors,
     )
@@ -1973,12 +2434,12 @@ def wait_for_job(job_id):
 
 
 def wait_for_search_job(job_id):
-    for _attempt in range(20):
+    for _attempt in range(100):
         response = asgi_request("GET", f"/api/bible/search/fallback/status/{job_id}")
         status = json.loads(response["body"])
         if status.get("done"):
             return status
-        time.sleep(0.01)
+        time.sleep(0.05)
     raise AssertionError(f"search job did not complete: {job_id}")
 
 

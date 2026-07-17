@@ -1,13 +1,23 @@
+import json
 import shutil
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from bhf_agent.adapters import ChatAdapter
 from bhf_agent.config import AgentConfig
+from bhf_agent.config import CanonicalLibraryConfig
+from bhf_agent.config import ObservabilityConfig
 from bhf_agent.models import ChatRequest, ChatResponse
 from bhf_agent.profiles import ProfileLoader
 from bhf_agent.runner import BHFAgent
+from framework.canonical_library import (
+    PublicCacheEntry,
+    load_framework_version,
+    load_framework_version_fingerprint,
+    normalize_public_question,
+)
 
 
 class RecordingAdapter(ChatAdapter):
@@ -60,6 +70,16 @@ class LeakyAdapter(ChatAdapter):
         )
 
 
+class StructuredJsonAdapter(ChatAdapter):
+    def __init__(self, response_text: str) -> None:
+        self.response_text = response_text
+        self.request: ChatRequest | None = None
+
+    def chat(self, request: ChatRequest) -> ChatResponse:
+        self.request = request
+        return ChatResponse(text=self.response_text, model="fake-model")
+
+
 class ErrorAdapter(ChatAdapter):
     def chat(self, request: ChatRequest) -> ChatResponse:
         return ChatResponse(
@@ -71,6 +91,126 @@ class ErrorAdapter(ChatAdapter):
 class RaisingAdapter(ChatAdapter):
     def chat(self, request: ChatRequest) -> ChatResponse:
         raise RuntimeError("adapter failed")
+
+
+class ErrorRecordingAdapter(ChatAdapter):
+    def __init__(self, error_message: str = "OpenAI-compatible endpoint timed out: timed out") -> None:
+        self.error_message = error_message
+        self.request: ChatRequest | None = None
+
+    def chat(self, request: ChatRequest) -> ChatResponse:
+        self.request = request
+        return ChatResponse(
+            text="",
+            model="fake-model",
+            errors=[self.error_message],
+        )
+
+
+def ckl_weak_context_stub() -> dict[str, object]:
+    return {
+        "question": "Why is Shechem important in Joshua 24?",
+        "query": "Shechem Joshua 24",
+        "retrieved_object_ids": ["shechem"],
+        "retrieved_topics": [
+            {
+                "id": "shechem",
+                "title": "Shechem",
+                "type": "place",
+                "review_status": "approved",
+                "content_status": "complete",
+                "confidence": "weak",
+                "match_type": "keyword",
+                "reason": "Weak keyword overlap only.",
+                "matched_fields": ["summary"],
+                "matched_terms": ["shechem"],
+                "score": 0.2,
+                "aliases": ["Shechem"],
+                "summary": "A covenant location in the hill country of Ephraim.",
+                "scripture_references": [],
+                "related_objects": [],
+            }
+        ],
+        "metadata": {
+            "retrieval_method": "keyword",
+            "query": "Shechem Joshua 24",
+            "retrieved_object_ids": ["shechem"],
+            "topic_count": 1,
+            "primary_topic_count": 0,
+            "scripture_topic_count": 0,
+            "expanded_topic_count": 0,
+            "answer_mode": "study",
+            "max_results": 5,
+            "max_context_tokens": 1200,
+        },
+    }
+
+
+def ckl_miss_gap(
+    reason: str | list[str],
+    *,
+    normalized_question: str,
+    answer_mode: str = "study",
+    top_rejected_results: list[dict[str, object]] | None = None,
+) -> dict[str, object]:
+    rejection_reasons = [reason] if isinstance(reason, str) else list(reason)
+    return {
+        "normalized_question": normalized_question,
+        "detected_scripture_references": [],
+        "detected_books": [],
+        "retrieval_terms": [],
+        "top_rejected_results": top_rejected_results or [],
+        "rejection_reasons": rejection_reasons,
+        "timestamp": "2026-07-16T00:00:00Z",
+        "answer_mode": answer_mode,
+    }
+
+
+class RecordingPublicAnswerCache:
+    def __init__(self, entry: PublicCacheEntry | None = None) -> None:
+        self.entry = entry
+        self.lookup_calls: list[dict[str, str | None]] = []
+        self.increment_calls: list[tuple[str, str]] = []
+        self.last_lookup_status = "miss"
+        self.last_lookup_reason: str | None = None
+        self.last_lookup_key: str | None = None
+        self.last_lookup_entry: PublicCacheEntry | None = None
+
+    def lookup(
+        self,
+        normalized_question: str,
+        answer_mode: str = "study",
+        *,
+        ckl_version_fingerprint: str | None = None,
+        framework_version_fingerprint: str | None = None,
+    ) -> PublicCacheEntry | None:
+        self.lookup_calls.append(
+            {
+                "normalized_question": normalized_question,
+                "answer_mode": answer_mode,
+                "ckl_version_fingerprint": ckl_version_fingerprint,
+                "framework_version_fingerprint": framework_version_fingerprint,
+            }
+        )
+        self.last_lookup_key = f"{normalized_question}\u0000{answer_mode}"
+        if self.entry is None:
+            self.last_lookup_status = "miss"
+            self.last_lookup_reason = "no entry configured"
+            self.last_lookup_entry = None
+            return None
+        self.last_lookup_status = "hit"
+        self.last_lookup_reason = None
+        self.last_lookup_entry = self.entry
+        return self.entry
+
+    def store(self, entry: PublicCacheEntry) -> None:
+        self.entry = entry
+
+    def increment_usage(self, normalized_question: str, answer_mode: str = "study") -> None:
+        self.increment_calls.append((normalized_question, answer_mode))
+
+    def update_review_status(self, normalized_question: str, answer_mode: str = "study", status: str = "") -> None:
+        return None
 
 
 class PromptStageAssertingAgent(BHFAgent):
@@ -86,7 +226,13 @@ class PromptStageAssertingAgent(BHFAgent):
 
 
 class RunnerTests(unittest.TestCase):
-    def make_agent(self, adapter: ChatAdapter, **config_overrides) -> BHFAgent:
+    def make_agent(
+        self,
+        adapter: ChatAdapter,
+        public_answer_cache=None,
+        ckl_library=None,
+        **config_overrides,
+    ) -> BHFAgent:
         profiles_dir = Path(tempfile.mkdtemp())
         self.addCleanup(shutil.rmtree, profiles_dir, ignore_errors=True)
         (profiles_dir / "minimal-7b.md").write_text("PROFILE", encoding="utf-8")
@@ -97,10 +243,39 @@ class RunnerTests(unittest.TestCase):
             "profile": "minimal-7b",
         }
         values.update(config_overrides)
+        if ckl_library is not None and "canonical_library" not in values:
+            values["canonical_library"] = CanonicalLibraryConfig(
+                enabled=True,
+                cache_enabled=False,
+            )
         return BHFAgent(
             AgentConfig(**values),
             adapter=adapter,
             profile_loader=ProfileLoader(profiles_dir),
+            public_answer_cache=public_answer_cache,
+            canonical_library=ckl_library,
+        )
+
+    def make_ckl_agent(
+        self,
+        adapter: ChatAdapter,
+        public_answer_cache=None,
+        **config_overrides,
+    ) -> BHFAgent:
+        values = dict(config_overrides)
+        values.setdefault(
+            "canonical_library",
+            CanonicalLibraryConfig(
+                enabled=True,
+                cache_enabled=False,
+            ),
+        )
+        ckl_library = object()
+        return self.make_agent(
+            adapter,
+            public_answer_cache=public_answer_cache,
+            ckl_library=ckl_library,
+            **values,
         )
 
     def test_agent_result_includes_question_context_and_prompt_receives_it(self):
@@ -204,7 +379,7 @@ class RunnerTests(unittest.TestCase):
         adapter = RecordingAdapter()
         agent = self.make_agent(adapter)
 
-        result = agent.ask("What does Proverbs 3 mean?")
+        result = agent.ask("What is the hebrew word for the word spirit or wind?")
 
         self.assertIn("Short Answer", result.answer_text)
         self.assertIn("pipeline", result.model_metadata)
@@ -275,21 +450,25 @@ class RunnerTests(unittest.TestCase):
         self.assertEqual(events[-1]["percent_complete"], 100.0)
         self.assertEqual(events[-1]["status"], "complete")
 
-    def test_adapter_errors_emit_error_status(self):
+    def test_model_unavailable_returns_deterministic_canonical_fallback_answer(self):
         events = []
         agent = self.make_agent(ErrorAdapter())
 
-        result = agent.ask("What does Proverbs 3 mean?", status_callback=events.append)
-
-        self.assertTrue(result.errors)
-        error_events = [event for event in events if event["stage"] == "error"]
-        self.assertTrue(error_events)
-        self.assertIn("timed out", str(error_events[-1]["details"]["errors"]))
-        self.assertEqual(
-            error_events[-1]["details"]["failed_stage"],
-            "waiting_for_model_response",
+        result = agent.ask(
+            "Why did Joshua renew the covenant at Shechem?",
+            status_callback=events.append,
         )
-        self.assertEqual(error_events[-1]["status"], "error")
+
+        self.assertFalse(result.errors)
+        self.assertTrue(result.model_metadata["pipeline"]["fallback_used"])
+        self.assertEqual(result.model_metadata["pipeline"]["fallback_mode"], "canonical_summary")
+        self.assertEqual(result.model_metadata["pipeline"]["fallback_kind"], "summary")
+        self.assertTrue(result.model_metadata["pipeline"]["canonical_library_strong_match"])
+        self.assertIn("shechem", result.model_metadata["pipeline"]["fallback_selected_entry_ids"])
+        self.assertIn("Shechem", result.answer_text)
+        self.assertIn("covenant", result.answer_text.lower())
+        self.assertEqual(events[-1]["stage"], "complete")
+        self.assertFalse(any(event["status"] == "error" for event in events))
 
     def test_exceptions_emit_error_status_before_raising(self):
         events = []
@@ -319,6 +498,503 @@ class RunnerTests(unittest.TestCase):
             "genre:wisdom literature",
             result.model_metadata["pipeline"]["local_knowledge_keys"],
         )
+
+    def test_agent_runs_canonical_library_in_shadow_mode_without_injecting_context(self):
+        adapter = RecordingAdapter()
+        agent = self.make_agent(
+            adapter,
+            profile="standard",
+            canonical_library=CanonicalLibraryConfig(
+                enabled=False,
+                shadow_mode=True,
+            ),
+        )
+
+        result = agent.ask(
+            "Why did Israel renew the covenant where Abraham first entered the land at Shechem in Joshua 24?"
+        )
+
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertNotIn("# CANONICAL KNOWLEDGE CONTEXT", adapter.request.system_prompt)
+        self.assertTrue(result.model_metadata["pipeline"]["canonical_library_loaded"])
+        self.assertFalse(result.model_metadata["pipeline"]["canonical_library_enabled"])
+        self.assertEqual(result.model_metadata["pipeline"]["canonical_library_rollout_mode"], "shadow")
+        self.assertEqual(result.model_metadata["pipeline"]["canonical_library_prompt_mode"], "disabled")
+        self.assertEqual(
+            result.model_metadata["pipeline"]["canonical_library_shadow_prompt_mode"],
+            "summary",
+        )
+        self.assertFalse(result.model_metadata["pipeline"]["ckl_context_injected"])
+        self.assertTrue(result.model_metadata["pipeline"]["fallback_to_model"])
+        self.assertEqual(result.model_metadata["pipeline"]["fallback_reason"], "shadow_mode")
+        self.assertEqual(result.model_metadata["canonical_library_object_ids"], [])
+        self.assertEqual(result.model_metadata["pipeline"]["canonical_library_object_ids"], [])
+        self.assertEqual(result.model_metadata["pipeline"]["ckl_result_count"], 0)
+
+    def test_agent_injects_canonical_library_context_and_debug_ids(self):
+        adapter = RecordingAdapter()
+        agent = self.make_agent(adapter, profile="standard")
+
+        result = agent.ask(
+            "Why did Israel renew the covenant where Abraham first entered the land at Shechem in Joshua 24?"
+        )
+
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertIn("# CANONICAL KNOWLEDGE CONTEXT", adapter.request.system_prompt)
+        self.assertIn("Use that context as your primary factual source", adapter.request.system_prompt)
+        self.assertIn("Entry: Shechem", adapter.request.system_prompt)
+        self.assertIn("Source ID: shechem", adapter.request.system_prompt)
+        self.assertIn("# OUTPUT REQUIREMENTS", adapter.request.system_prompt)
+        self.assertIn("Local Curated Knowledge", adapter.request.system_prompt)
+        self.assertLess(
+            adapter.request.system_prompt.index("# CANONICAL KNOWLEDGE CONTEXT"),
+            adapter.request.system_prompt.index("Local Curated Knowledge"),
+        )
+        self.assertIn("shechem", result.model_metadata["canonical_library_object_ids"])
+        self.assertIn("abraham", result.model_metadata["canonical_library_object_ids"])
+        self.assertIn("joshua", result.model_metadata["canonical_library_object_ids"])
+        self.assertIn(
+            "shechem",
+            result.model_metadata["pipeline"]["canonical_library_object_ids"],
+        )
+        self.assertEqual(
+            result.model_metadata["canonical_library_retrieval_method"],
+            result.model_metadata["pipeline"]["canonical_library_retrieval_method"],
+        )
+        self.assertTrue(result.model_metadata["pipeline"]["ckl_context_injected"])
+        self.assertFalse(result.model_metadata["pipeline"]["fallback_to_model"])
+        self.assertGreater(result.model_metadata["pipeline"]["ckl_result_count"], 0)
+
+    def test_agent_falls_back_to_model_when_ckl_has_no_strong_match(self):
+        adapter = RecordingAdapter()
+        agent = self.make_agent(adapter, profile="standard")
+
+        result = agent.ask("What does Proverbs 3 mean?")
+
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertNotIn("# CANONICAL KNOWLEDGE CONTEXT", adapter.request.system_prompt)
+        self.assertNotIn("did not find a strong match", adapter.request.system_prompt)
+        self.assertIn("Short Answer", result.answer_text)
+        self.assertFalse(result.model_metadata["pipeline"]["canonical_library_strong_match"])
+        self.assertEqual(
+            result.model_metadata["pipeline"]["canonical_library_prompt_mode"],
+            "fallback_to_model",
+        )
+        self.assertTrue(result.model_metadata["pipeline"]["ckl_attempted"])
+        self.assertFalse(result.model_metadata["pipeline"]["ckl_context_injected"])
+        self.assertTrue(result.model_metadata["pipeline"]["fallback_to_model"])
+
+    def test_agent_returns_model_answer_when_ckl_returns_no_results(self):
+        adapter = RecordingAdapter()
+        agent = self.make_ckl_agent(adapter, profile="standard")
+
+        with patch("bhf_agent.runner.build_canonical_context", return_value=None), patch(
+            "bhf_agent.runner._canonical_miss_reason",
+            return_value=ckl_miss_gap(
+                "no_relevant_ckl_results",
+                normalized_question="What does it mean to follow Jesus?",
+            ),
+        ):
+            result = agent.ask("What does it mean to follow Jesus?")
+
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertNotIn("# CANONICAL KNOWLEDGE CONTEXT", adapter.request.system_prompt)
+        self.assertIn("What does it mean to follow Jesus?", adapter.request.user_prompt)
+        self.assertIn("Short Answer", result.answer_text)
+        self.assertTrue(result.model_metadata["pipeline"]["ckl_attempted"])
+        self.assertEqual(result.model_metadata["pipeline"]["ckl_result_count"], 0)
+        self.assertFalse(result.model_metadata["pipeline"]["ckl_context_injected"])
+        self.assertTrue(result.model_metadata["pipeline"]["fallback_to_model"])
+        self.assertEqual(result.model_metadata["pipeline"]["fallback_reason"], "no_relevant_ckl_results")
+        self.assertEqual(
+            result.model_metadata["pipeline"]["ckl_coverage_gap"]["rejection_reasons"],
+            ["no_relevant_ckl_results"],
+        )
+
+    def test_agent_returns_model_answer_when_placeholder_ckl_results_are_filtered_out(self):
+        adapter = RecordingAdapter()
+        agent = self.make_ckl_agent(adapter, profile="standard")
+
+        with patch("bhf_agent.runner.build_canonical_context", return_value=None), patch(
+            "bhf_agent.runner._canonical_miss_reason",
+            return_value=ckl_miss_gap(
+                "placeholder_content",
+                normalized_question="What does it mean to follow Jesus?",
+                top_rejected_results=[
+                    {
+                        "id": "placeholder-1",
+                        "title": "Placeholder Entry",
+                        "score": 0.12,
+                        "rejection_reasons": ["placeholder_content"],
+                    }
+                ],
+            ),
+        ):
+            result = agent.ask("What does it mean to follow Jesus?")
+
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertNotIn("# CANONICAL KNOWLEDGE CONTEXT", adapter.request.system_prompt)
+        self.assertIn("Short Answer", result.answer_text)
+        self.assertTrue(result.model_metadata["pipeline"]["ckl_attempted"])
+        self.assertFalse(result.model_metadata["pipeline"]["ckl_context_injected"])
+        self.assertTrue(result.model_metadata["pipeline"]["fallback_to_model"])
+        self.assertEqual(result.model_metadata["pipeline"]["fallback_reason"], "placeholder_content")
+        self.assertIn(
+            "placeholder_content",
+            result.model_metadata["pipeline"]["ckl_coverage_gap"]["rejection_reasons"],
+        )
+
+    def test_agent_returns_model_answer_when_unreviewed_or_disallowed_ckl_results_are_filtered_out(self):
+        adapter = RecordingAdapter()
+        agent = self.make_ckl_agent(adapter, profile="standard")
+
+        with patch("bhf_agent.runner.build_canonical_context", return_value=None), patch(
+            "bhf_agent.runner._canonical_miss_reason",
+            return_value=ckl_miss_gap(
+                "disallowed_review_status",
+                normalized_question="What does it mean to follow Jesus?",
+                top_rejected_results=[
+                    {
+                        "id": "draft-entry",
+                        "title": "Draft Entry",
+                        "score": 0.18,
+                        "rejection_reasons": ["disallowed_review_status"],
+                    }
+                ],
+            ),
+        ):
+            result = agent.ask("What does it mean to follow Jesus?")
+
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertNotIn("# CANONICAL KNOWLEDGE CONTEXT", adapter.request.system_prompt)
+        self.assertIn("Short Answer", result.answer_text)
+        self.assertTrue(result.model_metadata["pipeline"]["ckl_attempted"])
+        self.assertFalse(result.model_metadata["pipeline"]["ckl_context_injected"])
+        self.assertTrue(result.model_metadata["pipeline"]["fallback_to_model"])
+        self.assertEqual(result.model_metadata["pipeline"]["fallback_reason"], "disallowed_review_status")
+        self.assertIn(
+            "disallowed_review_status",
+            result.model_metadata["pipeline"]["ckl_coverage_gap"]["rejection_reasons"],
+        )
+
+    def test_agent_returns_model_answer_when_ckl_retrieval_raises(self):
+        adapter = RecordingAdapter()
+        agent = self.make_ckl_agent(adapter, profile="standard")
+
+        with patch(
+            "bhf_agent.runner.build_canonical_context",
+            side_effect=RuntimeError("CKL retrieval failed"),
+        ), patch(
+            "bhf_agent.runner._canonical_miss_reason",
+            return_value=ckl_miss_gap(
+                "retrieval_failed",
+                normalized_question="What does it mean to follow Jesus?",
+            ),
+        ):
+            result = agent.ask("What does it mean to follow Jesus?")
+
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertNotIn("# CANONICAL KNOWLEDGE CONTEXT", adapter.request.system_prompt)
+        self.assertIn("Short Answer", result.answer_text)
+        self.assertTrue(result.model_metadata["pipeline"]["ckl_attempted"])
+        self.assertFalse(result.model_metadata["pipeline"]["ckl_context_injected"])
+        self.assertTrue(result.model_metadata["pipeline"]["fallback_to_model"])
+        self.assertEqual(result.model_metadata["pipeline"]["fallback_reason"], "retrieval_failed")
+        self.assertEqual(
+            result.model_metadata["pipeline"]["ckl_coverage_gap"]["rejection_reasons"],
+            ["retrieval_failed"],
+        )
+
+    def test_agent_calls_model_normally_when_ckl_is_disabled(self):
+        adapter = RecordingAdapter()
+        agent = self.make_agent(
+            adapter,
+            profile="standard",
+            canonical_library=CanonicalLibraryConfig(
+                enabled=False,
+            ),
+        )
+
+        result = agent.ask("What does it mean to follow Jesus?")
+
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertNotIn("# CANONICAL KNOWLEDGE CONTEXT", adapter.request.system_prompt)
+        self.assertIn("Short Answer", result.answer_text)
+        self.assertFalse(result.model_metadata["pipeline"]["ckl_attempted"])
+        self.assertFalse(result.model_metadata["pipeline"]["ckl_context_injected"])
+        self.assertTrue(result.model_metadata["pipeline"]["fallback_to_model"])
+        self.assertEqual(result.model_metadata["pipeline"]["fallback_reason"], "ckl_disabled")
+
+    def test_model_failure_after_ckl_miss_returns_model_error_path(self):
+        adapter = ErrorRecordingAdapter()
+        agent = self.make_ckl_agent(adapter, profile="standard")
+        events = []
+
+        with patch("bhf_agent.runner.build_canonical_context", return_value=None), patch(
+            "bhf_agent.runner._canonical_miss_reason",
+            return_value=ckl_miss_gap(
+                "no_relevant_ckl_results",
+                normalized_question="What does it mean to follow Jesus?",
+            ),
+        ):
+            result = agent.ask("What does it mean to follow Jesus?", status_callback=events.append)
+
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertNotIn("# CANONICAL KNOWLEDGE CONTEXT", adapter.request.system_prompt)
+        self.assertTrue(result.errors)
+        self.assertEqual(result.answer_text, "")
+        self.assertFalse(result.model_metadata["pipeline"]["fallback_used"])
+        self.assertTrue(result.model_metadata["pipeline"]["fallback_to_model"])
+        self.assertEqual(events[-1]["stage"], "error")
+        self.assertEqual(events[-1]["status"], "error")
+
+    def test_weak_ckl_results_do_not_block_model_fallback(self):
+        adapter = RecordingAdapter()
+        agent = self.make_ckl_agent(adapter, profile="standard")
+
+        with patch("bhf_agent.runner.build_canonical_context", return_value=ckl_weak_context_stub()), patch(
+            "bhf_agent.runner._canonical_miss_reason",
+            return_value=ckl_miss_gap(
+                "below_relevance_threshold",
+                normalized_question="Why is Shechem important in Joshua 24?",
+                top_rejected_results=[
+                    {
+                        "id": "shechem",
+                        "title": "Shechem",
+                        "score": 0.2,
+                        "rejection_reasons": ["below_relevance_threshold"],
+                    }
+                ],
+            ),
+        ):
+            result = agent.ask("Why is Shechem important in Joshua 24?")
+
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertNotIn("# CANONICAL KNOWLEDGE CONTEXT", adapter.request.system_prompt)
+        self.assertNotIn("Entry:", adapter.request.system_prompt)
+        self.assertIn("Short Answer", result.answer_text)
+        self.assertFalse(result.model_metadata["pipeline"]["ckl_context_injected"])
+        self.assertTrue(result.model_metadata["pipeline"]["fallback_to_model"])
+        self.assertEqual(result.model_metadata["pipeline"]["fallback_reason"], "below_relevance_threshold")
+        self.assertEqual(
+            result.model_metadata["pipeline"]["ckl_coverage_gap"]["rejection_reasons"],
+            ["below_relevance_threshold"],
+        )
+
+    def test_strict_mode_keeps_no_match_instruction_for_weak_ckl_results(self):
+        adapter = RecordingAdapter()
+        agent = self.make_ckl_agent(
+            adapter,
+            profile="standard",
+            canonical_library=CanonicalLibraryConfig(
+                enabled=True,
+                strict_mode=True,
+            ),
+        )
+
+        with patch("bhf_agent.runner.build_canonical_context", return_value=ckl_weak_context_stub()), patch(
+            "bhf_agent.runner._canonical_miss_reason",
+            return_value=ckl_miss_gap(
+                "below_relevance_threshold",
+                normalized_question="Why is Shechem important in Joshua 24?",
+                top_rejected_results=[
+                    {
+                        "id": "shechem",
+                        "title": "Shechem",
+                        "score": 0.2,
+                        "rejection_reasons": ["below_relevance_threshold"],
+                    }
+                ],
+            ),
+        ):
+            result = agent.ask("Why is Shechem important in Joshua 24?")
+
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertIn("did not find a strong match", adapter.request.system_prompt)
+        self.assertFalse(result.model_metadata["pipeline"]["ckl_context_injected"])
+        self.assertFalse(result.model_metadata["pipeline"]["fallback_to_model"])
+        self.assertEqual(result.model_metadata["pipeline"]["fallback_reason"], "strict_mode")
+        self.assertEqual(result.model_metadata["pipeline"]["canonical_library_prompt_mode"], "strict_no_match")
+
+    def test_agent_serves_cached_answers_without_calling_adapter(self):
+        adapter = RecordingAdapter()
+        question = (
+            "Why did Israel renew the covenant where Abraham first entered the land at Shechem in Joshua 24?"
+        )
+        normalized_question = normalize_public_question(question)
+        framework_version_fingerprint = load_framework_version_fingerprint()
+        cache_entry = PublicCacheEntry(
+            normalized_question=normalized_question,
+            answer_mode="study",
+            answer="The covenant renewal at Shechem reaffirms Israel's covenant identity.",
+            quality_score=96.0,
+            usage_count=3,
+            review_status="approved",
+            framework_version=load_framework_version(),
+            framework_version_fingerprint=framework_version_fingerprint,
+            ckl_version_fingerprint="ckl-fingerprint",
+            object_dependency_ids=("shechem", "abraham", "joshua"),
+            expires_at="2030-01-01T00:00:00Z",
+        )
+        cache = RecordingPublicAnswerCache(cache_entry)
+        agent = self.make_agent(adapter, public_answer_cache=cache, profile="standard")
+
+        result = agent.ask(question)
+
+        self.assertIsNone(adapter.request)
+        self.assertEqual(result.answer_text, cache_entry.answer)
+        self.assertTrue(result.model_metadata["public_answer_cache"]["hit"])
+        self.assertEqual(result.model_metadata["public_answer_cache"]["lookup_status"], "hit")
+        self.assertEqual(result.model_metadata["public_answer_cache"]["usage_count"], 4)
+        self.assertEqual(
+            result.model_metadata["public_answer_cache"]["object_dependency_ids"],
+            ["shechem", "abraham", "joshua"],
+        )
+        self.assertEqual(result.validation_result.score, 96)
+        self.assertIn("lookup_local_knowledge", result.model_metadata["pipeline"]["stages_completed"])
+        self.assertNotIn("build_prompts", result.model_metadata["pipeline"]["stages_completed"])
+        self.assertNotIn("call_model", result.model_metadata["pipeline"]["stages_completed"])
+        self.assertEqual(len(cache.lookup_calls), 1)
+        self.assertEqual(len(cache.increment_calls), 1)
+        self.assertIsNotNone(cache.lookup_calls[0]["ckl_version_fingerprint"])
+        self.assertIsNotNone(cache.lookup_calls[0]["framework_version_fingerprint"])
+
+    def test_agent_reuses_response_cache_for_identical_questions(self):
+        adapter = SequenceAdapter(
+            [
+                "Short Answer: The Hebrew word is ruach. Basic Meaning: its "
+                "semantic range can include wind, breath, or spirit. Context "
+                "Matters: meaning depends on passage context. Cautions: this "
+                "may not always refer to the Holy Spirit.",
+            ]
+        )
+        agent = self.make_agent(adapter, profile="standard")
+        question = "What is the Hebrew word for spirit or wind?"
+
+        first_result = agent.ask(question)
+        second_result = agent.ask(question)
+
+        self.assertEqual(len(adapter.requests), 1)
+        self.assertEqual(first_result.answer_text, second_result.answer_text)
+        self.assertEqual(
+            first_result.model_metadata["pipeline"]["canonical_library_response_cache_status"],
+            "stored",
+        )
+        self.assertTrue(
+            second_result.model_metadata["pipeline"]["canonical_library_response_cache_hit"]
+        )
+        self.assertEqual(
+            second_result.model_metadata["pipeline"]["canonical_library_response_cache_status"],
+            "hit",
+        )
+        self.assertNotIn("build_prompts", second_result.model_metadata["pipeline"]["stages_completed"])
+        self.assertNotIn("call_model", second_result.model_metadata["pipeline"]["stages_completed"])
+
+    def test_agent_reuses_response_cache_in_shadow_mode_without_prompt_injection(self):
+        adapter = SequenceAdapter(
+            [
+                "Short Answer: The Hebrew word is ruach. Basic Meaning: its semantic range can include wind, breath, or spirit. Context Matters: meaning depends on passage context. Cautions: this may not always refer to the Holy Spirit.",
+            ]
+        )
+        agent = self.make_agent(
+            adapter,
+            profile="standard",
+            canonical_library=CanonicalLibraryConfig(
+                enabled=False,
+                shadow_mode=True,
+            ),
+        )
+        question = "What is the Hebrew word for spirit or wind?"
+
+        first_result = agent.ask(question)
+        second_result = agent.ask(question)
+
+        self.assertEqual(len(adapter.requests), 1)
+        self.assertEqual(first_result.answer_text, second_result.answer_text)
+        self.assertEqual(
+            first_result.model_metadata["pipeline"]["canonical_library_rollout_mode"],
+            "shadow",
+        )
+        self.assertEqual(
+            second_result.model_metadata["pipeline"]["canonical_library_rollout_mode"],
+            "shadow",
+        )
+        self.assertEqual(
+            second_result.model_metadata["pipeline"]["canonical_library_prompt_mode"],
+            "disabled",
+        )
+        self.assertTrue(
+            second_result.model_metadata["pipeline"]["canonical_library_response_cache_hit"]
+        )
+        self.assertEqual(
+            second_result.model_metadata["pipeline"]["canonical_library_response_cache_status"],
+            "hit",
+        )
+        self.assertNotIn("# CANONICAL KNOWLEDGE CONTEXT", adapter.requests[0].system_prompt)
+
+    def test_agent_emits_redacted_observability_log(self):
+        adapter = RecordingAdapter()
+        agent = self.make_agent(
+            adapter,
+            profile="standard",
+            observability=ObservabilityConfig(enabled=True, verbose=False, redact_sensitive=True),
+        )
+
+        with self.assertLogs("bhf_agent.observability", level="INFO") as captured:
+            result = agent.ask(
+                "Why did Israel renew the covenant where Abraham first entered the land at Shechem in Joshua 24?"
+            )
+
+        self.assertIn("Shechem", result.answer_text)
+        self.assertGreaterEqual(len(captured.records), 1)
+        record = json.loads(captured.records[0].getMessage())
+        self.assertEqual(record["status"], "success")
+        self.assertIn("request_id", record)
+        self.assertEqual(record["normalized_query"], "Why did Israel renew the covenant where Abraham first entered the land at Shechem in Joshua 24?")
+        self.assertGreaterEqual(record["retrieval_duration_ms"], 0)
+        self.assertGreaterEqual(record["retrieval_result_count"], 0)
+        self.assertIn("selected_entry_ids", record)
+        self.assertIn("shechem", record["selected_entry_ids"])
+        self.assertIn("cache", record)
+        self.assertTrue(record["redacted"])
+        self.assertNotIn("Short Answer", captured.records[0].getMessage())
+        self.assertNotIn("raw_model_text", captured.records[0].getMessage())
+
+    def test_agent_emits_verbose_observability_log_in_debug_mode(self):
+        adapter = RecordingAdapter()
+        agent = self.make_agent(
+            adapter,
+            profile="standard",
+            debug=True,
+            observability=ObservabilityConfig(enabled=True, verbose=True, redact_sensitive=False),
+        )
+
+        with self.assertLogs("bhf_agent.observability", level="DEBUG") as captured:
+            agent.ask(
+                "Why did Israel renew the covenant where Abraham first entered the land at Shechem in Joshua 24?"
+            )
+
+        messages = [json.loads(record.getMessage()) for record in captured.records]
+        self.assertGreaterEqual(len(messages), 2)
+        info_record = messages[0]
+        debug_record = messages[-1]
+        self.assertFalse(info_record["redacted"])
+        self.assertEqual(debug_record["status"], "success")
+        self.assertIn("pipeline", debug_record)
+        self.assertIn("stages_completed", debug_record["pipeline"])
+        self.assertIn("canonical_library_response_cache_key", debug_record["pipeline"])
+        self.assertNotIn("raw_model_text", captured.output[0])
 
     def test_agent_result_uses_cleaned_answer_and_debug_metadata(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -354,6 +1030,113 @@ class RunnerTests(unittest.TestCase):
         self.assertIn(
             "finalize_result",
             result.model_metadata["pipeline"]["stages_completed"],
+        )
+
+    def test_agent_extracts_structured_json_answer_before_display(self):
+        adapter = StructuredJsonAdapter(
+            json.dumps(
+                {
+                    "answer": (
+                        "Short Answer: The Hebrew word is ruach. Basic Meaning: its "
+                        "semantic range can include wind, breath, or spirit. Context "
+                        "Matters: meaning depends on passage context. Cautions: this "
+                        "may not always refer to the Holy Spirit."
+                    ),
+                    "analysis": "internal details should not be shown",
+                }
+            )
+        )
+        agent = self.make_agent(adapter)
+
+        result = agent.ask("What is the Hebrew word for spirit or wind?")
+
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertEqual(
+            adapter.request.metadata["response_contract"],
+            "answer",
+        )
+        self.assertEqual(
+            adapter.request.response_format,
+            {"type": "json_object"},
+        )
+        self.assertEqual(
+            result.answer_text,
+            "Short Answer: The Hebrew word is ruach. Basic Meaning: its "
+            "semantic range can include wind, breath, or spirit. Context "
+            "Matters: meaning depends on passage context. Cautions: this "
+            "may not always refer to the Holy Spirit.",
+        )
+        self.assertNotIn("{", result.answer_text)
+        self.assertNotIn("analysis", result.answer_text.lower())
+
+    def test_search_fallback_prompt_preserves_json_results_contract(self):
+        adapter = StructuredJsonAdapter(
+            json.dumps(
+                {
+                    "results": [
+                        {
+                            "book": "Exodus",
+                            "chapter": 1,
+                            "reason": "Test candidate.",
+                            "confidence": "likely",
+                        }
+                    ]
+                }
+            )
+        )
+        agent = self.make_agent(adapter)
+        prompt = "\n".join(
+            [
+                "Using BHF, identify likely Bible passages for the following search query.",
+                "Query: Egypt in Exodus",
+                "",
+                "Return a JSON object with a results array.",
+                "Each result should include book, chapter, optional verse_start, optional verse_end, reason, and confidence.",
+                "Use only likely passages and keep the response concise.",
+                "Do not include markdown fences or extra commentary.",
+            ]
+        )
+
+        result = agent.ask(prompt)
+
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertEqual(
+            adapter.request.metadata["response_contract"],
+            "search_results",
+        )
+        payload = json.loads(result.answer_text)
+        self.assertEqual(payload["results"][0]["book"], "Exodus")
+        self.assertEqual(payload["results"][0]["chapter"], 1)
+
+    def test_search_fallback_prompt_returns_empty_results_when_model_unavailable(self):
+        adapter = ErrorAdapter()
+        agent = self.make_agent(adapter)
+        prompt = "\n".join(
+            [
+                "Using BHF, identify likely Bible passages for the following search query.",
+                "Query: Egypt in Exodus",
+                "",
+                "Return a JSON object with a results array.",
+                "Each result should include book, chapter, optional verse_start, optional verse_end, reason, and confidence.",
+                "Use only likely passages and keep the response concise.",
+                "Do not include markdown fences or extra commentary.",
+            ]
+        )
+
+        result = agent.ask(prompt)
+
+        self.assertFalse(result.errors)
+        self.assertEqual(
+            result.model_metadata["pipeline"]["fallback_mode"],
+            "search_results_empty",
+        )
+        payload = json.loads(result.answer_text)
+        self.assertEqual(payload["results"], [])
+        self.assertIn(
+            "could not identify likely passage candidates",
+            payload["message"].lower(),
         )
 
     def test_repair_disabled_calls_adapter_once(self):
@@ -454,6 +1237,26 @@ class RunnerTests(unittest.TestCase):
         self.assertFalse(result.repair_applied)
         self.assertEqual(result.answer_text, "The Hebrew word is ruach.")
         self.assertIn("Repair was attempted but returned an empty answer.", result.warnings)
+
+    def test_invalid_model_output_uses_canonical_fallback_after_retry(self):
+        adapter = SequenceAdapter(
+            [
+                "The answer is not valid.",
+                "Still not valid.",
+            ]
+        )
+        agent = self.make_agent(adapter, auto_repair=True)
+
+        result = agent.ask("Why did Joshua renew the covenant at Shechem?")
+
+        self.assertEqual(len(adapter.requests), 2)
+        self.assertTrue(result.model_metadata["pipeline"]["repair_attempted"])
+        self.assertFalse(result.repair_applied)
+        self.assertTrue(result.model_metadata["pipeline"]["fallback_used"])
+        self.assertEqual(result.model_metadata["pipeline"]["fallback_mode"], "canonical_summary")
+        self.assertIn("shechem", result.model_metadata["pipeline"]["fallback_selected_entry_ids"])
+        self.assertIn("Shechem", result.answer_text)
+        self.assertIn("covenant", result.answer_text.lower())
 
     def test_pipeline_stores_prompts_before_model_call(self):
         with tempfile.TemporaryDirectory() as tmp:

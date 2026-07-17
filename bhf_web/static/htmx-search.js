@@ -31,8 +31,8 @@ async function submitBibleSearch(event) {
     }
 
     if (data.ai_fallback_eligible) {
-      updateBibleSearchSummary(`No local ASV matches for “${query}”. Asking BHF for likely passages.`);
-      setBibleSearchStatus("No local match found. Asking BHF for likely passages...", "loading");
+      updateBibleSearchSummary(`No local ASV matches for “${query}”. Checking the Canonical Knowledge Library for likely passages.`);
+      setBibleSearchStatus("No local match found. Checking the Canonical Knowledge Library...", "loading");
       await runBibleSearchFallback(form, query, requestId);
       return;
     }
@@ -65,7 +65,7 @@ async function runBibleSearchFallback(form, query, requestId) {
     showBibleSearchResults();
     updateBibleSearchSummary(`BHF suggested ${result.results.length} likely passage${result.results.length === 1 ? "" : "s"} for “${query}”`);
     clearBibleSearchStatus();
-    renderBibleSearchResults(result.results, { source: "ai" });
+    renderBibleSearchResults(result.results, { source: "ckl_fallback" });
     return;
   }
   clearBibleSearchResults();
@@ -235,10 +235,11 @@ function renderBibleSearchResults(results, options = {}) {
 
 function renderBibleSearchResultCard(result, source) {
   const canGoToVerse = Boolean(result.verse_start);
-  const sourceBadge = source === "ai" ? "BHF likely passage" : result.match_type === "direct_reference" ? "Direct reference" : "ASV";
-  const confidenceBadge = source === "ai" && result.confidence ? `<span class="search-badge">${escapeHtml(String(result.confidence))}</span>` : "";
-  const subtitle = source === "ai"
-    ? escapeHtml(result.reason || "Likely topical connection.")
+  const isFallbackSource = source !== "local";
+  const sourceBadge = isFallbackSource ? "CKL suggested passage" : result.match_type === "direct_reference" ? "Direct reference" : "ASV";
+  const confidenceBadge = isFallbackSource && result.confidence ? `<span class="search-badge">${escapeHtml(String(result.confidence))}</span>` : "";
+  const subtitle = isFallbackSource
+    ? escapeHtml(result.reason || result.excerpt || "Likely topical connection.")
     : escapeHtml(result.excerpt || "");
   return `
     <article class="search-result-card">
@@ -248,7 +249,7 @@ function renderBibleSearchResultCard(result, source) {
           <p class="search-result-meta">${subtitle}</p>
         </div>
         <div class="search-result-badges">
-          <span class="search-badge ${source === "ai" ? "source-ai" : ""}">${escapeHtml(sourceBadge)}</span>
+          <span class="search-badge ${isFallbackSource ? "source-ckl" : ""}">${escapeHtml(sourceBadge)}</span>
           ${confidenceBadge}
         </div>
       </div>
