@@ -6,7 +6,7 @@ import re
 from dataclasses import asdict, dataclass, field
 from datetime import date
 from pathlib import Path
-from typing import Any, Mapping
+from typing import Any, Mapping, Sequence
 
 from .normalization import normalize_alias, normalize_id
 
@@ -227,6 +227,7 @@ DEFAULT_CANONICAL_METADATA: dict[str, Any] = {
     "date_ranges": [],
     "original_audience": "",
     "historical_setting": "",
+    "canonical_role": "",
     "hebraic_worldview": "",
     "second_temple_context": "",
     "canonical_context": "",
@@ -240,9 +241,46 @@ DEFAULT_CANONICAL_METADATA: dict[str, Any] = {
     "key_events": [],
     "interpretive_disputes": [],
     "primary_sources": [],
+    "related_entries": [],
+    "keywords": [],
     "related_objects": [],
     "scripture_references": [],
     "sources": [],
+    "canonical_story": {
+        "phase": "",
+        "role": "",
+        "preceded_by": [],
+        "followed_by": [],
+    },
+    "hermeneutical_lens": {
+        "immediate_literary_context": "",
+        "book_context": "",
+        "canonical_context": "",
+        "covenant_context": "",
+        "historical_context": "",
+        "ancient_near_east_context": "",
+        "second_temple_jewish_context": "",
+        "original_audience": "",
+        "genre": "",
+        "intertextual_connections": [],
+        "biblical_theology_themes": [],
+        "messianic_christological_trajectory": "",
+        "major_interpretive_views": [],
+        "historical_interpretation": "",
+        "authorial_intent": "",
+        "typological_connections": [],
+        "christological_significance": "",
+        "modern_application_principles": [],
+        "common_misinterpretations": [],
+    },
+    "retrieval_metadata": {
+        "aliases": [],
+        "search_terms": [],
+        "common_questions": [],
+        "related_topics": [],
+        "frequently_confused_with": [],
+        "semantic_keywords": [],
+    },
 }
 
 SUPPORTED_CATEGORIES: tuple[str, ...] = (
@@ -257,6 +295,13 @@ SUPPORTED_CATEGORIES: tuple[str, ...] = (
     "institution",
     "prophecy",
     "faq",
+    "timeline",
+    "covenant",
+    "biblical_theology",
+    "cultural_background",
+    "symbol",
+    "literary_device",
+    "doctrine",
 )
 
 CATEGORY_FOLDERS: dict[str, str] = {
@@ -271,6 +316,13 @@ CATEGORY_FOLDERS: dict[str, str] = {
     "institution": "institutions",
     "prophecy": "prophecy",
     "faq": "faq",
+    "timeline": "timeline",
+    "covenant": "covenants",
+    "biblical_theology": "biblical_theology",
+    "cultural_background": "cultural_background",
+    "symbol": "symbols",
+    "literary_device": "literary_devices",
+    "doctrine": "doctrine",
 }
 
 MANIFEST_CATEGORY_KEYS: tuple[str, ...] = tuple(dict.fromkeys(CATEGORY_FOLDERS.values()))
@@ -291,6 +343,7 @@ STRING_FIELDS: tuple[str, ...] = (
     "title",
     "summary",
     "historical_context",
+    "canonical_role",
     "ancient_near_east_context",
     "hebraic_worldview",
     "second_temple_context",
@@ -333,6 +386,8 @@ LIST_FIELDS: tuple[str, ...] = (
     "new_testament_connections",
     "interpretive_notes",
     "common_questions",
+    "related_entries",
+    "keywords",
 )
 
 UNIQUE_NORMALIZED_LIST_FIELDS: tuple[str, ...] = ("major_themes",)
@@ -345,7 +400,48 @@ SCRIPTURE_REFERENCE_FIELDS: tuple[str, ...] = ("scripture_references",)
 
 SOURCE_FIELDS: tuple[str, ...] = ("sources",)
 
-MAPPING_FIELDS: tuple[str, ...] = ("context_applicability",)
+MAPPING_FIELDS: tuple[str, ...] = (
+    "context_applicability",
+    "canonical_story",
+    "hermeneutical_lens",
+    "retrieval_metadata",
+)
+
+CANONICAL_STORY_STRING_FIELDS: tuple[str, ...] = ("phase", "role")
+CANONICAL_STORY_LIST_FIELDS: tuple[str, ...] = ("preceded_by", "followed_by")
+
+HERMENEUTICAL_LENS_STRING_FIELDS: tuple[str, ...] = (
+    "immediate_literary_context",
+    "book_context",
+    "canonical_context",
+    "covenant_context",
+    "historical_context",
+    "ancient_near_east_context",
+    "second_temple_jewish_context",
+    "original_audience",
+    "genre",
+    "messianic_christological_trajectory",
+    "historical_interpretation",
+    "authorial_intent",
+    "christological_significance",
+)
+HERMENEUTICAL_LENS_LIST_FIELDS: tuple[str, ...] = (
+    "intertextual_connections",
+    "biblical_theology_themes",
+    "major_interpretive_views",
+    "typological_connections",
+    "modern_application_principles",
+    "common_misinterpretations",
+)
+
+RETRIEVAL_METADATA_LIST_FIELDS: tuple[str, ...] = (
+    "aliases",
+    "search_terms",
+    "common_questions",
+    "related_topics",
+    "frequently_confused_with",
+    "semantic_keywords",
+)
 
 RELATED_OBJECT_REQUIRED_FIELDS: tuple[str, ...] = (
     "id",
@@ -642,6 +738,7 @@ class CanonicalObject:
     date_ranges: list[str] = field(default_factory=list)
     original_audience: str = ""
     historical_setting: str = ""
+    canonical_role: str = ""
     genre: list[str] = field(default_factory=list)
     structure: list[str] = field(default_factory=list)
     major_themes: list[str] = field(default_factory=list)
@@ -651,6 +748,8 @@ class CanonicalObject:
     key_events: list[str] = field(default_factory=list)
     interpretive_disputes: list[str] = field(default_factory=list)
     primary_sources: list[str] = field(default_factory=list)
+    related_entries: list[str] = field(default_factory=list)
+    keywords: list[str] = field(default_factory=list)
     intertextuality: list[str] = field(default_factory=list)
     timeline: list[str] = field(default_factory=list)
     maps: list[str] = field(default_factory=list)
@@ -667,6 +766,15 @@ class CanonicalObject:
     interpretive_notes: list[CanonicalInterpretiveNote] = field(default_factory=list)
     common_questions: list[str] = field(default_factory=list)
     sources: list[CanonicalSource] = field(default_factory=list)
+    canonical_story: dict[str, Any] = field(
+        default_factory=lambda: _clone_default_value(DEFAULT_CANONICAL_METADATA["canonical_story"])
+    )
+    hermeneutical_lens: dict[str, Any] = field(
+        default_factory=lambda: _clone_default_value(DEFAULT_CANONICAL_METADATA["hermeneutical_lens"])
+    )
+    retrieval_metadata: dict[str, Any] = field(
+        default_factory=lambda: _clone_default_value(DEFAULT_CANONICAL_METADATA["retrieval_metadata"])
+    )
     importance: int = 0
     framework_version: str = SUPPORTED_FRAMEWORK_VERSION
     object_version: str = SUPPORTED_OBJECT_VERSION
@@ -736,6 +844,14 @@ def _apply_governance_defaults(data: Mapping[str, Any]) -> dict[str, Any]:
         elif field_name == "context_applicability" and isinstance(normalized[field_name], Mapping):
             normalized[field_name] = {
                 **default_context_applicability(),
+                **dict(normalized[field_name]),
+            }
+        elif field_name in {"canonical_story", "hermeneutical_lens", "retrieval_metadata"} and isinstance(
+            normalized[field_name],
+            Mapping,
+        ):
+            normalized[field_name] = {
+                **_clone_default_value(default_value),
                 **dict(normalized[field_name]),
             }
     normalized = _normalize_governance_metadata(normalized)
@@ -985,9 +1101,9 @@ def _normalize_governance_metadata(data: Mapping[str, Any]) -> dict[str, Any]:
 
 def _clone_default_value(value: Any) -> Any:
     if isinstance(value, list):
-        return list(value)
+        return [_clone_default_value(item) for item in value]
     if isinstance(value, Mapping):
-        return dict(value)
+        return {key: _clone_default_value(item) for key, item in value.items()}
     return value
 
 
@@ -1032,6 +1148,90 @@ def validate_required_fields(
                     path=path,
                     object_id=object_id,
                 )
+
+
+def _validate_mapping_string_field(
+    mapping: Mapping[str, Any],
+    *,
+    parent_field: str,
+    field_name: str,
+    path: str | Path | None = None,
+    object_id: str | None = None,
+) -> None:
+    value = mapping.get(field_name, "")
+    if not isinstance(value, str):
+        raise _expected_actual_error(
+            f"{parent_field}.{field_name}",
+            "str",
+            value,
+            path=path,
+            object_id=object_id,
+        )
+
+
+def _validate_mapping_string_list_field(
+    mapping: Mapping[str, Any],
+    *,
+    parent_field: str,
+    field_name: str,
+    path: str | Path | None = None,
+    object_id: str | None = None,
+) -> None:
+    value = mapping.get(field_name, [])
+    if not isinstance(value, list) or any(not isinstance(item, str) for item in value):
+        raise _expected_actual_error(
+            f"{parent_field}.{field_name}",
+            "list[str]",
+            value,
+            path=path,
+            object_id=object_id,
+        )
+
+
+def _validate_structured_mapping_field(
+    data: Mapping[str, Any],
+    *,
+    field_name: str,
+    string_fields: Sequence[str] = (),
+    list_fields: Sequence[str] = (),
+    path: str | Path | None = None,
+    object_id: str | None = None,
+) -> None:
+    if field_name not in data:
+        return
+    value = data[field_name]
+    if not isinstance(value, Mapping):
+        raise _expected_actual_error(
+            field_name,
+            "dict",
+            value,
+            path=path,
+            object_id=object_id,
+        )
+    allowed_fields = set(string_fields) | set(list_fields)
+    unknown_fields = sorted(set(value) - allowed_fields)
+    if unknown_fields:
+        raise _error(
+            f'unknown {field_name} field(s): {", ".join(unknown_fields)}',
+            path=path,
+            object_id=object_id,
+        )
+    for nested_field in string_fields:
+        _validate_mapping_string_field(
+            value,
+            parent_field=field_name,
+            field_name=nested_field,
+            path=path,
+            object_id=object_id,
+        )
+    for nested_field in list_fields:
+        _validate_mapping_string_list_field(
+            value,
+            parent_field=field_name,
+            field_name=nested_field,
+            path=path,
+            object_id=object_id,
+        )
 
 
 def validate_field_types(
@@ -1233,6 +1433,29 @@ def validate_field_types(
                 path=path,
                 object_id=object_id,
             )
+    _validate_structured_mapping_field(
+        data,
+        field_name="canonical_story",
+        string_fields=CANONICAL_STORY_STRING_FIELDS,
+        list_fields=CANONICAL_STORY_LIST_FIELDS,
+        path=path,
+        object_id=object_id,
+    )
+    _validate_structured_mapping_field(
+        data,
+        field_name="hermeneutical_lens",
+        string_fields=HERMENEUTICAL_LENS_STRING_FIELDS,
+        list_fields=HERMENEUTICAL_LENS_LIST_FIELDS,
+        path=path,
+        object_id=object_id,
+    )
+    _validate_structured_mapping_field(
+        data,
+        field_name="retrieval_metadata",
+        list_fields=RETRIEVAL_METADATA_LIST_FIELDS,
+        path=path,
+        object_id=object_id,
+    )
     for field_name in OPTIONAL_FIELDS:
         if field_name not in data:
             continue

@@ -16,6 +16,7 @@ FIELD_WEIGHTS: dict[str, int] = {
     "aliases": 10,
     "common_questions": 8,
     "summary": 7,
+    "canonical_role": 7,
     "authorship_positions": 6,
     "date_ranges": 5,
     "original_audience": 7,
@@ -29,6 +30,8 @@ FIELD_WEIGHTS: dict[str, int] = {
     "key_events": 6,
     "interpretive_disputes": 5,
     "primary_sources": 6,
+    "related_entries": 6,
+    "keywords": 9,
     "hebrew_words": 7,
     "greek_words": 7,
     "related_objects": 6,
@@ -51,6 +54,9 @@ FIELD_WEIGHTS: dict[str, int] = {
     "timeline": 3,
     "maps": 3,
     "interpretive_notes": 2,
+    "canonical_story": 6,
+    "hermeneutical_lens": 6,
+    "retrieval_metadata": 9,
 }
 
 MAX_FIELD_WEIGHT = max(FIELD_WEIGHTS.values())
@@ -746,6 +752,7 @@ def field_search_terms(field_name: str, value: Any) -> set[str]:
         "original_audience",
         "historical_setting",
         "canonical_placement",
+        "canonical_role",
         "historical_context",
         "ancient_near_east_context",
         "hebraic_worldview",
@@ -771,6 +778,8 @@ def field_search_terms(field_name: str, value: Any) -> set[str]:
         "key_events",
         "interpretive_disputes",
         "primary_sources",
+        "related_entries",
+        "keywords",
         "intertextuality",
         "hebrew_words",
         "greek_words",
@@ -800,6 +809,18 @@ def field_search_terms(field_name: str, value: Any) -> set[str]:
         if isinstance(value, list):
             for item in value:
                 terms.update(canonical_search_terms(*_mapping_values(item, ("reference", "relationship", "notes"))))
+        return terms
+    if field_name in {"canonical_story", "hermeneutical_lens", "retrieval_metadata"}:
+        if not isinstance(value, Mapping):
+            return set()
+        terms: set[str] = set()
+        for item in value.values():
+            if isinstance(item, str):
+                terms.update(canonical_search_terms(item))
+            elif isinstance(item, list):
+                for nested in item:
+                    if isinstance(nested, str):
+                        terms.update(canonical_search_terms(nested))
         return terms
     return set()
 

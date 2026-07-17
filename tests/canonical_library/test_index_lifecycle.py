@@ -84,6 +84,50 @@ class CKLIndexLifecycleTests(unittest.TestCase):
 
         self.assertIs(first.index, second.index)
 
+    def test_index_includes_knowledge_graph_and_retrieval_metadata(self) -> None:
+        root = Path(self.tmpdir.name) / "metadata-library"
+        write_library(
+            root,
+            [
+                make_object(
+                    "abrahamic-covenant",
+                    "covenant",
+                    "Abrahamic Covenant",
+                    ["Abrahamic covenant"],
+                    canonical_story={
+                        "phase": "Patriarchs",
+                        "role": "Promise of seed, land, and blessing.",
+                    },
+                    hermeneutical_lens={
+                        "book_context": "Genesis develops promise through Abraham's family.",
+                        "covenant_context": "Abrahamic covenant",
+                        "biblical_theology_themes": ["Seed", "Promise", "Land"],
+                    },
+                    retrieval_metadata={
+                        "aliases": ["promise to Abraham"],
+                        "search_terms": ["seed promise"],
+                        "common_questions": ["What is the Abrahamic covenant?"],
+                        "semantic_keywords": ["patriarchs", "land", "blessing"],
+                    },
+                    canonical_role="The Abrahamic covenant grounds later canonical promise theology.",
+                    related_entries=["seed-theme"],
+                    keywords=["promise theology"],
+                    importance=9,
+                )
+            ],
+        )
+        clear_index_cache(root)
+
+        index = refresh_index(root)
+        entry = index.entries_by_id["abrahamic-covenant"]
+
+        self.assertIn("seed", entry.field_terms["retrieval_metadata"])
+        self.assertIn("promise", entry.field_terms["keywords"])
+        self.assertIn("theology", entry.field_terms["canonical_role"])
+        self.assertIn("patriarchs", entry.field_terms["canonical_story"])
+        self.assertIn("genesis", entry.field_terms["hermeneutical_lens"])
+        self.assertIn("abrahamic covenant", entry.search_text)
+
 
 if __name__ == "__main__":
     unittest.main()

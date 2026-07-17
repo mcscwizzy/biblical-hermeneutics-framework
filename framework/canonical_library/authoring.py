@@ -33,6 +33,7 @@ DEFAULT_MANIFEST_PATH = DEFAULT_AUTHORING_ROOT / "manifest.json"
 
 COMPLETE_REQUIRED_FIELDS: tuple[str, ...] = (
     "summary",
+    "canonical_role",
     "historical_context",
     "literary_context",
     "scripture_references",

@@ -62,14 +62,22 @@ def _apply_defaults(data: Mapping[str, Any]) -> dict[str, Any]:
             assert isinstance(merged, dict)
             merged.update(dict(normalized[field_name]))
             normalized[field_name] = merged
+        elif field_name in {"canonical_story", "hermeneutical_lens", "retrieval_metadata"} and isinstance(
+            normalized[field_name],
+            Mapping,
+        ):
+            merged = _clone_default_value(default_value)
+            assert isinstance(merged, dict)
+            merged.update(dict(normalized[field_name]))
+            normalized[field_name] = merged
     return _normalize_governance_metadata(normalized)
 
 
 def _clone_default_value(value: Any) -> Any:
     if isinstance(value, list):
-        return list(value)
+        return [_clone_default_value(item) for item in value]
     if isinstance(value, Mapping):
-        return dict(value)
+        return {key: _clone_default_value(item) for key, item in value.items()}
     return value
 
 

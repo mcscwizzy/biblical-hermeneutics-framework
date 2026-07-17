@@ -12,6 +12,7 @@
     "aliases",
     "summary",
     "historical_context",
+    "canonical_role",
     "ancient_near_east_context",
     "hebraic_worldview",
     "second_temple_context",
@@ -48,7 +49,12 @@
     "new_testament_connections",
     "interpretive_notes",
     "common_questions",
+    "related_entries",
+    "keywords",
     "sources",
+    "canonical_story",
+    "hermeneutical_lens",
+    "retrieval_metadata",
     "importance",
     "framework_version",
     "object_version",
@@ -325,6 +331,146 @@
           "type": "boolean"
         }
       }
+    },
+    "canonicalStory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "phase",
+        "role",
+        "preceded_by",
+        "followed_by"
+      ],
+      "properties": {
+        "phase": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "preceded_by": {
+          "$ref": "#/$defs/stringList"
+        },
+        "followed_by": {
+          "$ref": "#/$defs/stringList"
+        }
+      }
+    },
+    "hermeneuticalLens": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "immediate_literary_context",
+        "book_context",
+        "canonical_context",
+        "covenant_context",
+        "historical_context",
+        "ancient_near_east_context",
+        "second_temple_jewish_context",
+        "original_audience",
+        "genre",
+        "intertextual_connections",
+        "biblical_theology_themes",
+        "messianic_christological_trajectory",
+        "major_interpretive_views",
+        "historical_interpretation",
+        "authorial_intent",
+        "typological_connections",
+        "christological_significance",
+        "modern_application_principles",
+        "common_misinterpretations"
+      ],
+      "properties": {
+        "immediate_literary_context": {
+          "type": "string"
+        },
+        "book_context": {
+          "type": "string"
+        },
+        "canonical_context": {
+          "type": "string"
+        },
+        "covenant_context": {
+          "type": "string"
+        },
+        "historical_context": {
+          "type": "string"
+        },
+        "ancient_near_east_context": {
+          "type": "string"
+        },
+        "second_temple_jewish_context": {
+          "type": "string"
+        },
+        "original_audience": {
+          "type": "string"
+        },
+        "genre": {
+          "type": "string"
+        },
+        "intertextual_connections": {
+          "$ref": "#/$defs/stringList"
+        },
+        "biblical_theology_themes": {
+          "$ref": "#/$defs/stringList"
+        },
+        "messianic_christological_trajectory": {
+          "type": "string"
+        },
+        "major_interpretive_views": {
+          "$ref": "#/$defs/stringList"
+        },
+        "historical_interpretation": {
+          "type": "string"
+        },
+        "authorial_intent": {
+          "type": "string"
+        },
+        "typological_connections": {
+          "$ref": "#/$defs/stringList"
+        },
+        "christological_significance": {
+          "type": "string"
+        },
+        "modern_application_principles": {
+          "$ref": "#/$defs/stringList"
+        },
+        "common_misinterpretations": {
+          "$ref": "#/$defs/stringList"
+        }
+      }
+    },
+    "retrievalMetadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "aliases",
+        "search_terms",
+        "common_questions",
+        "related_topics",
+        "frequently_confused_with",
+        "semantic_keywords"
+      ],
+      "properties": {
+        "aliases": {
+          "$ref": "#/$defs/stringList"
+        },
+        "search_terms": {
+          "$ref": "#/$defs/stringList"
+        },
+        "common_questions": {
+          "$ref": "#/$defs/stringList"
+        },
+        "related_topics": {
+          "$ref": "#/$defs/stringList"
+        },
+        "frequently_confused_with": {
+          "$ref": "#/$defs/stringList"
+        },
+        "semantic_keywords": {
+          "$ref": "#/$defs/stringList"
+        }
+      }
     }
   },
   "properties": {
@@ -344,7 +490,14 @@
         "archaeology",
         "institution",
         "prophecy",
-        "faq"
+        "faq",
+        "timeline",
+        "covenant",
+        "biblical_theology",
+        "cultural_background",
+        "symbol",
+        "literary_device",
+        "doctrine"
       ]
     },
     "title": {
@@ -363,6 +516,9 @@
       "type": "string"
     },
     "historical_context": {
+      "type": "string"
+    },
+    "canonical_role": {
       "type": "string"
     },
     "ancient_near_east_context": {
@@ -490,6 +646,12 @@
     "common_questions": {
       "$ref": "#/$defs/stringList"
     },
+    "related_entries": {
+      "$ref": "#/$defs/stringList"
+    },
+    "keywords": {
+      "$ref": "#/$defs/stringList"
+    },
     "sources": {
       "type": "array",
       "items": {
@@ -503,6 +665,15 @@
           }
         ]
       }
+    },
+    "canonical_story": {
+      "$ref": "#/$defs/canonicalStory"
+    },
+    "hermeneutical_lens": {
+      "$ref": "#/$defs/hermeneuticalLens"
+    },
+    "retrieval_metadata": {
+      "$ref": "#/$defs/retrievalMetadata"
     },
     "importance": {
       "type": "integer",

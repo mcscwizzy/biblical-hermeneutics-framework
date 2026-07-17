@@ -278,7 +278,10 @@ def _index_object(
         str(getattr(obj, "title", "") or ""),
         " ".join(getattr(obj, "aliases", []) or []),
         " ".join(getattr(obj, "common_questions", []) or []),
+        " ".join(getattr(obj, "related_entries", []) or []),
+        " ".join(getattr(obj, "keywords", []) or []),
         str(getattr(obj, "summary", "") or ""),
+        str(getattr(obj, "canonical_role", "") or ""),
         str(getattr(obj, "historical_context", "") or ""),
         str(getattr(obj, "ancient_near_east_context", "") or ""),
         str(getattr(obj, "hebraic_worldview", "") or ""),
@@ -287,6 +290,9 @@ def _index_object(
         str(getattr(obj, "later_christian_reception", "") or ""),
         str(getattr(obj, "literary_context", "") or ""),
         str(getattr(obj, "covenantal_significance", "") or ""),
+        _metadata_text(getattr(obj, "canonical_story", {}) or {}),
+        _metadata_text(getattr(obj, "hermeneutical_lens", {}) or {}),
+        _metadata_text(getattr(obj, "retrieval_metadata", {}) or {}),
         " ".join(facts),
         " ".join(themes),
         " ".join(script_refs),
@@ -379,9 +385,22 @@ def _normalize_related_edge(item: Any) -> dict[str, Any]:
     }
 
 
+def _metadata_text(value: Any) -> str:
+    if not isinstance(value, Mapping):
+        return ""
+    parts: list[str] = []
+    for item in value.values():
+        if isinstance(item, str):
+            parts.append(item)
+        elif isinstance(item, list):
+            parts.extend(str(nested) for nested in item if isinstance(nested, str))
+    return " ".join(parts)
+
+
 def _entry_facts(obj: CanonicalObject) -> list[str]:
     candidates = [
         getattr(obj, "summary", ""),
+        getattr(obj, "canonical_role", ""),
         getattr(obj, "historical_context", ""),
         getattr(obj, "ancient_near_east_context", ""),
         getattr(obj, "hebraic_worldview", ""),
@@ -390,6 +409,8 @@ def _entry_facts(obj: CanonicalObject) -> list[str]:
         getattr(obj, "later_christian_reception", ""),
         getattr(obj, "literary_context", ""),
         getattr(obj, "covenantal_significance", ""),
+        _metadata_text(getattr(obj, "canonical_story", {}) or {}),
+        _metadata_text(getattr(obj, "hermeneutical_lens", {}) or {}),
     ]
     candidates.extend(interpretive_note_texts(getattr(obj, "interpretive_notes", [])))
     candidates.extend(getattr(obj, "common_questions", []) or [])

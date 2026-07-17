@@ -5,6 +5,16 @@ from __future__ import annotations
 from .context_builder import CanonicalContextBuilder, build_canonical_prompt_context
 from .database_builder import BuildDatabaseResult, build_database, database_info, verify_database
 from .database_schema import CKL_DATABASE_SCHEMA_VERSION, DEFAULT_CKL_DATABASE_PATH
+from .graph import (
+    CKLGraphAudit,
+    GraphEdge,
+    ReverseRelationshipSuggestion,
+    graph_audit,
+    inverse_relationship,
+    missing_reverse_relationships,
+    relationship_edges,
+    with_bidirectional_relationships,
+)
 from .loader import CanonicalLibrary
 from .normalization import normalize_alias, normalize_id, normalize_text, tokenize_query
 from .public_cache import (
@@ -119,6 +129,14 @@ __all__ = [
     "build_database",
     "verify_database",
     "database_info",
+    "CKLGraphAudit",
+    "GraphEdge",
+    "ReverseRelationshipSuggestion",
+    "graph_audit",
+    "inverse_relationship",
+    "missing_reverse_relationships",
+    "relationship_edges",
+    "with_bidirectional_relationships",
     "CanonicalContextBuilder",
     "build_canonical_prompt_context",
     "CanonicalObject",

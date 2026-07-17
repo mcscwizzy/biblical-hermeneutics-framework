@@ -222,6 +222,86 @@ class CanonicalSchemaTests(unittest.TestCase):
         self.assertEqual(obj.later_christian_reception, "Later Christians read it typologically.")
         self.assertEqual(obj.context_applicability, EXPECTED_CONTEXT_APPLICABILITY)
 
+    def test_knowledge_graph_layers_round_trip_through_validation(self) -> None:
+        data = valid_mapping()
+        data.update(
+            {
+                "canonical_story": {
+                    "phase": "Patriarchs",
+                    "role": "Covenant promise enters the land narrative.",
+                },
+                "hermeneutical_lens": {
+                    "immediate_literary_context": "Genesis 12 introduces Abram's movement through Canaan.",
+                    "book_context": "Genesis traces promise, seed, blessing, and land.",
+                    "canonical_context": "Shechem recurs as a covenant memory location.",
+                    "covenant_context": "Abrahamic promise",
+                    "historical_context": "Patriarchal narratives use named places to anchor covenant memory.",
+                    "ancient_near_east_context": "Altars mark worship and claim-making in the land.",
+                    "second_temple_jewish_context": "Later Jewish readers associated ancestral places with identity.",
+                    "original_audience": "Israel receiving Torah after the exodus.",
+                    "genre": "Narrative",
+                    "intertextual_connections": ["Joshua 24"],
+                    "biblical_theology_themes": ["Covenant", "Land", "Promise"],
+                    "messianic_christological_trajectory": "Promise to Abram frames later seed expectation.",
+                    "major_interpretive_views": ["Whether the patriarchal itinerary is primarily theological or archival."],
+                    "historical_interpretation": "Read first as a patriarchal covenant narrative.",
+                    "authorial_intent": "Present the LORD's promise as the basis for Israel's land hope.",
+                    "typological_connections": ["Land promise"],
+                    "christological_significance": "Use only through canonical seed-promise development.",
+                    "modern_application_principles": ["Distinguish promise from private land-claim application."],
+                    "common_misinterpretations": ["Treating the place name as an allegory detached from Genesis."],
+                },
+                "retrieval_metadata": {
+                    "aliases": ["Abram at Shechem"],
+                    "search_terms": ["covenant place", "land promise"],
+                    "common_questions": ["Why does Shechem matter in Genesis?"],
+                    "related_topics": ["Abrahamic covenant"],
+                    "frequently_confused_with": ["Shiloh"],
+                    "semantic_keywords": ["patriarchs", "altar", "promise"],
+                },
+                "canonical_role": "Shechem anchors covenant memory in the land.",
+                "related_entries": ["abraham", "joshua", "covenant-theme"],
+                "keywords": ["covenant", "land", "promise"],
+            }
+        )
+
+        obj = validate_object(data, path="objects/places/shechem.json")
+
+        self.assertEqual(obj.canonical_story["phase"], "Patriarchs")
+        self.assertIn("Covenant", obj.hermeneutical_lens["biblical_theology_themes"])
+        self.assertIn("covenant place", obj.retrieval_metadata["search_terms"])
+        self.assertEqual(obj.canonical_role, "Shechem anchors covenant memory in the land.")
+        self.assertIn("covenant-theme", obj.related_entries)
+        self.assertIn("promise", obj.keywords)
+
+    def test_partial_knowledge_graph_layers_merge_defaults(self) -> None:
+        data = valid_mapping()
+        data["canonical_story"] = {"phase": "Patriarchs"}
+
+        obj = validate_object(data, path="objects/places/shechem.json")
+
+        self.assertEqual(obj.canonical_story["phase"], "Patriarchs")
+        self.assertEqual(obj.canonical_story["role"], "")
+        self.assertEqual(obj.canonical_story["preceded_by"], [])
+
+    def test_knowledge_graph_layers_reject_unknown_nested_fields(self) -> None:
+        data = valid_mapping()
+        data["retrieval_metadata"] = {"filename_guess": ["NIV"]}
+
+        with self.assertRaisesRegex(CanonicalValidationError, "unknown retrieval_metadata field"):
+            validate_object(data, path="objects/places/shechem.json")
+
+    def test_new_knowledge_categories_are_supported(self) -> None:
+        data = valid_mapping()
+        data["type"] = "covenant"
+        data["id"] = "abrahamic-covenant"
+        data["title"] = "Abrahamic Covenant"
+        data["aliases"] = ["Abrahamic covenant"]
+
+        obj = validate_object(data, path="objects/covenants/abrahamic-covenant.json")
+
+        self.assertEqual(obj.type, "covenant")
+
     def test_legacy_ai_reviewers_are_migrated_to_provenance_records(self) -> None:
         data = valid_mapping()
         data.update(

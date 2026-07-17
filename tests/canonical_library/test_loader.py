@@ -30,6 +30,13 @@ class CanonicalLoaderTests(unittest.TestCase):
             "institutions": 34,
             "prophecy": 10,
             "faq": 50,
+            "timeline": 0,
+            "covenants": 0,
+            "biblical_theology": 0,
+            "cultural_background": 0,
+            "symbols": 0,
+            "literary_devices": 0,
+            "doctrine": 0,
         }
 
         self.assertEqual(len(library.objects_by_id), 611)
