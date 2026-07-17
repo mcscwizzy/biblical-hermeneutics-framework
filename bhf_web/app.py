@@ -6,7 +6,7 @@ import json
 import os
 from pathlib import Path
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, File, Form, Request, UploadFile
 from fastapi.responses import HTMLResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -15,6 +15,7 @@ from bhf_agent.bible import (
     BibleError,
     list_books,
     list_translation_books,
+    save_imported_xml_translation,
     search_bible_text,
     resolve_translation_chapter,
 )
@@ -286,6 +287,38 @@ def create_app() -> FastAPI:
                 )
             )
         except ValueError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+
+    @web_app.post("/api/translations/{translation_id}/import", response_class=JSONResponse)
+    async def translation_import_upload(
+        translation_id: str,
+        confirmed: bool = Form(False),
+        file: UploadFile = File(...),
+    ) -> JSONResponse:
+        source_filename = file.filename or f"{translation_id}.xml"
+        try:
+            notice = import_translation(
+                translation_id,
+                confirmed=confirmed,
+                source_filename=source_filename,
+            )
+            content = await file.read()
+            installed = save_imported_xml_translation(
+                translation_id,
+                content,
+                source_filename=source_filename,
+                translation_name=catalog_by_id().get(translation_id.lower(), {}).get("name"),
+            )
+            return JSONResponse(
+                {
+                    **notice,
+                    **installed,
+                    "upload_to_bhf": False,
+                    "redistribute_to_users": False,
+                    "add_to_shared_catalog": False,
+                }
+            )
+        except (BibleError, ValueError) as exc:
             return JSONResponse({"error": str(exc)}, status_code=400)
 
     @web_app.get("/api/bible/{book}/{chapter}", response_class=JSONResponse)

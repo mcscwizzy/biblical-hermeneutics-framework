@@ -3,10 +3,12 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
+from xml.etree import ElementTree
 
 from .references import BOOK_ALIASES, BOOKS
 from .bible_support import (
@@ -20,6 +22,9 @@ from .bible_support import (
 
 DATA_PATH = Path(__file__).resolve().parent / "data" / "asv_bible.json"
 KJV_DATA_PATH = Path(__file__).resolve().parent / "data" / "kjv_bible.json"
+IMPORTED_TRANSLATIONS_DIR = Path(
+    os.environ.get("BHF_TRANSLATION_IMPORT_PATH", ".bhf/imported_translations")
+)
 
 
 class BibleError(ValueError):
@@ -64,6 +69,9 @@ def load_translation_bible(translation_id: str) -> dict[str, Any]:
         return load_asv_bible()
     if normalized == "kjv":
         return load_kjv_bible()
+    imported = imported_translation_path(normalized)
+    if imported.exists():
+        return load_bible_dataset(imported)
     raise BibleError(f"translation is not installed: {translation_id}")
 
 
@@ -81,6 +89,189 @@ def resolve_translation_chapter(
     """Resolve a chapter from an installed local translation."""
 
     return resolve_chapter(book, chapter, load_translation_bible(translation_id))
+
+
+def imported_translation_path(translation_id: str) -> Path:
+    normalized = _normalize_translation_id(translation_id)
+    return IMPORTED_TRANSLATIONS_DIR / f"{normalized}.json"
+
+
+def save_imported_xml_translation(
+    translation_id: str,
+    xml_content: bytes,
+    *,
+    source_filename: str,
+    translation_name: str | None = None,
+) -> dict[str, Any]:
+    """Normalize a user-provided XML Bible into local-only JSON storage."""
+
+    normalized_id = _normalize_translation_id(translation_id)
+    dataset = parse_bible_xml(
+        xml_content,
+        translation_id=normalized_id,
+        translation_name=translation_name,
+        source_filename=source_filename,
+    )
+    IMPORTED_TRANSLATIONS_DIR.mkdir(parents=True, exist_ok=True)
+    target = imported_translation_path(normalized_id)
+    target.write_text(json.dumps(dataset, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    load_bible_dataset.cache_clear()
+    return {
+        "translation_id": normalized_id,
+        "availability": "installed",
+        "offline_supported": True,
+        "private_local_install": True,
+        "storage_path": str(target),
+        "book_count": len(dataset["books"]),
+        "verse_count": sum(
+            len(chapter.get("verses", []))
+            for book in dataset["books"]
+            for chapter in book.get("chapters", [])
+        ),
+        "translation": dataset["translation"],
+    }
+
+
+def parse_bible_xml(
+    xml_content: bytes,
+    *,
+    translation_id: str,
+    translation_name: str | None = None,
+    source_filename: str = "",
+) -> dict[str, Any]:
+    """Parse common Bible XML shapes into BHF's local dataset format."""
+
+    try:
+        root = ElementTree.fromstring(xml_content)
+    except ElementTree.ParseError as exc:
+        raise BibleError(f"Bible XML is not well-formed: {exc}") from exc
+
+    translation = {
+        "id": translation_id.upper(),
+        "name": translation_name
+        or root.attrib.get("biblename")
+        or root.attrib.get("name")
+        or translation_id.upper(),
+        "language": root.attrib.get("language") or root.attrib.get("language_code") or "en",
+        "publication_year": None,
+        "license": "User imported local XML; BHF does not provide or verify this file",
+        "source": source_filename,
+        "source_note": "Manual local XML import. Private to this BHF instance.",
+    }
+
+    parsed_books = _parse_nested_bible_xml(root)
+    if not parsed_books:
+        raise BibleError("Bible XML format is not supported or contains no verses")
+    return {"translation": translation, "books": parsed_books}
+
+
+def _parse_nested_bible_xml(root: ElementTree.Element) -> list[dict[str, Any]]:
+    books_by_name: dict[str, dict[int, list[dict[str, Any]]]] = {}
+    ordered_books = list(BOOKS.keys())
+    for book_element in root.iter():
+        if _xml_local_name(book_element.tag) not in {"book", "biblebook"}:
+            continue
+        book_name = _book_name_from_xml_element(book_element, ordered_books)
+        if not book_name:
+            continue
+        chapters = books_by_name.setdefault(book_name, {})
+        for chapter_element in list(book_element):
+            if _xml_local_name(chapter_element.tag) != "chapter":
+                continue
+            chapter_number = _xml_positive_int(
+                chapter_element.attrib.get("cnumber")
+                or chapter_element.attrib.get("number")
+                or chapter_element.attrib.get("n")
+                or chapter_element.attrib.get("id")
+            )
+            if chapter_number is None:
+                continue
+            verses = chapters.setdefault(chapter_number, [])
+            for verse_element in list(chapter_element):
+                if _xml_local_name(verse_element.tag) not in {"verse", "vers"}:
+                    continue
+                verse_number = _xml_positive_int(
+                    verse_element.attrib.get("vnumber")
+                    or verse_element.attrib.get("number")
+                    or verse_element.attrib.get("n")
+                    or verse_element.attrib.get("id")
+                )
+                if verse_number is None:
+                    continue
+                text = " ".join("".join(verse_element.itertext()).split())
+                verses.append(
+                    {
+                        "book": book_name,
+                        "chapter": chapter_number,
+                        "verse": verse_number,
+                        "text": text,
+                    }
+                )
+
+    books = []
+    for order, canonical_book in enumerate(ordered_books, start=1):
+        chapter_map = books_by_name.get(canonical_book, {})
+        if not chapter_map:
+            continue
+        chapters = []
+        for chapter_number in sorted(chapter_map):
+            chapters.append(
+                {
+                    "chapter": chapter_number,
+                    "verses": sorted(
+                        chapter_map[chapter_number],
+                        key=lambda verse: int(verse["verse"]),
+                    ),
+                }
+            )
+        books.append({"name": canonical_book, "order": order, "chapters": chapters})
+    return books
+
+
+def _book_name_from_xml_element(
+    element: ElementTree.Element,
+    ordered_books: list[str],
+) -> str | None:
+    raw_name = (
+        element.attrib.get("bname")
+        or element.attrib.get("name")
+        or element.attrib.get("book")
+        or element.attrib.get("osisID")
+        or ""
+    )
+    if raw_name:
+        try:
+            return normalize_book_name(raw_name)
+        except BibleError:
+            pass
+    book_number = _xml_positive_int(
+        element.attrib.get("bnumber")
+        or element.attrib.get("number")
+        or element.attrib.get("n")
+        or element.attrib.get("id")
+    )
+    if book_number and 1 <= book_number <= len(ordered_books):
+        return ordered_books[book_number - 1]
+    return None
+
+
+def _xml_local_name(tag: str) -> str:
+    return str(tag).rsplit("}", 1)[-1].lower()
+
+
+def _xml_positive_int(value: Any) -> int | None:
+    match = re.search(r"\d+", str(value or ""))
+    if not match:
+        return None
+    number = int(match.group(0))
+    return number if number > 0 else None
+
+
+def _normalize_translation_id(translation_id: str) -> str:
+    normalized = str(translation_id or "").strip().lower()
+    if not re.fullmatch(r"[a-z0-9][a-z0-9_-]{1,31}", normalized):
+        raise BibleError("translation id must be 2-32 lowercase letters, numbers, underscores, or hyphens")
+    return normalized
 
 
 @lru_cache(maxsize=2)

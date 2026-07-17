@@ -20,6 +20,68 @@ class ModelResponseValidationTests(unittest.TestCase):
         self.assertTrue(result.raw_text_was_json)
         self.assertEqual(result.sanitized_text, "## 1. Short Answer\nShechem matters.")
 
+    def test_answer_contract_extracts_structured_answer_text_alias(self):
+        result = normalize_model_response(
+            '{"answer_text":"## 1. Short Answer\\nShechem matters."}',
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertTrue(result.passed)
+        self.assertTrue(result.structured_output)
+        self.assertTrue(result.raw_text_was_json)
+        self.assertEqual(result.sanitized_text, "## 1. Short Answer\nShechem matters.")
+
+    def test_answer_contract_extracts_common_local_model_response_alias(self):
+        result = normalize_model_response(
+            '{"response":"## 1. Short Answer\\nFollow Jesus by trusting and obeying him."}',
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertTrue(result.passed)
+        self.assertTrue(result.structured_output)
+        self.assertEqual(
+            result.sanitized_text,
+            "## 1. Short Answer\nFollow Jesus by trusting and obeying him.",
+        )
+
+    def test_answer_contract_extracts_chat_completion_shape(self):
+        result = normalize_model_response(
+            json.dumps(
+                {
+                    "choices": [
+                        {
+                            "message": {
+                                "content": "## 1. Short Answer\nShechem matters."
+                            }
+                        }
+                    ]
+                }
+            ),
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertTrue(result.passed)
+        self.assertTrue(result.structured_output)
+        self.assertEqual(result.sanitized_text, "## 1. Short Answer\nShechem matters.")
+
+    def test_answer_contract_extracts_short_answer_sections(self):
+        result = normalize_model_response(
+            json.dumps(
+                {
+                    "short_answer": "Shechem anchors covenant renewal.",
+                    "explanation": "Joshua 24 uses the place to recall Israel's story.",
+                }
+            ),
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertTrue(result.passed)
+        self.assertEqual(
+            result.sanitized_text,
+            "## Short Answer\nShechem anchors covenant renewal.\n\n"
+            "## Explanation\nJoshua 24 uses the place to recall Israel's story.",
+        )
+
     def test_answer_contract_removes_internal_sections_after_the_answer(self):
         result = normalize_model_response(
             "# Analysis\n\n"

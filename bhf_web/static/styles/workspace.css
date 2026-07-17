@@ -684,6 +684,19 @@ body.translation-selector-open {
   gap: 8px;
 }
 
+.translation-import-field {
+  display: grid;
+  gap: 6px;
+}
+
+.translation-import-confirm {
+  align-items: flex-start;
+}
+
+.translation-import-actions {
+  justify-content: flex-end;
+}
+
 .translation-license-indicator {
   display: inline-flex;
   align-items: center;

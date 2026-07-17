@@ -1,5 +1,9 @@
+from pathlib import Path
+import tempfile
 import unittest
+from unittest.mock import patch
 
+import bhf_agent.bible as bible_module
 from bhf_agent.bible import (
     BibleError,
     compare_translation_passages,
@@ -12,9 +16,11 @@ from bhf_agent.bible import (
     load_kjv_bible,
     normalize_book_name,
     parse_reference_query,
+    parse_bible_xml,
     resolve_chapter,
     resolve_passage,
     resolve_translation_chapter,
+    save_imported_xml_translation,
     search_bible_text,
     timeline_for_book,
     verse_range_reference,
@@ -79,6 +85,57 @@ class BibleDatasetTests(unittest.TestCase):
     def test_resolve_translation_chapter_rejects_uninstalled_translation(self):
         with self.assertRaisesRegex(BibleError, "translation is not installed"):
             resolve_translation_chapter("niv", "John", 3)
+
+    def test_parse_zefania_style_bible_xml(self):
+        xml = b"""
+        <XMLBIBLE biblename="Imported NIV" language="en">
+          <BIBLEBOOK bnumber="1" bname="Genesis">
+            <CHAPTER cnumber="1">
+              <VERS vnumber="1">In the beginning imported text.</VERS>
+            </CHAPTER>
+          </BIBLEBOOK>
+        </XMLBIBLE>
+        """
+
+        data = parse_bible_xml(
+            xml,
+            translation_id="niv",
+            translation_name="New International Version",
+            source_filename="niv.xml",
+        )
+
+        self.assertEqual(data["translation"]["id"], "NIV")
+        self.assertEqual(data["books"][0]["name"], "Genesis")
+        self.assertEqual(data["books"][0]["chapters"][0]["verses"][0]["text"], "In the beginning imported text.")
+
+    def test_save_imported_xml_translation_is_loadable_locally(self):
+        xml = b"""
+        <XMLBIBLE biblename="Imported ESV" language="en">
+          <BIBLEBOOK bnumber="1" bname="Genesis">
+            <CHAPTER cnumber="1">
+              <VERS vnumber="1">Imported Genesis text.</VERS>
+            </CHAPTER>
+          </BIBLEBOOK>
+        </XMLBIBLE>
+        """
+
+        with tempfile.TemporaryDirectory() as tmpdir, patch.object(
+            bible_module,
+            "IMPORTED_TRANSLATIONS_DIR",
+            Path(tmpdir),
+        ):
+            result = save_imported_xml_translation(
+                "esv",
+                xml,
+                source_filename="esv.xml",
+                translation_name="English Standard Version",
+            )
+            chapter = resolve_translation_chapter("esv", "Genesis", 1)
+
+        self.assertTrue(result["private_local_install"])
+        self.assertEqual(result["book_count"], 1)
+        self.assertEqual(chapter["translation"]["id"], "ESV")
+        self.assertEqual(chapter["verses"][0]["text"], "Imported Genesis text.")
 
     def test_resolve_invalid_chapter(self):
         with self.assertRaisesRegex(BibleError, "John has no chapter 99"):

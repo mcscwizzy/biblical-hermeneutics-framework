@@ -33,6 +33,23 @@ RETRIEVAL_SCORE_RE = re.compile(
     r"(?i)\b(?:retrieval|relevance|match)\s+score\b|\bscore\s*[:=]\s*(?:0(?:\.\d+)?|1(?:\.0+)?)\b"
 )
 JSON_FENCE_RE = re.compile(r"^\s*```(?:json)?\s*([\s\S]*?)\s*```\s*$", re.IGNORECASE)
+ANSWER_TEXT_KEYS = (
+    "answer",
+    "answer_text",
+    "response",
+    "final_answer",
+    "text",
+    "content",
+    "output",
+)
+ANSWER_SECTION_KEYS = (
+    "short_answer",
+    "summary",
+    "explanation",
+    "details",
+)
+
+
 @dataclass
 class ModelResponseValidationResult(Serializable):
     passed: bool
@@ -256,7 +273,7 @@ def _strip_code_fence(text: str) -> str:
 
 
 def _extract_answer_from_payload(payload: dict[str, Any]) -> str | None:
-    for key in ("answer", "text", "content", "output"):
+    for key in ANSWER_TEXT_KEYS:
         value = payload.get(key)
         if isinstance(value, str) and value.strip():
             return value.strip()
@@ -267,11 +284,49 @@ def _extract_answer_from_payload(payload: dict[str, Any]) -> str | None:
             return content.strip()
     if isinstance(message, str) and message.strip():
         return message.strip()
+    choices = payload.get("choices")
+    if isinstance(choices, list) and choices:
+        choice_answer = _extract_answer_from_choice(choices[0])
+        if choice_answer:
+            return choice_answer
+    section_answer = _extract_answer_from_sections(payload)
+    if section_answer:
+        return section_answer
     return None
 
 
+def _extract_answer_from_choice(choice: Any) -> str | None:
+    if not isinstance(choice, dict):
+        return None
+    message = choice.get("message")
+    if isinstance(message, dict):
+        content = message.get("content")
+        if isinstance(content, str) and content.strip():
+            return content.strip()
+    for key in ("text", "content", "output"):
+        value = choice.get(key)
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+    return None
+
+
+def _extract_answer_from_sections(payload: dict[str, Any]) -> str | None:
+    sections: list[str] = []
+    for key in ANSWER_SECTION_KEYS:
+        value = payload.get(key)
+        if isinstance(value, str) and value.strip():
+            heading = key.replace("_", " ").title()
+            sections.append(f"## {heading}\n{value.strip()}")
+    return "\n\n".join(sections) if sections else None
+
+
 def _has_extra_keys(payload: dict[str, Any]) -> bool:
-    allowed = {"answer", "text", "content", "output", "message"}
+    allowed = {
+        *ANSWER_TEXT_KEYS,
+        *ANSWER_SECTION_KEYS,
+        "message",
+        "choices",
+    }
     return any(key not in allowed for key in payload)
 
 
