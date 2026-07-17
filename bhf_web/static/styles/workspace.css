@@ -583,23 +583,27 @@
 .translation-selector-overlay {
   position: fixed;
   inset: 0;
-  z-index: 80;
+  z-index: 1000;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding: 72px 16px 24px;
+  padding: 24px 16px;
   background: rgb(15 23 42 / 48%);
 }
 
 .translation-selector {
   width: min(720px, 100%);
-  max-height: min(780px, calc(100vh - 96px));
+  max-height: min(780px, calc(100vh - 48px));
   overflow: auto;
   border: 1px solid var(--border);
   border-radius: 8px;
   background: var(--surface);
   color: var(--page-text);
   box-shadow: var(--shadow-lg);
+}
+
+body.translation-selector-open {
+  overflow: hidden;
 }
 
 .translation-selector-header {
@@ -1551,12 +1555,12 @@ html[data-theme="dark"] .map-panel-body {
 
 @media (max-width: 540px) {
   .translation-selector-overlay {
-    align-items: stretch;
-    padding: 48px 10px 14px;
+    align-items: center;
+    padding: 12px;
   }
 
   .translation-selector {
-    max-height: calc(100vh - 62px);
+    max-height: calc(100vh - 24px);
   }
 
   .translation-selector-entry {

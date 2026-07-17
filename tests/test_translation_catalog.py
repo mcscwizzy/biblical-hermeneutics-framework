@@ -6,6 +6,8 @@ from bhf_agent.translation_catalog import (
     PROTECTED_TRANSLATION_IDS,
     beblia_download_allowed,
     curated_english_catalog,
+    github_download_allowed,
+    github_download_metadata,
     import_translation,
     install_remote_translation,
     provider_access,
@@ -42,6 +44,20 @@ class TranslationCatalogTests(unittest.TestCase):
         self.assertFalse(catalog["kjv"]["bundled"])
         self.assertEqual(catalog["kjv"]["availability"], "remote_download")
         self.assertTrue(catalog["kjv"]["download_enabled"])
+        self.assertTrue(github_download_allowed("kjv"))
+
+    def test_kjv_github_download_metadata_is_reviewed(self):
+        metadata = github_download_metadata("kjv")
+
+        self.assertIsNotNone(metadata)
+        assert metadata is not None
+        self.assertEqual(metadata["translation_id"], "kjv")
+        self.assertEqual(metadata["source"], "github")
+        self.assertEqual(metadata["provider_id"], "beblia_github")
+        self.assertIn("Beblia/Holy-Bible-XML-Format", metadata["repository_url"])
+        self.assertTrue(metadata["approved_source_url"].endswith("/EnglishKJBible.xml"))
+        self.assertFalse(metadata["supported_by_bhf"])
+        self.assertIn("third-party GitHub repository", metadata["third_party_notice"])
 
     def test_protected_translation_downloads_are_disabled(self):
         catalog = {entry["id"]: entry for entry in curated_english_catalog()}
@@ -51,6 +67,8 @@ class TranslationCatalogTests(unittest.TestCase):
                 self.assertEqual(catalog[translation_id]["availability"], "license_required")
                 self.assertFalse(catalog[translation_id]["download_enabled"])
                 self.assertFalse(beblia_download_allowed(translation_id))
+                self.assertFalse(github_download_allowed(translation_id))
+                self.assertIsNone(github_download_metadata(translation_id))
 
     def test_protected_translations_display_license_required_explanation(self):
         sections = translation_selector_sections()

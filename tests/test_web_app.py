@@ -223,6 +223,14 @@ class RuntimeConfigTests(unittest.TestCase):
 
 
 class WebAssetTests(unittest.TestCase):
+    def test_docker_compose_does_not_hide_generated_ckl_database(self):
+        compose = Path("docker-compose.yml").read_text(encoding="utf-8")
+
+        self.assertIn("./.bhf:/app/.bhf-data", compose)
+        self.assertIn("BHF_STUDY_DB_PATH: /app/.bhf-data/study.sqlite", compose)
+        self.assertIn("BHF_MEMORY_PATH: /app/.bhf-data/sessions", compose)
+        self.assertNotIn("./.bhf:/app/.bhf\n", compose)
+
     def test_status_script_collapses_active_panel_after_success(self):
         status_script = Path("bhf_web/static/htmx-status.js").read_text(encoding="utf-8")
         controller_script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
@@ -273,6 +281,14 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn("studyAction.type === \"maps\"", script)
         self.assertIn("workspaceTabsForSection", script)
         self.assertIn("syncWorkspaceTabsForSection", script)
+        self.assertIn("BHF_TRANSLATION_STORAGE_KEY", script)
+        self.assertIn("data-reader-translation", script)
+        self.assertIn("data-translation-select", script)
+        self.assertIn("data-translation-download", script)
+        self.assertIn("translation: translationId", script)
+        self.assertIn("translation-selector-open", script)
+        self.assertIn('new Set(["asv"])', script)
+        self.assertIn("downloadTranslationFromGithub", script)
         self.assertIn("setActiveWorkspaceTab", script)
         self.assertIn("applyWorkspaceExpansion(false);", script)
         self.assertNotIn("bhf-workspace-expanded", script)
@@ -515,6 +531,12 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn("data-workspace-collapse-toggle", index_html)
         self.assertIn("data-workspace-tab-bar", index_html)
         self.assertIn('aria-label="Workspace tabs"', index_html)
+        self.assertIn("data-reader-translation", index_html)
+        self.assertIn("ASV - American Standard Version", index_html)
+        self.assertIn("KJV - Download from GitHub", index_html)
+        self.assertIn("NIV - License required", index_html)
+        self.assertIn("style.css') }}?v=20260717a", index_html)
+        self.assertIn("htmx-lite.js') }}?v=20260717a", index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
@@ -544,6 +566,10 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn(".answer-canonical-context", style)
         self.assertIn(".scripture-link", style)
         self.assertIn(".canonical-note-links", style)
+        self.assertIn(".translation-selector-overlay {\n  position: fixed;", style)
+        self.assertIn("z-index: 1000;", style)
+        self.assertIn("align-items: center;", style)
+        self.assertIn("body.translation-selector-open", style)
         self.assertIn(".search-badge--muted", style)
         self.assertIn("box-shadow: 0 12px 24px rgb(26 42 56 / 6%);", style)
         self.assertIn("position: sticky;", style)
@@ -601,6 +627,8 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("manifest.webmanifest", response["body"])
         self.assertIn("apple-touch-icon", response["body"])
         self.assertIn("pwa.js", response["body"])
+        self.assertIn("data-reader-translation", response["body"])
+        self.assertIn("KJV - Download from GitHub", response["body"])
         self.assertIn("Scripture", response["body"])
         self.assertIn("desktop-reader-controls-trigger", response["body"])
         self.assertIn("data-workspace-tab-bar", response["body"])
@@ -1298,6 +1326,14 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(data["books"][0]["name"], "Genesis")
         self.assertEqual(data["books"][-1]["name"], "Revelation")
 
+    def test_bible_books_route_accepts_translation_query(self):
+        response = asgi_request("GET", "/api/bible/books?translation=kjv")
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(data["books"][0]["name"], "Genesis")
+        self.assertEqual(data["books"][-1]["name"], "Revelation")
+
     def test_translation_catalog_route_returns_curated_sections(self):
         response = asgi_request("GET", "/api/translations/catalog")
 
@@ -1315,11 +1351,40 @@ class WebAppTests(unittest.TestCase):
             [entry["id"] for entry in data["sections"]["available_to_download"]],
             ["kjv"],
         )
+        self.assertEqual(
+            data["sections"]["available_to_download"][0]["status_label"],
+            "Download from GitHub",
+        )
+        self.assertIn(
+            "third-party GitHub repository",
+            data["sections"]["available_to_download"][0]["third_party_notice"],
+        )
         self.assertEqual(data["sections"]["additional_english_translations"][0]["id"], "niv")
         self.assertIn(
             "This translation is copyrighted",
             data["sections"]["additional_english_translations"][0]["license_explanation"],
         )
+
+    def test_kjv_download_route_returns_github_metadata(self):
+        response = asgi_request("POST", "/api/translations/kjv/download")
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(data["translation_id"], "kjv")
+        self.assertTrue(data["download_enabled"])
+        self.assertEqual(data["source"], "github")
+        self.assertIn("Beblia/Holy-Bible-XML-Format", data["repository_url"])
+        self.assertTrue(data["approved_source_url"].endswith("/EnglishKJBible.xml"))
+        self.assertFalse(data["supported_by_bhf"])
+
+    def test_protected_download_route_is_license_required(self):
+        response = asgi_request("POST", "/api/translations/niv/download")
+
+        self.assertEqual(response["status"], 403)
+        data = json.loads(response["body"])
+        self.assertEqual(data["translation_id"], "niv")
+        self.assertFalse(data["download_enabled"])
+        self.assertIn("copyrighted", data["license_explanation"])
 
     def test_protected_translation_import_notice_requires_confirmation(self):
         response = asgi_request(
@@ -1339,6 +1404,15 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(data["book"], "Romans")
         self.assertEqual(data["chapter"], 12)
         self.assertIn("living sacrifice", data["verses"][0]["text"])
+
+    def test_bible_chapter_route_accepts_translation_query(self):
+        response = asgi_request("GET", "/api/bible/John/3?translation=kjv")
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(data["translation"]["id"], "KJV")
+        self.assertEqual(data["book"], "John")
+        self.assertIn("For God so loved the world", data["verses"][15]["text"])
 
     def test_bible_search_route_returns_local_results(self):
         response = asgi_request("GET", "/api/bible/search?q=living+sacrifice")

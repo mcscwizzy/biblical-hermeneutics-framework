@@ -28,6 +28,11 @@ PROTECTED_IMPORT_NOTICE = (
     "that you obtained the file lawfully and have the right to use it on this "
     "device. BHF does not provide, distribute, or verify this file."
 )
+THIRD_PARTY_GITHUB_NOTICE = (
+    "This download is provided from a third-party GitHub repository. BHF does "
+    "not maintain or support that repository. Verify the translation identity, "
+    "completeness, checksum, and license before relying on it."
+)
 
 PROTECTED_TRANSLATION_ACTIONS = (
     "Learn more",
@@ -147,7 +152,14 @@ CURATED_ENGLISH_TRANSLATION_CATALOG: tuple[dict[str, Any], ...] = (
 BEBLIA_APPROVED_REMOTE_MAPPINGS: dict[str, dict[str, Any]] = {
     "kjv": {
         "translation_id": "kjv",
+        "provider_id": "beblia_github",
+        "provider_name": "Beblia GitHub repository",
+        "repository_url": "https://github.com/Beblia/Holy-Bible-XML-Format",
         "approved_source_path": "EnglishKJBible.xml",
+        "approved_source_url": (
+            "https://raw.githubusercontent.com/Beblia/Holy-Bible-XML-Format/master/"
+            "EnglishKJBible.xml"
+        ),
         "expected_name": "King James Version",
         "expected_language": "English",
         "expected_book_count": 66,
@@ -261,6 +273,44 @@ def beblia_download_allowed(translation_id: str) -> bool:
     )
 
 
+def github_download_allowed(translation_id: str) -> bool:
+    """Return whether BHF may expose a direct GitHub download action."""
+
+    return beblia_download_allowed(translation_id)
+
+
+def github_download_metadata(translation_id: str) -> dict[str, Any] | None:
+    """Return reviewed third-party GitHub source metadata for a translation."""
+
+    translation_id = translation_id.lower()
+    if not github_download_allowed(translation_id):
+        return None
+    mapping = approved_beblia_mapping(translation_id)
+    if mapping is None:
+        return None
+    return {
+        "translation_id": translation_id,
+        "provider_id": mapping["provider_id"],
+        "provider_name": mapping["provider_name"],
+        "source": "github",
+        "repository_url": mapping["repository_url"],
+        "approved_source_path": mapping["approved_source_path"],
+        "approved_source_url": mapping["approved_source_url"],
+        "expected_name": mapping["expected_name"],
+        "expected_language": mapping["expected_language"],
+        "expected_book_count": mapping["expected_book_count"],
+        "expected_minimum_verse_count": mapping["expected_minimum_verse_count"],
+        "expected_maximum_verse_count": mapping["expected_maximum_verse_count"],
+        "expected_verse_count": mapping["expected_verse_count"],
+        "license_status": mapping["license_status"],
+        "review_status": mapping["review_status"],
+        "third_party": True,
+        "supported_by_bhf": False,
+        "third_party_notice": THIRD_PARTY_GITHUB_NOTICE,
+        "versification_note": mapping["versification_note"],
+    }
+
+
 def provider_access(config: dict[str, Any]) -> dict[str, Any]:
     provider = ProviderCapabilities.from_config(config)
     capabilities = provider.as_dict()
@@ -339,9 +389,17 @@ def translation_selector_sections(
     available_to_download = []
     if "kjv" not in installed_ids:
         entry = deepcopy(by_id["kjv"])
-        entry["status_label"] = "Download for offline use"
+        entry["status_label"] = "Download from GitHub"
         entry["can_download"] = beblia_download_allowed("kjv")
+        entry["download_source"] = "github"
+        entry["third_party_notice"] = THIRD_PARTY_GITHUB_NOTICE
         entry["validation_required"] = True
+        metadata = github_download_metadata("kjv")
+        if metadata is not None:
+            entry["provider_id"] = metadata["provider_id"]
+            entry["provider_name"] = metadata["provider_name"]
+            entry["approved_source_url"] = metadata["approved_source_url"]
+            entry["repository_url"] = metadata["repository_url"]
         available_to_download.append(entry)
 
     additional = []

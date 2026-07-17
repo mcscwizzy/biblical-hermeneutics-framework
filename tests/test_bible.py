@@ -7,12 +7,14 @@ from bhf_agent.bible import (
     geography_for_book,
     is_topic_style_search_query,
     list_books,
+    list_translation_books,
     load_asv_bible,
     load_kjv_bible,
     normalize_book_name,
     parse_reference_query,
     resolve_chapter,
     resolve_passage,
+    resolve_translation_chapter,
     search_bible_text,
     timeline_for_book,
     verse_range_reference,
@@ -53,12 +55,30 @@ class BibleDatasetTests(unittest.TestCase):
         self.assertEqual(books[-1]["name"], "Revelation")
         self.assertEqual(books[-1]["chapters"], 22)
 
+    def test_list_translation_books_uses_requested_translation(self):
+        books = list_translation_books("kjv")
+
+        self.assertEqual(books[0], {"name": "Genesis", "order": 1, "chapters": 50})
+        self.assertEqual(books[-1]["name"], "Revelation")
+
     def test_resolve_valid_chapter(self):
         chapter = resolve_chapter("John", 1, self.data)
 
         self.assertEqual(chapter["book"], "John")
         self.assertEqual(chapter["chapter"], 1)
         self.assertEqual(chapter["verses"][0]["text"], "In the beginning was the Word, and the Word was with God, and the Word was God.")
+
+    def test_resolve_translation_chapter_uses_requested_translation(self):
+        chapter = resolve_translation_chapter("kjv", "John", 3)
+
+        self.assertEqual(chapter["translation"]["id"], "KJV")
+        self.assertEqual(chapter["book"], "John")
+        self.assertEqual(chapter["chapter"], 3)
+        self.assertIn("For God so loved the world", chapter["verses"][15]["text"])
+
+    def test_resolve_translation_chapter_rejects_uninstalled_translation(self):
+        with self.assertRaisesRegex(BibleError, "translation is not installed"):
+            resolve_translation_chapter("niv", "John", 3)
 
     def test_resolve_invalid_chapter(self):
         with self.assertRaisesRegex(BibleError, "John has no chapter 99"):

@@ -102,7 +102,7 @@ docker exec -it <ollama-container-name> ollama pull llama3.2:1b
 Compose mounts:
 
 ```text
-./.bhf:/app/.bhf
+./.bhf:/app/.bhf-data
 ```
 
 Session memory is stored in:
@@ -122,6 +122,15 @@ Optional web defaults can live in:
 ```text
 .bhf/web-config.json
 ```
+
+The generated CKL runtime database remains inside the image at:
+
+```text
+/app/.bhf/ckl.sqlite
+```
+
+Do not mount the host `.bhf/` directory over `/app/.bhf`; that hides the
+generated CKL database and can make `/api/canonical/search` fail at runtime.
 
 Do not put secrets in committed files. `.bhf/` and `.env` are ignored by git.
 

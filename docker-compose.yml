@@ -50,9 +50,11 @@ services:
       BHF_MAX_TOKENS: "${BHF_MAX_TOKENS:-2048}"
       BHF_SHOW_METHOD_NOTES: "${BHF_SHOW_METHOD_NOTES:-true}"
       BHF_MEMORY_ENABLED: "${BHF_MEMORY_ENABLED:-false}"
-      BHF_MEMORY_PATH: /app/.bhf/sessions
+      BHF_MEMORY_PATH: /app/.bhf-data/sessions
+      BHF_STUDY_DB_PATH: /app/.bhf-data/study.sqlite
+      BHF_WEB_CONFIG_PATH: /app/.bhf-data/web-config.json
     volumes:
-      - ./.bhf:/app/.bhf
+      - ./.bhf:/app/.bhf-data
     extra_hosts:
       - "host.docker.internal:host-gateway"
     healthcheck:

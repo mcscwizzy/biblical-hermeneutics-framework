@@ -12,6 +12,9 @@ const TABLET_BREAKPOINT = Number(BHF_RUNTIME.breakpoints?.tablet || 900);
 const GENERAL_QUESTION_MODE = "general_question";
 const THEME_STORAGE_KEY = "bhf-theme";
 const READER_MODE_STORAGE_KEY = "bhf-reader-mode";
+const BHF_TRANSLATION_STORAGE_KEY = "bhf-reader-translation";
+const BHF_INSTALLED_TRANSLATIONS_STORAGE_KEY = "bhf-installed-translations";
+const BHF_TRANSLATION_DOWNLOAD_METADATA_KEY = "bhf-translation-download-metadata";
 const BHF_STUDY_ACTIONS = new Set([
   "ancient_context",
   "literary_context",
@@ -129,6 +132,7 @@ document.addEventListener("submit", async function (event) {
 async function initializeReader() {
   const bookSelect = document.querySelector("[data-reader-book]");
   const chapterSelect = document.querySelector("[data-reader-chapter]");
+  const translationSelect = document.querySelector("[data-reader-translation]");
   const reader = document.querySelector("#chapter-reader");
   const askForm = document.querySelector(".ask-form");
   if (!bookSelect || !chapterSelect || !reader || !askForm) {
@@ -146,6 +150,10 @@ async function initializeReader() {
   }
   const defaultChapter = reader.dataset.defaultChapter || chapterSelect.options[0].value || "1";
   chapterSelect.value = defaultChapter;
+  if (translationSelect) {
+    syncTranslationSelectOptions();
+    translationSelect.value = selectedTranslationId();
+  }
   await loadReaderChapter(bookSelect.value || defaultBook, chapterSelect.value || defaultChapter);
 
   bookSelect.addEventListener("change", async () => {
@@ -156,6 +164,22 @@ async function initializeReader() {
   chapterSelect.addEventListener("change", async () => {
     await loadReaderChapter(bookSelect.value, chapterSelect.value);
   });
+  if (translationSelect) {
+    translationSelect.addEventListener("change", async () => {
+      const requestedTranslation = String(translationSelect.value || "asv").toLowerCase();
+      try {
+        if (requestedTranslation === "kjv" && !installedTranslationIds().has("kjv")) {
+          await downloadTranslationFromGithub("kjv");
+        }
+        setSelectedTranslationId(requestedTranslation);
+        await loadReaderChapter(bookSelect.value, chapterSelect.value);
+      } catch (error) {
+        setSelectedTranslationId("asv");
+        translationSelect.value = "asv";
+        reader.innerHTML = errorHtml(error.message || "Could not download translation.");
+      }
+    });
+  }
   document.addEventListener("selectionchange", updateSelectionFromDocument);
   document.addEventListener("click", closeContextMenuOnOutside);
   document.addEventListener("keydown", closeContextMenuOnEscape);
@@ -961,11 +985,13 @@ async function loadReaderChapter(book, chapter) {
   if (!reader) {
     return;
   }
+  const translationId = selectedTranslationId();
   reader.setAttribute("aria-busy", "true");
   hideContextMenu();
   reader.innerHTML = `<p class="empty">Loading ${escapeHtml(currentTranslationAbbreviation())} text...</p>`;
   try {
-    const data = await requestJson(`/api/bible/${encodeURIComponent(book)}/${encodeURIComponent(chapter)}`, {}, "Could not load chapter.");
+    const params = new URLSearchParams({ translation: translationId });
+    const data = await requestJson(`/api/bible/${encodeURIComponent(book)}/${encodeURIComponent(chapter)}?${params.toString()}`, {}, "Could not load chapter.");
     currentChapter = data;
     currentSelection = null;
     latestJobId = null;
@@ -982,6 +1008,11 @@ async function loadReaderChapter(book, chapter) {
       loadSavedStudies(data.book, data.chapter),
     ]);
   } catch (error) {
+    if (translationId !== "asv") {
+      setSelectedTranslationId("asv");
+      await loadReaderChapter(book, chapter);
+      return;
+    }
     reader.innerHTML = errorHtml(error.message || "Could not load chapter.");
   } finally {
     reader.removeAttribute("aria-busy");
@@ -1163,7 +1194,7 @@ function renderChapter(data) {
 }
 
 function currentTranslationAbbreviation() {
-  return currentChapter?.translation?.id || "ASV";
+  return currentChapter?.translation?.id || selectedTranslationId().toUpperCase();
 }
 
 async function handleTranslationSelectorClick(event) {
@@ -1179,6 +1210,7 @@ async function handleTranslationSelectorClick(event) {
 async function openTranslationSelector(trigger) {
   const dialog = ensureTranslationSelectorDialog();
   dialog.hidden = false;
+  document.body.classList.add("translation-selector-open");
   dialog.setAttribute("aria-busy", "true");
   dialog.querySelector("[data-translation-selector-body]").innerHTML = `<p class="empty">Loading translations...</p>`;
   try {
@@ -1215,6 +1247,7 @@ function ensureTranslationSelectorDialog() {
     </div>
   `;
   dialog.addEventListener("click", (event) => {
+    handleTranslationSelectorDialogClick(event);
     if (event.target === dialog || event.target.closest("[data-close-translation-selector]")) {
       closeTranslationSelector();
     }
@@ -1233,6 +1266,7 @@ function closeTranslationSelector() {
   if (dialog) {
     dialog.hidden = true;
   }
+  document.body.classList.remove("translation-selector-open");
 }
 
 function renderTranslationSelector(state) {
@@ -1240,11 +1274,258 @@ function renderTranslationSelector(state) {
   if (!body) {
     return;
   }
-  const sections = state.sections || {};
+  const sections = translationCatalogWithLocalState(state).sections || {};
   body.innerHTML = "";
   body.appendChild(renderTranslationSection("Installed", sections.installed || []));
   body.appendChild(renderTranslationSection("Available to Download", sections.available_to_download || []));
   body.appendChild(renderTranslationSection("Additional English Translations", sections.additional_english_translations || []));
+}
+
+function translationCatalogWithLocalState(state) {
+  const catalog = Array.isArray(state?.catalog) ? state.catalog : [];
+  const installedIds = installedTranslationIds();
+  const selectedId = selectedTranslationId();
+  const installed = [];
+  const availableToDownload = [];
+  const protectedEntries = [];
+
+  for (const entry of catalog) {
+    const id = String(entry.id || "").toLowerCase();
+    if (!id) {
+      continue;
+    }
+    const decorated = { ...entry, selected: id === selectedId };
+    if (id === "asv") {
+      installed.push({
+        ...decorated,
+        availability: "bundled",
+        status_label: "Built in",
+        can_select: true,
+        can_set_default: true,
+        can_remove: false,
+        can_download: false,
+      });
+    } else if (installedIds.has(id) && id === "kjv") {
+      installed.push({
+        ...decorated,
+        availability: "installed",
+        status_label: "Available offline",
+        can_select: true,
+        can_set_default: true,
+        can_remove: false,
+        can_download: false,
+      });
+    } else if (entry.availability === "remote_download" && entry.can_download) {
+      availableToDownload.push({
+        ...decorated,
+        status_label: entry.status_label || "Download from GitHub",
+        can_select: false,
+        can_remove: false,
+        can_download: true,
+      });
+    } else if (entry.availability === "license_required") {
+      protectedEntries.push({
+        ...decorated,
+        can_select: false,
+        can_remove: false,
+        can_download: false,
+      });
+    }
+  }
+
+  return {
+    ...state,
+    sections: {
+      installed,
+      available_to_download: availableToDownload,
+      additional_english_translations: protectedEntries,
+    },
+  };
+}
+
+function installedTranslationIds() {
+  const ids = new Set(["asv"]);
+  try {
+    const stored = JSON.parse(readLocalStorageValue(BHF_INSTALLED_TRANSLATIONS_STORAGE_KEY) || "[]");
+    if (Array.isArray(stored)) {
+      for (const id of stored) {
+        const normalized = String(id || "").toLowerCase();
+        if (normalized === "kjv") {
+          ids.add(normalized);
+        }
+      }
+    }
+  } catch {
+    return ids;
+  }
+  return ids;
+}
+
+function persistInstalledTranslationIds(ids) {
+  const normalized = Array.from(ids)
+    .map((id) => String(id || "").toLowerCase())
+    .filter((id) => id === "asv" || id === "kjv");
+  if (!normalized.includes("asv")) {
+    normalized.unshift("asv");
+  }
+  writeLocalStorageValue(BHF_INSTALLED_TRANSLATIONS_STORAGE_KEY, JSON.stringify(Array.from(new Set(normalized))));
+}
+
+function selectedTranslationId() {
+  const fallback = "asv";
+  const stored = String(readLocalStorageValue(BHF_TRANSLATION_STORAGE_KEY) || fallback).toLowerCase();
+  return installedTranslationIds().has(stored) ? stored : fallback;
+}
+
+function setSelectedTranslationId(id) {
+  const normalized = String(id || "asv").toLowerCase();
+  const selected = installedTranslationIds().has(normalized) ? normalized : "asv";
+  writeLocalStorageValue(BHF_TRANSLATION_STORAGE_KEY, selected);
+  syncTranslationSelect(selected);
+}
+
+function readLocalStorageValue(key) {
+  try {
+    return window.localStorage?.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function writeLocalStorageValue(key, value) {
+  try {
+    window.localStorage?.setItem(key, value);
+  } catch {
+    return false;
+  }
+  return true;
+}
+
+async function handleTranslationSelectorDialogClick(event) {
+  const download = event.target.closest("[data-translation-download]");
+  const select = event.target.closest("[data-translation-select]");
+  const remove = event.target.closest("[data-translation-remove]");
+  if (!download && !select && !remove) {
+    return;
+  }
+  event.preventDefault();
+  event.stopPropagation();
+
+  if (download) {
+    await downloadTranslationFromGithub(download.dataset.translationDownload);
+    setSelectedTranslationId(download.dataset.translationDownload);
+    renderTranslationSelector(translationCatalogState);
+    closeTranslationSelector();
+    await reloadCurrentReaderChapter();
+    return;
+  }
+  if (select) {
+    setSelectedTranslationId(select.dataset.translationSelect);
+    closeTranslationSelector();
+    await reloadCurrentReaderChapter();
+    return;
+  }
+  if (remove) {
+    removeInstalledTranslation(remove.dataset.translationRemove);
+    renderTranslationSelector(translationCatalogState);
+    await reloadCurrentReaderChapter();
+  }
+}
+
+function installTranslation(id) {
+  const normalized = String(id || "").toLowerCase();
+  if (normalized !== "kjv") {
+    return;
+  }
+  const ids = installedTranslationIds();
+  ids.add(normalized);
+  persistInstalledTranslationIds(ids);
+  syncTranslationSelectOptions();
+}
+
+function removeInstalledTranslation(id) {
+  const normalized = String(id || "").toLowerCase();
+  if (!normalized || normalized === "asv") {
+    return;
+  }
+  const selectedBeforeRemoval = selectedTranslationId();
+  const ids = installedTranslationIds();
+  ids.delete(normalized);
+  persistInstalledTranslationIds(ids);
+  if (selectedBeforeRemoval === normalized) {
+    setSelectedTranslationId("asv");
+  }
+}
+
+async function reloadCurrentReaderChapter() {
+  const bookSelect = document.querySelector("[data-reader-book]");
+  const chapterSelect = document.querySelector("[data-reader-chapter]");
+  const book = bookSelect?.value || currentChapter?.book || "John";
+  const chapter = chapterSelect?.value || currentChapter?.chapter || "1";
+  await loadReaderChapter(book, chapter);
+}
+
+async function downloadTranslationFromGithub(id) {
+  const normalized = String(id || "").toLowerCase();
+  if (normalized !== "kjv") {
+    throw new Error("Only KJV is approved for GitHub download.");
+  }
+  const metadata = await requestJson(
+    `/api/translations/${encodeURIComponent(normalized)}/download`,
+    {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+    },
+    "Could not download translation."
+  );
+  installTranslation(normalized);
+  persistTranslationDownloadMetadata(normalized, metadata);
+  return metadata;
+}
+
+function persistTranslationDownloadMetadata(id, metadata) {
+  let stored = {};
+  try {
+    stored = JSON.parse(readLocalStorageValue(BHF_TRANSLATION_DOWNLOAD_METADATA_KEY) || "{}");
+  } catch {
+    stored = {};
+  }
+  stored[String(id || "").toLowerCase()] = metadata;
+  writeLocalStorageValue(BHF_TRANSLATION_DOWNLOAD_METADATA_KEY, JSON.stringify(stored));
+}
+
+function syncTranslationSelect(translationId = selectedTranslationId()) {
+  syncTranslationSelectOptions();
+  const translationSelect = document.querySelector("[data-reader-translation]");
+  if (translationSelect && translationSelect.value !== translationId) {
+    translationSelect.value = translationId;
+  }
+}
+
+function syncTranslationSelectOptions() {
+  const translationSelect = document.querySelector("[data-reader-translation]");
+  if (!translationSelect) {
+    return;
+  }
+  const installedIds = installedTranslationIds();
+  for (const option of Array.from(translationSelect.options)) {
+    const id = String(option.value || "").toLowerCase();
+    if (id === "asv") {
+      option.disabled = false;
+      option.textContent = "ASV - American Standard Version";
+    } else if (id === "kjv") {
+      option.disabled = false;
+      option.textContent = installedIds.has("kjv")
+        ? "KJV - King James Version"
+        : "KJV - Download from GitHub";
+    } else {
+      option.disabled = true;
+    }
+  }
+  const selectedOption = translationSelect.selectedOptions[0];
+  if (selectedOption?.disabled) {
+    translationSelect.value = "asv";
+  }
 }
 
 function renderTranslationSection(title, entries) {
@@ -1288,6 +1569,23 @@ function renderTranslationEntry(entry) {
     explanation.textContent = entry.license_explanation;
     main.appendChild(explanation);
   }
+  if (entry.third_party_notice) {
+    const notice = document.createElement("p");
+    notice.className = "translation-license-explanation";
+    notice.textContent = entry.third_party_notice;
+    main.appendChild(notice);
+  }
+  if (entry.approved_source_url) {
+    const source = document.createElement("p");
+    source.className = "translation-license-actions";
+    const link = document.createElement("a");
+    link.href = entry.approved_source_url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "GitHub source";
+    source.appendChild(link);
+    main.appendChild(source);
+  }
   if (Array.isArray(entry.actions) && entry.actions.length) {
     const actions = document.createElement("p");
     actions.className = "translation-license-actions";
@@ -1306,17 +1604,27 @@ function renderTranslationEntry(entry) {
     const download = document.createElement("button");
     download.type = "button";
     download.className = "secondary";
-    download.disabled = true;
-    download.textContent = "Download";
-    download.title = "KJV download requires source validation before installation.";
+    download.dataset.translationDownload = entry.id;
+    download.textContent = "Download from GitHub";
+    download.title = "Download this approved third-party source for offline reading.";
     controls.appendChild(download);
   } else if (entry.can_select) {
     const select = document.createElement("button");
     select.type = "button";
     select.className = entry.selected ? "primary" : "secondary";
+    select.dataset.translationSelect = entry.id;
     select.textContent = entry.selected ? "Selected" : "Select";
     select.disabled = Boolean(entry.selected);
     controls.appendChild(select);
+    if (entry.can_remove) {
+      const remove = document.createElement("button");
+      remove.type = "button";
+      remove.className = "secondary";
+      remove.dataset.translationRemove = entry.id;
+      remove.textContent = "Remove";
+      remove.title = "Remove this translation from the local reader.";
+      controls.appendChild(remove);
+    }
   }
   row.appendChild(main);
   row.appendChild(controls);

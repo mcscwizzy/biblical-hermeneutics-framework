@@ -49,10 +49,38 @@ def load_bible_dataset(path: str | Path) -> dict[str, Any]:
     return data
 
 
+@lru_cache(maxsize=1)
 def load_kjv_bible(path: str | Path = KJV_DATA_PATH) -> dict[str, Any]:
     """Load the committed KJV dataset."""
 
     return load_bible_dataset(path)
+
+
+def load_translation_bible(translation_id: str) -> dict[str, Any]:
+    """Load an installed local Bible dataset by catalog translation id."""
+
+    normalized = str(translation_id or "asv").strip().lower()
+    if normalized == "asv":
+        return load_asv_bible()
+    if normalized == "kjv":
+        return load_kjv_bible()
+    raise BibleError(f"translation is not installed: {translation_id}")
+
+
+def list_translation_books(translation_id: str = "asv") -> list[dict[str, Any]]:
+    """List books for an installed local translation."""
+
+    return list_books(load_translation_bible(translation_id))
+
+
+def resolve_translation_chapter(
+    translation_id: str,
+    book: str,
+    chapter: int | str,
+) -> dict[str, Any]:
+    """Resolve a chapter from an installed local translation."""
+
+    return resolve_chapter(book, chapter, load_translation_bible(translation_id))
 
 
 @lru_cache(maxsize=2)

@@ -14,11 +14,15 @@ from fastapi.templating import Jinja2Templates
 from bhf_agent.bible import (
     BibleError,
     list_books,
+    list_translation_books,
     search_bible_text,
-    resolve_chapter,
+    resolve_translation_chapter,
 )
 from bhf_agent.translation_catalog import (
+    LICENSE_REQUIRED_EXPLANATION,
+    PROTECTED_TRANSLATION_ACTIONS,
     catalog_by_id,
+    github_download_metadata,
     import_translation,
     translation_selector_sections,
 )
@@ -217,8 +221,11 @@ def create_app() -> FastAPI:
         )
 
     @web_app.get("/api/bible/books", response_class=JSONResponse)
-    async def bible_books() -> JSONResponse:
-        return JSONResponse({"books": list_books()})
+    async def bible_books(translation: str = "asv") -> JSONResponse:
+        try:
+            return JSONResponse({"books": list_translation_books(translation)})
+        except BibleError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
 
     @web_app.get("/api/translations/catalog", response_class=JSONResponse)
     async def translations_catalog() -> JSONResponse:
@@ -230,6 +237,42 @@ def create_app() -> FastAPI:
         if not entry:
             return JSONResponse({"error": "unknown translation"}, status_code=404)
         return JSONResponse(entry)
+
+    @web_app.post("/api/translations/{translation_id}/download", response_class=JSONResponse)
+    async def translation_download(translation_id: str) -> JSONResponse:
+        translation_id = translation_id.lower()
+        entry = catalog_by_id().get(translation_id)
+        if not entry:
+            return JSONResponse({"error": "unknown translation"}, status_code=404)
+        if entry["license_status"] == "copyrighted":
+            return JSONResponse(
+                {
+                    "error": "license required",
+                    "translation_id": translation_id,
+                    "download_enabled": False,
+                    "license_explanation": LICENSE_REQUIRED_EXPLANATION,
+                    "actions": list(PROTECTED_TRANSLATION_ACTIONS),
+                },
+                status_code=403,
+            )
+        metadata = github_download_metadata(translation_id)
+        if metadata is None:
+            return JSONResponse(
+                {
+                    "error": "translation is not approved for GitHub download",
+                    "translation_id": translation_id,
+                    "download_enabled": False,
+                },
+                status_code=400,
+            )
+        return JSONResponse(
+            {
+                **metadata,
+                "download_enabled": True,
+                "availability": "installed",
+                "offline_supported": True,
+            }
+        )
 
     @web_app.post("/api/translations/import/notice", response_class=JSONResponse)
     async def translation_import_notice(request: Request) -> JSONResponse:
@@ -246,9 +289,9 @@ def create_app() -> FastAPI:
             return JSONResponse({"error": str(exc)}, status_code=400)
 
     @web_app.get("/api/bible/{book}/{chapter}", response_class=JSONResponse)
-    async def bible_chapter(book: str, chapter: int) -> JSONResponse:
+    async def bible_chapter(book: str, chapter: int, translation: str = "asv") -> JSONResponse:
         try:
-            return JSONResponse(resolve_chapter(book, chapter))
+            return JSONResponse(resolve_translation_chapter(translation, book, chapter))
         except BibleError as exc:
             return JSONResponse({"error": str(exc)}, status_code=404)
 
