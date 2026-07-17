@@ -1,5 +1,85 @@
 # Canonical Knowledge Library
 
+## Runtime Storage
+
+CKL JSON files remain the authoritative authoring source. They are human-readable,
+validated, version-controlled, and reviewed in pull requests. SQLite is a
+generated runtime serving artifact for faster exact lookup and bounded object
+deserialization.
+
+Default local runtime database:
+
+```bash
+.bhf/ckl.sqlite
+```
+
+This path works for local development and Docker because it is outside packaged
+source files and can be rebuilt without modifying the repository. Release builds
+may place a generated database under package data, but generated SQLite files
+should not be manually edited or committed as source.
+
+Build and verify:
+
+```bash
+python -m framework.canonical_library build-db --output .bhf/ckl.sqlite
+python -m framework.canonical_library verify-db --database .bhf/ckl.sqlite
+python -m framework.canonical_library db-info --database .bhf/ckl.sqlite
+```
+
+The build loads `manifest.json`, validates every JSON object, populates a
+temporary database, verifies metadata and integrity, then atomically replaces the
+target path. If validation or verification fails, the previous database remains
+in place.
+
+SQLite stores the full validated canonical object in `payload_json` and indexes
+the fields needed for runtime retrieval: ID, type, normalized title, aliases,
+keywords, relationships, and scripture references. The BHF agent still controls
+query analysis, deterministic CKL retrieval, context package construction, and
+language-model prompting. The model does not query SQLite directly.
+
+Configuration example:
+
+```json
+{
+  "canonical_library": {
+    "backend": "sqlite",
+    "database_path": ".bhf/ckl.sqlite",
+    "json_root": "framework/canonical_library",
+    "stale_database_policy": "error",
+    "read_only": true,
+    "repository_cache_size": 256
+  }
+}
+```
+
+Environment overrides:
+
+```bash
+BHF_CKL_BACKEND=sqlite
+BHF_CKL_DATABASE_PATH=.bhf/ckl.sqlite
+BHF_CKL_STALE_DATABASE_POLICY=error
+```
+
+Stale database policies:
+
+- `error`: fail with a rebuild message when SQLite does not match JSON.
+- `rebuild`: rebuild from JSON when missing or stale.
+- `fallback_to_json`: use the JSON loader when SQLite is missing or stale.
+- `ignore`: open SQLite without comparing to JSON.
+
+Production should use `error` after building the database during deployment or
+container image creation. Development may use `fallback_to_json` or `rebuild`.
+
+Docker builds the database during image creation:
+
+```bash
+docker build .
+```
+
+The image build fails if CKL validation or database generation fails. The
+container reads `/app/.bhf/ckl.sqlite` at runtime and does not rebuild it on
+startup.
+
 The Canonical Knowledge Library (CKL) is a version-controlled store of curated biblical knowledge that lives alongside, but separate from, the LLM. Its job is to return structured facts first so the model can act as a narrator and synthesizer rather than the primary source of biblical information.
 
 ## Purpose

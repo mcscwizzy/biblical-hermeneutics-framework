@@ -325,7 +325,7 @@ class BHFAgent:
         if canonical_library is not None:
             self.canonical_library = canonical_library
         elif self.config.canonical_library.enabled or self.config.canonical_library.shadow_mode:
-            self.canonical_library = load_canonical_library()
+            self.canonical_library = load_canonical_library(config=self.config.canonical_library)
         else:
             self.canonical_library = None
         if public_answer_cache is not None:

@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 from .context_builder import CanonicalContextBuilder, build_canonical_prompt_context
+from .database_builder import BuildDatabaseResult, build_database, database_info, verify_database
+from .database_schema import CKL_DATABASE_SCHEMA_VERSION, DEFAULT_CKL_DATABASE_PATH
 from .loader import CanonicalLibrary
 from .normalization import normalize_alias, normalize_id, normalize_text, tokenize_query
 from .public_cache import (
@@ -26,6 +28,9 @@ from .runtime_cache import (
     build_response_cache_key,
     build_retrieval_cache_key,
 )
+from .repository import CKLRepositoryConfig, CanonicalRepository, load_canonical_repository
+from .sqlite_repository import SQLiteCanonicalLibrary, SQLiteCanonicalRepository
+from .json_repository import JsonCanonicalRepository
 from .retrieval import (
     ALIAS_MATCH_WEIGHT,
     CATEGORY_MATCH_WEIGHT,
@@ -102,6 +107,18 @@ __version__ = load_framework_version()
 __all__ = [
     "__version__",
     "CanonicalLibrary",
+    "CanonicalRepository",
+    "JsonCanonicalRepository",
+    "SQLiteCanonicalRepository",
+    "SQLiteCanonicalLibrary",
+    "CKLRepositoryConfig",
+    "load_canonical_repository",
+    "CKL_DATABASE_SCHEMA_VERSION",
+    "DEFAULT_CKL_DATABASE_PATH",
+    "BuildDatabaseResult",
+    "build_database",
+    "verify_database",
+    "database_info",
     "CanonicalContextBuilder",
     "build_canonical_prompt_context",
     "CanonicalObject",

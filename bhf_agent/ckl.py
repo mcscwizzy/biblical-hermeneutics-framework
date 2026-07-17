@@ -11,7 +11,12 @@ from typing import Any, Mapping, Sequence
 from framework.canonical_library import (
     CanonicalContextBuilder,
     CanonicalLibrary,
+    CKLRepositoryConfig,
+    JsonCanonicalRepository,
+    SQLiteCanonicalLibrary,
+    SQLiteCanonicalRepository,
     build_canonical_prompt_context,
+    load_canonical_repository,
 )
 from framework.canonical_library.normalization import normalize_text, tokenize_query
 
@@ -221,15 +226,49 @@ SOURCE_LIMITS_BY_DETAIL_LEVEL: dict[int, int] = {
 
 @lru_cache(maxsize=1)
 def _load_default_canonical_library() -> CanonicalLibrary:
+    backend = os.environ.get("BHF_CKL_BACKEND", "").strip()
+    database_path = os.environ.get("BHF_CKL_DATABASE_PATH", "").strip()
+    stale_policy = os.environ.get("BHF_CKL_STALE_DATABASE_POLICY", "").strip()
+    if backend or database_path or stale_policy:
+        return _library_from_repository_config(
+            CKLRepositoryConfig(
+                backend=backend or "sqlite",
+                database_path=database_path or ".bhf/ckl.sqlite",
+                json_root=os.environ.get("BHF_CKL_ROOT", "").strip() or None,
+                stale_database_policy=stale_policy or "fallback_to_json",
+            )
+        )
     root = os.environ.get("BHF_CKL_ROOT", "").strip()
     if root:
         return CanonicalLibrary(root=Path(root)).load()
     return CanonicalLibrary.load_default()
 
 
-def load_canonical_library(root: str | Path | None = None) -> CanonicalLibrary:
+def _library_from_repository_config(config: Any) -> CanonicalLibrary:
+    repository_config = CKLRepositoryConfig(
+        backend=str(getattr(config, "backend", "sqlite") or "sqlite"),
+        database_path=str(getattr(config, "database_path", ".bhf/ckl.sqlite") or ".bhf/ckl.sqlite"),
+        json_root=getattr(config, "json_root", None),
+        stale_database_policy=str(getattr(config, "stale_database_policy", "fallback_to_json") or "fallback_to_json"),
+        read_only=bool(getattr(config, "read_only", True)),
+        cache_size=int(getattr(config, "repository_cache_size", 256) or 256),
+    )
+    repository = load_canonical_repository(repository_config)
+    if isinstance(repository, JsonCanonicalRepository):
+        return repository.library
+    if isinstance(repository, SQLiteCanonicalRepository):
+        return SQLiteCanonicalLibrary(
+            repository,
+            root=repository_config.json_root or Path(__file__).resolve().parents[1] / "framework" / "canonical_library",
+        )
+    raise TypeError(f"unsupported canonical repository: {type(repository).__name__}")
+
+
+def load_canonical_library(root: str | Path | None = None, config: Any | None = None) -> CanonicalLibrary:
     """Return a loaded CKL instance, caching the default inventory in memory."""
 
+    if config is not None:
+        return _library_from_repository_config(config)
     if root is None:
         return _load_default_canonical_library()
     return CanonicalLibrary(root=Path(root)).load()

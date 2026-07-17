@@ -13,6 +13,10 @@ env/
 
 # Local BHF Agent sessions/config/output
 .bhf/
+*.sqlite
+*.sqlite.tmp
+*.sqlite-wal
+*.sqlite-shm
 .env
 local.config.json
 output.txt

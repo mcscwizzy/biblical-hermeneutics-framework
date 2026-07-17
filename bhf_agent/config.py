@@ -3,11 +3,13 @@
 from __future__ import annotations
 
 import json
+import os
 from dataclasses import asdict, dataclass, fields, replace
 from pathlib import Path
 from typing import Any, Optional, Union
 
 from framework.canonical_library import DEFAULT_PUBLIC_CACHE_PATH, REVIEW_STATUS_VALUES
+from framework.canonical_library.database_schema import DEFAULT_CKL_DATABASE_PATH
 
 from .observability import ObservabilityConfig
 
@@ -37,8 +39,24 @@ class CanonicalLibraryConfig:
         "reviewed",
         "approved",
     )
+    backend: str = "sqlite"
+    database_path: str = DEFAULT_CKL_DATABASE_PATH
+    json_root: str | None = None
+    stale_database_policy: str = "fallback_to_json"
+    read_only: bool = True
+    repository_cache_size: int = 256
 
     def validate(self) -> None:
+        if self.backend not in {"sqlite", "json"}:
+            raise ConfigError("canonical_library.backend must be one of: sqlite, json")
+        if not str(self.database_path).strip():
+            raise ConfigError("canonical_library.database_path must not be blank")
+        if self.stale_database_policy not in {"error", "rebuild", "fallback_to_json", "ignore"}:
+            raise ConfigError(
+                "canonical_library.stale_database_policy must be one of: error, rebuild, fallback_to_json, ignore"
+            )
+        if int(self.repository_cache_size) <= 0:
+            raise ConfigError("canonical_library.repository_cache_size must be greater than 0")
         if not 0 <= float(self.minimum_relevance_score) <= 1:
             raise ConfigError(
                 "canonical_library.minimum_relevance_score must be between 0 and 1"
@@ -288,6 +306,31 @@ def _canonical_library_config_from_value(
             allowed_statuses=_coerce_statuses(
                 merged["allowed_statuses"],
                 field_name="canonical_library.allowed_statuses",
+            ),
+            backend=str(
+                os.environ.get("BHF_CKL_BACKEND", merged["backend"])
+            ).strip().lower(),
+            database_path=str(
+                os.environ.get("BHF_CKL_DATABASE_PATH", merged["database_path"])
+            ).strip()
+            or DEFAULT_CKL_DATABASE_PATH,
+            json_root=(
+                str(os.environ.get("BHF_CKL_ROOT", merged["json_root"] or "")).strip()
+                or None
+            ),
+            stale_database_policy=str(
+                os.environ.get(
+                    "BHF_CKL_STALE_DATABASE_POLICY",
+                    merged["stale_database_policy"],
+                )
+            ).strip().lower(),
+            read_only=_coerce_bool(
+                merged["read_only"],
+                field_name="canonical_library.read_only",
+            ),
+            repository_cache_size=_coerce_int(
+                merged["repository_cache_size"],
+                field_name="canonical_library.repository_cache_size",
             ),
         )
     else:

@@ -8,6 +8,8 @@ import sys
 from pathlib import Path
 
 from . import CanonicalLibrary, CanonicalValidationError
+from .database_builder import build_database, database_info, verify_database
+from .database_schema import DEFAULT_CKL_DATABASE_PATH
 from .public_cache import (
     load_framework_version,
     load_framework_version_fingerprint,
@@ -18,6 +20,29 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Inspect the installed Canonical Knowledge Library release."
     )
+    subparsers = parser.add_subparsers(dest="command")
+
+    build_db = subparsers.add_parser("build-db", help="Build the generated CKL SQLite runtime database")
+    build_db.add_argument("--root", help="CKL root containing manifest.json and objects/")
+    build_db.add_argument("--output", default=DEFAULT_CKL_DATABASE_PATH, help="SQLite output path")
+
+    verify_db = subparsers.add_parser("verify-db", help="Verify a generated CKL SQLite database")
+    verify_db.add_argument("--root", help="CKL root to compare fingerprints against")
+    verify_db.add_argument("--database", default=DEFAULT_CKL_DATABASE_PATH, help="SQLite database path")
+    verify_db.add_argument(
+        "--skip-fingerprint",
+        action="store_true",
+        help="Verify structure and integrity without comparing to source JSON",
+    )
+
+    info_db = subparsers.add_parser("db-info", help="Display CKL SQLite database metadata")
+    info_db.add_argument("--database", default=DEFAULT_CKL_DATABASE_PATH, help="SQLite database path")
+    info_db.add_argument(
+        "--json",
+        action="store_true",
+        help="Emit machine-readable database metadata",
+    )
+
     parser.add_argument(
         "--root",
         help="Inspect a CKL checkout at this path instead of the packaged inventory",
@@ -69,9 +94,32 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     try:
+        if args.command == "build-db":
+            result = build_database(args.root, args.output)
+            print(f"Built CKL SQLite database: {result.path}")
+            print(f"Object count: {result.object_count}")
+            print(f"Inventory fingerprint: {result.inventory_fingerprint}")
+            return 0
+        if args.command == "verify-db":
+            report = verify_database(
+                args.database,
+                root=args.root,
+                compare_fingerprint=not args.skip_fingerprint,
+            )
+            print("CKL SQLite database verified")
+            _print_db_report(report)
+            return 0
+        if args.command == "db-info":
+            report = database_info(args.database)
+            if args.json:
+                print(json.dumps(report, indent=2, ensure_ascii=True))
+            else:
+                _print_db_report(report)
+            return 0
+
         library = _load_library(args.root)
         report = _build_report(library)
-    except (CanonicalValidationError, FileNotFoundError, ValueError, OSError) as exc:
+    except (CanonicalValidationError, FileNotFoundError, RuntimeError, ValueError, OSError) as exc:
         print(f"error: {exc}")
         return 1
 
@@ -80,6 +128,17 @@ def main(argv: list[str] | None = None) -> int:
     else:
         _print_human_report(report)
     return 0
+
+
+def _print_db_report(report: dict[str, object]) -> None:
+    print(f"Database path: {report.get('database_path') or report.get('path')}")
+    print(f"Database schema version: {report.get('database_schema_version')}")
+    print(f"Framework version: {report.get('framework_version')}")
+    print(f"CKL schema version: {report.get('schema_version')}")
+    print(f"CKL object count: {report.get('object_count')}")
+    print(f"Build timestamp: {report.get('build_timestamp')}")
+    print(f"Inventory fingerprint: {report.get('inventory_fingerprint')}")
+    print(f"Database file size: {report.get('database_file_size') or report.get('file_size')} bytes")
 
 
 if __name__ == "__main__":
