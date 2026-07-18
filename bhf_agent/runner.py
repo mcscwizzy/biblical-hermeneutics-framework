@@ -1356,6 +1356,16 @@ class BHFAgent:
             answer_mode=ctx.answer_mode,
             canonical_context_prompt=ctx.canonical_library_prompt,
         )
+        if self._response_contract(ctx.original_question) == ANSWER_CONTRACT:
+            ctx.system_prompt = "\n\n".join(
+                [
+                    ctx.system_prompt,
+                    "# STRUCTURED RESPONSE CONTRACT\n\n"
+                    'Return JSON with exactly one top-level key, "answer". '
+                    "The answer value must contain the full user-facing answer as markdown prose. "
+                    "Do not include analysis, reasoning, debug metadata, retrieval details, or tool calls.",
+                ]
+            )
         return self._mark_stage(ctx, "build_prompts")
 
     def _response_contract(self, question: str) -> str:

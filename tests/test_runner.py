@@ -1060,6 +1060,8 @@ class RunnerTests(unittest.TestCase):
             adapter.request.response_format,
             {"type": "json_object"},
         )
+        self.assertIn("STRUCTURED RESPONSE CONTRACT", adapter.request.system_prompt)
+        self.assertIn('"answer"', adapter.request.system_prompt)
         self.assertEqual(
             result.answer_text,
             "Short Answer: The Hebrew word is ruach. Basic Meaning: its "
@@ -1138,6 +1140,7 @@ class RunnerTests(unittest.TestCase):
             adapter.request.metadata["response_contract"],
             "search_results",
         )
+        self.assertNotIn("STRUCTURED RESPONSE CONTRACT", adapter.request.system_prompt)
         payload = json.loads(result.answer_text)
         self.assertEqual(payload["results"][0]["book"], "Exodus")
         self.assertEqual(payload["results"][0]["chapter"], 1)

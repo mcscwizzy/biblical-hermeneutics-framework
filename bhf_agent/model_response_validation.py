@@ -70,15 +70,25 @@ ANSWER_PRIORITY_KEYS = (
     "answer",
     "answer_text",
     "final_answer",
+    "assistant_answer",
+    "assistant_response",
+    "final",
     "response",
+    "reply",
     "text",
     "content",
+    "body",
+    "markdown",
     "output_text",
     "output",
+    "outputs",
     "result",
     "message",
     "data",
     "choices",
+    "candidates",
+    "parts",
+    "sections",
 )
 ANSWER_SECTION_KEYS = (
     "short_answer",
@@ -374,11 +384,12 @@ def _strip_code_fence(text: str) -> str:
 
 def _extract_answer_from_payload(payload: dict[str, Any]) -> str | None:
     for key in ANSWER_PRIORITY_KEYS:
-        if key in FORBIDDEN_RESPONSE_KEYS:
+        if _is_forbidden_key(key):
             continue
-        if key not in payload:
+        actual_key = _matching_key(payload, key)
+        if actual_key is None:
             continue
-        value = payload.get(key)
+        value = payload.get(actual_key)
         if key == "choices" and isinstance(value, list):
             for choice in value:
                 choice_answer = _extract_answer_from_choice(choice)
@@ -398,8 +409,9 @@ def _extract_answer_from_choice(choice: Any) -> str | None:
     if not isinstance(choice, dict):
         return None
     for key in ("message", "delta", "text", "content", "output"):
-        if key in choice and key not in FORBIDDEN_RESPONSE_KEYS:
-            extracted = _extract_text_value(choice.get(key))
+        actual_key = _matching_key(choice, key)
+        if actual_key is not None and not _is_forbidden_key(actual_key):
+            extracted = _extract_text_value(choice.get(actual_key))
             if extracted:
                 return extracted
     return None
@@ -408,9 +420,10 @@ def _extract_answer_from_choice(choice: Any) -> str | None:
 def _extract_dict_sections(payload: dict[str, Any]) -> str | None:
     sections: list[str] = []
     for key in ANSWER_SECTION_KEYS:
-        if key in FORBIDDEN_RESPONSE_KEYS or key not in payload:
+        actual_key = _matching_key(payload, key)
+        if actual_key is None or _is_forbidden_key(actual_key):
             continue
-        value = payload.get(key)
+        value = payload.get(actual_key)
         section_text = _extract_text_value(value)
         if section_text:
             heading = key.replace("_", " ").title()
@@ -420,10 +433,10 @@ def _extract_dict_sections(payload: dict[str, Any]) -> str | None:
 
 def _has_extra_keys(payload: dict[str, Any]) -> bool:
     allowed = {
-        *ANSWER_PRIORITY_KEYS,
-        *ANSWER_SECTION_KEYS,
+        *(_normalized_key(key) for key in ANSWER_PRIORITY_KEYS),
+        *(_normalized_key(key) for key in ANSWER_SECTION_KEYS),
     }
-    return any(key not in allowed for key in payload)
+    return any(_normalized_key(str(key)) not in allowed for key in payload)
 
 
 def _extract_text_value(
@@ -442,7 +455,9 @@ def _extract_text_value(
     if not isinstance(value, dict):
         return None
 
-    block_type = _normalized_block_type(value.get("type") or value.get("role"))
+    block_type = _normalized_block_type(
+        _mapping_get(value, "type") or _mapping_get(value, "role")
+    )
     if block_type in IGNORED_BLOCK_TYPES:
         return None
 
@@ -451,16 +466,34 @@ def _extract_text_value(
         return section_text
 
     for key in ANSWER_PRIORITY_KEYS:
-        if key in FORBIDDEN_RESPONSE_KEYS or key not in value:
+        actual_key = _matching_key(value, key)
+        if actual_key is None or _is_forbidden_key(actual_key):
             continue
-        extracted = _extract_text_value(value.get(key), depth=depth + 1, max_depth=max_depth)
+        extracted = _extract_text_value(
+            value.get(actual_key),
+            depth=depth + 1,
+            max_depth=max_depth,
+        )
         if extracted:
             return extracted
 
     if block_type in TEXT_BLOCK_TYPES:
-        for key in ("text", "content", "output", "answer", "response", "generated_text", "completion"):
-            if key in value and key not in FORBIDDEN_RESPONSE_KEYS:
-                extracted = _extract_text_value(value.get(key), depth=depth + 1, max_depth=max_depth)
+        for key in (
+            "text",
+            "content",
+            "output",
+            "answer",
+            "response",
+            "generated_text",
+            "completion",
+        ):
+            actual_key = _matching_key(value, key)
+            if actual_key is not None and not _is_forbidden_key(actual_key):
+                extracted = _extract_text_value(
+                    value.get(actual_key),
+                    depth=depth + 1,
+                    max_depth=max_depth,
+                )
                 if extracted:
                     return extracted
 
@@ -479,18 +512,30 @@ def _extract_text_blocks(
         text = value.strip()
         return text or None
     if isinstance(value, dict):
-        block_type = _normalized_block_type(value.get("type") or value.get("role"))
+        block_type = _normalized_block_type(
+            _mapping_get(value, "type") or _mapping_get(value, "role")
+        )
         if block_type in IGNORED_BLOCK_TYPES:
             return None
         if block_type in TEXT_BLOCK_TYPES:
             for key in ("text", "content", "output", "answer", "response"):
-                if key in value and key not in FORBIDDEN_RESPONSE_KEYS:
-                    extracted = _extract_text_value(value.get(key), depth=depth + 1, max_depth=max_depth)
+                actual_key = _matching_key(value, key)
+                if actual_key is not None and not _is_forbidden_key(actual_key):
+                    extracted = _extract_text_value(
+                        value.get(actual_key),
+                        depth=depth + 1,
+                        max_depth=max_depth,
+                    )
                     if extracted:
                         return extracted
-        for key in ("message", "delta", "content", "text", "output"):
-            if key in value and key not in FORBIDDEN_RESPONSE_KEYS:
-                extracted = _extract_text_value(value.get(key), depth=depth + 1, max_depth=max_depth)
+        for key in ("message", "delta", "content", "text", "output", "parts", "body"):
+            actual_key = _matching_key(value, key)
+            if actual_key is not None and not _is_forbidden_key(actual_key):
+                extracted = _extract_text_value(
+                    value.get(actual_key),
+                    depth=depth + 1,
+                    max_depth=max_depth,
+                )
                 if extracted:
                     return extracted
         return None
@@ -500,7 +545,9 @@ def _extract_text_blocks(
     blocks: list[str] = []
     for item in value:
         if isinstance(item, dict):
-            block_type = _normalized_block_type(item.get("type") or item.get("role"))
+            block_type = _normalized_block_type(
+                _mapping_get(item, "type") or _mapping_get(item, "role")
+            )
             if block_type in IGNORED_BLOCK_TYPES:
                 continue
         extracted = _extract_text_value(item, depth=depth + 1, max_depth=max_depth)
@@ -527,7 +574,9 @@ def _collect_safe_leaf_strings(
         collected: list[tuple[tuple[str, ...], str]] = []
         for index, item in enumerate(value):
             if isinstance(item, dict):
-                block_type = _normalized_block_type(item.get("type") or item.get("role"))
+                block_type = _normalized_block_type(
+                    _mapping_get(item, "type") or _mapping_get(item, "role")
+                )
                 if block_type in IGNORED_BLOCK_TYPES:
                     continue
             collected.extend(
@@ -544,20 +593,21 @@ def _collect_safe_leaf_strings(
 
     collected: list[tuple[tuple[str, ...], str]] = []
     for key in (*ANSWER_PRIORITY_KEYS, *ANSWER_SECTION_KEYS, *SAFE_RECOVERY_KEYS):
-        if key not in value or key in FORBIDDEN_RESPONSE_KEYS:
+        actual_key = _matching_key(value, key)
+        if actual_key is None or _is_forbidden_key(actual_key):
             continue
-        child = value.get(key)
+        child = value.get(actual_key)
         if isinstance(child, str):
             text = child.strip()
             if text and _is_recoverable_text(text):
-                collected.append((path + (key,), text))
+                collected.append((path + (actual_key,), text))
             continue
         collected.extend(
             _collect_safe_leaf_strings(
                 child,
                 depth=depth + 1,
                 max_depth=max_depth,
-                path=path + (key,),
+                path=path + (actual_key,),
             )
         )
     return collected
@@ -594,6 +644,36 @@ def _is_recoverable_text(text: str) -> bool:
 
 def _normalized_block_type(value: Any) -> str:
     return str(value or "").strip().lower()
+
+
+def _normalized_key(value: str) -> str:
+    camel_spaced = re.sub(r"(?<=[a-z0-9])(?=[A-Z])", "_", str(value).strip())
+    normalized = re.sub(r"[^a-zA-Z0-9]+", "_", camel_spaced).strip("_").lower()
+    return normalized
+
+
+NORMALIZED_FORBIDDEN_RESPONSE_KEYS = {
+    _normalized_key(key) for key in FORBIDDEN_RESPONSE_KEYS
+}
+
+
+def _is_forbidden_key(key: str) -> bool:
+    return _normalized_key(key) in NORMALIZED_FORBIDDEN_RESPONSE_KEYS
+
+
+def _matching_key(payload: Mapping[str, Any], wanted: str) -> str | None:
+    if wanted in payload:
+        return wanted
+    normalized_wanted = _normalized_key(wanted)
+    for key in payload:
+        if _normalized_key(str(key)) == normalized_wanted:
+            return str(key)
+    return None
+
+
+def _mapping_get(payload: Mapping[str, Any], wanted: str) -> Any:
+    key = _matching_key(payload, wanted)
+    return payload.get(key) if key is not None else None
 
 
 def _payload_diagnostics(

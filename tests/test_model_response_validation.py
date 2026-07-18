@@ -43,6 +43,16 @@ class ModelResponseValidationTests(unittest.TestCase):
         self.assertTrue(result.raw_text_was_json)
         self.assertEqual(result.sanitized_text, "## 1. Short Answer\nShechem matters.")
 
+    def test_answer_contract_extracts_capitalized_answer_key(self):
+        result = normalize_model_response(
+            '{"Answer":"## 1. Short Answer\\nShechem matters."}',
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertTrue(result.passed)
+        self.assertTrue(result.structured_output)
+        self.assertEqual(result.sanitized_text, "## 1. Short Answer\nShechem matters.")
+
     def test_answer_contract_extracts_common_local_model_response_alias(self):
         result = normalize_model_response(
             '{"response":"## 1. Short Answer\\nFollow Jesus by trusting and obeying him."}',
@@ -65,6 +75,30 @@ class ModelResponseValidationTests(unittest.TestCase):
         self.assertTrue(result.passed)
         self.assertEqual(result.sanitized_text, "Valid answer")
         self.assertIn("Recovered answer text", " ".join(result.warnings))
+
+    def test_answer_contract_extracts_gemini_candidate_parts(self):
+        result = normalize_model_response(
+            json.dumps(
+                {
+                    "candidates": [
+                        {
+                            "content": {
+                                "role": "model",
+                                "parts": [
+                                    {"text": "## 1. Short Answer\nShechem matters."}
+                                ],
+                            },
+                            "finishReason": "STOP",
+                        }
+                    ],
+                    "usageMetadata": {"totalTokenCount": 25},
+                }
+            ),
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertTrue(result.passed)
+        self.assertEqual(result.sanitized_text, "## 1. Short Answer\nShechem matters.")
 
     def test_answer_contract_extracts_chat_completion_shape(self):
         result = normalize_model_response(
@@ -172,6 +206,28 @@ class ModelResponseValidationTests(unittest.TestCase):
 
         self.assertTrue(result.passed)
         self.assertEqual(result.sanitized_text, "First paragraph.\nSecond paragraph.")
+
+    def test_answer_contract_extracts_section_body_arrays(self):
+        result = normalize_model_response(
+            json.dumps(
+                {
+                    "sections": [
+                        {"heading": "Short Answer", "body": "Shechem matters."},
+                        {
+                            "heading": "Context",
+                            "body": "Joshua 24 uses covenant renewal language.",
+                        },
+                    ]
+                }
+            ),
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertTrue(result.passed)
+        self.assertEqual(
+            result.sanitized_text,
+            "Shechem matters.\nJoshua 24 uses covenant renewal language.",
+        )
 
     def test_answer_contract_ignores_reasoning_and_keeps_answer(self):
         result = normalize_model_response(
