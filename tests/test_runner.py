@@ -757,6 +757,35 @@ class RunnerTests(unittest.TestCase):
         self.assertEqual(events[-1]["stage"], "error")
         self.assertEqual(events[-1]["status"], "error")
 
+    def test_model_failure_for_identity_in_jesus_uses_ckl_fallback(self):
+        adapter = ErrorRecordingAdapter(
+            "Ollama endpoint returned HTTP 500: "
+            '{"error":"llama-server process has terminated: signal: killed"}'
+        )
+        agent = self.make_agent(adapter, profile="standard")
+        events = []
+
+        result = agent.ask(
+            "what verses show my identity in jesus?",
+            status_callback=events.append,
+        )
+
+        self.assertFalse(result.errors)
+        self.assertTrue(result.model_metadata["pipeline"]["fallback_used"])
+        self.assertEqual(
+            result.model_metadata["pipeline"]["fallback_mode"],
+            "canonical_summary",
+        )
+        self.assertIn(
+            "what-verses-show-identity-in-christ",
+            result.model_metadata["pipeline"]["fallback_selected_entry_ids"],
+        )
+        self.assertIn("Identity in Christ", result.answer_text)
+        self.assertIn("Romans 8:1", result.answer_text)
+        self.assertIn("2 Corinthians 5:17", result.answer_text)
+        self.assertEqual(events[-1]["stage"], "complete")
+        self.assertFalse(any(event["status"] == "error" for event in events))
+
     def test_weak_ckl_results_do_not_block_model_fallback(self):
         adapter = RecordingAdapter()
         agent = self.make_ckl_agent(adapter, profile="standard")
