@@ -23,6 +23,7 @@ ENV_CONFIG_FIELDS = {
     "BHF_TEMPERATURE": "temperature",
     "BHF_MAX_TOKENS": "max_tokens",
     "BHF_CONTEXT_WINDOW": "context_window",
+    "BHF_RESPONSE_FORMAT_POLICY": "response_format_policy",
     "BHF_TIMEOUT_SECONDS": "timeout_seconds",
     "BHF_SHOW_METHOD_NOTES": "show_method_notes",
     "BHF_MEMORY_ENABLED": "memory_enabled",
@@ -45,6 +46,7 @@ DEFAULT_CONFIG_VALUES: dict[str, Any] = {
     "temperature": 0.3,
     "max_tokens": 8192,
     "context_window": 12288,
+    "response_format_policy": "auto",
     "show_method_notes": True,
     "timeout_seconds": 360,
     "debug": False,
@@ -118,6 +120,10 @@ def config_from_form(
             if (context_window := _optional_int_value(form, "context_window")) is not None
             else base.context_window
         ),
+        "response_format_policy": (
+            _optional_text(form, "response_format_policy")
+            or base.response_format_policy
+        ),
         "timeout_seconds": _optional_float_value(form, "timeout_seconds"),
         "show_method_notes": _checked(form, "show_method_notes"),
         "memory_enabled": _checked(form, "memory_enabled"),
@@ -142,6 +148,7 @@ def form_values_from_config(config: AgentConfig, question: str = "") -> dict[str
         "temperature": config.temperature,
         "max_tokens": config.max_tokens,
         "context_window": config.context_window,
+        "response_format_policy": config.response_format_policy,
         "timeout_seconds": config.timeout_seconds or "",
         "show_method_notes": config.show_method_notes,
         "memory_enabled": config.memory_enabled,

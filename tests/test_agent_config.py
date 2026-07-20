@@ -43,6 +43,32 @@ class AgentConfigTests(unittest.TestCase):
         self.assertEqual(config.profile, "minimal-7b")
         self.assertEqual(config.model, "local-model")
         self.assertEqual(config.context_window, 12288)
+        self.assertEqual(config.response_format_policy, "auto")
+
+    def test_response_format_policy_accepts_supported_values(self):
+        for policy in ("auto", "json_schema", "json_object", "off"):
+            config = AgentConfig.from_mapping(
+                {
+                    "adapter": "ollama",
+                    "base_url": "http://ollama:11434",
+                    "model": "gemma2:2b",
+                    "profile": "minimal-7b",
+                    "response_format_policy": policy,
+                }
+            )
+            self.assertEqual(config.response_format_policy, policy)
+
+    def test_response_format_policy_rejects_unknown_value(self):
+        with self.assertRaisesRegex(ConfigError, "response_format_policy"):
+            AgentConfig.from_mapping(
+                {
+                    "adapter": "ollama",
+                    "base_url": "http://ollama:11434",
+                    "model": "gemma2:2b",
+                    "profile": "minimal-7b",
+                    "response_format_policy": "xml",
+                }
+            )
 
     def test_cli_overrides_config_values(self):
         with tempfile.TemporaryDirectory() as tmp:

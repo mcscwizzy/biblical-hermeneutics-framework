@@ -6,6 +6,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from bhf_agent.adapters import ChatAdapter
+from bhf_agent.adapters.ollama import OllamaAdapter
 from bhf_agent.config import AgentConfig
 from bhf_agent.config import CanonicalLibraryConfig
 from bhf_agent.config import ObservabilityConfig
@@ -78,6 +79,11 @@ class StructuredJsonAdapter(ChatAdapter):
     def chat(self, request: ChatRequest) -> ChatResponse:
         self.request = request
         return ChatResponse(text=self.response_text, model="fake-model")
+
+
+class JsonSchemaAdapter(StructuredJsonAdapter):
+    def supports_json_schema_response_format(self) -> bool:
+        return True
 
 
 class ErrorAdapter(ChatAdapter):
@@ -1101,6 +1107,64 @@ class RunnerTests(unittest.TestCase):
         self.assertNotIn("{", result.answer_text)
         self.assertNotIn("analysis", result.answer_text.lower())
 
+    def test_schema_capable_adapter_receives_strict_schema(self):
+        adapter = JsonSchemaAdapter(
+            json.dumps(
+                {
+                    "answer": (
+                        "Short Answer: The Hebrew word is ruach. Basic Meaning: its "
+                        "semantic range includes wind, breath, or spirit. Context "
+                        "Matters: meaning depends on passage context. Cautions: this "
+                        "may vary by context."
+                    )
+                }
+            )
+        )
+        result = self.make_agent(adapter).ask("What is the Hebrew word for spirit or wind?")
+
+        self.assertTrue(result.validation_result.passed)
+        assert adapter.request is not None
+        self.assertEqual(adapter.request.response_format["type"], "json_schema")
+        self.assertTrue(adapter.request.response_format["json_schema"]["strict"])
+
+    def test_ollama_auto_mode_uses_prose_for_ordinary_answers(self):
+        captured = {}
+
+        def fake_urlopen(request, timeout=None):
+            captured["body"] = json.loads(request.data.decode("utf-8"))
+            return type(
+                "Response",
+                (),
+                {
+                    "__enter__": lambda self: self,
+                    "__exit__": lambda self, exc_type, exc, traceback: False,
+                    "read": lambda self: json.dumps(
+                        {
+                            "model": "gemma2:2b",
+                            "message": {
+                                "content": (
+                                    "Short Answer: The Hebrew word is ruach. Basic Meaning: "
+                                    "its semantic range includes wind, breath, or spirit. "
+                                    "Context Matters: meaning depends on passage context. "
+                                    "Cautions: this may vary by context."
+                                )
+                            },
+                        }
+                    ).encode("utf-8"),
+                },
+            )()
+
+        agent = self.make_agent(
+            OllamaAdapter("http://ollama:11434"),
+            model="gemma2:2b",
+        )
+        with patch("urllib.request.urlopen", fake_urlopen):
+            result = agent.ask("What is the Hebrew word for spirit or wind?")
+
+        self.assertTrue(result.validation_result.passed)
+        self.assertNotIn("format", captured["body"])
+        self.assertIn("# RESPONSE CONTRACT", captured["body"]["messages"][0]["content"])
+
     def test_agent_extracts_nested_json_answer_object_before_display(self):
         adapter = StructuredJsonAdapter(
             json.dumps(
@@ -1173,6 +1237,7 @@ class RunnerTests(unittest.TestCase):
         payload = json.loads(result.answer_text)
         self.assertEqual(payload["results"][0]["book"], "Exodus")
         self.assertEqual(payload["results"][0]["chapter"], 1)
+        self.assertEqual(adapter.request.response_format, {"type": "json_object"})
 
     def test_search_fallback_prompt_returns_empty_results_when_model_unavailable(self):
         adapter = ErrorAdapter()
@@ -1321,6 +1386,16 @@ class RunnerTests(unittest.TestCase):
         self.assertIn("shechem", result.model_metadata["pipeline"]["fallback_selected_entry_ids"])
         self.assertIn("Shechem", result.answer_text)
         self.assertIn("covenant", result.answer_text.lower())
+
+    def test_empty_structured_output_uses_ckl_fallback_without_repair_retry(self):
+        adapter = SequenceAdapter(["{}"])
+        agent = self.make_agent(adapter, auto_repair=True)
+
+        result = agent.ask("Why did Joshua renew the covenant at Shechem?")
+
+        self.assertEqual(len(adapter.requests), 1)
+        self.assertTrue(result.model_metadata["pipeline"]["fallback_used"])
+        self.assertIn("Shechem", result.answer_text)
 
     def test_pipeline_stores_prompts_before_model_call(self):
         with tempfile.TemporaryDirectory() as tmp:

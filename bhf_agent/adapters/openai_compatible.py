@@ -77,6 +77,7 @@ class OpenAICompatibleAdapter(ChatAdapter):
                     f"{error_body or exc.reason}{hint}"
                 ],
                 raw_provider_response=error_body,
+                error_category="provider_failure",
             )
         except (TimeoutError, socket.timeout) as exc:
             return ChatResponse(
@@ -84,6 +85,7 @@ class OpenAICompatibleAdapter(ChatAdapter):
                 provider="openai_compatible",
                 latency_ms=_elapsed_ms(started_at),
                 errors=[f"OpenAI-compatible endpoint timed out: {exc}"],
+                error_category="provider_timeout",
             )
         except urllib.error.URLError as exc:
             reason = exc.reason
@@ -99,6 +101,7 @@ class OpenAICompatibleAdapter(ChatAdapter):
                 provider="openai_compatible",
                 latency_ms=_elapsed_ms(started_at),
                 errors=[message],
+                error_category="provider_connection",
             )
         except OSError as exc:
             return ChatResponse(
@@ -106,6 +109,7 @@ class OpenAICompatibleAdapter(ChatAdapter):
                 provider="openai_compatible",
                 latency_ms=_elapsed_ms(started_at),
                 errors=[f"OpenAI-compatible endpoint request failed: {exc}"],
+                error_category="provider_failure",
             )
 
         try:
@@ -117,6 +121,7 @@ class OpenAICompatibleAdapter(ChatAdapter):
                 latency_ms=_elapsed_ms(started_at),
                 errors=[f"OpenAI-compatible endpoint returned malformed JSON: {exc}"],
                 raw_provider_response=raw_body,
+                error_category="provider_failure",
             )
 
         text, extraction_error = _extract_text(data)
@@ -129,6 +134,7 @@ class OpenAICompatibleAdapter(ChatAdapter):
                 usage=data.get("usage") if isinstance(data, dict) else None,
                 raw_provider_response=data,
                 errors=[extraction_error],
+                error_category="provider_failure",
             )
 
         return ChatResponse(

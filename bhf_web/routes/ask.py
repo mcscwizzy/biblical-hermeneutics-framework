@@ -16,6 +16,7 @@ from ..jobs import _fake_result
 from ..services.ckl_inspector import build_result_inspector_payload
 from ..services.web_helpers import (
     build_ask_question as _question_from_form,
+    agent_error_status_code,
     job_error_message as _job_error_message,
     render_safe_markdown,
     result_metadata,
@@ -131,7 +132,7 @@ def register_ask_routes(
             )
 
         answer_text = _public_answer_text(result)
-        if getattr(result, "errors", None) and not answer_text.strip():
+        if getattr(result, "errors", None):
             return templates.TemplateResponse(
                 request,
                 "partials/answer.html",
@@ -144,7 +145,7 @@ def register_ask_routes(
                     inspector_question=question,
                     inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
                 ),
-                status_code=502,
+                status_code=agent_error_status_code(result),
             )
         return templates.TemplateResponse(
             request,
@@ -214,7 +215,7 @@ def register_ask_routes(
 
         result = job.result
         answer_text = _public_answer_text(result)
-        if getattr(result, "errors", None) and not answer_text.strip():
+        if getattr(result, "errors", None):
             return templates.TemplateResponse(
                 request,
                 "partials/answer.html",
@@ -227,7 +228,7 @@ def register_ask_routes(
                     inspector_question=job.question,
                     inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
                 ),
-                status_code=502,
+                status_code=agent_error_status_code(result),
             )
         return templates.TemplateResponse(
             request,

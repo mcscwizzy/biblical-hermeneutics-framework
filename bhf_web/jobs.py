@@ -18,6 +18,7 @@ from .forms import config_from_form, load_web_defaults
 from .services.bible_search_fallback import build_bible_search_fallback_payload
 from .services.web_helpers import (
     build_ask_question as _question_from_form,
+    agent_error_status_code,
     failed_stage as _failed_stage,
     record_action,
     reader_context_from_form as _reader_context_from_form,
@@ -258,7 +259,7 @@ def run_ask_job(job: AskJob, form: dict[str, Any], agent_class: Any = BHFAgent) 
     if getattr(result, "errors", None):
         job.fail(
             "; ".join(str(error) for error in result.errors),
-            status_code=502,
+            status_code=agent_error_status_code(result),
             failed_stage=job.failed_stage or "waiting_for_model_response",
         )
         job.result = result

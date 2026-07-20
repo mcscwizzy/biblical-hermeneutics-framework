@@ -2244,9 +2244,21 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(status["status"], "error")
 
         result = asgi_request("GET", f"/ask/result/{job['job_id']}")
-        self.assertEqual(result["status"], 502)
+        self.assertEqual(result["status"], 504)
         self.assertIn("timed out", result["body"])
         self.assertIn("failed during waiting for model response", result["body"])
+
+    def test_ask_job_maps_invalid_model_output_to_unprocessable_entity(self):
+        with patch("bhf_web.app.BHFAgent", InvalidOutputAgent):
+            response = asgi_request("POST", "/ask/jobs", data=_valid_form())
+
+        self.assertEqual(response["status"], 202)
+        job = json.loads(response["body"])
+        wait_for_job(job["job_id"])
+
+        result = asgi_request("GET", f"/ask/result/{job['job_id']}")
+        self.assertEqual(result["status"], 422)
+        self.assertIn("Invalid model output", result["body"])
 
 
 class FakeAgent:
@@ -2317,6 +2329,16 @@ class ErrorAgent(FakeAgent):
         return fake_result(
             self.config,
             errors=["OpenAI-compatible endpoint timed out: timed out"],
+        )
+
+
+class InvalidOutputAgent(FakeAgent):
+    def ask(self, question, status_callback=None):
+        return fake_result(
+            self.config,
+            errors=["Invalid model output: Model response JSON contained no extractable answer text."],
+            answer_text="",
+            pipeline_overrides={"error_category": "invalid_model_output"},
         )
 
 

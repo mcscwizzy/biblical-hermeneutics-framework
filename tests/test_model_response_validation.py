@@ -32,6 +32,24 @@ class ModelResponseValidationTests(unittest.TestCase):
         self.assertTrue(result.raw_text_was_json)
         self.assertEqual(result.sanitized_text, "## 1. Short Answer\nShechem matters.")
 
+    def test_answer_contract_accepts_markdown_prose(self):
+        result = normalize_model_response(
+            "## Short Answer\nShechem anchors covenant renewal.",
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertTrue(result.passed)
+        self.assertEqual(result.sanitized_text, "## Short Answer\nShechem anchors covenant renewal.")
+
+    def test_empty_structured_answer_is_invalid_model_content(self):
+        for payload in ("{}", "[]", '{"answer":""}', '{"answer":"   "}'):
+            with self.subTest(payload=payload):
+                result = normalize_model_response(payload, response_contract=ANSWER_CONTRACT)
+
+                self.assertFalse(result.passed)
+                self.assertEqual(result.sanitized_text, "")
+                self.assertIn("no extractable answer text", result.errors[0].lower())
+
     def test_answer_contract_extracts_structured_answer_text_alias(self):
         result = normalize_model_response(
             '{"answer_text":"## 1. Short Answer\\nShechem matters."}',

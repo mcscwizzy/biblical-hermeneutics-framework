@@ -46,6 +46,7 @@ class ChatResponse(Serializable):
     latency_ms: Optional[int] = None
     usage: Optional[dict[str, Any]] = None
     raw_provider_response: Optional[Union[dict[str, Any], str]] = None
+    error_category: Optional[str] = None
     warnings: list[str] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)
 

@@ -38,6 +38,10 @@ class OllamaAdapterTests(unittest.TestCase):
                     {
                         "model": "qwen2.5:0.5b",
                         "message": {"content": "answer"},
+                        "done_reason": "stop",
+                        "prompt_eval_count": 12,
+                        "eval_count": 3,
+                        "total_duration": 1000,
                     }
                 ).encode("utf-8")
             )
@@ -70,12 +74,57 @@ class OllamaAdapterTests(unittest.TestCase):
         self.assertEqual(
             response.raw_provider_response,
             {
-                "model": "qwen2.5:0.5b",
-                "message": {"content": "answer"},
+                "metadata": {
+                    "done_reason": "stop",
+                    "prompt_eval_count": 12,
+                    "eval_count": 3,
+                    "total_duration": 1000,
+                }
             },
         )
         self.assertEqual(response.raw_response, response.raw_provider_response)
         self.assertIsNotNone(response.latency_ms)
+
+    def test_ordinary_request_omits_native_json_format(self):
+        captured = {}
+
+        def fake_urlopen(request, timeout=None):
+            captured["body"] = json.loads(request.data.decode("utf-8"))
+            return FakeHTTPResponse(
+                b'{"model":"gemma2:2b","message":{"content":"Markdown answer"}}'
+            )
+
+        adapter = OllamaAdapter("http://ollama:11434")
+        with patch("urllib.request.urlopen", fake_urlopen):
+            response = adapter.chat(ChatRequest("system", "user", "gemma2:2b"))
+
+        self.assertNotIn("format", captured["body"])
+        self.assertEqual(response.text, "Markdown answer")
+
+    def test_captures_safe_generation_metadata(self):
+        payload = {
+            "model": "gemma2:2b",
+            "message": {"content": "answer"},
+            "done_reason": "stop",
+            "prompt_eval_count": 10,
+            "prompt_eval_duration": 20,
+            "eval_count": 4,
+            "eval_duration": 30,
+            "total_duration": 50,
+            "prompt": "must not be retained",
+        }
+
+        with patch(
+            "urllib.request.urlopen",
+            lambda request, timeout=None: FakeHTTPResponse(json.dumps(payload).encode("utf-8")),
+        ):
+            response = OllamaAdapter("http://ollama:11434").chat(
+                ChatRequest("system", "user", "gemma2:2b")
+            )
+
+        self.assertEqual(response.usage["done_reason"], "stop")
+        self.assertEqual(response.usage["eval_count"], 4)
+        self.assertNotIn("prompt", response.raw_provider_response)
 
     def test_preserves_json_string_assistant_content(self):
         payload = {
@@ -98,7 +147,7 @@ class OllamaAdapterTests(unittest.TestCase):
             response = adapter.chat(request)
 
         self.assertEqual(response.text, '{"answer":"Valid answer"}')
-        self.assertEqual(response.raw_provider_response, payload)
+        self.assertEqual(response.raw_provider_response, {"metadata": {}})
 
     def test_health_check_reports_installed_model(self):
         def fake_urlopen(request, timeout=None):
@@ -140,6 +189,7 @@ class OllamaAdapterTests(unittest.TestCase):
 
         self.assertEqual(response.text, "")
         self.assertIn("HTTP 500", response.errors[0])
+        self.assertEqual(response.error_category, "provider_failure")
 
 
 if __name__ == "__main__":

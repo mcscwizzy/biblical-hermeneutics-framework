@@ -20,6 +20,7 @@ class ConfigError(ValueError):
 
 ALLOWED_ANSWER_MODES = ("concise", "study", "teaching", "scholar")
 ALLOWED_ADAPTERS = ("openai_compatible", "ollama")
+ALLOWED_RESPONSE_FORMAT_POLICIES = ("auto", "json_schema", "json_object", "off")
 
 
 @dataclass(frozen=True)
@@ -134,6 +135,7 @@ class AgentConfig:
     canonical_library: CanonicalLibraryConfig = CanonicalLibraryConfig()
     public_cache: PublicCacheConfig = PublicCacheConfig()
     observability: ObservabilityConfig = ObservabilityConfig()
+    response_format_policy: str = "auto"
 
     @classmethod
     def from_json_file(cls, path: Union[str, Path]) -> "AgentConfig":
@@ -207,6 +209,11 @@ class AgentConfig:
             raise ConfigError(f"base_url is required for {self.adapter} adapter")
         if not self.model:
             raise ConfigError("model is required")
+        if self.response_format_policy not in ALLOWED_RESPONSE_FORMAT_POLICIES:
+            raise ConfigError(
+                "response_format_policy must be one of: "
+                + ", ".join(ALLOWED_RESPONSE_FORMAT_POLICIES)
+            )
         if not self.profile:
             raise ConfigError("profile is required")
         if self.answer_mode not in ALLOWED_ANSWER_MODES:

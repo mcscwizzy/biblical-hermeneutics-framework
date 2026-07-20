@@ -479,7 +479,8 @@ class BHFAgent:
                 .replace("+00:00", "Z"),
                 "prompt_version": PROMPT_VERSION,
                 "response_contract": response_contract,
-                "response_format_requested": response_contract != "freeform",
+                "response_format_requested": False,
+                "response_format_policy": self.config.response_format_policy,
                 "local_knowledge_keys": [],
                 "canonical_library_enabled": self.config.canonical_library.enabled,
                 "canonical_library_shadow_mode": self.config.canonical_library.shadow_mode,
@@ -1356,14 +1357,22 @@ class BHFAgent:
             answer_mode=ctx.answer_mode,
             canonical_context_prompt=ctx.canonical_library_prompt,
         )
+        response_format = self._response_format_for_contract(ctx)
         if self._response_contract(ctx.original_question) == ANSWER_CONTRACT:
             ctx.system_prompt = "\n\n".join(
                 [
                     ctx.system_prompt,
-                    "# STRUCTURED RESPONSE CONTRACT\n\n"
-                    'Return JSON with exactly one top-level key, "answer". '
-                    "The answer value must contain the full user-facing answer as markdown prose. "
-                    "Do not include analysis, reasoning, debug metadata, retrieval details, or tool calls.",
+                    (
+                        "# STRUCTURED RESPONSE CONTRACT\n\n"
+                        'Return JSON with exactly one top-level key, "answer". '
+                        "The answer value must contain the full user-facing answer as markdown prose. "
+                        "Do not include analysis, reasoning, debug metadata, retrieval details, or tool calls."
+                        if response_format is not None
+                        else
+                        "# RESPONSE CONTRACT\n\n"
+                        "Return the full user-facing answer as Markdown/prose. "
+                        "Do not wrap the answer in JSON. Do not include analysis, reasoning, debug metadata, retrieval details, or tool calls."
+                    ),
                 ]
             )
         return self._mark_stage(ctx, "build_prompts")
@@ -1378,11 +1387,25 @@ class BHFAgent:
 
     def _response_format_for_contract(self, ctx: PipelineContext) -> dict[str, Any] | None:
         contract = self._response_contract(ctx.original_question)
+        policy = self.config.response_format_policy
+        if policy == "off":
+            return None
+        supports_schema = bool(
+            getattr(self.adapter, "supports_json_schema_response_format", lambda: False)()
+        )
         if contract == ANSWER_CONTRACT:
-            if hasattr(self.adapter, "supports_json_schema_response_format") and self.adapter.supports_json_schema_response_format():
+            if policy == "json_schema":
+                return structured_response_format(prefer_json_schema=True) if supports_schema else None
+            if policy == "json_object":
+                return structured_response_format()
+            if supports_schema:
                 return structured_response_format(prefer_json_schema=True)
+            if isinstance(self.adapter, OllamaAdapter) or self.config.adapter == "ollama":
+                return None
             return structured_response_format()
-        if contract == SEARCH_RESULTS_CONTRACT:
+        if contract == SEARCH_RESULTS_CONTRACT and policy != "json_schema":
+            return structured_response_format()
+        if contract == SEARCH_RESULTS_CONTRACT and supports_schema:
             return structured_response_format()
         return None
 
@@ -1607,6 +1630,11 @@ class BHFAgent:
         ):
             raise RuntimeError("pipeline context is incomplete before model call")
         model_started_at = time.perf_counter()
+        response_format = self._response_format_for_contract(ctx)
+        ctx.debug_metadata["response_format_requested"] = response_format is not None
+        ctx.debug_metadata["response_format_type"] = (
+            response_format.get("type") if response_format is not None else None
+        )
         chat_request = ChatRequest(
             system_prompt=ctx.system_prompt,
             user_prompt=ctx.user_prompt,
@@ -1614,7 +1642,7 @@ class BHFAgent:
             temperature=self.config.temperature,
             max_tokens=self.config.max_tokens,
             context_window=self.config.context_window,
-            response_format=self._response_format_for_contract(ctx),
+            response_format=response_format,
             metadata={
                 "profile": ctx.profile_name,
                 "answer_mode": ctx.answer_mode,
@@ -1652,6 +1680,8 @@ class BHFAgent:
         ctx.raw_answer_text = chat_response.text
         ctx.warnings.extend(chat_response.warnings)
         ctx.errors.extend(chat_response.errors)
+        if chat_response.error_category:
+            ctx.debug_metadata["error_category"] = chat_response.error_category
         if chat_response.errors and not bool(ctx.debug_metadata.get("ckl_context_injected")):
             ctx.raw_answer_text = ""
         if chat_response.provider:
@@ -1719,6 +1749,15 @@ class BHFAgent:
         ):
             raise RuntimeError("pipeline context is incomplete before repair")
 
+        if (
+            bool(ctx.debug_metadata.get("ckl_context_injected"))
+            and bool(ctx.debug_metadata.get("response_validation_json_without_answer"))
+        ):
+            ctx.debug_metadata["repair_skipped_reason"] = (
+                "deterministic_fallback_preferred_for_empty_structured_output"
+            )
+            return self._mark_stage(ctx, "repair_response")
+
         decision = decide_repair(ctx.validation_result, self.config)
         ctx.repair_decision = decision
         ctx.debug_metadata["repair_decision"] = decision.to_dict()
@@ -1765,6 +1804,8 @@ class BHFAgent:
         ctx.debug_metadata["repair_attempted"] = True
         ctx.warnings.extend(chat_response.warnings)
         ctx.errors.extend(chat_response.errors)
+        if chat_response.error_category:
+            ctx.debug_metadata["error_category"] = chat_response.error_category
 
         response_validation = self._apply_model_response_validation(
             ctx,
@@ -1845,13 +1886,17 @@ class BHFAgent:
 
     def _finalize_result(self, ctx: PipelineContext) -> PipelineContext:
         ctx.final_answer = ctx.cleaned_answer_text or ""
+        validation_errors = list(
+            ctx.debug_metadata.get("response_validation_errors") or []
+        )
+        if validation_errors and not ctx.debug_metadata.get("fallback_used"):
+            for error in validation_errors:
+                controlled_error = f"Invalid model output: {error}"
+                if controlled_error not in ctx.errors:
+                    ctx.errors.append(controlled_error)
+            ctx.debug_metadata["error_category"] = "invalid_model_output"
         if not ctx.final_answer.strip():
-            validation_errors = list(
-                ctx.debug_metadata.get("response_validation_errors") or []
-            )
-            if validation_errors:
-                ctx.errors.extend(str(error) for error in validation_errors)
-            elif not ctx.errors:
+            if not validation_errors and not ctx.errors:
                 ctx.errors.append("Model response was empty after validation.")
         message = (
             "Finalizing fallback answer"
@@ -1929,6 +1974,8 @@ class BHFAgent:
             "memory_turns_saved": ctx.debug_metadata.get("memory_turns_saved", 0),
             "model": chat_response.model,
             "usage": chat_response.usage,
+            "error_category": ctx.debug_metadata.get("error_category")
+            or chat_response.error_category,
             "cleanup_applied": ctx.debug_metadata.get("output_cleanup_applied", False),
             "cleanup_removed_headings": ctx.debug_metadata.get(
                 "cleanup_removed_headings", []

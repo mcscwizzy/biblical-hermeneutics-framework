@@ -191,6 +191,30 @@ def job_error_message(job: Any) -> str:
     return getattr(job, "error", None) or "Request failed."
 
 
+def agent_error_status_code(result: Any) -> int:
+    """Map controlled agent failures to an HTTP status without exposing internals."""
+
+    metadata = getattr(result, "model_metadata", {}) or {}
+    category = str(metadata.get("error_category") or "").strip().lower()
+    pipeline = metadata.get("pipeline") if isinstance(metadata.get("pipeline"), dict) else {}
+    category = category or str(pipeline.get("error_category") or "").strip().lower()
+    errors = " ".join(str(error) for error in (getattr(result, "errors", None) or []))
+    lowered = f"{category} {errors}".lower()
+    if category == "invalid_model_output" or any(
+        marker in lowered
+        for marker in (
+            "invalid model output",
+            "no extractable answer text",
+            "response was empty after",
+            "response json contained no",
+        )
+    ):
+        return 422
+    if category == "provider_timeout" or "timed out" in lowered or "timeout" in lowered:
+        return 504
+    return 502
+
+
 def result_metadata(result: Any) -> dict[str, Any]:
     metadata = getattr(result, "model_metadata", {}) or {}
     pipeline = metadata.get("pipeline") if isinstance(metadata.get("pipeline"), dict) else {}

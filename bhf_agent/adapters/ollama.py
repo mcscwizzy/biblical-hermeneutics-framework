@@ -73,7 +73,8 @@ class OllamaAdapter(ChatAdapter):
                     f"Ollama endpoint returned HTTP {exc.code}: "
                     f"{error_body or exc.reason}"
                 ],
-                raw_provider_response=error_body,
+                raw_provider_response=_safe_error_metadata(error_body),
+                error_category="provider_failure",
             )
         except (TimeoutError, socket.timeout) as exc:
             return ChatResponse(
@@ -81,6 +82,7 @@ class OllamaAdapter(ChatAdapter):
                 provider="ollama",
                 latency_ms=_elapsed_ms(started_at),
                 errors=[f"Ollama endpoint timed out: {exc}"],
+                error_category="provider_timeout",
             )
         except urllib.error.URLError as exc:
             reason = exc.reason
@@ -96,6 +98,7 @@ class OllamaAdapter(ChatAdapter):
                 provider="ollama",
                 latency_ms=_elapsed_ms(started_at),
                 errors=[message],
+                error_category="provider_connection",
             )
         except OSError as exc:
             return ChatResponse(
@@ -103,6 +106,7 @@ class OllamaAdapter(ChatAdapter):
                 provider="ollama",
                 latency_ms=_elapsed_ms(started_at),
                 errors=[f"Ollama endpoint request failed: {exc}"],
+                error_category="provider_failure",
             )
 
         try:
@@ -113,18 +117,22 @@ class OllamaAdapter(ChatAdapter):
                 provider="ollama",
                 latency_ms=_elapsed_ms(started_at),
                 errors=[f"Ollama endpoint returned malformed JSON: {exc}"],
-                raw_provider_response=raw_body,
+                raw_provider_response=_safe_error_metadata(raw_body),
+                error_category="provider_failure",
             )
 
         text, extraction_error = _extract_text(data)
+        safe_metadata = _safe_response_metadata(data)
         if extraction_error:
             return ChatResponse(
                 text="",
                 model=data.get("model") if isinstance(data, dict) else None,
                 provider="ollama",
                 latency_ms=_elapsed_ms(started_at),
-                raw_provider_response=data,
+                usage=safe_metadata,
+                raw_provider_response={"metadata": safe_metadata},
                 errors=[extraction_error],
+                error_category="provider_failure",
             )
 
         return ChatResponse(
@@ -132,7 +140,8 @@ class OllamaAdapter(ChatAdapter):
             model=data.get("model"),
             provider="ollama",
             latency_ms=_elapsed_ms(started_at),
-            raw_provider_response=data,
+            usage=safe_metadata,
+            raw_provider_response={"metadata": safe_metadata},
         )
 
     def health_check(self, model: Optional[str] = None) -> dict[str, Any]:
@@ -166,9 +175,29 @@ class OllamaAdapter(ChatAdapter):
 
 def _safe_read_error(exc: urllib.error.HTTPError) -> str:
     try:
-        return exc.read().decode("utf-8")
+        return exc.read().decode("utf-8", errors="replace")[:1000]
     except Exception:
         return ""
+
+
+def _safe_error_metadata(value: Any) -> dict[str, str]:
+    text = str(value or "").strip()
+    return {"error": text[:1000]} if text else {}
+
+
+def _safe_response_metadata(data: Any) -> dict[str, Any]:
+    if not isinstance(data, dict):
+        return {}
+    keys = {
+        "done_reason",
+        "total_duration",
+        "load_duration",
+        "prompt_eval_count",
+        "prompt_eval_duration",
+        "eval_count",
+        "eval_duration",
+    }
+    return {key: data[key] for key in keys if key in data}
 
 
 def _elapsed_ms(started_at: float) -> int:
