@@ -75,6 +75,7 @@ class WebFormTests(unittest.TestCase):
                 "base_url": "http://localhost:1234/v1",
                 "temperature": "0.4",
                 "max_tokens": "1024",
+                "context_window": "12288",
                 "show_method_notes": "on",
                 "memory_enabled": "on",
                 "session_id": "lesson-1",
@@ -90,6 +91,7 @@ class WebFormTests(unittest.TestCase):
         self.assertEqual(config.base_url, "http://localhost:1234/v1")
         self.assertEqual(config.temperature, 0.4)
         self.assertEqual(config.max_tokens, 1024)
+        self.assertEqual(config.context_window, 12288)
         self.assertTrue(config.show_method_notes)
         self.assertTrue(config.memory_enabled)
         self.assertEqual(config.session_id, "lesson-1")
@@ -124,6 +126,7 @@ class WebFormTests(unittest.TestCase):
             "BHF_ANSWER_MODE": "concise",
             "BHF_TEMPERATURE": "0.2",
             "BHF_MAX_TOKENS": "1024",
+            "BHF_CONTEXT_WINDOW": "12288",
             "BHF_TIMEOUT_SECONDS": "45",
             "BHF_SHOW_METHOD_NOTES": "false",
             "BHF_MEMORY_ENABLED": "true",
@@ -142,6 +145,7 @@ class WebFormTests(unittest.TestCase):
         self.assertEqual(config.answer_mode, "concise")
         self.assertEqual(config.temperature, 0.2)
         self.assertEqual(config.max_tokens, 1024)
+        self.assertEqual(config.context_window, 12288)
         self.assertEqual(config.timeout_seconds, 45)
         self.assertFalse(config.show_method_notes)
         self.assertTrue(config.memory_enabled)
@@ -167,6 +171,8 @@ class WebFormTests(unittest.TestCase):
         self.assertEqual(config.model, "qwen2.5:0.5b")
         self.assertEqual(config.profile, "standard")
         self.assertEqual(config.answer_mode, "study")
+        self.assertEqual(config.max_tokens, 8192)
+        self.assertEqual(config.context_window, 12288)
 
     def test_web_defaults_use_360_second_timeout(self):
         loaded = load_web_defaults(path="/tmp/bhf-web-config-does-not-exist.json")
@@ -203,6 +209,31 @@ class WebFormTests(unittest.TestCase):
         self.assertEqual(config.profile, "minimal-7b")
         self.assertEqual(config.answer_mode, "concise")
         self.assertEqual(config.timeout_seconds, 360)
+
+    def test_form_can_override_ollama_adapter_for_openai_compatible_endpoint(self):
+        defaults = AgentConfig(
+            adapter="ollama",
+            base_url="http://ollama:11434",
+            model="llama3.2:3b",
+        )
+
+        config = config_from_form(
+            {
+                "adapter": "openai_compatible",
+                "profile": "minimal-7b",
+                "answer_mode": "study",
+                "model": "google/gemma-4-e4b",
+                "base_url": "http://host.docker.internal:8080/v1",
+                "temperature": "0.3",
+                "max_tokens": "1024",
+                "memory_max_turns": "4",
+            },
+            defaults,
+        )
+
+        self.assertEqual(config.adapter, "openai_compatible")
+        self.assertEqual(config.base_url, "http://host.docker.internal:8080/v1")
+        self.assertEqual(config.model, "google/gemma-4-e4b")
 
 
 class RuntimeConfigTests(unittest.TestCase):

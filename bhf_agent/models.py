@@ -26,7 +26,8 @@ class ChatRequest(Serializable):
     user_prompt: str
     model: str
     temperature: float = 0.3
-    max_tokens: int = 2048
+    max_tokens: int = 8192
+    context_window: int = 12288
     metadata: dict[str, Any] = field(default_factory=dict)
     response_format: Optional[dict[str, Any]] = None
 

@@ -107,11 +107,13 @@
               <button type="button" class="secondary" data-search-clear data-testid="bible-search-clear" hidden>Clear</button>
             </div>
             <input type="hidden" name="profile" value="{{ form.profile }}">
+            <input type="hidden" name="adapter" value="{{ form.adapter }}">
             <input type="hidden" name="answer_mode" value="{{ form.answer_mode }}">
             <input type="hidden" name="model" value="{{ form.model }}">
             <input type="hidden" name="base_url" value="{{ form.base_url }}">
             <input type="hidden" name="temperature" value="{{ form.temperature }}">
             <input type="hidden" name="max_tokens" value="{{ form.max_tokens }}">
+            <input type="hidden" name="context_window" value="{{ form.context_window }}">
             <input type="hidden" name="timeout_seconds" value="{{ form.timeout_seconds }}">
             <input type="hidden" name="memory_max_turns" value="{{ form.memory_max_turns }}">
             {% if form.show_method_notes %}<input type="hidden" name="show_method_notes" value="on">{% endif %}
@@ -200,6 +202,15 @@
                   <summary>Model settings</summary>
                   <div class="config-fields" data-config-fields>
                   <label>
+                    <span>Provider</span>
+                    <select name="adapter">
+                      {% for adapter in adapters %}
+                        <option value="{{ adapter }}" {% if adapter == form.adapter %}selected{% endif %}>{{ adapter }}</option>
+                      {% endfor %}
+                    </select>
+                  </label>
+
+                  <label>
                     <span>Profile</span>
                     <select name="profile">
                       {% for profile in profiles %}
@@ -235,6 +246,11 @@
                   <label>
                     <span>Max tokens</span>
                     <input type="number" name="max_tokens" min="1" step="1" value="{{ form.max_tokens }}" required>
+                  </label>
+
+                  <label>
+                    <span>Context window</span>
+                    <input type="number" name="context_window" min="1" step="1" value="{{ form.context_window }}" required>
                   </label>
 
                   <label>

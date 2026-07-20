@@ -222,7 +222,8 @@ If the file is missing or invalid, the UI uses built-in local defaults:
   "profile": "minimal-7b",
   "answer_mode": "study",
   "temperature": 0.3,
-  "max_tokens": 2048,
+  "max_tokens": 8192,
+  "context_window": 12288,
   "timeout_seconds": 360,
   "show_method_notes": true
 }

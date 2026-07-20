@@ -49,6 +49,7 @@ class OllamaAdapterTests(unittest.TestCase):
             model="qwen2.5:0.5b",
             temperature=0.2,
             max_tokens=128,
+            context_window=12288,
             response_format={"type": "json_object"},
         )
 
@@ -61,6 +62,7 @@ class OllamaAdapterTests(unittest.TestCase):
         self.assertFalse(captured["body"]["stream"])
         self.assertEqual(captured["body"]["options"]["temperature"], 0.2)
         self.assertEqual(captured["body"]["options"]["num_predict"], 128)
+        self.assertEqual(captured["body"]["options"]["num_ctx"], 12288)
         self.assertEqual(captured["body"]["format"], "json")
         self.assertEqual(response.text, "answer")
         self.assertEqual(response.model, "qwen2.5:0.5b")

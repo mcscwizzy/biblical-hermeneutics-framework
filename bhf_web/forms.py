@@ -8,7 +8,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Mapping
 
-from bhf_agent.config import ALLOWED_ANSWER_MODES, AgentConfig, ConfigError
+from bhf_agent.config import ALLOWED_ADAPTERS, ALLOWED_ANSWER_MODES, AgentConfig, ConfigError
 
 from . import settings
 
@@ -22,6 +22,7 @@ ENV_CONFIG_FIELDS = {
     "BHF_ANSWER_MODE": "answer_mode",
     "BHF_TEMPERATURE": "temperature",
     "BHF_MAX_TOKENS": "max_tokens",
+    "BHF_CONTEXT_WINDOW": "context_window",
     "BHF_TIMEOUT_SECONDS": "timeout_seconds",
     "BHF_SHOW_METHOD_NOTES": "show_method_notes",
     "BHF_MEMORY_ENABLED": "memory_enabled",
@@ -42,7 +43,8 @@ DEFAULT_CONFIG_VALUES: dict[str, Any] = {
     "model": "llama3.1:8b",
     "base_url": "http://localhost:11434/v1",
     "temperature": 0.3,
-    "max_tokens": 2048,
+    "max_tokens": 8192,
+    "context_window": 12288,
     "show_method_notes": True,
     "timeout_seconds": 360,
     "debug": False,
@@ -104,12 +106,18 @@ def config_from_form(
 
     base = defaults or load_web_defaults().config
     overrides = {
+        "adapter": _optional_text(form, "adapter") or base.adapter,
         "profile": _required_text(form, "profile"),
         "answer_mode": _required_text(form, "answer_mode"),
         "model": _required_text(form, "model"),
         "base_url": _required_text(form, "base_url"),
         "temperature": _float_value(form, "temperature"),
         "max_tokens": _int_value(form, "max_tokens"),
+        "context_window": (
+            context_window
+            if (context_window := _optional_int_value(form, "context_window")) is not None
+            else base.context_window
+        ),
         "timeout_seconds": _optional_float_value(form, "timeout_seconds"),
         "show_method_notes": _checked(form, "show_method_notes"),
         "memory_enabled": _checked(form, "memory_enabled"),
@@ -126,12 +134,14 @@ def form_values_from_config(config: AgentConfig, question: str = "") -> dict[str
 
     return {
         "question": question,
+        "adapter": config.adapter,
         "profile": config.profile,
         "answer_mode": config.answer_mode,
         "model": config.model or "",
         "base_url": config.base_url or "",
         "temperature": config.temperature,
         "max_tokens": config.max_tokens,
+        "context_window": config.context_window,
         "timeout_seconds": config.timeout_seconds or "",
         "show_method_notes": config.show_method_notes,
         "memory_enabled": config.memory_enabled,
@@ -186,6 +196,16 @@ def _int_value(form: Mapping[str, Any], name: str) -> int:
         raise ConfigError(f"{name.replace('_', ' ')} must be an integer") from exc
 
 
+def _optional_int_value(form: Mapping[str, Any], name: str) -> int | None:
+    value = str(form.get(name) or "").strip()
+    if not value:
+        return None
+    try:
+        return int(value)
+    except ValueError as exc:
+        raise ConfigError(f"{name.replace('_', ' ')} must be an integer") from exc
+
+
 def _checked(form: Mapping[str, Any], name: str) -> bool:
     return name in form
 
@@ -210,7 +230,7 @@ def _env_value(field_name: str, raw_value: str) -> Any:
             return float(raw_value)
         except ValueError as exc:
             raise ConfigError(f"{field_name} must be a number") from exc
-    if leaf_name in {"max_tokens"}:
+    if leaf_name in {"max_tokens", "context_window"}:
         try:
             return int(raw_value)
         except ValueError as exc:
@@ -250,3 +270,4 @@ def _env_bool(raw_value: str, field_name: str) -> bool:
 
 
 ANSWER_MODES = ALLOWED_ANSWER_MODES
+ADAPTERS = ALLOWED_ADAPTERS

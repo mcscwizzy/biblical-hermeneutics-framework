@@ -44,6 +44,7 @@ from bhf_agent.study_db import (
 )
 
 from .forms import (
+    ADAPTERS,
     ANSWER_MODES,
     form_values_from_config,
     load_web_defaults,
@@ -220,6 +221,7 @@ def create_app() -> FastAPI:
             shared_context(
                 {
                     "form": form_values_from_config(loaded.config),
+                    "adapters": ADAPTERS,
                     "profiles": _available_profiles(loaded.config.profile),
                     "answer_modes": ANSWER_MODES,
                     "config_warning": loaded.warning,

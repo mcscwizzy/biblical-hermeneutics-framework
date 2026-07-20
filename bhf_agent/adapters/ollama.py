@@ -43,6 +43,7 @@ class OllamaAdapter(ChatAdapter):
             "options": {
                 "temperature": request.temperature,
                 "num_predict": request.max_tokens,
+                "num_ctx": request.context_window,
             },
         }
         if request.response_format is not None:

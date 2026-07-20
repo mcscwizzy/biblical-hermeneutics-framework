@@ -3,6 +3,8 @@ services:
     image: ollama/ollama:latest
     ports:
       - "11434:11434"
+    environment:
+      OLLAMA_CONTEXT_LENGTH: "${BHF_CONTEXT_WINDOW:-12288}"
     restart: unless-stopped
     volumes:
       - ollama:/root/.ollama
@@ -47,7 +49,8 @@ services:
       BHF_PROFILE: "${BHF_PROFILE:-standard}"
       BHF_ANSWER_MODE: "${BHF_ANSWER_MODE:-study}"
       BHF_TEMPERATURE: "${BHF_TEMPERATURE:-0.3}"
-      BHF_MAX_TOKENS: "${BHF_MAX_TOKENS:-2048}"
+      BHF_MAX_TOKENS: "${BHF_MAX_TOKENS:-8192}"
+      BHF_CONTEXT_WINDOW: "${BHF_CONTEXT_WINDOW:-12288}"
       BHF_SHOW_METHOD_NOTES: "${BHF_SHOW_METHOD_NOTES:-true}"
       BHF_MEMORY_ENABLED: "${BHF_MEMORY_ENABLED:-false}"
       BHF_MEMORY_PATH: /app/.bhf-data/sessions

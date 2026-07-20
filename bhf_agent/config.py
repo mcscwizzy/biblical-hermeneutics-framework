@@ -119,7 +119,8 @@ class AgentConfig:
     base_url: Optional[str] = None
     api_key: Optional[str] = None
     temperature: float = 0.3
-    max_tokens: int = 2048
+    max_tokens: int = 8192
+    context_window: int = 12288
     show_method_notes: bool = True
     timeout_seconds: Optional[float] = 600
     debug: bool = False
@@ -216,6 +217,8 @@ class AgentConfig:
             raise ConfigError("temperature must be between 0 and 2")
         if int(self.max_tokens) <= 0:
             raise ConfigError("max_tokens must be greater than 0")
+        if int(self.context_window) <= 0:
+            raise ConfigError("context_window must be greater than 0")
         if self.timeout_seconds is not None and float(self.timeout_seconds) <= 0:
             raise ConfigError("timeout_seconds must be greater than 0")
         if int(self.max_repair_attempts) < 0:

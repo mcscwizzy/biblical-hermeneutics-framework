@@ -1613,6 +1613,7 @@ class BHFAgent:
             model=self.config.model or "",
             temperature=self.config.temperature,
             max_tokens=self.config.max_tokens,
+            context_window=self.config.context_window,
             response_format=self._response_format_for_contract(ctx),
             metadata={
                 "profile": ctx.profile_name,
@@ -1748,6 +1749,7 @@ class BHFAgent:
             model=self.config.model or "",
             temperature=self.config.temperature,
             max_tokens=self.config.max_tokens,
+            context_window=self.config.context_window,
             metadata={
                 "repair": True,
                 "profile": ctx.profile_name,

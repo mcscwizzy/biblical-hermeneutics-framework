@@ -138,7 +138,8 @@ Example `agent-config.json`:
   "model": "local-model",
   "profile": "minimal-7b",
   "temperature": 0.3,
-  "max_tokens": 2048,
+  "max_tokens": 8192,
+  "context_window": 12288,
   "timeout_seconds": 120,
   "show_method_notes": true,
   "debug": false
@@ -215,7 +216,7 @@ Request shape:
     {"role": "user", "content": "..."}
   ],
   "temperature": 0.3,
-  "max_tokens": 2048
+  "max_tokens": 8192
 }
 ```
 

@@ -42,6 +42,7 @@ class AgentConfigTests(unittest.TestCase):
         self.assertEqual(config.adapter, "openai_compatible")
         self.assertEqual(config.profile, "minimal-7b")
         self.assertEqual(config.model, "local-model")
+        self.assertEqual(config.context_window, 12288)
 
     def test_cli_overrides_config_values(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -94,6 +95,8 @@ class AgentConfigTests(unittest.TestCase):
         self.assertEqual(config.max_repair_attempts, 1)
         self.assertEqual(config.repair_threshold, 80)
         self.assertEqual(config.answer_mode, "study")
+        self.assertEqual(config.max_tokens, 8192)
+        self.assertEqual(config.context_window, 12288)
         self.assertFalse(config.memory_enabled)
         self.assertIsNone(config.session_id)
         self.assertIsNone(config.memory_path)

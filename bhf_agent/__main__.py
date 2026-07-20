@@ -28,6 +28,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--model", help="Local model name")
     parser.add_argument("--temperature", type=float, help="Sampling temperature")
     parser.add_argument("--max-tokens", type=int, help="Maximum response tokens")
+    parser.add_argument("--context-window", type=int, help="Model context window tokens")
     repair_group = parser.add_mutually_exclusive_group()
     repair_group.add_argument(
         "--repair",
@@ -92,6 +93,7 @@ def config_from_args(args: argparse.Namespace) -> AgentConfig:
         model=args.model,
         temperature=args.temperature,
         max_tokens=args.max_tokens,
+        context_window=getattr(args, "context_window", None),
         auto_repair=getattr(args, "auto_repair", None),
         max_repair_attempts=getattr(args, "max_repair_attempts", None),
         repair_threshold=getattr(args, "repair_threshold", None),
