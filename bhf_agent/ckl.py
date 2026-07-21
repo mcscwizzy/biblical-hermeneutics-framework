@@ -21,10 +21,11 @@ from framework.canonical_library import (
 from framework.canonical_library.normalization import normalize_text, tokenize_query
 
 from .models import QuestionContext, ReferenceContext
+from .token_estimation import estimate_tokens
 
 
 def _estimate_tokens(text: str) -> int:
-    return max(1, round(len(text) / 4))
+    return estimate_tokens(text)
 
 
 CKL_STRONG_MATCH_THRESHOLD = 0.85

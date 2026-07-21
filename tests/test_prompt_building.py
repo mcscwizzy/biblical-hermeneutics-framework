@@ -4,7 +4,7 @@ from bhf_agent.ckl import build_canonical_context, format_canonical_context_for_
 from bhf_agent.genre import classify_genre
 from bhf_agent.knowledge import lookup_lexical_entries, lookup_local_knowledge
 from bhf_agent.memory import SessionMemory, SessionTurn
-from bhf_agent.prompts import build_prompt
+from bhf_agent.prompts import build_prompt, build_prompt_result
 from bhf_agent.question_types import classify_question_type
 from bhf_agent.references import detect_reference
 
@@ -14,7 +14,7 @@ class PromptBuildingTests(unittest.TestCase):
         self.reference = detect_reference("What does Proverbs 3 mean?")
         self.genre = classify_genre(self.reference)
 
-    def test_build_prompt_includes_profile_context_and_question(self):
+    def test_build_prompt_uses_compact_runtime_framework_by_default(self):
         system_prompt, user_prompt = build_prompt(
             "standard",
             "PROFILE CONTENT",
@@ -23,14 +23,31 @@ class PromptBuildingTests(unittest.TestCase):
             "What does Proverbs 3 mean?",
         )
 
-        self.assertIn("PROFILE CONTENT", system_prompt)
+        self.assertNotIn("PROFILE CONTENT", system_prompt)
         self.assertIn("# SYSTEM INSTRUCTIONS", system_prompt)
-        self.assertIn("BHF Agent Runtime Instructions", system_prompt)
+        self.assertIn("Compact BHF Runtime Framework", system_prompt)
+        self.assertNotIn("BHF Agent Runtime Instructions", system_prompt)
         self.assertIn("Standard Runtime Strategy", system_prompt)
-        self.assertIn("use the curated local map data if it is supplied", system_prompt.lower())
+        self.assertIn("Use supplied Scripture, curated local knowledge", system_prompt)
         self.assertIn("Book: Proverbs", system_prompt)
         self.assertIn("Primary genre: wisdom literature", system_prompt)
         self.assertIn("# OUTPUT REQUIREMENTS", system_prompt)
+        self.assertEqual(user_prompt, "What does Proverbs 3 mean?")
+
+    def test_full_runtime_profile_mode_preserves_full_profile_injection(self):
+        system_prompt, user_prompt = build_prompt(
+            "standard",
+            "PROFILE CONTENT",
+            self.reference,
+            self.genre,
+            "What does Proverbs 3 mean?",
+            runtime_profile_mode="full",
+        )
+
+        self.assertIn("PROFILE CONTENT", system_prompt)
+        self.assertIn("BHF Agent Runtime Instructions", system_prompt)
+        self.assertIn("Hermeneutical Framework Guidance", system_prompt)
+        self.assertNotIn("Compact BHF Runtime Framework", system_prompt)
         self.assertEqual(user_prompt, "What does Proverbs 3 mean?")
 
     def test_minimal_profile_gets_strict_small_model_instructions(self):
@@ -77,6 +94,7 @@ class PromptBuildingTests(unittest.TestCase):
             self.reference,
             self.genre,
             "What does Proverbs 3 mean?",
+            runtime_profile_mode="full",
         )
 
         self.assertIn("Hermeneutical Framework Guidance", system_prompt)
@@ -92,6 +110,71 @@ class PromptBuildingTests(unittest.TestCase):
         self.assertIn("Do not describe the Old Testament as works-based and the New Testament as grace-based", system_prompt)
         self.assertIn("similarity does not prove dependence", system_prompt)
         self.assertIn("difference does not prove complete isolation", system_prompt)
+
+    def test_compact_runtime_framework_preserves_core_bhf_guardrails(self):
+        system_prompt, _ = build_prompt(
+            "standard",
+            "PROFILE",
+            self.reference,
+            self.genre,
+            "What does Proverbs 3 mean?",
+        )
+
+        self.assertIn("Compact BHF Runtime Framework", system_prompt)
+        self.assertIn("Identify the literary genre", system_prompt)
+        self.assertIn("Observe what the text says before moving to interpretation", system_prompt)
+        self.assertIn("original audience", system_prompt)
+        self.assertIn("covenant patterns", system_prompt)
+        self.assertIn("Do not invent historical, linguistic, geographical", system_prompt)
+        self.assertIn("Do not force a denominational conclusion", system_prompt)
+        self.assertIn("Preserve the distinction between Israel and the Church", system_prompt)
+        self.assertIn("Do not portray Judaism as merely legalistic", system_prompt)
+        self.assertIn("do not frame the Old Testament as works-based", system_prompt)
+
+    def test_prompt_result_reports_section_token_estimates(self):
+        result = build_prompt_result(
+            "standard",
+            "PROFILE CONTENT",
+            self.reference,
+            self.genre,
+            "What does Proverbs 3 mean?",
+            response_contract_prompt="# RESPONSE CONTRACT\n\nReturn prose.",
+        )
+
+        estimates = result.metadata["prompt_token_estimates"]
+        characters = result.metadata["prompt_character_counts"]
+        self.assertEqual(result.metadata["runtime_profile_mode"], "compact")
+        self.assertFalse(result.metadata["full_profile_injected"])
+        self.assertEqual(estimates["profile"], 0)
+        self.assertGreater(estimates["runtime_framework"], 0)
+        self.assertGreater(estimates["strategy"], 0)
+        self.assertGreater(estimates["detected_context"], 0)
+        self.assertEqual(estimates["canonical_context"], 0)
+        self.assertGreater(estimates["response_contract"], 0)
+        self.assertGreater(estimates["system_prompt"], 0)
+        self.assertGreater(estimates["user_prompt"], 0)
+        self.assertEqual(
+            estimates["total_prompt"],
+            estimates["system_prompt"] + estimates["user_prompt"],
+        )
+        self.assertEqual(
+            characters["total_prompt"],
+            characters["system_prompt"] + characters["user_prompt"],
+        )
+
+    def test_prompt_result_reports_full_profile_injection(self):
+        result = build_prompt_result(
+            "standard",
+            "PROFILE CONTENT",
+            self.reference,
+            self.genre,
+            "What does Proverbs 3 mean?",
+            runtime_profile_mode="full",
+        )
+
+        self.assertEqual(result.metadata["runtime_profile_mode"], "full")
+        self.assertTrue(result.metadata["full_profile_injected"])
+        self.assertGreater(result.metadata["prompt_token_estimates"]["profile"], 0)
 
     def test_answer_mode_adds_mode_specific_instructions(self):
         expected = {

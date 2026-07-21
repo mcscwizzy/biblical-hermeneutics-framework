@@ -7,7 +7,12 @@ import sys
 from typing import Optional
 from urllib.parse import urlsplit, urlunsplit
 
-from .config import ALLOWED_ANSWER_MODES, AgentConfig, ConfigError
+from .config import (
+    ALLOWED_ANSWER_MODES,
+    ALLOWED_RUNTIME_PROFILE_MODES,
+    AgentConfig,
+    ConfigError,
+)
 from .profiles import ProfileError
 from .runner import BHFAgent
 
@@ -19,6 +24,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("question", help="Biblical interpretation question")
     parser.add_argument("--config", help="Path to agent JSON config")
     parser.add_argument("--profile", help="BHF profile name")
+    parser.add_argument(
+        "--runtime-profile-mode",
+        choices=ALLOWED_RUNTIME_PROFILE_MODES,
+        help="Whether to inject compact runtime instructions or the full profile markdown",
+    )
     parser.add_argument(
         "--answer-mode",
         choices=ALLOWED_ANSWER_MODES,
@@ -88,6 +98,7 @@ def config_from_args(args: argparse.Namespace) -> AgentConfig:
     config = AgentConfig.from_json_file(args.config) if args.config else AgentConfig()
     return config.with_overrides(
         profile=args.profile,
+        runtime_profile_mode=getattr(args, "runtime_profile_mode", None),
         answer_mode=getattr(args, "answer_mode", None),
         base_url=args.base_url,
         model=args.model,
@@ -118,6 +129,11 @@ def main(argv: Optional[list[str]] = None) -> int:
     print(result.answer_text or "(no answer returned)")
     print()
     print("Profile:", result.profile_used)
+    print(
+        "Runtime profile mode:",
+        result.model_metadata.get("runtime_profile_mode")
+        or config.runtime_profile_mode,
+    )
     print("Answer mode:", result.model_metadata.get("answer_mode") or config.answer_mode)
     print("Detected question type:", _format_question_type(result))
     print("Detected reference:", _format_reference(result))
@@ -157,6 +173,11 @@ def main(argv: Optional[list[str]] = None) -> int:
             result.model_metadata.get("framework_version_fingerprint") or "unknown",
         )
         print("Profile:", result.profile_used)
+        print(
+            "Runtime profile mode:",
+            result.model_metadata.get("runtime_profile_mode")
+            or config.runtime_profile_mode,
+        )
         print("Answer mode:", result.model_metadata.get("answer_mode") or config.answer_mode)
         print("Question type:", _format_question_type(result))
         print("Detected reference:", _format_reference(result))

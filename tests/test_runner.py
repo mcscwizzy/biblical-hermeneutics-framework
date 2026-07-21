@@ -341,7 +341,7 @@ class RunnerTests(unittest.TestCase):
         self.assertIn("map_tool_keys", adapter.request.metadata)
         self.assertIn("getArchaeologyForPassage", adapter.request.metadata["map_tool_keys"])
         self.assertIn("Retrieved Map / Archaeology Context", adapter.request.system_prompt)
-        self.assertIn("Do not invent missing geography, archaeology, manuscript, or route claims", adapter.request.system_prompt)
+        self.assertIn("Do not invent historical, linguistic, geographical", adapter.request.system_prompt)
         self.assertIn("pipeline", result.model_metadata)
         self.assertIn(
             "detect_reference",
@@ -377,9 +377,23 @@ class RunnerTests(unittest.TestCase):
         self.assertIsNotNone(adapter.request)
         assert adapter.request is not None
         self.assertEqual(adapter.request.metadata["answer_mode"], "teaching")
+        self.assertEqual(adapter.request.metadata["runtime_profile_mode"], "compact")
+        self.assertFalse(adapter.request.metadata["full_profile_injected"])
+        self.assertIn("prompt_token_estimates", adapter.request.metadata)
         self.assertIn("Answer Mode: Teaching", adapter.request.system_prompt)
         self.assertEqual(result.model_metadata["answer_mode"], "teaching")
+        self.assertEqual(result.model_metadata["runtime_profile_mode"], "compact")
+        self.assertFalse(result.model_metadata["full_profile_injected"])
+        self.assertIn("prompt_token_estimates", result.model_metadata)
         self.assertEqual(result.model_metadata["pipeline"]["answer_mode"], "teaching")
+        self.assertEqual(
+            result.model_metadata["pipeline"]["runtime_profile_mode"],
+            "compact",
+        )
+        self.assertGreater(
+            result.model_metadata["pipeline"]["prompt_token_estimates"]["system_prompt"],
+            0,
+        )
 
     def test_agent_ask_works_without_status_callback(self):
         adapter = RecordingAdapter()
@@ -1417,10 +1431,34 @@ class RunnerTests(unittest.TestCase):
         self.assertIsNotNone(agent.user_prompt_before_model)
         assert agent.system_prompt_before_model is not None
         assert agent.user_prompt_before_model is not None
-        self.assertIn("PROFILE", agent.system_prompt_before_model)
+        self.assertNotIn("PROFILE", agent.system_prompt_before_model)
+        self.assertIn("Compact BHF Runtime Framework", agent.system_prompt_before_model)
         self.assertIn("Question type: word_study", agent.system_prompt_before_model)
         self.assertIn("Answer using the word-study format exactly", agent.user_prompt_before_model)
         self.assertIn("call_model", result.model_metadata["pipeline"]["stages_completed"])
+
+    def test_full_runtime_profile_mode_stores_profile_prompt_before_model_call(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            profiles_dir = Path(tmp)
+            (profiles_dir / "minimal-7b.md").write_text("PROFILE", encoding="utf-8")
+            agent = PromptStageAssertingAgent(
+                AgentConfig(
+                    base_url="http://localhost:1234/v1",
+                    model="fake-model",
+                    profile="minimal-7b",
+                    runtime_profile_mode="full",
+                ),
+                adapter=RecordingAdapter(),
+                profile_loader=ProfileLoader(profiles_dir),
+            )
+
+            result = agent.ask("What is the hebrew word for the word spirit or wind?")
+
+        assert agent.system_prompt_before_model is not None
+        self.assertIn("PROFILE", agent.system_prompt_before_model)
+        self.assertIn("BHF Agent Runtime Instructions", agent.system_prompt_before_model)
+        self.assertEqual(result.model_metadata["runtime_profile_mode"], "full")
+        self.assertTrue(result.model_metadata["full_profile_injected"])
 
 
 if __name__ == "__main__":
