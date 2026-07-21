@@ -77,6 +77,28 @@ class LexicalRepository:
     def count(self) -> int:
         return int(self._connection.execute("SELECT COUNT(*) FROM lexical_entries").fetchone()[0])
 
+    def counts_by_language(self) -> dict[str, int]:
+        rows = self._connection.execute(
+            """
+            SELECT language, COUNT(*) AS entry_count
+            FROM lexical_entries
+            GROUP BY language
+            ORDER BY language
+            """
+        ).fetchall()
+        return {str(row["language"]): int(row["entry_count"]) for row in rows}
+
+    def sources(self) -> list[dict[str, str]]:
+        rows = self._connection.execute(
+            """
+            SELECT source, license, attribution, source_url, revision,
+                   imported_at, source_file
+            FROM lexical_sources
+            ORDER BY source, revision
+            """
+        ).fetchall()
+        return [dict(row) for row in rows]
+
     @property
     def _connection(self) -> sqlite3.Connection:
         connection = getattr(self._local, "connection", None)

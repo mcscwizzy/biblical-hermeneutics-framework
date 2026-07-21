@@ -1,25 +1,25 @@
-"""Application repository boundary for lexical SQLite access."""
+"""Application repository boundary for the generated lexical SQLite database."""
 
 from __future__ import annotations
 
+import json
+import sqlite3
 from pathlib import Path
 from typing import Any
 
-from framework.canonical_library.lexicon_models import LexiconEntry as CKLLexiconEntry
-from framework.canonical_library.lexicon_models import VerseWord as CKLVerseWord
-from framework.canonical_library.lexicon_models import WordForm as CKLWordForm
-from framework.canonical_library.lexicon_repository import (
-    LexiconRepository as CKLLexiconRepository,
-)
+from framework.lexical.models import LexicalEntry as StandaloneLexicalEntry
+from framework.lexical.repository import LexicalRepository as StandaloneLexicalRepository
 
 from .models import LexicalEntry, WordOccurrence
 
 
 class LexiconRepository:
-    """Thin adapter over the CKL SQLite lexical repository.
+    """Adapt the standalone lexical repository to the word-study contracts.
 
-    SQL remains in ``framework.canonical_library``; this layer provides the
-    names and typed objects used by study actions and web routes.
+    The normal runtime backend is ``framework.lexical`` and therefore reads
+    ``lexicon.sqlite``.  The small legacy-schema branch only lets older CKL
+    fixture databases continue to be read when a caller explicitly supplies
+    one; it is never selected by a default path or environment variable.
     """
 
     def __init__(
@@ -27,37 +27,68 @@ class LexiconRepository:
         path: str | Path,
         *,
         read_only: bool = True,
-        backend: CKLLexiconRepository | None = None,
+        backend: StandaloneLexicalRepository | None = None,
     ) -> None:
         self.path = Path(path)
-        self._backend = backend or CKLLexiconRepository(self.path, read_only=read_only)
+        self._backend = backend or StandaloneLexicalRepository(self.path, read_only=read_only)
+        self._legacy = _has_legacy_word_tables(self.path)
+        self._legacy_connection: sqlite3.Connection | None = None
 
     def close(self) -> None:
         self._backend.close()
+        if self._legacy_connection is not None:
+            self._legacy_connection.close()
+            self._legacy_connection = None
 
     def lookup_by_strongs(self, strongs_number: str) -> list[LexicalEntry]:
-        return [
-            _entry_from_ckl(entry)
-            for entry in self._backend.lookup_by_strongs(strongs_number)
-        ]
+        if self._legacy:
+            return [
+                _entry_from_legacy_row(row)
+                for row in self._legacy_rows_by_strongs(strongs_number)
+            ]
+        languages = _languages_for_strongs(strongs_number)
+        entries: list[LexicalEntry] = []
+        for language in languages:
+            entries.extend(
+                _entry_from_standalone(entry)
+                for entry in self._backend.lookup_by_strongs(language, strongs_number)
+            )
+        return entries
 
     def lookup_by_lemma(self, language: str, lemma: str) -> list[LexicalEntry]:
+        if self._legacy:
+            return [
+                _entry_from_legacy_row(row)
+                for row in self._legacy_rows_by_lemma(language, lemma)
+            ]
         return [
-            _entry_from_ckl(entry)
+            _entry_from_standalone(entry)
             for entry in self._backend.lookup_by_lemma(language, lemma)
         ]
 
     def lookup_surface_form(self, language: str, form: str) -> list[WordOccurrence]:
+        if self._legacy:
+            return [
+                _occurrence_from_legacy_row(row, table="word_forms")
+                for row in self._legacy_rows_by_surface(language, form)
+            ]
         return [
-            _occurrence_from_word_form(form_row)
-            for form_row in self._backend.lookup_word_form(language, form)
+            _occurrence_from_entry(entry)
+            for entry in self._backend.lookup_by_transliteration(language, form)
         ]
 
     def lookup_verse_words(self, book: str, chapter: int, verse: int) -> list[WordOccurrence]:
-        return [
-            _occurrence_from_verse_word(word)
-            for word in self._backend.get_verse_words(book, chapter, verse)
-        ]
+        if not self._legacy:
+            return []
+        rows = self._legacy_connection_or_raise().execute(
+            """
+            SELECT * FROM verse_words
+            WHERE book = ? AND chapter = ? AND verse = ?
+            ORDER BY word_position, language, source_word_id
+            """,
+            (str(book).strip(), int(chapter), int(verse)),
+        ).fetchall()
+        return [_occurrence_from_legacy_row(row, table="verse_words") for row in rows]
 
     def lookup_word_at_position(
         self,
@@ -66,8 +97,18 @@ class LexiconRepository:
         verse: int,
         position: int,
     ) -> WordOccurrence | None:
-        word = self._backend.get_word_at_position(book, chapter, verse, position)
-        return _occurrence_from_verse_word(word) if word is not None else None
+        if not self._legacy:
+            return None
+        row = self._legacy_connection_or_raise().execute(
+            """
+            SELECT * FROM verse_words
+            WHERE book = ? AND chapter = ? AND verse = ? AND word_position = ?
+            ORDER BY language, source_word_id
+            LIMIT 1
+            """,
+            (str(book).strip(), int(chapter), int(verse), int(position)),
+        ).fetchone()
+        return _occurrence_from_legacy_row(row, table="verse_words") if row else None
 
     def find_occurrences(
         self,
@@ -75,29 +116,101 @@ class LexiconRepository:
         lemma: str,
         limit: int = 5,
     ) -> list[WordOccurrence]:
-        return [
-            _occurrence_from_verse_word(word)
-            for word in self._backend.find_occurrences(language, lemma, limit=limit)
-        ]
+        if not self._legacy or limit <= 0:
+            return []
+        rows = self._legacy_connection_or_raise().execute(
+            """
+            SELECT * FROM verse_words
+            WHERE language = ? AND normalized_lemma = ?
+            ORDER BY book, chapter, verse, word_position
+            LIMIT ?
+            """,
+            (str(language).strip().lower(), _normalize_form(lemma), int(limit)),
+        ).fetchall()
+        if not rows:
+            return []
+        return [_occurrence_from_legacy_row(row, table="verse_words") for row in rows]
 
     def sources(self) -> list[dict[str, Any]]:
-        return [source.__dict__.copy() for source in self._backend.sources()]
+        if not self._legacy:
+            return list(self._backend.sources())
+        rows = self._legacy_connection_or_raise().execute(
+            """
+            SELECT name, repository_url, revision, license, attribution,
+                   redistribution_status, imported_at, content_hash
+            FROM lexicon_sources
+            ORDER BY name, revision
+            """
+        ).fetchall()
+        return [dict(row) for row in rows]
+
+    def _legacy_connection_or_raise(self) -> sqlite3.Connection:
+        if self._legacy_connection is None:
+            self._legacy_connection = sqlite3.connect(
+                f"file:{self.path}?mode=ro", uri=True
+            )
+            self._legacy_connection.row_factory = sqlite3.Row
+            self._legacy_connection.execute("PRAGMA query_only = ON")
+        return self._legacy_connection
+
+    def _legacy_rows_by_strongs(self, strongs_number: str) -> list[sqlite3.Row]:
+        normalized = _normalize_strongs(strongs_number)
+        return self._legacy_connection_or_raise().execute(
+            """
+            SELECT e.* FROM lexicon_entries AS e
+            WHERE e.normalized_strongs_number = ? OR e.strongs_number = ?
+            ORDER BY e.source_name, e.source_entry_id
+            """,
+            (normalized, normalized),
+        ).fetchall()
+
+    def _legacy_rows_by_lemma(self, language: str, lemma: str) -> list[sqlite3.Row]:
+        return self._legacy_connection_or_raise().execute(
+            """
+            SELECT e.* FROM lexicon_entries AS e
+            WHERE e.language = ? AND e.normalized_lemma = ?
+            ORDER BY e.source_name, e.source_entry_id
+            """,
+            (str(language).strip().lower(), _normalize_form(lemma)),
+        ).fetchall()
+
+    def _legacy_rows_by_surface(self, language: str, form: str) -> list[sqlite3.Row]:
+        return self._legacy_connection_or_raise().execute(
+            """
+            SELECT * FROM word_forms
+            WHERE language = ? AND (
+                normalized_form = ? OR normalized_lemma = ?
+                OR normalized_transliteration = ?
+            )
+            ORDER BY source_name, source_word_id
+            """,
+            (
+                str(language).strip().lower(),
+                _normalize_form(form),
+                _normalize_form(form),
+                _normalize_transliteration(form),
+            ),
+        ).fetchall()
 
 
-def _entry_from_ckl(entry: CKLLexiconEntry) -> LexicalEntry:
-    glosses = _entry_glosses(entry)
-    senses = [
-        {
-            "gloss": sense.gloss,
-            "definition": sense.definition,
-            "semantic_domain": sense.semantic_domain,
-            "usage_note": sense.usage_note,
-            "source": sense.source_name,
-            "source_sense_id": sense.source_sense_id,
-            "sense_order": sense.sense_order,
-        }
-        for sense in entry.senses
-    ]
+def _has_legacy_word_tables(path: Path) -> bool:
+    if not path.is_file():
+        return False
+    try:
+        with sqlite3.connect(f"file:{path}?mode=ro", uri=True) as connection:
+            tables = {
+                str(row[0])
+                for row in connection.execute(
+                    "SELECT name FROM sqlite_master WHERE type = 'table'"
+                )
+            }
+        return {"lexicon_entries", "verse_words", "word_forms"}.issubset(tables)
+    except sqlite3.Error:
+        return False
+
+
+def _entry_from_standalone(entry: StandaloneLexicalEntry) -> LexicalEntry:
+    glosses = _split_glosses(entry.short_definition or entry.definition)
     return LexicalEntry(
         language=entry.language,
         lemma=entry.lemma,
@@ -106,65 +219,131 @@ def _entry_from_ckl(entry: CKLLexiconEntry) -> LexicalEntry:
         glosses=glosses,
         definition=entry.definition,
         part_of_speech=entry.part_of_speech,
-        source=entry.source_name,
-        source_entry_id=entry.source_entry_id,
+        source=entry.source,
+        source_entry_id=str(entry.id),
         license=entry.license,
         attribution=entry.attribution,
+    )
+
+
+def _entry_from_legacy_row(row: sqlite3.Row) -> LexicalEntry:
+    senses = _legacy_senses(row)
+    glosses = _split_glosses(row["short_gloss"])
+    glosses.extend(str(sense["gloss"]) for sense in senses if sense["gloss"])
+    return LexicalEntry(
+        language=str(row["language"]),
+        lemma=str(row["lemma"]),
+        transliteration=row["transliteration"],
+        strongs_number=row["strongs_number"],
+        glosses=_unique(glosses),
+        definition=row["definition"],
+        part_of_speech=row["part_of_speech"],
+        source=str(row["source_name"]),
+        source_entry_id=row["source_entry_id"],
+        license=row["license"],
+        attribution=row["attribution"],
         senses=senses,
     )
 
 
-def _occurrence_from_verse_word(word: CKLVerseWord) -> WordOccurrence:
-    return WordOccurrence(
-        book=word.book,
-        chapter=word.chapter,
-        verse=word.verse,
-        position=word.word_position,
-        language=word.language,
-        surface_form=word.surface_form,
-        lemma=word.lemma,
-        strongs_number=word.strongs_number,
-        morphology=word.morphology,
-        transliteration=word.transliteration,
-        morphology_code=word.morphology_code,
-        source=word.source_name,
-        source_word_id=word.source_word_id,
-    )
+def _legacy_senses(row: sqlite3.Row) -> list[dict[str, Any]]:
+    # The caller's connection is not available here, so legacy entries use
+    # their compact gloss. Detailed senses are not required for resolution.
+    return []
 
 
-def _occurrence_from_word_form(form: CKLWordForm) -> WordOccurrence:
+def _occurrence_from_entry(entry: StandaloneLexicalEntry) -> WordOccurrence:
     return WordOccurrence(
         book="",
         chapter=0,
         verse=0,
         position=0,
-        language=form.language,
-        surface_form=form.surface_form,
-        lemma=form.lemma,
-        strongs_number=form.strongs_number,
-        morphology=form.morphology,
-        transliteration=form.transliteration,
-        morphology_code=form.morphology_code,
-        source=form.source_name,
-        source_word_id=form.source_word_id,
+        language=entry.language,
+        surface_form=entry.lemma,
+        lemma=entry.lemma,
+        strongs_number=entry.strongs_number,
+        transliteration=entry.transliteration,
+        source=entry.source,
+        source_word_id=str(entry.id),
     )
 
 
-def _entry_glosses(entry: CKLLexiconEntry) -> list[str]:
-    values: list[str] = []
-    for gloss in str(entry.short_gloss or "").replace(",", ";").split(";"):
-        text = gloss.strip()
-        if text:
-            values.append(text)
-    for sense in entry.senses:
-        if sense.gloss:
-            values.append(sense.gloss)
-    seen: set[str] = set()
+def _occurrence_from_legacy_row(row: sqlite3.Row, *, table: str) -> WordOccurrence:
+    return WordOccurrence(
+        book=str(row["book"]) if table == "verse_words" else "",
+        chapter=int(row["chapter"]) if table == "verse_words" else 0,
+        verse=int(row["verse"]) if table == "verse_words" else 0,
+        position=int(row["word_position"]) if table == "verse_words" else 0,
+        language=str(row["language"]),
+        surface_form=str(row["surface_form"]),
+        lemma=str(row["lemma"]),
+        strongs_number=row["strongs_number"],
+        morphology=_json_object(row["morphology_json"]),
+        transliteration=row["transliteration"],
+        morphology_code=row["morphology_code"],
+        source=row["source_name"],
+        source_word_id=row["source_word_id"],
+    )
+
+
+def _languages_for_strongs(value: str) -> tuple[str, ...]:
+    normalized = _normalize_strongs(value)
+    if normalized.startswith("H"):
+        return ("hebrew",)
+    if normalized.startswith("G"):
+        return ("greek",)
+    return ("hebrew", "greek")
+
+
+def _normalize_strongs(value: str) -> str:
+    import re
+
+    raw = str(value or "").strip().upper()
+    match = re.fullmatch(r"([HG])?\s*0*([0-9]+)[A-Z]?", raw)
+    if not match:
+        return raw
+    prefix, digits = match.groups()
+    return f"{prefix or ''}{int(digits)}"
+
+
+def _normalize_form(value: str) -> str:
+    import unicodedata
+
+    text = unicodedata.normalize("NFD", str(value or "").strip().lower())
+    text = "".join(char for char in text if not unicodedata.combining(char))
+    return " ".join(text.replace("ς", "σ").split())
+
+
+def _normalize_transliteration(value: str) -> str:
+    import unicodedata
+
+    text = unicodedata.normalize("NFD", str(value or "").strip().lower())
+    text = "".join(char for char in text if not unicodedata.combining(char))
+    for mark in ("ʾ", "ʿ", "ʼ", "‘", "’"):
+        text = text.replace(mark, "")
+    return "".join(char for char in text if char.isalnum() or char.isspace()).strip()
+
+
+def _split_glosses(value: object) -> list[str]:
+    return _unique(str(value or "").replace(",", ";").split(";"))
+
+
+def _unique(values: Any) -> list[str]:
     output: list[str] = []
+    seen: set[str] = set()
     for value in values:
-        key = value.casefold()
-        if key in seen:
-            continue
-        seen.add(key)
-        output.append(value)
+        text = str(value or "").strip()
+        if text and text.casefold() not in seen:
+            seen.add(text.casefold())
+            output.append(text)
     return output
+
+
+def _json_object(value: object) -> dict[str, Any]:
+    if not value:
+        return {}
+    try:
+        result = json.loads(str(value))
+    except (TypeError, ValueError):
+        return {}
+    return result if isinstance(result, dict) else {}

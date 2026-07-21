@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import os
 import re
+import logging
+import sqlite3
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -13,6 +15,7 @@ from .repository import LexicalRepository
 
 DEFAULT_LEXICAL_DATABASE_PATH = str(Path(__file__).resolve().parent / "database" / "lexicon.sqlite")
 _STRONGS_RE = re.compile(r"\b(?P<value>[HG]\s*0*\d{1,5}[A-Za-z]?)\b", re.IGNORECASE)
+LOGGER = logging.getLogger(__name__)
 
 
 class LexicalLookupService:
@@ -30,6 +33,7 @@ class LexicalLookupService:
             or DEFAULT_LEXICAL_DATABASE_PATH
         )
         self._repository = repository
+        self.startup_diagnostics = self._log_startup_diagnostics()
 
     @property
     def repository(self) -> LexicalRepository:
@@ -40,6 +44,41 @@ class LexicalLookupService:
     def close(self) -> None:
         if self._repository is not None:
             self._repository.close()
+
+    def diagnostics(self) -> dict[str, Any]:
+        """Return non-fatal startup diagnostics for the configured database."""
+
+        diagnostics: dict[str, Any] = {
+            "path": str(self.database_path),
+            "lexical_database_found": self.database_path.is_file(),
+            "lexical_entry_count": 0,
+            "hebrew_entries": 0,
+            "greek_entries": 0,
+        }
+        if not diagnostics["lexical_database_found"]:
+            return diagnostics
+        try:
+            counts = self.repository.counts_by_language()
+            diagnostics["lexical_entry_count"] = self.repository.count()
+            diagnostics["hebrew_entries"] = counts.get("hebrew", 0)
+            diagnostics["greek_entries"] = counts.get("greek", 0)
+        except (OSError, sqlite3.Error, ValueError) as exc:
+            diagnostics["error"] = str(exc)
+        return diagnostics
+
+    def _log_startup_diagnostics(self) -> dict[str, Any]:
+        diagnostics = self.diagnostics()
+        LOGGER.info(
+            "lexical database found=%s path=%s lexical entry count=%d Hebrew entries=%d Greek entries=%d",
+            diagnostics["lexical_database_found"],
+            diagnostics["path"],
+            diagnostics["lexical_entry_count"],
+            diagnostics["hebrew_entries"],
+            diagnostics["greek_entries"],
+        )
+        if diagnostics.get("error"):
+            LOGGER.warning("lexical database diagnostics unavailable: %s", diagnostics["error"])
+        return diagnostics
 
     def lookup(
         self,

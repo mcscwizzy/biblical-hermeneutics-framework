@@ -1,4 +1,4 @@
-"""Deterministic word-study orchestration over CKL lexical data."""
+"""Deterministic word-study orchestration over standalone lexical data."""
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ import sqlite3
 from pathlib import Path
 from typing import Any, Mapping
 
-from framework.canonical_library.database_schema import DEFAULT_CKL_DATABASE_PATH
+from framework.lexical.service import DEFAULT_LEXICAL_DATABASE_PATH
 
 from .models import WORD_STUDY_GUARDRAILS, LexicalEntry, WordOccurrence, WordStudyResult
 from .normalization import (
@@ -22,7 +22,7 @@ STRONGS_RE = re.compile(r"\b[HG]\s*0*\d{1,5}[A-Za-z]?\b", re.IGNORECASE)
 
 
 class WordStudyService:
-    """Build deterministic word-study results from CKL SQLite lexical tables."""
+    """Build deterministic word-study results from the generated lexical database."""
 
     def __init__(
         self,
@@ -33,8 +33,8 @@ class WordStudyService:
         self._repository = repository
         self.database_path = Path(
             database_path
-            or os.environ.get("BHF_CKL_DATABASE_PATH")
-            or DEFAULT_CKL_DATABASE_PATH
+            or os.environ.get("BHF_LEXICAL_DATABASE_PATH")
+            or DEFAULT_LEXICAL_DATABASE_PATH
         )
 
     @property
@@ -199,7 +199,7 @@ class WordStudyService:
             sources=sources,
         )
         contextual_information = [
-            f"Resolved by deterministic CKL verse token at {occurrence.reference}"
+            f"Resolved by deterministic lexical token at {occurrence.reference}"
             + (f", position {occurrence.position}." if occurrence.position else "."),
             "Meaning in this passage should be explained from the retrieved lexical and morphological data plus the immediate context.",
         ]

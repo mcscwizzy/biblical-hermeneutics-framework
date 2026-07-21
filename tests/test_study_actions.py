@@ -13,6 +13,7 @@ from bhf_agent.study_actions import (
 from framework.canonical_library import CanonicalLibrary
 from framework.canonical_library.database_builder import build_database
 from framework.canonical_library.lexicon_importer import import_normalized_lexicon_file
+from framework.lexical.tools.build_lexicon_database import build_lexicon_database
 
 from tests.canonical_library.helpers import make_object, write_library
 
@@ -109,6 +110,43 @@ class StudyActionRouterTests(unittest.TestCase):
             self.assertEqual(result.lemma, "חֶסֶד")
             self.assertEqual(result.strongs_number, "H2617")
             self.assertEqual(result.morphology["part_of_speech"], "noun")
+
+    def test_word_study_service_resolves_proverbs_1_1_from_installed_lexical_database(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / "hebrew.xml"
+            source.write_text(
+                """<lexicon>
+                  <entry id="H2451">
+                    <lemma>חָכְמָה</lemma>
+                    <transliteration>ḥokmāh</transliteration>
+                    <definition>Wisdom and skill for rightly ordered living.</definition>
+                    <part_of_speech>noun</part_of_speech>
+                  </entry>
+                </lexicon>""",
+                encoding="utf-8",
+            )
+            database = root / "lexicon.sqlite"
+            build_lexicon_database(hebrew=source, output=database)
+            service = WordStudyService(database_path=database)
+
+            result = service.build_word_study(
+                {
+                    "book": "Proverbs",
+                    "chapter": 1,
+                    "start_verse": 1,
+                    "reference": "Proverbs 1:1",
+                    "language": "hebrew",
+                    "lemma": "חָכְמָה",
+                }
+            )
+
+            self.assertEqual(result.status, "complete")
+            self.assertEqual(result.reference, "Proverbs 1:1")
+            self.assertEqual(result.language, "hebrew")
+            self.assertEqual(result.lemma, "חָכְמָה")
+            self.assertEqual(result.strongs_number, "H2451")
+            self.assertEqual(result.lexical_entries[0].source, "Open Scriptures Hebrew Lexicon")
 
     def test_word_study_action_uses_sqlite_lexical_result(self):
         with tempfile.TemporaryDirectory() as tmp:

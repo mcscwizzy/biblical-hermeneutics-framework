@@ -219,10 +219,10 @@ class DeterministicStudyEngine:
         section_sources = {str(section.get("source") or "") for section in sections}
         if "scripture" in section_sources and "ckl" in section_sources:
             source = "scripture_and_ckl"
-        elif "scripture" in section_sources and "ckl_sqlite" in section_sources:
-            source = "scripture_and_ckl"
-        elif "ckl_sqlite" in section_sources:
-            source = "ckl_sqlite"
+        elif "scripture" in section_sources and "lexical_sqlite" in section_sources:
+            source = "scripture_and_lexical"
+        elif "lexical_sqlite" in section_sources:
+            source = "lexical_sqlite"
         elif "ckl" in section_sources:
             source = "ckl"
         elif "scripture" in section_sources:
@@ -353,7 +353,7 @@ class DeterministicStudyEngine:
                 {
                     "title": result.message or "Multiple possible original-language words found",
                     "items": items,
-                    "source": "ckl_sqlite",
+                    "source": "lexical_sqlite",
                     "metadata": {"status": result.status},
                 }
             ]
@@ -396,18 +396,18 @@ class DeterministicStudyEngine:
             {
                 "title": "Original Word",
                 "items": details,
-                "source": "ckl_sqlite",
+                "source": "lexical_sqlite",
                 "metadata": {"status": result.status},
             },
             {
                 "title": "Meaning Range",
                 "items": result.lexical_range,
-                "source": "ckl_sqlite",
+                "source": "lexical_sqlite",
             },
             {
                 "title": "Contextual Information",
                 "items": result.contextual_information,
-                "source": "ckl_sqlite",
+                "source": "lexical_sqlite",
             },
         ]
         if occurrence_items:
@@ -415,13 +415,13 @@ class DeterministicStudyEngine:
                 {
                     "title": "Representative Occurrences",
                     "items": occurrence_items,
-                    "source": "ckl_sqlite",
+                    "source": "lexical_sqlite",
                     "references": [word.reference for word in result.representative_occurrences[:5]],
                 }
             )
         sections.append({"title": "Word Study Safeguards", "items": result.guardrails, "source": "deterministic"})
         if source_items:
-            sections.append({"title": "Sources", "items": source_items, "source": "ckl_sqlite"})
+            sections.append({"title": "Sources", "items": source_items, "source": "lexical_sqlite"})
         return sections
 
     def _cross_reference_sections(self, objects: list[Any], *, current_reference: str) -> list[dict[str, Any]]:

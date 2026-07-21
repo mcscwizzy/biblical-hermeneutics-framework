@@ -51,6 +51,24 @@ class BiblicalLexicalEngineTests(unittest.TestCase):
             self.assertEqual(result["greek"], 1)
             self.assertEqual(validate_database(root / "lexicon.sqlite")["entries"], 2)
 
+    def test_startup_diagnostics_report_lexical_coverage(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            hebrew, greek = self._sources(root)
+            database = root / "lexicon.sqlite"
+            build_lexicon_database(hebrew=hebrew, greek=greek, output=database)
+
+            service = LexicalLookupService(database)
+            try:
+                diagnostics = service.startup_diagnostics
+            finally:
+                service.close()
+
+            self.assertTrue(diagnostics["lexical_database_found"])
+            self.assertEqual(diagnostics["lexical_entry_count"], 2)
+            self.assertEqual(diagnostics["hebrew_entries"], 1)
+            self.assertEqual(diagnostics["greek_entries"], 1)
+
     def test_lookup_by_strongs_lemma_and_transliteration(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
