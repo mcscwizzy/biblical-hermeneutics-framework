@@ -2528,6 +2528,7 @@ function compactDeterministicResult(result) {
     metadata: {
       reference: result.metadata?.reference,
       object_ids: (result.metadata?.object_ids || []).slice(0, 12),
+      word_study_prompt_context: result.metadata?.word_study_prompt_context || "",
     },
   };
 }

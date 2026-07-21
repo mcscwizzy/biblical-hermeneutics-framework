@@ -53,6 +53,11 @@ def register_study_routes(
                 "end_verse": payload.get("end_verse") or payload.get("verse_end") or payload.get("reader_end_verse"),
                 "selected_text": payload.get("selected_text") or payload.get("reader_selected_text"),
                 "translation": payload.get("translation") or payload.get("reader_translation") or payload.get("source_translation"),
+                "word_position": payload.get("word_position") or payload.get("position") or payload.get("token_position"),
+                "strongs_number": payload.get("strongs_number") or payload.get("strongs") or payload.get("selected_strongs"),
+                "lemma": payload.get("lemma") or payload.get("selected_lemma"),
+                "language": payload.get("language") or payload.get("source_language"),
+                "surface_form": payload.get("surface_form") or payload.get("selected_surface_form"),
             }
             result = router.execute(
                 str(action or ""),

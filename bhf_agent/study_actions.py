@@ -10,7 +10,7 @@ from framework.canonical_library import CanonicalLibrary
 
 from .bible import BibleError, load_translation_bible, resolve_passage, verse_range_reference
 from .ckl import load_canonical_library
-from .knowledge import LexicalEntry, load_lexical_entries
+from .lexicon import WordStudyResult, WordStudyService
 from .models import Serializable
 
 
@@ -46,7 +46,6 @@ AGENT_FALLBACK_ACTIONS = frozenset(
         "original_audience",
         "covenant_context",
         "literary_context",
-        "word_study",
         "themes",
     }
 )
@@ -144,14 +143,25 @@ class StudyActionRouter:
 
 
 class DeterministicStudyEngine:
-    def __init__(self, library: CanonicalLibrary | None = None) -> None:
+    def __init__(
+        self,
+        library: CanonicalLibrary | None = None,
+        word_study_service: WordStudyService | None = None,
+    ) -> None:
         self._library = library
+        self._word_study_service = word_study_service
 
     @property
     def library(self) -> CanonicalLibrary:
         if self._library is None:
             self._library = load_canonical_library()
         return self._library
+
+    @property
+    def word_study_service(self) -> WordStudyService:
+        if self._word_study_service is None:
+            self._word_study_service = WordStudyService()
+        return self._word_study_service
 
     def execute(
         self,
@@ -170,6 +180,7 @@ class DeterministicStudyEngine:
         objects = self._objects_for_passage(passage_data)
         sections: list[dict[str, Any]] = []
         missing_fields: list[str] = []
+        word_study: WordStudyResult | None = None
 
         if canonical_action == "full_context":
             sections.extend(self._scripture_sections(passage_data))
@@ -182,7 +193,10 @@ class DeterministicStudyEngine:
             grouped_sections, missing_fields = self._field_sections(canonical_action, objects)
             sections.extend(grouped_sections)
         elif canonical_action == "word_study":
-            sections.extend(self._word_study_sections(passage_data, query=query))
+            word_study = self.word_study_service.build_word_study(passage_data, query=query)
+            sections.extend(self._word_study_sections(word_study))
+            if word_study.status in {"ambiguous", "unavailable"}:
+                missing_fields.append(f"word_study_{word_study.status}")
         elif canonical_action == "cross_references":
             sections.extend(self._cross_reference_sections(objects, current_reference=reference))
         elif canonical_action == "people":
@@ -196,11 +210,19 @@ class DeterministicStudyEngine:
         references = _unique([reference, *self._references_from_sections(sections)])
         object_ids = [str(getattr(obj, "id", "")) for obj in objects if getattr(obj, "id", "")]
         status = "complete" if sections else "unavailable"
+        if canonical_action == "word_study" and "word_study_ambiguous" in missing_fields:
+            status = "partial"
+        elif canonical_action == "word_study" and "word_study_unavailable" in missing_fields:
+            status = "unavailable"
         if sections and missing_fields:
             status = "partial"
         section_sources = {str(section.get("source") or "") for section in sections}
         if "scripture" in section_sources and "ckl" in section_sources:
             source = "scripture_and_ckl"
+        elif "scripture" in section_sources and "ckl_sqlite" in section_sources:
+            source = "scripture_and_ckl"
+        elif "ckl_sqlite" in section_sources:
+            source = "ckl_sqlite"
         elif "ckl" in section_sources:
             source = "ckl"
         elif "scripture" in section_sources:
@@ -219,7 +241,11 @@ class DeterministicStudyEngine:
             references=references,
             confidence=self._confidence(status, object_ids, sections),
             missing_fields=_unique(missing_fields),
-            agent_fallback_allowed=canonical_action in AGENT_FALLBACK_ACTIONS,
+            agent_fallback_allowed=(
+                bool(word_study and word_study.is_complete)
+                if canonical_action == "word_study"
+                else canonical_action in AGENT_FALLBACK_ACTIONS
+            ),
             metadata={
                 "reference": reference,
                 "book": passage_data.get("book"),
@@ -228,6 +254,14 @@ class DeterministicStudyEngine:
                 "end_verse": passage_data.get("end_verse"),
                 "object_ids": object_ids,
                 "deterministic_only": canonical_action in DETERMINISTIC_ONLY_ACTIONS,
+                **(
+                    {
+                        "word_study": word_study.to_dict(),
+                        "word_study_prompt_context": word_study.prompt_context,
+                    }
+                    if canonical_action == "word_study" and word_study is not None
+                    else {}
+                ),
             },
         )
 
@@ -248,6 +282,24 @@ class DeterministicStudyEngine:
         selected_text = str(_first(context, "selected_text", "reader_selected_text", "text") or "").strip()
         if selected_text:
             resolved["selected_text"] = selected_text
+        for key in (
+            "word_position",
+            "position",
+            "token_position",
+            "selected_word_position",
+            "strongs_number",
+            "strongs",
+            "selected_strongs",
+            "lemma",
+            "selected_lemma",
+            "language",
+            "source_language",
+            "surface_form",
+            "selected_surface_form",
+        ):
+            value = context.get(key)
+            if value not in (None, ""):
+                resolved[key] = value
         resolved["translation_id"] = translation_id
         return resolved
 
@@ -291,38 +343,85 @@ class DeterministicStudyEngine:
                 missing.append(field_name)
         return sections, missing
 
-    def _word_study_sections(self, passage_data: Mapping[str, Any], *, query: str | None = None) -> list[dict[str, Any]]:
-        haystack = " ".join(
-            value
-            for value in (
-                query or "",
-                str(passage_data.get("selected_text") or ""),
-                str(passage_data.get("reference") or ""),
-            )
-            if value
-        ).lower()
-        entries = [
-            entry
-            for entry in load_lexical_entries().values()
-            if _lexical_entry_matches(entry, haystack)
-        ]
-        if not entries:
-            return []
-        sections = []
-        for entry in entries:
-            label = entry.transliteration
-            if entry.original:
-                label = f"{entry.original} / {label}"
+    def _word_study_sections(self, result: WordStudyResult) -> list[dict[str, Any]]:
+        if result.is_ambiguous:
             items = [
-                f"Language: {entry.language}",
-                f"Glosses: {', '.join(entry.glosses)}",
-                *entry.semantic_range,
+                f"{index}. {word.surface_form} ({word.lemma}; {_strongs_label(word.strongs_number)}; position {word.position})"
+                for index, word in enumerate(result.ambiguities, start=1)
             ]
-            if entry.cautions:
-                items.append("Cautions: " + " ".join(entry.cautions))
-            if entry.notes:
-                items.append(entry.notes)
-            sections.append({"title": label, "items": items, "source": "deterministic"})
+            return [
+                {
+                    "title": result.message or "Multiple possible original-language words found",
+                    "items": items,
+                    "source": "ckl_sqlite",
+                    "metadata": {"status": result.status},
+                }
+            ]
+        if not result.is_complete:
+            return []
+
+        details = [
+            f"Original Word: {result.surface_form}",
+            f"Lemma: {result.lemma}",
+            f"Language: {result.language}",
+        ]
+        if result.transliteration:
+            details.append(f"Transliteration: {result.transliteration}")
+        if result.strongs_number:
+            details.append(f"Strong's: {result.strongs_number}")
+        morphology = _plain_morphology(result.morphology)
+        if morphology:
+            details.append(f"Morphology: {morphology}")
+        elif result.morphology_code:
+            details.append(f"Morphology: {result.morphology_code}")
+
+        occurrence_items = [
+            f"{word.reference}: {word.surface_form}"
+            + (f" ({word.morphology_code})" if word.morphology_code else "")
+            for word in result.representative_occurrences[:5]
+        ]
+        source_items = [
+            " - ".join(
+                value
+                for value in (
+                    str(source.get("name") or ""),
+                    str(source.get("license") or ""),
+                    str(source.get("attribution") or ""),
+                )
+                if value
+            )
+            for source in result.sources
+        ]
+        sections = [
+            {
+                "title": "Original Word",
+                "items": details,
+                "source": "ckl_sqlite",
+                "metadata": {"status": result.status},
+            },
+            {
+                "title": "Meaning Range",
+                "items": result.lexical_range,
+                "source": "ckl_sqlite",
+            },
+            {
+                "title": "Contextual Information",
+                "items": result.contextual_information,
+                "source": "ckl_sqlite",
+            },
+        ]
+        if occurrence_items:
+            sections.append(
+                {
+                    "title": "Representative Occurrences",
+                    "items": occurrence_items,
+                    "source": "ckl_sqlite",
+                    "references": [word.reference for word in result.representative_occurrences[:5]],
+                }
+            )
+        sections.append({"title": "Word Study Safeguards", "items": result.guardrails, "source": "deterministic"})
+        if source_items:
+            sections.append({"title": "Sources", "items": source_items, "source": "ckl_sqlite"})
         return sections
 
     def _cross_reference_sections(self, objects: list[Any], *, current_reference: str) -> list[dict[str, Any]]:
@@ -411,6 +510,7 @@ def compact_fact_packet(result: StudyActionResult | Mapping[str, Any], *, max_ch
         "metadata": {
             "reference": (data.get("metadata") or {}).get("reference"),
             "object_ids": list((data.get("metadata") or {}).get("object_ids") or [])[:12],
+            "word_study_prompt_context": (data.get("metadata") or {}).get("word_study_prompt_context"),
         },
     }
 
@@ -428,6 +528,10 @@ def format_fact_packet_for_prompt(packet: Mapping[str, Any]) -> str:
     references = [str(ref) for ref in packet.get("references") or [] if str(ref).strip()]
     if references:
         lines.append("References: " + "; ".join(references))
+    lexical_context = str((packet.get("metadata") or {}).get("word_study_prompt_context") or "").strip()
+    if lexical_context:
+        lines.extend(["", lexical_context])
+        return "\n".join(lines)
     for section in packet.get("sections") or []:
         title = str(section.get("title") or "Section")
         lines.extend(["", f"## {title}"])
@@ -488,13 +592,6 @@ def _references_from_value(value: Any) -> list[str]:
     return refs
 
 
-def _lexical_entry_matches(entry: LexicalEntry, haystack: str) -> bool:
-    candidates = [entry.key, entry.transliteration, *(entry.glosses or [])]
-    if entry.original:
-        candidates.append(entry.original)
-    return any(candidate and str(candidate).lower() in haystack for candidate in candidates)
-
-
 def _dedupe_sections(sections: list[dict[str, Any]]) -> list[dict[str, Any]]:
     deduped: list[dict[str, Any]] = []
     seen = set()
@@ -522,3 +619,24 @@ def _unique(values: Iterable[str]) -> list[str]:
         seen.add(text)
         output.append(text)
     return output
+
+
+def _plain_morphology(morphology: Mapping[str, Any]) -> str:
+    ordered_keys = (
+        "part_of_speech",
+        "stem",
+        "conjugation",
+        "tense",
+        "voice",
+        "mood",
+        "person",
+        "gender",
+        "number",
+        "case",
+        "state",
+    )
+    return ", ".join(str(morphology[key]) for key in ordered_keys if morphology.get(key))
+
+
+def _strongs_label(value: str | None) -> str:
+    return value if value else "no Strong's id"

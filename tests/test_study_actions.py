@@ -1,6 +1,23 @@
 import unittest
+import tempfile
+from pathlib import Path
 
-from bhf_agent.study_actions import StudyActionRouter, compact_fact_packet, normalize_action
+from bhf_agent.lexicon import LexiconRepository, WordStudyService
+from bhf_agent.study_actions import (
+    DeterministicStudyEngine,
+    StudyActionRouter,
+    compact_fact_packet,
+    format_fact_packet_for_prompt,
+    normalize_action,
+)
+from framework.canonical_library import CanonicalLibrary
+from framework.canonical_library.database_builder import build_database
+from framework.canonical_library.lexicon_importer import import_normalized_lexicon_file
+
+from tests.canonical_library.helpers import make_object, write_library
+
+
+LEXICON_FIXTURE = Path("tests/fixtures/lexicon_phase1.json")
 
 
 class StudyActionRouterTests(unittest.TestCase):
@@ -48,6 +65,144 @@ class StudyActionRouterTests(unittest.TestCase):
         self.assertIn("sections", packet)
         self.assertIn("metadata", packet)
         self.assertIn("reference", packet["metadata"])
+
+    def test_word_study_service_resolves_john_1_1_logos(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            database = _build_lexicon_database(Path(tmp))
+            service = WordStudyService(repository=LexiconRepository(database))
+
+            result = service.build_word_study(
+                {
+                    "book": "John",
+                    "chapter": 1,
+                    "start_verse": 1,
+                    "reference": "John 1:1",
+                    "selected_text": "Word",
+                }
+            )
+
+            self.assertEqual(result.status, "complete")
+            self.assertEqual(result.surface_form, "λόγος")
+            self.assertEqual(result.lemma, "λόγος")
+            self.assertEqual(result.strongs_number, "G3056")
+            self.assertIn("word", result.lexical_range)
+            self.assertIn("LEXICAL CONTEXT", result.prompt_context)
+
+    def test_word_study_service_resolves_psalm_23_6_hesed_by_position(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            database = _build_lexicon_database(Path(tmp))
+            service = WordStudyService(repository=LexiconRepository(database))
+
+            result = service.build_word_study(
+                {
+                    "book": "Psalms",
+                    "chapter": 23,
+                    "start_verse": 6,
+                    "reference": "Psalm 23:6",
+                    "word_position": 1,
+                }
+            )
+
+            self.assertEqual(result.status, "complete")
+            self.assertEqual(result.surface_form, "חֶסֶד")
+            self.assertEqual(result.lemma, "חֶסֶד")
+            self.assertEqual(result.strongs_number, "H2617")
+            self.assertEqual(result.morphology["part_of_speech"], "noun")
+
+    def test_word_study_action_uses_sqlite_lexical_result(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp)
+            database = _build_lexicon_database(tmp_path)
+            library = CanonicalLibrary(root=tmp_path / "ckl").load()
+            service = WordStudyService(repository=LexiconRepository(database))
+            router = StudyActionRouter(DeterministicStudyEngine(library, word_study_service=service))
+
+            result = router.execute(
+                "word_study",
+                passage={
+                    "book": "John",
+                    "chapter": 1,
+                    "start_verse": 1,
+                    "end_verse": 1,
+                    "selected_text": "Word",
+                },
+            )
+
+            self.assertEqual(result.status, "complete")
+            self.assertTrue(result.agent_fallback_allowed)
+            self.assertEqual(result.metadata["word_study"]["strongs_number"], "G3056")
+            self.assertTrue(any(section["title"] == "Original Word" for section in result.sections))
+            packet = compact_fact_packet(result)
+            prompt = format_fact_packet_for_prompt(packet)
+            self.assertIn("LEXICAL CONTEXT", prompt)
+            self.assertIn("Strong's: G3056", prompt)
+
+    def test_word_study_action_reports_ambiguity_without_guessing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp)
+            database = _build_lexicon_database(tmp_path)
+            library = CanonicalLibrary(root=tmp_path / "ckl").load()
+            service = WordStudyService(repository=LexiconRepository(database))
+            router = StudyActionRouter(DeterministicStudyEngine(library, word_study_service=service))
+
+            result = router.execute(
+                "word_study",
+                passage={"book": "Psalms", "chapter": 23, "start_verse": 6, "end_verse": 6},
+            )
+
+            self.assertEqual(result.status, "partial")
+            self.assertFalse(result.agent_fallback_allowed)
+            self.assertIn("Multiple possible original-language words", result.sections[0]["title"])
+
+    def test_word_study_api_returns_complete_when_lexical_data_exists(self):
+        try:
+            from fastapi import FastAPI
+            from fastapi.testclient import TestClient
+
+            from bhf_web.routes.study import register_study_routes
+        except ModuleNotFoundError:
+            self.skipTest("FastAPI test dependencies are not installed")
+
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp)
+            database = _build_lexicon_database(tmp_path)
+            library = CanonicalLibrary(root=tmp_path / "ckl").load()
+            service = WordStudyService(repository=LexiconRepository(database))
+            router = StudyActionRouter(DeterministicStudyEngine(library, word_study_service=service))
+            app = FastAPI()
+            register_study_routes(
+                app,
+                study_db_path=str(tmp_path / "study.sqlite"),
+                templates=None,
+                job_store=None,
+                study_action_router=router,
+            )
+
+            response = TestClient(app).post(
+                "/api/study/actions",
+                json={
+                    "action": "word_study",
+                    "book": "John",
+                    "chapter": 1,
+                    "start_verse": 1,
+                    "end_verse": 1,
+                    "selected_text": "Word",
+                },
+            )
+
+            self.assertEqual(response.status_code, 200)
+            data = response.json()
+            self.assertEqual(data["status"], "complete")
+            self.assertEqual(data["metadata"]["word_study"]["strongs_number"], "G3056")
+
+
+def _build_lexicon_database(tmp_path: Path) -> Path:
+    root = tmp_path / "ckl"
+    database = tmp_path / "ckl.sqlite"
+    write_library(root, [make_object("john", "book", "John", ["Gospel of John"])])
+    build_database(root, database)
+    import_normalized_lexicon_file(database, LEXICON_FIXTURE, rebuild=True)
+    return database
 
 
 if __name__ == "__main__":
