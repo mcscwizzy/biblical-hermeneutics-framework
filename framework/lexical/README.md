@@ -57,3 +57,21 @@ Validate a generated database with:
 python -m framework.lexical.tools.validate_lexicon \
   framework/lexical/database/lexicon.sqlite
 ```
+
+## Docker
+
+The production image does not copy raw lexical XML or embed an externally
+licensed dictionary. The web container reads a generated database from the
+mounted `.bhf/lexicon.sqlite` path. Build it with the opt-in Compose helper:
+
+```bash
+BHF_LEXICAL_SOURCE_DIR=/absolute/path/to/openscriptures \
+  docker compose --profile lexical run --rm bhf-lexicon-build
+docker compose up bhf-web
+```
+
+The helper expects `hebrew.xml` and `greek.xml` in the supplied directory,
+writes the SQLite database to `.bhf/lexicon.sqlite`, and exits. The web
+container receives it at `/app/.bhf-data/lexicon.sqlite` in read-only runtime
+mode. If no database is mounted, lexical retrieval remains unavailable without
+preventing the rest of BHF from starting.

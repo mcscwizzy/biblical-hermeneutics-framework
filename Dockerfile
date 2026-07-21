@@ -6,6 +6,9 @@ ENV BHF_MEMORY_PATH=/app/.bhf/sessions
 ENV BHF_CKL_BACKEND=sqlite
 ENV BHF_CKL_DATABASE_PATH=/app/.bhf/ckl.sqlite
 ENV BHF_CKL_STALE_DATABASE_POLICY=error
+# The lexical database is generated from developer-supplied source files and
+# mounted at runtime. Raw lexical XML is deliberately not copied into the image.
+ENV BHF_LEXICAL_DATABASE_PATH=/app/.bhf-data/lexicon.sqlite
 
 WORKDIR /app
 
@@ -19,7 +22,7 @@ RUN pip install --no-cache-dir -r /tmp/requirements.txt
 # new runtime assets, profiles, docs, and frontend source files together.
 COPY . .
 
-RUN mkdir -p /app/.bhf/sessions /app/.bhf/exports \
+RUN mkdir -p /app/.bhf/sessions /app/.bhf/exports /app/.bhf-data/sessions \
     && python -m framework.canonical_library build-db --output /app/.bhf/ckl.sqlite \
     && python -m framework.canonical_library verify-db --database /app/.bhf/ckl.sqlite --skip-fingerprint \
     && chown -R bhf:bhf /app
