@@ -107,6 +107,7 @@
               <button type="button" class="secondary" data-search-clear data-testid="bible-search-clear" hidden>Clear</button>
             </div>
             <input type="hidden" name="profile" value="{{ form.profile }}">
+            <input type="hidden" name="runtime_profile_mode" value="{{ form.runtime_profile_mode }}">
             <input type="hidden" name="adapter" value="{{ form.adapter }}">
             <input type="hidden" name="answer_mode" value="{{ form.answer_mode }}">
             <input type="hidden" name="model" value="{{ form.model }}">
@@ -216,6 +217,15 @@
                     <select name="profile">
                       {% for profile in profiles %}
                         <option value="{{ profile }}" {% if profile == form.profile %}selected{% endif %}>{{ profile }}</option>
+                      {% endfor %}
+                    </select>
+                  </label>
+
+                  <label>
+                    <span>Runtime profile</span>
+                    <select name="runtime_profile_mode">
+                      {% for mode in runtime_profile_modes %}
+                        <option value="{{ mode }}" {% if mode == form.runtime_profile_mode %}selected{% endif %}>{{ mode }}</option>
                       {% endfor %}
                     </select>
                   </label>

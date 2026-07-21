@@ -8,7 +8,13 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Mapping
 
-from bhf_agent.config import ALLOWED_ADAPTERS, ALLOWED_ANSWER_MODES, AgentConfig, ConfigError
+from bhf_agent.config import (
+    ALLOWED_ADAPTERS,
+    ALLOWED_ANSWER_MODES,
+    ALLOWED_RUNTIME_PROFILE_MODES,
+    AgentConfig,
+    ConfigError,
+)
 
 from . import settings
 
@@ -19,6 +25,7 @@ ENV_CONFIG_FIELDS = {
     "BHF_BASE_URL": "base_url",
     "BHF_MODEL": "model",
     "BHF_PROFILE": "profile",
+    "BHF_RUNTIME_PROFILE_MODE": "runtime_profile_mode",
     "BHF_ANSWER_MODE": "answer_mode",
     "BHF_TEMPERATURE": "temperature",
     "BHF_MAX_TOKENS": "max_tokens",
@@ -40,6 +47,7 @@ DEFAULT_CONFIG_VALUES: dict[str, Any] = {
     "config_version": 1,
     "adapter": "openai_compatible",
     "profile": "minimal-7b",
+    "runtime_profile_mode": "compact",
     "answer_mode": "study",
     "model": "llama3.1:8b",
     "base_url": "http://localhost:11434/v1",
@@ -110,6 +118,10 @@ def config_from_form(
     overrides = {
         "adapter": _optional_text(form, "adapter") or base.adapter,
         "profile": _required_text(form, "profile"),
+        "runtime_profile_mode": (
+            _optional_text(form, "runtime_profile_mode")
+            or base.runtime_profile_mode
+        ),
         "answer_mode": _required_text(form, "answer_mode"),
         "model": _required_text(form, "model"),
         "base_url": _required_text(form, "base_url"),
@@ -142,6 +154,7 @@ def form_values_from_config(config: AgentConfig, question: str = "") -> dict[str
         "question": question,
         "adapter": config.adapter,
         "profile": config.profile,
+        "runtime_profile_mode": config.runtime_profile_mode,
         "answer_mode": config.answer_mode,
         "model": config.model or "",
         "base_url": config.base_url or "",
@@ -278,3 +291,4 @@ def _env_bool(raw_value: str, field_name: str) -> bool:
 
 ANSWER_MODES = ALLOWED_ANSWER_MODES
 ADAPTERS = ALLOWED_ADAPTERS
+RUNTIME_PROFILE_MODES = ALLOWED_RUNTIME_PROFILE_MODES

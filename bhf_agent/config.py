@@ -21,6 +21,7 @@ class ConfigError(ValueError):
 ALLOWED_ANSWER_MODES = ("concise", "study", "teaching", "scholar")
 ALLOWED_ADAPTERS = ("openai_compatible", "ollama")
 ALLOWED_RESPONSE_FORMAT_POLICIES = ("auto", "json_schema", "json_object", "off")
+ALLOWED_RUNTIME_PROFILE_MODES = ("compact", "full")
 
 
 @dataclass(frozen=True)
@@ -115,6 +116,7 @@ class AgentConfig:
     config_version: int = 1
     adapter: str = "openai_compatible"
     profile: str = "standard"
+    runtime_profile_mode: str = "compact"
     answer_mode: str = "study"
     model: Optional[str] = None
     base_url: Optional[str] = None
@@ -164,6 +166,10 @@ class AgentConfig:
         )
         data["public_cache"] = _public_cache_config_from_value(data.get("public_cache"))
         data["observability"] = _observability_config_from_value(data.get("observability"))
+        if "runtime_profile_mode" in data:
+            data["runtime_profile_mode"] = _coerce_runtime_profile_mode(
+                data["runtime_profile_mode"]
+            )
         try:
             config = cls(**data)
         except TypeError as exc:
@@ -192,6 +198,10 @@ class AgentConfig:
                 clean["observability"],
                 base=self.observability,
             )
+        if "runtime_profile_mode" in clean:
+            clean["runtime_profile_mode"] = _coerce_runtime_profile_mode(
+                clean["runtime_profile_mode"]
+            )
         config = replace(self, **clean)
         config.validate()
         return config
@@ -216,6 +226,11 @@ class AgentConfig:
             )
         if not self.profile:
             raise ConfigError("profile is required")
+        if self.runtime_profile_mode not in ALLOWED_RUNTIME_PROFILE_MODES:
+            raise ConfigError(
+                "runtime_profile_mode must be one of: "
+                + ", ".join(ALLOWED_RUNTIME_PROFILE_MODES)
+            )
         if self.answer_mode not in ALLOWED_ANSWER_MODES:
             raise ConfigError(
                 "answer_mode must be one of: " + ", ".join(ALLOWED_ANSWER_MODES)
@@ -467,3 +482,13 @@ def _coerce_statuses(value: Any, *, field_name: str) -> tuple[str, ...]:
             f"{field_name} must be one of: " + ", ".join(REVIEW_STATUS_VALUES)
         )
     return deduped
+
+
+def _coerce_runtime_profile_mode(value: Any) -> str:
+    mode = str(value or "").strip().lower()
+    if mode not in ALLOWED_RUNTIME_PROFILE_MODES:
+        raise ConfigError(
+            "runtime_profile_mode must be one of: "
+            + ", ".join(ALLOWED_RUNTIME_PROFILE_MODES)
+        )
+    return mode

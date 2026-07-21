@@ -44,6 +44,7 @@ class AgentConfigTests(unittest.TestCase):
         self.assertEqual(config.model, "local-model")
         self.assertEqual(config.context_window, 12288)
         self.assertEqual(config.response_format_policy, "auto")
+        self.assertEqual(config.runtime_profile_mode, "compact")
 
     def test_response_format_policy_accepts_supported_values(self):
         for policy in ("auto", "json_schema", "json_object", "off"):
@@ -121,6 +122,7 @@ class AgentConfigTests(unittest.TestCase):
         self.assertEqual(config.max_repair_attempts, 1)
         self.assertEqual(config.repair_threshold, 80)
         self.assertEqual(config.answer_mode, "study")
+        self.assertEqual(config.runtime_profile_mode, "compact")
         self.assertEqual(config.max_tokens, 8192)
         self.assertEqual(config.context_window, 12288)
         self.assertFalse(config.memory_enabled)
@@ -146,6 +148,32 @@ class AgentConfigTests(unittest.TestCase):
             config.public_cache.allowed_review_statuses,
             ("reviewed", "approved"),
         )
+
+    def test_runtime_profile_mode_accepts_supported_values(self):
+        for mode in ("compact", "full"):
+            with self.subTest(mode=mode):
+                config = AgentConfig.from_mapping(
+                    {
+                        "adapter": "ollama",
+                        "base_url": "http://ollama:11434",
+                        "model": "gemma2:2b",
+                        "profile": "minimal-7b",
+                        "runtime_profile_mode": mode,
+                    }
+                )
+                self.assertEqual(config.runtime_profile_mode, mode)
+
+    def test_runtime_profile_mode_rejects_unknown_value(self):
+        with self.assertRaisesRegex(ConfigError, "runtime_profile_mode must be one of"):
+            AgentConfig.from_mapping(
+                {
+                    "adapter": "ollama",
+                    "base_url": "http://ollama:11434",
+                    "model": "gemma2:2b",
+                    "profile": "minimal-7b",
+                    "runtime_profile_mode": "profile-md",
+                }
+            )
 
     def test_config_accepts_canonical_library_section(self):
         config = AgentConfig.from_mapping(

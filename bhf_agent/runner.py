@@ -47,12 +47,13 @@ from .model_response_validation import (
 )
 from .observability import render_log_record, summarize_usage
 from .profiles import ProfileLoader
-from .prompts import PROMPT_VERSION, build_prompt, strategy_for_profile
+from .prompts import PROMPT_VERSION, build_prompt_result, strategy_for_profile
 from .question_types import classify_question_type
 from .repair import build_repair_prompt, decide_repair
 from .references import detect_reference
 from .runner_state import PIPELINE_STEPS, STEP_INDEX, STEP_MESSAGES, STAGE_TO_STEP, TOTAL_STEPS
 from .study_actions import format_fact_packet_for_prompt
+from .token_estimation import estimate_tokens
 from .validation import validate_response
 from framework.canonical_library import (
     CanonicalLibrary,
@@ -476,6 +477,8 @@ class BHFAgent:
                 "adapter_type": self.config.adapter,
                 "model": self.config.model,
                 "profile": self.config.profile,
+                "runtime_profile_mode": self.config.runtime_profile_mode,
+                "full_profile_injected": self.config.runtime_profile_mode == "full",
                 "answer_mode": self.config.answer_mode,
                 "framework_version": self.framework_version,
                 "framework_version_fingerprint": self.framework_version_fingerprint,
@@ -588,6 +591,9 @@ class BHFAgent:
                 "session_id": self.config.session_id or "default",
                 "memory_turns_loaded": 0,
                 "memory_saved": False,
+                "prompt_token_estimates": {},
+                "prompt_character_counts": {},
+                "prompt_token_estimator": "approximate: round(character_count / 4)",
             },
         )
         return self._mark_stage(ctx, "initialize_context")
@@ -670,7 +676,7 @@ class BHFAgent:
         ctx.debug_metadata["canonical_library_object_ids"] = object_ids
         ctx.debug_metadata["canonical_library_retrieval_method"] = "deterministic_fact_packet"
         ctx.debug_metadata["canonical_library_topic_count"] = len(packet.get("sections") or [])
-        ctx.debug_metadata["canonical_library_prompt_tokens"] = max(1, round(len(prompt) / 4))
+        ctx.debug_metadata["canonical_library_prompt_tokens"] = estimate_tokens(prompt)
         ctx.debug_metadata["canonical_library_query"] = ctx.canonical_library_query
         ctx.debug_metadata["canonical_library_prompt_mode"] = "deterministic_fact_packet"
         ctx.debug_metadata["canonical_library_context_cache_status"] = "disabled"
@@ -988,10 +994,8 @@ class BHFAgent:
                 ctx.canonical_library_prompt = canonical_prompt
             elif strict_ckl_only:
                 ctx.canonical_library_prompt = STRICT_CKL_NO_MATCH_PROMPT
-            ctx.debug_metadata["canonical_library_prompt_tokens"] = (
-                max(1, round(len(ctx.canonical_library_prompt) / 4))
-                if ctx.canonical_library_prompt
-                else 0
+            ctx.debug_metadata["canonical_library_prompt_tokens"] = estimate_tokens(
+                ctx.canonical_library_prompt
             )
             if context_cache_key and self.runtime_cache.enabled and self.config.canonical_library.cache_enabled:
                 self.runtime_cache.store_context(
@@ -1230,7 +1234,10 @@ class BHFAgent:
             answer_mode=ctx.answer_mode,
             show_method_notes=self.config.show_method_notes,
             prompt_version=PROMPT_VERSION,
-            prompt_mode=str(ctx.debug_metadata.get("canonical_library_prompt_mode") or ""),
+            prompt_mode=(
+                f"{ctx.debug_metadata.get('canonical_library_prompt_mode') or ''}"
+                f"|runtime_profile_mode={self.config.runtime_profile_mode}"
+            ),
         )
         ctx.debug_metadata["canonical_library_response_context_hash"] = prompt_context_hash
 
@@ -1404,39 +1411,52 @@ class BHFAgent:
         if map_context:
             ctx.debug_metadata["map_tool_keys"] = list(map_context.get("requested_tools", []))
             ctx.debug_metadata["map_tool_context"] = map_context
-        ctx.system_prompt, ctx.user_prompt = build_prompt(
-            ctx.profile_name,
-            ctx.profile_content,
-            ctx.reference_context,
-            ctx.genre_context,
-            ctx.question_context,
-            ctx.original_question,
+        response_format = self._response_format_for_contract(ctx)
+        response_contract_prompt = self._response_contract_prompt(
+            ctx,
+            response_format=response_format,
+        )
+        prompt_result = build_prompt_result(
+            profile_name=ctx.profile_name,
+            profile_content=ctx.profile_content,
+            reference_context=ctx.reference_context,
+            genre_context=ctx.genre_context,
+            question_context_or_question=ctx.question_context,
+            question=ctx.original_question,
             show_method_notes=self.config.show_method_notes,
             local_knowledge=ctx.local_knowledge,
             map_context=map_context,
             session_memory=ctx.session_memory,
             answer_mode=ctx.answer_mode,
             canonical_context_prompt=ctx.canonical_library_prompt,
+            runtime_profile_mode=self.config.runtime_profile_mode,
+            response_contract_prompt=response_contract_prompt,
         )
-        response_format = self._response_format_for_contract(ctx)
-        if self._response_contract(ctx.original_question) == ANSWER_CONTRACT:
-            ctx.system_prompt = "\n\n".join(
-                [
-                    ctx.system_prompt,
-                    (
-                        "# STRUCTURED RESPONSE CONTRACT\n\n"
-                        'Return JSON with exactly one top-level key, "answer". '
-                        "The answer value must contain the full user-facing answer as markdown prose. "
-                        "Do not include analysis, reasoning, debug metadata, retrieval details, or tool calls."
-                        if response_format is not None
-                        else
-                        "# RESPONSE CONTRACT\n\n"
-                        "Return the full user-facing answer as Markdown/prose. "
-                        "Do not wrap the answer in JSON. Do not include analysis, reasoning, debug metadata, retrieval details, or tool calls."
-                    ),
-                ]
-            )
+        ctx.system_prompt = prompt_result.system_prompt
+        ctx.user_prompt = prompt_result.user_prompt
+        ctx.debug_metadata.update(prompt_result.metadata)
         return self._mark_stage(ctx, "build_prompts")
+
+    def _response_contract_prompt(
+        self,
+        ctx: PipelineContext,
+        *,
+        response_format: dict[str, Any] | None,
+    ) -> str:
+        if self._response_contract(ctx.original_question) != ANSWER_CONTRACT:
+            return ""
+        if response_format is not None:
+            return (
+                "# STRUCTURED RESPONSE CONTRACT\n\n"
+                'Return JSON with exactly one top-level key, "answer". '
+                "The answer value must contain the full user-facing answer as markdown prose. "
+                "Do not include analysis, reasoning, debug metadata, retrieval details, or tool calls."
+            )
+        return (
+            "# RESPONSE CONTRACT\n\n"
+            "Return the full user-facing answer as Markdown/prose. "
+            "Do not wrap the answer in JSON. Do not include analysis, reasoning, debug metadata, retrieval details, or tool calls."
+        )
 
     def _response_contract(self, question: str) -> str:
         normalized = " ".join(question.strip().lower().split())
@@ -1710,8 +1730,15 @@ class BHFAgent:
             response_format=response_format,
             metadata={
                 "profile": ctx.profile_name,
+                "runtime_profile_mode": self.config.runtime_profile_mode,
+                "full_profile_injected": bool(
+                    ctx.debug_metadata.get("full_profile_injected")
+                ),
                 "answer_mode": ctx.answer_mode,
                 "response_contract": self._response_contract(ctx.original_question),
+                "prompt_token_estimates": ctx.debug_metadata.get(
+                    "prompt_token_estimates", {}
+                ),
                 "reference_context": ctx.reference_context.to_dict(),
                 "genre_context": ctx.genre_context.to_dict(),
                 "question_context": ctx.question_context.to_dict(),
@@ -2034,6 +2061,17 @@ class BHFAgent:
             "framework_version_fingerprint": ctx.debug_metadata.get(
                 "framework_version_fingerprint"
             ),
+            "runtime_profile_mode": ctx.debug_metadata.get("runtime_profile_mode"),
+            "full_profile_injected": ctx.debug_metadata.get(
+                "full_profile_injected", False
+            ),
+            "prompt_token_estimates": ctx.debug_metadata.get(
+                "prompt_token_estimates", {}
+            ),
+            "prompt_character_counts": ctx.debug_metadata.get(
+                "prompt_character_counts", {}
+            ),
+            "prompt_token_estimator": ctx.debug_metadata.get("prompt_token_estimator"),
             "answer_mode": ctx.answer_mode,
             "response_contract": ctx.debug_metadata.get("response_contract"),
             "memory_enabled": self.config.memory_enabled,
@@ -2268,6 +2306,16 @@ class BHFAgent:
                     ctx.debug_metadata.get("canonical_library_prompt_tokens")
                 )
                 or 0,
+                "runtime_profile_mode": ctx.debug_metadata.get("runtime_profile_mode"),
+                "full_profile_injected": bool(
+                    ctx.debug_metadata.get("full_profile_injected", False)
+                ),
+                "prompt_token_estimates": dict(
+                    ctx.debug_metadata.get("prompt_token_estimates") or {}
+                ),
+                "prompt_token_estimator": ctx.debug_metadata.get(
+                    "prompt_token_estimator"
+                ),
                 "model_provider": model_provider,
                 "model_name": model_name,
                 "model_latency_ms": model_latency_ms,
@@ -2297,6 +2345,12 @@ class BHFAgent:
                 record["adapter_type"] = ctx.debug_metadata.get("adapter_type")
                 record["answer_mode"] = ctx.answer_mode
                 record["profile"] = ctx.profile_name
+                record["runtime_profile_mode"] = ctx.debug_metadata.get(
+                    "runtime_profile_mode"
+                )
+                record["full_profile_injected"] = bool(
+                    ctx.debug_metadata.get("full_profile_injected", False)
+                )
                 record["response_contract"] = ctx.debug_metadata.get("response_contract")
                 record["rollout_mode"] = ctx.debug_metadata.get(
                     "canonical_library_rollout_mode"
@@ -2338,6 +2392,15 @@ class BHFAgent:
                         ),
                         "canonical_library_rollout_mode": ctx.debug_metadata.get(
                             "canonical_library_rollout_mode"
+                        ),
+                        "runtime_profile_mode": ctx.debug_metadata.get(
+                            "runtime_profile_mode"
+                        ),
+                        "full_profile_injected": bool(
+                            ctx.debug_metadata.get("full_profile_injected", False)
+                        ),
+                        "prompt_token_estimates": dict(
+                            ctx.debug_metadata.get("prompt_token_estimates") or {}
                         ),
                         "canonical_library_retrieval_cache_key": ctx.debug_metadata.get(
                             "canonical_library_retrieval_cache_key"

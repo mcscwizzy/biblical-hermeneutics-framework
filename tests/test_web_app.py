@@ -70,6 +70,7 @@ class WebFormTests(unittest.TestCase):
         config = config_from_form(
             {
                 "profile": "standard",
+                "runtime_profile_mode": "full",
                 "answer_mode": "teaching",
                 "model": "local-model",
                 "base_url": "http://localhost:1234/v1",
@@ -86,6 +87,7 @@ class WebFormTests(unittest.TestCase):
         )
 
         self.assertEqual(config.profile, "standard")
+        self.assertEqual(config.runtime_profile_mode, "full")
         self.assertEqual(config.answer_mode, "teaching")
         self.assertEqual(config.model, "local-model")
         self.assertEqual(config.base_url, "http://localhost:1234/v1")
@@ -117,6 +119,20 @@ class WebFormTests(unittest.TestCase):
                 },
                 defaults,
             )
+
+    def test_web_defaults_accept_runtime_profile_mode_env_override(self):
+        with patch.dict(
+            os.environ,
+            {
+                "BHF_RUNTIME_PROFILE_MODE": "full",
+                "BHF_MODEL": "local-model",
+                "BHF_BASE_URL": "http://localhost:1234/v1",
+            },
+            clear=False,
+        ):
+            loaded = load_web_defaults(path=Path("/tmp/missing-bhf-web-config.json"))
+
+        self.assertEqual(loaded.config.runtime_profile_mode, "full")
 
     def test_web_defaults_read_environment_variables(self):
         env = {
