@@ -120,6 +120,21 @@ Cross References, Related OT Themes, Fulfillment in the NT, Compare
 Translations, Timeline, Maps, Save Study, and a guarded Word Study helper for
 the selected installed translation.
 
+BHF also has a first-phase offline Greek/Hebrew lexical database layer for
+deterministic word-study data. Build the generated CKL SQLite database, then
+import approved local lexical source payloads explicitly:
+
+```bash
+python -m framework.canonical_library build-db
+python tools/import_lexicons.py --output .bhf/ckl.sqlite --normalized-json <payload.json> --rebuild
+```
+
+Lexical data assists interpretation; it does not replace context, grammar,
+syntax, genre, or careful exegesis. See
+[`docs/lexicon-architecture.md`](docs/lexicon-architecture.md),
+[`docs/lexicon-sources.md`](docs/lexicon-sources.md), and
+[`docs/word-study.md`](docs/word-study.md).
+
 ---
 
 ## Repository layout

@@ -60,6 +60,26 @@ The Canonical Knowledge Library has its own small command set in `tools/`:
 
 Run these from the repository root so relative paths resolve correctly.
 
+## `import_lexicons.py`
+
+Imports explicit local normalized lexical JSON payloads into the generated CKL
+SQLite database. This is the phase-1 target contract for Greek/Hebrew source
+parsers; it does not download source repositories or parse raw upstream files
+during application startup.
+
+```bash
+python -m framework.canonical_library build-db
+python tools/import_lexicons.py \
+  --output .bhf/ckl.sqlite \
+  --normalized-json tests/fixtures/lexicon_phase1.json \
+  --rebuild
+```
+
+Raw source checkouts for future Open Scriptures, morphhb, MorphGNT, and
+Abbott-Smith importers should live under ignored `data_sources/lexicons/`
+directories, with licenses and pinned revisions documented in
+[`../docs/lexicon-sources.md`](../docs/lexicon-sources.md).
+
 ## Code style
 
 Python follows PEP 8 with a 88-column line limit (the common `black` default;

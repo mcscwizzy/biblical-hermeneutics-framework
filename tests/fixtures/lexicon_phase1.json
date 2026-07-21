@@ -1,0 +1,155 @@
+{
+  "sources": [
+    {
+      "name": "test-open-scriptures-hebrew",
+      "repository_url": "https://example.invalid/openscriptures-hebrew-fixture",
+      "revision": "fixture-revision-1",
+      "license": "CC BY 4.0",
+      "attribution": "Fixture data modeled for BHF tests.",
+      "redistribution_status": "test-fixture-only"
+    },
+    {
+      "name": "test-morphgnt",
+      "repository_url": "https://example.invalid/morphgnt-fixture",
+      "revision": "fixture-revision-1",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Fixture data modeled for BHF tests.",
+      "redistribution_status": "test-fixture-only"
+    }
+  ],
+  "entries": [
+    {
+      "language": "hebrew",
+      "lemma": "חֶסֶד",
+      "transliteration": "ḥesed",
+      "strongs_number": "H02617",
+      "part_of_speech": "noun",
+      "short_gloss": "steadfast love; loyalty; kindness",
+      "definition": "Concise fixture definition for covenant loyalty.",
+      "source_name": "test-open-scriptures-hebrew",
+      "source_entry_id": "H2617",
+      "license": "CC BY 4.0",
+      "attribution": "Fixture data modeled for BHF tests.",
+      "senses": [
+        {
+          "sense_order": 1,
+          "gloss": "steadfast love",
+          "definition": "Durable loyal kindness in relationship.",
+          "semantic_domain": "covenant relationship",
+          "source_sense_id": "H2617.1"
+        },
+        {
+          "sense_order": 2,
+          "gloss": "kindness",
+          "definition": "Merciful or gracious action.",
+          "source_sense_id": "H2617.2"
+        }
+      ]
+    },
+    {
+      "language": "greek",
+      "lemma": "λόγος",
+      "transliteration": "logos",
+      "strongs_number": "G3056",
+      "part_of_speech": "noun",
+      "short_gloss": "word; message; account",
+      "definition": "Concise fixture definition for speech, message, or account.",
+      "source_name": "test-morphgnt",
+      "source_entry_id": "G3056",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Fixture data modeled for BHF tests.",
+      "senses": [
+        {
+          "sense_order": 1,
+          "gloss": "word",
+          "definition": "A spoken or written expression.",
+          "source_sense_id": "G3056.1"
+        },
+        {
+          "sense_order": 2,
+          "gloss": "message",
+          "definition": "A communicated report or account.",
+          "source_sense_id": "G3056.2"
+        }
+      ]
+    }
+  ],
+  "word_forms": [
+    {
+      "language": "hebrew",
+      "surface_form": "חַסְדְּךָ",
+      "lemma": "חֶסֶד",
+      "transliteration": "hasdeka",
+      "strongs_number": "H2617",
+      "morphology_code": "Ncmsc",
+      "source_name": "test-open-scriptures-hebrew",
+      "source_entry_id": "H2617",
+      "source_word_id": "ps23-6-w1"
+    },
+    {
+      "language": "greek",
+      "surface_form": "λόγος",
+      "lemma": "λόγος",
+      "transliteration": "logos",
+      "strongs_number": "G3056",
+      "morphology_code": "N-NSM",
+      "source_name": "test-morphgnt",
+      "source_entry_id": "G3056",
+      "source_word_id": "jn1-1-w3"
+    }
+  ],
+  "verse_words": [
+    {
+      "book": "Psalms",
+      "chapter": 23,
+      "verse": 6,
+      "word_position": 1,
+      "source_word_id": "ps23-6-w1",
+      "language": "hebrew",
+      "surface_form": "חֶסֶד",
+      "lemma": "חֶסֶד",
+      "transliteration": "ḥesed",
+      "strongs_number": "H2617",
+      "morphology_code": "Ncmsa",
+      "source_name": "test-open-scriptures-hebrew",
+      "source_entry_id": "H2617"
+    },
+    {
+      "book": "Psalms",
+      "chapter": 23,
+      "verse": 6,
+      "word_position": 2,
+      "source_word_id": "ps23-6-w2",
+      "language": "hebrew",
+      "surface_form": "יִרְדְּפוּנִי",
+      "lemma": "רדף",
+      "transliteration": "yirdefuni",
+      "strongs_number": "H7291",
+      "morphology_code": "Vqi3mp",
+      "source_name": "test-open-scriptures-hebrew"
+    },
+    {
+      "book": "John",
+      "chapter": 1,
+      "verse": 1,
+      "word_position": 3,
+      "source_word_id": "jn1-1-w3",
+      "language": "greek",
+      "surface_form": "λόγος",
+      "lemma": "λόγος",
+      "transliteration": "logos",
+      "strongs_number": "G3056",
+      "morphology_code": "N-NSM",
+      "source_name": "test-morphgnt",
+      "source_entry_id": "G3056"
+    }
+  ],
+  "relations": [
+    {
+      "source_entry_id": "G3056",
+      "relation_type": "related_word",
+      "target_entry_id": "H1697",
+      "source_name": "test-morphgnt"
+    }
+  ]
+}

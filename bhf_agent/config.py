@@ -112,6 +112,24 @@ class PublicCacheConfig:
 
 
 @dataclass(frozen=True)
+class LexiconConfig:
+    enabled: bool = True
+    database_path: str = DEFAULT_CKL_DATABASE_PATH
+    max_occurrences: int = 5
+    max_prompt_tokens: int = 350
+    include_full_definitions: bool = False
+    allow_model_context_explanation: bool = True
+
+    def validate(self) -> None:
+        if not str(self.database_path).strip():
+            raise ConfigError("lexicon.database_path must not be blank")
+        if int(self.max_occurrences) <= 0:
+            raise ConfigError("lexicon.max_occurrences must be greater than 0")
+        if int(self.max_prompt_tokens) <= 0:
+            raise ConfigError("lexicon.max_prompt_tokens must be greater than 0")
+
+
+@dataclass(frozen=True)
 class AgentConfig:
     config_version: int = 1
     adapter: str = "openai_compatible"
@@ -135,6 +153,7 @@ class AgentConfig:
     memory_path: Optional[str] = None
     memory_max_turns: int = 8
     canonical_library: CanonicalLibraryConfig = CanonicalLibraryConfig()
+    lexicon: LexiconConfig = LexiconConfig()
     public_cache: PublicCacheConfig = PublicCacheConfig()
     observability: ObservabilityConfig = ObservabilityConfig()
     response_format_policy: str = "auto"
@@ -164,6 +183,7 @@ class AgentConfig:
         data["canonical_library"] = _canonical_library_config_from_value(
             data.get("canonical_library")
         )
+        data["lexicon"] = _lexicon_config_from_value(data.get("lexicon"))
         data["public_cache"] = _public_cache_config_from_value(data.get("public_cache"))
         data["observability"] = _observability_config_from_value(data.get("observability"))
         if "runtime_profile_mode" in data:
@@ -187,6 +207,11 @@ class AgentConfig:
             clean["canonical_library"] = _canonical_library_config_from_value(
                 clean["canonical_library"],
                 base=self.canonical_library,
+            )
+        if "lexicon" in clean:
+            clean["lexicon"] = _lexicon_config_from_value(
+                clean["lexicon"],
+                base=self.lexicon,
             )
         if "public_cache" in clean:
             clean["public_cache"] = _public_cache_config_from_value(
@@ -250,6 +275,7 @@ class AgentConfig:
         if int(self.memory_max_turns) <= 0:
             raise ConfigError("memory_max_turns must be greater than 0")
         self.canonical_library.validate()
+        self.lexicon.validate()
         self.public_cache.validate()
         try:
             self.observability.validate()
@@ -401,6 +427,82 @@ def _public_cache_config_from_value(
         )
     else:
         raise ConfigError("public_cache must be an object")
+
+    config.validate()
+    return config
+
+
+def _lexicon_config_from_value(
+    value: Any,
+    *,
+    base: LexiconConfig | None = None,
+) -> LexiconConfig:
+    if isinstance(value, LexiconConfig):
+        config = value
+    elif value is None:
+        base_config = base or LexiconConfig()
+        config = LexiconConfig(
+            enabled=_coerce_bool(
+                os.environ.get("BHF_LEXICON_ENABLED", base_config.enabled),
+                field_name="lexicon.enabled",
+            ),
+            database_path=str(
+                os.environ.get("BHF_LEXICON_DATABASE_PATH", base_config.database_path)
+            ).strip()
+            or DEFAULT_CKL_DATABASE_PATH,
+            max_occurrences=_coerce_int(
+                os.environ.get("BHF_LEXICON_MAX_OCCURRENCES", base_config.max_occurrences),
+                field_name="lexicon.max_occurrences",
+            ),
+            max_prompt_tokens=_coerce_int(
+                os.environ.get(
+                    "BHF_LEXICON_MAX_PROMPT_TOKENS",
+                    base_config.max_prompt_tokens,
+                ),
+                field_name="lexicon.max_prompt_tokens",
+            ),
+            include_full_definitions=base_config.include_full_definitions,
+            allow_model_context_explanation=base_config.allow_model_context_explanation,
+        )
+    elif isinstance(value, dict):
+        base_config = base or LexiconConfig()
+        known = {field.name for field in fields(LexiconConfig)}
+        unknown = sorted(set(value) - known)
+        if unknown:
+            raise ConfigError(f"unknown lexicon field(s): {', '.join(unknown)}")
+        merged = asdict(base_config)
+        merged.update(value)
+        config = LexiconConfig(
+            enabled=_coerce_bool(
+                os.environ.get("BHF_LEXICON_ENABLED", merged["enabled"]),
+                field_name="lexicon.enabled",
+            ),
+            database_path=str(
+                os.environ.get("BHF_LEXICON_DATABASE_PATH", merged["database_path"])
+            ).strip()
+            or DEFAULT_CKL_DATABASE_PATH,
+            max_occurrences=_coerce_int(
+                os.environ.get("BHF_LEXICON_MAX_OCCURRENCES", merged["max_occurrences"]),
+                field_name="lexicon.max_occurrences",
+            ),
+            max_prompt_tokens=_coerce_int(
+                os.environ.get(
+                    "BHF_LEXICON_MAX_PROMPT_TOKENS",
+                    merged["max_prompt_tokens"],
+                ),
+                field_name="lexicon.max_prompt_tokens",
+            ),
+            include_full_definitions=_coerce_bool(
+                merged["include_full_definitions"],
+                field_name="lexicon.include_full_definitions",
+            ),
+            allow_model_context_explanation=_coerce_bool(
+                merged["allow_model_context_explanation"],
+                field_name="lexicon.allow_model_context_explanation",
+            ),
+        )
+    else:
+        raise ConfigError("lexicon must be an object")
 
     config.validate()
     return config

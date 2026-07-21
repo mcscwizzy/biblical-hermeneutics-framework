@@ -16,6 +16,18 @@ from .graph import (
     with_bidirectional_relationships,
 )
 from .loader import CanonicalLibrary
+from .lexicon_importer import import_normalized_lexicon_file, import_normalized_lexicon_payload
+from .lexicon_models import (
+    WORD_STUDY_GUARDRAILS,
+    LexiconEntry,
+    LexiconSense,
+    LexiconSource,
+    RepresentativeOccurrence,
+    VerseWord,
+    WordForm,
+    WordStudyContext,
+)
+from .lexicon_repository import LexiconRepository
 from .normalization import normalize_alias, normalize_id, normalize_text, tokenize_query
 from .public_cache import (
     DEFAULT_PUBLIC_CACHE_PATH,
@@ -117,6 +129,17 @@ __version__ = load_framework_version()
 __all__ = [
     "__version__",
     "CanonicalLibrary",
+    "LexiconRepository",
+    "LexiconEntry",
+    "LexiconSense",
+    "LexiconSource",
+    "RepresentativeOccurrence",
+    "VerseWord",
+    "WordForm",
+    "WordStudyContext",
+    "WORD_STUDY_GUARDRAILS",
+    "import_normalized_lexicon_file",
+    "import_normalized_lexicon_payload",
     "CanonicalRepository",
     "JsonCanonicalRepository",
     "SQLiteCanonicalRepository",

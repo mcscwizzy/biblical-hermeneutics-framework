@@ -1,5 +1,6 @@
 import argparse
 import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
@@ -148,6 +149,11 @@ class AgentConfigTests(unittest.TestCase):
             config.public_cache.allowed_review_statuses,
             ("reviewed", "approved"),
         )
+        self.assertTrue(config.lexicon.enabled)
+        self.assertEqual(config.lexicon.database_path, ".bhf/ckl.sqlite")
+        self.assertEqual(config.lexicon.max_occurrences, 5)
+        self.assertEqual(config.lexicon.max_prompt_tokens, 350)
+        self.assertFalse(config.lexicon.include_full_definitions)
 
     def test_runtime_profile_mode_accepts_supported_values(self):
         for mode in ("compact", "full"):
@@ -313,6 +319,81 @@ class AgentConfigTests(unittest.TestCase):
         self.assertEqual(config.public_cache.minimum_quality_score, 92.5)
         self.assertEqual(config.public_cache.default_ttl_days, 90)
         self.assertEqual(config.public_cache.allowed_review_statuses, ("approved",))
+
+    def test_config_accepts_lexicon_section(self):
+        config = AgentConfig.from_mapping(
+            {
+                "config_version": 1,
+                "adapter": "openai_compatible",
+                "base_url": "http://localhost:1234/v1",
+                "model": "local-model",
+                "profile": "standard",
+                "lexicon": {
+                    "enabled": True,
+                    "database_path": ".bhf/custom-lexicon.sqlite",
+                    "max_occurrences": 3,
+                    "max_prompt_tokens": 250,
+                    "include_full_definitions": True,
+                    "allow_model_context_explanation": False,
+                },
+            }
+        )
+
+        self.assertTrue(config.lexicon.enabled)
+        self.assertEqual(config.lexicon.database_path, ".bhf/custom-lexicon.sqlite")
+        self.assertEqual(config.lexicon.max_occurrences, 3)
+        self.assertEqual(config.lexicon.max_prompt_tokens, 250)
+        self.assertTrue(config.lexicon.include_full_definitions)
+        self.assertFalse(config.lexicon.allow_model_context_explanation)
+
+    def test_config_rejects_invalid_lexicon_section(self):
+        with self.assertRaisesRegex(ConfigError, "lexicon.max_occurrences"):
+            AgentConfig.from_mapping(
+                {
+                    "config_version": 1,
+                    "adapter": "openai_compatible",
+                    "base_url": "http://localhost:1234/v1",
+                    "model": "local-model",
+                    "profile": "standard",
+                    "lexicon": {"max_occurrences": 0},
+                }
+            )
+
+    def test_lexicon_env_overrides_apply_without_config_section(self):
+        previous = {
+            key: os.environ.get(key)
+            for key in (
+                "BHF_LEXICON_ENABLED",
+                "BHF_LEXICON_DATABASE_PATH",
+                "BHF_LEXICON_MAX_OCCURRENCES",
+                "BHF_LEXICON_MAX_PROMPT_TOKENS",
+            )
+        }
+        os.environ["BHF_LEXICON_ENABLED"] = "false"
+        os.environ["BHF_LEXICON_DATABASE_PATH"] = ".bhf/env-lexicon.sqlite"
+        os.environ["BHF_LEXICON_MAX_OCCURRENCES"] = "7"
+        os.environ["BHF_LEXICON_MAX_PROMPT_TOKENS"] = "275"
+        try:
+            config = AgentConfig.from_mapping(
+                {
+                    "config_version": 1,
+                    "adapter": "openai_compatible",
+                    "base_url": "http://localhost:1234/v1",
+                    "model": "local-model",
+                    "profile": "standard",
+                }
+            )
+        finally:
+            for key, value in previous.items():
+                if value is None:
+                    os.environ.pop(key, None)
+                else:
+                    os.environ[key] = value
+
+        self.assertFalse(config.lexicon.enabled)
+        self.assertEqual(config.lexicon.database_path, ".bhf/env-lexicon.sqlite")
+        self.assertEqual(config.lexicon.max_occurrences, 7)
+        self.assertEqual(config.lexicon.max_prompt_tokens, 275)
 
     def test_config_allows_public_cache_when_canonical_library_runs_in_shadow_mode(self):
         config = AgentConfig.from_mapping(
