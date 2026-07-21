@@ -593,7 +593,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("translation-import-button", index_html)
         self.assertIn("Loading translations...", index_html)
         self.assertIn('name="reader_translation"', index_html)
-        self.assertIn("style.css') }}?v=20260717b", index_html)
+        self.assertIn("style.css') }}?v=20260721a", index_html)
         self.assertIn("htmx-lite.js') }}?v=20260717b", index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
@@ -638,6 +638,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn(".workspace-mobile-minimize", style)
         self.assertNotIn(".workspace-tab-bar::after", style)
         self.assertNotIn("max-height: 50vh;", style)
+        self.assertIn("body.workspace-expanded .workspace-pane[data-workspace-pane=\"ask\"] {\n    overflow-y: auto;", style)
+        self.assertIn("body.workspace-expanded .answer-panel {\n    max-height: none;\n    height: auto;\n    overflow: visible;", style)
         self.assertIn(".journey-metadata-chip", style)
         self.assertIn(".journey-passage-pill--button", style)
         self.assertIn(".journey-layers-card", style)
