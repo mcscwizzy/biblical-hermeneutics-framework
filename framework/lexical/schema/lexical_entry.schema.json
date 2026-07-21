@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://biblical-hermeneutics-framework.org/schema/lexical-entry.schema.json",
+  "title": "BHF lexical entry",
+  "description": "Normalized lexical data stored by the standalone BHF Biblical Lexical Engine.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "integer", "minimum": 1 },
+    "language": { "type": "string", "enum": ["hebrew", "greek", "aramaic"] },
+    "strongs_number": { "type": ["string", "null"] },
+    "lemma": { "type": "string", "minLength": 1 },
+    "transliteration": { "type": ["string", "null"] },
+    "pronunciation": { "type": ["string", "null"] },
+    "definition": { "type": "string", "minLength": 1 },
+    "short_definition": { "type": ["string", "null"] },
+    "root": { "type": ["string", "null"] },
+    "part_of_speech": { "type": ["string", "null"] },
+    "morphology": { "type": ["string", "null"] },
+    "semantic_domain": { "type": ["string", "null"] },
+    "usage_notes": { "type": ["string", "null"] },
+    "source": { "type": "string", "minLength": 1 },
+    "license": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "attribution": { "type": ["string", "null"] }
+  },
+  "required": ["language", "lemma", "definition", "source", "license", "created_at"]
+}

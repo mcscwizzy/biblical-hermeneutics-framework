@@ -1,5 +1,11 @@
 # Lexicon Architecture
 
+The standalone Biblical Lexical Engine now lives under
+`framework/lexical/`. Its generated SQLite store is independent of CKL and
+contains normalized lexical records plus source attribution. CKL remains the
+home for curated hermeneutical/contextual objects and may still contain its
+existing word-study tables for passage-token resolution.
+
 BHF lexical support is designed as a deterministic, offline layer beside the
 Canonical Knowledge Library (CKL). It does not replace curated CKL objects, and
 it does not ask a model to reconstruct Greek or Hebrew data from memory.
@@ -9,8 +15,9 @@ it does not ask a model to reconstruct Greek or Hebrew data from memory.
 1. Raw external source data lives outside runtime lookup, normally under
    `data_sources/lexicons/`. These checkouts are ignored by git unless a future
    source is explicitly vendored with license approval.
-2. Normalized lexical data is imported into the generated CKL SQLite database,
-   usually `.bhf/ckl.sqlite`.
+2. Normalized standalone lexical data is imported into
+   `framework/lexical/database/lexicon.sqlite` (or a configured deployment
+   path). CKL data is built separately.
 3. Runtime code queries compact repository and word-study objects. These can be
    rendered directly, cached deterministically, or passed to a model as compact
    explanation context.
@@ -83,9 +90,13 @@ Implemented:
 - Passage word-study service integration
 - Compact prompt-path injection for deterministic Word Study results
 
+The standalone engine also provides native Open Scriptures XML importers,
+SQLite-only runtime lookup, provenance validation, and bounded lexical prompt
+context. The raw source files remain the developer's responsibility.
+
 Not yet implemented:
 
-- Dedicated parsers for every native upstream file layout in Open Scriptures
-  Strong's, HebrewLexicon, morphhb, MorphGNT, or Abbott-Smith
+- Dedicated parsers for every non-dictionary upstream file layout in Open
+  Scriptures Strong's, HebrewLexicon, morphhb, MorphGNT, or Abbott-Smith
 - Browser-side original-language token picker for ambiguity resolution
 - Licensing decision and pinned revisions for production bundled datasets

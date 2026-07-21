@@ -500,6 +500,7 @@ def build_prompt(
     session_memory: SessionMemory | None = None,
     answer_mode: str = "study",
     canonical_context_prompt: str | None = None,
+    lexical_context_prompt: str | None = None,
     runtime_profile_mode: str = "compact",
     response_contract_prompt: str | None = None,
 ) -> tuple[str, str]:
@@ -519,6 +520,7 @@ def build_prompt(
         session_memory=session_memory,
         answer_mode=answer_mode,
         canonical_context_prompt=canonical_context_prompt,
+        lexical_context_prompt=lexical_context_prompt,
         runtime_profile_mode=runtime_profile_mode,
         response_contract_prompt=response_contract_prompt,
     )
@@ -539,6 +541,7 @@ def build_prompt_result(
     session_memory: SessionMemory | None = None,
     answer_mode: str = "study",
     canonical_context_prompt: str | None = None,
+    lexical_context_prompt: str | None = None,
     runtime_profile_mode: str = "compact",
     response_contract_prompt: str | None = None,
 ) -> PromptBuildResult:
@@ -606,6 +609,17 @@ def build_prompt_result(
                 [canonical_context_block],
             )
         )
+    lexical_context_block = lexical_context_prompt.strip() if lexical_context_prompt else ""
+    if lexical_context_block:
+        system_sections.append(
+            _prompt_section(
+                "VERIFIED LEXICAL DATA",
+                [
+                    "The following records are imported lexical data. Use them as the lexical source of truth, while distinguishing lexical range from contextual meaning.",
+                    lexical_context_block,
+                ],
+            )
+        )
     if local_knowledge is None:
         local_knowledge = LocalKnowledgeBundle(lexical_entries=lexical_entries or [])
     optional_context_blocks: list[str] = []
@@ -648,6 +662,7 @@ def build_prompt_result(
         map_context=map_context_prompt,
         session_memory=session_memory_prompt,
         canonical_context=canonical_context_block,
+        lexical_context=lexical_context_block,
         response_contract=response_contract_prompt or "",
         system_prompt=system_prompt,
         user_prompt=user_prompt,

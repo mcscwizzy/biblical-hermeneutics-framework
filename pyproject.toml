@@ -31,9 +31,10 @@ include-package-data = true
 version = { file = ["VERSION"] }
 
 [tool.setuptools.packages.find]
-include = ["bhf_agent*", "framework.canonical_library*"]
+include = ["bhf_agent*", "framework.canonical_library*", "framework.lexical*"]
 namespaces = true
 
 [tool.setuptools.package-data]
 "framework.canonical_library" = ["manifest.json", "objects/**/*.json", "schema/*.json", "data/*.sqlite"]
+"framework.lexical" = ["schema/*.json", "database/*.sqlite"]
 "bhf_agent" = ["data/*.json"]

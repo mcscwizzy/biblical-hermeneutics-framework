@@ -10,6 +10,7 @@ from typing import Any, Optional, Union
 
 from framework.canonical_library import DEFAULT_PUBLIC_CACHE_PATH, REVIEW_STATUS_VALUES
 from framework.canonical_library.database_schema import DEFAULT_CKL_DATABASE_PATH
+from framework.lexical.service import DEFAULT_LEXICAL_DATABASE_PATH
 
 from .observability import ObservabilityConfig
 
@@ -115,6 +116,7 @@ class PublicCacheConfig:
 class LexiconConfig:
     enabled: bool = True
     database_path: str = DEFAULT_CKL_DATABASE_PATH
+    runtime_database_path: str = DEFAULT_LEXICAL_DATABASE_PATH
     max_occurrences: int = 5
     max_prompt_tokens: int = 350
     include_full_definitions: bool = False
@@ -123,6 +125,8 @@ class LexiconConfig:
     def validate(self) -> None:
         if not str(self.database_path).strip():
             raise ConfigError("lexicon.database_path must not be blank")
+        if not str(self.runtime_database_path).strip():
+            raise ConfigError("lexicon.runtime_database_path must not be blank")
         if int(self.max_occurrences) <= 0:
             raise ConfigError("lexicon.max_occurrences must be greater than 0")
         if int(self.max_prompt_tokens) <= 0:
@@ -450,6 +454,12 @@ def _lexicon_config_from_value(
                 os.environ.get("BHF_LEXICON_DATABASE_PATH", base_config.database_path)
             ).strip()
             or DEFAULT_CKL_DATABASE_PATH,
+            runtime_database_path=str(
+                os.environ.get(
+                    "BHF_LEXICAL_DATABASE_PATH", base_config.runtime_database_path
+                )
+            ).strip()
+            or DEFAULT_LEXICAL_DATABASE_PATH,
             max_occurrences=_coerce_int(
                 os.environ.get("BHF_LEXICON_MAX_OCCURRENCES", base_config.max_occurrences),
                 field_name="lexicon.max_occurrences",
@@ -481,6 +491,12 @@ def _lexicon_config_from_value(
                 os.environ.get("BHF_LEXICON_DATABASE_PATH", merged["database_path"])
             ).strip()
             or DEFAULT_CKL_DATABASE_PATH,
+            runtime_database_path=str(
+                os.environ.get(
+                    "BHF_LEXICAL_DATABASE_PATH", merged["runtime_database_path"]
+                )
+            ).strip()
+            or DEFAULT_LEXICAL_DATABASE_PATH,
             max_occurrences=_coerce_int(
                 os.environ.get("BHF_LEXICON_MAX_OCCURRENCES", merged["max_occurrences"]),
                 field_name="lexicon.max_occurrences",

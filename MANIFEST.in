@@ -6,4 +6,5 @@ include LICENSE-CONTENT
 recursive-include framework/canonical_library/objects *.json
 include framework/canonical_library/manifest.json
 recursive-include framework/canonical_library/schema *.json
+recursive-include framework/lexical/schema *.json
 recursive-include bhf_agent/data *.json

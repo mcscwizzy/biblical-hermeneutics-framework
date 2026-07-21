@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import json
 import logging
+import re
+import sqlite3
 import time
 import uuid
 from datetime import datetime, timezone
@@ -72,10 +74,12 @@ from framework.canonical_library import (
     normalize_public_question,
     public_cache_key,
 )
+from framework.lexical import LexicalLookupService
 
 
 StatusCallback = Callable[[dict[str, Any]], None]
 OBSERVABILITY_LOGGER = logging.getLogger("bhf_agent.observability")
+STRONGS_QUERY_RE = re.compile(r"\b[HG]\s*0*\d{1,5}[A-Za-z]?\b", re.IGNORECASE)
 
 
 def _safe_int(value: Any) -> int | None:
@@ -317,6 +321,7 @@ class BHFAgent:
         canonical_library: Optional[CanonicalLibrary] = None,
         public_answer_cache: Optional[PublicAnswerCache] = None,
         runtime_cache: Optional[CKLRuntimeCache] = None,
+        lexical_engine: Optional[LexicalLookupService] = None,
     ) -> None:
         config.validate()
         self.config = config
@@ -350,6 +355,9 @@ class BHFAgent:
                 enabled=self.config.canonical_library.cache_enabled,
                 max_entries=self.config.canonical_library.cache_max_entries,
             )
+        self.lexical_engine = lexical_engine or LexicalLookupService(
+            self.config.lexicon.runtime_database_path
+        )
         self._status_callback: Optional[StatusCallback] = None
         self._status_run_started_at: float | None = None
         self._status_stage_started_at: float | None = None
@@ -491,6 +499,11 @@ class BHFAgent:
                 "response_format_requested": False,
                 "response_format_policy": self.config.response_format_policy,
                 "local_knowledge_keys": [],
+                "lexical_engine_enabled": self.config.lexicon.enabled,
+                "lexical_engine_lookup_attempted": False,
+                "lexical_engine_entry_count": 0,
+                "lexical_engine_prompt_tokens": 0,
+                "lexical_engine_error": None,
                 "canonical_library_enabled": self.config.canonical_library.enabled,
                 "canonical_library_shadow_mode": self.config.canonical_library.shadow_mode,
                 "canonical_library_rollout_mode": self._canonical_library_rollout_mode(),
@@ -647,11 +660,43 @@ class BHFAgent:
         if map_context:
             ctx.debug_metadata["map_tool_keys"] = list(map_context.get("requested_tools", []))
             ctx.debug_metadata["map_tool_context"] = map_context
+        self._lookup_lexical_engine(ctx)
         if ctx.debug_metadata.get("deterministic_fact_packet"):
             self._apply_deterministic_fact_packet(ctx)
             return self._mark_stage(ctx, "lookup_local_knowledge")
         self._lookup_canonical_library(ctx)
         return self._mark_stage(ctx, "lookup_local_knowledge")
+
+    def _lookup_lexical_engine(self, ctx: PipelineContext) -> None:
+        """Retrieve only explicit original-language targets before CKL lookup."""
+
+        ctx.lexical_context_prompt = None
+        ctx.debug_metadata["lexical_engine_enabled"] = bool(self.config.lexicon.enabled)
+        ctx.debug_metadata["lexical_engine_lookup_attempted"] = False
+        ctx.debug_metadata["lexical_engine_entry_count"] = 0
+        ctx.debug_metadata["lexical_engine_prompt_tokens"] = 0
+        if not self.config.lexicon.enabled or ctx.question_context is None:
+            return
+        if (
+            ctx.question_context.question_type != "word_study"
+            and not STRONGS_QUERY_RE.search(ctx.original_question)
+        ):
+            return
+        ctx.debug_metadata["lexical_engine_lookup_attempted"] = True
+        try:
+            entries, prompt_context = self.lexical_engine.lookup_question(
+                language=ctx.question_context.target_language,
+                terms=ctx.question_context.target_terms,
+                question=ctx.original_question,
+                max_results=3,
+                max_prompt_tokens=350,
+            )
+        except (FileNotFoundError, OSError, sqlite3.Error, ValueError) as exc:
+            ctx.debug_metadata["lexical_engine_error"] = str(exc)
+            return
+        ctx.lexical_context_prompt = prompt_context or None
+        ctx.debug_metadata["lexical_engine_entry_count"] = len(entries)
+        ctx.debug_metadata["lexical_engine_prompt_tokens"] = estimate_tokens(prompt_context)
 
     def _apply_deterministic_fact_packet(self, ctx: PipelineContext) -> None:
         packet = ctx.debug_metadata.get("deterministic_fact_packet")
@@ -1429,6 +1474,7 @@ class BHFAgent:
             session_memory=ctx.session_memory,
             answer_mode=ctx.answer_mode,
             canonical_context_prompt=ctx.canonical_library_prompt,
+            lexical_context_prompt=ctx.lexical_context_prompt,
             runtime_profile_mode=self.config.runtime_profile_mode,
             response_contract_prompt=response_contract_prompt,
         )
@@ -1744,6 +1790,15 @@ class BHFAgent:
                 "question_context": ctx.question_context.to_dict(),
                 "local_knowledge_keys": ctx.debug_metadata.get(
                     "local_knowledge_keys", []
+                ),
+                "lexical_engine_enabled": ctx.debug_metadata.get(
+                    "lexical_engine_enabled", False
+                ),
+                "lexical_engine_entry_count": ctx.debug_metadata.get(
+                    "lexical_engine_entry_count", 0
+                ),
+                "lexical_engine_prompt_tokens": ctx.debug_metadata.get(
+                    "lexical_engine_prompt_tokens", 0
                 ),
                 "canonical_library_enabled": ctx.debug_metadata.get("canonical_library_enabled"),
                 "canonical_library_loaded": ctx.debug_metadata.get("canonical_library_loaded"),
