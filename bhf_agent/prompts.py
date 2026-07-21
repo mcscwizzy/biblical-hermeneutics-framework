@@ -103,7 +103,12 @@ ANSWER_MODE_INSTRUCTIONS: dict[str, tuple[str, ...]] = {
     ),
 }
 
-PROMPT_VERSION = "phase13-v1"
+PROMPT_VERSION = "phase13-v2"
+
+
+CULTURAL_CONTEXT_INSTRUCTIONS = """# Cultural Context Action
+
+You are answering a focused Cultural Context request. Explain only the customs, worldview, social assumptions, religious practices, symbols, or institutions directly needed to understand the selected passage. Distinguish Jewish, Second Temple, Greco-Roman, or Ancient Near Eastern background only when relevant. Do not provide a general historical timeline, authorship dating, literary outline, covenant survey, modern application, or full commentary. Use only these sections: Relevant Cultural Practice or Assumption; Jewish, Second Temple, Greco-Roman, or Ancient Near Eastern Background; Meaning for the Passage. State uncertainty rather than guessing."""
 
 
 class PromptStrategy:
@@ -280,6 +285,12 @@ def build_detected_context(
 
 def minimal_format_instructions(question_context: QuestionContext | None) -> list[str]:
     question_type = _question_type(question_context)
+    if question_type == "cultural_context":
+        return [
+            "- Use exactly these headings: ## 1. Relevant Cultural Practice or Assumption; ## 2. Jewish, Second Temple, Greco-Roman, or Ancient Near Eastern Background; ## 3. Meaning for the Passage.",
+            "- Include only background directly relevant to the selected passage.",
+            "- Do not include dates, rulers, political timelines, literary structure, covenant theology, application, devotion, or a full commentary unless essential to explain one cultural practice.",
+        ]
     if question_type == "word_study":
         return [
             "- Use this required answer order and headings exactly: ## 1. Short Answer; ## 2. Basic Meaning; ## 3. Context Matters; ## 4. Examples; ## 5. Cautions.",
@@ -311,6 +322,11 @@ def minimal_format_instructions(question_context: QuestionContext | None) -> lis
 
 def standard_format_instructions(question_context: QuestionContext | None) -> list[str]:
     question_type = _question_type(question_context)
+    if question_type == "cultural_context":
+        return [
+            "- Use only these three headings: Relevant Cultural Practice or Assumption; Jewish, Second Temple, Greco-Roman, or Ancient Near Eastern Background; Meaning for the Passage.",
+            "- Keep the answer compact and passage-specific; state uncertainty rather than guessing.",
+        ]
     if question_type == "word_study":
         return [
             "- Use a word-study format: ## 1. Short Answer; ## 2. Basic Meaning; ## 3. Context Matters; ## 4. Examples; ## 5. Cautions.",
@@ -332,6 +348,11 @@ def standard_format_instructions(question_context: QuestionContext | None) -> li
 
 def scholar_format_instructions(question_context: QuestionContext | None) -> list[str]:
     question_type = _question_type(question_context)
+    if question_type == "cultural_context":
+        return [
+            "- Use only these three headings: Relevant Cultural Practice or Assumption; Jewish, Second Temple, Greco-Roman, or Ancient Near Eastern Background; Meaning for the Passage.",
+            "- Give only evidence relevant to the selected passage and label disputed background carefully.",
+        ]
     if question_type == "word_study":
         return [
             "- Use a word-study format with careful lexical method: ## 1. Short Answer; ## 2. Basic Meaning; ## 3. Context Matters; ## 4. Examples; ## 5. Cautions.",
@@ -372,6 +393,24 @@ def build_user_prompt(
     if question_context is None:
         return question.strip()
     question_type = _question_type(question_context)
+    if question_type == "cultural_context":
+        return "\n".join(
+            [
+                "Question:",
+                question.strip(),
+                "",
+                "Question type:",
+                "cultural_context",
+                "",
+                "Answer only with these sections:",
+                "1. Relevant Cultural Practice or Assumption",
+                "2. Jewish, Second Temple, Greco-Roman, or Ancient Near Eastern Background",
+                "3. Meaning for the Passage",
+                "",
+                "Do not use the broad general-study template. State uncertainty rather than guessing.",
+                *prompt_leakage_guardrails(question_context),
+            ]
+        )
     if question_type == "word_study":
         return "\n".join(
             [
@@ -460,6 +499,8 @@ def build_prompt(
             ],
         )
     ]
+    if _question_type(question_context) == "cultural_context":
+        system_sections.append(CULTURAL_CONTEXT_INSTRUCTIONS.strip())
     if canonical_context_prompt:
         system_sections.append(
             _prompt_section(
@@ -523,6 +564,8 @@ def prompt_leakage_guardrails(question_context: QuestionContext | None) -> list[
 
 def required_answer_start(question_context: QuestionContext | None) -> str:
     question_type = _question_type(question_context)
+    if question_type == "cultural_context":
+        return "## 1. Relevant Cultural Practice or Assumption"
     if question_type == "passage_study":
         return "## 1. Genre"
     return "## 1. Short Answer"

@@ -773,6 +773,11 @@ _PROMPT_CONTEXT_SECTION_ORDER: tuple[str, ...] = (
     "New Testament Connections",
 )
 
+_CULTURAL_CONTEXT_SECTION_ORDER: tuple[str, ...] = (
+    "Relevant Cultural Background",
+    "Meaning for the Passage",
+)
+
 _PROMPT_CONTEXT_MODE_LIMITS: dict[str, dict[str, int | bool]] = {
     "concise": {
         "context_sections": 2,
@@ -841,6 +846,24 @@ _PROMPT_SECTION_FIELD_WEIGHTS: dict[str, tuple[tuple[str, int], ...]] = {
     "Later Christian Reception": (("later_christian_reception", 100),),
 }
 
+_CULTURAL_PROMPT_SECTION_FIELD_WEIGHTS: dict[str, tuple[tuple[str, int], ...]] = {
+    "Relevant Cultural Background": (
+        ("ancient_near_east_context", 120),
+        ("hebraic_worldview", 120),
+        ("second_temple_context", 115),
+        ("archaeology", 105),
+        ("summary", 95),
+        ("common_questions", 75),
+    ),
+    "Meaning for the Passage": (
+        ("summary", 105),
+        ("scripture_references", 95),
+        ("common_questions", 80),
+    ),
+    "Interpretive Disputes and Cautions": (("interpretive_notes", 100),),
+    "Later Christian Reception": (),
+}
+
 
 def _normalize_prompt_answer_mode(answer_mode: str | None) -> str:
     mode = str(answer_mode or "study").strip().lower()
@@ -851,8 +874,13 @@ def _prompt_context_mode_limits(answer_mode: str | None) -> dict[str, int | bool
     return _PROMPT_CONTEXT_MODE_LIMITS[_normalize_prompt_answer_mode(answer_mode)]
 
 
-def _prompt_section_field_weights(answer_mode: str | None) -> dict[str, tuple[tuple[str, int], ...]]:
+def _prompt_section_field_weights(
+    answer_mode: str | None,
+    scope: str = "general",
+) -> dict[str, tuple[tuple[str, int], ...]]:
     normalized = _normalize_prompt_answer_mode(answer_mode)
+    if str(scope or "").strip().lower() == "cultural_context":
+        return dict(_CULTURAL_PROMPT_SECTION_FIELD_WEIGHTS)
     weights = {section: tuple(fields) for section, fields in _PROMPT_SECTION_FIELD_WEIGHTS.items()}
     if normalized == "scholar":
         weights["Historical Context"] = weights["Historical Context"] + (
@@ -909,6 +937,7 @@ def build_canonical_prompt_context(
     max_scripture_references_per_entry: int = CKL_MAX_SCRIPTURE_REFERENCES_PER_ENTRY,
     max_caution_notes_per_entry: int = CKL_MAX_CAUTIONS_PER_ENTRY,
     answer_mode: str = "study",
+    scope: str = "general",
 ) -> dict[str, Any]:
     """Project rich CKL retrieval output into a compact prompt-safe structure."""
 
@@ -918,6 +947,7 @@ def build_canonical_prompt_context(
     reference_limit = max(0, int(max_scripture_references_per_entry))
     caution_limit = max(0, int(max_caution_notes_per_entry))
     normalized_answer_mode = _normalize_prompt_answer_mode(answer_mode)
+    normalized_scope = str(scope or "general").strip().lower() or "general"
     mode_limits = _prompt_context_mode_limits(normalized_answer_mode)
 
     retrieved_topics = list(context.get("retrieved_topics") or []) if context else []
@@ -931,6 +961,7 @@ def build_canonical_prompt_context(
                 "max_scripture_references_per_entry": reference_limit,
                 "max_caution_notes_per_entry": caution_limit,
                 "answer_mode": normalized_answer_mode,
+                "scope": normalized_scope,
                 "context_section_limit": int(mode_limits["context_sections"]),
                 "section_item_limit": int(mode_limits["section_items"]),
                 "source_limit": int(mode_limits["sources"]),
@@ -978,6 +1009,7 @@ def build_canonical_prompt_context(
             seen_texts=seen_texts,
             seen_references=seen_references,
             answer_mode=normalized_answer_mode,
+            scope=normalized_scope,
         )
         if entry is None:
             continue
@@ -1010,6 +1042,7 @@ def build_canonical_prompt_context(
         "max_scripture_references_per_entry": reference_limit,
         "max_caution_notes_per_entry": caution_limit,
         "answer_mode": normalized_answer_mode,
+        "scope": normalized_scope,
         "context_section_limit": int(mode_limits["context_sections"]),
         "section_item_limit": int(mode_limits["section_items"]),
         "source_limit": int(mode_limits["sources"]),
@@ -1044,6 +1077,7 @@ def _build_prompt_context_entry(
     seen_texts: set[str],
     seen_references: set[str],
     answer_mode: str,
+    scope: str = "general",
 ) -> tuple[dict[str, Any] | None, int, bool]:
     object_id = normalize_id(str(topic.get("id") or "").strip())
     if not object_id or remaining_tokens <= 0:
@@ -1052,7 +1086,7 @@ def _build_prompt_context_entry(
     title = _normalize_prompt_text(topic.get("title") or object_id) or object_id
     category = _humanize_prompt_category(topic.get("type"))
     mode_limits = _prompt_context_mode_limits(answer_mode)
-    section_weights = _prompt_section_field_weights(answer_mode)
+    section_weights = _prompt_section_field_weights(answer_mode, scope)
 
     local_seen_texts = set(seen_texts)
     local_seen_references = set(seen_references)
@@ -1094,7 +1128,12 @@ def _build_prompt_context_entry(
     context_item_limit = min(max(1, max_facts_per_entry), int(mode_limits["section_items"]))
     context_sections_added = 0
     summary_fallback = ""
-    for section_heading in _PROMPT_CONTEXT_SECTION_ORDER:
+    section_order = (
+        _CULTURAL_CONTEXT_SECTION_ORDER
+        if scope == "cultural_context"
+        else _PROMPT_CONTEXT_SECTION_ORDER
+    )
+    for section_heading in section_order:
         if context_sections_added >= context_section_limit:
             break
         candidates = _collect_ranked_prompt_texts(
@@ -1136,7 +1175,7 @@ def _build_prompt_context_entry(
     if summary:
         sections.insert(0, {"heading": "Summary", "items": [summary]})
 
-    caution_candidates = _collect_ranked_prompt_texts(
+    caution_candidates = [] if scope == "cultural_context" else _collect_ranked_prompt_texts(
         topic,
         field_weights=section_weights["Interpretive Disputes and Cautions"],
         query_terms=query_terms,
@@ -1148,7 +1187,7 @@ def _build_prompt_context_entry(
         limit=caution_limit,
         seen_keys=local_seen_texts,
     )
-    if not selected_cautions:
+    if scope != "cultural_context" and not selected_cautions:
         content_status = str(topic.get("content_status") or "").strip().lower()
         review_status = str(topic.get("review_status") or "").strip().lower()
         if content_status and content_status not in {"complete", "approved"}:
@@ -1164,7 +1203,7 @@ def _build_prompt_context_entry(
     if selected_cautions:
         sections.append({"heading": "Interpretive Disputes and Cautions", "items": selected_cautions})
 
-    if int(mode_limits["later_reception"]) > 0:
+    if scope != "cultural_context" and int(mode_limits["later_reception"]) > 0:
         later_candidates = _collect_ranked_prompt_texts(
             topic,
             field_weights=section_weights["Later Christian Reception"],

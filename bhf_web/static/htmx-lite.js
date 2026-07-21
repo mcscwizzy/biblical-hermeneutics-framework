@@ -18,6 +18,12 @@ const BHF_TRANSLATION_DOWNLOAD_METADATA_KEY = "bhf-translation-download-metadata
 const BHF_TRANSLATION_IMPORT_PREFERENCE_KEY = "bhf-translation-import-preference";
 const BHF_IMPORTABLE_TRANSLATION_IDS = new Set(["kjv", "niv", "esv", "csb", "nasb", "lsb", "nlt"]);
 const BHF_STUDY_ACTIONS = new Set([
+  "full_context",
+  "historical_context",
+  "cultural_context",
+  "original_audience",
+  "covenant_context",
+  // Legacy action values remain accepted for saved links and older clients.
   "ancient_context",
   "literary_context",
   "cross_references",
@@ -30,6 +36,11 @@ const BHF_STUDY_ACTIONS = new Set([
   "compare_archaeology",
   "related_passages",
 ]);
+
+const BHF_STUDY_ACTION_ALIASES = {
+  ancient_context: "cultural_context",
+  ancient_cultural_context: "cultural_context",
+};
 
 let latestJobId = null;
 let latestJobComplete = false;
@@ -2185,7 +2196,7 @@ function showContextMenu(x, y, context) {
   const isSelection = Boolean(context.isSelection);
   const isHighlighted = isContextHighlighted(context);
   setContextLabel("ask_bhf", "Ask BHF");
-  setContextLabel("ancient_context", isSelection ? "Ancient Context" : "Ancient Context");
+  setContextLabel("cultural_context", isSelection ? "Cultural Context" : "Cultural Context");
   setContextLabel("literary_context", isSelection ? "Literary Context" : "Literary Context");
   setContextLabel("cross_references", isSelection ? "Cross References" : "Cross References");
   setContextLabel("related_ot_themes", isSelection ? "Related OT Themes" : "Related OT Themes");
@@ -2254,6 +2265,7 @@ function createStudyAction(type, context) {
 }
 
 async function dispatchStudyAction(studyAction) {
+  studyAction.type = BHF_STUDY_ACTION_ALIASES[studyAction.type] || studyAction.type;
   applyStudyActionContext(studyAction);
   if (studyAction.type === "ask_bhf") {
     activateWorkspaceTab("ask");

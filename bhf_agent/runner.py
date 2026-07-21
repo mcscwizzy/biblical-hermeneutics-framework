@@ -11,6 +11,8 @@ from typing import Any, Callable, Optional
 
 from .adapters import ChatAdapter, OllamaAdapter, OpenAICompatibleAdapter
 from .ckl import (
+    CULTURAL_CONTEXT_MAX_OUTPUT_TOKENS,
+    CULTURAL_CONTEXT_MAX_TOKENS,
     build_canonical_context,
     build_canonical_fallback_answer,
     build_canonical_query,
@@ -742,6 +744,7 @@ class BHFAgent:
                     allowed_statuses=self.config.canonical_library.allowed_statuses,
                     answer_mode=ctx.answer_mode,
                     max_context_tokens=self.config.canonical_library.max_context_tokens,
+                    study_action=ctx.question_context.question_type,
                 )
         except Exception as exc:  # noqa: BLE001 - retrieval failure must degrade gracefully
             ctx.canonical_library_context = None
@@ -931,8 +934,13 @@ class BHFAgent:
             if strong_match:
                 canonical_prompt = format_canonical_context_for_prompt(
                     canonical_context,
-                    max_context_tokens=self.config.canonical_library.max_context_tokens,
+                    max_context_tokens=(
+                        min(self.config.canonical_library.max_context_tokens, CULTURAL_CONTEXT_MAX_TOKENS)
+                        if ctx.question_context.question_type == "cultural_context"
+                        else self.config.canonical_library.max_context_tokens
+                    ),
                     answer_mode=ctx.answer_mode,
+                    study_action=ctx.question_context.question_type,
                 )
                 ctx.canonical_library_prompt = canonical_prompt
             elif strict_ckl_only:
@@ -1640,7 +1648,11 @@ class BHFAgent:
             user_prompt=ctx.user_prompt,
             model=self.config.model or "",
             temperature=self.config.temperature,
-            max_tokens=self.config.max_tokens,
+            max_tokens=(
+                min(self.config.max_tokens, CULTURAL_CONTEXT_MAX_OUTPUT_TOKENS)
+                if ctx.question_context.question_type == "cultural_context"
+                else self.config.max_tokens
+            ),
             context_window=self.config.context_window,
             response_format=response_format,
             metadata={
@@ -1787,7 +1799,11 @@ class BHFAgent:
             user_prompt=user_prompt,
             model=self.config.model or "",
             temperature=self.config.temperature,
-            max_tokens=self.config.max_tokens,
+            max_tokens=(
+                min(self.config.max_tokens, CULTURAL_CONTEXT_MAX_OUTPUT_TOKENS)
+                if ctx.question_context.question_type == "cultural_context"
+                else self.config.max_tokens
+            ),
             context_window=self.config.context_window,
             metadata={
                 "repair": True,

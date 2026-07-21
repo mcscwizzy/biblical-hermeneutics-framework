@@ -146,6 +146,10 @@ def _type_guidance(question_type: str) -> list[str]:
         return [
             "For historical_context, include historical/cultural setting, literary setting, careful limits, and what is debated or uncertain.",
         ]
+    if question_type == "cultural_context":
+        return [
+            "For cultural_context, use only Relevant Cultural Practice or Assumption, Jewish/Second Temple/Greco-Roman/Ancient Near Eastern Background when relevant, and Meaning for the Passage. Do not add the broad general-study template.",
+        ]
     if question_type == "topic_study":
         return [
             "For topic_study, include key biblical data, major interpretive views when relevant, caution against overreach, and responsible application.",

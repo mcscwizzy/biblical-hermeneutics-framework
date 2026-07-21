@@ -28,6 +28,12 @@ def _estimate_tokens(text: str) -> int:
 
 
 CKL_STRONG_MATCH_THRESHOLD = 0.85
+CULTURAL_CONTEXT_MAX_RESULTS = 3
+CULTURAL_CONTEXT_MAX_TOKENS = 1100
+CULTURAL_CONTEXT_MAX_OUTPUT_TOKENS = 700
+CULTURAL_CONTEXT_OBJECT_TYPES = frozenset(
+    {"archaeology", "institution", "place", "person", "word_study", "theme", "faq"}
+)
 
 
 QUESTION_STARTERS = {
@@ -646,10 +652,21 @@ def build_canonical_context(
     allowed_statuses: Sequence[str] | None = None,
     answer_mode: str = "study",
     max_context_tokens: int | None = None,
+    study_action: str | None = None,
 ) -> dict[str, Any] | None:
     """Retrieve a compact CKL context package for one question."""
 
     normalized_answer_mode = _normalize_answer_mode(answer_mode)
+    normalized_study_action = str(study_action or "").strip().lower()
+    cultural_scope = normalized_study_action == "cultural_context" or (
+        question_context is not None and question_context.question_type == "cultural_context"
+    )
+    if cultural_scope:
+        max_results = min(max_results, CULTURAL_CONTEXT_MAX_RESULTS)
+        if max_context_tokens is None:
+            max_context_tokens = CULTURAL_CONTEXT_MAX_TOKENS
+        else:
+            max_context_tokens = min(max_context_tokens, CULTURAL_CONTEXT_MAX_TOKENS)
     query = build_canonical_query(question, reference_context, question_context)
     search_limit = max(max_results * 4, max_results, 12)
     topic_budget = _topic_token_budget(max_context_tokens, normalized_answer_mode)
@@ -673,6 +690,23 @@ def build_canonical_context(
     exact_count = 0
     scripture_count = 0
     topic_tokens_used = 0
+
+    def _is_cultural_topic(topic: Mapping[str, Any]) -> bool:
+        if not cultural_scope:
+            return True
+        object_type = str(topic.get("type") or "").strip().lower()
+        if object_type not in CULTURAL_CONTEXT_OBJECT_TYPES:
+            return False
+        if reference_context is None or reference_context.testament != "New Testament":
+            return True
+        # Do not inject an Ancient Near Eastern-only entry into an NT study unless
+        # the query explicitly asks for that background.
+        ancient = str(topic.get("ancient_near_east_context") or "").strip()
+        other_cultural = any(
+            str(topic.get(field) or "").strip()
+            for field in ("hebraic_worldview", "second_temple_context")
+        ) or bool(topic.get("archaeology"))
+        return not ancient or other_cultural or "ancient near eastern" in query.lower()
 
     def _track_topic_tokens(topic: Mapping[str, Any]) -> None:
         nonlocal topic_tokens_used
@@ -698,6 +732,20 @@ def build_canonical_context(
                 break
             if result.object.id in seen_ids:
                 continue
+            candidate = []
+            builder._append_topic(
+                candidate,
+                result.object,
+                inclusion_type="primary",
+                seen_ids=set(),
+                score=result.score,
+                match_type=result.match_type,
+                matched_alias=result.matched_alias,
+                matched_terms=result.matched_terms,
+                matched_fields=result.matched_fields,
+            )
+            if not candidate or not _is_cultural_topic(candidate[0]):
+                continue
             builder._append_topic(
                 selected_topics,
                 result.object,
@@ -722,6 +770,20 @@ def build_canonical_context(
                 allowed_statuses=tuple(allowed_statuses) if allowed_statuses is not None else None,
             )
             if result is None or result.object.id in seen_ids:
+                continue
+            candidate = []
+            builder._append_topic(
+                candidate,
+                result.object,
+                inclusion_type="primary",
+                seen_ids=set(),
+                score=result.score,
+                match_type=result.match_type,
+                matched_alias=result.matched_alias,
+                matched_terms=result.matched_terms,
+                matched_fields=result.matched_fields,
+            )
+            if not candidate or not _is_cultural_topic(candidate[0]):
                 continue
             builder._append_topic(
                 selected_topics,
@@ -758,6 +820,8 @@ def build_canonical_context(
         for topic in expanded_topics:
             if topic_budget is not None and not _within_topic_budget(topic):
                 continue
+            if not _is_cultural_topic(topic):
+                continue
             selected_topics.append(topic)
             _track_topic_tokens(topic)
         expanded_count = len(selected_topics) - exact_count - scripture_count
@@ -768,6 +832,8 @@ def build_canonical_context(
             if not object_id or object_id in seen_ids:
                 continue
             if topic_budget is not None and not _within_topic_budget(topic):
+                continue
+            if not _is_cultural_topic(topic):
                 continue
             selected_topics.append(topic)
             seen_ids.add(object_id)
@@ -807,6 +873,8 @@ def build_canonical_context(
             "relationship_topic_count": expanded_count,
             "max_results": max_results,
             "max_context_tokens": max_context_tokens,
+            "study_action": "cultural_context" if cultural_scope else normalized_study_action,
+            "retrieval_scope": "cultural" if cultural_scope else "general",
             "topic_token_budget": topic_budget,
             "estimated_topic_tokens": sum(int(topic.get("estimated_tokens") or 0) for topic in retrieved_topics),
             "include_placeholders": include_placeholders,
@@ -816,6 +884,8 @@ def build_canonical_context(
     context["metadata"] = metadata
     context["question"] = question
     context["query"] = query
+    if cultural_scope:
+        context["retrieved_topics"] = retrieved_topics
     context["retrieved_object_ids"] = retrieved_object_ids
     return context
 
@@ -825,6 +895,7 @@ def format_canonical_context_for_prompt(
     *,
     max_context_tokens: int = 1200,
     answer_mode: str = "study",
+    study_action: str | None = None,
 ) -> str:
     if not context:
         return ""
@@ -835,6 +906,13 @@ def format_canonical_context_for_prompt(
 
     metadata = dict(context.get("metadata") or {})
     normalized_answer_mode = _normalize_answer_mode(answer_mode or metadata.get("answer_mode") or "study")
+    cultural_scope = (
+        str(study_action or metadata.get("study_action") or "").strip().lower()
+        == "cultural_context"
+        or str(metadata.get("retrieval_scope") or "").strip().lower() == "cultural"
+    )
+    if cultural_scope:
+        max_context_tokens = min(max_context_tokens, CULTURAL_CONTEXT_MAX_TOKENS)
     max_entries, max_facts_per_entry, max_scripture_references_per_entry, max_caution_notes_per_entry = _canonical_prompt_limits(
         normalized_answer_mode
     )
@@ -846,6 +924,7 @@ def format_canonical_context_for_prompt(
         max_scripture_references_per_entry=max_scripture_references_per_entry,
         max_caution_notes_per_entry=max_caution_notes_per_entry,
         answer_mode=normalized_answer_mode,
+        scope="cultural_context" if cultural_scope else "general",
     )
 
     prompt = _render_canonical_prompt_context(prompt_context, answer_mode=normalized_answer_mode)

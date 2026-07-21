@@ -101,6 +101,8 @@ def validate_response(
         return _validate_word_study(answer, question_context)
     if question_type == "historical_context":
         return _validate_historical_context(answer)
+    if question_type == "cultural_context":
+        return _validate_cultural_context(answer)
     if question_type == "topic_study":
         return _validate_topic_study(answer)
     return _validate_passage_study(answer)
@@ -257,6 +259,32 @@ def _validate_historical_context(answer: str) -> ValidationResult:
                 UNCERTAINTY_RE.search(answer),
                 "Uncertainty or debated limits are not clear.",
                 "State what is debated or uncertain.",
+                15,
+            ),
+        ],
+    )
+
+
+def _validate_cultural_context(answer: str) -> ValidationResult:
+    return _score_checks(
+        answer,
+        [
+            (
+                re.search(r"relevant cultural practice|cultural background", answer, re.IGNORECASE),
+                "Relevant cultural background is not clearly identified.",
+                "Name only the cultural practice or assumption needed for this passage.",
+                20,
+            ),
+            (
+                re.search(r"meaning for the passage|effect on the passage", answer, re.IGNORECASE),
+                "The effect on the passage is not clear.",
+                "Explain briefly how the cultural background affects this passage.",
+                20,
+            ),
+            (
+                not re.search(r"\b(?:\d{1,4}\s*(?:bc|ad|bce|ce)|emperor|ruler|war|political timeline)\b", answer, re.IGNORECASE),
+                "The answer includes broad historical material.",
+                "Remove dates, rulers, and political timelines unless essential to the cultural explanation.",
                 15,
             ),
         ],

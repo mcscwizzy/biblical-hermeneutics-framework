@@ -21,6 +21,7 @@ from .services.web_helpers import (
     agent_error_status_code,
     failed_stage as _failed_stage,
     record_action,
+    normalize_study_action,
     reader_context_from_form as _reader_context_from_form,
     study_type_from_form as _study_type_from_form,
 )
@@ -229,8 +230,8 @@ def run_ask_job(job: AskJob, form: dict[str, Any], agent_class: Any = BHFAgent) 
         question, reader_reference = _question_from_form(form, path=settings.STUDY_DB_PATH)
         job.question = question
         job.reader_reference = reader_reference
-        if job.study_context and str(form.get("study_action") or "").strip():
-            record_action(str(form.get("study_action") or "").strip(), job.study_context, path=settings.STUDY_DB_PATH)
+        if job.study_context and normalize_study_action(form.get("study_action")):
+            record_action(normalize_study_action(form.get("study_action")), job.study_context, path=settings.STUDY_DB_PATH)
         if settings.TEST_MODE:
             job.emit(
                 {

@@ -13,6 +13,7 @@ SUPPORTED_QUESTION_TYPES = {
     "word_study",
     "topic_study",
     "historical_context",
+    "cultural_context",
     "unknown",
 }
 
@@ -57,11 +58,12 @@ WORD_STUDY_RE = re.compile(
 )
 HISTORICAL_CONTEXT_RE = re.compile(
     r"\b("
-    r"historical\s+context|cultural\s+context|ancient\s+near\s+eastern\s+background|"
+    r"historical\s+context|ancient\s+near\s+eastern\s+background|"
     r"background\s+of|what\s+was\s+going\s+on\s+when|context\s+of"
     r")\b",
     re.IGNORECASE,
 )
+CULTURAL_CONTEXT_RE = re.compile(r"\bcultural\s+context\b", re.IGNORECASE)
 PASSAGE_STUDY_RE = re.compile(
     r"\b(what\s+does\s+.+\s+mean|explain|walk\s+me\s+through|what\s+is\s+.+\s+about)\b",
     re.IGNORECASE,
@@ -90,6 +92,14 @@ def classify_question_type(
             target_language=language,
             target_terms=_extract_word_targets(question),
             confidence=0.86 if language else 0.78,
+        )
+
+    if CULTURAL_CONTEXT_RE.search(lowered):
+        return QuestionContext(
+            question_type="cultural_context",
+            target_language=None,
+            target_terms=[],
+            confidence=0.9,
         )
 
     if HISTORICAL_CONTEXT_RE.search(lowered):

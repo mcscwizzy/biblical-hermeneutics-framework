@@ -23,7 +23,11 @@ from ..forms import validate_question, config_from_form, load_web_defaults
 GENERAL_QUESTION_MODE = "general_question"
 GENERAL_QUESTION_SCOPE = "general_question"
 SPECIAL_QUESTION_MODES = {
-    "ancient_context",
+    "full_context",
+    "historical_context",
+    "cultural_context",
+    "original_audience",
+    "covenant_context",
     "literary_context",
     "cross_references",
     "related_ot_themes",
@@ -33,6 +37,18 @@ SPECIAL_QUESTION_MODES = {
     "maps",
     "word_study",
 }
+
+STUDY_ACTION_ALIASES = {
+    "ancient_context": "cultural_context",
+    "ancient_cultural_context": "cultural_context",
+}
+
+
+def normalize_study_action(value: Any) -> str:
+    """Return the canonical study action while accepting legacy callers."""
+
+    action = str(value or "").strip().lower()
+    return STUDY_ACTION_ALIASES.get(action, action)
 
 
 def reader_translation_metadata(form: dict[str, Any] | Any) -> dict[str, str]:
@@ -384,7 +400,7 @@ def build_ask_question(
     *,
     path: str | Path | None = None,
 ) -> tuple[str, str | None]:
-    ask_mode = str(form.get("ask_mode") or "").strip()
+    ask_mode = normalize_study_action(form.get("ask_mode"))
     question_scope = str(form.get("question_scope") or "").strip()
     if ask_mode == GENERAL_QUESTION_MODE or (
         question_scope == GENERAL_QUESTION_SCOPE and ask_mode not in SPECIAL_QUESTION_MODES
@@ -397,12 +413,20 @@ def build_ask_question(
     context = reader_context_from_form(form)
     if context is None:
         return validate_question(form), None
-    study_action = str(form.get("study_action") or "").strip()
+    study_action = normalize_study_action(form.get("study_action"))
     if study_action:
         if path is not None:
             record_action(study_action, context, path=path)
-    if ask_mode == "ancient_context":
-        return ancient_context_question(form, context), str(context["reference"])
+    if ask_mode == "full_context":
+        return full_context_question(form, context), str(context["reference"])
+    if ask_mode == "historical_context":
+        return historical_context_question(form, context), str(context["reference"])
+    if ask_mode == "cultural_context":
+        return cultural_context_question(form, context), str(context["reference"])
+    if ask_mode == "original_audience":
+        return original_audience_question(form, context), str(context["reference"])
+    if ask_mode == "covenant_context":
+        return covenant_context_question(form, context), str(context["reference"])
     if ask_mode == "literary_context":
         return literary_context_question(form, context), str(context["reference"])
     if ask_mode == "cross_references":
@@ -443,7 +467,7 @@ def is_reader_submission(form: dict[str, Any] | Any) -> bool:
 def reader_context_from_form(form: dict[str, Any] | Any) -> dict[str, Any] | None:
     if not is_reader_submission(form):
         return None
-    ask_mode = str(form.get("ask_mode") or "").strip()
+    ask_mode = normalize_study_action(form.get("ask_mode"))
     question_scope = str(form.get("question_scope") or "").strip()
     if ask_mode == GENERAL_QUESTION_MODE or (
         question_scope == GENERAL_QUESTION_SCOPE and ask_mode not in SPECIAL_QUESTION_MODES
@@ -462,7 +486,7 @@ def reader_context_from_form(form: dict[str, Any] | Any) -> dict[str, Any] | Non
 
 
 def study_type_from_form(form: dict[str, Any] | Any) -> str:
-    ask_mode = str(form.get("ask_mode") or "").strip()
+    ask_mode = normalize_study_action(form.get("ask_mode"))
     if ask_mode:
         return ask_mode
     if str(form.get("question_scope") or "").strip() == GENERAL_QUESTION_SCOPE:
@@ -477,23 +501,83 @@ def optional_form_value(form: dict[str, Any] | Any, name: str) -> str | None:
     return value or None
 
 
-def ancient_context_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
+def _reader_action_question(
+    form: dict[str, Any] | Any,
+    context: dict[str, Any],
+    *,
+    title: str,
+    instructions: list[str],
+) -> str:
     user_question = str(form.get("question") or "").strip()
     label = translation_label(context)
-    testament = testament_for_book(str(context["book"]))
-    background = (
-        "Ancient Near Eastern context, covenant setting, and Israel's original audience concerns"
-        if testament == "Old Testament"
-        else "Second Temple Jewish and Greco-Roman context where relevant, including the original audience's concerns"
-    )
-    lines = [f"Using BHF, explain the ancient context of {label} {context['reference']}.", f"Testament context: {testament}. Use {background}."]
+    lines = [f"Using BHF, explain the {title} of {label} {context['reference']}."]
     if user_question:
         lines.append(f"User question: {user_question}")
-    lines.extend(["", "Focus on the passage's ancient setting, original audience, cultural background, and covenant setting when relevant.", "Avoid modern assumptions and anachronistic readings.", "Clearly distinguish background that is certain from background that is probable or debated.", "", f"Selected text ({label} {context['reference']}):", context["selected_text"]])
+    lines.extend(["", *instructions, "", f"Selected text ({label} {context['reference']}):", context["selected_text"]])
     if context.get("chapter_context"):
         lines.extend(["", f"Full chapter context ({label} {context['book']} {context['chapter']}):", str(context["chapter_context"])])
-    lines.extend(["", "Use BHF method: observe first, interpret with genre and original audience in view, and reserve application until after interpretation."])
+    lines.extend(["", "State uncertainty rather than guessing."])
     return "\n".join(lines)
+
+
+def full_context_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
+    return _reader_action_question(
+        form,
+        context,
+        title="full context",
+        instructions=["Use the broad BHF study method: literary, historical, cultural, audience, covenant, and canonical context when relevant."],
+    )
+
+
+def historical_context_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
+    return _reader_action_question(
+        form,
+        context,
+        title="historical context",
+        instructions=[
+            "Focus on date and setting, relevant political circumstances, major historical events, rulers and institutions, authorship or composition setting when relevant, and historical pressures affecting the text.",
+            "Do not turn this into a cultural survey of customs, worldview, meals, purity, household structures, or social conventions.",
+        ],
+    )
+
+
+def cultural_context_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
+    return _reader_action_question(
+        form,
+        context,
+        title="focused Cultural Context",
+        instructions=[
+            "Question type: cultural_context.",
+            "Explain only customs, worldview, social assumptions, religious practices, symbols, or institutions directly needed to understand the selected passage.",
+            "Use only these sections: Relevant Cultural Practice or Assumption; Jewish, Second Temple, Greco-Roman, or Ancient Near Eastern Background; Meaning for the Passage.",
+            "Do not provide a historical timeline, authorship dating, literary outline, covenant survey, modern application, devotional reflection, or full commentary.",
+            "Distinguish Jewish, Second Temple, Greco-Roman, or Ancient Near Eastern background only when relevant to this passage.",
+        ],
+    )
+
+
+def original_audience_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
+    return _reader_action_question(
+        form,
+        context,
+        title="original audience concerns",
+        instructions=["Focus on who likely received the text, the situation they faced, knowledge they likely shared, and how the message would initially have landed. Do not repeat a full cultural survey."],
+    )
+
+
+def covenant_context_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
+    return _reader_action_question(
+        form,
+        context,
+        title="covenant context",
+        instructions=["Focus on the covenant setting and canonical storyline directly relevant to this passage. Do not replace the selected passage with a broad systematic theology survey."],
+    )
+
+
+def ancient_context_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
+    """Backward-compatible alias for callers that still import this helper."""
+
+    return cultural_context_question(form, context)
 
 
 def literary_context_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
