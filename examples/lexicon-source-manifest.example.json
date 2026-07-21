@@ -1,0 +1,34 @@
+{
+  "sources": [
+    {
+      "name": "openscriptures-strongs-greek-local",
+      "kind": "openscriptures_strongs_json",
+      "path": "strongs-greek.json",
+      "repository_url": "https://github.com/openscriptures/strongs",
+      "revision": "<pinned commit or release>",
+      "license": "<verified license>",
+      "attribution": "<required upstream attribution>",
+      "redistribution_status": "local-only"
+    },
+    {
+      "name": "morphgnt-local",
+      "kind": "morphgnt_tsv",
+      "path": "morphgnt.tsv",
+      "repository_url": "https://github.com/morphgnt/sblgnt",
+      "revision": "<pinned commit or release>",
+      "license": "<verified license>",
+      "attribution": "<required upstream attribution>",
+      "redistribution_status": "local-only"
+    },
+    {
+      "name": "morphhb-local",
+      "kind": "morphhb_tsv",
+      "path": "morphhb.tsv",
+      "repository_url": "https://github.com/openscriptures/morphhb",
+      "revision": "<pinned commit or release>",
+      "license": "<verified license>",
+      "attribution": "<required upstream attribution>",
+      "redistribution_status": "local-only"
+    }
+  ]
+}

@@ -2442,11 +2442,19 @@ function deterministicStudyPayload(studyAction) {
     verse_end: studyAction.verseEnd,
     selected_text: studyAction.selectedText || "",
     source_translation: studyAction.sourceTranslation || selectedTranslationId(),
+    word_position: studyAction.wordPosition || "",
+    surface_form: studyAction.surfaceForm || "",
+    lemma: studyAction.lemma || "",
+    language: studyAction.language || "",
+    strongs_number: studyAction.strongsNumber || "",
     query: document.querySelector('.ask-form [name="question"]')?.value || "",
   };
 }
 
 function renderDeterministicStudyResult(result) {
+  if (result?.action === "word_study" && result?.metadata?.word_study) {
+    return renderWordStudyResult(result);
+  }
   const sections = Array.isArray(result.sections) ? result.sections : [];
   const status = String(result.status || "unknown");
   const source = String(result.source || "deterministic");
@@ -2477,6 +2485,147 @@ function renderDeterministicStudyResult(result) {
   `;
 }
 
+function renderWordStudyResult(result) {
+  const study = result.metadata?.word_study || {};
+  const status = String(result.status || study.status || "unknown");
+  const source = String(result.source || "ckl_sqlite");
+  const confidence = Number(result.confidence || study.confidence || 0);
+  const refs = Array.isArray(result.references) ? result.references.filter(Boolean) : [];
+  const refsHtml = refs.length
+    ? `<section><h3>References</h3><ul>${refs.map((ref) => `<li>${escapeHtml(ref)}</li>`).join("")}</ul></section>`
+    : "";
+  const bodyHtml = study.status === "ambiguous"
+    ? renderWordStudyAmbiguity(study)
+    : renderWordStudyComplete(study);
+  return `
+    <article class="answer deterministic-study-result word-study-result" data-deterministic-study-result>
+      <header class="answer-header">
+        <div>
+          <p class="answer-eyebrow">${escapeHtml(status)} - ${escapeHtml(source)} - ${Math.round(confidence * 100)}% confidence</p>
+          <h2>${escapeHtml(result.title || "Word Study")}</h2>
+        </div>
+        <div class="answer-actions">
+          <button type="button" class="secondary answer-save" data-deterministic-save>Save Study</button>
+          ${result.agent_fallback_allowed ? `<button type="button" class="secondary" data-deterministic-explain>Explain in Context</button>` : ""}
+          <button type="button" class="secondary" data-deterministic-ask>Ask a Question</button>
+        </div>
+      </header>
+      ${bodyHtml}
+      ${refsHtml}
+    </article>
+  `;
+}
+
+function renderWordStudyComplete(study) {
+  const facts = [
+    ["Original Word", study.surface_form],
+    ["Lemma", study.lemma],
+    ["Transliteration", study.transliteration],
+    ["Strong's", study.strongs_number],
+    ["Morphology", wordStudyMorphologySummary(study)],
+  ].filter(([, value]) => value);
+  const range = Array.isArray(study.lexical_range) ? study.lexical_range.filter(Boolean).slice(0, 8) : [];
+  const context = Array.isArray(study.contextual_information) ? study.contextual_information.filter(Boolean) : [];
+  const sources = Array.isArray(study.sources) ? study.sources.filter(Boolean) : [];
+  return `
+    <section class="word-study-reader">
+      <div class="word-study-facts">
+        ${facts.map(([label, value]) => `
+          <div class="word-study-fact">
+            <span>${escapeHtml(label)}</span>
+            <strong>${escapeHtml(value)}</strong>
+          </div>
+        `).join("")}
+      </div>
+      ${range.length ? `<section><h3>Meaning Range</h3><ul>${range.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section>` : ""}
+      ${context.length ? `<section><h3>Contextual Information</h3><ul>${context.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section>` : ""}
+      ${sources.length ? `<section><h3>Sources</h3><ul>${sources.map((source) => `<li>${escapeHtml(wordStudySourceLabel(source))}</li>`).join("")}</ul></section>` : ""}
+    </section>
+    ${renderWordStudyScholar(study)}
+  `;
+}
+
+function renderWordStudyAmbiguity(study) {
+  const ambiguities = Array.isArray(study.ambiguities) ? study.ambiguities.filter(Boolean) : [];
+  return `
+    <section class="word-study-reader">
+      <h3>${escapeHtml(study.message || "Multiple possible original-language words found.")}</h3>
+      <ol class="word-study-choice-list">
+        ${ambiguities.map((word) => `
+          <li>
+            <button type="button" class="word-study-choice" data-word-study-position="${escapeHtml(word.position || "")}" data-word-study-language="${escapeHtml(word.language || "")}" data-word-study-surface="${escapeHtml(word.surface_form || "")}" data-word-study-lemma="${escapeHtml(word.lemma || "")}" data-word-study-strongs="${escapeHtml(word.strongs_number || "")}">
+              <strong>${escapeHtml(word.surface_form || word.lemma || "word")}</strong>
+              <span>${escapeHtml([word.lemma, word.strongs_number, word.position ? `position ${word.position}` : ""].filter(Boolean).join(" - "))}</span>
+            </button>
+          </li>
+        `).join("")}
+      </ol>
+    </section>
+  `;
+}
+
+function renderWordStudyScholar(study) {
+  const morphologyRows = keyValueRows(study.morphology || {});
+  const entries = Array.isArray(study.lexical_entries) ? study.lexical_entries.filter(Boolean) : [];
+  const senses = entries.flatMap((entry) => (entry.senses || []).map((sense) => ({ ...sense, entry })));
+  const occurrences = Array.isArray(study.representative_occurrences) ? study.representative_occurrences.filter(Boolean) : [];
+  const sources = Array.isArray(study.sources) ? study.sources.filter(Boolean) : [];
+  return `
+    <details class="word-study-scholar">
+      <summary>Scholar View</summary>
+      ${morphologyRows.length ? `<section><h3>Full Morphology</h3>${renderKeyValueTable(morphologyRows)}</section>` : ""}
+      ${senses.length ? `<section><h3>Lexical Senses</h3><ul>${senses.map((sense) => `<li>${escapeHtml(wordStudySenseLabel(sense))}</li>`).join("")}</ul></section>` : ""}
+      ${entries.length ? `<section><h3>Source Identifiers</h3><ul>${entries.map((entry) => `<li>${escapeHtml([entry.source, entry.source_entry_id, entry.license].filter(Boolean).join(" - "))}</li>`).join("")}</ul></section>` : ""}
+      ${occurrences.length ? `<section><h3>Occurrence List</h3><ul>${occurrences.map((word) => `<li>${escapeHtml(wordStudyOccurrenceLabel(word))}</li>`).join("")}</ul></section>` : ""}
+      ${sources.length ? `<section><h3>Dataset Information</h3><ul>${sources.map((source) => `<li>${escapeHtml(wordStudyDatasetLabel(source))}</li>`).join("")}</ul></section>` : ""}
+      ${(study.guardrails || []).length ? `<section><h3>Safeguards</h3><ul>${study.guardrails.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section>` : ""}
+    </details>
+  `;
+}
+
+function wordStudyMorphologySummary(study) {
+  const morphology = study.morphology || {};
+  const keys = ["part_of_speech", "stem", "conjugation", "tense", "voice", "mood", "person", "gender", "number", "case", "state"];
+  const parts = keys.map((key) => morphology[key]).filter(Boolean);
+  return parts.length ? parts.join(", ") : study.morphology_code || "";
+}
+
+function keyValueRows(value) {
+  return Object.entries(value || {})
+    .filter(([, item]) => item !== null && item !== undefined && String(item).trim())
+    .map(([key, item]) => [key.replace(/_/g, " "), String(item)]);
+}
+
+function renderKeyValueTable(rows) {
+  return `
+    <dl class="word-study-key-values">
+      ${rows.map(([key, value]) => `
+        <div>
+          <dt>${escapeHtml(key)}</dt>
+          <dd>${escapeHtml(value)}</dd>
+        </div>
+      `).join("")}
+    </dl>
+  `;
+}
+
+function wordStudySourceLabel(source) {
+  return [source.name, source.license].filter(Boolean).join(" - ") || "Lexical source";
+}
+
+function wordStudyDatasetLabel(source) {
+  return [source.name, source.revision, source.license, source.attribution].filter(Boolean).join(" - ");
+}
+
+function wordStudySenseLabel(sense) {
+  return [sense.gloss, sense.definition, sense.semantic_domain].filter(Boolean).join(" - ");
+}
+
+function wordStudyOccurrenceLabel(word) {
+  const reference = word.reference || [word.book, word.chapter && word.verse ? `${word.chapter}:${word.verse}` : ""].filter(Boolean).join(" ");
+  return [reference, word.surface_form, word.morphology_code].filter(Boolean).join(" - ");
+}
+
 function renderDeterministicSection(section) {
   const items = Array.isArray(section.items) ? section.items.filter(Boolean) : [];
   if (!items.length) {
@@ -2491,6 +2640,7 @@ function renderDeterministicSection(section) {
 }
 
 function wireDeterministicStudyControls(answerPanel, result, studyAction) {
+  wireWordStudyChoiceControls(answerPanel, studyAction);
   answerPanel.querySelector("[data-deterministic-explain]")?.addEventListener("click", () => {
     const packet = result.fact_packet || compactDeterministicResult(result);
     setFormValue("deterministic_fact_packet", JSON.stringify(packet));
@@ -2509,6 +2659,26 @@ function wireDeterministicStudyControls(answerPanel, result, studyAction) {
   });
   answerPanel.querySelector("[data-deterministic-save]")?.addEventListener("click", async () => {
     await saveDeterministicStudy(result, studyAction);
+  });
+}
+
+function wireWordStudyChoiceControls(answerPanel, studyAction) {
+  answerPanel.querySelectorAll("[data-word-study-position]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const wordPosition = Number(button.dataset.wordStudyPosition || "0");
+      if (!wordPosition) {
+        return;
+      }
+      await requestDeterministicStudyAction({
+        ...studyAction,
+        type: "word_study",
+        wordPosition,
+        language: button.dataset.wordStudyLanguage || "",
+        surfaceForm: button.dataset.wordStudySurface || "",
+        lemma: button.dataset.wordStudyLemma || "",
+        strongsNumber: button.dataset.wordStudyStrongs || "",
+      });
+    });
   });
 }
 

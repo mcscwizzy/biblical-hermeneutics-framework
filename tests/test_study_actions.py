@@ -86,6 +86,7 @@ class StudyActionRouterTests(unittest.TestCase):
             self.assertEqual(result.lemma, "λόγος")
             self.assertEqual(result.strongs_number, "G3056")
             self.assertIn("word", result.lexical_range)
+            self.assertIn("test-morphgnt", {source["name"] for source in result.sources})
             self.assertIn("LEXICAL CONTEXT", result.prompt_context)
 
     def test_word_study_service_resolves_psalm_23_6_hesed_by_position(self):
@@ -153,6 +154,29 @@ class StudyActionRouterTests(unittest.TestCase):
             self.assertEqual(result.status, "partial")
             self.assertFalse(result.agent_fallback_allowed)
             self.assertIn("Multiple possible original-language words", result.sections[0]["title"])
+
+    def test_word_study_action_resolves_selected_ambiguity_position(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp)
+            database = _build_lexicon_database(tmp_path)
+            library = CanonicalLibrary(root=tmp_path / "ckl").load()
+            service = WordStudyService(repository=LexiconRepository(database))
+            router = StudyActionRouter(DeterministicStudyEngine(library, word_study_service=service))
+
+            result = router.execute(
+                "word_study",
+                passage={
+                    "book": "Psalms",
+                    "chapter": 23,
+                    "start_verse": 6,
+                    "end_verse": 6,
+                    "word_position": 1,
+                },
+            )
+
+            self.assertEqual(result.status, "complete")
+            self.assertEqual(result.metadata["word_study"]["surface_form"], "חֶסֶד")
+            self.assertEqual(result.metadata["word_study"]["strongs_number"], "H2617")
 
     def test_word_study_api_returns_complete_when_lexical_data_exists(self):
         try:

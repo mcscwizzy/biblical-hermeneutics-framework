@@ -18,12 +18,32 @@ source files and can be rebuilt without modifying the repository. Release builds
 may place a generated database under package data, but generated SQLite files
 should not be manually edited or committed as source.
 
+Lexical data uses the same generated SQLite artifact. Because Greek/Hebrew
+source licensing may differ from the curated CKL JSON inventory, production
+must explicitly choose one of these runtime policies:
+
+- **Local-generated:** build `.bhf/ckl.sqlite` during deployment from local,
+  ignored source checkouts under `data_sources/lexicons/`.
+- **Bundled artifact:** distribute a generated lexical SQLite artifact only
+  after every imported source permits redistribution and attribution is
+  recorded.
+
+Application startup must not download or parse raw lexical source files.
+
 Build and verify:
 
 ```bash
 python -m framework.canonical_library build-db --output .bhf/ckl.sqlite
 python -m framework.canonical_library verify-db --database .bhf/ckl.sqlite
 python -m framework.canonical_library db-info --database .bhf/ckl.sqlite
+```
+
+Lexical onboarding and smoke checks:
+
+```bash
+python tools/import_lexicons.py --output .bhf/ckl.sqlite --source-manifest <manifest.json> --rebuild
+python tools/lexicon_onboard.py --manifest <manifest.json> --database .bhf/ckl.sqlite
+python tools/lexicon_smoke.py --database .bhf/ckl.sqlite
 ```
 
 The build loads `manifest.json`, validates every JSON object, populates a

@@ -6,9 +6,9 @@ the local SQLite database.
 
 ## Current Phase
 
-Phase 1 provides the schema, repository, normalization helpers, morphology
-decoders, source provenance, and importer contract. Web UI selection and model
-prompt integration are planned for later phases.
+The deterministic Word Study action now uses CKL SQLite lexical tables through
+an application service layer. The model explanation path receives compact
+retrieved lexical context only after deterministic data is found.
 
 ## Runtime Data
 
@@ -68,3 +68,19 @@ python tools/import_lexicons.py --output .bhf/ckl.sqlite --normalized-json <payl
 Future source-specific importers will add commands for Open Scriptures
 Hebrew/Greek data and MorphGNT after each source license and revision is
 recorded in `docs/lexicon-sources.md`.
+
+For inspected local JSON/TSV source exports, use a source manifest:
+
+```bash
+python tools/import_lexicons.py --output .bhf/ckl.sqlite --source-manifest <manifest.json> --rebuild
+```
+
+Then verify runtime coverage:
+
+```bash
+python tools/lexicon_onboard.py --manifest <manifest.json> --database .bhf/ckl.sqlite
+python tools/lexicon_smoke.py --database .bhf/ckl.sqlite
+```
+
+If this check fails, Word Study may still render ambiguity or unavailable
+states for passages whose original-language tokens were not imported.

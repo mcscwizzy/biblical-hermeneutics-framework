@@ -121,13 +121,19 @@ def main(argv: list[str] | None = None) -> int:
         help="Normalized lexical JSON payload to import; repeat for multiple files",
     )
     parser.add_argument(
+        "--source-manifest",
+        action="append",
+        default=[],
+        help="Local source manifest JSON to parse and import; repeat for multiple manifests",
+    )
+    parser.add_argument(
         "--rebuild",
         action="store_true",
         help="Delete generated lexical tables before importing the first payload",
     )
     args = parser.parse_args(argv)
-    if not args.normalized_json:
-        parser.error("--normalized-json is required for the phase-1 importer")
+    if not args.normalized_json and not args.source_manifest:
+        parser.error("--normalized-json or --source-manifest is required")
     total = {
         "sources": 0,
         "entries": 0,
@@ -141,6 +147,17 @@ def main(argv: list[str] | None = None) -> int:
             args.output,
             payload_path,
             rebuild=args.rebuild and index == 0,
+        )
+        for key, value in counts.items():
+            total[key] += value
+    manifest_offset = len(args.normalized_json)
+    for index, manifest_path in enumerate(args.source_manifest):
+        from .lexicon_source_importer import import_source_manifest
+
+        counts = import_source_manifest(
+            args.output,
+            manifest_path,
+            rebuild=args.rebuild and manifest_offset == 0 and index == 0,
         )
         for key, value in counts.items():
             total[key] += value

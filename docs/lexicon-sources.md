@@ -25,8 +25,8 @@ files.
 
 ## Phase 1 Import
 
-Phase 1 includes an importer for explicit normalized JSON payloads. It is used
-for fixtures and as the target contract for later source-specific parsers.
+The importer accepts explicit normalized JSON payloads. It is used for fixtures
+and as the stable target contract for source-specific parsers.
 
 ```bash
 python -m framework.canonical_library build-db
@@ -36,6 +36,61 @@ python tools/import_lexicons.py \
   --rebuild
 ```
 
+## Local Source Manifest Import
+
+The importer also accepts inspected local source manifests. A manifest records
+source metadata and local file paths. It still imports into `.bhf/ckl.sqlite`
+and still does not download anything.
+
+```bash
+python tools/import_lexicons.py \
+  --output .bhf/ckl.sqlite \
+  --source-manifest data_sources/lexicons/lexicon-sources.json \
+  --rebuild
+```
+
+Supported manifest source kinds:
+
+- `openscriptures_strongs_json`
+- `openscriptures_hebrewlexicon_json`
+- `lexicon_json`
+- `morphgnt_tsv`
+- `morphhb_tsv`
+- `verse_words_tsv`
+- `word_forms_tsv`
+
+Example:
+
+```json
+{
+  "sources": [
+    {
+      "name": "morphgnt-local",
+      "kind": "morphgnt_tsv",
+      "path": "morphgnt.tsv",
+      "repository_url": "https://github.com/morphgnt/sblgnt",
+      "revision": "<pinned commit>",
+      "license": "<verified license>",
+      "attribution": "<required attribution>",
+      "redistribution_status": "local-only"
+    }
+  ]
+}
+```
+
+TSV verse-word exports must include a header row with:
+
+- `book`
+- `chapter`
+- `verse`
+- `word_position`
+- `language` or a prefixed `strongs_number`
+- `surface_form`
+- `lemma`
+
+Optional columns include `transliteration`, `strongs_number`,
+`morphology_code`, `morphology_json`, `source_word_id`, and `source_entry_id`.
+
 The importer:
 
 - Uses a SQLite transaction
@@ -44,6 +99,7 @@ The importer:
 - Rebuilds only generated lexical tables when `--rebuild` is passed
 - Fails clearly on malformed required fields
 - Does not download anything
+- Records source metadata from each normalized payload or source manifest
 
 ## Update Procedure
 
@@ -51,7 +107,39 @@ The importer:
 2. Pin a release tag or commit SHA.
 3. Record repository URL, revision, license, attribution, redistribution status,
    and import command in this file.
-4. Import into a generated SQLite database.
-5. Run lexical repository and importer tests.
-6. Do not commit raw source data unless redistribution has been confirmed and
+4. Create a local source manifest. Start from
+   `examples/lexicon-source-manifest.example.json`.
+5. Import into a generated SQLite database.
+6. Run lexical repository, importer, and onboarding coverage tests.
+7. Do not commit raw source data unless redistribution has been confirmed and
    the repository explicitly chooses to vendor it.
+
+## Production Onboarding Smoke Test
+
+After local source files are prepared under `data_sources/lexicons/`, run:
+
+```bash
+python -m framework.canonical_library build-db --output .bhf/ckl.sqlite
+python tools/import_lexicons.py \
+  --output .bhf/ckl.sqlite \
+  --source-manifest data_sources/lexicons/lexicon-sources.json \
+  --rebuild
+python -m framework.canonical_library verify-db --database .bhf/ckl.sqlite
+python tools/lexicon_onboard.py \
+  --manifest data_sources/lexicons/lexicon-sources.json \
+  --database .bhf/ckl.sqlite \
+  --coverage-json examples/lexicon-coverage.example.json
+python tools/lexicon_smoke.py \
+  --database .bhf/ckl.sqlite \
+  --coverage-json examples/lexicon-coverage.example.json
+```
+
+The onboarding coverage check verifies known required tokens such as John 1:1
+`λόγος / G3056` and Psalm 23:6 `חֶסֶד / H2617`. Add more coverage checks for
+any source bundle before treating it as production-ready. Use
+`examples/lexicon-coverage.expanded.example.json` for a broader Hebrew/Greek
+sample once full production datasets are imported.
+
+`lexicon_onboard.py` checks database coverage directly. `lexicon_smoke.py`
+checks the same `StudyActionRouter -> WordStudyService` path used by the Word
+Study context menu.

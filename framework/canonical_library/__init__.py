@@ -17,6 +17,15 @@ from .graph import (
 )
 from .loader import CanonicalLibrary
 from .lexicon_importer import import_normalized_lexicon_file, import_normalized_lexicon_payload
+from .lexicon_onboarding import (
+    DEFAULT_COVERAGE_CHECKS,
+    build_onboarding_report,
+    format_onboarding_report,
+    report_has_failures,
+    validate_database_coverage,
+    validate_source_manifest,
+)
+from .lexicon_source_importer import import_source_manifest, normalized_payload_from_source_manifest
 from .lexicon_models import (
     WORD_STUDY_GUARDRAILS,
     LexiconEntry,
@@ -140,6 +149,14 @@ __all__ = [
     "WORD_STUDY_GUARDRAILS",
     "import_normalized_lexicon_file",
     "import_normalized_lexicon_payload",
+    "import_source_manifest",
+    "normalized_payload_from_source_manifest",
+    "DEFAULT_COVERAGE_CHECKS",
+    "build_onboarding_report",
+    "format_onboarding_report",
+    "report_has_failures",
+    "validate_database_coverage",
+    "validate_source_manifest",
     "CanonicalRepository",
     "JsonCanonicalRepository",
     "SQLiteCanonicalRepository",

@@ -77,12 +77,15 @@ Implemented:
 - Conservative lexical normalization
 - Initial Hebrew and Greek morphology decoders
 - Explicit local normalized JSON importer
+- Local source-manifest importer for inspected JSON/TSV lexicon and verse-word
+  exports
 - Fixture-backed tests
+- Passage word-study service integration
+- Compact prompt-path injection for deterministic Word Study results
 
 Not yet implemented:
 
-- Full Open Scriptures Strong's, HebrewLexicon, morphhb, MorphGNT, or
-  Abbott-Smith source parsers
-- Passage word-study service integration
-- Prompt-path injection for live questions
-- Web reader word picker and Reader/Scholar views
+- Dedicated parsers for every native upstream file layout in Open Scriptures
+  Strong's, HebrewLexicon, morphhb, MorphGNT, or Abbott-Smith
+- Browser-side original-language token picker for ambiguity resolution
+- Licensing decision and pinned revisions for production bundled datasets

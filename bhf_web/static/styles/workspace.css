@@ -991,6 +991,112 @@ body.reader-mode .chapter-text {
   color: #52616f;
 }
 
+.word-study-reader {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.word-study-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.word-study-fact {
+  min-width: 0;
+  border: 1px solid #d8dee4;
+  border-radius: 6px;
+  padding: 10px;
+  background: #fbfcfd;
+}
+
+.word-study-fact span {
+  display: block;
+  color: #52616f;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.word-study-fact strong {
+  display: block;
+  overflow-wrap: anywhere;
+  margin-top: 4px;
+  color: #17202a;
+  font-size: 1rem;
+}
+
+.word-study-scholar {
+  margin-top: 16px;
+  border-top: 1px solid #d8dee4;
+  padding-top: 12px;
+}
+
+.word-study-scholar summary {
+  cursor: pointer;
+  color: #245b36;
+  font-weight: 800;
+}
+
+.word-study-key-values {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.word-study-key-values div {
+  display: grid;
+  grid-template-columns: minmax(110px, 0.35fr) 1fr;
+  gap: 8px;
+  border-bottom: 1px solid #eef1f4;
+  padding-bottom: 6px;
+}
+
+.word-study-key-values dt {
+  color: #52616f;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.word-study-key-values dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.word-study-choice-list {
+  display: grid;
+  gap: 8px;
+  padding-left: 1.3rem;
+}
+
+.word-study-choice-list li span {
+  display: block;
+  color: #52616f;
+}
+
+.word-study-choice {
+  display: grid;
+  width: 100%;
+  gap: 3px;
+  border: 1px solid #d8dee4;
+  border-radius: 6px;
+  padding: 10px 12px;
+  background: #fff;
+  color: inherit;
+  text-align: left;
+}
+
+.word-study-choice:hover,
+.word-study-choice:focus-visible {
+  border-color: #245b36;
+  background: #f2fbf4;
+}
+
+.word-study-choice strong {
+  overflow-wrap: anywhere;
+}
+
 .map-panel-reference {
   margin: 6px 0 0;
   color: #52616f;
@@ -1300,6 +1406,34 @@ html[data-theme="dark"] .map-panel,
 html[data-theme="dark"] .map-ai-panel {
   border-color: var(--border);
   background: var(--surface);
+}
+
+html[data-theme="dark"] .word-study-fact {
+  border-color: var(--border);
+  background: var(--surface-alt);
+}
+
+html[data-theme="dark"] .word-study-fact strong {
+  color: var(--text);
+}
+
+html[data-theme="dark"] .word-study-scholar {
+  border-color: var(--border);
+}
+
+html[data-theme="dark"] .word-study-key-values div {
+  border-color: var(--border);
+}
+
+html[data-theme="dark"] .word-study-choice {
+  border-color: var(--border);
+  background: var(--surface);
+}
+
+html[data-theme="dark"] .word-study-choice:hover,
+html[data-theme="dark"] .word-study-choice:focus-visible {
+  border-color: #86c79a;
+  background: var(--surface-alt);
 }
 
 html[data-theme="dark"] .verse.selected {

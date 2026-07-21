@@ -60,11 +60,11 @@ The Canonical Knowledge Library has its own small command set in `tools/`:
 
 Run these from the repository root so relative paths resolve correctly.
 
-## `import_lexicons.py`
+## `import_lexicons.py`, `lexicon_onboard.py`, and `lexicon_smoke.py`
 
-Imports explicit local normalized lexical JSON payloads into the generated CKL
-SQLite database. This is the phase-1 target contract for Greek/Hebrew source
-parsers; it does not download source repositories or parse raw upstream files
+`import_lexicons.py` imports inspected local lexical data into the generated CKL
+SQLite database. It accepts either normalized JSON fixtures or a local source
+manifest. It does not download source repositories or parse raw upstream files
 during application startup.
 
 ```bash
@@ -73,6 +73,33 @@ python tools/import_lexicons.py \
   --output .bhf/ckl.sqlite \
   --normalized-json tests/fixtures/lexicon_phase1.json \
   --rebuild
+```
+
+For local source manifests:
+
+```bash
+python tools/import_lexicons.py \
+  --output .bhf/ckl.sqlite \
+  --source-manifest data_sources/lexicons/lexicon-sources.json \
+  --rebuild
+```
+
+`lexicon_onboard.py` validates the source manifest and checks runtime coverage
+for key word-study fixtures.
+
+```bash
+python tools/lexicon_onboard.py \
+  --manifest data_sources/lexicons/lexicon-sources.json \
+  --database .bhf/ckl.sqlite
+```
+
+`lexicon_smoke.py` checks the actual deterministic Word Study action path used
+by the reader context menu.
+
+```bash
+python tools/lexicon_smoke.py \
+  --database .bhf/ckl.sqlite \
+  --coverage-json examples/lexicon-coverage.example.json
 ```
 
 Raw source checkouts for future Open Scriptures, morphhb, MorphGNT, and

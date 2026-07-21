@@ -189,7 +189,9 @@ class WordStudyService:
             occurrence.lemma,
             limit=5,
         )
-        sources = _sources_for_entries(entries, self.repository.sources())
+        repository_sources = self.repository.sources()
+        sources = _sources_for_entries(entries, repository_sources)
+        sources = _with_occurrence_source(sources, occurrence, repository_sources)
         prompt_context = _prompt_context(
             reference=reference,
             occurrence=occurrence,
@@ -328,6 +330,19 @@ def _sources_for_entries(
             source.setdefault("attribution", entry.attribution)
         output.append(source)
     return _dedupe_source_dicts(output)
+
+
+def _with_occurrence_source(
+    sources: list[dict[str, Any]],
+    occurrence: WordOccurrence,
+    repository_sources: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    if not occurrence.source:
+        return sources
+    source_by_name = {str(source.get("name")): source for source in repository_sources}
+    source = dict(source_by_name.get(occurrence.source, {}))
+    source.setdefault("name", occurrence.source)
+    return _dedupe_source_dicts([*sources, source])
 
 
 def _dedupe_entries(entries: list[LexicalEntry]) -> list[LexicalEntry]:
