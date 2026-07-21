@@ -19,6 +19,7 @@ from .services.bible_search_fallback import build_bible_search_fallback_payload
 from .services.web_helpers import (
     build_ask_question as _question_from_form,
     agent_error_status_code,
+    deterministic_fact_packet_from_form,
     failed_stage as _failed_stage,
     record_action,
     normalize_study_action,
@@ -228,6 +229,7 @@ def run_ask_job(job: AskJob, form: dict[str, Any], agent_class: Any = BHFAgent) 
         job.study_type = _study_type_from_form(form)
         job.study_context = _reader_context_from_form(form)
         question, reader_reference = _question_from_form(form, path=settings.STUDY_DB_PATH)
+        fact_packet = deterministic_fact_packet_from_form(form)
         job.question = question
         job.reader_reference = reader_reference
         if job.study_context and normalize_study_action(form.get("study_action")):
@@ -249,7 +251,11 @@ def run_ask_job(job: AskJob, form: dict[str, Any], agent_class: Any = BHFAgent) 
             job.complete(_fake_result(job.question, job.reader_reference))
             return
         config = config_from_form(form, loaded.config)
-        result = agent_class(config).ask(question, status_callback=job.emit)
+        result = agent_class(config).ask(
+            question,
+            status_callback=job.emit,
+            canonical_fact_packet=fact_packet,
+        )
     except (ConfigError, ProfileError, ValueError) as exc:
         job.fail(str(exc), status_code=400)
         return

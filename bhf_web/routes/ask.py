@@ -17,6 +17,7 @@ from ..services.ckl_inspector import build_result_inspector_payload
 from ..services.web_helpers import (
     build_ask_question as _question_from_form,
     agent_error_status_code,
+    deterministic_fact_packet_from_form,
     job_error_message as _job_error_message,
     render_safe_markdown,
     result_metadata,
@@ -103,8 +104,9 @@ def register_ask_routes(
         show_debug = bool(getattr(loaded.config, "debug", False))
         try:
             question, reader_reference = _question_from_form(form)
+            fact_packet = deterministic_fact_packet_from_form(form)
             config = config_from_form(form, loaded.config)
-            result = agent_factory()(config).ask(question)
+            result = agent_factory()(config).ask(question, canonical_fact_packet=fact_packet)
         except (ConfigError, ProfileError, ValueError) as exc:
             return templates.TemplateResponse(
                 request,

@@ -52,6 +52,7 @@ from .question_types import classify_question_type
 from .repair import build_repair_prompt, decide_repair
 from .references import detect_reference
 from .runner_state import PIPELINE_STEPS, STEP_INDEX, STEP_MESSAGES, STAGE_TO_STEP, TOTAL_STEPS
+from .study_actions import format_fact_packet_for_prompt
 from .validation import validate_response
 from framework.canonical_library import (
     CanonicalLibrary,
@@ -364,6 +365,7 @@ class BHFAgent:
         self,
         question: str,
         status_callback: Optional[StatusCallback] = None,
+        canonical_fact_packet: dict[str, Any] | None = None,
     ) -> AgentResult:
         previous_callback = self._status_callback
         previous_run_started_at = self._status_run_started_at
@@ -379,6 +381,8 @@ class BHFAgent:
         try:
             self._emit_status("queued", status="running")
             ctx = self._initialize_context(question)
+            if canonical_fact_packet:
+                ctx.debug_metadata["deterministic_fact_packet"] = canonical_fact_packet
             ctx = self._detect_reference(ctx)
             ctx = self._classify_genre(ctx)
             ctx = self._classify_question_type(ctx)
@@ -637,8 +641,47 @@ class BHFAgent:
         if map_context:
             ctx.debug_metadata["map_tool_keys"] = list(map_context.get("requested_tools", []))
             ctx.debug_metadata["map_tool_context"] = map_context
+        if ctx.debug_metadata.get("deterministic_fact_packet"):
+            self._apply_deterministic_fact_packet(ctx)
+            return self._mark_stage(ctx, "lookup_local_knowledge")
         self._lookup_canonical_library(ctx)
         return self._mark_stage(ctx, "lookup_local_knowledge")
+
+    def _apply_deterministic_fact_packet(self, ctx: PipelineContext) -> None:
+        packet = ctx.debug_metadata.get("deterministic_fact_packet")
+        if not isinstance(packet, dict):
+            return
+        prompt = format_fact_packet_for_prompt(packet)
+        metadata = packet.get("metadata") if isinstance(packet.get("metadata"), dict) else {}
+        object_ids = _normalize_object_id_list(metadata.get("object_ids") or [])
+        ctx.canonical_library_context = {
+            "query": ctx.original_question,
+            "retrieved_topics": [],
+            "metadata": {
+                "retrieval_method": "deterministic_fact_packet",
+                "retrieved_object_ids": object_ids,
+                "topic_count": len(packet.get("sections") or []),
+            },
+            "fact_packet": packet,
+        }
+        ctx.canonical_library_query = str(packet.get("title") or ctx.original_question)
+        ctx.canonical_library_prompt = prompt
+        ctx.debug_metadata["canonical_library_loaded"] = self.canonical_library is not None
+        ctx.debug_metadata["canonical_library_object_ids"] = object_ids
+        ctx.debug_metadata["canonical_library_retrieval_method"] = "deterministic_fact_packet"
+        ctx.debug_metadata["canonical_library_topic_count"] = len(packet.get("sections") or [])
+        ctx.debug_metadata["canonical_library_prompt_tokens"] = max(1, round(len(prompt) / 4))
+        ctx.debug_metadata["canonical_library_query"] = ctx.canonical_library_query
+        ctx.debug_metadata["canonical_library_prompt_mode"] = "deterministic_fact_packet"
+        ctx.debug_metadata["canonical_library_context_cache_status"] = "disabled"
+        ctx.debug_metadata["canonical_library_retrieval_cache_status"] = "disabled"
+        ctx.debug_metadata["canonical_library_response_cache_status"] = "disabled"
+        ctx.debug_metadata["ckl_attempted"] = False
+        ctx.debug_metadata["ckl_result_count"] = len(object_ids)
+        ctx.debug_metadata["ckl_context_injected"] = True
+        ctx.debug_metadata["ckl_retrieval_usable"] = True
+        ctx.debug_metadata["fallback_to_model"] = False
+        ctx.debug_metadata["fallback_reason"] = None
 
     def _lookup_canonical_library(self, ctx: PipelineContext) -> PipelineContext:
         retrieval_started_at = time.perf_counter()
@@ -1021,6 +1064,10 @@ class BHFAgent:
         return ctx
 
     def _lookup_public_answer_cache(self, ctx: PipelineContext) -> PipelineContext:
+        if ctx.debug_metadata.get("deterministic_fact_packet"):
+            ctx.debug_metadata["public_answer_cache_lookup_status"] = "disabled"
+            ctx.debug_metadata["public_answer_cache_error"] = "deterministic fact packet supplied"
+            return ctx
         if (
             self.canonical_library is None
             or self.public_answer_cache is None
@@ -1144,6 +1191,10 @@ class BHFAgent:
         return ctx
 
     def _lookup_response_cache(self, ctx: PipelineContext) -> PipelineContext:
+        if ctx.debug_metadata.get("deterministic_fact_packet"):
+            ctx.debug_metadata["canonical_library_response_cache_status"] = "disabled"
+            ctx.debug_metadata["canonical_library_response_cache_key"] = None
+            return ctx
         if (
             not self.runtime_cache.enabled
             or not self.config.canonical_library.cache_enabled
@@ -1268,6 +1319,8 @@ class BHFAgent:
         return ctx
 
     def _store_response_cache(self, ctx: PipelineContext) -> PipelineContext:
+        if ctx.debug_metadata.get("deterministic_fact_packet"):
+            return ctx
         if (
             not self.runtime_cache.enabled
             or not self.config.canonical_library.cache_enabled

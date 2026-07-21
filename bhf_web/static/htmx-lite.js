@@ -32,14 +32,33 @@ const BHF_STUDY_ACTIONS = new Set([
   "compare_translations",
   "timeline",
   "word_study",
+  "people",
+  "places",
+  "themes",
   "ask_location",
   "compare_archaeology",
   "related_passages",
 ]);
 
+const BHF_DETERMINISTIC_STUDY_ACTIONS = new Set([
+  "full_context",
+  "historical_context",
+  "cultural_context",
+  "original_audience",
+  "covenant_context",
+  "literary_context",
+  "cross_references",
+  "related_ot_themes",
+  "word_study",
+  "people",
+  "places",
+  "themes",
+]);
+
 const BHF_STUDY_ACTION_ALIASES = {
   ancient_context: "cultural_context",
   ancient_cultural_context: "cultural_context",
+  related_ot_themes: "themes",
 };
 
 let latestJobId = null;
@@ -52,6 +71,7 @@ let currentHighlights = [];
 let contextMenuState = null;
 let lastMapAIFallbackKey = null;
 let activeLiveAnswerPanel = null;
+let latestDeterministicStudyResult = null;
 let readerLongPressState = null;
 let appSection = null;
 let lastAskWorkspaceTab = "ask";
@@ -136,6 +156,7 @@ document.addEventListener("submit", async function (event) {
     stopWaiting();
     answerPanel.removeAttribute("aria-busy");
     resetSubmitTargets(form);
+    setFormValue("deterministic_fact_packet", "");
     setFormValue("ask_mode", "");
     setFormValue("study_action", "");
     setRunning(form, submitButton, false);
@@ -2200,6 +2221,9 @@ function showContextMenu(x, y, context) {
   setContextLabel("literary_context", isSelection ? "Literary Context" : "Literary Context");
   setContextLabel("cross_references", isSelection ? "Cross References" : "Cross References");
   setContextLabel("related_ot_themes", isSelection ? "Related OT Themes" : "Related OT Themes");
+  setContextLabel("people", isSelection ? "People" : "People");
+  setContextLabel("places", isSelection ? "Places" : "Places");
+  setContextLabel("themes", isSelection ? "Themes" : "Themes");
   setContextLabel("fulfillment_nt", isSelection ? "Fulfillment in the NT" : "Fulfillment in the NT");
   setContextLabel("compare_translations", isSelection ? "Compare Translations" : "Compare Translations");
   setContextLabel("timeline", isSelection ? "Timeline" : "Timeline");
@@ -2271,11 +2295,14 @@ async function dispatchStudyAction(studyAction) {
     activateWorkspaceTab("ask");
     setFormValue("ask_mode", "");
     setFormValue("study_action", "");
+    setFormValue("deterministic_fact_packet", "");
     setMapContextValue("");
     const question = document.querySelector('.ask-form [name="question"]');
     if (question) {
       question.focus();
     }
+  } else if (BHF_DETERMINISTIC_STUDY_ACTIONS.has(studyAction.type)) {
+    await requestDeterministicStudyAction(studyAction);
   } else if (BHF_STUDY_ACTIONS.has(studyAction.type)) {
     activateWorkspaceTab("ask");
     const askMode = studyAction.type === "ask_location" ? "maps" : studyAction.type;
@@ -2339,6 +2366,212 @@ function applyStudyActionContext(studyAction) {
     text: studyAction.selectedText,
     isSelection: Boolean(studyAction.isSelection) || studyAction.verseStart !== studyAction.verseEnd
   });
+}
+
+async function requestDeterministicStudyAction(studyAction) {
+  activateWorkspaceTab("ask");
+  setFormValue("ask_mode", "");
+  setFormValue("study_action", "");
+  setFormValue("deterministic_fact_packet", "");
+  setMapContextValue("");
+
+  const answerPanel = document.querySelector("#answer-panel");
+  const statusPanel = document.querySelector("#status-panel");
+  activeLiveAnswerPanel = answerPanel;
+  latestJobId = null;
+  latestJobComplete = false;
+  latestDeterministicStudyResult = null;
+
+  if (statusPanel && typeof resetStatus === "function" && typeof startWaiting === "function") {
+    resetStatus(statusPanel);
+    startWaiting(statusPanel);
+  }
+  if (answerPanel) {
+    answerPanel.setAttribute("aria-busy", "true");
+    answerPanel.innerHTML = `<p class="empty">Loading deterministic ${escapeHtml(studyActionLabel(studyAction.type).toLowerCase())}...</p>`;
+  }
+
+  try {
+    const result = await requestJson("/api/study/actions", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(deterministicStudyPayload(studyAction)),
+    }, "Could not load deterministic study result.");
+    latestDeterministicStudyResult = result;
+    if (answerPanel) {
+      answerPanel.innerHTML = renderDeterministicStudyResult(result);
+      wireDeterministicStudyControls(answerPanel, result, studyAction);
+      addMobileAnswerCloseControl(answerPanel);
+      revealAnswerPanel(answerPanel);
+    }
+    if (statusPanel && typeof markStatusComplete === "function") {
+      markStatusComplete(statusPanel, {
+        message: result.status === "complete" ? "Deterministic result ready" : "Partial deterministic result ready",
+        percent_complete: 100,
+      });
+    }
+    expandWorkspaceForMobileAnswer();
+  } catch (error) {
+    if (statusPanel && typeof markStatusFailed === "function") {
+      markStatusFailed(statusPanel, error.message || "Request failed.");
+    }
+    if (answerPanel) {
+      answerPanel.innerHTML = errorHtml(error.message || "Request failed.");
+      addMobileAnswerCloseControl(answerPanel);
+      revealAnswerPanel(answerPanel);
+    }
+  } finally {
+    if (typeof stopWaiting === "function") {
+      stopWaiting();
+    }
+    if (answerPanel) {
+      answerPanel.removeAttribute("aria-busy");
+    }
+  }
+}
+
+function deterministicStudyPayload(studyAction) {
+  return {
+    action: studyAction.type,
+    book: studyAction.book,
+    chapter: studyAction.chapter,
+    verse_start: studyAction.verseStart,
+    verse_end: studyAction.verseEnd,
+    selected_text: studyAction.selectedText || "",
+    source_translation: studyAction.sourceTranslation || selectedTranslationId(),
+    query: document.querySelector('.ask-form [name="question"]')?.value || "",
+  };
+}
+
+function renderDeterministicStudyResult(result) {
+  const sections = Array.isArray(result.sections) ? result.sections : [];
+  const status = String(result.status || "unknown");
+  const source = String(result.source || "deterministic");
+  const confidence = Number(result.confidence || 0);
+  const sectionHtml = sections.length
+    ? sections.map(renderDeterministicSection).join("")
+    : `<p class="empty">No deterministic Scripture or CKL facts were found for this action.</p>`;
+  const refs = Array.isArray(result.references) ? result.references.filter(Boolean) : [];
+  const refsHtml = refs.length
+    ? `<section><h3>References</h3><ul>${refs.map((ref) => `<li>${escapeHtml(ref)}</li>`).join("")}</ul></section>`
+    : "";
+  return `
+    <article class="answer deterministic-study-result" data-deterministic-study-result>
+      <header class="answer-header">
+        <div>
+          <p class="answer-eyebrow">${escapeHtml(status)} - ${escapeHtml(source)} - ${Math.round(confidence * 100)}% confidence</p>
+          <h2>${escapeHtml(result.title || "Study Result")}</h2>
+        </div>
+        <div class="answer-actions">
+          <button type="button" class="secondary answer-save" data-deterministic-save>Save Study</button>
+          ${result.agent_fallback_allowed ? `<button type="button" class="secondary" data-deterministic-explain>Explain with BHF</button>` : ""}
+          <button type="button" class="secondary" data-deterministic-ask>Ask a Question</button>
+        </div>
+      </header>
+      ${sectionHtml}
+      ${refsHtml}
+    </article>
+  `;
+}
+
+function renderDeterministicSection(section) {
+  const items = Array.isArray(section.items) ? section.items.filter(Boolean) : [];
+  if (!items.length) {
+    return "";
+  }
+  return `
+    <section>
+      <h3>${escapeHtml(section.title || "Section")}</h3>
+      <ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+    </section>
+  `;
+}
+
+function wireDeterministicStudyControls(answerPanel, result, studyAction) {
+  answerPanel.querySelector("[data-deterministic-explain]")?.addEventListener("click", () => {
+    const packet = result.fact_packet || compactDeterministicResult(result);
+    setFormValue("deterministic_fact_packet", JSON.stringify(packet));
+    setFormValue("ask_mode", "");
+    setFormValue("study_action", result.action || studyAction.type);
+    setFormValue("question", `Explain ${result.title || "this deterministic study result"} using BHF.`);
+    submitAskForm();
+  });
+  answerPanel.querySelector("[data-deterministic-ask]")?.addEventListener("click", () => {
+    setFormValue("deterministic_fact_packet", "");
+    const question = document.querySelector('.ask-form [name="question"]');
+    if (question) {
+      question.value = "";
+      question.focus();
+    }
+  });
+  answerPanel.querySelector("[data-deterministic-save]")?.addEventListener("click", async () => {
+    await saveDeterministicStudy(result, studyAction);
+  });
+}
+
+function compactDeterministicResult(result) {
+  return {
+    action: result.action,
+    status: result.status,
+    source: result.source,
+    title: result.title,
+    sections: (result.sections || []).slice(0, 8).map((section) => ({
+      title: section.title,
+      items: (section.items || []).slice(0, 6),
+      source: section.source || "deterministic",
+    })),
+    references: (result.references || []).slice(0, 12),
+    confidence: result.confidence,
+    metadata: {
+      reference: result.metadata?.reference,
+      object_ids: (result.metadata?.object_ids || []).slice(0, 12),
+    },
+  };
+}
+
+async function saveDeterministicStudy(result, studyAction) {
+  const payload = {
+    title: result.title || studyActionLabel(result.action || studyAction.type),
+    book: studyAction.book,
+    chapter: studyAction.chapter,
+    start_verse: studyAction.verseStart,
+    end_verse: studyAction.verseEnd,
+    selected_text: studyAction.selectedText || "",
+    study_type: result.action || studyAction.type,
+    question: result.title || "",
+    answer: deterministicStudyMarkdown(result),
+    canonical_object_ids: result.metadata?.object_ids || [],
+  };
+  await requestJson("/api/saved-studies", {
+    method: "POST",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  }, "Could not save deterministic study.");
+  await loadSavedStudies(currentChapter?.book, currentChapter?.chapter);
+}
+
+function deterministicStudyMarkdown(result) {
+  const lines = [`# ${result.title || "Study Result"}`, ""];
+  (result.sections || []).forEach((section) => {
+    lines.push(`## ${section.title || "Section"}`);
+    (section.items || []).forEach((item) => lines.push(`- ${item}`));
+    lines.push("");
+  });
+  if ((result.references || []).length) {
+    lines.push("## References");
+    result.references.forEach((ref) => lines.push(`- ${ref}`));
+  }
+  return lines.join("\n").trim();
+}
+
+function studyActionLabel(action) {
+  return String(action || "study action").replace(/_/g, " ");
 }
 
 function submitAskForm() {

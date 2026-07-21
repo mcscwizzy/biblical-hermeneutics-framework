@@ -178,6 +178,7 @@
                 <input type="hidden" name="reader_translation" value="{{ default_translation }}">
                 <input type="hidden" name="ask_mode" value="">
                 <input type="hidden" name="study_action" value="">
+                <input type="hidden" name="deterministic_fact_packet" value="">
                 <input type="hidden" name="map_context" value="">
 
                 <section class="selection-card" aria-live="polite">
@@ -770,6 +771,7 @@
         <button type="button" data-context-action="full_context">Full Context</button>
         <button type="button" data-context-action="historical_context">Historical Context</button>
         <button type="button" data-context-action="cultural_context">Cultural Context</button>
+        <button type="button" data-context-action="ancient_context" hidden>Ancient Context</button>
         <button type="button" data-context-action="original_audience">Original Audience</button>
         <button type="button" data-context-action="covenant_context">Covenant Context</button>
       </div>
@@ -777,6 +779,9 @@
         <p id="context-menu-reference-heading" class="context-menu-heading">Reference</p>
         <button type="button" data-context-action="cross_references">Cross References</button>
         <button type="button" data-context-action="related_ot_themes">Related OT Themes</button>
+        <button type="button" data-context-action="people">People</button>
+        <button type="button" data-context-action="places">Places</button>
+        <button type="button" data-context-action="themes">Themes</button>
         <button type="button" data-context-action="fulfillment_nt">Fulfillment in the NT</button>
         <button type="button" data-context-action="compare_translations">Compare Translations</button>
         <button type="button" data-context-action="timeline">Timeline</button>

@@ -21,6 +21,7 @@ from bhf_agent.study_db import (
     list_saved_studies,
     update_note,
 )
+from bhf_agent.study_actions import StudyActionRouter, compact_fact_packet
 
 from ..services.web_helpers import (
     record_action,
@@ -36,7 +37,35 @@ def register_study_routes(
     study_db_path: str,
     templates: Any,
     job_store: Any,
+    study_action_router: StudyActionRouter | None = None,
 ) -> None:
+    router = study_action_router or StudyActionRouter()
+
+    @app.post("/api/study/actions", response_class=JSONResponse)
+    async def post_study_action(request: Request) -> JSONResponse:
+        try:
+            payload = await request_payload(request)
+            action = payload.get("action") or payload.get("study_action")
+            passage = {
+                "book": payload.get("book") or payload.get("reader_book"),
+                "chapter": payload.get("chapter") or payload.get("reader_chapter"),
+                "start_verse": payload.get("start_verse") or payload.get("verse_start") or payload.get("reader_start_verse"),
+                "end_verse": payload.get("end_verse") or payload.get("verse_end") or payload.get("reader_end_verse"),
+                "selected_text": payload.get("selected_text") or payload.get("reader_selected_text"),
+                "translation": payload.get("translation") or payload.get("reader_translation") or payload.get("source_translation"),
+            }
+            result = router.execute(
+                str(action or ""),
+                passage=passage,
+                query=str(payload.get("query") or payload.get("question") or ""),
+            )
+            data = result.to_dict()
+            data["fact_packet"] = compact_fact_packet(result)
+            record_action(result.action, result.metadata, path=study_db_path)
+            return JSONResponse(data)
+        except (StudyDataError, ValueError) as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+
     @app.get("/api/saved-studies", response_class=JSONResponse)
     async def saved_studies(book: str | None = None, chapter: int | None = None) -> JSONResponse:
         try:

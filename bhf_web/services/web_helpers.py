@@ -16,6 +16,7 @@ from bhf_agent.config import ConfigError
 from bhf_agent.profiles import ProfileLoader
 from bhf_agent.runner import BHFAgent
 from bhf_agent.study_db import StudyDataError, record_study_action
+from bhf_agent.study_actions import compact_fact_packet
 from bhf_agent.translation_catalog import catalog_by_id
 from ..forms import validate_question, config_from_form, load_web_defaults
 
@@ -36,6 +37,9 @@ SPECIAL_QUESTION_MODES = {
     "timeline",
     "maps",
     "word_study",
+    "people",
+    "places",
+    "themes",
 }
 
 STUDY_ACTION_ALIASES = {
@@ -49,6 +53,19 @@ def normalize_study_action(value: Any) -> str:
 
     action = str(value or "").strip().lower()
     return STUDY_ACTION_ALIASES.get(action, action)
+
+
+def deterministic_fact_packet_from_form(form: dict[str, Any] | Any) -> dict[str, Any] | None:
+    raw = str(form.get("deterministic_fact_packet") or "").strip()
+    if not raw:
+        return None
+    try:
+        payload = json.loads(raw)
+    except json.JSONDecodeError as exc:
+        raise ValueError("deterministic_fact_packet must be valid JSON") from exc
+    if not isinstance(payload, dict):
+        raise ValueError("deterministic_fact_packet must be a JSON object")
+    return compact_fact_packet(payload)
 
 
 def reader_translation_metadata(form: dict[str, Any] | Any) -> dict[str, str]:
@@ -400,6 +417,14 @@ def build_ask_question(
     *,
     path: str | Path | None = None,
 ) -> tuple[str, str | None]:
+    fact_packet = deterministic_fact_packet_from_form(form)
+    if fact_packet is not None:
+        reference = str((fact_packet.get("metadata") or {}).get("reference") or "").strip() or None
+        user_question = str(form.get("question") or "").strip()
+        if not user_question:
+            user_question = f"Explain {fact_packet.get('title') or 'this deterministic study result'} using BHF."
+        return user_question, reference
+
     ask_mode = normalize_study_action(form.get("ask_mode"))
     question_scope = str(form.get("question_scope") or "").strip()
     if ask_mode == GENERAL_QUESTION_MODE or (
@@ -432,6 +457,8 @@ def build_ask_question(
     if ask_mode == "cross_references":
         return cross_references_question(form, context), str(context["reference"])
     if ask_mode == "related_ot_themes":
+        return related_ot_themes_question(form, context), str(context["reference"])
+    if ask_mode == "themes":
         return related_ot_themes_question(form, context), str(context["reference"])
     if ask_mode == "fulfillment_nt":
         return fulfillment_nt_question(form, context), str(context["reference"])
