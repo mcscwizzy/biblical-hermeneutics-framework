@@ -18,6 +18,42 @@ _STRONGS_RE = re.compile(r"\b(?P<value>[HG]\s*0*\d{1,5}[A-Za-z]?)\b", re.IGNOREC
 LOGGER = logging.getLogger(__name__)
 
 
+def lexical_database_build_command(database_path: str | Path = DEFAULT_LEXICAL_DATABASE_PATH) -> str:
+    """Return the canonical local build command for the runtime database."""
+
+    return (
+        "python -m framework.lexical.tools.build_lexicon_database "
+        "--hebrew <path-to-open-scriptures-hebrew-xml> "
+        "--greek <path-to-open-scriptures-greek-xml> "
+        f"--output {Path(database_path)}"
+    )
+
+
+def lexical_database_missing_message(database_path: str | Path = DEFAULT_LEXICAL_DATABASE_PATH) -> str:
+    """Return a clear remediation message for a missing runtime database."""
+
+    path = Path(database_path)
+    return (
+        f"Lexical SQLite database not found at {path}. "
+        "Word Study lexical definitions are unavailable until Open Scriptures "
+        "sources are imported. Build it with: "
+        f"{lexical_database_build_command(path)}"
+    )
+
+
+def format_lexical_unavailable_context(database_path: str | Path) -> str:
+    """Prompt guardrail used when a word-study request has no runtime database."""
+
+    return "\n".join(
+        [
+            "# LEXICAL DATA UNAVAILABLE",
+            lexical_database_missing_message(database_path),
+            "Do not provide Hebrew/Greek definitions, Strong's numbers, or lexical range from model memory.",
+            "Tell the user the deterministic lexical database must be built before Word Study can answer from source data.",
+        ]
+    )
+
+
 class LexicalLookupService:
     """Application-facing lexical retrieval with bounded prompt output."""
 
@@ -54,8 +90,10 @@ class LexicalLookupService:
             "lexical_entry_count": 0,
             "hebrew_entries": 0,
             "greek_entries": 0,
+            "build_command": lexical_database_build_command(self.database_path),
         }
         if not diagnostics["lexical_database_found"]:
+            diagnostics["message"] = lexical_database_missing_message(self.database_path)
             return diagnostics
         try:
             counts = self.repository.counts_by_language()
@@ -76,6 +114,8 @@ class LexicalLookupService:
             diagnostics["hebrew_entries"],
             diagnostics["greek_entries"],
         )
+        if not diagnostics["lexical_database_found"]:
+            LOGGER.warning("%s", diagnostics["message"])
         if diagnostics.get("error"):
             LOGGER.warning("lexical database diagnostics unavailable: %s", diagnostics["error"])
         return diagnostics

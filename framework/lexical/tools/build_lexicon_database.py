@@ -6,6 +6,7 @@ import argparse
 import os
 import sqlite3
 import tempfile
+import textwrap
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable, Mapping
@@ -193,7 +194,28 @@ def _normalize_transliteration(value: object) -> str | None:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog=textwrap.dedent(
+            f"""
+            Developer onboarding:
+              1. Download or clone inspected Open Scriptures source repositories outside git-tracked paths:
+                   mkdir -p sources/openscriptures
+                   git clone https://github.com/openscriptures/HebrewLexicon sources/openscriptures/HebrewLexicon
+                   git clone https://github.com/openscriptures/strongs sources/openscriptures/strongs
+              2. Locate the XML dictionary exports:
+                   find sources/openscriptures -name '*.xml'
+              3. Import into the runtime location:
+                   python -m framework.lexical.tools.build_lexicon_database \\
+                     --hebrew <path-to-open-scriptures-hebrew-xml> \\
+                     --greek <path-to-open-scriptures-greek-xml> \\
+                     --output {DEFAULT_OUTPUT}
+              4. Verify:
+                   python -m framework.lexical.tools.smoke_lexicon --database {DEFAULT_OUTPUT}
+            """
+        ).strip(),
+    )
     parser.add_argument("--hebrew", type=Path, help="local Open Scriptures Hebrew XML")
     parser.add_argument("--greek", type=Path, help="local Open Scriptures Greek XML")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)

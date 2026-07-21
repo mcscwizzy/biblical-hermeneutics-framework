@@ -75,6 +75,7 @@ from framework.canonical_library import (
     public_cache_key,
 )
 from framework.lexical import LexicalLookupService
+from framework.lexical.service import format_lexical_unavailable_context
 
 
 StatusCallback = Callable[[dict[str, Any]], None]
@@ -693,6 +694,9 @@ class BHFAgent:
             )
         except (FileNotFoundError, OSError, sqlite3.Error, ValueError) as exc:
             ctx.debug_metadata["lexical_engine_error"] = str(exc)
+            ctx.lexical_context_prompt = format_lexical_unavailable_context(
+                self.lexical_engine.database_path
+            )
             return
         ctx.lexical_context_prompt = prompt_context or None
         ctx.debug_metadata["lexical_engine_entry_count"] = len(entries)

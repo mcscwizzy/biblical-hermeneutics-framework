@@ -25,6 +25,48 @@ The default output is `framework/lexical/database/lexicon.sqlite`; use
 build time, validates required fields, writes atomically, and prints Hebrew
 and Greek import counts.
 
+Fresh checkout onboarding:
+
+```text
+download sources
+        |
+        v
+run importer
+        |
+        v
+generate lexicon.sqlite
+        |
+        v
+run Word Study
+```
+
+Recommended local flow:
+
+```bash
+mkdir -p sources/openscriptures
+git clone https://github.com/openscriptures/HebrewLexicon sources/openscriptures/HebrewLexicon
+git clone https://github.com/openscriptures/strongs sources/openscriptures/strongs
+
+# Inspect licenses and pin revisions before treating the output as reproducible.
+find sources/openscriptures -name '*.xml'
+
+python -m framework.lexical.tools.build_lexicon_database \
+  --hebrew <path-to-open-scriptures-hebrew-xml> \
+  --greek <path-to-open-scriptures-greek-xml> \
+  --output framework/lexical/database/lexicon.sqlite
+
+python -m framework.lexical.tools.validate_lexicon \
+  framework/lexical/database/lexicon.sqlite
+python -m framework.lexical.tools.smoke_lexicon \
+  --database framework/lexical/database/lexicon.sqlite
+```
+
+The expected default runtime file is
+`framework/lexical/database/lexicon.sqlite`. If it is missing, startup logs a
+warning with the same build command. BHF must treat lexical data as unavailable
+in that state; it must not replace missing Hebrew or Greek source data with LLM
+guesses.
+
 ## Runtime API
 
 Runtime code opens SQLite in read-only mode:
@@ -56,6 +98,13 @@ Validate a generated database with:
 ```bash
 python -m framework.lexical.tools.validate_lexicon \
   framework/lexical/database/lexicon.sqlite
+```
+
+Run the standalone lexical smoke test with:
+
+```bash
+python -m framework.lexical.tools.smoke_lexicon \
+  --database framework/lexical/database/lexicon.sqlite
 ```
 
 ## Docker

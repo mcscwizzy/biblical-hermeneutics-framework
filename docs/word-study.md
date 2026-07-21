@@ -6,9 +6,10 @@ the local SQLite database.
 
 ## Current Phase
 
-The deterministic Word Study action now uses CKL SQLite lexical tables through
-an application service layer. The model explanation path receives compact
-retrieved lexical context only after deterministic data is found.
+The deterministic Word Study action now uses the standalone lexical SQLite
+database at `framework/lexical/database/lexicon.sqlite` through an application
+service layer. The model explanation path receives compact retrieved lexical
+context only after deterministic data is found.
 
 ## Runtime Data
 
@@ -57,30 +58,56 @@ sense.
 
 ## Troubleshooting
 
-If lexical tables are empty or missing, rebuild the generated CKL database and
-then run the importer:
+If `framework/lexical/database/lexicon.sqlite` is missing, startup logs a
+diagnostic with the expected path and build command. Word Study should treat
+lexical data as unavailable in that state; it must not invent Hebrew or Greek
+definitions, Strong's numbers, or lexical ranges from model memory.
 
-```bash
-python -m framework.canonical_library build-db
-python tools/import_lexicons.py --output .bhf/ckl.sqlite --normalized-json <payload.json> --rebuild
+Developer onboarding flow:
+
+```text
+download sources
+        |
+        v
+run importer
+        |
+        v
+generate lexicon.sqlite
+        |
+        v
+run Word Study
 ```
 
-Future source-specific importers will add commands for Open Scriptures
-Hebrew/Greek data and MorphGNT after each source license and revision is
-recorded in `docs/lexicon-sources.md`.
+Download inspected Open Scriptures sources locally, find the XML dictionary
+exports, and build the runtime database:
 
-For inspected local JSON/TSV source exports, use a source manifest:
+```bash
+mkdir -p sources/openscriptures
+git clone https://github.com/openscriptures/HebrewLexicon sources/openscriptures/HebrewLexicon
+git clone https://github.com/openscriptures/strongs sources/openscriptures/strongs
+find sources/openscriptures -name '*.xml'
+
+python -m framework.lexical.tools.build_lexicon_database \
+  --hebrew <path-to-open-scriptures-hebrew-xml> \
+  --greek <path-to-open-scriptures-greek-xml> \
+  --output framework/lexical/database/lexicon.sqlite
+```
+
+Then verify the generated runtime database:
+
+```bash
+python -m framework.lexical.tools.validate_lexicon \
+  framework/lexical/database/lexicon.sqlite
+python -m framework.lexical.tools.smoke_lexicon \
+  --database framework/lexical/database/lexicon.sqlite
+```
+
+The smoke test intentionally fails clearly when the database is missing and
+prints the import command needed to create it in the runtime location.
+
+Older CKL lexical source-manifest tooling remains documented in
+`docs/lexicon-sources.md` for legacy fixtures and broader source imports:
 
 ```bash
 python tools/import_lexicons.py --output .bhf/ckl.sqlite --source-manifest <manifest.json> --rebuild
 ```
-
-Then verify runtime coverage:
-
-```bash
-python tools/lexicon_onboard.py --manifest <manifest.json> --database .bhf/ckl.sqlite
-python tools/lexicon_smoke.py --database .bhf/ckl.sqlite
-```
-
-If this check fails, Word Study may still render ambiguity or unavailable
-states for passages whose original-language tokens were not imported.

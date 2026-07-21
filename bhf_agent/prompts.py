@@ -611,11 +611,22 @@ def build_prompt_result(
         )
     lexical_context_block = lexical_context_prompt.strip() if lexical_context_prompt else ""
     if lexical_context_block:
+        lexical_data_unavailable = lexical_context_block.startswith("# LEXICAL DATA UNAVAILABLE")
+        lexical_section_title = (
+            "LEXICAL DATA STATUS"
+            if lexical_data_unavailable
+            else "VERIFIED LEXICAL DATA"
+        )
+        lexical_section_intro = (
+            "No imported lexical records are available for this request. Follow the status message and do not substitute model memory for lexical source data."
+            if lexical_data_unavailable
+            else "The following records are imported lexical data. Use them as the lexical source of truth, while distinguishing lexical range from contextual meaning."
+        )
         system_sections.append(
             _prompt_section(
-                "VERIFIED LEXICAL DATA",
+                lexical_section_title,
                 [
-                    "The following records are imported lexical data. Use them as the lexical source of truth, while distinguishing lexical range from contextual meaning.",
+                    lexical_section_intro,
                     lexical_context_block,
                 ],
             )

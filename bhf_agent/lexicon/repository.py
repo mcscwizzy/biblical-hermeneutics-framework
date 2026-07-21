@@ -197,13 +197,16 @@ def _has_legacy_word_tables(path: Path) -> bool:
     if not path.is_file():
         return False
     try:
-        with sqlite3.connect(f"file:{path}?mode=ro", uri=True) as connection:
+        connection = sqlite3.connect(f"file:{path}?mode=ro", uri=True)
+        try:
             tables = {
                 str(row[0])
                 for row in connection.execute(
                     "SELECT name FROM sqlite_master WHERE type = 'table'"
                 )
             }
+        finally:
+            connection.close()
         return {"lexicon_entries", "verse_words", "word_forms"}.issubset(tables)
     except sqlite3.Error:
         return False

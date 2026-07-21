@@ -3,14 +3,23 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from framework.lexical import LexicalLookupService, lookup_word
-from framework.lexical.tools.build_lexicon_database import build_lexicon_database
+from framework.lexical import (
+    DEFAULT_LEXICAL_DATABASE_PATH,
+    LexicalLookupService,
+    lookup_word,
+)
+from framework.lexical.service import lexical_database_missing_message
+from framework.lexical.tools.build_lexicon_database import DEFAULT_OUTPUT, build_lexicon_database
+from framework.lexical.tools.smoke_lexicon import smoke_lexical_database
 from framework.lexical.tools.validate_lexicon import validate_database
 from bhf_agent.config import AgentConfig
 from bhf_agent.models import PipelineContext
 from bhf_agent.question_types import classify_question_type
 from bhf_agent.references import detect_reference
 from bhf_agent.runner import BHFAgent
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 class BiblicalLexicalEngineTests(unittest.TestCase):
@@ -50,6 +59,38 @@ class BiblicalLexicalEngineTests(unittest.TestCase):
             self.assertEqual(result["hebrew"], 1)
             self.assertEqual(result["greek"], 1)
             self.assertEqual(validate_database(root / "lexicon.sqlite")["entries"], 2)
+
+    def test_default_build_output_matches_runtime_database_location(self):
+        self.assertEqual(Path(DEFAULT_LEXICAL_DATABASE_PATH), DEFAULT_OUTPUT)
+        self.assertEqual(
+            Path("framework/lexical/database/lexicon.sqlite"),
+            DEFAULT_OUTPUT.relative_to(PROJECT_ROOT),
+        )
+
+    def test_missing_runtime_database_startup_diagnostic_is_clear(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            database = Path(temporary) / "missing" / "lexicon.sqlite"
+            with self.assertLogs("framework.lexical.service", level="WARNING") as logs:
+                service = LexicalLookupService(database)
+            try:
+                diagnostics = service.startup_diagnostics
+            finally:
+                service.close()
+
+            self.assertFalse(diagnostics["lexical_database_found"])
+            self.assertIn("Lexical SQLite database not found", diagnostics["message"])
+            self.assertIn("build_lexicon_database", diagnostics["build_command"])
+            self.assertIn(str(database), "\n".join(logs.output))
+
+    def test_smoke_test_fails_clearly_when_database_is_missing(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            database = Path(temporary) / "missing.sqlite"
+            with self.assertRaisesRegex(
+                FileNotFoundError,
+                "Word Study lexical definitions are unavailable.*build_lexicon_database",
+            ):
+                smoke_lexical_database(database)
+            self.assertIn("Open Scriptures", lexical_database_missing_message(database))
 
     def test_startup_diagnostics_report_lexical_coverage(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -113,10 +154,13 @@ class BiblicalLexicalEngineTests(unittest.TestCase):
             self.assertEqual(entry["source"], "Open Scriptures Hebrew Lexicon")
             self.assertEqual(entry["license"], "CC BY-SA")
             self.assertEqual(entry["attribution"], "Open Scriptures Hebrew Bible Project")
-            with sqlite3.connect(database) as connection:
+            connection = sqlite3.connect(database)
+            try:
                 source = connection.execute(
                     "SELECT attribution, source_file FROM lexical_sources"
                 ).fetchone()
+            finally:
+                connection.close()
             self.assertEqual(source[0], "Open Scriptures Hebrew Bible Project")
             self.assertTrue(source[1].endswith("hebrew.xml"))
 
@@ -170,4 +214,42 @@ class BiblicalLexicalEngineTests(unittest.TestCase):
             finally:
                 service.close()
             self.assertIn("VERIFIED LEXICAL CONTEXT", context.lexical_context_prompt)
-            self.assertIn("Source: Open Scriptures Greek Lexicon", context.lexical_context_prompt)
+            self.assertIn(
+                "Source: Open Scriptures Greek Lexicon",
+                context.lexical_context_prompt,
+            )
+
+    def test_bhf_agent_does_not_prompt_llm_to_guess_when_lexical_database_is_missing(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            database = Path(temporary) / "missing.sqlite"
+            config = AgentConfig.from_mapping(
+                {
+                    "adapter": "ollama",
+                    "base_url": "http://localhost:11434",
+                    "model": "test-model",
+                    "profile": "standard",
+                    "canonical_library": {"enabled": False},
+                    "lexicon": {"runtime_database_path": str(database)},
+                }
+            )
+            agent = None
+            with self.assertLogs("framework.lexical.service", level="WARNING"):
+                agent = BHFAgent(config, adapter=object())
+            try:
+                question = "What does the Greek word logos mean?"
+                context = PipelineContext(
+                    original_question=question,
+                    question_context=classify_question_type(
+                        question, detect_reference(question)
+                    ),
+                )
+                agent._lookup_lexical_engine(context)
+
+                self.assertIn("LEXICAL DATA UNAVAILABLE", context.lexical_context_prompt)
+                self.assertIn(
+                    "Do not provide Hebrew/Greek definitions",
+                    context.lexical_context_prompt,
+                )
+            finally:
+                if agent is not None:
+                    agent.lexical_engine.close()

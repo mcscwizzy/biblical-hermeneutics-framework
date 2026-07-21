@@ -120,17 +120,28 @@ Cross References, Related OT Themes, Fulfillment in the NT, Compare
 Translations, Timeline, Maps, Save Study, and a guarded Word Study helper for
 the selected installed translation.
 
-BHF also has a first-phase offline Greek/Hebrew lexical database layer for
-deterministic word-study data. Build the generated CKL SQLite database, then
-import approved local lexical source payloads explicitly:
+BHF also has an offline Greek/Hebrew lexical database layer for deterministic
+word-study data. The runtime database is generated locally at
+`framework/lexical/database/lexicon.sqlite` from inspected Open Scriptures XML:
 
 ```bash
-python -m framework.canonical_library build-db
-python tools/import_lexicons.py --output .bhf/ckl.sqlite --normalized-json <payload.json> --rebuild
+mkdir -p sources/openscriptures
+git clone https://github.com/openscriptures/HebrewLexicon sources/openscriptures/HebrewLexicon
+git clone https://github.com/openscriptures/strongs sources/openscriptures/strongs
+find sources/openscriptures -name '*.xml'
+
+python -m framework.lexical.tools.build_lexicon_database \
+  --hebrew <path-to-open-scriptures-hebrew-xml> \
+  --greek <path-to-open-scriptures-greek-xml> \
+  --output framework/lexical/database/lexicon.sqlite
+python -m framework.lexical.tools.smoke_lexicon \
+  --database framework/lexical/database/lexicon.sqlite
 ```
 
 Lexical data assists interpretation; it does not replace context, grammar,
-syntax, genre, or careful exegesis. See
+syntax, genre, or careful exegesis. If the database is missing, Word Study
+must report unavailable deterministic lexical data rather than substitute LLM
+guesses. See
 [`docs/lexicon-architecture.md`](docs/lexicon-architecture.md),
 [`docs/lexicon-sources.md`](docs/lexicon-sources.md), and
 [`docs/word-study.md`](docs/word-study.md).

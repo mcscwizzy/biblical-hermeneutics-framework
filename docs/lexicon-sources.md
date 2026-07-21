@@ -13,12 +13,49 @@ data_sources/lexicons/
 This directory is ignored by git. Runtime lookup uses SQLite, not raw source
 files.
 
+The current standalone lexical runtime expects a generated SQLite file at:
+
+```text
+framework/lexical/database/lexicon.sqlite
+```
+
+Build that file from local Open Scriptures XML with:
+
+```bash
+mkdir -p sources/openscriptures
+git clone https://github.com/openscriptures/HebrewLexicon sources/openscriptures/HebrewLexicon
+git clone https://github.com/openscriptures/strongs sources/openscriptures/strongs
+find sources/openscriptures -name '*.xml'
+
+python -m framework.lexical.tools.build_lexicon_database \
+  --hebrew <path-to-open-scriptures-hebrew-xml> \
+  --greek <path-to-open-scriptures-greek-xml> \
+  --output framework/lexical/database/lexicon.sqlite
+python -m framework.lexical.tools.smoke_lexicon \
+  --database framework/lexical/database/lexicon.sqlite
+```
+
+Developer onboarding flow:
+
+```text
+download sources
+        |
+        v
+run importer
+        |
+        v
+generate lexicon.sqlite
+        |
+        v
+run Word Study
+```
+
 ## Approved Source Plan
 
 | Dataset | Source Repository | Pinned Revision | Data Used | License | Attribution | Redistribution Status | Import Command |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Open Scriptures Strong's dictionaries | To be pinned in Phase 2/4 | Not yet pinned | Strong's-linked definitions where legally permitted | To inspect before import | Preserve upstream attribution | Not bundled yet | Future source parser |
-| Open Scriptures HebrewLexicon | To be pinned in Phase 2 | Not yet pinned | Hebrew lemmas, glosses, BDB-linked data where permitted | To inspect before import | Preserve upstream attribution | Not bundled yet | Future source parser |
+| Open Scriptures Strong's dictionaries | To be pinned in Phase 2/4 | Not yet pinned | Strong's-linked definitions where legally permitted | To inspect before import | Preserve upstream attribution | Not bundled yet | `python -m framework.lexical.tools.build_lexicon_database --greek <xml> --output framework/lexical/database/lexicon.sqlite` |
+| Open Scriptures HebrewLexicon | To be pinned in Phase 2 | Not yet pinned | Hebrew lemmas, glosses, BDB-linked data where permitted | To inspect before import | Preserve upstream attribution | Not bundled yet | `python -m framework.lexical.tools.build_lexicon_database --hebrew <xml> --output framework/lexical/database/lexicon.sqlite` |
 | Open Scriptures morphhb | To be pinned in Phase 2 | Not yet pinned | Hebrew surface forms, lemmas, Strong's IDs, morphology, verse positions | To inspect before import | Preserve upstream attribution | Not bundled yet | Future source parser |
 | MorphGNT | To be pinned in Phase 4 | Not yet pinned | Greek surface forms, lemmas, morphology, verse positions | To inspect before import | Preserve upstream attribution | Not bundled yet | Future source parser |
 | Abbott-Smith Greek lexicon | To evaluate in Phase 4 | Not yet pinned | Greek definitions only if redistribution is permitted | To inspect before import | Preserve upstream attribution | Not bundled yet | Future source parser |
