@@ -18,3 +18,30 @@
     padding: 12px;
 }
 */
+
+/*
+ * Mobile Ask workspace
+ *
+ * Allow the complete Ask workflow to scroll as one page instead of
+ * constraining the returned answer inside a small nested scroll area.
+ */
+
+@media (max-width: 900px) {
+  .workspace-pane[data-workspace-pane="ask"] {
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: calc(
+      var(--app-dock-height) + env(safe-area-inset-bottom, 0px) + 24px
+    );
+  }
+  .ask-pane {
+    grid-template-rows: auto auto auto;
+    align-content: start;
+  }
+  .answer-panel {
+    max-height: none;
+    height: auto;
+    overflow: visible;
+  }
+}
