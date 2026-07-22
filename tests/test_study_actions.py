@@ -260,6 +260,65 @@ class StudyActionRouterTests(unittest.TestCase):
             self.assertEqual(result.lemma, "λόγος")
             self.assertEqual(result.strongs_number, "G3056")
 
+    def test_word_study_action_returns_unavailable_for_imported_token_without_lexicon_entry(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / "greek.xml"
+            source.write_text(
+                """<dictionary xmlns="urn:test">
+                  <entry strongs="G3056">
+                    <word>λόγος</word>
+                    <translit>logos</translit>
+                    <strongs_def>word, message, or account.</strongs_def>
+                  </entry>
+                </dictionary>""",
+                encoding="utf-8",
+            )
+            database = root / "lexicon.sqlite"
+            build_lexicon_database(greek=source, output=database)
+            import_verse_tokens(
+                database,
+                source={
+                    "name": "incomplete-imported-tokens",
+                    "revision": "fixture",
+                    "license": "CC BY 4.0",
+                    "attribution": "Fixture token data.",
+                },
+                verse_words=[
+                    {
+                        "book": "John",
+                        "chapter": 1,
+                        "verse": 2,
+                        "word_position": 1,
+                        "language": "greek",
+                        "surface_form": "φαντασία",
+                        "lemma": "φαντασία",
+                        "strongs_number": "G9999",
+                        "morphology_code": "N-NSF",
+                    }
+                ],
+            )
+            write_library(root / "ckl", [make_object("john", "book", "John", ["Gospel of John"])])
+            library = CanonicalLibrary(root=root / "ckl").load()
+            service = WordStudyService(database_path=database)
+            router = StudyActionRouter(DeterministicStudyEngine(library, word_study_service=service))
+
+            result = router.execute(
+                "word_study",
+                passage={
+                    "book": "John",
+                    "chapter": 1,
+                    "start_verse": 2,
+                    "end_verse": 2,
+                    "word_position": 1,
+                },
+            )
+
+            self.assertEqual(result.status, "unavailable")
+            self.assertFalse(result.agent_fallback_allowed)
+            self.assertEqual(result.metadata["word_study"]["status"], "unavailable")
+            self.assertIn("no lexicon entry resolved", result.metadata["word_study"]["message"])
+
     def test_word_study_action_uses_sqlite_lexical_result(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp)
