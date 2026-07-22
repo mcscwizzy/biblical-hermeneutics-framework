@@ -5,10 +5,13 @@ from __future__ import annotations
 import os
 import re
 import sqlite3
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Mapping
 
 from framework.lexical.service import DEFAULT_LEXICAL_DATABASE_PATH
+
+from bhf_agent.bible import BibleError, normalize_book_name
 
 from .models import WORD_STUDY_GUARDRAILS, LexicalEntry, WordOccurrence, WordStudyResult
 from .normalization import (
@@ -21,6 +24,11 @@ from .repository import LexiconRepository
 STRONGS_RE = re.compile(r"\b[HG]\s*0*\d{1,5}[A-Za-z]?\b", re.IGNORECASE)
 
 
+@dataclass(frozen=True)
+class _UnavailableResolution:
+    message: str
+
+
 class WordStudyService:
     """Build deterministic word-study results from the generated lexical database."""
 
@@ -31,8 +39,10 @@ class WordStudyService:
         database_path: str | Path | None = None,
     ) -> None:
         self._repository = repository
+        repository_path = getattr(repository, "path", None)
         self.database_path = Path(
             database_path
+            or repository_path
             or os.environ.get("BHF_LEXICAL_DATABASE_PATH")
             or DEFAULT_LEXICAL_DATABASE_PATH
         )
@@ -52,7 +62,8 @@ class WordStudyService:
         reference = str(passage.get("reference") or "").strip() or _reference_from_passage(
             passage
         )
-        book = str(passage.get("book") or "").strip()
+        raw_book = str(passage.get("book") or "").strip()
+        book = _canonical_book(raw_book)
         chapter = _int_or_none(passage.get("chapter"))
         verse = _int_or_none(passage.get("start_verse") or passage.get("verse"))
         if not book or chapter is None or verse is None:
@@ -60,6 +71,8 @@ class WordStudyService:
 
         try:
             occurrence = self._resolve_occurrence(book, chapter, verse, passage, query=query)
+            if isinstance(occurrence, _UnavailableResolution):
+                return _unavailable(reference, occurrence.message)
             if isinstance(occurrence, list):
                 return self._ambiguous_result(reference, occurrence)
             if occurrence is None:
@@ -70,6 +83,81 @@ class WordStudyService:
             return self._result_for_occurrence(reference, occurrence)
         except (FileNotFoundError, sqlite3.Error, ValueError) as exc:
             return _unavailable(reference, f"Lexical SQLite data is unavailable: {exc}")
+
+    def diagnostics(self) -> dict[str, Any]:
+        """Return non-fatal runtime diagnostics for Scripture word-study coverage."""
+
+        diagnostics: dict[str, Any] = {
+            "path": str(self.database_path),
+            "lexical_database_found": self.database_path.is_file(),
+            "lexical_entry_count": 0,
+            "verse_word_count": 0,
+            "word_form_count": 0,
+            "sample_checks": [],
+            "warnings": [],
+        }
+        if not diagnostics["lexical_database_found"]:
+            diagnostics["warnings"].append(
+                "Lexical SQLite database was not found at the configured path."
+            )
+            return diagnostics
+
+        try:
+            diagnostics["lexical_entry_count"] = self.repository.count_entries()
+            diagnostics["verse_word_count"] = self.repository.count_table("verse_words")
+            diagnostics["word_form_count"] = self.repository.count_table("word_forms")
+            diagnostics["sample_checks"] = [
+                self._diagnostic_check("John", 1, 1, "G3056"),
+                self._diagnostic_check("Psalms", 23, 6, "H2617"),
+            ]
+        except (FileNotFoundError, sqlite3.Error, ValueError) as exc:
+            diagnostics["warnings"].append(f"Lexical SQLite diagnostics failed: {exc}")
+            return diagnostics
+
+        if diagnostics["lexical_entry_count"] and not diagnostics["verse_word_count"]:
+            diagnostics["warnings"].append(
+                "Lexical database has entries but no verse-token rows; rebuild it with verse-token imports."
+            )
+        failed_samples = [
+            check for check in diagnostics["sample_checks"] if check.get("status") != "pass"
+        ]
+        if failed_samples:
+            diagnostics["warnings"].append(
+                "Lexical database did not pass built-in John 1:1 and Psalm 23:6 token checks."
+            )
+        return diagnostics
+
+    def _diagnostic_check(
+        self,
+        book: str,
+        chapter: int,
+        verse: int,
+        expected_strongs: str,
+    ) -> dict[str, Any]:
+        reference = f"{book} {chapter}:{verse}"
+        token_count = self.repository.count_verse_words(book, chapter, verse)
+        result = self.build_word_study(
+            {
+                "book": book,
+                "chapter": chapter,
+                "start_verse": verse,
+                "reference": reference,
+                "strongs_number": expected_strongs,
+            }
+        )
+        matched = [result.surface_form, result.lemma, result.strongs_number]
+        return {
+            "reference": reference,
+            "expected_strongs": expected_strongs,
+            "token_count": token_count,
+            "status": (
+                "pass"
+                if result.status == "complete" and result.strongs_number == expected_strongs
+                else "fail"
+            ),
+            "matched": [value for value in matched if value],
+            "message": result.message,
+        }
 
     def _resolve_occurrence(
         self,
@@ -90,7 +178,15 @@ class WordStudyService:
             )
         )
         if position is not None:
-            return self.repository.lookup_word_at_position(book, chapter, verse, position)
+            occurrence = self.repository.lookup_word_at_position(book, chapter, verse, position)
+            if occurrence is not None:
+                return occurrence
+            if self.repository.count_verse_words(book, chapter, verse):
+                return _UnavailableResolution(
+                    f"No deterministic original-language token exists at position {position} "
+                    f"for {book} {chapter}:{verse}."
+                )
+            return _UnavailableResolution(_no_verse_tokens_message(book, chapter, verse))
 
         strongs_number = _strongs_from_context(passage, query)
         if strongs_number:
@@ -109,7 +205,7 @@ class WordStudyService:
 
         verse_words = self.repository.lookup_verse_words(book, chapter, verse)
         if not verse_words:
-            return None
+            return _UnavailableResolution(_no_verse_tokens_message(book, chapter, verse))
 
         selected = str(
             _first(passage, "surface_form", "selected_surface_form", "selected_text")
@@ -262,6 +358,22 @@ class WordStudyService:
 
 def _unavailable(reference: str, message: str) -> WordStudyResult:
     return WordStudyResult(reference=reference, status="unavailable", message=message, confidence=0.0)
+
+
+def _canonical_book(book: str) -> str:
+    if not book:
+        return ""
+    try:
+        return normalize_book_name(book)
+    except BibleError:
+        return book.strip()
+
+
+def _no_verse_tokens_message(book: str, chapter: int, verse: int) -> str:
+    return (
+        f"No deterministic original-language verse-token rows were found for {book} {chapter}:{verse}. "
+        "Check BHF_LEXICAL_DATABASE_PATH and rebuild or refresh the lexical SQLite database with verse-token imports."
+    )
 
 
 def _reference_from_passage(passage: Mapping[str, Any]) -> str:

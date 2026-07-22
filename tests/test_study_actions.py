@@ -92,6 +92,59 @@ class StudyActionRouterTests(unittest.TestCase):
             self.assertIn("test-morphgnt", {source["name"] for source in result.sources})
             self.assertIn("LEXICAL CONTEXT", result.prompt_context)
 
+    def test_word_study_service_normalizes_book_aliases_before_token_lookup(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            database = _build_lexicon_database(Path(tmp))
+            service = WordStudyService(repository=LexiconRepository(database))
+
+            result = service.build_word_study(
+                {
+                    "book": "jn",
+                    "chapter": 1,
+                    "start_verse": 1,
+                    "reference": "Jn 1:1",
+                }
+            )
+
+            self.assertEqual(result.status, "complete")
+            self.assertEqual(result.surface_form, "λόγος")
+            self.assertEqual(result.strongs_number, "G3056")
+
+    def test_word_study_service_reports_missing_verse_token_rows_clearly(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / "greek.xml"
+            source.write_text(
+                """<dictionary xmlns="urn:test">
+                  <entry strongs="G3056">
+                    <word>λόγος</word>
+                    <translit>logos</translit>
+                    <strongs_def>word, message, or account.</strongs_def>
+                  </entry>
+                </dictionary>""",
+                encoding="utf-8",
+            )
+            database = root / "lexicon.sqlite"
+            build_lexicon_database(greek=source, output=database)
+            service = WordStudyService(database_path=database)
+
+            result = service.build_word_study(
+                {
+                    "book": "John",
+                    "chapter": 1,
+                    "start_verse": 1,
+                    "reference": "John 1:1",
+                    "selected_text": "Word",
+                }
+            )
+            diagnostics = service.diagnostics()
+
+            self.assertEqual(result.status, "unavailable")
+            self.assertIn("verse-token rows", result.message)
+            self.assertEqual(diagnostics["lexical_entry_count"], 1)
+            self.assertEqual(diagnostics["verse_word_count"], 0)
+            self.assertTrue(any("verse-token imports" in item for item in diagnostics["warnings"]))
+
     def test_word_study_service_resolves_psalm_23_6_hesed_by_position(self):
         with tempfile.TemporaryDirectory() as tmp:
             database = _build_lexicon_database(Path(tmp))

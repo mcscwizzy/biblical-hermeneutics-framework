@@ -94,6 +94,57 @@ class LexiconRepository:
         ).fetchall()
         return [_occurrence_from_legacy_row(row, table="verse_words") for row in rows]
 
+    def count_entries(self) -> int:
+        if not self._legacy:
+            return self._backend.count()
+        return int(
+            self._legacy_connection_or_raise()
+            .execute("SELECT COUNT(*) FROM lexicon_entries")
+            .fetchone()[0]
+        )
+
+    def count_table(self, table: str) -> int:
+        allowed_tables = {
+            "lexical_entries",
+            "lexicon_entries",
+            "lexical_sources",
+            "lexicon_sources",
+            "word_forms",
+            "verse_words",
+        }
+        if table not in allowed_tables:
+            raise ValueError(f"unsupported lexical table for diagnostics: {table}")
+        if not self._legacy:
+            standalone_table = "lexical_entries" if table == "lexicon_entries" else table
+            return self._backend.count_table(standalone_table)
+        legacy_table = "lexicon_entries" if table == "lexical_entries" else table
+        connection = self._legacy_connection_or_raise()
+        row = connection.execute(
+            "SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = ?",
+            (legacy_table,),
+        ).fetchone()
+        if row is None:
+            return 0
+        return int(
+            connection.execute(f"SELECT COUNT(*) FROM {legacy_table}").fetchone()[0]
+        )
+
+    def count_verse_words(self, book: str, chapter: int, verse: int) -> int:
+        if not self._legacy:
+            return self._backend.count_verse_words(book, chapter, verse)
+        return int(
+            self._legacy_connection_or_raise()
+            .execute(
+                """
+                SELECT COUNT(*)
+                FROM verse_words
+                WHERE book = ? AND chapter = ? AND verse = ?
+                """,
+                (str(book).strip(), int(chapter), int(verse)),
+            )
+            .fetchone()[0]
+        )
+
     def lookup_word_at_position(
         self,
         book: str,

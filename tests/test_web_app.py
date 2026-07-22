@@ -1423,6 +1423,26 @@ class WebAppTests(unittest.TestCase):
         self.assertIn('"status":"ok"', response["body"])
         self.assertIn('"service":"bhf-web"', response["body"])
 
+    def test_lexicon_diagnostics_route_reports_runtime_database(self):
+        class FakeWordStudyService:
+            def diagnostics(self):
+                return {
+                    "path": ".bhf/lexicon.sqlite",
+                    "lexical_database_found": True,
+                    "lexical_entry_count": 2,
+                    "verse_word_count": 3,
+                    "warnings": [],
+                }
+
+        with patch("bhf_web.app.WordStudyService", FakeWordStudyService):
+            response = asgi_request("GET", "/api/lexicon/diagnostics")
+
+        self.assertEqual(response["status"], 200)
+        body = json.loads(response["body"])
+        self.assertEqual(body["path"], ".bhf/lexicon.sqlite")
+        self.assertTrue(body["lexical_database_found"])
+        self.assertEqual(body["verse_word_count"], 3)
+
     def test_llm_health_route_reports_provider_status(self):
         class FakeAdapter:
             def health_check(self, model=None):

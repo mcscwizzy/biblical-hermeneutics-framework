@@ -85,6 +85,15 @@ class LexicalRepository:
     def count(self) -> int:
         return int(self._connection.execute("SELECT COUNT(*) FROM lexical_entries").fetchone()[0])
 
+    def count_table(self, table: str) -> int:
+        """Return a row count for a known lexical table, or 0 when absent."""
+
+        if table not in {"lexical_entries", "lexical_sources", "word_forms", "verse_words"}:
+            raise ValueError(f"unsupported lexical table for diagnostics: {table}")
+        if not self._has_table(table):
+            return 0
+        return int(self._connection.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0])
+
     def counts_by_language(self) -> dict[str, int]:
         rows = self._connection.execute(
             """
@@ -120,6 +129,20 @@ class LexicalRepository:
             (str(book).strip(), int(chapter), int(verse)),
         ).fetchall()
         return [_occurrence_from_row(row) for row in rows]
+
+    def count_verse_words(self, book: str, chapter: int, verse: int) -> int:
+        if not self._has_table("verse_words"):
+            return 0
+        return int(
+            self._connection.execute(
+                """
+                SELECT COUNT(*)
+                FROM verse_words
+                WHERE book = ? AND chapter = ? AND verse = ?
+                """,
+                (str(book).strip(), int(chapter), int(verse)),
+            ).fetchone()[0]
+        )
 
     def lookup_word_at_position(
         self,

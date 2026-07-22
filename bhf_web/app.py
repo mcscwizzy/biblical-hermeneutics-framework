@@ -37,6 +37,7 @@ from bhf_agent.translation_settings import (
 )
 from bhf_agent.translation_storage import normalize_translation_id
 from bhf_agent.runner import BHFAgent
+from bhf_agent.lexicon import WordStudyService
 from bhf_agent.study_db import (
     StudyDataError,
     get_source,
@@ -136,6 +137,10 @@ def create_app() -> FastAPI:
     @web_app.get("/api/health", response_class=JSONResponse)
     async def health() -> dict[str, str]:
         return {"status": "ok", "service": "bhf-web"}
+
+    @web_app.get("/api/lexicon/diagnostics", response_class=JSONResponse)
+    async def lexicon_diagnostics() -> dict[str, object]:
+        return WordStudyService().diagnostics()
 
     @web_app.get("/favicon.ico", include_in_schema=False)
     async def favicon() -> Response:
