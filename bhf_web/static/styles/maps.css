@@ -362,7 +362,22 @@ html[data-theme="dark"] .map-stage {
   background: #fbfcfd;
 }
 
+.map-journey-summary {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #245b82;
+  font-size: 0.95rem;
+}
+
+.map-journey-summary strong {
+  font-size: 0.98rem;
+}
+
 .map-reference-panel > summary,
+.map-journey-summary,
 .map-journey-filters > summary,
 .map-journey-lists > summary {
   cursor: pointer;

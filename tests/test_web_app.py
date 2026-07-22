@@ -452,6 +452,10 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn("loadManuscriptsForPassage", map_script)
         bible_map_script = Path("bhf_web/static/maps/BibleMap.js").read_text(encoding="utf-8")
         self.assertIn("map-entity-marker", bible_map_script)
+        self.assertIn("DEFAULT_TILE_URL", bible_map_script)
+        self.assertIn("World_Street_Map", bible_map_script)
+        self.assertIn("options.tileUrl || DEFAULT_TILE_URL", bible_map_script)
+        self.assertNotIn("tile.openstreetmap.org/{z}/{x}/{y}.png", bible_map_script)
         self.assertIn("entityMarkerIcon", bible_map_script)
         self.assertIn("placeLayers.set(marker.id, leafletMarker)", bible_map_script)
         self.assertIn("placeLayer.openPopup()", bible_map_script)
@@ -1049,6 +1053,28 @@ class WebAppTests(unittest.TestCase):
         archaeology_data = json.loads(archaeology_response["body"])
         self.assertEqual(archaeology_data["kind"], "archaeology")
         self.assertEqual(archaeology_data["results"], [])
+
+    def test_map_search_does_not_return_period_only_babylon_noise(self):
+        response = asgi_request("GET", "/api/maps/search?q=Babylon&limit=50")
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        result_ids = {item["id"] for item in data["results"]}
+        result_keys = {(item["kind"], item["id"]) for item in data["results"]}
+        result_titles = [item["title"] for item in data["results"]]
+
+        self.assertIn(("place", "babylon"), result_keys)
+        self.assertIn(("political_context", "babylon"), result_keys)
+        self.assertIn("Babylon", result_titles)
+        self.assertIn("Babylonia", result_titles)
+        self.assertNotIn("jerusalem", result_ids)
+        self.assertNotIn("bethlehem", result_ids)
+        self.assertNotIn("openbible-a8b7a6b", result_ids)
+        self.assertNotIn("openbible-a95b373", result_ids)
+        self.assertNotIn("openbible-a6c3859", result_ids)
+        self.assertNotIn(("political_context", "egypt"), result_keys)
+        self.assertNotIn(("political_context", "judah"), result_keys)
+        self.assertTrue(all("periods" not in item["matched_fields"] for item in data["results"]))
 
     def test_canonical_browser_routes_return_search_and_object_details(self):
         response = asgi_request("GET", "/api/canonical/search?q=Shechem&limit=5")

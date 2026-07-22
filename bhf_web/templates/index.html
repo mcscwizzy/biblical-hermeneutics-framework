@@ -560,11 +560,18 @@
                     <div class="map-panel-body">
                       <div id="map-stage" class="map-stage" role="application" aria-label="Bible map"></div>
                       <aside class="map-details-column" aria-live="polite">
-                        <section class="map-journey-panel" data-map-journeys aria-labelledby="map-journey-heading">
+                        <section id="map-search-results" class="map-search-results" hidden>
                           <div class="panel-heading">
-                            <h3 id="map-journey-heading">Journeys</h3>
-                            <span class="count" data-map-journey-count>0 of 0</span>
+                            <h3 id="map-search-results-heading">Browse results</h3>
+                            <span id="map-search-results-count" class="count">0</span>
                           </div>
+                          <div id="map-search-results-list" class="map-search-results-list"></div>
+                        </section>
+                        <details class="map-journey-panel" data-map-journeys aria-label="Journeys">
+                          <summary class="map-journey-summary">
+                            <strong>Journeys</strong>
+                            <span class="count" data-map-journey-count>0 of 0</span>
+                          </summary>
                           <div class="map-journey-controls">
                             <label class="map-browser-field">
                               <span>Search</span>
@@ -614,14 +621,7 @@
                               </section>
                             </div>
                           </details>
-                        </section>
-                        <section id="map-search-results" class="map-search-results" hidden>
-                          <div class="panel-heading">
-                            <h3 id="map-search-results-heading">Browse results</h3>
-                            <span id="map-search-results-count" class="count">0</span>
-                          </div>
-                          <div id="map-search-results-list" class="map-search-results-list"></div>
-                        </section>
+                        </details>
                         <section id="map-details" class="map-details-panel" aria-live="polite">
                           <p class="empty map-details-empty">Select a place pin, route, historical layer, or political context overlay to inspect its details here.</p>
                         </section>

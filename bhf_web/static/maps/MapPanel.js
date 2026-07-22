@@ -490,12 +490,15 @@ function moveWorkspaceToHost(hostType) {
 
 function setMapMode(nextMode) {
   mapMode = nextMode === "browse" ? "browse" : "passage";
-  const { mapBrowser, mapModeButtons, mapSearchResults } = getPanelElements();
+  const { mapBrowser, mapModeButtons, mapSearchResults, journeyPanel } = getPanelElements();
   if (mapBrowser) {
     mapBrowser.hidden = mapMode !== "browse";
   }
   if (mapSearchResults) {
     mapSearchResults.hidden = mapMode !== "browse";
+  }
+  if (journeyPanel && "open" in journeyPanel) {
+    journeyPanel.open = mapMode !== "browse" || Boolean(selectedJourneyId);
   }
   mapModeButtons.forEach((button) => {
     const isActive = button.getAttribute("data-map-mode-switch") === mapMode;

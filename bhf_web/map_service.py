@@ -94,27 +94,111 @@ def _first_text(item: dict[str, Any], fields: list[str]) -> str:
     return ""
 
 
+_PRIMARY_MATCH_FIELDS = {"name", "title", "reference"}
+_ALIAS_MATCH_FIELDS = {"aliases"}
+_CONTEXT_MATCH_FIELDS = {
+    "description",
+    "summary",
+    "ancient_region",
+    "modern_location",
+    "route_type",
+    "layer_type",
+    "entity_type",
+}
+_OPENBIBLE_GENERATED_FIELDS = {"aliases", "description", "modern_location", "notes"}
+
+
+def _match_terms(value: str) -> list[str]:
+    return [term for term in _normalize_for_match(value).split(" ") if term]
+
+
+def _has_bounded_phrase(normalized_query: str, normalized_value: str) -> bool:
+    return f" {normalized_query} " in f" {normalized_value} "
+
+
+def _is_openbible_import(item: dict[str, Any]) -> bool:
+    return str(item.get("source_name") or "").startswith("OpenBible.info")
+
+
+def _has_primary_title_match(query_terms: list[str], item: dict[str, Any]) -> bool:
+    if not query_terms:
+        return False
+    normalized_query = " ".join(query_terms)
+    for field_name in _PRIMARY_MATCH_FIELDS:
+        normalized_value = _normalize_for_match(_search_text(item.get(field_name, "")))
+        if not normalized_value:
+            continue
+        if _has_bounded_phrase(normalized_query, normalized_value):
+            return True
+        if len(query_terms) == 1 and any(term.startswith(query_terms[0]) for term in _match_terms(normalized_value)):
+            return True
+    return False
+
+
+def _is_weak_only_match(item: dict[str, Any], matched_fields: list[str]) -> bool:
+    matched = set(matched_fields)
+    if not matched:
+        return True
+    if matched & _PRIMARY_MATCH_FIELDS:
+        return False
+    if matched & _ALIAS_MATCH_FIELDS and not _is_openbible_import(item):
+        return False
+    if matched & _CONTEXT_MATCH_FIELDS and not _is_openbible_import(item):
+        return False
+    return True
+
+
+def _match_rank(query: str, item: dict[str, Any], matched_fields: list[str]) -> int:
+    normalized_query = _normalize_for_match(query)
+    title = _normalize_for_match(_first_text(item, ["name", "title", "reference"]))
+    if title == normalized_query:
+        return 0
+    if _has_primary_title_match(_match_terms(query), item):
+        return 1
+    matched = set(matched_fields)
+    if matched & _ALIAS_MATCH_FIELDS:
+        return 2
+    if matched & _CONTEXT_MATCH_FIELDS:
+        return 3
+    return 4
+
+
 def _score_match(query: str, item: dict[str, Any], fields: list[tuple[str, int]]) -> tuple[int, list[str]]:
     normalized_query = _normalize_for_match(query)
     if not normalized_query:
         return 0, []
 
-    query_terms = [term for term in normalized_query.split(" ") if term]
+    query_terms = _match_terms(query)
     score = 0
     matched_fields: list[str] = []
+    openbible_import = _is_openbible_import(item)
 
     for field_name, weight in fields:
         value = _search_text(item.get(field_name, ""))
         normalized_value = _normalize_for_match(value)
         if not normalized_value:
             continue
-        if normalized_query in normalized_value:
-            score += weight * 3
+        value_terms = _match_terms(value)
+        phrase_match = _has_bounded_phrase(normalized_query, normalized_value)
+        primary_prefix_match = (
+            field_name in _PRIMARY_MATCH_FIELDS
+            and len(query_terms) == 1
+            and any(term.startswith(query_terms[0]) for term in value_terms)
+        )
+        term_match = any(term in value_terms for term in query_terms)
+        if not phrase_match and not primary_prefix_match and not term_match:
+            continue
+
+        effective_weight = weight
+        if openbible_import and field_name in _OPENBIBLE_GENERATED_FIELDS:
+            effective_weight = min(effective_weight, 1)
+
+        if phrase_match or primary_prefix_match:
+            score += effective_weight * 3
             matched_fields.append(field_name)
             continue
-        if any(term in normalized_value for term in query_terms):
-            score += weight
-            matched_fields.append(field_name)
+        score += effective_weight
+        matched_fields.append(field_name)
 
     return score, matched_fields
 
@@ -134,6 +218,8 @@ def _search_catalog_items(
     for item in items:
         score, matched_fields = _score_match(query, item, fields)
         if score <= 0:
+            continue
+        if _is_weak_only_match(item, matched_fields):
             continue
         subtitle = _first_text(item, subtitle_fields)
         summary = _first_text(item, summary_fields)
@@ -155,11 +241,12 @@ def _search_catalog_items(
                 "matched_fields": matched_fields,
                 "item": item,
                 "exact_title_match": exact_title_match,
+                "match_rank": _match_rank(query, item, matched_fields),
             }
         )
     hits.sort(
         key=lambda hit: (
-            0 if hit["exact_title_match"] else 1,
+            int(hit["match_rank"]),
             -int(hit["search_score"]),
             str(hit["title"]).lower(),
             str(hit["id"]),
