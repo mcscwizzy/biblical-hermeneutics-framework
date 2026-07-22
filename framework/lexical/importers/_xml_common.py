@@ -113,7 +113,11 @@ def _record_from_element(
     strongs = _strongs_identifier(element, language)
     if not strongs:
         return None
-    lemma = _field(element, _FIELD_NAMES["lemma"])
+    lemma = _field(element, _FIELD_NAMES["lemma"]) or _child_attribute(
+        element,
+        ("greek", "hebrew", "w", "word", "lemma"),
+        ("unicode", "text", "lemma", "word"),
+    )
     definition = _field(element, _FIELD_NAMES["definition"])
     if not lemma or not definition:
         return None
@@ -124,12 +128,15 @@ def _record_from_element(
         "language": language,
         "strongs_number": strongs,
         "lemma": lemma,
-        "transliteration": _field(element, _FIELD_NAMES["transliteration"]),
-        "pronunciation": _field(element, _FIELD_NAMES["pronunciation"]),
+        "transliteration": _field(element, _FIELD_NAMES["transliteration"])
+        or _child_attribute(element, ("greek", "hebrew", "w"), ("translit", "xlit")),
+        "pronunciation": _field(element, _FIELD_NAMES["pronunciation"])
+        or _child_attribute(element, ("pronunciation", "greek", "hebrew", "w"), ("strongs", "pron")),
         "definition": definition,
         "short_definition": short_definition or _first_sentence(definition),
         "root": _field(element, _FIELD_NAMES["root"]),
-        "part_of_speech": _field(element, _FIELD_NAMES["part_of_speech"]),
+        "part_of_speech": _field(element, _FIELD_NAMES["part_of_speech"])
+        or _child_attribute(element, ("greek", "hebrew", "w"), ("pos",)),
         "morphology": _field(element, _FIELD_NAMES["morphology"]),
         "semantic_domain": _field(element, _FIELD_NAMES["semantic_domain"]),
         "usage_notes": _field(element, _FIELD_NAMES["usage_notes"]),
@@ -175,6 +182,24 @@ def _field(element: ET.Element, names: tuple[str, ...]) -> str | None:
         value = " ".join("".join(candidate.itertext()).split())
         if value:
             return _clean_text(value)
+    return None
+
+
+def _child_attribute(
+    element: ET.Element,
+    child_names: tuple[str, ...],
+    attribute_names: tuple[str, ...],
+) -> str | None:
+    wanted_children = set(child_names)
+    wanted_attributes = set(attribute_names)
+    for candidate in element.iter():
+        if candidate is element:
+            continue
+        if _local_name(candidate.tag) not in wanted_children:
+            continue
+        for key, value in candidate.attrib.items():
+            if _local_name(key) in wanted_attributes and str(value).strip():
+                return _clean_text(value)
     return None
 
 

@@ -60,6 +60,33 @@ class BiblicalLexicalEngineTests(unittest.TestCase):
             self.assertEqual(result["greek"], 1)
             self.assertEqual(validate_database(root / "lexicon.sqlite")["entries"], 2)
 
+    def test_openscriptures_greek_attribute_xml_import(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            greek = root / "strongsgreek.xml"
+            greek.write_text(
+                """<strongsdictionary>
+                  <entries>
+                    <entry strongs="03056">
+                      <strongs>3056</strongs>
+                      <greek unicode="λόγος" translit="lógos" />
+                      <pronunciation strongs="log'-os" />
+                      <strongs_def>something said, a word or message</strongs_def>
+                      <kjv_def>word, saying</kjv_def>
+                    </entry>
+                  </entries>
+                </strongsdictionary>""",
+                encoding="utf-8",
+            )
+            database = root / "lexicon.sqlite"
+            build_lexicon_database(greek=greek, output=database)
+
+            entry = lookup_word(language="greek", strongs="G3056", database_path=database)
+
+            self.assertEqual(entry["lemma"], "λόγος")
+            self.assertEqual(entry["transliteration"], "lógos")
+            self.assertEqual(entry["pronunciation"], "log'-os")
+
     def test_default_build_output_matches_runtime_database_location(self):
         self.assertEqual(Path(DEFAULT_LEXICAL_DATABASE_PATH), DEFAULT_OUTPUT)
         self.assertEqual(
