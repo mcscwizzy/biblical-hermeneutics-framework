@@ -346,7 +346,9 @@ class DeterministicStudyEngine:
     def _word_study_sections(self, result: WordStudyResult) -> list[dict[str, Any]]:
         if result.is_ambiguous:
             items = [
-                f"{index}. {word.surface_form} ({word.lemma}; {_strongs_label(word.strongs_number)}; position {word.position})"
+                f"{index}. {word.surface_form}"
+                + (f" - {word.gloss}" if word.gloss else "")
+                + f" ({word.lemma}; {_strongs_label(word.strongs_number)}; position {word.position})"
                 for index, word in enumerate(result.ambiguities, start=1)
             ]
             return [

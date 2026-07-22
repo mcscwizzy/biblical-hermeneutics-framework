@@ -19,17 +19,19 @@ The current standalone lexical runtime expects a generated SQLite file at:
 framework/lexical/database/lexicon.sqlite
 ```
 
-Build that file from local Open Scriptures XML using
-[`compile-lexicon.md`](compile-lexicon.md).
+For non-Docker runs, build that file from local source checkouts using
+[`compile-lexicon.md`](compile-lexicon.md). Docker builds clone the same pinned
+source revisions during image build, generate `/app/.bhf-seed/lexicon.sqlite`,
+and copy it to `.bhf/lexicon.sqlite` on first container start.
 
 ## Approved Source Plan
 
 | Dataset | Source Repository | Pinned Revision | Data Used | License | Attribution | Redistribution Status | Import Command |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Open Scriptures Strong's dictionaries | `https://github.com/openscriptures/strongs` | Not yet pinned | Strong's-linked definitions where legally permitted | To inspect before import | Preserve upstream attribution | Not bundled yet | `python -m framework.lexical.tools.build_lexicon_database --greek <xml> --output framework/lexical/database/lexicon.sqlite` |
-| Open Scriptures HebrewLexicon | `https://github.com/openscriptures/HebrewLexicon` | Not yet pinned | Hebrew lemmas, glosses, BDB-linked data where permitted | To inspect before import | Preserve upstream attribution | Not bundled yet | `python -m framework.lexical.tools.build_lexicon_database --hebrew <xml> --output framework/lexical/database/lexicon.sqlite` |
-| Open Scriptures morphhb | `https://github.com/openscriptures/morphhb` | `3d15126fb1ef74867fc1434be1942e837932691f` locally imported for Genesis | Hebrew surface forms, lemmas, Strong's IDs, morphology, verse positions | CC BY 4.0 | Open Scriptures Hebrew Bible Project | Local generated DB only | `python -m framework.lexical.tools.import_verse_tokens --oshb-osis <osis-book.xml> --database framework/lexical/database/lexicon.sqlite ...` |
-| MorphGNT | To inspect | Not yet pinned | Greek surface forms, lemmas, morphology, verse positions | To inspect before import | Preserve upstream attribution | Not bundled yet | Future source parser |
+| Open Scriptures Strong's dictionaries | `https://github.com/openscriptures/strongs` | `0acd2f251c2d35ff8db2dece4e0593979d3ac223` | Greek Strong's-linked definitions where legally permitted | Source metadata preserved from importer | Preserve upstream attribution | Generated DB only | `python -m framework.lexical.tools.build_lexicon_database --greek <xml> --output framework/lexical/database/lexicon.sqlite` |
+| Open Scriptures HebrewLexicon | `https://github.com/openscriptures/HebrewLexicon` | `21c9add13bc727d3a951361778e97e3ff7afd1ce` | Hebrew lemmas, glosses, BDB-linked data where permitted | Source metadata preserved from importer | Preserve upstream attribution | Generated DB only | `python -m framework.lexical.tools.build_lexicon_database --hebrew <xml> --output framework/lexical/database/lexicon.sqlite` |
+| Open Scriptures morphhb | `https://github.com/openscriptures/morphhb` | `3d15126fb1ef74867fc1434be1942e837932691f` | Hebrew surface forms, lemmas, Strong's IDs, morphology, verse positions | CC BY 4.0 | Open Scriptures Hebrew Bible Project | Generated DB only | `python -m framework.lexical.tools.import_verse_tokens --oshb-osis-dir <osis-dir> --database framework/lexical/database/lexicon.sqlite ...` |
+| MorphGNT SBLGNT | `https://github.com/morphgnt/sblgnt` | `aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d` locally imported | Greek surface forms, lemmas, morphology, verse positions | Morphology CC BY-SA 3.0; SBLGNT text subject to SBLGNT EULA | Tauber, J. K., ed. (2017) MorphGNT: SBLGNT Edition | Local generated DB only | `python -m framework.lexical.tools.import_verse_tokens --morphgnt-dir <morphgnt-dir> --database framework/lexical/database/lexicon.sqlite ...` |
 | Abbott-Smith Greek lexicon | To evaluate | Not yet pinned | Greek definitions only if redistribution is permitted | To inspect before import | Preserve upstream attribution | Not bundled yet | Future source parser |
 
 ## Normalized JSON Import
@@ -160,14 +162,24 @@ The standalone runtime database also accepts verse-token imports directly:
 ```bash
 python -m framework.lexical.tools.import_verse_tokens \
   --database framework/lexical/database/lexicon.sqlite \
-  --oshb-osis sources/openscriptures/morphhb/wlc/Gen.xml \
+  --oshb-osis-dir sources/openscriptures/morphhb/wlc \
   --source-name OSHB \
   --source-url https://github.com/openscriptures/morphhb \
   --revision 3d15126fb1ef74867fc1434be1942e837932691f \
   --license "CC BY 4.0" \
   --attribution "Open Scriptures Hebrew Bible Project"
+
+python -m framework.lexical.tools.import_verse_tokens \
+  --database framework/lexical/database/lexicon.sqlite \
+  --morphgnt-dir sources/openscriptures/morphgnt-sblgnt \
+  --source-name "MorphGNT SBLGNT" \
+  --source-url https://github.com/morphgnt/sblgnt \
+  --revision aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d \
+  --license "Morphology CC BY-SA 3.0; SBLGNT text subject to SBLGNT EULA" \
+  --attribution "Tauber, J. K., ed. (2017) MorphGNT: SBLGNT Edition"
 ```
 
 This imports `verse_words` rows into the runtime SQLite file used by the web
-Word Study action. A full-verse request should then return a token choice list;
-selecting a token resolves the specific dictionary entry and morphology.
+Word Study action. A full-verse request should then return a token choice list
+with original-language forms and compact English lexical glosses for Hebrew and
+Greek; selecting a token resolves the specific dictionary entry and morphology.

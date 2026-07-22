@@ -25,6 +25,12 @@ it does not ask a model to reconstruct Greek or Hebrew data from memory.
 Normal application startup never downloads source data and never parses raw
 XML, OSIS, TSV, or JSON lexicon source files.
 
+Docker image builds are the exception to the download/import rule: the
+`Dockerfile` clones pinned source revisions, builds a seeded lexical database
+at `/app/.bhf-seed/lexicon.sqlite`, validates it, and removes the raw source
+checkouts before the final image layer completes. Container startup only copies
+that seed into the mounted runtime path when `.bhf/lexicon.sqlite` is missing.
+
 ## SQLite Tables
 
 The generated CKL SQLite schema includes these lexical tables:

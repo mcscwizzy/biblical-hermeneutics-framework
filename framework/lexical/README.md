@@ -44,9 +44,10 @@ as unavailable data rather than ask the model to invent a definition.
 
 Whole-passage Word Study also needs verse-token rows in the same database. Use
 `python -m framework.lexical.tools.import_verse_tokens` to import OSHB OSIS
-files or normalized TSV exports into `verse_words` and `word_forms`. Without
-that token layer, the runtime can answer explicit Strong's/lemma requests but
-cannot determine which original-language word a verse-level action should use.
+files, MorphGNT files, or normalized TSV exports into `verse_words` and
+`word_forms`. Without that token layer, the runtime can answer explicit
+Strong's/lemma requests but cannot determine which original-language word a
+verse-level action should use.
 
 ## Agent integration
 
@@ -63,18 +64,15 @@ Validate and smoke test a generated database with the commands in
 
 ## Docker
 
-The production image does not copy raw lexical XML or embed an externally
-licensed dictionary. The web container reads a generated database from the
-mounted `.bhf/lexicon.sqlite` path. Build it with the opt-in Compose helper:
+The Docker image build clones pinned lexical source revisions, generates a
+seeded database, imports Hebrew and Greek verse-token rows, validates the
+result, and stores it at:
 
-```bash
-BHF_LEXICAL_SOURCE_DIR=/absolute/path/to/openscriptures \
-  docker compose --profile lexical run --rm bhf-lexicon-build
-docker compose up bhf-web
+```text
+/app/.bhf-seed/lexicon.sqlite
 ```
 
-The helper expects `hebrew.xml` and `greek.xml` in the supplied directory,
-writes the SQLite database to `.bhf/lexicon.sqlite`, and exits. The web
-container receives it at `/app/.bhf-data/lexicon.sqlite` in read-only runtime
-mode. If no database is mounted, lexical retrieval remains unavailable without
-preventing the rest of BHF from starting.
+At startup, `scripts/docker-entrypoint.sh` copies the seed into the mounted
+runtime path `/app/.bhf-data/lexicon.sqlite` when that file is missing. With
+the default Compose volume, this appears on the host as `.bhf/lexicon.sqlite`.
+If the host file already exists, it is preserved.

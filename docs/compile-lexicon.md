@@ -69,11 +69,14 @@ Database: framework/lexical/database/lexicon.sqlite
 
 Word Study can resolve a whole verse only after original-language verse tokens
 are imported into the same runtime database. For Hebrew Bible coverage, use the
-Open Scriptures Hebrew Bible OSIS files from `openscriptures/morphhb`:
+Open Scriptures Hebrew Bible OSIS files from `openscriptures/morphhb`. For New
+Testament Greek coverage, use MorphGNT SBLGNT:
 
 ```bash
 git clone https://github.com/openscriptures/morphhb sources/openscriptures/morphhb
 git -C sources/openscriptures/morphhb rev-parse HEAD
+git clone https://github.com/morphgnt/sblgnt sources/openscriptures/morphgnt-sblgnt
+git -C sources/openscriptures/morphgnt-sblgnt rev-parse HEAD
 ```
 
 Import one or more OSIS book files, recording the pinned revision:
@@ -89,11 +92,52 @@ python3 -m framework.lexical.tools.import_verse_tokens \
   --attribution "Open Scriptures Hebrew Bible Project"
 ```
 
+Or import the whole Hebrew Bible OSIS directory:
+
+```bash
+python3 -m framework.lexical.tools.import_verse_tokens \
+  --database framework/lexical/database/lexicon.sqlite \
+  --oshb-osis-dir sources/openscriptures/morphhb/wlc \
+  --source-name OSHB \
+  --source-url https://github.com/openscriptures/morphhb \
+  --revision <pinned-commit-sha> \
+  --license "CC BY 4.0" \
+  --attribution "Open Scriptures Hebrew Bible Project" \
+  --rebuild-tokens
+```
+
 Use `--rebuild-tokens` when replacing previously imported token rows. The tool
 also accepts TSV files through `--verse-words-tsv` and `--word-forms-tsv`.
 Verse-word TSV exports must include `book`, `chapter`, `verse`,
 `word_position`, `surface_form`, and either `language`, `lemma`, or a prefixed
 `strongs_number`.
+
+Then import the whole Greek New Testament. Do not pass `--rebuild-tokens` here
+unless you intentionally want to clear the Hebrew rows first:
+
+```bash
+python3 -m framework.lexical.tools.import_verse_tokens \
+  --database framework/lexical/database/lexicon.sqlite \
+  --morphgnt-dir sources/openscriptures/morphgnt-sblgnt \
+  --source-name "MorphGNT SBLGNT" \
+  --source-url https://github.com/morphgnt/sblgnt \
+  --revision <pinned-commit-sha> \
+  --license "Morphology CC BY-SA 3.0; SBLGNT text subject to SBLGNT EULA" \
+  --attribution "Tauber, J. K., ed. (2017) MorphGNT: SBLGNT Edition"
+```
+
+For Docker, the image build performs the source checkout, dictionary build,
+Hebrew token import, Greek token import, validation, and smoke test
+automatically:
+
+```bash
+docker compose up -d --build bhf-web
+```
+
+The generated seed database is stored inside the image at
+`/app/.bhf-seed/lexicon.sqlite`. On container startup it is copied to the
+mounted runtime path `/app/.bhf-data/lexicon.sqlite` when that file is missing
+on the host as `.bhf/lexicon.sqlite`.
 
 ## Verify
 
@@ -111,11 +155,11 @@ python3 -m framework.lexical.tools.smoke_lexicon \
   --database framework/lexical/database/lexicon.sqlite
 ```
 
-Expected smoke output includes:
+Expected smoke output for a full dictionary-plus-token database includes:
 
 ```text
 Entries: 13938
-Sources: 2
+Sources: 4
 Passed: 2/2
 ```
 
@@ -127,6 +171,15 @@ exact runtime path:
 ```text
 framework/lexical/database/lexicon.sqlite
 ```
+
+For Docker, the runtime path is mounted from the host as:
+
+```text
+.bhf/lexicon.sqlite
+```
+
+If that file predates the Docker build automation, remove it and run
+`docker compose up -d --build` so the image seed is copied into the mount.
 
 If the importer cannot find lexical entries, confirm you are using:
 

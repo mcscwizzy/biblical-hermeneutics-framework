@@ -11,6 +11,12 @@ database at `framework/lexical/database/lexicon.sqlite` through an application
 service layer. The model explanation path receives compact retrieved lexical
 context only after deterministic data is found.
 
+Docker builds generate a seeded lexical database at
+`/app/.bhf-seed/lexicon.sqlite`. On first container start, the entrypoint copies
+that seed to the mounted runtime path, `.bhf/lexicon.sqlite` on the host and
+`/app/.bhf-data/lexicon.sqlite` in the container, if the runtime file is
+missing.
+
 ## Runtime Data
 
 When the lexical database is populated, runtime code can retrieve:
@@ -62,6 +68,10 @@ If `framework/lexical/database/lexicon.sqlite` is missing, startup logs a
 diagnostic with the expected path and build command. Word Study should treat
 lexical data as unavailable in that state; it must not invent Hebrew or Greek
 definitions, Strong's numbers, or lexical ranges from model memory.
+
+In Docker, if Word Study is still using an old lexical database, remove
+`.bhf/lexicon.sqlite` and rebuild/restart the web container so the image seed is
+copied into the mounted runtime directory.
 
 For download, build, and verification commands, see
 [`compile-lexicon.md`](compile-lexicon.md). The smoke test intentionally fails

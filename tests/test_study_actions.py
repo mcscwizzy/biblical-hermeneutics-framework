@@ -14,7 +14,7 @@ from framework.canonical_library import CanonicalLibrary
 from framework.canonical_library.database_builder import build_database
 from framework.canonical_library.lexicon_importer import import_normalized_lexicon_file
 from framework.lexical.tools.build_lexicon_database import build_lexicon_database
-from framework.lexical.tools.import_verse_tokens import import_verse_tokens, read_oshb_osis
+from framework.lexical.tools.import_verse_tokens import import_verse_tokens, read_morphgnt, read_oshb_osis
 
 from tests.canonical_library.helpers import make_object, write_library
 
@@ -203,6 +203,63 @@ class StudyActionRouterTests(unittest.TestCase):
             self.assertEqual(result.strongs_number, "H7225")
             self.assertEqual(result.lemma, "רֵאשִׁית")
 
+    def test_word_study_service_resolves_morphgnt_tokens_by_lemma(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / "greek.xml"
+            source.write_text(
+                """<dictionary xmlns="urn:test">
+                  <entry strongs="G3056">
+                    <word>λόγος</word>
+                    <translit>logos</translit>
+                    <strongs_def>word, message, or account.</strongs_def>
+                    <morphology>noun</morphology>
+                  </entry>
+                </dictionary>""",
+                encoding="utf-8",
+            )
+            database = root / "lexicon.sqlite"
+            build_lexicon_database(greek=source, output=database)
+            morphgnt = root / "64-Jn-morphgnt.txt"
+            morphgnt.write_text(
+                "\n".join(
+                    [
+                        "040101 P- -------- Ἐν Ἐν ἐν ἐν",
+                        "040101 N- ----DSF- ἀρχῇ ἀρχῇ ἀρχῇ ἀρχή",
+                        "040101 V- 3IAI-S-- ἦν ἦν ἦν εἰμί",
+                        "040101 RA ----NSM- ὁ ὁ ὁ ὁ",
+                        "040101 N- ----NSM- λόγος, λόγος λόγος λόγος",
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            import_verse_tokens(
+                database,
+                source={
+                    "name": "test-morphgnt",
+                    "revision": "fixture",
+                    "license": "CC BY-SA 3.0",
+                    "attribution": "Fixture MorphGNT-style data.",
+                },
+                verse_words=read_morphgnt(morphgnt),
+            )
+            service = WordStudyService(database_path=database)
+
+            result = service.build_word_study(
+                {
+                    "book": "John",
+                    "chapter": 1,
+                    "start_verse": 1,
+                    "reference": "John 1:1",
+                    "word_position": 5,
+                }
+            )
+
+            self.assertEqual(result.status, "complete")
+            self.assertEqual(result.surface_form, "λόγος")
+            self.assertEqual(result.lemma, "λόγος")
+            self.assertEqual(result.strongs_number, "G3056")
+
     def test_word_study_action_uses_sqlite_lexical_result(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp)
@@ -247,6 +304,7 @@ class StudyActionRouterTests(unittest.TestCase):
             self.assertEqual(result.status, "partial")
             self.assertFalse(result.agent_fallback_allowed)
             self.assertIn("Multiple possible original-language words", result.sections[0]["title"])
+            self.assertIn("steadfast love", result.sections[0]["items"][0])
 
     def test_word_study_action_resolves_selected_ambiguity_position(self):
         with tempfile.TemporaryDirectory() as tmp:

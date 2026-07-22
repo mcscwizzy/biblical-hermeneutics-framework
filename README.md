@@ -112,8 +112,9 @@ deterministic test mode so they can run without a live LLM. See
 [`tests/README.md`](tests/README.md) for the required selectors and guardrails.
 
 For the containerized local-dev stack, see [`docs/docker.md`](docs/docker.md).
-It starts both the app and Ollama with `docker compose up -d`, uses
-`qwen2.5:0.5b` by default, and keeps the model in a persistent Docker volume.
+It starts both the app and Ollama with `docker compose up -d --build`, uses
+`qwen2.5:0.5b` by default, keeps the model in a persistent Docker volume, and
+seeds the lexical runtime database during the image build.
 
 Current right-click study actions include Ancient Context, Literary Context,
 Cross References, Related OT Themes, Fulfillment in the NT, Compare
@@ -122,7 +123,9 @@ the selected installed translation.
 
 BHF also has an offline Greek/Hebrew lexical database layer for deterministic
 word-study data. The runtime database is generated locally at
-`framework/lexical/database/lexicon.sqlite` from inspected Open Scriptures XML.
+`framework/lexical/database/lexicon.sqlite` for non-Docker runs. Docker builds
+generate a seeded database at `/app/.bhf-seed/lexicon.sqlite` and copy it to
+`.bhf/lexicon.sqlite` on first container start.
 
 Lexical data assists interpretation; it does not replace context, grammar,
 syntax, genre, or careful exegesis. If the database is missing, Word Study

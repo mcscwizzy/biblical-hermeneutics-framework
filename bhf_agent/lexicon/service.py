@@ -209,7 +209,7 @@ class WordStudyService:
             language=occurrence.language,
             surface_form=occurrence.surface_form,
             lemma=occurrence.lemma,
-            strongs_number=occurrence.strongs_number,
+            strongs_number=occurrence.strongs_number or _first_entry_attr(entries, "strongs_number"),
             transliteration=occurrence.transliteration or _first_entry_attr(entries, "transliteration"),
             morphology=occurrence.morphology,
             morphology_code=occurrence.morphology_code,
@@ -230,13 +230,27 @@ class WordStudyService:
         return _dedupe_entries(entries)
 
     def _ambiguous_result(self, reference: str, occurrences: list[WordOccurrence]) -> WordStudyResult:
+        enriched = [self._with_gloss(occurrence) for occurrence in occurrences]
         return WordStudyResult(
             reference=reference,
             status="ambiguous",
-            ambiguities=occurrences,
+            ambiguities=enriched,
             message="Multiple possible original-language words found. Please select a specific original-language token.",
             confidence=0.35,
         )
+
+    def _with_gloss(self, occurrence: WordOccurrence) -> WordOccurrence:
+        entries = self._entries_for_occurrence(occurrence)
+        gloss = _first_gloss(entries)
+        strongs = occurrence.strongs_number or _first_entry_attr(entries, "strongs_number")
+        transliteration = occurrence.transliteration or _first_entry_attr(entries, "transliteration")
+        if not gloss and not strongs and not transliteration:
+            return occurrence
+        data = occurrence.to_dict()
+        data["gloss"] = gloss
+        data["strongs_number"] = strongs
+        data["transliteration"] = transliteration
+        return WordOccurrence(**{key: value for key, value in data.items() if key != "reference"})
 
 
 def _unavailable(reference: str, message: str) -> WordStudyResult:
@@ -386,6 +400,18 @@ def _first_entry_attr(entries: list[LexicalEntry], attr: str) -> str | None:
         value = getattr(entry, attr, None)
         if value:
             return str(value)
+    return None
+
+
+def _first_gloss(entries: list[LexicalEntry]) -> str | None:
+    for entry in entries:
+        for gloss in entry.glosses:
+            text = str(gloss or "").strip()
+            if text:
+                return text
+        text = str(entry.definition or "").strip()
+        if text:
+            return text
     return None
 
 

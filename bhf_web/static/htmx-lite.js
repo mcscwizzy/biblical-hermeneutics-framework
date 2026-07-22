@@ -2557,7 +2557,7 @@ function renderWordStudyAmbiguity(study) {
           <li>
             <button type="button" class="word-study-choice" data-word-study-position="${escapeHtml(word.position || "")}" data-word-study-language="${escapeHtml(word.language || "")}" data-word-study-surface="${escapeHtml(word.surface_form || "")}" data-word-study-lemma="${escapeHtml(word.lemma || "")}" data-word-study-strongs="${escapeHtml(word.strongs_number || "")}">
               <strong>${escapeHtml(word.surface_form || word.lemma || "word")}</strong>
-              <span>${escapeHtml([word.lemma, word.strongs_number, word.position ? `position ${word.position}` : ""].filter(Boolean).join(" - "))}</span>
+              <span>${escapeHtml([word.gloss, word.lemma, word.strongs_number, word.position ? `position ${word.position}` : ""].filter(Boolean).join(" - "))}</span>
             </button>
           </li>
         `).join("")}

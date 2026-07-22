@@ -120,6 +120,36 @@ OSIS_BOOKS = {
     "Mal": "Malachi",
 }
 
+MORPHGNT_BOOKS = {
+    "01": "Matthew",
+    "02": "Mark",
+    "03": "Luke",
+    "04": "John",
+    "05": "Acts",
+    "06": "Romans",
+    "07": "1 Corinthians",
+    "08": "2 Corinthians",
+    "09": "Galatians",
+    "10": "Ephesians",
+    "11": "Philippians",
+    "12": "Colossians",
+    "13": "1 Thessalonians",
+    "14": "2 Thessalonians",
+    "15": "1 Timothy",
+    "16": "2 Timothy",
+    "17": "Titus",
+    "18": "Philemon",
+    "19": "Hebrews",
+    "20": "James",
+    "21": "1 Peter",
+    "22": "2 Peter",
+    "23": "1 John",
+    "24": "2 John",
+    "25": "3 John",
+    "26": "Jude",
+    "27": "Revelation",
+}
+
 
 def import_verse_tokens(
     database_path: str | Path,
@@ -209,6 +239,67 @@ def read_oshb_osis(path: str | Path) -> list[dict[str, Any]]:
                     "source_word_id": _optional_text(word.attrib.get("id")),
                 }
             )
+    return rows
+
+
+def read_oshb_osis_dir(path: str | Path) -> list[dict[str, Any]]:
+    directory = Path(path)
+    if not directory.is_dir():
+        raise NotADirectoryError(f"OSHB OSIS directory not found: {directory}")
+    rows: list[dict[str, Any]] = []
+    for file_path in sorted(directory.glob("*.xml")):
+        if file_path.name == "VerseMap.xml":
+            continue
+        rows.extend(read_oshb_osis(file_path))
+    return rows
+
+
+def read_morphgnt(path: str | Path) -> list[dict[str, Any]]:
+    file_path = Path(path)
+    rows: list[dict[str, Any]] = []
+    position_by_reference: dict[tuple[str, int, int], int] = {}
+    for line_number, raw_line in enumerate(file_path.read_text(encoding="utf-8").splitlines(), start=1):
+        line = raw_line.strip()
+        if not line or line.startswith("#"):
+            continue
+        parts = line.split()
+        if len(parts) != 7:
+            raise ValueError(f"{file_path}:{line_number}: expected 7 MorphGNT columns")
+        bcv, part_of_speech, parsing_code, text, word, _normalized, lemma = parts
+        match = re.fullmatch(r"(\d{2})(\d{2})(\d{2})", bcv)
+        if not match:
+            raise ValueError(f"{file_path}:{line_number}: invalid book/chapter/verse code: {bcv}")
+        book_code, chapter_text, verse_text = match.groups()
+        book = MORPHGNT_BOOKS.get(book_code)
+        if not book:
+            raise ValueError(f"{file_path}:{line_number}: unsupported MorphGNT book code: {book_code}")
+        chapter = int(chapter_text)
+        verse = int(verse_text)
+        key = (book, chapter, verse)
+        position_by_reference[key] = position_by_reference.get(key, 0) + 1
+        rows.append(
+            {
+                "book": book,
+                "chapter": chapter,
+                "verse": verse,
+                "word_position": position_by_reference[key],
+                "language": "greek",
+                "surface_form": word,
+                "lemma": lemma,
+                "morphology_code": _morphgnt_morphology_code(part_of_speech, parsing_code),
+                "source_word_id": f"{bcv}-{position_by_reference[key]}",
+            }
+        )
+    return rows
+
+
+def read_morphgnt_dir(path: str | Path) -> list[dict[str, Any]]:
+    directory = Path(path)
+    if not directory.is_dir():
+        raise NotADirectoryError(f"MorphGNT directory not found: {directory}")
+    rows: list[dict[str, Any]] = []
+    for file_path in sorted(directory.glob("*-morphgnt.txt")):
+        rows.extend(read_morphgnt(file_path))
     return rows
 
 
@@ -423,6 +514,19 @@ def _morphology(row: Mapping[str, Any], language: str, morphology_code: str | No
     return decode_morphology(language, morphology_code)
 
 
+def _morphgnt_morphology_code(part_of_speech: str, parsing_code: str) -> str:
+    pos = str(part_of_speech or "").strip()
+    parsing = str(parsing_code or "").strip()
+    if not pos:
+        return parsing
+    if not parsing or set(parsing) == {"-"}:
+        return pos
+    if pos.startswith("V"):
+        return f"{pos}{parsing}"
+    nominal = parsing.strip("-")
+    return f"{pos}{nominal}" if nominal else pos
+
+
 def _strongs_from_oshb_lemma(value: object) -> str | None:
     parts = [part.strip() for part in str(value or "").split("/") if part.strip()]
     for part in reversed(parts):
@@ -522,6 +626,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--verse-words-tsv", action="append", default=[], type=Path)
     parser.add_argument("--word-forms-tsv", action="append", default=[], type=Path)
     parser.add_argument("--oshb-osis", action="append", default=[], type=Path)
+    parser.add_argument("--oshb-osis-dir", action="append", default=[], type=Path)
+    parser.add_argument("--morphgnt", action="append", default=[], type=Path)
+    parser.add_argument("--morphgnt-dir", action="append", default=[], type=Path)
     parser.add_argument("--source-name", required=True)
     parser.add_argument("--source-url", default="")
     parser.add_argument("--revision", required=True)
@@ -541,6 +648,15 @@ def main(argv: list[str] | None = None) -> int:
         source_files.append(str(path))
     for path in args.oshb_osis:
         verse_words.extend(read_oshb_osis(path))
+        source_files.append(str(path))
+    for path in args.oshb_osis_dir:
+        verse_words.extend(read_oshb_osis_dir(path))
+        source_files.append(str(path))
+    for path in args.morphgnt:
+        verse_words.extend(read_morphgnt(path))
+        source_files.append(str(path))
+    for path in args.morphgnt_dir:
+        verse_words.extend(read_morphgnt_dir(path))
         source_files.append(str(path))
 
     counts = import_verse_tokens(

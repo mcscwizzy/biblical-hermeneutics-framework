@@ -33,6 +33,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        BHF_HEBREW_LEXICON_REVISION: "${BHF_HEBREW_LEXICON_REVISION:-21c9add13bc727d3a951361778e97e3ff7afd1ce}"
+        BHF_STRONGS_REVISION: "${BHF_STRONGS_REVISION:-0acd2f251c2d35ff8db2dece4e0593979d3ac223}"
+        BHF_OSHB_REVISION: "${BHF_OSHB_REVISION:-3d15126fb1ef74867fc1434be1942e837932691f}"
+        BHF_MORPHGNT_REVISION: "${BHF_MORPHGNT_REVISION:-aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d}"
     depends_on:
       ollama-init:
         condition: service_completed_successfully
@@ -67,32 +72,6 @@ services:
       timeout: 5s
       retries: 3
       start_period: 10s
-
-  # Build-time/import-time helper. It is opt-in so normal Docker builds never
-  # require external lexical XML or copy licensed source data into the image.
-  # Run it before bhf-web when a fresh lexical database is needed:
-  #   BHF_LEXICAL_SOURCE_DIR=/absolute/path/to/openscriptures \
-  #     docker compose --profile lexical run --rm bhf-lexicon-build
-  bhf-lexicon-build:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    profiles: ["lexical"]
-    environment:
-      BHF_LEXICAL_DATABASE_PATH: /app/.bhf-data/lexicon.sqlite
-    volumes:
-      - "${BHF_LEXICAL_SOURCE_DIR:-./sources/openscriptures}:/sources/openscriptures:ro"
-      - ./.bhf:/app/.bhf-data
-    command:
-      - python
-      - -m
-      - framework.lexical.tools.build_lexicon_database
-      - --hebrew
-      - /sources/openscriptures/hebrew.xml
-      - --greek
-      - /sources/openscriptures/greek.xml
-      - --output
-      - /app/.bhf-data/lexicon.sqlite
 
 volumes:
   ollama:

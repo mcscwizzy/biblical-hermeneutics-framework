@@ -48,6 +48,7 @@ class WordOccurrence(Serializable):
     morphology_code: str | None = None
     source: str | None = None
     source_word_id: str | None = None
+    gloss: str | None = None
 
     @property
     def reference(self) -> str:

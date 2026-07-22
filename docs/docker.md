@@ -20,7 +20,7 @@ cp .env.example .env
 Start the full stack:
 
 ```bash
-docker compose up -d
+docker compose up -d --build
 ```
 
 Open:
@@ -60,6 +60,41 @@ qwen2.5:0.5b
 
 Because the model lives in the named Docker volume `ollama`, it is reused on
 subsequent starts instead of being pulled again.
+
+## Lexical Database
+
+The Docker image build automatically clones pinned lexical source revisions,
+builds the Greek/Hebrew dictionary database, imports OSHB Hebrew Bible verse
+tokens, imports MorphGNT Greek New Testament verse tokens, validates the
+result, and stores the generated SQLite file at:
+
+```text
+/app/.bhf-seed/lexicon.sqlite
+```
+
+On container start, the entrypoint copies that seeded database into the mounted
+runtime path if it is missing:
+
+```text
+.bhf/lexicon.sqlite -> /app/.bhf-data/lexicon.sqlite
+```
+
+If `.bhf/lexicon.sqlite` already exists, the container leaves it alone so local
+runtime data is not overwritten unexpectedly. Remove `.bhf/lexicon.sqlite` and
+rebuild/restart if you want to reseed it from the image.
+
+Pinned source revisions can be overridden as build args:
+
+```bash
+BHF_HEBREW_LEXICON_REVISION=<commit> \
+BHF_STRONGS_REVISION=<commit> \
+BHF_OSHB_REVISION=<commit> \
+BHF_MORPHGNT_REVISION=<commit> \
+docker compose build bhf-web
+```
+
+The default pinned revisions are listed in `.env.example` and passed through
+`docker-compose.yml` as build arguments.
 
 ## LM Studio On The Host
 
@@ -121,6 +156,12 @@ Optional web defaults can live in:
 
 ```text
 .bhf/web-config.json
+```
+
+The lexical runtime database is stored in:
+
+```text
+.bhf/lexicon.sqlite
 ```
 
 The generated CKL runtime database remains inside the image at:
