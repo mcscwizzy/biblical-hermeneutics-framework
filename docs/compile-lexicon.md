@@ -141,8 +141,10 @@ docker compose up -d --build bhf-web
 
 The generated seed database is stored inside the image at
 `/app/.bhf-seed/lexicon.sqlite`. On container startup it is copied to the
-mounted runtime path `/app/.bhf-data/lexicon.sqlite` when that file is missing
-on the host as `.bhf/lexicon.sqlite`.
+mounted runtime path `/app/.bhf-data/lexicon.sqlite`, which appears on the host
+as `.bhf/lexicon.sqlite`. Compose defaults `BHF_LEXICAL_SEED_POLICY` to
+`refresh`, so the runtime database is replaced from the image seed on startup.
+Set `BHF_LEXICAL_SEED_POLICY=missing` to keep an existing host database.
 
 ## Verify
 

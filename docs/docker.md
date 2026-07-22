@@ -73,15 +73,16 @@ result, and stores the generated SQLite file at:
 ```
 
 On container start, the entrypoint copies that seeded database into the mounted
-runtime path if it is missing:
+runtime path:
 
 ```text
 .bhf/lexicon.sqlite -> /app/.bhf-data/lexicon.sqlite
 ```
 
-If `.bhf/lexicon.sqlite` already exists, the container leaves it alone so local
-runtime data is not overwritten unexpectedly. Remove `.bhf/lexicon.sqlite` and
-rebuild/restart if you want to reseed it from the image.
+By default, Compose sets `BHF_LEXICAL_SEED_POLICY=refresh`, so the image seed
+replaces `.bhf/lexicon.sqlite` each time the web container starts. Set
+`BHF_LEXICAL_SEED_POLICY=missing` to preserve an existing mounted lexical
+database, or `BHF_LEXICAL_SEED_POLICY=none` to disable seeding entirely.
 
 Pinned source revisions can be overridden as build args:
 
