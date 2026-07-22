@@ -2255,7 +2255,7 @@ class WebAppTests(unittest.TestCase):
         self.assertNotIn("Save Study", result["body"])
         self.assertNotIn("ASV Romans 12:1-2", result["body"])
 
-    def test_ask_prompt_reader_job_uses_passage_context_without_general_scope(self):
+    def test_topic_reader_job_without_general_scope_ignores_passage_context(self):
         CapturingAgent.questions = []
         data = _valid_form()
         data.update(
@@ -2276,9 +2276,34 @@ class WebAppTests(unittest.TestCase):
         job = json.loads(response["body"])
         status = wait_for_job(job["job_id"])
         self.assertTrue(status["done"])
+        self.assertIsNone(status["reader_reference"])
+        question = CapturingAgent.questions[0]
+        self.assertEqual(question, "Who was Samson?")
+
+    def test_passage_reader_job_uses_passage_context_without_general_scope(self):
+        CapturingAgent.questions = []
+        data = _valid_form()
+        data.update(
+            {
+                "question": "What does this mean?",
+                "reader_book": "John",
+                "reader_chapter": "1",
+                "reader_start_verse": "1",
+                "reader_end_verse": "1",
+                "reader_selected_text": "In the beginning was the Word",
+            }
+        )
+
+        with patch("bhf_web.app.BHFAgent", CapturingAgent):
+            response = asgi_request("POST", "/ask/jobs", data=data)
+
+        self.assertEqual(response["status"], 202)
+        job = json.loads(response["body"])
+        status = wait_for_job(job["job_id"])
+        self.assertTrue(status["done"])
         self.assertEqual(status["reader_reference"], "John 1:1")
         question = CapturingAgent.questions[0]
-        self.assertIn("Who was Samson?", question)
+        self.assertIn("What does this mean?", question)
         self.assertIn("ASV John 1:1", question)
 
     def test_reader_toolbar_omits_duplicate_chapter_buttons(self):
