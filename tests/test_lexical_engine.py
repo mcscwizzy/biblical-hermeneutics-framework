@@ -10,6 +10,7 @@ from framework.lexical import (
 )
 from framework.lexical.service import lexical_database_missing_message
 from framework.lexical.tools.build_lexicon_database import DEFAULT_OUTPUT, build_lexicon_database
+from framework.lexical.tools.import_verse_tokens import import_verse_tokens
 from framework.lexical.tools.smoke_lexicon import smoke_lexical_database
 from framework.lexical.tools.validate_lexicon import validate_database
 from bhf_agent.config import AgentConfig
@@ -136,6 +137,140 @@ class BiblicalLexicalEngineTests(unittest.TestCase):
             self.assertEqual(diagnostics["lexical_entry_count"], 2)
             self.assertEqual(diagnostics["hebrew_entries"], 1)
             self.assertEqual(diagnostics["greek_entries"], 1)
+
+    def test_strict_validation_accepts_resolved_imported_tokens(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            hebrew, greek = self._sources(root)
+            database = root / "lexicon.sqlite"
+            build_lexicon_database(hebrew=hebrew, greek=greek, output=database)
+            import_verse_tokens(
+                database,
+                source={
+                    "name": "test-tokens",
+                    "revision": "fixture",
+                    "license": "CC BY 4.0",
+                    "attribution": "Fixture token data.",
+                },
+                verse_words=[
+                    {
+                        "book": "Psalms",
+                        "chapter": 23,
+                        "verse": 6,
+                        "word_position": 1,
+                        "language": "hebrew",
+                        "surface_form": "חֶסֶד",
+                        "lemma": "חֶסֶד",
+                        "strongs_number": "H2617",
+                        "morphology_code": "Ncmsa",
+                    },
+                    {
+                        "book": "John",
+                        "chapter": 1,
+                        "verse": 1,
+                        "word_position": 1,
+                        "language": "greek",
+                        "surface_form": "λόγος",
+                        "lemma": "λόγος",
+                        "morphology_code": "N-NSM",
+                    },
+                ],
+                word_forms=[
+                    {
+                        "language": "greek",
+                        "surface_form": "λόγος",
+                        "lemma": "λόγος",
+                        "strongs_number": "G3056",
+                        "morphology_code": "N-NSM",
+                        "source_word_id": "jn1-1-w1",
+                    }
+                ],
+                strict=True,
+            )
+
+            report = validate_database(database, strict=True)
+
+            self.assertEqual(report["verse_words"], 2)
+            self.assertEqual(report["word_forms"], 1)
+            self.assertEqual(report["unresolved_token_strongs"], 0)
+            self.assertEqual(report["unresolved_token_lemmas"], 0)
+            self.assertGreaterEqual(report["parsed_morphology_codes"], 3)
+
+    def test_strict_validation_rejects_unresolved_strongs_and_lemma(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            _, greek = self._sources(root)
+            database = root / "lexicon.sqlite"
+            build_lexicon_database(greek=greek, output=database)
+            import_verse_tokens(
+                database,
+                source={
+                    "name": "test-tokens",
+                    "revision": "fixture",
+                    "license": "CC BY 4.0",
+                    "attribution": "Fixture token data.",
+                },
+                verse_words=[
+                    {
+                        "book": "John",
+                        "chapter": 1,
+                        "verse": 2,
+                        "word_position": 1,
+                        "language": "greek",
+                        "surface_form": "φαντασία",
+                        "lemma": "φαντασία",
+                        "strongs_number": "G9999",
+                        "morphology_code": "N-NSF",
+                    }
+                ],
+            )
+
+            report = validate_database(database)
+
+            self.assertEqual(report["unresolved_token_strongs"], 1)
+            self.assertEqual(report["unresolved_token_lemmas"], 1)
+            with self.assertRaisesRegex(ValueError, "Strong's numbers do not resolve"):
+                validate_database(database, strict=True)
+
+    def test_strict_validation_rejects_malformed_morphology_json(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            _, greek = self._sources(root)
+            database = root / "lexicon.sqlite"
+            build_lexicon_database(greek=greek, output=database)
+            import_verse_tokens(
+                database,
+                source={
+                    "name": "test-tokens",
+                    "revision": "fixture",
+                    "license": "CC BY 4.0",
+                    "attribution": "Fixture token data.",
+                },
+                verse_words=[
+                    {
+                        "book": "John",
+                        "chapter": 1,
+                        "verse": 1,
+                        "word_position": 1,
+                        "language": "greek",
+                        "surface_form": "λόγος",
+                        "lemma": "λόγος",
+                        "morphology_code": "N-NSM",
+                    }
+                ],
+            )
+            connection = sqlite3.connect(database)
+            try:
+                connection.execute("UPDATE verse_words SET morphology_json = '{'")
+                connection.commit()
+            finally:
+                connection.close()
+
+            report = validate_database(database)
+
+            self.assertEqual(report["invalid_morphology_json"], 1)
+            with self.assertRaisesRegex(ValueError, "morphology JSON is malformed"):
+                validate_database(database, strict=True)
 
     def test_lookup_by_strongs_lemma_and_transliteration(self):
         with tempfile.TemporaryDirectory() as temporary:

@@ -2,7 +2,7 @@
 
 > **Teaching AI—and helping people—how to read the Bible carefully.**
 
-**Biblical Hermeneutics Framework (BHF)** is an open-source biblical study framework that teaches **how to interpret Scripture responsibly** rather than **what to believe**.
+**Biblical Hermeneutics Framework (BHF)** is an open-source biblical study framework that teaches **how to interpret Scripture responsibly**.
 
 Unlike most AI Bible tools that ask a language model to answer directly from memory, BHF first gathers the relevant evidence—Scripture, historical background, literary context, lexical information, and curated study resources—before asking an AI model to explain it.
 

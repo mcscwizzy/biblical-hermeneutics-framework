@@ -179,6 +179,13 @@ class WordStudyService:
 
     def _result_for_occurrence(self, reference: str, occurrence: WordOccurrence) -> WordStudyResult:
         entries = self._entries_for_occurrence(occurrence)
+        if not entries:
+            identifier = occurrence.strongs_number or occurrence.lemma or occurrence.surface_form
+            return _unavailable(
+                reference,
+                "Original-language token was found, but no lexicon entry resolved for "
+                f"{identifier} at {occurrence.reference}.",
+            )
         lexical_range = _unique(
             gloss
             for entry in entries

@@ -61,11 +61,11 @@ class LexiconSchemaAndRepositoryTests(unittest.TestCase):
             first = import_normalized_lexicon_file(database, FIXTURE, rebuild=True)
             second = import_normalized_lexicon_file(database, FIXTURE)
 
-            self.assertEqual(first["entries"], 2)
-            self.assertEqual(second["entries"], 2)
+            self.assertEqual(first["entries"], 3)
+            self.assertEqual(second["entries"], 3)
             conn = sqlite3.connect(f"file:{database}?mode=ro", uri=True)
             try:
-                self.assertEqual(conn.execute("SELECT COUNT(*) FROM lexicon_entries").fetchone()[0], 2)
+                self.assertEqual(conn.execute("SELECT COUNT(*) FROM lexicon_entries").fetchone()[0], 3)
                 self.assertEqual(conn.execute("SELECT COUNT(*) FROM word_forms").fetchone()[0], 2)
                 self.assertEqual(conn.execute("SELECT COUNT(*) FROM verse_words").fetchone()[0], 3)
             finally:

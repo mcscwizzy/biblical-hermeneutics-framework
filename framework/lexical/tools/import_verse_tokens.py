@@ -158,6 +158,7 @@ def import_verse_tokens(
     verse_words: Iterable[Mapping[str, Any]] = (),
     word_forms: Iterable[Mapping[str, Any]] = (),
     rebuild_tokens: bool = False,
+    strict: bool = False,
 ) -> dict[str, int]:
     database = Path(database_path)
     if not database.is_file():
@@ -180,6 +181,10 @@ def import_verse_tokens(
                 _insert_verse_word(connection, word, source_name=source["name"])
                 counts["verse_words"] += 1
             connection.execute("PRAGMA user_version = 2")
+        if strict:
+            from .validate_lexicon import validate_database
+
+            validate_database(database, strict=True)
     finally:
         connection.close()
     return counts
@@ -635,6 +640,11 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--license", required=True)
     parser.add_argument("--attribution", required=True)
     parser.add_argument("--rebuild-tokens", action="store_true")
+    parser.add_argument(
+        "--strict",
+        action="store_true",
+        help="Fail after import if tokens do not resolve to lexical entries or have malformed morphology data.",
+    )
     args = parser.parse_args(argv)
 
     verse_words: list[dict[str, Any]] = []
@@ -672,6 +682,7 @@ def main(argv: list[str] | None = None) -> int:
         verse_words=verse_words,
         word_forms=word_forms,
         rebuild_tokens=args.rebuild_tokens,
+        strict=args.strict,
     )
     print("Imported verse token data.")
     print(f"Verse words: {counts['verse_words']}")
