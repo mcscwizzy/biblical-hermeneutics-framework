@@ -25,6 +25,11 @@ import {
 // The `map-entity-marker` class remains part of the rendered Leaflet icon markup.
 const DEFAULT_CENTER = [31.8, 35.1];
 const DEFAULT_ZOOM = 7;
+const DEFAULT_TILE_URL =
+  "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}";
+const DEFAULT_TILE_ATTRIBUTION =
+  "Tiles &copy; Esri, Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, " +
+  "Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012";
 
 function isTestMode() {
   return Boolean(window.BHFTestMode || document.documentElement?.dataset?.testMode === "true");
@@ -106,10 +111,9 @@ export function createBibleMap(container, markers, options = {}) {
     attributionControl: true,
   }).setView(options.center || DEFAULT_CENTER, options.zoom || DEFAULT_ZOOM);
 
-  const tileLayer = window.L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  const tileLayer = window.L.tileLayer(options.tileUrl || DEFAULT_TILE_URL, {
     maxZoom: 19,
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a> contributors',
+    attribution: options.tileAttribution || DEFAULT_TILE_ATTRIBUTION,
   });
 
   tileLayer.addTo(map);

@@ -39,5 +39,11 @@ def test_map_catalog_search(driver, wait, base_url):
 def test_maps_tab_includes_journeys(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
     MapsPage(driver, wait, base_url).open_maps()
+    journey_panel = driver.find_element(By.CSS_SELECTOR, "[data-map-journeys]")
+    journey_summary = journey_panel.find_element(By.CSS_SELECTOR, ".map-journey-summary")
+    assert journey_panel.is_displayed()
+    assert journey_summary.is_displayed()
+    assert journey_panel.get_attribute("open") is None
+    journey_summary.click()
     assert driver.find_element(By.CSS_SELECTOR, '[data-testid="journey-search-input"]').is_displayed()
     _assert_no_severe_browser_errors(driver)
