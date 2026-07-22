@@ -279,12 +279,12 @@ def test_app_dock_remembers_group_subtabs_on_mobile(driver, wait, base_url):
 
     page.open_app_section("explore")
     wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "explore")
-    wait.until(lambda _driver: tab_bar().is_displayed())
-    page.open_tab("journey")
+    page.assert_tab_visible("maps")
+    wait.until(lambda _driver: not tab_bar().is_displayed())
     page.open_app_section("bible")
     wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "bible")
     page.open_app_section("explore")
-    page.assert_tab_visible("journey")
+    page.assert_tab_visible("maps")
 
     page.open_app_section("studies")
     wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "studies")

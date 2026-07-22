@@ -3,7 +3,6 @@ import {
   getOrderedJourneyStops,
   journeyMatchesFilters,
   loadJourneyCatalog,
-  loadMapLayerCatalog as loadStaticMapLayerCatalog,
 } from "./JourneyMapData.js";
 import {
   loadMapCatalog,
@@ -43,8 +42,6 @@ import {
   buildCurrentMapStudyPayload,
   getCurrentMapSelection,
   normalizeHistoricalPeriod,
-  syncHistoricalLayerToggles as syncHistoricalLayerTogglesHtml,
-  syncPoliticalContextLayerToggles as syncPoliticalContextLayerTogglesHtml,
   syncRouteToggle as syncRouteToggleHtml,
 } from "./MapPanelStateHelpers.js";
 
@@ -64,12 +61,10 @@ let loadedHistoricalLayers = [];
 let loadedPoliticalContextLayers = [];
 let loadedSavedMapStudies = [];
 let loadedJourneys = [];
-let loadedReferenceLayers = [];
 let journeyFacets = { categories: [], eras: [], testaments: [], tags: [] };
 let selectedJourneyId = "";
 let selectedJourneyStopId = "";
 let selectedJourneySegmentId = "";
-let selectedReferenceFeature = null;
 let journeySearch = "";
 let journeyTestament = "";
 let journeyCategory = "";
@@ -94,7 +89,6 @@ let mapModalOpen = false;
 let lastModalTrigger = null;
 const visibleHistoricalLayerIds = new Set();
 const visiblePoliticalContextLayerIds = new Set();
-const visibleReferenceLayerIds = new Set();
 
 function requestJson(url, options = {}, fallbackMessage = "Request failed.") {
   if (typeof BHF_HTTP.requestJson === "function") {
@@ -145,7 +139,6 @@ function getPanelElements() {
     journeyStopList: document.querySelector("[data-map-journey-stop-list]"),
     journeySegmentList: document.querySelector("[data-map-journey-segment-list]"),
     journeyDetail: document.querySelector("[data-map-journey-detail]"),
-    referenceLayerControls: document.querySelector("[data-map-reference-layer-controls]"),
     workspace: document.querySelector("#map-workspace"),
     inlineHost: document.querySelector("#map-workspace-inline-host"),
     modal: document.querySelector("#map-modal"),
@@ -345,32 +338,8 @@ function renderJourneySidebar() {
   syncJourneyControls();
 }
 
-function renderReferenceLayerControls() {
-  const { referenceLayerControls } = getPanelElements();
-  if (!referenceLayerControls) {
-    return;
-  }
-  if (!loadedReferenceLayers.length) {
-    referenceLayerControls.innerHTML = `<p class="empty">No reference layers are available.</p>`;
-    return;
-  }
-  referenceLayerControls.innerHTML = loadedReferenceLayers.map((layer) => {
-    const visible = visibleReferenceLayerIds.has(layer.id);
-    return `
-      <label class="map-layer-toggle map-reference-toggle">
-        <input type="checkbox" data-reference-layer-toggle data-layer-id="${escapeHtml(layer.id)}" ${visible ? "checked" : ""}>
-        <span>
-          <strong>${escapeHtml(layer.title)}</strong>
-          <span>${escapeHtml(String(layer.features?.length || 0))} features · ${escapeHtml(layer.type)}</span>
-        </span>
-      </label>
-    `;
-  }).join("");
-}
-
 function renderSupplementalControls() {
   renderJourneySidebar();
-  renderReferenceLayerControls();
 }
 
 function getLoadContext(context = {}) {
@@ -413,20 +382,14 @@ async function loadPassageMapData(context = {}) {
 }
 
 async function loadBrowseMapData() {
-  const [
-    catalog,
-    savedMapStudiesResult,
-  ] = await Promise.all([
-    loadMapCatalog({ period: browseSearchPeriod }),
-    loadSavedMapStudies(),
-  ]);
+  const savedMapStudiesResult = await loadSavedMapStudies();
   return {
-    placeResult: { markers: catalog.places || [] },
-    routeResult: { routes: catalog.routes || [] },
-    layerResult: { layers: catalog.historical_layers || [] },
-    politicalContextResult: { layers: catalog.political_context || [] },
+    placeResult: { markers: [] },
+    routeResult: { routes: [] },
+    layerResult: { layers: [] },
+    politicalContextResult: { layers: [] },
     savedMapStudiesResult: savedMapStudiesResult || { saved_map_studies: [] },
-    offline: Boolean(catalog.offline || savedMapStudiesResult?.offline),
+    offline: Boolean(savedMapStudiesResult?.offline),
   };
 }
 
@@ -435,18 +398,9 @@ async function loadMapData(context = {}) {
 }
 
 async function loadSupplementalMapData() {
-  const [journeyCatalog, referenceLayerCatalog] = await Promise.all([
-    loadJourneyCatalog(),
-    loadStaticMapLayerCatalog(),
-  ]);
+  const journeyCatalog = await loadJourneyCatalog();
   loadedJourneys = journeyCatalog.journeys || [];
-  loadedReferenceLayers = referenceLayerCatalog.layers || [];
   journeyFacets = journeyCatalog.facets || { categories: [], eras: [], testaments: [], tags: [] };
-  if (visibleReferenceLayerIds.size === 0) {
-    for (const layerId of referenceLayerCatalog.defaultVisibleLayerIds || []) {
-      visibleReferenceLayerIds.add(layerId);
-    }
-  }
   if (selectedJourneyId && !loadedJourneys.some((journey) => journey.id === selectedJourneyId)) {
     selectedJourneyId = "";
     selectedJourneyStopId = "";
@@ -626,6 +580,58 @@ function renderBrowseSearchResults(results, query = "") {
     .join("");
 }
 
+function uniqueItemsById(items = []) {
+  const seen = new Set();
+  const uniqueItems = [];
+  for (const item of items) {
+    const id = String(item?.id || "");
+    if (!id || seen.has(id)) {
+      continue;
+    }
+    seen.add(id);
+    uniqueItems.push(item);
+  }
+  return uniqueItems;
+}
+
+function browsePayloadFromSearchResults(results = []) {
+  const values = Array.isArray(results) ? results : [];
+  return {
+    markers: uniqueItemsById(values.filter((result) => result.kind === "place").map((result) => result.item)),
+    routes: uniqueItemsById(values.filter((result) => result.kind === "route").map((result) => result.item)),
+    historicalLayers: uniqueItemsById(values.filter((result) => result.kind === "historical_layer").map((result) => result.item)),
+    politicalContextLayers: uniqueItemsById(values.filter((result) => result.kind === "political_context").map((result) => result.item)),
+  };
+}
+
+function refreshBrowseMapResults(results = []) {
+  const payload = browsePayloadFromSearchResults(results);
+  loadedMarkers = payload.markers;
+  loadedRoutes = payload.routes;
+  loadedHistoricalLayers = payload.historicalLayers;
+  loadedPoliticalContextLayers = payload.politicalContextLayers;
+  const routeVisibility = Boolean(getPanelElements().routeToggle?.checked);
+  ensureMapController(
+    loadedMarkers,
+    loadedRoutes,
+    loadedHistoricalLayers,
+    loadedPoliticalContextLayers,
+    routeVisibility
+  );
+  syncRouteToggle();
+}
+
+function clearCurrentMapSelection({ clearVisibleLayers = false } = {}) {
+  selectedMarker = null;
+  selectedRoute = null;
+  selectedHistoricalLayer = null;
+  selectedPoliticalContext = null;
+  if (clearVisibleLayers) {
+    visibleHistoricalLayerIds.clear();
+    visiblePoliticalContextLayerIds.clear();
+  }
+}
+
 function setBrowseSearchControls({ query = "", kind = "all", period = "all" } = {}) {
   const { mapSearchQuery, mapSearchKind, mapSearchPeriod } = getPanelElements();
   if (mapSearchQuery) {
@@ -649,10 +655,7 @@ function setSelectedSearchResult(result) {
   }
   clearStatus();
   setPinHint("");
-  selectedMarker = null;
-  selectedRoute = null;
-  selectedHistoricalLayer = null;
-  selectedPoliticalContext = null;
+  clearCurrentMapSelection({ clearVisibleLayers: true });
 
   if (result.kind === "place") {
     selectedMarker = result.item;
@@ -689,19 +692,24 @@ async function runBrowseSearch() {
   setBrowseSearchControls({ query, kind, period: browseSearchPeriod });
 
   if (!query) {
+    clearCurrentMapSelection({ clearVisibleLayers: true });
     renderBrowseInstructions();
+    refreshBrowseMapResults([]);
     clearStatus();
     return;
   }
 
   setStatus(`Searching the map catalog for "${query}"...`, "loading");
+  clearCurrentMapSelection({ clearVisibleLayers: true });
   try {
     const result = await searchMapCatalog(query, {
       kind,
       period: browseSearchPeriod,
       limit: 30,
     });
-    renderBrowseSearchResults(result.results || [], query);
+    const results = result.results || [];
+    renderBrowseSearchResults(results, query);
+    refreshBrowseMapResults(results);
     if ((result.results || []).length === 0) {
       setStatus(`No curated map results matched "${query}".`, "empty");
     } else {
@@ -720,7 +728,9 @@ function clearBrowseSearch() {
   }
   browseSearchQuery = "";
   browseSearchResults = [];
+  clearCurrentMapSelection({ clearVisibleLayers: true });
   renderBrowseInstructions();
+  refreshBrowseMapResults([]);
   clearStatus();
 }
 
@@ -792,11 +802,6 @@ function ensureMapController(
     journeyVisibility,
     selectedJourneyStopId,
     selectedJourneySegmentId,
-    referenceLayers: loadedReferenceLayers,
-    referenceLayerIds: Array.from(visibleReferenceLayerIds),
-    selectedReferenceFeatureKey: selectedReferenceFeature
-      ? `${selectedReferenceFeature.layer.id}:${selectedReferenceFeature.feature.id}`
-      : "",
     routeVisibility,
     onTileError(error) {
       setStatus(error.message, "error");
@@ -839,7 +844,6 @@ function ensureMapController(
       selectedJourneyId = journey.id;
       selectedJourneyStopId = stop.id;
       selectedJourneySegmentId = "";
-      selectedReferenceFeature = null;
       if (mapController) {
         mapController.setSelectedJourneyStop(stop.id);
       }
@@ -850,23 +854,11 @@ function ensureMapController(
       selectedJourneyId = journey.id;
       selectedJourneyStopId = "";
       selectedJourneySegmentId = segment.id;
-      selectedReferenceFeature = null;
       if (mapController) {
         mapController.setSelectedJourneySegment(segment.id);
       }
       renderJourneySidebar();
       renderSelectedJourneySegment(journey, segment);
-    },
-    onReferenceFeatureClick(layer, feature) {
-      selectedReferenceFeature = { layer, feature };
-      selectedMarker = null;
-      selectedRoute = null;
-      selectedHistoricalLayer = null;
-      selectedPoliticalContext = null;
-      if (mapController) {
-        mapController.setSelectedReferenceFeature(layer.id, feature.id);
-      }
-      renderSelectedReferenceFeature(layer, feature);
     },
   });
   return mapController;
@@ -884,10 +876,7 @@ async function openMapPanel(context = {}) {
   const browseMode = context.mode === "browse" || (!context.book && !context.chapter && !context.savedMapStudy);
   setMapMode(browseMode ? "browse" : "passage");
   if (browseMode) {
-    selectedMarker = null;
-    selectedRoute = null;
-    selectedHistoricalLayer = null;
-    selectedPoliticalContext = null;
+    clearCurrentMapSelection({ clearVisibleLayers: true });
     lastPassageContext = null;
     browseSearchPeriod = normalizeHistoricalPeriod(context.period || historicalPeriod || "all");
     setBrowseSearchControls({
@@ -899,10 +888,7 @@ async function openMapPanel(context = {}) {
     const nextReference = formatReference(context);
     const previousReference = formatReference(lastPassageContext);
     if (nextReference !== previousReference) {
-      selectedMarker = null;
-      selectedRoute = null;
-      selectedHistoricalLayer = null;
-      selectedPoliticalContext = null;
+      clearCurrentMapSelection({ clearVisibleLayers: true });
     }
   }
   if (context.savedMapStudy?.map_view_state?.historicalPeriod) {
@@ -961,16 +947,16 @@ async function openMapPanel(context = {}) {
     }
     syncRouteToggle();
     syncHistoricalPeriod();
-    syncHistoricalLayerToggles();
-    syncPoliticalContextLayerToggles();
     await refreshSavedMapStudies();
 
     if (browseMode) {
       clearStatus();
       if (browseSearchResults.length > 0) {
         renderBrowseSearchResults(browseSearchResults, browseSearchQuery);
+        refreshBrowseMapResults(browseSearchResults);
       } else {
         renderBrowseInstructions("Browse the catalog, or search by topic, location, route, or regional context.");
+        refreshBrowseMapResults([]);
       }
       return;
     }
@@ -1212,7 +1198,6 @@ function selectJourney(journeyId, { fit = true } = {}) {
   const journey = loadedJourneys.find((item) => item.id === journeyId) || null;
   selectedJourneyId = journey?.id || "";
   selectedJourneySegmentId = "";
-  selectedReferenceFeature = null;
   const firstStop = getOrderedJourneyStops(journey)[0];
   selectedJourneyStopId = firstStop?.id || "";
   applySelectedJourneyToMap({ fit });
@@ -1234,7 +1219,6 @@ function selectJourneyStop(stopId) {
   }
   selectedJourneyStopId = stop.id;
   selectedJourneySegmentId = "";
-  selectedReferenceFeature = null;
   if (mapController) {
     mapController.setSelectedJourneyStop(stop.id);
   }
@@ -1251,32 +1235,12 @@ function selectJourneySegment(segmentId) {
   }
   selectedJourneyStopId = "";
   selectedJourneySegmentId = segment.id;
-  selectedReferenceFeature = null;
   if (mapController) {
     mapController.setSelectedJourneySegment(segment.id);
   }
   renderJourneySidebar();
   renderSelectedJourneySegment(journey, segment);
   focusMapSelection({ kind: "journey_segment", item: segment });
-}
-
-function setReferenceLayerVisibility(layerId, visible) {
-  const normalizedId = String(layerId || "");
-  if (!normalizedId) {
-    return;
-  }
-  if (visible) {
-    visibleReferenceLayerIds.add(normalizedId);
-  } else {
-    visibleReferenceLayerIds.delete(normalizedId);
-    if (selectedReferenceFeature?.layer?.id === normalizedId) {
-      selectedReferenceFeature = null;
-    }
-  }
-  if (mapController) {
-    mapController.setReferenceLayerVisibility(normalizedId, visible);
-  }
-  renderReferenceLayerControls();
 }
 
 async function openPassageReference(reference) {
@@ -1348,13 +1312,14 @@ async function setHistoricalPeriod(period) {
       routeVisibility
     );
     syncRouteToggle();
-    syncHistoricalLayerToggles();
     if (mapMode === "browse") {
       clearStatus();
       if (browseSearchResults.length > 0) {
         renderBrowseSearchResults(browseSearchResults, browseSearchQuery);
+        refreshBrowseMapResults(browseSearchResults);
       } else {
         renderBrowseInstructions("Browse the catalog, or search by topic, location, route, or regional context.");
+        refreshBrowseMapResults([]);
       }
     } else if (selectedMarker) {
       renderSelectedMarker(selectedMarker, lastPassageContext);
@@ -1399,8 +1364,6 @@ function setHistoricalLayerVisibility(layerId, visible) {
   if (mapController) {
     mapController.setHistoricalLayerVisibility(normalizedId, visible);
   }
-  syncHistoricalLayerToggles();
-  syncPoliticalContextLayerToggles();
   if (selectedMarker) {
     renderSelectedMarker(selectedMarker, lastPassageContext);
   } else if (selectedRoute) {
@@ -1434,7 +1397,6 @@ function setPoliticalContextLayerVisibility(layerId, visible) {
   if (mapController) {
     mapController.setPoliticalContextLayerVisibility(normalizedId, visible);
   }
-  syncPoliticalContextLayerToggles();
   if (selectedMarker) {
     renderSelectedMarker(selectedMarker, lastPassageContext);
   } else if (selectedRoute) {
@@ -1451,16 +1413,6 @@ function setPoliticalContextLayerVisibility(layerId, visible) {
 function syncRouteToggle() {
   const { routeToggle } = getPanelElements();
   syncRouteToggleHtml(mapController, routeToggle);
-}
-
-function syncHistoricalLayerToggles() {
-  const { details } = getPanelElements();
-  syncHistoricalLayerTogglesHtml(details, visibleHistoricalLayerIds);
-}
-
-function syncPoliticalContextLayerToggles() {
-  const { details } = getPanelElements();
-  syncPoliticalContextLayerTogglesHtml(details, visiblePoliticalContextLayerIds);
 }
 
 function renderSelectedMarker(marker, passageContext) {
@@ -1586,42 +1538,6 @@ function renderSelectedJourneySegment(journey, segment) {
       <section class="map-detail-section map-caution">
         <h4>BHF caution</h4>
         <p>${escapeHtml(segment.caution || journey.caution || "This line is a study route, not a precise ancient road trace.")}</p>
-      </section>
-    </div>
-  `;
-}
-
-function renderSelectedReferenceFeature(layer, feature) {
-  const { details } = getPanelElements();
-  if (!details || !layer || !feature) {
-    return;
-  }
-  details.innerHTML = `
-    <div class="map-details-card">
-      <div class="map-details-header">
-        <div>
-          <h3>${escapeHtml(feature.name || "Reference feature")}</h3>
-          <div class="map-details-subtitle">${escapeHtml(layer.title || "Reference layer")}</div>
-        </div>
-        <span class="map-confidence confidence-${escapeHtml(normalizeConfidenceClass(feature.confidence))}">
-          ${escapeHtml(feature.confidence || "unknown")}
-        </span>
-      </div>
-      <section class="map-detail-section">
-        <h4>Periods</h4>
-        <p>${escapeHtml(Array.isArray(feature.periods) && feature.periods.length ? feature.periods.join(" · ") : "Not provided.")}</p>
-      </section>
-      <section class="map-detail-section">
-        <h4>Related passages</h4>
-        ${renderPassageChips(feature.passages)}
-      </section>
-      <section class="map-detail-section">
-        <h4>Context</h4>
-        <p>${escapeHtml(feature.summary || feature.description || "No description is available.")}</p>
-      </section>
-      <section class="map-detail-section map-caution">
-        <h4>BHF caution</h4>
-        <p>${escapeHtml(feature.caution || "This context feature is a curated study overlay and may be schematic.")}</p>
       </section>
     </div>
   `;
@@ -1950,7 +1866,6 @@ function wirePanelButtons() {
     journeyStopList,
     journeySegmentList,
     journeyDetail,
-    referenceLayerControls,
   } = getPanelElements();
   const details = document.querySelector("#map-details");
   const { savedMapStudiesList } = getPanelElements();
@@ -2095,15 +2010,6 @@ function wirePanelButtons() {
       }
     });
   }
-  if (referenceLayerControls) {
-    referenceLayerControls.addEventListener("change", (event) => {
-      const toggle = event.target.closest("[data-reference-layer-toggle]");
-      if (!toggle) {
-        return;
-      }
-      setReferenceLayerVisibility(toggle.getAttribute("data-layer-id"), Boolean(toggle.checked));
-    });
-  }
   if (details) {
     details.addEventListener("click", async (event) => {
       const actionButton = event.target.closest("[data-map-action]");
@@ -2147,21 +2053,6 @@ function wirePanelButtons() {
         resetMapView();
       }
     });
-    details.addEventListener("change", (event) => {
-      const toggle = event.target.closest("[data-historical-layer-toggle]");
-      if (!toggle) {
-        const politicalToggle = event.target.closest("[data-political-context-toggle]");
-        if (!politicalToggle) {
-          return;
-        }
-        setPoliticalContextLayerVisibility(
-          politicalToggle.getAttribute("data-layer-id"),
-          Boolean(politicalToggle.checked)
-        );
-        return;
-      }
-      setHistoricalLayerVisibility(toggle.getAttribute("data-layer-id"), Boolean(toggle.checked));
-    });
   }
   if (mapSearchResultsList) {
     mapSearchResultsList.addEventListener("click", (event) => {
@@ -2200,6 +2091,11 @@ function initializeMapPanel() {
   wirePanelButtons();
   renderEmptyDetails("Select a place pin, route, historical layer, or political context overlay to inspect its details here.");
   syncHistoricalPeriod();
+  const pendingContext = window.BHFPendingMapPanelContext;
+  if (pendingContext) {
+    window.BHFPendingMapPanelContext = null;
+    openMapPanel(pendingContext);
+  }
 }
 
 if (typeof window !== "undefined") {

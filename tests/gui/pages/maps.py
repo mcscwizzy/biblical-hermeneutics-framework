@@ -14,8 +14,9 @@ class MapsPage(BasePage):
         map_tabs = self.driver.find_elements(By.CSS_SELECTOR, '[data-testid="maps-tab"]')
         if map_tabs and map_tabs[0].is_displayed():
             self.click('[data-testid="maps-tab"]')
-        self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="map-browse-button"]')))
-        self.click('[data-testid="map-browse-button"]')
+        browse_buttons = self.driver.find_elements(By.CSS_SELECTOR, '[data-testid="map-browse-button"]')
+        if browse_buttons and browse_buttons[0].is_displayed():
+            browse_buttons[0].click()
         self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="map-search-input"]')))
         return self
 
