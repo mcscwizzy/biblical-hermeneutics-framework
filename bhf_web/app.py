@@ -21,6 +21,7 @@ from bhf_agent.bible import (
 from bhf_agent.translation_catalog import (
     catalog_by_id,
     import_translation,
+    translation_selector_sections,
 )
 from bhf_agent.translation_installer import (
     TranslationInstallError,
@@ -301,7 +302,14 @@ def create_app() -> FastAPI:
 
     @web_app.get("/api/translations/catalog", response_class=JSONResponse)
     async def translations_catalog() -> JSONResponse:
-        return JSONResponse(_translation_state_payload())
+        default_translation = get_default_reader_translation()
+        payload = translation_selector_sections(
+            installed_translation_ids=_installed_translation_ids(),
+            default_translation_id=default_translation,
+        )
+        payload["translations"] = payload["sections"]["installed"]
+        payload["default_translation"] = default_translation
+        return JSONResponse(payload)
 
     @web_app.get("/api/translations/{translation_id}", response_class=JSONResponse)
     async def translation_detail(translation_id: str) -> JSONResponse:

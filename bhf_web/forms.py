@@ -147,20 +147,10 @@ def config_from_form(
     return base.with_overrides(**overrides)
 
 
-def form_values_with_chat_memory(form: Mapping[str, Any]) -> dict[str, Any]:
-    """Force local memory on for browser chat sessions."""
+def form_values_for_ask_prompt(form: Mapping[str, Any]) -> dict[str, Any]:
+    """Return browser ask form values without adding conversational state."""
 
-    form_values = dict(form)
-    chat_session_id = str(form_values.get("chat_session_id") or "").strip()
-    if chat_session_id:
-        form_values["memory_enabled"] = "on"
-        ask_mode = str(form_values.get("ask_mode") or "").strip()
-        study_action = str(form_values.get("study_action") or "").strip()
-        if not ask_mode and not study_action:
-            form_values["question_scope"] = "general_question"
-        if not str(form_values.get("session_id") or "").strip():
-            form_values["session_id"] = chat_session_id
-    return form_values
+    return dict(form)
 
 
 def form_values_from_config(config: AgentConfig, question: str = "") -> dict[str, Any]:

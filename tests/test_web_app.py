@@ -23,7 +23,7 @@ from bhf_agent.models import (
     ValidationResult,
 )
 from bhf_web.forms import config_from_form
-from bhf_web.forms import form_values_with_chat_memory
+from bhf_web.forms import form_values_for_ask_prompt
 from bhf_web.forms import load_web_defaults
 from bhf_agent.study_db import get_source, initialize_database, list_sources
 from bhf_web.runtime import load_runtime_config
@@ -101,23 +101,22 @@ class WebFormTests(unittest.TestCase):
         self.assertEqual(config.memory_max_turns, 4)
         self.assertEqual(config.api_key, "local-secret")
 
-    def test_chat_session_id_enables_local_memory_for_ask_job(self):
-        form_values = form_values_with_chat_memory(
+    def test_ask_prompt_values_do_not_enable_memory_by_default(self):
+        form_values = form_values_for_ask_prompt(
             {
                 "question": "What does John 1 emphasize?",
-                "chat_session_id": "ask-chat-test-session",
                 "memory_max_turns": "8",
             }
         )
 
-        self.assertEqual(form_values["memory_enabled"], "on")
-        self.assertEqual(form_values["session_id"], "ask-chat-test-session")
-        self.assertEqual(form_values["question_scope"], "general_question")
+        self.assertNotIn("memory_enabled", form_values)
+        self.assertNotIn("session_id", form_values)
+        self.assertNotIn("question_scope", form_values)
 
-    def test_chat_session_id_preserves_explicit_session_id(self):
-        form_values = form_values_with_chat_memory(
+    def test_ask_prompt_values_preserve_explicit_memory_settings(self):
+        form_values = form_values_for_ask_prompt(
             {
-                "chat_session_id": "ask-chat-test-session",
+                "memory_enabled": "on",
                 "session_id": "teacher-session",
             }
         )
@@ -125,15 +124,14 @@ class WebFormTests(unittest.TestCase):
         self.assertEqual(form_values["memory_enabled"], "on")
         self.assertEqual(form_values["session_id"], "teacher-session")
 
-    def test_chat_session_id_preserves_special_ask_mode(self):
-        form_values = form_values_with_chat_memory(
+    def test_ask_prompt_values_preserve_special_ask_mode_without_scope(self):
+        form_values = form_values_for_ask_prompt(
             {
-                "chat_session_id": "ask-chat-test-session",
                 "ask_mode": "cross_references",
             }
         )
 
-        self.assertEqual(form_values["memory_enabled"], "on")
+        self.assertNotIn("memory_enabled", form_values)
         self.assertNotIn("question_scope", form_values)
 
     def test_invalid_form_config_returns_clear_error(self):
@@ -1451,7 +1449,12 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(data["books"][-1]["name"], "Revelation")
 
     def test_translation_catalog_route_returns_curated_sections(self):
-        response = asgi_request("GET", "/api/translations/catalog")
+        with tempfile.TemporaryDirectory() as tmpdir, patch.object(
+            translation_storage,
+            "TRANSLATIONS_PATH",
+            Path(tmpdir),
+        ):
+            response = asgi_request("GET", "/api/translations/catalog")
 
         self.assertEqual(response["status"], 200)
         data = json.loads(response["body"])
@@ -1594,7 +1597,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("Exodus 1:1-22", references)
 
     def test_post_ask_handles_mocked_agent_result(self):
-        with patch("bhf_web.app.BHFAgent", FakeAgent):
+        with patch("bhf_web.app.BHFAgent", SuccessfulJobAgent):
             response = asgi_request("POST", "/ask", data=_valid_form())
 
         self.assertEqual(response["status"], 200)
@@ -1866,11 +1869,11 @@ class WebAppTests(unittest.TestCase):
         self.assertTrue(status["done"])
         self.assertEqual(status["reader_reference"], "Genesis 1:1-2")
         question = CapturingAgent.questions[0]
-        self.assertIn("explain the ancient context of ASV Genesis 1:1-2", question)
-        self.assertIn("Ancient Near Eastern context", question)
-        self.assertIn("original audience", question)
-        self.assertIn("covenant setting", question)
-        self.assertIn("certain from background that is probable", question)
+        self.assertIn("explain the focused Cultural Context of ASV Genesis 1:1-2", question)
+        self.assertIn("Question type: cultural_context", question)
+        self.assertIn("Ancient Near Eastern Background", question)
+        self.assertIn("Do not provide a historical timeline", question)
+        self.assertIn("State uncertainty rather than guessing", question)
 
     def test_literary_context_reader_job_builds_phase_one_prompt(self):
         CapturingAgent.questions = []
@@ -2002,9 +2005,9 @@ class WebAppTests(unittest.TestCase):
 
         with self.installed_kjv(), patch("bhf_web.app.BHFAgent", CapturingAgent):
             response = asgi_request("POST", "/ask/jobs", data=data)
+            self.assertEqual(response["status"], 202)
+            status = wait_for_job(json.loads(response["body"])["job_id"])
 
-        self.assertEqual(response["status"], 202)
-        status = wait_for_job(json.loads(response["body"])["job_id"])
         self.assertTrue(status["done"])
         self.assertEqual(status["reader_reference"], "John 1:1-2")
         question = CapturingAgent.questions[0]
@@ -2252,7 +2255,7 @@ class WebAppTests(unittest.TestCase):
         self.assertNotIn("Save Study", result["body"])
         self.assertNotIn("ASV Romans 12:1-2", result["body"])
 
-    def test_chat_reader_job_defaults_to_general_question_scope(self):
+    def test_ask_prompt_reader_job_uses_passage_context_without_general_scope(self):
         CapturingAgent.questions = []
         data = _valid_form()
         data.update(
@@ -2263,7 +2266,6 @@ class WebAppTests(unittest.TestCase):
                 "reader_start_verse": "1",
                 "reader_end_verse": "1",
                 "reader_selected_text": "In the beginning was the Word",
-                "chat_session_id": "ask-chat-test-session",
             }
         )
 
@@ -2274,9 +2276,10 @@ class WebAppTests(unittest.TestCase):
         job = json.loads(response["body"])
         status = wait_for_job(job["job_id"])
         self.assertTrue(status["done"])
-        self.assertIsNone(status["reader_reference"])
+        self.assertEqual(status["reader_reference"], "John 1:1")
         question = CapturingAgent.questions[0]
-        self.assertEqual(question, "Who was Samson?")
+        self.assertIn("Who was Samson?", question)
+        self.assertIn("ASV John 1:1", question)
 
     def test_reader_toolbar_omits_duplicate_chapter_buttons(self):
         response = asgi_request("GET", "/")
