@@ -55,6 +55,23 @@ class QuestionTypeTests(unittest.TestCase):
 
         self.assertEqual(context.question_type, "topic_study")
 
+    def test_who_was_samson_is_topic_study_without_passage_context(self):
+        context = classify_question_type("Who was Samson?")
+
+        self.assertEqual(context.question_type, "topic_study")
+
+    def test_hidden_reader_reference_does_not_force_biographical_question_to_passage_study(self):
+        reference = detect_reference("John 1:1")
+        context = classify_question_type("Who was Samson?", reference)
+
+        self.assertEqual(context.question_type, "topic_study")
+
+    def test_bare_reference_is_still_passage_study(self):
+        reference = detect_reference("John 1:1")
+        context = classify_question_type("John 1:1", reference)
+
+        self.assertEqual(context.question_type, "passage_study")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -112,6 +112,7 @@ class WebFormTests(unittest.TestCase):
 
         self.assertEqual(form_values["memory_enabled"], "on")
         self.assertEqual(form_values["session_id"], "ask-chat-test-session")
+        self.assertEqual(form_values["question_scope"], "general_question")
 
     def test_chat_session_id_preserves_explicit_session_id(self):
         form_values = form_values_with_chat_memory(
@@ -123,6 +124,17 @@ class WebFormTests(unittest.TestCase):
 
         self.assertEqual(form_values["memory_enabled"], "on")
         self.assertEqual(form_values["session_id"], "teacher-session")
+
+    def test_chat_session_id_preserves_special_ask_mode(self):
+        form_values = form_values_with_chat_memory(
+            {
+                "chat_session_id": "ask-chat-test-session",
+                "ask_mode": "cross_references",
+            }
+        )
+
+        self.assertEqual(form_values["memory_enabled"], "on")
+        self.assertNotIn("question_scope", form_values)
 
     def test_invalid_form_config_returns_clear_error(self):
         defaults = AgentConfig(
@@ -2239,6 +2251,32 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(result["status"], 200)
         self.assertNotIn("Save Study", result["body"])
         self.assertNotIn("ASV Romans 12:1-2", result["body"])
+
+    def test_chat_reader_job_defaults_to_general_question_scope(self):
+        CapturingAgent.questions = []
+        data = _valid_form()
+        data.update(
+            {
+                "question": "Who was Samson?",
+                "reader_book": "John",
+                "reader_chapter": "1",
+                "reader_start_verse": "1",
+                "reader_end_verse": "1",
+                "reader_selected_text": "In the beginning was the Word",
+                "chat_session_id": "ask-chat-test-session",
+            }
+        )
+
+        with patch("bhf_web.app.BHFAgent", CapturingAgent):
+            response = asgi_request("POST", "/ask/jobs", data=data)
+
+        self.assertEqual(response["status"], 202)
+        job = json.loads(response["body"])
+        status = wait_for_job(job["job_id"])
+        self.assertTrue(status["done"])
+        self.assertIsNone(status["reader_reference"])
+        question = CapturingAgent.questions[0]
+        self.assertEqual(question, "Who was Samson?")
 
     def test_reader_toolbar_omits_duplicate_chapter_buttons(self):
         response = asgi_request("GET", "/")

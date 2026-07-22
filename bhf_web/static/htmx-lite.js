@@ -953,6 +953,7 @@ function askJobFormData(form, useChatMemory) {
   const chatSessionId = ensureAskChatSessionId(form);
   formData.set("chat_session_id", chatSessionId);
   formData.set("memory_enabled", "on");
+  formData.set("question_scope", GENERAL_QUESTION_MODE);
   if (!String(formData.get("session_id") || "").trim()) {
     formData.set("session_id", chatSessionId);
   }

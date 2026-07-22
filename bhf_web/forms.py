@@ -154,6 +154,10 @@ def form_values_with_chat_memory(form: Mapping[str, Any]) -> dict[str, Any]:
     chat_session_id = str(form_values.get("chat_session_id") or "").strip()
     if chat_session_id:
         form_values["memory_enabled"] = "on"
+        ask_mode = str(form_values.get("ask_mode") or "").strip()
+        study_action = str(form_values.get("study_action") or "").strip()
+        if not ask_mode and not study_action:
+            form_values["question_scope"] = "general_question"
         if not str(form_values.get("session_id") or "").strip():
             form_values["session_id"] = chat_session_id
     return form_values
