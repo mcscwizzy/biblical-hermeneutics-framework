@@ -7,6 +7,11 @@ import sqlite3
 import threading
 from pathlib import Path
 
+from framework.canonical_library.lexicon_normalization import (
+    normalize_script_form,
+    normalize_transliteration as normalize_lexical_transliteration,
+)
+
 from .models import LexicalEntry, WordOccurrence
 
 
@@ -45,7 +50,8 @@ class LexicalRepository:
         return [_entry_from_row(row) for row in rows]
 
     def lookup_by_lemma(self, language: str, lemma: str) -> list[LexicalEntry]:
-        normalized = _normalize_form(lemma)
+        language = language.strip().lower()
+        normalized = _normalize_form(lemma, language=language)
         if not normalized:
             return []
         rows = self._connection.execute(
@@ -56,7 +62,7 @@ class LexicalRepository:
             WHERE e.language = ? AND e.normalized_lemma = ?
             ORDER BY e.source, e.id
             """,
-            (language.strip().lower(), normalized),
+            (language, normalized),
         ).fetchall()
         return [_entry_from_row(row) for row in rows]
 
@@ -152,7 +158,11 @@ class LexicalRepository:
             ORDER BY book, chapter, verse, word_position
             LIMIT ?
             """,
-            (str(language).strip().lower(), _normalize_form(lemma), int(limit)),
+            (
+                str(language).strip().lower(),
+                _normalize_form(lemma, language=str(language).strip().lower()),
+                int(limit),
+            ),
         ).fetchall()
         return [_occurrence_from_row(row) for row in rows]
 
@@ -236,23 +246,12 @@ def _json_object(value: object) -> dict[str, object]:
     return parsed if isinstance(parsed, dict) else {}
 
 
-def _normalize_form(value: str) -> str:
-    import unicodedata
-
-    text = unicodedata.normalize("NFD", str(value or "").strip().lower())
-    text = "".join(char for char in text if not unicodedata.combining(char))
-    return " ".join(text.replace("ς", "σ").split())
+def _normalize_form(value: str, *, language: str) -> str:
+    return normalize_script_form(value, language=language)
 
 
 def _normalize_transliteration(value: str) -> str:
-    import unicodedata
-
-    text = unicodedata.normalize("NFD", str(value or "").strip().lower())
-    text = "".join(char for char in text if not unicodedata.combining(char))
-    for mark in ("ʾ", "ʿ", "ʼ", "‘", "’"):
-        text = text.replace(mark, "")
-    text = text.translate(str.maketrans({"ḥ": "h", "ḫ": "h", "š": "s", "ś": "s", "ṭ": "t", "ṣ": "s", "ẓ": "z"}))
-    return "".join(char for char in text if char.isalnum() or char.isspace()).strip()
+    return normalize_lexical_transliteration(value)
 
 
 def _normalize_strongs(value: str, language: str) -> str | None:

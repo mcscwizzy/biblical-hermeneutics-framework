@@ -104,5 +104,13 @@ Not yet implemented:
 
 - Dedicated parsers for every non-dictionary upstream file layout in Open
   Scriptures Strong's, HebrewLexicon, morphhb, MorphGNT, or Abbott-Smith
+- Multi-version lexical fixture matrix covering pinned releases of the original
+  language sources. This should build small golden datasets from multiple
+  Open Scriptures HebrewLexicon, Strong's Greek, OSHB/morphhb, and MorphGNT
+  revisions, then assert stable coverage anchors and known fragile entries such
+  as `G1473`, `H160`, and OSHB-style prefixed lemmas. English translation
+  imports can be layered on afterward to test user-selection alignment, but
+  they should not be treated as a substitute for original-language token and
+  dictionary coverage.
 - Browser-side original-language token picker for ambiguity resolution
 - Licensing decision and pinned revisions for production bundled datasets

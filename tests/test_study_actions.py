@@ -13,6 +13,7 @@ from bhf_agent.study_actions import (
 from framework.canonical_library import CanonicalLibrary
 from framework.canonical_library.database_builder import build_database
 from framework.canonical_library.lexicon_importer import import_normalized_lexicon_file
+from framework.canonical_library.lexicon_normalization import normalize_script_form
 from framework.lexical.tools.build_lexicon_database import build_lexicon_database
 from framework.lexical.tools.import_verse_tokens import import_verse_tokens, read_morphgnt, read_oshb_osis
 
@@ -259,6 +260,113 @@ class StudyActionRouterTests(unittest.TestCase):
             self.assertEqual(result.surface_form, "λόγος")
             self.assertEqual(result.lemma, "λόγος")
             self.assertEqual(result.strongs_number, "G3056")
+
+    def test_word_study_service_resolves_greek_surface_with_optional_lemma_notation(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / "greek.xml"
+            source.write_text(
+                """<dictionary xmlns="urn:test">
+                  <entry strongs="G3779">
+                    <word>οὕτω</word>
+                    <translit>houtō</translit>
+                    <strongs_def>in this way.</strongs_def>
+                  </entry>
+                </dictionary>""",
+                encoding="utf-8",
+            )
+            database = root / "lexicon.sqlite"
+            build_lexicon_database(greek=source, output=database)
+            import_verse_tokens(
+                database,
+                source={
+                    "name": "test-morphgnt",
+                    "revision": "fixture",
+                    "license": "CC BY-SA 3.0",
+                    "attribution": "Fixture MorphGNT-style data.",
+                },
+                verse_words=[
+                    {
+                        "book": "Matthew",
+                        "chapter": 1,
+                        "verse": 1,
+                        "word_position": 1,
+                        "language": "greek",
+                        "surface_form": "οὕτως",
+                        "lemma": "οὕτω(ς)",
+                    }
+                ],
+            )
+            service = WordStudyService(database_path=database)
+
+            result = service.build_word_study(
+                {
+                    "book": "Matthew",
+                    "chapter": 1,
+                    "start_verse": 1,
+                    "reference": "Matthew 1:1",
+                    "selected_text": "οὕτως",
+                }
+            )
+
+            self.assertEqual(result.status, "complete")
+            self.assertEqual(result.surface_form, "οὕτως")
+            self.assertEqual(result.lemma, "οὕτω")
+            self.assertEqual(result.strongs_number, "G3779")
+
+    def test_word_study_service_resolves_hebrew_oshb_token_by_strongs_with_noisy_lemma(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / "hebrew.xml"
+            source.write_text(
+                """<lexicon>
+                  <entry id="H2708">
+                    <lemma>חֻקָּה</lemma>
+                    <transliteration>chuqqah</transliteration>
+                    <definition>Statute or ordinance.</definition>
+                  </entry>
+                </lexicon>""",
+                encoding="utf-8",
+            )
+            database = root / "lexicon.sqlite"
+            build_lexicon_database(hebrew=source, output=database)
+            import_verse_tokens(
+                database,
+                source={
+                    "name": "test-oshb",
+                    "revision": "fixture",
+                    "license": "CC BY 4.0",
+                    "attribution": "Fixture OSHB-style data.",
+                },
+                verse_words=[
+                    {
+                        "book": "1 Kings",
+                        "chapter": 3,
+                        "verse": 3,
+                        "word_position": 1,
+                        "language": "hebrew",
+                        "surface_form": "בְּ/חֻקּ֖וֹת",
+                        "lemma": "b/2708",
+                        "strongs_number": "H2708",
+                    }
+                ],
+            )
+            service = WordStudyService(database_path=database)
+
+            result = service.build_word_study(
+                {
+                    "book": "1 Kings",
+                    "chapter": 3,
+                    "start_verse": 3,
+                    "reference": "1 Kings 3:3",
+                    "strongs_number": "H2708",
+                }
+            )
+
+            self.assertEqual(result.status, "complete")
+            self.assertEqual(result.surface_form, "בְּ/חֻקּ֖וֹת")
+            self.assertEqual(normalize_script_form(result.lemma, language="hebrew"), "חקה")
+            self.assertEqual(result.strongs_number, "H2708")
 
     def test_word_study_action_returns_unavailable_for_imported_token_without_lexicon_entry(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -1,4 +1,9 @@
-"""Validate lexical database integrity, provenance, and token coverage."""
+"""Validate lexical database integrity, provenance, and token coverage.
+
+Strict mode fails unresolved Strong's identifiers and malformed token data.
+Lemma-only source gaps are reported because token sources and Strong's
+dictionaries do not always share the same lemma conventions.
+"""
 
 from __future__ import annotations
 
@@ -93,7 +98,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--strict",
         action="store_true",
-        help="Fail if imported verse tokens/forms have unresolved Strong's numbers, missing lemmas, malformed morphology JSON, or invalid positions.",
+        help="Fail if imported verse tokens/forms have unresolved Strong's numbers, malformed morphology JSON, or invalid positions.",
     )
     args = parser.parse_args(argv)
     result = validate_database(args.database, strict=args.strict)
@@ -102,7 +107,8 @@ def main(argv: list[str] | None = None) -> int:
         "Token coverage: "
         f"{result['verse_words']} verse words, {result['word_forms']} word forms, "
         f"{result['unresolved_token_strongs']} unresolved Strong's, "
-        f"{result['unresolved_token_lemmas']} unresolved lemmas"
+        f"{result['unresolved_token_lemmas']} unresolved lemmas "
+        f"({result['unresolved_lemma_only_tokens']} lemma-only source gaps)"
     )
     return 0
 
@@ -120,14 +126,20 @@ def _validate_token_integrity(connection: sqlite3.Connection) -> dict[str, Any]:
         table: _unresolved_lemmas(connection, table)
         for table in ("verse_words", "word_forms")
     }
+    lemma_only_gaps = {
+        table: _unresolved_lemma_only_tokens(connection, table)
+        for table in ("verse_words", "word_forms")
+    }
     invalid_positions = _invalid_verse_word_positions(connection)
     morphology_report = _morphology_report(connection)
     return {
         **table_counts,
         "unresolved_strongs_by_table": unresolved_strongs,
         "unresolved_lemmas_by_table": unresolved_lemmas,
+        "unresolved_lemma_only_by_table": lemma_only_gaps,
         "unresolved_token_strongs": sum(unresolved_strongs.values()),
         "unresolved_token_lemmas": sum(unresolved_lemmas.values()),
+        "unresolved_lemma_only_tokens": sum(lemma_only_gaps.values()),
         "invalid_verse_word_positions": invalid_positions,
         **morphology_report,
     }
@@ -136,7 +148,6 @@ def _validate_token_integrity(connection: sqlite3.Connection) -> dict[str, Any]:
 def _strict_token_problems(report: dict[str, Any]) -> list[str]:
     checks = (
         ("unresolved_token_strongs", "token Strong's numbers do not resolve"),
-        ("unresolved_token_lemmas", "token lemmas do not resolve"),
         ("invalid_verse_word_positions", "verse words have invalid reference positions"),
         ("invalid_morphology_json", "token morphology JSON is malformed"),
     )
@@ -178,6 +189,23 @@ def _unresolved_lemmas(connection: sqlite3.Connection, table: str) -> int:
               ON entry.language = token.language
              AND entry.normalized_lemma = token.normalized_lemma
             WHERE TRIM(COALESCE(token.normalized_lemma, '')) <> ''
+              AND entry.id IS NULL
+            """
+        ).fetchone()[0]
+    )
+
+
+def _unresolved_lemma_only_tokens(connection: sqlite3.Connection, table: str) -> int:
+    return int(
+        connection.execute(
+            f"""
+            SELECT COUNT(*)
+            FROM {table} AS token
+            LEFT JOIN lexical_entries AS entry
+              ON entry.language = token.language
+             AND entry.normalized_lemma = token.normalized_lemma
+            WHERE TRIM(COALESCE(token.normalized_lemma, '')) <> ''
+              AND TRIM(COALESCE(token.strongs_number, '')) = ''
               AND entry.id IS NULL
             """
         ).fetchone()[0]

@@ -9,7 +9,9 @@ VALID_LEXICON_LANGUAGES = frozenset({"hebrew", "aramaic", "greek"})
 
 _HEBREW_MARKS = re.compile(r"[\u0591-\u05bd\u05bf-\u05c7]")
 _GREEK_COMBINING_MARKS = re.compile(r"[\u0300-\u036f]")
-_PUNCTUATION = re.compile(r"[^0-9a-z\u0370-\u03ff\u0590-\u05ff\s]+")
+_GREEK_OPTIONAL_ENDING = re.compile(r"\([^)]*\)")
+_GREEK_PUNCTUATION = re.compile(r"[^0-9\u0370-\u03ff\s]+")
+_HEBREW_PUNCTUATION = re.compile(r"[^0-9\u0590-\u05ff\s]+")
 _SPACE = re.compile(r"\s+")
 
 
@@ -30,11 +32,13 @@ def normalize_script_form(value: str, *, language: str) -> str:
     text = unicodedata.normalize("NFD", str(value or "").strip().lower())
     if normalized_language in {"hebrew", "aramaic"}:
         text = _HEBREW_MARKS.sub("", text)
+        text = _HEBREW_PUNCTUATION.sub(" ", text)
     elif normalized_language == "greek":
+        text = _GREEK_OPTIONAL_ENDING.sub("", text)
         text = _GREEK_COMBINING_MARKS.sub("", text)
         text = text.replace("ς", "σ")
+        text = _GREEK_PUNCTUATION.sub(" ", text)
     text = unicodedata.normalize("NFC", text)
-    text = _PUNCTUATION.sub(" ", text)
     text = _SPACE.sub(" ", text).strip()
     return text
 

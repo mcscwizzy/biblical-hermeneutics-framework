@@ -109,8 +109,10 @@ python3 -m framework.lexical.tools.import_verse_tokens \
 Use `--rebuild-tokens` when replacing previously imported token rows. The tool
 also accepts TSV files through `--verse-words-tsv` and `--word-forms-tsv`.
 Add `--strict` when the imported token dataset should be Word Study-ready; in
-strict mode every token Strong's number and lemma must resolve to a lexical
-entry, verse positions must be valid, and morphology JSON must be well-formed.
+strict mode every token Strong's number must resolve to a lexical entry, verse
+positions must be valid, and morphology JSON must be well-formed. Lemma-only
+tokens that do not resolve are reported separately as source gaps because
+MorphGNT and Strong's sometimes use different lemma conventions.
 Verse-word TSV exports must include `book`, `chapter`, `verse`,
 `word_position`, `surface_form`, and either `language`, `lemma`, or a prefixed
 `strongs_number`.
@@ -173,6 +175,10 @@ Entries: 13938
 Sources: 4
 Passed: 2/2
 ```
+
+Strict validation may still report lemma-only source gaps for Greek tokens that
+do not carry Strong's numbers. Those gaps should not block Word Study smoke
+coverage as long as required Strong's-backed checks pass.
 
 ## Troubleshooting
 

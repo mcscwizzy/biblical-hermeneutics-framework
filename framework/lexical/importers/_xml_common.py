@@ -26,14 +26,14 @@ _FIELD_NAMES = {
     "pronunciation": ("pronunciation", "pronounce", "phonetic"),
     "definition": (
         "definition", "strongsdef", "strongdefinition", "meaning", "gloss",
-        "description", "kjvdefinition", "text", "content",
+        "description", "kjvdefinition", "kjvdef", "usage", "text", "content",
     ),
     "short_definition": ("shortdefinition", "shortgloss", "gloss", "meaning"),
     "root": ("root", "rootword", "etymology"),
     "part_of_speech": ("partofspeech", "pos", "category", "class"),
     "morphology": ("morphology", "morph", "parse"),
     "semantic_domain": ("semanticdomain", "domain", "semanticfield"),
-    "usage_notes": ("usagenotes", "usagenote", "usage", "note", "notes"),
+    "usage_notes": ("usagenotes", "usagenote", "note", "notes"),
 }
 
 
@@ -118,7 +118,7 @@ def _record_from_element(
         ("greek", "hebrew", "w", "word", "lemma"),
         ("unicode", "text", "lemma", "word"),
     )
-    definition = _field(element, _FIELD_NAMES["definition"])
+    definition = _definition_from_element(element)
     if not lemma or not definition:
         return None
     short_definition = _field(element, _FIELD_NAMES["short_definition"])
@@ -183,6 +183,40 @@ def _field(element: ET.Element, names: tuple[str, ...]) -> str | None:
         if value:
             return _clean_text(value)
     return None
+
+
+def _definition_from_element(element: ET.Element) -> str | None:
+    definition = _field(element, _FIELD_NAMES["definition"])
+    if definition:
+        return definition
+    parts = _named_child_texts(
+        element,
+        (
+            "strongsderivation",
+            "source",
+            "usage",
+            "kjvdef",
+            "kjvdefinition",
+            "meaning",
+            "definition",
+        ),
+    )
+    return _clean_text("; ".join(parts)) if parts else None
+
+
+def _named_child_texts(element: ET.Element, names: tuple[str, ...]) -> list[str]:
+    wanted = set(names)
+    values: list[str] = []
+    seen: set[str] = set()
+    for candidate in element.iter():
+        if candidate is element or _local_name(candidate.tag) not in wanted:
+            continue
+        text = _clean_text(" ".join("".join(candidate.itertext()).split()))
+        if not text or text.casefold() in seen:
+            continue
+        seen.add(text.casefold())
+        values.append(text)
+    return values
 
 
 def _child_attribute(

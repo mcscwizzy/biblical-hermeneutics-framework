@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run deterministic Word Study smoke checks against a CKL SQLite database."""
+"""Run deterministic Word Study smoke checks against a lexical SQLite database."""
 
 from __future__ import annotations
 
@@ -28,7 +28,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--database",
         default=DEFAULT_CKL_DATABASE_PATH,
-        help="CKL SQLite database with lexical tables",
+        help="SQLite database with lexical tables",
     )
     parser.add_argument(
         "--ckl-root",

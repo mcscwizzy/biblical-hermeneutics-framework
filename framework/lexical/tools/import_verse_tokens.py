@@ -12,6 +12,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable, Mapping
 
+from framework.canonical_library.lexicon_normalization import (
+    normalize_script_form,
+    normalize_transliteration as normalize_lexical_transliteration,
+)
 from framework.canonical_library.lexicon_morphology import decode_morphology
 
 from ..service import DEFAULT_LEXICAL_DATABASE_PATH
@@ -345,9 +349,9 @@ def _insert_word_form(
         (
             language,
             surface,
-            _normalize_form(surface),
+            _normalize_form(surface, language=language),
             lemma,
-            _normalize_form(lemma),
+            _normalize_form(lemma, language=language),
             _optional_text(row.get("transliteration")) or transliteration,
             _normalize_transliteration(row.get("transliteration") or transliteration),
             strongs,
@@ -403,9 +407,9 @@ def _insert_verse_word(
             _optional_text(row.get("source_word_id")),
             language,
             surface,
-            _normalize_form(surface),
+            _normalize_form(surface, language=language),
             lemma,
-            _normalize_form(lemma),
+            _normalize_form(lemma, language=language),
             _optional_text(row.get("transliteration")) or transliteration,
             _normalize_transliteration(row.get("transliteration") or transliteration),
             strongs,
@@ -472,7 +476,7 @@ def _entry_metadata(
             ORDER BY source, id
             LIMIT 1
             """,
-            (language, _normalize_form(str(fallback_lemma))),
+            (language, _normalize_form(str(fallback_lemma), language=language)),
         ).fetchone()
     if row:
         return str(row["lemma"]), _optional_text(row["transliteration"]), int(row["id"])
@@ -571,26 +575,14 @@ def _normalize_strongs(value: object, language: str) -> str | None:
     return f"{expected}{int(digits)}"
 
 
-def _normalize_form(value: object) -> str:
-    import unicodedata
-
-    text = unicodedata.normalize("NFD", str(value or "").strip().lower())
-    text = "".join(char for char in text if not unicodedata.combining(char))
-    return " ".join(text.replace("ς", "σ").split())
+def _normalize_form(value: object, *, language: str) -> str:
+    return normalize_script_form(str(value or ""), language=language)
 
 
 def _normalize_transliteration(value: object) -> str | None:
     if not value:
         return None
-    import unicodedata
-
-    text = unicodedata.normalize("NFD", str(value).strip().lower())
-    text = "".join(char for char in text if not unicodedata.combining(char))
-    for mark in ("ʾ", "ʿ", "ʼ", "‘", "’"):
-        text = text.replace(mark, "")
-    text = text.translate(str.maketrans({"ḥ": "h", "ḫ": "h", "š": "s", "ś": "s", "ṭ": "t", "ṣ": "s", "ẓ": "z"}))
-    text = "".join(char for char in text if char.isalnum() or char.isspace())
-    return " ".join(text.split()) or None
+    return normalize_lexical_transliteration(value) or None
 
 
 def _osis_tag(name: str) -> str:

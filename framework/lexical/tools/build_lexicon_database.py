@@ -11,6 +11,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable, Mapping
 
+from framework.canonical_library.lexicon_normalization import (
+    normalize_script_form,
+    normalize_transliteration as normalize_lexical_transliteration,
+)
+
 from ..importers.openscriptures_greek import import_greek
 from ..importers.openscriptures_hebrew import import_hebrew
 from ..models import ImportStats
@@ -212,7 +217,7 @@ def _write_database(path: Path, records: list[dict[str, Any]]) -> None:
                     record.get("part_of_speech"), record.get("morphology"),
                     record.get("semantic_domain"), record.get("usage_notes"), record["source"],
                     record["license"], record["created_at"],
-                    _normalize_form(str(record["lemma"])),
+                    _normalize_form(str(record["lemma"]), language=str(record["language"])),
                     _normalize_transliteration(record.get("transliteration")),
                 ),
             )
@@ -232,24 +237,14 @@ def _validate_records(records: Iterable[Mapping[str, Any]]) -> None:
             raise ValueError(f"lexical entry {index} has unsupported language: {record['language']}")
 
 
-def _normalize_form(value: str) -> str:
-    import unicodedata
-
-    text = unicodedata.normalize("NFD", value.strip().lower())
-    text = "".join(char for char in text if not unicodedata.combining(char))
-    return text.replace("ς", "σ").strip()
+def _normalize_form(value: str, *, language: str) -> str:
+    return normalize_script_form(value, language=language)
 
 
 def _normalize_transliteration(value: object) -> str | None:
     if not value:
         return None
-    import unicodedata
-
-    text = unicodedata.normalize("NFD", str(value).strip().lower())
-    text = "".join(char for char in text if not unicodedata.combining(char))
-    text = text.translate(str.maketrans({"ḥ": "h", "ḫ": "h", "š": "s", "ś": "s", "ṭ": "t", "ṣ": "s", "ẓ": "z"}))
-    text = "".join(char for char in text if char.isalnum() or char.isspace())
-    return " ".join(text.split()) or None
+    return normalize_lexical_transliteration(value) or None
 
 
 def main(argv: list[str] | None = None) -> int:

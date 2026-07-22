@@ -8,6 +8,12 @@ from framework.lexical import (
     LexicalLookupService,
     lookup_word,
 )
+from framework.canonical_library.lexicon_normalization import (
+    normalize_script_form,
+    normalize_strongs_number,
+    normalize_transliteration,
+    strongs_digits,
+)
 from framework.lexical.service import lexical_database_missing_message
 from framework.lexical.tools.build_lexicon_database import DEFAULT_OUTPUT, build_lexicon_database
 from framework.lexical.tools.import_verse_tokens import import_verse_tokens
@@ -88,6 +94,106 @@ class BiblicalLexicalEngineTests(unittest.TestCase):
             self.assertEqual(entry["transliteration"], "lógos")
             self.assertEqual(entry["pronunciation"], "log'-os")
 
+    def test_xml_import_accepts_usage_and_kjv_definition_entries(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            hebrew = root / "HebrewStrong.xml"
+            hebrew.write_text(
+                """<lexicon>
+                  <entry id="H160">
+                    <w pos="n-f" pron="a-hab-aw" xlit="ʼahăbâh" xml:lang="heb">אַהֲבָה</w>
+                    <source>feminine of 158 and meaning the same</source>
+                    <usage>love.</usage>
+                  </entry>
+                </lexicon>""",
+                encoding="utf-8",
+            )
+            greek = root / "strongsgreek.xml"
+            greek.write_text(
+                """<strongsdictionary>
+                  <entry strongs="01473">
+                    <strongs>1473</strongs>
+                    <greek unicode="ἐγώ" translit="egṓ"/>
+                    <pronunciation strongs="eg-o'"/>
+                    <strongs_derivation>a primary pronoun of the first person I</strongs_derivation>
+                    <kjv_def>:--I, me.</kjv_def>
+                  </entry>
+                </strongsdictionary>""",
+                encoding="utf-8",
+            )
+            database = root / "lexicon.sqlite"
+
+            build_lexicon_database(hebrew=hebrew, greek=greek, output=database)
+
+            hebrew_entry = lookup_word(language="hebrew", strongs="H160", database_path=database)
+            greek_entry = lookup_word(language="greek", strongs="G1473", database_path=database)
+            self.assertEqual(hebrew_entry["lemma"], "אַהֲבָה")
+            self.assertIn("love", hebrew_entry["definition"])
+            self.assertEqual(greek_entry["lemma"], "ἐγώ")
+            self.assertIn("I, me", greek_entry["definition"])
+
+    def test_xml_import_accepts_meaning_def_and_attribute_only_lemmas(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            hebrew = root / "HebrewStrong.xml"
+            hebrew.write_text(
+                """<lexicon>
+                  <entry id="H161">
+                    <w pos="n-pr-m" pron="o'-had" xlit="ʼÔhad" xml:lang="x-pn">אֹהַד</w>
+                    <source>from an unused root meaning to be united; unity;</source>
+                    <meaning><def>Ohad</def>, an Israelite</meaning>
+                    <usage>Ohad.</usage>
+                  </entry>
+                </lexicon>""",
+                encoding="utf-8",
+            )
+            greek = root / "strongsgreek.xml"
+            greek.write_text(
+                """<strongsdictionary>
+                  <entry strongs="00001">
+                    <greek unicode="Α" translit="alpha"/>
+                    <kjv_def>Alpha.</kjv_def>
+                  </entry>
+                </strongsdictionary>""",
+                encoding="utf-8",
+            )
+            database = root / "lexicon.sqlite"
+
+            build_lexicon_database(hebrew=hebrew, greek=greek, output=database)
+
+            hebrew_entry = lookup_word(language="hebrew", strongs="H161", database_path=database)
+            greek_entry = lookup_word(language="greek", strongs="G1", database_path=database)
+            self.assertEqual(hebrew_entry["lemma"], "אֹהַד")
+            self.assertIn("Ohad", hebrew_entry["definition"])
+            self.assertEqual(greek_entry["lemma"], "Α")
+            self.assertEqual(greek_entry["transliteration"], "alpha")
+
+    def test_script_transliteration_and_strongs_normalization_matrix(self):
+        cases = [
+            ("greek", "λόγος", "λογοσ"),
+            ("greek", "λόγος,", "λογοσ"),
+            ("greek", "οὕτω(ς)", "ουτω"),
+            ("greek", "σάρξ", "σαρξ"),
+            ("greek", "σαρξ", "σαρξ"),
+            ("greek", "λόγος logos", "λογοσ"),
+            ("hebrew", "חֶסֶד", "חסד"),
+            ("hebrew", "בְּ/רֵאשִׁ֖ית", "ב ראשית"),
+            ("hebrew", "b/2708", "2708"),
+            ("hebrew", "c/m", ""),
+        ]
+        for language, value, expected in cases:
+            with self.subTest(language=language, value=value):
+                self.assertEqual(normalize_script_form(value, language=language), expected)
+
+        self.assertEqual(normalize_transliteration("ḥesed"), "hesed")
+        self.assertEqual(normalize_transliteration("egṓ"), "ego")
+        self.assertEqual(normalize_transliteration("ʾahăbâh"), "ahabah")
+        self.assertEqual(normalize_strongs_number("G03056"), "G3056")
+        self.assertEqual(normalize_strongs_number("H0001"), "H1")
+        self.assertEqual(normalize_strongs_number("03056"), "3056")
+        self.assertEqual(normalize_strongs_number("G03056A"), "G3056")
+        self.assertEqual(strongs_digits("H0001"), "1")
+
     def test_default_build_output_matches_runtime_database_location(self):
         self.assertEqual(Path(DEFAULT_LEXICAL_DATABASE_PATH), DEFAULT_OUTPUT)
         self.assertEqual(
@@ -137,6 +243,25 @@ class BiblicalLexicalEngineTests(unittest.TestCase):
             self.assertEqual(diagnostics["lexical_entry_count"], 2)
             self.assertEqual(diagnostics["hebrew_entries"], 1)
             self.assertEqual(diagnostics["greek_entries"], 1)
+
+    def test_generated_runtime_database_has_expected_corpus_shape_when_present(self):
+        database = DEFAULT_OUTPUT
+        if not database.is_file():
+            self.skipTest("generated runtime lexicon database is not present")
+
+        report = validate_database(database, strict=True)
+        service = LexicalLookupService(database)
+        try:
+            diagnostics = service.startup_diagnostics
+        finally:
+            service.close()
+
+        self.assertGreaterEqual(report["entries"], 14000)
+        self.assertGreaterEqual(report["verse_words"], 400000)
+        self.assertEqual(report["unresolved_token_strongs"], 0)
+        self.assertLess(report["unresolved_lemma_only_tokens"], 5000)
+        self.assertGreaterEqual(diagnostics["hebrew_entries"], 8500)
+        self.assertGreaterEqual(diagnostics["greek_entries"], 5500)
 
     def test_strict_validation_accepts_resolved_imported_tokens(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -195,6 +320,198 @@ class BiblicalLexicalEngineTests(unittest.TestCase):
             self.assertEqual(report["unresolved_token_strongs"], 0)
             self.assertEqual(report["unresolved_token_lemmas"], 0)
             self.assertGreaterEqual(report["parsed_morphology_codes"], 3)
+
+    def test_imported_tokens_link_with_source_specific_normalization(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            hebrew = root / "hebrew.xml"
+            hebrew.write_text(
+                """<lexicon>
+                  <entry id="H2708">
+                    <lemma>חֻקָּה</lemma>
+                    <transliteration>chuqqah</transliteration>
+                    <definition>Statute or ordinance.</definition>
+                  </entry>
+                </lexicon>""",
+                encoding="utf-8",
+            )
+            greek = root / "greek.xml"
+            greek.write_text(
+                """<dictionary xmlns="urn:test">
+                  <entry strongs="G3779">
+                    <word>οὕτω</word>
+                    <translit>houtō</translit>
+                    <strongs_def>In this way.</strongs_def>
+                  </entry>
+                </dictionary>""",
+                encoding="utf-8",
+            )
+            database = root / "lexicon.sqlite"
+            build_lexicon_database(hebrew=hebrew, greek=greek, output=database)
+
+            import_verse_tokens(
+                database,
+                source={
+                    "name": "test-tokens",
+                    "revision": "fixture",
+                    "license": "CC BY 4.0",
+                    "attribution": "Fixture token data.",
+                },
+                verse_words=[
+                    {
+                        "book": "1 Kings",
+                        "chapter": 3,
+                        "verse": 3,
+                        "word_position": 1,
+                        "language": "hebrew",
+                        "surface_form": "בְּ/חֻקּ֖וֹת",
+                        "lemma": "b/2708",
+                        "strongs_number": "H2708",
+                    },
+                    {
+                        "book": "Matthew",
+                        "chapter": 1,
+                        "verse": 1,
+                        "word_position": 1,
+                        "language": "greek",
+                        "surface_form": "οὕτως",
+                        "lemma": "οὕτω(ς)",
+                    },
+                ],
+                strict=True,
+            )
+
+            report = validate_database(database, strict=True)
+            self.assertEqual(report["unresolved_token_strongs"], 0)
+            self.assertEqual(report["unresolved_token_lemmas"], 0)
+            connection = sqlite3.connect(database)
+            try:
+                linked = connection.execute(
+                    """
+                    SELECT COUNT(*) FROM verse_words
+                    WHERE lexicon_entry_id IS NOT NULL
+                    """
+                ).fetchone()[0]
+            finally:
+                connection.close()
+            self.assertEqual(linked, 2)
+
+    def test_build_import_and_lookup_use_the_same_normalized_lemma(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            greek = root / "greek.xml"
+            greek.write_text(
+                """<dictionary xmlns="urn:test">
+                  <entry strongs="G3779">
+                    <word>οὕτω</word>
+                    <translit>houtō</translit>
+                    <strongs_def>In this way.</strongs_def>
+                  </entry>
+                </dictionary>""",
+                encoding="utf-8",
+            )
+            database = root / "lexicon.sqlite"
+            build_lexicon_database(greek=greek, output=database)
+            import_verse_tokens(
+                database,
+                source={
+                    "name": "test-morphgnt",
+                    "revision": "fixture",
+                    "license": "CC BY-SA 3.0",
+                    "attribution": "Fixture token data.",
+                },
+                verse_words=[
+                    {
+                        "book": "Matthew",
+                        "chapter": 1,
+                        "verse": 1,
+                        "word_position": 1,
+                        "language": "greek",
+                        "surface_form": "οὕτως",
+                        "lemma": "οὕτω(ς)",
+                    }
+                ],
+                strict=True,
+            )
+
+            entry = lookup_word(language="greek", lemma="οὕτω(ς)", database_path=database)
+            service = LexicalLookupService(database)
+            try:
+                entries, _prompt = service.lookup_question(
+                    language="greek",
+                    terms=["οὕτω(ς)"],
+                    question="What does οὕτω(ς) mean?",
+                )
+            finally:
+                service.close()
+
+            self.assertEqual(entry["strongs_number"], "G3779")
+            self.assertEqual(entries[0].strongs_number, "G3779")
+
+    def test_import_rejects_strongs_prefix_that_conflicts_with_language(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            _, greek = self._sources(root)
+            database = root / "lexicon.sqlite"
+            build_lexicon_database(greek=greek, output=database)
+
+            with self.assertRaisesRegex(ValueError, "Strong's prefix G does not match language hebrew"):
+                import_verse_tokens(
+                    database,
+                    source={
+                        "name": "bad-prefix",
+                        "revision": "fixture",
+                        "license": "CC BY 4.0",
+                        "attribution": "Fixture token data.",
+                    },
+                    verse_words=[
+                        {
+                            "book": "Genesis",
+                            "chapter": 1,
+                            "verse": 1,
+                            "word_position": 1,
+                            "language": "hebrew",
+                            "surface_form": "λόγος",
+                            "lemma": "λόγος",
+                            "strongs_number": "G3056",
+                        }
+                    ],
+                )
+
+    def test_strict_validation_reports_lemma_only_source_gaps_without_failing(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            _, greek = self._sources(root)
+            database = root / "lexicon.sqlite"
+            build_lexicon_database(greek=greek, output=database)
+            import_verse_tokens(
+                database,
+                source={
+                    "name": "lemma-only-token-source",
+                    "revision": "fixture",
+                    "license": "CC BY-SA 3.0",
+                    "attribution": "Fixture token data.",
+                },
+                verse_words=[
+                    {
+                        "book": "John",
+                        "chapter": 1,
+                        "verse": 2,
+                        "word_position": 1,
+                        "language": "greek",
+                        "surface_form": "φαντασία",
+                        "lemma": "φαντασία",
+                    }
+                ],
+                strict=True,
+            )
+
+            report = validate_database(database, strict=True)
+
+            self.assertEqual(report["unresolved_token_strongs"], 0)
+            self.assertEqual(report["unresolved_token_lemmas"], 1)
+            self.assertEqual(report["unresolved_lemma_only_tokens"], 1)
+            self.assertEqual(report["unresolved_lemma_only_by_table"]["verse_words"], 1)
 
     def test_strict_validation_rejects_unresolved_strongs_and_lemma(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -270,6 +587,40 @@ class BiblicalLexicalEngineTests(unittest.TestCase):
 
             self.assertEqual(report["invalid_morphology_json"], 1)
             with self.assertRaisesRegex(ValueError, "morphology JSON is malformed"):
+                validate_database(database, strict=True)
+
+    def test_strict_validation_rejects_invalid_token_positions(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            _, greek = self._sources(root)
+            database = root / "lexicon.sqlite"
+            build_lexicon_database(greek=greek, output=database)
+            import_verse_tokens(
+                database,
+                source={
+                    "name": "bad-position-token-source",
+                    "revision": "fixture",
+                    "license": "CC BY 4.0",
+                    "attribution": "Fixture token data.",
+                },
+                verse_words=[
+                    {
+                        "book": "John",
+                        "chapter": 1,
+                        "verse": 1,
+                        "word_position": 0,
+                        "language": "greek",
+                        "surface_form": "λόγος",
+                        "lemma": "λόγος",
+                        "strongs_number": "G3056",
+                    }
+                ],
+            )
+
+            report = validate_database(database)
+
+            self.assertEqual(report["invalid_verse_word_positions"], 1)
+            with self.assertRaisesRegex(ValueError, "verse words have invalid reference positions"):
                 validate_database(database, strict=True)
 
     def test_lookup_by_strongs_lemma_and_transliteration(self):
