@@ -3,7 +3,7 @@ from __future__ import annotations
 import pytest
 from selenium.webdriver.common.by import By
 
-from .pages import HomePage, MapsPage, WorkspacePage
+from .pages import HomePage, MapsPage
 
 
 pytestmark = [pytest.mark.gui]
@@ -36,8 +36,8 @@ def test_map_catalog_search(driver, wait, base_url):
     assert page.find("#map-search-results").is_displayed()
 
 
-def test_journey_tab_loads(driver, wait, base_url):
+def test_maps_tab_includes_journeys(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
-    WorkspacePage(driver, wait, base_url).open_tab("journey")
+    MapsPage(driver, wait, base_url).open_maps()
     assert driver.find_element(By.CSS_SELECTOR, '[data-testid="journey-search-input"]').is_displayed()
     _assert_no_severe_browser_errors(driver)

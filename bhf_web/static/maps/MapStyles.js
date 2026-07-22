@@ -73,6 +73,36 @@ function politicalContextStyle(layerItem) {
   };
 }
 
+function journeySegmentStyle(segment, { selected = false } = {}) {
+  return {
+    color: selected ? "#d18a16" : "#245b82",
+    weight: selected ? 6 : 4,
+    opacity: selected ? 1 : 0.9,
+    dashArray: selected ? "0" : "8 7",
+  };
+}
+
+function referenceLayerStyle(layer, feature, { selected = false } = {}) {
+  const palette = {
+    "ancient-cities": { color: "#8e5c0a", fillColor: "#f5d08a" },
+    "biblical-regions": { color: "#6a7f3c", fillColor: "#dce8b8" },
+    rivers: { color: "#1f6fa6", fillColor: "#c9e4f4" },
+    mountains: { color: "#8c6a3d", fillColor: "#e3d1b5" },
+    "trade-routes": { color: "#8a4e2f", fillColor: "#efc5ae" },
+    kingdoms: { color: "#8a3f73", fillColor: "#ecc6df" },
+  };
+  const base = palette[layer?.id] || { color: "#245b82", fillColor: "#d6e8f8" };
+  const lowConfidence = String(feature?.confidence || "").toLowerCase() === "low";
+  return {
+    color: selected ? "#d18a16" : base.color,
+    fillColor: base.fillColor,
+    weight: selected ? 4 : 2,
+    opacity: selected ? 1 : 0.88,
+    fillOpacity: layer?.type === "polygons" ? (selected ? 0.25 : 0.14) : 0.82,
+    dashArray: lowConfidence ? "4 6" : "0",
+  };
+}
+
 function archaeologyMarkerStyle(item) {
   const confidence = normalizeConfidence(item.confidence);
   const palette = {
@@ -111,6 +141,28 @@ function manuscriptMarkerStyle(item) {
   };
 }
 
+function journeyStopIcon(stop, { selected = false } = {}) {
+  const order = Number.isFinite(stop?.order) ? String(stop.order) : "";
+  return window.L.divIcon({
+    className: `map-journey-stop ${selected ? "is-selected" : ""}`.trim(),
+    html: `<span class="map-journey-stop__label">${order || "•"}</span>`,
+    iconSize: [34, 34],
+    iconAnchor: [17, 34],
+    popupAnchor: [0, -30],
+  });
+}
+
+function referencePointIcon(layer, feature, { selected = false } = {}) {
+  const label = String(feature?.name || layer?.title || "?").trim().slice(0, 1).toUpperCase() || "?";
+  return window.L.divIcon({
+    className: `map-reference-point map-reference-point--${String(layer?.id || "layer")} ${selected ? "is-selected" : ""}`.trim(),
+    html: `<span class="map-reference-point__label">${label}</span>`,
+    iconSize: [30, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [0, -27],
+  });
+}
+
 function entityMarkerIcon(item) {
   const kind = String(item?.marker_kind || "place").toLowerCase();
   const labelByKind = {
@@ -134,7 +186,11 @@ export {
   archaeologyMarkerStyle,
   entityMarkerIcon,
   historicalLayerStyle,
+  journeySegmentStyle,
+  journeyStopIcon,
   manuscriptMarkerStyle,
   politicalContextStyle,
+  referenceLayerStyle,
+  referencePointIcon,
   routeStyle,
 };

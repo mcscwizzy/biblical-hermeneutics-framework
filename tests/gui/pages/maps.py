@@ -8,7 +8,12 @@ from .base import BasePage
 
 class MapsPage(BasePage):
     def open_maps(self):
-        self.click('[data-testid="maps-tab"]')
+        explore_buttons = self.driver.find_elements(By.CSS_SELECTOR, '[data-testid="app-dock-explore"]')
+        if explore_buttons and explore_buttons[0].is_displayed():
+            explore_buttons[0].click()
+        map_tabs = self.driver.find_elements(By.CSS_SELECTOR, '[data-testid="maps-tab"]')
+        if map_tabs and map_tabs[0].is_displayed():
+            self.click('[data-testid="maps-tab"]')
         self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="map-browse-button"]')))
         self.click('[data-testid="map-browse-button"]')
         self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="map-search-input"]')))

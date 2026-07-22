@@ -11,7 +11,6 @@ const STATIC_ASSETS = [
   "/static/htmx-search.js",
   "/static/pwa.js",
   "/static/maps/MapPanel.js",
-  "/static/maps/Map3DPanel.js",
   "/static/icons/icon.svg",
   "/static/icons/maskable.svg",
   "/static/icons/apple-touch-icon.svg",
