@@ -13,10 +13,7 @@ const GENERAL_QUESTION_MODE = "general_question";
 const THEME_STORAGE_KEY = "bhf-theme";
 const READER_MODE_STORAGE_KEY = "bhf-reader-mode";
 const BHF_TRANSLATION_STORAGE_KEY = "bhf-reader-translation";
-const BHF_INSTALLED_TRANSLATIONS_STORAGE_KEY = "bhf-installed-translations";
 const BHF_TRANSLATION_DOWNLOAD_METADATA_KEY = "bhf-translation-download-metadata";
-const BHF_TRANSLATION_IMPORT_PREFERENCE_KEY = "bhf-translation-import-preference";
-const BHF_IMPORTABLE_TRANSLATION_IDS = new Set(["kjv", "niv", "esv", "csb", "nasb", "lsb", "nlt"]);
 const BHF_STUDY_ACTIONS = new Set([
   "full_context",
   "historical_context",
@@ -212,14 +209,6 @@ async function initializeReader() {
     translationSelect.addEventListener("change", async () => {
       const requestedTranslation = String(translationSelect.value || "asv").toLowerCase();
       try {
-        const entry = translationCatalogEntry(requestedTranslation);
-        if (entry?.install_mode === "direct_download" && !installedTranslationIds().has(requestedTranslation)) {
-          await downloadTranslationFromGithub(requestedTranslation);
-        } else if (entry?.install_mode === "licensed_provider" && !installedTranslationIds().has(requestedTranslation)) {
-          await openTranslationSelector(translationSelect);
-          translationSelect.value = selectedTranslationId();
-          return;
-        }
         setSelectedTranslationId(requestedTranslation);
         await loadReaderChapter(bookSelect.value, chapterSelect.value);
       } catch (error) {
@@ -1331,20 +1320,22 @@ function renderTranslationSelector(state) {
   }
   const sections = translationCatalogWithLocalState(state).sections || {};
   body.innerHTML = "";
-  body.appendChild(renderTranslationSection("Import Local XML", sections.import_local_xml || []));
   body.appendChild(renderTranslationSection("Installed", sections.installed || []));
-  body.appendChild(renderTranslationSection("Available to Download", sections.available_to_download || []));
-  body.appendChild(renderTranslationSection("Additional English Translations", sections.additional_english_translations || []));
+  const actions = document.createElement("div");
+  actions.className = "translation-selector-entry-actions translation-import-actions";
+  const importer = document.createElement("button");
+  importer.type = "button";
+  importer.className = "secondary";
+  importer.dataset.translationImport = "";
+  importer.textContent = "Import Bible";
+  actions.appendChild(importer);
+  body.appendChild(actions);
 }
 
 function translationCatalogWithLocalState(state) {
-  const catalog = Array.isArray(state?.catalog) ? state.catalog : [];
   const selectedId = selectedTranslationId();
   const sections = state?.sections || {};
   const installed = Array.isArray(sections.installed) ? sections.installed : [];
-  const availableToDownload = Array.isArray(sections.available_to_download) ? sections.available_to_download : [];
-  const licenseRequired = Array.isArray(sections.license_required) ? sections.license_required : Array.isArray(sections.additional_english_translations) ? sections.additional_english_translations : [];
-  const installedById = new Set(installed.map((entry) => String(entry.id || "").toLowerCase()));
   const decoratedInstalled = installed.map((entry) => ({
     ...entry,
     selected: String(entry.id || "").toLowerCase() === selectedId,
@@ -1354,33 +1345,11 @@ function translationCatalogWithLocalState(state) {
     can_download: false,
     status_label: entry.id === "asv" ? "Built in" : "Installed locally",
   }));
-  const decoratedAvailable = availableToDownload.map((entry) => ({
-    ...entry,
-    selected: String(entry.id || "").toLowerCase() === selectedId,
-    can_select: false,
-    can_remove: false,
-    can_download: true,
-    status_label: entry.status_label || "Download for offline use",
-  }));
-  const decoratedLicense = licenseRequired.map((entry) => ({
-    ...entry,
-    selected: String(entry.id || "").toLowerCase() === selectedId,
-    can_select: false,
-    can_remove: false,
-    can_download: false,
-    can_import: true,
-    status_label: "License required",
-  }));
-  const importableEntries = decoratedLicense.filter((entry) => !installedById.has(String(entry.id || "").toLowerCase()));
 
   return {
     ...state,
     sections: {
-      import_local_xml: importableEntries,
       installed: decoratedInstalled,
-      available_to_download: decoratedAvailable,
-      additional_english_translations: decoratedLicense,
-      license_required: decoratedLicense,
     },
   };
 }
@@ -1395,30 +1364,7 @@ function installedTranslationIds() {
       }
     }
   }
-  try {
-    const stored = JSON.parse(readLocalStorageValue(BHF_INSTALLED_TRANSLATIONS_STORAGE_KEY) || "[]");
-    if (Array.isArray(stored)) {
-      for (const id of stored) {
-        const normalized = String(id || "").toLowerCase();
-        if (normalized) {
-          ids.add(normalized);
-        }
-      }
-    }
-  } catch {
-    return ids;
-  }
   return ids;
-}
-
-function persistInstalledTranslationIds(ids) {
-  const normalized = Array.from(ids)
-    .map((id) => String(id || "").toLowerCase())
-    .filter((id) => Boolean(id));
-  if (!normalized.includes("asv")) {
-    normalized.unshift("asv");
-  }
-  writeLocalStorageValue(BHF_INSTALLED_TRANSLATIONS_STORAGE_KEY, JSON.stringify(Array.from(new Set(normalized))));
 }
 
 function selectedTranslationId() {
@@ -1456,7 +1402,8 @@ async function handleTranslationSelectorDialogClick(event) {
   const importer = event.target.closest("[data-translation-import]");
   const select = event.target.closest("[data-translation-select]");
   const remove = event.target.closest("[data-translation-remove]");
-  if (!download && !importer && !select && !remove) {
+  const makeDefault = event.target.closest("[data-translation-make-default]");
+  if (!download && !importer && !select && !remove && !makeDefault) {
     return;
   }
   event.preventDefault();
@@ -1465,6 +1412,7 @@ async function handleTranslationSelectorDialogClick(event) {
   if (download) {
     await downloadTranslationFromGithub(download.dataset.translationDownload);
     setSelectedTranslationId(download.dataset.translationDownload);
+    translationCatalogState = await requestJson("/api/translations/installed", {}, "Could not load translations.");
     renderTranslationSelector(translationCatalogState);
     closeTranslationSelector();
     await reloadCurrentReaderChapter();
@@ -1476,7 +1424,6 @@ async function handleTranslationSelectorDialogClick(event) {
     await reloadCurrentReaderChapter();
     return;
   }
-  const makeDefault = event.target.closest("[data-translation-make-default]");
   if (makeDefault) {
     await requestJson(
       "/api/settings/reader",
@@ -1495,32 +1442,22 @@ async function handleTranslationSelectorDialogClick(event) {
   }
   if (importer) {
     closeTranslationSelector();
-    await openTranslationImportDialog(importer.dataset.translationImport);
+    await openTranslationImportDialog();
     return;
   }
   if (remove) {
     await removeInstalledTranslation(remove.dataset.translationRemove);
+    translationCatalogState = await requestJson("/api/translations/installed", {}, "Could not load translations.");
     renderTranslationSelector(translationCatalogState);
     await reloadCurrentReaderChapter();
   }
 }
 
 function installTranslation(id) {
-  const normalized = String(id || "").toLowerCase();
-  const ids = installedTranslationIds();
-  ids.add(normalized);
-  persistInstalledTranslationIds(ids);
   syncTranslationSelectOptions();
 }
 
 function installImportedTranslation(id) {
-  const normalized = String(id || "").toLowerCase();
-  if (!BHF_IMPORTABLE_TRANSLATION_IDS.has(normalized)) {
-    return;
-  }
-  const ids = installedTranslationIds();
-  ids.add(normalized);
-  persistInstalledTranslationIds(ids);
   syncTranslationSelectOptions();
 }
 
@@ -1538,9 +1475,6 @@ async function removeInstalledTranslation(id) {
     "Could not remove translation."
   );
   const selectedBeforeRemoval = selectedTranslationId();
-  const ids = installedTranslationIds();
-  ids.delete(normalized);
-  persistInstalledTranslationIds(ids);
   if (selectedBeforeRemoval === normalized) {
     setSelectedTranslationId("asv");
   }
@@ -1564,8 +1498,9 @@ async function downloadTranslationFromGithub(id) {
     },
     "Could not download translation."
   );
-  installTranslation(normalized);
   persistTranslationDownloadMetadata(normalized, metadata);
+  translationCatalogState = await requestJson("/api/translations/installed", {}, "Could not load translations.");
+  installTranslation(normalized);
   return metadata;
 }
 
@@ -1599,7 +1534,7 @@ function syncTranslationSelectOptions() {
   translationSelect.replaceChildren();
   for (const entry of translations) {
     const id = String(entry.id || "").toLowerCase();
-    if (!id) {
+    if (!id || !entry.installed) {
       continue;
     }
     const option = document.createElement("option");
@@ -1608,7 +1543,7 @@ function syncTranslationSelectOptions() {
     translationSelect.appendChild(option);
   }
 
-  translationSelect.value = translations.some((entry) => String(entry.id || "").toLowerCase() === selectedId)
+  translationSelect.value = translations.some((entry) => entry.installed && String(entry.id || "").toLowerCase() === selectedId)
     ? selectedId
     : selectedTranslationId();
   if (!translationSelect.options.length) {
@@ -1625,31 +1560,28 @@ function translationSelectOptionLabel(translationId, installedIds = installedTra
   const resolved = entry || translationCatalogEntry(normalized);
   const abbreviation = resolved?.abbreviation || normalized.toUpperCase();
   const name = resolved?.name || abbreviation;
-  if (normalized === "asv") {
-    return `${abbreviation} - ${name}`;
-  }
-  if (resolved?.install_mode === "direct_download" && !installedIds.has(normalized)) {
-    return `${abbreviation} - Download for offline use`;
-  }
-  if (resolved?.install_mode === "licensed_provider" && !installedIds.has(normalized)) {
-    return `${abbreviation} - License required`;
-  }
-  return installedIds.has(normalized) ? `${abbreviation} - Installed locally` : `${abbreviation} - ${name}`;
+  return `${abbreviation} - ${name}`;
 }
 
-async function importTranslationXml(id) {
-  const normalized = String(id || "").toLowerCase();
-  if (!BHF_IMPORTABLE_TRANSLATION_IDS.has(normalized)) {
-    throw new Error("This translation cannot be imported.");
-  }
+async function importTranslationXml() {
   const form = document.querySelector("[data-translation-import-form]");
+  const nameInput = form?.querySelector("[data-translation-import-name]");
   const fileInput = form?.querySelector("[data-translation-import-file]");
+  const translationName = String(nameInput?.value || "").trim();
+  if (!translationName) {
+    throw new Error("Enter a translation name.");
+  }
   const file = fileInput?.files && fileInput.files.length ? fileInput.files[0] : null;
   if (!file) {
     throw new Error("Choose an XML file to import.");
   }
+  const normalized = translationIdFromName(translationName);
+  if (!normalized) {
+    throw new Error("Use at least two letters or numbers in the translation name.");
+  }
   const formData = new FormData();
   formData.set("confirmed", "true");
+  formData.set("translation_name", translationName);
   formData.set("file", file);
   const result = await requestJson(
     `/api/translations/${encodeURIComponent(normalized)}/import`,
@@ -1660,28 +1592,28 @@ async function importTranslationXml(id) {
     },
     "Could not import translation XML."
   );
+  translationCatalogState = await requestJson("/api/translations/installed", {}, "Could not load translations.");
   installImportedTranslation(normalized);
   setSelectedTranslationId(normalized);
   return result;
 }
 
-async function openTranslationImportDialog(translationId = null) {
+async function openTranslationImportDialog() {
   if (!translationCatalogState) {
-    translationCatalogState = await requestJson("/api/translations/catalog", {}, "Could not load translations.");
+    translationCatalogState = await requestJson("/api/translations/installed", {}, "Could not load translations.");
   }
   const dialog = ensureTranslationImportDialog();
-  const select = dialog.querySelector("[data-translation-import-id]");
-  const normalized = BHF_IMPORTABLE_TRANSLATION_IDS.has(String(translationId || "").toLowerCase())
-    ? String(translationId).toLowerCase()
-    : translationImportPreference() || selectedTranslationId() || "asv";
-  select.value = normalized;
-  renderTranslationImportDialogDetails(normalized);
+  renderTranslationImportDialogDetails();
   dialog.hidden = false;
   document.body.classList.add("translation-selector-open");
+  const nameInput = dialog.querySelector("[data-translation-import-name]");
+  if (nameInput) {
+    nameInput.value = "";
+    nameInput.focus();
+  }
   const fileInput = dialog.querySelector("[data-translation-import-file]");
   if (fileInput) {
     fileInput.value = "";
-    fileInput.focus();
   }
 }
 
@@ -1697,21 +1629,13 @@ function ensureTranslationImportDialog() {
   dialog.innerHTML = `
     <form class="translation-selector translation-import-dialog" data-translation-import-form role="dialog" aria-modal="true" aria-labelledby="translation-import-title">
       <div class="translation-selector-header">
-        <h2 id="translation-import-title">Import XML</h2>
+        <h2 id="translation-import-title">Import Bible</h2>
         <button type="button" class="secondary icon-button" data-close-translation-import aria-label="Close import dialog">×</button>
       </div>
       <div class="translation-selector-body">
         <label class="translation-import-field">
-          <span>Translation</span>
-          <select data-translation-import-id>
-            <option value="niv">NIV - New International Version</option>
-            <option value="esv">ESV - English Standard Version</option>
-            <option value="csb">CSB - Christian Standard Bible</option>
-            <option value="nasb">NASB - New American Standard Bible</option>
-            <option value="lsb">LSB - Legacy Standard Bible</option>
-            <option value="nlt">NLT - New Living Translation</option>
-            <option value="kjv">KJV - King James Version</option>
-          </select>
+          <span>Translation name</span>
+          <input type="text" data-translation-import-name autocomplete="off" required>
         </label>
         <div data-translation-import-details></div>
         <label class="translation-import-field">
@@ -1724,7 +1648,7 @@ function ensureTranslationImportDialog() {
         </label>
         <div class="translation-selector-entry-actions translation-import-actions">
           <button type="button" class="secondary" data-close-translation-import>Cancel</button>
-          <button type="submit">Import local XML</button>
+          <button type="submit">Import Bible</button>
         </div>
       </div>
     </form>
@@ -1732,19 +1656,6 @@ function ensureTranslationImportDialog() {
   dialog.addEventListener("click", (event) => {
     if (event.target === dialog || event.target.closest("[data-close-translation-import]")) {
       closeTranslationImportDialog();
-    }
-  });
-  const select = dialog.querySelector("[data-translation-import-id]");
-  select.addEventListener("change", () => {
-    persistTranslationImportPreference(select.value);
-    renderTranslationImportDialogDetails(select.value);
-  });
-  const fileInput = dialog.querySelector("[data-translation-import-file]");
-  fileInput?.addEventListener("change", () => {
-    const guessedTranslation = guessTranslationIdFromFilename(fileInput.files?.[0]?.name || "");
-    if (guessedTranslation && select.value !== guessedTranslation) {
-      select.value = guessedTranslation;
-      renderTranslationImportDialogDetails(guessedTranslation);
     }
   });
   const form = dialog.querySelector("[data-translation-import-form]");
@@ -1766,73 +1677,26 @@ function closeTranslationImportDialog() {
   document.body.classList.remove("translation-selector-open");
 }
 
-function renderTranslationImportDialogDetails(translationId) {
+function renderTranslationImportDialogDetails() {
   const dialog = document.querySelector("[data-translation-import-dialog]");
   const details = dialog?.querySelector("[data-translation-import-details]");
   if (!details) {
     return;
   }
-  const entry = translationCatalogEntry(translationId);
-  const abbreviation = entry?.abbreviation || String(translationId || "").toUpperCase();
-  const name = entry?.name || abbreviation;
   details.innerHTML = "";
   const notice = document.createElement("p");
   notice.className = "translation-license-explanation";
   notice.textContent = "This import stays local to this BHF instance. BHF does not provide, distribute, upload, or verify the file.";
   details.appendChild(notice);
-  const target = document.createElement("p");
-  target.className = "translation-license-actions";
-  target.textContent = `Import target: ${abbreviation} - ${name}`;
-  details.appendChild(target);
-  if (entry?.approved_source_url) {
-    const source = document.createElement("p");
-    source.className = "translation-license-actions";
-    source.append("Approved source: ");
-    const link = document.createElement("a");
-    link.href = entry.approved_source_url;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.textContent = "GitHub source";
-    source.appendChild(link);
-    details.appendChild(source);
-  } else if (entry?.license_status === "copyrighted") {
-    const warning = document.createElement("p");
-    warning.className = "translation-license-explanation";
-    warning.textContent = "No GitHub download link is provided for this copyrighted translation. Use only a legally obtained XML file.";
-    details.appendChild(warning);
-  }
 }
 
-function guessTranslationIdFromFilename(filename) {
-  const normalized = String(filename || "")
+function translationIdFromName(name) {
+  const normalized = String(name || "")
     .toLowerCase()
-    .split(/[\\/]/)
-    .pop()
-    .replace(/\.(xml|txt|json)$/u, "");
-  if (!normalized) {
-    return null;
-  }
-  const candidates = ["nasb", "csb", "esv", "lsb", "nlt", "niv", "kjv"];
-  for (const id of candidates) {
-    const tokenPattern = new RegExp(`(?:^|[^a-z0-9])${id}(?:[^a-z0-9]|$)`);
-    if (tokenPattern.test(normalized) || normalized.includes(id)) {
-      return id;
-    }
-  }
-  return null;
-}
-
-function translationImportPreference() {
-  const stored = String(readLocalStorageValue(BHF_TRANSLATION_IMPORT_PREFERENCE_KEY) || "").toLowerCase();
-  return BHF_IMPORTABLE_TRANSLATION_IDS.has(stored) ? stored : null;
-}
-
-function persistTranslationImportPreference(id) {
-  const normalized = String(id || "").toLowerCase();
-  if (!BHF_IMPORTABLE_TRANSLATION_IDS.has(normalized)) {
-    return;
-  }
-  writeLocalStorageValue(BHF_TRANSLATION_IMPORT_PREFERENCE_KEY, normalized);
+    .replace(/[^a-z0-9]+/gu, "-")
+    .replace(/^-+|-+$/gu, "")
+    .slice(0, 32);
+  return /^[a-z0-9][a-z0-9_-]{1,31}$/u.test(normalized) ? normalized : "";
 }
 
 function translationCatalogEntry(translationId) {
@@ -1844,7 +1708,6 @@ function translationCatalogEntry(translationId) {
 async function submitTranslationImportForm(event) {
   event.preventDefault();
   const form = event.currentTarget;
-  const select = form.querySelector("[data-translation-import-id]");
   const confirmed = form.querySelector("[data-translation-import-confirm]");
   if (!confirmed?.checked) {
     return;
@@ -1852,7 +1715,7 @@ async function submitTranslationImportForm(event) {
   const submit = form.querySelector("button[type='submit']");
   submit.disabled = true;
   try {
-    await importTranslationXml(select.value);
+    await importTranslationXml();
     closeTranslationImportDialog();
     await reloadCurrentReaderChapter();
   } catch (error) {
@@ -1943,8 +1806,8 @@ function renderTranslationEntry(entry) {
     importer.type = "button";
     importer.className = "secondary";
     importer.dataset.translationImport = entry.id;
-    importer.textContent = "Import XML";
-    importer.title = "Import a legally obtained XML file for local-only use.";
+    importer.textContent = "Import";
+    importer.title = "Import a legally obtained Bible file for local-only use.";
     controls.appendChild(importer);
   }
   if (entry.can_download) {

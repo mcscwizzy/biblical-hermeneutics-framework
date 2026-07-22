@@ -106,19 +106,13 @@ def save_imported_xml_translation(
     """Normalize a user-provided XML Bible into local-only JSON storage."""
 
     normalized_id = _normalize_translation_id(translation_id)
-    from .translation_catalog import catalog_entry_for_id
-
-    catalog_entry = catalog_entry_for_id(normalized_id) or {
+    catalog_entry = {
         "id": normalized_id,
         "name": translation_name or normalized_id.upper(),
         "language_code": "en",
         "language": "English",
-        "license_status": "copyrighted" if normalized_id in {"niv", "esv", "csb", "nasb", "lsb", "nlt"} else "public_domain_us",
-        "validation": {
-            "expected_book_count": 66,
-            "expected_minimum_verse_count": 31000,
-            "expected_maximum_verse_count": 31200,
-        },
+        "license_status": "user_supplied",
+        "validation": {},
     }
     result = install_xml_translation(
         normalized_id,

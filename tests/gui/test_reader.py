@@ -3,7 +3,6 @@ from __future__ import annotations
 import pytest
 from selenium.common.exceptions import StaleElementReferenceException
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import Select
 
 from .pages import BibleReaderPage, HomePage
 
@@ -54,7 +53,7 @@ def test_bible_search(driver, wait, base_url):
     wait.until(lambda _driver: not _driver.find_element(By.CSS_SELECTOR, "#reader-search-results").is_displayed())
 
 
-def test_import_dialog_infers_translation_from_filename(driver, wait, base_url, tmp_path):
+def test_import_dialog_uses_user_supplied_translation_name(driver, wait, base_url, tmp_path):
     xml_path = tmp_path / "csb.xml"
     xml_path.write_text(
         """
@@ -74,39 +73,27 @@ def test_import_dialog_infers_translation_from_filename(driver, wait, base_url, 
     page.click('[data-testid="translation-import-button"]')
     wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "[data-translation-import-dialog]").is_displayed())
 
+    name_input = driver.find_element(By.CSS_SELECTOR, "[data-translation-import-name]")
+    name_input.send_keys("Christian Standard Bible")
     file_input = driver.find_element(By.CSS_SELECTOR, "[data-translation-import-file]")
     file_input.send_keys(str(xml_path))
 
-    wait.until(
-        lambda _driver: Select(
-            _driver.find_element(By.CSS_SELECTOR, "[data-translation-import-id]")
-        ).first_selected_option.get_attribute("value") == "csb"
-    )
-    assert Select(driver.find_element(By.CSS_SELECTOR, "[data-translation-import-id]")).first_selected_option.get_attribute("value") == "csb"
+    assert driver.find_element(By.CSS_SELECTOR, "[data-translation-import-name]").get_attribute("value") == "Christian Standard Bible"
     assert page.current_translation_abbreviation() == "ASV"
 
 
-def test_import_dialog_remembers_last_manual_choice(driver, wait, base_url):
+def test_import_dialog_opens_with_empty_translation_name(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
     page = BibleReaderPage(driver, wait, base_url)
 
     page.click('[data-testid="translation-import-button"]')
     wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "[data-translation-import-dialog]").is_displayed())
 
-    select = Select(driver.find_element(By.CSS_SELECTOR, "[data-translation-import-id]"))
-    select.select_by_value("csb")
-    wait.until(
-        lambda _driver: Select(
-            _driver.find_element(By.CSS_SELECTOR, "[data-translation-import-id]")
-        ).first_selected_option.get_attribute("value") == "csb"
-    )
+    name_input = driver.find_element(By.CSS_SELECTOR, "[data-translation-import-name]")
+    name_input.send_keys("Temporary Translation")
 
     driver.find_element(By.CSS_SELECTOR, "[data-close-translation-import]").click()
     wait.until(lambda _driver: not _driver.find_element(By.CSS_SELECTOR, "[data-translation-import-dialog]").is_displayed())
 
     page.click('[data-testid="translation-import-button"]')
-    wait.until(
-        lambda _driver: Select(
-            _driver.find_element(By.CSS_SELECTOR, "[data-translation-import-id]")
-        ).first_selected_option.get_attribute("value") == "csb"
-    )
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "[data-translation-import-name]").get_attribute("value") == "")

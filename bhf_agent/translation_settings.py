@@ -9,6 +9,7 @@ from typing import Any
 
 from .translation_storage import normalize_translation_id, write_json_atomic
 from .translation_installer import get_translation_installation
+from .translation_registry import set_default_translation as set_registry_default_translation
 
 
 DEFAULT_READER_TRANSLATION_ID = "asv"
@@ -40,6 +41,7 @@ def save_reader_settings(settings: dict[str, Any]) -> dict[str, Any]:
     normalized = normalize_translation_id(default_translation)
     if not is_translation_installed(normalized):
         raise ValueError("Only an installed translation can be set as default")
+    set_registry_default_translation(normalized)
     payload = {"default_translation": normalized}
     write_json_atomic(SETTINGS_PATH, payload)
     return payload
@@ -63,4 +65,3 @@ def is_translation_installed(translation_id: str) -> bool:
         return True
     installation = get_translation_installation(normalized)
     return bool(installation.get("installed"))
-

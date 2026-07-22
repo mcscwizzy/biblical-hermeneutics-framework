@@ -26,6 +26,7 @@ from bhf_agent.bible import (
     timeline_for_book,
     verse_range_reference,
 )
+from bhf_agent.translation_installer import list_installed_translations
 
 
 class BibleDatasetTests(unittest.TestCase):
@@ -151,12 +152,19 @@ class BibleDatasetTests(unittest.TestCase):
         </XMLBIBLE>
         """
 
-        with self.assertRaisesRegex(ValueError, "complete expected canon"):
-            save_imported_xml_translation(
+        with tempfile.TemporaryDirectory() as tmpdir, patch.object(translation_storage, "TRANSLATIONS_PATH", Path(tmpdir)):
+            saved = save_imported_xml_translation(
                 "esv",
                 xml,
                 source_filename="esv.xml",
                 translation_name="English Standard Version",
+            )
+
+            self.assertEqual(saved["translation_id"], "esv")
+            self.assertEqual(saved["translation"]["name"], "English Standard Version")
+            self.assertIn(
+                "esv",
+                [entry["translation_id"] for entry in list_installed_translations()],
             )
 
     def test_resolve_invalid_chapter(self):

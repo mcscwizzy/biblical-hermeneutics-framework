@@ -22,7 +22,6 @@ from bhf_agent.bible import (
 from bhf_agent.translation_catalog import (
     catalog_by_id,
     import_translation,
-    translation_selector_sections,
 )
 from bhf_agent.translation_installer import (
     TranslationInstallError,
@@ -36,6 +35,7 @@ from bhf_agent.translation_settings import (
     save_reader_settings,
     set_default_reader_translation,
 )
+from bhf_agent.translation_storage import normalize_translation_id
 from bhf_agent.runner import BHFAgent
 from bhf_agent.study_db import (
     StudyDataError,
@@ -250,56 +250,55 @@ def create_app() -> FastAPI:
         ]
 
     def _translation_state_payload() -> dict[str, object]:
-        installed_ids = _installed_translation_ids()
         default_translation = get_default_reader_translation()
-        sections = translation_selector_sections(
-            installed_translation_ids=installed_ids,
-            default_translation_id=default_translation,
-        )
         translations: list[dict[str, object]] = []
-        for entry in sections["catalog"]:
-            installed = entry["id"] in installed_ids
+        for installation in list_installed_translations():
+            translation_id = str(installation.get("translation_id") or "").lower()
+            if not translation_id:
+                continue
+            registry = installation.get("registry") or {}
+            translation = dict(installation.get("translation") or {})
+            name = str(registry.get("name") or translation.get("name") or translation_id.upper())
+            abbreviation = str(translation.get("id") or translation_id.upper()).upper()
+            bundled = bool(installation.get("bundled", False))
             translations.append(
                 {
-                    "id": entry["id"],
-                    "name": entry["name"],
-                    "abbreviation": entry["abbreviation"],
-                    "language": entry["language"],
-                    "language_code": entry["language_code"],
-                    "bundled": bool(entry.get("bundled", False)),
-                    "install_mode": entry.get("install_mode"),
-                    "license_status": entry.get("license_status"),
-                    "source": entry.get("source"),
-                    "validation": entry.get("validation"),
-                    "installed": installed,
-                    "can_select": installed,
-                    "can_download": bool(entry.get("install_mode") == "direct_download" and not installed),
-                    "can_remove": bool(installed and not entry.get("bundled", False)),
-                    "can_set_default": installed,
-                    "status_label": (
-                        "Built in"
-                        if entry["id"] == "asv"
-                        else "Installed locally"
-                        if installed
-                        else entry.get("status_label")
-                        if entry.get("status_label")
-                        else "Download from GitHub"
-                        if entry.get("install_mode") == "direct_download"
-                        else "License required"
-                    ),
-                    "third_party": bool(entry.get("third_party", False)),
-                    "third_party_notice": entry.get("third_party_notice") or "",
+                    "id": translation_id,
+                    "name": name,
+                    "abbreviation": abbreviation,
+                    "language": translation.get("language") or "en",
+                    "language_code": translation.get("language") or "en",
+                    "bundled": bundled,
+                    "install_mode": "bundled" if bundled else "installed",
+                    "license_status": (installation.get("metadata") or {}).get("license_status"),
+                    "source": registry.get("source") or translation.get("source") or "",
+                    "installed": True,
+                    "default": translation_id == default_translation,
+                    "can_select": True,
+                    "can_download": False,
+                    "can_remove": not bundled,
+                    "can_set_default": True,
+                    "status_label": "Built in" if bundled else "Installed locally",
+                    "third_party": bool(installation.get("third_party", False)),
+                    "third_party_notice": "",
+                    "created_date": registry.get("created_date"),
                 }
             )
         return {
             "translations": translations,
             "default_translation": default_translation,
-            "catalog": sections["catalog"],
-            "sections": sections["sections"],
+            "catalog": translations,
+            "sections": {
+                "installed": translations,
+            },
         }
 
     @web_app.get("/api/translations", response_class=JSONResponse)
     async def translations_index() -> JSONResponse:
+        return JSONResponse(_translation_state_payload())
+
+    @web_app.get("/api/translations/installed", response_class=JSONResponse)
+    async def translations_installed() -> JSONResponse:
         return JSONResponse(_translation_state_payload())
 
     @web_app.get("/api/translations/catalog", response_class=JSONResponse)
@@ -308,15 +307,10 @@ def create_app() -> FastAPI:
 
     @web_app.get("/api/translations/{translation_id}", response_class=JSONResponse)
     async def translation_detail(translation_id: str) -> JSONResponse:
-        entry = catalog_by_id().get(translation_id.lower())
-        if not entry:
-            return JSONResponse({"error": "unknown translation"}, status_code=404)
-        return JSONResponse(
-            {
-                "translation": entry,
-                "installation": get_translation_installation(translation_id),
-            }
-        )
+        installation = get_translation_installation(translation_id)
+        if not installation.get("installed"):
+            return JSONResponse({"error": "translation is not installed"}, status_code=404)
+        return JSONResponse({"translation": installation.get("translation"), "installation": installation})
 
     @web_app.post("/api/translations/{translation_id}/download", response_class=JSONResponse)
     async def translation_download(translation_id: str) -> JSONResponse:
@@ -373,22 +367,27 @@ def create_app() -> FastAPI:
     @web_app.post("/api/translations/{translation_id}/import", response_class=JSONResponse)
     async def translation_import_upload(
         translation_id: str,
+        translation_name: str = Form(""),
         confirmed: bool = Form(False),
         file: UploadFile = File(...),
     ) -> JSONResponse:
         source_filename = file.filename or f"{translation_id}.xml"
+        supplied_name = translation_name.strip()
+        if not supplied_name:
+            return JSONResponse({"error": "translation name is required"}, status_code=400)
         try:
+            normalized_id = normalize_translation_id(translation_id)
             notice = import_translation(
-                translation_id,
+                normalized_id,
                 confirmed=confirmed,
                 source_filename=source_filename,
             )
             content = await file.read()
             installed = save_imported_xml_translation(
-                translation_id,
+                normalized_id,
                 content,
                 source_filename=source_filename,
-                translation_name=catalog_by_id().get(translation_id.lower(), {}).get("name"),
+                translation_name=supplied_name,
             )
             return JSONResponse(
                 {

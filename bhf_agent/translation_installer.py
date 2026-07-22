@@ -25,6 +25,10 @@ from .translation_storage import (
     translations_root,
     write_json_atomic,
 )
+from .translation_registry import (
+    mark_translation_removed,
+    upsert_translation,
+)
 
 
 ALLOWLISTED_DOWNLOAD_HOSTS = {"raw.githubusercontent.com"}
@@ -103,17 +107,16 @@ def get_translation_installation(translation_id: str) -> dict[str, Any]:
 
 
 def list_installed_translations() -> list[dict[str, Any]]:
-    root = translations_root()
-    entries = [get_translation_installation("asv")]
-    if root.exists():
-        for path in sorted(root.glob("*.metadata.json")):
-            if path.name == "asv.metadata.json":
-                continue
-            translation_id = path.name[: -len(".metadata.json")]
-            try:
-                entries.append(get_translation_installation(translation_id))
-            except TranslationStorageError:
-                continue
+    from .translation_registry import list_installed_registry_translations
+
+    entries = []
+    for row in list_installed_registry_translations():
+        try:
+            installation = get_translation_installation(str(row["id"]))
+        except TranslationStorageError:
+            continue
+        installation["registry"] = row
+        entries.append(installation)
     return entries
 
 
@@ -127,6 +130,7 @@ def remove_translation(translation_id: str) -> bool:
             path.unlink()
             removed = True
     if removed:
+        mark_translation_removed(normalized)
         from .bible import clear_bible_search_cache
 
         clear_bible_search_cache()
@@ -204,6 +208,12 @@ def install_xml_translation(
         "private_local_install": source_type == "manual_xml_import",
     }
     write_json_atomic(metadata_path, metadata)
+    upsert_translation(
+        normalized,
+        name=validation["translation"]["name"],
+        source=source_url or source_type,
+        installed=True,
+    )
     from .bible import clear_bible_search_cache
 
     clear_bible_search_cache()
