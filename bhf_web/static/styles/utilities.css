@@ -396,6 +396,7 @@ code {
   position: fixed;
   z-index: 20;
   min-width: 180px;
+  max-width: calc(100vw - 16px);
   border: 1px solid #b9c2cc;
   border-radius: 8px;
   padding: 5px;
@@ -445,7 +446,8 @@ code {
   left: calc(100% + 6px);
   top: 0;
   display: none;
-  min-width: 210px;
+  min-width: min(210px, calc(100vw - 32px));
+  max-width: calc(100vw - 32px);
   max-height: min(72vh, 520px);
   overflow-y: auto;
   border: 1px solid #b9c2cc;
@@ -744,33 +746,22 @@ html[data-theme="dark"] .app-dock {
   }
 
   .context-menu {
-    left: 8px !important;
-    right: 8px;
-    top: auto !important;
-    bottom: calc(var(--app-dock-height) + 12px + env(safe-area-inset-bottom));
     z-index: 10004;
-    width: auto;
-    min-width: min(260px, calc(100vw - 16px));
-    max-height: min(72dvh, calc(100dvh - var(--app-dock-height) - 24px));
-    overflow-y: auto;
+    min-width: min(170px, calc(100vw - 16px));
   }
 
   .context-menu-submenu {
-    position: static;
-    min-width: 0;
-    max-height: none;
-    margin-top: 2px;
-    margin-bottom: 4px;
-    border-color: #dce4eb;
-    box-shadow: none;
+    left: calc(100% + 4px);
+    min-width: min(190px, calc(100vw - 32px));
+    max-height: min(62dvh, calc(100dvh - var(--app-dock-height) - 32px));
   }
 
   .context-menu.opens-left .context-menu-submenu {
-    right: auto;
+    right: calc(100% + 4px);
   }
 
   .context-menu-section:hover > .context-menu-submenu {
-    display: none;
+    display: block;
   }
 
   .context-menu-section.is-open > .context-menu-submenu {
@@ -778,7 +769,7 @@ html[data-theme="dark"] .app-dock {
   }
 
   .context-menu-trigger::after {
-    content: "⌄";
+    content: "›";
   }
 
   .verse-actions-button {

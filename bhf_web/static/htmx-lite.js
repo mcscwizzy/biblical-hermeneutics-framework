@@ -252,6 +252,7 @@ async function initializeReader() {
   const searchResultsBody = document.querySelector("#reader-search-results-body");
   if (contextMenu) {
     contextMenu.addEventListener("click", handleContextMenuAction);
+    contextMenu.addEventListener("mouseover", handleContextSubmenuHover);
   }
   if (searchForm) {
     searchForm.addEventListener("submit", submitBibleSearch);
@@ -2272,14 +2273,29 @@ function showContextMenu(x, y, context) {
 
 function positionContextMenu(menu, x, y) {
   const rect = menu.getBoundingClientRect();
-  const submenuWidth = 230;
-  const left = Math.min(x, window.innerWidth - rect.width - 8);
+  const isNarrowViewport = window.matchMedia("(max-width: 680px)").matches;
+  const submenuWidth = isNarrowViewport ? 190 : 230;
+  const submenuGap = isNarrowViewport ? 4 : 6;
+  const menuWidth = Math.min(rect.width, window.innerWidth - 16);
+  const left = Math.min(x, window.innerWidth - menuWidth - 8);
   const top = Math.min(y, window.innerHeight - rect.height - 8);
-  const clampedLeft = Math.max(8, left);
+  let clampedLeft = Math.max(8, left);
   const clampedTop = Math.max(8, top);
+  let opensLeft = false;
+  const rightFlyoutFits = clampedLeft + menuWidth + submenuGap + submenuWidth <= window.innerWidth - 8;
+  const leftFlyoutFits = clampedLeft - submenuGap - submenuWidth >= 8;
+  if (!rightFlyoutFits && leftFlyoutFits) {
+    opensLeft = true;
+  } else if (!rightFlyoutFits && !leftFlyoutFits) {
+    const pairedWidth = menuWidth + submenuGap + submenuWidth;
+    if (pairedWidth <= window.innerWidth - 16) {
+      opensLeft = x > window.innerWidth / 2;
+      clampedLeft = opensLeft ? window.innerWidth - menuWidth - 8 : 8;
+    }
+  }
   menu.style.left = `${clampedLeft}px`;
   menu.style.top = `${clampedTop}px`;
-  menu.classList.toggle("opens-left", clampedLeft + rect.width + submenuWidth > window.innerWidth);
+  menu.classList.toggle("opens-left", opensLeft);
 }
 
 function resetContextSubmenus(menu = document.querySelector("#reader-context-menu")) {
@@ -2294,16 +2310,22 @@ function resetContextSubmenus(menu = document.querySelector("#reader-context-men
   });
 }
 
-function toggleContextSubmenu(trigger) {
+function openContextSubmenu(trigger) {
   const section = trigger.closest(".context-menu-section");
   const menu = trigger.closest(".context-menu");
-  if (!section || !menu) {
+  if (!section || !menu || section.classList.contains("is-open")) {
     return;
   }
-  const willOpen = !section.classList.contains("is-open");
   resetContextSubmenus(menu);
-  section.classList.toggle("is-open", willOpen);
-  trigger.setAttribute("aria-expanded", willOpen ? "true" : "false");
+  section.classList.add("is-open");
+  trigger.setAttribute("aria-expanded", "true");
+}
+
+function handleContextSubmenuHover(event) {
+  const submenuTrigger = event.target.closest("[data-context-submenu]");
+  if (submenuTrigger) {
+    openContextSubmenu(submenuTrigger);
+  }
 }
 
 function setContextLabel(action, label) {
@@ -2318,7 +2340,7 @@ async function handleContextMenuAction(event) {
   if (submenuTrigger) {
     event.preventDefault();
     event.stopPropagation();
-    toggleContextSubmenu(submenuTrigger);
+    openContextSubmenu(submenuTrigger);
     return;
   }
   const button = event.target.closest("[data-context-action]");

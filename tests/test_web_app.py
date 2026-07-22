@@ -364,6 +364,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("function wireWordStudyChoiceControls", script)
         self.assertIn("word_position: studyAction.wordPosition", script)
         self.assertIn("surface_form: studyAction.surfaceForm", script)
+        self.assertIn("handleContextSubmenuHover", script)
+        self.assertIn("openContextSubmenu", script)
 
         study_script = Path("bhf_web/static/htmx-study-panels.js").read_text(encoding="utf-8")
         self.assertIn("/api/highlights", study_script)
@@ -602,8 +604,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("translation-import-button", index_html)
         self.assertIn("Loading translations...", index_html)
         self.assertIn('name="reader_translation"', index_html)
-        self.assertIn("style.css') }}?v=20260721a", index_html)
-        self.assertIn("htmx-lite.js') }}?v=20260717b", index_html)
+        self.assertIn("style.css') }}?v=20260721b", index_html)
+        self.assertIn("htmx-lite.js') }}?v=20260721a", index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
@@ -653,6 +655,10 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn("max-height: 50vh;", style)
         self.assertIn("body.workspace-expanded .workspace-pane[data-workspace-pane=\"ask\"] {\n    overflow-y: auto;", style)
         self.assertIn("body.workspace-expanded .answer-panel {\n    max-height: none;\n    height: auto;\n    overflow: visible;", style)
+        self.assertIn(".context-menu-submenu {\n  position: absolute;", style)
+        self.assertIn(".context-menu-section:hover > .context-menu-submenu", style)
+        self.assertNotIn(".context-menu-submenu {\n    position: static;", style)
+        self.assertNotIn(".context-menu-section:hover > .context-menu-submenu {\n    display: none;", style)
         self.assertIn(".journey-metadata-chip", style)
         self.assertIn(".journey-passage-pill--button", style)
         self.assertIn(".journey-layers-card", style)
