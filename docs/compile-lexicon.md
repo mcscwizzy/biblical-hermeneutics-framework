@@ -65,6 +65,36 @@ Greek: 5503 entries imported
 Database: framework/lexical/database/lexicon.sqlite
 ```
 
+## Import Verse Tokens
+
+Word Study can resolve a whole verse only after original-language verse tokens
+are imported into the same runtime database. For Hebrew Bible coverage, use the
+Open Scriptures Hebrew Bible OSIS files from `openscriptures/morphhb`:
+
+```bash
+git clone https://github.com/openscriptures/morphhb sources/openscriptures/morphhb
+git -C sources/openscriptures/morphhb rev-parse HEAD
+```
+
+Import one or more OSIS book files, recording the pinned revision:
+
+```bash
+python3 -m framework.lexical.tools.import_verse_tokens \
+  --database framework/lexical/database/lexicon.sqlite \
+  --oshb-osis sources/openscriptures/morphhb/wlc/Gen.xml \
+  --source-name OSHB \
+  --source-url https://github.com/openscriptures/morphhb \
+  --revision <pinned-commit-sha> \
+  --license "CC BY 4.0" \
+  --attribution "Open Scriptures Hebrew Bible Project"
+```
+
+Use `--rebuild-tokens` when replacing previously imported token rows. The tool
+also accepts TSV files through `--verse-words-tsv` and `--word-forms-tsv`.
+Verse-word TSV exports must include `book`, `chapter`, `verse`,
+`word_position`, `surface_form`, and either `language`, `lemma`, or a prefixed
+`strongs_number`.
+
 ## Verify
 
 Validate SQLite integrity and required tables:
@@ -108,3 +138,6 @@ sources/openscriptures/strongs/greek/StrongsGreekDictionaryXML_1.4/strongsgreek.
 Do not replace missing lexical data with LLM guesses. If the database is
 missing or incomplete, Word Study should report deterministic lexical data as
 unavailable.
+
+If Word Study for a full verse reports multiple possible words, the token layer
+is working; select one original-language token to run the specific word study.

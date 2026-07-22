@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from framework.lexical.models import LexicalEntry as StandaloneLexicalEntry
+from framework.lexical.models import WordOccurrence as StandaloneWordOccurrence
 from framework.lexical.repository import LexicalRepository as StandaloneLexicalRepository
 
 from .models import LexicalEntry, WordOccurrence
@@ -79,7 +80,10 @@ class LexiconRepository:
 
     def lookup_verse_words(self, book: str, chapter: int, verse: int) -> list[WordOccurrence]:
         if not self._legacy:
-            return []
+            return [
+                _occurrence_from_standalone(row)
+                for row in self._backend.lookup_verse_words(book, chapter, verse)
+            ]
         rows = self._legacy_connection_or_raise().execute(
             """
             SELECT * FROM verse_words
@@ -98,7 +102,8 @@ class LexiconRepository:
         position: int,
     ) -> WordOccurrence | None:
         if not self._legacy:
-            return None
+            occurrence = self._backend.lookup_word_at_position(book, chapter, verse, position)
+            return _occurrence_from_standalone(occurrence) if occurrence else None
         row = self._legacy_connection_or_raise().execute(
             """
             SELECT * FROM verse_words
@@ -116,8 +121,13 @@ class LexiconRepository:
         lemma: str,
         limit: int = 5,
     ) -> list[WordOccurrence]:
-        if not self._legacy or limit <= 0:
+        if limit <= 0:
             return []
+        if not self._legacy:
+            return [
+                _occurrence_from_standalone(row)
+                for row in self._backend.find_occurrences(language, lemma, limit=limit)
+            ]
         rows = self._legacy_connection_or_raise().execute(
             """
             SELECT * FROM verse_words
@@ -268,6 +278,24 @@ def _occurrence_from_entry(entry: StandaloneLexicalEntry) -> WordOccurrence:
         transliteration=entry.transliteration,
         source=entry.source,
         source_word_id=str(entry.id),
+    )
+
+
+def _occurrence_from_standalone(entry: StandaloneWordOccurrence) -> WordOccurrence:
+    return WordOccurrence(
+        book=entry.book,
+        chapter=entry.chapter,
+        verse=entry.verse,
+        position=entry.position,
+        language=entry.language,
+        surface_form=entry.surface_form,
+        lemma=entry.lemma,
+        strongs_number=entry.strongs_number,
+        morphology=dict(entry.morphology),
+        transliteration=entry.transliteration,
+        morphology_code=entry.morphology_code,
+        source=entry.source,
+        source_word_id=entry.source_word_id,
     )
 
 

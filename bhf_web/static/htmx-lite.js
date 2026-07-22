@@ -2496,7 +2496,9 @@ function renderWordStudyResult(result) {
     : "";
   const bodyHtml = study.status === "ambiguous"
     ? renderWordStudyAmbiguity(study)
-    : renderWordStudyComplete(study);
+    : study.status === "complete"
+      ? renderWordStudyComplete(study)
+      : renderWordStudyUnavailable(study);
   return `
     <article class="answer deterministic-study-result word-study-result" data-deterministic-study-result>
       <header class="answer-header">
@@ -2561,6 +2563,19 @@ function renderWordStudyAmbiguity(study) {
         `).join("")}
       </ol>
     </section>
+  `;
+}
+
+function renderWordStudyUnavailable(study) {
+  const guardrails = Array.isArray(study.guardrails) ? study.guardrails.filter(Boolean) : [];
+  return `
+    <section class="word-study-reader">
+      <p class="empty">${escapeHtml(study.message || "No deterministic lexical data was found for this word study.")}</p>
+    </section>
+    <details class="word-study-scholar">
+      <summary>Scholar View</summary>
+      ${guardrails.length ? `<section><h3>Safeguards</h3><ul>${guardrails.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section>` : ""}
+    </details>
   `;
 }
 

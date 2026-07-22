@@ -57,6 +57,65 @@ CREATE INDEX idx_lexical_entries_language_lemma
     ON lexical_entries(language, normalized_lemma);
 CREATE INDEX idx_lexical_entries_language_transliteration
     ON lexical_entries(language, normalized_transliteration);
+
+CREATE TABLE word_forms (
+    id INTEGER PRIMARY KEY,
+    language TEXT NOT NULL CHECK (language IN ('hebrew', 'greek', 'aramaic')),
+    surface_form TEXT NOT NULL,
+    normalized_form TEXT NOT NULL,
+    lemma TEXT NOT NULL,
+    normalized_lemma TEXT NOT NULL,
+    transliteration TEXT,
+    normalized_transliteration TEXT,
+    strongs_number TEXT,
+    morphology_code TEXT,
+    morphology_json TEXT NOT NULL DEFAULT '{}',
+    lexicon_entry_id INTEGER,
+    source TEXT,
+    source_word_id TEXT,
+    FOREIGN KEY (lexicon_entry_id) REFERENCES lexical_entries(id) ON DELETE SET NULL,
+    UNIQUE (source, source_word_id)
+);
+
+CREATE TABLE verse_words (
+    id INTEGER PRIMARY KEY,
+    book TEXT NOT NULL,
+    chapter INTEGER NOT NULL,
+    verse INTEGER NOT NULL,
+    word_position INTEGER NOT NULL,
+    source_word_id TEXT,
+    language TEXT NOT NULL CHECK (language IN ('hebrew', 'greek', 'aramaic')),
+    surface_form TEXT NOT NULL,
+    normalized_form TEXT NOT NULL,
+    lemma TEXT NOT NULL,
+    normalized_lemma TEXT NOT NULL,
+    transliteration TEXT,
+    normalized_transliteration TEXT,
+    strongs_number TEXT,
+    morphology_code TEXT,
+    morphology_json TEXT NOT NULL DEFAULT '{}',
+    lexicon_entry_id INTEGER,
+    source TEXT,
+    FOREIGN KEY (lexicon_entry_id) REFERENCES lexical_entries(id) ON DELETE SET NULL,
+    UNIQUE (book, chapter, verse, word_position, language)
+);
+
+CREATE INDEX idx_word_forms_language_lemma
+    ON word_forms(language, normalized_lemma);
+CREATE INDEX idx_word_forms_strongs
+    ON word_forms(strongs_number);
+CREATE INDEX idx_word_forms_source_word
+    ON word_forms(source_word_id);
+CREATE INDEX idx_verse_words_reference
+    ON verse_words(book, chapter, verse);
+CREATE INDEX idx_verse_words_reference_position
+    ON verse_words(book, chapter, verse, word_position);
+CREATE INDEX idx_verse_words_strongs
+    ON verse_words(strongs_number);
+CREATE INDEX idx_verse_words_language_lemma
+    ON verse_words(language, normalized_lemma);
+CREATE INDEX idx_verse_words_source_word
+    ON verse_words(source_word_id);
 """
 
 DEFAULT_OUTPUT = Path(__file__).resolve().parents[1] / "database" / "lexicon.sqlite"
@@ -157,7 +216,7 @@ def _write_database(path: Path, records: list[dict[str, Any]]) -> None:
                     _normalize_transliteration(record.get("transliteration")),
                 ),
             )
-        connection.execute("PRAGMA user_version = 1")
+        connection.execute("PRAGMA user_version = 2")
         connection.commit()
     finally:
         connection.close()

@@ -42,6 +42,12 @@ compact record containing the lexical fields and provenance. Missing databases
 or missing entries return `None` from `lookup_word`; callers should treat that
 as unavailable data rather than ask the model to invent a definition.
 
+Whole-passage Word Study also needs verse-token rows in the same database. Use
+`python -m framework.lexical.tools.import_verse_tokens` to import OSHB OSIS
+files or normalized TSV exports into `verse_words` and `word_forms`. Without
+that token layer, the runtime can answer explicit Strong's/lemma requests but
+cannot determine which original-language word a verse-level action should use.
+
 ## Agent integration
 
 When BHF detects a word-study request with an explicit Hebrew/Greek target or

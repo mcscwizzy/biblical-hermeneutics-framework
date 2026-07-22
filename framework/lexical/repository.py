@@ -2,11 +2,12 @@
 
 from __future__ import annotations
 
+import json
 import sqlite3
 import threading
 from pathlib import Path
 
-from .models import LexicalEntry
+from .models import LexicalEntry, WordOccurrence
 
 
 class LexicalRepository:
@@ -18,6 +19,7 @@ class LexicalRepository:
         self._local = threading.local()
         self._connections: list[sqlite3.Connection] = []
         self._lock = threading.Lock()
+        self._table_cache: dict[str, bool] = {}
 
     def close(self) -> None:
         with self._lock:
@@ -99,6 +101,61 @@ class LexicalRepository:
         ).fetchall()
         return [dict(row) for row in rows]
 
+    def lookup_verse_words(self, book: str, chapter: int, verse: int) -> list[WordOccurrence]:
+        if not self._has_table("verse_words"):
+            return []
+        rows = self._connection.execute(
+            """
+            SELECT *
+            FROM verse_words
+            WHERE book = ? AND chapter = ? AND verse = ?
+            ORDER BY word_position, language, source_word_id
+            """,
+            (str(book).strip(), int(chapter), int(verse)),
+        ).fetchall()
+        return [_occurrence_from_row(row) for row in rows]
+
+    def lookup_word_at_position(
+        self,
+        book: str,
+        chapter: int,
+        verse: int,
+        position: int,
+    ) -> WordOccurrence | None:
+        if not self._has_table("verse_words"):
+            return None
+        row = self._connection.execute(
+            """
+            SELECT *
+            FROM verse_words
+            WHERE book = ? AND chapter = ? AND verse = ? AND word_position = ?
+            ORDER BY language, source_word_id
+            LIMIT 1
+            """,
+            (str(book).strip(), int(chapter), int(verse), int(position)),
+        ).fetchone()
+        return _occurrence_from_row(row) if row else None
+
+    def find_occurrences(
+        self,
+        language: str,
+        lemma: str,
+        limit: int = 5,
+    ) -> list[WordOccurrence]:
+        if limit <= 0 or not self._has_table("verse_words"):
+            return []
+        rows = self._connection.execute(
+            """
+            SELECT *
+            FROM verse_words
+            WHERE language = ? AND normalized_lemma = ?
+            ORDER BY book, chapter, verse, word_position
+            LIMIT ?
+            """,
+            (str(language).strip().lower(), _normalize_form(lemma), int(limit)),
+        ).fetchall()
+        return [_occurrence_from_row(row) for row in rows]
+
     @property
     def _connection(self) -> sqlite3.Connection:
         connection = getattr(self._local, "connection", None)
@@ -113,6 +170,15 @@ class LexicalRepository:
             with self._lock:
                 self._connections.append(connection)
         return connection
+
+    def _has_table(self, name: str) -> bool:
+        if name not in self._table_cache:
+            row = self._connection.execute(
+                "SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = ?",
+                (name,),
+            ).fetchone()
+            self._table_cache[name] = row is not None
+        return self._table_cache[name]
 
 
 def _entry_from_row(row: sqlite3.Row) -> LexicalEntry:
@@ -137,9 +203,37 @@ def _entry_from_row(row: sqlite3.Row) -> LexicalEntry:
     )
 
 
+def _occurrence_from_row(row: sqlite3.Row) -> WordOccurrence:
+    return WordOccurrence(
+        book=str(row["book"]),
+        chapter=int(row["chapter"]),
+        verse=int(row["verse"]),
+        position=int(row["word_position"]),
+        language=str(row["language"]),
+        surface_form=str(row["surface_form"]),
+        lemma=str(row["lemma"]),
+        strongs_number=_optional(row["strongs_number"]),
+        morphology=_json_object(row["morphology_json"]),
+        transliteration=_optional(row["transliteration"]),
+        morphology_code=_optional(row["morphology_code"]),
+        source=_optional(row["source"]),
+        source_word_id=_optional(row["source_word_id"]),
+    )
+
+
 def _optional(value: object) -> str | None:
     text = str(value or "").strip()
     return text or None
+
+
+def _json_object(value: object) -> dict[str, object]:
+    if not value:
+        return {}
+    try:
+        parsed = json.loads(str(value))
+    except (TypeError, ValueError):
+        return {}
+    return parsed if isinstance(parsed, dict) else {}
 
 
 def _normalize_form(value: str) -> str:

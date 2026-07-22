@@ -14,6 +14,7 @@ from framework.canonical_library import CanonicalLibrary
 from framework.canonical_library.database_builder import build_database
 from framework.canonical_library.lexicon_importer import import_normalized_lexicon_file
 from framework.lexical.tools.build_lexicon_database import build_lexicon_database
+from framework.lexical.tools.import_verse_tokens import import_verse_tokens, read_oshb_osis
 
 from tests.canonical_library.helpers import make_object, write_library
 
@@ -147,6 +148,60 @@ class StudyActionRouterTests(unittest.TestCase):
             self.assertEqual(result.lemma, "חָכְמָה")
             self.assertEqual(result.strongs_number, "H2451")
             self.assertEqual(result.lexical_entries[0].source, "Open Scriptures Hebrew Lexicon")
+
+    def test_word_study_service_resolves_genesis_from_standalone_verse_tokens(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / "hebrew.xml"
+            source.write_text(
+                """<lexicon>
+                  <entry id="H7225">
+                    <lemma>רֵאשִׁית</lemma>
+                    <transliteration>reshith</transliteration>
+                    <definition>Beginning, first, or chief part.</definition>
+                    <part_of_speech>noun</part_of_speech>
+                  </entry>
+                </lexicon>""",
+                encoding="utf-8",
+            )
+            database = root / "lexicon.sqlite"
+            build_lexicon_database(hebrew=source, output=database)
+            osis = root / "Gen.xml"
+            osis.write_text(
+                """<?xml version="1.0" encoding="UTF-8"?>
+                <osis xmlns="http://www.bibletechnologies.net/2003/OSIS/namespace">
+                  <osisText>
+                    <div type="book" osisID="Gen">
+                      <chapter osisID="Gen.1">
+                        <verse osisID="Gen.1.1">
+                          <w lemma="b/7225" n="1.0" morph="HR/Ncfsa" id="01xeN">בְּ/רֵאשִׁ֖ית</w>
+                        </verse>
+                      </chapter>
+                    </div>
+                  </osisText>
+                </osis>""",
+                encoding="utf-8",
+            )
+            import_verse_tokens(
+                database,
+                source={
+                    "name": "test-oshb",
+                    "revision": "fixture",
+                    "license": "CC BY 4.0",
+                    "attribution": "Fixture OSHB-style data.",
+                },
+                verse_words=read_oshb_osis(osis),
+            )
+            service = WordStudyService(database_path=database)
+
+            result = service.build_word_study(
+                {"book": "Genesis", "chapter": 1, "start_verse": 1, "reference": "Genesis 1:1"}
+            )
+
+            self.assertEqual(result.status, "complete")
+            self.assertEqual(result.surface_form, "בְּ/רֵאשִׁ֖ית")
+            self.assertEqual(result.strongs_number, "H7225")
+            self.assertEqual(result.lemma, "רֵאשִׁית")
 
     def test_word_study_action_uses_sqlite_lexical_result(self):
         with tempfile.TemporaryDirectory() as tmp:

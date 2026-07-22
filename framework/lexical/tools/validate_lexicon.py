@@ -29,7 +29,7 @@ def validate_database(path: str | Path) -> dict[str, Any]:
             str(row["name"])
             for row in connection.execute("SELECT name FROM sqlite_master WHERE type='table'")
         }
-        required_tables = {"lexical_entries", "lexical_sources"}
+        required_tables = {"lexical_entries", "lexical_sources", "word_forms", "verse_words"}
         missing_tables = required_tables - tables
         if missing_tables:
             raise ValueError("missing lexical tables: " + ", ".join(sorted(missing_tables)))

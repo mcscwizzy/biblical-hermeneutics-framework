@@ -54,3 +54,41 @@ class ImportStats:
     entries_imported: int
     source: str
 
+
+@dataclass(frozen=True)
+class WordOccurrence:
+    book: str
+    chapter: int
+    verse: int
+    position: int
+    language: str
+    surface_form: str
+    lemma: str
+    strongs_number: str | None
+    morphology: dict[str, Any]
+    transliteration: str | None
+    morphology_code: str | None
+    source: str | None
+    source_word_id: str | None
+
+    @property
+    def reference(self) -> str:
+        return f"{self.book} {self.chapter}:{self.verse}"
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "book": self.book,
+            "chapter": self.chapter,
+            "verse": self.verse,
+            "position": self.position,
+            "language": self.language,
+            "surface_form": self.surface_form,
+            "lemma": self.lemma,
+            "strongs_number": self.strongs_number,
+            "morphology": self.morphology,
+            "transliteration": self.transliteration,
+            "morphology_code": self.morphology_code,
+            "source": self.source,
+            "source_word_id": self.source_word_id,
+            "reference": self.reference,
+        }
