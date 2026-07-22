@@ -122,26 +122,13 @@ the selected installed translation.
 
 BHF also has an offline Greek/Hebrew lexical database layer for deterministic
 word-study data. The runtime database is generated locally at
-`framework/lexical/database/lexicon.sqlite` from inspected Open Scriptures XML:
-
-```bash
-mkdir -p sources/openscriptures
-git clone https://github.com/openscriptures/HebrewLexicon sources/openscriptures/HebrewLexicon
-git clone https://github.com/openscriptures/strongs sources/openscriptures/strongs
-find sources/openscriptures -name '*.xml'
-
-python -m framework.lexical.tools.build_lexicon_database \
-  --hebrew <path-to-open-scriptures-hebrew-xml> \
-  --greek <path-to-open-scriptures-greek-xml> \
-  --output framework/lexical/database/lexicon.sqlite
-python -m framework.lexical.tools.smoke_lexicon \
-  --database framework/lexical/database/lexicon.sqlite
-```
+`framework/lexical/database/lexicon.sqlite` from inspected Open Scriptures XML.
 
 Lexical data assists interpretation; it does not replace context, grammar,
 syntax, genre, or careful exegesis. If the database is missing, Word Study
 must report unavailable deterministic lexical data rather than substitute LLM
-guesses. See
+guesses. Build and verify the local database with
+[`docs/compile-lexicon.md`](docs/compile-lexicon.md). See also
 [`docs/lexicon-architecture.md`](docs/lexicon-architecture.md),
 [`docs/lexicon-sources.md`](docs/lexicon-sources.md), and
 [`docs/word-study.md`](docs/word-study.md).

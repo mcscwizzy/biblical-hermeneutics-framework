@@ -4,7 +4,7 @@ BHF word study support is being built around deterministic Greek and Hebrew
 data. The model is an explanation layer only; lexical source data comes from
 the local SQLite database.
 
-## Current Phase
+## Current Runtime
 
 The deterministic Word Study action now uses the standalone lexical SQLite
 database at `framework/lexical/database/lexicon.sqlite` through an application
@@ -63,47 +63,10 @@ diagnostic with the expected path and build command. Word Study should treat
 lexical data as unavailable in that state; it must not invent Hebrew or Greek
 definitions, Strong's numbers, or lexical ranges from model memory.
 
-Developer onboarding flow:
-
-```text
-download sources
-        |
-        v
-run importer
-        |
-        v
-generate lexicon.sqlite
-        |
-        v
-run Word Study
-```
-
-Download inspected Open Scriptures sources locally, find the XML dictionary
-exports, and build the runtime database:
-
-```bash
-mkdir -p sources/openscriptures
-git clone https://github.com/openscriptures/HebrewLexicon sources/openscriptures/HebrewLexicon
-git clone https://github.com/openscriptures/strongs sources/openscriptures/strongs
-find sources/openscriptures -name '*.xml'
-
-python -m framework.lexical.tools.build_lexicon_database \
-  --hebrew <path-to-open-scriptures-hebrew-xml> \
-  --greek <path-to-open-scriptures-greek-xml> \
-  --output framework/lexical/database/lexicon.sqlite
-```
-
-Then verify the generated runtime database:
-
-```bash
-python -m framework.lexical.tools.validate_lexicon \
-  framework/lexical/database/lexicon.sqlite
-python -m framework.lexical.tools.smoke_lexicon \
-  --database framework/lexical/database/lexicon.sqlite
-```
-
-The smoke test intentionally fails clearly when the database is missing and
-prints the import command needed to create it in the runtime location.
+For download, build, and verification commands, see
+[`compile-lexicon.md`](compile-lexicon.md). The smoke test intentionally fails
+clearly when the database is missing and prints the import command needed to
+create it in the runtime location.
 
 Older CKL lexical source-manifest tooling remains documented in
 `docs/lexicon-sources.md` for legacy fixtures and broader source imports:

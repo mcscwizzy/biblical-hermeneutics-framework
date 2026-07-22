@@ -10,43 +10,8 @@ Runtime expects the generated database at:
 framework/lexical/database/lexicon.sqlite
 ```
 
-Developer flow:
-
-```text
-download sources
-        |
-        v
-run importer
-        |
-        v
-generate lexicon.sqlite
-        |
-        v
-run Word Study
-```
-
-Build it from local Open Scriptures XML with:
-
-```bash
-mkdir -p sources/openscriptures
-git clone https://github.com/openscriptures/HebrewLexicon sources/openscriptures/HebrewLexicon
-git clone https://github.com/openscriptures/strongs sources/openscriptures/strongs
-find sources/openscriptures -name '*.xml'
-
-python -m framework.lexical.tools.build_lexicon_database \
-  --hebrew <path-to-open-scriptures-hebrew-xml> \
-  --greek <path-to-open-scriptures-greek-xml> \
-  --output framework/lexical/database/lexicon.sqlite
-```
-
-Validate an existing database with:
-
-```bash
-python -m framework.lexical.tools.validate_lexicon \
-  framework/lexical/database/lexicon.sqlite
-python -m framework.lexical.tools.smoke_lexicon \
-  --database framework/lexical/database/lexicon.sqlite
-```
+Build, validate, and smoke test it with
+[`docs/compile-lexicon.md`](../../../docs/compile-lexicon.md).
 
 Do not place raw XML, downloaded dictionaries, or other source exports in
 this directory. If `lexicon.sqlite` is missing, Word Study must report

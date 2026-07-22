@@ -12,54 +12,13 @@ must confirm the source license and attribution before importing them. The
 importer preserves source name, license, attribution, revision, source URL, and
 import time in SQLite. The generated database is ignored by Git.
 
-Open Scriptures dictionaries can be imported with:
-
-```bash
-python -m framework.lexical.tools.build_lexicon_database \
-  --hebrew ~/sources/openscriptures/hebrew.xml \
-  --greek ~/sources/openscriptures/greek.xml
-```
-
 The default output is `framework/lexical/database/lexicon.sqlite`; use
 `--output` for a deployment-specific location. The command parses XML only at
 build time, validates required fields, writes atomically, and prints Hebrew
 and Greek import counts.
 
-Fresh checkout onboarding:
-
-```text
-download sources
-        |
-        v
-run importer
-        |
-        v
-generate lexicon.sqlite
-        |
-        v
-run Word Study
-```
-
-Recommended local flow:
-
-```bash
-mkdir -p sources/openscriptures
-git clone https://github.com/openscriptures/HebrewLexicon sources/openscriptures/HebrewLexicon
-git clone https://github.com/openscriptures/strongs sources/openscriptures/strongs
-
-# Inspect licenses and pin revisions before treating the output as reproducible.
-find sources/openscriptures -name '*.xml'
-
-python -m framework.lexical.tools.build_lexicon_database \
-  --hebrew <path-to-open-scriptures-hebrew-xml> \
-  --greek <path-to-open-scriptures-greek-xml> \
-  --output framework/lexical/database/lexicon.sqlite
-
-python -m framework.lexical.tools.validate_lexicon \
-  framework/lexical/database/lexicon.sqlite
-python -m framework.lexical.tools.smoke_lexicon \
-  --database framework/lexical/database/lexicon.sqlite
-```
+For the current download, build, and verification flow, see
+[`docs/compile-lexicon.md`](../../docs/compile-lexicon.md).
 
 The expected default runtime file is
 `framework/lexical/database/lexicon.sqlite`. If it is missing, startup logs a
@@ -93,19 +52,8 @@ standalone runtime database with `lexicon.runtime_database_path` or the
 `BHF_LEXICAL_DATABASE_PATH` environment variable. The existing
 `lexicon.database_path` remains the CKL word-study database for compatibility.
 
-Validate a generated database with:
-
-```bash
-python -m framework.lexical.tools.validate_lexicon \
-  framework/lexical/database/lexicon.sqlite
-```
-
-Run the standalone lexical smoke test with:
-
-```bash
-python -m framework.lexical.tools.smoke_lexicon \
-  --database framework/lexical/database/lexicon.sqlite
-```
+Validate and smoke test a generated database with the commands in
+[`docs/compile-lexicon.md`](../../docs/compile-lexicon.md).
 
 ## Docker
 

@@ -2,7 +2,7 @@
 
 Audit date: 2026-07-15
 
-Scope: reflects the current runtime after phase 17; the original audit notes are preserved below for continuity.
+Scope: reflects the current runtime request path.
 
 ## Summary
 
@@ -170,14 +170,3 @@ If CKL retrieval finds only weak matches, the prompt receives a short no-strong-
 - Response cache invalidation depends on CKL inventory fingerprints, selected entry versions, prompt version, model signature, and the canonical context cache key.
 - Observability logging is intentionally summary-first so it can measure latency and cache behavior without exposing raw prompts or model text.
 - The developer retrieval inspector is debug-only and does not alter the ordinary answer payload.
-
-## Notes For The Next Phase
-
-- Phase 2 should introduce a framework-owned deterministic retrieval service that does not call a model.
-- Phase 3 should formalize CKL schema validation behind a stable schema package.
-- The main ask path should keep deterministic CKL retrieval ahead of model invocation.
-- Ordinary ask responses now contain only the final answer; developer and saved-study views remain opt-in.
-- Phase 14 developer retrieval inspector is complete.
-- Phase 15 testing coverage is complete.
-- Phase 16 rollout strategy is complete.
-- Phase 17 deterministic Bible search fallback is complete.

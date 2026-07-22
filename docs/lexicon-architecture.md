@@ -74,7 +74,7 @@ Original forms are preserved. Separate normalized search fields support:
 Normalization is conservative and should not be used to infer that two distinct
 lemmas are the same word.
 
-## Phase 1 Status
+## Implementation Status
 
 Implemented:
 

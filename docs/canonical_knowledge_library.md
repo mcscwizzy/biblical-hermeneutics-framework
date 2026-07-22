@@ -182,49 +182,49 @@ The object `type` field stays singular even when the folder name is plural.
 
 Every canonical object uses the same base schema.
 
-| Field | Type | Current phase | Intended purpose |
-| --- | --- | --- | --- |
-| `id` | string | populated | Canonical lowercase kebab-case identifier. |
-| `type` | string | populated | Supported category such as `person` or `place`. |
-| `title` | string | populated | Human-readable display name. |
-| `aliases` | array of strings | populated | Retrieval phrases and alternate names. |
-| `summary` | string | empty | Short curated summary in later phases. |
-| `historical_context` | string | empty | Historical background when scholarship is added. |
-| `ancient_near_east_context` | string | empty | Ancient Near East comparison and setting. |
-| `hebraic_worldview` | string | empty | Israelite and Jewish worldview framing when relevant. |
-| `second_temple_context` | string | empty | Second Temple Jewish background for New Testament and late Second Temple material. |
-| `canonical_context` | string | empty | How the object fits the developing biblical storyline. |
-| `later_christian_reception` | string | empty | Later Christian interpretation kept distinct from original context. |
-| `context_applicability` | object | defaulted on load | Boolean flags that tell the context builder which context layers are relevant. |
-| `literary_context` | string | empty | Literary observations and genre framing. |
-| `covenantal_significance` | string | empty | How the object relates to covenant themes. |
-| `intertextuality` | array of strings | empty | Cross-book and canonical links. |
-| `timeline` | array of strings | empty | Ordered historical or canonical timeline points. |
-| `maps` | array of strings | empty | Geographic references and map anchors. |
-| `archaeology` | array of strings | empty | Archaeological references and artifacts. |
-| `hebrew_words` | array of strings | empty | Hebrew word-study anchors. |
-| `greek_words` | array of strings | empty | Greek word-study anchors. |
-| `related_people` | array of strings | empty | Related canonical people. |
-| `related_places` | array of strings | empty | Related canonical places. |
-| `related_events` | array of strings | empty | Related canonical events. |
-| `related_objects` | array of typed relationship objects | empty | Structured canonical links to other objects. |
-| `scripture_references` | array of scripture-reference objects | empty | Structured biblical reference anchors. |
-| `cross_references` | array of strings | empty | Internal reference pointers for later use. |
-| `new_testament_connections` | array of strings | empty | NT connection pointers for later use. |
-| `interpretive_notes` | array of structured note objects | empty | Interpreter notes and cautions with optional note type, certainty, dispute status, and source IDs. Legacy strings are still accepted and normalized on load. |
-| `common_questions` | array of strings | empty | Future question prompts and FAQs. |
-| `sources` | array of source objects | empty | Structured source citations and bibliography with `id`, `source_type`, `title`, `author`, `publisher`, `year`, `locator`, `url`, `supports`, and `notes`. |
-| `importance` | integer | zero | Deterministic ranking hint for retrieval. |
-| `framework_version` | string | `1.0` | CKL framework version gate. |
-| `object_version` | string | `1` | Per-object schema version. |
-| `content_status` | string | `placeholder` | Content governance state for placeholder, draft, complete, or deprecated material. |
-| `review_status` | string | `unreviewed` | Review workflow state for the canonical object. |
-| `generated_by` | array of provenance objects | empty | AI, migration, or import provenance for how the object was created or rewritten. |
-| `edited_by` | array of strings | empty | Human or tool editor names recorded separately from review. |
-| `reviewed_by` | array of strings | empty | Human reviewers who have signed off on the object. |
-| `last_reviewed` | string or null | `null` | Most recent review date in `YYYY-MM-DD` format. |
-| `confidence` | string | `unrated` | Governance confidence label for review and publication state. |
-| `human_review_required` | boolean | `true` | Whether the record still needs human review before it can be treated as fully reviewed. |
+| Field | Type | Purpose |
+| --- | --- | --- |
+| `id` | string | Canonical lowercase kebab-case identifier. |
+| `type` | string | Supported category such as `person` or `place`. |
+| `title` | string | Human-readable display name. |
+| `aliases` | array of strings | Retrieval phrases and alternate names. |
+| `summary` | string | Short curated summary. |
+| `historical_context` | string | Historical background. |
+| `ancient_near_east_context` | string | Ancient Near East comparison and setting. |
+| `hebraic_worldview` | string | Israelite and Jewish worldview framing when relevant. |
+| `second_temple_context` | string | Second Temple Jewish background for New Testament and late Second Temple material. |
+| `canonical_context` | string | How the object fits the developing biblical storyline. |
+| `later_christian_reception` | string | Later Christian interpretation kept distinct from original context. |
+| `context_applicability` | object | Boolean flags that tell the context builder which context layers are relevant. |
+| `literary_context` | string | Literary observations and genre framing. |
+| `covenantal_significance` | string | How the object relates to covenant themes. |
+| `intertextuality` | array of strings | Cross-book and canonical links. |
+| `timeline` | array of strings | Ordered historical or canonical timeline points. |
+| `maps` | array of strings | Geographic references and map anchors. |
+| `archaeology` | array of strings | Archaeological references and artifacts. |
+| `hebrew_words` | array of strings | Hebrew word-study anchors. |
+| `greek_words` | array of strings | Greek word-study anchors. |
+| `related_people` | array of strings | Related canonical people. |
+| `related_places` | array of strings | Related canonical places. |
+| `related_events` | array of strings | Related canonical events. |
+| `related_objects` | array of typed relationship objects | Structured canonical links to other objects. |
+| `scripture_references` | array of scripture-reference objects | Structured biblical reference anchors. |
+| `cross_references` | array of strings | Internal reference pointers for later use. |
+| `new_testament_connections` | array of strings | New Testament connection pointers. |
+| `interpretive_notes` | array of structured note objects | Interpreter notes and cautions with optional note type, certainty, dispute status, and source IDs. Legacy strings are still accepted and normalized on load. |
+| `common_questions` | array of strings | Question prompts and FAQs. |
+| `sources` | array of source objects | Structured source citations and bibliography with `id`, `source_type`, `title`, `author`, `publisher`, `year`, `locator`, `url`, `supports`, and `notes`. |
+| `importance` | integer | Deterministic ranking hint for retrieval. |
+| `framework_version` | string | CKL framework version gate. |
+| `object_version` | string | Per-object schema version. |
+| `content_status` | string | Content governance state for placeholder, draft, complete, or deprecated material. |
+| `review_status` | string | Review workflow state for the canonical object. |
+| `generated_by` | array of provenance objects | AI, migration, or import provenance for how the object was created or rewritten. |
+| `edited_by` | array of strings | Human or tool editor names recorded separately from review. |
+| `reviewed_by` | array of strings | Human reviewers who have signed off on the object. |
+| `last_reviewed` | string or null | Most recent review date in `YYYY-MM-DD` format. |
+| `confidence` | string | Governance confidence label for review and publication state. |
+| `human_review_required` | boolean | Whether the record still needs human review before it can be treated as fully reviewed. |
 
 The legacy `related_people`, `related_places`, and `related_events` fields remain supported for now. The context builder normalizes them into typed `related_objects` entries so downstream consumers can adopt the structured form gradually without losing compatibility with the existing inventory.
 
@@ -441,7 +441,7 @@ Safe contributor workflow:
 
 ## Authoring Tools
 
-The Phase 9 tooling under `tools/` removes most of the manual JSON friction:
+The CKL tooling under `tools/` removes most of the manual JSON friction:
 
 - `python tools/ckl_create.py --type person --id abraham --write`
 - `python tools/ckl_validate.py --path framework/canonical_library/objects/people/abraham.json`
@@ -461,6 +461,5 @@ Future scholarship must be curated, sourced, and reviewed before it is written i
 
 Approved objects should use structured source entries rather than legacy strings, and they should carry substantive source support plus review metadata before they are treated as publishable.
 
-## Roadmap
-
-Implementation sequencing and phase tracking live in `docs/roadmap/canonical-knowledge-library-roadmap.md`.
+For the current CKL request path, see
+[`docs/architecture/current_ai_request_flow.md`](architecture/current_ai_request_flow.md).

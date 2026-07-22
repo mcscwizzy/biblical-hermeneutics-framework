@@ -101,8 +101,12 @@ def load_module(path: Path) -> Module:
 
 
 def discover_module_paths(root: Path) -> list[Path]:
-    """All non-template .md files under root."""
-    return sorted(p for p in root.rglob("*.md") if not is_template(p))
+    """All module .md files under root."""
+    return sorted(
+        p
+        for p in root.rglob("*.md")
+        if not is_template(p) and p.name.lower() != "readme.md"
+    )
 
 
 def load_modules(root: Path) -> dict[str, Module]:
