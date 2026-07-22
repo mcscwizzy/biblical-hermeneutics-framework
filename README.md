@@ -1,175 +1,306 @@
 # Biblical Hermeneutics Framework (BHF)
 
-**A model-agnostic, open-source framework that teaches AI models *how* to interpret Scripture responsibly — not *what* to believe.**
+> **Teaching AI—and helping people—how to read the Bible carefully.**
 
-[![Validate](https://github.com/mcscwizzy/biblical-hermeneutics-framework/actions/workflows/validate.yml/badge.svg)](https://github.com/mcscwizzy/biblical-hermeneutics-framework/actions/workflows/validate.yml)
-&nbsp; Content: **CC BY 4.0** · Code: **MIT** · Version: see [`VERSION`](VERSION)
+**Biblical Hermeneutics Framework (BHF)** is an open-source biblical study framework that teaches **how to interpret Scripture responsibly** rather than **what to believe**.
 
----
+Unlike most AI Bible tools that ask a language model to answer directly from memory, BHF first gathers the relevant evidence—Scripture, historical background, literary context, lexical information, and curated study resources—before asking an AI model to explain it.
 
-## What BHF is
-
-BHF is a library of small, composable Markdown **modules** that you load into
-any AI model — Claude, ChatGPT, Gemini, or a local model via Ollama, LM Studio,
-or Open WebUI — to make its biblical interpretation more careful. The modules
-encourage a model to:
-
-- Begin with the **original audience** and the text's historical/cultural setting.
-- Identify the **literary genre** before interpreting.
-- **Observe** the text before interpreting it, and interpret before applying it.
-- Distinguish **scholarly consensus, majority views, minority views, and speculation.**
-- **Admit uncertainty** when the evidence is thin.
-- Avoid **hallucinating** historical facts, language claims, or scholarly opinions.
-- Respect differing Christian traditions without forcing one theological system.
-
-## What BHF is **not**
-
-> [!IMPORTANT]
-> BHF is **not** a theology engine, a doctrinal statement, or a denomination's
-> prompt. It never tells anyone what to conclude. It teaches *method* —
-> how to ask better questions of a text — and deliberately leaves the answers
-> open. See [`docs/philosophy.md`](docs/philosophy.md) and
-> [`GOVERNANCE.md`](GOVERNANCE.md) (the neutrality charter).
+The result is a study experience designed to be more transparent, more grounded, and more educational.
 
 ---
 
-## Quick start
+# Our Mission
 
-### Option A — use the hosted GPT (nothing to install)
+The mission of BHF has remained the same from the beginning:
 
-Try BHF instantly in the
-[**Biblical Hermeneutics Framework (BHF) GPT**](https://chatgpt.com/g/g-6a36d3641a1c8191afa101ed50a927e9-biblical-hermeneutics-framework-bhf)
-— a public ChatGPT custom GPT preloaded with the full-depth
-[`scholar`](profiles/scholar.md) profile. Just open it and ask your question.
-(Requires a ChatGPT account; powered by the same open modules in this repo.)
+> **Teach AI models how to interpret Scripture responsibly without teaching them what conclusions they must reach.**
 
-### Option B — copy/paste a ready-made profile (no tools needed)
+BHF intentionally avoids becoming a theological authority.
 
-1. Open a pre-assembled prompt in [`profiles/`](profiles/):
-   - [`profiles/minimal-7b.md`](profiles/minimal-7b.md) — smallest, for tiny local models.
-   - [`profiles/standard.md`](profiles/standard.md) — balanced, for most use.
-   - [`profiles/scholar.md`](profiles/scholar.md) — full-depth, for frontier models with large context windows (this powers the hosted GPT above).
-2. Paste it into your model's **system prompt** / **custom instructions** /
-   **Modelfile** / **Project** instructions.
-3. Ask your question. See [`docs/how-to-use/`](docs/how-to-use/) for per-runtime guides.
+Instead, it teaches a method.
 
-### Option C — compose your own from modules (light tooling)
+That method encourages AI—and the people using it—to:
 
-```bash
-pip install -r tools/requirements.txt
+- Observe before interpreting.
+- Read passages in context.
+- Understand the original audience.
+- Respect literary genre.
+- Examine historical and cultural background.
+- Distinguish evidence from speculation.
+- Admit uncertainty where appropriate.
+- Apply Scripture only after understanding what it originally meant.
 
-# Validate the module library
-python tools/validate.py framework/
+BHF does not replace careful Bible study.
 
-# Build a single prompt from chosen modules (dependencies auto-included)
-python tools/compose.py --modules genre.epistle,book.romans
+It teaches it.
 
-# Or build a named profile
-python tools/compose.py --profile standard
+---
+
+# Explain It Like I'm Five
+
+Imagine walking into a library.
+
+You ask,
+
+> "What does this Bible verse mean?"
+
+A librarian does **not** immediately answer your question.
+
+Instead, the librarian walks through the library collecting the right books.
+
+They gather:
+
+- The Bible passage
+- Historical information
+- Hebrew or Greek word studies
+- Cultural background
+- Related passages
+- Maps
+- Timelines
+- Study notes
+
+Once everything is on the table, a teacher explains it in plain English.
+
+That is exactly how BHF works.
+
+The **BHF Agent** is the librarian.
+
+The **AI model** is the teacher.
+
+The librarian gathers the facts.
+
+The teacher explains them.
+
+---
+
+# Why BHF Is Different
+
+Most AI Bible applications look like this:
+
+```text
+Question
+      │
+      ▼
+Large Language Model
+      │
+      ▼
+Answer
 ```
 
-### Option D — use the local BHF Agent
+The model is expected to remember everything it has learned.
 
-The Python agent wraps a local OpenAI-compatible model with BHF method,
-deterministic reference/genre detection, local curated context, optional repair,
-offline evals, and disabled-by-default local session memory.
+BHF works differently.
 
-```bash
-python -m bhf_agent \
-  --config examples/config.local-openai-compatible.json \
-  --answer-mode study \
-  "What should I know about the context of Proverbs 3?"
-
-python tools/eval_local.py \
-  --fixture tests/prompts/proverbs-context-basic.json \
-  --answer-file output.txt
-
-python -m bhf_agent \
-  --config examples/config.local-openai-compatible.json \
-  --memory \
-  --session-id sunday-school-proverbs \
-  --memory-max-turns 4 \
-  "How should I teach Proverbs 3?"
+```text
+Question
+      │
+      ▼
+Determine the type of question
+      │
+      ▼
+Gather relevant evidence
+      │
+      ▼
+Organize the evidence
+      │
+      ▼
+AI explains the evidence
+      │
+      ▼
+Answer
 ```
 
-Answer modes (`concise`, `study`, `teaching`, `scholar`) shape answer format and
-depth independently from BHF profiles. Session memory is local-only, stores
-compact summaries under `.bhf/sessions/`, and is ignored by git.
+Instead of depending on the AI model to remember everything, BHF retrieves the information the model needs before it begins writing.
 
-The optional FastAPI web UI includes an offline ASV reader. Run
-`uvicorn bhf_web.app:app --reload --host 127.0.0.1 --port 8000`, open
-`http://127.0.0.1:8000`, and use ASV by default or open the translation
-manager to install curated public-domain translations for offline use. The
-reader keeps local-only study notes under `.bhf/study.sqlite` and supports
-right-click study actions, persisted highlights, saved studies, and a saved
-default translation.
-
-For mobile/PWA details, see [`docs/local-ui.md`](docs/local-ui.md). It covers
-the shared app dock, runtime config, and install steps for iOS and Android.
-
-Browser regression tests for the web UI live under `tests/gui/` and use a
-deterministic test mode so they can run without a live LLM. See
-[`tests/README.md`](tests/README.md) for the required selectors and guardrails.
-
-For the containerized local-dev stack, see [`docs/docker.md`](docs/docker.md).
-It starts both the app and Ollama with `docker compose up -d --build`, uses
-`qwen2.5:0.5b` by default, keeps the model in a persistent Docker volume, and
-seeds the lexical runtime database during the image build.
-
-Current right-click study actions include Ancient Context, Literary Context,
-Cross References, Related OT Themes, Fulfillment in the NT, Compare
-Translations, Timeline, Maps, Save Study, and a guarded Word Study helper for
-the selected installed translation.
-
-BHF also has an offline Greek/Hebrew lexical database layer for deterministic
-word-study data. The runtime database is generated locally at
-`framework/lexical/database/lexicon.sqlite` for non-Docker runs. Docker builds
-generate a seeded database at `/app/.bhf-seed/lexicon.sqlite` and copy it to
-`.bhf/lexicon.sqlite` on first container start.
-
-Lexical data assists interpretation; it does not replace context, grammar,
-syntax, genre, or careful exegesis. If the database is missing, Word Study
-must report unavailable deterministic lexical data rather than substitute LLM
-guesses. Build and verify the local database with
-[`docs/compile-lexicon.md`](docs/compile-lexicon.md). See also
-[`docs/lexicon-architecture.md`](docs/lexicon-architecture.md),
-[`docs/lexicon-sources.md`](docs/lexicon-sources.md), and
-[`docs/word-study.md`](docs/word-study.md).
+The model's primary job becomes explaining—not inventing—the answer.
 
 ---
 
-## Repository layout
+# How BHF Works
 
-| Path | What's there |
-|------|--------------|
-| [`framework/`](framework/) | The product: `core/`, `genres/`, `books/`, `context/`, `language/` modules (CC BY 4.0) |
-| [`profiles/`](profiles/) | Pre-assembled, copy/paste-ready prompt bundles |
-| [`docs/`](docs/) | Philosophy, architecture, the authoritative [module spec](docs/module-spec.md), style guide, how-to guides |
-| [`tools/`](tools/) | `validate.py`, `compose.py` (MIT) |
-| [`tests/`](tests/) | Behavioral rubrics + fixtures (test *method*, never doctrine) |
-| [`examples/`](examples/) | Walkthroughs of the method in action |
+Depending on the question, the agent gathers information from local deterministic resources before sending anything to the language model.
 
-## How modules compose
+These resources may include:
 
-Each module declares its `requires` (hard dependencies) and `recommends` in
-YAML frontmatter, plus an approximate `tokens` cost. `compose.py` resolves
-dependencies and orders modules (core first) into one coherent prompt that fits
-your model's budget — the same library serves a 7B phone model and a frontier
-model. See [`docs/architecture.md`](docs/architecture.md).
+- Scripture
+- Original Hebrew and Greek lexical databases
+- Canonical Knowledge Library (CKL)
+- Historical context
+- Literary context
+- Cross references
+- Maps
+- Timeline information
+- Translation comparisons
+- User study notes
+- Optional local session memory
 
-## Contributing
+Once the evidence is gathered, BHF constructs a focused request for the selected language model.
 
-All 66 books now have modules — refinements to existing modules and new genre,
-context, and language modules are welcome. Start with
-[`CONTRIBUTING.md`](CONTRIBUTING.md) and the relevant `_TEMPLATE.md`. Every
-contribution must pass `validate.py` and the **neutrality + sourcing** review.
+Even very small local models can produce high-quality study responses because they are explaining structured evidence instead of trying to reconstruct biblical scholarship from memory.
 
-## License
+---
 
-- **Content** (`framework/`, `docs/`, `profiles/`, `examples/`): [CC BY 4.0](LICENSE-CONTENT)
-- **Code** (`tools/`, CI): [MIT](LICENSE)
-- **Bundled ASV Bible text** (`bhf_agent/data/asv_bible.json`): American
-  Standard Version, public domain in the United States. Additional curated
-  translations can be downloaded or privately imported for local use, but
-  third-party availability does not by itself make a translation legally
-  redistributable.
+# BHF Architecture
+
+```text
+                    Biblical Hermeneutics Framework
+
+                              User Question
+                                    │
+                                    ▼
+                     Determine What Is Being Asked
+                                    │
+          ┌───────────────┬───────────────┬───────────────┐
+          ▼               ▼               ▼               ▼
+      Scripture        Lexicon          CKL       Historical Data
+          │               │               │               │
+          └───────────────┴───────────────┴───────────────┘
+                                    │
+                                    ▼
+                     Build Focused Evidence Packet
+                                    │
+                                    ▼
+             ChatGPT • Claude • Gemini • Ollama • Local Models
+                                    │
+                                    ▼
+                      Grounded Biblical Explanation
+```
+
+The important idea is simple:
+
+> **The BHF Agent gathers the evidence. The AI model explains the evidence.**
+
+---
+
+# Prompt Profiles
+
+BHF can be used entirely without the local agent.
+
+Prompt profiles teach any compatible AI model the BHF interpretation method.
+
+| Profile      | Purpose                                           |
+| ------------ | ------------------------------------------------- |
+| **Minimal**  | Small local models with limited context           |
+| **Standard** | Balanced study profile                            |
+| **Scholar**  | Full-depth study profile for large-context models |
+
+These profiles work with:
+
+- ChatGPT
+- Claude
+- Gemini
+- Ollama
+- LM Studio
+- Open WebUI
+- Any compatible system prompt
+
+---
+
+# The BHF Agent
+
+The optional Python agent expands BHF beyond prompt engineering.
+
+Rather than sending every question directly to an AI model, the agent first determines what kind of study is being requested.
+
+Examples include:
+
+- Word Study
+- Historical Context
+- Literary Context
+- Passage Study
+- Book Overview
+- Topic Study
+
+The agent then:
+
+1. Detects Scripture references.
+2. Determines the question type.
+3. Retrieves relevant local evidence.
+4. Builds a focused prompt.
+5. Applies guardrails.
+6. Calls the selected language model.
+7. Validates the response.
+
+This architecture reduces unnecessary token usage while improving consistency and allowing much smaller local models to perform well.
+
+---
+
+# Learning the Bible, Not Replacing It
+
+Every feature in BHF exists for one purpose:
+
+> **Help people become better readers of Scripture.**
+
+The goal is not simply to answer Bible questions.
+
+The goal is to teach people how to study the Bible for themselves.
+
+Whether someone uses ChatGPT, a local model running entirely offline, or no AI at all, the same study method applies.
+
+BHF encourages users to:
+
+- Observe carefully.
+- Read slowly.
+- Compare Scripture with Scripture.
+- Consider historical context.
+- Think critically.
+- Recognize uncertainty.
+- Continue studying.
+
+---
+
+# Features
+
+Current capabilities include:
+
+- Offline Bible reader
+- Local translation management
+- Greek and Hebrew lexical databases
+- Word Study
+- Cross References
+- Ancient Context
+- Literary Context
+- Related Old Testament Themes
+- New Testament Fulfillment
+- Timeline studies
+- Maps
+- Translation comparison
+- Highlights
+- Study notes
+- Saved studies
+- Canonical Knowledge Library (CKL)
+- Optional local session memory
+- Docker deployment
+- Selenium regression testing
+- Model-agnostic architecture
+
+---
+
+# Why BHF Can Use Small AI Models
+
+BHF is designed so the surrounding software performs much of the work that larger language models normally perform internally.
+
+The agent identifies the question, retrieves relevant evidence, and organizes the information before calling the language model.
+
+As a result, even lightweight local models—such as **Qwen2.5:0.5B**—can provide useful study responses because they are primarily explaining evidence rather than generating it from memory.
+
+This makes BHF:
+
+- Faster
+- More transparent
+- More consistent
+- More efficient
+- Better suited for local and offline study
+
+---
+
+# Open Source
+
+BHF is completely open source.
+
+The framework continues to grow through contributions from developers, biblical scholars, historians, linguists, educators, and the open-source community.
+
+Our long-term vision is simple:
+
+> **Build one of the world's best open-source biblical study frameworks—available to everyone, online or offline, regardless of the AI model they choose.**
