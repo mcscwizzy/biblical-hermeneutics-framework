@@ -978,6 +978,63 @@ body.reader-mode .chapter-text {
   gap: 14px;
 }
 
+.ask-chat-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 180px;
+  padding: 0;
+}
+
+.ask-chat-transcript {
+  display: grid;
+  gap: 12px;
+  min-height: 0;
+  padding: 14px;
+}
+
+.ask-chat-message {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.ask-chat-message-user {
+  justify-self: end;
+  width: fit-content;
+  max-width: min(86%, 42rem);
+  border: 1px solid rgb(36 91 130 / 24%);
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  padding: 10px 12px;
+}
+
+.ask-chat-message-user p {
+  margin: 0;
+}
+
+.ask-chat-message-assistant {
+  justify-self: stretch;
+}
+
+.ask-chat-message-assistant.is-loading {
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  background: var(--surface-alt);
+  padding: 12px;
+}
+
+.ask-chat-response > :first-child {
+  margin-top: 0;
+}
+
+.ask-chat-response > :last-child {
+  margin-bottom: 0;
+}
+
+.ask-chat-message-assistant .answer {
+  margin: 0;
+}
+
 .selection-card h2,
 .highlights-panel h2,
 .notes-panel h2,
@@ -1413,6 +1470,17 @@ html[data-theme="dark"] .word-study-fact {
   background: var(--surface-alt);
 }
 
+html[data-theme="dark"] .ask-chat-message-user {
+  border-color: rgb(94 148 192 / 32%);
+  background: rgb(94 148 192 / 16%);
+  color: var(--text);
+}
+
+html[data-theme="dark"] .ask-chat-message-assistant.is-loading {
+  border-color: var(--border);
+  background: var(--surface-alt);
+}
+
 html[data-theme="dark"] .word-study-fact strong {
   color: var(--text);
 }
@@ -1608,6 +1676,10 @@ html[data-theme="dark"] .map-panel-body {
     padding: 12px;
   }
 
+  .ask-chat-panel {
+    padding: 0;
+  }
+
   .ask-pane {
     grid-template-rows: auto auto minmax(0, 1fr);
     min-height: 0;
@@ -1797,6 +1869,10 @@ html[data-theme="dark"] .map-panel-body {
   .map-panel,
   .map-ai-panel {
     padding: 10px;
+  }
+
+  .ask-chat-panel {
+    padding: 0;
   }
 
   .ask-pane {

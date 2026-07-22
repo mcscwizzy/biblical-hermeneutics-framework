@@ -147,6 +147,18 @@ def config_from_form(
     return base.with_overrides(**overrides)
 
 
+def form_values_with_chat_memory(form: Mapping[str, Any]) -> dict[str, Any]:
+    """Force local memory on for browser chat sessions."""
+
+    form_values = dict(form)
+    chat_session_id = str(form_values.get("chat_session_id") or "").strip()
+    if chat_session_id:
+        form_values["memory_enabled"] = "on"
+        if not str(form_values.get("session_id") or "").strip():
+            form_values["session_id"] = chat_session_id
+    return form_values
+
+
 def form_values_from_config(config: AgentConfig, question: str = "") -> dict[str, Any]:
     """Convert an AgentConfig into template-safe form values."""
 

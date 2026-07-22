@@ -14,6 +14,7 @@ const THEME_STORAGE_KEY = "bhf-theme";
 const READER_MODE_STORAGE_KEY = "bhf-reader-mode";
 const BHF_TRANSLATION_STORAGE_KEY = "bhf-reader-translation";
 const BHF_TRANSLATION_DOWNLOAD_METADATA_KEY = "bhf-translation-download-metadata";
+const ASK_CHAT_SESSION_PREFIX = "ask-chat";
 const BHF_STUDY_ACTIONS = new Set([
   "full_context",
   "historical_context",
@@ -77,6 +78,7 @@ let lastNotesWorkspaceTab = "notes";
 let lastExploreWorkspaceTab = "maps";
 let readerControlsTrigger = null;
 let translationCatalogState = null;
+let askChatSessionId = null;
 const BHF_HTTP = window.BHFApi || {};
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -88,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeReaderControlsSheet();
   initializeReader();
   initializeWorkspaceBridge();
+  initializeAskChat();
 });
 
 document.addEventListener("submit", async function (event) {
@@ -107,18 +110,27 @@ document.addEventListener("submit", async function (event) {
     return;
   }
 
+  const chatTurn = shouldUseAskChatTurn(form, answerPanel)
+    ? beginAskChatTurn(form, answerPanel)
+    : null;
   activeLiveAnswerPanel = answerPanel;
   updateSaveButtons();
   setRunning(form, submitButton, true);
   resetStatus(statusPanel);
   startWaiting(statusPanel);
-  answerPanel.innerHTML = "";
+  if (!chatTurn) {
+    answerPanel.innerHTML = "";
+  }
   answerPanel.setAttribute("aria-busy", "true");
 
   try {
+    const requestBody = askJobFormData(form, Boolean(chatTurn));
+    if (chatTurn) {
+      clearAskQuestionInput(form);
+    }
     const job = await requestJson(form.dataset.jobPost, {
       method: "POST",
-      body: new FormData(form),
+      body: requestBody,
       headers: { "Accept": "application/json" }
     }, "Could not start request.");
     if (!job.job_id) {
@@ -129,7 +141,11 @@ document.addEventListener("submit", async function (event) {
 
     const finalStatus = await pollJob(form, statusPanel, job.job_id);
     const result = await requestText(form.dataset.resultBase + finalStatus.job_id, {}, "Could not render result.");
-    answerPanel.innerHTML = result;
+    if (chatTurn) {
+      completeAskChatTurn(chatTurn, result, finalStatus.job_id, Boolean(finalStatus.error));
+    } else {
+      answerPanel.innerHTML = result;
+    }
 
     if (finalStatus.error) {
       markStatusFailed(statusPanel, finalStatus.error || "Request failed.");
@@ -141,13 +157,21 @@ document.addEventListener("submit", async function (event) {
       addMobileAnswerCloseControl(answerPanel);
       wireAnswerPanelControls(answerPanel);
       revealAnswerPanel(answerPanel);
+      if (chatTurn) {
+        focusAskComposer(form);
+      }
       await loadSavedStudies(currentChapter?.book, currentChapter?.chapter);
     }
   } catch (error) {
     markStatusFailed(statusPanel, error.message || "Request failed.");
-    answerPanel.innerHTML = errorHtml(error.message || "Request failed.");
+    if (chatTurn) {
+      completeAskChatTurn(chatTurn, errorHtml(error.message || "Request failed."), null, true);
+    } else {
+      answerPanel.innerHTML = errorHtml(error.message || "Request failed.");
+    }
     expandWorkspaceForMobileAnswer();
     addMobileAnswerCloseControl(answerPanel);
+    wireAnswerPanelControls(answerPanel);
     revealAnswerPanel(answerPanel);
     latestJobComplete = false;
   } finally {
@@ -891,6 +915,161 @@ function resolveSubmitTargets(form) {
 function resetSubmitTargets(form) {
   delete form.dataset.activeTarget;
   delete form.dataset.activeStatusTarget;
+}
+
+function initializeAskChat() {
+  const form = document.querySelector(".ask-form");
+  const panel = document.querySelector("[data-ask-chat-panel]");
+  if (!form || !panel) {
+    return;
+  }
+  ensureAskChatSessionId(form);
+  const newChatButton = form.querySelector("[data-ask-new-chat]");
+  if (newChatButton) {
+    newChatButton.addEventListener("click", () => resetAskChat(form, panel));
+  }
+}
+
+function shouldUseAskChatTurn(form, answerPanel) {
+  return Boolean(answerPanel?.matches("[data-ask-chat-panel]")) && !form.dataset.activeTarget;
+}
+
+function askJobFormData(form, useChatMemory) {
+  const formData = new FormData(form);
+  if (!useChatMemory) {
+    return formData;
+  }
+  const chatSessionId = ensureAskChatSessionId(form);
+  formData.set("chat_session_id", chatSessionId);
+  formData.set("memory_enabled", "on");
+  if (!String(formData.get("session_id") || "").trim()) {
+    formData.set("session_id", chatSessionId);
+  }
+  if (!String(formData.get("memory_max_turns") || "").trim()) {
+    formData.set("memory_max_turns", "8");
+  }
+  return formData;
+}
+
+function ensureAskChatSessionId(form = document.querySelector(".ask-form")) {
+  const input = form?.querySelector('[name="chat_session_id"]');
+  if (!askChatSessionId) {
+    askChatSessionId = input?.value || generateAskChatSessionId();
+  }
+  if (input) {
+    input.value = askChatSessionId;
+  }
+  return askChatSessionId;
+}
+
+function generateAskChatSessionId() {
+  if (window.crypto && typeof window.crypto.randomUUID === "function") {
+    return `${ASK_CHAT_SESSION_PREFIX}-${window.crypto.randomUUID()}`;
+  }
+  return `${ASK_CHAT_SESSION_PREFIX}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
+}
+
+function resetAskChat(form, panel) {
+  askChatSessionId = generateAskChatSessionId();
+  ensureAskChatSessionId(form);
+  const transcript = panel.querySelector("[data-ask-chat-transcript]");
+  if (transcript) {
+    transcript.innerHTML = "";
+  }
+  const statusPanel = document.querySelector("#status-panel");
+  if (statusPanel) {
+    statusPanel.hidden = true;
+    statusPanel.classList.remove("complete", "failed");
+  }
+  latestJobId = null;
+  latestJobComplete = false;
+  activeLiveAnswerPanel = panel;
+  updateSaveButtons();
+  focusAskComposer(form);
+}
+
+function beginAskChatTurn(form, panel) {
+  const transcript = panel.querySelector("[data-ask-chat-transcript]");
+  if (!transcript) {
+    return null;
+  }
+  ensureAskChatSessionId(form);
+  transcript.querySelector("[data-ask-chat-empty]")?.remove();
+
+  const userMessage = document.createElement("article");
+  userMessage.className = "ask-chat-message ask-chat-message-user";
+  userMessage.setAttribute("data-testid", "ask-chat-user-message");
+  const userBody = document.createElement("p");
+  userBody.textContent = askChatQuestionLabel(form);
+  userMessage.appendChild(userBody);
+
+  const assistantMessage = document.createElement("article");
+  assistantMessage.className = "ask-chat-message ask-chat-message-assistant is-loading";
+  assistantMessage.setAttribute("data-testid", "ask-chat-assistant-message");
+  const assistantBody = document.createElement("div");
+  assistantBody.className = "ask-chat-response";
+  assistantBody.innerHTML = `<p class="empty">Working on it...</p>`;
+  assistantMessage.appendChild(assistantBody);
+
+  transcript.appendChild(userMessage);
+  transcript.appendChild(assistantMessage);
+  scrollAskChatToLatest(transcript);
+  return { transcript, assistantMessage, assistantBody };
+}
+
+function completeAskChatTurn(turn, html, jobId, failed) {
+  if (!turn) {
+    return;
+  }
+  turn.assistantMessage.classList.remove("is-loading");
+  turn.assistantMessage.classList.toggle("is-error", Boolean(failed));
+  if (jobId) {
+    turn.assistantMessage.dataset.jobId = jobId;
+  }
+  turn.assistantBody.innerHTML = html;
+  if (jobId) {
+    turn.assistantBody.querySelectorAll("[data-save-study]").forEach((button) => {
+      button.dataset.jobId = jobId;
+    });
+  }
+  scrollAskChatToLatest(turn.transcript);
+}
+
+function askChatQuestionLabel(form) {
+  const question = String(form.querySelector('[name="question"]')?.value || "").trim();
+  if (question) {
+    return question;
+  }
+  const action = String(form.querySelector('[name="study_action"]')?.value || form.querySelector('[name="ask_mode"]')?.value || "").trim();
+  if (action) {
+    return studyActionLabel(action);
+  }
+  const summary = document.querySelector("#selection-summary");
+  return summary?.textContent?.trim() || "Ask BHF";
+}
+
+function clearAskQuestionInput(form) {
+  const question = form.querySelector('[name="question"]');
+  if (question) {
+    question.value = "";
+  }
+}
+
+function focusAskComposer(form) {
+  const question = form.querySelector('[name="question"]');
+  if (question && !isCompactViewport()) {
+    question.focus();
+  }
+}
+
+function scrollAskChatToLatest(transcript) {
+  if (!transcript) {
+    return;
+  }
+  window.requestAnimationFrame(() => {
+    const scrollTarget = transcript.closest("[data-ask-chat-panel]") || transcript;
+    scrollTarget.scrollTop = scrollTarget.scrollHeight;
+  });
 }
 
 function requestJson(url, options = {}, fallbackMessage = "Request failed.") {
@@ -2970,7 +3149,7 @@ function syncAskFields() {
     }
   } else {
     if (summary) {
-      summary.textContent = `Ask about ${currentChapter.book} ${currentChapter.chapter}, or select verse text for a focused question.`;
+      summary.textContent = "";
     }
     if (addNoteButton) {
       addNoteButton.disabled = true;
