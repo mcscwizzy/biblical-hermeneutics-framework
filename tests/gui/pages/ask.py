@@ -9,7 +9,9 @@ from .base import BasePage
 class AskPage(BasePage):
     def ask(self, question: str):
         self.click('[data-testid="ask-tab"]')
-        question_box = self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="question-input"]')))
+        question_box = self.wait.until(
+            EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="question-input"]'))
+        )
         question_box.clear()
         question_box.send_keys(question)
         self.click('[data-testid="ask-submit"]')
@@ -17,7 +19,9 @@ class AskPage(BasePage):
 
     def wait_for_status_started(self):
         self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="agent-status"]')))
-        self.wait.until(lambda driver: driver.find_element(By.CSS_SELECTOR, '[data-testid="agent-status"]').text.strip() != "")
+        self.wait.until(
+            lambda driver: driver.find_element(By.CSS_SELECTOR, '[data-testid="agent-status"]').text.strip() != ""
+        )
         return self
 
     def wait_for_answer_or_error(self):
@@ -27,6 +31,24 @@ class AskPage(BasePage):
                 or "Deterministic test answer" in driver.find_element(By.CSS_SELECTOR, '[data-testid="answer-output"]').text
                 or "Test answer" in driver.find_element(By.CSS_SELECTOR, '[data-testid="answer-output"]').text
                 or "Answer" in driver.find_element(By.CSS_SELECTOR, '[data-testid="answer-output"]').text
+            )
+        )
+        return self
+
+    def wait_for_chat_turns(self, count: int):
+        user_selector = '[data-testid="ask-chat-user-message"]'
+        assistant_selector = '[data-testid="ask-chat-assistant-message"]'
+        self.wait.until(
+            lambda driver: (
+                len(driver.find_elements(By.CSS_SELECTOR, user_selector)) >= count
+                and len(driver.find_elements(By.CSS_SELECTOR, assistant_selector)) >= count
+            )
+        )
+        self.wait.until(
+            lambda driver: (
+                "Test answer" in driver.find_elements(By.CSS_SELECTOR, assistant_selector)[count - 1].text
+                or "Deterministic test answer"
+                in driver.find_elements(By.CSS_SELECTOR, assistant_selector)[count - 1].text
             )
         )
         return self

@@ -406,12 +406,14 @@ function deleteSavedStudy(studyId) {
     .then(() => loadSavedStudies(currentChapter.book, currentChapter.chapter));
 }
 
-function saveLatestStudy() {
-  if (!latestJobId || !latestJobComplete) {
+function saveLatestStudy(event) {
+  const sourceButton = event?.currentTarget || null;
+  const jobId = sourceButton?.dataset.jobId || latestJobId;
+  if (!jobId || (!sourceButton?.dataset.jobId && !latestJobComplete)) {
     window.alert("Run a study first, then save it.");
     return Promise.resolve();
   }
-  const saveButton = activeLiveAnswerPanel?.querySelector("[data-save-study]") || null;
+  const saveButton = sourceButton || activeLiveAnswerPanel?.querySelector("[data-save-study]") || null;
   if (saveButton) {
     saveButton.disabled = true;
     saveButton.textContent = "Saving...";
@@ -423,7 +425,7 @@ function saveLatestStudy() {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      job_id: latestJobId
+      job_id: jobId
     })
   }, "Could not save study.")
     .then(() => {
@@ -444,11 +446,12 @@ function wireAnswerPanelControls(answerPanel) {
   if (!answerPanel) {
     return;
   }
-  const button = answerPanel.querySelector("[data-save-study]");
-  if (button && !button.dataset.saveBound) {
-    button.addEventListener("click", saveLatestStudy);
-    button.dataset.saveBound = "true";
-  }
+  answerPanel.querySelectorAll("[data-save-study]").forEach((button) => {
+    if (!button.dataset.saveBound) {
+      button.addEventListener("click", saveLatestStudy);
+      button.dataset.saveBound = "true";
+    }
+  });
   wireCanonicalAnswerPanelControls(answerPanel);
   updateSaveButtons();
 }
@@ -457,7 +460,7 @@ function updateSaveButtons() {
   document.querySelectorAll("[data-save-study]").forEach((button) => {
     const panel = button.closest(".answer-panel");
     const isActive = Boolean(activeLiveAnswerPanel) && panel === activeLiveAnswerPanel;
-    button.disabled = !(latestJobId && latestJobComplete && isActive);
+    button.disabled = !(isActive && (button.dataset.jobId || (latestJobId && latestJobComplete)));
   });
 }
 

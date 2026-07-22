@@ -11,7 +11,7 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from bhf_agent.config import ConfigError
 from bhf_agent.profiles import ProfileError
 
-from ..forms import config_from_form, load_web_defaults
+from ..forms import config_from_form, form_values_with_chat_memory, load_web_defaults
 from ..jobs import _fake_result
 from ..services.ckl_inspector import build_result_inspector_payload
 from ..services.web_helpers import (
@@ -99,7 +99,7 @@ def register_ask_routes(
 ) -> None:
     @app.post("/ask", response_class=HTMLResponse)
     async def ask(request: Request) -> HTMLResponse:
-        form = await request.form()
+        form = form_values_with_chat_memory(await request.form())
         loaded = load_web_defaults()
         show_debug = bool(getattr(loaded.config, "debug", False))
         try:
@@ -168,7 +168,7 @@ def register_ask_routes(
     async def create_ask_job(request: Request) -> JSONResponse:
         form = await request.form()
         job = job_store.create()
-        form_values = dict(form)
+        form_values = form_values_with_chat_memory(form)
         agent_class = agent_factory()
         thread = threading.Thread(
             target=ask_job_runner,

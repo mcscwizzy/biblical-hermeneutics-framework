@@ -23,6 +23,7 @@ from bhf_agent.models import (
     ValidationResult,
 )
 from bhf_web.forms import config_from_form
+from bhf_web.forms import form_values_with_chat_memory
 from bhf_web.forms import load_web_defaults
 from bhf_agent.study_db import get_source, initialize_database, list_sources
 from bhf_web.runtime import load_runtime_config
@@ -99,6 +100,29 @@ class WebFormTests(unittest.TestCase):
         self.assertEqual(config.session_id, "lesson-1")
         self.assertEqual(config.memory_max_turns, 4)
         self.assertEqual(config.api_key, "local-secret")
+
+    def test_chat_session_id_enables_local_memory_for_ask_job(self):
+        form_values = form_values_with_chat_memory(
+            {
+                "question": "What does John 1 emphasize?",
+                "chat_session_id": "ask-chat-test-session",
+                "memory_max_turns": "8",
+            }
+        )
+
+        self.assertEqual(form_values["memory_enabled"], "on")
+        self.assertEqual(form_values["session_id"], "ask-chat-test-session")
+
+    def test_chat_session_id_preserves_explicit_session_id(self):
+        form_values = form_values_with_chat_memory(
+            {
+                "chat_session_id": "ask-chat-test-session",
+                "session_id": "teacher-session",
+            }
+        )
+
+        self.assertEqual(form_values["memory_enabled"], "on")
+        self.assertEqual(form_values["session_id"], "teacher-session")
 
     def test_invalid_form_config_returns_clear_error(self):
         defaults = AgentConfig(
@@ -2306,7 +2330,7 @@ class FakeAgent:
     def __init__(self, config):
         self.config = config
 
-    def ask(self, question, status_callback=None):
+    def ask(self, question, status_callback=None, canonical_fact_packet=None):
         if status_callback is not None:
             status_callback(status_event("loading_profile", "Loading BHF profile", 6))
             status_callback(
@@ -2332,7 +2356,7 @@ class FakeAgent:
 
 
 class ErrorAgent(FakeAgent):
-    def ask(self, question, status_callback=None):
+    def ask(self, question, status_callback=None, canonical_fact_packet=None):
         if status_callback is not None:
             status_callback(
                 status_event(
@@ -2374,7 +2398,7 @@ class ErrorAgent(FakeAgent):
 
 
 class InvalidOutputAgent(FakeAgent):
-    def ask(self, question, status_callback=None):
+    def ask(self, question, status_callback=None, canonical_fact_packet=None):
         return fake_result(
             self.config,
             errors=["Invalid model output: Model response JSON contained no extractable answer text."],
@@ -2384,7 +2408,7 @@ class InvalidOutputAgent(FakeAgent):
 
 
 class SuccessfulJobAgent(FakeAgent):
-    def ask(self, question, status_callback=None):
+    def ask(self, question, status_callback=None, canonical_fact_packet=None):
         if status_callback is not None:
             status_callback(status_event("loading_profile", "Loading BHF profile", 6))
             status_callback(
@@ -2408,7 +2432,7 @@ class SuccessfulJobAgent(FakeAgent):
 
 
 class FallbackOnlyAgent(SuccessfulJobAgent):
-    def ask(self, question, status_callback=None):
+    def ask(self, question, status_callback=None, canonical_fact_packet=None):
         if status_callback is not None:
             status_callback(status_event("loading_profile", "Loading BHF profile", 6))
             status_callback(
@@ -2453,13 +2477,13 @@ class FallbackOnlyAgent(SuccessfulJobAgent):
 class CapturingAgent(SuccessfulJobAgent):
     questions = []
 
-    def ask(self, question, status_callback=None):
+    def ask(self, question, status_callback=None, canonical_fact_packet=None):
         self.__class__.questions.append(question)
         return super().ask(question, status_callback=status_callback)
 
 
 class SearchFallbackAgent(SuccessfulJobAgent):
-    def ask(self, question, status_callback=None):
+    def ask(self, question, status_callback=None, canonical_fact_packet=None):
         if status_callback is not None:
             status_callback(status_event("loading_profile", "Loading BHF profile", 6))
             status_callback(

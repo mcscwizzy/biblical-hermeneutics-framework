@@ -181,6 +181,7 @@
                 <input type="hidden" name="study_action" value="">
                 <input type="hidden" name="deterministic_fact_packet" value="">
                 <input type="hidden" name="map_context" value="">
+                <input type="hidden" name="chat_session_id" value="">
 
                 <section class="selection-card" aria-live="polite">
                   <h2>Ask BHF</h2>
@@ -293,6 +294,7 @@
 
                 <div class="action-row">
                   <button type="submit" data-testid="ask-submit">Ask BHF</button>
+                  <button type="button" class="secondary" data-ask-new-chat data-testid="ask-new-chat">New chat</button>
                   <button type="button" class="secondary" data-add-note data-testid="add-note-button">Add note</button>
                 </div>
               </form>
@@ -309,8 +311,10 @@
                 </div>
               </section>
 
-              <section id="answer-panel" class="answer-panel" aria-live="polite" data-testid="answer-output">
-                <p class="empty">Ask about the current chapter or a selected passage to see the answer and save it.</p>
+              <section id="answer-panel" class="answer-panel ask-chat-panel" aria-live="polite" data-testid="answer-output" data-ask-chat-panel>
+                <div class="ask-chat-transcript" data-ask-chat-transcript>
+                  <p class="empty" data-ask-chat-empty>Ask about the current chapter or a selected passage to see the answer and save it.</p>
+                </div>
               </section>
             </section>
 
