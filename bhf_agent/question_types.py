@@ -35,6 +35,7 @@ TERM_ALIASES = {
     "ruaḥ": "ruach",
     "rûaḥ": "ruach",
 }
+DEICTIC_MEANING_TARGETS = {"it", "this", "that", "these", "those"}
 GREEK_TERMS = {
     "agape",
     "logos",
@@ -149,6 +150,8 @@ def classify_question_type(
 
 
 def _is_word_study(lowered: str, ascii_lowered: str) -> bool:
+    if _is_deictic_meaning_question(ascii_lowered):
+        return False
     if WORD_STUDY_RE.search(lowered):
         return True
     if _contains_term(ascii_lowered, HEBREW_TERMS | GREEK_TERMS):
@@ -163,6 +166,14 @@ def _detect_language(lowered: str, ascii_lowered: str) -> str | None:
     if "greek" in tokens or _contains_term(ascii_lowered, GREEK_TERMS):
         return "Greek"
     return None
+
+
+def _is_deictic_meaning_question(ascii_lowered: str) -> bool:
+    match = re.fullmatch(
+        r"what\s+does\s+([a-z]+)\s+mean\??",
+        ascii_lowered.strip(),
+    )
+    return bool(match and match.group(1) in DEICTIC_MEANING_TARGETS)
 
 
 def _extract_word_targets(question: str) -> list[str]:

@@ -14,6 +14,8 @@ from bhf_agent.bible import BibleError, compare_translation_passages, build_sele
 from bhf_agent.curation import CURATION_COLLECTIONS, list_curation_records
 from bhf_agent.config import ConfigError
 from bhf_agent.profiles import ProfileLoader
+from bhf_agent.question_types import classify_question_type
+from bhf_agent.references import detect_reference
 from bhf_agent.runner import BHFAgent
 from bhf_agent.study_db import StudyDataError, record_study_action
 from bhf_agent.study_actions import compact_fact_packet
@@ -23,6 +25,15 @@ from ..forms import validate_question, config_from_form, load_web_defaults
 
 GENERAL_QUESTION_MODE = "general_question"
 GENERAL_QUESTION_SCOPE = "general_question"
+READER_PASSAGE_METHOD_RE = re.compile(
+    r"\b("
+    r"what\s+should\s+i\s+observe|"
+    r"observe\b.+\bbefore\s+interpret|"
+    r"how\s+should\s+i\s+interpret|"
+    r"how\s+do\s+i\s+apply"
+    r")\b",
+    re.IGNORECASE,
+)
 SPECIAL_QUESTION_MODES = {
     "full_context",
     "historical_context",
@@ -438,6 +449,9 @@ def build_ask_question(
     context = reader_context_from_form(form)
     if context is None:
         return validate_question(form), None
+    user_question = str(form.get("question") or "").strip()
+    if user_question and not _reader_question_uses_passage_context(user_question, context):
+        return validate_question(form), None
     study_action = normalize_study_action(form.get("study_action"))
     if study_action:
         if path is not None:
@@ -470,7 +484,6 @@ def build_ask_question(
         return maps_question(form, context), str(context["reference"])
     if ask_mode == "word_study":
         return word_study_question(form, context), str(context["reference"])
-    user_question = str(form.get("question") or "").strip()
     if not user_question:
         user_question = f"Explain {context['reference']} using BHF."
     label = translation_label(context)
@@ -485,6 +498,21 @@ def build_ask_question(
         lines.extend(["", f"Full chapter context ({label} {context['book']} {context['chapter']}):", str(context["chapter_context"])])
     lines.extend(["", "Method reminder: observe the text before interpreting it, and apply only after observation and interpretation."])
     return "\n".join(lines), str(context["reference"])
+
+
+def _reader_question_uses_passage_context(
+    user_question: str,
+    context: dict[str, Any],
+) -> bool:
+    if READER_PASSAGE_METHOD_RE.search(user_question):
+        return True
+    reference_context = detect_reference(str(context.get("reference") or ""))
+    question_context = classify_question_type(user_question, reference_context)
+    return question_context.question_type in {
+        "passage_study",
+        "historical_context",
+        "cultural_context",
+    }
 
 
 def is_reader_submission(form: dict[str, Any] | Any) -> bool:

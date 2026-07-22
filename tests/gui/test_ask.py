@@ -19,22 +19,18 @@ def test_ask_form_submits(driver, wait, base_url):
     assert "Test answer" in answer
 
 
-def test_ask_follow_up_appends_to_chat(driver, wait, base_url):
+def test_follow_up_replaces_single_answer_panel(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
     page = AskPage(driver, wait, base_url)
     page.ask("What does John 1 emphasize?")
-    page.wait_for_chat_turns(1)
+    page.wait_for_answer_or_error()
 
     page.ask("How does that connect to creation?")
-    page.wait_for_chat_turns(2)
+    page.wait_for_answer_or_error()
 
-    user_messages = driver.find_elements(By.CSS_SELECTOR, '[data-testid="ask-chat-user-message"]')
-    assistant_messages = driver.find_elements(By.CSS_SELECTOR, '[data-testid="ask-chat-assistant-message"]')
-    assert len(user_messages) == 2
-    assert len(assistant_messages) == 2
-    assert "What does John 1 emphasize?" in user_messages[0].text
-    assert "How does that connect to creation?" in user_messages[1].text
-    assert all("Test answer" in message.text for message in assistant_messages)
+    answer = driver.find_element(By.CSS_SELECTOR, '[data-testid="answer-output"]')
+    assert "Test answer" in answer.text
+    assert not driver.find_elements(By.CSS_SELECTOR, '[data-testid="ask-new-chat"]')
 
 
 def test_agent_status_clears_after_answer(driver, wait, base_url):

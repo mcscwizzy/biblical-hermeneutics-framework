@@ -72,6 +72,12 @@ class QuestionTypeTests(unittest.TestCase):
 
         self.assertEqual(context.question_type, "passage_study")
 
+    def test_deictic_meaning_question_uses_reference_context_as_passage_study(self):
+        reference = detect_reference("John 1:1")
+        context = classify_question_type("What does this mean?", reference)
+
+        self.assertEqual(context.question_type, "passage_study")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -34,21 +34,3 @@ class AskPage(BasePage):
             )
         )
         return self
-
-    def wait_for_chat_turns(self, count: int):
-        user_selector = '[data-testid="ask-chat-user-message"]'
-        assistant_selector = '[data-testid="ask-chat-assistant-message"]'
-        self.wait.until(
-            lambda driver: (
-                len(driver.find_elements(By.CSS_SELECTOR, user_selector)) >= count
-                and len(driver.find_elements(By.CSS_SELECTOR, assistant_selector)) >= count
-            )
-        )
-        self.wait.until(
-            lambda driver: (
-                "Test answer" in driver.find_elements(By.CSS_SELECTOR, assistant_selector)[count - 1].text
-                or "Deterministic test answer"
-                in driver.find_elements(By.CSS_SELECTOR, assistant_selector)[count - 1].text
-            )
-        )
-        return self
