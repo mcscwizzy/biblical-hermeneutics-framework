@@ -25,6 +25,10 @@ def _hidden_or_absent(driver, selector: str) -> bool:
 
 def _click_context_action(driver, wait, action: str):
     button = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, f'[data-context-action="{action}"]')))
+    if not button.is_displayed():
+        trigger = button.find_element(By.XPATH, "ancestor::*[contains(concat(' ', normalize-space(@class), ' '), ' context-menu-section ')][1]//*[@data-context-submenu]")
+        trigger.click()
+        wait.until(lambda _driver: button.is_displayed())
     driver.execute_script(
         """
         const button = arguments[0];

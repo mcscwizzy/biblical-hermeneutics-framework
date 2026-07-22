@@ -395,39 +395,85 @@ code {
 .context-menu {
   position: fixed;
   z-index: 20;
-  min-width: 220px;
+  min-width: 180px;
   border: 1px solid #b9c2cc;
   border-radius: 8px;
-  padding: 6px;
+  padding: 5px;
   background: #fff;
   box-shadow: 0 12px 28px rgb(20 31 43 / 18%);
+  overflow: visible;
+}
+
+.context-menu-section {
+  position: relative;
 }
 
 .context-menu-section + .context-menu-section {
-  margin-top: 6px;
-  padding-top: 6px;
-  border-top: 1px solid #e2e7ec;
-}
-
-.context-menu-heading {
-  margin: 0 0 4px;
-  padding: 2px 8px;
-  color: #52616f;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  margin-top: 2px;
 }
 
 .context-menu button {
   display: block;
   width: 100%;
   border-radius: 5px;
-  padding: 8px 10px;
+  padding: 7px 10px;
   color: #1d252d;
   background: transparent;
   text-align: left;
   font-weight: 650;
+  white-space: nowrap;
+}
+
+.context-menu-trigger {
+  position: relative;
+  padding-right: 28px !important;
+}
+
+.context-menu-trigger::after {
+  content: "›";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #52616f;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.context-menu-submenu {
+  position: absolute;
+  left: calc(100% + 6px);
+  top: 0;
+  display: none;
+  min-width: 210px;
+  max-height: min(72vh, 520px);
+  overflow-y: auto;
+  border: 1px solid #b9c2cc;
+  border-radius: 8px;
+  padding: 5px;
+  background: #fff;
+  box-shadow: 0 12px 28px rgb(20 31 43 / 18%);
+}
+
+.context-menu.opens-left .context-menu-submenu {
+  right: calc(100% + 6px);
+  left: auto;
+}
+
+.context-menu-section:hover > .context-menu-submenu,
+.context-menu-section.is-open > .context-menu-submenu {
+  display: block;
+}
+
+.context-menu-section:hover > .context-menu-trigger,
+.context-menu-section.is-open > .context-menu-trigger {
+  color: #fff;
+  background: #245b82;
+}
+
+.context-menu-section:hover > .context-menu-trigger::after,
+.context-menu-section.is-open > .context-menu-trigger::after {
+  color: #fff;
 }
 
 .context-menu button:hover,
@@ -709,6 +755,32 @@ html[data-theme="dark"] .app-dock {
     overflow-y: auto;
   }
 
+  .context-menu-submenu {
+    position: static;
+    min-width: 0;
+    max-height: none;
+    margin-top: 2px;
+    margin-bottom: 4px;
+    border-color: #dce4eb;
+    box-shadow: none;
+  }
+
+  .context-menu.opens-left .context-menu-submenu {
+    right: auto;
+  }
+
+  .context-menu-section:hover > .context-menu-submenu {
+    display: none;
+  }
+
+  .context-menu-section.is-open > .context-menu-submenu {
+    display: block;
+  }
+
+  .context-menu-trigger::after {
+    content: "⌄";
+  }
+
   .verse-actions-button {
     display: inline-flex;
     width: 36px;
@@ -794,6 +866,7 @@ html[data-theme="dark"] .saved-map-study,
 html[data-theme="dark"] .map-modal-shell,
 html[data-theme="dark"] .map-pin-hint,
 html[data-theme="dark"] .context-menu,
+html[data-theme="dark"] .context-menu-submenu,
 html[data-theme="dark"] .notice,
 html[data-theme="dark"] .error,
 html[data-theme="dark"] .saved-study,
@@ -803,11 +876,7 @@ html[data-theme="dark"] .highlight-item {
   border-color: var(--border);
 }
 
-html[data-theme="dark"] .context-menu-section + .context-menu-section {
-  border-top-color: var(--border);
-}
-
-html[data-theme="dark"] .context-menu-heading {
+html[data-theme="dark"] .context-menu-trigger::after {
   color: var(--page-muted);
 }
 

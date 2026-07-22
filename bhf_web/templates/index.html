@@ -770,43 +770,51 @@
     </dialog>
 
     <nav id="reader-context-menu" class="context-menu" aria-label="Verse actions" hidden>
-      <div class="context-menu-section" role="group" aria-labelledby="context-menu-study-heading">
-        <p id="context-menu-study-heading" class="context-menu-heading">Study</p>
-        <button type="button" data-context-action="ask_bhf">Ask BHF</button>
-        <button type="button" data-context-action="literary_context">Literary Context</button>
-        <button type="button" data-context-action="word_study">Word Study</button>
+      <div class="context-menu-section" role="group">
+        <button type="button" class="context-menu-trigger" data-context-submenu="study" aria-haspopup="menu" aria-expanded="false">Study</button>
+        <div class="context-menu-submenu" role="menu" aria-label="Study actions">
+          <button type="button" role="menuitem" data-context-action="ask_bhf">Ask BHF</button>
+          <button type="button" role="menuitem" data-context-action="literary_context">Literary Context</button>
+          <button type="button" role="menuitem" data-context-action="word_study">Word Study</button>
+        </div>
       </div>
-      <div class="context-menu-section" role="group" aria-labelledby="context-menu-context-heading">
-        <p id="context-menu-context-heading" class="context-menu-heading">Context</p>
-        <button type="button" data-context-action="full_context">Full Context</button>
-        <button type="button" data-context-action="historical_context">Historical Context</button>
-        <button type="button" data-context-action="cultural_context">Cultural Context</button>
-        <button type="button" data-context-action="ancient_context" hidden>Ancient Context</button>
-        <button type="button" data-context-action="original_audience">Original Audience</button>
-        <button type="button" data-context-action="covenant_context">Covenant Context</button>
+      <div class="context-menu-section" role="group">
+        <button type="button" class="context-menu-trigger" data-context-submenu="context" aria-haspopup="menu" aria-expanded="false">Context</button>
+        <div class="context-menu-submenu" role="menu" aria-label="Context actions">
+          <button type="button" role="menuitem" data-context-action="full_context">Full Context</button>
+          <button type="button" role="menuitem" data-context-action="historical_context">Historical Context</button>
+          <button type="button" role="menuitem" data-context-action="cultural_context">Cultural Context</button>
+          <button type="button" role="menuitem" data-context-action="ancient_context" hidden>Ancient Context</button>
+          <button type="button" role="menuitem" data-context-action="original_audience">Original Audience</button>
+          <button type="button" role="menuitem" data-context-action="covenant_context">Covenant Context</button>
+        </div>
       </div>
-      <div class="context-menu-section" role="group" aria-labelledby="context-menu-reference-heading">
-        <p id="context-menu-reference-heading" class="context-menu-heading">Reference</p>
-        <button type="button" data-context-action="cross_references">Cross References</button>
-        <button type="button" data-context-action="related_ot_themes">Related OT Themes</button>
-        <button type="button" data-context-action="people">People</button>
-        <button type="button" data-context-action="places">Places</button>
-        <button type="button" data-context-action="themes">Themes</button>
-        <button type="button" data-context-action="fulfillment_nt">Fulfillment in the NT</button>
-        <button type="button" data-context-action="compare_translations">Compare Translations</button>
-        <button type="button" data-context-action="timeline">Timeline</button>
-        <button type="button" data-context-action="open_map_panel">Maps</button>
-        <button type="button" data-context-action="ask_location">Ask about this location</button>
-        <button type="button" data-context-action="related_passages">View related passages</button>
-        <button type="button" data-context-action="view_historical_layer">View historical layer</button>
+      <div class="context-menu-section" role="group">
+        <button type="button" class="context-menu-trigger" data-context-submenu="reference" aria-haspopup="menu" aria-expanded="false">Reference</button>
+        <div class="context-menu-submenu" role="menu" aria-label="Reference actions">
+          <button type="button" role="menuitem" data-context-action="cross_references">Cross References</button>
+          <button type="button" role="menuitem" data-context-action="related_ot_themes">Related OT Themes</button>
+          <button type="button" role="menuitem" data-context-action="people">People</button>
+          <button type="button" role="menuitem" data-context-action="places">Places</button>
+          <button type="button" role="menuitem" data-context-action="themes">Themes</button>
+          <button type="button" role="menuitem" data-context-action="fulfillment_nt">Fulfillment in the NT</button>
+          <button type="button" role="menuitem" data-context-action="compare_translations">Compare Translations</button>
+          <button type="button" role="menuitem" data-context-action="timeline">Timeline</button>
+          <button type="button" role="menuitem" data-context-action="open_map_panel">Maps</button>
+          <button type="button" role="menuitem" data-context-action="ask_location">Ask about this location</button>
+          <button type="button" role="menuitem" data-context-action="related_passages">View related passages</button>
+          <button type="button" role="menuitem" data-context-action="view_historical_layer">View historical layer</button>
+        </div>
       </div>
-      <div class="context-menu-section" role="group" aria-labelledby="context-menu-actions-heading">
-        <p id="context-menu-actions-heading" class="context-menu-heading">Study Actions</p>
-        <button type="button" data-context-action="highlight">Highlight Verse</button>
-        <button type="button" data-context-action="note">Add Note</button>
-        <button type="button" data-context-action="save_study">Save Study</button>
-        <button type="button" data-context-action="save_map_study">Save map study</button>
-        <button type="button" data-context-action="map_note">Add map note</button>
+      <div class="context-menu-section" role="group">
+        <button type="button" class="context-menu-trigger" data-context-submenu="actions" aria-haspopup="menu" aria-expanded="false">Study Actions</button>
+        <div class="context-menu-submenu" role="menu" aria-label="Study management actions">
+          <button type="button" role="menuitem" data-context-action="highlight">Highlight Verse</button>
+          <button type="button" role="menuitem" data-context-action="note">Add Note</button>
+          <button type="button" role="menuitem" data-context-action="save_study">Save Study</button>
+          <button type="button" role="menuitem" data-context-action="save_map_study">Save map study</button>
+          <button type="button" role="menuitem" data-context-action="map_note">Add map note</button>
+        </div>
       </div>
     </nav>
   </main>

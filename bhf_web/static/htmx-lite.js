@@ -69,6 +69,7 @@ let noteContext = null;
 let currentNotes = [];
 let currentHighlights = [];
 let contextMenuState = null;
+let contextMenuPosition = null;
 let lastMapAIFallbackKey = null;
 let activeLiveAnswerPanel = null;
 let latestDeterministicStudyResult = null;
@@ -236,7 +237,7 @@ async function initializeReader() {
   document.addEventListener("selectionchange", updateSelectionFromDocument);
   document.addEventListener("click", closeContextMenuOnOutside);
   document.addEventListener("keydown", closeContextMenuOnEscape);
-  window.addEventListener("scroll", closeContextMenuOnReaderScroll, true);
+  window.addEventListener("scroll", keepContextMenuVisibleOnReaderScroll, true);
   reader.addEventListener("contextmenu", handleReaderContextMenu);
   reader.addEventListener("pointerdown", handleReaderPointerDown);
   reader.addEventListener("pointermove", handleReaderPointerMove);
@@ -2016,7 +2017,10 @@ function handleReaderActionButtonClick(event) {
   event.stopPropagation();
 
   if (verseSelect) {
-    const context = contextFromVerse(verse);
+    const verseNumber = Number(verse.dataset.verse);
+    const context = event.shiftKey && currentSelection
+      ? contextFromVerseRange(currentSelection.startVerse, verseNumber)
+      : contextFromVerse(verse);
     if (context) {
       clearDocumentSelection();
       applySelectionContext(context);
@@ -2190,6 +2194,25 @@ function contextFromVerse(verse) {
   };
 }
 
+function contextFromVerseRange(startVerse, endVerse) {
+  if (!currentChapter) {
+    return null;
+  }
+  const rangeStart = Math.min(Number(startVerse), Number(endVerse));
+  const rangeEnd = Math.max(Number(startVerse), Number(endVerse));
+  if (!rangeStart || !rangeEnd) {
+    return null;
+  }
+  return {
+    book: currentChapter.book,
+    chapter: currentChapter.chapter,
+    startVerse: rangeStart,
+    endVerse: rangeEnd,
+    text: collectSelectedVerseText(rangeStart, rangeEnd),
+    isSelection: rangeStart !== rangeEnd
+  };
+}
+
 function contextForVerseAction(verse) {
   const verseNumber = Number(verse?.dataset?.verse || "0");
   const documentContext = selectionContextFromDocument();
@@ -2237,16 +2260,50 @@ function showContextMenu(x, y, context) {
   setContextLabel("save_study", "Save Study");
   setContextLabel("note", isSelection ? "Add Note" : "Add Note");
   setContextLabel("highlight", isHighlighted ? "Remove Highlight" : (isSelection ? "Highlight Selection" : "Highlight Verse"));
+  resetContextSubmenus(menu);
+  contextMenuPosition = { x, y };
   menu.hidden = false;
-  const rect = menu.getBoundingClientRect();
-  const left = Math.min(x, window.innerWidth - rect.width - 8);
-  const top = Math.min(y, window.innerHeight - rect.height - 8);
-  menu.style.left = `${Math.max(8, left)}px`;
-  menu.style.top = `${Math.max(8, top)}px`;
+  positionContextMenu(menu, x, y);
   const firstButton = menu.querySelector("button");
   if (firstButton) {
     firstButton.focus({ preventScroll: true });
   }
+}
+
+function positionContextMenu(menu, x, y) {
+  const rect = menu.getBoundingClientRect();
+  const submenuWidth = 230;
+  const left = Math.min(x, window.innerWidth - rect.width - 8);
+  const top = Math.min(y, window.innerHeight - rect.height - 8);
+  const clampedLeft = Math.max(8, left);
+  const clampedTop = Math.max(8, top);
+  menu.style.left = `${clampedLeft}px`;
+  menu.style.top = `${clampedTop}px`;
+  menu.classList.toggle("opens-left", clampedLeft + rect.width + submenuWidth > window.innerWidth);
+}
+
+function resetContextSubmenus(menu = document.querySelector("#reader-context-menu")) {
+  if (!menu) {
+    return;
+  }
+  menu.querySelectorAll(".context-menu-section.is-open").forEach((section) => {
+    section.classList.remove("is-open");
+  });
+  menu.querySelectorAll("[data-context-submenu]").forEach((trigger) => {
+    trigger.setAttribute("aria-expanded", "false");
+  });
+}
+
+function toggleContextSubmenu(trigger) {
+  const section = trigger.closest(".context-menu-section");
+  const menu = trigger.closest(".context-menu");
+  if (!section || !menu) {
+    return;
+  }
+  const willOpen = !section.classList.contains("is-open");
+  resetContextSubmenus(menu);
+  section.classList.toggle("is-open", willOpen);
+  trigger.setAttribute("aria-expanded", willOpen ? "true" : "false");
 }
 
 function setContextLabel(action, label) {
@@ -2257,6 +2314,13 @@ function setContextLabel(action, label) {
 }
 
 async function handleContextMenuAction(event) {
+  const submenuTrigger = event.target.closest("[data-context-submenu]");
+  if (submenuTrigger) {
+    event.preventDefault();
+    event.stopPropagation();
+    toggleContextSubmenu(submenuTrigger);
+    return;
+  }
   const button = event.target.closest("[data-context-action]");
   if (!button || !contextMenuState) {
     return;
@@ -2829,20 +2893,22 @@ function closeContextMenuOnEscape(event) {
   }
 }
 
-function closeContextMenuOnReaderScroll(event) {
+function keepContextMenuVisibleOnReaderScroll(event) {
   const menu = document.querySelector("#reader-context-menu");
-  if (menu && menu.contains(event.target)) {
+  if (!menu || menu.hidden || menu.contains(event.target) || !contextMenuPosition) {
     return;
   }
-  hideContextMenu();
+  positionContextMenu(menu, contextMenuPosition.x, contextMenuPosition.y);
 }
 
 function hideContextMenu() {
   const menu = document.querySelector("#reader-context-menu");
   if (menu) {
     menu.hidden = true;
+    resetContextSubmenus(menu);
   }
   contextMenuState = null;
+  contextMenuPosition = null;
 }
 
 function clearDocumentSelection() {

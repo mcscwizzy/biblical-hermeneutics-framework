@@ -110,13 +110,18 @@ active jobs and old status history reset when the FastAPI app restarts.
 
 ## Right-Click Study Menu
 
-Right-clicking Bible text opens a local study menu. If text is selected, actions
-use the selected text and resolved verse range. If no text is selected, actions
-use the verse that was right-clicked.
+Right-clicking Bible text opens a compact local study menu with Study, Context,
+Reference, and Study Actions submenus. If text is selected, actions use the
+selected text and resolved verse range. If no text is selected, actions use the
+verse that was right-clicked. Click a verse number, then Shift-click another
+verse number to select a multi-verse range before highlighting, adding a note,
+or asking BHF.
 
 Available actions:
 
-- **Ancient Context** asks BHF to explain the passage in its ancient setting,
+- **Full Context** asks BHF for a broad contextual reading of the selected passage.
+- **Historical Context** asks BHF to explain the passage in its historical setting.
+- **Cultural Context** asks BHF to explain the passage in its ancient setting,
   with OT/NT background appropriate to the book and a clear distinction between
   certain and probable background.
 - **Literary Context** asks BHF to explain how the passage functions in its
@@ -142,8 +147,8 @@ Available actions:
 - **Highlight this verse / selection** applies a visible highlight and persists
   it locally.
 
-The menu closes after choosing an action, clicking outside, pressing Escape, or
-navigating away.
+The menu stays visible while the page scrolls, and closes after choosing an
+action, clicking outside, pressing Escape, or navigating away.
 
 ## Notes And Highlights
 
