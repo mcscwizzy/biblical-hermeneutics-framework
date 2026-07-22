@@ -1,5 +1,10 @@
 import { createBibleMap } from "./BibleMap.js";
 import {
+  getOrderedJourneyStops,
+  journeyMatchesFilters,
+  loadJourneyCatalog,
+} from "./JourneyMapData.js";
+import {
   loadMapCatalog,
   loadHistoricalLayers,
   invalidateMapCache,
@@ -37,8 +42,6 @@ import {
   buildCurrentMapStudyPayload,
   getCurrentMapSelection,
   normalizeHistoricalPeriod,
-  syncHistoricalLayerToggles as syncHistoricalLayerTogglesHtml,
-  syncPoliticalContextLayerToggles as syncPoliticalContextLayerTogglesHtml,
   syncRouteToggle as syncRouteToggleHtml,
 } from "./MapPanelStateHelpers.js";
 
@@ -57,6 +60,16 @@ let loadedRoutes = [];
 let loadedHistoricalLayers = [];
 let loadedPoliticalContextLayers = [];
 let loadedSavedMapStudies = [];
+let loadedJourneys = [];
+let journeyFacets = { categories: [], eras: [], testaments: [], tags: [] };
+let selectedJourneyId = "";
+let selectedJourneyStopId = "";
+let selectedJourneySegmentId = "";
+let journeySearch = "";
+let journeyTestament = "";
+let journeyCategory = "";
+let journeyEra = "";
+let journeyVisibility = true;
 let browseSearchResults = [];
 let browseSearchQuery = "";
 let browseSearchKind = "all";
@@ -115,6 +128,17 @@ function getPanelElements() {
     mapSearchResults: document.querySelector("#map-search-results"),
     mapSearchResultsCount: document.querySelector("#map-search-results-count"),
     mapSearchResultsList: document.querySelector("#map-search-results-list"),
+    journeyPanel: document.querySelector("[data-map-journeys]"),
+    journeySearch: document.querySelector("[data-map-journey-search]"),
+    journeySelector: document.querySelector("[data-map-journey-selector]"),
+    journeyTestament: document.querySelector("[data-map-journey-filter-testament]"),
+    journeyCategory: document.querySelector("[data-map-journey-filter-category]"),
+    journeyEra: document.querySelector("[data-map-journey-filter-era]"),
+    journeyToggle: document.querySelector("[data-map-journey-toggle]"),
+    journeyCount: document.querySelector("[data-map-journey-count]"),
+    journeyStopList: document.querySelector("[data-map-journey-stop-list]"),
+    journeySegmentList: document.querySelector("[data-map-journey-segment-list]"),
+    journeyDetail: document.querySelector("[data-map-journey-detail]"),
     workspace: document.querySelector("#map-workspace"),
     inlineHost: document.querySelector("#map-workspace-inline-host"),
     modal: document.querySelector("#map-modal"),
@@ -157,6 +181,167 @@ function formatReference(context) {
     : `${context.book} ${context.chapter}:${verseStart}-${verseEnd}`;
 }
 
+function normalizeConfidenceClass(value) {
+  return String(value || "unknown").trim().toLowerCase().replace(/\s+/g, "-") || "unknown";
+}
+
+function getSelectedJourney() {
+  return loadedJourneys.find((journey) => journey.id === selectedJourneyId) || null;
+}
+
+function getVisibleJourneys() {
+  return loadedJourneys.filter((journey) =>
+    journeyMatchesFilters(journey, {
+      search: journeySearch,
+      testament: journeyTestament,
+      category: journeyCategory,
+      era: journeyEra,
+    })
+  );
+}
+
+function getSelectedJourneyStop(journey = getSelectedJourney()) {
+  if (!journey || !selectedJourneyStopId) {
+    return null;
+  }
+  return (journey.stops || []).find((stop) => stop.id === selectedJourneyStopId) || null;
+}
+
+function getSelectedJourneySegment(journey = getSelectedJourney()) {
+  if (!journey || !selectedJourneySegmentId) {
+    return null;
+  }
+  return (journey.segments || []).find((segment) => segment.id === selectedJourneySegmentId) || null;
+}
+
+function renderSelectOptions(values, currentValue, placeholder = "All") {
+  const options = [`<option value="">${escapeHtml(placeholder)}</option>`];
+  for (const value of values || []) {
+    options.push(`<option value="${escapeHtml(value)}" ${value === currentValue ? "selected" : ""}>${escapeHtml(value)}</option>`);
+  }
+  return options.join("");
+}
+
+function syncJourneyControls() {
+  const {
+    journeySearch: searchInput,
+    journeySelector,
+    journeyTestament: testamentSelect,
+    journeyCategory: categorySelect,
+    journeyEra: eraSelect,
+    journeyToggle,
+    journeyCount,
+  } = getPanelElements();
+  const visibleJourneys = getVisibleJourneys();
+
+  if (searchInput && searchInput.value !== journeySearch) {
+    searchInput.value = journeySearch;
+  }
+  if (journeyToggle) {
+    journeyToggle.checked = journeyVisibility;
+  }
+  if (journeyCount) {
+    journeyCount.textContent = `${visibleJourneys.length} of ${loadedJourneys.length}`;
+  }
+  if (journeySelector) {
+    const selectedStillVisible = visibleJourneys.some((journey) => journey.id === selectedJourneyId);
+    journeySelector.innerHTML = [
+      `<option value="">${visibleJourneys.length ? "Choose a journey" : "No matching journeys"}</option>`,
+      ...visibleJourneys.map((journey) =>
+        `<option value="${escapeHtml(journey.id)}" ${journey.id === selectedJourneyId && selectedStillVisible ? "selected" : ""}>${escapeHtml(journey.title)}</option>`
+      ),
+    ].join("");
+    journeySelector.value = selectedStillVisible ? selectedJourneyId : "";
+  }
+  if (testamentSelect) {
+    testamentSelect.innerHTML = renderSelectOptions(journeyFacets.testaments, journeyTestament);
+    testamentSelect.value = journeyTestament;
+  }
+  if (categorySelect) {
+    categorySelect.innerHTML = renderSelectOptions(journeyFacets.categories, journeyCategory);
+    categorySelect.value = journeyCategory;
+  }
+  if (eraSelect) {
+    eraSelect.innerHTML = renderSelectOptions(journeyFacets.eras, journeyEra);
+    eraSelect.value = journeyEra;
+  }
+}
+
+function renderJourneySidebar() {
+  const { journeyStopList, journeySegmentList, journeyDetail } = getPanelElements();
+  const journey = getSelectedJourney();
+  const orderedStops = getOrderedJourneyStops(journey);
+
+  if (journeyStopList) {
+    journeyStopList.innerHTML = orderedStops.length
+      ? orderedStops.map((stop) => `
+          <button type="button" class="map-journey-list-item ${stop.id === selectedJourneyStopId ? "is-selected" : ""}" data-map-journey-stop="${escapeHtml(stop.id)}" aria-pressed="${stop.id === selectedJourneyStopId}">
+            <span class="map-journey-list-order">${Number.isFinite(stop.order) ? escapeHtml(String(stop.order)) : "•"}</span>
+            <span>
+              <strong>${escapeHtml(stop.name)}</strong>
+              <span>${escapeHtml([stop.region, stop.modernLocation].filter(Boolean).join(" · ") || "No location detail")}</span>
+            </span>
+          </button>
+        `).join("")
+      : `<p class="empty">Choose a journey to see its stops.</p>`;
+  }
+
+  if (journeySegmentList) {
+    journeySegmentList.innerHTML = journey?.segments?.length
+      ? journey.segments.map((segment) => {
+          const from = journey.stops.find((stop) => stop.id === segment.from);
+          const to = journey.stops.find((stop) => stop.id === segment.to);
+          return `
+            <button type="button" class="map-journey-list-item ${segment.id === selectedJourneySegmentId ? "is-selected" : ""}" data-map-journey-segment="${escapeHtml(segment.id)}" aria-pressed="${segment.id === selectedJourneySegmentId}">
+              <span>
+                <strong>${escapeHtml(segment.label || "Segment")}</strong>
+                <span>${escapeHtml(`${from?.name || segment.from} → ${to?.name || segment.to}`)}</span>
+              </span>
+            </button>
+          `;
+        }).join("")
+      : `<p class="empty">Journey segments will appear here.</p>`;
+  }
+
+  if (journeyDetail) {
+    if (!journey) {
+      journeyDetail.innerHTML = `<p class="empty">Search or choose a journey to draw its stops and route on the map.</p>`;
+    } else {
+      const selectedStop = getSelectedJourneyStop(journey);
+      const selectedSegment = getSelectedJourneySegment(journey);
+      const title = selectedStop?.name || selectedSegment?.label || journey.title;
+      const subtitle = selectedStop
+        ? [selectedStop.region, selectedStop.modernLocation].filter(Boolean).join(" · ")
+        : selectedSegment
+          ? "Selected route segment"
+          : [journey.testament, journey.category, journey.era].filter(Boolean).join(" · ");
+      const description = selectedStop?.description || selectedSegment?.description || journey.description || "";
+      journeyDetail.innerHTML = `
+        <div class="map-journey-detail-card">
+          <div class="map-section-header">
+            <h4>${escapeHtml(title)}</h4>
+            <span class="map-confidence confidence-${escapeHtml(normalizeConfidenceClass(selectedStop?.confidence || selectedSegment?.confidence || journey.confidence))}">
+              ${escapeHtml(selectedStop?.confidence || selectedSegment?.confidence || journey.confidence || "unknown")}
+            </span>
+          </div>
+          <p class="map-details-subtitle">${escapeHtml(subtitle || "Journey overview")}</p>
+          <p>${escapeHtml(description || "No description supplied.")}</p>
+          <div class="map-journey-passage-row">
+            ${(selectedStop?.passages || selectedSegment?.passages || journey.primaryPassages || []).slice(0, 4).map((passage) =>
+              `<button type="button" class="map-passage-chip" data-map-open-passage="${escapeHtml(passage)}">${escapeHtml(passage)}</button>`
+            ).join("")}
+          </div>
+        </div>
+      `;
+    }
+  }
+  syncJourneyControls();
+}
+
+function renderSupplementalControls() {
+  renderJourneySidebar();
+}
+
 function getLoadContext(context = {}) {
   return {
     ...context,
@@ -197,25 +382,30 @@ async function loadPassageMapData(context = {}) {
 }
 
 async function loadBrowseMapData() {
-  const [
-    catalog,
-    savedMapStudiesResult,
-  ] = await Promise.all([
-    loadMapCatalog({ period: browseSearchPeriod }),
-    loadSavedMapStudies(),
-  ]);
+  const savedMapStudiesResult = await loadSavedMapStudies();
   return {
-    placeResult: { markers: catalog.places || [] },
-    routeResult: { routes: catalog.routes || [] },
-    layerResult: { layers: catalog.historical_layers || [] },
-    politicalContextResult: { layers: catalog.political_context || [] },
+    placeResult: { markers: [] },
+    routeResult: { routes: [] },
+    layerResult: { layers: [] },
+    politicalContextResult: { layers: [] },
     savedMapStudiesResult: savedMapStudiesResult || { saved_map_studies: [] },
-    offline: Boolean(catalog.offline || savedMapStudiesResult?.offline),
+    offline: Boolean(savedMapStudiesResult?.offline),
   };
 }
 
 async function loadMapData(context = {}) {
   return mapMode === "browse" ? loadBrowseMapData() : loadPassageMapData(context);
+}
+
+async function loadSupplementalMapData() {
+  const journeyCatalog = await loadJourneyCatalog();
+  loadedJourneys = journeyCatalog.journeys || [];
+  journeyFacets = journeyCatalog.facets || { categories: [], eras: [], testaments: [], tags: [] };
+  if (selectedJourneyId && !loadedJourneys.some((journey) => journey.id === selectedJourneyId)) {
+    selectedJourneyId = "";
+    selectedJourneyStopId = "";
+    selectedJourneySegmentId = "";
+  }
 }
 
 function setStatus(message, kind = "loading") {
@@ -390,6 +580,58 @@ function renderBrowseSearchResults(results, query = "") {
     .join("");
 }
 
+function uniqueItemsById(items = []) {
+  const seen = new Set();
+  const uniqueItems = [];
+  for (const item of items) {
+    const id = String(item?.id || "");
+    if (!id || seen.has(id)) {
+      continue;
+    }
+    seen.add(id);
+    uniqueItems.push(item);
+  }
+  return uniqueItems;
+}
+
+function browsePayloadFromSearchResults(results = []) {
+  const values = Array.isArray(results) ? results : [];
+  return {
+    markers: uniqueItemsById(values.filter((result) => result.kind === "place").map((result) => result.item)),
+    routes: uniqueItemsById(values.filter((result) => result.kind === "route").map((result) => result.item)),
+    historicalLayers: uniqueItemsById(values.filter((result) => result.kind === "historical_layer").map((result) => result.item)),
+    politicalContextLayers: uniqueItemsById(values.filter((result) => result.kind === "political_context").map((result) => result.item)),
+  };
+}
+
+function refreshBrowseMapResults(results = []) {
+  const payload = browsePayloadFromSearchResults(results);
+  loadedMarkers = payload.markers;
+  loadedRoutes = payload.routes;
+  loadedHistoricalLayers = payload.historicalLayers;
+  loadedPoliticalContextLayers = payload.politicalContextLayers;
+  const routeVisibility = Boolean(getPanelElements().routeToggle?.checked);
+  ensureMapController(
+    loadedMarkers,
+    loadedRoutes,
+    loadedHistoricalLayers,
+    loadedPoliticalContextLayers,
+    routeVisibility
+  );
+  syncRouteToggle();
+}
+
+function clearCurrentMapSelection({ clearVisibleLayers = false } = {}) {
+  selectedMarker = null;
+  selectedRoute = null;
+  selectedHistoricalLayer = null;
+  selectedPoliticalContext = null;
+  if (clearVisibleLayers) {
+    visibleHistoricalLayerIds.clear();
+    visiblePoliticalContextLayerIds.clear();
+  }
+}
+
 function setBrowseSearchControls({ query = "", kind = "all", period = "all" } = {}) {
   const { mapSearchQuery, mapSearchKind, mapSearchPeriod } = getPanelElements();
   if (mapSearchQuery) {
@@ -413,10 +655,7 @@ function setSelectedSearchResult(result) {
   }
   clearStatus();
   setPinHint("");
-  selectedMarker = null;
-  selectedRoute = null;
-  selectedHistoricalLayer = null;
-  selectedPoliticalContext = null;
+  clearCurrentMapSelection({ clearVisibleLayers: true });
 
   if (result.kind === "place") {
     selectedMarker = result.item;
@@ -453,19 +692,24 @@ async function runBrowseSearch() {
   setBrowseSearchControls({ query, kind, period: browseSearchPeriod });
 
   if (!query) {
+    clearCurrentMapSelection({ clearVisibleLayers: true });
     renderBrowseInstructions();
+    refreshBrowseMapResults([]);
     clearStatus();
     return;
   }
 
   setStatus(`Searching the map catalog for "${query}"...`, "loading");
+  clearCurrentMapSelection({ clearVisibleLayers: true });
   try {
     const result = await searchMapCatalog(query, {
       kind,
       period: browseSearchPeriod,
       limit: 30,
     });
-    renderBrowseSearchResults(result.results || [], query);
+    const results = result.results || [];
+    renderBrowseSearchResults(results, query);
+    refreshBrowseMapResults(results);
     if ((result.results || []).length === 0) {
       setStatus(`No curated map results matched "${query}".`, "empty");
     } else {
@@ -484,7 +728,9 @@ function clearBrowseSearch() {
   }
   browseSearchQuery = "";
   browseSearchResults = [];
+  clearCurrentMapSelection({ clearVisibleLayers: true });
   renderBrowseInstructions();
+  refreshBrowseMapResults([]);
   clearStatus();
 }
 
@@ -552,6 +798,10 @@ function ensureMapController(
     historicalLayerIds: Array.from(visibleHistoricalLayerIds),
     politicalContextLayers,
     politicalContextLayerIds: Array.from(visiblePoliticalContextLayerIds),
+    journey: getSelectedJourney(),
+    journeyVisibility,
+    selectedJourneyStopId,
+    selectedJourneySegmentId,
     routeVisibility,
     onTileError(error) {
       setStatus(error.message, "error");
@@ -590,22 +840,43 @@ function ensureMapController(
       }
       renderSelectedPoliticalContext(layer, lastPassageContext);
     },
+    onJourneyStopClick(journey, stop) {
+      selectedJourneyId = journey.id;
+      selectedJourneyStopId = stop.id;
+      selectedJourneySegmentId = "";
+      if (mapController) {
+        mapController.setSelectedJourneyStop(stop.id);
+      }
+      renderJourneySidebar();
+      renderSelectedJourneyStop(journey, stop);
+    },
+    onJourneySegmentClick(journey, segment) {
+      selectedJourneyId = journey.id;
+      selectedJourneyStopId = "";
+      selectedJourneySegmentId = segment.id;
+      if (mapController) {
+        mapController.setSelectedJourneySegment(segment.id);
+      }
+      renderJourneySidebar();
+      renderSelectedJourneySegment(journey, segment);
+    },
   });
   return mapController;
 }
 
 async function openMapPanel(context = {}) {
-  const catalog = await loadMapCatalog({ period: "all" });
+  const [catalog] = await Promise.all([
+    loadMapCatalog({ period: "all" }),
+    loadSupplementalMapData(),
+  ]);
   if (catalog?.timeline?.period_options) {
     applyTimelineOptions(catalog.timeline.period_options);
   }
+  renderSupplementalControls();
   const browseMode = context.mode === "browse" || (!context.book && !context.chapter && !context.savedMapStudy);
   setMapMode(browseMode ? "browse" : "passage");
   if (browseMode) {
-    selectedMarker = null;
-    selectedRoute = null;
-    selectedHistoricalLayer = null;
-    selectedPoliticalContext = null;
+    clearCurrentMapSelection({ clearVisibleLayers: true });
     lastPassageContext = null;
     browseSearchPeriod = normalizeHistoricalPeriod(context.period || historicalPeriod || "all");
     setBrowseSearchControls({
@@ -617,10 +888,7 @@ async function openMapPanel(context = {}) {
     const nextReference = formatReference(context);
     const previousReference = formatReference(lastPassageContext);
     if (nextReference !== previousReference) {
-      selectedMarker = null;
-      selectedRoute = null;
-      selectedHistoricalLayer = null;
-      selectedPoliticalContext = null;
+      clearCurrentMapSelection({ clearVisibleLayers: true });
     }
   }
   if (context.savedMapStudy?.map_view_state?.historicalPeriod) {
@@ -679,16 +947,16 @@ async function openMapPanel(context = {}) {
     }
     syncRouteToggle();
     syncHistoricalPeriod();
-    syncHistoricalLayerToggles();
-    syncPoliticalContextLayerToggles();
     await refreshSavedMapStudies();
 
     if (browseMode) {
       clearStatus();
       if (browseSearchResults.length > 0) {
         renderBrowseSearchResults(browseSearchResults, browseSearchQuery);
+        refreshBrowseMapResults(browseSearchResults);
       } else {
         renderBrowseInstructions("Browse the catalog, or search by topic, location, route, or regional context.");
+        refreshBrowseMapResults([]);
       }
       return;
     }
@@ -905,6 +1173,88 @@ function setRouteVisibility(visible) {
   }
 }
 
+function applySelectedJourneyToMap({ fit = true } = {}) {
+  const journey = getSelectedJourney();
+  if (journey && !selectedJourneyStopId && !selectedJourneySegmentId) {
+    const firstStop = getOrderedJourneyStops(journey)[0];
+    selectedJourneyStopId = firstStop?.id || "";
+  }
+  if (mapController) {
+    mapController.setJourney(journey);
+    mapController.setJourneyVisibility(Boolean(journey && journeyVisibility));
+    if (selectedJourneyStopId) {
+      mapController.setSelectedJourneyStop(selectedJourneyStopId);
+    } else if (selectedJourneySegmentId) {
+      mapController.setSelectedJourneySegment(selectedJourneySegmentId);
+    }
+    if (fit && journey) {
+      mapController.fitToContent();
+    }
+  }
+  renderJourneySidebar();
+}
+
+function selectJourney(journeyId, { fit = true } = {}) {
+  const journey = loadedJourneys.find((item) => item.id === journeyId) || null;
+  selectedJourneyId = journey?.id || "";
+  selectedJourneySegmentId = "";
+  const firstStop = getOrderedJourneyStops(journey)[0];
+  selectedJourneyStopId = firstStop?.id || "";
+  applySelectedJourneyToMap({ fit });
+  if (journey && selectedJourneyStopId) {
+    const stop = getSelectedJourneyStop(journey);
+    renderSelectedJourneyStop(journey, stop);
+    focusMapSelection({
+      kind: "journey_stop",
+      item: { ...stop, id: stop.id },
+    });
+  }
+}
+
+function selectJourneyStop(stopId) {
+  const journey = getSelectedJourney();
+  const stop = (journey?.stops || []).find((item) => item.id === stopId);
+  if (!journey || !stop) {
+    return;
+  }
+  selectedJourneyStopId = stop.id;
+  selectedJourneySegmentId = "";
+  if (mapController) {
+    mapController.setSelectedJourneyStop(stop.id);
+  }
+  renderJourneySidebar();
+  renderSelectedJourneyStop(journey, stop);
+  focusMapSelection({ kind: "journey_stop", item: stop });
+}
+
+function selectJourneySegment(segmentId) {
+  const journey = getSelectedJourney();
+  const segment = (journey?.segments || []).find((item) => item.id === segmentId);
+  if (!journey || !segment) {
+    return;
+  }
+  selectedJourneyStopId = "";
+  selectedJourneySegmentId = segment.id;
+  if (mapController) {
+    mapController.setSelectedJourneySegment(segment.id);
+  }
+  renderJourneySidebar();
+  renderSelectedJourneySegment(journey, segment);
+  focusMapSelection({ kind: "journey_segment", item: segment });
+}
+
+async function openPassageReference(reference) {
+  const passageReference = String(reference || "").trim();
+  if (!passageReference) {
+    return false;
+  }
+  if (window.BHFReader && typeof window.BHFReader.openPassageReference === "function") {
+    await window.BHFReader.openPassageReference(passageReference);
+    return true;
+  }
+  return false;
+}
+
 async function setHistoricalPeriod(period) {
   historicalPeriod = normalizeHistoricalPeriod(period);
   const { historicalPeriod: historicalPeriodSelect } = getPanelElements();
@@ -962,13 +1312,14 @@ async function setHistoricalPeriod(period) {
       routeVisibility
     );
     syncRouteToggle();
-    syncHistoricalLayerToggles();
     if (mapMode === "browse") {
       clearStatus();
       if (browseSearchResults.length > 0) {
         renderBrowseSearchResults(browseSearchResults, browseSearchQuery);
+        refreshBrowseMapResults(browseSearchResults);
       } else {
         renderBrowseInstructions("Browse the catalog, or search by topic, location, route, or regional context.");
+        refreshBrowseMapResults([]);
       }
     } else if (selectedMarker) {
       renderSelectedMarker(selectedMarker, lastPassageContext);
@@ -1013,8 +1364,6 @@ function setHistoricalLayerVisibility(layerId, visible) {
   if (mapController) {
     mapController.setHistoricalLayerVisibility(normalizedId, visible);
   }
-  syncHistoricalLayerToggles();
-  syncPoliticalContextLayerToggles();
   if (selectedMarker) {
     renderSelectedMarker(selectedMarker, lastPassageContext);
   } else if (selectedRoute) {
@@ -1048,7 +1397,6 @@ function setPoliticalContextLayerVisibility(layerId, visible) {
   if (mapController) {
     mapController.setPoliticalContextLayerVisibility(normalizedId, visible);
   }
-  syncPoliticalContextLayerToggles();
   if (selectedMarker) {
     renderSelectedMarker(selectedMarker, lastPassageContext);
   } else if (selectedRoute) {
@@ -1065,16 +1413,6 @@ function setPoliticalContextLayerVisibility(layerId, visible) {
 function syncRouteToggle() {
   const { routeToggle } = getPanelElements();
   syncRouteToggleHtml(mapController, routeToggle);
-}
-
-function syncHistoricalLayerToggles() {
-  const { details } = getPanelElements();
-  syncHistoricalLayerTogglesHtml(details, visibleHistoricalLayerIds);
-}
-
-function syncPoliticalContextLayerToggles() {
-  const { details } = getPanelElements();
-  syncPoliticalContextLayerTogglesHtml(details, visiblePoliticalContextLayerIds);
 }
 
 function renderSelectedMarker(marker, passageContext) {
@@ -1115,6 +1453,94 @@ function renderSelectedPoliticalContext(layer, passageContext) {
   details.innerHTML = renderSelectedPoliticalContextHtml(layer, passageContext, {
     politicalOverview: renderPoliticalContextLayerOverview(),
   });
+}
+
+function renderPassageChips(passages = []) {
+  const values = Array.isArray(passages) ? passages.filter(Boolean) : [];
+  if (!values.length) {
+    return `<p>Not provided.</p>`;
+  }
+  return `
+    <div class="map-journey-passage-row">
+      ${values.map((passage) =>
+        `<button type="button" class="map-passage-chip" data-map-open-passage="${escapeHtml(passage)}">${escapeHtml(passage)}</button>`
+      ).join("")}
+    </div>
+  `;
+}
+
+function renderSelectedJourneyStop(journey, stop) {
+  const { details } = getPanelElements();
+  if (!details || !journey || !stop) {
+    return;
+  }
+  details.innerHTML = `
+    <div class="map-details-card">
+      <div class="map-details-header">
+        <div>
+          <h3>${escapeHtml(stop.name || "Unnamed stop")}</h3>
+          <div class="map-details-subtitle">${escapeHtml(journey.title || "Journey")}</div>
+        </div>
+        <span class="map-confidence confidence-${escapeHtml(normalizeConfidenceClass(stop.confidence || journey.confidence))}">
+          ${escapeHtml(stop.confidence || journey.confidence || "unknown")}
+        </span>
+      </div>
+      <section class="map-detail-section">
+        <h4>Location</h4>
+        <p>${escapeHtml([stop.region, stop.modernLocation].filter(Boolean).join(" · ") || "Not supplied.")}</p>
+      </section>
+      <section class="map-detail-section">
+        <h4>Related passages</h4>
+        ${renderPassageChips(stop.passages)}
+      </section>
+      <section class="map-detail-section">
+        <h4>Why this stop matters</h4>
+        <p>${escapeHtml(stop.description || "No stop description is available.")}</p>
+      </section>
+      <section class="map-detail-section map-caution">
+        <h4>BHF caution</h4>
+        <p>${escapeHtml(stop.caution || stop.notes || journey.caution || "This journey route is simplified for study and should not be treated as a precise reconstruction.")}</p>
+      </section>
+    </div>
+  `;
+}
+
+function renderSelectedJourneySegment(journey, segment) {
+  const { details } = getPanelElements();
+  if (!details || !journey || !segment) {
+    return;
+  }
+  const from = journey.stops.find((stop) => stop.id === segment.from);
+  const to = journey.stops.find((stop) => stop.id === segment.to);
+  details.innerHTML = `
+    <div class="map-details-card">
+      <div class="map-details-header">
+        <div>
+          <h3>${escapeHtml(segment.label || "Journey segment")}</h3>
+          <div class="map-details-subtitle">${escapeHtml(`${from?.name || segment.from} → ${to?.name || segment.to}`)}</div>
+        </div>
+        <span class="map-confidence confidence-${escapeHtml(normalizeConfidenceClass(segment.confidence || journey.confidence))}">
+          ${escapeHtml(segment.confidence || journey.confidence || "unknown")}
+        </span>
+      </div>
+      <section class="map-detail-section">
+        <h4>Journey</h4>
+        <p>${escapeHtml(journey.title || "Journey")}</p>
+      </section>
+      <section class="map-detail-section">
+        <h4>Related passages</h4>
+        ${renderPassageChips(segment.passages)}
+      </section>
+      <section class="map-detail-section">
+        <h4>Movement</h4>
+        <p>${escapeHtml(segment.description || "No segment description is available.")}</p>
+      </section>
+      <section class="map-detail-section map-caution">
+        <h4>BHF caution</h4>
+        <p>${escapeHtml(segment.caution || journey.caution || "This line is a study route, not a precise ancient road trace.")}</p>
+      </section>
+    </div>
+  `;
 }
 
 function renderHistoricalLayerOverview() {
@@ -1429,7 +1855,18 @@ function wirePanelButtons() {
   const mapSearchResultsList = document.querySelector("#map-search-results-list");
   const routeToggle = document.querySelector("[data-route-toggle]");
   const historicalPeriodSelect = document.querySelector("[data-historical-period]");
-  const { modal } = getPanelElements();
+  const {
+    modal,
+    journeySearch: journeySearchInput,
+    journeySelector,
+    journeyTestament: journeyTestamentSelect,
+    journeyCategory: journeyCategorySelect,
+    journeyEra: journeyEraSelect,
+    journeyToggle,
+    journeyStopList,
+    journeySegmentList,
+    journeyDetail,
+  } = getPanelElements();
   const details = document.querySelector("#map-details");
   const { savedMapStudiesList } = getPanelElements();
 
@@ -1505,10 +1942,83 @@ function wirePanelButtons() {
       await setHistoricalPeriod(event.target.value);
     });
   }
+  if (journeySearchInput) {
+    journeySearchInput.addEventListener("input", (event) => {
+      journeySearch = event.target.value || "";
+      if (selectedJourneyId && !getVisibleJourneys().some((journey) => journey.id === selectedJourneyId)) {
+        selectedJourneyId = "";
+        selectedJourneyStopId = "";
+        selectedJourneySegmentId = "";
+        applySelectedJourneyToMap({ fit: false });
+      }
+      renderJourneySidebar();
+    });
+  }
+  if (journeySelector) {
+    journeySelector.addEventListener("change", (event) => {
+      selectJourney(event.target.value);
+    });
+  }
+  if (journeyTestamentSelect) {
+    journeyTestamentSelect.addEventListener("change", (event) => {
+      journeyTestament = event.target.value || "";
+      renderJourneySidebar();
+    });
+  }
+  if (journeyCategorySelect) {
+    journeyCategorySelect.addEventListener("change", (event) => {
+      journeyCategory = event.target.value || "";
+      renderJourneySidebar();
+    });
+  }
+  if (journeyEraSelect) {
+    journeyEraSelect.addEventListener("change", (event) => {
+      journeyEra = event.target.value || "";
+      renderJourneySidebar();
+    });
+  }
+  if (journeyToggle) {
+    journeyToggle.addEventListener("change", (event) => {
+      journeyVisibility = Boolean(event.target.checked);
+      if (mapController) {
+        mapController.setJourneyVisibility(journeyVisibility);
+      }
+      renderJourneySidebar();
+    });
+  }
+  if (journeyStopList) {
+    journeyStopList.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-map-journey-stop]");
+      if (button) {
+        selectJourneyStop(button.getAttribute("data-map-journey-stop"));
+      }
+    });
+  }
+  if (journeySegmentList) {
+    journeySegmentList.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-map-journey-segment]");
+      if (button) {
+        selectJourneySegment(button.getAttribute("data-map-journey-segment"));
+      }
+    });
+  }
+  if (journeyDetail) {
+    journeyDetail.addEventListener("click", async (event) => {
+      const passageButton = event.target.closest("[data-map-open-passage]");
+      if (passageButton) {
+        await openPassageReference(passageButton.getAttribute("data-map-open-passage"));
+      }
+    });
+  }
   if (details) {
     details.addEventListener("click", async (event) => {
       const actionButton = event.target.closest("[data-map-action]");
       const passageShortcut = event.target.closest("[data-passage-shortcut]");
+      const openPassageButton = event.target.closest("[data-map-open-passage]");
+      if (openPassageButton) {
+        await openPassageReference(openPassageButton.getAttribute("data-map-open-passage"));
+        return;
+      }
       if (passageShortcut) {
         const reference = {
           book: passageShortcut.getAttribute("data-book") || "",
@@ -1542,21 +2052,6 @@ function wirePanelButtons() {
       } else if (action === "reset_map_view") {
         resetMapView();
       }
-    });
-    details.addEventListener("change", (event) => {
-      const toggle = event.target.closest("[data-historical-layer-toggle]");
-      if (!toggle) {
-        const politicalToggle = event.target.closest("[data-political-context-toggle]");
-        if (!politicalToggle) {
-          return;
-        }
-        setPoliticalContextLayerVisibility(
-          politicalToggle.getAttribute("data-layer-id"),
-          Boolean(politicalToggle.checked)
-        );
-        return;
-      }
-      setHistoricalLayerVisibility(toggle.getAttribute("data-layer-id"), Boolean(toggle.checked));
     });
   }
   if (mapSearchResultsList) {
@@ -1596,6 +2091,11 @@ function initializeMapPanel() {
   wirePanelButtons();
   renderEmptyDetails("Select a place pin, route, historical layer, or political context overlay to inspect its details here.");
   syncHistoricalPeriod();
+  const pendingContext = window.BHFPendingMapPanelContext;
+  if (pendingContext) {
+    window.BHFPendingMapPanelContext = null;
+    openMapPanel(pendingContext);
+  }
 }
 
 if (typeof window !== "undefined") {

@@ -392,7 +392,18 @@ function activateAppSection(sectionId, options = {}) {
   } else {
     applyDesktopSectionLayout(nextSection, options);
   }
+  if (nextSection === "explore") {
+    ensureExploreMapBrowserOpen();
+  }
   syncReaderControlsSheetAvailability();
+}
+
+function ensureExploreMapBrowserOpen() {
+  const panel = document.querySelector("#map-panel");
+  if (panel && !panel.hidden) {
+    return;
+  }
+  openMapPanel({ mode: "browse" });
 }
 
 function syncAppDockState(sectionId) {
@@ -849,7 +860,7 @@ function workspaceTabsForSection(sectionId) {
     return ["saved"];
   }
   if (normalized === "explore") {
-    return ["maps", "journey"];
+    return ["maps"];
   }
   return ["ask"];
 }
@@ -942,6 +953,7 @@ function askJobFormData(form, useChatMemory) {
   const chatSessionId = ensureAskChatSessionId(form);
   formData.set("chat_session_id", chatSessionId);
   formData.set("memory_enabled", "on");
+  formData.set("question_scope", GENERAL_QUESTION_MODE);
   if (!String(formData.get("session_id") || "").trim()) {
     formData.set("session_id", chatSessionId);
   }
@@ -3232,6 +3244,8 @@ function openMapPanel(context) {
     window.BHFMaps.openMapPanel(hasPassageContext ? context : { mode: "browse" });
     return;
   }
+  const hasPassageContext = Boolean(context && (context.book || context.chapter || context.savedMapStudy));
+  window.BHFPendingMapPanelContext = hasPassageContext ? context : { mode: "browse" };
 }
 
 async function pollJob(form, statusPanel, jobId) {

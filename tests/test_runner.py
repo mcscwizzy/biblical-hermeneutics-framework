@@ -100,8 +100,14 @@ class RaisingAdapter(ChatAdapter):
 
 
 class ErrorRecordingAdapter(ChatAdapter):
-    def __init__(self, error_message: str = "OpenAI-compatible endpoint timed out: timed out") -> None:
+    def __init__(
+        self,
+        error_message: str = "OpenAI-compatible endpoint timed out: timed out",
+        *,
+        error_category: str | None = None,
+    ) -> None:
         self.error_message = error_message
+        self.error_category = error_category
         self.request: ChatRequest | None = None
 
     def chat(self, request: ChatRequest) -> ChatResponse:
@@ -109,6 +115,8 @@ class ErrorRecordingAdapter(ChatAdapter):
         return ChatResponse(
             text="",
             model="fake-model",
+            raw_provider_response={"error": self.error_message},
+            error_category=self.error_category,
             errors=[self.error_message],
         )
 
@@ -776,6 +784,34 @@ class RunnerTests(unittest.TestCase):
         self.assertTrue(result.model_metadata["pipeline"]["fallback_to_model"])
         self.assertEqual(events[-1]["stage"], "error")
         self.assertEqual(events[-1]["status"], "error")
+
+    def test_provider_failure_after_ckl_miss_does_not_become_invalid_model_output(self):
+        provider_error = (
+            "Ollama endpoint returned HTTP 500: "
+            '{"error":"llama-server process has terminated: signal: killed"}'
+        )
+        adapter = ErrorRecordingAdapter(
+            provider_error,
+            error_category="provider_failure",
+        )
+        agent = self.make_ckl_agent(adapter, profile="standard")
+
+        with patch("bhf_agent.runner.build_canonical_context", return_value=None), patch(
+            "bhf_agent.runner._canonical_miss_reason",
+            return_value=ckl_miss_gap(
+                "no_relevant_ckl_results",
+                normalized_question="What does it mean to follow Jesus?",
+            ),
+        ):
+            result = agent.ask("What does it mean to follow Jesus?")
+
+        self.assertEqual(result.answer_text, "")
+        self.assertEqual(result.errors, [provider_error])
+        self.assertEqual(result.model_metadata["error_category"], "provider_failure")
+        self.assertEqual(
+            result.model_metadata["pipeline"]["error_category"],
+            "provider_failure",
+        )
 
     def test_model_failure_for_identity_in_jesus_uses_ckl_fallback(self):
         adapter = ErrorRecordingAdapter(

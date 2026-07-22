@@ -606,20 +606,14 @@ function renderHistoricalLayerOverview(layers, visibleHistoricalLayerIds) {
   const visibleCount = list.filter((layer) => visibleIds.has(layer.id)).length;
   const items = list
     .map((layer) => {
-      const checked = visibleIds.has(layer.id) ? "checked" : "";
+      const activeClass = visibleIds.has(layer.id) ? " is-selected" : "";
       return `
-        <label class="map-layer-toggle">
-          <input
-            type="checkbox"
-            data-historical-layer-toggle
-            data-layer-id="${escapeHtml(layer.id)}"
-            ${checked}
-          >
+        <div class="map-layer-toggle${activeClass}">
           <span>
             <strong>${escapeHtml(layer.name || "Unnamed layer")}</strong>
             <span>${escapeHtml(layer.period || "Unknown period")} · ${escapeHtml(prettyConfidence(layer.confidence))}</span>
           </span>
-        </label>
+        </div>
       `;
     })
     .join("");
@@ -628,7 +622,7 @@ function renderHistoricalLayerOverview(layers, visibleHistoricalLayerIds) {
     <section class="map-detail-section map-layer-section">
       <div class="map-section-header">
         <h4>Historical layers</h4>
-        <span>${visibleCount}/${list.length} shown</span>
+        <span>${visibleCount ? `${visibleCount} shown` : `${list.length} available`}</span>
       </div>
       ${
         list.length
@@ -646,21 +640,15 @@ function renderPoliticalContextLayerOverview(layers, visiblePoliticalContextLaye
   const visibleCount = list.filter((layer) => visibleIds.has(layer.id)).length;
   const items = list
     .map((layer) => {
-      const checked = visibleIds.has(layer.id) ? "checked" : "";
+      const activeClass = visibleIds.has(layer.id) ? " is-selected" : "";
       return `
-        <label class="map-layer-toggle">
-          <input
-            type="checkbox"
-            data-political-context-toggle
-            data-layer-id="${escapeHtml(layer.id)}"
-            ${checked}
-          >
+        <div class="map-layer-toggle${activeClass}">
           <span>
             <strong>${escapeHtml(layer.name || "Unnamed context")}</strong>
             <span>${escapeHtml(layer.entity_type || layer.period || "Unknown period")} · ${escapeHtml(prettyConfidence(layer.confidence))}</span>
             <span>${escapeHtml(layer.summary || layer.description || "No summary available.")}</span>
           </span>
-        </label>
+        </div>
       `;
     })
     .join("");
@@ -669,7 +657,7 @@ function renderPoliticalContextLayerOverview(layers, visiblePoliticalContextLaye
     <section class="map-detail-section map-layer-section">
       <div class="map-section-header">
         <h4>Political context</h4>
-        <span>${visibleCount}/${list.length} shown</span>
+        <span>${visibleCount ? `${visibleCount} shown` : `${list.length} available`}</span>
       </div>
       ${
         list.length

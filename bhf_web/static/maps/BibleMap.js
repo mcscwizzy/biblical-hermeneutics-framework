@@ -3,15 +3,22 @@ import {
   archaeologyMarkerStyle,
   entityMarkerIcon,
   historicalLayerStyle,
+  journeySegmentStyle,
+  journeyStopIcon,
   manuscriptMarkerStyle,
   politicalContextStyle,
+  referenceLayerStyle,
+  referencePointIcon,
   routeStyle,
 } from "./MapStyles.js";
 import {
   renderArchaeologyPopup,
   renderHistoricalLayerPopup,
+  renderJourneySegmentPopup,
+  renderJourneyStopPopup,
   renderManuscriptPopup,
   renderPoliticalContextPopup,
+  renderReferenceFeaturePopup,
   renderRoutePopup,
 } from "./MapPopups.js";
 
@@ -71,6 +78,13 @@ function createTestMapController(container) {
     setHistoricalLayerVisibility() {},
     setHistoricalLayers() {},
     setPoliticalContextLayerVisibility() {},
+    setJourney() {},
+    setJourneyVisibility() {},
+    setSelectedJourneyStop() {},
+    setSelectedJourneySegment() {},
+    setReferenceLayers() {},
+    setReferenceLayerVisibility() {},
+    setSelectedReferenceFeature() {},
     focusSelection() {},
   };
 }
@@ -128,6 +142,20 @@ export function createBibleMap(container, markers, options = {}) {
       : []
   );
   let politicalContextItems = Array.isArray(options.politicalContextLayers) ? options.politicalContextLayers.slice() : [];
+  const journeyLayer = window.L.layerGroup();
+  const journeyStopLayers = new Map();
+  const journeySegmentLayers = new Map();
+  let journeyItem = options.journey || null;
+  let journeyVisibility = Boolean(options.journeyVisibility);
+  let selectedJourneyStopId = String(options.selectedJourneyStopId || "");
+  let selectedJourneySegmentId = String(options.selectedJourneySegmentId || "");
+  const referenceLayerGroup = window.L.layerGroup();
+  const referenceFeatureLayers = new Map();
+  const referenceVisibleLayerIds = new Set(
+    Array.isArray(options.referenceLayerIds) ? options.referenceLayerIds.map((value) => String(value)) : []
+  );
+  let referenceItems = Array.isArray(options.referenceLayers) ? options.referenceLayers.slice() : [];
+  let selectedReferenceFeatureKey = String(options.selectedReferenceFeatureKey || "");
 
   function currentMarkerBounds() {
     return buildBounds(markers);
@@ -194,6 +222,51 @@ export function createBibleMap(container, markers, options = {}) {
     return boundsList;
   }
 
+  function currentJourneyBounds() {
+    const boundsList = [];
+    for (const layer of journeyStopLayers.values()) {
+      const center = layer.getLatLng ? layer.getLatLng() : null;
+      if (center) {
+        boundsList.push([center.lat, center.lng]);
+      }
+    }
+    for (const layer of journeySegmentLayers.values()) {
+      const layerBounds = layer.getBounds ? layer.getBounds() : null;
+      if (layerBounds && layerBounds.isValid()) {
+        boundsList.push(
+          [layerBounds.getSouthWest().lat, layerBounds.getSouthWest().lng],
+          [layerBounds.getNorthEast().lat, layerBounds.getNorthEast().lng]
+        );
+      }
+    }
+    return boundsList;
+  }
+
+  function currentReferenceBounds() {
+    const boundsList = [];
+    for (const [key, entry] of referenceFeatureLayers.entries()) {
+      if (!referenceVisibleLayerIds.has(entry.layer.id)) {
+        continue;
+      }
+      const layerBounds = entry.leafletLayer.getBounds ? entry.leafletLayer.getBounds() : null;
+      if (layerBounds && layerBounds.isValid()) {
+        boundsList.push(
+          [layerBounds.getSouthWest().lat, layerBounds.getSouthWest().lng],
+          [layerBounds.getNorthEast().lat, layerBounds.getNorthEast().lng]
+        );
+        continue;
+      }
+      const center = entry.leafletLayer.getLatLng ? entry.leafletLayer.getLatLng() : null;
+      if (center) {
+        boundsList.push([center.lat, center.lng]);
+      }
+      if (key === selectedReferenceFeatureKey && center) {
+        boundsList.push([center.lat, center.lng]);
+      }
+    }
+    return boundsList;
+  }
+
   function applyRouteVisibility() {
     if (routeVisibility) {
       if (!map.hasLayer(routeLayer)) {
@@ -250,6 +323,39 @@ export function createBibleMap(container, markers, options = {}) {
     }
   }
 
+  function applyJourneyVisibility() {
+    if (journeyVisibility && journeyItem) {
+      if (!map.hasLayer(journeyLayer)) {
+        journeyLayer.addTo(map);
+      }
+    } else if (map.hasLayer(journeyLayer)) {
+      map.removeLayer(journeyLayer);
+    }
+  }
+
+  function applyReferenceLayerVisibility() {
+    const anyVisible = Array.from(referenceFeatureLayers.values()).some((entry) =>
+      referenceVisibleLayerIds.has(entry.layer.id)
+    );
+    if (anyVisible) {
+      if (!map.hasLayer(referenceLayerGroup)) {
+        referenceLayerGroup.addTo(map);
+      }
+    } else if (map.hasLayer(referenceLayerGroup)) {
+      map.removeLayer(referenceLayerGroup);
+    }
+
+    for (const entry of referenceFeatureLayers.values()) {
+      const shouldShow = referenceVisibleLayerIds.has(entry.layer.id);
+      const hasLayer = referenceLayerGroup.hasLayer(entry.leafletLayer);
+      if (shouldShow && !hasLayer) {
+        referenceLayerGroup.addLayer(entry.leafletLayer);
+      } else if (!shouldShow && hasLayer) {
+        referenceLayerGroup.removeLayer(entry.leafletLayer);
+      }
+    }
+  }
+
   function applyArchaeologyVisibility() {
     if (archaeologyVisibility) {
       if (!map.hasLayer(archaeologyLayer)) {
@@ -295,6 +401,8 @@ export function createBibleMap(container, markers, options = {}) {
     const routeBoundsList = routeVisibility ? currentRouteBounds() : [];
     const historicalBoundsList = currentHistoricalBounds();
     const politicalContextBoundsList = currentPoliticalContextBounds();
+    const journeyBoundsList = journeyVisibility ? currentJourneyBounds() : [];
+    const referenceBoundsList = currentReferenceBounds();
     const archaeologyBoundsList = archaeologyVisibility ? currentArchaeologyBounds() : [];
     const manuscriptBoundsList = manuscriptVisibility ? currentManuscriptBounds() : [];
     const allBounds = [];
@@ -323,6 +431,9 @@ export function createBibleMap(container, markers, options = {}) {
         [layerBounds.getNorthEast().lat, layerBounds.getNorthEast().lng]
       );
     }
+
+    allBounds.push(...journeyBoundsList);
+    allBounds.push(...referenceBoundsList);
 
     for (const layerBounds of archaeologyBoundsList) {
       allBounds.push(
@@ -415,8 +526,63 @@ export function createBibleMap(container, markers, options = {}) {
         return;
       }
     }
+    if (kind === "journey_stop") {
+      const stopLayer = journeyStopLayers.get(item.id);
+      if (focusLayerBounds(stopLayer, 8)) {
+        stopLayer?.openPopup?.();
+        return;
+      }
+    }
+    if (kind === "journey_segment") {
+      const segmentLayer = journeySegmentLayers.get(item.id);
+      if (focusLayerBounds(segmentLayer, 7)) {
+        segmentLayer?.openPopup?.();
+        return;
+      }
+    }
+    if (kind === "reference_feature") {
+      const key = `${item.layerId}:${item.featureId}`;
+      const entry = referenceFeatureLayers.get(key);
+      if (focusLayerBounds(entry?.leafletLayer, 8)) {
+        entry?.leafletLayer?.openPopup?.();
+        return;
+      }
+    }
     if (Number.isFinite(item.latitude) && Number.isFinite(item.longitude)) {
       map.setView([item.latitude, item.longitude], 9);
+    }
+  }
+
+  function syncJourneyStyles() {
+    if (!journeyItem) {
+      return;
+    }
+    for (const stop of journeyItem.stops || []) {
+      const layer = journeyStopLayers.get(stop.id);
+      if (layer) {
+        layer.setIcon(journeyStopIcon(stop, { selected: stop.id === selectedJourneyStopId }));
+      }
+    }
+    for (const segment of journeyItem.segments || []) {
+      const layer = journeySegmentLayers.get(segment.id);
+      if (layer) {
+        layer.setStyle(journeySegmentStyle(segment, { selected: segment.id === selectedJourneySegmentId }));
+      }
+    }
+  }
+
+  function getReferenceFeatureKey(layerId, featureId) {
+    return `${layerId}:${featureId}`;
+  }
+
+  function syncReferenceStyles() {
+    for (const [key, entry] of referenceFeatureLayers.entries()) {
+      const selected = key === selectedReferenceFeatureKey;
+      if (entry.layer.type === "points" && entry.leafletLayer.setIcon) {
+        entry.leafletLayer.setIcon(referencePointIcon(entry.layer, entry.feature, { selected }));
+      } else if (entry.leafletLayer.setStyle) {
+        entry.leafletLayer.setStyle(referenceLayerStyle(entry.layer, entry.feature, { selected }));
+      }
     }
   }
 
@@ -564,6 +730,110 @@ export function createBibleMap(container, markers, options = {}) {
     applyPoliticalContextVisibility();
   }
 
+  function refreshJourney(journey) {
+    journeyItem = journey || null;
+    journeyLayer.clearLayers();
+    journeyStopLayers.clear();
+    journeySegmentLayers.clear();
+
+    if (!journeyItem) {
+      applyJourneyVisibility();
+      return;
+    }
+
+    const stopById = new Map((journeyItem.stops || []).map((stop) => [stop.id, stop]));
+    for (const segment of journeyItem.segments || []) {
+      const from = stopById.get(segment.from);
+      const to = stopById.get(segment.to);
+      if (!from || !to) {
+        continue;
+      }
+      const segmentLayer = window.L.polyline(
+        [
+          [from.lat, from.lng],
+          [to.lat, to.lng],
+        ],
+        journeySegmentStyle(segment, { selected: segment.id === selectedJourneySegmentId })
+      );
+      segmentLayer.bindPopup(renderJourneySegmentPopup(journeyItem, segment), {
+        maxWidth: 340,
+        closeButton: true,
+      });
+      segmentLayer.on("click", () => {
+        if (typeof options.onJourneySegmentClick === "function") {
+          options.onJourneySegmentClick(journeyItem, segment);
+        }
+      });
+      journeySegmentLayers.set(segment.id, segmentLayer);
+      segmentLayer.addTo(journeyLayer);
+    }
+
+    for (const stop of journeyItem.stops || []) {
+      if (!Number.isFinite(stop.lat) || !Number.isFinite(stop.lng)) {
+        continue;
+      }
+      const stopLayer = window.L.marker([stop.lat, stop.lng], {
+        icon: journeyStopIcon(stop, { selected: stop.id === selectedJourneyStopId }),
+        title: stop.name || "Unnamed journey stop",
+      });
+      stopLayer.bindPopup(renderJourneyStopPopup(journeyItem, stop), {
+        maxWidth: 340,
+        closeButton: true,
+      });
+      stopLayer.on("click", () => {
+        if (typeof options.onJourneyStopClick === "function") {
+          options.onJourneyStopClick(journeyItem, stop);
+        }
+      });
+      journeyStopLayers.set(stop.id, stopLayer);
+      stopLayer.addTo(journeyLayer);
+    }
+
+    applyJourneyVisibility();
+  }
+
+  function refreshReferenceLayers(layers) {
+    referenceItems = Array.isArray(layers) ? layers.slice() : [];
+    referenceLayerGroup.clearLayers();
+    referenceFeatureLayers.clear();
+
+    for (const layerItem of referenceItems) {
+      for (const feature of layerItem.features || []) {
+        const key = getReferenceFeatureKey(layerItem.id, feature.id);
+        let leafletLayer = null;
+        if (layerItem.type === "points") {
+          leafletLayer = window.L.marker([feature.lat, feature.lng], {
+            icon: referencePointIcon(layerItem, feature, { selected: key === selectedReferenceFeatureKey }),
+            title: feature.name || "Unnamed reference point",
+          });
+        } else if (layerItem.type === "lines") {
+          leafletLayer = window.L.polyline(feature.points, referenceLayerStyle(layerItem, feature, {
+            selected: key === selectedReferenceFeatureKey,
+          }));
+        } else if (layerItem.type === "polygons") {
+          leafletLayer = window.L.polygon(feature.points, referenceLayerStyle(layerItem, feature, {
+            selected: key === selectedReferenceFeatureKey,
+          }));
+        }
+        if (!leafletLayer) {
+          continue;
+        }
+        leafletLayer.bindPopup(renderReferenceFeaturePopup(layerItem, feature), {
+          maxWidth: 340,
+          closeButton: true,
+        });
+        leafletLayer.on("click", () => {
+          if (typeof options.onReferenceFeatureClick === "function") {
+            options.onReferenceFeatureClick(layerItem, feature);
+          }
+        });
+        referenceFeatureLayers.set(key, { layer: layerItem, feature, leafletLayer });
+      }
+    }
+
+    applyReferenceLayerVisibility();
+  }
+
   for (const marker of markers) {
     if (!Number.isFinite(marker.latitude) || !Number.isFinite(marker.longitude)) {
       continue;
@@ -598,6 +868,8 @@ export function createBibleMap(container, markers, options = {}) {
   refreshManuscriptMarkers(manuscriptItems);
   refreshHistoricalLayers(historicalItems);
   refreshPoliticalContextLayers(Array.isArray(options.politicalContextLayers) ? options.politicalContextLayers : []);
+  refreshJourney(journeyItem);
+  refreshReferenceLayers(referenceItems);
   fitToContent();
 
   let tileErrorRaised = false;
@@ -624,6 +896,11 @@ export function createBibleMap(container, markers, options = {}) {
         manuscriptVisibility,
         historicalLayerIds: Array.from(historicalVisibleIds),
         politicalContextLayerIds: Array.from(politicalContextVisibleIds),
+        journeyVisibility,
+        selectedJourneyId: journeyItem?.id || "",
+        selectedJourneyStopId,
+        selectedJourneySegmentId,
+        referenceLayerIds: Array.from(referenceVisibleLayerIds),
       };
     },
     getRouteVisibility() {
@@ -704,6 +981,55 @@ export function createBibleMap(container, markers, options = {}) {
     setPoliticalContextLayers(layers) {
       refreshPoliticalContextLayers(layers);
       fitToContent();
+    },
+    getJourneyVisibility() {
+      return journeyVisibility;
+    },
+    setJourneyVisibility(visible) {
+      journeyVisibility = Boolean(visible);
+      applyJourneyVisibility();
+      fitToContent();
+    },
+    setJourney(journey) {
+      refreshJourney(journey);
+      fitToContent();
+    },
+    setSelectedJourneyStop(stopId) {
+      selectedJourneyStopId = String(stopId || "");
+      selectedJourneySegmentId = "";
+      syncJourneyStyles();
+    },
+    setSelectedJourneySegment(segmentId) {
+      selectedJourneySegmentId = String(segmentId || "");
+      selectedJourneyStopId = "";
+      syncJourneyStyles();
+    },
+    setReferenceLayers(layers) {
+      refreshReferenceLayers(layers);
+      fitToContent();
+    },
+    setReferenceLayerVisibility(layerId, visible) {
+      const normalizedId = String(layerId || "");
+      if (!normalizedId) {
+        return;
+      }
+      if (visible) {
+        referenceVisibleLayerIds.add(normalizedId);
+      } else {
+        referenceVisibleLayerIds.delete(normalizedId);
+      }
+      applyReferenceLayerVisibility();
+      fitToContent();
+    },
+    setSelectedReferenceFeature(layerId, featureId) {
+      selectedReferenceFeatureKey = layerId && featureId ? getReferenceFeatureKey(layerId, featureId) : "";
+      syncReferenceStyles();
+    },
+    getReferenceLayerIds() {
+      return Array.from(referenceVisibleLayerIds);
+    },
+    getReferenceLayers() {
+      return referenceItems.slice();
     },
     getPoliticalContextLayerIds() {
       return Array.from(politicalContextVisibleIds);

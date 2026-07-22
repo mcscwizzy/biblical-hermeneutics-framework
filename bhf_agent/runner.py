@@ -2044,7 +2044,17 @@ class BHFAgent:
         validation_errors = list(
             ctx.debug_metadata.get("response_validation_errors") or []
         )
-        if validation_errors and not ctx.debug_metadata.get("fallback_used"):
+        error_category = str(ctx.debug_metadata.get("error_category") or "")
+        provider_error_categories = {
+            "provider_connection",
+            "provider_failure",
+            "provider_timeout",
+        }
+        if (
+            validation_errors
+            and not ctx.debug_metadata.get("fallback_used")
+            and error_category not in provider_error_categories
+        ):
             for error in validation_errors:
                 controlled_error = f"Invalid model output: {error}"
                 if controlled_error not in ctx.errors:

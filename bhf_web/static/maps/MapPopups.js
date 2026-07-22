@@ -53,6 +53,55 @@ function renderPoliticalContextPopup(layerItem) {
   `;
 }
 
+function renderJourneyStopPopup(journey, stop) {
+  const title = escapeHtml(stop?.name || "Unnamed stop");
+  const journeyTitle = escapeHtml(journey?.title || "Journey");
+  const location = escapeHtml([stop?.region, stop?.modernLocation].filter(Boolean).join(" · ") || "Location not supplied");
+  const description = escapeHtml(stop?.description || "No description available.");
+  return `
+    <article class="map-popup">
+      <h3>${title}</h3>
+      <p class="map-popup-region">${journeyTitle}</p>
+      <p class="map-popup-confidence">${location}</p>
+      <p class="map-popup-description">${description}</p>
+    </article>
+  `;
+}
+
+function renderJourneySegmentPopup(journey, segment) {
+  const stopById = new Map((journey?.stops || []).map((stop) => [stop.id, stop]));
+  const from = stopById.get(segment?.from);
+  const to = stopById.get(segment?.to);
+  const title = escapeHtml(segment?.label || "Journey segment");
+  const route = escapeHtml(`${from?.name || segment?.from || "Unknown"} → ${to?.name || segment?.to || "Unknown"}`);
+  const description = escapeHtml(segment?.description || "No description available.");
+  return `
+    <article class="map-popup">
+      <h3>${title}</h3>
+      <p class="map-popup-region">${escapeHtml(journey?.title || "Journey")}</p>
+      <p class="map-popup-confidence">${route}</p>
+      <p class="map-popup-description">${description}</p>
+    </article>
+  `;
+}
+
+function renderReferenceFeaturePopup(layer, feature) {
+  const title = escapeHtml(feature?.name || "Unnamed feature");
+  const layerTitle = escapeHtml(layer?.title || "Reference layer");
+  const periods = Array.isArray(feature?.periods) && feature.periods.length
+    ? feature.periods.join(" · ")
+    : "No period tags";
+  const description = escapeHtml(feature?.summary || feature?.description || "No description available.");
+  return `
+    <article class="map-popup">
+      <h3>${title}</h3>
+      <p class="map-popup-region">${layerTitle}</p>
+      <p class="map-popup-confidence">${escapeHtml(periods)}</p>
+      <p class="map-popup-description">${description}</p>
+    </article>
+  `;
+}
+
 function renderArchaeologyPopup(item) {
   const name = escapeHtml(item.name || "Unnamed archaeology item");
   const siteName = escapeHtml(item.site_name || "Unknown site");
@@ -90,7 +139,10 @@ export {
   escapeHtml,
   renderArchaeologyPopup,
   renderHistoricalLayerPopup,
+  renderJourneySegmentPopup,
+  renderJourneyStopPopup,
   renderManuscriptPopup,
   renderPoliticalContextPopup,
+  renderReferenceFeaturePopup,
   renderRoutePopup,
 };

@@ -70,7 +70,9 @@ PASSAGE_STUDY_RE = re.compile(
 )
 TOPIC_STUDY_RE = re.compile(
     r"\b(what\s+does\s+(?:the\s+bible|scripture|paul|jesus)\s+say\s+about|"
-    r"what\s+is\s+.+\s+by\s+.+|doctrine\s+of|topic\s+of)\b",
+    r"what\s+is\s+.+\s+by\s+.+|who\s+(?:is|was|are|were)\s+[\w\u0080-\uffff'\- ]+|"
+    r"what\s+(?:is|was|are|were)\s+[\w\u0080-\uffff'\- ]+\s+known\s+for|"
+    r"doctrine\s+of|topic\s+of)\b",
     re.IGNORECASE,
 )
 
@@ -111,7 +113,10 @@ def classify_question_type(
         )
 
     if reference_context and reference_context.is_reference_based:
-        if PASSAGE_STUDY_RE.search(lowered) or reference_context.book:
+        if PASSAGE_STUDY_RE.search(lowered) or _mentions_reference_context(
+            ascii_lowered,
+            reference_context,
+        ):
             return QuestionContext(
                 question_type="passage_study",
                 target_language=None,
@@ -216,3 +221,19 @@ def _ascii_fold(text: str) -> str:
 
 def _contains_term(text: str, terms: set[str]) -> bool:
     return any(re.search(rf"\b{re.escape(term)}\b", text) for term in terms)
+
+
+def _mentions_reference_context(text: str, reference_context: ReferenceContext) -> bool:
+    book = _ascii_fold(str(reference_context.book or "")).lower()
+    if not book or not re.search(rf"\b{re.escape(book)}\b", text):
+        return False
+    if reference_context.chapter is None:
+        return True
+    chapter = str(reference_context.chapter)
+    reference_pattern = (
+        rf"{re.escape(book)}\s+{re.escape(chapter)}(?:\s*:\s*\d{{1,3}})?"
+    )
+    return bool(
+        re.search(rf"\b{reference_pattern}\b", text)
+        or re.fullmatch(reference_pattern, text)
+    )

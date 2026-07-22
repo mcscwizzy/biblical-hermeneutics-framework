@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import json
-import os
 from pathlib import Path
 
 from fastapi import FastAPI, File, Form, Request, UploadFile
@@ -227,7 +226,6 @@ def create_app() -> FastAPI:
                     "runtime_profile_modes": RUNTIME_PROFILE_MODES,
                     "answer_modes": ANSWER_MODES,
                     "config_warning": loaded.warning,
-                    "cesium_ion_token": os.environ.get("BHF_CESIUM_ION_TOKEN", "").strip(),
                     "books": list_books(),
                     "default_translation": get_default_reader_translation(),
                     "test_mode": settings.TEST_MODE,
