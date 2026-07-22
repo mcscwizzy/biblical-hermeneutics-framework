@@ -184,20 +184,12 @@
 
                 <section class="selection-card" aria-live="polite">
                   <h2>Ask BHF</h2>
-                  <p id="selection-summary" class="selection-summary">Ask about John 1, select verse text for a focused question, or ask a general question.</p>
+                  <p id="selection-summary" class="selection-summary">Ask about John 1, or select verse text for a focused question.</p>
                 </section>
-
-                <label class="full">
-                  <span>Question scope</span>
-                  <select name="question_scope" data-question-scope>
-                    <option value="passage_context" selected>Current chapter or selection</option>
-                    <option value="general_question">General question</option>
-                  </select>
-                </label>
 
                 <label class="full question-field">
                   <span>Question</span>
-                  <textarea name="question" rows="4" placeholder="Ask a passage-specific or general question." data-testid="question-input">{{ form.question }}</textarea>
+                  <textarea name="question" rows="4" placeholder="Ask about the current chapter or selected text." data-testid="question-input">{{ form.question }}</textarea>
                 </label>
 
                 <details class="settings full">
@@ -318,7 +310,7 @@
               </section>
 
               <section id="answer-panel" class="answer-panel" aria-live="polite" data-testid="answer-output">
-                <p class="empty">Ask about the current chapter, a selected passage, or ask a general question to see the answer and save it.</p>
+                <p class="empty">Ask about the current chapter or a selected passage to see the answer and save it.</p>
               </section>
             </section>
 
