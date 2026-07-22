@@ -185,12 +185,12 @@
 
                 <section class="selection-card" aria-live="polite">
                   <h2>Ask BHF</h2>
-                  <p id="selection-summary" class="selection-summary">Ask about John 1, or select verse text for a focused question.</p>
+                  <p id="selection-summary" class="selection-summary"></p>
                 </section>
 
                 <label class="full question-field">
                   <span>Question</span>
-                  <textarea name="question" rows="4" placeholder="Ask about the current chapter or selected text." data-testid="question-input">{{ form.question }}</textarea>
+                  <textarea name="question" rows="4" placeholder="Ask me a question!" data-testid="question-input">{{ form.question }}</textarea>
                 </label>
 
                 <details class="settings full">
@@ -313,7 +313,6 @@
 
               <section id="answer-panel" class="answer-panel ask-chat-panel" aria-live="polite" data-testid="answer-output" data-ask-chat-panel>
                 <div class="ask-chat-transcript" data-ask-chat-transcript>
-                  <p class="empty" data-ask-chat-empty>Ask about the current chapter or a selected passage to see the answer and save it.</p>
                 </div>
               </section>
             </section>

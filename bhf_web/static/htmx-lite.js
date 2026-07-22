@@ -975,7 +975,6 @@ function resetAskChat(form, panel) {
   const transcript = panel.querySelector("[data-ask-chat-transcript]");
   if (transcript) {
     transcript.innerHTML = "";
-    transcript.appendChild(emptyAskChatMessage());
   }
   const statusPanel = document.querySelector("#status-panel");
   if (statusPanel) {
@@ -1071,14 +1070,6 @@ function scrollAskChatToLatest(transcript) {
     const scrollTarget = transcript.closest("[data-ask-chat-panel]") || transcript;
     scrollTarget.scrollTop = scrollTarget.scrollHeight;
   });
-}
-
-function emptyAskChatMessage() {
-  const message = document.createElement("p");
-  message.className = "empty";
-  message.dataset.askChatEmpty = "true";
-  message.textContent = "Ask about the current chapter or a selected passage to see the answer and save it.";
-  return message;
 }
 
 function requestJson(url, options = {}, fallbackMessage = "Request failed.") {
@@ -3158,7 +3149,7 @@ function syncAskFields() {
     }
   } else {
     if (summary) {
-      summary.textContent = `Ask about ${currentChapter.book} ${currentChapter.chapter}, or select verse text for a focused question.`;
+      summary.textContent = "";
     }
     if (addNoteButton) {
       addNoteButton.disabled = true;
