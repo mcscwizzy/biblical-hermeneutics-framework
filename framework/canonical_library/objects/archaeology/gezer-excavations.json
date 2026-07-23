@@ -10,9 +10,37 @@
   ],
   "summary": "A border city near the coastal plain and hill country with strong Bronze and Iron Age significance.",
   "historical_context": "Gezer helps illuminate border control, agricultural life, and royal building programs.",
-  "ancient_near_east_context": "The item belongs to the broader imperial, cultic, and urban world of the ancient Near East and the biblical periods reflected in the dataset.",
-  "literary_context": "The biblical text uses this kind of evidence as historical background rather than as a replacement for Scripture.",
+  "ancient_near_east_context": "Ancient background for Gezer Excavations includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Joshua 10, 1 Kings 9, joshua, and 1-kings without letting comparison replace the biblical witness.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
+  "literary_context": "Literarily, Gezer Excavations is traced through historical notices, geographic references, royal claims, and material evidence, with Joshua 10, 1 Kings 9, joshua, and 1-kings showing how the surrounding passages shape interpretation.",
   "covenantal_significance": "Gezer Excavations helps anchor biblical claims in historical reality while reminding readers that archaeology supports rather than replaces interpretation.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "Gezer Excavations serves as a material-culture anchor, connecting archaeological evidence with the biblical places, periods, and passages it helps contextualize.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -22,27 +50,20 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "The city is clear, but interpretations of some Iron Age structures continue to vary.",
-    "Use the item as context for the biblical text, not as a shortcut around it."
+  "related_objects": [
+    {
+      "id": "joshua",
+      "relationship": "historical-background",
+      "weight": 10,
+      "notes": ""
+    },
+    {
+      "id": "1-kings",
+      "relationship": "historical-background",
+      "weight": 9,
+      "notes": ""
+    }
   ],
-  "common_questions": [
-    "What does Gezer Excavations teach?",
-    "How does Gezer Excavations fit the biblical storyline?",
-    "What should readers avoid when interpreting Gezer Excavations?"
-  ],
-  "sources": [
-    "Gezer",
-    "Tell / border city",
-    "Joshua 10",
-    "1 Kings 9",
-    "Excavation report and stratigraphic study"
-  ],
-  "importance": 90,
-  "framework_version": "1.0",
-  "object_version": "1",
   "scripture_references": [
     {
       "reference": "Joshua 10",
@@ -60,25 +81,142 @@
       "notes": ""
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "joshua",
-      "relationship": "historical-background",
-      "weight": 10,
-      "notes": ""
+      "note": "The city is clear, but interpretations of some Iron Age structures continue to vary.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "1-kings",
-      "relationship": "historical-background",
-      "weight": 9,
-      "notes": ""
+      "note": "Use the item as context for the biblical text, not as a shortcut around it.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
   ],
+  "common_questions": [
+    "What does Gezer Excavations teach?",
+    "How does Gezer Excavations fit the biblical storyline?",
+    "What should readers avoid when interpreting Gezer Excavations?"
+  ],
+  "sources": [
+    {
+      "title": "Gezer",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "gezer"
+    },
+    {
+      "title": "Tell / border city",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "tell-border-city"
+    },
+    {
+      "title": "Joshua 10",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "joshua-10"
+    },
+    {
+      "title": "1 Kings 9",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "1-kings-9"
+    },
+    {
+      "title": "Excavation report and stratigraphic study",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "excavation-report-and-stratigraphic-study"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 90,
+  "framework_version": "1.0",
+  "object_version": "1",
   "content_status": "complete",
   "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-16"
+    }
   ],
+  "edited_by": [],
+  "reviewed_by": [],
   "last_reviewed": "2026-07-16",
-  "confidence": "medium"
+  "confidence": "medium",
+  "human_review_required": true
 }

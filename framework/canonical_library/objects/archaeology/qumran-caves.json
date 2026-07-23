@@ -10,9 +10,37 @@
   ],
   "summary": "Qumran caves and manuscript recovery illuminates the biblical world through material remains and historical context.",
   "historical_context": "Qumran Caves helps anchor the biblical world in physical evidence and archaeological context.",
-  "ancient_near_east_context": "The item belongs to the broader imperial, cultic, and urban world of the ancient Near East and the biblical periods reflected in the dataset.",
-  "literary_context": "The biblical text uses this kind of evidence as historical background rather than as a replacement for Scripture.",
+  "ancient_near_east_context": "Ancient background for Qumran Caves includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Isaiah 40:1-11, Daniel 7:1-28, qumran-archaeological-site, and dead-sea-scrolls without letting comparison replace the biblical witness.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
+  "literary_context": "Literarily, Qumran Caves is traced through historical notices, geographic references, royal claims, and material evidence, with Isaiah 40:1-11, Daniel 7:1-28, qumran-archaeological-site, and dead-sea-scrolls showing how the surrounding passages shape interpretation.",
   "covenantal_significance": "Qumran Caves helps anchor biblical claims in historical reality while reminding readers that archaeology supports rather than replaces interpretation.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "Qumran Caves serves as a material-culture anchor, connecting archaeological evidence with the biblical places, periods, and passages it helps contextualize.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -22,49 +50,6 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "The manuscripts are undisputed, but the social identity of the site is still debated.",
-    "qumran",
-    "Use the item as context for the biblical text, not as a shortcut around it."
-  ],
-  "common_questions": [
-    "What does Qumran Caves teach?",
-    "How does Qumran Caves fit the biblical storyline?",
-    "What should readers avoid when interpreting Qumran Caves?"
-  ],
-  "sources": [
-    "Qumran caves and manuscript recovery",
-    "Isaiah 40:1-11",
-    "Daniel 7:1-28",
-    "Archaeological survey and historical background"
-  ],
-  "importance": 90,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "scripture_references": [
-    {
-      "reference": "Isaiah 40:1-11",
-      "relationship": "primary",
-      "notes": ""
-    },
-    {
-      "reference": "Daniel 7:1-28",
-      "relationship": "supporting",
-      "notes": ""
-    },
-    {
-      "reference": "Matthew 3:1-12",
-      "relationship": "supporting",
-      "notes": ""
-    },
-    {
-      "reference": "Luke 3:1-18",
-      "relationship": "supporting",
-      "notes": ""
-    }
-  ],
   "related_objects": [
     {
       "id": "qumran-archaeological-site",
@@ -97,11 +82,159 @@
       "notes": ""
     }
   ],
+  "scripture_references": [
+    {
+      "reference": "Isaiah 40:1-11",
+      "relationship": "primary",
+      "notes": ""
+    },
+    {
+      "reference": "Daniel 7:1-28",
+      "relationship": "supporting",
+      "notes": ""
+    },
+    {
+      "reference": "Matthew 3:1-12",
+      "relationship": "supporting",
+      "notes": ""
+    },
+    {
+      "reference": "Luke 3:1-18",
+      "relationship": "supporting",
+      "notes": ""
+    }
+  ],
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
+    {
+      "note": "The manuscripts are undisputed, but the social identity of the site is still debated.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    },
+    {
+      "note": "qumran",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    },
+    {
+      "note": "Use the item as context for the biblical text, not as a shortcut around it.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    }
+  ],
+  "common_questions": [
+    "What does Qumran Caves teach?",
+    "How does Qumran Caves fit the biblical storyline?",
+    "What should readers avoid when interpreting Qumran Caves?"
+  ],
+  "sources": [
+    {
+      "title": "Qumran caves and manuscript recovery",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "qumran-caves-and-manuscript-recovery"
+    },
+    {
+      "title": "Isaiah 40:1-11",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "isaiah-40-1-11"
+    },
+    {
+      "title": "Daniel 7:1-28",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "daniel-7-1-28"
+    },
+    {
+      "title": "Archaeological survey and historical background",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "archaeological-survey-and-historical-background"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 90,
+  "framework_version": "1.0",
+  "object_version": "1",
   "content_status": "complete",
   "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-16"
+    }
   ],
+  "edited_by": [],
+  "reviewed_by": [],
   "last_reviewed": "2026-07-16",
-  "confidence": "medium"
+  "confidence": "medium",
+  "human_review_required": true
 }

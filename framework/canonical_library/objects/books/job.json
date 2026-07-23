@@ -7,25 +7,23 @@
     "what is job about",
     "tell me about job"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
-  "intertextuality": [],
-  "timeline": [],
-  "maps": [],
-  "archaeology": [],
-  "hebrew_words": [],
-  "greek_words": [],
-  "related_people": [],
-  "related_places": [],
-  "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
+  "summary": "Job is a biblical book focused on suffering, wisdom, divine justice, lament, perseverance, and creaturely limits.",
+  "historical_context": "Job explores innocent suffering and wisdom before God through poetic dialogue and divine response.",
+  "ancient_near_east_context": "Job belongs to the ancient Mediterranean and Near Eastern world reflected in its setting, institutions, and canonical placement.",
+  "hebraic_worldview": "Job should be read with attention to covenant memory, communal identity, worship, wisdom, and accountability before the Lord.",
+  "second_temple_context": "Second Temple readers received Job as part of Israel's Scriptures and read it within questions of identity, worship, exile, and hope.",
+  "canonical_context": "Within Wisdom Books, book 1 of 5, Job contributes to the Bible's unfolding witness by connecting suffering, wisdom, divine justice, lament, perseverance, and creaturely limits to the larger storyline.",
+  "later_christian_reception": "Christian interpretation has read Job as part of the canonical witness to faithfulness, judgment, mercy, and hope in Christ-centered Scripture reading.",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
+  "literary_context": "Job uses wisdom, poetry within Wisdom Books, book 1 of 5 to develop its themes through the book's structure and key passages.",
+  "covenantal_significance": "Job helps readers trace covenant faithfulness, failure, mercy, and hope within its canonical setting.",
   "authorship_positions": [
     "Traditional attribution to Solomon or wise circles",
     "Many scholars see collected wisdom and later shaping"
@@ -36,6 +34,7 @@
   ],
   "original_audience": "Israel's covenant community learning wise living under God",
   "historical_setting": "Royal, instructional, and reflective wisdom settings within Israel",
+  "canonical_role": "Job anchors suffering, wisdom, divine justice, lament, perseverance, and creaturely limits within Wisdom Books, book 1 of 5 and connects the book to related people, places, events, and themes.",
   "genre": [
     "wisdom",
     "poetry"
@@ -75,7 +74,172 @@
   "primary_sources": [
     "Job"
   ],
-  "importance": 0,
+  "related_entries": [],
+  "keywords": [],
+  "intertextuality": [],
+  "timeline": [],
+  "maps": [],
+  "archaeology": [],
+  "hebrew_words": [],
+  "greek_words": [],
+  "related_people": [],
+  "related_places": [],
+  "related_events": [],
+  "related_objects": [
+    {
+      "id": "job-the-sufferer",
+      "relationship": "central-figure",
+      "weight": 10,
+      "notes": "Job is the central sufferer in the book."
+    },
+    {
+      "id": "wisdom-theme",
+      "relationship": "wisdom-literature",
+      "weight": 9,
+      "notes": "Job belongs to Israel's wisdom literature."
+    },
+    {
+      "id": "theology-of-suffering",
+      "relationship": "suffering-question",
+      "weight": 10,
+      "notes": "The book is a major anchor for suffering."
+    },
+    {
+      "id": "divine-justice",
+      "relationship": "justice-question",
+      "weight": 8,
+      "notes": "Job wrestles with divine justice and human claims."
+    },
+    {
+      "id": "creation-theme",
+      "relationship": "creation-response",
+      "weight": 7,
+      "notes": "The divine speeches draw on creation imagery."
+    }
+  ],
+  "scripture_references": [
+    {
+      "reference": "Job 1:20-22",
+      "relationship": "primary",
+      "notes": "faithfulness in loss"
+    },
+    {
+      "reference": "Job 38:1-11",
+      "relationship": "supporting",
+      "notes": "the Lord's answer from creation"
+    }
+  ],
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
+    {
+      "note": "Read Job first within its own literary setting before moving to broader canonical connections.",
+      "note_type": "literary-observation",
+      "certainty": "medium",
+      "dispute_status": "broad-consensus",
+      "sources": [
+        "job-scripture"
+      ]
+    },
+    {
+      "note": "The relationship links on Job are orientation anchors, not a full interpretive outline of the book.",
+      "note_type": "interpretive-caution",
+      "certainty": "high",
+      "dispute_status": "consensus",
+      "sources": [
+        "job-canonical-book-metadata"
+      ]
+    }
+  ],
+  "common_questions": [
+    "What is Job about?",
+    "Why does Job matter in the biblical storyline?",
+    "How should readers interpret Job in context?"
+  ],
+  "sources": [
+    {
+      "title": "Job",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [
+        "scripture_references",
+        "literary_context"
+      ],
+      "notes": "Primary biblical text for Job.",
+      "id": "job-scripture"
+    },
+    {
+      "title": "Canonical book metadata for Job",
+      "author": "",
+      "publisher": "Canonical Knowledge Library",
+      "year": 2026,
+      "locator": "Wisdom Books, book 1 of 5",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context",
+        "canonical_role",
+        "related_objects"
+      ],
+      "notes": "Internal CKL book-lane metadata used for canonical orientation and graph anchoring.",
+      "id": "job-canonical-book-metadata"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 82,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ckl-book-placeholder-completion-pass",
+      "date": "2026-07-23"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-23",
+  "confidence": "medium",
+  "human_review_required": true
 }

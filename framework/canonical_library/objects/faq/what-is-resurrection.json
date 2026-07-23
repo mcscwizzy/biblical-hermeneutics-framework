@@ -10,8 +10,36 @@
   "summary": "Resurrection is God\u2019s act of bringing the dead to life, climactically in Jesus and ultimately for his people.",
   "historical_context": "The biblical hope for resurrection develops from hints in the prophets into clear proclamation in the New Testament.",
   "ancient_near_east_context": "Resurrection hope stands out in a world where death was usually treated as final.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "The Gospels narrate Jesus\u2019 resurrection; Acts and the Epistles interpret its meaning; Revelation extends it into the future.",
   "covenantal_significance": "Resurrection shows that God keeps covenant promises beyond death itself.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "What is Resurrection? serves as a question-oriented anchor, connecting common reader language to related passages, themes, and CKL entries.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -21,36 +49,38 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "Resurrection is bodily and historical in the New Testament, not merely a symbol of hope.",
-    "The doctrine joins Jesus\u2019 resurrection with the future resurrection of believers."
+  "related_objects": [
+    {
+      "id": "resurrection-theme",
+      "relationship": "thematic-anchor",
+      "weight": 10,
+      "notes": "life-from-death motif"
+    },
+    {
+      "id": "resurrection-doctrine",
+      "relationship": "doctrinal-anchor",
+      "weight": 10,
+      "notes": "bodily resurrection teaching"
+    },
+    {
+      "id": "crucifixion",
+      "relationship": "narrative-context",
+      "weight": 9,
+      "notes": "death followed by life"
+    },
+    {
+      "id": "new-creation-theme",
+      "relationship": "eschatological-fulfillment",
+      "weight": 9,
+      "notes": "renewed world"
+    },
+    {
+      "id": "messiah-theme",
+      "relationship": "messianic-vindication",
+      "weight": 8,
+      "notes": "the Messiah is vindicated"
+    }
   ],
-  "common_questions": [
-    "What does resurrection mean in the Bible?",
-    "Is resurrection the same as going to heaven when you die?",
-    "Why is resurrection important for Christian hope?"
-  ],
-  "sources": [
-    "Daniel 12",
-    "John 11",
-    "Matthew 28",
-    "Acts 2",
-    "1 Corinthians 15",
-    "1 Thessalonians 4",
-    "Revelation 20-21"
-  ],
-  "importance": 92,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
-  ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "Daniel 12:1-3",
@@ -93,36 +123,180 @@
       "notes": "final renewal"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "resurrection-theme",
-      "relationship": "thematic-anchor",
-      "weight": 10,
-      "notes": "life-from-death motif"
+      "note": "Resurrection is bodily and historical in the New Testament, not merely a symbol of hope.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "resurrection-doctrine",
-      "relationship": "doctrinal-anchor",
-      "weight": 10,
-      "notes": "bodily resurrection teaching"
-    },
-    {
-      "id": "crucifixion",
-      "relationship": "narrative-context",
-      "weight": 9,
-      "notes": "death followed by life"
-    },
-    {
-      "id": "new-creation-theme",
-      "relationship": "eschatological-fulfillment",
-      "weight": 9,
-      "notes": "renewed world"
-    },
-    {
-      "id": "messiah-theme",
-      "relationship": "messianic-vindication",
-      "weight": 8,
-      "notes": "the Messiah is vindicated"
+      "note": "The doctrine joins Jesus\u2019 resurrection with the future resurrection of believers.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "What does resurrection mean in the Bible?",
+    "Is resurrection the same as going to heaven when you die?",
+    "Why is resurrection important for Christian hope?"
+  ],
+  "sources": [
+    {
+      "title": "Daniel 12",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "daniel-12"
+    },
+    {
+      "title": "John 11",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "john-11"
+    },
+    {
+      "title": "Matthew 28",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "matthew-28"
+    },
+    {
+      "title": "Acts 2",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "acts-2"
+    },
+    {
+      "title": "1 Corinthians 15",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "1-corinthians-15"
+    },
+    {
+      "title": "1 Thessalonians 4",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "1-thessalonians-4"
+    },
+    {
+      "title": "Revelation 20-21",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "revelation-20-21"
+    },
+    {
+      "title": "Canonical historical orientation for What is Resurrection?",
+      "author": "",
+      "publisher": "Canonical Knowledge Library",
+      "year": 2026,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context"
+      ],
+      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+      "id": "what-is-resurrection-historical-orientation"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 92,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }

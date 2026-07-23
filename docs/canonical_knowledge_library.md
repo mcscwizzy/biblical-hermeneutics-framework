@@ -447,11 +447,14 @@ The CKL tooling under `tools/` removes most of the manual JSON friction:
 - `python tools/ckl_validate.py --path framework/canonical_library/objects/people/abraham.json`
 - `python tools/ckl_manifest.py --root framework/canonical_library --write --stamp`
 - `python tools/ckl_report.py --root framework/canonical_library`
+- `python tools/ckl_expansion_backlog.py --root framework/canonical_library
+  --lane people --limit 25`
 - `python tools/ckl_migrate.py --root framework/canonical_library --write`
 
 `ckl_create.py` generates a fresh template, `ckl_validate.py` checks either a
 single file or the whole library, `ckl_manifest.py` rebuilds the inventory
-counts, `ckl_report.py` summarizes status, and `ckl_migrate.py` rewrites legacy
+counts, `ckl_report.py` summarizes status, `ckl_expansion_backlog.py` ranks
+people/place/thing expansion candidates, and `ckl_migrate.py` rewrites legacy
 JSON into the normalized schema. None of the scripts write to disk unless
 `--write` or `--output` is supplied.
 

@@ -72,6 +72,36 @@ class CKLGraphTests(unittest.TestCase):
         self.assertEqual(updated_by_id["messiah-theme"].related_objects[0].id, "kingdom-theme")
         self.assertEqual(updated_by_id["messiah-theme"].related_objects[0].relationship, "related-theme")
 
+    def test_missing_reverse_edges_accept_any_existing_reverse_relationship(self) -> None:
+        temple = obj(
+            "temple",
+            "Temple",
+            related_objects=[
+                CanonicalRelationship(
+                    id="temple-symbol",
+                    relationship="related",
+                    weight=10,
+                    notes="Symbolic layer.",
+                )
+            ],
+        )
+        symbol = obj(
+            "temple-symbol",
+            "Temple Symbol",
+            related_objects=[
+                CanonicalRelationship(
+                    id="temple",
+                    relationship="institution-anchor",
+                    weight=10,
+                    notes="Temple institution.",
+                )
+            ],
+        )
+
+        suggestions = missing_reverse_relationships([temple, symbol])
+
+        self.assertEqual(suggestions, [])
+
     def test_graph_audit_reports_orphaned_objects_and_unknown_targets(self) -> None:
         connected = obj(
             "temple-theme",

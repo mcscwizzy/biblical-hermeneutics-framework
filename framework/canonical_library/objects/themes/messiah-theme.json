@@ -10,8 +10,36 @@
   "summary": "The anointed-king expectation that gathers prophetic, priestly, and covenant hopes around God\u2019s chosen deliverer.",
   "historical_context": "Messianic expectation develops from the Davidic covenant, prophetic promise, and the long experience of exile and hope.",
   "ancient_near_east_context": "Royal anointing and kingship were common ancient practices, but the biblical messiah is defined by God\u2019s promise, righteousness, and suffering victory.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "The theme appears in royal psalms, prophetic hope, Gospel proclamation, apostolic preaching, and apocalyptic expectation.",
   "covenantal_significance": "The messiah is the covenant-keeping king through whom blessing, rule, and restoration come to God\u2019s people.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "Messiah Theme serves as a thematic anchor, connecting repeated biblical patterns, key passages, and related theological concepts across the canon.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -21,38 +49,44 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "Do not collapse messiah into a single political or national expectation; Scripture layers kingly, priestly, and servant imagery.",
-    "The New Testament claims Jesus fulfills messianic hope, but it does so through suffering, resurrection, and exaltation."
+  "related_objects": [
+    {
+      "id": "david",
+      "relationship": "royal-ancestor",
+      "weight": 9,
+      "notes": "Davidic covenant and kingship"
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "royal-context",
+      "weight": 10,
+      "notes": "the king who reigns"
+    },
+    {
+      "id": "sacrifice-theme",
+      "relationship": "suffering-and-atonement",
+      "weight": 8,
+      "notes": "messiah suffers for others"
+    },
+    {
+      "id": "resurrection-theme",
+      "relationship": "vindication-pattern",
+      "weight": 8,
+      "notes": "suffering leads to vindication"
+    },
+    {
+      "id": "covenant-theme",
+      "relationship": "promise-fulfillment",
+      "weight": 8,
+      "notes": "covenant promise reaches fulfillment"
+    },
+    {
+      "id": "abrahamic-covenant-framework",
+      "relationship": "related",
+      "weight": 8,
+      "notes": "Traces Abrahamic promise into the messianic trajectory."
+    }
   ],
-  "common_questions": [
-    "What does messiah mean?",
-    "How do the Old Testament and New Testament use messiah language?",
-    "Why is the suffering servant connected to the messiah?"
-  ],
-  "sources": [
-    "2 Samuel 7",
-    "Psalm 2",
-    "Psalm 110",
-    "Isaiah 9",
-    "Isaiah 11",
-    "Isaiah 53",
-    "Luke 24",
-    "Romans 1",
-    "Philippians 2"
-  ],
-  "importance": 98,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
-  ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "2 Samuel 7:8-16",
@@ -120,36 +154,190 @@
       "notes": "Son superior to angels"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "david",
-      "relationship": "royal-ancestor",
-      "weight": 9,
-      "notes": "Davidic covenant and kingship"
+      "note": "Do not collapse messiah into a single political or national expectation; Scripture layers kingly, priestly, and servant imagery.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "kingdom-theme",
-      "relationship": "royal-context",
-      "weight": 10,
-      "notes": "the king who reigns"
-    },
-    {
-      "id": "sacrifice-theme",
-      "relationship": "suffering-and-atonement",
-      "weight": 8,
-      "notes": "messiah suffers for others"
-    },
-    {
-      "id": "resurrection-theme",
-      "relationship": "vindication-pattern",
-      "weight": 8,
-      "notes": "suffering leads to vindication"
-    },
-    {
-      "id": "covenant-theme",
-      "relationship": "promise-fulfillment",
-      "weight": 8,
-      "notes": "covenant promise reaches fulfillment"
+      "note": "The New Testament claims Jesus fulfills messianic hope, but it does so through suffering, resurrection, and exaltation.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "What does messiah mean?",
+    "How do the Old Testament and New Testament use messiah language?",
+    "Why is the suffering servant connected to the messiah?"
+  ],
+  "sources": [
+    {
+      "title": "2 Samuel 7",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "2-samuel-7"
+    },
+    {
+      "title": "Psalm 2",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "psalm-2"
+    },
+    {
+      "title": "Psalm 110",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "psalm-110"
+    },
+    {
+      "title": "Isaiah 9",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "isaiah-9"
+    },
+    {
+      "title": "Isaiah 11",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "isaiah-11"
+    },
+    {
+      "title": "Isaiah 53",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "isaiah-53"
+    },
+    {
+      "title": "Luke 24",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "luke-24"
+    },
+    {
+      "title": "Romans 1",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "romans-1"
+    },
+    {
+      "title": "Philippians 2",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "philippians-2"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 98,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }

@@ -151,8 +151,8 @@ def missing_reverse_relationships(
     objects: Iterable[CanonicalObject] | Mapping[str, CanonicalObject],
 ) -> list[ReverseRelationshipSuggestion]:
     object_map = _object_map(objects)
-    existing = {
-        (edge.source_id, edge.target_id, edge.relationship)
+    existing_reverse_pairs = {
+        (edge.source_id, edge.target_id)
         for edge in relationship_edges(object_map.values())
     }
     suggestions: list[ReverseRelationshipSuggestion] = []
@@ -161,8 +161,9 @@ def missing_reverse_relationships(
         if edge.target_id not in object_map:
             continue
         inverse = inverse_relationship(edge.relationship)
+        pair_key = (edge.target_id, edge.source_id)
         key = (edge.target_id, edge.source_id, inverse)
-        if key in existing or key in seen:
+        if pair_key in existing_reverse_pairs or key in seen:
             continue
         suggestions.append(
             ReverseRelationshipSuggestion(

@@ -7,25 +7,23 @@
     "what is leviticus about",
     "tell me about leviticus"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
-  "intertextuality": [],
-  "timeline": [],
-  "maps": [],
-  "archaeology": [],
-  "hebrew_words": [],
-  "greek_words": [],
-  "related_people": [],
-  "related_places": [],
-  "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
+  "summary": "Leviticus is a biblical book focused on holiness, sacrifice, priesthood, purity, atonement, and life with God.",
+  "historical_context": "Leviticus forms Israel for holy worship and covenant life in the Lord's presence.",
+  "ancient_near_east_context": "Leviticus belongs to the ancient Mediterranean and Near Eastern world reflected in its setting, institutions, and canonical placement.",
+  "hebraic_worldview": "Leviticus should be read with attention to covenant memory, communal identity, worship, wisdom, and accountability before the Lord.",
+  "second_temple_context": "Second Temple readers received Leviticus as part of Israel's Scriptures and read it within questions of identity, worship, exile, and hope.",
+  "canonical_context": "Within Torah, book 3 of 5, Leviticus contributes to the Bible's unfolding witness by connecting holiness, sacrifice, priesthood, purity, atonement, and life with God to the larger storyline.",
+  "later_christian_reception": "Christian interpretation has read Leviticus as part of the canonical witness to faithfulness, judgment, mercy, and hope in Christ-centered Scripture reading.",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
+  "literary_context": "Leviticus uses law within Torah, book 3 of 5 to develop its themes through the book's structure and key passages.",
+  "covenantal_significance": "Leviticus helps readers trace covenant faithfulness, failure, mercy, and hope within its canonical setting.",
   "authorship_positions": [
     "Traditional Mosaic attribution",
     "Many scholars see a composite work shaped over time"
@@ -36,6 +34,7 @@
   ],
   "original_audience": "Israel formed by covenant and delivered into the land promise",
   "historical_setting": "The Exodus, wilderness, and land-promise setting of the Torah",
+  "canonical_role": "Leviticus anchors holiness, sacrifice, priesthood, purity, atonement, and life with God within Torah, book 3 of 5 and connects the book to related people, places, events, and themes.",
   "genre": [
     "law"
   ],
@@ -74,7 +73,172 @@
   "primary_sources": [
     "Leviticus"
   ],
-  "importance": 0,
+  "related_entries": [],
+  "keywords": [],
+  "intertextuality": [],
+  "timeline": [],
+  "maps": [],
+  "archaeology": [],
+  "hebrew_words": [],
+  "greek_words": [],
+  "related_people": [],
+  "related_places": [],
+  "related_events": [],
+  "related_objects": [
+    {
+      "id": "sacrificial-system",
+      "relationship": "sacrificial-anchor",
+      "weight": 10,
+      "notes": "Sacrifice is central to Leviticus."
+    },
+    {
+      "id": "priesthood",
+      "relationship": "priestly-service",
+      "weight": 9,
+      "notes": "Priestly ministry organizes much of the book."
+    },
+    {
+      "id": "feast-calendar",
+      "relationship": "worship-calendar",
+      "weight": 8,
+      "notes": "Festivals shape Israel's worship rhythm."
+    },
+    {
+      "id": "holiness-theme",
+      "relationship": "holiness-anchor",
+      "weight": 10,
+      "notes": "Holiness is the book's defining theme."
+    },
+    {
+      "id": "levitical-service",
+      "relationship": "levitical-context",
+      "weight": 8,
+      "notes": "Levitical service belongs to the book's cultic setting."
+    }
+  ],
+  "scripture_references": [
+    {
+      "reference": "Leviticus 16:1-34",
+      "relationship": "primary",
+      "notes": "day of atonement"
+    },
+    {
+      "reference": "Leviticus 19:1-18",
+      "relationship": "supporting",
+      "notes": "holiness in community life"
+    }
+  ],
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
+    {
+      "note": "Read Leviticus first within its own literary setting before moving to broader canonical connections.",
+      "note_type": "literary-observation",
+      "certainty": "medium",
+      "dispute_status": "broad-consensus",
+      "sources": [
+        "leviticus-scripture"
+      ]
+    },
+    {
+      "note": "The relationship links on Leviticus are orientation anchors, not a full interpretive outline of the book.",
+      "note_type": "interpretive-caution",
+      "certainty": "high",
+      "dispute_status": "consensus",
+      "sources": [
+        "leviticus-canonical-book-metadata"
+      ]
+    }
+  ],
+  "common_questions": [
+    "What is Leviticus about?",
+    "Why does Leviticus matter in the biblical storyline?",
+    "How should readers interpret Leviticus in context?"
+  ],
+  "sources": [
+    {
+      "title": "Leviticus",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [
+        "scripture_references",
+        "literary_context"
+      ],
+      "notes": "Primary biblical text for Leviticus.",
+      "id": "leviticus-scripture"
+    },
+    {
+      "title": "Canonical book metadata for Leviticus",
+      "author": "",
+      "publisher": "Canonical Knowledge Library",
+      "year": 2026,
+      "locator": "Torah, book 3 of 5",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context",
+        "canonical_role",
+        "related_objects"
+      ],
+      "notes": "Internal CKL book-lane metadata used for canonical orientation and graph anchoring.",
+      "id": "leviticus-canonical-book-metadata"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 85,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ckl-book-placeholder-completion-pass",
+      "date": "2026-07-23"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-23",
+  "confidence": "medium",
+  "human_review_required": true
 }

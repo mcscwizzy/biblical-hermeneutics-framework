@@ -14,8 +14,32 @@
   "second_temple_context": "Second Temple Jewish reflection connected the image of God with wisdom, holiness, and the hope of restored humanity.",
   "canonical_context": "The image is damaged in sin, echoed in covenant ethics, and renewed in Christ, the true image, and in the new humanity.",
   "later_christian_reception": "Christian anthropology, ethics, and theology have used the image theme to discuss dignity, fall, sanctification, and vocation.",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "The theme appears in creation narrative, wisdom, apostolic ethics, and christological reflection as Scripture develops the doctrine of humanity.",
   "covenantal_significance": "The image of God grounds human dignity, moral accountability, and the vocation to represent God's rule faithfully.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "Image of God Theme serves as a thematic anchor, connecting repeated biblical patterns, key passages, and related theological concepts across the canon.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -25,160 +49,44 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
+  "related_objects": [
     {
-      "note": "The image of God is vocational and relational, not merely a static label.",
-      "note_type": "textual-observation",
-      "certainty": "high",
-      "dispute_status": "consensus",
-      "sources": [
-        "genesis-1-26-28",
-        "psalm-8-1-9"
-      ]
+      "id": "creation-theme",
+      "relationship": "creation-image",
+      "weight": 10,
+      "notes": "the image is given at creation"
     },
     {
-      "note": "Christological readings should arise from canonical development, especially Genesis, Psalms, and the Pauline letters.",
-      "note_type": "canonical-connection",
-      "certainty": "medium",
-      "dispute_status": "broad-consensus",
-      "sources": [
-        "colossians-1-15-20",
-        "colossians-3-9-10"
-      ]
+      "id": "adam",
+      "relationship": "human-origin",
+      "weight": 9,
+      "notes": "Adam as representative humanity"
+    },
+    {
+      "id": "jesus",
+      "relationship": "christological-fulfillment",
+      "weight": 10,
+      "notes": "Christ as the true image"
+    },
+    {
+      "id": "new-creation-theme",
+      "relationship": "renewed-humanity",
+      "weight": 8,
+      "notes": "image restored in new creation"
+    },
+    {
+      "id": "covenant-theme",
+      "relationship": "covenantal-vocation",
+      "weight": 8,
+      "notes": "image bears covenant responsibilities"
+    },
+    {
+      "id": "creation-doctrine-framework",
+      "relationship": "related",
+      "weight": 9,
+      "notes": "Links human vocation in the image of God to the broader creation doctrine framework."
     }
   ],
-  "common_questions": [
-    "What does the image of God mean?",
-    "How does Genesis develop the image of God?",
-    "Why does the New Testament connect Jesus to the image of God?"
-  ],
-  "sources": [
-    {
-      "id": "genesis-1-26-28",
-      "source_type": "scripture",
-      "title": "Genesis 1:26-28",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "supports": [],
-      "notes": "creation and vocation"
-    },
-    {
-      "id": "genesis-5-1-3",
-      "source_type": "scripture",
-      "title": "Genesis 5:1-3",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "supports": [],
-      "notes": "the image after the fall"
-    },
-    {
-      "id": "genesis-9-1-7",
-      "source_type": "scripture",
-      "title": "Genesis 9:1-7",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "supports": [],
-      "notes": "image and human life"
-    },
-    {
-      "id": "psalm-8-1-9",
-      "source_type": "scripture",
-      "title": "Psalm 8:1-9",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "supports": [],
-      "notes": "human dignity and rule"
-    },
-    {
-      "id": "1-corinthians-11-7",
-      "source_type": "scripture",
-      "title": "1 Corinthians 11:7",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "supports": [],
-      "notes": "image and worship order"
-    },
-    {
-      "id": "james-3-9",
-      "source_type": "scripture",
-      "title": "James 3:9",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "supports": [],
-      "notes": "image and speech ethics"
-    },
-    {
-      "id": "colossians-1-15-20",
-      "source_type": "scripture",
-      "title": "Colossians 1:15-20",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "supports": [],
-      "notes": "Christ as the image"
-    },
-    {
-      "id": "colossians-3-9-10",
-      "source_type": "scripture",
-      "title": "Colossians 3:9-10",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "supports": [],
-      "notes": "renewed humanity"
-    },
-    {
-      "id": "romans-8-28-30",
-      "source_type": "scripture",
-      "title": "Romans 8:28-30",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "supports": [],
-      "notes": "conformed to the Son"
-    },
-    {
-      "id": "ephesians-4-22-24",
-      "source_type": "scripture",
-      "title": "Ephesians 4:22-24",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "supports": [],
-      "notes": "new self and true righteousness"
-    }
-  ],
-  "importance": 96,
-  "framework_version": "1.0",
-  "object_version": "1",
   "scripture_references": [
     {
       "reference": "Genesis 1:26-28",
@@ -231,51 +139,222 @@
       "notes": "new self and true righteousness"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "creation-theme",
-      "relationship": "creation-image",
-      "weight": 10,
-      "notes": "the image is given at creation"
+      "note": "The image of God is vocational and relational, not merely a static label.",
+      "note_type": "textual-observation",
+      "certainty": "high",
+      "dispute_status": "consensus",
+      "sources": [
+        "genesis-1-26-28",
+        "psalm-8-1-9"
+      ]
     },
     {
-      "id": "adam",
-      "relationship": "human-origin",
-      "weight": 9,
-      "notes": "Adam as representative humanity"
-    },
-    {
-      "id": "jesus",
-      "relationship": "christological-fulfillment",
-      "weight": 10,
-      "notes": "Christ as the true image"
-    },
-    {
-      "id": "new-creation-theme",
-      "relationship": "renewed-humanity",
-      "weight": 8,
-      "notes": "image restored in new creation"
-    },
-    {
-      "id": "covenant-theme",
-      "relationship": "covenantal-vocation",
-      "weight": 8,
-      "notes": "image bears covenant responsibilities"
+      "note": "Christological readings should arise from canonical development, especially Genesis, Psalms, and the Pauline letters.",
+      "note_type": "canonical-connection",
+      "certainty": "medium",
+      "dispute_status": "broad-consensus",
+      "sources": [
+        "colossians-1-15-20",
+        "colossians-3-9-10"
+      ]
     }
   ],
+  "common_questions": [
+    "What does the image of God mean?",
+    "How does Genesis develop the image of God?",
+    "Why does the New Testament connect Jesus to the image of God?"
+  ],
+  "sources": [
+    {
+      "title": "Genesis 1:26-28",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "creation and vocation",
+      "id": "genesis-1-26-28"
+    },
+    {
+      "title": "Genesis 5:1-3",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "the image after the fall",
+      "id": "genesis-5-1-3"
+    },
+    {
+      "title": "Genesis 9:1-7",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "image and human life",
+      "id": "genesis-9-1-7"
+    },
+    {
+      "title": "Psalm 8:1-9",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "human dignity and rule",
+      "id": "psalm-8-1-9"
+    },
+    {
+      "title": "1 Corinthians 11:7",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "image and worship order",
+      "id": "1-corinthians-11-7"
+    },
+    {
+      "title": "James 3:9",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "image and speech ethics",
+      "id": "james-3-9"
+    },
+    {
+      "title": "Colossians 1:15-20",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "Christ as the image",
+      "id": "colossians-1-15-20"
+    },
+    {
+      "title": "Colossians 3:9-10",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "renewed humanity",
+      "id": "colossians-3-9-10"
+    },
+    {
+      "title": "Romans 8:28-30",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "conformed to the Son",
+      "id": "romans-8-28-30"
+    },
+    {
+      "title": "Ephesians 4:22-24",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "new self and true righteousness",
+      "id": "ephesians-4-22-24"
+    },
+    {
+      "title": "Canonical historical orientation for Image of God Theme",
+      "author": "",
+      "publisher": "Canonical Knowledge Library",
+      "year": 2026,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context"
+      ],
+      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+      "id": "image-of-god-theme-historical-orientation"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 96,
+  "framework_version": "1.0",
+  "object_version": "1",
   "content_status": "complete",
   "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-16"
+    }
   ],
+  "edited_by": [],
+  "reviewed_by": [],
   "last_reviewed": "2026-07-16",
   "confidence": "medium",
-  "context_applicability": {
-    "historical": true,
-    "ancient_near_east": true,
-    "hebraic_worldview": true,
-    "second_temple": true,
-    "canonical": true,
-    "later_christian_reception": true
-  }
+  "human_review_required": true
 }

@@ -10,8 +10,36 @@
   "summary": "The temple is the place where God dwells with his people, receives sacrifice, and makes holiness visible in Israel\u2019s life.",
   "historical_context": "The temple grows out of the tabernacle, reaches its classical form under Solomon, and remains central in the second temple period.",
   "ancient_near_east_context": "Temples were common in the ancient world, but Israel\u2019s temple is defined by covenant holiness and the one true God.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "Temple language connects worship, kingship, pilgrimage, prophecy, Gospel conflict, and Hebrews\u2019 sanctuary imagery.",
   "covenantal_significance": "The temple makes covenant presence concrete: God is near, but access is ordered by holiness and sacrifice.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "What is the Temple? serves as a question-oriented anchor, connecting common reader language to related passages, themes, and CKL entries.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -21,35 +49,38 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "The temple is more than a building; it is a theological center for presence, holiness, and atonement.",
-    "New Testament temple language expands the theme to Christ and the renewed people of God."
+  "related_objects": [
+    {
+      "id": "temple",
+      "relationship": "institutional-anchor",
+      "weight": 10,
+      "notes": "physical temple institution"
+    },
+    {
+      "id": "temple-theme",
+      "relationship": "thematic-anchor",
+      "weight": 10,
+      "notes": "sacred-space motif"
+    },
+    {
+      "id": "priesthood",
+      "relationship": "mediating-office",
+      "weight": 9,
+      "notes": "priests serve the temple"
+    },
+    {
+      "id": "sacrifice-theme",
+      "relationship": "atonement-anchor",
+      "weight": 8,
+      "notes": "sacrifice in sacred space"
+    },
+    {
+      "id": "new-jerusalem",
+      "relationship": "eschatological-fulfillment",
+      "weight": 7,
+      "notes": "final dwelling without temple"
+    }
   ],
-  "common_questions": [
-    "Why is the temple important?",
-    "How does Jesus change the meaning of the temple?",
-    "Why does Revelation say there is no temple?"
-  ],
-  "sources": [
-    "Exodus 25",
-    "1 Kings 8",
-    "Psalm 84",
-    "John 2",
-    "Hebrews 9-10",
-    "Revelation 21"
-  ],
-  "importance": 90,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
-  ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "Exodus 25:8-9",
@@ -82,36 +113,154 @@
       "notes": "no temple in the city"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "temple",
-      "relationship": "institutional-anchor",
-      "weight": 10,
-      "notes": "physical temple institution"
+      "note": "The temple is more than a building; it is a theological center for presence, holiness, and atonement.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "temple-theme",
-      "relationship": "thematic-anchor",
-      "weight": 10,
-      "notes": "sacred-space motif"
-    },
-    {
-      "id": "priesthood",
-      "relationship": "mediating-office",
-      "weight": 9,
-      "notes": "priests serve the temple"
-    },
-    {
-      "id": "sacrifice-theme",
-      "relationship": "atonement-anchor",
-      "weight": 8,
-      "notes": "sacrifice in sacred space"
-    },
-    {
-      "id": "new-jerusalem",
-      "relationship": "eschatological-fulfillment",
-      "weight": 7,
-      "notes": "final dwelling without temple"
+      "note": "New Testament temple language expands the theme to Christ and the renewed people of God.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "Why is the temple important?",
+    "How does Jesus change the meaning of the temple?",
+    "Why does Revelation say there is no temple?"
+  ],
+  "sources": [
+    {
+      "title": "Exodus 25",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "exodus-25"
+    },
+    {
+      "title": "1 Kings 8",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "1-kings-8"
+    },
+    {
+      "title": "Psalm 84",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "psalm-84"
+    },
+    {
+      "title": "John 2",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "john-2"
+    },
+    {
+      "title": "Hebrews 9-10",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "hebrews-9-10"
+    },
+    {
+      "title": "Revelation 21",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "revelation-21"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 90,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }

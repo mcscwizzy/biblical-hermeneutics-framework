@@ -9,9 +9,37 @@
   ],
   "summary": "A canonical reading that traces redemptive history through God\u2019s covenants with creation, Abraham, Israel, David, and the new covenant.",
   "historical_context": "Covenant theology developed as a way of reading the Bible\u2019s storyline, especially within Reformed and confessional traditions, but it is rooted in the biblical text itself.",
-  "ancient_near_east_context": "The theology takes seriously covenant forms familiar from the ancient Near East while insisting that the LORD\u2019s covenant is uniquely gracious and holy.",
+  "ancient_near_east_context": "Covenant theology draws on biblical covenant forms that intersect with Hittite suzerain treaties, Neo-Assyrian loyalty oaths, kinship obligations, and royal grants.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "It offers a big-picture lens for reading narrative, law, prophecy, Gospel, and epistle together.",
   "covenantal_significance": "Covenant theology highlights continuity and fulfillment across Scripture without collapsing distinct covenants into one undifferentiated category.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "Covenant Theology serves as a theological anchor, connecting doctrinal concepts, canonical development, and related passages across Scripture.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -21,34 +49,38 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "Covenant theology is one interpretive framework, not the only way Christians summarize Scripture.",
-    "It should clarify the text rather than force every passage into a single template."
+  "related_objects": [
+    {
+      "id": "covenant-theme",
+      "relationship": "canonical-anchor",
+      "weight": 10,
+      "notes": "the broad covenant motif"
+    },
+    {
+      "id": "new-covenant",
+      "relationship": "fulfillment-anchor",
+      "weight": 10,
+      "notes": "promise of renewal"
+    },
+    {
+      "id": "creation-doctrine",
+      "relationship": "systematic-context",
+      "weight": 7,
+      "notes": "creation as the covenant stage"
+    },
+    {
+      "id": "resurrection-doctrine",
+      "relationship": "systematic-context",
+      "weight": 7,
+      "notes": "new life and covenant hope"
+    },
+    {
+      "id": "abraham",
+      "relationship": "patriarchal-anchor",
+      "weight": 8,
+      "notes": "the father of promise"
+    }
   ],
-  "common_questions": [
-    "What is covenant theology?",
-    "How does covenant theology read the Bible?",
-    "Why do Christians talk about old and new covenants?"
-  ],
-  "sources": [
-    "Genesis 9, 12, 15, 17",
-    "Exodus 19-24",
-    "2 Samuel 7",
-    "Jeremiah 31",
-    "Hebrews 8-10"
-  ],
-  "importance": 96,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
-  ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "Genesis 9:8-17",
@@ -101,36 +133,156 @@
       "notes": "once-for-all access"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "covenant-theme",
-      "relationship": "canonical-anchor",
-      "weight": 10,
-      "notes": "the broad covenant motif"
+      "note": "Covenant theology is one interpretive framework, not the only way Christians summarize Scripture.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "new-covenant",
-      "relationship": "fulfillment-anchor",
-      "weight": 10,
-      "notes": "promise of renewal"
-    },
-    {
-      "id": "creation-doctrine",
-      "relationship": "systematic-context",
-      "weight": 7,
-      "notes": "creation as the covenant stage"
-    },
-    {
-      "id": "resurrection-doctrine",
-      "relationship": "systematic-context",
-      "weight": 7,
-      "notes": "new life and covenant hope"
-    },
-    {
-      "id": "abraham",
-      "relationship": "patriarchal-anchor",
-      "weight": 8,
-      "notes": "the father of promise"
+      "note": "It should clarify the text rather than force every passage into a single template.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "What is covenant theology?",
+    "How does covenant theology read the Bible?",
+    "Why do Christians talk about old and new covenants?"
+  ],
+  "sources": [
+    {
+      "title": "Genesis 9, 12, 15, 17",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "genesis-9-12-15-17"
+    },
+    {
+      "title": "Exodus 19-24",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "exodus-19-24"
+    },
+    {
+      "title": "2 Samuel 7",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "2-samuel-7"
+    },
+    {
+      "title": "Jeremiah 31",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "jeremiah-31"
+    },
+    {
+      "title": "Hebrews 8-10",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "hebrews-8-10"
+    },
+    {
+      "title": "Canonical historical orientation for Covenant Theology",
+      "author": "",
+      "publisher": "Canonical Knowledge Library",
+      "year": 2026,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context"
+      ],
+      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+      "id": "covenant-theology-historical-orientation"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 96,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }

@@ -7,25 +7,23 @@
     "what is joel about",
     "tell me about joel"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
-  "intertextuality": [],
-  "timeline": [],
-  "maps": [],
-  "archaeology": [],
-  "hebrew_words": [],
-  "greek_words": [],
-  "related_people": [],
-  "related_places": [],
-  "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
+  "summary": "Joel is a biblical book focused on the day of the Lord, repentance, Spirit, and restoration.",
+  "historical_context": "Joel moves from communal crisis to repentance, restoration, and the promise of the poured-out Spirit.",
+  "ancient_near_east_context": "Joel belongs to the ancient Mediterranean and Near Eastern world reflected in its setting, institutions, and canonical placement.",
+  "hebraic_worldview": "Joel should be read with attention to covenant memory, communal identity, worship, wisdom, and accountability before the Lord.",
+  "second_temple_context": "Second Temple readers received Joel as part of Israel's Scriptures and read it within questions of identity, worship, exile, and hope.",
+  "canonical_context": "Within Minor Prophets, book 2 of 12, Joel contributes to the Bible's unfolding witness by connecting the day of the Lord, repentance, Spirit, and restoration to the larger storyline.",
+  "later_christian_reception": "Christian interpretation has read Joel as part of the canonical witness to faithfulness, judgment, mercy, and hope in Christ-centered Scripture reading.",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
+  "literary_context": "Joel uses prophecy, poetry within Minor Prophets, book 2 of 12 to develop its themes through the book's structure and key passages.",
+  "covenantal_significance": "Joel helps readers trace covenant faithfulness, failure, mercy, and hope within its canonical setting.",
   "authorship_positions": [
     "Traditional prophetic attribution to the named prophet",
     "Many scholars recognize collection and editorial shaping"
@@ -36,6 +34,7 @@
   ],
   "original_audience": "Israel and Judah under covenant accountability before and after exile",
   "historical_setting": "Assyrian, Babylonian, and post-exilic settings across the prophetic corpus",
+  "canonical_role": "Joel anchors the day of the Lord, repentance, Spirit, and restoration within Minor Prophets, book 2 of 12 and connects the book to related people, places, events, and themes.",
   "genre": [
     "prophecy",
     "poetry"
@@ -75,7 +74,172 @@
   "primary_sources": [
     "Joel"
   ],
-  "importance": 0,
+  "related_entries": [],
+  "keywords": [],
+  "intertextuality": [],
+  "timeline": [],
+  "maps": [],
+  "archaeology": [],
+  "hebrew_words": [],
+  "greek_words": [],
+  "related_people": [],
+  "related_places": [],
+  "related_events": [],
+  "related_objects": [
+    {
+      "id": "day-of-the-lord-prophecy",
+      "relationship": "primary-theme",
+      "weight": 10,
+      "notes": "The day of the Lord is the book's central prophetic horizon."
+    },
+    {
+      "id": "repentance",
+      "relationship": "return-call",
+      "weight": 8,
+      "notes": "The book calls the community to return to the Lord."
+    },
+    {
+      "id": "restoration-theme",
+      "relationship": "restoration-promise",
+      "weight": 8,
+      "notes": "Judgment gives way to restoration hope."
+    },
+    {
+      "id": "spirit-theme",
+      "relationship": "spirit-promise",
+      "weight": 9,
+      "notes": "The promise of poured-out Spirit is central to later canonical use."
+    },
+    {
+      "id": "judgment",
+      "relationship": "judgment-theme",
+      "weight": 8,
+      "notes": "Judgment language shapes the book's crisis and hope."
+    }
+  ],
+  "scripture_references": [
+    {
+      "reference": "Joel 2:12-32",
+      "relationship": "primary",
+      "notes": "repentance, restoration, and poured-out Spirit"
+    },
+    {
+      "reference": "Joel 3:16-21",
+      "relationship": "supporting",
+      "notes": "Zion refuge and restoration"
+    }
+  ],
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
+    {
+      "note": "Read Joel first within its own literary setting before moving to broader canonical connections.",
+      "note_type": "literary-observation",
+      "certainty": "medium",
+      "dispute_status": "broad-consensus",
+      "sources": [
+        "joel-scripture"
+      ]
+    },
+    {
+      "note": "The relationship links on Joel are orientation anchors, not a full interpretive outline of the book.",
+      "note_type": "interpretive-caution",
+      "certainty": "high",
+      "dispute_status": "consensus",
+      "sources": [
+        "joel-canonical-book-metadata"
+      ]
+    }
+  ],
+  "common_questions": [
+    "What is Joel about?",
+    "Why does Joel matter in the biblical storyline?",
+    "How should readers interpret Joel in context?"
+  ],
+  "sources": [
+    {
+      "title": "Joel",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [
+        "scripture_references",
+        "literary_context"
+      ],
+      "notes": "Primary biblical text for Joel.",
+      "id": "joel-scripture"
+    },
+    {
+      "title": "Canonical book metadata for Joel",
+      "author": "",
+      "publisher": "Canonical Knowledge Library",
+      "year": 2026,
+      "locator": "Minor Prophets, book 2 of 12",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context",
+        "canonical_role",
+        "related_objects"
+      ],
+      "notes": "Internal CKL book-lane metadata used for canonical orientation and graph anchoring.",
+      "id": "joel-canonical-book-metadata"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 79,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ckl-book-orphan-relationship-pass",
+      "date": "2026-07-23"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-23",
+  "confidence": "medium",
+  "human_review_required": true
 }

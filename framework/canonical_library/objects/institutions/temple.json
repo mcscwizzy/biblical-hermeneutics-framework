@@ -11,8 +11,36 @@
   "summary": "The cultic institution centered on God\u2019s dwelling place, priestly mediation, sacrifice, and holiness.",
   "historical_context": "The temple develops from tabernacle patterns into Solomon\u2019s temple, survives in exilic memory, and is rebuilt in the second temple period.",
   "ancient_near_east_context": "Ancient temples were often royal and cultic centers; Israel\u2019s temple is distinct because it foregrounds covenant holiness and atonement under one God.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "Temple language runs from Exodus and Kings through the Psalms, the Prophets, the Gospels, Hebrews, and Revelation.",
   "covenantal_significance": "The temple gives concrete form to divine presence among a holy people and to the sacrificial means of access.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "Temple serves as an institutional anchor, connecting social practice, worship, leadership, and covenant life across related passages and themes.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -22,35 +50,44 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "Temple language includes geography, holiness, sacrifice, and God\u2019s presence; do not reduce it to architecture alone.",
-    "The New Testament expands temple imagery to include Jesus, his people, and the final new creation."
+  "related_objects": [
+    {
+      "id": "temple-theme",
+      "relationship": "thematic-anchor",
+      "weight": 10,
+      "notes": "sacred-space motif"
+    },
+    {
+      "id": "priesthood",
+      "relationship": "mediating-office",
+      "weight": 10,
+      "notes": "priests serve the temple"
+    },
+    {
+      "id": "sacrifice-theme",
+      "relationship": "atonement-anchor",
+      "weight": 9,
+      "notes": "sacrifice at the altar"
+    },
+    {
+      "id": "jerusalem",
+      "relationship": "city-anchor",
+      "weight": 9,
+      "notes": "temple city"
+    },
+    {
+      "id": "new-jerusalem",
+      "relationship": "eschatological-fulfillment",
+      "weight": 8,
+      "notes": "final dwelling without a temple"
+    },
+    {
+      "id": "temple-symbol",
+      "relationship": "related",
+      "weight": 10,
+      "notes": "symbolic layer of temple presence, access, and fulfillment"
+    }
   ],
-  "common_questions": [
-    "What is the temple in the Bible?",
-    "Why did Jesus speak about destroying the temple?",
-    "How does the New Testament reinterpret the temple?"
-  ],
-  "sources": [
-    "Exodus 25",
-    "1 Kings 8",
-    "Psalm 84",
-    "John 2",
-    "Hebrews 8-10",
-    "Revelation 21"
-  ],
-  "importance": 98,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
-  ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "Exodus 25:8-9",
@@ -93,36 +130,154 @@
       "notes": "no temple in the city"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "temple-theme",
-      "relationship": "thematic-anchor",
-      "weight": 10,
-      "notes": "sacred-space motif"
+      "note": "Temple language includes geography, holiness, sacrifice, and God\u2019s presence; do not reduce it to architecture alone.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "priesthood",
-      "relationship": "mediating-office",
-      "weight": 10,
-      "notes": "priests serve the temple"
-    },
-    {
-      "id": "sacrifice-theme",
-      "relationship": "atonement-anchor",
-      "weight": 9,
-      "notes": "sacrifice at the altar"
-    },
-    {
-      "id": "jerusalem",
-      "relationship": "city-anchor",
-      "weight": 9,
-      "notes": "temple city"
-    },
-    {
-      "id": "new-jerusalem",
-      "relationship": "eschatological-fulfillment",
-      "weight": 8,
-      "notes": "final dwelling without a temple"
+      "note": "The New Testament expands temple imagery to include Jesus, his people, and the final new creation.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "What is the temple in the Bible?",
+    "Why did Jesus speak about destroying the temple?",
+    "How does the New Testament reinterpret the temple?"
+  ],
+  "sources": [
+    {
+      "title": "Exodus 25",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "exodus-25"
+    },
+    {
+      "title": "1 Kings 8",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "1-kings-8"
+    },
+    {
+      "title": "Psalm 84",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "psalm-84"
+    },
+    {
+      "title": "John 2",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "john-2"
+    },
+    {
+      "title": "Hebrews 8-10",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "hebrews-8-10"
+    },
+    {
+      "title": "Revelation 21",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "revelation-21"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 98,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }

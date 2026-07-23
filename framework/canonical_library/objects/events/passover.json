@@ -10,8 +10,36 @@
   "summary": "The deliverance meal that marks Israel\u2019s rescue from Egypt and becomes a recurring redemption pattern.",
   "historical_context": "Passover stands at the center of the exodus tradition and the formation of Israel as a redeemed people.",
   "ancient_near_east_context": "The narrative is set within Egypt and frames God\u2019s victory over imperial power and death through a covenant meal.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "Exodus 12-13 combines ritual instruction, narrative deliverance, and memorial practice.",
   "covenantal_significance": "Passover marks God\u2019s saving action that turns enslaved households into a covenant people.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "Passover serves as a canonical event anchor, connecting its key passages, people, places, and theological themes within the biblical storyline.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -21,35 +49,44 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "Passover is not only about escape; it also forms identity, memory, and worship.",
-    "The New Testament does not erase Passover; it rereads it through the crucifixion and resurrection of Jesus."
+  "related_objects": [
+    {
+      "id": "moses",
+      "relationship": "exodus-context",
+      "weight": 9,
+      "notes": "Moses instructs Israel"
+    },
+    {
+      "id": "crucifixion",
+      "relationship": "typological-connection",
+      "weight": 10,
+      "notes": "Passover climax in Jesus"
+    },
+    {
+      "id": "resurrection",
+      "relationship": "redemptive-continuation",
+      "weight": 7,
+      "notes": "deliverance leads to life"
+    },
+    {
+      "id": "sacrifice-theme",
+      "relationship": "sacrificial-pattern",
+      "weight": 9,
+      "notes": "deliverance through blood"
+    },
+    {
+      "id": "new-covenant",
+      "relationship": "covenant-renewal",
+      "weight": 8,
+      "notes": "Passover becomes Lord\u2019s Supper context"
+    },
+    {
+      "id": "exodus-to-sinai-timeline",
+      "relationship": "related",
+      "weight": 10,
+      "notes": "Places Passover within the exodus-to-Sinai timeline anchor."
+    }
   ],
-  "common_questions": [
-    "Why is Passover important?",
-    "How does Passover point to Jesus?",
-    "What does the Passover meal mean in Israel\u2019s story?"
-  ],
-  "sources": [
-    "Exodus 12-13",
-    "Deuteronomy 16",
-    "Luke 22",
-    "1 Corinthians 5",
-    "John 19",
-    "Hebrews 11"
-  ],
-  "importance": 99,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
-  ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "Exodus 12:1-14",
@@ -97,36 +134,168 @@
       "notes": "Moses and Passover"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "moses",
-      "relationship": "exodus-context",
-      "weight": 9,
-      "notes": "Moses instructs Israel"
+      "note": "Passover is not only about escape; it also forms identity, memory, and worship.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "crucifixion",
-      "relationship": "typological-connection",
-      "weight": 10,
-      "notes": "Passover climax in Jesus"
-    },
-    {
-      "id": "resurrection",
-      "relationship": "redemptive-continuation",
-      "weight": 7,
-      "notes": "deliverance leads to life"
-    },
-    {
-      "id": "sacrifice-theme",
-      "relationship": "sacrificial-pattern",
-      "weight": 9,
-      "notes": "deliverance through blood"
-    },
-    {
-      "id": "new-covenant",
-      "relationship": "covenant-renewal",
-      "weight": 8,
-      "notes": "Passover becomes Lord\u2019s Supper context"
+      "note": "The New Testament does not erase Passover; it rereads it through the crucifixion and resurrection of Jesus.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "Why is Passover important?",
+    "How does Passover point to Jesus?",
+    "What does the Passover meal mean in Israel\u2019s story?"
+  ],
+  "sources": [
+    {
+      "title": "Exodus 12-13",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "exodus-12-13"
+    },
+    {
+      "title": "Deuteronomy 16",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "deuteronomy-16"
+    },
+    {
+      "title": "Luke 22",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "luke-22"
+    },
+    {
+      "title": "1 Corinthians 5",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "1-corinthians-5"
+    },
+    {
+      "title": "John 19",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "john-19"
+    },
+    {
+      "title": "Hebrews 11",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "hebrews-11"
+    },
+    {
+      "title": "Canonical historical orientation for Passover",
+      "author": "",
+      "publisher": "Canonical Knowledge Library",
+      "year": 2026,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context"
+      ],
+      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+      "id": "passover-historical-orientation"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 99,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }

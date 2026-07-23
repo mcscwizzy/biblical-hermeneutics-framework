@@ -56,6 +56,10 @@ The Canonical Knowledge Library has its own small command set in `tools/`:
 - `ckl_validate.py` validates either one object file or the full CKL library.
 - `ckl_manifest.py` rebuilds `manifest.json` from the current object inventory.
 - `ckl_report.py` prints a status snapshot with counts and validation issues.
+- `ckl_expansion_backlog.py` ranks people, places, and things that need
+  expansion or review attention.
+- `ckl_graph_audit.py` reports relationship graph coverage, including orphaned
+  objects, unknown targets, and missing reverse-edge suggestions.
 - `ckl_migrate.py` normalizes legacy object JSON into the current schema shape.
 
 Run these from the repository root so relative paths resolve correctly.

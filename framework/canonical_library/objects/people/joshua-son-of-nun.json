@@ -10,8 +10,36 @@
   "summary": "Moses' successor who leads Israel into the land and renews the covenant at Shechem.",
   "historical_context": "Joshua stands at the transition from wilderness wandering to settlement in Canaan, carrying the commission of Moses into the next generation.",
   "ancient_near_east_context": "His world is the world of tribal settlement, land claims, and fortified cities, but the narrative insists that inheritance depends on the LORD's faithfulness.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "Joshua is the key human figure in the book that bears his name and functions as the bridge between the Torah and the land narratives.",
   "covenantal_significance": "Joshua embodies covenant leadership at the moment when promise turns toward possession and renewed allegiance.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "Joshua son of Nun serves as a canonical person anchor, connecting biographical context, key passages, and related places, events, and themes.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -21,33 +49,38 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "Joshua functions as a covenant leader, not merely a military hero.",
-    "The book's final covenant scene at Shechem is central to understanding his role."
+  "related_objects": [
+    {
+      "id": "moses",
+      "relationship": "mentor",
+      "weight": 10,
+      "notes": "Joshua succeeds Moses"
+    },
+    {
+      "id": "joshua",
+      "relationship": "book-anchor",
+      "weight": 10,
+      "notes": "the book that narrates his ministry"
+    },
+    {
+      "id": "shechem",
+      "relationship": "covenant-site",
+      "weight": 10,
+      "notes": "the renewal location"
+    },
+    {
+      "id": "covenant-theme",
+      "relationship": "thematic-anchor",
+      "weight": 9,
+      "notes": "promise and allegiance"
+    },
+    {
+      "id": "covenant-theology",
+      "relationship": "theological-anchor",
+      "weight": 8,
+      "notes": "covenant faithfulness"
+    }
   ],
-  "common_questions": [
-    "Who was Joshua son of Nun?",
-    "How does Joshua relate to Moses?",
-    "Why is Shechem important in Joshua's story?"
-  ],
-  "sources": [
-    "Numbers 27",
-    "Deuteronomy 31",
-    "Joshua 1-24",
-    "Hebrews 4"
-  ],
-  "importance": 95,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
-  ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "Numbers 27:18-23",
@@ -80,36 +113,144 @@
       "notes": "rest fulfilled in God's promises"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "moses",
-      "relationship": "mentor",
-      "weight": 10,
-      "notes": "Joshua succeeds Moses"
+      "note": "Joshua functions as a covenant leader, not merely a military hero.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "joshua",
-      "relationship": "book-anchor",
-      "weight": 10,
-      "notes": "the book that narrates his ministry"
-    },
-    {
-      "id": "shechem",
-      "relationship": "covenant-site",
-      "weight": 10,
-      "notes": "the renewal location"
-    },
-    {
-      "id": "covenant-theme",
-      "relationship": "thematic-anchor",
-      "weight": 9,
-      "notes": "promise and allegiance"
-    },
-    {
-      "id": "covenant-theology",
-      "relationship": "theological-anchor",
-      "weight": 8,
-      "notes": "covenant faithfulness"
+      "note": "The book's final covenant scene at Shechem is central to understanding his role.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "Who was Joshua son of Nun?",
+    "How does Joshua relate to Moses?",
+    "Why is Shechem important in Joshua's story?"
+  ],
+  "sources": [
+    {
+      "title": "Numbers 27",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "numbers-27"
+    },
+    {
+      "title": "Deuteronomy 31",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "deuteronomy-31"
+    },
+    {
+      "title": "Joshua 1-24",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "joshua-1-24"
+    },
+    {
+      "title": "Hebrews 4",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "hebrews-4"
+    },
+    {
+      "title": "Canonical historical orientation for Joshua son of Nun",
+      "author": "",
+      "publisher": "Canonical Knowledge Library",
+      "year": 2026,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context"
+      ],
+      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+      "id": "joshua-son-of-nun-historical-orientation"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 95,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }

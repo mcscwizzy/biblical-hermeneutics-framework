@@ -10,8 +10,36 @@
   "summary": "The Roman execution of Jesus that Christians interpret as the climactic atoning death of the Messiah.",
   "historical_context": "The crucifixion occurs in first-century Judea under Roman authority and amid Jewish expectations for redemption and deliverance.",
   "ancient_near_east_context": "The event sits in the broader Roman imperial world but is interpreted through Israel\u2019s sacrificial, covenantal, and prophetic categories.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "The Gospels present the crucifixion with both historical detail and theological meaning, drawing on Psalmic lament and prophetic suffering imagery.",
   "covenantal_significance": "The crucifixion is the covenantal turning point where judgment, sacrifice, and mercy meet in Christ.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "Crucifixion serves as a canonical event anchor, connecting its key passages, people, places, and theological themes within the biblical storyline.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -21,36 +49,38 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "Do not reduce the cross to a single atonement model; Scripture uses multiple complementary images.",
-    "The crucifixion is both a Roman execution and a theological center of the Christian gospel."
+  "related_objects": [
+    {
+      "id": "passover",
+      "relationship": "typological-connection",
+      "weight": 10,
+      "notes": "Passover and cross"
+    },
+    {
+      "id": "sacrifice-theme",
+      "relationship": "thematic-anchor",
+      "weight": 10,
+      "notes": "sacrificial logic"
+    },
+    {
+      "id": "messiah-theme",
+      "relationship": "messianic-fulfillment",
+      "weight": 10,
+      "notes": "the anointed king suffers"
+    },
+    {
+      "id": "resurrection",
+      "relationship": "narrative-contrast",
+      "weight": 10,
+      "notes": "death followed by vindication"
+    },
+    {
+      "id": "temple-theme",
+      "relationship": "atonement-context",
+      "weight": 8,
+      "notes": "sacrifice and holy presence"
+    }
   ],
-  "common_questions": [
-    "Why did Jesus have to die?",
-    "How do the Gospels interpret the crucifixion?",
-    "What does the cross accomplish?"
-  ],
-  "sources": [
-    "Psalm 22",
-    "Isaiah 53",
-    "Mark 15",
-    "Luke 23",
-    "John 19",
-    "Romans 3",
-    "Hebrews 10"
-  ],
-  "importance": 100,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
-  ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "Psalm 22:1-31",
@@ -93,36 +123,166 @@
       "notes": "once-for-all sacrifice"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "passover",
-      "relationship": "typological-connection",
-      "weight": 10,
-      "notes": "Passover and cross"
+      "note": "Do not reduce the cross to a single atonement model; Scripture uses multiple complementary images.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "sacrifice-theme",
-      "relationship": "thematic-anchor",
-      "weight": 10,
-      "notes": "sacrificial logic"
-    },
-    {
-      "id": "messiah-theme",
-      "relationship": "messianic-fulfillment",
-      "weight": 10,
-      "notes": "the anointed king suffers"
-    },
-    {
-      "id": "resurrection",
-      "relationship": "narrative-contrast",
-      "weight": 10,
-      "notes": "death followed by vindication"
-    },
-    {
-      "id": "temple-theme",
-      "relationship": "atonement-context",
-      "weight": 8,
-      "notes": "sacrifice and holy presence"
+      "note": "The crucifixion is both a Roman execution and a theological center of the Christian gospel.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "Why did Jesus have to die?",
+    "How do the Gospels interpret the crucifixion?",
+    "What does the cross accomplish?"
+  ],
+  "sources": [
+    {
+      "title": "Psalm 22",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "psalm-22"
+    },
+    {
+      "title": "Isaiah 53",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "isaiah-53"
+    },
+    {
+      "title": "Mark 15",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "mark-15"
+    },
+    {
+      "title": "Luke 23",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "luke-23"
+    },
+    {
+      "title": "John 19",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "john-19"
+    },
+    {
+      "title": "Romans 3",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "romans-3"
+    },
+    {
+      "title": "Hebrews 10",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "hebrews-10"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 100,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }

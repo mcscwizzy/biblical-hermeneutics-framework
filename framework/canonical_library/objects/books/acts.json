@@ -10,35 +10,20 @@
   "summary": "A narrative of the Spirit-empowered spread of the Jesus movement from Jerusalem to the Roman world.",
   "historical_context": "Acts reflects the earliest decades of the church as it moves through Jewish, Samaritan, and Gentile settings under Roman rule.",
   "ancient_near_east_context": "Its setting is Greco-Roman, not ancient Near Eastern, but it remains rooted in Israel's Scriptures and Jerusalem-centered hopes.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "Acts continues Luke's story with geographic and theological movement from Jerusalem to Judea, Samaria, and the ends of the earth.",
   "covenantal_significance": "Acts shows the risen Jesus gathering a covenant people from the nations by the power of the Spirit.",
-  "intertextuality": [],
-  "timeline": [],
-  "maps": [],
-  "archaeology": [],
-  "hebrew_words": [],
-  "greek_words": [],
-  "related_people": [],
-  "related_places": [],
-  "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "Acts is descriptive narrative, so not every episode becomes a universal church blueprint.",
-    "The Spirit's guidance and witness are central from start to finish."
-  ],
-  "common_questions": [
-    "Why does Acts matter?",
-    "Why is Pentecost central in Acts?",
-    "How does Acts explain the mission to the Gentiles?"
-  ],
-  "sources": [
-    "Acts 1-28",
-    "Luke 24",
-    "Romans 15",
-    "Ephesians 2",
-    "1 Corinthians 12-14"
-  ],
   "authorship_positions": [
     "Traditional evangelist or Lukan authorship",
     "Critical scholarship debates authorship, sources, and dating"
@@ -49,6 +34,7 @@
   ],
   "original_audience": "First-century Jewish and Gentile followers of Jesus",
   "historical_setting": "Second Temple Judaism and the Roman imperial world",
+  "canonical_role": "Acts serves as a canonical book anchor within Gospels & Acts, book 5 of 5, connecting its structure, key passages, and related themes to the wider biblical storyline.",
   "genre": [
     "narrative"
   ],
@@ -94,16 +80,49 @@
     "Ephesians 2",
     "1 Corinthians 12-14"
   ],
-  "importance": 96,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
+  "related_entries": [],
+  "keywords": [],
+  "intertextuality": [],
+  "timeline": [],
+  "maps": [],
+  "archaeology": [],
+  "hebrew_words": [],
+  "greek_words": [],
+  "related_people": [],
+  "related_places": [],
+  "related_events": [],
+  "related_objects": [
+    {
+      "id": "jesus",
+      "relationship": "risen-lord",
+      "weight": 10,
+      "notes": "the one who sends the Spirit"
+    },
+    {
+      "id": "paul",
+      "relationship": "missionary-anchor",
+      "weight": 10,
+      "notes": "the major apostolic missionary"
+    },
+    {
+      "id": "peter",
+      "relationship": "apostolic-anchor",
+      "weight": 9,
+      "notes": "early Jerusalem leadership"
+    },
+    {
+      "id": "spirit-theme",
+      "relationship": "driving-theme",
+      "weight": 10,
+      "notes": "the Spirit empowers the mission"
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "mission-context",
+      "weight": 8,
+      "notes": "the kingdom expands through witness"
+    }
   ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "Acts 1:1-11",
@@ -146,36 +165,156 @@
       "notes": "the gospel reaches Rome"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "jesus",
-      "relationship": "risen-lord",
-      "weight": 10,
-      "notes": "the one who sends the Spirit"
+      "note": "Acts is descriptive narrative, so not every episode becomes a universal church blueprint.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "paul",
-      "relationship": "missionary-anchor",
-      "weight": 10,
-      "notes": "the major apostolic missionary"
-    },
-    {
-      "id": "peter",
-      "relationship": "apostolic-anchor",
-      "weight": 9,
-      "notes": "early Jerusalem leadership"
-    },
-    {
-      "id": "spirit-theme",
-      "relationship": "driving-theme",
-      "weight": 10,
-      "notes": "the Spirit empowers the mission"
-    },
-    {
-      "id": "kingdom-theme",
-      "relationship": "mission-context",
-      "weight": 8,
-      "notes": "the kingdom expands through witness"
+      "note": "The Spirit's guidance and witness are central from start to finish.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "Why does Acts matter?",
+    "Why is Pentecost central in Acts?",
+    "How does Acts explain the mission to the Gentiles?"
+  ],
+  "sources": [
+    {
+      "title": "Acts 1-28",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "acts-1-28"
+    },
+    {
+      "title": "Luke 24",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "luke-24"
+    },
+    {
+      "title": "Romans 15",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "romans-15"
+    },
+    {
+      "title": "Ephesians 2",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "ephesians-2"
+    },
+    {
+      "title": "1 Corinthians 12-14",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "1-corinthians-12-14"
+    },
+    {
+      "title": "Canonical historical orientation for Acts",
+      "author": "",
+      "publisher": "Canonical Knowledge Library",
+      "year": 2026,
+      "locator": "Gospels & Acts, book 5 of 5",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context"
+      ],
+      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+      "id": "acts-historical-orientation"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 96,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }
