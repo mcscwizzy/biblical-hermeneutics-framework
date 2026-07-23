@@ -10,8 +10,36 @@
   "summary": "The covenant event at Mount Sinai where God forms Israel into a holy nation and gives Torah.",
   "historical_context": "Sinai marks the transition from redemption out of Egypt to covenant life before God in the wilderness.",
   "ancient_near_east_context": "The covenant language draws on ancient treaty patterns while sharply centering the initiative and holiness of Israel\u2019s God.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "Exodus 19-24 combines divine speech, law, covenant ratification, and communal response.",
   "covenantal_significance": "Sinai is the defining covenant moment that shapes Israel\u2019s identity, worship, and obedience.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "Sinai Covenant serves as a canonical event anchor, connecting its key passages, people, places, and theological themes within the biblical storyline.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -21,32 +49,44 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "Sinai is not merely a list of rules; it is covenant formation for a redeemed people.",
-    "The holiness of God is central to the law, worship, and boundary markers given here."
+  "related_objects": [
+    {
+      "id": "moses",
+      "relationship": "covenant-mediator",
+      "weight": 10,
+      "notes": "Moses mediates the covenant"
+    },
+    {
+      "id": "torah",
+      "relationship": "instruction-anchor",
+      "weight": 10,
+      "notes": "the covenant law"
+    },
+    {
+      "id": "covenant-assembly",
+      "relationship": "corporate-context",
+      "weight": 9,
+      "notes": "assembled covenant people"
+    },
+    {
+      "id": "covenant-theology",
+      "relationship": "theological-anchor",
+      "weight": 9,
+      "notes": "covenant structure"
+    },
+    {
+      "id": "temple",
+      "relationship": "holy-presence-pattern",
+      "weight": 7,
+      "notes": "holiness and access anticipate worship"
+    },
+    {
+      "id": "exodus-to-sinai-timeline",
+      "relationship": "related",
+      "weight": 10,
+      "notes": "timeline context for arrival and covenant formation at Sinai"
+    }
   ],
-  "common_questions": [
-    "What happened at Sinai?",
-    "Why is Sinai so important to Israel?",
-    "How does Sinai relate to the rest of the Bible?"
-  ],
-  "sources": [
-    "Exodus 19-24",
-    "Deuteronomy 4-5",
-    "Hebrews 12"
-  ],
-  "importance": 96,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
-  ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "Exodus 19:1-25",
@@ -79,36 +119,132 @@
       "notes": "Sinai and Zion contrasted"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "moses",
-      "relationship": "covenant-mediator",
-      "weight": 10,
-      "notes": "Moses mediates the covenant"
+      "note": "Sinai is not merely a list of rules; it is covenant formation for a redeemed people.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "torah",
-      "relationship": "instruction-anchor",
-      "weight": 10,
-      "notes": "the covenant law"
-    },
-    {
-      "id": "covenant-assembly",
-      "relationship": "corporate-context",
-      "weight": 9,
-      "notes": "assembled covenant people"
-    },
-    {
-      "id": "covenant-theology",
-      "relationship": "theological-anchor",
-      "weight": 9,
-      "notes": "covenant structure"
-    },
-    {
-      "id": "temple",
-      "relationship": "holy-presence-pattern",
-      "weight": 7,
-      "notes": "holiness and access anticipate worship"
+      "note": "The holiness of God is central to the law, worship, and boundary markers given here.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "What happened at Sinai?",
+    "Why is Sinai so important to Israel?",
+    "How does Sinai relate to the rest of the Bible?"
+  ],
+  "sources": [
+    {
+      "title": "Exodus 19-24",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "exodus-19-24"
+    },
+    {
+      "title": "Deuteronomy 4-5",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "deuteronomy-4-5"
+    },
+    {
+      "title": "Hebrews 12",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "hebrews-12"
+    },
+    {
+      "title": "Canonical historical orientation for Sinai Covenant",
+      "author": "",
+      "publisher": "Canonical Knowledge Library",
+      "year": 2026,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context"
+      ],
+      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+      "id": "sinai-covenant-historical-orientation"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 96,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }

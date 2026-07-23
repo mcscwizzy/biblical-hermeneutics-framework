@@ -7,25 +7,23 @@
     "what is jeremiah about",
     "tell me about jeremiah"
   ],
-  "summary": "",
-  "historical_context": "",
-  "ancient_near_east_context": "",
-  "literary_context": "",
-  "covenantal_significance": "",
-  "intertextuality": [],
-  "timeline": [],
-  "maps": [],
-  "archaeology": [],
-  "hebrew_words": [],
-  "greek_words": [],
-  "related_people": [],
-  "related_places": [],
-  "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [],
-  "common_questions": [],
-  "sources": [],
+  "summary": "Jeremiah is a biblical book focused on prophetic calling, covenant breach, judgment, exile, new covenant, and restoration.",
+  "historical_context": "Jeremiah interprets Judah's collapse and exile while announcing new covenant hope.",
+  "ancient_near_east_context": "Jeremiah belongs to the ancient Mediterranean and Near Eastern world reflected in its setting, institutions, and canonical placement.",
+  "hebraic_worldview": "Jeremiah should be read with attention to covenant memory, communal identity, worship, wisdom, and accountability before the Lord.",
+  "second_temple_context": "Second Temple readers received Jeremiah as part of Israel's Scriptures and read it within questions of identity, worship, exile, and hope.",
+  "canonical_context": "Within Major Prophets, book 2 of 5, Jeremiah contributes to the Bible's unfolding witness by connecting prophetic calling, covenant breach, judgment, exile, new covenant, and restoration to the larger storyline.",
+  "later_christian_reception": "Christian interpretation has read Jeremiah as part of the canonical witness to faithfulness, judgment, mercy, and hope in Christ-centered Scripture reading.",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
+  "literary_context": "Jeremiah uses prophecy, poetry within Major Prophets, book 2 of 5 to develop its themes through the book's structure and key passages.",
+  "covenantal_significance": "Jeremiah helps readers trace covenant faithfulness, failure, mercy, and hope within its canonical setting.",
   "authorship_positions": [
     "Traditional prophetic attribution to the named prophet",
     "Many scholars note later collection and occasional expansion"
@@ -36,6 +34,7 @@
   ],
   "original_audience": "Judah and Israel in crisis, facing judgment, exile, and restoration hopes",
   "historical_setting": "The late monarchic, exilic, and post-exilic periods",
+  "canonical_role": "Jeremiah anchors prophetic calling, covenant breach, judgment, exile, new covenant, and restoration within Major Prophets, book 2 of 5 and connects the book to related people, places, events, and themes.",
   "genre": [
     "prophecy",
     "poetry"
@@ -75,7 +74,172 @@
   "primary_sources": [
     "Jeremiah"
   ],
-  "importance": 0,
+  "related_entries": [],
+  "keywords": [],
+  "intertextuality": [],
+  "timeline": [],
+  "maps": [],
+  "archaeology": [],
+  "hebrew_words": [],
+  "greek_words": [],
+  "related_people": [],
+  "related_places": [],
+  "related_events": [],
+  "related_objects": [
+    {
+      "id": "jeremiah-the-prophet",
+      "relationship": "central-prophet",
+      "weight": 10,
+      "notes": "Jeremiah is the prophetic figure associated with the book."
+    },
+    {
+      "id": "fall-of-jerusalem",
+      "relationship": "judgment-context",
+      "weight": 9,
+      "notes": "Jerusalem's fall is central to the book's crisis."
+    },
+    {
+      "id": "babylonian-exile",
+      "relationship": "exile-context",
+      "weight": 9,
+      "notes": "Babylonian exile frames much of the book."
+    },
+    {
+      "id": "new-covenant",
+      "relationship": "covenant-hope",
+      "weight": 10,
+      "notes": "The new covenant promise is a major canonical anchor."
+    },
+    {
+      "id": "restoration-theme",
+      "relationship": "restoration-hope",
+      "weight": 8,
+      "notes": "Judgment is paired with promised restoration."
+    }
+  ],
+  "scripture_references": [
+    {
+      "reference": "Jeremiah 1:4-10",
+      "relationship": "primary",
+      "notes": "prophetic call"
+    },
+    {
+      "reference": "Jeremiah 31:31-34",
+      "relationship": "supporting",
+      "notes": "new covenant promise"
+    }
+  ],
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
+    {
+      "note": "Read Jeremiah first within its own literary setting before moving to broader canonical connections.",
+      "note_type": "literary-observation",
+      "certainty": "medium",
+      "dispute_status": "broad-consensus",
+      "sources": [
+        "jeremiah-scripture"
+      ]
+    },
+    {
+      "note": "The relationship links on Jeremiah are orientation anchors, not a full interpretive outline of the book.",
+      "note_type": "interpretive-caution",
+      "certainty": "high",
+      "dispute_status": "consensus",
+      "sources": [
+        "jeremiah-canonical-book-metadata"
+      ]
+    }
+  ],
+  "common_questions": [
+    "What is Jeremiah about?",
+    "Why does Jeremiah matter in the biblical storyline?",
+    "How should readers interpret Jeremiah in context?"
+  ],
+  "sources": [
+    {
+      "title": "Jeremiah",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [
+        "scripture_references",
+        "literary_context"
+      ],
+      "notes": "Primary biblical text for Jeremiah.",
+      "id": "jeremiah-scripture"
+    },
+    {
+      "title": "Canonical book metadata for Jeremiah",
+      "author": "",
+      "publisher": "Canonical Knowledge Library",
+      "year": 2026,
+      "locator": "Major Prophets, book 2 of 5",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context",
+        "canonical_role",
+        "related_objects"
+      ],
+      "notes": "Internal CKL book-lane metadata used for canonical orientation and graph anchoring.",
+      "id": "jeremiah-canonical-book-metadata"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 86,
   "framework_version": "1.0",
-  "object_version": "1"
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ckl-book-placeholder-completion-pass",
+      "date": "2026-07-23"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-23",
+  "confidence": "medium",
+  "human_review_required": true
 }

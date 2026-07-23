@@ -11,8 +11,36 @@
   "summary": "The doctrine that God raised Jesus bodily from the dead and will raise believers for renewed life in the age to come.",
   "historical_context": "Resurrection doctrine emerges from the church\u2019s earliest proclamation and develops as a central Christian confession of hope, judgment, and new creation.",
   "ancient_near_east_context": "The doctrine stands out in a world where death was usually viewed as final, and it insists on God\u2019s power to defeat death itself.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "The doctrine is taught narratively in the Gospels and doctrinally in Acts and the Epistles.",
   "covenantal_significance": "Resurrection confirms God\u2019s faithfulness and guarantees the future life promised in the covenant.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "Resurrection Doctrine serves as a theological anchor, connecting doctrinal concepts, canonical development, and related passages across Scripture.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -22,37 +50,38 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "Resurrection doctrine is not the same as immortality of the soul; Scripture expects bodily renewal.",
-    "Keep the historical claim and the eschatological hope together."
+  "related_objects": [
+    {
+      "id": "resurrection",
+      "relationship": "narrative-anchor",
+      "weight": 10,
+      "notes": "Jesus raised"
+    },
+    {
+      "id": "resurrection-theme",
+      "relationship": "canonical-anchor",
+      "weight": 10,
+      "notes": "life from death motif"
+    },
+    {
+      "id": "new-creation-theme",
+      "relationship": "eschatological-fulfillment",
+      "weight": 9,
+      "notes": "future world renewed"
+    },
+    {
+      "id": "crucifixion",
+      "relationship": "gospel-context",
+      "weight": 9,
+      "notes": "death followed by vindication"
+    },
+    {
+      "id": "messiah-theme",
+      "relationship": "messianic-fulfillment",
+      "weight": 8,
+      "notes": "the Messiah is vindicated"
+    }
   ],
-  "common_questions": [
-    "What do Christians mean by resurrection?",
-    "Why is resurrection central to the gospel?",
-    "How does resurrection relate to eternal life?"
-  ],
-  "sources": [
-    "Daniel 12",
-    "John 11",
-    "John 20",
-    "Acts 2",
-    "1 Corinthians 15",
-    "1 Thessalonians 4",
-    "Philippians 3",
-    "Revelation 20-21"
-  ],
-  "importance": 95,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
-  ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "Daniel 12:1-3",
@@ -105,36 +134,192 @@
       "notes": "final renewal"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "resurrection",
-      "relationship": "narrative-anchor",
-      "weight": 10,
-      "notes": "Jesus raised"
+      "note": "Resurrection doctrine is not the same as immortality of the soul; Scripture expects bodily renewal.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "resurrection-theme",
-      "relationship": "canonical-anchor",
-      "weight": 10,
-      "notes": "life from death motif"
-    },
-    {
-      "id": "new-creation-theme",
-      "relationship": "eschatological-fulfillment",
-      "weight": 9,
-      "notes": "future world renewed"
-    },
-    {
-      "id": "crucifixion",
-      "relationship": "gospel-context",
-      "weight": 9,
-      "notes": "death followed by vindication"
-    },
-    {
-      "id": "messiah-theme",
-      "relationship": "messianic-fulfillment",
-      "weight": 8,
-      "notes": "the Messiah is vindicated"
+      "note": "Keep the historical claim and the eschatological hope together.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "What do Christians mean by resurrection?",
+    "Why is resurrection central to the gospel?",
+    "How does resurrection relate to eternal life?"
+  ],
+  "sources": [
+    {
+      "title": "Daniel 12",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "daniel-12"
+    },
+    {
+      "title": "John 11",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "john-11"
+    },
+    {
+      "title": "John 20",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "john-20"
+    },
+    {
+      "title": "Acts 2",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "acts-2"
+    },
+    {
+      "title": "1 Corinthians 15",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "1-corinthians-15"
+    },
+    {
+      "title": "1 Thessalonians 4",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "1-thessalonians-4"
+    },
+    {
+      "title": "Philippians 3",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "philippians-3"
+    },
+    {
+      "title": "Revelation 20-21",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "revelation-20-21"
+    },
+    {
+      "title": "Canonical historical orientation for Resurrection Doctrine",
+      "author": "",
+      "publisher": "Canonical Knowledge Library",
+      "year": 2026,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context"
+      ],
+      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+      "id": "resurrection-doctrine-historical-orientation"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 95,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }

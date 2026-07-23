@@ -10,8 +10,36 @@
   "summary": "The Ancient Near East is the cultural and historical world of the Bible's early civilizations, including Egypt, Mesopotamia, Canaan, Assyria, Babylon, and Persia.",
   "historical_context": "The Bible was written within and against the world of ancient empires, city-states, treaties, temples, and royal claims that shaped life across the eastern Mediterranean and Mesopotamia.",
   "ancient_near_east_context": "Background studies help explain covenant forms, kingship, worship, exile, and symbolic language without making those background settings the final authority over the text.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "Knowing the ancient world clarifies genre, imagery, polemic, and narrative detail across law, prophecy, wisdom, and apocalyptic writing.",
   "covenantal_significance": "The Bible uses its ancient setting to show that the LORD is not merely one deity among many, but the covenant God who speaks and saves.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "What is the Ancient Near East? serves as a question-oriented anchor, connecting common reader language to related passages, themes, and CKL entries.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -21,34 +49,38 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "Use cultural background to illuminate the text, not to replace it.",
-    "The Bible both engages and critiques its world, so context should sharpen rather than flatten interpretation."
+  "related_objects": [
+    {
+      "id": "egypt",
+      "relationship": "cultural-anchor",
+      "weight": 10,
+      "notes": "one of the major biblical empires"
+    },
+    {
+      "id": "babylon-1",
+      "relationship": "cultural-anchor",
+      "weight": 10,
+      "notes": "the city most often associated with exile and judgment"
+    },
+    {
+      "id": "mount-sinai",
+      "relationship": "revelation-context",
+      "weight": 8,
+      "notes": "covenant revelation in an ancient setting"
+    },
+    {
+      "id": "covenant-theme",
+      "relationship": "thematic-anchor",
+      "weight": 8,
+      "notes": "covenant within a historical world"
+    },
+    {
+      "id": "creation-theme",
+      "relationship": "thematic-anchor",
+      "weight": 7,
+      "notes": "creation language and worldview"
+    }
   ],
-  "common_questions": [
-    "What is the Ancient Near East?",
-    "Why does the Ancient Near East matter for Bible reading?",
-    "How should I use background studies responsibly?"
-  ],
-  "sources": [
-    "Genesis 10-12",
-    "Exodus 1-15",
-    "Daniel 1-6",
-    "Ezra 1-6",
-    "Revelation 17-18"
-  ],
-  "importance": 88,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
-  ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "Genesis 10:1-32",
@@ -81,36 +113,156 @@
       "notes": "apocalyptic use of imperial imagery"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "egypt",
-      "relationship": "cultural-anchor",
-      "weight": 10,
-      "notes": "one of the major biblical empires"
+      "note": "Use cultural background to illuminate the text, not to replace it.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "babylon-1",
-      "relationship": "cultural-anchor",
-      "weight": 10,
-      "notes": "the city most often associated with exile and judgment"
-    },
-    {
-      "id": "mount-sinai",
-      "relationship": "revelation-context",
-      "weight": 8,
-      "notes": "covenant revelation in an ancient setting"
-    },
-    {
-      "id": "covenant-theme",
-      "relationship": "thematic-anchor",
-      "weight": 8,
-      "notes": "covenant within a historical world"
-    },
-    {
-      "id": "creation-theme",
-      "relationship": "thematic-anchor",
-      "weight": 7,
-      "notes": "creation language and worldview"
+      "note": "The Bible both engages and critiques its world, so context should sharpen rather than flatten interpretation.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "What is the Ancient Near East?",
+    "Why does the Ancient Near East matter for Bible reading?",
+    "How should I use background studies responsibly?"
+  ],
+  "sources": [
+    {
+      "title": "Genesis 10-12",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "genesis-10-12"
+    },
+    {
+      "title": "Exodus 1-15",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "exodus-1-15"
+    },
+    {
+      "title": "Daniel 1-6",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "daniel-1-6"
+    },
+    {
+      "title": "Ezra 1-6",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "ezra-1-6"
+    },
+    {
+      "title": "Revelation 17-18",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "revelation-17-18"
+    },
+    {
+      "title": "Canonical historical orientation for What is the Ancient Near East?",
+      "author": "",
+      "publisher": "Canonical Knowledge Library",
+      "year": 2026,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context"
+      ],
+      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+      "id": "what-is-the-ancient-near-east-historical-orientation"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 88,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }

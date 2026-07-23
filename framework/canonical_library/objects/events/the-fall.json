@@ -10,8 +10,36 @@
   "summary": "The human rebellion in Eden that brings sin, shame, curse, and exile into the biblical story.",
   "historical_context": "Genesis 3 functions as the interpretive root of human estrangement, death, and the need for redemption.",
   "ancient_near_east_context": "The garden narrative uses familiar imagery of sacred space, guarded boundaries, and moral order, but it insists on one sovereign God rather than a pantheon.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "The chapter reverses the goodness of creation with disobedience, broken trust, and expulsion from sacred space.",
   "covenantal_significance": "The fall explains why covenant faithfulness, atonement, and restoration become necessary throughout the rest of Scripture.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "The Fall serves as a canonical event anchor, connecting its key passages, people, places, and theological themes within the biblical storyline.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -21,33 +49,32 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "Read the chapter as a theological account of human rebellion, not only as a story about curiosity or shame.",
-    "The serpent, the fruit, and the exile image together describe disorder at relational, moral, and cosmic levels."
+  "related_objects": [
+    {
+      "id": "creation",
+      "relationship": "narrative-contrast",
+      "weight": 10,
+      "notes": "the goodness that is lost"
+    },
+    {
+      "id": "exile-theme",
+      "relationship": "thematic-development",
+      "weight": 9,
+      "notes": "expulsion from sacred space"
+    },
+    {
+      "id": "resurrection-theme",
+      "relationship": "redemptive-answer",
+      "weight": 8,
+      "notes": "life overcoming death"
+    },
+    {
+      "id": "covenant-theme",
+      "relationship": "theological-context",
+      "weight": 7,
+      "notes": "covenant answers human failure"
+    }
   ],
-  "common_questions": [
-    "What happened in the fall?",
-    "Why is Genesis 3 so important?",
-    "How does the fall explain sin and death?"
-  ],
-  "sources": [
-    "Genesis 3",
-    "Romans 5",
-    "1 Corinthians 15",
-    "James 1"
-  ],
-  "importance": 98,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
-  ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "Genesis 3:1-24",
@@ -75,30 +102,144 @@
       "notes": "final judgment"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "creation",
-      "relationship": "narrative-contrast",
-      "weight": 10,
-      "notes": "the goodness that is lost"
+      "note": "Read the chapter as a theological account of human rebellion, not only as a story about curiosity or shame.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "exile-theme",
-      "relationship": "thematic-development",
-      "weight": 9,
-      "notes": "expulsion from sacred space"
-    },
-    {
-      "id": "resurrection-theme",
-      "relationship": "redemptive-answer",
-      "weight": 8,
-      "notes": "life overcoming death"
-    },
-    {
-      "id": "covenant-theme",
-      "relationship": "theological-context",
-      "weight": 7,
-      "notes": "covenant answers human failure"
+      "note": "The serpent, the fruit, and the exile image together describe disorder at relational, moral, and cosmic levels.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "What happened in the fall?",
+    "Why is Genesis 3 so important?",
+    "How does the fall explain sin and death?"
+  ],
+  "sources": [
+    {
+      "title": "Genesis 3",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "genesis-3"
+    },
+    {
+      "title": "Romans 5",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "romans-5"
+    },
+    {
+      "title": "1 Corinthians 15",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "1-corinthians-15"
+    },
+    {
+      "title": "James 1",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "james-1"
+    },
+    {
+      "title": "Canonical historical orientation for The Fall",
+      "author": "",
+      "publisher": "Canonical Knowledge Library",
+      "year": 2026,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context"
+      ],
+      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+      "id": "the-fall-historical-orientation"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 98,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }

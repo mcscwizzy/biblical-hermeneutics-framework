@@ -9,9 +9,37 @@
   ],
   "summary": "Jethro is a wilderness-era figure whose story helps shape Israel's liberation, covenant mediation, or identity.",
   "historical_context": "Jethro belongs to the Exodus and wilderness world of Israel's formation, where deliverance and covenant define the people of God.",
-  "ancient_near_east_context": "The setting is the late second-millennium world of imperial pressure, clan migration, and desert formation.",
+  "ancient_near_east_context": "Jethro belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "Exodus, Leviticus, Numbers, and Deuteronomy use Jethro to narrate Israel's founding memory.",
   "covenantal_significance": "Jethro contributes to Israel's liberation and covenant life under Yahweh.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "Jethro serves as a canonical person anchor, connecting biographical context, key passages, and related places, events, and themes.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -21,48 +49,6 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "Keep the figure within the wider Exodus movement rather than isolating a single episode.",
-    "Wilderness narratives often mix leadership, complaint, judgment, and grace."
-  ],
-  "common_questions": [
-    "Why does this figure matter in the Exodus story?",
-    "How does this figure shape Israel's covenant identity?",
-    "What theological role does this figure play?"
-  ],
-  "sources": [
-    "Exodus 1-40",
-    "Numbers 1-36",
-    "Deuteronomy 1-34",
-    "Hebrews 3-4"
-  ],
-  "importance": 68,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "scripture_references": [
-    {
-      "reference": "Exodus 1:1-40:38",
-      "relationship": "primary",
-      "notes": "Exodus and wilderness formation"
-    },
-    {
-      "reference": "Numbers 11:1-36:13",
-      "relationship": "supporting",
-      "notes": "wilderness testing and order"
-    },
-    {
-      "reference": "Deuteronomy 1:1-34:12",
-      "relationship": "supporting",
-      "notes": "covenant remembrance"
-    },
-    {
-      "reference": "Hebrews 3:1-4:16",
-      "relationship": "supporting",
-      "notes": "rest and wilderness theology"
-    }
-  ],
   "related_objects": [
     {
       "id": "exodus",
@@ -89,11 +75,166 @@
       "notes": "curated canonical context"
     }
   ],
+  "scripture_references": [
+    {
+      "reference": "Exodus 4:10-17",
+      "relationship": "primary",
+      "notes": "Exodus and wilderness formation"
+    },
+    {
+      "reference": "Numbers 17:1-11",
+      "relationship": "supporting",
+      "notes": "wilderness testing and order"
+    },
+    {
+      "reference": "Deuteronomy 10:6-9",
+      "relationship": "supporting",
+      "notes": "covenant remembrance"
+    },
+    {
+      "reference": "Hebrews 3:1-6",
+      "relationship": "supporting",
+      "notes": "rest and wilderness theology"
+    }
+  ],
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
+    {
+      "note": "Keep the figure within the wider Exodus movement rather than isolating a single episode.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    },
+    {
+      "note": "Wilderness narratives often mix leadership, complaint, judgment, and grace.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    }
+  ],
+  "common_questions": [
+    "Why does this figure matter in the Exodus story?",
+    "How does this figure shape Israel's covenant identity?",
+    "What theological role does this figure play?"
+  ],
+  "sources": [
+    {
+      "title": "Exodus 1-40",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "exodus-1-40"
+    },
+    {
+      "title": "Numbers 1-36",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "numbers-1-36"
+    },
+    {
+      "title": "Deuteronomy 1-34",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "deuteronomy-1-34"
+    },
+    {
+      "title": "Hebrews 3-4",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "hebrews-3-4"
+    },
+    {
+      "title": "Canonical historical orientation for Jethro",
+      "author": "",
+      "publisher": "Canonical Knowledge Library",
+      "year": 2026,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context"
+      ],
+      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+      "id": "jethro-historical-orientation"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 68,
+  "framework_version": "1.0",
+  "object_version": "1",
   "content_status": "complete",
   "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-16"
+    }
   ],
+  "edited_by": [],
+  "reviewed_by": [],
   "last_reviewed": "2026-07-16",
-  "confidence": "medium"
+  "confidence": "medium",
+  "human_review_required": true
 }

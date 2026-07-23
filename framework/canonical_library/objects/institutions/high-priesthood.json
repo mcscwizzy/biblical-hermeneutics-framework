@@ -11,8 +11,36 @@
   "summary": "The supreme priestly office that represents the people before God and oversees the climactic rites of atonement.",
   "historical_context": "The high priesthood develops from Aaronic leadership in the wilderness and becomes especially important in the second temple period.",
   "ancient_near_east_context": "High priestly offices were known in the ancient world, but Israel's high priest is defined by covenant holiness and mediation before the LORD.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "The high priesthood is central in Exodus, Leviticus, Numbers, Zechariah, and Hebrews.",
   "covenantal_significance": "The office shows that covenant life requires representation, holiness, and a means of access for sinful people.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "High Priesthood serves as an institutional anchor, connecting social practice, worship, leadership, and covenant life across related passages and themes.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -22,34 +50,44 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "The high priest is not merely a religious manager; he embodies mediation for the whole people.",
-    "Hebrews presents Jesus as the true and final high priest."
+  "related_objects": [
+    {
+      "id": "priesthood",
+      "relationship": "office-context",
+      "weight": 10,
+      "notes": "the wider priestly office"
+    },
+    {
+      "id": "sacrificial-system",
+      "relationship": "cultic-context",
+      "weight": 10,
+      "notes": "the sacrificial rites the high priest oversees"
+    },
+    {
+      "id": "temple",
+      "relationship": "sacred-space-anchor",
+      "weight": 9,
+      "notes": "high priestly ministry serves the temple"
+    },
+    {
+      "id": "jesus",
+      "relationship": "christological-fulfillment",
+      "weight": 10,
+      "notes": "Jesus is the greater high priest"
+    },
+    {
+      "id": "new-covenant",
+      "relationship": "fulfillment-anchor",
+      "weight": 9,
+      "notes": "better covenant and access"
+    },
+    {
+      "id": "hebrews",
+      "relationship": "interpretive-book",
+      "weight": 8,
+      "notes": "Hebrews develops the theology"
+    }
   ],
-  "common_questions": [
-    "What did the high priest do?",
-    "Why is the high priest important in the Bible?",
-    "How does Hebrews use high priest language for Jesus?"
-  ],
-  "sources": [
-    "Exodus 28-29",
-    "Leviticus 16",
-    "Numbers 35",
-    "Zechariah 3",
-    "Hebrews 4-10"
-  ],
-  "importance": 94,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
-  ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "Exodus 28:1-43",
@@ -92,42 +130,156 @@
       "notes": "confidence to enter the holy places"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "priesthood",
-      "relationship": "office-context",
-      "weight": 10,
-      "notes": "the wider priestly office"
+      "note": "The high priest is not merely a religious manager; he embodies mediation for the whole people.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "sacrificial-system",
-      "relationship": "cultic-context",
-      "weight": 10,
-      "notes": "the sacrificial rites the high priest oversees"
-    },
-    {
-      "id": "temple",
-      "relationship": "sacred-space-anchor",
-      "weight": 9,
-      "notes": "high priestly ministry serves the temple"
-    },
-    {
-      "id": "jesus",
-      "relationship": "christological-fulfillment",
-      "weight": 10,
-      "notes": "Jesus is the greater high priest"
-    },
-    {
-      "id": "new-covenant",
-      "relationship": "fulfillment-anchor",
-      "weight": 9,
-      "notes": "better covenant and access"
-    },
-    {
-      "id": "hebrews",
-      "relationship": "interpretive-book",
-      "weight": 8,
-      "notes": "Hebrews develops the theology"
+      "note": "Hebrews presents Jesus as the true and final high priest.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "What did the high priest do?",
+    "Why is the high priest important in the Bible?",
+    "How does Hebrews use high priest language for Jesus?"
+  ],
+  "sources": [
+    {
+      "title": "Exodus 28-29",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "exodus-28-29"
+    },
+    {
+      "title": "Leviticus 16",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "leviticus-16"
+    },
+    {
+      "title": "Numbers 35",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "numbers-35"
+    },
+    {
+      "title": "Zechariah 3",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "zechariah-3"
+    },
+    {
+      "title": "Hebrews 4-10",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "hebrews-4-10"
+    },
+    {
+      "title": "Canonical historical orientation for High Priesthood",
+      "author": "",
+      "publisher": "Canonical Knowledge Library",
+      "year": 2026,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context"
+      ],
+      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+      "id": "high-priesthood-historical-orientation"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 94,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }

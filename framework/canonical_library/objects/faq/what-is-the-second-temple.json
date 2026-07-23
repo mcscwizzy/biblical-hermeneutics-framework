@@ -10,8 +10,36 @@
   "summary": "The second temple is the rebuilt temple after the exile, the worship center of Judea in the postexilic and New Testament periods.",
   "historical_context": "The second temple begins with the return from Babylon under Persian rule, develops through the Persian and Hellenistic periods, and stands in Jesus' day before its destruction in AD 70.",
   "ancient_near_east_context": "Imperial patronage, local governance, and temple-centered identity shaped second temple life within the wider ancient world.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "Ezra, Nehemiah, Haggai, Zechariah, Malachi, the Gospels, Acts, and Hebrews all speak into or out of the second temple setting.",
   "covenantal_significance": "The second temple represents restoration after judgment, but it also points beyond itself to the greater fulfillment of God's presence in Christ and the new creation.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "What is the Second Temple? serves as a question-oriented anchor, connecting common reader language to related passages, themes, and CKL entries.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -21,36 +49,44 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "The second temple is a historical period and institution, not just a building.",
-    "Its significance grows in the New Testament because Jesus and the early church live in its world."
+  "related_objects": [
+    {
+      "id": "temple",
+      "relationship": "institution-anchor",
+      "weight": 10,
+      "notes": "the temple institution"
+    },
+    {
+      "id": "jerusalem",
+      "relationship": "city-anchor",
+      "weight": 10,
+      "notes": "the temple city"
+    },
+    {
+      "id": "babylonian-exile",
+      "relationship": "historical-background",
+      "weight": 9,
+      "notes": "the exile that precedes restoration"
+    },
+    {
+      "id": "high-priesthood",
+      "relationship": "mediating-office",
+      "weight": 8,
+      "notes": "the office that serves the temple"
+    },
+    {
+      "id": "second-temple-administration",
+      "relationship": "governance-context",
+      "weight": 8,
+      "notes": "temple leadership in the restored period"
+    },
+    {
+      "id": "jesus",
+      "relationship": "fulfillment-anchor",
+      "weight": 9,
+      "notes": "Jesus ministers in the second temple world"
+    }
   ],
-  "common_questions": [
-    "What was the second temple?",
-    "Why is the second temple important for the New Testament?",
-    "How is the second temple different from Solomon's temple?"
-  ],
-  "sources": [
-    "Ezra 1-6",
-    "Haggai 1-2",
-    "Zechariah 1-8",
-    "Malachi 1-4",
-    "John 2",
-    "Luke 2",
-    "Hebrews 9"
-  ],
-  "importance": 93,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
-  ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "Ezra 1:1-4",
@@ -93,42 +129,180 @@
       "notes": "earthly sanctuary and fulfillment"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "temple",
-      "relationship": "institution-anchor",
-      "weight": 10,
-      "notes": "the temple institution"
+      "note": "The second temple is a historical period and institution, not just a building.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "jerusalem",
-      "relationship": "city-anchor",
-      "weight": 10,
-      "notes": "the temple city"
-    },
-    {
-      "id": "babylonian-exile",
-      "relationship": "historical-background",
-      "weight": 9,
-      "notes": "the exile that precedes restoration"
-    },
-    {
-      "id": "high-priesthood",
-      "relationship": "mediating-office",
-      "weight": 8,
-      "notes": "the office that serves the temple"
-    },
-    {
-      "id": "second-temple-administration",
-      "relationship": "governance-context",
-      "weight": 8,
-      "notes": "temple leadership in the restored period"
-    },
-    {
-      "id": "jesus",
-      "relationship": "fulfillment-anchor",
-      "weight": 9,
-      "notes": "Jesus ministers in the second temple world"
+      "note": "Its significance grows in the New Testament because Jesus and the early church live in its world.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "What was the second temple?",
+    "Why is the second temple important for the New Testament?",
+    "How is the second temple different from Solomon's temple?"
+  ],
+  "sources": [
+    {
+      "title": "Ezra 1-6",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "ezra-1-6"
+    },
+    {
+      "title": "Haggai 1-2",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "haggai-1-2"
+    },
+    {
+      "title": "Zechariah 1-8",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "zechariah-1-8"
+    },
+    {
+      "title": "Malachi 1-4",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "malachi-1-4"
+    },
+    {
+      "title": "John 2",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "john-2"
+    },
+    {
+      "title": "Luke 2",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "luke-2"
+    },
+    {
+      "title": "Hebrews 9",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "hebrews-9"
+    },
+    {
+      "title": "Canonical historical orientation for What is the Second Temple?",
+      "author": "",
+      "publisher": "Canonical Knowledge Library",
+      "year": 2026,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context"
+      ],
+      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+      "id": "what-is-the-second-temple-historical-orientation"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 93,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }

@@ -10,8 +10,36 @@
   "summary": "The resurrection vindicates Jesus, defeats death, and guarantees the future resurrection of his people.",
   "historical_context": "The resurrection is proclaimed in the earliest Christian witness as the vindication of Jesus and the beginning of new-creation hope.",
   "ancient_near_east_context": "The claim stands out in a world where death was treated as final, making bodily resurrection a startling theological and historical announcement.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "The Gospels narrate the empty tomb and appearances, while Acts and the Epistles interpret the event for the church.",
   "covenantal_significance": "The resurrection confirms Jesus as Lord and opens the covenant promise of life, justification, and renewal.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "What is the significance of the Resurrection? serves as a question-oriented anchor, connecting common reader language to related passages, themes, and CKL entries.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -21,36 +49,44 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "Keep the bodily, historical claim in view; the New Testament does not treat resurrection as metaphor only.",
-    "The resurrection is both vindication and firstfruits, pointing ahead to the future resurrection of believers."
+  "related_objects": [
+    {
+      "id": "resurrection",
+      "relationship": "event-anchor",
+      "weight": 10,
+      "notes": "the event itself"
+    },
+    {
+      "id": "resurrection-doctrine",
+      "relationship": "doctrinal-anchor",
+      "weight": 10,
+      "notes": "doctrine built on the event"
+    },
+    {
+      "id": "resurrection-theme",
+      "relationship": "canonical-anchor",
+      "weight": 9,
+      "notes": "life from death throughout Scripture"
+    },
+    {
+      "id": "jesus",
+      "relationship": "vindication-anchor",
+      "weight": 10,
+      "notes": "the risen Lord"
+    },
+    {
+      "id": "new-jerusalem",
+      "relationship": "eschatological-hope",
+      "weight": 8,
+      "notes": "future life in the new creation"
+    },
+    {
+      "id": "covenant-theology",
+      "relationship": "theological-context",
+      "weight": 7,
+      "notes": "renewal and life in covenant hope"
+    }
   ],
-  "common_questions": [
-    "Why is the resurrection so important?",
-    "How does the resurrection relate to salvation?",
-    "What does the resurrection mean for Christians?"
-  ],
-  "sources": [
-    "Psalm 16",
-    "Matthew 28",
-    "Luke 24",
-    "John 20",
-    "Acts 2",
-    "1 Corinthians 15",
-    "Romans 6"
-  ],
-  "importance": 98,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
-  ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "Psalm 16:8-11",
@@ -93,42 +129,166 @@
       "notes": "living hope through resurrection"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "resurrection",
-      "relationship": "event-anchor",
-      "weight": 10,
-      "notes": "the event itself"
+      "note": "Keep the bodily, historical claim in view; the New Testament does not treat resurrection as metaphor only.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "resurrection-doctrine",
-      "relationship": "doctrinal-anchor",
-      "weight": 10,
-      "notes": "doctrine built on the event"
-    },
-    {
-      "id": "resurrection-theme",
-      "relationship": "canonical-anchor",
-      "weight": 9,
-      "notes": "life from death throughout Scripture"
-    },
-    {
-      "id": "jesus",
-      "relationship": "vindication-anchor",
-      "weight": 10,
-      "notes": "the risen Lord"
-    },
-    {
-      "id": "new-jerusalem",
-      "relationship": "eschatological-hope",
-      "weight": 8,
-      "notes": "future life in the new creation"
-    },
-    {
-      "id": "covenant-theology",
-      "relationship": "theological-context",
-      "weight": 7,
-      "notes": "renewal and life in covenant hope"
+      "note": "The resurrection is both vindication and firstfruits, pointing ahead to the future resurrection of believers.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "Why is the resurrection so important?",
+    "How does the resurrection relate to salvation?",
+    "What does the resurrection mean for Christians?"
+  ],
+  "sources": [
+    {
+      "title": "Psalm 16",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "psalm-16"
+    },
+    {
+      "title": "Matthew 28",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "matthew-28"
+    },
+    {
+      "title": "Luke 24",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "luke-24"
+    },
+    {
+      "title": "John 20",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "john-20"
+    },
+    {
+      "title": "Acts 2",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "acts-2"
+    },
+    {
+      "title": "1 Corinthians 15",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "1-corinthians-15"
+    },
+    {
+      "title": "Romans 6",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "romans-6"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 98,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }

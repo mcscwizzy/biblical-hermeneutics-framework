@@ -10,9 +10,37 @@
   ],
   "summary": "A sequence of reliefs depicting Sennacherib's siege of Lachish.",
   "historical_context": "One of the strongest archaeological depictions of a biblical-era military event.",
-  "ancient_near_east_context": "The item belongs to the broader imperial, cultic, and urban world of the ancient Near East and the biblical periods reflected in the dataset.",
+  "ancient_near_east_context": "Ancient background for Nimrud Reliefs includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to 2 Kings 18, 2 Kings 19, nineveh, and jerusalem without letting comparison replace the biblical witness.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "Provides visual evidence for the Assyrian siege context behind Judah's crisis.",
   "covenantal_significance": "Nimrud Reliefs helps anchor biblical claims in historical reality while reminding readers that archaeology supports rather than replaces interpretation.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "Nimrud Reliefs serves as a material-culture anchor, connecting archaeological evidence with the biblical places, periods, and passages it helps contextualize.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -22,47 +50,6 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "The reliefs are explicit about the siege, but they still represent Assyrian royal perspective.",
-    "British Museum",
-    "British Museum, London",
-    "nineveh",
-    "Use the item as context for the biblical text, not as a shortcut around it."
-  ],
-  "common_questions": [
-    "What does Nimrud Reliefs teach?",
-    "How does Nimrud Reliefs fit the biblical storyline?",
-    "What should readers avoid when interpreting Nimrud Reliefs?"
-  ],
-  "sources": [
-    "Lachish Reliefs",
-    "British Museum",
-    "British Museum, London",
-    "Palace reliefs",
-    "2 Kings 18-19"
-  ],
-  "importance": 94,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "scripture_references": [
-    {
-      "reference": "2 Kings 18-19",
-      "relationship": "primary",
-      "notes": ""
-    },
-    {
-      "reference": "2 Chronicles 32",
-      "relationship": "supporting",
-      "notes": ""
-    },
-    {
-      "reference": "Isaiah 36-37",
-      "relationship": "supporting",
-      "notes": ""
-    }
-  ],
   "related_objects": [
     {
       "id": "nineveh",
@@ -89,11 +76,190 @@
       "notes": ""
     }
   ],
+  "scripture_references": [
+    {
+      "reference": "2 Kings 18",
+      "relationship": "primary",
+      "notes": ""
+    },
+    {
+      "reference": "2 Kings 19",
+      "relationship": "supporting",
+      "notes": ""
+    },
+    {
+      "reference": "2 Chronicles 32",
+      "relationship": "supporting",
+      "notes": ""
+    },
+    {
+      "reference": "Isaiah 36",
+      "relationship": "supporting",
+      "notes": ""
+    },
+    {
+      "reference": "Isaiah 37",
+      "relationship": "supporting",
+      "notes": ""
+    }
+  ],
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
+    {
+      "note": "The reliefs are explicit about the siege, but they still represent Assyrian royal perspective.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    },
+    {
+      "note": "British Museum",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    },
+    {
+      "note": "British Museum, London",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    },
+    {
+      "note": "nineveh",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    },
+    {
+      "note": "Use the item as context for the biblical text, not as a shortcut around it.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
+    }
+  ],
+  "common_questions": [
+    "What does Nimrud Reliefs teach?",
+    "How does Nimrud Reliefs fit the biblical storyline?",
+    "What should readers avoid when interpreting Nimrud Reliefs?"
+  ],
+  "sources": [
+    {
+      "title": "Lachish Reliefs",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "lachish-reliefs"
+    },
+    {
+      "title": "British Museum",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "british-museum"
+    },
+    {
+      "title": "British Museum, London",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "british-museum-london"
+    },
+    {
+      "title": "Palace reliefs",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "palace-reliefs"
+    },
+    {
+      "title": "2 Kings 18-19",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "2-kings-18-19"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 94,
+  "framework_version": "1.0",
+  "object_version": "1",
   "content_status": "complete",
   "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-16"
+    }
   ],
+  "edited_by": [],
+  "reviewed_by": [],
   "last_reviewed": "2026-07-16",
-  "confidence": "medium"
+  "confidence": "medium",
+  "human_review_required": true
 }

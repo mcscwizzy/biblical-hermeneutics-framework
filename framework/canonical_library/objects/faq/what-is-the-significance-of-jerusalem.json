@@ -10,8 +10,36 @@
   "summary": "Jerusalem is the city of David, the temple center, and a prophetic symbol of God's reign, judgment, and restoration.",
   "historical_context": "Jerusalem moves from Jebusite city to Davidic capital and temple center, then becomes the focal point of exile, return, and messianic expectation.",
   "ancient_near_east_context": "As a royal and cultic center in the southern Levant, Jerusalem sits at the intersection of kingship, worship, and imperial pressure.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "The city functions as geography, theology, and eschatological symbol across the Old and New Testaments.",
   "covenantal_significance": "Jerusalem concentrates Davidic kingship, temple worship, covenant judgment, and prophetic hope in one place.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "What is the significance of Jerusalem? serves as a question-oriented anchor, connecting common reader language to related passages, themes, and CKL entries.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -21,36 +49,44 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "Jerusalem is both a literal city and a theological symbol; keep those uses distinct but connected.",
-    "Prophetic and apocalyptic references to Jerusalem often layer present history with future hope."
+  "related_objects": [
+    {
+      "id": "jerusalem",
+      "relationship": "city-anchor",
+      "weight": 10,
+      "notes": "the city itself"
+    },
+    {
+      "id": "david",
+      "relationship": "kingly-context",
+      "weight": 9,
+      "notes": "David makes Jerusalem the royal center"
+    },
+    {
+      "id": "temple",
+      "relationship": "cultic-center",
+      "weight": 10,
+      "notes": "the temple site"
+    },
+    {
+      "id": "new-jerusalem",
+      "relationship": "eschatological-fulfillment",
+      "weight": 9,
+      "notes": "final city image"
+    },
+    {
+      "id": "exile-theme",
+      "relationship": "judgment-context",
+      "weight": 8,
+      "notes": "city judgment and hope"
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "royal-symbol",
+      "weight": 8,
+      "notes": "city of the king"
+    }
   ],
-  "common_questions": [
-    "Why is Jerusalem so important in the Bible?",
-    "How does Jerusalem connect David, the temple, and the New Testament?",
-    "Why is Jerusalem also a symbol of hope?"
-  ],
-  "sources": [
-    "2 Samuel 5",
-    "1 Kings 8",
-    "Psalm 122",
-    "Isaiah 2",
-    "Luke 19",
-    "Acts 1-2",
-    "Revelation 21-22"
-  ],
-  "importance": 98,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
-  ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "2 Samuel 5:6-10",
@@ -98,42 +134,166 @@
       "notes": "no temple because God dwells there"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "jerusalem",
-      "relationship": "city-anchor",
-      "weight": 10,
-      "notes": "the city itself"
+      "note": "Jerusalem is both a literal city and a theological symbol; keep those uses distinct but connected.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "david",
-      "relationship": "kingly-context",
-      "weight": 9,
-      "notes": "David makes Jerusalem the royal center"
-    },
-    {
-      "id": "temple",
-      "relationship": "cultic-center",
-      "weight": 10,
-      "notes": "the temple site"
-    },
-    {
-      "id": "new-jerusalem",
-      "relationship": "eschatological-fulfillment",
-      "weight": 9,
-      "notes": "final city image"
-    },
-    {
-      "id": "exile-theme",
-      "relationship": "judgment-context",
-      "weight": 8,
-      "notes": "city judgment and hope"
-    },
-    {
-      "id": "kingdom-theme",
-      "relationship": "royal-symbol",
-      "weight": 8,
-      "notes": "city of the king"
+      "note": "Prophetic and apocalyptic references to Jerusalem often layer present history with future hope.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "Why is Jerusalem so important in the Bible?",
+    "How does Jerusalem connect David, the temple, and the New Testament?",
+    "Why is Jerusalem also a symbol of hope?"
+  ],
+  "sources": [
+    {
+      "title": "2 Samuel 5",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "2-samuel-5"
+    },
+    {
+      "title": "1 Kings 8",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "1-kings-8"
+    },
+    {
+      "title": "Psalm 122",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "psalm-122"
+    },
+    {
+      "title": "Isaiah 2",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "isaiah-2"
+    },
+    {
+      "title": "Luke 19",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "luke-19"
+    },
+    {
+      "title": "Acts 1-2",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "acts-1-2"
+    },
+    {
+      "title": "Revelation 21-22",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "revelation-21-22"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 98,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }

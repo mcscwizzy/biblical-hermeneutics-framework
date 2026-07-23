@@ -10,8 +10,36 @@
   "summary": "The deportation of Judah to Babylon, a covenant judgment that reshapes Israel\u2019s identity and hope.",
   "historical_context": "The exile follows the fall of Jerusalem and the collapse of Judah\u2019s monarchy under Babylonian power.",
   "ancient_near_east_context": "Babylon\u2019s imperial dominance frames the exile as both historical catastrophe and theological judgment.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "Kings, Chronicles, Jeremiah, Lamentations, Ezekiel, Daniel, and the Psalms all interpret the exile in different ways.",
   "covenantal_significance": "The exile dramatizes covenant curse, corporate discipline, and the need for return and renewal.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "Babylonian Exile serves as a canonical event anchor, connecting its key passages, people, places, and theological themes within the biblical storyline.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -21,37 +49,38 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "Treat exile as both a real historical event and a theological pattern of judgment and restoration.",
-    "The exile does not end the story; it intensifies the hope for return, new covenant, and renewed presence."
+  "related_objects": [
+    {
+      "id": "exile-theme",
+      "relationship": "thematic-anchor",
+      "weight": 10,
+      "notes": "exile as a canonical motif"
+    },
+    {
+      "id": "jerusalem",
+      "relationship": "judgment-context",
+      "weight": 9,
+      "notes": "city fall and hope"
+    },
+    {
+      "id": "daniel-the-exile",
+      "relationship": "exilic-witness",
+      "weight": 8,
+      "notes": "faithful life under empire"
+    },
+    {
+      "id": "new-covenant",
+      "relationship": "restoration-horizon",
+      "weight": 7,
+      "notes": "promise beyond judgment"
+    },
+    {
+      "id": "new-jerusalem",
+      "relationship": "restoration-horizon",
+      "weight": 8,
+      "notes": "future city beyond exile"
+    }
   ],
-  "common_questions": [
-    "Why did the Babylonian exile happen?",
-    "How does exile shape the rest of the Bible?",
-    "What hope is given to exiles?"
-  ],
-  "sources": [
-    "2 Kings 24-25",
-    "2 Chronicles 36",
-    "Jeremiah 25",
-    "Jeremiah 29",
-    "Lamentations 1",
-    "Ezekiel 1",
-    "Daniel 1",
-    "Psalm 137"
-  ],
-  "importance": 95,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
-  ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "2 Kings 24:1-20",
@@ -99,36 +128,178 @@
       "notes": "lament of the exiles"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "exile-theme",
-      "relationship": "thematic-anchor",
-      "weight": 10,
-      "notes": "exile as a canonical motif"
+      "note": "Treat exile as both a real historical event and a theological pattern of judgment and restoration.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "jerusalem",
-      "relationship": "judgment-context",
-      "weight": 9,
-      "notes": "city fall and hope"
-    },
-    {
-      "id": "daniel-the-exile",
-      "relationship": "exilic-witness",
-      "weight": 8,
-      "notes": "faithful life under empire"
-    },
-    {
-      "id": "new-covenant",
-      "relationship": "restoration-horizon",
-      "weight": 7,
-      "notes": "promise beyond judgment"
-    },
-    {
-      "id": "new-jerusalem",
-      "relationship": "restoration-horizon",
-      "weight": 8,
-      "notes": "future city beyond exile"
+      "note": "The exile does not end the story; it intensifies the hope for return, new covenant, and renewed presence.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "Why did the Babylonian exile happen?",
+    "How does exile shape the rest of the Bible?",
+    "What hope is given to exiles?"
+  ],
+  "sources": [
+    {
+      "title": "2 Kings 24-25",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "2-kings-24-25"
+    },
+    {
+      "title": "2 Chronicles 36",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "2-chronicles-36"
+    },
+    {
+      "title": "Jeremiah 25",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "jeremiah-25"
+    },
+    {
+      "title": "Jeremiah 29",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "jeremiah-29"
+    },
+    {
+      "title": "Lamentations 1",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "lamentations-1"
+    },
+    {
+      "title": "Ezekiel 1",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "ezekiel-1"
+    },
+    {
+      "title": "Daniel 1",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "daniel-1"
+    },
+    {
+      "title": "Psalm 137",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "psalm-137"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 95,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }

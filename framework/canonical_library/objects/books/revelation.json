@@ -10,36 +10,20 @@
   "summary": "An apocalyptic prophecy that unveils Christ's victory, the judgment of evil, and the hope of new creation.",
   "historical_context": "Revelation addresses churches living under Roman pressure and temptation, urging them to endure faithfully by looking to the Lamb's triumph.",
   "ancient_near_east_context": "Its imagery draws on the Old Testament's prophetic and apocalyptic vocabulary, even though its immediate setting is Roman Asia Minor.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "Revelation blends letter, prophecy, and apocalyptic vision into a symbolic disclosure of worship, judgment, and final renewal.",
   "covenantal_significance": "The book shows the covenant story ending in the Lamb's reign, the defeat of evil, and God's dwelling with his people.",
-  "intertextuality": [],
-  "timeline": [],
-  "maps": [],
-  "archaeology": [],
-  "hebrew_words": [],
-  "greek_words": [],
-  "related_people": [],
-  "related_places": [],
-  "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "Read the symbols with the Old Testament in view rather than treating them as isolated puzzles.",
-    "Avoid date-setting; the book's main burden is worshipful endurance and hope."
-  ],
-  "common_questions": [
-    "What is Revelation really about?",
-    "What do the symbols in Revelation mean?",
-    "How does the New Jerusalem relate to earlier promises?"
-  ],
-  "sources": [
-    "Revelation 1-22",
-    "Daniel 7",
-    "Ezekiel 1",
-    "Ezekiel 40-48",
-    "Isaiah 60",
-    "Genesis 1-3"
-  ],
   "authorship_positions": [
     "John of Patmos / Johannine tradition",
     "Many scholars debate the exact identity and date"
@@ -50,6 +34,7 @@
   ],
   "original_audience": "Seven churches in Asia Minor under imperial pressure",
   "historical_setting": "Roman Asia Minor and the symbolic world of apocalyptic prophecy",
+  "canonical_role": "Revelation serves as a canonical book anchor within Apocalyptic Witness, book 1 of 1, connecting its structure, key passages, and related themes to the wider biblical storyline.",
   "genre": [
     "apocalyptic",
     "prophecy",
@@ -98,16 +83,49 @@
     "Isaiah 60",
     "Genesis 1-3"
   ],
-  "importance": 98,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
+  "related_entries": [],
+  "keywords": [],
+  "intertextuality": [],
+  "timeline": [],
+  "maps": [],
+  "archaeology": [],
+  "hebrew_words": [],
+  "greek_words": [],
+  "related_people": [],
+  "related_places": [],
+  "related_events": [],
+  "related_objects": [
+    {
+      "id": "jesus",
+      "relationship": "central-subject",
+      "weight": 10,
+      "notes": "the Lamb and king"
+    },
+    {
+      "id": "new-jerusalem",
+      "relationship": "eschatological-vision",
+      "weight": 10,
+      "notes": "the final city"
+    },
+    {
+      "id": "babylon-1",
+      "relationship": "judgment-symbol",
+      "weight": 9,
+      "notes": "the fall of arrogant power"
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "kingdom-context",
+      "weight": 9,
+      "notes": "the reign of God and the Lamb"
+    },
+    {
+      "id": "temple-theme",
+      "relationship": "presence-fulfillment",
+      "weight": 8,
+      "notes": "God dwells with his people"
+    }
   ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "Revelation 1:1-20",
@@ -155,36 +173,168 @@
       "notes": "river of life and final dwelling"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "jesus",
-      "relationship": "central-subject",
-      "weight": 10,
-      "notes": "the Lamb and king"
+      "note": "Read the symbols with the Old Testament in view rather than treating them as isolated puzzles.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "new-jerusalem",
-      "relationship": "eschatological-vision",
-      "weight": 10,
-      "notes": "the final city"
-    },
-    {
-      "id": "babylon-1",
-      "relationship": "judgment-symbol",
-      "weight": 9,
-      "notes": "the fall of arrogant power"
-    },
-    {
-      "id": "kingdom-theme",
-      "relationship": "kingdom-context",
-      "weight": 9,
-      "notes": "the reign of God and the Lamb"
-    },
-    {
-      "id": "temple-theme",
-      "relationship": "presence-fulfillment",
-      "weight": 8,
-      "notes": "God dwells with his people"
+      "note": "Avoid date-setting; the book's main burden is worshipful endurance and hope.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "What is Revelation really about?",
+    "What do the symbols in Revelation mean?",
+    "How does the New Jerusalem relate to earlier promises?"
+  ],
+  "sources": [
+    {
+      "title": "Revelation 1-22",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "revelation-1-22"
+    },
+    {
+      "title": "Daniel 7",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "daniel-7"
+    },
+    {
+      "title": "Ezekiel 1",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "ezekiel-1"
+    },
+    {
+      "title": "Ezekiel 40-48",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "ezekiel-40-48"
+    },
+    {
+      "title": "Isaiah 60",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "isaiah-60"
+    },
+    {
+      "title": "Genesis 1-3",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "genesis-1-3"
+    },
+    {
+      "title": "Canonical historical orientation for Revelation",
+      "author": "",
+      "publisher": "Canonical Knowledge Library",
+      "year": 2026,
+      "locator": "Apocalyptic Witness, book 1 of 1",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context"
+      ],
+      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+      "id": "revelation-historical-orientation"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 98,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }

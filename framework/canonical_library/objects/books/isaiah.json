@@ -10,114 +10,20 @@
   "summary": "A sweeping prophetic book of judgment, consolation, messianic hope, and new creation.",
   "historical_context": "Isaiah speaks into Judah's crises under Assyrian pressure and into the exile-and-return horizon that follows, holding judgment and hope together.",
   "ancient_near_east_context": "The book engages imperial power, covenant lawsuit language, and royal ideology in a world shaped by Assyria, Babylon, and their rivals.",
+  "hebraic_worldview": "The Holy One of Israel calls for justice, worship, remnant faithfulness, and hope for Zion.",
+  "second_temple_context": "Second Temple Judaism read Isaiah as a major source for consolation, messiah hope, and return from exile.",
+  "canonical_context": "Isaiah links judgment, purification, servant suffering, and restored creation into a long arc of hope that the New Testament repeatedly reuses.",
+  "later_christian_reception": "Christians have read Isaiah deeply in messianic and christological ways, especially in the servant songs and new creation visions.",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "Isaiah combines oracles, visions, songs, and consolation speeches into a sustained prophetic vision of holy God, broken people, and future restoration.",
   "covenantal_significance": "Isaiah frames judgment as covenant accountability and hope as covenant restoration through the servant, the remnant, and the holy city.",
-  "intertextuality": [],
-  "timeline": [],
-  "maps": [],
-  "archaeology": [],
-  "hebrew_words": [],
-  "greek_words": [],
-  "related_people": [],
-  "related_places": [],
-  "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    {
-      "note": "Keep immediate historical crisis and later messianic fulfillment in view rather than collapsing them into one layer.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "Isaiah's hope is not only individual salvation but also purified worship, restored justice, and new creation.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    }
-  ],
-  "common_questions": [
-    "Why is Isaiah so important?",
-    "Who is the suffering servant in Isaiah?",
-    "How do judgment and hope fit together in Isaiah?"
-  ],
-  "sources": [
-    {
-      "id": "isaiah-1-66",
-      "source_type": "scripture",
-      "title": "Isaiah 1-66",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "supports": [],
-      "notes": ""
-    },
-    {
-      "id": "2-kings-18-20",
-      "source_type": "scripture",
-      "title": "2 Kings 18-20",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "supports": [],
-      "notes": ""
-    },
-    {
-      "id": "matthew-3",
-      "source_type": "scripture",
-      "title": "Matthew 3",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "supports": [],
-      "notes": ""
-    },
-    {
-      "id": "luke-4",
-      "source_type": "scripture",
-      "title": "Luke 4",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "supports": [],
-      "notes": ""
-    },
-    {
-      "id": "acts-8",
-      "source_type": "scripture",
-      "title": "Acts 8",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "supports": [],
-      "notes": ""
-    },
-    {
-      "id": "romans-9-11",
-      "source_type": "scripture",
-      "title": "Romans 9-11",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "supports": [],
-      "notes": ""
-    }
-  ],
   "authorship_positions": [
     "Traditional prophetic attribution to the named prophet",
     "Many scholars note later collection and occasional expansion"
@@ -128,6 +34,7 @@
   ],
   "original_audience": "Judah and Israel in crisis, facing judgment, exile, and restoration hopes",
   "historical_setting": "The late monarchic, exilic, and post-exilic periods",
+  "canonical_role": "Isaiah serves as a canonical book anchor within Major Prophets, book 1 of 5, connecting its structure, key passages, and related themes to the wider biblical storyline.",
   "genre": [
     "prophecy",
     "poetry"
@@ -177,16 +84,49 @@
     "Acts 8",
     "Romans 9-11"
   ],
-  "importance": 98,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
+  "related_entries": [],
+  "keywords": [],
+  "intertextuality": [],
+  "timeline": [],
+  "maps": [],
+  "archaeology": [],
+  "hebrew_words": [],
+  "greek_words": [],
+  "related_people": [],
+  "related_places": [],
+  "related_events": [],
+  "related_objects": [
+    {
+      "id": "exile-theme",
+      "relationship": "judgment-and-restoration",
+      "weight": 10,
+      "notes": "exile and return frame much of Isaiah"
+    },
+    {
+      "id": "messiah-theme",
+      "relationship": "royal-hope",
+      "weight": 10,
+      "notes": "the promised ruler"
+    },
+    {
+      "id": "covenant-theme",
+      "relationship": "thematic-anchor",
+      "weight": 9,
+      "notes": "judgment and restoration in covenant terms"
+    },
+    {
+      "id": "new-jerusalem",
+      "relationship": "restoration-vision",
+      "weight": 8,
+      "notes": "the holy city horizon"
+    },
+    {
+      "id": "resurrection-theme",
+      "relationship": "hope-anchor",
+      "weight": 7,
+      "notes": "life after judgment"
+    }
   ],
-  "last_reviewed": "2026-07-16",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "Isaiah 1:1-31",
@@ -234,48 +174,168 @@
       "notes": "Zion restored"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "exile-theme",
-      "relationship": "judgment-and-restoration",
-      "weight": 10,
-      "notes": "exile and return frame much of Isaiah"
+      "note": "Keep immediate historical crisis and later messianic fulfillment in view rather than collapsing them into one layer.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "messiah-theme",
-      "relationship": "royal-hope",
-      "weight": 10,
-      "notes": "the promised ruler"
-    },
-    {
-      "id": "covenant-theme",
-      "relationship": "thematic-anchor",
-      "weight": 9,
-      "notes": "judgment and restoration in covenant terms"
-    },
-    {
-      "id": "new-jerusalem",
-      "relationship": "restoration-vision",
-      "weight": 8,
-      "notes": "the holy city horizon"
-    },
-    {
-      "id": "resurrection-theme",
-      "relationship": "hope-anchor",
-      "weight": 7,
-      "notes": "life after judgment"
+      "note": "Isaiah's hope is not only individual salvation but also purified worship, restored justice, and new creation.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
   ],
-  "hebraic_worldview": "The Holy One of Israel calls for justice, worship, remnant faithfulness, and hope for Zion.",
-  "second_temple_context": "Second Temple Judaism read Isaiah as a major source for consolation, messiah hope, and return from exile.",
-  "canonical_context": "Isaiah links judgment, purification, servant suffering, and restored creation into a long arc of hope that the New Testament repeatedly reuses.",
-  "later_christian_reception": "Christians have read Isaiah deeply in messianic and christological ways, especially in the servant songs and new creation visions.",
-  "context_applicability": {
-    "historical": true,
-    "ancient_near_east": true,
-    "hebraic_worldview": true,
-    "second_temple": true,
-    "canonical": true,
-    "later_christian_reception": true
-  }
+  "common_questions": [
+    "Why is Isaiah so important?",
+    "Who is the suffering servant in Isaiah?",
+    "How do judgment and hope fit together in Isaiah?"
+  ],
+  "sources": [
+    {
+      "title": "Isaiah 1-66",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "isaiah-1-66"
+    },
+    {
+      "title": "2 Kings 18-20",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "2-kings-18-20"
+    },
+    {
+      "title": "Matthew 3",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "matthew-3"
+    },
+    {
+      "title": "Luke 4",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "luke-4"
+    },
+    {
+      "title": "Acts 8",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "acts-8"
+    },
+    {
+      "title": "Romans 9-11",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "romans-9-11"
+    },
+    {
+      "title": "Canonical historical orientation for Isaiah",
+      "author": "",
+      "publisher": "Canonical Knowledge Library",
+      "year": 2026,
+      "locator": "Major Prophets, book 1 of 5",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context"
+      ],
+      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+      "id": "isaiah-historical-orientation"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 98,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-16"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-16",
+  "confidence": "medium",
+  "human_review_required": true
 }

@@ -10,8 +10,36 @@
   "summary": "Torah usually means instruction or teaching, though it can also refer to the Law or the Pentateuch depending on context.",
   "historical_context": "In Israel's story, torah names the covenant instruction given through Moses and the way the redeemed people are to live before God.",
   "ancient_near_east_context": "Ancient legal and treaty traditions provide background, but torah is distinct because it is the instruction of the covenant LORD rather than a generic code.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "The term can refer to a command, a body of instruction, or the first five books of Scripture, depending on context.",
   "covenantal_significance": "Torah defines covenant life, showing how God's people respond to grace with loyalty, memory, and obedience.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "What does Torah mean? serves as a question-oriented anchor, connecting common reader language to related passages, themes, and CKL entries.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -21,36 +49,38 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "Torah can mean instruction, law, or the Pentateuch, so context must guide interpretation.",
-    "Do not reduce torah to legalism; it includes covenant story and teaching as well as commands."
+  "related_objects": [
+    {
+      "id": "torah",
+      "relationship": "lexical-anchor",
+      "weight": 10,
+      "notes": "the word being explained"
+    },
+    {
+      "id": "moses",
+      "relationship": "instruction-giver",
+      "weight": 10,
+      "notes": "Torah is given through Moses"
+    },
+    {
+      "id": "sinai-covenant",
+      "relationship": "covenant-anchor",
+      "weight": 10,
+      "notes": "Torah comes from Sinai"
+    },
+    {
+      "id": "deuteronomy",
+      "relationship": "book-anchor",
+      "weight": 9,
+      "notes": "Torah's covenant rehearsal"
+    },
+    {
+      "id": "covenant-theology",
+      "relationship": "theological-anchor",
+      "weight": 9,
+      "notes": "law within covenant"
+    }
   ],
-  "common_questions": [
-    "What does torah mean?",
-    "Is torah law or instruction?",
-    "How does torah relate to Jesus?"
-  ],
-  "sources": [
-    "Deuteronomy 4",
-    "Deuteronomy 6",
-    "Psalm 1",
-    "Psalm 19",
-    "Matthew 5",
-    "Romans 7",
-    "Galatians 3"
-  ],
-  "importance": 88,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
-  ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "Deuteronomy 4:5-8",
@@ -88,36 +118,166 @@
       "notes": "law as guardian"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "torah",
-      "relationship": "lexical-anchor",
-      "weight": 10,
-      "notes": "the word being explained"
+      "note": "Torah can mean instruction, law, or the Pentateuch, so context must guide interpretation.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "moses",
-      "relationship": "instruction-giver",
-      "weight": 10,
-      "notes": "Torah is given through Moses"
-    },
-    {
-      "id": "sinai-covenant",
-      "relationship": "covenant-anchor",
-      "weight": 10,
-      "notes": "Torah comes from Sinai"
-    },
-    {
-      "id": "deuteronomy",
-      "relationship": "book-anchor",
-      "weight": 9,
-      "notes": "Torah's covenant rehearsal"
-    },
-    {
-      "id": "covenant-theology",
-      "relationship": "theological-anchor",
-      "weight": 9,
-      "notes": "law within covenant"
+      "note": "Do not reduce torah to legalism; it includes covenant story and teaching as well as commands.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "What does torah mean?",
+    "Is torah law or instruction?",
+    "How does torah relate to Jesus?"
+  ],
+  "sources": [
+    {
+      "title": "Deuteronomy 4",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "deuteronomy-4"
+    },
+    {
+      "title": "Deuteronomy 6",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "deuteronomy-6"
+    },
+    {
+      "title": "Psalm 1",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "psalm-1"
+    },
+    {
+      "title": "Psalm 19",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "psalm-19"
+    },
+    {
+      "title": "Matthew 5",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "matthew-5"
+    },
+    {
+      "title": "Romans 7",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "romans-7"
+    },
+    {
+      "title": "Galatians 3",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "galatians-3"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 88,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }

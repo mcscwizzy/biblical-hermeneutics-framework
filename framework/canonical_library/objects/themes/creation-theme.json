@@ -10,8 +10,36 @@
   "summary": "The movement from ordered creation to renewed creation, with humanity as image-bearers under God\u2019s kingship.",
   "historical_context": "Creation and new creation frame the Bible from Genesis to Revelation and give coherence to human vocation, fall, redemption, and hope.",
   "ancient_near_east_context": "The motif speaks against chaos-centered or polytheistic origin stories and keeps the creator God singular and sovereign.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "Creation language appears in narrative, poetry, prophecy, gospel, apostolic teaching, and apocalyptic vision.",
   "covenantal_significance": "Creation gives covenant its stage: a world made by God, for God, and destined for renewal.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "Creation Theme serves as a thematic anchor, connecting repeated biblical patterns, key passages, and related theological concepts across the canon.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -21,35 +49,44 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "This theme is theological before it is technical; Genesis 1 is about God, humanity, and the world\u2019s ordered goodness.",
-    "The New Testament uses creation language to describe redemption and future hope, not to abandon Genesis."
+  "related_objects": [
+    {
+      "id": "creation",
+      "relationship": "narrative-anchor",
+      "weight": 10,
+      "notes": "Genesis creation event"
+    },
+    {
+      "id": "new-creation-theme",
+      "relationship": "eschatological-fulfillment",
+      "weight": 10,
+      "notes": "renewed creation"
+    },
+    {
+      "id": "the-fall",
+      "relationship": "narrative-contrast",
+      "weight": 8,
+      "notes": "creation is fractured by sin"
+    },
+    {
+      "id": "resurrection-theme",
+      "relationship": "renewal-pattern",
+      "weight": 8,
+      "notes": "life from death as new creation"
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "royal-context",
+      "weight": 7,
+      "notes": "God\u2019s rule over creation"
+    },
+    {
+      "id": "creation-doctrine-framework",
+      "relationship": "related",
+      "weight": 10,
+      "notes": "doctrinal framework for the creation theme"
+    }
   ],
-  "common_questions": [
-    "What does creation mean in the Bible?",
-    "How does creation connect to new creation?",
-    "Why does creation matter for theology?"
-  ],
-  "sources": [
-    "Genesis 1-2",
-    "Psalm 8",
-    "Psalm 104",
-    "John 1",
-    "Romans 8",
-    "Revelation 21"
-  ],
-  "importance": 96,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
-  ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "Genesis 1:1-31",
@@ -92,36 +129,154 @@
       "notes": "new creation"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "creation",
-      "relationship": "narrative-anchor",
-      "weight": 10,
-      "notes": "Genesis creation event"
+      "note": "This theme is theological before it is technical; Genesis 1 is about God, humanity, and the world\u2019s ordered goodness.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "new-creation-theme",
-      "relationship": "eschatological-fulfillment",
-      "weight": 10,
-      "notes": "renewed creation"
-    },
-    {
-      "id": "the-fall",
-      "relationship": "narrative-contrast",
-      "weight": 8,
-      "notes": "creation is fractured by sin"
-    },
-    {
-      "id": "resurrection-theme",
-      "relationship": "renewal-pattern",
-      "weight": 8,
-      "notes": "life from death as new creation"
-    },
-    {
-      "id": "kingdom-theme",
-      "relationship": "royal-context",
-      "weight": 7,
-      "notes": "God\u2019s rule over creation"
+      "note": "The New Testament uses creation language to describe redemption and future hope, not to abandon Genesis.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "What does creation mean in the Bible?",
+    "How does creation connect to new creation?",
+    "Why does creation matter for theology?"
+  ],
+  "sources": [
+    {
+      "title": "Genesis 1-2",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "genesis-1-2"
+    },
+    {
+      "title": "Psalm 8",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "psalm-8"
+    },
+    {
+      "title": "Psalm 104",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "psalm-104"
+    },
+    {
+      "title": "John 1",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "john-1"
+    },
+    {
+      "title": "Romans 8",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "romans-8"
+    },
+    {
+      "title": "Revelation 21",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "revelation-21"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 96,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }

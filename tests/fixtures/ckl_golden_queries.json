@@ -11,6 +11,10 @@
           "minimum_score": 0.95
         },
         {
+          "id": "covenant-renewal-at-shechem",
+          "minimum_score": 0.95
+        },
+        {
           "id": "joshua-son-of-nun",
           "minimum_score": 0.7
         },
@@ -30,11 +34,15 @@
         },
         {
           "id": "shechem",
+          "minimum_score": 0.7
+        },
+        {
+          "id": "joseph-interprets-pharaohs-dreams",
           "minimum_score": 0.55
         },
         {
           "id": "joseph-sold-into-egypt",
-          "minimum_score": 0.45
+          "minimum_score": 0.55
         }
       ]
     },
@@ -53,6 +61,10 @@
         {
           "id": "what-is-the-day-of-the-lord",
           "minimum_score": 0.45
+        },
+        {
+          "id": "covenant-renewal-at-shechem",
+          "minimum_score": 0.55
         }
       ]
     },
@@ -69,6 +81,10 @@
           "minimum_score": 0.95
         },
         {
+          "id": "covenant-renewal-at-shechem",
+          "minimum_score": 0.95
+        },
+        {
           "id": "new-covenant-prophecy",
           "minimum_score": 0.85
         },
@@ -82,6 +98,10 @@
       "query": "How does Abraham connect to Joshua 24?",
       "limit": 8,
       "expected_results": [
+        {
+          "id": "covenant-renewal-at-shechem",
+          "minimum_score": 0.95
+        },
         {
           "id": "joshua",
           "minimum_score": 0.85
@@ -123,6 +143,94 @@
         {
           "id": "image-of-god-theme",
           "minimum_score": 0.6
+        }
+      ]
+    },
+    {
+      "query": "abrahamic covenant framework",
+      "limit": 8,
+      "expected_results": [
+        {
+          "id": "abrahamic-covenant-framework",
+          "minimum_score": 0.95
+        },
+        {
+          "id": "abrahamic-covenant",
+          "minimum_score": 0.95
+        },
+        {
+          "id": "covenant-theme",
+          "minimum_score": 0.9
+        },
+        {
+          "id": "abraham",
+          "minimum_score": 0.55
+        }
+      ]
+    },
+    {
+      "query": "temple symbol",
+      "limit": 8,
+      "expected_results": [
+        {
+          "id": "temple-symbol",
+          "minimum_score": 0.95
+        },
+        {
+          "id": "temple",
+          "minimum_score": 0.95
+        },
+        {
+          "id": "new-temple-theme",
+          "minimum_score": 0.8
+        },
+        {
+          "id": "second-temple-administration",
+          "minimum_score": 0.7
+        }
+      ]
+    },
+    {
+      "query": "creation doctrine framework",
+      "limit": 8,
+      "expected_results": [
+        {
+          "id": "creation-doctrine-framework",
+          "minimum_score": 0.95
+        },
+        {
+          "id": "creation-doctrine",
+          "minimum_score": 0.95
+        },
+        {
+          "id": "new-creation-theme",
+          "minimum_score": 0.9
+        },
+        {
+          "id": "covenant-theology",
+          "minimum_score": 0.7
+        }
+      ]
+    },
+    {
+      "query": "exodus to sinai timeline",
+      "limit": 8,
+      "expected_results": [
+        {
+          "id": "exodus-to-sinai-timeline",
+          "minimum_score": 0.95
+        },
+        {
+          "id": "exodus",
+          "minimum_score": 0.8
+        },
+        {
+          "id": "the-exodus",
+          "minimum_score": 0.9
+        },
+        {
+          "id": "sinai-covenant",
+          "minimum_score": 0.9
         }
       ]
     }

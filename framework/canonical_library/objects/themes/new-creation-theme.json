@@ -9,9 +9,37 @@
   ],
   "summary": "New Creation Theme is a biblical motif that traces ordered creation and renewed creation across Scripture.",
   "historical_context": "New Creation Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
-  "ancient_near_east_context": "Ancient covenant, royal, wisdom, and temple backgrounds provide comparison points, but Scripture gives the topic its own theological shape.",
-  "literary_context": "The topic appears in narrative, poetry, prophecy, Gospel, epistle, and apocalyptic writing as context requires.",
+  "ancient_near_east_context": "Ancient background for New Creation Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-31, Genesis 2:1-25, creation-theme, and creation-doctrine without letting comparison replace the biblical witness.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
+  "literary_context": "Literarily, New Creation Theme is traced through repeated images, typological patterns, promise-and-fulfillment movement, and genre shifts, with Genesis 1:1-31, Genesis 2:1-25, creation-theme, and creation-doctrine showing how the surrounding passages shape interpretation.",
   "covenantal_significance": "New Creation Theme helps show how covenant promises are stated, tested, and fulfilled in Scripture.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "New Creation Theme serves as a thematic anchor, connecting repeated biblical patterns, key passages, and related theological concepts across the canon.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -21,27 +49,44 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "Read New Creation Theme in its immediate context before generalizing.",
-    "Do not flatten distinct passages into one slogan; let the canon keep its own shape."
+  "related_objects": [
+    {
+      "id": "creation-theme",
+      "relationship": "related-concept",
+      "weight": 10,
+      "notes": ""
+    },
+    {
+      "id": "creation-doctrine",
+      "relationship": "related-concept",
+      "weight": 9,
+      "notes": ""
+    },
+    {
+      "id": "genesis",
+      "relationship": "related-concept",
+      "weight": 8,
+      "notes": ""
+    },
+    {
+      "id": "adam",
+      "relationship": "related-concept",
+      "weight": 7,
+      "notes": ""
+    },
+    {
+      "id": "revelation",
+      "relationship": "related-concept",
+      "weight": 6,
+      "notes": ""
+    },
+    {
+      "id": "creation-doctrine-framework",
+      "relationship": "related",
+      "weight": 9,
+      "notes": "Connects new creation fulfillment back to the creation doctrine framework."
+    }
   ],
-  "common_questions": [
-    "What does New Creation Theme teach?",
-    "How does New Creation Theme fit the biblical storyline?",
-    "What should readers avoid when interpreting New Creation Theme?"
-  ],
-  "sources": [
-    "Genesis 1-2",
-    "Psalm 8",
-    "John 1",
-    "Romans 8",
-    "Revelation 21"
-  ],
-  "importance": 95,
-  "framework_version": "1.0",
-  "object_version": "1",
   "scripture_references": [
     {
       "reference": "Genesis 1:1-31",
@@ -74,43 +119,142 @@
       "notes": ""
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "creation-theme",
-      "relationship": "related-concept",
-      "weight": 10,
-      "notes": ""
+      "note": "Read New Creation Theme in its immediate context before generalizing.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "creation-doctrine",
-      "relationship": "related-concept",
-      "weight": 9,
-      "notes": ""
-    },
-    {
-      "id": "genesis",
-      "relationship": "related-concept",
-      "weight": 8,
-      "notes": ""
-    },
-    {
-      "id": "adam",
-      "relationship": "related-concept",
-      "weight": 7,
-      "notes": ""
-    },
-    {
-      "id": "revelation",
-      "relationship": "related-concept",
-      "weight": 6,
-      "notes": ""
+      "note": "Do not flatten distinct passages into one slogan; let the canon keep its own shape.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
   ],
+  "common_questions": [
+    "What does New Creation Theme teach?",
+    "How does New Creation Theme fit the biblical storyline?",
+    "What should readers avoid when interpreting New Creation Theme?"
+  ],
+  "sources": [
+    {
+      "title": "Genesis 1-2",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "genesis-1-2"
+    },
+    {
+      "title": "Psalm 8",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "psalm-8"
+    },
+    {
+      "title": "John 1",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "john-1"
+    },
+    {
+      "title": "Romans 8",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "romans-8"
+    },
+    {
+      "title": "Revelation 21",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "revelation-21"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 95,
+  "framework_version": "1.0",
+  "object_version": "1",
   "content_status": "complete",
   "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-16"
+    }
   ],
+  "edited_by": [],
+  "reviewed_by": [],
   "last_reviewed": "2026-07-16",
-  "confidence": "medium"
+  "confidence": "medium",
+  "human_review_required": true
 }

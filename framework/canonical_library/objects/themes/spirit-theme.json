@@ -10,8 +10,36 @@
   "summary": "The biblical pattern of God\u2019s Spirit as life-giving presence, empowering speech, holiness, wisdom, and mission.",
   "historical_context": "Spirit language appears from creation through prophecy, Jesus\u2019 ministry, Pentecost, and the life of the church.",
   "ancient_near_east_context": "The Bible\u2019s Spirit language is distinct because it binds divine presence to holiness, creation, covenant renewal, and mission rather than to impersonal force.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "The Spirit theme appears in narrative, poetry, prophecy, Gospel promise, and apostolic instruction.",
   "covenantal_significance": "The Spirit marks God\u2019s presence among his people and enables the obedience promised in the new covenant.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "Spirit Theme serves as a thematic anchor, connecting repeated biblical patterns, key passages, and related theological concepts across the canon.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -21,36 +49,38 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "Spirit language can mean wind, breath, or the personal presence of God; context determines emphasis.",
-    "The New Testament\u2019s Spirit teaching does not replace the Old Testament; it fulfills and expands it."
+  "related_objects": [
+    {
+      "id": "pneumatology",
+      "relationship": "doctrinal-anchor",
+      "weight": 10,
+      "notes": "theology of the Spirit"
+    },
+    {
+      "id": "pneuma",
+      "relationship": "word-study-anchor",
+      "weight": 9,
+      "notes": "Spirit / wind / breath language"
+    },
+    {
+      "id": "new-covenant",
+      "relationship": "renewal-anchor",
+      "weight": 9,
+      "notes": "Spirit promised in covenant renewal"
+    },
+    {
+      "id": "resurrection-theme",
+      "relationship": "life-giving-power",
+      "weight": 8,
+      "notes": "Spirit and life"
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "empowering-presence",
+      "weight": 7,
+      "notes": "the kingdom comes in Spirit power"
+    }
   ],
-  "common_questions": [
-    "What does the Spirit do in the Bible?",
-    "How does the Spirit relate to the new covenant?",
-    "Why is Pentecost so important?"
-  ],
-  "sources": [
-    "Genesis 1",
-    "Ezekiel 36-37",
-    "Joel 2",
-    "John 14-16",
-    "Acts 2",
-    "Romans 8",
-    "Galatians 5"
-  ],
-  "importance": 96,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
-  ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "Genesis 1:2",
@@ -108,36 +138,180 @@
       "notes": "fruit of the Spirit"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "pneumatology",
-      "relationship": "doctrinal-anchor",
-      "weight": 10,
-      "notes": "theology of the Spirit"
+      "note": "Spirit language can mean wind, breath, or the personal presence of God; context determines emphasis.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "pneuma",
-      "relationship": "word-study-anchor",
-      "weight": 9,
-      "notes": "Spirit / wind / breath language"
-    },
-    {
-      "id": "new-covenant",
-      "relationship": "renewal-anchor",
-      "weight": 9,
-      "notes": "Spirit promised in covenant renewal"
-    },
-    {
-      "id": "resurrection-theme",
-      "relationship": "life-giving-power",
-      "weight": 8,
-      "notes": "Spirit and life"
-    },
-    {
-      "id": "kingdom-theme",
-      "relationship": "empowering-presence",
-      "weight": 7,
-      "notes": "the kingdom comes in Spirit power"
+      "note": "The New Testament\u2019s Spirit teaching does not replace the Old Testament; it fulfills and expands it.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "What does the Spirit do in the Bible?",
+    "How does the Spirit relate to the new covenant?",
+    "Why is Pentecost so important?"
+  ],
+  "sources": [
+    {
+      "title": "Genesis 1",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "genesis-1"
+    },
+    {
+      "title": "Ezekiel 36-37",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "ezekiel-36-37"
+    },
+    {
+      "title": "Joel 2",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "joel-2"
+    },
+    {
+      "title": "John 14-16",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "john-14-16"
+    },
+    {
+      "title": "Acts 2",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "acts-2"
+    },
+    {
+      "title": "Romans 8",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "romans-8"
+    },
+    {
+      "title": "Galatians 5",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "galatians-5"
+    },
+    {
+      "title": "Canonical historical orientation for Spirit Theme",
+      "author": "",
+      "publisher": "Canonical Knowledge Library",
+      "year": 2026,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context"
+      ],
+      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+      "id": "spirit-theme-historical-orientation"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 96,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }

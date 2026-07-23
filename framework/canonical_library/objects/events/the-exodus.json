@@ -10,8 +10,36 @@
   "summary": "God delivers Israel from slavery in Egypt by signs, judgment, and the Passover meal.",
   "historical_context": "The exodus becomes the defining act of redemption in Israel's memory and the starting point for covenant nationhood.",
   "ancient_near_east_context": "The story confronts imperial Egypt and recasts deliverance as the LORD's victory over human power and death.",
+  "hebraic_worldview": "",
+  "second_temple_context": "",
+  "canonical_context": "",
+  "later_christian_reception": "",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": true,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
   "literary_context": "Exodus 1-15 narrates oppression, calling, plagues, Passover, departure, and the sea crossing before the covenant at Sinai.",
   "covenantal_significance": "The exodus establishes God as redeemer and grounds Israel's obedience in prior rescue.",
+  "authorship_positions": [],
+  "date_ranges": [],
+  "original_audience": "",
+  "historical_setting": "",
+  "canonical_role": "The Exodus serves as a canonical event anchor, connecting its key passages, people, places, and theological themes within the biblical storyline.",
+  "genre": [],
+  "structure": [],
+  "major_themes": [],
+  "canonical_placement": "",
+  "key_people": [],
+  "key_places": [],
+  "key_events": [],
+  "interpretive_disputes": [],
+  "primary_sources": [],
+  "related_entries": [],
+  "keywords": [],
   "intertextuality": [],
   "timeline": [],
   "maps": [],
@@ -21,36 +49,68 @@
   "related_people": [],
   "related_places": [],
   "related_events": [],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    "The exodus is not only a rescue from something but also a redemption into covenant relationship.",
-    "Later Scripture repeatedly uses exodus language to describe salvation and return."
+  "related_objects": [
+    {
+      "id": "moses",
+      "relationship": "deliverer-anchor",
+      "weight": 10,
+      "notes": "Moses leads the exodus"
+    },
+    {
+      "id": "aaron",
+      "relationship": "supporting-leader",
+      "weight": 8,
+      "notes": "Aaron in the exodus"
+    },
+    {
+      "id": "egypt",
+      "relationship": "oppression-context",
+      "weight": 10,
+      "notes": "house of slavery"
+    },
+    {
+      "id": "passover",
+      "relationship": "redemption-rite",
+      "weight": 10,
+      "notes": "meal of deliverance"
+    },
+    {
+      "id": "red-sea-crossing",
+      "relationship": "deliverance-event",
+      "weight": 10,
+      "notes": "crossing through the sea"
+    },
+    {
+      "id": "wilderness-wandering",
+      "relationship": "journey-stage",
+      "weight": 8,
+      "notes": "post-exodus testing"
+    },
+    {
+      "id": "mount-sinai",
+      "relationship": "covenant-location",
+      "weight": 10,
+      "notes": "Sinai covenant follows the exodus"
+    },
+    {
+      "id": "exodus-pattern-theme",
+      "relationship": "canonical-pattern",
+      "weight": 10,
+      "notes": "deliverance motif"
+    },
+    {
+      "id": "new-exodus-theme",
+      "relationship": "fulfillment-framework",
+      "weight": 9,
+      "notes": "new exodus in Christ"
+    },
+    {
+      "id": "exodus-to-sinai-timeline",
+      "relationship": "related",
+      "weight": 10,
+      "notes": "timeline from deliverance through Sinai covenant formation"
+    }
   ],
-  "common_questions": [
-    "Why is the exodus so important?",
-    "How does the exodus shape the rest of the Bible?",
-    "How does the exodus point to Jesus?"
-  ],
-  "sources": [
-    "Exodus 1-15",
-    "Deuteronomy 6",
-    "Psalm 78",
-    "Psalm 114",
-    "Isaiah 43",
-    "1 Corinthians 10",
-    "Hebrews 11"
-  ],
-  "importance": 100,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "reviewed_by": [
-    "codex-phase-10"
-  ],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
   "scripture_references": [
     {
       "reference": "Exodus 3:1-22",
@@ -108,60 +168,166 @@
       "notes": "faith and the exodus"
     }
   ],
-  "related_objects": [
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
     {
-      "id": "moses",
-      "relationship": "deliverer-anchor",
-      "weight": 10,
-      "notes": "Moses leads the exodus"
+      "note": "The exodus is not only a rescue from something but also a redemption into covenant relationship.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     },
     {
-      "id": "aaron",
-      "relationship": "supporting-leader",
-      "weight": 8,
-      "notes": "Aaron in the exodus"
-    },
-    {
-      "id": "egypt",
-      "relationship": "oppression-context",
-      "weight": 10,
-      "notes": "house of slavery"
-    },
-    {
-      "id": "passover",
-      "relationship": "redemption-rite",
-      "weight": 10,
-      "notes": "meal of deliverance"
-    },
-    {
-      "id": "red-sea-crossing",
-      "relationship": "deliverance-event",
-      "weight": 10,
-      "notes": "crossing through the sea"
-    },
-    {
-      "id": "wilderness-wandering",
-      "relationship": "journey-stage",
-      "weight": 8,
-      "notes": "post-exodus testing"
-    },
-    {
-      "id": "mount-sinai",
-      "relationship": "covenant-location",
-      "weight": 10,
-      "notes": "Sinai covenant follows the exodus"
-    },
-    {
-      "id": "exodus-pattern-theme",
-      "relationship": "canonical-pattern",
-      "weight": 10,
-      "notes": "deliverance motif"
-    },
-    {
-      "id": "new-exodus-theme",
-      "relationship": "fulfillment-framework",
-      "weight": 9,
-      "notes": "new exodus in Christ"
+      "note": "Later Scripture repeatedly uses exodus language to describe salvation and return.",
+      "note_type": "textual-observation",
+      "certainty": "unknown",
+      "dispute_status": "unknown",
+      "sources": []
     }
-  ]
+  ],
+  "common_questions": [
+    "Why is the exodus so important?",
+    "How does the exodus shape the rest of the Bible?",
+    "How does the exodus point to Jesus?"
+  ],
+  "sources": [
+    {
+      "title": "Exodus 1-15",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "exodus-1-15"
+    },
+    {
+      "title": "Deuteronomy 6",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "deuteronomy-6"
+    },
+    {
+      "title": "Psalm 78",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "psalm-78"
+    },
+    {
+      "title": "Psalm 114",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "reference-work",
+      "supports": [],
+      "notes": "",
+      "id": "psalm-114"
+    },
+    {
+      "title": "Isaiah 43",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "isaiah-43"
+    },
+    {
+      "title": "1 Corinthians 10",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "1-corinthians-10"
+    },
+    {
+      "title": "Hebrews 11",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [],
+      "notes": "",
+      "id": "hebrews-11"
+    }
+  ],
+  "canonical_story": {
+    "phase": "",
+    "role": "",
+    "preceded_by": [],
+    "followed_by": []
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "",
+    "book_context": "",
+    "canonical_context": "",
+    "covenant_context": "",
+    "historical_context": "",
+    "ancient_near_east_context": "",
+    "second_temple_jewish_context": "",
+    "original_audience": "",
+    "genre": "",
+    "intertextual_connections": [],
+    "biblical_theology_themes": [],
+    "messianic_christological_trajectory": "",
+    "major_interpretive_views": [],
+    "historical_interpretation": "",
+    "authorial_intent": "",
+    "typological_connections": [],
+    "christological_significance": "",
+    "modern_application_principles": [],
+    "common_misinterpretations": []
+  },
+  "retrieval_metadata": {
+    "aliases": [],
+    "search_terms": [],
+    "common_questions": [],
+    "related_topics": [],
+    "frequently_confused_with": [],
+    "semantic_keywords": []
+  },
+  "importance": 100,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "complete",
+  "review_status": "in_review",
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    }
+  ],
+  "edited_by": [],
+  "reviewed_by": [],
+  "last_reviewed": "2026-07-14",
+  "confidence": "medium",
+  "human_review_required": true
 }
