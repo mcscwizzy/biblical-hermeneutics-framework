@@ -599,7 +599,7 @@ class RunnerTests(unittest.TestCase):
         adapter = RecordingAdapter()
         agent = self.make_agent(adapter, profile="standard")
 
-        result = agent.ask("What does Proverbs 3 mean?")
+        result = agent.ask("What does Imaginary 3 mean?")
 
         self.assertIsNotNone(adapter.request)
         assert adapter.request is not None

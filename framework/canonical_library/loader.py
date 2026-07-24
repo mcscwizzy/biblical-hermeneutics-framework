@@ -389,20 +389,26 @@ class CanonicalLibrary:
                 allowed_statuses=allowed_statuses,
             ):
                 continue
-            field_terms = self.field_keyword_index.get(object_id, {})
-            score, matched_terms, matched_fields = score_keyword_result(
-                query_terms=query_terms,
-                field_terms=field_terms,
-                importance=obj.importance,
-            )
+            if scripture_mode:
+                score, matched_terms, matched_fields = 0.0, [], []
+            else:
+                field_terms = self.field_keyword_index.get(object_id, {})
+                score, matched_terms, matched_fields = score_keyword_result(
+                    query_terms=query_terms,
+                    field_terms=field_terms,
+                    importance=obj.importance,
+                )
             scripture_score = scripture_scores.get(object_id, 0.0)
             if scripture_score > score:
                 score = scripture_score
-            text_bonus, text_match_type, text_fields, matched_alias = score_text_match(
-                query,
-                obj,
-                scripture_mode=scripture_mode,
-            )
+            if scripture_mode:
+                text_bonus, text_match_type, text_fields, matched_alias = 0.0, "keyword", [], None
+            else:
+                text_bonus, text_match_type, text_fields, matched_alias = score_text_match(
+                    query,
+                    obj,
+                    scripture_mode=scripture_mode,
+                )
             if score <= 0 and text_bonus <= 0:
                 continue
             score += text_bonus

@@ -35,6 +35,24 @@ The container starts:
 uvicorn bhf_web.app:app --host 0.0.0.0 --port 8080
 ```
 
+## Local HTTP
+
+The Docker stack publishes the BHF web/API server directly from the `bhf-web`
+container:
+
+```text
+http://localhost:8080
+```
+
+The default host port is controlled by `BHF_HTTP_PORT` and defaults to `8080`.
+The app container always listens on port `8080` inside Compose.
+
+To verify the local endpoint:
+
+```bash
+curl http://localhost:8080/api/health
+```
+
 ## Ollama On The Host
 
 Run Ollama on your host machine and make sure the model is available:
@@ -188,8 +206,8 @@ mkdir -p .bhf/sessions
 
 ## LAN Access
 
-The compose file publishes the UI on the host port configured by `BHF_PORT`
-and defaults to `8080`.
+The compose file publishes local HTTP on the host port configured by
+`BHF_HTTP_PORT` and defaults to `8080`.
 
 From another trusted device on your LAN, open:
 
@@ -198,5 +216,5 @@ http://YOUR_HOST_LAN_IP:8080
 ```
 
 This setup is intended for trusted local or LAN use only. It has no
-authentication, HTTPS termination, account system, rate limiting, or public
-internet hardening. Do not expose it directly to the public internet.
+authentication, account system, rate limiting, or public internet hardening.
+Do not expose it directly to the public internet.

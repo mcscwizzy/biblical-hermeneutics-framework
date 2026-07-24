@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import uuid
 from pathlib import Path
 from typing import Any, Callable
@@ -89,7 +90,7 @@ def create_saved_map_study(
 ) -> dict[str, Any]:
     study = validate_saved_map_study(data)
     now = timestamp()
-    study_id = uuid.uuid4().hex
+    study_id = _client_record_id(data.get("id"), "map-study") or uuid.uuid4().hex
     with connect(path) as connection:
         ensure_schema(connection)
         connection.execute(
@@ -156,7 +157,7 @@ def create_map_note(
 ) -> dict[str, Any]:
     note = validate_map_note(data)
     now = timestamp()
-    note_id = uuid.uuid4().hex
+    note_id = _client_record_id(data.get("id"), "map-note") or uuid.uuid4().hex
     with connect(path) as connection:
         ensure_schema(connection)
         connection.execute(
@@ -190,6 +191,17 @@ def create_map_note(
         "created_at": now,
         "updated_at": now,
     }
+
+
+def _client_record_id(value: object, prefix: str) -> str | None:
+    candidate = str(value or "").strip()
+    if not candidate:
+        return None
+    if re.fullmatch(r"[a-f0-9]{32}", candidate):
+        return candidate
+    if re.fullmatch(rf"{re.escape(prefix)}-[A-Za-z0-9][A-Za-z0-9_-]{{0,79}}", candidate):
+        return candidate
+    return None
 
 
 def list_map_notes(

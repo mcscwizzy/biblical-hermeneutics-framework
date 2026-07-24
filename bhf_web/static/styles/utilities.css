@@ -1137,6 +1137,123 @@ button.reader-setting-action:disabled .reader-setting-value {
   background: var(--surface);
 }
 
+.offline-sync-details,
+.offline-readiness-details {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.offline-sync-details summary,
+.offline-readiness-details summary {
+  min-height: 42px;
+  padding: 10px 12px;
+  color: var(--page-text);
+  cursor: pointer;
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.offline-sync-list,
+.offline-readiness-list {
+  display: grid;
+  gap: 8px;
+  padding: 0 10px 10px;
+}
+
+.offline-readiness-list {
+  margin: 0;
+  list-style: none;
+}
+
+.offline-sync-empty {
+  margin: 0;
+  color: var(--page-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.offline-sync-item,
+.offline-readiness-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 9px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-alt);
+}
+
+.offline-readiness-item {
+  min-height: 34px;
+}
+
+.offline-readiness-item.is-ready {
+  border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
+}
+
+.offline-readiness-item.is-warn {
+  border-color: color-mix(in srgb, var(--danger-text) 42%, var(--border));
+}
+
+.offline-sync-copy {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.offline-sync-copy strong,
+.offline-sync-meta,
+.offline-sync-error,
+.offline-readiness-label,
+.offline-readiness-value {
+  overflow-wrap: anywhere;
+}
+
+.offline-sync-copy strong {
+  font-size: 0.86rem;
+}
+
+.offline-sync-meta,
+.offline-sync-error {
+  color: var(--page-muted);
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+.offline-sync-error {
+  color: var(--danger-text);
+}
+
+.offline-readiness-label,
+.offline-readiness-value {
+  font-size: 0.8rem;
+  font-weight: 750;
+}
+
+.offline-readiness-value {
+  color: var(--page-muted);
+  text-align: right;
+}
+
+.offline-sync-discard {
+  min-height: 30px;
+  padding: 0 9px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--page-text);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.offline-sync-discard:hover,
+.offline-sync-discard:focus {
+  border-color: var(--danger-text);
+  color: var(--danger-text);
+}
+
 html[data-theme="dark"] .app-dock-utility,
 html[data-theme="dark"] .reader-setting-value {
   background: var(--surface);

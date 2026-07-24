@@ -14,8 +14,6 @@ from bhf_agent.bible import BibleError, compare_translation_passages, build_sele
 from bhf_agent.curation import CURATION_COLLECTIONS, list_curation_records
 from bhf_agent.config import ConfigError
 from bhf_agent.profiles import ProfileLoader
-from bhf_agent.question_types import classify_question_type
-from bhf_agent.references import detect_reference
 from bhf_agent.runner import BHFAgent
 from bhf_agent.study_db import StudyDataError, record_study_action
 from bhf_agent.study_actions import compact_fact_packet
@@ -25,15 +23,6 @@ from ..forms import validate_question, config_from_form, load_web_defaults
 
 GENERAL_QUESTION_MODE = "general_question"
 GENERAL_QUESTION_SCOPE = "general_question"
-READER_PASSAGE_METHOD_RE = re.compile(
-    r"\b("
-    r"what\s+should\s+i\s+observe|"
-    r"observe\b.+\bbefore\s+interpret|"
-    r"how\s+should\s+i\s+interpret|"
-    r"how\s+do\s+i\s+apply"
-    r")\b",
-    re.IGNORECASE,
-)
 SPECIAL_QUESTION_MODES = {
     "full_context",
     "historical_context",
@@ -198,6 +187,7 @@ def map_study_payload_from_request(payload: dict[str, Any]) -> dict[str, Any]:
         except json.JSONDecodeError:
             view_state = {}
     return {
+        "id": payload.get("id"),
         "book": payload.get("book"),
         "chapter": payload.get("chapter"),
         "start_verse": payload.get("start_verse") or payload.get("verse_start"),
@@ -207,6 +197,7 @@ def map_study_payload_from_request(payload: dict[str, Any]) -> dict[str, Any]:
         "selected_route_id": payload.get("selected_route_id"),
         "selected_layer_id": payload.get("selected_layer_id"),
         "selected_archaeology_id": payload.get("selected_archaeology_id"),
+        "selected_manuscript_id": payload.get("selected_manuscript_id"),
         "selected_layers": selected_layers,
         "map_view_state": view_state,
         "generated_summary": payload.get("generated_summary"),
@@ -216,6 +207,7 @@ def map_study_payload_from_request(payload: dict[str, Any]) -> dict[str, Any]:
 
 def map_note_payload_from_request(payload: dict[str, Any]) -> dict[str, Any]:
     return {
+        "id": payload.get("id"),
         "book": payload.get("book"),
         "chapter": payload.get("chapter"),
         "start_verse": payload.get("start_verse") or payload.get("verse_start"),
@@ -450,9 +442,9 @@ def build_ask_question(
     if context is None:
         return validate_question(form), None
     user_question = str(form.get("question") or "").strip()
-    if user_question and not _reader_question_uses_passage_context(user_question, context):
-        return validate_question(form), None
     study_action = normalize_study_action(form.get("study_action"))
+    if user_question and not ask_mode and not study_action:
+        return validate_question(form), None
     if study_action:
         if path is not None:
             record_action(study_action, context, path=path)
@@ -498,21 +490,6 @@ def build_ask_question(
         lines.extend(["", f"Full chapter context ({label} {context['book']} {context['chapter']}):", str(context["chapter_context"])])
     lines.extend(["", "Method reminder: observe the text before interpreting it, and apply only after observation and interpretation."])
     return "\n".join(lines), str(context["reference"])
-
-
-def _reader_question_uses_passage_context(
-    user_question: str,
-    context: dict[str, Any],
-) -> bool:
-    if READER_PASSAGE_METHOD_RE.search(user_question):
-        return True
-    reference_context = detect_reference(str(context.get("reference") or ""))
-    question_context = classify_question_type(user_question, reference_context)
-    return question_context.question_type in {
-        "passage_study",
-        "historical_context",
-        "cultural_context",
-    }
 
 
 def is_reader_submission(form: dict[str, Any] | Any) -> bool:

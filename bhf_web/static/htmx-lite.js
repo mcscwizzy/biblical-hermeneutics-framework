@@ -2258,10 +2258,7 @@ async function dispatchStudyAction(studyAction) {
     setFormValue("study_action", "");
     setFormValue("deterministic_fact_packet", "");
     setMapContextValue("");
-    const question = document.querySelector('.ask-form [name="question"]');
-    if (question) {
-      question.focus();
-    }
+    insertSelectedTextIntoAskQuestion(studyAction);
   } else if (BHF_DETERMINISTIC_STUDY_ACTIONS.has(studyAction.type)) {
     await requestDeterministicStudyAction(studyAction);
   } else if (BHF_STUDY_ACTIONS.has(studyAction.type)) {
@@ -2315,6 +2312,34 @@ async function dispatchStudyAction(studyAction) {
     submitAskForm();
   } else if (studyAction.type === "view_historical_layer") {
     openMapPanel(studyAction);
+  }
+}
+
+function insertSelectedTextIntoAskQuestion(studyAction) {
+  const question = document.querySelector('.ask-form [name="question"]');
+  if (!question) {
+    return;
+  }
+
+  const selectedText = String(studyAction.selectedText || "").trim();
+  if (!selectedText) {
+    question.focus();
+    return;
+  }
+
+  const currentText = String(question.value || "");
+  if (!currentText.trim()) {
+    question.value = selectedText;
+  } else if (!currentText.includes(selectedText)) {
+    const separator = currentText.endsWith("\n") ? "\n" : "\n\n";
+    question.value = `${currentText}${separator}${selectedText}`;
+  }
+
+  question.dispatchEvent(new Event("input", { bubbles: true }));
+  question.focus();
+  if (typeof question.setSelectionRange === "function") {
+    const cursorPosition = question.value.length;
+    question.setSelectionRange(cursorPosition, cursorPosition);
   }
 }
 

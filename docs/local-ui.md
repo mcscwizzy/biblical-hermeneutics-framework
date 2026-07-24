@@ -4,9 +4,10 @@ The local UI is a small FastAPI Bible reader and study workspace that submits
 questions to the existing `BHFAgent(config).ask(question)` pipeline. It is
 intended for localhost use with an OpenAI-compatible local model runtime.
 
-It has no accounts, sync, database, or authentication. Notes are local-only and
-single-user. Do not bind it to a public interface unless you add your own access
-controls first.
+It has no accounts, server-side sync, or authentication. Notes and other reader
+state are local-only and single-user, with optional browser-local IndexedDB
+offline storage. Do not bind it to a public interface unless you add your own
+access controls first.
 
 ## Install
 
@@ -29,6 +30,62 @@ http://127.0.0.1:8000
 The shell serves a PWA manifest at `/manifest.webmanifest`, registers a
 service worker from `/sw.js`, and provides a basic offline fallback page at
 `/offline`.
+
+The PWA exposes an offline pack manifest at `/api/offline/manifest`. On a
+successful online load, the browser warms the app shell, installed translation
+metadata, and installed translation datasets into IndexedDB. Once warmed, the
+reader can resolve chapters and run deterministic local Bible search from the
+cached dataset while offline.
+
+Offline notes and highlights are written to IndexedDB with client-generated IDs
+and queued for replay. When the app comes back online, the queue is replayed
+against the normal local API. AI requests, LLM health checks, AI search
+fallbacks, remote translation downloads, and licensed-provider content remain
+outside the offline boundary.
+
+The browser also installs the `study` and `maps` offline packs by default after
+the app loads online. The `study` pack stores serialized Canonical Knowledge
+Library objects so the Canonical Context browser can browse, search, and open
+object details offline. The `maps` pack stores base map catalog, place,
+archaeology, manuscript, route, historical-layer, and political-context
+responses. The `sources` pack remains explicit because the source corpus is
+large; when explicitly installed through `window.BHFPWA.installOfflinePack("sources")`,
+it stores the source registry and source detail responses for offline browsing.
+The reader settings sheet shows install/refresh controls and cached counts for
+the study, maps, and sources packs.
+
+Saved map studies can be created and deleted offline. They use client-generated
+IDs, write to IndexedDB immediately, and replay through `/api/map-studies` when
+connectivity returns. Map notes follow the same client-ID replay contract.
+Saved studies that have already appeared in the Saved tab can be opened offline
+from cached data; the browser renders a conservative HTML version of the saved
+answer and canonical links.
+
+The reader settings sheet includes an Offline sync control. It shows queued
+offline mutations, notes failed replay attempts, and retries the queue on
+demand. The Queued changes section lists each pending note, highlight, map
+study, or saved-study mutation with attempt/error details, and lets a user
+discard a stuck queued item. The queue also retries automatically when the
+browser reports that it is online again.
+
+The same sheet includes PWA lifecycle controls. Install app uses the browser's
+install prompt when Chrome or another supporting browser exposes it. App update
+checks the registered service worker for a newer shell. Offline storage shows
+the browser's current storage estimate so large packs are visible to the user.
+Offline readiness summarizes service-worker status, cached translations,
+required packs, installed study data, local records, and queued sync work.
+Refresh offline data re-warms the manifest, installed translation datasets,
+default packs, and optional packs that are already installed. It does not clear
+local records or the sync queue.
+Clear offline cache removes rebuildable offline content and API cache entries
+while preserving notes, highlights, saved work, and queued sync mutations.
+Export offline data writes a JSON snapshot of user-created offline records,
+queued mutations, and pack metadata. Import offline data merges a snapshot back
+into IndexedDB without clearing existing records.
+
+Map rendering uses vendored Leaflet assets from `/static/vendor/leaflet/`
+instead of a CDN. The service worker precaches the Leaflet runtime, stylesheet,
+and marker/layer images so the map workspace can initialize while offline.
 
 ## ASV Reader
 
@@ -282,20 +339,22 @@ Open the site in Safari, use the Share button, and choose Add to Home Screen.
 iOS does not use the same install prompt as Android, so the manual share flow is
 the normal path.
 
-The current PWA setup caches the app shell and static assets conservatively. It
-does not aggressively cache API responses, so study data still comes from the
-backend when the device is online.
+The reader settings sheet exposes Install app, App update, offline pack
+install/refresh controls, offline storage usage, and the Offline sync queue.
+AI responses still require an online or local model runtime.
 
 ## Known Limitations
 
 - The Explore Maps view is mobile-safe, but some map workflows still depend on the
   existing desktop-oriented panels and external tile/data sources.
 - The Apple native AI bridge is only a placeholder in the runtime config.
-- Offline mode covers the shell and static assets, not live agent responses or
-  map data that requires the backend.
+- Offline mode covers the shell, bundled/static assets, installed translations,
+  local reader records, and installed study/map/source packs. Live agent
+  responses and data not captured in an installed offline pack still require an
+  online connection or local runtime.
 
 ## Future Path
 
-- Keep tightening the PWA shell without changing the backend contract.
+- Keep tightening offline coverage without changing the backend contract.
 - Wrap the same browser app with Capacitor once the mobile shell stabilizes.
 - Add a native Apple AI bridge later, behind the runtime abstraction point.

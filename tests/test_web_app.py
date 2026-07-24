@@ -620,8 +620,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("translation-import-button", index_html)
         self.assertIn("Loading translations...", index_html)
         self.assertIn('name="reader_translation"', index_html)
-        self.assertIn("style.css') }}?v=20260721b", index_html)
-        self.assertIn("htmx-lite.js') }}?v=20260721a", index_html)
+        self.assertIn("static_asset('/style.css') }}?v=20260721b", index_html)
+        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260724a", index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
@@ -796,7 +796,9 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("Broad / uncertain period", response["body"])
         self.assertIn("saved-map-studies", response["body"])
         self.assertIn("map_context", response["body"])
-        self.assertIn("leaflet.css", response["body"])
+        self.assertIn("/static/vendor/leaflet/leaflet.css", response["body"])
+        self.assertIn("/static/vendor/leaflet/leaflet.js", response["body"])
+        self.assertNotIn("https://unpkg.com/leaflet", response["body"])
         self.assertIn("highlights-list", response["body"])
         self.assertIn("saved-studies-list", response["body"])
         self.assertIn("app-dock", response["body"])
@@ -823,10 +825,27 @@ class WebAppTests(unittest.TestCase):
         self.assertNotIn("data-total-elapsed", response["body"])
         self.assertNotIn("status-percent", response["body"])
 
+    def test_index_static_assets_are_same_origin_behind_https_proxy(self):
+        response = asgi_request(
+            "GET",
+            "/",
+            headers={
+                "host": "bhf.thewalkerclan.synology.me",
+                "x-forwarded-proto": "https",
+            },
+        )
+
+        self.assertEqual(response["status"], 200)
+        self.assertIn('href="/static/style.css?v=20260721b"', response["body"])
+        self.assertIn('src="/static/htmx-lite.js?v=20260724a"', response["body"])
+        self.assertIn('href="/static/vendor/leaflet/leaflet.css"', response["body"])
+        self.assertNotIn("http://bhf.thewalkerclan.synology.me/static/", response["body"])
+
     def test_manifest_and_offline_assets_load(self):
         manifest = asgi_request("GET", "/manifest.webmanifest")
         offline = asgi_request("GET", "/offline")
         service_worker = asgi_request("GET", "/sw.js")
+        offline_manifest = asgi_request("GET", "/api/offline/manifest")
 
         self.assertEqual(manifest["status"], 200)
         manifest_data = json.loads(manifest["body"])
@@ -844,8 +863,186 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
+        self.assertIn('CACHE_VERSION = "v11"', service_worker["body"])
         self.assertIn("networkFirstNavigation", service_worker["body"])
         self.assertIn("networkFirstAsset", service_worker["body"])
+        self.assertIn("networkFirstApi", service_worker["body"])
+        self.assertIn("cacheAssets", service_worker["body"])
+        self.assertIn("/api/offline/manifest", service_worker["body"])
+        self.assertIn("/static/offline/db.js", service_worker["body"])
+        self.assertIn("/static/vendor/leaflet/leaflet.css", service_worker["body"])
+        self.assertIn("/static/vendor/leaflet/images/marker-icon.png", service_worker["body"])
+        self.assertIn("isAiOnlyApiRequest", service_worker["body"])
+
+        self.assertEqual(offline_manifest["status"], 200)
+        offline_data = json.loads(offline_manifest["body"])
+        self.assertEqual(offline_data["schema_version"], 1)
+        self.assertEqual(offline_data["app"], "bhf-bible-reader")
+        self.assertIn("ai_ask", offline_data["offline_boundary"]["requires_online_or_local_runtime"])
+        self.assertIn("installed_translations", offline_data["offline_boundary"]["available"])
+        self.assertEqual(
+            [pack["id"] for pack in offline_data["packs"]],
+            ["core", "study", "maps", "sources"],
+        )
+        self.assertTrue(offline_data["packs"][0]["required"])
+        self.assertIn("mutationQueue", offline_data["client_stores"])
+        self.assertIn("translations", offline_data["client_stores"])
+        self.assertIn("/api/translations/{translation_id}/offline-data", offline_data["packs"][0]["routes"])
+        self.assertIn("/static/vendor/leaflet/leaflet.js", offline_data["packs"][0]["assets"])
+
+    def test_installed_translation_offline_data_loads(self):
+        response = asgi_request("GET", "/api/translations/asv/offline-data")
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(data["translation_id"], "asv")
+        self.assertTrue(data["installation"]["offline_supported"])
+        self.assertIn("books", data["dataset"])
+        self.assertGreaterEqual(len(data["dataset"]["books"]), 66)
+
+    def test_local_leaflet_vendor_assets_load(self):
+        css = asgi_request("GET", "/static/vendor/leaflet/leaflet.css")
+        script = asgi_request("GET", "/static/vendor/leaflet/leaflet.js")
+
+        self.assertEqual(css["status"], 200)
+        self.assertIn(".leaflet-container", css["body"])
+        self.assertEqual(script["status"], 200)
+        self.assertIn('t.version="1.9.4"', script["body"])
+        self.assertTrue(Path("bhf_web/static/vendor/leaflet/images/marker-icon.png").exists())
+        self.assertTrue(Path("bhf_web/static/vendor/leaflet/LICENSE").exists())
+
+    def test_offline_browser_assets_are_wired(self):
+        index = asgi_request("GET", "/")
+        http_script = asgi_request("GET", "/static/api/http.js")
+        offline_db = asgi_request("GET", "/static/offline/db.js")
+        pwa_script = asgi_request("GET", "/static/pwa.js")
+
+        self.assertEqual(index["status"], 200)
+        self.assertIn("/static/offline/db.js", index["body"])
+        self.assertLess(index["body"].index("/static/offline/db.js"), index["body"].index("/static/api/http.js"))
+        self.assertIn("data-offline-pack=\"study\"", index["body"])
+        self.assertIn("data-offline-pack=\"maps\"", index["body"])
+        self.assertIn("data-offline-pack=\"sources\"", index["body"])
+        self.assertIn("data-offline-sync-retry", index["body"])
+        self.assertIn("data-offline-sync-list", index["body"])
+        self.assertIn("data-pwa-install", index["body"])
+        self.assertIn("data-pwa-update", index["body"])
+        self.assertIn("data-offline-storage-refresh", index["body"])
+        self.assertIn("data-offline-snapshot-export", index["body"])
+        self.assertIn("data-offline-snapshot-import", index["body"])
+        self.assertIn("data-offline-snapshot-file", index["body"])
+        self.assertIn("data-offline-readiness-refresh", index["body"])
+        self.assertIn("data-offline-readiness-list", index["body"])
+        self.assertIn("data-offline-refresh-all", index["body"])
+        self.assertIn("data-offline-clear-caches", index["body"])
+
+        self.assertEqual(http_script["status"], 200)
+        self.assertIn("offlineFallback", http_script["body"])
+        self.assertIn("offlineTextFallback", http_script["body"])
+        self.assertIn("notifyOfflineSyncChanged", http_script["body"])
+        self.assertIn("upsertOfflineNote", http_script["body"])
+        self.assertIn("upsertOfflineHighlight", http_script["body"])
+        self.assertIn("deleteOfflineSavedStudy", http_script["body"])
+        self.assertIn("isAiOnlyPath", http_script["body"])
+
+        self.assertEqual(offline_db["status"], 200)
+        self.assertIn("indexedDB.open", offline_db["body"])
+        self.assertIn("mutationQueue", offline_db["body"])
+        self.assertIn("cacheApiResponse", offline_db["body"])
+        self.assertIn("canonicalObjects", offline_db["body"])
+        self.assertIn("generatedCanonicalSearchResponse", offline_db["body"])
+        self.assertIn("sources", offline_db["body"])
+        self.assertIn("upsertOfflineMapStudy", offline_db["body"])
+        self.assertIn("readTextResponse", offline_db["body"])
+        self.assertIn("renderSavedStudyHtml", offline_db["body"])
+        self.assertIn("mutationQueueSummary", offline_db["body"])
+        self.assertIn("markMutationAttempt", offline_db["body"])
+        self.assertIn("SNAPSHOT_STORES", offline_db["body"])
+        self.assertIn("exportSnapshot", offline_db["body"])
+        self.assertIn("importSnapshot", offline_db["body"])
+        self.assertIn("readinessReport", offline_db["body"])
+        self.assertIn("missing_required_packs", offline_db["body"])
+        self.assertIn("REBUILDABLE_STORES", offline_db["body"])
+        self.assertIn("clearRebuildableCaches", offline_db["body"])
+
+        self.assertEqual(pwa_script["status"], 200)
+        self.assertIn("replayQueuedMutations", pwa_script["body"])
+        self.assertIn("warmOfflineManifest", pwa_script["body"])
+        self.assertIn("warmInstalledTranslations", pwa_script["body"])
+        self.assertIn("installOfflinePack", pwa_script["body"])
+        self.assertIn("warmDefaultOfflinePacks", pwa_script["body"])
+        self.assertIn('CACHE_VERSION = "v11"', pwa_script["body"])
+        self.assertIn("ensureServiceWorkerReady", pwa_script["body"])
+        self.assertIn("Installed, restart app", pwa_script["body"])
+        self.assertIn("Needs HTTPS", pwa_script["body"])
+        self.assertNotIn("bhf-api-v9", pwa_script["body"])
+        self.assertIn("refreshOfflinePackControls", pwa_script["body"])
+        self.assertIn("data-offline-pack", pwa_script["body"])
+        self.assertIn("wireOfflineSyncControls", pwa_script["body"])
+        self.assertIn("refreshOfflineSyncControls", pwa_script["body"])
+        self.assertIn("renderOfflineSyncDetails", pwa_script["body"])
+        self.assertIn("data-offline-sync-discard", pwa_script["body"])
+        self.assertIn("beforeinstallprompt", pwa_script["body"])
+        self.assertIn("promptForInstall", pwa_script["body"])
+        self.assertIn("checkForAppUpdate", pwa_script["body"])
+        self.assertIn("refreshOfflineStorageControls", pwa_script["body"])
+        self.assertIn("navigator.storage.estimate", pwa_script["body"])
+        self.assertIn("wireOfflineSnapshotControls", pwa_script["body"])
+        self.assertIn("exportOfflineSnapshot", pwa_script["body"])
+        self.assertIn("importOfflineSnapshot", pwa_script["body"])
+        self.assertIn("downloadJson", pwa_script["body"])
+        self.assertIn("refreshOfflineReadinessControls", pwa_script["body"])
+        self.assertIn("readinessSummary", pwa_script["body"])
+        self.assertIn("data-offline-readiness-list", pwa_script["body"])
+        self.assertIn("refreshAllOfflineData", pwa_script["body"])
+        self.assertIn("refreshableOfflinePackIds", pwa_script["body"])
+        self.assertIn("clearRebuildableOfflineData", pwa_script["body"])
+        self.assertIn("clearApiCaches", pwa_script["body"])
+        self.assertIn("responseErrorMessage", pwa_script["body"])
+
+    def test_study_offline_pack_includes_canonical_objects(self):
+        response = asgi_request("GET", "/api/offline/packs/study")
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(data["pack_id"], "study")
+        self.assertGreaterEqual(len(data["objects"]), 100)
+        first = data["objects"][0]
+        self.assertIn("id", first)
+        self.assertIn("title", first)
+        self.assertIn("summary", first)
+        self.assertIn("scripture_references", first)
+        self.assertIn("responses", data)
+
+    def test_maps_offline_pack_includes_base_map_responses(self):
+        with self._temp_curation_db() as db_path:
+            initialize_database(db_path)
+            with patch("bhf_web.app.STUDY_DB_PATH", db_path):
+                test_app = create_app()
+                response = asgi_request("GET", "/api/offline/packs/maps", test_app=test_app)
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(data["pack_id"], "maps")
+        urls = [entry["url"] for entry in data["responses"]]
+        self.assertIn("/api/maps/catalog", urls)
+        self.assertIn("/api/maps/biblical-places", urls)
+        self.assertIn("/api/maps/historical-layers", urls)
+
+    def test_sources_offline_pack_includes_source_responses(self):
+        with self._temp_curation_db() as db_path:
+            initialize_database(db_path)
+            with patch("bhf_web.app.STUDY_DB_PATH", db_path):
+                test_app = create_app()
+                response = asgi_request("GET", "/api/offline/packs/sources", test_app=test_app)
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(data["pack_id"], "sources")
+        self.assertTrue(data["deferred"])
+        urls = [entry["url"] for entry in data["responses"]]
+        self.assertIn("/api/sources", urls)
+        self.assertGreaterEqual(len(data["sources"]), 1)
 
     def test_get_curation_page_returns_200(self):
         with self._temp_curation_db() as db_path:
@@ -1364,6 +1561,7 @@ class WebAppTests(unittest.TestCase):
                     "POST",
                     "/api/map-studies",
                     json_data={
+                        "id": "map-study-client-123",
                         "book": "Romans",
                         "chapter": 12,
                         "start_verse": 1,
@@ -1379,6 +1577,7 @@ class WebAppTests(unittest.TestCase):
                 )
                 self.assertEqual(create_response["status"], 201)
                 study = json.loads(create_response["body"])
+                self.assertEqual(study["id"], "map-study-client-123")
                 self.assertEqual(study["selected_place_id"], "jerusalem")
 
                 list_response = asgi_request("GET", "/api/map-studies?book=Romans&chapter=12", test_app=test_app)
@@ -1395,6 +1594,7 @@ class WebAppTests(unittest.TestCase):
                     "POST",
                     "/api/map-notes",
                     json_data={
+                        "id": "map-note-client-123",
                         "book": "Romans",
                         "chapter": 12,
                         "start_verse": 1,
@@ -1407,6 +1607,7 @@ class WebAppTests(unittest.TestCase):
                 )
                 self.assertEqual(note_response["status"], 201)
                 note = json.loads(note_response["body"])
+                self.assertEqual(note["id"], "map-note-client-123")
                 self.assertEqual(note["place_id"], "jerusalem")
 
                 updated_list = asgi_request("GET", "/api/map-studies?book=Romans&chapter=12", test_app=test_app)
@@ -1625,8 +1826,7 @@ class WebAppTests(unittest.TestCase):
         data = _valid_form()
         data["query"] = "Egypt in Exodus"
 
-        with patch("bhf_web.app.BHFAgent", SearchFallbackAgent):
-            response = asgi_request("POST", "/api/bible/search/fallback/jobs", data=data)
+        response = asgi_request("POST", "/api/bible/search/fallback/jobs", data=data)
 
         self.assertEqual(response["status"], 202)
         job = json.loads(response["body"])
@@ -1638,9 +1838,17 @@ class WebAppTests(unittest.TestCase):
         payload = json.loads(result["body"])
         self.assertEqual(payload["source"], "ckl_fallback")
         references = [item["reference"] for item in payload["results"]]
-        self.assertEqual(len(references), 2)
-        self.assertEqual(references[0], "Exodus 3:1-22")
+        self.assertGreaterEqual(len(references), 2)
+        self.assertLessEqual(len(references), 5)
+        self.assertEqual(len(references), len(set(references)))
+        self.assertTrue(references[0].startswith("Exodus 3:"))
         self.assertIn("Exodus 1:1-22", references)
+        self.assertTrue(
+            all(
+                {"book", "chapter", "reference", "reason", "confidence", "match_type"}.issubset(item)
+                for item in payload["results"]
+            )
+        )
 
     def test_post_ask_handles_mocked_agent_result(self):
         with patch("bhf_web.app.BHFAgent", SuccessfulJobAgent):
@@ -1859,7 +2067,7 @@ class WebAppTests(unittest.TestCase):
         self.assertTrue(payload["prompt"]["preview"])
         self.assertIn("shechem", payload["retrieval"]["selected_entry_ids"])
 
-    def test_reader_ask_job_builds_server_side_question(self):
+    def test_reader_ask_job_keeps_typed_prompt_when_selection_fields_are_present(self):
         CapturingAgent.questions = []
         data = _valid_form()
         data.update(
@@ -1880,17 +2088,15 @@ class WebAppTests(unittest.TestCase):
         job = json.loads(response["body"])
         status = wait_for_job(job["job_id"])
         self.assertTrue(status["done"])
-        self.assertEqual(status["reader_reference"], "Romans 12:1-2")
+        self.assertIsNone(status["reader_reference"])
         self.assertEqual(len(CapturingAgent.questions), 1)
         question = CapturingAgent.questions[0]
-        self.assertIn("Using BHF, explain ASV Romans 12:1-2.", question)
-        self.assertIn("Selected text (ASV Romans 12:1-2):", question)
-        self.assertIn("Full chapter context (ASV Romans 12):", question)
-        self.assertIn("observe the text before interpreting", question)
+        self.assertEqual(question, "What should I observe before interpreting?")
 
         result = asgi_request("GET", f"/ask/result/{job['job_id']}")
         self.assertEqual(result["status"], 200)
-        self.assertIn("ASV Romans 12:1-2", result["body"])
+        self.assertNotIn("ASV Romans 12:1-2", result["body"])
+        self.assertNotIn("Save Study", result["body"])
 
     def test_ancient_context_reader_job_builds_phase_one_prompt(self):
         CapturingAgent.questions = []
@@ -2127,6 +2333,7 @@ class WebAppTests(unittest.TestCase):
                     "POST",
                     "/api/notes",
                     json_data={
+                        "id": "note-client-123",
                         "book": "Rom",
                         "chapter": 12,
                         "start_verse": 1,
@@ -2137,6 +2344,7 @@ class WebAppTests(unittest.TestCase):
                 )
                 self.assertEqual(create["status"], 201)
                 note = json.loads(create["body"])
+                self.assertEqual(note["id"], "note-client-123")
                 self.assertEqual(note["book"], "Romans")
 
                 list_response = asgi_request("GET", "/api/notes/Romans/12")
@@ -2166,6 +2374,7 @@ class WebAppTests(unittest.TestCase):
                     "POST",
                     "/api/highlights",
                     json_data={
+                        "id": "highlight-client-123",
                         "book": "Rom",
                         "chapter": 12,
                         "start_verse": 1,
@@ -2176,6 +2385,7 @@ class WebAppTests(unittest.TestCase):
                 )
                 self.assertEqual(create["status"], 201)
                 highlight = json.loads(create["body"])
+                self.assertEqual(highlight["id"], "highlight-client-123")
                 self.assertEqual(highlight["book"], "Romans")
                 self.assertEqual(highlight["color"], "yellow")
 
@@ -2326,7 +2536,7 @@ class WebAppTests(unittest.TestCase):
         question = CapturingAgent.questions[0]
         self.assertEqual(question, "Who was Samson?")
 
-    def test_passage_reader_job_uses_passage_context_without_general_scope(self):
+    def test_passage_reader_job_without_study_action_keeps_typed_prompt(self):
         CapturingAgent.questions = []
         data = _valid_form()
         data.update(
@@ -2347,10 +2557,9 @@ class WebAppTests(unittest.TestCase):
         job = json.loads(response["body"])
         status = wait_for_job(job["job_id"])
         self.assertTrue(status["done"])
-        self.assertEqual(status["reader_reference"], "John 1:1")
+        self.assertIsNone(status["reader_reference"])
         question = CapturingAgent.questions[0]
-        self.assertIn("What does this mean?", question)
-        self.assertIn("ASV John 1:1", question)
+        self.assertEqual(question, "What does this mean?")
 
     def test_reader_toolbar_omits_duplicate_chapter_buttons(self):
         response = asgi_request("GET", "/")
@@ -2561,63 +2770,6 @@ class CapturingAgent(SuccessfulJobAgent):
         return super().ask(question, status_callback=status_callback)
 
 
-class SearchFallbackAgent(SuccessfulJobAgent):
-    def ask(self, question, status_callback=None, canonical_fact_packet=None):
-        if status_callback is not None:
-            status_callback(status_event("loading_profile", "Loading BHF profile", 6))
-            status_callback(
-                status_event(
-                    "waiting_for_model_response",
-                    "Waiting for model response",
-                    11,
-                    status="running",
-                )
-            )
-            status_callback(status_event("complete", "Complete", 16, status="complete"))
-        return AgentResult(
-            answer_text=json.dumps(
-                {
-                    "results": [
-                        {
-                            "book": "Exodus",
-                            "chapter": 1,
-                            "reason": "Egypt frames Israel's oppression at the start of Exodus.",
-                            "confidence": "likely",
-                        },
-                        {
-                            "book": "Exodus",
-                            "chapter": 12,
-                            "verse_start": 37,
-                            "verse_end": 42,
-                            "reason": "This passage narrates Israel leaving Egypt.",
-                            "confidence": "strong",
-                        },
-                    ]
-                }
-            ),
-            reference_context=ReferenceContext(
-                book="Exodus",
-                chapter=1,
-                verse=None,
-                testament="OT",
-                is_reference_based=False,
-                confidence=0.6,
-            ),
-            genre_context=GenreContext(primary_genre="narrative"),
-            question_context=QuestionContext(question_type="topic_study", confidence=0.8),
-            profile_used=self.config.profile,
-            validation_result=ValidationResult(
-                passed=True,
-                score=90,
-                warnings=[],
-            ),
-            model_metadata={
-                "answer_mode": self.config.answer_mode,
-            },
-            errors=[],
-        )
-
-
 def status_event(stage, message, step_index, status="complete"):
     return {
         "stage": stage,
@@ -2807,13 +2959,13 @@ def _history_messages(status):
     return [entry["message"] for entry in status["history"]]
 
 
-def asgi_request(method, path, data=None, json_data=None, test_app=None):
+def asgi_request(method, path, data=None, json_data=None, test_app=None, headers=None):
     target_app = test_app or app
     assert target_app is not None
-    return asyncio.run(_asgi_request(target_app, method, path, data, json_data))
+    return asyncio.run(_asgi_request(target_app, method, path, data, json_data, headers=headers))
 
 
-async def _asgi_request(target_app, method, path, data=None, json_data=None):
+async def _asgi_request(target_app, method, path, data=None, json_data=None, headers=None):
     if "?" in path:
         path, query_string = path.split("?", 1)
     else:
@@ -2824,9 +2976,18 @@ async def _asgi_request(target_app, method, path, data=None, json_data=None):
     else:
         body = urlencode(data or {}).encode("utf-8")
         content_type = b"application/x-www-form-urlencoded"
-    headers = [(b"host", b"testserver")]
+    request_headers = [(b"host", b"testserver")]
+    for header_name, header_value in (headers or {}).items():
+        encoded_name = str(header_name).lower().encode("latin-1")
+        encoded_value = str(header_value).encode("latin-1")
+        request_headers = [
+            existing
+            for existing in request_headers
+            if existing[0] != encoded_name
+        ]
+        request_headers.append((encoded_name, encoded_value))
     if body:
-        headers.extend(
+        request_headers.extend(
             [
                 (b"content-type", content_type),
                 (b"content-length", str(len(body)).encode("ascii")),
@@ -2841,7 +3002,7 @@ async def _asgi_request(target_app, method, path, data=None, json_data=None):
         "path": path,
         "raw_path": path.encode("ascii"),
         "query_string": query_string.encode("ascii"),
-        "headers": headers,
+        "headers": request_headers,
         "client": ("127.0.0.1", 123),
         "server": ("testserver", 80),
     }

@@ -12,6 +12,7 @@ class DockerComposeTests(unittest.TestCase):
         self.assertIn("ollama", data["services"])
         self.assertIn("ollama-init", data["services"])
         self.assertIn("bhf-web", data["services"])
+        self.assertNotIn("bhf-https-proxy", data["services"])
 
         ollama = data["services"]["ollama"]
         init = data["services"]["ollama-init"]
@@ -25,7 +26,14 @@ class DockerComposeTests(unittest.TestCase):
         self.assertEqual(web["environment"]["OLLAMA_BASE_URL"], "${OLLAMA_BASE_URL:-http://ollama:11434}")
         self.assertEqual(web["depends_on"]["ollama"]["condition"], "service_healthy")
         self.assertEqual(web["depends_on"]["ollama-init"]["condition"], "service_completed_successfully")
+        self.assertEqual(web["ports"], ["${BHF_HTTP_PORT:-8080}:8080"])
+        self.assertNotIn("expose", web)
         self.assertEqual(init["depends_on"]["ollama"]["condition"], "service_healthy")
+
+    def test_reverse_proxy_files_are_not_part_of_the_stack(self):
+        self.assertFalse(Path("docker/nginx/Dockerfile").exists())
+        self.assertFalse(Path("docker/nginx/local-https.conf").exists())
+        self.assertFalse(Path("scripts/generate-local-cert.sh").exists())
 
 
 if __name__ == "__main__":
