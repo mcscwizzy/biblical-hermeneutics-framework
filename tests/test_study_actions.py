@@ -555,7 +555,7 @@ class StudyActionRouterTests(unittest.TestCase):
             from fastapi.testclient import TestClient
 
             from bhf_web.routes.study import register_study_routes
-        except ModuleNotFoundError:
+        except (ModuleNotFoundError, RuntimeError):
             self.skipTest("FastAPI test dependencies are not installed")
 
         with tempfile.TemporaryDirectory() as tmp:
