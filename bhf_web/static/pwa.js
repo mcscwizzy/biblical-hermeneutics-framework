@@ -14,10 +14,18 @@
           serviceWorkerRegistration = registration;
           wireServiceWorkerUpdateStatus(registration);
           refreshPwaLifecycleControls();
+          refreshOfflineReadinessControls();
         })
         .catch((error) => {
           console.warn("BHF service worker registration failed:", error);
         });
+      navigator.serviceWorker.ready
+        .then((registration) => {
+          serviceWorkerRegistration = registration;
+          refreshPwaLifecycleControls();
+          refreshOfflineReadinessControls();
+        })
+        .catch(() => undefined);
     });
   }
 
@@ -84,11 +92,14 @@
           );
         } else if (installing.state === "activated") {
           setPwaUpdateStatus("App is up to date", "Check", false);
+          refreshOfflineReadinessControls();
         }
       });
     });
     navigator.serviceWorker.addEventListener("controllerchange", () => {
       setPwaUpdateStatus("App update activated", "Check", false);
+      refreshPwaLifecycleControls();
+      refreshOfflineReadinessControls();
     });
   }
 

@@ -621,7 +621,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("Loading translations...", index_html)
         self.assertIn('name="reader_translation"', index_html)
         self.assertIn("style.css') }}?v=20260721b", index_html)
-        self.assertIn("htmx-lite.js') }}?v=20260721a", index_html)
+        self.assertIn("htmx-lite.js') }}?v=20260724a", index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
@@ -2045,7 +2045,7 @@ class WebAppTests(unittest.TestCase):
         self.assertTrue(payload["prompt"]["preview"])
         self.assertIn("shechem", payload["retrieval"]["selected_entry_ids"])
 
-    def test_reader_ask_job_builds_server_side_question(self):
+    def test_reader_ask_job_keeps_typed_prompt_when_selection_fields_are_present(self):
         CapturingAgent.questions = []
         data = _valid_form()
         data.update(
@@ -2066,17 +2066,15 @@ class WebAppTests(unittest.TestCase):
         job = json.loads(response["body"])
         status = wait_for_job(job["job_id"])
         self.assertTrue(status["done"])
-        self.assertEqual(status["reader_reference"], "Romans 12:1-2")
+        self.assertIsNone(status["reader_reference"])
         self.assertEqual(len(CapturingAgent.questions), 1)
         question = CapturingAgent.questions[0]
-        self.assertIn("Using BHF, explain ASV Romans 12:1-2.", question)
-        self.assertIn("Selected text (ASV Romans 12:1-2):", question)
-        self.assertIn("Full chapter context (ASV Romans 12):", question)
-        self.assertIn("observe the text before interpreting", question)
+        self.assertEqual(question, "What should I observe before interpreting?")
 
         result = asgi_request("GET", f"/ask/result/{job['job_id']}")
         self.assertEqual(result["status"], 200)
-        self.assertIn("ASV Romans 12:1-2", result["body"])
+        self.assertNotIn("ASV Romans 12:1-2", result["body"])
+        self.assertNotIn("Save Study", result["body"])
 
     def test_ancient_context_reader_job_builds_phase_one_prompt(self):
         CapturingAgent.questions = []
@@ -2516,7 +2514,7 @@ class WebAppTests(unittest.TestCase):
         question = CapturingAgent.questions[0]
         self.assertEqual(question, "Who was Samson?")
 
-    def test_passage_reader_job_uses_passage_context_without_general_scope(self):
+    def test_passage_reader_job_without_study_action_keeps_typed_prompt(self):
         CapturingAgent.questions = []
         data = _valid_form()
         data.update(
@@ -2537,10 +2535,9 @@ class WebAppTests(unittest.TestCase):
         job = json.loads(response["body"])
         status = wait_for_job(job["job_id"])
         self.assertTrue(status["done"])
-        self.assertEqual(status["reader_reference"], "John 1:1")
+        self.assertIsNone(status["reader_reference"])
         question = CapturingAgent.questions[0]
-        self.assertIn("What does this mean?", question)
-        self.assertIn("ASV John 1:1", question)
+        self.assertEqual(question, "What does this mean?")
 
     def test_reader_toolbar_omits_duplicate_chapter_buttons(self):
         response = asgi_request("GET", "/")

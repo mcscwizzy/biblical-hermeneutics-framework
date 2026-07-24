@@ -69,3 +69,31 @@ def test_shift_click_range_can_be_highlighted_from_context_menu(driver, wait, ba
 
     for verse_number in (1, 2, 3):
         wait.until(lambda _driver, number=verse_number: "highlight-yellow" in _driver.find_element(By.CSS_SELECTOR, f'#chapter-reader [data-verse="{number}"]').get_attribute("class"))
+
+
+def test_ask_bhf_context_action_inserts_selected_text_without_replacing_prompt(driver, wait, base_url):
+    HomePage(driver, wait, base_url).open().wait_loaded()
+
+    verse_one = driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="1"]')
+    ActionChains(driver).context_click(verse_one).perform()
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "#reader-context-menu").is_displayed())
+    _click_context_action(driver, wait, "ask_bhf")
+
+    question = driver.find_element(By.CSS_SELECTOR, '[data-testid="question-input"]')
+    selected_text = driver.find_element(By.CSS_SELECTOR, '.ask-form [name="reader_selected_text"]').get_attribute("value")
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, '[data-testid="question-input"]').get_attribute("value") == selected_text)
+    assert selected_text
+    assert "Selected" not in question.get_attribute("value")
+
+    question.clear()
+    question.send_keys("Keep my typed question.")
+
+    verse_two = driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="2"]')
+    ActionChains(driver).context_click(verse_two).perform()
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "#reader-context-menu").is_displayed())
+    _click_context_action(driver, wait, "ask_bhf")
+
+    selected_text = driver.find_element(By.CSS_SELECTOR, '.ask-form [name="reader_selected_text"]').get_attribute("value")
+    value = question.get_attribute("value")
+    assert value.startswith("Keep my typed question.")
+    assert selected_text in value

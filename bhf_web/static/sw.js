@@ -95,9 +95,8 @@ self.addEventListener("activate", (event) => {
           return undefined;
         })
       )
-    )
+    ).then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
 self.addEventListener("fetch", (event) => {
