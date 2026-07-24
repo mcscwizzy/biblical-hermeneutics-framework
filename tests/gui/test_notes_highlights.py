@@ -43,12 +43,30 @@ def test_highlight_selected_verse_can_be_removed_from_context_menu(driver, wait,
     assert _highlights_count(driver) >= 1
     assert "highlight-yellow" in driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="3"]').get_attribute("class")
     assert driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="3"] .verse-state-highlight').is_displayed()
+    assert driver.find_element(By.CSS_SELECTOR, "#selection-summary").text == ""
+    assert driver.find_element(By.CSS_SELECTOR, '.ask-form [name="reader_start_verse"]').get_attribute("value") == ""
+    assert driver.find_element(By.CSS_SELECTOR, '.ask-form [name="reader_end_verse"]').get_attribute("value") == ""
+    assert driver.find_element(By.CSS_SELECTOR, '.ask-form [name="reader_selected_text"]').get_attribute("value") == ""
 
     verse = driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="3"]')
     ActionChains(driver).context_click(verse).perform()
-    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, '[data-context-action="highlight"]').text == "Remove Highlight")
+    wait.until(lambda _driver: _driver.execute_script("return document.querySelector('[data-context-action=\"highlight\"]')?.textContent") == "Remove Highlight")
     _click_context_action(driver, wait, "highlight")
     wait.until(lambda _driver: "highlight-yellow" not in _driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="3"]').get_attribute("class"))
+
+
+def test_highlighted_verse_can_be_removed_by_tapping_verse(driver, wait, base_url):
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    verse = driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="4"]')
+    ActionChains(driver).context_click(verse).perform()
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "#reader-context-menu").is_displayed())
+    _click_context_action(driver, wait, "highlight")
+    wait.until(lambda _driver: "highlight-yellow" in _driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="4"]').get_attribute("class"))
+    count_after_create = _highlights_count(driver)
+
+    driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="4"] .verse-text').click()
+    wait.until(lambda _driver: "highlight-yellow" not in _driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="4"]').get_attribute("class"))
+    wait.until(lambda _driver: _highlights_count(_driver) < count_after_create)
 
 
 def test_shift_click_range_can_be_highlighted_from_context_menu(driver, wait, base_url):

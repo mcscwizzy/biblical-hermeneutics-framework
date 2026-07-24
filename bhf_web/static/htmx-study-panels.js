@@ -127,7 +127,6 @@ function createHighlight(context) {
     })
   }, "Could not save highlight.")
     .then(() => {
-      activateWorkspaceTab("highlights");
       return loadHighlights(currentChapter.book, currentChapter.chapter);
     });
 }

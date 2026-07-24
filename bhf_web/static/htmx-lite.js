@@ -72,6 +72,7 @@ let lastMapAIFallbackKey = null;
 let activeLiveAnswerPanel = null;
 let latestDeterministicStudyResult = null;
 let readerLongPressState = null;
+let suppressHighlightedVerseTapUntil = 0;
 let appSection = null;
 let lastAskWorkspaceTab = "ask";
 let lastNotesWorkspaceTab = "notes";
@@ -1941,6 +1942,7 @@ function handleReaderActionButtonClick(event) {
   const button = event.target.closest("[data-verse-actions]");
   const verseSelect = event.target.closest("[data-verse-select]");
   if (!button && !verseSelect) {
+    handleHighlightedVerseTap(event);
     return;
   }
   const verse = (button || verseSelect).closest("[data-verse]");
@@ -1967,9 +1969,35 @@ function handleReaderActionButtonClick(event) {
     return;
   }
   contextMenuState = context;
-  applySelectionContext(context);
   const rect = button.getBoundingClientRect();
   showContextMenu(rect.left + rect.width / 2, rect.bottom + 8, context);
+}
+
+async function handleHighlightedVerseTap(event) {
+  if (Date.now() < suppressHighlightedVerseTapUntil) {
+    return;
+  }
+  const verse = event.target.closest("[data-verse]");
+  const reader = document.querySelector("#chapter-reader");
+  if (!verse || !reader || !reader.contains(verse) || !currentChapter) {
+    return;
+  }
+  const selection = window.getSelection();
+  if (selection && !selection.isCollapsed) {
+    return;
+  }
+  const verseNumber = Number(verse.dataset.verse || "0");
+  if (!verseNumber || highlightsForVerse(verseNumber).length === 0) {
+    return;
+  }
+  event.preventDefault();
+  event.stopPropagation();
+  await removeHighlightsForContext({
+    book: currentChapter.book,
+    chapter: currentChapter.chapter,
+    verseStart: verseNumber,
+    verseEnd: verseNumber,
+  });
 }
 
 function collectSelectedVerseText(startVerse, endVerse) {
@@ -1996,6 +2024,7 @@ function scrollToVerse(verseNumber) {
 }
 
 function handleReaderContextMenu(event) {
+  suppressHighlightedVerseTapUntil = Date.now() + 800;
   const verse = event.target.closest("[data-verse]");
   const reader = document.querySelector("#chapter-reader");
   if (!verse || !reader || !reader.contains(verse) || !currentChapter) {
@@ -2009,11 +2038,13 @@ function handleReaderContextMenu(event) {
 
   event.preventDefault();
   contextMenuState = context;
-  applySelectionContext(context);
   showContextMenu(event.clientX, event.clientY, context);
 }
 
 function handleReaderPointerDown(event) {
+  if (event.button && event.button !== 0) {
+    suppressHighlightedVerseTapUntil = Date.now() + 800;
+  }
   if (event.pointerType !== "touch") {
     cancelReaderLongPress();
     return;
@@ -2070,8 +2101,8 @@ function triggerReaderLongPress() {
     return;
   }
   readerLongPressState.triggered = true;
+  suppressHighlightedVerseTapUntil = Date.now() + 800;
   contextMenuState = context;
-  applySelectionContext(context);
   showContextMenu(readerLongPressState.clientX, readerLongPressState.clientY, context);
   if (window.navigator?.vibrate) {
     window.navigator.vibrate(10);
@@ -2316,8 +2347,8 @@ function createStudyAction(type, context) {
 
 async function dispatchStudyAction(studyAction) {
   studyAction.type = BHF_STUDY_ACTION_ALIASES[studyAction.type] || studyAction.type;
-  applyStudyActionContext(studyAction);
   if (studyAction.type === "ask_bhf") {
+    applyStudyActionContext(studyAction);
     activateWorkspaceTab("ask");
     setFormValue("ask_mode", "");
     setFormValue("study_action", "");
@@ -2325,8 +2356,10 @@ async function dispatchStudyAction(studyAction) {
     setMapContextValue("");
     insertSelectedTextIntoAskQuestion(studyAction);
   } else if (BHF_DETERMINISTIC_STUDY_ACTIONS.has(studyAction.type)) {
+    applyStudyActionContext(studyAction);
     await requestDeterministicStudyAction(studyAction);
   } else if (BHF_STUDY_ACTIONS.has(studyAction.type)) {
+    applyStudyActionContext(studyAction);
     activateWorkspaceTab("ask");
     const askMode = studyAction.type === "ask_location" ? "maps" : studyAction.type;
     if (studyAction.type === "ask_location") {
@@ -2339,18 +2372,22 @@ async function dispatchStudyAction(studyAction) {
     setMapContextValue(buildReaderMapContext(studyAction));
     submitAskForm();
   } else if (studyAction.type === "note") {
+    applyStudyActionContext(studyAction);
     openNoteEditor();
   } else if (studyAction.type === "highlight") {
     await createHighlight(studyAction);
   } else if (studyAction.type === "remove_highlight") {
     await removeHighlightsForContext(studyAction);
   } else if (studyAction.type === "save_study") {
+    applyStudyActionContext(studyAction);
     await saveLatestStudy();
   } else if (studyAction.type === "open_map_panel") {
+    applyStudyActionContext(studyAction);
     setFormValue("ask_mode", "");
     setFormValue("study_action", "");
     openMapPanel(studyAction);
   } else if (studyAction.type === "save_map_study") {
+    applyStudyActionContext(studyAction);
     activateWorkspaceTab("maps");
     if (window.BHFMaps && typeof window.BHFMaps.saveCurrentMapStudy === "function") {
       await window.BHFMaps.saveCurrentMapStudy();
@@ -2358,6 +2395,7 @@ async function dispatchStudyAction(studyAction) {
       openMapPanel(studyAction);
     }
   } else if (studyAction.type === "map_note") {
+    applyStudyActionContext(studyAction);
     activateWorkspaceTab("maps");
     if (window.BHFMaps && typeof window.BHFMaps.focusMapNoteEditor === "function") {
       window.BHFMaps.focusMapNoteEditor();
@@ -2365,17 +2403,20 @@ async function dispatchStudyAction(studyAction) {
       openMapPanel(studyAction);
     }
   } else if (studyAction.type === "compare_archaeology") {
+    applyStudyActionContext(studyAction);
     setFormValue("ask_mode", "maps");
     setFormValue("study_action", studyAction.type);
     setFormValue("question", "What archaeology is connected with this passage or location?");
     setMapContextValue(buildReaderMapContext(studyAction));
     submitAskForm();
   } else if (studyAction.type === "related_passages") {
+    applyStudyActionContext(studyAction);
     setFormValue("ask_mode", "cross_references");
     setFormValue("study_action", studyAction.type);
     setMapContextValue(buildReaderMapContext(studyAction));
     submitAskForm();
   } else if (studyAction.type === "view_historical_layer") {
+    applyStudyActionContext(studyAction);
     openMapPanel(studyAction);
   }
 }
