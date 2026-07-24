@@ -511,6 +511,14 @@ function initializeCanonicalBrowser() {
     askButton.addEventListener("click", () => activateWorkspaceTab("ask"));
   }
 
+  const detailAddNoteButton = document.querySelector("[data-canonical-detail-add-note]");
+  if (detailAddNoteButton && !detailAddNoteButton.dataset.bound) {
+    detailAddNoteButton.dataset.bound = "true";
+    detailAddNoteButton.addEventListener("click", () => {
+      appendCanonicalObjectToCurrentNote(detailAddNoteButton.dataset.canonicalLinkNote || currentCanonicalBrowser.selectedObjectId || "");
+    });
+  }
+
   document.addEventListener("bhf:workspace-tab-changed", handleCanonicalWorkspaceTabChanged);
   loadCanonicalBrowser({ selectFirst: true }).catch(() => {
     // The browser should fail quietly if the local CKL API is unavailable.
@@ -572,7 +580,9 @@ async function loadCanonicalBrowser(options = {}) {
   const contentStatus = String(options.contentStatus ?? formData.get("content_status") ?? "all").trim();
   const includePlaceholders = options.includePlaceholders !== undefined
     ? Boolean(options.includePlaceholders)
-    : true;
+    : form
+      ? formData.has("include_placeholders")
+      : true;
 
   if (query) {
     params.set("q", query);
@@ -600,7 +610,8 @@ async function loadCanonicalBrowser(options = {}) {
   currentCanonicalBrowser.query = query;
   currentCanonicalBrowser.results = Array.isArray(data.results) ? data.results : [];
 
-  renderCanonicalBrowserResults(currentCanonicalBrowser.results);
+  const hasActiveFilters = canonicalBrowserHasActiveFilters(objectType, reviewStatus, contentStatus, includePlaceholders);
+  renderCanonicalBrowserResults(currentCanonicalBrowser.results, { query, hasActiveFilters });
   if (count) {
     count.textContent = String(currentCanonicalBrowser.results.length);
   }
@@ -609,7 +620,9 @@ async function loadCanonicalBrowser(options = {}) {
     if (currentCanonicalBrowser.results.length === 0) {
       summary.textContent = query
         ? `No canonical objects matched "${query}".`
-        : "No canonical objects available for the current filters.";
+        : hasActiveFilters
+          ? "No objects match the active filters."
+          : "No canonical objects are currently available.";
     } else {
       const retrievalMethod = String(data.metadata?.retrieval_method || data.filters?.type || "browse");
       summary.textContent = query
@@ -625,17 +638,24 @@ async function loadCanonicalBrowser(options = {}) {
       await loadCanonicalObject(selected.id, { preview: selected });
     }
   } else {
+    currentCanonicalBrowser.selectedObjectId = null;
     renderCanonicalBrowserDetail(null);
   }
 }
 
-function renderCanonicalBrowserResults(results) {
+function renderCanonicalBrowserResults(results, options = {}) {
   const list = document.querySelector("[data-canonical-browser-results]");
   if (!list) {
     return;
   }
   if (!Array.isArray(results) || results.length === 0) {
-    list.innerHTML = `<p class="empty">Browse the curated canonical library or search for a topic.</p>`;
+    if (options.query) {
+      list.innerHTML = `<div class="canonical-browser-empty"><h4>No search results</h4><p class="empty">No CKL objects matched "${escapeHtml(options.query)}". Try a different term, passage, or object ID.</p></div>`;
+    } else if (options.hasActiveFilters) {
+      list.innerHTML = `<div class="canonical-browser-empty"><h4>No filter matches</h4><p class="empty">No objects match the active filters. Clear filters or broaden the selected states.</p></div>`;
+    } else {
+      list.innerHTML = `<div class="canonical-browser-empty"><h4>No objects available</h4><p class="empty">The canonical library did not return any browseable objects.</p></div>`;
+    }
     return;
   }
 
@@ -644,9 +664,26 @@ function renderCanonicalBrowserResults(results) {
     const article = document.createElement("article");
     article.className = "canonical-result-card";
     article.dataset.canonicalObjectId = item.id;
-    if (currentCanonicalBrowser.selectedObjectId && currentCanonicalBrowser.selectedObjectId === item.id) {
+    article.tabIndex = 0;
+    article.setAttribute("role", "button");
+    article.setAttribute("aria-label", `View ${item.title || item.id || "canonical object"}`);
+    if (currentCanonicalBrowser.selectedObjectId && currentCanonicalBrowser.selectedObjectId === normalizeCanonicalObjectId(item.id)) {
       article.classList.add("is-selected");
+      article.setAttribute("aria-current", "true");
     }
+    article.addEventListener("click", (event) => {
+      if (event.target.closest("button, a, input, select, textarea, summary, details")) {
+        return;
+      }
+      loadCanonicalObject(item.id, { preview: item }).catch(() => {});
+    });
+    article.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") {
+        return;
+      }
+      event.preventDefault();
+      loadCanonicalObject(item.id, { preview: item }).catch(() => {});
+    });
 
     const header = document.createElement("div");
     header.className = "canonical-result-header";
@@ -658,55 +695,64 @@ function renderCanonicalBrowserResults(results) {
     titleButton.type = "button";
     titleButton.className = "canonical-result-title";
     titleButton.textContent = item.title || item.id;
-    titleButton.addEventListener("click", () => loadCanonicalObject(item.id, { preview: item }));
+    titleButton.addEventListener("click", (event) => {
+      event.stopPropagation();
+      loadCanonicalObject(item.id, { preview: item }).catch(() => {});
+    });
 
     const summary = document.createElement("p");
     summary.className = "canonical-result-summary";
     summary.textContent = item.summary || "No summary recorded.";
 
-    titleWrap.appendChild(titleButton);
-    titleWrap.appendChild(summary);
+    const meta = document.createElement("p");
+    meta.className = "canonical-result-meta";
+    meta.textContent = canonicalResultMetadata(item).join(" · ");
 
     const status = document.createElement("span");
     status.className = "canonical-status-chip";
     status.textContent = formatCanonicalLabel(item.review_status || "unknown");
 
+    titleWrap.appendChild(titleButton);
+    titleWrap.appendChild(meta);
+    titleWrap.appendChild(summary);
+
     header.appendChild(titleWrap);
     header.appendChild(status);
 
-    const badges = document.createElement("div");
-    badges.className = "canonical-result-badges";
-    appendCanonicalBadge(badges, formatCanonicalLabel(item.type || "unknown"), "search-badge");
-    appendCanonicalBadge(badges, formatCanonicalLabel(item.content_status || "unknown"), "search-badge");
-    appendCanonicalBadge(badges, formatCanonicalLabel(item.confidence || "unrated"), "search-badge");
-    appendCanonicalBadge(badges, formatCanonicalLabel(item.match_type || "browse"), "search-badge search-badge--muted");
-
     const reason = document.createElement("p");
     reason.className = "canonical-result-reason";
-    reason.textContent = item.reason || "Browse result";
+    const showReason = item.reason && item.match_type && item.match_type !== "browse";
+    reason.textContent = showReason ? item.reason : "";
 
     const actions = document.createElement("div");
     actions.className = "canonical-result-actions";
     const viewButton = document.createElement("button");
     viewButton.type = "button";
     viewButton.className = "secondary";
-    viewButton.textContent = "View details";
+    viewButton.textContent = "Open";
     viewButton.dataset.testid = "canonical-result-view-button";
-    viewButton.addEventListener("click", () => loadCanonicalObject(item.id, { preview: item }));
+    viewButton.addEventListener("click", (event) => {
+      event.stopPropagation();
+      loadCanonicalObject(item.id, { preview: item }).catch(() => {});
+    });
 
     const linkButton = document.createElement("button");
     linkButton.type = "button";
     linkButton.className = "secondary";
     linkButton.textContent = "Link to note";
     linkButton.dataset.testid = "canonical-result-link-note";
-    linkButton.addEventListener("click", () => appendCanonicalObjectToCurrentNote(item.id));
+    linkButton.addEventListener("click", (event) => {
+      event.stopPropagation();
+      appendCanonicalObjectToCurrentNote(item.id);
+    });
 
     actions.appendChild(viewButton);
     actions.appendChild(linkButton);
 
     article.appendChild(header);
-    article.appendChild(badges);
-    article.appendChild(reason);
+    if (reason.textContent) {
+      article.appendChild(reason);
+    }
     article.appendChild(actions);
     list.appendChild(article);
   }
@@ -747,6 +793,8 @@ function renderCanonicalBrowserDetail(object, options = {}) {
   const scripture = document.querySelector("[data-canonical-detail-scripture]");
   const related = document.querySelector("[data-canonical-detail-related]");
   const sources = document.querySelector("[data-canonical-detail-sources]");
+  const sourceCount = document.querySelector("[data-canonical-detail-source-count]");
+  const notes = document.querySelector("[data-canonical-detail-notes]");
   const editor = document.querySelector("[data-canonical-detail-editor]");
   const curation = document.querySelector("[data-canonical-detail-curation]");
   const addNote = document.querySelector("[data-canonical-detail-add-note]");
@@ -758,6 +806,12 @@ function renderCanonicalBrowserDetail(object, options = {}) {
   scripture.innerHTML = "";
   related.innerHTML = "";
   sources.innerHTML = "";
+  if (notes) {
+    notes.innerHTML = "";
+  }
+  if (sourceCount) {
+    sourceCount.textContent = "";
+  }
   reason.hidden = true;
   reason.textContent = "";
 
@@ -769,6 +823,13 @@ function renderCanonicalBrowserDetail(object, options = {}) {
         ? "Loading canonical object..."
         : "Search results will populate here.";
     status.textContent = "--";
+    badges.innerHTML = `<p class="empty">Select a CKL object to inspect its metadata.</p>`;
+    scripture.innerHTML = `<p class="empty">No object selected.</p>`;
+    sources.innerHTML = `<p class="empty">No object selected.</p>`;
+    related.innerHTML = `<p class="empty">No object selected.</p>`;
+    if (notes) {
+      notes.innerHTML = `<p class="empty">No object selected.</p>`;
+    }
     if (curation) {
       curation.href = "/curation";
     }
@@ -778,6 +839,7 @@ function renderCanonicalBrowserDetail(object, options = {}) {
     }
     if (addNote) {
       addNote.disabled = true;
+      delete addNote.dataset.canonicalLinkNote;
     }
     if (options.error) {
       reason.hidden = false;
@@ -800,15 +862,20 @@ function renderCanonicalBrowserDetail(object, options = {}) {
   }
   if (addNote) {
     addNote.disabled = false;
+    addNote.dataset.canonicalLinkNote = normalizedId;
   }
 
-  appendCanonicalBadge(badges, formatCanonicalLabel(object.type || "unknown"), "search-badge");
-  appendCanonicalBadge(badges, formatCanonicalLabel(object.content_status || "unknown"), "search-badge");
-  appendCanonicalBadge(badges, formatCanonicalLabel(object.review_status || "unknown"), "search-badge");
-  appendCanonicalBadge(badges, formatCanonicalLabel(object.confidence || "unrated"), "search-badge");
-  appendCanonicalBadge(badges, `importance ${object.importance ?? 0}`, "search-badge");
+  appendCanonicalMetadata(badges, "Object type", formatCanonicalLabel(object.type || "unknown"));
+  appendCanonicalMetadata(badges, "Content state", formatCanonicalLabel(object.content_status || "unknown"));
+  appendCanonicalMetadata(badges, "Review state", formatCanonicalLabel(object.review_status || "unknown"));
+  appendCanonicalMetadata(badges, "Confidence", formatCanonicalLabel(object.confidence || "unrated"));
+  appendCanonicalMetadata(badges, "Importance", object.importance ?? 0);
   if (object.source_count !== undefined) {
-    appendCanonicalBadge(badges, `${object.source_count} source${Number(object.source_count) === 1 ? "" : "s"}`, "search-badge");
+    appendCanonicalMetadata(badges, "Sources", `${object.source_count} source${Number(object.source_count) === 1 ? "" : "s"}`);
+  }
+  appendCanonicalMetadata(badges, "Canonical ID", normalizedId);
+  if (object.updated_at || object.last_updated) {
+    appendCanonicalMetadata(badges, "Last updated", object.updated_at || object.last_updated);
   }
 
   const reasonText = object.reason || object.match_type || "";
@@ -818,26 +885,7 @@ function renderCanonicalBrowserDetail(object, options = {}) {
   }
 
   if (Array.isArray(object.scripture_references) && object.scripture_references.length > 0) {
-    for (const ref of object.scripture_references) {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = "scripture-link";
-      button.textContent = ref.reference || "Scripture reference";
-      button.dataset.bibleReference = ref.reference || "";
-      button.addEventListener("click", () => openScriptureReference(ref.reference));
-
-      const note = document.createElement("span");
-      note.className = "scripture-link-note";
-      note.textContent = ref.relationship || "";
-
-      const wrapper = document.createElement("div");
-      wrapper.className = "canonical-detail-item";
-      wrapper.appendChild(button);
-      if (note.textContent) {
-        wrapper.appendChild(note);
-      }
-      scripture.appendChild(wrapper);
-    }
+    renderCanonicalScriptureReferences(scripture, object.scripture_references);
   } else {
     scripture.innerHTML = `<p class="empty">No Scripture references recorded.</p>`;
   }
@@ -848,28 +896,7 @@ function renderCanonicalBrowserDetail(object, options = {}) {
       ? object.related_objects
       : [];
   if (relatedObjects.length > 0) {
-    for (const relation of relatedObjects) {
-      const objectId = relation.id || relation.object_id || "";
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = "canonical-related-object";
-      button.textContent = relation.title || objectId || "Related object";
-      button.addEventListener("click", () => loadCanonicalObject(objectId || relation.id || ""));
-
-      const meta = document.createElement("p");
-      meta.className = "canonical-detail-meta";
-      meta.textContent = [relation.relationship, relation.weight ? `weight ${relation.weight}` : ""]
-        .filter(Boolean)
-        .join(" · ");
-
-      const wrapper = document.createElement("div");
-      wrapper.className = "canonical-detail-item";
-      wrapper.appendChild(button);
-      if (meta.textContent) {
-        wrapper.appendChild(meta);
-      }
-      related.appendChild(wrapper);
-    }
+    renderCanonicalRelationships(related, relatedObjects);
   } else {
     related.innerHTML = `<p class="empty">No related objects recorded.</p>`;
   }
@@ -915,8 +942,18 @@ function renderCanonicalBrowserDetail(object, options = {}) {
 
       sources.appendChild(article);
     }
+    if (sourceCount) {
+      sourceCount.textContent = `${object.sources.length} source${object.sources.length === 1 ? "" : "s"}`;
+    }
   } else {
     sources.innerHTML = `<p class="empty">No sources recorded.</p>`;
+    if (sourceCount) {
+      sourceCount.textContent = "0 sources";
+    }
+  }
+
+  if (notes) {
+    renderCanonicalLinkedNotes(notes, normalizedId);
   }
 
   if (options.error && reason) {
@@ -925,6 +962,192 @@ function renderCanonicalBrowserDetail(object, options = {}) {
   }
 
   renderCanonicalBrowserResults(currentCanonicalBrowser.results);
+}
+
+function canonicalBrowserHasActiveFilters(type, reviewStatus, contentStatus, includePlaceholders) {
+  return Boolean(
+    (type && type !== "all")
+    || (reviewStatus && reviewStatus !== "all")
+    || (contentStatus && contentStatus !== "all")
+    || includePlaceholders === false
+  );
+}
+
+function canonicalResultMetadata(item) {
+  const parts = [
+    formatCanonicalLabel(item.type || "unknown"),
+    `Importance ${item.importance ?? 0}`,
+  ];
+  if (item.source_count !== undefined) {
+    parts.push(`${item.source_count} source${Number(item.source_count) === 1 ? "" : "s"}`);
+  }
+  if (item.content_status && item.content_status !== "complete") {
+    parts.push(formatCanonicalLabel(item.content_status));
+  }
+  return parts;
+}
+
+function appendCanonicalMetadata(container, label, value) {
+  if (!container || value === null || value === undefined || String(value).trim() === "") {
+    return;
+  }
+  const item = document.createElement("div");
+  item.className = "canonical-metadata-item";
+
+  const term = document.createElement("dt");
+  term.textContent = label;
+
+  const description = document.createElement("dd");
+  description.textContent = String(value);
+
+  item.appendChild(term);
+  item.appendChild(description);
+  container.appendChild(item);
+}
+
+function renderCanonicalScriptureReferences(container, references) {
+  const groups = new Map();
+  for (const ref of references) {
+    const relationship = String(ref.relationship || "other").trim().toLowerCase() || "other";
+    if (!groups.has(relationship)) {
+      groups.set(relationship, []);
+    }
+    groups.get(relationship).push(ref);
+  }
+
+  const orderedKeys = [
+    ...["primary", "primary passage", "main"].filter((key) => groups.has(key)),
+    ...["supporting", "support", "secondary"].filter((key) => groups.has(key)),
+    ...Array.from(groups.keys()).filter((key) => !["primary", "primary passage", "main", "supporting", "support", "secondary"].includes(key)),
+  ];
+
+  for (const key of orderedKeys) {
+    const groupReferences = groups.get(key) || [];
+    const section = document.createElement("section");
+    section.className = "canonical-reference-group";
+
+    const heading = document.createElement("h5");
+    heading.textContent = canonicalScriptureGroupLabel(key, groupReferences.length);
+    section.appendChild(heading);
+
+    const list = document.createElement("div");
+    list.className = "canonical-reference-list";
+    for (const ref of groupReferences) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "scripture-link canonical-detail-item";
+      button.dataset.bibleReference = ref.reference || "";
+      button.addEventListener("click", () => openScriptureReference(ref.reference));
+
+      const reference = document.createElement("span");
+      reference.className = "canonical-reference-text";
+      reference.textContent = ref.reference || "Scripture reference";
+      button.appendChild(reference);
+
+      if (ref.notes) {
+        const note = document.createElement("span");
+        note.className = "scripture-link-note";
+        note.textContent = ref.notes;
+        button.appendChild(note);
+      }
+      list.appendChild(button);
+    }
+
+    section.appendChild(list);
+    container.appendChild(section);
+  }
+}
+
+function canonicalScriptureGroupLabel(key, count) {
+  if (["primary", "primary passage", "main"].includes(key)) {
+    return count === 1 ? "Primary passage" : "Primary passages";
+  }
+  if (["supporting", "support", "secondary"].includes(key)) {
+    return "Supporting passages";
+  }
+  return formatCanonicalLabel(key);
+}
+
+function renderCanonicalRelationships(container, relationships) {
+  const groups = new Map();
+  for (const relation of relationships) {
+    const relationship = String(relation.relationship || "related").trim() || "related";
+    if (!groups.has(relationship)) {
+      groups.set(relationship, []);
+    }
+    groups.get(relationship).push(relation);
+  }
+
+  for (const [relationship, items] of groups.entries()) {
+    const section = document.createElement("section");
+    section.className = "canonical-relationship-group";
+
+    const heading = document.createElement("h5");
+    heading.textContent = formatCanonicalLabel(relationship);
+    section.appendChild(heading);
+
+    const list = document.createElement("div");
+    list.className = "canonical-relationship-list";
+    for (const relation of items) {
+      const objectId = relation.id || relation.object_id || "";
+      const wrapper = document.createElement("div");
+      wrapper.className = "canonical-detail-item canonical-related-row";
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "canonical-related-object";
+      button.textContent = relation.title || objectId || "Related object";
+      button.addEventListener("click", () => loadCanonicalObject(objectId || relation.id || "").catch(() => {}));
+      wrapper.appendChild(button);
+
+      const metaParts = [
+        relation.type ? formatCanonicalLabel(relation.type) : "",
+        relation.review_status ? formatCanonicalLabel(relation.review_status) : "",
+        relation.weight ? `Weight ${relation.weight}` : "",
+      ].filter(Boolean);
+      if (metaParts.length > 0) {
+        const meta = document.createElement("p");
+        meta.className = "canonical-detail-meta";
+        meta.textContent = metaParts.join(" · ");
+        wrapper.appendChild(meta);
+      }
+
+      if (relation.notes || relation.summary) {
+        const note = document.createElement("p");
+        note.className = "canonical-detail-notes";
+        note.textContent = relation.notes || relation.summary;
+        wrapper.appendChild(note);
+      }
+      list.appendChild(wrapper);
+    }
+
+    section.appendChild(list);
+    container.appendChild(section);
+  }
+}
+
+function renderCanonicalLinkedNotes(container, objectId) {
+  const linkedNotes = typeof currentNotes !== "undefined" && Array.isArray(currentNotes)
+    ? currentNotes.filter((note) => canonicalObjectIdsFromInput(note.canonical_object_ids || []).includes(objectId))
+    : [];
+  if (linkedNotes.length === 0) {
+    container.innerHTML = `<p class="empty">No notes linked to this object yet.</p>`;
+    return;
+  }
+  for (const note of linkedNotes) {
+    const article = document.createElement("article");
+    article.className = "canonical-linked-note";
+
+    const reference = document.createElement("h5");
+    reference.textContent = formatReference(note.book, note.chapter, note.start_verse, note.end_verse);
+    article.appendChild(reference);
+
+    const body = document.createElement("p");
+    body.textContent = note.body || "Linked note";
+    article.appendChild(body);
+
+    container.appendChild(article);
+  }
 }
 
 function showCanonicalBrowserError(message) {
