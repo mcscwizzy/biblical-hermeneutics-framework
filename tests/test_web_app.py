@@ -625,7 +625,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("translation-import-button", index_html)
         self.assertIn("Loading translations...", index_html)
         self.assertIn('name="reader_translation"', index_html)
-        self.assertIn("static_asset('/style.css') }}?v=20260724b", index_html)
+        self.assertIn("static_asset('/style.css') }}?v=20260724c", index_html)
         self.assertIn("static_asset('/htmx-lite.js') }}?v=20260724e", index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
@@ -656,6 +656,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn(".canonical-context-details", style)
         self.assertIn(".answer-canonical-context", style)
         self.assertIn(".scripture-link", style)
+        self.assertIn(".scripture-link.canonical-detail-item {\n  border-color: #b8cfe1;\n  background: #fff;\n  color: var(--page-text);", style)
+        self.assertIn('html[data-theme="dark"] .scripture-link.canonical-detail-item {\n  border-color: var(--border-strong);', style)
         self.assertIn(".canonical-note-links", style)
         self.assertIn(".word-study-facts", style)
         self.assertIn(".word-study-scholar", style)
@@ -845,7 +847,7 @@ class WebAppTests(unittest.TestCase):
         )
 
         self.assertEqual(response["status"], 200)
-        self.assertIn('href="/static/style.css?v=20260724b"', response["body"])
+        self.assertIn('href="/static/style.css?v=20260724c"', response["body"])
         self.assertIn('src="/static/htmx-lite.js?v=20260724e"', response["body"])
         self.assertIn('href="/static/vendor/leaflet/leaflet.css"', response["body"])
         self.assertNotIn("http://bhf.thewalkerclan.synology.me/static/", response["body"])
