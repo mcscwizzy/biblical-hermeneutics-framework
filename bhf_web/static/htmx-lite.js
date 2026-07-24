@@ -211,13 +211,14 @@ async function initializeReader() {
   if (translationSelect) {
     translationSelect.addEventListener("change", async () => {
       const requestedTranslation = String(translationSelect.value || "asv").toLowerCase();
+      const previousTranslation = selectedTranslationId();
       try {
-        setSelectedTranslationId(requestedTranslation);
+        await persistReaderDefaultTranslation(requestedTranslation);
         await loadReaderChapter(bookSelect.value, chapterSelect.value);
       } catch (error) {
-        setSelectedTranslationId("asv");
-        translationSelect.value = "asv";
-        reader.innerHTML = errorHtml(error.message || "Could not download translation.");
+        setSelectedTranslationId(previousTranslation);
+        translationSelect.value = previousTranslation;
+        reader.innerHTML = errorHtml(error.message || "Could not update translation.");
       }
     });
   }
@@ -1420,6 +1421,44 @@ function setSelectedTranslationId(id) {
   syncTranslationSelect(selected);
 }
 
+async function persistReaderDefaultTranslation(id) {
+  const normalized = String(id || "asv").toLowerCase();
+  const payload = await requestJson(
+    "/api/settings/reader",
+    {
+      method: "PUT",
+      headers: { "Accept": "application/json", "Content-Type": "application/json" },
+      body: JSON.stringify({ default_translation: normalized }),
+    },
+    "Could not update default translation."
+  );
+  const persisted = String(payload.default_translation || normalized).toLowerCase();
+  updateTranslationCatalogDefault(persisted);
+  setSelectedTranslationId(persisted);
+  return persisted;
+}
+
+function updateTranslationCatalogDefault(id) {
+  const normalized = String(id || "asv").toLowerCase();
+  if (!translationCatalogState) {
+    return;
+  }
+  translationCatalogState.default_translation = normalized;
+  const markDefault = (entries) => {
+    if (!Array.isArray(entries)) {
+      return;
+    }
+    for (const entry of entries) {
+      entry.default = String(entry.id || "").toLowerCase() === normalized;
+    }
+  };
+  markDefault(translationCatalogState.translations);
+  markDefault(translationCatalogState.catalog);
+  for (const entries of Object.values(translationCatalogState.sections || {})) {
+    markDefault(entries);
+  }
+}
+
 function readLocalStorageValue(key) {
   try {
     return window.localStorage?.getItem(key);
@@ -1451,7 +1490,7 @@ async function handleTranslationSelectorDialogClick(event) {
 
   if (download) {
     await downloadTranslationFromGithub(download.dataset.translationDownload);
-    setSelectedTranslationId(download.dataset.translationDownload);
+    await persistReaderDefaultTranslation(download.dataset.translationDownload);
     translationCatalogState = await requestJson("/api/translations/installed", {}, "Could not load translations.");
     renderTranslationSelector(translationCatalogState);
     closeTranslationSelector();
@@ -1459,22 +1498,13 @@ async function handleTranslationSelectorDialogClick(event) {
     return;
   }
   if (select) {
-    setSelectedTranslationId(select.dataset.translationSelect);
+    await persistReaderDefaultTranslation(select.dataset.translationSelect);
     closeTranslationSelector();
     await reloadCurrentReaderChapter();
     return;
   }
   if (makeDefault) {
-    await requestJson(
-      "/api/settings/reader",
-      {
-        method: "PUT",
-        headers: { "Accept": "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify({ default_translation: makeDefault.dataset.translationMakeDefault }),
-      },
-      "Could not update default translation."
-    );
-    setSelectedTranslationId(makeDefault.dataset.translationMakeDefault);
+    await persistReaderDefaultTranslation(makeDefault.dataset.translationMakeDefault);
     renderTranslationSelector(translationCatalogState);
     closeTranslationSelector();
     await reloadCurrentReaderChapter();
@@ -1634,7 +1664,7 @@ async function importTranslationXml() {
   );
   translationCatalogState = await requestJson("/api/translations/installed", {}, "Could not load translations.");
   installImportedTranslation(normalized);
-  setSelectedTranslationId(normalized);
+  await persistReaderDefaultTranslation(normalized);
   return result;
 }
 

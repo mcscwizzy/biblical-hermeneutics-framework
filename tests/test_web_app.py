@@ -13,7 +13,7 @@ from urllib.parse import quote_plus, urlencode
 from unittest.mock import patch
 
 from bhf_agent.config import AgentConfig, CanonicalLibraryConfig, ConfigError
-from bhf_agent import translation_storage
+from bhf_agent import translation_settings, translation_storage
 from bhf_agent.bible import load_kjv_bible
 from bhf_agent.models import (
     AgentResult,
@@ -366,6 +366,9 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("workspaceTabsForSection", script)
         self.assertIn("syncWorkspaceTabsForSection", script)
         self.assertIn("BHF_TRANSLATION_STORAGE_KEY", script)
+        self.assertIn("persistReaderDefaultTranslation", script)
+        self.assertIn("/api/settings/reader", script)
+        self.assertIn("await persistReaderDefaultTranslation(requestedTranslation)", script)
         self.assertIn("data-reader-translation", script)
         self.assertIn("data-translation-select", script)
         self.assertIn("data-translation-download", script)
@@ -623,7 +626,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("Loading translations...", index_html)
         self.assertIn('name="reader_translation"', index_html)
         self.assertIn("static_asset('/style.css') }}?v=20260724b", index_html)
-        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260724d", index_html)
+        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260724e", index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
@@ -843,7 +846,7 @@ class WebAppTests(unittest.TestCase):
 
         self.assertEqual(response["status"], 200)
         self.assertIn('href="/static/style.css?v=20260724b"', response["body"])
-        self.assertIn('src="/static/htmx-lite.js?v=20260724d"', response["body"])
+        self.assertIn('src="/static/htmx-lite.js?v=20260724e"', response["body"])
         self.assertIn('href="/static/vendor/leaflet/leaflet.css"', response["body"])
         self.assertNotIn("http://bhf.thewalkerclan.synology.me/static/", response["body"])
 
@@ -1700,6 +1703,42 @@ class WebAppTests(unittest.TestCase):
         data = json.loads(response["body"])
         self.assertEqual(data["books"][0]["name"], "Genesis")
         self.assertEqual(data["books"][-1]["name"], "Revelation")
+
+    def test_reader_settings_route_persists_installed_translation_default(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            translations_path = root / "translations"
+            settings_path = root / "reader-settings.json"
+            with patch.object(translation_storage, "TRANSLATIONS_PATH", translations_path), patch.object(
+                translation_settings,
+                "SETTINGS_PATH",
+                settings_path,
+            ):
+                translation_storage.write_json_atomic(translations_path / "kjv.json", load_kjv_bible())
+                translation_storage.write_json_atomic(
+                    translations_path / "kjv.metadata.json",
+                    {
+                        "translation_id": "kjv",
+                        "name": "King James Version",
+                        "source_type": "beblia_xml",
+                        "installed_at": "2026-07-17T00:00:00Z",
+                        "license_status": "public_domain_us",
+                    },
+                )
+
+                response = asgi_request("PUT", "/api/settings/reader", json_data={"default_translation": "kjv"})
+                settings_response = asgi_request("GET", "/api/settings/reader")
+                translations_response = asgi_request("GET", "/api/translations")
+                index_response = asgi_request("GET", "/")
+
+        self.assertEqual(response["status"], 200)
+        self.assertEqual(json.loads(response["body"])["default_translation"], "kjv")
+        self.assertEqual(json.loads(settings_response["body"])["default_translation"], "kjv")
+        translations = json.loads(translations_response["body"])
+        self.assertEqual(translations["default_translation"], "kjv")
+        self.assertTrue(next(entry for entry in translations["translations"] if entry["id"] == "kjv")["default"])
+        self.assertIn('data-default-translation="kjv"', index_response["body"])
+        self.assertIn('name="reader_translation" value="kjv"', index_response["body"])
 
     def test_translation_catalog_route_returns_curated_sections(self):
         with tempfile.TemporaryDirectory() as tmpdir, patch.object(
