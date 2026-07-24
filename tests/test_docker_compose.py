@@ -12,10 +12,12 @@ class DockerComposeTests(unittest.TestCase):
         self.assertIn("ollama", data["services"])
         self.assertIn("ollama-init", data["services"])
         self.assertIn("bhf-web", data["services"])
+        self.assertIn("bhf-https-proxy", data["services"])
 
         ollama = data["services"]["ollama"]
         init = data["services"]["ollama-init"]
         web = data["services"]["bhf-web"]
+        proxy = data["services"]["bhf-https-proxy"]
 
         self.assertEqual(ollama["image"], "ollama/ollama:latest")
         self.assertEqual(ollama["ports"], ["11434:11434"])
@@ -26,15 +28,6 @@ class DockerComposeTests(unittest.TestCase):
         self.assertEqual(web["depends_on"]["ollama"]["condition"], "service_healthy")
         self.assertEqual(web["depends_on"]["ollama-init"]["condition"], "service_completed_successfully")
         self.assertEqual(init["depends_on"]["ollama"]["condition"], "service_healthy")
-
-    def test_https_compose_adds_nginx_reverse_proxy(self):
-        data = yaml.safe_load(Path("docker-compose.https.yml").read_text(encoding="utf-8"))
-
-        self.assertIn("services", data)
-        self.assertIn("bhf-https-proxy", data["services"])
-
-        proxy = data["services"]["bhf-https-proxy"]
-
         self.assertEqual(proxy["image"], "nginx:1.27-alpine")
         self.assertEqual(proxy["ports"], ["${BHF_HTTPS_PORT:-8443}:443"])
         self.assertEqual(proxy["depends_on"]["bhf-web"]["condition"], "service_healthy")

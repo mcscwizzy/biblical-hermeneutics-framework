@@ -20,6 +20,7 @@ cp .env.example .env
 Start the full stack:
 
 ```bash
+./scripts/generate-local-cert.sh
 docker compose up -d --build
 ```
 
@@ -27,6 +28,7 @@ Open:
 
 ```text
 http://localhost:8080
+https://localhost:8443
 ```
 
 The container starts:
@@ -37,17 +39,18 @@ uvicorn bhf_web.app:app --host 0.0.0.0 --port 8080
 
 ## Local HTTPS
 
-For browser features that require a secure context, use the optional Nginx
-reverse proxy overlay. Generate a local self-signed certificate first:
+The Docker stack includes an Nginx reverse proxy for browser features that
+require a secure context. Generate a local self-signed certificate before
+starting Compose:
 
 ```bash
 ./scripts/generate-local-cert.sh
 ```
 
-Then start Compose with the HTTPS overlay:
+Then start Compose normally:
 
 ```bash
-docker compose -f docker-compose.yml -f docker-compose.https.yml up -d --build
+docker compose up -d --build
 ```
 
 Open:
@@ -229,15 +232,17 @@ mkdir -p .bhf/sessions
 
 ## LAN Access
 
-The compose file publishes the UI on the host port configured by `BHF_PORT`
-and defaults to `8080`.
+The compose file publishes the HTTP UI on the host port configured by
+`BHF_PORT` and defaults to `8080`. It publishes local HTTPS on the host port
+configured by `BHF_HTTPS_PORT` and defaults to `8443`.
 
 From another trusted device on your LAN, open:
 
 ```text
 http://YOUR_HOST_LAN_IP:8080
+https://YOUR_HOST_LAN_IP:8443
 ```
 
 This setup is intended for trusted local or LAN use only. It has no
-authentication, HTTPS termination, account system, rate limiting, or public
-internet hardening. Do not expose it directly to the public internet.
+authentication, account system, rate limiting, or public internet hardening.
+Do not expose it directly to the public internet.
