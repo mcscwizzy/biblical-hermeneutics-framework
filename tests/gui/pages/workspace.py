@@ -33,7 +33,7 @@ class WorkspacePage(BasePage):
                 self.driver.execute_script("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", trigger)
                 self.driver.execute_script("arguments[0].click();", trigger)
                 return self
-        raise AssertionError("No reader settings trigger is visible")
+        raise AssertionError("No settings trigger is visible")
 
     def toggle_dark_mode(self):
         self.open_reader_settings()
@@ -48,7 +48,7 @@ class WorkspacePage(BasePage):
         return self
 
     def toggle_expand_workspace(self):
-        self.open_reader_settings()
-        self.click('[data-testid="mobile-workspace-expand-toggle"]')
-        self.wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "#reader-controls-sheet[open]")))
+        toggle = self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-testid="workspace-expand-toggle"]')))
+        self.driver.execute_script("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", toggle)
+        self.driver.execute_script("arguments[0].click();", toggle)
         return self

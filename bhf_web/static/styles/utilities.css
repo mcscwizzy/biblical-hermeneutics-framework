@@ -494,9 +494,9 @@ code {
   bottom: max(12px, env(safe-area-inset-bottom));
   z-index: 10002;
   display: grid;
-  grid-template-columns: repeat(5, minmax(76px, 1fr));
+  grid-template-columns: repeat(5, minmax(76px, 1fr)) minmax(108px, auto);
   gap: 6px;
-  width: min(540px, calc(100% - 24px));
+  width: min(660px, calc(100% - 24px));
   min-height: var(--app-dock-height);
   padding: 8px;
   border: 1px solid var(--border);
@@ -549,13 +549,22 @@ html[data-theme="dark"] .app-dock {
     left: 0;
     width: auto;
     min-height: var(--app-dock-height);
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr)) 44px;
     padding: 8px max(8px, env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left));
     border-inline: 0;
     border-bottom: 0;
     border-radius: 0;
     box-shadow: 0 -10px 24px rgb(17 30 41 / 10%);
     transform: none;
+  }
+
+  .app-dock-utility {
+    width: 44px;
+    padding: 0;
+  }
+
+  .app-dock-utility-label {
+    display: none;
   }
 
   body.app-dock-hidden-at-bottom .app-dock {
@@ -628,13 +637,18 @@ html[data-theme="dark"] .app-dock {
     overflow: hidden;
   }
 
-  .workspace-tab-bar {
+  .workspace-toolbar {
     top: 0;
     padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .workspace-tab-bar {
     gap: 6px;
   }
 
-  .workspace-tab {
+  .workspace-tab,
+  .workspace-action-button {
     min-height: 42px;
     padding-inline: 12px;
   }
@@ -855,7 +869,8 @@ html[data-theme="dark"] .map-ai-panel,
 html[data-theme="dark"] .reader-search-results,
 html[data-theme="dark"] .search-result-card,
 html[data-theme="dark"] .workspace-panel,
-html[data-theme="dark"] .workspace-tab-bar,
+html[data-theme="dark"] .workspace-toolbar,
+html[data-theme="dark"] .workspace-action-button,
 html[data-theme="dark"] .workspace-pane-empty,
 html[data-theme="dark"] .curation-import,
 html[data-theme="dark"] .curation-section,
@@ -1003,18 +1018,24 @@ html[data-theme="dark"] .map-panel-status[data-state="error"] {
 }
 
 .app-dock-utility {
-  display: none;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 6px;
   min-height: 46px;
-  width: 46px;
-  padding: 0;
+  padding: 0 12px;
   border: 1px solid var(--border-strong);
   border-radius: 12px;
   background: var(--surface);
   color: var(--page-muted);
   font-size: 1.08rem;
   line-height: 1;
+}
+
+.app-dock-utility-label {
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1.1;
 }
 
 .app-dock-utility:hover,
@@ -1330,7 +1351,12 @@ html[data-theme="dark"] button.reader-setting-action:disabled {
     display: inline-flex;
     min-height: 44px;
     width: 44px;
+    padding: 0;
     font-size: 1rem;
+  }
+
+  .app-dock-utility-label {
+    display: none;
   }
 }
 

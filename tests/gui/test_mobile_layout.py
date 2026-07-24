@@ -43,6 +43,31 @@ def _click_context_action(driver, wait, action: str):
     button.click()
 
 
+def _assert_mobile_context_menu_leaves_room_for_submenu(driver, wait):
+    menu = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#reader-context-menu")))
+    trigger = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-context-submenu="reference"]')))
+    trigger.click()
+    submenu = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[aria-label="Reference actions"]')))
+    rects = driver.execute_script(
+        """
+        const menu = arguments[0].getBoundingClientRect();
+        const submenu = arguments[1].getBoundingClientRect();
+        return {
+          menu: { left: menu.left, right: menu.right },
+          submenu: { left: submenu.left, right: submenu.right },
+          viewportWidth: window.innerWidth,
+          opensLeft: arguments[0].classList.contains("opens-left")
+        };
+        """,
+        menu,
+        submenu,
+    )
+    assert rects["menu"]["left"] <= 12
+    assert rects["submenu"]["left"] >= rects["menu"]["right"] - 4
+    assert rects["submenu"]["right"] <= rects["viewportWidth"] - 8
+    assert rects["opensLeft"] is False
+
+
 def test_mobile_branding_and_header_controls_are_compact(driver, wait, base_url):
     _set_mobile_viewport(driver)
     HomePage(driver, wait, base_url).open().wait_loaded()
@@ -98,10 +123,10 @@ def test_mobile_reader_settings_sheet_controls_existing_state(driver, wait, base
     assert trigger.is_displayed()
     trigger.click()
     sheet = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#reader-controls-sheet[open]")))
-    assert "Reader settings" in sheet.text
+    assert "Settings" in sheet.text
     assert "Appearance" in sheet.text
     assert "Reader mode" in sheet.text
-    assert "Expand workspace" in sheet.text
+    assert "Expand workspace" not in sheet.text
 
     sheet.find_element(By.CSS_SELECTOR, '[data-testid="mobile-theme-toggle"]').click()
     wait.until(lambda _driver: _driver.execute_script("return document.documentElement.dataset.theme") == "dark")
@@ -120,9 +145,7 @@ def test_mobile_reader_settings_sheet_controls_existing_state(driver, wait, base
     page.open_tab("context")
     page.assert_tab_visible("context")
     wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "ask")
-    trigger = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-testid="reader-controls-trigger"]')))
-    trigger.click()
-    workspace_toggle = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-testid="mobile-workspace-expand-toggle"]')))
+    workspace_toggle = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-testid="workspace-expand-toggle"]')))
     assert workspace_toggle.is_enabled()
     workspace_toggle.click()
     wait.until(lambda _driver: "workspace-expanded" in _driver.find_element(By.TAG_NAME, "body").get_attribute("class"))
@@ -185,7 +208,8 @@ def test_reader_responsive_widths_do_not_overflow(driver, wait, base_url, width,
         assert _hidden_or_absent(driver, '[data-testid="theme-toggle"]')
         assert driver.find_element(By.CSS_SELECTOR, '[data-testid="reader-controls-trigger"]').is_displayed()
     else:
-        assert driver.find_element(By.CSS_SELECTOR, '[data-testid="desktop-reader-controls-trigger"]').is_displayed()
+        assert _hidden_or_absent(driver, '[data-testid="desktop-reader-controls-trigger"]')
+        assert driver.find_element(By.CSS_SELECTOR, '[data-testid="reader-controls-trigger"]').is_displayed()
 
 
 def test_app_dock_hides_at_page_bottom_on_mobile(driver, wait, base_url):
@@ -284,6 +308,7 @@ def test_mobile_verse_actions_support_notes_and_highlights(driver, wait, base_ur
     _scroll_to_center(driver, action_button)
     action_button.click()
     wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#reader-context-menu")))
+    _assert_mobile_context_menu_leaves_room_for_submenu(driver, wait)
     _click_context_action(driver, wait, "note")
     note_editor = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="note-editor"]')))
     textarea = note_editor.find_element(By.CSS_SELECTOR, '[data-testid="note-textarea"]')

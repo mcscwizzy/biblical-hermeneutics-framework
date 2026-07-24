@@ -401,7 +401,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("handleContextSubmenuHover", script)
         self.assertIn("openContextSubmenu", script)
         self.assertIn('window.matchMedia("(max-width: 680px)").matches', script)
-        self.assertIn('(window.innerWidth - menuWidth) / 2', script)
+        self.assertIn('menu.style.left = "8px";', script)
 
         study_script = Path("bhf_web/static/htmx-study-panels.js").read_text(encoding="utf-8")
         self.assertIn("/api/highlights", study_script)
@@ -622,8 +622,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("translation-import-button", index_html)
         self.assertIn("Loading translations...", index_html)
         self.assertIn('name="reader_translation"', index_html)
-        self.assertIn("static_asset('/style.css') }}?v=20260724a", index_html)
-        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260724b", index_html)
+        self.assertIn("static_asset('/style.css') }}?v=20260724b", index_html)
+        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260724d", index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
@@ -748,7 +748,10 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("Loading translations...", response["body"])
         self.assertIn('name="reader_translation"', response["body"])
         self.assertIn("Scripture", response["body"])
-        self.assertIn("desktop-reader-controls-trigger", response["body"])
+        self.assertNotIn("desktop-reader-controls-trigger", response["body"])
+        self.assertIn("reader-controls-trigger", response["body"])
+        self.assertIn("workspace-expand-toggle", response["body"])
+        self.assertIn(">Settings<", response["body"])
         self.assertIn("data-workspace-tab-bar", response["body"])
         self.assertIn("workspace-tab-context", response["body"])
         self.assertIn("workspace-pane-context", response["body"])
@@ -839,8 +842,8 @@ class WebAppTests(unittest.TestCase):
         )
 
         self.assertEqual(response["status"], 200)
-        self.assertIn('href="/static/style.css?v=20260724a"', response["body"])
-        self.assertIn('src="/static/htmx-lite.js?v=20260724b"', response["body"])
+        self.assertIn('href="/static/style.css?v=20260724b"', response["body"])
+        self.assertIn('src="/static/htmx-lite.js?v=20260724d"', response["body"])
         self.assertIn('href="/static/vendor/leaflet/leaflet.css"', response["body"])
         self.assertNotIn("http://bhf.thewalkerclan.synology.me/static/", response["body"])
 

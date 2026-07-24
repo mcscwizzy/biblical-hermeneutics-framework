@@ -362,7 +362,6 @@ function activateAppSection(sectionId, options = {}) {
   document.body.dataset.appSection = nextSection;
   syncAppDockState(nextSection);
   syncWorkspaceTabsForSection(nextSection);
-  syncReaderControlsSheetAvailability();
 
   if (options.persist !== false) {
     persistAppSection(nextSection);
@@ -376,7 +375,6 @@ function activateAppSection(sectionId, options = {}) {
   if (nextSection === "explore") {
     ensureExploreMapBrowserOpen();
   }
-  syncReaderControlsSheetAvailability();
   scheduleAppDockVisibilityUpdate();
 }
 
@@ -625,16 +623,18 @@ function applyWorkspaceExpansion(enabled) {
   }
   const toggles = document.querySelectorAll("[data-workspace-expand-toggle]");
   for (const toggle of toggles) {
+    const accessibleLabel = nextEnabled ? "Collapse workspace" : "Expand workspace";
     setControlLabel(
       toggle,
       nextEnabled ? "Collapse" : "Expand",
-      nextEnabled ? "Collapse workspace" : "Expand workspace"
+      accessibleLabel
     );
     setControlStatus(toggle, `Current value: ${nextEnabled ? "Expanded" : "Collapsed"}`);
+    toggle.setAttribute("aria-label", accessibleLabel);
+    toggle.setAttribute("title", accessibleLabel);
     toggle.setAttribute("aria-pressed", String(nextEnabled));
     toggle.setAttribute("aria-expanded", String(nextEnabled));
   }
-  syncReaderControlsSheetAvailability();
 }
 
 function toggleWorkspaceExpansion() {
@@ -802,7 +802,7 @@ function initializeReaderControlsSheet() {
       closeReaderControlsSheet();
       return;
     }
-    const action = event.target.closest("[data-theme-toggle], [data-reader-mode-toggle], [data-workspace-expand-toggle]");
+    const action = event.target.closest("[data-theme-toggle], [data-reader-mode-toggle]");
     if (action && sheet.contains(action) && !action.disabled) {
       window.setTimeout(closeReaderControlsSheet, 0);
     }
@@ -816,7 +816,6 @@ function initializeReaderControlsSheet() {
     readerControlsTrigger = null;
   });
 
-  syncReaderControlsSheetAvailability();
 }
 
 function openReaderControlsSheet(trigger) {
@@ -825,7 +824,6 @@ function openReaderControlsSheet(trigger) {
     return;
   }
   readerControlsTrigger = trigger || document.activeElement;
-  syncReaderControlsSheetAvailability();
   if (sheet.open) {
     return;
   }
@@ -852,22 +850,6 @@ function closeReaderControlsSheet() {
     }
     readerControlsTrigger = null;
   }
-}
-
-function syncReaderControlsSheetAvailability() {
-  const compact = isCompactViewport();
-  const activeSection = normalizeAppSection(appSection || document.body.dataset.appSection || "bible");
-  const workspaceUnavailable = compact && activeSection === "bible";
-  document.querySelectorAll("[data-reader-settings-workspace]").forEach((button) => {
-    button.disabled = workspaceUnavailable;
-    button.setAttribute("aria-disabled", String(workspaceUnavailable));
-    const hint = button.querySelector("[data-control-hint]");
-    if (!hint) {
-      return;
-    }
-    hint.hidden = !workspaceUnavailable;
-    hint.textContent = workspaceUnavailable ? "Open Ask, Notes, Studies, or Explore first." : "";
-  });
 }
 
 function workspaceTabsForSection(sectionId) {
@@ -2200,7 +2182,7 @@ function positionContextMenu(menu, x, y) {
   const menuWidth = Math.min(rect.width, window.innerWidth - 16);
   if (isNarrowViewport) {
     const menuHeight = Math.min(rect.height, window.innerHeight - 16);
-    menu.style.left = `${Math.max(8, (window.innerWidth - menuWidth) / 2)}px`;
+    menu.style.left = "8px";
     menu.style.top = `${Math.max(8, (window.innerHeight - menuHeight) / 2)}px`;
     menu.classList.remove("opens-left");
     return;
