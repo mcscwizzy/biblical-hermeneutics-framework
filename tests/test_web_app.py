@@ -620,8 +620,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("translation-import-button", index_html)
         self.assertIn("Loading translations...", index_html)
         self.assertIn('name="reader_translation"', index_html)
-        self.assertIn("style.css') }}?v=20260721b", index_html)
-        self.assertIn("htmx-lite.js') }}?v=20260724a", index_html)
+        self.assertIn("static_asset('/style.css') }}?v=20260721b", index_html)
+        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260724a", index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
@@ -824,6 +824,22 @@ class WebAppTests(unittest.TestCase):
         self.assertNotIn("progress-track", response["body"])
         self.assertNotIn("data-total-elapsed", response["body"])
         self.assertNotIn("status-percent", response["body"])
+
+    def test_index_static_assets_are_same_origin_behind_https_proxy(self):
+        response = asgi_request(
+            "GET",
+            "/",
+            headers={
+                "host": "bhf.thewalkerclan.synology.me",
+                "x-forwarded-proto": "https",
+            },
+        )
+
+        self.assertEqual(response["status"], 200)
+        self.assertIn('href="/static/style.css?v=20260721b"', response["body"])
+        self.assertIn('src="/static/htmx-lite.js?v=20260724a"', response["body"])
+        self.assertIn('href="/static/vendor/leaflet/leaflet.css"', response["body"])
+        self.assertNotIn("http://bhf.thewalkerclan.synology.me/static/", response["body"])
 
     def test_manifest_and_offline_assets_load(self):
         manifest = asgi_request("GET", "/manifest.webmanifest")
@@ -2943,13 +2959,13 @@ def _history_messages(status):
     return [entry["message"] for entry in status["history"]]
 
 
-def asgi_request(method, path, data=None, json_data=None, test_app=None):
+def asgi_request(method, path, data=None, json_data=None, test_app=None, headers=None):
     target_app = test_app or app
     assert target_app is not None
-    return asyncio.run(_asgi_request(target_app, method, path, data, json_data))
+    return asyncio.run(_asgi_request(target_app, method, path, data, json_data, headers=headers))
 
 
-async def _asgi_request(target_app, method, path, data=None, json_data=None):
+async def _asgi_request(target_app, method, path, data=None, json_data=None, headers=None):
     if "?" in path:
         path, query_string = path.split("?", 1)
     else:
@@ -2960,9 +2976,18 @@ async def _asgi_request(target_app, method, path, data=None, json_data=None):
     else:
         body = urlencode(data or {}).encode("utf-8")
         content_type = b"application/x-www-form-urlencoded"
-    headers = [(b"host", b"testserver")]
+    request_headers = [(b"host", b"testserver")]
+    for header_name, header_value in (headers or {}).items():
+        encoded_name = str(header_name).lower().encode("latin-1")
+        encoded_value = str(header_value).encode("latin-1")
+        request_headers = [
+            existing
+            for existing in request_headers
+            if existing[0] != encoded_name
+        ]
+        request_headers.append((encoded_name, encoded_value))
     if body:
-        headers.extend(
+        request_headers.extend(
             [
                 (b"content-type", content_type),
                 (b"content-length", str(len(body)).encode("ascii")),
@@ -2977,7 +3002,7 @@ async def _asgi_request(target_app, method, path, data=None, json_data=None):
         "path": path,
         "raw_path": path.encode("ascii"),
         "query_string": query_string.encode("ascii"),
-        "headers": headers,
+        "headers": request_headers,
         "client": ("127.0.0.1", 123),
         "server": ("testserver", 80),
     }

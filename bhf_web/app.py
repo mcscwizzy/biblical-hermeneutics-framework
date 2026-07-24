@@ -76,9 +76,46 @@ templates = Jinja2Templates(directory=str(PACKAGE_DIR / "templates"))
 STUDY_DB_PATH = settings.STUDY_DB_PATH
 
 
+def static_asset(path: str) -> str:
+    """Return same-origin static asset paths that are safe behind HTTPS proxies."""
+    return f"/static/{path.lstrip('/')}"
+
+
+templates.env.globals["static_asset"] = static_asset
+
+
+class ForwardedProtoMiddleware:
+    def __init__(self, app):
+        self.app = app
+
+    async def __call__(self, scope, receive, send):
+        if scope.get("type") == "http":
+            forwarded_proto = _first_forwarded_header_value(
+                scope.get("headers", []),
+                b"x-forwarded-proto",
+            )
+            if forwarded_proto in {"http", "https"}:
+                scope = dict(scope)
+                scope["scheme"] = forwarded_proto
+        await self.app(scope, receive, send)
+
+
+def _first_forwarded_header_value(headers, name: bytes) -> str:
+    for header_name, header_value in headers:
+        if header_name.lower() == name:
+            return (
+                header_value.decode("latin-1")
+                .split(",", 1)[0]
+                .strip()
+                .lower()
+            )
+    return ""
+
+
 def create_app() -> FastAPI:
     runtime_config = load_runtime_config()
     web_app = FastAPI(title="BHF Bible Reader")
+    web_app.add_middleware(ForwardedProtoMiddleware)
     web_app.mount(
         "/static",
         StaticFiles(directory=str(PACKAGE_DIR / "static")),

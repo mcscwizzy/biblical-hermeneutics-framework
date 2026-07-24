@@ -6,8 +6,8 @@
   <title>BHF Bible Reader</title>
   <meta name="theme-color" content="{{ runtime_config.themeColor }}">
   <link rel="manifest" href="/manifest.webmanifest">
-  <link rel="icon" href="{{ url_for('static', path='/icons/icon-192.png') }}" type="image/png">
-  <link rel="apple-touch-icon" href="{{ url_for('static', path='/icons/apple-touch-icon.png') }}">
+  <link rel="icon" href="{{ static_asset('/icons/icon-192.png') }}" type="image/png">
+  <link rel="apple-touch-icon" href="{{ static_asset('/icons/apple-touch-icon.png') }}">
   <script>
     (() => {
       try {
@@ -25,20 +25,20 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}?v=20260721b">
-  <script src="{{ url_for('static', path='/offline/db.js') }}" defer></script>
-  <script src="{{ url_for('static', path='/api/http.js') }}" defer></script>
-  <script src="{{ url_for('static', path='/htmx-status.js') }}" defer></script>
-  <script src="{{ url_for('static', path='/htmx-study-panels.js') }}?v=20260714a" defer></script>
-  <script src="{{ url_for('static', path='/htmx-search.js') }}" defer></script>
-  <script src="{{ url_for('static', path='/htmx-lite.js') }}?v=20260724a" defer></script>
-  <script src="{{ url_for('static', path='/pwa.js') }}?v=20260724b" defer></script>
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260721b">
+  <script src="{{ static_asset('/offline/db.js') }}" defer></script>
+  <script src="{{ static_asset('/api/http.js') }}" defer></script>
+  <script src="{{ static_asset('/htmx-status.js') }}" defer></script>
+  <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260714a" defer></script>
+  <script src="{{ static_asset('/htmx-search.js') }}" defer></script>
+  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260724a" defer></script>
+  <script src="{{ static_asset('/pwa.js') }}?v=20260724b" defer></script>
   {% if not test_mode %}
-    <link rel="stylesheet" href="{{ url_for('static', path='/vendor/leaflet/leaflet.css') }}">
-    <script src="{{ url_for('static', path='/vendor/leaflet/leaflet.js') }}" defer></script>
-    <script type="module" src="{{ url_for('static', path='/maps/MapPanel.js') }}?v=20260722a"></script>
+    <link rel="stylesheet" href="{{ static_asset('/vendor/leaflet/leaflet.css') }}">
+    <script src="{{ static_asset('/vendor/leaflet/leaflet.js') }}" defer></script>
+    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260722a"></script>
   {% else %}
-    <script type="module" src="{{ url_for('static', path='/maps/MapPanel.js') }}?v=20260722a"></script>
+    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260722a"></script>
   {% endif %}
 </head>
 <body>
