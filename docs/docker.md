@@ -26,8 +26,7 @@ docker compose up -d --build
 Open:
 
 ```text
-http://localhost:8080
-https://localhost:8443
+https://localhost:8080
 ```
 
 The container starts:
@@ -50,7 +49,7 @@ docker compose up -d --build
 Open:
 
 ```text
-https://localhost:8443
+https://localhost:8080
 ```
 
 The HTTPS proxy terminates TLS and forwards requests to the app container at:
@@ -60,7 +59,8 @@ http://bhf-web:8080
 ```
 
 The default HTTPS host port is controlled by `BHF_HTTPS_PORT` and defaults to
-`8443`. The normal HTTP endpoint at `http://localhost:8080` remains available.
+`8080`. The app container still listens on `8080` inside Compose, but the host
+port is owned by the HTTPS proxy.
 
 Because the generated certificate is self-signed, your browser will show a
 local certificate warning.
@@ -75,7 +75,7 @@ docker compose up -d bhf-https-proxy
 To verify the local HTTPS endpoint without trusting the certificate:
 
 ```bash
-curl -k https://localhost:8443/api/health
+curl -k https://localhost:8080/api/health
 ```
 
 ## Ollama On The Host
@@ -231,15 +231,13 @@ mkdir -p .bhf/sessions
 
 ## LAN Access
 
-The compose file publishes the HTTP UI on the host port configured by
-`BHF_PORT` and defaults to `8080`. It publishes local HTTPS on the host port
-configured by `BHF_HTTPS_PORT` and defaults to `8443`.
+The compose file publishes local HTTPS on the host port configured by
+`BHF_HTTPS_PORT` and defaults to `8080`.
 
 From another trusted device on your LAN, open:
 
 ```text
-http://YOUR_HOST_LAN_IP:8080
-https://YOUR_HOST_LAN_IP:8443
+https://YOUR_HOST_LAN_IP:8080
 ```
 
 This setup is intended for trusted local or LAN use only. It has no

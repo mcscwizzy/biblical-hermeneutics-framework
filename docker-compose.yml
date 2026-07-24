@@ -43,8 +43,8 @@ services:
         condition: service_completed_successfully
       ollama:
         condition: service_healthy
-    ports:
-      - "${BHF_PORT:-8080}:8080"
+    expose:
+      - "8080"
     environment:
       LLM_PROVIDER: "${LLM_PROVIDER:-ollama}"
       OLLAMA_BASE_URL: "${OLLAMA_BASE_URL:-http://ollama:11434}"
@@ -83,7 +83,7 @@ services:
       bhf-web:
         condition: service_healthy
     ports:
-      - "${BHF_HTTPS_PORT:-8443}:443"
+      - "${BHF_HTTPS_PORT:-8080}:443"
     restart: unless-stopped
 
 volumes:
