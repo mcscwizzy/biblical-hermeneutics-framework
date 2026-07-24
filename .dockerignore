@@ -7,7 +7,10 @@ __pycache__/
 venv/
 env/
 node_modules/
-.bhf/
+.bhf/*
+!.bhf/certs/
+!.bhf/certs/localhost.crt
+!.bhf/certs/localhost.key
 local.config.json
 .env
 *.local
@@ -20,4 +23,3 @@ build/
 .DS_Store
 .idea/
 .vscode/
-

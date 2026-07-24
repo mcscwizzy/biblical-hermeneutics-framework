@@ -28,11 +28,12 @@ class DockerComposeTests(unittest.TestCase):
         self.assertEqual(web["depends_on"]["ollama"]["condition"], "service_healthy")
         self.assertEqual(web["depends_on"]["ollama-init"]["condition"], "service_completed_successfully")
         self.assertEqual(init["depends_on"]["ollama"]["condition"], "service_healthy")
-        self.assertEqual(proxy["image"], "nginx:1.27-alpine")
+        self.assertEqual(proxy["image"], "bhf-https-proxy:local")
+        self.assertEqual(proxy["build"]["context"], ".")
+        self.assertEqual(proxy["build"]["dockerfile"], "docker/nginx/Dockerfile")
         self.assertEqual(proxy["ports"], ["${BHF_HTTPS_PORT:-8443}:443"])
         self.assertEqual(proxy["depends_on"]["bhf-web"]["condition"], "service_healthy")
-        self.assertIn("./docker/nginx/local-https.conf:/etc/nginx/conf.d/default.conf:ro", proxy["volumes"])
-        self.assertIn("./.bhf/certs:/etc/nginx/certs:ro", proxy["volumes"])
+        self.assertNotIn("volumes", proxy)
 
     def test_https_nginx_config_proxies_to_web_app(self):
         config = Path("docker/nginx/local-https.conf").read_text(encoding="utf-8")
@@ -44,6 +45,14 @@ class DockerComposeTests(unittest.TestCase):
         self.assertIn("proxy_set_header X-Forwarded-Proto https;", config)
         self.assertIn("proxy_set_header Upgrade $http_upgrade;", config)
         self.assertIn("proxy_set_header Connection $connection_upgrade;", config)
+
+    def test_https_nginx_image_copies_local_cert_files(self):
+        dockerfile = Path("docker/nginx/Dockerfile").read_text(encoding="utf-8")
+
+        self.assertIn("FROM nginx:1.27-alpine", dockerfile)
+        self.assertIn("COPY docker/nginx/local-https.conf /etc/nginx/conf.d/default.conf", dockerfile)
+        self.assertIn("COPY .bhf/certs/localhost.crt /etc/nginx/certs/localhost.crt", dockerfile)
+        self.assertIn("COPY .bhf/certs/localhost.key /etc/nginx/certs/localhost.key", dockerfile)
 
 
 if __name__ == "__main__":
