@@ -26,6 +26,7 @@
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
   <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}?v=20260721b">
+  <script src="{{ url_for('static', path='/offline/db.js') }}" defer></script>
   <script src="{{ url_for('static', path='/api/http.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-status.js') }}" defer></script>
   <script src="{{ url_for('static', path='/htmx-study-panels.js') }}?v=20260714a" defer></script>
@@ -33,8 +34,8 @@
   <script src="{{ url_for('static', path='/htmx-lite.js') }}?v=20260721a" defer></script>
   <script src="{{ url_for('static', path='/pwa.js') }}" defer></script>
   {% if not test_mode %}
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', path='/vendor/leaflet/leaflet.css') }}">
+    <script src="{{ url_for('static', path='/vendor/leaflet/leaflet.js') }}" defer></script>
     <script type="module" src="{{ url_for('static', path='/maps/MapPanel.js') }}?v=20260722a"></script>
   {% else %}
     <script type="module" src="{{ url_for('static', path='/maps/MapPanel.js') }}?v=20260722a"></script>
@@ -766,6 +767,106 @@
           </span>
           <span class="reader-setting-value" data-control-label>Expand</span>
         </button>
+        <button type="button" class="reader-setting-action" data-pwa-install data-testid="pwa-install">
+          <span class="reader-setting-copy">
+            <span class="reader-setting-title">Install app</span>
+            <span class="reader-setting-status" data-pwa-install-status>Use the browser install menu</span>
+          </span>
+          <span class="reader-setting-value" data-pwa-install-label>Install</span>
+        </button>
+        <button type="button" class="reader-setting-action" data-pwa-update data-testid="pwa-update">
+          <span class="reader-setting-copy">
+            <span class="reader-setting-title">App update</span>
+            <span class="reader-setting-status" data-pwa-update-status>Service worker starting</span>
+          </span>
+          <span class="reader-setting-value" data-pwa-update-label>Check</span>
+        </button>
+        <button type="button" class="reader-setting-action" data-offline-storage-refresh data-testid="offline-storage">
+          <span class="reader-setting-copy">
+            <span class="reader-setting-title">Offline storage</span>
+            <span class="reader-setting-status" data-offline-storage-status>Checking storage...</span>
+          </span>
+          <span class="reader-setting-value" data-offline-storage-label>Refresh</span>
+        </button>
+        <button type="button" class="reader-setting-action" data-offline-readiness-refresh data-testid="offline-readiness">
+          <span class="reader-setting-copy">
+            <span class="reader-setting-title">Offline readiness</span>
+            <span class="reader-setting-status" data-offline-readiness-status>Checking readiness...</span>
+          </span>
+          <span class="reader-setting-value" data-offline-readiness-label>Refresh</span>
+        </button>
+        <details class="offline-readiness-details" data-offline-readiness-details>
+          <summary>Readiness checklist</summary>
+          <ul class="offline-readiness-list" data-offline-readiness-list data-testid="offline-readiness-list">
+            <li class="offline-readiness-item is-warn">
+              <span class="offline-readiness-label">Offline database</span>
+              <span class="offline-readiness-value">Checking</span>
+            </li>
+          </ul>
+        </details>
+        <button type="button" class="reader-setting-action" data-offline-refresh-all data-testid="offline-refresh-all">
+          <span class="reader-setting-copy">
+            <span class="reader-setting-title">Refresh offline data</span>
+            <span class="reader-setting-status" data-offline-refresh-all-status>Rebuild cached packs</span>
+          </span>
+          <span class="reader-setting-value" data-offline-refresh-all-label>Refresh</span>
+        </button>
+        <button type="button" class="reader-setting-action" data-offline-clear-caches data-testid="offline-clear-caches">
+          <span class="reader-setting-copy">
+            <span class="reader-setting-title">Clear offline cache</span>
+            <span class="reader-setting-status" data-offline-clear-caches-status>Preserve local records</span>
+          </span>
+          <span class="reader-setting-value" data-offline-clear-caches-label>Clear</span>
+        </button>
+        <button type="button" class="reader-setting-action" data-offline-snapshot-export data-testid="offline-snapshot-export">
+          <span class="reader-setting-copy">
+            <span class="reader-setting-title">Export offline data</span>
+            <span class="reader-setting-status" data-offline-snapshot-export-status>Save a local backup</span>
+          </span>
+          <span class="reader-setting-value" data-offline-snapshot-export-label>Export</span>
+        </button>
+        <button type="button" class="reader-setting-action" data-offline-snapshot-import data-testid="offline-snapshot-import">
+          <span class="reader-setting-copy">
+            <span class="reader-setting-title">Import offline data</span>
+            <span class="reader-setting-status" data-offline-snapshot-import-status>Restore a local backup</span>
+          </span>
+          <span class="reader-setting-value" data-offline-snapshot-import-label>Import</span>
+        </button>
+        <input type="file" class="reader-setting-file-input" data-offline-snapshot-file accept="application/json,.json" hidden>
+        <button type="button" class="reader-setting-action" data-offline-pack="study" data-testid="offline-pack-study">
+          <span class="reader-setting-copy">
+            <span class="reader-setting-title">Study pack</span>
+            <span class="reader-setting-status" data-offline-pack-status>Not installed</span>
+          </span>
+          <span class="reader-setting-value" data-offline-pack-label>Install</span>
+        </button>
+        <button type="button" class="reader-setting-action" data-offline-pack="maps" data-testid="offline-pack-maps">
+          <span class="reader-setting-copy">
+            <span class="reader-setting-title">Maps pack</span>
+            <span class="reader-setting-status" data-offline-pack-status>Not installed</span>
+          </span>
+          <span class="reader-setting-value" data-offline-pack-label>Install</span>
+        </button>
+        <button type="button" class="reader-setting-action" data-offline-pack="sources" data-testid="offline-pack-sources">
+          <span class="reader-setting-copy">
+            <span class="reader-setting-title">Sources pack</span>
+            <span class="reader-setting-status" data-offline-pack-status>Not installed</span>
+          </span>
+          <span class="reader-setting-value" data-offline-pack-label>Install</span>
+        </button>
+        <button type="button" class="reader-setting-action" data-offline-sync-retry data-testid="offline-sync-retry">
+          <span class="reader-setting-copy">
+            <span class="reader-setting-title">Offline sync</span>
+            <span class="reader-setting-status" data-offline-sync-status>Queue ready</span>
+          </span>
+          <span class="reader-setting-value" data-offline-sync-label>Retry</span>
+        </button>
+        <details class="offline-sync-details" data-offline-sync-details>
+          <summary>Queued changes</summary>
+          <div class="offline-sync-list" data-offline-sync-list data-testid="offline-sync-list">
+            <p class="offline-sync-empty">No queued offline changes.</p>
+          </div>
+        </details>
       </div>
     </div>
   </dialog>

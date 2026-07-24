@@ -198,6 +198,7 @@ def map_study_payload_from_request(payload: dict[str, Any]) -> dict[str, Any]:
         except json.JSONDecodeError:
             view_state = {}
     return {
+        "id": payload.get("id"),
         "book": payload.get("book"),
         "chapter": payload.get("chapter"),
         "start_verse": payload.get("start_verse") or payload.get("verse_start"),
@@ -207,6 +208,7 @@ def map_study_payload_from_request(payload: dict[str, Any]) -> dict[str, Any]:
         "selected_route_id": payload.get("selected_route_id"),
         "selected_layer_id": payload.get("selected_layer_id"),
         "selected_archaeology_id": payload.get("selected_archaeology_id"),
+        "selected_manuscript_id": payload.get("selected_manuscript_id"),
         "selected_layers": selected_layers,
         "map_view_state": view_state,
         "generated_summary": payload.get("generated_summary"),
@@ -216,6 +218,7 @@ def map_study_payload_from_request(payload: dict[str, Any]) -> dict[str, Any]:
 
 def map_note_payload_from_request(payload: dict[str, Any]) -> dict[str, Any]:
     return {
+        "id": payload.get("id"),
         "book": payload.get("book"),
         "chapter": payload.get("chapter"),
         "start_verse": payload.get("start_verse") or payload.get("verse_start"),

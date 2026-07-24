@@ -14,6 +14,7 @@ from bhf_agent.bible import (
     BibleError,
     list_books,
     list_translation_books,
+    load_translation_bible,
     save_imported_xml_translation,
     search_bible_text,
     resolve_translation_chapter,
@@ -65,6 +66,7 @@ from .jobs import (
     run_ask_job as _run_ask_job,
     run_search_fallback_job as _run_search_fallback_job,
 )
+from .offline import build_offline_manifest, build_offline_pack
 from .runtime import load_runtime_config
 from .services.web_helpers import available_profiles as _available_profiles
 
@@ -137,6 +139,17 @@ def create_app() -> FastAPI:
     @web_app.get("/api/health", response_class=JSONResponse)
     async def health() -> dict[str, str]:
         return {"status": "ok", "service": "bhf-web"}
+
+    @web_app.get("/api/offline/manifest", response_class=JSONResponse)
+    async def offline_manifest() -> JSONResponse:
+        return JSONResponse(build_offline_manifest())
+
+    @web_app.get("/api/offline/packs/{pack_id}", response_class=JSONResponse)
+    async def offline_pack(pack_id: str) -> JSONResponse:
+        try:
+            return JSONResponse(build_offline_pack(pack_id, study_db_path=STUDY_DB_PATH))
+        except ValueError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
 
     @web_app.get("/api/lexicon/diagnostics", response_class=JSONResponse)
     async def lexicon_diagnostics() -> dict[str, object]:
@@ -322,6 +335,22 @@ def create_app() -> FastAPI:
         if not installation.get("installed"):
             return JSONResponse({"error": "translation is not installed"}, status_code=404)
         return JSONResponse({"translation": installation.get("translation"), "installation": installation})
+
+    @web_app.get("/api/translations/{translation_id}/offline-data", response_class=JSONResponse)
+    async def translation_offline_data(translation_id: str) -> JSONResponse:
+        installation = get_translation_installation(translation_id)
+        if not installation.get("installed") or not installation.get("offline_supported"):
+            return JSONResponse({"error": "translation is not installed for offline use"}, status_code=404)
+        try:
+            return JSONResponse(
+                {
+                    "translation_id": translation_id.lower(),
+                    "dataset": load_translation_bible(translation_id),
+                    "installation": installation,
+                }
+            )
+        except BibleError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
 
     @web_app.post("/api/translations/{translation_id}/download", response_class=JSONResponse)
     async def translation_download(translation_id: str) -> JSONResponse:

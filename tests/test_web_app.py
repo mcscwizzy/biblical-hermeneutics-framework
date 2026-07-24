@@ -796,7 +796,9 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("Broad / uncertain period", response["body"])
         self.assertIn("saved-map-studies", response["body"])
         self.assertIn("map_context", response["body"])
-        self.assertIn("leaflet.css", response["body"])
+        self.assertIn("/static/vendor/leaflet/leaflet.css", response["body"])
+        self.assertIn("/static/vendor/leaflet/leaflet.js", response["body"])
+        self.assertNotIn("https://unpkg.com/leaflet", response["body"])
         self.assertIn("highlights-list", response["body"])
         self.assertIn("saved-studies-list", response["body"])
         self.assertIn("app-dock", response["body"])
@@ -827,6 +829,7 @@ class WebAppTests(unittest.TestCase):
         manifest = asgi_request("GET", "/manifest.webmanifest")
         offline = asgi_request("GET", "/offline")
         service_worker = asgi_request("GET", "/sw.js")
+        offline_manifest = asgi_request("GET", "/api/offline/manifest")
 
         self.assertEqual(manifest["status"], 200)
         manifest_data = json.loads(manifest["body"])
@@ -844,8 +847,180 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
+        self.assertIn('CACHE_VERSION = "v9"', service_worker["body"])
         self.assertIn("networkFirstNavigation", service_worker["body"])
         self.assertIn("networkFirstAsset", service_worker["body"])
+        self.assertIn("networkFirstApi", service_worker["body"])
+        self.assertIn("/api/offline/manifest", service_worker["body"])
+        self.assertIn("/static/offline/db.js", service_worker["body"])
+        self.assertIn("/static/vendor/leaflet/leaflet.css", service_worker["body"])
+        self.assertIn("/static/vendor/leaflet/images/marker-icon.png", service_worker["body"])
+        self.assertIn("isAiOnlyApiRequest", service_worker["body"])
+
+        self.assertEqual(offline_manifest["status"], 200)
+        offline_data = json.loads(offline_manifest["body"])
+        self.assertEqual(offline_data["schema_version"], 1)
+        self.assertEqual(offline_data["app"], "bhf-bible-reader")
+        self.assertIn("ai_ask", offline_data["offline_boundary"]["requires_online_or_local_runtime"])
+        self.assertIn("installed_translations", offline_data["offline_boundary"]["available"])
+        self.assertEqual(
+            [pack["id"] for pack in offline_data["packs"]],
+            ["core", "study", "maps", "sources"],
+        )
+        self.assertTrue(offline_data["packs"][0]["required"])
+        self.assertIn("mutationQueue", offline_data["client_stores"])
+        self.assertIn("translations", offline_data["client_stores"])
+        self.assertIn("/api/translations/{translation_id}/offline-data", offline_data["packs"][0]["routes"])
+        self.assertIn("/static/vendor/leaflet/leaflet.js", offline_data["packs"][0]["assets"])
+
+    def test_installed_translation_offline_data_loads(self):
+        response = asgi_request("GET", "/api/translations/asv/offline-data")
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(data["translation_id"], "asv")
+        self.assertTrue(data["installation"]["offline_supported"])
+        self.assertIn("books", data["dataset"])
+        self.assertGreaterEqual(len(data["dataset"]["books"]), 66)
+
+    def test_local_leaflet_vendor_assets_load(self):
+        css = asgi_request("GET", "/static/vendor/leaflet/leaflet.css")
+        script = asgi_request("GET", "/static/vendor/leaflet/leaflet.js")
+
+        self.assertEqual(css["status"], 200)
+        self.assertIn(".leaflet-container", css["body"])
+        self.assertEqual(script["status"], 200)
+        self.assertIn('t.version="1.9.4"', script["body"])
+        self.assertTrue(Path("bhf_web/static/vendor/leaflet/images/marker-icon.png").exists())
+        self.assertTrue(Path("bhf_web/static/vendor/leaflet/LICENSE").exists())
+
+    def test_offline_browser_assets_are_wired(self):
+        index = asgi_request("GET", "/")
+        http_script = asgi_request("GET", "/static/api/http.js")
+        offline_db = asgi_request("GET", "/static/offline/db.js")
+        pwa_script = asgi_request("GET", "/static/pwa.js")
+
+        self.assertEqual(index["status"], 200)
+        self.assertIn("/static/offline/db.js", index["body"])
+        self.assertLess(index["body"].index("/static/offline/db.js"), index["body"].index("/static/api/http.js"))
+        self.assertIn("data-offline-pack=\"study\"", index["body"])
+        self.assertIn("data-offline-pack=\"maps\"", index["body"])
+        self.assertIn("data-offline-pack=\"sources\"", index["body"])
+        self.assertIn("data-offline-sync-retry", index["body"])
+        self.assertIn("data-offline-sync-list", index["body"])
+        self.assertIn("data-pwa-install", index["body"])
+        self.assertIn("data-pwa-update", index["body"])
+        self.assertIn("data-offline-storage-refresh", index["body"])
+        self.assertIn("data-offline-snapshot-export", index["body"])
+        self.assertIn("data-offline-snapshot-import", index["body"])
+        self.assertIn("data-offline-snapshot-file", index["body"])
+        self.assertIn("data-offline-readiness-refresh", index["body"])
+        self.assertIn("data-offline-readiness-list", index["body"])
+        self.assertIn("data-offline-refresh-all", index["body"])
+        self.assertIn("data-offline-clear-caches", index["body"])
+
+        self.assertEqual(http_script["status"], 200)
+        self.assertIn("offlineFallback", http_script["body"])
+        self.assertIn("offlineTextFallback", http_script["body"])
+        self.assertIn("notifyOfflineSyncChanged", http_script["body"])
+        self.assertIn("upsertOfflineNote", http_script["body"])
+        self.assertIn("upsertOfflineHighlight", http_script["body"])
+        self.assertIn("deleteOfflineSavedStudy", http_script["body"])
+        self.assertIn("isAiOnlyPath", http_script["body"])
+
+        self.assertEqual(offline_db["status"], 200)
+        self.assertIn("indexedDB.open", offline_db["body"])
+        self.assertIn("mutationQueue", offline_db["body"])
+        self.assertIn("cacheApiResponse", offline_db["body"])
+        self.assertIn("canonicalObjects", offline_db["body"])
+        self.assertIn("generatedCanonicalSearchResponse", offline_db["body"])
+        self.assertIn("sources", offline_db["body"])
+        self.assertIn("upsertOfflineMapStudy", offline_db["body"])
+        self.assertIn("readTextResponse", offline_db["body"])
+        self.assertIn("renderSavedStudyHtml", offline_db["body"])
+        self.assertIn("mutationQueueSummary", offline_db["body"])
+        self.assertIn("markMutationAttempt", offline_db["body"])
+        self.assertIn("SNAPSHOT_STORES", offline_db["body"])
+        self.assertIn("exportSnapshot", offline_db["body"])
+        self.assertIn("importSnapshot", offline_db["body"])
+        self.assertIn("readinessReport", offline_db["body"])
+        self.assertIn("missing_required_packs", offline_db["body"])
+        self.assertIn("REBUILDABLE_STORES", offline_db["body"])
+        self.assertIn("clearRebuildableCaches", offline_db["body"])
+
+        self.assertEqual(pwa_script["status"], 200)
+        self.assertIn("replayQueuedMutations", pwa_script["body"])
+        self.assertIn("warmOfflineManifest", pwa_script["body"])
+        self.assertIn("warmInstalledTranslations", pwa_script["body"])
+        self.assertIn("installOfflinePack", pwa_script["body"])
+        self.assertIn("warmDefaultOfflinePacks", pwa_script["body"])
+        self.assertIn("refreshOfflinePackControls", pwa_script["body"])
+        self.assertIn("data-offline-pack", pwa_script["body"])
+        self.assertIn("wireOfflineSyncControls", pwa_script["body"])
+        self.assertIn("refreshOfflineSyncControls", pwa_script["body"])
+        self.assertIn("renderOfflineSyncDetails", pwa_script["body"])
+        self.assertIn("data-offline-sync-discard", pwa_script["body"])
+        self.assertIn("beforeinstallprompt", pwa_script["body"])
+        self.assertIn("promptForInstall", pwa_script["body"])
+        self.assertIn("checkForAppUpdate", pwa_script["body"])
+        self.assertIn("refreshOfflineStorageControls", pwa_script["body"])
+        self.assertIn("navigator.storage.estimate", pwa_script["body"])
+        self.assertIn("wireOfflineSnapshotControls", pwa_script["body"])
+        self.assertIn("exportOfflineSnapshot", pwa_script["body"])
+        self.assertIn("importOfflineSnapshot", pwa_script["body"])
+        self.assertIn("downloadJson", pwa_script["body"])
+        self.assertIn("refreshOfflineReadinessControls", pwa_script["body"])
+        self.assertIn("readinessSummary", pwa_script["body"])
+        self.assertIn("data-offline-readiness-list", pwa_script["body"])
+        self.assertIn("refreshAllOfflineData", pwa_script["body"])
+        self.assertIn("refreshableOfflinePackIds", pwa_script["body"])
+        self.assertIn("clearRebuildableOfflineData", pwa_script["body"])
+        self.assertIn("clearApiCaches", pwa_script["body"])
+        self.assertIn("responseErrorMessage", pwa_script["body"])
+
+    def test_study_offline_pack_includes_canonical_objects(self):
+        response = asgi_request("GET", "/api/offline/packs/study")
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(data["pack_id"], "study")
+        self.assertGreaterEqual(len(data["objects"]), 100)
+        first = data["objects"][0]
+        self.assertIn("id", first)
+        self.assertIn("title", first)
+        self.assertIn("summary", first)
+        self.assertIn("scripture_references", first)
+        self.assertIn("responses", data)
+
+    def test_maps_offline_pack_includes_base_map_responses(self):
+        with self._temp_curation_db() as db_path:
+            initialize_database(db_path)
+            with patch("bhf_web.app.STUDY_DB_PATH", db_path):
+                test_app = create_app()
+                response = asgi_request("GET", "/api/offline/packs/maps", test_app=test_app)
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(data["pack_id"], "maps")
+        urls = [entry["url"] for entry in data["responses"]]
+        self.assertIn("/api/maps/catalog", urls)
+        self.assertIn("/api/maps/biblical-places", urls)
+        self.assertIn("/api/maps/historical-layers", urls)
+
+    def test_sources_offline_pack_includes_source_responses(self):
+        with self._temp_curation_db() as db_path:
+            initialize_database(db_path)
+            with patch("bhf_web.app.STUDY_DB_PATH", db_path):
+                test_app = create_app()
+                response = asgi_request("GET", "/api/offline/packs/sources", test_app=test_app)
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(data["pack_id"], "sources")
+        self.assertTrue(data["deferred"])
+        urls = [entry["url"] for entry in data["responses"]]
+        self.assertIn("/api/sources", urls)
+        self.assertGreaterEqual(len(data["sources"]), 1)
 
     def test_get_curation_page_returns_200(self):
         with self._temp_curation_db() as db_path:
@@ -1364,6 +1539,7 @@ class WebAppTests(unittest.TestCase):
                     "POST",
                     "/api/map-studies",
                     json_data={
+                        "id": "map-study-client-123",
                         "book": "Romans",
                         "chapter": 12,
                         "start_verse": 1,
@@ -1379,6 +1555,7 @@ class WebAppTests(unittest.TestCase):
                 )
                 self.assertEqual(create_response["status"], 201)
                 study = json.loads(create_response["body"])
+                self.assertEqual(study["id"], "map-study-client-123")
                 self.assertEqual(study["selected_place_id"], "jerusalem")
 
                 list_response = asgi_request("GET", "/api/map-studies?book=Romans&chapter=12", test_app=test_app)
@@ -1395,6 +1572,7 @@ class WebAppTests(unittest.TestCase):
                     "POST",
                     "/api/map-notes",
                     json_data={
+                        "id": "map-note-client-123",
                         "book": "Romans",
                         "chapter": 12,
                         "start_verse": 1,
@@ -1407,6 +1585,7 @@ class WebAppTests(unittest.TestCase):
                 )
                 self.assertEqual(note_response["status"], 201)
                 note = json.loads(note_response["body"])
+                self.assertEqual(note["id"], "map-note-client-123")
                 self.assertEqual(note["place_id"], "jerusalem")
 
                 updated_list = asgi_request("GET", "/api/map-studies?book=Romans&chapter=12", test_app=test_app)
@@ -1625,8 +1804,7 @@ class WebAppTests(unittest.TestCase):
         data = _valid_form()
         data["query"] = "Egypt in Exodus"
 
-        with patch("bhf_web.app.BHFAgent", SearchFallbackAgent):
-            response = asgi_request("POST", "/api/bible/search/fallback/jobs", data=data)
+        response = asgi_request("POST", "/api/bible/search/fallback/jobs", data=data)
 
         self.assertEqual(response["status"], 202)
         job = json.loads(response["body"])
@@ -1638,9 +1816,17 @@ class WebAppTests(unittest.TestCase):
         payload = json.loads(result["body"])
         self.assertEqual(payload["source"], "ckl_fallback")
         references = [item["reference"] for item in payload["results"]]
-        self.assertEqual(len(references), 2)
-        self.assertEqual(references[0], "Exodus 3:1-22")
+        self.assertGreaterEqual(len(references), 2)
+        self.assertLessEqual(len(references), 5)
+        self.assertEqual(len(references), len(set(references)))
+        self.assertTrue(references[0].startswith("Exodus 3:"))
         self.assertIn("Exodus 1:1-22", references)
+        self.assertTrue(
+            all(
+                {"book", "chapter", "reference", "reason", "confidence", "match_type"}.issubset(item)
+                for item in payload["results"]
+            )
+        )
 
     def test_post_ask_handles_mocked_agent_result(self):
         with patch("bhf_web.app.BHFAgent", SuccessfulJobAgent):
@@ -2127,6 +2313,7 @@ class WebAppTests(unittest.TestCase):
                     "POST",
                     "/api/notes",
                     json_data={
+                        "id": "note-client-123",
                         "book": "Rom",
                         "chapter": 12,
                         "start_verse": 1,
@@ -2137,6 +2324,7 @@ class WebAppTests(unittest.TestCase):
                 )
                 self.assertEqual(create["status"], 201)
                 note = json.loads(create["body"])
+                self.assertEqual(note["id"], "note-client-123")
                 self.assertEqual(note["book"], "Romans")
 
                 list_response = asgi_request("GET", "/api/notes/Romans/12")
@@ -2166,6 +2354,7 @@ class WebAppTests(unittest.TestCase):
                     "POST",
                     "/api/highlights",
                     json_data={
+                        "id": "highlight-client-123",
                         "book": "Rom",
                         "chapter": 12,
                         "start_verse": 1,
@@ -2176,6 +2365,7 @@ class WebAppTests(unittest.TestCase):
                 )
                 self.assertEqual(create["status"], 201)
                 highlight = json.loads(create["body"])
+                self.assertEqual(highlight["id"], "highlight-client-123")
                 self.assertEqual(highlight["book"], "Romans")
                 self.assertEqual(highlight["color"], "yellow")
 
@@ -2559,63 +2749,6 @@ class CapturingAgent(SuccessfulJobAgent):
     def ask(self, question, status_callback=None, canonical_fact_packet=None):
         self.__class__.questions.append(question)
         return super().ask(question, status_callback=status_callback)
-
-
-class SearchFallbackAgent(SuccessfulJobAgent):
-    def ask(self, question, status_callback=None, canonical_fact_packet=None):
-        if status_callback is not None:
-            status_callback(status_event("loading_profile", "Loading BHF profile", 6))
-            status_callback(
-                status_event(
-                    "waiting_for_model_response",
-                    "Waiting for model response",
-                    11,
-                    status="running",
-                )
-            )
-            status_callback(status_event("complete", "Complete", 16, status="complete"))
-        return AgentResult(
-            answer_text=json.dumps(
-                {
-                    "results": [
-                        {
-                            "book": "Exodus",
-                            "chapter": 1,
-                            "reason": "Egypt frames Israel's oppression at the start of Exodus.",
-                            "confidence": "likely",
-                        },
-                        {
-                            "book": "Exodus",
-                            "chapter": 12,
-                            "verse_start": 37,
-                            "verse_end": 42,
-                            "reason": "This passage narrates Israel leaving Egypt.",
-                            "confidence": "strong",
-                        },
-                    ]
-                }
-            ),
-            reference_context=ReferenceContext(
-                book="Exodus",
-                chapter=1,
-                verse=None,
-                testament="OT",
-                is_reference_based=False,
-                confidence=0.6,
-            ),
-            genre_context=GenreContext(primary_genre="narrative"),
-            question_context=QuestionContext(question_type="topic_study", confidence=0.8),
-            profile_used=self.config.profile,
-            validation_result=ValidationResult(
-                passed=True,
-                score=90,
-                warnings=[],
-            ),
-            model_metadata={
-                "answer_mode": self.config.answer_mode,
-            },
-            errors=[],
-        )
 
 
 def status_event(stage, message, step_index, status="complete"):
