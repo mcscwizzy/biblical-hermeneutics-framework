@@ -1464,13 +1464,14 @@ html[data-theme="dark"] .verse.selected.highlight-pink {
 }
 
 html[data-theme="dark"] .verse-number {
-  color: var(--accent-strong);
+  color: #f1f8ff;
+  background: rgb(124 183 230 / 18%);
 }
 
 html[data-theme="dark"] .verse-number:hover,
 html[data-theme="dark"] .verse-number:focus {
-  color: var(--accent-text);
-  background: var(--accent-soft);
+  color: #ffffff;
+  background: rgb(156 200 239 / 30%);
 }
 
 html[data-theme="dark"] .verse-state-indicator {

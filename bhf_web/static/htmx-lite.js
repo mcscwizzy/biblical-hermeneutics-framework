@@ -2152,6 +2152,13 @@ function positionContextMenu(menu, x, y) {
   const submenuWidth = isNarrowViewport ? 190 : 230;
   const submenuGap = isNarrowViewport ? 4 : 6;
   const menuWidth = Math.min(rect.width, window.innerWidth - 16);
+  if (isNarrowViewport) {
+    const menuHeight = Math.min(rect.height, window.innerHeight - 16);
+    menu.style.left = `${Math.max(8, (window.innerWidth - menuWidth) / 2)}px`;
+    menu.style.top = `${Math.max(8, (window.innerHeight - menuHeight) / 2)}px`;
+    menu.classList.remove("opens-left");
+    return;
+  }
   const left = Math.min(x, window.innerWidth - menuWidth - 8);
   const top = Math.min(y, window.innerHeight - rect.height - 8);
   let clampedLeft = Math.max(8, left);

@@ -400,6 +400,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("surface_form: studyAction.surfaceForm", script)
         self.assertIn("handleContextSubmenuHover", script)
         self.assertIn("openContextSubmenu", script)
+        self.assertIn('window.matchMedia("(max-width: 680px)").matches', script)
+        self.assertIn('(window.innerWidth - menuWidth) / 2', script)
 
         study_script = Path("bhf_web/static/htmx-study-panels.js").read_text(encoding="utf-8")
         self.assertIn("/api/highlights", study_script)
@@ -620,8 +622,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("translation-import-button", index_html)
         self.assertIn("Loading translations...", index_html)
         self.assertIn('name="reader_translation"', index_html)
-        self.assertIn("static_asset('/style.css') }}?v=20260721b", index_html)
-        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260724a", index_html)
+        self.assertIn("static_asset('/style.css') }}?v=20260724a", index_html)
+        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260724b", index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
@@ -674,6 +676,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("body.workspace-expanded .answer-panel {\n    max-height: none;\n    height: auto;\n    overflow: visible;", style)
         self.assertIn(".context-menu-submenu {\n  position: absolute;", style)
         self.assertIn(".context-menu-section:hover > .context-menu-submenu", style)
+        self.assertIn('html[data-theme="dark"] .verse-number {\n  color: #f1f8ff;', style)
         self.assertNotIn(".context-menu-submenu {\n    position: static;", style)
         self.assertNotIn(".context-menu-section:hover > .context-menu-submenu {\n    display: none;", style)
         self.assertIn(".map-passage-chip", style)
@@ -836,8 +839,8 @@ class WebAppTests(unittest.TestCase):
         )
 
         self.assertEqual(response["status"], 200)
-        self.assertIn('href="/static/style.css?v=20260721b"', response["body"])
-        self.assertIn('src="/static/htmx-lite.js?v=20260724a"', response["body"])
+        self.assertIn('href="/static/style.css?v=20260724a"', response["body"])
+        self.assertIn('src="/static/htmx-lite.js?v=20260724b"', response["body"])
         self.assertIn('href="/static/vendor/leaflet/leaflet.css"', response["body"])
         self.assertNotIn("http://bhf.thewalkerclan.synology.me/static/", response["body"])
 
