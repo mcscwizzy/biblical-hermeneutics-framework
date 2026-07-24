@@ -46,13 +46,16 @@ class DockerComposeTests(unittest.TestCase):
         self.assertIn("proxy_set_header Upgrade $http_upgrade;", config)
         self.assertIn("proxy_set_header Connection $connection_upgrade;", config)
 
-    def test_https_nginx_image_copies_local_cert_files(self):
+    def test_https_nginx_image_generates_local_cert_files(self):
         dockerfile = Path("docker/nginx/Dockerfile").read_text(encoding="utf-8")
 
-        self.assertIn("FROM nginx:1.27-alpine", dockerfile)
+        self.assertIn("FROM nginx:1.27-alpine AS certs", dockerfile)
+        self.assertIn("apk add --no-cache openssl", dockerfile)
+        self.assertIn('-subj "/CN=localhost"', dockerfile)
+        self.assertIn('subjectAltName=DNS:localhost,IP:127.0.0.1,IP:::1', dockerfile)
         self.assertIn("COPY docker/nginx/local-https.conf /etc/nginx/conf.d/default.conf", dockerfile)
-        self.assertIn("COPY .bhf/certs/localhost.crt /etc/nginx/certs/localhost.crt", dockerfile)
-        self.assertIn("COPY .bhf/certs/localhost.key /etc/nginx/certs/localhost.key", dockerfile)
+        self.assertIn("COPY --from=certs /etc/nginx/certs/localhost.crt /etc/nginx/certs/localhost.crt", dockerfile)
+        self.assertIn("COPY --from=certs /etc/nginx/certs/localhost.key /etc/nginx/certs/localhost.key", dockerfile)
 
 
 if __name__ == "__main__":

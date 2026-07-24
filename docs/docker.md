@@ -20,7 +20,6 @@ cp .env.example .env
 Start the full stack:
 
 ```bash
-./scripts/generate-local-cert.sh
 docker compose up -d --build
 ```
 
@@ -40,16 +39,9 @@ uvicorn bhf_web.app:app --host 0.0.0.0 --port 8080
 ## Local HTTPS
 
 The Docker stack includes an Nginx reverse proxy for browser features that
-require a secure context. Generate a local self-signed certificate before
-building the stack:
-
-```bash
-./scripts/generate-local-cert.sh
-```
-
-Then start Compose normally. The proxy image copies the local certificate and
-key into the image during build, so the running Nginx container does not need a
-cert volume mount:
+require a secure context. The proxy image generates a local self-signed
+certificate during build and copies it into the final Nginx image, so the
+running Nginx container does not need a cert volume mount:
 
 ```bash
 docker compose up -d --build
@@ -71,11 +63,9 @@ The default HTTPS host port is controlled by `BHF_HTTPS_PORT` and defaults to
 `8443`. The normal HTTP endpoint at `http://localhost:8080` remains available.
 
 Because the generated certificate is self-signed, your browser will show a
-local certificate warning unless you explicitly trust `.bhf/certs/localhost.crt`
-on your machine. The private key is written under `.bhf/certs/`, which is
-ignored by git.
+local certificate warning.
 
-If you regenerate the certificate later, rebuild the proxy image:
+To rotate the generated local certificate, rebuild the proxy image:
 
 ```bash
 docker compose build bhf-https-proxy
