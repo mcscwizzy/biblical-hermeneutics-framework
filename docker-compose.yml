@@ -43,8 +43,8 @@ services:
         condition: service_completed_successfully
       ollama:
         condition: service_healthy
-    expose:
-      - "8080"
+    ports:
+      - "${BHF_HTTP_PORT:-8080}:8080"
     environment:
       LLM_PROVIDER: "${LLM_PROVIDER:-ollama}"
       OLLAMA_BASE_URL: "${OLLAMA_BASE_URL:-http://ollama:11434}"
@@ -73,18 +73,6 @@ services:
       timeout: 5s
       retries: 3
       start_period: 10s
-
-  bhf-https-proxy:
-    build:
-      context: .
-      dockerfile: docker/nginx/Dockerfile
-    image: bhf-https-proxy:local
-    depends_on:
-      bhf-web:
-        condition: service_healthy
-    ports:
-      - "${BHF_HTTPS_PORT:-8080}:443"
-    restart: unless-stopped
 
 volumes:
   ollama:

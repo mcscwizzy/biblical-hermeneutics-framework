@@ -26,7 +26,7 @@ docker compose up -d --build
 Open:
 
 ```text
-https://localhost:8080
+http://localhost:8080
 ```
 
 The container starts:
@@ -35,47 +35,22 @@ The container starts:
 uvicorn bhf_web.app:app --host 0.0.0.0 --port 8080
 ```
 
-## Local HTTPS
+## Local HTTP
 
-The Docker stack includes an Nginx reverse proxy for browser features that
-require a secure context. The proxy image generates a local self-signed
-certificate during build and copies it into the final Nginx image, so the
-running Nginx container does not need a cert volume mount:
-
-```bash
-docker compose up -d --build
-```
-
-Open:
+The Docker stack publishes the BHF web/API server directly from the `bhf-web`
+container:
 
 ```text
-https://localhost:8080
+http://localhost:8080
 ```
 
-The HTTPS proxy terminates TLS and forwards requests to the app container at:
+The default host port is controlled by `BHF_HTTP_PORT` and defaults to `8080`.
+The app container always listens on port `8080` inside Compose.
 
-```text
-http://bhf-web:8080
-```
-
-The default HTTPS host port is controlled by `BHF_HTTPS_PORT` and defaults to
-`8080`. The app container still listens on `8080` inside Compose, but the host
-port is owned by the HTTPS proxy.
-
-Because the generated certificate is self-signed, your browser will show a
-local certificate warning.
-
-To rotate the generated local certificate, rebuild the proxy image:
+To verify the local endpoint:
 
 ```bash
-docker compose build bhf-https-proxy
-docker compose up -d bhf-https-proxy
-```
-
-To verify the local HTTPS endpoint without trusting the certificate:
-
-```bash
-curl -k https://localhost:8080/api/health
+curl http://localhost:8080/api/health
 ```
 
 ## Ollama On The Host
@@ -231,13 +206,13 @@ mkdir -p .bhf/sessions
 
 ## LAN Access
 
-The compose file publishes local HTTPS on the host port configured by
-`BHF_HTTPS_PORT` and defaults to `8080`.
+The compose file publishes local HTTP on the host port configured by
+`BHF_HTTP_PORT` and defaults to `8080`.
 
 From another trusted device on your LAN, open:
 
 ```text
-https://YOUR_HOST_LAN_IP:8080
+http://YOUR_HOST_LAN_IP:8080
 ```
 
 This setup is intended for trusted local or LAN use only. It has no
