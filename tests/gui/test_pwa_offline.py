@@ -67,6 +67,43 @@ def test_pwa_reader_search_context_and_sync_status_work_offline(driver, wait, ba
         _set_chrome_offline(driver, False)
 
 
+def test_offline_readiness_service_worker_row_becomes_active(driver, wait, base_url):
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    _wait_for_service_worker_control(driver, wait)
+
+    WorkspacePage(driver, wait, base_url).open_reader_settings()
+    driver.find_element(By.CSS_SELECTOR, "[data-offline-readiness-details] summary").click()
+    wait.until(
+        lambda _driver: "service worker" in _driver.find_element(
+            By.CSS_SELECTOR, "[data-offline-readiness-list]"
+        ).text.lower()
+    )
+
+    result = driver.execute_async_script(
+        """
+        const done = arguments[0];
+        (async () => {
+          if (window.BHFPWA && typeof window.BHFPWA.refreshOfflineReadinessControls === "function") {
+            await window.BHFPWA.refreshOfflineReadinessControls(true);
+          }
+          const rows = Array.from(document.querySelectorAll("[data-offline-readiness-list] li"));
+          const row = rows.find((item) => item.textContent.toLowerCase().includes("service worker"));
+          const registration = "serviceWorker" in navigator
+            ? await navigator.serviceWorker.getRegistration("/")
+            : null;
+          done({
+            rowText: row ? row.textContent : "",
+            controller: Boolean(navigator.serviceWorker && navigator.serviceWorker.controller),
+            active: Boolean(registration && registration.active),
+            waiting: Boolean(registration && registration.waiting),
+            installing: Boolean(registration && registration.installing),
+          });
+        })().catch((error) => done({ error: String(error && error.message || error) }));
+        """
+    )
+    assert result["rowText"].lower().endswith("active"), result
+
+
 def _wait_for_service_worker_control(driver, wait) -> None:
     result = driver.execute_async_script(
         """

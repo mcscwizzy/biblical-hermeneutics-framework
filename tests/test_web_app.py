@@ -847,7 +847,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v9"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v10"', service_worker["body"])
         self.assertIn("networkFirstNavigation", service_worker["body"])
         self.assertIn("networkFirstAsset", service_worker["body"])
         self.assertIn("networkFirstApi", service_worker["body"])

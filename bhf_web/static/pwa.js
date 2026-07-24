@@ -5,6 +5,7 @@
   const DEFAULT_AUTO_PACKS = ["study", "maps"];
   let deferredInstallPrompt = null;
   let serviceWorkerRegistration = null;
+  let serviceWorkerReady = false;
 
   if (enableServiceWorker && "serviceWorker" in navigator) {
     window.addEventListener("load", () => {
@@ -22,6 +23,7 @@
       navigator.serviceWorker.ready
         .then((registration) => {
           serviceWorkerRegistration = registration;
+          serviceWorkerReady = true;
           refreshPwaLifecycleControls();
           refreshOfflineReadinessControls();
         })
@@ -91,16 +93,36 @@
             false
           );
         } else if (installing.state === "activated") {
+          serviceWorkerReady = true;
           setPwaUpdateStatus("App is up to date", "Check", false);
           refreshOfflineReadinessControls();
         }
       });
     });
     navigator.serviceWorker.addEventListener("controllerchange", () => {
+      serviceWorkerReady = true;
       setPwaUpdateStatus("App update activated", "Check", false);
       refreshPwaLifecycleControls();
       refreshOfflineReadinessControls();
     });
+  }
+
+  async function refreshServiceWorkerRegistration() {
+    if (!enableServiceWorker || !("serviceWorker" in navigator)) {
+      return null;
+    }
+    try {
+      if (typeof navigator.serviceWorker.getRegistration === "function") {
+        const registration = await navigator.serviceWorker.getRegistration();
+        if (registration) {
+          serviceWorkerRegistration = registration;
+          serviceWorkerReady = Boolean(serviceWorkerReady || navigator.serviceWorker.controller || registration.active);
+        }
+      }
+    } catch (_error) {
+      // A stale registration should not block the rest of the readiness report.
+    }
+    return serviceWorkerRegistration;
   }
 
   function wirePwaLifecycleControls() {
@@ -365,6 +387,7 @@
       }
     }
     try {
+      await refreshServiceWorkerRegistration();
       const report = await offlineDb.readinessReport();
       for (const button of buttons) {
         setLifecycleButtonState(button, readinessSummary(report), "Refresh", false, "offlineReadiness");
@@ -406,9 +429,9 @@
     const installedPacks = Array.isArray(report.installed_packs) ? report.installed_packs : [];
     const counts = report.counts || {};
     const queue = report.queue || {};
-    const serviceWorkerReady = Boolean(navigator.serviceWorker?.controller || serviceWorkerRegistration?.active);
+    const serviceWorkerStatus = currentServiceWorkerStatus();
     return [
-      readinessNode("Service worker", serviceWorkerReady ? "Active" : "Starting", serviceWorkerReady),
+      readinessNode("Service worker", serviceWorkerStatus.label, serviceWorkerStatus.ready),
       readinessNode(
         "Translations",
         `${Number(report.translations_count || 0)} cached`,
@@ -440,6 +463,22 @@
         Number(queue.failed_count || 0) === 0
       ),
     ];
+  }
+
+  function currentServiceWorkerStatus() {
+    if (!enableServiceWorker || !("serviceWorker" in navigator)) {
+      return { label: "Unavailable", ready: false };
+    }
+    if (serviceWorkerReady || navigator.serviceWorker.controller || serviceWorkerRegistration?.active) {
+      return { label: "Active", ready: true };
+    }
+    if (serviceWorkerRegistration?.installing) {
+      return { label: "Installing", ready: false };
+    }
+    if (serviceWorkerRegistration?.waiting) {
+      return { label: "Waiting", ready: false };
+    }
+    return { label: "Starting", ready: false };
   }
 
   function readinessNode(label, value, ready) {
