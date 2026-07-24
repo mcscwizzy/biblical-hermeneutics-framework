@@ -9,6 +9,7 @@ const APP_SECTION_STORAGE_KEY = "bhf-app-section";
 const LEGACY_MOBILE_SECTION_STORAGE_KEY = "bhf-mobile-section";
 const BHF_RUNTIME = window.BHFRuntimeConfig || {};
 const TABLET_BREAKPOINT = Number(BHF_RUNTIME.breakpoints?.tablet || 900);
+const APP_DOCK_BOTTOM_HIDE_THRESHOLD_PX = 24;
 const GENERAL_QUESTION_MODE = "general_question";
 const THEME_STORAGE_KEY = "bhf-theme";
 const READER_MODE_STORAGE_KEY = "bhf-reader-mode";
@@ -77,6 +78,7 @@ let lastNotesWorkspaceTab = "notes";
 let lastExploreWorkspaceTab = "maps";
 let readerControlsTrigger = null;
 let translationCatalogState = null;
+let appDockScrollFrame = null;
 const BHF_HTTP = window.BHFApi || {};
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -337,6 +339,8 @@ function initializeAppNavigation() {
   });
 
   window.addEventListener("resize", handleAppViewportChange);
+  window.addEventListener("scroll", scheduleAppDockVisibilityUpdate, { passive: true });
+  scheduleAppDockVisibilityUpdate();
 }
 
 function initializeWorkspaceBridge() {
@@ -373,6 +377,7 @@ function activateAppSection(sectionId, options = {}) {
     ensureExploreMapBrowserOpen();
   }
   syncReaderControlsSheetAvailability();
+  scheduleAppDockVisibilityUpdate();
 }
 
 function ensureExploreMapBrowserOpen() {
@@ -424,6 +429,46 @@ function handleAppViewportChange() {
     persist: false,
     focusReader: false,
   });
+  scheduleAppDockVisibilityUpdate();
+}
+
+function scheduleAppDockVisibilityUpdate() {
+  if (appDockScrollFrame !== null) {
+    return;
+  }
+  appDockScrollFrame = window.requestAnimationFrame(() => {
+    appDockScrollFrame = null;
+    updateAppDockVisibilityForScroll();
+  });
+}
+
+function updateAppDockVisibilityForScroll() {
+  const dock = document.querySelector("[data-app-dock]");
+  if (!dock) {
+    return;
+  }
+
+  const scrollingElement = document.scrollingElement || document.documentElement;
+  const maxScroll = Math.max(0, scrollingElement.scrollHeight - window.innerHeight);
+  const scrollTop = Math.max(
+    window.scrollY || window.pageYOffset || 0,
+    scrollingElement.scrollTop || 0
+  );
+  const shouldHideDock =
+    isCompactViewport() &&
+    maxScroll > APP_DOCK_BOTTOM_HIDE_THRESHOLD_PX &&
+    scrollTop >= maxScroll - APP_DOCK_BOTTOM_HIDE_THRESHOLD_PX;
+
+  document.body.classList.toggle("app-dock-hidden-at-bottom", shouldHideDock);
+  dock.toggleAttribute("inert", shouldHideDock);
+  if (shouldHideDock) {
+    dock.setAttribute("aria-hidden", "true");
+    if (dock.contains(document.activeElement)) {
+      document.activeElement.blur();
+    }
+  } else {
+    dock.removeAttribute("aria-hidden");
+  }
 }
 
 function focusReaderArea() {
@@ -1247,6 +1292,7 @@ function renderChapter(data) {
   footer.appendChild(createChapterNavButton("prev", "◀ Previous Chapter"));
   footer.appendChild(createChapterNavButton("next", "Next Chapter ▶"));
   reader.appendChild(footer);
+  scheduleAppDockVisibilityUpdate();
 }
 
 function currentTranslationAbbreviation() {

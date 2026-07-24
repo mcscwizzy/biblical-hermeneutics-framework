@@ -504,6 +504,7 @@ code {
   background: linear-gradient(180deg, rgb(252 253 254 / 98%), rgb(245 249 252 / 98%));
   box-shadow: 0 14px 34px rgb(17 30 41 / 18%);
   transform: translateX(-50%);
+  transition: transform 160ms ease, opacity 160ms ease;
   backdrop-filter: blur(10px);
 }
 
@@ -531,6 +532,12 @@ html[data-theme="dark"] .app-dock {
   box-shadow: 0 14px 34px rgb(0 0 0 / 36%);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .app-dock {
+    transition: none;
+  }
+}
+
 @media (max-width: 900px) {
   .reader-page {
     padding-bottom: calc(20px + var(--app-dock-height) + env(safe-area-inset-bottom));
@@ -549,6 +556,12 @@ html[data-theme="dark"] .app-dock {
     border-radius: 0;
     box-shadow: 0 -10px 24px rgb(17 30 41 / 10%);
     transform: none;
+  }
+
+  body.app-dock-hidden-at-bottom .app-dock {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(calc(100% + max(12px, env(safe-area-inset-bottom))));
   }
 
   body[data-app-section="bible"] .study-panel {

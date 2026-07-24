@@ -188,6 +188,54 @@ def test_reader_responsive_widths_do_not_overflow(driver, wait, base_url, width,
         assert driver.find_element(By.CSS_SELECTOR, '[data-testid="desktop-reader-controls-trigger"]').is_displayed()
 
 
+def test_app_dock_hides_at_page_bottom_on_mobile(driver, wait, base_url):
+    _set_mobile_viewport(driver)
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '#chapter-reader [data-verse="1"]')))
+
+    driver.execute_script("window.scrollTo(0, document.documentElement.scrollHeight);")
+    wait.until(lambda _driver: _driver.execute_script("return document.body.classList.contains('app-dock-hidden-at-bottom')"))
+    wait.until(
+        lambda _driver: _driver.execute_script(
+            """
+            const dock = document.querySelector('[data-app-dock]').getBoundingClientRect();
+            return dock.top >= window.innerHeight - 1;
+            """
+        )
+    )
+
+    bottom_metrics = driver.execute_script(
+        """
+        const dock = document.querySelector('[data-app-dock]');
+        const dockRect = dock.getBoundingClientRect();
+        const verses = Array.from(document.querySelectorAll('#chapter-reader [data-verse]'));
+        const lastVerse = verses[verses.length - 1].getBoundingClientRect();
+        return {
+          dockTop: dockRect.top,
+          dockHidden: dock.getAttribute('aria-hidden'),
+          dockInert: dock.hasAttribute('inert'),
+          lastVerseBottom: lastVerse.bottom,
+          viewportHeight: window.innerHeight
+        };
+        """
+    )
+    assert bottom_metrics["dockTop"] >= bottom_metrics["viewportHeight"] - 1
+    assert bottom_metrics["dockHidden"] == "true"
+    assert bottom_metrics["dockInert"] is True
+    assert bottom_metrics["lastVerseBottom"] < bottom_metrics["viewportHeight"]
+
+    driver.execute_script("window.scrollTo(0, 0);")
+    wait.until(lambda _driver: not _driver.execute_script("return document.body.classList.contains('app-dock-hidden-at-bottom')"))
+    wait.until(
+        lambda _driver: _driver.execute_script(
+            """
+            const dock = document.querySelector('[data-app-dock]').getBoundingClientRect();
+            return dock.bottom <= window.innerHeight + 1;
+            """
+        )
+    )
+
+
 def test_app_dock_switches_between_bible_and_ask_on_mobile(driver, wait, base_url):
     _set_mobile_viewport(driver)
     HomePage(driver, wait, base_url).open().wait_loaded()
