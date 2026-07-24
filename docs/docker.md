@@ -35,6 +35,47 @@ The container starts:
 uvicorn bhf_web.app:app --host 0.0.0.0 --port 8080
 ```
 
+## Local HTTPS
+
+For browser features that require a secure context, use the optional Nginx
+reverse proxy overlay. Generate a local self-signed certificate first:
+
+```bash
+./scripts/generate-local-cert.sh
+```
+
+Then start Compose with the HTTPS overlay:
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.https.yml up -d --build
+```
+
+Open:
+
+```text
+https://localhost:8443
+```
+
+The HTTPS proxy terminates TLS and forwards requests to the app container at:
+
+```text
+http://bhf-web:8080
+```
+
+The default HTTPS host port is controlled by `BHF_HTTPS_PORT` and defaults to
+`8443`. The normal HTTP endpoint at `http://localhost:8080` remains available.
+
+Because the generated certificate is self-signed, your browser will show a
+local certificate warning unless you explicitly trust `.bhf/certs/localhost.crt`
+on your machine. The private key is written under `.bhf/certs/`, which is
+ignored by git.
+
+To verify the local HTTPS endpoint without trusting the certificate:
+
+```bash
+curl -k https://localhost:8443/api/health
+```
+
 ## Ollama On The Host
 
 Run Ollama on your host machine and make sure the model is available:

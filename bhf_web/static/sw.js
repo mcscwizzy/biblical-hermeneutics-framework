@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v10";
+const CACHE_VERSION = "v11";
 const SHELL_CACHE = `bhf-shell-${CACHE_VERSION}`;
 const STATIC_CACHE = `bhf-static-${CACHE_VERSION}`;
 const API_CACHE = `bhf-api-${CACHE_VERSION}`;
@@ -77,8 +77,8 @@ const STATIC_ASSETS = [
 self.addEventListener("install", (event) => {
   event.waitUntil(
     Promise.all([
-      caches.open(SHELL_CACHE).then((cache) => cache.addAll(SHELL_ASSETS)),
-      caches.open(STATIC_CACHE).then((cache) => cache.addAll(STATIC_ASSETS)),
+      caches.open(SHELL_CACHE).then((cache) => cacheAssets(cache, SHELL_ASSETS)),
+      caches.open(STATIC_CACHE).then((cache) => cacheAssets(cache, STATIC_ASSETS)),
     ]).catch(() => undefined)
   );
   self.skipWaiting();
@@ -218,6 +218,18 @@ function isAiOnlyApiRequest(url) {
     "/api/debug/ckl-search",
     "/ask",
   ].some((path) => url.pathname === path || url.pathname.startsWith(path));
+}
+
+async function cacheAssets(cache, assets) {
+  await Promise.all(
+    assets.map(async (asset) => {
+      try {
+        await cache.add(asset);
+      } catch (_error) {
+        // Keep the service worker installable if one optional asset is missing.
+      }
+    })
+  );
 }
 
 async function withOfflineHeaders(response) {

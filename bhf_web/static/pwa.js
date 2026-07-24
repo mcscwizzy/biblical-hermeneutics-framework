@@ -1,7 +1,9 @@
 (function () {
   const runtime = window.BHFRuntimeConfig || {};
   const enableServiceWorker = runtime.enableServiceWorker !== false;
+  const CACHE_VERSION = "v11";
   const API_CACHE_PREFIX = "bhf-api-";
+  const API_CACHE = `${API_CACHE_PREFIX}${CACHE_VERSION}`;
   const DEFAULT_AUTO_PACKS = ["study", "maps"];
   let deferredInstallPrompt = null;
   let serviceWorkerRegistration = null;
@@ -410,8 +412,12 @@
   }
 
   function readinessSummary(report) {
+    const serviceWorkerStatus = currentServiceWorkerStatus();
     const missing = Array.isArray(report.missing_required_packs) ? report.missing_required_packs : [];
     const queued = Number(report.queue?.queued_count || 0);
+    if (!serviceWorkerStatus.ready) {
+      return `Service worker ${serviceWorkerStatus.label.toLowerCase()}`;
+    }
     if (missing.length) {
       return `Missing ${missing.join(", ")} pack${missing.length === 1 ? "" : "s"}`;
     }
@@ -467,10 +473,16 @@
 
   function currentServiceWorkerStatus() {
     if (!enableServiceWorker || !("serviceWorker" in navigator)) {
+      if (!isSecureServiceWorkerContext()) {
+        return { label: "Needs HTTPS", ready: false };
+      }
       return { label: "Unavailable", ready: false };
     }
-    if (serviceWorkerReady || navigator.serviceWorker.controller || serviceWorkerRegistration?.active) {
+    if (navigator.serviceWorker.controller) {
       return { label: "Active", ready: true };
+    }
+    if (serviceWorkerReady || serviceWorkerRegistration?.active) {
+      return { label: "Installed, restart app", ready: false };
     }
     if (serviceWorkerRegistration?.installing) {
       return { label: "Installing", ready: false };
@@ -479,6 +491,17 @@
       return { label: "Waiting", ready: false };
     }
     return { label: "Starting", ready: false };
+  }
+
+  function isSecureServiceWorkerContext() {
+    const hostname = window.location.hostname;
+    return Boolean(
+      window.isSecureContext
+        || hostname === "localhost"
+        || hostname === "127.0.0.1"
+        || hostname === "::1"
+        || hostname === "[::1]"
+    );
   }
 
   function readinessNode(label, value, ready) {
@@ -721,10 +744,37 @@
         }
       }
     }
+    await ensureServiceWorkerReady();
     await cachePackResponses(pack);
     await refreshOfflinePackControls();
     await refreshOfflineReadinessControls();
     return pack;
+  }
+
+  async function ensureServiceWorkerReady(timeoutMs = 4000) {
+    if (!enableServiceWorker || !("serviceWorker" in navigator)) {
+      return null;
+    }
+    if (navigator.serviceWorker.controller || serviceWorkerReady) {
+      return serviceWorkerRegistration;
+    }
+    await refreshServiceWorkerRegistration();
+    if (navigator.serviceWorker.controller || serviceWorkerReady) {
+      return serviceWorkerRegistration;
+    }
+    try {
+      const registration = await Promise.race([
+        navigator.serviceWorker.ready,
+        new Promise((resolve) => window.setTimeout(() => resolve(null), timeoutMs)),
+      ]);
+      if (registration) {
+        serviceWorkerRegistration = registration;
+        serviceWorkerReady = true;
+      }
+    } catch (_error) {
+      // Cache Storage may still be available even when Safari delays controller ownership.
+    }
+    return serviceWorkerRegistration;
   }
 
   function wireOfflinePackControls() {
@@ -820,8 +870,10 @@
   async function openApiCache() {
     try {
       const keys = await caches.keys();
-      const existing = keys.find((key) => key.startsWith(API_CACHE_PREFIX));
-      return caches.open(existing || "bhf-api-v9");
+      const existing =
+        keys.find((key) => key === API_CACHE) ||
+        keys.find((key) => key.startsWith(API_CACHE_PREFIX));
+      return caches.open(existing || API_CACHE);
     } catch (_error) {
       return null;
     }
