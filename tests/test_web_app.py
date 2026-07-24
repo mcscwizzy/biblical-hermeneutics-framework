@@ -656,6 +656,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn(".canonical-context-details", style)
         self.assertIn(".answer-canonical-context", style)
         self.assertIn(".scripture-link", style)
+        self.assertIn(".scripture-link.canonical-detail-item {\n  border-color: #b8cfe1;\n  background: #fff;\n  color: var(--page-text);", style)
+        self.assertIn('html[data-theme="dark"] .scripture-link.canonical-detail-item {\n  border-color: var(--border-strong);', style)
         self.assertIn(".canonical-note-links", style)
         self.assertIn(".word-study-facts", style)
         self.assertIn(".word-study-scholar", style)
