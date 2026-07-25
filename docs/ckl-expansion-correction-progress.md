@@ -6,18 +6,18 @@ This is the durable handoff for the **BHF Canonical Knowledge Library Expansion
 and Correction Plan**. The supplied plan explicitly says to begin with the
 repository audit and Phase 1 quality reporting, avoid immediate bulk content
 generation, and stop after each major phase. Phases 1–4 are now implemented at
-the schema/runtime level. Phase 5 Waves 1–26 have corrected Genesis through
-Habakkuk as honest, source-backed drafts; none has been mechanically approved.
+the schema/runtime level. Phase 5 Waves 1–27 have corrected Genesis through
+Zephaniah as honest, source-backed drafts; none has been mechanically approved.
 
 ## Current checkpoint
 
 | Plan area | Status | Continuation note |
 | --- | --- | --- |
 | Phase 1: inventory, reporting, quality metrics | **Implemented** | Deep JSON and Markdown reports, CLI support, and calculation tests are present. |
-| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Thirty-four records now have evidence-based draft statuses; 586 still need explicit migration. |
-| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Thirty-four records now have explicit layers; 586 still need migration. |
+| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Thirty-five records now have evidence-based draft statuses; 585 still need explicit migration. |
+| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Thirty-five records now have explicit layers; 585 still need migration. |
 | Phase 4: certainty and dispute taxonomies | **Implemented; evidence migration pending** | Current taxonomies and granular claim records are supported. Legacy values remain readable but are forbidden for approved notes; no `unknown` value was guessed or mass-relabeled. |
-| Phase 5: audit/correct all 66 books | **Waves 1–26 implemented; human review pending** | Genesis through Habakkuk are corrected drafts with sources, claims, tests, and reviewer notes. Thirty-two books remain. |
+| Phase 5: audit/correct all 66 books | **Waves 1–27 implemented; human review pending** | Genesis through Zephaniah are corrected drafts with sources, claims, tests, and reviewer notes. Thirty-one books remain. |
 | Phases 6–20 | Not started | Follow the supplied order after the foundation is upgraded. |
 | Phase 21: controlled generation workflow | Partially enabled | Reporting, type-specific completeness, and approval gates are present; scoped human-review events still need Phase 19. |
 
@@ -678,6 +678,54 @@ After Phase 5 Wave 26, the refreshed report records:
 
 All thirty-four corrected books remain incomplete because their human-review
 sections are still `missing`. The remaining 586 records still rely on
+section/layer migration defaults.
+
+After Phase 5 Wave 27, the refreshed report records:
+
+| Migration metric | Result |
+| --- | ---: |
+| Records marked `complete` / `draft` | 585 / 35 |
+| Raw records missing explicit `section_status` | 585 |
+| Raw records with incomplete type-required sections | 620 |
+| Raw records missing explicit `knowledge_layers` | 585 |
+| Interpretive notes using current taxonomies | 678 |
+| Interpretive notes still using legacy taxonomies | 1,248 |
+| Granular claims authored | 468 |
+| External sources | 715 |
+| Source references that do not resolve | 0 |
+| Invalid source support targets | 0 |
+| Unresolved legacy object references | 14 |
+| Scripture reference errors | 0 |
+| Graph edges / unknown targets / orphaned records | 3,210 / 0 / 0 |
+| Missing reciprocal relationship suggestions | 2,770 |
+| Validator warnings / errors | 14 / 0 |
+
+All thirty-five corrected books remain incomplete because their human-review
+sections are still `missing`. The remaining 585 records still rely on
+section/layer migration defaults.
+
+After Phase 5 Wave 28, the refreshed report records:
+
+| Migration metric | Result |
+| --- | ---: |
+| Records marked `complete` / `draft` | 584 / 36 |
+| Raw records missing explicit `section_status` | 584 |
+| Raw records with incomplete type-required sections | 620 |
+| Raw records missing explicit `knowledge_layers` | 584 |
+| Interpretive notes using current taxonomies | 727 |
+| Interpretive notes still using legacy taxonomies | 1,246 |
+| Granular claims authored | 496 |
+| External sources | 737 |
+| Source references that do not resolve | 0 |
+| Invalid source support targets | 0 |
+| Unresolved legacy object references | 14 |
+| Scripture reference errors | 0 |
+| Graph edges / unknown targets / orphaned records | 3,217 / 0 / 0 |
+| Missing reciprocal relationship suggestions | 2,777 |
+| Validator warnings / errors | 14 / 0 |
+
+All thirty-six corrected books remain incomplete because their human-review
+sections are still `missing`. The remaining 584 records still rely on
 section/layer migration defaults.
 
 Near-duplicate and template findings are triage signals rather than automatic
@@ -2057,6 +2105,61 @@ Completed implementation work:
 - added a reviewer-facing handoff at
   [`ckl-phase-5-habakkuk-review.md`](ckl-phase-5-habakkuk-review.md).
 
+## Phase 5 Wave 27: Zephaniah
+
+Completed implementation work:
+
+- removed the inherited Minor Prophets placeholder, including unrelated Hosea,
+  Amos, Jonah, and Nineveh values, corpus-wide dates and setting,
+  internal-only sourcing, legacy labels, and false completion metadata;
+- rebuilt the record around Zephaniah 1:1; 1:2–6; 1:7–13; 1:14–18; 2:1–3;
+  2:4–7; 2:8–11; 2:12–15; 3:1–7; 3:8–13; and 3:14–20 while preserving
+  uncertainty about speakers, addressees, imperatives, pronouns, textual
+  forms, and proposed seams;
+- distinguished Zephaniah and the framing voice; YHWH; Judah, Jerusalem,
+  officials, royal sons, foreign-clothed people, threshold leapers, merchants,
+  complacent residents, humble and poor people, remnant, nations, Daughter
+  Zion, dispersed worshipers, leaders, animals, creation, and later
+  interpreters;
+- distinguished superscription, creation reversal, cultic accusation,
+  sacrifice metaphor, Day lament and battle cry, gathering and seeking
+  summons, nation oracles, taunts, city woe, courtroom accusation, remnant
+  promise, hymn, divine-warrior promise, and restoration;
+- added thirty-one granular claims and fifty structured interpretive notes
+  using current evidence taxonomies;
+- qualified Josiah's reign, reform chronology, Manasseh's legacy, Assyrian
+  decline, Scythian proposals, Nineveh before or after 612 BCE, Jerusalem
+  topography and economy, imperial sources, and proposed later shaping;
+- added Masoretic Zephaniah, Hebrew Bible and New Testament comparanda, Old
+  Greek Sophonias, CATSS, NETS, BHS, 4Q77, 4Q78, 1Q15, 4Q170, critical
+  commentaries, womanist and feminist work, BM 21901, Neo-Assyrian
+  inscriptions, and early Jewish, Christian, artistic, postcolonial,
+  trauma-aware, and ecological resources, including twenty-one URL-bearing
+  external records;
+- preserved uncertainty concerning Cushi, Hezekiah, ancestry, date, reform,
+  Scythians, cult terminology, foreign clothing, threshold practice,
+  sacrifice guests, Jerusalem districts, lamp search, wine dregs, Day
+  development, the summoned nation, Cherethites, Canaan, Moab, Ammon, Cush,
+  Nineveh, the unnamed city, purified speech, rivers of Cush, remnant,
+  Zephaniah 3:17, disability language, final syntax, unity, redaction,
+  liturgy, and Twelve shaping;
+- distinguished history, prophetic accusation, divine speech, rhetoric,
+  metaphor, archaeology, textual witness, translation, pesher, allusion,
+  canonical trajectory, doctrine, typology, application, and modern analogy;
+- added safeguards concerning antisemitism, supersessionism, anti-Black and
+  anti-African racism, anti-Palestinian and anti-Arab mapping, modern ethnic
+  proxies, disability stigma, poverty romanticization, victim and disaster
+  blame, silencing survivors, ecological destruction, animal harm, war,
+  genocide, ethnic cleansing, displacement, collective punishment,
+  nationalism, colonialism, revenge, and partisan enemy-mapping;
+- added explicit section statuses and knowledge-layer classifications;
+- populated the hermeneutical lens and retrieval metadata;
+- kept the record as `draft` / `in_review`, with human review missing;
+- added eight factual, structure, evidence, retrieval, safety, and SQLite
+  parity regression tests; and
+- added a reviewer-facing handoff at
+  [`ckl-phase-5-zephaniah-review.md`](ckl-phase-5-zephaniah-review.md).
+
 ## Validation performed
 
 Completed after Phases 2–4:
@@ -2771,6 +2874,78 @@ python3 -m framework.canonical_library verify-db \
 # 37,212,160 bytes
 ```
 
+Completed after Phase 5 Wave 27:
+
+```text
+python3 tools/ckl_validate.py \
+  --path framework/canonical_library/objects/books/zephaniah.json
+# 1 valid object, 0 warnings, 0 errors
+
+python3 -m unittest \
+  tests.canonical_library.test_zephaniah_record \
+  tests.canonical_library.test_ckl_retrieval_service \
+  tests.canonical_library.test_schema \
+  tests.canonical_library.test_quality_report
+# 78 tests in 25.944s: OK
+
+python3 -m unittest tests/canonical_library/test_*.py
+# 404 tests in 1289.225s: OK
+
+python3 tools/ckl_validate.py --root framework/canonical_library
+# 620 files, 620 valid objects, 14 coalesced migration warnings, 0 errors
+
+python3 tools/ckl_graph_audit.py --root framework/canonical_library --limit 10
+# 620 objects, 3,210 edges, 0 unknown targets, 0 orphaned objects
+# 2,770 missing reciprocal suggestions remain as migration debt
+
+python3 -m framework.canonical_library build-db \
+  --root framework/canonical_library \
+  --output /private/tmp/bhf-phase5-wave27-zephaniah.sqlite
+
+python3 -m framework.canonical_library verify-db \
+  --root framework/canonical_library \
+  --database /private/tmp/bhf-phase5-wave27-zephaniah.sqlite
+# 620 objects; database schema 2; inventory fingerprint
+# c0b63df3d964dfc4591f9701f026dedd1f35092b5da4b96cf3ff2dac92733ad4
+# 37,728,256 bytes
+```
+
+Completed after Phase 5 Wave 28:
+
+```text
+python3 tools/ckl_validate.py \
+  --path framework/canonical_library/objects/books/haggai.json
+# 1 valid object, 0 warnings, 0 errors
+
+python3 -m unittest \
+  tests.canonical_library.test_haggai_record \
+  tests.canonical_library.test_ckl_retrieval_service \
+  tests.canonical_library.test_schema \
+  tests.canonical_library.test_quality_report
+# 78 tests in 19.128s: OK
+
+python3 -m unittest tests/canonical_library/test_*.py
+# 412 tests in 390.878s: OK
+
+python3 tools/ckl_validate.py --root framework/canonical_library
+# 620 files, 620 valid objects, 14 coalesced migration warnings, 0 errors
+
+python3 tools/ckl_graph_audit.py --root framework/canonical_library --limit 10
+# 620 objects, 3,217 edges, 0 unknown targets, 0 orphaned objects
+# 2,777 missing reciprocal suggestions remain as migration debt
+
+python3 -m framework.canonical_library build-db \
+  --root framework/canonical_library \
+  --output /private/tmp/bhf-phase5-wave28-haggai.sqlite
+
+python3 -m framework.canonical_library verify-db \
+  --root framework/canonical_library \
+  --database /private/tmp/bhf-phase5-wave28-haggai.sqlite
+# 620 objects; database schema 2; inventory fingerprint
+# c09fc50d0818d60a1a057708ee3df6e46480f9b4690b4dae3e9e249c1e0010f7
+# 38,334,464 bytes
+```
+
 ## Recommended next wave
 
 Perform the human review checklists in
@@ -2824,11 +2999,16 @@ and
 and
 [`ckl-phase-5-nahum-review.md`](ckl-phase-5-nahum-review.md)
 and
-[`ckl-phase-5-habakkuk-review.md`](ckl-phase-5-habakkuk-review.md).
+[`ckl-phase-5-habakkuk-review.md`](ckl-phase-5-habakkuk-review.md)
+and
+[`ckl-phase-5-zephaniah-review.md`](ckl-phase-5-zephaniah-review.md)
+and
+[`ckl-phase-5-haggai-review.md`](ckl-phase-5-haggai-review.md).
 Do not mark any corrected record complete merely because its automated checks
 pass.
 
-Wave 26 Habakkuk is complete. Its completed scope is retained below for audit:
+Wave 28 Haggai is complete. The completed Habakkuk, Zephaniah, and Haggai
+scopes are retained below for audit:
 
 1. create book-specific factual regression fixtures before editing content;
 2. audit every populated field against the book it describes;
@@ -2916,7 +3096,172 @@ Wave 26 Habakkuk is complete. Its completed scope is retained below for audit:
 17. produce a reviewer-facing report; and
 18. refresh this handoff and both generated quality reports.
 
-Then continue Phase 5 with a controlled Zephaniah correction wave:
+Wave 28 Haggai completed the following controlled correction scope:
+
+1. create book-specific factual regression fixtures before editing content;
+2. audit every populated field against Haggai rather than inheriting Minor
+   Prophets templates;
+3. gather Scripture anchors and independent sources before drafting claims;
+4. distinguish the dated framing voice, Haggai as messenger, YHWH's direct
+   speech and reported action, Zerubbabel son of Shealtiel as governor,
+   Joshua son of Jehozadak as high priest, Darius I, priests answering Torah
+   questions, the remnant or people, those who saw the former house, laborers,
+   ancestors, nations and kingdoms, heaven, earth, sea, dry land, crops,
+   animals, silver, gold, the temple, holy and defiled objects or persons, and
+   later interpreters;
+5. map Haggai 1:1; 1:2–11; 1:12–15; 2:1–9; 2:10–19; and 2:20–23 while
+   qualifying date formulas, messenger formulas, objections, rhetorical
+   questions, “consider your ways,” drought and scarcity, obedience, fear,
+   “I am with you,” stirred spirits, former and latter glory, “be strong,”
+   divine spirit, shaking, nations' treasures or desire, peace, priestly Torah
+   consultation, holiness and corpse impurity analogy, foundation, blessing,
+   kingdom overthrow, servant, election, and signet;
+6. qualify Darius I's second year in 520 BCE, Persian-period Yehud,
+   Babylonian destruction in 586, Cyrus and return traditions, Sheshbazzar,
+   Zerubbabel, Joshua, Persian administration, imperial authorization,
+   Jerusalem's population and economy, drought, agriculture, labor, timber,
+   temple foundations, construction, tribute, silver, gold, the temple's 515
+   BCE completion as a later Ezra horizon, and modern calendar conversions
+   without forcing the book into Ezra's chronology at every point;
+7. distinguish superscription, prose prophetic report, messenger formula,
+   disputation, accusation, rhetorical question, covenant curse or
+   de-creation speech, exhortation, obedience report, divine assurance,
+   spirit-stirring notice, dated oracle, comparison with the former temple,
+   salvation promise, divine-warrior shaking, priestly Torah inquiry,
+   ritual-purity analogy, retrospective oracle, blessing promise, royal
+   oracle, servant saying, election formula, and signet metaphor;
+8. address procrastination, priorities, paneled houses, scarcity, labor,
+   wages, drought, land, crops, animals, obedience, fear, divine presence,
+   courage, spirit, temple, glory, silver, gold, nations, peace, holiness,
+   impurity, corpses, communal contamination, foundation, blessing, divine
+   sovereignty, empire, political upheaval, Zerubbabel, Davidic hope, servant,
+   election, signet, restoration, worship, justice, human agency, and hope;
+9. preserve uncertainty concerning Haggai's name, title, biography, age,
+   relationship to the returned community, date conversions, prose and
+   speech sources, redaction, “these people,” paneled houses, reasons for
+   delay, economic causation, drought language, former temple witnesses,
+   comparative glory, shaking chronology, treasures or desire of all
+   nations, filling the house, silver and gold, latter glory, peace, Torah
+   consultation, transfer of holiness, corpse impurity, the identity and
+   scope of “this people,” foundation date, retrospective crop figures,
+   “from this day,” Zerubbabel's historical future, servant, chosen one,
+   signet, reversal of Jeremiah 22, messianic reception, unity, liturgy, and
+   Book-of-the-Twelve shaping;
+10. address Masoretic Haggai, Old Greek Aggaios, Judean Desert and versional
+    witnesses, Persian-period inscriptions and administrative evidence,
+    Cyrus Cylinder and related imperial sources with perspective labels,
+    2 Kings 25, 2 Chronicles 36, Ezra 1–6, Zechariah 1–8, Jeremiah 22 and
+    28–29, Leviticus and Numbers purity texts, Hebrews 12:26–29, early Jewish
+    and Christian reception, rabbinic, patristic, liturgical, artistic,
+    christological, ecclesial, liberationist, feminist, postcolonial,
+    disability-aware, trauma-aware, ecological, and modern political
+    reception;
+11. distinguish dated historical claim, prophetic speech, reported response,
+    Persian royal self-presentation, archaeology, economic reconstruction,
+    drought rhetoric, covenantal interpretation, Torah analogy, metaphor,
+    textual witness, Greek translation, quotation, verbal parallel, shared
+    tradition, New Testament reception, canonical trajectory, doctrine,
+    typology, christological or ecclesial application, liberationist
+    reception, and modern analogy;
+12. add safeguards concerning antisemitism, supersessionism, anti-Iranian or
+    anti-Persian racism, treating ancient Persia or Yehud as modern proxies,
+    modern temple-rebuilding schemes that threaten Jewish, Muslim,
+    Palestinian, or other communities and holy sites, coercive fundraising,
+    exploitative church building, prosperity teaching, blaming poor or
+    displaced people for economic hardship, blaming drought or climate
+    disaster on personal sin, forced or unpaid labor, purity stigma involving
+    corpses, illness, menstruation, disability, caste, race, or social class,
+    glorifying empire or colonial patronage, nationalist and partisan use of
+    Zerubbabel, hereditary entitlement, collective guilt, divine violence,
+    political upheaval, trauma voyeurism, ecological harm, and silencing
+    dissent in the name of obedience;
+13. populate only applicable hermeneutical and retrieval sections;
+14. use current certainty and dispute labels only where evidence justifies
+    them;
+15. keep section statuses honest and leave human review missing;
+16. run schema, graph, golden retrieval, factual, and SQLite parity tests;
+17. produce a reviewer-facing report; and
+18. refresh this handoff and both generated quality reports.
+
+Active next wave: continue Phase 5 with this controlled Zechariah correction
+wave:
+
+1. create book-specific factual regression fixtures before editing content;
+2. audit every populated field against Zechariah rather than inheriting Minor
+   Prophets templates;
+3. gather Scripture anchors and independent sources before drafting claims;
+4. distinguish the dated framing voice, Zechariah son of Berechiah son of
+   Iddo, YHWH, the angel who speaks with Zechariah, the angel of YHWH, the
+   horseman and patrols, Satan or the accuser, Joshua the high priest,
+   Zerubbabel, the Branch, the two anointed ones, the flying scroll, the woman
+   called Wickedness, the ephah-bearers, four chariots and winds or spirits,
+   crowned figures, priests, earlier prophets, Bethel's delegation, the
+   remnant, shepherds, flocks, rejected and struck shepherds, Daughter Zion,
+   Jerusalem, Judah, nations, a humble king, mourners, living waters, creation,
+   and later interpreters;
+5. map Zechariah 1:1–6; 1:7–6:15; 7:1–8:23; 9:1–11:17; and 12:1–14:21 while
+   also indexing each night vision, symbolic act, oracle, speech, question,
+   command, refrain, speaker, addressee, pronoun shift, and proposed seam;
+6. qualify Darius I's second through fourth years, 520–518 BCE, early Persian
+   Yehud, temple rebuilding, Joshua and Zerubbabel, Persian administration,
+   Jerusalem's population and economy, and the much more disputed dates and
+   historical horizons of chapters 9–14, including Persian and Hellenistic
+   proposals, without forcing the entire book into one moment;
+7. distinguish superscription, call to return, prose report, night vision,
+   interpreting-angel dialogue, divine-council scene, oracle, accusation,
+   symbolic action, sign-act report, crowning, disputation, fasting inquiry,
+   ethical exhortation, salvation promise, nation oracle, royal advent,
+   shepherd allegory, lament, apocalypse, battle oracle, mourning liturgy,
+   purification promise, cosmic transformation, pilgrimage, and holiness
+   conclusion;
+8. address return, repentance, ancestral memory, divine jealousy and mercy,
+   Jerusalem, temple, land, empire, surveillance and patrol, accusation,
+   priesthood, cleansing, Branch, spirit, rebuilding, justice, mercy,
+   fasting, truth, peace, nations, humble kingship, prisoners, covenant blood,
+   shepherds, betrayal, rejection, violence, piercing, mourning,
+   purification, remnant, Day of YHWH, kingship, living water, creation, feast,
+   holiness, restoration, human agency, and hope;
+9. preserve uncertainty concerning Zechariah's genealogy and biography, exact
+   vision sequence and number, angelic identities, colored horses, horns and
+   craftsmen, measuring line, Satan or accuser, Joshua's garments, Branch,
+   stone and seven eyes, lampstand, olive trees and anointed ones, flying
+   scroll, ephah and Wickedness, Shinar, chariots and winds or spirits,
+   crowns, fasts, prose and oracle sources, unity, redaction, chapters 9–14,
+   historical referents, the humble king, covenant blood, shepherds, thirty
+   silver pieces, potter or treasury, pierced figure, mourning groups,
+   two-thirds, Mount of Olives, living waters, feast, bells, pots, and
+   Book-of-the-Twelve shaping;
+10. address Masoretic Zechariah, Old Greek Zacharias, Judean Desert and
+    versional witnesses, Persian and Hellenistic evidence, Ezra, Haggai,
+    Isaiah, Jeremiah, Ezekiel, Daniel, the Psalms, the Gospels, Hebrews,
+    Revelation, early Jewish and Christian reception, rabbinic, patristic,
+    liturgical, artistic, christological, ecclesial, liberationist, feminist,
+    postcolonial, disability-aware, trauma-aware, ecological, and political
+    reception;
+11. distinguish historical referent, prophetic speech, visionary report,
+    angelic interpretation, symbol, royal self-presentation, archaeology,
+    textual witness, Greek translation, quotation, allusion, verbal parallel,
+    shared tradition, New Testament reception, canonical trajectory, doctrine,
+    typology, christological or ecclesial application, liberationist
+    reception, and modern analogy;
+12. add safeguards concerning antisemitism, supersessionism, anti-Iranian or
+    anti-Persian and anti-Greek racism, modern ethnic or political proxies,
+    labeling opponents satanic or wicked, priestly and purity stigma,
+    disability metaphors, coercive temple or church projects, holy-site
+    threats, anti-Palestinian or anti-Muslim readings, nationalism,
+    militarism, conquest, siege, divine violence, collective punishment,
+    forced labor, betrayal and abuse, trauma voyeurism, prosperity teaching,
+    apocalyptic date-setting and conspiracy theories, ecological harm, and
+    partisan capture;
+13. populate only applicable hermeneutical and retrieval sections;
+14. use current certainty and dispute labels only where evidence justifies
+    them;
+15. keep section statuses honest and leave human review missing;
+16. run schema, graph, golden retrieval, factual, and SQLite parity tests;
+17. produce a reviewer-facing report; and
+18. refresh this handoff and both generated quality reports.
+
+Wave 27 Zephaniah completed the following controlled correction scope:
 
 1. create book-specific factual regression fixtures before editing content;
 2. audit every populated field against Zephaniah rather than inheriting Minor
@@ -2990,3 +3335,7 @@ Then continue Phase 5 with a controlled Zephaniah correction wave:
 16. run schema, graph, golden retrieval, factual, and SQLite parity tests;
 17. produce a reviewer-facing report; and
 18. refresh this handoff and both generated quality reports.
+
+The active continuation target is Phase 5 Wave 29, Zechariah. Follow the
+controlled Zechariah scope above; do not reopen completed Haggai or Zephaniah
+work except to address a concrete review or regression finding.
