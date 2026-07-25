@@ -6,18 +6,18 @@ This is the durable handoff for the **BHF Canonical Knowledge Library Expansion
 and Correction Plan**. The supplied plan explicitly says to begin with the
 repository audit and Phase 1 quality reporting, avoid immediate bulk content
 generation, and stop after each major phase. Phases 1–4 are now implemented at
-the schema/runtime level. Phase 5 Waves 1–23 have corrected Genesis through
-Jonah as honest, source-backed drafts; none has been mechanically approved.
+the schema/runtime level. Phase 5 Waves 1–24 have corrected Genesis through
+Micah as honest, source-backed drafts; none has been mechanically approved.
 
 ## Current checkpoint
 
 | Plan area | Status | Continuation note |
 | --- | --- | --- |
 | Phase 1: inventory, reporting, quality metrics | **Implemented** | Deep JSON and Markdown reports, CLI support, and calculation tests are present. |
-| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Thirty-one records now have evidence-based draft statuses; 589 still need explicit migration. |
-| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Thirty-one records now have explicit layers; 589 still need migration. |
+| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Thirty-two records now have evidence-based draft statuses; 588 still need explicit migration. |
+| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Thirty-two records now have explicit layers; 588 still need migration. |
 | Phase 4: certainty and dispute taxonomies | **Implemented; evidence migration pending** | Current taxonomies and granular claim records are supported. Legacy values remain readable but are forbidden for approved notes; no `unknown` value was guessed or mass-relabeled. |
-| Phase 5: audit/correct all 66 books | **Waves 1–23 implemented; human review pending** | Genesis through Jonah are corrected drafts with sources, claims, tests, and reviewer notes. Thirty-five books remain. |
+| Phase 5: audit/correct all 66 books | **Waves 1–24 implemented; human review pending** | Genesis through Micah are corrected drafts with sources, claims, tests, and reviewer notes. Thirty-four books remain. |
 | Phases 6–20 | Not started | Follow the supplied order after the foundation is upgraded. |
 | Phase 21: controlled generation workflow | Partially enabled | Reporting, type-specific completeness, and approval gates are present; scoped human-review events still need Phase 19. |
 
@@ -606,6 +606,30 @@ After Phase 5 Wave 23, the refreshed report records:
 
 All thirty-one corrected books remain incomplete because their human-review
 sections are still `missing`. The remaining 589 records still rely on
+section/layer migration defaults.
+
+After Phase 5 Wave 24, the refreshed report records:
+
+| Migration metric | Result |
+| --- | ---: |
+| Records marked `complete` / `draft` | 588 / 32 |
+| Raw records missing explicit `section_status` | 588 |
+| Raw records with incomplete type-required sections | 620 |
+| Raw records missing explicit `knowledge_layers` | 588 |
+| Interpretive notes using current taxonomies | 536 |
+| Interpretive notes still using legacy taxonomies | 1,254 |
+| Granular claims authored | 382 |
+| External sources | 651 |
+| Source references that do not resolve | 0 |
+| Invalid source support targets | 0 |
+| Unresolved legacy object references | 14 |
+| Scripture reference errors | 0 |
+| Graph edges / unknown targets / orphaned records | 3,200 / 0 / 0 |
+| Missing reciprocal relationship suggestions | 2,760 |
+| Validator warnings / errors | 14 / 0 |
+
+All thirty-two corrected books remain incomplete because their human-review
+sections are still `missing`. The remaining 588 records still rely on
 section/layer migration defaults.
 
 Near-duplicate and template findings are triage signals rather than automatic
@@ -1831,6 +1855,56 @@ Completed implementation work:
 - added a reviewer-facing handoff at
   [`ckl-phase-5-jonah-review.md`](ckl-phase-5-jonah-review.md).
 
+## Phase 5 Wave 24: Micah
+
+Completed implementation work:
+
+- removed the inherited Minor Prophets placeholder, including unrelated
+  Hosea, Amos, Jonah, and Nineveh values, generic corpus dates and setting,
+  legacy evidence labels, internal-only sourcing, and false completion and
+  review metadata;
+- rebuilt the record around Micah 1; 2; 3; 4–5; 6; and 7 while preserving
+  three-cycle, judgment-and-salvation, final-form, and redactional outlines;
+- distinguished Micah of Moresheth, YHWH, framing and prophetic voices,
+  capitals and communities, land-grabbers and dispossessed households,
+  rulers, prophets, priests, judges, seers, diviners, daughter Zion, remnant,
+  Bethlehem ruler, woman in labor, shepherds, creation witnesses, Assyria,
+  Babylon, nations, enemies, and later interpreters;
+- distinguished twelve genre and mode groupings and added thirty-four granular
+  claims plus fifty-two structured notes using current evidence taxonomies;
+- added Masoretic Micah, Hebrew Bible and New Testament comparanda, Old Greek
+  Michaias, CATSS, NETS, 4Q81, 4Q82, MurXII, Greek 8HevXII, commentaries,
+  the Sennacherib Prism, Lachish reliefs, and early Jewish, Jewish-life,
+  Christian, artistic, postcolonial, gender-critical, ecological, and
+  trauma-aware sources, including twenty-three URL-bearing external records;
+- qualified Moresheth, Shephelah puns and route, Jotham, Ahaz, Hezekiah,
+  Samaria 722/721, Sennacherib 701, Lachish, Assyrian ideology, landholding,
+  debt, courts, patronage, social location, eighth-century prophetic memory,
+  later additions, final form, and Book-of-the-Twelve shaping;
+- preserved uncertainty concerning speakers and quotation boundaries,
+  breaker and remnant, prophetic feeding imagery, Jeremiah 26 reception,
+  Micah 4 / Isaiah 2 priority, Babylon, numbering, Bethlehem ruler, ancient
+  origins, woman in labor, seven/eight leaders, Assyria, purification, Micah
+  6 genre and syntax, Omri and Ahab, Micah 7 voices, divine-name wordplay,
+  date, unity, redaction, and purpose;
+- distinguished historical referent, prophetic memory, compiler, quotation,
+  parallel, disputed borrowing, shared tradition, canonical trajectory,
+  Jewish messianic, Christian christological, artistic, social-justice,
+  political, and modern analogical readings;
+- added safeguards concerning antisemitism, supersessionism, anti-ritualism,
+  partisan capture, poverty romanticization, land and housing abuse, coercion,
+  child sacrifice, domestic violence, weaponized humility and forgiveness,
+  disability stigma, gender stereotypes, racism, nationalism, Zionism and
+  anti-Zionism mappings, colonialism, empire, war, genocide, displacement,
+  disaster blame, survivor safety, and trauma;
+- added explicit section statuses and knowledge-layer classifications;
+- populated the hermeneutical lens and retrieval metadata;
+- kept the record as `draft` / `in_review`, with human review missing;
+- added eight factual, structure, evidence, retrieval, safety, and SQLite
+  parity regression tests; and
+- added a reviewer-facing handoff at
+  [`ckl-phase-5-micah-review.md`](ckl-phase-5-micah-review.md).
+
 ## Validation performed
 
 Completed after Phases 2–4:
@@ -2437,6 +2511,42 @@ python3 -m framework.canonical_library verify-db \
 # 35,598,336 bytes
 ```
 
+Completed after Phase 5 Wave 24:
+
+```text
+python3 tools/ckl_validate.py \
+  --path framework/canonical_library/objects/books/micah.json
+# 1 valid object, 0 warnings, 0 errors
+
+python3 -m unittest \
+  tests.canonical_library.test_micah_record \
+  tests.canonical_library.test_ckl_retrieval_service \
+  tests.canonical_library.test_schema \
+  tests.canonical_library.test_quality_report
+# 78 tests in 18.271s: OK
+
+python3 -m unittest tests/canonical_library/test_*.py
+# 380 tests in 309.279s: OK
+
+python3 tools/ckl_validate.py --root framework/canonical_library
+# 620 files, 620 valid objects, 14 coalesced migration warnings, 0 errors
+
+python3 tools/ckl_graph_audit.py --root framework/canonical_library --limit 10
+# 620 objects, 3,200 edges, 0 unknown targets, 0 orphaned objects
+# 2,760 missing reciprocal suggestions remain as migration debt
+
+python3 -m framework.canonical_library build-db \
+  --root framework/canonical_library \
+  --output /private/tmp/bhf-phase5-wave24-micah.sqlite
+
+python3 -m framework.canonical_library verify-db \
+  --root framework/canonical_library \
+  --database /private/tmp/bhf-phase5-wave24-micah.sqlite
+# 620 objects; database schema 2; inventory fingerprint
+# 8dfdde1054284dd7574072d55fe53480d19082770806299ab16320ce38261049
+# 36,188,160 bytes
+```
+
 ## Recommended next wave
 
 Perform the human review checklists in
@@ -2484,85 +2594,82 @@ and
 and
 [`ckl-phase-5-obadiah-review.md`](ckl-phase-5-obadiah-review.md)
 and
-[`ckl-phase-5-jonah-review.md`](ckl-phase-5-jonah-review.md).
+[`ckl-phase-5-jonah-review.md`](ckl-phase-5-jonah-review.md)
+and
+[`ckl-phase-5-micah-review.md`](ckl-phase-5-micah-review.md).
 Do not mark any corrected record complete merely because its automated checks
 pass.
 
-Then continue Phase 5 with a controlled Micah correction wave:
+Then continue Phase 5 with a controlled Nahum correction wave:
 
 1. create book-specific factual regression fixtures before editing content;
 2. audit every populated field against the book it describes;
 3. gather Scripture anchors and independent sources before drafting claims;
-4. distinguish Micah of Moresheth, YHWH's direct speech and reported action,
-   the prophetic first-person voice, nations and peoples, Samaria and
-   Jerusalem, land-grabbers and dispossessed families, false prophets,
-   rulers, chiefs, priests, judges, seers, diviners, daughter Zion, the
-   remnant, the Bethlehem ruler and woman in labor, Assyrian enemies,
-   shepherds and leaders, mountains as covenant witnesses, the disputants in
-   Micah 6, the lamenting or hopeful voices in Micah 7, and later
-   interpreters;
-5. map Micah 1; 2; 3; 4–5; 6; and 7 while also representing three-cycle,
-   judgment-and-salvation, and redactional outlines; qualify superscription,
-   speaker changes, quotation boundaries, first-person shifts, place-name
-   wordplay, refrains, seams, parallel oracles, prose framing, and alternate
-   unit divisions and Hebrew/common-English numbering around Micah 4:14/5:1;
-6. qualify Moresheth and the Shephelah, Jotham, Ahaz, Hezekiah, Samaria's fall
-   in 722/721 BCE, Sennacherib's 701 BCE campaign, Jerusalem, Lachish and the
-   towns in Micah 1, Neo-Assyrian tribute and warfare, land tenure, debt,
-   seizure, courts, patronage, elite housing, cult sites, rural and urban
-   settings, the Sennacherib Prism and Lachish reliefs, eighth-century
-   material, later exilic and Persian additions, prophetic circles,
-   collection, redaction, final form, and Book-of-the-Twelve shaping;
-7. distinguish superscription, theophany, judgment oracle, lament,
-   place-name dirge, woe oracle, accusation, prohibition, disputed speech,
-   remnant and salvation oracle, Zion tradition, nations-pilgrimage oracle,
-   birth and ruler oracle, shepherd and war oracle, covenant lawsuit or
-   disputation, instruction, wisdom saying, communal lament and confession,
-   enemy taunt, prayer, hymn, and doxological conclusion;
-8. address idolatry, high places, land and inheritance, dispossession,
-   predatory economics, debt, housing, women and children, false prophecy,
-   corrupt rulers, priests and judges, paid religious speech, justice,
-   violence, Zion and temple security, exile, Babylon, nations, peace,
-   swords and plowshares, remnant, daughter Zion, Davidic and Bethlehem hope,
-   birth, shepherding, Assyria, what YHWH requires, sacrifice, firstborn,
-   *mishpat*, *hesed*, humility, covenant memory, forgiveness, casting sins
-   into the sea, and promises to Jacob and Abraham;
-9. preserve uncertainty concerning Micah's relation to the extant book,
-   Moresheth's identification, every Micah 1 place pun and route, speakers in
-   2:6–11, the remnant and breaker in 2:12–13, “bite with their teeth” in
-   3:5, Jeremiah 26's use of 3:12, Micah 4 and Isaiah 2's literary direction,
-   Babylon in 4:10, the ruler's “origins from ancient days,” the woman in
-   labor, ruler identity, seven shepherds and eight leaders, Assyria, the
-   remnant as dew and lion, removal of military, magic, and cult objects,
-   covenant-lawsuit classification, Shittim-to-Gilgal memory, sacrifice and
-   firstborn rhetoric, Micah 6:8's syntax, Omri and Ahab, speakers in Micah 7,
-   divine-name wordplay in 7:18, and date, unity, redaction, and purpose;
-10. address Masoretic Micah, Old Greek Michaias, Judean Desert and versional
-    witnesses, Jeremiah 26:18, Isaiah 2:2–4, 2 Kings, Chronicles, Hosea, Amos,
-    Jonah, Nahum, Psalms, Deuteronomy, Davidic and Zion traditions, Matthew
-    2:5–6, Matthew 10:35–36, Luke 12:53, John 7:42, early Jewish and rabbinic
-    reception, early Christian interpretation, Bethlehem and messianic
-    reception, later Jewish, Christian, artistic, political, liberationist,
-    postcolonial, ecological, and trauma-aware interpretation;
-11. distinguish historical referent, prophetic memory, narrator or compiler,
-    quotation, verbal parallel, disputed borrowing, shared tradition,
-    canonical trajectory, typology, Jewish messianic reception,
-    christological reception, ecclesial or social-justice application, and
-    modern analogy, especially Zion, nations, swords and plowshares, Babylon,
-    Bethlehem, ruler, remnant, justice, mercy, humility, sacrifice, land,
-    leadership, forgiveness, Jacob, Abraham, and “what does YHWH require”;
-12. add safeguards concerning antisemitic and anti-ritual readings,
-    supersessionism, reducing Judaism to legalism or sacrifice, partisan
-    capture of justice language, poverty romanticization, blaming poor or
-    displaced people, class contempt, land theft, predatory lending, housing
-    exploitation, coercive charity, corrupt-leader generalizations, clergy
-    abuse, child sacrifice, coerced worship, weaponizing humility against
-    abuse survivors, family or domestic violence, gender and childbirth
-    stereotypes, disability stigma around “lame” remnant language, racism,
-    nationalism, Zionism or anti-Zionism as automatic textual equivalents,
-    missionary colonialism, empire, war, genocide, land seizure, forced
-    displacement, disaster blame, divine violence, vengeance, and forgiveness
-    used to evade accountability;
+4. distinguish the framing voice, YHWH's direct speech and reported action,
+   the implied prophet or poet, Judah and Jacob, the bringer of good news,
+   Belial or the wicked one, Nineveh as city and feminized personification,
+   Assyrian king, princes, commanders, guards, merchants, scribes, shepherds,
+   nobles, soldiers, attackers, captives, children, peoples, nations, lion
+   family, and later interpreters;
+5. map Nahum 1:1; 1:2–8; 1:9–15; 2:1–13; and 3:1–19 while preserving
+   alternate Hebrew/common-English numbering, proposed alphabetic acrostic,
+   hymn, oracle, battle poem, taunt, woe, lament, funeral dirge, and
+   messenger-speech divisions; qualify speakers, addressees, imperatives,
+   quotation boundaries, refrains, repetitions, shifts between Judah and
+   Nineveh, and textual seams;
+6. qualify Elkosh and every location proposal, the Neo-Assyrian empire,
+   Nineveh's rise under Sennacherib, Esarhaddon, and Ashurbanipal, the fall of
+   Thebes/No-amon in 663 BCE, civil conflict and imperial contraction, the
+   Babylonian and Median campaign, Nineveh's fall in 612 BCE, later memory,
+   city walls, gates, rivers and canals, palaces, roads, chariots, trade,
+   tribute, deportation, siege, plunder, fire, and the Babylonian Chronicle,
+   inscriptions, reliefs, excavation, and environmental evidence;
+7. distinguish superscription, burden or oracle, divine-warrior theophany,
+   partial alphabetic hymn, salvation oracle, taunt, messenger announcement,
+   siege and battle poem, lion fable, woe oracle, city lament,
+   personification, humiliation imagery, rhetorical question, comparison with
+   Thebes, funeral lament, dirge, and open international response;
+8. address divine jealousy, vengeance, wrath, patience, power, storm, sea,
+   mountains, refuge, judgment, good news, peace, broken yoke, idolatry,
+   imperial violence, bloodshed, lies, plunder, exploitation, trade, military
+   confidence, gendered city rhetoric, shame, exposure, captivity, child
+   killing, fire, locust imagery, failed leadership, irreparable wound,
+   nations' applause, and the relationship of justice, deliverance, grief,
+   retribution, and hope;
+9. preserve uncertainty concerning Elkosh, title and genre, the acrostic's
+   extent and reconstruction, order and addressees in chapter 1, “one who
+   plots evil,” whether 1:15 belongs with chapter 2 in Hebrew numbering,
+   “scatterer” identity, shields and chariots, river gates, palace collapse,
+   water imagery, lion den symbolism, Nineveh's personification, translation
+   of 3:4–7, Thebes comparison, geography and allies of Thebes, “mistress of
+   sorceries,” locust similes, merchants and scribes, shepherds and nobles,
+   king of Assyria, the final wound, date, authorship, unity, redaction,
+   historical precision, rhetorical purpose, and Book-of-the-Twelve shaping;
+10. address Masoretic Nahum, Old Greek Naoum, Judean Desert and versional
+    witnesses, 4Q169 Pesher Nahum, the Babylonian Chronicle, Assyrian royal
+    inscriptions and reliefs, Zephaniah 2:13–15, Isaiah 10 and 52:7,
+    Jonah, Micah, Exodus 15 and 34, Psalms, Jeremiah, Ezekiel, Revelation
+    17–18 as later canonical comparison, Romans 10:15's use of Isaiah rather
+    than direct quotation of Nahum, early Jewish and Christian reception,
+    liturgical absence or presence, art and music, imperial, postcolonial,
+    feminist, trauma-aware, ecological, and modern political reception;
+11. distinguish Assyrian historical referent, prophetic rhetoric, divine
+    speech, poetic personification, metaphor, textual witness, pesher
+    interpretation, verbal parallel, shared tradition, canonical trajectory,
+    Christian typology, ecclesial application, liberationist reception, and
+    modern analogy, especially Nineveh, empire, good news, divine warrior,
+    vengeance, flood, lions, city-as-woman, exposure, Thebes, conquest,
+    wounded ruler, and nations' applause;
+12. add safeguards concerning antisemitism, anti-Iraqi or anti-Middle Eastern
+    racism, treating ancient Assyrians as modern ethnic proxies,
+    supersessionism, collective or hereditary guilt, survivor blame, disaster
+    blame, dehumanization, sexualized humiliation, rape culture, misogyny,
+    sex-worker stigma, victim-blaming captives, child-killing imagery,
+    glorification of siege, torture, plunder, genocide, ethnic cleansing,
+    land seizure, forced displacement, collective punishment, nationalism,
+    colonialism, empire, war propaganda, revenge, vigilantism, divine
+    violence, trauma voyeurism, ecological destruction, partisan capture, and
+    using Nineveh to target contemporary cities, religions, or peoples;
 13. populate only applicable hermeneutical and retrieval sections;
 14. use current certainty/dispute labels only where evidence justifies them;
 15. keep section statuses honest and leave human review missing;
