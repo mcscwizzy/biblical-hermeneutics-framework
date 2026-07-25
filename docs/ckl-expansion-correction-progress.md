@@ -6,18 +6,18 @@ This is the durable handoff for the **BHF Canonical Knowledge Library Expansion
 and Correction Plan**. The supplied plan explicitly says to begin with the
 repository audit and Phase 1 quality reporting, avoid immediate bulk content
 generation, and stop after each major phase. Phases 1–4 are now implemented at
-the schema/runtime level. Phase 5 Waves 1–21 have corrected Genesis through
-Amos as honest, source-backed drafts; none has been mechanically approved.
+the schema/runtime level. Phase 5 Waves 1–22 have corrected Genesis through
+Obadiah as honest, source-backed drafts; none has been mechanically approved.
 
 ## Current checkpoint
 
 | Plan area | Status | Continuation note |
 | --- | --- | --- |
 | Phase 1: inventory, reporting, quality metrics | **Implemented** | Deep JSON and Markdown reports, CLI support, and calculation tests are present. |
-| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Twenty-nine records now have evidence-based draft statuses; 591 still need explicit migration. |
-| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Twenty-nine records now have explicit layers; 591 still need migration. |
+| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Thirty records now have evidence-based draft statuses; 590 still need explicit migration. |
+| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Thirty records now have explicit layers; 590 still need migration. |
 | Phase 4: certainty and dispute taxonomies | **Implemented; evidence migration pending** | Current taxonomies and granular claim records are supported. Legacy values remain readable but are forbidden for approved notes; no `unknown` value was guessed or mass-relabeled. |
-| Phase 5: audit/correct all 66 books | **Waves 1–21 implemented; human review pending** | Genesis through Amos are corrected drafts with sources, claims, tests, and reviewer notes. Thirty-seven books remain. |
+| Phase 5: audit/correct all 66 books | **Waves 1–22 implemented; human review pending** | Genesis through Obadiah are corrected drafts with sources, claims, tests, and reviewer notes. Thirty-six books remain. |
 | Phases 6–20 | Not started | Follow the supplied order after the foundation is upgraded. |
 | Phase 21: controlled generation workflow | Partially enabled | Reporting, type-specific completeness, and approval gates are present; scoped human-review events still need Phase 19. |
 
@@ -558,6 +558,30 @@ After Phase 5 Wave 21, the refreshed report records:
 
 All twenty-nine corrected books remain incomplete because their human-review
 sections are still `missing`. The remaining 591 records still rely on
+section/layer migration defaults.
+
+After Phase 5 Wave 22, the refreshed report records:
+
+| Migration metric | Result |
+| --- | ---: |
+| Records marked `complete` / `draft` | 590 / 30 |
+| Raw records missing explicit `section_status` | 590 |
+| Raw records with incomplete type-required sections | 620 |
+| Raw records missing explicit `knowledge_layers` | 590 |
+| Interpretive notes using current taxonomies | 440 |
+| Interpretive notes still using legacy taxonomies | 1,258 |
+| Granular claims authored | 324 |
+| External sources | 605 |
+| Source references that do not resolve | 0 |
+| Invalid source support targets | 0 |
+| Unresolved legacy object references | 14 |
+| Scripture reference errors | 0 |
+| Graph edges / unknown targets / orphaned records | 3,194 / 0 / 0 |
+| Missing reciprocal relationship suggestions | 2,754 |
+| Validator warnings / errors | 14 / 0 |
+
+All thirty corrected books remain incomplete because their human-review
+sections are still `missing`. The remaining 590 records still rely on
 section/layer migration defaults.
 
 Near-duplicate and template findings are triage signals rather than automatic
@@ -1676,6 +1700,58 @@ Completed implementation work:
 - added a reviewer-facing handoff at
   [`ckl-phase-5-amos-review.md`](ckl-phase-5-amos-review.md).
 
+## Phase 5 Wave 22: Obadiah
+
+Completed implementation work:
+
+- removed the inherited Minor Prophets placeholder, including unrelated Hosea,
+  Amos, Jonah, and Nineveh values, generic corpus-wide dates and setting,
+  legacy evidence labels, internal-only orientation sourcing, and false
+  completion and review metadata;
+- rebuilt the record around Obadiah 1; 2–9; 10–14; 15–16; and 17–21 while
+  preserving alternative outlines, speaker questions, and proposed seams;
+- distinguished Obadiah's superscription, YHWH's reported speech, the
+  prophetic voice, the envoy and summoned nations, Edom or Esau, Jacob or
+  Israel, Judah and Jerusalem, invaders, allies, sages, warriors, fugitives,
+  survivors, the houses of Jacob, Joseph, and Esau, regional groups, exiles
+  in Sepharad, and the unnamed figures ascending Mount Zion;
+- distinguished eleven literary genres and added twenty-three granular claims
+  plus thirty-seven structured interpretive notes using current taxonomies;
+- added Masoretic Obadiah, Old Greek Abdias, CATSS, NETS, 4Q82, Jeremiah 49,
+  canonical comparanda, commentary, historical, archaeological, textual,
+  reception, race, postcolonial, violence, Jewish-life, and trauma-aware
+  anchors plus twenty-two URL-bearing external records;
+- qualified the name Obadiah, absence of patronymic and royal date,
+  seventh-century, 587/586 BCE, sixth-century, and Persian-period proposals,
+  Edom's geography and routes, Jerusalem's fall, southern Judah and Negev
+  interaction, later Nabataean and Idumean histories, collection, expansion,
+  unity, final form, and Book-of-the-Twelve shaping;
+- addressed pride, security, alliances, wisdom, warriors, plunder, kinship
+  betrayal, gloating, looting, fugitives, survivors, reciprocal judgment,
+  drinking, holiness, fire, land, restoration, and YHWH's kingship;
+- preserved uncertainty concerning the envoy and prophetic plural, allies,
+  Teman, verses 12–14's mood and discourse time, the exact actions attributed
+  to Edom, verse 16's pronouns and drinking, verse 17's possession clause,
+  verses 19–20's syntax and geography, Sepharad, verse 21's plural figures,
+  and the date and unity of the closing material;
+- distinguished historical referent, literary symbol, verbal parallel,
+  disputed borrowing, canonical trajectory, direct quotation, Jewish
+  reception, Edom-as-Rome reception, christological reception, ecclesial
+  application, and modern analogy;
+- added safeguards concerning ethnic essentialism, hereditary guilt,
+  antisemitism, anti-Arab racism, modern ethnic and national coding,
+  supersessionism, sibling hatred, survivor blame, refugee and border
+  violence, trauma exploitation, empire, colonialism, nationalism, war,
+  genocide, land seizure, forced displacement, revenge, dehumanization, and
+  partisan capture;
+- added explicit section statuses and knowledge-layer classifications;
+- populated the hermeneutical lens and retrieval metadata;
+- kept the record as `draft` / `in_review`, with human review missing;
+- added eight factual, structure, evidence, retrieval, safety, and SQLite
+  parity regression tests; and
+- added a reviewer-facing handoff at
+  [`ckl-phase-5-obadiah-review.md`](ckl-phase-5-obadiah-review.md).
+
 ## Validation performed
 
 Completed after Phases 2–4:
@@ -2210,6 +2286,42 @@ python3 -m framework.canonical_library verify-db \
 # 34,738,176 bytes
 ```
 
+Completed after Phase 5 Wave 22:
+
+```text
+python3 tools/ckl_validate.py \
+  --path framework/canonical_library/objects/books/obadiah.json
+# 1 valid object, 0 warnings, 0 errors
+
+python3 -m unittest \
+  tests.canonical_library.test_obadiah_record \
+  tests.canonical_library.test_ckl_retrieval_service \
+  tests.canonical_library.test_schema \
+  tests.canonical_library.test_quality_report
+# 78 tests in 16.858s: OK
+
+python3 -m unittest tests/canonical_library/test_*.py
+# 364 tests in 276.882s: OK
+
+python3 tools/ckl_validate.py --root framework/canonical_library
+# 620 files, 620 valid objects, 14 coalesced migration warnings, 0 errors
+
+python3 tools/ckl_graph_audit.py --root framework/canonical_library --limit 10
+# 620 objects, 3,194 edges, 0 unknown targets, 0 orphaned objects
+# 2,754 missing reciprocal suggestions remain as migration debt
+
+python3 -m framework.canonical_library build-db \
+  --root framework/canonical_library \
+  --output /private/tmp/bhf-phase5-wave22-final-ckl.sqlite
+
+python3 -m framework.canonical_library verify-db \
+  --root framework/canonical_library \
+  --database /private/tmp/bhf-phase5-wave22-final-ckl.sqlite
+# 620 objects; database schema 2; inventory fingerprint
+# d48df68d09650c084794370c6b36838eb999f6b9adf3ecdd7264d32237d2d84d
+# 35,201,024 bytes
+```
+
 ## Recommended next wave
 
 Perform the human review checklists in
@@ -2253,59 +2365,72 @@ and
 and
 [`ckl-phase-5-joel-review.md`](ckl-phase-5-joel-review.md)
 and
-[`ckl-phase-5-amos-review.md`](ckl-phase-5-amos-review.md).
+[`ckl-phase-5-amos-review.md`](ckl-phase-5-amos-review.md)
+and
+[`ckl-phase-5-obadiah-review.md`](ckl-phase-5-obadiah-review.md).
 Do not mark any corrected record complete merely because its automated checks
 pass.
 
-Then continue Phase 5 with a controlled Obadiah correction wave:
+Then continue Phase 5 with a controlled Jonah correction wave:
 
 1. create book-specific factual regression fixtures before editing content;
 2. audit every populated field against the book it describes;
 3. gather Scripture anchors and independent sources before drafting claims;
-4. distinguish Obadiah's superscription, YHWH's reported speech, the prophetic
-   voice, the nations summoned against Edom, Edom or Esau, Jacob or Israel,
-   Judah and Jerusalem, foreign invaders, fugitives, allies, sages, warriors,
-   survivors on Mount Zion, the houses of Jacob and Joseph, the house of Esau,
-   Benjamin, the Negeb, the Shephelah, Gilead, Sepharad, and the kingdom
-   belonging to YHWH;
-5. map Obadiah 1, 2–9, 10–14, 15–16, 17–21 while qualifying the oracle's
-   headings, addressees, tense, speaker transitions, poetic units, seams,
-   relationship to Jeremiah 49, and alternative outlines;
-6. qualify the name Obadiah, the absence of patronymic or royal dating,
-   seventh-century, 587/586 BCE, early Persian, and later proposals, Edom's
-   highland geography and trade routes, Jerusalem's fall, Nabataean and later
-   Idumean histories, possible collections, redaction, placement after Amos,
-   and Book-of-the-Twelve shaping;
-7. distinguish prophetic superscription, vision report, divine messenger
-   report, nations oracle, taunt, accusation, prohibition or ironic
-   retrospective command, day-of-YHWH oracle, reversal saying, salvation
-   oracle, territorial catalogue, and kingship conclusion;
-8. address kinship betrayal, pride, security, wisdom, alliances, plunder,
-   violence, gloating, looting, blocking fugitives, handing over survivors,
-   day of YHWH, reciprocal judgment, drinking imagery, holiness, survivors,
-   dispossession, fire, land, restoration, and divine kingship;
-9. preserve uncertainty concerning historical Edom, the fall of Jerusalem in
-   view, the force and time of verses 12–14, Edom's precise actions, allies,
-   Teman, the messenger, nations, drinking, survivor language, the identities
-   and geography in verses 19–20, Sepharad, conquerors or deliverers, and the
-   date and unity of verses 17–21;
-10. address Masoretic Obadiah, Old Greek Abdias, 4Q82 and other Judean Desert
-    witnesses, ancient versions, Jeremiah 49, Joel, Amos, Psalms, Ezekiel,
-    Malachi, Obadiah within the Twelve, early Jewish and rabbinic reception,
-    New Testament resonances without invented quotation, and later Jewish,
-    Christian, political, postcolonial, and trauma-aware interpretation;
-11. distinguish historical referent, literary symbol, canonical trajectory,
-    quotation, shared tradition, allusion, typology, Jewish reception, and
-    later christological or ecclesial reception, especially Edom, Jacob,
-    Jerusalem, Mount Zion, survivors, land, day of YHWH, kingdom, Jeremiah 49,
-    and proposed New Testament echoes;
-12. add safeguards concerning racialized or ethnic essentialism, collective
-    hereditary guilt, antisemitism, anti-Arab racism, using Edom as a code for
-    a modern people, supersessionism, sibling hatred, survivor blame, trauma
-    exploitation, refugees and border violence, betrayal, looting, empire,
-    colonialism, nationalism, war, genocide, land seizure, forced
-    displacement, divine violence, vengeance, dehumanization, and partisan
-    capture;
+4. distinguish the narrator, YHWH's direct speech and actions, Jonah son of
+   Amittai, the sailors, captain, lot-casters, shipmaster, rowers, vow-makers,
+   great fish, Ninevites, king and nobles, humans and animals in sackcloth,
+   plant, worm, scorching east wind, cattle, and later interpreters;
+5. map Jonah 1:1–3; 1:4–16; 1:17 common English / 2:1 MT; the prayer in
+   chapter 2; 2:10 common English / 2:11 MT; 3:1–10; and 4:1–11 while
+   qualifying chapter-number differences, parallel scenes, repetitions,
+   reversals, narrator comments, direct speech, embedded poetry, irony,
+   escalation, unresolved ending, and alternative outlines;
+6. qualify Jonah son of Amittai in 2 Kings 14:25, Jeroboam II, Gath-hepher,
+   historical Assyria and Nineveh, the destruction of Nineveh in 612 BCE,
+   Persian and Hellenistic dating proposals, language, social institutions,
+   ships and Mediterranean routes, Joppa, Tarshish proposals, Nineveh's size
+   and three-day description, the title king of Nineveh, historicity,
+   literary fiction, didactic tale, parody, satire, possible sources,
+   composition, prayer insertion or integration, final form, and
+   Book-of-the-Twelve shaping;
+7. distinguish prophetic call narrative, travel and sea narrative, storm
+   scene, lot-casting scene, confession, vow, thanksgiving psalm, prayer,
+   rescue tale, city mission, judgment announcement, communal fast and royal
+   decree, repentance narrative, prophetic disputation, satire, irony,
+   hyperbole, fable-like animal and plant episodes, and open divine question;
+8. address prophetic vocation and resistance, flight from YHWH, divine
+   sovereignty, creation and nonhuman agents, prayer, descent and ascent,
+   death and deliverance imagery, worship by outsiders, prophecy and
+   conditional judgment, repentance, divine relenting, mercy, justice,
+   compassion, enemies, empire, election, Israel and nations, anger, pity,
+   moral formation, animals, and the value of a great city;
+9. preserve uncertainty concerning Tarshish's location, sailors' religions,
+   the lot, whether Jonah seeks death, the identity and species of the great
+   fish, whether Jonah dies, Sheol language, the prayer's origin and fit,
+   chronology of three days and nights, Nineveh's dimensions, the city's
+   repentance and decree, the historical king, the meaning of people not
+   knowing right from left, *qiqayon*, the east wind, YHWH's relenting,
+   Jonah's final response, and the book's date, genre, unity, and purpose;
+10. address Masoretic Jonah, Old Greek Ionas, 4Q76, 4Q82, other Judean Desert
+    and versional witnesses, 2 Kings 14, Exodus 34, Jeremiah 18, Joel,
+    Obadiah, Nahum, Psalms, Tobit, Sirach, Josephus, early Jewish and rabbinic
+    reception, Yom Kippur readings, Matthew 12 and 16, Luke 11, the sign of
+    Jonah, later Jewish, Christian, Islamic, artistic, literary, political,
+    postcolonial, ecological, and trauma-aware interpretation;
+11. distinguish historical referent, narrator characterization, satire,
+    hyperbole, quotation, verbal parallel, shared tradition, canonical
+    trajectory, typology, Jewish reception, christological reception,
+    resurrection analogy, ecclesial or missionary application, and modern
+    analogy, especially Jonah, Nineveh, Assyria, three days and nights, fish,
+    descent, rescue, repentance, relenting, plant, compassion, and the sign of
+    Jonah;
+12. add safeguards concerning antisemitic caricatures of Jonah or Jews as
+    uniquely xenophobic, supersessionism, anti-Assyrian or modern ethnic
+    hatred, excusing imperial violence, genocide, enemy dehumanization,
+    coercive conversion, coercive fasting, animal abuse, disaster blame,
+    suicide and mental-health stigma, victim blaming, shame, racism,
+    nationalism, missionary colonialism, ecological exploitation, divine
+    violence, vengeance, and partisan capture;
 13. populate only applicable hermeneutical and retrieval sections;
 14. use current certainty/dispute labels only where evidence justifies them;
 15. keep section statuses honest and leave human review missing;
