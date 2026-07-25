@@ -6,18 +6,18 @@ This is the durable handoff for the **BHF Canonical Knowledge Library Expansion
 and Correction Plan**. The supplied plan explicitly says to begin with the
 repository audit and Phase 1 quality reporting, avoid immediate bulk content
 generation, and stop after each major phase. Phases 1–4 are now implemented at
-the schema/runtime level. Phase 5 Waves 1–25 have corrected Genesis through
-Nahum as honest, source-backed drafts; none has been mechanically approved.
+the schema/runtime level. Phase 5 Waves 1–26 have corrected Genesis through
+Habakkuk as honest, source-backed drafts; none has been mechanically approved.
 
 ## Current checkpoint
 
 | Plan area | Status | Continuation note |
 | --- | --- | --- |
 | Phase 1: inventory, reporting, quality metrics | **Implemented** | Deep JSON and Markdown reports, CLI support, and calculation tests are present. |
-| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Thirty-three records now have evidence-based draft statuses; 587 still need explicit migration. |
-| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Thirty-three records now have explicit layers; 587 still need migration. |
+| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Thirty-four records now have evidence-based draft statuses; 586 still need explicit migration. |
+| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Thirty-four records now have explicit layers; 586 still need migration. |
 | Phase 4: certainty and dispute taxonomies | **Implemented; evidence migration pending** | Current taxonomies and granular claim records are supported. Legacy values remain readable but are forbidden for approved notes; no `unknown` value was guessed or mass-relabeled. |
-| Phase 5: audit/correct all 66 books | **Waves 1–25 implemented; human review pending** | Genesis through Nahum are corrected drafts with sources, claims, tests, and reviewer notes. Thirty-three books remain. |
+| Phase 5: audit/correct all 66 books | **Waves 1–26 implemented; human review pending** | Genesis through Habakkuk are corrected drafts with sources, claims, tests, and reviewer notes. Thirty-two books remain. |
 | Phases 6–20 | Not started | Follow the supplied order after the foundation is upgraded. |
 | Phase 21: controlled generation workflow | Partially enabled | Reporting, type-specific completeness, and approval gates are present; scoped human-review events still need Phase 19. |
 
@@ -654,6 +654,30 @@ After Phase 5 Wave 25, the refreshed report records:
 
 All thirty-three corrected books remain incomplete because their human-review
 sections are still `missing`. The remaining 587 records still rely on
+section/layer migration defaults.
+
+After Phase 5 Wave 26, the refreshed report records:
+
+| Migration metric | Result |
+| --- | ---: |
+| Records marked `complete` / `draft` | 586 / 34 |
+| Raw records missing explicit `section_status` | 586 |
+| Raw records with incomplete type-required sections | 620 |
+| Raw records missing explicit `knowledge_layers` | 586 |
+| Interpretive notes using current taxonomies | 628 |
+| Interpretive notes still using legacy taxonomies | 1,250 |
+| Granular claims authored | 437 |
+| External sources | 694 |
+| Source references that do not resolve | 0 |
+| Invalid source support targets | 0 |
+| Unresolved legacy object references | 14 |
+| Scripture reference errors | 0 |
+| Graph edges / unknown targets / orphaned records | 3,206 / 0 / 0 |
+| Missing reciprocal relationship suggestions | 2,766 |
+| Validator warnings / errors | 14 / 0 |
+
+All thirty-four corrected books remain incomplete because their human-review
+sections are still `missing`. The remaining 586 records still rely on
 section/layer migration defaults.
 
 Near-duplicate and template findings are triage signals rather than automatic
@@ -1980,6 +2004,59 @@ Completed implementation work:
 - added a reviewer-facing handoff at
   [`ckl-phase-5-nahum-review.md`](ckl-phase-5-nahum-review.md).
 
+## Phase 5 Wave 26: Habakkuk
+
+Completed implementation work:
+
+- removed the inherited Minor Prophets placeholder, including unrelated
+  Hosea, Amos, Jonah, and Nineveh values, generic dates and setting,
+  internal-only sourcing, legacy labels, and false completion metadata;
+- rebuilt the record around Habakkuk 1:1; 1:2–4; 1:5–11; 1:12–17; 2:1;
+  2:2–5; 2:6–20; 3:1–2; 3:3–15; and 3:16–19, preserving uncertainty about
+  voices, addressees, quotation boundaries, imperatives, pronouns, *selah*,
+  and proposed seams;
+- distinguished Habakkuk's framing, complaint, watch, prayer, and singing
+  voices; YHWH; Judah's wicked and righteous; Torah and justice; Chaldeans;
+  arrogant conqueror; conquered and taunting peoples; debtors; idol makers;
+  the silent earth; creation; anointed one; agricultural world; musicians;
+  and later interpreters;
+- distinguished thirteen genre and mode groupings and added twenty-eight
+  granular claims plus forty-six structured notes using current evidence
+  taxonomies;
+- qualified the late-seventh/early-sixth-century horizon, Assyria's collapse,
+  Nineveh in 612, Harran in 609, Carchemish in 605, Jehoiakim, Babylonian
+  pressure, Jerusalem in 597 and 586, fortification, siege, cavalry,
+  deportation, tribute, debt, labor, construction, wine, idolatry, and ecology;
+- added Masoretic Habakkuk, Hebrew Bible and New Testament comparanda, Old
+  Greek Ambakoum, CATSS, NETS, BHS, 1QpHab, critical commentaries, womanist
+  and feminist work, BM 21901, BM 21946, Neo-Babylonian inscriptions, and
+  early Jewish, Christian, artistic, postcolonial, trauma-aware, and
+  ecological resources, including twenty-one URL-bearing external records;
+- preserved uncertainty concerning title, biography, date, addressees,
+  divine agency, wicked and righteous, watchpost, tablets, runner, appointed
+  time, Habakkuk 2:4, five woes, debt, Sheol, cup, foreskin or nakedness,
+  Lebanon, animals, idols, temple, chapter 3, *shigionoth*, *selah*, Teman,
+  Paran, Cushan, Midian, cosmic imagery, anointed one, enemy head, musical
+  subscription, unity, redaction, liturgy, and Twelve shaping;
+- distinguished biblical text, historical reconstruction, royal
+  self-presentation, archaeology, textual witness, translation, pesher,
+  quotation, canonical trajectory, doctrinal reception, typology, pastoral
+  application, and modern analogy;
+- added safeguards concerning antisemitism, faith-versus-law anti-Judaism,
+  supersessionism, anti-Iraqi and anti-Middle Eastern racism, ethnic proxies,
+  quietism, fatalism, prosperity teaching, survivor blame, mental-health and
+  disability stigma, sexualized humiliation, conquest, siege, forced labor,
+  plunder, genocide, displacement, collective punishment, nationalism,
+  colonialism, ecological destruction, war propaganda, revenge, trauma
+  voyeurism, and partisan enemy-mapping;
+- added explicit section statuses and knowledge-layer classifications;
+- populated the hermeneutical lens and retrieval metadata;
+- kept the record as `draft` / `in_review`, with human review missing;
+- added eight factual, structure, evidence, retrieval, safety, and SQLite
+  parity regression tests; and
+- added a reviewer-facing handoff at
+  [`ckl-phase-5-habakkuk-review.md`](ckl-phase-5-habakkuk-review.md).
+
 ## Validation performed
 
 Completed after Phases 2–4:
@@ -2658,6 +2735,42 @@ python3 -m framework.canonical_library verify-db \
 # 36,687,872 bytes
 ```
 
+Completed after Phase 5 Wave 26:
+
+```text
+python3 tools/ckl_validate.py \
+  --path framework/canonical_library/objects/books/habakkuk.json
+# 1 valid object, 0 warnings, 0 errors
+
+python3 -m unittest \
+  tests.canonical_library.test_habakkuk_record \
+  tests.canonical_library.test_ckl_retrieval_service \
+  tests.canonical_library.test_schema \
+  tests.canonical_library.test_quality_report
+# 78 tests in 18.142s: OK
+
+python3 -m unittest tests/canonical_library/test_*.py
+# 396 tests in 334.794s: OK
+
+python3 tools/ckl_validate.py --root framework/canonical_library
+# 620 files, 620 valid objects, 14 coalesced migration warnings, 0 errors
+
+python3 tools/ckl_graph_audit.py --root framework/canonical_library --limit 10
+# 620 objects, 3,206 edges, 0 unknown targets, 0 orphaned objects
+# 2,766 missing reciprocal suggestions remain as migration debt
+
+python3 -m framework.canonical_library build-db \
+  --root framework/canonical_library \
+  --output /private/tmp/bhf-phase5-wave26-habakkuk.sqlite
+
+python3 -m framework.canonical_library verify-db \
+  --root framework/canonical_library \
+  --database /private/tmp/bhf-phase5-wave26-habakkuk.sqlite
+# 620 objects; database schema 2; inventory fingerprint
+# 71e940f7ae9995b8d53390a5fc181d398aef12c315ae57af8a6af7cdb823baca
+# 37,212,160 bytes
+```
+
 ## Recommended next wave
 
 Perform the human review checklists in
@@ -2709,11 +2822,13 @@ and
 and
 [`ckl-phase-5-micah-review.md`](ckl-phase-5-micah-review.md)
 and
-[`ckl-phase-5-nahum-review.md`](ckl-phase-5-nahum-review.md).
+[`ckl-phase-5-nahum-review.md`](ckl-phase-5-nahum-review.md)
+and
+[`ckl-phase-5-habakkuk-review.md`](ckl-phase-5-habakkuk-review.md).
 Do not mark any corrected record complete merely because its automated checks
 pass.
 
-Then continue Phase 5 with a controlled Habakkuk correction wave:
+Wave 26 Habakkuk is complete. Its completed scope is retained below for audit:
 
 1. create book-specific factual regression fixtures before editing content;
 2. audit every populated field against the book it describes;
@@ -2796,6 +2911,81 @@ Then continue Phase 5 with a controlled Habakkuk correction wave:
     identifying contemporary cities, religions, or peoples as Chaldeans;
 13. populate only applicable hermeneutical and retrieval sections;
 14. use current certainty/dispute labels only where evidence justifies them;
+15. keep section statuses honest and leave human review missing;
+16. run schema, graph, golden retrieval, factual, and SQLite parity tests;
+17. produce a reviewer-facing report; and
+18. refresh this handoff and both generated quality reports.
+
+Then continue Phase 5 with a controlled Zephaniah correction wave:
+
+1. create book-specific factual regression fixtures before editing content;
+2. audit every populated field against Zephaniah rather than inheriting Minor
+   Prophets templates;
+3. gather Scripture anchors and independent sources before drafting claims;
+4. distinguish the framing voice, Zephaniah son of Cushi and his genealogy,
+   YHWH's direct speech and reported action, Judah and Jerusalem, officials,
+   royal sons, foreign-clothed people, threshold leapers, merchants, complacent
+   residents, remnant, humble and poor, nations, Daughter Zion and Jerusalem,
+   dispersed worshipers, priests, prophets, rulers, animals, creation, and
+   later interpreters;
+5. map Zephaniah 1:1; 1:2–6; 1:7–13; 1:14–18; 2:1–3; 2:4–7; 2:8–11;
+   2:12–15; 3:1–7; 3:8–13; and 3:14–20 while qualifying superscription,
+   universal undoing, sacrificial summons, search-lamp scene, Day of YHWH,
+   nation oracles, city woe, courtroom speech, remnant promise, hymn, divine
+   warrior, restoration, speakers, addressees, imperatives, pronouns, and
+   proposed seams;
+6. qualify Josiah's reign, Zephaniah's unknown biography and genealogy,
+   Manasseh's legacy, Assyrian decline, Scythian proposals, Nineveh before
+   612 BCE, Judahite politics, cult and reform, Jerusalem neighborhoods,
+   trade, dress, rooftops, threshold ritual, silver, houses, vineyards,
+   Philistia, Moab, Ammon, Cush, Assyria, Nineveh, deportation, and later
+   exilic or Persian-period shaping without forcing one campaign or reform;
+7. distinguish superscription, prophetic judgment oracle, creation reversal,
+   cultic accusation, sacrifice metaphor, lament, Day-of-YHWH announcement,
+   battle cry, imperative summons, nation oracle, taunt, woe, city address,
+   disputation, courtroom accusation, remnant promise, salvation oracle,
+   hymn, Daughter-Zion address, divine-warrior promise, and restoration;
+8. address creation undoing, idolatry and divided allegiance, officials and
+   economic elites, complacency, divine search, violence and fraud, wealth,
+   Day of YHWH, wrath, darkness, war, human agency, nation judgment, land,
+   animals, pride, shame, humility, seeking, remnant, purified speech,
+   dispersed peoples, service, refuge, truth, singing, divine presence,
+   warrior imagery, quiet love, disability language, exile, return, honor,
+   restoration, justice, judgment, mercy, and hope;
+9. preserve uncertainty concerning Cushi, Hezekiah, royal ancestry, Josianic
+   date, pre- or post-reform setting, Scythians, Baal and astral cult,
+   Milcom or Molech, foreign clothing, threshold practice, Maktesh, fish gate,
+   second quarter, hills, search lamps, thickening on dregs, sacrifice guests,
+   Day-of-YHWH development, nation-oracle sequence, Cherethites, Canaan,
+   coastal allotment, Moab-Ammon taunts, Cush, Nineveh's date, city identity
+   in 3:1, textual forms, purified lip, rivers of Cush, humble remnant, divine
+   silence or love in 3:17, disabled and outcast imagery, unity, redaction,
+   liturgy, and Book-of-the-Twelve shaping;
+10. address Masoretic Zephaniah, Old Greek Sophonias, Judean Desert and
+    versional witnesses, Babylonian Chronicles and Neo-Assyrian evidence,
+    Genesis creation and flood, Deuteronomy, Isaiah, Jeremiah, Amos, Micah,
+    Nahum, Habakkuk, Joel, Zechariah, Matthew 13, Revelation, early Jewish and
+    Christian reception, rabbinic, patristic, liturgical, artistic,
+    liberationist, womanist, feminist, postcolonial, disability-aware,
+    trauma-aware, ecological, and modern political reception;
+11. distinguish historical referent, prophetic accusation, divine speech,
+    rhetorical hyperbole, creation reversal, sacrifice metaphor, poetry,
+    textual witness, Greek translation, verbal parallel, shared tradition,
+    New Testament reception, canonical trajectory, doctrinal reception,
+    Christian typology, ecclesial application, liberationist reception, and
+    modern analogy;
+12. add safeguards concerning antisemitism, supersessionism, anti-African
+    racism in readings of Cushi or Cush, anti-Palestinian or anti-Arab
+    mappings of Philistia, Moab, and Ammon, modern ethnic proxies, collective
+    or hereditary guilt, disability stigma, poverty romanticization, victim
+    blame, disaster blame, ecological destruction, animal harm, glorifying
+    sacrifice, war, siege, genocide, ethnic cleansing, displacement,
+    collective punishment, nationalism, colonialism, empire, revenge, divine
+    violence, trauma voyeurism, prosperity teaching, silencing survivors,
+    partisan capture, and identifying modern peoples or states as targets;
+13. populate only applicable hermeneutical and retrieval sections;
+14. use current certainty and dispute labels only where evidence justifies
+    them;
 15. keep section statuses honest and leave human review missing;
 16. run schema, graph, golden retrieval, factual, and SQLite parity tests;
 17. produce a reviewer-facing report; and
