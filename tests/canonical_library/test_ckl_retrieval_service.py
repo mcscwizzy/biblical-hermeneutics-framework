@@ -93,6 +93,49 @@ class CKLRetrievalServiceTests(unittest.TestCase):
         self.assertEqual(second_temple_response.results[0].id, "context-note")
         self.assertEqual(reception_response.results[0].id, "context-note")
 
+    def test_search_exposes_and_prefers_lower_inference_knowledge_layers_on_ties(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            write_library(
+                root,
+                [
+                    make_object(
+                        "text-observation",
+                        "theme",
+                        "Text Observation",
+                        ["text observation"],
+                        summary="Sharedlayerterm evidence.",
+                        knowledge_layers={
+                            "primary": "biblical_text",
+                            "secondary": [],
+                        },
+                    ),
+                    make_object(
+                        "systematic-synthesis",
+                        "theology",
+                        "Systematic Synthesis",
+                        ["systematic synthesis"],
+                        summary="Sharedlayerterm evidence.",
+                        knowledge_layers={
+                            "primary": "systematic_theology",
+                            "secondary": [],
+                        },
+                    ),
+                ],
+            )
+            service = CKLRetrievalService(
+                library=CanonicalLibrary(root=root),
+                relevance_threshold=0.1,
+            )
+            response = service.search("sharedlayerterm", min_score=0.1)
+
+        self.assertEqual(response.results[0].id, "text-observation")
+        self.assertEqual(response.results[0].knowledge_layer, "biblical_text")
+        self.assertEqual(
+            response.results[0].to_dict()["knowledge_layer"],
+            "biblical_text",
+        )
+
     def test_search_supports_standard_scripture_abbreviations(self) -> None:
         response = self.service.search("Gen 1:1")
 

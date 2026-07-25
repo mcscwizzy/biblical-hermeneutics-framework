@@ -1,19 +1,890 @@
 {
-  "id": "judges",
+  "framework_version": "1.0",
+  "object_version": "1",
   "type": "book",
+  "id": "judges",
   "title": "Judges",
   "aliases": [
     "book of judges",
-    "what is judges about",
-    "tell me about judges"
+    "shophetim",
+    "Israel in the days of the judges",
+    "what is Judges about"
   ],
-  "summary": "The book of repeated apostasy and rescue that shows what happens when Israel lacks faithful leadership.",
-  "historical_context": "Judges portrays the pre-monarchic settlement period as a fragmented tribal world marked by recurring oppression and deliverance.",
-  "ancient_near_east_context": "The book belongs to an Iron Age tribal environment where kinship, local alliance, and regional power mattered, but its theology interprets Israel's disorder as covenant failure rather than mere politics.",
-  "hebraic_worldview": "Covenant loyalty, communal responsibility, and the need for righteous leadership are the book's central concerns.",
-  "second_temple_context": "Later Jewish readers heard Judges as a warning about covenant breakdown and a reason to hope for renewed leadership.",
-  "canonical_context": "Judges bridges conquest and monarchy by showing why Israel needs more than charisma: it needs faithful kingship and covenant renewal.",
-  "later_christian_reception": "Christian interpreters have often read Judges as a warning against compromise and self-rule.",
+  "summary": "Judges narrates Israel's incomplete possession of the land, recurring covenant apostasy and deliverance through judges, the moral deterioration of leaders and tribes, and a closing collapse into idolatry, sexual violence, and civil war.",
+  "authorship_positions": [
+    "The book is anonymous; no named author can be established from the text.",
+    "Many scholars identify older narrative and poetic materials shaped within a Deuteronomistic or related historiographic framework.",
+    "Proposals for the final form range from monarchic to exilic or later settings and remain disputed."
+  ],
+  "date_ranges": [
+    "Narrated period: after Joshua's generation and before Israel's monarchy, without a securely reconstructable absolute chronology.",
+    "Individual traditions may preserve early material; the Song of Deborah is often discussed as especially early Hebrew poetry.",
+    "Composition and final-form proposals range across the monarchic and exilic periods."
+  ],
+  "original_audience": "The first audience of the final form is unknown. The book addresses an Israelite or Judean readership reflecting on covenant failure, leadership, land, tribal identity, and social disintegration.",
+  "historical_setting": "Narrated setting: diverse local conflicts and tribal life in Canaan between Joshua's generation and the rise of monarchy. Compositional setting: disputed and kept distinct from the narrated period.",
+  "canonical_placement": "Former Prophets in the Jewish canon; Historical Books between Joshua and Ruth/1 Samuel in common Christian ordering.",
+  "canonical_role": "Judges complicates Joshua's land-rest summaries by emphasizing remaining peoples and Israel's failure, then traces covenant and social deterioration that prepares for Samuel and the contested emergence of monarchy.",
+  "genre": [
+    "theological historiography",
+    "prose narrative",
+    "hero and deliverer narratives",
+    "poetry",
+    "battle song",
+    "etiological notice",
+    "tribal and civil-war narrative"
+  ],
+  "structure": [
+    "Judges 1:1-2:5: incomplete possession, accommodation, and covenant indictment",
+    "Judges 2:6-3:6: theological prologue and the recurring apostasy-oppression-deliverance pattern",
+    "Judges 3:7-5:31: Othniel, Ehud, Shamgar, Deborah, Barak, Jael, and the Song of Deborah",
+    "Judges 6-10:5: Gideon, Abimelech's violent kingship, Tola, and Jair",
+    "Judges 10:6-12:15: Jephthah, conflict with Ephraim, Ibzan, Elon, and Abdon",
+    "Judges 13-16: Samson's birth, conflicts, failures, and death",
+    "Judges 17-18: Micah's shrine, a Levite, and Danite migration and idolatry",
+    "Judges 19-21: abuse at Gibeah, civil war against Benjamin, and further violence"
+  ],
+  "major_themes": [
+    "covenant apostasy and divine compassion",
+    "incomplete possession and accommodation",
+    "recurring oppression and deliverance",
+    "the Spirit and flawed deliverers",
+    "tribal fragmentation and civil war",
+    "idolatry and disordered worship",
+    "leadership failure and moral deterioration",
+    "women as leaders, agents, victims, and narrative indicators",
+    "kingship questioned and anticipated",
+    "violence, vows, and social collapse",
+    "memory, testimony, and generational failure"
+  ],
+  "key_people": [
+    "Othniel",
+    "Ehud",
+    "Shamgar",
+    "Deborah",
+    "Barak",
+    "Jael",
+    "Gideon",
+    "Abimelech",
+    "Jotham",
+    "Jephthah and his daughter",
+    "Samson and his parents",
+    "Delilah",
+    "Micah and the Levite",
+    "the unnamed Levite and his concubine",
+    "the tribes of Israel, especially Ephraim, Dan, and Benjamin"
+  ],
+  "key_places": [
+    "Canaan and the tribal territories",
+    "Bochim",
+    "Jericho and the hill country of Ephraim",
+    "Mount Tabor and the Kishon region",
+    "Jezreel Valley",
+    "Ophrah and the Valley of Jezreel",
+    "Shechem and Mount Gerizim",
+    "Gilead and Mizpah",
+    "Zorah, Eshtaol, Timnah, and Gaza",
+    "Bethlehem",
+    "the hill country of Ephraim",
+    "Laish or Dan",
+    "Gibeah",
+    "Shiloh"
+  ],
+  "key_events": [
+    "tribes fail to remove or fully possess several populations and cities",
+    "the messenger at Bochim announces covenant consequences",
+    "Israel repeatedly serves other gods, is oppressed, cries out, and receives judges",
+    "Ehud kills Eglon and delivers Israel from Moabite domination",
+    "Deborah and Barak mobilize against Sisera, and Jael kills him",
+    "Deborah and Barak sing of divine victory and tribal participation",
+    "Gideon tears down Baal's altar and defeats Midian",
+    "Gideon refuses a hereditary rule in words but later acts in king-like and damaging ways",
+    "Abimelech seizes power at Shechem and destroys his own coalition",
+    "Jephthah defeats Ammon and fulfills his disastrous vow",
+    "Samson begins deliverance from Philistine domination but repeatedly violates his calling",
+    "Micah's shrine and the Danite migration institutionalize idolatry",
+    "the abuse and death of the Levite's concubine lead to war against Benjamin",
+    "Israel's attempts to preserve Benjamin compound violence against other communities"
+  ],
+  "interpretive_disputes": [
+    "Authorship, sources, editorial growth, and final-form dating",
+    "How the judges period relates to archaeological settlement models and absolute chronology",
+    "Whether the cycles represent sequential chronology, regional overlap, or literary patterning",
+    "The date, unity, and historical setting of the Song of Deborah",
+    "The book's evaluation of kingship and the repeated no-king refrain",
+    "The characterization of Gideon, Jephthah, Samson, and other morally compromised agents",
+    "The precise outcome of Jephthah's vow concerning his daughter",
+    "The rhetoric, ethics, and theological interpretation of warfare and mass violence",
+    "The portrayal of women and the function of escalating gendered violence",
+    "Textual and geographic problems in the closing civil-war narratives"
+  ],
+  "primary_sources": [
+    "Judges 1-21",
+    "Joshua 23-24",
+    "1 Samuel 8-12",
+    "Psalm 78:56-64",
+    "Hebrews 11:32-40"
+  ],
+  "related_entries": [
+    "Joshua",
+    "Ruth",
+    "Deborah",
+    "Gideon",
+    "Samson",
+    "Judges Cycle",
+    "Gibeah",
+    "Shiloh",
+    "Kingship",
+    "Covenant Theme"
+  ],
+  "common_questions": [
+    "What pattern repeats in Judges?",
+    "Does every judge follow the same cycle?",
+    "Why do the judges become increasingly violent and compromised?",
+    "Does Judges endorse monarchy?",
+    "What happened to Jephthah's daughter?",
+    "Why is Samson considered a judge?",
+    "Why are the final chapters of Judges so disturbing?",
+    "What can archaeology establish about the period of the judges?"
+  ],
+  "keywords": [
+    "Judges",
+    "shophetim",
+    "apostasy",
+    "oppression",
+    "cry",
+    "deliverance",
+    "Deborah",
+    "Barak",
+    "Jael",
+    "Gideon",
+    "Abimelech",
+    "Jephthah",
+    "Samson",
+    "Philistines",
+    "idolatry",
+    "civil war",
+    "Benjamin",
+    "no king",
+    "right in his own eyes"
+  ],
+  "hebrew_words": [
+    "shophetim: judges or governing deliverers",
+    "yasha: save or deliver",
+    "zaaq: cry out",
+    "ruach YHWH: Spirit of the LORD",
+    "ra: evil",
+    "azav: abandon or forsake",
+    "avod: serve, including serving the LORD or other gods",
+    "neder: vow",
+    "melekh: king",
+    "yashar be-enav: right in his own eyes",
+    "hesed: covenant loyalty or steadfast kindness"
+  ],
+  "greek_words": [],
+  "related_objects": [
+    {
+      "id": "joshua",
+      "relationship": "continues-from",
+      "weight": 10,
+      "notes": "Judges resumes the questions of land possession and covenant fidelity after Joshua's death."
+    },
+    {
+      "id": "ruth",
+      "relationship": "period-companion",
+      "weight": 8,
+      "notes": "Ruth is set in the days when the judges judged but presents a concentrated household story."
+    },
+    {
+      "id": "deborah",
+      "relationship": "central-judge",
+      "weight": 9,
+      "notes": "Deborah is prophet, judge, and leader in Judges 4-5."
+    },
+    {
+      "id": "gideon",
+      "relationship": "central-judge",
+      "weight": 9,
+      "notes": "Gideon's story marks a major turn toward compromised leadership and dynastic ambition."
+    },
+    {
+      "id": "samson",
+      "relationship": "central-judge",
+      "weight": 9,
+      "notes": "Samson's calling, strength, appetites, and death conclude the major judge narratives."
+    },
+    {
+      "id": "judges-cycle",
+      "relationship": "narrative-pattern",
+      "weight": 10,
+      "notes": "Judges 2 supplies the theological pattern that organizes much of the central section."
+    },
+    {
+      "id": "gibeah-1",
+      "relationship": "civil-war-site",
+      "weight": 9,
+      "notes": "The atrocity at Gibeah precipitates war against Benjamin."
+    },
+    {
+      "id": "shiloh",
+      "relationship": "sanctuary-and-festival-site",
+      "weight": 8,
+      "notes": "Shiloh appears in the final war and wife-taking narrative."
+    },
+    {
+      "id": "kingship",
+      "relationship": "raises-question-of",
+      "weight": 9,
+      "notes": "Abimelech and the no-king refrain make kingship a complex literary question."
+    },
+    {
+      "id": "covenant-theme",
+      "relationship": "develops-theme",
+      "weight": 10,
+      "notes": "Apostasy, judgment, compassion, and renewed failure are framed covenantally."
+    },
+    {
+      "id": "faithfulness-theme",
+      "relationship": "develops-theme",
+      "weight": 9,
+      "notes": "Israel's recurring unfaithfulness contrasts with the LORD's repeated compassion."
+    }
+  ],
+  "related_people": [
+    "deborah",
+    "gideon",
+    "samson"
+  ],
+  "related_places": [
+    "shechem",
+    "gibeah-1",
+    "shiloh",
+    "jezreel-2"
+  ],
+  "related_events": [
+    "judges-cycle"
+  ],
+  "scripture_references": [
+    {
+      "reference": "Judges 1:1-36",
+      "relationship": "primary",
+      "notes": "Incomplete possession and accommodation."
+    },
+    {
+      "reference": "Judges 2:1-23",
+      "relationship": "primary",
+      "notes": "Covenant indictment, theological prologue, and recurring pattern."
+    },
+    {
+      "reference": "Judges 3:7-31",
+      "relationship": "supporting",
+      "notes": "Othniel, Ehud, and Shamgar."
+    },
+    {
+      "reference": "Judges 4:1-24",
+      "relationship": "primary",
+      "notes": "Deborah, Barak, Jael, and Sisera."
+    },
+    {
+      "reference": "Judges 5:1-31",
+      "relationship": "primary",
+      "notes": "The Song of Deborah."
+    },
+    {
+      "reference": "Judges 6:1-40",
+      "relationship": "primary",
+      "notes": "Gideon's call and first actions."
+    },
+    {
+      "reference": "Judges 9:1-57",
+      "relationship": "primary",
+      "notes": "The violent kingship and fall of Abimelech."
+    },
+    {
+      "reference": "Judges 11:1-40",
+      "relationship": "primary",
+      "notes": "Jephthah, Ammon, and the vow concerning his daughter."
+    },
+    {
+      "reference": "Judges 13:1-25",
+      "relationship": "primary",
+      "notes": "Samson's birth and calling."
+    },
+    {
+      "reference": "Judges 16:1-31",
+      "relationship": "primary",
+      "notes": "Samson, Delilah, capture, and death."
+    },
+    {
+      "reference": "Judges 17:1-13",
+      "relationship": "primary",
+      "notes": "Micah's shrine and Levite."
+    },
+    {
+      "reference": "Judges 18:1-31",
+      "relationship": "primary",
+      "notes": "Danite migration and institutionalized idolatry."
+    },
+    {
+      "reference": "Judges 19:1-30",
+      "relationship": "primary",
+      "notes": "The atrocity at Gibeah."
+    },
+    {
+      "reference": "Judges 21:1-25",
+      "relationship": "primary",
+      "notes": "The violent preservation of Benjamin and final refrain."
+    },
+    {
+      "reference": "1 Samuel 8:1-22",
+      "relationship": "supporting",
+      "notes": "The later request for a king complicates a simplistic reading of Judges' refrain."
+    },
+    {
+      "reference": "Hebrews 11:32-40",
+      "relationship": "supporting",
+      "notes": "Later Christian reception names several judges among examples of faith."
+    }
+  ],
+  "covenantal_significance": "Judges interprets Israel's oppression and fragmentation through covenant infidelity: the people abandon the LORD, serve other gods, experience consequences, cry out, and receive compassionate deliverance, yet repeatedly return to destructive practices. The book shows that land possession without sustained covenant loyalty does not yield rest or justice.",
+  "intertextuality": [
+    "Joshua 23-24 warns against serving other gods; Judges 2 narrates the next generation's abandonment of the LORD.",
+    "Deuteronomy's covenant warnings and anti-idolatry commands provide a major theological vocabulary for Judges.",
+    "Ruth 1:1 locates its household narrative in the days of the judges.",
+    "First Samuel revisits Philistine pressure, failed leadership, tribal crisis, and the demand for a king.",
+    "Hosea 9-10 recalls Gibeah as a symbol of deep corruption.",
+    "Psalm 78 rehearses Israel's recurrent testing, judgment, and divine compassion.",
+    "Hebrews 11 names Gideon, Barak, Samson, and Jephthah in a later Christian argument about faith."
+  ],
+  "hebraic_worldview": "Corporate covenant identity, tribal solidarity, land as divine gift, exclusive worship, charismatic empowerment, household and clan obligations, public memory, and communal justice shape the narrative. The book also exposes how vows, honor, retaliation, and group loyalty become destructive when detached from covenant instruction.",
+  "second_temple_context": "Second Temple readers received Judges among the Former Prophets as an account of repeated apostasy, deliverance, tribal instability, and failed leadership. Later Jewish interpretation of individual judges, kingship, vows, and violence belongs to reception history and should not be projected back as the only original meaning.",
+  "canonical_context": "Judges follows Joshua's death and remaining-land notices and precedes the family story of Ruth and the leadership transition in Samuel. Its conclusion leaves Israel in tribal and moral disorder rather than narrating a resolved move to monarchy.",
+  "later_christian_reception": "Hebrews 11 includes Gideon, Barak, Samson, and Jephthah among figures through whom faith acted despite the canonical narratives' moral complexity. Christian interpretation should neither erase the book's judgments nor imitate its violence and flawed leadership as uncomplicated models.",
+  "cross_references": [
+    "Deuteronomy 7:1-11",
+    "Deuteronomy 12:29-32",
+    "Joshua 23:1-24:33",
+    "Ruth 1:1-5",
+    "1 Samuel 8:1-22",
+    "1 Samuel 12:6-25",
+    "Psalm 78:56-64",
+    "Hosea 9:9",
+    "Hosea 10:9",
+    "Hebrews 11:32-40"
+  ],
+  "new_testament_connections": [
+    "Acts 13 summarizes judges between the land gift and Samuel.",
+    "Hebrews 11 names Gideon, Barak, Samson, and Jephthah while emphasizing faith and endurance.",
+    "Later Christian moral and typological readings must remain distinct from the book's own historical-literary claims."
+  ],
+  "archaeology": [
+    "Material evidence for early Iron Age settlement, village growth, regional continuity, and change contributes to reconstructions of the period but does not verify individual judge narratives.",
+    "Canaanite city-state decline and Philistine material culture illuminate regional settings, yet the stories range across locations and cannot be assigned one uniform archaeological horizon.",
+    "Site identifications and proposed destruction or occupation layers vary in security.",
+    "The Song of Deborah contains geographic and social detail relevant to historical study, but its date and historical reconstruction remain debated."
+  ],
+  "historical_context": "Judges portrays decentralized communities facing local external powers and internal rivalry in the land after Joshua's generation. Historical reconstruction must distinguish the final literary sequence from possible regional overlap and from uncertain absolute dates.",
+  "ancient_near_east_context": "Local city-states, tribute, coalition warfare, household cults, oath and vow practices, patronage, kinship, honor and shame, and emerging Philistine centers provide comparative context. Comparison can illuminate practices but does not establish the historicity or date of each narrative.",
+  "literary_context": "Two introductions frame land and covenant failure, the central judge narratives move from relatively concise deliverance to increasingly compromised leaders, and two appendices relocate the crisis within Israel itself. Repeated formulas create pattern, but each episode varies and the overall movement is downward rather than circular stasis.",
+  "timeline": [
+    "After the death of Joshua and his generation",
+    "Before the establishment of Israel's monarchy",
+    "Episodes may be regional and overlapping; the narrative totals should not automatically be added into a continuous chronology",
+    "Composition and final-form dates remain disputed"
+  ],
+  "maps": [
+    "Tribal territories and places not fully possessed in Judges 1",
+    "Ehud and Moab in the Jordan region",
+    "Deborah, Barak, Mount Tabor, and the Kishon",
+    "Gideon and Midian in Ophrah and the Jezreel Valley",
+    "Jephthah in Gilead and Ammon",
+    "Samson in the Shephelah and Philistine cities",
+    "Danite migration from Zorah and Eshtaol to Laish",
+    "Gibeah, Mizpah, Bethel, Jabesh-gilead, and Shiloh"
+  ],
+  "interpretive_notes": [
+    {
+      "note": "The programmatic pattern in Judges 2 guides the central narratives, but the individual episodes do not all contain every stage or follow a mechanically identical cycle.",
+      "note_type": "literary-observation",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "judges-1-21",
+        "webb-judges",
+        "butler-judges"
+      ],
+      "scripture_references": [
+        "Judges 2:11-23",
+        "Judges 3:7-16:31"
+      ],
+      "traditions": [],
+      "rationale": "The recurring vocabulary is explicit, while sequence, omissions, and variations differ among episodes."
+    },
+    {
+      "note": "The repeated statement that Israel had no king raises the kingship question but does not by itself endorse every form of monarchy; Abimelech's rule and 1 Samuel's warnings must remain in view.",
+      "note_type": "interpretive-caution",
+      "certainty": "probable",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "judges-1-21",
+        "webb-judges",
+        "butler-judges"
+      ],
+      "scripture_references": [
+        "Judges 8:22-9:57",
+        "Judges 17:6",
+        "Judges 18:1",
+        "Judges 19:1",
+        "Judges 21:25",
+        "1 Samuel 8:1-22"
+      ],
+      "traditions": [
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "The refrain clearly marks a leadership vacuum, while the book's internal and canonical evaluations of kingship are complex."
+    },
+    {
+      "note": "Judges reports that Jephthah did to his daughter according to his vow and emphasizes her virginity, but interpreters dispute whether the narrative describes death or permanent dedication.",
+      "note_type": "textual-observation",
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "judges-1-21",
+        "webb-judges",
+        "butler-judges"
+      ],
+      "scripture_references": [
+        "Judges 11:29-40"
+      ],
+      "traditions": [
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "The vow's fulfillment is explicit, but the terse wording and reception history have produced competing readings of the daughter's fate."
+    },
+    {
+      "note": "Archaeology and settlement studies do not produce one uncontested chronology or historical model for all episodes in Judges.",
+      "note_type": "historical-context",
+      "certainty": "insufficient_evidence",
+      "dispute_status": "archaeological_uncertainty",
+      "sources": [
+        "butler-judges",
+        "zondervan-illustrated-historical-books-backgrounds"
+      ],
+      "scripture_references": [
+        "Judges 1-16"
+      ],
+      "traditions": [],
+      "rationale": "The narratives span multiple regions, while site identification, material sequences, and absolute chronology remain debated."
+    },
+    {
+      "note": "The book's escalating warfare, sexual violence, collective punishment, and forced wife-taking are narrated as evidence of social collapse, not supplied as moral templates for imitation.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "denominational_disagreement",
+      "sources": [
+        "judges-1-21",
+        "webb-judges",
+        "butler-judges"
+      ],
+      "scripture_references": [
+        "Judges 8-9",
+        "Judges 11:29-40",
+        "Judges 19-21"
+      ],
+      "traditions": [
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "Narrative placement, repeated evaluative refrains, and destructive consequences frame these acts critically even where no direct narrator comment accompanies every deed."
+    }
+  ],
+  "claims": [
+    {
+      "id": "judges-literary-movement",
+      "claim": "Judges moves from incomplete possession and covenant indictment through recurring deliverance narratives to internal idolatry, atrocity, and civil war.",
+      "claim_type": "literary",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "Judges 1-21"
+      ],
+      "source_ids": [
+        "judges-1-21",
+        "webb-judges",
+        "butler-judges"
+      ],
+      "traditions": [],
+      "rationale": "The two introductions, central judge narratives, and two closing appendices establish the movement.",
+      "notes": ""
+    },
+    {
+      "id": "judges-programmatic-pattern",
+      "claim": "Judges 2 presents a recurring theological pattern of apostasy, oppression, groaning, divine compassion, judges, temporary relief, and renewed corruption.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "Judges 2:11-23"
+      ],
+      "source_ids": [
+        "judges-1-21",
+        "webb-judges"
+      ],
+      "traditions": [],
+      "rationale": "The narrator explicitly summarizes these repeated movements before the individual episodes.",
+      "notes": ""
+    },
+    {
+      "id": "judges-deborah-leadership",
+      "claim": "Judges presents Deborah as prophet and judge, Barak as military commander, and Jael as the person who kills Sisera.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "Judges 4:1-5:31"
+      ],
+      "source_ids": [
+        "judges-1-21"
+      ],
+      "traditions": [],
+      "rationale": "The prose narrative and song explicitly assign these roles.",
+      "notes": ""
+    },
+    {
+      "id": "judges-gideon-abimelech-turn",
+      "claim": "Gideon's narrative and Abimelech's kingship form a turning point in which deliverance becomes entangled with dynastic ambition, idolatry, and violence within Israel.",
+      "claim_type": "literary",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "Judges 6:1-9:57"
+      ],
+      "source_ids": [
+        "judges-1-21",
+        "webb-judges",
+        "butler-judges"
+      ],
+      "traditions": [],
+      "rationale": "Gideon's ephod and household legacy lead directly into Abimelech's fratricide and failed rule.",
+      "notes": ""
+    },
+    {
+      "id": "judges-samson-begins-deliverance",
+      "claim": "Samson is announced as one who will begin to deliver Israel from the Philistines, and the narrative never says that he completes that deliverance.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "Judges 13:1-16:31"
+      ],
+      "source_ids": [
+        "judges-1-21",
+        "webb-judges"
+      ],
+      "traditions": [],
+      "rationale": "The birth announcement uses 'begin,' and Philistine power continues into Samuel.",
+      "notes": ""
+    },
+    {
+      "id": "judges-no-king-refrain",
+      "claim": "The closing narratives repeatedly connect the absence of a king with people doing what is right in their own eyes.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "Judges 17:6",
+        "Judges 18:1",
+        "Judges 19:1",
+        "Judges 21:25"
+      ],
+      "source_ids": [
+        "judges-1-21",
+        "butler-judges"
+      ],
+      "traditions": [],
+      "rationale": "The refrain is explicit; disagreement concerns its precise political and theological implication.",
+      "notes": ""
+    }
+  ],
+  "canonical_story": {
+    "phase": "Life in the land before monarchy",
+    "role": "Exposes recurring covenant apostasy, partial deliverance, deteriorating leadership, and tribal collapse after Joshua.",
+    "preceded_by": [
+      "joshua"
+    ],
+    "followed_by": [
+      "ruth",
+      "1-samuel"
+    ]
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "Read each episode within its local narrative and within the book's downward movement; the narrator does not endorse every act performed by an empowered or victorious character.",
+    "book_context": "The two introductions establish land and covenant failure, the judge narratives show varied deliverance and deterioration, and the appendices expose disorder within Israel.",
+    "canonical_context": "Joshua supplies the land and covenant background; Ruth offers a household-scale story in the same era; Samuel continues Philistine conflict and debates monarchy.",
+    "covenant_context": "The book repeatedly frames idolatry, oppression, crying out, compassion, deliverance, and renewed corruption through Israel's covenant relationship.",
+    "historical_context": "Distinguish the narrated premonarchic period, possible regional overlap among episodes, and debated compositional settings.",
+    "ancient_near_east_context": "Use city-state, tribal, cultic, warfare, vow, and honor-shame comparisons to clarify practices without using analogy as proof.",
+    "second_temple_jewish_context": "Later Jewish readings of judges, vows, women, kingship, and warfare are reception history rather than automatic original meaning.",
+    "original_audience": "The final form addresses a community reflecting on why life in the land descended into covenant and social disorder; its precise date and audience remain uncertain.",
+    "genre": "Theological historiography combines patterned narration, diverse hero traditions, poetry, etiological notices, and deliberately disturbing appendices.",
+    "intertextual_connections": [
+      "Deuteronomy 7 and 12",
+      "Joshua 23-24",
+      "Ruth 1",
+      "1 Samuel 8-12",
+      "Psalm 78",
+      "Hosea 9-10",
+      "Hebrews 11"
+    ],
+    "biblical_theology_themes": [
+      "covenant faithfulness",
+      "divine compassion",
+      "Spirit-empowered yet flawed leadership",
+      "idolatry",
+      "justice",
+      "kingship",
+      "human violence"
+    ],
+    "messianic_christological_trajectory": "Judges creates a canonical longing for faithful leadership, but direct identification of any judge with Christ is later Christian typology and must be argued rather than assumed.",
+    "major_interpretive_views": [
+      "The no-king refrain anticipates positive Davidic kingship.",
+      "The refrain diagnoses decentralized disorder while the book remains critical of abusive kingship.",
+      "The judge cycles preserve historical regional memories shaped into theological historiography.",
+      "The cycles function primarily as literary-theological patterning."
+    ],
+    "historical_interpretation": "Jewish and Christian interpreters have treated the judges as deliverers, moral warnings, faith examples, and political symbols; Jephthah, Samson, women, and kingship have generated especially diverse readings.",
+    "authorial_intent": "The final form warns that recurring rescue without covenant faithfulness and just communal life leads toward increasingly internal and destructive disorder.",
+    "typological_connections": [
+      "Deliverer patterns may contribute to later Christian reflection on salvation, but moral and historical differences must remain explicit.",
+      "Samson's death has received Christian typological readings, though the New Testament does not make that identification directly."
+    ],
+    "christological_significance": "Christian canonical synthesis may contrast the book's compromised deliverers with faithful kingship and salvation, but this is theological reception beyond the book's direct claims.",
+    "modern_application_principles": [
+      "Do not equate divine empowerment with blanket moral approval.",
+      "Treat recurring institutional and personal violence as warning, not heroic permission.",
+      "Attend to victims and to the book's escalating damage to women and communities.",
+      "Distinguish political application from the text's ancient tribal and covenant setting.",
+      "Recognize that temporary rescue does not substitute for faithful worship and justice."
+    ],
+    "common_misinterpretations": [
+      "Every judge is an uncomplicated moral hero.",
+      "Every episode follows exactly the same cycle.",
+      "The no-king refrain endorses any monarchy or modern political ruler.",
+      "Violence narrated in Judges is automatically commanded or approved.",
+      "Jephthah's daughter's precise fate is undisputed.",
+      "The chronology can be reconstructed by simply adding every stated number."
+    ]
+  },
+  "retrieval_metadata": {
+    "aliases": [
+      "Shophetim",
+      "days of the judges",
+      "Israel before monarchy",
+      "judge cycles"
+    ],
+    "search_terms": [
+      "Judges overview",
+      "Judges structure",
+      "cycle in Judges",
+      "Deborah and Barak",
+      "Jael and Sisera",
+      "Gideon and Abimelech",
+      "Jephthah daughter vow",
+      "Samson judge",
+      "Micah shrine Dan",
+      "Gibeah civil war",
+      "no king in Israel",
+      "everyone right in own eyes",
+      "archaeology period of judges"
+    ],
+    "common_questions": [
+      "What pattern repeats in Judges?",
+      "Does every judge follow the same cycle?",
+      "Does Judges support monarchy?",
+      "What happened to Jephthah's daughter?",
+      "Why is Samson a judge despite his behavior?",
+      "Why does Judges end with civil war?",
+      "How are women portrayed in Judges?",
+      "What does archaeology say about Judges?"
+    ],
+    "related_topics": [
+      "apostasy",
+      "deliverance",
+      "tribal confederation",
+      "Spirit of the LORD",
+      "idolatry",
+      "kingship",
+      "vows",
+      "Philistines",
+      "civil war",
+      "gendered violence"
+    ],
+    "frequently_confused_with": [
+      "Joshua's entry and allotment narratives",
+      "Ruth's household story set in the days of the judges",
+      "the establishment of monarchy in 1 Samuel",
+      "a modern law-court book about judicial officials"
+    ],
+    "semantic_keywords": [
+      "Othniel",
+      "Ehud",
+      "Eglon",
+      "Deborah",
+      "Barak",
+      "Jael",
+      "Sisera",
+      "Gideon",
+      "Midian",
+      "Abimelech",
+      "Jephthah",
+      "vow",
+      "Samson",
+      "Delilah",
+      "Nazirite",
+      "Micah",
+      "Danites",
+      "Gibeah",
+      "Benjamin",
+      "Shiloh"
+    ]
+  },
+  "section_status": {
+    "core_summary": "draft",
+    "scripture_anchors": "needs_review",
+    "historical_context": "needs_review",
+    "literary_context": "needs_review",
+    "canonical_context": "needs_review",
+    "original_audience": "needs_review",
+    "lexical_links": "draft",
+    "intertextuality": "draft",
+    "interpretive_views": "needs_review",
+    "common_misinterpretations": "draft",
+    "sources": "needs_review",
+    "relationships": "needs_review",
+    "retrieval_metadata": "draft",
+    "human_review": "missing"
+  },
+  "knowledge_layers": {
+    "primary": "biblical_text",
+    "secondary": [
+      "literary",
+      "historical_cultural",
+      "ancient_near_eastern",
+      "archaeology",
+      "biblical_theology",
+      "reception_history"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Judges 1-21",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "Judges 1:1-21:25",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [
+        "summary",
+        "literary_context",
+        "structure",
+        "key_people",
+        "key_places",
+        "key_events",
+        "scripture_references",
+        "judges-literary-movement",
+        "judges-programmatic-pattern",
+        "judges-deborah-leadership",
+        "judges-gideon-abimelech-turn",
+        "judges-samson-begins-deliverance",
+        "judges-no-king-refrain"
+      ],
+      "notes": "Primary biblical text.",
+      "id": "judges-1-21"
+    },
+    {
+      "title": "The Book of Judges",
+      "author": "Barry G. Webb",
+      "publisher": "Eerdmans",
+      "year": 2012,
+      "locator": "Introduction and commentary on Judges 1-21",
+      "url": "https://www.eerdmans.com/9780802826282/the-book-of-judges/",
+      "source_type": "reference-work",
+      "supports": [
+        "literary_context",
+        "canonical_context",
+        "interpretive_notes",
+        "judges-literary-movement",
+        "judges-programmatic-pattern",
+        "judges-gideon-abimelech-turn",
+        "judges-samson-begins-deliverance"
+      ],
+      "notes": "NICOT commentary emphasizing literary, exegetical, theological, violence, and characterization questions.",
+      "id": "webb-judges"
+    },
+    {
+      "title": "Judges, Volume 8",
+      "author": "Trent C. Butler",
+      "publisher": "Zondervan",
+      "year": 2014,
+      "locator": "Word Biblical Commentary, introduction and commentary on Judges 1-21",
+      "url": "https://zondervanacademic.com/products/judges-volume-8",
+      "source_type": "reference-work",
+      "supports": [
+        "authorship_positions",
+        "historical_context",
+        "literary_context",
+        "interpretive_notes",
+        "judges-literary-movement",
+        "judges-gideon-abimelech-turn",
+        "judges-no-king-refrain"
+      ],
+      "notes": "Technical commentary treating textual, linguistic, structural, historical, and theological evidence.",
+      "id": "butler-judges"
+    },
+    {
+      "title": "Zondervan Illustrated Bible Backgrounds Commentary: Joshua, Judges, Ruth, 1 and 2 Samuel",
+      "author": "John H. Walton, general editor; Dale W. Manor, Richard Hess, and other contributors",
+      "publisher": "Zondervan",
+      "year": 2009,
+      "locator": "Judges commentary and background notes",
+      "url": "https://zondervanacademic.com/products/joshua-judges-ruth-1-and-2-samuel",
+      "source_type": "reference-work",
+      "supports": [
+        "ancient_near_east_context",
+        "archaeology",
+        "historical_context",
+        "hebrew_words",
+        "interpretive_notes"
+      ],
+      "notes": "Comparative textual, material, historical, geographical, and cultural background.",
+      "id": "zondervan-illustrated-historical-books-backgrounds"
+    }
+  ],
+  "content_status": "draft",
+  "review_status": "in_review",
+  "reviewed_by": [],
+  "last_reviewed": null,
+  "human_review_required": true,
+  "confidence": "medium",
+  "importance": 93,
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-16"
+    },
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "phase-5-book-correction-judges-ruth",
+      "date": "2026-07-24"
+    }
+  ],
+  "edited_by": [],
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
@@ -21,309 +892,5 @@
     "second_temple": true,
     "canonical": true,
     "later_christian_reception": true
-  },
-  "literary_context": "Judges cycles through sin, oppression, cry, deliverance, and relapse, ending with the refrain that everyone did what was right in his own eyes.",
-  "covenantal_significance": "Judges warns that land possession without covenant faithfulness leads to collapse and prepares the need for righteous leadership.",
-  "authorship_positions": [
-    "Traditional prophetic or courtly compilation",
-    "Many scholars read the books as later historiographical or Deuteronomistic shaping"
-  ],
-  "date_ranges": [
-    "Historical span from settlement through exile",
-    "Final form often placed in the exilic or post-exilic period"
-  ],
-  "original_audience": "Israel and Judah remembering the land, monarchy, and exile",
-  "historical_setting": "Settlement, monarchy, and exile in the land of Israel and Judah",
-  "canonical_role": "Judges serves as a canonical book anchor within Historical Books, book 2 of 12, connecting its structure, key passages, and related themes to the wider biblical storyline.",
-  "genre": [
-    "narrative"
-  ],
-  "structure": [
-    "Cycles of apostasy and deliverance",
-    "Tribal fragmentation",
-    "Need for righteous leadership"
-  ],
-  "major_themes": [
-    "land",
-    "leadership",
-    "faithfulness",
-    "covenant",
-    "kingdom",
-    "exile",
-    "lawlessness",
-    "need for king"
-  ],
-  "canonical_placement": "Historical Books, book 2 of 12",
-  "key_people": [
-    "Deborah",
-    "Gideon",
-    "Samson",
-    "Ruth"
-  ],
-  "key_places": [
-    "Canaan",
-    "Shiloh",
-    "Gibeah",
-    "Timnah"
-  ],
-  "key_events": [
-    "Judges cycle",
-    "deliverance by the judges",
-    "tribal fragmentation",
-    "need for a king"
-  ],
-  "interpretive_disputes": [
-    "Historical reconstruction and sources",
-    "How the repeated cycle should be read as theological warning rather than simple chronology"
-  ],
-  "primary_sources": [
-    "Judges 1-21",
-    "Ruth 1-4",
-    "1 Samuel 8-12"
-  ],
-  "related_entries": [],
-  "keywords": [],
-  "intertextuality": [],
-  "timeline": [],
-  "maps": [],
-  "archaeology": [],
-  "hebrew_words": [],
-  "greek_words": [],
-  "related_people": [],
-  "related_places": [],
-  "related_events": [],
-  "related_objects": [
-    {
-      "id": "deborah",
-      "relationship": "judge-anchor",
-      "weight": 9,
-      "notes": "prophetic leadership in the cycle"
-    },
-    {
-      "id": "gideon",
-      "relationship": "judge-anchor",
-      "weight": 9,
-      "notes": "deliverance from Midian"
-    },
-    {
-      "id": "samson",
-      "relationship": "judge-anchor",
-      "weight": 9,
-      "notes": "late judge whose weakness is part of the warning"
-    },
-    {
-      "id": "ruth",
-      "relationship": "literary-continuation",
-      "weight": 7,
-      "notes": "narrative bridge to David"
-    },
-    {
-      "id": "judges-cycle",
-      "relationship": "narrative-pattern",
-      "weight": 10,
-      "notes": "repeated sin and deliverance"
-    },
-    {
-      "id": "rise-of-saul",
-      "relationship": "transition-anchor",
-      "weight": 8,
-      "notes": "the move toward monarchy"
-    }
-  ],
-  "scripture_references": [
-    {
-      "reference": "Judges 2:11-23",
-      "relationship": "primary",
-      "notes": "the covenant cycle"
-    },
-    {
-      "reference": "Judges 6:1-24",
-      "relationship": "supporting",
-      "notes": "Gideon's call"
-    },
-    {
-      "reference": "Judges 13:1-25",
-      "relationship": "supporting",
-      "notes": "Samson's birth"
-    },
-    {
-      "reference": "Ruth 1:1-22",
-      "relationship": "supporting",
-      "notes": "the adjacent narrative of faithfulness"
-    },
-    {
-      "reference": "1 Samuel 8:1-22",
-      "relationship": "supporting",
-      "notes": "the request for a king"
-    },
-    {
-      "reference": "1 Samuel 12:16-25",
-      "relationship": "supporting",
-      "notes": "warning and covenant fidelity"
-    }
-  ],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    {
-      "note": "The cycle of sin, oppression, cry, deliverance, and relapse is the book's main theological pattern.",
-      "note_type": "textual-observation",
-      "certainty": "high",
-      "dispute_status": "consensus",
-      "sources": []
-    },
-    {
-      "note": "The book prepares for the monarchy without pretending kingship is a simple fix.",
-      "note_type": "interpretive-caution",
-      "certainty": "medium",
-      "dispute_status": "broad-consensus",
-      "sources": []
-    }
-  ],
-  "common_questions": [
-    "Why does Judges feel so dark?",
-    "What pattern repeats in Judges?",
-    "How does Judges prepare for the monarchy?"
-  ],
-  "sources": [
-    {
-      "title": "Judges 1-21",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "overall narrative frame",
-      "id": "judges-1-21"
-    },
-    {
-      "title": "Judges 2:11-23",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "the repeated cycle",
-      "id": "judges-2-11-23"
-    },
-    {
-      "title": "Judges 6:1-24",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "Gideon's call",
-      "id": "judges-6-1-24"
-    },
-    {
-      "title": "Judges 13:1-25",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "Samson's birth",
-      "id": "judges-13-1-25"
-    },
-    {
-      "title": "Ruth 1-4",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "narrative bridge to David",
-      "id": "ruth-1-4"
-    },
-    {
-      "title": "1 Samuel 8-12",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "the move toward monarchy",
-      "id": "1-samuel-8-12"
-    },
-    {
-      "title": "Canonical historical orientation for Judges",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "Historical Books, book 2 of 12",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [
-        "historical_context"
-      ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
-      "id": "judges-historical-orientation"
-    }
-  ],
-  "canonical_story": {
-    "phase": "",
-    "role": "",
-    "preceded_by": [],
-    "followed_by": []
-  },
-  "hermeneutical_lens": {
-    "immediate_literary_context": "",
-    "book_context": "",
-    "canonical_context": "",
-    "covenant_context": "",
-    "historical_context": "",
-    "ancient_near_east_context": "",
-    "second_temple_jewish_context": "",
-    "original_audience": "",
-    "genre": "",
-    "intertextual_connections": [],
-    "biblical_theology_themes": [],
-    "messianic_christological_trajectory": "",
-    "major_interpretive_views": [],
-    "historical_interpretation": "",
-    "authorial_intent": "",
-    "typological_connections": [],
-    "christological_significance": "",
-    "modern_application_principles": [],
-    "common_misinterpretations": []
-  },
-  "retrieval_metadata": {
-    "aliases": [],
-    "search_terms": [],
-    "common_questions": [],
-    "related_topics": [],
-    "frequently_confused_with": [],
-    "semantic_keywords": []
-  },
-  "importance": 92,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "generated_by": [
-    {
-      "type": "ai",
-      "name": "codex",
-      "workflow": "ane-hebraic-context-expansion",
-      "date": "2026-07-16"
-    }
-  ],
-  "edited_by": [],
-  "reviewed_by": [],
-  "last_reviewed": "2026-07-16",
-  "confidence": "medium",
-  "human_review_required": true
+  }
 }

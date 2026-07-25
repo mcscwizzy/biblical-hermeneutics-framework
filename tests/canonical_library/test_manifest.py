@@ -105,7 +105,7 @@ class CanonicalInventoryTests(unittest.TestCase):
                 for field_name, expected in EXPECTED_GOVERNANCE_VALUES.items():
                     self.assertEqual(getattr(obj, field_name), expected)
                 self.assertEqual(obj.context_applicability, EXPECTED_CONTEXT_APPLICABILITY)
-            elif obj.content_status == "complete":
+            elif obj.content_status in {"draft", "complete"}:
                 self.assertGreater(obj.importance, 0)
                 self.assertNotEqual(obj.summary, "")
                 self.assertNotEqual(obj.sources, [])
@@ -117,7 +117,12 @@ class CanonicalInventoryTests(unittest.TestCase):
                 else:
                     self.assertGreaterEqual(len(obj.reviewed_by), 1)
                     self.assertFalse(obj.human_review_required)
-                self.assertIsNotNone(obj.last_reviewed)
+                if obj.content_status == "complete":
+                    self.assertIsNotNone(obj.last_reviewed)
+                else:
+                    self.assertIsNone(obj.last_reviewed)
+                    self.assertEqual(obj.review_status, "in_review")
+                    self.assertTrue(obj.human_review_required)
                 self.assertNotEqual(obj.confidence, "unrated")
             else:
                 self.fail(f"unexpected content status {obj.content_status!r} for {obj.id}")

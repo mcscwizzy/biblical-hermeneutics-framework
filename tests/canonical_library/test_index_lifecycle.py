@@ -109,6 +109,21 @@ class CKLIndexLifecycleTests(unittest.TestCase):
                         "common_questions": ["What is the Abrahamic covenant?"],
                         "semantic_keywords": ["patriarchs", "land", "blessing"],
                     },
+                    knowledge_layers={
+                        "primary": "biblical_theology",
+                        "secondary": ["biblical_text"],
+                    },
+                    claims=[
+                        {
+                            "id": "abrahamic-seed-promise",
+                            "claim": "The covenant includes a seed promise.",
+                            "claim_type": "biblical_theology",
+                            "certainty": "textually_explicit",
+                            "dispute_status": "not_disputed",
+                            "scripture_references": ["Genesis 12:1-3"],
+                            "rationale": "Seed and blessing are stated in the promise.",
+                        }
+                    ],
                     canonical_role="The Abrahamic covenant grounds later canonical promise theology.",
                     related_entries=["seed-theme"],
                     keywords=["promise theology"],
@@ -126,6 +141,8 @@ class CKLIndexLifecycleTests(unittest.TestCase):
         self.assertIn("theology", entry.field_terms["canonical_role"])
         self.assertIn("patriarchs", entry.field_terms["canonical_story"])
         self.assertIn("genesis", entry.field_terms["hermeneutical_lens"])
+        self.assertIn("seed", entry.field_terms["claims"])
+        self.assertEqual(entry.knowledge_layer, "biblical_theology")
         self.assertIn("abrahamic covenant", entry.search_text)
 
 

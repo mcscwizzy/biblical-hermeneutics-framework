@@ -55,6 +55,7 @@ class CKLSearchResult:
     scripture_references: list[str] = field(default_factory=list)
     themes: list[str] = field(default_factory=list)
     related_entries: list[str] = field(default_factory=list)
+    knowledge_layer: str | None = None
     content_status: str | None = None
     review_status: str | None = None
     confidence: str | None = None

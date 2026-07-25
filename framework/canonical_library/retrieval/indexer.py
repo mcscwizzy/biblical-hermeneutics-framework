@@ -40,6 +40,7 @@ class IndexedCKLEntry:
     facts: list[str] = field(default_factory=list)
     themes: list[str] = field(default_factory=list)
     related_entries: list[str] = field(default_factory=list)
+    knowledge_layer: str | None = None
     source_path: str | None = None
     content_status: str | None = None
     review_status: str | None = None
@@ -68,6 +69,7 @@ class IndexedCKLEntry:
             "facts": list(self.facts),
             "themes": list(self.themes),
             "related_entries": list(self.related_entries),
+            "knowledge_layer": self.knowledge_layer,
             "source_path": self.source_path,
             "content_status": self.content_status,
             "review_status": self.review_status,
@@ -272,6 +274,12 @@ def _index_object(
 
     facts = _entry_facts(obj)
     themes = _entry_themes(obj)
+    knowledge_layers = getattr(obj, "knowledge_layers", {}) or {}
+    knowledge_layer = (
+        str(knowledge_layers.get("primary") or "")
+        if isinstance(knowledge_layers, Mapping)
+        else ""
+    )
 
     search_parts = [
         str(getattr(obj, "id", "") or ""),
@@ -293,6 +301,7 @@ def _index_object(
         _metadata_text(getattr(obj, "canonical_story", {}) or {}),
         _metadata_text(getattr(obj, "hermeneutical_lens", {}) or {}),
         _metadata_text(getattr(obj, "retrieval_metadata", {}) or {}),
+        _metadata_text(knowledge_layers),
         " ".join(facts),
         " ".join(themes),
         " ".join(script_refs),
@@ -319,6 +328,7 @@ def _index_object(
         facts=facts,
         themes=themes,
         related_entries=related_entries,
+        knowledge_layer=knowledge_layer or None,
         source_path=source_path,
         content_status=str(getattr(obj, "content_status", "") or "") or None,
         review_status=str(getattr(obj, "review_status", "") or "") or None,
@@ -413,6 +423,18 @@ def _entry_facts(obj: CanonicalObject) -> list[str]:
         _metadata_text(getattr(obj, "hermeneutical_lens", {}) or {}),
     ]
     candidates.extend(interpretive_note_texts(getattr(obj, "interpretive_notes", [])))
+    for claim in getattr(obj, "claims", []) or []:
+        if hasattr(claim, "to_dict"):
+            claim = claim.to_dict()
+        if not isinstance(claim, Mapping):
+            continue
+        candidates.extend(
+            [
+                str(claim.get("claim") or ""),
+                str(claim.get("rationale") or ""),
+                str(claim.get("notes") or ""),
+            ]
+        )
     candidates.extend(getattr(obj, "common_questions", []) or [])
     facts: list[str] = []
     seen: set[str] = set()

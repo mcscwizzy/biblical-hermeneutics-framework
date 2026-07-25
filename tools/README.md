@@ -56,6 +56,10 @@ The Canonical Knowledge Library has its own small command set in `tools/`:
 - `ckl_validate.py` validates either one object file or the full CKL library.
 - `ckl_manifest.py` rebuilds `manifest.json` from the current object inventory.
 - `ckl_report.py` prints a status snapshot with counts and validation issues.
+  Add `--deep` for the Phase 1 quality report (field coverage, depth averages,
+  graph integrity, governance, duplicate/template signals, retrieval gaps, and
+  source integrity). Add `--json` for machine-readable output and `--output`
+  to persist either format.
 - `ckl_expansion_backlog.py` ranks people, places, and things that need
   expansion or review attention.
 - `ckl_graph_audit.py` reports relationship graph coverage, including orphaned
@@ -63,6 +67,18 @@ The Canonical Knowledge Library has its own small command set in `tools/`:
 - `ckl_migrate.py` normalizes legacy object JSON into the current schema shape.
 
 Run these from the repository root so relative paths resolve correctly.
+
+```bash
+python3 tools/ckl_report.py \
+  --root framework/canonical_library \
+  --deep
+
+python3 tools/ckl_report.py \
+  --root framework/canonical_library \
+  --deep \
+  --json \
+  --output docs/ckl-quality-report.json
+```
 
 ## `import_lexicons.py`, `lexicon_onboard.py`, and `lexicon_smoke.py`
 

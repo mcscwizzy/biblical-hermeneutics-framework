@@ -177,6 +177,14 @@ def _estimate_text_tokens(value: Any) -> int:
             "year",
             "url",
             "supports",
+            "claim",
+            "claim_type",
+            "certainty",
+            "dispute_status",
+            "scripture_references",
+            "source_ids",
+            "traditions",
+            "rationale",
         ):
             total += _estimate_text_tokens(value.get(key))
         return total
@@ -223,6 +231,7 @@ def _estimate_object_tokens(obj: Any) -> int:
         "scripture_references",
         "common_questions",
         "interpretive_notes",
+        "claims",
         "sources",
         "related_objects",
         "hebrew_words",
@@ -607,10 +616,16 @@ class CanonicalContextBuilder:
                     note.to_dict() if hasattr(note, "to_dict") else note
                     for note in obj.interpretive_notes
                 ],
+                "claims": [
+                    claim.to_dict() if hasattr(claim, "to_dict") else claim
+                    for claim in obj.claims
+                ],
                 "sources": [
                     source.to_dict() if hasattr(source, "to_dict") else source
                     for source in obj.sources
                 ],
+                "section_status": dict(obj.section_status),
+                "knowledge_layers": dict(obj.knowledge_layers),
                 "hebrew_words": list(obj.hebrew_words),
                 "greek_words": list(obj.greek_words),
                 "content_status": obj.content_status,
@@ -1124,6 +1139,11 @@ def _build_prompt_context_entry(
     if selected_references:
         sections.append({"heading": "Primary Scripture References", "items": selected_references})
 
+    claim_limit = 2 if answer_mode == "scholar" else 1
+    selected_claims = _claim_prompt_texts(topic.get("claims"), limit=claim_limit)
+    if selected_claims:
+        sections.append({"heading": "Sourced Claims", "items": selected_claims})
+
     context_section_limit = int(mode_limits["context_sections"])
     context_item_limit = min(max(1, max_facts_per_entry), int(mode_limits["section_items"]))
     context_sections_added = 0
@@ -1228,6 +1248,11 @@ def _build_prompt_context_entry(
         "id": object_id,
         "title": title,
         "category": category,
+        "knowledge_layer": str(
+            (topic.get("knowledge_layers") or {}).get("primary") or ""
+        )
+        if isinstance(topic.get("knowledge_layers"), Mapping)
+        else "",
         "object_version": str(topic.get("object_version") or "").strip(),
         "summary": summary,
         "_fact_limit": max_facts_per_entry,
@@ -1248,6 +1273,34 @@ def _build_prompt_context_entry(
         return None, 0, truncated
 
     return entry, entry_tokens, truncated
+
+
+def _claim_prompt_texts(value: Any, *, limit: int) -> list[str]:
+    if limit <= 0 or not isinstance(value, list):
+        return []
+    rendered: list[str] = []
+    for item in value:
+        if hasattr(item, "to_dict"):
+            item = item.to_dict()
+        if not isinstance(item, Mapping):
+            continue
+        claim = _normalize_prompt_text(item.get("claim"))
+        if not claim:
+            continue
+        metadata = [
+            _normalize_prompt_text(item.get("claim_type")),
+            _normalize_prompt_text(item.get("certainty")),
+            _normalize_prompt_text(item.get("dispute_status")),
+        ]
+        label = "; ".join(part for part in metadata if part)
+        rationale = _normalize_prompt_text(item.get("rationale"))
+        text = f"[{label}] {claim}" if label else claim
+        if rationale:
+            text += f" Rationale: {rationale}"
+        rendered.append(text)
+        if len(rendered) >= limit:
+            break
+    return rendered
 
 
 def _collect_ranked_prompt_texts(
@@ -1524,6 +1577,9 @@ def _render_prompt_context_entry_lines(entry: Mapping[str, Any]) -> list[str]:
         f"## Entry: {str(entry.get('title') or entry.get('id') or 'unknown').strip()}",
         f"Category: {_normalize_prompt_text(entry.get('category')) or 'Unknown'}",
     ]
+    knowledge_layer = _normalize_prompt_text(entry.get("knowledge_layer"))
+    if knowledge_layer:
+        lines.append(f"Knowledge layer: {knowledge_layer}")
 
     sections = list(entry.get("sections") or [])
     if sections:

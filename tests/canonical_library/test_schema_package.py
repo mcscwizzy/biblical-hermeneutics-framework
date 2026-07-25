@@ -68,6 +68,10 @@ class CanonicalSchemaPackageTests(unittest.TestCase):
         self.assertEqual(interpretive_items[1]["$ref"], "#/$defs/interpretiveNote")
         self.assertEqual(schema["$defs"]["interpretiveNote"]["required"], ["note"])
         self.assertIn("certainty", schema["$defs"]["interpretiveNote"]["properties"])
+        self.assertIn("claims", schema["required"])
+        self.assertIn("section_status", schema["required"])
+        self.assertIn("knowledge_layers", schema["required"])
+        self.assertEqual(schema["properties"]["claims"]["items"]["$ref"], "#/$defs/claim")
 
     def test_validate_base_object_accepts_normalized_inventory_shape(self) -> None:
         obj = validate_base_object(make_object("shechem", "place", "Shechem", ["where is shechem"]))
@@ -78,6 +82,12 @@ class CanonicalSchemaPackageTests(unittest.TestCase):
         self.assertEqual(obj["generated_by"], [])
         self.assertEqual(obj["edited_by"], [])
         self.assertEqual(obj["sources"], [])
+        self.assertEqual(obj["claims"], [])
+        self.assertEqual(obj["section_status"]["core_summary"], "missing")
+        self.assertEqual(
+            obj["knowledge_layers"],
+            {"primary": "historical_cultural", "secondary": []},
+        )
         self.assertEqual(obj["related_objects"], [])
         self.assertTrue(obj["human_review_required"])
         self.assertEqual(
@@ -113,6 +123,27 @@ class CanonicalSchemaPackageTests(unittest.TestCase):
         self.assertEqual(len(obj["interpretive_notes"]), 1)
         self.assertEqual(obj["interpretive_notes"][0]["note"], "The covenant ceremony resembles Ancient Near Eastern treaty forms.")
         self.assertEqual(obj["interpretive_notes"][0]["note_type"], "historical-context")
+
+    def test_validate_base_object_accepts_current_claim_taxonomy(self) -> None:
+        data = make_object("shechem", "place", "Shechem", ["where is shechem"])
+        data["claims"] = [
+            {
+                "id": "shechem-location",
+                "claim": "Shechem is named as a location in Genesis 12.",
+                "claim_type": "biblical_text",
+                "certainty": "textually_explicit",
+                "dispute_status": "not_disputed",
+                "scripture_references": ["Genesis 12:6"],
+                "source_ids": [],
+                "traditions": [],
+                "rationale": "The place name appears explicitly.",
+                "notes": "",
+            }
+        ]
+
+        obj = validate_base_object(data, path="objects/places/shechem.json")
+
+        self.assertEqual(obj["claims"][0]["certainty"], "textually_explicit")
 
     def test_validate_base_object_rejects_invalid_alias_values(self) -> None:
         data = make_object("shechem", "place", "Shechem", ["where is shechem"])

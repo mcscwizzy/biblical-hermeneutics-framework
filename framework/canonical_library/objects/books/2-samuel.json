@@ -1,20 +1,927 @@
 {
-  "id": "2-samuel",
+  "framework_version": "1.0",
+  "object_version": "1",
   "type": "book",
+  "id": "2-samuel",
   "title": "2 Samuel",
   "aliases": [
-    "book of 2 samuel",
-    "what is 2 samuel about",
-    "tell me about 2 samuel",
-    "second samuel"
+    "Second Samuel",
+    "2 Kingdoms",
+    "Second Book of Samuel",
+    "David's reign",
+    "what is 2 Samuel about"
   ],
-  "summary": "The narrative of David's reign, Jerusalem's rise, covenant promise, and royal failure.",
-  "historical_context": "2 Samuel narrates the consolidation of the monarchy under David and the pressures of sin, succession, and political unrest.",
-  "ancient_near_east_context": "2 Samuel belongs to the Levantine royal world of dynastic succession, treaty loyalty, city administration, and temple patronage, yet it evaluates kings by covenant fidelity rather than royal propaganda.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
-  "later_christian_reception": "",
+  "summary": "Second Samuel narrates David's movement from king over Judah to king over all Israel, his capture of Jerusalem, the ark's arrival, and the promise of an enduring house, then exposes his abuse of power against Bathsheba and Uriah and the resulting violence, rebellion, grief, and instability within his household and kingdom before a four-part closing appendix.",
+  "authorship_positions": [
+    "The book is anonymous and forms the second part of the originally unified book of Samuel.",
+    "Traditional interpretation associates Samuel, Nathan, and Gad with prophetic records, though Samuel dies before the events of Second Samuel.",
+    "Many scholars identify royal, court, succession, prophetic, poetic, and archival materials shaped within a Deuteronomistic or related historiographic work.",
+    "The boundaries and dates of proposed source blocks, especially a court or succession narrative, remain disputed."
+  ],
+  "date_ranges": [
+    "Narrated period: David's accession in Judah through his later reign, conventionally associated with the early first millennium BCE.",
+    "Poems, lists, and narrative traditions may have different compositional histories.",
+    "Final-form proposals commonly range across monarchic and exilic settings; the book itself does not provide a composition date."
+  ],
+  "original_audience": "The first audience of the final form is unknown. The book addresses Israelite or Judean readers reflecting on Davidic kingship, Jerusalem, covenant promise, royal justice, abuse of power, succession, judgment, mercy, and national identity.",
+  "historical_setting": "Narrated setting: David's reign over Judah and then united Israel, centered first at Hebron and then Jerusalem amid conflict with Saul's house, Philistines, neighboring kingdoms, and internal rebellions. Compositional setting: disputed and distinct from the narrated reign.",
+  "canonical_placement": "Former Prophets in the Jewish canon; Historical Books between 1 Samuel and 1 Kings in common Christian ordering. Samuel was originally one work before later division.",
+  "canonical_role": "Second Samuel establishes Jerusalem and the Davidic promise as major canonical anchors while narrating royal power with unsparing moral critique: David receives covenant promise yet commits grave abuse, and violence spreads through his household and kingdom.",
+  "genre": [
+    "theological historiography",
+    "royal and court narrative",
+    "battle narrative",
+    "prophetic confrontation",
+    "lament",
+    "royal psalm",
+    "oracle",
+    "administrative list",
+    "appendix or epilogue"
+  ],
+  "structure": [
+    "2 Samuel 1-4: David laments Saul and Jonathan, reigns at Hebron, and the conflict with Ish-bosheth's kingdom ends",
+    "2 Samuel 5-8: David becomes king over all Israel, captures Jerusalem, brings the ark, receives the house promise, and expands the kingdom",
+    "2 Samuel 9-12: kindness to Mephibosheth, war with Ammon, David's seizure of Bathsheba and killing of Uriah, Nathan's confrontation, and Solomon's birth",
+    "2 Samuel 13-14: Amnon violates Tamar, Absalom kills Amnon, and Absalom returns from exile",
+    "2 Samuel 15-20: Absalom's rebellion, David's flight and return, Absalom's death, David's grief, and Sheba's revolt",
+    "2 Samuel 21-24: famine and Saulide executions, Philistine-war notices, David's song, last words, warriors, census, plague, and altar"
+  ],
+  "major_themes": [
+    "Davidic kingship and Jerusalem",
+    "ark, worship, and divine holiness",
+    "the LORD's house and David's house",
+    "covenant promise, discipline, and enduring dynasty",
+    "royal justice and covenant loyalty",
+    "kindness to Saul's house",
+    "abuse of royal power",
+    "sexual violence and household failure",
+    "prophetic confrontation and confession",
+    "judgment, consequence, mercy, and grief",
+    "rebellion, loyalty, and contested succession",
+    "national sin and representative leadership"
+  ],
+  "key_people": [
+    "David",
+    "Joab, Abishai, and Asahel",
+    "Ish-bosheth",
+    "Abner",
+    "Michal",
+    "Uzzah",
+    "Nathan the prophet",
+    "Mephibosheth",
+    "Ziba",
+    "Bathsheba",
+    "Uriah the Hittite",
+    "Amnon",
+    "Tamar",
+    "Absalom",
+    "Ahithophel",
+    "Hushai",
+    "Ittai the Gittite",
+    "Shimei",
+    "Sheba son of Bichri",
+    "Araunah",
+    "Solomon"
+  ],
+  "key_places": [
+    "Ziklag",
+    "Jabesh-gilead",
+    "Hebron",
+    "Gibeon",
+    "Jerusalem or the City of David",
+    "Baal-perazim",
+    "Kiriath-jearim and the house of Obed-edom",
+    "the Valley of Rephaim",
+    "Rabbah of the Ammonites",
+    "Baal-hazor",
+    "Geshur",
+    "the Mount of Olives",
+    "the wilderness and Jordan crossings",
+    "the forest of Ephraim",
+    "Abel Beth-maacah",
+    "Araunah's threshing floor"
+  ],
+  "key_events": [
+    "David laments Saul and Jonathan",
+    "David is anointed king over Judah at Hebron",
+    "civil conflict between David's house and Saul's house intensifies",
+    "Abner and Ish-bosheth are killed, and David publicly rejects the murders",
+    "the tribes anoint David king over all Israel",
+    "David captures Jerusalem and defeats Philistine attacks",
+    "Uzzah dies during the first attempt to move the ark",
+    "David brings the ark to Jerusalem amid sacrifice and celebration",
+    "the LORD promises David an enduring house while assigning temple building to his offspring",
+    "David extends the kingdom and administers justice",
+    "David shows covenant kindness to Mephibosheth",
+    "David takes Bathsheba and arranges Uriah's death",
+    "Nathan confronts David, who confesses, and judgment is announced within his house",
+    "Amnon violates Tamar and Absalom kills Amnon",
+    "Absalom returns, builds support, rebels, and drives David from Jerusalem",
+    "Joab kills Absalom despite David's command, and David laments",
+    "David returns amid unresolved tribal tensions and Sheba's revolt",
+    "a famine leads to the execution of seven Saulide descendants and Rizpah's vigil",
+    "David's song and last words interpret divine deliverance and just rule",
+    "David orders a census, plague follows, and he builds an altar at Araunah's threshing floor"
+  ],
+  "interpretive_disputes": [
+    "Authorship, sources, editorial growth, and the unity of Samuel",
+    "The existence, extent, and purpose of a court history or succession narrative",
+    "Historical reconstruction and chronology of David's kingdom",
+    "Archaeological debates concerning Jerusalem, state formation, and the scale of the united monarchy",
+    "The wording, scope, conditionality, and later development of the promise in 2 Samuel 7",
+    "Uzzah's death and the theology of ark holiness",
+    "How to characterize David's actions toward Bathsheba in light of royal coercive power",
+    "The narrative treatment of Tamar, Amnon, Absalom, and David's failures as father and king",
+    "Joab's role as loyal commander, political actor, and perpetrator of unauthorized killings",
+    "The justice and collective dimensions of the Gibeonite/Saulide episode in 2 Samuel 21",
+    "The relationship between the census accounts in 2 Samuel 24 and 1 Chronicles 21",
+    "Textual difficulties and variant readings throughout Samuel"
+  ],
+  "primary_sources": [
+    "2 Samuel 1-24",
+    "1 Samuel 31",
+    "1 Kings 1-2",
+    "1 Chronicles 11-21",
+    "Psalm 18",
+    "Psalm 51",
+    "Psalm 89",
+    "Luke 1:26-33",
+    "Acts 2:22-36"
+  ],
+  "related_entries": [
+    "1 Samuel",
+    "1 Kings",
+    "David",
+    "Bathsheba",
+    "Nathan the Prophet",
+    "Solomon",
+    "Jerusalem",
+    "Ark Brought to Jerusalem",
+    "Davidic Covenant",
+    "Kingdom Theme",
+    "Covenant Theme"
+  ],
+  "common_questions": [
+    "How does David become king over all Israel?",
+    "Why did Uzzah die?",
+    "What does the Davidic covenant promise?",
+    "Does 2 Samuel 7 promise an unconditional dynasty?",
+    "Did David sexually assault Bathsheba?",
+    "Why does Nathan's parable confront David?",
+    "Why did David fail to protect Tamar?",
+    "Why did Absalom rebel?",
+    "How should David's grief for Absalom be understood?",
+    "Why are 2 Samuel 21-24 arranged as an appendix?",
+    "Why do Samuel and Chronicles attribute the census differently?",
+    "What does archaeology establish about David's kingdom?"
+  ],
+  "keywords": [
+    "Second Samuel",
+    "David",
+    "Hebron",
+    "Jerusalem",
+    "ark",
+    "Davidic covenant",
+    "house",
+    "Mephibosheth",
+    "Bathsheba",
+    "Uriah",
+    "Nathan",
+    "Amnon",
+    "Tamar",
+    "Absalom",
+    "Joab",
+    "rebellion",
+    "census",
+    "Araunah"
+  ],
+  "hebrew_words": [
+    "bayit: house, household, palace, temple, or dynasty by context",
+    "berit: covenant",
+    "hesed: loyal kindness",
+    "mashiach: anointed one",
+    "melekh: king",
+    "mishpat: justice or judgment",
+    "tsedaqah: righteousness or right order",
+    "shalom: well-being or peace",
+    "laqach: take, including David's royal taking",
+    "yada: know, with context-dependent senses",
+    "neum: oracle declaration",
+    "qonah: lament"
+  ],
+  "greek_words": [],
+  "related_objects": [
+    {
+      "id": "1-samuel",
+      "relationship": "continues-from",
+      "weight": 10,
+      "notes": "Second Samuel opens by receiving news of Saul's death."
+    },
+    {
+      "id": "1-kings",
+      "relationship": "continued-by",
+      "weight": 10,
+      "notes": "First Kings narrates David's final succession crisis and Solomon's accession."
+    },
+    {
+      "id": "david",
+      "relationship": "central-king",
+      "weight": 10,
+      "notes": "David's reign, covenant, sins, grief, and household define the book."
+    },
+    {
+      "id": "bathsheba",
+      "relationship": "royal-abuse-and-household-figure",
+      "weight": 9,
+      "notes": "David takes Bathsheba, kills Uriah, and later fathers Solomon with her."
+    },
+    {
+      "id": "nathan-the-prophet",
+      "relationship": "covenant-prophet-and-accuser",
+      "weight": 10,
+      "notes": "Nathan announces the house promise and confronts David's sin."
+    },
+    {
+      "id": "solomon",
+      "relationship": "named-son-and-future-heir",
+      "weight": 8,
+      "notes": "Solomon is born and loved by the LORD, though his accession occurs in First Kings."
+    },
+    {
+      "id": "jerusalem",
+      "relationship": "royal-and-ark-center",
+      "weight": 10,
+      "notes": "David captures Jerusalem and brings the ark there."
+    },
+    {
+      "id": "ark-brought-to-jerusalem",
+      "relationship": "narrates",
+      "weight": 10,
+      "notes": "Second Samuel 6 narrates the ark's movement to Jerusalem."
+    },
+    {
+      "id": "davidic-covenant",
+      "relationship": "narrates",
+      "weight": 10,
+      "notes": "Second Samuel 7 establishes the enduring house promise."
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "develops-theme",
+      "weight": 10,
+      "notes": "David's unified kingdom, justice, failure, and rebellion develop biblical kingship."
+    },
+    {
+      "id": "covenant-theme",
+      "relationship": "develops-theme",
+      "weight": 10,
+      "notes": "Divine promise and human covenant loyalty shape David's house and relationships."
+    }
+  ],
+  "related_people": [
+    "david",
+    "bathsheba",
+    "nathan-the-prophet",
+    "solomon"
+  ],
+  "related_places": [
+    "jerusalem",
+    "gibeah-1"
+  ],
+  "related_events": [
+    "ark-brought-to-jerusalem",
+    "davidic-covenant"
+  ],
+  "scripture_references": [
+    {
+      "reference": "2 Samuel 1:1-27",
+      "relationship": "primary",
+      "notes": "News of Saul's death and David's lament."
+    },
+    {
+      "reference": "2 Samuel 2:1-32",
+      "relationship": "supporting",
+      "notes": "David at Hebron and conflict between royal houses."
+    },
+    {
+      "reference": "2 Samuel 5:1-25",
+      "relationship": "primary",
+      "notes": "David over all Israel, Jerusalem, and Philistine victories."
+    },
+    {
+      "reference": "2 Samuel 6:1-23",
+      "relationship": "primary",
+      "notes": "Uzzah, Obed-edom, and the ark's arrival in Jerusalem."
+    },
+    {
+      "reference": "2 Samuel 7:1-29",
+      "relationship": "primary",
+      "notes": "The house promise and David's prayer."
+    },
+    {
+      "reference": "2 Samuel 9:1-13",
+      "relationship": "supporting",
+      "notes": "David's covenant kindness to Mephibosheth."
+    },
+    {
+      "reference": "2 Samuel 11:1-27",
+      "relationship": "primary",
+      "notes": "David, Bathsheba, Uriah, and royal abuse."
+    },
+    {
+      "reference": "2 Samuel 12:1-31",
+      "relationship": "primary",
+      "notes": "Nathan's confrontation, judgment, loss, and Solomon's birth."
+    },
+    {
+      "reference": "2 Samuel 13:1-39",
+      "relationship": "primary",
+      "notes": "Amnon's violation of Tamar and Absalom's revenge."
+    },
+    {
+      "reference": "2 Samuel 15:1-37",
+      "relationship": "primary",
+      "notes": "Absalom's conspiracy and David's flight."
+    },
+    {
+      "reference": "2 Samuel 18:1-33",
+      "relationship": "primary",
+      "notes": "Absalom's defeat, death, and David's grief."
+    },
+    {
+      "reference": "2 Samuel 21:1-22",
+      "relationship": "supporting",
+      "notes": "Famine, Gibeonites, Saulide deaths, Rizpah, and warrior notices."
+    },
+    {
+      "reference": "2 Samuel 22:1-51",
+      "relationship": "primary",
+      "notes": "David's song of deliverance."
+    },
+    {
+      "reference": "2 Samuel 23:1-39",
+      "relationship": "supporting",
+      "notes": "David's last words and warrior list."
+    },
+    {
+      "reference": "2 Samuel 24:1-25",
+      "relationship": "primary",
+      "notes": "Census, plague, mercy, and Araunah's threshing floor."
+    }
+  ],
+  "covenantal_significance": "The LORD promises to make David a house, establish his offspring, relate to the royal son as father, discipline wrongdoing, and maintain covenant loyalty toward David's dynasty. The same book insists that promise does not excuse David's abuse or remove temporal judgment, prophetic confrontation, and household consequence.",
+  "intertextuality": [
+    "First Samuel supplies Saul's death, David's anointing, Jonathan's covenant, and David's contested rise.",
+    "Deuteronomy 17's bounded kingship provides a canonical standard for David's royal conduct.",
+    "First Kings continues the unresolved succession and temple trajectory.",
+    "Chronicles retells David's reign while omitting or reshaping much of the household crisis.",
+    "Psalms 18 and 51 are linked by canonical titles or parallel text to David traditions; Psalm 89 reflects on the Davidic promise amid crisis.",
+    "Isaiah, Jeremiah, Ezekiel, and later prophetic texts develop hope for Davidic rule.",
+    "Luke 1, Acts 2, Romans 1, and other New Testament texts apply Davidic promise language to Jesus."
+  ],
+  "hebraic_worldview": "Kingship is a divine trust ordered toward justice and righteousness, not autonomous possession. House, land, ark, covenant loyalty, prophetic truth, corporate consequence, lament, burial honor, kinship, hospitality, and public accountability shape the narrative's moral world.",
+  "second_temple_context": "Second Temple communities read the Davidic promise after monarchy and exile and transmitted Samuel in multiple textual forms. Messianic, liturgical, and historical readings of David belong to canonical reception and should remain distinct from reconstruction of his reign.",
+  "canonical_context": "Second Samuel continues the unified Samuel story and ends before David's death or Solomon's accession. First Kings completes the immediate succession, while Psalms, Prophets, Chronicles, and the New Testament develop Jerusalem and Davidic promise traditions.",
+  "later_christian_reception": "Christian texts identify Jesus with David's promised throne and risen descendant. This reception intensifies the covenant trajectory but does not make David's abuse exemplary or reduce Bathsheba, Tamar, Uriah, and other harmed people to plot devices.",
+  "cross_references": [
+    "Deuteronomy 17:14-20",
+    "1 Samuel 16:1-13",
+    "1 Samuel 31:1-13",
+    "1 Kings 1:1-2:12",
+    "1 Chronicles 17:1-27",
+    "1 Chronicles 21:1-30",
+    "Psalm 18:1-50",
+    "Psalm 51:1-19",
+    "Psalm 89:1-52",
+    "Isaiah 9:1-7",
+    "Jeremiah 33:14-26",
+    "Luke 1:26-33",
+    "Acts 2:22-36",
+    "Romans 1:1-4"
+  ],
+  "new_testament_connections": [
+    "Luke 1 announces that Jesus will receive the throne of his ancestor David.",
+    "Acts 2 argues that David's promised descendant and resurrection hope are fulfilled in the risen Jesus.",
+    "Romans 1 identifies Jesus as descended from David according to the flesh.",
+    "New Testament Davidic fulfillment is later canonical interpretation and does not erase Second Samuel's direct royal and ethical claims."
+  ],
+  "archaeology": [
+    "The Tel Dan inscription's reference to the House of David is important later evidence for a Davidic dynasty but does not verify each event in Second Samuel.",
+    "Jerusalem's early Iron Age extent, monumental architecture, and administrative development remain debated because later building and excavation conditions complicate reconstruction.",
+    "Regional surveys and excavations inform debate about early state formation and the scale of David's kingdom without yielding one uncontested model.",
+    "Proposed identifications of Davidic structures or destruction layers require site-specific and chronological caution."
+  ],
+  "historical_context": "Second Samuel portrays the consolidation of rule from Hebron to Jerusalem, conflict with Saulide and neighboring powers, court administration, military expansion, royal household politics, and internal revolt. Historical reconstruction must distinguish literary-theological presentation from debated archaeology and chronology.",
+  "ancient_near_east_context": "Dynastic promise, royal grant, palace and temple, capital formation, treaty loyalty, succession, court counsel, warfare, lament, public gate and assembly practice, census, plague, and royal ideology provide comparative context. Such parallels illuminate but do not predetermine the meaning of the Davidic promise or court narratives.",
+  "literary_context": "The rise to a unified kingdom and the house promise in chapters 1-8 are followed by covenant kindness and then David's catastrophic taking in chapters 9-12. The announced sword unfolds through Amnon, Tamar, Absalom, revolt, and grief, while the concentric appendix in chapters 21-24 places crises, poems, warriors, and altar around the whole reign.",
+  "timeline": [
+    "David reigns over Judah at Hebron",
+    "Conflict with Ish-bosheth and Abner ends",
+    "David becomes king over all Israel and captures Jerusalem",
+    "Ark arrives and the Davidic house promise is given",
+    "Military expansion and kindness to Mephibosheth",
+    "David's actions against Bathsheba and Uriah and Nathan's judgment",
+    "Amnon, Tamar, Absalom, and household violence",
+    "Absalom's rebellion and David's return",
+    "Sheba's revolt and later-reign appendix",
+    "Absolute chronology and compositional sequence remain disputed"
+  ],
+  "maps": [
+    "Ziklag, Hebron, Gibeon, and the divided kingdoms",
+    "Jerusalem, the City of David, and ark route",
+    "David's campaigns against Philistines, Moab, Aram, Edom, and Ammon",
+    "Absalom's revolt from Hebron through Jerusalem, the Jordan, Mahanaim, and the forest of Ephraim",
+    "Abel Beth-maacah and Sheba's revolt",
+    "Araunah's threshing floor in Jerusalem"
+  ],
+  "interpretive_notes": [
+    {
+      "note": "Second Samuel 7 promises an enduring Davidic house, includes father-son relationship and discipline for wrongdoing, and withholds temple building from David; later texts develop how enduring promise and historical judgment relate.",
+      "note_type": "canonical-connection",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "2-samuel-1-24",
+        "tsumura-second-samuel",
+        "anderson-second-samuel"
+      ],
+      "scripture_references": [
+        "2 Samuel 7:1-29",
+        "Psalm 89:1-52",
+        "1 Chronicles 17:1-27"
+      ],
+      "traditions": [
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "The promise and discipline clauses are explicit; views differ on covenant form, conditionality, dynastic history, and messianic fulfillment."
+    },
+    {
+      "note": "David summons and takes Bathsheba while exercising royal power, then engineers Uriah's death; the narrative condemns David and should not be retold as a harmless mutual romance.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "2-samuel-1-24",
+        "tsumura-second-samuel",
+        "anderson-second-samuel"
+      ],
+      "scripture_references": [
+        "2 Samuel 11:1-27",
+        "2 Samuel 12:1-14"
+      ],
+      "traditions": [
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "The verbs of royal sending and taking, power asymmetry, concealment, killing, and Nathan's accusation locate culpability with David; terminology for the sexual act remains debated."
+    },
+    {
+      "note": "Amnon's violation of Tamar is explicitly condemned through her protest, desolation, Absalom's revenge, and the unfolding judgment on David's house; Tamar should not be reduced to a device in male succession politics.",
+      "note_type": "interpretive-caution",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "2-samuel-1-24",
+        "tsumura-second-samuel",
+        "anderson-second-samuel"
+      ],
+      "scripture_references": [
+        "2 Samuel 13:1-39"
+      ],
+      "traditions": [],
+      "rationale": "Tamar names the act as a disgrace, resists, is overpowered, and remains desolate; the narrative traces destructive consequences."
+    },
+    {
+      "note": "Second Samuel attributes the census incitement to the LORD's anger, whereas First Chronicles attributes it to an adversary; harmonizing, developmental, and distinct-source explanations remain debated.",
+      "note_type": "canonical-connection",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "2-samuel-1-24",
+        "tsumura-second-samuel",
+        "anderson-second-samuel"
+      ],
+      "scripture_references": [
+        "2 Samuel 24:1",
+        "1 Chronicles 21:1"
+      ],
+      "traditions": [
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "The canonical accounts use different immediate agents while narrating parallel census, plague, and altar episodes."
+    },
+    {
+      "note": "Archaeology supports the existence of a later Davidic dynasty but does not establish one uncontested size, administration, or chronology for David's kingdom.",
+      "note_type": "historical-context",
+      "certainty": "probable",
+      "dispute_status": "archaeological_uncertainty",
+      "sources": [
+        "anderson-second-samuel",
+        "zondervan-illustrated-historical-books-backgrounds"
+      ],
+      "scripture_references": [
+        "2 Samuel 5-8"
+      ],
+      "traditions": [],
+      "rationale": "The House of David inscription is significant, while Jerusalem archaeology, regional state formation, and proposed royal structures remain contested."
+    }
+  ],
+  "claims": [
+    {
+      "id": "second-samuel-literary-movement",
+      "claim": "Second Samuel moves from David's accession and kingdom consolidation through ark and dynasty promise to royal abuse, household violence, rebellion, grief, and a four-part closing appendix.",
+      "claim_type": "literary",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "2 Samuel 1-24"
+      ],
+      "source_ids": [
+        "2-samuel-1-24",
+        "tsumura-second-samuel",
+        "anderson-second-samuel"
+      ],
+      "traditions": [],
+      "rationale": "The accession, consolidation, house narrative, family crisis, rebellions, and appendix form the book's major blocks.",
+      "notes": ""
+    },
+    {
+      "id": "second-samuel-david-lament",
+      "claim": "David publicly laments Saul and Jonathan, praises their valor and love, and commands that the lament be taught in Judah.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "2 Samuel 1:17-27"
+      ],
+      "source_ids": [
+        "2-samuel-1-24"
+      ],
+      "traditions": [],
+      "rationale": "The narrative introduces and preserves the lament with these explicit instructions and themes.",
+      "notes": ""
+    },
+    {
+      "id": "second-samuel-jerusalem-ark",
+      "claim": "David establishes Jerusalem as royal center and brings the ark there only after the first transport attempt ends in Uzzah's death.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "2 Samuel 5:6-12",
+        "2 Samuel 6:1-23"
+      ],
+      "source_ids": [
+        "2-samuel-1-24",
+        "tsumura-second-samuel"
+      ],
+      "traditions": [],
+      "rationale": "The capture and ark narratives explicitly create the royal-cultic geography.",
+      "notes": ""
+    },
+    {
+      "id": "second-samuel-davidic-house",
+      "claim": "In 2 Samuel 7 the LORD refuses David's immediate temple plan, promises to make David a house, establishes his offspring's throne, and promises enduring covenant loyalty alongside discipline.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "2 Samuel 7:1-29"
+      ],
+      "source_ids": [
+        "2-samuel-1-24",
+        "tsumura-second-samuel",
+        "anderson-second-samuel"
+      ],
+      "traditions": [],
+      "rationale": "Each element is stated in Nathan's oracle and David's prayer; disagreement concerns their historical and canonical scope.",
+      "notes": ""
+    },
+    {
+      "id": "second-samuel-david-condemned",
+      "claim": "The narrator declares David's action displeasing to the LORD, and Nathan identifies David as the rich man who took from the poor man and had Uriah killed.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "2 Samuel 11:27",
+        "2 Samuel 12:1-14"
+      ],
+      "source_ids": [
+        "2-samuel-1-24",
+        "anderson-second-samuel"
+      ],
+      "traditions": [],
+      "rationale": "Narrator evaluation and prophetic accusation explicitly condemn David.",
+      "notes": ""
+    },
+    {
+      "id": "second-samuel-absalom-rebellion",
+      "claim": "Absalom builds popular support, declares himself king, drives David from Jerusalem, and dies when Joab ignores David's command to deal gently with him.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "2 Samuel 15:1-37",
+        "2 Samuel 18:1-33"
+      ],
+      "source_ids": [
+        "2-samuel-1-24",
+        "tsumura-second-samuel"
+      ],
+      "traditions": [],
+      "rationale": "The conspiracy, flight, battle command, Joab's action, and lament are narrated directly.",
+      "notes": ""
+    }
+  ],
+  "canonical_story": {
+    "phase": "Davidic kingdom, promise, and royal crisis",
+    "role": "Establishes Jerusalem and the Davidic house promise while exposing the destructive consequences of David's abuse and household failure.",
+    "preceded_by": [
+      "1-samuel"
+    ],
+    "followed_by": [
+      "1-kings"
+    ]
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "Read promise and royal success together with narrator judgment, prophetic accusation, harmed voices, household consequence, rebellion, and grief.",
+    "book_context": "Chapters 1-8 consolidate David's kingdom; chapters 9-20 turn from hesed to taking and consequence; chapters 21-24 form a reflective appendix.",
+    "canonical_context": "First Samuel supplies David's rise; First Kings completes succession; Chronicles, Psalms, Prophets, and the New Testament reinterpret David and the house promise.",
+    "covenant_context": "The Davidic promise sustains dynasty and includes discipline, while covenant loyalty and justice remain obligations for the king.",
+    "historical_context": "Distinguish early monarchy narratives from debated state formation, archaeology, source theories, and final-form dates.",
+    "ancient_near_east_context": "Royal grants, dynasty, capital, palace-temple relations, court politics, succession, lament, census, and warfare illuminate the social world without controlling the text.",
+    "second_temple_jewish_context": "Postmonarchic readers received the Davidic promise amid exile and restoration hopes and transmitted variant Samuel texts.",
+    "original_audience": "The unknown audience is asked to hold enduring promise together with truthful judgment of the promised dynasty's founder.",
+    "genre": "Royal theological historiography combines court narrative, prophecy, lament, poetry, lists, and a shaped appendix.",
+    "intertextual_connections": [
+      "Deuteronomy 17",
+      "1 Samuel 16-31",
+      "1 Kings 1-2",
+      "1 Chronicles 11-21",
+      "Psalms 18, 51, and 89",
+      "Luke 1",
+      "Acts 2"
+    ],
+    "biblical_theology_themes": [
+      "Davidic covenant",
+      "kingdom",
+      "Jerusalem",
+      "justice",
+      "prophetic accountability",
+      "sin and consequence",
+      "mercy",
+      "messianic hope"
+    ],
+    "messianic_christological_trajectory": "The house and throne promise becomes a central messianic trajectory explicitly applied to Jesus in the New Testament, while David remains a morally accountable and deeply flawed ancestor.",
+    "major_interpretive_views": [
+      "Second Samuel 7 is a royal grant emphasizing durable divine commitment.",
+      "The promise includes covenant discipline and must be read with historical judgment.",
+      "Chapters 9-20 preserve a succession or court history.",
+      "Those chapters are a broader narrative of David's house and consequences rather than only Solomon's succession."
+    ],
+    "historical_interpretation": "Jewish and Christian reception has treated David as king, psalmist, sinner, penitent, covenant recipient, and messianic ancestor, while Bathsheba, Tamar, Rizpah, and others have increasingly received needed interpretive attention.",
+    "authorial_intent": "The final form affirms divine commitment to David's house while demonstrating that royal election cannot conceal abuse, silence prophetic truth, or prevent sin's communal consequences.",
+    "typological_connections": [
+      "Davidic kingship contributes directly to later messianic interpretation.",
+      "David's failures function by contrast as well as continuity in Christian comparison with Jesus."
+    ],
+    "christological_significance": "Luke 1 and Acts 2 explicitly apply Davidic throne and descendant promises to Jesus; this canonical fulfillment is distinct from excusing or allegorizing David's misconduct.",
+    "modern_application_principles": [
+      "Name abuse of power and center the text's condemnation rather than romanticizing it.",
+      "Do not treat covenant promise or religious office as immunity from accountability.",
+      "Attend to Tamar, Bathsheba, Uriah, Rizpah, Mephibosheth, and communities harmed by royal decisions.",
+      "Recognize the difference between confession, forgiveness, temporal consequence, and institutional repair.",
+      "Use political analogies cautiously and resist identifying modern states or rulers directly with David's kingdom."
+    ],
+    "common_misinterpretations": [
+      "Second Samuel portrays David as a flawless ideal king.",
+      "David and Bathsheba is merely a consensual romance.",
+      "Tamar's story is incidental to the royal narrative.",
+      "The Davidic covenant removes all conditions or consequences from every Davidic king.",
+      "Solomon becomes king within Second Samuel.",
+      "The census accounts in Samuel and Chronicles use identical agency language.",
+      "Archaeology has either fully proved or disproved every detail of David's reign."
+    ]
+  },
+  "retrieval_metadata": {
+    "aliases": [
+      "Second Samuel",
+      "2 Kingdoms",
+      "David king of Israel",
+      "Davidic covenant book",
+      "David household rebellion"
+    ],
+    "search_terms": [
+      "2 Samuel overview",
+      "2 Samuel structure",
+      "David king Hebron Jerusalem",
+      "Uzzah ark",
+      "Davidic covenant house",
+      "David Mephibosheth hesed",
+      "David Bathsheba Uriah abuse",
+      "Nathan you are the man",
+      "Amnon Tamar",
+      "Absalom rebellion",
+      "David weeps Absalom",
+      "2 Samuel appendix 21 24",
+      "David census Chronicles difference",
+      "archaeology David kingdom"
+    ],
+    "common_questions": [
+      "How did David become king?",
+      "Why did Uzzah die?",
+      "What does God promise David in 2 Samuel 7?",
+      "Did David rape Bathsheba?",
+      "Why did David fail Tamar?",
+      "Why did Absalom rebel?",
+      "Why did Joab kill Absalom?",
+      "How are 2 Samuel 21-24 organized?",
+      "Why do Samuel and Chronicles describe the census differently?",
+      "What does archaeology say about David's kingdom?"
+    ],
+    "related_topics": [
+      "Hebron",
+      "Jerusalem",
+      "ark",
+      "Davidic dynasty",
+      "house",
+      "royal power",
+      "prophetic confrontation",
+      "sexual violence",
+      "household consequence",
+      "rebellion",
+      "lament",
+      "census"
+    ],
+    "frequently_confused_with": [
+      "First Samuel before David's accession",
+      "First Kings' succession and Solomon narrative",
+      "Chronicles' selective retelling of David",
+      "later messianic fulfillment presented as though it erased the book's direct ethical critique"
+    ],
+    "semantic_keywords": [
+      "Ish-bosheth",
+      "Abner",
+      "Joab",
+      "Michal",
+      "Uzzah",
+      "Obed-edom",
+      "Nathan",
+      "Mephibosheth",
+      "Ziba",
+      "Bathsheba",
+      "Uriah",
+      "Amnon",
+      "Tamar",
+      "Absalom",
+      "Ahithophel",
+      "Hushai",
+      "Ittai",
+      "Shimei",
+      "Sheba",
+      "Rizpah",
+      "Araunah"
+    ]
+  },
+  "section_status": {
+    "core_summary": "draft",
+    "scripture_anchors": "needs_review",
+    "historical_context": "needs_review",
+    "literary_context": "needs_review",
+    "canonical_context": "needs_review",
+    "original_audience": "needs_review",
+    "lexical_links": "draft",
+    "intertextuality": "draft",
+    "interpretive_views": "needs_review",
+    "common_misinterpretations": "draft",
+    "sources": "needs_review",
+    "relationships": "needs_review",
+    "retrieval_metadata": "draft",
+    "human_review": "missing"
+  },
+  "knowledge_layers": {
+    "primary": "biblical_text",
+    "secondary": [
+      "literary",
+      "historical_cultural",
+      "ancient_near_eastern",
+      "archaeology",
+      "biblical_theology",
+      "reception_history"
+    ]
+  },
+  "sources": [
+    {
+      "title": "2 Samuel 1-24",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "2 Samuel 1:1-24:25",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [
+        "summary",
+        "literary_context",
+        "structure",
+        "key_people",
+        "key_places",
+        "key_events",
+        "scripture_references",
+        "second-samuel-literary-movement",
+        "second-samuel-david-lament",
+        "second-samuel-jerusalem-ark",
+        "second-samuel-davidic-house",
+        "second-samuel-david-condemned",
+        "second-samuel-absalom-rebellion"
+      ],
+      "notes": "Primary biblical text.",
+      "id": "2-samuel-1-24"
+    },
+    {
+      "title": "The Second Book of Samuel",
+      "author": "David Toshio Tsumura",
+      "publisher": "Eerdmans",
+      "year": 2019,
+      "locator": "Introduction and commentary on 2 Samuel 1-24",
+      "url": "https://www.eerdmans.com/9780802870964/the-second-book-of-samuel/",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context",
+        "literary_context",
+        "hebrew_words",
+        "interpretive_notes",
+        "second-samuel-literary-movement",
+        "second-samuel-jerusalem-ark",
+        "second-samuel-davidic-house",
+        "second-samuel-absalom-rebellion"
+      ],
+      "notes": "NICOT commentary with detailed Hebrew textual, literary, compositional, and historical analysis.",
+      "id": "tsumura-second-samuel"
+    },
+    {
+      "title": "2 Samuel, Volume 11",
+      "author": "Arnold A. Anderson",
+      "publisher": "Zondervan",
+      "year": 2015,
+      "locator": "Word Biblical Commentary on 2 Samuel 1-24",
+      "url": "https://zondervanacademic.com/products/2-samuel-volume-11",
+      "source_type": "reference-work",
+      "supports": [
+        "authorship_positions",
+        "historical_context",
+        "literary_context",
+        "interpretive_notes",
+        "second-samuel-literary-movement",
+        "second-samuel-davidic-house",
+        "second-samuel-david-condemned"
+      ],
+      "notes": "Technical commentary emphasizing textual, linguistic, structural, compositional, and theological evidence.",
+      "id": "anderson-second-samuel"
+    },
+    {
+      "title": "Zondervan Illustrated Bible Backgrounds Commentary: Joshua, Judges, Ruth, 1 and 2 Samuel",
+      "author": "John H. Walton, general editor; Dale W. Manor, V. Philips Long, Richard Hess, and other contributors",
+      "publisher": "Zondervan",
+      "year": 2009,
+      "locator": "2 Samuel commentary and background notes",
+      "url": "https://zondervanacademic.com/products/joshua-judges-ruth-1-and-2-samuel",
+      "source_type": "reference-work",
+      "supports": [
+        "ancient_near_east_context",
+        "archaeology",
+        "historical_context",
+        "maps",
+        "interpretive_notes"
+      ],
+      "notes": "Comparative textual, material, historical, geographical, and cultural background.",
+      "id": "zondervan-illustrated-historical-books-backgrounds"
+    }
+  ],
+  "content_status": "draft",
+  "review_status": "in_review",
+  "reviewed_by": [],
+  "last_reviewed": null,
+  "human_review_required": true,
+  "confidence": "medium",
+  "importance": 95,
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-16"
+    },
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "phase-5-book-correction-samuel",
+      "date": "2026-07-24"
+    }
+  ],
+  "edited_by": [],
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
@@ -22,296 +929,5 @@
     "second_temple": true,
     "canonical": true,
     "later_christian_reception": true
-  },
-  "literary_context": "The book moves from national consolidation to Davidic covenant, then to the consequences of David's sin and the turmoil of his house.",
-  "covenantal_significance": "2 Samuel establishes the Davidic covenant as a decisive step in the promise line toward the Messiah.",
-  "authorship_positions": [
-    "Traditional prophetic or courtly compilation",
-    "Many scholars read the books as later historiographical or Deuteronomistic shaping"
-  ],
-  "date_ranges": [
-    "Historical span from settlement through exile",
-    "Final form often placed in the exilic or post-exilic period"
-  ],
-  "original_audience": "Israel and Judah remembering the land, monarchy, and exile",
-  "historical_setting": "Settlement, monarchy, and exile in the land of Israel and Judah",
-  "canonical_role": "2 Samuel serves as a canonical book anchor within Historical Books, book 5 of 12, connecting its structure, key passages, and related themes to the wider biblical storyline.",
-  "genre": [
-    "narrative"
-  ],
-  "structure": [
-    "David's reign",
-    "Covenant promise",
-    "Succession conflict"
-  ],
-  "major_themes": [
-    "land",
-    "leadership",
-    "faithfulness",
-    "kingdom",
-    "exile",
-    "Kingdom Theme",
-    "Covenant Theme"
-  ],
-  "canonical_placement": "Historical Books, book 5 of 12",
-  "key_people": [
-    "David",
-    "Bathsheba",
-    "Solomon",
-    "Joshua"
-  ],
-  "key_places": [
-    "Jerusalem",
-    "Canaan",
-    "Samaria"
-  ],
-  "key_events": [
-    "Ark Brought to Jerusalem",
-    "Davidic Covenant",
-    "conquest",
-    "monarchy",
-    "exile"
-  ],
-  "interpretive_disputes": [
-    "Historical reconstruction and sources",
-    "How conquest, kingship, and exile are narrated theologically"
-  ],
-  "primary_sources": [
-    "2 Samuel 1-24",
-    "Psalm 2",
-    "Psalm 51",
-    "Acts 2",
-    "Luke 1"
-  ],
-  "related_entries": [],
-  "keywords": [],
-  "intertextuality": [],
-  "timeline": [],
-  "maps": [],
-  "archaeology": [],
-  "hebrew_words": [],
-  "greek_words": [],
-  "related_people": [],
-  "related_places": [],
-  "related_events": [],
-  "related_objects": [
-    {
-      "id": "david",
-      "relationship": "king-anchor",
-      "weight": 10,
-      "notes": "David's reign"
-    },
-    {
-      "id": "jerusalem",
-      "relationship": "royal-capital",
-      "weight": 10,
-      "notes": "Jerusalem established"
-    },
-    {
-      "id": "ark-brought-to-jerusalem",
-      "relationship": "cultic-event",
-      "weight": 9,
-      "notes": "ark's relocation"
-    },
-    {
-      "id": "davidic-covenant",
-      "relationship": "covenantal-event",
-      "weight": 10,
-      "notes": "promise of enduring house"
-    },
-    {
-      "id": "bathsheba",
-      "relationship": "royal-failure-context",
-      "weight": 8,
-      "notes": "David's sin"
-    },
-    {
-      "id": "solomon",
-      "relationship": "succession-context",
-      "weight": 8,
-      "notes": "David's heir"
-    },
-    {
-      "id": "kingdom-theme",
-      "relationship": "royal-framework",
-      "weight": 10,
-      "notes": "kingship under covenant"
-    },
-    {
-      "id": "covenant-theme",
-      "relationship": "covenantal-framework",
-      "weight": 9,
-      "notes": "covenant promise"
-    }
-  ],
-  "scripture_references": [
-    {
-      "reference": "2 Samuel 5:1-12",
-      "relationship": "supporting",
-      "notes": "David takes Jerusalem"
-    },
-    {
-      "reference": "2 Samuel 6:1-23",
-      "relationship": "supporting",
-      "notes": "ark brought to Jerusalem"
-    },
-    {
-      "reference": "2 Samuel 7:1-17",
-      "relationship": "primary",
-      "notes": "Davidic covenant"
-    },
-    {
-      "reference": "2 Samuel 11:1-27",
-      "relationship": "supporting",
-      "notes": "David and Bathsheba"
-    },
-    {
-      "reference": "2 Samuel 12:1-25",
-      "relationship": "supporting",
-      "notes": "Nathan confronts David"
-    },
-    {
-      "reference": "2 Samuel 24:1-25",
-      "relationship": "supporting",
-      "notes": "census and judgment"
-    }
-  ],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    {
-      "note": "David's greatness never erases his sin; the book lets both realities stand.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "Jerusalem, covenant, and kingship become inseparable in the rest of Scripture.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    }
-  ],
-  "common_questions": [
-    "Why is 2 Samuel important?",
-    "What is the Davidic covenant?",
-    "How does David's failure shape the biblical story?"
-  ],
-  "sources": [
-    {
-      "title": "2 Samuel 1-24",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "2-samuel-1-24"
-    },
-    {
-      "title": "Psalm 2",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "psalm-2"
-    },
-    {
-      "title": "Psalm 51",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "psalm-51"
-    },
-    {
-      "title": "Acts 2",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "acts-2"
-    },
-    {
-      "title": "Luke 1",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "luke-1"
-    }
-  ],
-  "canonical_story": {
-    "phase": "",
-    "role": "",
-    "preceded_by": [],
-    "followed_by": []
-  },
-  "hermeneutical_lens": {
-    "immediate_literary_context": "",
-    "book_context": "",
-    "canonical_context": "",
-    "covenant_context": "",
-    "historical_context": "",
-    "ancient_near_east_context": "",
-    "second_temple_jewish_context": "",
-    "original_audience": "",
-    "genre": "",
-    "intertextual_connections": [],
-    "biblical_theology_themes": [],
-    "messianic_christological_trajectory": "",
-    "major_interpretive_views": [],
-    "historical_interpretation": "",
-    "authorial_intent": "",
-    "typological_connections": [],
-    "christological_significance": "",
-    "modern_application_principles": [],
-    "common_misinterpretations": []
-  },
-  "retrieval_metadata": {
-    "aliases": [],
-    "search_terms": [],
-    "common_questions": [],
-    "related_topics": [],
-    "frequently_confused_with": [],
-    "semantic_keywords": []
-  },
-  "importance": 95,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "generated_by": [
-    {
-      "type": "ai",
-      "name": "codex",
-      "workflow": "ane-hebraic-context-expansion",
-      "date": "2026-07-14"
-    }
-  ],
-  "edited_by": [],
-  "reviewed_by": [],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
-  "human_review_required": true
+  }
 }

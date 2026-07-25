@@ -10,7 +10,12 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
-from .legacy import CanonicalValidationError, DEFAULT_CANONICAL_METADATA, _normalize_governance_metadata
+from .legacy import (
+    CanonicalValidationError,
+    DEFAULT_CANONICAL_METADATA,
+    _normalize_governance_metadata,
+    default_knowledge_layers,
+)
 BASE_SCHEMA_PATH = Path(__file__).resolve().with_name("base.schema.json")
 
 
@@ -54,6 +59,7 @@ def validate_base_object(
 
 def _apply_defaults(data: Mapping[str, Any]) -> dict[str, Any]:
     normalized = dict(data)
+    knowledge_layers_were_missing = "knowledge_layers" not in normalized
     for field_name, default_value in DEFAULT_CANONICAL_METADATA.items():
         if field_name not in normalized:
             normalized[field_name] = _clone_default_value(default_value)
@@ -62,7 +68,13 @@ def _apply_defaults(data: Mapping[str, Any]) -> dict[str, Any]:
             assert isinstance(merged, dict)
             merged.update(dict(normalized[field_name]))
             normalized[field_name] = merged
-        elif field_name in {"canonical_story", "hermeneutical_lens", "retrieval_metadata"} and isinstance(
+        elif field_name in {
+            "section_status",
+            "knowledge_layers",
+            "canonical_story",
+            "hermeneutical_lens",
+            "retrieval_metadata",
+        } and isinstance(
             normalized[field_name],
             Mapping,
         ):
@@ -70,6 +82,10 @@ def _apply_defaults(data: Mapping[str, Any]) -> dict[str, Any]:
             assert isinstance(merged, dict)
             merged.update(dict(normalized[field_name]))
             normalized[field_name] = merged
+    if knowledge_layers_were_missing:
+        normalized["knowledge_layers"] = default_knowledge_layers(
+            normalized.get("type") if isinstance(normalized.get("type"), str) else None
+        )
     return _normalize_governance_metadata(normalized)
 
 
@@ -265,6 +281,15 @@ def _validate_schema(
                 path=path,
                 object_id=object_id,
             )
+        if schema.get("uniqueItems") is True:
+            serialized_items = [json.dumps(item, sort_keys=True) for item in value]
+            if len(serialized_items) != len(set(serialized_items)):
+                label = _field_label(field_path)
+                raise _error(
+                    f'field "{label}" must contain unique items',
+                    path=path,
+                    object_id=object_id,
+                )
         item_schema = schema.get("items")
         if isinstance(item_schema, Mapping):
             for index, item in enumerate(value):

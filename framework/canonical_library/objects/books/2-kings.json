@@ -1,20 +1,1030 @@
 {
-  "id": "2-kings",
+  "framework_version": "1.0",
+  "object_version": "1",
   "type": "book",
+  "id": "2-kings",
   "title": "2 Kings",
   "aliases": [
-    "book of 2 kings",
-    "what is 2 kings about",
-    "tell me about 2 kings",
-    "second kings"
+    "Second Kings",
+    "Second Book of Kings",
+    "4 Kingdoms",
+    "fall of Samaria and Jerusalem",
+    "what is 2 Kings about"
   ],
-  "summary": "The unraveling of Israel and Judah, leading to the fall of Samaria, the fall of Jerusalem, and exile.",
-  "historical_context": "2 Kings spans the decline of the divided kingdoms from the ninth century BC to the Babylonian exile.",
-  "ancient_near_east_context": "The book unfolds amid Assyrian and Babylonian imperial expansion, where smaller kingdoms are swallowed by larger powers.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
-  "later_christian_reception": "",
+  "summary": "Second Kings continues the divided monarchies from Ahaziah of Israel, transfers prophetic leadership from Elijah to Elisha, narrates Elisha's signs and Jehu's violent coup, follows the parallel decline of Israel and Judah through Assyrian expansion, explains Samaria's fall, portrays Hezekiah's deliverance and Josiah's reform without reversing accumulated judgment, and ends with Babylon's destruction of Jerusalem, Gedaliah's assassination, and Jehoiachin's release from prison.",
+  "authorship_positions": [
+    "The book is anonymous and forms the second half of the originally unified book of Kings.",
+    "Traditional interpretation associates Kings with prophetic records and sometimes with Jeremiah, but Jeremiah is not named in Second Kings and the final author is not identified.",
+    "Many scholars locate Kings within a Deuteronomistic or related historiographic work using royal annals, prophetic narratives, archival notices, and other sources.",
+    "The number, dates, and editorial relationship of pre-exilic and exilic editions remain disputed."
+  ],
+  "date_ranges": [
+    "Narrated period: the reign of Ahaziah of Israel through the release of Jehoiachin in Babylon after Jerusalem's destruction.",
+    "Regnal chronology depends on synchronisms, accession systems, co-regencies, and correlations with Assyrian and Babylonian records.",
+    "The final form must postdate Jehoiachin's release; earlier sources and editorial stages are widely proposed."
+  ],
+  "original_audience": "The first audience of the final form is unknown. The book addresses Israelite or Judean readers interpreting the loss of the northern kingdom, Jerusalem, temple, land, and monarchy while preserving prophetic witness, Davidic continuity, and a restrained closing sign of life in exile.",
+  "historical_setting": "Narrated setting: Israel and Judah amid Moabite, Aramean, Assyrian, Egyptian, and Babylonian power from the ninth through sixth centuries BCE. Compositional setting: at least partly exilic in final form, with earlier materials and editions disputed.",
+  "canonical_placement": "Former Prophets in the Jewish canon; Historical Books after 1 Kings and before 1 Chronicles in common Christian ordering. First and Second Kings were originally one work.",
+  "canonical_role": "Second Kings completes the monarchy narrative by explaining the falls of Samaria and Jerusalem through sustained covenant and royal failure while showing persistent prophetic speech, moments of reform, divine mercy, and the survival of Davidic Jehoiachin in Babylon.",
+  "genre": [
+    "theological historiography",
+    "regnal formula and annalistic notice",
+    "prophetic succession and miracle narrative",
+    "battle and siege narrative",
+    "royal coup narrative",
+    "reform and covenant-renewal narrative",
+    "imperial conquest and exile narrative"
+  ],
+  "structure": [
+    "2 Kings 1-2: Ahaziah, Elijah's final confrontations, Elijah's ascent, and Elisha's succession",
+    "2 Kings 3-8: war with Moab, Elisha's provisions and healings, Aramean conflict, Samaria's siege, and Hazael's rise",
+    "2 Kings 9-10: Jehu is anointed, destroys Joram, Ahaziah, Jezebel, Ahab's house, and Baal worship, yet retains Jeroboam's shrines",
+    "2 Kings 11-16: Athaliah, Joash, Jehoiada, and parallel Israelite and Judean reigns through Assyria's rise and Ahaz's submission",
+    "2 Kings 17: Samaria falls to Assyria, the narrator gives an extended theological explanation, and imperial resettlement follows",
+    "2 Kings 18-20: Hezekiah's reform, Sennacherib's invasion, Jerusalem's deliverance, Hezekiah's illness, and Babylonian envoys",
+    "2 Kings 21-23: Manasseh and Amon, Josiah's discovered scroll, covenant renewal and reform, continued judgment, and Josiah's death",
+    "2 Kings 24-25: Babylonian domination, deportations, Jerusalem and temple destroyed, Gedaliah killed, flight to Egypt, and Jehoiachin released"
+  ],
+  "major_themes": [
+    "prophetic word, succession, and fulfillment",
+    "the LORD's sovereignty beyond Israel",
+    "provision, healing, resurrection, and judgment",
+    "royal coups and morally complex instruments",
+    "persistent worship at Bethel and Dan",
+    "Assyrian and Babylonian empire",
+    "fall and exile of the northern kingdom",
+    "Jerusalem, temple, and Davidic promise",
+    "reform under Hezekiah and Josiah",
+    "Manasseh's violence and accumulated judgment",
+    "loss of land, monarchy, and sanctuary",
+    "survival and restrained hope in Jehoiachin's release"
+  ],
+  "key_people": [
+    "Elijah",
+    "Elisha",
+    "Ahaziah of Israel",
+    "Jehoram or Joram of Israel",
+    "Jehoshaphat",
+    "Mesha of Moab",
+    "the Shunammite woman and her son",
+    "Naaman",
+    "Gehazi",
+    "Ben-hadad of Aram",
+    "Hazael",
+    "Jehu",
+    "Jezebel",
+    "Athaliah",
+    "Joash of Judah and Jehoiada the priest",
+    "Jeroboam II",
+    "Tiglath-pileser III",
+    "Pekah",
+    "Hoshea",
+    "Hezekiah",
+    "Isaiah",
+    "Sennacherib and the Rabshakeh",
+    "Manasseh",
+    "Amon",
+    "Josiah",
+    "Hilkiah",
+    "Huldah",
+    "Pharaoh Neco",
+    "Jehoiakim",
+    "Jehoiachin",
+    "Zedekiah",
+    "Nebuchadnezzar",
+    "Nebuzaradan",
+    "Gedaliah",
+    "Ishmael son of Nethaniah",
+    "Evil-merodach"
+  ],
+  "key_places": [
+    "Samaria",
+    "the Jordan River",
+    "Bethel and Jericho",
+    "Moab",
+    "Shunem",
+    "Mount Carmel",
+    "Dothan",
+    "Damascus",
+    "Jezreel",
+    "Ramoth-gilead",
+    "Jerusalem and the temple",
+    "Bethel and Dan",
+    "Assyria and its resettlement regions",
+    "Lachish",
+    "Babylon",
+    "Megiddo",
+    "Riblah",
+    "Mizpah",
+    "Egypt"
+  ],
+  "key_events": [
+    "Elijah announces Ahaziah's death after the king seeks Baal-zebub",
+    "Elijah is taken up and Elisha receives his prophetic mantle",
+    "Israel, Judah, and Edom campaign against Moab, and the ending turns abruptly after Mesha sacrifices his son",
+    "Elisha provides oil, raises the Shunammite's son, feeds people, and heals Naaman",
+    "Elisha exposes Aramean plans and announces relief during Samaria's siege",
+    "Elisha weeps over the harm Hazael will do and Hazael becomes king of Aram",
+    "Jehu is anointed and kills Joram, Ahaziah, Jezebel, Ahab's descendants, and Baal worshipers",
+    "Athaliah seizes Judah's throne, but Joash is preserved and crowned under Jehoiada",
+    "Israel and Judah continue through alternating coups, wars, tribute, reforms, and apostasy",
+    "Tiglath-pileser takes northern territories and Ahaz reshapes temple worship after a Damascus altar",
+    "Assyria captures Samaria, deports Israelites, and resettles populations",
+    "the narrator explains Israel's fall through persistent disloyalty and rejection of prophetic warning",
+    "Hezekiah removes high places and resists Assyria",
+    "Sennacherib invades Judah, the Rabshakeh challenges Jerusalem, and the Assyrian force withdraws after divine deliverance",
+    "Hezekiah recovers from illness and later displays his treasures to Babylonian envoys",
+    "Manasseh reverses reforms, promotes prohibited worship, and sheds innocent blood",
+    "Josiah responds to the discovered scroll, consults Huldah, renews covenant, reforms worship, and keeps Passover",
+    "Josiah dies at Megiddo when confronting Pharaoh Neco",
+    "Babylon subordinates Judah, deports Jehoiachin and elites, and installs Zedekiah",
+    "Nebuchadnezzar's forces breach Jerusalem, destroy temple and city, execute officials, and deport the population",
+    "Gedaliah is appointed and assassinated, survivors flee to Egypt, and Jehoiachin is later released and honored in Babylon"
+  ],
+  "interpretive_disputes": [
+    "Authorship, sources, editions, and the relationship of Kings to Deuteronomistic History",
+    "Regnal synchronisms, co-regencies, accession systems, and absolute chronology",
+    "The historical and literary relationship of Kings to Assyrian, Babylonian, Moabite, and other inscriptions",
+    "The nature and purpose of Elisha miracle traditions",
+    "The identity and age implied by the youths in the Bethel-bears episode and the ethics of the judgment",
+    "The ending of the Moab campaign and the meaning of the great wrath in 2 Kings 3",
+    "Jehu's status as divinely commissioned instrument and condemned perpetrator in later prophetic interpretation",
+    "The scope and historical process of Assyrian deportation and resettlement",
+    "The literary composition of the Sennacherib narratives and their relationship to Isaiah 36-39",
+    "Historical correlation of Sennacherib's annals, Lachish evidence, and Jerusalem's deliverance",
+    "The nature and date of the scroll found under Josiah",
+    "The relationship between Josiah's reform and the development of Deuteronomy",
+    "Differences between Kings and Chronicles concerning Manasseh, Josiah, and other rulers",
+    "The chronology and scale of Babylonian deportations and destruction",
+    "Whether Jehoiachin's release signals hope, historical closure, or both"
+  ],
+  "primary_sources": [
+    "2 Kings 1-25",
+    "1 Kings 22",
+    "2 Chronicles 21-36",
+    "Isaiah 36-39",
+    "Jeremiah 39-41 and 52",
+    "Hosea 1-14",
+    "Amos 1-9",
+    "Nahum 1-3",
+    "Matthew 1:11-12",
+    "Luke 4:27"
+  ],
+  "related_entries": [
+    "1 Kings",
+    "Elijah",
+    "Elisha",
+    "Fall of Samaria",
+    "Assyrian Exile of Israel",
+    "Hezekiah's Reforms",
+    "Fall of Jerusalem",
+    "Babylonian Exile",
+    "Exile Theme",
+    "Restoration Theme",
+    "Kingdom Theme",
+    "Jerusalem"
+  ],
+  "common_questions": [
+    "How did Elisha succeed Elijah?",
+    "Why were youths attacked by bears?",
+    "What happened in the Moab campaign?",
+    "Why was Naaman healed?",
+    "Was Jehu approved or condemned?",
+    "Why did Samaria fall?",
+    "Who resettled the northern kingdom?",
+    "What happened during Sennacherib's invasion?",
+    "What did Hezekiah and Josiah reform?",
+    "Why did Josiah die despite his faithfulness?",
+    "Why did Jerusalem fall?",
+    "Why does 2 Kings end with Jehoiachin's release?",
+    "How do Assyrian and Babylonian records relate to 2 Kings?"
+  ],
+  "keywords": [
+    "Second Kings",
+    "Elijah",
+    "Elisha",
+    "Naaman",
+    "Hazael",
+    "Jehu",
+    "Athaliah",
+    "Samaria",
+    "Assyria",
+    "Hezekiah",
+    "Sennacherib",
+    "Isaiah",
+    "Manasseh",
+    "Josiah",
+    "Huldah",
+    "Babylon",
+    "Jerusalem",
+    "exile",
+    "Jehoiachin"
+  ],
+  "hebrew_words": [
+    "navi: prophet",
+    "ish elohim: man of God",
+    "ruach: spirit, wind, or breath",
+    "na: please, occurring twice in Naaman's confession and request",
+    "naarah: young female, including the captive Israelite girl",
+    "nearim qetannim: small or young youths, a disputed age description in 2 Kings 2",
+    "hesed: loyal kindness",
+    "melekh: king",
+    "torah: instruction",
+    "sefer hattorah: book or scroll of the instruction",
+    "berit: covenant",
+    "bamah: high place",
+    "galah: uncover, remove, or exile",
+    "sheerit: remnant"
+  ],
+  "greek_words": [],
+  "related_objects": [
+    {
+      "id": "1-kings",
+      "relationship": "continues-from",
+      "weight": 10,
+      "notes": "Second Kings continues the unified Kings narrative during Ahaziah's reign."
+    },
+    {
+      "id": "elijah",
+      "relationship": "prophetic-predecessor",
+      "weight": 9,
+      "notes": "Elijah's final acts and ascent open the book."
+    },
+    {
+      "id": "elisha",
+      "relationship": "principal-prophet",
+      "weight": 10,
+      "notes": "Elisha's ministry dominates chapters 2-13."
+    },
+    {
+      "id": "fall-of-samaria",
+      "relationship": "narrates",
+      "weight": 10,
+      "notes": "Chapter 17 narrates and interprets the northern kingdom's fall."
+    },
+    {
+      "id": "assyrian-exile-of-israel",
+      "relationship": "narrates",
+      "weight": 10,
+      "notes": "Assyrian deportation and imperial resettlement follow Samaria's capture."
+    },
+    {
+      "id": "hezekiahs-reforms",
+      "relationship": "narrates",
+      "weight": 9,
+      "notes": "Hezekiah removes high places and centralized objects of worship."
+    },
+    {
+      "id": "fall-of-jerusalem",
+      "relationship": "narrates",
+      "weight": 10,
+      "notes": "Chapter 25 narrates Jerusalem and temple destruction."
+    },
+    {
+      "id": "babylonian-exile",
+      "relationship": "narrates",
+      "weight": 10,
+      "notes": "Multiple deportations culminate in the loss of Judah's political independence."
+    },
+    {
+      "id": "jerusalem",
+      "relationship": "capital-and-temple-city",
+      "weight": 10,
+      "notes": "Jerusalem is delivered from Assyria but later destroyed by Babylon."
+    },
+    {
+      "id": "exile-theme",
+      "relationship": "develops-theme",
+      "weight": 10,
+      "notes": "The book gives narrative and theological accounts of both exiles."
+    },
+    {
+      "id": "restoration-theme",
+      "relationship": "opens-horizon",
+      "weight": 8,
+      "notes": "Jehoiachin's release preserves a restrained horizon beyond destruction."
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "develops-theme",
+      "weight": 9,
+      "notes": "Both divided monarchies end under imperial domination."
+    }
+  ],
+  "related_people": [
+    "elijah",
+    "elisha"
+  ],
+  "related_places": [
+    "samaria-1",
+    "jerusalem"
+  ],
+  "related_events": [
+    "fall-of-samaria",
+    "assyrian-exile-of-israel",
+    "hezekiahs-reforms",
+    "fall-of-jerusalem",
+    "babylonian-exile"
+  ],
+  "scripture_references": [
+    {
+      "reference": "2 Kings 2:1-25",
+      "relationship": "primary",
+      "notes": "Elijah's ascent, Elisha's succession, and the Bethel episode."
+    },
+    {
+      "reference": "2 Kings 3:1-27",
+      "relationship": "primary",
+      "notes": "Moab campaign and its abrupt ending."
+    },
+    {
+      "reference": "2 Kings 5:1-27",
+      "relationship": "primary",
+      "notes": "Naaman's healing and Gehazi's judgment."
+    },
+    {
+      "reference": "2 Kings 9:1-37",
+      "relationship": "primary",
+      "notes": "Jehu's anointing, coup, and Jezebel's death."
+    },
+    {
+      "reference": "2 Kings 10:1-36",
+      "relationship": "supporting",
+      "notes": "Destruction of Ahab's house and Baal worship, with a mixed evaluation."
+    },
+    {
+      "reference": "2 Kings 17:1-41",
+      "relationship": "primary",
+      "notes": "Samaria's fall, theological explanation, deportation, and resettlement."
+    },
+    {
+      "reference": "2 Kings 18:1-37",
+      "relationship": "primary",
+      "notes": "Hezekiah and Sennacherib's invasion."
+    },
+    {
+      "reference": "2 Kings 19:1-37",
+      "relationship": "primary",
+      "notes": "Isaiah's word, prayer, deliverance, and Sennacherib's later death."
+    },
+    {
+      "reference": "2 Kings 21:1-26",
+      "relationship": "supporting",
+      "notes": "Manasseh, Amon, and accumulated judgment."
+    },
+    {
+      "reference": "2 Kings 22:1-20",
+      "relationship": "primary",
+      "notes": "Discovery of the scroll and Huldah's oracle."
+    },
+    {
+      "reference": "2 Kings 23:1-30",
+      "relationship": "primary",
+      "notes": "Covenant renewal, reform, Passover, and Josiah's death."
+    },
+    {
+      "reference": "2 Kings 25:1-30",
+      "relationship": "primary",
+      "notes": "Jerusalem's destruction, Gedaliah, and Jehoiachin's release."
+    }
+  ],
+  "cross_references": [
+    "Deuteronomy 28:1-68",
+    "2 Chronicles 21:1-36:23",
+    "Isaiah 36:1-39:8",
+    "Jeremiah 39:1-41:18",
+    "Jeremiah 52:1-34",
+    "Hosea 1:1-14:9",
+    "Luke 4:27"
+  ],
+  "new_testament_connections": [
+    "Jesus invokes Naaman's healing during his Nazareth sermon.",
+    "The Matthean genealogy includes the deportation and Jehoiachin or Jeconiah in the Davidic line.",
+    "New Testament exile and restoration language develops themes whose narrative crisis is completed in 2 Kings."
+  ],
+  "interpretive_notes": [
+    {
+      "note": "The Hebrew phrase nearim qetannim does not require very young children and can describe youths, but uncertainty about age does not remove the ethical and theological difficulty of the bears killing forty-two after Elisha's curse.",
+      "note_type": "interpretive-caution",
+      "certainty": "probable",
+      "dispute_status": "lexical_uncertainty",
+      "sources": [
+        "2-kings-1-25",
+        "cogan-tadmor-second-kings"
+      ],
+      "scripture_references": [
+        "2 Kings 2:23-25"
+      ],
+      "traditions": [],
+      "rationale": "The age term has a wider range than child, while the severe outcome remains explicit."
+    },
+    {
+      "note": "The Moab campaign ends with Mesha's sacrifice of his firstborn and great wrath against Israel; interpreters dispute whether the wrath is divine, human, Moabite, or a description of battlefield reversal, and the text does not settle the referent.",
+      "note_type": "interpretive-caution",
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "2-kings-1-25",
+        "cogan-tadmor-second-kings",
+        "zondervan-kings-chronicles-backgrounds"
+      ],
+      "scripture_references": [
+        "2 Kings 3:26-27"
+      ],
+      "traditions": [],
+      "rationale": "The syntax leaves the source and character of the wrath unstated."
+    },
+    {
+      "note": "Jehu fulfills prophetic judgment on Ahab's house and destroys institutional Baal worship, yet the narrator faults his continued adherence to Jeroboam's shrines and Hosea later condemns the bloodshed at Jezreel; commission does not make every method exemplary.",
+      "note_type": "canonical-connection",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "2-kings-1-25",
+        "cogan-tadmor-second-kings"
+      ],
+      "scripture_references": [
+        "2 Kings 9:1-10",
+        "2 Kings 10:28-31",
+        "Hosea 1:4-5"
+      ],
+      "traditions": [],
+      "rationale": "Kings supplies both commission and criticism, while Hosea supplies a later prophetic evaluation."
+    },
+    {
+      "note": "Second Kings coordinates theological causes for Samaria's fall with ordinary imperial mechanisms of siege, deportation, and resettlement; neither level should erase the other.",
+      "note_type": "historical-context",
+      "certainty": "textually_explicit",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "2-kings-1-25",
+        "cogan-tadmor-second-kings",
+        "zondervan-kings-chronicles-backgrounds"
+      ],
+      "scripture_references": [
+        "2 Kings 17:1-41"
+      ],
+      "traditions": [],
+      "rationale": "The chapter narrates conquest and policy and then provides an extended theological interpretation."
+    },
+    {
+      "note": "Sennacherib's prism independently names Hezekiah and tribute after the 701 BCE campaign but does not claim Jerusalem's capture; comparison with Kings establishes historical overlap while leaving differences in perspective, sequence, and theological interpretation.",
+      "note_type": "historical-context",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "2-kings-1-25",
+        "cogan-tadmor-second-kings",
+        "british-museum-sennacherib-prism"
+      ],
+      "scripture_references": [
+        "2 Kings 18:13-37",
+        "2 Kings 19:1-37"
+      ],
+      "traditions": [],
+      "rationale": "The royal annals and biblical narrative concern the same invasion but select and frame events differently."
+    },
+    {
+      "note": "Kings reports Josiah's death at Megiddo without Chronicles' speech explaining his decision; reconstructions should preserve the distinct wording and aims of both accounts rather than importing one into the other unnoticed.",
+      "note_type": "canonical-connection",
+      "certainty": "textually_explicit",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "2-kings-1-25",
+        "cogan-tadmor-second-kings"
+      ],
+      "scripture_references": [
+        "2 Kings 23:28-30",
+        "2 Chronicles 35:20-27"
+      ],
+      "traditions": [],
+      "rationale": "The accounts overlap in event but differ in narrated explanation."
+    },
+    {
+      "note": "Jehoiachin's release does not narrate a return, rebuilt temple, or restored monarchy; it closes the book with survival and royal favor in exile, which many readers understand as restrained hope rather than completed restoration.",
+      "note_type": "literary-observation",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "2-kings-1-25",
+        "cogan-tadmor-second-kings"
+      ],
+      "scripture_references": [
+        "2 Kings 25:27-30"
+      ],
+      "traditions": [],
+      "rationale": "The positive final notice is limited to Jehoiachin's changed status in Babylon."
+    }
+  ],
+  "intertextuality": [
+    "Deuteronomy's blessing, curse, worship, and prophetic categories shape the narrator's evaluation.",
+    "Isaiah 36-39 closely parallels Hezekiah and Sennacherib material.",
+    "Chronicles retells Judah's kings while omitting most northern and Elisha material and adding distinctive episodes.",
+    "Jeremiah parallels Jerusalem's fall, Gedaliah, flight to Egypt, and Jehoiachin's release.",
+    "Hosea and Amos address northern royal, cultic, and social crises within the era narrated.",
+    "Luke explicitly invokes Naaman."
+  ],
+  "timeline": [
+    "Ahaziah and transition from Elijah to Elisha",
+    "Elisha cycle and Aramean pressure",
+    "Jehu's coup and dynasty",
+    "Assyrian expansion and fall of Samaria",
+    "Hezekiah and Sennacherib",
+    "Manasseh through Josiah",
+    "Babylonian domination and Jerusalem's fall",
+    "Gedaliah and Jehoiachin in exile"
+  ],
+  "maps": [
+    "Elijah and Elisha sites in Israel and Transjordan",
+    "Moab campaign",
+    "Aramean conflict and Damascus",
+    "Jehu's route from Ramoth-gilead to Jezreel and Samaria",
+    "Assyrian conquest, deportation, and resettlement",
+    "Sennacherib's Judah campaign and Lachish",
+    "Babylonian campaigns, Riblah, exile, Mizpah, and Egypt"
+  ],
+  "archaeology": [
+    "Mesha Stele and the Moab-Israel conflict",
+    "Black Obelisk representation and inscription concerning Jehu or his envoy",
+    "Assyrian records of Tiglath-pileser, Shalmaneser, Sargon, and deportation",
+    "Sennacherib Prism and Lachish siege reliefs",
+    "Hezekiah-era fortifications, water systems, seals, and destruction contexts",
+    "Babylonian chronicles and destruction layers relevant to Judah's fall"
+  ],
+  "claims": [
+    {
+      "id": "second-kings-literary-movement",
+      "claim": "Second Kings moves from Elijah and Elisha through royal coups and Assyrian conquest to Judah's reforms, Babylonian destruction, and Jehoiachin's life in exile.",
+      "claim_type": "literary",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "2 Kings 2:1-25",
+        "2 Kings 17:1-41",
+        "2 Kings 23:1-30",
+        "2 Kings 25:1-30"
+      ],
+      "source_ids": [
+        "2-kings-1-25",
+        "cogan-tadmor-second-kings"
+      ],
+      "traditions": [],
+      "rationale": "The major prophetic, regnal, exile, and closing blocks establish this movement.",
+      "notes": ""
+    },
+    {
+      "id": "second-kings-elisha-succeeds",
+      "claim": "Elisha witnesses Elijah's ascent, receives his mantle, parts the Jordan, and is recognized by the prophetic company as Elijah's successor.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "2 Kings 2:1-18"
+      ],
+      "source_ids": [
+        "2-kings-1-25",
+        "cogan-tadmor-second-kings"
+      ],
+      "traditions": [],
+      "rationale": "The transfer, sign, and recognition are narrated directly.",
+      "notes": ""
+    },
+    {
+      "id": "second-kings-naaman-healed",
+      "claim": "Naaman, an Aramean commander, is healed after following Elisha's instruction and confesses that there is no God in all the earth except in Israel.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "2 Kings 5:1-19"
+      ],
+      "source_ids": [
+        "2-kings-1-25",
+        "cogan-tadmor-second-kings"
+      ],
+      "traditions": [],
+      "rationale": "The healing and confession are explicit and later invoked in Luke 4.",
+      "notes": ""
+    },
+    {
+      "id": "second-kings-samaria-falls",
+      "claim": "Assyria captures Samaria and deports Israelites, and the narrator interprets the fall as the outcome of sustained covenant disloyalty and rejection of prophetic warnings.",
+      "claim_type": "biblical_theology",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "2 Kings 17:1-23"
+      ],
+      "source_ids": [
+        "2-kings-1-25",
+        "cogan-tadmor-second-kings",
+        "zondervan-kings-chronicles-backgrounds"
+      ],
+      "traditions": [],
+      "rationale": "Both conquest and theological explanation are explicit in the chapter.",
+      "notes": ""
+    },
+    {
+      "id": "second-kings-jerusalem-delivered",
+      "claim": "During Sennacherib's invasion, Hezekiah prays and Isaiah announces deliverance; Jerusalem is not captured and the Assyrian army withdraws.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "historical_uncertainty",
+      "scripture_references": [
+        "2 Kings 18:13-37",
+        "2 Kings 19:1-37"
+      ],
+      "source_ids": [
+        "2-kings-1-25",
+        "cogan-tadmor-second-kings",
+        "british-museum-sennacherib-prism"
+      ],
+      "traditions": [],
+      "rationale": "The book explicitly narrates deliverance, while historical sequence and comparison with Assyrian sources remain debated.",
+      "notes": ""
+    },
+    {
+      "id": "second-kings-josiah-reform",
+      "claim": "Josiah responds to the discovered scroll by consulting Huldah, renewing covenant, removing prohibited worship, and holding Passover, yet the narrator says accumulated judgment will still come.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "2 Kings 22:1-20",
+        "2 Kings 23:1-27"
+      ],
+      "source_ids": [
+        "2-kings-1-25",
+        "cogan-tadmor-second-kings"
+      ],
+      "traditions": [],
+      "rationale": "Reform and unresolved judgment are stated directly.",
+      "notes": ""
+    },
+    {
+      "id": "second-kings-jerusalem-falls",
+      "claim": "Babylon breaches Jerusalem, burns the temple and major buildings, dismantles the city, executes officials, deports inhabitants, and ends Zedekiah's reign.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "2 Kings 25:1-21"
+      ],
+      "source_ids": [
+        "2-kings-1-25",
+        "cogan-tadmor-second-kings"
+      ],
+      "traditions": [],
+      "rationale": "The siege, destruction, executions, deportation, and royal collapse are explicit.",
+      "notes": ""
+    },
+    {
+      "id": "second-kings-jehoiachin-released",
+      "claim": "Second Kings ends with Jehoiachin released from prison, given an honored position, and maintained at the Babylonian king's table.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "2 Kings 25:27-30"
+      ],
+      "source_ids": [
+        "2-kings-1-25",
+        "cogan-tadmor-second-kings"
+      ],
+      "traditions": [],
+      "rationale": "The final four verses narrate the reversal in Jehoiachin's status.",
+      "notes": ""
+    }
+  ],
+  "canonical_story": {
+    "phase": "Divided-kingdom collapse and exile",
+    "role": "Completes the monarchy narrative by interpreting both kingdoms' destruction while preserving prophetic witness and Davidic survival.",
+    "preceded_by": [
+      "1-kings"
+    ],
+    "followed_by": [
+      "1-chronicles"
+    ]
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "Read miracles and coups within the parallel regnal history, prophetic fulfillment formulas, extended fall explanations, and the final movement from destruction to Jehoiachin's release.",
+    "book_context": "Chapters 1-13 emphasize Elijah and Elisha, chapters 9-17 carry Israel toward Samaria's fall, and chapters 18-25 carry Judah from Hezekiah through Jerusalem's fall.",
+    "canonical_context": "First Kings begins the divided kingdom; Chronicles retells Judah differently; Isaiah and Jeremiah parallel major episodes; the Twelve interpret the same era; later texts develop exile and restoration.",
+    "covenant_context": "The book reads loss of land, sanctuary, and monarchy through covenant warning while retaining the Davidic lamp and prophetic calls to return.",
+    "historical_context": "Distinguish narrated events from regnal reconstruction, imperial inscriptions, archaeology, source theories, and exilic final-form composition.",
+    "ancient_near_east_context": "Prophetic guilds, royal coups, vassal treaties, tribute, siege rhetoric, deportation, resettlement, temple plunder, and imperial annals illuminate the narrative world.",
+    "second_temple_jewish_context": "Postexilic communities read Kings as an account of why temple, monarchy, and land were lost and as a warning within renewed life under foreign empires.",
+    "original_audience": "The unknown final audience is asked to accept responsibility for catastrophe without concluding that prophetic word, Davidic continuity, or covenant identity simply disappeared.",
+    "genre": "Theological historiography combines regnal notices, synchronisms, prophetic miracle cycles, coups, sieges, reforms, source citations, and exile records.",
+    "intertextual_connections": [
+      "Deuteronomy 28",
+      "2 Chronicles 21-36",
+      "Isaiah 36-39",
+      "Jeremiah 39-41 and 52",
+      "Hosea and Amos",
+      "Luke 4"
+    ],
+    "biblical_theology_themes": [
+      "prophetic word",
+      "kingdom",
+      "covenant judgment",
+      "exile",
+      "temple",
+      "Davidic promise",
+      "remnant",
+      "mercy and restrained hope"
+    ],
+    "messianic_christological_trajectory": "The collapse of both monarchies intensifies the canonical question of faithful Davidic rule; Jehoiachin survives in the line later traced through the exile in Matthew's genealogy.",
+    "major_interpretive_views": [
+      "Kings is commonly read as Deuteronomistic historiography explaining exile through covenant failure.",
+      "Scholars debate one exilic edition versus multiple pre-exilic and exilic editions.",
+      "Elisha narratives may preserve distinct prophetic traditions integrated into regnal history.",
+      "The Jehoiachin ending is read as historical closure, restrained hope, or both."
+    ],
+    "historical_interpretation": "Jewish and Christian reception has treated Elijah and Elisha as prophetic paradigms, Hezekiah and Josiah as reformers, the exiles as covenant catastrophe, and Jehoiachin's release as a modest sign beyond judgment.",
+    "authorial_intent": "The final form explains national catastrophe through long-term royal and communal disloyalty while validating prophetic warning and preserving evidence that the story has not ended in annihilation.",
+    "typological_connections": [
+      "Elisha's healings, provision, and restoration of life contribute to later prophetic and miracle comparison.",
+      "Exile and return form a canonical pattern later reused without erasing the Assyrian and Babylonian events.",
+      "Davidic survival through Jehoiachin contributes to later messianic genealogy."
+    ],
+    "christological_significance": "Jesus explicitly invokes Naaman, and Matthew includes the deportation and Jeconiah in the Davidic genealogy; these uses arise from rather than replace the book's exile history.",
+    "modern_application_principles": [
+      "Hold religious, political, military, and economic responsibility together when interpreting national collapse.",
+      "Do not turn prophetic miracles into promises of automatic healing or prosperity.",
+      "Do not treat divine commission as approval of every violent method used by political actors.",
+      "Distinguish reform from complete institutional repair and immediate removal of consequences.",
+      "Attend to displaced populations, captives, children, servants, and communities harmed by royal and imperial actions.",
+      "Avoid identifying modern nations directly with Israel, Judah, Assyria, or Babylon."
+    ],
+    "common_misinterpretations": [
+      "The bears episode clearly describes mocking toddlers and has no lexical uncertainty.",
+      "Jehu's commission means all his violence is morally exemplary.",
+      "Samaria and Jerusalem fell for religious reasons with no ordinary imperial history.",
+      "Sennacherib's prism either proves every detail of Kings or disproves Jerusalem's deliverance.",
+      "Josiah's reform erased every consequence of Manasseh and Judah's history.",
+      "Second Kings ends with restoration already accomplished.",
+      "Jeremiah is a named principal character in Second Kings."
+    ]
+  },
+  "retrieval_metadata": {
+    "aliases": [
+      "Second Kings",
+      "4 Kingdoms",
+      "Elisha Assyria Babylon book",
+      "fall of Samaria Jerusalem book"
+    ],
+    "search_terms": [
+      "2 Kings overview",
+      "2 Kings structure",
+      "Elijah taken up Elisha mantle",
+      "Elisha bears youths Bethel",
+      "Moab campaign great wrath",
+      "Naaman healed",
+      "Jehu coup Jezebel",
+      "why Samaria fell Assyria",
+      "Hezekiah Sennacherib Jerusalem",
+      "Sennacherib prism Hezekiah",
+      "Manasseh innocent blood",
+      "Josiah book of law Huldah reform",
+      "why Josiah died",
+      "Babylon destroys Jerusalem temple",
+      "Jehoiachin release ending"
+    ],
+    "common_questions": [
+      "How did Elisha succeed Elijah?",
+      "Were the bear victims little children?",
+      "What does the end of 2 Kings 3 mean?",
+      "Why did God heal Naaman?",
+      "Was Jehu a good king?",
+      "Why did Assyria conquer Samaria?",
+      "What happened in Sennacherib's invasion?",
+      "What did Josiah's reform accomplish?",
+      "Why did Jerusalem fall?",
+      "Why does the book end with Jehoiachin?",
+      "What inscriptions relate to 2 Kings?"
+    ],
+    "related_topics": [
+      "prophetic succession",
+      "Elisha miracles",
+      "Aram",
+      "Moab",
+      "royal coups",
+      "Assyrian empire",
+      "deportation",
+      "Hezekiah",
+      "Josiah",
+      "Babylonian empire",
+      "temple destruction",
+      "exile",
+      "Davidic survival"
+    ],
+    "frequently_confused_with": [
+      "First Kings' Solomon and Elijah narratives",
+      "Chronicles' Judah-centered retelling",
+      "Isaiah's parallel Sennacherib account",
+      "Jeremiah's parallel Jerusalem-fall and Gedaliah accounts",
+      "Ezra's later return from exile"
+    ],
+    "semantic_keywords": [
+      "Ahaziah",
+      "Elijah",
+      "Elisha",
+      "Mesha",
+      "Shunammite",
+      "Naaman",
+      "Gehazi",
+      "Hazael",
+      "Jehu",
+      "Athaliah",
+      "Tiglath-pileser",
+      "Hoshea",
+      "Hezekiah",
+      "Rabshakeh",
+      "Sennacherib",
+      "Manasseh",
+      "Josiah",
+      "Huldah",
+      "Nebuchadnezzar",
+      "Gedaliah",
+      "Jehoiachin"
+    ]
+  },
+  "section_status": {
+    "core_summary": "draft",
+    "scripture_anchors": "needs_review",
+    "historical_context": "needs_review",
+    "literary_context": "needs_review",
+    "canonical_context": "needs_review",
+    "original_audience": "needs_review",
+    "lexical_links": "draft",
+    "intertextuality": "draft",
+    "interpretive_views": "needs_review",
+    "common_misinterpretations": "draft",
+    "sources": "needs_review",
+    "relationships": "needs_review",
+    "retrieval_metadata": "draft",
+    "human_review": "missing"
+  },
+  "knowledge_layers": {
+    "primary": "biblical_text",
+    "secondary": [
+      "literary",
+      "historical_cultural",
+      "ancient_near_eastern",
+      "archaeology",
+      "biblical_theology",
+      "reception_history"
+    ]
+  },
+  "sources": [
+    {
+      "title": "2 Kings 1-25",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "2 Kings 1:1-25:30",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [
+        "summary",
+        "structure",
+        "key_people",
+        "key_places",
+        "key_events",
+        "scripture_references",
+        "interpretive_notes",
+        "second-kings-literary-movement",
+        "second-kings-elisha-succeeds",
+        "second-kings-naaman-healed",
+        "second-kings-samaria-falls",
+        "second-kings-jerusalem-delivered",
+        "second-kings-josiah-reform",
+        "second-kings-jerusalem-falls",
+        "second-kings-jehoiachin-released"
+      ],
+      "notes": "Primary biblical text.",
+      "id": "2-kings-1-25"
+    },
+    {
+      "title": "II Kings",
+      "author": "Mordechai Cogan and Hayim Tadmor",
+      "publisher": "Yale University Press",
+      "year": 1988,
+      "locator": "Anchor Yale Bible introduction, translation, notes, and commentary",
+      "url": "https://yalebooks.yale.edu/book/9780300140743/ii-kings/",
+      "source_type": "reference-work",
+      "supports": [
+        "authorship_positions",
+        "date_ranges",
+        "historical_context",
+        "literary_context",
+        "hebrew_words",
+        "interpretive_notes",
+        "second-kings-literary-movement",
+        "second-kings-elisha-succeeds",
+        "second-kings-naaman-healed",
+        "second-kings-samaria-falls",
+        "second-kings-jerusalem-delivered",
+        "second-kings-josiah-reform",
+        "second-kings-jerusalem-falls",
+        "second-kings-jehoiachin-released"
+      ],
+      "notes": "Technical commentary emphasizing Hebrew text, regnal chronology, political history, and extra-biblical documentation.",
+      "id": "cogan-tadmor-second-kings"
+    },
+    {
+      "title": "1-2 Kings",
+      "author": "David T. Lamb",
+      "publisher": "Zondervan",
+      "year": 2021,
+      "locator": "Commentary on 2 Kings 1-25",
+      "url": "https://zondervanacademic.com/products/1-and-2-kings-1",
+      "source_type": "reference-work",
+      "supports": [
+        "canonical_role",
+        "covenantal_significance",
+        "literary_context",
+        "interpretive_notes"
+      ],
+      "notes": "Canonical and theological commentary attentive to the monarchy, judgment, exile, and contemporary interpretation.",
+      "id": "lamb-first-second-kings"
+    },
+    {
+      "title": "Zondervan Illustrated Bible Backgrounds Commentary: 1 and 2 Kings, 1 and 2 Chronicles, Ezra, Nehemiah, Esther",
+      "author": "John H. Walton, general editor; John M. Monson, Iain Provan, and other contributors",
+      "publisher": "Zondervan",
+      "year": 2009,
+      "locator": "2 Kings commentary and background notes",
+      "url": "https://zondervanacademic.com/products/1-and-2-kings-1-and-2-chronicles-ezra-nehemiah-esther",
+      "source_type": "reference-work",
+      "supports": [
+        "ancient_near_east_context",
+        "archaeology",
+        "historical_context",
+        "maps",
+        "interpretive_notes",
+        "second-kings-samaria-falls"
+      ],
+      "notes": "Passage-level textual, artifactual, geographical, historical, and cultural background.",
+      "id": "zondervan-kings-chronicles-backgrounds"
+    },
+    {
+      "title": "The Black Obelisk",
+      "author": "British Museum",
+      "publisher": "British Museum",
+      "year": null,
+      "locator": "Museum object 118885; tribute from the House of Omri associated with Jehu",
+      "url": "https://www.britishmuseum.org/collection/object/W_1848-1104-1",
+      "source_type": "museum-collection",
+      "supports": [
+        "archaeology",
+        "historical_context"
+      ],
+      "notes": "Museum record for Shalmaneser III's monument depicting and naming tribute from the House of Omri, associated with Jehu.",
+      "id": "british-museum-black-obelisk"
+    },
+    {
+      "title": "The Taylor Prism or Sennacherib Prism",
+      "author": "British Museum",
+      "publisher": "British Museum",
+      "year": null,
+      "locator": "Museum object 91032; Sennacherib's annals including Hezekiah's tribute",
+      "url": "https://www.britishmuseum.org/collection/object/W_1855-1003-1",
+      "source_type": "museum-collection",
+      "supports": [
+        "archaeology",
+        "historical_context",
+        "interpretive_notes",
+        "second-kings-jerusalem-delivered"
+      ],
+      "notes": "Museum record for the prism's account of Sennacherib's campaigns and Hezekiah's tribute in 701 BCE.",
+      "id": "british-museum-sennacherib-prism"
+    }
+  ],
+  "content_status": "draft",
+  "review_status": "in_review",
+  "reviewed_by": [],
+  "last_reviewed": null,
+  "human_review_required": true,
+  "confidence": "medium",
+  "importance": 96,
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    },
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "phase-5-book-correction-kings",
+      "date": "2026-07-24"
+    }
+  ],
+  "edited_by": [],
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
@@ -23,329 +1033,12 @@
     "canonical": true,
     "later_christian_reception": true
   },
-  "literary_context": "It continues the Deuteronomistic history, interpreting kings by covenant loyalty and prophetic response rather than political success alone.",
-  "covenantal_significance": "2 Kings explains why covenant judgment falls and why exile becomes the necessary backdrop for later restoration hope.",
-  "authorship_positions": [
-    "Traditional prophetic or courtly compilation",
-    "Many scholars read the books as later historiographical or Deuteronomistic shaping"
-  ],
-  "date_ranges": [
-    "Historical span from settlement through exile",
-    "Final form often placed in the exilic or post-exilic period"
-  ],
-  "original_audience": "Israel and Judah remembering the land, monarchy, and exile",
-  "historical_setting": "Settlement, monarchy, and exile in the land of Israel and Judah",
-  "canonical_role": "2 Kings serves as a canonical book anchor within Historical Books, book 7 of 12, connecting its structure, key passages, and related themes to the wider biblical storyline.",
-  "genre": [
-    "narrative"
-  ],
-  "structure": [
-    "Elisha and prophetic witness",
-    "Decline of Israel and Judah",
-    "Exile"
-  ],
-  "major_themes": [
-    "land",
-    "leadership",
-    "faithfulness",
-    "kingdom",
-    "exile",
-    "Exile Theme",
-    "Restoration Theme",
-    "Kingdom Theme"
-  ],
-  "canonical_placement": "Historical Books, book 7 of 12",
-  "key_people": [
-    "Elisha",
-    "Jeremiah the Prophet",
-    "Joshua",
-    "David",
-    "Solomon"
-  ],
-  "key_places": [
-    "Canaan",
-    "Jerusalem",
-    "Samaria"
-  ],
-  "key_events": [
-    "Fall of Samaria",
-    "Hezekiah's Reforms",
-    "Fall of Jerusalem",
-    "Babylonian Exile",
-    "conquest",
-    "monarchy",
-    "exile"
-  ],
-  "interpretive_disputes": [
-    "Historical reconstruction and sources",
-    "How conquest, kingship, and exile are narrated theologically"
-  ],
-  "primary_sources": [
-    "2 Kings 1-25",
-    "Jeremiah 25",
-    "Lamentations 1",
-    "Daniel 1",
-    "Ezra 1"
-  ],
-  "related_entries": [],
-  "keywords": [],
-  "intertextuality": [],
-  "timeline": [],
-  "maps": [],
-  "archaeology": [],
-  "hebrew_words": [],
-  "greek_words": [],
-  "related_people": [],
-  "related_places": [],
-  "related_events": [],
-  "related_objects": [
-    {
-      "id": "elisha",
-      "relationship": "prophetic-anchor",
-      "weight": 10,
-      "notes": "Elisha's ministry"
-    },
-    {
-      "id": "fall-of-samaria",
-      "relationship": "northern-collapse",
-      "weight": 10,
-      "notes": "Assyrian conquest"
-    },
-    {
-      "id": "hezekiahs-reforms",
-      "relationship": "renewal-event",
-      "weight": 9,
-      "notes": "Judah's reforms"
-    },
-    {
-      "id": "fall-of-jerusalem",
-      "relationship": "judgment-event",
-      "weight": 10,
-      "notes": "Babylon's conquest"
-    },
-    {
-      "id": "babylonian-exile",
-      "relationship": "exile-event",
-      "weight": 10,
-      "notes": "deportation to Babylon"
-    },
-    {
-      "id": "jeremiah-the-prophet",
-      "relationship": "prophetic-context",
-      "weight": 9,
-      "notes": "prophetic warning"
-    },
-    {
-      "id": "exile-theme",
-      "relationship": "canonical-theme",
-      "weight": 10,
-      "notes": "judgment and exile"
-    },
-    {
-      "id": "restoration-theme",
-      "relationship": "hope-horizon",
-      "weight": 9,
-      "notes": "exile is not the last word"
-    },
-    {
-      "id": "kingdom-theme",
-      "relationship": "royal-framework",
-      "weight": 9,
-      "notes": "decline of kingship"
-    }
-  ],
-  "scripture_references": [
-    {
-      "reference": "2 Kings 2:1-25",
-      "relationship": "supporting",
-      "notes": "Elijah to Elisha"
-    },
-    {
-      "reference": "2 Kings 4:1-44",
-      "relationship": "supporting",
-      "notes": "Elisha's signs"
-    },
-    {
-      "reference": "2 Kings 17:1-23",
-      "relationship": "supporting",
-      "notes": "fall of Samaria"
-    },
-    {
-      "reference": "2 Kings 18:1-8",
-      "relationship": "supporting",
-      "notes": "Hezekiah's reforms"
-    },
-    {
-      "reference": "2 Kings 19:1-37",
-      "relationship": "supporting",
-      "notes": "deliverance from Assyria"
-    },
-    {
-      "reference": "2 Kings 22:1-20",
-      "relationship": "supporting",
-      "notes": "Josiah and the book of the law"
-    },
-    {
-      "reference": "2 Kings 24:1-20",
-      "relationship": "supporting",
-      "notes": "Babylonian advance"
-    },
-    {
-      "reference": "2 Kings 25:1-21",
-      "relationship": "primary",
-      "notes": "fall of Jerusalem"
-    }
-  ],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    {
-      "note": "The fall of both kingdoms is the theological climax of long-term disobedience.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "Prophetic voices remain present even as kings fail.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    }
-  ],
-  "common_questions": [
-    "Why is 2 Kings important?",
-    "How do Samaria and Jerusalem fall?",
-    "What does 2 Kings teach about exile?"
-  ],
-  "sources": [
-    {
-      "title": "2 Kings 1-25",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "2-kings-1-25"
-    },
-    {
-      "title": "Jeremiah 25",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "jeremiah-25"
-    },
-    {
-      "title": "Lamentations 1",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "lamentations-1"
-    },
-    {
-      "title": "Daniel 1",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "daniel-1"
-    },
-    {
-      "title": "Ezra 1",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "ezra-1"
-    },
-    {
-      "title": "Canonical historical orientation for 2 Kings",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "Historical Books, book 7 of 12",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [
-        "historical_context"
-      ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
-      "id": "2-kings-historical-orientation"
-    }
-  ],
-  "canonical_story": {
-    "phase": "",
-    "role": "",
-    "preceded_by": [],
-    "followed_by": []
-  },
-  "hermeneutical_lens": {
-    "immediate_literary_context": "",
-    "book_context": "",
-    "canonical_context": "",
-    "covenant_context": "",
-    "historical_context": "",
-    "ancient_near_east_context": "",
-    "second_temple_jewish_context": "",
-    "original_audience": "",
-    "genre": "",
-    "intertextual_connections": [],
-    "biblical_theology_themes": [],
-    "messianic_christological_trajectory": "",
-    "major_interpretive_views": [],
-    "historical_interpretation": "",
-    "authorial_intent": "",
-    "typological_connections": [],
-    "christological_significance": "",
-    "modern_application_principles": [],
-    "common_misinterpretations": []
-  },
-  "retrieval_metadata": {
-    "aliases": [],
-    "search_terms": [],
-    "common_questions": [],
-    "related_topics": [],
-    "frequently_confused_with": [],
-    "semantic_keywords": []
-  },
-  "importance": 96,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "generated_by": [
-    {
-      "type": "ai",
-      "name": "codex",
-      "workflow": "ane-hebraic-context-expansion",
-      "date": "2026-07-14"
-    }
-  ],
-  "edited_by": [],
-  "reviewed_by": [],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
-  "human_review_required": true
+  "historical_context": "Second Kings narrates the divided kingdoms under increasing Aramean, Assyrian, Egyptian, and Babylonian pressure; regnal reconstruction and external evidence must remain distinct from the book's theological presentation.",
+  "ancient_near_east_context": "Royal coups, tribute, vassalage, siege, deportation, population transfer, imperial annals, temple plunder, and court propaganda belong to the wider ancient Near Eastern setting.",
+  "hebraic_worldview": "The prophetic word and covenant loyalty evaluate rulers and empires; political power does not determine theological faithfulness, and foreign persons such as Naaman can acknowledge the LORD.",
+  "second_temple_context": "Communities living after return and temple rebuilding received Kings as an explanation of the earlier sanctuary's loss and a warning about persistent covenant failure under renewed institutions.",
+  "canonical_context": "Second Kings completes Samuel-Kings, is selectively retold in Chronicles, overlaps Isaiah and Jeremiah, supplies historical settings for prophetic books, and grounds later exile-restoration theology.",
+  "later_christian_reception": "Christian readers have interpreted Elisha's signs, Naaman, reforms, exile, and Davidic survival christologically and ecclesially; those trajectories should remain anchored in the book's direct historical and literary claims.",
+  "literary_context": "Regnal formulas and source notices frame prophetic cycles, coups, imperial invasions, reforms, and destruction, with fulfillment notices tying events to prior prophetic speech.",
+  "covenantal_significance": "The falls of Samaria and Jerusalem enact covenant warnings after sustained disloyalty, yet prophetic witness, the Davidic lamp, remnant, and Jehoiachin's survival prevent judgment from being narrated as simple divine abandonment."
 }

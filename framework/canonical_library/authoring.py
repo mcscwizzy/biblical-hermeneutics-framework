@@ -21,7 +21,9 @@ from .schema import (
     SUPPORTED_SCHEMA_VERSION,
     CanonicalObject,
     CanonicalValidationError,
+    default_knowledge_layers,
     normalize_sources_field,
+    section_completion_issues,
     validate_library,
     validate_object,
 )
@@ -300,6 +302,7 @@ def canonical_object_template(
         type=normalized_type,
         title=display_title,
         aliases=alias_list,
+        knowledge_layers=default_knowledge_layers(normalized_type),
     )
 
 
@@ -1119,6 +1122,20 @@ def _complete_content_issues(
                     details={"field": field_name},
                 )
             )
+    for section_name in section_completion_issues(obj):
+        issues.append(
+            ValidationIssue(
+                code="incomplete_section_status",
+                message=(
+                    f'field "section_status.{section_name}" must be complete or '
+                    'not_applicable when content_status is "complete"'
+                ),
+                path=path,
+                object_id=obj.id,
+                severity=severity,
+                details={"section": section_name},
+            )
+        )
     return issues
 
 

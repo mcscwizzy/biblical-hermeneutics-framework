@@ -4,12 +4,16 @@ import unittest
 
 from framework.canonical_library import (
     CanonicalObject,
+    CanonicalClaim,
     CanonicalInterpretiveNote,
     CanonicalProvenance,
     CanonicalRelationship,
     CanonicalScriptureReference,
     CanonicalSource,
     CanonicalValidationError,
+    content_completeness_issues,
+    default_section_status,
+    is_globally_complete,
     normalize_id,
     validate_library,
     validate_object,
@@ -23,6 +27,10 @@ def valid_mapping() -> dict[str, object]:
         title="Shechem",
         aliases=["where is shechem", "why is shechem important"],
     ).to_dict()
+
+
+def complete_section_status() -> dict[str, str]:
+    return {section_name: "complete" for section_name in default_section_status()}
 
 
 EXPECTED_CONTEXT_APPLICABILITY = {
@@ -169,6 +177,7 @@ class CanonicalSchemaTests(unittest.TestCase):
                 "reviewed_by": ["alice", "bob"],
                 "last_reviewed": "2024-07-13",
                 "confidence": "high",
+                "section_status": complete_section_status(),
                 "summary": "Shechem matters as a covenant location in the patriarchal narratives.",
                 "scripture_references": [
                     scripture_reference_mapping("Genesis 12:6-7", "primary"),
@@ -372,6 +381,98 @@ class CanonicalSchemaTests(unittest.TestCase):
         self.assertEqual(note.dispute_status, "broad-consensus")
         self.assertEqual(note.sources, ["source-id"])
 
+    def test_section_status_and_knowledge_layers_default_by_object_type(self) -> None:
+        data = valid_mapping()
+        data.pop("section_status")
+        data.pop("knowledge_layers")
+
+        obj = validate_object(data, path="objects/places/shechem.json")
+
+        self.assertEqual(obj.section_status, default_section_status())
+        self.assertEqual(
+            obj.knowledge_layers,
+            {"primary": "historical_cultural", "secondary": []},
+        )
+
+    def test_partial_section_status_and_knowledge_layers_merge_defaults(self) -> None:
+        data = valid_mapping()
+        data["section_status"] = {"core_summary": "draft"}
+        data["knowledge_layers"] = {
+            "primary": "historical_cultural",
+            "secondary": ["biblical_text"],
+        }
+
+        obj = validate_object(data, path="objects/places/shechem.json")
+
+        self.assertEqual(obj.section_status["core_summary"], "draft")
+        self.assertEqual(obj.section_status["sources"], "missing")
+        self.assertEqual(obj.knowledge_layers["secondary"], ["biblical_text"])
+
+    def test_claims_are_structured_searchable_units_with_resolved_sources(self) -> None:
+        data = valid_mapping()
+        data["sources"] = [
+            source_mapping("Genesis", id="genesis-source", source_type="scripture")
+        ]
+        data["claims"] = [
+            {
+                "id": "shechem-covenant-location",
+                "claim": "Shechem functions as a covenant location.",
+                "claim_type": "biblical-text",
+                "certainty": "textually-explicit",
+                "dispute_status": "not-disputed",
+                "scripture_references": ["Genesis 12:6-7"],
+                "source_ids": ["genesis-source"],
+                "traditions": [],
+                "rationale": "The narrative explicitly locates Abram at Shechem.",
+                "notes": "",
+            }
+        ]
+
+        obj = validate_object(data, path="objects/places/shechem.json")
+
+        self.assertEqual(len(obj.claims), 1)
+        self.assertIsInstance(obj.claims[0], CanonicalClaim)
+        self.assertEqual(obj.claims[0].claim_type, "biblical_text")
+        self.assertEqual(obj.claims[0].certainty, "textually_explicit")
+        self.assertEqual(obj.claims[0].dispute_status, "not_disputed")
+
+    def test_claim_source_ids_must_resolve_within_the_object(self) -> None:
+        data = valid_mapping()
+        data["claims"] = [
+            {
+                "id": "unsupported-claim",
+                "claim": "A test claim.",
+                "claim_type": "biblical_text",
+                "certainty": "probable",
+                "dispute_status": "not_disputed",
+                "source_ids": ["missing-source"],
+            }
+        ]
+
+        with self.assertRaisesRegex(
+            CanonicalValidationError,
+            "references missing source IDs",
+        ):
+            validate_object(data, path="objects/places/shechem.json")
+
+    def test_global_completeness_uses_type_specific_sections_and_review(self) -> None:
+        data = valid_mapping()
+        data.update(
+            {
+                "content_status": "complete",
+                "review_status": "reviewed",
+                "reviewed_by": ["alice"],
+                "last_reviewed": "2026-07-24",
+                "human_review_required": False,
+                "section_status": complete_section_status(),
+            }
+        )
+
+        obj = validate_object(data, path="objects/places/shechem.json")
+
+        self.assertTrue(is_globally_complete(obj))
+        self.assertEqual(content_completeness_issues(obj), [])
+
     def test_invalid_interpretive_note_metadata_fails_validation(self) -> None:
         data = valid_mapping()
         data["interpretive_notes"] = [
@@ -428,6 +529,7 @@ class CanonicalSchemaTests(unittest.TestCase):
                 "reviewed_by": ["alice"],
                 "last_reviewed": "2024-07-13",
                 "confidence": "high",
+                "section_status": complete_section_status(),
             }
         )
 
@@ -446,6 +548,7 @@ class CanonicalSchemaTests(unittest.TestCase):
                 "reviewed_by": ["alice"],
                 "last_reviewed": "2024-07-13",
                 "confidence": "high",
+                "section_status": complete_section_status(),
                 "summary": "Shechem matters as a covenant location in the patriarchal narratives.",
             }
         )
@@ -487,6 +590,7 @@ class CanonicalSchemaTests(unittest.TestCase):
                 "reviewed_by": ["alice"],
                 "last_reviewed": "2024-07-13",
                 "confidence": "high",
+                "section_status": complete_section_status(),
                 "summary": "Shechem matters as a covenant location in the patriarchal narratives.",
                 "scripture_references": [
                     scripture_reference_mapping("Genesis 12:6-7", "primary"),

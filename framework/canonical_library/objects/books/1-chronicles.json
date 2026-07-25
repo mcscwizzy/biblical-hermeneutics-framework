@@ -1,20 +1,948 @@
 {
-  "id": "1-chronicles",
+  "framework_version": "1.0",
+  "object_version": "1",
   "type": "book",
+  "id": "1-chronicles",
   "title": "1 Chronicles",
   "aliases": [
-    "book of 1 chronicles",
-    "what is 1 chronicles about",
-    "tell me about 1 chronicles",
-    "first chronicles"
+    "First Chronicles",
+    "First Book of Chronicles",
+    "1 Paralipomenon",
+    "genealogies and David's temple preparation",
+    "what is 1 Chronicles about"
   ],
-  "summary": "1 Chronicles is a biblical book focused on genealogy, Davidic kingship, temple preparation, and ordered worship.",
-  "historical_context": "Chronicles retells Israel's past so post-exilic readers can remember Davidic promise, temple worship, and covenant identity.",
-  "ancient_near_east_context": "1 Chronicles belongs to the ancient Mediterranean and Near Eastern world reflected in its setting, institutions, and canonical placement.",
-  "hebraic_worldview": "1 Chronicles should be read with attention to covenant memory, communal identity, worship, wisdom, and accountability before the Lord.",
-  "second_temple_context": "Second Temple readers received 1 Chronicles as part of Israel's Scriptures and read it within questions of identity, worship, exile, and hope.",
-  "canonical_context": "Within Historical Books, book 8 of 12, 1 Chronicles contributes to the Bible's unfolding witness by connecting genealogy, Davidic kingship, temple preparation, and ordered worship to the larger storyline.",
-  "later_christian_reception": "Christian interpretation has read 1 Chronicles as part of the canonical witness to faithfulness, judgment, mercy, and hope in Christ-centered Scripture reading.",
+  "summary": "First Chronicles traces Israel from Adam through tribal and postexilic genealogies, interprets Saul's death as failed faithfulness, presents all Israel uniting under David, and concentrates on Jerusalem, the ark, the Davidic promise, worship personnel, the census altar, and David's extensive preparations for Solomon to build the temple.",
+  "authorship_positions": [
+    "The book is anonymous and forms the first half of the originally unified work of Chronicles.",
+    "Jewish and Christian tradition has associated Chronicles with Ezra, but the book does not identify Ezra or any final author.",
+    "Many scholars speak of a Chronicler or scribal circle that interpreted earlier Scripture and archival materials for a postmonarchic community.",
+    "Whether Chronicles and Ezra-Nehemiah share one author, a school, sources, or only overlapping language and concerns remains disputed."
+  ],
+  "date_ranges": [
+    "Narrated scope: genealogies from Adam to the restored community, followed by Saul's death and David's reign.",
+    "The genealogies preserve materials of different periods and extend into the postexilic era.",
+    "Composition is commonly placed in the Persian or early Hellenistic period, with specific proposals ranging especially across the fifth through third centuries BCE."
+  ],
+  "original_audience": "A postmonarchic community centered in Yehud and Jerusalem, including returnees and those defining themselves as all Israel through genealogy, temple worship, priestly and Levitical service, Davidic memory, and continuity with the preexilic past.",
+  "historical_setting": "Narrated settings range from ancestral and tribal genealogies to Saul and David, but the book's interpretive setting is a later community without a Davidic king, living under imperial rule with a rebuilt Jerusalem temple.",
+  "canonical_placement": "Chronicles closes the Writings in the common Jewish ordering; in common Christian ordering, 1 Chronicles follows 2 Kings and precedes 2 Chronicles among the Historical Books. The two volumes were originally one work.",
+  "canonical_role": "First Chronicles reconnects the restored community with Adam, all Israel, Judah, Levi, Benjamin, Saul, and David; reshapes Israel's remembered past around Jerusalem worship; and portrays David as founder and organizer of the temple institutions Solomon will complete.",
+  "genre": [
+    "genealogical historiography",
+    "theological retelling",
+    "royal narrative",
+    "list and administrative register",
+    "liturgical instruction and psalm",
+    "prophetic oracle",
+    "assembly speech and prayer"
+  ],
+  "structure": [
+    "1 Chronicles 1-2: Adam through the nations, patriarchs, Edom, Israel's sons, and the prominence of Judah",
+    "1 Chronicles 3-4: David's descendants, the postexilic royal line, and clans of Judah and Simeon",
+    "1 Chronicles 5-7: Transjordanian tribes, Levi's priestly and musical lines, and other tribal genealogies",
+    "1 Chronicles 8-9: Benjamin and Saul, returned residents of Jerusalem, priests, Levites, gatekeepers, and a repeated Saul genealogy",
+    "1 Chronicles 10-12: Saul's death, David's accession at Hebron, Jerusalem's capture, warriors, and growing support from all Israel",
+    "1 Chronicles 13-16: the failed and successful ark processions, Levitical ordering, worship appointments, and David's psalm",
+    "1 Chronicles 17-20: the Davidic house promise, David's prayer, victories, administration, and wars",
+    "1 Chronicles 21-22: the census, plague, Ornan's threshing floor, temple-site declaration, preparations, and Solomon's charge",
+    "1 Chronicles 23-27: organization of Levites, priests, musicians, gatekeepers, treasurers, officers, tribal leaders, and military divisions",
+    "1 Chronicles 28-29: David's assembly, temple plan and charge, gifts, praise, Solomon's accession, and David's death"
+  ],
+  "major_themes": [
+    "genealogy, memory, and communal identity",
+    "all Israel and tribal continuity",
+    "Judah, David, Levi, and Benjamin",
+    "Saul's unfaithfulness and David's legitimate succession",
+    "Jerusalem as royal and worship center",
+    "ark, holiness, and properly ordered worship",
+    "Davidic covenant and Solomon",
+    "priests, Levites, musicians, and gatekeepers",
+    "temple planning, giving, and preparation",
+    "seeking the LORD, humility, and strength",
+    "prophetic word and written sources",
+    "continuity after exile without a reigning Davidide"
+  ],
+  "key_people": [
+    "Adam",
+    "Abraham and Israel or Jacob",
+    "Judah",
+    "Levi and Aaron",
+    "Benjamin",
+    "Saul and Jonathan",
+    "David",
+    "Joab",
+    "David's mighty warriors",
+    "Zadok and Abiathar",
+    "Asaph, Heman, and Jeduthun",
+    "Obed-edom",
+    "Nathan the prophet",
+    "Gad the seer",
+    "Ornan the Jebusite",
+    "Solomon",
+    "the priests, Levites, musicians, gatekeepers, and leaders of Israel"
+  ],
+  "key_places": [
+    "Edom and the lands named in the ancestral genealogies",
+    "Judah and Simeon's towns",
+    "Gilead and Bashan",
+    "Jerusalem",
+    "Hebron",
+    "the stronghold of Zion or City of David",
+    "Gibeon",
+    "Kiriath-jearim",
+    "Perez-uzza and the house of Obed-edom",
+    "David's tent for the ark in Jerusalem",
+    "Philistine, Aramean, Ammonite, and Edomite territories",
+    "Ornan's threshing floor on Mount Moriah"
+  ],
+  "key_events": [
+    "genealogies connect Adam, the nations, Israel's tribes, David's line, and the restored Jerusalem community",
+    "Transjordanian tribes are exiled after covenant unfaithfulness",
+    "Saul dies after his defeat, and the narrator interprets his death as unfaithfulness and failure to seek the LORD",
+    "all Israel gathers to make David king at Hebron",
+    "David captures Jerusalem and receives support from mighty warriors and tribal contingents",
+    "Uzza dies during the first attempt to move the ark",
+    "priests and Levites sanctify themselves and successfully bring the ark to Jerusalem",
+    "David appoints Levites, musicians, and gatekeepers and gives a psalm of thanks",
+    "Nathan announces an enduring Davidic house and Solomon's future temple building",
+    "David prays in response to the house promise",
+    "David's victories and administration secure the kingdom",
+    "David orders a census, judgment follows, and he buys Ornan's threshing floor for an altar",
+    "David identifies the altar site as the location for the LORD's house",
+    "David gathers materials, charges Solomon, and summons Israel's leaders to support the temple project",
+    "David organizes priests, Levites, musicians, gatekeepers, treasurers, officers, and military divisions",
+    "David gives Solomon the temple plan and charges him to be strong and faithful",
+    "leaders and people give willingly, David praises the LORD, and Solomon is installed before David's death"
+  ],
+  "interpretive_disputes": [
+    "Date, authorship, compositional growth, and the relationship of Chronicles to Ezra-Nehemiah",
+    "The Chronicler's use of Samuel-Kings, Pentateuchal texts, Psalms, prophetic books, and lost or differently titled sources",
+    "Whether differences from Samuel-Kings reflect textual Vorlage, selection, interpretation, supplementation, or combinations",
+    "Historical use of genealogies, telescoping, variant names, and lineage gaps",
+    "The identity and dating of persons in the postexilic Davidic genealogy",
+    "The meaning of all Israel in the genealogies and Davidic narrative",
+    "The role of northern tribes in a Judah- and Jerusalem-centered work",
+    "The census agency difference between 1 Chronicles 21 and 2 Samuel 24",
+    "David's bloodshed as a reason he may not build the temple",
+    "The historical development and projection of Levitical and musical orders",
+    "Large military, personnel, and contribution numbers",
+    "The relationship of Ornan's floor, the temple site, and later Mount Moriah tradition",
+    "The ethics of warfare and Davidic idealization"
+  ],
+  "primary_sources": [
+    "1 Chronicles 1-29",
+    "Genesis 5, 10, 25, 36, and 46",
+    "Numbers 1-4 and 26",
+    "Ruth 4:18-22",
+    "1 Samuel 31",
+    "2 Samuel 5-24",
+    "Psalms 96, 105, and 106",
+    "Ezra 2",
+    "Nehemiah 7, 11, and 12",
+    "Matthew 1:1-17"
+  ],
+  "related_entries": [
+    "2 Samuel",
+    "2 Chronicles",
+    "David",
+    "Solomon",
+    "Jerusalem",
+    "Temple",
+    "Ark Brought to Jerusalem",
+    "Davidic Covenant",
+    "Priesthood",
+    "Levites",
+    "Kingship",
+    "Covenant Theme"
+  ],
+  "common_questions": [
+    "Why does 1 Chronicles begin with nine chapters of genealogies?",
+    "Who is included in all Israel?",
+    "Why does Chronicles retell Samuel?",
+    "Why is Saul judged so quickly?",
+    "Why is David portrayed differently than in Samuel?",
+    "Why did Uzza die?",
+    "How did David organize worship?",
+    "Why was David not allowed to build the temple?",
+    "Why does Satan incite the census in Chronicles?",
+    "Why is Ornan's threshing floor important?",
+    "Did David receive the temple plan from God?",
+    "What do the lists of priests, Levites, and musicians accomplish?",
+    "When was 1 Chronicles written?"
+  ],
+  "keywords": [
+    "First Chronicles",
+    "genealogies",
+    "Adam",
+    "all Israel",
+    "Judah",
+    "Levi",
+    "Benjamin",
+    "Saul",
+    "David",
+    "Jerusalem",
+    "ark",
+    "Levites",
+    "priests",
+    "musicians",
+    "temple preparation",
+    "Ornan",
+    "Solomon"
+  ],
+  "hebrew_words": [
+    "divre hayyamim: events or words of the days",
+    "yahas: enroll or register genealogically",
+    "kol yisrael: all Israel",
+    "darash: seek or inquire",
+    "maal: act unfaithfully or commit sacrilege",
+    "bayit: house, temple, household, or dynasty",
+    "berit: covenant",
+    "aron: ark",
+    "qahal: assembly",
+    "levi: Levite",
+    "kohen: priest",
+    "shar: gatekeeper",
+    "natsah: oversee or lead",
+    "nadav: volunteer or give willingly"
+  ],
+  "greek_words": [],
+  "related_objects": [
+    {
+      "id": "2-samuel",
+      "relationship": "retells-and-interprets",
+      "weight": 10,
+      "notes": "First Chronicles selectively retells much of David's reign with distinctive emphases."
+    },
+    {
+      "id": "2-chronicles",
+      "relationship": "continued-by",
+      "weight": 10,
+      "notes": "Second Chronicles begins with Solomon and the temple project prepared here."
+    },
+    {
+      "id": "david",
+      "relationship": "central-king",
+      "weight": 10,
+      "notes": "David unites all Israel and prepares temple worship and administration."
+    },
+    {
+      "id": "solomon",
+      "relationship": "appointed-successor",
+      "weight": 9,
+      "notes": "Solomon is designated to build the temple and installed before David's death."
+    },
+    {
+      "id": "jerusalem",
+      "relationship": "royal-and-worship-center",
+      "weight": 10,
+      "notes": "David captures Jerusalem, brings the ark there, and prepares its temple."
+    },
+    {
+      "id": "temple",
+      "relationship": "prepared-institution",
+      "weight": 10,
+      "notes": "David supplies plans, personnel, materials, and leadership for the temple."
+    },
+    {
+      "id": "ark-brought-to-jerusalem",
+      "relationship": "retells",
+      "weight": 10,
+      "notes": "Chapters 13-16 expand the ark's transfer and worship organization."
+    },
+    {
+      "id": "davidic-covenant",
+      "relationship": "retells-and-develops",
+      "weight": 10,
+      "notes": "Chapter 17 adapts the house promise toward Solomon and temple."
+    },
+    {
+      "id": "priesthood",
+      "relationship": "orders",
+      "weight": 9,
+      "notes": "Aaronide priestly divisions are organized for temple service."
+    },
+    {
+      "id": "levites",
+      "relationship": "orders",
+      "weight": 10,
+      "notes": "Levites receive extensive genealogical, liturgical, musical, and administrative roles."
+    },
+    {
+      "id": "kingship",
+      "relationship": "develops-theme",
+      "weight": 9,
+      "notes": "Davidic kingship is joined to all Israel and temple worship."
+    },
+    {
+      "id": "covenant-theme",
+      "relationship": "develops-theme",
+      "weight": 9,
+      "notes": "Genealogy, promise, worship, and seeking the LORD express covenant continuity."
+    }
+  ],
+  "related_people": [
+    "david",
+    "solomon"
+  ],
+  "related_places": [
+    "jerusalem"
+  ],
+  "related_events": [
+    "ark-brought-to-jerusalem"
+  ],
+  "scripture_references": [
+    {
+      "reference": "1 Chronicles 1:1-54",
+      "relationship": "primary",
+      "notes": "Adam, nations, patriarchs, and Edom."
+    },
+    {
+      "reference": "1 Chronicles 3:1-24",
+      "relationship": "primary",
+      "notes": "Davidic genealogy through postexilic descendants."
+    },
+    {
+      "reference": "1 Chronicles 6:1-81",
+      "relationship": "supporting",
+      "notes": "Levi, priests, musicians, and cities."
+    },
+    {
+      "reference": "1 Chronicles 9:1-44",
+      "relationship": "primary",
+      "notes": "Exile notice, returned Jerusalem community, temple personnel, and Saul's line."
+    },
+    {
+      "reference": "1 Chronicles 10:1-14",
+      "relationship": "primary",
+      "notes": "Saul's death and theological evaluation."
+    },
+    {
+      "reference": "1 Chronicles 11:1-47",
+      "relationship": "primary",
+      "notes": "David's accession, Jerusalem, and mighty warriors."
+    },
+    {
+      "reference": "1 Chronicles 15:1-29",
+      "relationship": "primary",
+      "notes": "Properly ordered ark procession."
+    },
+    {
+      "reference": "1 Chronicles 16:1-43",
+      "relationship": "supporting",
+      "notes": "Worship appointments and psalm."
+    },
+    {
+      "reference": "1 Chronicles 17:1-27",
+      "relationship": "primary",
+      "notes": "Davidic promise and prayer."
+    },
+    {
+      "reference": "1 Chronicles 21:1-30",
+      "relationship": "primary",
+      "notes": "Census, plague, altar, and Ornan's floor."
+    },
+    {
+      "reference": "1 Chronicles 22:1-19",
+      "relationship": "primary",
+      "notes": "Temple site, preparations, and Solomon's charge."
+    },
+    {
+      "reference": "1 Chronicles 28:1-21",
+      "relationship": "primary",
+      "notes": "Assembly, temple plan, and charge."
+    },
+    {
+      "reference": "1 Chronicles 29:1-30",
+      "relationship": "primary",
+      "notes": "Gifts, prayer, Solomon's installation, and David's death."
+    }
+  ],
+  "cross_references": [
+    "Genesis 5:1-32",
+    "Genesis 10:1-32",
+    "Ruth 4:18-22",
+    "1 Samuel 31:1-13",
+    "2 Samuel 5:1-24:25",
+    "Psalms 96, 105, and 106",
+    "Ezra 2:1-70",
+    "Nehemiah 11:1-12:47"
+  ],
+  "new_testament_connections": [
+    "Matthew and Luke use genealogical traditions that overlap the Davidic and wider ancestral memory preserved in Chronicles.",
+    "New Testament temple, priesthood, worship, and Davidic themes develop within a canon to which Chronicles contributes.",
+    "The New Testament does not reproduce Chronicles' temple orders as direct church offices."
+  ],
+  "interpretive_notes": [
+    {
+      "note": "The genealogies are selective literary maps of kinship, land, office, and restored identity rather than exhaustive modern biological pedigrees; gaps, parallel lines, variant names, and telescoping require case-by-case review.",
+      "note_type": "literary-observation",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "1-chronicles-1-29",
+        "knoppers-first-chronicles-1-9"
+      ],
+      "scripture_references": [
+        "1 Chronicles 1:1-9:44"
+      ],
+      "traditions": [],
+      "rationale": "The lists vary in form and purpose and combine ancestry, geography, guild, office, and community membership."
+    },
+    {
+      "note": "Chronicles' all Israel includes Judah-centered institutions while repeatedly incorporating northern and Transjordanian tribes; it should not be reduced either to a narrow biological category or to a claim that every group was equally present.",
+      "note_type": "literary-observation",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "1-chronicles-1-29",
+        "knoppers-first-chronicles-1-9",
+        "knoppers-first-chronicles-10-29"
+      ],
+      "scripture_references": [
+        "1 Chronicles 5:1-26",
+        "1 Chronicles 9:1-3",
+        "1 Chronicles 12:23-40"
+      ],
+      "traditions": [],
+      "rationale": "The phrase and tribal distributions create an inclusive ideal with identifiable historical and rhetorical limits."
+    },
+    {
+      "note": "Chronicles' omission of episodes such as David and Bathsheba does not deny that Samuel preserves them; the retelling selects material for its own genealogy, temple, worship, and succession purposes.",
+      "note_type": "canonical-connection",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "1-chronicles-1-29",
+        "knoppers-first-chronicles-10-29",
+        "devries-first-second-chronicles"
+      ],
+      "scripture_references": [
+        "2 Samuel 11:1-27",
+        "1 Chronicles 20:1-8"
+      ],
+      "traditions": [],
+      "rationale": "The canonical accounts have different scopes, and omission is not equivalent to contradiction or approval."
+    },
+    {
+      "note": "First Chronicles attributes the census incitement to an adversary or Satan, whereas 2 Samuel begins with the LORD's anger; source, agency, developmental, and harmonizing explanations remain debated.",
+      "note_type": "canonical-connection",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "1-chronicles-1-29",
+        "knoppers-first-chronicles-10-29"
+      ],
+      "scripture_references": [
+        "1 Chronicles 21:1-30",
+        "2 Samuel 24:1-25"
+      ],
+      "traditions": [],
+      "rationale": "The two openings use different immediate agents while narrating closely related census traditions."
+    },
+    {
+      "note": "Chronicles states that David's warfare and bloodshed disqualify him from building the temple, an explanation not given in Nathan's oracle in 2 Samuel 7; interpreters should preserve both presentations.",
+      "note_type": "canonical-connection",
+      "certainty": "textually_explicit",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "1-chronicles-1-29",
+        "knoppers-first-chronicles-10-29"
+      ],
+      "scripture_references": [
+        "1 Chronicles 22:6-10",
+        "1 Chronicles 28:2-7",
+        "2 Samuel 7:1-17"
+      ],
+      "traditions": [],
+      "rationale": "The Chronicler supplies a distinct explanation tied to Solomon as a man of rest."
+    },
+    {
+      "note": "The detailed Levitical, musical, and administrative orders may preserve earlier traditions while also reflecting and authorizing later temple institutions; direct projection to one moment in David's reign is historically disputed.",
+      "note_type": "historical-context",
+      "certainty": "probable",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "1-chronicles-1-29",
+        "knoppers-first-chronicles-10-29",
+        "zondervan-kings-chronicles-backgrounds"
+      ],
+      "scripture_references": [
+        "1 Chronicles 23:1-27:34"
+      ],
+      "traditions": [],
+      "rationale": "The lists serve the final work's institutional vision, while the histories of their component traditions remain debated."
+    }
+  ],
+  "intertextuality": [
+    "Genesis, Numbers, Ruth, and other genealogies supply and are reshaped within chapters 1-9.",
+    "Samuel supplies much of the Saul and David narrative but Chronicles selects, supplements, and reframes it.",
+    "Psalms 96, 105, and 106 overlap the worship text in 1 Chronicles 16.",
+    "Ezra-Nehemiah shares names, temple offices, returned-community lists, and postexilic concerns.",
+    "Matthew and Luke continue Davidic and ancestral genealogical interpretation."
+  ],
+  "timeline": [
+    "Adam through Israel's ancestors and tribes",
+    "Davidic line through postexilic descendants",
+    "Returned Jerusalem community",
+    "Saul's death",
+    "David's accession and Jerusalem",
+    "Ark transfer and worship organization",
+    "Davidic promise and wars",
+    "Census and temple site",
+    "Temple preparations and personnel orders",
+    "Solomon's installation and David's death"
+  ],
+  "maps": [
+    "Genealogical geography of nations and tribes",
+    "Judah, Simeon, Transjordan, and Levitical cities",
+    "Returned Jerusalem neighborhoods and temple personnel",
+    "David's supporters and military campaigns",
+    "Ark route from Kiriath-jearim through Obed-edom's house to Jerusalem",
+    "Ornan's threshing floor and temple-site tradition"
+  ],
+  "archaeology": [
+    "Persian-period Yehud and Jerusalem's restored community",
+    "genealogical and administrative comparison with ancient lists and archives",
+    "Jerusalem's Iron Age and Persian-period settlement history",
+    "temple personnel, storage, music, and gatekeeping in comparative context",
+    "material evidence relevant to places named in David's campaigns"
+  ],
+  "claims": [
+    {
+      "id": "first-chronicles-genealogical-identity",
+      "claim": "First Chronicles 1-9 connects the restored community to Adam, Israel's tribes, David, priests, Levites, and preexilic Jerusalem through selective genealogies and registers.",
+      "claim_type": "literary",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "1 Chronicles 1:1-54",
+        "1 Chronicles 3:1-24",
+        "1 Chronicles 6:1-81",
+        "1 Chronicles 9:1-44"
+      ],
+      "source_ids": [
+        "1-chronicles-1-29",
+        "knoppers-first-chronicles-1-9"
+      ],
+      "traditions": [],
+      "rationale": "The sequence and final returned-community list explicitly join universal, tribal, royal, and temple identities.",
+      "notes": ""
+    },
+    {
+      "id": "first-chronicles-saul-unfaithful",
+      "claim": "The Chronicler interprets Saul's death as the result of unfaithfulness, failure to keep the LORD's word, consulting a medium, and failure to seek the LORD.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "1 Chronicles 10:13-14"
+      ],
+      "source_ids": [
+        "1-chronicles-1-29",
+        "knoppers-first-chronicles-10-29"
+      ],
+      "traditions": [],
+      "rationale": "The evaluation is stated directly after the battle narrative.",
+      "notes": ""
+    },
+    {
+      "id": "first-chronicles-all-israel-david",
+      "claim": "All Israel gathers at Hebron to recognize David as king, and David captures Jerusalem as the shared royal center.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "1 Chronicles 11:1-9",
+        "1 Chronicles 12:23-40"
+      ],
+      "source_ids": [
+        "1-chronicles-1-29",
+        "knoppers-first-chronicles-10-29"
+      ],
+      "traditions": [],
+      "rationale": "The assembly, acclamation, capture, and tribal support are explicit.",
+      "notes": ""
+    },
+    {
+      "id": "first-chronicles-ark-ordered",
+      "claim": "After the failed first procession, David assigns priests and Levites to carry the ark according to prescribed order and establishes continuing worship before it.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "1 Chronicles 13:1-14",
+        "1 Chronicles 15:1-29",
+        "1 Chronicles 16:1-43"
+      ],
+      "source_ids": [
+        "1-chronicles-1-29",
+        "knoppers-first-chronicles-10-29"
+      ],
+      "traditions": [],
+      "rationale": "The contrast between attempts and the worship appointments is explicit.",
+      "notes": ""
+    },
+    {
+      "id": "first-chronicles-davidic-house",
+      "claim": "Nathan announces that David's offspring will build the temple and that the LORD will establish his throne, and David answers in prayer.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "1 Chronicles 17:1-27"
+      ],
+      "source_ids": [
+        "1-chronicles-1-29",
+        "knoppers-first-chronicles-10-29"
+      ],
+      "traditions": [],
+      "rationale": "The promise and prayer are explicit, while comparison with 2 Samuel 7 requires interpretation.",
+      "notes": ""
+    },
+    {
+      "id": "first-chronicles-census-temple-site",
+      "claim": "After the census and plague, David builds an altar on Ornan's threshing floor and identifies that location as the site for the LORD's house and altar.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "1 Chronicles 21:18-30",
+        "1 Chronicles 22:1"
+      ],
+      "source_ids": [
+        "1-chronicles-1-29",
+        "knoppers-first-chronicles-10-29"
+      ],
+      "traditions": [],
+      "rationale": "The purchase, altar, divine response, and site declaration are narrated directly.",
+      "notes": ""
+    },
+    {
+      "id": "first-chronicles-david-prepares",
+      "claim": "David prepares materials, plans, leaders, priests, Levites, musicians, gatekeepers, treasurers, and public support for Solomon's temple work.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "historical_uncertainty",
+      "scripture_references": [
+        "1 Chronicles 22:2-19",
+        "1 Chronicles 23:1-32",
+        "1 Chronicles 28:1-21",
+        "1 Chronicles 29:1-22"
+      ],
+      "source_ids": [
+        "1-chronicles-1-29",
+        "knoppers-first-chronicles-10-29",
+        "devries-first-second-chronicles"
+      ],
+      "traditions": [],
+      "rationale": "The final text explicitly attributes comprehensive preparation to David; institutional historical reconstruction remains debated.",
+      "notes": ""
+    }
+  ],
+  "canonical_story": {
+    "phase": "Genealogical continuity and Davidic temple preparation",
+    "role": "Reconnects postexilic Israel to its ancestors and institutions and presents David's reign as preparation for Solomon's temple.",
+    "preceded_by": [
+      "2-kings"
+    ],
+    "followed_by": [
+      "2-chronicles"
+    ]
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "Read the genealogies as the book's interpretive foundation and the David narrative as movement toward ark, temple site, personnel, plans, giving, and Solomon.",
+    "book_context": "Chapters 1-9 define Israel genealogically; chapter 10 transfers rule from Saul; chapters 11-21 establish David and Jerusalem; chapters 22-29 prepare temple and succession.",
+    "canonical_context": "Chronicles reuses Torah, Samuel, Psalms, and other traditions and stands in close conversation with Ezra-Nehemiah while retaining a distinct literary shape.",
+    "covenant_context": "Abrahamic ancestry, all Israel, Levitical service, Davidic promise, and seeking the LORD express continuity after exile.",
+    "historical_context": "Distinguish genealogical traditions and narrated monarchy from Persian- or early Hellenistic-period composition and later temple institutional concerns.",
+    "ancient_near_east_context": "Genealogies, king lists, archives, census, temple patronage, personnel divisions, treasuries, musicians, and succession belong to wider scribal and institutional worlds.",
+    "second_temple_jewish_context": "A community with temple but no Davidic king rereads David as organizer of worship and sees itself within all Israel's genealogical past.",
+    "original_audience": "The audience is called to understand restored worship and communal identity as continuity with, correction of, and hope within Israel's whole story.",
+    "genre": "Genealogical theological historiography combines lists, narrative retelling, sources, speeches, liturgy, oracle, prayer, and administrative registers.",
+    "intertextual_connections": [
+      "Genesis genealogies",
+      "Numbers tribal and Levitical lists",
+      "Ruth 4",
+      "1 Samuel 31",
+      "2 Samuel 5-24",
+      "Psalms 96, 105, and 106",
+      "Ezra-Nehemiah"
+    ],
+    "biblical_theology_themes": [
+      "all Israel",
+      "Davidic covenant",
+      "temple",
+      "priesthood and Levites",
+      "worship",
+      "seeking God",
+      "continuity after exile",
+      "willing generosity"
+    ],
+    "messianic_christological_trajectory": "Chronicles preserves Davidic genealogy and promise in a community without a Davidic throne, contributing to later expectation and New Testament Davidic genealogies.",
+    "major_interpretive_views": [
+      "Chronicles is a late biblical historiography creatively interpreting earlier Scripture.",
+      "Differences from Samuel may reflect both a variant source text and theological selection.",
+      "Chronicles and Ezra-Nehemiah may share authorship, school, sources, or only a common milieu.",
+      "The genealogies define an inclusive all-Israel identity centered on Judah, Levi, Benjamin, and Jerusalem."
+    ],
+    "historical_interpretation": "Jewish and Christian readers have used Chronicles for genealogy, liturgy, ministry order, Davidic theology, temple interpretation, and models of generous giving.",
+    "authorial_intent": "The final work legitimates the restored community's continuity with Israel and presents faithful temple worship as a Davidic and all-Israel vocation.",
+    "typological_connections": [
+      "Davidic preparation and Solomon's building contribute to later royal and temple trajectories.",
+      "Priestly and Levitical worship contributes to canonical priesthood interpretation.",
+      "Genealogy from Adam to David contributes to later universal and messianic genealogies."
+    ],
+    "christological_significance": "Christian interpretation connects the preserved Davidic line and house promise to Jesus; it should not simply transfer Chronicles' temple bureaucracy to the church.",
+    "modern_application_principles": [
+      "Treat genealogies as theological and social memory without using them to rank human worth.",
+      "Value preparation, shared service, musicians, gatekeepers, and administrators without turning ancient offices into mandatory modern structures.",
+      "Do not let Chronicles' selective focus erase harms narrated elsewhere in Scripture.",
+      "Use giving narratives without coercive fundraising or promises of guaranteed wealth.",
+      "Do not use Davidic warfare or temple organization to sacralize modern states or institutions."
+    ],
+    "common_misinterpretations": [
+      "The genealogies are meaningless filler before the real story.",
+      "Chronicles claims every genealogy is exhaustive and gapless.",
+      "Omitting David's sins means Chronicles denies or approves them.",
+      "Chronicles is merely an inaccurate copy of Samuel-Kings.",
+      "Every temple office maps directly onto a modern church role.",
+      "David personally originated every institutional detail at one historical moment.",
+      "All Israel means ethnicity without worship, land, office, or restored-community context."
+    ]
+  },
+  "retrieval_metadata": {
+    "aliases": [
+      "First Chronicles",
+      "1 Paralipomenon",
+      "Chronicles genealogies",
+      "David temple preparation book"
+    ],
+    "search_terms": [
+      "1 Chronicles overview",
+      "1 Chronicles structure",
+      "why genealogies 1 Chronicles",
+      "Adam to Israel genealogy",
+      "all Israel Chronicles",
+      "Saul unfaithful Chronicles",
+      "David Jerusalem mighty men",
+      "Uzza ark Levites",
+      "Davidic covenant 1 Chronicles 17",
+      "Satan census Chronicles Samuel difference",
+      "Ornan threshing floor temple site",
+      "why David could not build temple",
+      "David temple plans materials",
+      "priests Levites musicians gatekeepers",
+      "postexilic date Chronicles"
+    ],
+    "common_questions": [
+      "Why does 1 Chronicles start with genealogies?",
+      "What does all Israel mean?",
+      "Why is David different from 2 Samuel?",
+      "Why did Uzza die?",
+      "Why does Satan incite David's census?",
+      "Why could David not build the temple?",
+      "How did David prepare for Solomon?",
+      "Are the Levitical divisions historically from David?",
+      "When was Chronicles written?"
+    ],
+    "related_topics": [
+      "genealogy",
+      "restored community",
+      "all Israel",
+      "Judah",
+      "Levi",
+      "Benjamin",
+      "Davidic kingship",
+      "Jerusalem",
+      "ark",
+      "temple",
+      "worship personnel",
+      "succession"
+    ],
+    "frequently_confused_with": [
+      "Second Samuel's broader David narrative",
+      "Second Chronicles' Solomon and Judah narrative",
+      "Ezra-Nehemiah's direct Persian-period narratives",
+      "modern biological genealogy as though it controlled ancient list genres"
+    ],
+    "semantic_keywords": [
+      "Adam",
+      "Judah",
+      "Levi",
+      "Benjamin",
+      "Saul",
+      "David",
+      "Hebron",
+      "Zion",
+      "Uzza",
+      "Obed-edom",
+      "Asaph",
+      "Heman",
+      "Jeduthun",
+      "Nathan",
+      "Gad",
+      "Ornan",
+      "Solomon"
+    ]
+  },
+  "section_status": {
+    "core_summary": "draft",
+    "scripture_anchors": "needs_review",
+    "historical_context": "needs_review",
+    "literary_context": "needs_review",
+    "canonical_context": "needs_review",
+    "original_audience": "needs_review",
+    "lexical_links": "draft",
+    "intertextuality": "draft",
+    "interpretive_views": "needs_review",
+    "common_misinterpretations": "draft",
+    "sources": "needs_review",
+    "relationships": "needs_review",
+    "retrieval_metadata": "draft",
+    "human_review": "missing"
+  },
+  "knowledge_layers": {
+    "primary": "biblical_text",
+    "secondary": [
+      "literary",
+      "historical_cultural",
+      "ancient_near_eastern",
+      "second_temple_jewish",
+      "biblical_theology",
+      "reception_history"
+    ]
+  },
+  "sources": [
+    {
+      "title": "1 Chronicles 1-29",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "1 Chronicles 1:1-29:30",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [
+        "summary",
+        "structure",
+        "key_people",
+        "key_places",
+        "key_events",
+        "scripture_references",
+        "interpretive_notes",
+        "first-chronicles-genealogical-identity",
+        "first-chronicles-saul-unfaithful",
+        "first-chronicles-all-israel-david",
+        "first-chronicles-ark-ordered",
+        "first-chronicles-davidic-house",
+        "first-chronicles-census-temple-site",
+        "first-chronicles-david-prepares"
+      ],
+      "notes": "Primary biblical text.",
+      "id": "1-chronicles-1-29"
+    },
+    {
+      "title": "I Chronicles 1-9",
+      "author": "Gary N. Knoppers",
+      "publisher": "Yale University Press",
+      "year": 2004,
+      "locator": "Anchor Yale Bible introduction, translation, notes, and commentary on 1 Chronicles 1-9",
+      "url": "https://yalebooks.yale.edu/book/9780300139525/i-chronicles-1-9/",
+      "source_type": "reference-work",
+      "supports": [
+        "authorship_positions",
+        "date_ranges",
+        "original_audience",
+        "historical_context",
+        "literary_context",
+        "structure",
+        "interpretive_notes",
+        "first-chronicles-genealogical-identity"
+      ],
+      "notes": "Technical commentary emphasizing genealogy, text criticism, identity, postexilic context, and relationship to earlier Scripture.",
+      "id": "knoppers-first-chronicles-1-9"
+    },
+    {
+      "title": "I Chronicles 10-29",
+      "author": "Gary N. Knoppers",
+      "publisher": "Yale University Press",
+      "year": 2004,
+      "locator": "Anchor Yale Bible translation, notes, and commentary on 1 Chronicles 10-29",
+      "url": "https://yalebooks.yale.edu/book/9780300139532/i-chronicles-10-29/",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context",
+        "literary_context",
+        "hebrew_words",
+        "interpretive_notes",
+        "first-chronicles-saul-unfaithful",
+        "first-chronicles-all-israel-david",
+        "first-chronicles-ark-ordered",
+        "first-chronicles-davidic-house",
+        "first-chronicles-census-temple-site",
+        "first-chronicles-david-prepares"
+      ],
+      "notes": "Technical commentary emphasizing the Davidic narrative, textual witnesses, historiography, institutions, and reuse of Samuel.",
+      "id": "knoppers-first-chronicles-10-29"
+    },
+    {
+      "title": "1 and 2 Chronicles",
+      "author": "Simon J. De Vries",
+      "publisher": "Eerdmans",
+      "year": 1989,
+      "locator": "Introduction and form-critical commentary on 1 Chronicles",
+      "url": "https://www.eerdmans.com/9780802802361/1-and-2-chronicles/",
+      "source_type": "reference-work",
+      "supports": [
+        "genre",
+        "literary_context",
+        "canonical_context",
+        "interpretive_notes",
+        "first-chronicles-david-prepares"
+      ],
+      "notes": "Form-critical and literary study of Chronicles as genealogical and narrative history defining ideal Israel.",
+      "id": "devries-first-second-chronicles"
+    },
+    {
+      "title": "Zondervan Illustrated Bible Backgrounds Commentary: 1 and 2 Kings, 1 and 2 Chronicles, Ezra, Nehemiah, Esther",
+      "author": "John H. Walton, general editor; Frederick Mabie and other contributors",
+      "publisher": "Zondervan",
+      "year": 2009,
+      "locator": "1 Chronicles commentary and background notes",
+      "url": "https://zondervanacademic.com/products/1-and-2-kings-1-and-2-chronicles-ezra-nehemiah-esther",
+      "source_type": "reference-work",
+      "supports": [
+        "ancient_near_east_context",
+        "archaeology",
+        "historical_context",
+        "maps",
+        "interpretive_notes"
+      ],
+      "notes": "Passage-level textual, artifactual, geographical, historical, and cultural background.",
+      "id": "zondervan-kings-chronicles-backgrounds"
+    }
+  ],
+  "content_status": "draft",
+  "review_status": "in_review",
+  "reviewed_by": [],
+  "last_reviewed": null,
+  "human_review_required": true,
+  "confidence": "medium",
+  "importance": 88,
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ckl-book-orphan-relationship-pass",
+      "date": "2026-07-23"
+    },
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "phase-5-book-correction-chronicles",
+      "date": "2026-07-24"
+    }
+  ],
+  "edited_by": [],
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
@@ -23,223 +951,12 @@
     "canonical": true,
     "later_christian_reception": true
   },
-  "literary_context": "1 Chronicles uses narrative within Historical Books, book 8 of 12 to develop its themes through the book's structure and key passages.",
-  "covenantal_significance": "1 Chronicles helps readers trace covenant faithfulness, failure, mercy, and hope within its canonical setting.",
-  "authorship_positions": [
-    "Traditional prophetic or courtly compilation",
-    "Many scholars read the books as later historiographical or Deuteronomistic shaping"
-  ],
-  "date_ranges": [
-    "Historical span from settlement through exile",
-    "Final form often placed in the exilic or post-exilic period"
-  ],
-  "original_audience": "Israel and Judah remembering the land, monarchy, and exile",
-  "historical_setting": "Settlement, monarchy, and exile in the land of Israel and Judah",
-  "canonical_role": "1 Chronicles anchors genealogy, Davidic kingship, temple preparation, and ordered worship within Historical Books, book 8 of 12 and connects the book to related people, places, events, and themes.",
-  "genre": [
-    "narrative"
-  ],
-  "structure": [
-    "Davidic genealogy and reign",
-    "Temple preparation",
-    "Royal and cultic memory"
-  ],
-  "major_themes": [
-    "land",
-    "leadership",
-    "faithfulness",
-    "kingdom",
-    "exile"
-  ],
-  "canonical_placement": "Historical Books, book 8 of 12",
-  "key_people": [
-    "Joshua",
-    "David",
-    "Solomon"
-  ],
-  "key_places": [
-    "Canaan",
-    "Jerusalem",
-    "Samaria"
-  ],
-  "key_events": [
-    "conquest",
-    "monarchy",
-    "exile"
-  ],
-  "interpretive_disputes": [
-    "Historical reconstruction and sources",
-    "How conquest, kingship, and exile are narrated theologically"
-  ],
-  "primary_sources": [
-    "1 Chronicles"
-  ],
-  "related_entries": [],
-  "keywords": [],
-  "intertextuality": [],
-  "timeline": [],
-  "maps": [],
-  "archaeology": [],
-  "hebrew_words": [],
-  "greek_words": [],
-  "related_people": [],
-  "related_places": [],
-  "related_events": [],
-  "related_objects": [
-    {
-      "id": "david",
-      "relationship": "royal-genealogy",
-      "weight": 10,
-      "notes": "David anchors the Chronicler's royal and genealogical memory."
-    },
-    {
-      "id": "temple",
-      "relationship": "worship-center",
-      "weight": 9,
-      "notes": "Temple worship organizes much of the book's focus."
-    },
-    {
-      "id": "kingship",
-      "relationship": "royal-theology",
-      "weight": 9,
-      "notes": "Kingship is interpreted through covenant faithfulness."
-    },
-    {
-      "id": "covenant-theme",
-      "relationship": "covenant-memory",
-      "weight": 8,
-      "notes": "Chronicles reads Israel's history through covenant memory."
-    },
-    {
-      "id": "jerusalem",
-      "relationship": "cultic-center",
-      "weight": 8,
-      "notes": "Jerusalem functions as the royal and worship center."
-    }
-  ],
-  "scripture_references": [
-    {
-      "reference": "1 Chronicles 17:1-15",
-      "relationship": "primary",
-      "notes": "Davidic promise and dynastic memory"
-    },
-    {
-      "reference": "1 Chronicles 29:10-20",
-      "relationship": "supporting",
-      "notes": "temple preparation and worship"
-    }
-  ],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    {
-      "note": "Read 1 Chronicles first within its own literary setting before moving to broader canonical connections.",
-      "note_type": "literary-observation",
-      "certainty": "medium",
-      "dispute_status": "broad-consensus",
-      "sources": [
-        "1-chronicles-scripture"
-      ]
-    },
-    {
-      "note": "The relationship links on 1 Chronicles are orientation anchors, not a full interpretive outline of the book.",
-      "note_type": "interpretive-caution",
-      "certainty": "high",
-      "dispute_status": "consensus",
-      "sources": [
-        "1-chronicles-canonical-book-metadata"
-      ]
-    }
-  ],
-  "common_questions": [
-    "What is 1 Chronicles about?",
-    "Why does 1 Chronicles matter in the biblical storyline?",
-    "How should readers interpret 1 Chronicles in context?"
-  ],
-  "sources": [
-    {
-      "title": "1 Chronicles",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [
-        "scripture_references",
-        "literary_context"
-      ],
-      "notes": "Primary biblical text for 1 Chronicles.",
-      "id": "1-chronicles-scripture"
-    },
-    {
-      "title": "Canonical book metadata for 1 Chronicles",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "Historical Books, book 8 of 12",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [
-        "historical_context",
-        "canonical_role",
-        "related_objects"
-      ],
-      "notes": "Internal CKL book-lane metadata used for canonical orientation and graph anchoring.",
-      "id": "1-chronicles-canonical-book-metadata"
-    }
-  ],
-  "canonical_story": {
-    "phase": "",
-    "role": "",
-    "preceded_by": [],
-    "followed_by": []
-  },
-  "hermeneutical_lens": {
-    "immediate_literary_context": "",
-    "book_context": "",
-    "canonical_context": "",
-    "covenant_context": "",
-    "historical_context": "",
-    "ancient_near_east_context": "",
-    "second_temple_jewish_context": "",
-    "original_audience": "",
-    "genre": "",
-    "intertextual_connections": [],
-    "biblical_theology_themes": [],
-    "messianic_christological_trajectory": "",
-    "major_interpretive_views": [],
-    "historical_interpretation": "",
-    "authorial_intent": "",
-    "typological_connections": [],
-    "christological_significance": "",
-    "modern_application_principles": [],
-    "common_misinterpretations": []
-  },
-  "retrieval_metadata": {
-    "aliases": [],
-    "search_terms": [],
-    "common_questions": [],
-    "related_topics": [],
-    "frequently_confused_with": [],
-    "semantic_keywords": []
-  },
-  "importance": 78,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "generated_by": [
-    {
-      "type": "ai",
-      "name": "codex",
-      "workflow": "ckl-book-orphan-relationship-pass",
-      "date": "2026-07-23"
-    }
-  ],
-  "edited_by": [],
-  "reviewed_by": [],
-  "last_reviewed": "2026-07-23",
-  "confidence": "medium",
-  "human_review_required": true
+  "historical_context": "First Chronicles narrates ancestry and David's reign for a postmonarchic community; its genealogies, sources, institutional lists, and Persian- or early Hellenistic-period setting require separate historical analysis.",
+  "ancient_near_east_context": "Genealogies, archives, royal retelling, temple patronage, personnel lists, military divisions, treasuries, music, census, and succession have broader ancient Near Eastern and eastern Mediterranean analogues.",
+  "hebraic_worldview": "Identity is remembered through ancestry, land, worship, office, covenant, and seeking the LORD; restored Israel is called to faithful continuity rather than nostalgic replication.",
+  "second_temple_context": "The book speaks from a temple-centered community under foreign rule, using Davidic memory and all-Israel genealogies to authorize worship, service, and hope without narrating a restored monarchy.",
+  "canonical_context": "First Chronicles reuses Genesis through Samuel and Psalms, leads into Second Chronicles, and shares significant language and concerns with Ezra-Nehemiah while remaining a distinct work.",
+  "later_christian_reception": "Christian reception has used its genealogies, worship orders, temple preparation, giving, and Davidic promise in ecclesial and christological interpretation, sometimes too directly mapping ancient offices onto churches.",
+  "literary_context": "Genealogies frame the entire David narrative; repeated source notices, speeches, prayers, lists, and carefully selected parallels reshape earlier history toward all Israel, Jerusalem, temple, and Solomon.",
+  "covenantal_significance": "Ancestral continuity, the Davidic house, Levitical service, ark worship, and the charge to seek the LORD present covenant identity as viable after exile."
 }

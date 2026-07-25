@@ -17,6 +17,10 @@ from framework.canonical_library.authoring import (
     format_validation_summary,
     scan_library,
 )
+from framework.canonical_library.quality_report import (
+    build_quality_report,
+    format_quality_markdown,
+)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -31,6 +35,15 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Emit the inventory audit as JSON instead of text",
     )
+    parser.add_argument(
+        "--deep",
+        action="store_true",
+        help="Include Phase 1 depth, graph, sourcing, duplicate, and governance metrics",
+    )
+    parser.add_argument(
+        "--output",
+        help="Write the report to this file instead of standard output",
+    )
     return parser
 
 
@@ -38,11 +51,25 @@ def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
 
-    audit = scan_library(args.root)
-    if args.json:
-        print(json.dumps(audit.to_dict(), indent=2, ensure_ascii=True))
+    if args.deep:
+        report = build_quality_report(args.root)
+        if args.json:
+            rendered = json.dumps(report, indent=2, ensure_ascii=True) + "\n"
+        else:
+            rendered = format_quality_markdown(report)
     else:
-        print(format_validation_summary(audit))
+        audit = scan_library(args.root)
+        if args.json:
+            rendered = json.dumps(audit.to_dict(), indent=2, ensure_ascii=True) + "\n"
+        else:
+            rendered = format_validation_summary(audit) + "\n"
+    if args.output:
+        output_path = Path(args.output)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(rendered, encoding="utf-8")
+        print(f"wrote {output_path}")
+    else:
+        print(rendered, end="")
     return 0
 
 

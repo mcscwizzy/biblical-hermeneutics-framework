@@ -416,6 +416,53 @@ class CanonicalContextBuilderTests(unittest.TestCase):
         self.assertNotIn("medium", joined_cautions)
         self.assertNotIn("source-id", joined_cautions)
 
+    def test_context_preserves_knowledge_layer_and_renders_sourced_claims(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_library(
+                root,
+                [
+                    make_object(
+                        "shechem",
+                        "place",
+                        "Shechem",
+                        ["where is shechem"],
+                        summary="Shechem is a covenant location.",
+                        knowledge_layers={
+                            "primary": "biblical_text",
+                            "secondary": ["historical_cultural"],
+                        },
+                        claims=[
+                            {
+                                "id": "shechem-named-location",
+                                "claim": "Genesis explicitly names Shechem.",
+                                "claim_type": "biblical_text",
+                                "certainty": "textually_explicit",
+                                "dispute_status": "not_disputed",
+                                "scripture_references": ["Genesis 12:6"],
+                                "rationale": "The place name occurs in the text.",
+                            }
+                        ],
+                    ),
+                ],
+            )
+            builder = CanonicalContextBuilder(CanonicalLibrary(root=root).load())
+
+            context = builder.build("Shechem", limit=1)
+            prompt_context = build_canonical_prompt_context(context, max_entries=1)
+
+        topic = context["retrieved_topics"][0]
+        entry = prompt_context["entries"][0]
+        self.assertEqual(topic["knowledge_layers"]["primary"], "biblical_text")
+        self.assertEqual(topic["claims"][0]["id"], "shechem-named-location")
+        self.assertEqual(entry["knowledge_layer"], "biblical_text")
+        sourced_claims = next(
+            section
+            for section in entry["sections"]
+            if section["heading"] == "Sourced Claims"
+        )
+        self.assertIn("textually_explicit", sourced_claims["items"][0])
+
     def test_builds_normalized_related_objects_from_legacy_and_typed_fields(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
