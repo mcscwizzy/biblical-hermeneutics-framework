@@ -6,18 +6,18 @@ This is the durable handoff for the **BHF Canonical Knowledge Library Expansion
 and Correction Plan**. The supplied plan explicitly says to begin with the
 repository audit and Phase 1 quality reporting, avoid immediate bulk content
 generation, and stop after each major phase. Phases 1–4 are now implemented at
-the schema/runtime level. Phase 5 Waves 1–20 have corrected Genesis through
-Joel as honest, source-backed drafts; none has been mechanically approved.
+the schema/runtime level. Phase 5 Waves 1–21 have corrected Genesis through
+Amos as honest, source-backed drafts; none has been mechanically approved.
 
 ## Current checkpoint
 
 | Plan area | Status | Continuation note |
 | --- | --- | --- |
 | Phase 1: inventory, reporting, quality metrics | **Implemented** | Deep JSON and Markdown reports, CLI support, and calculation tests are present. |
-| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Twenty-eight records now have evidence-based draft statuses; 592 still need explicit migration. |
-| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Twenty-eight records now have explicit layers; 592 still need migration. |
+| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Twenty-nine records now have evidence-based draft statuses; 591 still need explicit migration. |
+| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Twenty-nine records now have explicit layers; 591 still need migration. |
 | Phase 4: certainty and dispute taxonomies | **Implemented; evidence migration pending** | Current taxonomies and granular claim records are supported. Legacy values remain readable but are forbidden for approved notes; no `unknown` value was guessed or mass-relabeled. |
-| Phase 5: audit/correct all 66 books | **Waves 1–20 implemented; human review pending** | Genesis through Joel are corrected drafts with sources, claims, tests, and reviewer notes. Thirty-eight books remain. |
+| Phase 5: audit/correct all 66 books | **Waves 1–21 implemented; human review pending** | Genesis through Amos are corrected drafts with sources, claims, tests, and reviewer notes. Thirty-seven books remain. |
 | Phases 6–20 | Not started | Follow the supplied order after the foundation is upgraded. |
 | Phase 21: controlled generation workflow | Partially enabled | Reporting, type-specific completeness, and approval gates are present; scoped human-review events still need Phase 19. |
 
@@ -535,6 +535,29 @@ After Phase 5 Wave 20, the refreshed report records:
 
 All twenty-eight corrected books remain incomplete because their human-review
 sections are still `missing`. The remaining 592 records still rely on
+section/layer migration defaults.
+
+After Phase 5 Wave 21, the refreshed report records:
+
+| Migration metric | Result |
+| --- | ---: |
+| Records marked `complete` / `draft` | 591 / 29 |
+| Raw records missing explicit `section_status` | 591 |
+| Raw records with incomplete type-required sections | 620 |
+| Raw records missing explicit `knowledge_layers` | 591 |
+| Interpretive notes using current taxonomies | 403 |
+| Interpretive notes still using legacy taxonomies | 1,260 |
+| Granular claims authored | 301 |
+| External sources | 583 |
+| Source references that do not resolve | 0 |
+| Invalid source support targets | 0 |
+| Unresolved legacy object references | 14 |
+| Graph edges / unknown targets / orphaned records | 3,192 / 0 / 0 |
+| Missing reciprocal relationship suggestions | 2,752 |
+| Validator warnings / errors | 14 / 0 |
+
+All twenty-nine corrected books remain incomplete because their human-review
+sections are still `missing`. The remaining 591 records still rely on
 section/layer migration defaults.
 
 Near-duplicate and template findings are triage signals rather than automatic
@@ -1599,6 +1622,60 @@ Completed implementation work:
 - added a reviewer-facing handoff at
   [`ckl-phase-5-joel-review.md`](ckl-phase-5-joel-review.md).
 
+## Phase 5 Wave 21: Amos
+
+Completed implementation work:
+
+- removed the inherited Minor Prophets placeholder, including unrelated
+  Hosea, Jonah, and Nineveh values, generic corpus-wide dates and setting,
+  obsolete evidence labels, internal-only orientation sourcing, and false
+  completion and review metadata;
+- rebuilt the record around Amos 1:1–2; 1:3–2:16; 3:1–6:14; 7:1–9:10; and
+  9:11–15 while preserving alternative outlines and compositional questions;
+- distinguished Amos of Tekoa, YHWH's reported speech, the first-person
+  vision voice, the third-person Bethel narrator, Amaziah, Jeroboam II,
+  Uzziah, Israel, Judah, Samaria's elites, the women addressed as cows of
+  Bashan, merchants, judges, poor and oppressed people, Nazirites, prophets,
+  neighboring peoples, and David's fallen booth;
+- distinguished fourteen literary genres and added twenty-two granular claims
+  plus thirty-nine structured interpretive notes using current taxonomies;
+- added Masoretic Amos, Old Greek Amos, 4Q78, 4Q82, other Judean Desert
+  witnesses, prophetic intertexts, Acts 7, Acts 15, critical commentary,
+  theology, literary, social-justice, creation, violence, gender,
+  archaeological, form-critical, textual-variant, and reception-history
+  anchors plus nineteen URL-bearing external records;
+- qualified the mid-eighth-century superscription setting, Tekoa, occupation
+  and social status, the earthquake, northern prosperity and inequality,
+  Assyrian expansion, northern ministry, Judean transmission, disciples,
+  collection, redaction, final form, and Book-of-the-Twelve shaping;
+- addressed election and accountability, justice and righteousness, courts
+  and gates, debt, land, labor, taxation, elite luxury, sexual exploitation,
+  dishonest trade, worship, sacrifice, music, sanctuaries, day of YHWH,
+  remnant, exile, creation, earthquake, famine of hearing, judgment,
+  intercession, prophetic vocation, and restoration;
+- preserved uncertainty concerning the nations sequence, three/four formula,
+  calls to seek and live, doxological fragments, day-of-YHWH audience,
+  Sikkuth, Kiyyun, the five visions, *anak*, Amaziah's authority, Amos 7:14,
+  summer-fruit wordplay, the altar vision, textual difficulties, Amos
+  9:11–15's date and unity, and David's fallen booth;
+- distinguished historical referent, literary form, canonical trajectory,
+  textual witness, quotation, Jewish reception, christological reception,
+  ecclesial application, and modern analogy;
+- added safeguards concerning poverty romanticization, class contempt,
+  wealth shaming without exploitation, blaming poor people, coercive charity,
+  debt and labor abuse, racism, misogynistic reuse of the cows-of-Bashan
+  metaphor, sexual violence, clergy and prophetic abuse, anti-ritual and
+  anti-Jewish readings, antisemitism, supersessionism, empire, colonialism,
+  nationalism, war, genocide, land, disaster blame, divine violence,
+  vengeance, and partisan capture of justice language;
+- added explicit section statuses and knowledge-layer classifications;
+- populated the hermeneutical lens and retrieval metadata;
+- kept the record as `draft` / `in_review`, with human review missing;
+- added eight factual, structure, evidence, retrieval, safety, and SQLite
+  parity regression tests; and
+- added a reviewer-facing handoff at
+  [`ckl-phase-5-amos-review.md`](ckl-phase-5-amos-review.md).
+
 ## Validation performed
 
 Completed after Phases 2–4:
@@ -2097,6 +2174,42 @@ python3 -m framework.canonical_library verify-db \
 # 34,361,344 bytes
 ```
 
+Completed after Phase 5 Wave 21:
+
+```text
+python3 tools/ckl_validate.py \
+  --path framework/canonical_library/objects/books/amos.json
+# 1 valid object, 0 warnings, 0 errors
+
+python3 -m unittest \
+  tests.canonical_library.test_amos_record \
+  tests.canonical_library.test_ckl_retrieval_service \
+  tests.canonical_library.test_schema \
+  tests.canonical_library.test_quality_report
+# 78 tests in 16.294s: OK
+
+python3 -m unittest tests/canonical_library/test_*.py
+# 356 tests in 251.029s: OK
+
+python3 tools/ckl_validate.py --root framework/canonical_library
+# 620 files, 620 valid objects, 14 coalesced migration warnings, 0 errors
+
+python3 tools/ckl_graph_audit.py --root framework/canonical_library --limit 5
+# 620 objects, 3,192 edges, 0 unknown targets, 0 orphaned objects
+# 2,752 missing reciprocal suggestions remain as migration debt
+
+python3 -m framework.canonical_library build-db \
+  --root framework/canonical_library \
+  --output /private/tmp/bhf-phase5-wave21-final-ckl.sqlite
+
+python3 -m framework.canonical_library verify-db \
+  --root framework/canonical_library \
+  --database /private/tmp/bhf-phase5-wave21-final-ckl.sqlite
+# 620 objects; database schema 2; inventory fingerprint
+# 31356a8bf9bc6325121549155cc5b09884555a79967651b1ee5a2fe4038b86fc
+# 34,738,176 bytes
+```
+
 ## Recommended next wave
 
 Perform the human review checklists in
@@ -2138,59 +2251,61 @@ and
 and
 [`ckl-phase-5-hosea-review.md`](ckl-phase-5-hosea-review.md)
 and
-[`ckl-phase-5-joel-review.md`](ckl-phase-5-joel-review.md).
+[`ckl-phase-5-joel-review.md`](ckl-phase-5-joel-review.md)
+and
+[`ckl-phase-5-amos-review.md`](ckl-phase-5-amos-review.md).
 Do not mark any corrected record complete merely because its automated checks
 pass.
 
-Then continue Phase 5 with a controlled Amos correction wave:
+Then continue Phase 5 with a controlled Obadiah correction wave:
 
 1. create book-specific factual regression fixtures before editing content;
 2. audit every populated field against the book it describes;
 3. gather Scripture anchors and independent sources before drafting claims;
-4. distinguish Amos of Tekoa, YHWH's reported speech, Amos's first-person
-   reports, the third-person Bethel narrator, Amaziah priest of Bethel,
-   Jeroboam II, Uzziah, Israel, Judah, Samaria's elites, women addressed as
-   cows of Bashan, merchants, judges, poor and oppressed people, Nazirites,
-   prophets, neighboring nations, and David's fallen booth;
-5. map Amos 1–2, 3–6, 7–9, the seven nations-plus-Israel sequence, summons and
-   accusation units, laments and woes, doxologies, five visions, the
-   Amos–Amaziah narrative, and the restoration ending while qualifying seams,
-   headings, collections, speaker changes, and alternative outlines;
-6. qualify the Tekoa attribution, shepherd or livestock-breeder and sycamore
-   dresser terms, Jeroboam II and Uzziah, the earthquake notice, eighth-century
-   prosperity and inequality, Assyrian expansion, Bethel and Samaria, northern
-   ministry, Judean transmission, disciples, collection, redaction, Twelve
-   shaping, and final-form proposals;
-7. distinguish superscription, nations oracle, accusation, judgment oracle,
-   summons to hear, rhetorical question chain, lament, woe oracle, hymn or
-   doxology, vision report, symbolic wordplay, biographical narrative,
-   disputation, and salvation oracle;
-8. address election and accountability, justice and righteousness, courts and
-   gates, debt, land, labor, taxation, elite luxury, sexual exploitation,
-   dishonest trade, worship, sacrifice, song, pilgrimage sanctuaries, the day
-   of YHWH, remnant, exile, creation, earthquake, famine of hearing, judgment,
-   intercession, prophetic vocation, and restoration;
-9. preserve uncertainty concerning Amos's occupation and status, precise
-   ministry chronology, the earthquake, historical correlations, the nations
-   oracle sequence, hymnic fragments, day-of-YHWH audience, Sikkuth and
-   Kiyyun, each vision, Amaziah's words and authority, summer-fruit wordplay,
-   altar vision, textual difficulties, Amos 9:11–15's date and unity, and the
-   meaning of David's fallen booth;
-10. address Masoretic Amos, Old Greek Amos, Qumran Twelve witnesses, ancient
-    versions, Amos within the Twelve, Second Temple reuse, Acts 7 and Acts 15,
-    rabbinic reception, and later Jewish, Christian, political, liberation,
-    Black, womanist, and ecological interpretation;
+4. distinguish Obadiah's superscription, YHWH's reported speech, the prophetic
+   voice, the nations summoned against Edom, Edom or Esau, Jacob or Israel,
+   Judah and Jerusalem, foreign invaders, fugitives, allies, sages, warriors,
+   survivors on Mount Zion, the houses of Jacob and Joseph, the house of Esau,
+   Benjamin, the Negeb, the Shephelah, Gilead, Sepharad, and the kingdom
+   belonging to YHWH;
+5. map Obadiah 1, 2–9, 10–14, 15–16, 17–21 while qualifying the oracle's
+   headings, addressees, tense, speaker transitions, poetic units, seams,
+   relationship to Jeremiah 49, and alternative outlines;
+6. qualify the name Obadiah, the absence of patronymic or royal dating,
+   seventh-century, 587/586 BCE, early Persian, and later proposals, Edom's
+   highland geography and trade routes, Jerusalem's fall, Nabataean and later
+   Idumean histories, possible collections, redaction, placement after Amos,
+   and Book-of-the-Twelve shaping;
+7. distinguish prophetic superscription, vision report, divine messenger
+   report, nations oracle, taunt, accusation, prohibition or ironic
+   retrospective command, day-of-YHWH oracle, reversal saying, salvation
+   oracle, territorial catalogue, and kingship conclusion;
+8. address kinship betrayal, pride, security, wisdom, alliances, plunder,
+   violence, gloating, looting, blocking fugitives, handing over survivors,
+   day of YHWH, reciprocal judgment, drinking imagery, holiness, survivors,
+   dispossession, fire, land, restoration, and divine kingship;
+9. preserve uncertainty concerning historical Edom, the fall of Jerusalem in
+   view, the force and time of verses 12–14, Edom's precise actions, allies,
+   Teman, the messenger, nations, drinking, survivor language, the identities
+   and geography in verses 19–20, Sepharad, conquerors or deliverers, and the
+   date and unity of verses 17–21;
+10. address Masoretic Obadiah, Old Greek Abdias, 4Q82 and other Judean Desert
+    witnesses, ancient versions, Jeremiah 49, Joel, Amos, Psalms, Ezekiel,
+    Malachi, Obadiah within the Twelve, early Jewish and rabbinic reception,
+    New Testament resonances without invented quotation, and later Jewish,
+    Christian, political, postcolonial, and trauma-aware interpretation;
 11. distinguish historical referent, literary symbol, canonical trajectory,
-    quotation, allusion, typology, Jewish reception, and later christological
-    or ecclesial reception, especially Amos's Israel and nations rhetoric,
-    Amos 5:24, Amos 7, Amos 8, Amos 9, Acts 7, and Acts 15;
-12. add safeguards concerning poverty romanticization, class contempt, wealth
-    shaming without attention to exploitation, blaming poor people, coercive
-    charity, debt and labor abuse, racism, misogynistic use of the cows-of-
-    Bashan insult, sexual violence, clergy and prophetic abuse, anti-ritual or
-    anti-Jewish readings, antisemitism, supersessionism, empire, colonialism,
-    nationalism, war, genocide, land, disaster blame, divine violence,
-    vengeance, and partisan capture of justice language;
+    quotation, shared tradition, allusion, typology, Jewish reception, and
+    later christological or ecclesial reception, especially Edom, Jacob,
+    Jerusalem, Mount Zion, survivors, land, day of YHWH, kingdom, Jeremiah 49,
+    and proposed New Testament echoes;
+12. add safeguards concerning racialized or ethnic essentialism, collective
+    hereditary guilt, antisemitism, anti-Arab racism, using Edom as a code for
+    a modern people, supersessionism, sibling hatred, survivor blame, trauma
+    exploitation, refugees and border violence, betrayal, looting, empire,
+    colonialism, nationalism, war, genocide, land seizure, forced
+    displacement, divine violence, vengeance, dehumanization, and partisan
+    capture;
 13. populate only applicable hermeneutical and retrieval sections;
 14. use current certainty/dispute labels only where evidence justifies them;
 15. keep section statuses honest and leave human review missing;
