@@ -12,15 +12,15 @@ Root: `/Users/johnwalker/Documents/github/biblical-hermeneutic-framework/framewo
 
 ## Depth averages
 
-- Summary length (characters): 118.34
-- Scripture references per object: 5.34
-- External sources per object: 0.98
-- Relationships per object: 5.15
+- Summary length (characters): 118.59
+- Scripture references per object: 5.37
+- External sources per object: 1.01
+- Relationships per object: 5.16
 
 ## Graph and references
 
 - Dangling relationship IDs: 0
-- Missing reciprocal relationships: 2754
+- Missing reciprocal relationships: 2757
 - Orphaned objects: 0
 - Unresolved legacy object references: 14
 - Scripture reference format/range errors: 0
@@ -29,13 +29,13 @@ Root: `/Users/johnwalker/Documents/github/biblical-hermeneutic-framework/framewo
 ## Completeness and governance
 
 - Complete records with empty required fields: 0
-- Complete records with candidate Phase 2 section gaps: 589
-- Records missing section_status: 590
+- Complete records with candidate Phase 2 section gaps: 588
+- Records missing section_status: 589
 - Records with incomplete type-required sections: 620
-- Records missing knowledge_layers: 590
-- Interpretive notes using current taxonomies: 440
-- Interpretive notes still using legacy taxonomies: 1258
-- Granular claims: 324
+- Records missing knowledge_layers: 589
+- Interpretive notes using current taxonomies: 484
+- Interpretive notes still using legacy taxonomies: 1256
+- Granular claims: 348
 - Records with unknown certainty: 539
 - Records with unknown dispute status: 539
 - Records with no human reviewer: 619
@@ -52,7 +52,7 @@ Root: `/Users/johnwalker/Documents/github/biblical-hermeneutic-framework/framewo
 
 ## Retrieval gaps
 
-- Objects without search terms: 583
+- Objects without search terms: 582
 - Objects without common questions: 0
 - Objects without canonical placement: 547
 
@@ -61,7 +61,7 @@ Root: `/Users/johnwalker/Documents/github/biblical-hermeneutic-framework/framewo
 - Unresolved source IDs: 0
 - Sources supporting no field or claim: 2698
 - Invalid source support targets: 0
-- Internally self-cited records without external support: 440
+- Internally self-cited records without external support: 439
 
 ## Existing validator
 
@@ -74,11 +74,11 @@ aaron, abba, abel, abraham, acts, adam, adonai, adoption, adoption-theme, agape 
 
 ### Template-repetition record samples
 
-1-corinthians, 1-john, 1-peter, 1-thessalonians, 1-timothy, 2-corinthians, 2-john, 2-peter, 2-thessalonians, 2-timothy … (+24 more)
+1-corinthians, 1-john, 1-peter, 1-thessalonians, 1-timothy, 2-corinthians, 2-john, 2-peter, 2-thessalonians, 2-timothy … (+23 more)
 
 ### Internal-only source samples
 
-1-corinthians, 1-john, 1-peter, 1-thessalonians, 1-timothy, 2-corinthians, 2-john, 2-peter, 2-thessalonians, 2-timothy … (+430 more)
+1-corinthians, 1-john, 1-peter, 1-thessalonians, 1-timothy, 2-corinthians, 2-john, 2-peter, 2-thessalonians, 2-timothy … (+429 more)
 
 ## Interpretation note
 
