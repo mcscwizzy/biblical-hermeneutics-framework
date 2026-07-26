@@ -14,7 +14,8 @@ const GENERAL_QUESTION_MODE = "general_question";
 const THEME_STORAGE_KEY = "bhf-theme";
 const READER_MODE_STORAGE_KEY = "bhf-reader-mode";
 const BHF_TRANSLATION_STORAGE_KEY = "bhf-reader-translation";
-const BHF_TRANSLATION_DOWNLOAD_METADATA_KEY = "bhf-translation-download-metadata";
+const BHF_TRANSLATION_DOWNLOAD_METADATA_KEY =
+  "bhf-translation-download-metadata";
 const BHF_STUDY_ACTIONS = new Set([
   "full_context",
   "historical_context",
@@ -119,11 +120,15 @@ document.addEventListener("submit", async function (event) {
   answerPanel.setAttribute("aria-busy", "true");
 
   try {
-    const job = await requestJson(form.dataset.jobPost, {
-      method: "POST",
-      body: new FormData(form),
-      headers: { "Accept": "application/json" }
-    }, "Could not start request.");
+    const job = await requestJson(
+      form.dataset.jobPost,
+      {
+        method: "POST",
+        body: new FormData(form),
+        headers: {Accept: "application/json"},
+      },
+      "Could not start request.",
+    );
     if (!job.job_id) {
       throw new Error("Could not start request.");
     }
@@ -131,7 +136,11 @@ document.addEventListener("submit", async function (event) {
     latestJobComplete = false;
 
     const finalStatus = await pollJob(form, statusPanel, job.job_id);
-    const result = await requestText(form.dataset.resultBase + finalStatus.job_id, {}, "Could not render result.");
+    const result = await requestText(
+      form.dataset.resultBase + finalStatus.job_id,
+      {},
+      "Could not render result.",
+    );
     answerPanel.innerHTML = result;
 
     if (finalStatus.error) {
@@ -169,7 +178,9 @@ async function initializeReader() {
   const bookSelect = document.querySelector("[data-reader-book]");
   const chapterSelect = document.querySelector("[data-reader-chapter]");
   const translationSelect = document.querySelector("[data-reader-translation]");
-  const translationImportButton = document.querySelector("[data-reader-translation-import]");
+  const translationImportButton = document.querySelector(
+    "[data-reader-translation-import]",
+  );
   const reader = document.querySelector("#chapter-reader");
   const askForm = document.querySelector(".ask-form");
   if (!bookSelect || !chapterSelect || !reader || !askForm) {
@@ -185,11 +196,16 @@ async function initializeReader() {
     reader.innerHTML = `<p class="empty">No chapter data is available for ${escapeHtml(bookSelect.value || defaultBook)}.</p>`;
     return;
   }
-  const defaultChapter = reader.dataset.defaultChapter || chapterSelect.options[0].value || "1";
+  const defaultChapter =
+    reader.dataset.defaultChapter || chapterSelect.options[0].value || "1";
   chapterSelect.value = defaultChapter;
   if (translationSelect) {
     try {
-      translationCatalogState = await requestJson("/api/translations", {}, "Could not load translations.");
+      translationCatalogState = await requestJson(
+        "/api/translations",
+        {},
+        "Could not load translations.",
+      );
     } catch (_error) {
       translationCatalogState = null;
     }
@@ -199,7 +215,10 @@ async function initializeReader() {
     syncTranslationSelectOptions();
     translationSelect.value = selectedTranslationId();
   }
-  await loadReaderChapter(bookSelect.value || defaultBook, chapterSelect.value || defaultChapter);
+  await loadReaderChapter(
+    bookSelect.value || defaultBook,
+    chapterSelect.value || defaultChapter,
+  );
 
   bookSelect.addEventListener("change", async () => {
     populateChapterOptions(bookSelect, chapterSelect);
@@ -211,7 +230,9 @@ async function initializeReader() {
   });
   if (translationSelect) {
     translationSelect.addEventListener("change", async () => {
-      const requestedTranslation = String(translationSelect.value || "asv").toLowerCase();
+      const requestedTranslation = String(
+        translationSelect.value || "asv",
+      ).toLowerCase();
       const previousTranslation = selectedTranslationId();
       try {
         await persistReaderDefaultTranslation(requestedTranslation);
@@ -219,7 +240,9 @@ async function initializeReader() {
       } catch (error) {
         setSelectedTranslationId(previousTranslation);
         translationSelect.value = previousTranslation;
-        reader.innerHTML = errorHtml(error.message || "Could not update translation.");
+        reader.innerHTML = errorHtml(
+          error.message || "Could not update translation.",
+        );
       }
     });
   }
@@ -243,7 +266,9 @@ async function initializeReader() {
   document.addEventListener("click", handleChapterNavigationClick);
   const contextMenu = document.querySelector("#reader-context-menu");
   const searchForm = document.querySelector("[data-bible-search]");
-  const searchResultsBody = document.querySelector("#reader-search-results-body");
+  const searchResultsBody = document.querySelector(
+    "#reader-search-results-body",
+  );
   if (contextMenu) {
     contextMenu.addEventListener("click", handleContextMenuAction);
     contextMenu.addEventListener("mouseover", handleContextSubmenuHover);
@@ -276,7 +301,9 @@ async function initializeReader() {
   if (cancelNote) {
     cancelNote.addEventListener("click", closeNoteEditor);
   }
-  document.addEventListener("bhf:map-panel-opened", () => activateWorkspaceTab("maps"));
+  document.addEventListener("bhf:map-panel-opened", () =>
+    activateWorkspaceTab("maps"),
+  );
   document.addEventListener("bhf:map-panel-closed", () => {
     syncMapWorkspaceEmptyState();
     closeWorkspaceDrawer();
@@ -287,7 +314,9 @@ async function initializeReader() {
 }
 
 function handleChapterNavigationClick(event) {
-  const button = event.target.closest("[data-next-chapter], [data-prev-chapter]");
+  const button = event.target.closest(
+    "[data-next-chapter], [data-prev-chapter]",
+  );
   if (!button) {
     return;
   }
@@ -306,15 +335,24 @@ function initializeWorkspaceTabs() {
   const tabs = Array.from(workspace.querySelectorAll("[data-workspace-tab]"));
   const defaultTab = workspace.dataset.defaultTab || "ask";
   for (const tab of tabs) {
-    tab.addEventListener("click", () => activateWorkspaceTab(tab.dataset.workspaceTab));
-    tab.addEventListener("keydown", (event) => handleWorkspaceTabKeydown(event, tabs.filter((candidate) => !candidate.hidden)));
+    tab.addEventListener("click", () =>
+      activateWorkspaceTab(tab.dataset.workspaceTab),
+    );
+    tab.addEventListener("keydown", (event) =>
+      handleWorkspaceTabKeydown(
+        event,
+        tabs.filter((candidate) => !candidate.hidden),
+      ),
+    );
   }
   setActiveWorkspaceTab(defaultTab);
 }
 
 function initializeAppNavigation() {
   const dock = document.querySelector("[data-app-dock]");
-  const buttons = Array.from(dock?.querySelectorAll("[data-app-section]") || []);
+  const buttons = Array.from(
+    dock?.querySelectorAll("[data-app-section]") || [],
+  );
   if (!dock || buttons.length === 0) {
     return;
   }
@@ -341,7 +379,9 @@ function initializeAppNavigation() {
   });
 
   window.addEventListener("resize", handleAppViewportChange);
-  window.addEventListener("scroll", scheduleAppDockVisibilityUpdate, { passive: true });
+  window.addEventListener("scroll", scheduleAppDockVisibilityUpdate, {
+    passive: true,
+  });
   scheduleAppDockVisibilityUpdate();
 }
 
@@ -385,7 +425,7 @@ function ensureExploreMapBrowserOpen() {
   if (panel && !panel.hidden) {
     return;
   }
-  openMapPanel({ mode: "browse" });
+  openMapPanel({mode: "browse"});
 }
 
 function syncAppDockState(sectionId) {
@@ -418,13 +458,15 @@ function applyDesktopSectionLayout(sectionId, options = {}) {
   }
 
   if (document.body.classList.contains("reader-mode")) {
-    applyReaderMode(false, { persist: false });
+    applyReaderMode(false, {persist: false});
   }
   applyWorkspaceExpansion(false);
 }
 
 function handleAppViewportChange() {
-  const nextSection = normalizeAppSection(appSection || readAppSectionPreference() || "bible");
+  const nextSection = normalizeAppSection(
+    appSection || readAppSectionPreference() || "bible",
+  );
   activateAppSection(nextSection, {
     persist: false,
     focusReader: false,
@@ -448,11 +490,15 @@ function updateAppDockVisibilityForScroll() {
     return;
   }
 
-  const scrollingElement = document.scrollingElement || document.documentElement;
-  const maxScroll = Math.max(0, scrollingElement.scrollHeight - window.innerHeight);
+  const scrollingElement =
+    document.scrollingElement || document.documentElement;
+  const maxScroll = Math.max(
+    0,
+    scrollingElement.scrollHeight - window.innerHeight,
+  );
   const scrollTop = Math.max(
     window.scrollY || window.pageYOffset || 0,
-    scrollingElement.scrollTop || 0
+    scrollingElement.scrollTop || 0,
   );
   const shouldHideDock =
     isCompactViewport() &&
@@ -476,7 +522,7 @@ function focusReaderArea() {
   if (!reader) {
     return;
   }
-  reader.scrollIntoView({ block: "start", behavior: "smooth" });
+  reader.scrollIntoView({block: "start", behavior: "smooth"});
 }
 
 function appSectionFromWorkspaceTab(tabId) {
@@ -509,7 +555,10 @@ function appSectionToWorkspaceTab(sectionId) {
   }
   if (normalized === "notes") {
     const currentWorkspaceTab = getCurrentWorkspaceTab();
-    if (currentWorkspaceTab === "notes" || currentWorkspaceTab === "highlights") {
+    if (
+      currentWorkspaceTab === "notes" ||
+      currentWorkspaceTab === "highlights"
+    ) {
       return currentWorkspaceTab;
     }
     return lastNotesWorkspaceTab || "notes";
@@ -538,7 +587,9 @@ function rememberWorkspaceSubtab(tabId) {
 }
 
 function getCurrentWorkspaceTab() {
-  const activeTab = document.querySelector(".workspace-tab[aria-selected='true']");
+  const activeTab = document.querySelector(
+    ".workspace-tab[aria-selected='true']",
+  );
   return activeTab?.dataset.workspaceTab || null;
 }
 
@@ -560,7 +611,9 @@ function isCompactViewport() {
 function readAppSectionPreference() {
   try {
     const saved = window.localStorage.getItem(APP_SECTION_STORAGE_KEY);
-    const legacySaved = window.localStorage.getItem(LEGACY_MOBILE_SECTION_STORAGE_KEY);
+    const legacySaved = window.localStorage.getItem(
+      LEGACY_MOBILE_SECTION_STORAGE_KEY,
+    );
     return normalizeAppSection(saved || legacySaved || "bible");
   } catch (_error) {
     return "bible";
@@ -569,7 +622,10 @@ function readAppSectionPreference() {
 
 function persistAppSection(sectionId) {
   try {
-    window.localStorage.setItem(APP_SECTION_STORAGE_KEY, normalizeAppSection(sectionId));
+    window.localStorage.setItem(
+      APP_SECTION_STORAGE_KEY,
+      normalizeAppSection(sectionId),
+    );
   } catch (_error) {
     // Ignore storage errors in restricted environments.
   }
@@ -586,26 +642,30 @@ function initializeTheme() {
     return;
   }
   const savedTheme = readThemePreference();
-  applyTheme(savedTheme, { persist: false });
+  applyTheme(savedTheme, {persist: false});
   for (const toggle of toggles) {
     toggle.addEventListener("click", toggleTheme);
   }
 }
 
 function initializeReaderMode() {
-  const toggles = Array.from(document.querySelectorAll("[data-reader-mode-toggle]"));
+  const toggles = Array.from(
+    document.querySelectorAll("[data-reader-mode-toggle]"),
+  );
   if (toggles.length === 0) {
     return;
   }
   const savedMode = readReaderModePreference();
-  applyReaderMode(savedMode, { persist: false });
+  applyReaderMode(savedMode, {persist: false});
   for (const toggle of toggles) {
     toggle.addEventListener("click", toggleReaderMode);
   }
 }
 
 function initializeWorkspaceExpansion() {
-  const toggles = Array.from(document.querySelectorAll("[data-workspace-expand-toggle]"));
+  const toggles = Array.from(
+    document.querySelectorAll("[data-workspace-expand-toggle]"),
+  );
   if (toggles.length === 0) {
     return;
   }
@@ -625,13 +685,18 @@ function applyWorkspaceExpansion(enabled) {
   }
   const toggles = document.querySelectorAll("[data-workspace-expand-toggle]");
   for (const toggle of toggles) {
-    const accessibleLabel = nextEnabled ? "Collapse workspace" : "Expand workspace";
+    const accessibleLabel = nextEnabled
+      ? "Collapse workspace"
+      : "Expand workspace";
     setControlLabel(
       toggle,
       nextEnabled ? "Collapse" : "Expand",
-      accessibleLabel
+      accessibleLabel,
     );
-    setControlStatus(toggle, `Current value: ${nextEnabled ? "Expanded" : "Collapsed"}`);
+    setControlStatus(
+      toggle,
+      `Current value: ${nextEnabled ? "Expanded" : "Collapsed"}`,
+    );
     toggle.setAttribute("aria-label", accessibleLabel);
     toggle.setAttribute("title", accessibleLabel);
     toggle.setAttribute("aria-pressed", String(nextEnabled));
@@ -640,7 +705,9 @@ function applyWorkspaceExpansion(enabled) {
 }
 
 function toggleWorkspaceExpansion() {
-  applyWorkspaceExpansion(!document.body.classList.contains("workspace-expanded"));
+  applyWorkspaceExpansion(
+    !document.body.classList.contains("workspace-expanded"),
+  );
 }
 
 function revealAnswerPanel(answerPanel) {
@@ -649,7 +716,7 @@ function revealAnswerPanel(answerPanel) {
   }
   window.requestAnimationFrame(() => {
     if (answerPanel.isConnected) {
-      answerPanel.scrollIntoView({ block: "start", behavior: "smooth" });
+      answerPanel.scrollIntoView({block: "start", behavior: "smooth"});
     }
   });
 }
@@ -675,7 +742,10 @@ function addMobileAnswerCloseControl(answerPanel) {
   closeButton.type = "button";
   closeButton.className = "secondary mobile-answer-close";
   closeButton.textContent = "×";
-  closeButton.setAttribute("aria-label", "Close answer and return to the reader");
+  closeButton.setAttribute(
+    "aria-label",
+    "Close answer and return to the reader",
+  );
   closeButton.setAttribute("title", "Close answer");
   closeButton.setAttribute("data-testid", "mobile-answer-close");
   closeButton.setAttribute("data-mobile-answer-close", "true");
@@ -716,7 +786,10 @@ function applyReaderMode(enabled, options = {}) {
   }
   if (options.persist !== false) {
     try {
-      window.localStorage.setItem(READER_MODE_STORAGE_KEY, nextEnabled ? "on" : "off");
+      window.localStorage.setItem(
+        READER_MODE_STORAGE_KEY,
+        nextEnabled ? "on" : "off",
+      );
     } catch (_error) {
       // Ignore storage errors in restricted environments.
     }
@@ -736,7 +809,10 @@ function readThemePreference() {
   } catch (_error) {
     return "light";
   }
-  return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  return window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
 }
 
 function applyTheme(theme, options = {}) {
@@ -759,7 +835,8 @@ function applyTheme(theme, options = {}) {
 }
 
 function toggleTheme() {
-  const currentTheme = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+  const currentTheme =
+    document.documentElement.dataset.theme === "dark" ? "dark" : "light";
   applyTheme(currentTheme === "dark" ? "light" : "dark");
 }
 
@@ -781,7 +858,9 @@ function setControlStatus(control, text) {
 
 function initializeReaderControlsSheet() {
   const sheet = document.querySelector("[data-reader-controls-sheet]");
-  const triggers = Array.from(document.querySelectorAll("[data-reader-controls-trigger]"));
+  const triggers = Array.from(
+    document.querySelectorAll("[data-reader-controls-trigger]"),
+  );
   if (!sheet || triggers.length === 0) {
     return;
   }
@@ -804,7 +883,9 @@ function initializeReaderControlsSheet() {
       closeReaderControlsSheet();
       return;
     }
-    const action = event.target.closest("[data-theme-toggle], [data-reader-mode-toggle]");
+    const action = event.target.closest(
+      "[data-theme-toggle], [data-reader-mode-toggle]",
+    );
     if (action && sheet.contains(action) && !action.disabled) {
       window.setTimeout(closeReaderControlsSheet, 0);
     }
@@ -817,7 +898,6 @@ function initializeReaderControlsSheet() {
     }
     readerControlsTrigger = null;
   });
-
 }
 
 function openReaderControlsSheet(trigger) {
@@ -881,7 +961,8 @@ function syncWorkspaceTabsForSection(sectionId) {
   workspace.querySelectorAll("[data-workspace-tab]").forEach((tab) => {
     const isVisible = visibleTabs.has(tab.dataset.workspaceTab);
     tab.hidden = !isVisible;
-    tab.tabIndex = isVisible && tab.getAttribute("aria-selected") === "true" ? 0 : -1;
+    tab.tabIndex =
+      isVisible && tab.getAttribute("aria-selected") === "true" ? 0 : -1;
     if (isVisible) {
       visibleCount += 1;
     }
@@ -922,7 +1003,8 @@ function setActiveWorkspaceTab(tabId) {
 
 function resolveSubmitTargets(form) {
   const answerSelector = form.dataset.activeTarget || form.dataset.target;
-  const statusSelector = form.dataset.activeStatusTarget || form.dataset.statusTarget;
+  const statusSelector =
+    form.dataset.activeStatusTarget || form.dataset.statusTarget;
   return {
     answerPanel: answerSelector ? document.querySelector(answerSelector) : null,
     statusPanel: statusSelector ? document.querySelector(statusSelector) : null,
@@ -965,7 +1047,11 @@ function resolveBackendUrl(url) {
     return BHF_HTTP.resolveUrl(url);
   }
   const raw = String(url || "");
-  if (/^(?:[a-z]+:)?\/\//i.test(raw) || raw.startsWith("data:") || raw.startsWith("blob:")) {
+  if (
+    /^(?:[a-z]+:)?\/\//i.test(raw) ||
+    raw.startsWith("data:") ||
+    raw.startsWith("blob:")
+  ) {
     return raw;
   }
   const base = String(BHF_RUNTIME.apiBaseUrl || "").replace(/\/+$/, "");
@@ -1014,8 +1100,8 @@ function activateWorkspaceTab(tabId) {
   }
   document.dispatchEvent(
     new CustomEvent("bhf:workspace-tab-changed", {
-      detail: { tabId },
-    })
+      detail: {tabId},
+    }),
   );
 }
 
@@ -1041,7 +1127,7 @@ function syncMapWorkspaceEmptyState() {
   const button = emptyState.querySelector("[data-open-map-browser]");
   if (button && !button.dataset.bound) {
     button.dataset.bound = "true";
-    button.addEventListener("click", () => openMapPanel({ mode: "browse" }));
+    button.addEventListener("click", () => openMapPanel({mode: "browse"}));
   }
 }
 
@@ -1075,8 +1161,12 @@ async function loadReaderChapter(book, chapter) {
   hideContextMenu();
   reader.innerHTML = `<p class="empty">Loading ${escapeHtml(currentTranslationAbbreviation())} text...</p>`;
   try {
-    const params = new URLSearchParams({ translation: translationId });
-    const data = await requestJson(`/api/bible/${encodeURIComponent(book)}/${encodeURIComponent(chapter)}?${params.toString()}`, {}, "Could not load chapter.");
+    const params = new URLSearchParams({translation: translationId});
+    const data = await requestJson(
+      `/api/bible/${encodeURIComponent(book)}/${encodeURIComponent(chapter)}?${params.toString()}`,
+      {},
+      "Could not load chapter.",
+    );
     currentChapter = data;
     currentSelection = null;
     latestJobId = null;
@@ -1128,7 +1218,10 @@ async function navigateToPassage(book, chapter, verseStart, verseEnd) {
     chapter: Number(chapter),
     startVerse: Number(verseStart),
     endVerse: Number(verseEnd || verseStart),
-    text: collectSelectedVerseText(Number(verseStart), Number(verseEnd || verseStart)),
+    text: collectSelectedVerseText(
+      Number(verseStart),
+      Number(verseEnd || verseStart),
+    ),
     isSelection: Number(verseEnd || verseStart) !== Number(verseStart),
   };
   applySelectionContext(context);
@@ -1144,7 +1237,11 @@ function goToNextChapter() {
   const selectedBook = bookSelect.selectedOptions[0] || bookSelect.options[0];
   const chapterCount = Number(selectedBook?.dataset.chapters || 0);
   const currentChapterNumber = Number(chapterSelect.value || "0");
-  if (!chapterCount || !currentChapterNumber || currentChapterNumber >= chapterCount) {
+  if (
+    !chapterCount ||
+    !currentChapterNumber ||
+    currentChapterNumber >= chapterCount
+  ) {
     return;
   }
   const nextChapter = currentChapterNumber + 1;
@@ -1173,7 +1270,9 @@ function parsePassageReference(reference) {
     return null;
   }
 
-  const chapterMatch = rawReference.match(/^(?<book>.+?)\s+(?<chapter>\d+)(?::(?<verseStart>\d+)(?:-(?<verseEnd>\d+))?|-(?<chapterEnd>\d+))?$/);
+  const chapterMatch = rawReference.match(
+    /^(?<book>.+?)\s+(?<chapter>\d+)(?::(?<verseStart>\d+)(?:-(?<verseEnd>\d+))?|-(?<chapterEnd>\d+))?$/,
+  );
   if (!chapterMatch?.groups) {
     return {
       book: rawReference,
@@ -1185,8 +1284,12 @@ function parsePassageReference(reference) {
   }
 
   const chapter = Number(chapterMatch.groups.chapter);
-  const verseStart = chapterMatch.groups.verseStart ? Number(chapterMatch.groups.verseStart) : null;
-  const verseEnd = chapterMatch.groups.verseEnd ? Number(chapterMatch.groups.verseEnd) : verseStart;
+  const verseStart = chapterMatch.groups.verseStart
+    ? Number(chapterMatch.groups.verseStart)
+    : null;
+  const verseEnd = chapterMatch.groups.verseEnd
+    ? Number(chapterMatch.groups.verseEnd)
+    : verseStart;
 
   return {
     book: chapterMatch.groups.book.trim(),
@@ -1202,7 +1305,12 @@ async function openPassageReference(reference) {
   if (!parsed) {
     return false;
   }
-  await navigateToPassage(parsed.book, parsed.chapter, parsed.verseStart, parsed.verseEnd);
+  await navigateToPassage(
+    parsed.book,
+    parsed.chapter,
+    parsed.verseStart,
+    parsed.verseEnd,
+  );
   return true;
 }
 
@@ -1224,7 +1332,10 @@ function renderChapter(data) {
   translationBadge.className = "reader-translation-badge";
   translationBadge.dataset.translationSelectorTrigger = "true";
   translationBadge.textContent = abbreviation;
-  translationBadge.setAttribute("aria-label", `Translation: ${abbreviation}. Open translation selector.`);
+  translationBadge.setAttribute(
+    "aria-label",
+    `Translation: ${abbreviation}. Open translation selector.`,
+  );
   translationBadge.title = "Open translation selector";
 
   passageHeading.appendChild(heading);
@@ -1244,7 +1355,11 @@ function renderChapter(data) {
     number.className = "verse-number";
     number.dataset.verseSelect = "true";
     number.textContent = String(verse.verse);
-    number.setAttribute("aria-label", `Select ${data.book} ${data.chapter}:${verse.verse}`);
+    number.setAttribute(
+      "aria-label",
+      `Select ${data.book} ${data.chapter}:${verse.verse}`,
+    );
+    number.setAttribute("aria-pressed", "false");
 
     const actions = document.createElement("button");
     actions.type = "button";
@@ -1280,7 +1395,9 @@ function renderChapter(data) {
 }
 
 function currentTranslationAbbreviation() {
-  return currentChapter?.translation?.id || selectedTranslationId().toUpperCase();
+  return (
+    currentChapter?.translation?.id || selectedTranslationId().toUpperCase()
+  );
 }
 
 async function handleTranslationSelectorClick(event) {
@@ -1298,15 +1415,23 @@ async function openTranslationSelector(trigger) {
   dialog.hidden = false;
   document.body.classList.add("translation-selector-open");
   dialog.setAttribute("aria-busy", "true");
-  dialog.querySelector("[data-translation-selector-body]").innerHTML = `<p class="empty">Loading translations...</p>`;
+  dialog.querySelector("[data-translation-selector-body]").innerHTML =
+    `<p class="empty">Loading translations...</p>`;
   try {
-    translationCatalogState = await requestJson("/api/translations/catalog", {}, "Could not load translations.");
+    translationCatalogState = await requestJson(
+      "/api/translations/catalog",
+      {},
+      "Could not load translations.",
+    );
     renderTranslationSelector(translationCatalogState);
   } catch (error) {
-    dialog.querySelector("[data-translation-selector-body]").innerHTML = errorHtml(error.message || "Could not load translations.");
+    dialog.querySelector("[data-translation-selector-body]").innerHTML =
+      errorHtml(error.message || "Could not load translations.");
   } finally {
     dialog.removeAttribute("aria-busy");
-    const closeButton = dialog.querySelector("[data-close-translation-selector]");
+    const closeButton = dialog.querySelector(
+      "[data-close-translation-selector]",
+    );
     if (closeButton) {
       closeButton.focus();
     }
@@ -1334,7 +1459,10 @@ function ensureTranslationSelectorDialog() {
   `;
   dialog.addEventListener("click", (event) => {
     handleTranslationSelectorDialogClick(event);
-    if (event.target === dialog || event.target.closest("[data-close-translation-selector]")) {
+    if (
+      event.target === dialog ||
+      event.target.closest("[data-close-translation-selector]")
+    ) {
       closeTranslationSelector();
     }
   });
@@ -1362,9 +1490,12 @@ function renderTranslationSelector(state) {
   }
   const sections = translationCatalogWithLocalState(state).sections || {};
   body.innerHTML = "";
-  body.appendChild(renderTranslationSection("Installed", sections.installed || []));
+  body.appendChild(
+    renderTranslationSection("Installed", sections.installed || []),
+  );
   const actions = document.createElement("div");
-  actions.className = "translation-selector-entry-actions translation-import-actions";
+  actions.className =
+    "translation-selector-entry-actions translation-import-actions";
   const importer = document.createElement("button");
   importer.type = "button";
   importer.className = "secondary";
@@ -1398,7 +1529,10 @@ function translationCatalogWithLocalState(state) {
 
 function installedTranslationIds() {
   const ids = new Set(["asv"]);
-  if (translationCatalogState && Array.isArray(translationCatalogState.sections?.installed)) {
+  if (
+    translationCatalogState &&
+    Array.isArray(translationCatalogState.sections?.installed)
+  ) {
     for (const entry of translationCatalogState.sections.installed) {
       const id = String(entry.id || "").toLowerCase();
       if (id) {
@@ -1411,13 +1545,17 @@ function installedTranslationIds() {
 
 function selectedTranslationId() {
   const fallback = "asv";
-  const stored = String(readLocalStorageValue(BHF_TRANSLATION_STORAGE_KEY) || fallback).toLowerCase();
+  const stored = String(
+    readLocalStorageValue(BHF_TRANSLATION_STORAGE_KEY) || fallback,
+  ).toLowerCase();
   return installedTranslationIds().has(stored) ? stored : fallback;
 }
 
 function setSelectedTranslationId(id) {
   const normalized = String(id || "asv").toLowerCase();
-  const selected = installedTranslationIds().has(normalized) ? normalized : "asv";
+  const selected = installedTranslationIds().has(normalized)
+    ? normalized
+    : "asv";
   writeLocalStorageValue(BHF_TRANSLATION_STORAGE_KEY, selected);
   syncTranslationSelect(selected);
 }
@@ -1428,12 +1566,14 @@ async function persistReaderDefaultTranslation(id) {
     "/api/settings/reader",
     {
       method: "PUT",
-      headers: { "Accept": "application/json", "Content-Type": "application/json" },
-      body: JSON.stringify({ default_translation: normalized }),
+      headers: {Accept: "application/json", "Content-Type": "application/json"},
+      body: JSON.stringify({default_translation: normalized}),
     },
-    "Could not update default translation."
+    "Could not update default translation.",
   );
-  const persisted = String(payload.default_translation || normalized).toLowerCase();
+  const persisted = String(
+    payload.default_translation || normalized,
+  ).toLowerCase();
   updateTranslationCatalogDefault(persisted);
   setSelectedTranslationId(persisted);
   return persisted;
@@ -1492,7 +1632,11 @@ async function handleTranslationSelectorDialogClick(event) {
   if (download) {
     await downloadTranslationFromGithub(download.dataset.translationDownload);
     await persistReaderDefaultTranslation(download.dataset.translationDownload);
-    translationCatalogState = await requestJson("/api/translations/installed", {}, "Could not load translations.");
+    translationCatalogState = await requestJson(
+      "/api/translations/installed",
+      {},
+      "Could not load translations.",
+    );
     renderTranslationSelector(translationCatalogState);
     closeTranslationSelector();
     await reloadCurrentReaderChapter();
@@ -1505,7 +1649,9 @@ async function handleTranslationSelectorDialogClick(event) {
     return;
   }
   if (makeDefault) {
-    await persistReaderDefaultTranslation(makeDefault.dataset.translationMakeDefault);
+    await persistReaderDefaultTranslation(
+      makeDefault.dataset.translationMakeDefault,
+    );
     renderTranslationSelector(translationCatalogState);
     closeTranslationSelector();
     await reloadCurrentReaderChapter();
@@ -1518,7 +1664,11 @@ async function handleTranslationSelectorDialogClick(event) {
   }
   if (remove) {
     await removeInstalledTranslation(remove.dataset.translationRemove);
-    translationCatalogState = await requestJson("/api/translations/installed", {}, "Could not load translations.");
+    translationCatalogState = await requestJson(
+      "/api/translations/installed",
+      {},
+      "Could not load translations.",
+    );
     renderTranslationSelector(translationCatalogState);
     await reloadCurrentReaderChapter();
   }
@@ -1541,9 +1691,9 @@ async function removeInstalledTranslation(id) {
     `/api/translations/${encodeURIComponent(normalized)}`,
     {
       method: "DELETE",
-      headers: { "Accept": "application/json" },
+      headers: {Accept: "application/json"},
     },
-    "Could not remove translation."
+    "Could not remove translation.",
   );
   const selectedBeforeRemoval = selectedTranslationId();
   if (selectedBeforeRemoval === normalized) {
@@ -1565,12 +1715,16 @@ async function downloadTranslationFromGithub(id) {
     `/api/translations/${encodeURIComponent(normalized)}/install`,
     {
       method: "POST",
-      headers: { "Accept": "application/json" },
+      headers: {Accept: "application/json"},
     },
-    "Could not download translation."
+    "Could not download translation.",
   );
   persistTranslationDownloadMetadata(normalized, metadata);
-  translationCatalogState = await requestJson("/api/translations/installed", {}, "Could not load translations.");
+  translationCatalogState = await requestJson(
+    "/api/translations/installed",
+    {},
+    "Could not load translations.",
+  );
   installTranslation(normalized);
   return metadata;
 }
@@ -1578,12 +1732,17 @@ async function downloadTranslationFromGithub(id) {
 function persistTranslationDownloadMetadata(id, metadata) {
   let stored = {};
   try {
-    stored = JSON.parse(readLocalStorageValue(BHF_TRANSLATION_DOWNLOAD_METADATA_KEY) || "{}");
+    stored = JSON.parse(
+      readLocalStorageValue(BHF_TRANSLATION_DOWNLOAD_METADATA_KEY) || "{}",
+    );
   } catch {
     stored = {};
   }
   stored[String(id || "").toLowerCase()] = metadata;
-  writeLocalStorageValue(BHF_TRANSLATION_DOWNLOAD_METADATA_KEY, JSON.stringify(stored));
+  writeLocalStorageValue(
+    BHF_TRANSLATION_DOWNLOAD_METADATA_KEY,
+    JSON.stringify(stored),
+  );
 }
 
 function syncTranslationSelect(translationId = selectedTranslationId()) {
@@ -1600,8 +1759,12 @@ function syncTranslationSelectOptions() {
     return;
   }
   const state = translationCatalogState || {};
-  const translations = Array.isArray(state.translations) ? state.translations : [];
-  const selectedId = String(translationSelect.value || selectedTranslationId() || "asv").toLowerCase();
+  const translations = Array.isArray(state.translations)
+    ? state.translations
+    : [];
+  const selectedId = String(
+    translationSelect.value || selectedTranslationId() || "asv",
+  ).toLowerCase();
   translationSelect.replaceChildren();
   for (const entry of translations) {
     const id = String(entry.id || "").toLowerCase();
@@ -1610,11 +1773,18 @@ function syncTranslationSelectOptions() {
     }
     const option = document.createElement("option");
     option.value = id;
-    option.textContent = translationSelectOptionLabel(id, installedTranslationIds(), entry);
+    option.textContent = translationSelectOptionLabel(
+      id,
+      installedTranslationIds(),
+      entry,
+    );
     translationSelect.appendChild(option);
   }
 
-  translationSelect.value = translations.some((entry) => entry.installed && String(entry.id || "").toLowerCase() === selectedId)
+  translationSelect.value = translations.some(
+    (entry) =>
+      entry.installed && String(entry.id || "").toLowerCase() === selectedId,
+  )
     ? selectedId
     : selectedTranslationId();
   if (!translationSelect.options.length) {
@@ -1626,7 +1796,11 @@ function syncTranslationSelectOptions() {
   }
 }
 
-function translationSelectOptionLabel(translationId, installedIds = installedTranslationIds(), entry = null) {
+function translationSelectOptionLabel(
+  translationId,
+  installedIds = installedTranslationIds(),
+  entry = null,
+) {
   const normalized = String(translationId || "").toLowerCase();
   const resolved = entry || translationCatalogEntry(normalized);
   const abbreviation = resolved?.abbreviation || normalized.toUpperCase();
@@ -1642,13 +1816,16 @@ async function importTranslationXml() {
   if (!translationName) {
     throw new Error("Enter a translation name.");
   }
-  const file = fileInput?.files && fileInput.files.length ? fileInput.files[0] : null;
+  const file =
+    fileInput?.files && fileInput.files.length ? fileInput.files[0] : null;
   if (!file) {
     throw new Error("Choose an XML file to import.");
   }
   const normalized = translationIdFromName(translationName);
   if (!normalized) {
-    throw new Error("Use at least two letters or numbers in the translation name.");
+    throw new Error(
+      "Use at least two letters or numbers in the translation name.",
+    );
   }
   const formData = new FormData();
   formData.set("confirmed", "true");
@@ -1659,11 +1836,15 @@ async function importTranslationXml() {
     {
       method: "POST",
       body: formData,
-      headers: { "Accept": "application/json" },
+      headers: {Accept: "application/json"},
     },
-    "Could not import translation XML."
+    "Could not import translation XML.",
   );
-  translationCatalogState = await requestJson("/api/translations/installed", {}, "Could not load translations.");
+  translationCatalogState = await requestJson(
+    "/api/translations/installed",
+    {},
+    "Could not load translations.",
+  );
   installImportedTranslation(normalized);
   await persistReaderDefaultTranslation(normalized);
   return result;
@@ -1671,7 +1852,11 @@ async function importTranslationXml() {
 
 async function openTranslationImportDialog() {
   if (!translationCatalogState) {
-    translationCatalogState = await requestJson("/api/translations/installed", {}, "Could not load translations.");
+    translationCatalogState = await requestJson(
+      "/api/translations/installed",
+      {},
+      "Could not load translations.",
+    );
   }
   const dialog = ensureTranslationImportDialog();
   renderTranslationImportDialogDetails();
@@ -1725,7 +1910,10 @@ function ensureTranslationImportDialog() {
     </form>
   `;
   dialog.addEventListener("click", (event) => {
-    if (event.target === dialog || event.target.closest("[data-close-translation-import]")) {
+    if (
+      event.target === dialog ||
+      event.target.closest("[data-close-translation-import]")
+    ) {
       closeTranslationImportDialog();
     }
   });
@@ -1757,7 +1945,8 @@ function renderTranslationImportDialogDetails() {
   details.innerHTML = "";
   const notice = document.createElement("p");
   notice.className = "translation-license-explanation";
-  notice.textContent = "This import stays local to this BHF instance. BHF does not provide, distribute, upload, or verify the file.";
+  notice.textContent =
+    "This import stays local to this BHF instance. BHF does not provide, distribute, upload, or verify the file.";
   details.appendChild(notice);
 }
 
@@ -1772,7 +1961,9 @@ function translationIdFromName(name) {
 
 function translationCatalogEntry(translationId) {
   const id = String(translationId || "").toLowerCase();
-  const catalog = Array.isArray(translationCatalogState?.catalog) ? translationCatalogState.catalog : [];
+  const catalog = Array.isArray(translationCatalogState?.catalog)
+    ? translationCatalogState.catalog
+    : [];
   return catalog.find((entry) => String(entry.id || "").toLowerCase() === id);
 }
 
@@ -1792,7 +1983,10 @@ async function submitTranslationImportForm(event) {
   } catch (error) {
     const details = form.querySelector("[data-translation-import-details]");
     if (details) {
-      details.insertAdjacentHTML("afterbegin", errorHtml(error.message || "Could not import translation XML."));
+      details.insertAdjacentHTML(
+        "afterbegin",
+        errorHtml(error.message || "Could not import translation XML."),
+      );
     }
   } finally {
     submit.disabled = false;
@@ -1866,7 +2060,10 @@ function renderTranslationEntry(entry) {
 
   const controls = document.createElement("div");
   controls.className = "translation-selector-entry-actions";
-  if (entry.install_mode === "licensed_provider" || entry.availability === "license_required") {
+  if (
+    entry.install_mode === "licensed_provider" ||
+    entry.availability === "license_required"
+  ) {
     const lock = document.createElement("span");
     lock.className = "translation-license-indicator";
     lock.textContent = "License required";
@@ -1887,7 +2084,8 @@ function renderTranslationEntry(entry) {
     download.className = "secondary";
     download.dataset.translationDownload = entry.id;
     download.textContent = "Install for offline use";
-    download.title = "Download this approved third-party source for offline reading.";
+    download.title =
+      "Download this approved third-party source for offline reading.";
     controls.appendChild(download);
   } else if (entry.can_select) {
     const select = document.createElement("button");
@@ -1954,11 +2152,24 @@ function handleReaderActionButtonClick(event) {
 
   if (verseSelect) {
     const verseNumber = Number(verse.dataset.verse);
-    const context = event.shiftKey && currentSelection
-      ? contextFromVerseRange(currentSelection.startVerse, verseNumber)
-      : contextFromVerse(verse);
+    const isSelectedSingleVerse =
+      !event.shiftKey &&
+      currentSelection &&
+      Number(currentSelection.startVerse) === verseNumber &&
+      Number(currentSelection.endVerse || currentSelection.startVerse) ===
+        verseNumber;
+
+    clearDocumentSelection();
+    if (isSelectedSingleVerse) {
+      clearReaderSelection();
+      return;
+    }
+
+    const context =
+      event.shiftKey && currentSelection
+        ? contextFromVerseRange(currentSelection.startVerse, verseNumber)
+        : contextFromVerse(verse);
     if (context) {
-      clearDocumentSelection();
       applySelectionContext(context);
     }
     return;
@@ -2010,17 +2221,21 @@ function collectSelectedVerseText(startVerse, endVerse) {
       const number = Number(verse.dataset.verse);
       return startVerse <= number && number <= endVerse;
     })
-    .map((verse) => verse.querySelector(".verse-text")?.textContent.trim() || "")
+    .map(
+      (verse) => verse.querySelector(".verse-text")?.textContent.trim() || "",
+    )
     .join(" ")
     .trim();
 }
 
 function scrollToVerse(verseNumber) {
-  const verse = document.querySelector(`#chapter-reader [data-verse="${String(verseNumber)}"]`);
+  const verse = document.querySelector(
+    `#chapter-reader [data-verse="${String(verseNumber)}"]`,
+  );
   if (!verse) {
     return;
   }
-  verse.scrollIntoView({ behavior: "smooth", block: "center" });
+  verse.scrollIntoView({behavior: "smooth", block: "center"});
 }
 
 function handleReaderContextMenu(event) {
@@ -2071,12 +2286,18 @@ function handleReaderPointerDown(event) {
 }
 
 function handleReaderPointerMove(event) {
-  if (!readerLongPressState || event.pointerId !== readerLongPressState.pointerId) {
+  if (
+    !readerLongPressState ||
+    event.pointerId !== readerLongPressState.pointerId
+  ) {
     return;
   }
   const deltaX = Math.abs(event.clientX - readerLongPressState.startX);
   const deltaY = Math.abs(event.clientY - readerLongPressState.startY);
-  if (deltaX > READER_LONG_PRESS_MOVE_THRESHOLD_PX || deltaY > READER_LONG_PRESS_MOVE_THRESHOLD_PX) {
+  if (
+    deltaX > READER_LONG_PRESS_MOVE_THRESHOLD_PX ||
+    deltaY > READER_LONG_PRESS_MOVE_THRESHOLD_PX
+  ) {
     cancelReaderLongPress();
     return;
   }
@@ -2085,7 +2306,10 @@ function handleReaderPointerMove(event) {
 }
 
 function handleReaderPointerLeave(event) {
-  if (!readerLongPressState || event.pointerId !== readerLongPressState.pointerId) {
+  if (
+    !readerLongPressState ||
+    event.pointerId !== readerLongPressState.pointerId
+  ) {
     return;
   }
   cancelReaderLongPress();
@@ -2103,7 +2327,11 @@ function triggerReaderLongPress() {
   readerLongPressState.triggered = true;
   suppressHighlightedVerseTapUntil = Date.now() + 800;
   contextMenuState = context;
-  showContextMenu(readerLongPressState.clientX, readerLongPressState.clientY, context);
+  showContextMenu(
+    readerLongPressState.clientX,
+    readerLongPressState.clientY,
+    context,
+  );
   if (window.navigator?.vibrate) {
     window.navigator.vibrate(10);
   }
@@ -2122,15 +2350,21 @@ function cancelReaderLongPress() {
 function selectionContextFromDocument() {
   const selection = window.getSelection();
   const reader = document.querySelector("#chapter-reader");
-  if (!selection || !reader || selection.rangeCount === 0 || selection.isCollapsed) {
+  if (
+    !selection ||
+    !reader ||
+    selection.rangeCount === 0 ||
+    selection.isCollapsed
+  ) {
     return null;
   }
   const range = selection.getRangeAt(0);
   if (!reader.contains(range.commonAncestorContainer)) {
     return null;
   }
-  const selectedVerses = Array.from(reader.querySelectorAll("[data-verse]"))
-    .filter((verse) => range.intersectsNode(verse));
+  const selectedVerses = Array.from(
+    reader.querySelectorAll("[data-verse]"),
+  ).filter((verse) => range.intersectsNode(verse));
   if (selectedVerses.length === 0) {
     return null;
   }
@@ -2140,7 +2374,7 @@ function selectionContextFromDocument() {
     startVerse: Number(selectedVerses[0].dataset.verse),
     endVerse: Number(selectedVerses[selectedVerses.length - 1].dataset.verse),
     text: selection.toString().trim(),
-    isSelection: true
+    isSelection: true,
   };
 }
 
@@ -2155,7 +2389,7 @@ function contextFromVerse(verse) {
     startVerse: verseNumber,
     endVerse: verseNumber,
     text: verse.querySelector(".verse-text")?.textContent.trim() || "",
-    isSelection: false
+    isSelection: false,
   };
 }
 
@@ -2174,7 +2408,7 @@ function contextFromVerseRange(startVerse, endVerse) {
     startVerse: rangeStart,
     endVerse: rangeEnd,
     text: collectSelectedVerseText(rangeStart, rangeEnd),
-    isSelection: rangeStart !== rangeEnd
+    isSelection: rangeStart !== rangeEnd,
   };
 }
 
@@ -2194,7 +2428,10 @@ function contextIncludesVerse(context, verseNumber) {
   if (!context || !verseNumber) {
     return false;
   }
-  return Number(context.startVerse) <= verseNumber && verseNumber <= Number(context.endVerse || context.startVerse);
+  return (
+    Number(context.startVerse) <= verseNumber &&
+    verseNumber <= Number(context.endVerse || context.startVerse)
+  );
 }
 
 function showContextMenu(x, y, context) {
@@ -2205,17 +2442,38 @@ function showContextMenu(x, y, context) {
   const isSelection = Boolean(context.isSelection);
   const isHighlighted = isContextHighlighted(context);
   setContextLabel("ask_bhf", "Ask BHF");
-  setContextLabel("cultural_context", isSelection ? "Cultural Context" : "Cultural Context");
-  setContextLabel("literary_context", isSelection ? "Literary Context" : "Literary Context");
-  setContextLabel("cross_references", isSelection ? "Cross References" : "Cross References");
-  setContextLabel("related_ot_themes", isSelection ? "Related OT Themes" : "Related OT Themes");
+  setContextLabel(
+    "cultural_context",
+    isSelection ? "Cultural Context" : "Cultural Context",
+  );
+  setContextLabel(
+    "literary_context",
+    isSelection ? "Literary Context" : "Literary Context",
+  );
+  setContextLabel(
+    "cross_references",
+    isSelection ? "Cross References" : "Cross References",
+  );
+  setContextLabel(
+    "related_ot_themes",
+    isSelection ? "Related OT Themes" : "Related OT Themes",
+  );
   setContextLabel("people", isSelection ? "People" : "People");
   setContextLabel("places", isSelection ? "Places" : "Places");
   setContextLabel("themes", isSelection ? "Themes" : "Themes");
-  setContextLabel("fulfillment_nt", isSelection ? "Fulfillment in the NT" : "Fulfillment in the NT");
-  setContextLabel("compare_translations", isSelection ? "Compare Translations" : "Compare Translations");
+  setContextLabel(
+    "fulfillment_nt",
+    isSelection ? "Fulfillment in the NT" : "Fulfillment in the NT",
+  );
+  setContextLabel(
+    "compare_translations",
+    isSelection ? "Compare Translations" : "Compare Translations",
+  );
   setContextLabel("timeline", isSelection ? "Timeline" : "Timeline");
-  setContextLabel("ask_location", isSelection ? "Ask about this location" : "Ask about this location");
+  setContextLabel(
+    "ask_location",
+    isSelection ? "Ask about this location" : "Ask about this location",
+  );
   setContextLabel("open_map_panel", isSelection ? "Maps" : "Maps");
   setContextLabel("save_map_study", "Save map study");
   setContextLabel("map_note", "Add map note");
@@ -2224,14 +2482,21 @@ function showContextMenu(x, y, context) {
   setContextLabel("view_historical_layer", "View historical layer");
   setContextLabel("save_study", "Save Study");
   setContextLabel("note", isSelection ? "Add Note" : "Add Note");
-  setContextLabel("highlight", isHighlighted ? "Remove Highlight" : (isSelection ? "Highlight Selection" : "Highlight Verse"));
+  setContextLabel(
+    "highlight",
+    isHighlighted
+      ? "Remove Highlight"
+      : isSelection
+        ? "Highlight Selection"
+        : "Highlight Verse",
+  );
   resetContextSubmenus(menu);
-  contextMenuPosition = { x, y };
+  contextMenuPosition = {x, y};
   menu.hidden = false;
   positionContextMenu(menu, x, y);
   const firstButton = menu.querySelector("button");
   if (firstButton) {
-    firstButton.focus({ preventScroll: true });
+    firstButton.focus({preventScroll: true});
   }
 }
 
@@ -2253,7 +2518,9 @@ function positionContextMenu(menu, x, y) {
   let clampedLeft = Math.max(8, left);
   const clampedTop = Math.max(8, top);
   let opensLeft = false;
-  const rightFlyoutFits = clampedLeft + menuWidth + submenuGap + submenuWidth <= window.innerWidth - 8;
+  const rightFlyoutFits =
+    clampedLeft + menuWidth + submenuGap + submenuWidth <=
+    window.innerWidth - 8;
   const leftFlyoutFits = clampedLeft - submenuGap - submenuWidth >= 8;
   if (!rightFlyoutFits && leftFlyoutFits) {
     opensLeft = true;
@@ -2269,7 +2536,9 @@ function positionContextMenu(menu, x, y) {
   menu.classList.toggle("opens-left", opensLeft);
 }
 
-function resetContextSubmenus(menu = document.querySelector("#reader-context-menu")) {
+function resetContextSubmenus(
+  menu = document.querySelector("#reader-context-menu"),
+) {
   if (!menu) {
     return;
   }
@@ -2318,7 +2587,10 @@ async function handleContextMenuAction(event) {
   if (!button || !contextMenuState) {
     return;
   }
-  const actionType = resolveContextAction(button.dataset.contextAction, contextMenuState);
+  const actionType = resolveContextAction(
+    button.dataset.contextAction,
+    contextMenuState,
+  );
   const context = contextMenuState;
   hideContextMenu();
   await dispatchStudyAction(createStudyAction(actionType, context));
@@ -2332,7 +2604,8 @@ function resolveContextAction(actionType, context) {
 }
 
 function createStudyAction(type, context) {
-  const sourceTranslation = currentChapter?.translation?.id || selectedTranslationId().toUpperCase();
+  const sourceTranslation =
+    currentChapter?.translation?.id || selectedTranslationId().toUpperCase();
   return {
     type,
     book: context.book,
@@ -2346,7 +2619,8 @@ function createStudyAction(type, context) {
 }
 
 async function dispatchStudyAction(studyAction) {
-  studyAction.type = BHF_STUDY_ACTION_ALIASES[studyAction.type] || studyAction.type;
+  studyAction.type =
+    BHF_STUDY_ACTION_ALIASES[studyAction.type] || studyAction.type;
   if (studyAction.type === "ask_bhf") {
     applyStudyActionContext(studyAction);
     activateWorkspaceTab("ask");
@@ -2361,11 +2635,18 @@ async function dispatchStudyAction(studyAction) {
   } else if (BHF_STUDY_ACTIONS.has(studyAction.type)) {
     applyStudyActionContext(studyAction);
     activateWorkspaceTab("ask");
-    const askMode = studyAction.type === "ask_location" ? "maps" : studyAction.type;
+    const askMode =
+      studyAction.type === "ask_location" ? "maps" : studyAction.type;
     if (studyAction.type === "ask_location") {
-      setFormValue("question", "What does the geography of this passage suggest?");
+      setFormValue(
+        "question",
+        "What does the geography of this passage suggest?",
+      );
     } else if (studyAction.type === "related_passages") {
-      setFormValue("question", "What related passages should I review for this location?");
+      setFormValue(
+        "question",
+        "What related passages should I review for this location?",
+      );
     }
     setFormValue("ask_mode", askMode);
     setFormValue("study_action", studyAction.type);
@@ -2389,7 +2670,10 @@ async function dispatchStudyAction(studyAction) {
   } else if (studyAction.type === "save_map_study") {
     applyStudyActionContext(studyAction);
     activateWorkspaceTab("maps");
-    if (window.BHFMaps && typeof window.BHFMaps.saveCurrentMapStudy === "function") {
+    if (
+      window.BHFMaps &&
+      typeof window.BHFMaps.saveCurrentMapStudy === "function"
+    ) {
       await window.BHFMaps.saveCurrentMapStudy();
     } else {
       openMapPanel(studyAction);
@@ -2397,7 +2681,10 @@ async function dispatchStudyAction(studyAction) {
   } else if (studyAction.type === "map_note") {
     applyStudyActionContext(studyAction);
     activateWorkspaceTab("maps");
-    if (window.BHFMaps && typeof window.BHFMaps.focusMapNoteEditor === "function") {
+    if (
+      window.BHFMaps &&
+      typeof window.BHFMaps.focusMapNoteEditor === "function"
+    ) {
       window.BHFMaps.focusMapNoteEditor();
     } else {
       openMapPanel(studyAction);
@@ -2406,7 +2693,10 @@ async function dispatchStudyAction(studyAction) {
     applyStudyActionContext(studyAction);
     setFormValue("ask_mode", "maps");
     setFormValue("study_action", studyAction.type);
-    setFormValue("question", "What archaeology is connected with this passage or location?");
+    setFormValue(
+      "question",
+      "What archaeology is connected with this passage or location?",
+    );
     setMapContextValue(buildReaderMapContext(studyAction));
     submitAskForm();
   } else if (studyAction.type === "related_passages") {
@@ -2441,7 +2731,7 @@ function insertSelectedTextIntoAskQuestion(studyAction) {
     question.value = `${currentText}${separator}${selectedText}`;
   }
 
-  question.dispatchEvent(new Event("input", { bubbles: true }));
+  question.dispatchEvent(new Event("input", {bubbles: true}));
   question.focus();
   if (typeof question.setSelectionRange === "function") {
     const cursorPosition = question.value.length;
@@ -2456,7 +2746,9 @@ function applyStudyActionContext(studyAction) {
     startVerse: studyAction.verseStart,
     endVerse: studyAction.verseEnd,
     text: studyAction.selectedText,
-    isSelection: Boolean(studyAction.isSelection) || studyAction.verseStart !== studyAction.verseEnd
+    isSelection:
+      Boolean(studyAction.isSelection) ||
+      studyAction.verseStart !== studyAction.verseEnd,
   });
 }
 
@@ -2474,7 +2766,11 @@ async function requestDeterministicStudyAction(studyAction) {
   latestJobComplete = false;
   latestDeterministicStudyResult = null;
 
-  if (statusPanel && typeof resetStatus === "function" && typeof startWaiting === "function") {
+  if (
+    statusPanel &&
+    typeof resetStatus === "function" &&
+    typeof startWaiting === "function"
+  ) {
     resetStatus(statusPanel);
     startWaiting(statusPanel);
   }
@@ -2484,14 +2780,18 @@ async function requestDeterministicStudyAction(studyAction) {
   }
 
   try {
-    const result = await requestJson("/api/study/actions", {
-      method: "POST",
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
+    const result = await requestJson(
+      "/api/study/actions",
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(deterministicStudyPayload(studyAction)),
       },
-      body: JSON.stringify(deterministicStudyPayload(studyAction)),
-    }, "Could not load deterministic study result.");
+      "Could not load deterministic study result.",
+    );
     latestDeterministicStudyResult = result;
     if (answerPanel) {
       answerPanel.innerHTML = renderDeterministicStudyResult(result);
@@ -2501,7 +2801,10 @@ async function requestDeterministicStudyAction(studyAction) {
     }
     if (statusPanel && typeof markStatusComplete === "function") {
       markStatusComplete(statusPanel, {
-        message: result.status === "complete" ? "Deterministic result ready" : "Partial deterministic result ready",
+        message:
+          result.status === "complete"
+            ? "Deterministic result ready"
+            : "Partial deterministic result ready",
         percent_complete: 100,
       });
     }
@@ -2533,7 +2836,8 @@ function deterministicStudyPayload(studyAction) {
     verse_start: studyAction.verseStart,
     verse_end: studyAction.verseEnd,
     selected_text: studyAction.selectedText || "",
-    source_translation: studyAction.sourceTranslation || selectedTranslationId(),
+    source_translation:
+      studyAction.sourceTranslation || selectedTranslationId(),
     word_position: studyAction.wordPosition || "",
     surface_form: studyAction.surfaceForm || "",
     lemma: studyAction.lemma || "",
@@ -2554,7 +2858,9 @@ function renderDeterministicStudyResult(result) {
   const sectionHtml = sections.length
     ? sections.map(renderDeterministicSection).join("")
     : `<p class="empty">No deterministic Scripture or CKL facts were found for this action.</p>`;
-  const refs = Array.isArray(result.references) ? result.references.filter(Boolean) : [];
+  const refs = Array.isArray(result.references)
+    ? result.references.filter(Boolean)
+    : [];
   const refsHtml = refs.length
     ? `<section><h3>References</h3><ul>${refs.map((ref) => `<li>${escapeHtml(ref)}</li>`).join("")}</ul></section>`
     : "";
@@ -2582,15 +2888,18 @@ function renderWordStudyResult(result) {
   const status = String(result.status || study.status || "unknown");
   const source = String(result.source || "ckl_sqlite");
   const confidence = Number(result.confidence || study.confidence || 0);
-  const refs = Array.isArray(result.references) ? result.references.filter(Boolean) : [];
+  const refs = Array.isArray(result.references)
+    ? result.references.filter(Boolean)
+    : [];
   const refsHtml = refs.length
     ? `<section><h3>References</h3><ul>${refs.map((ref) => `<li>${escapeHtml(ref)}</li>`).join("")}</ul></section>`
     : "";
-  const bodyHtml = study.status === "ambiguous"
-    ? renderWordStudyAmbiguity(study)
-    : study.status === "complete"
-      ? renderWordStudyComplete(study)
-      : renderWordStudyUnavailable(study);
+  const bodyHtml =
+    study.status === "ambiguous"
+      ? renderWordStudyAmbiguity(study)
+      : study.status === "complete"
+        ? renderWordStudyComplete(study)
+        : renderWordStudyUnavailable(study);
   return `
     <article class="answer deterministic-study-result word-study-result" data-deterministic-study-result>
       <header class="answer-header">
@@ -2618,18 +2927,28 @@ function renderWordStudyComplete(study) {
     ["Strong's", study.strongs_number],
     ["Morphology", wordStudyMorphologySummary(study)],
   ].filter(([, value]) => value);
-  const range = Array.isArray(study.lexical_range) ? study.lexical_range.filter(Boolean).slice(0, 8) : [];
-  const context = Array.isArray(study.contextual_information) ? study.contextual_information.filter(Boolean) : [];
-  const sources = Array.isArray(study.sources) ? study.sources.filter(Boolean) : [];
+  const range = Array.isArray(study.lexical_range)
+    ? study.lexical_range.filter(Boolean).slice(0, 8)
+    : [];
+  const context = Array.isArray(study.contextual_information)
+    ? study.contextual_information.filter(Boolean)
+    : [];
+  const sources = Array.isArray(study.sources)
+    ? study.sources.filter(Boolean)
+    : [];
   return `
     <section class="word-study-reader">
       <div class="word-study-facts">
-        ${facts.map(([label, value]) => `
+        ${facts
+          .map(
+            ([label, value]) => `
           <div class="word-study-fact">
             <span>${escapeHtml(label)}</span>
             <strong>${escapeHtml(value)}</strong>
           </div>
-        `).join("")}
+        `,
+          )
+          .join("")}
       </div>
       ${range.length ? `<section><h3>Meaning Range</h3><ul>${range.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section>` : ""}
       ${context.length ? `<section><h3>Contextual Information</h3><ul>${context.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section>` : ""}
@@ -2640,26 +2959,34 @@ function renderWordStudyComplete(study) {
 }
 
 function renderWordStudyAmbiguity(study) {
-  const ambiguities = Array.isArray(study.ambiguities) ? study.ambiguities.filter(Boolean) : [];
+  const ambiguities = Array.isArray(study.ambiguities)
+    ? study.ambiguities.filter(Boolean)
+    : [];
   return `
     <section class="word-study-reader">
       <h3>${escapeHtml(study.message || "Multiple possible original-language words found.")}</h3>
       <ol class="word-study-choice-list">
-        ${ambiguities.map((word) => `
+        ${ambiguities
+          .map(
+            (word) => `
           <li>
             <button type="button" class="word-study-choice" data-word-study-position="${escapeHtml(word.position || "")}" data-word-study-language="${escapeHtml(word.language || "")}" data-word-study-surface="${escapeHtml(word.surface_form || "")}" data-word-study-lemma="${escapeHtml(word.lemma || "")}" data-word-study-strongs="${escapeHtml(word.strongs_number || "")}">
               <strong>${escapeHtml(word.surface_form || word.lemma || "word")}</strong>
               <span>${escapeHtml([word.gloss, word.lemma, word.strongs_number, word.position ? `position ${word.position}` : ""].filter(Boolean).join(" - "))}</span>
             </button>
           </li>
-        `).join("")}
+        `,
+          )
+          .join("")}
       </ol>
     </section>
   `;
 }
 
 function renderWordStudyUnavailable(study) {
-  const guardrails = Array.isArray(study.guardrails) ? study.guardrails.filter(Boolean) : [];
+  const guardrails = Array.isArray(study.guardrails)
+    ? study.guardrails.filter(Boolean)
+    : [];
   return `
     <section class="word-study-reader">
       <p class="empty">${escapeHtml(study.message || "No deterministic lexical data was found for this word study.")}</p>
@@ -2673,10 +3000,18 @@ function renderWordStudyUnavailable(study) {
 
 function renderWordStudyScholar(study) {
   const morphologyRows = keyValueRows(study.morphology || {});
-  const entries = Array.isArray(study.lexical_entries) ? study.lexical_entries.filter(Boolean) : [];
-  const senses = entries.flatMap((entry) => (entry.senses || []).map((sense) => ({ ...sense, entry })));
-  const occurrences = Array.isArray(study.representative_occurrences) ? study.representative_occurrences.filter(Boolean) : [];
-  const sources = Array.isArray(study.sources) ? study.sources.filter(Boolean) : [];
+  const entries = Array.isArray(study.lexical_entries)
+    ? study.lexical_entries.filter(Boolean)
+    : [];
+  const senses = entries.flatMap((entry) =>
+    (entry.senses || []).map((sense) => ({...sense, entry})),
+  );
+  const occurrences = Array.isArray(study.representative_occurrences)
+    ? study.representative_occurrences.filter(Boolean)
+    : [];
+  const sources = Array.isArray(study.sources)
+    ? study.sources.filter(Boolean)
+    : [];
   return `
     <details class="word-study-scholar">
       <summary>Scholar View</summary>
@@ -2692,49 +3027,85 @@ function renderWordStudyScholar(study) {
 
 function wordStudyMorphologySummary(study) {
   const morphology = study.morphology || {};
-  const keys = ["part_of_speech", "stem", "conjugation", "tense", "voice", "mood", "person", "gender", "number", "case", "state"];
+  const keys = [
+    "part_of_speech",
+    "stem",
+    "conjugation",
+    "tense",
+    "voice",
+    "mood",
+    "person",
+    "gender",
+    "number",
+    "case",
+    "state",
+  ];
   const parts = keys.map((key) => morphology[key]).filter(Boolean);
   return parts.length ? parts.join(", ") : study.morphology_code || "";
 }
 
 function keyValueRows(value) {
   return Object.entries(value || {})
-    .filter(([, item]) => item !== null && item !== undefined && String(item).trim())
+    .filter(
+      ([, item]) => item !== null && item !== undefined && String(item).trim(),
+    )
     .map(([key, item]) => [key.replace(/_/g, " "), String(item)]);
 }
 
 function renderKeyValueTable(rows) {
   return `
     <dl class="word-study-key-values">
-      ${rows.map(([key, value]) => `
+      ${rows
+        .map(
+          ([key, value]) => `
         <div>
           <dt>${escapeHtml(key)}</dt>
           <dd>${escapeHtml(value)}</dd>
         </div>
-      `).join("")}
+      `,
+        )
+        .join("")}
     </dl>
   `;
 }
 
 function wordStudySourceLabel(source) {
-  return [source.name, source.license].filter(Boolean).join(" - ") || "Lexical source";
+  return (
+    [source.name, source.license].filter(Boolean).join(" - ") ||
+    "Lexical source"
+  );
 }
 
 function wordStudyDatasetLabel(source) {
-  return [source.name, source.revision, source.license, source.attribution].filter(Boolean).join(" - ");
+  return [source.name, source.revision, source.license, source.attribution]
+    .filter(Boolean)
+    .join(" - ");
 }
 
 function wordStudySenseLabel(sense) {
-  return [sense.gloss, sense.definition, sense.semantic_domain].filter(Boolean).join(" - ");
+  return [sense.gloss, sense.definition, sense.semantic_domain]
+    .filter(Boolean)
+    .join(" - ");
 }
 
 function wordStudyOccurrenceLabel(word) {
-  const reference = word.reference || [word.book, word.chapter && word.verse ? `${word.chapter}:${word.verse}` : ""].filter(Boolean).join(" ");
-  return [reference, word.surface_form, word.morphology_code].filter(Boolean).join(" - ");
+  const reference =
+    word.reference ||
+    [
+      word.book,
+      word.chapter && word.verse ? `${word.chapter}:${word.verse}` : "",
+    ]
+      .filter(Boolean)
+      .join(" ");
+  return [reference, word.surface_form, word.morphology_code]
+    .filter(Boolean)
+    .join(" - ");
 }
 
 function renderDeterministicSection(section) {
-  const items = Array.isArray(section.items) ? section.items.filter(Boolean) : [];
+  const items = Array.isArray(section.items)
+    ? section.items.filter(Boolean)
+    : [];
   if (!items.length) {
     return "";
   }
@@ -2748,45 +3119,56 @@ function renderDeterministicSection(section) {
 
 function wireDeterministicStudyControls(answerPanel, result, studyAction) {
   wireWordStudyChoiceControls(answerPanel, studyAction);
-  answerPanel.querySelector("[data-deterministic-explain]")?.addEventListener("click", () => {
-    const packet = result.fact_packet || compactDeterministicResult(result);
-    setFormValue("deterministic_fact_packet", JSON.stringify(packet));
-    setFormValue("ask_mode", "");
-    setFormValue("study_action", result.action || studyAction.type);
-    setFormValue("question", `Explain ${result.title || "this deterministic study result"} using BHF.`);
-    submitAskForm();
-  });
-  answerPanel.querySelector("[data-deterministic-ask]")?.addEventListener("click", () => {
-    setFormValue("deterministic_fact_packet", "");
-    const question = document.querySelector('.ask-form [name="question"]');
-    if (question) {
-      question.value = "";
-      question.focus();
-    }
-  });
-  answerPanel.querySelector("[data-deterministic-save]")?.addEventListener("click", async () => {
-    await saveDeterministicStudy(result, studyAction);
-  });
+  answerPanel
+    .querySelector("[data-deterministic-explain]")
+    ?.addEventListener("click", () => {
+      const packet = result.fact_packet || compactDeterministicResult(result);
+      setFormValue("deterministic_fact_packet", JSON.stringify(packet));
+      setFormValue("ask_mode", "");
+      setFormValue("study_action", result.action || studyAction.type);
+      setFormValue(
+        "question",
+        `Explain ${result.title || "this deterministic study result"} using BHF.`,
+      );
+      submitAskForm();
+    });
+  answerPanel
+    .querySelector("[data-deterministic-ask]")
+    ?.addEventListener("click", () => {
+      setFormValue("deterministic_fact_packet", "");
+      const question = document.querySelector('.ask-form [name="question"]');
+      if (question) {
+        question.value = "";
+        question.focus();
+      }
+    });
+  answerPanel
+    .querySelector("[data-deterministic-save]")
+    ?.addEventListener("click", async () => {
+      await saveDeterministicStudy(result, studyAction);
+    });
 }
 
 function wireWordStudyChoiceControls(answerPanel, studyAction) {
-  answerPanel.querySelectorAll("[data-word-study-position]").forEach((button) => {
-    button.addEventListener("click", async () => {
-      const wordPosition = Number(button.dataset.wordStudyPosition || "0");
-      if (!wordPosition) {
-        return;
-      }
-      await requestDeterministicStudyAction({
-        ...studyAction,
-        type: "word_study",
-        wordPosition,
-        language: button.dataset.wordStudyLanguage || "",
-        surfaceForm: button.dataset.wordStudySurface || "",
-        lemma: button.dataset.wordStudyLemma || "",
-        strongsNumber: button.dataset.wordStudyStrongs || "",
+  answerPanel
+    .querySelectorAll("[data-word-study-position]")
+    .forEach((button) => {
+      button.addEventListener("click", async () => {
+        const wordPosition = Number(button.dataset.wordStudyPosition || "0");
+        if (!wordPosition) {
+          return;
+        }
+        await requestDeterministicStudyAction({
+          ...studyAction,
+          type: "word_study",
+          wordPosition,
+          language: button.dataset.wordStudyLanguage || "",
+          surfaceForm: button.dataset.wordStudySurface || "",
+          lemma: button.dataset.wordStudyLemma || "",
+          strongsNumber: button.dataset.wordStudyStrongs || "",
+        });
       });
     });
-  });
 }
 
 function compactDeterministicResult(result) {
@@ -2805,7 +3187,8 @@ function compactDeterministicResult(result) {
     metadata: {
       reference: result.metadata?.reference,
       object_ids: (result.metadata?.object_ids || []).slice(0, 12),
-      word_study_prompt_context: result.metadata?.word_study_prompt_context || "",
+      word_study_prompt_context:
+        result.metadata?.word_study_prompt_context || "",
     },
   };
 }
@@ -2823,14 +3206,18 @@ async function saveDeterministicStudy(result, studyAction) {
     answer: deterministicStudyMarkdown(result),
     canonical_object_ids: result.metadata?.object_ids || [],
   };
-  await requestJson("/api/saved-studies", {
-    method: "POST",
-    headers: {
-      "Accept": "application/json",
-      "Content-Type": "application/json",
+  await requestJson(
+    "/api/saved-studies",
+    {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
     },
-    body: JSON.stringify(payload),
-  }, "Could not save deterministic study.");
+    "Could not save deterministic study.",
+  );
   await loadSavedStudies(currentChapter?.book, currentChapter?.chapter);
 }
 
@@ -2860,7 +3247,7 @@ function submitAskForm() {
   if (typeof form.requestSubmit === "function") {
     form.requestSubmit();
   } else {
-    form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+    form.dispatchEvent(new Event("submit", {bubbles: true, cancelable: true}));
   }
 }
 
@@ -2890,7 +3277,7 @@ function requestMapAIFallback(mapContext = {}, options = {}) {
   setFormValue(
     "question",
     options.question ||
-      `The local curated map dataset has no direct match for ${reference}. Give a cautious text-only geography explanation, identify any explicit or implied locations or regions, and clearly label uncertainty.`
+      `The local curated map dataset has no direct match for ${reference}. Give a cautious text-only geography explanation, identify any explicit or implied locations or regions, and clearly label uncertainty.`,
   );
   setFormValue("ask_mode", "maps");
   setFormValue("study_action", "ask_location");
@@ -2923,7 +3310,12 @@ function closeContextMenuOnEscape(event) {
 
 function keepContextMenuVisibleOnReaderScroll(event) {
   const menu = document.querySelector("#reader-context-menu");
-  if (!menu || menu.hidden || menu.contains(event.target) || !contextMenuPosition) {
+  if (
+    !menu ||
+    menu.hidden ||
+    menu.contains(event.target) ||
+    !contextMenuPosition
+  ) {
     return;
   }
   positionContextMenu(menu, contextMenuPosition.x, contextMenuPosition.y);
@@ -2965,9 +3357,12 @@ function applySelectionContext(context) {
   });
   reader.querySelectorAll("[data-verse]").forEach((verse) => {
     const verseNumber = Number(verse.dataset.verse);
-    if (context.startVerse <= verseNumber && verseNumber <= context.endVerse) {
-      verse.classList.add("selected");
-    }
+    const isSelected =
+      context.startVerse <= verseNumber && verseNumber <= context.endVerse;
+    verse.classList.toggle("selected", isSelected);
+    verse
+      .querySelector("[data-verse-select]")
+      ?.setAttribute("aria-pressed", String(isSelected));
   });
   syncAskFields();
 }
@@ -2975,8 +3370,11 @@ function applySelectionContext(context) {
 function clearReaderSelection() {
   const reader = document.querySelector("#chapter-reader");
   if (reader) {
-    reader.querySelectorAll(".verse.selected").forEach((verse) => {
+    reader.querySelectorAll("[data-verse]").forEach((verse) => {
       verse.classList.remove("selected");
+      verse
+        .querySelector("[data-verse-select]")
+        ?.setAttribute("aria-pressed", "false");
     });
   }
   currentSelection = null;
@@ -2992,8 +3390,16 @@ function isContextHighlighted(context) {
   if (!startVerse || !endVerse) {
     return false;
   }
-  for (let verseNumber = startVerse; verseNumber <= endVerse; verseNumber += 1) {
-    if (!currentHighlights.some((highlight) => highlightContainsVerse(highlight, verseNumber))) {
+  for (
+    let verseNumber = startVerse;
+    verseNumber <= endVerse;
+    verseNumber += 1
+  ) {
+    if (
+      !currentHighlights.some((highlight) =>
+        highlightContainsVerse(highlight, verseNumber),
+      )
+    ) {
       return false;
     }
   }
@@ -3009,26 +3415,37 @@ function highlightsForContext(context) {
   if (!startVerse || !endVerse) {
     return [];
   }
-  return currentHighlights.filter((highlight) => rangesOverlap(
-    startVerse,
-    endVerse,
-    Number(highlight.start_verse),
-    Number(highlight.end_verse || highlight.start_verse)
-  ));
+  return currentHighlights.filter((highlight) =>
+    rangesOverlap(
+      startVerse,
+      endVerse,
+      Number(highlight.start_verse),
+      Number(highlight.end_verse || highlight.start_verse),
+    ),
+  );
 }
 
 function notesForVerse(verseNumber) {
-  return currentNotes.filter((note) => highlightContainsVerse(note, verseNumber));
+  return currentNotes.filter((note) =>
+    highlightContainsVerse(note, verseNumber),
+  );
 }
 
 function highlightsForVerse(verseNumber) {
-  return currentHighlights.filter((highlight) => highlightContainsVerse(highlight, verseNumber));
+  return currentHighlights.filter((highlight) =>
+    highlightContainsVerse(highlight, verseNumber),
+  );
 }
 
 function highlightContainsVerse(record, verseNumber) {
   const startVerse = Number(record.start_verse || record.verseStart || 0);
   const endVerse = Number(record.end_verse || record.verseEnd || startVerse);
-  return Boolean(startVerse && endVerse && startVerse <= verseNumber && verseNumber <= endVerse);
+  return Boolean(
+    startVerse &&
+    endVerse &&
+    startVerse <= verseNumber &&
+    verseNumber <= endVerse,
+  );
 }
 
 function rangesOverlap(startA, endA, startB, endB) {
@@ -3048,7 +3465,13 @@ function applyVerseStateIndicatorsToReader() {
     }
     const notes = notesForVerse(verseNumber);
     const highlights = highlightsForVerse(verseNumber);
-    const highlightColors = Array.from(new Set(highlights.map((highlight) => String(highlight.color || "").trim()).filter(Boolean)));
+    const highlightColors = Array.from(
+      new Set(
+        highlights
+          .map((highlight) => String(highlight.color || "").trim())
+          .filter(Boolean),
+      ),
+    );
 
     verse.classList.toggle("has-notes", notes.length > 0);
     verse.classList.toggle("has-highlights", highlightColors.length > 0);
@@ -3058,10 +3481,13 @@ function applyVerseStateIndicatorsToReader() {
     if (notes.length > 0) {
       const noteIndicator = document.createElement("span");
       noteIndicator.className = "verse-state-indicator verse-state-note";
-      noteIndicator.title = notes.length === 1 ? "Has note" : `Has ${notes.length} notes`;
+      noteIndicator.title =
+        notes.length === 1 ? "Has note" : `Has ${notes.length} notes`;
       noteIndicator.textContent = "N";
       noteIndicator.setAttribute("aria-hidden", "true");
-      indicatorLabels.push(notes.length === 1 ? "Has note" : `Has ${notes.length} notes`);
+      indicatorLabels.push(
+        notes.length === 1 ? "Has note" : `Has ${notes.length} notes`,
+      );
       indicatorContainer.appendChild(noteIndicator);
     }
 
@@ -3090,9 +3516,18 @@ function syncAskFields() {
   }
   setFormValue("reader_book", currentChapter.book);
   setFormValue("reader_chapter", currentChapter.chapter);
-  setFormValue("reader_start_verse", currentSelection ? currentSelection.startVerse : "");
-  setFormValue("reader_end_verse", currentSelection ? currentSelection.endVerse : "");
-  setFormValue("reader_selected_text", currentSelection ? currentSelection.text : "");
+  setFormValue(
+    "reader_start_verse",
+    currentSelection ? currentSelection.startVerse : "",
+  );
+  setFormValue(
+    "reader_end_verse",
+    currentSelection ? currentSelection.endVerse : "",
+  );
+  setFormValue(
+    "reader_selected_text",
+    currentSelection ? currentSelection.text : "",
+  );
   setFormValue("reader_translation", selectedTranslationId());
 
   const summary = document.querySelector("#selection-summary");
@@ -3102,9 +3537,12 @@ function syncAskFields() {
       currentChapter.book,
       currentChapter.chapter,
       currentSelection.startVerse,
-      currentSelection.endVerse
+      currentSelection.endVerse,
     );
-    const translationLabel = translationSelectOptionLabel(selectedTranslationId(), installedTranslationIds());
+    const translationLabel = translationSelectOptionLabel(
+      selectedTranslationId(),
+      installedTranslationIds(),
+    );
     if (summary) {
       summary.textContent = `Selected ${translationLabel} ${reference}`;
     }
@@ -3126,19 +3564,29 @@ function updateChapterNavigationState() {
   const chapterSelect = document.querySelector("[data-reader-chapter]");
   const nextButtons = document.querySelectorAll("[data-next-chapter]");
   const prevButtons = document.querySelectorAll("[data-prev-chapter]");
-  if (!bookSelect || !chapterSelect || (nextButtons.length === 0 && prevButtons.length === 0)) {
+  if (
+    !bookSelect ||
+    !chapterSelect ||
+    (nextButtons.length === 0 && prevButtons.length === 0)
+  ) {
     return;
   }
   const selectedBook = bookSelect.selectedOptions[0] || bookSelect.options[0];
-  const chapterCount = Number(selectedBook?.dataset.chapters || chapterSelect.options.length || 0);
+  const chapterCount = Number(
+    selectedBook?.dataset.chapters || chapterSelect.options.length || 0,
+  );
   const currentChapterNumber = Number(chapterSelect.value || "0");
-  const available = Boolean(chapterCount && currentChapterNumber && currentChapterNumber < chapterCount);
+  const available = Boolean(
+    chapterCount && currentChapterNumber && currentChapterNumber < chapterCount,
+  );
   const canGoBack = Boolean(currentChapterNumber && currentChapterNumber > 1);
   nextButtons.forEach((button) => {
     button.disabled = !available;
     button.setAttribute(
       "aria-label",
-      available ? `Go to chapter ${currentChapterNumber + 1}` : "No next chapter available"
+      available
+        ? `Go to chapter ${currentChapterNumber + 1}`
+        : "No next chapter available",
     );
     button.title = available ? "Next chapter" : "No next chapter available";
   });
@@ -3146,9 +3594,13 @@ function updateChapterNavigationState() {
     button.disabled = !canGoBack;
     button.setAttribute(
       "aria-label",
-      canGoBack ? `Go to chapter ${currentChapterNumber - 1}` : "No previous chapter available"
+      canGoBack
+        ? `Go to chapter ${currentChapterNumber - 1}`
+        : "No previous chapter available",
     );
-    button.title = canGoBack ? "Previous chapter" : "No previous chapter available";
+    button.title = canGoBack
+      ? "Previous chapter"
+      : "No previous chapter available";
   });
 }
 
@@ -3176,7 +3628,12 @@ function buildReaderMapContext(studyAction) {
     verse_start: studyAction.verseStart,
     verse_end: studyAction.verseEnd,
     selected_text: studyAction.selectedText || "",
-    source_translation: studyAction.sourceTranslation || translationSelectOptionLabel(selectedTranslationId(), installedTranslationIds()),
+    source_translation:
+      studyAction.sourceTranslation ||
+      translationSelectOptionLabel(
+        selectedTranslationId(),
+        installedTranslationIds(),
+      ),
     note: "Structured map context from the reader selection. A more specific place will be supplied after the map resolves curated data.",
   };
 }
@@ -3192,19 +3649,29 @@ function openMapPanel(context) {
   }
   syncMapWorkspaceEmptyState();
   if (window.BHFMaps && typeof window.BHFMaps.openMapPanel === "function") {
-    const hasPassageContext = Boolean(context && (context.book || context.chapter || context.savedMapStudy));
-    window.BHFMaps.openMapPanel(hasPassageContext ? context : { mode: "browse" });
+    const hasPassageContext = Boolean(
+      context && (context.book || context.chapter || context.savedMapStudy),
+    );
+    window.BHFMaps.openMapPanel(hasPassageContext ? context : {mode: "browse"});
     return;
   }
-  const hasPassageContext = Boolean(context && (context.book || context.chapter || context.savedMapStudy));
-  window.BHFPendingMapPanelContext = hasPassageContext ? context : { mode: "browse" };
+  const hasPassageContext = Boolean(
+    context && (context.book || context.chapter || context.savedMapStudy),
+  );
+  window.BHFPendingMapPanelContext = hasPassageContext
+    ? context
+    : {mode: "browse"};
 }
 
 async function pollJob(form, statusPanel, jobId) {
   while (true) {
-    const status = await requestJson(form.dataset.statusBase + jobId, {
-      headers: { "Accept": "application/json" }
-    }, "Could not read request status.");
+    const status = await requestJson(
+      form.dataset.statusBase + jobId,
+      {
+        headers: {Accept: "application/json"},
+      },
+      "Could not read request status.",
+    );
 
     renderStatus(statusPanel, status);
     if (status.done) {
