@@ -1360,6 +1360,9 @@ function renderChapter(data) {
       `Select ${data.book} ${data.chapter}:${verse.verse}`,
     );
     number.setAttribute("aria-pressed", "false");
+    number.addEventListener("click", (event) => {
+      handleVerseSelectionClick(event, verseSpan);
+    });
 
     const actions = document.createElement("button");
     actions.type = "button";
@@ -2136,6 +2139,48 @@ function createChapterNavButton(direction, label) {
   return button;
 }
 
+function handleVerseSelectionClick(event, verse) {
+  if (!verse || !currentChapter) {
+    return;
+  }
+
+  event.preventDefault();
+  event.stopPropagation();
+
+  const verseNumber = Number(verse.dataset.verse || "0");
+  if (!verseNumber) {
+    return;
+  }
+
+  clearDocumentSelection();
+
+  if (event.shiftKey && currentSelection) {
+    const context = contextFromVerseRange(
+      currentSelection.startVerse,
+      verseNumber,
+    );
+    if (context) {
+      applySelectionContext(context);
+    }
+    return;
+  }
+
+  const selectedStart = Number(currentSelection?.startVerse || "0");
+  const selectedEnd = Number(
+    currentSelection?.endVerse || currentSelection?.startVerse || "0",
+  );
+
+  if (selectedStart === verseNumber && selectedEnd === verseNumber) {
+    clearReaderSelection();
+    return;
+  }
+
+  const context = contextFromVerse(verse);
+  if (context) {
+    applySelectionContext(context);
+  }
+}
+
 function handleReaderActionButtonClick(event) {
   const button = event.target.closest("[data-verse-actions]");
   const verseSelect = event.target.closest("[data-verse-select]");
@@ -2151,27 +2196,7 @@ function handleReaderActionButtonClick(event) {
   event.stopPropagation();
 
   if (verseSelect) {
-    const verseNumber = Number(verse.dataset.verse);
-    const isSelectedSingleVerse =
-      !event.shiftKey &&
-      currentSelection &&
-      Number(currentSelection.startVerse) === verseNumber &&
-      Number(currentSelection.endVerse || currentSelection.startVerse) ===
-        verseNumber;
-
-    clearDocumentSelection();
-    if (isSelectedSingleVerse) {
-      clearReaderSelection();
-      return;
-    }
-
-    const context =
-      event.shiftKey && currentSelection
-        ? contextFromVerseRange(currentSelection.startVerse, verseNumber)
-        : contextFromVerse(verse);
-    if (context) {
-      applySelectionContext(context);
-    }
+    handleVerseSelectionClick(event, verse);
     return;
   }
 
@@ -3348,35 +3373,58 @@ function updateSelectionFromDocument() {
 
 function applySelectionContext(context) {
   const reader = document.querySelector("#chapter-reader");
-  if (!reader) {
+  if (!reader || !context) {
     return;
   }
+
   currentSelection = context;
-  reader.querySelectorAll(".verse.selected").forEach((verse) => {
-    verse.classList.remove("selected");
-  });
+
   reader.querySelectorAll("[data-verse]").forEach((verse) => {
-    const verseNumber = Number(verse.dataset.verse);
-    const isSelected =
-      context.startVerse <= verseNumber && verseNumber <= context.endVerse;
-    verse.classList.toggle("selected", isSelected);
-    verse
-      .querySelector("[data-verse-select]")
-      ?.setAttribute("aria-pressed", String(isSelected));
+    const verseNumber = Number(verse.dataset.verse || "0");
+    const selected =
+      Number(context.startVerse) <= verseNumber &&
+      verseNumber <= Number(context.endVerse || context.startVerse);
+
+    verse.classList.toggle("selected", selected);
+
+    const verseButton = verse.querySelector("[data-verse-select]");
+    if (verseButton) {
+      verseButton.setAttribute("aria-pressed", String(selected));
+      verseButton.setAttribute(
+        "aria-label",
+        selected
+          ? `Deselect ${currentChapter.book} ${currentChapter.chapter}:${verseNumber}`
+          : `Select ${currentChapter.book} ${currentChapter.chapter}:${verseNumber}`,
+      );
+    }
   });
+
   syncAskFields();
 }
 
 function clearReaderSelection() {
   const reader = document.querySelector("#chapter-reader");
+
   if (reader) {
     reader.querySelectorAll("[data-verse]").forEach((verse) => {
       verse.classList.remove("selected");
-      verse
-        .querySelector("[data-verse-select]")
-        ?.setAttribute("aria-pressed", "false");
+
+      const verseNumber = Number(verse.dataset.verse || "0");
+      const verseButton = verse.querySelector("[data-verse-select]");
+
+      if (verseButton) {
+        verseButton.setAttribute("aria-pressed", "false");
+
+        if (currentChapter) {
+          verseButton.setAttribute(
+            "aria-label",
+            `Select ${currentChapter.book} ${currentChapter.chapter}:${verseNumber}`,
+          );
+        }
+      }
     });
   }
+
   currentSelection = null;
   syncAskFields();
 }
