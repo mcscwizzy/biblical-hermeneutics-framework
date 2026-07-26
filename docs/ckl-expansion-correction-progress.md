@@ -6,18 +6,18 @@ This is the durable handoff for the **BHF Canonical Knowledge Library Expansion
 and Correction Plan**. The supplied plan explicitly says to begin with the
 repository audit and Phase 1 quality reporting, avoid immediate bulk content
 generation, and stop after each major phase. Phases 1–4 are now implemented at
-the schema/runtime level. Phase 5 Waves 1–31 have corrected Genesis through
-Matthew as honest, source-backed drafts; none has been mechanically approved.
+the schema/runtime level. Phase 5 Waves 1–32 have corrected Genesis through
+Mark as honest, source-backed drafts; none has been mechanically approved.
 
 ## Current checkpoint
 
 | Plan area | Status | Continuation note |
 | --- | --- | --- |
 | Phase 1: inventory, reporting, quality metrics | **Implemented** | Deep JSON and Markdown reports, CLI support, and calculation tests are present. |
-| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Thirty-nine records now have evidence-based draft statuses; 581 still need explicit migration. |
-| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Thirty-nine records now have explicit layers; 581 still need migration. |
+| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Forty records now have evidence-based draft statuses; 580 still need explicit migration. |
+| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Forty records now have explicit layers; 580 still need migration. |
 | Phase 4: certainty and dispute taxonomies | **Implemented; evidence migration pending** | Current taxonomies and granular claim records are supported. Legacy values remain readable but are forbidden for approved notes; no `unknown` value was guessed or mass-relabeled. |
-| Phase 5: audit/correct all 66 books | **Waves 1–31 implemented; human review pending** | Genesis through Matthew are corrected drafts with sources, claims, tests, and reviewer notes. Twenty-seven books remain. |
+| Phase 5: audit/correct all 66 books | **Waves 1–32 implemented; human review pending** | Genesis through Mark are corrected drafts with sources, claims, tests, and reviewer notes. Twenty-six books remain. |
 | Phases 6–20 | Not started | Follow the supplied order after the foundation is upgraded. |
 | Phase 21: controlled generation workflow | Partially enabled | Reporting, type-specific completeness, and approval gates are present; scoped human-review events still need Phase 19. |
 
@@ -801,6 +801,31 @@ After Phase 5 Wave 31, the refreshed report records:
 
 All thirty-nine corrected books remain incomplete because their human-review
 sections are still `missing`. The remaining 581 records still rely on
+section/layer migration defaults.
+
+After Phase 5 Wave 32, the refreshed report records:
+
+| Migration metric | Result |
+| --- | ---: |
+| Records marked `complete` / `draft` | 580 / 40 |
+| Complete records with candidate Phase 2 section gaps | 579 |
+| Raw records missing explicit `section_status` | 580 |
+| Raw records with incomplete type-required sections | 620 |
+| Raw records missing explicit `knowledge_layers` | 580 |
+| Interpretive notes using current taxonomies | 1,012 |
+| Interpretive notes still using legacy taxonomies | 1,238 |
+| Granular claims authored | 651 |
+| External sources | 859 |
+| Source references that do not resolve | 0 |
+| Invalid source support targets | 0 |
+| Unresolved legacy object references | 14 |
+| Scripture reference errors | 0 |
+| Graph edges / unknown targets / orphaned records | 3,247 / 0 / 0 |
+| Missing reciprocal relationship suggestions | 2,805 |
+| Validator warnings / errors | 14 / 0 |
+
+All forty corrected books remain incomplete because their human-review
+sections are still `missing`. The remaining 580 records still rely on
 section/layer migration defaults.
 
 Near-duplicate and template findings are triage signals rather than automatic
@@ -3134,6 +3159,49 @@ python3 -m framework.canonical_library verify-db \
 # 40,280,064 bytes
 ```
 
+Completed after Phase 5 Wave 32:
+
+```text
+python3 tools/ckl_validate.py \
+  --path framework/canonical_library/objects/books/mark.json
+# 1 valid object, 0 warnings, 0 errors
+
+python3 -m unittest \
+  tests.canonical_library.test_mark_record \
+  tests.canonical_library.test_ckl_retrieval_service \
+  tests.canonical_library.test_schema \
+  tests.canonical_library.test_quality_report
+# 78 tests in 22.778s: OK
+
+python3 -m unittest \
+  tests.canonical_library.test_mark_record \
+  tests.canonical_library.test_malachi_record \
+  tests.canonical_library.test_matthew_record \
+  tests.canonical_library.test_ckl_retrieval_service
+# 35 tests in 54.709s: OK
+
+python3 -m unittest tests/canonical_library/test_*.py
+# 444 tests in 505.600s: OK
+
+python3 tools/ckl_validate.py --root framework/canonical_library
+# 620 files, 620 valid objects, 14 coalesced migration warnings, 0 errors
+
+python3 tools/ckl_graph_audit.py --root framework/canonical_library --limit 10
+# 620 objects, 3,247 edges, 0 unknown targets, 0 orphaned objects
+# 2,805 missing reciprocal suggestions remain as migration debt
+
+python3 -m framework.canonical_library build-db \
+  --root framework/canonical_library \
+  --output /private/tmp/bhf-phase5-wave32-mark-final.sqlite
+
+python3 -m framework.canonical_library verify-db \
+  --root framework/canonical_library \
+  --database /private/tmp/bhf-phase5-wave32-mark-final.sqlite
+# 620 objects; database schema 2; inventory fingerprint
+# 26ab61e0b783a0d00fb9f053c7e63c8d2f15aa60f41714781905005561e98262
+# 40,898,560 bytes
+```
+
 ## Recommended next wave
 
 Perform the human review checklists in
@@ -3197,11 +3265,13 @@ and
 and
 [`ckl-phase-5-malachi-review.md`](ckl-phase-5-malachi-review.md)
 and
-[`ckl-phase-5-matthew-review.md`](ckl-phase-5-matthew-review.md).
+[`ckl-phase-5-matthew-review.md`](ckl-phase-5-matthew-review.md)
+and
+[`ckl-phase-5-mark-review.md`](ckl-phase-5-mark-review.md).
 Do not mark any corrected record complete merely because its automated checks
 pass.
 
-Wave 31 Matthew is complete. The completed Malachi and Matthew scopes are
+Wave 32 Mark is complete. The completed Malachi, Matthew, and Mark scopes are
 retained below for audit:
 
 1. create book-specific factual regression fixtures before editing content;
@@ -3643,7 +3713,7 @@ Wave 31 Matthew completed the following controlled correction scope:
 17. produce a reviewer-facing report; and
 18. refresh this handoff and both generated quality reports.
 
-Active next wave: continue Phase 5 with this controlled Mark correction wave:
+Wave 32 Mark completed the following controlled correction scope:
 
 1. create book-specific factual regression fixtures before editing content;
 2. audit every populated field against Mark rather than inheriting Gospels and
@@ -3829,6 +3899,108 @@ Wave 27 Zephaniah completed the following controlled correction scope:
 17. produce a reviewer-facing report; and
 18. refresh this handoff and both generated quality reports.
 
-The active continuation target is Phase 5 Wave 32, Mark. Follow the controlled
-Mark scope above; do not reopen completed Matthew, Malachi, or Zechariah work
-except to address a concrete review or regression finding.
+Active next wave: continue Phase 5 with this controlled Luke correction wave:
+
+1. create book-specific factual regression fixtures before editing content;
+2. audit every populated field against Luke, removing Paul as a narrated key
+   person, duplicated resurrection events, generic inherited prose,
+   overconfident physician/companion claims, and unsupported completion
+   metadata;
+3. gather critical Greek-text anchors, Hebrew Bible and Septuagint comparanda,
+   P45 and P75, Sinaiticus, Vaticanus, Bezae and other manuscript evidence,
+   archaeology, and independent sources before drafting claims;
+4. distinguish narrator, implied author and Theophilus; embedded Scripture and
+   divine voices; angels; Zechariah, Elizabeth, Mary, Joseph, shepherds,
+   Simeon, Anna, John the Baptist, Jesus, Spirit, Satan, disciples and Twelve,
+   Peter, James and John, women followers, Mary and Martha, Joanna, Susanna,
+   children, poor and wealthy people, petitioners, disabled and sick people,
+   people described through spirits, Samaritans, tax collectors and sinners,
+   Pharisees, scribes and lawyers, synagogue and temple figures, Herod
+   Antipas, Judas, high-priestly leaders, Pilate, soldiers, criminals,
+   centurion, Joseph of Arimathea, women at the tomb, Cleopas and the Emmaus
+   companion, and later interpreters;
+5. map Luke 1:1–4; 1:5–2:52; 3:1–4:13; 4:14–9:50; 9:51–19:27;
+   19:28–21:38; 22:1–23:56; and 24:1–53 while indexing the paired infancy
+   narratives, songs, genealogy, Nazareth program, Galilean ministry, travel
+   narrative, meals, prayers, parables, Jerusalem and temple movement,
+   passion, resurrection appearances, ascension, speakers, audiences,
+   geographic turns, repetitions, reversals, Synoptic parallels, Lukan
+   special material, seams, and Luke-Acts links;
+6. qualify the work’s internal anonymity, later Luke attribution, possible
+   relation to the Pauline companion traditions, literary unity and
+   differences between Luke and Acts, use of Mark and other oral or written
+   sources, common dates around 70–100 CE and alternatives, proposed
+   locations, Theophilus and broader audiences, Jewish and Gentile hearers,
+   temple destruction, Roman imperial rule, economy, households, patronage,
+   slavery, illness, disability, crucifixion, burial, resurrection, and
+   ascension without inventing one author, profession, city, audience, date,
+   or community crisis;
+7. distinguish ancient preface, historiographic claim, Gospel and ancient
+   biography, annunciation, birth and childhood story, hymn, genealogy,
+   proclamation, temptation, synagogue scene, call, healing, exorcism,
+   controversy, pronouncement, beatitude and woe, prayer, meal, aphorism,
+   legal interpretation, parable, miracle, travel narrative, prophetic sign,
+   apocalyptic discourse, anointing, covenant meal, passion, hearing, trial,
+   lament, mockery, death, burial, empty-tomb, recognition, appearance,
+   commissioning, and ascension narrative;
+8. address fulfillment, salvation, Spirit, prayer, joy, reversal, poor and
+   wealthy people, women and men, meals, hospitality, mercy, forgiveness,
+   repentance, faith, discipleship, journey, Jerusalem, temple, Israel and
+   nations, Samaritans and outsiders, kingdom, Son of God, Son of Man,
+   Messiah, prophet, Lord, servant, friend, benefactor critique, possessions,
+   almsgiving, justice, human agency, cross, resurrection, witness, promise,
+   ascension, and Luke-Acts continuity;
+9. preserve uncertainty concerning the prologue’s predecessors, sources and
+   “order”; infancy chronology, Herod, Quirinius, census, Bethlehem, Nazareth,
+   historical plausibility, angelic speech, conception, Magnificat speaker
+   and text, songs, purification, Simeon, Anna, child Jesus, genealogy,
+   baptismal voice, Nazareth placement, Isaiah 61, Jubilee, Elijah-Elisha
+   patterns, beatitudes and woes, poor, enemies, judgment, centurions,
+   women’s roles, sinful woman, Samaritans, travel geography, Martha and Mary,
+   Lord’s Prayer, kingdom, exorcism, unforgivable sin, sign of Jonah, rich
+   fool, narrow door, lament, divorce, prodigal, unjust steward, rich man and
+   Lazarus, ten lepers, widow and judge, Pharisee and tax collector,
+   Zacchaeus, minas, entry, temple, tribute, resurrection, widow, Luke 21,
+   covenant meal, swords, Gethsemane, hearings, Herod and Pilate, Barabbas,
+   passion responsibility, “Father forgive,” repentant criminal, darkness,
+   curtain, centurion, women, burial, tomb, Emmaus, physicality, commission,
+   and ascension;
+10. address major textual variants, especially Luke 2:14; 3:22; 4:4; 9:55–56;
+    22:19b–20; 22:43–44; 23:17; 23:34a; 24:3, 6, 12, 36, 40, and 51–52;
+    Old Latin, Syriac, Coptic and other versions; Marcion’s Gospel and later
+    reception; Second Temple texts, Josephus and Greco-Roman comparanda;
+    archaeology; Genesis through Malachi; Matthew, Mark, John, Acts, Paul,
+    Hebrews, James, 1 Peter, Revelation; and early Jewish and Christian,
+    patristic, liturgical, artistic, christological, sacramental, ecclesial,
+    liberationist, Black, womanist, feminist, postcolonial,
+    Jewish-Christian-dialogical, disability-aware, trauma-aware, ecological,
+    economic, and political reception;
+11. distinguish historical claim, narrated event, narrator comment, character
+    speech, song, parable, metaphor, legal interpretation, quotation,
+    Septuagint wording, textual variant, Synoptic parallel, shared tradition,
+    redaction, Luke-Acts comparison, canonical trajectory, doctrine,
+    typology, ecclesial or liberationist application, reception, and modern
+    analogy;
+12. add safeguards against antisemitism, supersessionism, deicide and
+    collective Jewish blame, portraying Pharisees, lawyers, priests, temple,
+    Torah or Judaism as uniquely legalistic, anti-Samaritan stereotyping,
+    anti-Roman or anti-Italian racism, anti-Palestinian or anti-Arab mapping,
+    nationalism, empire, colonial mission, coercive conversion, religious
+    violence, clerical authority, family and child harm, purity and
+    disability stigma, demonizing mental illness, dangerous exorcism,
+    misogyny, sexual shaming, divorce stigma, anti-LGBTQ coercion, poverty
+    romanticization, prosperity teaching, coerced almsgiving, worker and
+    slave exploitation, victim blame, trauma and cross glorification,
+    apocalypse fear and date-setting, conspiracy theories, ecological harm,
+    partisan capture, and modern territorial claims;
+13. populate only applicable hermeneutical and retrieval sections;
+14. use current certainty and dispute labels only where evidence justifies
+    them;
+15. keep section statuses honest and leave human review missing;
+16. run schema, graph, golden retrieval, factual, and SQLite parity tests;
+17. produce a reviewer-facing report; and
+18. refresh this handoff and both generated quality reports.
+
+The active continuation target is Phase 5 Wave 33, Luke. Follow the controlled
+Luke scope above; do not reopen completed Mark, Matthew, or Malachi work except
+to address a concrete review or regression finding.

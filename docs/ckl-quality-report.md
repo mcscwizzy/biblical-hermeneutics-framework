@@ -12,15 +12,15 @@ Root: `/Users/johnwalker/Documents/github/biblical-hermeneutic-framework/framewo
 
 ## Depth averages
 
-- Summary length (characters): 121.78
-- Scripture references per object: 5.68
-- External sources per object: 1.34
-- Relationships per object: 5.22
+- Summary length (characters): 122.33
+- Scripture references per object: 5.72
+- External sources per object: 1.39
+- Relationships per object: 5.24
 
 ## Graph and references
 
 - Dangling relationship IDs: 0
-- Missing reciprocal relationships: 2797
+- Missing reciprocal relationships: 2805
 - Orphaned objects: 0
 - Unresolved legacy object references: 14
 - Scripture reference format/range errors: 0
@@ -29,15 +29,15 @@ Root: `/Users/johnwalker/Documents/github/biblical-hermeneutic-framework/framewo
 ## Completeness and governance
 
 - Complete records with empty required fields: 0
-- Complete records with candidate Phase 2 section gaps: 580
-- Records missing section_status: 581
+- Complete records with candidate Phase 2 section gaps: 579
+- Records missing section_status: 580
 - Records with incomplete type-required sections: 620
-- Records missing knowledge_layers: 581
-- Interpretive notes using current taxonomies: 934
-- Interpretive notes still using legacy taxonomies: 1240
-- Granular claims: 610
-- Records with unknown certainty: 538
-- Records with unknown dispute status: 538
+- Records missing knowledge_layers: 580
+- Interpretive notes using current taxonomies: 1012
+- Interpretive notes still using legacy taxonomies: 1238
+- Granular claims: 651
+- Records with unknown certainty: 537
+- Records with unknown dispute status: 537
 - Records with no human reviewer: 619
 - Records requiring human review: 620
 
@@ -52,14 +52,14 @@ Root: `/Users/johnwalker/Documents/github/biblical-hermeneutic-framework/framewo
 
 ## Retrieval gaps
 
-- Objects without search terms: 574
+- Objects without search terms: 573
 - Objects without common questions: 0
 - Objects without canonical placement: 547
 
 ## Source integrity
 
 - Unresolved source IDs: 0
-- Sources supporting no field or claim: 2692
+- Sources supporting no field or claim: 2685
 - Invalid source support targets: 0
 - Internally self-cited records without external support: 431
 
@@ -70,11 +70,11 @@ Root: `/Users/johnwalker/Documents/github/biblical-hermeneutic-framework/framewo
 
 ### Unknown-certainty record samples
 
-aaron, abba, abel, abraham, acts, adam, adonai, adoption, adoption-theme, agape … (+528 more)
+aaron, abba, abel, abraham, acts, adam, adonai, adoption, adoption-theme, agape … (+527 more)
 
 ### Template-repetition record samples
 
-1-corinthians, 1-john, 1-peter, 1-thessalonians, 1-timothy, 2-corinthians, 2-john, 2-peter, 2-thessalonians, 2-timothy … (+15 more)
+1-corinthians, 1-john, 1-peter, 1-thessalonians, 1-timothy, 2-corinthians, 2-john, 2-peter, 2-thessalonians, 2-timothy … (+14 more)
 
 ### Internal-only source samples
 
