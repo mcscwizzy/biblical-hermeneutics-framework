@@ -6,18 +6,18 @@ This is the durable handoff for the **BHF Canonical Knowledge Library Expansion
 and Correction Plan**. The supplied plan explicitly says to begin with the
 repository audit and Phase 1 quality reporting, avoid immediate bulk content
 generation, and stop after each major phase. Phases 1–4 are now implemented at
-the schema/runtime level. Phase 5 Waves 1–35 have corrected Genesis through
-Acts as honest, source-backed drafts; none has been mechanically approved.
+the schema/runtime level. Phase 5 Waves 1–36 have corrected Genesis through
+Romans as honest, source-backed drafts; none has been mechanically approved.
 
 ## Current checkpoint
 
 | Plan area | Status | Continuation note |
 | --- | --- | --- |
 | Phase 1: inventory, reporting, quality metrics | **Implemented** | Deep JSON and Markdown reports, CLI support, and calculation tests are present. |
-| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Forty-three records now have evidence-based draft statuses; 577 still need explicit migration. |
-| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Forty-three records now have explicit layers; 577 still need migration. |
+| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Forty-four records now have evidence-based draft statuses; 576 still need explicit migration. |
+| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Forty-four records now have explicit layers; 576 still need migration. |
 | Phase 4: certainty and dispute taxonomies | **Implemented; evidence migration pending** | Current taxonomies and granular claim records are supported. Legacy values remain readable but are forbidden for approved notes; no `unknown` value was guessed or mass-relabeled. |
-| Phase 5: audit/correct all 66 books | **Waves 1–35 implemented; human review pending** | Genesis through Acts are corrected drafts with sources, claims, tests, and reviewer notes. Twenty-three books remain. |
+| Phase 5: audit/correct all 66 books | **Waves 1–36 implemented; human review pending** | Genesis through Romans are corrected drafts with sources, claims, tests, and reviewer notes. Twenty-two books remain. |
 | Phases 6–20 | Not started | Follow the supplied order after the foundation is upgraded. |
 | Phase 21: controlled generation workflow | Partially enabled | Reporting, type-specific completeness, and approval gates are present; scoped human-review events still need Phase 19. |
 
@@ -3387,6 +3387,62 @@ python3 -m framework.canonical_library verify-db \
 # 42,840,064 bytes
 ```
 
+Completed after Phase 5 Wave 36:
+
+```text
+python3 tools/ckl_validate.py \
+  --path framework/canonical_library/objects/books/romans.json
+# 1 valid object, 0 warnings, 0 errors
+
+python3 -m unittest \
+  tests.canonical_library.test_romans_record \
+  tests.canonical_library.test_ckl_retrieval_service \
+  tests.canonical_library.test_schema \
+  tests.canonical_library.test_quality_report
+# 78 tests in 31.555s: OK
+
+rg --files tests/canonical_library -g 'test_*.py' |
+  sort |
+  xargs -n 20 -P 3 python3 -m unittest
+# 168 + 154 + 154 = 476 tests: OK
+
+python3 tools/ckl_validate.py --root framework/canonical_library
+# 620 files, 620 valid objects, 14 coalesced migration warnings, 0 errors
+
+python3 tools/ckl_graph_audit.py --root framework/canonical_library --limit 10
+# 620 objects, 3,264 edges, 0 unknown targets, 0 orphaned objects
+# 2,818 missing reciprocal suggestions remain as migration debt
+
+python3 -m framework.canonical_library build-db \
+  --root framework/canonical_library \
+  --output /private/tmp/bhf-phase5-wave36-romans-final.sqlite
+
+python3 -m framework.canonical_library verify-db \
+  --root framework/canonical_library \
+  --database /private/tmp/bhf-phase5-wave36-romans-final.sqlite
+# 620 objects; database schema 2; inventory fingerprint
+# 7d8b96ada95ae5ca995d6c8337fb7275cf1edfdffa424bd7e9ac8b5d7a09560e
+# 43,405,312 bytes
+```
+
+The refreshed Wave 36 report records:
+
+| Migration metric | Result |
+| --- | ---: |
+| Records marked `complete` / `draft` | 576 / 44 |
+| Raw records missing explicit `section_status` | 576 |
+| Raw records with incomplete type-required sections | 620 |
+| Raw records missing explicit `knowledge_layers` | 576 |
+| Interpretive notes using current taxonomies | 1,326 |
+| Interpretive notes still using legacy taxonomies | 1,230 |
+| Granular claims authored | 830 |
+| External sources | 1,001 |
+| Source references that do not resolve | 0 |
+| Invalid source support targets | 0 |
+| Unresolved legacy object references | 14 |
+| Scripture reference errors | 0 |
+| Validator warnings / errors | 14 / 0 |
+
 ## Recommended next wave
 
 Perform the human review checklists in
@@ -3458,12 +3514,14 @@ and
 and
 [`ckl-phase-5-john-review.md`](ckl-phase-5-john-review.md)
 and
-[`ckl-phase-5-acts-review.md`](ckl-phase-5-acts-review.md).
+[`ckl-phase-5-acts-review.md`](ckl-phase-5-acts-review.md)
+and
+[`ckl-phase-5-romans-review.md`](ckl-phase-5-romans-review.md).
 Do not mark any corrected record complete merely because its automated checks
 pass.
 
-Wave 35 Acts is complete. The completed Matthew, Mark, Luke, John, and Acts scopes
-are retained below for audit:
+Wave 36 Romans is complete. The completed Matthew, Mark, Luke, John, Acts, and
+Romans scopes are retained below for audit:
 
 1. create book-specific factual regression fixtures before editing content;
 2. audit every populated field against the book it describes;
@@ -4385,8 +4443,7 @@ Wave 35 Acts completed the controlled scope above. The record remains an
 unapproved draft and its reviewer checklist is in
 [`ckl-phase-5-acts-review.md`](ckl-phase-5-acts-review.md).
 
-Active next wave: continue Phase 5 with this controlled Romans correction
-wave:
+Wave 36 completed this controlled Romans correction scope:
 
 1. create book-specific factual regression fixtures before editing content;
 2. audit every populated field against Romans, removing inherited epistle
@@ -4464,6 +4521,95 @@ wave:
     retrieval, factual and SQLite parity tests, produce a reviewer-facing
     report, and refresh this handoff and both generated quality reports.
 
-The active continuation target is Phase 5 Wave 36, Romans. Follow the
-controlled Romans scope above; do not reopen completed Acts, John, Luke, Mark,
-or Matthew work except to address a concrete review or regression finding.
+Wave 36 Romans completed the controlled scope above. The record remains an
+unapproved draft and its reviewer checklist is in
+[`ckl-phase-5-romans-review.md`](ckl-phase-5-romans-review.md).
+
+Active next wave: continue Phase 5 with this controlled 1 Corinthians
+correction wave:
+
+1. create book-specific factual regression fixtures before editing content;
+2. audit every populated field against 1 Corinthians, removing inherited
+   Pauline-letter templates, generic events, duplicated themes, unsupported
+   authorship or audience claims, false completion metadata, and the current
+   literary-context and original-audience migration warnings;
+3. gather the critical Greek text, Hebrew Bible and Septuagint comparanda,
+   P15, P46, P123, Sinaiticus, Vaticanus, Alexandrinus, Ephraemi,
+   Claromontanus, versions, inscriptions, Corinthian archaeology,
+   association, household, banquet, patronage, slavery, gender, body,
+   rhetoric, philosophy, cult, law, economics, and early-reception evidence
+   before drafting claims;
+4. distinguish Paul and Sosthenes as senders; Chloe's people; the household
+   of Stephanas; Crispus, Gaius, Fortunatus and Achaicus; Apollos, Cephas,
+   named scriptural figures, apostles and coworkers; the Corinthian
+   assemblies, factions and rhetorical interlocutors; women and men who pray
+   and prophesy; married, unmarried and widowed people; enslaved and free
+   people; patrons, workers, litigants, meal participants, poor and hungry
+   members, people with disabilities or illness, and later interpreters
+   without inventing one opponent or demographic;
+5. map 1 Corinthians 1:1-4:21; 5:1-6:20; 7:1-40; 8:1-11:1; 11:2-14:40;
+   15:1-58; and 16:1-24 while indexing prescript, thanksgiving, reports,
+   slogans, letter questions, faction rhetoric, cross and wisdom,
+   apostolic example, discipline, lawsuits, bodies, marriage and celibacy,
+   idol food, rights and renunciation, Israel examples, gendered head
+   language, communal meals, Lord's supper, gifts, love, prophecy, tongues,
+   resurrection argument, collection, travel, coworkers, greetings, warning,
+   and benediction;
+6. qualify Pauline authorship and Sosthenes's role, date commonly near 53-55
+   CE and alternatives, Ephesian provenance, chronology relative to earlier
+   correspondence and the painful visit, Corinth's Roman-colonial and Greek
+   setting, audience diversity, Chloe's report, the Corinthians' letter,
+   factions, rhetorical opponents, integrity, purpose, and relation to
+   2 Corinthians without inventing a complete correspondence, one church
+   building, one social class, or a single reconstructed crisis;
+7. distinguish Pauline letter, report response, question-and-answer,
+   diatribe, rhetorical question, slogan and possible quotation, scriptural
+   quotation and exemplum, irony, parody, apostolic self-presentation,
+   vice list, case judgment, analogy, household instruction, deliberative
+   counsel, apocalyptic warning, thanksgiving tradition, hymn or encomium,
+   gift list, resurrection proof, collection instruction, travel report,
+   commendation, greeting, anathema, and benediction;
+8. address cross, wisdom, power, boasting, division, apostleship, maturity,
+   temple, discipline, sex, bodies, lawsuits, slavery and freedom, marriage,
+   singleness, divorce, celibacy, calling and vocation, idol food,
+   conscience, apostolic rights, Israel, temptation, idolatry, table
+   fellowship, head language, veiling and hair, Lord's supper, class
+   inequality, body, gifts, love, tongues, prophecy, order, resurrection,
+   Adam and Messiah, victory over death, collection, work, hospitality, and
+   grace;
+9. preserve uncertainty concerning Corinthian factions and slogans; wisdom
+   and mystery; God's foolishness; the spiritual person; temple imagery;
+   the incest case and Satan; judging insiders; lawsuits; sex-worker
+   language and bodies; `malakoi` and `arsenokoitai`; marriage, divorce,
+   mixed marriages, slavery and vocation; virgins or betrothed people;
+   idol food, demons, conscience and weaker members; women's head coverings,
+   `kephale`, angels and nature; supper tradition; baptism for the dead;
+   spiritual gifts, tongues and prophecy; whether 13 is an interpolation;
+   women speaking in 14:34-35 and textual displacement; resurrection-body
+   language; Adam; the collection; and the closing anathema;
+10. distinguish historical claim, epistolary report, rhetorical
+    interlocutor, Corinthian slogan, scriptural voice, metaphor, analogy,
+    exemplum, tradition, possible interpolation, textual variant,
+    Pauline-letter comparison, canonical trajectory, doctrine, confessional
+    system, reception, pastoral application, and modern analogy;
+11. add safeguards against sectarianism, celebrity leadership, financial
+    extraction, authoritarian discipline, public shaming, sexual abuse,
+    incest mishandling, anti-LGBTQ coercion, misogyny, gender essentialism,
+    forced marriage or celibacy, divorce coercion, slavery apologetics,
+    worker exploitation, victim blame, body shame, disability and
+    mental-health stigma, medical neglect, food-allergy and addiction harm,
+    class humiliation at meals, eucharistic exclusion, dangerous exorcism,
+    coercive tongues or prophecy, spiritual-gift ranking, silencing women,
+    antisemitism, supersessionism, colonial mission, religious violence,
+    nationalism, conspiracy theories, partisan capture, prosperity teaching,
+    poverty romanticization, trauma glorification, and ecological neglect;
+12. populate only applicable hermeneutical and retrieval sections, use
+    current certainty and dispute labels only where evidence justifies them,
+    keep statuses honest with human review missing, run schema, graph, golden
+    retrieval, factual and SQLite parity tests, produce a reviewer-facing
+    report, and refresh this handoff and both generated quality reports.
+
+The active continuation target is Phase 5 Wave 37, 1 Corinthians. Follow the
+controlled 1 Corinthians scope above; do not reopen completed Romans, Acts,
+John, Luke, Mark, or Matthew work except to address a concrete review or
+regression finding.
