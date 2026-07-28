@@ -6,8 +6,8 @@ This is the durable handoff for the **BHF Canonical Knowledge Library Expansion
 and Correction Plan**. The supplied plan explicitly says to begin with the
 repository audit and Phase 1 quality reporting, avoid immediate bulk content
 generation, and stop after each major phase. Phases 1–4 are now implemented at
-the schema/runtime level. Phase 5 Waves 1–39 have corrected Genesis through
-Galatians as honest, source-backed drafts; none has been mechanically
+the schema/runtime level. Phase 5 Waves 1–40 have corrected Genesis through
+Ephesians as honest, source-backed drafts; none has been mechanically
 approved.
 
 ## Current checkpoint
@@ -15,10 +15,10 @@ approved.
 | Plan area | Status | Continuation note |
 | --- | --- | --- |
 | Phase 1: inventory, reporting, quality metrics | **Implemented** | Deep JSON and Markdown reports, CLI support, and calculation tests are present. |
-| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Forty-seven records now have evidence-based draft statuses; 573 still need explicit migration. |
-| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Forty-seven records now have explicit layers; 573 still need migration. |
+| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Forty-eight records now have evidence-based draft statuses; 572 still need explicit migration. |
+| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Forty-eight records now have explicit layers; 572 still need migration. |
 | Phase 4: certainty and dispute taxonomies | **Implemented; evidence migration pending** | Current taxonomies and granular claim records are supported. Legacy values remain readable but are forbidden for approved notes; no `unknown` value was guessed or mass-relabeled. |
-| Phase 5: audit/correct all 66 books | **Waves 1–39 implemented; human review pending** | Genesis through Galatians are corrected drafts with sources, claims, tests, and reviewer notes. Nineteen books remain. |
+| Phase 5: audit/correct all 66 books | **Waves 1–40 implemented; human review pending** | Genesis through Ephesians are corrected drafts with sources, claims, tests, and reviewer notes. Eighteen books remain. |
 | Phases 6–20 | Not started | Follow the supplied order after the foundation is upgraded. |
 | Phase 21: controlled generation workflow | Partially enabled | Reporting, type-specific completeness, and approval gates are present; scoped human-review events still need Phase 19. |
 
@@ -1138,8 +1138,8 @@ Still deferred to their planned phases:
 
 Phase 5 should modify the 66 JSON files under
 `framework/canonical_library/objects/books/` only in controlled review waves.
-Genesis through 2 Corinthians are now implemented as unapproved drafts. The
-active continuation file is `galatians.json`, keeping the Pauline-letter wave
+Genesis through Ephesians are now implemented as unapproved drafts. The
+active continuation file is `philippians.json`, keeping the Pauline-letter wave
 small enough for factual, retrieval, and source review.
 
 ## Files changed in Phase 1
@@ -3539,6 +3539,44 @@ python3 -m framework.canonical_library verify-db \
 # 45,240,320 bytes
 ```
 
+Completed after Phase 5 Wave 40:
+
+```text
+python3 tools/ckl_validate.py \
+  --path framework/canonical_library/objects/books/ephesians.json
+# 1 valid object, 0 warnings, 0 errors
+
+python3 -m unittest \
+  tests.canonical_library.test_ephesians_record \
+  tests.canonical_library.test_ckl_retrieval_service \
+  tests.canonical_library.test_schema \
+  tests.canonical_library.test_quality_report
+# 78 tests: OK
+
+rg --files tests/canonical_library -g 'test_*.py' |
+  sort |
+  xargs -n 20 -P 3 python3 -m unittest
+# 200 + 151 + 157 = 508 tests: OK
+
+python3 tools/ckl_validate.py --root framework/canonical_library
+# 620 files, 620 valid objects, 14 coalesced migration warnings, 0 errors
+
+python3 tools/ckl_graph_audit.py --root framework/canonical_library --limit 10
+# 620 objects, 3,277 edges, 0 unknown targets, 0 orphaned objects
+# 2,831 missing reciprocal suggestions remain as migration debt
+
+python3 -m framework.canonical_library build-db \
+  --root framework/canonical_library \
+  --output /private/tmp/bhf-phase5-wave40-ephesians-final.sqlite
+
+python3 -m framework.canonical_library verify-db \
+  --root framework/canonical_library \
+  --database /private/tmp/bhf-phase5-wave40-ephesians-final.sqlite
+# 620 objects; database schema 2; inventory fingerprint
+# b0a3ab5baeab87f3932601a3ead69174f85da0591c0fdd5218ff656d48a5842c
+# 45,711,360 bytes
+```
+
 The refreshed Wave 36 report records:
 
 | Migration metric | Result |
@@ -3609,6 +3647,27 @@ The refreshed Wave 39 report records:
 | Invalid source support targets | 0 |
 | Unresolved legacy object references | 14 |
 | Scripture reference errors | 0 |
+| Validator warnings / errors | 14 / 0 |
+
+The refreshed Wave 40 report records:
+
+| Migration metric | Result |
+| --- | ---: |
+| Records marked `complete` / `draft` | 572 / 48 |
+| Complete records with candidate Phase 2 section gaps | 571 |
+| Raw records missing explicit `section_status` | 572 |
+| Raw records with incomplete type-required sections | 620 |
+| Raw records missing explicit `knowledge_layers` | 572 |
+| Interpretive notes using current taxonomies | 1,595 |
+| Interpretive notes still using legacy taxonomies | 1,222 |
+| Granular claims authored | 978 |
+| External sources | 1,116 |
+| Source references that do not resolve | 0 |
+| Invalid source support targets | 0 |
+| Unresolved legacy object references | 14 |
+| Scripture reference errors | 0 |
+| Graph edges / unknown targets / orphaned records | 3,277 / 0 / 0 |
+| Missing reciprocal relationship suggestions | 2,831 |
 | Validator warnings / errors | 14 / 0 |
 
 ## Recommended next wave
@@ -3690,12 +3749,14 @@ and
 and
 [`ckl-phase-5-2-corinthians-review.md`](ckl-phase-5-2-corinthians-review.md)
 and
-[`ckl-phase-5-galatians-review.md`](ckl-phase-5-galatians-review.md).
+[`ckl-phase-5-galatians-review.md`](ckl-phase-5-galatians-review.md)
+and
+[`ckl-phase-5-ephesians-review.md`](ckl-phase-5-ephesians-review.md).
 Do not mark any corrected record complete merely because its automated checks
 pass.
 
-Wave 39 Galatians is complete. The completed Matthew, Mark, Luke, John, Acts,
-Romans, 1 Corinthians, 2 Corinthians, and Galatians scopes are retained below for
+Wave 40 Ephesians is complete. The completed Matthew, Mark, Luke, John, Acts,
+Romans, 1 Corinthians, 2 Corinthians, Galatians, and Ephesians scopes are retained below for
 audit:
 
 1. create book-specific factual regression fixtures before editing content;
@@ -5048,7 +5109,90 @@ wave:
     retrieval, factual and SQLite parity tests, produce a reviewer-facing
     report, and refresh this handoff and both generated quality reports.
 
-The active continuation target is Phase 5 Wave 40, Ephesians. Follow the
-controlled scope above; do not reopen completed Galatians, 2 Corinthians,
-1 Corinthians, Romans, Acts, John, Luke, Mark, or Matthew work except to
-address a concrete review or regression finding.
+Wave 40 Ephesians completed the controlled scope above. The record remains an
+unapproved draft and its reviewer checklist is in
+[`ckl-phase-5-ephesians-review.md`](ckl-phase-5-ephesians-review.md).
+
+The corrected record contains twenty-eight sourced claims, forty-six
+current-taxonomy interpretive notes, twenty-four URL-bearing sources, three
+high-precision top-level aliases plus retrieval metadata, sixteen normalized
+Scripture anchors, ten Hebrew entries, twenty Greek entries, and eight
+verified graph relationships. Its focused eight-method factual and SQLite
+suite and thirty-two book-scoped retrieval questions pass. The full CKL suite,
+single-file and repository validators, graph audit, generated reports, and
+final SQLite artifact are recorded in the reviewer report and verification
+section.
+
+Active next wave: continue Phase 5 with this controlled Philippians correction
+wave:
+
+1. create book-specific factual regression fixtures before editing content;
+2. audit every populated field against Philippians, removing inherited
+   Pauline-letter templates, generic events, false completion metadata, and
+   unsupported authorship, audience, imprisonment, geography, or opponent
+   claims;
+3. gather the critical Greek text, Hebrew Bible and Septuagint comparanda,
+   P16, P46, Sinaiticus, Vaticanus, Alexandrinus, Ephraemi, Claromontanus,
+   versions, Philippian and Macedonian inscriptions and archaeology, Roman
+   colony and citizenship evidence, households, patronage, slavery, gender,
+   friendship, gift exchange, rhetoric, and early reception before drafting
+   claims;
+4. distinguish Paul and Timothy as named senders; Paul as dominant
+   first-person voice; Epaphroditus, Euodia, Syntyche, Clement, the true
+   companion, overseers and deacons, Caesar's household, rival preachers,
+   opponents, coworkers, women and men, enslaved and free people, citizens,
+   patrons, petitioners, disabled or ill people, and later interpreters
+   without inventing one opponent or social profile;
+5. map Philippians 1:1-30; 2:1-30; 3:1-4:1; and 4:2-23 while indexing
+   prescript, thanksgiving, prayer, imprisonment, gospel progress, rival
+   preaching, life and death, citizenship, unity appeal, Messiah poem,
+   obedience, Timothy, Epaphroditus, warning, autobiography, loss and gain,
+   resurrection pursuit, heavenly citizenship, named women's conflict,
+   rejoicing, anxiety and prayer, contentment, gift partnership, greetings,
+   Caesar's household, and grace;
+6. qualify strong Pauline-authorship consensus, Timothy's role, commonly
+   proposed dates and Rome, Ephesus, or Caesarea imprisonment theories,
+   Philippi's Roman-colonial setting, audience composition, opponents,
+   letter-unity and partition theories, chronology, purpose, gift exchange,
+   and relation to Acts without inventing a complete itinerary or crisis;
+7. distinguish Pauline letter, thanksgiving, prayer, prison report,
+   deliberative rhetoric, exemplum, possible hymn or poetic passage,
+   autobiography, warning, paraenesis, friendship and gift language,
+   recommendation, travel report, greeting, and benediction;
+8. address gospel partnership, imprisonment, joy, suffering, life and death,
+   citizenship, unity, humility, Messiah's self-emptying, obedience,
+   exaltation, work, illness, opponents, confidence in flesh, knowing
+   Messiah, resurrection, perfection, heavenly citizenship, reconciliation,
+   prayer, anxiety, peace, thought, contentment, generosity, gift and account,
+   Caesar's household, and grace;
+9. preserve uncertainty concerning prison and date; rival preachers;
+   opponents; suffering; `politeuesthe`; authorship, background, structure,
+   and theology of Philippians 2:6-11; `harpagmos`; emptying; obedience and
+   salvation; Epaphroditus's illness; dogs and mutilation; righteousness;
+   resurrection; perfection; enemies of the cross; heavenly citizenship;
+   Euodia, Syntyche, and the true companion; anxiety; “all things”;
+   contentment; gift reciprocity; and Caesar's household;
+10. distinguish historical claim, epistolary voice, rhetorical opponent,
+    metaphor, lexical claim, scriptural allusion, traditional material,
+    possible letter seam, Pauline-letter comparison, canonical trajectory,
+    doctrine, confessional system, reception, pastoral application, and
+    modern analogy;
+11. add safeguards against antisemitism, supersessionism, anti-Jewish
+    circumcision rhetoric, misogyny and blaming Euodia or Syntyche, silencing
+    conflict, authoritarian leadership, slavery apologetics, worker
+    exploitation, disability and illness stigma, medical neglect, anxiety
+    shaming, suicide harm, prosperity teaching, financial extraction,
+    poverty romanticization, trauma and suffering glorification, coercive
+    unity, nationalism, militarism, colonial mission, forced conversion,
+    religious violence, conspiracy theories, partisan capture, and
+    ecological neglect; and
+12. populate only applicable hermeneutical and retrieval sections, use
+    current certainty and dispute labels only where evidence justifies them,
+    keep statuses honest with human review missing, run schema, graph, golden
+    retrieval, factual and SQLite parity tests, produce a reviewer-facing
+    report, and refresh this handoff and both generated quality reports.
+
+The active continuation target is Phase 5 Wave 41, Philippians. Follow the
+controlled scope above; do not reopen completed Ephesians, Galatians,
+2 Corinthians, 1 Corinthians, Romans, Acts, John, Luke, Mark, or Matthew work
+except to address a concrete review or regression finding.
