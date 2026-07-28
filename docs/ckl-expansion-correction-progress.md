@@ -6,8 +6,8 @@ This is the durable handoff for the **BHF Canonical Knowledge Library Expansion
 and Correction Plan**. The supplied plan explicitly says to begin with the
 repository audit and Phase 1 quality reporting, avoid immediate bulk content
 generation, and stop after each major phase. Phases 1–4 are now implemented at
-the schema/runtime level. Phase 5 Waves 1–40 have corrected Genesis through
-Ephesians as honest, source-backed drafts; none has been mechanically
+the schema/runtime level. Phase 5 Waves 1–41 have corrected Genesis through
+Philippians as honest, source-backed drafts; none has been mechanically
 approved.
 
 ## Current checkpoint
@@ -15,10 +15,10 @@ approved.
 | Plan area | Status | Continuation note |
 | --- | --- | --- |
 | Phase 1: inventory, reporting, quality metrics | **Implemented** | Deep JSON and Markdown reports, CLI support, and calculation tests are present. |
-| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Forty-eight records now have evidence-based draft statuses; 572 still need explicit migration. |
-| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Forty-eight records now have explicit layers; 572 still need migration. |
+| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Forty-nine records now have evidence-based draft statuses; 571 still need explicit migration. |
+| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Forty-nine records now have explicit layers; 571 still need migration. |
 | Phase 4: certainty and dispute taxonomies | **Implemented; evidence migration pending** | Current taxonomies and granular claim records are supported. Legacy values remain readable but are forbidden for approved notes; no `unknown` value was guessed or mass-relabeled. |
-| Phase 5: audit/correct all 66 books | **Waves 1–40 implemented; human review pending** | Genesis through Ephesians are corrected drafts with sources, claims, tests, and reviewer notes. Eighteen books remain. |
+| Phase 5: audit/correct all 66 books | **Waves 1–41 implemented; human review pending** | Genesis through Philippians are corrected drafts with sources, claims, tests, and reviewer notes. Seventeen books remain. |
 | Phases 6–20 | Not started | Follow the supplied order after the foundation is upgraded. |
 | Phase 21: controlled generation workflow | Partially enabled | Reporting, type-specific completeness, and approval gates are present; scoped human-review events still need Phase 19. |
 
@@ -5192,7 +5192,91 @@ wave:
     retrieval, factual and SQLite parity tests, produce a reviewer-facing
     report, and refresh this handoff and both generated quality reports.
 
-The active continuation target is Phase 5 Wave 41, Philippians. Follow the
-controlled scope above; do not reopen completed Ephesians, Galatians,
-2 Corinthians, 1 Corinthians, Romans, Acts, John, Luke, Mark, or Matthew work
-except to address a concrete review or regression finding.
+Wave 41 Philippians completed the controlled scope above. The record remains
+an unapproved draft and its reviewer checklist is in
+[`ckl-phase-5-philippians-review.md`](ckl-phase-5-philippians-review.md).
+
+The corrected record contains twenty-eight sourced claims, forty-nine
+current-taxonomy interpretive notes, twenty-five sources, twenty-four
+URL-bearing external sources, three high-precision top-level aliases plus
+retrieval metadata, seventeen normalized Scripture anchors, ten Hebrew
+entries, twenty Greek entries, and eight verified graph relationships. Its
+focused eight-method factual and SQLite suite and thirty-two book-scoped
+retrieval questions pass. The full 516-test CKL suite, single-file and
+repository validators, graph audit, generated reports, and final SQLite
+artifact are recorded in the reviewer report.
+
+Active next wave: continue Phase 5 with this controlled Colossians correction
+wave:
+
+1. create book-specific factual regression fixtures before editing content;
+2. audit every populated field against Colossians, removing inherited
+   Pauline-letter templates, generic events, false completion metadata, and
+   unsupported authorship, audience, imprisonment, geography, or opponent
+   claims;
+3. gather the critical Greek text, Hebrew Bible and Septuagint comparanda,
+   P46, Sinaiticus, Vaticanus, Alexandrinus, Ephraemi, Claromontanus,
+   versions, Lycus Valley and Colossian inscriptions and archaeology, Roman
+   provincial geography, households, patronage, slavery, philosophy, cult,
+   associations, rhetoric, and early-reception evidence before drafting
+   claims;
+4. distinguish the named Paul and Timothy, possible secretary or
+   Pauline-school author, Epaphras, Tychicus, Onesimus, Aristarchus, Mark,
+   Jesus Justus, Luke, Demas, Nympha, Archippus, household members, enslaved
+   and free people, women and men, Jews and gentiles, opponents or teachers,
+   angels and powers, and later interpreters without inventing one opponent
+   group or demographic;
+5. map Colossians 1:1-23; 1:24-2:23; 3:1-4:6; and 4:7-18 while indexing
+   prescript, thanksgiving, prayer, image and firstborn poem, creation,
+   reconciliation, ministry, mystery, fullness, philosophy warning,
+   circumcision, baptism, rulers and powers, festival and Sabbath, asceticism,
+   visions, heavenly life, old and new humanity, household code, prayer,
+   witness, coworkers, Laodicea, Archippus, autograph, chains, and grace;
+6. qualify disputed Pauline authorship, secretary and Pauline-school
+   proposals, date, provenance and prison, destination, relation and possible
+   dependence between Colossians and Ephesians, relation to Philemon,
+   audience, opponents, purpose, integrity, and the lost Laodicean letter
+   without treating canonical first-person voice as a solved modern
+   authorship claim;
+7. distinguish Pauline-form letter, thanksgiving, prayer, poetic or
+   traditional material, scriptural allusion, cosmic and body imagery,
+   mystery disclosure, polemic, warning, vice and virtue instruction,
+   household code, travel notice, greetings, autograph, and benediction;
+8. address image, firstborn, creation, reconciliation, body, church, fullness,
+   ministry, mystery, knowledge, wisdom, philosophy, circumcision, baptism,
+   forgiveness, rulers and powers, cross, festivals, new moon, Sabbath,
+   asceticism, angel worship, visions, heavenly life, new humanity, divine
+   image, election, love, peace, word, worship, household relations, labor,
+   prayer, witness, chains, and grace;
+9. preserve uncertainty concerning authorship; prison and date; relation to
+   Ephesians and Philemon; poetic or traditional material in 1:15-20;
+   “image,” “firstborn,” and “all fullness”; Paul's sufferings and what is
+   lacking; the Colossian philosophy or opponents; elemental powers;
+   circumcision and baptism; the erased record; rulers and powers; festival,
+   new moon, and Sabbath; food and drink; angel worship; visions; asceticism;
+   things above; the household code; Nympha's textual variant; Archippus; and
+   the Laodicean letter;
+10. distinguish historical claim, epistolary voice, pseudepigraphal
+    convention proposal, opponent characterization, scriptural voice,
+    metaphor, lexical claim, textual variant, traditional material,
+    Pauline-letter comparison, canonical trajectory, doctrine, confessional
+    system, reception, pastoral application, and modern analogy;
+11. add safeguards against antisemitism, supersessionism, anti-Jewish Torah
+    and Sabbath caricature, ethnic contempt, spiritual abuse, authoritarian
+    church office, misogyny, patriarchal marriage, child abuse, anti-LGBTQ
+    coercion, slavery apologetics, worker exploitation, ableism,
+    mental-health stigma, medical neglect, dangerous exorcism, conspiracy
+    theories, coerced asceticism, body shame, prosperity extraction,
+    nationalism, militarism, colonial mission, forced conversion, religious
+    violence, partisan capture, public shaming, trauma glorification, and
+    ecological neglect; and
+12. populate only applicable hermeneutical and retrieval sections, use
+    current certainty and dispute labels only where evidence justifies them,
+    keep statuses honest with human review missing, run schema, graph, golden
+    retrieval, factual and SQLite parity tests, produce a reviewer-facing
+    report, and refresh this handoff and both generated quality reports.
+
+The active continuation target is Phase 5 Wave 42, Colossians. Follow the
+controlled scope above; do not reopen completed Philippians, Ephesians,
+Galatians, 2 Corinthians, 1 Corinthians, Romans, Acts, John, Luke, Mark, or
+Matthew work except to address a concrete review or regression finding.
