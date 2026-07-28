@@ -6,8 +6,8 @@ This is the durable handoff for the **BHF Canonical Knowledge Library Expansion
 and Correction Plan**. The supplied plan explicitly says to begin with the
 repository audit and Phase 1 quality reporting, avoid immediate bulk content
 generation, and stop after each major phase. Phases 1–4 are now implemented at
-the schema/runtime level. Phase 5 Waves 1–42 have corrected Genesis through
-Colossians as honest, source-backed drafts; none has been mechanically
+the schema/runtime level. Phase 5 Waves 1–43 have corrected Genesis through
+1 Thessalonians as honest, source-backed drafts; none has been mechanically
 approved.
 
 ## Current checkpoint
@@ -15,10 +15,10 @@ approved.
 | Plan area | Status | Continuation note |
 | --- | --- | --- |
 | Phase 1: inventory, reporting, quality metrics | **Implemented** | Deep JSON and Markdown reports, CLI support, and calculation tests are present. |
-| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Fifty records now have evidence-based draft statuses; 570 still need explicit migration. |
-| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Fifty records now have explicit layers; 570 still need migration. |
+| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Fifty-one records now have evidence-based draft statuses; 569 still need explicit migration. |
+| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Fifty-one records now have explicit layers; 569 still need migration. |
 | Phase 4: certainty and dispute taxonomies | **Implemented; evidence migration pending** | Current taxonomies and granular claim records are supported. Legacy values remain readable but are forbidden for approved notes; no `unknown` value was guessed or mass-relabeled. |
-| Phase 5: audit/correct all 66 books | **Waves 1–42 implemented; human review pending** | Genesis through Colossians are corrected drafts with sources, claims, tests, and reviewer notes. Sixteen books remain. |
+| Phase 5: audit/correct all 66 books | **Waves 1–43 implemented; human review pending** | Genesis through 1 Thessalonians are corrected drafts with sources, claims, tests, and reviewer notes. Fifteen books remain. |
 | Phases 6–20 | Not started | Follow the supplied order after the foundation is upgraded. |
 | Phase 21: controlled generation workflow | Partially enabled | Reporting, type-specific completeness, and approval gates are present; scoped human-review events still need Phase 19. |
 
@@ -1138,8 +1138,8 @@ Still deferred to their planned phases:
 
 Phase 5 should modify the 66 JSON files under
 `framework/canonical_library/objects/books/` only in controlled review waves.
-Genesis through Ephesians are now implemented as unapproved drafts. The
-active continuation file is `philippians.json`, keeping the Pauline-letter wave
+Genesis through 1 Thessalonians are now implemented as unapproved drafts. The
+active continuation file is `2-thessalonians.json`, keeping the Pauline-letter wave
 small enough for factual, retrieval, and source review.
 
 ## Files changed in Phase 1
@@ -5384,8 +5384,104 @@ correction wave:
     retrieval, factual and SQLite parity tests, produce a reviewer-facing
     report, and refresh this handoff and both generated quality reports.
 
-The active continuation target is Phase 5 Wave 43, 1 Thessalonians. Follow
-the controlled scope above; do not reopen completed Colossians, Philippians,
-Ephesians, Galatians, 2 Corinthians, 1 Corinthians, Romans, Acts, John, Luke,
-Mark, or Matthew work except to address a concrete review or regression
-finding.
+Wave 43 1 Thessalonians completed the controlled scope above. The record
+remains an unapproved draft and its reviewer checklist is in
+[`ckl-phase-5-1-thessalonians-review.md`](ckl-phase-5-1-thessalonians-review.md).
+
+The corrected record contains twenty-six sourced claims, forty-two
+current-taxonomy interpretive notes, twenty-one sources, twenty URL-bearing
+external sources, five high-precision top-level aliases plus retrieval
+metadata, sixteen normalized Scripture anchors, ten Hebrew entries, twenty
+Greek entries, and seven verified graph relationships. Its focused
+eight-method factual and SQLite suite and thirty-two book-scoped retrieval
+questions pass. The full 532-test CKL suite, single-file and repository
+validators, graph audit, generated reports, and final SQLite artifact are
+recorded in the reviewer report.
+
+After Phase 5 Wave 43, the refreshed report records:
+
+| Migration metric | Result |
+| --- | ---: |
+| Records marked `complete` / `draft` | 569 / 51 |
+| Complete records with candidate Phase 2 section gaps | 568 |
+| Raw records missing explicit `section_status` | 569 |
+| Raw records with incomplete type-required sections | 620 |
+| Raw records missing explicit `knowledge_layers` | 569 |
+| Interpretive notes using current taxonomies | 1,734 |
+| Interpretive notes still using legacy taxonomies | 1,216 |
+| Granular claims authored | 1,062 |
+| External sources | 1,184 |
+| Source references that do not resolve | 0 |
+| Invalid source support targets | 0 |
+| Unresolved legacy object references | 14 |
+| Scripture reference errors | 0 |
+| Graph edges / unknown targets / orphaned records | 3,285 / 0 / 0 |
+| Missing reciprocal relationship suggestions | 2,837 |
+| Validator warnings / errors | 14 / 0 |
+
+Active next wave: continue Phase 5 with this controlled 2 Thessalonians
+correction wave:
+
+1. create book-specific factual regression fixtures before editing content;
+2. audit every populated field against 2 Thessalonians, removing inherited
+   Pauline-letter templates, generic events, false completion metadata, and
+   unsupported authorship, audience, geography, persecution, or opponent
+   claims;
+3. gather the critical Greek text, Hebrew Bible and Septuagint comparanda,
+   P30, Sinaiticus, Vaticanus, Alexandrinus, Ephraemi, Claromontanus,
+   versions, Thessalonian and Macedonian evidence, Roman civic and imperial
+   context, apocalyptic discourse, labor, patronage, rhetoric, pseudepigraphy,
+   and early reception before drafting claims;
+4. distinguish Paul, Silvanus, and Timothy as named senders; plural and
+   singular voices; the Thessalonian assembly; persecutors; the idle or
+   disruptive; the man of lawlessness; the restrainer; Satan; rulers and
+   powers; Jews and gentiles; women and men; workers and patrons; and later
+   interpreters without inventing one opponent or demographic;
+5. map 2 Thessalonians 1:1-12; 2:1-17; and 3:1-18 while indexing prescript,
+   thanksgiving, endurance, judgment, relief, revelation, glory, prayer,
+   coming and gathering, rebellion, man of lawlessness, temple, restrainer,
+   Satanic signs, deception, election, tradition, request for prayer,
+   deliverance, divine faithfulness, work, discipline, peace, autograph, and
+   grace;
+6. qualify disputed Pauline authorship, possible secretary or Pauline-school
+   composition, date, provenance, relation and sequence relative to
+   1 Thessalonians, audience, persecution, pseudonymous-letter concern,
+   apocalyptic crisis, integrity, purpose, and relation to Acts without
+   treating canonical voice as a solved modern authorship claim;
+7. distinguish Pauline-form letter, thanksgiving, judgment oracle,
+   apocalyptic disclosure, scriptural allusion, adversary portrait,
+   exhortation, prayer wish, labor example, disciplinary command, autograph,
+   greeting, and benediction;
+8. address suffering, judgment, vengeance, relief, kingdom, glory, calling,
+   coming, gathering, rebellion, lawlessness, temple, restraint, Satan,
+   signs, deception, truth, election, sanctification, tradition, prayer,
+   faithfulness, work, idleness, discipline, siblinghood, peace, autograph,
+   and grace;
+9. preserve uncertainty concerning authorship; date and sequence; relation to
+   1 Thessalonians; persecution; fiery judgment and eternal destruction;
+   coming and gathering; the rebellion; man of lawlessness; temple; the
+   restrainer; Satanic signs; deceptive power; election; traditions; the
+   alleged letter; idleness and work; discipline; and autograph;
+10. distinguish historical claim, epistolary voice, pseudepigraphal proposal,
+    apocalyptic image, scriptural voice, lexical claim, textual variant,
+    Pauline-letter comparison, canonical trajectory, doctrine, confessional
+    system, reception, pastoral application, and modern analogy;
+11. add safeguards against antisemitism, supersessionism, collective blame,
+    ethnic contempt, authoritarian discipline, worker exploitation,
+    unemployment and disability shaming, public shunning, spiritual abuse,
+    medical neglect, date setting, rapture panic, antichrist accusations,
+    conspiracy theories, dangerous exorcism, militarism, nationalism,
+    partisan capture, colonial mission, forced conversion, religious
+    violence, prosperity extraction, trauma glorification, and ecological
+    neglect; and
+12. populate only applicable hermeneutical and retrieval sections, use
+    current certainty and dispute labels only where evidence justifies them,
+    keep statuses honest with human review missing, run schema, graph, golden
+    retrieval, factual and SQLite parity tests, produce a reviewer-facing
+    report, and refresh this handoff and both generated quality reports.
+
+The active continuation target is Phase 5 Wave 44, 2 Thessalonians. Follow
+the controlled scope above; do not reopen completed 1 Thessalonians,
+Colossians, Philippians, Ephesians, Galatians, 2 Corinthians, 1 Corinthians,
+Romans, Acts, John, Luke, Mark, or Matthew work except to address a concrete
+review or regression finding.
