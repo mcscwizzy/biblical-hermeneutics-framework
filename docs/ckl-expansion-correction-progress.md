@@ -6,8 +6,8 @@ This is the durable handoff for the **BHF Canonical Knowledge Library Expansion
 and Correction Plan**. The supplied plan explicitly says to begin with the
 repository audit and Phase 1 quality reporting, avoid immediate bulk content
 generation, and stop after each major phase. Phases 1–4 are now implemented at
-the schema/runtime level. Phase 5 Waves 1–41 have corrected Genesis through
-Philippians as honest, source-backed drafts; none has been mechanically
+the schema/runtime level. Phase 5 Waves 1–42 have corrected Genesis through
+Colossians as honest, source-backed drafts; none has been mechanically
 approved.
 
 ## Current checkpoint
@@ -15,10 +15,10 @@ approved.
 | Plan area | Status | Continuation note |
 | --- | --- | --- |
 | Phase 1: inventory, reporting, quality metrics | **Implemented** | Deep JSON and Markdown reports, CLI support, and calculation tests are present. |
-| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Forty-nine records now have evidence-based draft statuses; 571 still need explicit migration. |
-| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Forty-nine records now have explicit layers; 571 still need migration. |
+| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Fifty records now have evidence-based draft statuses; 570 still need explicit migration. |
+| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Fifty records now have explicit layers; 570 still need migration. |
 | Phase 4: certainty and dispute taxonomies | **Implemented; evidence migration pending** | Current taxonomies and granular claim records are supported. Legacy values remain readable but are forbidden for approved notes; no `unknown` value was guessed or mass-relabeled. |
-| Phase 5: audit/correct all 66 books | **Waves 1–41 implemented; human review pending** | Genesis through Philippians are corrected drafts with sources, claims, tests, and reviewer notes. Seventeen books remain. |
+| Phase 5: audit/correct all 66 books | **Waves 1–42 implemented; human review pending** | Genesis through Colossians are corrected drafts with sources, claims, tests, and reviewer notes. Sixteen books remain. |
 | Phases 6–20 | Not started | Follow the supplied order after the foundation is upgraded. |
 | Phase 21: controlled generation workflow | Partially enabled | Reporting, type-specific completeness, and approval gates are present; scoped human-review events still need Phase 19. |
 
@@ -3670,6 +3670,28 @@ The refreshed Wave 40 report records:
 | Missing reciprocal relationship suggestions | 2,831 |
 | Validator warnings / errors | 14 / 0 |
 
+The refreshed Wave 42 report records (Wave 41 Philippians is reflected in
+these cumulative totals):
+
+| Migration metric | Result |
+| --- | ---: |
+| Records marked `complete` / `draft` | 570 / 50 |
+| Complete records with candidate Phase 2 section gaps | 569 |
+| Raw records missing explicit `section_status` | 570 |
+| Raw records with incomplete type-required sections | 620 |
+| Raw records missing explicit `knowledge_layers` | 570 |
+| Interpretive notes using current taxonomies | 1,692 |
+| Interpretive notes still using legacy taxonomies | 1,218 |
+| Granular claims authored | 1,036 |
+| External sources | 1,164 |
+| Source references that do not resolve | 0 |
+| Invalid source support targets | 0 |
+| Unresolved legacy object references | 14 |
+| Scripture reference errors | 0 |
+| Graph edges / unknown targets / orphaned records | 3,283 / 0 / 0 |
+| Missing reciprocal relationship suggestions | 2,835 |
+| Validator warnings / errors | 14 / 0 |
+
 ## Recommended next wave
 
 Perform the human review checklists in
@@ -3751,13 +3773,17 @@ and
 and
 [`ckl-phase-5-galatians-review.md`](ckl-phase-5-galatians-review.md)
 and
-[`ckl-phase-5-ephesians-review.md`](ckl-phase-5-ephesians-review.md).
+[`ckl-phase-5-ephesians-review.md`](ckl-phase-5-ephesians-review.md)
+and
+[`ckl-phase-5-philippians-review.md`](ckl-phase-5-philippians-review.md)
+and
+[`ckl-phase-5-colossians-review.md`](ckl-phase-5-colossians-review.md).
 Do not mark any corrected record complete merely because its automated checks
 pass.
 
-Wave 40 Ephesians is complete. The completed Matthew, Mark, Luke, John, Acts,
-Romans, 1 Corinthians, 2 Corinthians, Galatians, and Ephesians scopes are retained below for
-audit:
+Wave 42 Colossians is complete. The completed Matthew, Mark, Luke, John, Acts,
+Romans, 1 Corinthians, 2 Corinthians, Galatians, Ephesians, Philippians, and
+Colossians scopes are retained below for audit:
 
 1. create book-specific factual regression fixtures before editing content;
 2. audit every populated field against the book it describes;
@@ -5276,7 +5302,90 @@ wave:
     retrieval, factual and SQLite parity tests, produce a reviewer-facing
     report, and refresh this handoff and both generated quality reports.
 
-The active continuation target is Phase 5 Wave 42, Colossians. Follow the
-controlled scope above; do not reopen completed Philippians, Ephesians,
-Galatians, 2 Corinthians, 1 Corinthians, Romans, Acts, John, Luke, Mark, or
-Matthew work except to address a concrete review or regression finding.
+Wave 42 Colossians completed the controlled scope above. The record remains
+an unapproved draft and its reviewer checklist is in
+[`ckl-phase-5-colossians-review.md`](ckl-phase-5-colossians-review.md).
+
+The corrected record contains thirty sourced claims, forty-eight
+current-taxonomy interpretive notes, twenty-five sources, twenty-four
+URL-bearing external sources, three high-precision top-level aliases plus
+retrieval metadata, eighteen normalized Scripture anchors, ten Hebrew
+entries, twenty Greek entries, and eight verified graph relationships. Its
+focused eight-method factual and SQLite suite and thirty-two book-scoped
+retrieval questions pass. The full 524-test CKL suite, single-file and
+repository validators, graph audit, generated reports, and final SQLite
+artifact are recorded in the reviewer report.
+
+Active next wave: continue Phase 5 with this controlled 1 Thessalonians
+correction wave:
+
+1. create book-specific factual regression fixtures before editing content;
+2. audit every populated field against 1 Thessalonians, removing inherited
+   Pauline-letter templates, generic events, false completion metadata, and
+   unsupported authorship, audience, geography, persecution, or opponent
+   claims;
+3. gather the critical Greek text, Hebrew Bible and Septuagint comparanda,
+   P30, P46 where applicable, Sinaiticus, Vaticanus, Alexandrinus, Ephraemi,
+   Claromontanus, versions, Thessalonian and Macedonian inscriptions and
+   archaeology, Roman provincial and civic evidence, households, patronage,
+   labor, associations, ruler cult, rhetoric, letter conventions, and early
+   reception before drafting claims;
+4. distinguish Paul, Silvanus, and Timothy as named senders; the shifting
+   first-person plural and singular voices; the Thessalonian assembly; Jews
+   and gentiles; women and men; workers and patrons; bereaved people; local
+   opponents and persecutors; Jesus, God, the Spirit, angels, the dead in
+   Messiah, and later interpreters without inventing one house church,
+   demographic, or persecuting group;
+5. map 1 Thessalonians 1:1-10; 2:1-16; 2:17-3:13; 4:1-12; 4:13-5:11; and
+   5:12-28 while indexing prescript, thanksgiving, imitation, turning from
+   idols, mission memory, integrity, maternal and paternal metaphors, labor,
+   separation, Timothy's mission, prayer, holiness, sexuality, sibling love,
+   quiet work, grief, resurrection, coming, meeting, day of the Lord,
+   watchfulness, leaders, community care, prophecy, discernment,
+   sanctification, greeting, reading, and grace;
+6. qualify strong Pauline-authorship consensus, the roles of Silvanus and
+   Timothy, date and Corinthian provenance proposals, Thessalonica's setting,
+   relation to Acts 17, audience composition, persecution, the polemic in
+   2:14-16 and its textual or compositional proposals, occasion, chronology,
+   integrity, and relation to 2 Thessalonians without inventing a complete
+   itinerary or crisis;
+7. distinguish Pauline letter, thanksgiving, autobiographical mission
+   defense, familial metaphor, travel report, prayer wish, paraenesis,
+   holiness instruction, apocalyptic consolation, day-of-the-Lord warning,
+   community exhortation, greeting, reading charge, and benediction;
+8. address faith, love, hope, election, imitation, idols, wrath, gospel,
+   integrity, suffering, mission, leadership, labor, affection, Satan,
+   holiness, sexuality, love, work, grief, resurrection, parousia, descent,
+   trumpet, meeting, day of the Lord, wrath and salvation, watchfulness,
+   prophecy, discernment, peace, sanctification, and grace;
+9. preserve uncertainty concerning coworker roles; date and itinerary;
+   audience and persecution; election; imitation; wrath; maternal and
+   paternal metaphors; manual labor; Satan; sexual holiness and the meaning
+   of `skeuos`; quiet living; the dead in Messiah; sequence and imagery of
+   the parousia; `apantēsis`; rapture systems; timing of the day; leaders;
+   prophecy; testing everything; and authorship, textual history, rhetoric,
+   and antisemitic reception of 2:14-16;
+10. distinguish historical claim, epistolary voice, mission-memory rhetoric,
+    scriptural voice, familial metaphor, apocalyptic image, lexical claim,
+    textual or interpolation proposal, Pauline-letter comparison, canonical
+    trajectory, doctrine, confessional system, reception, pastoral
+    application, and modern analogy;
+11. add safeguards against antisemitism, supersessionism, collective Jewish
+    blame, ethnic contempt, sexual coercion, purity culture, misogyny,
+    anti-LGBTQ coercion, authoritarian leadership, worker exploitation,
+    idleness shaming, grief suppression, disability and mental-health stigma,
+    medical neglect, date setting, rapture panic, conspiracy theories,
+    militarism, nationalism, partisan capture, colonial mission, forced
+    conversion, religious violence, prosperity extraction, public shaming,
+    trauma glorification, and ecological neglect; and
+12. populate only applicable hermeneutical and retrieval sections, use
+    current certainty and dispute labels only where evidence justifies them,
+    keep statuses honest with human review missing, run schema, graph, golden
+    retrieval, factual and SQLite parity tests, produce a reviewer-facing
+    report, and refresh this handoff and both generated quality reports.
+
+The active continuation target is Phase 5 Wave 43, 1 Thessalonians. Follow
+the controlled scope above; do not reopen completed Colossians, Philippians,
+Ephesians, Galatians, 2 Corinthians, 1 Corinthians, Romans, Acts, John, Luke,
+Mark, or Matthew work except to address a concrete review or regression
+finding.
