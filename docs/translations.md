@@ -1,7 +1,8 @@
 # Translation Workflow
 
-BHF uses one curated translation catalog and one local storage directory for
-user-installed Bible texts.
+BHF uses one curated translation catalog. ASV and KJV are server-side bundled
+datasets; user-imported translations are parsed and stored only in the browser
+device's IndexedDB.
 
 ## What Ships With BHF
 
@@ -17,24 +18,26 @@ Only translations listed in the curated catalog can appear in the UI. Bundled
 translations are immediately available in the reader; other translations must
 be installed or imported first.
 
-- Reviewed public-domain or openly licensed translations may be downloaded from
-  their curated raw source URL and stored locally for offline use.
+- Only ASV and KJV are stored or served by the BHF server.
 - Copyrighted translations remain visible as license-required entries and do
   not expose a BHF download button unless an authorized provider is configured.
 - A public GitHub repository does not by itself prove that a translation is
   legally redistributable.
 - Users may privately import lawfully obtained XML files for personal offline
-  use on their own device.
+  use on their own device. The browser parses the XML; the file is not uploaded
+  to BHF and is not available to another browser or user.
 
-## Local Storage
+## Server Storage
 
-The default storage root is `.bhf/translations/`.
+The default storage root is `.bhf/translations/`. It contains only bundled or
+server-managed translation data; the web application does not upload or store
+user-imported XML files there.
 
 Environment override:
 
 - `BHF_TRANSLATIONS_PATH`
 
-Installed files are stored as:
+Bundled files are stored as:
 
 - `.bhf/translations/kjv.json`
 - `.bhf/translations/kjv.metadata.json`
@@ -43,22 +46,17 @@ The JSON file is the normalized Bible dataset. The metadata file records source
 and validation details, including SHA-256 hashes, counts, source URL, and
 license status.
 
-## Install Flow
+## Device Import Flow
 
-The backend installer performs the same workflow for direct downloads and local
-XML imports:
+The browser handles a private XML import locally:
 
-1. Resolve the translation from the curated catalog.
-2. Fetch the exact approved URL or accept the imported XML bytes.
-3. Reject non-HTTPS, non-allowlisted, or unapproved sources.
-4. Reject HTML or oversized downloads.
-5. Parse the XML.
-6. Validate the translation identity, canon, counts, and verse integrity.
-7. Write a normalized JSON dataset to a temporary file.
-8. Atomically rename the JSON and metadata into place.
-9. Update the search cache and reader defaults.
+1. Confirm that the file was obtained lawfully.
+2. Parse the XML in the browser.
+3. Normalize its books, chapters, and verses.
+4. Store the normalized dataset in that browser's IndexedDB.
+5. Use the local dataset for reader and offline requests.
 
-Failures do not replace a working existing installation.
+No imported XML bytes or normalized private dataset are sent to the server.
 
 ## Supported XML Shape
 
@@ -91,4 +89,5 @@ translation should be treated as third-party content even if it is public
 domain.
 
 For protected imports, BHF shows a private-use notice and keeps the imported
-file local to the current device.
+file local to the current device. Removing the browser app or clearing site data
+removes the device-local import.

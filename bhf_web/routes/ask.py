@@ -44,6 +44,25 @@ def _result_error_message(result: Any) -> str:
     return "; ".join(str(error) for error in errors)
 
 
+def _device_study_payload(job: Any, result: Any) -> dict[str, Any] | None:
+    context = getattr(job, "study_context", None) or {}
+    if not context:
+        return None
+    metadata = getattr(result, "model_metadata", {}) or {}
+    return {
+        "title": getattr(job, "question", None) or "Saved study",
+        "book": context.get("book"),
+        "chapter": context.get("chapter"),
+        "start_verse": context.get("start_verse"),
+        "end_verse": context.get("end_verse"),
+        "selected_text": context.get("selected_text") or "",
+        "study_type": getattr(job, "study_type", None) or "question",
+        "question": getattr(job, "question", None) or "",
+        "answer": _public_answer_text(result),
+        "canonical_object_ids": list(metadata.get("canonical_library_object_ids") or []),
+    }
+
+
 def _answer_template_context(
     *,
     error: str | None,
@@ -55,6 +74,7 @@ def _answer_template_context(
     show_debug: bool = False,
     inspector_question: str | None = None,
     inspector_max_context_tokens: int | None = None,
+    device_study: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     metadata: dict[str, Any] = {}
     canonical_context = None
@@ -84,6 +104,7 @@ def _answer_template_context(
         "developer_inspector": developer_inspector,
         "reader_reference": reader_reference,
         "can_save_study": can_save_study,
+        "device_study": device_study,
     }
 
 
@@ -229,6 +250,7 @@ def register_ask_routes(
                     show_debug=show_debug,
                     inspector_question=job.question,
                     inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
+                    device_study=_device_study_payload(job, result),
                 ),
                 status_code=agent_error_status_code(result),
             )
@@ -244,6 +266,7 @@ def register_ask_routes(
                 show_debug=show_debug,
                 inspector_question=job.question,
                 inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
+                device_study=_device_study_payload(job, result),
             ),
         )
 

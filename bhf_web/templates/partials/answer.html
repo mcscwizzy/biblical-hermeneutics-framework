@@ -1,6 +1,7 @@
 {% set can_save_study = can_save_study | default(false) %}
 {% set canonical_object_ids = canonical_object_ids | default([]) %}
 {% set developer_inspector = developer_inspector | default(none) %}
+{% set device_study = device_study | default(none) %}
 {% set canonical_topics = canonical_context.retrieved_topics if canonical_context and canonical_context.retrieved_topics else [] %}
 {% if error %}
   <div class="error" role="alert">
@@ -8,7 +9,7 @@
     <p>{{ error }}</p>
   </div>
 {% else %}
-  <article class="answer">
+  <article class="answer"{% if device_study %} data-device-study='{{ device_study | tojson }}'{% endif %}>
     <div class="answer-header">
       {% if saved_study %}
         <div>

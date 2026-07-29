@@ -374,6 +374,10 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("data-translation-select", script)
         self.assertIn("data-translation-download", script)
         self.assertIn("data-translation-import", script)
+        self.assertIn("parseDeviceTranslationXml", script)
+        self.assertIn("Device-only XML import", script)
+        self.assertIn("cacheApiResponse", script)
+        self.assertNotIn('body: formData', script)
         self.assertIn("openTranslationImportDialog", script)
         self.assertIn("data-translation-import-file", script)
         self.assertIn("GitHub source", script)
@@ -422,6 +426,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("/api/highlights", study_script)
         self.assertIn("removeHighlightsForContext", study_script)
         self.assertIn("saveLatestStudy", study_script)
+        self.assertIn("data-device-study", Path("bhf_web/templates/partials/answer.html").read_text(encoding="utf-8"))
         self.assertIn("loadSavedStudies", study_script)
         self.assertIn("formatReference", study_script)
         self.assertIn("prettyStudyType", study_script)
@@ -638,7 +643,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("Loading translations...", index_html)
         self.assertIn('name="reader_translation"', index_html)
         self.assertIn("static_asset('/style.css') }}?v=20260724c", index_html)
-        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260729a", index_html)
+        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260729b", index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
@@ -860,7 +865,7 @@ class WebAppTests(unittest.TestCase):
 
         self.assertEqual(response["status"], 200)
         self.assertIn('href="/static/style.css?v=20260724c"', response["body"])
-        self.assertIn('src="/static/htmx-lite.js?v=20260729a"', response["body"])
+        self.assertIn('src="/static/htmx-lite.js?v=20260729b"', response["body"])
         self.assertIn('href="/static/vendor/leaflet/leaflet.css"', response["body"])
         self.assertNotIn("http://bhf.thewalkerclan.synology.me/static/", response["body"])
 
@@ -886,7 +891,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v13"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v16"', service_worker["body"])
         self.assertIn("cacheFirstApi", service_worker["body"])
         self.assertIn("isRefreshRequest", service_worker["body"])
         self.assertIn("networkFirstNavigation", service_worker["body"])
@@ -964,9 +969,14 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(http_script["status"], 200)
         self.assertIn("offlineFallback", http_script["body"])
         self.assertIn("offlineTextFallback", http_script["body"])
+        self.assertIn("isLiveTranslationStateRequest", http_script["body"])
+        self.assertIn("X-BHF-Refresh", http_script["body"])
         self.assertIn("notifyOfflineSyncChanged", http_script["body"])
         self.assertIn("upsertOfflineNote", http_script["body"])
         self.assertIn("upsertOfflineHighlight", http_script["body"])
+        self.assertIn("isDeviceOnlyPersonalPath", http_script["body"])
+        self.assertIn("upsertOfflineSavedStudy", offline_db["body"])
+        self.assertIn("purgeDeviceOnlyMutations", offline_db["body"])
         self.assertIn("deleteOfflineSavedStudy", http_script["body"])
         self.assertIn("localJsonResponse", http_script["body"])
         self.assertIn("isAiOnlyPath", http_script["body"])
@@ -996,9 +1006,10 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("replayQueuedMutations", pwa_script["body"])
         self.assertIn("warmOfflineManifest", pwa_script["body"])
         self.assertIn("warmInstalledTranslations", pwa_script["body"])
+        self.assertIn("reconcileCachedTranslations", pwa_script["body"])
         self.assertIn("installOfflinePack", pwa_script["body"])
         self.assertIn("warmDefaultOfflinePacks", pwa_script["body"])
-        self.assertIn('CACHE_VERSION = "v13"', pwa_script["body"])
+        self.assertIn('CACHE_VERSION = "v16"', pwa_script["body"])
         self.assertIn("ensureServiceWorkerReady", pwa_script["body"])
         self.assertIn("Installed, restart app", pwa_script["body"])
         self.assertIn("Needs HTTPS", pwa_script["body"])
@@ -2389,129 +2400,36 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("Keep this as a geography helper until real map data is added", question)
 
     def test_note_routes_create_update_delete_and_filter(self):
-        with tempfile.TemporaryDirectory() as tmpdir:
-            db_path = Path(tmpdir) / "study.sqlite"
-            with patch("bhf_web.app.STUDY_DB_PATH", db_path):
-                create = asgi_request(
-                    "POST",
-                    "/api/notes",
-                    json_data={
-                        "id": "note-client-123",
-                        "book": "Rom",
-                        "chapter": 12,
-                        "start_verse": 1,
-                        "end_verse": 2,
-                        "selected_text": "living sacrifice",
-                        "body": "Observation first.",
-                    },
-                )
-                self.assertEqual(create["status"], 201)
-                note = json.loads(create["body"])
-                self.assertEqual(note["id"], "note-client-123")
-                self.assertEqual(note["book"], "Romans")
-
-                list_response = asgi_request("GET", "/api/notes/Romans/12")
-                self.assertEqual(list_response["status"], 200)
-                self.assertEqual(len(json.loads(list_response["body"])["notes"]), 1)
-
-                update = asgi_request(
-                    "PUT",
-                    f"/api/notes/{note['id']}",
-                    json_data={"body": "Updated observation."},
-                )
-                self.assertEqual(update["status"], 200)
-                self.assertEqual(json.loads(update["body"])["body"], "Updated observation.")
-
-                delete = asgi_request("DELETE", f"/api/notes/{note['id']}")
-                self.assertEqual(delete["status"], 200)
-                self.assertIn('"deleted":true', delete["body"])
-
-                empty = asgi_request("GET", "/api/notes/Romans/12")
-                self.assertEqual(json.loads(empty["body"])["notes"], [])
+        for method, path in (
+            ("GET", "/api/notes/Romans/12"),
+            ("POST", "/api/notes"),
+            ("PUT", "/api/notes/note-client-123"),
+            ("DELETE", "/api/notes/note-client-123"),
+        ):
+            response = asgi_request(method, path, json_data={"body": "private"})
+            self.assertEqual(response["status"], 410)
+            self.assertTrue(json.loads(response["body"])["device_only"])
 
     def test_highlight_routes_create_delete_and_filter(self):
-        with tempfile.TemporaryDirectory() as tmpdir:
-            db_path = Path(tmpdir) / "study.sqlite"
-            with patch("bhf_web.app.STUDY_DB_PATH", db_path):
-                create = asgi_request(
-                    "POST",
-                    "/api/highlights",
-                    json_data={
-                        "id": "highlight-client-123",
-                        "book": "Rom",
-                        "chapter": 12,
-                        "start_verse": 1,
-                        "end_verse": 2,
-                        "selected_text": "living sacrifice",
-                        "color": "yellow",
-                    },
-                )
-                self.assertEqual(create["status"], 201)
-                highlight = json.loads(create["body"])
-                self.assertEqual(highlight["id"], "highlight-client-123")
-                self.assertEqual(highlight["book"], "Romans")
-                self.assertEqual(highlight["color"], "yellow")
-
-                list_response = asgi_request("GET", "/api/highlights/Romans/12")
-                self.assertEqual(list_response["status"], 200)
-                self.assertEqual(
-                    len(json.loads(list_response["body"])["highlights"]),
-                    1,
-                )
-
-                delete = asgi_request("DELETE", f"/api/highlights/{highlight['id']}")
-                self.assertEqual(delete["status"], 200)
-                self.assertIn('"deleted":true', delete["body"])
-
-                empty = asgi_request("GET", "/api/highlights/Romans/12")
-                self.assertEqual(json.loads(empty["body"])["highlights"], [])
+        for method, path in (
+            ("GET", "/api/highlights/Romans/12"),
+            ("POST", "/api/highlights"),
+            ("DELETE", "/api/highlights/highlight-client-123"),
+        ):
+            response = asgi_request(method, path, json_data={"selected_text": "private"})
+            self.assertEqual(response["status"], 410)
+            self.assertTrue(json.loads(response["body"])["device_only"])
 
     def test_saved_study_routes_create_list_open_and_delete(self):
-        with tempfile.TemporaryDirectory() as tmpdir:
-            db_path = Path(tmpdir) / "study.sqlite"
-            with patch("bhf_web.app.STUDY_DB_PATH", db_path), patch(
-                "bhf_web.app.BHFAgent", SuccessfulJobAgent
-            ):
-                job_response = asgi_request(
-                    "POST",
-                    "/ask/jobs",
-                    data={**_valid_form(), "ask_mode": "literary_context", "reader_book": "Romans", "reader_chapter": "12", "reader_start_verse": "1", "reader_end_verse": "2", "reader_selected_text": "present your bodies a living sacrifice"},
-                )
-                self.assertEqual(job_response["status"], 202)
-                job_id = json.loads(job_response["body"])["job_id"]
-                wait_for_job(job_id)
-
-                result_response = asgi_request("GET", f"/ask/result/{job_id}")
-                self.assertEqual(result_response["status"], 200)
-                self.assertNotIn("Canonical Context", result_response["body"])
-                self.assertNotIn("Why these objects were retrieved", result_response["body"])
-                self.assertNotIn("canonical-object-badge-title", result_response["body"])
-                self.assertNotIn("shechem", result_response["body"])
-
-                save = asgi_request("POST", "/api/saved-studies", json_data={"job_id": job_id})
-                self.assertEqual(save["status"], 201)
-                study = json.loads(save["body"])
-                self.assertEqual(study["book"], "Romans")
-                self.assertEqual(study["study_type"], "literary_context")
-                self.assertEqual(study["canonical_object_ids"], ["shechem", "abraham"])
-
-                list_response = asgi_request("GET", "/api/saved-studies?book=Romans&chapter=12")
-                self.assertEqual(list_response["status"], 200)
-                studies = json.loads(list_response["body"])["saved_studies"]
-                self.assertEqual(len(studies), 1)
-                self.assertEqual(studies[0]["canonical_object_ids"], ["shechem", "abraham"])
-
-                open_response = asgi_request("GET", f"/api/saved-studies/{study['id']}")
-                self.assertEqual(open_response["status"], 200)
-                self.assertIn("Saved study", open_response["body"])
-                self.assertIn("Romans 12:1-2", open_response["body"])
-                self.assertIn("Saved canonical object links associated with this study.", open_response["body"])
-                self.assertIn("canonical-object-badge", open_response["body"])
-                self.assertIn("shechem", open_response["body"])
-
-                delete = asgi_request("DELETE", f"/api/saved-studies/{study['id']}")
-                self.assertEqual(delete["status"], 200)
-                self.assertIn('"deleted":true', delete["body"])
+        for method, path in (
+            ("GET", "/api/saved-studies?book=Romans&chapter=12"),
+            ("GET", "/api/saved-studies/study-client-123"),
+            ("POST", "/api/saved-studies"),
+            ("DELETE", "/api/saved-studies/study-client-123"),
+        ):
+            response = asgi_request(method, path, json_data={"answer": "private"})
+            self.assertEqual(response["status"], 410)
+            self.assertTrue(json.loads(response["body"])["device_only"])
 
     def test_word_study_reader_job_builds_guarded_prompt(self):
         CapturingAgent.questions = []

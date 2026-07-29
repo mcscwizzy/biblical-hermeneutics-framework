@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v13";
+const CACHE_VERSION = "v16";
 const SHELL_CACHE = `bhf-shell-${CACHE_VERSION}`;
 const STATIC_CACHE = `bhf-static-${CACHE_VERSION}`;
 const API_CACHE = `bhf-api-${CACHE_VERSION}`;
@@ -212,9 +212,6 @@ function isCacheableApiRequest(url) {
     "/api/bible/books",
     "/api/bible/search",
     "/api/bible/",
-    "/api/notes/",
-    "/api/highlights/",
-    "/api/saved-studies",
     "/api/canonical/search",
     "/api/canonical/objects/",
     "/api/maps/",

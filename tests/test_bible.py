@@ -28,6 +28,7 @@ from bhf_agent.bible import (
     verse_range_reference,
 )
 from bhf_agent.translation_installer import list_installed_translations
+from bhf_agent.translation_registry import upsert_translation
 
 
 class BibleDatasetTests(unittest.TestCase):
@@ -163,10 +164,31 @@ class BibleDatasetTests(unittest.TestCase):
 
             self.assertEqual(saved["translation_id"], "esv")
             self.assertEqual(saved["translation"]["name"], "English Standard Version")
-            self.assertIn(
+            self.assertNotIn(
                 "esv",
                 [entry["translation_id"] for entry in list_installed_translations()],
             )
+
+    def test_missing_dataset_is_not_reported_as_an_installed_translation(self):
+        with tempfile.TemporaryDirectory() as tmpdir, patch.object(
+            translation_storage,
+            "TRANSLATIONS_PATH",
+            Path(tmpdir),
+        ):
+            # Simulate a durable registry row surviving removal of the app's
+            # translation data volume.
+            upsert_translation(
+                "csb",
+                name="Christian Standard Bible",
+                source="manual_xml_import",
+                installed=True,
+            )
+
+            installed_ids = [
+                entry["translation_id"] for entry in list_installed_translations()
+            ]
+
+        self.assertNotIn("csb", installed_ids)
 
     def test_resolve_invalid_chapter(self):
         with self.assertRaisesRegex(BibleError, "John has no chapter 99"):

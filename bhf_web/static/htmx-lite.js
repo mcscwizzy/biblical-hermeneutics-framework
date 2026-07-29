@@ -16,6 +16,20 @@ const READER_MODE_STORAGE_KEY = "bhf-reader-mode";
 const BHF_TRANSLATION_STORAGE_KEY = "bhf-reader-translation";
 const BHF_TRANSLATION_DOWNLOAD_METADATA_KEY =
   "bhf-translation-download-metadata";
+const BHF_CANONICAL_BOOK_NAMES = [
+  "Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Joshua",
+  "Judges", "Ruth", "1 Samuel", "2 Samuel", "1 Kings", "2 Kings",
+  "1 Chronicles", "2 Chronicles", "Ezra", "Nehemiah", "Esther", "Job",
+  "Psalms", "Proverbs", "Ecclesiastes", "Song of Songs", "Isaiah",
+  "Jeremiah", "Lamentations", "Ezekiel", "Daniel", "Hosea", "Joel",
+  "Amos", "Obadiah", "Jonah", "Micah", "Nahum", "Habakkuk", "Zephaniah",
+  "Haggai", "Zechariah", "Malachi", "Matthew", "Mark", "Luke", "John",
+  "Acts", "Romans", "1 Corinthians", "2 Corinthians", "Galatians",
+  "Ephesians", "Philippians", "Colossians", "1 Thessalonians",
+  "2 Thessalonians", "1 Timothy", "2 Timothy", "Titus", "Philemon",
+  "Hebrews", "James", "1 Peter", "2 Peter", "1 John", "2 John", "3 John",
+  "Jude", "Revelation",
+];
 const READER_LOCATION_STORAGE_KEY = "bhf-reader-location";
 const READER_LOCATION_METADATA_ID = "reader-location";
 const BHF_STUDY_ACTIONS = new Set([
@@ -404,15 +418,14 @@ async function initializeReader() {
   chapterSelect.value = defaultChapter;
   if (translationSelect) {
     try {
-      translationCatalogState = await requestJson(
-        "/api/translations",
-        {},
-        "Could not load translations.",
-      );
+      translationCatalogState = await loadTranslationState("/api/translations");
     } catch (_error) {
       translationCatalogState = null;
     }
-    if (translationCatalogState?.default_translation) {
+    if (
+      translationCatalogState?.default_translation &&
+      !readLocalStorageValue(BHF_TRANSLATION_STORAGE_KEY)
+    ) {
       setSelectedTranslationId(translationCatalogState.default_translation);
     }
     syncTranslationSelectOptions();
@@ -1631,11 +1644,7 @@ async function openTranslationSelector(trigger) {
   dialog.querySelector("[data-translation-selector-body]").innerHTML =
     `<p class="empty">Loading translations...</p>`;
   try {
-    translationCatalogState = await requestJson(
-      "/api/translations/catalog",
-      {},
-      "Could not load translations.",
-    );
+    translationCatalogState = await loadTranslationState("/api/translations/catalog");
     renderTranslationSelector(translationCatalogState);
   } catch (error) {
     dialog.querySelector("[data-translation-selector-body]").innerHTML =
@@ -1718,6 +1727,98 @@ function renderTranslationSelector(state) {
   body.appendChild(actions);
 }
 
+async function loadTranslationState(url) {
+  const state = await requestJson(
+    url,
+    {},
+    "Could not load translations.",
+  );
+  return mergeDeviceTranslations(state);
+}
+
+async function mergeDeviceTranslations(state) {
+  const offlineDb = window.BHFOfflineDB;
+  if (!offlineDb || typeof offlineDb.list !== "function") {
+    return state;
+  }
+  let localEntries = [];
+  try {
+    localEntries = (await offlineDb.list("translations"))
+      .map(deviceTranslationEntry)
+      .filter(Boolean);
+  } catch (_error) {
+    return state;
+  }
+  if (!localEntries.length) {
+    return state;
+  }
+
+  const localIds = new Set(localEntries.map((entry) => entry.id));
+  const mergeEntries = (entries) => [
+    ...(Array.isArray(entries) ? entries : []).filter(
+      (entry) => !localIds.has(String(entry?.id || "").toLowerCase()),
+    ),
+    ...localEntries,
+  ];
+  const merged = {
+    ...state,
+    translations: mergeEntries(state?.translations),
+    catalog: mergeEntries(state?.catalog),
+    sections: {
+      ...(state?.sections || {}),
+      installed: mergeEntries(state?.sections?.installed),
+    },
+  };
+  const selected = String(
+    readLocalStorageValue(BHF_TRANSLATION_STORAGE_KEY) || "",
+  ).toLowerCase();
+  if (localIds.has(selected)) {
+    merged.default_translation = selected;
+  } else if (selected && !["asv", "kjv"].includes(selected)) {
+    writeLocalStorageValue(BHF_TRANSLATION_STORAGE_KEY, "asv");
+  }
+  return merged;
+}
+
+function deviceTranslationEntry(record) {
+  const payload = record?.payload || {};
+  const dataset = payload.dataset || {};
+  const installation = payload.installation || {};
+  if (!installation.device_local || !dataset.translation) {
+    return null;
+  }
+  const translation = dataset.translation;
+  const id = String(
+    payload.translation_id || translation.id || record.id || "",
+  ).toLowerCase();
+  if (!id || id === "asv" || id === "kjv") {
+    return null;
+  }
+  return {
+    id,
+    name: String(translation.name || id.toUpperCase()),
+    abbreviation: String(translation.id || id.toUpperCase()).toUpperCase(),
+    language: translation.language || "en",
+    language_code: translation.language || "en",
+    bundled: false,
+    install_mode: "device_local",
+    license_status: "user_supplied",
+    source: translation.source || "device import",
+    installed: true,
+    default: false,
+    can_select: true,
+    can_download: false,
+    can_remove: true,
+    can_set_default: true,
+    status_label: "On this device",
+    third_party: false,
+    third_party_notice: "",
+    created_date: record.cachedAt || "",
+    device_local: true,
+    private_local_install: true,
+  };
+}
+
 function translationCatalogWithLocalState(state) {
   const selectedId = selectedTranslationId();
   const sections = state?.sections || {};
@@ -1729,7 +1830,9 @@ function translationCatalogWithLocalState(state) {
     can_set_default: true,
     can_remove: !entry.bundled,
     can_download: false,
-    status_label: entry.id === "asv" ? "Built in" : "Installed locally",
+    status_label: entry.id === "asv"
+      ? "Built in"
+      : (entry.device_local ? "On this device" : "Installed locally"),
   }));
 
   return {
@@ -1775,6 +1878,12 @@ function setSelectedTranslationId(id) {
 
 async function persistReaderDefaultTranslation(id) {
   const normalized = String(id || "asv").toLowerCase();
+  if (isDeviceLocalTranslation(normalized)) {
+    writeLocalStorageValue(BHF_TRANSLATION_STORAGE_KEY, normalized);
+    updateTranslationCatalogDefault(normalized);
+    setSelectedTranslationId(normalized);
+    return normalized;
+  }
   const payload = await requestJson(
     "/api/settings/reader",
     {
@@ -1845,11 +1954,7 @@ async function handleTranslationSelectorDialogClick(event) {
   if (download) {
     await downloadTranslationFromGithub(download.dataset.translationDownload);
     await persistReaderDefaultTranslation(download.dataset.translationDownload);
-    translationCatalogState = await requestJson(
-      "/api/translations/installed",
-      {},
-      "Could not load translations.",
-    );
+    translationCatalogState = await loadTranslationState("/api/translations/installed");
     renderTranslationSelector(translationCatalogState);
     closeTranslationSelector();
     await reloadCurrentReaderChapter();
@@ -1877,11 +1982,7 @@ async function handleTranslationSelectorDialogClick(event) {
   }
   if (remove) {
     await removeInstalledTranslation(remove.dataset.translationRemove);
-    translationCatalogState = await requestJson(
-      "/api/translations/installed",
-      {},
-      "Could not load translations.",
-    );
+    translationCatalogState = await loadTranslationState("/api/translations/installed");
     renderTranslationSelector(translationCatalogState);
     await reloadCurrentReaderChapter();
   }
@@ -1898,6 +1999,10 @@ function installImportedTranslation(id) {
 async function removeInstalledTranslation(id) {
   const normalized = String(id || "").toLowerCase();
   if (!normalized || normalized === "asv") {
+    return;
+  }
+  if (isDeviceLocalTranslation(normalized)) {
+    await removeDeviceTranslation(normalized);
     return;
   }
   await requestJson(
@@ -1933,11 +2038,7 @@ async function downloadTranslationFromGithub(id) {
     "Could not download translation.",
   );
   persistTranslationDownloadMetadata(normalized, metadata);
-  translationCatalogState = await requestJson(
-    "/api/translations/installed",
-    {},
-    "Could not load translations.",
-  );
+  translationCatalogState = await loadTranslationState("/api/translations/installed");
   installTranslation(normalized);
   return metadata;
 }
@@ -2021,6 +2122,31 @@ function translationSelectOptionLabel(
   return `${abbreviation} - ${name}`;
 }
 
+function isDeviceLocalTranslation(translationId) {
+  return Boolean(translationCatalogEntry(translationId)?.device_local);
+}
+
+async function removeDeviceTranslation(translationId) {
+  const offlineDb = window.BHFOfflineDB;
+  if (!offlineDb) {
+    throw new Error("Device translation storage is unavailable.");
+  }
+  const remove = offlineDb.remove || offlineDb.delete;
+  if (typeof remove !== "function") {
+    throw new Error("Device translation storage is unavailable.");
+  }
+  const normalized = String(translationId || "").toLowerCase();
+  await remove.call(offlineDb, "translations", normalized);
+  await remove.call(
+    offlineDb,
+    "apiResponses",
+    `/api/translations/${encodeURIComponent(normalized)}/offline-data`,
+  );
+  if (selectedTranslationId() === normalized) {
+    setSelectedTranslationId("asv");
+  }
+}
+
 async function importTranslationXml() {
   const form = document.querySelector("[data-translation-import-form]");
   const nameInput = form?.querySelector("[data-translation-import-name]");
@@ -2040,36 +2166,149 @@ async function importTranslationXml() {
       "Use at least two letters or numbers in the translation name.",
     );
   }
-  const formData = new FormData();
-  formData.set("confirmed", "true");
-  formData.set("translation_name", translationName);
-  formData.set("file", file);
-  const result = await requestJson(
-    `/api/translations/${encodeURIComponent(normalized)}/import`,
-    {
-      method: "POST",
-      body: formData,
-      headers: {Accept: "application/json"},
-    },
-    "Could not import translation XML.",
+  const xmlText = await file.text();
+  const payload = parseDeviceTranslationXml(
+    xmlText,
+    normalized,
+    translationName,
+    file.name || `${normalized}.xml`,
   );
-  translationCatalogState = await requestJson(
-    "/api/translations/installed",
-    {},
-    "Could not load translations.",
+  const offlineDb = window.BHFOfflineDB;
+  if (!offlineDb || typeof offlineDb.cacheApiResponse !== "function") {
+    throw new Error("Device translation storage is unavailable.");
+  }
+  await offlineDb.cacheApiResponse(
+    `/api/translations/${encodeURIComponent(normalized)}/offline-data`,
+    payload,
   );
+  const result = {
+    translation_id: normalized,
+    installed: true,
+    availability: "device_local",
+    offline_supported: true,
+    device_local: true,
+  };
+  translationCatalogState = await loadTranslationState("/api/translations/installed");
   installImportedTranslation(normalized);
   await persistReaderDefaultTranslation(normalized);
   return result;
 }
 
+function parseDeviceTranslationXml(xmlText, translationId, translationName, sourceFilename) {
+  const documentNode = new DOMParser().parseFromString(xmlText, "application/xml");
+  if (documentNode.querySelector("parsererror")) {
+    throw new Error("Bible XML is not well-formed.");
+  }
+  const root = documentNode.documentElement;
+  const books = [];
+  const bookElements = Array.from(documentNode.getElementsByTagName("*"))
+    .filter((element) => ["book", "biblebook"].includes(xmlLocalName(element)));
+  for (const bookElement of bookElements) {
+    const bookName = deviceBookName(bookElement);
+    if (!bookName) {
+      continue;
+    }
+    const chapters = [];
+    for (const chapterElement of Array.from(bookElement.children || [])
+      .filter((element) => xmlLocalName(element) === "chapter")) {
+      const chapterNumber = xmlPositiveNumber(chapterElement, ["cnumber", "number", "n", "id"]);
+      if (!chapterNumber) {
+        continue;
+      }
+      const verses = [];
+      for (const verseElement of Array.from(chapterElement.children || [])
+        .filter((element) => ["verse", "vers"].includes(xmlLocalName(element)))) {
+        const verseNumber = xmlPositiveNumber(verseElement, ["vnumber", "number", "n", "id"]);
+        const text = String(verseElement.textContent || "").replace(/\s+/gu, " ").trim();
+        if (verseNumber && text) {
+          verses.push({book: bookName, chapter: chapterNumber, verse: verseNumber, text});
+        }
+      }
+      if (verses.length) {
+        chapters.push({chapter: chapterNumber, verses});
+      }
+    }
+    if (chapters.length) {
+      books.push({
+        name: bookName,
+        order: BHF_CANONICAL_BOOK_NAMES.indexOf(bookName) + 1,
+        chapters,
+      });
+    }
+  }
+  if (!books.length || !books.some((book) => book.chapters.some((chapter) => chapter.verses.length))) {
+    throw new Error("Bible XML contains no readable books and verses.");
+  }
+  books.sort((left, right) => left.order - right.order);
+  const translation = {
+    id: translationId.toUpperCase(),
+    name: translationName,
+    language: root.getAttribute("language") || root.getAttribute("language_code") || "en",
+    publication_year: null,
+    license: "User imported local XML; BHF does not provide or verify this file",
+    source: sourceFilename,
+    source_note: "Device-only XML import. This file is not uploaded to BHF.",
+  };
+  return {
+    translation_id: translationId,
+    dataset: {translation, books},
+    installation: {
+      translation_id: translationId,
+      installed: true,
+      bundled: false,
+      availability: "device_local",
+      offline_supported: true,
+      private_local_install: true,
+      device_local: true,
+    },
+  };
+}
+
+function xmlLocalName(element) {
+  return String(element?.localName || element?.nodeName || "")
+    .split(":")
+    .pop()
+    .toLowerCase();
+}
+
+function xmlAttribute(element, names) {
+  for (const name of names) {
+    const value = element?.getAttribute(name);
+    if (value) {
+      return value;
+    }
+  }
+  return "";
+}
+
+function xmlPositiveNumber(element, names) {
+  const match = String(xmlAttribute(element, names)).match(/\d+/u);
+  return match ? Number(match[0]) : 0;
+}
+
+function deviceBookName(bookElement) {
+  const rawName = xmlAttribute(bookElement, ["bname", "name", "book", "osisID"]);
+  const rawNumber = xmlPositiveNumber(bookElement, ["bnumber", "number", "n", "id"]);
+  if (rawNumber >= 1 && rawNumber <= BHF_CANONICAL_BOOK_NAMES.length) {
+    return BHF_CANONICAL_BOOK_NAMES[rawNumber - 1];
+  }
+  const compact = rawName.toLowerCase().replace(/[^a-z0-9]/gu, "");
+  const aliases = {
+    gen: "Genesis", ex: "Exodus", lev: "Leviticus", num: "Numbers", deut: "Deuteronomy",
+    ps: "Psalms", psalm: "Psalms", songofsolomon: "Song of Songs", canticles: "Song of Songs",
+    rev: "Revelation",
+  };
+  if (aliases[compact]) {
+    return aliases[compact];
+  }
+  return BHF_CANONICAL_BOOK_NAMES.find(
+    (name) => name.toLowerCase().replace(/[^a-z0-9]/gu, "") === compact,
+  ) || "";
+}
+
 async function openTranslationImportDialog() {
   if (!translationCatalogState) {
-    translationCatalogState = await requestJson(
-      "/api/translations/installed",
-      {},
-      "Could not load translations.",
-    );
+    translationCatalogState = await loadTranslationState("/api/translations/installed");
   }
   const dialog = ensureTranslationImportDialog();
   renderTranslationImportDialogDetails();

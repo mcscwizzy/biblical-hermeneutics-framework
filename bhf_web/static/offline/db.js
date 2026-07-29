@@ -238,7 +238,7 @@
     const notesMatch = key.match(/^\/api\/notes\/([^/?]+)\/(\d+)$/);
     if (notesMatch) {
       const notes = await notesForChapter(decodeURIComponent(notesMatch[1]), Number(notesMatch[2]));
-      return notes.length ? { notes, offline: true, cache_status: "generated" } : null;
+      return { notes, offline: true, cache_status: "generated", device_only: true };
     }
     const highlightsMatch = key.match(/^\/api\/highlights\/([^/?]+)\/(\d+)$/);
     if (highlightsMatch) {
@@ -246,12 +246,12 @@
         decodeURIComponent(highlightsMatch[1]),
         Number(highlightsMatch[2]),
       );
-      return highlights.length ? { highlights, offline: true, cache_status: "generated" } : null;
+      return { highlights, offline: true, cache_status: "generated", device_only: true };
     }
     if (key.startsWith("/api/saved-studies") && !key.match(/^\/api\/saved-studies\/[^/?]+$/)) {
       const params = new URLSearchParams(key.split("?", 2)[1] || "");
       const studies = await savedStudiesForChapter(params.get("book"), params.get("chapter"));
-      return studies.length ? { saved_studies: studies, offline: true, cache_status: "generated" } : null;
+      return { saved_studies: studies, offline: true, cache_status: "generated", device_only: true };
     }
     if (key.startsWith("/api/map-studies")) {
       return generatedMapStudiesResponse(key);
@@ -587,7 +587,8 @@
     const counts = {};
     let imported = 0;
     for (const storeName of SNAPSHOT_STORES) {
-      const records = Array.isArray(snapshot.stores[storeName]) ? snapshot.stores[storeName] : [];
+      const records = (Array.isArray(snapshot.stores[storeName]) ? snapshot.stores[storeName] : [])
+        .filter((record) => storeName !== "mutationQueue" || !isDeviceOnlyMutationUrl(record?.url));
       counts[storeName] = 0;
       for (const record of records) {
         if (!record || typeof record !== "object" || !record.id) {
@@ -663,11 +664,10 @@
   }
 
   async function upsertOfflineNote(payload, method = "POST", url = "/api/notes") {
-    const note = normalizeNote(payload, "pending");
+    const note = normalizeNote(payload, "local");
     await put("notes", note);
-    await enqueueMutation({ method, url, body: note, store: "notes", recordId: note.id });
     await cacheNotesForChapter(note.book, note.chapter);
-    return { ...note, offline: true, sync_status: "pending" };
+    return { ...note, offline: true, device_only: true, sync_status: "local" };
   }
 
   async function deleteOfflineNote(noteId, url) {
@@ -676,8 +676,7 @@
     if (existing) {
       await cacheNotesForChapter(existing.book, existing.chapter);
     }
-    await enqueueMutation({ method: "DELETE", url, store: "notes", recordId: noteId });
-    return { deleted: true, offline: true, sync_status: "pending" };
+    return { deleted: true, offline: true, device_only: true, sync_status: "local" };
   }
 
   async function notesForChapter(book, chapter) {
@@ -688,11 +687,10 @@
   }
 
   async function upsertOfflineHighlight(payload, method = "POST", url = "/api/highlights") {
-    const highlight = normalizeHighlight(payload, "pending");
+    const highlight = normalizeHighlight(payload, "local");
     await put("highlights", highlight);
-    await enqueueMutation({ method, url, body: highlight, store: "highlights", recordId: highlight.id });
     await cacheHighlightsForChapter(highlight.book, highlight.chapter);
-    return { ...highlight, offline: true, sync_status: "pending" };
+    return { ...highlight, offline: true, device_only: true, sync_status: "local" };
   }
 
   async function deleteOfflineHighlight(highlightId, url) {
@@ -701,8 +699,7 @@
     if (existing) {
       await cacheHighlightsForChapter(existing.book, existing.chapter);
     }
-    await enqueueMutation({ method: "DELETE", url, store: "highlights", recordId: highlightId });
-    return { deleted: true, offline: true, sync_status: "pending" };
+    return { deleted: true, offline: true, device_only: true, sync_status: "local" };
   }
 
   async function highlightsForChapter(book, chapter) {
@@ -743,11 +740,39 @@
     if (existing) {
       await cacheSavedStudiesForChapter(existing.book, existing.chapter);
     }
-    await enqueueMutation({ method: "DELETE", url, store: "savedStudies", recordId: studyId });
-    return { deleted: true, offline: true, sync_status: "pending" };
+    return { deleted: true, offline: true, device_only: true, sync_status: "local" };
+  }
+
+  async function upsertOfflineSavedStudy(payload) {
+    const study = normalizeSavedStudy(payload, "local");
+    await put("savedStudies", study);
+    if (study.book && study.chapter) {
+      await cacheSavedStudiesForChapter(study.book, study.chapter);
+    }
+    return { ...study, offline: true, device_only: true, sync_status: "local" };
+  }
+
+  function isDeviceOnlyMutationUrl(url) {
+    const path = new URL(String(url || "/"), window.location.origin).pathname;
+    return path === "/api/notes"
+      || path.startsWith("/api/notes/")
+      || path === "/api/highlights"
+      || path.startsWith("/api/highlights/")
+      || path === "/api/saved-studies"
+      || path.startsWith("/api/saved-studies/");
+  }
+
+  async function purgeDeviceOnlyMutations() {
+    const mutations = await queuedMutations();
+    const deviceOnly = mutations.filter((mutation) => isDeviceOnlyMutationUrl(mutation.url));
+    await Promise.all(deviceOnly.map((mutation) => removeMutation(mutation.id)));
+    return { purged_count: deviceOnly.length };
   }
 
   async function applyOnlineMutationResponse(url, method, payload) {
+    if (isDeviceOnlyMutationUrl(url)) {
+      return;
+    }
     const path = new URL(String(url || "/"), window.location.origin).pathname;
     if (method === "DELETE") {
       const matchers = [
@@ -1019,6 +1044,7 @@
     openDatabase,
     get,
     put,
+    remove,
     delete: remove,
     list,
     cacheApiResponse,
@@ -1044,6 +1070,8 @@
     deleteOfflineMapStudy,
     mapStudiesForChapter,
     deleteOfflineSavedStudy,
+    upsertOfflineSavedStudy,
     savedStudiesForChapter,
+    purgeDeviceOnlyMutations,
   };
 })();

@@ -67,6 +67,10 @@ def load_translation_bible(translation_id: str) -> dict[str, Any]:
     """Load an installed local Bible dataset by catalog translation id."""
 
     normalized = translation_storage.normalize_translation_id(translation_id or "asv")
+    if normalized not in {"asv", "kjv"}:
+        raise BibleError(
+            "translation is not installed on the server; only bundled ASV and KJV translations are available"
+        )
     if normalized == "asv":
         return load_asv_bible()
     try:

@@ -38,6 +38,7 @@ from .translation_registry import (
 ALLOWLISTED_DOWNLOAD_HOSTS = {"raw.githubusercontent.com"}
 MAX_DOWNLOAD_BYTES = 50 * 1024 * 1024
 DEFAULT_TIMEOUT_SECONDS = 30
+SERVER_TRANSLATION_IDS = frozenset({"asv", "kjv"})
 
 
 class TranslationInstallError(ValueError):
@@ -123,6 +124,12 @@ def list_installed_translations() -> list[dict[str, Any]]:
         try:
             installation = get_translation_installation(str(row["id"]))
         except TranslationStorageError:
+            continue
+        # The registry is intentionally durable, but the dataset is the source
+        # of truth for whether a translation can actually be read.  A removed
+        # app/data volume can leave an old registry row behind; do not expose
+        # that row as an installed translation.
+        if not installation.get("installed") or not installation.get("bundled"):
             continue
         installation["registry"] = row
         entries.append(installation)
