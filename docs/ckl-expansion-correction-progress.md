@@ -6,8 +6,8 @@ This is the durable handoff for the **BHF Canonical Knowledge Library Expansion
 and Correction Plan**. The supplied plan explicitly says to begin with the
 repository audit and Phase 1 quality reporting, avoid immediate bulk content
 generation, and stop after each major phase. Phases 1–4 are now implemented at
-the schema/runtime level. Phase 5 Waves 1–43 have corrected Genesis through
-1 Thessalonians as honest, source-backed drafts; none has been mechanically
+the schema/runtime level. Phase 5 Waves 1–44 have corrected Genesis through
+2 Thessalonians as honest, source-backed drafts; none has been mechanically
 approved.
 
 ## Current checkpoint
@@ -15,10 +15,10 @@ approved.
 | Plan area | Status | Continuation note |
 | --- | --- | --- |
 | Phase 1: inventory, reporting, quality metrics | **Implemented** | Deep JSON and Markdown reports, CLI support, and calculation tests are present. |
-| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Fifty-one records now have evidence-based draft statuses; 569 still need explicit migration. |
-| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Fifty-one records now have explicit layers; 569 still need migration. |
+| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Fifty-two records now have evidence-based draft statuses; 568 still need explicit migration. |
+| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Fifty-two records now have explicit layers; 568 still need migration. |
 | Phase 4: certainty and dispute taxonomies | **Implemented; evidence migration pending** | Current taxonomies and granular claim records are supported. Legacy values remain readable but are forbidden for approved notes; no `unknown` value was guessed or mass-relabeled. |
-| Phase 5: audit/correct all 66 books | **Waves 1–43 implemented; human review pending** | Genesis through 1 Thessalonians are corrected drafts with sources, claims, tests, and reviewer notes. Fifteen books remain. |
+| Phase 5: audit/correct all 66 books | **Waves 1–44 implemented; human review pending** | Genesis through 2 Thessalonians are corrected drafts with sources, claims, tests, and reviewer notes. Fourteen books remain. |
 | Phases 6–20 | Not started | Follow the supplied order after the foundation is upgraded. |
 | Phase 21: controlled generation workflow | Partially enabled | Reporting, type-specific completeness, and approval gates are present; scoped human-review events still need Phase 19. |
 
@@ -1138,8 +1138,8 @@ Still deferred to their planned phases:
 
 Phase 5 should modify the 66 JSON files under
 `framework/canonical_library/objects/books/` only in controlled review waves.
-Genesis through 1 Thessalonians are now implemented as unapproved drafts. The
-active continuation file is `2-thessalonians.json`, keeping the Pauline-letter wave
+Genesis through 2 Thessalonians are now implemented as unapproved drafts. The
+active continuation file is `1-timothy.json`, keeping the Pauline-letter wave
 small enough for factual, retrieval, and source review.
 
 ## Files changed in Phase 1
@@ -5480,8 +5480,105 @@ correction wave:
     retrieval, factual and SQLite parity tests, produce a reviewer-facing
     report, and refresh this handoff and both generated quality reports.
 
-The active continuation target is Phase 5 Wave 44, 2 Thessalonians. Follow
-the controlled scope above; do not reopen completed 1 Thessalonians,
-Colossians, Philippians, Ephesians, Galatians, 2 Corinthians, 1 Corinthians,
-Romans, Acts, John, Luke, Mark, or Matthew work except to address a concrete
-review or regression finding.
+Wave 44 2 Thessalonians completed the controlled scope above. The record
+remains an unapproved draft and its reviewer checklist is in
+[`ckl-phase-5-2-thessalonians-review.md`](ckl-phase-5-2-thessalonians-review.md).
+
+The corrected record contains twenty-seven sourced claims, forty-two
+current-taxonomy interpretive notes, twenty-two sources, twenty-one URL-bearing
+external sources, five high-precision top-level aliases plus retrieval
+metadata, seventeen normalized Scripture anchors, ten Hebrew entries, twenty
+Greek entries, and seven verified graph relationships. Its focused
+eight-method factual and SQLite suite and thirty-two book-scoped retrieval
+questions pass. The full 540-test CKL suite, single-file and repository
+validators, graph audit, generated reports, and final SQLite artifact are
+recorded in the reviewer report.
+
+After Phase 5 Wave 44, the refreshed report records:
+
+| Migration metric | Result |
+| --- | ---: |
+| Records marked `complete` / `draft` | 568 / 52 |
+| Complete records with candidate Phase 2 section gaps | 567 |
+| Raw records missing explicit `section_status` | 568 |
+| Raw records with incomplete type-required sections | 620 |
+| Raw records missing explicit `knowledge_layers` | 568 |
+| Interpretive notes using current taxonomies | 1,776 |
+| Interpretive notes still using legacy taxonomies | 1,214 |
+| Granular claims authored | 1,089 |
+| External sources | 1,205 |
+| Source references that do not resolve | 0 |
+| Invalid source support targets | 0 |
+| Unresolved legacy object references | 14 |
+| Scripture reference errors | 0 |
+| Graph edges / unknown targets / orphaned records | 3,287 / 0 / 0 |
+| Missing reciprocal relationship suggestions | 2,839 |
+| Validator warnings / errors | 14 / 0 |
+
+Active next wave: continue Phase 5 with this controlled 1 Timothy correction
+wave:
+
+1. create book-specific factual regression fixtures before editing content;
+2. audit every populated field against 1 Timothy, removing inherited
+   Pauline-letter templates, generic events, false completion metadata, and
+   unsupported authorship, audience, Ephesus, office, opponent, or social
+   claims;
+3. gather the critical Greek text, early manuscripts and versions, Hebrew
+   Bible and Septuagint comparanda, Ephesus and Roman Asia evidence,
+   households, patronage, slavery, gender, widows, wealth, education,
+   associations, rhetoric, pseudepigraphy, and early reception before
+   drafting claims;
+4. distinguish the named Paul and Timothy, possible secretary or
+   Pauline-school author, teachers of different doctrine, women and men,
+   overseers, deacons, elders, widows, enslaved and free people, wealthy
+   members, household members, and later interpreters without inventing one
+   opponent group or church structure;
+5. map 1 Timothy 1:1-20; 2:1-3:16; 4:1-5:2; 5:3-6:2; and 6:3-21 while
+   indexing prescript, charge, law, autobiographical example, prayer,
+   authorities, salvation, gendered instruction, overseers, deacons, mystery,
+   ascetic teaching, training, public reading, gifts, age and kinship,
+   widows, elders, accusations, health advice, slavery, wealth, contentment,
+   final charge, and grace;
+6. qualify disputed Pauline authorship, secretary and Pauline-school
+   proposals, date, provenance, destination, relation to Titus and 2 Timothy,
+   audience, opponents, church-order development, integrity, purpose, and
+   relation to Acts without treating canonical first-person voice as a solved
+   modern authorship claim;
+7. distinguish Pauline-form letter, administrative instruction, polemic,
+   vice list, autobiographical example, prayer rule, household code,
+   qualifications list, hymn or confession, prophecy and charge, widow list,
+   disciplinary procedure, diatribe, and benediction;
+8. address sound teaching, law, gospel, mercy, faith, conscience, prayer,
+   mediation, salvation, gender, creation argument, leadership, household,
+   mystery, asceticism, embodiment, Scripture reading, gifts, widows, elders,
+   slavery, wealth, contentment, knowledge, trust, and grace;
+9. preserve uncertainty concerning authorship; date and destination;
+   opponents; myths and genealogies; use of law; vice-list translation;
+   women's dress, teaching, authority, childbirth, and salvation; overseer
+   and deacon roles; women in 3:11; confession; asceticism; bodily training;
+   prophecy and ordination; widow enrollment; elder pay and discipline;
+   slavery; money, wealth, and falsely named knowledge;
+10. distinguish historical claim, epistolary voice, pseudepigraphal proposal,
+    rhetorical opponent, household convention, lexical claim, textual
+    variant, traditional material, Pauline-letter comparison, canonical
+    trajectory, doctrine, confessional system, reception, pastoral
+    application, and modern analogy;
+11. add safeguards against antisemitism, supersessionism, homophobia and
+    mistranslation, misogyny, silencing women, authoritarian office,
+    spiritual abuse, clericalism, elder impunity, victim blaming, unsafe
+    accusation procedures, slavery apologetics, worker exploitation,
+    poverty and disability shaming, medical neglect, coerced asceticism,
+    prosperity extraction, nationalism, militarism, colonial mission, forced
+    conversion, religious violence, public shaming, and ecological neglect;
+    and
+12. populate only applicable hermeneutical and retrieval sections, use
+    current certainty and dispute labels only where evidence justifies them,
+    keep statuses honest with human review missing, run schema, graph, golden
+    retrieval, factual and SQLite parity tests, produce a reviewer-facing
+    report, and refresh this handoff and both generated quality reports.
+
+The active continuation target is Phase 5 Wave 45, 1 Timothy. Follow the
+controlled scope above; do not reopen completed 2 Thessalonians,
+1 Thessalonians, Colossians, Philippians, Ephesians, Galatians,
+2 Corinthians, 1 Corinthians, Romans, Acts, John, Luke, Mark, or Matthew work
+except to address a concrete review or regression finding.
