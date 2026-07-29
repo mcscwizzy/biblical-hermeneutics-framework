@@ -67,6 +67,10 @@ def load_translation_bible(translation_id: str) -> dict[str, Any]:
     """Load an installed local Bible dataset by catalog translation id."""
 
     normalized = translation_storage.normalize_translation_id(translation_id or "asv")
+    if normalized not in {"asv", "kjv"}:
+        raise BibleError(
+            "translation is not installed on the server; only bundled ASV and KJV translations are available"
+        )
     if normalized == "asv":
         return load_asv_bible()
     try:
@@ -499,6 +503,107 @@ def build_selected_passage_context(
     if include_chapter_context:
         context["chapter_context"] = passage["chapter_text"]
     return context
+
+
+def build_interpretation_context(
+    book: str,
+    chapter: int | str,
+    start_verse: int | str | None = None,
+    end_verse: int | str | None = None,
+    *,
+    adjacent_verse_radius: int = 3,
+    data: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Build the mandatory chapter-first context packet for interpretation."""
+
+    if adjacent_verse_radius < 1:
+        raise BibleError("adjacent_verse_radius must be greater than zero")
+
+    chapter_data = resolve_chapter(book, chapter, data)
+    verses = chapter_data["verses"]
+    chapter_number = chapter_data["chapter"]
+    canonical_book = chapter_data["book"]
+    first_verse = int(verses[0]["verse"]) if verses else None
+    last_verse = int(verses[-1]["verse"]) if verses else None
+
+    if start_verse is None:
+        selected = verses
+        preceding: list[dict[str, Any]] = []
+        following: list[dict[str, Any]] = []
+        preceding_reference = ""
+        following_reference = ""
+        focal_reference = verse_range_reference(canonical_book, chapter_number)
+        scope = "entire_chapter"
+    else:
+        start = _positive_int(start_verse, "start_verse")
+        end = _positive_int(end_verse, "end_verse") if end_verse else start
+        if end < start:
+            raise BibleError("end_verse must be greater than or equal to start_verse")
+        selected = [
+            verse for verse in verses if start <= int(verse.get("verse", 0)) <= end
+        ]
+        if (
+            not selected
+            or int(selected[0]["verse"]) != start
+            or int(selected[-1]["verse"]) != end
+        ):
+            raise BibleError(
+                f"{canonical_book} {chapter_number} has no verses {start}-{end}"
+            )
+        preceding = [
+            verse
+            for verse in verses
+            if max(first_verse or start, start - adjacent_verse_radius)
+            <= int(verse.get("verse", 0))
+            < start
+        ]
+        following = [
+            verse
+            for verse in verses
+            if end < int(verse.get("verse", 0))
+            <= min(last_verse or end, end + adjacent_verse_radius)
+        ]
+        preceding_reference = _adjacent_reference(
+            canonical_book, chapter_number, preceding
+        )
+        following_reference = _adjacent_reference(
+            canonical_book, chapter_number, following
+        )
+        focal_reference = verse_range_reference(
+            canonical_book, chapter_number, start, end
+        )
+        scope = "entire_chapter_plus_adjacent_passages"
+
+    return {
+        "translation": chapter_data["translation"],
+        "book": canonical_book,
+        "chapter": chapter_number,
+        "chapter_reference": verse_range_reference(canonical_book, chapter_number),
+        "focal_reference": focal_reference,
+        "focal_text": passage_text(selected),
+        "chapter_text": passage_text(verses),
+        "preceding_passage": passage_text(preceding),
+        "following_passage": passage_text(following),
+        "preceding_reference": preceding_reference,
+        "following_reference": following_reference,
+        "context_scope": scope,
+        "chapter_verse_count": len(verses),
+    }
+
+
+def _adjacent_reference(
+    book: str,
+    chapter: int,
+    verses: list[dict[str, Any]],
+) -> str:
+    if not verses:
+        return ""
+    return verse_range_reference(
+        book,
+        chapter,
+        int(verses[0]["verse"]),
+        int(verses[-1]["verse"]),
+    )
 
 
 def compare_translation_passages(

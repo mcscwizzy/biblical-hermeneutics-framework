@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v11";
+const CACHE_VERSION = "v17";
 const SHELL_CACHE = `bhf-shell-${CACHE_VERSION}`;
 const STATIC_CACHE = `bhf-static-${CACHE_VERSION}`;
 const API_CACHE = `bhf-api-${CACHE_VERSION}`;
@@ -19,6 +19,7 @@ const STATIC_ASSETS = [
   "/static/styles/workspace.css",
   "/static/api/http.js",
   "/static/offline/db.js",
+  "/static/model-settings.js",
   "/static/htmx-lite.js",
   "/static/htmx-status.js",
   "/static/htmx-study-panels.js",
@@ -111,7 +112,7 @@ self.addEventListener("fetch", (event) => {
 
   if (requestUrl.pathname.startsWith("/api/")) {
     if (isCacheableApiRequest(requestUrl)) {
-      event.respondWith(networkFirstApi(event.request));
+      event.respondWith(isRefreshRequest(event.request) ? networkFirstApi(event.request) : cacheFirstApi(event.request));
     }
     return;
   }
@@ -186,6 +187,18 @@ async function networkFirstApi(request) {
   }
 }
 
+async function cacheFirstApi(request) {
+  const cached = await caches.match(request);
+  if (cached) {
+    return cached;
+  }
+  return networkFirstApi(request);
+}
+
+function isRefreshRequest(request) {
+  return request.headers.get("X-BHF-Refresh") === "true";
+}
+
 function isCacheableApiRequest(url) {
   if (isAiOnlyApiRequest(url)) {
     return false;
@@ -200,9 +213,6 @@ function isCacheableApiRequest(url) {
     "/api/bible/books",
     "/api/bible/search",
     "/api/bible/",
-    "/api/notes/",
-    "/api/highlights/",
-    "/api/saved-studies",
     "/api/canonical/search",
     "/api/canonical/objects/",
     "/api/maps/",

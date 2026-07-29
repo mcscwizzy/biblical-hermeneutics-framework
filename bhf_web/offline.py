@@ -50,6 +50,12 @@ def build_offline_manifest() -> dict[str, Any]:
                 "saved_studies",
                 "map_studies",
             ],
+            "device_only": [
+                "notes",
+                "highlights",
+                "saved_studies",
+                "imported_translations",
+            ],
             "requires_online_or_local_runtime": [
                 "ai_ask",
                 "llm_health",
@@ -161,13 +167,6 @@ def build_offline_manifest() -> dict[str, Any]:
             "metadata",
         ],
         "offline_mutations": [
-            "POST /api/notes",
-            "PUT /api/notes/{id}",
-            "DELETE /api/notes/{id}",
-            "POST /api/highlights",
-            "DELETE /api/highlights/{id}",
-            "POST /api/saved-studies",
-            "DELETE /api/saved-studies/{id}",
             "POST /api/map-studies",
             "DELETE /api/map-studies/{id}",
             "POST /api/map-notes",

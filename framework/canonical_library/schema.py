@@ -180,6 +180,15 @@ INTERPRETIVE_NOTE_TYPE_VALUES: tuple[str, ...] = (
 )
 
 INTERPRETIVE_NOTE_CERTAINTY_VALUES: tuple[str, ...] = (
+    "textually_explicit",
+    "strong_consensus",
+    "probable",
+    "plausible",
+    "disputed",
+    "tradition_dependent",
+    "speculative",
+    "insufficient_evidence",
+    # Legacy values remain readable during the controlled migration.
     "high",
     "medium",
     "low",
@@ -187,6 +196,16 @@ INTERPRETIVE_NOTE_CERTAINTY_VALUES: tuple[str, ...] = (
 )
 
 INTERPRETIVE_NOTE_DISPUTE_STATUS_VALUES: tuple[str, ...] = (
+    "not_disputed",
+    "minor_scholarly_disagreement",
+    "major_scholarly_disagreement",
+    "denominational_disagreement",
+    "textual_variant",
+    "historical_uncertainty",
+    "chronological_uncertainty",
+    "archaeological_uncertainty",
+    "lexical_uncertainty",
+    # Legacy values remain readable during the controlled migration.
     "consensus",
     "broad-consensus",
     "majority",
@@ -194,6 +213,101 @@ INTERPRETIVE_NOTE_DISPUTE_STATUS_VALUES: tuple[str, ...] = (
     "minority",
     "confessional",
     "unknown",
+)
+
+CURRENT_CERTAINTY_VALUES: tuple[str, ...] = (
+    "textually_explicit",
+    "strong_consensus",
+    "probable",
+    "plausible",
+    "disputed",
+    "tradition_dependent",
+    "speculative",
+    "insufficient_evidence",
+)
+
+CURRENT_DISPUTE_STATUS_VALUES: tuple[str, ...] = (
+    "not_disputed",
+    "minor_scholarly_disagreement",
+    "major_scholarly_disagreement",
+    "denominational_disagreement",
+    "textual_variant",
+    "historical_uncertainty",
+    "chronological_uncertainty",
+    "archaeological_uncertainty",
+    "lexical_uncertainty",
+)
+
+SECTION_STATUS_VALUES: tuple[str, ...] = (
+    "missing",
+    "generated",
+    "draft",
+    "needs_review",
+    "reviewed",
+    "complete",
+    "not_applicable",
+)
+
+SECTION_STATUS_FIELDS: tuple[str, ...] = (
+    "core_summary",
+    "scripture_anchors",
+    "historical_context",
+    "literary_context",
+    "canonical_context",
+    "original_audience",
+    "lexical_links",
+    "intertextuality",
+    "interpretive_views",
+    "common_misinterpretations",
+    "sources",
+    "relationships",
+    "retrieval_metadata",
+    "human_review",
+)
+
+KNOWLEDGE_LAYER_VALUES: tuple[str, ...] = (
+    "biblical_text",
+    "historical_cultural",
+    "ancient_near_eastern",
+    "second_temple_jewish",
+    "greco_roman",
+    "literary",
+    "lexical",
+    "archaeology",
+    "biblical_theology",
+    "systematic_theology",
+    "reception_history",
+    "denominational_interpretation",
+    "pastoral_application",
+)
+
+KNOWLEDGE_LAYER_PRIORITY: tuple[str, ...] = (
+    "biblical_text",
+    "literary",
+    "historical_cultural",
+    "ancient_near_eastern",
+    "second_temple_jewish",
+    "greco_roman",
+    "lexical",
+    "archaeology",
+    "biblical_theology",
+    "systematic_theology",
+    "reception_history",
+    "denominational_interpretation",
+    "pastoral_application",
+)
+
+CLAIM_TYPE_VALUES: tuple[str, ...] = (
+    "biblical_text",
+    "literary",
+    "historical_cultural",
+    "lexical",
+    "archaeology",
+    "biblical_theology",
+    "systematic_theology",
+    "reception_history",
+    "denominational_interpretation",
+    "pastoral_application",
 )
 
 CONTEXT_APPLICABILITY_FIELDS: tuple[str, ...] = (
@@ -208,6 +322,40 @@ CONTEXT_APPLICABILITY_FIELDS: tuple[str, ...] = (
 
 def default_context_applicability() -> dict[str, bool]:
     return {field_name: True for field_name in CONTEXT_APPLICABILITY_FIELDS}
+
+
+def default_section_status() -> dict[str, str]:
+    return {field_name: "missing" for field_name in SECTION_STATUS_FIELDS}
+
+
+DEFAULT_PRIMARY_KNOWLEDGE_LAYER_BY_TYPE: dict[str, str] = {
+    "archaeology": "archaeology",
+    "biblical_theology": "biblical_theology",
+    "book": "biblical_text",
+    "covenant": "biblical_theology",
+    "cultural_background": "historical_cultural",
+    "doctrine": "systematic_theology",
+    "event": "biblical_text",
+    "faq": "pastoral_application",
+    "institution": "historical_cultural",
+    "literary_device": "literary",
+    "person": "biblical_text",
+    "place": "historical_cultural",
+    "prophecy": "biblical_text",
+    "symbol": "literary",
+    "theme": "biblical_theology",
+    "theology": "systematic_theology",
+    "timeline": "historical_cultural",
+    "word_study": "lexical",
+}
+
+
+def default_knowledge_layers(object_type: str | None = None) -> dict[str, Any]:
+    primary = DEFAULT_PRIMARY_KNOWLEDGE_LAYER_BY_TYPE.get(
+        str(object_type or "").strip().lower(),
+        "biblical_text",
+    )
+    return {"primary": primary, "secondary": []}
 
 DEFAULT_GOVERNANCE_METADATA: dict[str, Any] = {
     "content_status": "placeholder",
@@ -246,6 +394,9 @@ DEFAULT_CANONICAL_METADATA: dict[str, Any] = {
     "related_objects": [],
     "scripture_references": [],
     "sources": [],
+    "claims": [],
+    "section_status": default_section_status(),
+    "knowledge_layers": default_knowledge_layers(),
     "canonical_story": {
         "phase": "",
         "role": "",
@@ -303,6 +454,111 @@ SUPPORTED_CATEGORIES: tuple[str, ...] = (
     "literary_device",
     "doctrine",
 )
+
+COMMON_REQUIRED_SECTIONS: tuple[str, ...] = (
+    "core_summary",
+    "scripture_anchors",
+    "sources",
+    "relationships",
+    "retrieval_metadata",
+    "human_review",
+)
+
+TYPE_SPECIFIC_REQUIRED_SECTIONS: dict[str, tuple[str, ...]] = {
+    "archaeology": (
+        "historical_context",
+        "canonical_context",
+        "interpretive_views",
+        "common_misinterpretations",
+    ),
+    "biblical_theology": (
+        "canonical_context",
+        "intertextuality",
+        "interpretive_views",
+        "common_misinterpretations",
+    ),
+    "book": (
+        "historical_context",
+        "literary_context",
+        "canonical_context",
+        "original_audience",
+        "intertextuality",
+        "interpretive_views",
+        "common_misinterpretations",
+    ),
+    "covenant": (
+        "historical_context",
+        "canonical_context",
+        "intertextuality",
+        "interpretive_views",
+        "common_misinterpretations",
+    ),
+    "cultural_background": (
+        "historical_context",
+        "canonical_context",
+        "common_misinterpretations",
+    ),
+    "doctrine": (
+        "canonical_context",
+        "interpretive_views",
+        "common_misinterpretations",
+    ),
+    "event": ("historical_context", "canonical_context"),
+    "faq": ("canonical_context", "common_misinterpretations"),
+    "institution": ("historical_context", "canonical_context"),
+    "literary_device": (
+        "literary_context",
+        "interpretive_views",
+        "common_misinterpretations",
+    ),
+    "person": ("historical_context", "canonical_context"),
+    "place": ("historical_context", "canonical_context"),
+    "prophecy": (
+        "historical_context",
+        "literary_context",
+        "canonical_context",
+        "original_audience",
+        "intertextuality",
+        "interpretive_views",
+        "common_misinterpretations",
+    ),
+    "symbol": (
+        "literary_context",
+        "canonical_context",
+        "intertextuality",
+        "common_misinterpretations",
+    ),
+    "theme": (
+        "canonical_context",
+        "intertextuality",
+        "interpretive_views",
+        "common_misinterpretations",
+    ),
+    "theology": (
+        "canonical_context",
+        "interpretive_views",
+        "common_misinterpretations",
+    ),
+    "timeline": ("historical_context", "canonical_context"),
+    "word_study": (
+        "lexical_links",
+        "canonical_context",
+        "interpretive_views",
+        "common_misinterpretations",
+    ),
+}
+
+
+def required_sections_for_type(object_type: str) -> tuple[str, ...]:
+    return tuple(
+        dict.fromkeys(
+            (
+                *COMMON_REQUIRED_SECTIONS,
+                *TYPE_SPECIFIC_REQUIRED_SECTIONS.get(object_type, ()),
+            )
+        )
+    )
+
 
 CATEGORY_FOLDERS: dict[str, str] = {
     "theology": "theology",
@@ -400,8 +656,12 @@ SCRIPTURE_REFERENCE_FIELDS: tuple[str, ...] = ("scripture_references",)
 
 SOURCE_FIELDS: tuple[str, ...] = ("sources",)
 
+CLAIM_FIELDS: tuple[str, ...] = ("claims",)
+
 MAPPING_FIELDS: tuple[str, ...] = (
     "context_applicability",
+    "section_status",
+    "knowledge_layers",
     "canonical_story",
     "hermeneutical_lens",
     "retrieval_metadata",
@@ -443,6 +703,9 @@ RETRIEVAL_METADATA_LIST_FIELDS: tuple[str, ...] = (
     "semantic_keywords",
 )
 
+KNOWLEDGE_LAYER_STRING_FIELDS: tuple[str, ...] = ("primary",)
+KNOWLEDGE_LAYER_LIST_FIELDS: tuple[str, ...] = ("secondary",)
+
 RELATED_OBJECT_REQUIRED_FIELDS: tuple[str, ...] = (
     "id",
     "relationship",
@@ -474,6 +737,7 @@ ALL_FIELDS: tuple[str, ...] = (
     + RELATED_OBJECT_FIELDS
     + SCRIPTURE_REFERENCE_FIELDS
     + SOURCE_FIELDS
+    + CLAIM_FIELDS
     + INT_FIELDS
     + BOOLEAN_FIELDS
     + OPTIONAL_FIELDS
@@ -698,6 +962,9 @@ class CanonicalInterpretiveNote:
     certainty: str = "unknown"
     dispute_status: str = "unknown"
     sources: list[str] = field(default_factory=list)
+    scripture_references: list[str] = field(default_factory=list)
+    traditions: list[str] = field(default_factory=list)
+    rationale: str = ""
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -716,6 +983,29 @@ class CanonicalInterpretiveNote:
         if not normalized:
             raise CanonicalValidationError("legacy interpretive note strings must not be blank")
         return cls(note=normalized)
+
+
+@dataclass(frozen=True)
+class CanonicalClaim:
+    id: str
+    claim: str
+    claim_type: str
+    certainty: str
+    dispute_status: str
+    scripture_references: list[str] = field(default_factory=list)
+    source_ids: list[str] = field(default_factory=list)
+    traditions: list[str] = field(default_factory=list)
+    rationale: str = ""
+    notes: str = ""
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+    @classmethod
+    def from_mapping(cls, mapping: Mapping[str, Any]) -> "CanonicalClaim":
+        if isinstance(mapping, CanonicalClaim):
+            return mapping
+        return validate_claim_entry(mapping)
 
 
 @dataclass(frozen=True)
@@ -766,6 +1056,9 @@ class CanonicalObject:
     interpretive_notes: list[CanonicalInterpretiveNote] = field(default_factory=list)
     common_questions: list[str] = field(default_factory=list)
     sources: list[CanonicalSource] = field(default_factory=list)
+    claims: list[CanonicalClaim] = field(default_factory=list)
+    section_status: dict[str, str] = field(default_factory=default_section_status)
+    knowledge_layers: dict[str, Any] = field(default_factory=default_knowledge_layers)
     canonical_story: dict[str, Any] = field(
         default_factory=lambda: _clone_default_value(DEFAULT_CANONICAL_METADATA["canonical_story"])
     )
@@ -831,6 +1124,12 @@ class CanonicalObject:
                     path=path,
                     object_id=object_id,
                 )
+            elif field_name == "claims":
+                values[field_name] = validate_claims_field(
+                    normalized,
+                    path=path,
+                    object_id=object_id,
+                )
             else:
                 values[field_name] = normalized[field_name]
         return cls(**values)
@@ -838,6 +1137,7 @@ class CanonicalObject:
 
 def _apply_governance_defaults(data: Mapping[str, Any]) -> dict[str, Any]:
     normalized = dict(data)
+    knowledge_layers_were_missing = "knowledge_layers" not in normalized
     for field_name, default_value in DEFAULT_CANONICAL_METADATA.items():
         if field_name not in normalized:
             normalized[field_name] = _clone_default_value(default_value)
@@ -846,7 +1146,13 @@ def _apply_governance_defaults(data: Mapping[str, Any]) -> dict[str, Any]:
                 **default_context_applicability(),
                 **dict(normalized[field_name]),
             }
-        elif field_name in {"canonical_story", "hermeneutical_lens", "retrieval_metadata"} and isinstance(
+        elif field_name in {
+            "section_status",
+            "knowledge_layers",
+            "canonical_story",
+            "hermeneutical_lens",
+            "retrieval_metadata",
+        } and isinstance(
             normalized[field_name],
             Mapping,
         ):
@@ -854,6 +1160,10 @@ def _apply_governance_defaults(data: Mapping[str, Any]) -> dict[str, Any]:
                 **_clone_default_value(default_value),
                 **dict(normalized[field_name]),
             }
+    if knowledge_layers_were_missing:
+        normalized["knowledge_layers"] = default_knowledge_layers(
+            normalized.get("type") if isinstance(normalized.get("type"), str) else None
+        )
     normalized = _normalize_governance_metadata(normalized)
     return normalized
 
@@ -1406,6 +1716,18 @@ def validate_field_types(
                 path=path,
                 object_id=object_id,
             )
+    if "claims" in data:
+        value = data["claims"]
+        if not isinstance(value, list) or any(
+            not isinstance(item, Mapping) for item in value
+        ):
+            raise _expected_actual_error(
+                "claims",
+                "list[dict]",
+                value,
+                path=path,
+                object_id=object_id,
+            )
     if "context_applicability" in data:
         value = data["context_applicability"]
         if not isinstance(value, Mapping):
@@ -1430,6 +1752,72 @@ def validate_field_types(
                 field_name,
                 "bool",
                 flag,
+                path=path,
+                object_id=object_id,
+            )
+    if "section_status" in data:
+        value = data["section_status"]
+        if not isinstance(value, Mapping):
+            raise _expected_actual_error(
+                "section_status",
+                "dict[str, str]",
+                value,
+                path=path,
+                object_id=object_id,
+            )
+        unknown_fields = sorted(set(value) - set(SECTION_STATUS_FIELDS))
+        if unknown_fields:
+            raise _error(
+                f'unknown section status field(s): {", ".join(unknown_fields)}',
+                path=path,
+                object_id=object_id,
+            )
+        for section_name, status in value.items():
+            if not isinstance(status, str) or status not in SECTION_STATUS_VALUES:
+                raise _error(
+                    f'field "section_status.{section_name}" must be one of '
+                    f'{", ".join(SECTION_STATUS_VALUES)}',
+                    path=path,
+                    object_id=object_id,
+                )
+    _validate_structured_mapping_field(
+        data,
+        field_name="knowledge_layers",
+        string_fields=KNOWLEDGE_LAYER_STRING_FIELDS,
+        list_fields=KNOWLEDGE_LAYER_LIST_FIELDS,
+        path=path,
+        object_id=object_id,
+    )
+    knowledge_layers = data.get("knowledge_layers")
+    if isinstance(knowledge_layers, Mapping):
+        primary = knowledge_layers.get("primary")
+        secondary = knowledge_layers.get("secondary", [])
+        if primary not in KNOWLEDGE_LAYER_VALUES:
+            raise _error(
+                'field "knowledge_layers.primary" must be one of '
+                + ", ".join(KNOWLEDGE_LAYER_VALUES),
+                path=path,
+                object_id=object_id,
+            )
+        invalid_secondary = [
+            value for value in secondary if value not in KNOWLEDGE_LAYER_VALUES
+        ]
+        if invalid_secondary:
+            raise _error(
+                'field "knowledge_layers.secondary" contains unsupported '
+                f'layer(s): {", ".join(invalid_secondary)}',
+                path=path,
+                object_id=object_id,
+            )
+        if len(secondary) != len(set(secondary)):
+            raise _error(
+                'field "knowledge_layers.secondary" must not contain duplicates',
+                path=path,
+                object_id=object_id,
+            )
+        if primary in secondary:
+            raise _error(
+                'field "knowledge_layers.secondary" must not repeat the primary layer',
                 path=path,
                 object_id=object_id,
             )
@@ -1871,6 +2259,45 @@ def _normalize_interpretive_note_label(value: Any) -> str:
     return re.sub(r"[\s_]+", "-", str(value).strip().lower())
 
 
+def _normalize_taxonomy_label(value: Any, allowed: Sequence[str]) -> str:
+    normalized = str(value).strip().lower()
+    if normalized in allowed:
+        return normalized
+    underscore_candidate = re.sub(r"[\s-]+", "_", normalized)
+    if underscore_candidate in allowed:
+        return underscore_candidate
+    hyphen_candidate = re.sub(r"[\s_]+", "-", normalized)
+    return hyphen_candidate
+
+
+def _normalize_nonempty_string_list(
+    value: Any,
+    *,
+    field_name: str,
+    path: str | Path | None = None,
+    object_id: str | None = None,
+    normalize_as_ids: bool = False,
+) -> list[str]:
+    if value is None or not isinstance(value, list):
+        raise _expected_actual_error(
+            field_name,
+            "list[str]",
+            value,
+            path=path,
+            object_id=object_id,
+        )
+    normalized_values: list[str] = []
+    for item in value:
+        if not isinstance(item, str) or not item.strip():
+            raise _error(
+                f'field "{field_name}" must contain non-empty strings',
+                path=path,
+                object_id=object_id,
+            )
+        normalized_values.append(normalize_id(item) if normalize_as_ids else item.strip())
+    return list(dict.fromkeys(normalized_values))
+
+
 def validate_interpretive_note_entry(
     data: Any,
     *,
@@ -1891,7 +2318,15 @@ def validate_interpretive_note_entry(
         )
 
     required_fields = ("note",)
-    optional_fields = ("note_type", "certainty", "dispute_status", "sources")
+    optional_fields = (
+        "note_type",
+        "certainty",
+        "dispute_status",
+        "sources",
+        "scripture_references",
+        "traditions",
+        "rationale",
+    )
     unknown_fields = sorted(set(data) - set(required_fields) - set(optional_fields))
     if unknown_fields:
         raise _error(
@@ -1916,7 +2351,10 @@ def validate_interpretive_note_entry(
             object_id=object_id,
         )
 
-    certainty = _normalize_interpretive_note_label(data.get("certainty", "unknown"))
+    certainty = _normalize_taxonomy_label(
+        data.get("certainty", "unknown"),
+        INTERPRETIVE_NOTE_CERTAINTY_VALUES,
+    )
     if certainty not in INTERPRETIVE_NOTE_CERTAINTY_VALUES:
         raise _error(
             f'field "certainty" must be one of {", ".join(INTERPRETIVE_NOTE_CERTAINTY_VALUES)}',
@@ -1924,7 +2362,10 @@ def validate_interpretive_note_entry(
             object_id=object_id,
         )
 
-    dispute_status = _normalize_interpretive_note_label(data.get("dispute_status", "unknown"))
+    dispute_status = _normalize_taxonomy_label(
+        data.get("dispute_status", "unknown"),
+        INTERPRETIVE_NOTE_DISPUTE_STATUS_VALUES,
+    )
     if dispute_status not in INTERPRETIVE_NOTE_DISPUTE_STATUS_VALUES:
         raise _error(
             f'field "dispute_status" must be one of {", ".join(INTERPRETIVE_NOTE_DISPUTE_STATUS_VALUES)}',
@@ -1932,49 +2373,43 @@ def validate_interpretive_note_entry(
             object_id=object_id,
         )
 
-    sources_value = data.get("sources", [])
-    if sources_value is None:
+    sources = _normalize_nonempty_string_list(
+        data.get("sources", []),
+        field_name="sources",
+        path=path,
+        object_id=object_id,
+        normalize_as_ids=True,
+    )
+    scripture_references = _normalize_nonempty_string_list(
+        data.get("scripture_references", []),
+        field_name="scripture_references",
+        path=path,
+        object_id=object_id,
+    )
+    traditions = _normalize_nonempty_string_list(
+        data.get("traditions", []),
+        field_name="traditions",
+        path=path,
+        object_id=object_id,
+    )
+    rationale = data.get("rationale", "")
+    if not isinstance(rationale, str):
         raise _expected_actual_error(
-            "sources",
-            "list[str]",
-            sources_value,
+            "rationale",
+            "str",
+            rationale,
             path=path,
             object_id=object_id,
         )
-    if not isinstance(sources_value, list):
-        raise _expected_actual_error(
-            "sources",
-            "list[str]",
-            sources_value,
-            path=path,
-            object_id=object_id,
-        )
-    sources: list[str] = []
-    for source_id in sources_value:
-        if not isinstance(source_id, str):
-            raise _expected_actual_error(
-                "sources",
-                "list[str]",
-                sources_value,
-                path=path,
-                object_id=object_id,
-            )
-        normalized_source_id = normalize_id(source_id)
-        if not normalized_source_id:
-            raise _error(
-                'field "sources" cannot contain blank values',
-                path=path,
-                object_id=object_id,
-            )
-        sources.append(normalized_source_id)
-
-    deduped_sources = list(dict.fromkeys(sources))
     return CanonicalInterpretiveNote(
         note=note.strip(),
         note_type=note_type,
         certainty=certainty,
         dispute_status=dispute_status,
-        sources=deduped_sources,
+        sources=sources,
+        scripture_references=scripture_references,
+        traditions=traditions,
+        rationale=rationale.strip(),
     )
 
 
@@ -2012,6 +2447,195 @@ def normalize_interpretive_notes_field(
     return normalized_notes
 
 
+def validate_claim_entry(
+    data: Any,
+    *,
+    path: str | Path | None = None,
+    object_id: str | None = None,
+) -> CanonicalClaim:
+    if isinstance(data, CanonicalClaim):
+        return data
+    if not isinstance(data, Mapping):
+        raise _expected_actual_error(
+            "claims",
+            "list[dict]",
+            data,
+            path=path,
+            object_id=object_id,
+        )
+
+    required_fields = (
+        "id",
+        "claim",
+        "claim_type",
+        "certainty",
+        "dispute_status",
+    )
+    optional_fields = (
+        "scripture_references",
+        "source_ids",
+        "traditions",
+        "rationale",
+        "notes",
+    )
+    unknown_fields = sorted(set(data) - set(required_fields) - set(optional_fields))
+    if unknown_fields:
+        raise _error(
+            f'unknown claim field(s): {", ".join(unknown_fields)}',
+            path=path,
+            object_id=object_id,
+        )
+
+    missing_fields = [field_name for field_name in required_fields if field_name not in data]
+    if missing_fields:
+        raise _error(
+            f'claim is missing required field(s): {", ".join(missing_fields)}',
+            path=path,
+            object_id=object_id,
+        )
+
+    claim_id = data.get("id")
+    if (
+        not isinstance(claim_id, str)
+        or not claim_id.strip()
+        or normalize_id(claim_id) != claim_id
+    ):
+        raise _error(
+            'field "claims.id" must use lowercase kebab-case',
+            path=path,
+            object_id=object_id,
+        )
+    claim_text = data.get("claim")
+    if not isinstance(claim_text, str) or not claim_text.strip():
+        raise _error(
+            'field "claims.claim" must be a non-empty string',
+            path=path,
+            object_id=object_id,
+        )
+
+    claim_type = _normalize_taxonomy_label(data.get("claim_type"), CLAIM_TYPE_VALUES)
+    if claim_type not in CLAIM_TYPE_VALUES:
+        raise _error(
+            f'field "claims.claim_type" must be one of {", ".join(CLAIM_TYPE_VALUES)}',
+            path=path,
+            object_id=object_id,
+        )
+    certainty = _normalize_taxonomy_label(data.get("certainty"), CURRENT_CERTAINTY_VALUES)
+    if certainty not in CURRENT_CERTAINTY_VALUES:
+        raise _error(
+            f'field "claims.certainty" must be one of {", ".join(CURRENT_CERTAINTY_VALUES)}',
+            path=path,
+            object_id=object_id,
+        )
+    dispute_status = _normalize_taxonomy_label(
+        data.get("dispute_status"),
+        CURRENT_DISPUTE_STATUS_VALUES,
+    )
+    if dispute_status not in CURRENT_DISPUTE_STATUS_VALUES:
+        raise _error(
+            'field "claims.dispute_status" must be one of '
+            + ", ".join(CURRENT_DISPUTE_STATUS_VALUES),
+            path=path,
+            object_id=object_id,
+        )
+
+    scripture_references = _normalize_nonempty_string_list(
+        data.get("scripture_references", []),
+        field_name="claims.scripture_references",
+        path=path,
+        object_id=object_id,
+    )
+    source_ids = _normalize_nonempty_string_list(
+        data.get("source_ids", []),
+        field_name="claims.source_ids",
+        path=path,
+        object_id=object_id,
+        normalize_as_ids=True,
+    )
+    traditions = _normalize_nonempty_string_list(
+        data.get("traditions", []),
+        field_name="claims.traditions",
+        path=path,
+        object_id=object_id,
+    )
+    rationale = data.get("rationale", "")
+    notes = data.get("notes", "")
+    for field_name, value in (("claims.rationale", rationale), ("claims.notes", notes)):
+        if not isinstance(value, str):
+            raise _expected_actual_error(
+                field_name,
+                "str",
+                value,
+                path=path,
+                object_id=object_id,
+            )
+
+    return CanonicalClaim(
+        id=claim_id,
+        claim=claim_text.strip(),
+        claim_type=claim_type,
+        certainty=certainty,
+        dispute_status=dispute_status,
+        scripture_references=scripture_references,
+        source_ids=source_ids,
+        traditions=traditions,
+        rationale=rationale.strip(),
+        notes=notes.strip(),
+    )
+
+
+def validate_claims_field(
+    data: Mapping[str, Any],
+    *,
+    path: str | Path | None = None,
+    object_id: str | None = None,
+) -> list[CanonicalClaim]:
+    claims = data.get("claims", [])
+    if not isinstance(claims, list):
+        raise _expected_actual_error(
+            "claims",
+            "list[dict]",
+            claims,
+            path=path,
+            object_id=object_id,
+        )
+
+    normalized_claims: list[CanonicalClaim] = []
+    seen_ids: set[str] = set()
+    for item in claims:
+        claim = validate_claim_entry(item, path=path, object_id=object_id)
+        if claim.id in seen_ids:
+            raise _error(
+                f'field "claims" contains duplicate claim id "{claim.id}"',
+                path=path,
+                object_id=object_id,
+            )
+        seen_ids.add(claim.id)
+        normalized_claims.append(claim)
+    return normalized_claims
+
+
+def validate_claim_source_references(
+    data: Mapping[str, Any],
+    *,
+    path: str | Path | None = None,
+) -> None:
+    object_id = data.get("id") if isinstance(data.get("id"), str) else None
+    source_ids = {
+        source.id
+        for source in normalize_sources_field(data, path=path, object_id=object_id)
+    }
+    for claim in validate_claims_field(data, path=path, object_id=object_id):
+        missing_sources = sorted(set(claim.source_ids) - source_ids)
+        if missing_sources:
+            raise _error(
+                f'claim "{claim.id}" references missing source IDs: '
+                + ", ".join(missing_sources),
+                path=path,
+                object_id=object_id,
+            )
+
+
 def interpretive_note_texts(value: Any) -> list[str]:
     if value is None:
         return []
@@ -2027,6 +2651,87 @@ def interpretive_note_texts(value: Any) -> list[str]:
         return texts
     text = str(value).strip()
     return [text] if text else []
+
+
+def section_completion_issues(data: Mapping[str, Any] | CanonicalObject) -> list[str]:
+    """Return required sections that are not complete for this object type."""
+
+    mapping = data.to_dict() if isinstance(data, CanonicalObject) else dict(data)
+    section_status = mapping.get("section_status")
+    if not isinstance(section_status, Mapping):
+        return list(required_sections_for_type(str(mapping.get("type") or "")))
+    return [
+        section_name
+        for section_name in required_sections_for_type(str(mapping.get("type") or ""))
+        if section_status.get(section_name) not in {"complete", "not_applicable"}
+    ]
+
+
+def content_completeness_issues(
+    data: Mapping[str, Any] | CanonicalObject,
+    *,
+    known_object_ids: set[str] | None = None,
+) -> list[str]:
+    """Return deterministic reasons an object is not globally complete."""
+
+    mapping = data.to_dict() if isinstance(data, CanonicalObject) else dict(data)
+    issues = [
+        f'section_status.{section_name} is not complete'
+        for section_name in section_completion_issues(mapping)
+    ]
+    if mapping.get("content_status") != "complete":
+        issues.append("content_status is not complete")
+    if mapping.get("review_status") not in {"reviewed", "approved"}:
+        issues.append("human review has not occurred")
+    if mapping.get("human_review_required") is not False:
+        issues.append("human_review_required is not false")
+    if not mapping.get("reviewed_by"):
+        issues.append("reviewed_by is empty")
+
+    source_ids = {
+        str(source.get("id") if isinstance(source, Mapping) else getattr(source, "id", "") or "")
+        for source in mapping.get("sources", [])
+    }
+    for note in normalize_interpretive_notes_field(mapping):
+        if (
+            note.certainty not in CURRENT_CERTAINTY_VALUES
+            or note.dispute_status not in CURRENT_DISPUTE_STATUS_VALUES
+        ):
+            issues.append("interpretive note uses legacy or unknown certainty metadata")
+        missing_note_sources = sorted(set(note.sources) - source_ids)
+        if missing_note_sources:
+            issues.append(
+                "interpretive note references missing source IDs: "
+                + ", ".join(missing_note_sources)
+            )
+    for claim in validate_claims_field(mapping):
+        if not claim.scripture_references and not claim.source_ids:
+            issues.append(f'claim "{claim.id}" has no supporting evidence')
+        missing_claim_sources = sorted(set(claim.source_ids) - source_ids)
+        if missing_claim_sources:
+            issues.append(
+                f'claim "{claim.id}" references missing source IDs: '
+                + ", ".join(missing_claim_sources)
+            )
+
+    if known_object_ids is not None:
+        for relationship in mapping.get("related_objects", []):
+            target_id = (
+                relationship.get("id")
+                if isinstance(relationship, Mapping)
+                else getattr(relationship, "id", None)
+            )
+            if target_id and target_id not in known_object_ids:
+                issues.append(f'relationship target "{target_id}" does not resolve')
+    return list(dict.fromkeys(issues))
+
+
+def is_globally_complete(
+    data: Mapping[str, Any] | CanonicalObject,
+    *,
+    known_object_ids: set[str] | None = None,
+) -> bool:
+    return not content_completeness_issues(data, known_object_ids=known_object_ids)
 
 
 def validate_approved_content_requirements(
@@ -2086,6 +2791,67 @@ def validate_approved_content_requirements(
             path=path,
             object_id=object_id,
         )
+
+    incomplete_sections = section_completion_issues(normalized)
+    if incomplete_sections:
+        raise _error(
+            'approved content requires complete or not_applicable section status for: '
+            + ", ".join(incomplete_sections),
+            path=path,
+            object_id=object_id,
+        )
+
+    source_ids = {source.id for source in normalized_sources}
+    for note in normalize_interpretive_notes_field(
+        normalized,
+        path=path,
+        object_id=object_id,
+    ):
+        if (
+            note.certainty not in CURRENT_CERTAINTY_VALUES
+            or note.dispute_status not in CURRENT_DISPUTE_STATUS_VALUES
+        ):
+            raise _error(
+                "approved interpretive notes must use current certainty and dispute taxonomies",
+                path=path,
+                object_id=object_id,
+            )
+        if not note.rationale:
+            raise _error(
+                "approved interpretive notes must include a certainty rationale",
+                path=path,
+                object_id=object_id,
+            )
+        missing_sources = sorted(set(note.sources) - source_ids)
+        if missing_sources:
+            raise _error(
+                "interpretive note references missing source IDs: "
+                + ", ".join(missing_sources),
+                path=path,
+                object_id=object_id,
+            )
+
+    for claim in validate_claims_field(normalized, path=path, object_id=object_id):
+        if not claim.rationale:
+            raise _error(
+                f'approved claim "{claim.id}" must include a certainty rationale',
+                path=path,
+                object_id=object_id,
+            )
+        if not claim.scripture_references and not claim.source_ids:
+            raise _error(
+                f'approved claim "{claim.id}" must include supporting evidence',
+                path=path,
+                object_id=object_id,
+            )
+        missing_sources = sorted(set(claim.source_ids) - source_ids)
+        if missing_sources:
+            raise _error(
+                f'claim "{claim.id}" references missing source IDs: '
+                + ", ".join(missing_sources),
+                path=path,
+                object_id=object_id,
+            )
 
 
 def validate_governance_metadata(
@@ -2353,6 +3119,7 @@ def validate_object(
     normalized_data = _apply_governance_defaults(data)
     validate_required_fields(normalized_data, path=path)
     validate_field_types(normalized_data, path=path)
+    validate_claim_source_references(normalized_data, path=path)
     validate_category_type(normalized_data, path=path)
     validate_aliases(normalized_data, path=path)
     for field_name in UNIQUE_NORMALIZED_LIST_FIELDS:

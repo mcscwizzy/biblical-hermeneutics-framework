@@ -9,13 +9,11 @@ from bhf_agent.translation_catalog import (
     github_download_allowed,
     github_download_metadata,
     import_translation,
-    install_remote_translation,
     provider_access,
     resolve_selectable_translation,
     set_default_translation,
     translation_provider_access,
     translation_selector_sections,
-    validate_beblia_source_for_install,
 )
 
 
@@ -35,29 +33,28 @@ class TranslationCatalogTests(unittest.TestCase):
             ["asv", "kjv", "niv", "esv", "csb", "nasb", "lsb", "nlt"],
         )
 
-    def test_asv_is_bundled_and_kjv_is_downloadable(self):
+    def test_asv_and_kjv_are_bundled(self):
         catalog = {entry["id"]: entry for entry in curated_english_catalog()}
 
         self.assertTrue(catalog["asv"]["bundled"])
         self.assertEqual(catalog["asv"]["availability"], "bundled")
         self.assertFalse(catalog["asv"]["download_enabled"])
-        self.assertFalse(catalog["kjv"]["bundled"])
-        self.assertEqual(catalog["kjv"]["availability"], "remote_download")
-        self.assertTrue(catalog["kjv"]["download_enabled"])
-        self.assertTrue(github_download_allowed("kjv"))
+        self.assertTrue(catalog["kjv"]["bundled"])
+        self.assertEqual(catalog["kjv"]["availability"], "bundled")
+        self.assertFalse(catalog["kjv"]["download_enabled"])
+        self.assertFalse(github_download_allowed("kjv"))
 
-    def test_kjv_github_download_metadata_is_reviewed(self):
+    def test_kjv_is_present_in_the_selector_without_installation(self):
+        sections = translation_selector_sections(installed_translation_ids=["asv"])
+
+        installed = sections["sections"]["installed"]
+        self.assertEqual([entry["id"] for entry in installed], ["asv", "kjv"])
+        self.assertTrue(next(entry for entry in installed if entry["id"] == "kjv")["can_select"])
+
+    def test_kjv_github_download_metadata_is_not_exposed_for_bundled_data(self):
         metadata = github_download_metadata("kjv")
 
-        self.assertIsNotNone(metadata)
-        assert metadata is not None
-        self.assertEqual(metadata["translation_id"], "kjv")
-        self.assertEqual(metadata["source"], "github")
-        self.assertEqual(metadata["provider_id"], "beblia_github")
-        self.assertIn("Beblia/Holy-Bible-XML-Format", metadata["repository_url"])
-        self.assertTrue(metadata["approved_source_url"].endswith("/EnglishKJBible.xml"))
-        self.assertFalse(metadata["supported_by_bhf"])
-        self.assertIn("third-party GitHub repository", metadata["third_party_notice"])
+        self.assertIsNone(metadata)
 
     def test_protected_translation_downloads_are_disabled(self):
         catalog = {entry["id"]: entry for entry in curated_english_catalog()}
@@ -89,43 +86,11 @@ class TranslationCatalogTests(unittest.TestCase):
         for translation_id in PROTECTED_TRANSLATION_IDS:
             self.assertFalse(beblia_download_allowed(translation_id))
 
-    def test_kjv_source_validation_occurs_before_installation(self):
+    def test_kjv_dataset_is_available_as_a_built_in_translation(self):
         kjv = load_kjv_bible()
 
-        with self.assertRaisesRegex(ValueError, "sample passage validation is required"):
-            install_remote_translation(
-                "kjv",
-                kjv,
-                repository_commit_sha="abc123",
-                checksum_sha256="07b1321a92fb1af3b26a8963ee70e667a3572d03e872a32f38c2f5d5f0beba1e",
-            )
-
-        installed = install_remote_translation(
-            "kjv",
-            kjv,
-            repository_commit_sha="abc123",
-            checksum_sha256="07b1321a92fb1af3b26a8963ee70e667a3572d03e872a32f38c2f5d5f0beba1e",
-            sample_validator=lambda data: "King James Version" in data["translation"]["name"],
-        )
-        self.assertEqual(installed["availability"], "installed")
-        self.assertTrue(installed["validation"]["validated"])
-        self.assertEqual(
-            installed["validation"]["approved_source_path"],
-            "EnglishKJBible.xml",
-        )
-
-    def test_kjv_validation_rejects_wrong_translation_metadata(self):
-        kjv = load_kjv_bible()
-        wrong = {**kjv, "translation": {"id": "NIV", "name": "New International Version"}}
-
-        with self.assertRaisesRegex(ValueError, "expected translation"):
-            validate_beblia_source_for_install(
-                "kjv",
-                wrong,
-                repository_commit_sha="abc123",
-                checksum_sha256="checksum",
-                sample_validator=lambda data: True,
-            )
+        self.assertEqual(kjv["translation"]["id"], "KJV")
+        self.assertEqual(len(kjv["books"]), 66)
 
     def test_user_imported_translations_remain_private_and_local(self):
         imported = import_translation(

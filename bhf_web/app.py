@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from fastapi import FastAPI, File, Form, Request, UploadFile
+from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -15,7 +15,6 @@ from bhf_agent.bible import (
     list_books,
     list_translation_books,
     load_translation_bible,
-    save_imported_xml_translation,
     search_bible_text,
     resolve_translation_chapter,
 )
@@ -36,7 +35,6 @@ from bhf_agent.translation_settings import (
     save_reader_settings,
     set_default_reader_translation,
 )
-from bhf_agent.translation_storage import normalize_translation_id
 from bhf_agent.runner import BHFAgent
 from bhf_agent.lexicon import WordStudyService
 from bhf_agent.study_db import (
@@ -47,6 +45,7 @@ from bhf_agent.study_db import (
 
 from .forms import (
     ADAPTERS,
+    ADAPTER_LABELS,
     ANSWER_MODES,
     RUNTIME_PROFILE_MODES,
     form_values_from_config,
@@ -278,6 +277,7 @@ def create_app() -> FastAPI:
                 {
                     "form": form_values_from_config(loaded.config),
                     "adapters": ADAPTERS,
+                    "adapter_labels": ADAPTER_LABELS,
                     "profiles": _available_profiles(loaded.config.profile),
                     "runtime_profile_modes": RUNTIME_PROFILE_MODES,
                     "answer_modes": ANSWER_MODES,
@@ -307,6 +307,8 @@ def create_app() -> FastAPI:
         default_translation = get_default_reader_translation()
         translations: list[dict[str, object]] = []
         for installation in list_installed_translations():
+            if not installation.get("installed"):
+                continue
             translation_id = str(installation.get("translation_id") or "").lower()
             if not translation_id:
                 continue
@@ -369,14 +371,18 @@ def create_app() -> FastAPI:
     @web_app.get("/api/translations/{translation_id}", response_class=JSONResponse)
     async def translation_detail(translation_id: str) -> JSONResponse:
         installation = get_translation_installation(translation_id)
-        if not installation.get("installed"):
+        if not installation.get("installed") or not installation.get("bundled"):
             return JSONResponse({"error": "translation is not installed"}, status_code=404)
         return JSONResponse({"translation": installation.get("translation"), "installation": installation})
 
     @web_app.get("/api/translations/{translation_id}/offline-data", response_class=JSONResponse)
     async def translation_offline_data(translation_id: str) -> JSONResponse:
         installation = get_translation_installation(translation_id)
-        if not installation.get("installed") or not installation.get("offline_supported"):
+        if (
+            not installation.get("installed")
+            or not installation.get("bundled")
+            or not installation.get("offline_supported")
+        ):
             return JSONResponse({"error": "translation is not installed for offline use"}, status_code=404)
         try:
             return JSONResponse(
@@ -441,43 +447,6 @@ def create_app() -> FastAPI:
         except ValueError as exc:
             return JSONResponse({"error": str(exc)}, status_code=400)
 
-    @web_app.post("/api/translations/{translation_id}/import", response_class=JSONResponse)
-    async def translation_import_upload(
-        translation_id: str,
-        translation_name: str = Form(""),
-        confirmed: bool = Form(False),
-        file: UploadFile = File(...),
-    ) -> JSONResponse:
-        source_filename = file.filename or f"{translation_id}.xml"
-        supplied_name = translation_name.strip()
-        if not supplied_name:
-            return JSONResponse({"error": "translation name is required"}, status_code=400)
-        try:
-            normalized_id = normalize_translation_id(translation_id)
-            notice = import_translation(
-                normalized_id,
-                confirmed=confirmed,
-                source_filename=source_filename,
-            )
-            content = await file.read()
-            installed = save_imported_xml_translation(
-                normalized_id,
-                content,
-                source_filename=source_filename,
-                translation_name=supplied_name,
-            )
-            return JSONResponse(
-                {
-                    **notice,
-                    **installed,
-                    "upload_to_bhf": False,
-                    "redistribute_to_users": False,
-                    "add_to_shared_catalog": False,
-                }
-            )
-        except (BibleError, ValueError) as exc:
-            return JSONResponse({"error": str(exc)}, status_code=400)
-
     @web_app.get("/api/settings/reader", response_class=JSONResponse)
     async def reader_settings() -> JSONResponse:
         return JSONResponse({"default_translation": get_default_reader_translation()})
@@ -493,6 +462,11 @@ def create_app() -> FastAPI:
 
     @web_app.delete("/api/translations/{translation_id}", response_class=JSONResponse)
     async def translation_delete(translation_id: str) -> JSONResponse:
+        if translation_id.lower() not in {"asv", "kjv"}:
+            return JSONResponse(
+                {"error": "Imported translations are stored on the device and cannot be removed from the server."},
+                status_code=400,
+            )
         current_default = get_default_reader_translation()
         try:
             removed = remove_translation(translation_id)

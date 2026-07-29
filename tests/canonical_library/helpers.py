@@ -7,7 +7,12 @@ from collections import Counter
 from pathlib import Path
 from typing import Any, Iterable
 
-from framework.canonical_library import CATEGORY_FOLDERS, CanonicalObject
+from framework.canonical_library import (
+    CATEGORY_FOLDERS,
+    CanonicalObject,
+    default_knowledge_layers,
+    default_section_status,
+)
 
 
 MANIFEST_CATEGORY_KEYS = tuple(dict.fromkeys(CATEGORY_FOLDERS.values()))
@@ -20,6 +25,15 @@ def make_object(
     aliases: list[str],
     **overrides: Any,
 ) -> dict[str, Any]:
+    overrides.setdefault("knowledge_layers", default_knowledge_layers(type_name))
+    if (
+        overrides.get("review_status") == "approved"
+        and "section_status" not in overrides
+    ):
+        overrides["section_status"] = {
+            section_name: "complete"
+            for section_name in default_section_status()
+        }
     obj = CanonicalObject(
         id=object_id,
         type=type_name,

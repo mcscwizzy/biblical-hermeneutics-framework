@@ -44,6 +44,25 @@ def _result_error_message(result: Any) -> str:
     return "; ".join(str(error) for error in errors)
 
 
+def _device_study_payload(job: Any, result: Any) -> dict[str, Any] | None:
+    context = getattr(job, "study_context", None) or {}
+    if not context:
+        return None
+    metadata = getattr(result, "model_metadata", {}) or {}
+    return {
+        "title": getattr(job, "question", None) or "Saved study",
+        "book": context.get("book"),
+        "chapter": context.get("chapter"),
+        "start_verse": context.get("start_verse"),
+        "end_verse": context.get("end_verse"),
+        "selected_text": context.get("selected_text") or "",
+        "study_type": getattr(job, "study_type", None) or "question",
+        "question": getattr(job, "question", None) or "",
+        "answer": _public_answer_text(result),
+        "canonical_object_ids": list(metadata.get("canonical_library_object_ids") or []),
+    }
+
+
 def _answer_template_context(
     *,
     error: str | None,
@@ -55,6 +74,7 @@ def _answer_template_context(
     show_debug: bool = False,
     inspector_question: str | None = None,
     inspector_max_context_tokens: int | None = None,
+    device_study: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     metadata: dict[str, Any] = {}
     canonical_context = None
@@ -84,6 +104,7 @@ def _answer_template_context(
         "developer_inspector": developer_inspector,
         "reader_reference": reader_reference,
         "can_save_study": can_save_study,
+        "device_study": device_study,
     }
 
 
@@ -93,19 +114,24 @@ def register_ask_routes(
     templates: Any,
     job_store: Any,
     agent_factory: Callable[[], Any],
-    ask_job_runner: Callable[[Any, dict[str, Any], Any], None],
-    search_fallback_job_runner: Callable[[Any, dict[str, Any], Any], None],
+    ask_job_runner: Callable[[Any, dict[str, Any], Any, str | None], None],
+    search_fallback_job_runner: Callable[[Any, dict[str, Any], Any, str | None], None],
     test_mode: bool = False,
 ) -> None:
     @app.post("/ask", response_class=HTMLResponse)
     async def ask(request: Request) -> HTMLResponse:
         form = form_values_for_ask_prompt(await request.form())
         loaded = load_web_defaults()
+        transient_api_key = request.headers.get("X-BHF-OpenRouter-Key") or None
         show_debug = bool(getattr(loaded.config, "debug", False))
         try:
             question, reader_reference = _question_from_form(form)
             fact_packet = deterministic_fact_packet_from_form(form)
-            config = config_from_form(form, loaded.config)
+            config = config_from_form(
+                form,
+                loaded.config,
+                transient_api_key=transient_api_key,
+            )
             result = agent_factory()(config).ask(question, canonical_fact_packet=fact_packet)
         except (ConfigError, ProfileError, ValueError) as exc:
             return templates.TemplateResponse(
@@ -169,10 +195,11 @@ def register_ask_routes(
         form = await request.form()
         job = job_store.create()
         form_values = form_values_for_ask_prompt(form)
+        transient_api_key = request.headers.get("X-BHF-OpenRouter-Key") or None
         agent_class = agent_factory()
         thread = threading.Thread(
             target=ask_job_runner,
-            args=(job, form_values, agent_class),
+            args=(job, form_values, agent_class, transient_api_key),
             daemon=True,
         )
         thread.start()
@@ -229,6 +256,7 @@ def register_ask_routes(
                     show_debug=show_debug,
                     inspector_question=job.question,
                     inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
+                    device_study=_device_study_payload(job, result),
                 ),
                 status_code=agent_error_status_code(result),
             )
@@ -244,6 +272,7 @@ def register_ask_routes(
                 show_debug=show_debug,
                 inspector_question=job.question,
                 inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
+                device_study=_device_study_payload(job, result),
             ),
         )
 
@@ -252,10 +281,11 @@ def register_ask_routes(
         form = await request.form()
         job = job_store.create()
         form_values = dict(form)
+        transient_api_key = request.headers.get("X-BHF-OpenRouter-Key") or None
         agent_class = agent_factory()
         thread = threading.Thread(
             target=search_fallback_job_runner,
-            args=(job, form_values, agent_class),
+            args=(job, form_values, agent_class, transient_api_key),
             daemon=True,
         )
         thread.start()

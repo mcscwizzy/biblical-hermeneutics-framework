@@ -79,3 +79,40 @@ Two levels of SemVer:
 
 The `status` field (`draft → review → stable → deprecated`) tracks each module's
 lifecycle. Releases are git tags (e.g., `v0.1.0`).
+
+## Knowledge coverage and research expansion
+
+The runtime keeps two CKL concepts separate:
+
+- **Retrieval relevance** is the existing CKL ranking signal. It answers whether
+  retrieved entries are related to the question and remains controlled by
+  `canonical_library.minimum_relevance_score`.
+- **Answer coverage** is a deterministic routing estimate performed after CKL,
+  Scripture, lexicon, map, genre, and other local context have been gathered. It
+  asks whether that context covers the dimensions the question actually requests.
+  A highly relevant entry can therefore still have a material answer gap.
+
+The default `knowledge_expansion` configuration uses `0.85` for sufficient
+coverage and `0.60` for a major gap:
+
+- `ckl_primary` uses the supplied context as the foundation and permits normal
+  synthesis without treating CKL as exhaustive.
+- `targeted_gap_expansion` keeps the CKL context and asks the model to address
+  only the listed missing dimensions.
+- `broad_knowledge_expansion` treats local context as partial background and
+  requires explicit uncertainty and evidence distinctions.
+
+Explicit requests for scholarly disagreement, archaeology, manuscript evidence,
+Second Temple interpretation, translation analysis, ancient legal comparison,
+reception history, or similar research can override a high coverage estimate.
+This is a routing heuristic, not a mathematically exact percentage of available
+scholarship.
+
+Model-knowledge expansion is available by default, subject to
+`canonical_library.fallback_to_model` and the knowledge-expansion settings.
+External retrieval is provider-neutral and disabled by default; no web or
+network call is made unless a caller supplies a provider and enables
+`allow_external_retrieval`. A missing or failing provider degrades to the local
+or model path. Strict CKL mode blocks both expansion sources and records the
+block in debug metadata. These semantics also work with Ollama, local
+OpenAI-compatible servers, remote models, and offline runs.

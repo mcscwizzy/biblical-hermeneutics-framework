@@ -1,20 +1,920 @@
 {
-  "id": "1-kings",
+  "framework_version": "1.0",
+  "object_version": "1",
   "type": "book",
+  "id": "1-kings",
   "title": "1 Kings",
   "aliases": [
-    "book of 1 kings",
-    "what is 1 kings about",
-    "tell me about 1 kings",
-    "first kings"
+    "First Kings",
+    "First Book of Kings",
+    "3 Kingdoms",
+    "Solomon and the divided kingdom",
+    "what is 1 Kings about"
   ],
-  "summary": "Solomon's reign, the temple, and the division of the united monarchy.",
-  "historical_context": "1 Kings covers the height of Israel's united monarchy and its fragmentation after Solomon's death.",
-  "ancient_near_east_context": "The book moves in the world of imperial diplomacy, royal building projects, and idolatrous statecraft common in the ancient Near East.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
-  "later_christian_reception": "",
+  "summary": "First Kings completes David's succession with Solomon's accession, portrays Solomon's wisdom, administration, temple, prayer, wealth, and eventual covenant failure, then narrates the kingdom's division and evaluates the early rulers of Israel and Judah before concentrating on Elijah's conflict with Ahab and Jezebel and ending with Ahab's death and Ahaziah's accession.",
+  "authorship_positions": [
+    "The book is anonymous and forms the first half of the originally unified book of Kings.",
+    "Traditional interpretation associates Kings with prophetic records and sometimes with Jeremiah, but the text does not name its final author.",
+    "Many scholars locate Kings within a Deuteronomistic or related historiographic work shaped from royal annals, prophetic narratives, temple traditions, and other sources.",
+    "The number, dates, and editorial relationship of proposed editions remain disputed."
+  ],
+  "date_ranges": [
+    "Narrated period: David's final days and Solomon's accession through the reigns of Jehoshaphat of Judah and Ahaziah of Israel.",
+    "Regnal chronologies are reconstructed by correlating synchronisms, reign lengths, co-regencies, and external evidence.",
+    "Final-form proposals commonly include exilic composition or editing, though earlier source materials and editions are widely proposed."
+  ],
+  "original_audience": "The first audience of the final form is unknown. The book addresses Israelite or Judean readers interpreting monarchy, temple, divided kingdoms, prophetic authority, covenant failure, and the causes that eventually led to national judgment.",
+  "historical_setting": "Narrated setting: the transition from David to Solomon, the united kingdom under Solomon, and the early divided kingdoms of Judah and Israel amid Phoenician, Aramean, Moabite, Edomite, and wider regional powers. Compositional settings are later and disputed.",
+  "canonical_placement": "Former Prophets in the Jewish canon; Historical Books after 2 Samuel and before 2 Kings in common Christian ordering. First and Second Kings were originally one work.",
+  "canonical_role": "First Kings links the Davidic promise to Solomon, Jerusalem, and the temple while showing that wisdom, dynasty, and sanctuary do not exempt rulers or people from covenant accountability. The divided kingdom and prophetic narratives begin explaining the path toward the exiles completed in 2 Kings.",
+  "genre": [
+    "theological historiography",
+    "royal succession narrative",
+    "regnal formula and annalistic notice",
+    "temple construction and dedication narrative",
+    "royal prayer",
+    "wisdom narrative",
+    "prophetic narrative and confrontation",
+    "battle narrative"
+  ],
+  "structure": [
+    "1 Kings 1-2: Adonijah's bid, Solomon's accession, David's death, and consolidation of the throne",
+    "1 Kings 3-4: Solomon's request for discernment, judicial wisdom, officials, provisions, and international reputation",
+    "1 Kings 5-8: temple and palace construction, furnishings, ark installation, dedication prayer, sacrifices, and festival",
+    "1 Kings 9-11: covenant warning, building and trade, the queen of Sheba, royal wealth, Solomon's foreign wives and worship, adversaries, and death",
+    "1 Kings 12-16: Rehoboam's refusal, division, Jeroboam's shrines, prophetic judgments, and the parallel reigns of Judah and Israel through Omri and Ahab",
+    "1 Kings 17-19: Elijah, drought, Zarephath, Carmel, flight, Horeb, and Elisha's call",
+    "1 Kings 20-22: Ahab's Aramean wars, Naboth's vineyard, Micaiah's disputed counsel, Ahab's death, Jehoshaphat, and Ahaziah"
+  ],
+  "major_themes": [
+    "Davidic succession and conditional royal faithfulness",
+    "wisdom and justice",
+    "Jerusalem temple and divine presence",
+    "prayer, forgiveness, and covenant warning",
+    "royal accumulation and divided loyalty",
+    "division of Israel and Judah",
+    "prophetic word and fulfillment",
+    "exclusive worship of the LORD",
+    "high places, royal shrines, and centralized worship",
+    "royal abuse, land, and Naboth's vineyard",
+    "drought, provision, contest, and remnant",
+    "international kingdoms under divine sovereignty"
+  ],
+  "key_people": [
+    "David",
+    "Bathsheba",
+    "Nathan the prophet",
+    "Adonijah",
+    "Solomon",
+    "Zadok and Abiathar",
+    "Joab",
+    "Benaiah son of Jehoiada",
+    "Hiram of Tyre",
+    "the queen of Sheba",
+    "Rehoboam",
+    "Jeroboam son of Nebat",
+    "Ahijah of Shiloh",
+    "the man of God from Judah and the old prophet of Bethel",
+    "Asa",
+    "Omri",
+    "Ahab",
+    "Jezebel",
+    "Elijah",
+    "the widow of Zarephath and her son",
+    "Obadiah, Ahab's palace administrator",
+    "Ben-hadad of Aram",
+    "Naboth",
+    "Micaiah son of Imlah",
+    "Jehoshaphat",
+    "Ahaziah of Israel"
+  ],
+  "key_places": [
+    "Jerusalem",
+    "En-rogel and the Gihon spring",
+    "Gibeon",
+    "Tyre and Lebanon",
+    "the temple and royal complex in Jerusalem",
+    "Ezion-geber",
+    "Shechem",
+    "Bethel and Dan",
+    "Shiloh",
+    "Tirzah",
+    "Samaria",
+    "the Wadi Cherith",
+    "Zarephath",
+    "Mount Carmel",
+    "Jezreel",
+    "Mount Horeb",
+    "Ramoth-gilead"
+  ],
+  "key_events": [
+    "Adonijah seeks the throne, but David authorizes Solomon's anointing at Gihon",
+    "Solomon consolidates the kingdom after David's death",
+    "Solomon asks for a discerning heart and judges the dispute between two women",
+    "Solomon organizes the kingdom and gains a reputation for wisdom",
+    "Solomon builds the temple and palace with labor, materials, and Phoenician cooperation",
+    "the ark is installed and Solomon dedicates the temple with prayer and sacrifice",
+    "the LORD warns Solomon that dynasty and temple do not nullify covenant judgment",
+    "the queen of Sheba tests Solomon and observes his wisdom and wealth",
+    "Solomon's foreign marriages and worship lead to judgment and the rise of adversaries",
+    "Rehoboam rejects the elders' counsel and the kingdom divides",
+    "Jeroboam establishes sanctuaries with golden calves at Bethel and Dan",
+    "prophetic words repeatedly announce and interpret royal judgment",
+    "Omri establishes Samaria and Ahab marries Jezebel and promotes Baal worship",
+    "Elijah announces drought and receives provision at Cherith and Zarephath",
+    "the LORD answers by fire on Mount Carmel and rain ends the drought",
+    "Elijah flees Jezebel, encounters the LORD at Horeb, and commissions successors",
+    "Ahab defeats Aram but is condemned for releasing Ben-hadad",
+    "Jezebel arranges Naboth's death, Ahab takes the vineyard, and Elijah announces judgment",
+    "Micaiah opposes Ahab's court prophets and Ahab dies at Ramoth-gilead"
+  ],
+  "interpretive_disputes": [
+    "Authorship, sources, editions, and the relationship of Kings to Deuteronomistic History",
+    "Regnal synchronisms, co-regencies, accession systems, and absolute chronology",
+    "Historical reconstruction and the scale of Solomon's administration, building, trade, and kingdom",
+    "The literary and historical relationship between Kings and Chronicles",
+    "Temple architecture, Phoenician participation, and ancient Near Eastern comparisons",
+    "The theology and changing evaluation of high places and centralized worship",
+    "The literary relationship between divine judgment on Solomon and Rehoboam's political choices",
+    "Jeroboam's sanctuaries and the polemical phrase concerning his sin",
+    "The historical setting and theological function of the Elijah cycle",
+    "Violence against Baal's prophets and modern ethical appropriation",
+    "The meaning of the sound or voice at Horeb in 1 Kings 19:12",
+    "Prophetic deception and divine agency in 1 Kings 13 and 22",
+    "Archaeological and inscriptional correlations with Omri, Ahab, and ninth-century Israel"
+  ],
+  "primary_sources": [
+    "1 Kings 1-22",
+    "2 Samuel 7",
+    "2 Kings 1-25",
+    "2 Chronicles 1-20",
+    "Deuteronomy 12 and 17",
+    "Psalm 72",
+    "Matthew 6:28-29",
+    "Luke 4:24-27",
+    "Luke 11:29-32"
+  ],
+  "related_entries": [
+    "2 Samuel",
+    "2 Kings",
+    "Solomon",
+    "Jerusalem",
+    "Temple",
+    "Solomon Builds the Temple",
+    "Dedication of Solomon's Temple",
+    "Division of the Kingdom",
+    "Elijah",
+    "Elijah on Mount Carmel",
+    "Kingdom Theme",
+    "Wisdom Theme"
+  ],
+  "common_questions": [
+    "How did Solomon become king?",
+    "What did Solomon ask God for?",
+    "What does Solomon's temple prayer teach?",
+    "Why did Solomon fail despite his wisdom?",
+    "Why did Israel's kingdom divide?",
+    "What was wrong with Jeroboam's shrines?",
+    "What happened on Mount Carmel?",
+    "What does the Horeb scene mean?",
+    "Why was Naboth killed?",
+    "Why did Micaiah disagree with Ahab's prophets?",
+    "What can archaeology establish about Solomon, Omri, and Ahab?"
+  ],
+  "keywords": [
+    "First Kings",
+    "Solomon",
+    "wisdom",
+    "temple",
+    "Jerusalem",
+    "queen of Sheba",
+    "Rehoboam",
+    "Jeroboam",
+    "divided kingdom",
+    "Judah",
+    "Israel",
+    "Omri",
+    "Ahab",
+    "Jezebel",
+    "Elijah",
+    "Carmel",
+    "Naboth",
+    "Micaiah"
+  ],
+  "hebrew_words": [
+    "lev shomea: a listening or discerning heart",
+    "hokmah: wisdom or skill",
+    "bayit: house, palace, temple, household, or dynasty",
+    "shem: name",
+    "berit: covenant",
+    "torah: instruction",
+    "bamah: high place",
+    "melekh: king",
+    "navi: prophet",
+    "ish elohim: man of God",
+    "qol demamah daqqah: a difficult phrase often rendered a sound of thin silence or a gentle whisper",
+    "kerem: vineyard",
+    "nahalah: inherited possession"
+  ],
+  "greek_words": [],
+  "related_objects": [
+    {
+      "id": "2-samuel",
+      "relationship": "continues-from",
+      "weight": 10,
+      "notes": "First Kings completes the succession and death of David."
+    },
+    {
+      "id": "2-kings",
+      "relationship": "continued-by",
+      "weight": 10,
+      "notes": "Second Kings begins during Ahaziah's reign and continues the unified work."
+    },
+    {
+      "id": "solomon",
+      "relationship": "central-king",
+      "weight": 10,
+      "notes": "Solomon's accession, wisdom, temple, wealth, and failure dominate chapters 1-11."
+    },
+    {
+      "id": "jerusalem",
+      "relationship": "capital-and-temple-city",
+      "weight": 10,
+      "notes": "Jerusalem is the Davidic capital and location of the temple."
+    },
+    {
+      "id": "temple",
+      "relationship": "cultic-center",
+      "weight": 10,
+      "notes": "The temple is built and dedicated but never presented as immunity from judgment."
+    },
+    {
+      "id": "solomon-builds-the-temple",
+      "relationship": "narrates",
+      "weight": 10,
+      "notes": "Chapters 5-7 narrate construction and furnishings."
+    },
+    {
+      "id": "dedication-of-solomons-temple",
+      "relationship": "narrates",
+      "weight": 10,
+      "notes": "Chapter 8 narrates ark installation, prayer, blessing, and sacrifice."
+    },
+    {
+      "id": "division-of-the-kingdom",
+      "relationship": "narrates",
+      "weight": 10,
+      "notes": "Chapter 12 narrates the political and theological division."
+    },
+    {
+      "id": "elijah",
+      "relationship": "principal-prophet",
+      "weight": 10,
+      "notes": "Elijah confronts Ahab's royal and cultic policies."
+    },
+    {
+      "id": "elijah-on-mount-carmel",
+      "relationship": "narrates",
+      "weight": 10,
+      "notes": "Chapter 18 narrates the Carmel confrontation."
+    },
+    {
+      "id": "wisdom-theme",
+      "relationship": "develops-theme",
+      "weight": 9,
+      "notes": "Solomon's wisdom is both celebrated and set beside his failure."
+    },
+    {
+      "id": "kingdom-theme",
+      "relationship": "develops-theme",
+      "weight": 10,
+      "notes": "The book narrates united monarchy, division, and accountable rule."
+    }
+  ],
+  "related_people": [
+    "solomon",
+    "elijah"
+  ],
+  "related_places": [
+    "jerusalem",
+    "samaria-1"
+  ],
+  "related_events": [
+    "solomon-builds-the-temple",
+    "dedication-of-solomons-temple",
+    "division-of-the-kingdom",
+    "elijah-on-mount-carmel"
+  ],
+  "scripture_references": [
+    {
+      "reference": "1 Kings 1:1-53",
+      "relationship": "primary",
+      "notes": "Adonijah's bid and Solomon's anointing."
+    },
+    {
+      "reference": "1 Kings 3:1-28",
+      "relationship": "primary",
+      "notes": "Solomon's request and judicial wisdom."
+    },
+    {
+      "reference": "1 Kings 6:1-38",
+      "relationship": "primary",
+      "notes": "Temple construction."
+    },
+    {
+      "reference": "1 Kings 8:1-66",
+      "relationship": "primary",
+      "notes": "Ark installation, dedication prayer, and festival."
+    },
+    {
+      "reference": "1 Kings 9:1-9",
+      "relationship": "supporting",
+      "notes": "Covenant warning after the dedication."
+    },
+    {
+      "reference": "1 Kings 11:1-43",
+      "relationship": "primary",
+      "notes": "Solomon's divided loyalty, judgment, adversaries, and death."
+    },
+    {
+      "reference": "1 Kings 12:1-33",
+      "relationship": "primary",
+      "notes": "Division and Jeroboam's sanctuaries."
+    },
+    {
+      "reference": "1 Kings 16:21-34",
+      "relationship": "supporting",
+      "notes": "Omri, Samaria, Ahab, and Jezebel."
+    },
+    {
+      "reference": "1 Kings 18:1-46",
+      "relationship": "primary",
+      "notes": "Carmel and the return of rain."
+    },
+    {
+      "reference": "1 Kings 19:1-21",
+      "relationship": "primary",
+      "notes": "Elijah at Horeb and Elisha's call."
+    },
+    {
+      "reference": "1 Kings 21:1-29",
+      "relationship": "primary",
+      "notes": "Naboth's vineyard and prophetic judgment."
+    },
+    {
+      "reference": "1 Kings 22:1-40",
+      "relationship": "primary",
+      "notes": "Micaiah and Ahab's death."
+    }
+  ],
+  "cross_references": [
+    "Deuteronomy 12:1-32",
+    "Deuteronomy 17:14-20",
+    "2 Samuel 7:1-29",
+    "2 Chronicles 1:1-20:37",
+    "Luke 4:24-27",
+    "Luke 11:29-32"
+  ],
+  "new_testament_connections": [
+    "Jesus invokes Solomon's glory and the queen of the South.",
+    "Jesus invokes Elijah's mission to the widow at Zarephath.",
+    "James presents Elijah as a human example of effective prayer."
+  ],
+  "interpretive_notes": [
+    {
+      "note": "The scale, administration, chronology, and archaeological profile of Solomon's kingdom remain disputed; monumental remains may illuminate Iron Age state formation without independently proving every attribution in Kings.",
+      "note_type": "historical-context",
+      "certainty": "probable",
+      "dispute_status": "archaeological_uncertainty",
+      "sources": [
+        "1-kings-1-22",
+        "cogan-first-kings",
+        "zondervan-kings-chronicles-backgrounds"
+      ],
+      "scripture_references": [
+        "1 Kings 4:1-34",
+        "1 Kings 9:15-28"
+      ],
+      "traditions": [],
+      "rationale": "The text supplies extensive royal claims, while proposed correlations with sites and strata are debated."
+    },
+    {
+      "note": "Solomon's temple shares architectural and craft features with Levantine and wider ancient Near Eastern temples, but comparison does not erase the narrative's distinctive emphasis on the LORD's name, covenant, prayer, and inability to be contained.",
+      "note_type": "ancient-near-east-context",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "1-kings-1-22",
+        "cogan-first-kings",
+        "zondervan-kings-chronicles-backgrounds"
+      ],
+      "scripture_references": [
+        "1 Kings 6:1-38",
+        "1 Kings 8:22-53"
+      ],
+      "traditions": [],
+      "rationale": "Material comparison and the dedication prayer must be interpreted together."
+    },
+    {
+      "note": "First Kings presents the division through both divine judgment on Solomon and human political choices by Rehoboam, Jeroboam, and their counselors; these levels should not be reduced to a single cause.",
+      "note_type": "literary-observation",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "1-kings-1-22",
+        "cogan-first-kings"
+      ],
+      "scripture_references": [
+        "1 Kings 11:9-13",
+        "1 Kings 12:1-24"
+      ],
+      "traditions": [],
+      "rationale": "The narrative explicitly coordinates announced judgment and accountable decisions."
+    },
+    {
+      "note": "The phrase qol demamah daqqah in the Horeb scene is lexically difficult; translations such as gentle whisper, low murmuring sound, or sound of thin silence express different proposals.",
+      "note_type": "textual-observation",
+      "certainty": "disputed",
+      "dispute_status": "lexical_uncertainty",
+      "sources": [
+        "1-kings-1-22",
+        "cogan-first-kings"
+      ],
+      "scripture_references": [
+        "1 Kings 19:11-13"
+      ],
+      "traditions": [],
+      "rationale": "The Hebrew expression is rare and its components permit several renderings."
+    },
+    {
+      "note": "Elijah's order to seize and kill Baal's prophets belongs to the narrative's ancient covenant and royal crisis and cannot authorize religious violence by modern readers.",
+      "note_type": "interpretive-caution",
+      "certainty": "textually_explicit",
+      "dispute_status": "denominational_disagreement",
+      "sources": [
+        "1-kings-1-22",
+        "rice-first-kings"
+      ],
+      "scripture_references": [
+        "1 Kings 18:20-40"
+      ],
+      "traditions": [],
+      "rationale": "The action is explicit, while its ethical and contemporary theological interpretation is disputed."
+    },
+    {
+      "note": "The Kurkh Monolith names Ahab in a coalition at Qarqar, an event not narrated in 1 Kings; it independently locates an Israelite king in ninth-century regional politics but does not validate every detail or theological claim in the book.",
+      "note_type": "historical-context",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "cogan-first-kings",
+        "british-museum-kurkh-monolith"
+      ],
+      "scripture_references": [
+        "1 Kings 16:29-22:40"
+      ],
+      "traditions": [],
+      "rationale": "The inscription and Kings overlap in royal identity and period while describing different selected events."
+    }
+  ],
+  "intertextuality": [
+    "Deuteronomy's worship and kingship instructions shape the evaluation of temples, shrines, and rulers.",
+    "Second Samuel's house promise frames Solomon's succession and conditional discipline.",
+    "Chronicles retells Solomon and selected Judah narratives with different scope and emphases.",
+    "The New Testament reuses Solomon, the queen of the South, and Elijah at Zarephath."
+  ],
+  "timeline": [
+    "David's final days and Solomon's accession",
+    "Solomon's reign, building projects, and death",
+    "Division under Rehoboam and Jeroboam",
+    "Parallel Israelite and Judean reigns",
+    "Omride dynasty and Elijah's ministry",
+    "Ahab's death and Ahaziah's accession"
+  ],
+  "maps": [
+    "Solomon's administrative and trade geography",
+    "Jerusalem temple and royal complex",
+    "Israel and Judah after division",
+    "Elijah cycle from Cherith and Zarephath to Carmel, Jezreel, and Horeb",
+    "Aramean conflict and Ramoth-gilead"
+  ],
+  "archaeology": [
+    "Iron Age Jerusalem and disputed Solomonic building at regional sites",
+    "Phoenician architecture, craftsmanship, and inscriptions",
+    "Samaria's royal acropolis and Omride material culture",
+    "Kurkh Monolith reference to Ahab and the Qarqar coalition",
+    "inscriptions and material evidence relevant to ninth-century Israel and Judah"
+  ],
+  "claims": [
+    {
+      "id": "first-kings-literary-movement",
+      "claim": "First Kings moves from contested succession through Solomon's wisdom, temple, and failure to divided kingdoms and prophetic confrontation under Ahab.",
+      "claim_type": "literary",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "1 Kings 1:1-53",
+        "1 Kings 11:1-43",
+        "1 Kings 12:1-33",
+        "1 Kings 22:1-40"
+      ],
+      "source_ids": [
+        "1-kings-1-22",
+        "cogan-first-kings"
+      ],
+      "traditions": [],
+      "rationale": "The major narrative blocks and closing regnal notices establish this movement.",
+      "notes": ""
+    },
+    {
+      "id": "first-kings-solomon-discernment",
+      "claim": "Solomon asks for a listening heart to judge the people, and the narrative illustrates that gift through the dispute over a child.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "1 Kings 3:4-28"
+      ],
+      "source_ids": [
+        "1-kings-1-22",
+        "cogan-first-kings"
+      ],
+      "traditions": [],
+      "rationale": "The request, divine response, and judicial narrative are explicit.",
+      "notes": ""
+    },
+    {
+      "id": "first-kings-temple-prayer-warning",
+      "claim": "The temple dedication centers divine name, prayer, forgiveness, and mission to foreigners, while the following warning denies that temple or dynasty guarantees immunity from judgment.",
+      "claim_type": "biblical_theology",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "1 Kings 8:22-53",
+        "1 Kings 9:1-9"
+      ],
+      "source_ids": [
+        "1-kings-1-22",
+        "cogan-first-kings",
+        "rice-first-kings"
+      ],
+      "traditions": [],
+      "rationale": "The prayer and warning are deliberately adjacent and share covenant vocabulary.",
+      "notes": ""
+    },
+    {
+      "id": "first-kings-kingdom-division",
+      "claim": "The kingdom divides when Rehoboam refuses experienced counsel and answers the northern tribes harshly, within the earlier announced judgment on Solomon's disloyalty.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "1 Kings 11:9-13",
+        "1 Kings 12:1-24"
+      ],
+      "source_ids": [
+        "1-kings-1-22",
+        "cogan-first-kings"
+      ],
+      "traditions": [],
+      "rationale": "Both the prophetic announcement and Rehoboam's decision are explicit narrative causes.",
+      "notes": ""
+    },
+    {
+      "id": "first-kings-carmel-confession",
+      "claim": "At Carmel the LORD answers by fire, the people confess that the LORD is God, and rain returns after the drought.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "1 Kings 18:20-46"
+      ],
+      "source_ids": [
+        "1-kings-1-22",
+        "rice-first-kings"
+      ],
+      "traditions": [],
+      "rationale": "The contest, confession, and rain are narrated directly.",
+      "notes": ""
+    },
+    {
+      "id": "first-kings-naboth-condemnation",
+      "claim": "Jezebel arranges false charges and Naboth's execution, Ahab takes the inherited vineyard, and Elijah condemns the royal house for murder and seizure.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "1 Kings 21:1-29"
+      ],
+      "source_ids": [
+        "1-kings-1-22",
+        "cogan-first-kings"
+      ],
+      "traditions": [],
+      "rationale": "The conspiracy, royal appropriation, accusation, and judgment are explicit.",
+      "notes": ""
+    }
+  ],
+  "canonical_story": {
+    "phase": "Solomonic kingdom, temple, division, and prophetic contest",
+    "role": "Completes Davidic succession, establishes the Jerusalem temple, and begins the divided-monarchy explanation of exile.",
+    "preceded_by": [
+      "2-samuel"
+    ],
+    "followed_by": [
+      "2-kings"
+    ]
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "Read Solomon's wisdom and temple achievement together with accumulation, forced labor, divided loyalty, and announced judgment; read royal annals through prophetic evaluations.",
+    "book_context": "Chapters 1-11 treat Solomon, chapters 12-16 establish divided kingdoms, and chapters 17-22 concentrate on Elijah and Ahab while maintaining parallel regnal notices.",
+    "canonical_context": "Second Samuel supplies the Davidic promise; Second Kings completes both kingdoms' falls; Chronicles retells selected material; later texts develop temple, wisdom, Elijah, and kingdom traditions.",
+    "covenant_context": "Davidic promise and temple election coexist with Deuteronomic demands for loyal worship, justice, and obedience.",
+    "historical_context": "Distinguish the narrated tenth- and ninth-century settings from disputed chronology, archaeological correlations, source strata, and exilic final-form proposals.",
+    "ancient_near_east_context": "Succession, royal building, corvee, temple patronage, diplomacy, trade, dynastic marriage, annals, prophecy, warfare, and land tenure illuminate the world of the narrative.",
+    "second_temple_jewish_context": "Postmonarchic readers received Solomon, temple, division, and Elijah traditions after the destruction and restoration of Jerusalem's sanctuary.",
+    "original_audience": "The unknown final audience is invited to explain national failure without denying divine promise, prophetic witness, repentance, or responsibility.",
+    "genre": "Theological historiography combines succession narrative, annals, synchronisms, temple texts, wisdom accounts, prophetic cycles, and battles.",
+    "intertextual_connections": [
+      "Deuteronomy 12 and 17",
+      "2 Samuel 7",
+      "2 Kings 1-25",
+      "2 Chronicles 1-20",
+      "Psalms 72 and 132",
+      "Luke 4 and 11",
+      "James 5"
+    ],
+    "biblical_theology_themes": [
+      "Davidic covenant",
+      "temple",
+      "wisdom",
+      "kingdom",
+      "prophetic word",
+      "exclusive worship",
+      "justice",
+      "judgment and repentance"
+    ],
+    "messianic_christological_trajectory": "Solomon's royal wisdom, Davidic throne, and temple contribute to later messianic interpretation, while his failure prevents treating him as an unqualified final ideal.",
+    "major_interpretive_views": [
+      "Kings is commonly read as Deuteronomistic historiography shaped in relation to Deuteronomy.",
+      "Scholars debate one exilic edition versus multiple pre-exilic and exilic editions.",
+      "Solomonic narratives may preserve royal and temple traditions incorporated into a later theological history.",
+      "Elijah narratives may preserve a distinct prophetic cycle shaped within Kings."
+    ],
+    "historical_interpretation": "Jewish and Christian readers have received Solomon as wise king and temple builder, the division as covenant and political tragedy, and Elijah as a paradigmatic prophet.",
+    "authorial_intent": "The final form interprets rulers, institutions, and national events by covenant loyalty and response to the prophetic word rather than by wealth or power alone.",
+    "typological_connections": [
+      "Solomonic wisdom and kingship contribute to later comparisons with Jesus.",
+      "Temple and divine-presence themes develop canonically without identifying any royal building with God.",
+      "Elijah's prophetic mission contributes to later John the Baptist and Jesus traditions."
+    ],
+    "christological_significance": "Jesus presents himself in relation to Solomon and invokes Elijah's mission beyond Israel; these explicit New Testament uses should guide Christian interpretation without erasing the book's historical claims.",
+    "modern_application_principles": [
+      "Evaluate leaders by justice, worship, and accountability rather than prosperity alone.",
+      "Do not treat sacred institutions as protection from moral judgment.",
+      "Name forced labor, land seizure, propaganda, and religious violence rather than romanticizing royal achievement.",
+      "Hold structural forces, divine judgment, and human decisions together without using providence to excuse abuse.",
+      "Avoid mapping modern nations or political leaders directly onto Israel, Judah, Solomon, or Elijah."
+    ],
+    "common_misinterpretations": [
+      "Solomon's wisdom means every decision he made was wise or approved.",
+      "The temple guaranteed Jerusalem could never be judged.",
+      "Only Rehoboam caused the division, with no prior Solomonic or Jeroboam context.",
+      "The Carmel narrative authorizes modern religious violence.",
+      "The Horeb scene teaches that God never acts through public or disruptive events.",
+      "Archaeology has either proved or disproved every description of Solomon and Ahab."
+    ]
+  },
+  "retrieval_metadata": {
+    "aliases": [
+      "First Kings",
+      "3 Kingdoms",
+      "Solomon temple divided kingdom",
+      "Elijah and Ahab book"
+    ],
+    "search_terms": [
+      "1 Kings overview",
+      "1 Kings structure",
+      "Solomon succession Adonijah",
+      "Solomon discerning heart",
+      "Solomon temple dedication prayer",
+      "queen of Sheba",
+      "why kingdom divided Rehoboam Jeroboam",
+      "golden calves Bethel Dan",
+      "Omri Samaria",
+      "Ahab Jezebel Elijah",
+      "Mount Carmel fire rain",
+      "Elijah Horeb whisper silence",
+      "Naboth vineyard",
+      "Micaiah lying spirit",
+      "archaeology Solomon Ahab"
+    ],
+    "common_questions": [
+      "How did Solomon become king?",
+      "Why did Solomon ask for wisdom?",
+      "What did the temple dedication mean?",
+      "Why did Solomon turn away?",
+      "Why did the kingdom divide?",
+      "Why did Jeroboam build shrines?",
+      "What happened on Mount Carmel?",
+      "What did Elijah hear at Horeb?",
+      "Why did Ahab take Naboth's vineyard?",
+      "What does archaeology say about 1 Kings?"
+    ],
+    "related_topics": [
+      "Davidic succession",
+      "wisdom",
+      "temple",
+      "forced labor",
+      "divided kingdom",
+      "Israel",
+      "Judah",
+      "prophecy",
+      "Baal worship",
+      "land justice",
+      "royal accountability"
+    ],
+    "frequently_confused_with": [
+      "Second Samuel's reign of David",
+      "Second Kings' fall of Samaria and Jerusalem",
+      "Chronicles' selective retelling of Solomon and Judah",
+      "Proverbs as though every saying were narrated in Solomon's reign"
+    ],
+    "semantic_keywords": [
+      "Adonijah",
+      "Bathsheba",
+      "Nathan",
+      "Zadok",
+      "Benaiah",
+      "Hiram",
+      "Rehoboam",
+      "Jeroboam",
+      "Ahijah",
+      "Omri",
+      "Ahab",
+      "Jezebel",
+      "Elijah",
+      "Zarephath",
+      "Carmel",
+      "Naboth",
+      "Micaiah",
+      "Ramoth-gilead"
+    ]
+  },
+  "section_status": {
+    "core_summary": "draft",
+    "scripture_anchors": "needs_review",
+    "historical_context": "needs_review",
+    "literary_context": "needs_review",
+    "canonical_context": "needs_review",
+    "original_audience": "needs_review",
+    "lexical_links": "draft",
+    "intertextuality": "draft",
+    "interpretive_views": "needs_review",
+    "common_misinterpretations": "draft",
+    "sources": "needs_review",
+    "relationships": "needs_review",
+    "retrieval_metadata": "draft",
+    "human_review": "missing"
+  },
+  "knowledge_layers": {
+    "primary": "biblical_text",
+    "secondary": [
+      "literary",
+      "historical_cultural",
+      "ancient_near_eastern",
+      "archaeology",
+      "biblical_theology",
+      "reception_history"
+    ]
+  },
+  "sources": [
+    {
+      "title": "1 Kings 1-22",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "1 Kings 1:1-22:53",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [
+        "summary",
+        "structure",
+        "key_people",
+        "key_places",
+        "key_events",
+        "scripture_references",
+        "interpretive_notes",
+        "first-kings-literary-movement",
+        "first-kings-solomon-discernment",
+        "first-kings-temple-prayer-warning",
+        "first-kings-kingdom-division",
+        "first-kings-carmel-confession",
+        "first-kings-naboth-condemnation"
+      ],
+      "notes": "Primary biblical text.",
+      "id": "1-kings-1-22"
+    },
+    {
+      "title": "I Kings",
+      "author": "Mordechai Cogan",
+      "publisher": "Yale University Press",
+      "year": 2001,
+      "locator": "Anchor Yale Bible introduction, translation, notes, and commentary",
+      "url": "https://yalebooks.yale.edu/9780300140538/i-kings/",
+      "source_type": "reference-work",
+      "supports": [
+        "authorship_positions",
+        "date_ranges",
+        "historical_context",
+        "literary_context",
+        "hebrew_words",
+        "interpretive_notes",
+        "first-kings-literary-movement",
+        "first-kings-solomon-discernment",
+        "first-kings-temple-prayer-warning",
+        "first-kings-kingdom-division",
+        "first-kings-naboth-condemnation"
+      ],
+      "notes": "Technical commentary emphasizing Hebrew text, literary composition, regnal and political history, and external evidence.",
+      "id": "cogan-first-kings"
+    },
+    {
+      "title": "1 Kings: Nations under God",
+      "author": "Gene Rice",
+      "publisher": "Eerdmans",
+      "year": 1990,
+      "locator": "Introduction and commentary on 1 Kings 1-22",
+      "url": "https://www.eerdmans.com/9780802804921/1-kings/",
+      "source_type": "reference-work",
+      "supports": [
+        "canonical_role",
+        "covenantal_significance",
+        "literary_context",
+        "interpretive_notes",
+        "first-kings-temple-prayer-warning",
+        "first-kings-carmel-confession"
+      ],
+      "notes": "Theological commentary attending to political existence, divided loyalty, commandment, repentance, and reform.",
+      "id": "rice-first-kings"
+    },
+    {
+      "title": "Zondervan Illustrated Bible Backgrounds Commentary: 1 and 2 Kings, 1 and 2 Chronicles, Ezra, Nehemiah, Esther",
+      "author": "John H. Walton, general editor; John M. Monson, Iain Provan, and other contributors",
+      "publisher": "Zondervan",
+      "year": 2009,
+      "locator": "1 Kings commentary and background notes",
+      "url": "https://zondervanacademic.com/products/1-and-2-kings-1-and-2-chronicles-ezra-nehemiah-esther",
+      "source_type": "reference-work",
+      "supports": [
+        "ancient_near_east_context",
+        "archaeology",
+        "historical_context",
+        "maps",
+        "interpretive_notes"
+      ],
+      "notes": "Passage-level textual, artifactual, geographical, historical, and cultural background.",
+      "id": "zondervan-kings-chronicles-backgrounds"
+    },
+    {
+      "title": "The Kurkh Stela",
+      "author": "British Museum",
+      "publisher": "British Museum",
+      "year": null,
+      "locator": "Museum object 118884; Shalmaneser III's Kurkh Monolith",
+      "url": "https://www.britishmuseum.org/collection/object/W_1863-0619-2",
+      "source_type": "museum-collection",
+      "supports": [
+        "archaeology",
+        "historical_context",
+        "interpretive_notes"
+      ],
+      "notes": "Museum collection record for the monument whose annals name Ahab in the Qarqar coalition.",
+      "id": "british-museum-kurkh-monolith"
+    }
+  ],
+  "content_status": "draft",
+  "review_status": "in_review",
+  "reviewed_by": [],
+  "last_reviewed": null,
+  "human_review_required": true,
+  "confidence": "medium",
+  "importance": 95,
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-14"
+    },
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "phase-5-book-correction-kings",
+      "date": "2026-07-24"
+    }
+  ],
+  "edited_by": [],
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
@@ -23,303 +923,13 @@
     "canonical": true,
     "later_christian_reception": true
   },
-  "literary_context": "It combines court narrative, wisdom, temple dedication, prophetic confrontation, and the beginning of kingdom decline.",
-  "covenantal_significance": "The book shows that even Davidic kings are accountable to covenant faithfulness and that temple presence does not override obedience.",
-  "authorship_positions": [
-    "Traditional prophetic or courtly compilation",
-    "Many scholars read the books as later historiographical or Deuteronomistic shaping"
-  ],
-  "date_ranges": [
-    "Historical span from settlement through exile",
-    "Final form often placed in the exilic or post-exilic period"
-  ],
-  "original_audience": "Israel and Judah remembering the land, monarchy, and exile",
-  "historical_setting": "Settlement, monarchy, and exile in the land of Israel and Judah",
-  "canonical_role": "1 Kings serves as a canonical book anchor within Historical Books, book 6 of 12, connecting its structure, key passages, and related themes to the wider biblical storyline.",
-  "genre": [
-    "narrative"
-  ],
-  "structure": [
-    "Solomon and the temple",
-    "Division of the kingdom",
-    "Elijah and apostasy"
-  ],
-  "major_themes": [
-    "land",
-    "leadership",
-    "faithfulness",
-    "kingdom",
-    "exile",
-    "Temple",
-    "Wisdom Theme",
-    "Kingdom Theme"
-  ],
-  "canonical_placement": "Historical Books, book 6 of 12",
-  "key_people": [
-    "Solomon",
-    "Joshua",
-    "David"
-  ],
-  "key_places": [
-    "Jerusalem",
-    "Canaan",
-    "Samaria"
-  ],
-  "key_events": [
-    "Solomon Builds the Temple",
-    "Division of the Kingdom",
-    "Elijah on Mount Carmel",
-    "Davidic Covenant",
-    "conquest",
-    "monarchy",
-    "exile"
-  ],
-  "interpretive_disputes": [
-    "Historical reconstruction and sources",
-    "How conquest, kingship, and exile are narrated theologically"
-  ],
-  "primary_sources": [
-    "1 Kings 1-22",
-    "2 Chronicles 1-7",
-    "Proverbs 1",
-    "Psalm 72",
-    "James 1"
-  ],
-  "related_entries": [],
-  "keywords": [],
-  "intertextuality": [],
-  "timeline": [],
-  "maps": [],
-  "archaeology": [],
-  "hebrew_words": [],
-  "greek_words": [],
-  "related_people": [],
-  "related_places": [],
-  "related_events": [],
-  "related_objects": [
-    {
-      "id": "solomon",
-      "relationship": "central-king",
-      "weight": 10,
-      "notes": "Solomon's reign"
-    },
-    {
-      "id": "jerusalem",
-      "relationship": "capital-and-cult",
-      "weight": 10,
-      "notes": "temple city"
-    },
-    {
-      "id": "temple",
-      "relationship": "cultic-center",
-      "weight": 10,
-      "notes": "Solomon builds the temple"
-    },
-    {
-      "id": "solomon-builds-the-temple",
-      "relationship": "narrative-event",
-      "weight": 10,
-      "notes": "temple construction"
-    },
-    {
-      "id": "division-of-the-kingdom",
-      "relationship": "narrative-event",
-      "weight": 10,
-      "notes": "split after Solomon"
-    },
-    {
-      "id": "elijah-on-mount-carmel",
-      "relationship": "prophetic-confrontation",
-      "weight": 9,
-      "notes": "YHWH vs Baal"
-    },
-    {
-      "id": "davidic-covenant",
-      "relationship": "dynastic-context",
-      "weight": 9,
-      "notes": "royal promise backdrop"
-    },
-    {
-      "id": "wisdom-theme",
-      "relationship": "thematic-anchor",
-      "weight": 9,
-      "notes": "Solomon and wisdom"
-    },
-    {
-      "id": "kingdom-theme",
-      "relationship": "royal-framework",
-      "weight": 10,
-      "notes": "monarchy and covenant"
-    }
-  ],
-  "scripture_references": [
-    {
-      "reference": "1 Kings 1:1-53",
-      "relationship": "supporting",
-      "notes": "Solomon's accession"
-    },
-    {
-      "reference": "1 Kings 3:1-28",
-      "relationship": "supporting",
-      "notes": "wisdom request"
-    },
-    {
-      "reference": "1 Kings 8:1-66",
-      "relationship": "primary",
-      "notes": "temple dedication"
-    },
-    {
-      "reference": "1 Kings 11:1-43",
-      "relationship": "supporting",
-      "notes": "Solomon's idolatry and judgment"
-    },
-    {
-      "reference": "1 Kings 12:1-33",
-      "relationship": "supporting",
-      "notes": "division of the kingdom"
-    },
-    {
-      "reference": "1 Kings 18:1-46",
-      "relationship": "supporting",
-      "notes": "Elijah on Mount Carmel"
-    }
-  ],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    {
-      "note": "The temple is a gift, not a guarantee of immunity from judgment.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "Solomon's wisdom and failure are intentionally held together.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    }
-  ],
-  "common_questions": [
-    "Why is 1 Kings important?",
-    "What happens in Solomon's reign?",
-    "Why does the kingdom divide?"
-  ],
-  "sources": [
-    {
-      "title": "1 Kings 1-22",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "1-kings-1-22"
-    },
-    {
-      "title": "2 Chronicles 1-7",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "2-chronicles-1-7"
-    },
-    {
-      "title": "Proverbs 1",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "proverbs-1"
-    },
-    {
-      "title": "Psalm 72",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "psalm-72"
-    },
-    {
-      "title": "James 1",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "james-1"
-    }
-  ],
-  "canonical_story": {
-    "phase": "",
-    "role": "",
-    "preceded_by": [],
-    "followed_by": []
-  },
-  "hermeneutical_lens": {
-    "immediate_literary_context": "",
-    "book_context": "",
-    "canonical_context": "",
-    "covenant_context": "",
-    "historical_context": "",
-    "ancient_near_east_context": "",
-    "second_temple_jewish_context": "",
-    "original_audience": "",
-    "genre": "",
-    "intertextual_connections": [],
-    "biblical_theology_themes": [],
-    "messianic_christological_trajectory": "",
-    "major_interpretive_views": [],
-    "historical_interpretation": "",
-    "authorial_intent": "",
-    "typological_connections": [],
-    "christological_significance": "",
-    "modern_application_principles": [],
-    "common_misinterpretations": []
-  },
-  "retrieval_metadata": {
-    "aliases": [],
-    "search_terms": [],
-    "common_questions": [],
-    "related_topics": [],
-    "frequently_confused_with": [],
-    "semantic_keywords": []
-  },
-  "importance": 95,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "generated_by": [
-    {
-      "type": "ai",
-      "name": "codex",
-      "workflow": "ane-hebraic-context-expansion",
-      "date": "2026-07-14"
-    }
-  ],
-  "edited_by": [],
-  "reviewed_by": [],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
-  "human_review_required": true
+  "historical_context": "First Kings narrates royal and prophetic events from David's final days through the early divided monarchies, while its own sources, chronology, editions, and final-form setting require separate analysis.",
+  "ancient_near_east_context": "Royal succession, palace and temple building, corvee, diplomacy, dynastic marriage, trade, land tenure, prophecy, and warfare belong to a wider Levantine and ancient Near Eastern world.",
+  "hebraic_worldview": "Kingship, wisdom, temple, land, and prophecy are evaluated through covenant loyalty to the LORD; election intensifies rather than removes responsibility.",
+  "second_temple_context": "Later Jewish readers received Solomon and the first temple after its destruction and in relation to a restored sanctuary, reshaping questions of presence, prayer, wisdom, and failed kingship.",
+  "canonical_context": "First Kings continues Samuel, is completed by Second Kings, parallels parts of Chronicles, and supplies Solomon and Elijah traditions reused across Psalms, Prophets, Gospels, and James.",
+  "later_christian_reception": "Christian reception has compared Jesus with Solomon, connected Elijah with John the Baptist and Jesus, and used temple and divided-heart themes in theology and preaching; these are later uses rather than replacements for the book's direct sense.",
+  "literary_context": "The book alternates royal regnal notices and prophetic narratives, using speeches, prayers, fulfillment formulas, source citations, and comparison with David and Jeroboam to evaluate rulers.",
+  "covenantal_significance": "The Davidic promise and chosen temple remain central, yet kings and people face covenant discipline for injustice and disloyal worship.",
+  "canonical_placement": "Former Prophets in the Jewish canon; Historical Books after 2 Samuel and before 2 Kings in common Christian ordering. First and Second Kings were originally one work."
 }

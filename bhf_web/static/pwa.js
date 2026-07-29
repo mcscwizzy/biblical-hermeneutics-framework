@@ -1,7 +1,7 @@
 (function () {
   const runtime = window.BHFRuntimeConfig || {};
   const enableServiceWorker = runtime.enableServiceWorker !== false;
-  const CACHE_VERSION = "v11";
+  const CACHE_VERSION = "v17";
   const API_CACHE_PREFIX = "bhf-api-";
   const API_CACHE = `${API_CACHE_PREFIX}${CACHE_VERSION}`;
   const DEFAULT_AUTO_PACKS = ["study", "maps"];
@@ -292,8 +292,8 @@
       return { refreshed_packs: [], failed_packs: ["offline"] };
     }
     setLifecycleButtonState(button, "Refreshing offline data...", "Working", true, "offlineRefreshAll");
-    await warmOfflineManifest();
-    await warmInstalledTranslations();
+    await warmOfflineManifest({force: true});
+    await warmInstalledTranslations({force: true});
     const packIds = await refreshableOfflinePackIds();
     const failed = [];
     for (const packId of packIds) {
@@ -655,14 +655,17 @@
     return `${size.toFixed(index === 0 ? 0 : 1)} ${units[index]}`;
   }
 
-  async function warmOfflineManifest() {
+  async function warmOfflineManifest({force = false} = {}) {
     const offlineDb = window.BHFOfflineDB;
     if (!offlineDb || typeof offlineDb.cacheApiResponse !== "function") {
       return;
     }
     try {
+      if (!force && typeof offlineDb.readApiResponse === "function" && await offlineDb.readApiResponse("/api/offline/manifest")) {
+        return;
+      }
       const response = await fetch("/api/offline/manifest", {
-        headers: { Accept: "application/json" },
+        headers: { Accept: "application/json", ...(force ? {"X-BHF-Refresh": "true"} : {}) },
       });
       if (!response.ok) {
         return;
@@ -673,37 +676,126 @@
     }
   }
 
-  async function warmInstalledTranslations() {
+  async function warmInstalledTranslations({force = false} = {}) {
     const offlineDb = window.BHFOfflineDB;
     if (!offlineDb || typeof offlineDb.cacheApiResponse !== "function") {
       return;
     }
     try {
-      const response = await fetch("/api/translations/installed", {
-        headers: { Accept: "application/json" },
-      });
-      if (!response.ok) {
-        return;
+      let data = null;
+      const refreshFromServer = force || navigator.onLine !== false;
+      let loadedFromServer = false;
+      if (!refreshFromServer && typeof offlineDb.readApiResponse === "function") {
+        data = await offlineDb.readApiResponse("/api/translations/installed");
       }
-      const data = await response.json();
-      await offlineDb.cacheApiResponse("/api/translations/installed", data);
+      if (!data) {
+        const response = await fetch("/api/translations/installed", {
+          headers: {
+            Accept: "application/json",
+            ...(refreshFromServer ? {"X-BHF-Refresh": "true"} : {}),
+          },
+        });
+        if (!response.ok) {
+          return;
+        }
+        data = await response.json();
+        await offlineDb.cacheApiResponse("/api/translations/installed", data);
+        loadedFromServer = true;
+      }
       const installed = Array.isArray(data.translations) ? data.translations : [];
+      if (loadedFromServer) {
+        await reconcileCachedTranslations(
+          offlineDb,
+          installed.map((translation) => String(translation?.id || "").toLowerCase()),
+        );
+      }
       for (const translation of installed) {
         if (!translation?.id || translation.can_select === false) {
           continue;
         }
-        await warmTranslationDataset(translation.id, offlineDb);
+        await warmTranslationDataset(translation.id, offlineDb, {force});
       }
     } catch (_error) {
       // Offline packs are opportunistic; the app remains usable with cached data.
     }
   }
 
-  async function warmTranslationDataset(translationId, offlineDb) {
+  async function reconcileCachedTranslations(offlineDb, installedIds) {
+    if (typeof offlineDb.list !== "function" || typeof offlineDb.remove !== "function") {
+      return;
+    }
+    const installed = new Set(installedIds.filter(Boolean));
+    installed.add("asv");
+
+    const cachedTranslations = await offlineDb.list("translations");
+    for (const entry of cachedTranslations) {
+      if (entry?.payload?.installation?.device_local) {
+        installed.add(String(entry.id || "").toLowerCase());
+      }
+    }
+    await Promise.all(
+      cachedTranslations
+        .filter((entry) => !installed.has(String(entry?.id || "").toLowerCase()))
+        .map((entry) => {
+          const id = String(entry?.id || "").toLowerCase();
+          return Promise.all([
+            offlineDb.remove("translations", entry.id),
+            offlineDb.remove("apiResponses", `/api/translations/${encodeURIComponent(id)}/offline-data`),
+          ]);
+        }),
+    );
+
+    for (const url of ["/api/translations", "/api/translations/installed", "/api/translations/catalog"]) {
+      const cached = typeof offlineDb.get === "function"
+        ? await offlineDb.get("apiResponses", url)
+        : null;
+      if (!cached?.payload) {
+        continue;
+      }
+      const payload = sanitizeTranslationState(cached.payload, installed);
+      await offlineDb.cacheApiResponse(url, payload);
+    }
+  }
+
+  function sanitizeTranslationState(payload, installedIds) {
+    const state = {...payload};
+    if (Array.isArray(state.translations)) {
+      state.translations = state.translations.filter((entry) => {
+        const id = String(entry?.id || "").toLowerCase();
+        return !entry?.installed || installedIds.has(id);
+      });
+    }
+    if (Array.isArray(state.catalog)) {
+      state.catalog = state.catalog.filter((entry) => {
+        const id = String(entry?.id || "").toLowerCase();
+        return !entry?.installed || installedIds.has(id);
+      });
+    }
+    state.sections = {...(state.sections || {})};
+    if (Array.isArray(state.sections.installed)) {
+      state.sections.installed = state.sections.installed.filter((entry) =>
+        installedIds.has(String(entry?.id || "").toLowerCase()),
+      );
+    }
+    return state;
+  }
+
+  async function warmTranslationDataset(translationId, offlineDb, {force = false} = {}) {
     const url = `/api/translations/${encodeURIComponent(String(translationId).toLowerCase())}/offline-data`;
     try {
+      if (!force) {
+        const localDataset = typeof offlineDb.get === "function"
+          ? await offlineDb.get("translations", String(translationId).toLowerCase())
+          : null;
+        const localResponse = typeof offlineDb.readApiResponse === "function"
+          ? await offlineDb.readApiResponse(url)
+          : null;
+        if (localDataset || localResponse) {
+          return;
+        }
+      }
       const response = await fetch(url, {
-        headers: { Accept: "application/json" },
+        headers: { Accept: "application/json", ...(force ? {"X-BHF-Refresh": "true"} : {}) },
       });
       if (response.ok) {
         await offlineDb.cacheApiResponse(url, await response.json());
@@ -718,7 +810,13 @@
       return;
     }
     for (const packId of DEFAULT_AUTO_PACKS) {
-      await installOfflinePack(packId);
+      const offlineDb = window.BHFOfflineDB;
+      const installed = offlineDb && typeof offlineDb.get === "function"
+        ? await offlineDb.get("metadata", `pack:${packId}`)
+        : null;
+      if (!installed) {
+        await installOfflinePack(packId);
+      }
     }
   }
 
@@ -730,7 +828,7 @@
     const offlineDb = window.BHFOfflineDB;
     const packUrl = `/api/offline/packs/${encodeURIComponent(normalized)}`;
     const response = await fetch(packUrl, {
-      headers: { Accept: "application/json" },
+      headers: { Accept: "application/json", "X-BHF-Refresh": "true" },
     });
     const pack = await response.json();
     if (!response.ok) {
@@ -880,12 +978,19 @@
   }
 
   async function replayQueuedMutations() {
-    if (navigator.onLine === false) {
-      await refreshOfflineSyncControls();
-      return;
-    }
     const offlineDb = window.BHFOfflineDB;
     if (!offlineDb || typeof offlineDb.queuedMutations !== "function" || typeof offlineDb.removeMutation !== "function") {
+      return;
+    }
+    if (typeof offlineDb.purgeDeviceOnlyMutations === "function") {
+      try {
+        await offlineDb.purgeDeviceOnlyMutations();
+      } catch (_error) {
+        // Purging obsolete personal sync entries should not block map sync.
+      }
+    }
+    if (navigator.onLine === false) {
+      await refreshOfflineSyncControls();
       return;
     }
     let mutations = [];
@@ -962,6 +1067,13 @@
     const lists = Array.from(document.querySelectorAll("[data-offline-sync-list]"));
     if ((!buttons.length && !lists.length) || !offlineDb || typeof offlineDb.mutationQueueSummary !== "function") {
       return;
+    }
+    if (typeof offlineDb.purgeDeviceOnlyMutations === "function") {
+      try {
+        await offlineDb.purgeDeviceOnlyMutations();
+      } catch (_error) {
+        // Obsolete personal queue entries should not block map sync status.
+      }
     }
     let summary = null;
     try {

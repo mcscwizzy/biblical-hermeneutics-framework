@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
 
 from ..normalization import normalize_alias
+from ..schema import KNOWLEDGE_LAYER_PRIORITY
 from .indexer import CKLIndex, IndexedCKLEntry, load_index
 from .models import CKLIndexStats, CKLSearchResponse, CKLSearchResult, QueryAnalysis
 from .ranker import score_indexed_entry
@@ -98,6 +99,17 @@ class CKLRetrievalService:
             limit=limit,
             threshold=threshold,
             query=query,
+            has_scripture_reference=any(
+                reference.start_chapter is not None
+                for reference in analysis.scripture_references
+            ),
+            named_books=[
+                book
+                for book in analysis.matched_terms_by_category.get("books", [])
+                if set(normalize_alias(book).split()).issubset(
+                    set(normalize_alias(normalized_query).split())
+                )
+            ],
             result_sources=result_sources,
         )
 
@@ -166,6 +178,8 @@ class CKLRetrievalService:
         limit: int,
         threshold: float,
         query: str,
+        has_scripture_reference: bool = False,
+        named_books: Sequence[str] = (),
         result_sources: Mapping[str, int] | None = None,
     ) -> list[CKLSearchResult]:
         deduped: dict[str, CKLSearchResult] = {}
@@ -180,10 +194,24 @@ class CKLRetrievalService:
             key=lambda result: (
                 query_alignment.get(result.id, 3),
                 (result_sources or {}).get(result.id, 1),
-                -result.score,
+                _focused_category_rank(query, result),
+                -(
+                    result.score
+                    - _draft_score_penalty(
+                        query,
+                        result,
+                        has_scripture_reference=has_scripture_reference,
+                        named_books=named_books,
+                    )
+                ),
+                _scripture_scope_rank(
+                    result,
+                    has_scripture_reference=has_scripture_reference,
+                ),
                 -result.importance,
                 -len(result.scripture_references),
                 -len(result.matched_terms),
+                _knowledge_layer_rank(result.knowledge_layer),
                 result.category,
                 normalize_query(result.title).lower(),
                 result.id,
@@ -208,6 +236,94 @@ class CKLRetrievalService:
             if len(limited) >= limit:
                 break
         return limited
+
+
+def _draft_score_penalty(
+    query: str,
+    result: CKLSearchResult,
+    *,
+    has_scripture_reference: bool = False,
+    named_books: Sequence[str] = (),
+) -> float:
+    """Deprioritize broad draft records unless the query names the record.
+
+    Draft records remain available for direct questions about their subject,
+    but their newly expanded vocabulary should not displace reviewed,
+    topic-specific records in otherwise unaligned searches. A soft penalty
+    avoids hiding a highly relevant draft behind marginal complete records.
+    """
+
+    if result.content_status != "draft":
+        return 0.0
+    query_tokens = set(normalize_alias(query).split())
+    title_tokens = set(normalize_alias(result.title).split())
+    if title_tokens and title_tokens.issubset(query_tokens):
+        return 0.0
+    normalized_named_books = {
+        normalize_query(book).lower()
+        for book in named_books
+        if normalize_query(book)
+    }
+    if (
+        result.category == "book"
+        and normalized_named_books
+        and normalize_query(result.title).lower() not in normalized_named_books
+    ):
+        return 0.32
+    if has_scripture_reference and "scripture_references" in result.matched_fields:
+        return 0.1
+    if "common_questions" in result.matched_fields:
+        return 0.16
+    return 0.2
+
+
+def _scripture_scope_rank(
+    result: CKLSearchResult,
+    *,
+    has_scripture_reference: bool = False,
+) -> int:
+    """Prefer a focused record over a book record when passage scores tie."""
+
+    if not has_scripture_reference:
+        return 0
+    if "scripture_references" not in result.matched_fields:
+        return 0
+    return 1 if result.category == "book" else 0
+
+
+_EXPLICIT_CATEGORY_TERMS: dict[str, frozenset[str]] = {
+    "archaeology": frozenset(
+        {
+            "archaeology",
+            "artifact",
+            "artifacts",
+            "excavation",
+            "excavations",
+            "inscription",
+            "inscriptions",
+            "ostracon",
+            "ostraca",
+            "stele",
+        }
+    ),
+}
+
+
+def _focused_category_rank(query: str, result: CKLSearchResult) -> int:
+    """Honor an explicit object-type request before broad topical coverage."""
+
+    query_tokens = set(normalize_query(query).lower().split())
+    for category, terms in _EXPLICIT_CATEGORY_TERMS.items():
+        if query_tokens.intersection(terms):
+            return 0 if result.category == category else 1
+    return 0
+
+
+def _knowledge_layer_rank(value: str | None) -> int:
+    try:
+        return KNOWLEDGE_LAYER_PRIORITY.index(str(value))
+    except ValueError:
+        return len(KNOWLEDGE_LAYER_PRIORITY)
 
 
 def load_service(

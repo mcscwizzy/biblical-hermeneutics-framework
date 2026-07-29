@@ -7,6 +7,7 @@ PIPELINE_STEPS: tuple[tuple[str, str], ...] = (
     ("queued", "Queued"),
     ("preparing_request", "Preparing request"),
     ("detecting_reference", "Detecting biblical reference"),
+    ("retrieving_scripture_context", "Retrieving full chapter context"),
     ("classifying_genre", "Classifying genre"),
     ("classifying_question_type", "Classifying question type"),
     ("loading_profile", "Loading BHF profile"),
@@ -29,6 +30,7 @@ TOTAL_STEPS = len(PIPELINE_STEPS)
 STAGE_TO_STEP = {
     "initialize_context": "preparing_request",
     "detect_reference": "detecting_reference",
+    "retrieve_scripture_context": "retrieving_scripture_context",
     "classify_genre": "classifying_genre",
     "classify_question_type": "classifying_question_type",
     "load_profile": "loading_profile",

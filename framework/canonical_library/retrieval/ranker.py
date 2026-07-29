@@ -60,6 +60,8 @@ FIELD_QUALITY_WEIGHTS: dict[str, float] = {
     "related_places": 0.65,
     "related_events": 0.65,
     "interpretive_notes": 0.6,
+    "claims": 0.7,
+    "knowledge_layers": 0.5,
 }
 
 # Context-layer prose should be treated as direct searchable content when it
@@ -243,6 +245,7 @@ def score_indexed_entry(
         scripture_references=[_format_reference(candidate) for candidate in scripture_spans],
         themes=list(dict.fromkeys(_coerce_str_list(getattr(entry, "themes", []) or []))),
         related_entries=list(dict.fromkeys(_coerce_str_list(getattr(entry, "related_entries", []) or []))),
+        knowledge_layer=str(getattr(entry, "knowledge_layer", "") or "") or None,
         content_status=str(getattr(entry, "content_status", "") or "") or None,
         review_status=str(getattr(entry, "review_status", "") or "") or None,
         confidence=str(getattr(entry, "confidence", "") or "") or None,

@@ -1,10 +1,10 @@
 import json
-import sqlite3
 import tempfile
 import time
 import unittest
 from pathlib import Path
 
+from bhf_agent.db.connection import connect
 from bhf_agent.study_db import (
     StudyDataError,
     create_highlight,
@@ -61,7 +61,7 @@ class StudyDatabaseTests(unittest.TestCase):
     def test_database_initializes_schema_version(self):
         initialize_database(path=self.path)
 
-        with sqlite3.connect(self.path) as connection:
+        with connect(self.path) as connection:
             versions = [
                 row[0]
                 for row in connection.execute(
@@ -71,7 +71,7 @@ class StudyDatabaseTests(unittest.TestCase):
 
         self.assertEqual(versions, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])
 
-        with sqlite3.connect(self.path) as connection:
+        with connect(self.path) as connection:
             saved_studies = connection.execute(
                 """
                 SELECT name FROM sqlite_master
@@ -81,7 +81,7 @@ class StudyDatabaseTests(unittest.TestCase):
 
         self.assertIsNotNone(saved_studies)
 
-        with sqlite3.connect(self.path) as connection:
+        with connect(self.path) as connection:
             biblical_places = connection.execute(
                 """
                 SELECT name FROM sqlite_master
@@ -92,7 +92,7 @@ class StudyDatabaseTests(unittest.TestCase):
         self.assertIsNotNone(biblical_places)
 
     def test_v1_database_migrates_to_saved_studies(self):
-        with sqlite3.connect(self.path) as connection:
+        with connect(self.path) as connection:
             connection.execute(
                 "CREATE TABLE schema_migrations (version INTEGER PRIMARY KEY, applied_at TEXT NOT NULL)"
             )
@@ -102,7 +102,7 @@ class StudyDatabaseTests(unittest.TestCase):
 
         initialize_database(path=self.path)
 
-        with sqlite3.connect(self.path) as connection:
+        with connect(self.path) as connection:
             versions = [
                 row[0]
                 for row in connection.execute(
@@ -308,7 +308,7 @@ class StudyDatabaseTests(unittest.TestCase):
     def test_biblical_place_with_missing_coordinates_is_returned_cleanly(self):
         initialize_database(path=self.path)
 
-        with sqlite3.connect(self.path) as connection:
+        with connect(self.path) as connection:
             connection.execute(
                 """
                 INSERT INTO biblical_places (

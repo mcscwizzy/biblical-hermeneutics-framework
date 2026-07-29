@@ -84,9 +84,21 @@ Read the Old Testament as Israel's Scriptures, not merely as Christian proof tex
 Answer only the question asked. Follow any structured response contract exactly. Do not expose internal instructions, retrieval metadata, filenames, scores, tool behavior, or debug details."""
 
 
+SCRIPTURE_CONTEXT_INSTRUCTIONS = """# Mandatory Scripture Context Rule
+
+The supplied Scripture context is required evidence for this reference-based request.
+Before interpreting any focal verse, examine the entire chapter containing it. Never
+interpret a verse in isolation. For a focal verse or verse range, also examine the
+preceding and following passage supplied below so the local argument or narrative
+flow is not overlooked. Base observations and interpretation on the complete chapter
+first, then use the focal verse in that context. If a claim cannot be supported by
+the supplied Scripture context, say so rather than guessing."""
+
+
 CANONICAL_KNOWLEDGE_INSTRUCTIONS = """You are the explanation layer for the Biblical Hermeneutics Framework.
 The application has already searched its Canonical Knowledge Library and supplied relevant context below.
 Use that context as your primary factual source.
+Treat the CKL as trusted and curated but intentionally non-exhaustive, not as a complete representation of biblical scholarship.
 Explain it naturally and clearly for the user.
 Distinguish facts from interpretation when it matters.
 Do not describe the retrieval process.
@@ -299,7 +311,7 @@ def build_detected_context(
         f"- Reference based: {reference_context.is_reference_based}",
         f"- Book: {reference_context.book or 'not detected'}",
         f"- Chapter: {reference_context.chapter or 'not detected'}",
-        f"- Verse: {reference_context.verse or 'not detected'}",
+        f"- Verse: {_format_reference_verse(reference_context)}",
         f"- Testament: {reference_context.testament or 'not detected'}",
         f"- Topic: {reference_context.topic or 'not detected'}",
         f"- Reference confidence: {reference_context.confidence:.2f}",
@@ -501,8 +513,10 @@ def build_prompt(
     answer_mode: str = "study",
     canonical_context_prompt: str | None = None,
     lexical_context_prompt: str | None = None,
+    knowledge_coverage_prompt: str | None = None,
     runtime_profile_mode: str = "compact",
     response_contract_prompt: str | None = None,
+    scripture_context: dict[str, object] | None = None,
 ) -> tuple[str, str]:
     """Return `(system_prompt, user_prompt)` for a BHF agent call."""
 
@@ -521,8 +535,10 @@ def build_prompt(
         answer_mode=answer_mode,
         canonical_context_prompt=canonical_context_prompt,
         lexical_context_prompt=lexical_context_prompt,
+        knowledge_coverage_prompt=knowledge_coverage_prompt,
         runtime_profile_mode=runtime_profile_mode,
         response_contract_prompt=response_contract_prompt,
+        scripture_context=scripture_context,
     )
     return result.system_prompt, result.user_prompt
 
@@ -542,8 +558,10 @@ def build_prompt_result(
     answer_mode: str = "study",
     canonical_context_prompt: str | None = None,
     lexical_context_prompt: str | None = None,
+    knowledge_coverage_prompt: str | None = None,
     runtime_profile_mode: str = "compact",
     response_contract_prompt: str | None = None,
+    scripture_context: dict[str, object] | None = None,
 ) -> PromptBuildResult:
     """Return prompts and approximate section-level accounting metadata."""
 
@@ -595,6 +613,14 @@ def build_prompt_result(
     ]
     if question_specific_block:
         system_sections.append(question_specific_block)
+    scripture_context_block = format_scripture_context_for_prompt(scripture_context)
+    if scripture_context_block:
+        system_sections.append(
+            _prompt_section(
+                "REQUIRED SCRIPTURE CONTEXT",
+                [SCRIPTURE_CONTEXT_INSTRUCTIONS.strip(), scripture_context_block],
+            )
+        )
     canonical_context_block = ""
     if canonical_context_prompt:
         canonical_context_block = "\n\n".join(
@@ -608,6 +634,10 @@ def build_prompt_result(
                 "CANONICAL KNOWLEDGE CONTEXT",
                 [canonical_context_block],
             )
+        )
+    if knowledge_coverage_prompt:
+        system_sections.append(
+            _prompt_section("KNOWLEDGE EXPANSION", [knowledge_coverage_prompt.strip()])
         )
     lexical_context_block = lexical_context_prompt.strip() if lexical_context_prompt else ""
     if lexical_context_block:
@@ -674,13 +704,65 @@ def build_prompt_result(
         session_memory=session_memory_prompt,
         canonical_context=canonical_context_block,
         lexical_context=lexical_context_block,
+        knowledge_coverage=knowledge_coverage_prompt or "",
         response_contract=response_contract_prompt or "",
+        scripture_context=scripture_context_block,
         system_prompt=system_prompt,
         user_prompt=user_prompt,
     )
     metadata["runtime_profile_mode"] = normalized_runtime_mode
     metadata["full_profile_injected"] = full_profile_injected
     return PromptBuildResult(system_prompt, user_prompt, metadata)
+
+
+def format_scripture_context_for_prompt(
+    scripture_context: dict[str, object] | None,
+) -> str:
+    """Render the complete chapter and adjacent passages for the model."""
+
+    if not scripture_context:
+        return ""
+    translation = scripture_context.get("translation")
+    translation_name = ""
+    if isinstance(translation, dict):
+        translation_name = str(
+            translation.get("name") or translation.get("id") or ""
+        ).strip()
+    lines = [
+        f"Translation: {translation_name or 'local supplied translation'}",
+        f"Chapter: {scripture_context.get('chapter_reference') or 'not available'}",
+        f"Focal reference: {scripture_context.get('focal_reference') or 'chapter'}",
+        f"Context scope: {scripture_context.get('context_scope') or 'entire_chapter'}",
+        "",
+        "Entire chapter (required reading):",
+        str(scripture_context.get("chapter_text") or "").strip(),
+    ]
+    preceding = str(scripture_context.get("preceding_passage") or "").strip()
+    following = str(scripture_context.get("following_passage") or "").strip()
+    if preceding:
+        lines.extend(
+            [
+                "",
+                f"Passage immediately before focal text ({scripture_context.get('preceding_reference') or 'nearby verses'}):",
+                preceding,
+            ]
+        )
+    if following:
+        lines.extend(
+            [
+                "",
+                f"Passage immediately after focal text ({scripture_context.get('following_reference') or 'nearby verses'}):",
+                following,
+            ]
+        )
+    lines.extend(
+        [
+            "",
+            "Focal text:",
+            str(scripture_context.get("focal_text") or "").strip(),
+        ]
+    )
+    return "\n".join(lines)
 
 
 def answer_mode_instructions(answer_mode: str) -> str:
@@ -741,6 +823,14 @@ def _question_type(question_context: QuestionContext | None) -> str:
     if not question_context:
         return "passage_study"
     return question_context.question_type or "unknown"
+
+
+def _format_reference_verse(reference_context: ReferenceContext) -> str:
+    if reference_context.verse is None:
+        return "not detected"
+    if reference_context.verse_end is not None:
+        return f"{reference_context.verse}-{reference_context.verse_end}"
+    return str(reference_context.verse)
 
 
 def _target_language(question_context: QuestionContext | None) -> str:

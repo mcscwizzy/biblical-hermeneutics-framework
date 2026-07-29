@@ -500,6 +500,33 @@ class AgentConfigTests(unittest.TestCase):
         self.assertEqual(config.adapter, "ollama")
         self.assertEqual(config.base_url, "http://ollama:11434")
 
+    def test_config_accepts_openrouter_adapter_with_api_key(self):
+        config = AgentConfig.from_mapping(
+            {
+                "config_version": 1,
+                "adapter": "openrouter",
+                "base_url": "https://openrouter.ai/api/v1",
+                "model": "openai/gpt-4o-mini",
+                "profile": "standard",
+                "api_key": "or-secret",
+            }
+        )
+
+        self.assertEqual(config.adapter, "openrouter")
+        self.assertEqual(config.api_key, "or-secret")
+
+    def test_openrouter_requires_api_key(self):
+        with self.assertRaisesRegex(ConfigError, "api_key is required for openrouter adapter"):
+            AgentConfig.from_mapping(
+                {
+                    "config_version": 1,
+                    "adapter": "openrouter",
+                    "base_url": "https://openrouter.ai/api/v1",
+                    "model": "openai/gpt-4o-mini",
+                    "profile": "standard",
+                }
+            )
+
     def test_config_rejects_invalid_answer_mode(self):
         with self.assertRaisesRegex(ConfigError, "answer_mode must be one of"):
             AgentConfig.from_mapping(

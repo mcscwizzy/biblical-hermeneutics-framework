@@ -1,6 +1,7 @@
 import unittest
 
 from bhf_agent.ckl import build_canonical_context, format_canonical_context_for_prompt, load_canonical_library
+from bhf_agent.bible import build_interpretation_context
 from bhf_agent.genre import classify_genre
 from bhf_agent.knowledge import lookup_lexical_entries, lookup_local_knowledge
 from bhf_agent.memory import SessionMemory, SessionTurn
@@ -130,6 +131,28 @@ class PromptBuildingTests(unittest.TestCase):
         self.assertIn("Preserve the distinction between Israel and the Church", system_prompt)
         self.assertIn("Do not portray Judaism as merely legalistic", system_prompt)
         self.assertIn("do not frame the Old Testament as works-based", system_prompt)
+
+    def test_reference_prompt_requires_entire_chapter_and_adjacent_passages(self):
+        question = "Explain John 3:16"
+        reference = detect_reference(question)
+        system_prompt, _ = build_prompt(
+            "standard",
+            "PROFILE",
+            reference,
+            classify_genre(reference),
+            classify_question_type(question, reference),
+            question,
+            scripture_context=build_interpretation_context("John", 3, 16),
+        )
+
+        self.assertIn("# REQUIRED SCRIPTURE CONTEXT", system_prompt)
+        self.assertIn(
+            "Before interpreting any focal verse, examine the entire chapter",
+            system_prompt,
+        )
+        self.assertIn("Entire chapter (required reading):", system_prompt)
+        self.assertIn("Passage immediately before focal text (John 3:13-15)", system_prompt)
+        self.assertIn("Passage immediately after focal text (John 3:17-19)", system_prompt)
 
     def test_prompt_result_reports_section_token_estimates(self):
         result = build_prompt_result(

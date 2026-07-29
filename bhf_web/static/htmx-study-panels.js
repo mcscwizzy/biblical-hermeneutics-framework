@@ -407,8 +407,18 @@ function deleteSavedStudy(studyId) {
 
 function saveLatestStudy(event) {
   const sourceButton = event?.currentTarget || null;
-  const jobId = sourceButton?.dataset.jobId || latestJobId;
-  if (!jobId || (!sourceButton?.dataset.jobId && !latestJobComplete)) {
+  const answerPanel = activeLiveAnswerPanel || document.querySelector("[data-device-study]");
+  const studyNode = answerPanel?.matches?.("[data-device-study]")
+    ? answerPanel
+    : answerPanel?.querySelector?.("[data-device-study]") || document.querySelector("[data-device-study]");
+  const encodedStudy = studyNode?.dataset.deviceStudy || "";
+  let studyPayload = null;
+  try {
+    studyPayload = encodedStudy ? JSON.parse(encodedStudy) : null;
+  } catch (_error) {
+    studyPayload = null;
+  }
+  if (!studyPayload || (!sourceButton?.dataset.jobId && !latestJobComplete)) {
     window.alert("Run a study first, then save it.");
     return Promise.resolve();
   }
@@ -423,9 +433,7 @@ function saveLatestStudy(event) {
       "Accept": "application/json",
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({
-      job_id: jobId
-    })
+    body: JSON.stringify(studyPayload)
   }, "Could not save study.")
     .then(() => {
       if (saveButton) {

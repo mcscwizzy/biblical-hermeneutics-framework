@@ -299,9 +299,13 @@ def build_canonical_query(
         if reference_context.book and reference_context.chapter is not None:
             add_part(f"{reference_context.book} {reference_context.chapter}")
             if reference_context.verse is not None:
-                add_part(
-                    f"{reference_context.book} {reference_context.chapter}:{reference_context.verse}"
+                verse_reference = (
+                    f"{reference_context.book} "
+                    f"{reference_context.chapter}:{reference_context.verse}"
                 )
+                if reference_context.verse_end is not None:
+                    verse_reference += f"-{reference_context.verse_end}"
+                add_part(verse_reference)
         add_part(reference_context.topic)
     if question_context is not None:
         add_part(question_context.target_language)

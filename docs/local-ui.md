@@ -37,11 +37,28 @@ metadata, and installed translation datasets into IndexedDB. Once warmed, the
 reader can resolve chapters and run deterministic local Bible search from the
 cached dataset while offline.
 
-Offline notes and highlights are written to IndexedDB with client-generated IDs
-and queued for replay. When the app comes back online, the queue is replayed
-against the normal local API. AI requests, LLM health checks, AI search
+Notes, highlights, and saved studies are device-only. They are written directly
+to IndexedDB with client-generated IDs and are never sent to the server or
+replayed through a sync queue. AI requests, LLM health checks, AI search
 fallbacks, remote translation downloads, and licensed-provider content remain
 outside the offline boundary.
+
+## OpenRouter
+
+The Model settings panel can use OpenRouter in addition to local Ollama or
+other OpenAI-compatible endpoints. OpenRouter uses its OpenAI-compatible
+`https://openrouter.ai/api/v1` endpoint and requires a Bearer API token.
+
+The browser stores the selected provider and model in device-local IndexedDB.
+If an OpenRouter token is saved, it is encrypted with Web Crypto before being
+written to IndexedDB. The decrypted token is kept in memory and sent to the
+local BHF server only for the current AI request; it is not added to offline
+exports, service-worker caches, saved studies, or application logs.
+
+OpenRouter requests require an internet connection and are not cached by the
+PWA. OpenRouter and the upstream provider selected for a request have their
+own privacy and retention policies; users should review those policies before
+sending sensitive material.
 
 The browser also installs the `study` and `maps` offline packs by default after
 the app loads online. The `study` pack stores serialized Canonical Knowledge
@@ -57,16 +74,13 @@ the study, maps, and sources packs.
 Saved map studies can be created and deleted offline. They use client-generated
 IDs, write to IndexedDB immediately, and replay through `/api/map-studies` when
 connectivity returns. Map notes follow the same client-ID replay contract.
-Saved studies that have already appeared in the Saved tab can be opened offline
-from cached data; the browser renders a conservative HTML version of the saved
-answer and canonical links.
+Saved studies are stored in IndexedDB and can be opened offline; the browser
+renders a conservative HTML version of the saved answer and canonical links.
 
-The reader settings sheet includes an Offline sync control. It shows queued
-offline mutations, notes failed replay attempts, and retries the queue on
-demand. The Queued changes section lists each pending note, highlight, map
-study, or saved-study mutation with attempt/error details, and lets a user
-discard a stuck queued item. The queue also retries automatically when the
-browser reports that it is online again.
+The reader settings sheet includes an Offline sync control for server-backed
+map studies and map notes. Older note, highlight, and saved-study queue entries
+are discarded by the updated app so they cannot be uploaded. Map changes still
+retry automatically when the browser reports that it is online again.
 
 The same sheet includes PWA lifecycle controls. Install app uses the browser's
 install prompt when Chrome or another supporting browser exposes it. App update
@@ -78,7 +92,7 @@ Refresh offline data re-warms the manifest, installed translation datasets,
 default packs, and optional packs that are already installed. It does not clear
 local records or the sync queue.
 Clear offline cache removes rebuildable offline content and API cache entries
-while preserving notes, highlights, saved work, and queued sync mutations.
+while preserving notes, highlights, saved work, and map sync mutations.
 Export offline data writes a JSON snapshot of user-created offline records,
 queued mutations, and pack metadata. Import offline data merges a snapshot back
 into IndexedDB without clearing existing records.
@@ -87,17 +101,18 @@ Map rendering uses vendored Leaflet assets from `/static/vendor/leaflet/`
 instead of a CDN. The service worker precaches the Leaflet runtime, stylesheet,
 and marker/layer images so the map workspace can initialize while offline.
 
-## ASV Reader
+## Bible Reader
 
-The first screen is a reader for the bundled American Standard Version dataset
-at `bhf_agent/data/asv_bible.json`. ASV is the only translation bundled with
-BHF, and it works offline immediately with no setup. The normalized dataset
-records its upstream source in its translation metadata.
+The first screen is a reader for the bundled American Standard Version and King
+James Version datasets at `bhf_agent/data/asv_bible.json` and
+`bhf_agent/data/kjv_bible.json`. Both work offline immediately with no setup.
+The normalized datasets record their upstream sources in their translation
+metadata.
 
-Additional reviewed public-domain translations can be installed through the
-translation manager for local offline use. Copyrighted translations stay in the
-license-required section unless you configure an authorized provider or import
-lawfully obtained XML locally.
+Only ASV and KJV are served by the BHF server. A lawfully obtained XML file can
+be imported in the browser for device-only offline use; the browser parses and
+stores it locally. Copyrighted translations stay in the license-required section
+unless imported privately on that device.
 
 Choose a book and chapter with the reader controls. The chapter text is the
 primary workspace. On desktop, Ask BHF, status, answer output, and notes appear
@@ -255,10 +270,9 @@ and adds them to the Saved Studies panel for reopening or deletion.
 ## Translation Manager
 
 The translation manager is the catalog-driven dialog behind the reader version
-control. It groups installed translations, reviewed direct-download sources,
-license-required translations, and manual XML import guidance. The quick
-selector still uses the current default translation, but opening a non-installed
-translation routes to the manager instead of trying to load missing data.
+control. It groups bundled ASV/KJV translations, device-local imports, and
+license-required translations. Device-local imports never enter the server
+catalog and are available only in the browser profile that imported them.
 
 Settings are persisted locally. The default translation key is
 `default_translation`, and BHF falls back to ASV if the configured translation

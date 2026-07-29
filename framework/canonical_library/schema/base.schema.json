@@ -52,6 +52,9 @@
     "related_entries",
     "keywords",
     "sources",
+    "claims",
+    "section_status",
+    "knowledge_layers",
     "canonical_story",
     "hermeneutical_lens",
     "retrieval_metadata",
@@ -273,6 +276,14 @@
         "certainty": {
           "type": "string",
           "enum": [
+            "textually_explicit",
+            "strong_consensus",
+            "probable",
+            "plausible",
+            "disputed",
+            "tradition_dependent",
+            "speculative",
+            "insufficient_evidence",
             "high",
             "medium",
             "low",
@@ -282,6 +293,15 @@
         "dispute_status": {
           "type": "string",
           "enum": [
+            "not_disputed",
+            "minor_scholarly_disagreement",
+            "major_scholarly_disagreement",
+            "denominational_disagreement",
+            "textual_variant",
+            "historical_uncertainty",
+            "chronological_uncertainty",
+            "archaeological_uncertainty",
+            "lexical_uncertainty",
             "consensus",
             "broad-consensus",
             "majority",
@@ -297,8 +317,219 @@
             "type": "string",
             "minLength": 1
           }
+        },
+        "scripture_references": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "traditions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "rationale": {
+          "type": "string"
         }
       }
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "claim",
+        "claim_type",
+        "certainty",
+        "dispute_status"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/canonicalId"
+        },
+        "claim": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claim_type": {
+          "type": "string",
+          "enum": [
+            "biblical_text",
+            "literary",
+            "historical_cultural",
+            "lexical",
+            "archaeology",
+            "biblical_theology",
+            "systematic_theology",
+            "reception_history",
+            "denominational_interpretation",
+            "pastoral_application"
+          ]
+        },
+        "certainty": {
+          "type": "string",
+          "enum": [
+            "textually_explicit",
+            "strong_consensus",
+            "probable",
+            "plausible",
+            "disputed",
+            "tradition_dependent",
+            "speculative",
+            "insufficient_evidence"
+          ]
+        },
+        "dispute_status": {
+          "type": "string",
+          "enum": [
+            "not_disputed",
+            "minor_scholarly_disagreement",
+            "major_scholarly_disagreement",
+            "denominational_disagreement",
+            "textual_variant",
+            "historical_uncertainty",
+            "chronological_uncertainty",
+            "archaeological_uncertainty",
+            "lexical_uncertainty"
+          ]
+        },
+        "scripture_references": {
+          "$ref": "#/$defs/stringList"
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/canonicalId"
+          }
+        },
+        "traditions": {
+          "$ref": "#/$defs/stringList"
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "sectionStatus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "core_summary",
+        "scripture_anchors",
+        "historical_context",
+        "literary_context",
+        "canonical_context",
+        "original_audience",
+        "lexical_links",
+        "intertextuality",
+        "interpretive_views",
+        "common_misinterpretations",
+        "sources",
+        "relationships",
+        "retrieval_metadata",
+        "human_review"
+      ],
+      "properties": {
+        "core_summary": {
+          "$ref": "#/$defs/sectionStatusValue"
+        },
+        "scripture_anchors": {
+          "$ref": "#/$defs/sectionStatusValue"
+        },
+        "historical_context": {
+          "$ref": "#/$defs/sectionStatusValue"
+        },
+        "literary_context": {
+          "$ref": "#/$defs/sectionStatusValue"
+        },
+        "canonical_context": {
+          "$ref": "#/$defs/sectionStatusValue"
+        },
+        "original_audience": {
+          "$ref": "#/$defs/sectionStatusValue"
+        },
+        "lexical_links": {
+          "$ref": "#/$defs/sectionStatusValue"
+        },
+        "intertextuality": {
+          "$ref": "#/$defs/sectionStatusValue"
+        },
+        "interpretive_views": {
+          "$ref": "#/$defs/sectionStatusValue"
+        },
+        "common_misinterpretations": {
+          "$ref": "#/$defs/sectionStatusValue"
+        },
+        "sources": {
+          "$ref": "#/$defs/sectionStatusValue"
+        },
+        "relationships": {
+          "$ref": "#/$defs/sectionStatusValue"
+        },
+        "retrieval_metadata": {
+          "$ref": "#/$defs/sectionStatusValue"
+        },
+        "human_review": {
+          "$ref": "#/$defs/sectionStatusValue"
+        }
+      }
+    },
+    "sectionStatusValue": {
+      "type": "string",
+      "enum": [
+        "missing",
+        "generated",
+        "draft",
+        "needs_review",
+        "reviewed",
+        "complete",
+        "not_applicable"
+      ]
+    },
+    "knowledgeLayers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary",
+        "secondary"
+      ],
+      "properties": {
+        "primary": {
+          "$ref": "#/$defs/knowledgeLayerValue"
+        },
+        "secondary": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/knowledgeLayerValue"
+          }
+        }
+      }
+    },
+    "knowledgeLayerValue": {
+      "type": "string",
+      "enum": [
+        "biblical_text",
+        "historical_cultural",
+        "ancient_near_eastern",
+        "second_temple_jewish",
+        "greco_roman",
+        "literary",
+        "lexical",
+        "archaeology",
+        "biblical_theology",
+        "systematic_theology",
+        "reception_history",
+        "denominational_interpretation",
+        "pastoral_application"
+      ]
     },
     "contextApplicability": {
       "type": "object",
@@ -665,6 +896,18 @@
           }
         ]
       }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/claim"
+      }
+    },
+    "section_status": {
+      "$ref": "#/$defs/sectionStatus"
+    },
+    "knowledge_layers": {
+      "$ref": "#/$defs/knowledgeLayers"
     },
     "canonical_story": {
       "$ref": "#/$defs/canonicalStory"

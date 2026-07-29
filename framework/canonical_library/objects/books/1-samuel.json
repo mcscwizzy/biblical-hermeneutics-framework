@@ -1,20 +1,938 @@
 {
-  "id": "1-samuel",
+  "framework_version": "1.0",
+  "object_version": "1",
   "type": "book",
+  "id": "1-samuel",
   "title": "1 Samuel",
   "aliases": [
-    "book of 1 samuel",
-    "what is 1 samuel about",
-    "tell me about 1 samuel",
-    "first samuel"
+    "First Samuel",
+    "1 Kingdoms",
+    "First Book of Samuel",
+    "Samuel Saul and David",
+    "what is 1 Samuel about"
   ],
-  "summary": "The book of transition from the judges to monarchy, tracing Samuel, Saul, and the rise of David.",
-  "historical_context": "1 Samuel reflects the shift from tribal leadership to monarchy in the face of Philistine pressure and internal instability.",
-  "ancient_near_east_context": "Its world is the Iron Age southern Levant, where emerging kingdoms and regional conflicts frame Israel's story.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
-  "later_christian_reception": "",
+  "summary": "First Samuel narrates Israel's transition from the judges to monarchy through Hannah, Eli, Samuel, Saul, Jonathan, and David: corrupt priestly leadership is judged, the ark reveals divine holiness, Israel asks for a king, Saul rises and is rejected, David is anointed and pursued, and Saul dies in battle while David has not yet taken Israel's throne.",
+  "authorship_positions": [
+    "The book is anonymous; Samuel cannot have authored the whole work because it narrates events after his death.",
+    "Traditional interpretation associates Samuel, Nathan, and Gad with prophetic records, drawing partly on 1 Chronicles 29:29.",
+    "Many scholars understand Samuel as incorporating court, prophetic, ark, Saul, and David traditions shaped within a Deuteronomistic or related historiographic work.",
+    "The extent, date, and sequence of literary growth remain disputed."
+  ],
+  "date_ranges": [
+    "Narrated period: the end of the judges era through Saul's death and David's rise, conventionally associated with the late second and early first millennia BCE.",
+    "Individual poems and traditions may be earlier than the final prose form.",
+    "Final-form proposals commonly range across monarchic and exilic settings, with no single date established by the text."
+  ],
+  "original_audience": "The first audience of the final form is unknown. The book addresses Israelite or Judean readers reflecting on worship, prophetic authority, monarchy, obedience, divine choice, failed leadership, and David's rise.",
+  "historical_setting": "Narrated setting: Israel's transition from decentralized judges-era leadership to Saul's kingship amid sustained Philistine pressure. Compositional setting: disputed and kept distinct from the narrated events.",
+  "canonical_placement": "Former Prophets in the Jewish canon; Historical Books after Ruth and before 2 Samuel in common Christian ordering. Samuel was originally transmitted as one work before later division into two volumes.",
+  "canonical_role": "First Samuel bridges Judges and the Davidic monarchy, evaluating priesthood, prophecy, ark theology, popular kingship, Saul's reign, and David's emergence while refusing to equate anointing or divine empowerment with unconditional moral approval.",
+  "genre": [
+    "theological historiography",
+    "prose narrative",
+    "birth and call narrative",
+    "ark narrative",
+    "royal and prophetic narrative",
+    "battle narrative",
+    "lament and hymn",
+    "oracular speech"
+  ],
+  "structure": [
+    "1 Samuel 1-3: Hannah, Samuel's birth and call, Eli's household, and announced judgment",
+    "1 Samuel 4-7: ark capture and return, judgment on Philistia and Beth-shemesh, and Samuel's leadership at Mizpah",
+    "1 Samuel 8-12: Israel requests a king; Saul is selected, acclaimed, and confirmed; Samuel gives a covenant warning",
+    "1 Samuel 13-15: Saul's unlawful action, Jonathan's victory, Amalek, and Saul's rejection",
+    "1 Samuel 16-20: David is anointed, enters Saul's court, defeats Goliath, and forms a covenant with Jonathan as Saul turns hostile",
+    "1 Samuel 21-27: David flees, gathers followers, spares Saul twice, encounters Abigail, and takes refuge among Philistines",
+    "1 Samuel 28-31: Saul consults the medium at Endor, David is dismissed from the Philistine battle and rescues Ziklag, and Saul and his sons die at Gilboa"
+  ],
+  "major_themes": [
+    "divine reversal and Hannah's song",
+    "priestly corruption and prophetic word",
+    "divine holiness and the ark",
+    "repentance, intercession, and Ebenezer",
+    "monarchy as both divine concession and accountable vocation",
+    "divine choice, anointing, and Spirit empowerment",
+    "obedience versus sacrifice",
+    "appearance versus the heart",
+    "Saul's tragic decline",
+    "David's rise and refusal to seize Saul's life",
+    "covenant friendship between Jonathan and David",
+    "Philistine conflict",
+    "warfare, ban, and moral responsibility"
+  ],
+  "key_people": [
+    "Hannah",
+    "Elkanah and Peninnah",
+    "Eli",
+    "Hophni and Phinehas",
+    "Samuel",
+    "Saul",
+    "Jonathan",
+    "David",
+    "Jesse and David's brothers",
+    "Goliath",
+    "Michal",
+    "Ahimelech and the priests of Nob",
+    "Doeg the Edomite",
+    "Abigail and Nabal",
+    "Achish of Gath",
+    "the medium at Endor"
+  ],
+  "key_places": [
+    "Ramah",
+    "Shiloh",
+    "Aphek",
+    "Ashdod, Gath, and Ekron",
+    "Beth-shemesh",
+    "Kiriath-jearim",
+    "Mizpah",
+    "Gilgal",
+    "Gibeah",
+    "Jabesh-gilead",
+    "Michmash",
+    "Bethlehem",
+    "the Valley of Elah",
+    "Nob",
+    "the wilderness of Ziph and En-gedi",
+    "Carmel in Judah",
+    "Gath and Ziklag",
+    "Endor",
+    "Mount Gilboa"
+  ],
+  "key_events": [
+    "Hannah prays, gives birth to Samuel, dedicates him, and sings of divine reversal",
+    "Samuel is called while Eli's house is condemned",
+    "the Philistines capture the ark and Eli's household falls",
+    "the ark brings judgment in Philistia and returns to Israel",
+    "Samuel leads repentance and deliverance at Mizpah",
+    "Israel requests a king and receives warnings about royal power",
+    "Saul is privately anointed, publicly selected, and confirmed after rescuing Jabesh-gilead",
+    "Saul acts at Gilgal and later receives a dynasty-ending judgment",
+    "Jonathan attacks the Philistine outpost and Israel wins despite Saul's rash oath",
+    "Saul fails to carry out the Amalek command and is rejected as king",
+    "David is anointed and enters Saul's service",
+    "David defeats Goliath",
+    "Jonathan covenants with David while Saul repeatedly seeks David's death",
+    "Doeg kills the priests of Nob at Saul's order",
+    "David spares Saul in the cave and again in Saul's camp",
+    "Abigail prevents David from taking vengeance on Nabal's household",
+    "Saul consults the medium at Endor and hears judgment",
+    "David rescues the captives of Ziklag",
+    "Saul, Jonathan, and Saul's sons die on Mount Gilboa"
+  ],
+  "interpretive_disputes": [
+    "Authorship, sources, editorial growth, and the relationship between Samuel and the Deuteronomistic History",
+    "The textual history of Samuel, including differences among the Masoretic Text, Septuagint, and Dead Sea manuscripts",
+    "How the positive and negative monarchy traditions in 1 Samuel 8-12 fit together",
+    "Saul's psychological, spiritual, political, and literary characterization",
+    "The wording and ethics of the Amalek command in 1 Samuel 15",
+    "The relationship and sequence of David's introductions to Saul in 1 Samuel 16-17",
+    "The shorter Greek and longer Masoretic forms of the David and Goliath narrative",
+    "The nature of David and Jonathan's covenant and relationship",
+    "The meaning of the harmful spirit from the LORD",
+    "What occurs at Endor and how the medium, Samuel, and divine judgment are portrayed",
+    "Chronology and historical reconstruction of Saul's reign and David's rise",
+    "Archaeological correlation with Philistine expansion, highland settlement, and early monarchy"
+  ],
+  "primary_sources": [
+    "1 Samuel 1-31",
+    "Judges 21",
+    "2 Samuel 1-7",
+    "Psalm 18",
+    "Psalm 78",
+    "Acts 13:16-23"
+  ],
+  "related_entries": [
+    "Judges",
+    "2 Samuel",
+    "Samuel the Prophet",
+    "Saul",
+    "David",
+    "Hannah",
+    "Shiloh",
+    "Rise of Saul",
+    "David Anointed",
+    "David and Goliath",
+    "Kingship"
+  ],
+  "common_questions": [
+    "Why did Israel ask for a king?",
+    "Does 1 Samuel approve or reject monarchy?",
+    "Why was Saul rejected?",
+    "What does obedience is better than sacrifice mean?",
+    "Why are there different accounts of David meeting Saul?",
+    "What are the textual differences in David and Goliath?",
+    "What was David and Jonathan's relationship?",
+    "Why did David spare Saul?",
+    "Who appeared to Saul at Endor?",
+    "What can archaeology establish about Saul and early David?"
+  ],
+  "keywords": [
+    "First Samuel",
+    "Hannah",
+    "Eli",
+    "Samuel",
+    "ark",
+    "Philistines",
+    "Saul",
+    "Jonathan",
+    "David",
+    "Goliath",
+    "anointing",
+    "king",
+    "obedience",
+    "Amalek",
+    "Nob",
+    "Abigail",
+    "Endor",
+    "Gilboa"
+  ],
+  "hebrew_words": [
+    "shemuel: Samuel",
+    "mashiach: anointed one",
+    "melekh: king",
+    "nagid: ruler or leader",
+    "qol: voice, including hearing or obeying",
+    "kabod: weight or glory",
+    "ruach YHWH: Spirit of the LORD",
+    "ruach raah: harmful or troubling spirit",
+    "herem: devotion to destruction",
+    "levav: heart or inner disposition",
+    "berit: covenant",
+    "hesed: loyal kindness",
+    "naval: foolish or senseless, echoed in Nabal's name"
+  ],
+  "greek_words": [],
+  "related_objects": [
+    {
+      "id": "judges",
+      "relationship": "continues-from",
+      "weight": 10,
+      "notes": "First Samuel continues leadership and Philistine crises after the judges period."
+    },
+    {
+      "id": "2-samuel",
+      "relationship": "continued-by",
+      "weight": 10,
+      "notes": "Second Samuel begins with news of Saul's death and David's lament."
+    },
+    {
+      "id": "samuel-the-prophet",
+      "relationship": "prophet-and-judge",
+      "weight": 10,
+      "notes": "Samuel mediates the transition from Eli to Saul and David."
+    },
+    {
+      "id": "saul",
+      "relationship": "first-king",
+      "weight": 10,
+      "notes": "Saul's selection, victories, failures, pursuit of David, and death dominate the royal transition."
+    },
+    {
+      "id": "david",
+      "relationship": "anointed-successor",
+      "weight": 10,
+      "notes": "David is anointed and rises but does not become Israel's king within First Samuel."
+    },
+    {
+      "id": "hannah",
+      "relationship": "mother-and-prayer-figure",
+      "weight": 9,
+      "notes": "Hannah's prayer, dedication, and song frame the book's reversal theology."
+    },
+    {
+      "id": "shiloh",
+      "relationship": "sanctuary-setting",
+      "weight": 9,
+      "notes": "Samuel serves at Shiloh, where Eli's house is judged."
+    },
+    {
+      "id": "gibeah-1",
+      "relationship": "saulide-center",
+      "weight": 8,
+      "notes": "Gibeah functions as Saul's home and royal center."
+    },
+    {
+      "id": "rise-of-saul",
+      "relationship": "narrates",
+      "weight": 10,
+      "notes": "First Samuel 8-12 narrates Saul's selection and confirmation."
+    },
+    {
+      "id": "david-anointed",
+      "relationship": "narrates",
+      "weight": 10,
+      "notes": "Samuel anoints David in Bethlehem."
+    },
+    {
+      "id": "david-and-goliath",
+      "relationship": "narrates",
+      "weight": 9,
+      "notes": "David's victory over Goliath marks his public emergence."
+    },
+    {
+      "id": "kingship",
+      "relationship": "establishes-and-evaluates",
+      "weight": 10,
+      "notes": "The book presents monarchy as requested, warned against, granted, and held accountable."
+    },
+    {
+      "id": "covenant-theme",
+      "relationship": "develops-theme",
+      "weight": 9,
+      "notes": "Samuel's warning, Jonathan's loyalty, and David's restraint are covenantally framed."
+    }
+  ],
+  "related_people": [
+    "hannah",
+    "samuel-the-prophet",
+    "saul",
+    "david"
+  ],
+  "related_places": [
+    "shiloh",
+    "gibeah-1"
+  ],
+  "related_events": [
+    "rise-of-saul",
+    "david-anointed",
+    "david-and-goliath"
+  ],
+  "scripture_references": [
+    {
+      "reference": "1 Samuel 1:1-28",
+      "relationship": "primary",
+      "notes": "Hannah's prayer, Samuel's birth, and dedication."
+    },
+    {
+      "reference": "1 Samuel 2:1-36",
+      "relationship": "primary",
+      "notes": "Hannah's song and judgment announced against Eli's house."
+    },
+    {
+      "reference": "1 Samuel 3:1-21",
+      "relationship": "primary",
+      "notes": "Samuel's call and establishment as prophet."
+    },
+    {
+      "reference": "1 Samuel 4:1-22",
+      "relationship": "primary",
+      "notes": "Ark capture and the fall of Eli's house."
+    },
+    {
+      "reference": "1 Samuel 7:1-17",
+      "relationship": "supporting",
+      "notes": "Repentance, deliverance, and Samuel's judgeship."
+    },
+    {
+      "reference": "1 Samuel 8:1-22",
+      "relationship": "primary",
+      "notes": "Israel requests a king and hears a warning about royal power."
+    },
+    {
+      "reference": "1 Samuel 12:1-25",
+      "relationship": "primary",
+      "notes": "Samuel's covenant lawsuit and conditional warning to people and king."
+    },
+    {
+      "reference": "1 Samuel 13:1-23",
+      "relationship": "supporting",
+      "notes": "Saul's action at Gilgal and judgment on his dynasty."
+    },
+    {
+      "reference": "1 Samuel 15:1-35",
+      "relationship": "primary",
+      "notes": "Amalek, disobedience, rejection, and grief."
+    },
+    {
+      "reference": "1 Samuel 16:1-23",
+      "relationship": "primary",
+      "notes": "David's anointing and entry into Saul's service."
+    },
+    {
+      "reference": "1 Samuel 17:1-58",
+      "relationship": "primary",
+      "notes": "David and Goliath."
+    },
+    {
+      "reference": "1 Samuel 20:1-42",
+      "relationship": "primary",
+      "notes": "Jonathan and David's covenant amid Saul's hostility."
+    },
+    {
+      "reference": "1 Samuel 24:1-22",
+      "relationship": "supporting",
+      "notes": "David spares Saul in the cave."
+    },
+    {
+      "reference": "1 Samuel 25:1-44",
+      "relationship": "supporting",
+      "notes": "Abigail prevents David's vengeance."
+    },
+    {
+      "reference": "1 Samuel 28:1-25",
+      "relationship": "primary",
+      "notes": "Saul, the medium at Endor, and the announced defeat."
+    },
+    {
+      "reference": "1 Samuel 31:1-13",
+      "relationship": "primary",
+      "notes": "Saul and his sons die on Mount Gilboa."
+    }
+  ],
+  "covenantal_significance": "First Samuel evaluates priest, prophet, people, and king under the LORD's prior rule and word. Monarchy does not replace covenant accountability: Samuel warns both people and king, Saul loses his dynasty and kingship through disobedience, and David's anointing does not authorize him to murder Saul or evade moral testing.",
+  "intertextuality": [
+    "Judges' leadership crisis and Philistine pressure continue into Samuel.",
+    "Hannah's song anticipates royal and reversal themes later echoed in Psalms and Mary's song in Luke 1.",
+    "Deuteronomy 17 supplies a canonical background for bounded royal authority.",
+    "Second Samuel resumes Saul's death, David's lament, and the contested transfer of rule.",
+    "Chronicles retells Saul's death and later David traditions with distinct emphases.",
+    "Psalm titles connect several psalms to David's flight narratives, though the titles are reception and editorial data.",
+    "Acts 13 summarizes Samuel, Saul, and David in a later Christian salvation-history argument."
+  ],
+  "hebraic_worldview": "The LORD is Israel's true king and cannot be controlled by ark, sacrifice, office, stature, or divination. Hearing the divine word, accountable leadership, anointing, Spirit empowerment, covenant loyalty, lament, hospitality, restraint, and care for communal holiness shape the narrative's evaluations.",
+  "second_temple_context": "Second Temple readers received Samuel among the Former Prophets and encountered textual forms represented by the Masoretic tradition, Greek translation, and Dead Sea manuscripts. Later interpretations of Saul, David, monarchy, Endor, and messianism are reception history and should be distinguished from the narrated setting.",
+  "canonical_context": "First Samuel follows Judges and Ruth, brings the judges era to a close, establishes prophecy and monarchy, and ends before David's accession. Second Samuel continues the one Samuel narrative with David's lament and kingship.",
+  "later_christian_reception": "Luke's reversal language resonates with Hannah's song, Acts 13 recounts Saul and David, and Christian tradition reads David's anointing messianically. These later uses should not erase Saul's tragedy, David's unfinished testing, or the book's own critique of royal power.",
+  "cross_references": [
+    "Deuteronomy 17:14-20",
+    "Judges 21:25",
+    "Ruth 4:13-22",
+    "2 Samuel 1:1-27",
+    "1 Chronicles 10:1-14",
+    "Psalm 18:1-50",
+    "Psalm 78:56-72",
+    "Luke 1:46-55",
+    "Acts 13:16-23"
+  ],
+  "new_testament_connections": [
+    "Luke 1's song of Mary shares reversal themes and language with Hannah's song.",
+    "Jesus cites David receiving consecrated bread in discussions of Sabbath.",
+    "Acts 13 places Samuel, Saul, and David within a Christian account of Israel's history.",
+    "New Testament use of David as messianic ancestor develops beyond First Samuel's still-unfinished royal transition."
+  ],
+  "archaeology": [
+    "Philistine pottery, settlement patterns, architecture, and foodways illuminate the regional world of early Iron Age conflict but do not verify individual battle narratives.",
+    "Sites associated with Shiloh, Gibeah, Beth-shemesh, the Elah Valley, and Philistine cities have archaeological histories of differing relevance and certainty.",
+    "Proposed correlations with Saul's reign and early state formation depend on debated chronology and interpretation.",
+    "The later Tel Dan reference to the House of David supports a historical Davidic dynasty but does not independently verify First Samuel's individual episodes."
+  ],
+  "historical_context": "The narrative portrays regional Israelite communities, Shiloh's priestly sanctuary, prophetic leadership, expanding Philistine power, Saulide mobilization, and David's armed following before consolidated monarchy. Absolute chronology and the relationship between literary sequence and historical reconstruction remain debated.",
+  "ancient_near_east_context": "Kingship ideology, anointing, royal military service, prophetic mediation, temple and ark symbolism, divination, oath, covenant, household alliance, gift exchange, outlaw bands, and lament provide comparative context. Analogy clarifies institutions but does not settle the book's date or every event.",
+  "literary_context": "Hannah's song announces reversal, the ark narrative exposes false confidence, the monarchy section holds warning and divine provision together, Saul's disobedience and fear drive decline, and David's rise is repeatedly tested by power, loyalty, violence, and restraint. Saul's death closes the volume without resolving David's accession.",
+  "timeline": [
+    "Samuel's birth and service during Eli's priesthood",
+    "Ark capture and return",
+    "Samuel's judgeship and Philistine conflict",
+    "Saul's selection and early reign",
+    "Saul's rejection and David's anointing",
+    "David's court service, public rise, and flight",
+    "David among Philistines and the rescue of Ziklag",
+    "Saul's death on Mount Gilboa",
+    "Absolute dates and the length of Saul's reign remain disputed"
+  ],
+  "maps": [
+    "Ramah, Shiloh, Aphek, and the ark's route through Philistia",
+    "Mizpah, Gilgal, Gibeah, Jabesh-gilead, and Michmash",
+    "Bethlehem and the Valley of Elah",
+    "David's flight through Nob, Adullam, Keilah, Ziph, Maon, and En-gedi",
+    "Gath, Ziklag, Endor, and Mount Gilboa"
+  ],
+  "interpretive_notes": [
+    {
+      "note": "First Samuel 8-12 preserves both severe criticism of Israel's request and positive divine selection and empowerment of Saul; the final form presents monarchy as permitted but covenantally accountable rather than simply good or evil.",
+      "note_type": "literary-observation",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "1-samuel-1-31",
+        "tsumura-first-samuel",
+        "klein-first-samuel"
+      ],
+      "scripture_references": [
+        "1 Samuel 8-12"
+      ],
+      "traditions": [
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "Negative request and royal-right warnings stand beside divine anointing, Spirit empowerment, victory, and public confirmation."
+    },
+    {
+      "note": "The David and Goliath account exists in a substantially shorter ancient Greek form and a longer Masoretic form; reconstruction of their literary relationship remains disputed.",
+      "note_type": "textual-observation",
+      "certainty": "strong_consensus",
+      "dispute_status": "textual_variant",
+      "sources": [
+        "tsumura-first-samuel",
+        "klein-first-samuel"
+      ],
+      "scripture_references": [
+        "1 Samuel 17-18"
+      ],
+      "traditions": [],
+      "rationale": "Ancient textual witnesses preserve significant differences affecting David's introduction and narrative sequence."
+    },
+    {
+      "note": "The book explicitly attributes a harmful spirit affecting Saul to the LORD after the Spirit of the LORD departs; medical, psychological, spiritual, and theological explanations should not be collapsed into one diagnosis.",
+      "note_type": "interpretive-caution",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "1-samuel-1-31",
+        "tsumura-first-samuel",
+        "klein-first-samuel"
+      ],
+      "scripture_references": [
+        "1 Samuel 16:14-23",
+        "1 Samuel 18:10-12",
+        "1 Samuel 19:9-10"
+      ],
+      "traditions": [
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "The narrative's theological attribution is clear, while the phenomenon's mechanism and modern diagnostic analogies are not."
+    },
+    {
+      "note": "At Endor the narrator calls the figure Samuel, yet interpretations differ over whether God exceptionally permits Samuel to appear, the medium produces an apparition, or the scene uses another literary-theological explanation.",
+      "note_type": "interpretive-caution",
+      "certainty": "disputed",
+      "dispute_status": "denominational_disagreement",
+      "sources": [
+        "1-samuel-1-31",
+        "tsumura-first-samuel",
+        "klein-first-samuel"
+      ],
+      "scripture_references": [
+        "1 Samuel 28:3-25"
+      ],
+      "traditions": [
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "The narrative designation and fulfilled judgment are explicit, but the ontology of the appearance has a long disputed reception."
+    },
+    {
+      "note": "The Amalek command and Samuel's killing of Agag require historical, literary, ethical, and theological scrutiny and cannot authorize modern ethnic or religious violence.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "denominational_disagreement",
+      "sources": [
+        "1-samuel-1-31",
+        "tsumura-first-samuel",
+        "klein-first-samuel",
+        "zondervan-illustrated-historical-books-backgrounds"
+      ],
+      "scripture_references": [
+        "1 Samuel 15:1-35"
+      ],
+      "traditions": [
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "The episode belongs to a bounded ancient judgment and royal-obedience narrative, while its ethics and canonical interpretation remain deeply contested."
+    }
+  ],
+  "claims": [
+    {
+      "id": "first-samuel-literary-movement",
+      "claim": "First Samuel moves from Eli's failing priestly house through Samuel's prophetic leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death.",
+      "claim_type": "literary",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "1 Samuel 1-31"
+      ],
+      "source_ids": [
+        "1-samuel-1-31",
+        "tsumura-first-samuel",
+        "klein-first-samuel"
+      ],
+      "traditions": [],
+      "rationale": "The major leadership transitions and narrative blocks establish this movement.",
+      "notes": ""
+    },
+    {
+      "id": "first-samuel-hannah-reversal",
+      "claim": "Hannah's song praises the LORD for reversing human status, judging pride, raising the poor, and giving strength to his king and anointed.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "1 Samuel 2:1-10"
+      ],
+      "source_ids": [
+        "1-samuel-1-31",
+        "tsumura-first-samuel"
+      ],
+      "traditions": [],
+      "rationale": "Each element appears directly in the song and anticipates later royal reversals.",
+      "notes": ""
+    },
+    {
+      "id": "first-samuel-ark-not-talisman",
+      "claim": "The ark narrative rejects Israel's use of the ark as a guarantee of victory and portrays the LORD judging Philistine gods and communities without an Israelite army rescuing the ark.",
+      "claim_type": "literary",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "1 Samuel 4-6"
+      ],
+      "source_ids": [
+        "1-samuel-1-31",
+        "tsumura-first-samuel"
+      ],
+      "traditions": [],
+      "rationale": "Israel loses after bringing the ark, while Dagon falls and the Philistines return it under divine affliction.",
+      "notes": ""
+    },
+    {
+      "id": "first-samuel-accountable-monarchy",
+      "claim": "First Samuel presents monarchy as granted by the LORD while warning that king and people remain obligated to fear, serve, and obey the LORD.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "1 Samuel 8:1-22",
+        "1 Samuel 9:15-17",
+        "1 Samuel 10:1-27",
+        "1 Samuel 12:1-25"
+      ],
+      "source_ids": [
+        "1-samuel-1-31",
+        "tsumura-first-samuel",
+        "klein-first-samuel"
+      ],
+      "traditions": [],
+      "rationale": "Divine authorization and covenant warning coexist; disagreement concerns the redactional and political synthesis.",
+      "notes": ""
+    },
+    {
+      "id": "first-samuel-saul-rejected",
+      "claim": "Saul is rejected from enduring kingship because he does not keep the commanded word, with First Samuel 15 emphasizing that obedience is better than sacrifice.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "1 Samuel 13:13-14",
+        "1 Samuel 15:1-35"
+      ],
+      "source_ids": [
+        "1-samuel-1-31",
+        "klein-first-samuel"
+      ],
+      "traditions": [],
+      "rationale": "Samuel explicitly connects Saul's loss of dynasty and kingdom with failure to keep and hear the command.",
+      "notes": ""
+    },
+    {
+      "id": "first-samuel-david-spares-saul",
+      "claim": "David twice refuses opportunities to kill Saul and grounds his restraint in Saul's status as the LORD's anointed.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "1 Samuel 24:1-22",
+        "1 Samuel 26:1-25"
+      ],
+      "source_ids": [
+        "1-samuel-1-31",
+        "tsumura-first-samuel"
+      ],
+      "traditions": [],
+      "rationale": "Both scenes repeat the opportunity, refusal, proof, confrontation, and anointed-language pattern.",
+      "notes": ""
+    }
+  ],
+  "canonical_story": {
+    "phase": "Transition from judges to monarchy",
+    "role": "Narrates Samuel's prophetic leadership, Saul's rise and rejection, and David's anointing and tested ascent before his accession.",
+    "preceded_by": [
+      "judges",
+      "ruth"
+    ],
+    "followed_by": [
+      "2-samuel"
+    ]
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "Read each episode within the transfer from Eli to Samuel, Samuel to Saul, and Saul toward David; election or anointing never removes narrative accountability.",
+    "book_context": "Hannah's song, the ark narrative, monarchy warnings, Saul's decline, and David's restraint create a coherent evaluation of power under the divine word.",
+    "canonical_context": "Judges and Ruth precede the monarchy; Second Samuel continues David's accession; Kings and Chronicles develop and reassess royal history.",
+    "covenant_context": "Samuel's address makes king and people jointly accountable to fear, serve, hear, and obey the LORD.",
+    "historical_context": "Distinguish early Iron Age settings and Philistine pressure from debated chronology, textual growth, and final-form composition.",
+    "ancient_near_east_context": "Use royal, prophetic, military, ark, divination, treaty, and lament comparanda to illuminate practices without making them proof of an episode.",
+    "second_temple_jewish_context": "Textual plurality and later Jewish readings of Saul, David, monarchy, and Endor belong to transmission and reception history.",
+    "original_audience": "The unknown final audience is invited to evaluate worship and royal leadership by hearing the divine word rather than office, appearance, ritual, or military success.",
+    "genre": "Theological historiography incorporates narrative cycles, poems, speeches, battle accounts, and prophetic oracles.",
+    "intertextual_connections": [
+      "Deuteronomy 17",
+      "Judges 21",
+      "Ruth 4",
+      "2 Samuel 1-7",
+      "Psalm 18",
+      "Luke 1",
+      "Acts 13"
+    ],
+    "biblical_theology_themes": [
+      "divine kingship",
+      "prophetic word",
+      "accountable monarchy",
+      "anointing",
+      "Spirit",
+      "obedience",
+      "reversal",
+      "covenant loyalty"
+    ],
+    "messianic_christological_trajectory": "David's anointing and rise enter the canonical Davidic and messianic trajectory, but First Samuel does not yet narrate the Davidic covenant or authorize direct identification of every David episode with Jesus.",
+    "major_interpretive_views": [
+      "The monarchy accounts combine distinct pro- and anti-monarchy sources.",
+      "The final form intentionally presents monarchy as ambiguous and accountable.",
+      "Saul is primarily a disobedient rejected king.",
+      "Saul is also a tragic figure whose divine calling and disintegration demand compassion and critique."
+    ],
+    "historical_interpretation": "Jewish and Christian interpreters have read Hannah as a prayer model, Samuel as prophet, Saul as warning or tragedy, Jonathan as loyalty exemplar, and David as anointed ancestor and type.",
+    "authorial_intent": "The final form evaluates Israel's search for stable leadership by showing that sanctuary, prophet, king, and anointed successor all stand under the LORD's sovereign word.",
+    "typological_connections": [
+      "David's anointing and suffering have later Christian typological significance, but the correspondence is not exhaustive.",
+      "Hannah's reversal song contributes to later canonical praise culminating in Luke's infancy narrative."
+    ],
+    "christological_significance": "Christian canonical reading connects Davidic anointing to Messiah language and Jesus's ancestry, while preserving First Samuel's historical and moral complexity.",
+    "modern_application_principles": [
+      "Do not equate charisma, office, anointing, or apparent success with moral immunity.",
+      "Evaluate leaders by accountable obedience and treatment of vulnerable people.",
+      "Do not use David's respect for Saul to silence resistance to abusive leadership.",
+      "Distinguish lament and compassion for Saul from excusing his violence.",
+      "Treat warfare and divination texts within their ancient and canonical settings."
+    ],
+    "common_misinterpretations": [
+      "First Samuel says monarchy is simply and uniformly evil or good.",
+      "Saul was never genuinely chosen or empowered.",
+      "David becomes king immediately after his anointing.",
+      "Anointing means a leader may not be criticized or resisted.",
+      "David and Goliath survives in only one ancient textual form.",
+      "The Endor narrative settles every question about necromancy and the afterlife.",
+      "David is portrayed as morally flawless throughout his rise."
+    ]
+  },
+  "retrieval_metadata": {
+    "aliases": [
+      "First Samuel",
+      "1 Kingdoms",
+      "Samuel Saul David",
+      "rise and fall of Saul",
+      "David before kingship"
+    ],
+    "search_terms": [
+      "1 Samuel overview",
+      "1 Samuel structure",
+      "Hannah song reversal",
+      "Samuel call",
+      "ark captured Philistines",
+      "Israel asks for king",
+      "Saul chosen rejected",
+      "obedience better than sacrifice",
+      "David anointed",
+      "David Goliath textual variants",
+      "David Jonathan covenant",
+      "David spares Saul",
+      "medium witch of Endor",
+      "Saul death Gilboa"
+    ],
+    "common_questions": [
+      "Why did Israel ask for a king?",
+      "Does First Samuel approve monarchy?",
+      "Why did God reject Saul?",
+      "What is the harmful spirit from the LORD?",
+      "Why are David's introductions different?",
+      "What textual variants affect David and Goliath?",
+      "Why did David spare Saul?",
+      "Who appeared at Endor?",
+      "Does First Samuel portray David as flawless?"
+    ],
+    "related_topics": [
+      "Shiloh priesthood",
+      "prophecy",
+      "ark",
+      "Philistines",
+      "monarchy",
+      "anointing",
+      "Spirit",
+      "obedience",
+      "Amalek",
+      "covenant friendship",
+      "lament",
+      "textual criticism"
+    ],
+    "frequently_confused_with": [
+      "Judges before the monarchy request",
+      "Second Samuel after David begins to reign",
+      "Chronicles' later retelling of Saul and David",
+      "modern claims that anointed leaders are above accountability"
+    ],
+    "semantic_keywords": [
+      "Hannah",
+      "Eli",
+      "Ichabod",
+      "Dagon",
+      "Ebenezer",
+      "Mizpah",
+      "Gilgal",
+      "Gibeah",
+      "Jabesh-gilead",
+      "Jonathan",
+      "Michmash",
+      "Goliath",
+      "Elah",
+      "Michal",
+      "Nob",
+      "Doeg",
+      "Abigail",
+      "Ziklag",
+      "Endor",
+      "Gilboa"
+    ]
+  },
+  "section_status": {
+    "core_summary": "draft",
+    "scripture_anchors": "needs_review",
+    "historical_context": "needs_review",
+    "literary_context": "needs_review",
+    "canonical_context": "needs_review",
+    "original_audience": "needs_review",
+    "lexical_links": "draft",
+    "intertextuality": "draft",
+    "interpretive_views": "needs_review",
+    "common_misinterpretations": "draft",
+    "sources": "needs_review",
+    "relationships": "needs_review",
+    "retrieval_metadata": "draft",
+    "human_review": "missing"
+  },
+  "knowledge_layers": {
+    "primary": "biblical_text",
+    "secondary": [
+      "literary",
+      "historical_cultural",
+      "ancient_near_eastern",
+      "archaeology",
+      "biblical_theology",
+      "reception_history"
+    ]
+  },
+  "sources": [
+    {
+      "title": "1 Samuel 1-31",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "1 Samuel 1:1-31:13",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [
+        "summary",
+        "literary_context",
+        "structure",
+        "key_people",
+        "key_places",
+        "key_events",
+        "scripture_references",
+        "first-samuel-literary-movement",
+        "first-samuel-hannah-reversal",
+        "first-samuel-ark-not-talisman",
+        "first-samuel-accountable-monarchy",
+        "first-samuel-saul-rejected",
+        "first-samuel-david-spares-saul"
+      ],
+      "notes": "Primary biblical text.",
+      "id": "1-samuel-1-31"
+    },
+    {
+      "title": "The First Book of Samuel",
+      "author": "David Toshio Tsumura",
+      "publisher": "Eerdmans",
+      "year": 2007,
+      "locator": "Introduction and commentary on 1 Samuel 1-31",
+      "url": "https://www.eerdmans.com/9780802823595/the-first-book-of-samuel/",
+      "source_type": "reference-work",
+      "supports": [
+        "historical_context",
+        "literary_context",
+        "ancient_near_east_context",
+        "hebrew_words",
+        "interpretive_notes",
+        "first-samuel-literary-movement",
+        "first-samuel-hannah-reversal",
+        "first-samuel-ark-not-talisman",
+        "first-samuel-accountable-monarchy",
+        "first-samuel-david-spares-saul"
+      ],
+      "notes": "NICOT commentary with detailed Hebrew textual, literary, Philistine, Canaanite, and historical analysis.",
+      "id": "tsumura-first-samuel"
+    },
+    {
+      "title": "1 Samuel, Volume 10",
+      "author": "Ralph W. Klein",
+      "publisher": "Zondervan",
+      "year": 2014,
+      "locator": "Second edition, Word Biblical Commentary on 1 Samuel 1-31",
+      "url": "https://zondervanacademic.com/products/1-samuel-volume-10",
+      "source_type": "reference-work",
+      "supports": [
+        "authorship_positions",
+        "historical_context",
+        "literary_context",
+        "interpretive_notes",
+        "first-samuel-literary-movement",
+        "first-samuel-accountable-monarchy",
+        "first-samuel-saul-rejected"
+      ],
+      "notes": "Technical commentary emphasizing textual, linguistic, structural, compositional, and theological evidence.",
+      "id": "klein-first-samuel"
+    },
+    {
+      "title": "Zondervan Illustrated Bible Backgrounds Commentary: Joshua, Judges, Ruth, 1 and 2 Samuel",
+      "author": "John H. Walton, general editor; Dale W. Manor, V. Philips Long, Richard Hess, and other contributors",
+      "publisher": "Zondervan",
+      "year": 2009,
+      "locator": "1 Samuel commentary and background notes",
+      "url": "https://zondervanacademic.com/products/joshua-judges-ruth-1-and-2-samuel",
+      "source_type": "reference-work",
+      "supports": [
+        "ancient_near_east_context",
+        "archaeology",
+        "historical_context",
+        "maps",
+        "interpretive_notes"
+      ],
+      "notes": "Comparative textual, material, historical, geographical, and cultural background.",
+      "id": "zondervan-illustrated-historical-books-backgrounds"
+    }
+  ],
+  "content_status": "draft",
+  "review_status": "in_review",
+  "reviewed_by": [],
+  "last_reviewed": null,
+  "human_review_required": true,
+  "confidence": "medium",
+  "importance": 94,
+  "generated_by": [
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "ane-hebraic-context-expansion",
+      "date": "2026-07-16"
+    },
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "phase-5-book-correction-samuel",
+      "date": "2026-07-24"
+    }
+  ],
+  "edited_by": [],
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
@@ -22,290 +940,5 @@
     "second_temple": true,
     "canonical": true,
     "later_christian_reception": true
-  },
-  "literary_context": "The book moves from Hannah's prayer through Samuel's calling, Saul's rise and fall, and David's anointing and emergence.",
-  "covenantal_significance": "1 Samuel insists that kingship is judged by the word of the LORD and that the right king must listen and obey.",
-  "authorship_positions": [
-    "Traditional prophetic or courtly compilation",
-    "Many scholars read the books as later historiographical or Deuteronomistic shaping"
-  ],
-  "date_ranges": [
-    "Historical span from settlement through exile",
-    "Final form often placed in the exilic or post-exilic period"
-  ],
-  "original_audience": "Israel and Judah remembering the land, monarchy, and exile",
-  "historical_setting": "Settlement, monarchy, and exile in the land of Israel and Judah",
-  "canonical_role": "1 Samuel serves as a canonical book anchor within Historical Books, book 4 of 12, connecting its structure, key passages, and related themes to the wider biblical storyline.",
-  "genre": [
-    "narrative"
-  ],
-  "structure": [
-    "Samuel and Saul",
-    "Rise of David",
-    "Transition to monarchy"
-  ],
-  "major_themes": [
-    "land",
-    "leadership",
-    "faithfulness",
-    "kingdom",
-    "exile",
-    "Kingship"
-  ],
-  "canonical_placement": "Historical Books, book 4 of 12",
-  "key_people": [
-    "Samuel the Prophet",
-    "Saul",
-    "David",
-    "Joshua",
-    "Solomon"
-  ],
-  "key_places": [
-    "Canaan",
-    "Jerusalem",
-    "Samaria"
-  ],
-  "key_events": [
-    "Judges Cycle",
-    "Rise of Saul",
-    "David Anointed",
-    "David and Goliath",
-    "conquest",
-    "monarchy",
-    "exile"
-  ],
-  "interpretive_disputes": [
-    "Historical reconstruction and sources",
-    "How conquest, kingship, and exile are narrated theologically"
-  ],
-  "primary_sources": [
-    "1 Samuel 1-31",
-    "Psalm 78",
-    "Acts 13",
-    "Hebrews 11"
-  ],
-  "related_entries": [],
-  "keywords": [],
-  "intertextuality": [],
-  "timeline": [],
-  "maps": [],
-  "archaeology": [],
-  "hebrew_words": [],
-  "greek_words": [],
-  "related_people": [],
-  "related_places": [],
-  "related_events": [],
-  "related_objects": [
-    {
-      "id": "samuel-the-prophet",
-      "relationship": "prophetic-anchor",
-      "weight": 10,
-      "notes": "Samuel's leadership"
-    },
-    {
-      "id": "saul",
-      "relationship": "first-king",
-      "weight": 10,
-      "notes": "Saul's rise and fall"
-    },
-    {
-      "id": "david",
-      "relationship": "anointed-heir",
-      "weight": 10,
-      "notes": "the future king"
-    },
-    {
-      "id": "judges-cycle",
-      "relationship": "transition-context",
-      "weight": 9,
-      "notes": "from judges to kingship"
-    },
-    {
-      "id": "rise-of-saul",
-      "relationship": "narrative-event",
-      "weight": 10,
-      "notes": "Saul's ascension"
-    },
-    {
-      "id": "david-anointed",
-      "relationship": "narrative-event",
-      "weight": 10,
-      "notes": "David's anointing"
-    },
-    {
-      "id": "david-and-goliath",
-      "relationship": "narrative-event",
-      "weight": 9,
-      "notes": "David's public emergence"
-    },
-    {
-      "id": "kingship",
-      "relationship": "institutional-context",
-      "weight": 9,
-      "notes": "the monarchy begins"
-    }
-  ],
-  "scripture_references": [
-    {
-      "reference": "1 Samuel 1:1-28",
-      "relationship": "supporting",
-      "notes": "Hannah's prayer and Samuel's birth"
-    },
-    {
-      "reference": "1 Samuel 3:1-21",
-      "relationship": "supporting",
-      "notes": "Samuel's calling"
-    },
-    {
-      "reference": "1 Samuel 8:1-22",
-      "relationship": "primary",
-      "notes": "request for a king"
-    },
-    {
-      "reference": "1 Samuel 15:1-35",
-      "relationship": "supporting",
-      "notes": "Saul's disobedience"
-    },
-    {
-      "reference": "1 Samuel 16:1-13",
-      "relationship": "supporting",
-      "notes": "David anointed"
-    },
-    {
-      "reference": "1 Samuel 17:1-58",
-      "relationship": "supporting",
-      "notes": "David and Goliath"
-    },
-    {
-      "reference": "1 Samuel 31:1-13",
-      "relationship": "supporting",
-      "notes": "Saul's death"
-    }
-  ],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    {
-      "note": "The request for a king is both understandable and spiritually risky.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "The book's narrative tension comes from the contrast between Saul's self-protection and David's emerging trust.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    }
-  ],
-  "common_questions": [
-    "Why is 1 Samuel important?",
-    "How do Samuel, Saul, and David fit together?",
-    "What does 1 Samuel teach about kingship?"
-  ],
-  "sources": [
-    {
-      "title": "1 Samuel 1-31",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "1-samuel-1-31"
-    },
-    {
-      "title": "Psalm 78",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "psalm-78"
-    },
-    {
-      "title": "Acts 13",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "acts-13"
-    },
-    {
-      "title": "Hebrews 11",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "hebrews-11"
-    }
-  ],
-  "canonical_story": {
-    "phase": "",
-    "role": "",
-    "preceded_by": [],
-    "followed_by": []
-  },
-  "hermeneutical_lens": {
-    "immediate_literary_context": "",
-    "book_context": "",
-    "canonical_context": "",
-    "covenant_context": "",
-    "historical_context": "",
-    "ancient_near_east_context": "",
-    "second_temple_jewish_context": "",
-    "original_audience": "",
-    "genre": "",
-    "intertextual_connections": [],
-    "biblical_theology_themes": [],
-    "messianic_christological_trajectory": "",
-    "major_interpretive_views": [],
-    "historical_interpretation": "",
-    "authorial_intent": "",
-    "typological_connections": [],
-    "christological_significance": "",
-    "modern_application_principles": [],
-    "common_misinterpretations": []
-  },
-  "retrieval_metadata": {
-    "aliases": [],
-    "search_terms": [],
-    "common_questions": [],
-    "related_topics": [],
-    "frequently_confused_with": [],
-    "semantic_keywords": []
-  },
-  "importance": 94,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "generated_by": [
-    {
-      "type": "ai",
-      "name": "codex",
-      "workflow": "ane-hebraic-context-expansion",
-      "date": "2026-07-14"
-    }
-  ],
-  "edited_by": [],
-  "reviewed_by": [],
-  "last_reviewed": "2026-07-14",
-  "confidence": "medium",
-  "human_review_required": true
+  }
 }

@@ -94,6 +94,8 @@ def load_installed_translation_bible(translation_id: str) -> dict[str, Any]:
     normalized = normalize_translation_id(translation_id)
     if normalized == "asv":
         return load_asv_bible()
+    if normalized == "kjv":
+        return load_legacy_kjv_bible()
     installed = installed_translation_path(normalized)
     if installed.exists():
         return load_bible_dataset(installed)

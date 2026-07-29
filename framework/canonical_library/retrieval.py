@@ -8,7 +8,7 @@ from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Any, Mapping, Protocol
 
 from .normalization import STOP_WORDS, normalize_alias, normalize_id, normalize_text, tokenize_query
-from .schema import interpretive_note_texts
+from .schema import KNOWLEDGE_LAYER_PRIORITY, interpretive_note_texts
 
 FIELD_WEIGHTS: dict[str, int] = {
     "id": 12,
@@ -54,6 +54,8 @@ FIELD_WEIGHTS: dict[str, int] = {
     "timeline": 3,
     "maps": 3,
     "interpretive_notes": 2,
+    "claims": 5,
+    "knowledge_layers": 1,
     "canonical_story": 6,
     "hermeneutical_lens": 6,
     "retrieval_metadata": 9,
@@ -172,6 +174,7 @@ EXACT_MATCH_BONUS: dict[str, float] = {
     "maps": 0.14,
     "archaeology": 0.18,
     "interpretive_notes": 0.14,
+    "claims": 0.18,
     "hebrew_words": 0.16,
     "greek_words": 0.16,
 }
@@ -214,6 +217,7 @@ PHRASE_MATCH_BONUS: dict[str, float] = {
     "maps": 0.12,
     "archaeology": 0.16,
     "interpretive_notes": 0.12,
+    "claims": 0.16,
     "hebrew_words": 0.14,
     "greek_words": 0.14,
 }
@@ -528,6 +532,13 @@ def searchable_text_fields(obj: Any) -> dict[str, list[str]]:
                 "author",
                 "publisher",
                 "url",
+                "primary",
+                "secondary",
+                "claim",
+                "claim_type",
+                "certainty",
+                "dispute_status",
+                "rationale",
             ):
                 item = value.get(key)
                 if isinstance(item, str) and item.strip():
@@ -574,6 +585,8 @@ def searchable_text_fields(obj: Any) -> dict[str, list[str]]:
         "cross_references",
         "new_testament_connections",
         "interpretive_notes",
+        "claims",
+        "knowledge_layers",
         "timeline",
         "maps",
         "archaeology",
@@ -798,6 +811,38 @@ def field_search_terms(field_name: str, value: Any) -> set[str]:
         for item in interpretive_note_texts(value):
             terms.update(canonical_search_terms(item))
         return terms
+    if field_name == "claims":
+        terms: set[str] = set()
+        if isinstance(value, list):
+            for item in value:
+                terms.update(
+                    canonical_search_terms(
+                        *_mapping_values(
+                            item,
+                            (
+                                "id",
+                                "claim",
+                                "claim_type",
+                                "certainty",
+                                "dispute_status",
+                                "rationale",
+                                "notes",
+                            ),
+                        )
+                    )
+                )
+                if hasattr(item, "to_dict"):
+                    item = item.to_dict()
+                if isinstance(item, Mapping):
+                    for list_field in (
+                        "scripture_references",
+                        "source_ids",
+                        "traditions",
+                    ):
+                        for nested in item.get(list_field, []) or []:
+                            if isinstance(nested, str):
+                                terms.update(canonical_search_terms(nested))
+        return terms
     if field_name == "related_objects":
         terms: set[str] = set()
         if isinstance(value, list):
@@ -810,7 +855,12 @@ def field_search_terms(field_name: str, value: Any) -> set[str]:
             for item in value:
                 terms.update(canonical_search_terms(*_mapping_values(item, ("reference", "relationship", "notes"))))
         return terms
-    if field_name in {"canonical_story", "hermeneutical_lens", "retrieval_metadata"}:
+    if field_name in {
+        "knowledge_layers",
+        "canonical_story",
+        "hermeneutical_lens",
+        "retrieval_metadata",
+    }:
         if not isinstance(value, Mapping):
             return set()
         terms: set[str] = set()
@@ -870,17 +920,29 @@ def score_keyword_result(
 
 
 def sort_retrieval_results(results: list[RetrievalResult]) -> list[RetrievalResult]:
-    """Sort results deterministically by score, match type, title, and id."""
+    """Sort results deterministically, preferring lower-inference layers on ties."""
 
     return sorted(
         results,
         key=lambda result: (
             -result.score,
             MATCH_TYPE_PRIORITY.get(result.match_type, 99),
+            knowledge_layer_rank(
+                getattr(result.object, "knowledge_layers", {}).get("primary")
+                if isinstance(getattr(result.object, "knowledge_layers", {}), Mapping)
+                else None
+            ),
             normalize_text(result.object.title),
             normalize_id(result.object.id),
         ),
     )
+
+
+def knowledge_layer_rank(value: Any) -> int:
+    try:
+        return KNOWLEDGE_LAYER_PRIORITY.index(str(value))
+    except ValueError:
+        return len(KNOWLEDGE_LAYER_PRIORITY)
 
 
 def apply_relevance_thresholds(

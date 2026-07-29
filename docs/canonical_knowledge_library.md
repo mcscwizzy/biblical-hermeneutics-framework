@@ -102,6 +102,27 @@ startup.
 
 The Canonical Knowledge Library (CKL) is a version-controlled store of curated biblical knowledge that lives alongside, but separate from, the LLM. Its job is to return structured facts first so the model can act as a narrator and synthesizer rather than the primary source of biblical information.
 
+CKL is the trusted floor of the BHF knowledge process, not its ceiling. It is
+curated and intentionally non-exhaustive. The runtime does not use the CKL
+relevance threshold as an answer-completeness score: a Ruth entry, for example,
+may be highly relevant while omitting a legal, financial, or disputed scholarly
+dimension asked by the user.
+
+After local context retrieval, BHF records an answer-coverage assessment with
+covered and missing dimensions. At the default thresholds (`0.85` sufficient,
+`0.60` major gap), it routes to CKL-primary synthesis, targeted gap expansion,
+or broad knowledge expansion. Explicit research-oriented questions can request
+expansion even when the estimate is high. The score is only an explainable
+routing heuristic; it is not a mathematically exact measure of all available
+scholarship.
+
+Expansion remains offline-safe. Broader model knowledge is permitted only when
+configured and is kept distinct from CKL-supported facts. Optional external
+research uses a provider-neutral interface and is disabled by default; no
+network access is silently enabled. Strict mode blocks both model-knowledge and
+external expansion, while provider failures leave the ordinary answer path
+available.
+
 ## Purpose
 
 CKL stores canonical facts, retrieval metadata, and future scholarship in a deterministic format. The CKL layer itself stops at the retrieval foundation: it does not infer theology, generate explanations, or call an LLM.
@@ -127,17 +148,22 @@ When CKL content is prepared for a model prompt, the context builder emits secti
 
 1. Summary
 2. Primary Scripture References
-3. Immediate Literary Context
-4. Historical Context
-5. Ancient Near Eastern Context
-6. Hebraic Worldview
-7. Second Temple Context
-8. Covenant and Canonical Context
-9. Intertextual Connections
-10. New Testament Connections
-11. Interpretive Disputes and Cautions
-12. Later Christian Reception
-13. Sources
+3. Sourced Claims
+4. Immediate Literary Context
+5. Historical Context
+6. Ancient Near Eastern Context
+7. Hebraic Worldview
+8. Second Temple Context
+9. Covenant and Canonical Context
+10. Intertextual Connections
+11. New Testament Connections
+12. Interpretive Disputes and Cautions
+13. Later Christian Reception
+14. Sources
+
+Each prompt entry also identifies its primary knowledge layer so biblical text,
+historical context, theological synthesis, reception history, and application
+remain distinguishable.
 
 Answer-mode tiers keep the prompt compact:
 
@@ -175,6 +201,13 @@ Supported object folders are:
 - `institutions/`
 - `prophecy/`
 - `faq/`
+- `timeline/`
+- `covenants/`
+- `biblical_theology/`
+- `cultural_background/`
+- `symbols/`
+- `literary_devices/`
+- `doctrine/`
 
 The object `type` field stays singular even when the folder name is plural.
 
@@ -212,6 +245,9 @@ Every canonical object uses the same base schema.
 | `cross_references` | array of strings | Internal reference pointers for later use. |
 | `new_testament_connections` | array of strings | New Testament connection pointers. |
 | `interpretive_notes` | array of structured note objects | Interpreter notes and cautions with optional note type, certainty, dispute status, and source IDs. Legacy strings are still accepted and normalized on load. |
+| `claims` | array of structured claim objects | Granular claims with controlled type, certainty, dispute status, Scripture anchors, local source IDs, traditions, rationale, and notes. |
+| `section_status` | object | Per-section migration and review state used by type-specific completeness rules. |
+| `knowledge_layers` | object | One primary and zero or more secondary controlled knowledge layers. |
 | `common_questions` | array of strings | Question prompts and FAQs. |
 | `sources` | array of source objects | Structured source citations and bibliography with `id`, `source_type`, `title`, `author`, `publisher`, `year`, `locator`, `url`, `supports`, and `notes`. |
 | `importance` | integer | Deterministic ranking hint for retrieval. |
@@ -236,13 +272,92 @@ The `context_applicability` map is defaulted to all `true` on load for older obj
 {
   "note": "The covenant ceremony resembles Ancient Near Eastern treaty forms.",
   "note_type": "historical-context",
-  "certainty": "medium",
-  "dispute_status": "broad-consensus",
-  "sources": ["source-id"]
+  "certainty": "strong_consensus",
+  "dispute_status": "minor_scholarly_disagreement",
+  "sources": ["source-id"],
+  "scripture_references": ["Genesis 15:1-21"],
+  "traditions": [],
+  "rationale": "The classification is supported by the cited comparative sources."
 }
 ```
 
-Legacy string notes are migrated into the structured form during validation so the inventory can be upgraded without breaking older files.
+Legacy string notes and the previous certainty/dispute labels remain readable
+during migration. Approved notes must use the current taxonomies and include a
+certainty rationale.
+
+Current certainty values are `textually_explicit`, `strong_consensus`,
+`probable`, `plausible`, `disputed`, `tradition_dependent`, `speculative`, and
+`insufficient_evidence`. Current dispute values are `not_disputed`,
+`minor_scholarly_disagreement`, `major_scholarly_disagreement`,
+`denominational_disagreement`, `textual_variant`, `historical_uncertainty`,
+`chronological_uncertainty`, `archaeological_uncertainty`, and
+`lexical_uncertainty`.
+
+Section completeness is additive and does not replace the legacy scalar
+`content_status`:
+
+```json
+{
+  "section_status": {
+    "core_summary": "complete",
+    "scripture_anchors": "complete",
+    "historical_context": "draft",
+    "literary_context": "needs_review",
+    "canonical_context": "draft",
+    "original_audience": "missing",
+    "lexical_links": "not_applicable",
+    "intertextuality": "draft",
+    "interpretive_views": "missing",
+    "common_misinterpretations": "missing",
+    "sources": "needs_review",
+    "relationships": "draft",
+    "retrieval_metadata": "draft",
+    "human_review": "missing"
+  }
+}
+```
+
+Allowed section states are `missing`, `generated`, `draft`, `needs_review`,
+`reviewed`, `complete`, and `not_applicable`. Required sections vary by object
+type. An approved object must mark all of its required sections `complete` or
+`not_applicable`.
+
+Knowledge layers use this shape:
+
+```json
+{
+  "knowledge_layers": {
+    "primary": "biblical_theology",
+    "secondary": ["biblical_text", "historical_cultural"]
+  }
+}
+```
+
+Retrieval uses layer priority only as a deterministic tie-breaker after direct
+relevance and evidence signals. It prefers biblical-text and literary layers
+before historical context, lexical work, theological synthesis, reception
+history, denominational interpretation, and pastoral application.
+
+Granular claims use this shape:
+
+```json
+{
+  "id": "genesis-ane-flood-context",
+  "claim": "Genesis participates in an ancient Near Eastern flood-story environment while presenting distinct theological claims.",
+  "claim_type": "historical_cultural",
+  "certainty": "strong_consensus",
+  "dispute_status": "minor_scholarly_disagreement",
+  "scripture_references": ["Genesis 6:1-9:29"],
+  "source_ids": ["approved-ane-reference-source"],
+  "traditions": [],
+  "rationale": "Multiple primary texts and modern comparative studies support the cultural comparison.",
+  "notes": "Shared environment does not by itself demonstrate direct literary copying."
+}
+```
+
+Claim source IDs resolve against the containing object's `sources` list.
+Approved claims need a rationale and at least one Scripture reference or source
+ID.
 
 `sources` are now stored as structured source objects with this shape:
 

@@ -18,8 +18,31 @@
   async function requestJson(url, options = {}, fallbackMessage = "Request failed.") {
     const resolvedUrl = resolveUrl(url);
     const method = String(options.method || "GET").toUpperCase();
+    if (isDeviceOnlyPersonalPath(url)) {
+      if (method === "GET") {
+        return (await localJsonResponse(url)) || emptyDeviceOnlyResponse(url);
+      }
+      if (isOfflineMutation(url, method)) {
+        const result = await applyOfflineMutation(url, method, options, window.BHFOfflineDB);
+        notifyOfflineSyncChanged();
+        return result;
+      }
+    }
+    const preferLiveTranslationState =
+      method === "GET" &&
+      isLiveTranslationStateRequest(url) &&
+      navigator.onLine !== false;
+    if (method === "GET" && isCacheableOfflineGet(url) && !preferLiveTranslationState) {
+      const local = await localJsonResponse(url);
+      if (local) {
+        return local;
+      }
+    }
     try {
-      const response = await fetch(resolvedUrl, options);
+      const requestOptions = preferLiveTranslationState
+        ? withRefreshHeader(options)
+        : options;
+      const response = await fetch(resolvedUrl, requestOptions);
       const data = await response.json();
       if (!response.ok) {
         if (data && data.offline) {
@@ -41,7 +64,20 @@
     }
   }
 
+  function withRefreshHeader(options) {
+    const headers = new Headers(options.headers || {});
+    headers.set("X-BHF-Refresh", "true");
+    return {...options, headers};
+  }
+
   async function requestText(url, options = {}, fallbackMessage = "Request failed.") {
+    const local = await offlineTextFallback(url);
+    if (local) {
+      return local;
+    }
+    if (isDeviceOnlyPersonalPath(url)) {
+      throw new Error("This saved study is not available on this device.");
+    }
     try {
       const response = await fetch(resolveUrl(url), options);
       const data = await response.text();
@@ -75,17 +111,30 @@
   }
 
   async function cacheSuccessfulJson(url, method, data) {
-    if (method !== "GET" || !isCacheableOfflineGet(url)) {
-      return;
-    }
     const offlineDb = window.BHFOfflineDB;
-    if (!offlineDb || typeof offlineDb.cacheApiResponse !== "function") {
+    if (!offlineDb) {
       return;
     }
     try {
-      await offlineDb.cacheApiResponse(url, data);
+      if (method === "GET" && isCacheableOfflineGet(url) && typeof offlineDb.cacheApiResponse === "function") {
+        await offlineDb.cacheApiResponse(url, data);
+      } else if (method !== "GET" && typeof offlineDb.applyOnlineMutationResponse === "function") {
+        await offlineDb.applyOnlineMutationResponse(url, method, data);
+      }
     } catch (_error) {
       // Offline caching should never block the live UI.
+    }
+  }
+
+  async function localJsonResponse(url) {
+    const offlineDb = window.BHFOfflineDB;
+    if (!offlineDb || typeof offlineDb.readApiResponse !== "function") {
+      return null;
+    }
+    try {
+      return await offlineDb.readApiResponse(url);
+    } catch (_error) {
+      return null;
     }
   }
 
@@ -140,6 +189,9 @@
     if (path.startsWith("/api/saved-studies/") && method === "DELETE" && typeof offlineDb.deleteOfflineSavedStudy === "function") {
       const studyId = decodeURIComponent(path.slice("/api/saved-studies/".length));
       return offlineDb.deleteOfflineSavedStudy(studyId, path);
+    }
+    if (path === "/api/saved-studies" && method === "POST" && typeof offlineDb.upsertOfflineSavedStudy === "function") {
+      return offlineDb.upsertOfflineSavedStudy(body);
     }
     if (typeof offlineDb.enqueueMutation === "function") {
       const queued = await offlineDb.enqueueMutation({ method, url: path, body });
@@ -198,6 +250,36 @@
       "/api/map-studies",
       "/api/sources",
     ].some((prefix) => path === prefix || path.startsWith(prefix));
+  }
+
+  function isDeviceOnlyPersonalPath(url) {
+    const path = new URL(String(url || "/"), window.location.origin).pathname;
+    return path === "/api/notes"
+      || path.startsWith("/api/notes/")
+      || path === "/api/highlights"
+      || path.startsWith("/api/highlights/")
+      || path === "/api/saved-studies"
+      || path.startsWith("/api/saved-studies/");
+  }
+
+  function emptyDeviceOnlyResponse(url) {
+    const path = new URL(String(url || "/"), window.location.origin).pathname;
+    if (path.startsWith("/api/notes/")) {
+      return { notes: [], offline: true, device_only: true, cache_status: "generated" };
+    }
+    if (path.startsWith("/api/highlights/")) {
+      return { highlights: [], offline: true, device_only: true, cache_status: "generated" };
+    }
+    return { saved_studies: [], offline: true, device_only: true, cache_status: "generated" };
+  }
+
+  function isLiveTranslationStateRequest(url) {
+    const path = new URL(String(url || "/"), window.location.origin).pathname;
+    return [
+      "/api/translations",
+      "/api/translations/installed",
+      "/api/translations/catalog",
+    ].includes(path);
   }
 
   function isOfflineMutation(url, method) {

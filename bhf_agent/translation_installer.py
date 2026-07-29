@@ -15,11 +15,15 @@ from pathlib import Path
 from typing import Any
 
 from .translation_storage import (
+    DATA_PATH,
+    LEGACY_KJV_DATA_PATH,
     TranslationStorageError,
     count_bible_statistics,
     installed_translation_metadata_path,
     installed_translation_path,
+    load_asv_bible,
     load_bible_dataset,
+    load_legacy_kjv_bible,
     normalize_translation_id,
     parse_bible_xml,
     translations_root,
@@ -34,6 +38,7 @@ from .translation_registry import (
 ALLOWLISTED_DOWNLOAD_HOSTS = {"raw.githubusercontent.com"}
 MAX_DOWNLOAD_BYTES = 50 * 1024 * 1024
 DEFAULT_TIMEOUT_SECONDS = 30
+SERVER_TRANSLATION_IDS = frozenset({"asv", "kjv"})
 
 
 class TranslationInstallError(ValueError):
@@ -42,14 +47,15 @@ class TranslationInstallError(ValueError):
 
 def get_translation_installation(translation_id: str) -> dict[str, Any]:
     normalized = normalize_translation_id(translation_id)
-    if normalized == "asv":
-        from .bible import load_asv_bible
-
-        data = load_asv_bible()
+    if normalized in {"asv", "kjv"}:
+        data = load_asv_bible() if normalized == "asv" else load_legacy_kjv_bible()
         stats = count_bible_statistics(data)
         translation = dict(data.get("translation", {}))
-        translation.setdefault("id", "ASV")
-        translation.setdefault("name", "American Standard Version")
+        translation.setdefault("id", normalized.upper())
+        translation.setdefault(
+            "name",
+            "American Standard Version" if normalized == "asv" else "King James Version",
+        )
         return {
             "translation_id": normalized,
             "installed": True,
@@ -57,7 +63,11 @@ def get_translation_installation(translation_id: str) -> dict[str, Any]:
             "availability": "bundled",
             "offline_supported": True,
             "metadata_path": None,
-            "storage_path": str(installed_translation_path(normalized)),
+            "storage_path": str(
+                DATA_PATH
+                if normalized == "asv"
+                else LEGACY_KJV_DATA_PATH
+            ),
             "translation": translation,
             **stats,
             "private_local_install": False,
@@ -115,6 +125,12 @@ def list_installed_translations() -> list[dict[str, Any]]:
             installation = get_translation_installation(str(row["id"]))
         except TranslationStorageError:
             continue
+        # The registry is intentionally durable, but the dataset is the source
+        # of truth for whether a translation can actually be read.  A removed
+        # app/data volume can leave an old registry row behind; do not expose
+        # that row as an installed translation.
+        if not installation.get("installed") or not installation.get("bundled"):
+            continue
         installation["registry"] = row
         entries.append(installation)
     return entries
@@ -122,8 +138,8 @@ def list_installed_translations() -> list[dict[str, Any]]:
 
 def remove_translation(translation_id: str) -> bool:
     normalized = normalize_translation_id(translation_id)
-    if normalized == "asv":
-        raise TranslationInstallError("ASV cannot be removed")
+    if normalized in {"asv", "kjv"}:
+        raise TranslationInstallError(f"{normalized.upper()} cannot be removed")
     removed = False
     for path in (installed_translation_path(normalized), installed_translation_metadata_path(normalized)):
         if path.exists():

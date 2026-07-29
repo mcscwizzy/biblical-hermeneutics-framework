@@ -34,6 +34,8 @@ class CanonicalAuthoringTests(unittest.TestCase):
         self.assertEqual(obj.title, "Hesed")
         self.assertIn("what does hesed mean", obj.aliases)
         self.assertIn("tell me about hesed", obj.aliases)
+        self.assertEqual(obj.knowledge_layers["primary"], "lexical")
+        self.assertEqual(obj.section_status["core_summary"], "missing")
 
     def test_scan_library_reports_key_issue_buckets(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -298,6 +300,12 @@ class CanonicalAuthoringTests(unittest.TestCase):
             normalized["interpretive_notes"][0]["note_type"],
             "textual-observation",
         )
+        self.assertEqual(normalized["section_status"]["core_summary"], "missing")
+        self.assertEqual(
+            normalized["knowledge_layers"]["primary"],
+            "historical_cultural",
+        )
+        self.assertEqual(normalized["claims"], [])
 
     def test_cli_smoke_for_create_validate_manifest_report_and_migrate(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

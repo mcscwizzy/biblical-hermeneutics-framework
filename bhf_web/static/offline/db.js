@@ -1,6 +1,6 @@
 (function () {
   const DB_NAME = "bhf-offline";
-  const DB_VERSION = 4;
+  const DB_VERSION = 5;
   const STORES = [
     "apiResponses",
     "translations",
@@ -14,6 +14,7 @@
     "mapStudies",
     "mutationQueue",
     "metadata",
+    "modelSettings",
   ];
   const SNAPSHOT_STORES = ["notes", "highlights", "savedStudies", "mapStudies", "mutationQueue", "metadata"];
   const REBUILDABLE_STORES = ["apiResponses", "translations", "canonicalObjects", "sources", "chapters", "searches"];
@@ -221,7 +222,11 @@
       return null;
     }
     if (key === "/api/sources") {
-      const sources = (await list("sources"))
+      const storedSources = await list("sources");
+      if (!storedSources.length) {
+        return null;
+      }
+      const sources = storedSources
         .map((source) => sourceSummary(source))
         .sort((left, right) => String(left.label || "").localeCompare(String(right.label || "")));
       return { sources, offline: true, cache_status: "generated" };
@@ -230,6 +235,24 @@
     if (sourceMatch) {
       const source = await get("sources", decodeURIComponent(sourceMatch[1]));
       return source ? { ...source, offline: true, cache_status: "generated" } : null;
+    }
+    const notesMatch = key.match(/^\/api\/notes\/([^/?]+)\/(\d+)$/);
+    if (notesMatch) {
+      const notes = await notesForChapter(decodeURIComponent(notesMatch[1]), Number(notesMatch[2]));
+      return { notes, offline: true, cache_status: "generated", device_only: true };
+    }
+    const highlightsMatch = key.match(/^\/api\/highlights\/([^/?]+)\/(\d+)$/);
+    if (highlightsMatch) {
+      const highlights = await highlightsForChapter(
+        decodeURIComponent(highlightsMatch[1]),
+        Number(highlightsMatch[2]),
+      );
+      return { highlights, offline: true, cache_status: "generated", device_only: true };
+    }
+    if (key.startsWith("/api/saved-studies") && !key.match(/^\/api\/saved-studies\/[^/?]+$/)) {
+      const params = new URLSearchParams(key.split("?", 2)[1] || "");
+      const studies = await savedStudiesForChapter(params.get("book"), params.get("chapter"));
+      return { saved_studies: studies, offline: true, cache_status: "generated", device_only: true };
     }
     if (key.startsWith("/api/map-studies")) {
       return generatedMapStudiesResponse(key);
@@ -361,6 +384,9 @@
       }
       return true;
     });
+    if (!objects.length) {
+      return null;
+    }
     const results = query
       ? scoreCanonicalObjects(objects, query)
       : objects
@@ -481,6 +507,9 @@
     const book = params.get("book");
     const chapter = params.get("chapter");
     const studies = await mapStudiesForChapter(book, chapter);
+    if (!studies.length) {
+      return null;
+    }
     return {
       saved_map_studies: studies,
       offline: true,
@@ -559,7 +588,8 @@
     const counts = {};
     let imported = 0;
     for (const storeName of SNAPSHOT_STORES) {
-      const records = Array.isArray(snapshot.stores[storeName]) ? snapshot.stores[storeName] : [];
+      const records = (Array.isArray(snapshot.stores[storeName]) ? snapshot.stores[storeName] : [])
+        .filter((record) => storeName !== "mutationQueue" || !isDeviceOnlyMutationUrl(record?.url));
       counts[storeName] = 0;
       for (const record of records) {
         if (!record || typeof record !== "object" || !record.id) {
@@ -635,11 +665,10 @@
   }
 
   async function upsertOfflineNote(payload, method = "POST", url = "/api/notes") {
-    const note = normalizeNote(payload, "pending");
+    const note = normalizeNote(payload, "local");
     await put("notes", note);
-    await enqueueMutation({ method, url, body: note, store: "notes", recordId: note.id });
     await cacheNotesForChapter(note.book, note.chapter);
-    return { ...note, offline: true, sync_status: "pending" };
+    return { ...note, offline: true, device_only: true, sync_status: "local" };
   }
 
   async function deleteOfflineNote(noteId, url) {
@@ -648,8 +677,7 @@
     if (existing) {
       await cacheNotesForChapter(existing.book, existing.chapter);
     }
-    await enqueueMutation({ method: "DELETE", url, store: "notes", recordId: noteId });
-    return { deleted: true, offline: true, sync_status: "pending" };
+    return { deleted: true, offline: true, device_only: true, sync_status: "local" };
   }
 
   async function notesForChapter(book, chapter) {
@@ -660,11 +688,10 @@
   }
 
   async function upsertOfflineHighlight(payload, method = "POST", url = "/api/highlights") {
-    const highlight = normalizeHighlight(payload, "pending");
+    const highlight = normalizeHighlight(payload, "local");
     await put("highlights", highlight);
-    await enqueueMutation({ method, url, body: highlight, store: "highlights", recordId: highlight.id });
     await cacheHighlightsForChapter(highlight.book, highlight.chapter);
-    return { ...highlight, offline: true, sync_status: "pending" };
+    return { ...highlight, offline: true, device_only: true, sync_status: "local" };
   }
 
   async function deleteOfflineHighlight(highlightId, url) {
@@ -673,8 +700,7 @@
     if (existing) {
       await cacheHighlightsForChapter(existing.book, existing.chapter);
     }
-    await enqueueMutation({ method: "DELETE", url, store: "highlights", recordId: highlightId });
-    return { deleted: true, offline: true, sync_status: "pending" };
+    return { deleted: true, offline: true, device_only: true, sync_status: "local" };
   }
 
   async function highlightsForChapter(book, chapter) {
@@ -715,8 +741,82 @@
     if (existing) {
       await cacheSavedStudiesForChapter(existing.book, existing.chapter);
     }
-    await enqueueMutation({ method: "DELETE", url, store: "savedStudies", recordId: studyId });
-    return { deleted: true, offline: true, sync_status: "pending" };
+    return { deleted: true, offline: true, device_only: true, sync_status: "local" };
+  }
+
+  async function upsertOfflineSavedStudy(payload) {
+    const study = normalizeSavedStudy(payload, "local");
+    await put("savedStudies", study);
+    if (study.book && study.chapter) {
+      await cacheSavedStudiesForChapter(study.book, study.chapter);
+    }
+    return { ...study, offline: true, device_only: true, sync_status: "local" };
+  }
+
+  function isDeviceOnlyMutationUrl(url) {
+    const path = new URL(String(url || "/"), window.location.origin).pathname;
+    return path === "/api/notes"
+      || path.startsWith("/api/notes/")
+      || path === "/api/highlights"
+      || path.startsWith("/api/highlights/")
+      || path === "/api/saved-studies"
+      || path.startsWith("/api/saved-studies/");
+  }
+
+  async function purgeDeviceOnlyMutations() {
+    const mutations = await queuedMutations();
+    const deviceOnly = mutations.filter((mutation) => isDeviceOnlyMutationUrl(mutation.url));
+    await Promise.all(deviceOnly.map((mutation) => removeMutation(mutation.id)));
+    return { purged_count: deviceOnly.length };
+  }
+
+  async function applyOnlineMutationResponse(url, method, payload) {
+    if (isDeviceOnlyMutationUrl(url)) {
+      return;
+    }
+    const path = new URL(String(url || "/"), window.location.origin).pathname;
+    if (method === "DELETE") {
+      const matchers = [
+        ["/api/notes/", "notes"],
+        ["/api/highlights/", "highlights"],
+        ["/api/saved-studies/", "savedStudies"],
+        ["/api/map-studies/", "mapStudies"],
+      ];
+      const match = matchers.find(([prefix]) => path.startsWith(prefix));
+      if (match) {
+        const recordId = decodeURIComponent(path.slice(match[0].length));
+        const existing = await get(match[1], recordId);
+        await remove(match[1], recordId);
+        if (existing?.book && existing?.chapter) {
+          if (match[1] === "notes") {
+            await cacheNotesForChapter(existing.book, existing.chapter);
+          } else if (match[1] === "highlights") {
+            await cacheHighlightsForChapter(existing.book, existing.chapter);
+          } else if (match[1] === "savedStudies") {
+            await cacheSavedStudiesForChapter(existing.book, existing.chapter);
+          } else if (match[1] === "mapStudies") {
+            await cacheMapStudiesForChapter(existing.book, existing.chapter);
+          }
+        }
+      }
+      return;
+    }
+    if (!payload || typeof payload !== "object" || !payload.id) {
+      return;
+    }
+    if (path === "/api/notes" || path.startsWith("/api/notes/")) {
+      await put("notes", normalizeNote(payload, "synced"));
+      await cacheNotesForChapter(payload.book, payload.chapter);
+    } else if (path === "/api/highlights" || path.startsWith("/api/highlights/")) {
+      await put("highlights", normalizeHighlight(payload, "synced"));
+      await cacheHighlightsForChapter(payload.book, payload.chapter);
+    } else if (path === "/api/saved-studies") {
+      await put("savedStudies", normalizeSavedStudy(payload, "synced"));
+      await cacheSavedStudiesForChapter(payload.book, payload.chapter);
+    } else if (path === "/api/map-studies") {
+      await put("mapStudies", normalizeMapStudy(payload, "synced"));
+      await cacheMapStudiesForChapter(payload.book, payload.chapter);
+    }
   }
 
   async function savedStudiesForChapter(book, chapter) {
@@ -945,11 +1045,13 @@
     openDatabase,
     get,
     put,
+    remove,
     delete: remove,
     list,
     cacheApiResponse,
     readApiResponse,
     readTextResponse,
+    applyOnlineMutationResponse,
     enqueueMutation,
     queuedMutations,
     mutationQueueSummary,
@@ -969,6 +1071,8 @@
     deleteOfflineMapStudy,
     mapStudiesForChapter,
     deleteOfflineSavedStudy,
+    upsertOfflineSavedStudy,
     savedStudiesForChapter,
+    purgeDeviceOnlyMutations,
   };
 })();

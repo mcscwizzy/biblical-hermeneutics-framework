@@ -272,6 +272,8 @@ def _format_reference(result) -> str:
         location += f" {ref.chapter}"
     if ref.verse is not None:
         location += f":{ref.verse}"
+        if ref.verse_end is not None:
+            location += f"-{ref.verse_end}"
     if ref.testament:
         location += f" [{ref.testament}]"
     return location
