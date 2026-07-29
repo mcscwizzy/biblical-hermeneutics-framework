@@ -1,3 +1,5 @@
+import { buildGoogleEarthUrl } from "./MapExternalLinks.js";
+
 function escapeHtml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -5,6 +7,13 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
+}
+
+function renderGoogleEarthLink(item) {
+  const earthUrl = buildGoogleEarthUrl(item);
+  return earthUrl
+    ? `<a class="map-popup-external-link" href="${escapeHtml(earthUrl)}" target="_blank" rel="noopener noreferrer">Open in Google Earth <span aria-hidden="true">↗</span></a>`
+    : "";
 }
 
 function renderRoutePopup(route) {
@@ -64,6 +73,7 @@ function renderJourneyStopPopup(journey, stop) {
       <p class="map-popup-region">${journeyTitle}</p>
       <p class="map-popup-confidence">${location}</p>
       <p class="map-popup-description">${description}</p>
+      ${renderGoogleEarthLink(stop)}
     </article>
   `;
 }
@@ -98,6 +108,7 @@ function renderReferenceFeaturePopup(layer, feature) {
       <p class="map-popup-region">${layerTitle}</p>
       <p class="map-popup-confidence">${escapeHtml(periods)}</p>
       <p class="map-popup-description">${description}</p>
+      ${renderGoogleEarthLink(feature)}
     </article>
   `;
 }
@@ -115,6 +126,7 @@ function renderArchaeologyPopup(item) {
       <p class="map-popup-region">${siteName}</p>
       <p class="map-popup-confidence">${period} · ${itemType}</p>
       <p class="map-popup-description">${relationship ? `${relationship}. ` : ""}${whyItMatters}</p>
+      ${renderGoogleEarthLink(item)}
     </article>
   `;
 }
@@ -131,6 +143,7 @@ function renderManuscriptPopup(item) {
       <p class="map-popup-region">${manuscriptType}</p>
       <p class="map-popup-confidence">${language} · ${date}</p>
       <p class="map-popup-description">${significance}</p>
+      ${renderGoogleEarthLink(item)}
     </article>
   `;
 }

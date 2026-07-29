@@ -329,6 +329,20 @@ html[data-theme="dark"] .map-stage {
   line-height: 1.45;
 }
 
+.map-popup-external-link {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 10px;
+  color: var(--accent-text);
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.map-popup-external-link:hover {
+  text-decoration: underline;
+}
+
 .map-entity-marker {
   display: grid;
   place-items: center;

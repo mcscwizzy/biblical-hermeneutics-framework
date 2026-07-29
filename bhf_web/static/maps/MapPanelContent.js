@@ -178,6 +178,8 @@ function renderSelectedArchaeology(marker, passageContext, options = {}) {
   const excavationSummary = marker.excavationSummary || marker.excavation_history || "";
   const siteOverview = marker.site_overview || marker.historical_significance || "";
   const biblicalConnections = marker.biblical_connections || marker.biblicalConnections || "";
+  const earthUrl = buildGoogleEarthUrl(marker);
+  const externalOnline = typeof navigator === "undefined" || navigator.onLine !== false;
 
   return `
     <div class="map-details-card">
@@ -205,6 +207,16 @@ function renderSelectedArchaeology(marker, passageContext, options = {}) {
         <h4>Location</h4>
         <p>${escapeHtml(marker.location || marker.site_name || "Not supplied in the local data.")}</p>
       </section>
+
+      ${earthUrl ? `
+        <section class="map-detail-section map-external-section">
+          <h4>External online feature</h4>
+          ${externalOnline
+            ? `<a class="secondary-link map-earth-link" href="${escapeHtml(earthUrl)}" target="_blank" rel="noopener noreferrer">Open in Google Earth <span aria-hidden="true">↗</span></a>`
+            : `<span class="map-external-disabled" aria-disabled="true">Google Earth is unavailable offline</span>`}
+          <p class="map-layer-note">Opens the archaeological location in a new browser context.</p>
+        </section>
+      ` : ""}
 
       ${
         discoveryLocation
@@ -338,6 +350,8 @@ function renderSelectedManuscript(marker, passageContext, options = {}) {
   const sourceText = buildSourceText(marker);
   const relatedBooks = Array.isArray(marker.related_books) ? marker.related_books : [];
   const manuscriptOverview = options.manuscriptOverview || "";
+  const earthUrl = buildGoogleEarthUrl(marker);
+  const externalOnline = typeof navigator === "undefined" || navigator.onLine !== false;
 
   return `
     <div class="map-details-card">
@@ -380,6 +394,16 @@ function renderSelectedManuscript(marker, passageContext, options = {}) {
         <h4>Current location</h4>
         <p>${escapeHtml(marker.current_location || "Not supplied in the local data.")}</p>
       </section>
+
+      ${earthUrl ? `
+        <section class="map-detail-section map-external-section">
+          <h4>External online feature</h4>
+          ${externalOnline
+            ? `<a class="secondary-link map-earth-link" href="${escapeHtml(earthUrl)}" target="_blank" rel="noopener noreferrer">Open in Google Earth <span aria-hidden="true">↗</span></a>`
+            : `<span class="map-external-disabled" aria-disabled="true">Google Earth is unavailable offline</span>`}
+          <p class="map-layer-note">Opens the recorded location in a new browser context.</p>
+        </section>
+      ` : ""}
 
       <section class="map-detail-section">
         <h4>Related books</h4>

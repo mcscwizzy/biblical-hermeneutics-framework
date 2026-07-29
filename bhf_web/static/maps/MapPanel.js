@@ -44,6 +44,7 @@ import {
   normalizeHistoricalPeriod,
   syncRouteToggle as syncRouteToggleHtml,
 } from "./MapPanelStateHelpers.js";
+import { buildGoogleEarthUrl } from "./MapExternalLinks.js";
 
 // Source links still point to `/sources/` in the rendered map panel markup.
 const BHF_HTTP = window.BHFApi || {};
@@ -1566,6 +1567,8 @@ function renderSelectedJourneyStop(journey, stop) {
   if (!details || !journey || !stop) {
     return;
   }
+  const earthUrl = buildGoogleEarthUrl(stop);
+  const externalOnline = typeof navigator === "undefined" || navigator.onLine !== false;
   details.innerHTML = `
     <div class="map-details-card">
       <div class="map-details-header">
@@ -1581,6 +1584,15 @@ function renderSelectedJourneyStop(journey, stop) {
         <h4>Location</h4>
         <p>${escapeHtml([stop.region, stop.modernLocation].filter(Boolean).join(" · ") || "Not supplied.")}</p>
       </section>
+      ${earthUrl ? `
+        <section class="map-detail-section map-external-section">
+          <h4>External online feature</h4>
+          ${externalOnline
+            ? `<a class="secondary-link map-earth-link" href="${escapeHtml(earthUrl)}" target="_blank" rel="noopener noreferrer">Open in Google Earth <span aria-hidden="true">↗</span></a>`
+            : `<span class="map-external-disabled" aria-disabled="true">Google Earth is unavailable offline</span>`}
+          <p class="map-layer-note">Opens this journey stop in a new browser context.</p>
+        </section>
+      ` : ""}
       <section class="map-detail-section">
         <h4>Related passages</h4>
         ${renderPassageChips(stop.passages)}

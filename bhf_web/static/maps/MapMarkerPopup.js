@@ -1,3 +1,5 @@
+import { buildGoogleEarthUrl } from "./MapExternalLinks.js";
+
 function escapeHtml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -12,6 +14,7 @@ export function renderMapMarkerPopup(marker) {
   const region = escapeHtml(marker.region || "Unknown region");
   const description = escapeHtml(marker.description || "No description available.");
   const confidence = escapeHtml(marker.confidence || "unknown");
+  const earthUrl = buildGoogleEarthUrl(marker);
   const periods = Array.isArray(marker.periods) && marker.periods.length
     ? escapeHtml(marker.periods.join(" · "))
     : "Unknown period";
@@ -23,6 +26,7 @@ export function renderMapMarkerPopup(marker) {
       <p class="map-popup-confidence">Periods: ${periods}</p>
       <p class="map-popup-confidence">Confidence: ${confidence}</p>
       <p class="map-popup-description">${description}</p>
+      ${earthUrl ? `<a class="map-popup-external-link" href="${escapeHtml(earthUrl)}" target="_blank" rel="noopener noreferrer">Open in Google Earth <span aria-hidden="true">↗</span></a>` : ""}
     </article>
   `;
 }
