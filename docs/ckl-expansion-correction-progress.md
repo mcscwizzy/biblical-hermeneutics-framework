@@ -6,18 +6,18 @@ This is the durable handoff for the **BHF Canonical Knowledge Library Expansion
 and Correction Plan**. The supplied plan explicitly says to begin with the
 repository audit and Phase 1 quality reporting, avoid immediate bulk content
 generation, and stop after each major phase. Phases 1–4 are now implemented at
-the schema/runtime level. Phase 5 Waves 1–57 have corrected 65 of the 66 book
-records as honest, source-backed drafts; none has been mechanically approved.
+the schema/runtime level. Phase 5 Waves 1–58 have corrected all 66 book records
+as honest, source-backed drafts; none has been mechanically approved.
 
 ## Current checkpoint
 
 | Plan area | Status | Continuation note |
 | --- | --- | --- |
 | Phase 1: inventory, reporting, quality metrics | **Implemented** | Deep JSON and Markdown reports, CLI support, and calculation tests are present. |
-| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Sixty-five records now have evidence-based draft statuses; 555 still need explicit migration. |
-| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Sixty-five records now have explicit layers; 555 still need migration. |
+| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Sixty-six book records now have evidence-based draft statuses; 554 non-book records still need explicit migration. |
+| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Sixty-six book records now have explicit layers; 554 non-book records still need migration. |
 | Phase 4: certainty and dispute taxonomies | **Implemented; evidence migration pending** | Current taxonomies and granular claim records are supported. Legacy values remain readable but are forbidden for approved notes; no `unknown` value was guessed or mass-relabeled. |
-| Phase 5: audit/correct all 66 books | **Waves 1–57 implemented; human review pending** | Sixty-five books through Lamentations are corrected drafts with sources, claims, tests, and reviewer notes. Revelation remains. |
+| Phase 5: audit/correct all 66 books | **Waves 1–58 implemented; human review pending** | All sixty-six books are corrected drafts with sources, claims, tests, and reviewer notes. Phase 5 content correction is closed without mechanical approval. |
 | Phases 6–20 | Not started | Follow the supplied order after the foundation is upgraded. |
 | Phase 21: controlled generation workflow | Partially enabled | Reporting, type-specific completeness, and approval gates are present; scoped human-review events still need Phase 19. |
 
@@ -6710,10 +6710,57 @@ wave:
     judgment, and New Jerusalem records, then run schema, graph, retrieval,
     factual, SQLite, report, and reviewer checks.
 
-The active continuation target is Phase 5 Wave 58, Revelation, the sole
+The Wave 57 continuation target was Phase 5 Wave 58, Revelation, the sole
 remaining book before Phase 5 closes. Follow the controlled scope above; do
 not reopen completed Lamentations, Jude, 3 John, 2 John, 1 John, 2 Peter,
 1 Peter, James, Hebrews, Philemon, Titus, 2 Timothy, 1 Timothy,
 2 Thessalonians, 1 Thessalonians, Colossians, Philippians, Ephesians,
 Galatians, 2 Corinthians, 1 Corinthians, Romans, Acts, John, Luke, Mark, or
 Matthew except to address a concrete review or regression finding.
+
+Wave 58 Revelation completed the controlled scope above. The record remains
+an unapproved draft and its reviewer checklist is in
+[`ckl-phase-5-revelation-review.md`](ckl-phase-5-revelation-review.md).
+
+The corrected record contains thirty sourced claims, forty current-taxonomy
+interpretive notes, twenty-eight sources, twenty-five URL-bearing external
+sources, thirty-four high-precision top-level aliases plus retrieval metadata,
+thirty-three normalized Scripture anchors, twenty-four Hebrew entries, forty
+Greek entries, and seven verified graph relationships. Its focused
+eight-method factual and SQLite suite and forty book-scoped retrieval
+questions pass. The full 652-test CKL suite, validators, graph audit, generated
+reports, and final SQLite artifact are recorded in the reviewer report.
+
+The broad run exposed three completed-book relationship-query regressions:
+Ezekiel, Joel, and Nahum now have precise aliases for their existing
+Revelation-comparison fixtures. Revelation's generic creation vocabulary also
+temporarily displaced the established golden baptism/new-creation results;
+narrower cosmic-renewal and new-earth indexing restored that ordering. No
+completed record received substantive content changes.
+
+After Phase 5 Wave 58, the refreshed report records:
+
+| Migration metric | Result |
+| --- | ---: |
+| Records marked `complete` / `draft` | 554 / 66 |
+| Complete records with candidate Phase 2 section gaps | 553 |
+| Raw records missing explicit `section_status` | 554 |
+| Raw records with incomplete type-required sections | 620 |
+| Raw records missing explicit `knowledge_layers` | 554 |
+| Interpretive notes using current taxonomies | 2,332 |
+| Interpretive notes still using legacy taxonomies | 1,186 |
+| Granular claims authored | 1,515 |
+| External sources | 1,544 |
+| Source references that do not resolve | 0 |
+| Invalid source support targets | 0 |
+| Unresolved legacy object references | 14 |
+| Scripture reference errors | 0 |
+| Graph edges / unknown targets / orphaned records | 3,315 / 0 / 0 |
+| Missing reciprocal relationship suggestions | 2,855 |
+| Validator warnings / errors | 14 / 0 |
+
+Phase 5 is now closed at its required major-phase checkpoint: all sixty-six
+book records are source-backed drafts with human review still missing. Do not
+mechanically approve them or begin Phase 6 in the same continuation. The next
+authorized continuation should begin from the supplied Phase 6 scope and this
+refreshed baseline.
