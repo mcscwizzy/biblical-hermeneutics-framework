@@ -12,15 +12,15 @@ Root: `/Users/johnwalker/Documents/github/biblical-hermeneutic-framework/framewo
 
 ## Depth averages
 
-- Summary length (characters): 135.47
-- Scripture references per object: 6.32
-- External sources per object: 2.4
+- Summary length (characters): 136.04
+- Scripture references per object: 6.35
+- External sources per object: 2.45
 - Relationships per object: 5.34
 
 ## Graph and references
 
 - Dangling relationship IDs: 0
-- Missing reciprocal relationships: 2859
+- Missing reciprocal relationships: 2857
 - Orphaned objects: 0
 - Unresolved legacy object references: 14
 - Scripture reference format/range errors: 0
@@ -29,13 +29,13 @@ Root: `/Users/johnwalker/Documents/github/biblical-hermeneutic-framework/framewo
 ## Completeness and governance
 
 - Complete records with empty required fields: 0
-- Complete records with candidate Phase 2 section gaps: 555
-- Records missing section_status: 556
+- Complete records with candidate Phase 2 section gaps: 554
+- Records missing section_status: 555
 - Records with incomplete type-required sections: 620
-- Records missing knowledge_layers: 556
-- Interpretive notes using current taxonomies: 2259
-- Interpretive notes still using legacy taxonomies: 1190
-- Granular claims: 1458
+- Records missing knowledge_layers: 555
+- Interpretive notes using current taxonomies: 2292
+- Interpretive notes still using legacy taxonomies: 1188
+- Granular claims: 1485
 - Records with unknown certainty: 532
 - Records with unknown dispute status: 532
 - Records with no human reviewer: 619
@@ -52,16 +52,16 @@ Root: `/Users/johnwalker/Documents/github/biblical-hermeneutic-framework/framewo
 
 ## Retrieval gaps
 
-- Objects without search terms: 549
+- Objects without search terms: 548
 - Objects without common questions: 0
 - Objects without canonical placement: 547
 
 ## Source integrity
 
 - Unresolved source IDs: 0
-- Sources supporting no field or claim: 2717
+- Sources supporting no field or claim: 2719
 - Invalid source support targets: 0
-- Internally self-cited records without external support: 408
+- Internally self-cited records without external support: 407
 
 ## Existing validator
 
@@ -74,7 +74,7 @@ aaron, abba, abel, abraham, adam, adonai, adoption, adoption-theme, agape, agios
 
 ### Internal-only source samples
 
-aaron, abba, abel, abraham, abrahamic-covenant, abrahamic-covenant-framework, adam, adoption, adoption-theme, agios … (+398 more)
+aaron, abba, abel, abraham, abrahamic-covenant, abrahamic-covenant-framework, adam, adoption, adoption-theme, agios … (+397 more)
 
 ## Interpretation note
 

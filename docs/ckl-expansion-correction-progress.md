@@ -6,7 +6,7 @@ This is the durable handoff for the **BHF Canonical Knowledge Library Expansion
 and Correction Plan**. The supplied plan explicitly says to begin with the
 repository audit and Phase 1 quality reporting, avoid immediate bulk content
 generation, and stop after each major phase. Phases 1–4 are now implemented at
-the schema/runtime level. Phase 5 Waves 1–56 have corrected 64 of the 66 book
+the schema/runtime level. Phase 5 Waves 1–57 have corrected 65 of the 66 book
 records as honest, source-backed drafts; none has been mechanically approved.
 
 ## Current checkpoint
@@ -14,10 +14,10 @@ records as honest, source-backed drafts; none has been mechanically approved.
 | Plan area | Status | Continuation note |
 | --- | --- | --- |
 | Phase 1: inventory, reporting, quality metrics | **Implemented** | Deep JSON and Markdown reports, CLI support, and calculation tests are present. |
-| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Sixty-four records now have evidence-based draft statuses; 556 still need explicit migration. |
-| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Sixty-four records now have explicit layers; 556 still need migration. |
+| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Sixty-five records now have evidence-based draft statuses; 555 still need explicit migration. |
+| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Sixty-five records now have explicit layers; 555 still need migration. |
 | Phase 4: certainty and dispute taxonomies | **Implemented; evidence migration pending** | Current taxonomies and granular claim records are supported. Legacy values remain readable but are forbidden for approved notes; no `unknown` value was guessed or mass-relabeled. |
-| Phase 5: audit/correct all 66 books | **Waves 1–56 implemented; human review pending** | Sixty-four books through Jude are corrected drafts with sources, claims, tests, and reviewer notes. Lamentations and Revelation remain. |
+| Phase 5: audit/correct all 66 books | **Waves 1–57 implemented; human review pending** | Sixty-five books through Lamentations are corrected drafts with sources, claims, tests, and reviewer notes. Revelation remains. |
 | Phases 6–20 | Not started | Follow the supplied order after the foundation is upgraded. |
 | Phase 21: controlled generation workflow | Partially enabled | Reporting, type-specific completeness, and approval gates are present; scoped human-review events still need Phase 19. |
 
@@ -6628,10 +6628,92 @@ wave:
     and General Prophets records, then run schema, graph, retrieval, factual,
     SQLite, report, and reviewer checks.
 
-The active continuation target is Phase 5 Wave 57, Lamentations. Revelation
-also remains outstanding and must follow before Phase 5 closes. Follow the
-controlled scope above; do not reopen completed Jude, 3 John, 2 John, 1 John,
-2 Peter, 1 Peter, James, Hebrews, Philemon, Titus, 2 Timothy, 1 Timothy,
+Wave 57 Lamentations completed the controlled scope above. The record remains
+an unapproved draft and its reviewer checklist is in
+[`ckl-phase-5-lamentations-review.md`](ckl-phase-5-lamentations-review.md).
+
+The corrected record contains twenty-seven sourced claims, thirty-three
+current-taxonomy interpretive notes, twenty-eight sources, twenty-seven
+URL-bearing external sources, twenty-six high-precision top-level aliases plus
+retrieval metadata, twenty-two normalized Scripture anchors, twenty-eight
+Hebrew entries, seventeen Greek entries, and seven verified graph
+relationships. Its focused eight-method factual and SQLite suite and forty
+book-scoped retrieval questions pass. The full 644-test CKL suite, validators,
+graph audit, generated reports, and final SQLite artifact are recorded in the
+reviewer report. One remaining Jeremiah relationship query required a precise
+Lamentations alias; no completed record was changed.
+
+After Phase 5 Wave 57, the refreshed report records:
+
+| Migration metric | Result |
+| --- | ---: |
+| Records marked `complete` / `draft` | 555 / 65 |
+| Complete records with candidate Phase 2 section gaps | 554 |
+| Raw records missing explicit `section_status` | 555 |
+| Raw records with incomplete type-required sections | 620 |
+| Raw records missing explicit `knowledge_layers` | 555 |
+| Interpretive notes using current taxonomies | 2,292 |
+| Interpretive notes still using legacy taxonomies | 1,188 |
+| Granular claims authored | 1,485 |
+| External sources | 1,518 |
+| Source references that do not resolve | 0 |
+| Invalid source support targets | 0 |
+| Unresolved legacy object references | 14 |
+| Scripture reference errors | 0 |
+| Graph edges / unknown targets / orphaned records | 3,313 / 0 / 0 |
+| Missing reciprocal relationship suggestions | 2,857 |
+| Validator warnings / errors | 14 / 0 |
+
+Active next wave: continue Phase 5 with a controlled Revelation correction
+wave:
+
+1. create book-specific factual and retrieval regression fixtures before
+   editing content;
+2. audit every populated field against Revelation and remove generic
+   apocalyptic templates, unsupported apostolic identity, precise exile date,
+   single persecution program, linear chronology, modern-national mapping,
+   and prediction-calendar claims;
+3. gather the critical Greek text, papyri, major codices, ancient versions,
+   Hebrew Bible and Septuagint temple, throne, exodus, plague, beast, Babylon,
+   day-of-YHWH, new-creation, and apocalyptic comparanda, Second Temple Jewish
+   apocalypse and Roman imperial evidence, early reception, and major modern
+   commentary traditions;
+4. distinguish John the named seer from proposed historical identities; the
+   seven assemblies, angels, elders, living creatures, slain Lamb, witnesses,
+   woman, dragon, beasts, Babylon, kings, merchants, martyrs, nations, New
+   Jerusalem, God, and Jesus without turning symbols into one unqualified
+   historical roster;
+5. map Revelation 1:1-3:22; 4:1-5:14; 6:1-11:19; 12:1-14:20; 15:1-16:21;
+   17:1-19:21; and 20:1-22:21 while indexing major visions, hymns, judgments,
+   interludes, symbols, letters, promises, warnings, and the closing appeal;
+6. qualify title, authorship, date, Patmos, destination, genre, structure,
+   recapitulation and sequence, textual variants, Roman imperial setting,
+   persecution evidence, Nero and Domitian proposals, Jewish and Christian
+   identities, liturgy, economy, violence, millennium, judgment, and new
+   creation;
+7. preserve uncertainty concerning every symbolic identification, number,
+   seal, trumpet, bowl, 144,000, two witnesses, woman, dragon, beasts, 666,
+   Babylon, Armageddon, millennium, first resurrection, lake of fire,
+   second death, nations, tree of life, and textual closing;
+8. distinguish Greek wording, visionary and epistolary voice, historical
+   reconstruction, lexical claim, textual variant, Jewish apocalyptic
+   comparison, Roman imperial analogy, doctrine, reception, pastoral
+   application, and modern analogy;
+9. add safeguards against antisemitism, supersessionism, anti-Catholic and
+   sectarian dehumanization, conspiracy theory, date-setting, political
+   scapegoating, nationalism, authoritarianism, coercive conversion,
+   religious violence, genocide justification, torture theology, trauma
+   exploitation, misogyny, anti-LGBTQ coercion, disability stigma, prosperity
+   extraction, and ecological neglect; and
+10. keep human review missing, ensure Revelation ranks ahead of broad John,
+    apocalypse, prophecy, Rome, Babylon, beast, 666, Armageddon, millennium,
+    judgment, and New Jerusalem records, then run schema, graph, retrieval,
+    factual, SQLite, report, and reviewer checks.
+
+The active continuation target is Phase 5 Wave 58, Revelation, the sole
+remaining book before Phase 5 closes. Follow the controlled scope above; do
+not reopen completed Lamentations, Jude, 3 John, 2 John, 1 John, 2 Peter,
+1 Peter, James, Hebrews, Philemon, Titus, 2 Timothy, 1 Timothy,
 2 Thessalonians, 1 Thessalonians, Colossians, Philippians, Ephesians,
 Galatians, 2 Corinthians, 1 Corinthians, Romans, Acts, John, Luke, Mark, or
 Matthew except to address a concrete review or regression finding.
