@@ -1238,9 +1238,11 @@ function closeMapPanel() {
 
 function resetMapView() {
   if (!mapController) {
+    setStatus("The map is still loading. Try resetting the view again in a moment.", "warning");
     return;
   }
   mapController.fitToContent();
+  setStatus("Map view reset.", "success");
 }
 
 function setRouteVisibility(visible) {
@@ -1699,6 +1701,7 @@ async function saveCurrentMapStudy() {
   }, "Could not save map study.");
   invalidateMapCache("/api/map-studies");
   await refreshSavedMapStudies();
+  setStatus("Map study saved.", "success");
 }
 
 async function addCurrentMapNote() {
@@ -1732,7 +1735,7 @@ async function addCurrentMapNote() {
     note_body: noteBody.trim(),
     place_id: selection.kind === "place" ? selection.item.id : "",
     route_id: selection.kind === "route" ? selection.item.id : "",
-    layer_id: selection.kind === "layer" ? selection.item.id : "",
+    layer_id: selection.kind === "layer" || selection.kind === "political_context" ? selection.item.id : "",
   };
   await requestJson("/api/map-notes", {
     method: "POST",
@@ -1744,6 +1747,14 @@ async function addCurrentMapNote() {
   }, "Could not save map note.");
   invalidateMapCache("/api/map-studies");
   await refreshSavedMapStudies();
+  setStatus("Map note saved.", "success");
+}
+
+function activateAskWorkspace() {
+  const askTab = document.querySelector('[data-workspace-tab="ask"]');
+  if (askTab && askTab.getAttribute("aria-selected") !== "true") {
+    askTab.click();
+  }
 }
 
 async function askAboutCurrentMapSelection() {
@@ -1806,8 +1817,10 @@ function setMapStudyQuestion(question) {
 function submitMapStudyQuestion(mapContext) {
   const form = document.querySelector(".ask-form");
   if (!form) {
+    setStatus("The Ask panel is unavailable right now.", "error");
     return;
   }
+  activateAskWorkspace();
   setStudyFormValue("ask_mode", "maps");
   setStudyFormValue("study_action", "ask_location");
   setStudyMapContext(mapContext);
@@ -1867,6 +1880,7 @@ function submitRelatedPassageShortcut(reference, questionPrefix = "What should I
 }
 
 function submitStudyForm(form) {
+  activateAskWorkspace();
   if (typeof form.requestSubmit === "function") {
     form.requestSubmit();
   } else {
@@ -2187,24 +2201,32 @@ function wirePanelButtons() {
       if (!actionButton) {
         return;
       }
-      const action = actionButton.getAttribute("data-map-action");
-      if (action === "ask_location") {
-        await askAboutCurrentMapSelection();
-      } else if (action === "save_map_study") {
-        await saveCurrentMapStudy();
-      } else if (action === "map_note") {
-        await addCurrentMapNote();
-      } else if (action === "related_passages") {
-        await viewRelatedPassagesForCurrentSelection();
-      } else if (action === "view_historical_layer") {
-        const selection = getCurrentMapSelection();
-        if (selection?.kind === "layer") {
-          renderSelectedHistoricalLayer(selection.item, lastPassageContext);
-        } else {
-          renderHistoricalLayerOverview();
+      try {
+        const action = actionButton.getAttribute("data-map-action");
+        if (action === "ask_location") {
+          await askAboutCurrentMapSelection();
+        } else if (action === "save_map_study") {
+          await saveCurrentMapStudy();
+        } else if (action === "map_note") {
+          await addCurrentMapNote();
+        } else if (action === "related_passages") {
+          await viewRelatedPassagesForCurrentSelection();
+        } else if (action === "view_historical_layer") {
+          const selection = getCurrentMapSelection();
+          const { details } = getPanelElements();
+          if (selection?.kind === "layer") {
+            renderSelectedHistoricalLayer(selection.item, lastPassageContext);
+          } else if (selection?.kind === "political_context") {
+            renderSelectedPoliticalContext(selection.item, lastPassageContext);
+          } else if (details) {
+            details.innerHTML = `${renderHistoricalLayerOverview()}${renderPoliticalContextLayerOverview()}`;
+            syncDetailsState(true);
+          }
+        } else if (action === "reset_map_view") {
+          resetMapView();
         }
-      } else if (action === "reset_map_view") {
-        resetMapView();
+      } catch (error) {
+        setStatus(error.message || "Could not complete that map action.", "error");
       }
     });
   }
