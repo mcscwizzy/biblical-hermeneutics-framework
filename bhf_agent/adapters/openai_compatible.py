@@ -22,10 +22,14 @@ class OpenAICompatibleAdapter(ChatAdapter):
         base_url: str,
         api_key: Optional[str] = None,
         timeout_seconds: Optional[float] = 120,
+        provider_name: str = "openai_compatible",
+        extra_headers: Optional[dict[str, str]] = None,
     ) -> None:
         self.base_url = base_url.rstrip("/")
         self.api_key = api_key
         self.timeout_seconds = timeout_seconds
+        self.provider_name = provider_name
+        self.extra_headers = dict(extra_headers or {})
 
     @property
     def endpoint(self) -> str:
@@ -48,6 +52,7 @@ class OpenAICompatibleAdapter(ChatAdapter):
             payload["response_format"] = request.response_format
         body = json.dumps(payload).encode("utf-8")
         headers = {"Content-Type": "application/json"}
+        headers.update(self.extra_headers)
         if self.api_key:
             headers["Authorization"] = f"Bearer {self.api_key}"
 
@@ -70,7 +75,7 @@ class OpenAICompatibleAdapter(ChatAdapter):
             hint = _http_error_hint(exc.code, self.base_url)
             return ChatResponse(
                 text="",
-                provider="openai_compatible",
+                provider=self.provider_name,
                 latency_ms=_elapsed_ms(started_at),
                 errors=[
                     f"OpenAI-compatible endpoint returned HTTP {exc.code}: "
@@ -82,7 +87,7 @@ class OpenAICompatibleAdapter(ChatAdapter):
         except (TimeoutError, socket.timeout) as exc:
             return ChatResponse(
                 text="",
-                provider="openai_compatible",
+                provider=self.provider_name,
                 latency_ms=_elapsed_ms(started_at),
                 errors=[f"OpenAI-compatible endpoint timed out: {exc}"],
                 error_category="provider_timeout",
@@ -98,7 +103,7 @@ class OpenAICompatibleAdapter(ChatAdapter):
                 message = f"Could not connect to OpenAI-compatible endpoint: {reason}"
             return ChatResponse(
                 text="",
-                provider="openai_compatible",
+                provider=self.provider_name,
                 latency_ms=_elapsed_ms(started_at),
                 errors=[message],
                 error_category="provider_connection",
@@ -106,7 +111,7 @@ class OpenAICompatibleAdapter(ChatAdapter):
         except OSError as exc:
             return ChatResponse(
                 text="",
-                provider="openai_compatible",
+                provider=self.provider_name,
                 latency_ms=_elapsed_ms(started_at),
                 errors=[f"OpenAI-compatible endpoint request failed: {exc}"],
                 error_category="provider_failure",
@@ -117,7 +122,7 @@ class OpenAICompatibleAdapter(ChatAdapter):
         except json.JSONDecodeError as exc:
             return ChatResponse(
                 text="",
-                provider="openai_compatible",
+                provider=self.provider_name,
                 latency_ms=_elapsed_ms(started_at),
                 errors=[f"OpenAI-compatible endpoint returned malformed JSON: {exc}"],
                 raw_provider_response=raw_body,
@@ -129,7 +134,7 @@ class OpenAICompatibleAdapter(ChatAdapter):
             return ChatResponse(
                 text="",
                 model=data.get("model") if isinstance(data, dict) else None,
-                provider="openai_compatible",
+                provider=self.provider_name,
                 latency_ms=_elapsed_ms(started_at),
                 usage=data.get("usage") if isinstance(data, dict) else None,
                 raw_provider_response=data,
@@ -140,7 +145,7 @@ class OpenAICompatibleAdapter(ChatAdapter):
         return ChatResponse(
             text=text,
             model=data.get("model"),
-            provider="openai_compatible",
+            provider=self.provider_name,
             latency_ms=_elapsed_ms(started_at),
             usage=data.get("usage"),
             raw_provider_response=data,
@@ -149,7 +154,11 @@ class OpenAICompatibleAdapter(ChatAdapter):
     def health_check(self, model: Optional[str] = None) -> dict[str, Any]:
         try:
             with urllib.request.urlopen(
-                urllib.request.Request(f"{self.base_url}/models", method="GET"),
+                urllib.request.Request(
+                    f"{self.base_url}/models",
+                    headers=self._headers(),
+                    method="GET",
+                ),
                 timeout=self.timeout_seconds,
             ) as response:
                 raw_body = response.read().decode("utf-8")
@@ -157,7 +166,7 @@ class OpenAICompatibleAdapter(ChatAdapter):
         except Exception as exc:  # pragma: no cover - defensive health reporting
             return {
                 "ok": False,
-                "provider": "openai_compatible",
+                "provider": self.provider_name,
                 "model": model,
                 "base_url": self.base_url,
                 "error": str(exc),
@@ -166,12 +175,18 @@ class OpenAICompatibleAdapter(ChatAdapter):
         available_models = _available_models(data)
         return {
             "ok": True,
-            "provider": "openai_compatible",
+            "provider": self.provider_name,
             "model": model,
             "base_url": self.base_url,
             "model_present": model is None or model in available_models,
             "available_models": available_models,
         }
+
+    def _headers(self) -> dict[str, str]:
+        headers = dict(self.extra_headers)
+        if self.api_key:
+            headers["Authorization"] = f"Bearer {self.api_key}"
+        return headers
 
 
 def _safe_read_error(exc: urllib.error.HTTPError) -> str:

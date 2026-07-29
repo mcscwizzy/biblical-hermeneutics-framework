@@ -285,6 +285,30 @@ class WebFormTests(unittest.TestCase):
         self.assertEqual(config.base_url, "http://host.docker.internal:8080/v1")
         self.assertEqual(config.model, "google/gemma-4-e4b")
 
+    def test_transient_form_api_key_is_used_without_becoming_a_form_value(self):
+        defaults = AgentConfig(
+            base_url="https://openrouter.ai/api/v1",
+            model="openai/gpt-4o-mini",
+        )
+
+        config = config_from_form(
+            {
+                "adapter": "openrouter",
+                "profile": "minimal-7b",
+                "answer_mode": "study",
+                "model": "openai/gpt-4o-mini",
+                "base_url": "https://openrouter.ai/api/v1",
+                "temperature": "0.3",
+                "max_tokens": "1024",
+                "memory_max_turns": "4",
+            },
+            defaults,
+            transient_api_key="or-secret",
+        )
+
+        self.assertEqual(config.api_key, "or-secret")
+        self.assertNotIn("api_key", form_values_for_ask_prompt({"model": "test"}))
+
 
 class RuntimeConfigTests(unittest.TestCase):
     def test_runtime_config_defaults_and_overrides(self):
@@ -891,7 +915,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v16"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v17"', service_worker["body"])
         self.assertIn("cacheFirstApi", service_worker["body"])
         self.assertIn("isRefreshRequest", service_worker["body"])
         self.assertIn("networkFirstNavigation", service_worker["body"])
@@ -900,6 +924,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("cacheAssets", service_worker["body"])
         self.assertIn("/api/offline/manifest", service_worker["body"])
         self.assertIn("/static/offline/db.js", service_worker["body"])
+        self.assertIn("/static/model-settings.js", service_worker["body"])
         self.assertIn("/static/vendor/leaflet/leaflet.css", service_worker["body"])
         self.assertIn("/static/vendor/leaflet/images/marker-icon.png", service_worker["body"])
         self.assertIn("isAiOnlyApiRequest", service_worker["body"])
@@ -1009,7 +1034,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("reconcileCachedTranslations", pwa_script["body"])
         self.assertIn("installOfflinePack", pwa_script["body"])
         self.assertIn("warmDefaultOfflinePacks", pwa_script["body"])
-        self.assertIn('CACHE_VERSION = "v16"', pwa_script["body"])
+        self.assertIn('CACHE_VERSION = "v17"', pwa_script["body"])
         self.assertIn("ensureServiceWorkerReady", pwa_script["body"])
         self.assertIn("Installed, restart app", pwa_script["body"])
         self.assertIn("Needs HTTPS", pwa_script["body"])

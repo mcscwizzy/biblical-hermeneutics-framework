@@ -20,7 +20,7 @@ class ConfigError(ValueError):
 
 
 ALLOWED_ANSWER_MODES = ("concise", "study", "teaching", "scholar")
-ALLOWED_ADAPTERS = ("openai_compatible", "ollama")
+ALLOWED_ADAPTERS = ("openai_compatible", "ollama", "openrouter")
 ALLOWED_RESPONSE_FORMAT_POLICIES = ("auto", "json_schema", "json_object", "off")
 ALLOWED_RUNTIME_PROFILE_MODES = ("compact", "full")
 
@@ -287,8 +287,10 @@ class AgentConfig:
             raise ConfigError(
                 "adapter must be one of: " + ", ".join(ALLOWED_ADAPTERS)
             )
-        if self.adapter in {"openai_compatible", "ollama"} and not self.base_url:
+        if self.adapter in {"openai_compatible", "ollama", "openrouter"} and not self.base_url:
             raise ConfigError(f"base_url is required for {self.adapter} adapter")
+        if self.adapter == "openrouter" and not self.api_key:
+            raise ConfigError("api_key is required for openrouter adapter")
         if not self.model:
             raise ConfigError("model is required")
         if self.response_format_policy not in ALLOWED_RESPONSE_FORMAT_POLICIES:

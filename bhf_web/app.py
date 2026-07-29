@@ -45,6 +45,7 @@ from bhf_agent.study_db import (
 
 from .forms import (
     ADAPTERS,
+    ADAPTER_LABELS,
     ANSWER_MODES,
     RUNTIME_PROFILE_MODES,
     form_values_from_config,
@@ -276,6 +277,7 @@ def create_app() -> FastAPI:
                 {
                     "form": form_values_from_config(loaded.config),
                     "adapters": ADAPTERS,
+                    "adapter_labels": ADAPTER_LABELS,
                     "profiles": _available_profiles(loaded.config.profile),
                     "runtime_profile_modes": RUNTIME_PROFILE_MODES,
                     "answer_modes": ANSWER_MODES,

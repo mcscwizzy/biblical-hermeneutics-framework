@@ -223,7 +223,12 @@ def _float_value(value: Any, default: float) -> float:
         return default
 
 
-def run_ask_job(job: AskJob, form: dict[str, Any], agent_class: Any = BHFAgent) -> None:
+def run_ask_job(
+    job: AskJob,
+    form: dict[str, Any],
+    agent_class: Any = BHFAgent,
+    transient_api_key: str | None = None,
+) -> None:
     try:
         loaded = load_web_defaults()
         job.study_type = _study_type_from_form(form)
@@ -250,7 +255,11 @@ def run_ask_job(job: AskJob, form: dict[str, Any], agent_class: Any = BHFAgent) 
             )
             job.complete(_fake_result(job.question, job.reader_reference))
             return
-        config = config_from_form(form, loaded.config)
+        config = config_from_form(
+            form,
+            loaded.config,
+            transient_api_key=transient_api_key,
+        )
         result = agent_class(config).ask(
             question,
             status_callback=job.emit,
@@ -319,6 +328,7 @@ def run_search_fallback_job(
     job: AskJob,
     form: dict[str, Any],
     agent_class: Any = BHFAgent,
+    transient_api_key: str | None = None,
 ) -> None:
     try:
         query = str(form.get("query") or "").strip()
@@ -327,7 +337,11 @@ def run_search_fallback_job(
         job.study_type = "search_fallback"
         job.question = query
         loaded = load_web_defaults()
-        config = config_from_form(form, loaded.config)
+        config = config_from_form(
+            form,
+            loaded.config,
+            transient_api_key=transient_api_key,
+        )
         del agent_class
         job.emit(
             {

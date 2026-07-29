@@ -146,12 +146,15 @@ document.addEventListener("submit", async function (event) {
   answerPanel.setAttribute("aria-busy", "true");
 
   try {
+    const providerHeaders = window.BHFModelSettings
+      ? await window.BHFModelSettings.getProviderHeaders()
+      : {};
     const job = await requestJson(
       form.dataset.jobPost,
       {
         method: "POST",
         body: new FormData(form),
-        headers: {Accept: "application/json"},
+        headers: {Accept: "application/json", ...providerHeaders},
       },
       "Could not start request.",
     );
@@ -190,6 +193,9 @@ document.addEventListener("submit", async function (event) {
     revealAnswerPanel(answerPanel);
     latestJobComplete = false;
   } finally {
+    if (window.BHFModelSettings) {
+      window.BHFModelSettings.persistFormSettings().catch(() => {});
+    }
     stopWaiting();
     answerPanel.removeAttribute("aria-busy");
     resetSubmitTargets(form);

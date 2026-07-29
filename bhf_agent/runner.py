@@ -12,6 +12,8 @@ from datetime import datetime, timezone
 from typing import Any, Callable, Optional
 
 from .adapters import ChatAdapter, OllamaAdapter, OpenAICompatibleAdapter
+from .adapters import OpenRouterAdapter
+from .adapters.openrouter import OPENROUTER_BASE_URL
 from .bible import BibleError, build_interpretation_context
 from .ckl import (
     CULTURAL_CONTEXT_MAX_OUTPUT_TOKENS,
@@ -2885,6 +2887,12 @@ class BHFAgent:
                 raise ConfigError("base_url is required for ollama adapter")
             return OllamaAdapter(
                 base_url=config.base_url,
+                timeout_seconds=config.timeout_seconds,
+            )
+        if config.adapter == "openrouter":
+            return OpenRouterAdapter(
+                base_url=config.base_url or OPENROUTER_BASE_URL,
+                api_key=config.api_key,
                 timeout_seconds=config.timeout_seconds,
             )
         raise ConfigError(f"unsupported adapter: {config.adapter}")

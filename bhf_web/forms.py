@@ -111,6 +111,7 @@ def load_web_defaults(path: Path | str | None = None) -> LoadedDefaults:
 def config_from_form(
     form: Mapping[str, Any],
     defaults: AgentConfig | None = None,
+    transient_api_key: str | None = None,
 ) -> AgentConfig:
     """Build an AgentConfig from submitted form values."""
 
@@ -125,6 +126,7 @@ def config_from_form(
         "answer_mode": _required_text(form, "answer_mode"),
         "model": _required_text(form, "model"),
         "base_url": _required_text(form, "base_url"),
+        "api_key": transient_api_key if transient_api_key is not None else base.api_key,
         "temperature": _float_value(form, "temperature"),
         "max_tokens": _int_value(form, "max_tokens"),
         "context_window": (
@@ -297,4 +299,9 @@ def _env_bool(raw_value: str, field_name: str) -> bool:
 
 ANSWER_MODES = ALLOWED_ANSWER_MODES
 ADAPTERS = ALLOWED_ADAPTERS
+ADAPTER_LABELS = {
+    "openai_compatible": "OpenAI-compatible",
+    "ollama": "Ollama",
+    "openrouter": "OpenRouter",
+}
 RUNTIME_PROFILE_MODES = ALLOWED_RUNTIME_PROFILE_MODES

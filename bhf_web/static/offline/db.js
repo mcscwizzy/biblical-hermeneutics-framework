@@ -1,6 +1,6 @@
 (function () {
   const DB_NAME = "bhf-offline";
-  const DB_VERSION = 4;
+  const DB_VERSION = 5;
   const STORES = [
     "apiResponses",
     "translations",
@@ -14,6 +14,7 @@
     "mapStudies",
     "mutationQueue",
     "metadata",
+    "modelSettings",
   ];
   const SNAPSHOT_STORES = ["notes", "highlights", "savedStudies", "mapStudies", "mutationQueue", "metadata"];
   const REBUILDABLE_STORES = ["apiResponses", "translations", "canonicalObjects", "sources", "chapters", "searches"];

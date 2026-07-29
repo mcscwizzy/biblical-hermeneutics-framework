@@ -43,6 +43,23 @@ replayed through a sync queue. AI requests, LLM health checks, AI search
 fallbacks, remote translation downloads, and licensed-provider content remain
 outside the offline boundary.
 
+## OpenRouter
+
+The Model settings panel can use OpenRouter in addition to local Ollama or
+other OpenAI-compatible endpoints. OpenRouter uses its OpenAI-compatible
+`https://openrouter.ai/api/v1` endpoint and requires a Bearer API token.
+
+The browser stores the selected provider and model in device-local IndexedDB.
+If an OpenRouter token is saved, it is encrypted with Web Crypto before being
+written to IndexedDB. The decrypted token is kept in memory and sent to the
+local BHF server only for the current AI request; it is not added to offline
+exports, service-worker caches, saved studies, or application logs.
+
+OpenRouter requests require an internet connection and are not cached by the
+PWA. OpenRouter and the upstream provider selected for a request have their
+own privacy and retention policies; users should review those policies before
+sending sensitive material.
+
 The browser also installs the `study` and `maps` offline packs by default after
 the app loads online. The `study` pack stores serialized Canonical Knowledge
 Library objects so the Canonical Context browser can browse, search, and open

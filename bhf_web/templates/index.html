@@ -27,12 +27,13 @@
   </script>
   <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260724c">
   <script src="{{ static_asset('/offline/db.js') }}" defer></script>
+  <script src="{{ static_asset('/model-settings.js') }}?v=20260729a" defer></script>
   <script src="{{ static_asset('/api/http.js') }}?v=20260729e" defer></script>
   <script src="{{ static_asset('/htmx-status.js') }}" defer></script>
   <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260729b" defer></script>
   <script src="{{ static_asset('/htmx-search.js') }}" defer></script>
   <script src="{{ static_asset('/htmx-lite.js') }}?v=20260729b" defer></script>
-  <script src="{{ static_asset('/pwa.js') }}?v=20260729e" defer></script>
+  <script src="{{ static_asset('/pwa.js') }}?v=20260729f" defer></script>
   {% if not test_mode %}
     <link rel="stylesheet" href="{{ static_asset('/vendor/leaflet/leaflet.css') }}">
     <script src="{{ static_asset('/vendor/leaflet/leaflet.js') }}" defer></script>
@@ -187,7 +188,7 @@
                     <span>Provider</span>
                     <select name="adapter">
                       {% for adapter in adapters %}
-                        <option value="{{ adapter }}" {% if adapter == form.adapter %}selected{% endif %}>{{ adapter }}</option>
+                        <option value="{{ adapter }}" {% if adapter == form.adapter %}selected{% endif %}>{{ adapter_labels.get(adapter, adapter) }}</option>
                       {% endfor %}
                     </select>
                   </label>
@@ -228,6 +229,20 @@
                     <span>Base URL</span>
                     <input type="url" name="base_url" value="{{ form.base_url }}" required>
                   </label>
+
+                  <fieldset data-openrouter-credential hidden>
+                    <legend>OpenRouter credential</legend>
+                    <label>
+                      <span>API token</span>
+                      <input type="password" data-openrouter-token autocomplete="new-password" placeholder="Enter an OpenRouter token">
+                    </label>
+                    <div class="action-row">
+                      <button type="button" class="secondary" data-openrouter-token-save>Save token on this device</button>
+                      <button type="button" class="secondary" data-openrouter-token-remove>Remove token</button>
+                    </div>
+                    <p class="field-help" data-openrouter-token-status>No token saved.</p>
+                    <p class="field-help" data-openrouter-privacy>OpenRouter requests require internet access. BHF does not cache prompts or responses locally. Saved studies are stored only when you explicitly save them.</p>
+                  </fieldset>
 
                   <label>
                     <span>Temperature</span>

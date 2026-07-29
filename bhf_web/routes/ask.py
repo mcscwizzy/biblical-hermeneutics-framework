@@ -114,19 +114,24 @@ def register_ask_routes(
     templates: Any,
     job_store: Any,
     agent_factory: Callable[[], Any],
-    ask_job_runner: Callable[[Any, dict[str, Any], Any], None],
-    search_fallback_job_runner: Callable[[Any, dict[str, Any], Any], None],
+    ask_job_runner: Callable[[Any, dict[str, Any], Any, str | None], None],
+    search_fallback_job_runner: Callable[[Any, dict[str, Any], Any, str | None], None],
     test_mode: bool = False,
 ) -> None:
     @app.post("/ask", response_class=HTMLResponse)
     async def ask(request: Request) -> HTMLResponse:
         form = form_values_for_ask_prompt(await request.form())
         loaded = load_web_defaults()
+        transient_api_key = request.headers.get("X-BHF-OpenRouter-Key") or None
         show_debug = bool(getattr(loaded.config, "debug", False))
         try:
             question, reader_reference = _question_from_form(form)
             fact_packet = deterministic_fact_packet_from_form(form)
-            config = config_from_form(form, loaded.config)
+            config = config_from_form(
+                form,
+                loaded.config,
+                transient_api_key=transient_api_key,
+            )
             result = agent_factory()(config).ask(question, canonical_fact_packet=fact_packet)
         except (ConfigError, ProfileError, ValueError) as exc:
             return templates.TemplateResponse(
@@ -190,10 +195,11 @@ def register_ask_routes(
         form = await request.form()
         job = job_store.create()
         form_values = form_values_for_ask_prompt(form)
+        transient_api_key = request.headers.get("X-BHF-OpenRouter-Key") or None
         agent_class = agent_factory()
         thread = threading.Thread(
             target=ask_job_runner,
-            args=(job, form_values, agent_class),
+            args=(job, form_values, agent_class, transient_api_key),
             daemon=True,
         )
         thread.start()
@@ -275,10 +281,11 @@ def register_ask_routes(
         form = await request.form()
         job = job_store.create()
         form_values = dict(form)
+        transient_api_key = request.headers.get("X-BHF-OpenRouter-Key") or None
         agent_class = agent_factory()
         thread = threading.Thread(
             target=search_fallback_job_runner,
-            args=(job, form_values, agent_class),
+            args=(job, form_values, agent_class, transient_api_key),
             daemon=True,
         )
         thread.start()
