@@ -519,97 +519,88 @@
               <div id="map-workspace-inline-host" class="map-workspace-host">
                 <div id="map-workspace" class="map-workspace" data-map-host="inline">
                   <section id="map-panel" class="map-panel" aria-labelledby="map-panel-heading" hidden>
-                    <div class="panel-heading map-panel-heading">
+                    <header class="map-study-header">
                       <div>
-                        <h2 id="map-panel-heading">Maps</h2>
+                        <p class="map-eyebrow">Biblical geography</p>
+                        <h2 id="map-panel-heading">Study the places behind the text</h2>
                         <p id="map-panel-reference" class="map-panel-reference"></p>
                       </div>
                       <div class="map-panel-actions">
-                        <div class="map-mode-switch" role="group" aria-label="Map mode">
-                          <button type="button" class="secondary is-active" data-map-mode-switch="passage">Passage</button>
-                          <button type="button" class="secondary" data-map-mode-switch="browse">Browse</button>
-                        </div>
-                        <label class="check map-toggle">
-                          <input type="checkbox" data-route-toggle>
-                          <span>Show routes</span>
-                        </label>
-                        <label class="map-period">
-                          <span>Period</span>
-                          <select data-historical-period>
-                            <option value="all" selected>All periods</option>
-                            <option value="Broad / uncertain period">Broad / uncertain period</option>
-                            <option value="Divided Kingdom">Divided Kingdom</option>
-                            <option value="Assyrian period">Assyrian period</option>
-                            <option value="Babylonian period">Babylonian period</option>
-                            <option value="Persian period">Persian period</option>
-                            <option value="Hellenistic period">Hellenistic period</option>
-                            <option value="NT / Roman period">NT / Roman period</option>
-                          </select>
-                        </label>
                         <button type="button" class="secondary" data-map-reset>Reset view</button>
                         <button type="button" class="secondary" data-map-expand>Expand</button>
                         <button type="button" class="secondary" data-map-close>Close</button>
                       </div>
-                    </div>
-                    <div class="map-browser" data-map-browser hidden>
-                      <div class="map-browser-toolbar">
-                        <label class="map-browser-field">
-                          <span>Search</span>
-                          <input type="search" data-map-search-query data-testid="map-search-input" placeholder="Search topic, location, route, or region">
-                        </label>
-                        <label class="map-browser-field">
-                          <span>Type</span>
-                          <select data-map-search-kind>
-                            <option value="all" selected>All data</option>
-                            <option value="place">Locations</option>
-                            <option value="route">Routes</option>
-                            <option value="historical_layer">Historical layers</option>
-                            <option value="political_context">Political context</option>
-                          </select>
-                        </label>
-                        <label class="map-browser-field">
-                          <span>Period</span>
-                          <select data-map-search-period>
-                            <option value="all" selected>All periods</option>
-                            <option value="Broad / uncertain period">Broad / uncertain period</option>
-                            <option value="Divided Kingdom">Divided Kingdom</option>
-                            <option value="Assyrian period">Assyrian period</option>
-                            <option value="Babylonian period">Babylonian period</option>
-                            <option value="Persian period">Persian period</option>
-                            <option value="Hellenistic period">Hellenistic period</option>
-                            <option value="NT / Roman period">NT / Roman period</option>
-                          </select>
-                        </label>
-                        <div class="map-browser-actions">
-                          <button type="button" class="secondary" data-map-search-submit data-testid="map-search-button">Search</button>
-                          <button type="button" class="secondary" data-map-search-clear data-testid="map-search-clear">Clear</button>
-                        </div>
-                      </div>
-                      <p class="map-browser-hint">Browse the curated map catalog without choosing a chapter first.</p>
-                    </div>
-                    <div id="map-panel-status" class="map-panel-status" hidden aria-live="polite"></div>
+                    </header>
+
+                    <div class="map-panel-status" id="map-panel-status" hidden aria-live="polite"></div>
                     <details id="map-pin-hint" class="map-pin-hint" hidden>
                       <summary id="map-pin-hint-summary">Why no pin?</summary>
                       <p id="map-pin-hint-text"></p>
                     </details>
+
                     <div class="map-panel-body">
-                      <div id="map-stage" class="map-stage" role="application" aria-label="Bible map"></div>
-                      <aside class="map-details-column" aria-live="polite">
-                        <section id="map-search-results" class="map-search-results" hidden>
-                          <div class="panel-heading">
-                            <h3 id="map-search-results-heading">Browse results</h3>
+                      <aside class="map-study-navigator" id="map-study-navigator" aria-label="Study navigator">
+                        <div class="map-navigator-header">
+                          <div>
+                            <p class="map-eyebrow">Navigator</p>
+                            <h3>Choose a study</h3>
+                          </div>
+                          <button type="button" class="map-mobile-close" data-map-navigator-close aria-label="Close study navigator">×</button>
+                        </div>
+
+                        <div class="map-navigator-section map-search-section">
+                          <label class="map-browser-field map-search-field">
+                            <span>Search places, passages, journeys, or regions</span>
+                            <input type="search" data-map-search-query data-testid="map-search-input" placeholder="Try Jerusalem or Exodus" autocomplete="off">
+                          </label>
+                          <div class="map-search-row">
+                            <label class="map-browser-field">
+                              <span>Search type</span>
+                              <select data-map-search-kind>
+                                <option value="all" selected>Everything</option>
+                                <option value="place">Places</option>
+                                <option value="route">Journeys & routes</option>
+                                <option value="historical_layer">Historical layers</option>
+                                <option value="political_context">Regions & empires</option>
+                              </select>
+                            </label>
+                            <div class="map-browser-actions">
+                              <button type="button" class="primary" data-map-search-submit data-testid="map-search-button">Search</button>
+                              <button type="button" class="secondary" data-map-search-clear data-testid="map-search-clear">Clear</button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="map-navigator-section">
+                          <label class="map-browser-field">
+                            <span>Study mode</span>
+                            <select data-map-study-mode aria-label="Study mode">
+                              <option value="passage" selected>Passage</option>
+                              <option value="places">Places</option>
+                              <option value="journeys">Journeys</option>
+                              <option value="events" disabled>Events (no local records)</option>
+                              <option value="regions">Regions</option>
+                            </select>
+                          </label>
+                          <p class="map-navigator-summary" data-map-context-summary>Focused map context will appear here.</p>
+                        </div>
+
+                        <section class="map-navigator-section map-study-results" id="map-search-results" hidden aria-labelledby="map-search-results-heading">
+                          <div class="map-section-header">
+                            <h3 id="map-search-results-heading">Results</h3>
                             <span id="map-search-results-count" class="count">0</span>
                           </div>
                           <div id="map-search-results-list" class="map-search-results-list"></div>
                         </section>
-                        <details class="map-journey-panel" data-map-journeys aria-label="Journeys">
+
+                        <details class="map-navigator-section map-journey-panel" data-map-journeys aria-label="Journey study">
                           <summary class="map-journey-summary">
-                            <strong>Journeys</strong>
+                            <span><strong>Journey study</strong><small>Ordered stops and approximate routes</small></span>
                             <span class="count" data-map-journey-count>0 of 0</span>
                           </summary>
                           <div class="map-journey-controls">
                             <label class="map-browser-field">
-                              <span>Search</span>
+                              <span>Find a journey</span>
                               <input type="search" data-map-journey-search data-testid="journey-search-input" placeholder="Search journeys">
                             </label>
                             <label class="map-browser-field">
@@ -620,75 +611,100 @@
                             </label>
                             <label class="check map-toggle">
                               <input type="checkbox" data-map-journey-toggle checked>
-                              <span>Show journey</span>
+                              <span>Show journey on map</span>
                             </label>
                           </div>
                           <details class="map-journey-filters">
-                            <summary>Filter journeys</summary>
+                            <summary>More journey filters</summary>
                             <div class="map-journey-filter-grid">
-                              <label class="map-browser-field">
-                                <span>Testament</span>
-                                <select data-map-journey-filter-testament></select>
-                              </label>
-                              <label class="map-browser-field">
-                                <span>Category</span>
-                                <select data-map-journey-filter-category></select>
-                              </label>
-                              <label class="map-browser-field">
-                                <span>Era</span>
-                                <select data-map-journey-filter-era></select>
-                              </label>
+                              <label class="map-browser-field"><span>Testament</span><select data-map-journey-filter-testament></select></label>
+                              <label class="map-browser-field"><span>Category</span><select data-map-journey-filter-category></select></label>
+                              <label class="map-browser-field"><span>Era</span><select data-map-journey-filter-era></select></label>
                             </div>
                           </details>
                           <div class="map-journey-detail" data-map-journey-detail>
-                            <p class="empty">Search or choose a journey to draw its stops and route on the map.</p>
+                            <p class="empty">Choose a journey to draw its stops and route on the map.</p>
                           </div>
                           <details class="map-journey-lists">
                             <summary>Stops and segments</summary>
                             <div class="map-journey-list-grid">
-                              <section>
-                                <h4>Stops</h4>
-                                <div class="map-journey-list" data-map-journey-stop-list></div>
-                              </section>
-                              <section>
-                                <h4>Segments</h4>
-                                <div class="map-journey-list" data-map-journey-segment-list></div>
-                              </section>
+                              <section><h4>Stops</h4><div class="map-journey-list" data-map-journey-stop-list></div></section>
+                              <section><h4>Segments</h4><div class="map-journey-list" data-map-journey-segment-list></div></section>
                             </div>
                           </details>
                         </details>
+
+                        <section class="map-navigator-section map-layer-controls" aria-labelledby="map-layer-controls-heading">
+                          <div class="map-section-header">
+                            <h3 id="map-layer-controls-heading">Layers</h3>
+                            <button type="button" class="text-button" data-map-layer-reset>Clear</button>
+                          </div>
+                          <label class="map-layer-toggle map-layer-toggle--route">
+                            <input type="checkbox" data-route-toggle>
+                            <span><strong>Curated journeys & routes</strong><small>Show route lines where supported</small></span>
+                          </label>
+                          <label class="map-layer-toggle">
+                            <input type="checkbox" data-map-modern-labels checked disabled>
+                            <span><strong>Modern labels</strong><small>Provided by the base map</small></span>
+                          </label>
+                          <div id="map-layer-controls" class="map-layer-list"></div>
+                          <p class="map-layer-note">Broad borders are study overlays, not exact historical boundary claims.</p>
+                        </section>
+
+                        <section class="map-navigator-section map-saved-summary" aria-labelledby="saved-map-studies-heading">
+                          <div class="map-section-header">
+                            <h3 id="saved-map-studies-heading">Saved studies</h3>
+                            <span id="saved-map-studies-count" class="count">0</span>
+                          </div>
+                          <div id="saved-map-studies-list" class="saved-map-studies-list">
+                            <p class="empty">No saved map studies for this passage yet.</p>
+                          </div>
+                        </section>
+                      </aside>
+
+                      <section class="map-center-column" aria-label="Map view">
+                        <div class="map-center-toolbar">
+                          <div class="map-mode-switch" role="group" aria-label="Map source mode">
+                            <button type="button" class="secondary is-active" data-map-mode-switch="passage" aria-pressed="true">Passage context</button>
+                            <button type="button" class="secondary" data-map-mode-switch="browse" aria-pressed="false">Browse catalog</button>
+                          </div>
+                          <label class="map-period">
+                            <span>Period</span>
+                            <select data-historical-period aria-label="Historical period">
+                              <option value="all" selected>All periods</option>
+                              <option value="Broad / uncertain period">Broad / uncertain period</option>
+                              <option value="Divided Kingdom">Divided Kingdom</option>
+                              <option value="Assyrian period">Assyrian period</option>
+                              <option value="Babylonian period">Babylonian period</option>
+                              <option value="Persian period">Persian period</option>
+                              <option value="Hellenistic period">Hellenistic period</option>
+                              <option value="NT / Roman period">NT / Roman period</option>
+                            </select>
+                          </label>
+                          <button type="button" class="secondary map-mobile-trigger" data-map-navigator-open aria-controls="map-study-navigator">Navigator</button>
+                          <button type="button" class="secondary map-mobile-trigger" data-map-details-open aria-controls="map-details">Details</button>
+                        </div>
+                        <div id="map-stage" class="map-stage" role="application" aria-label="Bible map. Use the navigator or search results to select a location."></div>
+                        <p class="map-map-caption"><span class="map-legend-dot map-legend-dot--focused"></span> Focused study objects <span class="map-legend-dot map-legend-dot--context"></span> Broad context <span class="map-legend-dot map-legend-dot--route"></span> Approximate route</p>
+                        <div class="map-attribution">Local map data remains available offline; external map tiles and Google Earth links require internet access.</div>
+                      </section>
+
+                      <aside class="map-details-column" id="map-details-column" aria-label="Selected map details">
+                        <div class="map-details-header-mobile">
+                          <div><p class="map-eyebrow">Selected object</p><h3>Details</h3></div>
+                          <button type="button" class="map-mobile-close" data-map-details-close aria-label="Close map details">×</button>
+                        </div>
                         <section id="map-details" class="map-details-panel" aria-live="polite">
-                          <p class="empty map-details-empty">Select a place pin, route, historical layer, or political context overlay to inspect its details here.</p>
+                          <p class="empty map-details-empty">Select a place, route, region, or journey stop to inspect its details here.</p>
                         </section>
                       </aside>
                     </div>
-                    <section id="saved-map-studies" class="saved-map-studies-panel" aria-labelledby="saved-map-studies-heading">
-                      <div class="panel-heading">
-                        <h3 id="saved-map-studies-heading">Saved map studies</h3>
-                        <span id="saved-map-studies-count" class="count">0</span>
-                      </div>
-                      <div id="saved-map-studies-list" class="saved-map-studies-list">
-                        <p class="empty">No saved map studies for this passage yet.</p>
-                      </div>
-                    </section>
-                    <div class="map-attribution">
-                      Map data uses OpenStreetMap tiles for local/dev use only.
-                    </div>
                   </section>
                   <section class="map-ai-panel" aria-labelledby="map-ai-heading">
-                    <div class="panel-heading">
-                      <h2 id="map-ai-heading">BHF Geography Fallback</h2>
-                    </div>
+                    <div class="panel-heading"><h2 id="map-ai-heading">BHF Geography Fallback</h2></div>
                     <section id="map-ai-status-panel" class="status-panel" aria-live="polite" hidden>
                       <div class="status-summary" hidden></div>
-                      <div class="status-active">
-                        <div class="status-topline">
-                          <div>
-                            <div class="status-heading">Agent status</div>
-                            <div class="status-current">Preparing request</div>
-                          </div>
-                        </div>
-                      </div>
+                      <div class="status-active"><div class="status-topline"><div><div class="status-heading">Agent status</div><div class="status-current">Preparing request</div></div></div></div>
                     </section>
                     <section id="map-ai-answer-panel" class="answer-panel map-ai-answer-panel" aria-live="polite">
                       <p class="empty">If local map data is missing, BHF will add a text-only geography fallback here.</p>

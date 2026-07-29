@@ -273,12 +273,19 @@ class DeterministicStudyEngine:
         start_verse = _first(context, "start_verse", "verse_start", "reader_start_verse")
         end_verse = _first(context, "end_verse", "verse_end", "reader_end_verse")
         translation_id = str(_first(context, "translation", "reader_translation", "source_translation") or "asv")
-        data = load_translation_bible(translation_id)
+        # Device-only imports are intentionally not uploaded to the server. The
+        # browser still sends the selected verse text, so deterministic context
+        # actions should remain usable when their translation is unavailable to
+        # this process. Use the bundled ASV only for the surrounding passage;
+        # preserve the requested translation id for the selected-text section.
+        try:
+            data = load_translation_bible(translation_id)
+        except ValueError:
+            data = load_translation_bible("asv")
         try:
             resolved = resolve_passage(book, chapter, start_verse or None, end_verse or None, data=data)
         except BibleError:
             resolved = resolve_passage(book, chapter, start_verse or None, end_verse or None)
-            translation_id = "asv"
         selected_text = str(_first(context, "selected_text", "reader_selected_text", "text") or "").strip()
         if selected_text:
             resolved["selected_text"] = selected_text

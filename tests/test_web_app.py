@@ -511,6 +511,13 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("setRouteVisibility(true)", map_script)
         self.assertIn("setHistoricalLayerVisibility(result.item.id, true)", map_script)
         self.assertIn("setPoliticalContextLayerVisibility(result.item.id, true)", map_script)
+        self.assertIn("setStudyMode", map_script)
+        self.assertIn("renderLayerControls", map_script)
+        self.assertIn("data-map-navigator-open", Path("bhf_web/templates/index.html").read_text(encoding="utf-8"))
+        self.assertIn("data-map-details-open", Path("bhf_web/templates/index.html").read_text(encoding="utf-8"))
+        self.assertIn("buildGoogleEarthUrl", Path("bhf_web/static/maps/MapExternalLinks.js").read_text(encoding="utf-8"))
+        self.assertIn("Download place KML", map_content_script)
+        self.assertIn("Download journey KML", map_script)
         journey_data_script = Path("bhf_web/static/maps/JourneyMapData.js").read_text(encoding="utf-8")
         journey_index = Path("frontend/src/data/journeys/index.js").read_text(encoding="utf-8")
         journey_validation = Path("frontend/src/data/journeys/validateJourney.js").read_text(encoding="utf-8")
@@ -1643,6 +1650,15 @@ class WebAppTests(unittest.TestCase):
                 self.assertEqual(study["id"], "map-study-client-123")
                 self.assertEqual(study["selected_place_id"], "jerusalem")
 
+                place_kml_response = asgi_request(
+                    "GET",
+                    "/api/maps/places/jerusalem.kml",
+                    test_app=test_app,
+                )
+                self.assertEqual(place_kml_response["status"], 200)
+                self.assertIn("<kml", place_kml_response["body"])
+                self.assertIn("Jerusalem", place_kml_response["body"])
+
                 list_response = asgi_request("GET", "/api/map-studies?book=Romans&chapter=12", test_app=test_app)
                 self.assertEqual(list_response["status"], 200)
                 studies = json.loads(list_response["body"])["saved_map_studies"]
@@ -1652,6 +1668,14 @@ class WebAppTests(unittest.TestCase):
                 open_response = asgi_request("GET", f"/api/map-studies/{study['id']}", test_app=test_app)
                 self.assertEqual(open_response["status"], 200)
                 self.assertIn("Jerusalem study overlay.", open_response["body"])
+
+                saved_kml_response = asgi_request(
+                    "GET",
+                    f"/api/map-studies/{study['id']}.kml",
+                    test_app=test_app,
+                )
+                self.assertEqual(saved_kml_response["status"], 200)
+                self.assertIn("<kml", saved_kml_response["body"])
 
                 note_response = asgi_request(
                     "POST",

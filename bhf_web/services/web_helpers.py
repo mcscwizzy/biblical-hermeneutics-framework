@@ -10,7 +10,7 @@ from typing import Any
 
 from fastapi import Request
 
-from bhf_agent.bible import BibleError, compare_translation_passages, build_selected_passage_context, geography_for_book, testament_for_book, timeline_for_book, verse_range_reference
+from bhf_agent.bible import BibleError, compare_translation_passages, build_selected_passage_context, geography_for_book, load_translation_bible, testament_for_book, timeline_for_book, verse_range_reference
 from bhf_agent.curation import CURATION_COLLECTIONS, list_curation_records
 from bhf_agent.config import ConfigError
 from bhf_agent.profiles import ProfileLoader
@@ -505,6 +505,14 @@ def reader_context_from_form(form: dict[str, Any] | Any) -> dict[str, Any] | Non
         question_scope == GENERAL_QUESTION_SCOPE and ask_mode not in SPECIAL_QUESTION_MODES
     ):
         return None
+    translation_id = reader_translation_metadata(form)["translation_id"]
+    try:
+        translation_data = load_translation_bible(translation_id)
+    except ValueError:
+        # Imported translations are device-only by design. Their selected text
+        # can still be sent with an AI request, while chapter context falls
+        # back to the bundled ASV dataset on the server.
+        translation_data = None
     context = build_selected_passage_context(
         str(form.get("reader_book") or ""),
         str(form.get("reader_chapter") or ""),
@@ -512,8 +520,9 @@ def reader_context_from_form(form: dict[str, Any] | Any) -> dict[str, Any] | Non
         optional_form_value(form, "reader_end_verse"),
         optional_form_value(form, "reader_selected_text"),
         include_chapter_context=True,
+        data=translation_data,
     )
-    context.update(reader_translation_metadata(form))
+    context.update({"translation_id": translation_id, **reader_translation_metadata(form)})
     return context
 
 

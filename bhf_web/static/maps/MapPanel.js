@@ -65,6 +65,7 @@ let journeyFacets = { categories: [], eras: [], testaments: [], tags: [] };
 let selectedJourneyId = "";
 let selectedJourneyStopId = "";
 let selectedJourneySegmentId = "";
+let studyMode = "passage";
 let journeySearch = "";
 let journeyTestament = "";
 let journeyCategory = "";
@@ -120,6 +121,16 @@ function getPanelElements() {
     historicalPeriod: document.querySelector("[data-historical-period]"),
     mapBrowser: document.querySelector("[data-map-browser]"),
     mapModeButtons: document.querySelectorAll("[data-map-mode-switch]"),
+    studyMode: document.querySelector("[data-map-study-mode]"),
+    contextSummary: document.querySelector("[data-map-context-summary]"),
+    layerControls: document.querySelector("#map-layer-controls"),
+    layerReset: document.querySelector("[data-map-layer-reset]"),
+    navigator: document.querySelector("#map-study-navigator"),
+    navigatorOpen: document.querySelector("[data-map-navigator-open]"),
+    navigatorClose: document.querySelector("[data-map-navigator-close]"),
+    detailsColumn: document.querySelector("#map-details-column"),
+    detailsOpen: document.querySelector("[data-map-details-open]"),
+    detailsClose: document.querySelector("[data-map-details-close]"),
     mapSearchQuery: document.querySelector("[data-map-search-query]"),
     mapSearchKind: document.querySelector("[data-map-search-kind]"),
     mapSearchPeriod: document.querySelector("[data-map-search-period]"),
@@ -340,6 +351,59 @@ function renderJourneySidebar() {
 
 function renderSupplementalControls() {
   renderJourneySidebar();
+  renderLayerControls();
+  syncStudyMode();
+}
+
+function renderLayerControls() {
+  const { layerControls } = getPanelElements();
+  if (!layerControls) {
+    return;
+  }
+  const historical = loadedHistoricalLayers.map((layer) => `
+    <label class="map-layer-toggle ${visibleHistoricalLayerIds.has(layer.id) ? "is-selected" : ""}">
+      <input type="checkbox" data-historical-layer-toggle data-layer-id="${escapeHtml(layer.id)}" ${visibleHistoricalLayerIds.has(layer.id) ? "checked" : ""}>
+      <span><strong>${escapeHtml(layer.name || "Historical layer")}</strong><small>${escapeHtml(layer.period || "Broad study context")} · ${escapeHtml(layer.confidence || "Uncertain")}</small></span>
+    </label>
+  `).join("");
+  const political = loadedPoliticalContextLayers.map((layer) => `
+    <label class="map-layer-toggle ${visiblePoliticalContextLayerIds.has(layer.id) ? "is-selected" : ""}">
+      <input type="checkbox" data-political-context-toggle data-layer-id="${escapeHtml(layer.id)}" ${visiblePoliticalContextLayerIds.has(layer.id) ? "checked" : ""}>
+      <span><strong>${escapeHtml(layer.name || "Regional context")}</strong><small>${escapeHtml(layer.entity_type || layer.period || "Regional context")}</small></span>
+    </label>
+  `).join("");
+  layerControls.innerHTML = historical || political
+    ? `${historical}${political}`
+    : `<p class="empty">No regional overlays match this study yet.</p>`;
+}
+
+function syncStudyMode() {
+  const { studyMode: studyModeSelect, contextSummary, journeyPanel } = getPanelElements();
+  if (studyModeSelect) {
+    studyModeSelect.value = studyMode;
+  }
+  if (journeyPanel) {
+    journeyPanel.open = studyMode === "journeys" || Boolean(selectedJourneyId);
+  }
+  if (!contextSummary) {
+    return;
+  }
+  const messages = {
+    passage: lastPassageContext
+      ? `Showing locations and broader context connected to ${formatReference(lastPassageContext)}.`
+      : "Open a passage to focus the map on its chapter context.",
+    places: "Search for a place to focus the map on one location and its related passages.",
+    journeys: "Choose a curated journey to see numbered stops and an approximate route.",
+    events: "Event records are not available in the local map data yet.",
+    regions: "Search or select a region to emphasize broad geographic context.",
+  };
+  contextSummary.textContent = messages[studyMode] || messages.passage;
+}
+
+function setStudyMode(nextMode) {
+  const allowed = new Set(["passage", "places", "journeys", "events", "regions"]);
+  studyMode = allowed.has(nextMode) ? nextMode : "passage";
+  syncStudyMode();
 }
 
 function getLoadContext(context = {}) {
@@ -613,6 +677,7 @@ function refreshBrowseMapResults(results = []) {
   loadedRoutes = payload.routes;
   loadedHistoricalLayers = payload.historicalLayers;
   loadedPoliticalContextLayers = payload.politicalContextLayers;
+  renderLayerControls();
   const routeVisibility = Boolean(getPanelElements().routeToggle?.checked);
   ensureMapController(
     loadedMarkers,
@@ -632,6 +697,18 @@ function clearCurrentMapSelection({ clearVisibleLayers = false } = {}) {
   if (clearVisibleLayers) {
     visibleHistoricalLayerIds.clear();
     visiblePoliticalContextLayerIds.clear();
+  }
+  syncDetailsState(false);
+}
+
+function syncDetailsState(hasSelection) {
+  const { panel, detailsColumn } = getPanelElements();
+  if (panel) {
+    panel.classList.toggle("has-map-selection", Boolean(hasSelection));
+  }
+  if (detailsColumn) {
+    detailsColumn.dataset.open = hasSelection ? "true" : "false";
+    detailsColumn.classList.toggle("is-mobile-open", Boolean(hasSelection));
   }
 }
 
@@ -925,6 +1002,8 @@ async function openMapPanel(context = {}) {
     loadedHistoricalLayers = layerResult.layers || [];
     loadedPoliticalContextLayers = politicalContextResult.layers || [];
     loadedSavedMapStudies = savedMapStudiesResult.saved_map_studies || [];
+    renderLayerControls();
+    syncStudyMode();
     if (selectedMarker && !loadedMarkers.some((marker) => marker.id === selectedMarker.id)) {
       selectedMarker = null;
     }
@@ -1290,6 +1369,7 @@ async function setHistoricalPeriod(period) {
     loadedHistoricalLayers = layerResult.layers || [];
     loadedPoliticalContextLayers = politicalContextResult.layers || [];
     loadedSavedMapStudies = savedMapStudiesResult.saved_map_studies || [];
+    renderLayerControls();
     if (selectedMarker && !loadedMarkers.some((marker) => marker.id === selectedMarker.id)) {
       selectedMarker = null;
     }
@@ -1333,8 +1413,9 @@ async function setHistoricalPeriod(period) {
     } else if (selectedPoliticalContext) {
       renderSelectedPoliticalContext(selectedPoliticalContext, lastPassageContext);
     } else {
-      renderHistoricalLayerOverview();
+      renderEmptyDetails("Choose a layer in the navigator to inspect its context here.");
     }
+    renderLayerControls();
     await refreshSavedMapStudies();
     if (!loadedHistoricalLayers.length && !loadedPoliticalContextLayers.length) {
       setStatus("No historical or political overlays matched the selected period.", "empty");
@@ -1376,8 +1457,9 @@ function setHistoricalLayerVisibility(layerId, visible) {
   } else if (selectedPoliticalContext) {
     renderSelectedPoliticalContext(selectedPoliticalContext, lastPassageContext);
   } else {
-    renderHistoricalLayerOverview();
+    renderEmptyDetails("Choose a layer in the navigator to inspect its context here.");
   }
+  renderLayerControls();
 }
 
 function setPoliticalContextLayerVisibility(layerId, visible) {
@@ -1409,8 +1491,9 @@ function setPoliticalContextLayerVisibility(layerId, visible) {
   } else if (selectedPoliticalContext) {
     renderSelectedPoliticalContext(selectedPoliticalContext, lastPassageContext);
   } else {
-    renderPoliticalContextLayerOverview();
+    renderEmptyDetails("Choose a regional context layer in the navigator to inspect it here.");
   }
+  renderLayerControls();
 }
 
 function syncRouteToggle() {
@@ -1424,8 +1507,9 @@ function renderSelectedMarker(marker, passageContext) {
     return;
   }
   details.innerHTML = renderSelectedMarkerHtml(marker, passageContext, {
-    historicalOverview: renderHistoricalLayerOverview(),
+    historicalOverview: "",
   });
+  syncDetailsState(true);
 }
 
 function renderSelectedRoute(route, passageContext) {
@@ -1434,8 +1518,9 @@ function renderSelectedRoute(route, passageContext) {
     return;
   }
   details.innerHTML = renderSelectedRouteHtml(route, passageContext, {
-    historicalOverview: renderHistoricalLayerOverview(),
+    historicalOverview: "",
   });
+  syncDetailsState(true);
 }
 
 function renderSelectedHistoricalLayer(layer, passageContext) {
@@ -1444,8 +1529,9 @@ function renderSelectedHistoricalLayer(layer, passageContext) {
     return;
   }
   details.innerHTML = renderSelectedHistoricalLayerHtml(layer, passageContext, {
-    historicalOverview: renderHistoricalLayerOverview(),
+    historicalOverview: "",
   });
+  syncDetailsState(true);
 }
 
 function renderSelectedPoliticalContext(layer, passageContext) {
@@ -1454,8 +1540,9 @@ function renderSelectedPoliticalContext(layer, passageContext) {
     return;
   }
   details.innerHTML = renderSelectedPoliticalContextHtml(layer, passageContext, {
-    politicalOverview: renderPoliticalContextLayerOverview(),
+    politicalOverview: "",
   });
+  syncDetailsState(true);
 }
 
 function renderPassageChips(passages = []) {
@@ -1504,8 +1591,12 @@ function renderSelectedJourneyStop(journey, stop) {
         <h4>BHF caution</h4>
         <p>${escapeHtml(stop.caution || stop.notes || journey.caution || "This journey route is simplified for study and should not be treated as a precise reconstruction.")}</p>
       </section>
+      <section class="map-detail-section map-action-section">
+        <a class="secondary-link map-kml-link" href="/api/maps/journeys/${encodeURIComponent(journey.id)}.kml" download>Download journey KML</a>
+      </section>
     </div>
   `;
+  syncDetailsState(true);
 }
 
 function renderSelectedJourneySegment(journey, segment) {
@@ -1544,6 +1635,7 @@ function renderSelectedJourneySegment(journey, segment) {
       </section>
     </div>
   `;
+  syncDetailsState(true);
 }
 
 function renderHistoricalLayerOverview() {
@@ -1832,9 +1924,8 @@ function renderEmptyDetails(message) {
     ${renderMapOrientationCard({
       callout: message,
     })}
-    ${renderHistoricalLayerOverview()}
-    ${renderPoliticalContextLayerOverview()}
   `;
+  syncDetailsState(false);
 }
 
 function syncHistoricalPeriod() {
@@ -1871,7 +1962,16 @@ function wirePanelButtons() {
     journeyDetail,
   } = getPanelElements();
   const details = document.querySelector("#map-details");
-  const { savedMapStudiesList } = getPanelElements();
+  const {
+    savedMapStudiesList,
+    studyMode: studyModeSelect,
+    layerControls,
+    layerReset,
+    navigatorOpen,
+    navigatorClose,
+    detailsOpen,
+    detailsClose,
+  } = getPanelElements();
 
   if (closeButton) {
     closeButton.addEventListener("click", closeMapPanel);
@@ -1943,6 +2043,57 @@ function wirePanelButtons() {
   if (historicalPeriodSelect) {
     historicalPeriodSelect.addEventListener("change", async (event) => {
       await setHistoricalPeriod(event.target.value);
+    });
+  }
+  if (studyModeSelect) {
+    studyModeSelect.addEventListener("change", (event) => {
+      setStudyMode(event.target.value);
+    });
+  }
+  if (navigatorOpen) {
+    navigatorOpen.addEventListener("click", () => {
+      getPanelElements().navigator?.classList.add("is-mobile-open");
+    });
+  }
+  if (navigatorClose) {
+    navigatorClose.addEventListener("click", () => {
+      getPanelElements().navigator?.classList.remove("is-mobile-open");
+    });
+  }
+  if (detailsOpen) {
+    detailsOpen.addEventListener("click", () => {
+      getPanelElements().detailsColumn?.classList.add("is-mobile-open");
+    });
+  }
+  if (detailsClose) {
+    detailsClose.addEventListener("click", () => {
+      getPanelElements().detailsColumn?.classList.remove("is-mobile-open");
+    });
+  }
+  if (layerReset) {
+    layerReset.addEventListener("click", () => {
+      visibleHistoricalLayerIds.clear();
+      visiblePoliticalContextLayerIds.clear();
+      loadedHistoricalLayers.forEach((layer) => mapController?.setHistoricalLayerVisibility(layer.id, false));
+      loadedPoliticalContextLayers.forEach((layer) => mapController?.setPoliticalContextLayerVisibility(layer.id, false));
+      selectedHistoricalLayer = null;
+      selectedPoliticalContext = null;
+      renderLayerControls();
+      renderEmptyDetails("Layers cleared. Select a place, route, or layer to study it.");
+    });
+  }
+  if (layerControls) {
+    layerControls.addEventListener("change", (event) => {
+      const toggle = event.target.closest("[data-historical-layer-toggle], [data-political-context-toggle]");
+      if (!toggle) {
+        return;
+      }
+      const layerId = toggle.getAttribute("data-layer-id");
+      if (toggle.matches("[data-historical-layer-toggle]")) {
+        setHistoricalLayerVisibility(layerId, toggle.checked);
+      } else {
+        setPoliticalContextLayerVisibility(layerId, toggle.checked);
+      }
     });
   }
   if (journeySearchInput) {
@@ -2094,6 +2245,7 @@ function initializeMapPanel() {
   wirePanelButtons();
   renderEmptyDetails("Select a place pin, route, historical layer, or political context overlay to inspect its details here.");
   syncHistoricalPeriod();
+  syncStudyMode();
   const pendingContext = window.BHFPendingMapPanelContext;
   if (pendingContext) {
     window.BHFPendingMapPanelContext = null;

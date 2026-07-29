@@ -23,6 +23,7 @@ import {
   renderRelatedVerses,
   renderSourceAttribution,
 } from "./MapPanelText.js";
+import { buildGoogleEarthUrl, hasUsableCoordinates } from "./MapExternalLinks.js";
 
 function renderMapOrientationCard(options = {}) {
   const {
@@ -104,6 +105,19 @@ function renderSelectedMarker(marker, passageContext, options = {}) {
   const aliases = Array.isArray(marker.aliases) ? marker.aliases : [];
   const periods = formatPeriodList(marker.periods);
   const historicalOverview = options.historicalOverview || "";
+  const earthUrl = buildGoogleEarthUrl(marker);
+  const externalOnline = typeof navigator === "undefined" || navigator.onLine !== false;
+  const hasRelatedPassages = relatedPassages
+    ? Array.isArray(relatedPassages.groups) && relatedPassages.groups.length > 0
+    : relatedVerses.length > 0;
+  const hasSource = Boolean(marker.source_name || marker.source_url || marker.source?.label || marker.source?.url);
+  const coordinates = hasUsableCoordinates(marker)
+    ? `${Number(marker.latitude).toFixed(4)}, ${Number(marker.longitude).toFixed(4)}`
+    : "";
+  const relatedPassageMarkup = relatedPassages || relatedVerses;
+  const optionalSection = (heading, value) => value
+    ? `<section class="map-detail-section"><h4>${escapeHtml(heading)}</h4><p>${escapeHtml(value)}</p></section>`
+    : "";
 
   return `
     <div class="map-details-card">
@@ -117,50 +131,29 @@ function renderSelectedMarker(marker, passageContext, options = {}) {
         </span>
       </div>
 
-      <section class="map-detail-section">
-        <h4>Aliases</h4>
-        <p>${aliases.length ? aliases.map(escapeHtml).join(", ") : "No aliases in the local data."}</p>
-      </section>
+      ${aliases.length ? `<section class="map-detail-section"><h4>Alternate names</h4><p>${aliases.map(escapeHtml).join(", ")}</p></section>` : ""}
+      ${periods && periods !== "Not provided." ? optionalSection("Period", periods) : ""}
+      ${optionalSection("Modern identification", marker.modern_location)}
+      ${optionalSection("Region", marker.ancient_region)}
+      ${optionalSection("Coordinates", coordinates)}
+      ${marker.description ? optionalSection("Description", marker.description) : ""}
+      ${marker.notes ? optionalSection("Notes", marker.notes) : ""}
+      ${hasRelatedPassages ? `<section class="map-detail-section"><h4>Biblical references</h4>${renderRelatedPassages(relatedPassageMarkup)}</section>` : ""}
+      ${explanation.why ? optionalSection("Why this location matters", explanation.why) : ""}
+      ${explanation.context ? optionalSection("Historical / geographical context", explanation.context) : ""}
+      ${hasSource ? `<section class="map-detail-section map-attribution"><h4>Source</h4>${renderSourceAttribution(marker, sourceText)}</section>` : ""}
+      ${caution ? `<section class="map-detail-section map-caution"><h4>Geographic caution</h4><p>${escapeHtml(caution)}</p></section>` : ""}
 
-      <section class="map-detail-section">
-        <h4>Periods</h4>
-        <p>${escapeHtml(periods)}</p>
-      </section>
-
-      <section class="map-detail-section">
-        <h4>Modern location</h4>
-        <p>${escapeHtml(marker.modern_location || "Not supplied in the local data.")}</p>
-      </section>
-
-      <section class="map-detail-section">
-        <h4>Ancient region</h4>
-        <p>${escapeHtml(marker.ancient_region || "Not supplied in the local data.")}</p>
-      </section>
-
-      <section class="map-detail-section">
-        <h4>Related passages</h4>
-        ${renderRelatedPassages(relatedPassages || relatedVerses)}
-      </section>
-
-      <section class="map-detail-section map-attribution">
-        <h4>Attribution</h4>
-        ${renderSourceAttribution(marker, sourceText)}
-      </section>
-
-      <section class="map-detail-section">
-        <h4>Why this location matters</h4>
-        <p>${escapeHtml(explanation.why)}</p>
-      </section>
-
-      <section class="map-detail-section">
-        <h4>Historical / Geographical context</h4>
-        <p>${escapeHtml(explanation.context)}</p>
-      </section>
-
-      <section class="map-detail-section map-caution">
-        <h4>BHF caution</h4>
-        <p>${escapeHtml(caution)}</p>
-      </section>
+      ${earthUrl ? `
+        <section class="map-detail-section map-external-section">
+          <h4>External online feature</h4>
+          ${externalOnline
+            ? `<a class="secondary-link map-earth-link" href="${escapeHtml(earthUrl)}" target="_blank" rel="noopener noreferrer">Open in Google Earth <span aria-hidden="true">↗</span></a>`
+            : `<span class="map-external-disabled" aria-disabled="true">Google Earth is unavailable offline</span>`}
+          <a class="secondary-link map-kml-link" href="/api/maps/places/${encodeURIComponent(marker.id)}.kml" download>Download place KML</a>
+          <p class="map-layer-note">Opens Google Earth in a new browser context; local map study remains available offline.</p>
+        </section>
+      ` : ""}
 
       ${renderMapActionBar("place", marker)}
       ${historicalOverview}
@@ -480,6 +473,9 @@ function renderSelectedRoute(route, passageContext, options = {}) {
       </section>
 
       ${renderMapActionBar("route", route)}
+      <section class="map-detail-section map-action-section">
+        <a class="secondary-link map-kml-link" href="/api/maps/routes/${encodeURIComponent(route.id)}.kml" download>Download route KML</a>
+      </section>
       ${historicalOverview}
     </div>
   `;
