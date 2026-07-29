@@ -363,6 +363,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("word_study", script)
         self.assertIn("open_map_panel", script)
         self.assertNotIn("studyAction.type === \"maps\"", script)
+
         self.assertIn("workspaceTabsForSection", script)
         self.assertIn("syncWorkspaceTabsForSection", script)
         self.assertIn("BHF_TRANSLATION_STORAGE_KEY", script)
@@ -405,6 +406,17 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("openContextSubmenu", script)
         self.assertIn('window.matchMedia("(max-width: 680px)").matches', script)
         self.assertIn('menu.style.left = "8px";', script)
+
+    def test_reader_script_persists_and_restores_last_local_location(self):
+        script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
+
+        self.assertIn('READER_LOCATION_STORAGE_KEY = "bhf-reader-location"', script)
+        self.assertIn('READER_LOCATION_METADATA_ID = "reader-location"', script)
+        self.assertIn("loadSavedReaderLocation", script)
+        self.assertIn("restoreSavedReaderLocation", script)
+        self.assertIn("rememberVisibleReaderVerse", script)
+        self.assertIn('put("metadata", {', script)
+        self.assertIn('localStorage.setItem(READER_LOCATION_STORAGE_KEY', script)
 
         study_script = Path("bhf_web/static/htmx-study-panels.js").read_text(encoding="utf-8")
         self.assertIn("/api/highlights", study_script)
@@ -626,7 +638,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("Loading translations...", index_html)
         self.assertIn('name="reader_translation"', index_html)
         self.assertIn("static_asset('/style.css') }}?v=20260724c", index_html)
-        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260724e", index_html)
+        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260729a", index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
@@ -848,7 +860,7 @@ class WebAppTests(unittest.TestCase):
 
         self.assertEqual(response["status"], 200)
         self.assertIn('href="/static/style.css?v=20260724c"', response["body"])
-        self.assertIn('src="/static/htmx-lite.js?v=20260724e"', response["body"])
+        self.assertIn('src="/static/htmx-lite.js?v=20260729a"', response["body"])
         self.assertIn('href="/static/vendor/leaflet/leaflet.css"', response["body"])
         self.assertNotIn("http://bhf.thewalkerclan.synology.me/static/", response["body"])
 
@@ -874,7 +886,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v11"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v12"', service_worker["body"])
         self.assertIn("networkFirstNavigation", service_worker["body"])
         self.assertIn("networkFirstAsset", service_worker["body"])
         self.assertIn("networkFirstApi", service_worker["body"])
@@ -982,7 +994,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("warmInstalledTranslations", pwa_script["body"])
         self.assertIn("installOfflinePack", pwa_script["body"])
         self.assertIn("warmDefaultOfflinePacks", pwa_script["body"])
-        self.assertIn('CACHE_VERSION = "v11"', pwa_script["body"])
+        self.assertIn('CACHE_VERSION = "v12"', pwa_script["body"])
         self.assertIn("ensureServiceWorkerReady", pwa_script["body"])
         self.assertIn("Installed, restart app", pwa_script["body"])
         self.assertIn("Needs HTTPS", pwa_script["body"])

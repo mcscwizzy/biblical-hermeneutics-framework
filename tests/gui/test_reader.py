@@ -43,6 +43,39 @@ def test_clicking_verse_number_selects_entire_verse(driver, wait, base_url):
     assert driver.find_element(By.CSS_SELECTOR, '.ask-form [name="reader_selected_text"]').get_attribute("value")
 
 
+def test_last_reader_location_is_stored_locally_and_restored_after_refresh(driver, wait, base_url):
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = BibleReaderPage(driver, wait, base_url)
+    page.select_book("Genesis")
+    wait.until(lambda _driver: "Genesis 1" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
+    driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="5"] [data-verse-select]').click()
+
+    stored = driver.execute_async_script(
+        """
+        const done = arguments[arguments.length - 1];
+        window.setTimeout(() => {
+          window.BHFOfflineDB.get("metadata", "reader-location")
+            .then((record) => done(record?.payload || null))
+            .catch((error) => done({error: String(error)}));
+        }, 350);
+        """
+    )
+    assert stored["book"] == "Genesis"
+    assert stored["chapter"] == 1
+    assert stored["verse"] == 5
+
+    driver.refresh()
+    HomePage(driver, wait, base_url).wait_loaded()
+    wait.until(lambda _driver: "Genesis 1" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
+    verse_position = driver.execute_script(
+        """
+        const verse = document.querySelector('#chapter-reader [data-verse="5"]');
+        return {top: verse.getBoundingClientRect().top, viewport: window.innerHeight};
+        """
+    )
+    assert abs(verse_position["top"] - verse_position["viewport"] / 2) < 250
+
+
 def test_bible_search(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
     page = BibleReaderPage(driver, wait, base_url)

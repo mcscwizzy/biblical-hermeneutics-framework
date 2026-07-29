@@ -16,6 +16,8 @@ const READER_MODE_STORAGE_KEY = "bhf-reader-mode";
 const BHF_TRANSLATION_STORAGE_KEY = "bhf-reader-translation";
 const BHF_TRANSLATION_DOWNLOAD_METADATA_KEY =
   "bhf-translation-download-metadata";
+const READER_LOCATION_STORAGE_KEY = "bhf-reader-location";
+const READER_LOCATION_METADATA_ID = "reader-location";
 const BHF_STUDY_ACTIONS = new Set([
   "full_context",
   "historical_context",
@@ -81,6 +83,8 @@ let lastExploreWorkspaceTab = "maps";
 let readerControlsTrigger = null;
 let translationCatalogState = null;
 let appDockScrollFrame = null;
+let readerLocationSaveTimer = null;
+let pendingReaderLocation = null;
 const BHF_HTTP = window.BHFApi || {};
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -93,6 +97,14 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeReader();
   initializeWorkspaceBridge();
 });
+
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "hidden") {
+    flushReaderLocationPersistence();
+  }
+});
+
+window.addEventListener("pagehide", flushReaderLocationPersistence);
 
 document.addEventListener("submit", async function (event) {
   const form = event.target;
@@ -174,6 +186,188 @@ document.addEventListener("submit", async function (event) {
   }
 });
 
+function normalizeReaderLocation(value) {
+  const location = value?.payload || value;
+  const book = String(location?.book || "").trim();
+  const chapter = Number(location?.chapter || 0);
+  const verse = Number(location?.verse || 0);
+  if (!book || !Number.isInteger(chapter) || chapter < 1) {
+    return null;
+  }
+  return {
+    book,
+    chapter,
+    verse: Number.isInteger(verse) && verse > 0 ? verse : null,
+    translation: String(location?.translation || "").trim().toLowerCase(),
+    updatedAt: String(location?.updatedAt || value?.updatedAt || ""),
+  };
+}
+
+function readLocalReaderLocation() {
+  try {
+    return normalizeReaderLocation(
+      JSON.parse(localStorage.getItem(READER_LOCATION_STORAGE_KEY) || "null"),
+    );
+  } catch (_error) {
+    return null;
+  }
+}
+
+async function loadSavedReaderLocation() {
+  const candidates = [];
+  const localLocation = readLocalReaderLocation();
+  if (localLocation) {
+    candidates.push(localLocation);
+  }
+  const offlineDb = window.BHFOfflineDB;
+  if (offlineDb && typeof offlineDb.get === "function") {
+    try {
+      const record = await offlineDb.get("metadata", READER_LOCATION_METADATA_ID);
+      const storedLocation = normalizeReaderLocation(record);
+      if (storedLocation) {
+        candidates.push(storedLocation);
+      }
+    } catch (_error) {
+      // localStorage remains available if IndexedDB is unavailable or corrupt.
+    }
+  }
+  candidates.sort((left, right) => {
+    const leftTime = Date.parse(left.updatedAt) || 0;
+    const rightTime = Date.parse(right.updatedAt) || 0;
+    return rightTime - leftTime;
+  });
+  return candidates[0] || null;
+}
+
+function resolveReaderBookValue(book, bookSelect) {
+  const normalized = String(book || "").trim().toLowerCase();
+  if (!normalized || !bookSelect) {
+    return null;
+  }
+  const option = Array.from(bookSelect.options).find(
+    (candidate) => candidate.value.trim().toLowerCase() === normalized,
+  );
+  return option?.value || null;
+}
+
+function resolveReaderChapterValue(chapter, chapterSelect, fallback) {
+  const requested = String(Number(chapter || 0));
+  if (chapterSelect?.querySelector(`option[value="${requested}"]`)) {
+    return requested;
+  }
+  return String(fallback || "1");
+}
+
+function restoreSavedReaderLocation(location) {
+  if (!location || !currentChapter) {
+    rememberReaderLocation(1);
+    return;
+  }
+  const sameChapter =
+    String(location.book).toLowerCase() === String(currentChapter.book).toLowerCase() &&
+    Number(location.chapter) === Number(currentChapter.chapter);
+  const verse = Number(location.verse || 0);
+  const verseExists = currentChapter.verses?.some(
+    (candidate) => Number(candidate.verse) === verse,
+  );
+  if (sameChapter && verseExists) {
+    scrollToVerse(verse, "auto");
+    rememberReaderLocation(verse);
+    return;
+  }
+  rememberReaderLocation(getVisibleReaderVerse() || 1);
+}
+
+function readerLocationPayload(verseNumber) {
+  if (!currentChapter) {
+    return null;
+  }
+  const verse = Number(verseNumber || 0);
+  return {
+    book: currentChapter.book,
+    chapter: Number(currentChapter.chapter),
+    verse: Number.isInteger(verse) && verse > 0 ? verse : null,
+    translation: String(currentChapter.translation?.id || selectedTranslationId() || "")
+      .trim()
+      .toLowerCase(),
+    updatedAt: new Date().toISOString(),
+  };
+}
+
+function rememberReaderLocation(verseNumber) {
+  const location = readerLocationPayload(verseNumber);
+  if (!location) {
+    return;
+  }
+  pendingReaderLocation = location;
+  try {
+    localStorage.setItem(READER_LOCATION_STORAGE_KEY, JSON.stringify(location));
+  } catch (_error) {
+    // IndexedDB below is the durable local-storage path when localStorage is blocked.
+  }
+  if (readerLocationSaveTimer) {
+    window.clearTimeout(readerLocationSaveTimer);
+  }
+  readerLocationSaveTimer = window.setTimeout(flushReaderLocationPersistence, 250);
+}
+
+function flushReaderLocationPersistence() {
+  if (readerLocationSaveTimer) {
+    window.clearTimeout(readerLocationSaveTimer);
+    readerLocationSaveTimer = null;
+  }
+  const location = pendingReaderLocation;
+  if (!location) {
+    return;
+  }
+  const offlineDb = window.BHFOfflineDB;
+  if (!offlineDb || typeof offlineDb.put !== "function") {
+    return;
+  }
+  pendingReaderLocation = null;
+  void offlineDb
+    .put("metadata", {
+      id: READER_LOCATION_METADATA_ID,
+      updatedAt: location.updatedAt,
+      cachedAt: location.updatedAt,
+      payload: location,
+    })
+    .catch(() => undefined);
+}
+
+function getVisibleReaderVerse() {
+  const reader = document.querySelector("#chapter-reader");
+  if (!reader || !currentChapter) {
+    return null;
+  }
+  const readerRect = reader.getBoundingClientRect();
+  if (readerRect.bottom < 0 || readerRect.top > window.innerHeight) {
+    return null;
+  }
+  const targetY = Math.min(window.innerHeight * 0.35, 280);
+  let closestVerse = null;
+  let closestDistance = Number.POSITIVE_INFINITY;
+  for (const verse of reader.querySelectorAll("[data-verse]")) {
+    const rect = verse.getBoundingClientRect();
+    if (rect.bottom < 0 || rect.top > window.innerHeight) {
+      continue;
+    }
+    const distance = Math.abs(rect.top - targetY);
+    if (distance < closestDistance) {
+      closestDistance = distance;
+      closestVerse = Number(verse.dataset.verse || 0);
+    }
+  }
+  return closestVerse || null;
+}
+
+function rememberVisibleReaderVerse() {
+  const verse = getVisibleReaderVerse();
+  if (verse) {
+    rememberReaderLocation(verse);
+  }
+}
+
 async function initializeReader() {
   const bookSelect = document.querySelector("[data-reader-book]");
   const chapterSelect = document.querySelector("[data-reader-chapter]");
@@ -191,13 +385,22 @@ async function initializeReader() {
   if (!bookSelect.value && defaultBook) {
     bookSelect.value = defaultBook;
   }
+
+  const savedLocation = await loadSavedReaderLocation();
+  const restoredBook = resolveReaderBookValue(savedLocation?.book, bookSelect);
+  if (restoredBook) {
+    bookSelect.value = restoredBook;
+  }
   populateChapterOptions(bookSelect, chapterSelect);
   if (!chapterSelect.options.length) {
     reader.innerHTML = `<p class="empty">No chapter data is available for ${escapeHtml(bookSelect.value || defaultBook)}.</p>`;
     return;
   }
-  const defaultChapter =
-    reader.dataset.defaultChapter || chapterSelect.options[0].value || "1";
+  const defaultChapter = resolveReaderChapterValue(
+    savedLocation?.chapter,
+    chapterSelect,
+    reader.dataset.defaultChapter || chapterSelect.options[0].value || "1",
+  );
   chapterSelect.value = defaultChapter;
   if (translationSelect) {
     try {
@@ -218,7 +421,9 @@ async function initializeReader() {
   await loadReaderChapter(
     bookSelect.value || defaultBook,
     chapterSelect.value || defaultChapter,
+    {persistLocation: false},
   );
+  restoreSavedReaderLocation(savedLocation);
 
   bookSelect.addEventListener("change", async () => {
     populateChapterOptions(bookSelect, chapterSelect);
@@ -255,6 +460,7 @@ async function initializeReader() {
   document.addEventListener("click", closeContextMenuOnOutside);
   document.addEventListener("keydown", closeContextMenuOnEscape);
   window.addEventListener("scroll", keepContextMenuVisibleOnReaderScroll, true);
+  window.addEventListener("scroll", rememberVisibleReaderVerse, {passive: true});
   reader.addEventListener("contextmenu", handleReaderContextMenu);
   reader.addEventListener("pointerdown", handleReaderPointerDown);
   reader.addEventListener("pointermove", handleReaderPointerMove);
@@ -1151,11 +1357,12 @@ function populateChapterOptions(bookSelect, chapterSelect) {
   }
 }
 
-async function loadReaderChapter(book, chapter) {
+async function loadReaderChapter(book, chapter, options = {}) {
   const reader = document.querySelector("#chapter-reader");
   if (!reader) {
     return;
   }
+  const persistLocation = options.persistLocation !== false;
   const translationId = selectedTranslationId();
   reader.setAttribute("aria-busy", "true");
   hideContextMenu();
@@ -1174,6 +1381,9 @@ async function loadReaderChapter(book, chapter) {
     currentNotes = [];
     currentHighlights = [];
     renderChapter(data);
+    if (persistLocation) {
+      rememberReaderLocation(getVisibleReaderVerse() || 1);
+    }
     clearReaderSearchState();
     syncAskFields();
     updateChapterNavigationState();
@@ -2253,14 +2463,14 @@ function collectSelectedVerseText(startVerse, endVerse) {
     .trim();
 }
 
-function scrollToVerse(verseNumber) {
+function scrollToVerse(verseNumber, behavior = "smooth") {
   const verse = document.querySelector(
     `#chapter-reader [data-verse="${String(verseNumber)}"]`,
   );
   if (!verse) {
     return;
   }
-  verse.scrollIntoView({behavior: "smooth", block: "center"});
+  verse.scrollIntoView({behavior, block: "center"});
 }
 
 function handleReaderContextMenu(event) {
@@ -3378,6 +3588,7 @@ function applySelectionContext(context) {
   }
 
   currentSelection = context;
+  rememberReaderLocation(Number(context.startVerse));
 
   reader.querySelectorAll("[data-verse]").forEach((verse) => {
     const verseNumber = Number(verse.dataset.verse || "0");
