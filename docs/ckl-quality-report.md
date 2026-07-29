@@ -12,9 +12,9 @@ Root: `/Users/johnwalker/Documents/github/biblical-hermeneutic-framework/framewo
 
 ## Depth averages
 
-- Summary length (characters): 134.99
-- Scripture references per object: 6.29
-- External sources per object: 2.37
+- Summary length (characters): 135.47
+- Scripture references per object: 6.32
+- External sources per object: 2.4
 - Relationships per object: 5.34
 
 ## Graph and references
@@ -29,13 +29,13 @@ Root: `/Users/johnwalker/Documents/github/biblical-hermeneutic-framework/framewo
 ## Completeness and governance
 
 - Complete records with empty required fields: 0
-- Complete records with candidate Phase 2 section gaps: 556
-- Records missing section_status: 557
+- Complete records with candidate Phase 2 section gaps: 555
+- Records missing section_status: 556
 - Records with incomplete type-required sections: 620
-- Records missing knowledge_layers: 557
-- Interpretive notes using current taxonomies: 2220
-- Interpretive notes still using legacy taxonomies: 1192
-- Granular claims: 1429
+- Records missing knowledge_layers: 556
+- Interpretive notes using current taxonomies: 2259
+- Interpretive notes still using legacy taxonomies: 1190
+- Granular claims: 1458
 - Records with unknown certainty: 532
 - Records with unknown dispute status: 532
 - Records with no human reviewer: 619
@@ -52,16 +52,16 @@ Root: `/Users/johnwalker/Documents/github/biblical-hermeneutic-framework/framewo
 
 ## Retrieval gaps
 
-- Objects without search terms: 550
+- Objects without search terms: 549
 - Objects without common questions: 0
 - Objects without canonical placement: 547
 
 ## Source integrity
 
 - Unresolved source IDs: 0
-- Sources supporting no field or claim: 2711
+- Sources supporting no field or claim: 2717
 - Invalid source support targets: 0
-- Internally self-cited records without external support: 409
+- Internally self-cited records without external support: 408
 
 ## Existing validator
 
@@ -74,7 +74,7 @@ aaron, abba, abel, abraham, adam, adonai, adoption, adoption-theme, agape, agios
 
 ### Internal-only source samples
 
-aaron, abba, abel, abraham, abrahamic-covenant, abrahamic-covenant-framework, adam, adoption, adoption-theme, agios … (+399 more)
+aaron, abba, abel, abraham, abrahamic-covenant, abrahamic-covenant-framework, adam, adoption, adoption-theme, agios … (+398 more)
 
 ## Interpretation note
 
