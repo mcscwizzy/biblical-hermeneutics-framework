@@ -6,8 +6,8 @@ This is the durable handoff for the **BHF Canonical Knowledge Library Expansion
 and Correction Plan**. The supplied plan explicitly says to begin with the
 repository audit and Phase 1 quality reporting, avoid immediate bulk content
 generation, and stop after each major phase. Phases 1–4 are now implemented at
-the schema/runtime level. Phase 5 Waves 1–48 have corrected Genesis through
-Philemon as honest, source-backed drafts; none has been mechanically
+the schema/runtime level. Phase 5 Waves 1–49 have corrected Genesis through
+Hebrews as honest, source-backed drafts; none has been mechanically
 approved.
 
 ## Current checkpoint
@@ -15,10 +15,10 @@ approved.
 | Plan area | Status | Continuation note |
 | --- | --- | --- |
 | Phase 1: inventory, reporting, quality metrics | **Implemented** | Deep JSON and Markdown reports, CLI support, and calculation tests are present. |
-| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Fifty-six records now have evidence-based draft statuses; 564 still need explicit migration. |
-| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Fifty-six records now have explicit layers; 564 still need migration. |
+| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Fifty-seven records now have evidence-based draft statuses; 563 still need explicit migration. |
+| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Fifty-seven records now have explicit layers; 563 still need migration. |
 | Phase 4: certainty and dispute taxonomies | **Implemented; evidence migration pending** | Current taxonomies and granular claim records are supported. Legacy values remain readable but are forbidden for approved notes; no `unknown` value was guessed or mass-relabeled. |
-| Phase 5: audit/correct all 66 books | **Waves 1–48 implemented; human review pending** | Genesis through Philemon are corrected drafts with sources, claims, tests, and reviewer notes. Ten books remain. |
+| Phase 5: audit/correct all 66 books | **Waves 1–49 implemented; human review pending** | Genesis through Hebrews are corrected drafts with sources, claims, tests, and reviewer notes. Nine books remain. |
 | Phases 6–20 | Not started | Follow the supplied order after the foundation is upgraded. |
 | Phase 21: controlled generation workflow | Partially enabled | Reporting, type-specific completeness, and approval gates are present; scoped human-review events still need Phase 19. |
 
@@ -1138,8 +1138,8 @@ Still deferred to their planned phases:
 
 Phase 5 should modify the 66 JSON files under
 `framework/canonical_library/objects/books/` only in controlled review waves.
-Genesis through Philemon are now implemented as unapproved drafts. The active
-continuation file is `hebrews.json`, keeping the general-letter wave small
+Genesis through Hebrews are now implemented as unapproved drafts. The active
+continuation file is `james.json`, keeping the general-letter wave small
 enough for factual, retrieval, and source review.
 
 ## Files changed in Phase 1
@@ -5915,8 +5915,91 @@ Active next wave: continue Phase 5 with a controlled Hebrews correction wave:
     Melchizedek, rest, and general-letter records, then run schema, graph,
     retrieval, factual, SQLite, report, and reviewer checks.
 
-The active continuation target is Phase 5 Wave 49, Hebrews. Follow the
-controlled scope above; do not reopen completed Philemon, Titus, 2 Timothy,
+Wave 49 Hebrews completed the controlled scope above. The record remains an
+unapproved draft and its reviewer checklist is in
+[`ckl-phase-5-hebrews-review.md`](ckl-phase-5-hebrews-review.md).
+
+The corrected record contains thirty-two sourced claims, forty
+current-taxonomy interpretive notes, twenty-seven sources, twenty-five
+URL-bearing external sources, eight high-precision top-level aliases plus
+retrieval metadata, twenty normalized Scripture anchors, ten Hebrew entries,
+twenty-eight Greek entries, and eight verified graph relationships. Its
+focused eight-method factual and SQLite suite and forty book-scoped retrieval
+questions pass. The full 580-test CKL suite, validators, graph audit, generated
+reports, and final SQLite artifact are recorded in the reviewer report. The
+expanded record initially displaced Jeremiah for one existing quotation query;
+an exact Jeremiah alias now preserves that golden result, and both book
+fixtures plus the affected 139-test batch pass.
+
+After Phase 5 Wave 49, the refreshed report records:
+
+| Migration metric | Result |
+| --- | ---: |
+| Records marked `complete` / `draft` | 563 / 57 |
+| Complete records with candidate Phase 2 section gaps | 562 |
+| Raw records missing explicit `section_status` | 563 |
+| Raw records with incomplete type-required sections | 620 |
+| Raw records missing explicit `knowledge_layers` | 563 |
+| Interpretive notes using current taxonomies | 1,982 |
+| Interpretive notes still using legacy taxonomies | 1,204 |
+| Granular claims authored | 1,249 |
+| External sources | 1,315 |
+| Source references that do not resolve | 0 |
+| Invalid source support targets | 0 |
+| Unresolved legacy object references | 14 |
+| Scripture reference errors | 0 |
+| Graph edges / unknown targets / orphaned records | 3,302 / 0 / 0 |
+| Missing reciprocal relationship suggestions | 2,850 |
+| Validator warnings / errors | 14 / 0 |
+
+Active next wave: continue Phase 5 with a controlled James correction wave:
+
+1. create book-specific factual and retrieval regression fixtures before
+   editing content;
+2. audit every populated field against James and remove generic
+   general-letter templates, unsupported authorship, Jerusalem, diaspora,
+   persecution, audience, opponent, itinerary, and church-order claims;
+3. gather the critical Greek text, early papyri, manuscripts and versions,
+   Hebrew Bible and Septuagint sources, Jewish wisdom, Torah, prophetic,
+   apocalyptic, poverty and wealth, assembly, labor, patronage, healing,
+   anointing, prayer, oath, rhetoric, and reception evidence;
+4. distinguish James the named sender from proposed historical identities,
+   the twelve tribes in diaspora, teachers, rich and poor hearers, laborers,
+   merchants, elders, sick people, Elijah, Rahab, Abraham, Job, and later
+   interpreters without inventing one audience profile or opponent group;
+5. map James 1:1-27; 2:1-26; 3:1-18; 4:1-5:6; and 5:7-20 while indexing
+   greeting, testing, wisdom, wealth, desire, birth, hearing and doing,
+   religion, partiality, royal law, mercy, faith and works, teachers, speech,
+   wisdom, conflict, friendship, humility, judgment, planning, wages, wealth,
+   patience, oaths, prayer, healing, confession, Elijah, and restoration;
+6. qualify authorship, date, provenance, destination, audience, relation to
+   Jesus traditions, Paul and Romans, Jewish and gentile hearers, genre,
+   integrity, rhetorical situations, wealth conflict, teachers, elders,
+   healing practice, and historical reliability;
+7. preserve uncertainty concerning `diaspora`, double-mindedness, perfection,
+   temptation, desire, firstfruits, implanted word, religion, law of liberty,
+   partiality, royal law, faith and works, Rahab, justification, teaching,
+   tongue and fire, wisdom from above, friendship with the world, spirit in
+   4:5, judging law, tomorrow, rich oppressors, parousia, Job's endurance,
+   oaths, anointing, saving the sick, confession, effective prayer, Elijah,
+   sin-covering, and wandering restoration;
+8. distinguish biblical wording, paraenetic voice, sapiential convention,
+   rhetorical opponent, historical reconstruction, lexical claim, textual
+   variant, Jesus-tradition and Pauline comparison, doctrine, reception,
+   pastoral application, and modern analogy;
+9. add safeguards against antisemitism, supersessionism, class contempt,
+   prosperity extraction, poverty romanticization, worker exploitation,
+   ableism, disability and illness shame, medical neglect, coercive
+   confession, spiritual abuse, authoritarian teaching, misogyny,
+   anti-LGBTQ coercion, public shaming, nationalism, colonial mission, forced
+   conversion, religious violence, and ecological neglect; and
+10. keep human review missing, ensure James ranks ahead of broad James-person,
+    wisdom, faith, works, speech, poverty, wealth, prayer, healing, and
+    general-letter records, then run schema, graph, retrieval, factual,
+    SQLite, report, and reviewer checks.
+
+The active continuation target is Phase 5 Wave 50, James. Follow the controlled
+scope above; do not reopen completed Hebrews, Philemon, Titus, 2 Timothy,
 1 Timothy, 2 Thessalonians, 1 Thessalonians, Colossians, Philippians,
 Ephesians, Galatians, 2 Corinthians, 1 Corinthians, Romans, Acts, John, Luke,
 Mark, or Matthew except to address a concrete review or regression finding.
