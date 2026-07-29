@@ -107,7 +107,7 @@ python3 -m framework.canonical_library verify-db \
   --root framework/canonical_library \
   --database /private/tmp/bhf-phase5-wave46-2-timothy-final.sqlite
 # Database schema 2; 620 objects
-# fingerprint 98b62a713f01b3fdaca7fb0e56bef852366705fee13107d6806b029df59d6eb8
+# fingerprint da421e34670b9a81395868b33f85261f7e7db7a0aaf6bf1e5b87cffc789b54cb
 # 48,369,664 bytes
 ```
 

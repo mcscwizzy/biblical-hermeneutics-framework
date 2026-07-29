@@ -6,8 +6,8 @@ This is the durable handoff for the **BHF Canonical Knowledge Library Expansion
 and Correction Plan**. The supplied plan explicitly says to begin with the
 repository audit and Phase 1 quality reporting, avoid immediate bulk content
 generation, and stop after each major phase. Phases 1–4 are now implemented at
-the schema/runtime level. Phase 5 Waves 1–46 have corrected Genesis through
-2 Timothy as honest, source-backed drafts; none has been mechanically
+the schema/runtime level. Phase 5 Waves 1–47 have corrected Genesis through
+Titus as honest, source-backed drafts; none has been mechanically
 approved.
 
 ## Current checkpoint
@@ -15,10 +15,10 @@ approved.
 | Plan area | Status | Continuation note |
 | --- | --- | --- |
 | Phase 1: inventory, reporting, quality metrics | **Implemented** | Deep JSON and Markdown reports, CLI support, and calculation tests are present. |
-| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Fifty-four records now have evidence-based draft statuses; 566 still need explicit migration. |
-| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Fifty-four records now have explicit layers; 566 still need migration. |
+| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Fifty-five records now have evidence-based draft statuses; 565 still need explicit migration. |
+| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Fifty-five records now have explicit layers; 565 still need migration. |
 | Phase 4: certainty and dispute taxonomies | **Implemented; evidence migration pending** | Current taxonomies and granular claim records are supported. Legacy values remain readable but are forbidden for approved notes; no `unknown` value was guessed or mass-relabeled. |
-| Phase 5: audit/correct all 66 books | **Waves 1–46 implemented; human review pending** | Genesis through 2 Timothy are corrected drafts with sources, claims, tests, and reviewer notes. Twelve books remain. |
+| Phase 5: audit/correct all 66 books | **Waves 1–47 implemented; human review pending** | Genesis through Titus are corrected drafts with sources, claims, tests, and reviewer notes. Eleven books remain. |
 | Phases 6–20 | Not started | Follow the supplied order after the foundation is upgraded. |
 | Phase 21: controlled generation workflow | Partially enabled | Reporting, type-specific completeness, and approval gates are present; scoped human-review events still need Phase 19. |
 
@@ -5751,8 +5751,87 @@ Active next wave: continue Phase 5 with a controlled Titus correction wave:
     then run schema, graph, retrieval, factual, SQLite, report, and reviewer
     checks.
 
-The active continuation target is Phase 5 Wave 47, Titus. Follow the
-controlled scope above; do not reopen completed 2 Timothy, 1 Timothy,
+Wave 47 Titus completed the controlled scope above. The record remains an
+unapproved draft and its reviewer checklist is in
+[`ckl-phase-5-titus-review.md`](ckl-phase-5-titus-review.md).
+
+The corrected record contains thirty-three sourced claims, forty
+current-taxonomy interpretive notes, twenty-two sources, twenty URL-bearing
+external sources, eight high-precision top-level aliases plus retrieval
+metadata, fifteen normalized Scripture anchors, ten Hebrew entries,
+twenty-five Greek entries, and eight verified graph relationships. Its
+focused eight-method factual and SQLite suite and forty book-scoped retrieval
+questions pass. The full 564-test CKL suite, validators, graph audit,
+generated reports, and final SQLite artifact are recorded in the reviewer
+report.
+
+After Phase 5 Wave 47, the refreshed report records:
+
+| Migration metric | Result |
+| --- | ---: |
+| Records marked `complete` / `draft` | 565 / 55 |
+| Complete records with candidate Phase 2 section gaps | 564 |
+| Raw records missing explicit `section_status` | 565 |
+| Raw records with incomplete type-required sections | 620 |
+| Raw records missing explicit `knowledge_layers` | 565 |
+| Interpretive notes using current taxonomies | 1,900 |
+| Interpretive notes still using legacy taxonomies | 1,208 |
+| Granular claims authored | 1,186 |
+| External sources | 1,268 |
+| Source references that do not resolve | 0 |
+| Invalid source support targets | 0 |
+| Unresolved legacy object references | 14 |
+| Scripture reference errors | 0 |
+| Graph edges / unknown targets / orphaned records | 3,296 / 0 / 0 |
+| Missing reciprocal relationship suggestions | 2,848 |
+| Validator warnings / errors | 14 / 0 |
+
+Active next wave: continue Phase 5 with a controlled Philemon correction wave:
+
+1. create book-specific factual and retrieval regression fixtures before
+   editing content;
+2. audit every populated field against Philemon and remove generic Pauline
+   templates, unsupported imprisonment, Colossae, Rome, Ephesus, household,
+   legal, manumission, and itinerary claims;
+3. gather the critical Greek text, early manuscripts and versions, Hebrew
+   Bible and Septuagint comparanda, Roman slavery and manumission evidence,
+   household, patronage, friendship, kinship, honor, rhetoric, imprisonment,
+   pseudepigraphy, and reception evidence;
+4. distinguish Paul, Timothy, Philemon, Apphia, Archippus, Onesimus, Epaphras,
+   Mark, Aristarchus, Demas, Luke, the house assembly, enslaved and free
+   people, possible secretary or Pauline-school author, and later interpreters
+   without inventing biographies or a complete Colossian network;
+5. map Philemon 1-7; 8-22; and 23-25 while indexing prescript, house assembly,
+   thanksgiving, love, faith, partnership, appeal, age and imprisonment,
+   Onesimus, usefulness wordplay, kinship, sending and receiving, consent,
+   separation, debt, charge, partnership, confidence, guest room, coworkers,
+   greetings, and grace;
+6. qualify authorship, date, provenance, imprisonment, destination, relation
+   to Colossians, identity and status of Onesimus, nature of the separation,
+   legal standing, debt, theft, manumission, household assembly, purpose,
+   rhetoric, outcome, and historical reliability;
+7. preserve uncertainty concerning `presbytēs`, prisoner language, Paul's
+   authority and appeal, Onesimus's conversion, usefulness wordplay,
+   `splanchna`, sending, consent, "for this reason he was separated," "no
+   longer as a slave," brotherhood, debt, "charge it to me," emancipation,
+   obedience, "even more," guest room, and every closing name;
+8. distinguish biblical wording, epistolary voice, historical
+   reconstruction, legal analogy, rhetorical strategy, lexical claim,
+   textual variant, Pauline-letter comparison, doctrine, reception, pastoral
+   application, and modern analogy;
+9. add safeguards against slavery apologetics, trafficking, worker
+   exploitation, coercive reconciliation, returning people to abusers,
+   clerical pressure, debt bondage, victim blaming, public shaming, class and
+   caste hierarchy, racism, antisemitism, supersessionism, misogyny,
+   anti-LGBTQ coercion, nationalism, colonial mission, forced conversion,
+   religious violence, prosperity extraction, and ecological neglect; and
+10. keep human review missing, ensure Philemon ranks ahead of broad Paul,
+    Onesimus, slavery, household, reconciliation, debt, Colossians, and
+    Pauline-letter records, then run schema, graph, retrieval, factual,
+    SQLite, report, and reviewer checks.
+
+The active continuation target is Phase 5 Wave 48, Philemon. Follow the
+controlled scope above; do not reopen completed Titus, 2 Timothy, 1 Timothy,
 2 Thessalonians, 1 Thessalonians, Colossians, Philippians, Ephesians,
 Galatians, 2 Corinthians, 1 Corinthians, Romans, Acts, John, Luke, Mark, or
 Matthew except to address a concrete review or regression finding.
