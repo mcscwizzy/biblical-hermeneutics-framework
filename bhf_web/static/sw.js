@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v12";
+const CACHE_VERSION = "v13";
 const SHELL_CACHE = `bhf-shell-${CACHE_VERSION}`;
 const STATIC_CACHE = `bhf-static-${CACHE_VERSION}`;
 const API_CACHE = `bhf-api-${CACHE_VERSION}`;
@@ -111,7 +111,7 @@ self.addEventListener("fetch", (event) => {
 
   if (requestUrl.pathname.startsWith("/api/")) {
     if (isCacheableApiRequest(requestUrl)) {
-      event.respondWith(networkFirstApi(event.request));
+      event.respondWith(isRefreshRequest(event.request) ? networkFirstApi(event.request) : cacheFirstApi(event.request));
     }
     return;
   }
@@ -184,6 +184,18 @@ async function networkFirstApi(request) {
       503
     );
   }
+}
+
+async function cacheFirstApi(request) {
+  const cached = await caches.match(request);
+  if (cached) {
+    return cached;
+  }
+  return networkFirstApi(request);
+}
+
+function isRefreshRequest(request) {
+  return request.headers.get("X-BHF-Refresh") === "true";
 }
 
 function isCacheableApiRequest(url) {

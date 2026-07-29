@@ -18,6 +18,12 @@
   async function requestJson(url, options = {}, fallbackMessage = "Request failed.") {
     const resolvedUrl = resolveUrl(url);
     const method = String(options.method || "GET").toUpperCase();
+    if (method === "GET" && isCacheableOfflineGet(url)) {
+      const local = await localJsonResponse(url);
+      if (local) {
+        return local;
+      }
+    }
     try {
       const response = await fetch(resolvedUrl, options);
       const data = await response.json();
@@ -42,6 +48,10 @@
   }
 
   async function requestText(url, options = {}, fallbackMessage = "Request failed.") {
+    const local = await offlineTextFallback(url);
+    if (local) {
+      return local;
+    }
     try {
       const response = await fetch(resolveUrl(url), options);
       const data = await response.text();
@@ -75,17 +85,30 @@
   }
 
   async function cacheSuccessfulJson(url, method, data) {
-    if (method !== "GET" || !isCacheableOfflineGet(url)) {
-      return;
-    }
     const offlineDb = window.BHFOfflineDB;
-    if (!offlineDb || typeof offlineDb.cacheApiResponse !== "function") {
+    if (!offlineDb) {
       return;
     }
     try {
-      await offlineDb.cacheApiResponse(url, data);
+      if (method === "GET" && isCacheableOfflineGet(url) && typeof offlineDb.cacheApiResponse === "function") {
+        await offlineDb.cacheApiResponse(url, data);
+      } else if (method !== "GET" && typeof offlineDb.applyOnlineMutationResponse === "function") {
+        await offlineDb.applyOnlineMutationResponse(url, method, data);
+      }
     } catch (_error) {
       // Offline caching should never block the live UI.
+    }
+  }
+
+  async function localJsonResponse(url) {
+    const offlineDb = window.BHFOfflineDB;
+    if (!offlineDb || typeof offlineDb.readApiResponse !== "function") {
+      return null;
+    }
+    try {
+      return await offlineDb.readApiResponse(url);
+    } catch (_error) {
+      return null;
     }
   }
 
