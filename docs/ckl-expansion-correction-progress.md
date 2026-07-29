@@ -1,12 +1,12 @@
 # CKL Expansion and Correction Progress
 
-Last updated: 2026-07-28
+Last updated: 2026-07-29
 
 This is the durable handoff for the **BHF Canonical Knowledge Library Expansion
 and Correction Plan**. The supplied plan explicitly says to begin with the
 repository audit and Phase 1 quality reporting, avoid immediate bulk content
 generation, and stop after each major phase. Phases 1–4 are now implemented at
-the schema/runtime level. Phase 5 Waves 1–52 have corrected 60 of the 66 book
+the schema/runtime level. Phase 5 Waves 1–53 have corrected 61 of the 66 book
 records as honest, source-backed drafts; none has been mechanically approved.
 
 ## Current checkpoint
@@ -14,10 +14,10 @@ records as honest, source-backed drafts; none has been mechanically approved.
 | Plan area | Status | Continuation note |
 | --- | --- | --- |
 | Phase 1: inventory, reporting, quality metrics | **Implemented** | Deep JSON and Markdown reports, CLI support, and calculation tests are present. |
-| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Sixty records now have evidence-based draft statuses; 560 still need explicit migration. |
-| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Sixty records now have explicit layers; 560 still need migration. |
+| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Sixty-one records now have evidence-based draft statuses; 559 still need explicit migration. |
+| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Sixty-one records now have explicit layers; 559 still need migration. |
 | Phase 4: certainty and dispute taxonomies | **Implemented; evidence migration pending** | Current taxonomies and granular claim records are supported. Legacy values remain readable but are forbidden for approved notes; no `unknown` value was guessed or mass-relabeled. |
-| Phase 5: audit/correct all 66 books | **Waves 1–52 implemented; human review pending** | Sixty books through 2 Peter, with Lamentations still outstanding, are corrected drafts with sources, claims, tests, and reviewer notes. Six books remain. |
+| Phase 5: audit/correct all 66 books | **Waves 1–53 implemented; human review pending** | Sixty-one books through 1 John, with Lamentations still outstanding, are corrected drafts with sources, claims, tests, and reviewer notes. Five books remain. |
 | Phases 6–20 | Not started | Follow the supplied order after the foundation is upgraded. |
 | Phase 21: controlled generation workflow | Partially enabled | Reporting, type-specific completeness, and approval gates are present; scoped human-review events still need Phase 19. |
 
@@ -6263,10 +6263,95 @@ Active next wave: continue Phase 5 with a controlled 1 John correction wave:
     anointing, spirit-testing, incarnation, and General Epistle records, then
     run schema, graph, retrieval, factual, SQLite, report, and reviewer checks.
 
-The active continuation target is Phase 5 Wave 53, 1 John. Lamentations also
+Wave 53 1 John completed the controlled scope above. The record remains an
+unapproved draft and its reviewer checklist is in
+[`ckl-phase-5-1-john-review.md`](ckl-phase-5-1-john-review.md).
+
+The corrected record contains thirty-three sourced claims, forty-one
+current-taxonomy interpretive notes, twenty-six sources, twenty-four
+URL-bearing external sources, twenty-two high-precision top-level aliases plus
+retrieval metadata, twenty-one normalized Scripture anchors, ten Hebrew
+entries, thirty Greek entries, and five verified graph relationships. Its
+focused eight-method factual and SQLite suite and forty book-scoped retrieval
+questions pass. The full 612-test CKL suite, validators, graph audit,
+generated reports, and final SQLite artifact are recorded in the reviewer
+report. The first deep-report pass identified three human-readable legacy
+reference labels in the new record; they were replaced with canonical IDs
+before final verification. Fourteen book-scoped queries initially tied the
+completed Gospel of John record; exact 1 John aliases now disambiguate them
+without changing that completed record.
+
+After Phase 5 Wave 53, the refreshed report records:
+
+| Migration metric | Result |
+| --- | ---: |
+| Records marked `complete` / `draft` | 559 / 61 |
+| Complete records with candidate Phase 2 section gaps | 558 |
+| Raw records missing explicit `section_status` | 559 |
+| Raw records with incomplete type-required sections | 620 |
+| Raw records missing explicit `knowledge_layers` | 559 |
+| Interpretive notes using current taxonomies | 2,151 |
+| Interpretive notes still using legacy taxonomies | 1,196 |
+| Granular claims authored | 1,378 |
+| External sources | 1,415 |
+| Source references that do not resolve | 0 |
+| Invalid source support targets | 0 |
+| Unresolved legacy object references | 14 |
+| Scripture reference errors | 0 |
+| Graph edges / unknown targets / orphaned records | 3,311 / 0 / 0 |
+| Missing reciprocal relationship suggestions | 2,859 |
+| Validator warnings / errors | 14 / 0 |
+
+Active next wave: continue Phase 5 with a controlled 2 John correction wave:
+
+1. create book-specific factual and retrieval regression fixtures before
+   editing content;
+2. audit every populated field against 2 John and remove generic Johannine
+   templates, unsupported direct apostolic authorship, Ephesus, date,
+   destination, audience, secessionist, persecution, itinerary, and
+   church-order claims;
+3. gather the critical Greek text, early manuscripts and versions, Hebrew
+   Bible and Septuagint sources, Jewish election, lady, children, love,
+   commandment, truth, hospitality, and boundary comparanda, Greco-Roman
+   letter forms, the Fourth Gospel and other Johannine letters, early
+   reception, and later doctrinal use;
+4. distinguish the elder as the named sender from proposed historical
+   identities; the elect lady, her children, the elect sister's children,
+   deceivers, antichrist figures, travelers or teachers, Jesus, God, and later
+   interpreters without deciding whether lady and children denote one woman,
+   a household, a congregation, or a personified community;
+5. map 2 John 1:1-3; 1:4-6; 1:7-11; and 1:12-13 while indexing elder, elect
+   lady, children, truth, love, grace, mercy, peace, commandment, walking,
+   deceivers, coming in flesh, antichrist, remaining in teaching, Father and
+   Son, greeting, hospitality, face-to-face speech, joy, elect sister, and
+   closing greeting;
+6. qualify authorship, the elder title, relation to 1 and 3 John and the
+   Fourth Gospel, date, provenance, destination, audience, genre, integrity,
+   community and opponent reconstructions, travel and hospitality setting,
+   house-church inference, historical reliability, and reception;
+7. preserve uncertainty concerning chosen-lady language, truth dwelling and
+   remaining, the commandment as old and new, walking in love, incarnation,
+   deceiver and antichrist labels, going ahead, teaching of Christ, having
+   Father and Son, receiving into a house, greeting and sharing in evil works,
+   paper and ink, face-to-face joy, the elect sister, and every closing notice;
+8. distinguish biblical wording, epistolary and elder voice, historical
+   reconstruction, lexical claim, textual variant, Gospel and 1/3 John
+   comparison, doctrine, reception, pastoral application, and modern analogy;
+9. add safeguards against antisemitism, supersessionism, opponent
+   dehumanization, schism weaponization, coercive exclusion, surveillance,
+   spiritual abuse, authoritarian leadership, anti-intellectualism,
+   hospitality manipulation, misogyny, anti-LGBTQ coercion, public shaming,
+   nationalism, colonial mission, forced conversion, religious violence,
+   prosperity extraction, and ecological neglect; and
+10. keep human review missing, ensure 2 John ranks ahead of broad John,
+    Johannine, elder, elect-lady, truth, love, commandment, deceiver,
+    antichrist, hospitality, and General Epistle records, then run schema,
+    graph, retrieval, factual, SQLite, report, and reviewer checks.
+
+The active continuation target is Phase 5 Wave 54, 2 John. Lamentations also
 remains outstanding and must be scheduled before Phase 5 closes. Follow the
-controlled scope above; do not reopen completed 2 Peter, 1 Peter, James,
-Hebrews, Philemon, Titus, 2 Timothy, 1 Timothy, 2 Thessalonians,
+controlled scope above; do not reopen completed 1 John, 2 Peter, 1 Peter,
+James, Hebrews, Philemon, Titus, 2 Timothy, 1 Timothy, 2 Thessalonians,
 1 Thessalonians, Colossians, Philippians, Ephesians, Galatians, 2 Corinthians,
 1 Corinthians, Romans, Acts, John, Luke, Mark, or Matthew except to address a
 concrete review or regression finding.

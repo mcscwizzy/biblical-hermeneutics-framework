@@ -12,9 +12,9 @@ Root: `/Users/johnwalker/Documents/github/biblical-hermeneutic-framework/framewo
 
 ## Depth averages
 
-- Summary length (characters): 133.57
-- Scripture references per object: 6.22
-- External sources per object: 2.24
+- Summary length (characters): 134.08
+- Scripture references per object: 6.25
+- External sources per object: 2.28
 - Relationships per object: 5.34
 
 ## Graph and references
@@ -29,13 +29,13 @@ Root: `/Users/johnwalker/Documents/github/biblical-hermeneutic-framework/framewo
 ## Completeness and governance
 
 - Complete records with empty required fields: 0
-- Complete records with candidate Phase 2 section gaps: 559
-- Records missing section_status: 560
+- Complete records with candidate Phase 2 section gaps: 558
+- Records missing section_status: 559
 - Records with incomplete type-required sections: 620
-- Records missing knowledge_layers: 560
-- Interpretive notes using current taxonomies: 2110
-- Interpretive notes still using legacy taxonomies: 1198
-- Granular claims: 1345
+- Records missing knowledge_layers: 559
+- Interpretive notes using current taxonomies: 2151
+- Interpretive notes still using legacy taxonomies: 1196
+- Granular claims: 1378
 - Records with unknown certainty: 532
 - Records with unknown dispute status: 532
 - Records with no human reviewer: 619
@@ -52,16 +52,16 @@ Root: `/Users/johnwalker/Documents/github/biblical-hermeneutic-framework/framewo
 
 ## Retrieval gaps
 
-- Objects without search terms: 553
+- Objects without search terms: 552
 - Objects without common questions: 0
 - Objects without canonical placement: 547
 
 ## Source integrity
 
 - Unresolved source IDs: 0
-- Sources supporting no field or claim: 2685
+- Sources supporting no field or claim: 2693
 - Invalid source support targets: 0
-- Internally self-cited records without external support: 412
+- Internally self-cited records without external support: 411
 
 ## Existing validator
 
@@ -74,11 +74,11 @@ aaron, abba, abel, abraham, adam, adonai, adoption, adoption-theme, agape, agios
 
 ### Template-repetition record samples
 
-1-john, 2-john, 3-john, jude
+2-john, 3-john, jude
 
 ### Internal-only source samples
 
-1-john, 2-john, 3-john, aaron, abba, abel, abraham, abrahamic-covenant, abrahamic-covenant-framework, adam … (+402 more)
+2-john, 3-john, aaron, abba, abel, abraham, abrahamic-covenant, abrahamic-covenant-framework, adam, adoption … (+401 more)
 
 ## Interpretation note
 
