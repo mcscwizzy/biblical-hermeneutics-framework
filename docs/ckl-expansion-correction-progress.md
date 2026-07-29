@@ -6,19 +6,18 @@ This is the durable handoff for the **BHF Canonical Knowledge Library Expansion
 and Correction Plan**. The supplied plan explicitly says to begin with the
 repository audit and Phase 1 quality reporting, avoid immediate bulk content
 generation, and stop after each major phase. Phases 1–4 are now implemented at
-the schema/runtime level. Phase 5 Waves 1–49 have corrected Genesis through
-Hebrews as honest, source-backed drafts; none has been mechanically
-approved.
+the schema/runtime level. Phase 5 Waves 1–50 have corrected 58 of the 66 book
+records as honest, source-backed drafts; none has been mechanically approved.
 
 ## Current checkpoint
 
 | Plan area | Status | Continuation note |
 | --- | --- | --- |
 | Phase 1: inventory, reporting, quality metrics | **Implemented** | Deep JSON and Markdown reports, CLI support, and calculation tests are present. |
-| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Fifty-seven records now have evidence-based draft statuses; 563 still need explicit migration. |
-| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Fifty-seven records now have explicit layers; 563 still need migration. |
+| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Fifty-eight records now have evidence-based draft statuses; 562 still need explicit migration. |
+| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Fifty-eight records now have explicit layers; 562 still need migration. |
 | Phase 4: certainty and dispute taxonomies | **Implemented; evidence migration pending** | Current taxonomies and granular claim records are supported. Legacy values remain readable but are forbidden for approved notes; no `unknown` value was guessed or mass-relabeled. |
-| Phase 5: audit/correct all 66 books | **Waves 1–49 implemented; human review pending** | Genesis through Hebrews are corrected drafts with sources, claims, tests, and reviewer notes. Nine books remain. |
+| Phase 5: audit/correct all 66 books | **Waves 1–50 implemented; human review pending** | Fifty-eight books through James, with Lamentations still outstanding, are corrected drafts with sources, claims, tests, and reviewer notes. Eight books remain. |
 | Phases 6–20 | Not started | Follow the supplied order after the foundation is upgraded. |
 | Phase 21: controlled generation workflow | Partially enabled | Reporting, type-specific completeness, and approval gates are present; scoped human-review events still need Phase 19. |
 
@@ -5998,8 +5997,101 @@ Active next wave: continue Phase 5 with a controlled James correction wave:
     general-letter records, then run schema, graph, retrieval, factual,
     SQLite, report, and reviewer checks.
 
-The active continuation target is Phase 5 Wave 50, James. Follow the controlled
-scope above; do not reopen completed Hebrews, Philemon, Titus, 2 Timothy,
-1 Timothy, 2 Thessalonians, 1 Thessalonians, Colossians, Philippians,
-Ephesians, Galatians, 2 Corinthians, 1 Corinthians, Romans, Acts, John, Luke,
-Mark, or Matthew except to address a concrete review or regression finding.
+Wave 50 James completed the controlled scope above. The record remains an
+unapproved draft and its reviewer checklist is in
+[`ckl-phase-5-james-review.md`](ckl-phase-5-james-review.md).
+
+The corrected record contains thirty-two sourced claims, forty-two
+current-taxonomy interpretive notes, twenty-seven sources, twenty-six
+URL-bearing external sources, eight high-precision top-level aliases plus
+retrieval metadata, eighteen normalized Scripture anchors, ten Hebrew entries,
+twenty-nine Greek entries, and eight verified graph relationships. Its focused
+eight-method factual and SQLite suite and forty book-scoped retrieval questions
+pass. The full 588-test CKL suite, validators, graph audit, generated reports,
+and final SQLite artifact are recorded in the reviewer report. No existing
+record required a retrieval safeguard; the first deep-report pass identified
+eight human-readable legacy reference labels in the new record, which were
+replaced with canonical IDs before final verification.
+
+After Phase 5 Wave 50, the refreshed report records:
+
+| Migration metric | Result |
+| --- | ---: |
+| Records marked `complete` / `draft` | 562 / 58 |
+| Complete records with candidate Phase 2 section gaps | 561 |
+| Raw records missing explicit `section_status` | 562 |
+| Raw records with incomplete type-required sections | 620 |
+| Raw records missing explicit `knowledge_layers` | 562 |
+| Interpretive notes using current taxonomies | 2,024 |
+| Interpretive notes still using legacy taxonomies | 1,202 |
+| Granular claims authored | 1,281 |
+| External sources | 1,341 |
+| Source references that do not resolve | 0 |
+| Invalid source support targets | 0 |
+| Unresolved legacy object references | 14 |
+| Scripture reference errors | 0 |
+| Graph edges / unknown targets / orphaned records | 3,305 / 0 / 0 |
+| Missing reciprocal relationship suggestions | 2,853 |
+| Validator warnings / errors | 14 / 0 |
+
+Active next wave: continue Phase 5 with a controlled 1 Peter correction wave:
+
+1. create book-specific factual and retrieval regression fixtures before
+   editing content;
+2. audit every populated field against 1 Peter and remove generic
+   general-letter templates, unsupported Petrine authorship, Rome, Babylon,
+   persecution, destination, audience, opponent, itinerary, and church-order
+   claims;
+3. gather the critical Greek text, early papyri, manuscripts and versions,
+   Hebrew Bible and Septuagint sources, Second Temple election, exile,
+   priesthood, holiness, suffering, household, diaspora, and apocalyptic
+   comparanda, Asia Minor and Roman provincial evidence, associations,
+   patronage, slavery, gender, rhetoric, and reception;
+4. distinguish Peter the named sender from authorship proposals; the elect
+   sojourners across Pontus, Galatia, Cappadocia, Asia, and Bithynia;
+   Silvanus, Mark, elders, younger people, enslaved household members, wives,
+   husbands, rulers, masters, outsiders, and later interpreters without
+   inventing one ethnic profile, persecution program, or complete community
+   network;
+5. map 1 Peter 1:1-2:10; 2:11-4:11; and 4:12-5:14 while indexing prescript,
+   election, foreknowledge, new birth, hope, inheritance, testing, holiness,
+   ransom, word, living stone, priesthood, people, honorable conduct,
+   authorities, slavery, Christ's suffering, households, blessing, baptism,
+   spirits, suffering, gifts, fiery trial, judgment, elders, humility,
+   resistance, Silvanus, Babylon, Mark, peace, and grace;
+6. qualify authorship, secretary or collaborator, pseudepigraphy, date,
+   provenance, Babylon or Rome, destination, audience ethnicity, relation to
+   Paul, Silvanus and Mark, language, genre, integrity, legal and social
+   pressure, local hostility, state persecution, household practice, and
+   historical reliability;
+7. preserve uncertainty concerning `parepidēmos`, election and exile,
+   foreknowledge, new birth, imperishable seed, Isaiah and Psalm readings,
+   living stones, royal priesthood, people-of-God language, submission,
+   freedom, slavery, suffering example or atonement, wives and husbands,
+   spirits in prison, Noah, baptism saves, flesh and spirit, the dead,
+   covering sins, fiery trial, judgment beginning with God's house, sharing
+   Christ's sufferings, elder and shepherd language, the devil, Silvanus,
+   Babylon, Mark, and the closing kiss;
+8. distinguish biblical wording, epistolary voice, scriptural quotation,
+   historical reconstruction, Jewish and Greco-Roman comparison, household
+   convention, rhetorical strategy, lexical claim, textual variant, typology,
+   doctrine, reception, pastoral application, and modern analogy;
+9. add safeguards against antisemitism, supersessionism, anti-Jewish
+   replacement claims, xenophobia, ethnic nationalism, colonial settlement,
+   slavery apologetics, trafficking, worker exploitation, coercive
+   submission, domestic abuse, victim blaming, suffering glorification,
+   authoritarian government or leadership, misogyny, anti-LGBTQ coercion,
+   public shaming, forced conversion, religious violence, prosperity
+   extraction, and ecological neglect; and
+10. keep human review missing, ensure 1 Peter ranks ahead of broad Peter,
+    exile, suffering, priesthood, household, baptism, spirits, Babylon,
+    Silvanus, and General Epistle records, then run schema, graph, retrieval,
+    factual, SQLite, report, and reviewer checks.
+
+The active continuation target is Phase 5 Wave 51, 1 Peter. Lamentations also
+remains outstanding and must be scheduled before Phase 5 closes. Follow the
+controlled scope above; do not reopen completed James, Hebrews, Philemon,
+Titus, 2 Timothy, 1 Timothy, 2 Thessalonians, 1 Thessalonians, Colossians,
+Philippians, Ephesians, Galatians, 2 Corinthians, 1 Corinthians, Romans, Acts,
+John, Luke, Mark, or Matthew except to address a concrete review or regression
+finding.
