@@ -62,6 +62,16 @@ class SQLiteCanonicalRepository:
             except sqlite3.ProgrammingError:
                 pass
 
+    def __del__(self) -> None:
+        """Close thread-local connections if the repository is not closed explicitly."""
+
+        try:
+            self.close()
+        except (AttributeError, TypeError):
+            # Destructors can run after partially initialized objects or module
+            # globals have already been torn down during interpreter shutdown.
+            pass
+
     @property
     def metadata(self) -> dict[str, str]:
         return dict(self._metadata)
@@ -415,13 +425,14 @@ class SQLiteCanonicalRepository:
 
     @property
     def _conn(self) -> sqlite3.Connection:
-        conn = getattr(self._local, "connection", None)
-        if conn is None:
+        holder = getattr(self._local, "connection_holder", None)
+        if holder is None:
             conn = self._connect()
-            self._local.connection = conn
+            holder = _ThreadConnection(conn)
+            self._local.connection_holder = holder
             with self._connections_lock:
                 self._connections.append(conn)
-        return conn
+        return holder.connection
 
     def _load_metadata(self) -> dict[str, str]:
         return {
@@ -471,6 +482,21 @@ class SQLiteCanonicalRepository:
         return field_terms
 
 
+def _close_connection(connection: sqlite3.Connection) -> None:
+    try:
+        connection.close()
+    except sqlite3.ProgrammingError:
+        pass
+
+
+class _ThreadConnection:
+    def __init__(self, connection: sqlite3.Connection) -> None:
+        self.connection = connection
+
+    def __del__(self) -> None:
+        _close_connection(self.connection)
+
+
 class LazyCanonicalObjectMap(Mapping[str, CanonicalObject]):
     def __init__(self, repository: SQLiteCanonicalRepository) -> None:
         self.repository = repository
@@ -511,6 +537,17 @@ class SQLiteCanonicalLibrary(CanonicalLibrary):
         }
         self._loaded = True
         self._book_alias_lookup = repository.book_alias_lookup()
+
+    def close(self) -> None:
+        """Close the SQLite repository backing this compatibility facade."""
+
+        self.repository.close()
+
+    def __del__(self) -> None:
+        try:
+            self.close()
+        except (AttributeError, TypeError):
+            pass
 
     @classmethod
     def from_path(

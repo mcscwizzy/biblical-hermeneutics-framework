@@ -33,6 +33,16 @@ class LexicalRepository:
         for connection in connections:
             connection.close()
 
+    def __del__(self) -> None:
+        """Close thread-local connections if the repository is not closed explicitly."""
+
+        try:
+            self.close()
+        except (AttributeError, TypeError):
+            # Destructors can run after partially initialized objects or module
+            # globals have already been torn down during interpreter shutdown.
+            pass
+
     def lookup_by_strongs(self, language: str, strongs: str) -> list[LexicalEntry]:
         normalized = _normalize_strongs(strongs, language)
         if not normalized:
@@ -191,18 +201,19 @@ class LexicalRepository:
 
     @property
     def _connection(self) -> sqlite3.Connection:
-        connection = getattr(self._local, "connection", None)
-        if connection is None:
+        holder = getattr(self._local, "connection_holder", None)
+        if holder is None:
             if self.read_only:
                 connection = sqlite3.connect(f"file:{self.path}?mode=ro", uri=True)
                 connection.execute("PRAGMA query_only = ON")
             else:
                 connection = sqlite3.connect(self.path)
             connection.row_factory = sqlite3.Row
-            self._local.connection = connection
+            holder = _ThreadConnection(connection)
+            self._local.connection_holder = holder
             with self._lock:
                 self._connections.append(connection)
-        return connection
+        return holder.connection
 
     def _has_table(self, name: str) -> bool:
         if name not in self._table_cache:
@@ -252,6 +263,21 @@ def _occurrence_from_row(row: sqlite3.Row) -> WordOccurrence:
         source=_optional(row["source"]),
         source_word_id=_optional(row["source_word_id"]),
     )
+
+
+def _close_connection(connection: sqlite3.Connection) -> None:
+    try:
+        connection.close()
+    except sqlite3.ProgrammingError:
+        pass
+
+
+class _ThreadConnection:
+    def __init__(self, connection: sqlite3.Connection) -> None:
+        self.connection = connection
+
+    def __del__(self) -> None:
+        _close_connection(self.connection)
 
 
 def _optional(value: object) -> str | None:

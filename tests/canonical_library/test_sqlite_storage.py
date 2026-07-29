@@ -169,6 +169,7 @@ class SQLiteCKLStorageTests(unittest.TestCase):
             self.assertEqual(sqlite_john.knowledge_layers["primary"], "biblical_text")
             self.assertEqual(sqlite_john.section_status["core_summary"], "draft")
             self.assertEqual(sqlite_john.claims[0].id, "john-witness-emphasis")
+            sqlite_library.close()
 
     def test_read_only_and_concurrent_reads(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -236,6 +237,7 @@ class SQLiteCKLStorageTests(unittest.TestCase):
                 )
             )
             self.assertEqual(rebuilt.get_by_id("alpha").summary, "two")
+            rebuilt.close()
 
     def test_precision_john_context_matches_single_book(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -245,6 +247,7 @@ class SQLiteCKLStorageTests(unittest.TestCase):
             sqlite_library = SQLiteCanonicalLibrary.from_path(database, root=root)
             context = CanonicalContextBuilder(sqlite_library).build("What is the context of the book of John?", limit=3)
             ids = [topic["id"] for topic in context["retrieved_topics"]]
+            sqlite_library.close()
 
         self.assertEqual(ids[:1], ["john"])
         self.assertNotIn("luke", ids)
