@@ -85,6 +85,40 @@ class CanonicalLibraryConfig:
 
 
 @dataclass(frozen=True)
+class KnowledgeExpansionConfig:
+    """Controls answer-coverage routing after local context retrieval.
+
+    The coverage score is a deterministic routing estimate, not a claim about
+    the mathematically complete coverage of biblical scholarship.
+    """
+
+    enabled: bool = True
+    sufficient_coverage_threshold: float = 0.85
+    major_gap_threshold: float = 0.60
+    research_override_enabled: bool = True
+    allow_model_knowledge_expansion: bool = True
+    allow_external_retrieval: bool = False
+    max_gap_items: int = 6
+
+    def validate(self) -> None:
+        if not 0.0 <= float(self.sufficient_coverage_threshold) <= 1.0:
+            raise ConfigError(
+                "knowledge_expansion.sufficient_coverage_threshold must be between 0 and 1"
+            )
+        if not 0.0 <= float(self.major_gap_threshold) <= 1.0:
+            raise ConfigError(
+                "knowledge_expansion.major_gap_threshold must be between 0 and 1"
+            )
+        if float(self.major_gap_threshold) >= float(self.sufficient_coverage_threshold):
+            raise ConfigError(
+                "knowledge_expansion.major_gap_threshold must be lower than "
+                "knowledge_expansion.sufficient_coverage_threshold"
+            )
+        if int(self.max_gap_items) <= 0:
+            raise ConfigError("knowledge_expansion.max_gap_items must be greater than 0")
+
+
+@dataclass(frozen=True)
 class PublicCacheConfig:
     enabled: bool = False
     path: str = str(DEFAULT_PUBLIC_CACHE_PATH)
@@ -157,6 +191,7 @@ class AgentConfig:
     memory_path: Optional[str] = None
     memory_max_turns: int = 8
     canonical_library: CanonicalLibraryConfig = CanonicalLibraryConfig()
+    knowledge_expansion: KnowledgeExpansionConfig = KnowledgeExpansionConfig()
     lexicon: LexiconConfig = LexiconConfig()
     public_cache: PublicCacheConfig = PublicCacheConfig()
     observability: ObservabilityConfig = ObservabilityConfig()
@@ -187,6 +222,9 @@ class AgentConfig:
         data["canonical_library"] = _canonical_library_config_from_value(
             data.get("canonical_library")
         )
+        data["knowledge_expansion"] = _knowledge_expansion_config_from_value(
+            data.get("knowledge_expansion")
+        )
         data["lexicon"] = _lexicon_config_from_value(data.get("lexicon"))
         data["public_cache"] = _public_cache_config_from_value(data.get("public_cache"))
         data["observability"] = _observability_config_from_value(data.get("observability"))
@@ -211,6 +249,11 @@ class AgentConfig:
             clean["canonical_library"] = _canonical_library_config_from_value(
                 clean["canonical_library"],
                 base=self.canonical_library,
+            )
+        if "knowledge_expansion" in clean:
+            clean["knowledge_expansion"] = _knowledge_expansion_config_from_value(
+                clean["knowledge_expansion"],
+                base=self.knowledge_expansion,
             )
         if "lexicon" in clean:
             clean["lexicon"] = _lexicon_config_from_value(
@@ -279,6 +322,7 @@ class AgentConfig:
         if int(self.memory_max_turns) <= 0:
             raise ConfigError("memory_max_turns must be greater than 0")
         self.canonical_library.validate()
+        self.knowledge_expansion.validate()
         self.lexicon.validate()
         self.public_cache.validate()
         try:
@@ -391,6 +435,61 @@ def _canonical_library_config_from_value(
     else:
         raise ConfigError("canonical_library must be an object")
 
+    return config
+
+
+def _knowledge_expansion_config_from_value(
+    value: Any,
+    *,
+    base: KnowledgeExpansionConfig | None = None,
+) -> KnowledgeExpansionConfig:
+    if isinstance(value, KnowledgeExpansionConfig):
+        config = value
+    elif value is None:
+        config = base or KnowledgeExpansionConfig()
+    elif isinstance(value, dict):
+        base_config = base or KnowledgeExpansionConfig()
+        known = {field.name for field in fields(KnowledgeExpansionConfig)}
+        unknown = sorted(set(value) - known)
+        if unknown:
+            raise ConfigError(
+                f"unknown knowledge_expansion field(s): {', '.join(unknown)}"
+            )
+        merged = asdict(base_config)
+        merged.update(value)
+        config = KnowledgeExpansionConfig(
+            enabled=_coerce_bool(
+                merged["enabled"], field_name="knowledge_expansion.enabled"
+            ),
+            sufficient_coverage_threshold=_coerce_float(
+                merged["sufficient_coverage_threshold"],
+                field_name="knowledge_expansion.sufficient_coverage_threshold",
+            ),
+            major_gap_threshold=_coerce_float(
+                merged["major_gap_threshold"],
+                field_name="knowledge_expansion.major_gap_threshold",
+            ),
+            research_override_enabled=_coerce_bool(
+                merged["research_override_enabled"],
+                field_name="knowledge_expansion.research_override_enabled",
+            ),
+            allow_model_knowledge_expansion=_coerce_bool(
+                merged["allow_model_knowledge_expansion"],
+                field_name="knowledge_expansion.allow_model_knowledge_expansion",
+            ),
+            allow_external_retrieval=_coerce_bool(
+                merged["allow_external_retrieval"],
+                field_name="knowledge_expansion.allow_external_retrieval",
+            ),
+            max_gap_items=_coerce_int(
+                merged["max_gap_items"],
+                field_name="knowledge_expansion.max_gap_items",
+            ),
+        )
+    else:
+        raise ConfigError("knowledge_expansion must be an object")
+
+    config.validate()
     return config
 
 

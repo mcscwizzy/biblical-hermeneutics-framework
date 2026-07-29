@@ -23,6 +23,13 @@ from .ckl import (
     load_canonical_library,
 )
 from .config import AgentConfig, ConfigError
+from .coverage import (
+    AnswerCoverageAssessment,
+    BROAD_KNOWLEDGE_EXPANSION,
+    CKL_PRIMARY,
+    evaluate_answer_coverage,
+    format_coverage_prompt,
+)
 from .genre import classify_genre
 from .knowledge import LocalKnowledgeBundle, lookup_local_knowledge
 from .map_tools import build_map_tool_context
@@ -50,6 +57,13 @@ from .model_response_validation import (
 from .observability import render_log_record, summarize_usage
 from .profiles import ProfileLoader
 from .prompts import PROMPT_VERSION, build_prompt_result, strategy_for_profile
+from .research import (
+    NullResearchProvider,
+    ResearchProvider,
+    ResearchResult,
+    format_research_result_for_prompt,
+    normalize_research_result,
+)
 from .question_types import classify_question_type
 from .repair import build_repair_prompt, decide_repair
 from .references import detect_reference
@@ -323,6 +337,7 @@ class BHFAgent:
         public_answer_cache: Optional[PublicAnswerCache] = None,
         runtime_cache: Optional[CKLRuntimeCache] = None,
         lexical_engine: Optional[LexicalLookupService] = None,
+        research_provider: Optional[ResearchProvider] = None,
     ) -> None:
         config.validate()
         self.config = config
@@ -359,6 +374,7 @@ class BHFAgent:
         self.lexical_engine = lexical_engine or LexicalLookupService(
             self.config.lexicon.runtime_database_path
         )
+        self.research_provider = research_provider or NullResearchProvider()
         self._status_callback: Optional[StatusCallback] = None
         self._status_run_started_at: float | None = None
         self._status_stage_started_at: float | None = None
@@ -519,6 +535,33 @@ class BHFAgent:
                 "canonical_library_minimum_relevance_score": self.config.canonical_library.minimum_relevance_score,
                 "canonical_library_fallback_to_model": self.config.canonical_library.fallback_to_model,
                 "canonical_library_strict_mode": self.config.canonical_library.strict_mode,
+                "knowledge_expansion_enabled": self.config.knowledge_expansion.enabled,
+                "knowledge_expansion_sufficient_threshold": self.config.knowledge_expansion.sufficient_coverage_threshold,
+                "knowledge_expansion_major_gap_threshold": self.config.knowledge_expansion.major_gap_threshold,
+                "knowledge_expansion_research_override_enabled": self.config.knowledge_expansion.research_override_enabled,
+                "knowledge_expansion_allow_model_knowledge": self.config.knowledge_expansion.allow_model_knowledge_expansion,
+                "knowledge_expansion_allow_external_retrieval": self.config.knowledge_expansion.allow_external_retrieval,
+                "knowledge_expansion_max_gap_items": self.config.knowledge_expansion.max_gap_items,
+                "answer_coverage_score": None,
+                "answer_coverage_mode": None,
+                "answer_coverage_sufficient": None,
+                "answer_coverage_evaluator": None,
+                "answer_coverage_rationale": None,
+                "answer_coverage_covered_dimensions": [],
+                "answer_coverage_missing_dimensions": [],
+                "research_override_detected": False,
+                "knowledge_expansion_requested": False,
+                "knowledge_expansion_performed": False,
+                "knowledge_expansion_source": "none",
+                "knowledge_expansion_blocked": False,
+                "knowledge_expansion_blocked_reason": None,
+                "external_research_enabled": self.config.knowledge_expansion.allow_external_retrieval,
+                "external_research_available": False,
+                "external_research_attempted": False,
+                "external_research_succeeded": False,
+                "external_research_result_count": 0,
+                "external_research_error": None,
+                "external_research_provider": self._research_provider_identity(),
                 "ckl_attempted": False,
                 "ckl_result_count": 0,
                 "ckl_context_injected": False,
@@ -664,8 +707,10 @@ class BHFAgent:
         self._lookup_lexical_engine(ctx)
         if ctx.debug_metadata.get("deterministic_fact_packet"):
             self._apply_deterministic_fact_packet(ctx)
+            self._evaluate_answer_coverage(ctx)
             return self._mark_stage(ctx, "lookup_local_knowledge")
         self._lookup_canonical_library(ctx)
+        self._evaluate_answer_coverage(ctx)
         return self._mark_stage(ctx, "lookup_local_knowledge")
 
     def _lookup_lexical_engine(self, ctx: PipelineContext) -> None:
@@ -737,6 +782,172 @@ class BHFAgent:
         ctx.debug_metadata["ckl_retrieval_usable"] = True
         ctx.debug_metadata["fallback_to_model"] = False
         ctx.debug_metadata["fallback_reason"] = None
+
+    def _evaluate_answer_coverage(self, ctx: PipelineContext) -> None:
+        """Assess local answer coverage and prepare optional expansion evidence."""
+
+        if ctx.reference_context is None or ctx.question_context is None:
+            raise RuntimeError("pipeline context is incomplete before coverage evaluation")
+
+        expansion_config = self.config.knowledge_expansion
+        assessment = evaluate_answer_coverage(
+            question=ctx.original_question,
+            reference_context=ctx.reference_context,
+            genre_context=ctx.genre_context,
+            question_context=ctx.question_context,
+            canonical_context=ctx.canonical_library_context,
+            canonical_strong_match=bool(
+                ctx.debug_metadata.get("canonical_library_strong_match", False)
+            ),
+            ckl_coverage_gap=ctx.debug_metadata.get("ckl_coverage_gap"),
+            local_knowledge=ctx.local_knowledge,
+            lexical_context_prompt=ctx.lexical_context_prompt,
+            map_context=ctx.debug_metadata.get("map_tool_context"),
+            sufficient_threshold=expansion_config.sufficient_coverage_threshold,
+            major_gap_threshold=expansion_config.major_gap_threshold,
+            max_gap_items=expansion_config.max_gap_items,
+            research_override_enabled=expansion_config.research_override_enabled,
+        )
+        ctx.answer_coverage_assessment = assessment
+        metadata = ctx.debug_metadata
+        metadata.update(
+            {
+                "answer_coverage_score": assessment.score,
+                "answer_coverage_mode": assessment.mode,
+                "answer_coverage_sufficient": assessment.sufficient,
+                "answer_coverage_evaluator": assessment.evaluator,
+                "answer_coverage_rationale": assessment.rationale,
+                "answer_coverage_covered_dimensions": list(assessment.covered_dimensions),
+                "answer_coverage_missing_dimensions": list(assessment.missing_dimensions),
+                "research_override_detected": assessment.research_override,
+                "knowledge_expansion_requested": False,
+                "knowledge_expansion_performed": False,
+                "knowledge_expansion_source": "none",
+                "knowledge_expansion_blocked": False,
+                "knowledge_expansion_blocked_reason": None,
+                "external_research_enabled": bool(expansion_config.allow_external_retrieval),
+                "external_research_available": False,
+                "external_research_attempted": False,
+                "external_research_succeeded": False,
+                "external_research_result_count": 0,
+                "external_research_error": None,
+                "external_research_provider": self._research_provider_identity(),
+            }
+        )
+        if ctx.canonical_library_context is not None and ctx.canonical_library_query:
+            # CKL context itself is reusable, but the key exposed to the
+            # context/response cache must reflect the coverage route that will
+            # shape the final prompt.
+            metadata["canonical_library_context_cache_key"] = build_context_cache_key(
+                canonical_query=ctx.canonical_library_query,
+                retrieved_topics=list(
+                    ctx.canonical_library_context.get("retrieved_topics") or []
+                ),
+                answer_mode=ctx.answer_mode,
+                max_context_tokens=self.config.canonical_library.max_context_tokens,
+                prompt_mode=str(metadata.get("canonical_library_prompt_mode") or "summary"),
+                prompt_version=PROMPT_VERSION,
+                coverage_mode=assessment.mode,
+                missing_dimension_fingerprint="|".join(assessment.missing_dimensions),
+            )
+        ctx.knowledge_expansion_context_prompt = None
+
+        requested = bool(
+            expansion_config.enabled
+            and (assessment.mode != CKL_PRIMARY or assessment.research_override)
+        )
+        metadata["knowledge_expansion_requested"] = requested
+        if not requested:
+            if not expansion_config.enabled:
+                metadata["knowledge_expansion_blocked"] = True
+                metadata["knowledge_expansion_blocked_reason"] = "disabled"
+            ctx.knowledge_expansion_context_prompt = (
+                format_coverage_prompt(
+                    assessment,
+                    strict_mode=not expansion_config.enabled,
+                    model_knowledge_allowed=expansion_config.enabled,
+                )
+                if expansion_config.enabled or assessment.mode != CKL_PRIMARY
+                else None
+            )
+            return
+
+        strict_mode = bool(self.config.canonical_library.strict_mode)
+        model_allowed = bool(
+            expansion_config.allow_model_knowledge_expansion
+            and self.config.canonical_library.fallback_to_model
+            and not strict_mode
+        )
+        external_prompt = ""
+        external_allowed = bool(
+            expansion_config.allow_external_retrieval and not strict_mode
+        )
+        if strict_mode:
+            metadata["knowledge_expansion_blocked"] = True
+            metadata["knowledge_expansion_blocked_reason"] = "strict_mode"
+        elif not self.config.canonical_library.fallback_to_model and not external_allowed:
+            metadata["knowledge_expansion_blocked"] = True
+            metadata["knowledge_expansion_blocked_reason"] = "fallback_to_model_disabled"
+
+        if external_allowed:
+            try:
+                available = bool(self.research_provider.is_available())
+            except Exception as exc:  # provider availability must never block an answer
+                available = False
+                metadata["external_research_error"] = str(exc)
+            metadata["external_research_available"] = available
+            if available:
+                metadata["external_research_attempted"] = True
+                try:
+                    raw_result = self.research_provider.retrieve(
+                        question=ctx.original_question,
+                        missing_dimensions=assessment.missing_dimensions,
+                        reference_context=ctx.reference_context,
+                        max_results=expansion_config.max_gap_items,
+                    )
+                    result = normalize_research_result(
+                        raw_result,
+                        provider=self._research_provider_identity(),
+                    )
+                    metadata["external_research_result_count"] = len(result.items)
+                    metadata["external_research_succeeded"] = bool(result.items)
+                    metadata["external_research_error"] = result.error
+                    external_prompt = format_research_result_for_prompt(result)
+                except Exception as exc:  # provider failure degrades to model/local path
+                    metadata["external_research_error"] = str(exc)
+                    ctx.warnings.append(f"External research provider failed: {exc}")
+
+        sources: list[str] = []
+        if model_allowed:
+            sources.append("model_knowledge")
+        if metadata["external_research_succeeded"]:
+            sources.append("external_provider")
+        if sources:
+            metadata["knowledge_expansion_performed"] = True
+            metadata["knowledge_expansion_source"] = (
+                "model_and_external" if len(sources) > 1 else sources[0]
+            )
+        elif strict_mode:
+            metadata["knowledge_expansion_source"] = "strict_local_only"
+        elif metadata["knowledge_expansion_blocked"]:
+            metadata["knowledge_expansion_blocked"] = True
+
+        ctx.knowledge_expansion_context_prompt = format_coverage_prompt(
+            assessment,
+            strict_mode=strict_mode,
+            model_knowledge_allowed=model_allowed,
+            external_retrieval_enabled=bool(metadata["external_research_succeeded"]),
+            external_research_prompt=external_prompt,
+        )
+
+    def _research_provider_identity(self) -> str:
+        identity = getattr(self.research_provider, "identity", None)
+        if callable(identity):
+            try:
+                return str(identity() or "external_provider")
+            except Exception:
+                return "external_provider"
+        return str(getattr(self.research_provider, "name", "external_provider") or "external_provider")
 
     def _lookup_canonical_library(self, ctx: PipelineContext) -> PipelineContext:
         retrieval_started_at = time.perf_counter()
@@ -1012,6 +1223,10 @@ class BHFAgent:
             max_context_tokens=self.config.canonical_library.max_context_tokens,
             prompt_mode=prompt_mode,
             prompt_version=PROMPT_VERSION,
+            coverage_mode=ctx.debug_metadata.get("answer_coverage_mode"),
+            missing_dimension_fingerprint="|".join(
+                ctx.debug_metadata.get("answer_coverage_missing_dimensions") or []
+            ),
         )
         ctx.debug_metadata["canonical_library_context_cache_key"] = context_cache_key
         if self.runtime_cache.enabled and self.config.canonical_library.cache_enabled:
@@ -1120,6 +1335,14 @@ class BHFAgent:
         if ctx.debug_metadata.get("deterministic_fact_packet"):
             ctx.debug_metadata["public_answer_cache_lookup_status"] = "disabled"
             ctx.debug_metadata["public_answer_cache_error"] = "deterministic fact packet supplied"
+            return ctx
+        if ctx.debug_metadata.get("knowledge_expansion_requested"):
+            # Public CKL answers predate the coverage/expansion decision and
+            # must not satisfy a request that needs broader or targeted work.
+            ctx.debug_metadata["public_answer_cache_lookup_status"] = "bypassed_expansion"
+            ctx.debug_metadata["public_answer_cache_error"] = (
+                "knowledge expansion requested"
+            )
             return ctx
         if (
             self.canonical_library is None
@@ -1287,6 +1510,7 @@ class BHFAgent:
                 f"{ctx.debug_metadata.get('canonical_library_prompt_mode') or ''}"
                 f"|runtime_profile_mode={self.config.runtime_profile_mode}"
             ),
+            knowledge_expansion_fingerprint=self._knowledge_expansion_cache_fingerprint(ctx),
         )
         ctx.debug_metadata["canonical_library_response_context_hash"] = prompt_context_hash
 
@@ -1374,6 +1598,23 @@ class BHFAgent:
         ctx.debug_metadata["validation_score"] = ctx.validation_result.score
         return ctx
 
+    def _knowledge_expansion_cache_fingerprint(self, ctx: PipelineContext) -> str:
+        """Make coverage and provider state part of prompt/response identity."""
+
+        payload = {
+            "mode": ctx.debug_metadata.get("answer_coverage_mode"),
+            "score": ctx.debug_metadata.get("answer_coverage_score"),
+            "research_override": ctx.debug_metadata.get("research_override_detected"),
+            "model_allowed": self.config.knowledge_expansion.allow_model_knowledge_expansion,
+            "external_enabled": self.config.knowledge_expansion.allow_external_retrieval,
+            "external_provider": ctx.debug_metadata.get("external_research_provider"),
+            "external_result_count": ctx.debug_metadata.get("external_research_result_count"),
+            "missing_dimensions": ctx.debug_metadata.get("answer_coverage_missing_dimensions", []),
+            "blocked": ctx.debug_metadata.get("knowledge_expansion_blocked"),
+            "blocked_reason": ctx.debug_metadata.get("knowledge_expansion_blocked_reason"),
+        }
+        return json.dumps(payload, sort_keys=True, separators=(",", ":"))
+
     def _store_response_cache(self, ctx: PipelineContext) -> PipelineContext:
         if ctx.debug_metadata.get("deterministic_fact_packet"):
             return ctx
@@ -1390,6 +1631,13 @@ class BHFAgent:
         if ctx.debug_metadata.get("public_answer_cache_hit"):
             return ctx
         if ctx.debug_metadata.get("canonical_library_response_cache_hit"):
+            return ctx
+        if (
+            ctx.debug_metadata.get("external_research_attempted")
+            and not ctx.debug_metadata.get("external_research_succeeded")
+        ):
+            # Do not turn a transient provider outage into a successful
+            # response-cache entry that masks a later available result.
             return ctx
         if ctx.errors:
             return ctx
@@ -1479,6 +1727,7 @@ class BHFAgent:
             answer_mode=ctx.answer_mode,
             canonical_context_prompt=ctx.canonical_library_prompt,
             lexical_context_prompt=ctx.lexical_context_prompt,
+            knowledge_coverage_prompt=ctx.knowledge_expansion_context_prompt,
             runtime_profile_mode=self.config.runtime_profile_mode,
             response_contract_prompt=response_contract_prompt,
         )

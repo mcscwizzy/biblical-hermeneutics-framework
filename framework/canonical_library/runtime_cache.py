@@ -13,7 +13,7 @@ from typing import Any, Mapping, Sequence
 from .normalization import normalize_id, normalize_text
 
 
-CACHE_KEY_VERSION = 1
+CACHE_KEY_VERSION = 2
 DEFAULT_MAX_ENTRIES = 512
 
 
@@ -94,6 +94,8 @@ def build_context_cache_key(
     max_context_tokens: int,
     prompt_mode: str,
     prompt_version: str,
+    coverage_mode: str | None = None,
+    missing_dimension_fingerprint: str | None = None,
 ) -> str:
     payload = {
         "cache_key_version": CACHE_KEY_VERSION,
@@ -102,6 +104,8 @@ def build_context_cache_key(
         "max_context_tokens": int(max_context_tokens),
         "prompt_mode": str(prompt_mode or "summary").strip().lower() or "summary",
         "prompt_version": str(prompt_version or "").strip(),
+        "coverage_mode": str(coverage_mode or "").strip().lower(),
+        "missing_dimension_fingerprint": str(missing_dimension_fingerprint or "").strip(),
         "retrieved_entries": _entry_version_signature(retrieved_topics),
     }
     return _cache_key("context", payload)
@@ -140,6 +144,7 @@ def build_prompt_context_hash(
     show_method_notes: bool,
     prompt_version: str,
     prompt_mode: str,
+    knowledge_expansion_fingerprint: str | None = None,
 ) -> str:
     payload = {
         "cache_key_version": CACHE_KEY_VERSION,
@@ -157,6 +162,7 @@ def build_prompt_context_hash(
         "answer_mode": str(answer_mode or "study").strip().lower() or "study",
         "show_method_notes": bool(show_method_notes),
         "prompt_mode": str(prompt_mode or "").strip().lower(),
+        "knowledge_expansion_fingerprint": str(knowledge_expansion_fingerprint or "").strip(),
     }
     return _cache_key("prompt", payload)
 
@@ -293,4 +299,3 @@ class CKLRuntimeCache:
             "context": self.context.snapshot(),
             "response": self.response.snapshot(),
         }
-

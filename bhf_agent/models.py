@@ -194,6 +194,8 @@ class PipelineContext(Serializable):
     canonical_library_context: Optional[dict[str, Any]] = None
     canonical_library_prompt: Optional[str] = None
     canonical_library_query: Optional[str] = None
+    answer_coverage_assessment: Optional[Any] = None
+    knowledge_expansion_context_prompt: Optional[str] = None
     lexical_context_prompt: Optional[str] = None
     session_memory: Optional[Any] = None
     memory_path: Optional[str] = None

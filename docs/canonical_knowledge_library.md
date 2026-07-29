@@ -102,6 +102,27 @@ startup.
 
 The Canonical Knowledge Library (CKL) is a version-controlled store of curated biblical knowledge that lives alongside, but separate from, the LLM. Its job is to return structured facts first so the model can act as a narrator and synthesizer rather than the primary source of biblical information.
 
+CKL is the trusted floor of the BHF knowledge process, not its ceiling. It is
+curated and intentionally non-exhaustive. The runtime does not use the CKL
+relevance threshold as an answer-completeness score: a Ruth entry, for example,
+may be highly relevant while omitting a legal, financial, or disputed scholarly
+dimension asked by the user.
+
+After local context retrieval, BHF records an answer-coverage assessment with
+covered and missing dimensions. At the default thresholds (`0.85` sufficient,
+`0.60` major gap), it routes to CKL-primary synthesis, targeted gap expansion,
+or broad knowledge expansion. Explicit research-oriented questions can request
+expansion even when the estimate is high. The score is only an explainable
+routing heuristic; it is not a mathematically exact measure of all available
+scholarship.
+
+Expansion remains offline-safe. Broader model knowledge is permitted only when
+configured and is kept distinct from CKL-supported facts. Optional external
+research uses a provider-neutral interface and is disabled by default; no
+network access is silently enabled. Strict mode blocks both model-knowledge and
+external expansion, while provider failures leave the ordinary answer path
+available.
+
 ## Purpose
 
 CKL stores canonical facts, retrieval metadata, and future scholarship in a deterministic format. The CKL layer itself stops at the retrieval foundation: it does not infer theology, generate explanations, or call an LLM.

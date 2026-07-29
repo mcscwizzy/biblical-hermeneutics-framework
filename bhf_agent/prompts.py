@@ -87,6 +87,7 @@ Answer only the question asked. Follow any structured response contract exactly.
 CANONICAL_KNOWLEDGE_INSTRUCTIONS = """You are the explanation layer for the Biblical Hermeneutics Framework.
 The application has already searched its Canonical Knowledge Library and supplied relevant context below.
 Use that context as your primary factual source.
+Treat the CKL as trusted and curated but intentionally non-exhaustive, not as a complete representation of biblical scholarship.
 Explain it naturally and clearly for the user.
 Distinguish facts from interpretation when it matters.
 Do not describe the retrieval process.
@@ -501,6 +502,7 @@ def build_prompt(
     answer_mode: str = "study",
     canonical_context_prompt: str | None = None,
     lexical_context_prompt: str | None = None,
+    knowledge_coverage_prompt: str | None = None,
     runtime_profile_mode: str = "compact",
     response_contract_prompt: str | None = None,
 ) -> tuple[str, str]:
@@ -521,6 +523,7 @@ def build_prompt(
         answer_mode=answer_mode,
         canonical_context_prompt=canonical_context_prompt,
         lexical_context_prompt=lexical_context_prompt,
+        knowledge_coverage_prompt=knowledge_coverage_prompt,
         runtime_profile_mode=runtime_profile_mode,
         response_contract_prompt=response_contract_prompt,
     )
@@ -542,6 +545,7 @@ def build_prompt_result(
     answer_mode: str = "study",
     canonical_context_prompt: str | None = None,
     lexical_context_prompt: str | None = None,
+    knowledge_coverage_prompt: str | None = None,
     runtime_profile_mode: str = "compact",
     response_contract_prompt: str | None = None,
 ) -> PromptBuildResult:
@@ -609,6 +613,10 @@ def build_prompt_result(
                 [canonical_context_block],
             )
         )
+    if knowledge_coverage_prompt:
+        system_sections.append(
+            _prompt_section("KNOWLEDGE EXPANSION", [knowledge_coverage_prompt.strip()])
+        )
     lexical_context_block = lexical_context_prompt.strip() if lexical_context_prompt else ""
     if lexical_context_block:
         lexical_data_unavailable = lexical_context_block.startswith("# LEXICAL DATA UNAVAILABLE")
@@ -674,6 +682,7 @@ def build_prompt_result(
         session_memory=session_memory_prompt,
         canonical_context=canonical_context_block,
         lexical_context=lexical_context_block,
+        knowledge_coverage=knowledge_coverage_prompt or "",
         response_contract=response_contract_prompt or "",
         system_prompt=system_prompt,
         user_prompt=user_prompt,
