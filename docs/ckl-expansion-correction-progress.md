@@ -6,8 +6,8 @@ This is the durable handoff for the **BHF Canonical Knowledge Library Expansion
 and Correction Plan**. The supplied plan explicitly says to begin with the
 repository audit and Phase 1 quality reporting, avoid immediate bulk content
 generation, and stop after each major phase. Phases 1–4 are now implemented at
-the schema/runtime level. Phase 5 Waves 1–45 have corrected Genesis through
-1 Timothy as honest, source-backed drafts; none has been mechanically
+the schema/runtime level. Phase 5 Waves 1–46 have corrected Genesis through
+2 Timothy as honest, source-backed drafts; none has been mechanically
 approved.
 
 ## Current checkpoint
@@ -15,10 +15,10 @@ approved.
 | Plan area | Status | Continuation note |
 | --- | --- | --- |
 | Phase 1: inventory, reporting, quality metrics | **Implemented** | Deep JSON and Markdown reports, CLI support, and calculation tests are present. |
-| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Fifty-three records now have evidence-based draft statuses; 567 still need explicit migration. |
-| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Fifty-three records now have explicit layers; 567 still need migration. |
+| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Fifty-four records now have evidence-based draft statuses; 566 still need explicit migration. |
+| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Fifty-four records now have explicit layers; 566 still need migration. |
 | Phase 4: certainty and dispute taxonomies | **Implemented; evidence migration pending** | Current taxonomies and granular claim records are supported. Legacy values remain readable but are forbidden for approved notes; no `unknown` value was guessed or mass-relabeled. |
-| Phase 5: audit/correct all 66 books | **Waves 1–45 implemented; human review pending** | Genesis through 1 Timothy are corrected drafts with sources, claims, tests, and reviewer notes. Thirteen books remain. |
+| Phase 5: audit/correct all 66 books | **Waves 1–46 implemented; human review pending** | Genesis through 2 Timothy are corrected drafts with sources, claims, tests, and reviewer notes. Twelve books remain. |
 | Phases 6–20 | Not started | Follow the supplied order after the foundation is upgraded. |
 | Phase 21: controlled generation workflow | Partially enabled | Reporting, type-specific completeness, and approval gates are present; scoped human-review events still need Phase 19. |
 
@@ -5676,8 +5676,83 @@ wave:
     produce a reviewer-facing report, and refresh this handoff and both
     generated quality reports.
 
-The active continuation target is Phase 5 Wave 46, 2 Timothy. Follow the
-controlled scope above; do not reopen completed 1 Timothy, 2 Thessalonians,
-1 Thessalonians, Colossians, Philippians, Ephesians, Galatians,
-2 Corinthians, 1 Corinthians, Romans, Acts, John, Luke, Mark, or Matthew work
-except to address a concrete review or regression finding.
+Wave 46 2 Timothy completed the controlled scope above. The record remains an
+unapproved draft and its reviewer checklist is in
+[`ckl-phase-5-2-timothy-review.md`](ckl-phase-5-2-timothy-review.md).
+
+The corrected record contains thirty-one sourced claims, forty-one
+current-taxonomy interpretive notes, twenty-two sources, twenty URL-bearing
+external sources, seven high-precision top-level aliases plus retrieval
+metadata, nineteen normalized Scripture anchors, ten Hebrew entries,
+twenty-five Greek entries, and eight verified graph relationships. Its
+focused eight-method factual and SQLite suite and forty book-scoped retrieval
+questions pass. The full 556-test CKL suite, validators, graph audit,
+generated reports, and final SQLite artifact are recorded in the reviewer
+report.
+
+After Phase 5 Wave 46, the refreshed report records:
+
+| Migration metric | Result |
+| --- | ---: |
+| Records marked `complete` / `draft` | 566 / 54 |
+| Complete records with candidate Phase 2 section gaps | 565 |
+| Raw records missing explicit `section_status` | 566 |
+| Raw records with incomplete type-required sections | 620 |
+| Raw records missing explicit `knowledge_layers` | 566 |
+| Interpretive notes using current taxonomies | 1,860 |
+| Interpretive notes still using legacy taxonomies | 1,210 |
+| Granular claims authored | 1,153 |
+| External sources | 1,248 |
+| Source references that do not resolve | 0 |
+| Invalid source support targets | 0 |
+| Unresolved legacy object references | 14 |
+| Scripture reference errors | 0 |
+| Graph edges / unknown targets / orphaned records | 3,293 / 0 / 0 |
+| Missing reciprocal relationship suggestions | 2,845 |
+| Validator warnings / errors | 14 / 0 |
+
+Active next wave: continue Phase 5 with a controlled Titus correction wave:
+
+1. create book-specific factual and retrieval regression fixtures before
+   editing content;
+2. audit every populated field against Titus and remove generic Pastoral
+   templates, unsupported Crete, travel, office, opponent, and social claims;
+3. gather critical Greek, manuscript and versional evidence, Hebrew Bible and
+   Septuagint comparanda, Cretan and Roman provincial evidence, households,
+   slavery, patronage, gender, rhetoric, pseudepigraphy, and reception;
+4. distinguish Paul and Titus, possible secretary or Pauline-school author,
+   elders and overseers, age and gender groups, enslaved people, opponents,
+   Artemas, Tychicus, Zenas, Apollos, and later interpreters without inventing
+   one opponent group or settled polity;
+5. map Titus 1:1-16; 2:1-15; and 3:1-15 while indexing prescript, truth,
+   godliness, Crete, elders, overseers, households, opponents, the Cretan
+   quotation, age and gender instruction, slavery, grace, appearing,
+   self-giving, rulers, works, washing, renewal, justification, heirs,
+   controversies, discipline, travel, coworkers, hospitality, and grace;
+6. qualify authorship, date, provenance, destination, relation to Acts and
+   the Pastorals, audience, opponents, church order, integrity, purpose,
+   personal notices, and the Nicopolis reconstruction;
+7. preserve uncertainty concerning elder and overseer relation, household
+   qualifications, rebellious people, circumcision language, the Epimenides
+   quotation, purity, gendered instruction, slavery, `epiphaneia`, washing of
+   regeneration, renewal, justification, good works, controversies,
+   genealogies, law disputes, divisive-person discipline, and closing travel;
+8. distinguish biblical wording, epistolary voice, pseudepigraphal proposal,
+   rhetorical opponent, Cretan stereotype, household convention, lexical
+   claim, textual variant, traditional material, doctrine, reception,
+   pastoral application, and modern analogy;
+9. add safeguards against antisemitism, supersessionism, anti-Cretan ethnic
+   contempt, misogyny, anti-LGBTQ coercion, authoritarian office, clericalism,
+   victim blaming, slavery apologetics, worker exploitation, nationalism,
+   colonial mission, forced conversion, religious violence, public shaming,
+   prosperity extraction, and ecological neglect; and
+10. keep human review missing, ensure Titus ranks ahead of broad Paul, Titus
+    person, Crete, leadership, household, grace, works, and Pastoral records,
+    then run schema, graph, retrieval, factual, SQLite, report, and reviewer
+    checks.
+
+The active continuation target is Phase 5 Wave 47, Titus. Follow the
+controlled scope above; do not reopen completed 2 Timothy, 1 Timothy,
+2 Thessalonians, 1 Thessalonians, Colossians, Philippians, Ephesians,
+Galatians, 2 Corinthians, 1 Corinthians, Romans, Acts, John, Luke, Mark, or
+Matthew except to address a concrete review or regression finding.
