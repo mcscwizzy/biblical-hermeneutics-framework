@@ -192,6 +192,8 @@ def _format_reference(reference_context: ReferenceContext | None) -> str:
         location += f" {reference_context.chapter}"
     if reference_context.verse is not None:
         location += f":{reference_context.verse}"
+        if reference_context.verse_end is not None:
+            location += f"-{reference_context.verse_end}"
     if reference_context.testament:
         location += f" [{reference_context.testament}]"
     return location

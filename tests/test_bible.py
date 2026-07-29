@@ -9,6 +9,7 @@ from bhf_agent.bible import (
     BibleError,
     compare_translation_passages,
     build_selected_passage_context,
+    build_interpretation_context,
     geography_for_book,
     is_topic_style_search_query,
     list_books,
@@ -205,6 +206,22 @@ class BibleDatasetTests(unittest.TestCase):
         self.assertEqual(context["reference"], "John 1:1-2")
         self.assertEqual(context["selected_text"], "In the beginning was the Word.")
         self.assertIn("In him was life", context["chapter_context"])
+
+    def test_build_interpretation_context_is_chapter_first_and_adds_neighbors(self):
+        context = build_interpretation_context("John", 3, 16, data=self.data)
+
+        self.assertEqual(
+            context["context_scope"], "entire_chapter_plus_adjacent_passages"
+        )
+        self.assertEqual(context["chapter_verse_count"], 36)
+        self.assertIn(
+            "1. Now there was a man of the Pharisees", context["chapter_text"]
+        )
+        self.assertIn("36. He that believeth on the Son", context["chapter_text"])
+        self.assertIn("13.", context["preceding_passage"])
+        self.assertIn("17.", context["following_passage"])
+        self.assertEqual(context["preceding_reference"], "John 3:13-15")
+        self.assertEqual(context["following_reference"], "John 3:17-19")
 
     def test_compare_translation_passages_returns_verse_rows(self):
         self._with_installed_kjv()

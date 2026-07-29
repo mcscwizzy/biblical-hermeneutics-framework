@@ -87,12 +87,13 @@ Map rendering uses vendored Leaflet assets from `/static/vendor/leaflet/`
 instead of a CDN. The service worker precaches the Leaflet runtime, stylesheet,
 and marker/layer images so the map workspace can initialize while offline.
 
-## ASV Reader
+## Bible Reader
 
-The first screen is a reader for the bundled American Standard Version dataset
-at `bhf_agent/data/asv_bible.json`. ASV is the only translation bundled with
-BHF, and it works offline immediately with no setup. The normalized dataset
-records its upstream source in its translation metadata.
+The first screen is a reader for the bundled American Standard Version and King
+James Version datasets at `bhf_agent/data/asv_bible.json` and
+`bhf_agent/data/kjv_bible.json`. Both work offline immediately with no setup.
+The normalized datasets record their upstream sources in their translation
+metadata.
 
 Additional reviewed public-domain translations can be installed through the
 translation manager for local offline use. Copyrighted translations stay in the

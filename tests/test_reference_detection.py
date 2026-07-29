@@ -28,6 +28,12 @@ class ReferenceDetectionTests(unittest.TestCase):
         self.assertEqual(context.book, "Genesis")
         self.assertEqual(context.chapter, 1)
 
+    def test_detects_verse_ranges(self):
+        context = detect_reference("Explain John 3:16-18")
+
+        self.assertEqual(context.verse, 16)
+        self.assertEqual(context.verse_end, 18)
+
     def test_detects_topic_only_question(self):
         context = detect_reference("What does Paul say about women in church leadership?")
 

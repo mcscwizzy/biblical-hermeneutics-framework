@@ -72,6 +72,7 @@ class ReferenceContext(Serializable):
     book: Optional[str] = None
     chapter: Optional[int] = None
     verse: Optional[int] = None
+    verse_end: Optional[int] = None
     testament: Optional[str] = None
     is_reference_based: bool = False
     topic: Optional[str] = None
@@ -188,6 +189,7 @@ class PipelineContext(Serializable):
     reference_context: Optional[ReferenceContext] = None
     genre_context: Optional[GenreContext] = None
     question_context: Optional[QuestionContext] = None
+    scripture_context: Optional[dict[str, Any]] = None
     profile_name: Optional[str] = None
     profile_content: Optional[str] = None
     local_knowledge: Optional[Any] = None

@@ -12,6 +12,7 @@ from datetime import datetime, timezone
 from typing import Any, Callable, Optional
 
 from .adapters import ChatAdapter, OllamaAdapter, OpenAICompatibleAdapter
+from .bible import BibleError, build_interpretation_context
 from .ckl import (
     CULTURAL_CONTEXT_MAX_OUTPUT_TOKENS,
     CULTURAL_CONTEXT_MAX_TOKENS,
@@ -410,6 +411,7 @@ class BHFAgent:
             if canonical_fact_packet:
                 ctx.debug_metadata["deterministic_fact_packet"] = canonical_fact_packet
             ctx = self._detect_reference(ctx)
+            ctx = self._retrieve_scripture_context(ctx)
             ctx = self._classify_genre(ctx)
             ctx = self._classify_question_type(ctx)
             ctx = self._load_profile(ctx)
@@ -515,6 +517,14 @@ class BHFAgent:
                 "response_contract": response_contract,
                 "response_format_requested": False,
                 "response_format_policy": self.config.response_format_policy,
+                "scripture_context_required": False,
+                "scripture_context_retrieval_status": "not_started",
+                "scripture_context_translation": None,
+                "scripture_context_chapter": None,
+                "scripture_context_focal_reference": None,
+                "scripture_context_scope": None,
+                "scripture_context_chapter_verse_count": 0,
+                "scripture_context_prompt_tokens": 0,
                 "local_knowledge_keys": [],
                 "lexical_engine_enabled": self.config.lexicon.enabled,
                 "lexical_engine_lookup_attempted": False,
@@ -658,6 +668,47 @@ class BHFAgent:
     def _detect_reference(self, ctx: PipelineContext) -> PipelineContext:
         ctx.reference_context = detect_reference(ctx.original_question)
         return self._mark_stage(ctx, "detect_reference")
+
+    def _retrieve_scripture_context(self, ctx: PipelineContext) -> PipelineContext:
+        """Retrieve mandatory chapter-first context before any interpretation."""
+
+        reference = ctx.reference_context
+        if reference is None:
+            raise RuntimeError("reference_context must be set before Scripture retrieval")
+        ctx.debug_metadata["scripture_context_required"] = bool(
+            reference.is_reference_based
+        )
+        if not reference.is_reference_based:
+            ctx.scripture_context = None
+            ctx.debug_metadata["scripture_context_retrieval_status"] = "not_required"
+            return self._mark_stage(ctx, "retrieve_scripture_context")
+        if not reference.book or reference.chapter is None:
+            raise BibleError("A biblical book and chapter are required for Scripture retrieval")
+        try:
+            context = build_interpretation_context(
+                reference.book,
+                reference.chapter,
+                reference.verse,
+                reference.verse_end,
+            )
+        except BibleError:
+            ctx.debug_metadata["scripture_context_retrieval_status"] = "failed"
+            raise
+        ctx.scripture_context = context
+        ctx.debug_metadata.update(
+            {
+                "scripture_context_retrieval_status": "complete",
+                "scripture_context_translation": context["translation"].get("id"),
+                "scripture_context_chapter": context["chapter_reference"],
+                "scripture_context_focal_reference": context["focal_reference"],
+                "scripture_context_scope": context["context_scope"],
+                "scripture_context_chapter_verse_count": context["chapter_verse_count"],
+                "scripture_context_prompt_tokens": estimate_tokens(
+                    str(context["chapter_text"])
+                ),
+            }
+        )
+        return self._mark_stage(ctx, "retrieve_scripture_context")
 
     def _classify_genre(self, ctx: PipelineContext) -> PipelineContext:
         if ctx.reference_context is None:
@@ -1730,6 +1781,7 @@ class BHFAgent:
             knowledge_coverage_prompt=ctx.knowledge_expansion_context_prompt,
             runtime_profile_mode=self.config.runtime_profile_mode,
             response_contract_prompt=response_contract_prompt,
+            scripture_context=ctx.scripture_context,
         )
         ctx.system_prompt = prompt_result.system_prompt
         ctx.user_prompt = prompt_result.user_prompt
@@ -2422,6 +2474,18 @@ class BHFAgent:
                 "response_validation_removed_headings", []
             ),
             "local_knowledge_keys": ctx.debug_metadata.get("local_knowledge_keys", []),
+            "scripture_context": {
+                "required": ctx.debug_metadata.get("scripture_context_required", False),
+                "retrieval_status": ctx.debug_metadata.get(
+                    "scripture_context_retrieval_status"
+                ),
+                "translation": ctx.debug_metadata.get("scripture_context_translation"),
+                "chapter": ctx.debug_metadata.get("scripture_context_chapter"),
+                "focal_reference": ctx.debug_metadata.get(
+                    "scripture_context_focal_reference"
+                ),
+                "scope": ctx.debug_metadata.get("scripture_context_scope"),
+            },
             "canonical_library_object_ids": ctx.debug_metadata.get(
                 "canonical_library_object_ids", []
             ),

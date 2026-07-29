@@ -1,18 +1,21 @@
 # Translation Workflow
 
-BHF now uses one curated translation catalog and one local storage directory for
-all non-bundled Bible texts.
+BHF uses one curated translation catalog and one local storage directory for
+user-installed Bible texts.
 
 ## What Ships With BHF
 
-- ASV is the only bundled Bible translation.
+- ASV and KJV are bundled Bible translations.
 - ASV lives at `bhf_agent/data/asv_bible.json`.
+- KJV lives at `bhf_agent/data/kjv_bible.json`.
 - ASV is public domain in the United States.
-- ASV is always available offline with no setup.
+- Both translations are always available offline with no setup.
 
 ## What Can Be Installed
 
-Only translations listed in the curated catalog can appear in the UI.
+Only translations listed in the curated catalog can appear in the UI. Bundled
+translations are immediately available in the reader; other translations must
+be installed or imported first.
 
 - Reviewed public-domain or openly licensed translations may be downloaded from
   their curated raw source URL and stored locally for offline use.

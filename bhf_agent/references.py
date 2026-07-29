@@ -93,7 +93,8 @@ BOOK_PATTERN = "|".join(
 REFERENCE_RE = re.compile(
     rf"\b(?P<book>{BOOK_PATTERN})\.?\s+"
     r"(?P<chapter>\d{1,3})"
-    r"(?:\s*:\s*(?P<verse>\d{1,3}))?\b",
+    r"(?:\s*:\s*(?P<verse>\d{1,3})"
+    r"(?:\s*-\s*(?P<verse_end>\d{1,3}))?)?\b",
     re.IGNORECASE,
 )
 
@@ -104,11 +105,15 @@ def detect_reference(question: str) -> ReferenceContext:
         book = BOOK_ALIASES[match.group("book").lower()]
         chapter = int(match.group("chapter"))
         verse = int(match.group("verse")) if match.group("verse") else None
+        verse_end = (
+            int(match.group("verse_end")) if match.group("verse_end") else None
+        )
         testament = BOOKS[book][0]
         return ReferenceContext(
             book=book,
             chapter=chapter,
             verse=verse,
+            verse_end=verse_end,
             testament=testament,
             is_reference_based=True,
             topic=None,

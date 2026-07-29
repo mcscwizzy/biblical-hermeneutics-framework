@@ -13,6 +13,7 @@ from .translation_storage import (
     installed_translation_path,
     load_asv_bible,
     load_bible_dataset,
+    load_legacy_kjv_bible,
     normalize_translation_id,
     translations_root,
 )
@@ -20,6 +21,7 @@ from .translation_storage import (
 
 SCHEMA_VERSION = 1
 DEFAULT_TRANSLATION_ID = "asv"
+DEFAULT_KJV_TRANSLATION_ID = "kjv"
 
 
 class TranslationRegistryError(ValueError):
@@ -135,8 +137,8 @@ def default_translation_id(path: str | Path | None = None) -> str:
 
 def mark_translation_removed(translation_id: str, path: str | Path | None = None) -> None:
     normalized = normalize_translation_id(translation_id)
-    if normalized == DEFAULT_TRANSLATION_ID:
-        raise TranslationRegistryError("ASV cannot be removed")
+    if normalized in {DEFAULT_TRANSLATION_ID, DEFAULT_KJV_TRANSLATION_ID}:
+        raise TranslationRegistryError(f"{normalized.upper()} cannot be removed")
     with closing(_connect(path)) as connection:
         _ensure_schema(connection)
         row = connection.execute(
@@ -174,6 +176,7 @@ def _ensure_schema(connection: sqlite3.Connection) -> None:
     )
     connection.execute("PRAGMA user_version = 1")
     _seed_asv(connection)
+    _seed_kjv(connection)
     _migrate_sidecar_metadata(connection)
 
 
@@ -193,6 +196,26 @@ def _seed_asv(connection: sqlite3.Connection) -> None:
             DEFAULT_TRANSLATION_ID,
             str(translation.get("name") or "American Standard Version"),
             str(translation.get("source") or "bundled:bhf_agent/data/asv_bible.json"),
+        ),
+    )
+
+
+def _seed_kjv(connection: sqlite3.Connection) -> None:
+    data = load_legacy_kjv_bible()
+    translation = dict(data.get("translation", {}))
+    connection.execute(
+        """
+        INSERT INTO translations (id, name, source, installed, "default", created_date)
+        VALUES (?, ?, ?, 1, 0, strftime('%Y-%m-%dT%H:%M:%SZ', 'now'))
+        ON CONFLICT(id) DO UPDATE SET
+            name = excluded.name,
+            source = excluded.source,
+            installed = 1
+        """,
+        (
+            DEFAULT_KJV_TRANSLATION_ID,
+            str(translation.get("name") or "King James Version"),
+            "bundled:bhf_agent/data/kjv_bible.json",
         ),
     )
 

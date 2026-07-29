@@ -65,12 +65,12 @@ CURATED_ENGLISH_TRANSLATION_CATALOG: tuple[dict[str, Any], ...] = (
         "abbreviation": "KJV",
         "language": "English",
         "language_code": "en",
-        "bundled": False,
-        "availability": "remote_download",
-        "download_enabled": True,
+        "bundled": True,
+        "availability": "bundled",
+        "download_enabled": False,
         "license_status": "public_domain_us",
-        "install_mode": "direct_download",
-        "third_party": True,
+        "install_mode": "bundled",
+        "third_party": False,
         "source": {
             "provider_id": "beblia_github",
             "provider_name": "Beblia GitHub repository",
@@ -367,7 +367,9 @@ def translation_selector_sections(
         for item in installed_translation_ids
         if str(item).lower() in by_id
     }
-    installed_ids.add(DEFAULT_TRANSLATION_ID)
+    installed_ids.update(
+        entry["id"] for entry in catalog if entry.get("bundled")
+    )
     default_id = str(default_translation_id or DEFAULT_TRANSLATION_ID).lower()
     if default_id not in installed_ids:
         default_id = DEFAULT_TRANSLATION_ID
@@ -384,7 +386,7 @@ def translation_selector_sections(
         item["can_set_default"] = bool(item["installed"])
         item["can_remove"] = bool(item["installed"] and not entry.get("bundled", False))
         item["can_download"] = False
-        item["status_label"] = "Built in" if entry["id"] == "asv" else "Installed locally"
+        item["status_label"] = "Built in" if entry.get("bundled") else "Installed locally"
 
         if entry["id"] in installed_ids:
             installed.append(item)
