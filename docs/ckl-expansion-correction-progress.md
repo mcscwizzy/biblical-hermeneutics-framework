@@ -6,7 +6,7 @@ This is the durable handoff for the **BHF Canonical Knowledge Library Expansion
 and Correction Plan**. The supplied plan explicitly says to begin with the
 repository audit and Phase 1 quality reporting, avoid immediate bulk content
 generation, and stop after each major phase. Phases 1–4 are now implemented at
-the schema/runtime level. Phase 5 Waves 1–53 have corrected 61 of the 66 book
+the schema/runtime level. Phase 5 Waves 1–55 have corrected 63 of the 66 book
 records as honest, source-backed drafts; none has been mechanically approved.
 
 ## Current checkpoint
@@ -14,10 +14,10 @@ records as honest, source-backed drafts; none has been mechanically approved.
 | Plan area | Status | Continuation note |
 | --- | --- | --- |
 | Phase 1: inventory, reporting, quality metrics | **Implemented** | Deep JSON and Markdown reports, CLI support, and calculation tests are present. |
-| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Sixty-one records now have evidence-based draft statuses; 559 still need explicit migration. |
-| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Sixty-one records now have explicit layers; 559 still need migration. |
+| Phase 2: section-level completeness | **Implemented; content migration pending** | Additive `section_status`, type-specific rules, readiness helpers, approval gates, audit warnings, and tests are present. Sixty-three records now have evidence-based draft statuses; 557 still need explicit migration. |
+| Phase 3: knowledge-layer classification | **Implemented; content migration pending** | Controlled primary/secondary layers flow through JSON, retrieval, prompt context, and SQLite payloads. Sixty-three records now have explicit layers; 557 still need migration. |
 | Phase 4: certainty and dispute taxonomies | **Implemented; evidence migration pending** | Current taxonomies and granular claim records are supported. Legacy values remain readable but are forbidden for approved notes; no `unknown` value was guessed or mass-relabeled. |
-| Phase 5: audit/correct all 66 books | **Waves 1–53 implemented; human review pending** | Sixty-one books through 1 John, with Lamentations still outstanding, are corrected drafts with sources, claims, tests, and reviewer notes. Five books remain. |
+| Phase 5: audit/correct all 66 books | **Waves 1–55 implemented; human review pending** | Sixty-three books through 3 John, with Lamentations still outstanding, are corrected drafts with sources, claims, tests, and reviewer notes. Three books remain. |
 | Phases 6–20 | Not started | Follow the supplied order after the foundation is upgraded. |
 | Phase 21: controlled generation workflow | Partially enabled | Reporting, type-specific completeness, and approval gates are present; scoped human-review events still need Phase 19. |
 
@@ -6348,10 +6348,194 @@ Active next wave: continue Phase 5 with a controlled 2 John correction wave:
     antichrist, hospitality, and General Epistle records, then run schema,
     graph, retrieval, factual, SQLite, report, and reviewer checks.
 
-The active continuation target is Phase 5 Wave 54, 2 John. Lamentations also
+Wave 54 2 John completed the controlled scope above. The record remains an
+unapproved draft and its reviewer checklist is in
+[`ckl-phase-5-2-john-review.md`](ckl-phase-5-2-john-review.md).
+
+The corrected record contains twenty-five sourced claims, thirty-four
+current-taxonomy interpretive notes, thirty sources, twenty-six URL-bearing
+external sources, twenty-eight high-precision top-level aliases plus retrieval
+metadata, fifteen normalized Scripture anchors, ten Hebrew entries, thirty
+Greek entries, and five verified graph relationships. Its focused
+eight-method factual and SQLite suite and forty book-scoped retrieval
+questions pass. The full 620-test CKL suite, validators, graph audit, generated
+reports, and final SQLite artifact are recorded in the reviewer report. Six
+book-scoped queries initially ranked the completed Gospel of John record
+first; exact 2 John aliases now disambiguate them without changing that
+completed record.
+
+After Phase 5 Wave 54, the refreshed report records:
+
+| Migration metric | Result |
+| --- | ---: |
+| Records marked `complete` / `draft` | 558 / 62 |
+| Complete records with candidate Phase 2 section gaps | 557 |
+| Raw records missing explicit `section_status` | 558 |
+| Raw records with incomplete type-required sections | 620 |
+| Raw records missing explicit `knowledge_layers` | 558 |
+| Interpretive notes using current taxonomies | 2,185 |
+| Interpretive notes still using legacy taxonomies | 1,194 |
+| Granular claims authored | 1,403 |
+| External sources | 1,441 |
+| Source references that do not resolve | 0 |
+| Invalid source support targets | 0 |
+| Unresolved legacy object references | 14 |
+| Scripture reference errors | 0 |
+| Graph edges / unknown targets / orphaned records | 3,311 / 0 / 0 |
+| Missing reciprocal relationship suggestions | 2,859 |
+| Validator warnings / errors | 14 / 0 |
+
+Active next wave: continue Phase 5 with a controlled 3 John correction wave:
+
+1. create book-specific factual and retrieval regression fixtures before
+   editing content;
+2. audit every populated field against 3 John and remove generic Johannine
+   templates, unsupported direct apostolic authorship, Ephesus, date,
+   destination, persecution, opponent-system, itinerary, and church-order
+   claims;
+3. gather the critical Greek text, early manuscripts and versions, Hebrew
+   Bible and Septuagint truth, hospitality, name, stranger, testimony, and
+   peace comparanda, Greco-Roman letter, travel, patronage, and hospitality
+   evidence, the Fourth Gospel and other Johannine letters, early reception,
+   and later ecclesial use;
+4. distinguish the elder as named sender from proposed identities; Gaius as
+   named addressee from other New Testament people named Gaius; the traveling
+   siblings and strangers; Diotrephes as the letter's polemically portrayed
+   local figure; Demetrius as the commended figure; the friends, a church, and
+   later interpreters without inventing one Johannine institution or complete
+   community biography;
+5. map 3 John 1:1-4; 1:5-8; 1:9-12; and 1:13-15 while indexing elder, Gaius,
+   love in truth, health and soul, walking in truth, children, faithful work,
+   siblings, strangers, testimony, hospitality, going out for the Name,
+   accepting nothing from Gentiles, coworkers with truth, writing to the
+   church, Diotrephes, first place, refusal, malicious words, expelled
+   supporters, imitation, Demetrius, paper and ink, face-to-face speech, peace,
+   friends, and name-by-name greeting;
+6. qualify authorship, elder title, date, provenance, destination, relation to
+   1-2 John and the Fourth Gospel, Gaius's identity and health, genre,
+   literary integrity, the lost or prior church communication, Johannine
+   network and conflict reconstructions, traveling-worker and patronage
+   systems, Diotrephes's role and motives, Demetrius's role, institutional
+   development, historical reliability, and reception;
+7. preserve uncertainty concerning beloved language, prosperity and health,
+   soul, walking in truth, the elder's children, strangers, testimony before
+   church, worthy sending, the Name, receiving nothing from Gentiles, duty to
+   support, coworkers with truth, what was written to the church, loving first
+   place, authority refused, malicious words, refusal of siblings, prevention
+   and expulsion, imitation, Demetrius's testimony, writing materials,
+   face-to-face joy, friends, peace, and name-by-name greeting;
+8. distinguish biblical wording, epistolary and elder voice, historical
+   reconstruction, polemical characterization, lexical claim, textual
+   variant, Gospel and 1/2 John comparison, doctrine, reception, pastoral
+   application, and modern analogy;
+9. add safeguards against antisemitism, supersessionism, xenophobia, opponent
+   dehumanization, schism weaponization, coercive exclusion, surveillance,
+   spiritual abuse, authoritarian leadership, anti-intellectualism,
+   hospitality manipulation, prosperity teaching, health and disability
+   shame, misogyny, anti-LGBTQ coercion, public shaming, nationalism, colonial
+   mission, forced conversion, religious violence, financial extraction, and
+   ecological neglect; and
+10. keep human review missing, ensure 3 John ranks ahead of broad John,
+    Johannine, elder, Gaius, Diotrephes, Demetrius, truth, hospitality,
+    traveling-worker, and General Epistle records, then run schema, graph,
+    retrieval, factual, SQLite, report, and reviewer checks.
+
+Wave 55 3 John completed the controlled scope above. The record remains an
+unapproved draft and its reviewer checklist is in
+[`ckl-phase-5-3-john-review.md`](ckl-phase-5-3-john-review.md).
+
+The corrected record contains twenty-six sourced claims, thirty-five
+current-taxonomy interpretive notes, thirty sources, twenty-six URL-bearing
+external sources, thirty high-precision top-level aliases plus retrieval
+metadata, seventeen normalized Scripture anchors, ten Hebrew entries,
+thirty-three Greek entries, and five verified graph relationships. Its
+focused eight-method factual and SQLite suite and forty book-scoped retrieval
+questions pass. The full 628-test CKL suite, validators, graph audit,
+generated reports, and final SQLite artifact are recorded in the reviewer
+report. The legacy record lost many book-scoped queries to the completed
+Gospel of John record; exact 3 John aliases disambiguate all fixture queries
+without changing that completed record.
+
+After Phase 5 Wave 55, the refreshed report records:
+
+| Migration metric | Result |
+| --- | ---: |
+| Records marked `complete` / `draft` | 557 / 63 |
+| Complete records with candidate Phase 2 section gaps | 556 |
+| Raw records missing explicit `section_status` | 557 |
+| Raw records with incomplete type-required sections | 620 |
+| Raw records missing explicit `knowledge_layers` | 557 |
+| Interpretive notes using current taxonomies | 2,220 |
+| Interpretive notes still using legacy taxonomies | 1,192 |
+| Granular claims authored | 1,429 |
+| External sources | 1,467 |
+| Source references that do not resolve | 0 |
+| Invalid source support targets | 0 |
+| Unresolved legacy object references | 14 |
+| Scripture reference errors | 0 |
+| Graph edges / unknown targets / orphaned records | 3,311 / 0 / 0 |
+| Missing reciprocal relationship suggestions | 2,859 |
+| Validator warnings / errors | 14 / 0 |
+
+Active next wave: continue Phase 5 with a controlled Jude correction wave:
+
+1. create book-specific factual and retrieval regression fixtures before
+   editing content;
+2. audit every populated field against Jude and remove generic General
+   Epistle templates, unsupported direct apostolic authorship, Asia Minor,
+   diaspora, date, destination, persecution, itinerary, and church-order
+   claims;
+3. gather the critical Greek text, early papyri, manuscripts and versions,
+   Hebrew Bible and Septuagint judgment, wilderness, angels, Sodom, Cain,
+   Balaam, Korah, prophecy, mercy, and doxology sources, Second Temple Jewish
+   and early Christian comparanda including 1 Enoch and the Moses tradition,
+   Greco-Roman invective and letter forms, 2 Peter, early reception, and later
+   doctrinal use;
+4. distinguish Jude as the named servant of Jesus Christ and brother of James
+   from proposed historical identities; James, the called and beloved or
+   kept addressees, intruders as polemically portrayed figures, Jesus Christ,
+   God, angels, Michael, the devil, Cain, Balaam, Korah, Enoch, the apostles,
+   doubters and endangered people, and later interpreters without inventing a
+   complete opponent system or community history;
+5. map Jude 1:1-4; 1:5-16; 1:17-23; and 1:24-25 while indexing calling, love,
+   keeping, mercy, peace, faith once delivered, intruders, grace, denial,
+   exodus judgment, unbelief, angels, chains, Sodom and Gomorrah, dreams,
+   flesh, authority, glories, Michael, Moses's body, Cain, Balaam, Korah,
+   love feasts, shepherds, clouds, trees, waves, wandering stars, Enoch's
+   prophecy, grumblers, desire, flattery, apostolic prediction, scoffers,
+   division, Spirit, building, prayer, waiting, mercy, rescue, fear,
+   defilement, preservation, joy, glory, majesty, dominion, and authority;
+6. qualify authorship, the brother-of-James designation, date, provenance,
+   destination, audience, genre, integrity, relation to 2 Peter, opponents,
+   love-feast and leadership reconstructions, use of Jewish literary
+   traditions, historical reliability, canonical reception, and doxology;
+7. preserve uncertainty concerning textual variants in verses 1, 5, and
+   22-23; Jesus as exodus agent; angels' sin and prison; eternal fire;
+   dreaming, flesh, lordship and glories; Michael and Moses's body; natural
+   knowledge; Cain, Balaam and Korah analogies; love feasts; twice-dead trees;
+   Enoch's seventh-from-Adam prophecy; apostles and scoffers; Spirit language;
+   faith and prayer; differentiated mercy and rescue; garment imagery; being
+   kept from stumbling; and every doxological title;
+8. distinguish biblical wording, epistolary and polemical voice, historical
+   reconstruction, lexical claim, textual variant, Jewish literary
+   reception, relation to 2 Peter, doctrine, reception, pastoral application,
+   and modern analogy;
+9. add safeguards against antisemitism, supersessionism, opponent
+   dehumanization, heresy-hunting, schism weaponization, sexual shaming,
+   coercive discipline, surveillance, spiritual abuse, authoritarian
+   leadership, anti-intellectualism, mental-health stigma, misogyny,
+   anti-LGBTQ coercion, public shaming, nationalism, colonial mission, forced
+   conversion, religious violence, prosperity extraction, and ecological
+   neglect; and
+10. keep human review missing, ensure Jude ranks ahead of broad Judas, James,
+    2 Peter, General Epistle, faith, angels, Sodom, Michael, Cain, Balaam,
+    Korah, Enoch, false-teaching, mercy, rescue, and doxology records, then run
+    schema, graph, retrieval, factual, SQLite, report, and reviewer checks.
+
+The active continuation target is Phase 5 Wave 56, Jude. Lamentations also
 remains outstanding and must be scheduled before Phase 5 closes. Follow the
-controlled scope above; do not reopen completed 1 John, 2 Peter, 1 Peter,
-James, Hebrews, Philemon, Titus, 2 Timothy, 1 Timothy, 2 Thessalonians,
-1 Thessalonians, Colossians, Philippians, Ephesians, Galatians, 2 Corinthians,
-1 Corinthians, Romans, Acts, John, Luke, Mark, or Matthew except to address a
-concrete review or regression finding.
+controlled scope above; do not reopen completed 3 John, 2 John, 1 John,
+2 Peter, 1 Peter, James, Hebrews, Philemon, Titus, 2 Timothy, 1 Timothy,
+2 Thessalonians, 1 Thessalonians, Colossians, Philippians, Ephesians,
+Galatians, 2 Corinthians, 1 Corinthians, Romans, Acts, John, Luke, Mark, or
+Matthew except to address a concrete review or regression finding.
