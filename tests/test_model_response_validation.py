@@ -41,6 +41,15 @@ class ModelResponseValidationTests(unittest.TestCase):
         self.assertTrue(result.passed)
         self.assertEqual(result.sanitized_text, "## Short Answer\nShechem anchors covenant renewal.")
 
+    def test_answer_contract_rejects_raw_ckl_entry_serialization(self):
+        result = normalize_model_response(
+            "## Entry: Hannah\nCategory: Person\nSummary:\nHannah was Samuel's mother.",
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertFalse(result.passed)
+        self.assertIn("raw canonical knowledge library entries", " ".join(result.errors).lower())
+
     def test_empty_structured_answer_is_invalid_model_content(self):
         for payload in ("{}", "[]", '{"answer":""}', '{"answer":"   "}'):
             with self.subTest(payload=payload):

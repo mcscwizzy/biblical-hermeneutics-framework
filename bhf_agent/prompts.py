@@ -58,6 +58,8 @@ Explain it naturally and clearly for the user.
 Distinguish facts from interpretation when it matters.
 Do not describe the retrieval process.
 Do not mention filenames, scores, context blocks, indexes, or internal system behavior.
+Never reproduce CKL entry labels such as `Entry:`, `Category:`, `Summary:`, or
+`Source ID:`. Those labels identify research serialization, not an answer.
 Do not output internal analysis.
 Do not invent facts that are not supported by the supplied context.
 When the supplied context is insufficient, state the limitation briefly.
@@ -94,7 +96,7 @@ Rules:
 - Write for an ordinary Bible reader: clear, careful, and substantial without needless jargon.
 """
 
-PROMPT_VERSION = "unified-answer-v1"
+PROMPT_VERSION = "unified-answer-v2"
 
 
 @dataclass(frozen=True)

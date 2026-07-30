@@ -50,6 +50,11 @@ PROVIDER_ERROR_RE = re.compile(
 RETRIEVAL_SCORE_RE = re.compile(
     r"(?i)\b(?:retrieval|relevance|match)\s+score\b|\bscore\s*[:=]\s*(?:0(?:\.\d+)?|1(?:\.0+)?)\b"
 )
+# CKL prompt entries are research serialization, not user-facing prose.  The
+# combined shape is deliberately strict so an ordinary use of "entry" or
+# "summary" in an answer is not rejected.
+CKL_ENTRY_HEADING_RE = re.compile(r"(?im)^\s*(?:#{1,6}\s*)?entry\s*:")
+CKL_FIELD_RE = re.compile(r"(?im)^\s*(?:category|summary|source id(?:s)?)\s*:")
 JSON_FENCE_RE = re.compile(r"^\s*```(?:json)?\s*([\s\S]*?)\s*```\s*$", re.IGNORECASE)
 FORBIDDEN_RESPONSE_KEYS = {
     "analysis",
@@ -327,6 +332,9 @@ def normalize_model_response(
     if RETRIEVAL_SCORE_RE.search(sanitized_text):
         errors.append("Model response exposes retrieval scoring metadata.")
 
+    if _looks_like_ckl_entry_dump(sanitized_text):
+        errors.append("Model response exposes raw Canonical Knowledge Library entries.")
+
     return ModelResponseValidationResult(
         passed=not errors,
         sanitized_text=sanitized_text,
@@ -339,6 +347,12 @@ def normalize_model_response(
         raw_text_was_json=raw_text_was_json,
         diagnostics=payload_diagnostics,
     )
+
+
+def _looks_like_ckl_entry_dump(text: str) -> bool:
+    """Detect the CKL prompt layout without confusing it with normal prose."""
+
+    return bool(CKL_ENTRY_HEADING_RE.search(text) and CKL_FIELD_RE.search(text))
 
 
 def _normalize_search_results(text: str) -> tuple[str, list[str]]:

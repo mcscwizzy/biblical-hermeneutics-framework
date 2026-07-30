@@ -105,6 +105,32 @@ class ValidationResult(Serializable):
 
 
 @dataclass
+class RetrievedEvidence(Serializable):
+    """Research material selected for a final answer, never display prose.
+
+    Keeping evidence in a separate value prevents prompt/rendering code from
+    accidentally treating a CKL serialization as the answer itself.
+    """
+
+    passage_text: str = ""
+    immediate_context: str = ""
+    ckl_entries: list[dict[str, Any]] = field(default_factory=list)
+    lexical_entries: list[dict[str, Any]] = field(default_factory=list)
+    historical_context: list[dict[str, Any]] = field(default_factory=list)
+    direct_facts: list[dict[str, Any]] = field(default_factory=list)
+    selected_references: list[str] = field(default_factory=list)
+
+
+@dataclass
+class FinalAnswer(Serializable):
+    """Validated user-facing prose produced by the synthesis stage."""
+
+    text: str
+    citations: list[str] = field(default_factory=list)
+    warnings: list[str] = field(default_factory=list)
+
+
+@dataclass
 class RepairDecision(Serializable):
     should_repair: bool
     reason: str
@@ -193,6 +219,7 @@ class PipelineContext(Serializable):
     profile_name: Optional[str] = None
     profile_content: Optional[str] = None
     local_knowledge: Optional[Any] = None
+    retrieved_evidence: Optional[RetrievedEvidence] = None
     canonical_library_context: Optional[dict[str, Any]] = None
     canonical_library_prompt: Optional[str] = None
     canonical_library_query: Optional[str] = None
@@ -214,6 +241,7 @@ class PipelineContext(Serializable):
     repaired_validation_result: Optional[ValidationResult] = None
     repair_applied: bool = False
     final_answer: Optional[str] = None
+    final_response: Optional[FinalAnswer] = None
     debug_metadata: dict[str, Any] = field(default_factory=dict)
     warnings: list[str] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)

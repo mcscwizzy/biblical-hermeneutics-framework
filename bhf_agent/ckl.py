@@ -1286,10 +1286,12 @@ def build_canonical_fallback_answer(
     answer_mode: str = "study",
     retrieval_failed: bool = False,
 ) -> dict[str, Any]:
-    """Build a deterministic user-facing CKL fallback response.
+    """Return a safe limitation message for legacy fallback callers.
 
-    The returned text is safe for ordinary users. It intentionally omits
-    retrieval scores, source paths, and other internal metadata.
+    CKL records are research evidence. They must never be serialized as a
+    substitute for a synthesized user-facing answer, even if model generation
+    is unavailable. The normal ask pipeline now treats this condition as a
+    controlled synthesis failure instead of calling this compatibility helper.
     """
 
     if retrieval_failed:
@@ -1351,29 +1353,15 @@ def build_canonical_fallback_answer(
             "truncated": bool(metadata.get("truncated", False)),
         }
 
-    rendered = _render_canonical_prompt_context(
-        prompt_context,
-        answer_mode=normalized_answer_mode,
-        include_internal_details=False,
-        include_source_ids=False,
+    del normalized_answer_mode
+    message = (
+        "BHF found relevant study evidence but could not generate a validated "
+        "final answer. Please try the question again when the model backend is available."
     )
-    if not rendered:
-        message = "The Canonical Knowledge Library does not currently have a strong match for this question."
-        return {
-            "text": message,
-            "kind": "no_strong_match",
-            "message": message,
-            "strong_match": False,
-            "selected_entry_ids": selected_entry_ids,
-            "entry_count": int(metadata.get("entry_count") or 0),
-            "estimated_tokens": int(metadata.get("estimated_tokens") or 0),
-            "truncated": bool(metadata.get("truncated", False)),
-        }
-
     return {
-        "text": rendered,
-        "kind": "summary",
-        "message": None,
+        "text": message,
+        "kind": "synthesis_unavailable",
+        "message": message,
         "strong_match": True,
         "selected_entry_ids": selected_entry_ids,
         "entry_count": int(metadata.get("entry_count") or 0),

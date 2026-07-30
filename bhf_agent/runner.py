@@ -19,7 +19,6 @@ from .ckl import (
     CULTURAL_CONTEXT_MAX_OUTPUT_TOKENS,
     CULTURAL_CONTEXT_MAX_TOKENS,
     build_canonical_context,
-    build_canonical_fallback_answer,
     build_canonical_query,
     canonical_context_has_strong_match,
     format_canonical_context_for_prompt,
@@ -46,8 +45,10 @@ from .models import (
     AgentResult,
     ChatRequest,
     ChatResponse,
+    FinalAnswer,
     PipelineContext,
     RepairAttempt,
+    RetrievedEvidence,
     ValidationResult,
 )
 from .model_response_validation import (
@@ -426,10 +427,9 @@ class BHFAgent:
             if ctx.raw_model_response is None:
                 ctx = self._build_prompts(ctx)
                 ctx = self._call_model(ctx)
-                if self._should_use_deterministic_fallback_after_model_call(ctx, response_contract):
-                    ctx = self._apply_deterministic_fallback(
+                if self._should_fail_synthesis_after_model_call(ctx, response_contract):
+                    ctx = self._mark_synthesis_failure(
                         ctx,
-                        response_contract=response_contract,
                         reason="model backend was unavailable or returned no usable text",
                     )
                 else:
@@ -437,10 +437,9 @@ class BHFAgent:
                     if response_contract == ANSWER_CONTRACT:
                         ctx = self._validate_response(ctx)
                         ctx = self._repair_response(ctx)
-                        if self._should_use_deterministic_fallback_after_validation(ctx):
-                            ctx = self._apply_deterministic_fallback(
+                        if self._should_fail_synthesis_after_validation(ctx):
+                            ctx = self._mark_synthesis_failure(
                                 ctx,
-                                response_contract=response_contract,
                                 reason="validated model output was still invalid",
                             )
                     elif response_contract == SEARCH_RESULTS_CONTRACT and not bool(
@@ -763,10 +762,98 @@ class BHFAgent:
         if ctx.debug_metadata.get("deterministic_fact_packet"):
             self._apply_deterministic_fact_packet(ctx)
             self._evaluate_answer_coverage(ctx)
+            self._package_retrieved_evidence(ctx)
             return self._mark_stage(ctx, "lookup_local_knowledge")
         self._lookup_canonical_library(ctx)
         self._evaluate_answer_coverage(ctx)
+        self._package_retrieved_evidence(ctx)
         return self._mark_stage(ctx, "lookup_local_knowledge")
+
+    def _package_retrieved_evidence(self, ctx: PipelineContext) -> None:
+        """Keep selected research separate from final answer prose.
+
+        This package is intentionally internal. Prompt construction can use its
+        constituent evidence, while result rendering receives only FinalAnswer.
+        """
+
+        scripture = ctx.scripture_context or {}
+        canonical_context = ctx.canonical_library_context or {}
+        metadata = (
+            canonical_context.get("metadata")
+            if isinstance(canonical_context, dict)
+            else {}
+        )
+        metadata = metadata if isinstance(metadata, dict) else {}
+        topics = (
+            list(canonical_context.get("retrieved_topics") or [])
+            if isinstance(canonical_context, dict)
+            else []
+        )
+        direct_textual_evidence = metadata.get("direct_textual_evidence")
+        direct_facts = list(
+            direct_textual_evidence.get("facts") or []
+            if isinstance(direct_textual_evidence, Mapping)
+            else []
+        )
+        references: list[str] = []
+
+        def add_reference(value: Any) -> None:
+            text = str(value or "").strip()
+            if text and text not in references:
+                references.append(text)
+
+        add_reference(scripture.get("focal_reference"))
+        for fact in direct_facts:
+            if isinstance(fact, Mapping):
+                add_reference(fact.get("reference"))
+        for topic in topics:
+            if not isinstance(topic, Mapping):
+                continue
+            for reference in topic.get("scripture_references") or []:
+                if isinstance(reference, Mapping):
+                    add_reference(reference.get("reference"))
+                else:
+                    add_reference(reference)
+
+        lexical_entries: list[dict[str, Any]] = []
+        if isinstance(ctx.local_knowledge, LocalKnowledgeBundle):
+            lexical_entries = [
+                {
+                    "key": entry.key,
+                    "language": entry.language,
+                    "original": entry.original,
+                    "transliteration": entry.transliteration,
+                    "glosses": list(entry.glosses),
+                    "semantic_range": list(entry.semantic_range),
+                }
+                for entry in ctx.local_knowledge.lexical_entries
+            ]
+        ctx.retrieved_evidence = RetrievedEvidence(
+            passage_text=str(scripture.get("focal_text") or ""),
+            immediate_context="\n\n".join(
+                value
+                for value in (
+                    str(scripture.get("preceding_passage") or "").strip(),
+                    str(scripture.get("following_passage") or "").strip(),
+                )
+                if value
+            ),
+            ckl_entries=[
+                dict(topic) for topic in topics if isinstance(topic, Mapping)
+            ],
+            lexical_entries=lexical_entries,
+            historical_context=[
+                dict(topic)
+                for topic in topics
+                if isinstance(topic, Mapping) and topic.get("historical_context")
+            ],
+            direct_facts=[
+                dict(fact) for fact in direct_facts if isinstance(fact, Mapping)
+            ],
+            selected_references=references,
+        )
+        ctx.debug_metadata["evidence_packaged"] = True
+        ctx.debug_metadata["evidence_selected_reference_count"] = len(references)
 
     def _lookup_lexical_engine(self, ctx: PipelineContext) -> None:
         """Retrieve only explicit original-language targets before CKL lookup."""
@@ -1482,6 +1569,23 @@ class BHFAgent:
             ctx.debug_metadata["public_answer_cache_hit"] = False
             return ctx
 
+        cached_answer = entry.answer.strip()
+        cached_validation = normalize_model_response(
+            cached_answer,
+            response_contract=ANSWER_CONTRACT,
+            diagnostics={"cache_layer": "public_answer_cache"},
+        )
+        if not cached_validation.passed:
+            ctx.debug_metadata["public_answer_cache_hit"] = False
+            ctx.debug_metadata["public_answer_cache_lookup_status"] = "rejected_unsafe_answer"
+            ctx.debug_metadata["public_answer_cache_error"] = "; ".join(
+                cached_validation.errors
+            )
+            ctx.warnings.append(
+                "A cached answer was rejected because it was not safe final prose."
+            )
+            return ctx
+
         usage_count = entry.usage_count
         try:
             self.public_answer_cache.increment_usage(normalized_question, ctx.answer_mode)
@@ -1490,7 +1594,7 @@ class BHFAgent:
             ctx.warnings.append(f"Public answer cache usage tracking failed: {exc}")
             ctx.debug_metadata["public_answer_cache_error"] = str(exc)
 
-        cached_answer = entry.answer.strip()
+        cached_answer = cached_validation.sanitized_text
         cache_entry_payload = entry.to_dict()
         cache_entry_payload["usage_count"] = usage_count
         ctx.raw_model_response = ChatResponse(
@@ -1612,6 +1716,22 @@ class BHFAgent:
             return ctx
 
         answer_text = str(cached_response.get("answer_text") or "").strip()
+        cached_validation = normalize_model_response(
+            answer_text,
+            response_contract=self._response_contract(ctx.original_question),
+            diagnostics={"cache_layer": "runtime_response_cache"},
+        )
+        if not cached_validation.passed:
+            ctx.debug_metadata["canonical_library_response_cache_hit"] = False
+            ctx.debug_metadata["canonical_library_response_cache_status"] = "rejected_unsafe_answer"
+            ctx.debug_metadata["canonical_library_response_cache_error"] = "; ".join(
+                cached_validation.errors
+            )
+            ctx.warnings.append(
+                "A cached response was rejected because it was not safe final prose."
+            )
+            return ctx
+        answer_text = cached_validation.sanitized_text
         ctx.raw_model_response = ChatResponse(
             text=answer_text,
             model=self.config.model,
@@ -1862,27 +1982,58 @@ class BHFAgent:
             return structured_response_format()
         return None
 
-    def _should_use_deterministic_fallback_after_model_call(
+    def _should_fail_synthesis_after_model_call(
         self,
         ctx: PipelineContext,
         response_contract: str,
     ) -> bool:
-        del response_contract
-        if not bool(ctx.debug_metadata.get("ckl_context_injected")):
+        if response_contract != ANSWER_CONTRACT:
             return False
         if ctx.errors:
             return True
         return not bool((ctx.raw_answer_text or "").strip())
 
-    def _should_use_deterministic_fallback_after_validation(
+    def _should_fail_synthesis_after_validation(
         self,
         ctx: PipelineContext,
     ) -> bool:
         if ctx.validation_result is None:
             return True
-        if not bool(ctx.debug_metadata.get("ckl_context_injected")):
-            return False
-        return not ctx.validation_result.passed
+        return (
+            not bool(ctx.debug_metadata.get("response_validation_passed"))
+            or not ctx.validation_result.passed
+        )
+
+    def _mark_synthesis_failure(
+        self,
+        ctx: PipelineContext,
+        *,
+        reason: str,
+    ) -> PipelineContext:
+        """Fail safely when final prose cannot be produced.
+
+        Retrieval data is evidence, not an alternative answer format.  In
+        particular, a timeout, parser failure, or rejected repair must never
+        turn CKL entry serialization into the user's response.
+        """
+
+        if not ctx.errors:
+            ctx.errors.append(
+                "BHF could not produce a validated final answer from the model response."
+            )
+        ctx.cleaned_answer_text = ""
+        ctx.final_answer = ""
+        ctx.final_response = FinalAnswer(text="", warnings=[reason])
+        ctx.validation_result = ValidationResult(
+            passed=False,
+            score=0,
+            warnings=[reason],
+            suggestions=["Try the request again when the model backend is available."],
+        )
+        ctx.debug_metadata["synthesis_failed"] = True
+        ctx.debug_metadata["synthesis_failure_reason"] = reason
+        ctx.debug_metadata["fallback_used"] = False
+        return ctx
 
     def _deterministic_fallback_response(
         self,
@@ -1909,14 +2060,9 @@ class BHFAgent:
                 "parsed_payload": payload,
             }
 
-        fallback = build_canonical_fallback_answer(
-            ctx.canonical_library_context,
-            max_context_tokens=self.config.canonical_library.max_context_tokens,
-            answer_mode=ctx.answer_mode,
-            retrieval_failed=bool(ctx.debug_metadata.get("canonical_library_error")),
-        )
-        fallback["parsed_payload"] = None
-        return fallback
+        # The search-results contract is the only intentionally deterministic
+        # retrieval response. Normal ask responses always require synthesis.
+        raise RuntimeError("Deterministic answer fallback is not available for prose answers")
 
     def _apply_deterministic_fallback(
         self,
@@ -2364,7 +2510,12 @@ class BHFAgent:
         return False, "repaired answer did not improve validation"
 
     def _finalize_result(self, ctx: PipelineContext) -> PipelineContext:
-        ctx.final_answer = ctx.cleaned_answer_text or ""
+        # Only validated synthesis prose can cross the result boundary. Evidence
+        # remains in ``ctx.retrieved_evidence`` and debug-only metadata.
+        if ctx.debug_metadata.get("synthesis_failed"):
+            ctx.final_answer = ""
+        else:
+            ctx.final_answer = ctx.cleaned_answer_text or ""
         validation_errors = list(
             ctx.debug_metadata.get("response_validation_errors") or []
         )
@@ -2387,6 +2538,12 @@ class BHFAgent:
         if not ctx.final_answer.strip():
             if not validation_errors and not ctx.errors:
                 ctx.errors.append("Model response was empty after validation.")
+        evidence = ctx.retrieved_evidence
+        ctx.final_response = FinalAnswer(
+            text=ctx.final_answer,
+            citations=list(evidence.selected_references) if evidence else [],
+            warnings=list(ctx.warnings),
+        )
         message = (
             "Finalizing fallback answer"
             if ctx.debug_metadata.get("fallback_used")
@@ -2588,7 +2745,7 @@ class BHFAgent:
             model_metadata["raw_provider_response"] = chat_response.raw_provider_response
 
         return AgentResult(
-            answer_text=ctx.final_answer or "",
+            answer_text=(ctx.final_response.text if ctx.final_response else ctx.final_answer or ""),
             reference_context=ctx.reference_context,
             genre_context=ctx.genre_context,
             question_context=ctx.question_context,
