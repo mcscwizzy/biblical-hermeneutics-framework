@@ -118,7 +118,6 @@ function getPanelElements() {
     routeToggle: document.querySelector("[data-route-toggle]"),
     historicalPeriod: document.querySelector("[data-historical-period]"),
     mapBrowser: document.querySelector("[data-map-browser]"),
-    mapModeButtons: document.querySelectorAll("[data-map-mode-switch]"),
     studyMode: document.querySelector("[data-map-study-mode]"),
     contextSummary: document.querySelector("[data-map-context-summary]"),
     layerControls: document.querySelector("#map-layer-controls"),
@@ -550,7 +549,7 @@ function moveWorkspaceToHost(hostType) {
 
 function setMapMode(nextMode) {
   mapMode = nextMode === "browse" ? "browse" : "passage";
-  const { mapBrowser, mapModeButtons, mapSearchResults, journeyPanel } = getPanelElements();
+  const { mapBrowser, mapSearchResults, journeyPanel } = getPanelElements();
   if (mapBrowser) {
     mapBrowser.hidden = mapMode !== "browse";
   }
@@ -560,11 +559,6 @@ function setMapMode(nextMode) {
   if (journeyPanel && "open" in journeyPanel) {
     journeyPanel.open = mapMode !== "browse" || Boolean(selectedJourneyId);
   }
-  mapModeButtons.forEach((button) => {
-    const isActive = button.getAttribute("data-map-mode-switch") === mapMode;
-    button.classList.toggle("is-active", isActive);
-    button.setAttribute("aria-pressed", String(isActive));
-  });
 }
 
 function getMapSearchState() {
@@ -1809,7 +1803,6 @@ function syncHistoricalPeriod() {
 
 function wirePanelButtons() {
   const modalCloseButton = document.querySelector("[data-map-modal-close]");
-  const mapModeButtons = document.querySelectorAll("[data-map-mode-switch]");
   const mapSearchQuery = document.querySelector("[data-map-search-query]");
   const mapSearchKind = document.querySelector("[data-map-search-kind]");
   const mapSearchPeriod = document.querySelector("[data-map-search-period]");
@@ -1843,17 +1836,6 @@ function wirePanelButtons() {
   if (modalCloseButton) {
     modalCloseButton.addEventListener("click", closeMapModal);
   }
-  mapModeButtons.forEach((button) => {
-    button.addEventListener("click", async () => {
-      const nextMode = button.getAttribute("data-map-mode-switch");
-      setMapMode(nextMode);
-      if (nextMode === "browse") {
-        await openMapPanel({ mode: "browse" });
-      } else if (lastPassageContext) {
-        await openMapPanel(lastPassageContext);
-      }
-    });
-  });
   if (mapSearchQuery) {
     mapSearchQuery.addEventListener("keydown", async (event) => {
       if (event.key === "Enter") {

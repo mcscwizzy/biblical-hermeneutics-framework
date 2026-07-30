@@ -892,7 +892,7 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(response["status"], 200)
         self.assertIn('href="/static/style.css?v=20260724c"', response["body"])
         self.assertIn('src="/static/htmx-lite.js?v=20260729d"', response["body"])
-        self.assertIn('src="/static/maps/MapPanel.js?v=20260729f"', response["body"])
+        self.assertIn('src="/static/maps/MapPanel.js?v=20260729g"', response["body"])
         self.assertIn('href="/static/vendor/leaflet/leaflet.css"', response["body"])
         self.assertNotIn("http://bhf.thewalkerclan.synology.me/static/", response["body"])
 

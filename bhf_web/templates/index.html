@@ -37,9 +37,9 @@
   {% if not test_mode %}
     <link rel="stylesheet" href="{{ static_asset('/vendor/leaflet/leaflet.css') }}">
     <script src="{{ static_asset('/vendor/leaflet/leaflet.js') }}" defer></script>
-    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260729f"></script>
+    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260729g"></script>
   {% else %}
-    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260729f"></script>
+    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260729g"></script>
   {% endif %}
 </head>
 <body>
@@ -658,10 +658,6 @@
 
                       <section class="map-center-column" aria-label="Map view">
                         <div class="map-center-toolbar">
-                          <div class="map-mode-switch" role="group" aria-label="Map source mode">
-                            <button type="button" class="secondary is-active" data-map-mode-switch="passage" aria-pressed="true">Passage context</button>
-                            <button type="button" class="secondary" data-map-mode-switch="browse" aria-pressed="false">Browse catalog</button>
-                          </div>
                           <label class="map-period">
                             <span>Period</span>
                             <select data-historical-period aria-label="Historical period">
