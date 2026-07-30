@@ -2,13 +2,9 @@ import {
   buildArchaeologyCautionNote,
   buildArchaeologyExplanation,
   buildCautionNote,
-  buildHistoricalLayerCautionNote,
-  buildHistoricalLayerExplanation,
   buildManuscriptCautionNote,
   buildManuscriptExplanation,
   buildPlaceExplanation,
-  buildPoliticalContextCautionNote,
-  buildPoliticalContextExplanation,
   buildRouteCautionNote,
   buildRouteExplanation,
   buildSourceText,
@@ -27,7 +23,7 @@ import { buildGoogleEarthUrl, hasUsableCoordinates } from "./MapExternalLinks.js
 function renderMapOrientationCard(options = {}) {
   const {
     title = "How to read this map",
-    summary = "This workspace combines exact place pins with broader study overlays. Some passages match a city or site. Others only match a region, empire, route, or historical frame.",
+    summary = "This workspace combines curated place pins and routes to provide geographical context for a passage.",
     callout = "",
   } = options;
   const calloutMarkup = callout
@@ -46,17 +42,13 @@ function renderMapOrientationCard(options = {}) {
           <p>Use these when the passage matches a curated location with coordinates.</p>
         </div>
         <div class="map-orientation-item">
-          <strong>Historical and political layers</strong>
-          <p>Use these when the passage is better understood as a region, kingdom, empire, or broad time-setting rather than one pin.</p>
-        </div>
-        <div class="map-orientation-item">
           <strong>Routes</strong>
           <p>Use these when the passage follows a journey or movement pattern rather than a single point.</p>
         </div>
       </div>
       <div class="map-next-steps">
         <strong>What to do next</strong>
-        <p>Click a marker or overlay, toggle layers on the right, or use Expand for a larger map. If no local map data exists, BHF can still show a text-only geography fallback below.</p>
+        <p>Click a marker or route, or use Expand for a larger map. If no local map data exists, BHF can still show a text-only geography fallback below.</p>
       </div>
     </section>
   `;
@@ -75,7 +67,6 @@ function renderSavedMapStudies(studies) {
       const meta = [
         study.selected_place_id ? `Place: ${study.selected_place_id}` : null,
         study.selected_route_id ? `Route: ${study.selected_route_id}` : null,
-        study.selected_layer_id ? `Layer: ${study.selected_layer_id}` : null,
       ].filter(Boolean).join(" · ") || "Map study";
       return `
         <article class="saved-map-study" data-saved-map-study-id="${escapeHtml(study.id || "")}">
@@ -500,188 +491,6 @@ function renderSelectedRoute(route, passageContext, options = {}) {
   `;
 }
 
-function renderSelectedHistoricalLayer(layer, passageContext, options = {}) {
-  const confidenceLabel = prettyConfidence(layer.confidence);
-  const caution = buildHistoricalLayerCautionNote(layer);
-  const explanation = buildHistoricalLayerExplanation(layer, passageContext);
-  const sourceText = buildSourceText(layer);
-  const historicalOverview = options.historicalOverview || "";
-
-  return `
-    <div class="map-details-card">
-      <div class="map-details-header">
-        <div>
-          <h3>${escapeHtml(layer.name || "Unnamed layer")}</h3>
-          <div class="map-details-subtitle">${escapeHtml(layer.period || "Unknown period")}</div>
-        </div>
-        <span class="map-confidence confidence-${escapeHtml(confidenceClassName(layer.confidence))}">
-          ${escapeHtml(confidenceLabel)}
-        </span>
-      </div>
-
-      <section class="map-detail-section">
-        <h4>Layer type</h4>
-        <p>${escapeHtml(layer.layer_type || "Layer")}</p>
-      </section>
-
-      <section class="map-detail-section">
-        <h4>Description</h4>
-        <p>${escapeHtml(layer.description || "No description available.")}</p>
-      </section>
-
-      <section class="map-detail-section">
-        <h4>Source</h4>
-        <p>${escapeHtml(sourceText)}</p>
-      </section>
-
-      <section class="map-detail-section">
-        <h4>Why this layer matters</h4>
-        <p>${escapeHtml(explanation.why)}</p>
-      </section>
-
-      <section class="map-detail-section">
-        <h4>Historical / Geographical context</h4>
-        <p>${escapeHtml(explanation.context)}</p>
-      </section>
-
-      <section class="map-detail-section map-caution">
-        <h4>BHF caution</h4>
-        <p>${escapeHtml(caution)}</p>
-      </section>
-
-      ${historicalOverview}
-    </div>
-  `;
-}
-
-function renderSelectedPoliticalContext(layer, passageContext, options = {}) {
-  const confidenceLabel = prettyConfidence(layer.confidence);
-  const caution = buildPoliticalContextCautionNote(layer);
-  const explanation = buildPoliticalContextExplanation(layer, passageContext);
-  const sourceText = buildSourceText(layer);
-  const politicalOverview = options.politicalOverview || "";
-
-  return `
-    <div class="map-details-card">
-      <div class="map-details-header">
-        <div>
-          <h3>${escapeHtml(layer.name || "Unnamed political context")}</h3>
-          <div class="map-details-subtitle">${escapeHtml(layer.entity_type || layer.period || "Unknown period")}</div>
-        </div>
-        <span class="map-confidence confidence-${escapeHtml(confidenceClassName(layer.confidence))}">
-          ${escapeHtml(confidenceLabel)}
-        </span>
-      </div>
-
-      <section class="map-detail-section">
-        <h4>Summary</h4>
-        <p>${escapeHtml(layer.summary || "No summary available.")}</p>
-      </section>
-
-      <section class="map-detail-section">
-        <h4>Period</h4>
-        <p>${escapeHtml(formatPeriodList(layer.periods))}</p>
-      </section>
-
-      <section class="map-detail-section">
-        <h4>Passage links</h4>
-        ${renderRelatedVerses(Array.isArray(layer.scripture_links) ? layer.scripture_links : [])}
-      </section>
-
-      <section class="map-detail-section">
-        <h4>Source</h4>
-        <p>${escapeHtml(sourceText)}</p>
-      </section>
-
-      <section class="map-detail-section">
-        <h4>Why this matters</h4>
-        <p>${escapeHtml(explanation.why)}</p>
-      </section>
-
-      <section class="map-detail-section">
-        <h4>Political context</h4>
-        <p>${escapeHtml(explanation.context)}</p>
-      </section>
-
-      <section class="map-detail-section map-caution">
-        <h4>BHF caution</h4>
-        <p>${escapeHtml(caution)}</p>
-      </section>
-
-      ${politicalOverview}
-    </div>
-  `;
-}
-
-function renderHistoricalLayerOverview(layers, visibleHistoricalLayerIds) {
-  const visibleIds = visibleHistoricalLayerIds || new Set();
-  const list = Array.isArray(layers) ? layers : [];
-  const visibleCount = list.filter((layer) => visibleIds.has(layer.id)).length;
-  const items = list
-    .map((layer) => {
-      const activeClass = visibleIds.has(layer.id) ? " is-selected" : "";
-      return `
-        <div class="map-layer-toggle${activeClass}">
-          <span>
-            <strong>${escapeHtml(layer.name || "Unnamed layer")}</strong>
-            <span>${escapeHtml(layer.period || "Unknown period")} · ${escapeHtml(prettyConfidence(layer.confidence))}</span>
-          </span>
-        </div>
-      `;
-    })
-    .join("");
-
-  return `
-    <section class="map-detail-section map-layer-section">
-      <div class="map-section-header">
-        <h4>Historical layers</h4>
-        <span>${visibleCount ? `${visibleCount} shown` : `${list.length} available`}</span>
-      </div>
-      ${
-        list.length
-          ? `<div class="map-layer-list">${items}</div>`
-          : `<p class="empty map-details-empty">No historical layers match the selected period.</p>`
-      }
-      <p class="map-layer-note">These borders are broad study overlays. Use them to understand the setting and period, not as exact boundary claims.</p>
-    </section>
-  `;
-}
-
-function renderPoliticalContextLayerOverview(layers, visiblePoliticalContextLayerIds) {
-  const visibleIds = visiblePoliticalContextLayerIds || new Set();
-  const list = Array.isArray(layers) ? layers : [];
-  const visibleCount = list.filter((layer) => visibleIds.has(layer.id)).length;
-  const items = list
-    .map((layer) => {
-      const activeClass = visibleIds.has(layer.id) ? " is-selected" : "";
-      return `
-        <div class="map-layer-toggle${activeClass}">
-          <span>
-            <strong>${escapeHtml(layer.name || "Unnamed context")}</strong>
-            <span>${escapeHtml(layer.entity_type || layer.period || "Unknown period")} · ${escapeHtml(prettyConfidence(layer.confidence))}</span>
-            <span>${escapeHtml(layer.summary || layer.description || "No summary available.")}</span>
-          </span>
-        </div>
-      `;
-    })
-    .join("");
-
-  return `
-    <section class="map-detail-section map-layer-section">
-      <div class="map-section-header">
-        <h4>Political context</h4>
-        <span>${visibleCount ? `${visibleCount} shown` : `${list.length} available`}</span>
-      </div>
-      ${
-        list.length
-          ? `<div class="map-layer-list">${items}</div>`
-          : `<p class="empty map-details-empty">No political context layers match the selected period.</p>`
-      }
-      <p class="map-layer-note">These overlays explain the larger world behind the passage. They are intentionally broad and may represent a region or empire rather than one exact place.</p>
-    </section>
-  `;
-}
-
 function renderArchaeologyLayerOverview(markers, archaeologyVisible) {
   const list = Array.isArray(markers) ? markers : [];
   const visibleCount = archaeologyVisible ? list.length : 0;
@@ -752,13 +561,9 @@ export {
   renderMapOrientationCard,
   renderSavedMapStudies,
   renderSelectedArchaeology,
-  renderSelectedHistoricalLayer,
   renderSelectedMarker,
   renderSelectedManuscript,
-  renderSelectedPoliticalContext,
   renderSelectedRoute,
-  renderHistoricalLayerOverview,
-  renderPoliticalContextLayerOverview,
   renderArchaeologyLayerOverview,
   renderManuscriptLayerOverview,
   renderRelatedPassages,

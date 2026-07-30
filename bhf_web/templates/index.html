@@ -37,9 +37,9 @@
   {% if not test_mode %}
     <link rel="stylesheet" href="{{ static_asset('/vendor/leaflet/leaflet.css') }}">
     <script src="{{ static_asset('/vendor/leaflet/leaflet.js') }}" defer></script>
-    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260729h"></script>
+    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260729i"></script>
   {% else %}
-    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260729h"></script>
+    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260729i"></script>
   {% endif %}
 </head>
 <body>
@@ -544,7 +544,7 @@
 
                         <div class="map-navigator-section map-search-section">
                           <label class="map-browser-field map-search-field">
-                            <span>Search places, passages, journeys, or regions</span>
+                            <span>Search places, passages, or journeys</span>
                             <input type="search" data-map-search-query data-testid="map-search-input" placeholder="Try Jerusalem or Exodus" autocomplete="off">
                           </label>
                           <div class="map-search-row">
@@ -554,8 +554,6 @@
                                 <option value="all" selected>Everything</option>
                                 <option value="place">Places</option>
                                 <option value="route">Journeys & routes</option>
-                                <option value="historical_layer">Historical layers</option>
-                                <option value="political_context">Regions & empires</option>
                               </select>
                             </label>
                             <div class="map-browser-actions">
@@ -585,7 +583,6 @@
                               <option value="places">Places</option>
                               <option value="journeys">Journeys</option>
                               <option value="events" disabled>Events (no local records)</option>
-                              <option value="regions">Regions</option>
                             </select>
                           </label>
                           <p class="map-navigator-summary" data-map-context-summary>Focused map context will appear here.</p>
@@ -597,23 +594,6 @@
                             <span id="map-search-results-count" class="count">0</span>
                           </div>
                           <div id="map-search-results-list" class="map-search-results-list"></div>
-                        </section>
-
-                        <section class="map-navigator-section map-layer-controls" aria-labelledby="map-layer-controls-heading">
-                          <div class="map-section-header">
-                            <h3 id="map-layer-controls-heading">Layers</h3>
-                            <button type="button" class="text-button" data-map-layer-reset>Clear</button>
-                          </div>
-                          <label class="map-layer-toggle map-layer-toggle--route">
-                            <input type="checkbox" data-route-toggle>
-                            <span><strong>Curated journeys & routes</strong><small>Show route lines where supported</small></span>
-                          </label>
-                          <label class="map-layer-toggle">
-                            <input type="checkbox" data-map-modern-labels checked disabled>
-                            <span><strong>Modern labels</strong><small>Provided by the base map</small></span>
-                          </label>
-                          <div id="map-layer-controls" class="map-layer-list"></div>
-                          <p class="map-layer-note">Broad borders are study overlays, not exact historical boundary claims.</p>
                         </section>
 
                         <section class="map-navigator-section map-saved-summary" aria-labelledby="saved-map-studies-heading">
@@ -646,7 +626,7 @@
                           <button type="button" class="secondary map-mobile-trigger" data-map-details-open aria-controls="map-details">Details</button>
                         </div>
                         <div id="map-stage" class="map-stage" role="application" aria-label="Bible map. Use the navigator or search results to select a location."></div>
-                        <p class="map-map-caption"><span class="map-legend-dot map-legend-dot--focused"></span> Focused study objects <span class="map-legend-dot map-legend-dot--context"></span> Broad context <span class="map-legend-dot map-legend-dot--route"></span> Approximate route</p>
+                        <p class="map-map-caption"><span class="map-legend-dot map-legend-dot--focused"></span> Places <span class="map-legend-dot map-legend-dot--route"></span> Approximate route</p>
                         <div class="map-attribution">Local map data remains available offline; external map tiles and Google Earth links require internet access.</div>
                       </section>
 
@@ -655,7 +635,7 @@
                           <div><p class="map-eyebrow">Selected object</p><h3>Details</h3></div>
                         </div>
                         <section id="map-details" class="map-details-panel" aria-live="polite">
-                          <p class="empty map-details-empty">Select a place, route, region, or journey stop to inspect its details here.</p>
+                          <p class="empty map-details-empty">Select a place, route, or journey stop to inspect its details here.</p>
                         </section>
                       </aside>
                     </div>

@@ -5,41 +5,28 @@ import {
 } from "./JourneyMapData.js";
 import {
   loadMapCatalog,
-  loadHistoricalLayers,
   invalidateMapCache,
   loadPlacesForPassage,
-  loadPoliticalContextForPassage,
   loadRoutesForPassage,
   loadSavedMapStudy,
   loadSavedMapStudies,
   searchMapCatalog,
 } from "./mapService.js?v=20260630";
 import {
-  renderHistoricalLayerOverview as renderHistoricalLayerOverviewHtml,
   renderMapOrientationCard,
   renderSavedMapStudies,
-  renderSelectedHistoricalLayer as renderSelectedHistoricalLayerHtml,
   renderSelectedMarker as renderSelectedMarkerHtml,
-  renderSelectedPoliticalContext as renderSelectedPoliticalContextHtml,
   renderSelectedRoute as renderSelectedRouteHtml,
-  renderPoliticalContextLayerOverview as renderPoliticalContextLayerOverviewHtml,
 } from "./MapPanelContent.js";
 import {
   buildCautionNote,
-  buildHistoricalLayerCautionNote,
-  buildHistoricalLayerExplanation,
   buildPlaceExplanation,
-  buildPoliticalContextCautionNote,
-  buildPoliticalContextExplanation,
   buildRouteCautionNote,
   buildRouteExplanation,
   escapeHtml,
   buildSourceText,
 } from "./MapPanelText.js";
-import {
-  normalizeHistoricalPeriod,
-  syncRouteToggle as syncRouteToggleHtml,
-} from "./MapPanelStateHelpers.js";
+import { normalizeHistoricalPeriod } from "./MapPanelStateHelpers.js";
 import { buildGoogleEarthUrl } from "./MapExternalLinks.js";
 
 // Source links still point to `/sources/` in the rendered map panel markup.
@@ -48,14 +35,10 @@ const BHF_HTTP = window.BHFApi || {};
 let mapController = null;
 let selectedMarker = null;
 let selectedRoute = null;
-let selectedHistoricalLayer = null;
-let selectedPoliticalContext = null;
 let mapMode = "passage";
 let lastPassageContext = null;
 let loadedMarkers = [];
 let loadedRoutes = [];
-let loadedHistoricalLayers = [];
-let loadedPoliticalContextLayers = [];
 let loadedSavedMapStudies = [];
 let loadedJourneys = [];
 let selectedJourneyId = "";
@@ -80,8 +63,6 @@ let timelinePeriodOptions = [
 ];
 let mapModalOpen = false;
 let lastModalTrigger = null;
-const visibleHistoricalLayerIds = new Set();
-const visiblePoliticalContextLayerIds = new Set();
 
 function requestJson(url, options = {}, fallbackMessage = "Request failed.") {
   if (typeof BHF_HTTP.requestJson === "function") {
@@ -109,13 +90,10 @@ function getPanelElements() {
     details: document.querySelector("#map-details"),
     savedMapStudiesList: document.querySelector("#saved-map-studies-list"),
     savedMapStudiesCount: document.querySelector("#saved-map-studies-count"),
-    routeToggle: document.querySelector("[data-route-toggle]"),
     historicalPeriod: document.querySelector("[data-historical-period]"),
     mapBrowser: document.querySelector("[data-map-browser]"),
     studyMode: document.querySelector("[data-map-study-mode]"),
     contextSummary: document.querySelector("[data-map-context-summary]"),
-    layerControls: document.querySelector("#map-layer-controls"),
-    layerReset: document.querySelector("[data-map-layer-reset]"),
     navigator: document.querySelector("#map-study-navigator"),
     navigatorOpen: document.querySelector("[data-map-navigator-open]"),
     detailsColumn: document.querySelector("#map-details-column"),
@@ -224,30 +202,7 @@ function renderJourneySidebar() {
 
 function renderSupplementalControls() {
   renderJourneySidebar();
-  renderLayerControls();
   syncStudyMode();
-}
-
-function renderLayerControls() {
-  const { layerControls } = getPanelElements();
-  if (!layerControls) {
-    return;
-  }
-  const historical = loadedHistoricalLayers.map((layer) => `
-    <label class="map-layer-toggle ${visibleHistoricalLayerIds.has(layer.id) ? "is-selected" : ""}">
-      <input type="checkbox" data-historical-layer-toggle data-layer-id="${escapeHtml(layer.id)}" ${visibleHistoricalLayerIds.has(layer.id) ? "checked" : ""}>
-      <span><strong>${escapeHtml(layer.name || "Historical layer")}</strong><small>${escapeHtml(layer.period || "Broad study context")} · ${escapeHtml(layer.confidence || "Uncertain")}</small></span>
-    </label>
-  `).join("");
-  const political = loadedPoliticalContextLayers.map((layer) => `
-    <label class="map-layer-toggle ${visiblePoliticalContextLayerIds.has(layer.id) ? "is-selected" : ""}">
-      <input type="checkbox" data-political-context-toggle data-layer-id="${escapeHtml(layer.id)}" ${visiblePoliticalContextLayerIds.has(layer.id) ? "checked" : ""}>
-      <span><strong>${escapeHtml(layer.name || "Regional context")}</strong><small>${escapeHtml(layer.entity_type || layer.period || "Regional context")}</small></span>
-    </label>
-  `).join("");
-  layerControls.innerHTML = historical || political
-    ? `${historical}${political}`
-    : `<p class="empty">No regional overlays match this study yet.</p>`;
 }
 
 function syncStudyMode() {
@@ -260,18 +215,17 @@ function syncStudyMode() {
   }
   const messages = {
     passage: lastPassageContext
-      ? `Showing locations and broader context connected to ${formatReference(lastPassageContext)}.`
+      ? `Showing places and routes connected to ${formatReference(lastPassageContext)}.`
       : "Open a passage to focus the map on its chapter context.",
     places: "Search for a place to focus the map on one location and its related passages.",
     journeys: "Choose a curated journey to see numbered stops and an approximate route.",
     events: "Event records are not available in the local map data yet.",
-    regions: "Search or select a region to emphasize broad geographic context.",
   };
   contextSummary.textContent = messages[studyMode] || messages.passage;
 }
 
 function setStudyMode(nextMode) {
-  const allowed = new Set(["passage", "places", "journeys", "events", "regions"]);
+  const allowed = new Set(["passage", "places", "journeys", "events"]);
   studyMode = allowed.has(nextMode) ? nextMode : "passage";
   syncStudyMode();
 }
@@ -288,28 +242,20 @@ async function loadPassageMapData(context = {}) {
   const [
     placeResult,
     routeResult,
-    layerResult,
-    politicalContextResult,
     savedMapStudiesResult,
   ] = await Promise.all([
     loadPlacesForPassage(loadContext),
     loadRoutesForPassage(loadContext),
-    loadHistoricalLayers({ period: historicalPeriod }),
-    loadPoliticalContextForPassage(loadContext),
     loadSavedMapStudies(context),
   ]);
   const offline = [
     placeResult,
     routeResult,
-    layerResult,
-    politicalContextResult,
     savedMapStudiesResult,
   ].some((result) => Boolean(result?.offline));
   return {
     placeResult,
     routeResult,
-    layerResult,
-    politicalContextResult,
     savedMapStudiesResult,
     offline,
   };
@@ -320,8 +266,6 @@ async function loadBrowseMapData() {
   return {
     placeResult: { markers: [] },
     routeResult: { routes: [] },
-    layerResult: { layers: [] },
-    politicalContextResult: { layers: [] },
     savedMapStudiesResult: savedMapStudiesResult || { saved_map_studies: [] },
     offline: Boolean(savedMapStudiesResult?.offline),
   };
@@ -458,7 +402,7 @@ function renderBrowseInstructions(message = "Browse the curated map catalog with
     mapSearchResultsList.innerHTML = `
       <p class="empty">${message}</p>
       <ul class="map-search-hints">
-        <li>Search a topic, place, route, historical layer, or political context.</li>
+        <li>Search a topic, place, or route.</li>
         <li>Use the Type dropdown to narrow the catalog before you search.</li>
         <li>Select a result to center the map and open its details.</li>
       </ul>
@@ -524,13 +468,17 @@ function uniqueItemsById(items = []) {
   return uniqueItems;
 }
 
+function supportedMapResults(results = []) {
+  return (Array.isArray(results) ? results : []).filter(
+    (result) => result?.item && (result.kind === "place" || result.kind === "route")
+  );
+}
+
 function browsePayloadFromSearchResults(results = []) {
-  const values = Array.isArray(results) ? results : [];
+  const values = supportedMapResults(results);
   return {
     markers: uniqueItemsById(values.filter((result) => result.kind === "place").map((result) => result.item)),
     routes: uniqueItemsById(values.filter((result) => result.kind === "route").map((result) => result.item)),
-    historicalLayers: uniqueItemsById(values.filter((result) => result.kind === "historical_layer").map((result) => result.item)),
-    politicalContextLayers: uniqueItemsById(values.filter((result) => result.kind === "political_context").map((result) => result.item)),
   };
 }
 
@@ -538,29 +486,17 @@ function refreshBrowseMapResults(results = []) {
   const payload = browsePayloadFromSearchResults(results);
   loadedMarkers = payload.markers;
   loadedRoutes = payload.routes;
-  loadedHistoricalLayers = payload.historicalLayers;
-  loadedPoliticalContextLayers = payload.politicalContextLayers;
-  renderLayerControls();
-  const routeVisibility = Boolean(getPanelElements().routeToggle?.checked);
+  const routeVisibility = true;
   ensureMapController(
     loadedMarkers,
     loadedRoutes,
-    loadedHistoricalLayers,
-    loadedPoliticalContextLayers,
     routeVisibility
   );
-  syncRouteToggle();
 }
 
-function clearCurrentMapSelection({ clearVisibleLayers = false } = {}) {
+function clearCurrentMapSelection() {
   selectedMarker = null;
   selectedRoute = null;
-  selectedHistoricalLayer = null;
-  selectedPoliticalContext = null;
-  if (clearVisibleLayers) {
-    visibleHistoricalLayerIds.clear();
-    visiblePoliticalContextLayerIds.clear();
-  }
   syncDetailsState(false);
 }
 
@@ -608,7 +544,7 @@ function setSelectedSearchResult(result) {
   }
   clearStatus();
   setPinHint("");
-  clearCurrentMapSelection({ clearVisibleLayers: true });
+  clearCurrentMapSelection();
 
   if (result.kind === "place") {
     selectedMarker = result.item;
@@ -618,23 +554,9 @@ function setSelectedSearchResult(result) {
   }
   if (result.kind === "route") {
     selectedRoute = result.item;
-    setRouteVisibility(true);
     renderSelectedRoute(selectedRoute, null);
     focusMapSelection(result);
     return;
-  }
-  if (result.kind === "historical_layer") {
-    selectedHistoricalLayer = result.item;
-    setHistoricalLayerVisibility(result.item.id, true);
-    renderSelectedHistoricalLayer(selectedHistoricalLayer, null);
-    focusMapSelection(result);
-    return;
-  }
-  if (result.kind === "political_context") {
-    selectedPoliticalContext = result.item;
-    setPoliticalContextLayerVisibility(result.item.id, true);
-    renderSelectedPoliticalContext(selectedPoliticalContext, null);
-    focusMapSelection(result);
   }
 }
 
@@ -645,7 +567,7 @@ async function runBrowseSearch() {
   setBrowseSearchControls({ query, kind, period: browseSearchPeriod });
 
   if (!query) {
-    clearCurrentMapSelection({ clearVisibleLayers: true });
+    clearCurrentMapSelection();
     renderBrowseInstructions();
     refreshBrowseMapResults([]);
     clearStatus();
@@ -653,14 +575,14 @@ async function runBrowseSearch() {
   }
 
   setStatus(`Searching the map catalog for "${query}"...`, "loading");
-  clearCurrentMapSelection({ clearVisibleLayers: true });
+  clearCurrentMapSelection();
   try {
     const result = await searchMapCatalog(query, {
       kind,
       period: browseSearchPeriod,
       limit: 30,
     });
-    const results = result.results || [];
+    const results = supportedMapResults(result.results);
     renderBrowseSearchResults(results, query);
     refreshBrowseMapResults(results);
     if ((result.results || []).length === 0) {
@@ -681,7 +603,7 @@ function clearBrowseSearch() {
   }
   browseSearchQuery = "";
   browseSearchResults = [];
-  clearCurrentMapSelection({ clearVisibleLayers: true });
+  clearCurrentMapSelection();
   renderBrowseInstructions();
   refreshBrowseMapResults([]);
   clearStatus();
@@ -730,13 +652,7 @@ function finalizeMapModalClose() {
   lastModalTrigger = null;
 }
 
-function ensureMapController(
-  markers,
-  routes,
-  historicalLayers,
-  politicalContextLayers,
-  routeVisibility
-) {
+function ensureMapController(markers, routes, routeVisibility) {
   const { stage } = getPanelElements();
   if (!stage) {
     throw new Error("Map stage is missing.");
@@ -747,10 +663,6 @@ function ensureMapController(
   }
   mapController = createBibleMap(stage, markers, {
     routes,
-    historicalLayers,
-    historicalLayerIds: Array.from(visibleHistoricalLayerIds),
-    politicalContextLayers,
-    politicalContextLayerIds: Array.from(visiblePoliticalContextLayerIds),
     journey: getSelectedJourney(),
     journeyVisibility,
     selectedJourneyStopId,
@@ -762,36 +674,12 @@ function ensureMapController(
     onMarkerClick(marker) {
       selectedMarker = marker;
       selectedRoute = null;
-      selectedHistoricalLayer = null;
       renderSelectedMarker(marker, lastPassageContext);
     },
     onRouteClick(route) {
       selectedRoute = route;
       selectedMarker = null;
-      selectedHistoricalLayer = null;
       renderSelectedRoute(route, lastPassageContext);
-    },
-    onHistoricalLayerClick(layer) {
-      selectedHistoricalLayer = layer;
-      selectedMarker = null;
-      selectedRoute = null;
-      selectedPoliticalContext = null;
-      visibleHistoricalLayerIds.add(layer.id);
-      if (mapController) {
-        mapController.setHistoricalLayerVisibility(layer.id, true);
-      }
-      renderSelectedHistoricalLayer(layer, lastPassageContext);
-    },
-    onPoliticalContextClick(layer) {
-      selectedPoliticalContext = layer;
-      selectedMarker = null;
-      selectedRoute = null;
-      selectedHistoricalLayer = null;
-      visiblePoliticalContextLayerIds.add(layer.id);
-      if (mapController) {
-        mapController.setPoliticalContextLayerVisibility(layer.id, true);
-      }
-      renderSelectedPoliticalContext(layer, lastPassageContext);
     },
     onJourneyStopClick(journey, stop) {
       selectedJourneyId = journey.id;
@@ -829,7 +717,7 @@ async function openMapPanel(context = {}) {
   const browseMode = context.mode === "browse" || (!context.book && !context.chapter && !context.savedMapStudy);
   setMapMode(browseMode ? "browse" : "passage");
   if (browseMode) {
-    clearCurrentMapSelection({ clearVisibleLayers: true });
+    clearCurrentMapSelection();
     lastPassageContext = null;
     browseSearchPeriod = normalizeHistoricalPeriod(context.period || historicalPeriod || "all");
     setBrowseSearchControls({
@@ -841,7 +729,7 @@ async function openMapPanel(context = {}) {
     const nextReference = formatReference(context);
     const previousReference = formatReference(lastPassageContext);
     if (nextReference !== previousReference) {
-      clearCurrentMapSelection({ clearVisibleLayers: true });
+      clearCurrentMapSelection();
     }
   }
   if (context.savedMapStudy?.map_view_state?.historicalPeriod) {
@@ -855,52 +743,37 @@ async function openMapPanel(context = {}) {
   setStatus(browseMode ? "Loading map catalog..." : "Loading map data...", "loading");
   renderEmptyDetails(
     browseMode
-      ? "Loading the curated map catalog so you can search by topic, location, route, or regional context."
-      : "Loading place, route, historical, and political context details..."
+      ? "Loading the curated map catalog so you can search by topic, location, or route."
+      : "Loading place and route details..."
   );
 
   try {
-    const routeToggle = getPanelElements().routeToggle;
-    const routeVisibility = Boolean(routeToggle?.checked);
+    const routeVisibility = true;
     const {
       placeResult,
       routeResult,
-      layerResult,
-      politicalContextResult,
       savedMapStudiesResult,
       offline,
     } = await loadMapData(context);
     loadedRoutes = routeResult.routes || [];
     loadedMarkers = placeResult.markers || [];
-    loadedHistoricalLayers = layerResult.layers || [];
-    loadedPoliticalContextLayers = politicalContextResult.layers || [];
     loadedSavedMapStudies = savedMapStudiesResult.saved_map_studies || [];
-    renderLayerControls();
     syncStudyMode();
     if (selectedMarker && !loadedMarkers.some((marker) => marker.id === selectedMarker.id)) {
       selectedMarker = null;
     }
-    if (selectedHistoricalLayer && !loadedHistoricalLayers.some((layer) => layer.id === selectedHistoricalLayer.id)) {
-      selectedHistoricalLayer = null;
-    }
     if (selectedRoute && !loadedRoutes.some((route) => route.id === selectedRoute.id)) {
       selectedRoute = null;
-    }
-    if (selectedPoliticalContext && !loadedPoliticalContextLayers.some((layer) => layer.id === selectedPoliticalContext.id)) {
-      selectedPoliticalContext = null;
     }
 
     ensureMapController(
       loadedMarkers,
       loadedRoutes,
-      loadedHistoricalLayers,
-      loadedPoliticalContextLayers,
       routeVisibility
     );
     if (context.savedMapStudy) {
       await applySavedMapStudyState(context.savedMapStudy);
     }
-    syncRouteToggle();
     syncHistoricalPeriod();
     await refreshSavedMapStudies();
 
@@ -910,7 +783,7 @@ async function openMapPanel(context = {}) {
         renderBrowseSearchResults(browseSearchResults, browseSearchQuery);
         refreshBrowseMapResults(browseSearchResults);
       } else {
-        renderBrowseInstructions("Browse the catalog, or search by topic, location, route, or regional context.");
+        renderBrowseInstructions("Browse the catalog, or search by topic, location, or route.");
         refreshBrowseMapResults([]);
       }
       return;
@@ -922,42 +795,13 @@ async function openMapPanel(context = {}) {
     } else if (selectedRoute && loadedRoutes.some((route) => route.id === selectedRoute.id)) {
       renderSelectedRoute(selectedRoute, context);
       clearStatus();
-    } else if (
-      selectedHistoricalLayer &&
-      loadedHistoricalLayers.some((layer) => layer.id === selectedHistoricalLayer.id)
-    ) {
-      renderSelectedHistoricalLayer(selectedHistoricalLayer, context);
-      clearStatus();
-    } else if (
-      selectedPoliticalContext &&
-      loadedPoliticalContextLayers.some((layer) => layer.id === selectedPoliticalContext.id)
-    ) {
-      renderSelectedPoliticalContext(selectedPoliticalContext, context);
-      clearStatus();
-    } else if (placeResult.empty_state && loadedPoliticalContextLayers.length > 0) {
-      selectedPoliticalContext = loadedPoliticalContextLayers[0];
-      visiblePoliticalContextLayerIds.add(selectedPoliticalContext.id);
-      if (mapController && typeof mapController.setPoliticalContextLayerVisibility === "function") {
-        mapController.setPoliticalContextLayerVisibility(selectedPoliticalContext.id, true);
-      }
-      renderSelectedPoliticalContext(selectedPoliticalContext, context);
-      setPinHint(
-        `${selectedPoliticalContext.name || "This passage"} does not have a curated point-place pin here. It is mapped as broader political or regional context because the reference fits a territory, empire, or people-group better than one exact site.`,
-        { open: true, summary: "Why this is a region" }
-      );
-      setStatus(
-        `No curated point-place marker matched this passage. Showing political context for ${selectedPoliticalContext.name || "the matched region"} instead, because this reference maps more naturally to a broader region or governing power.`,
-        "empty"
-      );
     } else {
       clearStatus();
       if (placeResult.empty_state) {
         const noCuratedMatches =
-          loadedRoutes.length === 0 &&
-          loadedHistoricalLayers.length === 0 &&
-          loadedPoliticalContextLayers.length === 0;
+          loadedRoutes.length === 0;
         renderEmptyDetails(
-          "No curated point-place match was found for this passage. You can still study any available route, region, empire, or historical layer below."
+          "No curated point-place match was found for this passage. You can still study any available route below."
         );
         if (noCuratedMatches) {
           setPinHint(
@@ -976,37 +820,27 @@ async function openMapPanel(context = {}) {
               },
               {
                 localSummary:
-                  "No curated local map places, routes, historical layers, or political-context overlays matched this passage.",
+                  "No curated local map places or routes matched this passage.",
               }
             );
           }
         } else {
           setPinHint(
-            "This passage did not resolve to a local point pin. It may map better to a broader region, empire, or study overlay than to one exact location."
+            "This passage did not resolve to a local point pin, but it does have an available route to study."
           );
           setStatus(
-            "No local place pin matched this passage. Showing the available map framework so you can still study broader context.",
+            "No local place pin matched this passage. Showing the available route instead.",
             "empty"
           );
         }
       } else {
         setPinHint("");
-        renderEmptyDetails("Select a place pin, route, historical layer, or political context overlay to inspect its details here.");
+        renderEmptyDetails("Select a place pin or route to inspect its details here.");
       }
     }
 
     if (routeVisibility && loadedRoutes.length === 0) {
       setStatus("Route view is on, but no curated routes are stored for this passage.", "empty");
-    }
-    if (
-      !loadedHistoricalLayers.length &&
-      !loadedPoliticalContextLayers.length &&
-      !selectedMarker &&
-      !selectedRoute &&
-      !selectedHistoricalLayer &&
-      !selectedPoliticalContext
-    ) {
-      setStatus("No historical or political overlays matched the selected period.", "empty");
     }
     if (offline) {
       setStatus(
@@ -1017,7 +851,7 @@ async function openMapPanel(context = {}) {
   } catch (error) {
     setPinHint("");
     setStatus(error.message || "Could not load the map.", "error");
-    renderEmptyDetails("Could not load place, route, and layer details.");
+    renderEmptyDetails("Could not load place and route details.");
   }
 }
 
@@ -1029,63 +863,12 @@ async function applySavedMapStudyState(study) {
   historicalPeriod = normalizeHistoricalPeriod(viewState.historicalPeriod || "all");
   selectedMarker = null;
   selectedRoute = null;
-  selectedHistoricalLayer = null;
-  selectedPoliticalContext = null;
-
-  if (mapController && typeof mapController.setRouteVisibility === "function" && Object.prototype.hasOwnProperty.call(viewState, "routeVisibility")) {
-    mapController.setRouteVisibility(Boolean(viewState.routeVisibility));
-  }
-
-  const selectedLayerIds = new Set(
-    Array.isArray(viewState.historicalLayerIds)
-      ? viewState.historicalLayerIds.map((value) => String(value))
-      : Array.isArray(study.selected_layers)
-        ? study.selected_layers.map((value) => String(value))
-        : []
-  );
-
-  if (mapController && selectedLayerIds.size > 0) {
-    for (const layer of loadedHistoricalLayers) {
-      mapController.setHistoricalLayerVisibility(layer.id, selectedLayerIds.has(layer.id));
-      if (selectedLayerIds.has(layer.id)) {
-        visibleHistoricalLayerIds.add(layer.id);
-      } else {
-        visibleHistoricalLayerIds.delete(layer.id);
-      }
-    }
-  }
-
-  if (mapController && typeof mapController.setHistoricalLayers === "function") {
-    mapController.setHistoricalLayers(loadedHistoricalLayers);
-  }
 
   if (study.selected_place_id) {
     selectedMarker = loadedMarkers.find((marker) => marker.id === study.selected_place_id) || null;
   }
   if (study.selected_route_id) {
     selectedRoute = loadedRoutes.find((route) => route.id === study.selected_route_id) || null;
-  }
-  if (study.selected_layer_id) {
-    selectedHistoricalLayer =
-      loadedHistoricalLayers.find((layer) => layer.id === study.selected_layer_id) || null;
-    if (!selectedHistoricalLayer) {
-      selectedPoliticalContext =
-        loadedPoliticalContextLayers.find((layer) => layer.id === study.selected_layer_id) || null;
-    }
-  } else if (selectedLayerIds.size > 0) {
-    const firstLayerId = Array.from(selectedLayerIds)[0];
-    selectedHistoricalLayer =
-      loadedHistoricalLayers.find((layer) => layer.id === firstLayerId) || null;
-    if (!selectedHistoricalLayer) {
-      selectedPoliticalContext =
-        loadedPoliticalContextLayers.find((layer) => layer.id === firstLayerId) || null;
-    }
-  }
-  if (selectedPoliticalContext) {
-    visiblePoliticalContextLayerIds.add(selectedPoliticalContext.id);
-    if (mapController && typeof mapController.setPoliticalContextLayerVisibility === "function") {
-      mapController.setPoliticalContextLayerVisibility(selectedPoliticalContext.id, true);
-    }
   }
   if (study.map_view_state && study.map_view_state.center && mapController?.map) {
     const center = study.map_view_state.center;
@@ -1107,18 +890,6 @@ function closeMapPanel() {
   }
   setPinHint("");
   document.dispatchEvent(new CustomEvent("bhf:map-panel-closed"));
-}
-
-function setRouteVisibility(visible) {
-  if (!mapController) {
-    return;
-  }
-  mapController.setRouteVisibility(visible);
-  if (visible && loadedRoutes.length === 0) {
-    setStatus("Route view is on, but no curated routes are stored for this passage.", "empty");
-  } else if (visible) {
-    clearStatus();
-  }
 }
 
 function applySelectedJourneyToMap({ fit = true } = {}) {
@@ -1221,150 +992,50 @@ async function setHistoricalPeriod(period) {
     if (mapMode === "browse") {
       setStatus("Loading map catalog...", "loading");
     } else {
-      setStatus("Loading historical layers...", "loading");
+      setStatus("Loading map data...", "loading");
     }
     const {
       placeResult,
       routeResult,
-      layerResult,
-      politicalContextResult,
       savedMapStudiesResult,
     } = await loadMapData(lastPassageContext);
     loadedMarkers = placeResult.markers || [];
     loadedRoutes = routeResult.routes || [];
-    loadedHistoricalLayers = layerResult.layers || [];
-    loadedPoliticalContextLayers = politicalContextResult.layers || [];
     loadedSavedMapStudies = savedMapStudiesResult.saved_map_studies || [];
-    renderLayerControls();
     if (selectedMarker && !loadedMarkers.some((marker) => marker.id === selectedMarker.id)) {
       selectedMarker = null;
-    }
-    if (selectedHistoricalLayer && !loadedHistoricalLayers.some((layer) => layer.id === selectedHistoricalLayer.id)) {
-      selectedHistoricalLayer = null;
     }
     if (selectedRoute && !loadedRoutes.some((route) => route.id === selectedRoute.id)) {
       selectedRoute = null;
     }
-    if (
-      selectedPoliticalContext &&
-      !loadedPoliticalContextLayers.some((layer) => layer.id === selectedPoliticalContext.id)
-    ) {
-      selectedPoliticalContext = null;
-    }
-    const routeToggle = getPanelElements().routeToggle;
-    const routeVisibility = Boolean(routeToggle?.checked);
+    const routeVisibility = true;
     ensureMapController(
       loadedMarkers,
       loadedRoutes,
-      loadedHistoricalLayers,
-      loadedPoliticalContextLayers,
       routeVisibility
     );
-    syncRouteToggle();
     if (mapMode === "browse") {
       clearStatus();
       if (browseSearchResults.length > 0) {
         renderBrowseSearchResults(browseSearchResults, browseSearchQuery);
         refreshBrowseMapResults(browseSearchResults);
       } else {
-        renderBrowseInstructions("Browse the catalog, or search by topic, location, route, or regional context.");
+        renderBrowseInstructions("Browse the catalog, or search by topic, location, or route.");
         refreshBrowseMapResults([]);
       }
     } else if (selectedMarker) {
       renderSelectedMarker(selectedMarker, lastPassageContext);
     } else if (selectedRoute) {
       renderSelectedRoute(selectedRoute, lastPassageContext);
-    } else if (selectedHistoricalLayer) {
-      renderSelectedHistoricalLayer(selectedHistoricalLayer, lastPassageContext);
-    } else if (selectedPoliticalContext) {
-      renderSelectedPoliticalContext(selectedPoliticalContext, lastPassageContext);
     } else {
-      renderEmptyDetails("Choose a layer in the navigator to inspect its context here.");
+      renderEmptyDetails("Choose a place, route, or journey stop to inspect its details here.");
     }
-    renderLayerControls();
     await refreshSavedMapStudies();
-    if (!loadedHistoricalLayers.length && !loadedPoliticalContextLayers.length) {
-      setStatus("No historical or political overlays matched the selected period.", "empty");
-    } else {
-      clearStatus();
-    }
+    clearStatus();
   } catch (error) {
-    setStatus(error.message || "Could not load historical layers.", "error");
-    renderEmptyDetails("Could not load historical layers.");
+    setStatus(error.message || "Could not load map data.", "error");
+    renderEmptyDetails("Could not load map data.");
   }
-}
-
-function setHistoricalLayerVisibility(layerId, visible) {
-  const normalizedId = String(layerId || "");
-  if (!normalizedId) {
-    return;
-  }
-  if (visible) {
-    visibleHistoricalLayerIds.add(normalizedId);
-    const matchingLayer = loadedHistoricalLayers.find((layer) => layer.id === normalizedId);
-    if (matchingLayer) {
-      selectedHistoricalLayer = matchingLayer;
-    }
-  } else {
-    visibleHistoricalLayerIds.delete(normalizedId);
-    if (selectedHistoricalLayer && selectedHistoricalLayer.id === normalizedId) {
-      selectedHistoricalLayer = null;
-    }
-  }
-  if (mapController) {
-    mapController.setHistoricalLayerVisibility(normalizedId, visible);
-  }
-  if (selectedMarker) {
-    renderSelectedMarker(selectedMarker, lastPassageContext);
-  } else if (selectedRoute) {
-    renderSelectedRoute(selectedRoute, lastPassageContext);
-  } else if (selectedHistoricalLayer) {
-    renderSelectedHistoricalLayer(selectedHistoricalLayer, lastPassageContext);
-  } else if (selectedPoliticalContext) {
-    renderSelectedPoliticalContext(selectedPoliticalContext, lastPassageContext);
-  } else {
-    renderEmptyDetails("Choose a layer in the navigator to inspect its context here.");
-  }
-  renderLayerControls();
-}
-
-function setPoliticalContextLayerVisibility(layerId, visible) {
-  const normalizedId = String(layerId || "");
-  if (!normalizedId) {
-    return;
-  }
-  if (visible) {
-    visiblePoliticalContextLayerIds.add(normalizedId);
-    const matchingLayer = loadedPoliticalContextLayers.find((layer) => layer.id === normalizedId);
-    if (matchingLayer) {
-      selectedPoliticalContext = matchingLayer;
-    }
-  } else {
-    visiblePoliticalContextLayerIds.delete(normalizedId);
-    if (selectedPoliticalContext && selectedPoliticalContext.id === normalizedId) {
-      selectedPoliticalContext = null;
-    }
-  }
-  if (mapController) {
-    mapController.setPoliticalContextLayerVisibility(normalizedId, visible);
-  }
-  if (selectedMarker) {
-    renderSelectedMarker(selectedMarker, lastPassageContext);
-  } else if (selectedRoute) {
-    renderSelectedRoute(selectedRoute, lastPassageContext);
-  } else if (selectedHistoricalLayer) {
-    renderSelectedHistoricalLayer(selectedHistoricalLayer, lastPassageContext);
-  } else if (selectedPoliticalContext) {
-    renderSelectedPoliticalContext(selectedPoliticalContext, lastPassageContext);
-  } else {
-    renderEmptyDetails("Choose a regional context layer in the navigator to inspect it here.");
-  }
-  renderLayerControls();
-}
-
-function syncRouteToggle() {
-  const { routeToggle } = getPanelElements();
-  syncRouteToggleHtml(mapController, routeToggle);
 }
 
 function renderSelectedMarker(marker, passageContext) {
@@ -1385,28 +1056,6 @@ function renderSelectedRoute(route, passageContext) {
   }
   details.innerHTML = renderSelectedRouteHtml(route, passageContext, {
     historicalOverview: "",
-  });
-  syncDetailsState(true);
-}
-
-function renderSelectedHistoricalLayer(layer, passageContext) {
-  const { details } = getPanelElements();
-  if (!details) {
-    return;
-  }
-  details.innerHTML = renderSelectedHistoricalLayerHtml(layer, passageContext, {
-    historicalOverview: "",
-  });
-  syncDetailsState(true);
-}
-
-function renderSelectedPoliticalContext(layer, passageContext) {
-  const { details } = getPanelElements();
-  if (!details) {
-    return;
-  }
-  details.innerHTML = renderSelectedPoliticalContextHtml(layer, passageContext, {
-    politicalOverview: "",
   });
   syncDetailsState(true);
 }
@@ -1513,14 +1162,6 @@ function renderSelectedJourneySegment(journey, segment) {
     </div>
   `;
   syncDetailsState(true);
-}
-
-function renderHistoricalLayerOverview() {
-  return renderHistoricalLayerOverviewHtml(loadedHistoricalLayers, visibleHistoricalLayerIds);
-}
-
-function renderPoliticalContextLayerOverview() {
-  return renderPoliticalContextLayerOverviewHtml(loadedPoliticalContextLayers, visiblePoliticalContextLayerIds);
 }
 
 function focusMapSelection(result) {
@@ -1680,7 +1321,6 @@ function wirePanelButtons() {
   const mapSearchSubmit = document.querySelector("[data-map-search-submit]");
   const mapSearchClear = document.querySelector("[data-map-search-clear]");
   const mapSearchResultsList = document.querySelector("#map-search-results-list");
-  const routeToggle = document.querySelector("[data-route-toggle]");
   const historicalPeriodSelect = document.querySelector("[data-historical-period]");
   const {
     modal,
@@ -1691,8 +1331,6 @@ function wirePanelButtons() {
   const {
     savedMapStudiesList,
     studyMode: studyModeSelect,
-    layerControls,
-    layerReset,
     navigatorOpen,
     detailsOpen,
   } = getPanelElements();
@@ -1739,11 +1377,6 @@ function wirePanelButtons() {
       }
     });
   }
-  if (routeToggle) {
-    routeToggle.addEventListener("change", (event) => {
-      setRouteVisibility(Boolean(event.target.checked));
-    });
-  }
   if (historicalPeriodSelect) {
     historicalPeriodSelect.addEventListener("change", async (event) => {
       await setHistoricalPeriod(event.target.value);
@@ -1762,32 +1395,6 @@ function wirePanelButtons() {
   if (detailsOpen) {
     detailsOpen.addEventListener("click", () => {
       getPanelElements().detailsColumn?.classList.toggle("is-mobile-open");
-    });
-  }
-  if (layerReset) {
-    layerReset.addEventListener("click", () => {
-      visibleHistoricalLayerIds.clear();
-      visiblePoliticalContextLayerIds.clear();
-      loadedHistoricalLayers.forEach((layer) => mapController?.setHistoricalLayerVisibility(layer.id, false));
-      loadedPoliticalContextLayers.forEach((layer) => mapController?.setPoliticalContextLayerVisibility(layer.id, false));
-      selectedHistoricalLayer = null;
-      selectedPoliticalContext = null;
-      renderLayerControls();
-      renderEmptyDetails("Layers cleared. Select a place, route, or layer to study it.");
-    });
-  }
-  if (layerControls) {
-    layerControls.addEventListener("change", (event) => {
-      const toggle = event.target.closest("[data-historical-layer-toggle], [data-political-context-toggle]");
-      if (!toggle) {
-        return;
-      }
-      const layerId = toggle.getAttribute("data-layer-id");
-      if (toggle.matches("[data-historical-layer-toggle]")) {
-        setHistoricalLayerVisibility(layerId, toggle.checked);
-      } else {
-        setPoliticalContextLayerVisibility(layerId, toggle.checked);
-      }
     });
   }
   if (journeySelector) {
@@ -1860,7 +1467,7 @@ function wirePanelButtons() {
 
 function initializeMapPanel() {
   wirePanelButtons();
-  renderEmptyDetails("Select a place pin, route, historical layer, or political context overlay to inspect its details here.");
+  renderEmptyDetails("Select a place pin, route, or journey stop to inspect its details here.");
   syncHistoricalPeriod();
   syncStudyMode();
   const pendingContext = window.BHFPendingMapPanelContext;
