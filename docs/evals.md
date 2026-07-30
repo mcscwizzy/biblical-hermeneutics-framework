@@ -4,7 +4,7 @@ BHF evals score interpretive method, not doctrinal conclusions. The local eval
 runner is deterministic and offline-friendly: it uses fixture-defined regex and
 keyword checks, not an LLM judge.
 
-## Saved Answer Mode
+## Saved Answer Evaluation
 
 Use this when you already have an answer in a text file:
 
@@ -43,9 +43,10 @@ python tools/eval_local.py \
   --config local.config.json
 ```
 
-The fixture's `profile` and `answer_mode` override those fields from the config
-for the eval run. This mode may require a running local OpenAI-compatible model
-server, depending on the config.
+Legacy fixture `profile` and `answer_mode` values are still parsed for older
+fixtures but do not change the unified answer prompt or retrieval policy. This
+mode may require a running local OpenAI-compatible model server, depending on
+the config.
 
 ## Fixture Shape
 
@@ -53,8 +54,8 @@ Fixtures are JSON objects with:
 
 - `id`
 - `question`
-- `profile`
-- `answer_mode`
+- `profile` (legacy compatibility field; ignored by the unified runtime)
+- `answer_mode` (legacy compatibility field; ignored by the unified runtime)
 - `expected_behaviors`
 - `forbidden_behaviors`
 - `pass_threshold`

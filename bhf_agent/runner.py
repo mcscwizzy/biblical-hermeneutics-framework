@@ -59,7 +59,7 @@ from .model_response_validation import (
 )
 from .observability import render_log_record, summarize_usage
 from .profiles import ProfileLoader
-from .prompts import PROMPT_VERSION, build_prompt_result, strategy_for_profile
+from .prompts import PROMPT_VERSION, build_prompt_result
 from .research import (
     NullResearchProvider,
     ResearchProvider,
@@ -500,15 +500,17 @@ class BHFAgent:
             original_question=question,
             normalized_question=" ".join(question.strip().split()),
             config_profile=self.config.profile,
-            answer_mode=self.config.answer_mode,
+            answer_mode="unified",
             debug_metadata={
                 "stages_completed": [],
                 "adapter_type": self.config.adapter,
                 "model": self.config.model,
                 "profile": self.config.profile,
-                "runtime_profile_mode": self.config.runtime_profile_mode,
-                "full_profile_injected": self.config.runtime_profile_mode == "full",
-                "answer_mode": self.config.answer_mode,
+                "runtime_profile_mode": "unified",
+                "legacy_runtime_profile_mode": self.config.runtime_profile_mode,
+                "full_profile_injected": False,
+                "answer_mode": "unified",
+                "legacy_answer_mode": self.config.answer_mode,
                 "framework_version": self.framework_version,
                 "framework_version_fingerprint": self.framework_version_fingerprint,
                 "request_id": uuid.uuid4().hex,
@@ -629,7 +631,7 @@ class BHFAgent:
                 else "miss",
                 "public_answer_cache_key": None,
                 "public_answer_cache_question": None,
-                "public_answer_cache_answer_mode": self.config.answer_mode,
+                "public_answer_cache_answer_mode": "unified",
                 "public_answer_cache_quality_score": None,
                 "public_answer_cache_usage_count": None,
                 "public_answer_cache_review_status": None,
@@ -726,13 +728,13 @@ class BHFAgent:
         return self._mark_stage(ctx, "classify_question_type")
 
     def _load_profile(self, ctx: PipelineContext) -> PipelineContext:
-        profile = self.profile_loader.load(self.config.profile)
-        ctx.profile_name = profile.name
-        ctx.profile_content = profile.content
-        ctx.debug_metadata["profile"] = profile.name
-        ctx.debug_metadata["prompt_strategy"] = strategy_for_profile(
-            profile.name
-        ).__class__.__name__
+        # Prompt profiles were retired with the mode system. Preserve the
+        # configured value only as diagnostic compatibility metadata.
+        ctx.profile_name = "unified"
+        ctx.profile_content = ""
+        ctx.debug_metadata["profile"] = "unified"
+        ctx.debug_metadata["legacy_profile"] = self.config.profile
+        ctx.debug_metadata["prompt_strategy"] = "UnifiedFinalAnswerPrompt"
         return self._mark_stage(ctx, "load_profile")
 
     def _lookup_local_knowledge(self, ctx: PipelineContext) -> PipelineContext:
@@ -1561,7 +1563,7 @@ class BHFAgent:
             prompt_version=PROMPT_VERSION,
             prompt_mode=(
                 f"{ctx.debug_metadata.get('canonical_library_prompt_mode') or ''}"
-                f"|runtime_profile_mode={self.config.runtime_profile_mode}"
+                "|answer_format=unified"
             ),
             knowledge_expansion_fingerprint=self._knowledge_expansion_cache_fingerprint(ctx),
         )
@@ -2083,11 +2085,13 @@ class BHFAgent:
             response_format=response_format,
             metadata={
                 "profile": ctx.profile_name,
-                "runtime_profile_mode": self.config.runtime_profile_mode,
+                "runtime_profile_mode": "unified",
+                "legacy_runtime_profile_mode": self.config.runtime_profile_mode,
                 "full_profile_injected": bool(
                     ctx.debug_metadata.get("full_profile_injected")
                 ),
-                "answer_mode": ctx.answer_mode,
+                "answer_mode": "unified",
+                "legacy_answer_mode": self.config.answer_mode,
                 "response_contract": self._response_contract(ctx.original_question),
                 "prompt_token_estimates": ctx.debug_metadata.get(
                     "prompt_token_estimates", {}

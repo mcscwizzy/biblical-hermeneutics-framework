@@ -103,19 +103,10 @@ THEME_QUERY_TOKENS = {
 
 CAPITALIZED_TERM_RE = re.compile(r"\b[A-Z][A-Za-z0-9'-]+\b")
 
-ANSWER_MODE_DETAIL_LEVELS: dict[str, int] = {
-    "concise": 0,
-    "study": 1,
-    "teaching": 1,
-    "scholar": 2,
-}
-
-CONTEXT_TOPIC_BUDGET_RATIOS: dict[str, float] = {
-    "concise": 0.5,
-    "study": 0.65,
-    "teaching": 0.6,
-    "scholar": 0.8,
-}
+# Legacy answer-mode values are intentionally normalized to one retrieval
+# policy so request compatibility cannot change the user-facing answer.
+ANSWER_MODE_DETAIL_LEVELS: dict[str, int] = {"unified": 1}
+CONTEXT_TOPIC_BUDGET_RATIOS: dict[str, float] = {"unified": 0.65}
 
 TOPIC_FIELDS_BY_DETAIL_LEVEL: dict[int, tuple[str, ...]] = {
     0: (
@@ -350,8 +341,7 @@ def _candidate_exact_queries(
 
 
 def _normalize_answer_mode(answer_mode: str | None) -> str:
-    mode = str(answer_mode or "study").strip().lower()
-    return mode if mode in ANSWER_MODE_DETAIL_LEVELS else "study"
+    return "unified"
 
 
 def _context_detail_level(answer_mode: str | None) -> int:
@@ -809,7 +799,7 @@ def build_canonical_context(
         graph_builder = CanonicalContextBuilder(
             library,
             max_topics=search_limit,
-            max_relationship_depth=2 if normalized_answer_mode == "scholar" else 1,
+            max_relationship_depth=1,
             max_expanded_topics=max_results - len(selected_topics),
         )
         expanded_topics = graph_builder._expand_relationships(

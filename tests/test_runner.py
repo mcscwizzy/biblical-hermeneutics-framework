@@ -317,16 +317,16 @@ class RunnerTests(unittest.TestCase):
             adapter.request.metadata["question_context"]["question_type"],
             "word_study",
         )
-        self.assertEqual(adapter.request.metadata["answer_mode"], "study")
-        self.assertIn("Question type: word_study", adapter.request.system_prompt)
-        self.assertIn("Answer using the word-study format exactly", adapter.request.user_prompt)
+        self.assertEqual(adapter.request.metadata["answer_mode"], "unified")
+        self.assertIn("# Final Answer Format", adapter.request.system_prompt)
+        self.assertTrue(adapter.request.user_prompt.endswith("What is the hebrew word for the word spirit or wind?"))
         self.assertFalse(result.reference_context.is_reference_based)
         self.assertEqual(
             result.reference_context.topic,
             "What is the hebrew word for the word spirit or wind",
         )
         self.assertEqual(result.genre_context.recommended_modules, ["core.genre-awareness"])
-        self.assertEqual(result.profile_used, "minimal-7b")
+        self.assertEqual(result.profile_used, "unified")
 
     def test_agent_retrieves_map_context_for_archaeology_questions(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -369,14 +369,14 @@ class RunnerTests(unittest.TestCase):
         )
         self.assertEqual(
             result.model_metadata["pipeline"]["prompt_strategy"],
-            "MinimalPromptStrategy",
+            "UnifiedFinalAnswerPrompt",
         )
-        self.assertEqual(result.model_metadata["answer_mode"], "study")
-        self.assertEqual(result.model_metadata["pipeline"]["answer_mode"], "study")
+        self.assertEqual(result.model_metadata["answer_mode"], "unified")
+        self.assertEqual(result.model_metadata["pipeline"]["answer_mode"], "unified")
         self.assertIn("validation_score", result.model_metadata["pipeline"])
         self.assertGreaterEqual(result.model_metadata["pipeline"]["validation_score"], 0)
 
-    def test_answer_mode_threads_to_prompt_request_and_result_metadata(self):
+    def test_legacy_answer_mode_is_accepted_but_uses_unified_response(self):
         adapter = RecordingAdapter()
         agent = self.make_agent(adapter, answer_mode="teaching")
 
@@ -384,19 +384,19 @@ class RunnerTests(unittest.TestCase):
 
         self.assertIsNotNone(adapter.request)
         assert adapter.request is not None
-        self.assertEqual(adapter.request.metadata["answer_mode"], "teaching")
-        self.assertEqual(adapter.request.metadata["runtime_profile_mode"], "compact")
+        self.assertEqual(adapter.request.metadata["answer_mode"], "unified")
+        self.assertEqual(adapter.request.metadata["runtime_profile_mode"], "unified")
         self.assertFalse(adapter.request.metadata["full_profile_injected"])
         self.assertIn("prompt_token_estimates", adapter.request.metadata)
-        self.assertIn("Answer Mode: Teaching", adapter.request.system_prompt)
-        self.assertEqual(result.model_metadata["answer_mode"], "teaching")
-        self.assertEqual(result.model_metadata["runtime_profile_mode"], "compact")
+        self.assertIn("# Final Answer Format", adapter.request.system_prompt)
+        self.assertEqual(result.model_metadata["answer_mode"], "unified")
+        self.assertEqual(result.model_metadata["runtime_profile_mode"], "unified")
         self.assertFalse(result.model_metadata["full_profile_injected"])
         self.assertIn("prompt_token_estimates", result.model_metadata)
-        self.assertEqual(result.model_metadata["pipeline"]["answer_mode"], "teaching")
+        self.assertEqual(result.model_metadata["pipeline"]["answer_mode"], "unified")
         self.assertEqual(
             result.model_metadata["pipeline"]["runtime_profile_mode"],
-            "compact",
+            "unified",
         )
         self.assertGreater(
             result.model_metadata["pipeline"]["prompt_token_estimates"]["system_prompt"],
@@ -1473,7 +1473,7 @@ class RunnerTests(unittest.TestCase):
         self.assertIn("Answer using the word-study format exactly", agent.user_prompt_before_model)
         self.assertIn("call_model", result.model_metadata["pipeline"]["stages_completed"])
 
-    def test_full_runtime_profile_mode_stores_profile_prompt_before_model_call(self):
+    def test_legacy_runtime_profile_mode_does_not_change_prompt_before_model_call(self):
         with tempfile.TemporaryDirectory() as tmp:
             profiles_dir = Path(tmp)
             (profiles_dir / "minimal-7b.md").write_text("PROFILE", encoding="utf-8")
@@ -1491,10 +1491,10 @@ class RunnerTests(unittest.TestCase):
             result = agent.ask("What is the hebrew word for the word spirit or wind?")
 
         assert agent.system_prompt_before_model is not None
-        self.assertIn("PROFILE", agent.system_prompt_before_model)
-        self.assertIn("BHF Agent Runtime Instructions", agent.system_prompt_before_model)
-        self.assertEqual(result.model_metadata["runtime_profile_mode"], "full")
-        self.assertTrue(result.model_metadata["full_profile_injected"])
+        self.assertNotIn("PROFILE", agent.system_prompt_before_model)
+        self.assertNotIn("BHF Agent Runtime Instructions", agent.system_prompt_before_model)
+        self.assertEqual(result.model_metadata["runtime_profile_mode"], "unified")
+        self.assertFalse(result.model_metadata["full_profile_injected"])
 
 
 if __name__ == "__main__":

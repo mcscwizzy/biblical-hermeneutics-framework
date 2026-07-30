@@ -171,6 +171,7 @@ class LexiconConfig:
 class AgentConfig:
     config_version: int = 1
     adapter: str = "openai_compatible"
+    # Legacy inputs accepted while clients migrate to the unified answer path.
     profile: str = "standard"
     runtime_profile_mode: str = "compact"
     answer_mode: str = "study"

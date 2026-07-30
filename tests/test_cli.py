@@ -141,7 +141,7 @@ class CLITests(unittest.TestCase):
         self.assertEqual(exit_code, 0)
         self.assertIn("## 1. Short Answer", output)
         self.assertIn("Profile: minimal-7b", output)
-        self.assertIn("Answer mode: study", output)
+        self.assertIn("Answer format: unified", output)
         self.assertIn("Detected question type: word_study [Hebrew]", output)
         self.assertNotIn("Debug:", output)
         self.assertNotIn("PipelineContext", output)
@@ -199,7 +199,7 @@ class CLITests(unittest.TestCase):
             output,
         )
         self.assertIn("Prompt strategy: MinimalPromptStrategy", output)
-        self.assertIn("Answer mode: study", output)
+        self.assertIn("Answer format: unified", output)
         self.assertIn("Auto repair: false", output)
         self.assertIn("Repair threshold: 80", output)
         self.assertIn("Max repair attempts: 1", output)

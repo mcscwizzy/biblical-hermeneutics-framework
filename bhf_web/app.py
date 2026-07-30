@@ -46,8 +46,6 @@ from bhf_agent.study_db import (
 from .forms import (
     ADAPTERS,
     ADAPTER_LABELS,
-    ANSWER_MODES,
-    RUNTIME_PROFILE_MODES,
     form_values_from_config,
     load_web_defaults,
 )
@@ -67,7 +65,6 @@ from .jobs import (
 )
 from .offline import build_offline_manifest, build_offline_pack
 from .runtime import load_runtime_config
-from .services.web_helpers import available_profiles as _available_profiles
 
 
 PACKAGE_DIR = Path(__file__).resolve().parent
@@ -278,9 +275,6 @@ def create_app() -> FastAPI:
                     "form": form_values_from_config(loaded.config),
                     "adapters": ADAPTERS,
                     "adapter_labels": ADAPTER_LABELS,
-                    "profiles": _available_profiles(loaded.config.profile),
-                    "runtime_profile_modes": RUNTIME_PROFILE_MODES,
-                    "answer_modes": ANSWER_MODES,
                     "config_warning": loaded.warning,
                     "books": list_books(),
                     "default_translation": get_default_reader_translation(),

@@ -88,8 +88,8 @@ class WebFormTests(unittest.TestCase):
         )
 
         self.assertEqual(config.profile, "standard")
-        self.assertEqual(config.runtime_profile_mode, "full")
-        self.assertEqual(config.answer_mode, "teaching")
+        self.assertEqual(config.runtime_profile_mode, "compact")
+        self.assertEqual(config.answer_mode, "study")
         self.assertEqual(config.model, "local-model")
         self.assertEqual(config.base_url, "http://localhost:1234/v1")
         self.assertEqual(config.temperature, 0.4)
@@ -192,7 +192,7 @@ class WebFormTests(unittest.TestCase):
         self.assertEqual(config.base_url, "http://host.docker.internal:11434/v1")
         self.assertEqual(config.model, "qwen2.5:7b")
         self.assertEqual(config.profile, "standard")
-        self.assertEqual(config.answer_mode, "concise")
+        self.assertEqual(config.answer_mode, "concise")  # Legacy config is accepted.
         self.assertEqual(config.temperature, 0.2)
         self.assertEqual(config.max_tokens, 1024)
         self.assertEqual(config.context_window, 12288)
@@ -257,7 +257,7 @@ class WebFormTests(unittest.TestCase):
         self.assertEqual(config.base_url, "http://localhost:1234/v1")
         self.assertEqual(config.model, "form-model")
         self.assertEqual(config.profile, "minimal-7b")
-        self.assertEqual(config.answer_mode, "concise")
+        self.assertEqual(config.answer_mode, "study")
         self.assertEqual(config.timeout_seconds, 360)
 
     def test_form_can_override_ollama_adapter_for_openai_compatible_endpoint(self):
@@ -798,6 +798,8 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("data-workspace-tab-bar", response["body"])
         self.assertIn("workspace-tab-context", response["body"])
         self.assertIn("workspace-pane-context", response["body"])
+        self.assertNotIn("Runtime profile", response["body"])
+        self.assertNotIn("Answer mode", response["body"])
         self.assertIn("book-select", response["body"])
         self.assertIn("data-theme-toggle", response["body"])
         self.assertIn("reader-context-menu", response["body"])

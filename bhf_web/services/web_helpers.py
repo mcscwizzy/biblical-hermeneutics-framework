@@ -13,7 +13,6 @@ from fastapi import Request
 from bhf_agent.bible import BibleError, compare_translation_passages, build_selected_passage_context, geography_for_book, load_translation_bible, testament_for_book, timeline_for_book, verse_range_reference
 from bhf_agent.curation import CURATION_COLLECTIONS, list_curation_records
 from bhf_agent.config import ConfigError
-from bhf_agent.profiles import ProfileLoader
 from bhf_agent.runner import BHFAgent
 from bhf_agent.study_db import StudyDataError, record_study_action
 from bhf_agent.study_actions import compact_fact_packet
@@ -286,13 +285,6 @@ def inline_markdown(text: str) -> str:
     escaped = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", escaped)
     escaped = re.sub(r"\*([^*]+)\*", r"<em>\1</em>", escaped)
     return escaped
-
-
-def available_profiles(selected: str) -> list[str]:
-    profiles = ProfileLoader().available_profiles()
-    if selected and selected not in profiles:
-        profiles.append(selected)
-    return sorted(profiles)
 
 
 def format_reference(reference: Any) -> str:

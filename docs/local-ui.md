@@ -4,6 +4,16 @@ The local UI is a small FastAPI Bible reader and study workspace that submits
 questions to the existing `BHFAgent(config).ask(question)` pipeline. It is
 intended for localhost use with an OpenAI-compatible local model runtime.
 
+## Unified answers
+
+The reader uses one answer format: a direct answer first, followed by only the
+biblical evidence, literary context, historical context, interpretive method,
+and qualifications that help answer the question. The Profile, Answer Mode, and
+Runtime Profile controls were removed from the UI. Older configuration,
+environment, API, and CLI values for `profile`, `answer_mode`, and
+`runtime_profile_mode` remain accepted temporarily for compatibility, but are
+ignored and always use the unified format.
+
 It has no accounts, server-side sync, or authentication. Notes and other reader
 state are local-only and single-user, with optional browser-local IndexedDB
 offline storage. Do not bind it to a public interface unless you add your own
@@ -294,7 +304,6 @@ If the file is missing or invalid, the UI uses built-in local defaults:
   "base_url": "http://localhost:11434/v1",
   "model": "llama3.1:8b",
   "profile": "minimal-7b",
-  "answer_mode": "study",
   "temperature": 0.3,
   "max_tokens": 8192,
   "context_window": 12288,

@@ -91,10 +91,7 @@
               <button type="submit" data-testid="bible-search-button">Search</button>
               <button type="button" class="secondary" data-search-clear data-testid="bible-search-clear" hidden>Clear</button>
             </div>
-            <input type="hidden" name="profile" value="{{ form.profile }}">
-            <input type="hidden" name="runtime_profile_mode" value="{{ form.runtime_profile_mode }}">
             <input type="hidden" name="adapter" value="{{ form.adapter }}">
-            <input type="hidden" name="answer_mode" value="{{ form.answer_mode }}">
             <input type="hidden" name="model" value="{{ form.model }}">
             <input type="hidden" name="base_url" value="{{ form.base_url }}">
             <input type="hidden" name="temperature" value="{{ form.temperature }}">
@@ -189,33 +186,6 @@
                     <select name="adapter">
                       {% for adapter in adapters %}
                         <option value="{{ adapter }}" {% if adapter == form.adapter %}selected{% endif %}>{{ adapter_labels.get(adapter, adapter) }}</option>
-                      {% endfor %}
-                    </select>
-                  </label>
-
-                  <label>
-                    <span>Profile</span>
-                    <select name="profile">
-                      {% for profile in profiles %}
-                        <option value="{{ profile }}" {% if profile == form.profile %}selected{% endif %}>{{ profile }}</option>
-                      {% endfor %}
-                    </select>
-                  </label>
-
-                  <label>
-                    <span>Runtime profile</span>
-                    <select name="runtime_profile_mode">
-                      {% for mode in runtime_profile_modes %}
-                        <option value="{{ mode }}" {% if mode == form.runtime_profile_mode %}selected{% endif %}>{{ mode }}</option>
-                      {% endfor %}
-                    </select>
-                  </label>
-
-                  <label>
-                    <span>Answer mode</span>
-                    <select name="answer_mode">
-                      {% for mode in answer_modes %}
-                        <option value="{{ mode }}" {% if mode == form.answer_mode %}selected{% endif %}>{{ mode }}</option>
                       {% endfor %}
                     </select>
                   </label>

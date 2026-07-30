@@ -23,16 +23,16 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("question", help="Biblical interpretation question")
     parser.add_argument("--config", help="Path to agent JSON config")
-    parser.add_argument("--profile", help="BHF profile name")
+    parser.add_argument("--profile", help="Deprecated compatibility option; accepted but ignored.")
     parser.add_argument(
         "--runtime-profile-mode",
         choices=ALLOWED_RUNTIME_PROFILE_MODES,
-        help="Whether to inject compact runtime instructions or the full profile markdown",
+        help="Deprecated compatibility option; accepted but ignored.",
     )
     parser.add_argument(
         "--answer-mode",
         choices=ALLOWED_ANSWER_MODES,
-        help="Answer shape independent of BHF profile depth",
+        help="Deprecated compatibility option; accepted but ignored.",
     )
     parser.add_argument("--base-url", help="OpenAI-compatible local base URL")
     parser.add_argument("--model", help="Local model name")
@@ -129,12 +129,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     print(result.answer_text or "(no answer returned)")
     print()
     print("Profile:", result.profile_used)
-    print(
-        "Runtime profile mode:",
-        result.model_metadata.get("runtime_profile_mode")
-        or config.runtime_profile_mode,
-    )
-    print("Answer mode:", result.model_metadata.get("answer_mode") or config.answer_mode)
+    print("Answer format: unified")
     print("Detected question type:", _format_question_type(result))
     print("Detected reference:", _format_reference(result))
     print("Detected genre:", result.genre_context.primary_genre or "not detected")
@@ -173,12 +168,7 @@ def main(argv: Optional[list[str]] = None) -> int:
             result.model_metadata.get("framework_version_fingerprint") or "unknown",
         )
         print("Profile:", result.profile_used)
-        print(
-            "Runtime profile mode:",
-            result.model_metadata.get("runtime_profile_mode")
-            or config.runtime_profile_mode,
-        )
-        print("Answer mode:", result.model_metadata.get("answer_mode") or config.answer_mode)
+        print("Answer format: unified")
         print("Question type:", _format_question_type(result))
         print("Detected reference:", _format_reference(result))
         print("Detected genre:", result.genre_context.primary_genre or "not detected")

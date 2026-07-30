@@ -126,9 +126,8 @@ There is also a separate deterministic Bible search fallback route that asks the
 
 The main prompt path currently includes:
 
-- Profile content
-- `AGENT_INSTRUCTIONS`
-- Answer-mode instructions
+- Compact hermeneutical safeguards
+- One unified final-answer instruction set
 - Detected reference and genre context
 - CKL prompt context, including query, retrieval method, retrieved object IDs, topic counts, status filters, and compact object blocks
 - Local curated knowledge
