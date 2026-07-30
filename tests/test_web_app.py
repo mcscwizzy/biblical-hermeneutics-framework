@@ -911,7 +911,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v17"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v19"', service_worker["body"])
         self.assertIn("cacheFirstApi", service_worker["body"])
         self.assertIn("isRefreshRequest", service_worker["body"])
         self.assertIn("networkFirstNavigation", service_worker["body"])
@@ -1314,10 +1314,13 @@ class WebAppTests(unittest.TestCase):
 
     def test_map_search_results_offer_google_earth_for_coordinate_backed_places(self):
         map_script = Path("bhf_web/static/maps/MapPanel.js").read_text(encoding="utf-8")
+        map_service_script = Path("bhf_web/static/maps/mapService.js").read_text(encoding="utf-8")
 
         self.assertIn('result.kind === "place" ? buildGoogleEarthUrl(result.item) : ""', map_script)
         self.assertIn("map-search-earth-link", map_script)
         self.assertIn("Open ${escapeHtml(String(result.title || \"location\"))} in Google Earth", map_script)
+        self.assertIn('headers["X-BHF-Refresh"] = "true"', map_service_script)
+        self.assertIn("forceRefresh: true", map_service_script)
 
     def test_map_search_selection_uses_expanded_workspace_on_desktop(self):
         map_script = Path("bhf_web/static/maps/MapPanel.js").read_text(encoding="utf-8")

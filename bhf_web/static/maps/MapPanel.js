@@ -8,7 +8,7 @@ import {
   loadPlacesForPassage,
   loadRoutesForPassage,
   searchMapCatalog,
-} from "./mapService.js?v=20260630";
+} from "./mapService.js?v=20260729b";
 import {
   renderMapOrientationCard,
   renderSelectedMarker as renderSelectedMarkerHtml,
