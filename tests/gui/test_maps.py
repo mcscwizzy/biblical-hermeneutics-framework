@@ -64,3 +64,22 @@ def test_mobile_map_navigator_can_be_closed(driver, wait, base_url):
     wait.until(lambda _driver: "is-mobile-open" not in navigator.get_attribute("class"))
     assert open_button.get_attribute("aria-expanded") == "false"
     _assert_no_severe_browser_errors(driver)
+
+
+def test_mobile_map_details_can_be_closed(driver, wait, base_url):
+    driver.set_window_size(390, 844)
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    MapsPage(driver, wait, base_url).open_maps()
+
+    details = driver.find_element(By.CSS_SELECTOR, "#map-details-column")
+    open_button = driver.find_element(By.CSS_SELECTOR, "[data-map-details-open]")
+    close_button = driver.find_element(By.CSS_SELECTOR, "[data-map-details-close]")
+
+    open_button.click()
+    wait.until(lambda _driver: "is-mobile-open" in details.get_attribute("class"))
+    assert close_button.is_displayed()
+
+    close_button.click()
+    wait.until(lambda _driver: "is-mobile-open" not in details.get_attribute("class"))
+    assert open_button.get_attribute("aria-expanded") == "false"
+    _assert_no_severe_browser_errors(driver)

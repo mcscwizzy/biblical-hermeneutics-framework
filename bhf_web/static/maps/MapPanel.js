@@ -80,6 +80,7 @@ function getPanelElements() {
     navigatorClose: document.querySelector("[data-map-navigator-close]"),
     detailsColumn: document.querySelector("#map-details-column"),
     detailsOpen: document.querySelector("[data-map-details-open]"),
+    detailsClose: document.querySelector("[data-map-details-close]"),
     mapSearchQuery: document.querySelector("[data-map-search-query]"),
     mapSearchKind: document.querySelector("[data-map-search-kind]"),
     mapSearchPeriod: document.querySelector("[data-map-search-period]"),
@@ -391,7 +392,7 @@ function syncDetailsState(hasSelection) {
   }
   if (detailsColumn) {
     detailsColumn.dataset.open = hasSelection ? "true" : "false";
-    detailsColumn.classList.toggle("is-mobile-open", Boolean(hasSelection));
+    setMobileDetailsOpen(hasSelection);
   }
 }
 
@@ -400,6 +401,13 @@ function setMobileNavigatorOpen(isOpen) {
   const open = Boolean(isOpen);
   navigatorPanel?.classList.toggle("is-mobile-open", open);
   navigatorOpen?.setAttribute("aria-expanded", String(open));
+}
+
+function setMobileDetailsOpen(isOpen) {
+  const { detailsColumn, detailsOpen } = getPanelElements();
+  const open = Boolean(isOpen);
+  detailsColumn?.classList.toggle("is-mobile-open", open);
+  detailsOpen?.setAttribute("aria-expanded", String(open));
 }
 
 function setBrowseSearchControls({ query = "", kind = "all", period = "all" } = {}) {
@@ -939,6 +947,7 @@ function wirePanelButtons() {
     navigatorOpen,
     navigatorClose,
     detailsOpen,
+    detailsClose,
   } = getPanelElements();
 
   if (modalCloseButton) {
@@ -1001,7 +1010,13 @@ function wirePanelButtons() {
   }
   if (detailsOpen) {
     detailsOpen.addEventListener("click", () => {
-      getPanelElements().detailsColumn?.classList.toggle("is-mobile-open");
+      const { detailsColumn } = getPanelElements();
+      setMobileDetailsOpen(!detailsColumn?.classList.contains("is-mobile-open"));
+    });
+  }
+  if (detailsClose) {
+    detailsClose.addEventListener("click", () => {
+      setMobileDetailsOpen(false);
     });
   }
   if (details) {

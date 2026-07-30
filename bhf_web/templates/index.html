@@ -590,7 +590,7 @@
                             </select>
                           </label>
                           <button type="button" class="secondary map-mobile-trigger" data-map-navigator-open aria-controls="map-study-navigator" aria-expanded="false">Navigator</button>
-                          <button type="button" class="secondary map-mobile-trigger" data-map-details-open aria-controls="map-details">Details</button>
+                          <button type="button" class="secondary map-mobile-trigger" data-map-details-open aria-controls="map-details" aria-expanded="false">Details</button>
                         </div>
                         <div id="map-stage" class="map-stage" role="application" aria-label="Bible map. Use the navigator or search results to select a location."></div>
                         <p class="map-map-caption"><span class="map-legend-dot map-legend-dot--focused"></span> Places <span class="map-legend-dot map-legend-dot--route"></span> Approximate route</p>
@@ -600,6 +600,7 @@
                       <aside class="map-details-column" id="map-details-column" aria-label="Selected map details">
                         <div class="map-details-header-mobile">
                           <div><p class="map-eyebrow">Selected object</p><h3>Details</h3></div>
+                          <button type="button" class="secondary map-details-close" data-map-details-close aria-label="Close details" title="Close details">×</button>
                         </div>
                         <section id="map-details" class="map-details-panel" aria-live="polite">
                           <p class="empty map-details-empty">Select a place, route, or journey stop to inspect its details here.</p>
