@@ -37,9 +37,9 @@
   {% if not test_mode %}
     <link rel="stylesheet" href="{{ static_asset('/vendor/leaflet/leaflet.css') }}">
     <script src="{{ static_asset('/vendor/leaflet/leaflet.js') }}" defer></script>
-    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260729g"></script>
+    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260729h"></script>
   {% else %}
-    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260729g"></script>
+    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260729h"></script>
   {% endif %}
 </head>
 <body>
@@ -563,6 +563,18 @@
                               <button type="button" class="secondary" data-map-search-clear data-testid="map-search-clear">Clear</button>
                             </div>
                           </div>
+                          <div class="map-search-row map-search-row--journey">
+                            <label class="map-browser-field">
+                              <span>Journey</span>
+                              <select data-map-journey-selector data-testid="journey-selector">
+                                <option value="">Choose a journey</option>
+                              </select>
+                            </label>
+                            <label class="check map-toggle">
+                              <input type="checkbox" data-map-journey-toggle checked>
+                              <span>Show journey</span>
+                            </label>
+                          </div>
                         </div>
 
                         <div class="map-navigator-section">
@@ -586,47 +598,6 @@
                           </div>
                           <div id="map-search-results-list" class="map-search-results-list"></div>
                         </section>
-
-                        <details class="map-navigator-section map-journey-panel" data-map-journeys aria-label="Journey study">
-                          <summary class="map-journey-summary">
-                            <span><strong>Journey study</strong><small>Ordered stops and approximate routes</small></span>
-                            <span class="count" data-map-journey-count>0 of 0</span>
-                          </summary>
-                          <div class="map-journey-controls">
-                            <label class="map-browser-field">
-                              <span>Find a journey</span>
-                              <input type="search" data-map-journey-search data-testid="journey-search-input" placeholder="Search journeys">
-                            </label>
-                            <label class="map-browser-field">
-                              <span>Journey</span>
-                              <select data-map-journey-selector data-testid="journey-selector">
-                                <option value="">Choose a journey</option>
-                              </select>
-                            </label>
-                            <label class="check map-toggle">
-                              <input type="checkbox" data-map-journey-toggle checked>
-                              <span>Show journey on map</span>
-                            </label>
-                          </div>
-                          <details class="map-journey-filters">
-                            <summary>More journey filters</summary>
-                            <div class="map-journey-filter-grid">
-                              <label class="map-browser-field"><span>Testament</span><select data-map-journey-filter-testament></select></label>
-                              <label class="map-browser-field"><span>Category</span><select data-map-journey-filter-category></select></label>
-                              <label class="map-browser-field"><span>Era</span><select data-map-journey-filter-era></select></label>
-                            </div>
-                          </details>
-                          <div class="map-journey-detail" data-map-journey-detail>
-                            <p class="empty">Choose a journey to draw its stops and route on the map.</p>
-                          </div>
-                          <details class="map-journey-lists">
-                            <summary>Stops and segments</summary>
-                            <div class="map-journey-list-grid">
-                              <section><h4>Stops</h4><div class="map-journey-list" data-map-journey-stop-list></div></section>
-                              <section><h4>Segments</h4><div class="map-journey-list" data-map-journey-segment-list></div></section>
-                            </div>
-                          </details>
-                        </details>
 
                         <section class="map-navigator-section map-layer-controls" aria-labelledby="map-layer-controls-heading">
                           <div class="map-section-header">

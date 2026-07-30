@@ -1,7 +1,6 @@
 import { createBibleMap } from "./BibleMap.js";
 import {
   getOrderedJourneyStops,
-  journeyMatchesFilters,
   loadJourneyCatalog,
 } from "./JourneyMapData.js";
 import {
@@ -59,15 +58,10 @@ let loadedHistoricalLayers = [];
 let loadedPoliticalContextLayers = [];
 let loadedSavedMapStudies = [];
 let loadedJourneys = [];
-let journeyFacets = { categories: [], eras: [], testaments: [], tags: [] };
 let selectedJourneyId = "";
 let selectedJourneyStopId = "";
 let selectedJourneySegmentId = "";
 let studyMode = "passage";
-let journeySearch = "";
-let journeyTestament = "";
-let journeyCategory = "";
-let journeyEra = "";
 let journeyVisibility = true;
 let browseSearchResults = [];
 let browseSearchQuery = "";
@@ -134,17 +128,8 @@ function getPanelElements() {
     mapSearchResults: document.querySelector("#map-search-results"),
     mapSearchResultsCount: document.querySelector("#map-search-results-count"),
     mapSearchResultsList: document.querySelector("#map-search-results-list"),
-    journeyPanel: document.querySelector("[data-map-journeys]"),
-    journeySearch: document.querySelector("[data-map-journey-search]"),
     journeySelector: document.querySelector("[data-map-journey-selector]"),
-    journeyTestament: document.querySelector("[data-map-journey-filter-testament]"),
-    journeyCategory: document.querySelector("[data-map-journey-filter-category]"),
-    journeyEra: document.querySelector("[data-map-journey-filter-era]"),
     journeyToggle: document.querySelector("[data-map-journey-toggle]"),
-    journeyCount: document.querySelector("[data-map-journey-count]"),
-    journeyStopList: document.querySelector("[data-map-journey-stop-list]"),
-    journeySegmentList: document.querySelector("[data-map-journey-segment-list]"),
-    journeyDetail: document.querySelector("[data-map-journey-detail]"),
     workspace: document.querySelector("#map-workspace"),
     inlineHost: document.querySelector("#map-workspace-inline-host"),
     modal: document.querySelector("#map-modal"),
@@ -196,14 +181,7 @@ function getSelectedJourney() {
 }
 
 function getVisibleJourneys() {
-  return loadedJourneys.filter((journey) =>
-    journeyMatchesFilters(journey, {
-      search: journeySearch,
-      testament: journeyTestament,
-      category: journeyCategory,
-      era: journeyEra,
-    })
-  );
+  return loadedJourneys;
 }
 
 function getSelectedJourneyStop(journey = getSelectedJourney()) {
@@ -220,34 +198,12 @@ function getSelectedJourneySegment(journey = getSelectedJourney()) {
   return (journey.segments || []).find((segment) => segment.id === selectedJourneySegmentId) || null;
 }
 
-function renderSelectOptions(values, currentValue, placeholder = "All") {
-  const options = [`<option value="">${escapeHtml(placeholder)}</option>`];
-  for (const value of values || []) {
-    options.push(`<option value="${escapeHtml(value)}" ${value === currentValue ? "selected" : ""}>${escapeHtml(value)}</option>`);
-  }
-  return options.join("");
-}
-
 function syncJourneyControls() {
-  const {
-    journeySearch: searchInput,
-    journeySelector,
-    journeyTestament: testamentSelect,
-    journeyCategory: categorySelect,
-    journeyEra: eraSelect,
-    journeyToggle,
-    journeyCount,
-  } = getPanelElements();
+  const { journeySelector, journeyToggle } = getPanelElements();
   const visibleJourneys = getVisibleJourneys();
 
-  if (searchInput && searchInput.value !== journeySearch) {
-    searchInput.value = journeySearch;
-  }
   if (journeyToggle) {
     journeyToggle.checked = journeyVisibility;
-  }
-  if (journeyCount) {
-    journeyCount.textContent = `${visibleJourneys.length} of ${loadedJourneys.length}`;
   }
   if (journeySelector) {
     const selectedStillVisible = visibleJourneys.some((journey) => journey.id === selectedJourneyId);
@@ -259,88 +215,10 @@ function syncJourneyControls() {
     ].join("");
     journeySelector.value = selectedStillVisible ? selectedJourneyId : "";
   }
-  if (testamentSelect) {
-    testamentSelect.innerHTML = renderSelectOptions(journeyFacets.testaments, journeyTestament);
-    testamentSelect.value = journeyTestament;
-  }
-  if (categorySelect) {
-    categorySelect.innerHTML = renderSelectOptions(journeyFacets.categories, journeyCategory);
-    categorySelect.value = journeyCategory;
-  }
-  if (eraSelect) {
-    eraSelect.innerHTML = renderSelectOptions(journeyFacets.eras, journeyEra);
-    eraSelect.value = journeyEra;
-  }
 }
 
 function renderJourneySidebar() {
-  const { journeyStopList, journeySegmentList, journeyDetail } = getPanelElements();
-  const journey = getSelectedJourney();
-  const orderedStops = getOrderedJourneyStops(journey);
-
-  if (journeyStopList) {
-    journeyStopList.innerHTML = orderedStops.length
-      ? orderedStops.map((stop) => `
-          <button type="button" class="map-journey-list-item ${stop.id === selectedJourneyStopId ? "is-selected" : ""}" data-map-journey-stop="${escapeHtml(stop.id)}" aria-pressed="${stop.id === selectedJourneyStopId}">
-            <span class="map-journey-list-order">${Number.isFinite(stop.order) ? escapeHtml(String(stop.order)) : "•"}</span>
-            <span>
-              <strong>${escapeHtml(stop.name)}</strong>
-              <span>${escapeHtml([stop.region, stop.modernLocation].filter(Boolean).join(" · ") || "No location detail")}</span>
-            </span>
-          </button>
-        `).join("")
-      : `<p class="empty">Choose a journey to see its stops.</p>`;
-  }
-
-  if (journeySegmentList) {
-    journeySegmentList.innerHTML = journey?.segments?.length
-      ? journey.segments.map((segment) => {
-          const from = journey.stops.find((stop) => stop.id === segment.from);
-          const to = journey.stops.find((stop) => stop.id === segment.to);
-          return `
-            <button type="button" class="map-journey-list-item ${segment.id === selectedJourneySegmentId ? "is-selected" : ""}" data-map-journey-segment="${escapeHtml(segment.id)}" aria-pressed="${segment.id === selectedJourneySegmentId}">
-              <span>
-                <strong>${escapeHtml(segment.label || "Segment")}</strong>
-                <span>${escapeHtml(`${from?.name || segment.from} → ${to?.name || segment.to}`)}</span>
-              </span>
-            </button>
-          `;
-        }).join("")
-      : `<p class="empty">Journey segments will appear here.</p>`;
-  }
-
-  if (journeyDetail) {
-    if (!journey) {
-      journeyDetail.innerHTML = `<p class="empty">Search or choose a journey to draw its stops and route on the map.</p>`;
-    } else {
-      const selectedStop = getSelectedJourneyStop(journey);
-      const selectedSegment = getSelectedJourneySegment(journey);
-      const title = selectedStop?.name || selectedSegment?.label || journey.title;
-      const subtitle = selectedStop
-        ? [selectedStop.region, selectedStop.modernLocation].filter(Boolean).join(" · ")
-        : selectedSegment
-          ? "Selected route segment"
-          : [journey.testament, journey.category, journey.era].filter(Boolean).join(" · ");
-      const description = selectedStop?.description || selectedSegment?.description || journey.description || "";
-      journeyDetail.innerHTML = `
-        <div class="map-journey-detail-card">
-          <div class="map-section-header">
-            <h4>${escapeHtml(title)}</h4>
-            <span class="map-confidence confidence-${escapeHtml(normalizeConfidenceClass(selectedStop?.confidence || selectedSegment?.confidence || journey.confidence))}">
-              ${escapeHtml(selectedStop?.confidence || selectedSegment?.confidence || journey.confidence || "unknown")}
-            </span>
-          </div>
-          <p class="map-details-subtitle">${escapeHtml(subtitle || "Journey overview")}</p>
-          <p>${escapeHtml(description || "No description supplied.")}</p>
-          <div class="map-journey-passage-row">
-            ${(selectedStop?.passages || selectedSegment?.passages || journey.primaryPassages || []).slice(0, 4).map((passage) =>
-              `<button type="button" class="map-passage-chip" data-map-open-passage="${escapeHtml(passage)}">${escapeHtml(passage)}</button>`
-            ).join("")}
-          </div>
-        </div>
-      `;
-    }
-  }
+  // Journey controls stay compact beside search so place results keep their space.
   syncJourneyControls();
 }
 
@@ -373,12 +251,9 @@ function renderLayerControls() {
 }
 
 function syncStudyMode() {
-  const { studyMode: studyModeSelect, contextSummary, journeyPanel } = getPanelElements();
+  const { studyMode: studyModeSelect, contextSummary } = getPanelElements();
   if (studyModeSelect) {
     studyModeSelect.value = studyMode;
-  }
-  if (journeyPanel) {
-    journeyPanel.open = studyMode === "journeys" || Boolean(selectedJourneyId);
   }
   if (!contextSummary) {
     return;
@@ -459,7 +334,6 @@ async function loadMapData(context = {}) {
 async function loadSupplementalMapData() {
   const journeyCatalog = await loadJourneyCatalog();
   loadedJourneys = journeyCatalog.journeys || [];
-  journeyFacets = journeyCatalog.facets || { categories: [], eras: [], testaments: [], tags: [] };
   if (selectedJourneyId && !loadedJourneys.some((journey) => journey.id === selectedJourneyId)) {
     selectedJourneyId = "";
     selectedJourneyStopId = "";
@@ -549,15 +423,12 @@ function moveWorkspaceToHost(hostType) {
 
 function setMapMode(nextMode) {
   mapMode = nextMode === "browse" ? "browse" : "passage";
-  const { mapBrowser, mapSearchResults, journeyPanel } = getPanelElements();
+  const { mapBrowser, mapSearchResults } = getPanelElements();
   if (mapBrowser) {
     mapBrowser.hidden = mapMode !== "browse";
   }
   if (mapSearchResults) {
     mapSearchResults.hidden = mapMode !== "browse";
-  }
-  if (journeyPanel && "open" in journeyPanel) {
-    journeyPanel.open = mapMode !== "browse" || Boolean(selectedJourneyId);
   }
 }
 
@@ -1813,15 +1684,8 @@ function wirePanelButtons() {
   const historicalPeriodSelect = document.querySelector("[data-historical-period]");
   const {
     modal,
-    journeySearch: journeySearchInput,
     journeySelector,
-    journeyTestament: journeyTestamentSelect,
-    journeyCategory: journeyCategorySelect,
-    journeyEra: journeyEraSelect,
     journeyToggle,
-    journeyStopList,
-    journeySegmentList,
-    journeyDetail,
   } = getPanelElements();
   const details = document.querySelector("#map-details");
   const {
@@ -1926,39 +1790,9 @@ function wirePanelButtons() {
       }
     });
   }
-  if (journeySearchInput) {
-    journeySearchInput.addEventListener("input", (event) => {
-      journeySearch = event.target.value || "";
-      if (selectedJourneyId && !getVisibleJourneys().some((journey) => journey.id === selectedJourneyId)) {
-        selectedJourneyId = "";
-        selectedJourneyStopId = "";
-        selectedJourneySegmentId = "";
-        applySelectedJourneyToMap({ fit: false });
-      }
-      renderJourneySidebar();
-    });
-  }
   if (journeySelector) {
     journeySelector.addEventListener("change", (event) => {
       selectJourney(event.target.value);
-    });
-  }
-  if (journeyTestamentSelect) {
-    journeyTestamentSelect.addEventListener("change", (event) => {
-      journeyTestament = event.target.value || "";
-      renderJourneySidebar();
-    });
-  }
-  if (journeyCategorySelect) {
-    journeyCategorySelect.addEventListener("change", (event) => {
-      journeyCategory = event.target.value || "";
-      renderJourneySidebar();
-    });
-  }
-  if (journeyEraSelect) {
-    journeyEraSelect.addEventListener("change", (event) => {
-      journeyEra = event.target.value || "";
-      renderJourneySidebar();
     });
   }
   if (journeyToggle) {
@@ -1968,30 +1802,6 @@ function wirePanelButtons() {
         mapController.setJourneyVisibility(journeyVisibility);
       }
       renderJourneySidebar();
-    });
-  }
-  if (journeyStopList) {
-    journeyStopList.addEventListener("click", (event) => {
-      const button = event.target.closest("[data-map-journey-stop]");
-      if (button) {
-        selectJourneyStop(button.getAttribute("data-map-journey-stop"));
-      }
-    });
-  }
-  if (journeySegmentList) {
-    journeySegmentList.addEventListener("click", (event) => {
-      const button = event.target.closest("[data-map-journey-segment]");
-      if (button) {
-        selectJourneySegment(button.getAttribute("data-map-journey-segment"));
-      }
-    });
-  }
-  if (journeyDetail) {
-    journeyDetail.addEventListener("click", async (event) => {
-      const passageButton = event.target.closest("[data-map-open-passage]");
-      if (passageButton) {
-        await openPassageReference(passageButton.getAttribute("data-map-open-passage"));
-      }
     });
   }
   if (details) {

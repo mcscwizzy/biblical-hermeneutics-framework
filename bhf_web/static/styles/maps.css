@@ -362,7 +362,6 @@ html[data-theme="dark"] .map-stage {
   background: linear-gradient(180deg, #f3f9fd, #d4e8f7);
 }
 
-.map-journey-panel,
 .map-reference-panel {
   display: grid;
   gap: 10px;
@@ -372,109 +371,10 @@ html[data-theme="dark"] .map-stage {
   background: #fbfcfd;
 }
 
-.map-journey-summary {
-  align-items: center;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  color: #245b82;
-  font-size: 0.95rem;
-}
-
-.map-journey-summary strong {
-  font-size: 0.98rem;
-}
-
-.map-reference-panel > summary,
-.map-journey-summary,
-.map-journey-filters > summary,
-.map-journey-lists > summary {
+.map-reference-panel > summary {
   cursor: pointer;
   color: #245b82;
   font-size: 0.86rem;
-  font-weight: 800;
-}
-
-.map-journey-controls,
-.map-journey-filter-grid {
-  display: grid;
-  gap: 8px;
-}
-
-.map-journey-detail-card {
-  display: grid;
-  gap: 7px;
-  padding: 10px;
-  border: 1px solid #d8dee4;
-  border-radius: 6px;
-  background: #fff;
-}
-
-.map-journey-detail-card p {
-  margin: 0;
-  line-height: 1.45;
-}
-
-.map-journey-list-grid {
-  display: grid;
-  gap: 12px;
-  margin-top: 10px;
-}
-
-.map-journey-list-grid h4 {
-  margin: 0 0 6px;
-  color: #52616f;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-}
-
-.map-journey-list {
-  display: grid;
-  gap: 6px;
-  max-height: 220px;
-  overflow: auto;
-}
-
-.map-journey-list-item {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 8px;
-  width: 100%;
-  min-height: 44px;
-  border: 1px solid #d8dee4;
-  border-radius: 6px;
-  padding: 8px;
-  background: #fff;
-  color: #1d252d;
-  text-align: left;
-}
-
-.map-journey-list-item strong,
-.map-journey-list-item span span {
-  display: block;
-}
-
-.map-journey-list-item span span {
-  color: #52616f;
-  font-size: 0.8rem;
-  line-height: 1.35;
-}
-
-.map-journey-list-item.is-selected {
-  border-color: #d18a16;
-  background: #fff9e8;
-}
-
-.map-journey-list-order {
-  display: grid;
-  place-items: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 999px;
-  background: #245b82;
-  color: #fff;
-  font-size: 0.78rem;
   font-weight: 800;
 }
 
@@ -565,10 +465,8 @@ html[data-theme="dark"] .map-orientation-card,
 html[data-theme="dark"] .map-layer-toggle,
 html[data-theme="dark"] .map-orientation-item,
 html[data-theme="dark"] .map-related-passages-group,
-html[data-theme="dark"] .map-journey-panel,
 html[data-theme="dark"] .map-reference-panel,
-html[data-theme="dark"] .map-journey-detail-card,
-html[data-theme="dark"] .map-journey-list-item {
+html[data-theme="dark"] .map-reference-panel {
   border-color: var(--border);
   background: var(--surface-alt);
 }
@@ -593,21 +491,6 @@ html[data-theme="dark"] .map-passage-chip {
   border-color: var(--border);
   background: var(--surface);
   color: var(--accent-text);
-}
-
-html[data-theme="dark"] .map-journey-list-item,
-html[data-theme="dark"] .map-journey-detail-card p {
-  color: var(--page-text);
-}
-
-html[data-theme="dark"] .map-journey-list-item span span,
-html[data-theme="dark"] .map-journey-list-grid h4 {
-  color: var(--page-muted);
-}
-
-html[data-theme="dark"] .map-journey-list-item.is-selected {
-  border-color: var(--warning-text);
-  background: var(--warning-bg);
 }
 
 html[data-theme="dark"] .map-confidence {
@@ -808,6 +691,10 @@ html[data-theme="dark"] .map-entity-marker--place {
 
 .map-search-row > .map-browser-field {
   flex: 1 1 120px;
+}
+
+.map-search-row--journey > .map-browser-field {
+  flex-basis: 100%;
 }
 
 .map-browser-actions {
@@ -1077,25 +964,6 @@ html[data-theme="dark"] .map-entity-marker--place {
 
 .map-mobile-trigger {
   display: none;
-}
-
-.map-journey-summary small {
-  display: block;
-  margin-top: 3px;
-  color: var(--page-muted);
-  font-size: 0.76rem;
-  font-weight: 500;
-}
-
-.map-study-navigator .map-journey-panel {
-  border: 0;
-  border-radius: 0;
-  padding: 14px 16px;
-  background: transparent;
-}
-
-.map-study-navigator .map-journey-list {
-  max-height: 180px;
 }
 
 .map-saved-summary .saved-map-studies-list {
