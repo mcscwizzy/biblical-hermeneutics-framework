@@ -10,16 +10,13 @@ from bhf_agent.study_db import (
     create_highlight,
     create_note,
     create_map_note,
-    create_saved_map_study,
     create_saved_study,
     get_biblical_place,
     get_archaeology_item,
     get_archaeology_site,
     get_manuscript_item,
-    get_saved_map_study,
     delete_highlight,
     delete_note,
-    delete_saved_map_study,
     delete_saved_study,
     initialize_database,
     get_saved_study,
@@ -37,7 +34,6 @@ from bhf_agent.study_db import (
     list_place_references,
     list_route_references,
     list_notes,
-    list_saved_map_studies,
     list_saved_studies,
     update_note,
 )
@@ -69,7 +65,7 @@ class StudyDatabaseTests(unittest.TestCase):
                 )
             ]
 
-        self.assertEqual(versions, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])
+        self.assertEqual(versions, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
 
         with connect(self.path) as connection:
             saved_studies = connection.execute(
@@ -498,44 +494,6 @@ class StudyDatabaseTests(unittest.TestCase):
                 {**_saved_study_data(), "answer": " "},
                 path=self.path,
             )
-
-    def test_create_reload_and_delete_saved_map_study(self):
-        initialize_database(path=self.path)
-
-        study = create_saved_map_study(
-                {
-                    "book": "Romans",
-                    "chapter": 12,
-                    "start_verse": 1,
-                    "end_verse": 2,
-                    "passage_reference": "Romans 12:1-2",
-                    "selected_place_id": "jerusalem",
-                    "selected_archaeology_id": "pilate-stone",
-                    "selected_manuscript_id": "codex-sinaiticus",
-                    "selected_layers": ["roman-judea-galilee"],
-                    "map_view_state": {"center": [31.78, 35.23], "zoom": 8, "routeVisibility": True},
-                    "generated_summary": "Jerusalem study overlay.",
-                    "user_notes": "Focus on the temple setting.",
-                },
-            path=self.path,
-        )
-
-        self.assertTrue(study["id"])
-        self.assertEqual(study["selected_place_id"], "jerusalem")
-        self.assertEqual(study["selected_archaeology_id"], "pilate-stone")
-        self.assertEqual(study["selected_manuscript_id"], "codex-sinaiticus")
-        self.assertEqual(study["selected_layers"], ["roman-judea-galilee"])
-
-        fetched = get_saved_map_study(study["id"], path=self.path)
-        self.assertEqual(fetched["generated_summary"], "Jerusalem study overlay.")
-        self.assertEqual(fetched["map_view_state"]["zoom"], 8)
-
-        studies = list_saved_map_studies("Romans", 12, path=self.path)
-        self.assertEqual(len(studies), 1)
-        self.assertEqual(studies[0]["id"], study["id"])
-
-        self.assertTrue(delete_saved_map_study(study["id"], path=self.path))
-        self.assertEqual(list_saved_map_studies(path=self.path), [])
 
     def test_create_map_note_rejects_missing_target(self):
         initialize_database(path=self.path)

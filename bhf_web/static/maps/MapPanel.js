@@ -5,16 +5,12 @@ import {
 } from "./JourneyMapData.js";
 import {
   loadMapCatalog,
-  invalidateMapCache,
   loadPlacesForPassage,
   loadRoutesForPassage,
-  loadSavedMapStudy,
-  loadSavedMapStudies,
   searchMapCatalog,
 } from "./mapService.js?v=20260630";
 import {
   renderMapOrientationCard,
-  renderSavedMapStudies,
   renderSelectedMarker as renderSelectedMarkerHtml,
   renderSelectedRoute as renderSelectedRouteHtml,
 } from "./MapPanelContent.js";
@@ -39,7 +35,6 @@ let mapMode = "passage";
 let lastPassageContext = null;
 let loadedMarkers = [];
 let loadedRoutes = [];
-let loadedSavedMapStudies = [];
 let loadedJourneys = [];
 let selectedJourneyId = "";
 let selectedJourneyStopId = "";
@@ -88,8 +83,6 @@ function getPanelElements() {
     stage: document.querySelector("#map-stage"),
     reference: document.querySelector("#map-panel-reference"),
     details: document.querySelector("#map-details"),
-    savedMapStudiesList: document.querySelector("#saved-map-studies-list"),
-    savedMapStudiesCount: document.querySelector("#saved-map-studies-count"),
     historicalPeriod: document.querySelector("[data-historical-period]"),
     mapBrowser: document.querySelector("[data-map-browser]"),
     studyMode: document.querySelector("[data-map-study-mode]"),
@@ -242,32 +235,26 @@ async function loadPassageMapData(context = {}) {
   const [
     placeResult,
     routeResult,
-    savedMapStudiesResult,
   ] = await Promise.all([
     loadPlacesForPassage(loadContext),
     loadRoutesForPassage(loadContext),
-    loadSavedMapStudies(context),
   ]);
   const offline = [
     placeResult,
     routeResult,
-    savedMapStudiesResult,
   ].some((result) => Boolean(result?.offline));
   return {
     placeResult,
     routeResult,
-    savedMapStudiesResult,
     offline,
   };
 }
 
 async function loadBrowseMapData() {
-  const savedMapStudiesResult = await loadSavedMapStudies();
   return {
     placeResult: { markers: [] },
     routeResult: { routes: [] },
-    savedMapStudiesResult: savedMapStudiesResult || { saved_map_studies: [] },
-    offline: Boolean(savedMapStudiesResult?.offline),
+    offline: false,
   };
 }
 
@@ -714,7 +701,7 @@ async function openMapPanel(context = {}) {
     applyTimelineOptions(catalog.timeline.period_options);
   }
   renderSupplementalControls();
-  const browseMode = context.mode === "browse" || (!context.book && !context.chapter && !context.savedMapStudy);
+  const browseMode = context.mode === "browse" || (!context.book && !context.chapter);
   setMapMode(browseMode ? "browse" : "passage");
   if (browseMode) {
     clearCurrentMapSelection();
@@ -731,9 +718,6 @@ async function openMapPanel(context = {}) {
     if (nextReference !== previousReference) {
       clearCurrentMapSelection();
     }
-  }
-  if (context.savedMapStudy?.map_view_state?.historicalPeriod) {
-    historicalPeriod = normalizeHistoricalPeriod(context.savedMapStudy.map_view_state.historicalPeriod);
   }
   if (!browseMode) {
     lastPassageContext = context;
@@ -752,12 +736,10 @@ async function openMapPanel(context = {}) {
     const {
       placeResult,
       routeResult,
-      savedMapStudiesResult,
       offline,
     } = await loadMapData(context);
     loadedRoutes = routeResult.routes || [];
     loadedMarkers = placeResult.markers || [];
-    loadedSavedMapStudies = savedMapStudiesResult.saved_map_studies || [];
     syncStudyMode();
     if (selectedMarker && !loadedMarkers.some((marker) => marker.id === selectedMarker.id)) {
       selectedMarker = null;
@@ -771,11 +753,7 @@ async function openMapPanel(context = {}) {
       loadedRoutes,
       routeVisibility
     );
-    if (context.savedMapStudy) {
-      await applySavedMapStudyState(context.savedMapStudy);
-    }
     syncHistoricalPeriod();
-    await refreshSavedMapStudies();
 
     if (browseMode) {
       clearStatus();
@@ -852,30 +830,6 @@ async function openMapPanel(context = {}) {
     setPinHint("");
     setStatus(error.message || "Could not load the map.", "error");
     renderEmptyDetails("Could not load place and route details.");
-  }
-}
-
-async function applySavedMapStudyState(study) {
-  if (!study) {
-    return;
-  }
-  const viewState = study.map_view_state || {};
-  historicalPeriod = normalizeHistoricalPeriod(viewState.historicalPeriod || "all");
-  selectedMarker = null;
-  selectedRoute = null;
-
-  if (study.selected_place_id) {
-    selectedMarker = loadedMarkers.find((marker) => marker.id === study.selected_place_id) || null;
-  }
-  if (study.selected_route_id) {
-    selectedRoute = loadedRoutes.find((route) => route.id === study.selected_route_id) || null;
-  }
-  if (study.map_view_state && study.map_view_state.center && mapController?.map) {
-    const center = study.map_view_state.center;
-    const zoom = Number(study.map_view_state.zoom || mapController.map.getZoom());
-    if (Array.isArray(center) && center.length === 2) {
-      mapController.map.setView(center, zoom);
-    }
   }
 }
 
@@ -997,11 +951,9 @@ async function setHistoricalPeriod(period) {
     const {
       placeResult,
       routeResult,
-      savedMapStudiesResult,
     } = await loadMapData(lastPassageContext);
     loadedMarkers = placeResult.markers || [];
     loadedRoutes = routeResult.routes || [];
-    loadedSavedMapStudies = savedMapStudiesResult.saved_map_studies || [];
     if (selectedMarker && !loadedMarkers.some((marker) => marker.id === selectedMarker.id)) {
       selectedMarker = null;
     }
@@ -1030,7 +982,6 @@ async function setHistoricalPeriod(period) {
     } else {
       renderEmptyDetails("Choose a place, route, or journey stop to inspect its details here.");
     }
-    await refreshSavedMapStudies();
     clearStatus();
   } catch (error) {
     setStatus(error.message || "Could not load map data.", "error");
@@ -1252,47 +1203,6 @@ function submitStudyForm(form) {
   }
 }
 
-async function refreshSavedMapStudies() {
-  const { savedMapStudiesList, savedMapStudiesCount } = getPanelElements();
-  if (!lastPassageContext) {
-    if (savedMapStudiesCount) {
-      savedMapStudiesCount.textContent = String(loadedSavedMapStudies.length);
-    }
-    if (savedMapStudiesList) {
-      savedMapStudiesList.innerHTML = renderSavedMapStudies(loadedSavedMapStudies);
-    }
-    return;
-  }
-  const response = await loadSavedMapStudies(lastPassageContext);
-  loadedSavedMapStudies = response.saved_map_studies || [];
-  if (savedMapStudiesCount) {
-    savedMapStudiesCount.textContent = String(loadedSavedMapStudies.length);
-  }
-  if (savedMapStudiesList) {
-    savedMapStudiesList.innerHTML = renderSavedMapStudies(loadedSavedMapStudies);
-  }
-}
-
-async function openSavedMapStudy(studyId) {
-  const response = await loadSavedMapStudy(studyId);
-  await openMapPanel({
-    book: response.book,
-    chapter: response.chapter,
-    verseStart: response.start_verse,
-    verseEnd: response.end_verse,
-    savedMapStudy: response,
-  });
-}
-
-async function deleteSavedMapStudy(studyId) {
-  await requestJson(`/api/map-studies/${encodeURIComponent(studyId)}`, {
-    method: "DELETE",
-    headers: { Accept: "application/json" },
-  }, "Could not delete saved map study.");
-  invalidateMapCache("/api/map-studies");
-  await refreshSavedMapStudies();
-}
-
 function renderEmptyDetails(message) {
   const { details } = getPanelElements();
   if (!details) {
@@ -1329,7 +1239,6 @@ function wirePanelButtons() {
   } = getPanelElements();
   const details = document.querySelector("#map-details");
   const {
-    savedMapStudiesList,
     studyMode: studyModeSelect,
     navigatorOpen,
     detailsOpen,
@@ -1443,24 +1352,6 @@ function wirePanelButtons() {
         return;
       }
       setSelectedSearchResult(browseSearchResults[index]);
-    });
-  }
-  if (savedMapStudiesList) {
-    savedMapStudiesList.addEventListener("click", async (event) => {
-      const actionButton = event.target.closest("[data-saved-map-study-action]");
-      if (!actionButton) {
-        return;
-      }
-      const studyId = actionButton.getAttribute("data-study-id");
-      if (!studyId) {
-        return;
-      }
-      const action = actionButton.getAttribute("data-saved-map-study-action");
-      if (action === "open") {
-        await openSavedMapStudy(studyId);
-      } else if (action === "delete") {
-        await deleteSavedMapStudy(studyId);
-      }
     });
   }
 }

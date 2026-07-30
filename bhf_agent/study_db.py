@@ -22,7 +22,7 @@ from .db.repositories import manuscripts as _manuscripts_repo
 from .db.repositories import reader_state as _reader_state_repo
 from .db.repositories import sources as _sources_repo
 
-SCHEMA_VERSION = 14
+SCHEMA_VERSION = 15
 OPENBIBLE_PLACES_PATH = Path(__file__).resolve().parent / "data" / "openbible_places.json"
 BROAD_PERIOD_LABEL = "Broad / uncertain period"
 CANONICAL_PERIOD_LABELS = (
@@ -493,53 +493,6 @@ def get_source(source_id: str, path: str | Path = DEFAULT_DB_PATH) -> dict[str, 
     )
 
 
-def list_saved_map_studies(
-    book: str | None = None,
-    chapter: int | str | None = None,
-    path: str | Path = DEFAULT_DB_PATH,
-) -> list[dict[str, Any]]:
-    return _map_notes_repo.list_saved_map_studies(
-        book=book,
-        chapter=chapter,
-        path=path,
-        ensure_schema=_ensure_schema,
-    )
-
-
-def get_saved_map_study(
-    study_id: str,
-    path: str | Path = DEFAULT_DB_PATH,
-) -> dict[str, Any]:
-    return _map_notes_repo.get_saved_map_study(
-        study_id,
-        path=path,
-        ensure_schema=_ensure_schema,
-    )
-
-
-def create_saved_map_study(
-    data: dict[str, Any],
-    path: str | Path = DEFAULT_DB_PATH,
-) -> dict[str, Any]:
-    return _map_notes_repo.create_saved_map_study(
-        data,
-        path=path,
-        ensure_schema=_ensure_schema,
-        validate_saved_map_study=_validated_saved_map_study,
-    )
-
-
-def delete_saved_map_study(
-    study_id: str,
-    path: str | Path = DEFAULT_DB_PATH,
-) -> bool:
-    return _map_notes_repo.delete_saved_map_study(
-        study_id,
-        path=path,
-        ensure_schema=_ensure_schema,
-    )
-
-
 def create_map_note(
     data: dict[str, Any],
     path: str | Path = DEFAULT_DB_PATH,
@@ -767,6 +720,12 @@ def _ensure_schema(connection: sqlite3.Connection) -> None:
             "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
             (14, _timestamp()),
         )
+    if 15 not in applied:
+        _apply_v15_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (15, _timestamp()),
+        )
 
 
 def _apply_v1_schema(connection: sqlite3.Connection) -> None:
@@ -968,27 +927,6 @@ def _apply_v5_schema(connection: sqlite3.Connection) -> None:
 def _apply_v6_schema(connection: sqlite3.Connection) -> None:
     connection.executescript(
         """
-        CREATE TABLE IF NOT EXISTS saved_map_studies (
-            id TEXT PRIMARY KEY,
-            book TEXT NOT NULL,
-            chapter INTEGER NOT NULL,
-            verse_start INTEGER NOT NULL,
-            verse_end INTEGER NOT NULL,
-            passage_reference TEXT NOT NULL DEFAULT '',
-            selected_place_id TEXT NOT NULL DEFAULT '',
-            selected_route_id TEXT NOT NULL DEFAULT '',
-            selected_layer_id TEXT NOT NULL DEFAULT '',
-            selected_layers TEXT NOT NULL DEFAULT '[]',
-            map_view_state TEXT NOT NULL DEFAULT '{}',
-            generated_summary TEXT NOT NULL DEFAULT '',
-            user_notes TEXT NOT NULL DEFAULT '',
-            created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL
-        );
-
-        CREATE INDEX IF NOT EXISTS idx_saved_map_studies_reference
-            ON saved_map_studies(book, chapter);
-
         CREATE TABLE IF NOT EXISTS map_notes (
             id TEXT PRIMARY KEY,
             book TEXT NOT NULL,
@@ -1017,11 +955,6 @@ def _apply_v6_schema(connection: sqlite3.Connection) -> None:
 
 
 def _apply_v7_schema(connection: sqlite3.Connection) -> None:
-    _add_column_if_missing(
-        connection,
-        "saved_map_studies",
-        "archaeology_id TEXT NOT NULL DEFAULT ''",
-    )
     _add_column_if_missing(
         connection,
         "map_notes",
@@ -1182,11 +1115,6 @@ def _apply_v9_schema(connection: sqlite3.Connection) -> None:
 def _apply_v10_schema(connection: sqlite3.Connection) -> None:
     _add_column_if_missing(
         connection,
-        "saved_map_studies",
-        "manuscript_id TEXT NOT NULL DEFAULT ''",
-    )
-    _add_column_if_missing(
-        connection,
         "map_notes",
         "manuscript_id TEXT NOT NULL DEFAULT ''",
     )
@@ -1300,6 +1228,10 @@ def _apply_v14_schema(connection: sqlite3.Connection) -> None:
         "saved_studies",
         "canonical_object_ids TEXT NOT NULL DEFAULT '[]'",
     )
+
+
+def _apply_v15_schema(connection: sqlite3.Connection) -> None:
+    connection.execute("DROP TABLE IF EXISTS saved_map_studies")
 
 
 def _backfill_source_registry(connection: sqlite3.Connection) -> None:
@@ -1443,65 +1375,6 @@ def _seed_confidence_labels(connection: sqlite3.Connection) -> None:
                 label["notes"],
             ),
         )
-def _validated_saved_map_study(data: dict[str, Any]) -> dict[str, Any]:
-    reference = _validated_reference(data)
-    passage_reference = str(
-        data.get("passage_reference")
-        or _default_map_passage_reference(
-            reference["book"],
-            reference["chapter"],
-            reference["start_verse"],
-            reference["end_verse"],
-        )
-    ).strip()
-    selected_place_id = str(data.get("selected_place_id") or "").strip()
-    selected_route_id = str(data.get("selected_route_id") or "").strip()
-    selected_layer_id = str(data.get("selected_layer_id") or "").strip()
-    selected_archaeology_id = str(data.get("selected_archaeology_id") or "").strip()
-    selected_manuscript_id = str(data.get("selected_manuscript_id") or "").strip()
-    selected_layers = data.get("selected_layers") or []
-    if isinstance(selected_layers, str):
-        try:
-            selected_layers = json.loads(selected_layers)
-        except json.JSONDecodeError:
-            selected_layers = [selected_layers]
-    if not isinstance(selected_layers, list):
-        selected_layers = []
-    selected_layers = [str(value).strip() for value in selected_layers if str(value).strip()]
-    if (
-        not selected_place_id
-        and not selected_route_id
-        and not selected_layer_id
-        and not selected_archaeology_id
-        and not selected_manuscript_id
-        and not selected_layers
-    ):
-        raise StudyDataError("select a place, route, historical layer, or archaeology item before saving a map study")
-    map_view_state = data.get("map_view_state") or {}
-    if isinstance(map_view_state, str):
-        try:
-            map_view_state = json.loads(map_view_state)
-        except json.JSONDecodeError:
-            map_view_state = {}
-    if not isinstance(map_view_state, dict):
-        map_view_state = {}
-    generated_summary = str(data.get("generated_summary") or "").strip()
-    user_notes = str(data.get("user_notes") or "").strip()
-    return {
-        **reference,
-        "passage_reference": passage_reference,
-        "selected_place_id": selected_place_id,
-        "selected_route_id": selected_route_id,
-        "selected_layer_id": selected_layer_id,
-        "selected_archaeology_id": selected_archaeology_id,
-        "selected_manuscript_id": selected_manuscript_id,
-        "selected_layers": selected_layers,
-        "map_view_state": map_view_state,
-        "generated_summary": generated_summary,
-        "user_notes": user_notes,
-    }
-
-
 def _validated_map_note(data: dict[str, Any]) -> dict[str, Any]:
     reference = _validated_reference(data)
     note_body = str(data.get("note_body") or data.get("body") or "").strip()

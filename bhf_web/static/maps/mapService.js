@@ -300,20 +300,3 @@ export async function searchMapCatalog(query, context = {}) {
   const url = `/api/maps/search?${params.toString()}`;
   return loadCachedJson(url, "Could not search the map catalog.", { allowOfflineFallback: false });
 }
-
-export async function loadSavedMapStudies(context = {}) {
-  const params = new URLSearchParams();
-  if (context.book) {
-    params.set("book", context.book);
-  }
-  if (context.chapter) {
-    params.set("chapter", String(context.chapter));
-  }
-  const url = params.toString() ? `/api/map-studies?${params.toString()}` : "/api/map-studies";
-  return loadCachedJson(url, "Could not load saved map studies.");
-}
-
-export async function loadSavedMapStudy(studyId) {
-  const url = `/api/map-studies/${encodeURIComponent(studyId)}`;
-  return loadCachedJson(url, "Could not load saved map study.");
-}

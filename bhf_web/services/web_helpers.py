@@ -173,38 +173,6 @@ def saved_study_payload_from_request(payload: dict[str, Any], job_store: Any = N
     }
 
 
-def map_study_payload_from_request(payload: dict[str, Any]) -> dict[str, Any]:
-    view_state = payload.get("map_view_state") or {}
-    selected_layers = payload.get("selected_layers") or []
-    if isinstance(selected_layers, str):
-        try:
-            selected_layers = json.loads(selected_layers)
-        except json.JSONDecodeError:
-            selected_layers = [selected_layers]
-    if isinstance(view_state, str):
-        try:
-            view_state = json.loads(view_state)
-        except json.JSONDecodeError:
-            view_state = {}
-    return {
-        "id": payload.get("id"),
-        "book": payload.get("book"),
-        "chapter": payload.get("chapter"),
-        "start_verse": payload.get("start_verse") or payload.get("verse_start"),
-        "end_verse": payload.get("end_verse") or payload.get("verse_end"),
-        "passage_reference": payload.get("passage_reference"),
-        "selected_place_id": payload.get("selected_place_id"),
-        "selected_route_id": payload.get("selected_route_id"),
-        "selected_layer_id": payload.get("selected_layer_id"),
-        "selected_archaeology_id": payload.get("selected_archaeology_id"),
-        "selected_manuscript_id": payload.get("selected_manuscript_id"),
-        "selected_layers": selected_layers,
-        "map_view_state": view_state,
-        "generated_summary": payload.get("generated_summary"),
-        "user_notes": payload.get("user_notes"),
-    }
-
-
 def map_note_payload_from_request(payload: dict[str, Any]) -> dict[str, Any]:
     return {
         "id": payload.get("id"),

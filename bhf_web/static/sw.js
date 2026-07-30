@@ -217,7 +217,6 @@ function isCacheableApiRequest(url) {
     "/api/canonical/search",
     "/api/canonical/objects/",
     "/api/maps/",
-    "/api/map-studies",
     "/api/sources",
   ].some((path) => url.pathname === path || url.pathname.startsWith(path));
 }

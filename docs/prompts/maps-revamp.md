@@ -10,7 +10,7 @@ The current biblical maps UI is cluttered, difficult to navigate, and visually d
 
 This is not simply a request to make the existing markers prettier. The map should help users understand a passage, place, journey, event, or region without overwhelming them with every available geographic record at once.
 
-Preserve the existing BHF architecture, existing map data, map context used by the agent, saved map studies, notes, offline/PWA behavior, and current backend functionality wherever possible.
+Preserve the existing BHF architecture, existing map data, map context used by the agent, notes, offline/PWA behavior, and current backend functionality wherever possible.
 
 Do not replace the existing mapping system with a Google-only implementation.
 
@@ -26,7 +26,6 @@ Before editing anything, locate and review all relevant files for:
 - Map-place data models
 - Journey, event, region, and location records
 - Map context passed into the interpretation agent
-- Saved map studies
 - Map notes
 - Offline caching and PWA support
 - Tests related to maps
@@ -249,15 +248,12 @@ Support practical endpoints or equivalent routes for:
 
 - A single place
 - A journey
-- A saved map study
-- A passage-related map study where sufficient data exists
 
 Possible route structure:
 
 ```text
 GET /api/maps/places/{place_id}.kml
 GET /api/maps/journeys/{journey_id}.kml
-GET /api/map-studies/{study_id}.kml
 ```
 
 Use the repository’s existing route conventions rather than forcing these exact paths if another structure is more appropriate.
@@ -480,7 +476,7 @@ Next phase: implement the responsive study workspace and progressive-disclosure 
 - Added focused study modes for Passage, Places, Journeys, Regions, and an explicitly unavailable Events state until local event records exist.
 - Moved search, journey selection, ordered stops, route visibility, period filtering, and broad layer toggles into the navigator; browse mode still starts empty and only renders search results.
 - Added responsive navigator and details drawers for tablet/mobile, safe-area-aware spacing, touch-sized controls, focusable buttons, and reduced-motion CSS.
-- Kept Leaflet, the existing passage-resolution APIs, saved studies, notes, offline API cache, and `map_context` agent handoff intact.
+- Kept Leaflet, the existing passage-resolution APIs, notes, offline API cache, and `map_context` agent handoff intact.
 - Place details now disclose only available fields and include coordinate-aware `Open in Google Earth` plus local place KML export actions.
 
 Verification: `node --check` passed for changed map modules; targeted web asset and saved-study tests passed. Selenium browser tests were discovered but skipped because Firefox/selenium/uvicorn dependencies are unavailable in this environment.
@@ -489,10 +485,10 @@ Next phase: finish export route coverage, accessibility/offline assertions, and 
 
 ### Phase 3 — exports, preservation checks, and handoff (complete, 2026-07-29)
 
-- Added dependency-free KML generation with XML escaping for places, SQLite-backed routes, static journeys, and saved map studies.
-- Added export routes: `GET /api/maps/places/{place_id}.kml`, `GET /api/maps/routes/{route_id}.kml`, `GET /api/maps/journeys/{journey_id}.kml`, and `GET /api/map-studies/{study_id}.kml`.
+- Added dependency-free KML generation with XML escaping for places, SQLite-backed routes, and static journeys.
+- Added export routes: `GET /api/maps/places/{place_id}.kml`, `GET /api/maps/routes/{route_id}.kml`, and `GET /api/maps/journeys/{journey_id}.kml`.
 - KML exports omit records without usable coordinates, include available references/descriptions, label journey lines as approximate, and return a download filename/content type.
-- Added tests for KML escaping, point/line/journey serialization, place and saved-study export routes, coordinate validation, map context/tool behavior, notes, and the new responsive map shell selectors.
+- Added tests for KML escaping, point/line/journey serialization, place export routes, coordinate validation, map context/tool behavior, notes, and the new responsive map shell selectors.
 - No service-worker or external tile caching changes were made; Google Earth remains an optional online action and local map use remains independent of it.
 
 Verification:

@@ -179,13 +179,6 @@
       const highlightId = decodeURIComponent(path.slice("/api/highlights/".length));
       return offlineDb.deleteOfflineHighlight(highlightId, path);
     }
-    if (path === "/api/map-studies" && method === "POST" && typeof offlineDb.upsertOfflineMapStudy === "function") {
-      return offlineDb.upsertOfflineMapStudy(body, method, path);
-    }
-    if (path.startsWith("/api/map-studies/") && method === "DELETE" && typeof offlineDb.deleteOfflineMapStudy === "function") {
-      const studyId = decodeURIComponent(path.slice("/api/map-studies/".length));
-      return offlineDb.deleteOfflineMapStudy(studyId, path);
-    }
     if (path.startsWith("/api/saved-studies/") && method === "DELETE" && typeof offlineDb.deleteOfflineSavedStudy === "function") {
       const studyId = decodeURIComponent(path.slice("/api/saved-studies/".length));
       return offlineDb.deleteOfflineSavedStudy(studyId, path);
@@ -247,7 +240,6 @@
       "/api/canonical/search",
       "/api/canonical/objects/",
       "/api/maps/",
-      "/api/map-studies",
       "/api/sources",
     ].some((prefix) => path === prefix || path.startsWith(prefix));
   }
@@ -287,7 +279,7 @@
     if (isAiOnlyPath(path)) {
       return false;
     }
-    if (method === "POST" && ["/api/notes", "/api/highlights", "/api/saved-studies", "/api/map-studies", "/api/map-notes"].includes(path)) {
+    if (method === "POST" && ["/api/notes", "/api/highlights", "/api/saved-studies", "/api/map-notes"].includes(path)) {
       return true;
     }
     if (method === "PUT" && (path.startsWith("/api/notes/") || path === "/api/settings/reader")) {
@@ -297,7 +289,6 @@
       path.startsWith("/api/notes/")
       || path.startsWith("/api/highlights/")
       || path.startsWith("/api/saved-studies/")
-      || path.startsWith("/api/map-studies/")
     )) {
       return true;
     }

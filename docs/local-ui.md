@@ -71,16 +71,14 @@ it stores the source registry and source detail responses for offline browsing.
 The reader settings sheet shows install/refresh controls and cached counts for
 the study, maps, and sources packs.
 
-Saved map studies can be created and deleted offline. They use client-generated
-IDs, write to IndexedDB immediately, and replay through `/api/map-studies` when
-connectivity returns. Map notes follow the same client-ID replay contract.
-Saved studies are stored in IndexedDB and can be opened offline; the browser
-renders a conservative HTML version of the saved answer and canonical links.
+Map notes use client-generated IDs and replay when connectivity returns. Saved
+studies are stored in IndexedDB and can be opened offline; the browser renders
+a conservative HTML version of the saved answer and canonical links.
 
-The reader settings sheet includes an Offline sync control for server-backed
-map studies and map notes. Older note, highlight, and saved-study queue entries
-are discarded by the updated app so they cannot be uploaded. Map changes still
-retry automatically when the browser reports that it is online again.
+The reader settings sheet includes an Offline sync control for map notes. Older
+note, highlight, and saved-study queue entries are discarded by the updated app
+so they cannot be uploaded. Map changes still retry automatically when the
+browser reports that it is online again.
 
 The same sheet includes PWA lifecycle controls. Install app uses the browser's
 install prompt when Chrome or another supporting browser exposes it. App update

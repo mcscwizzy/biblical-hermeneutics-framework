@@ -4070,13 +4070,13 @@ function openMapPanel(context) {
   syncMapWorkspaceEmptyState();
   if (window.BHFMaps && typeof window.BHFMaps.openMapPanel === "function") {
     const hasPassageContext = Boolean(
-      context && (context.book || context.chapter || context.savedMapStudy),
+      context && (context.book || context.chapter),
     );
     window.BHFMaps.openMapPanel(hasPassageContext ? context : {mode: "browse"});
     return;
   }
   const hasPassageContext = Boolean(
-    context && (context.book || context.chapter || context.savedMapStudy),
+    context && (context.book || context.chapter),
   );
   window.BHFPendingMapPanelContext = hasPassageContext
     ? context

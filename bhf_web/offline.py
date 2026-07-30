@@ -48,7 +48,6 @@ def build_offline_manifest() -> dict[str, Any]:
                 "notes",
                 "highlights",
                 "saved_studies",
-                "map_studies",
             ],
             "device_only": [
                 "notes",
@@ -137,7 +136,6 @@ def build_offline_manifest() -> dict[str, Any]:
                     "/api/maps/archaeology-for-passage",
                     "/api/maps/manuscripts-for-passage",
                     "/api/maps/political-context-for-passage",
-                    "/api/map-studies",
                 ],
             },
             {
@@ -162,13 +160,10 @@ def build_offline_manifest() -> dict[str, Any]:
             "notes",
             "highlights",
             "savedStudies",
-            "mapStudies",
             "mutationQueue",
             "metadata",
         ],
         "offline_mutations": [
-            "POST /api/map-studies",
-            "DELETE /api/map-studies/{id}",
             "POST /api/map-notes",
             "PUT /api/settings/reader",
         ],

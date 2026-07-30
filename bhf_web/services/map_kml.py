@@ -1,4 +1,4 @@
-"""Small, dependency-free KML serializers for local map study exports."""
+"""Small, dependency-free KML serializers for local map exports."""
 
 from __future__ import annotations
 

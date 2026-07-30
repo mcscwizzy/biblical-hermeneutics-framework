@@ -471,8 +471,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn("renderSelectedHistoricalLayer", map_script)
         self.assertNotIn("buildHistoricalLayerCautionNote", map_script)
         self.assertNotIn("loadHistoricalLayers", map_script)
-        self.assertIn("renderSavedMapStudies", map_script)
-        self.assertIn("openSavedMapStudy", map_script)
+        self.assertNotIn("saved map study", map_script.lower())
         self.assertIn("normalizeHistoricalPeriod", Path("bhf_web/static/maps/MapPanelStateHelpers.js").read_text(encoding="utf-8"))
 
         map_content_script = Path("bhf_web/static/maps/MapPanelContent.js").read_text(encoding="utf-8")
@@ -679,7 +678,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn(".map-details-card .compact", style)
         self.assertIn("@media (max-width: 680px)", style)
         self.assertIn(".map-panel-body {\n    gap: 10px;", style)
-        self.assertIn(".map-details-panel,\n  .saved-map-study {\n    padding: 12px;", style)
+        self.assertIn(".map-details-panel {\n    padding: 12px;", style)
         self.assertIn(".map-reference-panel", style)
         self.assertIn(".map-journey-stop", style)
         self.assertIn(".map-reference-point", style)
@@ -814,7 +813,6 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("data-context-action=\"open_map_panel\"", response["body"])
         self.assertNotIn("data-context-action=\"compare_archaeology\"", response["body"])
         self.assertNotIn("data-context-action=\"ask_location\"", response["body"])
-        self.assertNotIn("data-context-action=\"save_map_study\"", response["body"])
         self.assertNotIn("data-context-action=\"map_note\"", response["body"])
         self.assertNotIn("data-context-action=\"related_passages\"", response["body"])
         self.assertNotIn("data-context-action=\"view_historical_layer\"", response["body"])
@@ -843,7 +841,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("data-route-toggle", response["body"])
         self.assertIn("data-historical-period", response["body"])
         self.assertIn("Broad / uncertain period", response["body"])
-        self.assertIn("saved-map-studies", response["body"])
+        self.assertNotIn("saved-map-studies", response["body"])
         self.assertIn("map_context", response["body"])
         self.assertIn("/static/vendor/leaflet/leaflet.css", response["body"])
         self.assertIn("/static/vendor/leaflet/leaflet.js", response["body"])
@@ -1012,7 +1010,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("canonicalObjects", offline_db["body"])
         self.assertIn("generatedCanonicalSearchResponse", offline_db["body"])
         self.assertIn("sources", offline_db["body"])
-        self.assertIn("upsertOfflineMapStudy", offline_db["body"])
+        self.assertNotIn("upsertOfflineMapStudy", offline_db["body"])
         self.assertIn("readTextResponse", offline_db["body"])
         self.assertIn("renderSavedStudyHtml", offline_db["body"])
         self.assertIn("mutationQueueSummary", offline_db["body"])
@@ -1282,7 +1280,7 @@ class WebAppTests(unittest.TestCase):
         self.assertNotIn("manuscripts", data)
         self.assertIn("historical_layers", data)
         self.assertIn("political_context", data)
-        self.assertIn("saved_map_studies", data)
+        self.assertNotIn("saved_map_studies", data)
         self.assertIn("timeline", data)
         self.assertIn("period_options", data["timeline"])
         self.assertTrue(any(option["value"] == "Broad / uncertain period" for option in data["timeline"]["period_options"]))
@@ -1628,35 +1626,12 @@ class WebAppTests(unittest.TestCase):
         self.assertTrue(empty_data["empty_state"])
         self.assertEqual(empty_data["layers"], [])
 
-    def test_map_studies_route_creates_lists_and_deletes(self):
+    def test_map_note_route_and_place_kml_export(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             db_path = Path(tmpdir) / "study.sqlite"
             initialize_database(db_path)
             with patch("bhf_web.app.STUDY_DB_PATH", db_path):
                 test_app = create_app()
-                create_response = asgi_request(
-                    "POST",
-                    "/api/map-studies",
-                    json_data={
-                        "id": "map-study-client-123",
-                        "book": "Romans",
-                        "chapter": 12,
-                        "start_verse": 1,
-                        "end_verse": 2,
-                        "passage_reference": "Romans 12:1-2",
-                        "selected_place_id": "jerusalem",
-                        "selected_layers": ["roman-judea-galilee"],
-                        "map_view_state": {"center": [31.78, 35.23], "zoom": 8},
-                        "generated_summary": "Jerusalem study overlay.",
-                        "user_notes": "Focus on the temple setting.",
-                    },
-                    test_app=test_app,
-                )
-                self.assertEqual(create_response["status"], 201)
-                study = json.loads(create_response["body"])
-                self.assertEqual(study["id"], "map-study-client-123")
-                self.assertEqual(study["selected_place_id"], "jerusalem")
-
                 place_kml_response = asgi_request(
                     "GET",
                     "/api/maps/places/jerusalem.kml",
@@ -1665,24 +1640,6 @@ class WebAppTests(unittest.TestCase):
                 self.assertEqual(place_kml_response["status"], 200)
                 self.assertIn("<kml", place_kml_response["body"])
                 self.assertIn("Jerusalem", place_kml_response["body"])
-
-                list_response = asgi_request("GET", "/api/map-studies?book=Romans&chapter=12", test_app=test_app)
-                self.assertEqual(list_response["status"], 200)
-                studies = json.loads(list_response["body"])["saved_map_studies"]
-                self.assertEqual(len(studies), 1)
-                self.assertEqual(studies[0]["map_notes"], [])
-
-                open_response = asgi_request("GET", f"/api/map-studies/{study['id']}", test_app=test_app)
-                self.assertEqual(open_response["status"], 200)
-                self.assertIn("Jerusalem study overlay.", open_response["body"])
-
-                saved_kml_response = asgi_request(
-                    "GET",
-                    f"/api/map-studies/{study['id']}.kml",
-                    test_app=test_app,
-                )
-                self.assertEqual(saved_kml_response["status"], 200)
-                self.assertIn("<kml", saved_kml_response["body"])
 
                 note_response = asgi_request(
                     "POST",
@@ -1703,13 +1660,6 @@ class WebAppTests(unittest.TestCase):
                 note = json.loads(note_response["body"])
                 self.assertEqual(note["id"], "map-note-client-123")
                 self.assertEqual(note["place_id"], "jerusalem")
-
-                updated_list = asgi_request("GET", "/api/map-studies?book=Romans&chapter=12", test_app=test_app)
-                updated_studies = json.loads(updated_list["body"])["saved_map_studies"]
-                self.assertEqual(len(updated_studies[0]["map_notes"]), 1)
-
-                delete_response = asgi_request("DELETE", f"/api/map-studies/{study['id']}", test_app=test_app)
-                self.assertEqual(delete_response["status"], 200)
 
     def test_health_route_returns_ok(self):
         response = asgi_request("GET", "/api/health")

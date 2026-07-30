@@ -10,7 +10,6 @@ import {
   buildSourceText,
   escapeHtml,
   formatPeriodList,
-  formatStudyReference,
   normalizeArchaeologyConfidence,
   prettyConfidence,
   renderRelatedPassages,
@@ -56,31 +55,6 @@ function renderMapOrientationCard(options = {}) {
 
 function confidenceClassName(value) {
   return String(normalizeArchaeologyConfidence(value) || "Tentative").toLowerCase().replaceAll(" ", "-");
-}
-
-function renderSavedMapStudies(studies) {
-  if (!Array.isArray(studies) || studies.length === 0) {
-    return `<p class="empty">No saved map studies for this passage yet.</p>`;
-  }
-  return studies
-    .map((study) => {
-      const meta = [
-        study.selected_place_id ? `Place: ${study.selected_place_id}` : null,
-        study.selected_route_id ? `Route: ${study.selected_route_id}` : null,
-      ].filter(Boolean).join(" · ") || "Map study";
-      return `
-        <article class="saved-map-study" data-saved-map-study-id="${escapeHtml(study.id || "")}">
-          <h4>${escapeHtml(study.passage_reference || formatStudyReference(study))}</h4>
-          <p class="saved-study-meta">${escapeHtml(meta)}</p>
-          <p>${escapeHtml(study.generated_summary || "Saved map state")}</p>
-          <div class="note-actions">
-            <button type="button" class="secondary" data-saved-map-study-action="open" data-study-id="${escapeHtml(study.id || "")}">Open</button>
-            <button type="button" class="secondary danger" data-saved-map-study-action="delete" data-study-id="${escapeHtml(study.id || "")}">Delete</button>
-          </div>
-        </article>
-      `;
-    })
-    .join("");
 }
 
 function renderSelectedMarker(marker, passageContext, options = {}) {
@@ -141,7 +115,7 @@ function renderSelectedMarker(marker, passageContext, options = {}) {
             ? `<a class="secondary-link map-earth-link" href="${escapeHtml(earthUrl)}" target="_blank" rel="noopener noreferrer">Open in Google Earth <span aria-hidden="true">↗</span></a>`
             : `<span class="map-external-disabled" aria-disabled="true">Google Earth is unavailable offline</span>`}
           <a class="secondary-link map-kml-link" href="/api/maps/places/${encodeURIComponent(marker.id)}.kml" download>Download place KML</a>
-          <p class="map-layer-note">Opens Google Earth in a new browser context; local map study remains available offline.</p>
+          <p class="map-layer-note">Opens Google Earth in a new browser context; the local map remains available offline.</p>
         </section>
       ` : ""}
 
@@ -559,7 +533,6 @@ function renderManuscriptLayerOverview(markers, manuscriptsVisible) {
 
 export {
   renderMapOrientationCard,
-  renderSavedMapStudies,
   renderSelectedArchaeology,
   renderSelectedMarker,
   renderSelectedManuscript,

@@ -22,7 +22,6 @@ from bhf_agent.study_db import (
     list_political_context_references,
     list_place_references,
     list_route_references,
-    list_saved_map_studies,
 )
 from .services.map_matching import (
     format_reference as _format_reference,
@@ -278,7 +277,6 @@ def get_map_catalog(
         "routes": get_map_routes(period=period, path=path),
         "historical_layers": get_historical_layers(period=period, path=path),
         "political_context": get_political_context_layers(period=period, path=path),
-        "saved_map_studies": list_saved_map_studies(path=path),
     }
 
 

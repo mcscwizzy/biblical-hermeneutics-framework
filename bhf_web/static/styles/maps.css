@@ -902,8 +902,7 @@ html[data-theme="dark"] .map-entity-marker--place {
   font-weight: 750;
 }
 
-.map-layer-controls .map-section-header,
-.map-saved-summary .map-section-header {
+.map-layer-controls .map-section-header {
   align-items: center;
 }
 
@@ -964,18 +963,6 @@ html[data-theme="dark"] .map-entity-marker--place {
 
 .map-mobile-trigger {
   display: none;
-}
-
-.map-saved-summary .saved-map-studies-list {
-  max-height: 170px;
-  overflow: auto;
-  margin-top: 0;
-}
-
-.map-saved-summary .saved-map-study {
-  padding: 9px;
-  border-color: var(--border);
-  background: var(--surface);
 }
 
 .map-panel-status {
