@@ -734,8 +734,29 @@ html[data-theme="dark"] .map-entity-marker--place {
 .map-search-result-button:hover,
 .map-search-result-button:focus-visible {
   border-color: var(--accent);
-  color: var(--page-text);
-  background: var(--accent-soft);
+  color: var(--accent-text);
+  background: var(--accent-soft-2);
+}
+
+.map-search-result-button:focus-visible {
+  outline: 3px solid rgb(36 91 130 / 32%);
+  outline-offset: 2px;
+}
+
+.map-search-result-button:hover .map-search-result-topline strong,
+.map-search-result-button:focus-visible .map-search-result-topline strong {
+  color: var(--accent-text);
+}
+
+.map-search-result-button:hover .map-search-result-topline span,
+.map-search-result-button:hover .map-search-result-meta,
+.map-search-result-button:hover .map-search-result-subtitle,
+.map-search-result-button:hover .map-search-result-summary,
+.map-search-result-button:focus-visible .map-search-result-topline span,
+.map-search-result-button:focus-visible .map-search-result-meta,
+.map-search-result-button:focus-visible .map-search-result-subtitle,
+.map-search-result-button:focus-visible .map-search-result-summary {
+  color: var(--accent-text);
 }
 
 .map-search-earth-link {

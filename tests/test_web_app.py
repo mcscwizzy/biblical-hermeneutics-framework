@@ -677,6 +677,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn(".map-reference-point", style)
         self.assertIn(".map-navigator-close", style)
         self.assertIn(".map-details-close", style)
+        self.assertIn(".map-search-result-button:hover .map-search-result-topline strong", style)
+        self.assertIn("background: var(--accent-soft-2);", style)
         self.assertIn("grid-template-rows: minmax(0, 1fr);", style)
         self.assertIn("scrollbar-gutter: stable;", style)
         self.assertNotIn(".map-journey-panel", style)
