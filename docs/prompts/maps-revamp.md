@@ -463,7 +463,7 @@ Work through the repository carefully and implement the changes. Do not stop aft
 ### Phase 1 — repository trace (complete, 2026-07-29)
 
 - Entry point: `bhf_web/templates/index.html` renders the Maps workspace inside the reader's Maps tab and an expandable modal host.
-- Client flow: `bhf_web/static/maps/MapPanel.js` owns panel state and orchestration; `BibleMap.js` owns Leaflet rendering; `mapService.js` owns API/offline reads; `MapPanelContent.js` and `MapPanelText.js` render the details interface; `JourneyMapData.js` validates and loads static journey/layer JSON.
+- Client flow: `bhf_web/static/maps/MapPanel.js` owns panel state and orchestration; `BibleMap.js` owns Leaflet rendering; `mapService.js` owns API/offline reads; `MapPanelContent.js` and `MapPanelText.js` render the details interface.
 - Backend flow: `bhf_web/routes/maps.py` exposes catalog, passage-resolution, search, route/layer, saved-study, and note endpoints; `bhf_web/map_service.py` serializes SQLite-backed places, routes, historical layers, and political context.
 - Existing preservation points: map context is still posted through the Ask form as `map_context`; saved studies and notes use the existing study database; `bhf_web/static/offline/db.js` and `mapService.js` cache local map responses; the service worker remains same-origin and does not cache external tile resources.
 - Primary redesign target: replace the current stacked controls + map/details arrangement with a responsive study navigator / map / details workspace, while keeping the existing data loaders and selection renderers behind that shell.

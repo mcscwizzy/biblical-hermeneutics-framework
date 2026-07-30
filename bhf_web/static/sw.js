@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v19";
+const CACHE_VERSION = "v20";
 const SHELL_CACHE = `bhf-shell-${CACHE_VERSION}`;
 const STATIC_CACHE = `bhf-static-${CACHE_VERSION}`;
 const API_CACHE = `bhf-api-${CACHE_VERSION}`;
@@ -34,7 +34,6 @@ const STATIC_ASSETS = [
   "/static/vendor/leaflet/images/marker-icon.png",
   "/static/vendor/leaflet/images/marker-shadow.png",
   "/static/maps/BibleMap.js",
-  "/static/maps/JourneyMapData.js",
   "/static/maps/MapMarkerPopup.js",
   "/static/maps/MapExternalLinks.js",
   "/static/maps/MapPanel.js",
@@ -56,18 +55,6 @@ const STATIC_ASSETS = [
   "/static/data/archaeology/artifacts.json",
   "/static/data/archaeology/excavationReports.json",
   "/static/data/archaeology/museums.json",
-  "/static/data/journeys/abraham.json",
-  "/static/data/journeys/david-fleeing-saul.json",
-  "/static/data/journeys/elijah-elisha.json",
-  "/static/data/journeys/exile-return.json",
-  "/static/data/journeys/exodus.json",
-  "/static/data/journeys/jesus-final-week.json",
-  "/static/data/journeys/jesus-galilean-ministry.json",
-  "/static/data/journeys/joshua-conquest.json",
-  "/static/data/journeys/paul-first-missionary.json",
-  "/static/data/journeys/paul-rome-voyage.json",
-  "/static/data/journeys/paul-second-missionary.json",
-  "/static/data/journeys/paul-third-missionary.json",
   "/static/data/mapLayers/ancientCities.json",
   "/static/data/mapLayers/biblicalRegions.json",
   "/static/data/mapLayers/kingdoms.json",

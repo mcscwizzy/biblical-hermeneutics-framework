@@ -540,6 +540,7 @@
                             <p class="map-eyebrow">Navigator</p>
                             <h3>Choose a study</h3>
                           </div>
+                          <button type="button" class="secondary map-navigator-close" data-map-navigator-close aria-label="Close navigator" title="Close navigator">×</button>
                         </div>
 
                         <div class="map-navigator-section map-search-section">
@@ -561,31 +562,6 @@
                               <button type="button" class="secondary" data-map-search-clear data-testid="map-search-clear">Clear</button>
                             </div>
                           </div>
-                          <div class="map-search-row map-search-row--journey">
-                            <label class="map-browser-field">
-                              <span>Journey</span>
-                              <select data-map-journey-selector data-testid="journey-selector">
-                                <option value="">Choose a journey</option>
-                              </select>
-                            </label>
-                            <label class="check map-toggle">
-                              <input type="checkbox" data-map-journey-toggle checked>
-                              <span>Show journey</span>
-                            </label>
-                          </div>
-                        </div>
-
-                        <div class="map-navigator-section">
-                          <label class="map-browser-field">
-                            <span>Study mode</span>
-                            <select data-map-study-mode aria-label="Study mode">
-                              <option value="passage" selected>Passage</option>
-                              <option value="places">Places</option>
-                              <option value="journeys">Journeys</option>
-                              <option value="events" disabled>Events (no local records)</option>
-                            </select>
-                          </label>
-                          <p class="map-navigator-summary" data-map-context-summary>Focused map context will appear here.</p>
                         </div>
 
                         <section class="map-navigator-section map-study-results" id="map-search-results" hidden aria-labelledby="map-search-results-heading">
@@ -613,7 +589,7 @@
                               <option value="NT / Roman period">NT / Roman period</option>
                             </select>
                           </label>
-                          <button type="button" class="secondary map-mobile-trigger" data-map-navigator-open aria-controls="map-study-navigator">Navigator</button>
+                          <button type="button" class="secondary map-mobile-trigger" data-map-navigator-open aria-controls="map-study-navigator" aria-expanded="false">Navigator</button>
                           <button type="button" class="secondary map-mobile-trigger" data-map-details-open aria-controls="map-details">Details</button>
                         </div>
                         <div id="map-stage" class="map-stage" role="application" aria-label="Bible map. Use the navigator or search results to select a location."></div>

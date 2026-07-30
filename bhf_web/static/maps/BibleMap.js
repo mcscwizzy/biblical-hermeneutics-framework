@@ -2,8 +2,6 @@ import { renderMapMarkerPopup } from "./MapMarkerPopup.js";
 import {
   archaeologyMarkerStyle,
   entityMarkerIcon,
-  journeySegmentStyle,
-  journeyStopIcon,
   manuscriptMarkerStyle,
   referenceLayerStyle,
   referencePointIcon,
@@ -11,8 +9,6 @@ import {
 } from "./MapStyles.js";
 import {
   renderArchaeologyPopup,
-  renderJourneySegmentPopup,
-  renderJourneyStopPopup,
   renderManuscriptPopup,
   renderReferenceFeaturePopup,
   renderRoutePopup,
@@ -76,10 +72,6 @@ function createTestMapController(container) {
     setRouteVisibility() {},
     setArchaeologyVisibility() {},
     setManuscriptVisibility() {},
-    setJourney() {},
-    setJourneyVisibility() {},
-    setSelectedJourneyStop() {},
-    setSelectedJourneySegment() {},
     setReferenceLayers() {},
     setReferenceLayerVisibility() {},
     setSelectedReferenceFeature() {},
@@ -125,13 +117,6 @@ export function createBibleMap(container, markers, options = {}) {
   let archaeologyItems = Array.isArray(options.archaeologyMarkers) ? options.archaeologyMarkers.slice() : [];
   let manuscriptItems = Array.isArray(options.manuscriptMarkers) ? options.manuscriptMarkers.slice() : [];
   let routeItems = Array.isArray(options.routes) ? options.routes.slice() : [];
-  const journeyLayer = window.L.layerGroup();
-  const journeyStopLayers = new Map();
-  const journeySegmentLayers = new Map();
-  let journeyItem = options.journey || null;
-  let journeyVisibility = Boolean(options.journeyVisibility);
-  let selectedJourneyStopId = String(options.selectedJourneyStopId || "");
-  let selectedJourneySegmentId = String(options.selectedJourneySegmentId || "");
   const referenceLayerGroup = window.L.layerGroup();
   const referenceFeatureLayers = new Map();
   const referenceVisibleLayerIds = new Set(
@@ -177,26 +162,6 @@ export function createBibleMap(container, markers, options = {}) {
     return manuscriptBoundsList;
   }
 
-  function currentJourneyBounds() {
-    const boundsList = [];
-    for (const layer of journeyStopLayers.values()) {
-      const center = layer.getLatLng ? layer.getLatLng() : null;
-      if (center) {
-        boundsList.push([center.lat, center.lng]);
-      }
-    }
-    for (const layer of journeySegmentLayers.values()) {
-      const layerBounds = layer.getBounds ? layer.getBounds() : null;
-      if (layerBounds && layerBounds.isValid()) {
-        boundsList.push(
-          [layerBounds.getSouthWest().lat, layerBounds.getSouthWest().lng],
-          [layerBounds.getNorthEast().lat, layerBounds.getNorthEast().lng]
-        );
-      }
-    }
-    return boundsList;
-  }
-
   function currentReferenceBounds() {
     const boundsList = [];
     for (const [key, entry] of referenceFeatureLayers.entries()) {
@@ -229,16 +194,6 @@ export function createBibleMap(container, markers, options = {}) {
       }
     } else if (map.hasLayer(routeLayer)) {
       map.removeLayer(routeLayer);
-    }
-  }
-
-  function applyJourneyVisibility() {
-    if (journeyVisibility && journeyItem) {
-      if (!map.hasLayer(journeyLayer)) {
-        journeyLayer.addTo(map);
-      }
-    } else if (map.hasLayer(journeyLayer)) {
-      map.removeLayer(journeyLayer);
     }
   }
 
@@ -308,7 +263,6 @@ export function createBibleMap(container, markers, options = {}) {
   function fitToContent() {
     const markerBounds = currentMarkerBounds();
     const routeBoundsList = routeVisibility ? currentRouteBounds() : [];
-    const journeyBoundsList = journeyVisibility ? currentJourneyBounds() : [];
     const referenceBoundsList = currentReferenceBounds();
     const archaeologyBoundsList = archaeologyVisibility ? currentArchaeologyBounds() : [];
     const manuscriptBoundsList = manuscriptVisibility ? currentManuscriptBounds() : [];
@@ -325,7 +279,6 @@ export function createBibleMap(container, markers, options = {}) {
       );
     }
 
-    allBounds.push(...journeyBoundsList);
     allBounds.push(...referenceBoundsList);
 
     for (const layerBounds of archaeologyBoundsList) {
@@ -405,20 +358,6 @@ export function createBibleMap(container, markers, options = {}) {
         return;
       }
     }
-    if (kind === "journey_stop") {
-      const stopLayer = journeyStopLayers.get(item.id);
-      if (focusLayerBounds(stopLayer, 8)) {
-        stopLayer?.openPopup?.();
-        return;
-      }
-    }
-    if (kind === "journey_segment") {
-      const segmentLayer = journeySegmentLayers.get(item.id);
-      if (focusLayerBounds(segmentLayer, 7)) {
-        segmentLayer?.openPopup?.();
-        return;
-      }
-    }
     if (kind === "reference_feature") {
       const key = `${item.layerId}:${item.featureId}`;
       const entry = referenceFeatureLayers.get(key);
@@ -429,24 +368,6 @@ export function createBibleMap(container, markers, options = {}) {
     }
     if (Number.isFinite(item.latitude) && Number.isFinite(item.longitude)) {
       map.setView([item.latitude, item.longitude], 9);
-    }
-  }
-
-  function syncJourneyStyles() {
-    if (!journeyItem) {
-      return;
-    }
-    for (const stop of journeyItem.stops || []) {
-      const layer = journeyStopLayers.get(stop.id);
-      if (layer) {
-        layer.setIcon(journeyStopIcon(stop, { selected: stop.id === selectedJourneyStopId }));
-      }
-    }
-    for (const segment of journeyItem.segments || []) {
-      const layer = journeySegmentLayers.get(segment.id);
-      if (layer) {
-        layer.setStyle(journeySegmentStyle(segment, { selected: segment.id === selectedJourneySegmentId }));
-      }
     }
   }
 
@@ -551,68 +472,6 @@ export function createBibleMap(container, markers, options = {}) {
     applyManuscriptVisibility();
   }
 
-  function refreshJourney(journey) {
-    journeyItem = journey || null;
-    journeyLayer.clearLayers();
-    journeyStopLayers.clear();
-    journeySegmentLayers.clear();
-
-    if (!journeyItem) {
-      applyJourneyVisibility();
-      return;
-    }
-
-    const stopById = new Map((journeyItem.stops || []).map((stop) => [stop.id, stop]));
-    for (const segment of journeyItem.segments || []) {
-      const from = stopById.get(segment.from);
-      const to = stopById.get(segment.to);
-      if (!from || !to) {
-        continue;
-      }
-      const segmentLayer = window.L.polyline(
-        [
-          [from.lat, from.lng],
-          [to.lat, to.lng],
-        ],
-        journeySegmentStyle(segment, { selected: segment.id === selectedJourneySegmentId })
-      );
-      segmentLayer.bindPopup(renderJourneySegmentPopup(journeyItem, segment), {
-        maxWidth: 340,
-        closeButton: true,
-      });
-      segmentLayer.on("click", () => {
-        if (typeof options.onJourneySegmentClick === "function") {
-          options.onJourneySegmentClick(journeyItem, segment);
-        }
-      });
-      journeySegmentLayers.set(segment.id, segmentLayer);
-      segmentLayer.addTo(journeyLayer);
-    }
-
-    for (const stop of journeyItem.stops || []) {
-      if (!Number.isFinite(stop.lat) || !Number.isFinite(stop.lng)) {
-        continue;
-      }
-      const stopLayer = window.L.marker([stop.lat, stop.lng], {
-        icon: journeyStopIcon(stop, { selected: stop.id === selectedJourneyStopId }),
-        title: stop.name || "Unnamed journey stop",
-      });
-      stopLayer.bindPopup(renderJourneyStopPopup(journeyItem, stop), {
-        maxWidth: 340,
-        closeButton: true,
-      });
-      stopLayer.on("click", () => {
-        if (typeof options.onJourneyStopClick === "function") {
-          options.onJourneyStopClick(journeyItem, stop);
-        }
-      });
-      journeyStopLayers.set(stop.id, stopLayer);
-      stopLayer.addTo(journeyLayer);
-    }
-
-    applyJourneyVisibility();
-  }
-
   function refreshReferenceLayers(layers) {
     referenceItems = Array.isArray(layers) ? layers.slice() : [];
     referenceLayerGroup.clearLayers();
@@ -687,7 +546,6 @@ export function createBibleMap(container, markers, options = {}) {
   refreshRoutes(routeItems);
   refreshArchaeologyMarkers(archaeologyItems);
   refreshManuscriptMarkers(manuscriptItems);
-  refreshJourney(journeyItem);
   refreshReferenceLayers(referenceItems);
   fitToContent();
 
@@ -713,10 +571,6 @@ export function createBibleMap(container, markers, options = {}) {
         routeVisibility,
         archaeologyVisibility,
         manuscriptVisibility,
-        journeyVisibility,
-        selectedJourneyId: journeyItem?.id || "",
-        selectedJourneyStopId,
-        selectedJourneySegmentId,
         referenceLayerIds: Array.from(referenceVisibleLayerIds),
       };
     },
@@ -758,28 +612,6 @@ export function createBibleMap(container, markers, options = {}) {
     },
     getManuscriptMarkers() {
       return manuscriptItems.slice();
-    },
-    getJourneyVisibility() {
-      return journeyVisibility;
-    },
-    setJourneyVisibility(visible) {
-      journeyVisibility = Boolean(visible);
-      applyJourneyVisibility();
-      fitToContent();
-    },
-    setJourney(journey) {
-      refreshJourney(journey);
-      fitToContent();
-    },
-    setSelectedJourneyStop(stopId) {
-      selectedJourneyStopId = String(stopId || "");
-      selectedJourneySegmentId = "";
-      syncJourneyStyles();
-    },
-    setSelectedJourneySegment(segmentId) {
-      selectedJourneySegmentId = String(segmentId || "");
-      selectedJourneyStopId = "";
-      syncJourneyStyles();
     },
     setReferenceLayers(layers) {
       refreshReferenceLayers(layers);
