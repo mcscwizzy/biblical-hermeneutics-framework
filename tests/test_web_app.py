@@ -657,7 +657,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("translation-import-button", index_html)
         self.assertIn("Loading translations...", index_html)
         self.assertIn('name="reader_translation"', index_html)
-        self.assertIn("static_asset('/style.css') }}?v=20260724c", index_html)
+        self.assertIn("static_asset('/style.css') }}?v=20260730a", index_html)
         self.assertIn("static_asset('/htmx-lite.js') }}?v=20260729d", index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
@@ -678,7 +678,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn(".map-navigator-close", style)
         self.assertIn(".map-details-close", style)
         self.assertIn(".map-search-result-button:hover .map-search-result-topline strong", style)
-        self.assertIn(".map-search-result-subtitle,\n.map-search-result-summary {\n  color: var(--accent-text);", style)
+        self.assertIn(".map-search-result-subtitle,\n.map-search-result-summary {\n  color: #163f5d;", style)
         self.assertIn("background: var(--accent-soft-2);", style)
         self.assertIn("grid-template-rows: minmax(0, 1fr);", style)
         self.assertIn("scrollbar-gutter: stable;", style)
@@ -885,7 +885,7 @@ class WebAppTests(unittest.TestCase):
         )
 
         self.assertEqual(response["status"], 200)
-        self.assertIn('href="/static/style.css?v=20260724c"', response["body"])
+        self.assertIn('href="/static/style.css?v=20260730a"', response["body"])
         self.assertIn('src="/static/htmx-lite.js?v=20260729d"', response["body"])
         self.assertIn('src="/static/maps/MapPanel.js?v=20260729h"', response["body"])
         self.assertIn('href="/static/vendor/leaflet/leaflet.css"', response["body"])
