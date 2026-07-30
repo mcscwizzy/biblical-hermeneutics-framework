@@ -9,7 +9,7 @@ import sqlite3
 import time
 import uuid
 from datetime import datetime, timezone
-from typing import Any, Callable, Optional
+from typing import Any, Callable, Mapping, Optional
 
 from .adapters import ChatAdapter, OllamaAdapter, OpenAICompatibleAdapter
 from .adapters import OpenRouterAdapter
@@ -1231,6 +1231,23 @@ class BHFAgent:
         ctx.debug_metadata["canonical_library_answer_mode"] = metadata.get("answer_mode")
         ctx.debug_metadata["canonical_library_topic_token_budget"] = metadata.get("topic_token_budget")
         ctx.debug_metadata["canonical_library_query"] = ctx.canonical_library_query
+        # Developer-only trace for question-driven retrieval.  This remains in
+        # model metadata/debug views and is never rendered in the user answer.
+        ctx.debug_metadata["canonical_library_retrieval_intent"] = metadata.get("retrieval_intent")
+        ctx.debug_metadata["canonical_library_direct_textual_evidence"] = metadata.get("direct_textual_evidence")
+        ctx.debug_metadata["canonical_library_rejected_results"] = metadata.get("rejected_results") or []
+        ctx.debug_metadata["canonical_library_ranking"] = [
+            {
+                "id": topic.get("id"),
+                "category": topic.get("type"),
+                "score": topic.get("score"),
+                "entity_match_score": topic.get("entity_match_score"),
+                "passage_proximity_score": topic.get("passage_proximity_score"),
+                "combined_score": topic.get("combined_score"),
+            }
+            for topic in canonical_context.get("retrieved_topics") or []
+            if isinstance(topic, Mapping)
+        ]
 
         if rollout_mode == "shadow":
             ctx.debug_metadata["canonical_library_shadow_prompt_mode"] = (
