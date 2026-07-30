@@ -776,21 +776,29 @@ html[data-theme="dark"] .map-entity-marker--place {
 
 .map-search-result-topline strong {
   min-width: 0;
+  color: var(--page-text);
   font-size: 0.88rem;
   line-height: 1.25;
 }
 
 .map-search-result-topline span,
+.map-search-result-meta,
+.map-search-result-subtitle,
+.map-search-result-summary {
+  color: var(--accent-text);
+}
+
+.map-search-result-topline span,
 .map-search-result-meta {
-  color: var(--page-muted);
   font-size: 0.72rem;
+  font-weight: 650;
 }
 
 .map-search-result-subtitle,
 .map-search-result-summary {
   margin: 0;
-  color: var(--page-muted);
   line-height: 1.35;
+  font-weight: 650;
 }
 
 .map-search-result-summary {
