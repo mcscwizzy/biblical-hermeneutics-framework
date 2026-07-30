@@ -731,6 +731,16 @@ function setSelectedSearchResult(result) {
   if (!result || !result.item) {
     return;
   }
+  // The inline Maps tab shares the narrow study column with the reader. Once a
+  // catalog result is chosen, use the purpose-built expanded workspace so the
+  // navigator at the left, the map, and its details can be viewed together.
+  if (
+    !mapModalOpen &&
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(min-width: 901px)").matches
+  ) {
+    openMapModal();
+  }
   clearStatus();
   setPinHint("");
   clearCurrentMapSelection({ clearVisibleLayers: true });

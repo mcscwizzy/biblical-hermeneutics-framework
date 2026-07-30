@@ -892,7 +892,7 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(response["status"], 200)
         self.assertIn('href="/static/style.css?v=20260724c"', response["body"])
         self.assertIn('src="/static/htmx-lite.js?v=20260729d"', response["body"])
-        self.assertIn('src="/static/maps/MapPanel.js?v=20260729e"', response["body"])
+        self.assertIn('src="/static/maps/MapPanel.js?v=20260729f"', response["body"])
         self.assertIn('href="/static/vendor/leaflet/leaflet.css"', response["body"])
         self.assertNotIn("http://bhf.thewalkerclan.synology.me/static/", response["body"])
 
@@ -1325,6 +1325,13 @@ class WebAppTests(unittest.TestCase):
         self.assertIn('result.kind === "place" ? buildGoogleEarthUrl(result.item) : ""', map_script)
         self.assertIn("map-search-earth-link", map_script)
         self.assertIn("Open ${escapeHtml(String(result.title || \"location\"))} in Google Earth", map_script)
+
+    def test_map_search_selection_uses_expanded_workspace_on_desktop(self):
+        map_script = Path("bhf_web/static/maps/MapPanel.js").read_text(encoding="utf-8")
+
+        self.assertIn("function setSelectedSearchResult(result)", map_script)
+        self.assertIn('window.matchMedia("(min-width: 901px)").matches', map_script)
+        self.assertIn("openMapModal();", map_script)
 
     def test_map_search_does_not_return_period_only_babylon_noise(self):
         response = asgi_request("GET", "/api/maps/search?q=Babylon&limit=50")
