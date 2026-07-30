@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v17";
+const CACHE_VERSION = "v18";
 const SHELL_CACHE = `bhf-shell-${CACHE_VERSION}`;
 const STATIC_CACHE = `bhf-static-${CACHE_VERSION}`;
 const API_CACHE = `bhf-api-${CACHE_VERSION}`;
@@ -36,6 +36,7 @@ const STATIC_ASSETS = [
   "/static/maps/BibleMap.js",
   "/static/maps/JourneyMapData.js",
   "/static/maps/MapMarkerPopup.js",
+  "/static/maps/MapExternalLinks.js",
   "/static/maps/MapPanel.js",
   "/static/maps/MapPanelContent.js",
   "/static/maps/MapPanelSearch.js",

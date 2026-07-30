@@ -368,32 +368,12 @@ function renderRelatedPassagesList(passages) {
   return `<ul class="map-related-verses">${items}</ul>`;
 }
 
-function buildMapStudySummary(selection, context) {
-  const reference = formatReference(context) || "the selected passage";
-  if (!selection) {
-    return `Map study for ${reference}.`;
-  }
-  const item = selection.item;
-  const name = item.name || "Unnamed item";
-  if (selection.kind === "route") {
-    return `${name} in ${reference} with route confidence ${prettyConfidence(item.confidence)}.`;
-  }
-  if (selection.kind === "layer") {
-    return `${name} in ${reference} as a ${item.period || "historical"} study layer.`;
-  }
-  if (selection.kind === "political_context") {
-    return `${name} in ${reference} as a ${item.entity_type || "political"} context layer.`;
-  }
-  return `${name} in ${reference} with confidence ${prettyConfidence(item.confidence)}.`;
-}
-
 export {
   buildArchaeologyCautionNote,
   buildArchaeologyExplanation,
   buildCautionNote,
   buildHistoricalLayerCautionNote,
   buildHistoricalLayerExplanation,
-  buildMapStudySummary,
   buildManuscriptCautionNote,
   buildManuscriptExplanation,
   buildPlaceExplanation,

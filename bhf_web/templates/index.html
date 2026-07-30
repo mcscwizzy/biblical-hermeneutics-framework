@@ -32,14 +32,14 @@
   <script src="{{ static_asset('/htmx-status.js') }}" defer></script>
   <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260729c" defer></script>
   <script src="{{ static_asset('/htmx-search.js') }}" defer></script>
-  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260729c" defer></script>
+  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260729d" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260729f" defer></script>
   {% if not test_mode %}
     <link rel="stylesheet" href="{{ static_asset('/vendor/leaflet/leaflet.css') }}">
     <script src="{{ static_asset('/vendor/leaflet/leaflet.js') }}" defer></script>
-    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260729c"></script>
+    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260729e"></script>
   {% else %}
-    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260729c"></script>
+    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260729e"></script>
   {% endif %}
 </head>
 <body>
@@ -756,9 +756,6 @@
           <button type="button" role="menuitem" data-context-action="compare_translations">Compare Translations</button>
           <button type="button" role="menuitem" data-context-action="timeline">Timeline</button>
           <button type="button" role="menuitem" data-context-action="open_map_panel">Maps</button>
-          <button type="button" role="menuitem" data-context-action="ask_location">Ask about this location</button>
-          <button type="button" role="menuitem" data-context-action="related_passages">View related passages</button>
-          <button type="button" role="menuitem" data-context-action="view_historical_layer">View historical layer</button>
         </div>
       </div>
       <div class="context-menu-section" role="group">
@@ -768,8 +765,6 @@
           <button type="button" role="menuitem" data-context-action="remove_highlight" hidden>Remove Highlight</button>
           <button type="button" role="menuitem" data-context-action="note">Add Note</button>
           <button type="button" role="menuitem" data-context-action="save_study">Save Study</button>
-          <button type="button" role="menuitem" data-context-action="save_map_study">Save map study</button>
-          <button type="button" role="menuitem" data-context-action="map_note">Add map note</button>
         </div>
       </div>
     </nav>

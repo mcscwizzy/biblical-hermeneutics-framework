@@ -29,7 +29,6 @@ import {
   buildCautionNote,
   buildHistoricalLayerCautionNote,
   buildHistoricalLayerExplanation,
-  buildMapStudySummary,
   buildPlaceExplanation,
   buildPoliticalContextCautionNote,
   buildPoliticalContextExplanation,
@@ -39,8 +38,6 @@ import {
   buildSourceText,
 } from "./MapPanelText.js";
 import {
-  buildCurrentMapStudyPayload,
-  getCurrentMapSelection,
   normalizeHistoricalPeriod,
   syncRouteToggle as syncRouteToggleHtml,
 } from "./MapPanelStateHelpers.js";
@@ -626,6 +623,7 @@ function renderBrowseSearchResults(results, query = "") {
   mapSearchResultsList.innerHTML = browseSearchResults
     .map((result, index) => {
       const score = Number(result.search_score || 0);
+      const earthUrl = result.kind === "place" ? buildGoogleEarthUrl(result.item) : "";
       return `
         <article class="map-search-result" data-map-search-result data-search-index="${index}">
           <button type="button" class="map-search-result-button" data-map-search-result-button data-search-index="${index}">
@@ -640,6 +638,7 @@ function renderBrowseSearchResults(results, query = "") {
               <span>Score ${escapeHtml(String(score))}</span>
             </div>
           </button>
+          ${earthUrl ? `<a class="secondary-link map-search-earth-link" href="${escapeHtml(earthUrl)}" target="_blank" rel="noopener noreferrer">Open ${escapeHtml(String(result.title || "location"))} in Google Earth <span aria-hidden="true">↗</span></a>` : ""}
         </article>
       `;
     })
@@ -1235,16 +1234,6 @@ function closeMapPanel() {
   document.dispatchEvent(new CustomEvent("bhf:map-panel-closed"));
 }
 
-function resetMapView() {
-  // Keep the reset_map_view API for existing integrations; the redundant UI action is gone.
-  if (!mapController) {
-    setStatus("The map is still loading. Try resetting the view again in a moment.", "warning");
-    return;
-  }
-  mapController.fitToContent();
-  setStatus("Map view reset.", "success");
-}
-
 function setRouteVisibility(visible) {
   if (!mapController) {
     return;
@@ -1672,95 +1661,6 @@ function focusMapSelection(result) {
   }
 }
 
-async function saveCurrentMapStudy() {
-  if (!lastPassageContext) {
-    window.alert("Open a passage on the map first.");
-    return;
-  }
-  const selection = getCurrentMapSelection();
-  if (!selection) {
-    window.alert("Select a place, route, historical layer, or political context first.");
-    return;
-  }
-  const notes = window.prompt("Optional notes for this map study:", "");
-  if (notes === null) {
-    return;
-  }
-  const payload = {
-    ...buildCurrentMapStudyPayload({
-      lastPassageContext,
-      mapController,
-      visibleHistoricalLayerIds,
-      visiblePoliticalContextLayerIds,
-      historicalPeriod,
-      selectedMarker,
-      selectedRoute,
-      selectedHistoricalLayer,
-      selectedPoliticalContext,
-      buildMapStudySummary,
-      formatReference,
-    }),
-    user_notes: notes.trim(),
-  };
-  await requestJson("/api/map-studies", {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
-  }, "Could not save map study.");
-  invalidateMapCache("/api/map-studies");
-  await refreshSavedMapStudies();
-  setStatus("Map study saved.", "success");
-}
-
-async function addCurrentMapNote() {
-  if (!lastPassageContext) {
-    window.alert("Open a passage on the map first.");
-    return;
-  }
-  const selection = getCurrentMapSelection();
-  if (!selection) {
-    window.alert("Select a place, route, historical layer, or political context first.");
-    return;
-  }
-  const noteBody = window.prompt("Map note:", "");
-  if (noteBody === null || !noteBody.trim()) {
-    return;
-  }
-  const payload = {
-    ...buildCurrentMapStudyPayload({
-      lastPassageContext,
-      mapController,
-      visibleHistoricalLayerIds,
-      visiblePoliticalContextLayerIds,
-      historicalPeriod,
-      selectedMarker,
-      selectedRoute,
-      selectedHistoricalLayer,
-      selectedPoliticalContext,
-      buildMapStudySummary,
-      formatReference,
-    }),
-    note_body: noteBody.trim(),
-    place_id: selection.kind === "place" ? selection.item.id : "",
-    route_id: selection.kind === "route" ? selection.item.id : "",
-    layer_id: selection.kind === "layer" || selection.kind === "political_context" ? selection.item.id : "",
-  };
-  await requestJson("/api/map-notes", {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
-  }, "Could not save map note.");
-  invalidateMapCache("/api/map-studies");
-  await refreshSavedMapStudies();
-  setStatus("Map note saved.", "success");
-}
-
 function activateAskWorkspace() {
   const askTab = document.querySelector('[data-workspace-tab="ask"]');
   if (askTab && askTab.getAttribute("aria-selected") !== "true") {
@@ -1768,74 +1668,11 @@ function activateAskWorkspace() {
   }
 }
 
-async function askAboutCurrentMapSelection() {
-  const selection = getCurrentMapSelection();
-  if (!selection) {
-    window.alert("Select a place, route, historical layer, or political context first.");
-    return;
-  }
-  setMapStudyQuestion(
-    `What does ${selection.item.name || "this location"} tell us about the historical setting of ${formatReference(lastPassageContext)}?`
-  );
-  submitMapStudyQuestion(buildCurrentMapStudyPayload({
-    lastPassageContext,
-    mapController,
-    visibleHistoricalLayerIds,
-    visiblePoliticalContextLayerIds,
-    historicalPeriod,
-    selectedMarker,
-    selectedRoute,
-    selectedHistoricalLayer,
-    selectedPoliticalContext,
-    buildMapStudySummary,
-    formatReference,
-  }));
-}
-
-async function viewRelatedPassagesForCurrentSelection() {
-  setMapStudyQuestion(
-    `What related passages or cross references should I review for ${formatReference(lastPassageContext)}?`
-  );
-  const form = document.querySelector(".ask-form");
-  if (!form) {
-    return;
-  }
-  setStudyFormValue("ask_mode", "cross_references");
-  setStudyFormValue("study_action", "related_passages");
-  setStudyMapContext(buildCurrentMapStudyPayload({
-    lastPassageContext,
-    mapController,
-    visibleHistoricalLayerIds,
-    visiblePoliticalContextLayerIds,
-    historicalPeriod,
-    selectedMarker,
-    selectedRoute,
-    selectedHistoricalLayer,
-    selectedPoliticalContext,
-    buildMapStudySummary,
-    formatReference,
-  }));
-  submitStudyForm(form);
-}
-
 function setMapStudyQuestion(question) {
   const input = document.querySelector(".ask-form [name='question']");
   if (input) {
     input.value = question;
   }
-}
-
-function submitMapStudyQuestion(mapContext) {
-  const form = document.querySelector(".ask-form");
-  if (!form) {
-    setStatus("The Ask panel is unavailable right now.", "error");
-    return;
-  }
-  activateAskWorkspace();
-  setStudyFormValue("ask_mode", "maps");
-  setStudyFormValue("study_action", "ask_location");
-  setStudyMapContext(mapContext);
-  submitStudyForm(form);
 }
 
 function setStudyFormValue(name, value) {
@@ -2237,7 +2074,6 @@ if (typeof window !== "undefined") {
     closeMapPanel,
     openMapModal,
     closeMapModal,
-    resetMapView,
     initializeMapPanel,
   };
 

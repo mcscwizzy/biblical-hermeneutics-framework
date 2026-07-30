@@ -367,7 +367,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("dispatchStudyAction", script)
         self.assertIn("resolveContextAction", script)
         self.assertIn("remove_highlight", script)
-        self.assertIn("isContextHighlighted", script)
+        self.assertIn("highlightsForContext", script)
         self.assertIn("applyVerseStateIndicatorsToReader", script)
         self.assertIn("contextForVerseAction", script)
         self.assertIn("reader_translation", script)
@@ -471,19 +471,14 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("renderSelectedHistoricalLayer", map_script)
         self.assertIn("buildHistoricalLayerCautionNote", map_script)
         self.assertIn("loadHistoricalLayers", map_script)
-        self.assertIn("saveCurrentMapStudy", map_script)
         self.assertIn("renderSavedMapStudies", map_script)
         self.assertIn("openSavedMapStudy", map_script)
-        self.assertIn("buildCurrentMapStudyPayload", Path("bhf_web/static/maps/MapPanelStateHelpers.js").read_text(encoding="utf-8"))
-        self.assertIn("getCurrentMapSelection", Path("bhf_web/static/maps/MapPanelStateHelpers.js").read_text(encoding="utf-8"))
         self.assertIn("normalizeHistoricalPeriod", Path("bhf_web/static/maps/MapPanelStateHelpers.js").read_text(encoding="utf-8"))
 
         map_content_script = Path("bhf_web/static/maps/MapPanelContent.js").read_text(encoding="utf-8")
         self.assertIn("renderRelatedVerses", map_content_script)
         self.assertIn("renderRelatedPassages", map_content_script)
         self.assertIn("renderRelatedPassagesList", map_content_script)
-        self.assertIn("addCurrentMapNote", map_script)
-        self.assertIn("reset_map_view", map_script)
         self.assertIn("data-passage-shortcut", map_script)
         self.assertIn("submitRelatedPassageShortcut", map_script)
         self.assertIn("setReaderPassageContext", map_script)
@@ -674,7 +669,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("Loading translations...", index_html)
         self.assertIn('name="reader_translation"', index_html)
         self.assertIn("static_asset('/style.css') }}?v=20260724c", index_html)
-        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260729b", index_html)
+        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260729d", index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
@@ -819,13 +814,13 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("data-context-action=\"fulfillment_nt\"", response["body"])
         self.assertIn("data-context-action=\"compare_translations\"", response["body"])
         self.assertIn("data-context-action=\"timeline\"", response["body"])
-        self.assertIn("data-context-action=\"ask_location\"", response["body"])
         self.assertIn("data-context-action=\"open_map_panel\"", response["body"])
-        self.assertIn("data-context-action=\"save_map_study\"", response["body"])
-        self.assertIn("data-context-action=\"map_note\"", response["body"])
         self.assertNotIn("data-context-action=\"compare_archaeology\"", response["body"])
-        self.assertIn("data-context-action=\"related_passages\"", response["body"])
-        self.assertIn("data-context-action=\"view_historical_layer\"", response["body"])
+        self.assertNotIn("data-context-action=\"ask_location\"", response["body"])
+        self.assertNotIn("data-context-action=\"save_map_study\"", response["body"])
+        self.assertNotIn("data-context-action=\"map_note\"", response["body"])
+        self.assertNotIn("data-context-action=\"related_passages\"", response["body"])
+        self.assertNotIn("data-context-action=\"view_historical_layer\"", response["body"])
         self.assertIn("data-context-action=\"save_study\"", response["body"])
         self.assertIn("data-context-action=\"word_study\"", response["body"])
         self.assertIn("data-context-submenu=\"study\"", response["body"])
@@ -896,7 +891,8 @@ class WebAppTests(unittest.TestCase):
 
         self.assertEqual(response["status"], 200)
         self.assertIn('href="/static/style.css?v=20260724c"', response["body"])
-        self.assertIn('src="/static/htmx-lite.js?v=20260729b"', response["body"])
+        self.assertIn('src="/static/htmx-lite.js?v=20260729d"', response["body"])
+        self.assertIn('src="/static/maps/MapPanel.js?v=20260729e"', response["body"])
         self.assertIn('href="/static/vendor/leaflet/leaflet.css"', response["body"])
         self.assertNotIn("http://bhf.thewalkerclan.synology.me/static/", response["body"])
 
@@ -1314,12 +1310,21 @@ class WebAppTests(unittest.TestCase):
         nazareth_hit = next(item for item in nazareth_data["results"] if item["id"] == "openbible-af5884f")
         self.assertTrue(nazareth_hit["has_coordinates"])
         self.assertEqual(nazareth_hit["item"]["source_name"], "OpenBible.info Bible Geocoding Data")
+        self.assertIn("latitude", nazareth_hit["item"])
+        self.assertIn("longitude", nazareth_hit["item"])
 
         archaeology_response = asgi_request("GET", "/api/maps/search?q=Pilate&kind=archaeology")
         self.assertEqual(archaeology_response["status"], 200)
         archaeology_data = json.loads(archaeology_response["body"])
         self.assertEqual(archaeology_data["kind"], "archaeology")
         self.assertEqual(archaeology_data["results"], [])
+
+    def test_map_search_results_offer_google_earth_for_coordinate_backed_places(self):
+        map_script = Path("bhf_web/static/maps/MapPanel.js").read_text(encoding="utf-8")
+
+        self.assertIn('result.kind === "place" ? buildGoogleEarthUrl(result.item) : ""', map_script)
+        self.assertIn("map-search-earth-link", map_script)
+        self.assertIn("Open ${escapeHtml(String(result.title || \"location\"))} in Google Earth", map_script)
 
     def test_map_search_does_not_return_period_only_babylon_noise(self):
         response = asgi_request("GET", "/api/maps/search?q=Babylon&limit=50")

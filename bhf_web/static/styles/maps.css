@@ -860,6 +860,13 @@ html[data-theme="dark"] .map-entity-marker--place {
   background: var(--accent-soft);
 }
 
+.map-search-earth-link {
+  display: inline-flex;
+  width: fit-content;
+  margin: 0 0 2px 10px;
+  font-size: 0.76rem;
+}
+
 .map-search-result-topline,
 .map-search-result-meta {
   display: flex;

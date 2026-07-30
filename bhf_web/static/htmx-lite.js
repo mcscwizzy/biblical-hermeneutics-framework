@@ -50,9 +50,7 @@ const BHF_STUDY_ACTIONS = new Set([
   "people",
   "places",
   "themes",
-  "ask_location",
   "compare_archaeology",
-  "related_passages",
 ]);
 
 const BHF_DETERMINISTIC_STUDY_ACTIONS = new Set([
@@ -2949,16 +2947,8 @@ function showContextMenu(x, y, context) {
     isSelection ? "Compare Translations" : "Compare Translations",
   );
   setContextLabel("timeline", isSelection ? "Timeline" : "Timeline");
-  setContextLabel(
-    "ask_location",
-    isSelection ? "Ask about this location" : "Ask about this location",
-  );
   setContextLabel("open_map_panel", isSelection ? "Maps" : "Maps");
-  setContextLabel("save_map_study", "Save map study");
-  setContextLabel("map_note", "Add map note");
   setContextLabel("compare_archaeology", "Compare with archaeology");
-  setContextLabel("related_passages", "View related passages");
-  setContextLabel("view_historical_layer", "View historical layer");
   setContextLabel("save_study", "Save Study");
   setContextLabel("note", isSelection ? "Add Note" : "Add Note");
   setContextLabel("highlight", isSelection ? "Highlight Selection" : "Highlight Verse");
@@ -3110,20 +3100,7 @@ async function dispatchStudyAction(studyAction) {
   } else if (BHF_STUDY_ACTIONS.has(studyAction.type)) {
     applyStudyActionContext(studyAction);
     activateWorkspaceTab("ask");
-    const askMode =
-      studyAction.type === "ask_location" ? "maps" : studyAction.type;
-    if (studyAction.type === "ask_location") {
-      setFormValue(
-        "question",
-        "What does the geography of this passage suggest?",
-      );
-    } else if (studyAction.type === "related_passages") {
-      setFormValue(
-        "question",
-        "What related passages should I review for this location?",
-      );
-    }
-    setFormValue("ask_mode", askMode);
+    setFormValue("ask_mode", studyAction.type);
     setFormValue("study_action", studyAction.type);
     setMapContextValue(buildReaderMapContext(studyAction));
     submitAskForm();
@@ -3142,28 +3119,6 @@ async function dispatchStudyAction(studyAction) {
     setFormValue("ask_mode", "");
     setFormValue("study_action", "");
     openMapPanel(studyAction);
-  } else if (studyAction.type === "save_map_study") {
-    applyStudyActionContext(studyAction);
-    activateWorkspaceTab("maps");
-    if (
-      window.BHFMaps &&
-      typeof window.BHFMaps.saveCurrentMapStudy === "function"
-    ) {
-      await window.BHFMaps.saveCurrentMapStudy();
-    } else {
-      openMapPanel(studyAction);
-    }
-  } else if (studyAction.type === "map_note") {
-    applyStudyActionContext(studyAction);
-    activateWorkspaceTab("maps");
-    if (
-      window.BHFMaps &&
-      typeof window.BHFMaps.focusMapNoteEditor === "function"
-    ) {
-      window.BHFMaps.focusMapNoteEditor();
-    } else {
-      openMapPanel(studyAction);
-    }
   } else if (studyAction.type === "compare_archaeology") {
     applyStudyActionContext(studyAction);
     setFormValue("ask_mode", "maps");
@@ -3174,15 +3129,6 @@ async function dispatchStudyAction(studyAction) {
     );
     setMapContextValue(buildReaderMapContext(studyAction));
     submitAskForm();
-  } else if (studyAction.type === "related_passages") {
-    applyStudyActionContext(studyAction);
-    setFormValue("ask_mode", "cross_references");
-    setFormValue("study_action", studyAction.type);
-    setMapContextValue(buildReaderMapContext(studyAction));
-    submitAskForm();
-  } else if (studyAction.type === "view_historical_layer") {
-    applyStudyActionContext(studyAction);
-    openMapPanel(studyAction);
   }
 }
 
