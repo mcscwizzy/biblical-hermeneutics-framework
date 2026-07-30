@@ -37,9 +37,9 @@
   {% if not test_mode %}
     <link rel="stylesheet" href="{{ static_asset('/vendor/leaflet/leaflet.css') }}">
     <script src="{{ static_asset('/vendor/leaflet/leaflet.js') }}" defer></script>
-    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260729b"></script>
+    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260729c"></script>
   {% else %}
-    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260729b"></script>
+    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260729c"></script>
   {% endif %}
 </head>
 <body>
@@ -525,11 +525,6 @@
                         <h2 id="map-panel-heading">Study the places behind the text</h2>
                         <p id="map-panel-reference" class="map-panel-reference"></p>
                       </div>
-                      <div class="map-panel-actions">
-                        <button type="button" class="secondary" data-map-reset>Reset view</button>
-                        <button type="button" class="secondary" data-map-expand>Expand</button>
-                        <button type="button" class="secondary" data-map-close>Close</button>
-                      </div>
                     </header>
 
                     <div class="map-panel-status" id="map-panel-status" hidden aria-live="polite"></div>
@@ -545,7 +540,6 @@
                             <p class="map-eyebrow">Navigator</p>
                             <h3>Choose a study</h3>
                           </div>
-                          <button type="button" class="map-mobile-close" data-map-navigator-close aria-label="Close study navigator">×</button>
                         </div>
 
                         <div class="map-navigator-section map-search-section">
@@ -692,7 +686,6 @@
                       <aside class="map-details-column" id="map-details-column" aria-label="Selected map details">
                         <div class="map-details-header-mobile">
                           <div><p class="map-eyebrow">Selected object</p><h3>Details</h3></div>
-                          <button type="button" class="map-mobile-close" data-map-details-close aria-label="Close map details">×</button>
                         </div>
                         <section id="map-details" class="map-details-panel" aria-live="polite">
                           <p class="empty map-details-empty">Select a place, route, region, or journey stop to inspect its details here.</p>

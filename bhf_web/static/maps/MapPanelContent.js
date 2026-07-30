@@ -17,7 +17,6 @@ import {
   formatStudyReference,
   normalizeArchaeologyConfidence,
   prettyConfidence,
-  renderMapActionBar,
   renderRelatedPassages,
   renderRelatedPassagesList,
   renderRelatedVerses,
@@ -155,7 +154,6 @@ function renderSelectedMarker(marker, passageContext, options = {}) {
         </section>
       ` : ""}
 
-      ${renderMapActionBar("place", marker)}
       ${historicalOverview}
     </div>
   `;
@@ -336,7 +334,6 @@ function renderSelectedArchaeology(marker, passageContext, options = {}) {
         <p>${escapeHtml(caution)}</p>
       </section>
 
-      ${renderMapActionBar("archaeology", marker)}
       ${archaeologyOverview}
     </div>
   `;
@@ -440,7 +437,6 @@ function renderSelectedManuscript(marker, passageContext, options = {}) {
         <p>${escapeHtml(caution)}</p>
       </section>
 
-      ${renderMapActionBar("manuscript", marker)}
       ${manuscriptOverview}
     </div>
   `;
@@ -496,7 +492,6 @@ function renderSelectedRoute(route, passageContext, options = {}) {
         <p>${escapeHtml(caution)}</p>
       </section>
 
-      ${renderMapActionBar("route", route)}
       <section class="map-detail-section map-action-section">
         <a class="secondary-link map-kml-link" href="/api/maps/routes/${encodeURIComponent(route.id)}.kml" download>Download route KML</a>
       </section>
@@ -554,7 +549,6 @@ function renderSelectedHistoricalLayer(layer, passageContext, options = {}) {
         <p>${escapeHtml(caution)}</p>
       </section>
 
-      ${renderMapActionBar("layer", layer)}
       ${historicalOverview}
     </div>
   `;
@@ -614,7 +608,6 @@ function renderSelectedPoliticalContext(layer, passageContext, options = {}) {
         <p>${escapeHtml(caution)}</p>
       </section>
 
-      ${renderMapActionBar("political_context", layer)}
       ${politicalOverview}
     </div>
   `;

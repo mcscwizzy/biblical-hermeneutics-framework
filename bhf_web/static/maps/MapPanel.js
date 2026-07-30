@@ -128,10 +128,8 @@ function getPanelElements() {
     layerReset: document.querySelector("[data-map-layer-reset]"),
     navigator: document.querySelector("#map-study-navigator"),
     navigatorOpen: document.querySelector("[data-map-navigator-open]"),
-    navigatorClose: document.querySelector("[data-map-navigator-close]"),
     detailsColumn: document.querySelector("#map-details-column"),
     detailsOpen: document.querySelector("[data-map-details-open]"),
-    detailsClose: document.querySelector("[data-map-details-close]"),
     mapSearchQuery: document.querySelector("[data-map-search-query]"),
     mapSearchKind: document.querySelector("[data-map-search-kind]"),
     mapSearchPeriod: document.querySelector("[data-map-search-period]"),
@@ -1238,6 +1236,7 @@ function closeMapPanel() {
 }
 
 function resetMapView() {
+  // Keep the reset_map_view API for existing integrations; the redundant UI action is gone.
   if (!mapController) {
     setStatus("The map is still loading. Try resetting the view again in a moment.", "warning");
     return;
@@ -1962,9 +1961,6 @@ function syncHistoricalPeriod() {
 }
 
 function wirePanelButtons() {
-  const closeButton = document.querySelector("[data-map-close]");
-  const resetButton = document.querySelector("[data-map-reset]");
-  const expandButton = document.querySelector("[data-map-expand]");
   const modalCloseButton = document.querySelector("[data-map-modal-close]");
   const mapModeButtons = document.querySelectorAll("[data-map-mode-switch]");
   const mapSearchQuery = document.querySelector("[data-map-search-query]");
@@ -1994,20 +1990,9 @@ function wirePanelButtons() {
     layerControls,
     layerReset,
     navigatorOpen,
-    navigatorClose,
     detailsOpen,
-    detailsClose,
   } = getPanelElements();
 
-  if (closeButton) {
-    closeButton.addEventListener("click", closeMapPanel);
-  }
-  if (resetButton) {
-    resetButton.addEventListener("click", resetMapView);
-  }
-  if (expandButton) {
-    expandButton.addEventListener("click", openMapModal);
-  }
   if (modalCloseButton) {
     modalCloseButton.addEventListener("click", closeMapModal);
   }
@@ -2078,22 +2063,12 @@ function wirePanelButtons() {
   }
   if (navigatorOpen) {
     navigatorOpen.addEventListener("click", () => {
-      getPanelElements().navigator?.classList.add("is-mobile-open");
-    });
-  }
-  if (navigatorClose) {
-    navigatorClose.addEventListener("click", () => {
-      getPanelElements().navigator?.classList.remove("is-mobile-open");
+      getPanelElements().navigator?.classList.toggle("is-mobile-open");
     });
   }
   if (detailsOpen) {
     detailsOpen.addEventListener("click", () => {
-      getPanelElements().detailsColumn?.classList.add("is-mobile-open");
-    });
-  }
-  if (detailsClose) {
-    detailsClose.addEventListener("click", () => {
-      getPanelElements().detailsColumn?.classList.remove("is-mobile-open");
+      getPanelElements().detailsColumn?.classList.toggle("is-mobile-open");
     });
   }
   if (layerReset) {
@@ -2192,7 +2167,6 @@ function wirePanelButtons() {
   }
   if (details) {
     details.addEventListener("click", async (event) => {
-      const actionButton = event.target.closest("[data-map-action]");
       const passageShortcut = event.target.closest("[data-passage-shortcut]");
       const openPassageButton = event.target.closest("[data-map-open-passage]");
       if (openPassageButton) {
@@ -2209,36 +2183,6 @@ function wirePanelButtons() {
         };
         await submitRelatedPassageShortcut(reference);
         return;
-      }
-      if (!actionButton) {
-        return;
-      }
-      try {
-        const action = actionButton.getAttribute("data-map-action");
-        if (action === "ask_location") {
-          await askAboutCurrentMapSelection();
-        } else if (action === "save_map_study") {
-          await saveCurrentMapStudy();
-        } else if (action === "map_note") {
-          await addCurrentMapNote();
-        } else if (action === "related_passages") {
-          await viewRelatedPassagesForCurrentSelection();
-        } else if (action === "view_historical_layer") {
-          const selection = getCurrentMapSelection();
-          const { details } = getPanelElements();
-          if (selection?.kind === "layer") {
-            renderSelectedHistoricalLayer(selection.item, lastPassageContext);
-          } else if (selection?.kind === "political_context") {
-            renderSelectedPoliticalContext(selection.item, lastPassageContext);
-          } else if (details) {
-            details.innerHTML = `${renderHistoricalLayerOverview()}${renderPoliticalContextLayerOverview()}`;
-            syncDetailsState(true);
-          }
-        } else if (action === "reset_map_view") {
-          resetMapView();
-        }
-      } catch (error) {
-        setStatus(error.message || "Could not complete that map action.", "error");
       }
     });
   }

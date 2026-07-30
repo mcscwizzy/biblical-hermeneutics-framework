@@ -215,33 +215,6 @@ function buildArchaeologyCautionNote(marker) {
   return archaeologyConfidenceNote(marker?.confidence);
 }
 
-function renderMapActionBar(kind, item) {
-  const selectedLabel = prettyConfidence(item.confidence || "unknown");
-  const primaryLabel =
-    kind === "archaeology"
-      ? "Ask about this item"
-      : kind === "political_context"
-        ? "Ask about this context"
-        : "Ask about this location";
-  return `
-    <section class="map-detail-section map-action-section">
-      <div class="map-action-buttons">
-        <button type="button" class="secondary" data-map-action="ask_location">${escapeHtml(primaryLabel)}</button>
-        <button type="button" class="secondary" data-map-action="save_map_study">Save map study</button>
-        <button type="button" class="secondary" data-map-action="map_note">Add map note</button>
-        <button type="button" class="secondary" data-map-action="related_passages">View related passages</button>
-        <button type="button" class="secondary" data-map-action="reset_map_view">Reset map view</button>
-        ${
-          kind === "layer" || kind === "archaeology" || kind === "political_context" || kind === "manuscript"
-            ? ""
-            : '<button type="button" class="secondary" data-map-action="view_historical_layer">View historical layer</button>'
-        }
-      </div>
-      <p class="map-layer-note">Selected ${escapeHtml(kind)} confidence: ${escapeHtml(selectedLabel)}. These actions use the local curated map record for the current selection.</p>
-    </section>
-  `;
-}
-
 function buildSourceText(item) {
   const source = item?.source || {};
   const sourceName = source.label || item.source_name || "No source recorded";
@@ -435,7 +408,6 @@ export {
   formatStudyReference,
   prettyConfidence,
   normalizeArchaeologyConfidence,
-  renderMapActionBar,
   renderRelatedPassages,
   renderRelatedPassagesList,
   renderRelatedVerses,
