@@ -618,17 +618,27 @@ html[data-theme="dark"] .map-entity-marker--place {
 .map-panel-body {
   display: grid;
   grid-template-columns: minmax(245px, 285px) minmax(0, 1fr) minmax(300px, 370px);
+  /*
+   * Keep the three columns inside the fixed map-workspace height. Without an
+   * explicit, shrinkable row, the implicit grid row grows to fit navigator
+   * content and the lower search results are clipped by .map-panel instead of
+   * making the navigator scroll.
+   */
+  grid-template-rows: minmax(0, 1fr);
   min-height: 650px;
   height: min(760px, calc(100dvh - 300px));
   gap: 0;
   align-items: stretch;
+  overflow: hidden;
 }
 
 .map-study-navigator,
 .map-details-column {
   min-width: 0;
+  min-height: 0;
   overflow-y: auto;
   overscroll-behavior: contain;
+  scrollbar-gutter: stable;
   background: var(--surface-alt);
 }
 

@@ -683,6 +683,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn(".map-journey-stop", style)
         self.assertIn(".map-reference-point", style)
         self.assertIn(".map-search-row--journey", style)
+        self.assertIn("grid-template-rows: minmax(0, 1fr);", style)
+        self.assertIn("scrollbar-gutter: stable;", style)
         self.assertNotIn(".map-journey-panel", style)
         self.assertNotIn(".journey-stage", style)
         self.assertNotIn(".cesium-widget", style)
