@@ -2920,7 +2920,6 @@ function showContextMenu(x, y, context) {
     return;
   }
   const isSelection = Boolean(context.isSelection);
-  const isHighlighted = isContextHighlighted(context);
   setContextLabel("ask_bhf", "Ask BHF");
   setContextLabel(
     "cultural_context",
@@ -2962,14 +2961,9 @@ function showContextMenu(x, y, context) {
   setContextLabel("view_historical_layer", "View historical layer");
   setContextLabel("save_study", "Save Study");
   setContextLabel("note", isSelection ? "Add Note" : "Add Note");
-  setContextLabel(
-    "highlight",
-    isHighlighted
-      ? "Remove Highlight"
-      : isSelection
-        ? "Highlight Selection"
-        : "Highlight Verse",
-  );
+  setContextLabel("highlight", isSelection ? "Highlight Selection" : "Highlight Verse");
+  setContextLabel("remove_highlight", "Remove Highlight");
+  setContextVisibility("remove_highlight", highlightsForContext(context).length > 0);
   resetContextSubmenus(menu);
   contextMenuPosition = {x, y};
   menu.hidden = false;
@@ -3055,6 +3049,13 @@ function setContextLabel(action, label) {
   }
 }
 
+function setContextVisibility(action, visible) {
+  const button = document.querySelector(`[data-context-action="${action}"]`);
+  if (button) {
+    button.hidden = !visible;
+  }
+}
+
 async function handleContextMenuAction(event) {
   const submenuTrigger = event.target.closest("[data-context-submenu]");
   if (submenuTrigger) {
@@ -3067,19 +3068,13 @@ async function handleContextMenuAction(event) {
   if (!button || !contextMenuState) {
     return;
   }
-  const actionType = resolveContextAction(
-    button.dataset.contextAction,
-    contextMenuState,
-  );
+  const actionType = resolveContextAction(button.dataset.contextAction);
   const context = contextMenuState;
   hideContextMenu();
   await dispatchStudyAction(createStudyAction(actionType, context));
 }
 
-function resolveContextAction(actionType, context) {
-  if (actionType === "highlight" && isContextHighlighted(context)) {
-    return "remove_highlight";
-  }
+function resolveContextAction(actionType) {
   return actionType;
 }
 
@@ -3883,31 +3878,6 @@ function clearReaderSelection() {
 
   currentSelection = null;
   syncAskFields();
-}
-
-function isContextHighlighted(context) {
-  if (!context || !currentHighlights.length) {
-    return false;
-  }
-  const startVerse = Number(context.startVerse || context.verseStart || 0);
-  const endVerse = Number(context.endVerse || context.verseEnd || startVerse);
-  if (!startVerse || !endVerse) {
-    return false;
-  }
-  for (
-    let verseNumber = startVerse;
-    verseNumber <= endVerse;
-    verseNumber += 1
-  ) {
-    if (
-      !currentHighlights.some((highlight) =>
-        highlightContainsVerse(highlight, verseNumber),
-      )
-    ) {
-      return false;
-    }
-  }
-  return true;
 }
 
 function highlightsForContext(context) {
