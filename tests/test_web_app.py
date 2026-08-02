@@ -2608,6 +2608,21 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(result["status"], 422)
         self.assertIn("Invalid model output", result["body"])
 
+    def test_ask_job_completes_when_answer_has_recoverable_diagnostics(self):
+        with patch("bhf_web.app.BHFAgent", RecoverableWarningAgent):
+            response = asgi_request("POST", "/ask/jobs", data=_valid_form())
+
+        self.assertEqual(response["status"], 202)
+        job = json.loads(response["body"])
+        status = wait_for_job(job["job_id"])
+
+        self.assertTrue(status["done"])
+        self.assertIsNone(status["error"])
+        result = asgi_request("GET", f"/ask/result/{job['job_id']}")
+        self.assertEqual(result["status"], 200)
+        self.assertIn("Answer with", result["body"])
+        self.assertIn("Diagnostics", result["body"])
+
 
 class FakeAgent:
     def __init__(self, config):
@@ -2712,6 +2727,13 @@ class SuccessfulJobAgent(FakeAgent):
             )
             status_callback(status_event("complete", "Complete", 16, status="complete"))
         return fake_result(self.config, errors=[])
+
+
+class RecoverableWarningAgent(SuccessfulJobAgent):
+    def ask(self, question, status_callback=None, canonical_fact_packet=None):
+        if status_callback is not None:
+            status_callback(status_event("complete", "Complete", 16, status="complete"))
+        return fake_result(self.config, errors=["Structured response envelope was removed."])
 
 
 class FallbackOnlyAgent(SuccessfulJobAgent):

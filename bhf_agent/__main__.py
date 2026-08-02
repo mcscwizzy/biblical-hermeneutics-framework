@@ -142,10 +142,11 @@ def main(argv: Optional[list[str]] = None) -> int:
         for warning in result.validation_result.warnings:
             print(f"- {warning}")
 
-    if result.errors:
+    diagnostics = result.errors
+    if diagnostics:
         print()
-        print("Adapter errors:")
-        for error in result.errors:
+        print("Diagnostics:")
+        for error in diagnostics:
             print(f"- {error}")
 
     if config.debug:
@@ -250,7 +251,7 @@ def main(argv: Optional[list[str]] = None) -> int:
                 public_cache.get("ckl_version_fingerprint") or "none",
             )
 
-    return 1 if result.errors else 0
+    return 1 if result.fatal_errors else 0
 
 
 def _format_reference(result) -> str:

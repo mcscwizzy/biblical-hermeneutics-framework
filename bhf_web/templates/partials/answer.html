@@ -28,6 +28,17 @@
     {% endif %}
     <div class="answer-body">{{ answer_html | safe }}</div>
 
+    {% if warnings %}
+      <aside class="answer-warnings" role="status" aria-label="Answer warnings">
+        <strong>Diagnostics</strong>
+        <ul>
+          {% for warning in warnings %}
+            <li>{{ warning }}</li>
+          {% endfor %}
+        </ul>
+      </aside>
+    {% endif %}
+
     {% if canonical_topics or canonical_object_ids %}
       <section class="answer-canonical-context" aria-labelledby="answer-canonical-context-heading">
         <div class="panel-heading answer-canonical-heading">

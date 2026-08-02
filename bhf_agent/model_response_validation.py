@@ -10,7 +10,7 @@ from typing import Any, Mapping
 
 from .models import Serializable
 from .observability import render_log_record
-from .output_cleaner import clean_model_output
+from .output_cleaner import clean_model_output, recover_prose_from_malformed_response
 
 
 ANSWER_CONTRACT = "answer"
@@ -121,6 +121,8 @@ class ModelResponseValidationResult(Serializable):
     removed_headings: list[str] = field(default_factory=list)
     raw_text_was_json: bool = False
     diagnostics: dict[str, Any] = field(default_factory=dict)
+    error_category: str | None = None
+    failed_stage: str | None = None
 
 
 def structured_response_format(*, prefer_json_schema: bool = False) -> dict[str, Any]:
@@ -197,9 +199,26 @@ def normalize_model_response(
             errors=errors,
             response_contract=contract,
             diagnostics=payload_diagnostics,
+            error_category="provider_failure" if provider_error else "response_extraction",
+            failed_stage=(
+                "waiting_for_model_response"
+                if provider_error
+                else "extracting_model_response"
+            ),
         )
 
     parsed = _parse_json_candidate(raw_text)
+    if parsed is None and _looks_like_json(raw_text):
+        recovery = recover_prose_from_malformed_response(raw_text)
+        if recovery.recovered:
+            raw_text = recovery.text
+            structured_output = True
+            raw_text_was_json = True
+            warnings.append(
+                "Strict structured response parsing failed; safe prose recovery was used."
+            )
+            payload_diagnostics["prose_recovery_used"] = True
+            payload_diagnostics["prose_recovery_field"] = recovery.source_field
     if parsed is not None:
         raw_text_was_json = True
         parsed_payload = parsed if isinstance(parsed, dict) else None
@@ -225,6 +244,8 @@ def normalize_model_response(
                         parsed_payload=parsed_payload,
                         raw_text_was_json=True,
                         diagnostics=payload_diagnostics,
+                        error_category="response_normalization",
+                        failed_stage="normalizing_model_response",
                     )
                 answer = recovered_answer
                 recovered_warning = (
@@ -260,6 +281,8 @@ def normalize_model_response(
                     response_contract=contract,
                     raw_text_was_json=True,
                     diagnostics=payload_diagnostics,
+                    error_category="response_normalization",
+                    failed_stage="normalizing_model_response",
                 )
             structured_output = True
             raw_text = answer
@@ -273,6 +296,8 @@ def normalize_model_response(
                 response_contract=contract,
                 raw_text_was_json=True,
                 diagnostics=payload_diagnostics,
+                error_category="response_normalization",
+                failed_stage="normalizing_model_response",
             )
 
     cleanup_result = clean_model_output(raw_text)
@@ -294,6 +319,8 @@ def normalize_model_response(
             removed_headings=removed_headings,
             raw_text_was_json=raw_text_was_json,
             diagnostics=payload_diagnostics,
+            error_category="response_normalization",
+            failed_stage="normalizing_model_response",
         )
 
     sanitized_text, section_headings = _truncate_internal_sections(sanitized_text)
@@ -315,6 +342,8 @@ def normalize_model_response(
             removed_headings=removed_headings,
             raw_text_was_json=raw_text_was_json,
             diagnostics=payload_diagnostics,
+            error_category="response_normalization",
+            failed_stage="normalizing_model_response",
         )
 
     if _looks_like_json(sanitized_text):
@@ -335,6 +364,13 @@ def normalize_model_response(
     if _looks_like_ckl_entry_dump(sanitized_text):
         errors.append("Model response exposes raw Canonical Knowledge Library entries.")
 
+    # A nonempty answer that is safe to display is more useful than a strict
+    # structured-output rejection.  Keep diagnostics, but downgrade those
+    # response-processing issues to warnings. Provider errors remain fatal.
+    if errors and not provider_error and _is_safe_sanitized_text(sanitized_text):
+        warnings.extend(f"Response validation warning: {error}" for error in errors)
+        errors = []
+
     return ModelResponseValidationResult(
         passed=not errors,
         sanitized_text=sanitized_text,
@@ -346,6 +382,20 @@ def normalize_model_response(
         removed_headings=removed_headings,
         raw_text_was_json=raw_text_was_json,
         diagnostics=payload_diagnostics,
+        error_category=(
+            "provider_failure"
+            if provider_error and errors
+            else "response_validation"
+            if errors
+            else None
+        ),
+        failed_stage=(
+            "waiting_for_model_response"
+            if provider_error and errors
+            else "validating_model_response"
+            if errors
+            else None
+        ),
     )
 
 
@@ -757,6 +807,22 @@ def _truncate_internal_sections(text: str) -> tuple[str, list[str]]:
 def _looks_like_json(text: str) -> bool:
     candidate = _strip_code_fence(text)
     return bool(candidate) and candidate[0] in "{["
+
+
+def _is_safe_sanitized_text(text: str) -> bool:
+    """Return whether a nonempty answer is safe enough for soft validation."""
+
+    if not text.strip() or _looks_like_json(text):
+        return False
+    if _contains_forbidden_patterns(text):
+        return False
+    if PROVIDER_ERROR_RE.search(text):
+        return False
+    if CKL_PATH_RE.search(text) or RETRIEVAL_SCORE_RE.search(text):
+        return False
+    if _looks_like_ckl_entry_dump(text):
+        return False
+    return True
 
 
 def _internal_heading(line: str) -> str | None:

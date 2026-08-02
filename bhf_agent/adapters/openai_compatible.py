@@ -139,7 +139,7 @@ class OpenAICompatibleAdapter(ChatAdapter):
                 usage=data.get("usage") if isinstance(data, dict) else None,
                 raw_provider_response=data,
                 errors=[extraction_error],
-                error_category="provider_failure",
+                error_category="response_extraction",
             )
 
         return ChatResponse(

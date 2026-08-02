@@ -81,6 +81,14 @@ class StructuredJsonAdapter(ChatAdapter):
         return ChatResponse(text=self.response_text, model="fake-model")
 
 
+class WarningResponseAdapter(ChatAdapter):
+    def chat(self, request: ChatRequest) -> ChatResponse:
+        return ChatResponse(
+            text='{"answer":"A usable answer", "provider_metadata":{"trace":true}}',
+            model="fake-model",
+        )
+
+
 class JsonSchemaAdapter(StructuredJsonAdapter):
     def supports_json_schema_response_format(self) -> bool:
         return True
@@ -415,6 +423,29 @@ class RunnerTests(unittest.TestCase):
             "finalize_result",
             result.model_metadata["pipeline"]["stages_completed"],
         )
+
+    def test_structured_openai_or_ollama_style_answer_completes_with_warnings_only(self):
+        result = self.make_agent(WarningResponseAdapter()).ask(
+            "What does Proverbs 3 mean?"
+        )
+
+        self.assertEqual(result.answer_text, "A usable answer")
+        self.assertEqual(result.fatal_errors, [])
+        self.assertEqual(result.errors, [])
+        self.assertTrue(result.warnings)
+        self.assertIsNone(result.failed_stage)
+
+    def test_provider_timeout_is_fatal_and_keeps_waiting_stage(self):
+        result = self.make_agent(
+            ErrorRecordingAdapter(
+                error_category="provider_timeout",
+            )
+        ).ask("What does Proverbs 3 mean?")
+
+        self.assertEqual(result.answer_text, "")
+        self.assertTrue(result.fatal_errors)
+        self.assertEqual(result.error_category, "provider_timeout")
+        self.assertEqual(result.failed_stage, "waiting_for_model_response")
 
     def test_status_callback_receives_ordered_pipeline_events(self):
         events = []

@@ -159,6 +159,12 @@ class AgentResult(Serializable):
     model_metadata: dict[str, Any] = field(default_factory=dict)
     warnings: list[str] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)
+    # ``errors`` is retained for backwards-compatible diagnostics.  New
+    # callers should use ``fatal_errors`` to decide whether the request failed;
+    # a result may contain warnings and diagnostics while still being usable.
+    fatal_errors: list[str] = field(default_factory=list)
+    error_category: Optional[str] = None
+    failed_stage: Optional[str] = None
     repair_applied: bool = False
     repair_attempted: bool = False
     repair_reason: Optional[str] = None

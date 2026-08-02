@@ -19,6 +19,7 @@ from .services.bible_search_fallback import build_bible_search_fallback_payload
 from .services.web_helpers import (
     build_ask_question as _question_from_form,
     agent_error_status_code,
+    result_has_fatal_error,
     deterministic_fact_packet_from_form,
     failed_stage as _failed_stage,
     record_action,
@@ -272,11 +273,21 @@ def run_ask_job(
         job.fail(f"Unexpected agent error: {exc}", status_code=500)
         return
 
-    if getattr(result, "errors", None):
+    if result_has_fatal_error(result):
+        fatal_errors = getattr(result, "fatal_errors", None)
+        errors = fatal_errors if fatal_errors is not None else getattr(result, "errors", [])
+        metadata = getattr(result, "model_metadata", {}) or {}
+        pipeline = metadata.get("pipeline") if isinstance(metadata.get("pipeline"), dict) else {}
         job.fail(
-            "; ".join(str(error) for error in result.errors),
+            "; ".join(str(error) for error in errors),
             status_code=agent_error_status_code(result),
-            failed_stage=job.failed_stage or "waiting_for_model_response",
+            failed_stage=(
+                getattr(result, "failed_stage", None)
+                or metadata.get("failed_stage")
+                or pipeline.get("failed_stage")
+                or job.failed_stage
+                or "building_final_answer"
+            ),
         )
         job.result = result
         return

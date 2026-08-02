@@ -194,6 +194,33 @@ def job_error_message(job: Any) -> str:
     return getattr(job, "error", None) or "Request failed."
 
 
+FATAL_ERROR_CATEGORIES = {
+    "provider_timeout",
+    "provider_connection",
+    "provider_failure",
+    "response_extraction",
+    "response_normalization",
+    "response_validation",
+    "response_repair",
+    "unexpected_internal_error",
+}
+
+
+def result_has_fatal_error(result: Any) -> bool:
+    """Return whether an agent result must be rendered as a failed request."""
+
+    fatal_errors = getattr(result, "fatal_errors", None)
+    if fatal_errors is not None:
+        return bool(fatal_errors)
+
+    # Compatibility for result-like objects from older integrations: a safe
+    # answer wins over a legacy diagnostic-only ``errors`` collection.
+    answer_text = str(getattr(result, "answer_text", "") or "").strip()
+    if answer_text:
+        return bool(getattr(result, "fatal", False))
+    return bool(getattr(result, "errors", None))
+
+
 def agent_error_status_code(result: Any) -> int:
     """Map controlled agent failures to an HTTP status without exposing internals."""
 
@@ -201,9 +228,23 @@ def agent_error_status_code(result: Any) -> int:
     category = str(metadata.get("error_category") or "").strip().lower()
     pipeline = metadata.get("pipeline") if isinstance(metadata.get("pipeline"), dict) else {}
     category = category or str(pipeline.get("error_category") or "").strip().lower()
-    errors = " ".join(str(error) for error in (getattr(result, "errors", None) or []))
+    errors = " ".join(
+        str(error)
+        for error in (
+            getattr(result, "fatal_errors", None)
+            if getattr(result, "fatal_errors", None) is not None
+            else getattr(result, "errors", None)
+        )
+        or []
+    )
     lowered = f"{category} {errors}".lower()
-    if category == "invalid_model_output" or any(
+    if category in {
+        "response_extraction",
+        "response_normalization",
+        "response_validation",
+        "response_repair",
+        "invalid_model_output",
+    } or any(
         marker in lowered
         for marker in (
             "invalid model output",
@@ -215,6 +256,8 @@ def agent_error_status_code(result: Any) -> int:
         return 422
     if category == "provider_timeout" or "timed out" in lowered or "timeout" in lowered:
         return 504
+    if category == "unexpected_internal_error":
+        return 500
     return 502
 
 
