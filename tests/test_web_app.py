@@ -950,7 +950,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v21"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v22"', service_worker["body"])
         self.assertIn("cacheFirstApi", service_worker["body"])
         self.assertIn("isRefreshRequest", service_worker["body"])
         self.assertIn("networkFirstNavigation", service_worker["body"])
@@ -1083,6 +1083,8 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("beforeinstallprompt", pwa_script["body"])
         self.assertIn("promptForInstall", pwa_script["body"])
         self.assertIn("checkForAppUpdate", pwa_script["body"])
+        self.assertIn("waitForServiceWorkerActivation", pwa_script["body"])
+        self.assertIn("requestAppReloadAfterUpdate", pwa_script["body"])
         self.assertIn("refreshOfflineStorageControls", pwa_script["body"])
         self.assertIn("navigator.storage.estimate", pwa_script["body"])
         self.assertIn("wireOfflineSnapshotControls", pwa_script["body"])

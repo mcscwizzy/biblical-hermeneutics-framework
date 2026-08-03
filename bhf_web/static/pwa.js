@@ -8,6 +8,8 @@
   let deferredInstallPrompt = null;
   let serviceWorkerRegistration = null;
   let serviceWorkerReady = false;
+  let updateRequested = false;
+  let updateReloadScheduled = false;
 
   if (enableServiceWorker && "serviceWorker" in navigator) {
     window.addEventListener("load", () => {
@@ -90,19 +92,29 @@
       installing.addEventListener("statechange", () => {
         if (installing.state === "installed") {
           setPwaUpdateStatus(
-            navigator.serviceWorker.controller ? "Update ready on next reload" : "App ready for offline use",
-            "Check",
-            false
+            navigator.serviceWorker.controller
+              ? updateRequested ? "Activating app update..." : "Update ready on next reload"
+              : "App ready for offline use",
+            updateRequested ? "Working" : "Check",
+            updateRequested
           );
         } else if (installing.state === "activated") {
           serviceWorkerReady = true;
-          setPwaUpdateStatus("App is up to date", "Check", false);
+          if (updateRequested) {
+            requestAppReloadAfterUpdate();
+          } else {
+            setPwaUpdateStatus("App is up to date", "Check", false);
+          }
           refreshOfflineReadinessControls();
         }
       });
     });
     navigator.serviceWorker.addEventListener("controllerchange", () => {
       serviceWorkerReady = true;
+      if (updateRequested) {
+        requestAppReloadAfterUpdate();
+        return;
+      }
       setPwaUpdateStatus("App update activated", "Check", false);
       refreshPwaLifecycleControls();
       refreshOfflineReadinessControls();
@@ -601,13 +613,82 @@
       setLifecycleButtonState(button, "Service worker starting", "Check", true, "pwaUpdate");
       return;
     }
+    updateRequested = true;
+    updateReloadScheduled = false;
+    const previousController = navigator.serviceWorker.controller;
+    const previousActive = serviceWorkerRegistration.active;
     setLifecycleButtonState(button, "Checking for update...", "Working", true, "pwaUpdate");
     try {
       await serviceWorkerRegistration.update();
+      await waitForServiceWorkerActivation(serviceWorkerRegistration, previousController, previousActive);
+      if (updateReloadScheduled) {
+        return;
+      }
+      updateRequested = false;
       setLifecycleButtonState(button, "App is up to date", "Check", false, "pwaUpdate");
     } catch (error) {
+      updateRequested = false;
       setLifecycleButtonState(button, error?.message || "Update check failed", "Retry", false, "pwaUpdate");
     }
+  }
+
+  function waitForServiceWorkerActivation(registration, previousController, previousActive) {
+    const worker = registration.installing || registration.waiting;
+    if (!worker) {
+      if (registration.active && registration.active !== previousActive) {
+        requestAppReloadAfterUpdate();
+      }
+      return Promise.resolve();
+    }
+
+    return new Promise((resolve) => {
+      let settled = false;
+      const timeoutId = window.setTimeout(finish, 10000);
+
+      function finish() {
+        if (settled) {
+          return;
+        }
+        settled = true;
+        window.clearTimeout(timeoutId);
+        navigator.serviceWorker.removeEventListener("controllerchange", onControllerChange);
+        worker.removeEventListener("statechange", onStateChange);
+        if (
+          navigator.serviceWorker.controller !== previousController
+          || registration.active !== previousActive
+        ) {
+          requestAppReloadAfterUpdate();
+        }
+        resolve();
+      }
+
+      function onControllerChange() {
+        finish();
+      }
+
+      function onStateChange() {
+        if (worker.state === "installed" && registration.waiting) {
+          registration.waiting.postMessage({ type: "SKIP_WAITING" });
+        }
+        if (worker.state === "activated" || worker.state === "redundant") {
+          finish();
+        }
+      }
+
+      navigator.serviceWorker.addEventListener("controllerchange", onControllerChange);
+      worker.addEventListener("statechange", onStateChange);
+      onStateChange();
+    });
+  }
+
+  function requestAppReloadAfterUpdate() {
+    if (updateReloadScheduled) {
+      return;
+    }
+    updateReloadScheduled = true;
+    updateRequested = false;
+    setPwaUpdateStatus("App updated. Reloading...", "Working", true);
+    window.setTimeout(() => window.location.reload(), 50);
   }
 
   function setPwaUpdateStatus(status, label, disabled) {

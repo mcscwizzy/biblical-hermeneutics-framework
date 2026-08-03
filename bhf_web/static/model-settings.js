@@ -233,9 +233,40 @@
   }
 
   function updateTokenStatus(form = currentForm(), message = "") {
-    const status = form?.querySelector("[data-openrouter-token-status]");
-    if (!status) return;
-    status.textContent = message || (openRouterToken ? "OpenRouter connected on this device." : "OpenRouter is not connected.");
+    const statuses = [...document.querySelectorAll("[data-openrouter-token-status]")];
+    if (!statuses.length) return;
+    const inputs = [
+      ...(form ? [...form.querySelectorAll("[data-openrouter-token]")] : []),
+      ...document.querySelectorAll("[data-ai-manual-token]"),
+    ];
+    const hasUnsavedChanges = inputs.some((input) => Boolean(input.value) && input.value !== openRouterToken);
+    const statusText = message || (hasUnsavedChanges
+      ? "Unsaved key changes. Save to replace the saved key."
+      : openRouterToken
+        ? "OpenRouter key saved on this device. It is encrypted in browser storage."
+        : "No OpenRouter key saved on this device.");
+    const messageKind = String(message || "").toLowerCase();
+    const statusKind = message
+      ? messageKind.includes("saved") ? "saved" : messageKind.includes("unsaved") ? "pending" : "empty"
+      : openRouterToken && !hasUnsavedChanges ? "saved" : hasUnsavedChanges ? "pending" : "empty";
+    statuses.forEach((status) => {
+      status.textContent = statusText;
+      status.dataset.status = statusKind;
+    });
+  }
+
+  function updateTokenInputs() {
+    document.querySelectorAll("[data-openrouter-token], [data-ai-manual-token]").forEach((input) => {
+      input.value = openRouterToken || "";
+      input.type = "password";
+      input.placeholder = openRouterToken ? "Saved key (hidden)" : "Enter an OpenRouter key";
+    });
+    document.querySelectorAll("[data-token-visibility-toggle]").forEach((button) => {
+      button.setAttribute("aria-label", "Show OpenRouter key");
+      button.title = "Show OpenRouter key";
+      const label = button.querySelector("[data-token-visibility-label]");
+      if (label) label.textContent = "Show";
+    });
   }
 
   function updateConnectionStatus(message = "") {
@@ -326,10 +357,10 @@
     updateConnectionStatus();
   }
 
-  async function saveManualToken() {
+  async function saveManualToken(sourceInput = null) {
     await readyPromise;
     const form = currentForm();
-    const input = form?.querySelector("[data-openrouter-token]")
+    const input = sourceInput || form?.querySelector("[data-openrouter-token]")
       || document.querySelector("[data-ai-manual-token]");
     const token = String(input?.value || "").trim();
     if (!token) {
@@ -338,8 +369,8 @@
     }
     try {
       await saveTokenValue(token);
-      input.value = "";
-      updateTokenStatus(form, "OpenRouter connected on this device.");
+      updateTokenInputs();
+      updateTokenStatus(form, "OpenRouter key saved on this device.");
       closeSetup();
     } catch (error) {
       updateTokenStatus(form, friendlyStorageError(error));
@@ -364,6 +395,7 @@
     openRouterToken = null;
     await window.BHFOfflineDB?.remove("modelSettings", KEY_ID);
     await writeSettings();
+    updateTokenInputs();
     updateTokenStatus(currentForm(), "OpenRouter disconnected. No key is stored by BHF.");
     updateConnectionStatus();
   }
@@ -520,6 +552,16 @@
   }
 
   function bindControls(form = currentForm()) {
+    document.querySelectorAll("[data-token-visibility-toggle]").forEach((button) => button.addEventListener("click", () => {
+      const input = document.getElementById(button.dataset.tokenVisibilityToggle);
+      const label = button.querySelector("[data-token-visibility-label]");
+      if (!input) return;
+      const visible = input.type === "text";
+      input.type = visible ? "password" : "text";
+      button.setAttribute("aria-label", `${visible ? "Show" : "Hide"} OpenRouter key`);
+      button.title = `${visible ? "Show" : "Hide"} OpenRouter key`;
+      if (label) label.textContent = visible ? "Show" : "Hide";
+    }));
     document.querySelectorAll("[data-openrouter-connect]").forEach((button) => button.addEventListener("click", () => {
       connectOpenRouter().catch((error) => showSetup(error.message));
     }));
@@ -559,10 +601,10 @@
       }
     }));
     document.querySelectorAll("[data-ai-manual-save]").forEach((button) => button.addEventListener("click", () => {
-      saveManualToken().catch((error) => updateTokenStatus(currentForm(), friendlyStorageError(error)));
+      saveManualToken(form?.querySelector("[data-openrouter-token]")).catch((error) => updateTokenStatus(currentForm(), friendlyStorageError(error)));
     }));
     document.querySelectorAll("[data-ai-manual-dialog-save]").forEach((button) => button.addEventListener("click", () => {
-      saveManualToken().catch((error) => showSetup(friendlyStorageError(error)));
+      saveManualToken(document.querySelector("[data-ai-manual-token]")).catch((error) => showSetup(friendlyStorageError(error)));
     }));
     document.querySelectorAll("[data-ai-test-connection]").forEach((button) => button.addEventListener("click", () => {
       testConnection().catch((error) => updateConnectionStatus(error.message));
@@ -603,6 +645,8 @@
       if (selected?.value === "__custom__" && model) model.value = event.target.value;
     });
     form.addEventListener("change", () => persistFormSettings().catch(() => undefined));
+    form.querySelector("[data-openrouter-token]")?.addEventListener("input", () => updateTokenStatus(form));
+    document.querySelector("[data-ai-manual-token]")?.addEventListener("input", () => updateTokenStatus(form));
   }
 
   async function initialize() {
@@ -610,6 +654,7 @@
     bindControls(form);
     await readSettings();
     openRouterToken = await decryptToken(settings.providers?.[OPENROUTER]?.token);
+    updateTokenInputs();
     if (form && settings.activeProvider && settings.providers?.[settings.activeProvider]) {
       providerInput(form, "adapter").value = settings.activeProvider;
       const saved = providerState(settings.activeProvider);

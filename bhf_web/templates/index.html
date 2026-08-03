@@ -25,15 +25,15 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260802a">
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260802b">
   <script src="{{ static_asset('/offline/db.js') }}" defer></script>
-  <script src="{{ static_asset('/model-settings.js') }}?v=20260802a" defer></script>
+  <script src="{{ static_asset('/model-settings.js') }}?v=20260802b" defer></script>
   <script src="{{ static_asset('/api/http.js') }}?v=20260729e" defer></script>
   <script src="{{ static_asset('/htmx-status.js') }}" defer></script>
   <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260729c" defer></script>
   <script src="{{ static_asset('/htmx-search.js') }}" defer></script>
   <script src="{{ static_asset('/htmx-lite.js') }}?v=20260729d" defer></script>
-  <script src="{{ static_asset('/pwa.js') }}?v=20260729f" defer></script>
+  <script src="{{ static_asset('/pwa.js') }}?v=20260802c" defer></script>
   {% if not test_mode %}
     <link rel="stylesheet" href="{{ static_asset('/vendor/leaflet/leaflet.css') }}">
     <script src="{{ static_asset('/vendor/leaflet/leaflet.js') }}" defer></script>
@@ -64,11 +64,16 @@
       </section>
       <details class="advanced-ai-settings">
         <summary>Already have an OpenRouter key? Enter key manually</summary>
-        <label>
-          <span>OpenRouter key</span>
-          <input type="password" data-ai-manual-token autocomplete="new-password">
-        </label>
+        <label for="ai-manual-token"><span>OpenRouter key</span></label>
+        <div class="credential-input-row">
+          <input id="ai-manual-token" type="password" data-ai-manual-token autocomplete="new-password" aria-describedby="ai-manual-token-status">
+          <button type="button" class="secondary token-visibility-toggle" data-token-visibility-toggle="ai-manual-token" aria-label="Show OpenRouter key" title="Show OpenRouter key">
+            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M2.1 12s3.5-6 9.9-6 9.9 6 9.9 6-3.5 6-9.9 6-9.9-6-9.9-6Z"/><circle cx="12" cy="12" r="2.7"/></svg>
+            <span data-token-visibility-label>Show</span>
+          </button>
+        </div>
         <button type="button" class="secondary" data-ai-manual-dialog-save>Save key on this device</button>
+        <p id="ai-manual-token-status" class="field-help token-status" data-openrouter-token-status role="status" aria-live="polite">No OpenRouter key saved on this device.</p>
       </details>
       <p class="ai-setup-status" data-ai-setup-status role="status" aria-live="polite"></p>
     </div>
@@ -216,14 +221,18 @@
                   </label>
 
                   <div class="openrouter-credential" data-openrouter-credential hidden>
-                    <label>
-                      <span>OpenRouter key</span>
-                      <input type="password" data-openrouter-token autocomplete="new-password" placeholder="Enter an OpenRouter key">
-                    </label>
+                    <label for="openrouter-token"><span>OpenRouter key</span></label>
+                    <div class="credential-input-row">
+                      <input id="openrouter-token" type="password" data-openrouter-token autocomplete="new-password" placeholder="Enter an OpenRouter key" aria-describedby="openrouter-token-status">
+                      <button type="button" class="secondary token-visibility-toggle" data-token-visibility-toggle="openrouter-token" aria-label="Show OpenRouter key" title="Show OpenRouter key">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M2.1 12s3.5-6 9.9-6 9.9 6 9.9 6-3.5 6-9.9 6-9.9-6-9.9-6Z"/><circle cx="12" cy="12" r="2.7"/></svg>
+                        <span data-token-visibility-label>Show</span>
+                      </button>
+                    </div>
                     <div class="action-row">
                       <button type="button" class="secondary" data-ai-manual-save>Save key on this device</button>
                     </div>
-                    <p class="field-help" data-openrouter-token-status>No key saved.</p>
+                    <p id="openrouter-token-status" class="field-help token-status" data-openrouter-token-status role="status" aria-live="polite">No OpenRouter key saved on this device.</p>
                   </div>
 
                   <p class="field-help" role="status" aria-live="polite" data-ai-connection-status>Not connected</p>

@@ -75,6 +75,43 @@
   gap: 8px;
 }
 
+.credential-input-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.credential-input-row input {
+  min-width: 0;
+  flex: 1;
+}
+
+.token-visibility-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.token-visibility-toggle svg {
+  width: 1.05em;
+  height: 1.05em;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.token-status[data-status="saved"] {
+  color: var(--success-text, #176b43);
+}
+
+.token-status[data-status="pending"] {
+  color: var(--warning-text, #8a5a00);
+}
+
 .ai-model-field {
   max-width: 300px;
 }

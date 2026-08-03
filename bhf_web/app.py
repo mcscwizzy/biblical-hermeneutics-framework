@@ -167,6 +167,11 @@ def create_app() -> FastAPI:
         return Response(
             content=(PACKAGE_DIR / "static" / "sw.js").read_text(encoding="utf-8"),
             media_type="application/javascript",
+            headers={
+                "Cache-Control": "no-store, no-cache, must-revalidate",
+                "Pragma": "no-cache",
+                "Expires": "0",
+            },
         )
 
     @web_app.get("/api/health", response_class=JSONResponse)
