@@ -7,6 +7,9 @@ topics to cover — contributions are very welcome.
 Before anything else, read the **[Neutrality Charter](GOVERNANCE.md#1-neutrality-charter-the-constitution)**.
 It is the one rule everything else serves: *BHF teaches method, never doctrine.*
 
+For a complete source checkout, provider setup, database build, and test
+workflow, see the [local build guide](docs/local-development.md).
+
 ## Ways to contribute
 
 - **Add a module** (a genre, book, context, or language module).
