@@ -1,4 +1,34 @@
 services:
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    environment:
+      OLLAMA_CONTEXT_LENGTH: "${BHF_CONTEXT_WINDOW:-12288}"
+    restart: unless-stopped
+    volumes:
+      - ollama:/root/.ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+
+  ollama-init:
+    image: ollama/ollama:latest
+    entrypoint: ["/bin/sh", "/scripts/ollama-init.sh"]
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+      OLLAMA_MODEL: "${OLLAMA_MODEL:-qwen2.5:0.5b}"
+    volumes:
+      - ollama:/root/.ollama
+      - ./scripts/ollama-init.sh:/scripts/ollama-init.sh:ro
+    depends_on:
+      ollama:
+        condition: service_healthy
+    restart: "no"
+
   bhf-web:
     build:
       context: .
@@ -8,13 +38,17 @@ services:
         BHF_STRONGS_REVISION: "${BHF_STRONGS_REVISION:-0acd2f251c2d35ff8db2dece4e0593979d3ac223}"
         BHF_OSHB_REVISION: "${BHF_OSHB_REVISION:-3d15126fb1ef74867fc1434be1942e837932691f}"
         BHF_MORPHGNT_REVISION: "${BHF_MORPHGNT_REVISION:-aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d}"
+    depends_on:
+      ollama-init:
+        condition: service_completed_successfully
+      ollama:
+        condition: service_healthy
     ports:
       - "${BHF_HTTP_PORT:-8080}:8080"
     environment:
-      LLM_PROVIDER: "${LLM_PROVIDER:-openrouter}"
-      BHF_BASE_URL: "${BHF_BASE_URL:-https://openrouter.ai/api/v1}"
-      BHF_MODEL: "${BHF_MODEL:-google/gemma-4-26b-a4b-it:free}"
-      BHF_API_KEY: "${BHF_API_KEY:-}"
+      LLM_PROVIDER: "ollama"
+      OLLAMA_BASE_URL: "${OLLAMA_BASE_URL:-http://ollama:11434}"
+      OLLAMA_MODEL: "${OLLAMA_MODEL:-qwen2.5:0.5b}"
       BHF_PROFILE: "${BHF_PROFILE:-standard}"
       BHF_ANSWER_MODE: "${BHF_ANSWER_MODE:-study}"
       BHF_TEMPERATURE: "${BHF_TEMPERATURE:-0.3}"
@@ -37,3 +71,6 @@ services:
       timeout: 5s
       retries: 3
       start_period: 10s
+
+volumes:
+  ollama:

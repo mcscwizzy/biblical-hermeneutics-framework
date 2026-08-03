@@ -1,11 +1,12 @@
 # Docker
 
-The default Docker setup runs the BHF web/API server and a lightweight local
-Ollama runtime for development and testing. It includes the Python BHF agent
-package, web UI, framework modules, profiles, agent data files, and a persistent
-Ollama volume for model reuse.
+The default Docker setup runs the BHF web/API server configured for OpenRouter.
+It includes the Python BHF agent package, web UI, framework modules, profiles,
+agent data files, and persistent BHF application data. It does not start a
+local model runtime.
 
-The app can still point at an external OpenAI-compatible endpoint such as LM
+Ollama remains available as an opt-in stack in `docker-compose.ollama.yml`.
+The app can also point at an external OpenAI-compatible endpoint such as LM
 Studio, llama.cpp, or another server on your machine or LAN by changing the
 environment variables in `.env`.
 
@@ -53,11 +54,51 @@ To verify the local endpoint:
 curl http://localhost:8080/api/health
 ```
 
-## Ollama On The Host
+## OpenRouter
 
-Run Ollama on your host machine and make sure the model is available:
+The default stack uses the OpenRouter-compatible endpoint:
 
-The app container talks to Ollama over the Compose network at:
+```text
+https://openrouter.ai/api/v1
+```
+
+On first launch, connect OpenRouter in the browser UI. The connection key is
+kept by the browser and sent to BHF only for the current request. For a
+server-side key instead, set `BHF_API_KEY` in `.env`.
+
+## Ollama (Optional)
+
+Start the separate Ollama stack when you want the bundled local runtime:
+
+```bash
+docker compose -f docker-compose.ollama.yml up -d --build
+```
+
+This starts the BHF web server, Ollama, and the one-time model initializer.
+The default model is:
+
+```text
+qwen2.5:0.5b
+```
+
+The model is stored in the named Docker volume `ollama` and reused on
+subsequent starts. Change it in `.env` with `OLLAMA_MODEL`, or pull another
+model manually:
+
+```bash
+docker exec -it <ollama-container-name> ollama pull llama3.2:1b
+```
+
+To use an Ollama server running on the host rather than the bundled container,
+use the default stack with these `.env` values:
+
+```dotenv
+LLM_PROVIDER=ollama
+BHF_BASE_URL=http://host.docker.internal:11434
+BHF_MODEL=qwen2.5:0.5b
+```
+
+The bundled app container talks to Ollama over the Compose network at:
 
 ```text
 http://ollama:11434
@@ -68,16 +109,6 @@ The host can reach the same Ollama service at:
 ```bash
 curl http://localhost:11434/api/tags
 ```
-
-On first start, the `ollama-init` service waits for Ollama, then pulls the
-default lightweight model:
-
-```text
-qwen2.5:0.5b
-```
-
-Because the model lives in the named Docker volume `ollama`, it is reused on
-subsequent starts instead of being pulled again.
 
 ## Lexical Database
 
@@ -132,24 +163,9 @@ BHF_BASE_URL=http://host.docker.internal:1234/v1
 BHF_MODEL=local-model
 ```
 
-If you want to use LM Studio instead of Ollama, set `LLM_PROVIDER` to
-`openai_compatible` and point `BHF_BASE_URL` at the LM Studio server. The
-Ollama services can be removed from `docker-compose.yml` or ignored if you do
-not need the local containerized model runtime.
-
-## Swap Models
-
-Change the default local model by updating:
-
-```dotenv
-OLLAMA_MODEL=qwen2.5:0.5b
-```
-
-To pull another model manually:
-
-```bash
-docker exec -it <ollama-container-name> ollama pull llama3.2:1b
-```
+The default stack can also use LM Studio without changing Compose files. Set
+`LLM_PROVIDER=openai_compatible`, then point `BHF_BASE_URL` at the LM Studio
+server as shown above.
 
 ## Persistent Data
 
