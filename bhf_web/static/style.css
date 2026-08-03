@@ -69,6 +69,16 @@
   width: 100%;
 }
 
+.openrouter-credential {
+  display: grid;
+  grid-column: 1 / -1;
+  gap: 8px;
+}
+
+.ai-model-field {
+  max-width: 300px;
+}
+
 /*
 .map-entity-marker
 .map-entity-marker--place

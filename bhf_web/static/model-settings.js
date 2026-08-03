@@ -327,6 +327,7 @@
   }
 
   async function saveManualToken() {
+    await readyPromise;
     const form = currentForm();
     const input = form?.querySelector("[data-openrouter-token]")
       || document.querySelector("[data-ai-manual-token]");
@@ -346,6 +347,17 @@
   }
 
   async function removeToken() {
+    await readyPromise;
+    const form = currentForm();
+    const provider = currentProvider(form);
+    if (provider !== OPENROUTER) {
+      settings.activeProvider = null;
+      settings.onboardingComplete = false;
+      settings.setupChoice = null;
+      await writeSettings();
+      updateConnectionStatus();
+      return;
+    }
     settings.providers = settings.providers || {};
     delete settings.providers[OPENROUTER];
     if (settings.activeProvider === OPENROUTER) settings.activeProvider = null;
@@ -356,6 +368,16 @@
     updateConnectionStatus();
   }
 
+  async function reconnectProvider() {
+    await readyPromise;
+    const provider = currentProvider();
+    if (provider === OPENROUTER) {
+      await connectOpenRouter();
+      return;
+    }
+    await testConnection();
+  }
+
   function friendlyStorageError(error) {
     const message = String(error?.message || "");
     return message.includes("private app storage") ? message : "BHF could not save this connection in the browser.";
@@ -363,6 +385,11 @@
 
   async function testConnection() {
     await readyPromise;
+    const form = currentForm();
+    if (form) {
+      updateSettingsFromForm(form);
+      await writeSettings();
+    }
     const provider = settings?.activeProvider;
     if (!provider) throw new Error("Choose an AI provider before testing the connection.");
     const isOpenRouter = provider === OPENROUTER;
@@ -467,7 +494,8 @@
     window.location.assign(authUrl.href);
   }
 
-  function finishWithoutAi() {
+  async function finishWithoutAi() {
+    await readyPromise;
     settings.onboardingComplete = true;
     settings.setupChoice = "without_ai";
     settings.activeProvider = null;
@@ -491,10 +519,97 @@
     dialog.hidden = true;
   }
 
+  function bindControls(form = currentForm()) {
+    document.querySelectorAll("[data-openrouter-connect]").forEach((button) => button.addEventListener("click", () => {
+      connectOpenRouter().catch((error) => showSetup(error.message));
+    }));
+    document.querySelectorAll("[data-ai-continue-without]").forEach((button) => button.addEventListener("click", () => {
+      finishWithoutAi().catch((error) => showSetup(friendlyStorageError(error)));
+    }));
+    document.querySelectorAll("[data-ai-local-provider]").forEach((button) => button.addEventListener("click", async () => {
+      try {
+        await readyPromise;
+        if (form && providerInput(form, "adapter")) {
+          providerInput(form, "adapter").value = "ollama";
+          renderProviderState(form);
+        }
+        settings.activeProvider = "ollama";
+        settings.onboardingComplete = true;
+        settings.setupChoice = "provider";
+        await writeSettings();
+        closeSetup();
+      } catch (error) {
+        showSetup(friendlyStorageError(error));
+      }
+    }));
+    document.querySelectorAll("[data-ai-other-provider]").forEach((button) => button.addEventListener("click", async () => {
+      try {
+        await readyPromise;
+        if (form && providerInput(form, "adapter")) {
+          providerInput(form, "adapter").value = "openai_compatible";
+          renderProviderState(form);
+        }
+        settings.activeProvider = "openai_compatible";
+        settings.onboardingComplete = true;
+        settings.setupChoice = "provider";
+        await writeSettings();
+        closeSetup();
+      } catch (error) {
+        showSetup(friendlyStorageError(error));
+      }
+    }));
+    document.querySelectorAll("[data-ai-manual-save]").forEach((button) => button.addEventListener("click", () => {
+      saveManualToken().catch((error) => updateTokenStatus(currentForm(), friendlyStorageError(error)));
+    }));
+    document.querySelectorAll("[data-ai-manual-dialog-save]").forEach((button) => button.addEventListener("click", () => {
+      saveManualToken().catch((error) => showSetup(friendlyStorageError(error)));
+    }));
+    document.querySelectorAll("[data-ai-test-connection]").forEach((button) => button.addEventListener("click", () => {
+      testConnection().catch((error) => updateConnectionStatus(error.message));
+    }));
+    document.querySelectorAll("[data-ai-reconnect]").forEach((button) => button.addEventListener("click", () => {
+      reconnectProvider().catch((error) => showSetup(error.message));
+    }));
+    document.querySelectorAll("[data-ai-disconnect]").forEach((button) => button.addEventListener("click", () => {
+      removeToken().catch((error) => updateConnectionStatus(friendlyStorageError(error)));
+    }));
+    document.querySelectorAll("[data-ai-settings-open]").forEach((button) => button.addEventListener("click", () => showSetup()));
+    if (!form) return;
+    providerInput(form, "adapter")?.addEventListener("change", async () => {
+      await readyPromise;
+      updateSettingsFromForm(form);
+      renderProviderState(form);
+      await writeSettings();
+    });
+    form.querySelector("[data-openrouter-model]")?.addEventListener("change", () => {
+      const custom = form.querySelector("[data-openrouter-custom-model]");
+      if (custom) custom.hidden = providerInput(form, "model")?.value !== "__custom__";
+      const model = providerInput(form, "model");
+      const selected = form.querySelector("[data-openrouter-model]");
+      if (selected?.value === "__custom__") {
+        if (custom) custom.hidden = false;
+        if (model) {
+          model.hidden = false;
+          model.value = custom?.value || "";
+        }
+      } else if (selected && model) {
+        model.hidden = true;
+        model.value = selected.value;
+      }
+    });
+    form.querySelector("[data-openrouter-custom-model]")?.addEventListener("input", (event) => {
+      const model = providerInput(form, "model");
+      const selected = form.querySelector("[data-openrouter-model]");
+      if (selected?.value === "__custom__" && model) model.value = event.target.value;
+    });
+    form.addEventListener("change", () => persistFormSettings().catch(() => undefined));
+  }
+
   async function initialize() {
+    const form = currentForm();
+    bindControls(form);
     await readSettings();
     openRouterToken = await decryptToken(settings.providers?.[OPENROUTER]?.token);
-    const form = currentForm();
     if (form && settings.activeProvider && settings.providers?.[settings.activeProvider]) {
       providerInput(form, "adapter").value = settings.activeProvider;
       const saved = providerState(settings.activeProvider);
@@ -502,69 +617,6 @@
       if (providerInput(form, "base_url")) providerInput(form, "base_url").value = saved.baseUrl;
     }
     renderProviderState(form);
-    document.querySelectorAll("[data-openrouter-connect]").forEach((button) => button.addEventListener("click", () => {
-      connectOpenRouter().catch((error) => showSetup(error.message));
-    }));
-    document.querySelectorAll("[data-ai-continue-without]").forEach((button) => button.addEventListener("click", finishWithoutAi));
-    document.querySelectorAll("[data-ai-local-provider]").forEach((button) => button.addEventListener("click", () => {
-      if (form && providerInput(form, "adapter")) {
-        providerInput(form, "adapter").value = "ollama";
-        renderProviderState(form);
-      }
-      settings.activeProvider = "ollama";
-      settings.onboardingComplete = true;
-      settings.setupChoice = "provider";
-      writeSettings().catch(() => undefined);
-      closeSetup();
-    }));
-    document.querySelectorAll("[data-ai-other-provider]").forEach((button) => button.addEventListener("click", () => {
-      if (form && providerInput(form, "adapter")) {
-        providerInput(form, "adapter").value = "openai_compatible";
-        renderProviderState(form);
-      }
-      settings.activeProvider = "openai_compatible";
-      settings.onboardingComplete = true;
-      settings.setupChoice = "provider";
-      writeSettings().catch(() => undefined);
-      closeSetup();
-    }));
-    document.querySelectorAll("[data-ai-manual-save]").forEach((button) => button.addEventListener("click", () => saveManualToken()));
-    document.querySelectorAll("[data-ai-manual-dialog-save]").forEach((button) => button.addEventListener("click", () => saveManualToken()));
-    document.querySelectorAll("[data-ai-test-connection]").forEach((button) => button.addEventListener("click", () => {
-      testConnection().catch((error) => updateConnectionStatus(error.message));
-    }));
-    document.querySelectorAll("[data-ai-reconnect]").forEach((button) => button.addEventListener("click", () => connectOpenRouter().catch((error) => showSetup(error.message))));
-    document.querySelectorAll("[data-ai-disconnect]").forEach((button) => button.addEventListener("click", () => removeToken().catch((error) => updateConnectionStatus(friendlyStorageError(error)))));
-    document.querySelectorAll("[data-ai-settings-open]").forEach((button) => button.addEventListener("click", () => showSetup()));
-    if (form) {
-      providerInput(form, "adapter")?.addEventListener("change", async () => {
-        updateSettingsFromForm(form);
-        renderProviderState(form);
-        await writeSettings();
-      });
-      form.querySelector("[data-openrouter-model]")?.addEventListener("change", () => {
-        const custom = form.querySelector("[data-openrouter-custom-model]");
-        if (custom) custom.hidden = providerInput(form, "model")?.value !== "__custom__";
-        const model = providerInput(form, "model");
-        const selected = form.querySelector("[data-openrouter-model]");
-        if (selected?.value === "__custom__") {
-          if (custom) custom.hidden = false;
-          if (model) {
-            model.hidden = false;
-            model.value = custom?.value || "";
-          }
-        } else if (selected && model) {
-          model.hidden = true;
-          model.value = selected.value;
-        }
-      });
-      form.querySelector("[data-openrouter-custom-model]")?.addEventListener("input", (event) => {
-        const model = providerInput(form, "model");
-        const selected = form.querySelector("[data-openrouter-model]");
-        if (selected?.value === "__custom__" && model) model.value = event.target.value;
-      });
-      form.addEventListener("change", () => persistFormSettings().catch(() => undefined));
-    }
     try {
       await handleAuthCallback();
     } catch (error) {

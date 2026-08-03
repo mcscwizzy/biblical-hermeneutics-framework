@@ -25,9 +25,9 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260730a">
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260802a">
   <script src="{{ static_asset('/offline/db.js') }}" defer></script>
-  <script src="{{ static_asset('/model-settings.js') }}?v=20260729a" defer></script>
+  <script src="{{ static_asset('/model-settings.js') }}?v=20260802a" defer></script>
   <script src="{{ static_asset('/api/http.js') }}?v=20260729e" defer></script>
   <script src="{{ static_asset('/htmx-status.js') }}" defer></script>
   <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260729c" defer></script>
@@ -52,7 +52,7 @@
         <h3>Connect OpenRouter</h3>
         <p>Best answer quality on nearly any computer. Sign in or create an OpenRouter account to continue.</p>
         <button type="button" data-openrouter-connect>Connect OpenRouter</button>
-        <p class="field-help">Your OpenRouter connection key is encrypted and stored only in this browser on this device. BHF does not operate user accounts and does not store your key on a central BHF server. Clearing browser data, reinstalling the app, or changing devices may require you to connect again.</p>
+        <p class="field-help">Your key is encrypted and stored only in this browser.</p>
       </section>
       <section class="ai-setup-options">
         <h3>Other options</h3>
@@ -215,6 +215,17 @@
                     </select>
                   </label>
 
+                  <div class="openrouter-credential" data-openrouter-credential hidden>
+                    <label>
+                      <span>OpenRouter key</span>
+                      <input type="password" data-openrouter-token autocomplete="new-password" placeholder="Enter an OpenRouter key">
+                    </label>
+                    <div class="action-row">
+                      <button type="button" class="secondary" data-ai-manual-save>Save key on this device</button>
+                    </div>
+                    <p class="field-help" data-openrouter-token-status>No key saved.</p>
+                  </div>
+
                   <p class="field-help" role="status" aria-live="polite" data-ai-connection-status>Not connected</p>
                   <div class="action-row">
                     <button type="button" class="secondary" data-ai-test-connection>Test connection</button>
@@ -223,7 +234,7 @@
                     <button type="button" class="secondary" data-ai-settings-open>Set up AI</button>
                   </div>
 
-                  <label>
+                  <label class="ai-model-field">
                     <span>Model</span>
                     <select data-openrouter-model hidden aria-label="OpenRouter study model"></select>
                     <input type="text" name="model" value="{{ form.model }}" required>
@@ -263,19 +274,6 @@
                     </label>
                     <p class="field-help">BHF chooses a provider-appropriate response style and temperature for normal study use.</p>
                   </details>
-
-                  <fieldset data-openrouter-credential hidden>
-                    <legend>Advanced Help: manual OpenRouter key</legend>
-                    <label>
-                      <span>Key</span>
-                      <input type="password" data-openrouter-token autocomplete="new-password" placeholder="Enter an OpenRouter token">
-                    </label>
-                    <div class="action-row">
-                      <button type="button" class="secondary" data-ai-manual-save>Save key on this device</button>
-                    </div>
-                    <p class="field-help" data-openrouter-token-status>No token saved.</p>
-                    <p class="field-help" data-openrouter-privacy>OpenRouter requires internet access. Your connection key is encrypted and stored only in this browser on this device.</p>
-                  </fieldset>
 
                   <label class="check">
                     <input type="checkbox" name="show_method_notes" {% if form.show_method_notes %}checked{% endif %}>
