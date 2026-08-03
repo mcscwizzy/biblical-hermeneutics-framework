@@ -423,6 +423,7 @@ class BHFAgent:
         question: str,
         status_callback: Optional[StatusCallback] = None,
         canonical_fact_packet: dict[str, Any] | None = None,
+        transient_translation_lookup: bool = False,
     ) -> AgentResult:
         previous_callback = self._status_callback
         previous_run_started_at = self._status_run_started_at
@@ -438,6 +439,9 @@ class BHFAgent:
         try:
             self._emit_status("queued", status="running")
             ctx = self._initialize_context(question)
+            ctx.debug_metadata["transient_translation_lookup"] = bool(
+                transient_translation_lookup
+            )
             if canonical_fact_packet:
                 ctx.debug_metadata["deterministic_fact_packet"] = canonical_fact_packet
             ctx = self._detect_reference(ctx)
@@ -792,6 +796,17 @@ class BHFAgent:
             self._apply_deterministic_fact_packet(ctx)
             self._evaluate_answer_coverage(ctx)
             self._package_retrieved_evidence(ctx)
+            return self._mark_stage(ctx, "lookup_local_knowledge")
+        if ctx.debug_metadata.get("transient_translation_lookup"):
+            # A translation comparison is intentionally model-looked-up and
+            # transient. Do not involve CKL caches or persist retrieved text.
+            ctx.canonical_library_context = None
+            ctx.canonical_library_prompt = None
+            ctx.knowledge_expansion_context_prompt = None
+            ctx.debug_metadata["canonical_library_retrieval_cache_status"] = "disabled"
+            ctx.debug_metadata["canonical_library_context_cache_status"] = "disabled"
+            ctx.debug_metadata["canonical_library_response_cache_status"] = "disabled"
+            ctx.debug_metadata["transient_translation_lookup_cache_policy"] = "bypass"
             return self._mark_stage(ctx, "lookup_local_knowledge")
         self._lookup_canonical_library(ctx)
         self._evaluate_answer_coverage(ctx)
@@ -1520,6 +1535,12 @@ class BHFAgent:
         return ctx
 
     def _lookup_public_answer_cache(self, ctx: PipelineContext) -> PipelineContext:
+        if ctx.debug_metadata.get("transient_translation_lookup"):
+            ctx.debug_metadata["public_answer_cache_lookup_status"] = "disabled"
+            ctx.debug_metadata["public_answer_cache_error"] = (
+                "transient translation lookup"
+            )
+            return ctx
         if ctx.debug_metadata.get("deterministic_fact_packet"):
             ctx.debug_metadata["public_answer_cache_lookup_status"] = "disabled"
             ctx.debug_metadata["public_answer_cache_error"] = "deterministic fact packet supplied"
@@ -1672,6 +1693,10 @@ class BHFAgent:
         return ctx
 
     def _lookup_response_cache(self, ctx: PipelineContext) -> PipelineContext:
+        if ctx.debug_metadata.get("transient_translation_lookup"):
+            ctx.debug_metadata["canonical_library_response_cache_status"] = "disabled"
+            ctx.debug_metadata["canonical_library_response_cache_key"] = None
+            return ctx
         if ctx.debug_metadata.get("deterministic_fact_packet"):
             ctx.debug_metadata["canonical_library_response_cache_status"] = "disabled"
             ctx.debug_metadata["canonical_library_response_cache_key"] = None
@@ -1837,6 +1862,9 @@ class BHFAgent:
         return json.dumps(payload, sort_keys=True, separators=(",", ":"))
 
     def _store_response_cache(self, ctx: PipelineContext) -> PipelineContext:
+        if ctx.debug_metadata.get("transient_translation_lookup"):
+            ctx.debug_metadata["canonical_library_response_cache_status"] = "disabled"
+            return ctx
         if ctx.debug_metadata.get("deterministic_fact_packet"):
             return ctx
         if (
@@ -1894,6 +1922,11 @@ class BHFAgent:
         return ctx
 
     def _load_session_memory(self, ctx: PipelineContext) -> PipelineContext:
+        if ctx.debug_metadata.get("transient_translation_lookup"):
+            ctx.session_memory = None
+            ctx.debug_metadata["memory_turns_loaded"] = 0
+            ctx.debug_metadata["memory_bypass_reason"] = "transient translation lookup"
+            return self._mark_stage(ctx, "load_session_memory")
         if not self.config.memory_enabled:
             ctx.session_memory = None
             return self._mark_stage(ctx, "load_session_memory")
@@ -2634,6 +2667,10 @@ class BHFAgent:
         return self._mark_stage(ctx, "finalize_result", message=message)
 
     def _save_session_turn(self, ctx: PipelineContext) -> PipelineContext:
+        if ctx.debug_metadata.get("transient_translation_lookup"):
+            ctx.debug_metadata["memory_saved"] = False
+            ctx.debug_metadata["memory_bypass_reason"] = "transient translation lookup"
+            return self._mark_stage(ctx, "save_session_turn")
         if not self.config.memory_enabled:
             return self._mark_stage(ctx, "save_session_turn")
         if (

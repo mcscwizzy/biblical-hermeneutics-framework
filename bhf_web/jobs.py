@@ -22,7 +22,9 @@ from .services.web_helpers import (
     result_has_fatal_error,
     deterministic_fact_packet_from_form,
     failed_stage as _failed_stage,
+    ask_agent,
     record_action,
+    is_transient_translation_lookup,
     normalize_study_action,
     reader_context_from_form as _reader_context_from_form,
     study_type_from_form as _study_type_from_form,
@@ -261,10 +263,12 @@ def run_ask_job(
             loaded.config,
             transient_api_key=transient_api_key,
         )
-        result = agent_class(config).ask(
+        result = ask_agent(
+            agent_class(config),
             question,
             status_callback=job.emit,
             canonical_fact_packet=fact_packet,
+            transient_translation_lookup=is_transient_translation_lookup(form),
         )
     except (ConfigError, ProfileError, ValueError) as exc:
         job.fail(str(exc), status_code=400)

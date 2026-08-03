@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BHF Bible Reader</title>
   <meta name="theme-color" content="{{ runtime_config.themeColor }}">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="{{ runtime_config.shortName }}">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="icon" href="{{ static_asset('/icons/icon-192.png') }}" type="image/png">
   <link rel="apple-touch-icon" href="{{ static_asset('/icons/apple-touch-icon.png') }}">
@@ -33,7 +37,7 @@
   <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260729c" defer></script>
   <script src="{{ static_asset('/htmx-search.js') }}" defer></script>
   <script src="{{ static_asset('/htmx-lite.js') }}?v=20260803b" defer></script>
-  <script src="{{ static_asset('/pwa.js') }}?v=20260802c" defer></script>
+  <script src="{{ static_asset('/pwa.js') }}?v=20260803c" defer></script>
   {% if not test_mode %}
     <link rel="stylesheet" href="{{ static_asset('/vendor/leaflet/leaflet.css') }}">
     <script src="{{ static_asset('/vendor/leaflet/leaflet.js') }}" defer></script>
@@ -723,9 +727,9 @@
         <button type="button" class="reader-setting-action" data-pwa-install data-testid="pwa-install">
           <span class="reader-setting-copy">
             <span class="reader-setting-title">Install app</span>
-            <span class="reader-setting-status" data-pwa-install-status>Use the browser install menu</span>
+            <span class="reader-setting-status" data-pwa-install-status>Choose Add to Home Screen in your browser</span>
           </span>
-          <span class="reader-setting-value" data-pwa-install-label>Install</span>
+          <span class="reader-setting-value" data-pwa-install-label>How to install</span>
         </button>
         <button type="button" class="reader-setting-action" data-pwa-update data-testid="pwa-update">
           <span class="reader-setting-copy">

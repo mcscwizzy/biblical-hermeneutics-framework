@@ -15,9 +15,11 @@ from ..forms import config_from_form, form_values_for_ask_prompt, load_web_defau
 from ..jobs import _fake_result
 from ..services.ckl_inspector import build_result_inspector_payload
 from ..services.web_helpers import (
+    ask_agent,
     build_ask_question as _question_from_form,
     agent_error_status_code,
     deterministic_fact_packet_from_form,
+    is_transient_translation_lookup,
     job_error_message as _job_error_message,
     render_safe_markdown,
     result_metadata,
@@ -137,7 +139,12 @@ def register_ask_routes(
                 loaded.config,
                 transient_api_key=transient_api_key,
             )
-            result = agent_factory()(config).ask(question, canonical_fact_packet=fact_packet)
+            result = ask_agent(
+                agent_factory()(config),
+                question,
+                canonical_fact_packet=fact_packet,
+                transient_translation_lookup=is_transient_translation_lookup(form),
+            )
         except (ConfigError, ProfileError, ValueError) as exc:
             return templates.TemplateResponse(
                 request,

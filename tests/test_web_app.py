@@ -823,6 +823,9 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("BHFRuntimeConfig", response["body"])
         self.assertIn("manifest.webmanifest", response["body"])
         self.assertIn("apple-touch-icon", response["body"])
+        self.assertIn('name="mobile-web-app-capable" content="yes"', response["body"])
+        self.assertIn('name="apple-mobile-web-app-capable" content="yes"', response["body"])
+        self.assertIn('name="apple-mobile-web-app-title" content="BHF Bible"', response["body"])
         self.assertIn("pwa.js", response["body"])
         self.assertIn("data-reader-translation", response["body"])
         self.assertIn("translation-import-button", response["body"])
@@ -1081,6 +1084,9 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("renderOfflineSyncDetails", pwa_script["body"])
         self.assertIn("data-offline-sync-discard", pwa_script["body"])
         self.assertIn("beforeinstallprompt", pwa_script["body"])
+        self.assertIn("manualInstallInstructions", pwa_script["body"])
+        self.assertIn("Tap Share, then Add to Home Screen", pwa_script["body"])
+        self.assertIn("isAppleMobileBrowser", pwa_script["body"])
         self.assertIn("promptForInstall", pwa_script["body"])
         self.assertIn("checkForAppUpdate", pwa_script["body"])
         self.assertIn("waitForServiceWorkerActivation", pwa_script["body"])
@@ -2399,10 +2405,12 @@ class WebAppTests(unittest.TestCase):
         self.assertTrue(status["done"])
         self.assertEqual(status["reader_reference"], "John 1:1-2")
         question = CapturingAgent.questions[0]
-        self.assertIn("compare the local public-domain translations for ASV John 1:1-2", question)
-        self.assertIn("Available translations:", question)
-        self.assertIn("Comparison data by verse", question)
-        self.assertIn("- ASV:", question)
+        self.assertIn("look up and compare John 1:1-2", question)
+        for translation_id in ("LSB", "ESV", "ASV", "KJV", "NIV", "CSB"):
+            self.assertIn(translation_id, question)
+        self.assertIn("live, transient lookup", question)
+        self.assertIn("Do not store, persist, or cache", question)
+        self.assertNotIn("Comparison data by verse", question)
         self.assertIn("Do not overstate the significance of minor wording differences", question)
 
     def test_timeline_reader_job_builds_phase_five_prompt(self):

@@ -1048,6 +1048,61 @@ class RunnerTests(unittest.TestCase):
         self.assertNotIn("build_prompts", second_result.model_metadata["pipeline"]["stages_completed"])
         self.assertNotIn("call_model", second_result.model_metadata["pipeline"]["stages_completed"])
 
+    def test_transient_translation_lookup_bypasses_translation_and_session_caches(self):
+        adapter = SequenceAdapter(
+            [
+                "LSB: verified lookup text. ESV: verified lookup text. ASV: verified lookup text. "
+                "KJV: verified lookup text. NIV: verified lookup text. CSB: verified lookup text."
+            ]
+        )
+        cache_entry = PublicCacheEntry(
+            normalized_question=normalize_public_question("Using BHF, look up John 1:1."),
+            answer_mode="study",
+            answer="This answer must not be reused.",
+            quality_score=96.0,
+            usage_count=1,
+            review_status="approved",
+            framework_version=load_framework_version(),
+            framework_version_fingerprint=load_framework_version_fingerprint(),
+            ckl_version_fingerprint="ckl-fingerprint",
+            object_dependency_ids=(),
+            expires_at="2030-01-01T00:00:00Z",
+        )
+        public_cache = RecordingPublicAnswerCache(cache_entry)
+        with tempfile.TemporaryDirectory() as tmpdir:
+            agent = self.make_agent(
+                adapter,
+                public_answer_cache=public_cache,
+                ckl_library=object(),
+                profile="standard",
+                memory_enabled=True,
+                memory_path=tmpdir,
+                canonical_library=CanonicalLibraryConfig(enabled=True, cache_enabled=True),
+            )
+
+            first_result = agent.ask(
+                "Using BHF, look up and compare John 1:1 in LSB, ESV, ASV, KJV, NIV, and CSB.",
+                transient_translation_lookup=True,
+            )
+            second_result = agent.ask(
+                "Using BHF, look up and compare John 1:1 in LSB, ESV, ASV, KJV, NIV, and CSB.",
+                transient_translation_lookup=True,
+            )
+
+            self.assertEqual(len(adapter.requests), 2)
+            self.assertEqual(public_cache.lookup_calls, [])
+            self.assertFalse(first_result.model_metadata["public_answer_cache"]["hit"])
+            self.assertEqual(
+                first_result.model_metadata["pipeline"]["canonical_library_response_cache_status"],
+                "disabled",
+            )
+            self.assertEqual(
+                second_result.model_metadata["pipeline"]["canonical_library_response_cache_status"],
+                "disabled",
+            )
+            self.assertFalse(first_result.model_metadata["pipeline"]["memory_saved"])
+            self.assertFalse((Path(tmpdir) / "default.json").exists())
+
     def test_agent_reuses_response_cache_in_shadow_mode_without_prompt_injection(self):
         adapter = SequenceAdapter(
             [

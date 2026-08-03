@@ -147,7 +147,8 @@ the PWA must still be able to reach that server through the BHF backend.
 
 The settings sheet provides:
 
-- **Install app** — opens the browser install prompt when supported.
+- **Install app** — opens the browser install prompt when supported, or shows
+  the platform-specific browser steps for manual installation.
 - **App update** — asks the service worker to check for a new shell.
 - **Offline readiness** — summarizes the service worker, translations, packs,
   local records, and queued mutations.

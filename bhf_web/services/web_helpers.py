@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import html
+import inspect
 import json
 import re
 from pathlib import Path
@@ -10,7 +11,7 @@ from typing import Any
 
 from fastapi import Request
 
-from bhf_agent.bible import BibleError, compare_translation_passages, build_selected_passage_context, geography_for_book, load_translation_bible, testament_for_book, timeline_for_book, verse_range_reference
+from bhf_agent.bible import BibleError, build_selected_passage_context, geography_for_book, load_translation_bible, testament_for_book, timeline_for_book, verse_range_reference
 from bhf_agent.curation import CURATION_COLLECTIONS, list_curation_records
 from bhf_agent.config import ConfigError
 from bhf_agent.runner import BHFAgent
@@ -41,6 +42,16 @@ SPECIAL_QUESTION_MODES = {
     "themes",
 }
 
+TRANSIENT_TRANSLATION_LOOKUP_IDS = ("LSB", "ESV", "ASV", "KJV", "NIV", "CSB")
+TRANSIENT_TRANSLATION_LOOKUP_NAMES = {
+    "LSB": "Legacy Standard Bible",
+    "ESV": "English Standard Version",
+    "ASV": "American Standard Version",
+    "KJV": "King James Version",
+    "NIV": "New International Version",
+    "CSB": "Christian Standard Bible",
+}
+
 STUDY_ACTION_ALIASES = {
     "ancient_context": "cultural_context",
     "ancient_cultural_context": "cultural_context",
@@ -52,6 +63,43 @@ def normalize_study_action(value: Any) -> str:
 
     action = str(value or "").strip().lower()
     return STUDY_ACTION_ALIASES.get(action, action)
+
+
+def is_transient_translation_lookup(form: dict[str, Any] | Any) -> bool:
+    """Return whether this request needs an uncached live translation lookup."""
+
+    return any(
+        normalize_study_action(form.get(field)) == "compare_translations"
+        for field in ("ask_mode", "study_action")
+    )
+
+
+def ask_agent(
+    agent: Any,
+    question: str,
+    *,
+    status_callback: Any = None,
+    canonical_fact_packet: dict[str, Any] | None = None,
+    transient_translation_lookup: bool = False,
+) -> Any:
+    """Call an agent while preserving compatibility with lightweight test agents."""
+
+    kwargs: dict[str, Any] = {"canonical_fact_packet": canonical_fact_packet}
+    if status_callback is not None:
+        kwargs["status_callback"] = status_callback
+    if transient_translation_lookup:
+        try:
+            parameters = inspect.signature(agent.ask).parameters.values()
+            supports_policy = any(
+                parameter.kind == inspect.Parameter.VAR_KEYWORD
+                or parameter.name == "transient_translation_lookup"
+                for parameter in parameters
+            )
+        except (TypeError, ValueError):
+            supports_policy = False
+        if supports_policy:
+            kwargs["transient_translation_lookup"] = True
+    return agent.ask(question, **kwargs)
 
 
 def deterministic_fact_packet_from_form(form: dict[str, Any] | Any) -> dict[str, Any] | None:
@@ -685,23 +733,40 @@ def fulfillment_nt_question(form: dict[str, Any] | Any, context: dict[str, Any])
 
 def compare_translations_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> str:
     user_question = str(form.get("question") or "").strip()
-    comparison = compare_translation_passages(str(context["book"]), int(context["chapter"]), context.get("start_verse"), context.get("end_verse"))
-    translation_names = ", ".join(f"{item['id']} ({item['name']})" for item in comparison["translations"])
+    reference = str(context["reference"])
+    translation_names = ", ".join(
+        f"{translation_id} ({TRANSIENT_TRANSLATION_LOOKUP_NAMES[translation_id]})"
+        for translation_id in TRANSIENT_TRANSLATION_LOOKUP_IDS
+    )
     label = translation_label(context)
-    lines = [f"Using BHF, compare the local public-domain translations for {label} {comparison['reference']}.", f"Available translations: {translation_names}. Use only the bundled local texts.", "Explain wording differences and how they may affect interpretation.", "Do not rely on copyrighted Bible APIs.", "Do not overstate the significance of minor wording differences.", "Separate clear interpretive differences from stylistic variation."]
+    lines = [
+        f"Using BHF, look up and compare {reference} in these translations: {translation_names}.",
+        "This is a live, transient lookup for this request only.",
+        "Use an available authoritative lookup or browsing capability; do not rely on model memory alone.",
+        "Do not use a local translation dataset for this comparison.",
+        "Do not store, persist, or cache any retrieved translation text or the resulting comparison.",
+        "Label each version clearly and quote only the requested reference.",
+        "If any version cannot be verified, say so instead of guessing or reconstructing its wording.",
+        "Respect each translation's copyright and include source links when the lookup provides them.",
+        "Explain wording differences and how they may affect interpretation.",
+        "Do not overstate the significance of minor wording differences.",
+        "Separate clear interpretive differences from stylistic variation.",
+    ]
     if user_question:
         lines.append(f"User question: {user_question}")
     lines.append("")
-    lines.append("Comparison data by verse:")
-    for row in comparison["verse_rows"]:
-        lines.append(f"Verse {row['verse']}:")
-        for translation in comparison["translations"]:
-            text = row["texts"].get(translation["id"], "")
-            lines.append(f"- {translation['id']}: {text}")
-        lines.append("")
     if context.get("chapter_context"):
-        lines.extend([f"Full chapter context ({label} {context['book']} {context['chapter']}):", str(context["chapter_context"]), ""])
-    lines.extend([f"Selected text ({label} {context['reference']}):", context["selected_text"], "", "Use BHF method: observe the wording first, interpret in literary and canonical context, and keep uncertainty explicit."])
+        lines.extend([
+            f"Full chapter context ({label} {context['book']} {context['chapter']}) for orientation only:",
+            str(context["chapter_context"]),
+            "",
+        ])
+    lines.extend([
+        f"Currently displayed reader text ({label} {reference}) for orientation only:",
+        context["selected_text"],
+        "",
+        "Use BHF method: observe the verified wording first, interpret in literary and canonical context, and keep uncertainty explicit.",
+    ])
     return "\n".join(lines)
 
 

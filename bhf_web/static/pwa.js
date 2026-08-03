@@ -540,7 +540,8 @@
       } else if (deferredInstallPrompt) {
         setLifecycleButtonState(button, "Ready to install", "Install", false, "pwaInstall");
       } else {
-        setLifecycleButtonState(button, "Use the browser install menu", "Install", true, "pwaInstall");
+        const manualInstall = manualInstallInstructions();
+        setLifecycleButtonState(button, manualInstall.status, manualInstall.label, false, "pwaInstall");
       }
     });
   }
@@ -594,7 +595,8 @@
       return;
     }
     if (!deferredInstallPrompt) {
-      setLifecycleButtonState(button, "Use the browser install menu", "Install", true, "pwaInstall");
+      const manualInstall = manualInstallInstructions();
+      setLifecycleButtonState(button, manualInstall.detail, manualInstall.label, false, "pwaInstall");
       return;
     }
     setLifecycleButtonState(button, "Opening install prompt...", "Working", true, "pwaInstall");
@@ -719,6 +721,34 @@
       window.matchMedia("(display-mode: fullscreen)").matches ||
       window.navigator.standalone === true
     );
+  }
+
+  function manualInstallInstructions() {
+    if (isAppleMobileBrowser()) {
+      return {
+        status: "Choose Add to Home Screen in Safari",
+        detail: "Tap Share, then Add to Home Screen",
+        label: "How to install",
+      };
+    }
+    if (/Android/i.test(navigator.userAgent || "")) {
+      return {
+        status: "Open your browser menu to install",
+        detail: "Open the browser menu, then choose Install app",
+        label: "How to install",
+      };
+    }
+    return {
+      status: "Use your browser's install menu",
+      detail: "Open the browser menu, then choose Install app or Add to Home screen",
+      label: "How to install",
+    };
+  }
+
+  function isAppleMobileBrowser() {
+    const userAgent = navigator.userAgent || "";
+    return /iPad|iPhone|iPod/i.test(userAgent)
+      || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
   }
 
   function formatBytes(value) {
