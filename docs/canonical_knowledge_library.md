@@ -574,5 +574,5 @@ Future scholarship must be curated, sourced, and reviewed before it is written i
 
 Approved objects should use structured source entries rather than legacy strings, and they should carry substantive source support plus review metadata before they are treated as publishable.
 
-For the current CKL request path, see
-[`docs/architecture/current_ai_request_flow.md`](architecture/current_ai_request_flow.md).
+For the current CKL request path and evidence boundary, see
+[`docs/architecture.md`](architecture.md#answer-flow).

@@ -1,306 +1,148 @@
 # Biblical Hermeneutics Framework (BHF)
 
-> **Teaching AI—and helping people—how to read the Bible carefully.**
+> Teaching AI—and helping people—how to read the Bible carefully.
 
-**Biblical Hermeneutics Framework (BHF)** is an open-source biblical study framework that teaches **how to interpret Scripture responsibly**.
+BHF is an open-source Bible study application and hermeneutics framework. It
+retrieves Scripture, literary and historical context, lexical data, maps, and
+curated Canonical Knowledge Library (CKL) material before asking a language
+model to explain the evidence. The model is the explanation layer, not the
+source of the study method.
 
-Unlike most AI Bible tools that ask a language model to answer directly from memory, BHF first gathers the relevant evidence—Scripture, historical background, literary context, lexical information, and curated study resources—before asking an AI model to explain it.
+BHF teaches a process—observe, interpret in context, qualify uncertainty, and
+apply last—without prescribing a denomination or doctrinal conclusion.
 
-The result is a study experience designed to be more transparent, more grounded, and more educational.
+## Start here
 
----
+Choose the path that matches how you want to use BHF.
 
-# Our Mission
+### Use the hosted website
 
-The mission of BHF has remained the same from the beginning:
+Open the HTTPS address published by the BHF project maintainer. The repository
+does not currently declare or deploy a canonical production domain, so avoid
+bookmarks copied from test fixtures or old deployments.
 
-> **Teach AI models how to interpret Scripture responsibly without teaching them what conclusions they must reach.**
+The first-launch dialog lets you connect OpenRouter, configure a local AI
+service, or continue without AI. See [Using the website and PWA](docs/web-pwa.md)
+for the reader workflow, privacy boundary, installation steps, and offline
+limitations.
 
-BHF intentionally avoids becoming a theological authority.
+### Run locally with Docker
 
-Instead, it teaches a method.
+Docker is the recommended local installation because the image builds the CKL
+and Greek/Hebrew lexical databases for you.
 
-That method encourages AI—and the people using it—to:
-
-- Observe before interpreting.
-- Read passages in context.
-- Understand the original audience.
-- Respect literary genre.
-- Examine historical and cultural background.
-- Distinguish evidence from speculation.
-- Admit uncertainty where appropriate.
-- Apply Scripture only after understanding what it originally meant.
-
-BHF does not replace careful Bible study.
-
-It teaches it.
-
----
-
-# Explain It Like I'm Five
-
-Imagine walking into a library.
-
-You ask,
-
-> "What does this Bible verse mean?"
-
-A librarian does **not** immediately answer your question.
-
-Instead, the librarian walks through the library collecting the right books.
-
-They gather:
-
-- The Bible passage
-- Historical information
-- Hebrew or Greek word studies
-- Cultural background
-- Related passages
-- Maps
-- Timelines
-- Study notes
-
-Once everything is on the table, a teacher explains it in plain English.
-
-That is exactly how BHF works.
-
-The **BHF Agent** is the librarian.
-
-The **AI model** is the teacher.
-
-The librarian gathers the facts.
-
-The teacher explains them.
-
----
-
-# Why BHF Is Different
-
-Most AI Bible applications look like this:
-
-```text
-Question
-      │
-      ▼
-Large Language Model
-      │
-      ▼
-Answer
+```bash
+git clone https://github.com/mcscwizzy/biblical-hermeneutics-framework.git
+cd biblical-hermeneutics-framework
+cp .env.example .env
+docker compose up -d --build
 ```
 
-The model is expected to remember everything it has learned.
+Open <http://localhost:8080> and verify the service at
+<http://localhost:8080/api/health>.
 
-BHF works differently.
+The default stack uses browser-connected OpenRouter. To run the app and model
+locally with Ollama instead:
 
-```text
-Question
-      │
-      ▼
-Determine the type of question
-      │
-      ▼
-Gather relevant evidence
-      │
-      ▼
-Organize the evidence
-      │
-      ▼
-AI explains the evidence
-      │
-      ▼
-Answer
+```bash
+docker compose -f docker-compose.ollama.yml up -d --build
 ```
 
-Instead of depending on the AI model to remember everything, BHF retrieves the information the model needs before it begins writing.
+See [Docker installation and operations](docs/docker.md) for setup,
+configuration, upgrades, data handling, and complete uninstallation.
 
-The model's primary job becomes explaining—not inventing—the answer.
+### Build and run from source
 
----
-
-# How BHF Works
-
-Depending on the question, the agent gathers information from local deterministic resources before sending anything to the language model.
-
-These resources may include:
-
-- Scripture
-- Original Hebrew and Greek lexical databases
-- Canonical Knowledge Library (CKL)
-- Historical context
-- Literary context
-- Cross references
-- Maps
-- Timeline information
-- Translation comparisons
-- User study notes
-- Optional local session memory
-
-Once the evidence is gathered, BHF constructs a focused request for the selected language model.
-
-Even very small local models can produce high-quality study responses because they are explaining structured evidence instead of trying to reconstruct biblical scholarship from memory.
-
----
-
-# BHF Architecture
-
-```text
-                    Biblical Hermeneutics Framework
-
-                              User Question
-                                    │
-                                    ▼
-                     Determine What Is Being Asked
-                                    │
-          ┌───────────────┬───────────────┬───────────────┐
-          ▼               ▼               ▼               ▼
-      Scripture        Lexicon          CKL       Historical Data
-          │               │               │               │
-          └───────────────┴───────────────┴───────────────┘
-                                    │
-                                    ▼
-                     Build Focused Evidence Packet
-                                    │
-                                    ▼
-             ChatGPT • Claude • Gemini • Ollama • Local Models
-                                    │
-                                    ▼
-                      Grounded Biblical Explanation
+```bash
+git clone https://github.com/mcscwizzy/biblical-hermeneutics-framework.git
+cd biblical-hermeneutics-framework
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r tools/requirements.txt
+python -m pip install -e .
+python -m framework.canonical_library build-db --output .bhf/ckl.sqlite
+uvicorn bhf_web.app:app --reload --host 127.0.0.1 --port 8000
 ```
 
-The important idea is simple:
+Open <http://127.0.0.1:8000>. See [Local build and development](docs/local-development.md)
+for provider setup, database builds, tests, packaging, and platform-specific
+virtual-environment activation.
 
-> **The BHF Agent gathers the evidence. The AI model explains the evidence.**
+### Use only the prompt framework
 
----
+No application install is required. Copy one of the generated prompts from
+[`profiles/`](profiles/) into the system instructions of ChatGPT, Claude,
+Gemini, Ollama, LM Studio, or another compatible model:
 
-# Prompt Profiles
+- [`minimal-7b.md`](profiles/minimal-7b.md) for small context windows.
+- [`standard.md`](profiles/standard.md) for balanced use.
+- [`scholar.md`](profiles/scholar.md) for large context windows.
 
-BHF can be used entirely without the local agent.
+These generated profiles are independent of the application runtime, which now
+uses one unified answer format.
 
-Prompt profiles teach any compatible AI model the BHF interpretation method.
+## How BHF arrives at an answer
 
-| Profile      | Purpose                                           |
-| ------------ | ------------------------------------------------- |
-| **Minimal**  | Small local models with limited context           |
-| **Standard** | Balanced study profile                            |
-| **Scholar**  | Full-depth study profile for large-context models |
+```mermaid
+flowchart LR
+    Q[Question or selected passage] --> D[Detect reference, genre, and question type]
+    D --> R[Retrieve Scripture and local evidence]
+    R --> E[Rank and package the evidence]
+    E --> P[Build a grounded prompt]
+    P --> M[Selected AI provider]
+    M --> V[Clean, validate, and optionally repair]
+    V --> A[Final study answer]
+```
 
-These profiles work with:
+The important boundary is that retrieval data remains internal. Ordinary ask
+responses expose validated answer prose, while developer debug routes can show
+controlled retrieval metadata. The detailed component and request-flow diagrams
+are in [Architecture](docs/architecture.md).
 
-- ChatGPT
-- Claude
-- Gemini
-- Ollama
-- LM Studio
-- Open WebUI
-- Any compatible system prompt
+## What is included
 
----
+- ASV and KJV Bible readers, plus device-local translation import.
+- Passage, literary, historical, cultural, cross-reference, timeline, map, and
+  translation-comparison study actions.
+- Greek and Hebrew lexical lookup when the generated lexical database is present.
+- Curated CKL retrieval with deterministic ranking and evidence packaging.
+- Notes, highlights, saved studies, and optional local session memory.
+- Installable PWA shell with offline Bible reading, search, maps, study packs,
+  and device-local records.
+- OpenRouter, native Ollama, and OpenAI-compatible model adapters.
+- CLI, FastAPI web application, Docker Compose stacks, validation, evaluation,
+  and Selenium test tooling.
 
-# The BHF Agent
+AI answers are not offline merely because the PWA is installed. They still need
+either an internet-accessible provider or a reachable local model runtime.
 
-The optional Python agent expands BHF beyond prompt engineering.
+## Repository map
 
-Rather than sending every question directly to an AI model, the agent first determines what kind of study is being requested.
+| Path | Purpose |
+|---|---|
+| `bhf_agent/` | Retrieval, prompt construction, model adapters, validation, and CLI. |
+| `bhf_web/` | FastAPI UI/API, templates, browser code, service worker, and offline packs. |
+| `framework/` | Hermeneutics modules, CKL objects/runtime, and lexical tooling. |
+| `profiles/` | Generated copy/paste prompt profiles. |
+| `docs/` | User, operator, contributor, and subsystem documentation. |
+| `tools/` | Validation, composition, import, audit, and evaluation utilities. |
+| `tests/` | Unit, integration, regression, and GUI coverage. |
+| `examples/` | Agent configurations, fixtures, and worked examples. |
 
-Examples include:
+Start with the [documentation index](docs/README.md) for the complete guide map.
 
-- Word Study
-- Historical Context
-- Literary Context
-- Passage Study
-- Book Overview
-- Topic Study
+## Contributing
 
-The agent then:
+Read [CONTRIBUTING.md](CONTRIBUTING.md), the
+[Neutrality Charter](GOVERNANCE.md#1-neutrality-charter-the-constitution), and
+the [style guide](docs/style-guide.md) before changing framework content.
 
-1. Detects Scripture references.
-2. Determines the question type.
-3. Retrieves relevant local evidence.
-4. Builds a focused prompt.
-5. Applies guardrails.
-6. Calls the selected language model.
-7. Validates the response.
+## License
 
-This architecture reduces unnecessary token usage while improving consistency and allowing much smaller local models to perform well.
-
----
-
-# Learning the Bible, Not Replacing It
-
-Every feature in BHF exists for one purpose:
-
-> **Help people become better readers of Scripture.**
-
-The goal is not simply to answer Bible questions.
-
-The goal is to teach people how to study the Bible for themselves.
-
-Whether someone uses ChatGPT, a local model running entirely offline, or no AI at all, the same study method applies.
-
-BHF encourages users to:
-
-- Observe carefully.
-- Read slowly.
-- Compare Scripture with Scripture.
-- Consider historical context.
-- Think critically.
-- Recognize uncertainty.
-- Continue studying.
-
----
-
-# Features
-
-Current capabilities include:
-
-- Offline Bible reader
-- Local translation management
-- Greek and Hebrew lexical databases
-- Word Study
-- Cross References
-- Ancient Context
-- Literary Context
-- Related Old Testament Themes
-- New Testament Fulfillment
-- Timeline studies
-- Maps
-- Translation comparison
-- Highlights
-- Study notes
-- Saved studies
-- Canonical Knowledge Library (CKL)
-- Optional local session memory
-- Docker deployment
-- Selenium regression testing
-- Model-agnostic architecture
-
----
-
-# Why BHF Can Use Small AI Models
-
-BHF is designed so the surrounding software performs much of the work that larger language models normally perform internally.
-
-The agent identifies the question, retrieves relevant evidence, and organizes the information before calling the language model.
-
-As a result, even lightweight local models—such as **Qwen2.5:0.5B**—can provide useful study responses because they are primarily explaining evidence rather than generating it from memory.
-
-This makes BHF:
-
-- Faster
-- More transparent
-- More consistent
-- More efficient
-- Better suited for local and offline study
-
----
-
-# Open Source
-
-BHF is completely open source.
-
-The framework continues to grow through contributions from developers, biblical scholars, historians, linguists, educators, and the open-source community.
-
-Our long-term vision is simple:
-
-> **Build one of the world's best open-source biblical study frameworks—available to everyone, online or offline, regardless of the AI model they choose.**
+- Code is licensed under [MIT](LICENSE).
+- Framework content, documentation, profiles, and examples are licensed under
+  [CC BY 4.0](LICENSE-CONTENT).
+- Bundled translations and imported lexical sources retain their own notices
+  and licenses; see [Translations](docs/translations.md) and
+  [Lexicon sources](docs/lexicon-sources.md).
