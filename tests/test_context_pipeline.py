@@ -54,6 +54,41 @@ class ContextPipelineTests(unittest.TestCase):
         self.assertIn("rough wording directly", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
         self.assertIn("remove duplicated", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
         self.assertIn("Preserve the evidence's qualifiers", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
+        self.assertIn("must be an object, never a bare string", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
+
+    def test_malformed_list_items_from_ai_use_safe_fallback(self):
+        packet = build_context_evidence_packet(
+            [
+                ckl_object(
+                    "creation",
+                    "Creation",
+                    historical_context="Ordered creation.",
+                    scripture_references=[
+                        {"reference": "Genesis 1:1-31", "relationship": "primary", "notes": "Creation."},
+                        {"reference": "John 1:1-5", "relationship": "allusion", "notes": "Later echo."}
+                    ],
+                )
+            ],
+            target_book="Genesis",
+            reference="Genesis 1:1",
+            action="historical_context",
+            selected_text="In the beginning God created the heavens and the earth.",
+        )
+        adapter = SimpleNamespace(
+            chat=lambda request: SimpleNamespace(
+                text='{"summary":"Ordered creation.",'
+                '"summary_evidence_ids":["scripture:Genesis 1:1"],'
+                '"key_facts":["Ordered creation.","The passage opens with creation."],'
+                '"later_biblical_connections":["John 1:1-5: Later echo.","John 1:1-5 echoes Genesis."],'
+                '"important_caution":null,"caution_evidence_ids":[],"sources":[]}'
+            )
+        )
+
+        result = present_context_with_ai(packet, adapter=adapter, model="fixture")
+
+        self.assertEqual(result["mode"], "deterministic_fallback")
+        self.assertTrue(all(isinstance(item, dict) for item in result["key_facts"]))
+        self.assertTrue(all(isinstance(item, dict) for item in result["later_biblical_connections"]))
 
     def test_generic_cross_book_keyword_record_is_rejected(self):
         packet = build_context_evidence_packet(

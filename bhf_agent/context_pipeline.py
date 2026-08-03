@@ -594,6 +594,23 @@ sentence, not introduce a new claim. Do not mention CKL fields, record IDs, evid
 or the editing process in reader-facing text.
 
 Every summary, fact, connection, and caution must cite supplied evidence IDs.
+
+Use this exact JSON shape. Every item in key_facts and
+later_biblical_connections must be an object, never a bare string. Use an empty array
+when there are no items:
+{
+  "summary": "...",
+  "summary_evidence_ids": ["evidence_id"],
+  "key_facts": [
+    {"fact": "...", "why_it_matters": "...", "evidence_ids": ["evidence_id"], "confidence": "high|medium|low"}
+  ],
+  "later_biblical_connections": [
+    {"connection": "...", "relationship": "quotation|allusion|explicit_cross_reference|canonical_theme|typology|fulfillment|parallel|supporting", "evidence_ids": ["evidence_id"], "confidence": "high|medium|low", "reference": "..."}
+  ],
+  "important_caution": null,
+  "caution_evidence_ids": [],
+  "sources": []
+}
 Return JSON only with summary, summary_evidence_ids, key_facts, later_biblical_connections,
 important_caution, caution_evidence_ids, and sources. Do not write a sermon or tell the
 reader what to believe."""
