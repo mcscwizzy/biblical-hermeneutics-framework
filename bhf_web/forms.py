@@ -101,28 +101,24 @@ def load_web_defaults(path: Path | str | None = None) -> LoadedDefaults:
     try:
         return LoadedDefaults(AgentConfig.from_mapping(values), warning)
     except ConfigError as exc:
+        # OpenRouter is intentionally selected by the Docker defaults even
+        # when the browser is expected to provide the key per request. Treat
+        # that onboarding state as valid for the web app instead of surfacing
+        # the agent-level API-key validation error on the first page load.
+        browser_only_openrouter = (
+            values.get("adapter") == "openrouter"
+            and not str(values.get("api_key") or "").strip()
+            and str(exc) == "api_key is required for openrouter adapter"
+        )
         fallback_values = dict(DEFAULT_CONFIG_VALUES)
         _apply_env_overrides(fallback_values, os.environ)
-        # OpenRouter can be configured as a browser-only provider. In that
-        # mode the key is deliberately supplied per request through the
-        # transient X-BHF-OpenRouter-Key header, so an empty server-side key
-        # must not prevent the reader and onboarding UI from rendering.
-        if (
-            fallback_values.get("adapter") == "openrouter"
-            and not str(fallback_values.get("api_key") or "").strip()
-        ):
+        if browser_only_openrouter:
             fallback_values["adapter"] = DEFAULT_CONFIG_VALUES["adapter"]
             fallback_values["model"] = DEFAULT_CONFIG_VALUES["model"]
             fallback_values["base_url"] = DEFAULT_CONFIG_VALUES["base_url"]
-            warning = "; ".join(
-                item
-                for item in (
-                    warning,
-                    "OpenRouter is configured but no server API key is set; choose an AI provider in the browser before asking BHF.",
-                )
-                if item
-            )
         fallback = AgentConfig.from_mapping(fallback_values)
+        if browser_only_openrouter:
+            return LoadedDefaults(fallback, warning)
         fallback_warning = (
             f"{config_path} or environment defaults are invalid: {exc}. "
             "Using built-in/environment defaults."

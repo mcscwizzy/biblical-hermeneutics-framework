@@ -216,7 +216,27 @@ class WebFormTests(unittest.TestCase):
 
         self.assertEqual(loaded.config.adapter, "openai_compatible")
         self.assertEqual(loaded.config.base_url, "http://localhost:11434/v1")
-        self.assertIn("no server API key is set", loaded.warning or "")
+        self.assertIsNone(loaded.warning)
+
+    def test_web_defaults_hide_browser_openrouter_config_warning(self):
+        config_path = Path("/tmp/bhf-browser-openrouter-web-config.json")
+        config_path.write_text(
+            json.dumps(
+                {
+                    "adapter": "openrouter",
+                    "base_url": "https://openrouter.ai/api/v1",
+                    "model": "google/gemma-4-26b-a4b-it:free",
+                }
+            ),
+            encoding="utf-8",
+        )
+        try:
+            loaded = load_web_defaults(path=config_path)
+        finally:
+            config_path.unlink(missing_ok=True)
+
+        self.assertEqual(loaded.config.adapter, "openai_compatible")
+        self.assertIsNone(loaded.warning)
 
     def test_web_defaults_read_ollama_environment_variables(self):
         env = {
