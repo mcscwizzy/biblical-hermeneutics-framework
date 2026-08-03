@@ -267,7 +267,7 @@ def create_app() -> FastAPI:
     @web_app.get("/", response_class=HTMLResponse)
     async def index(request: Request) -> HTMLResponse:
         loaded = load_web_defaults()
-        return templates.TemplateResponse(
+        response = templates.TemplateResponse(
             request,
             "index.html",
             shared_context(
@@ -282,6 +282,11 @@ def create_app() -> FastAPI:
                 }
             ),
         )
+        if any(request.query_params.get(name) for name in ("code", "state", "error", "error_description")):
+            response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate"
+            response.headers["Pragma"] = "no-cache"
+            response.headers["Referrer-Policy"] = "no-referrer"
+        return response
 
     @web_app.get("/api/bible/books", response_class=JSONResponse)
     async def bible_books(translation: str | None = None) -> JSONResponse:

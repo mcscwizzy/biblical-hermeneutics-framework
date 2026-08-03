@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v20";
+const CACHE_VERSION = "v21";
 const SHELL_CACHE = `bhf-shell-${CACHE_VERSION}`;
 const STATIC_CACHE = `bhf-static-${CACHE_VERSION}`;
 const API_CACHE = `bhf-api-${CACHE_VERSION}`;
@@ -34,8 +34,8 @@ const STATIC_ASSETS = [
   "/static/vendor/leaflet/images/marker-icon.png",
   "/static/vendor/leaflet/images/marker-shadow.png",
   "/static/maps/BibleMap.js",
+  "/static/maps/JourneyMapData.js",
   "/static/maps/MapMarkerPopup.js",
-  "/static/maps/MapExternalLinks.js",
   "/static/maps/MapPanel.js",
   "/static/maps/MapPanelContent.js",
   "/static/maps/MapPanelSearch.js",
@@ -55,6 +55,18 @@ const STATIC_ASSETS = [
   "/static/data/archaeology/artifacts.json",
   "/static/data/archaeology/excavationReports.json",
   "/static/data/archaeology/museums.json",
+  "/static/data/journeys/abraham.json",
+  "/static/data/journeys/david-fleeing-saul.json",
+  "/static/data/journeys/elijah-elisha.json",
+  "/static/data/journeys/exile-return.json",
+  "/static/data/journeys/exodus.json",
+  "/static/data/journeys/jesus-final-week.json",
+  "/static/data/journeys/jesus-galilean-ministry.json",
+  "/static/data/journeys/joshua-conquest.json",
+  "/static/data/journeys/paul-first-missionary.json",
+  "/static/data/journeys/paul-rome-voyage.json",
+  "/static/data/journeys/paul-second-missionary.json",
+  "/static/data/journeys/paul-third-missionary.json",
   "/static/data/mapLayers/ancientCities.json",
   "/static/data/mapLayers/biblicalRegions.json",
   "/static/data/mapLayers/kingdoms.json",
@@ -95,6 +107,13 @@ self.addEventListener("fetch", (event) => {
 
   const requestUrl = new URL(event.request.url);
   if (requestUrl.origin !== self.location.origin) {
+    return;
+  }
+
+  // OAuth returns a temporary authorization code in the callback URL. Never
+  // let a service-worker cache or offline fallback retain that navigation.
+  if (isAuthCallbackUrl(requestUrl)) {
+    event.respondWith(fetch(event.request));
     return;
   }
 
@@ -187,6 +206,14 @@ function isRefreshRequest(request) {
   return request.headers.get("X-BHF-Refresh") === "true";
 }
 
+function isAuthCallbackUrl(url) {
+  return url.pathname === "/oauth/callback"
+    || url.searchParams.has("code")
+    || url.searchParams.has("state")
+    || url.searchParams.has("error")
+    || url.searchParams.has("error_description");
+}
+
 function isCacheableApiRequest(url) {
   if (isAiOnlyApiRequest(url)) {
     return false;
@@ -204,6 +231,7 @@ function isCacheableApiRequest(url) {
     "/api/canonical/search",
     "/api/canonical/objects/",
     "/api/maps/",
+    "/api/map-studies",
     "/api/sources",
   ].some((path) => url.pathname === path || url.pathname.startsWith(path));
 }

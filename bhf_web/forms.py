@@ -10,10 +10,13 @@ from typing import Any, Mapping
 
 from bhf_agent.config import (
     ALLOWED_ADAPTERS,
+    ALLOWED_ANSWER_MODES,
+    ALLOWED_RUNTIME_PROFILE_MODES,
     AgentConfig,
     ConfigError,
 )
 
+from .ai_config import DEFAULT_OPENROUTER_MODEL, OPENROUTER_BASE_URL, WEB_AI_DEFAULTS
 from . import settings
 
 WEB_CONFIG_PATH = settings.WEB_CONFIG_PATH
@@ -45,11 +48,13 @@ DEFAULT_CONFIG_VALUES: dict[str, Any] = {
     "config_version": 1,
     "adapter": "openai_compatible",
     "profile": "minimal-7b",
+    "runtime_profile_mode": "compact",
+    "answer_mode": "study",
     "model": "llama3.1:8b",
     "base_url": "http://localhost:11434/v1",
     "temperature": 0.3,
-    "max_tokens": 8192,
-    "context_window": 12288,
+    "max_tokens": WEB_AI_DEFAULTS["max_tokens"],
+    "context_window": WEB_AI_DEFAULTS["context_window"],
     "response_format_policy": "auto",
     "show_method_notes": True,
     "timeout_seconds": 360,
@@ -57,7 +62,8 @@ DEFAULT_CONFIG_VALUES: dict[str, Any] = {
     "auto_repair": False,
     "max_repair_attempts": 1,
     "repair_threshold": 80,
-    "memory_enabled": False,
+    "runtime_profile_mode": WEB_AI_DEFAULTS["runtime_profile_mode"],
+    "memory_enabled": WEB_AI_DEFAULTS["memory_enabled"],
     "session_id": None,
     "memory_path": None,
     "memory_max_turns": 8,
@@ -112,14 +118,27 @@ def config_from_form(
     """Build an AgentConfig from submitted form values."""
 
     base = defaults or load_web_defaults().config
+    adapter = _optional_text(form, "adapter") or base.adapter
+    model = _optional_text(form, "model") or (
+        DEFAULT_OPENROUTER_MODEL if adapter == "openrouter" else base.model
+    )
     overrides = {
-        "adapter": _optional_text(form, "adapter") or base.adapter,
+        "adapter": adapter,
         "profile": _optional_text(form, "profile") or base.profile,
-        "model": _required_text(form, "model"),
-        "base_url": _required_text(form, "base_url"),
+        "runtime_profile_mode": (
+            _optional_text(form, "runtime_profile_mode")
+            or base.runtime_profile_mode
+        ),
+        "answer_mode": _optional_text(form, "answer_mode") or base.answer_mode,
+        "model": model,
+        "base_url": OPENROUTER_BASE_URL if adapter == "openrouter" else _required_text(form, "base_url"),
         "api_key": transient_api_key if transient_api_key is not None else base.api_key,
-        "temperature": _float_value(form, "temperature"),
-        "max_tokens": _int_value(form, "max_tokens"),
+        "temperature": _optional_float_value(form, "temperature")
+        if _optional_float_value(form, "temperature") is not None
+        else base.temperature,
+        "max_tokens": _optional_int_value(form, "max_tokens")
+        if _optional_int_value(form, "max_tokens") is not None
+        else base.max_tokens,
         "context_window": (
             context_window
             if (context_window := _optional_int_value(form, "context_window")) is not None
@@ -131,10 +150,12 @@ def config_from_form(
         ),
         "timeout_seconds": _optional_float_value(form, "timeout_seconds"),
         "show_method_notes": _checked(form, "show_method_notes"),
-        "memory_enabled": _checked(form, "memory_enabled"),
+        "memory_enabled": _checked(form, "memory_enabled") if "memory_enabled" in form else base.memory_enabled,
         "session_id": _optional_text(form, "session_id"),
         "memory_path": _optional_text(form, "memory_path"),
-        "memory_max_turns": _int_value(form, "memory_max_turns"),
+        "memory_max_turns": _optional_int_value(form, "memory_max_turns")
+        if _optional_int_value(form, "memory_max_turns") is not None
+        else base.memory_max_turns,
         "debug": False,
     }
     return base.with_overrides(**overrides)
@@ -152,6 +173,9 @@ def form_values_from_config(config: AgentConfig, question: str = "") -> dict[str
     return {
         "question": question,
         "adapter": config.adapter,
+        "profile": config.profile,
+        "runtime_profile_mode": config.runtime_profile_mode,
+        "answer_mode": config.answer_mode,
         "model": config.model or "",
         "base_url": config.base_url or "",
         "temperature": config.temperature,
@@ -285,9 +309,11 @@ def _env_bool(raw_value: str, field_name: str) -> bool:
     raise ConfigError(f"{field_name} must be true or false")
 
 
+ANSWER_MODES = ALLOWED_ANSWER_MODES
 ADAPTERS = ALLOWED_ADAPTERS
 ADAPTER_LABELS = {
     "openai_compatible": "OpenAI-compatible",
     "ollama": "Ollama",
     "openrouter": "OpenRouter",
 }
+RUNTIME_PROFILE_MODES = ALLOWED_RUNTIME_PROFILE_MODES

@@ -55,15 +55,40 @@ outside the offline boundary.
 
 ## OpenRouter
 
-The Model settings panel can use OpenRouter in addition to local Ollama or
-other OpenAI-compatible endpoints. OpenRouter uses its OpenAI-compatible
-`https://openrouter.ai/api/v1` endpoint and requires a Bearer API token.
+The first-launch setup recommends OpenRouter. BHF uses OpenRouter's browser
+PKCE authorization flow: the browser creates the verifier and state, sends the
+user to OpenRouter, receives a short-lived authorization code at the same BHF
+origin, and exchanges it directly with OpenRouter. BHF does not need a central
+account or a server-side key exchange.
+
+The callback origin matters:
+
+- `http://localhost:<port>` and `http://127.0.0.1:<port>` are supported for
+  local development.
+- A deployed BHF address must be HTTPS, including a Synology reverse-proxy
+  address. The certificate must be trusted by the browser.
+- Plain HTTP LAN addresses such as `http://192.168.x.x:8080` are not a secure
+  OpenRouter setup target. Use the HTTPS reverse proxy or localhost instead.
+- Installed standalone PWA mode uses the same HTTPS origin and root scope as
+  the browser app. The callback stays inside that scope; the browser must keep
+  the setup attempt in the same app/browser session.
+
+OpenRouter uses its OpenAI-compatible `https://openrouter.ai/api/v1` endpoint.
+The recommended pinned model is `google/gemma-4-26b-a4b-it:free`, displayed as
+Gemma 4 26B A4B. Free-model availability and capacity can change; BHF does
+not promise permanent free inference.
 
 The browser stores the selected provider and model in device-local IndexedDB.
-If an OpenRouter token is saved, it is encrypted with Web Crypto before being
-written to IndexedDB. The decrypted token is kept in memory and sent to the
-local BHF server only for the current AI request; it is not added to offline
-exports, service-worker caches, saved studies, or application logs.
+If an OpenRouter key is connected or entered manually, it is encrypted with
+Web Crypto before being written to IndexedDB. Only the encrypted record and a
+non-extractable browser encryption key are persisted. The decrypted key is kept
+in memory and sent to the local BHF server only for the current AI request; it
+is not added to offline exports, service-worker caches, saved studies, or
+application logs.
+
+The callback URL is scrubbed from browser history before the code exchange, and
+the service worker never caches callback navigations. Clearing browser data,
+reinstalling the app, or changing devices may require connecting again.
 
 OpenRouter requests require an internet connection and are not cached by the
 PWA. OpenRouter and the upstream provider selected for a request have their
@@ -305,7 +330,7 @@ If the file is missing or invalid, the UI uses built-in local defaults:
   "model": "llama3.1:8b",
   "profile": "minimal-7b",
   "temperature": 0.3,
-  "max_tokens": 8192,
+  "max_tokens": 2048,
   "context_window": 12288,
   "timeout_seconds": 360,
   "show_method_notes": true

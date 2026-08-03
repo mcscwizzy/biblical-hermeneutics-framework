@@ -5,9 +5,8 @@ from __future__ import annotations
 from typing import Optional
 
 from .openai_compatible import OpenAICompatibleAdapter
+from bhf_agent.providers.openrouter_config import OPENROUTER_BASE_URL
 
-
-OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 
 
 class OpenRouterAdapter(OpenAICompatibleAdapter):

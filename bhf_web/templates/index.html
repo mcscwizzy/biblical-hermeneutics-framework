@@ -43,6 +43,36 @@
   {% endif %}
 </head>
 <body>
+  <dialog class="ai-setup-dialog" data-ai-setup aria-labelledby="ai-setup-title">
+    <div class="ai-setup-panel">
+      <h2 id="ai-setup-title">Set Up AI for BHF</h2>
+      <p>BHF uses AI to help explain Scripture using the Biblical Hermeneutics Framework.</p>
+      <section class="ai-setup-recommended">
+        <p class="eyebrow">Recommended</p>
+        <h3>Connect OpenRouter</h3>
+        <p>Best answer quality on nearly any computer. Sign in or create an OpenRouter account to continue.</p>
+        <button type="button" data-openrouter-connect>Connect OpenRouter</button>
+        <p class="field-help">Your OpenRouter connection key is encrypted and stored only in this browser on this device. BHF does not operate user accounts and does not store your key on a central BHF server. Clearing browser data, reinstalling the app, or changing devices may require you to connect again.</p>
+      </section>
+      <section class="ai-setup-options">
+        <h3>Other options</h3>
+        <div class="ai-setup-option-grid">
+          <button type="button" class="secondary" data-ai-local-provider><span>Use Local AI</span><small>Runs through Ollama or another model server on your computer or network.</small></button>
+          <button type="button" class="secondary" data-ai-other-provider><span>Use Another OpenAI-Compatible Service</span><small>Connect another compatible provider.</small></button>
+        <button type="button" class="secondary" data-ai-continue-without><span>Continue Without AI</span><small>Use the Bible reader, search, CKL, lexicon, maps, and other non-AI tools.</small></button>
+        </div>
+      </section>
+      <details class="advanced-ai-settings">
+        <summary>Already have an OpenRouter key? Enter key manually</summary>
+        <label>
+          <span>OpenRouter key</span>
+          <input type="password" data-ai-manual-token autocomplete="new-password">
+        </label>
+        <button type="button" class="secondary" data-ai-manual-dialog-save>Save key on this device</button>
+      </details>
+      <p class="ai-setup-status" data-ai-setup-status role="status" aria-live="polite"></p>
+    </div>
+  </dialog>
   <main class="page reader-page" data-testid="app-shell">
     <header class="header" data-testid="app-header">
       <div>
@@ -94,15 +124,10 @@
             <input type="hidden" name="adapter" value="{{ form.adapter }}">
             <input type="hidden" name="model" value="{{ form.model }}">
             <input type="hidden" name="base_url" value="{{ form.base_url }}">
-            <input type="hidden" name="temperature" value="{{ form.temperature }}">
             <input type="hidden" name="max_tokens" value="{{ form.max_tokens }}">
             <input type="hidden" name="context_window" value="{{ form.context_window }}">
             <input type="hidden" name="timeout_seconds" value="{{ form.timeout_seconds }}">
-            <input type="hidden" name="memory_max_turns" value="{{ form.memory_max_turns }}">
             {% if form.show_method_notes %}<input type="hidden" name="show_method_notes" value="on">{% endif %}
-            {% if form.memory_enabled %}<input type="hidden" name="memory_enabled" value="on">{% endif %}
-            {% if form.session_id %}<input type="hidden" name="session_id" value="{{ form.session_id }}">{% endif %}
-            {% if form.memory_path %}<input type="hidden" name="memory_path" value="{{ form.memory_path }}">{% endif %}
           </form>
         </div>
 
@@ -178,11 +203,11 @@
                   <textarea name="question" rows="4" placeholder="Ask me a question!" data-testid="question-input">{{ form.question }}</textarea>
                 </label>
 
-                <details class="settings full">
-                  <summary>Model settings</summary>
+                <details class="settings full" data-ai-settings>
+                  <summary>AI settings</summary>
                   <div class="config-fields" data-config-fields>
                   <label>
-                    <span>Provider</span>
+                    <span>AI provider</span>
                     <select name="adapter">
                       {% for adapter in adapters %}
                         <option value="{{ adapter }}" {% if adapter == form.adapter %}selected{% endif %}>{{ adapter_labels.get(adapter, adapter) }}</option>
@@ -190,77 +215,73 @@
                     </select>
                   </label>
 
+                  <p class="field-help" role="status" aria-live="polite" data-ai-connection-status>Not connected</p>
+                  <div class="action-row">
+                    <button type="button" class="secondary" data-ai-test-connection>Test connection</button>
+                    <button type="button" class="secondary" data-ai-reconnect>Reconnect</button>
+                    <button type="button" class="secondary" data-ai-disconnect>Disconnect</button>
+                    <button type="button" class="secondary" data-ai-settings-open>Set up AI</button>
+                  </div>
+
                   <label>
                     <span>Model</span>
+                    <select data-openrouter-model hidden aria-label="OpenRouter study model"></select>
                     <input type="text" name="model" value="{{ form.model }}" required>
                   </label>
 
-                  <label>
-                    <span>Base URL</span>
-                    <input type="url" name="base_url" value="{{ form.base_url }}" required>
-                  </label>
+                  <details class="settings advanced-ai-settings">
+                    <summary>Advanced settings</summary>
+                    <div data-local-provider-fields>
+                      <label>
+                        <span>Base URL</span>
+                        <input type="url" name="base_url" value="{{ form.base_url }}" required>
+                      </label>
+                    </div>
+                    <label>
+                      <span>Custom OpenRouter model</span>
+                      <input type="text" data-openrouter-custom-model hidden placeholder="provider/model:free">
+                    </label>
+                    <label>
+                      <span>Output-token limit</span>
+                      <input type="number" name="max_tokens" min="1" step="1" value="{{ form.max_tokens }}" required>
+                    </label>
+                    <label>
+                      <span>Context window</span>
+                      <input type="number" name="context_window" min="1" step="1" value="{{ form.context_window }}" required>
+                    </label>
+                    <label>
+                      <span>Timeout seconds</span>
+                      <input type="number" name="timeout_seconds" min="1" step="1" value="{{ form.timeout_seconds }}" required>
+                    </label>
+                    <label>
+                      <span>Response-format policy</span>
+                      <select name="response_format_policy">
+                        <option value="auto" {% if form.response_format_policy == "auto" %}selected{% endif %}>Automatic</option>
+                        <option value="json" {% if form.response_format_policy == "json" %}selected{% endif %}>JSON when supported</option>
+                        <option value="text" {% if form.response_format_policy == "text" %}selected{% endif %}>Text</option>
+                      </select>
+                    </label>
+                    <p class="field-help">BHF chooses a provider-appropriate response style and temperature for normal study use.</p>
+                  </details>
 
                   <fieldset data-openrouter-credential hidden>
-                    <legend>OpenRouter credential</legend>
+                    <legend>Advanced Help: manual OpenRouter key</legend>
                     <label>
-                      <span>API token</span>
+                      <span>Key</span>
                       <input type="password" data-openrouter-token autocomplete="new-password" placeholder="Enter an OpenRouter token">
                     </label>
                     <div class="action-row">
-                      <button type="button" class="secondary" data-openrouter-token-save>Save token on this device</button>
-                      <button type="button" class="secondary" data-openrouter-token-remove>Remove token</button>
+                      <button type="button" class="secondary" data-ai-manual-save>Save key on this device</button>
                     </div>
                     <p class="field-help" data-openrouter-token-status>No token saved.</p>
-                    <p class="field-help" data-openrouter-privacy>OpenRouter requests require internet access. BHF does not cache prompts or responses locally. Saved studies are stored only when you explicitly save them.</p>
+                    <p class="field-help" data-openrouter-privacy>OpenRouter requires internet access. Your connection key is encrypted and stored only in this browser on this device.</p>
                   </fieldset>
-
-                  <label>
-                    <span>Temperature</span>
-                    <input type="number" name="temperature" min="0" max="2" step="0.1" value="{{ form.temperature }}" required>
-                  </label>
-
-                  <label>
-                    <span>Max tokens</span>
-                    <input type="number" name="max_tokens" min="1" step="1" value="{{ form.max_tokens }}" required>
-                  </label>
-
-                  <label>
-                    <span>Context window</span>
-                    <input type="number" name="context_window" min="1" step="1" value="{{ form.context_window }}" required>
-                  </label>
-
-                  <label>
-                    <span>Timeout seconds</span>
-                    <input type="number" name="timeout_seconds" min="1" step="1" value="{{ form.timeout_seconds }}" required>
-                  </label>
 
                   <label class="check">
                     <input type="checkbox" name="show_method_notes" {% if form.show_method_notes %}checked{% endif %}>
                     <span>Show method notes</span>
                   </label>
 
-                  <fieldset>
-                    <legend>Local session memory</legend>
-                    <label class="check">
-                      <input type="checkbox" name="memory_enabled" {% if form.memory_enabled %}checked{% endif %}>
-                      <span>Enable memory</span>
-                    </label>
-
-                    <div class="grid">
-                      <label>
-                        <span>Session ID</span>
-                        <input type="text" name="session_id" value="{{ form.session_id }}">
-                      </label>
-                      <label>
-                        <span>Memory path</span>
-                        <input type="text" name="memory_path" value="{{ form.memory_path }}">
-                      </label>
-                      <label>
-                        <span>Memory max turns</span>
-                        <input type="number" name="memory_max_turns" min="1" step="1" value="{{ form.memory_max_turns }}">
-                      </label>
-                    </div>
-                  </fieldset>
                   </div>
                 </details>
 

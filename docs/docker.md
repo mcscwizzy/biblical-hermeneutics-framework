@@ -215,6 +215,11 @@ From another trusted device on your LAN, open:
 http://YOUR_HOST_LAN_IP:8080
 ```
 
+This plain HTTP LAN address is suitable for local BHF features, but it is not a
+secure OpenRouter OAuth callback target. For OpenRouter, use a trusted HTTPS
+Synology reverse-proxy address or run the browser on the BHF host with
+`localhost`.
+
 This setup is intended for trusted local or LAN use only. It has no
 authentication, account system, rate limiting, or public internet hardening.
 Do not expose it directly to the public internet.

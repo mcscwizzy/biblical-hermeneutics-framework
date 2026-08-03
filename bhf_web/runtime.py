@@ -6,6 +6,8 @@ import json
 import os
 from typing import Any
 
+from .ai_config import browser_ai_config
+
 DEFAULT_PROVIDER_LABELS: dict[str, str] = {
     "local": "Local",
     "openai": "OpenAI",
@@ -37,6 +39,7 @@ def load_runtime_config() -> dict[str, Any]:
         "backgroundColor": "#f6f7f8",
         "enableServiceWorker": mode != "capacitor",
         "offlinePath": "/offline",
+        "ai": browser_ai_config(),
     }
 
 

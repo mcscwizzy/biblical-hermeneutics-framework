@@ -54,10 +54,13 @@ async function submitBibleSearch(event) {
 
 async function runBibleSearchFallback(form, query, requestId) {
   const payload = new FormData(form);
+  const providerHeaders = window.BHFModelSettings
+    ? await window.BHFModelSettings.getProviderHeaders()
+    : {};
   const job = await requestJson("/api/bible/search/fallback/jobs", {
     method: "POST",
     body: payload,
-    headers: { Accept: "application/json" },
+    headers: { Accept: "application/json", ...providerHeaders },
   }, "Could not start the BHF search fallback.");
   if (!job.job_id) {
     throw new Error("Could not start the BHF search fallback.");
@@ -84,12 +87,8 @@ function syncBibleSearchConfig(searchForm) {
   for (const name of [
     "model",
     "base_url",
-    "temperature",
     "max_tokens",
     "timeout_seconds",
-    "memory_max_turns",
-    "session_id",
-    "memory_path",
   ]) {
     const askInput = askForm.querySelector(`[name="${name}"]`);
     let searchInput = searchForm.querySelector(`[name="${name}"]`);
@@ -102,7 +101,6 @@ function syncBibleSearchConfig(searchForm) {
     searchInput.value = askInput ? askInput.value : "";
   }
   syncBibleSearchCheckbox(searchForm, askForm, "show_method_notes");
-  syncBibleSearchCheckbox(searchForm, askForm, "memory_enabled");
 }
 
 function syncBibleSearchCheckbox(searchForm, askForm, name) {

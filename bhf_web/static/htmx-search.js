@@ -87,12 +87,8 @@ function syncBibleSearchConfig(searchForm) {
     "adapter",
     "model",
     "base_url",
-    "temperature",
     "max_tokens",
     "timeout_seconds",
-    "memory_max_turns",
-    "session_id",
-    "memory_path",
     "reader_translation",
   ]) {
     const askInput = askForm.querySelector(`[name="${name}"]`);
@@ -110,7 +106,6 @@ function syncBibleSearchConfig(searchForm) {
     }
   }
   syncBibleSearchCheckbox(searchForm, askForm, "show_method_notes");
-  syncBibleSearchCheckbox(searchForm, askForm, "memory_enabled");
 }
 
 function syncBibleSearchCheckbox(searchForm, askForm, name) {

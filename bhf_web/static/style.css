@@ -3,6 +3,72 @@
 @import url("./styles/maps.css?v=20260730a");
 @import url("./styles/utilities.css?v=20260724a");
 
+.ai-setup-dialog {
+  width: min(680px, calc(100vw - 32px));
+  max-height: min(760px, calc(100dvh - 32px));
+  padding: 0;
+  border: 0;
+  border-radius: 18px;
+  color: inherit;
+  background: var(--surface, #fff);
+  box-shadow: 0 24px 80px rgb(0 0 0 / 28%);
+}
+
+.ai-setup-dialog::backdrop {
+  background: rgb(10 24 38 / 62%);
+}
+
+.ai-setup-panel {
+  display: grid;
+  gap: 18px;
+  padding: 28px;
+  overflow-y: auto;
+}
+
+.ai-setup-panel h2,
+.ai-setup-panel h3,
+.ai-setup-panel p {
+  margin: 0;
+}
+
+.ai-setup-recommended {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+  border: 1px solid rgb(36 91 130 / 28%);
+  border-radius: 14px;
+  background: rgb(36 91 130 / 7%);
+}
+
+.ai-setup-options {
+  display: grid;
+  gap: 10px;
+}
+
+.ai-setup-option-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.ai-setup-option-grid button {
+  display: grid;
+  gap: 4px;
+  text-align: left;
+}
+
+.ai-setup-option-grid small {
+  font-weight: 400;
+  opacity: .78;
+}
+
+.ai-setup-status {
+  min-height: 1.3em;
+}
+
+.advanced-ai-settings {
+  width: 100%;
+}
+
 /*
 .map-entity-marker
 .map-entity-marker--place

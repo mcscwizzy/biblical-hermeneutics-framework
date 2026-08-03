@@ -73,13 +73,14 @@ class OpenAICompatibleAdapter(ChatAdapter):
         except urllib.error.HTTPError as exc:
             error_body = _safe_read_error(exc)
             hint = _http_error_hint(exc.code, self.base_url)
+            provider_label = self.provider_name.replace("_", " ").title()
             return ChatResponse(
                 text="",
                 provider=self.provider_name,
                 latency_ms=_elapsed_ms(started_at),
                 errors=[
-                    f"OpenAI-compatible endpoint returned HTTP {exc.code}: "
-                    f"{error_body or exc.reason}{hint}"
+                    f"{provider_label} request failed: HTTP {exc.code}: "
+                    f"{_friendly_http_error(exc.code, error_body, exc.reason)}{hint}"
                 ],
                 raw_provider_response=error_body,
                 error_category="provider_failure",
@@ -191,9 +192,37 @@ class OpenAICompatibleAdapter(ChatAdapter):
 
 def _safe_read_error(exc: urllib.error.HTTPError) -> str:
     try:
-        return exc.read().decode("utf-8")
+        raw = exc.read().decode("utf-8", errors="replace")
+        try:
+            payload = json.loads(raw)
+        except json.JSONDecodeError:
+            return ""
+        if isinstance(payload, dict):
+            error = payload.get("error")
+            if isinstance(error, dict):
+                message = error.get("message") or error.get("code")
+                return str(message)[:240] if message else ""
+            if isinstance(error, str):
+                return error[:240]
+        return ""
     except Exception:
         return ""
+
+
+def _friendly_http_error(status_code: int, detail: str, reason: object) -> str:
+    if status_code == 401:
+        return "the saved credential was rejected"
+    if status_code == 402:
+        return "the provider account needs credits"
+    if status_code == 403:
+        return "the provider denied this request"
+    if status_code == 404:
+        return detail or "the selected model or endpoint was not found"
+    if status_code == 429:
+        return "rate limit reached; try again shortly"
+    if status_code in {502, 503}:
+        return "the selected model is temporarily unavailable"
+    return detail or "the provider returned an error"
 
 
 def _elapsed_ms(started_at: float) -> int:
