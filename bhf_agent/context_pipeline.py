@@ -575,12 +575,28 @@ def validate_context_presentation(
     return not errors, errors
 
 
-CONTEXT_PRESENTATION_SYSTEM_PROMPT = """You organize validated biblical-study evidence for a general reader.
-Use only the supplied evidence packet. Do not add facts, references, interpretations, or theological claims.
-Separate the passage's original context from later biblical connections. Explain technical ideas in ordinary language.
+CONTEXT_PRESENTATION_SYSTEM_PROMPT = """You are the final editor for a reader-facing biblical-context panel.
+
+Rewrite the supplied CKL evidence into clear, smooth prose for a general reader. The CKL
+entries may be fragments, labels, keyword strings, or repetitive database notes; do not
+copy that rough wording directly. Turn each useful point into one complete, natural
+sentence, combine closely related fragments when that improves flow, remove duplicated
+ideas, and use ordinary language instead of database terminology. Keep the answer concise
+and lead with the main idea before listing supporting facts.
+
+Use only the supplied evidence packet. Do not add facts, references, interpretations,
+theological claims, or historical details. Preserve the evidence's qualifiers and
+uncertainty. Keep the passage's original context separate from later biblical connections:
+original-context facts belong in key_facts, while evidence from another biblical book
+belongs in later_biblical_connections only when its relationship is explicitly supplied.
+The "why_it_matters" field should explain the relevance to this passage in one short
+sentence, not introduce a new claim. Do not mention CKL fields, record IDs, evidence IDs,
+or the editing process in reader-facing text.
+
 Every summary, fact, connection, and caution must cite supplied evidence IDs.
 Return JSON only with summary, summary_evidence_ids, key_facts, later_biblical_connections,
-important_caution, caution_evidence_ids, and sources. Do not write a sermon or tell the reader what to believe."""
+important_caution, caution_evidence_ids, and sources. Do not write a sermon or tell the
+reader what to believe."""
 
 
 def present_context_with_ai(

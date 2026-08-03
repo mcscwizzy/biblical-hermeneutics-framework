@@ -67,6 +67,14 @@ const BHF_DETERMINISTIC_STUDY_ACTIONS = new Set([
   "places",
   "themes",
 ]);
+const BHF_AUTO_ORGANIZED_CONTEXT_ACTIONS = new Set([
+  "full_context",
+  "historical_context",
+  "cultural_context",
+  "original_audience",
+  "covenant_context",
+  "literary_context",
+]);
 
 const BHF_STUDY_ACTION_ALIASES = {
   ancient_context: "cultural_context",
@@ -3205,7 +3213,10 @@ async function requestDeterministicStudyAction(studyAction) {
   }
   if (answerPanel) {
     answerPanel.setAttribute("aria-busy", "true");
-    answerPanel.innerHTML = `<p class="empty">Loading deterministic ${escapeHtml(studyActionLabel(studyAction.type).toLowerCase())}...</p>`;
+    const loadingMessage = shouldAutoOrganizeContext(studyAction)
+      ? `Loading and organizing ${escapeHtml(studyActionLabel(studyAction.type).toLowerCase())}...`
+      : `Loading deterministic ${escapeHtml(studyActionLabel(studyAction.type).toLowerCase())}...`;
+    answerPanel.innerHTML = `<p class="empty">${loadingMessage}</p>`;
   }
 
   try {
@@ -3217,7 +3228,10 @@ async function requestDeterministicStudyAction(studyAction) {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(deterministicStudyPayload(studyAction)),
+        body: JSON.stringify({
+          ...deterministicStudyPayload(studyAction),
+          ...(shouldAutoOrganizeContext(studyAction) ? {presentation: "ai"} : {}),
+        }),
       },
       "Could not load deterministic study result.",
     );
@@ -3231,7 +3245,9 @@ async function requestDeterministicStudyAction(studyAction) {
     if (statusPanel && typeof markStatusComplete === "function") {
       markStatusComplete(statusPanel, {
         message:
-          result.status === "complete"
+          result.presentation?.mode === "ai"
+            ? "Organized context ready"
+            : result.status === "complete"
             ? "Deterministic result ready"
             : "Partial deterministic result ready",
         percent_complete: 100,
@@ -3274,6 +3290,10 @@ function deterministicStudyPayload(studyAction) {
     strongs_number: studyAction.strongsNumber || "",
     query: document.querySelector('.ask-form [name="question"]')?.value || "",
   };
+}
+
+function shouldAutoOrganizeContext(studyAction) {
+  return BHF_AUTO_ORGANIZED_CONTEXT_ACTIONS.has(studyAction?.type);
 }
 
 function renderDeterministicStudyResult(result) {

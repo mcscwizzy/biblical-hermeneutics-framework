@@ -4,6 +4,7 @@ import unittest
 from types import SimpleNamespace
 
 from bhf_agent.context_pipeline import (
+    CONTEXT_PRESENTATION_SYSTEM_PROMPT,
     build_context_evidence_packet,
     deterministic_context_presentation,
     present_context_with_ai,
@@ -48,6 +49,12 @@ def ckl_object(
 
 
 class ContextPipelineTests(unittest.TestCase):
+    def test_context_presenter_prompt_requests_reader_ready_prose(self):
+        self.assertIn("one complete, natural", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
+        self.assertIn("rough wording directly", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
+        self.assertIn("remove duplicated", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
+        self.assertIn("Preserve the evidence's qualifiers", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
+
     def test_generic_cross_book_keyword_record_is_rejected(self):
         packet = build_context_evidence_packet(
             [
