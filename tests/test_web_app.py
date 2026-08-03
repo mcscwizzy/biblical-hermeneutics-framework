@@ -203,6 +203,21 @@ class WebFormTests(unittest.TestCase):
         self.assertFalse(config.canonical_library.enabled)
         self.assertTrue(config.canonical_library.shadow_mode)
 
+    def test_web_defaults_load_when_browser_openrouter_key_is_not_set(self):
+        env = {
+            "LLM_PROVIDER": "openrouter",
+            "BHF_BASE_URL": "https://openrouter.ai/api/v1",
+            "BHF_MODEL": "google/gemma-4-26b-a4b-it:free",
+            "BHF_API_KEY": "",
+        }
+
+        with patch.dict(os.environ, env, clear=False):
+            loaded = load_web_defaults(path="/tmp/bhf-web-config-does-not-exist.json")
+
+        self.assertEqual(loaded.config.adapter, "openai_compatible")
+        self.assertEqual(loaded.config.base_url, "http://localhost:11434/v1")
+        self.assertIn("no server API key is set", loaded.warning or "")
+
     def test_web_defaults_read_ollama_environment_variables(self):
         env = {
             "LLM_PROVIDER": "ollama",
