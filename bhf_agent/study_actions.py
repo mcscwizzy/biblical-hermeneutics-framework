@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+from collections import defaultdict
 from dataclasses import dataclass, field
 from typing import Any, Callable, Iterable, Mapping
 
@@ -10,6 +11,10 @@ from framework.canonical_library import CanonicalLibrary
 
 from .bible import BibleError, load_translation_bible, resolve_passage, verse_range_reference
 from .ckl import load_canonical_library
+from .context_pipeline import (
+    build_context_evidence_packet,
+    deterministic_context_presentation,
+)
 from .lexicon import WordStudyResult, WordStudyService
 from .models import Serializable
 
@@ -113,6 +118,8 @@ class StudyActionResult(Serializable):
     missing_fields: list[str] = field(default_factory=list)
     agent_fallback_allowed: bool = False
     metadata: dict[str, Any] = field(default_factory=dict)
+    presentation: dict[str, Any] | None = None
+    evidence_packet: dict[str, Any] | None = None
 
 
 class StudyActionRouter:
@@ -181,13 +188,29 @@ class DeterministicStudyEngine:
         sections: list[dict[str, Any]] = []
         missing_fields: list[str] = []
         word_study: WordStudyResult | None = None
+        evidence_packet: dict[str, Any] | None = None
+        presentation: dict[str, Any] | None = None
 
-        if canonical_action == "full_context":
-            sections.extend(self._scripture_sections(passage_data))
-            for grouped_action in FULL_CONTEXT_ORDER:
-                grouped_sections, grouped_missing = self._field_sections(grouped_action, objects)
-                sections.extend(grouped_sections)
-                missing_fields.extend(grouped_missing)
+        if canonical_action in {
+            "full_context",
+            "historical_context",
+            "cultural_context",
+            "original_audience",
+            "covenant_context",
+            "literary_context",
+        }:
+            evidence_packet = build_context_evidence_packet(
+                objects,
+                target_book=str(passage_data.get("book") or ""),
+                reference=reference,
+                action=canonical_action,
+                selected_text=str(passage_data.get("selected_text") or ""),
+                trusted_record_ids=self._trusted_context_record_ids(passage_data, objects),
+            )
+            presentation = deterministic_context_presentation(evidence_packet)
+            sections.extend(self._context_sections(evidence_packet, canonical_action))
+            if not sections and evidence_packet.get("excluded"):
+                missing_fields.append("validated_context_evidence")
         elif canonical_action in FIELD_GROUPS:
             sections.extend(self._scripture_sections(passage_data))
             grouped_sections, missing_fields = self._field_sections(canonical_action, objects)
@@ -263,6 +286,8 @@ class DeterministicStudyEngine:
                     else {}
                 ),
             },
+            presentation=presentation,
+            evidence_packet=evidence_packet,
         )
 
     def _resolve_passage(self, context: Mapping[str, Any]) -> dict[str, Any]:
@@ -322,6 +347,43 @@ class DeterministicStudyEngine:
             results.extend(self.library.retrieve_by_scripture_reference(reference, limit=8))
         return _dedupe_results(results)
 
+    def _trusted_context_record_ids(
+        self,
+        passage_data: Mapping[str, Any],
+        objects: list[Any],
+    ) -> set[str]:
+        """Return records allowed to provide original-passage context.
+
+        A topic can cite a passage as a supporting connection without being a
+        historical or cultural source for that passage.  The exact book record
+        and records with a primary scripture anchor are trusted; other records
+        may contribute only explicitly-related later connections.
+        """
+
+        trusted: set[str] = set()
+        book = str(passage_data.get("book") or "").strip().casefold()
+        reference = str(passage_data.get("reference") or "").strip().casefold()
+        chapter_match = re.search(r"\s(\d+)(?::|$)", reference)
+        chapter = chapter_match.group(1) if chapter_match else ""
+        exact = self.library.retrieve_exact(str(passage_data.get("book") or ""))
+        if exact is not None and getattr(exact.object, "id", None):
+            trusted.add(str(exact.object.id))
+        for obj in objects:
+            object_id = str(getattr(obj, "id", "") or "")
+            object_type = str(getattr(obj, "type", "") or "").casefold()
+            if object_type in {"theme", "biblical_theology", "theology", "doctrine"}:
+                continue
+            for item in getattr(obj, "scripture_references", None) or []:
+                item_reference = str(getattr(item, "reference", "") or "").casefold()
+                relationship = str(getattr(item, "relationship", "") or "").casefold().replace("-", "_")
+                if (
+                    relationship == "primary"
+                    and item_reference.startswith(f"{book} {chapter}:")
+                    and object_id
+                ):
+                    trusted.add(object_id)
+        return trusted
+
     def _scripture_sections(self, passage_data: Mapping[str, Any]) -> list[dict[str, Any]]:
         text = str(passage_data.get("selected_text") or "").strip()
         if not text:
@@ -349,6 +411,50 @@ class DeterministicStudyEngine:
             else:
                 missing.append(field_name)
         return sections, missing
+
+    def _context_sections(
+        self,
+        packet: Mapping[str, Any],
+        action: str,
+    ) -> list[dict[str, Any]]:
+        """Keep legacy section output while sourcing it from scoped evidence."""
+
+        selected = list(packet.get("evidence") or [])
+        if action != "full_context":
+            primary_scopes = {
+                "historical_context": {"historical_background", "same_book", "direct_passage", "same_chapter"},
+                "cultural_context": {"cultural_background", "ancient_world_background", "same_book", "direct_passage", "same_chapter"},
+                "original_audience": {"original_audience", "historical_background", "same_book", "direct_passage", "same_chapter"},
+                "covenant_context": {"covenant_context", "same_book", "direct_passage", "same_chapter"},
+                "literary_context": {"same_book", "direct_passage", "same_chapter"},
+            }.get(action, set())
+            selected = [item for item in selected if item.get("scope") in primary_scopes]
+        else:
+            selected = [
+                item
+                for item in selected
+                if str(item.get("candidate_book") or "").casefold()
+                == str(packet.get("target", {}).get("book") or "").casefold()
+                and item.get("scope") not in {"weak_or_unverified", "canonical_theme"}
+            ]
+        grouped: dict[str, list[str]] = defaultdict(list)
+        for item in selected:
+            label = _context_section_label(str(item.get("evidence_type") or ""))
+            grouped[label].append(str(item.get("fact") or ""))
+        return [
+            {
+                "title": title,
+                "items": _unique(items),
+                "source": "scripture" if title == "Selected Scripture" else "ckl",
+                "evidence_ids": [
+                    str(item.get("evidence_id"))
+                    for item in selected
+                    if _context_section_label(str(item.get("evidence_type") or "")) == title
+                ],
+            }
+            for title, items in grouped.items()
+            if _unique(items)
+        ]
 
     def _word_study_sections(self, result: WordStudyResult) -> list[dict[str, Any]]:
         if result.is_ambiguous:
@@ -486,6 +592,23 @@ def normalize_action(value: Any) -> str:
     return ACTION_ALIASES.get(action, action)
 
 
+def _context_section_label(evidence_type: str) -> str:
+    return {
+        "historical_context": "Historical Context",
+        "historical_setting": "Historical Setting",
+        "date_ranges": "Dates and Setting",
+        "timeline": "Timeline",
+        "ancient_near_east_context": "Ancient World Background",
+        "hebraic_worldview": "Cultural Background",
+        "second_temple_context": "Cultural Background",
+        "original_audience": "Original Audience",
+        "covenantal_significance": "Covenant Context",
+        "literary_context": "Literary Context",
+        "summary": "Overview",
+        "selected_scripture": "Selected Scripture",
+    }.get(evidence_type, "Context Evidence")
+
+
 def compact_fact_packet(result: StudyActionResult | Mapping[str, Any], *, max_chars: int = 1400) -> dict[str, Any]:
     data = result.to_dict() if isinstance(result, StudyActionResult) else dict(result)
     sections = []
@@ -508,6 +631,26 @@ def compact_fact_packet(result: StudyActionResult | Mapping[str, Any], *, max_ch
                     "source": str(section.get("source") or "deterministic"),
                 }
             )
+    evidence_packet = data.get("evidence_packet")
+    compact_evidence = []
+    if isinstance(evidence_packet, Mapping):
+        for evidence in list(evidence_packet.get("evidence") or [])[:24]:
+            compact_evidence.append(
+                {
+                    key: evidence.get(key)
+                    for key in (
+                        "evidence_id",
+                        "record_id",
+                        "fact",
+                        "evidence_type",
+                        "scope",
+                        "relationship",
+                        "reference",
+                        "candidate_book",
+                        "confidence",
+                    )
+                }
+            )
     return {
         "action": data.get("action"),
         "status": data.get("status"),
@@ -520,6 +663,12 @@ def compact_fact_packet(result: StudyActionResult | Mapping[str, Any], *, max_ch
             "reference": (data.get("metadata") or {}).get("reference"),
             "object_ids": list((data.get("metadata") or {}).get("object_ids") or [])[:12],
             "word_study_prompt_context": (data.get("metadata") or {}).get("word_study_prompt_context"),
+        },
+        "presentation": data.get("presentation"),
+        "evidence_packet": {
+            "target": (evidence_packet or {}).get("target") if isinstance(evidence_packet, Mapping) else None,
+            "allowed_references": (evidence_packet or {}).get("allowed_references", []) if isinstance(evidence_packet, Mapping) else [],
+            "evidence": compact_evidence,
         },
     }
 
@@ -546,6 +695,11 @@ def format_fact_packet_for_prompt(packet: Mapping[str, Any]) -> str:
         lines.extend(["", f"## {title}"])
         for item in section.get("items") or []:
             lines.append(f"- {item}")
+    for evidence in packet.get("evidence_packet", {}).get("evidence", []) or []:
+        lines.append(
+            f"- [evidence_id={evidence.get('evidence_id')}] "
+            f"[{evidence.get('scope')}] {evidence.get('fact')}"
+        )
     return "\n".join(lines)
 
 

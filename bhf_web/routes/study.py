@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Any
+from typing import Any, Callable, Mapping
 
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
@@ -23,6 +23,7 @@ def register_study_routes(
     templates: Any,
     job_store: Any,
     study_action_router: StudyActionRouter | None = None,
+    context_presenter: Callable[[Mapping[str, Any]], dict[str, Any]] | None = None,
 ) -> None:
     router = study_action_router or StudyActionRouter()
 
@@ -58,6 +59,12 @@ def register_study_routes(
                 passage=passage,
                 query=str(payload.get("query") or payload.get("question") or ""),
             )
+            if (
+                context_presenter is not None
+                and payload.get("presentation") == "ai"
+                and result.evidence_packet
+            ):
+                result.presentation = context_presenter(result.evidence_packet)
             data = result.to_dict()
             data["fact_packet"] = compact_fact_packet(result)
             record_action(result.action, result.metadata, path=study_db_path)

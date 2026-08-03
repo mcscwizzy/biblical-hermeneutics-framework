@@ -3272,6 +3272,9 @@ function renderDeterministicStudyResult(result) {
   if (result?.action === "word_study" && result?.metadata?.word_study) {
     return renderWordStudyResult(result);
   }
+  if (result?.presentation && result?.evidence_packet) {
+    return renderContextPresentation(result);
+  }
   const sections = Array.isArray(result.sections) ? result.sections : [];
   const status = String(result.status || "unknown");
   const source = String(result.source || "deterministic");
@@ -3294,12 +3297,97 @@ function renderDeterministicStudyResult(result) {
         </div>
         <div class="answer-actions">
           <button type="button" class="secondary answer-save" data-deterministic-save>Save Study</button>
-          ${result.agent_fallback_allowed ? `<button type="button" class="secondary" data-deterministic-explain>Explain with BHF</button>` : ""}
+          ${result.agent_fallback_allowed ? `<button type="button" class="secondary" data-deterministic-explain>${result.evidence_packet ? "Organize with AI" : "Explain with BHF"}</button>` : ""}
           <button type="button" class="secondary" data-deterministic-ask>Ask a Question</button>
         </div>
       </header>
       ${sectionHtml}
       ${refsHtml}
+    </article>
+  `;
+}
+
+function renderContextPresentation(result) {
+  const presentation = result.presentation || {};
+  const facts = Array.isArray(presentation.key_facts)
+    ? presentation.key_facts.filter((fact) => fact && fact.fact).slice(0, 6)
+    : [];
+  const later = Array.isArray(presentation.later_biblical_connections)
+    ? presentation.later_biblical_connections.filter((item) => item && item.connection).slice(0, 6)
+    : [];
+  const sources = Array.isArray(presentation.sources)
+    ? presentation.sources.filter(Boolean)
+    : [];
+  const caution = String(presentation.important_caution || "").trim();
+  const confidenceLabel = (value) => {
+    const normalized = String(value || "medium").toLowerCase();
+    return normalized.charAt(0).toUpperCase() + normalized.slice(1);
+  };
+  const factsHtml = facts.length
+    ? facts.map((fact) => `
+      <article class="context-fact-card">
+        <p class="context-fact">${escapeHtml(fact.fact)}</p>
+        ${fact.why_it_matters ? `<p class="context-why"><strong>Why this matters:</strong> ${escapeHtml(fact.why_it_matters)}</p>` : ""}
+        <p class="context-confidence">${escapeHtml(confidenceLabel(fact.confidence))} confidence</p>
+      </article>
+    `).join("")
+    : `<p class="empty">No validated original-context facts were found for this selection.</p>`;
+  const laterHtml = later.length
+    ? `
+      <section class="context-later-connections" aria-labelledby="later-biblical-connections-heading">
+        <h3 id="later-biblical-connections-heading">Later Biblical Connections</h3>
+        <p class="context-later-note">These are later canonical connections, not part of the passage’s original historical setting.</p>
+        <div class="context-fact-list">
+          ${later.map((item) => `
+            <article class="context-fact-card context-later-card">
+              <p class="context-fact">${escapeHtml(item.connection)}</p>
+              ${item.reference ? `<p class="context-reference">${escapeHtml(item.reference)}</p>` : ""}
+              <p class="context-confidence">${escapeHtml(confidenceLabel(item.confidence))} confidence</p>
+            </article>
+          `).join("")}
+        </div>
+      </section>
+    `
+    : "";
+  const sourcesHtml = sources.length
+    ? `
+      <details class="context-study-details">
+        <summary>Study Details</summary>
+        <div class="context-source-list">
+          ${sources.map((source) => `
+            <div class="context-source-row">
+              <strong>${escapeHtml(source.evidence_id || source.record_id || "Evidence")}</strong>
+              <span>${escapeHtml([source.scope, source.evidence_type, source.relationship, source.confidence].filter(Boolean).join(" · "))}</span>
+              ${source.retrieval_reason ? `<small>${escapeHtml(source.retrieval_reason)}</small>` : ""}
+            </div>
+          `).join("")}
+        </div>
+      </details>
+    `
+    : "";
+  return `
+    <article class="answer deterministic-study-result context-presentation" data-deterministic-study-result>
+      <header class="answer-header">
+        <div>
+          <p class="answer-eyebrow">${escapeHtml(presentation.mode === "ai" ? "AI-organized validated evidence" : "Validated CKL evidence")}</p>
+          <h2>${escapeHtml(result.title || "Context")}</h2>
+        </div>
+        <div class="answer-actions">
+          ${result.agent_fallback_allowed ? `<button type="button" class="secondary" data-deterministic-explain>Explain with BHF</button>` : ""}
+          <button type="button" class="secondary" data-deterministic-ask>Ask a Question</button>
+        </div>
+      </header>
+      <section class="context-overview" aria-labelledby="context-overview-heading">
+        <h3 id="context-overview-heading">Overview</h3>
+        <p>${escapeHtml(presentation.summary || "No overview is available.")}</p>
+      </section>
+      <section class="context-key-facts" aria-labelledby="context-key-facts-heading">
+        <h3 id="context-key-facts-heading">Key Facts</h3>
+        <div class="context-fact-list">${factsHtml}</div>
+      </section>
+      ${caution ? `<aside class="context-caution" role="note"><strong>Important caution:</strong> ${escapeHtml(caution)}</aside>` : ""}
+      ${laterHtml}
+      ${sourcesHtml}
     </article>
   `;
 }
@@ -3542,7 +3630,11 @@ function wireDeterministicStudyControls(answerPanel, result, studyAction) {
   wireWordStudyChoiceControls(answerPanel, studyAction);
   answerPanel
     .querySelector("[data-deterministic-explain]")
-    ?.addEventListener("click", () => {
+    ?.addEventListener("click", async () => {
+      if (result.evidence_packet) {
+        await requestAIContextPresentation(studyAction, answerPanel);
+        return;
+      }
       const packet = result.fact_packet || compactDeterministicResult(result);
       setFormValue("deterministic_fact_packet", JSON.stringify(packet));
       setFormValue("ask_mode", "");
@@ -3568,6 +3660,42 @@ function wireDeterministicStudyControls(answerPanel, result, studyAction) {
     ?.addEventListener("click", async () => {
       await saveDeterministicStudy(result, studyAction);
     });
+}
+
+async function requestAIContextPresentation(studyAction, answerPanel) {
+  const statusPanel = document.querySelector("#status-panel");
+  if (answerPanel) {
+    answerPanel.setAttribute("aria-busy", "true");
+    answerPanel.innerHTML = `<p class="empty">Organizing validated evidence...</p>`;
+  }
+  try {
+    const result = await requestJson(
+      "/api/study/actions",
+      {
+        method: "POST",
+        headers: {Accept: "application/json", "Content-Type": "application/json"},
+        body: JSON.stringify({...deterministicStudyPayload(studyAction), presentation: "ai"}),
+      },
+      "Could not organize the context result.",
+    );
+    if (answerPanel) {
+      answerPanel.innerHTML = renderDeterministicStudyResult(result);
+      wireDeterministicStudyControls(answerPanel, result, studyAction);
+      addMobileAnswerCloseControl(answerPanel);
+    }
+  } catch (error) {
+    if (answerPanel) {
+      answerPanel.innerHTML = errorHtml(error.message || "Could not organize the context result.");
+      addMobileAnswerCloseControl(answerPanel);
+    }
+  } finally {
+    if (answerPanel) {
+      answerPanel.removeAttribute("aria-busy");
+    }
+    if (statusPanel && typeof markStatusComplete === "function") {
+      markStatusComplete(statusPanel, {message: "Context result ready", percent_complete: 100});
+    }
+  }
 }
 
 function wireWordStudyChoiceControls(answerPanel, studyAction) {
@@ -3843,6 +3971,10 @@ function highlightsForContext(context) {
       Number(highlight.end_verse || highlight.start_verse),
     ),
   );
+}
+
+function isContextHighlighted(context) {
+  return highlightsForContext(context).length > 0;
 }
 
 function notesForVerse(verseNumber) {

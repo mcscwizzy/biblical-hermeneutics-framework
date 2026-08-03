@@ -36,6 +36,7 @@ from bhf_agent.translation_settings import (
     set_default_reader_translation,
 )
 from bhf_agent.runner import BHFAgent
+from bhf_agent.context_pipeline import deterministic_context_presentation, present_context_with_ai
 from bhf_agent.lexicon import WordStudyService
 from bhf_agent.study_db import (
     StudyDataError,
@@ -132,6 +133,21 @@ def create_app() -> FastAPI:
         if extra:
             context.update(extra)
         return context
+
+    def present_reader_context(packet: dict[str, object]) -> dict[str, object]:
+        try:
+            loaded = load_web_defaults()
+            agent = BHFAgent(loaded.config)
+            return present_context_with_ai(
+                packet,
+                adapter=agent.adapter,
+                model=loaded.config.model or "",
+                temperature=min(float(loaded.config.temperature), 0.3),
+                max_tokens=min(int(loaded.config.max_tokens), 900),
+                context_window=min(int(loaded.config.context_window), 4096),
+            )
+        except Exception:  # noqa: BLE001 - context panels always have a safe fallback
+            return deterministic_context_presentation(packet)
 
     @web_app.get("/manifest.webmanifest", include_in_schema=False)
     async def manifest() -> Response:
@@ -503,6 +519,7 @@ def create_app() -> FastAPI:
         study_db_path=str(STUDY_DB_PATH),
         templates=templates,
         job_store=job_store,
+        context_presenter=present_reader_context,
     )
     register_debug_routes(web_app)
     register_ask_routes(

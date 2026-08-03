@@ -234,6 +234,120 @@ button.danger {
   margin: 0 0 0.85rem;
 }
 
+.context-presentation {
+  display: grid;
+  gap: 16px;
+}
+
+.context-presentation section,
+.context-caution {
+  margin: 0;
+}
+
+.context-presentation h3 {
+  margin: 0 0 8px;
+}
+
+.context-overview {
+  padding: 14px 16px;
+  border-left: 4px solid #3f7d57;
+  border-radius: 8px;
+  background: #f3f9f4;
+}
+
+.context-overview p,
+.context-later-note,
+.context-why,
+.context-fact,
+.context-confidence {
+  margin: 0;
+}
+
+.context-fact-list {
+  display: grid;
+  gap: 10px;
+}
+
+.context-fact-card {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.context-why {
+  margin-top: 8px;
+  color: var(--page-muted);
+}
+
+.context-confidence {
+  margin-top: 8px;
+  color: var(--page-muted);
+  font-size: 0.78rem;
+}
+
+.context-later-connections {
+  padding: 14px;
+  border: 1px solid #d8c995;
+  border-radius: 10px;
+  background: #fffaf0;
+}
+
+.context-later-note {
+  margin-bottom: 10px;
+  color: #6d5b28;
+  font-size: 0.9rem;
+}
+
+.context-later-card {
+  border-color: #e2d6ae;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.context-reference {
+  margin: 8px 0 0;
+  color: #6d5b28;
+  font-weight: 700;
+}
+
+.context-caution {
+  padding: 12px 14px;
+  border-radius: 8px;
+  color: #6d4f19;
+  background: #fff4df;
+}
+
+.context-study-details {
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+.context-study-details summary {
+  cursor: pointer;
+  font-weight: 750;
+}
+
+.context-source-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.context-source-row {
+  display: grid;
+  gap: 2px;
+  padding: 8px 10px;
+  border-radius: 7px;
+  background: var(--surface-muted);
+  color: var(--page-muted);
+  font-size: 0.82rem;
+}
+
+.context-source-row strong {
+  color: var(--page-text);
+  overflow-wrap: anywhere;
+}
+
 .metadata {
   border-top: 1px solid #d8dee4;
   margin-top: 20px;
