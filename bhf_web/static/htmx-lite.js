@@ -105,6 +105,7 @@ let translationCatalogState = null;
 let appDockScrollFrame = null;
 let readerLocationSaveTimer = null;
 let pendingReaderLocation = null;
+let wordStudyNavigationStack = [];
 const BHF_HTTP = window.BHFApi || {};
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -3186,8 +3187,11 @@ function applyStudyActionContext(studyAction) {
   });
 }
 
-async function requestDeterministicStudyAction(studyAction) {
+async function requestDeterministicStudyAction(studyAction, options = {}) {
   const isWordStudy = studyAction.type === "word_study";
+  if (!options.fromWordStudyChoice) {
+    wordStudyNavigationStack = [];
+  }
   activateWorkspaceTab(isWordStudy ? "lexicon" : "ask");
   setFormValue("ask_mode", "");
   setFormValue("study_action", "");
@@ -3237,7 +3241,9 @@ async function requestDeterministicStudyAction(studyAction) {
     );
     latestDeterministicStudyResult = result;
     if (answerPanel) {
-      answerPanel.innerHTML = renderDeterministicStudyResult(result);
+      answerPanel.innerHTML = renderDeterministicStudyResult(result, {
+        showWordStudyBack: isWordStudy && wordStudyNavigationStack.length > 0,
+      });
       wireDeterministicStudyControls(answerPanel, result, studyAction);
       addMobileAnswerCloseControl(answerPanel);
       revealAnswerPanel(answerPanel);
@@ -3259,7 +3265,9 @@ async function requestDeterministicStudyAction(studyAction) {
       markStatusFailed(statusPanel, error.message || "Request failed.");
     }
     if (answerPanel) {
-      answerPanel.innerHTML = errorHtml(error.message || "Request failed.");
+      const message = error.message || "Request failed.";
+      answerPanel.innerHTML = `${errorHtml(message)}${isWordStudy && wordStudyNavigationStack.length > 0 ? `<div class="answer-actions"><button type="button" class="secondary" data-word-study-back>Back to word list</button></div>` : ""}`;
+      wireWordStudyBackControl(answerPanel);
       addMobileAnswerCloseControl(answerPanel);
       revealAnswerPanel(answerPanel);
     }
@@ -3296,9 +3304,9 @@ function shouldAutoOrganizeContext(studyAction) {
   return BHF_AUTO_ORGANIZED_CONTEXT_ACTIONS.has(studyAction?.type);
 }
 
-function renderDeterministicStudyResult(result) {
+function renderDeterministicStudyResult(result, options = {}) {
   if (result?.action === "word_study" && result?.metadata?.word_study) {
-    return renderWordStudyResult(result);
+    return renderWordStudyResult(result, options);
   }
   if (result?.presentation && result?.evidence_packet) {
     return renderContextPresentation(result);
@@ -3420,7 +3428,7 @@ function renderContextPresentation(result) {
   `;
 }
 
-function renderWordStudyResult(result) {
+function renderWordStudyResult(result, options = {}) {
   const study = result.metadata?.word_study || {};
   const status = String(result.status || study.status || "unknown");
   const source = String(result.source || "ckl_sqlite");
@@ -3445,6 +3453,7 @@ function renderWordStudyResult(result) {
           <h2>${escapeHtml(result.title || "Word Study")}</h2>
         </div>
         <div class="answer-actions">
+          ${options.showWordStudyBack ? `<button type="button" class="secondary word-study-back" data-word-study-back>Back to word list</button>` : ""}
           <button type="button" class="secondary answer-save" data-deterministic-save>Save Study</button>
           ${result.agent_fallback_allowed ? `<button type="button" class="secondary" data-deterministic-explain>Explain in Context</button>` : ""}
         </div>
@@ -3665,6 +3674,7 @@ function renderDeterministicSection(section) {
 
 function wireDeterministicStudyControls(answerPanel, result, studyAction) {
   wireWordStudyChoiceControls(answerPanel, studyAction);
+  wireWordStudyBackControl(answerPanel);
   answerPanel
     .querySelector("[data-deterministic-explain]")
     ?.addEventListener("click", async () => {
@@ -3716,13 +3726,17 @@ async function requestAIContextPresentation(studyAction, answerPanel) {
       "Could not organize the context result.",
     );
     if (answerPanel) {
-      answerPanel.innerHTML = renderDeterministicStudyResult(result);
+      answerPanel.innerHTML = renderDeterministicStudyResult(result, {
+        showWordStudyBack: wordStudyNavigationStack.length > 0,
+      });
       wireDeterministicStudyControls(answerPanel, result, studyAction);
       addMobileAnswerCloseControl(answerPanel);
     }
   } catch (error) {
     if (answerPanel) {
-      answerPanel.innerHTML = errorHtml(error.message || "Could not organize the context result.");
+      const message = error.message || "Could not organize the context result.";
+      answerPanel.innerHTML = `${errorHtml(message)}${wordStudyNavigationStack.length > 0 ? `<div class="answer-actions"><button type="button" class="secondary" data-word-study-back>Back to word list</button></div>` : ""}`;
+      wireWordStudyBackControl(answerPanel);
       addMobileAnswerCloseControl(answerPanel);
     }
   } finally {
@@ -3735,6 +3749,26 @@ async function requestAIContextPresentation(studyAction, answerPanel) {
   }
 }
 
+function wireWordStudyBackControl(answerPanel) {
+  answerPanel
+    ?.querySelector("[data-word-study-back]")
+    ?.addEventListener("click", () => restorePreviousWordStudy(answerPanel));
+}
+
+function restorePreviousWordStudy(answerPanel) {
+  const previous = wordStudyNavigationStack.pop();
+  if (!previous || !answerPanel) {
+    return;
+  }
+  latestDeterministicStudyResult = previous.result;
+  answerPanel.innerHTML = renderDeterministicStudyResult(previous.result, {
+    showWordStudyBack: wordStudyNavigationStack.length > 0,
+  });
+  wireDeterministicStudyControls(answerPanel, previous.result, previous.studyAction);
+  addMobileAnswerCloseControl(answerPanel);
+  revealAnswerPanel(answerPanel);
+}
+
 function wireWordStudyChoiceControls(answerPanel, studyAction) {
   answerPanel
     .querySelectorAll("[data-word-study-position]")
@@ -3744,6 +3778,12 @@ function wireWordStudyChoiceControls(answerPanel, studyAction) {
         if (!wordPosition) {
           return;
         }
+        if (latestDeterministicStudyResult) {
+          wordStudyNavigationStack.push({
+            result: latestDeterministicStudyResult,
+            studyAction: {...studyAction},
+          });
+        }
         await requestDeterministicStudyAction({
           ...studyAction,
           type: "word_study",
@@ -3752,7 +3792,7 @@ function wireWordStudyChoiceControls(answerPanel, studyAction) {
           surfaceForm: button.dataset.wordStudySurface || "",
           lemma: button.dataset.wordStudyLemma || "",
           strongsNumber: button.dataset.wordStudyStrongs || "",
-        });
+        }, {fromWordStudyChoice: true});
       });
     });
 }

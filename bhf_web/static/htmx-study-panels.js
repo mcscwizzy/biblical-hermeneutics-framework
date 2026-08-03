@@ -527,6 +527,12 @@ function initializeCanonicalBrowser() {
     });
   }
 
+  const backToResultsButton = document.querySelector("[data-canonical-browser-back]");
+  if (backToResultsButton && !backToResultsButton.dataset.bound) {
+    backToResultsButton.dataset.bound = "true";
+    backToResultsButton.addEventListener("click", handleCanonicalBrowserBack);
+  }
+
   document.addEventListener("bhf:workspace-tab-changed", handleCanonicalWorkspaceTabChanged);
   loadCanonicalBrowser({ selectFirst: true }).catch(() => {
     // The browser should fail quietly if the local CKL API is unavailable.
@@ -571,11 +577,26 @@ function handleCanonicalBrowserHome(event) {
   });
 }
 
+function handleCanonicalBrowserBack(event) {
+  event.preventDefault();
+  const resultsList = document.querySelector("[data-canonical-browser-results]");
+  if (!resultsList) {
+    return;
+  }
+  const selectedId = normalizeCanonicalObjectId(currentCanonicalBrowser.selectedObjectId || "");
+  const selected = Array.from(resultsList.querySelectorAll("[data-canonical-object-id]")).find(
+    (item) => normalizeCanonicalObjectId(item.dataset.canonicalObjectId || "") === selectedId,
+  ) || resultsList.querySelector("[data-canonical-object-id]");
+  selected?.scrollIntoView({behavior: "smooth", block: "nearest"});
+  selected?.focus({preventScroll: true});
+}
+
 async function loadCanonicalBrowser(options = {}) {
   const form = document.querySelector("[data-canonical-browser-form]");
   const resultsList = document.querySelector("[data-canonical-browser-results]");
   const summary = document.querySelector("[data-canonical-browser-summary]");
   const count = document.querySelector("[data-canonical-browser-count]");
+  const backToResultsButton = document.querySelector("[data-canonical-browser-back]");
   if (!resultsList) {
     return;
   }
@@ -648,6 +669,9 @@ async function loadCanonicalBrowser(options = {}) {
   } else {
     currentCanonicalBrowser.selectedObjectId = null;
     renderCanonicalBrowserDetail(null);
+  }
+  if (backToResultsButton) {
+    backToResultsButton.hidden = currentCanonicalBrowser.results.length === 0;
   }
 }
 
@@ -806,6 +830,7 @@ function renderCanonicalBrowserDetail(object, options = {}) {
   const editor = document.querySelector("[data-canonical-detail-editor]");
   const curation = document.querySelector("[data-canonical-detail-curation]");
   const addNote = document.querySelector("[data-canonical-detail-add-note]");
+  const backToResultsButton = document.querySelector("[data-canonical-browser-back]");
   if (!title || !summary || !status || !badges || !reason || !scripture || !related || !sources) {
     return;
   }
@@ -849,6 +874,9 @@ function renderCanonicalBrowserDetail(object, options = {}) {
       addNote.disabled = true;
       delete addNote.dataset.canonicalLinkNote;
     }
+    if (backToResultsButton) {
+      backToResultsButton.hidden = true;
+    }
     if (options.error) {
       reason.hidden = false;
       reason.textContent = options.error;
@@ -871,6 +899,9 @@ function renderCanonicalBrowserDetail(object, options = {}) {
   if (addNote) {
     addNote.disabled = false;
     addNote.dataset.canonicalLinkNote = normalizedId;
+  }
+  if (backToResultsButton) {
+    backToResultsButton.hidden = false;
   }
 
   appendCanonicalMetadata(badges, "Object type", formatCanonicalLabel(object.type || "unknown"));

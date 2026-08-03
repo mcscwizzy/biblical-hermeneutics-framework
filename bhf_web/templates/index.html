@@ -34,9 +34,9 @@
   <script src="{{ static_asset('/model-settings.js') }}?v=20260803a" defer></script>
   <script src="{{ static_asset('/api/http.js') }}?v=20260729e" defer></script>
   <script src="{{ static_asset('/htmx-status.js') }}" defer></script>
-  <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260729c" defer></script>
+  <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260803d" defer></script>
   <script src="{{ static_asset('/htmx-search.js') }}" defer></script>
-  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260803b" defer></script>
+  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260803c" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260803c" defer></script>
   {% if not test_mode %}
     <link rel="stylesheet" href="{{ static_asset('/vendor/leaflet/leaflet.css') }}">
@@ -417,7 +417,10 @@
                         <p class="canonical-browser-kicker">Selected object</p>
                         <h3 data-canonical-detail-title>Select an object</h3>
                       </div>
-                      <span class="canonical-status-chip" data-canonical-detail-status>--</span>
+                      <div class="canonical-browser-detail-heading-actions">
+                        <button type="button" class="secondary" data-canonical-browser-back hidden>Back to results</button>
+                        <span class="canonical-status-chip" data-canonical-detail-status>--</span>
+                      </div>
                     </div>
                     <p class="canonical-browser-detail-summary" data-canonical-detail-summary>Search results will populate here.</p>
                     <div class="canonical-browser-detail-reason" data-canonical-detail-reason hidden></div>
