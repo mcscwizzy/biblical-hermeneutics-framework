@@ -752,7 +752,7 @@ function appSectionFromWorkspaceTab(tabId) {
   if (!tabId) {
     return null;
   }
-  if (tabId === "ask" || tabId === "context") {
+  if (tabId === "ask" || tabId === "lexicon" || tabId === "context") {
     return "ask";
   }
   if (tabId === "notes" || tabId === "highlights") {
@@ -771,7 +771,7 @@ function appSectionToWorkspaceTab(sectionId) {
   const normalized = normalizeAppSection(sectionId);
   if (normalized === "ask" || normalized === "bible") {
     const currentWorkspaceTab = getCurrentWorkspaceTab();
-    if (currentWorkspaceTab === "ask" || currentWorkspaceTab === "context") {
+    if (currentWorkspaceTab === "ask" || currentWorkspaceTab === "lexicon" || currentWorkspaceTab === "context") {
       return currentWorkspaceTab;
     }
     return lastAskWorkspaceTab || "ask";
@@ -800,7 +800,7 @@ function appSectionToWorkspaceTab(sectionId) {
 }
 
 function rememberWorkspaceSubtab(tabId) {
-  if (tabId === "ask" || tabId === "context") {
+  if (tabId === "ask" || tabId === "lexicon" || tabId === "context") {
     lastAskWorkspaceTab = tabId;
   } else if (tabId === "notes" || tabId === "highlights") {
     lastNotesWorkspaceTab = tabId;
@@ -1160,7 +1160,7 @@ function closeReaderControlsSheet() {
 function workspaceTabsForSection(sectionId) {
   const normalized = normalizeAppSection(sectionId);
   if (normalized === "ask" || normalized === "bible") {
-    return ["ask", "context"];
+    return ["ask", "lexicon", "context"];
   }
   if (normalized === "notes") {
     return ["notes", "highlights"];
@@ -2311,21 +2311,26 @@ function deviceBookName(bookElement) {
 }
 
 async function openTranslationImportDialog() {
-  if (!translationCatalogState) {
-    translationCatalogState = await loadTranslationState("/api/translations/installed");
-  }
-  const dialog = ensureTranslationImportDialog();
-  renderTranslationImportDialogDetails();
-  dialog.hidden = false;
   document.body.classList.add("translation-selector-open");
-  const nameInput = dialog.querySelector("[data-translation-import-name]");
-  if (nameInput) {
-    nameInput.value = "";
-    nameInput.focus();
-  }
-  const fileInput = dialog.querySelector("[data-translation-import-file]");
-  if (fileInput) {
-    fileInput.value = "";
+  try {
+    if (!translationCatalogState) {
+      translationCatalogState = await loadTranslationState("/api/translations/installed");
+    }
+    const dialog = ensureTranslationImportDialog();
+    renderTranslationImportDialogDetails();
+    dialog.hidden = false;
+    const nameInput = dialog.querySelector("[data-translation-import-name]");
+    if (nameInput) {
+      nameInput.value = "";
+      nameInput.focus();
+    }
+    const fileInput = dialog.querySelector("[data-translation-import-file]");
+    if (fileInput) {
+      fileInput.value = "";
+    }
+  } catch (error) {
+    document.body.classList.remove("translation-selector-open");
+    throw error;
   }
 }
 
@@ -3174,13 +3179,16 @@ function applyStudyActionContext(studyAction) {
 }
 
 async function requestDeterministicStudyAction(studyAction) {
-  activateWorkspaceTab("ask");
+  const isWordStudy = studyAction.type === "word_study";
+  activateWorkspaceTab(isWordStudy ? "lexicon" : "ask");
   setFormValue("ask_mode", "");
   setFormValue("study_action", "");
   setFormValue("deterministic_fact_packet", "");
   setMapContextValue("");
 
-  const answerPanel = document.querySelector("#answer-panel");
+  const answerPanel = document.querySelector(
+    isWordStudy ? "#lexicon-panel" : "#answer-panel",
+  );
   const statusPanel = document.querySelector("#status-panel");
   activeLiveAnswerPanel = answerPanel;
   latestJobId = null;
@@ -3419,7 +3427,6 @@ function renderWordStudyResult(result) {
         <div class="answer-actions">
           <button type="button" class="secondary answer-save" data-deterministic-save>Save Study</button>
           ${result.agent_fallback_allowed ? `<button type="button" class="secondary" data-deterministic-explain>Explain in Context</button>` : ""}
-          <button type="button" class="secondary" data-deterministic-ask>Ask a Question</button>
         </div>
       </header>
       ${bodyHtml}
@@ -3618,14 +3625,15 @@ function renderDeterministicSection(section) {
   if (!items.length) {
     return "";
   }
-  const isThemeSection = String(section.title || "")
-    .trim()
-    .toLowerCase() === "themes";
-  const sectionClass = isThemeSection
-    ? "deterministic-section deterministic-theme-section"
+  const cardSectionTitles = new Set(["themes", "people", "places", "cross references"]);
+  const sectionTitle = String(section.title || "").trim().toLowerCase();
+  const isCardSection = cardSectionTitles.has(sectionTitle);
+  const sectionSlug = sectionTitle.replace(/\s+/g, "-");
+  const sectionClass = isCardSection
+    ? `deterministic-section deterministic-${sectionSlug}-section`
     : "deterministic-section";
-  const listClass = isThemeSection
-    ? "deterministic-item-list deterministic-theme-list"
+  const listClass = isCardSection
+    ? "deterministic-item-list deterministic-card-list"
     : "deterministic-item-list";
   return `
     <section class="${sectionClass}">

@@ -27,12 +27,12 @@
   </script>
   <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260802c">
   <script src="{{ static_asset('/offline/db.js') }}" defer></script>
-  <script src="{{ static_asset('/model-settings.js') }}?v=20260802b" defer></script>
+  <script src="{{ static_asset('/model-settings.js') }}?v=20260803a" defer></script>
   <script src="{{ static_asset('/api/http.js') }}?v=20260729e" defer></script>
   <script src="{{ static_asset('/htmx-status.js') }}" defer></script>
   <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260729c" defer></script>
   <script src="{{ static_asset('/htmx-search.js') }}" defer></script>
-  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260729d" defer></script>
+  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260803b" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260802c" defer></script>
   {% if not test_mode %}
     <link rel="stylesheet" href="{{ static_asset('/vendor/leaflet/leaflet.css') }}">
@@ -164,6 +164,7 @@
           <div class="workspace-toolbar">
             <div class="workspace-tab-bar" data-workspace-tab-bar role="tablist" aria-label="Workspace tabs">
               <button type="button" class="workspace-tab is-ask" id="workspace-tab-ask" role="tab" aria-selected="true" aria-controls="workspace-pane-ask" data-workspace-tab="ask" data-testid="ask-tab">Ask</button>
+              <button type="button" class="workspace-tab" id="workspace-tab-lexicon" role="tab" aria-selected="false" aria-controls="workspace-pane-lexicon" data-workspace-tab="lexicon" tabindex="-1" data-testid="lexicon-tab">Lexicon</button>
               <button type="button" class="workspace-tab" id="workspace-tab-context" role="tab" aria-selected="false" aria-controls="workspace-pane-context" data-workspace-tab="context" tabindex="-1" data-testid="context-tab">Context</button>
               <button type="button" class="workspace-tab" id="workspace-tab-notes" role="tab" aria-selected="false" aria-controls="workspace-pane-notes" data-workspace-tab="notes" tabindex="-1" data-testid="notes-tab">Notes</button>
               <button type="button" class="workspace-tab" id="workspace-tab-highlights" role="tab" aria-selected="false" aria-controls="workspace-pane-highlights" data-workspace-tab="highlights" tabindex="-1" data-testid="highlights-tab">Highlights</button>
@@ -311,6 +312,12 @@
               </section>
 
               <section id="answer-panel" class="answer-panel" aria-live="polite" data-testid="answer-output"></section>
+            </section>
+
+            <section class="workspace-pane" id="workspace-pane-lexicon" role="tabpanel" aria-labelledby="workspace-tab-lexicon" data-workspace-pane="lexicon" hidden>
+              <section id="lexicon-panel" class="answer-panel lexicon-panel" aria-live="polite" data-testid="lexicon-output">
+                <p class="empty">Use Word Study on a verse word to open its lexicon meanings here.</p>
+              </section>
             </section>
 
             <section class="workspace-pane" id="workspace-pane-context" role="tabpanel" aria-labelledby="workspace-tab-context" data-workspace-pane="context" hidden>
@@ -668,7 +675,6 @@
           <button type="button" role="menuitem" data-context-action="fulfillment_nt">Fulfillment in the NT</button>
           <button type="button" role="menuitem" data-context-action="compare_translations">Compare Translations</button>
           <button type="button" role="menuitem" data-context-action="timeline">Timeline</button>
-          <button type="button" role="menuitem" data-context-action="open_map_panel">Maps</button>
         </div>
       </div>
       <div class="context-menu-section" role="group">

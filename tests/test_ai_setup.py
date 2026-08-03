@@ -58,6 +58,12 @@ class AISetupConfigurationTests(unittest.TestCase):
         self.assertIn("isAuthCallbackUrl", service_worker)
         self.assertIn("event.respondWith(fetch(event.request))", service_worker)
 
+    def test_initial_ai_setup_does_not_cover_translation_workflows(self):
+        model_settings = (ROOT / "bhf_web" / "static" / "model-settings.js").read_text(encoding="utf-8")
+
+        self.assertIn('document.body?.classList.contains("translation-selector-open")', model_settings)
+        self.assertIn('return false;', model_settings)
+
 
 if __name__ == "__main__":
     unittest.main()

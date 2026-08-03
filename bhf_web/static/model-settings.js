@@ -536,12 +536,19 @@
   }
 
   function showSetup(message = "") {
+    // The reader can open a translation workflow before async model settings
+    // initialization finishes. Do not cover that workflow with the first-run
+    // AI dialog; the user can open AI setup from the settings controls later.
+    if (document.body?.classList.contains("translation-selector-open")) {
+      return false;
+    }
     const dialog = document.querySelector("[data-ai-setup]");
     if (!dialog) return;
     const status = dialog.querySelector("[data-ai-setup-status]");
     if (status) status.textContent = message;
     if (typeof dialog.showModal === "function" && !dialog.open) dialog.showModal();
     else dialog.hidden = false;
+    return true;
   }
 
   function closeSetup() {
