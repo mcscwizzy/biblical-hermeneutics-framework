@@ -1,84 +1,89 @@
-# Testing in BHF
+# Testing BHF
 
-BHF has two tiers of testing. The guiding rule: **we test method, never
-doctrine.** A test never checks whether the model reached a particular
-theological conclusion — only whether it interpreted *responsibly*. This keeps
-the test suite denomination-neutral and works on any model.
+BHF tests implementation behavior and responsible interpretive method, not a
+required doctrinal conclusion.
 
-## Tier A — Structural validation (automated, CI)
+## Run the test suite
 
-`tools/validate.py` checks every module against
-[`../docs/module-spec.md`](../docs/module-spec.md): frontmatter schema,
-id/type/folder agreement, required sections and ordering, dependency and
-cross-reference resolution, acyclicity, and token-estimate plausibility.
+Create the development environment from the
+[local build guide](../docs/local-development.md), then run:
+
+```bash
+python -m pytest
+```
+
+Run a focused file or directory while iterating:
+
+```bash
+python -m pytest tests/test_runner.py
+python -m pytest tests/canonical_library/
+```
+
+The suite includes agent, adapter, reference, prompt, validation, web/API, PWA,
+map, translation, storage, CKL schema/retrieval/content, CLI, and Docker Compose
+coverage. Tests should use deterministic adapters and fixtures rather than live
+provider calls.
+
+## Structural framework validation
+
+`tools/validate.py` checks module frontmatter, file/id/type agreement, required
+sections and ordering, dependency and cross-reference resolution, acyclicity,
+and token-estimate plausibility:
 
 ```bash
 python tools/validate.py framework/
 ```
 
-Runs on every pull request via `.github/workflows/validate.yml`.
+This is a required CI gate in `.github/workflows/validate.yml`.
 
-## Tier B — Behavioral evaluation (rubric-based)
+## Behavioral evaluation
 
-A behavioral test is a *(passage + composed module set + question)* fixture in
-[`prompts/`](prompts/), scored against a **rubric** in [`rubrics/`](rubrics/).
-Rubrics list observable interpretive behaviors (e.g., "identified genre before
-interpreting," "labeled speculation," "did not fabricate a citation," "presented
-more than one responsible view on a debated passage").
+Behavioral fixtures live in [`prompts/`](prompts/) and are scored against
+[`rubrics/`](rubrics/). Rubrics check observable method—for example, handling
+genre, distinguishing evidence from inference, qualifying uncertainty, and not
+fabricating sources—without requiring one theological conclusion.
 
-### How to run one (manually, any model)
+Manual workflow:
 
-1. Compose the modules named in the fixture:
-   `python tools/compose.py --modules book.romans`
-2. Paste that prompt as the system prompt into any model (Claude, ChatGPT,
-   Gemini, or a local model in Ollama / LM Studio / Open WebUI).
+1. Compose the modules named by a fixture.
+2. Use the composed text as a model system prompt.
 3. Send the fixture's user prompt.
-4. Score the response against each rubric criterion (met / not met).
+4. Score the response against the linked rubric.
 
-Because rubrics score process, the same fixture can be run across many models to
-compare how well each follows the method — independent of any AI vendor.
+`.github/workflows/eval.yml` provides optional manual-dispatch automation. It is
+not part of required CI and requires an explicitly configured model provider.
+See [Evaluation](../docs/evals.md) for the local deterministic evaluator.
 
-### Optional automation
+## Browser tests
 
-`.github/workflows/eval.yml` is a manual-dispatch workflow for running these
-evaluations against a model API. It is **not** part of required CI, so the test
-suite never depends on API keys or a specific vendor.
+`tests/test_web_ui_selenium.py` contains direct browser smoke coverage and is
+skipped unless Selenium plus a compatible Firefox/geckodriver setup are present.
 
-## Browser Smoke Tests
-
-`tests/test_web_ui_selenium.py` covers browser-level smoke tests for the
-workspace drawer and map browse flow. They are skipped unless `selenium` is
-installed and a compatible Firefox + `geckodriver` setup is present locally.
-
-Install the dependency with:
+The stable GUI regression suite is in `tests/gui/` and uses `data-testid` hooks,
+isolated databases, and `BHF_TEST_MODE=true` responses:
 
 ```bash
-pip install -r tools/requirements.txt -r requirements-gui.txt
+python -m pytest tests/gui -m "not slow"
 ```
 
-## GUI Regression Suite
-
-The `tests/gui/` suite is the stable Selenium harness for the BHF web UI.
-It uses `data-testid` hooks, isolated study databases, and deterministic
-`BHF_TEST_MODE=true` Ask responses so browser tests do not depend on a live
-model.
-
-Recommended local setup:
+The reproducible container path is:
 
 ```bash
-pip install -r tools/requirements.txt -r requirements-gui.txt
-pytest tests/gui -m "not slow"
+docker compose -f docker-compose.yml -f docker-compose.selenium.yml up \
+  --build --abort-on-container-exit --exit-code-from gui-tests gui-tests
 ```
 
-Guardrails for future UI work:
+Clean it up with:
 
-- Any new major UI control should get a `data-testid`.
-- Any new tab or panel should get at least one smoke test.
-- Any JS-heavy behavior should get a regression test.
-- Any LLM-dependent UI should support deterministic test mode.
-- Failed Selenium tests should save screenshots and browser logs.
+```bash
+docker compose -f docker-compose.yml -f docker-compose.selenium.yml down -v
+```
 
-## `golden/`
+Failed Selenium tests should retain screenshots and browser logs. New major UI
+controls should have stable `data-testid` hooks and regression coverage.
 
-Reference annotations of good and poor responses for selected fixtures, used to
-calibrate human scoring. (Populated as the suite grows.)
+## Golden annotations
+
+[`golden/`](golden/) stores reference annotations used to calibrate human rubric
+scoring. They document which method criteria a response met; they are not an
+answer key for theological conclusions.

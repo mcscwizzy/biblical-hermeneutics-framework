@@ -32,6 +32,9 @@ Use this index to find the shortest path for your task.
 
 ## Build and maintain data
 
+- [Tooling reference](../tools/README.md).
+- [Testing guide](../tests/README.md).
+- [Examples and sample configurations](../examples/README.md).
 - [Compile the lexicon](compile-lexicon.md).
 - [Lexicon source policy](lexicon-sources.md).
 - [Translation management](translations.md).

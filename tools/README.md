@@ -1,20 +1,20 @@
 # BHF Tooling
 
-Light, optional Python tooling (MIT-licensed). The Markdown modules are the
-product; these scripts just validate and assemble them. Python 3.9+.
+Python 3.9+ utilities for framework validation and composition, CKL authoring
+and audits, lexical imports, storage benchmarks, and local evaluation. Run them
+from the repository root so relative paths resolve consistently.
 
-```bash
-pip install -r tools/requirements.txt
-```
-
-On macOS/Linux with a system-managed Python you may hit a PEP 668
-"externally-managed-environment" error. Use a virtual environment:
+Use a virtual environment:
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r tools/requirements.txt
+python -m pip install --upgrade pip
+python -m pip install -r tools/requirements.txt
 ```
+
+See the [local build guide](../docs/local-development.md) for the complete
+application setup and test workflow.
 
 ## `validate.py`
 
