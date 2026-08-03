@@ -3618,10 +3618,19 @@ function renderDeterministicSection(section) {
   if (!items.length) {
     return "";
   }
+  const isThemeSection = String(section.title || "")
+    .trim()
+    .toLowerCase() === "themes";
+  const sectionClass = isThemeSection
+    ? "deterministic-section deterministic-theme-section"
+    : "deterministic-section";
+  const listClass = isThemeSection
+    ? "deterministic-item-list deterministic-theme-list"
+    : "deterministic-item-list";
   return `
-    <section>
+    <section class="${sectionClass}">
       <h3>${escapeHtml(section.title || "Section")}</h3>
-      <ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+      <ul class="${listClass}">${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
     </section>
   `;
 }

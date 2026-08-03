@@ -234,6 +234,36 @@ button.danger {
   margin: 0 0 0.85rem;
 }
 
+.deterministic-section {
+  margin-top: 16px;
+}
+
+.deterministic-section h3 {
+  margin: 0 0 8px;
+}
+
+.deterministic-item-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.deterministic-theme-list {
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.deterministic-theme-list li {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-alt);
+  color: var(--page-text);
+  line-height: 1.4;
+}
+
 .context-presentation {
   display: grid;
   gap: 16px;
@@ -250,9 +280,11 @@ button.danger {
 
 .context-overview {
   padding: 14px 16px;
-  border-left: 4px solid #3f7d57;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--success-text);
   border-radius: 8px;
-  background: #f3f9f4;
+  background: var(--success-bg);
+  color: var(--page-text);
 }
 
 .context-overview p,
@@ -288,33 +320,34 @@ button.danger {
 
 .context-later-connections {
   padding: 14px;
-  border: 1px solid #d8c995;
+  border: 1px solid var(--border-strong);
   border-radius: 10px;
-  background: #fffaf0;
+  background: var(--warning-bg);
+  color: var(--page-text);
 }
 
 .context-later-note {
   margin-bottom: 10px;
-  color: #6d5b28;
+  color: var(--warning-text);
   font-size: 0.9rem;
 }
 
 .context-later-card {
-  border-color: #e2d6ae;
-  background: rgba(255, 255, 255, 0.72);
+  border-color: var(--border);
+  background: var(--surface);
 }
 
 .context-reference {
   margin: 8px 0 0;
-  color: #6d5b28;
+  color: var(--warning-text);
   font-weight: 700;
 }
 
 .context-caution {
   padding: 12px 14px;
   border-radius: 8px;
-  color: #6d4f19;
-  background: #fff4df;
+  color: var(--warning-text);
+  background: var(--warning-bg);
 }
 
 .context-study-details {
@@ -511,10 +544,10 @@ code {
   z-index: 20;
   min-width: 180px;
   max-width: calc(100vw - 16px);
-  border: 1px solid #b9c2cc;
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 5px;
-  background: #fff;
+  background: var(--surface);
   box-shadow: 0 12px 28px rgb(20 31 43 / 18%);
   overflow: visible;
 }
@@ -532,7 +565,7 @@ code {
   width: 100%;
   border-radius: 5px;
   padding: 7px 10px;
-  color: #1d252d;
+  color: var(--page-text);
   background: transparent;
   text-align: left;
   font-weight: 650;
@@ -550,7 +583,7 @@ code {
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
-  color: #52616f;
+  color: var(--page-muted);
   font-size: 1.15rem;
   line-height: 1;
 }
@@ -564,10 +597,10 @@ code {
   max-width: calc(100vw - 32px);
   max-height: min(72vh, 520px);
   overflow-y: auto;
-  border: 1px solid #b9c2cc;
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 5px;
-  background: #fff;
+  background: var(--surface);
   box-shadow: 0 12px 28px rgb(20 31 43 / 18%);
 }
 
@@ -583,19 +616,19 @@ code {
 
 .context-menu-section:hover > .context-menu-trigger,
 .context-menu-section.is-open > .context-menu-trigger {
-  color: #fff;
-  background: #245b82;
+  color: var(--accent-text);
+  background: var(--accent-soft);
 }
 
 .context-menu-section:hover > .context-menu-trigger::after,
 .context-menu-section.is-open > .context-menu-trigger::after {
-  color: #fff;
+  color: var(--accent-text);
 }
 
 .context-menu button:hover,
 .context-menu button:focus {
-  color: #fff;
-  background: #245b82;
+  color: var(--accent-text);
+  background: var(--accent-soft);
 }
 
 .reader-page {
@@ -1009,6 +1042,17 @@ html[data-theme="dark"] .highlight-item {
 
 html[data-theme="dark"] .context-menu-trigger::after {
   color: var(--page-muted);
+}
+
+html[data-theme="dark"] .context-menu button {
+  color: var(--page-text);
+  background: transparent;
+}
+
+html[data-theme="dark"] .context-menu button:hover,
+html[data-theme="dark"] .context-menu button:focus {
+  color: var(--accent-text);
+  background: var(--accent-soft);
 }
 
 html[data-theme="dark"] .workspace-tab[aria-selected="true"] {
