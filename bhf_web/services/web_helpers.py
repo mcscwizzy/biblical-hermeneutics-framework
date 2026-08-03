@@ -10,10 +10,9 @@ from typing import Any
 
 from fastapi import Request
 
-from bhf_agent.bible import BibleError, compare_translation_passages, build_selected_passage_context, geography_for_book, testament_for_book, timeline_for_book, verse_range_reference
+from bhf_agent.bible import BibleError, compare_translation_passages, build_selected_passage_context, geography_for_book, load_translation_bible, testament_for_book, timeline_for_book, verse_range_reference
 from bhf_agent.curation import CURATION_COLLECTIONS, list_curation_records
 from bhf_agent.config import ConfigError
-from bhf_agent.profiles import ProfileLoader
 from bhf_agent.runner import BHFAgent
 from bhf_agent.study_db import StudyDataError, record_study_action
 from bhf_agent.study_actions import compact_fact_packet
@@ -173,38 +172,6 @@ def saved_study_payload_from_request(payload: dict[str, Any], job_store: Any = N
     }
 
 
-def map_study_payload_from_request(payload: dict[str, Any]) -> dict[str, Any]:
-    view_state = payload.get("map_view_state") or {}
-    selected_layers = payload.get("selected_layers") or []
-    if isinstance(selected_layers, str):
-        try:
-            selected_layers = json.loads(selected_layers)
-        except json.JSONDecodeError:
-            selected_layers = [selected_layers]
-    if isinstance(view_state, str):
-        try:
-            view_state = json.loads(view_state)
-        except json.JSONDecodeError:
-            view_state = {}
-    return {
-        "id": payload.get("id"),
-        "book": payload.get("book"),
-        "chapter": payload.get("chapter"),
-        "start_verse": payload.get("start_verse") or payload.get("verse_start"),
-        "end_verse": payload.get("end_verse") or payload.get("verse_end"),
-        "passage_reference": payload.get("passage_reference"),
-        "selected_place_id": payload.get("selected_place_id"),
-        "selected_route_id": payload.get("selected_route_id"),
-        "selected_layer_id": payload.get("selected_layer_id"),
-        "selected_archaeology_id": payload.get("selected_archaeology_id"),
-        "selected_manuscript_id": payload.get("selected_manuscript_id"),
-        "selected_layers": selected_layers,
-        "map_view_state": view_state,
-        "generated_summary": payload.get("generated_summary"),
-        "user_notes": payload.get("user_notes"),
-    }
-
-
 def map_note_payload_from_request(payload: dict[str, Any]) -> dict[str, Any]:
     return {
         "id": payload.get("id"),
@@ -227,6 +194,33 @@ def job_error_message(job: Any) -> str:
     return getattr(job, "error", None) or "Request failed."
 
 
+FATAL_ERROR_CATEGORIES = {
+    "provider_timeout",
+    "provider_connection",
+    "provider_failure",
+    "response_extraction",
+    "response_normalization",
+    "response_validation",
+    "response_repair",
+    "unexpected_internal_error",
+}
+
+
+def result_has_fatal_error(result: Any) -> bool:
+    """Return whether an agent result must be rendered as a failed request."""
+
+    fatal_errors = getattr(result, "fatal_errors", None)
+    if fatal_errors is not None:
+        return bool(fatal_errors)
+
+    # Compatibility for result-like objects from older integrations: a safe
+    # answer wins over a legacy diagnostic-only ``errors`` collection.
+    answer_text = str(getattr(result, "answer_text", "") or "").strip()
+    if answer_text:
+        return bool(getattr(result, "fatal", False))
+    return bool(getattr(result, "errors", None))
+
+
 def agent_error_status_code(result: Any) -> int:
     """Map controlled agent failures to an HTTP status without exposing internals."""
 
@@ -234,9 +228,23 @@ def agent_error_status_code(result: Any) -> int:
     category = str(metadata.get("error_category") or "").strip().lower()
     pipeline = metadata.get("pipeline") if isinstance(metadata.get("pipeline"), dict) else {}
     category = category or str(pipeline.get("error_category") or "").strip().lower()
-    errors = " ".join(str(error) for error in (getattr(result, "errors", None) or []))
+    errors = " ".join(
+        str(error)
+        for error in (
+            getattr(result, "fatal_errors", None)
+            if getattr(result, "fatal_errors", None) is not None
+            else getattr(result, "errors", None)
+        )
+        or []
+    )
     lowered = f"{category} {errors}".lower()
-    if category == "invalid_model_output" or any(
+    if category in {
+        "response_extraction",
+        "response_normalization",
+        "response_validation",
+        "response_repair",
+        "invalid_model_output",
+    } or any(
         marker in lowered
         for marker in (
             "invalid model output",
@@ -248,6 +256,8 @@ def agent_error_status_code(result: Any) -> int:
         return 422
     if category == "provider_timeout" or "timed out" in lowered or "timeout" in lowered:
         return 504
+    if category == "unexpected_internal_error":
+        return 500
     return 502
 
 
@@ -318,13 +328,6 @@ def inline_markdown(text: str) -> str:
     escaped = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", escaped)
     escaped = re.sub(r"\*([^*]+)\*", r"<em>\1</em>", escaped)
     return escaped
-
-
-def available_profiles(selected: str) -> list[str]:
-    profiles = ProfileLoader().available_profiles()
-    if selected and selected not in profiles:
-        profiles.append(selected)
-    return sorted(profiles)
 
 
 def format_reference(reference: Any) -> str:
@@ -505,6 +508,14 @@ def reader_context_from_form(form: dict[str, Any] | Any) -> dict[str, Any] | Non
         question_scope == GENERAL_QUESTION_SCOPE and ask_mode not in SPECIAL_QUESTION_MODES
     ):
         return None
+    translation_id = reader_translation_metadata(form)["translation_id"]
+    try:
+        translation_data = load_translation_bible(translation_id)
+    except ValueError:
+        # Imported translations are device-only by design. Their selected text
+        # can still be sent with an AI request, while chapter context falls
+        # back to the bundled ASV dataset on the server.
+        translation_data = None
     context = build_selected_passage_context(
         str(form.get("reader_book") or ""),
         str(form.get("reader_chapter") or ""),
@@ -512,8 +523,9 @@ def reader_context_from_form(form: dict[str, Any] | Any) -> dict[str, Any] | Non
         optional_form_value(form, "reader_end_verse"),
         optional_form_value(form, "reader_selected_text"),
         include_chapter_context=True,
+        data=translation_data,
     )
-    context.update(reader_translation_metadata(form))
+    context.update({"translation_id": translation_id, **reader_translation_metadata(form)})
     return context
 
 

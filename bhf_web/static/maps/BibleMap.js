@@ -2,22 +2,14 @@ import { renderMapMarkerPopup } from "./MapMarkerPopup.js";
 import {
   archaeologyMarkerStyle,
   entityMarkerIcon,
-  historicalLayerStyle,
-  journeySegmentStyle,
-  journeyStopIcon,
   manuscriptMarkerStyle,
-  politicalContextStyle,
   referenceLayerStyle,
   referencePointIcon,
   routeStyle,
 } from "./MapStyles.js";
 import {
   renderArchaeologyPopup,
-  renderHistoricalLayerPopup,
-  renderJourneySegmentPopup,
-  renderJourneyStopPopup,
   renderManuscriptPopup,
-  renderPoliticalContextPopup,
   renderReferenceFeaturePopup,
   renderRoutePopup,
 } from "./MapPopups.js";
@@ -80,13 +72,6 @@ function createTestMapController(container) {
     setRouteVisibility() {},
     setArchaeologyVisibility() {},
     setManuscriptVisibility() {},
-    setHistoricalLayerVisibility() {},
-    setHistoricalLayers() {},
-    setPoliticalContextLayerVisibility() {},
-    setJourney() {},
-    setJourneyVisibility() {},
-    setSelectedJourneyStop() {},
-    setSelectedJourneySegment() {},
     setReferenceLayers() {},
     setReferenceLayerVisibility() {},
     setSelectedReferenceFeature() {},
@@ -132,27 +117,6 @@ export function createBibleMap(container, markers, options = {}) {
   let archaeologyItems = Array.isArray(options.archaeologyMarkers) ? options.archaeologyMarkers.slice() : [];
   let manuscriptItems = Array.isArray(options.manuscriptMarkers) ? options.manuscriptMarkers.slice() : [];
   let routeItems = Array.isArray(options.routes) ? options.routes.slice() : [];
-  const historicalLayerGroup = window.L.layerGroup();
-  const historicalLayers = new Map();
-  const historicalVisibleIds = new Set(
-    Array.isArray(options.historicalLayerIds) ? options.historicalLayerIds.map((value) => String(value)) : []
-  );
-  let historicalItems = Array.isArray(options.historicalLayers) ? options.historicalLayers.slice() : [];
-  const politicalContextLayerGroup = window.L.layerGroup();
-  const politicalContextLayers = new Map();
-  const politicalContextVisibleIds = new Set(
-    Array.isArray(options.politicalContextLayerIds)
-      ? options.politicalContextLayerIds.map((value) => String(value))
-      : []
-  );
-  let politicalContextItems = Array.isArray(options.politicalContextLayers) ? options.politicalContextLayers.slice() : [];
-  const journeyLayer = window.L.layerGroup();
-  const journeyStopLayers = new Map();
-  const journeySegmentLayers = new Map();
-  let journeyItem = options.journey || null;
-  let journeyVisibility = Boolean(options.journeyVisibility);
-  let selectedJourneyStopId = String(options.selectedJourneyStopId || "");
-  let selectedJourneySegmentId = String(options.selectedJourneySegmentId || "");
   const referenceLayerGroup = window.L.layerGroup();
   const referenceFeatureLayers = new Map();
   const referenceVisibleLayerIds = new Set(
@@ -198,54 +162,6 @@ export function createBibleMap(container, markers, options = {}) {
     return manuscriptBoundsList;
   }
 
-  function currentHistoricalBounds() {
-    const boundsList = [];
-    for (const historical of historicalLayers.values()) {
-      if (!historicalVisibleIds.has(historical.item.id)) {
-        continue;
-      }
-      const layerBounds = historical.layer.getBounds ? historical.layer.getBounds() : null;
-      if (layerBounds && layerBounds.isValid()) {
-        boundsList.push(layerBounds);
-      }
-    }
-    return boundsList;
-  }
-
-  function currentPoliticalContextBounds() {
-    const boundsList = [];
-    for (const politicalContext of politicalContextLayers.values()) {
-      if (!politicalContextVisibleIds.has(politicalContext.item.id)) {
-        continue;
-      }
-      const layerBounds = politicalContext.layer.getBounds ? politicalContext.layer.getBounds() : null;
-      if (layerBounds && layerBounds.isValid()) {
-        boundsList.push(layerBounds);
-      }
-    }
-    return boundsList;
-  }
-
-  function currentJourneyBounds() {
-    const boundsList = [];
-    for (const layer of journeyStopLayers.values()) {
-      const center = layer.getLatLng ? layer.getLatLng() : null;
-      if (center) {
-        boundsList.push([center.lat, center.lng]);
-      }
-    }
-    for (const layer of journeySegmentLayers.values()) {
-      const layerBounds = layer.getBounds ? layer.getBounds() : null;
-      if (layerBounds && layerBounds.isValid()) {
-        boundsList.push(
-          [layerBounds.getSouthWest().lat, layerBounds.getSouthWest().lng],
-          [layerBounds.getNorthEast().lat, layerBounds.getNorthEast().lng]
-        );
-      }
-    }
-    return boundsList;
-  }
-
   function currentReferenceBounds() {
     const boundsList = [];
     for (const [key, entry] of referenceFeatureLayers.entries()) {
@@ -278,62 +194,6 @@ export function createBibleMap(container, markers, options = {}) {
       }
     } else if (map.hasLayer(routeLayer)) {
       map.removeLayer(routeLayer);
-    }
-  }
-
-  function applyHistoricalVisibility() {
-    const anyVisible = Array.from(historicalLayers.values()).some((historical) =>
-      historicalVisibleIds.has(historical.item.id)
-    );
-    if (anyVisible) {
-      if (!map.hasLayer(historicalLayerGroup)) {
-        historicalLayerGroup.addTo(map);
-      }
-    } else if (map.hasLayer(historicalLayerGroup)) {
-      map.removeLayer(historicalLayerGroup);
-    }
-
-    for (const historical of historicalLayers.values()) {
-      const shouldShow = historicalVisibleIds.has(historical.item.id);
-      const hasLayer = historicalLayerGroup.hasLayer(historical.layer);
-      if (shouldShow && !hasLayer) {
-        historicalLayerGroup.addLayer(historical.layer);
-      } else if (!shouldShow && hasLayer) {
-        historicalLayerGroup.removeLayer(historical.layer);
-      }
-    }
-  }
-
-  function applyPoliticalContextVisibility() {
-    const anyVisible = Array.from(politicalContextLayers.values()).some((politicalContext) =>
-      politicalContextVisibleIds.has(politicalContext.item.id)
-    );
-    if (anyVisible) {
-      if (!map.hasLayer(politicalContextLayerGroup)) {
-        politicalContextLayerGroup.addTo(map);
-      }
-    } else if (map.hasLayer(politicalContextLayerGroup)) {
-      map.removeLayer(politicalContextLayerGroup);
-    }
-
-    for (const politicalContext of politicalContextLayers.values()) {
-      const shouldShow = politicalContextVisibleIds.has(politicalContext.item.id);
-      const hasLayer = politicalContextLayerGroup.hasLayer(politicalContext.layer);
-      if (shouldShow && !hasLayer) {
-        politicalContextLayerGroup.addLayer(politicalContext.layer);
-      } else if (!shouldShow && hasLayer) {
-        politicalContextLayerGroup.removeLayer(politicalContext.layer);
-      }
-    }
-  }
-
-  function applyJourneyVisibility() {
-    if (journeyVisibility && journeyItem) {
-      if (!map.hasLayer(journeyLayer)) {
-        journeyLayer.addTo(map);
-      }
-    } else if (map.hasLayer(journeyLayer)) {
-      map.removeLayer(journeyLayer);
     }
   }
 
@@ -403,9 +263,6 @@ export function createBibleMap(container, markers, options = {}) {
   function fitToContent() {
     const markerBounds = currentMarkerBounds();
     const routeBoundsList = routeVisibility ? currentRouteBounds() : [];
-    const historicalBoundsList = currentHistoricalBounds();
-    const politicalContextBoundsList = currentPoliticalContextBounds();
-    const journeyBoundsList = journeyVisibility ? currentJourneyBounds() : [];
     const referenceBoundsList = currentReferenceBounds();
     const archaeologyBoundsList = archaeologyVisibility ? currentArchaeologyBounds() : [];
     const manuscriptBoundsList = manuscriptVisibility ? currentManuscriptBounds() : [];
@@ -422,21 +279,6 @@ export function createBibleMap(container, markers, options = {}) {
       );
     }
 
-    for (const layerBounds of historicalBoundsList) {
-      allBounds.push(
-        [layerBounds.getSouthWest().lat, layerBounds.getSouthWest().lng],
-        [layerBounds.getNorthEast().lat, layerBounds.getNorthEast().lng]
-      );
-    }
-
-    for (const layerBounds of politicalContextBoundsList) {
-      allBounds.push(
-        [layerBounds.getSouthWest().lat, layerBounds.getSouthWest().lng],
-        [layerBounds.getNorthEast().lat, layerBounds.getNorthEast().lng]
-      );
-    }
-
-    allBounds.push(...journeyBoundsList);
     allBounds.push(...referenceBoundsList);
 
     for (const layerBounds of archaeologyBoundsList) {
@@ -516,34 +358,6 @@ export function createBibleMap(container, markers, options = {}) {
         return;
       }
     }
-    if (kind === "historical_layer") {
-      const layer = historicalLayers.get(item.id);
-      if (focusLayerBounds(layer?.layer, 8)) {
-        layer?.layer?.openPopup?.();
-        return;
-      }
-    }
-    if (kind === "political_context") {
-      const layer = politicalContextLayers.get(item.id);
-      if (focusLayerBounds(layer?.layer, 8)) {
-        layer?.layer?.openPopup?.();
-        return;
-      }
-    }
-    if (kind === "journey_stop") {
-      const stopLayer = journeyStopLayers.get(item.id);
-      if (focusLayerBounds(stopLayer, 8)) {
-        stopLayer?.openPopup?.();
-        return;
-      }
-    }
-    if (kind === "journey_segment") {
-      const segmentLayer = journeySegmentLayers.get(item.id);
-      if (focusLayerBounds(segmentLayer, 7)) {
-        segmentLayer?.openPopup?.();
-        return;
-      }
-    }
     if (kind === "reference_feature") {
       const key = `${item.layerId}:${item.featureId}`;
       const entry = referenceFeatureLayers.get(key);
@@ -554,24 +368,6 @@ export function createBibleMap(container, markers, options = {}) {
     }
     if (Number.isFinite(item.latitude) && Number.isFinite(item.longitude)) {
       map.setView([item.latitude, item.longitude], 9);
-    }
-  }
-
-  function syncJourneyStyles() {
-    if (!journeyItem) {
-      return;
-    }
-    for (const stop of journeyItem.stops || []) {
-      const layer = journeyStopLayers.get(stop.id);
-      if (layer) {
-        layer.setIcon(journeyStopIcon(stop, { selected: stop.id === selectedJourneyStopId }));
-      }
-    }
-    for (const segment of journeyItem.segments || []) {
-      const layer = journeySegmentLayers.get(segment.id);
-      if (layer) {
-        layer.setStyle(journeySegmentStyle(segment, { selected: segment.id === selectedJourneySegmentId }));
-      }
     }
   }
 
@@ -676,126 +472,6 @@ export function createBibleMap(container, markers, options = {}) {
     applyManuscriptVisibility();
   }
 
-  function refreshHistoricalLayers(layers) {
-    historicalItems = Array.isArray(layers) ? layers.slice() : [];
-    historicalLayerGroup.clearLayers();
-    historicalLayers.clear();
-
-    for (const layerItem of historicalItems) {
-      if (!layerItem?.geojson) {
-        continue;
-      }
-      const geoJsonLayer = window.L.geoJSON(layerItem.geojson, {
-        style: () => historicalLayerStyle(layerItem),
-        onEachFeature(feature, layer) {
-          layer.on("click", () => {
-            if (typeof options.onHistoricalLayerClick === "function") {
-              options.onHistoricalLayerClick(layerItem);
-            }
-          });
-          layer.bindPopup(renderHistoricalLayerPopup(layerItem), {
-            maxWidth: 360,
-            closeButton: true,
-          });
-        },
-      });
-      historicalLayers.set(layerItem.id, { item: layerItem, layer: geoJsonLayer });
-    }
-
-    applyHistoricalVisibility();
-  }
-
-  function refreshPoliticalContextLayers(layers) {
-    politicalContextItems = Array.isArray(layers) ? layers.slice() : [];
-    politicalContextLayerGroup.clearLayers();
-    politicalContextLayers.clear();
-
-    for (const layerItem of politicalContextItems) {
-      if (!layerItem?.geojson) {
-        continue;
-      }
-      const geoJsonLayer = window.L.geoJSON(layerItem.geojson, {
-        style: () => politicalContextStyle(layerItem),
-        onEachFeature(feature, layer) {
-          layer.on("click", () => {
-            if (typeof options.onPoliticalContextClick === "function") {
-              options.onPoliticalContextClick(layerItem);
-            }
-          });
-          layer.bindPopup(renderPoliticalContextPopup(layerItem), {
-            maxWidth: 360,
-            closeButton: true,
-          });
-        },
-      });
-      politicalContextLayers.set(layerItem.id, { item: layerItem, layer: geoJsonLayer });
-    }
-
-    applyPoliticalContextVisibility();
-  }
-
-  function refreshJourney(journey) {
-    journeyItem = journey || null;
-    journeyLayer.clearLayers();
-    journeyStopLayers.clear();
-    journeySegmentLayers.clear();
-
-    if (!journeyItem) {
-      applyJourneyVisibility();
-      return;
-    }
-
-    const stopById = new Map((journeyItem.stops || []).map((stop) => [stop.id, stop]));
-    for (const segment of journeyItem.segments || []) {
-      const from = stopById.get(segment.from);
-      const to = stopById.get(segment.to);
-      if (!from || !to) {
-        continue;
-      }
-      const segmentLayer = window.L.polyline(
-        [
-          [from.lat, from.lng],
-          [to.lat, to.lng],
-        ],
-        journeySegmentStyle(segment, { selected: segment.id === selectedJourneySegmentId })
-      );
-      segmentLayer.bindPopup(renderJourneySegmentPopup(journeyItem, segment), {
-        maxWidth: 340,
-        closeButton: true,
-      });
-      segmentLayer.on("click", () => {
-        if (typeof options.onJourneySegmentClick === "function") {
-          options.onJourneySegmentClick(journeyItem, segment);
-        }
-      });
-      journeySegmentLayers.set(segment.id, segmentLayer);
-      segmentLayer.addTo(journeyLayer);
-    }
-
-    for (const stop of journeyItem.stops || []) {
-      if (!Number.isFinite(stop.lat) || !Number.isFinite(stop.lng)) {
-        continue;
-      }
-      const stopLayer = window.L.marker([stop.lat, stop.lng], {
-        icon: journeyStopIcon(stop, { selected: stop.id === selectedJourneyStopId }),
-        title: stop.name || "Unnamed journey stop",
-      });
-      stopLayer.bindPopup(renderJourneyStopPopup(journeyItem, stop), {
-        maxWidth: 340,
-        closeButton: true,
-      });
-      stopLayer.on("click", () => {
-        if (typeof options.onJourneyStopClick === "function") {
-          options.onJourneyStopClick(journeyItem, stop);
-        }
-      });
-      journeyStopLayers.set(stop.id, stopLayer);
-      stopLayer.addTo(journeyLayer);
-    }
-
-    applyJourneyVisibility();
-  }
-
   function refreshReferenceLayers(layers) {
     referenceItems = Array.isArray(layers) ? layers.slice() : [];
     referenceLayerGroup.clearLayers();
@@ -870,9 +546,6 @@ export function createBibleMap(container, markers, options = {}) {
   refreshRoutes(routeItems);
   refreshArchaeologyMarkers(archaeologyItems);
   refreshManuscriptMarkers(manuscriptItems);
-  refreshHistoricalLayers(historicalItems);
-  refreshPoliticalContextLayers(Array.isArray(options.politicalContextLayers) ? options.politicalContextLayers : []);
-  refreshJourney(journeyItem);
   refreshReferenceLayers(referenceItems);
   fitToContent();
 
@@ -898,12 +571,6 @@ export function createBibleMap(container, markers, options = {}) {
         routeVisibility,
         archaeologyVisibility,
         manuscriptVisibility,
-        historicalLayerIds: Array.from(historicalVisibleIds),
-        politicalContextLayerIds: Array.from(politicalContextVisibleIds),
-        journeyVisibility,
-        selectedJourneyId: journeyItem?.id || "",
-        selectedJourneyStopId,
-        selectedJourneySegmentId,
         referenceLayerIds: Array.from(referenceVisibleLayerIds),
       };
     },
@@ -946,68 +613,6 @@ export function createBibleMap(container, markers, options = {}) {
     getManuscriptMarkers() {
       return manuscriptItems.slice();
     },
-    getHistoricalLayerVisibility(layerId) {
-      return historicalVisibleIds.has(String(layerId));
-    },
-    setHistoricalLayerVisibility(layerId, visible) {
-      const normalizedId = String(layerId);
-      if (!normalizedId) {
-        return;
-      }
-      if (visible) {
-        historicalVisibleIds.add(normalizedId);
-      } else {
-        historicalVisibleIds.delete(normalizedId);
-      }
-      applyHistoricalVisibility();
-      fitToContent();
-    },
-    setHistoricalLayers(layers) {
-      refreshHistoricalLayers(layers);
-      fitToContent();
-    },
-    getPoliticalContextLayerVisibility(layerId) {
-      return politicalContextVisibleIds.has(String(layerId));
-    },
-    setPoliticalContextLayerVisibility(layerId, visible) {
-      const normalizedId = String(layerId);
-      if (!normalizedId) {
-        return;
-      }
-      if (visible) {
-        politicalContextVisibleIds.add(normalizedId);
-      } else {
-        politicalContextVisibleIds.delete(normalizedId);
-      }
-      applyPoliticalContextVisibility();
-      fitToContent();
-    },
-    setPoliticalContextLayers(layers) {
-      refreshPoliticalContextLayers(layers);
-      fitToContent();
-    },
-    getJourneyVisibility() {
-      return journeyVisibility;
-    },
-    setJourneyVisibility(visible) {
-      journeyVisibility = Boolean(visible);
-      applyJourneyVisibility();
-      fitToContent();
-    },
-    setJourney(journey) {
-      refreshJourney(journey);
-      fitToContent();
-    },
-    setSelectedJourneyStop(stopId) {
-      selectedJourneyStopId = String(stopId || "");
-      selectedJourneySegmentId = "";
-      syncJourneyStyles();
-    },
-    setSelectedJourneySegment(segmentId) {
-      selectedJourneySegmentId = String(segmentId || "");
-      selectedJourneyStopId = "";
-      syncJourneyStyles();
-    },
     setReferenceLayers(layers) {
       refreshReferenceLayers(layers);
       fitToContent();
@@ -1034,18 +639,6 @@ export function createBibleMap(container, markers, options = {}) {
     },
     getReferenceLayers() {
       return referenceItems.slice();
-    },
-    getPoliticalContextLayerIds() {
-      return Array.from(politicalContextVisibleIds);
-    },
-    getPoliticalContextLayers() {
-      return politicalContextItems.slice();
-    },
-    getHistoricalLayerIds() {
-      return Array.from(historicalVisibleIds);
-    },
-    getHistoricalLayers() {
-      return historicalItems.slice();
     },
     fitToMarkers() {
       fitToContent();

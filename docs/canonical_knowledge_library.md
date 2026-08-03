@@ -165,11 +165,9 @@ Each prompt entry also identifies its primary knowledge layer so biblical text,
 historical context, theological synthesis, reception history, and application
 remain distinguishable.
 
-Answer-mode tiers keep the prompt compact:
-
-- `concise` includes only the highest-priority context claims plus a short caution.
-- `study` and `teaching` keep the ordered context sequence compact while preserving the main canonical and historical layers.
-- `scholar` allows deeper historical, lexical, and source detail when the token budget allows it.
+One unified retrieval policy keeps the prompt compact while preserving the main
+canonical and historical layers. Legacy answer-mode values are accepted for
+compatibility but do not change retrieved context or prompt detail.
 
 Empty sections are skipped rather than padded with filler prose.
 
@@ -477,14 +475,9 @@ That gives the agent a safe way to surface Shechem, Abraham, covenant, Joshua, a
 
 ## Token Reduction and Context Compression
 
-CKL reduces prompt size by retrieving only the objects that matter for a question instead of asking the LLM to reconstruct broad biblical knowledge on every turn. The context builder now tracks estimated topic tokens, removes duplicate facts, compacts sources, and chooses a context tier based on the answer mode.
+CKL reduces prompt size by retrieving only the objects that matter for a question instead of asking the LLM to reconstruct broad biblical knowledge on every turn. The context builder tracks estimated topic tokens, removes duplicate facts, compacts sources, and uses one balanced context policy.
 
-- `concise` favors a small factual core.
-- `study` keeps a balanced amount of context.
-- `teaching` emphasizes plain-language support.
-- `scholar` keeps deeper historical and literary detail when the budget allows.
-
-Relationship expansion is token-aware so the library can stay compact on small models without losing the ability to open up for deeper study modes.
+Relationship expansion is token-aware so the library can stay compact on small models.
 
 ## Smaller Local Models
 
@@ -500,7 +493,9 @@ The retrieval layer still exposes `retrieve_semantic()` as the explicit future h
 
 ## Public Answer Cache
 
-`public_cache.py` provides a small JSON-backed cache for reviewed answers. The cache is keyed by normalized question plus answer mode, and it only serves entries when the current framework fingerprint and CKL fingerprint still match.
+`public_cache.py` provides a small JSON-backed cache for reviewed answers. New
+runtime lookups use the unified answer-format key; the stored answer-mode field
+remains temporarily for compatibility with existing cache entries.
 
 - `lookup()` returns a reviewed answer only when the cache entry is still current.
 - `store()` persists the approved answer, object dependency IDs, review state, quality score, and fingerprints.

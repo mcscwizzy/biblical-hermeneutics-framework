@@ -50,8 +50,9 @@ def test_highlight_selected_verse_can_be_removed_from_context_menu(driver, wait,
 
     verse = driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="3"]')
     ActionChains(driver).context_click(verse).perform()
-    wait.until(lambda _driver: _driver.execute_script("return document.querySelector('[data-context-action=\"highlight\"]')?.textContent") == "Remove Highlight")
-    _click_context_action(driver, wait, "highlight")
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, '[data-context-action="remove_highlight"]').is_displayed())
+    assert driver.find_element(By.CSS_SELECTOR, '[data-context-action="highlight"]').is_displayed()
+    _click_context_action(driver, wait, "remove_highlight")
     wait.until(lambda _driver: "highlight-yellow" not in _driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="3"]').get_attribute("class"))
 
 

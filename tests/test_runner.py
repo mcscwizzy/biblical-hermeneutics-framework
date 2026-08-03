@@ -81,6 +81,14 @@ class StructuredJsonAdapter(ChatAdapter):
         return ChatResponse(text=self.response_text, model="fake-model")
 
 
+class WarningResponseAdapter(ChatAdapter):
+    def chat(self, request: ChatRequest) -> ChatResponse:
+        return ChatResponse(
+            text='{"answer":"A usable answer", "provider_metadata":{"trace":true}}',
+            model="fake-model",
+        )
+
+
 class JsonSchemaAdapter(StructuredJsonAdapter):
     def supports_json_schema_response_format(self) -> bool:
         return True
@@ -317,16 +325,16 @@ class RunnerTests(unittest.TestCase):
             adapter.request.metadata["question_context"]["question_type"],
             "word_study",
         )
-        self.assertEqual(adapter.request.metadata["answer_mode"], "study")
-        self.assertIn("Question type: word_study", adapter.request.system_prompt)
-        self.assertIn("Answer using the word-study format exactly", adapter.request.user_prompt)
+        self.assertEqual(adapter.request.metadata["answer_mode"], "unified")
+        self.assertIn("# Final Answer Format", adapter.request.system_prompt)
+        self.assertTrue(adapter.request.user_prompt.endswith("What is the hebrew word for the word spirit or wind?"))
         self.assertFalse(result.reference_context.is_reference_based)
         self.assertEqual(
             result.reference_context.topic,
             "What is the hebrew word for the word spirit or wind",
         )
         self.assertEqual(result.genre_context.recommended_modules, ["core.genre-awareness"])
-        self.assertEqual(result.profile_used, "minimal-7b")
+        self.assertEqual(result.profile_used, "unified")
 
     def test_agent_retrieves_map_context_for_archaeology_questions(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -369,14 +377,14 @@ class RunnerTests(unittest.TestCase):
         )
         self.assertEqual(
             result.model_metadata["pipeline"]["prompt_strategy"],
-            "MinimalPromptStrategy",
+            "UnifiedFinalAnswerPrompt",
         )
-        self.assertEqual(result.model_metadata["answer_mode"], "study")
-        self.assertEqual(result.model_metadata["pipeline"]["answer_mode"], "study")
+        self.assertEqual(result.model_metadata["answer_mode"], "unified")
+        self.assertEqual(result.model_metadata["pipeline"]["answer_mode"], "unified")
         self.assertIn("validation_score", result.model_metadata["pipeline"])
         self.assertGreaterEqual(result.model_metadata["pipeline"]["validation_score"], 0)
 
-    def test_answer_mode_threads_to_prompt_request_and_result_metadata(self):
+    def test_legacy_answer_mode_is_accepted_but_uses_unified_response(self):
         adapter = RecordingAdapter()
         agent = self.make_agent(adapter, answer_mode="teaching")
 
@@ -384,19 +392,19 @@ class RunnerTests(unittest.TestCase):
 
         self.assertIsNotNone(adapter.request)
         assert adapter.request is not None
-        self.assertEqual(adapter.request.metadata["answer_mode"], "teaching")
-        self.assertEqual(adapter.request.metadata["runtime_profile_mode"], "compact")
+        self.assertEqual(adapter.request.metadata["answer_mode"], "unified")
+        self.assertEqual(adapter.request.metadata["runtime_profile_mode"], "unified")
         self.assertFalse(adapter.request.metadata["full_profile_injected"])
         self.assertIn("prompt_token_estimates", adapter.request.metadata)
-        self.assertIn("Answer Mode: Teaching", adapter.request.system_prompt)
-        self.assertEqual(result.model_metadata["answer_mode"], "teaching")
-        self.assertEqual(result.model_metadata["runtime_profile_mode"], "compact")
+        self.assertIn("# Final Answer Format", adapter.request.system_prompt)
+        self.assertEqual(result.model_metadata["answer_mode"], "unified")
+        self.assertEqual(result.model_metadata["runtime_profile_mode"], "unified")
         self.assertFalse(result.model_metadata["full_profile_injected"])
         self.assertIn("prompt_token_estimates", result.model_metadata)
-        self.assertEqual(result.model_metadata["pipeline"]["answer_mode"], "teaching")
+        self.assertEqual(result.model_metadata["pipeline"]["answer_mode"], "unified")
         self.assertEqual(
             result.model_metadata["pipeline"]["runtime_profile_mode"],
-            "compact",
+            "unified",
         )
         self.assertGreater(
             result.model_metadata["pipeline"]["prompt_token_estimates"]["system_prompt"],
@@ -415,6 +423,29 @@ class RunnerTests(unittest.TestCase):
             "finalize_result",
             result.model_metadata["pipeline"]["stages_completed"],
         )
+
+    def test_structured_openai_or_ollama_style_answer_completes_with_warnings_only(self):
+        result = self.make_agent(WarningResponseAdapter()).ask(
+            "What does Proverbs 3 mean?"
+        )
+
+        self.assertEqual(result.answer_text, "A usable answer")
+        self.assertEqual(result.fatal_errors, [])
+        self.assertEqual(result.errors, [])
+        self.assertTrue(result.warnings)
+        self.assertIsNone(result.failed_stage)
+
+    def test_provider_timeout_is_fatal_and_keeps_waiting_stage(self):
+        result = self.make_agent(
+            ErrorRecordingAdapter(
+                error_category="provider_timeout",
+            )
+        ).ask("What does Proverbs 3 mean?")
+
+        self.assertEqual(result.answer_text, "")
+        self.assertTrue(result.fatal_errors)
+        self.assertEqual(result.error_category, "provider_timeout")
+        self.assertEqual(result.failed_stage, "waiting_for_model_response")
 
     def test_status_callback_receives_ordered_pipeline_events(self):
         events = []
@@ -478,7 +509,7 @@ class RunnerTests(unittest.TestCase):
         self.assertEqual(events[-1]["percent_complete"], 100.0)
         self.assertEqual(events[-1]["status"], "complete")
 
-    def test_model_unavailable_returns_deterministic_canonical_fallback_answer(self):
+    def test_model_unavailable_never_returns_canonical_research_as_an_answer(self):
         events = []
         agent = self.make_agent(ErrorAdapter())
 
@@ -487,16 +518,12 @@ class RunnerTests(unittest.TestCase):
             status_callback=events.append,
         )
 
-        self.assertFalse(result.errors)
-        self.assertTrue(result.model_metadata["pipeline"]["fallback_used"])
-        self.assertEqual(result.model_metadata["pipeline"]["fallback_mode"], "canonical_summary")
-        self.assertEqual(result.model_metadata["pipeline"]["fallback_kind"], "summary")
+        self.assertTrue(result.errors)
+        self.assertFalse(result.model_metadata["pipeline"]["fallback_used"])
+        self.assertTrue(result.model_metadata["pipeline"]["synthesis_failed"])
         self.assertTrue(result.model_metadata["pipeline"]["canonical_library_strong_match"])
-        self.assertIn("shechem", result.model_metadata["pipeline"]["fallback_selected_entry_ids"])
-        self.assertIn("Shechem", result.answer_text)
-        self.assertIn("covenant", result.answer_text.lower())
-        self.assertEqual(events[-1]["stage"], "complete")
-        self.assertFalse(any(event["status"] == "error" for event in events))
+        self.assertEqual(result.answer_text, "")
+        self.assertEqual(events[-1]["stage"], "error")
 
     def test_exceptions_emit_error_status_before_raising(self):
         events = []
@@ -813,7 +840,7 @@ class RunnerTests(unittest.TestCase):
             "provider_failure",
         )
 
-    def test_model_failure_for_identity_in_jesus_uses_ckl_fallback(self):
+    def test_provider_failure_for_identity_in_jesus_does_not_expose_ckl(self):
         adapter = ErrorRecordingAdapter(
             "Ollama endpoint returned HTTP 500: "
             '{"error":"llama-server process has terminated: signal: killed"}'
@@ -826,21 +853,11 @@ class RunnerTests(unittest.TestCase):
             status_callback=events.append,
         )
 
-        self.assertFalse(result.errors)
-        self.assertTrue(result.model_metadata["pipeline"]["fallback_used"])
-        self.assertEqual(
-            result.model_metadata["pipeline"]["fallback_mode"],
-            "canonical_summary",
-        )
-        self.assertIn(
-            "what-verses-show-identity-in-christ",
-            result.model_metadata["pipeline"]["fallback_selected_entry_ids"],
-        )
-        self.assertIn("Identity in Christ", result.answer_text)
-        self.assertIn("Romans 8:1", result.answer_text)
-        self.assertIn("2 Corinthians 5:17", result.answer_text)
-        self.assertEqual(events[-1]["stage"], "complete")
-        self.assertFalse(any(event["status"] == "error" for event in events))
+        self.assertTrue(result.errors)
+        self.assertFalse(result.model_metadata["pipeline"]["fallback_used"])
+        self.assertTrue(result.model_metadata["pipeline"]["synthesis_failed"])
+        self.assertEqual(result.answer_text, "")
+        self.assertEqual(events[-1]["stage"], "error")
 
     def test_weak_ckl_results_do_not_block_model_fallback(self):
         adapter = RecordingAdapter()
@@ -955,6 +972,51 @@ class RunnerTests(unittest.TestCase):
         self.assertIsNotNone(cache.lookup_calls[0]["ckl_version_fingerprint"])
         self.assertIsNotNone(cache.lookup_calls[0]["framework_version_fingerprint"])
 
+    def test_agent_rejects_cached_ckl_serialization_and_runs_final_synthesis(self):
+        adapter = SequenceAdapter(
+            [
+                "## Answer\nShechem is the setting for Israel's covenant renewal.\n\n"
+                "## Biblical Evidence\nObservation: Joshua 24 recounts the covenant there. "
+                "Interpretation: the location recalls Israel's earlier story.\n\n"
+                "## Literary Context\nGenre: narrative. The original audience hears this "
+                "as a covenantal warning and renewal.\n\n"
+                "## Important Qualification\nApplication for modern readers should follow "
+                "the passage's original meaning; some details remain uncertain."
+            ]
+        )
+        question = (
+            "Why did Israel renew the covenant where Abraham first entered the land at Shechem in Joshua 24?"
+        )
+        cache_entry = PublicCacheEntry(
+            normalized_question=normalize_public_question(question),
+            answer_mode="study",
+            answer=(
+                "## Entry: Hannah\nCategory: Person\nSummary:\n"
+                "This is retrieved research, not final prose."
+            ),
+            quality_score=96.0,
+            usage_count=3,
+            review_status="approved",
+            framework_version=load_framework_version(),
+            framework_version_fingerprint=load_framework_version_fingerprint(),
+            ckl_version_fingerprint="ckl-fingerprint",
+            object_dependency_ids=("hannah",),
+            expires_at="2030-01-01T00:00:00Z",
+        )
+        cache = RecordingPublicAnswerCache(cache_entry)
+        agent = self.make_agent(adapter, public_answer_cache=cache, profile="standard")
+
+        result = agent.ask(question)
+
+        self.assertEqual(len(adapter.requests), 1)
+        self.assertNotIn("Entry: Hannah", result.answer_text)
+        self.assertFalse(result.model_metadata["public_answer_cache"]["hit"])
+        self.assertEqual(
+            result.model_metadata["public_answer_cache"]["lookup_status"],
+            "rejected_unsafe_answer",
+        )
+        self.assertEqual(cache.increment_calls, [])
+
     def test_agent_reuses_response_cache_for_identical_questions(self):
         adapter = SequenceAdapter(
             [
@@ -1029,7 +1091,17 @@ class RunnerTests(unittest.TestCase):
         self.assertNotIn("# CANONICAL KNOWLEDGE CONTEXT", adapter.requests[0].system_prompt)
 
     def test_agent_emits_redacted_observability_log(self):
-        adapter = RecordingAdapter()
+        adapter = SequenceAdapter(
+            [
+                "## Answer\nShechem is the setting for Israel's covenant renewal.\n\n"
+                "## Biblical Evidence\nObservation: Joshua 24 recounts the covenant there. "
+                "Interpretation: the location recalls Israel's earlier story.\n\n"
+                "## Literary Context\nGenre: narrative. The original audience hears this "
+                "as a covenantal warning and renewal.\n\n"
+                "## Important Qualification\nApplication for modern readers should follow "
+                "the passage's original meaning; some details remain uncertain."
+            ]
+        )
         agent = self.make_agent(
             adapter,
             profile="standard",
@@ -1057,7 +1129,17 @@ class RunnerTests(unittest.TestCase):
         self.assertNotIn("raw_model_text", captured.records[0].getMessage())
 
     def test_agent_emits_verbose_observability_log_in_debug_mode(self):
-        adapter = RecordingAdapter()
+        adapter = SequenceAdapter(
+            [
+                "## Answer\nShechem is the setting for Israel's covenant renewal.\n\n"
+                "## Biblical Evidence\nObservation: Joshua 24 recounts the covenant there. "
+                "Interpretation: the location recalls Israel's earlier story.\n\n"
+                "## Literary Context\nGenre: narrative. The original audience hears this "
+                "as a covenantal warning and renewal.\n\n"
+                "## Important Qualification\nApplication for modern readers should follow "
+                "the passage's original meaning; some details remain uncertain."
+            ]
+        )
         agent = self.make_agent(
             adapter,
             profile="standard",
@@ -1417,7 +1499,7 @@ class RunnerTests(unittest.TestCase):
         self.assertEqual(result.answer_text, "The Hebrew word is ruach.")
         self.assertIn("Repair was attempted but returned an empty answer.", result.warnings)
 
-    def test_invalid_model_output_uses_canonical_fallback_after_retry(self):
+    def test_invalid_model_output_after_retry_does_not_expose_canonical_context(self):
         adapter = SequenceAdapter(
             [
                 "The answer is not valid.",
@@ -1431,21 +1513,48 @@ class RunnerTests(unittest.TestCase):
         self.assertEqual(len(adapter.requests), 2)
         self.assertTrue(result.model_metadata["pipeline"]["repair_attempted"])
         self.assertFalse(result.repair_applied)
-        self.assertTrue(result.model_metadata["pipeline"]["fallback_used"])
-        self.assertEqual(result.model_metadata["pipeline"]["fallback_mode"], "canonical_summary")
-        self.assertIn("shechem", result.model_metadata["pipeline"]["fallback_selected_entry_ids"])
-        self.assertIn("Shechem", result.answer_text)
-        self.assertIn("covenant", result.answer_text.lower())
+        self.assertTrue(result.errors)
+        self.assertTrue(result.model_metadata["pipeline"]["synthesis_failed"])
+        self.assertEqual(result.answer_text, "")
 
-    def test_empty_structured_output_uses_ckl_fallback_without_repair_retry(self):
+    def test_empty_structured_output_fails_without_exposing_ckl(self):
         adapter = SequenceAdapter(["{}"])
         agent = self.make_agent(adapter, auto_repair=True)
 
         result = agent.ask("Why did Joshua renew the covenant at Shechem?")
 
         self.assertEqual(len(adapter.requests), 1)
-        self.assertTrue(result.model_metadata["pipeline"]["fallback_used"])
-        self.assertIn("Shechem", result.answer_text)
+        self.assertTrue(result.errors)
+        self.assertTrue(result.model_metadata["pipeline"]["synthesis_failed"])
+        self.assertEqual(result.answer_text, "")
+
+    def test_ckl_dump_from_model_is_repaired_into_final_prose(self):
+        adapter = SequenceAdapter(
+            [
+                "## Entry: Hannah\nCategory: Person\nSummary:\n"
+                "Hannah was unable to conceive.",
+                "## Answer\nHannah was unable to conceive because 1 Samuel 1:5 says "
+                "that the LORD had closed her womb; the narrative gives no further "
+                "private cause.\n\n## Biblical Evidence\nObservation: 1 Samuel 1:5-6 "
+                "names her childlessness and its painful consequences. Interpretation: "
+                "the text presents it within God's sovereignty, not as proof that Hannah "
+                "had committed a particular sin.\n\n## Literary Context\nGenre: narrative. "
+                "For the original audience, Hannah's prayer and Samuel's birth introduce "
+                "the book's pattern of God raising the lowly.\n\n## Important Qualification\n"
+                "Application should not turn Hannah's story into a rule for every case of "
+                "infertility; the text is intentionally uncertain about a private reason."
+            ]
+        )
+        agent = self.make_agent(adapter, auto_repair=True)
+
+        result = agent.ask("Why was Hannah unable to conceive?")
+
+        self.assertEqual(len(adapter.requests), 2)
+        self.assertIn("## Entry: Hannah", adapter.requests[0].system_prompt)
+        self.assertTrue(result.repair_applied)
+        self.assertIn("the LORD had closed her womb", result.answer_text)
+        self.assertNotIn("Entry: Hannah", result.answer_text)
+        self.assertFalse(result.errors)
 
     def test_pipeline_stores_prompts_before_model_call(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -1473,7 +1582,7 @@ class RunnerTests(unittest.TestCase):
         self.assertIn("Answer using the word-study format exactly", agent.user_prompt_before_model)
         self.assertIn("call_model", result.model_metadata["pipeline"]["stages_completed"])
 
-    def test_full_runtime_profile_mode_stores_profile_prompt_before_model_call(self):
+    def test_legacy_runtime_profile_mode_does_not_change_prompt_before_model_call(self):
         with tempfile.TemporaryDirectory() as tmp:
             profiles_dir = Path(tmp)
             (profiles_dir / "minimal-7b.md").write_text("PROFILE", encoding="utf-8")
@@ -1491,10 +1600,10 @@ class RunnerTests(unittest.TestCase):
             result = agent.ask("What is the hebrew word for the word spirit or wind?")
 
         assert agent.system_prompt_before_model is not None
-        self.assertIn("PROFILE", agent.system_prompt_before_model)
-        self.assertIn("BHF Agent Runtime Instructions", agent.system_prompt_before_model)
-        self.assertEqual(result.model_metadata["runtime_profile_mode"], "full")
-        self.assertTrue(result.model_metadata["full_profile_injected"])
+        self.assertNotIn("PROFILE", agent.system_prompt_before_model)
+        self.assertNotIn("BHF Agent Runtime Instructions", agent.system_prompt_before_model)
+        self.assertEqual(result.model_metadata["runtime_profile_mode"], "unified")
+        self.assertFalse(result.model_metadata["full_profile_injected"])
 
 
 if __name__ == "__main__":

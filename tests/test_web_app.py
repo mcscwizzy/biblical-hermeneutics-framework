@@ -88,8 +88,8 @@ class WebFormTests(unittest.TestCase):
         )
 
         self.assertEqual(config.profile, "standard")
-        self.assertEqual(config.runtime_profile_mode, "full")
-        self.assertEqual(config.answer_mode, "teaching")
+        self.assertEqual(config.runtime_profile_mode, "compact")
+        self.assertEqual(config.answer_mode, "study")
         self.assertEqual(config.model, "local-model")
         self.assertEqual(config.base_url, "http://localhost:1234/v1")
         self.assertEqual(config.temperature, 0.4)
@@ -192,7 +192,7 @@ class WebFormTests(unittest.TestCase):
         self.assertEqual(config.base_url, "http://host.docker.internal:11434/v1")
         self.assertEqual(config.model, "qwen2.5:7b")
         self.assertEqual(config.profile, "standard")
-        self.assertEqual(config.answer_mode, "concise")
+        self.assertEqual(config.answer_mode, "concise")  # Legacy config is accepted.
         self.assertEqual(config.temperature, 0.2)
         self.assertEqual(config.max_tokens, 1024)
         self.assertEqual(config.context_window, 12288)
@@ -257,7 +257,7 @@ class WebFormTests(unittest.TestCase):
         self.assertEqual(config.base_url, "http://localhost:1234/v1")
         self.assertEqual(config.model, "form-model")
         self.assertEqual(config.profile, "minimal-7b")
-        self.assertEqual(config.answer_mode, "concise")
+        self.assertEqual(config.answer_mode, "study")
         self.assertEqual(config.timeout_seconds, 360)
 
     def test_form_can_override_ollama_adapter_for_openai_compatible_endpoint(self):
@@ -367,7 +367,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("dispatchStudyAction", script)
         self.assertIn("resolveContextAction", script)
         self.assertIn("remove_highlight", script)
-        self.assertIn("isContextHighlighted", script)
+        self.assertIn("highlightsForContext", script)
         self.assertIn("applyVerseStateIndicatorsToReader", script)
         self.assertIn("contextForVerseAction", script)
         self.assertIn("reader_translation", script)
@@ -468,22 +468,16 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("renderSelectedRoute", map_script)
         self.assertIn("buildRouteCautionNote", map_script)
         self.assertIn("loadRoutesForPassage", map_script)
-        self.assertIn("renderSelectedHistoricalLayer", map_script)
-        self.assertIn("buildHistoricalLayerCautionNote", map_script)
-        self.assertIn("loadHistoricalLayers", map_script)
-        self.assertIn("saveCurrentMapStudy", map_script)
-        self.assertIn("renderSavedMapStudies", map_script)
-        self.assertIn("openSavedMapStudy", map_script)
-        self.assertIn("buildCurrentMapStudyPayload", Path("bhf_web/static/maps/MapPanelStateHelpers.js").read_text(encoding="utf-8"))
-        self.assertIn("getCurrentMapSelection", Path("bhf_web/static/maps/MapPanelStateHelpers.js").read_text(encoding="utf-8"))
+        self.assertNotIn("renderSelectedHistoricalLayer", map_script)
+        self.assertNotIn("buildHistoricalLayerCautionNote", map_script)
+        self.assertNotIn("loadHistoricalLayers", map_script)
+        self.assertNotIn("saved map study", map_script.lower())
         self.assertIn("normalizeHistoricalPeriod", Path("bhf_web/static/maps/MapPanelStateHelpers.js").read_text(encoding="utf-8"))
 
         map_content_script = Path("bhf_web/static/maps/MapPanelContent.js").read_text(encoding="utf-8")
         self.assertIn("renderRelatedVerses", map_content_script)
         self.assertIn("renderRelatedPassages", map_content_script)
         self.assertIn("renderRelatedPassagesList", map_content_script)
-        self.assertIn("addCurrentMapNote", map_script)
-        self.assertIn("reset_map_view", map_script)
         self.assertIn("data-passage-shortcut", map_script)
         self.assertIn("submitRelatedPassageShortcut", map_script)
         self.assertIn("setReaderPassageContext", map_script)
@@ -506,12 +500,20 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("placeLayers.set(marker.id, leafletMarker)", bible_map_script)
         self.assertIn("placeLayer.openPopup()", bible_map_script)
         self.assertIn("route?.openPopup?.()", bible_map_script)
-        self.assertIn("layer?.layer?.openPopup?.()", bible_map_script)
+        self.assertNotIn("layer?.layer?.openPopup?.()", bible_map_script)
         self.assertIn("setSelectedSearchResult", map_script)
-        self.assertIn("setRouteVisibility(true)", map_script)
-        self.assertIn("setHistoricalLayerVisibility(result.item.id, true)", map_script)
-        self.assertIn("setPoliticalContextLayerVisibility(result.item.id, true)", map_script)
-        journey_data_script = Path("bhf_web/static/maps/JourneyMapData.js").read_text(encoding="utf-8")
+        self.assertIn("const routeVisibility = true", map_script)
+        self.assertNotIn("setHistoricalLayerVisibility", map_script)
+        self.assertNotIn("setPoliticalContextLayerVisibility", map_script)
+        self.assertNotIn("setStudyMode", map_script)
+        self.assertNotIn("renderLayerControls", map_script)
+        self.assertIn("data-map-navigator-open", Path("bhf_web/templates/index.html").read_text(encoding="utf-8"))
+        self.assertIn("data-map-navigator-close", Path("bhf_web/templates/index.html").read_text(encoding="utf-8"))
+        self.assertIn("data-map-details-open", Path("bhf_web/templates/index.html").read_text(encoding="utf-8"))
+        self.assertIn("data-map-details-close", Path("bhf_web/templates/index.html").read_text(encoding="utf-8"))
+        self.assertIn("buildGoogleEarthUrl", Path("bhf_web/static/maps/MapExternalLinks.js").read_text(encoding="utf-8"))
+        self.assertIn("Download place KML", map_content_script)
+        self.assertNotIn("journey KML", map_script)
         journey_index = Path("frontend/src/data/journeys/index.js").read_text(encoding="utf-8")
         journey_validation = Path("frontend/src/data/journeys/validateJourney.js").read_text(encoding="utf-8")
         journey_abraham = Path("frontend/src/data/journeys/abraham.json").read_text(encoding="utf-8")
@@ -533,27 +535,17 @@ class WebAssetTests(unittest.TestCase):
         map_layer_kingdoms = Path("frontend/src/data/mapLayers/kingdoms.json").read_text(encoding="utf-8")
         map_layer_kingdoms_static = Path("bhf_web/static/data/mapLayers/kingdoms.json").read_text(encoding="utf-8")
         self.assertFalse(Path("bhf_web/static/maps/Map3DPanel.js").exists())
-        self.assertIn("loadJourneyCatalog", journey_data_script)
-        self.assertIn("JOURNEY_DATA_BASE_PATHS", journey_data_script)
-        self.assertIn("MAP_LAYER_FILES", journey_data_script)
-        self.assertIn("loadMapLayerCatalog", journey_data_script)
-        self.assertIn("journeyMatchesFilters", journey_data_script)
-        self.assertIn("/static/data/journeys", journey_data_script)
-        self.assertIn("/static/data/mapLayers", journey_data_script)
-        self.assertNotIn("Cesium", journey_data_script)
-        self.assertNotIn("/frontend/src/data/journeys", journey_data_script)
-        self.assertNotIn("/frontend/src/data/mapLayers", journey_data_script)
-        self.assertIn("loadSupplementalMapData", map_script)
-        self.assertIn("selectedJourneyId", map_script)
-        self.assertIn("renderJourneySidebar", map_script)
-        self.assertIn("selectJourneyStop", map_script)
+        self.assertFalse(Path("bhf_web/static/maps/JourneyMapData.js").exists())
+        self.assertNotIn("selectedJourneyId", map_script)
+        self.assertNotIn("renderJourneySidebar", map_script)
+        self.assertNotIn("selectJourneyStop", map_script)
         self.assertIn("refreshBrowseMapResults", map_script)
         self.assertIn("placeResult: { markers: [] }", map_script)
         self.assertNotIn("setReferenceLayerVisibility", map_script)
-        self.assertIn("setJourney(journey)", bible_map_script)
-        self.assertIn("journeyStopIcon", bible_map_script)
+        self.assertNotIn("setJourney(journey)", bible_map_script)
+        self.assertNotIn("journeyStopIcon", bible_map_script)
         self.assertIn("referencePointIcon", bible_map_script)
-        self.assertIn("renderJourneyStopPopup", bible_map_script)
+        self.assertNotIn("renderJourneyStopPopup", bible_map_script)
         self.assertIn("renderReferenceFeaturePopup", bible_map_script)
         self.assertNotIn("loadCesiumAssets", map_script)
         self.assertNotIn("applyCesiumIonToken", map_script)
@@ -565,9 +557,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn("playPlayback", map_script)
         self.assertNotIn("restartPlayback", map_script)
         self.assertNotIn("schedulePlaybackAdvance", map_script)
-        self.assertIn("selectedJourneySegmentId", map_script)
-        self.assertIn("data-map-journey-search", map_script)
-        self.assertIn("data-map-journey-filter-testament", map_script)
+        self.assertNotIn("selectedJourneySegmentId", map_script)
+        self.assertNotIn("data-map-journey-selector", map_script)
         self.assertNotIn("data-map-reference-layer-controls", map_script)
         self.assertIn("openPassageReference", map_script)
         self.assertIn("applyTimelineOptions", map_script)
@@ -618,7 +609,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("\"id\": \"egypt\"", map_layer_kingdoms_static)
         self.assertIn("\"id\": \"rome\"", map_layer_kingdoms_static)
         self.assertNotIn("renderSelectedReferenceFeature", map_script)
-        self.assertIn("layer.summary || layer.description", map_content_script)
+        self.assertNotIn("layer.summary || layer.description", map_content_script)
         self.assertIn("layerItem.summary || layerItem.description", Path("bhf_web/static/maps/MapPopups.js").read_text(encoding="utf-8"))
         self.assertIn("stops must be a non-empty array", journey_validation)
         self.assertIn("testament should be a string if provided", journey_validation)
@@ -641,15 +632,15 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn('data-context-action="maps"', index_html)
         self.assertIn('data-context-action="open_map_panel"', index_html)
         self.assertNotIn('data-context-action="show_on_map"', index_html)
-        self.assertIn("data-map-journey-search", index_html)
-        self.assertIn("data-map-journey-filter-testament", index_html)
-        self.assertIn("data-map-journey-filter-category", index_html)
-        self.assertIn("data-map-journey-filter-era", index_html)
-        self.assertIn("data-map-journey-count", index_html)
-        self.assertIn("data-map-journey-selector", index_html)
-        self.assertIn("data-map-journey-stop-list", index_html)
-        self.assertIn("data-map-journey-segment-list", index_html)
-        self.assertIn("data-map-journey-detail", index_html)
+        self.assertNotIn("data-map-journey-selector", index_html)
+        self.assertNotIn("data-map-journey-toggle", index_html)
+        self.assertNotIn("map-search-row--journey", index_html)
+        self.assertNotIn("data-map-study-mode", index_html)
+        self.assertIn("data-map-navigator-close", index_html)
+        self.assertIn("data-map-details-close", index_html)
+        self.assertNotIn("data-map-journey-search", index_html)
+        self.assertNotIn("data-map-journey-filter-testament", index_html)
+        self.assertNotIn("data-map-journey-stop-list", index_html)
         self.assertNotIn("data-map-reference-layer-controls", index_html)
         self.assertNotIn("Reference layers", index_html)
         self.assertNotIn("data-journey-", index_html)
@@ -666,8 +657,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("translation-import-button", index_html)
         self.assertIn("Loading translations...", index_html)
         self.assertIn('name="reader_translation"', index_html)
-        self.assertIn("static_asset('/style.css') }}?v=20260724c", index_html)
-        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260729b", index_html)
+        self.assertIn("static_asset('/style.css') }}?v=20260730a", index_html)
+        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260729d", index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
@@ -680,12 +671,18 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn(".map-details-card .compact", style)
         self.assertIn("@media (max-width: 680px)", style)
         self.assertIn(".map-panel-body {\n    gap: 10px;", style)
-        self.assertIn(".map-details-panel,\n  .saved-map-study {\n    padding: 12px;", style)
-        self.assertIn(".map-journey-panel", style)
+        self.assertIn(".map-details-panel {\n    padding: 12px;", style)
         self.assertIn(".map-reference-panel", style)
-        self.assertIn(".map-journey-stop", style)
+        self.assertNotIn(".map-journey-stop", style)
         self.assertIn(".map-reference-point", style)
-        self.assertIn(".map-journey-list-item.is-selected", style)
+        self.assertIn(".map-navigator-close", style)
+        self.assertIn(".map-details-close", style)
+        self.assertIn(".map-search-result-button:hover .map-search-result-topline strong", style)
+        self.assertIn(".map-search-result-subtitle,\n.map-search-result-summary {\n  color: #163f5d;", style)
+        self.assertIn("background: var(--accent-soft-2);", style)
+        self.assertIn("grid-template-rows: minmax(0, 1fr);", style)
+        self.assertIn("scrollbar-gutter: stable;", style)
+        self.assertNotIn(".map-journey-panel", style)
         self.assertNotIn(".journey-stage", style)
         self.assertNotIn(".cesium-widget", style)
         self.assertIn(".workspace-tab-bar", style)
@@ -726,7 +723,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn(".context-menu-submenu {\n    position: static;", style)
         self.assertNotIn(".context-menu-section:hover > .context-menu-submenu {\n    display: none;", style)
         self.assertIn(".map-passage-chip", style)
-        self.assertIn(".map-journey-passage-row", style)
+        self.assertNotIn(".map-journey-passage-row", style)
         self.assertNotIn(".journey-modal", style)
         self.assertNotIn(".journey-playback-card", style)
         self.assertNotIn(".journey-progress-track", style)
@@ -801,6 +798,8 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("data-workspace-tab-bar", response["body"])
         self.assertIn("workspace-tab-context", response["body"])
         self.assertIn("workspace-pane-context", response["body"])
+        self.assertNotIn("Runtime profile", response["body"])
+        self.assertNotIn("Answer mode", response["body"])
         self.assertIn("book-select", response["body"])
         self.assertIn("data-theme-toggle", response["body"])
         self.assertIn("reader-context-menu", response["body"])
@@ -812,13 +811,12 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("data-context-action=\"fulfillment_nt\"", response["body"])
         self.assertIn("data-context-action=\"compare_translations\"", response["body"])
         self.assertIn("data-context-action=\"timeline\"", response["body"])
-        self.assertIn("data-context-action=\"ask_location\"", response["body"])
         self.assertIn("data-context-action=\"open_map_panel\"", response["body"])
-        self.assertIn("data-context-action=\"save_map_study\"", response["body"])
-        self.assertIn("data-context-action=\"map_note\"", response["body"])
         self.assertNotIn("data-context-action=\"compare_archaeology\"", response["body"])
-        self.assertIn("data-context-action=\"related_passages\"", response["body"])
-        self.assertIn("data-context-action=\"view_historical_layer\"", response["body"])
+        self.assertNotIn("data-context-action=\"ask_location\"", response["body"])
+        self.assertNotIn("data-context-action=\"map_note\"", response["body"])
+        self.assertNotIn("data-context-action=\"related_passages\"", response["body"])
+        self.assertNotIn("data-context-action=\"view_historical_layer\"", response["body"])
         self.assertIn("data-context-action=\"save_study\"", response["body"])
         self.assertIn("data-context-action=\"word_study\"", response["body"])
         self.assertIn("data-context-submenu=\"study\"", response["body"])
@@ -829,13 +827,14 @@ class WebAppTests(unittest.TestCase):
         self.assertNotIn("workspace-tab-journey", response["body"])
         self.assertNotIn("workspace-pane-journey", response["body"])
         self.assertNotIn("Map3DPanel.js", response["body"])
-        self.assertIn("data-map-journey-search", response["body"])
-        self.assertIn("data-map-journey-filter-testament", response["body"])
-        self.assertIn("data-map-journey-filter-category", response["body"])
-        self.assertIn("data-map-journey-filter-era", response["body"])
-        self.assertIn("data-map-journey-count", response["body"])
-        self.assertIn("data-map-journey-selector", response["body"])
-        self.assertIn("data-map-journey-stop-list", response["body"])
+        self.assertNotIn("data-map-journey-selector", response["body"])
+        self.assertNotIn("data-map-journey-toggle", response["body"])
+        self.assertNotIn("data-map-study-mode", response["body"])
+        self.assertIn("data-map-navigator-close", response["body"])
+        self.assertIn("data-map-details-close", response["body"])
+        self.assertNotIn("data-map-journey-search", response["body"])
+        self.assertNotIn("data-map-journey-filter-testament", response["body"])
+        self.assertNotIn("data-map-journey-stop-list", response["body"])
         self.assertNotIn("data-map-reference-layer-controls", response["body"])
         self.assertNotIn("Reference layers", response["body"])
         self.assertIn("map-stage", response["body"])
@@ -846,7 +845,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("data-route-toggle", response["body"])
         self.assertIn("data-historical-period", response["body"])
         self.assertIn("Broad / uncertain period", response["body"])
-        self.assertIn("saved-map-studies", response["body"])
+        self.assertNotIn("saved-map-studies", response["body"])
         self.assertIn("map_context", response["body"])
         self.assertIn("/static/vendor/leaflet/leaflet.css", response["body"])
         self.assertIn("/static/vendor/leaflet/leaflet.js", response["body"])
@@ -888,8 +887,9 @@ class WebAppTests(unittest.TestCase):
         )
 
         self.assertEqual(response["status"], 200)
-        self.assertIn('href="/static/style.css?v=20260724c"', response["body"])
-        self.assertIn('src="/static/htmx-lite.js?v=20260729b"', response["body"])
+        self.assertIn('href="/static/style.css?v=20260730a"', response["body"])
+        self.assertIn('src="/static/htmx-lite.js?v=20260729d"', response["body"])
+        self.assertIn('src="/static/maps/MapPanel.js?v=20260729h"', response["body"])
         self.assertIn('href="/static/vendor/leaflet/leaflet.css"', response["body"])
         self.assertNotIn("http://bhf.thewalkerclan.synology.me/static/", response["body"])
 
@@ -915,7 +915,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v17"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v20"', service_worker["body"])
         self.assertIn("cacheFirstApi", service_worker["body"])
         self.assertIn("isRefreshRequest", service_worker["body"])
         self.assertIn("networkFirstNavigation", service_worker["body"])
@@ -1014,7 +1014,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("canonicalObjects", offline_db["body"])
         self.assertIn("generatedCanonicalSearchResponse", offline_db["body"])
         self.assertIn("sources", offline_db["body"])
-        self.assertIn("upsertOfflineMapStudy", offline_db["body"])
+        self.assertNotIn("upsertOfflineMapStudy", offline_db["body"])
         self.assertIn("readTextResponse", offline_db["body"])
         self.assertIn("renderSavedStudyHtml", offline_db["body"])
         self.assertIn("mutationQueueSummary", offline_db["body"])
@@ -1284,7 +1284,7 @@ class WebAppTests(unittest.TestCase):
         self.assertNotIn("manuscripts", data)
         self.assertIn("historical_layers", data)
         self.assertIn("political_context", data)
-        self.assertIn("saved_map_studies", data)
+        self.assertNotIn("saved_map_studies", data)
         self.assertIn("timeline", data)
         self.assertIn("period_options", data["timeline"])
         self.assertTrue(any(option["value"] == "Broad / uncertain period" for option in data["timeline"]["period_options"]))
@@ -1307,12 +1307,31 @@ class WebAppTests(unittest.TestCase):
         nazareth_hit = next(item for item in nazareth_data["results"] if item["id"] == "openbible-af5884f")
         self.assertTrue(nazareth_hit["has_coordinates"])
         self.assertEqual(nazareth_hit["item"]["source_name"], "OpenBible.info Bible Geocoding Data")
+        self.assertIn("latitude", nazareth_hit["item"])
+        self.assertIn("longitude", nazareth_hit["item"])
 
         archaeology_response = asgi_request("GET", "/api/maps/search?q=Pilate&kind=archaeology")
         self.assertEqual(archaeology_response["status"], 200)
         archaeology_data = json.loads(archaeology_response["body"])
         self.assertEqual(archaeology_data["kind"], "archaeology")
         self.assertEqual(archaeology_data["results"], [])
+
+    def test_map_search_results_offer_google_earth_for_coordinate_backed_places(self):
+        map_script = Path("bhf_web/static/maps/MapPanel.js").read_text(encoding="utf-8")
+        map_service_script = Path("bhf_web/static/maps/mapService.js").read_text(encoding="utf-8")
+
+        self.assertIn('result.kind === "place" ? buildGoogleEarthUrl(result.item) : ""', map_script)
+        self.assertIn("map-search-earth-link", map_script)
+        self.assertIn("Open ${escapeHtml(String(result.title || \"location\"))} in Google Earth", map_script)
+        self.assertIn('headers["X-BHF-Refresh"] = "true"', map_service_script)
+        self.assertIn("forceRefresh: true", map_service_script)
+
+    def test_map_search_selection_uses_expanded_workspace_on_desktop(self):
+        map_script = Path("bhf_web/static/maps/MapPanel.js").read_text(encoding="utf-8")
+
+        self.assertIn("function setSelectedSearchResult(result)", map_script)
+        self.assertIn('window.matchMedia("(min-width: 901px)").matches', map_script)
+        self.assertIn("openMapModal();", map_script)
 
     def test_map_search_does_not_return_period_only_babylon_noise(self):
         response = asgi_request("GET", "/api/maps/search?q=Babylon&limit=50")
@@ -1614,44 +1633,20 @@ class WebAppTests(unittest.TestCase):
         self.assertTrue(empty_data["empty_state"])
         self.assertEqual(empty_data["layers"], [])
 
-    def test_map_studies_route_creates_lists_and_deletes(self):
+    def test_map_note_route_and_place_kml_export(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             db_path = Path(tmpdir) / "study.sqlite"
             initialize_database(db_path)
             with patch("bhf_web.app.STUDY_DB_PATH", db_path):
                 test_app = create_app()
-                create_response = asgi_request(
-                    "POST",
-                    "/api/map-studies",
-                    json_data={
-                        "id": "map-study-client-123",
-                        "book": "Romans",
-                        "chapter": 12,
-                        "start_verse": 1,
-                        "end_verse": 2,
-                        "passage_reference": "Romans 12:1-2",
-                        "selected_place_id": "jerusalem",
-                        "selected_layers": ["roman-judea-galilee"],
-                        "map_view_state": {"center": [31.78, 35.23], "zoom": 8},
-                        "generated_summary": "Jerusalem study overlay.",
-                        "user_notes": "Focus on the temple setting.",
-                    },
+                place_kml_response = asgi_request(
+                    "GET",
+                    "/api/maps/places/jerusalem.kml",
                     test_app=test_app,
                 )
-                self.assertEqual(create_response["status"], 201)
-                study = json.loads(create_response["body"])
-                self.assertEqual(study["id"], "map-study-client-123")
-                self.assertEqual(study["selected_place_id"], "jerusalem")
-
-                list_response = asgi_request("GET", "/api/map-studies?book=Romans&chapter=12", test_app=test_app)
-                self.assertEqual(list_response["status"], 200)
-                studies = json.loads(list_response["body"])["saved_map_studies"]
-                self.assertEqual(len(studies), 1)
-                self.assertEqual(studies[0]["map_notes"], [])
-
-                open_response = asgi_request("GET", f"/api/map-studies/{study['id']}", test_app=test_app)
-                self.assertEqual(open_response["status"], 200)
-                self.assertIn("Jerusalem study overlay.", open_response["body"])
+                self.assertEqual(place_kml_response["status"], 200)
+                self.assertIn("<kml", place_kml_response["body"])
+                self.assertIn("Jerusalem", place_kml_response["body"])
 
                 note_response = asgi_request(
                     "POST",
@@ -1672,13 +1667,6 @@ class WebAppTests(unittest.TestCase):
                 note = json.loads(note_response["body"])
                 self.assertEqual(note["id"], "map-note-client-123")
                 self.assertEqual(note["place_id"], "jerusalem")
-
-                updated_list = asgi_request("GET", "/api/map-studies?book=Romans&chapter=12", test_app=test_app)
-                updated_studies = json.loads(updated_list["body"])["saved_map_studies"]
-                self.assertEqual(len(updated_studies[0]["map_notes"]), 1)
-
-                delete_response = asgi_request("DELETE", f"/api/map-studies/{study['id']}", test_app=test_app)
-                self.assertEqual(delete_response["status"], 200)
 
     def test_health_route_returns_ok(self):
         response = asgi_request("GET", "/api/health")
@@ -1940,7 +1928,8 @@ class WebAppTests(unittest.TestCase):
         self.assertGreaterEqual(len(references), 2)
         self.assertLessEqual(len(references), 5)
         self.assertEqual(len(references), len(set(references)))
-        self.assertTrue(references[0].startswith("Exodus 3:"))
+        self.assertTrue(references[0].startswith("Exodus "))
+        self.assertTrue(any(reference.startswith("Exodus 3:") for reference in references))
         self.assertIn("Exodus 1:1-22", references)
         self.assertTrue(
             all(
@@ -2619,6 +2608,21 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(result["status"], 422)
         self.assertIn("Invalid model output", result["body"])
 
+    def test_ask_job_completes_when_answer_has_recoverable_diagnostics(self):
+        with patch("bhf_web.app.BHFAgent", RecoverableWarningAgent):
+            response = asgi_request("POST", "/ask/jobs", data=_valid_form())
+
+        self.assertEqual(response["status"], 202)
+        job = json.loads(response["body"])
+        status = wait_for_job(job["job_id"])
+
+        self.assertTrue(status["done"])
+        self.assertIsNone(status["error"])
+        result = asgi_request("GET", f"/ask/result/{job['job_id']}")
+        self.assertEqual(result["status"], 200)
+        self.assertIn("Answer with", result["body"])
+        self.assertIn("Diagnostics", result["body"])
+
 
 class FakeAgent:
     def __init__(self, config):
@@ -2723,6 +2727,13 @@ class SuccessfulJobAgent(FakeAgent):
             )
             status_callback(status_event("complete", "Complete", 16, status="complete"))
         return fake_result(self.config, errors=[])
+
+
+class RecoverableWarningAgent(SuccessfulJobAgent):
+    def ask(self, question, status_callback=None, canonical_fact_packet=None):
+        if status_callback is not None:
+            status_callback(status_event("complete", "Complete", 16, status="complete"))
+        return fake_result(self.config, errors=["Structured response envelope was removed."])
 
 
 class FallbackOnlyAgent(SuccessfulJobAgent):

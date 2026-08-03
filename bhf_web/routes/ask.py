@@ -21,6 +21,7 @@ from ..services.web_helpers import (
     job_error_message as _job_error_message,
     render_safe_markdown,
     result_metadata,
+    result_has_fatal_error,
 )
 
 
@@ -38,7 +39,9 @@ def _public_answer_text(result: Any) -> str:
 
 
 def _result_error_message(result: Any) -> str:
-    errors = getattr(result, "errors", None) or []
+    errors = getattr(result, "fatal_errors", None)
+    if errors is None:
+        errors = getattr(result, "errors", None) or []
     if not errors:
         return "Request failed."
     return "; ".join(str(error) for error in errors)
@@ -75,6 +78,7 @@ def _answer_template_context(
     inspector_question: str | None = None,
     inspector_max_context_tokens: int | None = None,
     device_study: dict[str, Any] | None = None,
+    warnings: list[str] | None = None,
 ) -> dict[str, Any]:
     metadata: dict[str, Any] = {}
     canonical_context = None
@@ -105,6 +109,7 @@ def _answer_template_context(
         "reader_reference": reader_reference,
         "can_save_study": can_save_study,
         "device_study": device_study,
+        "warnings": list(warnings or []),
     }
 
 
@@ -160,7 +165,7 @@ def register_ask_routes(
             )
 
         answer_text = _public_answer_text(result)
-        if getattr(result, "errors", None):
+        if result_has_fatal_error(result):
             return templates.TemplateResponse(
                 request,
                 "partials/answer.html",
@@ -172,6 +177,7 @@ def register_ask_routes(
                     show_debug=show_debug,
                     inspector_question=question,
                     inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
+                    warnings=getattr(result, "warnings", []),
                 ),
                 status_code=agent_error_status_code(result),
             )
@@ -187,6 +193,7 @@ def register_ask_routes(
                 show_debug=show_debug,
                 inspector_question=question,
                 inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
+                warnings=getattr(result, "warnings", []),
             ),
         )
 
@@ -244,7 +251,7 @@ def register_ask_routes(
 
         result = job.result
         answer_text = _public_answer_text(result)
-        if getattr(result, "errors", None):
+        if result_has_fatal_error(result):
             return templates.TemplateResponse(
                 request,
                 "partials/answer.html",
@@ -257,6 +264,7 @@ def register_ask_routes(
                     inspector_question=job.question,
                     inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
                     device_study=_device_study_payload(job, result),
+                    warnings=getattr(result, "warnings", []),
                 ),
                 status_code=agent_error_status_code(result),
             )
@@ -273,6 +281,7 @@ def register_ask_routes(
                 inspector_question=job.question,
                 inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
                 device_study=_device_study_payload(job, result),
+                warnings=getattr(result, "warnings", []),
             ),
         )
 

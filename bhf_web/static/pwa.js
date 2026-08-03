@@ -460,7 +460,7 @@
       ),
       readinessNode(
         "Local records",
-        `${Number(counts.notes || 0)} notes · ${Number(counts.highlights || 0)} highlights · ${Number(counts.mapStudies || 0)} map studies`,
+        `${Number(counts.notes || 0)} notes · ${Number(counts.highlights || 0)} highlights`,
         true
       ),
       readinessNode(
@@ -1188,9 +1188,6 @@
     }
     if (url.startsWith("/api/highlights")) {
       return `${action} highlight`;
-    }
-    if (url.startsWith("/api/map-studies")) {
-      return `${action} map study`;
     }
     if (url.startsWith("/api/saved-studies")) {
       return `${action} saved study`;

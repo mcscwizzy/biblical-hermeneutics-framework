@@ -1622,33 +1622,6 @@ body.reader-mode .chapter-text {
   align-items: start;
 }
 
-.saved-map-studies-panel {
-  margin-top: 14px;
-}
-
-.saved-map-studies-panel h3 {
-  margin: 0;
-  font-size: 1rem;
-}
-
-.saved-map-studies-list {
-  display: grid;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.saved-map-study {
-  border: 1px solid #d8dee4;
-  border-radius: 6px;
-  padding: 10px 12px;
-  background: #fbfcfd;
-}
-
-.saved-map-study h4 {
-  margin: 0 0 4px;
-  font-size: 0.98rem;
-}
-
 .map-action-section {
   border-top: 1px solid #e2e7ec;
   padding-top: 12px;
@@ -2222,8 +2195,7 @@ html[data-theme="dark"] .map-panel-body {
     gap: 10px;
   }
 
-  .map-details-panel,
-  .saved-map-study {
+  .map-details-panel {
     padding: 12px;
   }
 }

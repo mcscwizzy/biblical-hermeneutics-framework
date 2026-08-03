@@ -6,11 +6,11 @@ Scope: reflects the current runtime request path.
 
 ## Summary
 
-The primary user-question path already performs deterministic CKL lookup before the model call and now short-circuits repeat requests through retrieval, context, and response caches. The request path also emits a structured observability log with request ID, CKL timing, cache behavior, model usage, and fallback status. The frontend now receives only the final answer for ordinary ask responses; CKL metadata is only surfaced in explicit debug or saved-study views. A developer-only retrieval inspector is now available in debug ask responses and via `POST /api/debug/ckl-search`. The CKL pipeline is now gated by explicit rollout controls, including a shadow mode that performs retrieval without injecting CKL context into the model prompt. When the model backend fails or returns invalid output, the runner now substitutes a deterministic CKL fallback answer or a controlled empty search-results payload instead of surfacing the raw failure. The separate Bible-search fallback route now uses deterministic CKL-backed passage suggestions and no longer calls the model.
+The primary user-question path performs deterministic CKL lookup before the final synthesis-model call and may short-circuit repeat requests only with a previously validated final answer. The request path also emits a structured observability log with request ID, CKL timing, cache behavior, and model usage. The frontend receives only final prose for ordinary ask responses; CKL metadata is only surfaced in explicit debug or saved-study views. A developer-only retrieval inspector is available in debug ask responses and via `POST /api/debug/ckl-search`. The CKL pipeline is gated by explicit rollout controls, including a shadow mode that performs retrieval without injecting CKL context into the model prompt. If synthesis fails, the normal ask path returns a controlled error rather than substituting CKL serialization as an answer. The separate Bible-search fallback route remains a deliberately deterministic, structured passage-suggestion endpoint.
 
 The main request flow today is:
 
-`User question -> request route -> BHFAgent.ask() -> CKL retrieval cache -> CKL context cache -> response cache -> prompt build -> model call -> output cleanup/validation -> deterministic fallback if needed -> response render`
+`User question -> request route -> passage resolution/retrieval -> CKL and lexical retrieval -> ranking/evidence selection -> evidence package -> final synthesis-model call -> response validation -> response render`
 
 There is also a separate deterministic Bible search fallback route that asks the CKL for likely passages and returns a small, structured result payload without calling the model.
 
@@ -36,11 +36,13 @@ There is also a separate deterministic Bible search fallback route that asks the
 4. `bhf_agent/runner.py::BHFAgent.ask` orchestrates the pipeline:
    - `_initialize_context`
    - `_detect_reference` via `bhf_agent.references.detect_reference`
+   - `_retrieve_scripture_context` via `bhf_agent.bible.build_interpretation_context`
    - `_classify_genre` via `bhf_agent.genre.classify_genre`
    - `_classify_question_type` via `bhf_agent.question_types.classify_question_type`
    - `_load_profile`
    - `_lookup_local_knowledge` via `bhf_agent.knowledge.lookup_local_knowledge`
    - `_lookup_canonical_library`
+   - `_package_retrieved_evidence`
    - `_lookup_public_answer_cache`
    - `_load_session_memory`
    - `_lookup_response_cache`
@@ -49,7 +51,7 @@ There is also a separate deterministic Bible search fallback route that asks the
    - `_clean_output`
    - `_validate_response`
    - `_repair_response` when enabled
-   - `_apply_deterministic_fallback` when the model output is unavailable or invalid
+   - `_mark_synthesis_failure` when the model output is unavailable or invalid
    - `_finalize_result`
    - `_store_response_cache`
    - `_save_session_turn`
@@ -84,7 +86,7 @@ There is also a separate deterministic Bible search fallback route that asks the
   - Builds deterministic CKL-backed passage suggestions for the Bible-search fallback.
 - `bhf_agent/runner.py`
   - Owns the end-to-end agent pipeline.
-  - Loads CKL, builds prompts, manages deterministic cache layers, emits request observability logs, calls the model, cleans and validates output, substitutes deterministic fallback text when needed, and converts the final result.
+  - Loads and ranks evidence, packages it separately from final prose, builds prompts, manages deterministic cache layers, emits request observability logs, calls the final synthesis model, validates output, and converts the final result.
 - `bhf_agent/ckl.py`
   - Deterministic CKL query assembly.
   - Context selection and token budgeting.
@@ -108,7 +110,7 @@ There is also a separate deterministic Bible search fallback route that asks the
   - Builds the system and user prompts.
   - Appends CKL context and local knowledge to the system prompt.
 - `bhf_agent/model_response_validation.py`
-  - Normalizes model output into answer-only text for ordinary asks.
+  - Normalizes model output into answer-only text for ordinary asks and rejects raw CKL entry serialization.
   - Keeps a legacy structured JSON compatibility branch for older search callers.
   - Removes leaked runtime headings and strips internal analysis blocks before display.
 - `bhf_agent/output_cleaner.py`
@@ -126,9 +128,8 @@ There is also a separate deterministic Bible search fallback route that asks the
 
 The main prompt path currently includes:
 
-- Profile content
-- `AGENT_INSTRUCTIONS`
-- Answer-mode instructions
+- Compact hermeneutical safeguards
+- One unified final-answer instruction set
 - Detected reference and genre context
 - CKL prompt context, including query, retrieval method, retrieved object IDs, topic counts, status filters, and compact object blocks
 - Local curated knowledge
@@ -159,14 +160,11 @@ If CKL retrieval finds only weak matches, the prompt receives a short no-strong-
   - Returns a compact JSON payload with `results`, `reason`, and `confidence`.
   - Does not call the model.
 
-## Known Problems
+## Response Boundary Guarantees
 
-- CKL context is still appended to the model prompt as a prebuilt block, so the model can see retrieval metadata.
-- The frontend no longer sees retrieval metadata in ordinary ask responses.
-- Debug and saved-study views can still display controlled metadata.
-- Output cleanup is now paired with structured-response normalization, but the model can still emit malformed output that must be rejected or repaired.
-- Validation remains method-oriented after response normalization.
-- The current CKL prompt layer still mixes retrieval, prompt construction, and rendering concerns.
-- Response cache invalidation depends on CKL inventory fingerprints, selected entry versions, prompt version, model signature, and the canonical context cache key.
-- Observability logging is intentionally summary-first so it can measure latency and cache behavior without exposing raw prompts or model text.
-- The developer retrieval inspector is debug-only and does not alter the ordinary answer payload.
+- `RetrievedEvidence` retains Scripture, CKL, lexical, historical, and direct-text evidence inside the pipeline; it is not a public answer shape.
+- `FinalAnswer` is created only from validated synthesis prose and is the source of `AgentResult.answer_text`.
+- CKL-shaped entry dumps are rejected from fresh model output and from both answer-cache layers. A rejected cache entry triggers a normal final synthesis call.
+- A model timeout, parser failure, rejected repair, or other synthesis failure returns a controlled error; it never returns retrieved CKL text.
+- The ordinary ask route does not stream model or evidence tokens. The Ollama adapter explicitly requests `stream: false`; the other adapters issue a single completion request.
+- Debug and saved-study views can display controlled metadata, while the developer retrieval inspector remains debug-only and does not alter the ordinary answer payload.

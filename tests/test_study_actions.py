@@ -43,6 +43,23 @@ class StudyActionRouterTests(unittest.TestCase):
         self.assertEqual(result.metadata["reference"], "John 1:1-3")
         self.assertTrue(result.agent_fallback_allowed)
 
+    def test_context_action_falls_back_for_device_only_translation(self):
+        result = StudyActionRouter().execute(
+            "historical_context",
+            passage={
+                "book": "John",
+                "chapter": 1,
+                "start_verse": 1,
+                "end_verse": 1,
+                "translation": "device-only-import",
+                "selected_text": "Device-only translation text.",
+            },
+        )
+
+        self.assertIn(result.status, {"complete", "partial"})
+        scripture = next(section for section in result.sections if section["source"] == "scripture")
+        self.assertEqual(scripture["items"], ["Device-only translation text."])
+
     def test_reference_actions_are_deterministic_only(self):
         result = StudyActionRouter().execute(
             "people",

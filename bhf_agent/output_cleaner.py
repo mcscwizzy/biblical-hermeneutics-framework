@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 from dataclasses import dataclass, field
 
@@ -38,6 +39,13 @@ class OutputCleanupResult:
     removed_headings: list[str] = field(default_factory=list)
 
 
+@dataclass
+class ProseRecoveryResult:
+    text: str
+    recovered: bool = False
+    source_field: str | None = None
+
+
 def clean_model_output(text: str) -> OutputCleanupResult:
     """Remove obvious leading leaked runtime instructions.
 
@@ -68,6 +76,62 @@ def clean_model_output(text: str) -> OutputCleanupResult:
         applied=cleaned != text.strip(),
         removed_headings=_internal_headings_in(lines[first_content_index:answer_index]),
     )
+
+
+def recover_prose_from_malformed_response(text: str) -> ProseRecoveryResult:
+    """Recover one safe answer string from a partially malformed JSON reply.
+
+    This is deliberately narrow: only common answer-bearing fields are
+    considered, and internal/provider/debug-looking strings are rejected.
+    The normal cleaner is applied to the recovered value before it is returned.
+    """
+
+    candidate = text.strip()
+    fence = re.match(r"^\s*```(?:json)?\s*([\s\S]*?)\s*```\s*$", candidate, re.I)
+    if fence:
+        candidate = fence.group(1).strip()
+
+    fields = (
+        "answer",
+        "answer_text",
+        "final_answer",
+        "assistant_answer",
+        "response",
+        "reply",
+        "text",
+        "content",
+        "generated_text",
+        "completion",
+    )
+    for field_name in fields:
+        match = re.search(
+            rf"[\"']?{re.escape(field_name)}[\"']?\s*:\s*(\"(?:\\.|[^\"\\])*\")",
+            candidate,
+            re.IGNORECASE,
+        )
+        if not match:
+            continue
+        try:
+            recovered = json.loads(match.group(1))
+        except (TypeError, ValueError):
+            continue
+        if not isinstance(recovered, str) or not _safe_recovery_text(recovered):
+            continue
+        cleaned = clean_model_output(recovered).text.strip()
+        if cleaned and _safe_recovery_text(cleaned):
+            return ProseRecoveryResult(cleaned, recovered=True, source_field=field_name)
+    return ProseRecoveryResult(text=candidate)
+
+
+def _safe_recovery_text(text: str) -> bool:
+    lowered = text.lower()
+    if any(marker in lowered for marker in ("chain of thought", "tool_call", "retrieval score", "provider error")):
+        return False
+    if re.search(r"(?i)\b(?:analysis|reasoning|debug|internal notes|system instructions)\s*:", text):
+        return False
+    if re.search(r"(?i)\b(?:[A-Za-z0-9_.-]+/)+[A-Za-z0-9_.-]+\.(?:json|ya?ml|md)\b", text):
+        return False
+    return bool(text.strip())
 
 
 def _first_content_line(lines: list[str]) -> int | None:

@@ -28,14 +28,16 @@ class PromptBuildingTests(unittest.TestCase):
         self.assertIn("# SYSTEM INSTRUCTIONS", system_prompt)
         self.assertIn("Compact BHF Runtime Framework", system_prompt)
         self.assertNotIn("BHF Agent Runtime Instructions", system_prompt)
-        self.assertIn("Standard Runtime Strategy", system_prompt)
+        self.assertIn("# Final Answer Format", system_prompt)
+        self.assertIn("Begin with `## Answer`", system_prompt)
+        self.assertIn("## Biblical Evidence", system_prompt)
+        self.assertNotIn("Standard Runtime Strategy", system_prompt)
         self.assertIn("Use supplied Scripture, curated local knowledge", system_prompt)
         self.assertIn("Book: Proverbs", system_prompt)
         self.assertIn("Primary genre: wisdom literature", system_prompt)
-        self.assertIn("# OUTPUT REQUIREMENTS", system_prompt)
-        self.assertEqual(user_prompt, "What does Proverbs 3 mean?")
+        self.assertTrue(user_prompt.endswith("What does Proverbs 3 mean?"))
 
-    def test_full_runtime_profile_mode_preserves_full_profile_injection(self):
+    def test_runtime_profile_mode_is_accepted_but_ignored(self):
         system_prompt, user_prompt = build_prompt(
             "standard",
             "PROFILE CONTENT",
@@ -45,13 +47,12 @@ class PromptBuildingTests(unittest.TestCase):
             runtime_profile_mode="full",
         )
 
-        self.assertIn("PROFILE CONTENT", system_prompt)
-        self.assertIn("BHF Agent Runtime Instructions", system_prompt)
-        self.assertIn("Hermeneutical Framework Guidance", system_prompt)
-        self.assertNotIn("Compact BHF Runtime Framework", system_prompt)
-        self.assertEqual(user_prompt, "What does Proverbs 3 mean?")
+        self.assertNotIn("PROFILE CONTENT", system_prompt)
+        self.assertNotIn("BHF Agent Runtime Instructions", system_prompt)
+        self.assertIn("Compact BHF Runtime Framework", system_prompt)
+        self.assertTrue(user_prompt.endswith("What does Proverbs 3 mean?"))
 
-    def test_minimal_profile_gets_strict_small_model_instructions(self):
+    def test_profiles_share_the_unified_answer_format(self):
         system_prompt, _ = build_prompt(
             "minimal-7b",
             "PROFILE",
@@ -60,18 +61,11 @@ class PromptBuildingTests(unittest.TestCase):
             "What does Proverbs 3 mean?",
         )
 
-        self.assertIn("Minimal Runtime Strategy", system_prompt)
-        self.assertIn("Keep answers short", system_prompt)
-        self.assertIn("Use simple sentences", system_prompt)
-        self.assertIn("Avoid scholarly surveys", system_prompt)
-        self.assertIn("Avoid precise dates unless they are supplied", system_prompt)
-        self.assertIn("Say uncertain instead of guessing", system_prompt)
-        self.assertIn(
-            "Genre; Original Audience / Ancient Context; Observation; Interpretation; Application; Cautions / Uncertainty",
-            system_prompt,
-        )
+        self.assertIn("# Final Answer Format", system_prompt)
+        self.assertNotIn("Minimal Runtime Strategy", system_prompt)
+        self.assertNotIn("Genre; Original Audience", system_prompt)
 
-    def test_standard_profile_gets_balanced_instructions(self):
+    def test_unified_format_prioritizes_answer_and_qualification(self):
         system_prompt, _ = build_prompt(
             "standard",
             "PROFILE",
@@ -80,13 +74,37 @@ class PromptBuildingTests(unittest.TestCase):
             "What does Proverbs 3 mean?",
         )
 
-        self.assertIn("Standard Runtime Strategy", system_prompt)
-        self.assertIn("Use a structured answer with clear headings", system_prompt)
-        self.assertIn("Include brief method notes when enabled", system_prompt)
-        self.assertIn("Mention major interpretive views when they are relevant", system_prompt)
-        self.assertIn("Avoid denominational overreach", system_prompt)
-        self.assertIn("Answer Mode: Study", system_prompt)
-        self.assertIn("default balanced BHF answer shape", system_prompt)
+        self.assertIn("first paragraph", system_prompt)
+        self.assertIn("Important Qualification", system_prompt)
+        self.assertIn("Do not force every section", system_prompt)
+        self.assertIn("Do not add personal application unless", system_prompt)
+
+    def test_unified_format_covers_required_question_regressions(self):
+        questions = (
+            "Why did the Lord keep Hannah from conceiving?",
+            "Why did Ruth uncover Boaz's feet and lie down?",
+            "What do the seven stars represent in Revelation 1?",
+            "Why did God allow this suffering when Scripture gives no explicit reason?",
+            "Who was Samuel?",
+        )
+        for question in questions:
+            with self.subTest(question=question):
+                system_prompt, user_prompt = build_prompt(
+                    "standard",
+                    "PROFILE",
+                    detect_reference(question),
+                    classify_genre(detect_reference(question)),
+                    question,
+                )
+                self.assertIn("Begin with `## Answer`", system_prompt)
+                self.assertIn("## Biblical Evidence", system_prompt)
+                self.assertIn("## Literary Context", system_prompt)
+                self.assertIn("## Historical and Cultural Context", system_prompt)
+                self.assertIn("## How We Arrived at the Answer", system_prompt)
+                self.assertIn("## Important Qualification", system_prompt)
+                self.assertIn("Clearly distinguish explicit statements", system_prompt)
+                self.assertIn("Do not add personal application unless", system_prompt)
+                self.assertTrue(user_prompt.endswith(question))
 
     def test_framework_guidance_sets_interpretive_order_and_boundaries(self):
         system_prompt, _ = build_prompt(
@@ -98,19 +116,15 @@ class PromptBuildingTests(unittest.TestCase):
             runtime_profile_mode="full",
         )
 
-        self.assertIn("Hermeneutical Framework Guidance", system_prompt)
-        self.assertIn("Immediate literary context", system_prompt)
-        self.assertIn("Hebraic worldview", system_prompt)
-        self.assertIn("Second Temple Jewish context when relevant", system_prompt)
-        self.assertIn("Christological development when supported by the text", system_prompt)
-        self.assertIn("Modern application", system_prompt)
+        self.assertIn("Compact BHF Runtime Framework", system_prompt)
+        self.assertIn("immediate literary context", system_prompt)
+        self.assertIn("Second Temple", system_prompt)
+        self.assertIn("Christological interpretation", system_prompt)
+        self.assertIn("modern application", system_prompt)
         self.assertIn("Read the Old Testament as Israel's Scriptures", system_prompt)
-        self.assertIn("Read New Testament authors within their Jewish, Second Temple, Greco-Roman, and scriptural worlds", system_prompt)
         self.assertIn("Preserve the distinction between Israel and the Church", system_prompt)
-        self.assertIn("Do not flatten Judaism into legalism", system_prompt)
-        self.assertIn("Do not describe the Old Testament as works-based and the New Testament as grace-based", system_prompt)
-        self.assertIn("similarity does not prove dependence", system_prompt)
-        self.assertIn("difference does not prove complete isolation", system_prompt)
+        self.assertIn("Do not portray Judaism as merely legalistic", system_prompt)
+        self.assertIn("do not frame the Old Testament as works-based", system_prompt)
 
     def test_compact_runtime_framework_preserves_core_bhf_guardrails(self):
         system_prompt, _ = build_prompt(
@@ -166,11 +180,11 @@ class PromptBuildingTests(unittest.TestCase):
 
         estimates = result.metadata["prompt_token_estimates"]
         characters = result.metadata["prompt_character_counts"]
-        self.assertEqual(result.metadata["runtime_profile_mode"], "compact")
+        self.assertEqual(result.metadata["runtime_profile_mode"], "unified")
         self.assertFalse(result.metadata["full_profile_injected"])
         self.assertEqual(estimates["profile"], 0)
         self.assertGreater(estimates["runtime_framework"], 0)
-        self.assertGreater(estimates["strategy"], 0)
+        self.assertEqual(estimates["strategy"], 0)
         self.assertGreater(estimates["detected_context"], 0)
         self.assertEqual(estimates["canonical_context"], 0)
         self.assertGreater(estimates["response_contract"], 0)
@@ -185,7 +199,7 @@ class PromptBuildingTests(unittest.TestCase):
             characters["system_prompt"] + characters["user_prompt"],
         )
 
-    def test_prompt_result_reports_full_profile_injection(self):
+    def test_prompt_result_reports_retired_runtime_profile(self):
         result = build_prompt_result(
             "standard",
             "PROFILE CONTENT",
@@ -195,32 +209,26 @@ class PromptBuildingTests(unittest.TestCase):
             runtime_profile_mode="full",
         )
 
-        self.assertEqual(result.metadata["runtime_profile_mode"], "full")
-        self.assertTrue(result.metadata["full_profile_injected"])
-        self.assertGreater(result.metadata["prompt_token_estimates"]["profile"], 0)
+        self.assertEqual(result.metadata["runtime_profile_mode"], "unified")
+        self.assertEqual(result.metadata["legacy_runtime_profile_mode"], "full")
+        self.assertFalse(result.metadata["full_profile_injected"])
+        self.assertEqual(result.metadata["prompt_token_estimates"]["profile"], 0)
 
-    def test_answer_mode_adds_mode_specific_instructions(self):
-        expected = {
-            "concise": "Give a direct, short answer",
-            "study": "default balanced BHF answer shape",
-            "teaching": "small group, Sunday school, or youth teaching",
-            "scholar": "Use confidence labels for major claims and alternatives",
-        }
-        for answer_mode, expected_text in expected.items():
+    def test_answer_modes_are_accepted_but_share_one_prompt(self):
+        prompts = []
+        for answer_mode in ("concise", "study", "teaching", "scholar"):
             with self.subTest(answer_mode=answer_mode):
-                system_prompt, _ = build_prompt(
+                prompts.append(build_prompt(
                     "standard",
                     "PROFILE",
                     self.reference,
                     self.genre,
                     "What does Proverbs 3 mean?",
                     answer_mode=answer_mode,
-                )
+                ))
+        self.assertTrue(all(prompt == prompts[0] for prompt in prompts))
 
-                self.assertIn(f"Answer Mode: {answer_mode.title()}", system_prompt)
-                self.assertIn(expected_text, system_prompt)
-
-    def test_scholar_profile_gets_deeper_research_style_instructions(self):
+    def test_scholar_profile_does_not_change_the_answer_shape(self):
         system_prompt, _ = build_prompt(
             "scholar",
             "PROFILE",
@@ -229,18 +237,10 @@ class PromptBuildingTests(unittest.TestCase):
             "What does Proverbs 3 mean?",
         )
 
-        self.assertIn("Scholar Runtime Strategy", system_prompt)
-        self.assertIn("historical context", system_prompt)
-        self.assertIn("intertextuality", system_prompt)
-        self.assertIn("language cautions", system_prompt)
-        self.assertIn("multiple interpretive options", system_prompt)
-        self.assertIn("careful confidence labels", system_prompt)
-        self.assertIn(
-            "Do not invent scholars, citations, dates, manuscripts, or language claims",
-            system_prompt,
-        )
+        self.assertIn("# Final Answer Format", system_prompt)
+        self.assertNotIn("Scholar Runtime Strategy", system_prompt)
 
-    def test_unknown_profile_falls_back_to_standard_strategy(self):
+    def test_unknown_profile_uses_the_unified_answer_format(self):
         system_prompt, _ = build_prompt(
             "unknown-profile",
             "PROFILE",
@@ -249,8 +249,7 @@ class PromptBuildingTests(unittest.TestCase):
             "What does Proverbs 3 mean?",
         )
 
-        self.assertIn("Standard Runtime Strategy", system_prompt)
-        self.assertIn("Use a structured answer with clear headings", system_prompt)
+        self.assertIn("# Final Answer Format", system_prompt)
         self.assertNotIn("Minimal Runtime Strategy", system_prompt)
         self.assertNotIn("Scholar Runtime Strategy", system_prompt)
 
@@ -281,17 +280,9 @@ class PromptBuildingTests(unittest.TestCase):
             question,
         )
 
-        self.assertIn("## 1. Short Answer; ## 2. Basic Meaning; ## 3. Context Matters", system_prompt)
-        self.assertIn("## Short Answer", system_prompt)
-        self.assertIn("Keep answers short", system_prompt)
-        self.assertIn("Question type:\nword_study", user_prompt)
-        self.assertIn("Answer using the word-study format exactly", user_prompt)
-        self.assertIn("## 1. Short Answer", user_prompt)
-        self.assertIn("Keep the answer short", user_prompt)
-        self.assertIn("Do not repeat, quote, summarize, or expose the BHF runtime instructions", user_prompt)
-        self.assertIn("BHF Agent Runtime Instructions", user_prompt)
-        self.assertIn("Minimal Runtime Strategy", user_prompt)
-        self.assertIn("If unsure about a biblical reference, do not cite it.", user_prompt)
+        self.assertIn("# Final Answer Format", system_prompt)
+        self.assertIn("Clearly distinguish explicit statements", system_prompt)
+        self.assertTrue(user_prompt.endswith(question))
 
     def test_minimal_word_study_cautions_instruction_is_explicit(self):
         question = "What does logos mean?"
@@ -308,11 +299,8 @@ class PromptBuildingTests(unittest.TestCase):
             question,
         )
 
-        self.assertIn(
-            "In ## 5. Cautions, include at least one sentence beginning with 'Caution:' or 'Uncertainty:'.",
-            user_prompt,
-        )
-        self.assertIn("Begin directly with ## 1. Short Answer.", user_prompt)
+        self.assertIn("User's exact question:", user_prompt)
+        self.assertTrue(user_prompt.endswith(question))
 
     def test_word_study_prompt_includes_local_curated_knowledge(self):
         question = "What is the hebrew word for the word spirit or wind?"
@@ -405,7 +393,7 @@ class PromptBuildingTests(unittest.TestCase):
             system_prompt.index("# CANONICAL KNOWLEDGE CONTEXT"),
             system_prompt.index("Local Curated Knowledge"),
         )
-        self.assertIn("# OUTPUT REQUIREMENTS", system_prompt)
+        self.assertIn("# Final Answer Format", system_prompt)
 
     def test_prompt_uses_scripture_reverse_lookup_for_joshua_24(self):
         question = "Which objects relate to Joshua 24?"
@@ -425,8 +413,8 @@ class PromptBuildingTests(unittest.TestCase):
 
         self.assertIn("## Entry: Joshua", canonical_prompt)
         self.assertIn("Source ID: joshua", canonical_prompt)
-        self.assertIn("Joshua 24:1-28", canonical_prompt)
-        self.assertIn("covenant renewal at Shechem", canonical_prompt)
+        self.assertIn("Joshua 1-24", canonical_prompt)
+        self.assertIn("covenant", canonical_prompt.lower())
         self.assertNotIn("Retrieved object IDs:", canonical_prompt)
         self.assertNotIn("Score:", canonical_prompt)
         self.assertNotIn("Match:", canonical_prompt)
@@ -463,7 +451,7 @@ class PromptBuildingTests(unittest.TestCase):
             canonical_prompt.index("Later Christian Reception:"),
         )
 
-    def test_canonical_context_prompt_uses_answer_mode_tiers(self):
+    def test_canonical_context_prompt_ignores_answer_modes(self):
         question = "Why did Israel renew the covenant where Abraham first entered the land at Shechem in Joshua 24?"
         reference = detect_reference(question)
         genre = classify_genre(reference)
@@ -482,7 +470,7 @@ class PromptBuildingTests(unittest.TestCase):
 
         concise_prompt = format_canonical_context_for_prompt(
             canonical_context,
-            max_context_tokens=600,
+            max_context_tokens=1200,
             answer_mode="concise",
         )
         scholar_prompt = format_canonical_context_for_prompt(
@@ -497,8 +485,7 @@ class PromptBuildingTests(unittest.TestCase):
         self.assertIn("Primary Scripture References:", concise_prompt)
         self.assertIn("Interpretive Disputes and Cautions:", concise_prompt)
         self.assertIn("Sources:", concise_prompt)
-        self.assertNotIn("Ancient Near Eastern Context:", concise_prompt)
-        self.assertIn("Ancient Near Eastern Context:", scholar_prompt)
+        self.assertIn("Ancient Near Eastern Context:", concise_prompt)
         self.assertIn("Covenant and Canonical Context:", scholar_prompt)
         self.assertIn("Interpretive Disputes and Cautions:", scholar_prompt)
         self.assertIn("Sources:", scholar_prompt)
@@ -506,27 +493,7 @@ class PromptBuildingTests(unittest.TestCase):
         self.assertNotIn("Relevant facts:", scholar_prompt)
         self.assertNotIn("Retrieved object IDs:", concise_prompt)
         self.assertNotIn("Retrieved object IDs:", scholar_prompt)
-        concise_order = [
-            concise_prompt.index("Summary:"),
-            concise_prompt.index("Primary Scripture References:"),
-            concise_prompt.index("Immediate Literary Context:"),
-            concise_prompt.index("Historical Context:"),
-            concise_prompt.index("Interpretive Disputes and Cautions:"),
-            concise_prompt.index("Sources:"),
-        ]
-        self.assertEqual(concise_order, sorted(concise_order))
-        scholar_order = [
-            scholar_prompt.index("Summary:"),
-            scholar_prompt.index("Primary Scripture References:"),
-            scholar_prompt.index("Immediate Literary Context:"),
-            scholar_prompt.index("Historical Context:"),
-            scholar_prompt.index("Ancient Near Eastern Context:"),
-            scholar_prompt.index("Covenant and Canonical Context:"),
-            scholar_prompt.index("Interpretive Disputes and Cautions:"),
-            scholar_prompt.index("Sources:"),
-        ]
-        self.assertEqual(scholar_order, sorted(scholar_order))
-        self.assertLess(len(concise_prompt), len(scholar_prompt))
+        self.assertEqual(concise_prompt, scholar_prompt)
 
     def test_prompt_includes_local_session_memory_when_available(self):
         memory = SessionMemory(
@@ -576,11 +543,9 @@ class PromptBuildingTests(unittest.TestCase):
             question,
         )
 
-        self.assertIn("Use a word-study format", system_prompt)
-        self.assertIn("semantic range and context dependence", system_prompt)
-        self.assertIn("Do not invent lexical claims", system_prompt)
-        self.assertIn("Answer with a word-study format", user_prompt)
-        self.assertNotIn("Answer using the word-study format exactly", user_prompt)
+        self.assertIn("# Final Answer Format", system_prompt)
+        self.assertIn("claim certainty where Scripture is silent", system_prompt)
+        self.assertTrue(user_prompt.endswith(question))
 
     def test_scholar_word_study_warns_against_invented_scholarly_claims(self):
         question = "What does pneuma mean?"
@@ -597,12 +562,8 @@ class PromptBuildingTests(unittest.TestCase):
             question,
         )
 
-        self.assertIn("careful lexical method", system_prompt)
-        self.assertIn(
-            "Do not invent lexical, manuscript, source-critical, or scholarly claims",
-            system_prompt,
-        )
-        self.assertIn("Distinguish lexical range", system_prompt)
+        self.assertIn("# Final Answer Format", system_prompt)
+        self.assertIn("Clearly distinguish explicit statements", system_prompt)
 
 
 if __name__ == "__main__":

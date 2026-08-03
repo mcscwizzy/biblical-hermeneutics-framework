@@ -750,8 +750,7 @@ html[data-theme="dark"] .app-dock {
     gap: 10px;
   }
 
-  .map-details-panel,
-  .saved-map-study {
+  .map-details-panel {
     padding: 12px;
   }
 
@@ -881,7 +880,6 @@ html[data-theme="dark"] .source-detail-card,
 html[data-theme="dark"] .attribution-panel,
 html[data-theme="dark"] .source-reference-list,
 html[data-theme="dark"] .map-details-panel,
-html[data-theme="dark"] .saved-map-study,
 html[data-theme="dark"] .map-modal-shell,
 html[data-theme="dark"] .map-pin-hint,
 html[data-theme="dark"] .context-menu,

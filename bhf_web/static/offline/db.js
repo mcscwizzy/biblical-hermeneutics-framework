@@ -1,6 +1,6 @@
 (function () {
   const DB_NAME = "bhf-offline";
-  const DB_VERSION = 5;
+  const DB_VERSION = 6;
   const STORES = [
     "apiResponses",
     "translations",
@@ -11,12 +11,11 @@
     "notes",
     "highlights",
     "savedStudies",
-    "mapStudies",
     "mutationQueue",
     "metadata",
     "modelSettings",
   ];
-  const SNAPSHOT_STORES = ["notes", "highlights", "savedStudies", "mapStudies", "mutationQueue", "metadata"];
+  const SNAPSHOT_STORES = ["notes", "highlights", "savedStudies", "mutationQueue", "metadata"];
   const REBUILDABLE_STORES = ["apiResponses", "translations", "canonicalObjects", "sources", "chapters", "searches"];
   const REQUIRED_OFFLINE_PACKS = ["study", "maps"];
 
@@ -34,6 +33,9 @@
       const request = indexedDB.open(DB_NAME, DB_VERSION);
       request.onupgradeneeded = () => {
         const db = request.result;
+        if (db.objectStoreNames.contains("mapStudies")) {
+          db.deleteObjectStore("mapStudies");
+        }
         for (const storeName of STORES) {
           if (!db.objectStoreNames.contains(storeName)) {
             db.createObjectStore(storeName, { keyPath: "id" });
@@ -162,15 +164,8 @@
     if (sourceMatch && payload?.id) {
       await put("sources", normalizeSource(payload));
     }
-    if (id.startsWith("/api/map-studies") && Array.isArray(payload?.saved_map_studies)) {
-      await Promise.all(payload.saved_map_studies.map((study) => put("mapStudies", normalizeMapStudy(study))));
-    }
     if (id.startsWith("/api/saved-studies") && Array.isArray(payload?.saved_studies)) {
       await Promise.all(payload.saved_studies.map((study) => put("savedStudies", normalizeSavedStudy(study))));
-    }
-    const mapStudyMatch = id.match(/^\/api\/map-studies\/([^/?]+)$/);
-    if (mapStudyMatch && payload?.id) {
-      await put("mapStudies", normalizeMapStudy(payload));
     }
     return payload;
   }
@@ -253,9 +248,6 @@
       const params = new URLSearchParams(key.split("?", 2)[1] || "");
       const studies = await savedStudiesForChapter(params.get("book"), params.get("chapter"));
       return { saved_studies: studies, offline: true, cache_status: "generated", device_only: true };
-    }
-    if (key.startsWith("/api/map-studies")) {
-      return generatedMapStudiesResponse(key);
     }
     const chapterMatch = key.match(/^\/api\/bible\/([^/?]+)\/(\d+)(?:\?(.+))?$/);
     if (!chapterMatch) {
@@ -497,26 +489,6 @@
     return String(value || "").trim().toLowerCase().replace(/[^a-z0-9_-]+/g, "-").replace(/^-+|-+$/g, "");
   }
 
-  async function generatedMapStudiesResponse(key) {
-    const detailMatch = key.match(/^\/api\/map-studies\/([^/?]+)$/);
-    if (detailMatch) {
-      const study = await get("mapStudies", decodeURIComponent(detailMatch[1]));
-      return study ? { ...study, offline: true, cache_status: "generated" } : null;
-    }
-    const params = new URLSearchParams(key.split("?", 2)[1] || "");
-    const book = params.get("book");
-    const chapter = params.get("chapter");
-    const studies = await mapStudiesForChapter(book, chapter);
-    if (!studies.length) {
-      return null;
-    }
-    return {
-      saved_map_studies: studies,
-      offline: true,
-      cache_status: "generated",
-    };
-  }
-
   async function enqueueMutation(mutation) {
     const queued = {
       id: clientId("mutation"),
@@ -625,7 +597,6 @@
       notes: (await list("notes")).length,
       highlights: (await list("highlights")).length,
       savedStudies: (await list("savedStudies")).length,
-      mapStudies: (await list("mapStudies")).length,
       canonicalObjects: (await list("canonicalObjects")).length,
       sources: (await list("sources")).length,
     };
@@ -710,31 +681,6 @@
       .sort((left, right) => String(left.created_at || "").localeCompare(String(right.created_at || "")));
   }
 
-  async function upsertOfflineMapStudy(payload, method = "POST", url = "/api/map-studies") {
-    const study = normalizeMapStudy(payload, "pending");
-    await put("mapStudies", study);
-    await enqueueMutation({ method, url, body: study, store: "mapStudies", recordId: study.id });
-    await cacheMapStudiesForChapter(study.book, study.chapter);
-    return { ...study, offline: true, sync_status: "pending" };
-  }
-
-  async function deleteOfflineMapStudy(studyId, url) {
-    const existing = await get("mapStudies", studyId);
-    await remove("mapStudies", studyId);
-    if (existing) {
-      await cacheMapStudiesForChapter(existing.book, existing.chapter);
-    }
-    await enqueueMutation({ method: "DELETE", url, store: "mapStudies", recordId: studyId });
-    return { deleted: true, offline: true, sync_status: "pending" };
-  }
-
-  async function mapStudiesForChapter(book, chapter) {
-    const studies = await list("mapStudies");
-    return studies
-      .filter((study) => !book || !chapter || sameChapter(study, book, chapter))
-      .sort((left, right) => String(right.created_at || "").localeCompare(String(left.created_at || "")));
-  }
-
   async function deleteOfflineSavedStudy(studyId, url) {
     const existing = await get("savedStudies", studyId);
     await remove("savedStudies", studyId);
@@ -780,7 +726,6 @@
         ["/api/notes/", "notes"],
         ["/api/highlights/", "highlights"],
         ["/api/saved-studies/", "savedStudies"],
-        ["/api/map-studies/", "mapStudies"],
       ];
       const match = matchers.find(([prefix]) => path.startsWith(prefix));
       if (match) {
@@ -794,8 +739,6 @@
             await cacheHighlightsForChapter(existing.book, existing.chapter);
           } else if (match[1] === "savedStudies") {
             await cacheSavedStudiesForChapter(existing.book, existing.chapter);
-          } else if (match[1] === "mapStudies") {
-            await cacheMapStudiesForChapter(existing.book, existing.chapter);
           }
         }
       }
@@ -813,9 +756,6 @@
     } else if (path === "/api/saved-studies") {
       await put("savedStudies", normalizeSavedStudy(payload, "synced"));
       await cacheSavedStudiesForChapter(payload.book, payload.chapter);
-    } else if (path === "/api/map-studies") {
-      await put("mapStudies", normalizeMapStudy(payload, "synced"));
-      await cacheMapStudiesForChapter(payload.book, payload.chapter);
     }
   }
 
@@ -834,14 +774,6 @@
   async function cacheHighlightsForChapter(book, chapter) {
     const highlights = await highlightsForChapter(book, chapter);
     await cacheApiResponse(`/api/highlights/${encodeURIComponent(book)}/${encodeURIComponent(chapter)}`, { highlights });
-  }
-
-  async function cacheMapStudiesForChapter(book, chapter) {
-    const savedMapStudies = await mapStudiesForChapter(book, chapter);
-    await cacheApiResponse(
-      `/api/map-studies?book=${encodeURIComponent(book)}&chapter=${encodeURIComponent(chapter)}`,
-      { saved_map_studies: savedMapStudies }
-    );
   }
 
   async function cacheSavedStudiesForChapter(book, chapter) {
@@ -879,30 +811,6 @@
       end_verse: Number(payload.end_verse || payload.start_verse || 0),
       selected_text: String(payload.selected_text || ""),
       color: String(payload.color || "yellow"),
-      created_at: payload.created_at || now,
-      updated_at: now,
-      sync_status: syncStatus || payload.sync_status || "synced",
-    };
-  }
-
-  function normalizeMapStudy(payload, syncStatus) {
-    const now = nowIso();
-    return {
-      id: payload.id || clientId("map-study"),
-      book: String(payload.book || ""),
-      chapter: Number(payload.chapter || 0),
-      start_verse: Number(payload.start_verse || payload.verse_start || 0),
-      end_verse: Number(payload.end_verse || payload.verse_end || payload.start_verse || payload.verse_start || 0),
-      passage_reference: String(payload.passage_reference || ""),
-      selected_place_id: String(payload.selected_place_id || ""),
-      selected_route_id: String(payload.selected_route_id || ""),
-      selected_layer_id: String(payload.selected_layer_id || ""),
-      selected_archaeology_id: String(payload.selected_archaeology_id || ""),
-      selected_manuscript_id: String(payload.selected_manuscript_id || ""),
-      selected_layers: Array.isArray(payload.selected_layers) ? payload.selected_layers : [],
-      map_view_state: payload.map_view_state && typeof payload.map_view_state === "object" ? payload.map_view_state : {},
-      generated_summary: String(payload.generated_summary || ""),
-      user_notes: String(payload.user_notes || ""),
       created_at: payload.created_at || now,
       updated_at: now,
       sync_status: syncStatus || payload.sync_status || "synced",
@@ -1067,9 +975,6 @@
     upsertOfflineHighlight,
     deleteOfflineHighlight,
     highlightsForChapter,
-    upsertOfflineMapStudy,
-    deleteOfflineMapStudy,
-    mapStudiesForChapter,
     deleteOfflineSavedStudy,
     upsertOfflineSavedStudy,
     savedStudiesForChapter,

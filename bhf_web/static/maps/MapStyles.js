@@ -73,15 +73,6 @@ function politicalContextStyle(layerItem) {
   };
 }
 
-function journeySegmentStyle(segment, { selected = false } = {}) {
-  return {
-    color: selected ? "#d18a16" : "#245b82",
-    weight: selected ? 6 : 4,
-    opacity: selected ? 1 : 0.9,
-    dashArray: selected ? "0" : "8 7",
-  };
-}
-
 function referenceLayerStyle(layer, feature, { selected = false } = {}) {
   const palette = {
     "ancient-cities": { color: "#8e5c0a", fillColor: "#f5d08a" },
@@ -141,17 +132,6 @@ function manuscriptMarkerStyle(item) {
   };
 }
 
-function journeyStopIcon(stop, { selected = false } = {}) {
-  const order = Number.isFinite(stop?.order) ? String(stop.order) : "";
-  return window.L.divIcon({
-    className: `map-journey-stop ${selected ? "is-selected" : ""}`.trim(),
-    html: `<span class="map-journey-stop__label">${order || "•"}</span>`,
-    iconSize: [34, 34],
-    iconAnchor: [17, 34],
-    popupAnchor: [0, -30],
-  });
-}
-
 function referencePointIcon(layer, feature, { selected = false } = {}) {
   const label = String(feature?.name || layer?.title || "?").trim().slice(0, 1).toUpperCase() || "?";
   return window.L.divIcon({
@@ -186,8 +166,6 @@ export {
   archaeologyMarkerStyle,
   entityMarkerIcon,
   historicalLayerStyle,
-  journeySegmentStyle,
-  journeyStopIcon,
   manuscriptMarkerStyle,
   politicalContextStyle,
   referenceLayerStyle,

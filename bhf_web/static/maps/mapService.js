@@ -73,9 +73,16 @@ export function invalidateMapCache(match = "") {
   }
 }
 
-async function fetchJson(url) {
+async function fetchJson(url, { forceRefresh = false } = {}) {
+  const headers = { Accept: "application/json" };
+  // Catalog search must reflect the current curated-place dataset. In
+  // particular, do not let a previously cached empty result mask a location
+  // that was subsequently restored or imported.
+  if (forceRefresh) {
+    headers["X-BHF-Refresh"] = "true";
+  }
   const response = await fetch(url, {
-    headers: { Accept: "application/json" },
+    headers,
   });
   const data = await response.json();
   if (!response.ok) {
@@ -84,13 +91,17 @@ async function fetchJson(url) {
   return data;
 }
 
-async function loadCachedJson(url, fallbackErrorMessage, { allowOfflineFallback = true } = {}) {
+async function loadCachedJson(
+  url,
+  fallbackErrorMessage,
+  { allowOfflineFallback = true, forceRefresh = false } = {}
+) {
   if (inFlightRequests.has(url)) {
     return inFlightRequests.get(url);
   }
   const request = (async () => {
     try {
-      const data = await fetchJson(url);
+      const data = await fetchJson(url, { forceRefresh });
       writeCachedValue(url, data);
       return data;
     } catch (error) {
@@ -298,22 +309,8 @@ export async function searchMapCatalog(query, context = {}) {
     params.set("limit", String(context.limit));
   }
   const url = `/api/maps/search?${params.toString()}`;
-  return loadCachedJson(url, "Could not search the map catalog.", { allowOfflineFallback: false });
-}
-
-export async function loadSavedMapStudies(context = {}) {
-  const params = new URLSearchParams();
-  if (context.book) {
-    params.set("book", context.book);
-  }
-  if (context.chapter) {
-    params.set("chapter", String(context.chapter));
-  }
-  const url = params.toString() ? `/api/map-studies?${params.toString()}` : "/api/map-studies";
-  return loadCachedJson(url, "Could not load saved map studies.");
-}
-
-export async function loadSavedMapStudy(studyId) {
-  const url = `/api/map-studies/${encodeURIComponent(studyId)}`;
-  return loadCachedJson(url, "Could not load saved map study.");
+  return loadCachedJson(url, "Could not search the map catalog.", {
+    allowOfflineFallback: false,
+    forceRefresh: true,
+  });
 }

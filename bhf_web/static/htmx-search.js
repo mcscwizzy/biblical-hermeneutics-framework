@@ -85,9 +85,6 @@ function syncBibleSearchConfig(searchForm) {
   }
   for (const name of [
     "adapter",
-    "profile",
-    "runtime_profile_mode",
-    "answer_mode",
     "model",
     "base_url",
     "temperature",

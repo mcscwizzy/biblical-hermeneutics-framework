@@ -132,7 +132,7 @@ class OllamaAdapter(ChatAdapter):
                 usage=safe_metadata,
                 raw_provider_response={"metadata": safe_metadata},
                 errors=[extraction_error],
-                error_category="provider_failure",
+                error_category="response_extraction",
             )
 
         return ChatResponse(

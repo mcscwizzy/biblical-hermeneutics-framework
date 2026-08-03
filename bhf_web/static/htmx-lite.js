@@ -50,9 +50,7 @@ const BHF_STUDY_ACTIONS = new Set([
   "people",
   "places",
   "themes",
-  "ask_location",
   "compare_archaeology",
-  "related_passages",
 ]);
 
 const BHF_DETERMINISTIC_STUDY_ACTIONS = new Set([
@@ -2920,7 +2918,6 @@ function showContextMenu(x, y, context) {
     return;
   }
   const isSelection = Boolean(context.isSelection);
-  const isHighlighted = isContextHighlighted(context);
   setContextLabel("ask_bhf", "Ask BHF");
   setContextLabel(
     "cultural_context",
@@ -2950,26 +2947,13 @@ function showContextMenu(x, y, context) {
     isSelection ? "Compare Translations" : "Compare Translations",
   );
   setContextLabel("timeline", isSelection ? "Timeline" : "Timeline");
-  setContextLabel(
-    "ask_location",
-    isSelection ? "Ask about this location" : "Ask about this location",
-  );
   setContextLabel("open_map_panel", isSelection ? "Maps" : "Maps");
-  setContextLabel("save_map_study", "Save map study");
-  setContextLabel("map_note", "Add map note");
   setContextLabel("compare_archaeology", "Compare with archaeology");
-  setContextLabel("related_passages", "View related passages");
-  setContextLabel("view_historical_layer", "View historical layer");
   setContextLabel("save_study", "Save Study");
   setContextLabel("note", isSelection ? "Add Note" : "Add Note");
-  setContextLabel(
-    "highlight",
-    isHighlighted
-      ? "Remove Highlight"
-      : isSelection
-        ? "Highlight Selection"
-        : "Highlight Verse",
-  );
+  setContextLabel("highlight", isSelection ? "Highlight Selection" : "Highlight Verse");
+  setContextLabel("remove_highlight", "Remove Highlight");
+  setContextVisibility("remove_highlight", highlightsForContext(context).length > 0);
   resetContextSubmenus(menu);
   contextMenuPosition = {x, y};
   menu.hidden = false;
@@ -3055,6 +3039,13 @@ function setContextLabel(action, label) {
   }
 }
 
+function setContextVisibility(action, visible) {
+  const button = document.querySelector(`[data-context-action="${action}"]`);
+  if (button) {
+    button.hidden = !visible;
+  }
+}
+
 async function handleContextMenuAction(event) {
   const submenuTrigger = event.target.closest("[data-context-submenu]");
   if (submenuTrigger) {
@@ -3067,19 +3058,13 @@ async function handleContextMenuAction(event) {
   if (!button || !contextMenuState) {
     return;
   }
-  const actionType = resolveContextAction(
-    button.dataset.contextAction,
-    contextMenuState,
-  );
+  const actionType = resolveContextAction(button.dataset.contextAction);
   const context = contextMenuState;
   hideContextMenu();
   await dispatchStudyAction(createStudyAction(actionType, context));
 }
 
-function resolveContextAction(actionType, context) {
-  if (actionType === "highlight" && isContextHighlighted(context)) {
-    return "remove_highlight";
-  }
+function resolveContextAction(actionType) {
   return actionType;
 }
 
@@ -3115,20 +3100,7 @@ async function dispatchStudyAction(studyAction) {
   } else if (BHF_STUDY_ACTIONS.has(studyAction.type)) {
     applyStudyActionContext(studyAction);
     activateWorkspaceTab("ask");
-    const askMode =
-      studyAction.type === "ask_location" ? "maps" : studyAction.type;
-    if (studyAction.type === "ask_location") {
-      setFormValue(
-        "question",
-        "What does the geography of this passage suggest?",
-      );
-    } else if (studyAction.type === "related_passages") {
-      setFormValue(
-        "question",
-        "What related passages should I review for this location?",
-      );
-    }
-    setFormValue("ask_mode", askMode);
+    setFormValue("ask_mode", studyAction.type);
     setFormValue("study_action", studyAction.type);
     setMapContextValue(buildReaderMapContext(studyAction));
     submitAskForm();
@@ -3147,28 +3119,6 @@ async function dispatchStudyAction(studyAction) {
     setFormValue("ask_mode", "");
     setFormValue("study_action", "");
     openMapPanel(studyAction);
-  } else if (studyAction.type === "save_map_study") {
-    applyStudyActionContext(studyAction);
-    activateWorkspaceTab("maps");
-    if (
-      window.BHFMaps &&
-      typeof window.BHFMaps.saveCurrentMapStudy === "function"
-    ) {
-      await window.BHFMaps.saveCurrentMapStudy();
-    } else {
-      openMapPanel(studyAction);
-    }
-  } else if (studyAction.type === "map_note") {
-    applyStudyActionContext(studyAction);
-    activateWorkspaceTab("maps");
-    if (
-      window.BHFMaps &&
-      typeof window.BHFMaps.focusMapNoteEditor === "function"
-    ) {
-      window.BHFMaps.focusMapNoteEditor();
-    } else {
-      openMapPanel(studyAction);
-    }
   } else if (studyAction.type === "compare_archaeology") {
     applyStudyActionContext(studyAction);
     setFormValue("ask_mode", "maps");
@@ -3179,15 +3129,6 @@ async function dispatchStudyAction(studyAction) {
     );
     setMapContextValue(buildReaderMapContext(studyAction));
     submitAskForm();
-  } else if (studyAction.type === "related_passages") {
-    applyStudyActionContext(studyAction);
-    setFormValue("ask_mode", "cross_references");
-    setFormValue("study_action", studyAction.type);
-    setMapContextValue(buildReaderMapContext(studyAction));
-    submitAskForm();
-  } else if (studyAction.type === "view_historical_layer") {
-    applyStudyActionContext(studyAction);
-    openMapPanel(studyAction);
   }
 }
 
@@ -3885,31 +3826,6 @@ function clearReaderSelection() {
   syncAskFields();
 }
 
-function isContextHighlighted(context) {
-  if (!context || !currentHighlights.length) {
-    return false;
-  }
-  const startVerse = Number(context.startVerse || context.verseStart || 0);
-  const endVerse = Number(context.endVerse || context.verseEnd || startVerse);
-  if (!startVerse || !endVerse) {
-    return false;
-  }
-  for (
-    let verseNumber = startVerse;
-    verseNumber <= endVerse;
-    verseNumber += 1
-  ) {
-    if (
-      !currentHighlights.some((highlight) =>
-        highlightContainsVerse(highlight, verseNumber),
-      )
-    ) {
-      return false;
-    }
-  }
-  return true;
-}
-
 function highlightsForContext(context) {
   if (!context || !currentHighlights.length) {
     return [];
@@ -4154,13 +4070,13 @@ function openMapPanel(context) {
   syncMapWorkspaceEmptyState();
   if (window.BHFMaps && typeof window.BHFMaps.openMapPanel === "function") {
     const hasPassageContext = Boolean(
-      context && (context.book || context.chapter || context.savedMapStudy),
+      context && (context.book || context.chapter),
     );
     window.BHFMaps.openMapPanel(hasPassageContext ? context : {mode: "browse"});
     return;
   }
   const hasPassageContext = Boolean(
-    context && (context.book || context.chapter || context.savedMapStudy),
+    context && (context.book || context.chapter),
   );
   window.BHFPendingMapPanelContext = hasPassageContext
     ? context

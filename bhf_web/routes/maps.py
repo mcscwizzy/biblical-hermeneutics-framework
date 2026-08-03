@@ -2,17 +2,15 @@
 
 from __future__ import annotations
 
+from pathlib import Path
+
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.responses import HTMLResponse, JSONResponse, Response
 
 from bhf_agent.bible import BibleError
 from bhf_agent.study_db import (
     StudyDataError,
     create_map_note,
-    create_saved_map_study,
-    delete_saved_map_study,
-    get_saved_map_study,
-    list_saved_map_studies,
 )
 
 from ..map_service import (
@@ -31,15 +29,24 @@ from ..map_service import (
     resolve_places_for_passage,
     resolve_political_context_for_passage,
 )
+from ..services.map_kml import journey_kml, load_journey, place_kml, route_kml
 from ..services.web_helpers import (
     map_note_payload_from_request,
-    map_study_payload_from_request,
     record_action,
     request_payload,
 )
 
 
 def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object | None = None) -> None:
+    journey_data_path = Path(__file__).resolve().parents[1] / "static" / "data" / "journeys"
+
+    def kml_response(content: str, filename: str) -> Response:
+        return Response(
+            content=content,
+            media_type="application/vnd.google-earth.kml+xml",
+            headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+        )
+
     @app.get("/api/maps/catalog", response_class=JSONResponse)
     async def maps_catalog(period: str | None = None) -> JSONResponse:
         return JSONResponse(get_map_catalog(period=period, path=study_db_path))
@@ -133,6 +140,32 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
             return JSONResponse({"error": str(exc)}, status_code=404)
         return JSONResponse(result)
 
+    @app.get("/api/maps/places/{place_id}.kml")
+    async def maps_place_kml(place_id: str) -> Response:
+        marker = next(
+            (item for item in get_biblical_place_markers(path=study_db_path) if item.get("id") == place_id),
+            None,
+        )
+        if not marker:
+            return Response(content="Place not found", status_code=404, media_type="text/plain")
+        if not marker.get("has_coordinates"):
+            return Response(content="Place has no usable coordinates", status_code=422, media_type="text/plain")
+        return kml_response(place_kml(marker), f"{place_id}.kml")
+
+    @app.get("/api/maps/routes/{route_id}.kml")
+    async def maps_route_kml(route_id: str) -> Response:
+        route = next((item for item in get_map_routes(path=study_db_path) if item.get("id") == route_id), None)
+        if not route:
+            return Response(content="Route not found", status_code=404, media_type="text/plain")
+        return kml_response(route_kml(route), f"{route_id}.kml")
+
+    @app.get("/api/maps/journeys/{journey_id}.kml")
+    async def maps_journey_kml(journey_id: str) -> Response:
+        journey = load_journey(journey_data_path, journey_id)
+        if not journey:
+            return Response(content="Journey not found", status_code=404, media_type="text/plain")
+        return kml_response(journey_kml(journey), f"{journey_id}.kml")
+
     @app.get("/api/maps/related-passages-for-place", response_class=JSONResponse)
     async def maps_related_passages_for_place(
         place_id: str,
@@ -225,39 +258,6 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
                 marker["related_passages"] = get_related_passages_for_place("jerusalem", path=study_db_path)
                 break
         return JSONResponse({"markers": markers})
-
-    @app.get("/api/map-studies", response_class=JSONResponse)
-    async def map_studies(book: str | None = None, chapter: int | None = None) -> JSONResponse:
-        try:
-            return JSONResponse({"saved_map_studies": list_saved_map_studies(book, chapter, path=study_db_path)})
-        except StudyDataError as exc:
-            return JSONResponse({"error": str(exc)}, status_code=400)
-
-    @app.get("/api/map-studies/{study_id}", response_class=JSONResponse)
-    async def map_study(study_id: str) -> JSONResponse:
-        try:
-            return JSONResponse(get_saved_map_study(study_id, path=study_db_path))
-        except StudyDataError as exc:
-            return JSONResponse({"error": str(exc)}, status_code=404)
-
-    @app.post("/api/map-studies", response_class=JSONResponse)
-    async def post_map_study(request: Request) -> JSONResponse:
-        try:
-            payload = await request_payload(request)
-            study = map_study_payload_from_request(payload)
-            saved = create_saved_map_study(study, path=study_db_path)
-            record_action("map_study_saved", saved, path=study_db_path)
-            return JSONResponse(saved, status_code=201)
-        except StudyDataError as exc:
-            return JSONResponse({"error": str(exc)}, status_code=400)
-
-    @app.delete("/api/map-studies/{study_id}", response_class=JSONResponse)
-    async def remove_map_study(study_id: str) -> JSONResponse:
-        try:
-            delete_saved_map_study(study_id, path=study_db_path)
-            return JSONResponse({"deleted": True})
-        except StudyDataError as exc:
-            return JSONResponse({"error": str(exc)}, status_code=404)
 
     @app.post("/api/map-notes", response_class=JSONResponse)
     async def post_map_note(request: Request) -> JSONResponse:

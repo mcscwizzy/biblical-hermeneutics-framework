@@ -215,33 +215,6 @@ function buildArchaeologyCautionNote(marker) {
   return archaeologyConfidenceNote(marker?.confidence);
 }
 
-function renderMapActionBar(kind, item) {
-  const selectedLabel = prettyConfidence(item.confidence || "unknown");
-  const primaryLabel =
-    kind === "archaeology"
-      ? "Ask about this item"
-      : kind === "political_context"
-        ? "Ask about this context"
-        : "Ask about this location";
-  return `
-    <section class="map-detail-section map-action-section">
-      <div class="map-action-buttons">
-        <button type="button" class="secondary" data-map-action="ask_location">${escapeHtml(primaryLabel)}</button>
-        <button type="button" class="secondary" data-map-action="save_map_study">Save map study</button>
-        <button type="button" class="secondary" data-map-action="map_note">Add map note</button>
-        <button type="button" class="secondary" data-map-action="related_passages">View related passages</button>
-        <button type="button" class="secondary" data-map-action="reset_map_view">Reset map view</button>
-        ${
-          kind === "layer" || kind === "archaeology" || kind === "political_context" || kind === "manuscript"
-            ? ""
-            : '<button type="button" class="secondary" data-map-action="view_historical_layer">View historical layer</button>'
-        }
-      </div>
-      <p class="map-layer-note">Selected ${escapeHtml(kind)} confidence: ${escapeHtml(selectedLabel)}. These actions use the local curated map record for the current selection.</p>
-    </section>
-  `;
-}
-
 function buildSourceText(item) {
   const source = item?.source || {};
   const sourceName = source.label || item.source_name || "No source recorded";
@@ -395,32 +368,12 @@ function renderRelatedPassagesList(passages) {
   return `<ul class="map-related-verses">${items}</ul>`;
 }
 
-function buildMapStudySummary(selection, context) {
-  const reference = formatReference(context) || "the selected passage";
-  if (!selection) {
-    return `Map study for ${reference}.`;
-  }
-  const item = selection.item;
-  const name = item.name || "Unnamed item";
-  if (selection.kind === "route") {
-    return `${name} in ${reference} with route confidence ${prettyConfidence(item.confidence)}.`;
-  }
-  if (selection.kind === "layer") {
-    return `${name} in ${reference} as a ${item.period || "historical"} study layer.`;
-  }
-  if (selection.kind === "political_context") {
-    return `${name} in ${reference} as a ${item.entity_type || "political"} context layer.`;
-  }
-  return `${name} in ${reference} with confidence ${prettyConfidence(item.confidence)}.`;
-}
-
 export {
   buildArchaeologyCautionNote,
   buildArchaeologyExplanation,
   buildCautionNote,
   buildHistoricalLayerCautionNote,
   buildHistoricalLayerExplanation,
-  buildMapStudySummary,
   buildManuscriptCautionNote,
   buildManuscriptExplanation,
   buildPlaceExplanation,
@@ -435,7 +388,6 @@ export {
   formatStudyReference,
   prettyConfidence,
   normalizeArchaeologyConfidence,
-  renderMapActionBar,
   renderRelatedPassages,
   renderRelatedPassagesList,
   renderRelatedVerses,

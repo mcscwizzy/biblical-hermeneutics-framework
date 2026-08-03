@@ -9,7 +9,7 @@ import sqlite3
 import time
 import uuid
 from datetime import datetime, timezone
-from typing import Any, Callable, Optional
+from typing import Any, Callable, Mapping, Optional
 
 from .adapters import ChatAdapter, OllamaAdapter, OpenAICompatibleAdapter
 from .adapters import OpenRouterAdapter
@@ -19,7 +19,6 @@ from .ckl import (
     CULTURAL_CONTEXT_MAX_OUTPUT_TOKENS,
     CULTURAL_CONTEXT_MAX_TOKENS,
     build_canonical_context,
-    build_canonical_fallback_answer,
     build_canonical_query,
     canonical_context_has_strong_match,
     format_canonical_context_for_prompt,
@@ -46,8 +45,10 @@ from .models import (
     AgentResult,
     ChatRequest,
     ChatResponse,
+    FinalAnswer,
     PipelineContext,
     RepairAttempt,
+    RetrievedEvidence,
     ValidationResult,
 )
 from .model_response_validation import (
@@ -59,7 +60,7 @@ from .model_response_validation import (
 )
 from .observability import render_log_record, summarize_usage
 from .profiles import ProfileLoader
-from .prompts import PROMPT_VERSION, build_prompt_result, strategy_for_profile
+from .prompts import PROMPT_VERSION, build_prompt_result
 from .research import (
     NullResearchProvider,
     ResearchProvider,
@@ -98,6 +99,33 @@ from framework.lexical.service import format_lexical_unavailable_context
 StatusCallback = Callable[[dict[str, Any]], None]
 OBSERVABILITY_LOGGER = logging.getLogger("bhf_agent.observability")
 STRONGS_QUERY_RE = re.compile(r"\b[HG]\s*0*\d{1,5}[A-Za-z]?\b", re.IGNORECASE)
+NON_ANSWER_RE = re.compile(
+    r"(?i)^\s*(?:the answer is not valid|still not valid|unable to answer)\.?\s*$"
+)
+
+
+def _failed_stage_for_category(category: str | None) -> str:
+    return {
+        "provider_timeout": "waiting_for_model_response",
+        "provider_connection": "connecting_to_model_backend",
+        "provider_failure": "waiting_for_model_response",
+        "response_extraction": "extracting_model_response",
+        "response_normalization": "normalizing_model_response",
+        "response_validation": "validating_model_response",
+        "response_repair": "repairing_model_response",
+        "unexpected_internal_error": "building_final_answer",
+    }.get(str(category or "").strip().lower(), "waiting_for_model_response")
+
+
+def _infer_error_category(errors: list[str]) -> str:
+    text = " ".join(str(error) for error in errors).lower()
+    if "timed out" in text or "timeout" in text:
+        return "provider_timeout"
+    if "could not connect" in text or "connection refused" in text:
+        return "provider_connection"
+    if "http " in text or "endpoint request failed" in text:
+        return "provider_failure"
+    return "provider_failure"
 
 
 def _safe_int(value: Any) -> int | None:
@@ -426,10 +454,9 @@ class BHFAgent:
             if ctx.raw_model_response is None:
                 ctx = self._build_prompts(ctx)
                 ctx = self._call_model(ctx)
-                if self._should_use_deterministic_fallback_after_model_call(ctx, response_contract):
-                    ctx = self._apply_deterministic_fallback(
+                if self._should_fail_synthesis_after_model_call(ctx, response_contract):
+                    ctx = self._mark_synthesis_failure(
                         ctx,
-                        response_contract=response_contract,
                         reason="model backend was unavailable or returned no usable text",
                     )
                 else:
@@ -437,10 +464,9 @@ class BHFAgent:
                     if response_contract == ANSWER_CONTRACT:
                         ctx = self._validate_response(ctx)
                         ctx = self._repair_response(ctx)
-                        if self._should_use_deterministic_fallback_after_validation(ctx):
-                            ctx = self._apply_deterministic_fallback(
+                        if self._should_fail_synthesis_after_validation(ctx):
+                            ctx = self._mark_synthesis_failure(
                                 ctx,
-                                response_contract=response_contract,
                                 reason="validated model output was still invalid",
                             )
                     elif response_contract == SEARCH_RESULTS_CONTRACT and not bool(
@@ -457,14 +483,16 @@ class BHFAgent:
             ctx = self._store_response_cache(ctx)
             ctx = self._save_session_turn(ctx)
             result = self._to_agent_result(ctx)
-            if result.errors:
+            if result.fatal_errors:
+                failed_stage = result.failed_stage or "waiting_for_model_response"
                 self._emit_status(
                     "error",
-                    "Model backend error",
+                    "BHF request failed",
                     status="error",
                     details={
-                        "failed_stage": "waiting_for_model_response",
-                        "errors": list(result.errors),
+                        "failed_stage": failed_stage,
+                        "error_category": result.error_category,
+                        "errors": list(result.fatal_errors),
                     },
                 )
                 return result
@@ -500,15 +528,17 @@ class BHFAgent:
             original_question=question,
             normalized_question=" ".join(question.strip().split()),
             config_profile=self.config.profile,
-            answer_mode=self.config.answer_mode,
+            answer_mode="unified",
             debug_metadata={
                 "stages_completed": [],
                 "adapter_type": self.config.adapter,
                 "model": self.config.model,
                 "profile": self.config.profile,
-                "runtime_profile_mode": self.config.runtime_profile_mode,
-                "full_profile_injected": self.config.runtime_profile_mode == "full",
-                "answer_mode": self.config.answer_mode,
+                "runtime_profile_mode": "unified",
+                "legacy_runtime_profile_mode": self.config.runtime_profile_mode,
+                "full_profile_injected": False,
+                "answer_mode": "unified",
+                "legacy_answer_mode": self.config.answer_mode,
                 "framework_version": self.framework_version,
                 "framework_version_fingerprint": self.framework_version_fingerprint,
                 "request_id": uuid.uuid4().hex,
@@ -629,7 +659,7 @@ class BHFAgent:
                 else "miss",
                 "public_answer_cache_key": None,
                 "public_answer_cache_question": None,
-                "public_answer_cache_answer_mode": self.config.answer_mode,
+                "public_answer_cache_answer_mode": "unified",
                 "public_answer_cache_quality_score": None,
                 "public_answer_cache_usage_count": None,
                 "public_answer_cache_review_status": None,
@@ -726,13 +756,13 @@ class BHFAgent:
         return self._mark_stage(ctx, "classify_question_type")
 
     def _load_profile(self, ctx: PipelineContext) -> PipelineContext:
-        profile = self.profile_loader.load(self.config.profile)
-        ctx.profile_name = profile.name
-        ctx.profile_content = profile.content
-        ctx.debug_metadata["profile"] = profile.name
-        ctx.debug_metadata["prompt_strategy"] = strategy_for_profile(
-            profile.name
-        ).__class__.__name__
+        # Prompt profiles were retired with the mode system. Preserve the
+        # configured value only as diagnostic compatibility metadata.
+        ctx.profile_name = "unified"
+        ctx.profile_content = ""
+        ctx.debug_metadata["profile"] = "unified"
+        ctx.debug_metadata["legacy_profile"] = self.config.profile
+        ctx.debug_metadata["prompt_strategy"] = "UnifiedFinalAnswerPrompt"
         return self._mark_stage(ctx, "load_profile")
 
     def _lookup_local_knowledge(self, ctx: PipelineContext) -> PipelineContext:
@@ -761,10 +791,98 @@ class BHFAgent:
         if ctx.debug_metadata.get("deterministic_fact_packet"):
             self._apply_deterministic_fact_packet(ctx)
             self._evaluate_answer_coverage(ctx)
+            self._package_retrieved_evidence(ctx)
             return self._mark_stage(ctx, "lookup_local_knowledge")
         self._lookup_canonical_library(ctx)
         self._evaluate_answer_coverage(ctx)
+        self._package_retrieved_evidence(ctx)
         return self._mark_stage(ctx, "lookup_local_knowledge")
+
+    def _package_retrieved_evidence(self, ctx: PipelineContext) -> None:
+        """Keep selected research separate from final answer prose.
+
+        This package is intentionally internal. Prompt construction can use its
+        constituent evidence, while result rendering receives only FinalAnswer.
+        """
+
+        scripture = ctx.scripture_context or {}
+        canonical_context = ctx.canonical_library_context or {}
+        metadata = (
+            canonical_context.get("metadata")
+            if isinstance(canonical_context, dict)
+            else {}
+        )
+        metadata = metadata if isinstance(metadata, dict) else {}
+        topics = (
+            list(canonical_context.get("retrieved_topics") or [])
+            if isinstance(canonical_context, dict)
+            else []
+        )
+        direct_textual_evidence = metadata.get("direct_textual_evidence")
+        direct_facts = list(
+            direct_textual_evidence.get("facts") or []
+            if isinstance(direct_textual_evidence, Mapping)
+            else []
+        )
+        references: list[str] = []
+
+        def add_reference(value: Any) -> None:
+            text = str(value or "").strip()
+            if text and text not in references:
+                references.append(text)
+
+        add_reference(scripture.get("focal_reference"))
+        for fact in direct_facts:
+            if isinstance(fact, Mapping):
+                add_reference(fact.get("reference"))
+        for topic in topics:
+            if not isinstance(topic, Mapping):
+                continue
+            for reference in topic.get("scripture_references") or []:
+                if isinstance(reference, Mapping):
+                    add_reference(reference.get("reference"))
+                else:
+                    add_reference(reference)
+
+        lexical_entries: list[dict[str, Any]] = []
+        if isinstance(ctx.local_knowledge, LocalKnowledgeBundle):
+            lexical_entries = [
+                {
+                    "key": entry.key,
+                    "language": entry.language,
+                    "original": entry.original,
+                    "transliteration": entry.transliteration,
+                    "glosses": list(entry.glosses),
+                    "semantic_range": list(entry.semantic_range),
+                }
+                for entry in ctx.local_knowledge.lexical_entries
+            ]
+        ctx.retrieved_evidence = RetrievedEvidence(
+            passage_text=str(scripture.get("focal_text") or ""),
+            immediate_context="\n\n".join(
+                value
+                for value in (
+                    str(scripture.get("preceding_passage") or "").strip(),
+                    str(scripture.get("following_passage") or "").strip(),
+                )
+                if value
+            ),
+            ckl_entries=[
+                dict(topic) for topic in topics if isinstance(topic, Mapping)
+            ],
+            lexical_entries=lexical_entries,
+            historical_context=[
+                dict(topic)
+                for topic in topics
+                if isinstance(topic, Mapping) and topic.get("historical_context")
+            ],
+            direct_facts=[
+                dict(fact) for fact in direct_facts if isinstance(fact, Mapping)
+            ],
+            selected_references=references,
+        )
+        ctx.debug_metadata["evidence_packaged"] = True
+        ctx.debug_metadata["evidence_selected_reference_count"] = len(references)
 
     def _lookup_lexical_engine(self, ctx: PipelineContext) -> None:
         """Retrieve only explicit original-language targets before CKL lookup."""
@@ -1229,6 +1347,23 @@ class BHFAgent:
         ctx.debug_metadata["canonical_library_answer_mode"] = metadata.get("answer_mode")
         ctx.debug_metadata["canonical_library_topic_token_budget"] = metadata.get("topic_token_budget")
         ctx.debug_metadata["canonical_library_query"] = ctx.canonical_library_query
+        # Developer-only trace for question-driven retrieval.  This remains in
+        # model metadata/debug views and is never rendered in the user answer.
+        ctx.debug_metadata["canonical_library_retrieval_intent"] = metadata.get("retrieval_intent")
+        ctx.debug_metadata["canonical_library_direct_textual_evidence"] = metadata.get("direct_textual_evidence")
+        ctx.debug_metadata["canonical_library_rejected_results"] = metadata.get("rejected_results") or []
+        ctx.debug_metadata["canonical_library_ranking"] = [
+            {
+                "id": topic.get("id"),
+                "category": topic.get("type"),
+                "score": topic.get("score"),
+                "entity_match_score": topic.get("entity_match_score"),
+                "passage_proximity_score": topic.get("passage_proximity_score"),
+                "combined_score": topic.get("combined_score"),
+            }
+            for topic in canonical_context.get("retrieved_topics") or []
+            if isinstance(topic, Mapping)
+        ]
 
         if rollout_mode == "shadow":
             ctx.debug_metadata["canonical_library_shadow_prompt_mode"] = (
@@ -1463,6 +1598,23 @@ class BHFAgent:
             ctx.debug_metadata["public_answer_cache_hit"] = False
             return ctx
 
+        cached_answer = entry.answer.strip()
+        cached_validation = normalize_model_response(
+            cached_answer,
+            response_contract=ANSWER_CONTRACT,
+            diagnostics={"cache_layer": "public_answer_cache"},
+        )
+        if not cached_validation.passed:
+            ctx.debug_metadata["public_answer_cache_hit"] = False
+            ctx.debug_metadata["public_answer_cache_lookup_status"] = "rejected_unsafe_answer"
+            ctx.debug_metadata["public_answer_cache_error"] = "; ".join(
+                cached_validation.errors
+            )
+            ctx.warnings.append(
+                "A cached answer was rejected because it was not safe final prose."
+            )
+            return ctx
+
         usage_count = entry.usage_count
         try:
             self.public_answer_cache.increment_usage(normalized_question, ctx.answer_mode)
@@ -1471,7 +1623,7 @@ class BHFAgent:
             ctx.warnings.append(f"Public answer cache usage tracking failed: {exc}")
             ctx.debug_metadata["public_answer_cache_error"] = str(exc)
 
-        cached_answer = entry.answer.strip()
+        cached_answer = cached_validation.sanitized_text
         cache_entry_payload = entry.to_dict()
         cache_entry_payload["usage_count"] = usage_count
         ctx.raw_model_response = ChatResponse(
@@ -1561,7 +1713,7 @@ class BHFAgent:
             prompt_version=PROMPT_VERSION,
             prompt_mode=(
                 f"{ctx.debug_metadata.get('canonical_library_prompt_mode') or ''}"
-                f"|runtime_profile_mode={self.config.runtime_profile_mode}"
+                "|answer_format=unified"
             ),
             knowledge_expansion_fingerprint=self._knowledge_expansion_cache_fingerprint(ctx),
         )
@@ -1593,6 +1745,22 @@ class BHFAgent:
             return ctx
 
         answer_text = str(cached_response.get("answer_text") or "").strip()
+        cached_validation = normalize_model_response(
+            answer_text,
+            response_contract=self._response_contract(ctx.original_question),
+            diagnostics={"cache_layer": "runtime_response_cache"},
+        )
+        if not cached_validation.passed:
+            ctx.debug_metadata["canonical_library_response_cache_hit"] = False
+            ctx.debug_metadata["canonical_library_response_cache_status"] = "rejected_unsafe_answer"
+            ctx.debug_metadata["canonical_library_response_cache_error"] = "; ".join(
+                cached_validation.errors
+            )
+            ctx.warnings.append(
+                "A cached response was rejected because it was not safe final prose."
+            )
+            return ctx
+        answer_text = cached_validation.sanitized_text
         ctx.raw_model_response = ChatResponse(
             text=answer_text,
             model=self.config.model,
@@ -1843,27 +2011,63 @@ class BHFAgent:
             return structured_response_format()
         return None
 
-    def _should_use_deterministic_fallback_after_model_call(
+    def _should_fail_synthesis_after_model_call(
         self,
         ctx: PipelineContext,
         response_contract: str,
     ) -> bool:
-        del response_contract
-        if not bool(ctx.debug_metadata.get("ckl_context_injected")):
+        if response_contract != ANSWER_CONTRACT:
             return False
         if ctx.errors:
             return True
         return not bool((ctx.raw_answer_text or "").strip())
 
-    def _should_use_deterministic_fallback_after_validation(
+    def _should_fail_synthesis_after_validation(
         self,
         ctx: PipelineContext,
     ) -> bool:
-        if ctx.validation_result is None:
-            return True
-        if not bool(ctx.debug_metadata.get("ckl_context_injected")):
-            return False
-        return not ctx.validation_result.passed
+        # Method-quality validation is intentionally soft. If normalization
+        # left safe, nonempty prose, the answer is usable even when it does
+        # not satisfy every preferred structure check.
+        answer_text = (ctx.cleaned_answer_text or "").strip()
+        return (
+            not answer_text
+            or bool(ctx.debug_metadata.get("response_validation_errors"))
+            or bool(ctx.debug_metadata.get("repair_rejected") and NON_ANSWER_RE.match(answer_text))
+        )
+
+    def _mark_synthesis_failure(
+        self,
+        ctx: PipelineContext,
+        *,
+        reason: str,
+    ) -> PipelineContext:
+        """Fail safely when final prose cannot be produced.
+
+        Retrieval data is evidence, not an alternative answer format.  In
+        particular, a timeout, parser failure, or rejected repair must never
+        turn CKL entry serialization into the user's response.
+        """
+
+        if not ctx.errors:
+            ctx.errors.append(
+                "The model returned a response, but BHF could not recover usable answer text from it."
+            )
+        ctx.cleaned_answer_text = ""
+        ctx.final_answer = ""
+        ctx.final_response = FinalAnswer(text="", warnings=[reason])
+        ctx.validation_result = ValidationResult(
+            passed=False,
+            score=0,
+            warnings=[reason],
+            suggestions=["Try the request again when the model backend is available."],
+        )
+        ctx.debug_metadata["synthesis_failed"] = True
+        ctx.debug_metadata["synthesis_failure_reason"] = reason
+        ctx.debug_metadata.setdefault("error_category", "response_validation")
+        ctx.debug_metadata.setdefault("failed_stage", "validating_model_response")
+        ctx.debug_metadata["fallback_used"] = False
+        return ctx
 
     def _deterministic_fallback_response(
         self,
@@ -1890,14 +2094,9 @@ class BHFAgent:
                 "parsed_payload": payload,
             }
 
-        fallback = build_canonical_fallback_answer(
-            ctx.canonical_library_context,
-            max_context_tokens=self.config.canonical_library.max_context_tokens,
-            answer_mode=ctx.answer_mode,
-            retrieval_failed=bool(ctx.debug_metadata.get("canonical_library_error")),
-        )
-        fallback["parsed_payload"] = None
-        return fallback
+        # The search-results contract is the only intentionally deterministic
+        # retrieval response. Normal ask responses always require synthesis.
+        raise RuntimeError("Deterministic answer fallback is not available for prose answers")
 
     def _apply_deterministic_fallback(
         self,
@@ -2033,10 +2232,25 @@ class BHFAgent:
             validation_result.removed_headings
         )
         ctx.debug_metadata["response_validation_diagnostics"] = validation_result.diagnostics
+        ctx.debug_metadata["response_validation_error_category"] = (
+            validation_result.error_category
+        )
+        ctx.debug_metadata["response_validation_failed_stage"] = (
+            validation_result.failed_stage
+        )
         ctx.debug_metadata["response_validation_json_without_answer"] = any(
             "no extractable answer text" in str(error).lower()
             for error in validation_result.errors
         )
+        if validation_result.errors:
+            ctx.debug_metadata.setdefault(
+                "error_category",
+                validation_result.error_category or "response_normalization",
+            )
+            ctx.debug_metadata.setdefault(
+                "failed_stage",
+                validation_result.failed_stage or "normalizing_model_response",
+            )
         if validation_result.parsed_payload is not None:
             ctx.debug_metadata["response_validation_parsed_payload"] = validation_result.parsed_payload
         else:
@@ -2083,11 +2297,13 @@ class BHFAgent:
             response_format=response_format,
             metadata={
                 "profile": ctx.profile_name,
-                "runtime_profile_mode": self.config.runtime_profile_mode,
+                "runtime_profile_mode": "unified",
+                "legacy_runtime_profile_mode": self.config.runtime_profile_mode,
                 "full_profile_injected": bool(
                     ctx.debug_metadata.get("full_profile_injected")
                 ),
-                "answer_mode": ctx.answer_mode,
+                "answer_mode": "unified",
+                "legacy_answer_mode": self.config.answer_mode,
                 "response_contract": self._response_contract(ctx.original_question),
                 "prompt_token_estimates": ctx.debug_metadata.get(
                     "prompt_token_estimates", {}
@@ -2134,8 +2350,14 @@ class BHFAgent:
         ctx.raw_answer_text = chat_response.text
         ctx.warnings.extend(chat_response.warnings)
         ctx.errors.extend(chat_response.errors)
-        if chat_response.error_category:
-            ctx.debug_metadata["error_category"] = chat_response.error_category
+        if chat_response.errors:
+            category = chat_response.error_category or _infer_error_category(
+                chat_response.errors
+            )
+            ctx.debug_metadata["error_category"] = category
+            ctx.debug_metadata["failed_stage"] = _failed_stage_for_category(
+                category
+            )
         if chat_response.errors and not bool(ctx.debug_metadata.get("ckl_context_injected")):
             ctx.raw_answer_text = ""
         if chat_response.provider:
@@ -2192,6 +2414,9 @@ class BHFAgent:
             genre_context=ctx.genre_context,
         )
         ctx.debug_metadata["validation_score"] = ctx.validation_result.score
+        for warning in ctx.validation_result.warnings:
+            if warning not in ctx.warnings:
+                ctx.warnings.append(warning)
         return self._mark_stage(ctx, "validate_response")
 
     def _repair_response(self, ctx: PipelineContext) -> PipelineContext:
@@ -2262,8 +2487,12 @@ class BHFAgent:
         ctx.debug_metadata["repair_attempted"] = True
         ctx.warnings.extend(chat_response.warnings)
         ctx.errors.extend(chat_response.errors)
-        if chat_response.error_category:
-            ctx.debug_metadata["error_category"] = chat_response.error_category
+        if chat_response.errors:
+            category = chat_response.error_category or _infer_error_category(
+                chat_response.errors
+            )
+            ctx.debug_metadata["error_category"] = category
+            ctx.debug_metadata["failed_stage"] = _failed_stage_for_category(category)
 
         response_validation = self._apply_model_response_validation(
             ctx,
@@ -2282,6 +2511,16 @@ class BHFAgent:
             )
             ctx.repair_attempts.append(attempt)
             ctx.warnings.append("Repair was attempted but returned an empty answer.")
+            # The original answer remains the candidate result when a repair
+            # call returns nothing. Do not let the failed repair overwrite the
+            # original response's normalization state.
+            ctx.debug_metadata["response_validation_errors"] = []
+            ctx.debug_metadata["response_validation_passed"] = bool(
+                (ctx.cleaned_answer_text or "").strip()
+            )
+            ctx.debug_metadata["response_validation_warnings"] = list(
+                ctx.debug_metadata.get("response_validation_warnings") or []
+            )
             ctx.debug_metadata["repair_attempts"] = [
                 attempt.to_dict() for attempt in ctx.repair_attempts
             ]
@@ -2294,6 +2533,9 @@ class BHFAgent:
             reference_context=ctx.reference_context,
             genre_context=ctx.genre_context,
         )
+        for warning in repaired_validation.warnings:
+            if warning not in ctx.warnings:
+                ctx.warnings.append(warning)
         accepted, reason = self._should_accept_repair(
             original=ctx.validation_result,
             repaired=repaired_validation,
@@ -2317,8 +2559,22 @@ class BHFAgent:
             ctx.repair_applied = True
             ctx.debug_metadata["validation_score"] = repaired_validation.score
             ctx.debug_metadata["repair_applied"] = True
+            if ctx.debug_metadata.get("error_category") in {
+                "response_extraction",
+                "response_normalization",
+                "response_validation",
+                "response_repair",
+            }:
+                ctx.debug_metadata.pop("error_category", None)
+                ctx.debug_metadata.pop("failed_stage", None)
         else:
             ctx.warnings.append(f"Repair was attempted but rejected: {reason}.")
+            ctx.debug_metadata["repair_rejected"] = True
+            diagnostic = f"Response quality warning: {reason}."
+            if diagnostic not in ctx.errors:
+                # Retain the diagnostic for debug/API consumers, but the
+                # answer remains successful because ``fatal_errors`` is empty.
+                ctx.errors.append(diagnostic)
 
         ctx.debug_metadata["repair_attempts"] = [
             attempt.to_dict() for attempt in ctx.repair_attempts
@@ -2343,29 +2599,33 @@ class BHFAgent:
         return False, "repaired answer did not improve validation"
 
     def _finalize_result(self, ctx: PipelineContext) -> PipelineContext:
-        ctx.final_answer = ctx.cleaned_answer_text or ""
-        validation_errors = list(
-            ctx.debug_metadata.get("response_validation_errors") or []
-        )
-        error_category = str(ctx.debug_metadata.get("error_category") or "")
-        provider_error_categories = {
-            "provider_connection",
-            "provider_failure",
-            "provider_timeout",
-        }
-        if (
-            validation_errors
-            and not ctx.debug_metadata.get("fallback_used")
-            and error_category not in provider_error_categories
-        ):
+        # Only validated synthesis prose can cross the result boundary. Evidence
+        # remains in ``ctx.retrieved_evidence`` and debug-only metadata.
+        if ctx.debug_metadata.get("synthesis_failed"):
+            ctx.final_answer = ""
+        else:
+            ctx.final_answer = ctx.cleaned_answer_text or ""
+        validation_errors = list(ctx.debug_metadata.get("response_validation_errors") or [])
+        if validation_errors and not ctx.debug_metadata.get("fallback_used"):
             for error in validation_errors:
                 controlled_error = f"Invalid model output: {error}"
                 if controlled_error not in ctx.errors:
                     ctx.errors.append(controlled_error)
-            ctx.debug_metadata["error_category"] = "invalid_model_output"
+            ctx.debug_metadata.setdefault("error_category", "response_validation")
+            ctx.debug_metadata.setdefault("failed_stage", "validating_model_response")
         if not ctx.final_answer.strip():
             if not validation_errors and not ctx.errors:
-                ctx.errors.append("Model response was empty after validation.")
+                ctx.errors.append(
+                    "The model returned a response, but BHF could not recover usable answer text from it."
+                )
+                ctx.debug_metadata.setdefault("error_category", "response_validation")
+                ctx.debug_metadata.setdefault("failed_stage", "building_final_answer")
+        evidence = ctx.retrieved_evidence
+        ctx.final_response = FinalAnswer(
+            text=ctx.final_answer,
+            citations=list(evidence.selected_references) if evidence else [],
+            warnings=list(ctx.warnings),
+        )
         message = (
             "Finalizing fallback answer"
             if ctx.debug_metadata.get("fallback_used")
@@ -2455,6 +2715,7 @@ class BHFAgent:
             "usage": chat_response.usage,
             "error_category": ctx.debug_metadata.get("error_category")
             or chat_response.error_category,
+            "failed_stage": ctx.debug_metadata.get("failed_stage"),
             "cleanup_applied": ctx.debug_metadata.get("output_cleanup_applied", False),
             "cleanup_removed_headings": ctx.debug_metadata.get(
                 "cleanup_removed_headings", []
@@ -2566,8 +2827,28 @@ class BHFAgent:
             model_metadata["raw_model_text"] = chat_response.text
             model_metadata["raw_provider_response"] = chat_response.raw_provider_response
 
+        fatal_categories = {
+            "provider_timeout",
+            "provider_connection",
+            "provider_failure",
+            "response_extraction",
+            "response_normalization",
+            "response_validation",
+            "response_repair",
+            "unexpected_internal_error",
+        }
+        error_category = (
+            ctx.debug_metadata.get("error_category")
+            or chat_response.error_category
+        )
+        fatal_errors = list(ctx.errors) if (
+            ctx.debug_metadata.get("synthesis_failed")
+            or not (ctx.final_answer or "").strip()
+            or error_category in fatal_categories
+        ) else []
+
         return AgentResult(
-            answer_text=ctx.final_answer or "",
+            answer_text=(ctx.final_response.text if ctx.final_response else ctx.final_answer or ""),
             reference_context=ctx.reference_context,
             genre_context=ctx.genre_context,
             question_context=ctx.question_context,
@@ -2576,6 +2857,9 @@ class BHFAgent:
             model_metadata=model_metadata,
             warnings=ctx.warnings,
             errors=ctx.errors,
+            fatal_errors=fatal_errors,
+            error_category=error_category,
+            failed_stage=ctx.debug_metadata.get("failed_stage"),
             repair_applied=ctx.repair_applied,
             repair_attempted=bool(ctx.repair_attempts),
             repair_reason=ctx.repair_decision.reason if ctx.repair_decision else None,
@@ -2612,12 +2896,16 @@ class BHFAgent:
                 usage_summary["estimated_cost"] = 0.0
 
             model_provider = (
-                raw_response.provider
+                (raw_response.provider if raw_response is not None else None)
                 or ctx.debug_metadata.get("provider")
                 or self.config.adapter
             )
-            model_name = raw_response.model or ctx.debug_metadata.get("model") or self.config.model
-            model_latency_ms = raw_response.latency_ms
+            model_name = (
+                (raw_response.model if raw_response is not None else None)
+                or ctx.debug_metadata.get("model")
+                or self.config.model
+            )
+            model_latency_ms = raw_response.latency_ms if raw_response is not None else None
             if model_latency_ms is None:
                 model_latency_ms = _safe_int(ctx.debug_metadata.get("model_latency_ms"))
             if model_latency_ms is None:
@@ -2655,7 +2943,9 @@ class BHFAgent:
                 cache_layer = "public_answer"
             elif cache_summary["response"]["hit"]:
                 cache_layer = "response"
-            request_failed = error is not None or bool(result.errors if result is not None else [])
+            request_failed = error is not None or bool(
+                result.fatal_errors if result is not None else []
+            )
 
             record: dict[str, Any] = {
                 "request_id": request_id,

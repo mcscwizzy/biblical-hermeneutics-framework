@@ -41,6 +41,15 @@ class ModelResponseValidationTests(unittest.TestCase):
         self.assertTrue(result.passed)
         self.assertEqual(result.sanitized_text, "## Short Answer\nShechem anchors covenant renewal.")
 
+    def test_answer_contract_rejects_raw_ckl_entry_serialization(self):
+        result = normalize_model_response(
+            "## Entry: Hannah\nCategory: Person\nSummary:\nHannah was Samuel's mother.",
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertFalse(result.passed)
+        self.assertIn("raw canonical knowledge library entries", " ".join(result.errors).lower())
+
     def test_empty_structured_answer_is_invalid_model_content(self):
         for payload in ("{}", "[]", '{"answer":""}', '{"answer":"   "}'):
             with self.subTest(payload=payload):
@@ -93,6 +102,38 @@ class ModelResponseValidationTests(unittest.TestCase):
         self.assertTrue(result.passed)
         self.assertEqual(result.sanitized_text, "Valid answer")
         self.assertIn("Recovered answer text", " ".join(result.warnings))
+
+    def test_answer_contract_recovers_safe_prose_from_partially_malformed_json(self):
+        result = normalize_model_response(
+            '{"answer":"The passage emphasizes covenant renewal."',
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertTrue(result.passed)
+        self.assertEqual(result.sanitized_text, "The passage emphasizes covenant renewal.")
+        self.assertIn("prose recovery", " ".join(result.warnings).lower())
+        self.assertTrue(result.diagnostics["prose_recovery_used"])
+
+    def test_answer_contract_keeps_unrecoverable_structured_output_fatal(self):
+        result = normalize_model_response(
+            '{"analysis":"private reasoning","tool_calls":[]}',
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertFalse(result.passed)
+        self.assertEqual(result.sanitized_text, "")
+        self.assertEqual(result.error_category, "response_normalization")
+        self.assertEqual(result.failed_stage, "normalizing_model_response")
+
+    def test_answer_contract_surfaces_recoverable_formatting_as_warning(self):
+        result = normalize_model_response(
+            '{"answer":"Usable answer", "provider_metadata":{"trace":true}}',
+            response_contract=ANSWER_CONTRACT,
+        )
+
+        self.assertTrue(result.passed)
+        self.assertEqual(result.errors, [])
+        self.assertIn("Structured response envelope was removed.", result.warnings)
 
     def test_answer_contract_extracts_gemini_candidate_parts(self):
         result = normalize_model_response(
