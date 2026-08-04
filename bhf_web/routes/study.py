@@ -71,6 +71,11 @@ def register_study_routes(
             return JSONResponse(data)
         except (StudyDataError, ValueError) as exc:
             return JSONResponse({"error": str(exc)}, status_code=400)
+        except Exception as exc:  # noqa: BLE001 - API failures must remain JSON
+            return JSONResponse(
+                {"error": "Could not load the study action.", "detail": str(exc)},
+                status_code=500,
+            )
 
     # Personal reader records intentionally have no server persistence or API
     # representation. The browser intercepts these paths and uses IndexedDB.

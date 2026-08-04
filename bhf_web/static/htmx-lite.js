@@ -1253,7 +1253,19 @@ function requestJson(url, options = {}, fallbackMessage = "Request failed.") {
     return BHF_HTTP.requestJson(url, options, fallbackMessage);
   }
   return fetch(resolveBackendUrl(url), options).then(async (response) => {
-    const data = await response.json();
+    const body = await response.text();
+    let data;
+    try {
+      data = JSON.parse(body);
+    } catch (_error) {
+      const contentType = response.headers.get("content-type") || "";
+      if (contentType.includes("text/html") || /^\s*<!doctype html/i.test(body)) {
+        throw new Error(
+          `${fallbackMessage} (HTTP ${response.status}; the server returned HTML instead of JSON)`,
+        );
+      }
+      throw new Error(`${fallbackMessage} (HTTP ${response.status}; invalid JSON response)`);
+    }
     if (!response.ok) {
       throw new Error(data.error || fallbackMessage);
     }

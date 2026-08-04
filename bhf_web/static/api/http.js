@@ -43,7 +43,7 @@
         ? withRefreshHeader(options)
         : options;
       const response = await fetch(resolvedUrl, requestOptions);
-      const data = await response.json();
+      const data = await parseJsonResponse(response, fallbackMessage);
       if (!response.ok) {
         if (data && data.offline) {
           const fallback = await offlineFallback(url, method, options);
@@ -61,6 +61,24 @@
         return fallback;
       }
       throw error;
+    }
+  }
+
+  async function parseJsonResponse(response, fallbackMessage) {
+    const body = await response.text();
+    if (!body.trim()) {
+      throw new Error(`${fallbackMessage} (HTTP ${response.status}; empty response)`);
+    }
+    try {
+      return JSON.parse(body);
+    } catch (_error) {
+      const contentType = response.headers.get("content-type") || "";
+      if (contentType.includes("text/html") || /^\s*<!doctype html/i.test(body)) {
+        throw new Error(
+          `${fallbackMessage} (HTTP ${response.status}; the server returned HTML instead of JSON)`,
+        );
+      }
+      throw new Error(`${fallbackMessage} (HTTP ${response.status}; invalid JSON response)`);
     }
   }
 
