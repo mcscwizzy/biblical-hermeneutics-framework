@@ -149,13 +149,16 @@ The settings sheet provides:
 
 - **Install app** — opens the browser install prompt when supported, or shows
   the platform-specific browser steps for manual installation.
-- **App update** — asks the service worker to check for a new shell.
+- **App update** — clears rebuildable/API cache data, preserves personal local
+  records and device-imported translations, and asks the service worker to
+  check for a new shell. The button reports when an update is available.
 - **Offline readiness** — summarizes the service worker, translations, packs,
   local records, and queued mutations.
 - **Refresh offline data** — re-downloads rebuildable installed data without
   clearing user-created records.
 - **Clear offline cache** — removes rebuildable cache entries while preserving
-  notes, highlights, saved work, and queued map mutations.
+  notes, highlights, saved work, queued map mutations, and device-imported
+  translations.
 - **Export offline data** — downloads a JSON snapshot of browser-local records
   and pack metadata.
 - **Import offline data** — merges a prior snapshot into the current browser
@@ -166,9 +169,10 @@ Exported snapshots intentionally exclude provider credentials.
 ## Updates and stale content
 
 When a new BHF release changes the service worker, the PWA installs the new
-shell and removes old versioned caches. Use **App update** and then reload if a
-deployed change is not visible. Use **Refresh offline data** when the shell is
-current but an installed data pack is stale.
+shell and removes old versioned caches. **App update** also clears rebuildable
+API/offline data so backend changes are fetched again, while preserving local
+records and device-imported translations. Use **Refresh offline data** afterward
+when the shell or installed data packs need to be rebuilt.
 
 ## Privacy and data boundaries
 
@@ -198,5 +202,6 @@ backend can reach the configured local model server.
 **OpenRouter setup is rejected:** use the same browser session and origin that
 started setup, and use trusted HTTPS for non-localhost deployments.
 
-**A PWA update looks stuck:** use **App update**, reload all BHF windows, and if
-necessary clear only rebuildable offline cache before refreshing the data packs.
+**A PWA update looks stuck:** use **App update**. It clears rebuildable/API
+cache data, checks for a new shell, and reloads the app. Reload all BHF windows
+if one still shows the old shell. Refresh the data packs afterward if needed.

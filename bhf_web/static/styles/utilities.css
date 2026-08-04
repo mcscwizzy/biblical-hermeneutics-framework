@@ -1322,6 +1322,11 @@ button.reader-setting-action:disabled {
   white-space: nowrap;
 }
 
+button.reader-setting-action.is-update-available .reader-setting-value {
+  background: var(--accent);
+  color: var(--surface);
+}
+
 button.reader-setting-action:disabled .reader-setting-value {
   color: var(--page-muted);
   background: var(--surface);

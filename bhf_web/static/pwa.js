@@ -10,6 +10,7 @@
   let serviceWorkerReady = false;
   let updateRequested = false;
   let updateReloadScheduled = false;
+  let appUpdateAvailable = false;
 
   if (enableServiceWorker && "serviceWorker" in navigator) {
     window.addEventListener("load", () => {
@@ -20,6 +21,7 @@
           wireServiceWorkerUpdateStatus(registration);
           refreshPwaLifecycleControls();
           refreshOfflineReadinessControls();
+          registration.update().catch(() => undefined);
         })
         .catch((error) => {
           console.warn("BHF service worker registration failed:", error);
@@ -83,8 +85,10 @@
     if (!registration) {
       return;
     }
+    const hadController = Boolean(navigator.serviceWorker.controller);
     registration.addEventListener("updatefound", () => {
       const installing = registration.installing;
+      appUpdateAvailable = false;
       setPwaUpdateStatus("Downloading app update...", "Checking", true);
       if (!installing) {
         return;
@@ -93,17 +97,20 @@
         if (installing.state === "installed") {
           setPwaUpdateStatus(
             navigator.serviceWorker.controller
-              ? updateRequested ? "Activating app update..." : "Update ready on next reload"
+              ? updateRequested ? "Activating app update..." : "Update available"
               : "App ready for offline use",
-            updateRequested ? "Working" : "Check",
+            updateRequested ? "Working" : "Update",
             updateRequested
           );
         } else if (installing.state === "activated") {
           serviceWorkerReady = true;
           if (updateRequested) {
             requestAppReloadAfterUpdate();
+          } else if (hadController) {
+            appUpdateAvailable = true;
+            setPwaUpdateStatus("Update available", "Update", false);
           } else {
-            setPwaUpdateStatus("App is up to date", "Check", false);
+            setPwaUpdateStatus("App ready for offline use", "Check", false);
           }
           refreshOfflineReadinessControls();
         }
@@ -115,10 +122,14 @@
         requestAppReloadAfterUpdate();
         return;
       }
-      setPwaUpdateStatus("App update activated", "Check", false);
+      if (hadController) {
+        appUpdateAvailable = true;
+        setPwaUpdateStatus("Update available", "Update", false);
+      }
       refreshPwaLifecycleControls();
       refreshOfflineReadinessControls();
     });
+    refreshUpdateControls();
   }
 
   async function refreshServiceWorkerRegistration() {
@@ -191,7 +202,7 @@
       }
       button.dataset.offlineClearCachesBound = "true";
       button.addEventListener("click", async () => {
-        if (!window.confirm("Clear rebuildable offline caches? Notes, highlights, saved work, and queued changes are preserved.")) {
+        if (!window.confirm("Clear rebuildable offline caches? Notes, highlights, saved work, queued changes, and device-imported translations are preserved.")) {
           return;
         }
         await clearRebuildableOfflineData(button);
@@ -552,7 +563,12 @@
         setLifecycleButtonState(button, "Updates unavailable", "Check", true, "pwaUpdate");
       } else if (!serviceWorkerRegistration) {
         setLifecycleButtonState(button, "Service worker starting", "Check", true, "pwaUpdate");
+      } else if (appUpdateAvailable || (serviceWorkerRegistration.waiting && navigator.serviceWorker.controller)) {
+        appUpdateAvailable = true;
+        setPwaUpdateAvailable(true);
+        setLifecycleButtonState(button, "Update available", "Update", false, "pwaUpdate");
       } else {
+        setPwaUpdateAvailable(false);
         setLifecycleButtonState(button, "App is up to date", "Check", false, "pwaUpdate");
       }
     });
@@ -611,23 +627,28 @@
   }
 
   async function checkForAppUpdate(button) {
-    if (!serviceWorkerRegistration || typeof serviceWorkerRegistration.update !== "function") {
-      setLifecycleButtonState(button, "Service worker starting", "Check", true, "pwaUpdate");
+    if (!window.confirm("Check for an app update and clear rebuildable offline caches? Notes, highlights, saved work, queued changes, and device-imported translations are preserved.")) {
       return;
     }
     updateRequested = true;
     updateReloadScheduled = false;
-    const previousController = navigator.serviceWorker.controller;
-    const previousActive = serviceWorkerRegistration.active;
-    setLifecycleButtonState(button, "Checking for update...", "Working", true, "pwaUpdate");
+    appUpdateAvailable = false;
+    setPwaUpdateAvailable(false);
     try {
+      await clearRebuildableOfflineData(button);
+      if (!serviceWorkerRegistration || typeof serviceWorkerRegistration.update !== "function") {
+        requestAppReloadAfterUpdate();
+        return;
+      }
+      const previousController = navigator.serviceWorker.controller;
+      const previousActive = serviceWorkerRegistration.active;
+      setLifecycleButtonState(button, "Checking for update...", "Working", true, "pwaUpdate");
       await serviceWorkerRegistration.update();
       await waitForServiceWorkerActivation(serviceWorkerRegistration, previousController, previousActive);
       if (updateReloadScheduled) {
         return;
       }
-      updateRequested = false;
-      setLifecycleButtonState(button, "App is up to date", "Check", false, "pwaUpdate");
+      requestAppReloadAfterUpdate();
     } catch (error) {
       updateRequested = false;
       setLifecycleButtonState(button, error?.message || "Update check failed", "Retry", false, "pwaUpdate");
@@ -694,8 +715,16 @@
   }
 
   function setPwaUpdateStatus(status, label, disabled) {
+    setPwaUpdateAvailable(status === "Update available");
     document.querySelectorAll("[data-pwa-update]").forEach((button) => {
       setLifecycleButtonState(button, status, label, disabled, "pwaUpdate");
+    });
+  }
+
+  function setPwaUpdateAvailable(available) {
+    document.querySelectorAll("[data-pwa-update]").forEach((button) => {
+      button.classList.toggle("is-update-available", Boolean(available));
+      button.dataset.pwaUpdateAvailable = available ? "true" : "false";
     });
   }
 

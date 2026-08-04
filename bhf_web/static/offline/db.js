@@ -617,9 +617,15 @@
     let clearedCount = 0;
     for (const storeName of REBUILDABLE_STORES) {
       const records = await list(storeName);
-      cleared[storeName] = records.length;
-      clearedCount += records.length;
+      const preserved = records.filter((record) => (
+        (storeName === "translations" || storeName === "apiResponses")
+        && Boolean(record?.payload?.installation?.device_local)
+      ));
+      const removableCount = records.length - preserved.length;
+      cleared[storeName] = removableCount;
+      clearedCount += removableCount;
       await clearStore(storeName);
+      await Promise.all(preserved.map((record) => put(storeName, record)));
     }
     const metadata = await list("metadata");
     const packMetadata = metadata.filter((entry) => String(entry.id || "").startsWith("pack:"));
@@ -631,6 +637,7 @@
     return {
       cleared_count: clearedCount,
       stores: cleared,
+      preserved_device_translations: true,
       preserved_stores: SNAPSHOT_STORES.filter((storeName) => storeName !== "metadata"),
     };
   }
