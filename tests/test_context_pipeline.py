@@ -19,6 +19,7 @@ def ckl_object(
     *,
     historical_context: str = "",
     scripture_references: list[dict[str, str]] | None = None,
+    new_testament_connections: list[str] | None = None,
     confidence: str = "high",
     object_type: str = "event",
 ) -> SimpleNamespace:
@@ -44,7 +45,7 @@ def ckl_object(
         intertextuality=[],
         scripture_references=scripture_references or [],
         cross_references=[],
-        new_testament_connections=[],
+        new_testament_connections=new_testament_connections or [],
     )
 
 
@@ -55,6 +56,52 @@ class ContextPipelineTests(unittest.TestCase):
         self.assertIn("remove duplicated", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
         self.assertIn("Preserve the evidence's qualifiers", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
         self.assertIn("must be an object, never a bare string", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
+        self.assertIn("original_context_evidence", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
+        self.assertIn("later_biblical_connection_evidence", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
+
+    def test_ordinal_new_testament_reference_is_normalized_and_range_checked(self):
+        packet = build_context_evidence_packet(
+            [
+                ckl_object(
+                    "leviticus",
+                    "Leviticus",
+                    historical_context="Leviticus calls Israel to holiness.",
+                    new_testament_connections=[
+                        "First Peter 1:15-16 cites Leviticus's call to holiness.",
+                        "New Testament purity language reworks Levitical categories.",
+                    ],
+                )
+            ],
+            target_book="Leviticus",
+            reference="Leviticus 1:1",
+            action="historical_context",
+        )
+
+        later = next(
+            item for item in packet["later_biblical_connections"]
+            if item["evidence_id"].endswith("new_testament_connections:0")
+        )
+        self.assertEqual(later["candidate_book"], "1 Peter")
+        self.assertEqual(later["reference"], "First Peter 1:15-16")
+        self.assertNotIn("new_testament_connections:1", " ".join(item["evidence_id"] for item in packet["evidence"]))
+
+        presentation = {
+            "summary": "Leviticus calls Israel to holiness.",
+            "summary_evidence_ids": ["ckl:leviticus:historical_context:0"],
+            "key_facts": [],
+            "later_biblical_connections": [
+                {
+                    "connection": "First Peter echoes Leviticus's call to holiness.",
+                    "relationship": "canonical_theme",
+                    "evidence_ids": [later["evidence_id"]],
+                    "reference": "1 Peter 1:15-16",
+                }
+            ],
+            "important_caution": None,
+            "caution_evidence_ids": [],
+        }
+        valid, errors = validate_context_presentation(presentation, packet)
+        self.assertTrue(valid, errors)
 
     def test_malformed_list_items_from_ai_use_safe_fallback(self):
         packet = build_context_evidence_packet(

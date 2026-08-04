@@ -117,8 +117,32 @@ _BOOKS = (
     "Jude",
     "Revelation",
 )
+_BOOK_ALIASES = {
+    "First Chronicles": "1 Chronicles",
+    "Second Chronicles": "2 Chronicles",
+    "First Corinthians": "1 Corinthians",
+    "Second Corinthians": "2 Corinthians",
+    "First John": "1 John",
+    "Second John": "2 John",
+    "Third John": "3 John",
+    "First Kings": "1 Kings",
+    "Second Kings": "2 Kings",
+    "First Peter": "1 Peter",
+    "Second Peter": "2 Peter",
+    "First Samuel": "1 Samuel",
+    "Second Samuel": "2 Samuel",
+    "First Thessalonians": "1 Thessalonians",
+    "Second Thessalonians": "2 Thessalonians",
+    "First Timothy": "1 Timothy",
+    "Second Timothy": "2 Timothy",
+}
+_BOOK_NAMES = tuple(_BOOKS) + tuple(_BOOK_ALIASES)
 _BOOK_RE = re.compile(
-    r"\b(" + "|".join(re.escape(book) for book in sorted(_BOOKS, key=len, reverse=True)) + r")\s+\d+(?::\d+(?:[-–]\d+)?)?",
+    r"\b(" + "|".join(re.escape(book) for book in sorted(_BOOK_NAMES, key=len, reverse=True)) + r")\s+\d+(?::\d+(?:[-–]\d+)?)?",
+    re.IGNORECASE,
+)
+_BOOK_MENTION_RE = re.compile(
+    r"\b(" + "|".join(re.escape(book) for book in sorted(_BOOK_NAMES, key=len, reverse=True)) + r")\b",
     re.IGNORECASE,
 )
 
@@ -190,7 +214,59 @@ def _object_field(obj: Any, field_name: str) -> Any:
 
 def _reference_book(value: str) -> str | None:
     match = _BOOK_RE.search(value or "")
-    return match.group(1) if match else None
+    return _canonical_book(match.group(1)) if match else None
+
+
+def _mentioned_book(value: str) -> str | None:
+    match = _BOOK_MENTION_RE.search(value or "")
+    return _canonical_book(match.group(1)) if match else None
+
+
+def _canonical_book(value: str) -> str:
+    normalized = str(value or "").strip()
+    for alias, canonical in _BOOK_ALIASES.items():
+        if alias.casefold() == normalized.casefold():
+            return canonical
+    return normalized
+
+
+def _reference_text(value: str) -> str:
+    match = _BOOK_RE.search(value or "")
+    return match.group(0) if match else ""
+
+
+def _reference_parts(value: str) -> tuple[str, int, int | None, int | None] | None:
+    match = _BOOK_RE.search(value or "")
+    if not match:
+        return None
+    reference = match.group(0)
+    suffix = reference[len(match.group(1)):].strip()
+    number_match = re.fullmatch(r"(\d+)(?::(\d+)(?:[-–](\d+))?)?", suffix)
+    if not number_match:
+        return None
+    chapter = int(number_match.group(1))
+    start = int(number_match.group(2)) if number_match.group(2) else None
+    end = int(number_match.group(3)) if number_match.group(3) else start
+    return _canonical_book(match.group(1)), chapter, start, end
+
+
+def _reference_is_allowed(candidate: str, allowed: Iterable[str]) -> bool:
+    candidate_parts = _reference_parts(candidate)
+    if candidate_parts is None:
+        return False
+    candidate_book, candidate_chapter, candidate_start, candidate_end = candidate_parts
+    for allowed_reference in allowed:
+        allowed_parts = _reference_parts(allowed_reference)
+        if allowed_parts is None:
+            continue
+        allowed_book, allowed_chapter, allowed_start, allowed_end = allowed_parts
+        if candidate_book.casefold() != allowed_book.casefold() or candidate_chapter != allowed_chapter:
+            continue
+        if candidate_start is None or allowed_start is None:
+            return True
+        if candidate_start >= allowed_start and (candidate_end or candidate_start) <= (allowed_end or allowed_start):
+            return True
+    return False
 
 
 def _same_book(left: str | None, right: str) -> bool:
@@ -220,7 +296,7 @@ def _log(decision: str, *, target_book: str, candidate_book: str | None, relatio
 
 def _is_cross_book_record(obj: Any, target_book: str) -> bool:
     title = str(getattr(obj, "title", "") or "")
-    object_book = _reference_book(title)
+    object_book = _reference_book(title) or _mentioned_book(title)
     if object_book:
         return not _same_book(object_book, target_book)
     candidate_books: set[str] = set()
@@ -376,10 +452,22 @@ def build_context_evidence_packet(
                     candidate_book = _reference_book(reference_value or fact)
                     item = {"reference": reference_value, "note": fact}
                 else:
-                    reference_value = ""
                     relationship = ""
                     fact = _text(item)
-                    candidate_book = _reference_book(fact)
+                    reference_value = _reference_text(fact)
+                    candidate_book = _reference_book(fact) or _mentioned_book(fact)
+                if field_name == "new_testament_connections":
+                    if not candidate_book:
+                        excluded.append(
+                            {
+                                "record_id": record_id,
+                                "field": field_name,
+                                "reason": "later_connection_without_explicit_book",
+                                "fact": fact,
+                            }
+                        )
+                        continue
+                    relationship = relationship or "canonical_theme"
                 scope = _FIELD_SCOPES.get(field_name, "weak_or_unverified")
                 # A reference to the selected chapter is passage evidence;
                 # references elsewhere in the same book are still book-level
@@ -525,7 +613,7 @@ def validate_context_presentation(
 
     errors: list[str] = []
     evidence = {str(item.get("evidence_id")): item for item in packet.get("evidence") or []}
-    allowed_refs = {str(value).casefold() for value in packet.get("allowed_references") or []}
+    allowed_refs = [str(value) for value in packet.get("allowed_references") or []]
     if not isinstance(presentation.get("summary"), str) or not presentation.get("summary", "").strip():
         errors.append("summary is required")
     summary_ids = [str(value) for value in presentation.get("summary_evidence_ids") or []]
@@ -569,8 +657,8 @@ def validate_context_presentation(
         errors.append("important_caution cites an unknown evidence ID")
     rendered_text = json.dumps(presentation, ensure_ascii=False)
     for match in _BOOK_RE.finditer(rendered_text):
-        reference = match.group(0).replace("–", "-").casefold()
-        if not any(reference == allowed or reference.startswith(f"{allowed} ") or allowed.startswith(f"{reference} ") for allowed in allowed_refs):
+        reference = match.group(0).replace("–", "-")
+        if not _reference_is_allowed(reference, allowed_refs):
             errors.append(f"unsupported Bible reference: {match.group(0)}")
     return not errors, errors
 
@@ -589,6 +677,10 @@ theological claims, or historical details. Preserve the evidence's qualifiers an
 uncertainty. Keep the passage's original context separate from later biblical connections:
 original-context facts belong in key_facts, while evidence from another biblical book
 belongs in later_biblical_connections only when its relationship is explicitly supplied.
+The supplied packet separates these into original_context_evidence and
+later_biblical_connection_evidence. Use only the evidence IDs from the matching bucket:
+summary and key_facts may cite original_context_evidence, while
+later_biblical_connections may cite later_biblical_connection_evidence.
 The "why_it_matters" field should explain the relevance to this passage in one short
 sentence, not introduce a new claim. Do not mention CKL fields, record IDs, evidence IDs,
 or the editing process in reader-facing text.
@@ -634,6 +726,13 @@ def present_context_with_ai(
         "target": packet.get("target", {}),
         "allowed_references": list(packet.get("allowed_references") or []),
         "evidence": list(packet.get("evidence") or []),
+        "original_context_evidence": [
+            item
+            for item in packet.get("evidence") or []
+            if not item.get("candidate_book")
+            or _same_book(item.get("candidate_book"), packet.get("target", {}).get("book", ""))
+        ],
+        "later_biblical_connection_evidence": list(packet.get("later_biblical_connections") or []),
     }
     request = ChatRequest(
         system_prompt=CONTEXT_PRESENTATION_SYSTEM_PROMPT,
