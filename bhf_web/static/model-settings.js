@@ -42,13 +42,15 @@
 
   function providerDefaults(provider) {
     const defaults = runtimeAi().defaults || {};
+    const providerDefaults = runtimeAi().providerDefaults?.[provider] || {};
+    const aiDefaults = {...defaults, ...providerDefaults};
     if (provider === OPENROUTER) {
       return {
         baseUrl: openRouterConfig().baseUrl || "https://openrouter.ai/api/v1",
         model: openRouterConfig().defaultModel || "",
         temperature: 0.3,
-        maxTokens: Number(defaults.max_tokens || 2048),
-        contextWindow: Number(defaults.context_window || 12288),
+        maxTokens: Number(aiDefaults.max_tokens || 4096),
+        contextWindow: Number(aiDefaults.context_window || 16384),
         timeoutSeconds: 120,
         responseFormatPolicy: "auto",
       };
@@ -58,8 +60,8 @@
         baseUrl: "http://localhost:11434/v1",
         model: "llama3.1:8b",
         temperature: 0.3,
-        maxTokens: Number(defaults.max_tokens || 2048),
-        contextWindow: Number(defaults.context_window || 12288),
+        maxTokens: Number(aiDefaults.max_tokens || 2048),
+        contextWindow: Number(aiDefaults.context_window || 12288),
         timeoutSeconds: 360,
         responseFormatPolicy: "auto",
       };
@@ -68,8 +70,8 @@
       baseUrl: "http://localhost:11434/v1",
       model: "llama3.1:8b",
       temperature: 0.3,
-      maxTokens: Number(defaults.max_tokens || 2048),
-      contextWindow: Number(defaults.context_window || 12288),
+      maxTokens: Number(aiDefaults.max_tokens || 2048),
+      contextWindow: Number(aiDefaults.context_window || 12288),
       timeoutSeconds: 360,
       responseFormatPolicy: "auto",
     };

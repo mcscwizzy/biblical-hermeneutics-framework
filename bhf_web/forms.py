@@ -16,7 +16,12 @@ from bhf_agent.config import (
     ConfigError,
 )
 
-from .ai_config import DEFAULT_OPENROUTER_MODEL, OPENROUTER_BASE_URL, WEB_AI_DEFAULTS
+from .ai_config import (
+    DEFAULT_OPENROUTER_MODEL,
+    OPENROUTER_AI_DEFAULTS,
+    OPENROUTER_BASE_URL,
+    WEB_AI_DEFAULTS,
+)
 from . import settings
 
 WEB_CONFIG_PATH = settings.WEB_CONFIG_PATH
@@ -83,6 +88,7 @@ def load_web_defaults(path: Path | str | None = None) -> LoadedDefaults:
     warning = None
     config_path = Path(path) if path is not None else WEB_CONFIG_PATH
 
+    config_data: dict[str, Any] = {}
     if config_path.exists():
         try:
             data = json.loads(config_path.read_text(encoding="utf-8"))
@@ -90,13 +96,20 @@ def load_web_defaults(path: Path | str | None = None) -> LoadedDefaults:
             warning = f"Could not read {config_path}: {exc}. Using other defaults."
         else:
             if isinstance(data, dict):
-                values.update(data)
+                config_data = data
+                values.update(config_data)
             else:
                 warning = f"{config_path} must contain a JSON object. Using other defaults."
 
     env_warning = _apply_env_overrides(values, os.environ)
     if env_warning:
         warning = "; ".join(item for item in (warning, env_warning) if item)
+
+    if values.get("adapter") == "openrouter":
+        if "max_tokens" not in config_data and not os.environ.get("BHF_MAX_TOKENS"):
+            values["max_tokens"] = OPENROUTER_AI_DEFAULTS["max_tokens"]
+        if "context_window" not in config_data and not os.environ.get("BHF_CONTEXT_WINDOW"):
+            values["context_window"] = OPENROUTER_AI_DEFAULTS["context_window"]
 
     try:
         return LoadedDefaults(AgentConfig.from_mapping(values), warning)

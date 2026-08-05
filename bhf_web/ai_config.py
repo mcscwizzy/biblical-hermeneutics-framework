@@ -20,6 +20,11 @@ WEB_AI_DEFAULTS: dict[str, Any] = {
     "memory_enabled": False,
 }
 
+OPENROUTER_AI_DEFAULTS: dict[str, int] = {
+    "max_tokens": 4096,
+    "context_window": 16384,
+}
+
 
 def browser_ai_config() -> dict[str, Any]:
     """Return serializable configuration for the browser UI."""
@@ -33,4 +38,7 @@ def browser_ai_config() -> dict[str, Any]:
             "models": [dict(model) for model in OPENROUTER_MODELS],
         },
         "defaults": dict(WEB_AI_DEFAULTS),
+        "providerDefaults": {
+            "openrouter": dict(OPENROUTER_AI_DEFAULTS),
+        },
     }

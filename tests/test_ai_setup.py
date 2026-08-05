@@ -1,8 +1,14 @@
+import os
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from bhf_agent.config import AgentConfig
-from bhf_web.ai_config import DEFAULT_OPENROUTER_MODEL, OPENROUTER_BASE_URL
+from bhf_web.ai_config import (
+    DEFAULT_OPENROUTER_MODEL,
+    OPENROUTER_BASE_URL,
+    browser_ai_config,
+)
 from bhf_web.forms import config_from_form, load_web_defaults
 
 
@@ -14,6 +20,10 @@ class AISetupConfigurationTests(unittest.TestCase):
         loaded = load_web_defaults(path=ROOT / ".missing-bhf-web-config.json")
         self.assertEqual(loaded.config.max_tokens, 2048)
         self.assertEqual(loaded.config.context_window, 12288)
+        self.assertEqual(
+            browser_ai_config()["providerDefaults"]["openrouter"],
+            {"max_tokens": 4096, "context_window": 16384},
+        )
         self.assertEqual(loaded.config.runtime_profile_mode, "compact")
         self.assertFalse(loaded.config.memory_enabled)
 
@@ -37,6 +47,21 @@ class AISetupConfigurationTests(unittest.TestCase):
         )
         self.assertEqual(config.model, DEFAULT_OPENROUTER_MODEL)
         self.assertEqual(config.base_url, OPENROUTER_BASE_URL)
+
+    def test_openrouter_web_defaults_use_recommended_token_budgets(self):
+        with patch.dict(
+            os.environ,
+            {
+                "LLM_PROVIDER": "openrouter",
+                "BHF_BASE_URL": OPENROUTER_BASE_URL,
+                "BHF_API_KEY": "test-key",
+            },
+            clear=True,
+        ):
+            loaded = load_web_defaults(path=ROOT / ".missing-bhf-web-config.json")
+        self.assertEqual(loaded.config.adapter, "openrouter")
+        self.assertEqual(loaded.config.max_tokens, 4096)
+        self.assertEqual(loaded.config.context_window, 16384)
 
     def test_normal_web_form_does_not_render_removed_controls(self):
         template = (ROOT / "bhf_web" / "templates" / "index.html").read_text(encoding="utf-8")
