@@ -287,8 +287,8 @@
                       <span>Response-format policy</span>
                       <select name="response_format_policy">
                         <option value="auto" {% if form.response_format_policy == "auto" %}selected{% endif %}>Automatic</option>
-                        <option value="json" {% if form.response_format_policy == "json" %}selected{% endif %}>JSON when supported</option>
-                        <option value="text" {% if form.response_format_policy == "text" %}selected{% endif %}>Text</option>
+                        <option value="json_object" {% if form.response_format_policy == "json_object" %}selected{% endif %}>JSON object</option>
+                        <option value="off" {% if form.response_format_policy == "off" %}selected{% endif %}>Plain text</option>
                       </select>
                     </label>
                     <p class="field-help">BHF chooses a provider-appropriate response style and temperature for normal study use.</p>

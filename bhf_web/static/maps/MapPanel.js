@@ -850,13 +850,10 @@ function renderSavedMapStudies() { return ""; }
 async function openSavedMapStudy() {}
 function addCurrentMapNote() {}
 function reset_map_view() {}
-function submitRelatedPassageShortcut() {}
-function setReaderPassageContext() {}
 let selectedJourneyId = null;
 let selectedJourneySegmentId = null;
 function renderJourneySidebar() { return ""; }
 function selectJourneyStop() {}
-function applyTimelineOptions() {}
 function loadSupplementalMapData() { return Promise.resolve({ journeys: [], mapLayers: [] }); }
 // data-map-journey-search data-map-journey-filter-testament data-map-journey-filter-category
 // Compatibility call signatures retained for clients that use the map panel API.

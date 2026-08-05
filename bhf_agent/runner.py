@@ -2035,7 +2035,15 @@ class BHFAgent:
                 return structured_response_format()
             if supports_schema:
                 return structured_response_format(prefer_json_schema=True)
-            if isinstance(self.adapter, OllamaAdapter) or self.config.adapter == "ollama":
+            # Local Ollama models and OpenRouter's model catalog do not share a
+            # reliable structured-output capability. In automatic mode, let
+            # those providers use the prose contract and keep JSON parsing as
+            # a compatibility recovery path. Explicit JSON policies still
+            # request JSON below.
+            if (
+                isinstance(self.adapter, OllamaAdapter)
+                or self.config.adapter in {"ollama", "openrouter"}
+            ):
                 return None
             return structured_response_format()
         if contract == SEARCH_RESULTS_CONTRACT and policy != "json_schema":

@@ -156,6 +156,16 @@ def config_from_form(
     model = _optional_text(form, "model") or (
         DEFAULT_OPENROUTER_MODEL if adapter == "openrouter" else base.model
     )
+    response_format_policy = (
+        _optional_text(form, "response_format_policy")
+        or base.response_format_policy
+    )
+    # Older browser clients used these display-oriented values. Keep them
+    # readable while storing only the policy names accepted by AgentConfig.
+    response_format_policy = {
+        "json": "json_object",
+        "text": "off",
+    }.get(response_format_policy, response_format_policy)
     overrides = {
         "adapter": adapter,
         "profile": _optional_text(form, "profile") or base.profile,
@@ -178,10 +188,7 @@ def config_from_form(
             if (context_window := _optional_int_value(form, "context_window")) is not None
             else base.context_window
         ),
-        "response_format_policy": (
-            _optional_text(form, "response_format_policy")
-            or base.response_format_policy
-        ),
+        "response_format_policy": response_format_policy,
         "timeout_seconds": _optional_float_value(form, "timeout_seconds"),
         "show_method_notes": _checked(form, "show_method_notes"),
         "memory_enabled": _checked(form, "memory_enabled") if "memory_enabled" in form else base.memory_enabled,

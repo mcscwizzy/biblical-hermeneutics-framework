@@ -1266,16 +1266,33 @@ def canonical_context_has_strong_match(
     if int(metadata.get("primary_topic_count") or 0) > 0:
         return True
 
+    # A high numeric score is not sufficient on its own. Generic phrase or
+    # keyword overlap can score highly (for example, a question containing a
+    # chapter number and "mean") while pointing to an unrelated book. Strong
+    # context must come from a direct/entity/scripture match or an explicitly
+    # counted primary topic.
+    strong_match_types = {
+        "id",
+        "alias",
+        "exact",
+        "exact_entity",
+        "exact_book_subject",
+        "scripture",
+        "scripture_match",
+    }
     for topic in context.get("retrieved_topics") or []:
         if not isinstance(topic, Mapping):
             continue
-        try:
-            score = float(topic.get("score") or 0)
-        except (TypeError, ValueError):
-            score = 0.0
         match_type = str(topic.get("match_type") or "").strip().lower()
-        if score >= float(minimum_score) or match_type in {"exact", "scripture"}:
-            return True
+        if match_type in strong_match_types:
+            if match_type in {"id", "alias", "exact", "exact_entity", "exact_book_subject"}:
+                return True
+            try:
+                score = float(topic.get("score") or 0)
+            except (TypeError, ValueError):
+                score = 0.0
+            if score >= float(minimum_score):
+                return True
     return False
 
 

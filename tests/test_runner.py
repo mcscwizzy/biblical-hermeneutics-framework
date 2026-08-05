@@ -250,7 +250,7 @@ class PromptStageAssertingAgent(BHFAgent):
 class RunnerTests(unittest.TestCase):
     def make_agent(
         self,
-        adapter: ChatAdapter,
+        chat_adapter: ChatAdapter,
         public_answer_cache=None,
         ckl_library=None,
         **config_overrides,
@@ -272,7 +272,7 @@ class RunnerTests(unittest.TestCase):
             )
         return BHFAgent(
             AgentConfig(**values),
-            adapter=adapter,
+            adapter=chat_adapter,
             profile_loader=ProfileLoader(profiles_dir),
             public_answer_cache=public_answer_cache,
             canonical_library=ckl_library,
@@ -601,7 +601,7 @@ class RunnerTests(unittest.TestCase):
         self.assertIn("Use that context as your primary factual source", adapter.request.system_prompt)
         self.assertIn("Entry: Shechem", adapter.request.system_prompt)
         self.assertIn("Source ID: shechem", adapter.request.system_prompt)
-        self.assertIn("# OUTPUT REQUIREMENTS", adapter.request.system_prompt)
+        self.assertIn("# Final Answer Format", adapter.request.system_prompt)
         self.assertIn("Local Curated Knowledge", adapter.request.system_prompt)
         self.assertLess(
             adapter.request.system_prompt.index("# CANONICAL KNOWLEDGE CONTEXT"),
@@ -1352,6 +1352,22 @@ class RunnerTests(unittest.TestCase):
         self.assertNotIn("format", captured["body"])
         self.assertIn("# RESPONSE CONTRACT", captured["body"]["messages"][0]["content"])
 
+    def test_openrouter_auto_mode_uses_prose_for_ordinary_answers(self):
+        adapter = RecordingAdapter()
+        agent = self.make_agent(
+            adapter,
+            adapter="openrouter",
+            api_key="test-key",
+        )
+
+        result = agent.ask("What is Ecclesiastes trying to convey?")
+
+        self.assertIsNotNone(result)
+        self.assertIsNotNone(adapter.request)
+        assert adapter.request is not None
+        self.assertIsNone(adapter.request.response_format)
+        self.assertIn("# RESPONSE CONTRACT", adapter.request.system_prompt)
+
     def test_agent_extracts_nested_json_answer_object_before_display(self):
         adapter = StructuredJsonAdapter(
             json.dumps(
@@ -1634,7 +1650,11 @@ class RunnerTests(unittest.TestCase):
         self.assertNotIn("PROFILE", agent.system_prompt_before_model)
         self.assertIn("Compact BHF Runtime Framework", agent.system_prompt_before_model)
         self.assertIn("Question type: word_study", agent.system_prompt_before_model)
-        self.assertIn("Answer using the word-study format exactly", agent.user_prompt_before_model)
+        self.assertIn("User's exact question:", agent.user_prompt_before_model)
+        self.assertIn(
+            "What is the hebrew word for the word spirit or wind?",
+            agent.user_prompt_before_model,
+        )
         self.assertIn("call_model", result.model_metadata["pipeline"]["stages_completed"])
 
     def test_legacy_runtime_profile_mode_does_not_change_prompt_before_model_call(self):
