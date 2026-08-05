@@ -523,16 +523,89 @@ def build_context_evidence_packet(
     }
 
 
-def _why(scope: str) -> str:
-    return {
-        "historical_background": "It helps place the passage in its time and setting.",
-        "cultural_background": "It explains a social or cultural detail the first readers may have recognized.",
-        "ancient_world_background": "It gives relevant background from the surrounding ancient world.",
-        "original_audience": "It helps us hear the passage as its first audience may have heard it.",
-        "covenant_context": "It shows how the passage fits its stated covenant setting.",
-        "same_book": "It keeps the explanation anchored in the book containing the passage.",
-        "direct_passage": "It comes directly from the selected passage.",
-    }.get(scope, "It is included because the CKL marked it as relevant evidence.")
+_WHY_TEMPLATES = {
+    "historical_background": (
+        "This gives the passage a clearer setting.",
+        "It helps us picture the world behind these words.",
+        "This adds background to what was happening around the passage.",
+    ),
+    "cultural_background": (
+        "This fills in a social detail behind the wording.",
+        "It helps explain a custom or expectation the first readers may have known.",
+        "This gives the passage some of the everyday world it assumes.",
+    ),
+    "ancient_world_background": (
+        "This adds a useful piece of the wider ancient setting.",
+        "It helps us read the passage against the world around it.",
+        "This gives some context for how the surrounding ancient world worked.",
+    ),
+    "original_audience": (
+        "This helps us hear the passage as its first audience may have heard it.",
+        "It brings the first hearers back into the picture.",
+        "This helps clarify what these words may have sounded like to the original audience.",
+    ),
+    "covenant_context": (
+        "This shows what the passage is doing within its covenant setting.",
+        "It keeps the passage connected to the covenant relationship it describes.",
+        "This helps explain why the covenant setting matters here.",
+    ),
+    "same_book": (
+        "This lets us read the passage as part of the larger story in {book}.",
+        "It shows where this passage fits with the rest of {book}.",
+        "That keeps the passage connected to {book}, rather than treating it as a standalone line.",
+    ),
+    "same_chapter": (
+        "This helps us hear the selected words alongside the rest of the chapter.",
+        "It shows how the nearby verses frame this passage.",
+        "This keeps the selected lines connected to the chapter around them.",
+    ),
+    "direct_passage": (
+        "This comes from the selected lines, so it gives us a solid starting point.",
+        "It starts with what the passage itself says.",
+        "This keeps the explanation close to the words we are reading.",
+    ),
+}
+
+_BOOK_WHY_BY_ACTION = {
+    "full_context": "This keeps the passage connected to the wider shape of {book}.",
+    "historical_context": "It keeps the setting tied to the way {book} presents the passage.",
+    "cultural_context": "This ties the cultural detail back to the way {book} frames the passage.",
+    "original_audience": "It keeps the first audience in view as we read {book}.",
+    "covenant_context": "This shows how the passage's covenant setting fits within {book}.",
+    "literary_context": "It keeps these lines in step with the flow of {book}.",
+}
+
+
+def _why(
+    scope: str,
+    *,
+    book: str = "the book",
+    evidence_id: str = "",
+    action: str = "",
+) -> str:
+    """Give each evidence card a concise, varied explanation of its relevance."""
+
+    if scope == "same_book" and action in _BOOK_WHY_BY_ACTION:
+        return _BOOK_WHY_BY_ACTION[action].format(book=book or "the book")
+    templates = _WHY_TEMPLATES.get(
+        scope,
+        (
+            "This gives us another relevant piece of context.",
+            "It helps round out the picture around the passage.",
+            "This is useful background for reading the passage carefully.",
+        ),
+    )
+    # Keep the variation stable across renders without relying on Python's
+    # process-randomized hash function.
+    variant = sum(ord(character) for character in evidence_id) % len(templates)
+    return templates[variant].format(book=book or "the book")
+
+
+def _overview(primary: list[Mapping[str, Any]], book: str) -> str:
+    if not primary:
+        return "We do not have enough validated context yet to say more about this passage."
+    facts = " ".join(str(item["fact"]) for item in primary[:2])
+    return f"The big picture in {book or 'this book'}: {facts}"
 
 
 def deterministic_context_presentation(packet: Mapping[str, Any]) -> dict[str, Any]:
@@ -540,10 +613,9 @@ def deterministic_context_presentation(packet: Mapping[str, Any]) -> dict[str, A
 
     primary = list(packet.get("primary_evidence") or [])[:6]
     later = list(packet.get("later_biblical_connections") or [])[:6]
-    if primary:
-        summary = " ".join(str(item["fact"]) for item in primary[:2])
-    else:
-        summary = "No validated original-context evidence was found for this selection."
+    target = packet.get("target") or {}
+    target_book = str(target.get("book") or "")
+    summary = _overview(primary, target_book)
     return {
         "mode": "deterministic_fallback",
         "summary": summary,
@@ -551,7 +623,12 @@ def deterministic_context_presentation(packet: Mapping[str, Any]) -> dict[str, A
         "key_facts": [
             {
                 "fact": item["fact"],
-                "why_it_matters": _why(item["scope"]),
+                "why_it_matters": _why(
+                    item["scope"],
+                    book=target_book,
+                    evidence_id=str(item.get("evidence_id") or ""),
+                    action=str(target.get("action") or ""),
+                ),
                 "evidence_ids": [item["evidence_id"]],
                 "confidence": item.get("confidence", "medium"),
             }
@@ -665,12 +742,17 @@ def validate_context_presentation(
 
 CONTEXT_PRESENTATION_SYSTEM_PROMPT = """You are the final editor for a reader-facing biblical-context panel.
 
-Rewrite the supplied CKL evidence into clear, smooth prose for a general reader. The CKL
+Rewrite the supplied CKL evidence into clear, smooth, conversational prose for a general reader. The CKL
 entries may be fragments, labels, keyword strings, or repetitive database notes; do not
 copy that rough wording directly. Turn each useful point into one complete, natural
 sentence, combine closely related fragments when that improves flow, remove duplicated
 ideas, and use ordinary language instead of database terminology. Keep the answer concise
-and lead with the main idea before listing supporting facts.
+and lead with the main idea before listing supporting facts. Prefer "At a glance" language
+over academic-sounding labels or abstractions. Do not make every why_it_matters sentence
+sound alike: vary the phrasing, connect it to the supplied fact, and mention the target
+book when book-level context is the reason it matters. Tailor the reason to the requested
+context type instead of reusing the same sentence across Historical, Cultural, Literary,
+Audience, Covenant, and Full Context views.
 
 Use only the supplied evidence packet. Do not add facts, references, interpretations,
 theological claims, or historical details. Preserve the evidence's qualifiers and
@@ -681,8 +763,9 @@ The supplied packet separates these into original_context_evidence and
 later_biblical_connection_evidence. Use only the evidence IDs from the matching bucket:
 summary and key_facts may cite original_context_evidence, while
 later_biblical_connections may cite later_biblical_connection_evidence.
-The "why_it_matters" field should explain the relevance to this passage in one short
-sentence, not introduce a new claim. Do not mention CKL fields, record IDs, evidence IDs,
+The "why_it_matters" field should explain the relevance to this passage in one short,
+natural sentence, not introduce a new claim. Avoid stock wording such as "It keeps the
+explanation anchored..." when another clear phrasing will do. Do not mention CKL fields, record IDs, evidence IDs,
 or the editing process in reader-facing text.
 
 Every summary, fact, connection, and caution must cite supplied evidence IDs.

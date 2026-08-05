@@ -3438,8 +3438,8 @@ function renderContextPresentation(result) {
   const laterHtml = later.length
     ? `
       <section class="context-later-connections" aria-labelledby="later-biblical-connections-heading">
-        <h3 id="later-biblical-connections-heading">Later Biblical Connections</h3>
-        <p class="context-later-note">These are later canonical connections, not part of the passage’s original historical setting.</p>
+        <h3 id="later-biblical-connections-heading">Connections elsewhere in the Bible</h3>
+        <p class="context-later-note">These connections come from elsewhere in the Bible, not from the passage’s original setting.</p>
         <div class="context-fact-list">
           ${later.map((item) => `
             <article class="context-fact-card context-later-card">
@@ -3481,11 +3481,11 @@ function renderContextPresentation(result) {
         </div>
       </header>
       <section class="context-overview" aria-labelledby="context-overview-heading">
-        <h3 id="context-overview-heading">Overview</h3>
+        <h3 id="context-overview-heading">At a glance</h3>
         <p>${escapeHtml(presentation.summary || "No overview is available.")}</p>
       </section>
       <section class="context-key-facts" aria-labelledby="context-key-facts-heading">
-        <h3 id="context-key-facts-heading">Key Facts</h3>
+        <h3 id="context-key-facts-heading">What stands out</h3>
         <div class="context-fact-list">${factsHtml}</div>
       </section>
       ${caution ? `<aside class="context-caution" role="note"><strong>Important caution:</strong> ${escapeHtml(caution)}</aside>` : ""}

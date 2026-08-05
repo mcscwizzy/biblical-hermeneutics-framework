@@ -52,12 +52,37 @@ def ckl_object(
 class ContextPipelineTests(unittest.TestCase):
     def test_context_presenter_prompt_requests_reader_ready_prose(self):
         self.assertIn("one complete, natural", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
+        self.assertIn("conversational prose", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
         self.assertIn("rough wording directly", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
         self.assertIn("remove duplicated", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
+        self.assertIn("vary the phrasing", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
         self.assertIn("Preserve the evidence's qualifiers", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
         self.assertIn("must be an object, never a bare string", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
         self.assertIn("original_context_evidence", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
         self.assertIn("later_biblical_connection_evidence", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
+
+    def test_deterministic_context_copy_is_book_aware_and_varied(self):
+        packet = build_context_evidence_packet(
+            [
+                ckl_object(
+                    "romans",
+                    "Romans",
+                    historical_context="Romans develops a sustained argument for believers in Rome.",
+                )
+            ],
+            target_book="Romans",
+            reference="Romans 1:1",
+            action="full_context",
+            selected_text="Paul, a servant of Jesus Christ, called to be an apostle.",
+        )
+
+        presentation = deterministic_context_presentation(packet)
+
+        self.assertTrue(presentation["summary"].startswith("The big picture in Romans:"))
+        reasons = [item["why_it_matters"] for item in presentation["key_facts"]]
+        self.assertGreaterEqual(len(reasons), 2)
+        self.assertEqual(len(reasons), len(set(reasons)))
+        self.assertNotIn("anchored in the book containing the passage", " ".join(reasons))
 
     def test_ordinal_new_testament_reference_is_normalized_and_range_checked(self):
         packet = build_context_evidence_packet(
