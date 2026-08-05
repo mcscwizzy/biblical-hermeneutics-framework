@@ -236,6 +236,38 @@ def map_note_payload_from_request(payload: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def map_study_payload_from_request(payload: dict[str, Any]) -> dict[str, Any]:
+    view_state = payload.get("map_view_state") or {}
+    selected_layers = payload.get("selected_layers") or []
+    if isinstance(selected_layers, str):
+        try:
+            selected_layers = json.loads(selected_layers)
+        except json.JSONDecodeError:
+            selected_layers = [selected_layers]
+    if isinstance(view_state, str):
+        try:
+            view_state = json.loads(view_state)
+        except json.JSONDecodeError:
+            view_state = {}
+    return {
+        "id": payload.get("id"),
+        "book": payload.get("book"),
+        "chapter": payload.get("chapter"),
+        "start_verse": payload.get("start_verse") or payload.get("verse_start"),
+        "end_verse": payload.get("end_verse") or payload.get("verse_end"),
+        "passage_reference": payload.get("passage_reference"),
+        "selected_place_id": payload.get("selected_place_id"),
+        "selected_route_id": payload.get("selected_route_id"),
+        "selected_layer_id": payload.get("selected_layer_id"),
+        "selected_archaeology_id": payload.get("selected_archaeology_id"),
+        "selected_manuscript_id": payload.get("selected_manuscript_id"),
+        "selected_layers": selected_layers,
+        "map_view_state": view_state,
+        "generated_summary": payload.get("generated_summary"),
+        "user_notes": payload.get("user_notes"),
+    }
+
+
 def job_error_message(job: Any) -> str:
     if getattr(job, "failed_stage", None):
         return f"{job.error} (failed during {str(job.failed_stage).replace('_', ' ')})"
@@ -258,15 +290,24 @@ def result_has_fatal_error(result: Any) -> bool:
     """Return whether an agent result must be rendered as a failed request."""
 
     fatal_errors = getattr(result, "fatal_errors", None)
-    if fatal_errors is not None:
-        return bool(fatal_errors)
+    if fatal_errors:
+        return True
 
     # Compatibility for result-like objects from older integrations: a safe
     # answer wins over a legacy diagnostic-only ``errors`` collection.
     answer_text = str(getattr(result, "answer_text", "") or "").strip()
-    if answer_text:
-        return bool(getattr(result, "fatal", False))
-    return bool(getattr(result, "errors", None))
+    if getattr(result, "fatal", False):
+        return True
+    errors = [str(error).strip() for error in (getattr(result, "errors", None) or []) if str(error).strip()]
+    if not errors:
+        return False
+    metadata = getattr(result, "model_metadata", {}) or {}
+    pipeline = metadata.get("pipeline", {}) if isinstance(metadata, dict) else {}
+    category = str(pipeline.get("error_category", "")).strip().lower()
+    if category in FATAL_ERROR_CATEGORIES or not answer_text:
+        return True
+    fatal_markers = ("timed out", "timeout", "invalid model output", "no extractable answer", "provider connection", "provider failure")
+    return any(marker in " ".join(errors).lower() for marker in fatal_markers)
 
 
 def agent_error_status_code(result: Any) -> int:
@@ -276,15 +317,7 @@ def agent_error_status_code(result: Any) -> int:
     category = str(metadata.get("error_category") or "").strip().lower()
     pipeline = metadata.get("pipeline") if isinstance(metadata.get("pipeline"), dict) else {}
     category = category or str(pipeline.get("error_category") or "").strip().lower()
-    errors = " ".join(
-        str(error)
-        for error in (
-            getattr(result, "fatal_errors", None)
-            if getattr(result, "fatal_errors", None) is not None
-            else getattr(result, "errors", None)
-        )
-        or []
-    )
+    errors = " ".join(str(error) for error in (getattr(result, "fatal_errors", None) or getattr(result, "errors", None) or []))
     lowered = f"{category} {errors}".lower()
     if category in {
         "response_extraction",
@@ -564,6 +597,7 @@ def reader_context_from_form(form: dict[str, Any] | Any) -> dict[str, Any] | Non
         # can still be sent with an AI request, while chapter context falls
         # back to the bundled ASV dataset on the server.
         translation_data = None
+    selected_verses = parse_selected_verses(form.get("reader_selected_verses"))
     context = build_selected_passage_context(
         str(form.get("reader_book") or ""),
         str(form.get("reader_chapter") or ""),
@@ -572,6 +606,7 @@ def reader_context_from_form(form: dict[str, Any] | Any) -> dict[str, Any] | Non
         optional_form_value(form, "reader_selected_text"),
         include_chapter_context=True,
         data=translation_data,
+        selected_verses=selected_verses,
     )
     context.update({"translation_id": translation_id, **reader_translation_metadata(form)})
     return context
@@ -591,6 +626,23 @@ def study_type_from_form(form: dict[str, Any] | Any) -> str:
 def optional_form_value(form: dict[str, Any] | Any, name: str) -> str | None:
     value = str(form.get(name) or "").strip()
     return value or None
+
+
+def parse_selected_verses(value: Any) -> list[int] | None:
+    """Parse the reader's JSON verse-number list without trusting client input."""
+
+    if value in (None, "", []):
+        return None
+    raw = value
+    if isinstance(value, str):
+        try:
+            raw = json.loads(value)
+        except json.JSONDecodeError:
+            raw = [part for part in value.split(",") if part.strip()]
+    if not isinstance(raw, (list, tuple)):
+        return None
+    selected = sorted({int(item) for item in raw if str(item).strip().isdigit() and int(item) > 0})
+    return selected or None
 
 
 def _reader_action_question(

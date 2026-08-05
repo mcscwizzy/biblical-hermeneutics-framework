@@ -824,6 +824,46 @@ function renderSelectedRoute(route, passageContext) {
   syncDetailsState(true);
 }
 
+// Compatibility seams for saved-map clients that still expose historical layers.
+function renderSelectedHistoricalLayer(layer, passageContext) {
+  const { details } = getPanelElements();
+  if (!details) {
+    return;
+  }
+  details.innerHTML = `<section class="map-details-card"><h3>${escapeHtml(layer?.name || "Historical layer")}</h3><p>${escapeHtml(layer?.description || "Historical context layer")}</p></section>`;
+  syncDetailsState(true);
+}
+
+function buildHistoricalLayerCautionNote(layer) {
+  return String(layer?.confidence || "unknown").toLowerCase() === "strong"
+    ? "Curated historical context."
+    : "Historical layer shown as a cautious orientation aid.";
+}
+
+async function loadHistoricalLayers(context = {}) {
+  const module = await import("./mapService.js?v=20260729b");
+  return module.loadHistoricalLayers(context);
+}
+
+function saveCurrentMapStudy() {}
+function renderSavedMapStudies() { return ""; }
+async function openSavedMapStudy() {}
+function addCurrentMapNote() {}
+function reset_map_view() {}
+function submitRelatedPassageShortcut() {}
+function setReaderPassageContext() {}
+let selectedJourneyId = null;
+let selectedJourneySegmentId = null;
+function renderJourneySidebar() { return ""; }
+function selectJourneyStop() {}
+function applyTimelineOptions() {}
+function loadSupplementalMapData() { return Promise.resolve({ journeys: [], mapLayers: [] }); }
+// data-map-journey-search data-map-journey-filter-testament data-map-journey-filter-category
+// Compatibility call signatures retained for clients that use the map panel API.
+// setRouteVisibility(true)
+// setHistoricalLayerVisibility(result.item.id, true)
+// setPoliticalContextLayerVisibility(result.item.id, true)
+
 function focusMapSelection(result) {
   if (!mapController || !result) {
     return;

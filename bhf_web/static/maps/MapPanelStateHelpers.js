@@ -49,7 +49,30 @@ function syncPoliticalContextLayerToggles(details, visiblePoliticalContextLayerI
   });
 }
 
+function getCurrentMapSelection(selection = {}) {
+  return {
+    placeId: String(selection.placeId || ""),
+    routeId: String(selection.routeId || ""),
+    layerId: String(selection.layerId || ""),
+  };
+}
+
+function buildCurrentMapStudyPayload(context = {}, selection = {}) {
+  const current = getCurrentMapSelection(selection);
+  return {
+    book: context.book || "",
+    chapter: Number(context.chapter || 0),
+    start_verse: Number(context.verseStart || context.start_verse || 0),
+    end_verse: Number(context.verseEnd || context.end_verse || context.verseStart || 0),
+    selected_place_id: current.placeId,
+    selected_route_id: current.routeId,
+    selected_layer_id: current.layerId,
+  };
+}
+
 export {
+  buildCurrentMapStudyPayload,
+  getCurrentMapSelection,
   normalizeHistoricalPeriod,
   syncHistoricalLayerToggles,
   syncPoliticalContextLayerToggles,

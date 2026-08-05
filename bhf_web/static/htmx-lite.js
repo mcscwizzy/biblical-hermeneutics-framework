@@ -2644,19 +2644,19 @@ function handleVerseSelectionClick(event, verse) {
     return;
   }
 
-  const selectedStart = Number(currentSelection?.startVerse || "0");
-  const selectedEnd = Number(
-    currentSelection?.endVerse || currentSelection?.startVerse || "0",
-  );
-
-  if (selectedStart === verseNumber && selectedEnd === verseNumber) {
-    clearReaderSelection();
-    return;
+  const selectedVerses = selectedVerseNumbers(currentSelection);
+  const selectedIndex = selectedVerses.indexOf(verseNumber);
+  if (selectedIndex >= 0) {
+    selectedVerses.splice(selectedIndex, 1);
+  } else {
+    selectedVerses.push(verseNumber);
   }
 
-  const context = contextFromVerse(verse);
+  const context = contextFromVerseNumbers(selectedVerses);
   if (context) {
     applySelectionContext(context);
+  } else {
+    clearReaderSelection();
   }
 }
 
@@ -2877,6 +2877,7 @@ function selectionContextFromDocument() {
     chapter: currentChapter.chapter,
     startVerse: Number(selectedVerses[0].dataset.verse),
     endVerse: Number(selectedVerses[selectedVerses.length - 1].dataset.verse),
+    selectedVerses: selectedVerses.map((verse) => Number(verse.dataset.verse)),
     text: selection.toString().trim(),
     isSelection: true,
   };
@@ -2892,6 +2893,7 @@ function contextFromVerse(verse) {
     chapter: currentChapter.chapter,
     startVerse: verseNumber,
     endVerse: verseNumber,
+    selectedVerses: [verseNumber],
     text: verse.querySelector(".verse-text")?.textContent.trim() || "",
     isSelection: false,
   };
@@ -2911,8 +2913,58 @@ function contextFromVerseRange(startVerse, endVerse) {
     chapter: currentChapter.chapter,
     startVerse: rangeStart,
     endVerse: rangeEnd,
+    selectedVerses: Array.from({length: rangeEnd - rangeStart + 1}, (_, index) => rangeStart + index),
     text: collectSelectedVerseText(rangeStart, rangeEnd),
     isSelection: rangeStart !== rangeEnd,
+  };
+}
+
+function selectedVerseNumbers(context) {
+  if (!context) {
+    return [];
+  }
+  if (Array.isArray(context.selectedVerses) && context.selectedVerses.length > 0) {
+    return Array.from(
+      new Set(
+        context.selectedVerses
+          .map((verseNumber) => Number(verseNumber))
+          .filter((verseNumber) => Number.isInteger(verseNumber) && verseNumber > 0),
+      ),
+    ).sort((left, right) => left - right);
+  }
+  const startVerse = Number(context.startVerse || 0);
+  const endVerse = Number(context.endVerse || startVerse);
+  if (!startVerse || !endVerse || endVerse < startVerse) {
+    return [];
+  }
+  return Array.from({length: endVerse - startVerse + 1}, (_, index) => startVerse + index);
+}
+
+function contextFromVerseNumbers(verseNumbers) {
+  if (!currentChapter) {
+    return null;
+  }
+  const selected = Array.from(
+    new Set(
+      (verseNumbers || [])
+        .map((verseNumber) => Number(verseNumber))
+        .filter((verseNumber) => Number.isInteger(verseNumber) && verseNumber > 0),
+    ),
+  ).sort((left, right) => left - right);
+  if (selected.length === 0) {
+    return null;
+  }
+  return {
+    book: currentChapter.book,
+    chapter: currentChapter.chapter,
+    startVerse: selected[0],
+    endVerse: selected[selected.length - 1],
+    selectedVerses: selected,
+    text: selected
+      .map((verseNumber) => document.querySelector(`#chapter-reader [data-verse="${String(verseNumber)}"] .verse-text`)?.textContent.trim() || "")
+      .filter(Boolean)
+      .join(" "),
+    isSelection: selected.length > 1,
   };
 }
 
@@ -2932,10 +2984,10 @@ function contextIncludesVerse(context, verseNumber) {
   if (!context || !verseNumber) {
     return false;
   }
-  return (
-    Number(context.startVerse) <= verseNumber &&
-    verseNumber <= Number(context.endVerse || context.startVerse)
-  );
+  if (Array.isArray(context.selectedVerses) && context.selectedVerses.length > 0) {
+    return selectedVerseNumbers(context).includes(verseNumber);
+  }
+  return Number(context.startVerse) <= verseNumber && verseNumber <= Number(context.endVerse || context.startVerse);
 }
 
 function showContextMenu(x, y, context) {
@@ -3103,6 +3155,7 @@ function createStudyAction(type, context) {
     chapter: Number(context.chapter),
     verseStart: Number(context.startVerse),
     verseEnd: Number(context.endVerse || context.startVerse),
+    selectedVerses: selectedVerseNumbers(context),
     selectedText: context.text || "",
     isSelection: Boolean(context.isSelection),
     sourceTranslation,
@@ -3192,6 +3245,7 @@ function applyStudyActionContext(studyAction) {
     chapter: studyAction.chapter,
     startVerse: studyAction.verseStart,
     endVerse: studyAction.verseEnd,
+    selectedVerses: studyAction.selectedVerses,
     text: studyAction.selectedText,
     isSelection:
       Boolean(studyAction.isSelection) ||
@@ -3300,6 +3354,7 @@ function deterministicStudyPayload(studyAction) {
     chapter: studyAction.chapter,
     verse_start: studyAction.verseStart,
     verse_end: studyAction.verseEnd,
+    selected_verses: studyAction.selectedVerses || [],
     selected_text: studyAction.selectedText || "",
     source_translation:
       studyAction.sourceTranslation || selectedTranslationId(),
@@ -3990,14 +4045,19 @@ function applySelectionContext(context) {
     return;
   }
 
-  currentSelection = context;
+  const selectedVerses = selectedVerseNumbers(context);
+  currentSelection = {
+    ...context,
+    selectedVerses,
+    startVerse: selectedVerses[0] || Number(context.startVerse),
+    endVerse: selectedVerses[selectedVerses.length - 1] || Number(context.endVerse || context.startVerse),
+    isSelection: selectedVerses.length > 1,
+  };
   rememberReaderLocation(Number(context.startVerse));
 
   reader.querySelectorAll("[data-verse]").forEach((verse) => {
     const verseNumber = Number(verse.dataset.verse || "0");
-    const selected =
-      Number(context.startVerse) <= verseNumber &&
-      verseNumber <= Number(context.endVerse || context.startVerse);
+    const selected = selectedVerses.includes(verseNumber);
 
     verse.classList.toggle("selected", selected);
 
@@ -4164,6 +4224,10 @@ function syncAskFields() {
   setFormValue(
     "reader_end_verse",
     currentSelection ? currentSelection.endVerse : "",
+  );
+  setFormValue(
+    "reader_selected_verses",
+    currentSelection ? JSON.stringify(currentSelection.selectedVerses || []) : "",
   );
   setFormValue(
     "reader_selected_text",

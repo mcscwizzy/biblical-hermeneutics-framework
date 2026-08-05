@@ -1097,6 +1097,11 @@ body.reader-mode .chapter-text {
   background: #e8f1f8;
 }
 
+.verse.selected .verse-number {
+  color: #163f5d;
+  background: #b9d8ee;
+}
+
 .verse-state-indicators {
   display: inline-flex;
   gap: 3px;
@@ -1777,6 +1782,11 @@ html[data-theme="dark"] .verse-number {
   background: rgb(124 183 230 / 18%);
 }
 
+html[data-theme="dark"] .verse.selected .verse-number {
+  color: #d8ebfa;
+  background: rgb(124 183 230 / 34%);
+}
+
 html[data-theme="dark"] .verse-number:hover,
 html[data-theme="dark"] .verse-number:focus {
   color: #ffffff;
@@ -2195,7 +2205,8 @@ html[data-theme="dark"] .map-panel-body {
     gap: 10px;
   }
 
-  .map-details-panel {
+  .map-details-panel,
+  .saved-map-study {
     padding: 12px;
   }
 }
@@ -2204,6 +2215,18 @@ html[data-theme="dark"] .map-panel-body {
   min-height: 100dvh;
   display: grid;
   place-items: center;
+}
+
+.map-journey-panel,
+.map-reference-panel,
+.map-journey-stop,
+.map-reference-point,
+.map-journey-passage-row {
+  display: block;
+}
+
+.map-journey-list-item.is-selected {
+  border-color: var(--accent);
 }
 
 .offline-card {

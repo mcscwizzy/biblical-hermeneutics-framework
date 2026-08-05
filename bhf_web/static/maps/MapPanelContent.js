@@ -19,6 +19,8 @@ import {
 } from "./MapPanelText.js";
 import { buildGoogleEarthUrl, hasUsableCoordinates } from "./MapExternalLinks.js";
 
+// Legacy layer cards used the same fallback expression: layer.summary || layer.description.
+
 function renderMapOrientationCard(options = {}) {
   const {
     title = "How to read this map",

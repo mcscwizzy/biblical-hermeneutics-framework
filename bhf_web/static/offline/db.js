@@ -11,6 +11,7 @@
     "notes",
     "highlights",
     "savedStudies",
+    "mapStudies",
     "mutationQueue",
     "metadata",
     "modelSettings",
@@ -33,9 +34,6 @@
       const request = indexedDB.open(DB_NAME, DB_VERSION);
       request.onupgradeneeded = () => {
         const db = request.result;
-        if (db.objectStoreNames.contains("mapStudies")) {
-          db.deleteObjectStore("mapStudies");
-        }
         for (const storeName of STORES) {
           if (!db.objectStoreNames.contains(storeName)) {
             db.createObjectStore(storeName, { keyPath: "id" });
@@ -773,6 +771,14 @@
       .sort((left, right) => String(right.created_at || "").localeCompare(String(left.created_at || "")));
   }
 
+  async function upsertOfflineMapStudy(study) {
+    return put("mapStudies", { ...study, id: study?.id || clientId("map-study") });
+  }
+
+  async function deleteOfflineMapStudy(id) {
+    return remove("mapStudies", id);
+  }
+
   async function cacheNotesForChapter(book, chapter) {
     const notes = await notesForChapter(book, chapter);
     await cacheApiResponse(`/api/notes/${encodeURIComponent(book)}/${encodeURIComponent(chapter)}`, { notes });
@@ -985,6 +991,8 @@
     deleteOfflineSavedStudy,
     upsertOfflineSavedStudy,
     savedStudiesForChapter,
+    upsertOfflineMapStudy,
+    deleteOfflineMapStudy,
     purgeDeviceOnlyMutations,
   };
 })();

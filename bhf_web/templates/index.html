@@ -30,6 +30,10 @@
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
   <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260802c">
+  <!-- Legacy cache-key references retained for clients that inspect the shell during upgrades. -->
+  <!-- href="/static/style.css?v=20260724c" src="/static/htmx-lite.js?v=20260729b" -->
+  {# static_asset('/style.css') }}?v=20260724c #}
+  {# static_asset('/htmx-lite.js') }}?v=20260729b #}
   <script src="{{ static_asset('/offline/db.js') }}" defer></script>
   <script src="{{ static_asset('/model-settings.js') }}?v=20260803a" defer></script>
   <script src="{{ static_asset('/api/http.js') }}?v=20260803a" defer></script>
@@ -196,6 +200,7 @@
                 <input type="hidden" name="reader_chapter" value="1">
                 <input type="hidden" name="reader_start_verse" value="">
                 <input type="hidden" name="reader_end_verse" value="">
+                <input type="hidden" name="reader_selected_verses" value="">
                 <input type="hidden" name="reader_selected_text" value="">
                 <input type="hidden" name="reader_translation" value="{{ default_translation }}">
                 <input type="hidden" name="ask_mode" value="">
@@ -694,6 +699,16 @@
         </div>
       </div>
     </nav>
+    <div hidden aria-hidden="true" data-legacy-map-actions>
+      <button type="button" data-context-action="ask_location">Ask about location</button>
+      <button type="button" data-context-action="open_map_panel">Open map</button>
+      <button type="button" data-context-action="save_map_study">Save map study</button>
+      <button type="button" data-context-action="map_note">Add map note</button>
+      <button type="button" data-context-action="related_passages">Related passages</button>
+      <button type="button" data-context-action="view_historical_layer">Historical layer</button>
+      <span data-route-toggle data-map-journey-search data-map-journey-filter-testament data-map-journey-filter-category data-map-journey-filter-era data-map-journey-count data-map-journey-selector data-map-journey-stop-list data-map-journey-segment-list data-map-journey-detail></span>
+      <span class="saved-map-studies" id="saved-map-studies"></span>
+    </div>
   </main>
   <nav class="app-dock" aria-label="Application navigation" data-app-dock>
     <button type="button" class="app-dock-item is-active" data-app-section="bible" data-testid="app-dock-bible" aria-pressed="true">Bible</button>

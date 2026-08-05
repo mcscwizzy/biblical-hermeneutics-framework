@@ -279,7 +279,7 @@ def run_ask_job(
 
     if result_has_fatal_error(result):
         fatal_errors = getattr(result, "fatal_errors", None)
-        errors = fatal_errors if fatal_errors is not None else getattr(result, "errors", [])
+        errors = fatal_errors or getattr(result, "errors", [])
         metadata = getattr(result, "model_metadata", {}) or {}
         pipeline = metadata.get("pipeline") if isinstance(metadata.get("pipeline"), dict) else {}
         job.fail(

@@ -26,6 +26,7 @@ from bhf_agent.bible import (
     search_bible_text,
     timeline_for_book,
     verse_range_reference,
+    verse_selection_reference,
 )
 from bhf_agent.translation_installer import list_installed_translations
 from bhf_agent.translation_registry import upsert_translation
@@ -215,6 +216,12 @@ class BibleDatasetTests(unittest.TestCase):
         self.assertEqual(verse_range_reference("Romans", 12, 1, 1), "Romans 12:1")
         self.assertEqual(verse_range_reference("Romans", 12, 1, 2), "Romans 12:1-2")
 
+    def test_verse_selection_reference_preserves_gaps(self):
+        self.assertEqual(
+            verse_selection_reference("John", 1, [3, 1, 4]),
+            "John 1:1,3-4",
+        )
+
     def test_build_selected_passage_context(self):
         context = build_selected_passage_context(
             "John",
@@ -228,6 +235,22 @@ class BibleDatasetTests(unittest.TestCase):
         self.assertEqual(context["reference"], "John 1:1-2")
         self.assertEqual(context["selected_text"], "In the beginning was the Word.")
         self.assertIn("In him was life", context["chapter_context"])
+
+    def test_build_selected_passage_context_preserves_noncontiguous_selection(self):
+        context = build_selected_passage_context(
+            "John",
+            1,
+            1,
+            3,
+            selected_verses=[1, 3],
+            data=self.data,
+        )
+
+        self.assertEqual(context["reference"], "John 1:1,3")
+        self.assertEqual(context["selected_verses"], [1, 3])
+        self.assertIn("In the beginning", context["selected_text"])
+        self.assertIn("All things were made", context["selected_text"])
+        self.assertNotIn("In him was life", context["selected_text"])
 
     def test_build_interpretation_context_is_chapter_first_and_adds_neighbors(self):
         context = build_interpretation_context("John", 3, 16, data=self.data)

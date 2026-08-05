@@ -472,6 +472,32 @@ def verse_range_reference(
     return f"{canonical} {chapter_number}:{suffix}"
 
 
+def verse_selection_reference(
+    book: str,
+    chapter: int | str,
+    verses: list[int | str] | tuple[int | str, ...],
+) -> str:
+    """Format a set of verse numbers, preserving gaps between selections."""
+
+    canonical = normalize_book_name(book)
+    chapter_number = _positive_int(chapter, "chapter")
+    selected = sorted({int(verse) for verse in verses if int(verse) > 0})
+    if not selected:
+        return f"{canonical} {chapter_number}"
+
+    runs: list[str] = []
+    run_start = selected[0]
+    run_end = selected[0]
+    for verse in selected[1:]:
+        if verse == run_end + 1:
+            run_end = verse
+            continue
+        runs.append(str(run_start) if run_start == run_end else f"{run_start}-{run_end}")
+        run_start = run_end = verse
+    runs.append(str(run_start) if run_start == run_end else f"{run_start}-{run_end}")
+    return f"{canonical} {chapter_number}:{','.join(runs)}"
+
+
 def passage_text(verses: list[dict[str, Any]]) -> str:
     return " ".join(
         f"{int(verse['verse'])}. {str(verse.get('text', '')).strip()}"
@@ -488,16 +514,29 @@ def build_selected_passage_context(
     selected_text: str | None = None,
     include_chapter_context: bool = True,
     data: dict[str, Any] | None = None,
+    selected_verses: list[int | str] | tuple[int | str, ...] | None = None,
 ) -> dict[str, Any]:
     passage = resolve_passage(book, chapter, start_verse, end_verse, data)
-    chosen_text = " ".join((selected_text or "").split()) or passage["selected_text"]
+    selected = passage["selected_verses"]
+    if selected_verses:
+        requested = {int(verse) for verse in selected_verses if int(verse) > 0}
+        selected = [verse for verse in selected if int(verse["verse"]) in requested]
+        if not selected:
+            raise BibleError("selected_verses must include at least one verse in the passage")
+    chosen_text = " ".join((selected_text or "").split()) or passage_text(selected)
+    reference = (
+        verse_selection_reference(book, chapter, [verse["verse"] for verse in selected])
+        if selected_verses
+        else passage["reference"]
+    )
     context = {
         "translation": passage["translation"],
         "book": passage["book"],
         "chapter": passage["chapter"],
-        "start_verse": passage["start_verse"],
-        "end_verse": passage["end_verse"],
-        "reference": passage["reference"],
+        "start_verse": int(selected[0]["verse"]) if selected_verses else passage["start_verse"],
+        "end_verse": int(selected[-1]["verse"]) if selected_verses else passage["end_verse"],
+        "selected_verses": [int(verse["verse"]) for verse in selected],
+        "reference": reference,
         "selected_text": chosen_text,
     }
     if include_chapter_context:

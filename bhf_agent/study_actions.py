@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 from collections import defaultdict
 from dataclasses import dataclass, field
@@ -9,7 +10,7 @@ from typing import Any, Callable, Iterable, Mapping
 
 from framework.canonical_library import CanonicalLibrary
 
-from .bible import BibleError, load_translation_bible, resolve_passage, verse_range_reference
+from .bible import BibleError, load_translation_bible, passage_text, resolve_passage, verse_selection_reference, verse_range_reference
 from .ckl import load_canonical_library
 from .context_pipeline import (
     build_context_evidence_packet,
@@ -312,6 +313,25 @@ class DeterministicStudyEngine:
         except BibleError:
             resolved = resolve_passage(book, chapter, start_verse or None, end_verse or None)
         selected_text = str(_first(context, "selected_text", "reader_selected_text", "text") or "").strip()
+        selected_verses = context.get("selected_verses")
+        if isinstance(selected_verses, str):
+            try:
+                selected_verses = json.loads(selected_verses)
+            except ValueError:
+                selected_verses = None
+        if isinstance(selected_verses, (list, tuple)) and selected_verses:
+            requested = {int(verse) for verse in selected_verses if str(verse).strip().isdigit() and int(verse) > 0}
+            selected = [verse for verse in resolved["selected_verses"] if int(verse["verse"]) in requested]
+            if not selected:
+                raise BibleError("selected_verses must include at least one verse in the passage")
+            resolved["selected_verses"] = selected
+            resolved["start_verse"] = int(selected[0]["verse"])
+            resolved["end_verse"] = int(selected[-1]["verse"])
+            resolved["reference"] = verse_selection_reference(
+                resolved["book"], resolved["chapter"], [verse["verse"] for verse in selected]
+            )
+            if not selected_text:
+                selected_text = passage_text(selected)
         if selected_text:
             resolved["selected_text"] = selected_text
         for key in (

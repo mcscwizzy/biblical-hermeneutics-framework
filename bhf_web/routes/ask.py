@@ -41,9 +41,7 @@ def _public_answer_text(result: Any) -> str:
 
 
 def _result_error_message(result: Any) -> str:
-    errors = getattr(result, "fatal_errors", None)
-    if errors is None:
-        errors = getattr(result, "errors", None) or []
+    errors = getattr(result, "fatal_errors", None) or getattr(result, "errors", None) or []
     if not errors:
         return "Request failed."
     return "; ".join(str(error) for error in errors)

@@ -64,4 +64,4 @@ def is_translation_installed(translation_id: str) -> bool:
     if normalized == DEFAULT_READER_TRANSLATION_ID:
         return True
     installation = get_translation_installation(normalized)
-    return bool(installation.get("installed") and installation.get("bundled"))
+    return bool(installation.get("installed"))

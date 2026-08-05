@@ -47,8 +47,8 @@ class TranslationInstallError(ValueError):
 
 def get_translation_installation(translation_id: str) -> dict[str, Any]:
     normalized = normalize_translation_id(translation_id)
-    if normalized in {"asv", "kjv"}:
-        data = load_asv_bible() if normalized == "asv" else load_legacy_kjv_bible()
+    if normalized == "asv":
+        data = load_asv_bible()
         stats = count_bible_statistics(data)
         translation = dict(data.get("translation", {}))
         translation.setdefault("id", normalized.upper())
@@ -65,8 +65,6 @@ def get_translation_installation(translation_id: str) -> dict[str, Any]:
             "metadata_path": None,
             "storage_path": str(
                 DATA_PATH
-                if normalized == "asv"
-                else LEGACY_KJV_DATA_PATH
             ),
             "translation": translation,
             **stats,
@@ -129,7 +127,12 @@ def list_installed_translations() -> list[dict[str, Any]]:
         # of truth for whether a translation can actually be read.  A removed
         # app/data volume can leave an old registry row behind; do not expose
         # that row as an installed translation.
-        if not installation.get("installed") or not installation.get("bundled"):
+        if not installation.get("installed"):
+            continue
+        # Copyrighted/manual imports remain local-only and are intentionally
+        # excluded from the server translation catalog. KJV is the sole
+        # downloadable server-managed exception alongside bundled ASV.
+        if not installation.get("bundled") and str(row["id"]).lower() not in SERVER_TRANSLATION_IDS:
             continue
         installation["registry"] = row
         entries.append(installation)

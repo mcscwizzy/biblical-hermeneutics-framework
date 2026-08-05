@@ -11,6 +11,10 @@ from bhf_agent.bible import BibleError
 from bhf_agent.study_db import (
     StudyDataError,
     create_map_note,
+    create_saved_map_study,
+    delete_saved_map_study,
+    get_saved_map_study,
+    list_saved_map_studies,
 )
 
 from ..map_service import (
@@ -32,6 +36,7 @@ from ..map_service import (
 from ..services.map_kml import journey_kml, load_journey, place_kml, route_kml
 from ..services.web_helpers import (
     map_note_payload_from_request,
+    map_study_payload_from_request,
     record_action,
     request_payload,
 )
@@ -258,6 +263,38 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
                 marker["related_passages"] = get_related_passages_for_place("jerusalem", path=study_db_path)
                 break
         return JSONResponse({"markers": markers})
+
+    @app.get("/api/map-studies", response_class=JSONResponse)
+    async def map_studies(book: str | None = None, chapter: int | None = None) -> JSONResponse:
+        try:
+            return JSONResponse({"saved_map_studies": list_saved_map_studies(book, chapter, path=study_db_path)})
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+
+    @app.get("/api/map-studies/{study_id}", response_class=JSONResponse)
+    async def map_study(study_id: str) -> JSONResponse:
+        try:
+            return JSONResponse(get_saved_map_study(study_id, path=study_db_path))
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
+
+    @app.post("/api/map-studies", response_class=JSONResponse)
+    async def post_map_study(request: Request) -> JSONResponse:
+        try:
+            payload = await request_payload(request)
+            saved = create_saved_map_study(map_study_payload_from_request(payload), path=study_db_path)
+            record_action("map_study_saved", saved, path=study_db_path)
+            return JSONResponse(saved, status_code=201)
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+
+    @app.delete("/api/map-studies/{study_id}", response_class=JSONResponse)
+    async def remove_map_study(study_id: str) -> JSONResponse:
+        try:
+            delete_saved_map_study(study_id, path=study_db_path)
+            return JSONResponse({"deleted": True})
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
 
     @app.post("/api/map-notes", response_class=JSONResponse)
     async def post_map_note(request: Request) -> JSONResponse:

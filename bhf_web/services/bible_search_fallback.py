@@ -67,6 +67,7 @@ def build_bible_search_fallback_payload(
     )
 
     passages: list[dict[str, Any]] = []
+    group_counts: dict[tuple[str, int], int] = {}
     seen_references: set[tuple[str, int, int | None, int | None]] = set()
     for result in search_results:
         selected_reference = _select_scripture_reference(
@@ -99,6 +100,8 @@ def build_bible_search_fallback_payload(
         except Exception:
             continue
 
+        group_key = (str(passage["book"]).lower(), int(passage["chapter"]))
+        group_counts[group_key] = group_counts.get(group_key, 0) + 1
         passages.append(
             {
                 "book": passage["book"],
@@ -112,8 +115,13 @@ def build_bible_search_fallback_payload(
             }
         )
         seen_references.add(reference_key)
-        if len(passages) >= max_results:
-            break
+    passages.sort(
+        key=lambda item: (
+            -group_counts.get((str(item["book"]).lower(), int(item["chapter"])), 0),
+            -float(item.get("confidence") == "strong"),
+        )
+    )
+    passages = passages[:max_results]
 
     if passages:
         return {

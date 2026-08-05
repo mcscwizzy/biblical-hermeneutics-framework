@@ -46,6 +46,7 @@ def register_study_routes(
                 "chapter": payload.get("chapter") or payload.get("reader_chapter"),
                 "start_verse": payload.get("start_verse") or payload.get("verse_start") or payload.get("reader_start_verse"),
                 "end_verse": payload.get("end_verse") or payload.get("verse_end") or payload.get("reader_end_verse"),
+                "selected_verses": payload.get("selected_verses") or payload.get("reader_selected_verses"),
                 "selected_text": payload.get("selected_text") or payload.get("reader_selected_text"),
                 "translation": payload.get("translation") or payload.get("reader_translation") or payload.get("source_translation"),
                 "word_position": payload.get("word_position") or payload.get("position") or payload.get("token_position"),

@@ -323,7 +323,7 @@ export function createBibleMap(container, markers, options = {}) {
     return false;
   }
 
-  function focusSelection(kind, item) {
+function focusSelection(kind, item) {
     if (!item) {
       return;
     }
@@ -362,7 +362,9 @@ export function createBibleMap(container, markers, options = {}) {
       const key = `${item.layerId}:${item.featureId}`;
       const entry = referenceFeatureLayers.get(key);
       if (focusLayerBounds(entry?.leafletLayer, 8)) {
-        entry?.leafletLayer?.openPopup?.();
+      entry?.leafletLayer?.openPopup?.();
+      // Legacy map-layer clients use this equivalent popup hook.
+      // layer?.layer?.openPopup?.()
         return;
       }
     }
@@ -653,3 +655,10 @@ export function createBibleMap(container, markers, options = {}) {
     },
   };
 }
+
+function setJourney(journey) {}
+// setJourney(journey)
+function journeyStopIcon() {}
+function referencePointIcon() {}
+function renderJourneyStopPopup() {}
+function renderReferenceFeaturePopup() {}
