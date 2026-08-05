@@ -38,7 +38,7 @@
   <script src="{{ static_asset('/model-settings.js') }}?v=20260803a" defer></script>
   <script src="{{ static_asset('/api/http.js') }}?v=20260803a" defer></script>
   <script src="{{ static_asset('/htmx-status.js') }}" defer></script>
-  <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260803d" defer></script>
+  <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260805a" defer></script>
   <script src="{{ static_asset('/htmx-search.js') }}" defer></script>
   <script src="{{ static_asset('/htmx-lite.js') }}?v=20260803d" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260803c" defer></script>
@@ -338,7 +338,6 @@
                     <p class="canonical-browser-subtitle">Search and explore people, places, events, themes, books, and other canonical objects.</p>
                   </div>
                   <div class="canonical-browser-actions">
-                    <button type="button" class="secondary" data-canonical-browser-home data-testid="canonical-browser-home">Browse top objects</button>
                     <button type="button" class="secondary" data-canonical-browser-ask data-testid="canonical-browser-ask">Open Ask</button>
                   </div>
                 </div>
@@ -400,7 +399,7 @@
                   </div>
                 </form>
 
-                <p class="canonical-browser-summary" data-canonical-browser-summary>Search or browse the canonical library.</p>
+                <p class="canonical-browser-summary" data-canonical-browser-summary>Search the canonical library to see results.</p>
 
                 <div class="canonical-browser-layout">
                   <section class="canonical-browser-results-card" aria-labelledby="canonical-browser-results-heading">
@@ -412,7 +411,7 @@
                       <span id="canonical-browser-count" class="count" data-canonical-browser-count>0</span>
                     </div>
                     <div class="canonical-browser-results" data-canonical-browser-results>
-                      <p class="empty">Browse the curated canonical library or search for a topic.</p>
+                      <p class="empty">Search for a person, place, theme, Scripture, or object ID.</p>
                     </div>
                   </section>
 

@@ -507,12 +507,6 @@ function initializeCanonicalBrowser() {
     }
   }
 
-  const homeButton = document.querySelector("[data-canonical-browser-home]");
-  if (homeButton && !homeButton.dataset.bound) {
-    homeButton.dataset.bound = "true";
-    homeButton.addEventListener("click", handleCanonicalBrowserHome);
-  }
-
   const askButton = document.querySelector("[data-canonical-browser-ask]");
   if (askButton && !askButton.dataset.bound) {
     askButton.dataset.bound = "true";
@@ -533,23 +527,16 @@ function initializeCanonicalBrowser() {
     backToResultsButton.addEventListener("click", handleCanonicalBrowserBack);
   }
 
-  document.addEventListener("bhf:workspace-tab-changed", handleCanonicalWorkspaceTabChanged);
-  loadCanonicalBrowser({ selectFirst: true }).catch(() => {
-    // The browser should fail quietly if the local CKL API is unavailable.
-  });
-}
-
-function handleCanonicalWorkspaceTabChanged(event) {
-  if (event.detail?.tabId !== "context") {
-    return;
-  }
-  if (currentCanonicalBrowser.results.length === 0) {
-    loadCanonicalBrowser({ selectFirst: true }).catch(() => {});
-  }
 }
 
 function handleCanonicalBrowserSubmit(event) {
   event.preventDefault();
+  const form = document.querySelector("[data-canonical-browser-form]");
+  const query = String((form ? new FormData(form) : new FormData()).get("q") || "").trim();
+  if (!query) {
+    clearCanonicalBrowserResults("Enter a search term to see canonical objects.");
+    return;
+  }
   loadCanonicalBrowser({ selectFirst: true }).catch((error) => {
     showCanonicalBrowserError(error.message || "Could not load canonical objects.");
   });
@@ -561,20 +548,7 @@ function handleCanonicalBrowserClear(event) {
   if (form) {
     form.reset();
   }
-  loadCanonicalBrowser({ selectFirst: true }).catch((error) => {
-    showCanonicalBrowserError(error.message || "Could not load canonical objects.");
-  });
-}
-
-function handleCanonicalBrowserHome(event) {
-  event.preventDefault();
-  const form = document.querySelector("[data-canonical-browser-form]");
-  if (form) {
-    form.reset();
-  }
-  loadCanonicalBrowser({ selectFirst: true }).catch((error) => {
-    showCanonicalBrowserError(error.message || "Could not load canonical objects.");
-  });
+  clearCanonicalBrowserResults();
 }
 
 function handleCanonicalBrowserBack(event) {
@@ -613,6 +587,11 @@ async function loadCanonicalBrowser(options = {}) {
       ? formData.has("include_placeholders")
       : true;
 
+  if (!query) {
+    clearCanonicalBrowserResults("Enter a search term to see canonical objects.");
+    return;
+  }
+
   if (query) {
     params.set("q", query);
   }
@@ -632,7 +611,7 @@ async function loadCanonicalBrowser(options = {}) {
   const url = `/api/canonical/search?${params.toString()}`;
   resultsList.innerHTML = `<p class="empty">Loading canonical context...</p>`;
   if (summary) {
-    summary.textContent = query ? `Searching for "${query}"...` : "Browsing curated canonical objects...";
+    summary.textContent = `Searching for "${query}"...`;
   }
 
   const data = await requestJson(url, {}, "Could not load canonical objects.");
@@ -647,16 +626,10 @@ async function loadCanonicalBrowser(options = {}) {
 
   if (summary) {
     if (currentCanonicalBrowser.results.length === 0) {
-      summary.textContent = query
-        ? `No canonical objects matched "${query}".`
-        : hasActiveFilters
-          ? "No objects match the active filters."
-          : "No canonical objects are currently available.";
+      summary.textContent = `No canonical objects matched "${query}".`;
     } else {
       const retrievalMethod = String(data.metadata?.retrieval_method || data.filters?.type || "browse");
-      summary.textContent = query
-        ? `Found ${currentCanonicalBrowser.results.length} canonical object${currentCanonicalBrowser.results.length === 1 ? "" : "s"} using ${retrievalMethod}.`
-        : `Showing ${currentCanonicalBrowser.results.length} canonical object${currentCanonicalBrowser.results.length === 1 ? "" : "s"} from the browse catalog.`;
+      summary.textContent = `Found ${currentCanonicalBrowser.results.length} canonical object${currentCanonicalBrowser.results.length === 1 ? "" : "s"} using ${retrievalMethod}.`;
     }
   }
 
@@ -673,6 +646,29 @@ async function loadCanonicalBrowser(options = {}) {
   if (backToResultsButton) {
     backToResultsButton.hidden = currentCanonicalBrowser.results.length === 0;
   }
+}
+
+function clearCanonicalBrowserResults(message = "Search the canonical library to see results.") {
+  const resultsList = document.querySelector("[data-canonical-browser-results]");
+  const summary = document.querySelector("[data-canonical-browser-summary]");
+  const count = document.querySelector("[data-canonical-browser-count]");
+  const backToResultsButton = document.querySelector("[data-canonical-browser-back]");
+  currentCanonicalBrowser.query = "";
+  currentCanonicalBrowser.results = [];
+  currentCanonicalBrowser.selectedObjectId = null;
+  if (summary) {
+    summary.textContent = message;
+  }
+  if (count) {
+    count.textContent = "0";
+  }
+  if (backToResultsButton) {
+    backToResultsButton.hidden = true;
+  }
+  if (resultsList) {
+    resultsList.innerHTML = `<p class="empty">${escapeHtml(message)}</p>`;
+  }
+  renderCanonicalBrowserDetail(null);
 }
 
 function renderCanonicalBrowserResults(results, options = {}) {

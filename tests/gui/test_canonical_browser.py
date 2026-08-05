@@ -29,6 +29,19 @@ def _open_canonical_browser(driver, wait, base_url, query: str = "Shechem") -> W
     return page
 
 
+def test_canonical_browser_starts_empty_until_searched(driver, wait, base_url):
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = WorkspacePage(driver, wait, base_url)
+    page.open_app_section("ask")
+    wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "ask")
+    page.open_tab("context")
+    page.assert_tab_visible("context")
+
+    assert driver.find_element(By.CSS_SELECTOR, '[data-canonical-browser-count]').text.strip() == "0"
+    assert "Search the canonical library to see results." in driver.find_element(By.CSS_SELECTOR, '[data-canonical-browser-summary]').text
+    assert not driver.find_elements(By.CSS_SELECTOR, '[data-canonical-browser-results] [data-canonical-object-id]')
+
+
 def test_canonical_browser_search_detail_and_source_view(driver, wait, base_url):
     page = _open_canonical_browser(driver, wait, base_url)
 
