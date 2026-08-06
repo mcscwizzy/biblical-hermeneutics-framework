@@ -7,6 +7,10 @@ from .base import BasePage
 
 
 class BibleReaderPage(BasePage):
+    def current_translation_abbreviation(self):
+        select = self.wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '[data-testid="translation-select"]')))
+        return (select.get_attribute("value") or "").upper()
+
     def select_book(self, book: str):
         self.select_value('[data-testid="book-select"]', book)
         return self

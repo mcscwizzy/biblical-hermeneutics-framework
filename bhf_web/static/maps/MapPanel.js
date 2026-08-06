@@ -48,6 +48,7 @@ let timelinePeriodOptions = [
 ];
 let mapModalOpen = false;
 let lastModalTrigger = null;
+let mapPanelEventsWired = false;
 
 function requestJson(url, options = {}, fallbackMessage = "Request failed.") {
   if (typeof BHF_HTTP.requestJson === "function") {
@@ -581,10 +582,6 @@ function ensureMapController(markers, routes, routeVisibility) {
 }
 
 async function openMapPanel(context = {}) {
-  const catalog = await loadMapCatalog({ period: "all" });
-  if (catalog?.timeline?.period_options) {
-    applyTimelineOptions(catalog.timeline.period_options);
-  }
   const browseMode = context.mode === "browse" || (!context.book && !context.chapter);
   setMapMode(browseMode ? "browse" : "passage");
   if (browseMode) {
@@ -616,6 +613,13 @@ async function openMapPanel(context = {}) {
   );
 
   try {
+    // Put the panel into its usable state before waiting on catalog metadata.
+    // This matters on slow/offline connections: Explore should still expose
+    // its search and navigation controls while the catalog request resolves.
+    const catalog = await loadMapCatalog({ period: "all" });
+    if (catalog?.timeline?.period_options) {
+      applyTimelineOptions(catalog.timeline.period_options);
+    }
     const routeVisibility = true;
     const {
       placeResult,
@@ -969,127 +973,115 @@ function syncHistoricalPeriod() {
   }
 }
 
-function wirePanelButtons() {
-  const modalCloseButton = document.querySelector("[data-map-modal-close]");
-  const mapSearchQuery = document.querySelector("[data-map-search-query]");
-  const mapSearchKind = document.querySelector("[data-map-search-kind]");
-  const mapSearchPeriod = document.querySelector("[data-map-search-period]");
-  const mapSearchSubmit = document.querySelector("[data-map-search-submit]");
-  const mapSearchClear = document.querySelector("[data-map-search-clear]");
-  const mapSearchResultsList = document.querySelector("#map-search-results-list");
-  const historicalPeriodSelect = document.querySelector("[data-historical-period]");
-  const { modal } = getPanelElements();
-  const details = document.querySelector("#map-details");
-  const {
-    navigatorOpen,
-    navigatorClose,
-    detailsOpen,
-    detailsClose,
-  } = getPanelElements();
-
-  if (modalCloseButton) {
-    modalCloseButton.addEventListener("click", closeMapModal);
+async function handleMapPanelClick(event) {
+  const target = event.target;
+  if (!(target instanceof Element)) {
+    return;
   }
-  if (mapSearchQuery) {
-    mapSearchQuery.addEventListener("keydown", async (event) => {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        await runBrowseSearch();
-      }
-    });
+  const button = target.closest("button, [role='button']");
+  if (button?.matches("[data-map-modal-close]")) {
+    closeMapModal();
+    return;
   }
-  if (mapSearchKind) {
-    mapSearchKind.addEventListener("change", async () => {
-      await runBrowseSearch();
-    });
+  if (button?.matches("[data-map-search-submit]")) {
+    await runBrowseSearch();
+    return;
   }
-  if (mapSearchPeriod) {
-    mapSearchPeriod.addEventListener("change", async (event) => {
-      await setHistoricalPeriod(event.target.value);
-      if (mapMode === "browse") {
-        await runBrowseSearch();
-      }
-    });
+  if (button?.matches("[data-map-search-clear]")) {
+    clearBrowseSearch();
+    return;
   }
-  if (mapSearchSubmit) {
-    mapSearchSubmit.addEventListener("click", async () => {
-      await runBrowseSearch();
-    });
+  if (button?.matches("[data-map-navigator-open]")) {
+    const { navigator: navigatorPanel } = getPanelElements();
+    setMobileNavigatorOpen(!navigatorPanel?.classList.contains("is-mobile-open"));
+    return;
   }
-  if (mapSearchClear) {
-    mapSearchClear.addEventListener("click", () => {
-      clearBrowseSearch();
-    });
+  if (button?.matches("[data-map-navigator-close]")) {
+    setMobileNavigatorOpen(false);
+    return;
   }
-  if (modal) {
-    modal.addEventListener("close", finalizeMapModalClose);
-    modal.addEventListener("click", (event) => {
-      if (event.target === modal) {
-        closeMapModal();
-      }
-    });
+  if (button?.matches("[data-map-details-open]")) {
+    const { detailsColumn } = getPanelElements();
+    setMobileDetailsOpen(!detailsColumn?.classList.contains("is-mobile-open"));
+    return;
   }
-  if (historicalPeriodSelect) {
-    historicalPeriodSelect.addEventListener("change", async (event) => {
-      await setHistoricalPeriod(event.target.value);
-    });
+  if (button?.matches("[data-map-details-close]")) {
+    setMobileDetailsOpen(false);
+    return;
   }
-  if (navigatorOpen) {
-    navigatorOpen.addEventListener("click", () => {
-      const { navigator: navigatorPanel } = getPanelElements();
-      setMobileNavigatorOpen(!navigatorPanel?.classList.contains("is-mobile-open"));
-    });
-  }
-  if (navigatorClose) {
-    navigatorClose.addEventListener("click", () => {
-      setMobileNavigatorOpen(false);
-    });
-  }
-  if (detailsOpen) {
-    detailsOpen.addEventListener("click", () => {
-      const { detailsColumn } = getPanelElements();
-      setMobileDetailsOpen(!detailsColumn?.classList.contains("is-mobile-open"));
-    });
-  }
-  if (detailsClose) {
-    detailsClose.addEventListener("click", () => {
-      setMobileDetailsOpen(false);
-    });
-  }
-  if (details) {
-    details.addEventListener("click", async (event) => {
-      const passageShortcut = event.target.closest("[data-passage-shortcut]");
-      const openPassageButton = event.target.closest("[data-map-open-passage]");
-      if (openPassageButton) {
-        await openPassageReference(openPassageButton.getAttribute("data-map-open-passage"));
-        return;
-      }
-      if (passageShortcut) {
-        const reference = {
-          book: passageShortcut.getAttribute("data-book") || "",
-          chapter: passageShortcut.getAttribute("data-chapter") || "",
-          verse_start: passageShortcut.getAttribute("data-verse-start") || "",
-          verse_end: passageShortcut.getAttribute("data-verse-end") || "",
-          reference: passageShortcut.getAttribute("data-reference") || "",
-        };
-        await submitRelatedPassageShortcut(reference);
-        return;
-      }
-    });
-  }
-  if (mapSearchResultsList) {
-    mapSearchResultsList.addEventListener("click", (event) => {
-      const button = event.target.closest("[data-map-search-result-button]");
-      if (!button) {
-        return;
-      }
-      const index = Number(button.getAttribute("data-search-index"));
-      if (!Number.isInteger(index) || index < 0 || index >= browseSearchResults.length) {
-        return;
-      }
+  if (button?.matches("[data-map-search-result-button]")) {
+    const index = Number(button.getAttribute("data-search-index"));
+    if (Number.isInteger(index) && index >= 0 && index < browseSearchResults.length) {
       setSelectedSearchResult(browseSearchResults[index]);
+    }
+    return;
+  }
+  const passageShortcut = target.closest("[data-passage-shortcut]");
+  const openPassageButton = target.closest("[data-map-open-passage]");
+  if (openPassageButton) {
+    await openPassageReference(openPassageButton.getAttribute("data-map-open-passage"));
+    return;
+  }
+  if (passageShortcut) {
+    await submitRelatedPassageShortcut({
+      book: passageShortcut.getAttribute("data-book") || "",
+      chapter: passageShortcut.getAttribute("data-chapter") || "",
+      verse_start: passageShortcut.getAttribute("data-verse-start") || "",
+      verse_end: passageShortcut.getAttribute("data-verse-end") || "",
+      reference: passageShortcut.getAttribute("data-reference") || "",
     });
   }
+}
+
+function wirePanelButtons() {
+  if (mapPanelEventsWired) {
+    return;
+  }
+  mapPanelEventsWired = true;
+  document.addEventListener("click", (event) => {
+    handleMapPanelClick(event).catch((error) => {
+      setStatus(error.message || "Could not complete the map action.", "error");
+    });
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" || !(event.target instanceof Element)) {
+      return;
+    }
+    if (event.target.matches("[data-map-search-query]")) {
+      event.preventDefault();
+      runBrowseSearch().catch((error) => {
+        setStatus(error.message || "Could not search the map catalog.", "error");
+      });
+    }
+  });
+  document.addEventListener("change", (event) => {
+    if (!(event.target instanceof Element)) {
+      return;
+    }
+    if (event.target.matches("[data-map-search-kind]")) {
+      runBrowseSearch().catch((error) => {
+        setStatus(error.message || "Could not search the map catalog.", "error");
+      });
+      return;
+    }
+    if (event.target.matches("[data-map-search-period], [data-historical-period]")) {
+      setHistoricalPeriod(event.target.value).then(() => {
+        if (event.target.matches("[data-map-search-period]") && mapMode === "browse") {
+          return runBrowseSearch();
+        }
+        return undefined;
+      }).catch((error) => {
+        setStatus(error.message || "Could not update the map period.", "error");
+      });
+    }
+  });
+  const modal = getPanelElements().modal;
+  modal?.addEventListener("close", finalizeMapModalClose);
+  modal?.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeMapModal();
+    }
+  });
 }
 
 function initializeMapPanel() {

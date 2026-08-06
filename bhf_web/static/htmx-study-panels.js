@@ -125,8 +125,11 @@ function createHighlight(context) {
       selected_text: context.selectedText,
       color: "yellow"
     })
-  }, "Could not save highlight.")
+    }, "Could not save highlight.")
     .then(() => {
+      suppressHighlightedVerseTapUntil = 0;
+      clearDocumentSelection();
+      clearReaderSelection();
       return loadHighlights(currentChapter.book, currentChapter.chapter);
     });
 }
@@ -1244,12 +1247,22 @@ function appendCanonicalObjectToCurrentNote(objectId) {
   if (!normalizedId) {
     return;
   }
+  if (!currentSelection) {
+    const selectedVerse = document.querySelector("#chapter-reader [data-verse].selected");
+    if (selectedVerse) {
+      applySelectionContext(contextFromVerse(selectedVerse));
+    }
+  }
   const noteEditor = document.querySelector("#note-editor");
   if (!noteEditor || noteEditor.hidden) {
-    const addNoteButton = document.querySelector("[data-add-note]");
-    if (addNoteButton) {
-      addNoteButton.click();
+    if (!currentSelection) {
+      const verse = document.querySelector("#chapter-reader [data-verse].selected")
+        || document.querySelector("#chapter-reader [data-verse]");
+      if (verse) {
+        applySelectionContext(contextFromVerse(verse));
+      }
     }
+    openNoteEditor();
   }
   const input = document.querySelector("#note-editor [name='canonical_object_ids']");
   if (!input) {

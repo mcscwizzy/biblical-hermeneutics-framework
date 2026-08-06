@@ -778,7 +778,10 @@ function appSectionFromWorkspaceTab(tabId) {
 
 function appSectionToWorkspaceTab(sectionId) {
   const normalized = normalizeAppSection(sectionId);
-  if (normalized === "ask" || normalized === "bible") {
+  if (normalized === "bible") {
+    return "ask";
+  }
+  if (normalized === "ask") {
     const currentWorkspaceTab = getCurrentWorkspaceTab();
     if (currentWorkspaceTab === "ask" || currentWorkspaceTab === "lexicon" || currentWorkspaceTab === "context") {
       return currentWorkspaceTab;
@@ -1033,6 +1036,9 @@ function toggleReaderMode() {
 }
 
 function readThemePreference() {
+  if (window.BHFTestMode) {
+    return "light";
+  }
   try {
     const saved = window.localStorage.getItem(THEME_STORAGE_KEY);
     if (saved === "light" || saved === "dark") {
@@ -1188,7 +1194,14 @@ function syncWorkspaceTabsForSection(sectionId) {
   if (!workspace) {
     return;
   }
-  const visibleTabs = new Set(workspaceTabsForSection(sectionId));
+  const normalizedSection = normalizeAppSection(sectionId);
+  const visibleTabs = new Set(
+    normalizedSection === "bible"
+      ? Array.from(workspace.querySelectorAll("[data-workspace-tab]"))
+          .map((tab) => tab.dataset.workspaceTab)
+          .filter(Boolean)
+      : workspaceTabsForSection(normalizedSection),
+  );
   let visibleCount = 0;
   workspace.querySelectorAll("[data-workspace-tab]").forEach((tab) => {
     const isVisible = visibleTabs.has(tab.dataset.workspaceTab);
@@ -1200,7 +1213,9 @@ function syncWorkspaceTabsForSection(sectionId) {
     }
   });
   const currentWorkspaceTab = getCurrentWorkspaceTab();
-  if (!currentWorkspaceTab || !visibleTabs.has(currentWorkspaceTab)) {
+  if (normalizedSection === "bible") {
+    setActiveWorkspaceTab("ask");
+  } else if (!currentWorkspaceTab || !visibleTabs.has(currentWorkspaceTab)) {
     const fallbackTab = appSectionToWorkspaceTab(sectionId);
     if (fallbackTab) {
       setActiveWorkspaceTab(fallbackTab);
@@ -1339,6 +1354,9 @@ function handleWorkspaceTabKeydown(event, tabs) {
 }
 
 function activateWorkspaceTab(tabId) {
+  if (getCurrentWorkspaceTab() === tabId) {
+    return;
+  }
   if (!setActiveWorkspaceTab(tabId)) {
     return;
   }
@@ -2697,10 +2715,6 @@ async function handleHighlightedVerseTap(event) {
   if (!verse || !reader || !reader.contains(verse) || !currentChapter) {
     return;
   }
-  const selection = window.getSelection();
-  if (selection && !selection.isCollapsed) {
-    return;
-  }
   const verseNumber = Number(verse.dataset.verse || "0");
   if (!verseNumber || highlightsForVerse(verseNumber).length === 0) {
     return;
@@ -2750,7 +2764,15 @@ function handleReaderContextMenu(event) {
     return;
   }
 
-  const context = contextForVerseAction(verse);
+  let context = contextForVerseAction(verse);
+  const verseNumber = Number(verse.dataset.verse || "0");
+  if (
+    verseNumber &&
+    highlightsForVerse(verseNumber).length > 0 &&
+    highlightsForContext(context).length === 0
+  ) {
+    context = contextFromVerse(verse);
+  }
   if (!context) {
     return;
   }
@@ -3031,8 +3053,15 @@ function showContextMenu(x, y, context) {
   setContextLabel("note", isSelection ? "Add Note" : "Add Note");
   setContextLabel("highlight", isSelection ? "Highlight Selection" : "Highlight Verse");
   setContextLabel("remove_highlight", "Remove Highlight");
-  setContextVisibility("remove_highlight", highlightsForContext(context).length > 0);
+  const hasHighlight = highlightsForContext(context).length > 0;
+  setContextVisibility("remove_highlight", hasHighlight);
   resetContextSubmenus(menu);
+  if (hasHighlight) {
+    const actionsTrigger = menu.querySelector('[data-context-submenu="actions"]');
+    if (actionsTrigger) {
+      openContextSubmenu(actionsTrigger);
+    }
+  }
   contextMenuPosition = {x, y};
   menu.hidden = false;
   positionContextMenu(menu, x, y);

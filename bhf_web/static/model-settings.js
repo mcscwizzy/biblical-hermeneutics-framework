@@ -676,7 +676,10 @@
     } catch (error) {
       showSetup(error.message);
     }
-    if (!settings.onboardingComplete) showSetup();
+    // GUI tests exercise the non-AI reader, maps, and study tools without a
+    // provider. Do not let the first-run modal intercept those interactions in
+    // test mode; production users still receive the onboarding prompt.
+    if (!settings.onboardingComplete && !window.BHFTestMode) showSetup();
   }
 
   readyPromise = initialize().catch((error) => {
@@ -687,6 +690,9 @@
   window.BHFModelSettings = {
     getProviderHeaders: async () => {
       await readyPromise;
+      if (window.BHFTestMode) {
+        return {};
+      }
       if (!settings?.onboardingComplete || !settings.activeProvider) {
         const error = new Error("Set up an AI provider before asking BHF.");
         error.code = "setup_required";

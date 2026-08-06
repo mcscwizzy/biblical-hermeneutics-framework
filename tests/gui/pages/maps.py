@@ -17,7 +17,16 @@ class MapsPage(BasePage):
         browse_buttons = self.driver.find_elements(By.CSS_SELECTOR, '[data-testid="map-browse-button"]')
         if browse_buttons and browse_buttons[0].is_displayed():
             browse_buttons[0].click()
+        search_inputs = self.driver.find_elements(By.CSS_SELECTOR, '[data-testid="map-search-input"]')
+        if not search_inputs or not search_inputs[0].is_displayed():
+            navigator_buttons = self.driver.find_elements(By.CSS_SELECTOR, '[data-map-navigator-open]')
+            if navigator_buttons and navigator_buttons[0].is_displayed():
+                navigator_buttons[0].click()
         self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="map-search-input"]')))
+        navigator_buttons = self.driver.find_elements(By.CSS_SELECTOR, '[data-map-navigator-open]')
+        if navigator_buttons and navigator_buttons[0].get_attribute("aria-expanded") == "true":
+            self.click('[data-map-navigator-close]')
+            self.wait.until(lambda driver: navigator_buttons[0].get_attribute("aria-expanded") == "false")
         return self
 
     def search_map_catalog(self, text: str):

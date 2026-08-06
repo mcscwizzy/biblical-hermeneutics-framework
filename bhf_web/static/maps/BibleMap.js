@@ -659,6 +659,4 @@ function focusSelection(kind, item) {
 function setJourney(journey) {}
 // setJourney(journey)
 function journeyStopIcon() {}
-function referencePointIcon() {}
 function renderJourneyStopPopup() {}
-function renderReferenceFeaturePopup() {}

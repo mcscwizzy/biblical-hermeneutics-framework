@@ -1122,13 +1122,6 @@
     if (!offlineDb || typeof offlineDb.queuedMutations !== "function" || typeof offlineDb.removeMutation !== "function") {
       return;
     }
-    if (typeof offlineDb.purgeDeviceOnlyMutations === "function") {
-      try {
-        await offlineDb.purgeDeviceOnlyMutations();
-      } catch (_error) {
-        // Purging obsolete personal sync entries should not block map sync.
-      }
-    }
     if (navigator.onLine === false) {
       await refreshOfflineSyncControls();
       return;
@@ -1207,13 +1200,6 @@
     const lists = Array.from(document.querySelectorAll("[data-offline-sync-list]"));
     if ((!buttons.length && !lists.length) || !offlineDb || typeof offlineDb.mutationQueueSummary !== "function") {
       return;
-    }
-    if (typeof offlineDb.purgeDeviceOnlyMutations === "function") {
-      try {
-        await offlineDb.purgeDeviceOnlyMutations();
-      } catch (_error) {
-        // Obsolete personal queue entries should not block map sync status.
-      }
     }
     let summary = null;
     try {
