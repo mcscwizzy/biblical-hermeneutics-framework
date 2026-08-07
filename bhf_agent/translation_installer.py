@@ -38,7 +38,6 @@ from .translation_registry import (
 ALLOWLISTED_DOWNLOAD_HOSTS = {"raw.githubusercontent.com"}
 MAX_DOWNLOAD_BYTES = 50 * 1024 * 1024
 DEFAULT_TIMEOUT_SECONDS = 30
-SERVER_TRANSLATION_IDS = frozenset({"asv", "kjv"})
 
 
 class TranslationInstallError(ValueError):
@@ -47,8 +46,8 @@ class TranslationInstallError(ValueError):
 
 def get_translation_installation(translation_id: str) -> dict[str, Any]:
     normalized = normalize_translation_id(translation_id)
-    if normalized == "asv":
-        data = load_asv_bible()
+    if normalized in {"asv", "kjv"}:
+        data = load_asv_bible() if normalized == "asv" else load_legacy_kjv_bible()
         stats = count_bible_statistics(data)
         translation = dict(data.get("translation", {}))
         translation.setdefault("id", normalized.upper())
@@ -64,7 +63,7 @@ def get_translation_installation(translation_id: str) -> dict[str, Any]:
             "offline_supported": True,
             "metadata_path": None,
             "storage_path": str(
-                DATA_PATH
+                DATA_PATH if normalized == "asv" else LEGACY_KJV_DATA_PATH
             ),
             "translation": translation,
             **stats,
@@ -129,10 +128,7 @@ def list_installed_translations() -> list[dict[str, Any]]:
         # that row as an installed translation.
         if not installation.get("installed"):
             continue
-        # Copyrighted/manual imports remain local-only and are intentionally
-        # excluded from the server translation catalog. KJV is the sole
-        # downloadable server-managed exception alongside bundled ASV.
-        if not installation.get("bundled") and str(row["id"]).lower() not in SERVER_TRANSLATION_IDS:
+        if not installation.get("bundled"):
             continue
         installation["registry"] = row
         entries.append(installation)

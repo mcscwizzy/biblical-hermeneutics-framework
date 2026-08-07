@@ -1864,25 +1864,38 @@ class WebAppTests(unittest.TestCase):
         )
         self.assertEqual(
             [entry["id"] for entry in data["sections"]["installed"]],
-            ["asv"],
+            ["asv", "kjv"],
         )
         self.assertEqual(
             [entry["id"] for entry in data["sections"]["available_to_download"]],
-            ["kjv"],
-        )
-        self.assertEqual(
-            data["sections"]["available_to_download"][0]["status_label"],
-            "Download from GitHub",
-        )
-        self.assertIn(
-            "third-party GitHub repository",
-            data["sections"]["available_to_download"][0]["third_party_notice"],
+            [],
         )
         self.assertEqual(data["sections"]["additional_english_translations"][0]["id"], "niv")
         self.assertIn(
             "This translation is copyrighted",
             data["sections"]["additional_english_translations"][0]["license_explanation"],
         )
+
+    def test_translations_route_includes_bundled_kjv_by_default(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            with patch.object(translation_storage, "TRANSLATIONS_PATH", root / "translations"), patch.object(
+                translation_settings,
+                "SETTINGS_PATH",
+                root / "reader-settings.json",
+            ):
+                response = asgi_request("GET", "/api/translations")
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(data["default_translation"], "asv")
+        self.assertEqual(
+            [entry["id"] for entry in data["translations"]],
+            ["asv", "kjv"],
+        )
+        kjv = next(entry for entry in data["translations"] if entry["id"] == "kjv")
+        self.assertTrue(kjv["installed"])
+        self.assertFalse(kjv["can_remove"])
 
     def test_kjv_download_route_returns_github_metadata(self):
         with patch(
