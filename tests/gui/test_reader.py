@@ -54,7 +54,7 @@ def test_reader_tabs_switch_and_close_independent_passages(driver, wait, base_ur
     assert "Genesis 1" in page.active_pane_heading().text
 
 
-def test_reader_tabs_render_side_by_side_and_sync_scroll(driver, wait, base_url):
+def test_reader_tabs_render_side_by_side_with_independent_scroll(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
     page = BibleReaderPage(driver, wait, base_url)
     page.select_book("Psalms")
@@ -91,9 +91,11 @@ def test_reader_tabs_render_side_by_side_and_sync_scroll(driver, wait, base_url)
         lambda _driver: _driver.execute_script(
             """
             const panes = document.querySelectorAll('#chapter-reader [data-reader-pane]');
+            const source = panes[0];
             const target = panes[1];
-            const max = target.scrollHeight - target.clientHeight;
-            return max > 0 && Math.abs(target.scrollTop / max - 0.42) < 0.05;
+            const sourceMax = source.scrollHeight - source.clientHeight;
+            const targetMax = target.scrollHeight - target.clientHeight;
+            return sourceMax > 0 && targetMax > 0 && source.scrollTop / sourceMax > 0.35 && target.scrollTop < targetMax * 0.05;
             """
         )
     )

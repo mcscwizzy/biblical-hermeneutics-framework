@@ -93,8 +93,6 @@ let readerTabs = [];
 let activeReaderTabId = null;
 let readerTabSequence = 0;
 let readerLoadToken = 0;
-let readerPaneScrollFrame = null;
-let readerPaneScrollSource = null;
 let noteContext = null;
 let currentNotes = [];
 let currentHighlights = [];
@@ -275,44 +273,6 @@ function activateReaderPaneForElement(element) {
     ]);
   }
   return tab;
-}
-
-function syncReaderPaneScroll(source) {
-  const reader = document.querySelector("#chapter-reader");
-  if (!reader || reader.querySelectorAll("[data-reader-pane]").length < 2) {
-    return;
-  }
-  readerPaneScrollSource = source;
-  if (readerPaneScrollFrame) {
-    return;
-  }
-  readerPaneScrollFrame = window.requestAnimationFrame(() => {
-    readerPaneScrollFrame = null;
-    const sourcePane = readerPaneScrollSource;
-    readerPaneScrollSource = null;
-    if (!sourcePane) {
-      return;
-    }
-    const sourceMax = Math.max(sourcePane.scrollHeight - sourcePane.clientHeight, 0);
-    const progress = sourceMax > 0 ? sourcePane.scrollTop / sourceMax : 0;
-    reader.querySelectorAll("[data-reader-pane]").forEach((pane) => {
-      if (pane === sourcePane) {
-        return;
-      }
-      const targetMax = Math.max(pane.scrollHeight - pane.clientHeight, 0);
-      pane.scrollTop = progress * targetMax;
-    });
-  });
-}
-
-function wireReaderPaneScrollSync() {
-  const reader = document.querySelector("#chapter-reader");
-  if (!reader) {
-    return;
-  }
-  reader.querySelectorAll("[data-reader-pane]").forEach((pane) => {
-    pane.addEventListener("scroll", () => syncReaderPaneScroll(pane), {passive: true});
-  });
 }
 
 function normalizeReaderTab(value, index = 0) {
@@ -2275,7 +2235,6 @@ function renderChapter(data) {
   reader.innerHTML = "";
   reader.classList.toggle("has-multiple-reader-panes", readerTabs.length > 1);
   reader.appendChild(grid);
-  wireReaderPaneScrollSync();
   scheduleAppDockVisibilityUpdate();
 }
 
