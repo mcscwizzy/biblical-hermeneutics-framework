@@ -29,7 +29,7 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260802c">
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260807a">
   <!-- Legacy cache-key references retained for clients that inspect the shell during upgrades. -->
   <!-- href="/static/style.css?v=20260724c" src="/static/htmx-lite.js?v=20260729b" -->
   {# static_asset('/style.css') }}?v=20260724c #}
@@ -40,7 +40,7 @@
   <script src="{{ static_asset('/htmx-status.js') }}" defer></script>
   <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260806b" defer></script>
   <script src="{{ static_asset('/htmx-search.js') }}" defer></script>
-  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260806b" defer></script>
+  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260807a" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260806a" defer></script>
   {% if not test_mode %}
     <link rel="stylesheet" href="{{ static_asset('/vendor/leaflet/leaflet.css') }}">

@@ -173,15 +173,54 @@ body.reader-mode .reader-layout {
   grid-template-columns: minmax(0, 1fr);
 }
 
+body.reader-mode {
+  background: var(--surface);
+}
+
 body.reader-mode .reader-column {
-  width: min(100%, 82ch);
+  width: 100%;
   margin: 0 auto;
 }
 
+body.reader-mode .page.reader-page {
+  width: min(100%, 78ch);
+  padding: clamp(32px, 8vh, 96px) 24px max(48px, env(safe-area-inset-bottom));
+}
+
+body.reader-mode .reader-layout {
+  display: block;
+}
+
+body.reader-mode .header,
+body.reader-mode .notice,
+body.reader-mode .reader-toolbar,
 body.reader-mode .study-panel,
-body.reader-mode .reader-search,
-body.reader-mode .reader-search-results {
-  display: none;
+body.reader-mode .reader-search-results,
+body.reader-mode .app-dock,
+body.reader-mode .reader-chapter-header,
+body.reader-mode .reader-chapter-footer,
+body.reader-mode .reader-translation-badge,
+body.reader-mode .verse-number,
+body.reader-mode .verse-actions-button,
+body.reader-mode .verse-state-indicators,
+body.reader-mode .reader-controls-sheet,
+body.reader-mode .translation-selector-overlay,
+body.reader-mode .ai-setup-dialog,
+body.reader-mode #map-modal,
+body.reader-mode #reader-context-menu {
+  display: none !important;
+}
+
+body.reader-mode .chapter-reader {
+  width: 100%;
+  padding: 0;
+}
+
+body.reader-mode .chapter-text {
+  width: min(100%, 68ch);
+  margin: 0 auto;
+  font-size: clamp(1.12rem, 1rem + 0.25vw, 1.3rem);
+  line-height: 1.95;
 }
 
 body.workspace-expanded .reader-layout {

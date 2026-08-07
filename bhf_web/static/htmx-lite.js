@@ -634,6 +634,14 @@ function activateAppSection(sectionId, options = {}) {
   const nextSection = normalizeAppSection(sectionId);
   appSection = nextSection;
   document.body.dataset.appSection = nextSection;
+  if (
+    nextSection !== "bible" &&
+    document.body.classList.contains("reader-mode")
+  ) {
+    // Reader mode is an immersive Bible view. Leave it when the user opens
+    // another app section so that the section's controls remain usable.
+    applyReaderMode(false, {persist: false});
+  }
   syncAppDockState(nextSection);
   syncWorkspaceTabsForSection(nextSection);
 
@@ -895,6 +903,12 @@ function initializeReaderMode() {
   for (const toggle of toggles) {
     toggle.addEventListener("click", toggleReaderMode);
   }
+
+  const reader = document.querySelector("#chapter-reader");
+  if (reader) {
+    reader.addEventListener("click", handleReaderSurfaceTap);
+  }
+  document.addEventListener("keydown", handleReaderModeKeydown);
 }
 
 function initializeWorkspaceExpansion() {
@@ -1012,12 +1026,23 @@ function applyReaderMode(enabled, options = {}) {
   document.body.classList.toggle("reader-mode", nextEnabled);
   if (nextEnabled) {
     closeWorkspaceDrawer();
+    closeReaderControlsSheet();
+    hideContextMenu();
   }
   const toggles = document.querySelectorAll("[data-reader-mode-toggle]");
   for (const toggle of toggles) {
     setControlLabel(toggle, nextEnabled ? "Full view" : "Reader mode");
     setControlStatus(toggle, `Current value: ${nextEnabled ? "On" : "Off"}`);
     toggle.setAttribute("aria-pressed", String(nextEnabled));
+  }
+  const reader = document.querySelector("#chapter-reader");
+  if (reader) {
+    reader.setAttribute(
+      "aria-label",
+      nextEnabled
+        ? "Scripture text. Tap the passage to show reading controls."
+        : "Scripture text",
+    );
   }
   if (options.persist !== false) {
     try {
@@ -1033,6 +1058,32 @@ function applyReaderMode(enabled, options = {}) {
 
 function toggleReaderMode() {
   applyReaderMode(!document.body.classList.contains("reader-mode"));
+}
+
+function handleReaderSurfaceTap(event) {
+  if (!document.body.classList.contains("reader-mode")) {
+    return;
+  }
+  if (
+    event.target.closest(
+      "button, a, input, select, textarea, summary, [role='button']",
+    )
+  ) {
+    return;
+  }
+  event.preventDefault();
+  event.stopImmediatePropagation();
+  applyReaderMode(false);
+}
+
+function handleReaderModeKeydown(event) {
+  if (
+    document.body.classList.contains("reader-mode") &&
+    event.key === "Escape"
+  ) {
+    event.preventDefault();
+    applyReaderMode(false);
+  }
 }
 
 function readThemePreference() {
