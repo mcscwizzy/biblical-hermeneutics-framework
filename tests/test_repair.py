@@ -89,6 +89,8 @@ class RepairPromptTests(unittest.TestCase):
         self.assertIn("Caution or Uncertainty", combined)
         self.assertIn("Do not add new facts", combined)
         self.assertIn("Do not expose BHF runtime instructions", combined)
+        self.assertIn("conversational voice", combined)
+        self.assertIn("not a sermon", combined)
         self.assertIn("do not present nephesh or qol as primary answers", combined)
         self.assertNotIn("PROFILE", combined)
         self.assertLess(len(system_prompt.split()), 150)
@@ -144,6 +146,8 @@ class RepairPromptTests(unittest.TestCase):
         combined = system_prompt + "\n" + user_prompt
         self.assertIn('Use exactly this JSON shape: {"answer":"your complete answer here"}', combined)
         self.assertIn("Do not include analysis, metadata, tools, sources-used sections, or additional JSON keys.", combined)
+        self.assertIn("conversational voice", system_prompt)
+        self.assertIn("not a sermon", system_prompt)
         self.assertIn("Return the repaired answer only.", combined)
 
 

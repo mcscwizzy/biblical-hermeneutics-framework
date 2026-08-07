@@ -16,6 +16,9 @@ class ComposeTests(unittest.TestCase):
     def test_core_framework_includes_intertextuality(self):
         output = self.run_compose("core.core-framework")
 
+        self.assertIn("thoughtful, informed conversation", output)
+        self.assertIn("not\na sermon", output)
+        self.assertIn("scholastic", output)
         self.assertRegex(
             output,
             r"Modules \(2, ~\d+ tokens\): core\.core-framework, core\.intertextuality",

@@ -14,6 +14,7 @@ from collections import defaultdict
 from typing import Any, Iterable, Mapping
 
 from .models import ChatRequest
+from .prompts import CONVERSATIONAL_STYLE_INSTRUCTIONS
 
 
 LOGGER = logging.getLogger(__name__)
@@ -740,7 +741,9 @@ def validate_context_presentation(
     return not errors, errors
 
 
-CONTEXT_PRESENTATION_SYSTEM_PROMPT = """You are the final editor for a reader-facing biblical-context panel.
+CONTEXT_PRESENTATION_SYSTEM_PROMPT = CONVERSATIONAL_STYLE_INSTRUCTIONS + """
+
+You are the final editor for a reader-facing biblical-context panel.
 
 Rewrite the supplied CKL evidence into clear, smooth, conversational prose for a general reader. The CKL
 entries may be fragments, labels, keyword strings, or repetitive database notes; do not

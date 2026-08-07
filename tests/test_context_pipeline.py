@@ -53,6 +53,8 @@ class ContextPipelineTests(unittest.TestCase):
     def test_context_presenter_prompt_requests_reader_ready_prose(self):
         self.assertIn("one complete, natural", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
         self.assertIn("conversational prose", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
+        self.assertIn("not a sermon", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
+        self.assertIn("Do not sound scholastic", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
         self.assertIn("rough wording directly", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
         self.assertIn("remove duplicated", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
         self.assertIn("vary the phrasing", CONTEXT_PRESENTATION_SYSTEM_PROMPT)
