@@ -32,6 +32,48 @@ def test_change_book_and_chapter(driver, wait, base_url):
     assert "Genesis 1" in driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text
 
 
+def test_reader_tabs_switch_and_close_independent_passages(driver, wait, base_url):
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = BibleReaderPage(driver, wait, base_url)
+    page.select_book("Genesis")
+    wait.until(lambda _driver: "Genesis 1" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
+
+    page.new_reading_tab()
+    wait.until(lambda _driver: len(page.reader_tabs()) == 2)
+    page.set_chapter(2)
+    wait.until(lambda _driver: "Genesis 2" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
+
+    page.select_reader_tab(0)
+    wait.until(lambda _driver: "Genesis 1" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
+    assert len(page.reader_tabs()) == 2
+
+    page.close_reader_tab(1)
+    wait.until(lambda _driver: len(page.reader_tabs()) == 1)
+    assert "Genesis 1" in driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text
+
+
+def test_reader_tabs_preserve_selection_and_restore_after_refresh(driver, wait, base_url):
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = BibleReaderPage(driver, wait, base_url)
+    page.select_verse(1)
+    page.new_reading_tab()
+    wait.until(lambda _driver: len(page.reader_tabs()) == 2)
+
+    assert "selected" not in driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="1"]').get_attribute("class")
+    page.select_reader_tab(0)
+    wait.until(lambda _driver: "selected" in _driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="1"]').get_attribute("class"))
+
+    page.select_reader_tab(1)
+    wait.until(lambda _driver: "selected" not in _driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="1"]').get_attribute("class"))
+    page.set_chapter(2)
+    wait.until(lambda _driver: "John 2" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
+
+    driver.refresh()
+    HomePage(driver, wait, base_url).wait_loaded()
+    wait.until(lambda _driver: len(driver.find_elements(By.CSS_SELECTOR, '[data-reader-tab-select]')) == 2)
+    wait.until(lambda _driver: "John 2" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
+
+
 def test_clicking_verse_number_selects_entire_verse(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
 

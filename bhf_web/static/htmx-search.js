@@ -264,6 +264,7 @@ function renderBibleSearchResultCard(result, options = {}) {
       <div class="search-result-actions">
         ${canGoToVerse ? `<button type="button" class="secondary" data-search-action="go-to-verse" data-book="${escapeHtml(result.book || "")}" data-chapter="${escapeHtml(String(result.chapter || ""))}" data-verse-start="${escapeHtml(String(result.verse_start || ""))}" data-verse-end="${escapeHtml(String(result.verse_end || ""))}">Go to verse</button>` : ""}
         <button type="button" class="secondary" data-search-action="open-chapter" data-book="${escapeHtml(result.book || "")}" data-chapter="${escapeHtml(String(result.chapter || ""))}">Open chapter</button>
+        <button type="button" class="secondary" data-search-action="open-new-tab" data-book="${escapeHtml(result.book || "")}" data-chapter="${escapeHtml(String(result.chapter || ""))}">Open in new tab</button>
       </div>
     </article>
   `;
@@ -288,5 +289,11 @@ async function handleBibleSearchResultAction(event) {
     );
     return;
   }
-  await navigateToPassage(book, chapter, null, null);
+  await navigateToPassage(
+    book,
+    chapter,
+    null,
+    null,
+    {newTab: button.getAttribute("data-search-action") === "open-new-tab"},
+  );
 }

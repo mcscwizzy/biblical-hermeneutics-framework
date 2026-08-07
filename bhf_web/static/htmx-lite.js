@@ -16,6 +16,9 @@ const READER_MODE_STORAGE_KEY = "bhf-reader-mode";
 const BHF_TRANSLATION_STORAGE_KEY = "bhf-reader-translation";
 const BHF_TRANSLATION_DOWNLOAD_METADATA_KEY =
   "bhf-translation-download-metadata";
+const READER_TABS_STORAGE_KEY = "bhf-reader-tabs";
+const READER_TABS_METADATA_ID = "reader-tabs";
+const READER_TAB_LIMIT = 8;
 const BHF_CANONICAL_BOOK_NAMES = [
   "Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Joshua",
   "Judges", "Ruth", "1 Samuel", "2 Samuel", "1 Kings", "2 Kings",
@@ -86,6 +89,10 @@ let latestJobId = null;
 let latestJobComplete = false;
 let currentChapter = null;
 let currentSelection = null;
+let readerTabs = [];
+let activeReaderTabId = null;
+let readerTabSequence = 0;
+let readerLoadToken = 0;
 let noteContext = null;
 let currentNotes = [];
 let currentHighlights = [];
@@ -105,6 +112,7 @@ let translationCatalogState = null;
 let appDockScrollFrame = null;
 let readerLocationSaveTimer = null;
 let pendingReaderLocation = null;
+let pendingReaderTabsPersistence = null;
 let wordStudyNavigationStack = [];
 const BHF_HTTP = window.BHFApi || {};
 
@@ -213,6 +221,286 @@ document.addEventListener("submit", async function (event) {
   }
 });
 
+function createReaderTabId() {
+  readerTabSequence += 1;
+  return `reader-tab-${Date.now()}-${readerTabSequence}`;
+}
+
+function activeReaderTab() {
+  return readerTabs.find((tab) => tab.id === activeReaderTabId) || null;
+}
+
+function normalizeReaderTab(value, index = 0) {
+  const tab = value?.payload || value || {};
+  const book = String(tab.book || "").trim();
+  const chapter = Number(tab.chapter || 0);
+  if (!book || !Number.isInteger(chapter) || chapter < 1) {
+    return null;
+  }
+  const selection = tab.selection && typeof tab.selection === "object"
+    ? {
+        ...tab.selection,
+        selectedVerses: Array.isArray(tab.selection.selectedVerses)
+          ? tab.selection.selectedVerses.map(Number).filter((verse) => Number.isInteger(verse) && verse > 0)
+          : [],
+      }
+    : null;
+  return {
+    id: String(tab.id || `reader-tab-${index + 1}`),
+    book,
+    chapter,
+    translation: String(tab.translation || "asv").trim().toLowerCase() || "asv",
+    verse: Number.isInteger(Number(tab.verse)) && Number(tab.verse) > 0 ? Number(tab.verse) : null,
+    selection,
+    data: null,
+    updatedAt: String(tab.updatedAt || ""),
+  };
+}
+
+function normalizeReaderTabsPayload(value) {
+  const payload = value?.payload || value || {};
+  if (!Array.isArray(payload.tabs)) {
+    return null;
+  }
+  const tabs = payload.tabs
+    .slice(0, READER_TAB_LIMIT)
+    .map((tab, index) => normalizeReaderTab(tab, index))
+    .filter(Boolean);
+  if (tabs.length === 0) {
+    return null;
+  }
+  const requestedActive = String(payload.activeTabId || "");
+  const activeTabId = tabs.some((tab) => tab.id === requestedActive)
+    ? requestedActive
+    : tabs[0].id;
+  return {
+    tabs,
+    activeTabId,
+    updatedAt: String(payload.updatedAt || value?.updatedAt || ""),
+  };
+}
+
+function readerTabsPayload() {
+  return {
+    version: 1,
+    activeTabId: activeReaderTabId,
+    updatedAt: new Date().toISOString(),
+    tabs: readerTabs.map((tab) => ({
+      id: tab.id,
+      book: tab.book,
+      chapter: Number(tab.chapter),
+      translation: tab.translation,
+      verse: tab.verse || null,
+      selection: tab.selection || null,
+      updatedAt: tab.updatedAt || "",
+    })),
+  };
+}
+
+function persistReaderTabs() {
+  if (readerTabs.length === 0) {
+    return;
+  }
+  const payload = readerTabsPayload();
+  try {
+    window.localStorage.setItem(READER_TABS_STORAGE_KEY, JSON.stringify(payload));
+  } catch (_error) {
+    // IndexedDB remains available when localStorage is blocked.
+  }
+  pendingReaderTabsPersistence = payload;
+}
+
+function readerTabLabel(tab) {
+  const abbreviation = String(
+    tab.data?.translation?.id || tab.translation || "asv",
+  ).toUpperCase();
+  return `${tab.book} ${tab.chapter} · ${abbreviation}`;
+}
+
+function renderReaderTabs() {
+  const list = document.querySelector("[data-reader-tab-list]");
+  const newTabButton = document.querySelector("[data-reader-new-tab]");
+  if (!list) {
+    return;
+  }
+  list.replaceChildren();
+  readerTabs.forEach((tab) => {
+    const wrapper = document.createElement("div");
+    wrapper.className = "reader-tab-item";
+    wrapper.dataset.readerTab = tab.id;
+    wrapper.setAttribute("role", "presentation");
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "reader-tab";
+    button.dataset.readerTabSelect = tab.id;
+    button.setAttribute("role", "tab");
+    button.setAttribute("aria-selected", String(tab.id === activeReaderTabId));
+    button.tabIndex = tab.id === activeReaderTabId ? 0 : -1;
+    button.textContent = readerTabLabel(tab);
+    button.title = `Read ${tab.book} ${tab.chapter} in ${String(tab.translation || "asv").toUpperCase()}`;
+
+    const close = document.createElement("button");
+    close.type = "button";
+    close.className = "reader-tab-close";
+    close.dataset.readerTabClose = tab.id;
+    close.setAttribute("aria-label", `Close ${readerTabLabel(tab)}`);
+    close.title = `Close ${readerTabLabel(tab)}`;
+    close.textContent = "×";
+    close.disabled = readerTabs.length === 1;
+
+    wrapper.appendChild(button);
+    wrapper.appendChild(close);
+    list.appendChild(wrapper);
+  });
+  if (newTabButton) {
+    newTabButton.disabled = readerTabs.length >= READER_TAB_LIMIT;
+    newTabButton.title = readerTabs.length >= READER_TAB_LIMIT
+      ? `You can have up to ${READER_TAB_LIMIT} reading tabs.`
+      : "Open a new reading tab";
+  }
+}
+
+function saveCurrentReaderTabState() {
+  const tab = activeReaderTab();
+  if (!tab || !currentChapter) {
+    return;
+  }
+  tab.book = currentChapter.book;
+  tab.chapter = Number(currentChapter.chapter);
+  tab.translation = String(currentChapter.translation?.id || selectedTranslationId() || "asv").toLowerCase();
+  tab.selection = currentSelection ? {...currentSelection} : null;
+  tab.verse = getVisibleReaderVerse() || tab.verse || null;
+  tab.updatedAt = new Date().toISOString();
+  persistReaderTabs();
+}
+
+function syncReaderControlsToActiveTab() {
+  const tab = activeReaderTab();
+  const bookSelect = document.querySelector("[data-reader-book]");
+  const chapterSelect = document.querySelector("[data-reader-chapter]");
+  const translationSelect = document.querySelector("[data-reader-translation]");
+  if (!tab || !bookSelect || !chapterSelect) {
+    renderReaderTabs();
+    return;
+  }
+  const book = resolveReaderBookValue(tab.book, bookSelect);
+  if (book) {
+    bookSelect.value = book;
+    populateChapterOptions(bookSelect, chapterSelect);
+  }
+  chapterSelect.value = resolveReaderChapterValue(tab.chapter, chapterSelect, "1");
+  if (translationSelect) {
+    syncTranslationSelectOptions();
+    translationSelect.value = tab.translation;
+  }
+  renderReaderTabs();
+}
+
+async function selectReaderTab(tabId, options = {}) {
+  const tab = readerTabs.find((candidate) => candidate.id === tabId);
+  if (!tab) {
+    return false;
+  }
+  if (activeReaderTabId !== tab.id) {
+    saveCurrentReaderTabState();
+    activeReaderTabId = tab.id;
+  }
+  syncReaderControlsToActiveTab();
+  persistReaderTabs();
+  await loadReaderChapter(tab.book, tab.chapter, {
+    tabId: tab.id,
+    translation: tab.translation,
+    persistLocation: false,
+    useCache: options.useCache !== false,
+  });
+  return true;
+}
+
+async function openNewReaderTab() {
+  if (readerTabs.length >= READER_TAB_LIMIT) {
+    return false;
+  }
+  saveCurrentReaderTabState();
+  const current = activeReaderTab();
+  const tab = normalizeReaderTab({
+    id: createReaderTabId(),
+    book: current?.book || "John",
+    chapter: current?.chapter || 1,
+    translation: current?.translation || selectedTranslationId(),
+    verse: current?.verse || null,
+  });
+  if (!tab) {
+    return false;
+  }
+  readerTabs.push(tab);
+  activeReaderTabId = tab.id;
+  renderReaderTabs();
+  await selectReaderTab(tab.id);
+  return true;
+}
+
+async function closeReaderTab(tabId) {
+  if (readerTabs.length <= 1) {
+    return false;
+  }
+  const index = readerTabs.findIndex((tab) => tab.id === tabId);
+  if (index < 0) {
+    return false;
+  }
+  saveCurrentReaderTabState();
+  const wasActive = activeReaderTabId === tabId;
+  readerTabs.splice(index, 1);
+  if (wasActive) {
+    const nextTab = readerTabs[Math.min(index, readerTabs.length - 1)];
+    activeReaderTabId = nextTab.id;
+    await selectReaderTab(nextTab.id);
+  } else {
+    renderReaderTabs();
+  }
+  persistReaderTabs();
+  return true;
+}
+
+function handleReaderTabInteraction(event) {
+  const close = event.target.closest("[data-reader-tab-close]");
+  if (close) {
+    event.preventDefault();
+    event.stopPropagation();
+    void closeReaderTab(close.dataset.readerTabClose);
+    return;
+  }
+  const tab = event.target.closest("[data-reader-tab-select]");
+  if (tab) {
+    event.preventDefault();
+    void selectReaderTab(tab.dataset.readerTabSelect);
+  }
+}
+
+function handleReaderTabKeydown(event) {
+  const tabs = Array.from(document.querySelectorAll("[data-reader-tab-select]"));
+  const index = tabs.indexOf(event.currentTarget);
+  if (index < 0) {
+    return;
+  }
+  let nextIndex = null;
+  if (event.key === "ArrowRight") {
+    nextIndex = (index + 1) % tabs.length;
+  } else if (event.key === "ArrowLeft") {
+    nextIndex = (index - 1 + tabs.length) % tabs.length;
+  } else if (event.key === "Home") {
+    nextIndex = 0;
+  } else if (event.key === "End") {
+    nextIndex = tabs.length - 1;
+  }
+  if (nextIndex === null || !tabs[nextIndex]) {
+    return;
+  }
+  event.preventDefault();
+  const nextTab = tabs[nextIndex];
+  void selectReaderTab(nextTab.dataset.readerTabSelect).then(() => nextTab.focus());
+}
+
 function normalizeReaderLocation(value) {
   const location = value?.payload || value;
   const book = String(location?.book || "").trim();
@@ -264,6 +552,56 @@ async function loadSavedReaderLocation() {
     return rightTime - leftTime;
   });
   return candidates[0] || null;
+}
+
+function readLocalReaderTabs() {
+  try {
+    return normalizeReaderTabsPayload(
+      JSON.parse(localStorage.getItem(READER_TABS_STORAGE_KEY) || "null"),
+    );
+  } catch (_error) {
+    return null;
+  }
+}
+
+async function loadSavedReaderTabs() {
+  const candidates = [];
+  const localTabs = readLocalReaderTabs();
+  if (localTabs) {
+    candidates.push(localTabs);
+  }
+  const offlineDb = window.BHFOfflineDB;
+  if (offlineDb && typeof offlineDb.get === "function") {
+    try {
+      const record = await offlineDb.get("metadata", READER_TABS_METADATA_ID);
+      const storedTabs = normalizeReaderTabsPayload(record);
+      if (storedTabs) {
+        candidates.push(storedTabs);
+      }
+    } catch (_error) {
+      // localStorage remains available if IndexedDB is unavailable or corrupt.
+    }
+  }
+  candidates.sort((left, right) => {
+    const leftTime = Date.parse(left.updatedAt) || 0;
+    const rightTime = Date.parse(right.updatedAt) || 0;
+    return rightTime - leftTime;
+  });
+  if (candidates[0]) {
+    return candidates[0];
+  }
+
+  const legacyLocation = await loadSavedReaderLocation();
+  if (!legacyLocation) {
+    return null;
+  }
+  const legacyTab = normalizeReaderTab({
+    id: createReaderTabId(),
+    ...legacyLocation,
+  });
+  return legacyTab
+    ? {tabs: [legacyTab], activeTabId: legacyTab.id, updatedAt: legacyLocation.updatedAt}
+    : null;
 }
 
 function resolveReaderBookValue(book, bookSelect) {
@@ -326,6 +664,15 @@ function rememberReaderLocation(verseNumber) {
   if (!location) {
     return;
   }
+  const tab = activeReaderTab();
+  if (tab) {
+    tab.book = location.book;
+    tab.chapter = location.chapter;
+    tab.translation = location.translation || tab.translation;
+    tab.verse = location.verse;
+    tab.updatedAt = location.updatedAt;
+    persistReaderTabs();
+  }
   pendingReaderLocation = location;
   try {
     localStorage.setItem(READER_LOCATION_STORAGE_KEY, JSON.stringify(location));
@@ -344,22 +691,35 @@ function flushReaderLocationPersistence() {
     readerLocationSaveTimer = null;
   }
   const location = pendingReaderLocation;
-  if (!location) {
-    return;
-  }
+  const tabs = pendingReaderTabsPersistence;
+  pendingReaderLocation = null;
+  pendingReaderTabsPersistence = null;
   const offlineDb = window.BHFOfflineDB;
   if (!offlineDb || typeof offlineDb.put !== "function") {
     return;
   }
-  pendingReaderLocation = null;
-  void offlineDb
-    .put("metadata", {
-      id: READER_LOCATION_METADATA_ID,
-      updatedAt: location.updatedAt,
-      cachedAt: location.updatedAt,
-      payload: location,
-    })
-    .catch(() => undefined);
+  const writes = [];
+  if (location) {
+    writes.push(
+      offlineDb.put("metadata", {
+        id: READER_LOCATION_METADATA_ID,
+        updatedAt: location.updatedAt,
+        cachedAt: location.updatedAt,
+        payload: location,
+      }),
+    );
+  }
+  if (tabs) {
+    writes.push(
+      offlineDb.put("metadata", {
+        id: READER_TABS_METADATA_ID,
+        updatedAt: tabs.updatedAt,
+        cachedAt: tabs.updatedAt,
+        payload: tabs,
+      }),
+    );
+  }
+  void Promise.all(writes).catch(() => undefined);
 }
 
 function getVisibleReaderVerse() {
@@ -413,18 +773,60 @@ async function initializeReader() {
     bookSelect.value = defaultBook;
   }
 
-  const savedLocation = await loadSavedReaderLocation();
-  const restoredBook = resolveReaderBookValue(savedLocation?.book, bookSelect);
-  if (restoredBook) {
-    bookSelect.value = restoredBook;
+  const savedTabs = await loadSavedReaderTabs();
+  if (savedTabs) {
+    readerTabs = savedTabs.tabs;
+    activeReaderTabId = savedTabs.activeTabId;
+  } else {
+    const initialTab = normalizeReaderTab({
+      id: createReaderTabId(),
+      book: bookSelect.value || defaultBook,
+      chapter: reader.dataset.defaultChapter || 1,
+      translation: readLocalStorageValue(BHF_TRANSLATION_STORAGE_KEY) || "asv",
+    });
+    readerTabs = initialTab ? [initialTab] : [];
+    activeReaderTabId = initialTab?.id || null;
+  }
+  const activeTab = activeReaderTab();
+  const restoredBook = resolveReaderBookValue(activeTab?.book, bookSelect);
+  if (restoredBook && activeTab) {
+    activeTab.book = restoredBook;
+  } else if (activeTab) {
+    activeTab.book = bookSelect.value || defaultBook;
+    activeTab.chapter = Number(reader.dataset.defaultChapter || 1);
+    activeTab.data = null;
+    activeTab.selection = null;
+    activeTab.verse = null;
   }
   populateChapterOptions(bookSelect, chapterSelect);
+  readerTabs = readerTabs.map((tab) => {
+    const resolvedBook = resolveReaderBookValue(tab.book, bookSelect) || defaultBook;
+    const bookOption = Array.from(bookSelect.options).find(
+      (option) => option.value === resolvedBook,
+    );
+    const chapterCount = Number(bookOption?.dataset.chapters || 1);
+    const chapter = Math.min(Math.max(Number(tab.chapter) || 1, 1), chapterCount);
+    return {
+      ...tab,
+      book: resolvedBook,
+      chapter,
+      data: null,
+    };
+  });
+  activeReaderTabId = activeReaderTab()?.id || readerTabs[0]?.id || null;
   if (!chapterSelect.options.length) {
     reader.innerHTML = `<p class="empty">No chapter data is available for ${escapeHtml(bookSelect.value || defaultBook)}.</p>`;
     return;
   }
+  if (activeTab) {
+    activeTab.chapter = Number(resolveReaderChapterValue(
+      activeTab.chapter,
+      chapterSelect,
+      reader.dataset.defaultChapter || chapterSelect.options[0].value || "1",
+    ));
+  }
   const defaultChapter = resolveReaderChapterValue(
-    savedLocation?.chapter,
+    activeTab?.chapter,
     chapterSelect,
     reader.dataset.defaultChapter || chapterSelect.options[0].value || "1",
   );
@@ -437,26 +839,51 @@ async function initializeReader() {
     }
     if (
       translationCatalogState?.default_translation &&
-      !readLocalStorageValue(BHF_TRANSLATION_STORAGE_KEY)
+      !readLocalStorageValue(BHF_TRANSLATION_STORAGE_KEY) &&
+      !savedTabs
     ) {
       setSelectedTranslationId(translationCatalogState.default_translation);
     }
     syncTranslationSelectOptions();
-    translationSelect.value = selectedTranslationId();
+    if (activeTab && !installedTranslationIds().has(activeTab.translation)) {
+      activeTab.translation = selectedTranslationId();
+    }
+    translationSelect.value = activeTab?.translation || selectedTranslationId();
   }
+  syncReaderControlsToActiveTab();
+  renderReaderTabs();
+  const initialReaderTab = activeReaderTab();
   await loadReaderChapter(
-    bookSelect.value || defaultBook,
-    chapterSelect.value || defaultChapter,
-    {persistLocation: false},
+    initialReaderTab?.book || bookSelect.value || defaultBook,
+    initialReaderTab?.chapter || chapterSelect.value || defaultChapter,
+    {
+      tabId: initialReaderTab?.id,
+      translation: initialReaderTab?.translation,
+      persistLocation: false,
+    },
   );
-  restoreSavedReaderLocation(savedLocation);
 
   bookSelect.addEventListener("change", async () => {
+    const tab = activeReaderTab();
+    if (tab) {
+      tab.book = bookSelect.value;
+      tab.chapter = 1;
+      tab.data = null;
+      tab.selection = null;
+      tab.verse = null;
+    }
     populateChapterOptions(bookSelect, chapterSelect);
     chapterSelect.value = "1";
     await loadReaderChapter(bookSelect.value, chapterSelect.value);
   });
   chapterSelect.addEventListener("change", async () => {
+    const tab = activeReaderTab();
+    if (tab) {
+      tab.chapter = Number(chapterSelect.value || 1);
+      tab.data = null;
+      tab.selection = null;
+      tab.verse = null;
+    }
     await loadReaderChapter(bookSelect.value, chapterSelect.value);
   });
   if (translationSelect) {
@@ -466,9 +893,18 @@ async function initializeReader() {
       ).toLowerCase();
       const previousTranslation = selectedTranslationId();
       try {
+        const tab = activeReaderTab();
+        if (tab) {
+          tab.translation = requestedTranslation;
+          tab.data = null;
+        }
         await persistReaderDefaultTranslation(requestedTranslation);
         await loadReaderChapter(bookSelect.value, chapterSelect.value);
       } catch (error) {
+        const tab = activeReaderTab();
+        if (tab) {
+          tab.translation = previousTranslation;
+        }
         setSelectedTranslationId(previousTranslation);
         translationSelect.value = previousTranslation;
         reader.innerHTML = errorHtml(
@@ -480,6 +916,21 @@ async function initializeReader() {
   if (translationImportButton) {
     translationImportButton.addEventListener("click", async () => {
       await openTranslationImportDialog();
+    });
+  }
+  const readerTabList = document.querySelector("[data-reader-tab-list]");
+  if (readerTabList) {
+    readerTabList.addEventListener("click", handleReaderTabInteraction);
+    readerTabList.addEventListener("keydown", (event) => {
+      if (event.target.matches("[data-reader-tab-select]")) {
+        handleReaderTabKeydown(event);
+      }
+    });
+  }
+  const newReaderTab = document.querySelector("[data-reader-new-tab]");
+  if (newReaderTab) {
+    newReaderTab.addEventListener("click", () => {
+      void openNewReaderTab();
     });
   }
   document.addEventListener("selectionchange", updateSelectionFromDocument);
@@ -1464,29 +1915,74 @@ async function loadReaderChapter(book, chapter, options = {}) {
   if (!reader) {
     return;
   }
+  const tab = readerTabs.find((candidate) => candidate.id === options.tabId) || activeReaderTab();
+  if (tab && activeReaderTabId !== tab.id) {
+    activeReaderTabId = tab.id;
+  }
   const persistLocation = options.persistLocation !== false;
-  const translationId = selectedTranslationId();
+  const translationId = String(
+    options.translation || tab?.translation || selectedTranslationId() || "asv",
+  ).toLowerCase();
+  const requestToken = (readerLoadToken += 1);
+  if (tab) {
+    tab.book = book;
+    tab.chapter = Number(chapter);
+    tab.translation = translationId;
+  }
   reader.setAttribute("aria-busy", "true");
   hideContextMenu();
   reader.innerHTML = `<p class="empty">Loading ${escapeHtml(currentTranslationAbbreviation())} text...</p>`;
   try {
-    const params = new URLSearchParams({translation: translationId});
-    const data = await requestJson(
-      `/api/bible/${encodeURIComponent(book)}/${encodeURIComponent(chapter)}?${params.toString()}`,
-      {},
-      "Could not load chapter.",
-    );
+    let data = null;
+    if (
+      options.useCache !== false &&
+      tab?.data &&
+      String(tab.data.book).toLowerCase() === String(book).toLowerCase() &&
+      Number(tab.data.chapter) === Number(chapter) &&
+      String(tab.data.translation?.id || translationId).toLowerCase() === translationId
+    ) {
+      data = tab.data;
+    } else {
+      const params = new URLSearchParams({translation: translationId});
+      data = await requestJson(
+        `/api/bible/${encodeURIComponent(book)}/${encodeURIComponent(chapter)}?${params.toString()}`,
+        {},
+        "Could not load chapter.",
+      );
+    }
+    if (requestToken !== readerLoadToken) {
+      return;
+    }
     currentChapter = data;
     currentSelection = null;
     latestJobId = null;
     latestJobComplete = false;
     currentNotes = [];
     currentHighlights = [];
+    if (tab) {
+      tab.data = data;
+      tab.book = data.book;
+      tab.chapter = Number(data.chapter);
+      tab.translation = String(data.translation?.id || translationId).toLowerCase();
+    }
     renderChapter(data);
+    if (tab?.selection) {
+      const savedSelection = {...tab.selection};
+      applySelectionContext(savedSelection);
+    }
+    if (tab?.verse) {
+      const verseExists = data.verses?.some(
+        (candidate) => Number(candidate.verse) === Number(tab.verse),
+      );
+      if (verseExists) {
+        scrollToVerse(Number(tab.verse), "auto");
+      }
+    }
     if (persistLocation) {
       rememberReaderLocation(getVisibleReaderVerse() || 1);
     }
     clearReaderSearchState();
+    syncReaderControlsToActiveTab();
     syncAskFields();
     updateChapterNavigationState();
     await Promise.all([
@@ -1496,13 +1992,19 @@ async function loadReaderChapter(book, chapter, options = {}) {
     ]);
   } catch (error) {
     if (translationId !== "asv") {
+      if (tab) {
+        tab.translation = "asv";
+        tab.data = null;
+      }
       setSelectedTranslationId("asv");
-      await loadReaderChapter(book, chapter);
+      await loadReaderChapter(book, chapter, {...options, translation: "asv", useCache: false});
       return;
     }
     reader.innerHTML = errorHtml(error.message || "Could not load chapter.");
   } finally {
-    reader.removeAttribute("aria-busy");
+    if (requestToken === readerLoadToken) {
+      reader.removeAttribute("aria-busy");
+    }
   }
 }
 
@@ -1512,13 +2014,24 @@ function clearReaderSearchState() {
   }
 }
 
-async function navigateToPassage(book, chapter, verseStart, verseEnd) {
+async function navigateToPassage(book, chapter, verseStart, verseEnd, options = {}) {
+  if (options.newTab) {
+    await openNewReaderTab();
+  }
   const bookSelect = document.querySelector("[data-reader-book]");
   const chapterSelect = document.querySelector("[data-reader-chapter]");
+  const tab = activeReaderTab();
   if (bookSelect && chapterSelect) {
     bookSelect.value = book;
     populateChapterOptions(bookSelect, chapterSelect);
     chapterSelect.value = String(chapter);
+  }
+  if (tab) {
+    tab.book = book;
+    tab.chapter = Number(chapter);
+    tab.data = null;
+    tab.selection = null;
+    tab.verse = verseStart ? Number(verseStart) : null;
   }
   await loadReaderChapter(book, chapter);
   if (!verseStart) {
@@ -1558,6 +2071,13 @@ function goToNextChapter() {
   }
   const nextChapter = currentChapterNumber + 1;
   chapterSelect.value = String(nextChapter);
+  const tab = activeReaderTab();
+  if (tab) {
+    tab.chapter = nextChapter;
+    tab.data = null;
+    tab.selection = null;
+    tab.verse = null;
+  }
   loadReaderChapter(bookSelect.value, nextChapter);
 }
 
@@ -1573,6 +2093,13 @@ function goToPreviousChapter() {
   }
   const previousChapter = currentChapterNumber - 1;
   chapterSelect.value = String(previousChapter);
+  const tab = activeReaderTab();
+  if (tab) {
+    tab.chapter = previousChapter;
+    tab.data = null;
+    tab.selection = null;
+    tab.verse = null;
+  }
   loadReaderChapter(bookSelect.value, previousChapter);
 }
 
@@ -1950,8 +2477,9 @@ function installedTranslationIds() {
 
 function selectedTranslationId() {
   const fallback = "asv";
+  const tabTranslation = String(activeReaderTab()?.translation || "").toLowerCase();
   const stored = String(
-    readLocalStorageValue(BHF_TRANSLATION_STORAGE_KEY) || fallback,
+    tabTranslation || readLocalStorageValue(BHF_TRANSLATION_STORAGE_KEY) || fallback,
   ).toLowerCase();
   return installedTranslationIds().has(stored) ? stored : fallback;
 }
@@ -1961,6 +2489,12 @@ function setSelectedTranslationId(id) {
   const selected = installedTranslationIds().has(normalized)
     ? normalized
     : "asv";
+  const tab = activeReaderTab();
+  if (tab) {
+    tab.translation = selected;
+    tab.data = null;
+    persistReaderTabs();
+  }
   writeLocalStorageValue(BHF_TRANSLATION_STORAGE_KEY, selected);
   syncTranslationSelect(selected);
 }
@@ -2113,7 +2647,11 @@ async function reloadCurrentReaderChapter() {
   const chapterSelect = document.querySelector("[data-reader-chapter]");
   const book = bookSelect?.value || currentChapter?.book || "John";
   const chapter = chapterSelect?.value || currentChapter?.chapter || "1";
-  await loadReaderChapter(book, chapter);
+  const tab = activeReaderTab();
+  if (tab) {
+    tab.data = null;
+  }
+  await loadReaderChapter(book, chapter, {useCache: false});
 }
 
 async function downloadTranslationFromGithub(id) {
@@ -4128,6 +4666,10 @@ function applySelectionContext(context) {
     endVerse: selectedVerses[selectedVerses.length - 1] || Number(context.endVerse || context.startVerse),
     isSelection: selectedVerses.length > 1,
   };
+  const tab = activeReaderTab();
+  if (tab) {
+    tab.selection = {...currentSelection};
+  }
   rememberReaderLocation(Number(context.startVerse));
 
   reader.querySelectorAll("[data-verse]").forEach((verse) => {
@@ -4175,6 +4717,11 @@ function clearReaderSelection() {
   }
 
   currentSelection = null;
+  const tab = activeReaderTab();
+  if (tab) {
+    tab.selection = null;
+    persistReaderTabs();
+  }
   syncAskFields();
 }
 

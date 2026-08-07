@@ -27,6 +27,23 @@ class BibleReaderPage(BasePage):
         self.click('#chapter-reader [data-prev-chapter]')
         return self
 
+    def new_reading_tab(self):
+        self.click('[data-testid="reader-new-tab"]')
+        return self
+
+    def reader_tabs(self):
+        return self.driver.find_elements(By.CSS_SELECTOR, '[data-reader-tab-select]')
+
+    def select_reader_tab(self, index: int):
+        tabs = self.reader_tabs()
+        tabs[index].click()
+        return self
+
+    def close_reader_tab(self, index: int):
+        items = self.driver.find_elements(By.CSS_SELECTOR, '[data-reader-tab]')
+        items[index].find_element(By.CSS_SELECTOR, '[data-reader-tab-close]').click()
+        return self
+
     def search(self, text: str):
         self.type_into('[data-testid="bible-search-input"]', text)
         self.click('[data-testid="bible-search-button"]')
