@@ -1174,8 +1174,11 @@ function closeReaderControlsSheet() {
 
 function workspaceTabsForSection(sectionId) {
   const normalized = normalizeAppSection(sectionId);
-  if (normalized === "ask" || normalized === "bible") {
+  if (normalized === "ask") {
     return ["ask", "lexicon", "context"];
+  }
+  if (normalized === "bible") {
+    return ["ask"];
   }
   if (normalized === "notes") {
     return ["notes", "highlights"];
@@ -1195,13 +1198,7 @@ function syncWorkspaceTabsForSection(sectionId) {
     return;
   }
   const normalizedSection = normalizeAppSection(sectionId);
-  const visibleTabs = new Set(
-    normalizedSection === "bible"
-      ? Array.from(workspace.querySelectorAll("[data-workspace-tab]"))
-          .map((tab) => tab.dataset.workspaceTab)
-          .filter(Boolean)
-      : workspaceTabsForSection(normalizedSection),
-  );
+  const visibleTabs = new Set(workspaceTabsForSection(normalizedSection));
   let visibleCount = 0;
   workspace.querySelectorAll("[data-workspace-tab]").forEach((tab) => {
     const isVisible = visibleTabs.has(tab.dataset.workspaceTab);
@@ -1213,9 +1210,7 @@ function syncWorkspaceTabsForSection(sectionId) {
     }
   });
   const currentWorkspaceTab = getCurrentWorkspaceTab();
-  if (normalizedSection === "bible") {
-    setActiveWorkspaceTab("ask");
-  } else if (!currentWorkspaceTab || !visibleTabs.has(currentWorkspaceTab)) {
+  if (!currentWorkspaceTab || !visibleTabs.has(currentWorkspaceTab)) {
     const fallbackTab = appSectionToWorkspaceTab(sectionId);
     if (fallbackTab) {
       setActiveWorkspaceTab(fallbackTab);
