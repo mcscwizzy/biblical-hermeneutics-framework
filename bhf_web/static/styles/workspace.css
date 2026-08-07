@@ -898,6 +898,41 @@
   padding: 22px 0 40px;
 }
 
+.reader-pane-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.reader-pane {
+  min-width: 0;
+}
+
+.chapter-reader.has-multiple-reader-panes .reader-pane {
+  max-height: min(76vh, 900px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  padding: 18px 20px 28px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.chapter-reader.has-multiple-reader-panes .reader-pane.is-active {
+  border-color: var(--accent);
+}
+
+.chapter-reader.has-multiple-reader-panes .reader-pane .reader-chapter-header,
+.chapter-reader.has-multiple-reader-panes .reader-pane .chapter-text {
+  max-width: none;
+}
+
+.reader-pane-loading {
+  min-height: 220px;
+}
+
 .reader-chapter-header {
   display: flex;
   justify-content: flex-start;
@@ -2326,6 +2361,23 @@ html[data-theme="dark"] .map-panel-body {
   .map-details-panel,
   .saved-map-study {
     padding: 12px;
+  }
+}
+
+@media (min-width: 721px) {
+  .chapter-reader.has-multiple-reader-panes .reader-pane-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .chapter-reader.has-multiple-reader-panes .reader-pane {
+    max-height: none;
+    overflow: visible;
+    padding: 16px 0 24px;
+    border-width: 1px 0;
+    border-radius: 0;
+    box-shadow: none;
   }
 }
 

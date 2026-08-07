@@ -88,7 +88,7 @@ function renderHighlights(highlights) {
 }
 
 function applyHighlightsToReader(highlights) {
-  const reader = document.querySelector("#chapter-reader");
+  const reader = activeReaderPane?.() || document.querySelector("#chapter-reader");
   if (!reader) {
     return;
   }

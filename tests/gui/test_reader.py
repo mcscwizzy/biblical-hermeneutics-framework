@@ -21,35 +21,82 @@ def test_change_book_and_chapter(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
     page = BibleReaderPage(driver, wait, base_url)
     page.select_book("Genesis")
-    wait.until(lambda _driver: "Genesis 1" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
-    assert "Genesis 1" in driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text
+    wait.until(lambda _driver: "Genesis 1" in page.active_pane_heading().text)
+    assert "Genesis 1" in page.active_pane_heading().text
     page.set_chapter(1)
     page.next_chapter()
-    wait.until(lambda _driver: "Genesis 2" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
-    assert "Genesis 2" in driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text
+    wait.until(lambda _driver: "Genesis 2" in page.active_pane_heading().text)
+    assert "Genesis 2" in page.active_pane_heading().text
     page.previous_chapter()
-    wait.until(lambda _driver: "Genesis 1" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
-    assert "Genesis 1" in driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text
+    wait.until(lambda _driver: "Genesis 1" in page.active_pane_heading().text)
+    assert "Genesis 1" in page.active_pane_heading().text
 
 
 def test_reader_tabs_switch_and_close_independent_passages(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
     page = BibleReaderPage(driver, wait, base_url)
     page.select_book("Genesis")
-    wait.until(lambda _driver: "Genesis 1" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
+    wait.until(lambda _driver: "Genesis 1" in page.active_pane_heading().text)
 
     page.new_reading_tab()
     wait.until(lambda _driver: len(page.reader_tabs()) == 2)
     page.set_chapter(2)
-    wait.until(lambda _driver: "Genesis 2" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
+    wait.until(lambda _driver: "Genesis 2" in page.active_pane_heading().text)
 
     page.select_reader_tab(0)
-    wait.until(lambda _driver: "Genesis 1" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
+    wait.until(lambda _driver: "Genesis 1" in page.active_pane_heading().text)
     assert len(page.reader_tabs()) == 2
+    assert len(page.reader_panes()) == 2
 
     page.close_reader_tab(1)
     wait.until(lambda _driver: len(page.reader_tabs()) == 1)
-    assert "Genesis 1" in driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text
+    wait.until(lambda _driver: len(page.reader_panes()) == 1)
+    assert "Genesis 1" in page.active_pane_heading().text
+
+
+def test_reader_tabs_render_side_by_side_and_sync_scroll(driver, wait, base_url):
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    page = BibleReaderPage(driver, wait, base_url)
+    page.select_book("Psalms")
+    page.set_chapter(119)
+    wait.until(lambda _driver: "Psalms 119" in page.active_pane_heading().text)
+
+    page.new_reading_tab()
+    wait.until(lambda _driver: len(page.reader_panes()) == 2)
+    page.set_chapter(118)
+    wait.until(lambda _driver: "Psalms 118" in page.active_pane_heading().text)
+
+    assert driver.find_element(By.CSS_SELECTOR, "#chapter-reader").get_attribute("class").find("has-multiple-reader-panes") != -1
+    headings = [heading.text for heading in driver.find_elements(By.CSS_SELECTOR, "#chapter-reader [data-reader-pane] h3")]
+    assert headings == ["Psalms 119", "Psalms 118"]
+
+    metrics = driver.execute_script(
+        """
+        return Array.from(document.querySelectorAll('#chapter-reader [data-reader-pane]'))
+          .map((pane) => ({
+            max: pane.scrollHeight - pane.clientHeight,
+            top: pane.scrollTop,
+          }));
+        """
+    )
+    assert all(metric["max"] > 0 for metric in metrics)
+
+    driver.execute_script(
+        """
+        const panes = document.querySelectorAll('#chapter-reader [data-reader-pane]');
+        panes[0].scrollTop = panes[0].scrollHeight * 0.42;
+        """
+    )
+    wait.until(
+        lambda _driver: _driver.execute_script(
+            """
+            const panes = document.querySelectorAll('#chapter-reader [data-reader-pane]');
+            const target = panes[1];
+            const max = target.scrollHeight - target.clientHeight;
+            return max > 0 && Math.abs(target.scrollTop / max - 0.42) < 0.05;
+            """
+        )
+    )
 
 
 def test_reader_tabs_preserve_selection_and_restore_after_refresh(driver, wait, base_url):
@@ -59,27 +106,27 @@ def test_reader_tabs_preserve_selection_and_restore_after_refresh(driver, wait, 
     page.new_reading_tab()
     wait.until(lambda _driver: len(page.reader_tabs()) == 2)
 
-    assert "selected" not in driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="1"]').get_attribute("class")
+    assert "selected" not in driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="1"]').get_attribute("class")
     page.select_reader_tab(0)
-    wait.until(lambda _driver: "selected" in _driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="1"]').get_attribute("class"))
+    wait.until(lambda _driver: "selected" in _driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="1"]').get_attribute("class"))
 
     page.select_reader_tab(1)
-    wait.until(lambda _driver: "selected" not in _driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="1"]').get_attribute("class"))
+    wait.until(lambda _driver: "selected" not in _driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="1"]').get_attribute("class"))
     page.set_chapter(2)
-    wait.until(lambda _driver: "John 2" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
+    wait.until(lambda _driver: "John 2" in page.active_pane_heading().text)
 
     driver.refresh()
     HomePage(driver, wait, base_url).wait_loaded()
     wait.until(lambda _driver: len(driver.find_elements(By.CSS_SELECTOR, '[data-reader-tab-select]')) == 2)
-    wait.until(lambda _driver: "John 2" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
+    wait.until(lambda _driver: "John 2" in page.active_pane_heading().text)
 
 
 def test_clicking_verse_number_selects_entire_verse(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
 
-    driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="1"] [data-verse-select]').click()
+    driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="1"] [data-verse-select]').click()
 
-    wait.until(lambda _driver: "selected" in _driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="1"]').get_attribute("class"))
+    wait.until(lambda _driver: "selected" in _driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="1"]').get_attribute("class"))
     assert driver.find_element(By.CSS_SELECTOR, '.ask-form [name="reader_start_verse"]').get_attribute("value") == "1"
     assert driver.find_element(By.CSS_SELECTOR, '.ask-form [name="reader_end_verse"]').get_attribute("value") == "1"
     assert driver.find_element(By.CSS_SELECTOR, '.ask-form [name="reader_selected_text"]').get_attribute("value")
@@ -89,8 +136,8 @@ def test_last_reader_location_is_stored_locally_and_restored_after_refresh(drive
     HomePage(driver, wait, base_url).open().wait_loaded()
     page = BibleReaderPage(driver, wait, base_url)
     page.select_book("Genesis")
-    wait.until(lambda _driver: "Genesis 1" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
-    driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="5"] [data-verse-select]').click()
+    wait.until(lambda _driver: "Genesis 1" in page.active_pane_heading().text)
+    driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="5"] [data-verse-select]').click()
 
     stored = driver.execute_async_script(
         """
@@ -108,10 +155,10 @@ def test_last_reader_location_is_stored_locally_and_restored_after_refresh(drive
 
     driver.refresh()
     HomePage(driver, wait, base_url).wait_loaded()
-    wait.until(lambda _driver: "Genesis 1" in _driver.find_element(By.CSS_SELECTOR, "#chapter-reader h3").text)
+    wait.until(lambda _driver: "Genesis 1" in page.active_pane_heading().text)
     verse_position = driver.execute_script(
         """
-        const verse = document.querySelector('#chapter-reader [data-verse="5"]');
+        const verse = document.querySelector('#chapter-reader .reader-pane.is-active [data-verse="5"]');
         return {top: verse.getBoundingClientRect().top, viewport: window.innerHeight};
         """
     )

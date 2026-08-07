@@ -423,6 +423,20 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("open_map_panel", script)
         self.assertNotIn("studyAction.type === \"maps\"", script)
 
+    def test_reader_tabs_render_side_by_side_panes_and_sync_scroll(self):
+        script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
+        style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
+
+        self.assertIn("function activeReaderPane()", script)
+        self.assertIn("function syncReaderPaneScroll(source)", script)
+        self.assertIn("function wireReaderPaneScrollSync()", script)
+        self.assertIn("reader.classList.toggle(\"has-multiple-reader-panes\"", script)
+        self.assertIn("data-reader-pane", script)
+        self.assertIn(".reader-pane-grid", style)
+        self.assertIn(".chapter-reader.has-multiple-reader-panes .reader-pane", style)
+        self.assertIn("@media (min-width: 721px)", style)
+        self.assertIn("grid-template-columns: repeat(2, minmax(0, 1fr));", style)
+
         self.assertIn("workspaceTabsForSection", script)
         self.assertIn("syncWorkspaceTabsForSection", script)
         self.assertIn("BHF_TRANSLATION_STORAGE_KEY", script)

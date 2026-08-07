@@ -93,6 +93,8 @@ let readerTabs = [];
 let activeReaderTabId = null;
 let readerTabSequence = 0;
 let readerLoadToken = 0;
+let readerPaneScrollFrame = null;
+let readerPaneScrollSource = null;
 let noteContext = null;
 let currentNotes = [];
 let currentHighlights = [];
@@ -228,6 +230,89 @@ function createReaderTabId() {
 
 function activeReaderTab() {
   return readerTabs.find((tab) => tab.id === activeReaderTabId) || null;
+}
+
+function activeReaderPane() {
+  const reader = document.querySelector("#chapter-reader");
+  if (!reader) {
+    return null;
+  }
+  return Array.from(reader.querySelectorAll("[data-reader-pane]")).find(
+    (pane) => pane.dataset.readerPane === activeReaderTabId,
+  ) || null;
+}
+
+function readerPaneForElement(element) {
+  const pane = element?.closest?.("[data-reader-pane]");
+  if (!pane) {
+    return null;
+  }
+  return readerTabs.find((tab) => tab.id === pane.dataset.readerPane) || null;
+}
+
+function activateReaderPaneForElement(element) {
+  const tab = readerPaneForElement(element);
+  if (!tab || tab.id === activeReaderTabId) {
+    return tab;
+  }
+  saveCurrentReaderTabState();
+  activeReaderTabId = tab.id;
+  currentChapter = tab.data || null;
+  currentSelection = tab.selection ? {...tab.selection} : null;
+  syncReaderControlsToActiveTab();
+  if (currentSelection) {
+    applySelectionContext(currentSelection);
+  } else {
+    clearReaderSelection();
+  }
+  syncAskFields();
+  updateChapterNavigationState();
+  if (currentChapter) {
+    void Promise.all([
+      loadNotes(currentChapter.book, currentChapter.chapter),
+      loadHighlights(currentChapter.book, currentChapter.chapter),
+      loadSavedStudies(currentChapter.book, currentChapter.chapter),
+    ]);
+  }
+  return tab;
+}
+
+function syncReaderPaneScroll(source) {
+  const reader = document.querySelector("#chapter-reader");
+  if (!reader || reader.querySelectorAll("[data-reader-pane]").length < 2) {
+    return;
+  }
+  readerPaneScrollSource = source;
+  if (readerPaneScrollFrame) {
+    return;
+  }
+  readerPaneScrollFrame = window.requestAnimationFrame(() => {
+    readerPaneScrollFrame = null;
+    const sourcePane = readerPaneScrollSource;
+    readerPaneScrollSource = null;
+    if (!sourcePane) {
+      return;
+    }
+    const sourceMax = Math.max(sourcePane.scrollHeight - sourcePane.clientHeight, 0);
+    const progress = sourceMax > 0 ? sourcePane.scrollTop / sourceMax : 0;
+    reader.querySelectorAll("[data-reader-pane]").forEach((pane) => {
+      if (pane === sourcePane) {
+        return;
+      }
+      const targetMax = Math.max(pane.scrollHeight - pane.clientHeight, 0);
+      pane.scrollTop = progress * targetMax;
+    });
+  });
+}
+
+function wireReaderPaneScrollSync() {
+  const reader = document.querySelector("#chapter-reader");
+  if (!reader) {
+    return;
+  }
+  reader.querySelectorAll("[data-reader-pane]").forEach((pane) => {
+    pane.addEventListener("scroll", () => syncReaderPaneScroll(pane), {passive: true});
+  });
 }
 
 function normalizeReaderTab(value, index = 0) {
@@ -457,6 +542,7 @@ async function closeReaderTab(tabId) {
     await selectReaderTab(nextTab.id);
   } else {
     renderReaderTabs();
+    renderChapter(null);
   }
   persistReaderTabs();
   return true;
@@ -723,7 +809,7 @@ function flushReaderLocationPersistence() {
 }
 
 function getVisibleReaderVerse() {
-  const reader = document.querySelector("#chapter-reader");
+  const reader = activeReaderPane();
   if (!reader || !currentChapter) {
     return null;
   }
@@ -731,7 +817,7 @@ function getVisibleReaderVerse() {
   if (readerRect.bottom < 0 || readerRect.top > window.innerHeight) {
     return null;
   }
-  const targetY = Math.min(window.innerHeight * 0.35, 280);
+  const targetY = readerRect.top + Math.min(readerRect.height * 0.35, 280);
   let closestVerse = null;
   let closestDistance = Number.POSITIVE_INFINITY;
   for (const verse of reader.querySelectorAll("[data-verse]")) {
@@ -907,9 +993,13 @@ async function initializeReader() {
         }
         setSelectedTranslationId(previousTranslation);
         translationSelect.value = previousTranslation;
-        reader.innerHTML = errorHtml(
-          error.message || "Could not update translation.",
-        );
+        renderChapter(null);
+        const errorPane = activeReaderPane();
+        if (errorPane) {
+          errorPane.innerHTML = errorHtml(
+            error.message || "Could not update translation.",
+          );
+        }
       }
     });
   }
@@ -1003,6 +1093,7 @@ function handleChapterNavigationClick(event) {
   if (!button) {
     return;
   }
+  activateReaderPaneForElement(button);
   if (button.matches("[data-prev-chapter]")) {
     goToPreviousChapter();
     return;
@@ -1931,7 +2022,7 @@ async function loadReaderChapter(book, chapter, options = {}) {
   }
   reader.setAttribute("aria-busy", "true");
   hideContextMenu();
-  reader.innerHTML = `<p class="empty">Loading ${escapeHtml(currentTranslationAbbreviation())} text...</p>`;
+  renderChapter(null);
   try {
     let data = null;
     if (
@@ -2000,7 +2091,11 @@ async function loadReaderChapter(book, chapter, options = {}) {
       await loadReaderChapter(book, chapter, {...options, translation: "asv", useCache: false});
       return;
     }
-    reader.innerHTML = errorHtml(error.message || "Could not load chapter.");
+    renderChapter(null);
+    const errorPane = activeReaderPane();
+    if (errorPane) {
+      errorPane.innerHTML = errorHtml(error.message || "Could not load chapter.");
+    }
   } finally {
     if (requestToken === readerLoadToken) {
       reader.removeAttribute("aria-busy");
@@ -2155,6 +2250,42 @@ async function openPassageReference(reference) {
 
 function renderChapter(data) {
   const reader = document.querySelector("#chapter-reader");
+  if (!reader) {
+    return;
+  }
+  const grid = document.createElement("div");
+  grid.className = "reader-pane-grid";
+
+  readerTabs.forEach((tab) => {
+    if (tab.id === activeReaderTabId && data) {
+      tab.data = data;
+    }
+    if (tab.data) {
+      grid.appendChild(createReaderPane(tab.data, tab));
+      return;
+    }
+    const loading = document.createElement("article");
+    loading.className = "reader-pane reader-pane-loading";
+    loading.dataset.readerPane = tab.id;
+    loading.setAttribute("aria-label", `Loading ${readerTabLabel(tab)}`);
+    loading.innerHTML = `<p class="empty">Loading ${escapeHtml(readerTabLabel(tab))}...</p>`;
+    grid.appendChild(loading);
+  });
+
+  reader.innerHTML = "";
+  reader.classList.toggle("has-multiple-reader-panes", readerTabs.length > 1);
+  reader.appendChild(grid);
+  wireReaderPaneScrollSync();
+  scheduleAppDockVisibilityUpdate();
+}
+
+function createReaderPane(data, tab) {
+  const pane = document.createElement("article");
+  pane.className = "reader-pane";
+  pane.dataset.readerPane = tab.id;
+  pane.classList.toggle("is-active", tab.id === activeReaderTabId);
+  pane.setAttribute("aria-label", `${data.book} ${data.chapter} ${String(data.translation?.id || tab.translation || "").toUpperCase()}`);
+
   const header = document.createElement("div");
   header.className = "reader-chapter-header";
 
@@ -2165,7 +2296,7 @@ function renderChapter(data) {
   heading.textContent = `${data.book} ${data.chapter}`;
 
   const translation = data.translation || {};
-  const abbreviation = translation.id || currentTranslationAbbreviation();
+  const abbreviation = translation.id || String(tab.translation || "asv").toUpperCase();
   const translationBadge = document.createElement("button");
   translationBadge.type = "button";
   translationBadge.className = "reader-translation-badge";
@@ -2179,8 +2310,8 @@ function renderChapter(data) {
 
   passageHeading.appendChild(heading);
   passageHeading.appendChild(translationBadge);
-
   header.appendChild(passageHeading);
+  pane.appendChild(header);
 
   const paragraph = document.createElement("p");
   paragraph.className = "chapter-text";
@@ -2188,6 +2319,9 @@ function renderChapter(data) {
     const verseSpan = document.createElement("span");
     verseSpan.className = "verse";
     verseSpan.dataset.verse = String(verse.verse);
+    const savedSelection = selectedVerseNumbers(tab.selection);
+    const isSelected = savedSelection.includes(Number(verse.verse));
+    verseSpan.classList.toggle("selected", isSelected);
 
     const number = document.createElement("button");
     number.type = "button";
@@ -2198,8 +2332,9 @@ function renderChapter(data) {
       "aria-label",
       `Select ${data.book} ${data.chapter}:${verse.verse}`,
     );
-    number.setAttribute("aria-pressed", "false");
+    number.setAttribute("aria-pressed", String(isSelected));
     number.addEventListener("click", (event) => {
+      activateReaderPaneForElement(verseSpan);
       handleVerseSelectionClick(event, verseSpan);
     });
 
@@ -2225,15 +2360,14 @@ function renderChapter(data) {
     verseSpan.appendChild(text);
     paragraph.appendChild(verseSpan);
   }
-  reader.innerHTML = "";
-  reader.appendChild(header);
-  reader.appendChild(paragraph);
+  pane.appendChild(paragraph);
+
   const footer = document.createElement("div");
   footer.className = "reader-chapter-footer reader-next-chapter-footer";
   footer.appendChild(createChapterNavButton("prev", "◀ Previous Chapter"));
   footer.appendChild(createChapterNavButton("next", "Next Chapter ▶"));
-  reader.appendChild(footer);
-  scheduleAppDockVisibilityUpdate();
+  pane.appendChild(footer);
+  return pane;
 }
 
 function currentTranslationAbbreviation() {
@@ -2247,6 +2381,7 @@ async function handleTranslationSelectorClick(event) {
   if (!trigger) {
     return;
   }
+  activateReaderPaneForElement(trigger);
   event.preventDefault();
   event.stopPropagation();
   await openTranslationSelector(trigger);
@@ -3263,6 +3398,7 @@ function handleVerseSelectionClick(event, verse) {
 }
 
 function handleReaderActionButtonClick(event) {
+  activateReaderPaneForElement(event.target);
   const button = event.target.closest("[data-verse-actions]");
   const verseSelect = event.target.closest("[data-verse-select]");
   if (!button && !verseSelect) {
@@ -3295,7 +3431,7 @@ async function handleHighlightedVerseTap(event) {
     return;
   }
   const verse = event.target.closest("[data-verse]");
-  const reader = document.querySelector("#chapter-reader");
+  const reader = activeReaderPane() || document.querySelector("#chapter-reader");
   if (!verse || !reader || !reader.contains(verse) || !currentChapter) {
     return;
   }
@@ -3314,7 +3450,7 @@ async function handleHighlightedVerseTap(event) {
 }
 
 function collectSelectedVerseText(startVerse, endVerse) {
-  const reader = document.querySelector("#chapter-reader");
+  const reader = activeReaderPane() || document.querySelector("#chapter-reader");
   if (!reader) {
     return "";
   }
@@ -3331,9 +3467,8 @@ function collectSelectedVerseText(startVerse, endVerse) {
 }
 
 function scrollToVerse(verseNumber, behavior = "smooth") {
-  const verse = document.querySelector(
-    `#chapter-reader [data-verse="${String(verseNumber)}"]`,
-  );
+  const reader = activeReaderPane() || document.querySelector("#chapter-reader");
+  const verse = reader?.querySelector(`[data-verse="${String(verseNumber)}"]`);
   if (!verse) {
     return;
   }
@@ -3342,6 +3477,7 @@ function scrollToVerse(verseNumber, behavior = "smooth") {
 
 function handleReaderContextMenu(event) {
   suppressHighlightedVerseTapUntil = Date.now() + 800;
+  activateReaderPaneForElement(event.target);
   const verse = event.target.closest("[data-verse]");
   const reader = document.querySelector("#chapter-reader");
   if (!verse || !reader || !reader.contains(verse) || !currentChapter) {
@@ -3374,6 +3510,7 @@ function handleReaderPointerDown(event) {
     cancelReaderLongPress();
     return;
   }
+  activateReaderPaneForElement(event.target);
   const verse = event.target.closest("[data-verse]");
   const reader = document.querySelector("#chapter-reader");
   if (!verse || !reader || !reader.contains(verse) || !currentChapter) {
@@ -3472,8 +3609,17 @@ function selectionContextFromDocument() {
   if (!reader.contains(range.commonAncestorContainer)) {
     return null;
   }
+  const rangeElement = range.commonAncestorContainer.nodeType === Node.ELEMENT_NODE
+    ? range.commonAncestorContainer
+    : range.commonAncestorContainer.parentElement;
+  const pane = rangeElement?.closest?.("[data-reader-pane]");
+  const tab = pane ? readerTabs.find((candidate) => candidate.id === pane.dataset.readerPane) : null;
+  if (tab && tab.id !== activeReaderTabId) {
+    activateReaderPaneForElement(rangeElement);
+  }
+  const selectionReader = activeReaderPane() || reader;
   const selectedVerses = Array.from(
-    reader.querySelectorAll("[data-verse]"),
+    selectionReader.querySelectorAll("[data-verse]"),
   ).filter((verse) => range.intersectsNode(verse));
   if (selectedVerses.length === 0) {
     return null;
@@ -3567,7 +3713,9 @@ function contextFromVerseNumbers(verseNumbers) {
     endVerse: selected[selected.length - 1],
     selectedVerses: selected,
     text: selected
-      .map((verseNumber) => document.querySelector(`#chapter-reader [data-verse="${String(verseNumber)}"] .verse-text`)?.textContent.trim() || "")
+      .map((verseNumber) => (activeReaderPane() || document.querySelector("#chapter-reader"))
+        ?.querySelector(`[data-verse="${String(verseNumber)}"] .verse-text`)
+        ?.textContent.trim() || "")
       .filter(Boolean)
       .join(" "),
     isSelection: selected.length > 1,
@@ -4653,7 +4801,7 @@ function updateSelectionFromDocument() {
 }
 
 function applySelectionContext(context) {
-  const reader = document.querySelector("#chapter-reader");
+  const reader = activeReaderPane() || document.querySelector("#chapter-reader");
   if (!reader || !context) {
     return;
   }
@@ -4694,7 +4842,7 @@ function applySelectionContext(context) {
 }
 
 function clearReaderSelection() {
-  const reader = document.querySelector("#chapter-reader");
+  const reader = activeReaderPane() || document.querySelector("#chapter-reader");
 
   if (reader) {
     reader.querySelectorAll("[data-verse]").forEach((verse) => {
@@ -4776,7 +4924,7 @@ function rangesOverlap(startA, endA, startB, endB) {
 }
 
 function applyVerseStateIndicatorsToReader() {
-  const reader = document.querySelector("#chapter-reader");
+  const reader = activeReaderPane() || document.querySelector("#chapter-reader");
   if (!reader) {
     return;
   }

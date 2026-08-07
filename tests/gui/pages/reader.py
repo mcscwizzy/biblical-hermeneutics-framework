@@ -20,11 +20,11 @@ class BibleReaderPage(BasePage):
         return self
 
     def next_chapter(self):
-        self.click('#chapter-reader [data-next-chapter]')
+        self.click('#chapter-reader .reader-pane.is-active [data-next-chapter]')
         return self
 
     def previous_chapter(self):
-        self.click('#chapter-reader [data-prev-chapter]')
+        self.click('#chapter-reader .reader-pane.is-active [data-prev-chapter]')
         return self
 
     def new_reading_tab(self):
@@ -33,6 +33,12 @@ class BibleReaderPage(BasePage):
 
     def reader_tabs(self):
         return self.driver.find_elements(By.CSS_SELECTOR, '[data-reader-tab-select]')
+
+    def reader_panes(self):
+        return self.driver.find_elements(By.CSS_SELECTOR, '#chapter-reader [data-reader-pane]')
+
+    def active_pane_heading(self):
+        return self.driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active h3')
 
     def select_reader_tab(self, index: int):
         tabs = self.reader_tabs()
@@ -64,7 +70,7 @@ class BibleReaderPage(BasePage):
             verse_number = int(reference_or_index)
         script = """
             const verseNumber = arguments[0];
-            const verse = document.querySelector(`#chapter-reader [data-verse="${verseNumber}"]`);
+            const verse = document.querySelector(`#chapter-reader .reader-pane.is-active [data-verse="${verseNumber}"]`);
             if (!verse) {
               return false;
             }
@@ -78,9 +84,9 @@ class BibleReaderPage(BasePage):
             return true;
         """
         self.wait.until(lambda driver: driver.execute_script(script, verse_number))
-        self.wait.until(lambda driver: driver.find_element(By.CSS_SELECTOR, f'#chapter-reader [data-verse="{verse_number}"]').get_attribute("class").find("selected") != -1)
+        self.wait.until(lambda driver: driver.find_element(By.CSS_SELECTOR, f'#chapter-reader .reader-pane.is-active [data-verse="{verse_number}"]').get_attribute("class").find("selected") != -1)
         return self
 
     def open_verse_actions(self, verse_number: int | str):
-        self.click(f'#chapter-reader [data-verse="{int(verse_number)}"] [data-verse-actions]')
+        self.click(f'#chapter-reader .reader-pane.is-active [data-verse="{int(verse_number)}"] [data-verse-actions]')
         return self
