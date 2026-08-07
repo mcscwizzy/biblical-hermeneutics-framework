@@ -121,6 +121,17 @@ def test_reader_tabs_preserve_selection_and_restore_after_refresh(driver, wait, 
     HomePage(driver, wait, base_url).wait_loaded()
     wait.until(lambda _driver: len(driver.find_elements(By.CSS_SELECTOR, '[data-reader-tab-select]')) == 2)
     wait.until(lambda _driver: "John 2" in page.active_pane_heading().text)
+    wait.until(
+        lambda _driver: all(
+            "reader-pane-loading" not in pane.get_attribute("class")
+            for pane in page.reader_panes()
+        )
+    )
+    headings = [
+        heading.text
+        for heading in driver.find_elements(By.CSS_SELECTOR, "#chapter-reader [data-reader-pane] h3")
+    ]
+    assert headings == ["John 1", "John 2"]
 
 
 def test_clicking_verse_number_selects_entire_verse(driver, wait, base_url):

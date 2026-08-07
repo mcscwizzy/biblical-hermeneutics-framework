@@ -908,6 +908,7 @@ async function initializeReader() {
       persistLocation: false,
     },
   );
+  void preloadRestoredReaderTabs(initialReaderTab?.id);
 
   bookSelect.addEventListener("change", async () => {
     const tab = activeReaderTab();
@@ -2060,6 +2061,47 @@ async function loadReaderChapter(book, chapter, options = {}) {
     if (requestToken === readerLoadToken) {
       reader.removeAttribute("aria-busy");
     }
+  }
+}
+
+function loadReaderTabData(tab) {
+  if (!tab || tab.data) {
+    return Promise.resolve(tab?.data || null);
+  }
+  if (tab.pendingLoad) {
+    return tab.pendingLoad;
+  }
+  const translationId = String(tab.translation || "asv").toLowerCase();
+  const params = new URLSearchParams({translation: translationId});
+  const request = requestJson(
+    `/api/bible/${encodeURIComponent(tab.book)}/${encodeURIComponent(tab.chapter)}?${params.toString()}`,
+    {},
+    "Could not load chapter.",
+  ).then((data) => {
+    tab.data = data;
+    tab.book = data.book;
+    tab.chapter = Number(data.chapter);
+    tab.translation = String(data.translation?.id || translationId).toLowerCase();
+    return data;
+  });
+  tab.pendingLoad = request.finally(() => {
+    tab.pendingLoad = null;
+  });
+  return tab.pendingLoad;
+}
+
+async function preloadRestoredReaderTabs(activeTabId) {
+  const pendingTabs = readerTabs.filter(
+    (tab) => tab.id !== activeTabId && !tab.data,
+  );
+  if (!pendingTabs.length) {
+    return;
+  }
+  await Promise.allSettled(pendingTabs.map((tab) => loadReaderTabData(tab)));
+  // Do not replace a chapter the user started loading after refresh. The
+  // active-tab loader owns the visible pane once the user switches tabs.
+  if (activeReaderTabId === activeTabId) {
+    renderChapter(currentChapter);
   }
 }
 
