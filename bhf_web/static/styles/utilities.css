@@ -731,7 +731,20 @@ html[data-theme="dark"] .app-dock {
   }
 
   body[data-app-section="bible"] .study-panel {
-    display: none;
+    display: block;
+    position: static;
+    width: auto;
+    max-width: none;
+    max-height: none;
+    transform: none;
+    visibility: visible;
+    background: transparent;
+  }
+
+  body[data-app-section="bible"] .workspace-panel {
+    height: min(70dvh, 680px);
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
   }
 
   body[data-app-section="ask"] .reader-column,

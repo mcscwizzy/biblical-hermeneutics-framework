@@ -12,6 +12,25 @@
   overflow: hidden;
 }
 
+.commentary-pane {
+  display: flex;
+  min-height: 0;
+}
+
+.commentary-pane .commentary-panel,
+.commentary-pane .commentary-panel details {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.commentary-pane .commentary-body {
+  flex: 1;
+  min-height: 0;
+  max-height: none;
+}
+
 .commentary-header {
   display: flex;
   align-items: center;

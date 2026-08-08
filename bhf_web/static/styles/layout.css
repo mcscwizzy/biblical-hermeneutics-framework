@@ -164,7 +164,7 @@ a {
 
 .reader-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.62fr) clamp(360px, 27vw, 460px);
+  grid-template-columns: minmax(0, 1fr) clamp(360px, 27vw, 460px);
   gap: 24px;
   align-items: stretch;
 }

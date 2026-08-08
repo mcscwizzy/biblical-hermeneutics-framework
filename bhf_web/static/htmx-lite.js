@@ -1288,6 +1288,9 @@ function appSectionFromWorkspaceTab(tabId) {
   if (!tabId) {
     return null;
   }
+  if (tabId === "commentary") {
+    return "bible";
+  }
   if (tabId === "ask" || tabId === "lexicon" || tabId === "context") {
     return "ask";
   }
@@ -1306,7 +1309,7 @@ function appSectionFromWorkspaceTab(tabId) {
 function appSectionToWorkspaceTab(sectionId) {
   const normalized = normalizeAppSection(sectionId);
   if (normalized === "bible") {
-    return "ask";
+    return "commentary";
   }
   if (normalized === "ask") {
     const currentWorkspaceTab = getCurrentWorkspaceTab();
@@ -1823,11 +1826,11 @@ function closeReaderControlsSheet() {
 
 function workspaceTabsForSection(sectionId) {
   const normalized = normalizeAppSection(sectionId);
+  if (normalized === "bible") {
+    return ["commentary"];
+  }
   if (normalized === "ask") {
     return ["ask", "lexicon", "context"];
-  }
-  if (normalized === "bible") {
-    return ["ask"];
   }
   if (normalized === "notes") {
     return ["notes", "highlights"];

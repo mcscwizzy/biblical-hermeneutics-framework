@@ -29,7 +29,7 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260808b">
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260808c">
   <!-- Legacy cache-key references retained for clients that inspect the shell during upgrades. -->
   <!-- href="/static/style.css?v=20260724c" src="/static/htmx-lite.js?v=20260729b" -->
   {# static_asset('/style.css') }}?v=20260724c #}
@@ -40,7 +40,7 @@
   <script src="{{ static_asset('/htmx-status.js') }}" defer></script>
   <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260808a" defer></script>
   <script src="{{ static_asset('/htmx-search.js') }}?v=20260807b" defer></script>
-  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260808b" defer></script>
+  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260808c" defer></script>
   <script src="{{ static_asset('/commentary.js') }}?v=20260808a" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260806a" defer></script>
   {% if not test_mode %}
@@ -185,25 +185,11 @@
         </article>
       </section>
 
-      <aside class="commentary-panel" data-commentary-panel aria-label="Tyndale Study Notes">
-        <details open data-commentary-details>
-          <summary class="commentary-header">
-            <span>
-              <span class="commentary-kicker">Reader companion</span>
-              <span class="commentary-title">Tyndale Study Notes</span>
-            </span>
-            <span class="commentary-toggle" aria-hidden="true">⌄</span>
-          </summary>
-          <div class="commentary-body" data-commentary-body aria-live="polite">
-            <p class="empty">Loading Tyndale Study Notes...</p>
-          </div>
-        </details>
-      </aside>
-
       <aside class="study-panel" id="study-panel" aria-label="Study panel">
         <div class="workspace-panel" data-workspace-tabs data-default-tab="ask">
           <div class="workspace-toolbar">
             <div class="workspace-tab-bar" data-workspace-tab-bar role="tablist" aria-label="Workspace tabs">
+              <button type="button" class="workspace-tab is-commentary" id="workspace-tab-commentary" role="tab" aria-selected="false" aria-controls="workspace-pane-commentary" data-workspace-tab="commentary" tabindex="-1" data-testid="commentary-tab">Tyndale Companion</button>
               <button type="button" class="workspace-tab is-ask" id="workspace-tab-ask" role="tab" aria-selected="true" aria-controls="workspace-pane-ask" data-workspace-tab="ask" data-testid="ask-tab">Ask</button>
               <button type="button" class="workspace-tab" id="workspace-tab-lexicon" role="tab" aria-selected="false" aria-controls="workspace-pane-lexicon" data-workspace-tab="lexicon" tabindex="-1" data-testid="lexicon-tab">Lexicon</button>
               <button type="button" class="workspace-tab" id="workspace-tab-context" role="tab" aria-selected="false" aria-controls="workspace-pane-context" data-workspace-tab="context" tabindex="-1" data-testid="context-tab">Context</button>
@@ -219,6 +205,23 @@
           </div>
 
           <div class="workspace-pane-group">
+            <section class="workspace-pane commentary-pane" id="workspace-pane-commentary" role="tabpanel" aria-labelledby="workspace-tab-commentary" data-workspace-pane="commentary" hidden>
+              <aside class="commentary-panel" data-commentary-panel aria-label="Tyndale Study Notes">
+                <details open data-commentary-details>
+                  <summary class="commentary-header">
+                    <span>
+                      <span class="commentary-kicker">Reader companion</span>
+                      <span class="commentary-title">Tyndale Study Notes</span>
+                    </span>
+                    <span class="commentary-toggle" aria-hidden="true">⌄</span>
+                  </summary>
+                  <div class="commentary-body" data-commentary-body aria-live="polite">
+                    <p class="empty">Loading Tyndale Study Notes...</p>
+                  </div>
+                </details>
+              </aside>
+            </section>
+
             <section class="workspace-pane ask-pane" id="workspace-pane-ask" role="tabpanel" aria-labelledby="workspace-tab-ask" data-workspace-pane="ask">
               <form
                 class="ask-form"
