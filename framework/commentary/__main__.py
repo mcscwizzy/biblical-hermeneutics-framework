@@ -7,6 +7,7 @@ import json
 
 from .database_schema import DEFAULT_COMMENTARY_DATABASE_PATH
 from .importer import import_tyndale_archive
+from .service import CommentaryService
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -31,6 +32,12 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Reject unmapped references, unsupported records, parser warnings, and empty archives",
     )
+    checker = commands.add_parser("check-tyndale", help="Validate an installed commentary database")
+    checker.add_argument(
+        "--database",
+        default=str(DEFAULT_COMMENTARY_DATABASE_PATH),
+        help="SQLite database path to validate",
+    )
     return parser
 
 
@@ -49,6 +56,11 @@ def main(argv: list[str] | None = None) -> int:
             indent=2,
             sort_keys=True,
         ))
+        return 0
+    if args.command == "check-tyndale":
+        report = CommentaryService(args.database).diagnostics()
+        print(json.dumps(report, indent=2, sort_keys=True))
+        return 0 if report.get("healthy") else 1
     return 0
 
 

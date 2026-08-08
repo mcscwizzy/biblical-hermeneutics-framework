@@ -8,7 +8,7 @@ from contextlib import contextmanager
 from pathlib import Path
 from typing import Any, Iterator
 
-from .database_schema import DEFAULT_COMMENTARY_DATABASE_PATH
+from .database_schema import DEFAULT_COMMENTARY_DATABASE_PATH, SCHEMA_VERSION
 from .models import CommentaryEntry, CommentarySource, ScriptureAnchor
 
 
@@ -55,6 +55,68 @@ class CommentaryRepository:
                 (key,),
             ).fetchone()
         return str(row[0]) if row else None
+
+    def validate(self) -> dict[str, Any]:
+        """Return a read-only health report for an installed commentary database."""
+
+        if not self.available:
+            return {"valid": False, "reason": "commentary_not_installed"}
+
+        required_tables = {
+            "commentary_metadata",
+            "commentary_sources",
+            "commentary_entries",
+            "commentary_anchors",
+        }
+        try:
+            with self.connection() as connection:
+                integrity_check = str(connection.execute("PRAGMA integrity_check").fetchone()[0])
+                schema_version = int(connection.execute("PRAGMA user_version").fetchone()[0])
+                tables = {
+                    row[0]
+                    for row in connection.execute(
+                        "SELECT name FROM sqlite_master WHERE type = 'table'"
+                    ).fetchall()
+                }
+                counts = {
+                    "sources": int(connection.execute("SELECT COUNT(*) FROM commentary_sources").fetchone()[0]),
+                    "entries": int(connection.execute("SELECT COUNT(*) FROM commentary_entries").fetchone()[0]),
+                    "anchors": int(connection.execute("SELECT COUNT(*) FROM commentary_anchors").fetchone()[0]),
+                    "orphaned_anchors": int(connection.execute(
+                        """SELECT COUNT(*)
+                           FROM commentary_anchors a
+                           LEFT JOIN commentary_entries e ON e.id = a.entry_id
+                           WHERE e.id IS NULL"""
+                    ).fetchone()[0]),
+                }
+        except (OSError, sqlite3.DatabaseError, TypeError, ValueError) as exc:
+            return {"valid": False, "reason": "commentary_database_error", "detail": str(exc)}
+
+        missing_tables = sorted(required_tables - tables)
+        problems: list[str] = []
+        if integrity_check.lower() != "ok":
+            problems.append(f"integrity_check: {integrity_check}")
+        if schema_version != SCHEMA_VERSION:
+            problems.append(
+                f"unsupported schema version {schema_version}; expected {SCHEMA_VERSION}"
+            )
+        if missing_tables:
+            problems.append("missing tables: " + ", ".join(missing_tables))
+        if counts["sources"] == 0:
+            problems.append("no commentary sources installed")
+        if counts["entries"] == 0:
+            problems.append("no commentary entries installed")
+        if counts["orphaned_anchors"]:
+            problems.append(f"orphaned anchors: {counts['orphaned_anchors']}")
+        return {
+            "valid": not problems,
+            "schema_version": schema_version,
+            "integrity_check": integrity_check,
+            "required_tables_present": not missing_tables,
+            "missing_tables": missing_tables,
+            "counts": counts,
+            "problems": problems,
+        }
 
     def lookup_chapter(self, book: str, chapter: int) -> list[CommentaryEntry]:
         sql = """

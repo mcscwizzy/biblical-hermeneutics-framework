@@ -38,6 +38,19 @@ Review `recognized_files`, `entry_count`, `anchor_count`, `recognized_books`, `u
 
 The default runtime database is `.bhf/commentary.sqlite`. It is generated local data and is ignored by Git. To rebuild it, run the same command again; the existing commentary tables are replaced from the supplied source archive. To remove the installed resource, delete `.bhf/commentary.sqlite`.
 
+After importing, run the read-only installation check:
+
+```sh
+.venv/bin/python -m framework.commentary check-tyndale \
+  --database .bhf/commentary.sqlite
+```
+
+The command exits successfully only when SQLite integrity, schema compatibility,
+required tables, and source/entry/anchor relationships are healthy. It does not
+modify the database. The same validation result is available from
+`GET /api/commentary/diagnostics` under `validation`, alongside the import
+report and source provenance.
+
 ## Reader behavior
 
 The Bible reader has a labeled, collapsible Tyndale Study Notes companion pane. It automatically follows book/chapter changes, previous/next chapter navigation, translation-reader navigation, and restored reader tabs. The current chapter is fetched from:

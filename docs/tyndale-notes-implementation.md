@@ -1,6 +1,6 @@
 # Tyndale Open Study Notes Implementation
 
-Status: Phase 8 — official archive mapping and local installation complete
+Status: Phase 9 — production-readiness checks complete
 
 This document is the working implementation and status log for the phased Tyndale Open Study Notes integration. It is updated as each phase is completed.
 
@@ -102,6 +102,24 @@ Validated the official `tyndale_open-studynotes.zip` archive published by Tyndal
 
 The archive remains local generated data and is not bundled into the repository.
 
+## Phase 9 — production-readiness checks (complete)
+
+Added a non-mutating installation health check for deployment and upgrade
+workflows:
+
+- `check-tyndale` validates SQLite integrity, schema compatibility, required
+  tables, installed source/entry/anchor counts, and orphaned anchors.
+- `GET /api/commentary/diagnostics` now reports `healthy` and a structured
+  `validation` result in addition to source provenance and the import report.
+- An empty, corrupt, incompatible, or structurally incomplete database is
+  reported as unhealthy without attempting a repair or write.
+- The check is read-only and does not change the installed database or invoke
+  network, scraping, or AI behavior.
+
+The recommended operational sequence is now:
+
+`dry-run --strict → import --strict → check-tyndale → inspect diagnostics`
+
 ## Decisions and non-goals
 
 - Runtime database path: `.bhf/commentary.sqlite`, configurable for tests and deployments.
@@ -119,6 +137,7 @@ The archive remains local generated data and is not bundled into the repository.
   and runtime diagnostics coverage.
 - Added archive dry-run and strict qualification modes with focused coverage.
 - Added source-specific XML/OSIS mapping for the official archive and installed the qualified local corpus.
+- Added read-only installation validation and the `check-tyndale` operator CLI.
 
 ## Validation log
 
@@ -132,7 +151,6 @@ The archive remains local generated data and is not bundled into the repository.
 - Result: passed.
 - Combined relevant command: `.venv/bin/pytest -q tests/test_commentary.py tests/test_web_app.py tests/test_notes.py tests/test_study_actions.py`
 - Result: 144 passed, 1 skipped, 2 unrelated baseline failures. The failures were `test_ask_result_shows_shadow_prompt_preview_when_ckl_runs_in_shadow_mode` (existing CKL wording assertion) and `test_v1_database_migrates_to_saved_studies` (existing migration list expects 14 while the repository currently emits 15). No commentary test failed.
-- Source archive mapping limitation: no official Tyndale archive was present in this repository or attachment, so the importer was implemented to inspect the supplied archive at import time and report unmapped records rather than assuming a third-party conversion. The first archive should be reviewed against its actual record structure before enabling a production import workflow.
 - Phase 5 focused command: `.venv/bin/pytest -q tests/test_tyndale_evidence.py`
 - Result: 3 passed.
 - Phase 6 focused command: `.venv/bin/pytest -q tests/test_commentary.py tests/test_tyndale_evidence.py`
@@ -150,3 +168,7 @@ The archive remains local generated data and is not bundled into the repository.
 - Phase 8 official archive qualification: `.venv/bin/python -m framework.commentary import-tyndale --source /path/to/tyndale_open-studynotes.zip --dry-run --strict`
 - Result: 17,478 records parsed, 17,478 anchors, all 69 supplied books recognized, no unmapped records, no unrecognized records, and no warnings.
 - Phase 8 local installation: strict import completed to `.bhf/commentary.sqlite`; runtime diagnostics reported the database available and Genesis chapter 1 returned 24 entries.
+- Phase 9 focused command: `.venv/bin/pytest -q tests/test_commentary.py`
+- Result: 15 passed, including valid, empty, and CLI health-check coverage.
+- Phase 9 check command: `.venv/bin/python -m framework.commentary check-tyndale --database .bhf/commentary.sqlite`
+- Result: reports `healthy: true` for the qualified local installation.

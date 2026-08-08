@@ -121,6 +121,50 @@ def test_missing_database_is_normal_unavailable_state(tmp_path):
     assert service.diagnostics() == {"available": False, "reason": "commentary_not_installed"}
 
 
+def test_diagnostics_validates_installed_database(tmp_path):
+    database = tmp_path / "commentary.sqlite"
+    import_tyndale_archive(make_archive(tmp_path), database)
+
+    diagnostics = CommentaryService(database).diagnostics()
+
+    assert diagnostics["available"] is True
+    assert diagnostics["healthy"] is True
+    assert diagnostics["validation"]["integrity_check"] == "ok"
+    assert diagnostics["validation"]["counts"] == {
+        "sources": 1,
+        "entries": 4,
+        "anchors": 3,
+        "orphaned_anchors": 0,
+    }
+
+
+def test_diagnostics_rejects_empty_or_incompatible_database(tmp_path):
+    database = initialize_database(tmp_path / "empty.sqlite")
+
+    diagnostics = CommentaryService(database).diagnostics()
+
+    assert diagnostics["available"] is True
+    assert diagnostics["healthy"] is False
+    assert "no commentary sources installed" in diagnostics["validation"]["problems"]
+
+
+def test_check_cli_returns_nonzero_for_unhealthy_database(tmp_path, capsys):
+    database = initialize_database(tmp_path / "empty.sqlite")
+
+    assert commentary_main(["check-tyndale", "--database", str(database)]) == 1
+    report = json.loads(capsys.readouterr().out)
+    assert report["healthy"] is False
+
+
+def test_check_cli_returns_zero_for_valid_database(tmp_path, capsys):
+    database = tmp_path / "commentary.sqlite"
+    import_tyndale_archive(make_archive(tmp_path), database)
+
+    assert commentary_main(["check-tyndale", "--database", str(database)]) == 0
+    report = json.loads(capsys.readouterr().out)
+    assert report["healthy"] is True
+
+
 def test_import_rebuild_is_deterministic_for_content(tmp_path):
     archive = make_archive(tmp_path)
     first = tmp_path / "first.sqlite"

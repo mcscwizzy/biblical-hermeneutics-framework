@@ -38,10 +38,13 @@ class CommentaryService:
         try:
             sources = self.repository.list_sources()
             raw_import_diagnostics = self.repository.get_metadata("import_diagnostics")
+            validation = self.repository.validate()
         except Exception as exc:  # noqa: BLE001 - diagnostics must remain safe
             return {"available": False, "reason": "commentary_database_error", "detail": str(exc)}
         diagnostics: dict[str, Any] = {
             "available": True,
+            "healthy": validation["valid"],
+            "validation": validation,
             "sources": [source.to_dict() for source in sources],
         }
         if raw_import_diagnostics:
