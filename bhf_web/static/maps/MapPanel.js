@@ -879,6 +879,10 @@ function focusMapSelection(result) {
 }
 
 function activateAskWorkspace() {
+  if (window.BHFWorkspace && typeof window.BHFWorkspace.focusAskPanel === "function") {
+    window.BHFWorkspace.focusAskPanel();
+    return;
+  }
   const askTab = document.querySelector('[data-workspace-tab="ask"]');
   if (askTab && askTab.getAttribute("aria-selected") !== "true") {
     askTab.click();

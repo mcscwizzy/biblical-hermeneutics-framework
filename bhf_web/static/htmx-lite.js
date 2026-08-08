@@ -1070,9 +1070,13 @@ function initializeWorkspaceTabs() {
   const tabs = Array.from(workspace.querySelectorAll("[data-workspace-tab]"));
   const defaultTab = workspace.dataset.defaultTab || "ask";
   for (const tab of tabs) {
-    tab.addEventListener("click", () =>
-      activateWorkspaceTab(tab.dataset.workspaceTab),
-    );
+    tab.addEventListener("click", () => {
+      if (tab.dataset.workspaceTab === "ask") {
+        focusAskPanel();
+        return;
+      }
+      activateWorkspaceTab(tab.dataset.workspaceTab);
+    });
     tab.addEventListener("keydown", (event) =>
       handleWorkspaceTabKeydown(
         event,
@@ -1100,7 +1104,12 @@ function initializeAppNavigation() {
 
   for (const button of buttons) {
     button.addEventListener("click", () => {
-      activateAppSection(button.dataset.appSection || "bible");
+      const section = button.dataset.appSection || "bible";
+      if (section === "ask") {
+        focusAskPanel();
+        return;
+      }
+      activateAppSection(section);
     });
   }
 
@@ -1126,6 +1135,7 @@ function initializeWorkspaceBridge() {
   }
   window.BHFWorkspace = {
     requestMapAIFallback,
+    focusAskPanel,
   };
   window.BHFReader = {
     navigateToPassage,
@@ -1914,6 +1924,34 @@ function activateWorkspaceTab(tabId) {
       detail: {tabId},
     }),
   );
+}
+
+function focusAskPanel() {
+  if (window.BHFMaps && typeof window.BHFMaps.closeMapModal === "function") {
+    window.BHFMaps.closeMapModal();
+  }
+
+  activateAppSection("ask");
+  activateWorkspaceTab("ask");
+
+  const focusQuestion = () => {
+    const question = document.querySelector('.ask-form [name="question"]');
+    if (!question || question.disabled || question.hidden) {
+      return;
+    }
+    question.focus({preventScroll: true});
+    if (isCompactViewport()) {
+      question.scrollIntoView({block: "nearest", behavior: "smooth"});
+    }
+  };
+
+  // Let the drawer/modal transition settle before focusing so it cannot steal
+  // focus back to the triggering map or dock control.
+  const schedule =
+    typeof window.requestAnimationFrame === "function"
+      ? window.requestAnimationFrame.bind(window)
+      : (callback) => window.setTimeout(callback, 0);
+  schedule(() => schedule(focusQuestion));
 }
 
 function setWorkspaceDrawerOpen(open) {
@@ -3929,7 +3967,7 @@ async function dispatchStudyAction(studyAction) {
     BHF_STUDY_ACTION_ALIASES[studyAction.type] || studyAction.type;
   if (studyAction.type === "ask_bhf") {
     applyStudyActionContext(studyAction);
-    activateWorkspaceTab("ask");
+    focusAskPanel();
     setFormValue("ask_mode", "");
     setFormValue("study_action", "");
     setFormValue("deterministic_fact_packet", "");
@@ -3940,7 +3978,7 @@ async function dispatchStudyAction(studyAction) {
     await requestDeterministicStudyAction(studyAction);
   } else if (BHF_STUDY_ACTIONS.has(studyAction.type)) {
     applyStudyActionContext(studyAction);
-    activateWorkspaceTab("ask");
+    focusAskPanel();
     setFormValue("ask_mode", studyAction.type);
     setFormValue("study_action", studyAction.type);
     setMapContextValue(buildReaderMapContext(studyAction));
@@ -4525,10 +4563,10 @@ function wireDeterministicStudyControls(answerPanel, result, studyAction) {
     .querySelector("[data-deterministic-ask]")
     ?.addEventListener("click", () => {
       setFormValue("deterministic_fact_packet", "");
+      focusAskPanel();
       const question = document.querySelector('.ask-form [name="question"]');
       if (question) {
         question.value = "";
-        question.focus();
       }
     });
   answerPanel

@@ -513,7 +513,7 @@ function initializeCanonicalBrowser() {
   const askButton = document.querySelector("[data-canonical-browser-ask]");
   if (askButton && !askButton.dataset.bound) {
     askButton.dataset.bound = "true";
-    askButton.addEventListener("click", () => activateWorkspaceTab("ask"));
+    askButton.addEventListener("click", () => focusAskPanel());
   }
 
   const detailAddNoteButton = document.querySelector("[data-canonical-detail-add-note]");
