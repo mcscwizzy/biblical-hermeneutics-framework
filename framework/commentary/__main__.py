@@ -21,6 +21,16 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Abort without replacing the output when Scripture references cannot be mapped",
     )
+    importer.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Inspect and validate the archive without creating or replacing the output database",
+    )
+    importer.add_argument(
+        "--strict",
+        action="store_true",
+        help="Reject unmapped references, unsupported records, parser warnings, and empty archives",
+    )
     return parser
 
 
@@ -33,6 +43,8 @@ def main(argv: list[str] | None = None) -> int:
                 args.output,
                 source_url=args.source_url,
                 fail_on_unmapped=args.fail_on_unmapped,
+                dry_run=args.dry_run,
+                strict=args.strict,
             ),
             indent=2,
             sort_keys=True,

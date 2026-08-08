@@ -24,6 +24,16 @@ The importer inspects the supplied archive, safely rejects ZIP path traversal an
 
 For a production import, add `--fail-on-unmapped`. The importer then leaves the existing database untouched if a supplied Scripture reference cannot be mapped. Rebuilds are atomic, so an interrupted or failed import does not leave a partially written runtime database.
 
+Before installing an unfamiliar archive, qualify it with a non-mutating dry run:
+
+```sh
+.venv/bin/python -m framework.commentary import-tyndale \
+  --source /path/to/tyndale_open_studynotes.zip \
+  --dry-run
+```
+
+Review `recognized_files`, `entry_count`, `anchor_count`, `recognized_books`, `unmapped_records`, `unrecognized_records`, and `warnings` in the JSON report. Use `--strict` for the final import after review; it rejects unmapped references, unsupported records, parser warnings, and empty archives before the installed database can be replaced.
+
 The default runtime database is `.bhf/commentary.sqlite`. It is generated local data and is ignored by Git. To rebuild it, run the same command again; the existing commentary tables are replaced from the supplied source archive. To remove the installed resource, delete `.bhf/commentary.sqlite`.
 
 ## Reader behavior

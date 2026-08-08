@@ -49,6 +49,8 @@ def import_tyndale_archive(
     *,
     source_url: str | None = None,
     fail_on_unmapped: bool = False,
+    dry_run: bool = False,
+    strict: bool = False,
 ) -> dict[str, Any]:
     source = Path(source_path)
     if not source.is_file():
@@ -95,7 +97,29 @@ def import_tyndale_archive(
             + ", ".join(str(index) for index in diagnostics["unmapped_records"])
         )
 
+    if strict:
+        strict_problems = []
+        if diagnostics["unmapped_records"]:
+            strict_problems.append(
+                "unmapped Scripture records: "
+                + ", ".join(str(index) for index in diagnostics["unmapped_records"])
+            )
+        if diagnostics["unrecognized_records"]:
+            strict_problems.append(
+                "unrecognized records: "
+                + ", ".join(str(index) for index in diagnostics["unrecognized_records"])
+            )
+        if diagnostics["warnings"]:
+            strict_problems.append("warnings: " + " | ".join(diagnostics["warnings"]))
+        if not mapped:
+            strict_problems.append("no commentary records were recognized")
+        if strict_problems:
+            raise CommentaryImportError("strict archive validation failed (" + "; ".join(strict_problems) + ")")
+
     database_path = Path(output_path)
+    if dry_run:
+        return {"output": str(database_path), "dry_run": True, **diagnostics}
+
     database_path.parent.mkdir(parents=True, exist_ok=True)
     temporary_fd, temporary_name = tempfile.mkstemp(
         prefix=f".{database_path.name}.", suffix=".tmp", dir=database_path.parent
@@ -147,7 +171,7 @@ def import_tyndale_archive(
     except Exception:
         temporary_path.unlink(missing_ok=True)
         raise
-    return {"output": str(database_path), **diagnostics}
+    return {"output": str(database_path), "dry_run": False, **diagnostics}
 
 
 def _read_archive(source: Path) -> tuple[list[Any], dict[str, Any]]:

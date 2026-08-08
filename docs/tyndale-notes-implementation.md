@@ -1,6 +1,6 @@
 # Tyndale Open Study Notes Implementation
 
-Status: Phase 6 — production import hardening complete
+Status: Phase 7 — archive qualification workflow complete
 
 This document is the working implementation and status log for the phased Tyndale Open Study Notes integration. It is updated as each phase is completed.
 
@@ -79,6 +79,17 @@ Hardened the local installation workflow for real archive review:
   import report for deployment checks without granting runtime write access.
 - Importer provenance is versioned as `tyndale-2`.
 
+## Phase 7 — archive qualification workflow (complete)
+
+Added an operator-safe qualification path for the first real official archive:
+
+- `--dry-run` parses and reports an archive without creating or replacing a SQLite database.
+- `--strict` rejects unmapped Scripture references, unrecognized records, parser warnings, and empty archives before installation.
+- Strict validation preserves the existing installed database because all validation occurs before the atomic rebuild begins.
+- The user guide now documents the review fields and the recommended dry-run → strict-import sequence.
+
+The actual official archive remains an external validation dependency. Once it is supplied, its report can be reviewed and any source-specific field mapping can be added based on observed structure rather than assumptions.
+
 ## Decisions and non-goals
 
 - Runtime database path: `.bhf/commentary.sqlite`, configurable for tests and deployments.
@@ -94,6 +105,7 @@ Hardened the local installation workflow for real archive review:
 - Added focused provider and end-to-end prompt routing tests in `tests/test_tyndale_evidence.py`.
 - Added atomic import replacement, unmapped-reference reporting, CLI rejection,
   and runtime diagnostics coverage.
+- Added archive dry-run and strict qualification modes with focused coverage.
 
 ## Validation log
 
@@ -116,3 +128,9 @@ Hardened the local installation workflow for real archive review:
 - Result: passed; the runner is now lazy-loaded so standalone commentary imports do not create a circular import.
 - Runner regression check: `.venv/bin/pytest -q tests/test_runner.py --maxfail=1`
 - Result: blocked by the existing local CKL database schema mismatch (database version 1, runtime requires version 2); no commentary assertion was reached.
+- Phase 7 focused command: `.venv/bin/pytest -q tests/test_commentary.py`
+- Result: 10 passed.
+- Phase 7 combined command: `.venv/bin/pytest -q tests/test_commentary.py tests/test_tyndale_evidence.py`
+- Result: 13 passed.
+- Reader regression rerun: `.venv/bin/pytest -q tests/test_web_app.py -k 'not shadow_prompt_preview' --maxfail=1`
+- Result: 36 passed before the existing unrelated `test_bible_search_fallback_job_returns_structured_candidates` timeout; no commentary assertion failed.

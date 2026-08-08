@@ -9,6 +9,7 @@ import pytest
 from urllib.parse import urlsplit
 
 from framework.commentary.database_schema import SCHEMA_VERSION, initialize_database
+from framework.commentary.__main__ import main as commentary_main
 from framework.commentary.importer import CommentaryImportError, import_tyndale_archive
 from framework.commentary.service import CommentaryService
 
@@ -119,6 +120,46 @@ def test_import_reports_unmapped_references_and_preserves_previous_database(tmp_
     result = import_tyndale_archive(bad_archive, tmp_path / "bad.sqlite")
     assert result["unmapped_records"] == [1]
     assert result["warnings"]
+
+
+def test_dry_run_reports_archive_without_creating_output(tmp_path):
+    output = tmp_path / "not-created.sqlite"
+    result = import_tyndale_archive(make_archive(tmp_path), output, dry_run=True)
+
+    assert result["dry_run"] is True
+    assert result["entry_count"] == 4
+    assert result["anchor_count"] == 3
+    assert not output.exists()
+
+
+def test_cli_dry_run_emits_json_without_installing(tmp_path, capsys):
+    output = tmp_path / "not-created.sqlite"
+    assert commentary_main([
+        "import-tyndale",
+        "--source", str(make_archive(tmp_path)),
+        "--output", str(output),
+        "--dry-run",
+    ]) == 0
+
+    report = json.loads(capsys.readouterr().out)
+    assert report["dry_run"] is True
+    assert report["recognized_books"] == ["Ruth"]
+    assert not output.exists()
+
+
+def test_strict_import_rejects_unrecognized_records_before_replacement(tmp_path):
+    database = tmp_path / "commentary.sqlite"
+    import_tyndale_archive(make_archive(tmp_path), database)
+    original = database.read_bytes()
+
+    archive = tmp_path / "unsupported.zip"
+    with zipfile.ZipFile(archive, "w") as output:
+        output.writestr("notes.json", json.dumps({"entries": [{"body": "Valid note."}]}))
+        output.writestr("broken.json", b"not json")
+
+    with pytest.raises(CommentaryImportError, match="strict archive validation failed"):
+        import_tyndale_archive(archive, database, strict=True)
+    assert database.read_bytes() == original
 
 
 def test_commentary_api_success_and_unavailable_response(tmp_path):
