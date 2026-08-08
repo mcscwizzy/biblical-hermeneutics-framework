@@ -22,6 +22,8 @@ From the repository root, run:
 
 The importer inspects the supplied archive, safely rejects ZIP path traversal and symlinks, supports structured JSON/XML/CSV/TSV records, normalizes Bible book names using BHF's Bible logic, preserves source text, and reports entry/anchor counts, recognized books, warnings, and records that could not be mapped. It never calls the network or an LLM.
 
+The official Tyndale Open Study Notes download uses XML files (`BookIntros.xml`, `BookIntroSummaries.xml`, `Profiles.xml`, `StudyNotes.xml`, and `ThemeNotes.xml`) with OSIS-style references such as `Gen.1.1-2.3`; this archive format is supported directly. The publisher's download page is <https://tyndaleopenresources.com/>.
+
 For a production import, add `--fail-on-unmapped`. The importer then leaves the existing database untouched if a supplied Scripture reference cannot be mapped. Rebuilds are atomic, so an interrupted or failed import does not leave a partially written runtime database.
 
 Before installing an unfamiliar archive, qualify it with a non-mutating dry run:

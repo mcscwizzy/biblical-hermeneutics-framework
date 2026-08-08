@@ -37,6 +37,24 @@ REFERENCE_RE = re.compile(
     r"(?P<book>(?:[1-3]\s+)?[A-Za-z][A-Za-z' -]+?)\s+"
     r"(?P<chapter>\d{1,3})(?::(?P<verse>\d{1,3})(?:[-–](?P<end_verse>\d{1,3}))?)?"
 )
+OSIS_REFERENCE_RE = re.compile(
+    r"^(?P<book>[^.\s]+)\.(?P<chapter>\d+)"
+    r"(?:\.(?P<verse>\d+))?"
+    r"(?:-(?P<end>\d+(?:\.\d+)?))?$"
+)
+TYNDALE_BOOK_ALIASES = {
+    "1thes": "1 Thessalonians",
+    "2thes": "2 Thessalonians",
+    "hagg": "Haggai",
+    "jon": "Jonah",
+}
+TYNDALE_KIND_MAP = {
+    "bookintro": "book_introduction",
+    "bookintrosummary": "book_introduction_summary",
+    "profile": "profile",
+    "studynote": "study_note",
+    "themenote": "theme_article",
+}
 
 
 class CommentaryImportError(ValueError):
@@ -258,6 +276,29 @@ def _parse_xml(content: bytes, name: str, diagnostics: dict[str, Any]) -> list[A
     except (UnicodeDecodeError, ET.ParseError) as exc:
         diagnostics["warnings"].append(f"Could not parse {name}: {exc}")
         return []
+    items = [element for element in root if _xml_local_name(element.tag) == "item"]
+    if items:
+        records = []
+        for item in items:
+            item_name = _string(item.attrib.get("name"))
+            typename = re.sub(r"[^a-z0-9]+", "", item.attrib.get("typename", "").lower())
+            body = next(
+                (child for child in item if _xml_local_name(child.tag) == "body"),
+                None,
+            )
+            records.append(
+                {
+                    "id": item_name or None,
+                    "kind": TYNDALE_KIND_MAP.get(typename, item.attrib.get("typename")),
+                    "title": _xml_child_text(item, "title"),
+                    "reference": _xml_child_text(item, "refs"),
+                    "body": "".join(body.itertext()) if body is not None else "",
+                    "source_locator": f"{name}#{item_name}" if item_name else name,
+                    "product": item.attrib.get("product"),
+                }
+            )
+        return records
+
     records = []
     for element in root.iter():
         children = list(element)
@@ -265,6 +306,17 @@ def _parse_xml(content: bytes, name: str, diagnostics: dict[str, Any]) -> list[A
         if text and (not children or any(key in element.attrib for key in ("book", "reference", "ref", "id"))):
             records.append({**element.attrib, "body": text, "kind": element.tag})
     return records
+
+
+def _xml_local_name(tag: str) -> str:
+    return str(tag).rsplit("}", 1)[-1]
+
+
+def _xml_child_text(element: Any, name: str) -> str | None:
+    for child in element:
+        if _xml_local_name(child.tag) == name:
+            return "".join(child.itertext()).strip() or None
+    return None
 
 
 def _parse_record(record: Any, index: int) -> dict[str, Any] | None:
@@ -308,14 +360,17 @@ def _parse_anchor(record: dict[str, Any]) -> dict[str, Any] | None:
     verse = _first(record, "start_verse", "verse", "verse_start")
     end_chapter = _first(record, "end_chapter", "chapter_end")
     end_verse = _first(record, "end_verse", "verse_end")
-    if reference and (not book or not chapter):
-        match = REFERENCE_RE.search(str(reference).replace(".", " "))
-        if match:
-            book, chapter, verse, end_verse = match.group("book"), match.group("chapter"), match.group("verse"), match.group("end_verse")
+    parsed_reference = _parse_reference(reference) if reference else None
+    if parsed_reference:
+        book = book or parsed_reference["book"]
+        chapter = chapter or parsed_reference["start_chapter"]
+        verse = verse or parsed_reference["start_verse"]
+        end_chapter = end_chapter or parsed_reference["end_chapter"]
+        end_verse = end_verse or parsed_reference["end_verse"]
     if not book:
         return None
     try:
-        canonical_book = normalize_book_name(str(book).strip())
+        canonical_book = _normalize_source_book(str(book).strip())
     except BibleError:
         return None
     start_chapter = _integer(chapter, None)
@@ -337,14 +392,65 @@ def _parse_anchor(record: dict[str, Any]) -> dict[str, Any] | None:
     }
 
 
+def _parse_reference(value: Any) -> dict[str, Any] | None:
+    text = str(value or "").strip().replace("–", "-").replace("—", "-")
+    osis_match = OSIS_REFERENCE_RE.fullmatch(text)
+    if osis_match:
+        start_chapter = int(osis_match.group("chapter"))
+        start_verse = int(osis_match.group("verse")) if osis_match.group("verse") else None
+        end_chapter = start_chapter
+        end_verse = start_verse
+        end = osis_match.group("end")
+        if end:
+            if "." in end:
+                end_chapter_text, end_verse_text = end.split(".", 1)
+                end_chapter, end_verse = int(end_chapter_text), int(end_verse_text)
+            elif start_verse is None:
+                end_chapter, end_verse = int(end), None
+            else:
+                end_verse = int(end)
+        return {
+            "book": osis_match.group("book"),
+            "start_chapter": start_chapter,
+            "start_verse": start_verse,
+            "end_chapter": end_chapter,
+            "end_verse": end_verse,
+        }
+
+    match = REFERENCE_RE.search(text)
+    if not match:
+        return None
+    start_chapter = int(match.group("chapter"))
+    start_verse = int(match.group("verse")) if match.group("verse") else None
+    end_verse = int(match.group("end_verse")) if match.group("end_verse") else start_verse
+    return {
+        "book": match.group("book"),
+        "start_chapter": start_chapter,
+        "start_verse": start_verse,
+        "end_chapter": start_chapter,
+        "end_verse": end_verse,
+    }
+
+
+def _normalize_source_book(value: str) -> str:
+    source_key = re.sub(r"\s+", "", value.lower())
+    if source_key in TYNDALE_BOOK_ALIASES:
+        return TYNDALE_BOOK_ALIASES[source_key]
+    return normalize_book_name(value)
+
+
 def _normalize_kind(value: Any, anchor: dict[str, Any] | None, record: dict[str, Any]) -> str:
     normalized = re.sub(r"[^a-z0-9]+", "_", str(value or "").strip().lower()).strip("_")
     if normalized in {"verse", "verse_note", "note", "commentary"}:
         return "verse_note" if anchor and anchor.get("start_verse") else "chapter_note"
     if normalized in {"introduction", "book_intro", "book_introduction"}:
         return "book_introduction"
-    if normalized in {"profile", "theme", "theme_article", "article", "chapter_note", "range_note", "verse_note"}:
+    if normalized in {"book_introduction_summary", "profile", "theme", "theme_article", "article", "chapter_note", "range_note", "verse_note"}:
         return normalized
+    if normalized == "study_note":
+        if anchor and anchor.get("start_verse"):
+            return "range_note" if anchor.get("end_verse") != anchor.get("start_verse") else "verse_note"
+        return "chapter_note"
     if anchor and anchor.get("start_verse"):
         return "range_note" if anchor.get("end_verse") != anchor.get("start_verse") else "verse_note"
     if anchor:

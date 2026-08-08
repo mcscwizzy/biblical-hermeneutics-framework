@@ -33,6 +33,33 @@ def make_archive(path: Path) -> Path:
     return archive
 
 
+def make_official_xml_archive(path: Path) -> Path:
+    archive = path / "official-tyndale.zip"
+    with zipfile.ZipFile(archive, "w") as output:
+        output.writestr(
+            "Tyndale Open Study Notes/StudyNotes.xml",
+            """<?xml version="1.0" encoding="UTF-8"?>
+<items release="1.25">
+  <item name="Gen.1.1" typename="StudyNote" product="TyndaleOpenStudyNotes">
+    <refs>Gen.1.1</refs>
+    <body><p class="sn-text"><span class="sn-ref">1:1</span> God created the heavens.</p></body>
+  </item>
+  <item name="Gen.1.1-2.3" typename="ThemeNote" product="TyndaleOpenStudyNotes">
+    <title>The Creation</title>
+    <refs>Gen.1.1-2.3</refs>
+    <body><p class="theme-body">Creation is foundational.</p></body>
+  </item>
+  <item name="FirstThessaloniansIntro" typename="BookIntro" product="TyndaleOpenStudyNotes">
+    <title>1 Thessalonians</title>
+    <refs>1Thes.1.1-5.28</refs>
+    <body><p class="intro-body">An introduction to the letter.</p></body>
+  </item>
+</items>
+""".encode("utf-8"),
+        )
+    return archive
+
+
 def test_schema_creation_and_versioning(tmp_path):
     database = initialize_database(tmp_path / "commentary.sqlite")
     with sqlite3.connect(database) as connection:
@@ -57,6 +84,28 @@ def test_import_is_safe_attributed_and_normalizes_books(tmp_path):
         "ruth-3-4", "ruth-3-4-6", "ruth-intro"
     ]
     assert {entry.anchor.book for entry in service.lookup_passage("Ruth", 3, 4, 4)} == {"Ruth"}
+
+
+def test_import_maps_official_tyndale_xml_records_and_osis_references(tmp_path):
+    result = import_tyndale_archive(make_official_xml_archive(tmp_path), tmp_path / "commentary.sqlite", strict=True)
+
+    assert result["records_seen"] == 3
+    assert result["parsed_records"] == 3
+    assert result["recognized_files"] == ["Tyndale Open Study Notes/StudyNotes.xml"]
+    assert result["unmapped_records"] == []
+    assert result["unrecognized_records"] == []
+    assert result["entry_counts_by_kind"] == {
+        "book_introduction": 1,
+        "theme_article": 1,
+        "verse_note": 1,
+    }
+
+    service = CommentaryService(tmp_path / "commentary.sqlite")
+    genesis = service.lookup_passage("Genesis", 1, 1, 1)
+    assert genesis[0].external_id == "Gen.1.1"
+    assert genesis[0].body == "1:1 God created the heavens."
+    assert any(entry.kind == "theme_article" for entry in genesis)
+    assert service.lookup_chapter("1 Thessalonians", 1)[0].anchor.book == "1 Thessalonians"
 
 
 def test_import_rejects_zip_slip(tmp_path):

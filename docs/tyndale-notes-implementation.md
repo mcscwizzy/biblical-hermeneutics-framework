@@ -1,6 +1,6 @@
 # Tyndale Open Study Notes Implementation
 
-Status: Phase 7 — archive qualification workflow complete
+Status: Phase 8 — official archive mapping and local installation complete
 
 This document is the working implementation and status log for the phased Tyndale Open Study Notes integration. It is updated as each phase is completed.
 
@@ -88,7 +88,19 @@ Added an operator-safe qualification path for the first real official archive:
 - Strict validation preserves the existing installed database because all validation occurs before the atomic rebuild begins.
 - The user guide now documents the review fields and the recommended dry-run → strict-import sequence.
 
-The actual official archive remains an external validation dependency. Once it is supplied, its report can be reviewed and any source-specific field mapping can be added based on observed structure rather than assumptions.
+At the end of Phase 7, source-specific mapping remained intentionally pending until the official archive was available for inspection; that dependency is completed in Phase 8 below.
+
+## Phase 8 — official archive mapping and local installation (complete)
+
+Validated the official `tyndale_open-studynotes.zip` archive published by Tyndale Open Resources and added source-specific support for its XML corpus:
+
+- `BookIntros.xml` and `BookIntroSummaries.xml` map to attributed book-introduction entries.
+- `Profiles.xml` maps to profiles, `ThemeNotes.xml` maps to theme articles, and `StudyNotes.xml` maps to verse/range notes.
+- OSIS-style references such as `Gen.1.1-2.3` and source abbreviations including `1Thes`, `2Thes`, `Jon`, and `Hagg` normalize to BHF canonical book names.
+- The qualified corpus contains 17,478 recognized records across all 69 supplied books, with 17,478 anchors, no unmapped references, no unrecognized records, and no parser warnings.
+- The strict import was installed at the ignored runtime path `.bhf/commentary.sqlite`; the source URL, SHA-256, importer version, and qualification report are persisted as provenance.
+
+The archive remains local generated data and is not bundled into the repository.
 
 ## Decisions and non-goals
 
@@ -106,6 +118,7 @@ The actual official archive remains an external validation dependency. Once it i
 - Added atomic import replacement, unmapped-reference reporting, CLI rejection,
   and runtime diagnostics coverage.
 - Added archive dry-run and strict qualification modes with focused coverage.
+- Added source-specific XML/OSIS mapping for the official archive and installed the qualified local corpus.
 
 ## Validation log
 
@@ -134,3 +147,6 @@ The actual official archive remains an external validation dependency. Once it i
 - Result: 13 passed.
 - Reader regression rerun: `.venv/bin/pytest -q tests/test_web_app.py -k 'not shadow_prompt_preview' --maxfail=1`
 - Result: 36 passed before the existing unrelated `test_bible_search_fallback_job_returns_structured_candidates` timeout; no commentary assertion failed.
+- Phase 8 official archive qualification: `.venv/bin/python -m framework.commentary import-tyndale --source /path/to/tyndale_open-studynotes.zip --dry-run --strict`
+- Result: 17,478 records parsed, 17,478 anchors, all 69 supplied books recognized, no unmapped records, no unrecognized records, and no warnings.
+- Phase 8 local installation: strict import completed to `.bhf/commentary.sqlite`; runtime diagnostics reported the database available and Genesis chapter 1 returned 24 entries.
