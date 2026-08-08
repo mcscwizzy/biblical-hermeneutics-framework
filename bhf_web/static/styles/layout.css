@@ -245,6 +245,14 @@ body.workspace-expanded .workspace-panel {
   border-radius: 12px;
 }
 
+body.workspace-minimized .reader-layout {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+body.workspace-minimized .study-panel {
+  display: none;
+}
+
 .curation-page {
   width: min(1320px, calc(100% - 32px));
 }

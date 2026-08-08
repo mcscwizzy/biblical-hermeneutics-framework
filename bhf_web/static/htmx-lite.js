@@ -120,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeTheme();
   initializeReaderMode();
   initializeWorkspaceExpansion();
+  initializeWorkspaceMinimize();
   initializeWorkspaceTabs();
   initializeAppNavigation();
   initializeReaderControlsSheet();
@@ -1197,6 +1198,7 @@ function applyCompactSectionLayout(sectionId) {
     return;
   }
 
+  applyWorkspaceMinimized(false);
   setWorkspaceDrawerOpen(true);
 }
 
@@ -1213,6 +1215,7 @@ function applyDesktopSectionLayout(sectionId, options = {}) {
   if (document.body.classList.contains("reader-mode")) {
     applyReaderMode(false, {persist: false});
   }
+  applyWorkspaceMinimized(false);
   applyWorkspaceExpansion(false);
 }
 
@@ -1435,6 +1438,68 @@ function initializeWorkspaceExpansion() {
   for (const toggle of toggles) {
     toggle.addEventListener("click", toggleWorkspaceExpansion);
   }
+}
+
+function initializeWorkspaceMinimize() {
+  const workspaceToggle = document.querySelector(
+    "[data-workspace-minimize-toggle]",
+  );
+  const dockToggle = document.querySelector("[data-workspace-dock-toggle]");
+  if (!workspaceToggle && !dockToggle) {
+    return;
+  }
+
+  applyWorkspaceMinimized(false);
+  workspaceToggle?.addEventListener("click", toggleWorkspaceMinimized);
+  dockToggle?.addEventListener("click", toggleWorkspaceFromDock);
+}
+
+function applyWorkspaceMinimized(enabled) {
+  const nextEnabled = Boolean(enabled);
+  document.body.classList.toggle("workspace-minimized", nextEnabled);
+  if (nextEnabled) {
+    applyWorkspaceExpansion(false);
+    closeWorkspaceDrawer();
+  }
+
+  const workspaceToggle = document.querySelector(
+    "[data-workspace-minimize-toggle]",
+  );
+  if (workspaceToggle) {
+    const accessibleLabel = nextEnabled
+      ? "Restore workspace"
+      : "Minimize workspace to dock";
+    setControlLabel(workspaceToggle, nextEnabled ? "Restore" : "Minimize");
+    workspaceToggle.setAttribute("aria-label", accessibleLabel);
+    workspaceToggle.setAttribute("title", accessibleLabel);
+    workspaceToggle.setAttribute("aria-pressed", String(nextEnabled));
+  }
+
+  const dockToggle = document.querySelector("[data-workspace-dock-toggle]");
+  if (dockToggle) {
+    const accessibleLabel = nextEnabled
+      ? "Restore workspace"
+      : "Minimize workspace to dock";
+    setControlLabel(dockToggle, nextEnabled ? "Restore" : "Workspace");
+    dockToggle.setAttribute("aria-label", accessibleLabel);
+    dockToggle.setAttribute("title", accessibleLabel);
+    dockToggle.setAttribute("aria-pressed", String(nextEnabled));
+  }
+}
+
+function toggleWorkspaceMinimized() {
+  const nextEnabled = !document.body.classList.contains("workspace-minimized");
+  applyWorkspaceMinimized(nextEnabled);
+  if (nextEnabled) {
+    activateAppSection("bible", {focusReader: true});
+    document.querySelector("[data-workspace-dock-toggle]")?.focus();
+  }
+}
+
+function toggleWorkspaceFromDock() {
+  const isMinimized = document.body.classList.contains("workspace-minimized");
+  applyWorkspaceMinimized(!isMinimized);
+  activateAppSection(isMinimized ? "ask" : "bible", {focusReader: isMinimized});
 }
 
 function applyWorkspaceExpansion(enabled) {

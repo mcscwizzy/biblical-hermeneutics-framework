@@ -29,7 +29,7 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260807c">
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260808b">
   <!-- Legacy cache-key references retained for clients that inspect the shell during upgrades. -->
   <!-- href="/static/style.css?v=20260724c" src="/static/htmx-lite.js?v=20260729b" -->
   {# static_asset('/style.css') }}?v=20260724c #}
@@ -40,7 +40,7 @@
   <script src="{{ static_asset('/htmx-status.js') }}" defer></script>
   <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260808a" defer></script>
   <script src="{{ static_asset('/htmx-search.js') }}?v=20260807b" defer></script>
-  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260808a" defer></script>
+  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260808b" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260806a" defer></script>
   {% if not test_mode %}
     <link rel="stylesheet" href="{{ static_asset('/vendor/leaflet/leaflet.css') }}">
@@ -198,6 +198,7 @@
             </div>
             <div class="workspace-actions" aria-label="Workspace actions">
               <button type="button" class="workspace-action-button" data-workspace-expand-toggle data-testid="workspace-expand-toggle" aria-controls="study-panel" aria-expanded="false" aria-pressed="false" aria-label="Expand workspace" title="Expand workspace">Expand</button>
+              <button type="button" class="workspace-action-button" data-workspace-minimize-toggle data-testid="workspace-minimize-toggle" aria-controls="study-panel" aria-pressed="false" aria-label="Minimize workspace to dock" title="Minimize workspace to dock">Minimize</button>
             </div>
           </div>
 
@@ -732,6 +733,10 @@
     <button type="button" class="app-dock-item" data-app-section="notes" data-testid="app-dock-notes" aria-pressed="false">Notes</button>
     <button type="button" class="app-dock-item" data-app-section="studies" data-testid="app-dock-studies" aria-pressed="false">Studies</button>
     <button type="button" class="app-dock-item" data-app-section="explore" data-testid="app-dock-explore" aria-pressed="false">Explore</button>
+    <button type="button" class="app-dock-utility app-dock-workspace-toggle" data-workspace-dock-toggle data-testid="workspace-dock-toggle" aria-controls="study-panel" aria-pressed="false" aria-label="Minimize workspace to dock" title="Minimize workspace to dock">
+      <span class="app-dock-utility-icon" aria-hidden="true">▣</span>
+      <span class="app-dock-utility-label" data-control-label>Workspace</span>
+    </button>
     <button type="button" class="app-dock-utility" data-reader-controls-trigger data-testid="reader-controls-trigger" aria-haspopup="dialog" aria-controls="reader-controls-sheet" aria-label="Open settings" title="Open settings">
       <span class="app-dock-utility-icon" aria-hidden="true">⚙</span>
       <span class="app-dock-utility-label">Settings</span>
