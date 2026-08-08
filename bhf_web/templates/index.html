@@ -29,7 +29,7 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260808e">
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260808f">
   <!-- Legacy cache-key references retained for clients that inspect the shell during upgrades. -->
   <!-- href="/static/style.css?v=20260724c" src="/static/htmx-lite.js?v=20260729b" -->
   {# static_asset('/style.css') }}?v=20260724c #}
@@ -207,18 +207,15 @@
           <div class="workspace-pane-group">
             <section class="workspace-pane commentary-pane" id="workspace-pane-commentary" role="tabpanel" aria-labelledby="workspace-tab-commentary" data-workspace-pane="commentary" hidden>
               <aside class="commentary-panel" data-commentary-panel aria-label="Tyndale Study Notes">
-                <details open data-commentary-details>
-                  <summary class="commentary-header">
-                    <span>
-                      <span class="commentary-kicker">Reader companion</span>
-                      <span class="commentary-title">Tyndale Study Notes</span>
-                    </span>
-                    <span class="commentary-toggle" aria-hidden="true">⌄</span>
-                  </summary>
-                  <div class="commentary-body" data-commentary-body aria-live="polite">
-                    <p class="empty">Loading Tyndale Study Notes...</p>
-                  </div>
-                </details>
+                <header class="commentary-header">
+                  <span>
+                    <span class="commentary-kicker">Reader companion</span>
+                    <span class="commentary-title">Tyndale Study Notes</span>
+                  </span>
+                </header>
+                <div class="commentary-body" data-commentary-body aria-live="polite">
+                  <p class="empty">Loading Tyndale Study Notes...</p>
+                </div>
               </aside>
             </section>
 
