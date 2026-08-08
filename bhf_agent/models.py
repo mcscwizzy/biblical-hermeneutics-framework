@@ -118,6 +118,7 @@ class RetrievedEvidence(Serializable):
     lexical_entries: list[dict[str, Any]] = field(default_factory=list)
     historical_context: list[dict[str, Any]] = field(default_factory=list)
     direct_facts: list[dict[str, Any]] = field(default_factory=list)
+    tyndale_entries: list[dict[str, Any]] = field(default_factory=list)
     selected_references: list[str] = field(default_factory=list)
 
 
@@ -232,6 +233,7 @@ class PipelineContext(Serializable):
     answer_coverage_assessment: Optional[Any] = None
     knowledge_expansion_context_prompt: Optional[str] = None
     lexical_context_prompt: Optional[str] = None
+    tyndale_context_prompt: Optional[str] = None
     session_memory: Optional[Any] = None
     memory_path: Optional[str] = None
     system_prompt: Optional[str] = None

@@ -185,6 +185,7 @@ def build_prompt(
     canonical_context_prompt: str | None = None,
     lexical_context_prompt: str | None = None,
     knowledge_coverage_prompt: str | None = None,
+    tyndale_context_prompt: str | None = None,
     runtime_profile_mode: str = "compact",
     response_contract_prompt: str | None = None,
     scripture_context: dict[str, object] | None = None,
@@ -207,6 +208,7 @@ def build_prompt(
         canonical_context_prompt=canonical_context_prompt,
         lexical_context_prompt=lexical_context_prompt,
         knowledge_coverage_prompt=knowledge_coverage_prompt,
+        tyndale_context_prompt=tyndale_context_prompt,
         runtime_profile_mode=runtime_profile_mode,
         response_contract_prompt=response_contract_prompt,
         scripture_context=scripture_context,
@@ -230,6 +232,7 @@ def build_prompt_result(
     canonical_context_prompt: str | None = None,
     lexical_context_prompt: str | None = None,
     knowledge_coverage_prompt: str | None = None,
+    tyndale_context_prompt: str | None = None,
     runtime_profile_mode: str = "compact",
     response_contract_prompt: str | None = None,
     scripture_context: dict[str, object] | None = None,
@@ -295,6 +298,10 @@ def build_prompt_result(
         system_sections.append(
             _prompt_section("KNOWLEDGE EXPANSION", [knowledge_coverage_prompt.strip()])
         )
+    if tyndale_context_prompt:
+        system_sections.append(
+            _prompt_section("SECONDARY COMMENTARY EVIDENCE", [tyndale_context_prompt.strip()])
+        )
     lexical_context_block = lexical_context_prompt.strip() if lexical_context_prompt else ""
     if lexical_context_block:
         lexical_data_unavailable = lexical_context_block.startswith("# LEXICAL DATA UNAVAILABLE")
@@ -356,6 +363,7 @@ def build_prompt_result(
         canonical_context=canonical_context_block,
         lexical_context=lexical_context_block,
         knowledge_coverage=knowledge_coverage_prompt or "",
+        tyndale_context=tyndale_context_prompt or "",
         response_contract=response_contract_prompt or "",
         scripture_context=scripture_context_block,
         system_prompt=system_prompt,

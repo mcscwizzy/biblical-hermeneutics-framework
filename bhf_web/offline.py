@@ -48,6 +48,7 @@ def build_offline_manifest() -> dict[str, Any]:
                 "notes",
                 "highlights",
                 "saved_studies",
+                "commentary",
             ],
             "device_only": [
                 "notes",
@@ -80,6 +81,7 @@ def build_offline_manifest() -> dict[str, Any]:
                     "/api/translations/installed",
                     "/api/translations/{translation_id}/offline-data",
                     "/api/bible/books",
+                    "/api/commentary/",
                 ],
                 "assets": [
                     "/static/style.css",
@@ -162,6 +164,7 @@ def build_offline_manifest() -> dict[str, Any]:
             "savedStudies",
             "mutationQueue",
             "metadata",
+            "commentary",
         ],
         "offline_mutations": [
             "POST /api/map-notes",

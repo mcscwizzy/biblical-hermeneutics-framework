@@ -38,6 +38,7 @@ Use this index to find the shortest path for your task.
 - [Compile the lexicon](compile-lexicon.md).
 - [Lexicon source policy](lexicon-sources.md).
 - [Translation management](translations.md).
+- [Tyndale Open Study Notes](tyndale-study-notes.md) — install and use the attributed commentary reader companion.
 - [Evaluation](evals.md).
 
 ## Contribute content

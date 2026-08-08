@@ -164,7 +164,7 @@ a {
 
 .reader-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(400px, 32vw, 500px);
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.62fr) clamp(360px, 27vw, 460px);
   gap: 24px;
   align-items: stretch;
 }
@@ -196,6 +196,7 @@ body.reader-mode .notice,
 body.reader-mode .reader-toolbar,
 body.reader-mode .reader-tabs,
 body.reader-mode .study-panel,
+body.reader-mode .commentary-panel,
 body.reader-mode .reader-search-results,
 body.reader-mode .app-dock,
 body.reader-mode .reader-chapter-header,

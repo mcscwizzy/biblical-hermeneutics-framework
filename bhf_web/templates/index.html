@@ -41,6 +41,7 @@
   <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260808a" defer></script>
   <script src="{{ static_asset('/htmx-search.js') }}?v=20260807b" defer></script>
   <script src="{{ static_asset('/htmx-lite.js') }}?v=20260808b" defer></script>
+  <script src="{{ static_asset('/commentary.js') }}?v=20260808a" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260806a" defer></script>
   {% if not test_mode %}
     <link rel="stylesheet" href="{{ static_asset('/vendor/leaflet/leaflet.css') }}">
@@ -183,6 +184,21 @@
           <p class="empty">Loading Scripture text...</p>
         </article>
       </section>
+
+      <aside class="commentary-panel" data-commentary-panel aria-label="Tyndale Study Notes">
+        <details open data-commentary-details>
+          <summary class="commentary-header">
+            <span>
+              <span class="commentary-kicker">Reader companion</span>
+              <span class="commentary-title">Tyndale Study Notes</span>
+            </span>
+            <span class="commentary-toggle" aria-hidden="true">⌄</span>
+          </summary>
+          <div class="commentary-body" data-commentary-body aria-live="polite">
+            <p class="empty">Loading Tyndale Study Notes...</p>
+          </div>
+        </details>
+      </aside>
 
       <aside class="study-panel" id="study-panel" aria-label="Study panel">
         <div class="workspace-panel" data-workspace-tabs data-default-tab="ask">

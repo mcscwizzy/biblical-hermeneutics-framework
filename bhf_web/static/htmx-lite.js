@@ -2160,6 +2160,9 @@ async function loadReaderChapter(book, chapter, options = {}) {
     syncReaderControlsToActiveTab();
     syncAskFields();
     updateChapterNavigationState();
+    if (window.BHFCommentary && typeof window.BHFCommentary.loadChapter === "function") {
+      void window.BHFCommentary.loadChapter(data.book, data.chapter);
+    }
     await Promise.all([
       loadNotes(data.book, data.chapter),
       loadHighlights(data.book, data.chapter),
@@ -4963,6 +4966,9 @@ function applySelectionContext(context) {
   });
 
   syncAskFields();
+  if (window.BHFCommentary && typeof window.BHFCommentary.focusSelection === "function") {
+    window.BHFCommentary.focusSelection(currentSelection);
+  }
 }
 
 function clearReaderSelection() {
@@ -4995,6 +5001,9 @@ function clearReaderSelection() {
     persistReaderTabs();
   }
   syncAskFields();
+  if (window.BHFCommentary && typeof window.BHFCommentary.clearSelection === "function") {
+    window.BHFCommentary.clearSelection();
+  }
 }
 
 function highlightsForContext(context) {

@@ -153,6 +153,7 @@ def evaluate_answer_coverage(
     local_knowledge: Any = None,
     lexical_context_prompt: str | None = None,
     map_context: Mapping[str, Any] | None = None,
+    additional_evidence: str | None = None,
     sufficient_threshold: float = 0.85,
     major_gap_threshold: float = 0.60,
     max_gap_items: int = 6,
@@ -172,6 +173,7 @@ def evaluate_answer_coverage(
         local_knowledge=local_knowledge,
         lexical_context_prompt=lexical_context_prompt,
         map_context=map_context,
+        additional_evidence=additional_evidence,
     )
     evidence_tokens = set(_tokens(evidence))
     question_tokens = set(_tokens(question))
@@ -377,6 +379,7 @@ def _evidence_text(
     local_knowledge: Any,
     lexical_context_prompt: str | None,
     map_context: Mapping[str, Any] | None,
+    additional_evidence: str | None,
 ) -> str:
     parts: list[str] = []
     if canonical_context:
@@ -387,6 +390,8 @@ def _evidence_text(
         parts.append(lexical_context_prompt)
     if map_context:
         parts.append(_flatten(map_context))
+    if additional_evidence:
+        parts.append(str(additional_evidence))
     return " ".join(part for part in parts if part)
 
 
