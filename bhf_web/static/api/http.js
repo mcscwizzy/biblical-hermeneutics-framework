@@ -259,6 +259,7 @@
       "/api/canonical/objects/",
       "/api/maps/",
       "/api/sources",
+      "/api/commentary/",
     ].some((prefix) => path === prefix || path.startsWith(prefix));
   }
 

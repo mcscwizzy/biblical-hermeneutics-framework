@@ -11,6 +11,7 @@ from typing import Any, Optional, Union
 from framework.canonical_library import DEFAULT_PUBLIC_CACHE_PATH, REVIEW_STATUS_VALUES
 from framework.canonical_library.database_schema import DEFAULT_CKL_DATABASE_PATH
 from framework.lexical.service import DEFAULT_LEXICAL_DATABASE_PATH
+from framework.commentary.database_schema import DEFAULT_COMMENTARY_DATABASE_PATH
 
 from .observability import ObservabilityConfig
 
@@ -119,6 +120,23 @@ class KnowledgeExpansionConfig:
 
 
 @dataclass(frozen=True)
+class CommentaryConfig:
+    """Controls selective use of the locally installed Tyndale resource."""
+
+    enabled: bool = False
+    database_path: str = str(DEFAULT_COMMENTARY_DATABASE_PATH)
+    max_entries: int = 4
+    allow_explicit_source_requests: bool = True
+    allow_targeted_gap_requests: bool = True
+
+    def validate(self) -> None:
+        if not str(self.database_path).strip():
+            raise ConfigError("commentary.database_path must not be blank")
+        if int(self.max_entries) <= 0:
+            raise ConfigError("commentary.max_entries must be greater than 0")
+
+
+@dataclass(frozen=True)
 class PublicCacheConfig:
     enabled: bool = False
     path: str = str(DEFAULT_PUBLIC_CACHE_PATH)
@@ -193,6 +211,7 @@ class AgentConfig:
     memory_max_turns: int = 8
     canonical_library: CanonicalLibraryConfig = CanonicalLibraryConfig()
     knowledge_expansion: KnowledgeExpansionConfig = KnowledgeExpansionConfig()
+    commentary: CommentaryConfig = CommentaryConfig()
     lexicon: LexiconConfig = LexiconConfig()
     public_cache: PublicCacheConfig = PublicCacheConfig()
     observability: ObservabilityConfig = ObservabilityConfig()
@@ -226,6 +245,7 @@ class AgentConfig:
         data["knowledge_expansion"] = _knowledge_expansion_config_from_value(
             data.get("knowledge_expansion")
         )
+        data["commentary"] = _commentary_config_from_value(data.get("commentary"))
         data["lexicon"] = _lexicon_config_from_value(data.get("lexicon"))
         data["public_cache"] = _public_cache_config_from_value(data.get("public_cache"))
         data["observability"] = _observability_config_from_value(data.get("observability"))
@@ -255,6 +275,11 @@ class AgentConfig:
             clean["knowledge_expansion"] = _knowledge_expansion_config_from_value(
                 clean["knowledge_expansion"],
                 base=self.knowledge_expansion,
+            )
+        if "commentary" in clean:
+            clean["commentary"] = _commentary_config_from_value(
+                clean["commentary"],
+                base=self.commentary,
             )
         if "lexicon" in clean:
             clean["lexicon"] = _lexicon_config_from_value(
@@ -326,6 +351,7 @@ class AgentConfig:
             raise ConfigError("memory_max_turns must be greater than 0")
         self.canonical_library.validate()
         self.knowledge_expansion.validate()
+        self.commentary.validate()
         self.lexicon.validate()
         self.public_cache.validate()
         try:
@@ -491,6 +517,46 @@ def _knowledge_expansion_config_from_value(
         )
     else:
         raise ConfigError("knowledge_expansion must be an object")
+
+    config.validate()
+    return config
+
+
+def _commentary_config_from_value(
+    value: Any,
+    *,
+    base: CommentaryConfig | None = None,
+) -> CommentaryConfig:
+    if isinstance(value, CommentaryConfig):
+        config = value
+    elif value is None:
+        config = base or CommentaryConfig()
+    elif isinstance(value, dict):
+        base_config = base or CommentaryConfig()
+        known = {field.name for field in fields(CommentaryConfig)}
+        unknown = sorted(set(value) - known)
+        if unknown:
+            raise ConfigError(f"unknown commentary field(s): {', '.join(unknown)}")
+        merged = asdict(base_config)
+        merged.update(value)
+        config = CommentaryConfig(
+            enabled=_coerce_bool(merged["enabled"], field_name="commentary.enabled"),
+            database_path=str(merged["database_path"]).strip()
+            or str(DEFAULT_COMMENTARY_DATABASE_PATH),
+            max_entries=_coerce_int(
+                merged["max_entries"], field_name="commentary.max_entries"
+            ),
+            allow_explicit_source_requests=_coerce_bool(
+                merged["allow_explicit_source_requests"],
+                field_name="commentary.allow_explicit_source_requests",
+            ),
+            allow_targeted_gap_requests=_coerce_bool(
+                merged["allow_targeted_gap_requests"],
+                field_name="commentary.allow_targeted_gap_requests",
+            ),
+        )
+    else:
+        raise ConfigError("commentary must be an object")
 
     config.validate()
     return config

@@ -12,7 +12,16 @@ from .map_tools import (
     getRelatedPassagesByPlace,
     getRoutesForPassage,
 )
-from .runner import BHFAgent
+
+
+def __getattr__(name):
+    """Load the runner lazily so standalone data services remain importable."""
+
+    if name == "BHFAgent":
+        from .runner import BHFAgent
+
+        return BHFAgent
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
 
 __all__ = [
     "AgentConfig",

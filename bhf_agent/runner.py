@@ -94,6 +94,10 @@ from framework.canonical_library import (
 )
 from framework.lexical import LexicalLookupService
 from framework.lexical.service import format_lexical_unavailable_context
+from framework.commentary.evidence import (
+    TyndaleEvidenceProvider,
+    format_tyndale_result_for_prompt,
+)
 
 
 StatusCallback = Callable[[dict[str, Any]], None]
@@ -369,6 +373,7 @@ class BHFAgent:
         runtime_cache: Optional[CKLRuntimeCache] = None,
         lexical_engine: Optional[LexicalLookupService] = None,
         research_provider: Optional[ResearchProvider] = None,
+        tyndale_provider: Optional[TyndaleEvidenceProvider] = None,
     ) -> None:
         config.validate()
         self.config = config
@@ -406,6 +411,10 @@ class BHFAgent:
             self.config.lexicon.runtime_database_path
         )
         self.research_provider = research_provider or NullResearchProvider()
+        self.tyndale_provider = tyndale_provider or TyndaleEvidenceProvider(
+            self.config.commentary.database_path,
+            max_entries=self.config.commentary.max_entries,
+        )
         self._status_callback: Optional[StatusCallback] = None
         self._status_run_started_at: float | None = None
         self._status_stage_started_at: float | None = None
@@ -608,6 +617,20 @@ class BHFAgent:
                 "external_research_result_count": 0,
                 "external_research_error": None,
                 "external_research_provider": self._research_provider_identity(),
+                "tyndale_enabled": self.config.commentary.enabled,
+                "tyndale_database_path": self.config.commentary.database_path,
+                "tyndale_available": False,
+                "tyndale_eligible": False,
+                "tyndale_retrieval_attempted": False,
+                "tyndale_retrieval_succeeded": False,
+                "tyndale_retrieval_reason": None,
+                "tyndale_result_count": 0,
+                "tyndale_source_id": None,
+                "tyndale_source_sha256": None,
+                "tyndale_error": None,
+                "tyndale_prompt_tokens": 0,
+                "answer_coverage_before_tyndale": None,
+                "answer_coverage_after_tyndale": None,
                 "ckl_attempted": False,
                 "ckl_result_count": 0,
                 "ckl_context_injected": False,
@@ -894,6 +917,11 @@ class BHFAgent:
             direct_facts=[
                 dict(fact) for fact in direct_facts if isinstance(fact, Mapping)
             ],
+            tyndale_entries=[
+                dict(item)
+                for item in (ctx.debug_metadata.get("tyndale_items") or [])
+                if isinstance(item, Mapping)
+            ],
             selected_references=references,
         )
         ctx.debug_metadata["evidence_packaged"] = True
@@ -994,6 +1022,30 @@ class BHFAgent:
             max_gap_items=expansion_config.max_gap_items,
             research_override_enabled=expansion_config.research_override_enabled,
         )
+        self._lookup_tyndale_evidence(ctx, assessment)
+        if ctx.tyndale_context_prompt:
+            metadata_before_tyndale = assessment.to_dict()
+            assessment = evaluate_answer_coverage(
+                question=ctx.original_question,
+                reference_context=ctx.reference_context,
+                genre_context=ctx.genre_context,
+                question_context=ctx.question_context,
+                canonical_context=ctx.canonical_library_context,
+                canonical_strong_match=bool(
+                    ctx.debug_metadata.get("canonical_library_strong_match", False)
+                ),
+                ckl_coverage_gap=ctx.debug_metadata.get("ckl_coverage_gap"),
+                local_knowledge=ctx.local_knowledge,
+                lexical_context_prompt=ctx.lexical_context_prompt,
+                map_context=ctx.debug_metadata.get("map_tool_context"),
+                additional_evidence=ctx.tyndale_context_prompt,
+                sufficient_threshold=expansion_config.sufficient_coverage_threshold,
+                major_gap_threshold=expansion_config.major_gap_threshold,
+                max_gap_items=expansion_config.max_gap_items,
+                research_override_enabled=expansion_config.research_override_enabled,
+            )
+            ctx.debug_metadata["answer_coverage_before_tyndale"] = metadata_before_tyndale
+            ctx.debug_metadata["answer_coverage_after_tyndale"] = assessment.to_dict()
         ctx.answer_coverage_assessment = assessment
         metadata = ctx.debug_metadata
         metadata.update(
@@ -1125,6 +1177,70 @@ class BHFAgent:
             external_retrieval_enabled=bool(metadata["external_research_succeeded"]),
             external_research_prompt=external_prompt,
         )
+
+    def _lookup_tyndale_evidence(
+        self,
+        ctx: PipelineContext,
+        assessment: AnswerCoverageAssessment,
+    ) -> None:
+        """Retrieve Tyndale only for an explicit request or a narrow gap."""
+
+        metadata = ctx.debug_metadata
+        config = self.config.commentary
+        if not config.enabled:
+            metadata["tyndale_retrieval_reason"] = "disabled"
+            return
+        try:
+            available = bool(self.tyndale_provider.is_available())
+        except Exception as exc:  # local optional resource must never block answers
+            metadata["tyndale_error"] = str(exc)
+            metadata["tyndale_retrieval_reason"] = "availability_check_failed"
+            return
+        metadata["tyndale_available"] = available
+        if not available:
+            metadata["tyndale_retrieval_reason"] = "commentary_not_installed"
+            return
+        eligible, reason = self.tyndale_provider.should_retrieve(
+            question=ctx.original_question,
+            missing_dimensions=assessment.missing_dimensions,
+            allow_explicit_source_requests=config.allow_explicit_source_requests,
+            allow_targeted_gap_requests=config.allow_targeted_gap_requests,
+            coverage_mode=assessment.mode,
+        )
+        metadata["tyndale_eligible"] = eligible
+        metadata["tyndale_retrieval_reason"] = reason
+        if not eligible:
+            return
+        metadata["tyndale_retrieval_attempted"] = True
+        try:
+            result = self.tyndale_provider.retrieve(
+                question=ctx.original_question,
+                missing_dimensions=assessment.missing_dimensions,
+                reference_context=ctx.reference_context,
+                max_results=config.max_entries,
+            )
+            metadata["tyndale_result_count"] = len(result.items)
+            metadata["tyndale_retrieval_succeeded"] = bool(result.items)
+            metadata["tyndale_error"] = result.error
+            if result.items:
+                ctx.tyndale_context_prompt = format_tyndale_result_for_prompt(result)
+                metadata["tyndale_prompt_tokens"] = estimate_tokens(ctx.tyndale_context_prompt)
+                metadata["tyndale_items"] = [
+                    {
+                        "title": item.title,
+                        "text": item.text,
+                        "source": item.source,
+                        "url": item.url,
+                        "provenance": dict(item.provenance),
+                    }
+                    for item in result.items
+                ]
+                first_provenance = result.items[0].provenance
+                metadata["tyndale_source_id"] = first_provenance.get("source_id")
+                metadata["tyndale_source_sha256"] = first_provenance.get("source_sha256")
+        except Exception as exc:  # optional evidence must degrade gracefully
+            metadata["tyndale_error"] = str(exc)
+            ctx.warnings.append(f"Tyndale evidence lookup failed: {exc}")
 
     def _research_provider_identity(self) -> str:
         identity = getattr(self.research_provider, "identity", None)
@@ -1541,6 +1657,14 @@ class BHFAgent:
                 "transient translation lookup"
             )
             return ctx
+        if ctx.debug_metadata.get("tyndale_eligible"):
+            # A public answer may have been generated without this explicitly
+            # requested secondary source.
+            ctx.debug_metadata["public_answer_cache_lookup_status"] = "disabled"
+            ctx.debug_metadata["public_answer_cache_error"] = (
+                "selective Tyndale evidence"
+            )
+            return ctx
         if ctx.debug_metadata.get("deterministic_fact_packet"):
             ctx.debug_metadata["public_answer_cache_lookup_status"] = "disabled"
             ctx.debug_metadata["public_answer_cache_error"] = "deterministic fact packet supplied"
@@ -1855,6 +1979,13 @@ class BHFAgent:
             "external_enabled": self.config.knowledge_expansion.allow_external_retrieval,
             "external_provider": ctx.debug_metadata.get("external_research_provider"),
             "external_result_count": ctx.debug_metadata.get("external_research_result_count"),
+            "tyndale_enabled": self.config.commentary.enabled,
+            "tyndale_provider": self.tyndale_provider.identity(),
+            "tyndale_available": ctx.debug_metadata.get("tyndale_available"),
+            "tyndale_eligible": ctx.debug_metadata.get("tyndale_eligible"),
+            "tyndale_result_count": ctx.debug_metadata.get("tyndale_result_count"),
+            "tyndale_source_id": ctx.debug_metadata.get("tyndale_source_id"),
+            "tyndale_source_sha256": ctx.debug_metadata.get("tyndale_source_sha256"),
             "missing_dimensions": ctx.debug_metadata.get("answer_coverage_missing_dimensions", []),
             "blocked": ctx.debug_metadata.get("knowledge_expansion_blocked"),
             "blocked_reason": ctx.debug_metadata.get("knowledge_expansion_blocked_reason"),
@@ -1982,6 +2113,7 @@ class BHFAgent:
             canonical_context_prompt=ctx.canonical_library_prompt,
             lexical_context_prompt=ctx.lexical_context_prompt,
             knowledge_coverage_prompt=ctx.knowledge_expansion_context_prompt,
+            tyndale_context_prompt=ctx.tyndale_context_prompt,
             runtime_profile_mode=self.config.runtime_profile_mode,
             response_contract_prompt=response_contract_prompt,
             scripture_context=ctx.scripture_context,

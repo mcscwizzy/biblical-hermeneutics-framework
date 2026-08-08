@@ -21,5 +21,6 @@ def _env_bool(name: str, default: bool = False) -> bool:
 
 
 STUDY_DB_PATH = Path(os.environ.get("BHF_STUDY_DB_PATH", str(DEFAULT_DB_PATH)))
+COMMENTARY_DB_PATH = Path(os.environ.get("BHF_COMMENTARY_DB_PATH", ".bhf/commentary.sqlite"))
 WEB_CONFIG_PATH = Path(os.environ.get("BHF_WEB_CONFIG_PATH", ".bhf/web-config.json"))
 TEST_MODE = _env_bool("BHF_TEST_MODE", False)

@@ -57,6 +57,7 @@ from .routes.canonical import register_canonical_editor_routes
 from .routes.curation import register_curation_routes
 from .routes.debug import register_debug_routes
 from .routes.maps import register_map_routes
+from .routes.commentary import register_commentary_routes
 from .routes.study import register_study_routes
 from .jobs import (
     AskJob,
@@ -71,6 +72,7 @@ from .runtime import load_runtime_config
 PACKAGE_DIR = Path(__file__).resolve().parent
 templates = Jinja2Templates(directory=str(PACKAGE_DIR / "templates"))
 STUDY_DB_PATH = settings.STUDY_DB_PATH
+COMMENTARY_DB_PATH = settings.COMMENTARY_DB_PATH
 
 
 def static_asset(path: str) -> str:
@@ -514,6 +516,7 @@ def create_app() -> FastAPI:
     register_canonical_routes(web_app)
     register_canonical_editor_routes(web_app, templates=templates)
     register_map_routes(web_app, study_db_path=str(STUDY_DB_PATH))
+    register_commentary_routes(web_app, database_path=str(COMMENTARY_DB_PATH))
     register_study_routes(
         web_app,
         study_db_path=str(STUDY_DB_PATH),

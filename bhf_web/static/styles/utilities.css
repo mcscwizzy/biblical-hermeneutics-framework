@@ -640,10 +640,12 @@ code {
   left: 50%;
   bottom: max(12px, env(safe-area-inset-bottom));
   z-index: 10002;
-  display: grid;
-  grid-template-columns: repeat(5, minmax(76px, 1fr)) minmax(108px, auto) minmax(108px, auto);
+  display: flex;
+  align-items: stretch;
+  flex-wrap: nowrap;
   gap: 6px;
-  width: min(780px, calc(100% - 24px));
+  width: max-content;
+  max-width: calc(100% - 24px);
   min-height: var(--app-dock-height);
   padding: 8px;
   border: 1px solid var(--border);
@@ -653,14 +655,20 @@ code {
   transform: translateX(-50%);
   transition: transform 160ms ease, opacity 160ms ease;
   backdrop-filter: blur(10px);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.app-dock::-webkit-scrollbar {
+  display: none;
 }
 
 body:not(.workspace-minimized) .app-dock {
-  grid-template-columns: repeat(5, minmax(76px, 1fr)) minmax(108px, auto);
-  width: min(660px, calc(100% - 24px));
+  width: max-content;
 }
 
 .app-dock-item {
+  flex: 0 1 auto;
   min-height: 46px;
   padding: 0 8px;
   border: 1px solid var(--border-strong);
@@ -670,6 +678,7 @@ body:not(.workspace-minimized) .app-dock {
   font-size: 0.82rem;
   font-weight: 800;
   line-height: 1.1;
+  white-space: nowrap;
 }
 
 .app-dock-item.is-active,
@@ -701,7 +710,6 @@ html[data-theme="dark"] .app-dock {
     left: 0;
     width: auto;
     min-height: var(--app-dock-height);
-    grid-template-columns: repeat(5, minmax(0, 1fr)) 44px 44px;
     padding: 8px max(8px, env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left));
     border-inline: 0;
     border-bottom: 0;
@@ -711,13 +719,14 @@ html[data-theme="dark"] .app-dock {
   }
 
   body:not(.workspace-minimized) .app-dock {
-    grid-template-columns: repeat(5, minmax(0, 1fr)) 44px;
     width: auto;
   }
 
   .app-dock-utility {
+    flex: 0 0 auto;
     width: 44px;
     padding: 0;
+    white-space: nowrap;
   }
 
   .app-dock-utility-label {
@@ -731,7 +740,20 @@ html[data-theme="dark"] .app-dock {
   }
 
   body[data-app-section="bible"] .study-panel {
-    display: none;
+    display: block;
+    position: static;
+    width: auto;
+    max-width: none;
+    max-height: none;
+    transform: none;
+    visibility: visible;
+    background: transparent;
+  }
+
+  body[data-app-section="bible"] .workspace-panel {
+    height: min(70dvh, 680px);
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
   }
 
   body[data-app-section="ask"] .reader-column,
@@ -1508,14 +1530,15 @@ html[data-theme="dark"] button.reader-setting-action:disabled {
 
 @media (max-width: 900px) {
   .app-dock {
-    grid-template-columns: repeat(5, minmax(0, 1fr)) 44px 44px;
     gap: 4px;
   }
 
   .app-dock-item {
+    flex: 0 1 auto;
     min-height: 44px;
     padding: 0 4px;
     font-size: 0.74rem;
+    white-space: nowrap;
   }
 
   .app-dock-utility {
@@ -1675,6 +1698,7 @@ html[data-theme="dark"] button.reader-setting-action:disabled {
   }
 
   .app-dock-item {
+    flex: 0 1 auto;
     font-size: 0.68rem;
   }
 

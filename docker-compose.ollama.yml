@@ -38,6 +38,8 @@ services:
         BHF_STRONGS_REVISION: "${BHF_STRONGS_REVISION:-0acd2f251c2d35ff8db2dece4e0593979d3ac223}"
         BHF_OSHB_REVISION: "${BHF_OSHB_REVISION:-3d15126fb1ef74867fc1434be1942e837932691f}"
         BHF_MORPHGNT_REVISION: "${BHF_MORPHGNT_REVISION:-aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d}"
+        BHF_TYNDALE_ARCHIVE_URL: "${BHF_TYNDALE_ARCHIVE_URL:-https://tyndaleopenresources.com/wp-content/themes/tyndale-openresources/files/tyndale_open-studynotes.zip}"
+        BHF_TYNDALE_ARCHIVE_SHA256: "${BHF_TYNDALE_ARCHIVE_SHA256:-7b4d5ae088449d5a6925170c4b89b978acee2f78f73dc6b8a278fa948a7e8498}"
     depends_on:
       ollama-init:
         condition: service_completed_successfully
@@ -59,6 +61,8 @@ services:
       BHF_MEMORY_PATH: /app/.bhf-data/sessions
       BHF_LEXICAL_DATABASE_PATH: /app/.bhf-data/lexicon.sqlite
       BHF_LEXICAL_SEED_POLICY: "${BHF_LEXICAL_SEED_POLICY:-refresh}"
+      BHF_COMMENTARY_DB_PATH: /app/.bhf-data/commentary.sqlite
+      BHF_COMMENTARY_SEED_POLICY: "${BHF_COMMENTARY_SEED_POLICY:-refresh}"
       BHF_STUDY_DB_PATH: /app/.bhf-data/study.sqlite
       BHF_WEB_CONFIG_PATH: /app/.bhf-data/web-config.json
     volumes:
