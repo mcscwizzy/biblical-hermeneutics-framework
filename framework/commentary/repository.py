@@ -48,6 +48,14 @@ class CommentaryRepository:
             row = connection.execute(query, params).fetchone()
         return _source_from_row(row) if row else None
 
+    def get_metadata(self, key: str) -> str | None:
+        with self.connection() as connection:
+            row = connection.execute(
+                "SELECT value FROM commentary_metadata WHERE key = ?",
+                (key,),
+            ).fetchone()
+        return str(row[0]) if row else None
+
     def lookup_chapter(self, book: str, chapter: int) -> list[CommentaryEntry]:
         sql = """
             SELECT e.*, s.id AS source_meta_id, s.name AS source_meta_name,

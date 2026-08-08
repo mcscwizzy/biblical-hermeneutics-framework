@@ -14,6 +14,10 @@ from framework.commentary.service import CommentaryService
 def register_commentary_routes(app: FastAPI, *, database_path: str | Path) -> None:
     service = CommentaryService(database_path=database_path)
 
+    @app.get("/api/commentary/diagnostics", response_class=JSONResponse)
+    async def commentary_diagnostics() -> JSONResponse:
+        return JSONResponse(service.diagnostics())
+
     @app.get("/api/commentary/{book}/{chapter}", response_class=JSONResponse)
     async def commentary_chapter(
         book: str,

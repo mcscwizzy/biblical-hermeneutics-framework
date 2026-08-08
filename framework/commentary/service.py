@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 from typing import Any
 
@@ -36,9 +37,19 @@ class CommentaryService:
             return {"available": False, "reason": "commentary_not_installed"}
         try:
             sources = self.repository.list_sources()
+            raw_import_diagnostics = self.repository.get_metadata("import_diagnostics")
         except Exception as exc:  # noqa: BLE001 - diagnostics must remain safe
             return {"available": False, "reason": "commentary_database_error", "detail": str(exc)}
-        return {"available": True, "sources": [source.to_dict() for source in sources]}
+        diagnostics: dict[str, Any] = {
+            "available": True,
+            "sources": [source.to_dict() for source in sources],
+        }
+        if raw_import_diagnostics:
+            try:
+                diagnostics["import"] = json.loads(raw_import_diagnostics)
+            except json.JSONDecodeError:
+                diagnostics["import"] = {"warning": "invalid_import_diagnostics"}
+        return diagnostics
 
 
 def _reference(book: str, chapter: int | str) -> tuple[str, int]:

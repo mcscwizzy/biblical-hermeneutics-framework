@@ -1,6 +1,6 @@
 # Tyndale Open Study Notes Implementation
 
-Status: Phase 5 — selective AI evidence integration complete
+Status: Phase 6 — production import hardening complete
 
 This document is the working implementation and status log for the phased Tyndale Open Study Notes integration. It is updated as each phase is completed.
 
@@ -62,6 +62,23 @@ included in the cache fingerprint. Answer coverage is re-evaluated after the
 secondary evidence is selected, before prompt construction and model synthesis.
 No network or AI call is made by the provider.
 
+## Phase 6 — production import hardening (complete)
+
+Hardened the local installation workflow for real archive review:
+
+- Import diagnostics now distinguish invalid/unrecognized records, records with
+  unresolved Scripture references, and intentionally anchorless entries such as
+  introductions or profiles.
+- `--fail-on-unmapped` allows an operator to reject an archive before it can
+  replace an installed database when any supplied Scripture reference cannot be
+  mapped to BHF's canonical book names.
+- Database rebuilds are written to a temporary sibling SQLite file and replaced
+  atomically only after the complete import succeeds, preserving the previous
+  installation on failure.
+- `GET /api/commentary/diagnostics` exposes source provenance and the persisted
+  import report for deployment checks without granting runtime write access.
+- Importer provenance is versioned as `tyndale-2`.
+
 ## Decisions and non-goals
 
 - Runtime database path: `.bhf/commentary.sqlite`, configurable for tests and deployments.
@@ -75,6 +92,8 @@ No network or AI call is made by the provider.
 - Added `framework.commentary.evidence.TyndaleEvidenceProvider` and attributed prompt formatting.
 - Added runner metadata for eligibility, retrieval, provenance, coverage reassessment, and cache identity.
 - Added focused provider and end-to-end prompt routing tests in `tests/test_tyndale_evidence.py`.
+- Added atomic import replacement, unmapped-reference reporting, CLI rejection,
+  and runtime diagnostics coverage.
 
 ## Validation log
 
@@ -91,3 +110,9 @@ No network or AI call is made by the provider.
 - Source archive mapping limitation: no official Tyndale archive was present in this repository or attachment, so the importer was implemented to inspect the supplied archive at import time and report unmapped records rather than assuming a third-party conversion. The first archive should be reviewed against its actual record structure before enabling a production import workflow.
 - Phase 5 focused command: `.venv/bin/pytest -q tests/test_tyndale_evidence.py`
 - Result: 3 passed.
+- Phase 6 focused command: `.venv/bin/pytest -q tests/test_commentary.py tests/test_tyndale_evidence.py`
+- Result: 10 passed.
+- Import compatibility check: `.venv/bin/python -c 'from framework.commentary.service import CommentaryService; from bhf_agent import BHFAgent'`
+- Result: passed; the runner is now lazy-loaded so standalone commentary imports do not create a circular import.
+- Runner regression check: `.venv/bin/pytest -q tests/test_runner.py --maxfail=1`
+- Result: blocked by the existing local CKL database schema mismatch (database version 1, runtime requires version 2); no commentary assertion was reached.

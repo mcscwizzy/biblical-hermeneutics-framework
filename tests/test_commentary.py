@@ -45,6 +45,9 @@ def test_import_is_safe_attributed_and_normalizes_books(tmp_path):
     assert result["entry_count"] == 4
     assert result["anchor_count"] == 3
     assert result["unrecognized_records"] == []
+    assert result["records_seen"] == 4
+    assert result["unmapped_records"] == []
+    assert result["unanchored_records"] == [4]
     service = CommentaryService(tmp_path / "commentary.sqlite")
     source = service.source()
     assert source.license == "CC BY-SA 4.0"
@@ -84,6 +87,38 @@ def test_import_rebuild_is_deterministic_for_content(tmp_path):
         assert left.execute("SELECT external_id, kind, title, body, sort_order FROM commentary_entries ORDER BY id").fetchall() == right.execute(
             "SELECT external_id, kind, title, body, sort_order FROM commentary_entries ORDER BY id"
         ).fetchall()
+
+
+def test_import_reports_unmapped_references_and_preserves_previous_database(tmp_path):
+    database = tmp_path / "commentary.sqlite"
+    import_tyndale_archive(make_archive(tmp_path), database)
+    with sqlite3.connect(database) as connection:
+        original_hash = connection.execute(
+            "SELECT source_sha256 FROM commentary_sources"
+        ).fetchone()[0]
+
+    bad_archive = tmp_path / "bad.zip"
+    with zipfile.ZipFile(bad_archive, "w") as output:
+        output.writestr(
+            "notes.json",
+            json.dumps({"entries": [{
+                "reference": "NotABook 1:1",
+                "body": "This reference cannot be mapped.",
+            }]}),
+        )
+
+    with pytest.raises(CommentaryImportError, match="unmapped Scripture records"):
+        import_tyndale_archive(bad_archive, database, fail_on_unmapped=True)
+
+    with sqlite3.connect(database) as connection:
+        assert connection.execute(
+            "SELECT source_sha256 FROM commentary_sources"
+        ).fetchone()[0] == original_hash
+    assert not list(tmp_path.glob(".commentary.sqlite.*.tmp"))
+
+    result = import_tyndale_archive(bad_archive, tmp_path / "bad.sqlite")
+    assert result["unmapped_records"] == [1]
+    assert result["warnings"]
 
 
 def test_commentary_api_success_and_unavailable_response(tmp_path):
@@ -129,6 +164,12 @@ def test_commentary_api_success_and_unavailable_response(tmp_path):
     assert payload["available"] is True
     assert payload["source"]["license"] == "CC BY-SA 4.0"
     assert payload["entries"][0]["body"] == "Verse wording."
+
+    status, payload = asyncio.run(request(app, "/api/commentary/diagnostics"))
+    assert status == 200
+    assert payload["available"] is True
+    assert payload["import"]["source_sha256"]
+    assert payload["import"]["unanchored_records"] == [4]
 
     with patch("bhf_web.app.COMMENTARY_DB_PATH", tmp_path / "missing.sqlite"):
         status, payload = asyncio.run(request(create_app(), "/api/commentary/Ruth/3"))

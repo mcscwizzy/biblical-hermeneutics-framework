@@ -7,8 +7,10 @@ import hashlib
 import html
 import io
 import json
+import os
 import re
 import sqlite3
+import tempfile
 import zipfile
 from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
@@ -18,7 +20,7 @@ from bhf_agent.bible import BibleError, normalize_book_name
 
 from .database_schema import DEFAULT_COMMENTARY_DATABASE_PATH, initialize_database
 
-IMPORTER_VERSION = "tyndale-1"
+IMPORTER_VERSION = "tyndale-2"
 SOURCE_ID = "tyndale_open_study_notes"
 SOURCE_NAME = "Tyndale Open Study Notes"
 SOURCE_LICENSE = "CC BY-SA 4.0"
@@ -46,6 +48,7 @@ def import_tyndale_archive(
     output_path: str | Path = DEFAULT_COMMENTARY_DATABASE_PATH,
     *,
     source_url: str | None = None,
+    fail_on_unmapped: bool = False,
 ) -> dict[str, Any]:
     source = Path(source_path)
     if not source.is_file():
@@ -60,6 +63,18 @@ def import_tyndale_archive(
         else:
             parsed.append(item)
     mapped = [item for item in parsed if item is not None]
+    diagnostics["records_seen"] = len(records)
+    diagnostics["parsed_records"] = len(mapped)
+    diagnostics["unmapped_records"] = [
+        item["record_index"]
+        for item in mapped
+        if item["anchor"] is None and item["has_anchor_hint"]
+    ]
+    diagnostics["unanchored_records"] = [
+        item["record_index"]
+        for item in mapped
+        if item["anchor"] is None and not item["has_anchor_hint"]
+    ]
     diagnostics.update(
         {
             "source_sha256": source_sha256,
@@ -69,50 +84,69 @@ def import_tyndale_archive(
             "recognized_books": sorted({item["anchor"]["book"] for item in mapped if item["anchor"]}),
         }
     )
-
-    database_path = initialize_database(output_path)
-    imported_at = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
-    with sqlite3.connect(database_path) as connection:
-        connection.execute("PRAGMA foreign_keys = ON")
-        connection.execute("DELETE FROM commentary_anchors")
-        connection.execute("DELETE FROM commentary_entries")
-        connection.execute("DELETE FROM commentary_sources")
-        connection.execute(
-            """INSERT INTO commentary_sources
-               (id, name, copyright, license, license_url, attribution, source_url,
-                source_sha256, imported_at, importer_version)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-            (
-                SOURCE_ID, SOURCE_NAME, "Copyright © 2022 Tyndale House Publishers",
-                SOURCE_LICENSE, SOURCE_LICENSE_URL, SOURCE_ATTRIBUTION, source_url,
-                source_sha256, imported_at, IMPORTER_VERSION,
-            ),
+    if diagnostics["unmapped_records"]:
+        diagnostics["warnings"].append(
+            "Some records contained a Scripture reference but could not be mapped; "
+            "review unmapped_records before production use."
         )
-        for item in mapped:
-            cursor = connection.execute(
-                """INSERT INTO commentary_entries
-                   (source_id, external_id, kind, title, body, sort_order, source_locator, payload_json)
-                   VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+    if fail_on_unmapped and diagnostics["unmapped_records"]:
+        raise CommentaryImportError(
+            "archive contains unmapped Scripture records: "
+            + ", ".join(str(index) for index in diagnostics["unmapped_records"])
+        )
+
+    database_path = Path(output_path)
+    database_path.parent.mkdir(parents=True, exist_ok=True)
+    temporary_fd, temporary_name = tempfile.mkstemp(
+        prefix=f".{database_path.name}.", suffix=".tmp", dir=database_path.parent
+    )
+    os.close(temporary_fd)
+    temporary_path = Path(temporary_name)
+    imported_at = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+    try:
+        initialize_database(temporary_path)
+        with sqlite3.connect(temporary_path) as connection:
+            connection.execute("PRAGMA foreign_keys = ON")
+            connection.execute(
+                """INSERT INTO commentary_sources
+                   (id, name, copyright, license, license_url, attribution, source_url,
+                    source_sha256, imported_at, importer_version)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                 (
-                    SOURCE_ID, item["external_id"], item["kind"], item["title"], item["body"],
-                    item["sort_order"], item["source_locator"],
-                    json.dumps(item["payload"], ensure_ascii=False, sort_keys=True) if item["payload"] else None,
+                    SOURCE_ID, SOURCE_NAME, "Copyright © 2022 Tyndale House Publishers",
+                    SOURCE_LICENSE, SOURCE_LICENSE_URL, SOURCE_ATTRIBUTION, source_url,
+                    source_sha256, imported_at, IMPORTER_VERSION,
                 ),
             )
-            if item["anchor"]:
-                anchor = item["anchor"]
-                connection.execute(
-                    """INSERT INTO commentary_anchors
-                       (entry_id, book, start_chapter, start_verse, end_chapter, end_verse, relationship)
-                       VALUES (?, ?, ?, ?, ?, ?, ?)""",
-                    (cursor.lastrowid, anchor["book"], anchor["start_chapter"], anchor["start_verse"],
-                     anchor["end_chapter"], anchor["end_verse"], anchor["relationship"]),
+            for item in mapped:
+                cursor = connection.execute(
+                    """INSERT INTO commentary_entries
+                       (source_id, external_id, kind, title, body, sort_order, source_locator, payload_json)
+                       VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+                    (
+                        SOURCE_ID, item["external_id"], item["kind"], item["title"], item["body"],
+                        item["sort_order"], item["source_locator"],
+                        json.dumps(item["payload"], ensure_ascii=False, sort_keys=True) if item["payload"] else None,
+                    ),
                 )
-        connection.execute(
-            "INSERT INTO commentary_metadata(key, value) VALUES('import_diagnostics', ?) "
-            "ON CONFLICT(key) DO UPDATE SET value=excluded.value",
-            (json.dumps(diagnostics, ensure_ascii=False, sort_keys=True),),
-        )
+                if item["anchor"]:
+                    anchor = item["anchor"]
+                    connection.execute(
+                        """INSERT INTO commentary_anchors
+                           (entry_id, book, start_chapter, start_verse, end_chapter, end_verse, relationship)
+                           VALUES (?, ?, ?, ?, ?, ?, ?)""",
+                        (cursor.lastrowid, anchor["book"], anchor["start_chapter"], anchor["start_verse"],
+                         anchor["end_chapter"], anchor["end_verse"], anchor["relationship"]),
+                    )
+            connection.execute(
+                "INSERT INTO commentary_metadata(key, value) VALUES('import_diagnostics', ?) "
+                "ON CONFLICT(key) DO UPDATE SET value=excluded.value",
+                (json.dumps(diagnostics, ensure_ascii=False, sort_keys=True),),
+            )
+        os.replace(temporary_path, database_path)
+    except Exception:
+        temporary_path.unlink(missing_ok=True)
+        raise
     return {"output": str(database_path), **diagnostics}
 
 
@@ -225,8 +259,22 @@ def _parse_record(record: Any, index: int) -> dict[str, Any] | None:
         "sort_order": _integer(_first(record, "sort_order", "order", "position"), index),
         "source_locator": _string(_first(record, "source_locator", "locator", "path", "file")) or None,
         "anchor": anchor,
+        "record_index": index,
+        "has_anchor_hint": _has_anchor_hint(record),
         "payload": record,
     }
+
+
+def _has_anchor_hint(record: dict[str, Any]) -> bool:
+    return any(
+        _first(record, key) not in (None, "")
+        for key in (
+            "reference", "ref", "osis_ref", "osis", "scripture", "passage", "anchor",
+            "book", "book_name", "book_id", "start_chapter", "chapter", "chapter_start",
+            "start_verse", "verse", "verse_start", "end_chapter", "chapter_end",
+            "end_verse", "verse_end",
+        )
+    )
 
 
 def _parse_anchor(record: dict[str, Any]) -> dict[str, Any] | None:

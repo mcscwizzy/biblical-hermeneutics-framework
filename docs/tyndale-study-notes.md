@@ -22,6 +22,8 @@ From the repository root, run:
 
 The importer inspects the supplied archive, safely rejects ZIP path traversal and symlinks, supports structured JSON/XML/CSV/TSV records, normalizes Bible book names using BHF's Bible logic, preserves source text, and reports entry/anchor counts, recognized books, warnings, and records that could not be mapped. It never calls the network or an LLM.
 
+For a production import, add `--fail-on-unmapped`. The importer then leaves the existing database untouched if a supplied Scripture reference cannot be mapped. Rebuilds are atomic, so an interrupted or failed import does not leave a partially written runtime database.
+
 The default runtime database is `.bhf/commentary.sqlite`. It is generated local data and is ignored by Git. To rebuild it, run the same command again; the existing commentary tables are replaced from the supplied source archive. To remove the installed resource, delete `.bhf/commentary.sqlite`.
 
 ## Reader behavior
@@ -31,6 +33,8 @@ The Bible reader has a labeled, collapsible Tyndale Study Notes companion pane. 
 `GET /api/commentary/{book}/{chapter}`
 
 The API returns structured entries, anchors, and one source/provenance block. If the database is absent, it returns an ordinary `available: false` response with `reason: commentary_not_installed` and no error page.
+
+Installation and import status are available at `GET /api/commentary/diagnostics`. The response includes the source provenance and the persisted import report, including unresolved reference indexes and intentionally anchorless records.
 
 Selecting one verse or a verse range focuses overlapping notes in the chapter pane and scrolls the first match into view. Other chapter notes remain visible. A selection with no matching note leaves the pane usable and does not show an error.
 
