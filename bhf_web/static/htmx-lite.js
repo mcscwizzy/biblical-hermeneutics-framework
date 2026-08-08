@@ -107,6 +107,7 @@ let appSection = null;
 let lastAskWorkspaceTab = "ask";
 let lastNotesWorkspaceTab = "notes";
 let lastExploreWorkspaceTab = "maps";
+let minimizedWorkspaceTab = null;
 let readerControlsTrigger = null;
 let translationCatalogState = null;
 let appDockScrollFrame = null;
@@ -1199,6 +1200,7 @@ function applyCompactSectionLayout(sectionId) {
   }
 
   applyWorkspaceMinimized(false);
+  restoreMinimizedWorkspaceTab();
   setWorkspaceDrawerOpen(true);
 }
 
@@ -1216,6 +1218,7 @@ function applyDesktopSectionLayout(sectionId, options = {}) {
     applyReaderMode(false, {persist: false});
   }
   applyWorkspaceMinimized(false);
+  restoreMinimizedWorkspaceTab();
   applyWorkspaceExpansion(false);
 }
 
@@ -1456,6 +1459,9 @@ function initializeWorkspaceMinimize() {
 
 function applyWorkspaceMinimized(enabled) {
   const nextEnabled = Boolean(enabled);
+  if (nextEnabled && !document.body.classList.contains("workspace-minimized")) {
+    minimizedWorkspaceTab = getCurrentWorkspaceTab();
+  }
   document.body.classList.toggle("workspace-minimized", nextEnabled);
   if (nextEnabled) {
     applyWorkspaceExpansion(false);
@@ -1477,10 +1483,9 @@ function applyWorkspaceMinimized(enabled) {
 
   const dockToggle = document.querySelector("[data-workspace-dock-toggle]");
   if (dockToggle) {
-    const accessibleLabel = nextEnabled
-      ? "Restore workspace"
-      : "Minimize workspace to dock";
-    setControlLabel(dockToggle, nextEnabled ? "Restore" : "Workspace");
+    const accessibleLabel = "Restore workspace";
+    setControlLabel(dockToggle, "Restore");
+    dockToggle.hidden = !nextEnabled;
     dockToggle.setAttribute("aria-label", accessibleLabel);
     dockToggle.setAttribute("title", accessibleLabel);
     dockToggle.setAttribute("aria-pressed", String(nextEnabled));
@@ -1497,9 +1502,24 @@ function toggleWorkspaceMinimized() {
 }
 
 function toggleWorkspaceFromDock() {
-  const isMinimized = document.body.classList.contains("workspace-minimized");
-  applyWorkspaceMinimized(!isMinimized);
-  activateAppSection(isMinimized ? "ask" : "bible", {focusReader: isMinimized});
+  if (!document.body.classList.contains("workspace-minimized")) {
+    return;
+  }
+  const tabToRestore = minimizedWorkspaceTab || "ask";
+  const sectionToRestore = appSectionFromWorkspaceTab(tabToRestore) || "ask";
+  applyWorkspaceMinimized(false);
+  activateAppSection(sectionToRestore, {focusReader: false});
+  activateWorkspaceTab(tabToRestore);
+  minimizedWorkspaceTab = null;
+}
+
+function restoreMinimizedWorkspaceTab() {
+  if (!minimizedWorkspaceTab) {
+    return;
+  }
+  const tabToRestore = minimizedWorkspaceTab;
+  minimizedWorkspaceTab = null;
+  activateWorkspaceTab(tabToRestore);
 }
 
 function applyWorkspaceExpansion(enabled) {

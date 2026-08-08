@@ -655,6 +655,11 @@ code {
   backdrop-filter: blur(10px);
 }
 
+body:not(.workspace-minimized) .app-dock {
+  grid-template-columns: repeat(5, minmax(76px, 1fr)) minmax(108px, auto);
+  width: min(660px, calc(100% - 24px));
+}
+
 .app-dock-item {
   min-height: 46px;
   padding: 0 8px;
@@ -703,6 +708,11 @@ html[data-theme="dark"] .app-dock {
     border-radius: 0;
     box-shadow: 0 -10px 24px rgb(17 30 41 / 10%);
     transform: none;
+  }
+
+  body:not(.workspace-minimized) .app-dock {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) 44px;
+    width: auto;
   }
 
   .app-dock-utility {
