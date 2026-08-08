@@ -127,6 +127,20 @@ Abbott-Smith importers should live under ignored `data_sources/lexicons/`
 directories, with licenses and pinned revisions documented in
 [`../docs/lexicon-sources.md`](../docs/lexicon-sources.md).
 
+## `import_archaeology.py`
+
+Imports only explicitly listed archaeology media through a selected provider.
+The current `fixture` provider is intended for reviewed local fixtures; it
+does not crawl or download arbitrary websites. Media rights are validated
+before insertion and unknown rights fail closed for redistribution/cache use.
+
+```bash
+python tools/import_archaeology.py \
+  --provider fixture \
+  --manifest data_sources/archaeology/manifest.json \
+  --database .bhf/study.sqlite
+```
+
 ## Code style
 
 Python follows PEP 8 with a 88-column line limit (the common `black` default;

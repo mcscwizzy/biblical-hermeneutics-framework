@@ -64,6 +64,7 @@ def register_study_routes(
                 context_presenter is not None
                 and payload.get("presentation") == "ai"
                 and result.evidence_packet
+                and result.action != "archaeology"
             ):
                 result.presentation = context_presenter(result.evidence_packet)
             data = result.to_dict()

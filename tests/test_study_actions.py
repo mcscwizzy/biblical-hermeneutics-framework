@@ -24,6 +24,24 @@ LEXICON_FIXTURE = Path("tests/fixtures/lexicon_phase1.json")
 
 
 class StudyActionRouterTests(unittest.TestCase):
+    def test_archaeology_action_returns_deterministic_evidence_without_agent(self):
+        result = StudyActionRouter().execute(
+            "archaeology",
+            passage={
+                "book": "John",
+                "chapter": 9,
+                "start_verse": 7,
+                "end_verse": 11,
+                "selected_text": "Then he sent him away to the pool of Siloam.",
+            },
+        )
+
+        self.assertEqual(result.action, "archaeology")
+        self.assertEqual(result.source, "archaeology")
+        self.assertFalse(result.agent_fallback_allowed)
+        self.assertEqual(result.presentation["items"][0]["id"], "pool-of-siloam")
+        self.assertEqual(result.evidence_packet["archaeological_items"][0]["id"], "pool-of-siloam")
+
     def test_context_action_returns_structured_result_without_agent(self):
         result = StudyActionRouter().execute(
             "historical_context",

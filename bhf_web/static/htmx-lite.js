@@ -53,6 +53,7 @@ const BHF_STUDY_ACTIONS = new Set([
   "people",
   "places",
   "themes",
+  "archaeology",
   "compare_archaeology",
 ]);
 
@@ -69,6 +70,7 @@ const BHF_DETERMINISTIC_STUDY_ACTIONS = new Set([
   "people",
   "places",
   "themes",
+  "archaeology",
 ]);
 const BHF_AUTO_ORGANIZED_CONTEXT_ACTIONS = new Set([
   "full_context",
@@ -115,6 +117,7 @@ let readerLocationSaveTimer = null;
 let pendingReaderLocation = null;
 let pendingReaderTabsPersistence = null;
 let wordStudyNavigationStack = [];
+let lastArchaeologyStudyAction = null;
 const BHF_HTTP = window.BHFApi || {};
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -2171,6 +2174,21 @@ async function loadReaderChapter(book, chapter, options = {}) {
       loadHighlights(data.book, data.chapter),
       loadSavedStudies(data.book, data.chapter),
     ]);
+    if (lastArchaeologyStudyAction) {
+      void requestDeterministicStudyAction(
+        {
+          ...lastArchaeologyStudyAction,
+          book: data.book,
+          chapter: Number(data.chapter),
+          verseStart: null,
+          verseEnd: null,
+          selectedVerses: [],
+          selectedText: "",
+          isSelection: false,
+        },
+        {chapterRefresh: true},
+      );
+    }
   } catch (error) {
     if (translationId !== "asv") {
       if (tab) {
@@ -4149,6 +4167,11 @@ async function requestDeterministicStudyAction(studyAction, options = {}) {
   if (!options.fromWordStudyChoice) {
     wordStudyNavigationStack = [];
   }
+  if (studyAction.type === "archaeology") {
+    lastArchaeologyStudyAction = {...studyAction};
+  } else if (!options.chapterRefresh) {
+    lastArchaeologyStudyAction = null;
+  }
   activateWorkspaceTab(isWordStudy ? "lexicon" : "ask");
   setFormValue("ask_mode", "");
   setFormValue("study_action", "");
@@ -4266,6 +4289,9 @@ function renderDeterministicStudyResult(result, options = {}) {
   if (result?.action === "word_study" && result?.metadata?.word_study) {
     return renderWordStudyResult(result, options);
   }
+  if (result?.action === "archaeology") {
+    return renderArchaeologyResult(result);
+  }
   if (result?.presentation && result?.evidence_packet) {
     return renderContextPresentation(result);
   }
@@ -4297,6 +4323,76 @@ function renderDeterministicStudyResult(result, options = {}) {
       </header>
       ${sectionHtml}
       ${refsHtml}
+    </article>
+  `;
+}
+
+function renderArchaeologyResult(result) {
+  const presentation = result.presentation || {};
+  const items = Array.isArray(presentation.items)
+    ? presentation.items.filter(Boolean).slice(0, 8)
+    : [];
+  const cards = items.length
+    ? items.map((item) => {
+        const media = Array.isArray(item.media) ? item.media : [];
+        const bundledMedia = media.find(
+          (candidate) =>
+            candidate &&
+            candidate.can_redistribute &&
+            candidate.can_cache &&
+            (candidate.image_url || candidate.local_asset_path),
+        );
+        const source = item.source || {};
+        const attribution = media
+          .map((candidate) => candidate.attribution_text)
+          .filter(Boolean)[0];
+        const imageHtml = bundledMedia
+          ? `<figure class="archaeology-media"><img loading="lazy" src="${escapeHtml(bundledMedia.image_url || bundledMedia.local_asset_path)}" alt="${escapeHtml(bundledMedia.title || item.title || "Archaeology evidence")}"><figcaption>${escapeHtml(bundledMedia.caption || "")}</figcaption></figure>`
+          : `<div class="archaeology-media archaeology-media--empty" role="img" aria-label="No redistributable image available">No redistributable image available</div>`;
+        const references = Array.isArray(item.scripture_references)
+          ? item.scripture_references.filter(Boolean)
+          : [];
+        const cautions = Array.isArray(item.cautions)
+          ? item.cautions.filter(Boolean)
+          : [];
+        const hasCoordinates = item.coordinates && item.coordinates.latitude !== null && item.coordinates.longitude !== null;
+        return `
+          <article class="archaeology-card" data-archaeology-id="${escapeHtml(item.id || "")}">
+            ${imageHtml}
+            <div class="archaeology-card-body">
+              <p class="archaeology-card-kicker">${escapeHtml([item.item_type, item.period].filter(Boolean).join(" · "))}</p>
+              <h3>${escapeHtml(item.title || "Archaeological Evidence")}</h3>
+              ${item.site_name ? `<p class="archaeology-card-site">${escapeHtml(item.site_name)}</p>` : ""}
+              <p>${escapeHtml(item.description || "No description is available.")}</p>
+              <p class="archaeology-card-relationship"><strong>Why this matters here:</strong> ${escapeHtml(item.significance || item.description || "")}</p>
+              <p class="archaeology-card-confidence"><strong>${escapeHtml(String(item.confidence || "Unknown"))}</strong> evidence · ${escapeHtml(String(item.dispute_status || "not_disputed").replaceAll("_", " "))}</p>
+              ${cautions.length ? `<aside class="archaeology-card-caution" role="note"><strong>Caution:</strong> ${escapeHtml(cautions.join(" "))}</aside>` : ""}
+              ${references.length ? `<p class="archaeology-card-references"><strong>Related passages:</strong> ${escapeHtml(references.join(", "))}</p>` : ""}
+              ${attribution ? `<p class="archaeology-card-attribution"><strong>Attribution:</strong> ${escapeHtml(attribution)}</p>` : ""}
+              <div class="archaeology-card-actions">
+                ${source.url ? `<a class="secondary-link" href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">View Source ↗</a>` : ""}
+                ${hasCoordinates ? `<button type="button" class="secondary" data-archaeology-map="${escapeHtml(item.id || "")}">View on Map</button>` : ""}
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("")
+    : `<p class="empty">No curated archaeology evidence was found for this chapter or passage.</p>`;
+  return `
+    <article class="answer deterministic-study-result archaeology-result" data-deterministic-study-result>
+      <header class="answer-header">
+        <div>
+          <p class="answer-eyebrow">Deterministic archaeological evidence</p>
+          <h2>${escapeHtml(result.title || "Archaeology")}</h2>
+        </div>
+        <div class="answer-actions">
+          <button type="button" class="secondary answer-save" data-deterministic-save>Save Study</button>
+          <button type="button" class="secondary" data-deterministic-explain>Explain with BHF</button>
+          <button type="button" class="secondary" data-deterministic-ask>Ask a Question</button>
+        </div>
+      </header>
+      <p class="archaeology-result-note">Evidence and interpretation are kept distinct. Archaeological records provide historical context and do not by themselves establish theological conclusions.</p>
+      <div class="archaeology-card-list">${cards}</div>
     </article>
   `;
 }
@@ -4633,9 +4729,29 @@ function renderDeterministicSection(section) {
 function wireDeterministicStudyControls(answerPanel, result, studyAction) {
   wireWordStudyChoiceControls(answerPanel, studyAction);
   wireWordStudyBackControl(answerPanel);
+  answerPanel.querySelectorAll("[data-archaeology-map]").forEach((button) => {
+    button.addEventListener("click", () => {
+      openMapPanel({
+        ...studyAction,
+        archaeologyId: button.dataset.archaeologyMap || "",
+      });
+    });
+  });
   answerPanel
     .querySelector("[data-deterministic-explain]")
     ?.addEventListener("click", async () => {
+      if (result.action === "archaeology") {
+        const packet = result.fact_packet || compactDeterministicResult(result);
+        setFormValue("deterministic_fact_packet", JSON.stringify(packet));
+        setFormValue("ask_mode", "");
+        setFormValue("study_action", result.action || studyAction.type);
+        setFormValue(
+          "question",
+          `Explain ${result.title || "this archaeological evidence"} using BHF, preserving the supplied citations and uncertainty.`,
+        );
+        submitAskForm();
+        return;
+      }
       if (result.evidence_packet) {
         await requestAIContextPresentation(studyAction, answerPanel);
         return;

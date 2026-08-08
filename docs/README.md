@@ -29,6 +29,8 @@ Use this index to find the shortest path for your task.
   [word study](word-study.md) — lexical storage and runtime behavior.
 - [Research expansion](research-expansion.md) — answer-coverage routing and
   optional evidence expansion.
+- [Archaeology evidence and media policy](archaeology.md) — deterministic
+  evidence, rights-aware media, importing, presentation, and offline behavior.
 
 ## Build and maintain data
 

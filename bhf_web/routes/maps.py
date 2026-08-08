@@ -13,9 +13,12 @@ from bhf_agent.study_db import (
     create_map_note,
     create_saved_map_study,
     delete_saved_map_study,
+    get_archaeology_item,
+    get_archaeology_site,
     get_saved_map_study,
     list_saved_map_studies,
 )
+from bhf_agent.archaeology_resolver import resolve_archaeology_evidence
 
 from ..map_service import (
     get_map_catalog,
@@ -208,6 +211,43 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
         except BibleError as exc:
             return JSONResponse({"error": str(exc)}, status_code=404)
         return JSONResponse(result)
+
+    @app.get("/api/archaeology/for-passage", response_class=JSONResponse)
+    async def archaeology_for_passage(
+        book: str,
+        chapter: int,
+        verse_start: int | None = None,
+        verse_end: int | None = None,
+        passage_text: str | None = None,
+        limit: int = 8,
+    ) -> JSONResponse:
+        try:
+            result = resolve_archaeology_evidence(
+                book=book,
+                chapter=chapter,
+                verse_start=verse_start,
+                verse_end=verse_end,
+                passage_text=passage_text,
+                limit=limit,
+                path=study_db_path,
+            )
+        except (BibleError, ValueError) as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+        return JSONResponse(result)
+
+    @app.get("/api/archaeology/items/{item_id}", response_class=JSONResponse)
+    async def archaeology_item(item_id: str) -> JSONResponse:
+        try:
+            return JSONResponse(get_archaeology_item(item_id, path=study_db_path))
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
+
+    @app.get("/api/archaeology/sites/{site_id}", response_class=JSONResponse)
+    async def archaeology_site(site_id: str) -> JSONResponse:
+        try:
+            return JSONResponse(get_archaeology_site(site_id, path=study_db_path))
+        except StudyDataError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=404)
 
     @app.get("/api/maps/manuscripts-for-passage", response_class=JSONResponse)
     async def maps_manuscripts_for_passage(

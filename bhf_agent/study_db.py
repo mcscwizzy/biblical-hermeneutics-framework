@@ -22,7 +22,7 @@ from .db.repositories import manuscripts as _manuscripts_repo
 from .db.repositories import reader_state as _reader_state_repo
 from .db.repositories import sources as _sources_repo
 
-SCHEMA_VERSION = 15
+SCHEMA_VERSION = 16
 OPENBIBLE_PLACES_PATH = Path(__file__).resolve().parent / "data" / "openbible_places.json"
 BROAD_PERIOD_LABEL = "Broad / uncertain period"
 CANONICAL_PERIOD_LABELS = (
@@ -478,6 +478,31 @@ def list_archaeology_scripture_links(
     )
 
 
+def list_archaeology_media(
+    *,
+    item_id: str | None = None,
+    site_id: str | None = None,
+    path: str | Path = DEFAULT_DB_PATH,
+) -> list[dict[str, Any]]:
+    return _archaeology_repo.list_archaeology_media(
+        item_id=item_id,
+        site_id=site_id,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
+
+
+def create_archaeology_media(
+    record: dict[str, Any],
+    path: str | Path = DEFAULT_DB_PATH,
+) -> dict[str, Any]:
+    return _archaeology_repo.create_archaeology_media(
+        record,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
+
+
 def list_sources(path: str | Path = DEFAULT_DB_PATH) -> list[dict[str, Any]]:
     return _sources_repo.list_sources(
         path=path,
@@ -743,6 +768,12 @@ def _ensure_schema(connection: sqlite3.Connection) -> None:
         connection.execute(
             "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
             (15, _timestamp()),
+        )
+    if 16 not in applied:
+        _apply_v16_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (16, _timestamp()),
         )
     # Older local databases may already record v15 from the period when the
     # map-study table was intentionally removed. Recreate the optional table
@@ -1276,6 +1307,53 @@ def _apply_v15_schema(connection: sqlite3.Connection) -> None:
         );
         CREATE INDEX IF NOT EXISTS idx_saved_map_studies_reference
             ON saved_map_studies(book, chapter);
+        """
+    )
+
+
+def _apply_v16_schema(connection: sqlite3.Connection) -> None:
+    """Add rights-aware media without changing existing archaeology IDs."""
+
+    connection.executescript(
+        """
+        CREATE TABLE IF NOT EXISTS archaeology_media (
+            id TEXT PRIMARY KEY,
+            archaeology_item_id TEXT,
+            archaeology_site_id TEXT,
+            media_type TEXT NOT NULL DEFAULT 'image',
+            title TEXT NOT NULL DEFAULT '',
+            caption TEXT NOT NULL DEFAULT '',
+            source_url TEXT NOT NULL DEFAULT '',
+            image_url TEXT NOT NULL DEFAULT '',
+            thumbnail_url TEXT NOT NULL DEFAULT '',
+            local_asset_path TEXT NOT NULL DEFAULT '',
+            creator TEXT NOT NULL DEFAULT '',
+            institution TEXT NOT NULL DEFAULT '',
+            license_id TEXT NOT NULL DEFAULT '',
+            license_url TEXT NOT NULL DEFAULT '',
+            attribution_text TEXT NOT NULL DEFAULT '',
+            rights_status TEXT NOT NULL DEFAULT 'unknown',
+            can_redistribute INTEGER NOT NULL DEFAULT 0,
+            can_cache INTEGER NOT NULL DEFAULT 0,
+            can_modify INTEGER NOT NULL DEFAULT 0,
+            source_record_id TEXT NOT NULL DEFAULT '',
+            checksum TEXT NOT NULL DEFAULT '',
+            width INTEGER,
+            height INTEGER,
+            FOREIGN KEY(archaeology_item_id) REFERENCES archaeology_items(id),
+            FOREIGN KEY(archaeology_site_id) REFERENCES archaeology_sites(id),
+            CHECK ((archaeology_item_id IS NOT NULL AND archaeology_site_id IS NULL)
+                OR (archaeology_item_id IS NULL AND archaeology_site_id IS NOT NULL))
+        );
+
+        CREATE INDEX IF NOT EXISTS idx_archaeology_media_item
+            ON archaeology_media(archaeology_item_id);
+
+        CREATE INDEX IF NOT EXISTS idx_archaeology_media_site
+            ON archaeology_media(archaeology_site_id);
+
+        CREATE INDEX IF NOT EXISTS idx_archaeology_media_rights
+            ON archaeology_media(rights_status, can_redistribute, can_cache);
         """
     )
 

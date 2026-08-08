@@ -877,6 +877,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("data-context-action=\"view_historical_layer\"", response["body"])
         self.assertIn("data-context-action=\"save_study\"", response["body"])
         self.assertIn("data-context-action=\"word_study\"", response["body"])
+        self.assertIn("data-context-action=\"archaeology\"", response["body"])
         self.assertIn("data-context-submenu=\"study\"", response["body"])
         self.assertIn("data-context-submenu=\"context\"", response["body"])
         self.assertIn("data-context-submenu=\"reference\"", response["body"])
@@ -997,7 +998,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("installed_translations", offline_data["offline_boundary"]["available"])
         self.assertEqual(
             [pack["id"] for pack in offline_data["packs"]],
-            ["core", "study", "maps", "sources"],
+            ["core", "study", "maps", "sources", "archaeology"],
         )
         self.assertTrue(offline_data["packs"][0]["required"])
         self.assertIn("mutationQueue", offline_data["client_stores"])
@@ -1176,6 +1177,20 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("/api/sources", urls)
         self.assertGreaterEqual(len(data["sources"]), 1)
 
+    def test_archaeology_offline_pack_contains_text_and_only_allowed_media(self):
+        with self._temp_curation_db() as db_path:
+            initialize_database(db_path)
+            with patch("bhf_web.app.STUDY_DB_PATH", db_path):
+                test_app = create_app()
+                response = asgi_request("GET", "/api/offline/packs/archaeology", test_app=test_app)
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(data["pack_id"], "archaeology")
+        self.assertGreaterEqual(len(data["items"]), 8)
+        self.assertEqual(data["media"], [])
+        self.assertIn("/api/maps/archaeology", [entry["url"] for entry in data["responses"]])
+
     def test_get_curation_page_returns_200(self):
         with self._temp_curation_db() as db_path:
             initialize_database(db_path)
@@ -1318,6 +1333,24 @@ class WebAppTests(unittest.TestCase):
         self.assertTrue(pilate["source_id"])
         self.assertIn("source", pilate)
         self.assertEqual(pilate["marker_kind"], "archaeology")
+
+    def test_archaeology_evidence_api_returns_packet_and_details(self):
+        response = asgi_request(
+            "GET",
+            "/api/archaeology/for-passage?book=John&chapter=9&verse_start=7&verse_end=11",
+        )
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertIn("archaeological_items", data)
+        self.assertEqual(data["archaeological_items"][0]["id"], "pool-of-siloam")
+
+        detail = asgi_request("GET", "/api/archaeology/items/pool-of-siloam")
+        self.assertEqual(detail["status"], 200)
+        self.assertEqual(json.loads(detail["body"])["id"], "pool-of-siloam")
+
+        missing = asgi_request("GET", "/api/archaeology/items/not-an-item")
+        self.assertEqual(missing["status"], 404)
 
     def test_manuscripts_route_returns_markers(self):
         response = asgi_request("GET", "/api/maps/manuscripts")
