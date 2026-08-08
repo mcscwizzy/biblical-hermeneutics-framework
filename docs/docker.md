@@ -1,9 +1,10 @@
 # Docker Installation and Operations
 
 Docker is the recommended local BHF installation. The image contains the web
-application, agent, framework modules, bundled Bible data, and a generated CKL
-database. During the image build it also downloads pinned lexical sources and
-creates a seeded Greek/Hebrew lexical database.
+application, agent, framework modules, bundled Bible data, and generated CKL,
+lexical, and Tyndale commentary databases. During the image build it downloads
+the checksum-pinned Tyndale archive and lexical sources, then validates each
+generated database.
 
 Two stacks are supported:
 
@@ -130,6 +131,7 @@ The most useful `.env` settings are:
 | `BHF_MAX_TOKENS` | `4096` | Maximum generated tokens. |
 | `BHF_MEMORY_ENABLED` | `false` | Enables local session-memory files. |
 | `BHF_LEXICAL_SEED_POLICY` | `refresh` in Compose | `refresh`, `missing`, or `none`. |
+| `BHF_COMMENTARY_SEED_POLICY` | `refresh` in Compose | `refresh`, `missing`, or `none` for the Tyndale database. |
 
 The legacy `BHF_PROFILE` and `BHF_ANSWER_MODE` values remain accepted for
 compatibility but no longer change the unified runtime answer format.
@@ -144,6 +146,7 @@ Both app stacks mount the repository's `.bhf/` directory at
 | Host path | Purpose |
 |---|---|
 | `.bhf/lexicon.sqlite` | Generated lexical and verse-token database. |
+| `.bhf/commentary.sqlite` | Generated Tyndale Open Study Notes database. |
 | `.bhf/study.sqlite` | Notes, highlights, saved studies, sources, and other server study data. |
 | `.bhf/sessions/` | Optional local agent memory. |
 | `.bhf/translations/` | Server-installed translation data and metadata. |
@@ -177,6 +180,27 @@ BHF_OSHB_REVISION=<commit> \
 BHF_MORPHGNT_REVISION=<commit> \
 docker compose build bhf-web
 ```
+
+## Tyndale image build
+
+The Dockerfile downloads the official Tyndale Open Study Notes archive, checks
+its SHA-256, imports it with strict qualification, and runs `check-tyndale`
+before storing the result as `/app/.bhf-seed/commentary.sqlite`. The default
+archive URL and checksum are declared in `.env.example`, the Compose build
+arguments, and the Dockerfile. Override both together only when intentionally
+refreshing the source:
+
+```bash
+BHF_TYNDALE_ARCHIVE_URL=<official-archive-url> \
+BHF_TYNDALE_ARCHIVE_SHA256=<sha256> \
+docker compose build bhf-web
+```
+
+Compose copies the validated image seed to `.bhf/commentary.sqlite` on startup.
+Set `BHF_COMMENTARY_SEED_POLICY=missing` to preserve a database imported locally
+with `framework.commentary import-tyndale`; set it to `none` to disable image
+seeding. The standalone importer remains local-only and does not download or
+scrape a source archive.
 
 ## Routine operations
 

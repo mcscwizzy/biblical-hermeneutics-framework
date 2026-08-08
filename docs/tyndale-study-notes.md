@@ -10,7 +10,7 @@ BHF stores this provenance in the commentary database. The generated SQLite file
 
 ## Obtain and import the official source
 
-Obtain the official Tyndale Open Study Notes archive through a lawful source and save it locally. BHF does not scrape a website or download the archive automatically.
+For the standalone importer, obtain the official Tyndale Open Study Notes archive through a lawful source and save it locally. BHF does not scrape a website or download the archive automatically during local imports. The Dockerfile has a separate checksum-pinned build step that downloads the official archive and validates it before creating the image seed database.
 
 From the repository root, run:
 
