@@ -55,26 +55,33 @@
 <body>
   <dialog class="ai-setup-dialog" data-ai-setup aria-labelledby="ai-setup-title">
     <div class="ai-setup-panel">
+      <p class="eyebrow">AI assistance</p>
       <h2 id="ai-setup-title">Set Up AI for BHF</h2>
-      <p>BHF uses AI to help explain Scripture using the Biblical Hermeneutics Framework.</p>
+      <p>AI is optional. Choose how BHF should provide study help; you can change this later in AI settings.</p>
       <section class="ai-setup-recommended">
-        <p class="eyebrow">Recommended</p>
+        <p class="eyebrow">Recommended connection</p>
         <h3>Connect OpenRouter</h3>
-        <p>Best answer quality on nearly any computer. Sign in or create an OpenRouter account to continue.</p>
-        <button type="button" data-openrouter-connect>Connect OpenRouter</button>
+        <p>Use a hosted model through an OpenRouter account. This is the simplest choice for strong answers on most devices.</p>
+        <button type="button" data-openrouter-connect title="Open a secure sign-in flow to connect an OpenRouter account.">Connect OpenRouter</button>
         <p class="field-help">Your key is encrypted and stored only in this browser.</p>
       </section>
       <section class="ai-setup-options">
-        <h3>Other options</h3>
+        <div class="setup-section-heading">
+          <div>
+            <p class="eyebrow">Connection choices</p>
+            <h3>Other ways to use AI</h3>
+          </div>
+          <span class="settings-help" tabindex="0" role="img" aria-label="Help: These choices only configure AI. Your Bible reader, notes, studies, and maps work without AI." data-tooltip="These choices only configure AI. Your Bible reader, notes, studies, and maps work without AI.">?</span>
+        </div>
         <div class="ai-setup-option-grid">
-          <button type="button" class="secondary" data-ai-local-provider><span>Use Local AI</span><small>Runs through Ollama or another model server on your computer or network.</small></button>
-          <button type="button" class="secondary" data-ai-other-provider><span>Use Another OpenAI-Compatible Service</span><small>Connect another compatible provider.</small></button>
-        <button type="button" class="secondary" data-ai-continue-without><span>Continue Without AI</span><small>Use the Bible reader, search, CKL, lexicon, maps, and other non-AI tools.</small></button>
+          <button type="button" class="secondary" data-ai-local-provider title="Configure Ollama or another model server available on your computer or local network."><span>Use Local AI</span><small>Runs through Ollama or another model server on your computer or network.</small></button>
+          <button type="button" class="secondary" data-ai-other-provider title="Configure a service that supports the OpenAI-compatible API format."><span>Use Another OpenAI-Compatible Service</span><small>Connect another compatible provider.</small></button>
+          <button type="button" class="secondary" data-ai-continue-without title="Close setup and use BHF’s non-AI features. You can connect AI later from settings."><span>Continue Without AI</span><small>Use the Bible reader, search, CKL, lexicon, maps, and other non-AI tools.</small></button>
         </div>
       </section>
       <details class="advanced-ai-settings">
         <summary>Already have an OpenRouter key? Enter key manually</summary>
-        <label for="ai-manual-token"><span>OpenRouter key</span></label>
+        <label for="ai-manual-token"><span>OpenRouter key</span><span class="settings-help" tabindex="0" role="img" aria-label="Help: Paste an OpenRouter API key if you do not want to use the sign-in flow." data-tooltip="Paste an OpenRouter API key if you do not want to use the sign-in flow. The key is encrypted before BHF saves it in this browser.">?</span></label>
         <div class="credential-input-row">
           <input id="ai-manual-token" type="password" data-ai-manual-token autocomplete="new-password" aria-describedby="ai-manual-token-status">
           <button type="button" class="secondary token-visibility-toggle" data-token-visibility-toggle="ai-manual-token" aria-label="Show OpenRouter key" title="Show OpenRouter key">
@@ -796,45 +803,59 @@
         <h2 id="reader-controls-sheet-title">Settings</h2>
         <button type="button" class="secondary reader-controls-sheet-close" data-reader-controls-close aria-label="Close settings">×</button>
       </header>
+      <p class="reader-settings-intro">Organized by what you want to change. Hover a <span class="settings-help settings-help-inline" role="img" aria-label="Help: Hover an icon like this, or focus a setting, for an explanation." data-tooltip="Hover an icon like this, or focus a setting, for an explanation.">?</span> icon—or focus a setting—for quick guidance.</p>
       <div class="reader-settings-list">
-        <button type="button" class="reader-setting-action" data-theme-toggle data-testid="mobile-theme-toggle" aria-pressed="false">
+        <section class="reader-settings-group" aria-labelledby="settings-appearance-title">
+          <div class="reader-settings-group-heading">
+            <p class="eyebrow">Display</p>
+            <h3 id="settings-appearance-title">Appearance & reading</h3>
+            <p>Set how BHF looks and how the workspace opens.</p>
+          </div>
+          <button type="button" class="reader-setting-action" data-theme-toggle data-testid="mobile-theme-toggle" aria-pressed="false" aria-describedby="help-theme-toggle">
           <span class="reader-setting-copy">
-            <span class="reader-setting-title">Appearance</span>
+            <span class="reader-setting-title">Appearance <span id="help-theme-toggle" class="settings-help" tabindex="0" role="img" aria-label="Help: Switch between light and dark color themes. This does not change your saved studies." data-tooltip="Switch between light and dark color themes. This does not change your saved studies.">?</span></span>
             <span class="reader-setting-status" data-control-status>Current value: Light</span>
           </span>
           <span class="reader-setting-value" data-control-label>Dark mode</span>
         </button>
-        <button type="button" class="reader-setting-action" data-reader-mode-toggle data-testid="mobile-reader-mode-toggle" aria-pressed="false">
+          <button type="button" class="reader-setting-action" data-reader-mode-toggle data-testid="mobile-reader-mode-toggle" aria-pressed="false" aria-describedby="help-reader-mode">
           <span class="reader-setting-copy">
-            <span class="reader-setting-title">Reader mode</span>
+            <span class="reader-setting-title">Reader mode <span id="help-reader-mode" class="settings-help" tabindex="0" role="img" aria-label="Help: Keep Scripture as the focus and collapse the study workspace until you need it." data-tooltip="Keep Scripture as the focus and collapse the study workspace until you need it.">?</span></span>
             <span class="reader-setting-status" data-control-status>Current value: Off</span>
           </span>
           <span class="reader-setting-value" data-control-label>Reader mode</span>
         </button>
+        </section>
+        <section class="reader-settings-group" aria-labelledby="settings-app-title">
+          <div class="reader-settings-group-heading">
+            <p class="eyebrow">App & storage</p>
+            <h3 id="settings-app-title">Install & offline data</h3>
+            <p>Manage the app shell, local cache, and device-only recovery files.</p>
+          </div>
         <button type="button" class="reader-setting-action" data-pwa-install data-testid="pwa-install">
           <span class="reader-setting-copy">
-            <span class="reader-setting-title">Install app</span>
+            <span class="reader-setting-title">Install app <span class="settings-help" tabindex="0" role="img" aria-label="Help: Add BHF to this device so it opens like an app and can support offline use." data-tooltip="Add BHF to this device so it opens like an app and can support offline use.">?</span></span>
             <span class="reader-setting-status" data-pwa-install-status>Choose Add to Home Screen in your browser</span>
           </span>
           <span class="reader-setting-value" data-pwa-install-label>How to install</span>
         </button>
         <button type="button" class="reader-setting-action" data-pwa-update data-testid="pwa-update">
           <span class="reader-setting-copy">
-            <span class="reader-setting-title">App update</span>
+            <span class="reader-setting-title">App update <span class="settings-help" tabindex="0" role="img" aria-label="Help: Check for a newer BHF app shell. Your notes and saved studies are not changed." data-tooltip="Check for a newer BHF app shell. Your notes and saved studies are not changed.">?</span></span>
             <span class="reader-setting-status" data-pwa-update-status aria-live="polite">Service worker starting</span>
           </span>
           <span class="reader-setting-value" data-pwa-update-label>Check</span>
         </button>
         <button type="button" class="reader-setting-action" data-offline-storage-refresh data-testid="offline-storage">
           <span class="reader-setting-copy">
-            <span class="reader-setting-title">Offline storage</span>
+            <span class="reader-setting-title">Offline storage <span class="settings-help" tabindex="0" role="img" aria-label="Help: Review browser storage used by BHF on this device." data-tooltip="Review browser storage used by BHF on this device.">?</span></span>
             <span class="reader-setting-status" data-offline-storage-status>Checking storage...</span>
           </span>
           <span class="reader-setting-value" data-offline-storage-label>Refresh</span>
         </button>
         <button type="button" class="reader-setting-action" data-offline-readiness-refresh data-testid="offline-readiness">
           <span class="reader-setting-copy">
-            <span class="reader-setting-title">Offline readiness</span>
+            <span class="reader-setting-title">Offline readiness <span class="settings-help" tabindex="0" role="img" aria-label="Help: Check whether the app and required study content are available without an internet connection." data-tooltip="Check whether the app and required study content are available without an internet connection.">?</span></span>
             <span class="reader-setting-status" data-offline-readiness-status>Checking readiness...</span>
           </span>
           <span class="reader-setting-value" data-offline-readiness-label>Refresh</span>
@@ -850,88 +871,104 @@
         </details>
         <button type="button" class="reader-setting-action" data-offline-refresh-all data-testid="offline-refresh-all">
           <span class="reader-setting-copy">
-            <span class="reader-setting-title">Refresh offline data</span>
+            <span class="reader-setting-title">Refresh offline data <span class="settings-help" tabindex="0" role="img" aria-label="Help: Rebuild downloaded content packs. Your personal notes and studies stay in place." data-tooltip="Rebuild downloaded content packs. Your personal notes and studies stay in place.">?</span></span>
             <span class="reader-setting-status" data-offline-refresh-all-status>Rebuild cached packs</span>
           </span>
           <span class="reader-setting-value" data-offline-refresh-all-label>Refresh</span>
         </button>
         <button type="button" class="reader-setting-action" data-offline-clear-caches data-testid="offline-clear-caches">
           <span class="reader-setting-copy">
-            <span class="reader-setting-title">Clear offline cache</span>
+            <span class="reader-setting-title">Clear offline cache <span class="settings-help" tabindex="0" role="img" aria-label="Help: Remove downloaded, rebuildable content to free space. Personal records are preserved." data-tooltip="Remove downloaded, rebuildable content to free space. Personal records are preserved.">?</span></span>
             <span class="reader-setting-status" data-offline-clear-caches-status>Preserve local records</span>
           </span>
           <span class="reader-setting-value" data-offline-clear-caches-label>Clear</span>
         </button>
         <button type="button" class="reader-setting-action" data-offline-snapshot-export data-testid="offline-snapshot-export">
           <span class="reader-setting-copy">
-            <span class="reader-setting-title">Export offline data</span>
+            <span class="reader-setting-title">Export offline data <span class="settings-help" tabindex="0" role="img" aria-label="Help: Download a device recovery file. Unlike a study vault, this file is not protected with a vault passphrase." data-tooltip="Download a device recovery file. Unlike a study vault, this file is not protected with a vault passphrase.">?</span></span>
             <span class="reader-setting-status" data-offline-snapshot-export-status>Save a local backup</span>
           </span>
           <span class="reader-setting-value" data-offline-snapshot-export-label>Export</span>
         </button>
         <button type="button" class="reader-setting-action" data-offline-snapshot-import data-testid="offline-snapshot-import">
           <span class="reader-setting-copy">
-            <span class="reader-setting-title">Import offline data</span>
+            <span class="reader-setting-title">Import offline data <span class="settings-help" tabindex="0" role="img" aria-label="Help: Restore a previously exported device recovery file." data-tooltip="Restore a previously exported device recovery file.">?</span></span>
             <span class="reader-setting-status" data-offline-snapshot-import-status>Restore a local backup</span>
           </span>
           <span class="reader-setting-value" data-offline-snapshot-import-label>Import</span>
         </button>
         <input type="file" class="reader-setting-file-input" data-offline-snapshot-file accept="application/json,.json" hidden>
+        </section>
+        <section class="reader-settings-group reader-settings-vault" aria-labelledby="settings-vault-title">
+          <div class="reader-settings-group-heading">
+            <p class="eyebrow">Your study records</p>
+            <h3 id="settings-vault-title">Private study vault</h3>
+            <p>Back up and restore privately, or send a readable copy to another app.</p>
+          </div>
         <button type="button" class="reader-setting-action" data-study-vault-export data-vault-status="study-vault-status" data-vault-label="study-vault-label" data-testid="study-vault-export">
           <span class="reader-setting-copy">
-            <span class="reader-setting-title">Encrypted study vault</span>
-            <span class="reader-setting-status" data-study-vault-status>Export notes, studies, highlights, and map studies</span>
+            <span class="reader-setting-title">Back up encrypted study vault <span class="settings-help" tabindex="0" role="img" aria-label="Help: Create an encrypted .bhfvault backup of notes, highlights, saved studies, and map studies. You need its passphrase to restore it." data-tooltip="Create an encrypted .bhfvault backup of notes, highlights, saved studies, and map studies. You need its passphrase to restore it.">?</span></span>
+            <span class="reader-setting-status" data-study-vault-status>Private backup: encrypted before it leaves this device</span>
           </span>
           <span class="reader-setting-value" data-study-vault-label>Export</span>
         </button>
         <button type="button" class="reader-setting-action" data-study-vault-import data-vault-status="study-vault-import-status" data-vault-label="study-vault-import-label" data-testid="study-vault-import">
           <span class="reader-setting-copy">
-            <span class="reader-setting-title">Restore encrypted study vault</span>
-            <span class="reader-setting-status" data-study-vault-import-status>Merge a vault without overwriting newer local work</span>
+            <span class="reader-setting-title">Restore encrypted study vault <span class="settings-help" tabindex="0" role="img" aria-label="Help: Unlock a .bhfvault backup with its passphrase and merge it with this device. Newer local work is kept." data-tooltip="Unlock a .bhfvault backup with its passphrase and merge it with this device. Newer local work is kept.">?</span></span>
+            <span class="reader-setting-status" data-study-vault-import-status>Unlock with its passphrase; newer local work is kept</span>
           </span>
           <span class="reader-setting-value" data-study-vault-import-label>Import</span>
         </button>
         <input type="file" class="reader-setting-file-input" data-study-vault-file accept="application/json,.bhfvault" hidden>
         <button type="button" class="reader-setting-action" data-study-vault-share data-vault-status="study-vault-share-status" data-vault-label="study-vault-share-label" data-testid="study-vault-share">
           <span class="reader-setting-copy">
-            <span class="reader-setting-title">Share notes and studies</span>
-            <span class="reader-setting-status" data-study-vault-share-status>Send a readable copy to Apple Notes, Google Keep, or another app</span>
+            <span class="reader-setting-title">Share notes & studies <span class="settings-help" tabindex="0" role="img" aria-label="Help: Send a readable Markdown or text copy through your device’s share sheet. This copy is not encrypted and cannot restore a vault." data-tooltip="Send a readable Markdown or text copy through your device’s share sheet. This copy is not encrypted and cannot restore a vault.">?</span></span>
+            <span class="reader-setting-status" data-study-vault-share-status>Readable copy for Notes, Keep, email, or another app — not a backup</span>
           </span>
           <span class="reader-setting-value" data-study-vault-share-label>Share</span>
         </button>
-        <details class="offline-readiness-details" data-study-vault-details>
-          <summary>Cloud study sync</summary>
-          <p class="field-help">OneDrive and iCloud synchronize an encrypted BHF vault when configured. Apple Notes and Google Keep receive readable copies through the system share sheet; they are not two-way sync stores.</p>
-          <button type="button" class="secondary" data-vault-onedrive-connect data-testid="vault-onedrive-connect">Connect OneDrive</button>
-          <button type="button" class="secondary" data-vault-onedrive-sync data-vault-status="study-vault-status" data-vault-label="study-vault-label" data-testid="vault-onedrive-sync" disabled>Sync now</button>
-          <button type="button" class="secondary" data-vault-cloudkit-connect data-testid="vault-cloudkit-connect">Connect iCloud</button>
-          <button type="button" class="secondary" data-vault-cloudkit-sync data-vault-status="study-vault-status" data-vault-label="study-vault-label" data-testid="vault-cloudkit-sync" disabled>Sync iCloud</button>
+        <details class="offline-readiness-details vault-sync-details" data-study-vault-details>
+          <summary>Cloud vault sync <span class="settings-help" tabindex="0" role="img" aria-label="Help: Sync the same encrypted vault through OneDrive or iCloud after connecting an account. The service never receives your vault passphrase." data-tooltip="Sync the same encrypted vault through OneDrive or iCloud after connecting an account. The service never receives your vault passphrase.">?</span></summary>
+          <p class="field-help">OneDrive and iCloud store an encrypted vault, never its passphrase. Apple Notes and Google Keep receive readable shared copies only; they do not provide two-way sync.</p>
+          <div class="vault-provider-actions">
+            <button type="button" class="secondary" data-vault-onedrive-connect data-testid="vault-onedrive-connect" title="Connect the OneDrive app folder where BHF will store its encrypted vault.">Connect OneDrive</button>
+            <button type="button" class="secondary" data-vault-onedrive-sync data-vault-status="study-vault-status" data-vault-label="study-vault-label" data-testid="vault-onedrive-sync" disabled title="Upload or download the current encrypted vault after OneDrive is connected.">Sync encrypted vault</button>
+            <button type="button" class="secondary" data-vault-cloudkit-connect data-testid="vault-cloudkit-connect" title="Connect the private iCloud database for this BHF vault.">Connect iCloud</button>
+            <button type="button" class="secondary" data-vault-cloudkit-sync data-vault-status="study-vault-status" data-vault-label="study-vault-label" data-testid="vault-cloudkit-sync" disabled title="Upload or download the current encrypted vault after iCloud is connected.">Sync encrypted vault</button>
+          </div>
           <span id="study-vault-cloudkit-signin" class="field-help"></span>
         </details>
+        </section>
+        <section class="reader-settings-group" aria-labelledby="settings-library-title">
+          <div class="reader-settings-group-heading">
+            <p class="eyebrow">Downloaded content</p>
+            <h3 id="settings-library-title">Offline library</h3>
+            <p>Choose which reference material stays available without a connection.</p>
+          </div>
         <button type="button" class="reader-setting-action" data-offline-pack="study" data-testid="offline-pack-study">
           <span class="reader-setting-copy">
-            <span class="reader-setting-title">Study pack</span>
+            <span class="reader-setting-title">Study pack <span class="settings-help" tabindex="0" role="img" aria-label="Help: Download study reference content for offline use on this device." data-tooltip="Download study reference content for offline use on this device.">?</span></span>
             <span class="reader-setting-status" data-offline-pack-status>Not installed</span>
           </span>
           <span class="reader-setting-value" data-offline-pack-label>Install</span>
         </button>
         <button type="button" class="reader-setting-action" data-offline-pack="maps" data-testid="offline-pack-maps">
           <span class="reader-setting-copy">
-            <span class="reader-setting-title">Maps pack</span>
+            <span class="reader-setting-title">Maps pack <span class="settings-help" tabindex="0" role="img" aria-label="Help: Download map data for offline study on this device." data-tooltip="Download map data for offline study on this device.">?</span></span>
             <span class="reader-setting-status" data-offline-pack-status>Not installed</span>
           </span>
           <span class="reader-setting-value" data-offline-pack-label>Install</span>
         </button>
         <button type="button" class="reader-setting-action" data-offline-pack="sources" data-testid="offline-pack-sources">
           <span class="reader-setting-copy">
-            <span class="reader-setting-title">Sources pack</span>
+            <span class="reader-setting-title">Sources pack <span class="settings-help" tabindex="0" role="img" aria-label="Help: Download source material for offline use on this device." data-tooltip="Download source material for offline use on this device.">?</span></span>
             <span class="reader-setting-status" data-offline-pack-status>Not installed</span>
           </span>
           <span class="reader-setting-value" data-offline-pack-label>Install</span>
         </button>
         <button type="button" class="reader-setting-action" data-offline-sync-retry data-testid="offline-sync-retry">
           <span class="reader-setting-copy">
-            <span class="reader-setting-title">Offline sync</span>
+            <span class="reader-setting-title">Offline sync <span class="settings-help" tabindex="0" role="img" aria-label="Help: Retry personal changes that BHF queued while the device was offline." data-tooltip="Retry personal changes that BHF queued while the device was offline.">?</span></span>
             <span class="reader-setting-status" data-offline-sync-status>Queue ready</span>
           </span>
           <span class="reader-setting-value" data-offline-sync-label>Retry</span>
@@ -942,6 +979,7 @@
             <p class="offline-sync-empty">No queued offline changes.</p>
           </div>
         </details>
+        </section>
       </div>
     </div>
   </dialog>

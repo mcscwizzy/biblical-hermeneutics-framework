@@ -1,7 +1,7 @@
 @import url("./styles/layout.css?v=20260808a");
 @import url("./styles/workspace.css?v=20260809a");
 @import url("./styles/maps.css?v=20260730a");
-@import url("./styles/utilities.css?v=20260808b");
+@import url("./styles/utilities.css?v=20260809c");
 
 .ai-setup-dialog {
   width: min(680px, calc(100vw - 32px));
@@ -43,6 +43,18 @@
 .ai-setup-options {
   display: grid;
   gap: 10px;
+}
+
+.setup-section-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.setup-section-heading > div {
+  display: grid;
+  gap: 3px;
 }
 
 .ai-setup-option-grid {
