@@ -66,6 +66,36 @@ def _device_study_payload(job: Any, result: Any) -> dict[str, Any] | None:
     }
 
 
+def _device_study_payload_from_form(
+    form: dict[str, Any],
+    question: str,
+    result: Any,
+) -> dict[str, Any] | None:
+    """Build the local saved-study record for non-job AI responses.
+
+    The browser saves personal studies in IndexedDB.  Synchronous responses
+    used to render a Save Study button without this record, so the button had
+    nothing valid to save.
+    """
+    book = str(form.get("reader_book") or "").strip()
+    chapter = form.get("reader_chapter")
+    if not book or not chapter:
+        return None
+    metadata = getattr(result, "model_metadata", {}) or {}
+    return {
+        "title": question or "Saved study",
+        "book": book,
+        "chapter": chapter,
+        "start_verse": form.get("reader_start_verse") or None,
+        "end_verse": form.get("reader_end_verse") or form.get("reader_start_verse") or None,
+        "selected_text": str(form.get("reader_selected_text") or ""),
+        "study_type": str(form.get("ask_mode") or form.get("study_action") or "question"),
+        "question": question,
+        "answer": _public_answer_text(result),
+        "canonical_object_ids": list(metadata.get("canonical_library_object_ids") or []),
+    }
+
+
 def _answer_template_context(
     *,
     error: str | None,
@@ -154,6 +184,7 @@ def register_ask_routes(
         if test_mode:
             result = _fake_result(question, reader_reference)
             answer_text = _public_answer_text(result)
+            device_study = _device_study_payload_from_form(form, question, result)
             return templates.TemplateResponse(
                 request,
                 "partials/answer.html",
@@ -166,10 +197,12 @@ def register_ask_routes(
                     show_debug=show_debug,
                     inspector_question=question,
                     inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
+                    device_study=device_study,
                 ),
             )
 
         answer_text = _public_answer_text(result)
+        device_study = _device_study_payload_from_form(form, question, result)
         if result_has_fatal_error(result):
             return templates.TemplateResponse(
                 request,
@@ -182,6 +215,7 @@ def register_ask_routes(
                     show_debug=show_debug,
                     inspector_question=question,
                     inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
+                    device_study=device_study,
                     warnings=getattr(result, "warnings", []),
                 ),
                 status_code=agent_error_status_code(result),
@@ -198,6 +232,7 @@ def register_ask_routes(
                 show_debug=show_debug,
                 inspector_question=question,
                 inspector_max_context_tokens=loaded.config.canonical_library.max_context_tokens,
+                device_study=device_study,
                 warnings=getattr(result, "warnings", []),
             ),
         )

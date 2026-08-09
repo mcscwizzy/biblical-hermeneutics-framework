@@ -657,6 +657,35 @@ function deleteSavedStudy(studyId) {
     .then(() => loadSavedStudies(currentChapter.book, currentChapter.chapter));
 }
 
+async function savePersonalStudyNotes(button) {
+  const studyId = button?.dataset.savedStudyId;
+  const notesField = button?.closest(".answer-panel, .answer")?.querySelector("[data-personal-notes]")
+    || document.querySelector("[data-personal-notes]");
+  if (!studyId || !notesField || !window.BHFOfflineDB) {
+    return;
+  }
+  const study = await window.BHFOfflineDB.get("savedStudies", studyId);
+  if (!study) {
+    window.alert("This saved study is not available on this device.");
+    return;
+  }
+  button.disabled = true;
+  button.textContent = "Saving notes...";
+  try {
+    await window.BHFOfflineDB.upsertOfflineSavedStudy({
+      ...study,
+      personal_notes: notesField.value,
+      updated_at: new Date().toISOString(),
+    });
+    button.textContent = "Notes saved";
+    if (currentChapter) {
+      await loadSavedStudies(currentChapter.book, currentChapter.chapter);
+    }
+  } finally {
+    button.disabled = false;
+  }
+}
+
 function saveLatestStudy(event) {
   const sourceButton = event?.currentTarget || null;
   const answerPanel = activeLiveAnswerPanel || document.querySelector("[data-device-study]");
@@ -670,10 +699,12 @@ function saveLatestStudy(event) {
   } catch (_error) {
     studyPayload = null;
   }
-  if (!studyPayload || (!sourceButton?.dataset.jobId && !latestJobComplete)) {
+  if (!studyPayload) {
     window.alert("Run a study first, then save it.");
     return Promise.resolve();
   }
+  const notesField = studyNode?.querySelector?.("[data-personal-notes]");
+  studyPayload.personal_notes = notesField?.value || "";
   const saveButton = sourceButton || activeLiveAnswerPanel?.querySelector("[data-save-study]") || null;
   if (saveButton) {
     saveButton.disabled = true;
@@ -712,6 +743,12 @@ function wireAnswerPanelControls(answerPanel) {
     }
   });
   wireCanonicalAnswerPanelControls(answerPanel);
+  answerPanel.querySelectorAll("[data-save-personal-notes]").forEach((button) => {
+    if (!button.dataset.personalNotesBound) {
+      button.addEventListener("click", () => savePersonalStudyNotes(button));
+      button.dataset.personalNotesBound = "true";
+    }
+  });
   updateSaveButtons();
 }
 

@@ -641,6 +641,21 @@ code {
   margin-bottom: 14px;
 }
 
+.saved-study-notes-field {
+  display: grid;
+  gap: 6px;
+  margin-top: 16px;
+  color: var(--text-muted, #51606d);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.saved-study-notes-field textarea {
+  min-height: 5.5rem;
+  font: inherit;
+  font-weight: 400;
+}
+
 .notes-list,
 .highlights-list,
 .saved-studies-list {

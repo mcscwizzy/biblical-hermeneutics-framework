@@ -4498,6 +4498,7 @@ function renderContextPresentation(result) {
           <h2>${escapeHtml(result.title || "Context")}</h2>
         </div>
         <div class="answer-actions">
+          <button type="button" class="secondary answer-save" data-deterministic-save>Save Study</button>
           ${result.agent_fallback_allowed ? `<button type="button" class="secondary" data-deterministic-explain>Explain with BHF</button>` : ""}
           <button type="button" class="secondary" data-deterministic-ask>Ask a Question</button>
         </div>
@@ -4513,6 +4514,10 @@ function renderContextPresentation(result) {
       ${caution ? `<aside class="context-caution" role="note"><strong>Important caution:</strong> ${escapeHtml(caution)}</aside>` : ""}
       ${laterHtml}
       ${sourcesHtml}
+      <label class="saved-study-notes-field">
+        <span>Personal notes</span>
+        <textarea data-personal-notes rows="3" placeholder="Add your reflections or follow-up questions before saving."></textarea>
+      </label>
     </article>
   `;
 }
@@ -4929,6 +4934,7 @@ function compactDeterministicResult(result) {
 }
 
 async function saveDeterministicStudy(result, studyAction) {
+  const notesField = document.querySelector("#answer-panel [data-personal-notes]");
   const payload = {
     title: result.title || studyActionLabel(result.action || studyAction.type),
     book: studyAction.book,
@@ -4939,6 +4945,7 @@ async function saveDeterministicStudy(result, studyAction) {
     study_type: result.action || studyAction.type,
     question: result.title || "",
     answer: deterministicStudyMarkdown(result),
+    personal_notes: notesField?.value || "",
     canonical_object_ids: result.metadata?.object_ids || [],
   };
   await requestJson(
@@ -4957,6 +4964,9 @@ async function saveDeterministicStudy(result, studyAction) {
 }
 
 function deterministicStudyMarkdown(result) {
+  if (result.presentation && result.evidence_packet) {
+    return contextPresentationMarkdown(result);
+  }
   const lines = [`# ${result.title || "Study Result"}`, ""];
   (result.sections || []).forEach((section) => {
     lines.push(`## ${section.title || "Section"}`);
@@ -4966,6 +4976,41 @@ function deterministicStudyMarkdown(result) {
   if ((result.references || []).length) {
     lines.push("## References");
     result.references.forEach((ref) => lines.push(`- ${ref}`));
+  }
+  return lines.join("\n").trim();
+}
+
+function contextPresentationMarkdown(result) {
+  const presentation = result.presentation || {};
+  const lines = [`# ${result.title || "Context"}`, ""];
+  if (presentation.summary) {
+    lines.push(String(presentation.summary), "");
+  }
+  const facts = Array.isArray(presentation.key_facts) ? presentation.key_facts : [];
+  if (facts.length) {
+    lines.push("## What Stands Out");
+    facts.forEach((fact) => {
+      if (!fact?.fact) {
+        return;
+      }
+      const why = fact.why_it_matters ? ` — ${fact.why_it_matters}` : "";
+      lines.push(`- ${fact.fact}${why}`);
+    });
+    lines.push("");
+  }
+  if (presentation.important_caution) {
+    lines.push("## Important Caution", String(presentation.important_caution), "");
+  }
+  const connections = Array.isArray(presentation.later_biblical_connections)
+    ? presentation.later_biblical_connections
+    : [];
+  if (connections.length) {
+    lines.push("## Connections Elsewhere in the Bible");
+    connections.forEach((connection) => {
+      if (connection?.connection) {
+        lines.push(`- ${connection.connection}${connection.reference ? ` (${connection.reference})` : ""}`);
+      }
+    });
   }
   return lines.join("\n").trim();
 }

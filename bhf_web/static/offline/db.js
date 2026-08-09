@@ -863,6 +863,7 @@
       study_type: String(payload.study_type || ""),
       question: String(payload.question || ""),
       answer: String(payload.answer || ""),
+      personal_notes: String(payload.personal_notes || ""),
       canonical_object_ids: Array.isArray(payload.canonical_object_ids) ? payload.canonical_object_ids : [],
       created_at: payload.created_at || now,
       updated_at: payload.updated_at || now,
@@ -910,7 +911,14 @@
           </div>
         </div>
         <p class="answer-reference">ASV ${escapeHtml(reference)}</p>
-        <div class="answer-body">${renderPlainAnswer(study.answer)}</div>
+        <div class="answer-body">${renderFormattedText(study.answer)}</div>
+        <label class="saved-study-notes-field">
+          <span>Personal notes</span>
+          <textarea data-personal-notes rows="5" placeholder="Add your reflections or follow-up questions.">${escapeHtml(study.personal_notes || "")}</textarea>
+        </label>
+        <div class="answer-actions">
+          <button type="button" class="secondary" data-save-personal-notes data-saved-study-id="${escapeHtml(study.id)}">Save notes</button>
+        </div>
         ${canonical ? `
           <section class="answer-canonical-context" aria-labelledby="answer-canonical-context-heading-offline-${escapeHtml(study.id)}">
             <div class="panel-heading answer-canonical-heading">
@@ -937,12 +945,47 @@
     `;
   }
 
-  function renderPlainAnswer(value) {
-    const blocks = String(value || "").split(/\n{2,}/).map((block) => block.trim()).filter(Boolean);
+  function renderFormattedText(value) {
+    const lines = String(value || "").split("\n");
+    const blocks = [];
+    let listItems = [];
+    const flushList = () => {
+      if (listItems.length) {
+        blocks.push(`<ul>${listItems.map((item) => `<li>${formatInlineText(item)}</li>`).join("")}</ul>`);
+        listItems = [];
+      }
+    };
+    for (const rawLine of lines) {
+      const line = rawLine.trim();
+      if (!line) {
+        flushList();
+        continue;
+      }
+      const bullet = line.match(/^[-*]\s+(.+)$/);
+      if (bullet) {
+        listItems.push(bullet[1]);
+        continue;
+      }
+      flushList();
+      const heading = line.match(/^(#{1,6})\s+(.+)$/);
+      if (heading) {
+        const level = heading[1].length;
+        blocks.push(`<h${level}>${formatInlineText(heading[2])}</h${level}>`);
+      } else {
+        blocks.push(`<p>${formatInlineText(line)}</p>`);
+      }
+    }
+    flushList();
     if (!blocks.length) {
       return `<p class="empty">No saved answer text is available offline.</p>`;
     }
-    return blocks.map((block) => `<p>${escapeHtml(block).replace(/\n/g, "<br>")}</p>`).join("");
+    return blocks.join("");
+  }
+
+  function formatInlineText(value) {
+    return escapeHtml(value)
+      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+      .replace(/`(.+?)`/g, "<code>$1</code>");
   }
 
   function formatStudyReference(study) {

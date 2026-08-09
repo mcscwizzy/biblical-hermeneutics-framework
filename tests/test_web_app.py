@@ -518,6 +518,9 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("loadSavedStudies", study_script)
         self.assertIn("formatReference", study_script)
         self.assertIn("prettyStudyType", study_script)
+        self.assertIn("savePersonalStudyNotes", study_script)
+        self.assertIn("contextPresentationMarkdown", script)
+        self.assertIn("data-deterministic-save", script)
 
         search_script = Path("bhf_web/static/htmx-search.js").read_text(encoding="utf-8")
         self.assertIn("submitBibleSearch", search_script)
@@ -1089,6 +1092,8 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("upsertOfflineMapStudy", offline_db["body"])
         self.assertIn("readTextResponse", offline_db["body"])
         self.assertIn("renderSavedStudyHtml", offline_db["body"])
+        self.assertIn("renderFormattedText", offline_db["body"])
+        self.assertIn("personal_notes", offline_db["body"])
         self.assertIn("mutationQueueSummary", offline_db["body"])
         self.assertIn("markMutationAttempt", offline_db["body"])
         self.assertIn("SNAPSHOT_STORES", offline_db["body"])
@@ -2087,6 +2092,25 @@ class WebAppTests(unittest.TestCase):
         self.assertNotIn("Canonical Context", response["body"])
         self.assertNotIn("Metadata", response["body"])
         self.assertNotIn("local-secret", response["body"])
+
+    def test_completed_ai_summary_can_be_saved_with_personal_notes(self):
+        data = _valid_form()
+        data.update(
+            {
+                "reader_book": "Romans",
+                "reader_chapter": "12",
+                "reader_start_verse": "1",
+                "reader_end_verse": "2",
+                "reader_selected_text": "I beseech you therefore, brethren.",
+            }
+        )
+        with patch("bhf_web.app.BHFAgent", SuccessfulJobAgent):
+            response = asgi_request("POST", "/ask", data=data)
+
+        self.assertEqual(response["status"], 200)
+        self.assertIn("data-device-study", response["body"])
+        self.assertIn("data-personal-notes", response["body"])
+        self.assertIn("Save Study", response["body"])
 
     def test_post_ask_invalid_config_returns_friendly_error(self):
         data = _valid_form()
