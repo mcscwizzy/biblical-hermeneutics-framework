@@ -155,6 +155,11 @@ Both app stacks mount the repository's `.bhf/` directory at
 The generated CKL database stays inside the image at `/app/.bhf/ckl.sqlite`.
 Do not change the mount to `/app/.bhf`; doing so hides that database.
 
+On every container start, the entrypoint applies current study-database
+migrations to `.bhf/study.sqlite` before Uvicorn starts. This includes the
+reviewed archaeology records, Scripture links, and media metadata introduced
+by an image update; no manual migration command is required after rebuilding.
+
 PWA data is separate. Each browser profile stores offline packs, device-imported
 translations, notes, highlights, and saved studies in IndexedDB and Cache
 Storage. Back up browser data with the PWA's **Export offline data** action.

@@ -373,6 +373,17 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("BHF_MEMORY_PATH: /app/.bhf-data/sessions", compose)
         self.assertNotIn("./.bhf:/app/.bhf\n", compose)
 
+    def test_container_startup_applies_study_database_migrations(self):
+        dockerfile = Path("Dockerfile").read_text(encoding="utf-8")
+        entrypoint = Path("scripts/docker-entrypoint.sh").read_text(encoding="utf-8")
+        dockerignore = Path(".dockerignore").read_text(encoding="utf-8")
+
+        self.assertIn("COPY . .", dockerfile)
+        self.assertIn("ENV BHF_STUDY_DB_PATH=/app/.bhf-data/study.sqlite", dockerfile)
+        self.assertIn("initialize_database", entrypoint)
+        self.assertIn('os.environ["BHF_STUDY_DB_PATH"]', entrypoint)
+        self.assertNotIn("data_sources/", dockerignore)
+
     def test_status_script_collapses_active_panel_after_success(self):
         status_script = Path("bhf_web/static/htmx-status.js").read_text(encoding="utf-8")
         controller_script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
