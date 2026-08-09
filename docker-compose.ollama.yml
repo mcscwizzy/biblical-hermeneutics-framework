@@ -65,6 +65,11 @@ services:
       BHF_COMMENTARY_SEED_POLICY: "${BHF_COMMENTARY_SEED_POLICY:-refresh}"
       BHF_STUDY_DB_PATH: /app/.bhf-data/study.sqlite
       BHF_WEB_CONFIG_PATH: /app/.bhf-data/web-config.json
+      BHF_ONEDRIVE_CLIENT_ID: "${BHF_ONEDRIVE_CLIENT_ID:-}"
+      BHF_ONEDRIVE_REDIRECT_URI: "${BHF_ONEDRIVE_REDIRECT_URI:-}"
+      BHF_CLOUDKIT_CONTAINER_IDENTIFIER: "${BHF_CLOUDKIT_CONTAINER_IDENTIFIER:-}"
+      BHF_CLOUDKIT_API_TOKEN: "${BHF_CLOUDKIT_API_TOKEN:-}"
+      BHF_CLOUDKIT_ENVIRONMENT: "${BHF_CLOUDKIT_ENVIRONMENT:-production}"
     volumes:
       - ./.bhf:/app/.bhf-data
     extra_hosts:

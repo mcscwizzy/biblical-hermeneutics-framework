@@ -163,6 +163,15 @@ The settings sheet provides:
   and pack metadata.
 - **Import offline data** — merges a prior snapshot into the current browser
   profile without clearing existing records.
+- **Encrypted study vault** — downloads or restores an end-to-end encrypted
+  portable copy of notes, highlights, saved studies, and map studies. Restores
+  merge newer records and retain an explicit conflict copy if needed.
+- **Share notes and studies** — sends a readable copy to Apple Notes, Google
+  Keep, or another installed sharing target. This is an export, not two-way
+  sync.
+- **Cloud study sync** — synchronizes the encrypted vault with configured
+  OneDrive or iCloud/CloudKit accounts. A deployment must enable a provider
+  before its connection control becomes available.
 
 Exported snapshots intentionally exclude provider credentials.
 
@@ -176,8 +185,11 @@ when the shell or installed data packs need to be rebuilt.
 
 ## Privacy and data boundaries
 
-- PWA storage belongs to the current browser profile and origin; it is not an
-  account or cross-device sync service.
+- PWA storage belongs to the current browser profile and origin until the user
+  explicitly creates a Study Vault or connects a configured cloud provider.
+- Cloud providers receive the encrypted Study Vault, not the passphrase or BHF
+  AI credentials. Apple Notes and Google Keep receive only the readable copy a
+  person explicitly shares.
 - Device-imported translations and offline records are not included in Git or
   a Docker image.
 - Server-side `.bhf/study.sqlite` data and browser IndexedDB are separate
@@ -205,3 +217,6 @@ started setup, and use trusted HTTPS for non-localhost deployments.
 **A PWA update looks stuck:** use **App update**. It clears rebuildable/API
 cache data, checks for a new shell, and reloads the app. Reload all BHF windows
 if one still shows the old shell. Refresh the data packs afterward if needed.
+
+For provider configuration, encryption details, and recovery guidance, see
+[Study Vault Sync](study-vault-sync.md).

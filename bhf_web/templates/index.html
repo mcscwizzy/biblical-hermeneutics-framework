@@ -35,6 +35,7 @@
   {# static_asset('/style.css') }}?v=20260724c #}
   {# static_asset('/htmx-lite.js') }}?v=20260729b #}
   <script src="{{ static_asset('/offline/db.js') }}?v=20260809a" defer></script>
+  <script src="{{ static_asset('/study-vault.js') }}?v=20260809a" defer></script>
   <script src="{{ static_asset('/model-settings.js') }}?v=20260806a" defer></script>
   <script src="{{ static_asset('/api/http.js') }}?v=20260809a" defer></script>
   <script src="{{ static_asset('/htmx-status.js') }}" defer></script>
@@ -876,6 +877,37 @@
           <span class="reader-setting-value" data-offline-snapshot-import-label>Import</span>
         </button>
         <input type="file" class="reader-setting-file-input" data-offline-snapshot-file accept="application/json,.json" hidden>
+        <button type="button" class="reader-setting-action" data-study-vault-export data-vault-status="study-vault-status" data-vault-label="study-vault-label" data-testid="study-vault-export">
+          <span class="reader-setting-copy">
+            <span class="reader-setting-title">Encrypted study vault</span>
+            <span class="reader-setting-status" data-study-vault-status>Export notes, studies, highlights, and map studies</span>
+          </span>
+          <span class="reader-setting-value" data-study-vault-label>Export</span>
+        </button>
+        <button type="button" class="reader-setting-action" data-study-vault-import data-vault-status="study-vault-import-status" data-vault-label="study-vault-import-label" data-testid="study-vault-import">
+          <span class="reader-setting-copy">
+            <span class="reader-setting-title">Restore encrypted study vault</span>
+            <span class="reader-setting-status" data-study-vault-import-status>Merge a vault without overwriting newer local work</span>
+          </span>
+          <span class="reader-setting-value" data-study-vault-import-label>Import</span>
+        </button>
+        <input type="file" class="reader-setting-file-input" data-study-vault-file accept="application/json,.bhfvault" hidden>
+        <button type="button" class="reader-setting-action" data-study-vault-share data-vault-status="study-vault-share-status" data-vault-label="study-vault-share-label" data-testid="study-vault-share">
+          <span class="reader-setting-copy">
+            <span class="reader-setting-title">Share notes and studies</span>
+            <span class="reader-setting-status" data-study-vault-share-status>Send a readable copy to Apple Notes, Google Keep, or another app</span>
+          </span>
+          <span class="reader-setting-value" data-study-vault-share-label>Share</span>
+        </button>
+        <details class="offline-readiness-details" data-study-vault-details>
+          <summary>Cloud study sync</summary>
+          <p class="field-help">OneDrive and iCloud synchronize an encrypted BHF vault when configured. Apple Notes and Google Keep receive readable copies through the system share sheet; they are not two-way sync stores.</p>
+          <button type="button" class="secondary" data-vault-onedrive-connect data-testid="vault-onedrive-connect">Connect OneDrive</button>
+          <button type="button" class="secondary" data-vault-onedrive-sync data-vault-status="study-vault-status" data-vault-label="study-vault-label" data-testid="vault-onedrive-sync" disabled>Sync now</button>
+          <button type="button" class="secondary" data-vault-cloudkit-connect data-testid="vault-cloudkit-connect">Connect iCloud</button>
+          <button type="button" class="secondary" data-vault-cloudkit-sync data-vault-status="study-vault-status" data-vault-label="study-vault-label" data-testid="vault-cloudkit-sync" disabled>Sync iCloud</button>
+          <span id="study-vault-cloudkit-signin" class="field-help"></span>
+        </details>
         <button type="button" class="reader-setting-action" data-offline-pack="study" data-testid="offline-pack-study">
           <span class="reader-setting-copy">
             <span class="reader-setting-title">Study pack</span>
@@ -912,6 +944,25 @@
         </details>
       </div>
     </div>
+  </dialog>
+  <dialog class="study-vault-passphrase-dialog" data-study-vault-passphrase-dialog aria-labelledby="study-vault-passphrase-title">
+    <form method="dialog">
+      <h2 id="study-vault-passphrase-title">Unlock study vault</h2>
+      <p class="field-help">This passphrase encrypts your vault before it leaves this device. BHF cannot recover it.</p>
+      <label>
+        <span>Passphrase</span>
+        <input type="password" autocomplete="new-password" minlength="12" data-study-vault-passphrase required>
+      </label>
+      <label data-study-vault-passphrase-confirm-field hidden>
+        <span>Confirm passphrase</span>
+        <input type="password" autocomplete="new-password" minlength="12" data-study-vault-passphrase-confirm required>
+      </label>
+      <p class="field-help" data-study-vault-passphrase-error role="alert"></p>
+      <div class="dialog-actions">
+        <button type="button" class="secondary" data-study-vault-passphrase-cancel>Cancel</button>
+        <button type="submit">Continue</button>
+      </div>
+    </form>
   </dialog>
 </body>
 </html>

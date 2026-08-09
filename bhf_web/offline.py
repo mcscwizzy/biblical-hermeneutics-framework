@@ -188,6 +188,8 @@ def build_offline_manifest() -> dict[str, Any]:
             "savedStudies",
             "mutationQueue",
             "metadata",
+            "mapStudies",
+            "tombstones",
             "commentary",
         ],
         "offline_mutations": [

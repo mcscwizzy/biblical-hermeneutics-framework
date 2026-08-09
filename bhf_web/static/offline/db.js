@@ -1,6 +1,6 @@
 (function () {
   const DB_NAME = "bhf-offline";
-  const DB_VERSION = 7;
+  const DB_VERSION = 8;
   const STORES = [
     "apiResponses",
     "translations",
@@ -15,8 +15,12 @@
     "mutationQueue",
     "metadata",
     "modelSettings",
+    "tombstones",
+    "vaultSettings",
   ];
-  const SNAPSHOT_STORES = ["notes", "highlights", "savedStudies", "mutationQueue", "metadata"];
+  // Personal records are portable. Rebuildable API and pack caches remain on
+  // the device and are rehydrated from the server after a restore.
+  const SNAPSHOT_STORES = ["notes", "highlights", "savedStudies", "mapStudies", "mutationQueue", "metadata", "tombstones"];
   const REBUILDABLE_STORES = ["apiResponses", "translations", "canonicalObjects", "sources", "chapters", "searches"];
   const REQUIRED_OFFLINE_PACKS = ["study", "maps"];
 
@@ -547,7 +551,7 @@
     }
     return {
       app: "bhf-bible-reader",
-      schema_version: 1,
+      schema_version: 2,
       db_name: DB_NAME,
       db_version: DB_VERSION,
       exported_at: nowIso(),
@@ -647,6 +651,7 @@
   async function upsertOfflineNote(payload, method = "POST", url = "/api/notes") {
     const note = normalizeNote(payload, "local");
     await put("notes", note);
+    await clearTombstone("notes", note.id);
     if (note.book && note.chapter) {
       await cacheNotesForChapter(note.book, note.chapter);
     }
@@ -657,6 +662,7 @@
   async function deleteOfflineNote(noteId, url) {
     const existing = await get("notes", noteId);
     await remove("notes", noteId);
+    await markTombstone("notes", noteId);
     if (existing?.book && existing?.chapter) {
       await cacheNotesForChapter(existing.book, existing.chapter);
     }
@@ -679,6 +685,7 @@
   async function upsertOfflineHighlight(payload, method = "POST", url = "/api/highlights") {
     const highlight = normalizeHighlight(payload, "local");
     await put("highlights", highlight);
+    await clearTombstone("highlights", highlight.id);
     await cacheHighlightsForChapter(highlight.book, highlight.chapter);
     return { ...highlight, offline: true, device_only: true, sync_status: "local" };
   }
@@ -686,6 +693,7 @@
   async function deleteOfflineHighlight(highlightId, url) {
     const existing = await get("highlights", highlightId);
     await remove("highlights", highlightId);
+    await markTombstone("highlights", highlightId);
     if (existing) {
       await cacheHighlightsForChapter(existing.book, existing.chapter);
     }
@@ -702,6 +710,7 @@
   async function deleteOfflineSavedStudy(studyId, url) {
     const existing = await get("savedStudies", studyId);
     await remove("savedStudies", studyId);
+    await markTombstone("savedStudies", studyId);
     if (existing) {
       await cacheSavedStudiesForChapter(existing.book, existing.chapter);
     }
@@ -711,6 +720,7 @@
   async function upsertOfflineSavedStudy(payload) {
     const study = normalizeSavedStudy(payload, "local");
     await put("savedStudies", study);
+    await clearTombstone("savedStudies", study.id);
     if (study.book && study.chapter) {
       await cacheSavedStudiesForChapter(study.book, study.chapter);
     }
@@ -788,11 +798,92 @@
   }
 
   async function upsertOfflineMapStudy(study) {
-    return put("mapStudies", { ...study, id: study?.id || clientId("map-study") });
+    const saved = { ...study, id: study?.id || clientId("map-study"), updated_at: study?.updated_at || nowIso() };
+    await put("mapStudies", saved);
+    await clearTombstone("mapStudies", saved.id);
+    return saved;
   }
 
   async function deleteOfflineMapStudy(id) {
-    return remove("mapStudies", id);
+    await remove("mapStudies", id);
+    return markTombstone("mapStudies", id);
+  }
+
+  function tombstoneId(storeName, recordId) {
+    return `${storeName}:${recordId}`;
+  }
+
+  async function markTombstone(storeName, recordId) {
+    const entry = {
+      id: tombstoneId(storeName, recordId),
+      store: storeName,
+      record_id: recordId,
+      deleted_at: nowIso(),
+    };
+    await put("tombstones", entry);
+    return entry;
+  }
+
+  async function clearTombstone(storeName, recordId) {
+    return remove("tombstones", tombstoneId(storeName, recordId));
+  }
+
+  function recordTimestamp(record) {
+    const raw = record?.updated_at || record?.updatedAt || record?.deleted_at || record?.created_at || record?.createdAt || record?.cachedAt || record?.lastAttemptAt || "";
+    const value = Date.parse(raw);
+    return Number.isFinite(value) ? value : 0;
+  }
+
+  function recordsEquivalent(left, right) {
+    const comparable = (record) => {
+      const copy = { ...record };
+      delete copy.sync_status;
+      delete copy.offline;
+      delete copy.cache_status;
+      delete copy.cached_at;
+      return copy;
+    };
+    return JSON.stringify(comparable(left)) === JSON.stringify(comparable(right));
+  }
+
+  async function mergeSnapshot(snapshot) {
+    if (!snapshot || snapshot.app !== "bhf-bible-reader" || !snapshot.stores || typeof snapshot.stores !== "object") {
+      throw new Error("This is not a BHF study vault.");
+    }
+    const counts = {};
+    const conflicts = [];
+    const remoteTombstones = Array.isArray(snapshot.stores.tombstones) ? snapshot.stores.tombstones : [];
+    for (const tombstone of remoteTombstones) {
+      if (!tombstone?.store || !tombstone?.record_id || !SNAPSHOT_STORES.includes(tombstone.store) || tombstone.store === "tombstones") continue;
+      const existing = await get(tombstone.store, tombstone.record_id);
+      if (!existing || recordTimestamp(tombstone) >= recordTimestamp(existing)) {
+        await remove(tombstone.store, tombstone.record_id);
+        await put("tombstones", tombstone);
+      }
+    }
+    for (const storeName of SNAPSHOT_STORES.filter((name) => name !== "tombstones")) {
+      const records = Array.isArray(snapshot.stores[storeName]) ? snapshot.stores[storeName] : [];
+      counts[storeName] = 0;
+      for (const remote of records) {
+        if (!remote || typeof remote !== "object" || !remote.id) continue;
+        const tombstone = await get("tombstones", tombstoneId(storeName, remote.id));
+        if (tombstone && recordTimestamp(tombstone) >= recordTimestamp(remote)) continue;
+        const local = await get(storeName, remote.id);
+        if (!local || recordTimestamp(remote) > recordTimestamp(local)) {
+          await put(storeName, remote);
+          await clearTombstone(storeName, remote.id);
+          counts[storeName] += 1;
+          continue;
+        }
+        if (recordTimestamp(remote) === recordTimestamp(local) && !recordsEquivalent(remote, local)) {
+          const copy = { ...remote, id: `${remote.id}-conflict-${Date.now()}`, sync_conflict: true };
+          await put(storeName, copy);
+          conflicts.push({ store: storeName, local_id: local.id, remote_id: copy.id });
+          counts[storeName] += 1;
+        }
+      }
+    }
+    return { imported_count: Object.values(counts).reduce((total, value) => total + value, 0), stores: counts, conflicts };
   }
 
   async function cacheNotesForChapter(book, chapter) {
@@ -1043,6 +1134,7 @@
     removeMutation,
     exportSnapshot,
     importSnapshot,
+    mergeSnapshot,
     readinessReport,
     clearRebuildableCaches,
     upsertOfflineNote,
