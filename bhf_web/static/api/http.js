@@ -252,6 +252,7 @@
       "/api/bible/books",
       "/api/bible/search",
       "/api/bible/",
+      "/api/notes",
       "/api/notes/",
       "/api/highlights/",
       "/api/saved-studies",
@@ -275,7 +276,7 @@
 
   function emptyDeviceOnlyResponse(url) {
     const path = new URL(String(url || "/"), window.location.origin).pathname;
-    if (path.startsWith("/api/notes/")) {
+    if (path === "/api/notes" || path.startsWith("/api/notes/")) {
       return { notes: [], offline: true, device_only: true, cache_status: "generated" };
     }
     if (path.startsWith("/api/highlights/")) {

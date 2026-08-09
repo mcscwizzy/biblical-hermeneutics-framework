@@ -1,6 +1,6 @@
 (function () {
   const DB_NAME = "bhf-offline";
-  const DB_VERSION = 6;
+  const DB_VERSION = 7;
   const STORES = [
     "apiResponses",
     "translations",
@@ -149,7 +149,7 @@
         },
       });
     }
-    if (id.startsWith("/api/notes/") && Array.isArray(payload?.notes)) {
+    if ((id === "/api/notes" || id.startsWith("/api/notes/")) && Array.isArray(payload?.notes)) {
       await Promise.all(payload.notes.map((note) => put("notes", normalizeNote(note))));
     }
     if (id.startsWith("/api/highlights/") && Array.isArray(payload?.highlights)) {
@@ -228,6 +228,10 @@
     if (sourceMatch) {
       const source = await get("sources", decodeURIComponent(sourceMatch[1]));
       return source ? { ...source, offline: true, cache_status: "generated" } : null;
+    }
+    if (key === "/api/notes") {
+      const notes = await allNotes();
+      return { notes, offline: true, cache_status: "generated", device_only: true };
     }
     const notesMatch = key.match(/^\/api\/notes\/([^/?]+)\/(\d+)$/);
     if (notesMatch) {
@@ -643,16 +647,20 @@
   async function upsertOfflineNote(payload, method = "POST", url = "/api/notes") {
     const note = normalizeNote(payload, "local");
     await put("notes", note);
-    await cacheNotesForChapter(note.book, note.chapter);
+    if (note.book && note.chapter) {
+      await cacheNotesForChapter(note.book, note.chapter);
+    }
+    await cacheAllNotes();
     return { ...note, offline: true, device_only: true, sync_status: "local" };
   }
 
   async function deleteOfflineNote(noteId, url) {
     const existing = await get("notes", noteId);
     await remove("notes", noteId);
-    if (existing) {
+    if (existing?.book && existing?.chapter) {
       await cacheNotesForChapter(existing.book, existing.chapter);
     }
+    await cacheAllNotes();
     return { deleted: true, offline: true, device_only: true, sync_status: "local" };
   }
 
@@ -661,6 +669,11 @@
     return notes
       .filter((note) => sameChapter(note, book, chapter))
       .sort((left, right) => String(left.created_at || "").localeCompare(String(right.created_at || "")));
+  }
+
+  async function allNotes() {
+    const notes = await list("notes");
+    return notes.sort((left, right) => String(right.updated_at || right.created_at || "").localeCompare(String(left.updated_at || left.created_at || "")));
   }
 
   async function upsertOfflineHighlight(payload, method = "POST", url = "/api/highlights") {
@@ -754,7 +767,10 @@
     }
     if (path === "/api/notes" || path.startsWith("/api/notes/")) {
       await put("notes", normalizeNote(payload, "synced"));
-      await cacheNotesForChapter(payload.book, payload.chapter);
+      if (payload.book && payload.chapter) {
+        await cacheNotesForChapter(payload.book, payload.chapter);
+      }
+      await cacheAllNotes();
     } else if (path === "/api/highlights" || path.startsWith("/api/highlights/")) {
       await put("highlights", normalizeHighlight(payload, "synced"));
       await cacheHighlightsForChapter(payload.book, payload.chapter);
@@ -784,6 +800,10 @@
     await cacheApiResponse(`/api/notes/${encodeURIComponent(book)}/${encodeURIComponent(chapter)}`, { notes });
   }
 
+  async function cacheAllNotes() {
+    await cacheApiResponse("/api/notes", { notes: await allNotes() });
+  }
+
   async function cacheHighlightsForChapter(book, chapter) {
     const highlights = await highlightsForChapter(book, chapter);
     await cacheApiResponse(`/api/highlights/${encodeURIComponent(book)}/${encodeURIComponent(chapter)}`, { highlights });
@@ -801,10 +821,10 @@
     const now = nowIso();
     return {
       id: payload.id || clientId("note"),
-      book: String(payload.book || ""),
-      chapter: Number(payload.chapter || 0),
-      start_verse: Number(payload.start_verse || 0),
-      end_verse: Number(payload.end_verse || payload.start_verse || 0),
+      book: payload.book ? String(payload.book) : null,
+      chapter: payload.chapter ? Number(payload.chapter) : null,
+      start_verse: payload.start_verse ? Number(payload.start_verse) : null,
+      end_verse: payload.end_verse ? Number(payload.end_verse) : (payload.start_verse ? Number(payload.start_verse) : null),
       selected_text: String(payload.selected_text || ""),
       body: String(payload.body || ""),
       canonical_object_ids: Array.isArray(payload.canonical_object_ids) ? payload.canonical_object_ids : [],
@@ -985,6 +1005,7 @@
     upsertOfflineNote,
     deleteOfflineNote,
     notesForChapter,
+    allNotes,
     upsertOfflineHighlight,
     deleteOfflineHighlight,
     highlightsForChapter,

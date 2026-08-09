@@ -884,6 +884,12 @@ def _ensure_schema(connection: sqlite3.Connection) -> None:
             "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
             (33, _timestamp()),
         )
+    if 34 not in applied:
+        _apply_v34_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (34, _timestamp()),
+        )
     # Older local databases may already record v15 from the period when the
     # map-study table was intentionally removed. Recreate the optional table
     # on demand so the API remains compatible with those databases.
@@ -1645,6 +1651,43 @@ def _apply_v33_schema(connection: sqlite3.Connection) -> None:
     connection.execute(
         "UPDATE archaeology_items SET notes = ? WHERE id = ?",
         (item["notes"], item["id"]),
+    )
+
+
+def _apply_v34_schema(connection: sqlite3.Connection) -> None:
+    """Allow personal notes without a Scripture anchor."""
+
+    connection.executescript(
+        """
+        CREATE TABLE IF NOT EXISTS notes_v34 (
+            id TEXT PRIMARY KEY,
+            book TEXT,
+            chapter INTEGER,
+            verse_start INTEGER,
+            verse_end INTEGER,
+            selected_text TEXT NOT NULL DEFAULT '',
+            note_body TEXT NOT NULL,
+            canonical_object_ids TEXT NOT NULL DEFAULT '[]',
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL
+        );
+
+        INSERT OR IGNORE INTO notes_v34 (
+            id, book, chapter, verse_start, verse_end, selected_text,
+            note_body, canonical_object_ids, created_at, updated_at
+        )
+        SELECT id, book, chapter, verse_start, verse_end, selected_text,
+               note_body, canonical_object_ids, created_at, updated_at
+        FROM notes;
+
+        DROP TABLE notes;
+        ALTER TABLE notes_v34 RENAME TO notes;
+
+        CREATE INDEX IF NOT EXISTS idx_notes_reference
+            ON notes(book, chapter);
+        CREATE INDEX IF NOT EXISTS idx_notes_updated_at
+            ON notes(updated_at DESC);
+        """
     )
 
 

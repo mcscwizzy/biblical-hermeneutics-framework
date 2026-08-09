@@ -29,18 +29,18 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260808f">
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260809a">
   <!-- Legacy cache-key references retained for clients that inspect the shell during upgrades. -->
   <!-- href="/static/style.css?v=20260724c" src="/static/htmx-lite.js?v=20260729b" -->
   {# static_asset('/style.css') }}?v=20260724c #}
   {# static_asset('/htmx-lite.js') }}?v=20260729b #}
-  <script src="{{ static_asset('/offline/db.js') }}" defer></script>
+  <script src="{{ static_asset('/offline/db.js') }}?v=20260809a" defer></script>
   <script src="{{ static_asset('/model-settings.js') }}?v=20260806a" defer></script>
-  <script src="{{ static_asset('/api/http.js') }}?v=20260803a" defer></script>
+  <script src="{{ static_asset('/api/http.js') }}?v=20260809a" defer></script>
   <script src="{{ static_asset('/htmx-status.js') }}" defer></script>
-  <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260808a" defer></script>
+  <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260809a" defer></script>
   <script src="{{ static_asset('/htmx-search.js') }}?v=20260807b" defer></script>
-  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260808c" defer></script>
+  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260809a" defer></script>
   <script src="{{ static_asset('/commentary.js') }}?v=20260808a" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260806a" defer></script>
   {% if not test_mode %}
@@ -94,6 +94,15 @@
         <p class="app-subtitle" data-testid="app-subtitle">Read Scripture. Explore context. Ask deeper questions.</p>
       </div>
     </header>
+
+    <section class="notes-toolbar" aria-label="Notes toolbar" data-notes-toolbar>
+      <div class="notes-toolbar-actions">
+        <button type="button" data-new-note data-testid="new-note-button">New note</button>
+        <button type="button" class="secondary" data-notes-view="all" data-testid="all-notes-button">All notes</button>
+        <button type="button" class="secondary" data-notes-view="passage" data-testid="passage-notes-button">This passage</button>
+      </div>
+      <span class="note-save-status" data-note-save-status role="status" aria-live="polite">Ready</span>
+    </section>
 
     {% if config_warning %}
       <div class="notice" role="status">{{ config_warning }}</div>
@@ -199,8 +208,12 @@
               <button type="button" class="workspace-tab" id="workspace-tab-maps" role="tab" aria-selected="false" aria-controls="workspace-pane-maps" data-workspace-tab="maps" tabindex="-1" data-testid="maps-tab">Maps</button>
             </div>
             <div class="workspace-actions" aria-label="Workspace actions">
-              <button type="button" class="workspace-action-button" data-workspace-expand-toggle data-testid="workspace-expand-toggle" aria-controls="study-panel" aria-expanded="false" aria-pressed="false" aria-label="Expand workspace" title="Expand workspace">Expand</button>
-              <button type="button" class="workspace-action-button" data-workspace-minimize-toggle data-testid="workspace-minimize-toggle" aria-controls="study-panel" aria-pressed="false" aria-label="Minimize workspace to dock" title="Minimize workspace to dock">Minimize</button>
+              <button type="button" class="workspace-action-button workspace-icon-button" data-workspace-expand-toggle data-testid="workspace-expand-toggle" aria-controls="study-panel" aria-expanded="false" aria-pressed="false" aria-label="Expand workspace" title="Expand workspace">
+                <svg class="workspace-action-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5M9 4 4 9m16 0-5-5m0 16 5-5M4 15l5 5"/></svg>
+              </button>
+              <button type="button" class="workspace-action-button workspace-icon-button" data-workspace-minimize-toggle data-testid="workspace-minimize-toggle" aria-controls="study-panel" aria-pressed="false" aria-label="Minimize workspace to dock" title="Minimize workspace">
+                <svg class="workspace-action-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M5 12h14"/></svg>
+              </button>
             </div>
           </div>
 
@@ -448,12 +461,19 @@
                       <p class="empty">Search for a person, place, theme, Scripture, or object ID.</p>
                     </div>
                   </section>
+                </div>
 
-                  <aside class="canonical-browser-detail-card" aria-live="polite">
+                <dialog id="canonical-context-modal" class="canonical-context-modal" aria-labelledby="canonical-context-modal-title">
+                  <div class="canonical-context-modal-shell">
+                    <header class="canonical-context-modal-header">
+                      <p class="canonical-browser-kicker">Canonical context</p>
+                      <button type="button" class="secondary canonical-context-modal-close" data-canonical-context-modal-close aria-label="Close canonical context" title="Close canonical context">×</button>
+                    </header>
+                    <aside class="canonical-browser-detail-card" aria-live="polite">
                     <div class="panel-heading canonical-browser-detail-heading">
                       <div>
                         <p class="canonical-browser-kicker">Selected object</p>
-                        <h3 data-canonical-detail-title>Select an object</h3>
+                        <h3 id="canonical-context-modal-title" data-canonical-detail-title>Select an object</h3>
                       </div>
                       <div class="canonical-browser-detail-heading-actions">
                         <button type="button" class="secondary" data-canonical-browser-back hidden>Back to results</button>
@@ -504,8 +524,9 @@
                       <a class="secondary-link" href="/canonical/editor" data-canonical-detail-editor data-testid="canonical-open-editor" hidden>Open editor</a>
                       <a class="secondary-link" href="/curation" data-canonical-detail-curation data-testid="canonical-open-curation">Open curation</a>
                     </div>
-                  </aside>
-                </div>
+                    </aside>
+                  </div>
+                </dialog>
               </section>
             </section>
 
@@ -515,20 +536,28 @@
                   <h2 id="notes-heading">Notes</h2>
                   <span id="notes-count" class="count">0</span>
                 </div>
+                <div class="notes-view-switcher" role="group" aria-label="Notes view">
+                  <button type="button" class="secondary" data-notes-view="all">All notes</button>
+                  <button type="button" class="secondary" data-notes-view="passage">This passage</button>
+                </div>
                 <form id="note-editor" class="note-editor" hidden data-testid="note-editor">
                   <input type="hidden" name="id" value="">
                   <label>
                     <span id="note-reference">Note</span>
                     <textarea name="body" rows="4" required data-testid="note-textarea"></textarea>
                   </label>
+                  <div class="note-link-actions">
+                    <button type="button" class="secondary" data-attach-note-selection>Attach current verse selection</button>
+                    <button type="button" class="secondary" data-clear-note-reference>Make standalone note</button>
+                  </div>
                   <label>
                     <span>Canonical object IDs</span>
                     <input type="text" name="canonical_object_ids" value="" placeholder="shechem, abraham, covenant" data-testid="note-canonical-object-ids">
                   </label>
                   <p class="note-editor-hint">Comma-separated CKL object IDs. Use the Canonical Context browser to add them.</p>
                   <div class="note-actions">
-                    <button type="submit" data-testid="save-note-button">Save note</button>
-                    <button type="button" class="secondary" data-cancel-note data-testid="cancel-note-button">Cancel</button>
+                    <button type="submit" data-testid="save-note-button">Done</button>
+                    <button type="button" class="secondary" data-cancel-note data-testid="cancel-note-button">Close</button>
                   </div>
                 </form>
                 <div id="notes-list" class="notes-list">

@@ -1030,11 +1030,36 @@ async function initializeReader() {
   const addNoteButton = document.querySelector("[data-add-note]");
   if (addNoteButton) {
     addNoteButton.addEventListener("click", openNoteEditor);
-    addNoteButton.disabled = true;
+    addNoteButton.disabled = false;
+  }
+  document.querySelectorAll("[data-new-note]").forEach((button) => {
+    button.addEventListener("click", () => openNoteEditor());
+  });
+  document.querySelectorAll("[data-notes-view]").forEach((button) => {
+    button.addEventListener("click", () => {
+      void showNotesView(button.dataset.notesView);
+    });
+  });
+  updateNotesViewControls();
+  const attachNoteSelection = document.querySelector("[data-attach-note-selection]");
+  if (attachNoteSelection) {
+    attachNoteSelection.addEventListener("click", attachCurrentSelectionToNote);
+  }
+  const clearNoteReferenceButton = document.querySelector("[data-clear-note-reference]");
+  if (clearNoteReferenceButton) {
+    clearNoteReferenceButton.addEventListener("click", clearNoteReference);
   }
   const noteEditor = document.querySelector("#note-editor");
   if (noteEditor) {
     noteEditor.addEventListener("submit", saveNote);
+    noteEditor.elements.body.addEventListener("input", () => {
+      noteDraftDirty = true;
+      scheduleNoteAutoSave();
+    });
+    noteEditor.elements.canonical_object_ids?.addEventListener("input", () => {
+      noteDraftDirty = true;
+      scheduleNoteAutoSave();
+    });
   }
   const cancelNote = document.querySelector("[data-cancel-note]");
   if (cancelNote) {
@@ -1481,7 +1506,6 @@ function applyWorkspaceMinimized(enabled) {
     const accessibleLabel = nextEnabled
       ? "Restore workspace"
       : "Minimize workspace to dock";
-    setControlLabel(workspaceToggle, nextEnabled ? "Restore" : "Minimize");
     workspaceToggle.setAttribute("aria-label", accessibleLabel);
     workspaceToggle.setAttribute("title", accessibleLabel);
     workspaceToggle.setAttribute("aria-pressed", String(nextEnabled));
@@ -1541,11 +1565,6 @@ function applyWorkspaceExpansion(enabled) {
     const accessibleLabel = nextEnabled
       ? "Collapse workspace"
       : "Expand workspace";
-    setControlLabel(
-      toggle,
-      nextEnabled ? "Collapse" : "Expand",
-      accessibleLabel,
-    );
     setControlStatus(
       toggle,
       `Current value: ${nextEnabled ? "Expanded" : "Collapsed"}`,
@@ -5297,8 +5316,14 @@ function syncAskFields() {
       summary.textContent = "";
     }
     if (addNoteButton) {
-      addNoteButton.disabled = true;
+      addNoteButton.disabled = false;
     }
+  }
+  if (noteContext) {
+    refreshNoteReferenceActions();
+  }
+  if (notesView === "passage") {
+    renderNotes(notesForCurrentPassage());
   }
 }
 

@@ -47,7 +47,7 @@ def list_notes(
         ensure_schema(connection)
         if book is None and chapter is None:
             rows = connection.execute(
-                "SELECT * FROM notes ORDER BY book, chapter, verse_start, created_at"
+                "SELECT * FROM notes ORDER BY updated_at DESC, created_at DESC"
             ).fetchall()
         else:
             canonical, chapter_number = reference_filter(book, chapter)

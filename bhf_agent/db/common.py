@@ -76,10 +76,20 @@ def validated_reference(data: dict[str, Any]) -> dict[str, Any]:
 
 
 def validated_note(data: dict[str, Any]) -> dict[str, Any]:
-    reference = validated_reference(data)
     body = str(data.get("body") or data.get("note_body") or "").strip()
     if not body:
         raise StudyDataError("note body is required")
+    has_reference = any(
+        data.get(field) not in (None, "")
+        for field in ("book", "chapter", "start_verse", "verse_start", "end_verse", "verse_end")
+    )
+    reference = validated_reference(data) if has_reference else {
+        "book": None,
+        "chapter": None,
+        "start_verse": None,
+        "end_verse": None,
+        "selected_text": "",
+    }
     return {
         **reference,
         "body": body,
@@ -149,9 +159,9 @@ def note_from_row(row: Any) -> dict[str, Any]:
     return {
         "id": row["id"],
         "book": row["book"],
-        "chapter": int(row["chapter"]),
-        "start_verse": int(row["verse_start"]),
-        "end_verse": int(row["verse_end"]),
+        "chapter": int(row["chapter"]) if row["chapter"] is not None else None,
+        "start_verse": int(row["verse_start"]) if row["verse_start"] is not None else None,
+        "end_verse": int(row["verse_end"]) if row["verse_end"] is not None else None,
         "selected_text": row["selected_text"],
         "body": row["note_body"],
         "canonical_object_ids": _canonical_object_ids(

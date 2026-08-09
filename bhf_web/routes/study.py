@@ -97,6 +97,10 @@ def register_study_routes(
     async def remove_saved_study(study_id: str) -> JSONResponse:
         return device_only_response("Saved studies")
 
+    @app.get("/api/notes", response_class=JSONResponse)
+    async def get_all_notes() -> JSONResponse:
+        return device_only_response("Notes")
+
     @app.get("/api/notes/{book}/{chapter}", response_class=JSONResponse)
     async def get_notes(book: str, chapter: int) -> JSONResponse:
         return device_only_response("Notes")
