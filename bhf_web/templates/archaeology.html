@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Archaeology · BHF</title>
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260809a">
+  <script src="{{ static_asset('/api/http.js') }}" defer></script>
+  <script src="{{ static_asset('/archaeology.js') }}?v=20260809a" defer></script>
+</head>
+<body>
+  <main class="page archaeology-explore" data-archaeology-explore>
+    <header class="header"><div><p class="canonical-browser-kicker">Explore</p><h1>Archaeology</h1><p class="app-subtitle">Deterministic material evidence, distinct from CKL interpretation.</p></div><a class="secondary" href="/">Back to reader</a></header>
+    <section class="canonical-browser-panel">
+      <form class="canonical-browser-form" data-archaeology-search>
+        <label class="canonical-browser-field canonical-browser-query"><span class="sr-only">Search archaeology</span><input type="search" name="q" placeholder="Search artifacts, sites, inscriptions, or excavations"></label>
+        <div class="canonical-browser-filter-row">
+          <label class="canonical-browser-field"><span>Period</span><input name="period" placeholder="e.g. Assyrian"></label>
+          <label class="canonical-browser-field"><span>Type</span><input name="item_type" placeholder="e.g. inscription"></label>
+          <label class="canonical-browser-field"><span>Biblical book</span><input name="biblical_book" placeholder="e.g. John"></label>
+          <label class="canonical-browser-field"><span>Confidence</span><select name="confidence"><option value="">All</option><option>strong</option><option>likely</option><option>unknown</option></select></label>
+        </div>
+        <div class="canonical-browser-actions canonical-browser-search-actions"><button>Search</button><button type="button" class="secondary" data-archaeology-clear>Clear</button></div>
+      </form>
+      <p class="canonical-browser-summary" data-archaeology-summary>Browse reviewed archaeological evidence.</p>
+      <section class="archaeology-card-grid" data-archaeology-results aria-live="polite"><p class="empty">Loading archaeology evidence…</p></section>
+    </section>
+    <dialog class="canonical-context-modal" data-archaeology-detail><article class="canonical-browser-detail-card"><button class="secondary canonical-context-modal-close" data-archaeology-close aria-label="Close">×</button><div data-archaeology-detail-body></div></article></dialog>
+  </main>
+</body>
+</html>

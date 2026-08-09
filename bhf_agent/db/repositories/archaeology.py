@@ -180,6 +180,39 @@ def list_archaeology_scripture_links(
     return [archaeology_scripture_link_from_row(row) for row in rows]
 
 
+def list_archaeology_ckl_links(
+    item_id: str | None = None,
+    *,
+    path: str | Path = DEFAULT_DB_PATH,
+    ensure_schema: EnsureSchema,
+) -> list[dict[str, str]]:
+    """Return stable archaeology-to-CKL links without coupling either schema."""
+
+    with connect(path) as connection:
+        ensure_schema(connection)
+        if item_id:
+            rows = connection.execute(
+                """SELECT archaeology_item_id, ckl_object_id, relationship, notes
+                   FROM archaeology_ckl_links WHERE archaeology_item_id = ?
+                   ORDER BY ckl_object_id, relationship""",
+                (item_id,),
+            ).fetchall()
+        else:
+            rows = connection.execute(
+                """SELECT archaeology_item_id, ckl_object_id, relationship, notes
+                   FROM archaeology_ckl_links ORDER BY archaeology_item_id, ckl_object_id, relationship"""
+            ).fetchall()
+    return [
+        {
+            "archaeology_item_id": str(row["archaeology_item_id"]),
+            "ckl_object_id": str(row["ckl_object_id"]),
+            "relationship": str(row["relationship"]),
+            "notes": str(row["notes"]),
+        }
+        for row in rows
+    ]
+
+
 def list_archaeology_media(
     *,
     item_id: str | None = None,

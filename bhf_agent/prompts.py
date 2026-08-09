@@ -183,6 +183,7 @@ def build_prompt(
     session_memory: SessionMemory | None = None,
     answer_mode: str = "study",
     canonical_context_prompt: str | None = None,
+    archaeology_context_prompt: str | None = None,
     lexical_context_prompt: str | None = None,
     knowledge_coverage_prompt: str | None = None,
     tyndale_context_prompt: str | None = None,
@@ -206,6 +207,7 @@ def build_prompt(
         session_memory=session_memory,
         answer_mode=answer_mode,
         canonical_context_prompt=canonical_context_prompt,
+        archaeology_context_prompt=archaeology_context_prompt,
         lexical_context_prompt=lexical_context_prompt,
         knowledge_coverage_prompt=knowledge_coverage_prompt,
         tyndale_context_prompt=tyndale_context_prompt,
@@ -230,6 +232,7 @@ def build_prompt_result(
     session_memory: SessionMemory | None = None,
     answer_mode: str = "study",
     canonical_context_prompt: str | None = None,
+    archaeology_context_prompt: str | None = None,
     lexical_context_prompt: str | None = None,
     knowledge_coverage_prompt: str | None = None,
     tyndale_context_prompt: str | None = None,
@@ -292,6 +295,16 @@ def build_prompt_result(
             _prompt_section(
                 "CANONICAL KNOWLEDGE CONTEXT",
                 [canonical_context_block],
+            )
+        )
+    if archaeology_context_prompt:
+        system_sections.append(
+            _prompt_section(
+                "ARCHAEOLOGICAL EVIDENCE",
+                [
+                    "This is archaeological evidence, distinct from Scripture and CKL interpretation. Preserve its stated uncertainty; do not infer beyond the supplied record.",
+                    archaeology_context_prompt.strip(),
+                ],
             )
         )
     if knowledge_coverage_prompt:
@@ -361,6 +374,7 @@ def build_prompt_result(
         map_context=map_context_prompt,
         session_memory=session_memory_prompt,
         canonical_context=canonical_context_block,
+        archaeology_context=archaeology_context_prompt or "",
         lexical_context=lexical_context_block,
         knowledge_coverage=knowledge_coverage_prompt or "",
         tyndale_context=tyndale_context_prompt or "",

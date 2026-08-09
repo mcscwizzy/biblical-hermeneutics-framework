@@ -140,6 +140,8 @@ def build_offline_manifest() -> dict[str, Any]:
                     "/api/maps/related-passages-for-place",
                     "/api/maps/archaeology-for-passage",
                     "/api/archaeology/for-passage",
+                    "/api/archaeology",
+                    "/api/archaeology/search",
                     "/api/archaeology/items/{id}",
                     "/api/archaeology/sites/{id}",
                     "/api/maps/manuscripts-for-passage",
@@ -166,6 +168,9 @@ def build_offline_manifest() -> dict[str, Any]:
                 "strategy": "installable_pack",
                 "size_bytes": _safe_size(static_root / "data" / "archaeology"),
                 "routes": [
+                    "/archaeology",
+                    "/api/archaeology",
+                    "/api/archaeology/search",
                     "/api/archaeology/for-passage",
                     "/api/archaeology/items/{id}",
                     "/api/archaeology/sites/{id}",
@@ -227,7 +232,7 @@ def _build_study_pack(pack_entry: dict[str, Any]) -> dict[str, Any]:
     objects = [
         _serialize_object_detail(obj, library, browse=True)
         for obj in sorted(
-            library.objects_by_id.values(),
+            (obj for obj in library.objects_by_id.values() if obj.type != "archaeology"),
             key=lambda item: (-int(item.importance), item.type, item.title, item.id),
         )
     ]

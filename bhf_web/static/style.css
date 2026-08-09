@@ -160,3 +160,16 @@
     overflow: visible;
   }
 }
+
+.archaeology-explore { max-width: 1180px; margin: 0 auto; padding: 28px 20px 64px; }
+.archaeology-explore .header { display: flex; align-items: start; justify-content: space-between; gap: 20px; }
+.archaeology-card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(215px, 1fr)); gap: 16px; }
+.archaeology-card { appearance: none; display: grid; text-align: left; gap: 7px; padding: 0 0 14px; overflow: hidden; color: inherit; background: var(--surface, #fff); border: 1px solid var(--border, #d8e0e7); border-radius: 12px; cursor: pointer; }
+.archaeology-card:hover, .archaeology-card:focus-visible { border-color: var(--accent, #296a94); box-shadow: 0 3px 14px #18354c22; }
+.archaeology-card img, .archaeology-card-image { width: 100%; height: 144px; object-fit: cover; background: #e8eef2; }
+.archaeology-card-image--empty { display: grid; place-items: center; color: #56616c; }
+.archaeology-card strong, .archaeology-card small, .archaeology-card .canonical-browser-kicker { margin: 0 14px; }
+.archaeology-detail-image { width: 100%; max-height: 330px; object-fit: contain; background: #f0f3f5; border-radius: 8px; }
+.archaeology-detail-grid { display: grid; grid-template-columns: minmax(120px, .4fr) 1fr; gap: 9px 16px; }
+.archaeology-detail-grid dt { font-weight: 700; }.archaeology-detail-grid dd { margin: 0; }
+@media (max-width: 600px) { .archaeology-explore .header { display: block; }.archaeology-explore .header .secondary { display: inline-block; margin-top: 12px; }.archaeology-detail-grid { grid-template-columns: 1fr; gap: 4px; } }

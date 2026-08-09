@@ -25,7 +25,7 @@ The setup dialog offers three choices:
    another compatible endpoint.
 
 You can also continue without AI. Bible reading, deterministic local Bible
-search, maps, the Canonical Context browser, notes, highlights, saved studies,
+search, Maps, Explore → Archaeology, the Canonical Context browser, notes, highlights, saved studies,
 and installed offline data remain useful without a model connection.
 
 OpenRouter authorization uses a browser PKCE flow. The callback must return to

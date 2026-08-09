@@ -800,6 +800,16 @@ function initializeCanonicalBrowser() {
     });
   }
 
+  const requestedObjectId = normalizeCanonicalObjectId(
+    new URLSearchParams(window.location.search).get("canonical") || ""
+  );
+  if (requestedObjectId) {
+    window.setTimeout(() => {
+      activateWorkspaceTab("context");
+      loadCanonicalObject(requestedObjectId, { openModal: true }).catch(() => {});
+    }, 0);
+  }
+
 }
 
 function handleCanonicalBrowserSubmit(event) {
@@ -1246,6 +1256,20 @@ function renderCanonicalBrowserDetail(object, options = {}) {
     renderCanonicalRelationships(related, relatedObjects);
   } else {
     related.innerHTML = `<p class="empty">No related objects recorded.</p>`;
+  }
+  const archaeologyLinks = Array.isArray(object.related_archaeology) ? object.related_archaeology : [];
+  if (archaeologyLinks.length > 0) {
+    const archaeologySection = document.createElement("section");
+    archaeologySection.className = "canonical-related-archaeology";
+    archaeologySection.innerHTML = `<h5>Related Archaeological Evidence</h5>`;
+    archaeologyLinks.forEach((item) => {
+      const link = document.createElement("a");
+      link.href = `/archaeology?q=${encodeURIComponent(item.title || item.id || "")}`;
+      link.textContent = item.title || item.id;
+      link.className = "canonical-related-archaeology-link";
+      archaeologySection.appendChild(link);
+    });
+    related.appendChild(archaeologySection);
   }
 
   if (Array.isArray(object.sources) && object.sources.length > 0) {

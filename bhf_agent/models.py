@@ -115,6 +115,7 @@ class RetrievedEvidence(Serializable):
     passage_text: str = ""
     immediate_context: str = ""
     ckl_entries: list[dict[str, Any]] = field(default_factory=list)
+    archaeology_entries: list[dict[str, Any]] = field(default_factory=list)
     lexical_entries: list[dict[str, Any]] = field(default_factory=list)
     historical_context: list[dict[str, Any]] = field(default_factory=list)
     direct_facts: list[dict[str, Any]] = field(default_factory=list)

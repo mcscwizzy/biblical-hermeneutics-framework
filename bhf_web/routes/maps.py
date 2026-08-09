@@ -13,12 +13,10 @@ from bhf_agent.study_db import (
     create_map_note,
     create_saved_map_study,
     delete_saved_map_study,
-    get_archaeology_item,
-    get_archaeology_site,
     get_saved_map_study,
     list_saved_map_studies,
 )
-from bhf_agent.archaeology_resolver import resolve_archaeology_evidence
+from bhf_agent.archaeology_service import ArchaeologyService
 
 from ..map_service import (
     get_map_catalog,
@@ -47,6 +45,7 @@ from ..services.web_helpers import (
 
 def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object | None = None) -> None:
     journey_data_path = Path(__file__).resolve().parents[1] / "static" / "data" / "journeys"
+    archaeology = ArchaeologyService(study_db_path)
 
     def kml_response(content: str, filename: str) -> Response:
         return Response(
@@ -222,14 +221,13 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
         limit: int = 8,
     ) -> JSONResponse:
         try:
-            result = resolve_archaeology_evidence(
+            result = archaeology.for_passage(
                 book=book,
                 chapter=chapter,
                 verse_start=verse_start,
                 verse_end=verse_end,
                 passage_text=passage_text,
                 limit=limit,
-                path=study_db_path,
             )
         except (BibleError, ValueError) as exc:
             return JSONResponse({"error": str(exc)}, status_code=400)
@@ -238,16 +236,52 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
     @app.get("/api/archaeology/items/{item_id}", response_class=JSONResponse)
     async def archaeology_item(item_id: str) -> JSONResponse:
         try:
-            return JSONResponse(get_archaeology_item(item_id, path=study_db_path))
+            return JSONResponse(archaeology.get_item(item_id))
         except StudyDataError as exc:
             return JSONResponse({"error": str(exc)}, status_code=404)
 
     @app.get("/api/archaeology/sites/{site_id}", response_class=JSONResponse)
     async def archaeology_site(site_id: str) -> JSONResponse:
         try:
-            return JSONResponse(get_archaeology_site(site_id, path=study_db_path))
+            return JSONResponse(archaeology.get_site(site_id))
         except StudyDataError as exc:
             return JSONResponse({"error": str(exc)}, status_code=404)
+
+    @app.get("/api/archaeology", response_class=JSONResponse)
+    async def archaeology_browse(
+        q: str | None = None,
+        period: str | None = None,
+        item_type: str | None = None,
+        site: str | None = None,
+        biblical_book: str | None = None,
+        confidence: str | None = None,
+        relationship: str | None = None,
+        limit: int = 25,
+    ) -> JSONResponse:
+        results = archaeology.browse(
+            query=q, period=period, item_type=item_type, site=site,
+            biblical_book=biblical_book, confidence=confidence,
+            relationship=relationship, limit=limit,
+        )
+        return JSONResponse({"domain": "archaeology", "query": q or "", "results": results, "count": len(results)})
+
+    @app.get("/api/archaeology/search", response_class=JSONResponse)
+    async def archaeology_search(
+        q: str = "",
+        period: str | None = None,
+        item_type: str | None = None,
+        site: str | None = None,
+        biblical_book: str | None = None,
+        confidence: str | None = None,
+        relationship: str | None = None,
+        limit: int = 25,
+    ) -> JSONResponse:
+        results = archaeology.search(
+            q, period=period, item_type=item_type, site=site,
+            biblical_book=biblical_book, confidence=confidence,
+            relationship=relationship, limit=limit,
+        )
+        return JSONResponse({"domain": "archaeology", "query": q, "results": results, "count": len(results)})
 
     @app.get("/api/maps/manuscripts-for-passage", response_class=JSONResponse)
     async def maps_manuscripts_for_passage(

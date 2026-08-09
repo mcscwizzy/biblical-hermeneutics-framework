@@ -29,7 +29,7 @@ from .archaeology_content import (
 )
 from .archaeology import attribution_text, validate_media_record
 
-SCHEMA_VERSION = 33
+SCHEMA_VERSION = 35
 OPENBIBLE_PLACES_PATH = Path(__file__).resolve().parent / "data" / "openbible_places.json"
 BROAD_PERIOD_LABEL = "Broad / uncertain period"
 CANONICAL_PERIOD_LABELS = (
@@ -485,6 +485,19 @@ def list_archaeology_scripture_links(
     )
 
 
+def list_archaeology_ckl_links(
+    item_id: str | None = None,
+    path: str | Path = DEFAULT_DB_PATH,
+) -> list[dict[str, str]]:
+    """Return explicit cross-domain links owned by archaeology."""
+
+    return _archaeology_repo.list_archaeology_ckl_links(
+        item_id,
+        path=path,
+        ensure_schema=_ensure_schema,
+    )
+
+
 def list_archaeology_media(
     *,
     item_id: str | None = None,
@@ -889,6 +902,12 @@ def _ensure_schema(connection: sqlite3.Connection) -> None:
         connection.execute(
             "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
             (34, _timestamp()),
+        )
+    if 35 not in applied:
+        _apply_v35_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (35, _timestamp()),
         )
     # Older local databases may already record v15 from the period when the
     # map-study table was intentionally removed. Recreate the optional table
@@ -1688,6 +1707,45 @@ def _apply_v34_schema(connection: sqlite3.Connection) -> None:
         CREATE INDEX IF NOT EXISTS idx_notes_updated_at
             ON notes(updated_at DESC);
         """
+    )
+
+
+def _apply_v35_schema(connection: sqlite3.Connection) -> None:
+    """Add first-class, stable archaeology-to-CKL relationship records."""
+
+    connection.executescript(
+        """
+        CREATE TABLE IF NOT EXISTS archaeology_ckl_links (
+            archaeology_item_id TEXT NOT NULL,
+            ckl_object_id TEXT NOT NULL,
+            relationship TEXT NOT NULL DEFAULT 'related-context',
+            notes TEXT NOT NULL DEFAULT '',
+            PRIMARY KEY (archaeology_item_id, ckl_object_id, relationship),
+            FOREIGN KEY(archaeology_item_id) REFERENCES archaeology_items(id)
+        );
+        CREATE INDEX IF NOT EXISTS idx_archaeology_ckl_links_ckl
+            ON archaeology_ckl_links(ckl_object_id);
+        """
+    )
+    links = (
+        ("tel-dan-stele", "david", "historical-evidence", "Dynastic reference in the inscription."),
+        ("tel-dan-stele", "assyria", "regional-context", "Aramean and Israelite regional setting."),
+        ("hezekiahs-tunnel-item", "2-kings", "historical-evidence", "Water-system context."),
+        ("siloam-inscription", "2-kings", "historical-evidence", "Tunnel inscription context."),
+        ("broad-wall-jerusalem", "jerusalem", "historical-evidence", "Jerusalem defensive context."),
+        ("sennacherib-prism", "2-kings", "historical-evidence", "Assyrian royal-account context."),
+        ("lachish-reliefs", "2-kings", "historical-evidence", "Assyrian campaign context."),
+        ("pilate-stone", "pontius-pilate", "historical-evidence", "Roman prefect inscription."),
+        ("pilate-stone", "jerusalem", "regional-context", "Judean setting of the Gospel narratives."),
+        ("pool-of-siloam", "jerusalem", "site-context", "Jerusalem water installation."),
+        ("broad-wall-jerusalem", "jerusalem", "site-context", "Iron Age Jerusalem remains."),
+        ("siloam-inscription", "jerusalem", "site-context", "Jerusalem water system."),
+    )
+    connection.executemany(
+        """INSERT OR IGNORE INTO archaeology_ckl_links
+           (archaeology_item_id, ckl_object_id, relationship, notes)
+           VALUES (?, ?, ?, ?)""",
+        links,
     )
 
 

@@ -1,9 +1,16 @@
 # Archaeology Evidence
 
+Archaeology is a first-class BHF evidence domain, peer to CKL. It owns sites,
+artifacts, inscriptions, excavations, dating, uncertainty, media, licensing,
+attribution, provenance, and Scripture relationships. CKL owns curated biblical
+and interpretive context. The domains use stable cross-domain IDs and do not
+duplicate media or evidence prose.
+
 BHF archaeology has three boundaries:
 
 1. SQLite archaeology records are deterministic evidence and relationship data.
-2. CKL archaeology objects are curated interpretation and context.
+2. Legacy CKL archaeology objects are compatibility-only references, not the
+   authoritative evidence source.
 3. The reader and map workspace present retrieved evidence; AI is optional explanation.
 
 Archaeology should be described responsibly. A record may support historical

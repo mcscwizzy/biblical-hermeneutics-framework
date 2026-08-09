@@ -30,7 +30,8 @@ Use this index to find the shortest path for your task.
 - [Research expansion](research-expansion.md) — answer-coverage routing and
   optional evidence expansion.
 - [Archaeology evidence and media policy](archaeology.md) — deterministic
-  evidence, rights-aware media, importing, presentation, and offline behavior.
+  first-class evidence, rights-aware media, importing, presentation, CKL links,
+  and offline behavior.
 
 ## Build and maintain data
 
