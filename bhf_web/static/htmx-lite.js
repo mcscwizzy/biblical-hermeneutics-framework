@@ -4067,11 +4067,73 @@ async function handleContextMenuAction(event) {
   const actionType = resolveContextAction(button.dataset.contextAction);
   const context = contextMenuState;
   hideContextMenu();
+  if (actionType === "copy") {
+    await copyContextToClipboard(context);
+    return;
+  }
   await dispatchStudyAction(createStudyAction(actionType, context));
 }
 
 function resolveContextAction(actionType) {
   return actionType;
+}
+
+function formatContextReferenceForClipboard(context) {
+  if (!context?.book || !context?.chapter) {
+    return "";
+  }
+  const verses = selectedVerseNumbers(context);
+  if (verses.length === 0) {
+    return `${context.book} ${context.chapter}`;
+  }
+
+  const ranges = [];
+  let rangeStart = verses[0];
+  let rangeEnd = verses[0];
+  verses.slice(1).forEach((verse) => {
+    if (verse === rangeEnd + 1) {
+      rangeEnd = verse;
+      return;
+    }
+    ranges.push(rangeStart === rangeEnd ? String(rangeStart) : `${rangeStart}-${rangeEnd}`);
+    rangeStart = verse;
+    rangeEnd = verse;
+  });
+  ranges.push(rangeStart === rangeEnd ? String(rangeStart) : `${rangeStart}-${rangeEnd}`);
+  return `${context.book} ${context.chapter}:${ranges.join(",")}`;
+}
+
+function formatContextForClipboard(context) {
+  const reference = formatContextReferenceForClipboard(context);
+  const text = String(context?.text || "").trim();
+  return [reference, text].filter(Boolean).join("\n\n");
+}
+
+async function copyContextToClipboard(context) {
+  const text = formatContextForClipboard(context);
+  if (!text) {
+    return false;
+  }
+
+  try {
+    if (window.navigator?.clipboard?.writeText) {
+      await window.navigator.clipboard.writeText(text);
+      return true;
+    }
+  } catch (_error) {
+    // Some browser contexts deny Clipboard API access. Fall back below.
+  }
+
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.opacity = "0";
+  document.body.append(textarea);
+  textarea.select();
+  const copied = document.execCommand("copy");
+  textarea.remove();
+  return copied;
 }
 
 function createStudyAction(type, context) {
