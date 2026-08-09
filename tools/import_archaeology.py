@@ -12,19 +12,29 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from bhf_agent.archaeology_import import FixtureArchaeologyMediaProvider, import_archaeology_manifest
+from bhf_agent.archaeology_import import (
+    FixtureArchaeologyMediaProvider,
+    MetOpenAccessProvider,
+    WikimediaCommonsProvider,
+    import_archaeology_manifest,
+)
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--provider", choices=("fixture",), required=True)
+    parser.add_argument("--provider", choices=("fixture", "wikimedia", "met"), required=True)
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--database", type=Path, default=REPO_ROOT / ".bhf" / "study.sqlite")
     args = parser.parse_args()
 
     payload = json.loads(args.manifest.read_text(encoding="utf-8"))
-    records = payload.get("records", {}) if isinstance(payload, dict) else {}
-    provider = FixtureArchaeologyMediaProvider(records)
+    if args.provider == "fixture":
+        records = payload.get("records", {}) if isinstance(payload, dict) else {}
+        provider = FixtureArchaeologyMediaProvider(records)
+    elif args.provider == "wikimedia":
+        provider = WikimediaCommonsProvider()
+    else:
+        provider = MetOpenAccessProvider()
     imported = import_archaeology_manifest(
         args.manifest,
         provider=provider,

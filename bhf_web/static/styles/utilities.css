@@ -300,7 +300,8 @@ button.danger {
 
 .archaeology-media {
   margin: 0;
-  min-height: 9rem;
+  min-height: 10rem;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: 0.5rem;
   background: var(--surface-muted, #f1f3f6);
@@ -310,8 +311,9 @@ button.danger {
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 9rem;
-  object-fit: cover;
+  min-height: 10rem;
+  object-fit: contain;
+  background: #111820;
 }
 
 .archaeology-media figcaption,
@@ -323,13 +325,47 @@ button.danger {
 
 .archaeology-media--empty {
   display: grid;
+  gap: 0.35rem;
   min-height: 9rem;
   place-items: center;
   text-align: center;
 }
 
+.archaeology-media--empty span {
+  font-size: 0.82rem;
+}
+
+.archaeology-media-failure {
+  display: none;
+  margin: 0;
+  padding: 0.75rem;
+  color: var(--muted-text, #5f6875);
+}
+
+.archaeology-media--failed {
+  display: grid;
+  place-items: center;
+}
+
+.archaeology-media--failed figcaption {
+  display: none;
+}
+
+.archaeology-media--failed .archaeology-media-failure {
+  display: block;
+}
+
 .archaeology-card-body > * {
   margin-top: 0;
+}
+
+.archaeology-card-section h4 {
+  margin: 0 0 0.3rem;
+  font-size: 0.9rem;
+}
+
+.archaeology-card-section p {
+  margin: 0 0 0.8rem;
 }
 
 .archaeology-card-kicker,
@@ -353,6 +389,40 @@ button.danger {
 .archaeology-card-attribution {
   white-space: pre-line;
   font-size: 0.82rem;
+  color: var(--muted-text, #5f6875);
+}
+
+.archaeology-card-provenance {
+  font-size: 0.82rem;
+  color: var(--muted-text, #5f6875);
+}
+
+.archaeology-card-details {
+  margin: 0.75rem 0;
+}
+
+.archaeology-card-details summary {
+  cursor: pointer;
+}
+
+.archaeology-card-details dl {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0.65rem 0 0;
+}
+
+.archaeology-card-details dl div {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.archaeology-card-details dt {
+  font-weight: 650;
+  font-size: 0.84rem;
+}
+
+.archaeology-card-details dd {
+  margin: 0;
   color: var(--muted-text, #5f6875);
 }
 

@@ -805,9 +805,13 @@ def format_fact_packet_for_prompt(packet: Mapping[str, Any]) -> str:
                     for value in (
                         item.get("title"),
                         item.get("item_type"),
-                        item.get("period"),
+                        item.get("date_display") or item.get("period"),
                         item.get("biblical_relationship"),
                         item.get("description"),
+                        "Discovery: " + str(item.get("discovery_context") or ""),
+                        "Evidence: " + str(item.get("evidence_summary") or ""),
+                        "Passage relevance: " + str(item.get("biblical_relevance") or ""),
+                        "Scholarly context: " + str(item.get("scholarly_context") or ""),
                         "Cautions: " + "; ".join(item.get("cautions") or []),
                         "References: " + "; ".join(item.get("scripture_references") or []),
                     )

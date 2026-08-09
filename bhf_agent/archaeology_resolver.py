@@ -129,6 +129,12 @@ def resolve_archaeology_evidence(
 
 
 def _evidence_card(item: dict[str, Any], site: dict[str, Any], links: list[dict[str, Any]]) -> dict[str, Any]:
+    details = item.get("evidence_details") or {}
+    if not isinstance(details, dict):
+        details = {}
+    description = str(details.get("description") or item.get("why_it_matters") or "")
+    biblical_relevance = str(details.get("biblical_relevance") or item.get("why_it_matters") or "")
+    caution = str(details.get("interpretive_caution") or item.get("bhf_caution") or "")
     scripture_references = [
         _format_reference(link["book"], link["chapter"], link["verse_start"], link["verse_end"])
         for link in links
@@ -138,6 +144,7 @@ def _evidence_card(item: dict[str, Any], site: dict[str, Any], links: list[dict[
         or item.get("relationship")
         or "historical_context"
     )
+    external_references = _external_references(details.get("external_references"))
     return {
         "id": item["id"],
         "title": item["name"],
@@ -145,9 +152,20 @@ def _evidence_card(item: dict[str, Any], site: dict[str, Any], links: list[dict[
         "site_id": item.get("site_id", ""),
         "site_name": site.get("name", ""),
         "period": item.get("period", ""),
-        "date_display": item.get("period", ""),
-        "description": item.get("why_it_matters", ""),
-        "significance": item.get("why_it_matters", ""),
+        "date_display": details.get("date_display") or item.get("period", ""),
+        "description": description,
+        "discovery_context": details.get("discovery_context", ""),
+        "dating_basis": details.get("dating_basis", ""),
+        "physical_description": details.get("physical_description", ""),
+        "evidence_summary": details.get("evidence_summary", ""),
+        "biblical_relevance": biblical_relevance,
+        # Keep this legacy UI/API alias, but map it to passage relevance rather
+        # than duplicating the evidence description.
+        "significance": biblical_relevance,
+        "scholarly_context": details.get("scholarly_context", ""),
+        "interpretive_caution": caution,
+        "discovery_year": details.get("discovery_year", ""),
+        "current_location": details.get("current_location", ""),
         "biblical_relationship": relationship,
         "scripture_references": scripture_references,
         "related_places": [site.get("modern_location", ""), site.get("ancient_region", "")],
@@ -158,8 +176,11 @@ def _evidence_card(item: dict[str, Any], site: dict[str, Any], links: list[dict[
             "longitude": site.get("longitude"),
         },
         "confidence": item.get("confidence", "unknown"),
-        "dispute_status": "archaeological_uncertainty" if item.get("bhf_caution") else "not_disputed",
-        "cautions": [item["bhf_caution"]] if item.get("bhf_caution") else [],
+        "dispute_status": details.get("dispute_status") or (
+            "archaeological_uncertainty" if caution else "not_disputed"
+        ),
+        "cautions": [caution] if caution else [],
+        "evidence_sources": external_references,
         "source": item.get("source") or {
             "id": item.get("source_id", ""),
             "label": item.get("source_name", ""),
@@ -168,6 +189,29 @@ def _evidence_card(item: dict[str, Any], site: dict[str, Any], links: list[dict[
         },
         "media": item.get("media", []),
     }
+
+
+def _external_references(value: Any) -> list[dict[str, str]]:
+    """Return only display-safe reviewed evidence reference metadata."""
+
+    if not isinstance(value, list):
+        return []
+    references: list[dict[str, str]] = []
+    for entry in value:
+        if not isinstance(entry, dict):
+            continue
+        url = str(entry.get("url") or "").strip()
+        if not url.startswith(("https://", "http://")):
+            continue
+        references.append(
+            {
+                "label": str(entry.get("label") or "External evidence record").strip(),
+                "url": url,
+                "license": str(entry.get("license") or "").strip(),
+                "record_id": str(entry.get("record_id") or "").strip(),
+            }
+        )
+    return references
 
 
 def _site_summary(site: dict[str, Any]) -> dict[str, Any]:

@@ -130,16 +130,37 @@ directories, with licenses and pinned revisions documented in
 ## `import_archaeology.py`
 
 Imports only explicitly listed archaeology media through a selected provider.
-The current `fixture` provider is intended for reviewed local fixtures; it
-does not crawl or download arbitrary websites. Media rights are validated
-before insertion and unknown rights fail closed for redistribution/cache use.
+`wikimedia` fetches metadata for an exact Commons `File:` identifier using the
+MediaWiki API; search results are review candidates and are never imported
+automatically. `fixture` is intended for reviewed local fixtures and tests.
+Media rights are validated before insertion and unknown rights fail closed for
+redistribution/cache use.
 
 ```bash
 python tools/import_archaeology.py \
-  --provider fixture \
-  --manifest data_sources/archaeology/manifest.json \
+  --provider wikimedia \
+  --manifest data_sources/archaeology/wikimedia-manifest.json \
   --database .bhf/study.sqlite
 ```
+
+Use `--provider fixture` only with a manifest that embeds its reviewed
+`records` fixture map. The checked-in Wikimedia manifest is the reproducible
+source of the initial archaeology media inventory.
+
+The Met provider accepts only exact public-domain object IDs with a primary
+image. Its reviewed initial batch is reproducible with:
+
+```bash
+python tools/import_archaeology.py \
+  --provider met \
+  --manifest data_sources/archaeology/met-manifest.json \
+  --database .bhf/study.sqlite
+```
+
+`data_sources/archaeology/opencontext-provenance-manifest.json` is a reviewed
+project-level provenance record, not an importer manifest. It documents the
+CC BY 4.0 Open Context Iraq Heritage Program citation used by relevant Nimrud
+evidence cards. No live Open Context fetch is used at startup or study time.
 
 ## Code style
 

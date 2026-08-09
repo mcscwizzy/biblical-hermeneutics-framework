@@ -109,4 +109,5 @@ def test_media_migration_and_item_serialization(tmp_path) -> None:
 
     assert created["rights_status"] == "public_domain"
     assert created["can_cache"] is True
-    assert list_archaeology_media(item_id="pilate-stone", path=path)[0]["id"] == created["id"]
+    media = list_archaeology_media(item_id="pilate-stone", path=path)
+    assert next(record for record in media if record["id"] == created["id"])["id"] == created["id"]

@@ -337,7 +337,7 @@ def _build_archaeology_pack(pack_entry: dict[str, Any], *, study_db_path: str | 
             key: item.get(key)
             for key in (
                 "id", "site_id", "name", "item_type", "period", "periods", "relationship",
-                "why_it_matters", "bhf_caution", "confidence", "source_id", "source", "source_name",
+                "why_it_matters", "bhf_caution", "evidence_details", "confidence", "source_id", "source", "source_name",
                 "source_url", "license", "notes", "scripture_links", "media",
             )
         }

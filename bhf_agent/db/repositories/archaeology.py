@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 from typing import Any, Callable
 
@@ -280,6 +281,13 @@ def archaeology_item_from_row(
     periods_from_value: PeriodsFromValue,
 ) -> dict[str, Any]:
     periods = periods_from_value(row["periods"], fallback=row["period"])
+    details_raw = row["evidence_details"] if "evidence_details" in row.keys() else "{}"
+    try:
+        evidence_details = json.loads(details_raw or "{}")
+    except (TypeError, json.JSONDecodeError):
+        evidence_details = {}
+    if not isinstance(evidence_details, dict):
+        evidence_details = {}
     return {
         "id": row["id"],
         "site_id": row["site_id"],
@@ -290,6 +298,7 @@ def archaeology_item_from_row(
         "relationship": row["relationship"],
         "why_it_matters": row["why_it_matters"],
         "bhf_caution": row["bhf_caution"],
+        "evidence_details": evidence_details,
         "confidence": row["confidence"],
         "confidence_rank": int(row["confidence_rank"]),
         "source_id": row["source_id"] if "source_id" in row.keys() else "",

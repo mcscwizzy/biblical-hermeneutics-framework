@@ -35,4 +35,7 @@ def test_archaeology_offline_pack_excludes_unknown_rights(tmp_path) -> None:
 
     pack = build_offline_pack("archaeology", study_db_path=database)
 
-    assert {item["id"] for item in pack["media"]} == {"allowed-offline-media"}
+    media_ids = {item["id"] for item in pack["media"]}
+    assert "allowed-offline-media" in media_ids
+    assert "wm-pool-siloam" in media_ids
+    assert "remote-only-media" not in media_ids

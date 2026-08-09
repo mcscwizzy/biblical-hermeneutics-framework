@@ -4343,32 +4343,48 @@ function renderArchaeologyResult(result) {
             (candidate.image_url || candidate.local_asset_path),
         );
         const source = item.source || {};
-        const attribution = media
-          .map((candidate) => candidate.attribution_text)
-          .filter(Boolean)[0];
+        const primaryMedia = bundledMedia || media.find((candidate) => candidate && candidate.image_url);
+        const attribution = primaryMedia && primaryMedia.attribution_text;
         const imageHtml = bundledMedia
-          ? `<figure class="archaeology-media"><img loading="lazy" src="${escapeHtml(bundledMedia.image_url || bundledMedia.local_asset_path)}" alt="${escapeHtml(bundledMedia.title || item.title || "Archaeology evidence")}"><figcaption>${escapeHtml(bundledMedia.caption || "")}</figcaption></figure>`
-          : `<div class="archaeology-media archaeology-media--empty" role="img" aria-label="No redistributable image available">No redistributable image available</div>`;
+          ? `<figure class="archaeology-media"><img loading="lazy" src="${escapeHtml(bundledMedia.image_url || bundledMedia.local_asset_path)}" alt="${escapeHtml(bundledMedia.title || item.title || "Archaeology evidence")}" onerror="this.hidden=true;this.parentElement.classList.add('archaeology-media--failed')"><figcaption>${escapeHtml(bundledMedia.caption || "")}</figcaption><p class="archaeology-media-failure" aria-live="polite">Image unavailable. Source details remain below.</p></figure>`
+          : `<div class="archaeology-media archaeology-media--empty" role="img" aria-label="Archaeology record; image unavailable for redistribution"><strong>Archaeology record</strong><span>Image unavailable for redistribution</span></div>`;
         const references = Array.isArray(item.scripture_references)
           ? item.scripture_references.filter(Boolean)
           : [];
         const cautions = Array.isArray(item.cautions)
           ? item.cautions.filter(Boolean)
           : [];
+        const evidenceSources = Array.isArray(item.evidence_sources)
+          ? item.evidence_sources.filter((source) => source && source.url)
+          : [];
+        const detailRows = [
+          ["Discovery context", item.discovery_context],
+          ["What was found", item.physical_description],
+          ["Evidence summary", item.evidence_summary],
+          ["Dating basis", item.dating_basis],
+          ["Scholarly context", item.scholarly_context],
+          ["Current location", item.current_location],
+        ].filter(([, value]) => value);
+        const detailsHtml = detailRows.length
+          ? `<details class="archaeology-card-details"><summary>More details</summary><dl>${detailRows.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join("")}</dl></details>`
+          : "";
         const hasCoordinates = item.coordinates && item.coordinates.latitude !== null && item.coordinates.longitude !== null;
         return `
           <article class="archaeology-card" data-archaeology-id="${escapeHtml(item.id || "")}">
             ${imageHtml}
             <div class="archaeology-card-body">
-              <p class="archaeology-card-kicker">${escapeHtml([item.item_type, item.period].filter(Boolean).join(" · "))}</p>
+              <p class="archaeology-card-kicker">${escapeHtml([item.item_type, item.date_display || item.period].filter(Boolean).join(" · "))}</p>
               <h3>${escapeHtml(item.title || "Archaeological Evidence")}</h3>
               ${item.site_name ? `<p class="archaeology-card-site">${escapeHtml(item.site_name)}</p>` : ""}
-              <p>${escapeHtml(item.description || "No description is available.")}</p>
-              <p class="archaeology-card-relationship"><strong>Why this matters here:</strong> ${escapeHtml(item.significance || item.description || "")}</p>
+              <section class="archaeology-card-section"><h4>What you're looking at</h4><p>${escapeHtml(item.description || "No description is available.")}</p></section>
+              ${item.biblical_relevance || item.significance ? `<section class="archaeology-card-section"><h4>Why it matters here</h4><p>${escapeHtml(item.biblical_relevance || item.significance)}</p></section>` : ""}
+              ${item.evidence_summary ? `<section class="archaeology-card-section"><h4>Historical significance</h4><p>${escapeHtml(item.evidence_summary)}</p></section>` : ""}
               <p class="archaeology-card-confidence"><strong>${escapeHtml(String(item.confidence || "Unknown"))}</strong> evidence · ${escapeHtml(String(item.dispute_status || "not_disputed").replaceAll("_", " "))}</p>
-              ${cautions.length ? `<aside class="archaeology-card-caution" role="note"><strong>Caution:</strong> ${escapeHtml(cautions.join(" "))}</aside>` : ""}
+              ${cautions.length ? `<aside class="archaeology-card-caution" role="note"><strong>Archaeological caution:</strong> ${escapeHtml(cautions.join(" "))}</aside>` : ""}
+              ${detailsHtml}
               ${references.length ? `<p class="archaeology-card-references"><strong>Related passages:</strong> ${escapeHtml(references.join(", "))}</p>` : ""}
-              ${attribution ? `<p class="archaeology-card-attribution"><strong>Attribution:</strong> ${escapeHtml(attribution)}</p>` : ""}
+              ${attribution ? `<p class="archaeology-card-attribution"><strong>Photo:</strong> ${escapeHtml(attribution)}</p>` : ""}
+              ${evidenceSources.length ? `<p class="archaeology-card-provenance"><strong>Data source:</strong> ${evidenceSources.map((source) => `<a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.label || "Evidence record")} ↗</a>${source.license ? ` <span>(${escapeHtml(source.license)})</span>` : ""}`).join("; ")}</p>` : ""}
               <div class="archaeology-card-actions">
                 ${source.url ? `<a class="secondary-link" href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">View Source ↗</a>` : ""}
                 ${hasCoordinates ? `<button type="button" class="secondary" data-archaeology-map="${escapeHtml(item.id || "")}">View on Map</button>` : ""}

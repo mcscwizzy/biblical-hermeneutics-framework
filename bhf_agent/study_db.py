@@ -21,8 +21,15 @@ from .db.repositories import maps as _maps_repo
 from .db.repositories import manuscripts as _manuscripts_repo
 from .db.repositories import reader_state as _reader_state_repo
 from .db.repositories import sources as _sources_repo
+from .archaeology_content import (
+    ARCHAEOLOGY_ITEMS as _ARCHAEOLOGY_CONTENT_ITEMS,
+    ARCHAEOLOGY_MEDIA as _ARCHAEOLOGY_CONTENT_MEDIA,
+    ARCHAEOLOGY_SCRIPTURE_LINKS as _ARCHAEOLOGY_CONTENT_SCRIPTURE_LINKS,
+    ARCHAEOLOGY_SITES as _ARCHAEOLOGY_CONTENT_SITES,
+)
+from .archaeology import attribution_text, validate_media_record
 
-SCHEMA_VERSION = 16
+SCHEMA_VERSION = 33
 OPENBIBLE_PLACES_PATH = Path(__file__).resolve().parent / "data" / "openbible_places.json"
 BROAD_PERIOD_LABEL = "Broad / uncertain period"
 CANONICAL_PERIOD_LABELS = (
@@ -775,6 +782,108 @@ def _ensure_schema(connection: sqlite3.Connection) -> None:
             "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
             (16, _timestamp()),
         )
+    if 17 not in applied:
+        _apply_v17_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (17, _timestamp()),
+        )
+    if 18 not in applied:
+        _apply_v18_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (18, _timestamp()),
+        )
+    if 19 not in applied:
+        _apply_v19_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (19, _timestamp()),
+        )
+    if 20 not in applied:
+        _apply_v20_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (20, _timestamp()),
+        )
+    if 21 not in applied:
+        _apply_v21_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (21, _timestamp()),
+        )
+    if 22 not in applied:
+        _apply_v22_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (22, _timestamp()),
+        )
+    if 23 not in applied:
+        _apply_v23_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (23, _timestamp()),
+        )
+    if 24 not in applied:
+        _apply_v24_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (24, _timestamp()),
+        )
+    if 25 not in applied:
+        _apply_v25_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (25, _timestamp()),
+        )
+    if 26 not in applied:
+        _apply_v26_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (26, _timestamp()),
+        )
+    if 27 not in applied:
+        _apply_v27_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (27, _timestamp()),
+        )
+    if 28 not in applied:
+        _apply_v28_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (28, _timestamp()),
+        )
+    if 29 not in applied:
+        _apply_v29_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (29, _timestamp()),
+        )
+    if 30 not in applied:
+        _apply_v30_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (30, _timestamp()),
+        )
+    if 31 not in applied:
+        _apply_v31_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (31, _timestamp()),
+        )
+    if 32 not in applied:
+        _apply_v32_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (32, _timestamp()),
+        )
+    if 33 not in applied:
+        _apply_v33_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (33, _timestamp()),
+        )
     # Older local databases may already record v15 from the period when the
     # map-study table was intentionally removed. Recreate the optional table
     # on demand so the API remains compatible with those databases.
@@ -1355,6 +1464,187 @@ def _apply_v16_schema(connection: sqlite3.Connection) -> None:
         CREATE INDEX IF NOT EXISTS idx_archaeology_media_rights
             ON archaeology_media(rights_status, can_redistribute, can_cache);
         """
+    )
+
+
+def _apply_v17_schema(connection: sqlite3.Connection) -> None:
+    """Add structured evidence details and reviewed content/media expansion."""
+
+    _add_column_if_missing(
+        connection,
+        "archaeology_items",
+        "evidence_details TEXT NOT NULL DEFAULT '{}'",
+    )
+    _upsert_archaeology_content(connection)
+
+
+def _apply_v18_schema(connection: sqlite3.Connection) -> None:
+    """Apply the reviewed Met Open Access archaeology content expansion."""
+
+    _upsert_archaeology_content(connection)
+
+
+def _apply_v19_schema(connection: sqlite3.Connection) -> None:
+    """Add reviewed Open Context provenance references to existing content."""
+
+    _upsert_archaeology_content(connection)
+
+
+def _apply_v20_schema(connection: sqlite3.Connection) -> None:
+    """Apply the reviewed cross-period archaeology corpus expansion."""
+
+    _upsert_archaeology_content(connection)
+
+
+def _apply_v21_schema(connection: sqlite3.Connection) -> None:
+    """Seed reviewed reusable media for the cross-period corpus."""
+
+    _upsert_archaeology_content(connection)
+    reviewed_item_ids = {
+        "merneptah-stele",
+        "shoshenq-karnak-relief",
+        "arad-ostraca",
+        "temple-warning-inscription",
+        "gallio-inscription",
+    }
+    for item in _ARCHAEOLOGY_CONTENT_ITEMS:
+        if item["id"] in reviewed_item_ids:
+            connection.execute(
+                "UPDATE archaeology_items SET notes = ? WHERE id = ?",
+                (item["notes"], item["id"]),
+            )
+
+
+def _apply_v22_schema(connection: sqlite3.Connection) -> None:
+    """Seed a reviewed public-domain Taylor Prism photograph."""
+
+    _upsert_archaeology_content(connection)
+    item = next(item for item in _ARCHAEOLOGY_CONTENT_ITEMS if item["id"] == "sennacherib-prism")
+    connection.execute(
+        "UPDATE archaeology_items SET notes = ? WHERE id = ?",
+        (item["notes"], item["id"]),
+    )
+
+
+def _apply_v23_schema(connection: sqlite3.Connection) -> None:
+    """Seed a reviewed CC0 Pilate Stone photograph."""
+
+    _upsert_archaeology_content(connection)
+    item = next(item for item in _ARCHAEOLOGY_CONTENT_ITEMS if item["id"] == "pilate-stone")
+    connection.execute(
+        "UPDATE archaeology_items SET notes = ? WHERE id = ?",
+        (item["notes"], item["id"]),
+    )
+
+
+def _apply_v24_schema(connection: sqlite3.Connection) -> None:
+    """Seed a reviewed Hezekiah's Tunnel conduit photograph."""
+
+    _upsert_archaeology_content(connection)
+    item = next(
+        item for item in _ARCHAEOLOGY_CONTENT_ITEMS if item["id"] == "hezekiahs-tunnel-item"
+    )
+    connection.execute(
+        "UPDATE archaeology_items SET notes = ? WHERE id = ?",
+        (item["notes"], item["id"]),
+    )
+
+
+def _apply_v25_schema(connection: sqlite3.Connection) -> None:
+    """Seed a reviewed CC0 Lachish letter photograph."""
+
+    _upsert_archaeology_content(connection)
+    item = next(item for item in _ARCHAEOLOGY_CONTENT_ITEMS if item["id"] == "lachish-letters")
+    connection.execute(
+        "UPDATE archaeology_items SET notes = ? WHERE id = ?",
+        (item["notes"], item["id"]),
+    )
+
+
+def _apply_v26_schema(connection: sqlite3.Connection) -> None:
+    """Seed a reviewed Ketef Hinnom scrolls photograph."""
+
+    _upsert_archaeology_content(connection)
+    item = next(item for item in _ARCHAEOLOGY_CONTENT_ITEMS if item["id"] == "ketef-hinnom-scrolls")
+    connection.execute(
+        "UPDATE archaeology_items SET notes = ? WHERE id = ?",
+        (item["notes"], item["id"]),
+    )
+
+
+def _apply_v27_schema(connection: sqlite3.Connection) -> None:
+    """Seed a reviewed Broad Wall photograph."""
+
+    _upsert_archaeology_content(connection)
+    item = next(item for item in _ARCHAEOLOGY_CONTENT_ITEMS if item["id"] == "broad-wall-jerusalem")
+    connection.execute(
+        "UPDATE archaeology_items SET notes = ? WHERE id = ?",
+        (item["notes"], item["id"]),
+    )
+
+
+def _apply_v28_schema(connection: sqlite3.Connection) -> None:
+    """Seed a reviewed Dead Sea Scrolls photograph."""
+
+    _upsert_archaeology_content(connection)
+    item = next(item for item in _ARCHAEOLOGY_CONTENT_ITEMS if item["id"] == "dead-sea-scrolls")
+    connection.execute(
+        "UPDATE archaeology_items SET notes = ? WHERE id = ?",
+        (item["notes"], item["id"]),
+    )
+
+
+def _apply_v29_schema(connection: sqlite3.Connection) -> None:
+    """Seed a reviewed Tel Hazor excavation photograph."""
+
+    _upsert_archaeology_content(connection)
+    item = next(item for item in _ARCHAEOLOGY_CONTENT_ITEMS if item["id"] == "hazor-excavations")
+    connection.execute(
+        "UPDATE archaeology_items SET notes = ? WHERE id = ?",
+        (item["notes"], item["id"]),
+    )
+
+
+def _apply_v30_schema(connection: sqlite3.Connection) -> None:
+    """Seed a reviewed Tel Megiddo excavation photograph."""
+
+    _upsert_archaeology_content(connection)
+    item = next(item for item in _ARCHAEOLOGY_CONTENT_ITEMS if item["id"] == "megiddo-excavations")
+    connection.execute(
+        "UPDATE archaeology_items SET notes = ? WHERE id = ?",
+        (item["notes"], item["id"]),
+    )
+
+
+def _apply_v31_schema(connection: sqlite3.Connection) -> None:
+    """Seed a reviewed City of David excavation photograph."""
+
+    _upsert_archaeology_content(connection)
+    item = next(item for item in _ARCHAEOLOGY_CONTENT_ITEMS if item["id"] == "city-of-david-excavations")
+    connection.execute(
+        "UPDATE archaeology_items SET notes = ? WHERE id = ?",
+        (item["notes"], item["id"]),
+    )
+
+
+def _apply_v32_schema(connection: sqlite3.Connection) -> None:
+    """Apply the reviewed text-first Babylon and Ishtar Gate context record."""
+
+    _upsert_archaeology_content(connection)
+
+
+def _apply_v33_schema(connection: sqlite3.Connection) -> None:
+    """Seed a reviewed public-domain Ishtar Gate photograph."""
+
+    _upsert_archaeology_content(connection)
+    item = next(
+        item
+        for item in _ARCHAEOLOGY_CONTENT_ITEMS
+        if item["id"] == "babylon-ishtar-gate-context"
+    )
+    connection.execute(
+        "UPDATE archaeology_items SET notes = ? WHERE id = ?",
+        (item["notes"], item["id"]),
     )
 
 
@@ -2044,6 +2334,125 @@ def _seed_archaeology(connection: sqlite3.Connection) -> None:
                 link["verse_end"],
                 link["relationship_type"],
                 link["notes"],
+            ),
+        )
+
+
+def _upsert_archaeology_content(connection: sqlite3.Connection) -> None:
+    """Apply reviewed detail records without changing the original seed IDs."""
+
+    for site in _ARCHAEOLOGY_CONTENT_SITES:
+        connection.execute(
+            """
+            INSERT INTO archaeology_sites (
+                id, name, site_type, period, periods, latitude, longitude,
+                modern_location, ancient_region, description, confidence,
+                confidence_rank, source_name, source_url, license, notes
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(id) DO UPDATE SET
+                name = excluded.name,
+                site_type = excluded.site_type,
+                period = excluded.period,
+                periods = excluded.periods,
+                latitude = excluded.latitude,
+                longitude = excluded.longitude,
+                modern_location = excluded.modern_location,
+                ancient_region = excluded.ancient_region,
+                description = excluded.description,
+                confidence = excluded.confidence,
+                confidence_rank = excluded.confidence_rank,
+                source_name = excluded.source_name,
+                source_url = excluded.source_url,
+                license = excluded.license,
+                notes = excluded.notes
+            """,
+            (
+                site["id"], site["name"], site["site_type"], site["period"],
+                json.dumps(_periods_from_value(site.get("periods"), fallback=site["period"])),
+                site["latitude"], site["longitude"], site["modern_location"],
+                site["ancient_region"], site["description"], site["confidence"],
+                site["confidence_rank"], site["source_name"], site["source_url"],
+                site["license"], site["notes"],
+            ),
+        )
+
+    for item in _ARCHAEOLOGY_CONTENT_ITEMS:
+        details = json.dumps(item["evidence_details"], sort_keys=True)
+        existing = connection.execute(
+            "SELECT 1 FROM archaeology_items WHERE id = ?", (item["id"],)
+        ).fetchone()
+        if existing:
+            connection.execute(
+                "UPDATE archaeology_items SET evidence_details = ? WHERE id = ?",
+                (details, item["id"]),
+            )
+            continue
+        connection.execute(
+            """
+            INSERT INTO archaeology_items (
+                id, site_id, name, item_type, period, periods, relationship,
+                why_it_matters, bhf_caution, confidence, confidence_rank,
+                source_name, source_url, license, notes, evidence_details
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                item["id"], item["site_id"], item["name"], item["item_type"],
+                item["period"],
+                json.dumps(_periods_from_value(item.get("periods"), fallback=item["period"])),
+                item["relationship"], item["why_it_matters"], item["bhf_caution"],
+                item["confidence"], item["confidence_rank"], item["source_name"],
+                item["source_url"], item["license"], item["notes"], details,
+            ),
+        )
+
+    for link in _ARCHAEOLOGY_CONTENT_SCRIPTURE_LINKS:
+        connection.execute(
+            """
+            INSERT OR IGNORE INTO archaeology_scripture_links (
+                id, item_id, book, chapter, verse_start, verse_end,
+                relationship_type, notes
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                link["id"], link["item_id"], link["book"], link["chapter"],
+                link["verse_start"], link["verse_end"], link["relationship_type"],
+                link["notes"],
+            ),
+        )
+
+    for media in _ARCHAEOLOGY_CONTENT_MEDIA:
+        media = validate_media_record(
+            media,
+            archaeology_item_ids={
+                row["id"] for row in connection.execute("SELECT id FROM archaeology_items")
+            },
+            archaeology_site_ids={
+                row["id"] for row in connection.execute("SELECT id FROM archaeology_sites")
+            },
+        )
+        connection.execute(
+            """
+            INSERT OR IGNORE INTO archaeology_media (
+                id, archaeology_item_id, archaeology_site_id, media_type, title,
+                caption, source_url, image_url, thumbnail_url, local_asset_path,
+                creator, institution, license_id, license_url, attribution_text,
+                rights_status, can_redistribute, can_cache, can_modify,
+                source_record_id, checksum, width, height
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                media["id"], media.get("archaeology_item_id") or None,
+                media.get("archaeology_site_id") or None,
+                media.get("media_type", "image"), media.get("title", ""),
+                media.get("caption", ""), media.get("source_url", ""),
+                media.get("image_url", ""), media.get("thumbnail_url", ""),
+                media.get("local_asset_path", ""), media.get("creator", ""),
+                media.get("institution", ""), media.get("license_id", ""),
+                media.get("license_url", ""), attribution_text(media),
+                media.get("rights_status", "unknown"), int(bool(media.get("can_redistribute"))),
+                int(bool(media.get("can_cache"))), int(bool(media.get("can_modify"))),
+                media.get("source_record_id", ""), media.get("checksum", ""),
+                media.get("width"), media.get("height"),
             ),
         )
 
