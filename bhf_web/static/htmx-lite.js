@@ -4639,6 +4639,7 @@ function renderWordStudyComplete(study) {
     : [];
   return `
     <section class="word-study-reader">
+      ${renderWordStudyTranslation(study)}
       <div class="word-study-facts">
         ${facts
           .map(
@@ -4665,14 +4666,16 @@ function renderWordStudyAmbiguity(study) {
     : [];
   return `
     <section class="word-study-reader">
+      ${renderWordStudyTranslation(study)}
       <h3>${escapeHtml(study.message || "Multiple possible original-language words found.")}</h3>
+      <p class="word-study-order-note">Words are listed in the original text’s reading order. A translation may use a different order or several English words for one original-language word.</p>
       <ol class="word-study-choice-list">
         ${ambiguities
           .map(
             (word) => `
           <li>
             <button type="button" class="word-study-choice" data-word-study-position="${escapeHtml(word.position || "")}" data-word-study-language="${escapeHtml(word.language || "")}" data-word-study-surface="${escapeHtml(word.surface_form || "")}" data-word-study-lemma="${escapeHtml(word.lemma || "")}" data-word-study-strongs="${escapeHtml(word.strongs_number || "")}">
-              <strong>${escapeHtml(word.surface_form || word.lemma || "word")}</strong>
+              <strong class="word-study-source-word"${wordStudyLanguageAttributes(word.language)}>${escapeHtml(word.surface_form || word.lemma || "word")}</strong>
               <span>${escapeHtml([word.gloss, word.lemma, word.strongs_number, word.position ? `position ${word.position}` : ""].filter(Boolean).join(" - "))}</span>
             </button>
           </li>
@@ -4690,6 +4693,7 @@ function renderWordStudyUnavailable(study) {
     : [];
   return `
     <section class="word-study-reader">
+      ${renderWordStudyTranslation(study)}
       <p class="empty">${escapeHtml(study.message || "No deterministic lexical data was found for this word study.")}</p>
     </section>
     <details class="word-study-scholar">
@@ -4697,6 +4701,31 @@ function renderWordStudyUnavailable(study) {
       ${guardrails.length ? `<section><h3>Safeguards</h3><ul>${guardrails.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section>` : ""}
     </details>
   `;
+}
+
+function renderWordStudyTranslation(study) {
+  const text = String(study.translation_text || "").trim();
+  if (!text) {
+    return "";
+  }
+  const translation = String(study.translation_id || "selected").trim().toUpperCase();
+  return `
+    <section class="word-study-translation" aria-label="Selected translation text">
+      <h3>Selected translation${translation ? ` (${escapeHtml(translation)})` : ""}</h3>
+      <p>${escapeHtml(text)}</p>
+    </section>
+  `;
+}
+
+function wordStudyLanguageAttributes(language) {
+  const normalized = String(language || "").toLowerCase();
+  if (normalized === "hebrew" || normalized === "aramaic") {
+    return ' lang="he" dir="rtl"';
+  }
+  if (normalized === "greek") {
+    return ' lang="el" dir="ltr"';
+  }
+  return "";
 }
 
 function renderWordStudyScholar(study) {

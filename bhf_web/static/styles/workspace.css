@@ -1742,6 +1742,35 @@ body.reader-mode .chapter-text {
   font-size: 1rem;
 }
 
+.word-study-translation {
+  border-left: 3px solid #245b82;
+  padding: 8px 12px;
+  background: #f4f8fb;
+}
+
+.word-study-translation h3 {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.word-study-translation p,
+.word-study-order-note {
+  margin: 5px 0 0;
+  color: #405364;
+}
+
+.word-study-order-note {
+  font-size: 0.9rem;
+}
+
+.word-study-source-word {
+  unicode-bidi: isolate;
+}
+
+.word-study-source-word[lang="he"] {
+  text-align: right;
+}
+
 .word-study-scholar {
   margin-top: 16px;
   border-top: 1px solid #d8dee4;
@@ -2159,8 +2188,25 @@ html[data-theme="dark"] .word-study-fact strong {
   color: var(--text);
 }
 
+html[data-theme="dark"] .word-study-fact span,
+html[data-theme="dark"] .word-study-key-values dt,
+html[data-theme="dark"] .word-study-choice-list li span,
+html[data-theme="dark"] .word-study-translation p,
+html[data-theme="dark"] .word-study-order-note {
+  color: #c7d4df;
+}
+
+html[data-theme="dark"] .word-study-translation {
+  border-left-color: #79b6df;
+  background: var(--surface-alt);
+}
+
 html[data-theme="dark"] .word-study-scholar {
   border-color: var(--border);
+}
+
+html[data-theme="dark"] .word-study-scholar summary {
+  color: #a8dfb8;
 }
 
 html[data-theme="dark"] .word-study-key-values div {

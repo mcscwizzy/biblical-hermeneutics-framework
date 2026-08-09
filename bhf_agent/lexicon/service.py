@@ -70,19 +70,40 @@ class WordStudyService:
             return _unavailable(reference, "A book, chapter, and verse are required for word study.")
 
         try:
+            translation_id, translation_text = _translation_context(passage)
             occurrence = self._resolve_occurrence(book, chapter, verse, passage, query=query)
             if isinstance(occurrence, _UnavailableResolution):
-                return _unavailable(reference, occurrence.message)
+                return _unavailable(
+                    reference,
+                    occurrence.message,
+                    translation_id=translation_id,
+                    translation_text=translation_text,
+                )
             if isinstance(occurrence, list):
-                return self._ambiguous_result(reference, occurrence)
+                return self._ambiguous_result(
+                    reference,
+                    occurrence,
+                    translation_id=translation_id,
+                    translation_text=translation_text,
+                )
             if occurrence is None:
                 return _unavailable(
                     reference,
                     "No deterministic original-language token was found for this selection.",
+                    translation_id=translation_id,
+                    translation_text=translation_text,
                 )
-            return self._result_for_occurrence(reference, occurrence)
+            return self._result_for_occurrence(
+                reference,
+                occurrence,
+                translation_id=translation_id,
+                translation_text=translation_text,
+            )
         except (FileNotFoundError, sqlite3.Error, ValueError) as exc:
-            return _unavailable(reference, f"Lexical SQLite data is unavailable: {exc}")
+            return _unavailable(
+                reference,
+                f"Lexical SQLite data is unavailable: {exc}",
+            )
 
     def diagnostics(self) -> dict[str, Any]:
         """Return non-fatal runtime diagnostics for Scripture word-study coverage."""
@@ -221,7 +242,10 @@ class WordStudyService:
 
         if len(verse_words) == 1:
             return verse_words[0]
-        return verse_words[:8]
+        # Return every token in the source's reading order.  Truncating this
+        # list made longer verses appear to have missing original-language
+        # words and prevented readers from selecting later tokens.
+        return verse_words
 
     def _occurrence_for_entries(
         self,
@@ -273,7 +297,14 @@ class WordStudyService:
                 matches.append(word)
         return matches
 
-    def _result_for_occurrence(self, reference: str, occurrence: WordOccurrence) -> WordStudyResult:
+    def _result_for_occurrence(
+        self,
+        reference: str,
+        occurrence: WordOccurrence,
+        *,
+        translation_id: str | None,
+        translation_text: str | None,
+    ) -> WordStudyResult:
         entries = self._entries_for_occurrence(occurrence)
         if not entries:
             identifier = occurrence.strongs_number or occurrence.lemma or occurrence.surface_form
@@ -281,6 +312,8 @@ class WordStudyService:
                 reference,
                 "Original-language token was found, but no lexicon entry resolved for "
                 f"{identifier} at {occurrence.reference}.",
+                translation_id=translation_id,
+                translation_text=translation_text,
             )
         lexical_range = _unique(
             gloss
@@ -309,6 +342,8 @@ class WordStudyService:
         return WordStudyResult(
             reference=reference,
             status="complete",
+            translation_id=translation_id,
+            translation_text=translation_text,
             language=occurrence.language,
             surface_form=occurrence.surface_form,
             lemma=occurrence.lemma,
@@ -332,11 +367,20 @@ class WordStudyService:
         entries.extend(self.repository.lookup_by_lemma(occurrence.language, occurrence.lemma))
         return _dedupe_entries(entries)
 
-    def _ambiguous_result(self, reference: str, occurrences: list[WordOccurrence]) -> WordStudyResult:
+    def _ambiguous_result(
+        self,
+        reference: str,
+        occurrences: list[WordOccurrence],
+        *,
+        translation_id: str | None,
+        translation_text: str | None,
+    ) -> WordStudyResult:
         enriched = [self._with_gloss(occurrence) for occurrence in occurrences]
         return WordStudyResult(
             reference=reference,
             status="ambiguous",
+            translation_id=translation_id,
+            translation_text=translation_text,
             ambiguities=enriched,
             message="Multiple possible original-language words found. Please select a specific original-language token.",
             confidence=0.35,
@@ -356,8 +400,32 @@ class WordStudyService:
         return WordOccurrence(**{key: value for key, value in data.items() if key != "reference"})
 
 
-def _unavailable(reference: str, message: str) -> WordStudyResult:
-    return WordStudyResult(reference=reference, status="unavailable", message=message, confidence=0.0)
+def _unavailable(
+    reference: str,
+    message: str,
+    *,
+    translation_id: str | None = None,
+    translation_text: str | None = None,
+) -> WordStudyResult:
+    return WordStudyResult(
+        reference=reference,
+        status="unavailable",
+        translation_id=translation_id,
+        translation_text=translation_text,
+        message=message,
+        confidence=0.0,
+    )
+
+
+def _translation_context(passage: Mapping[str, Any]) -> tuple[str | None, str | None]:
+    translation_id = str(
+        _first(passage, "translation_id", "translation", "source_translation", "reader_translation")
+        or ""
+    ).strip()
+    translation_text = str(
+        _first(passage, "selected_text", "reader_selected_text", "text") or ""
+    ).strip()
+    return translation_id or None, translation_text or None
 
 
 def _canonical_book(book: str) -> str:

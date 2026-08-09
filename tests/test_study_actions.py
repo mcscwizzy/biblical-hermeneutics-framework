@@ -2,7 +2,7 @@ import unittest
 import tempfile
 from pathlib import Path
 
-from bhf_agent.lexicon import LexiconRepository, WordStudyService
+from bhf_agent.lexicon import LexiconRepository, WordOccurrence, WordStudyService
 from bhf_agent.study_actions import (
     DeterministicStudyEngine,
     StudyActionRouter,
@@ -560,6 +560,46 @@ class StudyActionRouterTests(unittest.TestCase):
             self.assertFalse(result.agent_fallback_allowed)
             self.assertIn("Multiple possible original-language words", result.sections[0]["title"])
             self.assertIn("steadfast love", result.sections[0]["items"][0])
+
+    def test_word_study_returns_every_token_in_source_reading_order(self):
+        class LongVerseRepository:
+            def lookup_verse_words(self, book, chapter, verse):
+                return [
+                    WordOccurrence(
+                        book=book,
+                        chapter=chapter,
+                        verse=verse,
+                        position=position,
+                        language="hebrew",
+                        surface_form=f"word-{position}",
+                        lemma=f"lemma-{position}",
+                    )
+                    for position in range(1, 13)
+                ]
+
+            def lookup_by_strongs(self, _strongs_number):
+                return []
+
+            def lookup_by_lemma(self, _language, _lemma):
+                return []
+
+        result = WordStudyService(repository=LongVerseRepository()).build_word_study(
+            {
+                "book": "Psalms",
+                "chapter": 23,
+                "start_verse": 6,
+                "translation": "asv",
+                "selected_text": "Surely goodness and lovingkindness shall follow me.",
+            }
+        )
+
+        self.assertEqual(result.status, "ambiguous")
+        self.assertEqual([word.position for word in result.ambiguities], list(range(1, 13)))
+        self.assertEqual(result.translation_id, "asv")
+        self.assertEqual(
+            result.translation_text,
+            "Surely goodness and lovingkindness shall follow me.",
+        )
 
     def test_word_study_action_resolves_selected_ambiguity_position(self):
         with tempfile.TemporaryDirectory() as tmp:

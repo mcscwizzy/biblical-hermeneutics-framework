@@ -59,6 +59,8 @@ class WordOccurrence(Serializable):
 class WordStudyResult(Serializable):
     reference: str
     status: str
+    translation_id: str | None = None
+    translation_text: str | None = None
     language: str | None = None
     surface_form: str | None = None
     lemma: str | None = None
