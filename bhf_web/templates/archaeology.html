@@ -3,13 +3,23 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Archaeology · BHF</title>
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem("bhf-theme");
+        document.documentElement.dataset.theme = saved === "dark" || saved === "light"
+          ? saved
+          : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      } catch (_error) { document.documentElement.dataset.theme = "light"; }
+    })();
+  </script>
   <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260809a">
   <script src="{{ static_asset('/api/http.js') }}" defer></script>
   <script src="{{ static_asset('/archaeology.js') }}?v=20260809a" defer></script>
 </head>
 <body>
   <main class="page archaeology-explore" data-archaeology-explore>
-    <header class="header"><div><p class="canonical-browser-kicker">Explore</p><h1>Archaeology</h1><p class="app-subtitle">Deterministic material evidence, distinct from CKL interpretation.</p></div><a class="secondary" href="/">Back to reader</a></header>
+    <header class="header"><div><p class="canonical-browser-kicker">Explore</p><h1>Archaeology</h1><p class="app-subtitle">Deterministic material evidence, distinct from CKL interpretation.</p></div><div class="archaeology-header-actions"><button type="button" class="secondary" data-archaeology-theme aria-pressed="false">Dark mode</button><a class="secondary" href="/">Back to reader</a></div></header>
     <section class="canonical-browser-panel">
       <form class="canonical-browser-form" data-archaeology-search>
         <label class="canonical-browser-field canonical-browser-query"><span class="sr-only">Search archaeology</span><input type="search" name="q" placeholder="Search artifacts, sites, inscriptions, or excavations"></label>
