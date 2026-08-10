@@ -277,7 +277,7 @@ def test_app_dock_switches_between_bible_and_ask_on_mobile(driver, wait, base_ur
     wait.until(lambda _driver: not _driver.find_element(By.ID, "study-panel").is_displayed())
 
 
-@pytest.mark.parametrize(("width", "height"), [(390, 844), (1440, 1000)])
+@pytest.mark.parametrize(("width", "height"), [(280, 640), (390, 844), (1440, 1000)])
 def test_app_dock_is_compact_icon_navigation(driver, wait, base_url, width, height):
     driver.set_window_size(width, height)
     HomePage(driver, wait, base_url).open().wait_loaded()
@@ -299,6 +299,38 @@ def test_app_dock_is_compact_icon_navigation(driver, wait, base_url, width, heig
     assert note_button.text == ""
     assert metrics["dockHeight"] <= 58
     assert metrics["buttonWidth"] <= 42
+
+    if width == 280:
+        scroll_metrics = driver.execute_script(
+            """
+            const dock = arguments[0];
+            dock.scrollLeft = dock.scrollWidth;
+            return {
+              clientWidth: dock.clientWidth,
+              scrollLeft: dock.scrollLeft,
+              scrollWidth: dock.scrollWidth,
+            };
+            """,
+            dock,
+        )
+        assert scroll_metrics["scrollWidth"] > scroll_metrics["clientWidth"]
+        assert scroll_metrics["scrollLeft"] > 0
+
+    if width == 390:
+        dock_alignment = driver.execute_script(
+            """
+            const dock = arguments[0].getBoundingClientRect();
+            const controls = Array.from(arguments[0].children)
+              .filter((control) => getComputedStyle(control).display !== "none")
+              .map((control) => control.getBoundingClientRect());
+            return {
+              leadingSpace: controls[0].left - dock.left,
+              trailingSpace: dock.right - controls[controls.length - 1].right,
+            };
+            """,
+            dock,
+        )
+        assert abs(dock_alignment["leadingSpace"] - dock_alignment["trailingSpace"]) <= 1
 
 
 def test_mobile_ask_submit_still_works(driver, wait, base_url):

@@ -1588,6 +1588,24 @@ body.reader-mode .chapter-text {
   display: none;
 }
 
+.workspace-tab-icon {
+  display: inline-grid;
+  flex: 0 0 42px;
+  width: 42px;
+  padding: 0;
+  place-items: center;
+}
+
+.workspace-tab-icon-svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
 .workspace-tab:hover,
 .workspace-tab:focus-visible,
 .workspace-action-button:hover,

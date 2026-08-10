@@ -858,6 +858,7 @@ code {
   z-index: 10002;
   display: flex;
   align-items: stretch;
+  justify-content: safe center;
   flex-wrap: nowrap;
   gap: 4px;
   width: max-content;
@@ -872,6 +873,10 @@ code {
   transition: transform 160ms ease, opacity 160ms ease;
   backdrop-filter: blur(10px);
   overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
 
@@ -896,6 +901,11 @@ body:not(.workspace-minimized) .app-dock {
   background: var(--surface);
   color: var(--page-muted);
   line-height: 1;
+  scroll-snap-align: start;
+}
+
+.app-dock-link {
+  text-decoration: none;
 }
 
 .app-dock-icon {
@@ -2066,6 +2076,7 @@ html[data-theme="dark"] button.reader-setting-action:disabled {
 @media (max-width: 360px) {
   .app-dock {
     gap: 3px;
+    justify-content: flex-start;
   }
 
   .app-dock-item {
