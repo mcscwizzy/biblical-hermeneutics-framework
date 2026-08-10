@@ -538,6 +538,12 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("renderBibleSearchResults", search_script)
         self.assertIn("handleBibleSearchResultAction", search_script)
 
+    def test_commentary_selection_marks_notes_without_scrolling_the_reader(self):
+        script = Path("bhf_web/static/commentary.js").read_text(encoding="utf-8")
+
+        self.assertIn("entry.classList.toggle(\"is-focused\"", script)
+        self.assertNotIn("scrollIntoView", script)
+
     def test_reader_mode_uses_browser_native_verse_speech_with_cleanup(self):
         script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
         index_html = Path("bhf_web/templates/index.html").read_text(encoding="utf-8")
@@ -565,6 +571,9 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn("chapterReader.innerText", script)
         self.assertIn("function stopReaderSpeech(", script)
         self.assertIn("readerSpeechSession += 1", script)
+        self.assertIn("scheduleReaderSpeechStartCheck", script)
+        self.assertIn("Speech did not begin.", script)
+        self.assertIn("window.speechSynthesis.resume();", script)
         self.assertIn("function refreshReaderSpeechVoices()", script)
         self.assertIn("utterance.voice = selectedVoice", script)
         self.assertIn("function initializeReaderMediaSession()", script)

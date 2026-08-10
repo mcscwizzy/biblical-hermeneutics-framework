@@ -107,6 +107,8 @@ let readerSpeechVerseIndex = null;
 let readerSpeechUtterance = null;
 let readerSpeechContinuationToken = 0;
 let readerSpeechVoicePreference;
+let readerSpeechStatusMessage = "";
+let readerSpeechStartTimer = null;
 let noteContext = null;
 let currentNotes = [];
 let currentHighlights = [];
@@ -1669,7 +1671,9 @@ function updateReaderSpeechControls() {
   pause.textContent = isPaused ? "Resume" : "Pause";
   pause.setAttribute("aria-label", isPaused ? "Resume Scripture reading" : "Pause Scripture reading");
   pause.setAttribute("aria-pressed", String(isPaused));
-  if (!supported) {
+  if (readerSpeechStatusMessage) {
+    status.textContent = readerSpeechStatusMessage;
+  } else if (!supported) {
     status.textContent = "Text-to-speech is not available in this browser.";
   } else if (isPlaying && Number.isInteger(readerSpeechVerseIndex)) {
     status.textContent = `Reading verse ${currentChapter.verses[readerSpeechVerseIndex]?.verse || ""}.`;
@@ -1750,9 +1754,13 @@ function clearReaderSpeechHighlights() {
 
 function startReaderSpeech() {
   if (!supportsReaderSpeech() || !Array.isArray(currentChapter?.verses)) {
+    readerSpeechStatusMessage = !supportsReaderSpeech()
+      ? "Text-to-speech is not available in this browser."
+      : "Wait for the chapter to finish loading, then try Listen again.";
     updateReaderSpeechControls();
     return;
   }
+  readerSpeechStatusMessage = "";
   startReaderSpeechAtIndex(0);
 }
 
@@ -1761,6 +1769,7 @@ function startReaderSpeechAtIndex(startIndex) {
     updateReaderSpeechControls();
     return;
   }
+  readerSpeechStatusMessage = "";
   stopReaderSpeech();
   readerSpeechState = "playing";
   readerSpeechVerseIndex = Math.max(0, Number(startIndex) || 0);
@@ -1790,25 +1799,60 @@ function speakReaderSpeechVerse(session) {
     utterance.voice = selectedVoice;
   }
   utterance.onend = () => {
+    clearReaderSpeechStartTimer();
     if (session !== readerSpeechSession || readerSpeechState !== "playing") {
       return;
     }
     readerSpeechVerseIndex += 1;
     speakReaderSpeechVerse(session);
   };
-  utterance.onerror = () => {
+  utterance.onstart = () => {
+    clearReaderSpeechStartTimer();
+  };
+  utterance.onerror = (event) => {
+    clearReaderSpeechStartTimer();
     if (session === readerSpeechSession) {
-      stopReaderSpeech();
+      const detail = String(event?.error || "unknown error").replace(/[-_]/g, " ");
+      readerSpeechStatusMessage = `Speech could not start (${detail}). Try Listen again or select another voice.`;
+      stopReaderSpeech({preserveStatus: true});
     }
   };
   readerSpeechUtterance = utterance;
   setReaderSpeechHighlight(verse.verse);
   updateReaderSpeechControls();
   try {
+    // Some browser speech engines can remain paused after an interrupted read.
+    // Resuming before queuing is harmless when the engine is already active.
+    window.speechSynthesis.resume();
     window.speechSynthesis.speak(utterance);
+    scheduleReaderSpeechStartCheck(session, utterance);
   } catch (_error) {
-    stopReaderSpeech();
+    readerSpeechStatusMessage = "Speech could not start. Try Listen again or select another voice.";
+    stopReaderSpeech({preserveStatus: true});
   }
+}
+
+function clearReaderSpeechStartTimer() {
+  if (readerSpeechStartTimer !== null) {
+    window.clearTimeout(readerSpeechStartTimer);
+    readerSpeechStartTimer = null;
+  }
+}
+
+function scheduleReaderSpeechStartCheck(session, utterance) {
+  clearReaderSpeechStartTimer();
+  readerSpeechStartTimer = window.setTimeout(() => {
+    if (
+      session !== readerSpeechSession ||
+      readerSpeechState !== "playing" ||
+      readerSpeechUtterance !== utterance ||
+      window.speechSynthesis.speaking
+    ) {
+      return;
+    }
+    readerSpeechStatusMessage = "Speech did not begin. Try Listen again or select another voice.";
+    stopReaderSpeech({preserveStatus: true});
+  }, 3000);
 }
 
 function pauseReaderSpeech() {
@@ -1854,6 +1898,7 @@ function finishReaderSpeech(session) {
     return;
   }
   readerSpeechState = "idle";
+  clearReaderSpeechStartTimer();
   readerSpeechVerseIndex = null;
   readerSpeechUtterance = null;
   clearReaderSpeechHighlights();
@@ -1865,16 +1910,20 @@ function finishReaderSpeech(session) {
 }
 
 function stopReaderSpeech(options = {}) {
+  clearReaderSpeechStartTimer();
   readerSpeechSession += 1;
   if (!options.preserveReaderSpeechContinuation) {
     readerSpeechContinuationToken += 1;
   }
-  if (supportsReaderSpeech()) {
+  if (supportsReaderSpeech() && (readerSpeechState !== "idle" || readerSpeechUtterance)) {
     window.speechSynthesis.cancel();
   }
   readerSpeechState = "idle";
   readerSpeechVerseIndex = null;
   readerSpeechUtterance = null;
+  if (!options.preserveStatus) {
+    readerSpeechStatusMessage = "";
+  }
   clearReaderSpeechHighlights();
   updateReaderSpeechControls();
 }

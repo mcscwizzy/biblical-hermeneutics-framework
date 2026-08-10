@@ -134,8 +134,8 @@
         && (anchor.end_verse == null || anchor.end_verse >= start);
       entry.classList.toggle("is-focused", Boolean(overlaps));
     });
-    const first = target.querySelector(".commentary-entry.is-focused");
-    if (first) first.scrollIntoView({block: "nearest", behavior: "smooth"});
+    // A reader selection is also used to create highlights. Keep the matching
+    // notes marked, but leave the reader's viewport under the user's control.
   }
 
   function clearSelection() {
