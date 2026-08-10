@@ -73,6 +73,7 @@ from .repair import build_repair_prompt, decide_repair
 from .references import detect_reference
 from .runner_state import PIPELINE_STEPS, STEP_INDEX, STEP_MESSAGES, STAGE_TO_STEP, TOTAL_STEPS
 from .study_actions import format_fact_packet_for_prompt
+from .archaeology_service import ArchaeologyService
 from .token_estimation import estimate_tokens
 from .validation import validate_response
 from framework.canonical_library import (
@@ -217,6 +218,54 @@ def _canonical_context_result_ids(context: dict[str, Any] | None) -> list[str]:
         if object_id and object_id not in ids:
             ids.append(object_id)
     return ids
+
+
+def _format_archaeology_evidence_for_prompt(evidence: RetrievedEvidence | None) -> str:
+    """Serialize only selected archaeology facts with explicit provenance."""
+
+    if evidence is None or not evidence.archaeology_entries:
+        return ""
+    lines = ["Use only these deterministic archaeology records:"]
+    for item in evidence.archaeology_entries:
+        lines.append(
+            "- " + " | ".join(
+                str(value) for value in (
+                    f"domain={item.get('domain', 'archaeology')}",
+                    f"record_id={item.get('record_id') or item.get('id')}",
+                    item.get("title"), item.get("period"), item.get("description"),
+                    f"caution={'; '.join(item.get('cautions') or [])}",
+                    f"source={item.get('source', {}).get('label') if isinstance(item.get('source'), Mapping) else ''}",
+                ) if value
+            )
+        )
+    return "\n".join(lines)
+
+
+def _exclude_legacy_ckl_archaeology(context: dict[str, Any] | None) -> dict[str, Any] | None:
+    """Keep retained CKL archaeology records out of normal CKL retrieval.
+
+    Their stable IDs remain resolvable through the web compatibility endpoint,
+    while authoritative archaeology retrieval is performed by ArchaeologyService.
+    """
+
+    if not isinstance(context, dict):
+        return context
+    filtered = dict(context)
+    topics = [
+        topic for topic in list(context.get("retrieved_topics") or [])
+        if not isinstance(topic, Mapping) or str(topic.get("type") or "") != "archaeology"
+    ]
+    if len(topics) == len(list(context.get("retrieved_topics") or [])):
+        return filtered
+    filtered["retrieved_topics"] = topics
+    metadata = dict(context.get("metadata") or {})
+    metadata["topic_count"] = len(topics)
+    metadata["legacy_archaeology_excluded"] = True
+    metadata["retrieved_object_ids"] = [
+        str(topic.get("id") or "") for topic in topics if isinstance(topic, Mapping)
+    ]
+    filtered["metadata"] = metadata
+    return filtered
 
 
 def _search_result_match_type(result: Any) -> str:
@@ -895,6 +944,28 @@ class BHFAgent:
                 }
                 for entry in ctx.local_knowledge.lexical_entries
             ]
+        archaeology_entries: list[dict[str, Any]] = []
+        question_text = ctx.original_question.casefold()
+        archaeology_trigger = any(
+            term in question_text
+            for term in ("archaeolog", "artifact", "inscription", "excavation", "material evidence", "historical evidence")
+        )
+        reference_book = getattr(ctx.reference_context, "book", None) if ctx.reference_context else None
+        reference_chapter = getattr(ctx.reference_context, "chapter", None) if ctx.reference_context else None
+        if archaeology_trigger and reference_book and reference_chapter:
+            try:
+                packet = ArchaeologyService().for_passage(
+                    book=str(reference_book), chapter=int(reference_chapter),
+                    verse_start=getattr(ctx.reference_context, "verse", None),
+                    verse_end=getattr(ctx.reference_context, "verse_end", None),
+                )
+                archaeology_entries = [
+                    {"domain": "archaeology", "record_id": item.get("id"), **dict(item)}
+                    for item in packet.get("archaeological_items", [])
+                    if isinstance(item, Mapping)
+                ]
+            except Exception as exc:  # noqa: BLE001 - optional evidence must not block an answer
+                ctx.warnings.append(f"Archaeology retrieval unavailable: {exc}")
         ctx.retrieved_evidence = RetrievedEvidence(
             passage_text=str(scripture.get("focal_text") or ""),
             immediate_context="\n\n".join(
@@ -908,6 +979,7 @@ class BHFAgent:
             ckl_entries=[
                 dict(topic) for topic in topics if isinstance(topic, Mapping)
             ],
+            archaeology_entries=archaeology_entries,
             lexical_entries=lexical_entries,
             historical_context=[
                 dict(topic)
@@ -925,6 +997,7 @@ class BHFAgent:
             selected_references=references,
         )
         ctx.debug_metadata["evidence_packaged"] = True
+        ctx.debug_metadata["archaeology_evidence_count"] = len(archaeology_entries)
         ctx.debug_metadata["evidence_selected_reference_count"] = len(references)
 
     def _lookup_lexical_engine(self, ctx: PipelineContext) -> None:
@@ -1357,6 +1430,7 @@ class BHFAgent:
                     max_context_tokens=self.config.canonical_library.max_context_tokens,
                     study_action=ctx.question_context.question_type,
                 )
+            canonical_context = _exclude_legacy_ckl_archaeology(canonical_context)
         except Exception as exc:  # noqa: BLE001 - retrieval failure must degrade gracefully
             ctx.canonical_library_context = None
             ctx.canonical_library_prompt = None
@@ -2111,6 +2185,7 @@ class BHFAgent:
             session_memory=ctx.session_memory,
             answer_mode=ctx.answer_mode,
             canonical_context_prompt=ctx.canonical_library_prompt,
+            archaeology_context_prompt=_format_archaeology_evidence_for_prompt(ctx.retrieved_evidence),
             lexical_context_prompt=ctx.lexical_context_prompt,
             knowledge_coverage_prompt=ctx.knowledge_expansion_context_prompt,
             tyndale_context_prompt=ctx.tyndale_context_prompt,

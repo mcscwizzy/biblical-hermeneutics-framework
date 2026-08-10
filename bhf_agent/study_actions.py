@@ -16,6 +16,7 @@ from .context_pipeline import (
     build_context_evidence_packet,
     deterministic_context_presentation,
 )
+from .archaeology_resolver import resolve_archaeology_evidence
 from .lexicon import WordStudyResult, WordStudyService
 from .models import Serializable
 
@@ -39,10 +40,11 @@ DETERMINISTIC_ACTIONS = frozenset(
         "people",
         "places",
         "themes",
+        "archaeology",
     }
 )
 
-DETERMINISTIC_ONLY_ACTIONS = frozenset({"cross_references", "people", "places"})
+DETERMINISTIC_ONLY_ACTIONS = frozenset({"cross_references", "people", "places", "archaeology"})
 
 AGENT_FALLBACK_ACTIONS = frozenset(
     {
@@ -104,6 +106,7 @@ ACTION_TITLES = {
     "people": "People",
     "places": "Places",
     "themes": "Themes",
+    "archaeology": "Archaeology",
 }
 
 
@@ -229,6 +232,21 @@ class DeterministicStudyEngine:
             sections.extend(self._entity_sections(objects, "Places", ("key_places", "related_places"), "place"))
         elif canonical_action == "themes":
             sections.extend(self._entity_sections(objects, "Themes", ("major_themes",), "theme"))
+        elif canonical_action == "archaeology":
+            evidence_packet = resolve_archaeology_evidence(
+                book=str(passage_data["book"]),
+                chapter=passage_data["chapter"],
+                verse_start=passage_data.get("start_verse"),
+                verse_end=passage_data.get("end_verse"),
+                passage_text=str(passage_data.get("selected_text") or ""),
+            )
+            presentation = {
+                "type": "archaeology",
+                "reference": evidence_packet["reference"],
+                "items": evidence_packet["archaeological_items"],
+                "empty_state": evidence_packet["empty_state"],
+            }
+            sections.extend(self._archaeology_sections(evidence_packet))
 
         sections = _dedupe_sections(sections)
         references = _unique([reference, *self._references_from_sections(sections)])
@@ -241,7 +259,9 @@ class DeterministicStudyEngine:
         if sections and missing_fields:
             status = "partial"
         section_sources = {str(section.get("source") or "") for section in sections}
-        if "scripture" in section_sources and "ckl" in section_sources:
+        if "archaeology" in section_sources:
+            source = "archaeology"
+        elif "scripture" in section_sources and "ckl" in section_sources:
             source = "scripture_and_ckl"
         elif "scripture" in section_sources and "lexical_sqlite" in section_sources:
             source = "scripture_and_lexical"
@@ -277,6 +297,18 @@ class DeterministicStudyEngine:
                 "start_verse": passage_data.get("start_verse"),
                 "end_verse": passage_data.get("end_verse"),
                 "object_ids": object_ids,
+                **(
+                    {
+                        "archaeology_ids": [
+                            item.get("id")
+                            for item in (evidence_packet or {}).get("archaeological_items", [])
+                            if item.get("id")
+                        ],
+                        "deterministic_only": True,
+                    }
+                    if canonical_action == "archaeology"
+                    else {}
+                ),
                 "deterministic_only": canonical_action in DETERMINISTIC_ONLY_ACTIONS,
                 **(
                     {
@@ -290,6 +322,26 @@ class DeterministicStudyEngine:
             presentation=presentation,
             evidence_packet=evidence_packet,
         )
+
+    def _archaeology_sections(self, packet: Mapping[str, Any]) -> list[dict[str, Any]]:
+        sections = []
+        for item in packet.get("archaeological_items") or []:
+            description = str(item.get("description") or "").strip()
+            sections.append(
+                {
+                    "title": item.get("title") or "Archaeological Evidence",
+                    "items": [description] if description else [],
+                    "source": "archaeology",
+                    "references": list(item.get("scripture_references") or []),
+                    "metadata": {
+                        "item_id": item.get("id"),
+                        "relationship": item.get("biblical_relationship"),
+                        "confidence": item.get("confidence"),
+                        "cautions": list(item.get("cautions") or []),
+                    },
+                }
+            )
+        return sections
 
     def _resolve_passage(self, context: Mapping[str, Any]) -> dict[str, Any]:
         book = _first(context, "book", "reader_book")
@@ -689,6 +741,21 @@ def compact_fact_packet(result: StudyActionResult | Mapping[str, Any], *, max_ch
             "target": (evidence_packet or {}).get("target") if isinstance(evidence_packet, Mapping) else None,
             "allowed_references": (evidence_packet or {}).get("allowed_references", []) if isinstance(evidence_packet, Mapping) else [],
             "evidence": compact_evidence,
+            "archaeological_items": [
+                {
+                    "id": item.get("id"),
+                    "title": item.get("title"),
+                    "item_type": item.get("item_type"),
+                    "period": item.get("period"),
+                    "biblical_relationship": item.get("biblical_relationship"),
+                    "description": item.get("description"),
+                    "scripture_references": item.get("scripture_references", []),
+                    "confidence": item.get("confidence"),
+                    "cautions": item.get("cautions", []),
+                    "source": item.get("source"),
+                }
+                for item in ((evidence_packet or {}).get("archaeological_items", []) if isinstance(evidence_packet, Mapping) else [])[:8]
+            ],
         },
     }
 
@@ -715,6 +782,42 @@ def format_fact_packet_for_prompt(packet: Mapping[str, Any]) -> str:
         lines.extend(["", f"## {title}"])
         for item in section.get("items") or []:
             lines.append(f"- {item}")
+    archaeology_items = packet.get("evidence_packet", {}).get("archaeological_items", [])
+    if archaeology_items:
+        lines.extend(
+            [
+                "",
+                "## Archaeological Evidence Rules",
+                "Distinguish archaeological evidence from biblical text and from interpretation.",
+                "Preserve supplied uncertainty and disputed identifications.",
+                "Do not claim an excavation proves a biblical event unless the supplied evidence warrants that exact statement.",
+                "Do not invent excavation details, dates, scholars, museum provenance, or image contents.",
+                "Cite the supplied archaeology sources when making archaeological claims.",
+                "",
+                "## Retrieved Archaeological Evidence",
+            ]
+        )
+        for item in archaeology_items:
+            lines.append(
+                "- "
+                + " | ".join(
+                    str(value)
+                    for value in (
+                        item.get("title"),
+                        item.get("item_type"),
+                        item.get("date_display") or item.get("period"),
+                        item.get("biblical_relationship"),
+                        item.get("description"),
+                        "Discovery: " + str(item.get("discovery_context") or ""),
+                        "Evidence: " + str(item.get("evidence_summary") or ""),
+                        "Passage relevance: " + str(item.get("biblical_relevance") or ""),
+                        "Scholarly context: " + str(item.get("scholarly_context") or ""),
+                        "Cautions: " + "; ".join(item.get("cautions") or []),
+                        "References: " + "; ".join(item.get("scripture_references") or []),
+                    )
+                    if value
+                )
+            )
     for evidence in packet.get("evidence_packet", {}).get("evidence", []) or []:
         lines.append(
             f"- [evidence_id={evidence.get('evidence_id')}] "

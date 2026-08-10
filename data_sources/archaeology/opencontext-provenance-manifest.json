@@ -1,0 +1,20 @@
+{
+  "provider": "opencontext",
+  "kind": "evidence_provenance",
+  "retrieved_at": "2026-08-09",
+  "entries": [
+    {
+      "id": "opencontext-iraq-heritage-nimrud",
+      "archaeology_item_ids": [
+        "black-obelisk",
+        "nimrud-palace-relief",
+        "ashurnasirpal-inscription-tablet"
+      ],
+      "record_id": "b0a915f3-43cd-1d81-cc89-043d7e11e7c9",
+      "source_url": "https://opencontext.org/projects/b0a915f3-43cd-1d81-cc89-043d7e11e7c9",
+      "license": "CC BY 4.0",
+      "purpose": "Project-level provenance and context for Nimrud (ancient Kalhu/Calah) evidence records.",
+      "retrieval_note": "The public project JSON-LD record is available. Individual subject JSON endpoints were protected by a browser proof-of-work challenge during review, so this manifest is reviewed local provenance metadata rather than a runtime importer."
+    }
+  ]
+}

@@ -6,6 +6,8 @@ Use this index to find the shortest path for your task.
 
 - [Website and PWA](web-pwa.md) — use the hosted or self-hosted application,
   connect AI, install the PWA, and understand what works offline.
+- [Study Vault Sync](study-vault-sync.md) — encrypt, back up, share, and
+  configure OneDrive or iCloud synchronization for personal study records.
 - [Docker](docker.md) — install, configure, operate, update, reset, and uninstall
   a local containerized deployment.
 - [Local build and development](local-development.md) — run from source, select
@@ -29,6 +31,9 @@ Use this index to find the shortest path for your task.
   [word study](word-study.md) — lexical storage and runtime behavior.
 - [Research expansion](research-expansion.md) — answer-coverage routing and
   optional evidence expansion.
+- [Archaeology evidence and media policy](archaeology.md) — deterministic
+  first-class evidence, rights-aware media, importing, presentation, CKL links,
+  and offline behavior.
 
 ## Build and maintain data
 

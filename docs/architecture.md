@@ -8,7 +8,16 @@ BHF has two related products in one repository:
    model to synthesize a study answer.
 
 The application does not ask the model to discover BHF files or perform CKL
-retrieval. BHF gathers and bounds the evidence first; the model explains it.
+or archaeology retrieval. BHF gathers and bounds the evidence first; the model explains it.
+
+## Evidence domains
+
+Scripture, CKL, Lexicon, Archaeology, Commentary, Maps, and Timeline are peer
+evidence domains. CKL owns curated biblical and interpretive context.
+Archaeology owns deterministic material evidence: sites, artifacts,
+inscriptions, excavations, dating, cautions, media, licensing, provenance, and
+Scripture links. They cross-reference stable IDs but neither owns the other's
+content or media.
 
 ## Answer flow
 
@@ -26,9 +35,11 @@ flowchart TD
     X -->|No| PKG
     C --> K[Build and rank CKL query]
     K --> KC[Select token-bounded CKL context]
+    C --> A[Resolve deterministic archaeology when relevant]
     L --> PKG[Package retrieved evidence]
     LX --> PKG
     KC --> PKG
+    A --> PKG
 
     PKG --> CV[Evaluate requested-dimension coverage]
     CV --> PC{Validated reviewed-answer cache hit?}

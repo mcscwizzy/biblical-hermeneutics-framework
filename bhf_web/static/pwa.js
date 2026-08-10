@@ -1,7 +1,7 @@
 (function () {
   const runtime = window.BHFRuntimeConfig || {};
   const enableServiceWorker = runtime.enableServiceWorker !== false;
-  const CACHE_VERSION = "v17";
+  const CACHE_VERSION = "v18";
   const API_CACHE_PREFIX = "bhf-api-";
   const API_CACHE = `${API_CACHE_PREFIX}${CACHE_VERSION}`;
   const DEFAULT_AUTO_PACKS = ["study", "maps"];

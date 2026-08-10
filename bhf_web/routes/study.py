@@ -64,6 +64,7 @@ def register_study_routes(
                 context_presenter is not None
                 and payload.get("presentation") == "ai"
                 and result.evidence_packet
+                and result.action != "archaeology"
             ):
                 result.presentation = context_presenter(result.evidence_packet)
             data = result.to_dict()
@@ -95,6 +96,10 @@ def register_study_routes(
     @app.delete("/api/saved-studies/{study_id}", response_class=JSONResponse)
     async def remove_saved_study(study_id: str) -> JSONResponse:
         return device_only_response("Saved studies")
+
+    @app.get("/api/notes", response_class=JSONResponse)
+    async def get_all_notes() -> JSONResponse:
+        return device_only_response("Notes")
 
     @app.get("/api/notes/{book}/{chapter}", response_class=JSONResponse)
     async def get_notes(book: str, chapter: int) -> JSONResponse:

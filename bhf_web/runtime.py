@@ -40,6 +40,15 @@ def load_runtime_config() -> dict[str, Any]:
         "enableServiceWorker": mode != "capacitor",
         "offlinePath": "/offline",
         "ai": browser_ai_config(),
+        # OAuth client IDs and redirect URLs are public configuration. Secrets
+        # are never injected into the browser; OneDrive uses PKCE.
+        "studyVault": {
+            "oneDriveClientId": os.environ.get("BHF_ONEDRIVE_CLIENT_ID", "").strip(),
+            "oneDriveRedirectUri": os.environ.get("BHF_ONEDRIVE_REDIRECT_URI", "").strip(),
+            "cloudKitContainerIdentifier": os.environ.get("BHF_CLOUDKIT_CONTAINER_IDENTIFIER", "").strip(),
+            "cloudKitApiToken": os.environ.get("BHF_CLOUDKIT_API_TOKEN", "").strip(),
+            "cloudKitEnvironment": os.environ.get("BHF_CLOUDKIT_ENVIRONMENT", "production").strip().lower(),
+        },
     }
 
 

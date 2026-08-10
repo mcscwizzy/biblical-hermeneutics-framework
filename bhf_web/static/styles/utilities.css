@@ -135,9 +135,31 @@ button.danger {
 
 .status-topline {
   display: flex;
-  gap: 16px;
-  justify-content: space-between;
+  gap: 10px;
+  justify-content: flex-start;
   align-items: start;
+}
+
+.status-loading-indicator {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  margin-top: 2px;
+  border: 3px solid #b7cbd9;
+  border-top-color: #246b94;
+  border-radius: 50%;
+  animation: status-loading-rotate 0.8s linear infinite;
+}
+
+@keyframes status-loading-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.status-panel.failed .status-loading-indicator {
+  visibility: hidden;
+  animation: none;
 }
 
 .status-current {
@@ -164,6 +186,12 @@ button.danger {
 
 .status-panel.failed .status-current {
   color: #9a2c2c;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-loading-indicator {
+    animation: none;
+  }
 }
 
 .notice,
@@ -195,6 +223,18 @@ button.danger {
   gap: 12px;
   justify-content: space-between;
   align-items: start;
+}
+
+.answer-actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.answer-actions button {
+  border: 1px solid var(--border-strong);
 }
 
 .saved-study-label {
@@ -276,6 +316,167 @@ button.danger {
 
 .context-presentation h3 {
   margin: 0 0 8px;
+}
+
+.archaeology-result-note {
+  margin: 0 0 1rem;
+  color: var(--muted-text, #5f6875);
+}
+
+.archaeology-card-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.archaeology-card {
+  display: grid;
+  grid-template-columns: minmax(9rem, 14rem) 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border, #d9dee7);
+  border-radius: 0.75rem;
+  background: var(--surface, #fff);
+}
+
+.archaeology-media {
+  margin: 0;
+  min-height: 10rem;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background: var(--surface-muted, #f1f3f6);
+}
+
+.archaeology-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 10rem;
+  object-fit: contain;
+  background: #111820;
+}
+
+.archaeology-media figcaption,
+.archaeology-media--empty {
+  padding: 0.65rem;
+  font-size: 0.82rem;
+  color: var(--muted-text, #5f6875);
+}
+
+.archaeology-media--empty {
+  display: grid;
+  gap: 0.35rem;
+  min-height: 9rem;
+  place-items: center;
+  text-align: center;
+}
+
+.archaeology-media--empty span {
+  font-size: 0.82rem;
+}
+
+.archaeology-media-failure {
+  display: none;
+  margin: 0;
+  padding: 0.75rem;
+  color: var(--muted-text, #5f6875);
+}
+
+.archaeology-media--failed {
+  display: grid;
+  place-items: center;
+}
+
+.archaeology-media--failed figcaption {
+  display: none;
+}
+
+.archaeology-media--failed .archaeology-media-failure {
+  display: block;
+}
+
+.archaeology-card-body > * {
+  margin-top: 0;
+}
+
+.archaeology-card-section h4 {
+  margin: 0 0 0.3rem;
+  font-size: 0.9rem;
+}
+
+.archaeology-card-section p {
+  margin: 0 0 0.8rem;
+}
+
+.archaeology-card-kicker,
+.archaeology-card-site,
+.archaeology-card-confidence {
+  font-size: 0.85rem;
+  color: var(--muted-text, #5f6875);
+}
+
+.archaeology-card-site {
+  margin-bottom: 0.5rem;
+}
+
+.archaeology-card-caution {
+  margin: 0.75rem 0;
+  padding: 0.65rem 0.75rem;
+  border-left: 3px solid #c9872c;
+  background: #fff8e9;
+}
+
+.archaeology-card-attribution {
+  white-space: pre-line;
+  font-size: 0.82rem;
+  color: var(--muted-text, #5f6875);
+}
+
+.archaeology-card-provenance {
+  font-size: 0.82rem;
+  color: var(--muted-text, #5f6875);
+}
+
+.archaeology-card-details {
+  margin: 0.75rem 0;
+}
+
+.archaeology-card-details summary {
+  cursor: pointer;
+}
+
+.archaeology-card-details dl {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0.65rem 0 0;
+}
+
+.archaeology-card-details dl div {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.archaeology-card-details dt {
+  font-weight: 650;
+  font-size: 0.84rem;
+}
+
+.archaeology-card-details dd {
+  margin: 0;
+  color: var(--muted-text, #5f6875);
+}
+
+.archaeology-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+@media (max-width: 680px) {
+  .archaeology-card {
+    grid-template-columns: 1fr;
+  }
 }
 
 .context-overview {
@@ -478,6 +679,21 @@ code {
   display: grid;
   gap: 10px;
   margin-bottom: 14px;
+}
+
+.saved-study-notes-field {
+  display: grid;
+  gap: 6px;
+  margin-top: 16px;
+  color: var(--text-muted, #51606d);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.saved-study-notes-field textarea {
+  min-height: 5.5rem;
+  font: inherit;
+  font-weight: 400;
 }
 
 .notes-list,
@@ -855,6 +1071,16 @@ html[data-theme="dark"] .app-dock {
   }
 
   .answer-save {
+    width: 100%;
+  }
+
+  .answer-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .answer-actions button {
     width: 100%;
   }
 
@@ -1255,6 +1481,8 @@ html[data-theme="dark"] .map-panel-status[data-state="error"] {
 .reader-controls-sheet-panel {
   display: grid;
   gap: 12px;
+  max-height: min(82dvh, 820px);
+  grid-template-rows: auto auto minmax(0, 1fr);
   padding: 14px 14px calc(14px + env(safe-area-inset-bottom));
   border: 1px solid var(--border);
   border-bottom: 0;
@@ -1290,7 +1518,122 @@ html[data-theme="dark"] .map-panel-status[data-state="error"] {
 
 .reader-settings-list {
   display: grid;
+  gap: 14px;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 1px 2px 10px;
+}
+
+.reader-settings-intro {
+  margin: 0;
+  color: var(--page-muted);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.reader-settings-group {
+  display: grid;
   gap: 8px;
+}
+
+.reader-settings-group-heading {
+  display: grid;
+  gap: 3px;
+  padding: 2px 2px 0;
+}
+
+.reader-settings-group-heading .eyebrow {
+  margin: 0;
+}
+
+.reader-settings-group-heading h3,
+.reader-settings-group-heading p {
+  margin: 0;
+}
+
+.reader-settings-group-heading h3 {
+  font-size: 0.96rem;
+}
+
+.reader-settings-group-heading > p:last-child {
+  color: var(--page-muted);
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+.reader-settings-vault {
+  padding: 12px;
+  border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--border));
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--accent-soft) 48%, var(--surface));
+}
+
+.settings-help {
+  position: relative;
+  z-index: 1;
+  display: inline-grid;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: 4px;
+  place-items: center;
+  vertical-align: text-bottom;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  color: var(--accent-text);
+  cursor: help;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.settings-help-inline {
+  margin: 0 2px;
+}
+
+.settings-help::after {
+  position: absolute;
+  z-index: 20;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  width: min(250px, calc(100vw - 48px));
+  padding: 9px 10px;
+  border-radius: 8px;
+  background: var(--page-text);
+  box-shadow: 0 8px 22px rgb(17 30 41 / 24%);
+  color: var(--surface);
+  content: attr(data-tooltip);
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.35;
+  opacity: 0;
+  pointer-events: none;
+  text-align: left;
+  transform: translate(-50%, 4px);
+  transition: opacity 120ms ease, transform 120ms ease;
+  visibility: hidden;
+}
+
+.settings-help:hover::after,
+.settings-help:focus::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  visibility: visible;
+}
+
+button.reader-setting-action:hover .settings-help::after,
+button.reader-setting-action:focus .settings-help::after,
+.offline-readiness-details summary:hover .settings-help::after,
+.offline-readiness-details summary:focus .settings-help::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  visibility: visible;
+}
+
+.settings-help:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 button.reader-setting-action {
@@ -1369,6 +1712,23 @@ button.reader-setting-action:disabled .reader-setting-value {
   border: 1px solid var(--border);
   border-radius: 8px;
   background: var(--surface);
+}
+
+.vault-sync-details .field-help {
+  margin: 0;
+  padding: 0 12px 10px;
+  line-height: 1.4;
+}
+
+.vault-provider-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 12px 10px;
+}
+
+.vault-provider-actions button {
+  flex: 1 1 185px;
 }
 
 .offline-sync-details summary,

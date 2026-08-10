@@ -7,8 +7,10 @@ from typing import Any
 
 from bhf_agent.bible import DATA_PATH as ASV_DATA_PATH
 from bhf_agent.bible import KJV_DATA_PATH
+from bhf_agent.archaeology import media_can_bundle
 from bhf_agent.ckl import load_canonical_library
 from framework.canonical_library import load_framework_version_fingerprint
+from bhf_agent.study_db import list_archaeology_items, list_archaeology_media, list_archaeology_sites
 
 from .map_service import (
     get_archaeology_markers,
@@ -39,12 +41,13 @@ def build_offline_manifest() -> dict[str, Any]:
         "app": "bhf-bible-reader",
         "version_fingerprint": load_framework_version_fingerprint(),
         "offline_boundary": {
-            "available": [
+                "available": [
                 "app_shell",
                 "installed_translations",
                 "local_bible_search",
                 "canonical_library",
                 "maps",
+                "archaeology",
                 "notes",
                 "highlights",
                 "saved_studies",
@@ -136,6 +139,11 @@ def build_offline_manifest() -> dict[str, Any]:
                     "/api/maps/routes-for-passage",
                     "/api/maps/related-passages-for-place",
                     "/api/maps/archaeology-for-passage",
+                    "/api/archaeology/for-passage",
+                    "/api/archaeology",
+                    "/api/archaeology/search",
+                    "/api/archaeology/items/{id}",
+                    "/api/archaeology/sites/{id}",
                     "/api/maps/manuscripts-for-passage",
                     "/api/maps/political-context-for-passage",
                 ],
@@ -153,6 +161,22 @@ def build_offline_manifest() -> dict[str, Any]:
                     "/api/sources/",
                 ],
             },
+            {
+                "id": "archaeology",
+                "label": "Archaeology evidence",
+                "required": False,
+                "strategy": "installable_pack",
+                "size_bytes": _safe_size(static_root / "data" / "archaeology"),
+                "routes": [
+                    "/archaeology",
+                    "/api/archaeology",
+                    "/api/archaeology/search",
+                    "/api/archaeology/for-passage",
+                    "/api/archaeology/items/{id}",
+                    "/api/archaeology/sites/{id}",
+                    "/api/maps/archaeology",
+                ],
+            },
         ],
         "client_stores": [
             "apiResponses",
@@ -164,6 +188,8 @@ def build_offline_manifest() -> dict[str, Any]:
             "savedStudies",
             "mutationQueue",
             "metadata",
+            "mapStudies",
+            "tombstones",
             "commentary",
         ],
         "offline_mutations": [
@@ -198,6 +224,8 @@ def build_offline_pack(pack_id: str, *, study_db_path: str | Path) -> dict[str, 
         }
     if normalized == "sources":
         return _build_sources_pack(pack_entry, study_db_path=study_db_path)
+    if normalized == "archaeology":
+        return _build_archaeology_pack(pack_entry, study_db_path=study_db_path)
     raise ValueError(f"unknown offline pack: {pack_id}")
 
 
@@ -206,7 +234,7 @@ def _build_study_pack(pack_entry: dict[str, Any]) -> dict[str, Any]:
     objects = [
         _serialize_object_detail(obj, library, browse=True)
         for obj in sorted(
-            library.objects_by_id.values(),
+            (obj for obj in library.objects_by_id.values() if obj.type != "archaeology"),
             key=lambda item: (-int(item.importance), item.type, item.title, item.id),
         )
     ]
@@ -286,6 +314,60 @@ def _build_sources_pack(pack_entry: dict[str, Any], *, study_db_path: str | Path
         "details": details,
         "responses": responses,
         "deferred": True,
+    }
+
+
+def _build_archaeology_pack(pack_entry: dict[str, Any], *, study_db_path: str | Path) -> dict[str, Any]:
+    path = str(study_db_path)
+    sites = list_archaeology_sites(path=path)
+    items = list_archaeology_items(path=path)
+    media = [
+        candidate
+        for item in items
+        for candidate in item.get("media", [])
+        if media_can_bundle(candidate)
+    ]
+    site_details = [
+        {
+            key: site.get(key)
+            for key in (
+                "id", "name", "site_type", "period", "periods", "latitude", "longitude",
+                "modern_location", "ancient_region", "description", "confidence", "source_id",
+                "source", "source_name", "source_url", "license", "notes", "scripture_links",
+                "media",
+            )
+        }
+        for site in sites
+    ]
+    item_details = [
+        {
+            key: item.get(key)
+            for key in (
+                "id", "site_id", "name", "item_type", "period", "periods", "relationship",
+                "why_it_matters", "bhf_caution", "evidence_details", "confidence", "source_id", "source", "source_name",
+                "source_url", "license", "notes", "scripture_links", "media",
+            )
+        }
+        for item in items
+    ]
+    responses = [
+        {"url": "/api/maps/archaeology", "payload": {"markers": get_archaeology_markers(path=path)}},
+    ]
+    for item in item_details:
+        responses.append({"url": f"/api/archaeology/items/{item['id']}", "payload": item})
+    for site in site_details:
+        responses.append({"url": f"/api/archaeology/sites/{site['id']}", "payload": site})
+    return {
+        "schema_version": 1,
+        "pack_id": "archaeology",
+        "label": pack_entry["label"],
+        "strategy": pack_entry["strategy"],
+        "version_fingerprint": load_framework_version_fingerprint(),
+        "rights_policy": "Only explicitly redistributable and cacheable media are included.",
+        "sites": site_details,
+        "items": item_details,
+        "media": media,
+        "responses": responses,
     }
 
 

@@ -16,8 +16,6 @@
           <p class="saved-study-label">Saved study</p>
           <h2>{{ saved_study.title }}</h2>
         </div>
-      {% else %}
-        <h2>Answer</h2>
       {% endif %}
       {% if can_save_study and reader_reference %}
         <button type="button" class="secondary answer-save" data-save-study>Save Study</button>
@@ -27,6 +25,13 @@
       <p class="answer-reference">ASV {{ reader_reference }}</p>
     {% endif %}
     <div class="answer-body">{{ answer_html | safe }}</div>
+
+    {% if can_save_study and reader_reference %}
+      <label class="saved-study-notes-field">
+        <span>Personal notes</span>
+        <textarea data-personal-notes rows="3" placeholder="Add your reflections or follow-up questions before saving."></textarea>
+      </label>
+    {% endif %}
 
     {% if warnings %}
       <aside class="answer-warnings" role="status" aria-label="Answer warnings">

@@ -53,6 +53,7 @@ const BHF_STUDY_ACTIONS = new Set([
   "people",
   "places",
   "themes",
+  "archaeology",
   "compare_archaeology",
 ]);
 
@@ -69,6 +70,7 @@ const BHF_DETERMINISTIC_STUDY_ACTIONS = new Set([
   "people",
   "places",
   "themes",
+  "archaeology",
 ]);
 const BHF_AUTO_ORGANIZED_CONTEXT_ACTIONS = new Set([
   "full_context",
@@ -115,6 +117,7 @@ let readerLocationSaveTimer = null;
 let pendingReaderLocation = null;
 let pendingReaderTabsPersistence = null;
 let wordStudyNavigationStack = [];
+let lastArchaeologyStudyAction = null;
 const BHF_HTTP = window.BHFApi || {};
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -1027,11 +1030,36 @@ async function initializeReader() {
   const addNoteButton = document.querySelector("[data-add-note]");
   if (addNoteButton) {
     addNoteButton.addEventListener("click", openNoteEditor);
-    addNoteButton.disabled = true;
+    addNoteButton.disabled = false;
+  }
+  document.querySelectorAll("[data-new-note]").forEach((button) => {
+    button.addEventListener("click", () => openNoteEditor());
+  });
+  document.querySelectorAll("[data-notes-view]").forEach((button) => {
+    button.addEventListener("click", () => {
+      void showNotesView(button.dataset.notesView);
+    });
+  });
+  updateNotesViewControls();
+  const attachNoteSelection = document.querySelector("[data-attach-note-selection]");
+  if (attachNoteSelection) {
+    attachNoteSelection.addEventListener("click", attachCurrentSelectionToNote);
+  }
+  const clearNoteReferenceButton = document.querySelector("[data-clear-note-reference]");
+  if (clearNoteReferenceButton) {
+    clearNoteReferenceButton.addEventListener("click", clearNoteReference);
   }
   const noteEditor = document.querySelector("#note-editor");
   if (noteEditor) {
     noteEditor.addEventListener("submit", saveNote);
+    noteEditor.elements.body.addEventListener("input", () => {
+      noteDraftDirty = true;
+      scheduleNoteAutoSave();
+    });
+    noteEditor.elements.canonical_object_ids?.addEventListener("input", () => {
+      noteDraftDirty = true;
+      scheduleNoteAutoSave();
+    });
   }
   const cancelNote = document.querySelector("[data-cancel-note]");
   if (cancelNote) {
@@ -1046,6 +1074,7 @@ async function initializeReader() {
   });
   wireAnswerPanelControls(document.querySelector("#answer-panel"));
   wireAnswerPanelControls(document.querySelector("#map-ai-answer-panel"));
+  wireSaveStudyButtons(document);
   syncMapWorkspaceEmptyState();
 }
 
@@ -1478,7 +1507,6 @@ function applyWorkspaceMinimized(enabled) {
     const accessibleLabel = nextEnabled
       ? "Restore workspace"
       : "Minimize workspace to dock";
-    setControlLabel(workspaceToggle, nextEnabled ? "Restore" : "Minimize");
     workspaceToggle.setAttribute("aria-label", accessibleLabel);
     workspaceToggle.setAttribute("title", accessibleLabel);
     workspaceToggle.setAttribute("aria-pressed", String(nextEnabled));
@@ -1538,11 +1566,6 @@ function applyWorkspaceExpansion(enabled) {
     const accessibleLabel = nextEnabled
       ? "Collapse workspace"
       : "Expand workspace";
-    setControlLabel(
-      toggle,
-      nextEnabled ? "Collapse" : "Expand",
-      accessibleLabel,
-    );
     setControlStatus(
       toggle,
       `Current value: ${nextEnabled ? "Expanded" : "Collapsed"}`,
@@ -2171,6 +2194,21 @@ async function loadReaderChapter(book, chapter, options = {}) {
       loadHighlights(data.book, data.chapter),
       loadSavedStudies(data.book, data.chapter),
     ]);
+    if (lastArchaeologyStudyAction) {
+      void requestDeterministicStudyAction(
+        {
+          ...lastArchaeologyStudyAction,
+          book: data.book,
+          chapter: Number(data.chapter),
+          verseStart: null,
+          verseEnd: null,
+          selectedVerses: [],
+          selectedText: "",
+          isSelection: false,
+        },
+        {chapterRefresh: true},
+      );
+    }
   } catch (error) {
     if (translationId !== "asv") {
       if (tab) {
@@ -4030,11 +4068,73 @@ async function handleContextMenuAction(event) {
   const actionType = resolveContextAction(button.dataset.contextAction);
   const context = contextMenuState;
   hideContextMenu();
+  if (actionType === "copy") {
+    await copyContextToClipboard(context);
+    return;
+  }
   await dispatchStudyAction(createStudyAction(actionType, context));
 }
 
 function resolveContextAction(actionType) {
   return actionType;
+}
+
+function formatContextReferenceForClipboard(context) {
+  if (!context?.book || !context?.chapter) {
+    return "";
+  }
+  const verses = selectedVerseNumbers(context);
+  if (verses.length === 0) {
+    return `${context.book} ${context.chapter}`;
+  }
+
+  const ranges = [];
+  let rangeStart = verses[0];
+  let rangeEnd = verses[0];
+  verses.slice(1).forEach((verse) => {
+    if (verse === rangeEnd + 1) {
+      rangeEnd = verse;
+      return;
+    }
+    ranges.push(rangeStart === rangeEnd ? String(rangeStart) : `${rangeStart}-${rangeEnd}`);
+    rangeStart = verse;
+    rangeEnd = verse;
+  });
+  ranges.push(rangeStart === rangeEnd ? String(rangeStart) : `${rangeStart}-${rangeEnd}`);
+  return `${context.book} ${context.chapter}:${ranges.join(",")}`;
+}
+
+function formatContextForClipboard(context) {
+  const reference = formatContextReferenceForClipboard(context);
+  const text = String(context?.text || "").trim();
+  return [reference, text].filter(Boolean).join("\n\n");
+}
+
+async function copyContextToClipboard(context) {
+  const text = formatContextForClipboard(context);
+  if (!text) {
+    return false;
+  }
+
+  try {
+    if (window.navigator?.clipboard?.writeText) {
+      await window.navigator.clipboard.writeText(text);
+      return true;
+    }
+  } catch (_error) {
+    // Some browser contexts deny Clipboard API access. Fall back below.
+  }
+
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.opacity = "0";
+  document.body.append(textarea);
+  textarea.select();
+  const copied = document.execCommand("copy");
+  textarea.remove();
+  return copied;
 }
 
 function createStudyAction(type, context) {
@@ -4148,6 +4248,11 @@ async function requestDeterministicStudyAction(studyAction, options = {}) {
   const isWordStudy = studyAction.type === "word_study";
   if (!options.fromWordStudyChoice) {
     wordStudyNavigationStack = [];
+  }
+  if (studyAction.type === "archaeology") {
+    lastArchaeologyStudyAction = {...studyAction};
+  } else if (!options.chapterRefresh) {
+    lastArchaeologyStudyAction = null;
   }
   activateWorkspaceTab(isWordStudy ? "lexicon" : "ask");
   setFormValue("ask_mode", "");
@@ -4266,6 +4371,9 @@ function renderDeterministicStudyResult(result, options = {}) {
   if (result?.action === "word_study" && result?.metadata?.word_study) {
     return renderWordStudyResult(result, options);
   }
+  if (result?.action === "archaeology") {
+    return renderArchaeologyResult(result);
+  }
   if (result?.presentation && result?.evidence_packet) {
     return renderContextPresentation(result);
   }
@@ -4297,6 +4405,92 @@ function renderDeterministicStudyResult(result, options = {}) {
       </header>
       ${sectionHtml}
       ${refsHtml}
+    </article>
+  `;
+}
+
+function renderArchaeologyResult(result) {
+  const presentation = result.presentation || {};
+  const items = Array.isArray(presentation.items)
+    ? presentation.items.filter(Boolean).slice(0, 8)
+    : [];
+  const cards = items.length
+    ? items.map((item) => {
+        const media = Array.isArray(item.media) ? item.media : [];
+        const bundledMedia = media.find(
+          (candidate) =>
+            candidate &&
+            candidate.can_redistribute &&
+            candidate.can_cache &&
+            (candidate.image_url || candidate.local_asset_path),
+        );
+        const source = item.source || {};
+        const primaryMedia = bundledMedia || media.find((candidate) => candidate && candidate.image_url);
+        const attribution = primaryMedia && primaryMedia.attribution_text;
+        const imageHtml = bundledMedia
+          ? `<figure class="archaeology-media"><img loading="lazy" src="${escapeHtml(bundledMedia.image_url || bundledMedia.local_asset_path)}" alt="${escapeHtml(bundledMedia.title || item.title || "Archaeology evidence")}" onerror="this.hidden=true;this.parentElement.classList.add('archaeology-media--failed')"><figcaption>${escapeHtml(bundledMedia.caption || "")}</figcaption><p class="archaeology-media-failure" aria-live="polite">Image unavailable. Source details remain below.</p></figure>`
+          : `<div class="archaeology-media archaeology-media--empty" role="img" aria-label="Archaeology record; image unavailable for redistribution"><strong>Archaeology record</strong><span>Image unavailable for redistribution</span></div>`;
+        const references = Array.isArray(item.scripture_references)
+          ? item.scripture_references.filter(Boolean)
+          : [];
+        const cautions = Array.isArray(item.cautions)
+          ? item.cautions.filter(Boolean)
+          : [];
+        const evidenceSources = Array.isArray(item.evidence_sources)
+          ? item.evidence_sources.filter((source) => source && source.url)
+          : [];
+        const detailRows = [
+          ["Discovery context", item.discovery_context],
+          ["What was found", item.physical_description],
+          ["Evidence summary", item.evidence_summary],
+          ["Dating basis", item.dating_basis],
+          ["Scholarly context", item.scholarly_context],
+          ["Current location", item.current_location],
+        ].filter(([, value]) => value);
+        const detailsHtml = detailRows.length
+          ? `<details class="archaeology-card-details"><summary>More details</summary><dl>${detailRows.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join("")}</dl></details>`
+          : "";
+        const hasCoordinates = item.coordinates && item.coordinates.latitude !== null && item.coordinates.longitude !== null;
+        return `
+          <article class="archaeology-card" data-archaeology-id="${escapeHtml(item.id || "")}">
+            ${imageHtml}
+            <div class="archaeology-card-body">
+              <p class="archaeology-card-kicker">${escapeHtml([item.item_type, item.date_display || item.period].filter(Boolean).join(" · "))}</p>
+              <h3>${escapeHtml(item.title || "Archaeological Evidence")}</h3>
+              ${item.site_name ? `<p class="archaeology-card-site">${escapeHtml(item.site_name)}</p>` : ""}
+              <section class="archaeology-card-section"><h4>What you're looking at</h4><p>${escapeHtml(item.description || "No description is available.")}</p></section>
+              ${item.biblical_relevance || item.significance ? `<section class="archaeology-card-section"><h4>Why it matters here</h4><p>${escapeHtml(item.biblical_relevance || item.significance)}</p></section>` : ""}
+              ${item.evidence_summary ? `<section class="archaeology-card-section"><h4>Historical significance</h4><p>${escapeHtml(item.evidence_summary)}</p></section>` : ""}
+              <p class="archaeology-card-confidence"><strong>${escapeHtml(String(item.confidence || "Unknown"))}</strong> evidence · ${escapeHtml(String(item.dispute_status || "not_disputed").replaceAll("_", " "))}</p>
+              ${cautions.length ? `<aside class="archaeology-card-caution" role="note"><strong>Archaeological caution:</strong> ${escapeHtml(cautions.join(" "))}</aside>` : ""}
+              ${detailsHtml}
+              ${references.length ? `<p class="archaeology-card-references"><strong>Related passages:</strong> ${escapeHtml(references.join(", "))}</p>` : ""}
+              ${attribution ? `<p class="archaeology-card-attribution"><strong>Photo:</strong> ${escapeHtml(attribution)}</p>` : ""}
+              ${evidenceSources.length ? `<p class="archaeology-card-provenance"><strong>Data source:</strong> ${evidenceSources.map((source) => `<a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.label || "Evidence record")} ↗</a>${source.license ? ` <span>(${escapeHtml(source.license)})</span>` : ""}`).join("; ")}</p>` : ""}
+              <div class="archaeology-card-actions">
+                ${source.url ? `<a class="secondary-link" href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">View Source ↗</a>` : ""}
+                ${hasCoordinates ? `<button type="button" class="secondary" data-archaeology-map="${escapeHtml(item.id || "")}">View on Map</button>` : ""}
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("")
+    : `<p class="empty">No curated archaeology evidence was found for this chapter or passage.</p>`;
+  return `
+    <article class="answer deterministic-study-result archaeology-result" data-deterministic-study-result>
+      <header class="answer-header">
+        <div>
+          <p class="answer-eyebrow">Deterministic archaeological evidence</p>
+          <h2>${escapeHtml(result.title || "Archaeology")}</h2>
+        </div>
+        <div class="answer-actions">
+          <button type="button" class="secondary answer-save" data-deterministic-save>Save Study</button>
+          <button type="button" class="secondary" data-deterministic-explain>Explain with BHF</button>
+          <button type="button" class="secondary" data-deterministic-ask>Ask a Question</button>
+        </div>
+      </header>
+      <p class="archaeology-result-note">Evidence and interpretation are kept distinct. Archaeological records provide historical context and do not by themselves establish theological conclusions.</p>
+      <div class="archaeology-card-list">${cards}</div>
     </article>
   `;
 }
@@ -4367,6 +4561,7 @@ function renderContextPresentation(result) {
           <h2>${escapeHtml(result.title || "Context")}</h2>
         </div>
         <div class="answer-actions">
+          <button type="button" class="secondary answer-save" data-deterministic-save>Save Study</button>
           ${result.agent_fallback_allowed ? `<button type="button" class="secondary" data-deterministic-explain>Explain with BHF</button>` : ""}
           <button type="button" class="secondary" data-deterministic-ask>Ask a Question</button>
         </div>
@@ -4382,6 +4577,10 @@ function renderContextPresentation(result) {
       ${caution ? `<aside class="context-caution" role="note"><strong>Important caution:</strong> ${escapeHtml(caution)}</aside>` : ""}
       ${laterHtml}
       ${sourcesHtml}
+      <label class="saved-study-notes-field">
+        <span>Personal notes</span>
+        <textarea data-personal-notes rows="3" placeholder="Add your reflections or follow-up questions before saving."></textarea>
+      </label>
     </article>
   `;
 }
@@ -4441,6 +4640,7 @@ function renderWordStudyComplete(study) {
     : [];
   return `
     <section class="word-study-reader">
+      ${renderWordStudyTranslation(study)}
       <div class="word-study-facts">
         ${facts
           .map(
@@ -4467,14 +4667,16 @@ function renderWordStudyAmbiguity(study) {
     : [];
   return `
     <section class="word-study-reader">
+      ${renderWordStudyTranslation(study)}
       <h3>${escapeHtml(study.message || "Multiple possible original-language words found.")}</h3>
+      <p class="word-study-order-note">Words are listed in the original text’s reading order. A translation may use a different order or several English words for one original-language word.</p>
       <ol class="word-study-choice-list">
         ${ambiguities
           .map(
             (word) => `
           <li>
             <button type="button" class="word-study-choice" data-word-study-position="${escapeHtml(word.position || "")}" data-word-study-language="${escapeHtml(word.language || "")}" data-word-study-surface="${escapeHtml(word.surface_form || "")}" data-word-study-lemma="${escapeHtml(word.lemma || "")}" data-word-study-strongs="${escapeHtml(word.strongs_number || "")}">
-              <strong>${escapeHtml(word.surface_form || word.lemma || "word")}</strong>
+              <strong class="word-study-source-word"${wordStudyLanguageAttributes(word.language)}>${escapeHtml(word.surface_form || word.lemma || "word")}</strong>
               <span>${escapeHtml([word.gloss, word.lemma, word.strongs_number, word.position ? `position ${word.position}` : ""].filter(Boolean).join(" - "))}</span>
             </button>
           </li>
@@ -4492,6 +4694,7 @@ function renderWordStudyUnavailable(study) {
     : [];
   return `
     <section class="word-study-reader">
+      ${renderWordStudyTranslation(study)}
       <p class="empty">${escapeHtml(study.message || "No deterministic lexical data was found for this word study.")}</p>
     </section>
     <details class="word-study-scholar">
@@ -4499,6 +4702,31 @@ function renderWordStudyUnavailable(study) {
       ${guardrails.length ? `<section><h3>Safeguards</h3><ul>${guardrails.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section>` : ""}
     </details>
   `;
+}
+
+function renderWordStudyTranslation(study) {
+  const text = String(study.translation_text || "").trim();
+  if (!text) {
+    return "";
+  }
+  const translation = String(study.translation_id || "selected").trim().toUpperCase();
+  return `
+    <section class="word-study-translation" aria-label="Selected translation text">
+      <h3>Selected translation${translation ? ` (${escapeHtml(translation)})` : ""}</h3>
+      <p>${escapeHtml(text)}</p>
+    </section>
+  `;
+}
+
+function wordStudyLanguageAttributes(language) {
+  const normalized = String(language || "").toLowerCase();
+  if (normalized === "hebrew" || normalized === "aramaic") {
+    return ' lang="he" dir="rtl"';
+  }
+  if (normalized === "greek") {
+    return ' lang="el" dir="ltr"';
+  }
+  return "";
 }
 
 function renderWordStudyScholar(study) {
@@ -4633,9 +4861,29 @@ function renderDeterministicSection(section) {
 function wireDeterministicStudyControls(answerPanel, result, studyAction) {
   wireWordStudyChoiceControls(answerPanel, studyAction);
   wireWordStudyBackControl(answerPanel);
+  answerPanel.querySelectorAll("[data-archaeology-map]").forEach((button) => {
+    button.addEventListener("click", () => {
+      openMapPanel({
+        ...studyAction,
+        archaeologyId: button.dataset.archaeologyMap || "",
+      });
+    });
+  });
   answerPanel
     .querySelector("[data-deterministic-explain]")
     ?.addEventListener("click", async () => {
+      if (result.action === "archaeology") {
+        const packet = result.fact_packet || compactDeterministicResult(result);
+        setFormValue("deterministic_fact_packet", JSON.stringify(packet));
+        setFormValue("ask_mode", "");
+        setFormValue("study_action", result.action || studyAction.type);
+        setFormValue(
+          "question",
+          `Explain ${result.title || "this archaeological evidence"} using BHF, preserving the supplied citations and uncertainty.`,
+        );
+        submitAskForm();
+        return;
+      }
       if (result.evidence_packet) {
         await requestAIContextPresentation(studyAction, answerPanel);
         return;
@@ -4778,6 +5026,7 @@ function compactDeterministicResult(result) {
 }
 
 async function saveDeterministicStudy(result, studyAction) {
+  const notesField = document.querySelector("#answer-panel [data-personal-notes]");
   const payload = {
     title: result.title || studyActionLabel(result.action || studyAction.type),
     book: studyAction.book,
@@ -4788,6 +5037,7 @@ async function saveDeterministicStudy(result, studyAction) {
     study_type: result.action || studyAction.type,
     question: result.title || "",
     answer: deterministicStudyMarkdown(result),
+    personal_notes: notesField?.value || "",
     canonical_object_ids: result.metadata?.object_ids || [],
   };
   await requestJson(
@@ -4806,6 +5056,9 @@ async function saveDeterministicStudy(result, studyAction) {
 }
 
 function deterministicStudyMarkdown(result) {
+  if (result.presentation && result.evidence_packet) {
+    return contextPresentationMarkdown(result);
+  }
   const lines = [`# ${result.title || "Study Result"}`, ""];
   (result.sections || []).forEach((section) => {
     lines.push(`## ${section.title || "Section"}`);
@@ -4815,6 +5068,41 @@ function deterministicStudyMarkdown(result) {
   if ((result.references || []).length) {
     lines.push("## References");
     result.references.forEach((ref) => lines.push(`- ${ref}`));
+  }
+  return lines.join("\n").trim();
+}
+
+function contextPresentationMarkdown(result) {
+  const presentation = result.presentation || {};
+  const lines = [`# ${result.title || "Context"}`, ""];
+  if (presentation.summary) {
+    lines.push(String(presentation.summary), "");
+  }
+  const facts = Array.isArray(presentation.key_facts) ? presentation.key_facts : [];
+  if (facts.length) {
+    lines.push("## What Stands Out");
+    facts.forEach((fact) => {
+      if (!fact?.fact) {
+        return;
+      }
+      const why = fact.why_it_matters ? ` — ${fact.why_it_matters}` : "";
+      lines.push(`- ${fact.fact}${why}`);
+    });
+    lines.push("");
+  }
+  if (presentation.important_caution) {
+    lines.push("## Important Caution", String(presentation.important_caution), "");
+  }
+  const connections = Array.isArray(presentation.later_biblical_connections)
+    ? presentation.later_biblical_connections
+    : [];
+  if (connections.length) {
+    lines.push("## Connections Elsewhere in the Bible");
+    connections.forEach((connection) => {
+      if (connection?.connection) {
+        lines.push(`- ${connection.connection}${connection.reference ? ` (${connection.reference})` : ""}`);
+      }
+    });
   }
   return lines.join("\n").trim();
 }
@@ -5165,8 +5453,14 @@ function syncAskFields() {
       summary.textContent = "";
     }
     if (addNoteButton) {
-      addNoteButton.disabled = true;
+      addNoteButton.disabled = false;
     }
+  }
+  if (noteContext) {
+    refreshNoteReferenceActions();
+  }
+  if (notesView === "passage") {
+    renderNotes(notesForCurrentPassage());
   }
 }
 

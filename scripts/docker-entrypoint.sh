@@ -1,6 +1,13 @@
 #!/bin/sh
 set -eu
 
+# Apply the current schema before serving requests. This upgrades a persisted
+# study database with reviewed archaeology records and media on container start.
+if [ -n "${BHF_STUDY_DB_PATH:-}" ]; then
+  mkdir -p "$(dirname "$BHF_STUDY_DB_PATH")"
+  python -c 'import os; from bhf_agent.study_db import initialize_database; initialize_database(os.environ["BHF_STUDY_DB_PATH"])'
+fi
+
 if [ -n "${BHF_LEXICAL_DATABASE_PATH:-}" ] \
   && [ -f /app/.bhf-seed/lexicon.sqlite ]; then
   should_seed=false

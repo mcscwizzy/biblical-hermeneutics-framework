@@ -3,6 +3,42 @@ let currentCanonicalBrowser = {
   selectedObjectId: null,
   query: "",
 };
+let allNotes = [];
+let notesView = "passage";
+let noteAutoSaveTimer = null;
+let noteAutoSaveInFlight = false;
+let noteDraftDirty = false;
+let noteCloseAfterSave = false;
+
+function hasNoteReference(note) {
+  return Boolean(note?.book && note?.chapter);
+}
+
+function setNoteSaveStatus(message) {
+  const status = document.querySelector("[data-note-save-status]");
+  if (status) {
+    status.textContent = message;
+  }
+}
+
+function updateNotesViewControls() {
+  document.querySelectorAll("[data-notes-view]").forEach((button) => {
+    const active = button.dataset.notesView === notesView;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+}
+
+function notesForCurrentPassage() {
+  if (!currentSelection) {
+    return currentNotes;
+  }
+  return currentNotes.filter((note) => (
+    hasNoteReference(note)
+    && Number(note.start_verse) <= Number(currentSelection.endVerse)
+    && Number(note.end_verse) >= Number(currentSelection.startVerse)
+  ));
+}
 
 function loadNotes(book, chapter) {
   const list = document.querySelector("#notes-list");
@@ -13,15 +49,54 @@ function loadNotes(book, chapter) {
   return requestJson(`/api/notes/${encodeURIComponent(book)}/${encodeURIComponent(chapter)}`, {}, "Could not load notes.")
     .then((data) => {
       currentNotes = data.notes || [];
-      renderNotes(currentNotes);
+      if (notesView === "passage") {
+        renderNotes(notesForCurrentPassage());
+      }
       applyVerseStateIndicatorsToReader();
-      if (count) {
-        count.textContent = String(currentNotes.length);
+      if (count && notesView === "passage") {
+        count.textContent = String(notesForCurrentPassage().length);
       }
     })
     .catch((error) => {
       list.innerHTML = errorHtml(error.message || "Could not load notes.");
     });
+}
+
+function loadAllNotes() {
+  const list = document.querySelector("#notes-list");
+  if (!list) {
+    return Promise.resolve();
+  }
+  return requestJson("/api/notes", {}, "Could not load notes.")
+    .then((data) => {
+      allNotes = data.notes || [];
+      if (notesView === "all") {
+        renderNotes(allNotes);
+      }
+      return allNotes;
+    })
+    .catch((error) => {
+      if (notesView === "all") {
+        list.innerHTML = errorHtml(error.message || "Could not load notes.");
+      }
+      return [];
+    });
+}
+
+function showNotesView(view) {
+  notesView = view === "all" ? "all" : "passage";
+  updateNotesViewControls();
+  activateAppSection("notes");
+  activateWorkspaceTab("notes");
+  if (notesView === "all") {
+    return loadAllNotes();
+  }
+  if (!currentChapter) {
+    renderNotes([]);
+    return Promise.resolve();
+  }
+  renderNotes(notesForCurrentPassage());
+  return loadNotes(currentChapter.book, currentChapter.chapter);
 }
 
 function loadHighlights(book, chapter) {
@@ -154,8 +229,12 @@ function renderNotes(notes) {
   if (!list) {
     return;
   }
+  const count = document.querySelector("#notes-count");
+  if (count) {
+    count.textContent = String(notes.length);
+  }
   if (notes.length === 0) {
-    list.innerHTML = `<p class="empty">No notes for this chapter yet.</p>`;
+    list.innerHTML = `<p class="empty">${notesView === "all" ? "No notes yet. Capture your next thought with New note." : "No notes for this passage yet."}</p>`;
     return;
   }
   list.innerHTML = "";
@@ -164,11 +243,20 @@ function renderNotes(notes) {
     article.className = "note";
     article.dataset.noteId = note.id;
 
-    const reference = document.createElement("h3");
+    const reference = document.createElement(hasNoteReference(note) ? "button" : "h3");
+    if (hasNoteReference(note)) {
+      reference.type = "button";
+      reference.className = "note-reference-button";
+      reference.addEventListener("click", () => openNoteReference(note));
+    }
     reference.textContent = formatReference(note.book, note.chapter, note.start_verse, note.end_verse);
 
     const body = document.createElement("p");
     body.textContent = note.body;
+
+    const meta = document.createElement("p");
+    meta.className = "note-meta";
+    meta.textContent = `Edited ${formatNoteTimestamp(note.updated_at || note.created_at)}`;
 
     if (Array.isArray(note.canonical_object_ids) && note.canonical_object_ids.length > 0) {
       const canonical = document.createElement("div");
@@ -199,15 +287,32 @@ function renderNotes(notes) {
     actions.appendChild(remove);
     article.appendChild(reference);
     article.appendChild(body);
+    article.appendChild(meta);
     article.appendChild(actions);
     list.appendChild(article);
   }
 }
 
-function openNoteEditor(existingNote) {
-  if (!currentChapter) {
+function formatNoteTimestamp(value) {
+  const date = new Date(value || "");
+  if (Number.isNaN(date.getTime())) {
+    return "recently";
+  }
+  return date.toLocaleString([], { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+}
+
+async function openNoteReference(note) {
+  if (!hasNoteReference(note)) {
     return;
   }
+  await loadReaderChapter(note.book, note.chapter);
+  if (note.start_verse) {
+    scrollToVerse(Number(note.start_verse), "smooth");
+  }
+}
+
+function openNoteEditor(existingNote) {
+  activateAppSection("notes");
   activateWorkspaceTab("notes");
   const editor = document.querySelector("#note-editor");
   if (!editor) {
@@ -215,8 +320,8 @@ function openNoteEditor(existingNote) {
   }
   const note = existingNote && existingNote.id ? existingNote : null;
   if (note) {
-    noteContext = note;
-  } else if (currentSelection) {
+    noteContext = {...note};
+  } else if (currentSelection && currentChapter) {
     noteContext = {
       id: "",
       book: currentChapter.book,
@@ -228,9 +333,19 @@ function openNoteEditor(existingNote) {
       canonical_object_ids: getCanonicalObjectIdsFromAnswerPanel(),
     };
   } else {
-    return;
+    noteContext = {
+      id: "",
+      book: null,
+      chapter: null,
+      start_verse: null,
+      end_verse: null,
+      selected_text: "",
+      body: "",
+      canonical_object_ids: getCanonicalObjectIdsFromAnswerPanel(),
+    };
   }
 
+  noteDraftDirty = false;
   editor.hidden = false;
   editor.elements.id.value = noteContext.id || "";
   editor.elements.body.value = noteContext.body || "";
@@ -248,32 +363,137 @@ function openNoteEditor(existingNote) {
       noteContext.end_verse
     );
   }
+  refreshNoteReferenceActions();
+  setNoteSaveStatus(noteContext.id ? "Saved" : "New note");
   editor.elements.body.focus();
 }
 
+function refreshNoteReferenceActions() {
+  const attach = document.querySelector("[data-attach-note-selection]");
+  const clear = document.querySelector("[data-clear-note-reference]");
+  if (attach) {
+    attach.disabled = !(currentSelection && currentChapter);
+  }
+  if (clear) {
+    clear.disabled = !hasNoteReference(noteContext);
+  }
+}
+
+function updateNoteEditorReference() {
+  const reference = document.querySelector("#note-reference");
+  if (reference && noteContext) {
+    reference.textContent = formatReference(
+      noteContext.book,
+      noteContext.chapter,
+      noteContext.start_verse,
+      noteContext.end_verse,
+    );
+  }
+  refreshNoteReferenceActions();
+}
+
+function attachCurrentSelectionToNote() {
+  if (!noteContext || !currentSelection || !currentChapter) {
+    return;
+  }
+  noteContext = {
+    ...noteContext,
+    book: currentChapter.book,
+    chapter: currentChapter.chapter,
+    start_verse: currentSelection.startVerse,
+    end_verse: currentSelection.endVerse,
+    selected_text: currentSelection.text,
+  };
+  noteDraftDirty = true;
+  updateNoteEditorReference();
+  scheduleNoteAutoSave();
+}
+
+function clearNoteReference() {
+  if (!noteContext) {
+    return;
+  }
+  noteContext = {
+    ...noteContext,
+    book: null,
+    chapter: null,
+    start_verse: null,
+    end_verse: null,
+    selected_text: "",
+  };
+  noteDraftDirty = true;
+  updateNoteEditorReference();
+  scheduleNoteAutoSave();
+}
+
 function closeNoteEditor() {
+  const body = document.querySelector("#note-editor [name='body']")?.value.trim();
+  if (noteContext && body && noteDraftDirty) {
+    void persistCurrentNote({close: true});
+    return;
+  }
+  finishClosingNoteEditor();
+}
+
+function finishClosingNoteEditor() {
+  window.clearTimeout(noteAutoSaveTimer);
+  noteAutoSaveTimer = null;
   const editor = document.querySelector("#note-editor");
   if (editor) {
     editor.hidden = true;
     editor.reset();
   }
   noteContext = null;
+  noteDraftDirty = false;
+  noteCloseAfterSave = false;
 }
 
 function saveNote(event) {
   event.preventDefault();
-  if (!noteContext || !currentChapter) {
+  return persistCurrentNote({close: true});
+}
+
+function scheduleNoteAutoSave() {
+  window.clearTimeout(noteAutoSaveTimer);
+  if (!noteContext || !document.querySelector("#note-editor [name='body']")?.value.trim()) {
+    return;
+  }
+  setNoteSaveStatus("Saving…");
+  noteAutoSaveTimer = window.setTimeout(() => {
+    void persistCurrentNote();
+  }, 650);
+}
+
+function persistCurrentNote({close = false} = {}) {
+  if (!noteContext) {
     return Promise.resolve();
   }
-  const form = event.target;
+  if (noteAutoSaveInFlight) {
+    noteCloseAfterSave = noteCloseAfterSave || close;
+    return Promise.resolve();
+  }
+  const form = document.querySelector("#note-editor");
+  if (!form) {
+    return Promise.resolve();
+  }
+  const body = form.elements.body.value.trim();
+  if (!body) {
+    setNoteSaveStatus("Start typing to save");
+    if (close) {
+      finishClosingNoteEditor();
+    }
+    return Promise.resolve();
+  }
   const payload = {
     ...noteContext,
-    body: form.elements.body.value,
+    body,
     canonical_object_ids: canonicalObjectIdsFromInput(form.elements.canonical_object_ids?.value || ""),
   };
   const noteId = form.elements.id.value;
   const url = noteId ? `/api/notes/${encodeURIComponent(noteId)}` : "/api/notes";
   const method = noteId ? "PUT" : "POST";
+  noteAutoSaveInFlight = true;
+  setNoteSaveStatus("Saving…");
   return requestJson(url, {
     method,
     headers: {
@@ -282,21 +502,50 @@ function saveNote(event) {
     },
     body: JSON.stringify(payload)
   }, "Could not save note.")
+    .then((saved) => {
+      noteContext = {...noteContext, ...saved};
+      form.elements.id.value = noteContext.id || "";
+      noteDraftDirty = false;
+      setNoteSaveStatus("Saved");
+      const reloads = [];
+      if (currentChapter) {
+        reloads.push(loadNotes(currentChapter.book, currentChapter.chapter));
+      }
+      if (notesView === "all") {
+        reloads.push(loadAllNotes());
+      }
+      return Promise.all(reloads);
+    })
     .then(() => {
-      closeNoteEditor();
-      return loadNotes(currentChapter.book, currentChapter.chapter);
+      if (close || noteCloseAfterSave) {
+        noteCloseAfterSave = false;
+        finishClosingNoteEditor();
+      }
+    })
+    .catch((error) => {
+      setNoteSaveStatus(error.message || "Could not save note");
+      throw error;
+    })
+    .finally(() => {
+      noteAutoSaveInFlight = false;
+      if (noteDraftDirty && !close) {
+        scheduleNoteAutoSave();
+      }
     });
 }
 
 function deleteExistingNote(noteId) {
-  if (!currentChapter) {
-    return Promise.resolve();
+  if (noteContext?.id === noteId) {
+    finishClosingNoteEditor();
   }
   return requestJson(`/api/notes/${encodeURIComponent(noteId)}`, {
     method: "DELETE",
     headers: { "Accept": "application/json" }
   }, "Could not delete note.")
-    .then(() => loadNotes(currentChapter.book, currentChapter.chapter));
+    .then(() => Promise.all([
+      currentChapter ? loadNotes(currentChapter.book, currentChapter.chapter) : Promise.resolve(),
+      notesView === "all" ? loadAllNotes() : Promise.resolve(),
+    ]));
 }
 
 function deleteExistingHighlight(highlightId) {
@@ -408,9 +657,40 @@ function deleteSavedStudy(studyId) {
     .then(() => loadSavedStudies(currentChapter.book, currentChapter.chapter));
 }
 
+async function savePersonalStudyNotes(button) {
+  const studyId = button?.dataset.savedStudyId;
+  const notesField = button?.closest(".answer-panel, .answer")?.querySelector("[data-personal-notes]")
+    || document.querySelector("[data-personal-notes]");
+  if (!studyId || !notesField || !window.BHFOfflineDB) {
+    return;
+  }
+  const study = await window.BHFOfflineDB.get("savedStudies", studyId);
+  if (!study) {
+    window.alert("This saved study is not available on this device.");
+    return;
+  }
+  button.disabled = true;
+  button.textContent = "Saving notes...";
+  try {
+    await window.BHFOfflineDB.upsertOfflineSavedStudy({
+      ...study,
+      personal_notes: notesField.value,
+      updated_at: new Date().toISOString(),
+    });
+    button.textContent = "Notes saved";
+    if (currentChapter) {
+      await loadSavedStudies(currentChapter.book, currentChapter.chapter);
+    }
+  } finally {
+    button.disabled = false;
+  }
+}
+
 function saveLatestStudy(event) {
   const sourceButton = event?.currentTarget || null;
-  const answerPanel = activeLiveAnswerPanel || document.querySelector("[data-device-study]");
+  const answerPanel = sourceButton?.closest(".ask-form")
+    ? document.querySelector("#answer-panel")
+    : activeLiveAnswerPanel || document.querySelector("[data-device-study]");
   const studyNode = answerPanel?.matches?.("[data-device-study]")
     ? answerPanel
     : answerPanel?.querySelector?.("[data-device-study]") || document.querySelector("[data-device-study]");
@@ -421,10 +701,12 @@ function saveLatestStudy(event) {
   } catch (_error) {
     studyPayload = null;
   }
-  if (!studyPayload || (!sourceButton?.dataset.jobId && !latestJobComplete)) {
+  if (!studyPayload) {
     window.alert("Run a study first, then save it.");
     return Promise.resolve();
   }
+  const notesField = studyNode?.querySelector?.("[data-personal-notes]");
+  studyPayload.personal_notes = notesField?.value || "";
   const saveButton = sourceButton || activeLiveAnswerPanel?.querySelector("[data-save-study]") || null;
   if (saveButton) {
     saveButton.disabled = true;
@@ -456,25 +738,41 @@ function wireAnswerPanelControls(answerPanel) {
   if (!answerPanel) {
     return;
   }
-  answerPanel.querySelectorAll("[data-save-study]").forEach((button) => {
+  wireSaveStudyButtons(answerPanel);
+  wireCanonicalAnswerPanelControls(answerPanel);
+  answerPanel.querySelectorAll("[data-save-personal-notes]").forEach((button) => {
+    if (!button.dataset.personalNotesBound) {
+      button.addEventListener("click", () => savePersonalStudyNotes(button));
+      button.dataset.personalNotesBound = "true";
+    }
+  });
+  updateSaveButtons();
+}
+
+function wireSaveStudyButtons(root = document) {
+  root.querySelectorAll("[data-save-study]").forEach((button) => {
     if (!button.dataset.saveBound) {
       button.addEventListener("click", saveLatestStudy);
       button.dataset.saveBound = "true";
     }
   });
-  wireCanonicalAnswerPanelControls(answerPanel);
-  updateSaveButtons();
 }
 
 function updateSaveButtons() {
   document.querySelectorAll("[data-save-study]").forEach((button) => {
     const panel = button.closest(".answer-panel");
-    const isActive = Boolean(activeLiveAnswerPanel) && panel === activeLiveAnswerPanel;
+    const isAskFormButton = Boolean(button.closest(".ask-form"));
+    const isActive = isAskFormButton
+      ? activeLiveAnswerPanel?.id === "answer-panel"
+      : Boolean(activeLiveAnswerPanel) && panel === activeLiveAnswerPanel;
     button.disabled = !(isActive && (button.dataset.jobId || (latestJobId && latestJobComplete)));
   });
 }
 
 function formatReference(book, chapter, startVerse, endVerse) {
+  if (!book || !chapter) {
+    return "Standalone note";
+  }
   if (!startVerse) {
     return `${book} ${chapter}`;
   }
@@ -510,12 +808,6 @@ function initializeCanonicalBrowser() {
     }
   }
 
-  const askButton = document.querySelector("[data-canonical-browser-ask]");
-  if (askButton && !askButton.dataset.bound) {
-    askButton.dataset.bound = "true";
-    askButton.addEventListener("click", () => focusAskPanel());
-  }
-
   const detailAddNoteButton = document.querySelector("[data-canonical-detail-add-note]");
   if (detailAddNoteButton && !detailAddNoteButton.dataset.bound) {
     detailAddNoteButton.dataset.bound = "true";
@@ -528,6 +820,34 @@ function initializeCanonicalBrowser() {
   if (backToResultsButton && !backToResultsButton.dataset.bound) {
     backToResultsButton.dataset.bound = "true";
     backToResultsButton.addEventListener("click", handleCanonicalBrowserBack);
+  }
+
+  const detailModal = document.querySelector("#canonical-context-modal");
+  const closeModalButton = document.querySelector("[data-canonical-context-modal-close]");
+  if (closeModalButton && !closeModalButton.dataset.bound) {
+    closeModalButton.dataset.bound = "true";
+    closeModalButton.addEventListener("click", () => closeCanonicalContextModal());
+  }
+  if (detailModal && !detailModal.dataset.bound) {
+    detailModal.dataset.bound = "true";
+    detailModal.addEventListener("cancel", () => {
+      window.setTimeout(() => restoreCanonicalContextTrigger(), 0);
+    });
+    detailModal.addEventListener("click", (event) => {
+      if (event.target === detailModal) {
+        closeCanonicalContextModal();
+      }
+    });
+  }
+
+  const requestedObjectId = normalizeCanonicalObjectId(
+    new URLSearchParams(window.location.search).get("canonical") || ""
+  );
+  if (requestedObjectId) {
+    window.setTimeout(() => {
+      activateWorkspaceTab("context");
+      loadCanonicalObject(requestedObjectId, { openModal: true }).catch(() => {});
+    }, 0);
   }
 
 }
@@ -556,6 +876,7 @@ function handleCanonicalBrowserClear(event) {
 
 function handleCanonicalBrowserBack(event) {
   event.preventDefault();
+  closeCanonicalContextModal({returnFocus: false});
   const resultsList = document.querySelector("[data-canonical-browser-results]");
   if (!resultsList) {
     return;
@@ -706,14 +1027,14 @@ function renderCanonicalBrowserResults(results, options = {}) {
       if (event.target.closest("button, a, input, select, textarea, summary, details")) {
         return;
       }
-      loadCanonicalObject(item.id, { preview: item }).catch(() => {});
+      loadCanonicalObject(item.id, { preview: item, openModal: true, trigger: article }).catch(() => {});
     });
     article.addEventListener("keydown", (event) => {
       if (event.key !== "Enter" && event.key !== " ") {
         return;
       }
       event.preventDefault();
-      loadCanonicalObject(item.id, { preview: item }).catch(() => {});
+      loadCanonicalObject(item.id, { preview: item, openModal: true, trigger: article }).catch(() => {});
     });
 
     const header = document.createElement("div");
@@ -728,7 +1049,7 @@ function renderCanonicalBrowserResults(results, options = {}) {
     titleButton.textContent = item.title || item.id;
     titleButton.addEventListener("click", (event) => {
       event.stopPropagation();
-      loadCanonicalObject(item.id, { preview: item }).catch(() => {});
+      loadCanonicalObject(item.id, { preview: item, openModal: true, trigger: titleButton }).catch(() => {});
     });
 
     const summary = document.createElement("p");
@@ -764,7 +1085,7 @@ function renderCanonicalBrowserResults(results, options = {}) {
     viewButton.dataset.testid = "canonical-result-view-button";
     viewButton.addEventListener("click", (event) => {
       event.stopPropagation();
-      loadCanonicalObject(item.id, { preview: item }).catch(() => {});
+      loadCanonicalObject(item.id, { preview: item, openModal: true, trigger: viewButton }).catch(() => {});
     });
 
     const linkButton = document.createElement("button");
@@ -795,6 +1116,9 @@ async function loadCanonicalObject(objectId, options = {}) {
     return;
   }
   currentCanonicalBrowser.selectedObjectId = normalizedId;
+  if (options.openModal) {
+    openCanonicalContextModal(options.trigger);
+  }
   const results = currentCanonicalBrowser.results || [];
   const preview = options.preview || results.find((item) => normalizeCanonicalObjectId(item.id) === normalizedId) || null;
   const detailPanel = document.querySelector("[data-canonical-detail-title]");
@@ -813,6 +1137,41 @@ async function loadCanonicalObject(objectId, options = {}) {
     renderCanonicalBrowserDetail(null, { error: error.message || "Could not load canonical object." });
   }
   renderCanonicalBrowserResults(currentCanonicalBrowser.results);
+}
+
+function openCanonicalContextModal(trigger) {
+  const modal = document.querySelector("#canonical-context-modal");
+  if (!modal || typeof modal.showModal !== "function") {
+    return;
+  }
+  if (trigger instanceof HTMLElement) {
+    modal._canonicalContextTrigger = trigger;
+  }
+  if (!modal.open) {
+    modal.showModal();
+  }
+}
+
+function restoreCanonicalContextTrigger() {
+  const modal = document.querySelector("#canonical-context-modal");
+  const trigger = modal?._canonicalContextTrigger;
+  if (modal) {
+    modal._canonicalContextTrigger = null;
+  }
+  if (trigger && trigger.isConnected) {
+    trigger.focus({preventScroll: true});
+  }
+}
+
+function closeCanonicalContextModal(options = {}) {
+  const modal = document.querySelector("#canonical-context-modal");
+  if (!modal?.open) {
+    return;
+  }
+  modal.close();
+  if (options.returnFocus !== false) {
+    restoreCanonicalContextTrigger();
+  }
 }
 
 function renderCanonicalBrowserDetail(object, options = {}) {
@@ -937,6 +1296,20 @@ function renderCanonicalBrowserDetail(object, options = {}) {
     renderCanonicalRelationships(related, relatedObjects);
   } else {
     related.innerHTML = `<p class="empty">No related objects recorded.</p>`;
+  }
+  const archaeologyLinks = Array.isArray(object.related_archaeology) ? object.related_archaeology : [];
+  if (archaeologyLinks.length > 0) {
+    const archaeologySection = document.createElement("section");
+    archaeologySection.className = "canonical-related-archaeology";
+    archaeologySection.innerHTML = `<h5>Related Archaeological Evidence</h5>`;
+    archaeologyLinks.forEach((item) => {
+      const link = document.createElement("a");
+      link.href = `/archaeology?q=${encodeURIComponent(item.title || item.id || "")}`;
+      link.textContent = item.title || item.id;
+      link.className = "canonical-related-archaeology-link";
+      archaeologySection.appendChild(link);
+    });
+    related.appendChild(archaeologySection);
   }
 
   if (Array.isArray(object.sources) && object.sources.length > 0) {
@@ -1209,7 +1582,11 @@ function handleCanonicalPanelClick(event) {
       return;
     }
     activateWorkspaceTab("context");
-    loadCanonicalObject(objectId, { preview: canonicalButton.dataset.canonicalObjectTitle ? { id: objectId, title: canonicalButton.dataset.canonicalObjectTitle } : null }).catch(() => {});
+    loadCanonicalObject(objectId, {
+      preview: canonicalButton.dataset.canonicalObjectTitle ? { id: objectId, title: canonicalButton.dataset.canonicalObjectTitle } : null,
+      openModal: true,
+      trigger: canonicalButton,
+    }).catch(() => {});
     return;
   }
 
@@ -1343,7 +1720,7 @@ function appendCanonicalObjectBadges(container, ids, options = {}) {
     button.textContent = objectId;
     button.addEventListener("click", () => {
       activateWorkspaceTab("context");
-      loadCanonicalObject(objectId).catch(() => {});
+      loadCanonicalObject(objectId, { openModal: true, trigger: button }).catch(() => {});
     });
     container.appendChild(button);
   }

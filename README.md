@@ -3,8 +3,8 @@
 > Teaching AI—and helping people—how to read the Bible carefully.
 
 BHF is an open-source Bible study application and hermeneutics framework. It
-retrieves Scripture, literary and historical context, lexical data, maps, and
-curated Canonical Knowledge Library (CKL) material before asking a language
+retrieves Scripture, literary and historical context, lexical data, archaeology,
+maps, and curated Canonical Knowledge Library (CKL) material before asking a language
 model to explain the evidence. The model is the explanation layer, not the
 source of the study method.
 
@@ -107,6 +107,8 @@ are in [Architecture](docs/architecture.md).
   translation-comparison study actions.
 - Greek and Hebrew lexical lookup when the generated lexical database is present.
 - Curated CKL retrieval with deterministic ranking and evidence packaging.
+- First-class Archaeology exploration with deterministic sites, artifacts,
+  inscriptions, licensed media, provenance, and passage links.
 - Notes, highlights, saved studies, and optional local session memory.
 - Installable PWA shell with offline Bible reading, search, maps, study packs,
   and device-local records.

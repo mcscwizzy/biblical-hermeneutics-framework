@@ -1,6 +1,6 @@
 (function () {
   const DB_NAME = "bhf-offline";
-  const DB_VERSION = 6;
+  const DB_VERSION = 8;
   const STORES = [
     "apiResponses",
     "translations",
@@ -15,8 +15,12 @@
     "mutationQueue",
     "metadata",
     "modelSettings",
+    "tombstones",
+    "vaultSettings",
   ];
-  const SNAPSHOT_STORES = ["notes", "highlights", "savedStudies", "mutationQueue", "metadata"];
+  // Personal records are portable. Rebuildable API and pack caches remain on
+  // the device and are rehydrated from the server after a restore.
+  const SNAPSHOT_STORES = ["notes", "highlights", "savedStudies", "mapStudies", "mutationQueue", "metadata", "tombstones"];
   const REBUILDABLE_STORES = ["apiResponses", "translations", "canonicalObjects", "sources", "chapters", "searches"];
   const REQUIRED_OFFLINE_PACKS = ["study", "maps"];
 
@@ -149,7 +153,7 @@
         },
       });
     }
-    if (id.startsWith("/api/notes/") && Array.isArray(payload?.notes)) {
+    if ((id === "/api/notes" || id.startsWith("/api/notes/")) && Array.isArray(payload?.notes)) {
       await Promise.all(payload.notes.map((note) => put("notes", normalizeNote(note))));
     }
     if (id.startsWith("/api/highlights/") && Array.isArray(payload?.highlights)) {
@@ -228,6 +232,10 @@
     if (sourceMatch) {
       const source = await get("sources", decodeURIComponent(sourceMatch[1]));
       return source ? { ...source, offline: true, cache_status: "generated" } : null;
+    }
+    if (key === "/api/notes") {
+      const notes = await allNotes();
+      return { notes, offline: true, cache_status: "generated", device_only: true };
     }
     const notesMatch = key.match(/^\/api\/notes\/([^/?]+)\/(\d+)$/);
     if (notesMatch) {
@@ -543,7 +551,7 @@
     }
     return {
       app: "bhf-bible-reader",
-      schema_version: 1,
+      schema_version: 2,
       db_name: DB_NAME,
       db_version: DB_VERSION,
       exported_at: nowIso(),
@@ -643,16 +651,22 @@
   async function upsertOfflineNote(payload, method = "POST", url = "/api/notes") {
     const note = normalizeNote(payload, "local");
     await put("notes", note);
-    await cacheNotesForChapter(note.book, note.chapter);
+    await clearTombstone("notes", note.id);
+    if (note.book && note.chapter) {
+      await cacheNotesForChapter(note.book, note.chapter);
+    }
+    await cacheAllNotes();
     return { ...note, offline: true, device_only: true, sync_status: "local" };
   }
 
   async function deleteOfflineNote(noteId, url) {
     const existing = await get("notes", noteId);
     await remove("notes", noteId);
-    if (existing) {
+    await markTombstone("notes", noteId);
+    if (existing?.book && existing?.chapter) {
       await cacheNotesForChapter(existing.book, existing.chapter);
     }
+    await cacheAllNotes();
     return { deleted: true, offline: true, device_only: true, sync_status: "local" };
   }
 
@@ -663,9 +677,15 @@
       .sort((left, right) => String(left.created_at || "").localeCompare(String(right.created_at || "")));
   }
 
+  async function allNotes() {
+    const notes = await list("notes");
+    return notes.sort((left, right) => String(right.updated_at || right.created_at || "").localeCompare(String(left.updated_at || left.created_at || "")));
+  }
+
   async function upsertOfflineHighlight(payload, method = "POST", url = "/api/highlights") {
     const highlight = normalizeHighlight(payload, "local");
     await put("highlights", highlight);
+    await clearTombstone("highlights", highlight.id);
     await cacheHighlightsForChapter(highlight.book, highlight.chapter);
     return { ...highlight, offline: true, device_only: true, sync_status: "local" };
   }
@@ -673,6 +693,7 @@
   async function deleteOfflineHighlight(highlightId, url) {
     const existing = await get("highlights", highlightId);
     await remove("highlights", highlightId);
+    await markTombstone("highlights", highlightId);
     if (existing) {
       await cacheHighlightsForChapter(existing.book, existing.chapter);
     }
@@ -689,6 +710,7 @@
   async function deleteOfflineSavedStudy(studyId, url) {
     const existing = await get("savedStudies", studyId);
     await remove("savedStudies", studyId);
+    await markTombstone("savedStudies", studyId);
     if (existing) {
       await cacheSavedStudiesForChapter(existing.book, existing.chapter);
     }
@@ -698,6 +720,7 @@
   async function upsertOfflineSavedStudy(payload) {
     const study = normalizeSavedStudy(payload, "local");
     await put("savedStudies", study);
+    await clearTombstone("savedStudies", study.id);
     if (study.book && study.chapter) {
       await cacheSavedStudiesForChapter(study.book, study.chapter);
     }
@@ -754,7 +777,10 @@
     }
     if (path === "/api/notes" || path.startsWith("/api/notes/")) {
       await put("notes", normalizeNote(payload, "synced"));
-      await cacheNotesForChapter(payload.book, payload.chapter);
+      if (payload.book && payload.chapter) {
+        await cacheNotesForChapter(payload.book, payload.chapter);
+      }
+      await cacheAllNotes();
     } else if (path === "/api/highlights" || path.startsWith("/api/highlights/")) {
       await put("highlights", normalizeHighlight(payload, "synced"));
       await cacheHighlightsForChapter(payload.book, payload.chapter);
@@ -772,16 +798,101 @@
   }
 
   async function upsertOfflineMapStudy(study) {
-    return put("mapStudies", { ...study, id: study?.id || clientId("map-study") });
+    const saved = { ...study, id: study?.id || clientId("map-study"), updated_at: study?.updated_at || nowIso() };
+    await put("mapStudies", saved);
+    await clearTombstone("mapStudies", saved.id);
+    return saved;
   }
 
   async function deleteOfflineMapStudy(id) {
-    return remove("mapStudies", id);
+    await remove("mapStudies", id);
+    return markTombstone("mapStudies", id);
+  }
+
+  function tombstoneId(storeName, recordId) {
+    return `${storeName}:${recordId}`;
+  }
+
+  async function markTombstone(storeName, recordId) {
+    const entry = {
+      id: tombstoneId(storeName, recordId),
+      store: storeName,
+      record_id: recordId,
+      deleted_at: nowIso(),
+    };
+    await put("tombstones", entry);
+    return entry;
+  }
+
+  async function clearTombstone(storeName, recordId) {
+    return remove("tombstones", tombstoneId(storeName, recordId));
+  }
+
+  function recordTimestamp(record) {
+    const raw = record?.updated_at || record?.updatedAt || record?.deleted_at || record?.created_at || record?.createdAt || record?.cachedAt || record?.lastAttemptAt || "";
+    const value = Date.parse(raw);
+    return Number.isFinite(value) ? value : 0;
+  }
+
+  function recordsEquivalent(left, right) {
+    const comparable = (record) => {
+      const copy = { ...record };
+      delete copy.sync_status;
+      delete copy.offline;
+      delete copy.cache_status;
+      delete copy.cached_at;
+      return copy;
+    };
+    return JSON.stringify(comparable(left)) === JSON.stringify(comparable(right));
+  }
+
+  async function mergeSnapshot(snapshot) {
+    if (!snapshot || snapshot.app !== "bhf-bible-reader" || !snapshot.stores || typeof snapshot.stores !== "object") {
+      throw new Error("This is not a BHF study vault.");
+    }
+    const counts = {};
+    const conflicts = [];
+    const remoteTombstones = Array.isArray(snapshot.stores.tombstones) ? snapshot.stores.tombstones : [];
+    for (const tombstone of remoteTombstones) {
+      if (!tombstone?.store || !tombstone?.record_id || !SNAPSHOT_STORES.includes(tombstone.store) || tombstone.store === "tombstones") continue;
+      const existing = await get(tombstone.store, tombstone.record_id);
+      if (!existing || recordTimestamp(tombstone) >= recordTimestamp(existing)) {
+        await remove(tombstone.store, tombstone.record_id);
+        await put("tombstones", tombstone);
+      }
+    }
+    for (const storeName of SNAPSHOT_STORES.filter((name) => name !== "tombstones")) {
+      const records = Array.isArray(snapshot.stores[storeName]) ? snapshot.stores[storeName] : [];
+      counts[storeName] = 0;
+      for (const remote of records) {
+        if (!remote || typeof remote !== "object" || !remote.id) continue;
+        const tombstone = await get("tombstones", tombstoneId(storeName, remote.id));
+        if (tombstone && recordTimestamp(tombstone) >= recordTimestamp(remote)) continue;
+        const local = await get(storeName, remote.id);
+        if (!local || recordTimestamp(remote) > recordTimestamp(local)) {
+          await put(storeName, remote);
+          await clearTombstone(storeName, remote.id);
+          counts[storeName] += 1;
+          continue;
+        }
+        if (recordTimestamp(remote) === recordTimestamp(local) && !recordsEquivalent(remote, local)) {
+          const copy = { ...remote, id: `${remote.id}-conflict-${Date.now()}`, sync_conflict: true };
+          await put(storeName, copy);
+          conflicts.push({ store: storeName, local_id: local.id, remote_id: copy.id });
+          counts[storeName] += 1;
+        }
+      }
+    }
+    return { imported_count: Object.values(counts).reduce((total, value) => total + value, 0), stores: counts, conflicts };
   }
 
   async function cacheNotesForChapter(book, chapter) {
     const notes = await notesForChapter(book, chapter);
     await cacheApiResponse(`/api/notes/${encodeURIComponent(book)}/${encodeURIComponent(chapter)}`, { notes });
+  }
+
+  async function cacheAllNotes() {
+    await cacheApiResponse("/api/notes", { notes: await allNotes() });
   }
 
   async function cacheHighlightsForChapter(book, chapter) {
@@ -801,10 +912,10 @@
     const now = nowIso();
     return {
       id: payload.id || clientId("note"),
-      book: String(payload.book || ""),
-      chapter: Number(payload.chapter || 0),
-      start_verse: Number(payload.start_verse || 0),
-      end_verse: Number(payload.end_verse || payload.start_verse || 0),
+      book: payload.book ? String(payload.book) : null,
+      chapter: payload.chapter ? Number(payload.chapter) : null,
+      start_verse: payload.start_verse ? Number(payload.start_verse) : null,
+      end_verse: payload.end_verse ? Number(payload.end_verse) : (payload.start_verse ? Number(payload.start_verse) : null),
       selected_text: String(payload.selected_text || ""),
       body: String(payload.body || ""),
       canonical_object_ids: Array.isArray(payload.canonical_object_ids) ? payload.canonical_object_ids : [],
@@ -843,6 +954,7 @@
       study_type: String(payload.study_type || ""),
       question: String(payload.question || ""),
       answer: String(payload.answer || ""),
+      personal_notes: String(payload.personal_notes || ""),
       canonical_object_ids: Array.isArray(payload.canonical_object_ids) ? payload.canonical_object_ids : [],
       created_at: payload.created_at || now,
       updated_at: payload.updated_at || now,
@@ -890,7 +1002,14 @@
           </div>
         </div>
         <p class="answer-reference">ASV ${escapeHtml(reference)}</p>
-        <div class="answer-body">${renderPlainAnswer(study.answer)}</div>
+        <div class="answer-body">${renderFormattedText(study.answer)}</div>
+        <label class="saved-study-notes-field">
+          <span>Personal notes</span>
+          <textarea data-personal-notes rows="5" placeholder="Add your reflections or follow-up questions.">${escapeHtml(study.personal_notes || "")}</textarea>
+        </label>
+        <div class="answer-actions">
+          <button type="button" class="secondary" data-save-personal-notes data-saved-study-id="${escapeHtml(study.id)}">Save notes</button>
+        </div>
         ${canonical ? `
           <section class="answer-canonical-context" aria-labelledby="answer-canonical-context-heading-offline-${escapeHtml(study.id)}">
             <div class="panel-heading answer-canonical-heading">
@@ -917,12 +1036,47 @@
     `;
   }
 
-  function renderPlainAnswer(value) {
-    const blocks = String(value || "").split(/\n{2,}/).map((block) => block.trim()).filter(Boolean);
+  function renderFormattedText(value) {
+    const lines = String(value || "").split("\n");
+    const blocks = [];
+    let listItems = [];
+    const flushList = () => {
+      if (listItems.length) {
+        blocks.push(`<ul>${listItems.map((item) => `<li>${formatInlineText(item)}</li>`).join("")}</ul>`);
+        listItems = [];
+      }
+    };
+    for (const rawLine of lines) {
+      const line = rawLine.trim();
+      if (!line) {
+        flushList();
+        continue;
+      }
+      const bullet = line.match(/^[-*]\s+(.+)$/);
+      if (bullet) {
+        listItems.push(bullet[1]);
+        continue;
+      }
+      flushList();
+      const heading = line.match(/^(#{1,6})\s+(.+)$/);
+      if (heading) {
+        const level = heading[1].length;
+        blocks.push(`<h${level}>${formatInlineText(heading[2])}</h${level}>`);
+      } else {
+        blocks.push(`<p>${formatInlineText(line)}</p>`);
+      }
+    }
+    flushList();
     if (!blocks.length) {
       return `<p class="empty">No saved answer text is available offline.</p>`;
     }
-    return blocks.map((block) => `<p>${escapeHtml(block).replace(/\n/g, "<br>")}</p>`).join("");
+    return blocks.join("");
+  }
+
+  function formatInlineText(value) {
+    return escapeHtml(value)
+      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+      .replace(/`(.+?)`/g, "<code>$1</code>");
   }
 
   function formatStudyReference(study) {
@@ -980,11 +1134,13 @@
     removeMutation,
     exportSnapshot,
     importSnapshot,
+    mergeSnapshot,
     readinessReport,
     clearRebuildableCaches,
     upsertOfflineNote,
     deleteOfflineNote,
     notesForChapter,
+    allNotes,
     upsertOfflineHighlight,
     deleteOfflineHighlight,
     highlightsForChapter,

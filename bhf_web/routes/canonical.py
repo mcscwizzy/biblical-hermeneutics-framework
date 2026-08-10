@@ -10,6 +10,7 @@ from fastapi import FastAPI, Query, Request
 from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse, Response
 
 from bhf_agent.ckl import build_canonical_context, load_canonical_library
+from bhf_agent.archaeology_service import ArchaeologyService
 import bhf_agent.ckl as ckl_module
 from framework.canonical_library.authoring import write_json_file
 from framework.canonical_library.normalization import normalize_id
@@ -21,7 +22,8 @@ def _canonical_library():
     return load_canonical_library()
 
 
-def register_canonical_routes(app: FastAPI) -> None:
+def register_canonical_routes(app: FastAPI, *, study_db_path: str | None = None) -> None:
+    archaeology = ArchaeologyService(study_db_path) if study_db_path else ArchaeologyService()
     @app.get("/api/canonical/search", response_class=JSONResponse)
     async def canonical_search(
         q: str | None = None,
@@ -46,20 +48,22 @@ def register_canonical_routes(app: FastAPI) -> None:
             )
             retrieved_topics = list(context.get("retrieved_topics") or []) if context else []
             results = [
-                _serialize_topic(topic, library, browse=False)
+                _with_related_archaeology(_serialize_topic(topic, library, browse=False), archaeology)
                 for topic in retrieved_topics
                 if _topic_matches_filters(topic, object_type, review_status, content_status)
             ]
             metadata = dict(context.get("metadata") or {}) if context else {}
         else:
-            results = _browse_topics(
+            results = [
+                _with_related_archaeology(result, archaeology)
+                for result in _browse_topics(
                 library,
                 limit=max(1, min(int(limit), 25)),
                 object_type=object_type,
                 review_status=review_status,
                 content_status=content_status,
                 include_placeholders=include_placeholders,
-            )
+            )]
             metadata = {
                 "retrieval_method": "browse",
                 "topic_count": len(results),
@@ -98,7 +102,23 @@ def register_canonical_routes(app: FastAPI) -> None:
         obj = library.objects_by_id.get(normalized_id)
         if obj is None:
             return JSONResponse({"error": "canonical object not found"}, status_code=404)
-        return JSONResponse(_serialize_object_detail(obj, library))
+        if obj.type == "archaeology":
+            try:
+                item = archaeology.get_item(normalized_id)
+            except Exception:
+                item = None
+            if item is not None:
+                return JSONResponse(
+                    {
+                        "id": normalized_id,
+                        "type": "archaeology_compatibility",
+                        "status": "deprecated",
+                        "replacement": {"domain": "archaeology", "id": normalized_id},
+                        "message": "This legacy CKL archaeology record is a compatibility link. Archaeology is authoritative.",
+                        "archaeology": item,
+                    }
+                )
+        return JSONResponse(_with_related_archaeology(_serialize_object_detail(obj, library), archaeology))
 
 
 def register_canonical_editor_routes(app: FastAPI, *, templates: Any) -> None:
@@ -351,6 +371,17 @@ def _serialize_object(obj: Any) -> dict[str, Any]:
     return payload
 
 
+def _with_related_archaeology(payload: dict[str, Any], archaeology: ArchaeologyService) -> dict[str, Any]:
+    """Attach compact archaeology cards without making CKL own their media."""
+
+    result = dict(payload)
+    try:
+        result["related_archaeology"] = archaeology.related_to_ckl(str(result.get("id") or ""))
+    except Exception:  # noqa: BLE001 - an optional evidence domain must not break CKL
+        result["related_archaeology"] = []
+    return result
+
+
 def _serialize_source(source: Any) -> dict[str, Any]:
     payload = source.to_dict() if hasattr(source, "to_dict") else dict(source)
     return {
@@ -435,6 +466,8 @@ def _topic_matches_filters(
     review_status: str | None,
     content_status: str | None,
 ) -> bool:
+    if str(topic.get("type") or "") == "archaeology":
+        return False
     if object_type and object_type.lower() != "all" and str(topic.get("type") or "") != object_type:
         return False
     if review_status and review_status.lower() != "all" and str(topic.get("review_status") or "") != review_status:
@@ -452,6 +485,8 @@ def _object_matches_filters(
     *,
     include_placeholders: bool,
 ) -> bool:
+    if getattr(obj, "type", "") == "archaeology":
+        return False
     if not include_placeholders and str(getattr(obj, "content_status", "")) == "placeholder":
         return False
     if object_type and object_type.lower() != "all" and getattr(obj, "type", None) != object_type:

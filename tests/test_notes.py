@@ -65,7 +65,7 @@ class StudyDatabaseTests(unittest.TestCase):
                 )
             ]
 
-        self.assertEqual(versions, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
+        self.assertEqual(versions, list(range(1, 35)))
 
         with connect(self.path) as connection:
             saved_studies = connection.execute(
@@ -112,7 +112,7 @@ class StudyDatabaseTests(unittest.TestCase):
                 """
             ).fetchone()
 
-        self.assertEqual(versions, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])
+        self.assertEqual(versions, list(range(1, 35)))
         self.assertIsNotNone(saved_studies)
 
     def test_biblical_places_seed_and_references_load_from_database(self):
@@ -427,6 +427,37 @@ class StudyDatabaseTests(unittest.TestCase):
         self.assertNotEqual(updated["updated_at"], note["updated_at"])
         self.assertEqual(updated["body"], "Updated note")
         self.assertEqual(updated["canonical_object_ids"], ["shechem", "abraham"])
+
+    def test_standalone_note_can_be_created_and_later_linked_to_scripture(self):
+        note = create_note({"body": "Capture this sermon thought before it is lost."}, path=self.path)
+
+        self.assertIsNone(note["book"])
+        self.assertIsNone(note["chapter"])
+        self.assertEqual(note["start_verse"], None)
+        self.assertEqual(list_notes(path=self.path), [note])
+
+        linked = update_note(
+            note["id"],
+            {
+                "book": "John",
+                "chapter": 3,
+                "start_verse": 16,
+                "end_verse": 16,
+                "selected_text": "For God so loved the world",
+            },
+            path=self.path,
+        )
+
+        self.assertEqual(linked["book"], "John")
+        self.assertEqual(linked["chapter"], 3)
+        self.assertEqual(list_notes("John", 3, path=self.path), [linked])
+
+    def test_notes_without_references_sort_with_most_recently_edited_first(self):
+        older = create_note({"body": "Earlier thought"}, path=self.path)
+        time.sleep(0.001)
+        newer = create_note({"body": "Later thought"}, path=self.path)
+
+        self.assertEqual([note["id"] for note in list_notes(path=self.path)], [newer["id"], older["id"]])
 
     def test_delete_note(self):
         note = create_note(_note_data(), path=self.path)

@@ -373,6 +373,17 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("BHF_MEMORY_PATH: /app/.bhf-data/sessions", compose)
         self.assertNotIn("./.bhf:/app/.bhf\n", compose)
 
+    def test_container_startup_applies_study_database_migrations(self):
+        dockerfile = Path("Dockerfile").read_text(encoding="utf-8")
+        entrypoint = Path("scripts/docker-entrypoint.sh").read_text(encoding="utf-8")
+        dockerignore = Path(".dockerignore").read_text(encoding="utf-8")
+
+        self.assertIn("COPY . .", dockerfile)
+        self.assertIn("ENV BHF_STUDY_DB_PATH=/app/.bhf-data/study.sqlite", dockerfile)
+        self.assertIn("initialize_database", entrypoint)
+        self.assertIn('os.environ["BHF_STUDY_DB_PATH"]', entrypoint)
+        self.assertNotIn("data_sources/", dockerignore)
+
     def test_status_script_collapses_active_panel_after_success(self):
         status_script = Path("bhf_web/static/htmx-status.js").read_text(encoding="utf-8")
         controller_script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
@@ -391,6 +402,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("Waiting on the answer...", script)
         self.assertIn("WAITING_MESSAGE_BASE_DELAY_MS", script)
         self.assertIn("Math.random()", script)
+        self.assertIn("lastWaitingMessage", script)
+        self.assertNotIn("waitingMessageIndex", script)
         self.assertNotIn("The agent is running. Status updates will appear above.", script)
         self.assertNotIn("progress-track", script)
         self.assertNotIn("toFixed(3)", script)
@@ -401,6 +414,10 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("createStudyAction", script)
         self.assertIn("dispatchStudyAction", script)
         self.assertIn("resolveContextAction", script)
+        self.assertIn("copyContextToClipboard", script)
+        self.assertIn("formatContextReferenceForClipboard", script)
+        self.assertIn("navigator?.clipboard?.writeText", script)
+        self.assertIn('document.execCommand("copy")', script)
         self.assertIn("remove_highlight", script)
         self.assertIn("isContextHighlighted", script)
         self.assertIn("applyVerseStateIndicatorsToReader", script)
@@ -481,6 +498,9 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("word_study_prompt_context", script)
         self.assertIn("data-word-study-position", script)
         self.assertIn("function wireWordStudyChoiceControls", script)
+        self.assertIn("function renderWordStudyTranslation", script)
+        self.assertIn("function wordStudyLanguageAttributes", script)
+        self.assertIn("original text’s reading order", script)
         self.assertIn("word_position: studyAction.wordPosition", script)
         self.assertIn("surface_form: studyAction.surfaceForm", script)
         self.assertIn("handleContextSubmenuHover", script)
@@ -507,6 +527,9 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("loadSavedStudies", study_script)
         self.assertIn("formatReference", study_script)
         self.assertIn("prettyStudyType", study_script)
+        self.assertIn("savePersonalStudyNotes", study_script)
+        self.assertIn("contextPresentationMarkdown", script)
+        self.assertIn("data-deterministic-save", script)
 
         search_script = Path("bhf_web/static/htmx-search.js").read_text(encoding="utf-8")
         self.assertIn("submitBibleSearch", search_script)
@@ -757,6 +780,10 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn(".word-study-scholar", style)
         self.assertIn(".word-study-key-values", style)
         self.assertIn(".word-study-choice", style)
+        self.assertIn(".word-study-translation", style)
+        self.assertIn(".word-study-order-note", style)
+        self.assertIn(".word-study-source-word", style)
+        self.assertIn('html[data-theme="dark"] .word-study-fact span', style)
         self.assertIn(".translation-selector-overlay {\n  position: fixed;", style)
         self.assertIn("z-index: 1000;", style)
         self.assertIn("align-items: center;", style)
@@ -860,6 +887,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("book-select", response["body"])
         self.assertIn("data-theme-toggle", response["body"])
         self.assertIn("reader-context-menu", response["body"])
+        self.assertIn("data-context-action=\"copy\"", response["body"])
         self.assertIn("data-context-action=\"ask_bhf\"", response["body"])
         self.assertIn("data-context-action=\"ancient_context\"", response["body"])
         self.assertIn("data-context-action=\"literary_context\"", response["body"])
@@ -877,6 +905,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("data-context-action=\"view_historical_layer\"", response["body"])
         self.assertIn("data-context-action=\"save_study\"", response["body"])
         self.assertIn("data-context-action=\"word_study\"", response["body"])
+        self.assertIn("data-context-action=\"archaeology\"", response["body"])
         self.assertIn("data-context-submenu=\"study\"", response["body"])
         self.assertIn("data-context-submenu=\"context\"", response["body"])
         self.assertIn("data-context-submenu=\"reference\"", response["body"])
@@ -926,6 +955,8 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("data-testid=\"note-canonical-object-ids\"", response["body"])
         self.assertIn("data-app-section=\"explore\"", response["body"])
         self.assertIn("name=\"question\"", response["body"])
+        self.assertIn("data-testid=\"ask-save-study\"", response["body"])
+        self.assertNotIn('data-note-save-status role="status" aria-live="polite">Ready</span>', response["body"])
         self.assertNotIn("data-question-scope", response["body"])
         self.assertNotIn("name=\"question_scope\"", response["body"])
         self.assertNotIn("data-testid=\"chapter-prev\"", response["body"])
@@ -975,7 +1006,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v22"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v23"', service_worker["body"])
         self.assertIn("cacheFirstApi", service_worker["body"])
         self.assertIn("isRefreshRequest", service_worker["body"])
         self.assertIn("networkFirstNavigation", service_worker["body"])
@@ -997,7 +1028,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("installed_translations", offline_data["offline_boundary"]["available"])
         self.assertEqual(
             [pack["id"] for pack in offline_data["packs"]],
-            ["core", "study", "maps", "sources"],
+            ["core", "study", "maps", "sources", "archaeology"],
         )
         self.assertTrue(offline_data["packs"][0]["required"])
         self.assertIn("mutationQueue", offline_data["client_stores"])
@@ -1030,10 +1061,12 @@ class WebAppTests(unittest.TestCase):
         index = asgi_request("GET", "/")
         http_script = asgi_request("GET", "/static/api/http.js")
         offline_db = asgi_request("GET", "/static/offline/db.js")
+        study_vault = asgi_request("GET", "/static/study-vault.js")
         pwa_script = asgi_request("GET", "/static/pwa.js")
 
         self.assertEqual(index["status"], 200)
         self.assertIn("/static/offline/db.js", index["body"])
+        self.assertIn("/static/study-vault.js", index["body"])
         self.assertLess(index["body"].index("/static/offline/db.js"), index["body"].index("/static/api/http.js"))
         self.assertIn("data-offline-pack=\"study\"", index["body"])
         self.assertIn("data-offline-pack=\"maps\"", index["body"])
@@ -1050,6 +1083,10 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("data-offline-readiness-list", index["body"])
         self.assertIn("data-offline-refresh-all", index["body"])
         self.assertIn("data-offline-clear-caches", index["body"])
+        self.assertIn("data-study-vault-export", index["body"])
+        self.assertIn("data-study-vault-import", index["body"])
+        self.assertIn("data-study-vault-share", index["body"])
+        self.assertIn("data-vault-onedrive-connect", index["body"])
 
         self.assertEqual(http_script["status"], 200)
         self.assertIn("offlineFallback", http_script["body"])
@@ -1077,6 +1114,8 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("upsertOfflineMapStudy", offline_db["body"])
         self.assertIn("readTextResponse", offline_db["body"])
         self.assertIn("renderSavedStudyHtml", offline_db["body"])
+        self.assertIn("renderFormattedText", offline_db["body"])
+        self.assertIn("personal_notes", offline_db["body"])
         self.assertIn("mutationQueueSummary", offline_db["body"])
         self.assertIn("markMutationAttempt", offline_db["body"])
         self.assertIn("SNAPSHOT_STORES", offline_db["body"])
@@ -1086,6 +1125,16 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("missing_required_packs", offline_db["body"])
         self.assertIn("REBUILDABLE_STORES", offline_db["body"])
         self.assertIn("clearRebuildableCaches", offline_db["body"])
+        self.assertIn("mergeSnapshot", offline_db["body"])
+        self.assertIn("tombstones", offline_db["body"])
+
+        self.assertEqual(study_vault["status"], 200)
+        self.assertIn("encryptSnapshot", study_vault["body"])
+        self.assertIn("decryptVault", study_vault["body"])
+        self.assertIn("Files.ReadWrite.AppFolder", study_vault["body"])
+        self.assertIn("navigator.share", study_vault["body"])
+        self.assertIn("privateCloudDatabase", study_vault["body"])
+        self.assertIn("CloudKit.js", study_vault["body"])
 
         self.assertEqual(pwa_script["status"], 200)
         self.assertIn("replayQueuedMutations", pwa_script["body"])
@@ -1094,7 +1143,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("reconcileCachedTranslations", pwa_script["body"])
         self.assertIn("installOfflinePack", pwa_script["body"])
         self.assertIn("warmDefaultOfflinePacks", pwa_script["body"])
-        self.assertIn('CACHE_VERSION = "v17"', pwa_script["body"])
+        self.assertIn('CACHE_VERSION = "v18"', pwa_script["body"])
         self.assertIn("ensureServiceWorkerReady", pwa_script["body"])
         self.assertIn("Installed, restart app", pwa_script["body"])
         self.assertIn("Needs HTTPS", pwa_script["body"])
@@ -1175,6 +1224,20 @@ class WebAppTests(unittest.TestCase):
         urls = [entry["url"] for entry in data["responses"]]
         self.assertIn("/api/sources", urls)
         self.assertGreaterEqual(len(data["sources"]), 1)
+
+    def test_archaeology_offline_pack_contains_text_and_only_allowed_media(self):
+        with self._temp_curation_db() as db_path:
+            initialize_database(db_path)
+            with patch("bhf_web.app.STUDY_DB_PATH", db_path):
+                test_app = create_app()
+                response = asgi_request("GET", "/api/offline/packs/archaeology", test_app=test_app)
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertEqual(data["pack_id"], "archaeology")
+        self.assertGreaterEqual(len(data["items"]), 8)
+        self.assertEqual(data["media"], [])
+        self.assertIn("/api/maps/archaeology", [entry["url"] for entry in data["responses"]])
 
     def test_get_curation_page_returns_200(self):
         with self._temp_curation_db() as db_path:
@@ -1318,6 +1381,24 @@ class WebAppTests(unittest.TestCase):
         self.assertTrue(pilate["source_id"])
         self.assertIn("source", pilate)
         self.assertEqual(pilate["marker_kind"], "archaeology")
+
+    def test_archaeology_evidence_api_returns_packet_and_details(self):
+        response = asgi_request(
+            "GET",
+            "/api/archaeology/for-passage?book=John&chapter=9&verse_start=7&verse_end=11",
+        )
+
+        self.assertEqual(response["status"], 200)
+        data = json.loads(response["body"])
+        self.assertIn("archaeological_items", data)
+        self.assertEqual(data["archaeological_items"][0]["id"], "pool-of-siloam")
+
+        detail = asgi_request("GET", "/api/archaeology/items/pool-of-siloam")
+        self.assertEqual(detail["status"], 200)
+        self.assertEqual(json.loads(detail["body"])["id"], "pool-of-siloam")
+
+        missing = asgi_request("GET", "/api/archaeology/items/not-an-item")
+        self.assertEqual(missing["status"], 404)
 
     def test_manuscripts_route_returns_markers(self):
         response = asgi_request("GET", "/api/maps/manuscripts")
@@ -2038,11 +2119,31 @@ class WebAppTests(unittest.TestCase):
         self.assertEqual(response["status"], 200)
         self.assertIn("Answer", response["body"])
         self.assertIn("Short Answer", response["body"])
+        self.assertNotIn("<h2>Answer</h2>", response["body"])
         self.assertNotIn("Profile used", response["body"])
         self.assertNotIn("Local knowledge used", response["body"])
         self.assertNotIn("Canonical Context", response["body"])
         self.assertNotIn("Metadata", response["body"])
         self.assertNotIn("local-secret", response["body"])
+
+    def test_completed_ai_summary_can_be_saved_with_personal_notes(self):
+        data = _valid_form()
+        data.update(
+            {
+                "reader_book": "Romans",
+                "reader_chapter": "12",
+                "reader_start_verse": "1",
+                "reader_end_verse": "2",
+                "reader_selected_text": "I beseech you therefore, brethren.",
+            }
+        )
+        with patch("bhf_web.app.BHFAgent", SuccessfulJobAgent):
+            response = asgi_request("POST", "/ask", data=data)
+
+        self.assertEqual(response["status"], 200)
+        self.assertIn("data-device-study", response["body"])
+        self.assertIn("data-personal-notes", response["body"])
+        self.assertIn("Save Study", response["body"])
 
     def test_post_ask_invalid_config_returns_friendly_error(self):
         data = _valid_form()

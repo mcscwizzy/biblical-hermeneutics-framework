@@ -1,5 +1,15 @@
 # Canonical Knowledge Library
 
+## Archaeology boundary
+
+CKL is not the authoritative home of archaeological evidence. It stores
+curated biblical context, people, places, events, themes, and interpretation.
+The Archaeology subsystem owns material evidence and its media/licensing.
+Legacy CKL objects in `objects/archaeology/` remain compatibility records for
+stable historical IDs during migration; new archaeological content must be
+authored in the archaeology domain. CKL UI can show compact related-evidence
+cards without copying archaeological detail or image metadata.
+
 ## Runtime Storage
 
 CKL JSON files remain the authoritative authoring source. They are human-readable,
