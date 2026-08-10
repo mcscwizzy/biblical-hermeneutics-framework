@@ -9,6 +9,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Sequence
 
+from .evidence import RetrievedClaimEvidence, rank_claims
 from .normalization import normalize_alias, normalize_id, tokenize_query
 from .query_analysis import (
     AmbiguousEntityCandidate,
@@ -463,6 +464,34 @@ class CanonicalLibrary:
             include_placeholders=include_placeholders,
             allowed_statuses=allowed_statuses,
         )
+
+    def retrieve_claim_evidence(
+        self,
+        question: str,
+        object_ids: Sequence[str],
+        *,
+        parent_scores: dict[str, float] | None = None,
+        requested_dimensions: Sequence[str] = (),
+        scripture_references: Sequence[str] = (),
+        limit_per_object: int = 3,
+    ) -> dict[str, list[RetrievedClaimEvidence]]:
+        """Rank authored claims within already relevant object candidates."""
+
+        self._ensure_loaded()
+        ranked: dict[str, list[RetrievedClaimEvidence]] = {}
+        for object_id in dict.fromkeys(normalize_id(value) for value in object_ids):
+            obj = self.objects_by_id.get(object_id)
+            if obj is None:
+                continue
+            ranked[object_id] = rank_claims(
+                question,
+                obj,
+                parent_relevance=float((parent_scores or {}).get(object_id, 0.0)),
+                requested_dimensions=requested_dimensions,
+                scripture_references=scripture_references,
+                limit=limit_per_object,
+            )
+        return ranked
 
     def retrieve_by_scripture_reference(
         self,

@@ -1,0 +1,56 @@
+{
+  "id": "ritual-purity-and-communal-holiness",
+  "type": "cultural_background",
+  "title": "Ritual Purity and Communal Holiness",
+  "aliases": ["ritual purity", "clean and unclean", "purity and holiness", "Levitical purity"],
+  "summary": "A source-backed distinction between ritual impurity, moral offense, sanctuary access, and holy communal life in Leviticus.",
+  "historical_context": "Leviticus assigns different causes, effects, remedies, and sanctions to bodily impurity and moral violations. Ritual impurity can arise without an act of personal wrongdoing.",
+  "ancient_near_east_context": "Comparative ritual texts may clarify ancient concerns about sacred space and impurity, but Israelite categories must be derived from Leviticus's own terminology and structure.",
+  "literary_context": "Leviticus 11-15 treats clean and unclean conditions, while Leviticus 18-20 addresses prohibited conduct and holy communal life; the sections are related but not interchangeable.",
+  "covenantal_significance": "Purity instructions regulate life around God's dwelling and Israel's holiness, while moral commands govern covenant fidelity; later canonical reuse requires attention to changed contexts.",
+  "intertextuality": ["Leviticus 11-15 and 18-20 supply distinct contexts for later purity language in the Gospels and letters."],
+  "timeline": [],
+  "maps": [],
+  "archaeology": [],
+  "hebrew_words": ["tame", "tahor", "qadosh"],
+  "greek_words": [],
+  "related_people": ["aaron"],
+  "related_places": [],
+  "related_events": [],
+  "related_objects": [
+    {"id": "leviticus", "relationship": "primary-text", "weight": 10, "notes": "Primary literary setting for the distinction."},
+    {"id": "priesthood", "relationship": "institutional-context", "weight": 8, "notes": "Priestly discernment and sacred-space responsibilities."}
+  ],
+  "scripture_references": [
+    {"reference": "Leviticus 11", "relationship": "primary", "notes": "Clean and unclean animals."},
+    {"reference": "Leviticus 12", "relationship": "primary", "notes": "Purification after childbirth."},
+    {"reference": "Leviticus 13", "relationship": "primary", "notes": "Priestly examination of skin disease and garments."},
+    {"reference": "Leviticus 14", "relationship": "primary", "notes": "Purification rites and affected houses."},
+    {"reference": "Leviticus 15", "relationship": "primary", "notes": "Bodily discharges and purification."},
+    {"reference": "Leviticus 18", "relationship": "primary", "notes": "Prohibited conduct."},
+    {"reference": "Leviticus 19", "relationship": "primary", "notes": "Holy communal life."},
+    {"reference": "Leviticus 20", "relationship": "primary", "notes": "Offenses and sanctions."}
+  ],
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
+    {"note": "Do not use 'unclean' as a synonym for personal guilt in every Levitical context.", "note_type": "interpretive-caution", "certainty": "high", "dispute_status": "broad-consensus", "sources": ["levine-leviticus", "wenham-leviticus"]}
+  ],
+  "common_questions": ["Does ritual impurity always mean personal sin?", "How are purity and holiness related in Leviticus?"],
+  "sources": [
+    {"id": "leviticus-11-20", "title": "Leviticus 11-20", "author": "", "publisher": "", "year": null, "locator": "Leviticus 11:1-20:27", "url": "", "source_type": "scripture", "supports": ["purity-distinction"], "notes": "Primary biblical text."},
+    {"id": "levine-leviticus", "title": "The JPS Torah Commentary: Leviticus", "author": "Baruch A. Levine", "publisher": "Jewish Publication Society", "year": 1989, "locator": "Commentary on Leviticus 11-20", "url": "https://jps.org/books/jps-torah-commentary-leviticus/", "source_type": "reference-work", "supports": ["purity-distinction"], "notes": "Jewish commentary integrating Hebrew text and modern scholarship."},
+    {"id": "wenham-leviticus", "title": "The Book of Leviticus", "author": "Gordon J. Wenham", "publisher": "Eerdmans", "year": 1979, "locator": "Commentary on Leviticus 11-20", "url": "https://www.eerdmans.com/9780802825223/the-book-of-leviticus/", "source_type": "reference-work", "supports": ["purity-distinction"], "notes": "Literary and ritual-comparative commentary."}
+  ],
+  "claims": [
+    {"id": "purity-distinction", "claim": "Leviticus distinguishes ritual impurity from moral offenses rather than treating every unclean condition as personal sin.", "claim_type": "literary", "certainty": "strong_consensus", "dispute_status": "minor_scholarly_disagreement", "scripture_references": ["Leviticus 11", "Leviticus 12", "Leviticus 13", "Leviticus 14", "Leviticus 15", "Leviticus 18", "Leviticus 19", "Leviticus 20"], "source_ids": ["leviticus-11-20", "levine-leviticus", "wenham-leviticus"], "traditions": ["Academic", "Jewish", "Christian"], "rationale": "The sections describe different causes, consequences, remedies, and sanctions, although terminology and models remain debated.", "notes": ""}
+  ],
+  "retrieval_metadata": {"aliases": ["ritual impurity", "moral impurity"], "search_terms": ["Leviticus clean unclean sin", "ritual purity personal guilt"], "common_questions": ["Is being unclean a sin?"], "related_topics": ["Leviticus", "priesthood", "holiness"], "frequently_confused_with": ["personal moral guilt"], "semantic_keywords": ["purity", "impurity", "clean", "unclean", "holiness"]},
+  "importance": 90,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "draft",
+  "review_status": "in_review",
+  "confidence": "medium",
+  "human_review_required": true
+}

@@ -5,6 +5,7 @@ from __future__ import annotations
 import re
 from difflib import SequenceMatcher
 from dataclasses import dataclass, field
+from functools import lru_cache
 from typing import TYPE_CHECKING, Any, Mapping, Protocol
 
 from .normalization import STOP_WORDS, normalize_alias, normalize_id, normalize_text, tokenize_query
@@ -116,6 +117,9 @@ SEARCH_STOP_WORDS = frozenset(
         "my",
         "our",
         "their",
+        "his",
+        "her",
+        "its",
         "them",
         "us",
         "it",
@@ -386,9 +390,16 @@ def canonical_search_terms(*values: str) -> set[str]:
 def query_search_terms(value: str) -> list[str]:
     """Return ordered, stop-word-filtered search terms for a query or field."""
 
+    return list(_query_search_terms_cached(value))
+
+
+@lru_cache(maxsize=16384)
+def _query_search_terms_cached(value: str) -> tuple[str, ...]:
+    """Cache normalization for immutable CKL field text used across queries."""
+
     normalized = normalize_text(value)
     if not normalized:
-        return []
+        return ()
     terms: list[str] = []
     seen: set[str] = set()
     for token in normalized.split():
@@ -396,7 +407,7 @@ def query_search_terms(value: str) -> list[str]:
             continue
         seen.add(token)
         terms.append(token)
-    return terms
+    return tuple(terms)
 
 
 def infer_query_categories(query: str, query_terms: Sequence[str] | None = None) -> list[str]:
@@ -698,14 +709,16 @@ def score_text_match(
 
     phrases = _candidate_phrases(query_terms)
     if phrases:
+        phrase_texts = [(" ".join(phrase), phrase) for phrase in phrases]
         for field_name in exact_field_order:
             values = fields.get(field_name, [])
             for value in values:
                 tokens = query_search_terms(value)
                 if not tokens:
                     continue
-                for phrase in phrases:
-                    if not _contains_phrase(tokens, phrase):
+                padded_tokens = f" {' '.join(tokens)} "
+                for phrase_text, phrase in phrase_texts:
+                    if f" {phrase_text} " not in padded_tokens:
                         continue
                     return (
                         phrase_match_bonus(field_name, len(phrase), scripture_mode=scripture_mode),

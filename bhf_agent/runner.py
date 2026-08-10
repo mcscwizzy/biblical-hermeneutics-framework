@@ -79,7 +79,6 @@ from .validation import validate_response
 from framework.canonical_library import (
     CanonicalLibrary,
     CKLRuntimeCache,
-    CKLRetrievalService,
     JsonPublicAnswerCache,
     NullPublicAnswerCache,
     PublicAnswerCache,
@@ -93,6 +92,8 @@ from framework.canonical_library import (
     normalize_public_question,
     public_cache_key,
 )
+from framework.canonical_library.query_analysis import analyze_query as analyze_canonical_query
+from framework.canonical_library.retrieval import query_search_terms
 from framework.lexical import LexicalLookupService
 from framework.lexical.service import format_lexical_unavailable_context
 from framework.commentary.evidence import (
@@ -298,41 +299,41 @@ def _canonical_miss_reason(
         "answer_mode": answer_mode,
     }
 
+    diagnostic_query = canonical_query or question
     try:
-        service = CKLRetrievalService(library=library)
-        search_response = service.search(
-            canonical_query or question,
+        search_results = library.retrieve_hybrid(
+            diagnostic_query,
             limit=max(max_results * 4, max_results, 12),
-            min_score=0.0,
-            debug=True,
+            apply_thresholds=False,
+            exclude_deprecated=False,
+            exclude_rejected=False,
+            include_placeholders=True,
+            allowed_statuses=None,
+        )
+        analysis = analyze_canonical_query(
+            diagnostic_query,
+            book_alias_lookup=getattr(library, "_book_alias_lookup", {}),
         )
     except Exception as exc:  # noqa: BLE001 - diagnostics must never block answers
         gap["rejection_reasons"] = ["retrieval_failed"]
         gap["retrieval_error"] = str(exc)
         return gap
 
-    analysis = search_response.analysis
-    gap["retrieval_terms"] = list(dict.fromkeys(analysis.terms or []))
+    gap["retrieval_terms"] = list(dict.fromkeys(query_search_terms(diagnostic_query)))
     gap["detected_scripture_references"] = [
         _scripture_reference_text(reference)
         for reference in analysis.scripture_references
         if _scripture_reference_text(reference)
     ]
-    gap["detected_books"] = list(
-        dict.fromkeys(
-            str(reference.book).strip()
-            for reference in analysis.scripture_references
-            if str(getattr(reference, "book", "") or "").strip()
-        )
-    )
+    gap["detected_books"] = list(analysis.detected_books)
 
     selected_ids = set(_canonical_context_result_ids(canonical_context))
     rejected_results: list[dict[str, Any]] = []
     rejection_reasons: set[str] = set()
 
-    for result in search_response.results:
-        obj = library.objects_by_id.get(result.id)
-        if obj is None or result.id in selected_ids:
+    for result in search_results:
+        obj = result.object
+        if obj is None or obj.id in selected_ids:
             continue
 
         reasons: list[str] = []
@@ -355,7 +356,7 @@ def _canonical_miss_reason(
                 reasons.append("rejected_review_status")
             if not reasons:
                 reasons.append("governance_filtered")
-        elif float(result.score or 0) < float(minimum_relevance_score) and _search_result_match_type(result) not in {"exact", "scripture"}:
+        elif float(result.score or 0) < float(minimum_relevance_score) and _search_result_match_type(result) not in {"id", "title", "alias", "exact", "scripture"}:
             reasons.append("below_relevance_threshold")
 
         if not reasons:
@@ -363,23 +364,23 @@ def _canonical_miss_reason(
 
         rejection_reasons.update(reasons)
         rejected_results.append(
-                {
-                    "id": result.id,
-                    "title": result.title,
-                    "score": result.score,
-                    "match_type": _search_result_match_type(result),
-                    "matched_fields": list(result.matched_fields),
-                    "matched_terms": list(result.matched_terms),
-                    "review_status": result.review_status,
-                "content_status": result.content_status,
-                "confidence": result.confidence,
+            {
+                "id": obj.id,
+                "title": obj.title,
+                "score": result.score,
+                "match_type": _search_result_match_type(result),
+                "matched_fields": list(result.matched_fields),
+                "matched_terms": list(result.matched_terms),
+                "review_status": obj.review_status,
+                "content_status": obj.content_status,
+                "confidence": obj.confidence,
                 "rejection_reasons": reasons,
             }
         )
         if len(rejected_results) >= 5:
             break
 
-    if not search_response.results:
+    if not search_results:
         rejection_reasons.add("no_relevant_ckl_results")
     elif not rejection_reasons:
         rejection_reasons.add("below_relevance_threshold")

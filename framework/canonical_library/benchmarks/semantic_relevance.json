@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "description": "Human-readable relevance judgments for evaluating an optional semantic candidate against deterministic CKL retrieval.",
+  "queries": [
+    {
+      "id": "ruth-inheritance-risk",
+      "query": "Why would redeeming Ruth endanger the nearer redeemer's inheritance?",
+      "limit": 8,
+      "relevant_ids": ["ruth", "boaz", "ruth-the-moabite", "kinship-inheritance-and-redemption"]
+    },
+    {
+      "id": "john-synagogue-exclusion",
+      "query": "What does being put out of the synagogue mean in John?",
+      "limit": 8,
+      "relevant_ids": ["john", "what-is-the-synagogue", "synagogue-life-and-exclusion"]
+    },
+    {
+      "id": "acts-citizenship",
+      "query": "How does Paul's Roman citizenship affect the court scenes in Acts?",
+      "limit": 8,
+      "relevant_ids": ["acts", "paul", "roman-citizenship", "roman-citizenship-and-legal-process"]
+    },
+    {
+      "id": "philemon-debt",
+      "query": "What debt does Paul take onto his own account for Onesimus?",
+      "limit": 8,
+      "relevant_ids": ["philemon", "paul", "onesimus", "patronage", "patronage-hospitality-and-debt"]
+    },
+    {
+      "id": "leviticus-purity",
+      "query": "Does ritual impurity in Leviticus always mean personal sin?",
+      "limit": 8,
+      "relevant_ids": ["leviticus", "priesthood", "ritual-purity-and-communal-holiness"]
+    },
+    {
+      "id": "third-john-hospitality",
+      "query": "What hospitality does 3 John commend and what does Diotrephes refuse?",
+      "limit": 8,
+      "relevant_ids": ["3-john", "patronage", "patronage-hospitality-and-debt"]
+    },
+    {
+      "id": "philippians-patronage",
+      "query": "Was the Philippians' gift patronage, friendship, or gospel partnership?",
+      "limit": 8,
+      "relevant_ids": ["philippians", "paul", "patronage", "patronage-hospitality-and-debt"]
+    }
+  ]
+}

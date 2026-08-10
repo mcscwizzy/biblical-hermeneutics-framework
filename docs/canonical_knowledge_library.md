@@ -61,11 +61,21 @@ temporary database, verifies metadata and integrity, then atomically replaces th
 target path. If validation or verification fails, the previous database remains
 in place.
 
-SQLite stores the full validated canonical object in `payload_json` and indexes
-the fields needed for runtime retrieval: ID, type, normalized title, aliases,
-keywords, relationships, and scripture references. The BHF agent still controls
-query analysis, deterministic CKL retrieval, context package construction, and
+SQLite stores the full validated canonical object in `payload_json` for
+compatibility and also normalizes claims, claim scripture references, sources,
+claim-to-source support, aliases, keywords, relationships, and object scripture
+references. An FTS5 index covers high-signal object and claim text. Runtime
+retrieval fuses deterministic exact/keyword/scripture scoring with bounded BM25
+candidates, then ranks claims inside the selected objects and hydrates only the
+sources linked to those claims. The BHF agent still controls query analysis,
+guarded one-hop relationship expansion, context package construction, and
 language-model prompting. The model does not query SQLite directly.
+
+The current generated database schema is version 3 and the retrieval index is
+version 2. Older artifacts fail with a rebuild command instead of being opened
+silently. The build records both the semantic inventory fingerprint and a cheap
+source inventory signature so normal startup can detect stale artifacts without
+reparsing the complete JSON library.
 
 Configuration example:
 
@@ -495,11 +505,67 @@ Smaller models usually improve when they are given high-quality structure instea
 
 ## Hybrid Retrieval
 
-`retrieve_hybrid()` now wraps the deterministic local retrieval stack and combines scripture, category, phrase, fuzzy alias, and keyword scoring without requiring any external vector store. It stays fully offline and deterministic.
+`retrieve_hybrid()` wraps the deterministic local retrieval stack and combines
+Scripture, category, phrase, fuzzy alias, keyword, and SQLite FTS5/BM25 scoring
+without requiring an external vector store. It stays fully offline and
+deterministic. The JSON backend retains deterministic keyword fallback but does
+not promise result-for-result parity with SQLite on low-signal searches because
+it has no FTS5 index.
+
+Broad SQLite queries prefilter keyword rows to the actual query terms, cache
+validated object hydration, and cache immutable field normalization. This keeps
+the ranking formula stable while avoiding repeated scans and validation of
+irrelevant index data.
+
+## Retrieval Benchmarks and Golden Cases
+
+The checked-in benchmark corpus at
+`framework/canonical_library/benchmarks/retrieval_latency.json` covers ten
+broad, multi-term queries. Run it against a built database with:
+
+```bash
+python tools/benchmark_ckl_retrieval.py \
+  --database .bhf/ckl.sqlite \
+  --iterations 5 \
+  --warmups 1
+```
+
+The report includes per-query samples, median and p95 latency, anchor failures,
+and a result fingerprint. Optional `--max-median-ms` and `--max-p95-ms` values
+turn local or CI expectations into explicit gates without embedding
+machine-specific timing limits in the corpus.
+
+Object-ranking goldens remain in `tests/fixtures/ckl_golden_queries.json`.
+Claim-ranking goldens in `tests/fixtures/ckl_claim_golden_queries.json` also
+assert selected claim IDs, minimum scores, hydrated source IDs, and Scripture
+references.
 
 ## Future Semantic Search
 
 The retrieval layer still exposes `retrieve_semantic()` as the explicit future hook. It currently raises `NotImplementedError`, which keeps the contract honest while leaving room for a future embedding index or other semantic retrieval engine.
+
+An optional semantic system can already be evaluated without becoming a
+runtime dependency. Produce a JSON mapping from case ID to ranked CKL object
+IDs, then compare it with the deterministic SQLite baseline:
+
+```bash
+python tools/evaluate_ckl_semantic.py \
+  --database .bhf/ckl.sqlite \
+  --candidate-results /path/to/candidate-results.json
+```
+
+The evaluator reports recall@k, reciprocal rank, and NDCG for both systems plus
+candidate-minus-baseline deltas. It imports no embedding or model SDK; candidate
+generation stays optional and outside the deterministic runtime.
+
+## Cultural-Background Review Candidates
+
+The cultural-background inventory includes source-backed candidates for
+kinship/inheritance/redemption, patronage/hospitality/debt, ritual purity,
+synagogue life, and Roman citizenship. They reuse explicit Scripture records
+and academic sources already curated in the richer book records. Their
+governance state is intentionally `in_review` with `human_review_required:
+true`; an AI-authored synthesis is not represented as human scholarly review.
 
 ## Public Answer Cache
 

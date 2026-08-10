@@ -67,6 +67,18 @@ class QuestionDrivenRetrievalTests(unittest.TestCase):
         context = self._context("What is the overall message of 1 Samuel?")
         self.assertEqual(context["retrieved_topics"][0]["id"], "1-samuel")
 
+    def test_saul_fear_question_prefers_person_to_book(self) -> None:
+        context = self._context("How does fear function in Saul's story?")
+        ids = [topic["id"] for topic in context["retrieved_topics"]]
+        self.assertEqual(ids[0], "saul")
+        self.assertLess(ids.index("saul"), ids.index("1-samuel"))
+
+    def test_abrahamic_covenant_is_not_crowded_out_by_books(self) -> None:
+        context = self._context("How is the Abrahamic covenant connected to Genesis 12?")
+        ids = [topic["id"] for topic in context["retrieved_topics"]]
+        self.assertIn("abrahamic-covenant", ids[:2])
+        self.assertLess(ids.index("abrahamic-covenant"), ids.index("genesis"))
+
 
 if __name__ == "__main__":
     unittest.main()

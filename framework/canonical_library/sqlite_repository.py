@@ -12,6 +12,7 @@ from typing import Any, Iterator, Sequence
 
 from .database_builder import verify_database
 from .database_schema import CKL_DATABASE_SCHEMA_VERSION
+from .evidence import RetrievedClaimEvidence, rank_claims
 from .loader import CanonicalLibrary
 from .normalization import normalize_alias, normalize_id, tokenize_query
 from .query_analysis import AmbiguousEntityResolution
@@ -26,6 +27,7 @@ from .retrieval import (
     score_text_match,
     sort_retrieval_results,
 )
+from .retrieval.indexer import inventory_content_signature, inventory_signature
 from .scripture import (
     ScriptureReferenceSpan,
     build_book_alias_lookup,
@@ -35,6 +37,10 @@ from .scripture import (
     scripture_reference_overlaps,
 )
 from .schema import SUPPORTED_CATEGORIES, CanonicalObject, CanonicalValidationError, validate_object
+
+
+_SOURCE_FINGERPRINT_CACHE: dict[str, tuple[str, str]] = {}
+_SOURCE_FINGERPRINT_LOCK = threading.Lock()
 
 
 class SQLiteCanonicalRepository:
@@ -165,6 +171,181 @@ class SQLiteCanonicalRepository:
             for row in rows
         ]
 
+    def get_claims(self, object_ids: Sequence[str]) -> dict[str, list[dict[str, Any]]]:
+        """Bulk-fetch normalized claims with their Scripture/source relationships."""
+
+        ids = sorted({normalize_id(value) for value in object_ids if normalize_id(value)})
+        if not ids:
+            return {}
+        placeholders = ",".join("?" for _ in ids)
+        rows = self._conn.execute(
+            f"""
+            SELECT object_id, claim_id, claim_text, claim_type, certainty,
+                   dispute_status, rationale, notes
+            FROM canonical_claims
+            WHERE object_id IN ({placeholders})
+            ORDER BY object_id, claim_id
+            """,
+            tuple(ids),
+        ).fetchall()
+        references = self._conn.execute(
+            f"""
+            SELECT object_id, claim_id, reference_text
+            FROM canonical_claim_scripture_references
+            WHERE object_id IN ({placeholders})
+            ORDER BY object_id, claim_id, reference_text
+            """,
+            tuple(ids),
+        ).fetchall()
+        source_rows = self._conn.execute(
+            f"""
+            SELECT object_id, claim_id, source_id, relationship, source_order
+            FROM canonical_claim_sources
+            WHERE object_id IN ({placeholders})
+            ORDER BY object_id, claim_id,
+                     CASE relationship WHEN 'source_id' THEN 0 ELSE 1 END,
+                     source_order, source_id
+            """,
+            tuple(ids),
+        ).fetchall()
+        refs_by_claim: dict[tuple[str, str], list[str]] = {}
+        sources_by_claim: dict[tuple[str, str], list[str]] = {}
+        relationships_by_claim: dict[tuple[str, str], dict[str, list[str]]] = {}
+        for row in references:
+            refs_by_claim.setdefault((str(row["object_id"]), str(row["claim_id"])), []).append(
+                str(row["reference_text"])
+            )
+        for row in source_rows:
+            key = (str(row["object_id"]), str(row["claim_id"]))
+            source_id = str(row["source_id"])
+            if str(row["relationship"]) == "source_id" and source_id not in sources_by_claim.setdefault(key, []):
+                sources_by_claim[key].append(source_id)
+            relationships_by_claim.setdefault(key, {}).setdefault(str(row["relationship"]), []).append(source_id)
+        claims: dict[str, list[dict[str, Any]]] = {object_id: [] for object_id in ids}
+        for row in rows:
+            key = (str(row["object_id"]), str(row["claim_id"]))
+            claims[key[0]].append(
+                {
+                    "id": key[1],
+                    "claim": str(row["claim_text"]),
+                    "claim_type": str(row["claim_type"]),
+                    "certainty": str(row["certainty"]),
+                    "dispute_status": str(row["dispute_status"]),
+                    "rationale": str(row["rationale"] or ""),
+                    "notes": str(row["notes"] or ""),
+                    "scripture_references": refs_by_claim.get(key, []),
+                    "source_ids": sources_by_claim.get(key, []),
+                    "source_relationships": relationships_by_claim.get(key, {}),
+                }
+            )
+        return claims
+
+    def get_sources(self, object_ids: Sequence[str]) -> dict[str, list[dict[str, Any]]]:
+        """Bulk-fetch normalized sources and their authored support metadata."""
+
+        ids = sorted({normalize_id(value) for value in object_ids if normalize_id(value)})
+        if not ids:
+            return {}
+        placeholders = ",".join("?" for _ in ids)
+        rows = self._conn.execute(
+            f"""
+            SELECT object_id, source_id, title, author, publisher, year, locator,
+                   url, source_type, notes
+            FROM canonical_sources
+            WHERE object_id IN ({placeholders})
+            ORDER BY object_id, source_id
+            """,
+            tuple(ids),
+        ).fetchall()
+        support_rows = self._conn.execute(
+            f"""
+            SELECT object_id, source_id, supported_item
+            FROM canonical_source_supports
+            WHERE object_id IN ({placeholders})
+            ORDER BY object_id, source_id, supported_item
+            """,
+            tuple(ids),
+        ).fetchall()
+        supports: dict[tuple[str, str], list[str]] = {}
+        for row in support_rows:
+            supports.setdefault((str(row["object_id"]), str(row["source_id"])), []).append(
+                str(row["supported_item"])
+            )
+        sources: dict[str, list[dict[str, Any]]] = {object_id: [] for object_id in ids}
+        for row in rows:
+            key = (str(row["object_id"]), str(row["source_id"]))
+            sources[key[0]].append(
+                {
+                    "id": key[1],
+                    "title": str(row["title"]),
+                    "author": str(row["author"] or ""),
+                    "publisher": str(row["publisher"] or ""),
+                    "year": row["year"],
+                    "locator": str(row["locator"] or ""),
+                    "url": str(row["url"] or ""),
+                    "source_type": str(row["source_type"]),
+                    "supports": supports.get(key, []),
+                    "notes": str(row["notes"] or ""),
+                }
+            )
+        return sources
+
+    def retrieve_claim_evidence(
+        self,
+        question: str,
+        object_ids: Sequence[str],
+        *,
+        parent_scores: Mapping[str, float] | None = None,
+        requested_dimensions: Sequence[str] = (),
+        scripture_references: Sequence[str] = (),
+        limit_per_object: int = 3,
+    ) -> dict[str, list[RetrievedClaimEvidence]]:
+        ids = sorted({normalize_id(value) for value in object_ids if normalize_id(value)})
+        claims_by_id = self.get_claims(ids)
+        sources_by_id = self.get_sources(ids)
+        objects = self._objects_by_ids(ids)
+        ranked: dict[str, list[RetrievedClaimEvidence]] = {}
+        for object_id in ids:
+            obj = objects.get(object_id)
+            if obj is None:
+                continue
+            parent = {
+                "id": obj.id,
+                "title": obj.title,
+                "type": obj.type,
+                "claims": claims_by_id.get(object_id, []),
+                "sources": sources_by_id.get(object_id, []),
+            }
+            ranked[object_id] = rank_claims(
+                question,
+                parent,
+                parent_relevance=float((parent_scores or {}).get(object_id, 0.0)),
+                requested_dimensions=requested_dimensions,
+                scripture_references=scripture_references,
+                limit=limit_per_object,
+            )
+        return ranked
+
+    def search_fts(self, query: str, *, limit: int = 25) -> list[tuple[str, float]]:
+        """Return deterministic FTS5/BM25 candidates (lower raw BM25 is better)."""
+
+        terms = query_search_terms(query)
+        if limit <= 0 or not terms:
+            return []
+        expression = " OR ".join(f'"{term.replace(chr(34), "")}"' for term in terms)
+        rows = self._conn.execute(
+            """
+            SELECT object_id,
+                   bm25(canonical_fts, 0.0, 12.0, 10.0, 7.0, 8.0, 9.0, 6.0, 3.0, 9.0) AS rank
+            FROM canonical_fts
+            WHERE canonical_fts MATCH ?
+            ORDER BY rank, object_id
+            LIMIT ?
+            """,
+            (expression, int(limit)),
+        ).fetchall()
+        return [(str(row["object_id"]), float(row["rank"])) for row in rows]
+
     def get_scripture_matches(self, reference: str, *, limit: int = 10) -> list[RetrievalResult]:
         return self.retrieve_by_scripture_reference(reference, limit=limit)
 
@@ -173,7 +354,19 @@ class SQLiteCanonicalRepository:
 
     def is_stale(self, root: str | Path | None = None) -> bool:
         root_path = Path(root) if root is not None else Path(__file__).resolve().parent
-        source_fingerprint = CanonicalLibrary(root=root_path).load().inventory_fingerprint()
+        root_key = root_path.resolve().as_posix()
+        signature = inventory_signature(root_path)
+        built_signature = self._metadata.get("source_inventory_signature", "")
+        if built_signature:
+            return built_signature != inventory_content_signature(root_path)
+        with _SOURCE_FINGERPRINT_LOCK:
+            cached = _SOURCE_FINGERPRINT_CACHE.get(root_key)
+        if cached is not None and cached[0] == signature:
+            source_fingerprint = cached[1]
+        else:
+            source_fingerprint = CanonicalLibrary(root=root_path).load().inventory_fingerprint()
+            with _SOURCE_FINGERPRINT_LOCK:
+                _SOURCE_FINGERPRINT_CACHE[root_key] = (signature, source_fingerprint)
         return self.inventory_fingerprint() != source_fingerprint
 
     def verify(self, *, root: str | Path | None = None, compare_fingerprint: bool = True) -> dict[str, Any]:
@@ -185,14 +378,23 @@ class SQLiteCanonicalRepository:
     def _book_alias_lookup_uncached(self) -> dict[str, str]:
         rows = self._conn.execute(
             """
-            SELECT title, payload_json
-            FROM canonical_objects
-            WHERE type = 'book'
-            ORDER BY id
+            SELECT o.title, a.original_alias
+            FROM canonical_objects o
+            LEFT JOIN canonical_aliases a ON a.object_id = o.id
+            WHERE o.type = 'book'
+            ORDER BY o.id, a.original_alias
             """
         ).fetchall()
-        books = [validate_object(json.loads(str(row["payload_json"]))) for row in rows]
-        return build_book_alias_lookup(books)
+        lookup = build_book_alias_lookup(())
+        for row in rows:
+            title = str(row["title"] or "").strip()
+            if not title:
+                continue
+            lookup[normalize_alias(title)] = title
+            alias = str(row["original_alias"] or "").strip()
+            if alias:
+                lookup[normalize_alias(alias)] = title
+        return lookup
 
     def object_types(self) -> dict[str, list[str]]:
         rows = self._conn.execute(
@@ -202,6 +404,25 @@ class SQLiteCanonicalRepository:
         for row in rows:
             by_type.setdefault(str(row["type"]), []).append(str(row["id"]))
         return by_type
+
+    def object_headers(self, categories: Sequence[str] | None = None) -> list[dict[str, str]]:
+        """Return cheap identity metadata without deserializing CKL payloads."""
+
+        if categories:
+            normalized = tuple(dict.fromkeys(str(value) for value in categories))
+            placeholders = ",".join("?" for _ in normalized)
+            rows = self._conn.execute(
+                f"SELECT id, type, title FROM canonical_objects WHERE type IN ({placeholders}) ORDER BY type, id",
+                normalized,
+            ).fetchall()
+        else:
+            rows = self._conn.execute(
+                "SELECT id, type, title FROM canonical_objects ORDER BY type, id"
+            ).fetchall()
+        return [
+            {"id": str(row["id"]), "type": str(row["type"]), "title": str(row["title"])}
+            for row in rows
+        ]
 
     def title_matches(self, title: str, *, categories: Sequence[str] | None = None) -> list[str]:
         normalized = normalize_alias(title)
@@ -335,7 +556,8 @@ class SQLiteCanonicalRepository:
                 tuple(query_terms),
             ).fetchall()
             candidate_ids.update(str(row["object_id"]) for row in rows)
-        if scripture_query is not None:
+        scripture_mode = bool(scripture_query is not None and scripture_query.start_chapter is not None)
+        if scripture_mode:
             rows = self._conn.execute(
                 "SELECT DISTINCT object_id FROM canonical_scripture_references WHERE book = ?",
                 (scripture_query.book,),
@@ -356,17 +578,46 @@ class SQLiteCanonicalRepository:
                 library=library,
                 **filters,
             )
-        }
-        results: list[RetrievalResult] = []
+        } if scripture_mode else {}
+        # Scoring only needs rows for the terms in this query.  Fetching every
+        # indexed term for every candidate made broad queries deserialize most
+        # of ``canonical_keywords`` (hundreds of thousands of rows) even
+        # though nearly all of those terms could not affect the score.
+        field_terms_by_id = self._field_terms_for_query(sorted(candidate_ids), query_terms)
+        scoring_rows = self._scoring_rows(sorted(candidate_ids))
+        exact_ids = set(self.title_matches(query)) | set(self.alias_matches(query))
+        preliminary: list[tuple[float, str]] = []
         for object_id in sorted(candidate_ids):
-            obj = self.get_by_id(object_id)
+            row = scoring_rows.get(object_id)
+            if row is None:
+                continue
+            base_score, _matched_terms, _matched_fields = score_keyword_result(
+                query_terms=query_terms,
+                field_terms=field_terms_by_id.get(object_id, {}),
+                importance=int(row["importance"]),
+            )
+            base_score = max(base_score, scripture_scores.get(object_id, 0.0))
+            base_score += category_bonus(str(row["type"]), preferred_categories)
+            base_score += governance_bonus(str(row["review_status"]), str(row["confidence"]))
+            if object_id in exact_ids:
+                base_score += 1.0
+            preliminary.append((base_score, object_id))
+        competitive_limit = max(limit, 30)
+        competitive_ids = [
+            object_id
+            for _score, object_id in sorted(preliminary, key=lambda item: (-item[0], item[1]))[:competitive_limit]
+        ]
+        objects_by_id = self._objects_by_ids(competitive_ids)
+        results: list[RetrievalResult] = []
+        for object_id in competitive_ids:
+            obj = objects_by_id.get(object_id)
             if obj is None:
                 continue
             if category_set and obj.type not in category_set:
                 continue
             if library is not None and not library._is_retrievable(obj, **filters):
                 continue
-            field_terms = self._field_terms_for(object_id)
+            field_terms = field_terms_by_id.get(object_id, {})
             score, matched_terms, matched_fields = score_keyword_result(
                 query_terms=query_terms,
                 field_terms=field_terms,
@@ -410,6 +661,97 @@ class SQLiteCanonicalRepository:
         if apply_thresholds:
             results = apply_relevance_thresholds(results)
         return results[:limit]
+
+    def retrieve_hybrid(
+        self,
+        query: str,
+        limit: int = 10,
+        *,
+        library: Any | None = None,
+        apply_thresholds: bool = True,
+        categories: Sequence[str] | None = None,
+        **filters: Any,
+    ) -> list[RetrievalResult]:
+        """Fuse deterministic keyword/exact/Scripture and FTS5 BM25 rankings."""
+
+        if limit <= 0:
+            return []
+        pool_limit = max(30, limit * 2)
+        keyword_results = self.retrieve_by_keywords(
+            query,
+            limit=pool_limit,
+            library=library,
+            apply_thresholds=False,
+            categories=categories,
+            **filters,
+        )
+        fts_results = self.search_fts(query, limit=pool_limit)
+        keyword_by_id = {result.object.id: result for result in keyword_results}
+        keyword_rank = {result.object.id: index for index, result in enumerate(keyword_results, start=1)}
+        fts_rank = {object_id: index for index, (object_id, _rank) in enumerate(fts_results, start=1)}
+        candidate_ids = set(keyword_by_id) | set(fts_rank)
+        objects = {object_id: result.object for object_id, result in keyword_by_id.items()}
+        missing_ids = sorted(candidate_ids - set(objects))
+        objects.update(self._objects_by_ids(missing_ids))
+        category_set = set(categories or ())
+        query_terms = query_search_terms(query)
+        query_term_set = set(query_terms)
+        fused: list[RetrievalResult] = []
+        for object_id in sorted(candidate_ids):
+            obj = objects.get(object_id)
+            if obj is None or (category_set and obj.type not in category_set):
+                continue
+            if library is not None and not library._is_retrievable(obj, **filters):
+                continue
+            keyword = keyword_by_id.get(object_id)
+            rank = fts_rank.get(object_id)
+            title_terms = set(query_search_terms(obj.title))
+            alias_exact = any(
+                set(alias_terms).issubset(query_term_set)
+                for alias in obj.aliases
+                if (alias_terms := query_search_terms(alias))
+            )
+            entity_bonus = 0.24 if (title_terms and title_terms.issubset(query_term_set)) or alias_exact else 0.0
+            if keyword is not None:
+                # A bounded reciprocal-rank boost improves recall but cannot
+                # displace privileged exact/entity/Scripture evidence.
+                fts_boost = 0.0 if rank is None else 0.16 / (1.0 + 0.10 * (rank - 1))
+                keyword_boost = 0.06 / (1.0 + 0.08 * (keyword_rank[object_id] - 1))
+                score = min(1.0, keyword.score + fts_boost + keyword_boost + entity_bonus)
+                match_type = keyword.match_type
+                fields = list(keyword.matched_fields)
+                if rank is not None:
+                    fields = list(dict.fromkeys([*fields, "fts5"] ))
+                fused.append(
+                    RetrievalResult(
+                        object=obj,
+                        score=round(score, 4),
+                        match_type=match_type,
+                        matched_terms=list(keyword.matched_terms),
+                        matched_fields=fields,
+                        matched_alias=keyword.matched_alias,
+                        ranking_score=round(score, 4),
+                        confidence=keyword.confidence,
+                    )
+                )
+                continue
+            if rank is None:
+                continue
+            score = round(0.50 + (0.18 / (1.0 + 0.12 * (rank - 1))) + entity_bonus, 4)
+            fused.append(
+                RetrievalResult(
+                    object=obj,
+                    score=score,
+                    match_type="keyword",
+                    matched_terms=query_terms,
+                    matched_fields=["fts5"],
+                    ranking_score=score,
+                )
+            )
+        fused = sort_retrieval_results(fused)
+        if apply_thresholds:
+            fused = apply_relevance_thresholds(fused)
+        return fused[:limit]
 
     def _connect(self) -> sqlite3.Connection:
         if self.read_only:
@@ -466,6 +808,18 @@ class SQLiteCanonicalRepository:
                 objects.append(obj)
         return objects
 
+    def _objects_by_ids(self, object_ids: Sequence[str]) -> dict[str, CanonicalObject]:
+        ids = sorted({normalize_id(value) for value in object_ids if normalize_id(value)})
+        objects: dict[str, CanonicalObject] = {}
+        # Route hydration through the bounded object cache.  Broad hybrid
+        # queries repeatedly revisit high-value objects; revalidating their
+        # full JSON payload on every query dominated warm retrieval latency.
+        for object_id in ids:
+            obj = self.get_by_id(object_id)
+            if obj is not None:
+                objects[object_id] = obj
+        return objects
+
     def _field_terms_for(self, object_id: str) -> dict[str, set[str]]:
         rows = self._conn.execute(
             """
@@ -480,6 +834,70 @@ class SQLiteCanonicalRepository:
         for row in rows:
             field_terms.setdefault(str(row["field_name"]), set()).add(str(row["term"]))
         return field_terms
+
+    def _field_terms_for_many(self, object_ids: Sequence[str]) -> dict[str, dict[str, set[str]]]:
+        ids = sorted({normalize_id(value) for value in object_ids if normalize_id(value)})
+        if not ids:
+            return {}
+        placeholders = ",".join("?" for _ in ids)
+        rows = self._conn.execute(
+            f"""
+            SELECT object_id, field_name, term
+            FROM canonical_keywords
+            WHERE object_id IN ({placeholders})
+            ORDER BY object_id, field_name, term
+            """,
+            tuple(ids),
+        ).fetchall()
+        result: dict[str, dict[str, set[str]]] = {object_id: {} for object_id in ids}
+        for row in rows:
+            result[str(row["object_id"])].setdefault(str(row["field_name"]), set()).add(str(row["term"]))
+        return result
+
+    def _field_terms_for_query(
+        self,
+        object_ids: Sequence[str],
+        query_terms: Sequence[str],
+    ) -> dict[str, dict[str, set[str]]]:
+        """Return only indexed field terms that can affect this query's score."""
+
+        ids = sorted({normalize_id(value) for value in object_ids if normalize_id(value)})
+        terms = tuple(dict.fromkeys(str(value) for value in query_terms if str(value)))
+        if not ids or not terms:
+            return {object_id: {} for object_id in ids}
+        id_placeholders = ",".join("?" for _ in ids)
+        term_placeholders = ",".join("?" for _ in terms)
+        rows = self._conn.execute(
+            f"""
+            SELECT object_id, field_name, term
+            FROM canonical_keywords
+            WHERE object_id IN ({id_placeholders})
+              AND term IN ({term_placeholders})
+            ORDER BY object_id, field_name, term
+            """,
+            (*ids, *terms),
+        ).fetchall()
+        result: dict[str, dict[str, set[str]]] = {object_id: {} for object_id in ids}
+        for row in rows:
+            result[str(row["object_id"])].setdefault(str(row["field_name"]), set()).add(
+                str(row["term"])
+            )
+        return result
+
+    def _scoring_rows(self, object_ids: Sequence[str]) -> dict[str, sqlite3.Row]:
+        ids = sorted({normalize_id(value) for value in object_ids if normalize_id(value)})
+        if not ids:
+            return {}
+        placeholders = ",".join("?" for _ in ids)
+        rows = self._conn.execute(
+            f"""
+            SELECT id, type, importance, review_status, confidence
+            FROM canonical_objects
+            WHERE id IN ({placeholders})
+            """,
+            tuple(ids),
+        ).fetchall()
+        return {str(row["id"]): row for row in rows}
 
 
 def _close_connection(connection: sqlite3.Connection) -> None:
@@ -578,6 +996,9 @@ class SQLiteCanonicalLibrary(CanonicalLibrary):
     def _title_matches(self, query: str) -> list[str]:
         return self.repository.title_matches(query)
 
+    def object_headers(self, categories: Sequence[str] | None = None) -> list[dict[str, str]]:
+        return self.repository.object_headers(categories)
+
     def retrieve_by_id(self, object_id: str, **filters: Any) -> RetrievalResult | None:
         obj = self.repository.get_by_id(object_id)
         if obj is None or not self._is_retrievable(obj, **filters):
@@ -618,7 +1039,21 @@ class SQLiteCanonicalLibrary(CanonicalLibrary):
         )
 
     def retrieve_hybrid(self, query: str, limit: int = 10, *, apply_thresholds: bool = True, **filters: Any) -> list[RetrievalResult]:
-        return self.retrieve_by_keywords(query, limit=limit, apply_thresholds=apply_thresholds, **filters)
+        return self.repository.retrieve_hybrid(
+            query,
+            limit=limit,
+            library=self,
+            apply_thresholds=apply_thresholds,
+            **filters,
+        )
+
+    def retrieve_claim_evidence(
+        self,
+        question: str,
+        object_ids: Sequence[str],
+        **kwargs: Any,
+    ) -> dict[str, list[RetrievedClaimEvidence]]:
+        return self.repository.retrieve_claim_evidence(question, object_ids, **kwargs)
 
     def retrieve_by_scripture_reference(self, reference: Any, limit: int = 10, **filters: Any) -> list[RetrievalResult]:
         return self.repository.retrieve_by_scripture_reference(reference, limit=limit, library=self, **filters)

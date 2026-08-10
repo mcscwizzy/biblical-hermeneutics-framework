@@ -4,7 +4,9 @@ from __future__ import annotations
 
 from .context_builder import CanonicalContextBuilder, build_canonical_prompt_context
 from .database_builder import BuildDatabaseResult, build_database, database_info, verify_database
-from .database_schema import CKL_DATABASE_SCHEMA_VERSION, DEFAULT_CKL_DATABASE_PATH
+from .database_schema import CKL_DATABASE_SCHEMA_VERSION, CKL_RETRIEVAL_INDEX_VERSION, DEFAULT_CKL_DATABASE_PATH
+from .evidence import RetrievedClaimEvidence, hydrate_claim_sources, rank_claims
+from .query_analysis import CKLQuery
 from .graph import (
     CKLGraphAudit,
     GraphEdge,
@@ -179,8 +181,13 @@ __all__ = [
     "CKLRepositoryConfig",
     "load_canonical_repository",
     "CKL_DATABASE_SCHEMA_VERSION",
+    "CKL_RETRIEVAL_INDEX_VERSION",
     "DEFAULT_CKL_DATABASE_PATH",
     "BuildDatabaseResult",
+    "CKLQuery",
+    "RetrievedClaimEvidence",
+    "rank_claims",
+    "hydrate_claim_sources",
     "build_database",
     "verify_database",
     "database_info",

@@ -65,6 +65,10 @@ The Canonical Knowledge Library has its own small command set in `tools/`:
 - `ckl_graph_audit.py` reports relationship graph coverage, including orphaned
   objects, unknown targets, and missing reverse-edge suggestions.
 - `ckl_migrate.py` normalizes legacy object JSON into the current schema shape.
+- `benchmark_ckl_retrieval.py` runs the fixed broad-query corpus and reports
+  median/p95 latency, anchor failures, and a deterministic result fingerprint.
+- `evaluate_ckl_semantic.py` evaluates optional externally generated rankings
+  against the deterministic SQLite baseline without installing a model SDK.
 
 Run these from the repository root so relative paths resolve correctly.
 
@@ -78,6 +82,15 @@ python3 tools/ckl_report.py \
   --deep \
   --json \
   --output docs/ckl-quality-report.json
+
+python3 tools/benchmark_ckl_retrieval.py \
+  --database .bhf/ckl.sqlite \
+  --iterations 5 \
+  --warmups 1
+
+python3 tools/evaluate_ckl_semantic.py \
+  --database .bhf/ckl.sqlite \
+  --candidate-results /path/to/candidate-results.json
 ```
 
 ## `import_lexicons.py`, `lexicon_onboard.py`, and `lexicon_smoke.py`

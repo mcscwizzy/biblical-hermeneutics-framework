@@ -463,6 +463,7 @@ def resolve_places_for_passage(
     passage_text: str | None = None,
     period: str | None = None,
     path: str | Path | None = None,
+    include_related_passages: bool = True,
 ) -> dict[str, Any]:
     """Resolve curated places from a passage using deterministic matching only."""
 
@@ -503,7 +504,7 @@ def resolve_places_for_passage(
             list_place_references,
             _related_passages_for_place,
             path=path,
-            include_related_passages=True,
+            include_related_passages=include_related_passages,
         )
         for place in matched_places
     ]

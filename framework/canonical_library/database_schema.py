@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-CKL_DATABASE_SCHEMA_VERSION = "2"
-CKL_RETRIEVAL_INDEX_VERSION = "1"
+CKL_DATABASE_SCHEMA_VERSION = "3"
+CKL_RETRIEVAL_INDEX_VERSION = "2"
 DEFAULT_CKL_DATABASE_PATH = ".bhf/ckl.sqlite"
 
 
@@ -83,6 +83,91 @@ CREATE TABLE canonical_scripture_references (
     FOREIGN KEY (object_id)
         REFERENCES canonical_objects(id)
         ON DELETE CASCADE
+);
+
+CREATE TABLE canonical_claims (
+    object_id TEXT NOT NULL,
+    claim_id TEXT NOT NULL,
+    claim_text TEXT NOT NULL,
+    claim_type TEXT NOT NULL,
+    certainty TEXT NOT NULL,
+    dispute_status TEXT NOT NULL,
+    rationale TEXT,
+    notes TEXT,
+    PRIMARY KEY (object_id, claim_id),
+    FOREIGN KEY (object_id)
+        REFERENCES canonical_objects(id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE canonical_claim_scripture_references (
+    object_id TEXT NOT NULL,
+    claim_id TEXT NOT NULL,
+    reference_text TEXT NOT NULL,
+    book TEXT,
+    start_chapter INTEGER,
+    start_verse INTEGER,
+    end_chapter INTEGER,
+    end_verse INTEGER,
+    PRIMARY KEY (object_id, claim_id, reference_text),
+    FOREIGN KEY (object_id, claim_id)
+        REFERENCES canonical_claims(object_id, claim_id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE canonical_sources (
+    object_id TEXT NOT NULL,
+    source_id TEXT NOT NULL,
+    title TEXT NOT NULL,
+    author TEXT,
+    publisher TEXT,
+    year INTEGER,
+    locator TEXT,
+    url TEXT,
+    source_type TEXT NOT NULL,
+    notes TEXT,
+    PRIMARY KEY (object_id, source_id),
+    FOREIGN KEY (object_id)
+        REFERENCES canonical_objects(id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE canonical_claim_sources (
+    object_id TEXT NOT NULL,
+    claim_id TEXT NOT NULL,
+    source_id TEXT NOT NULL,
+    relationship TEXT NOT NULL CHECK (relationship IN ('source_id', 'supports')),
+    source_order INTEGER NOT NULL DEFAULT 0,
+    PRIMARY KEY (object_id, claim_id, source_id, relationship),
+    FOREIGN KEY (object_id, claim_id)
+        REFERENCES canonical_claims(object_id, claim_id)
+        ON DELETE CASCADE,
+    FOREIGN KEY (object_id, source_id)
+        REFERENCES canonical_sources(object_id, source_id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE canonical_source_supports (
+    object_id TEXT NOT NULL,
+    source_id TEXT NOT NULL,
+    supported_item TEXT NOT NULL,
+    PRIMARY KEY (object_id, source_id, supported_item),
+    FOREIGN KEY (object_id, source_id)
+        REFERENCES canonical_sources(object_id, source_id)
+        ON DELETE CASCADE
+);
+
+CREATE VIRTUAL TABLE canonical_fts USING fts5(
+    object_id UNINDEXED,
+    title,
+    aliases,
+    summary,
+    common_questions,
+    keywords,
+    claims,
+    contexts,
+    retrieval_metadata,
+    tokenize = 'unicode61 remove_diacritics 2'
 );
 
 CREATE TABLE lexicon_sources (
@@ -238,6 +323,30 @@ ON canonical_scripture_references(
     end_verse
 );
 
+CREATE INDEX idx_claims_object
+ON canonical_claims(object_id);
+
+CREATE INDEX idx_claims_type
+ON canonical_claims(claim_type);
+
+CREATE INDEX idx_claim_scripture_book
+ON canonical_claim_scripture_references(book, start_chapter, start_verse);
+
+CREATE INDEX idx_sources_object
+ON canonical_sources(object_id);
+
+CREATE INDEX idx_sources_type
+ON canonical_sources(source_type);
+
+CREATE INDEX idx_claim_sources_claim
+ON canonical_claim_sources(object_id, claim_id);
+
+CREATE INDEX idx_claim_sources_source
+ON canonical_claim_sources(object_id, source_id);
+
+CREATE INDEX idx_source_supports_item
+ON canonical_source_supports(supported_item);
+
 CREATE INDEX idx_lexicon_entries_strongs
 ON lexicon_entries(normalized_strongs_number);
 
@@ -307,6 +416,14 @@ REQUIRED_INDEXES = {
     "idx_relationships_target",
     "idx_scripture_book",
     "idx_scripture_range",
+    "idx_claims_object",
+    "idx_claims_type",
+    "idx_claim_scripture_book",
+    "idx_sources_object",
+    "idx_sources_type",
+    "idx_claim_sources_claim",
+    "idx_claim_sources_source",
+    "idx_source_supports_item",
     "idx_lexicon_entries_strongs",
     "idx_lexicon_entries_strongs_digits",
     "idx_lexicon_entries_normalized_lemma",

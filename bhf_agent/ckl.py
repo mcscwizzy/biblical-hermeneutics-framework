@@ -19,6 +19,7 @@ from framework.canonical_library import (
     load_canonical_repository,
 )
 from framework.canonical_library.normalization import normalize_text, tokenize_query
+from framework.canonical_library.query_analysis import analyze_query as analyze_structured_query
 
 from .bible import resolve_chapter
 from .models import QuestionContext, ReferenceContext
@@ -683,26 +684,48 @@ def _extract_primary_entities(library: CanonicalLibrary, question: str) -> list[
     """Resolve named CKL entities directly from the user's wording.
 
     This supplements CKL's broad lexical retrieval.  It intentionally matches
-    only entity-bearing categories and requires a meaningful title token, so a
-    book title cannot displace a named person merely because the passage is in
-    that book.
+    only entity- or concept-bearing categories and requires a meaningful title
+    token, so a book title cannot displace a named person, covenant, or cultural
+    institution merely because the passage is in that book.
     """
     question_tokens = set(tokenize_query(question))
     question_tokens.update(token[:-1] for token in tuple(question_tokens) if token.endswith("s") and len(token) > 4)
     found: list[dict[str, str]] = []
-    objects = getattr(library, "objects_by_id", {}) or {}
-    for object_id, obj in objects.items():
-        category = str(getattr(obj, "type", "") or "").strip().lower()
-        if category not in {"person", "place", "event", "institution", "theme"}:
+    header_loader = getattr(library, "object_headers", None)
+    entity_categories = {
+        "person",
+        "place",
+        "event",
+        "institution",
+        "theme",
+        "covenant",
+        "biblical_theology",
+        "cultural_background",
+        "symbol",
+        "literary_device",
+        "doctrine",
+    }
+    if callable(header_loader):
+        candidates = header_loader(tuple(sorted(entity_categories)))
+    else:
+        candidates = [
+            {"id": object_id, "type": getattr(obj, "type", ""), "title": getattr(obj, "title", object_id)}
+            for object_id, obj in (getattr(library, "objects_by_id", {}) or {}).items()
+        ]
+    for header in candidates:
+        object_id = str(header.get("id") or "")
+        category = str(header.get("type") or "").strip().lower()
+        if category not in entity_categories:
             continue
-        tokens = _entity_tokens(str(getattr(obj, "title", "") or ""))
+        title = str(header.get("title") or object_id)
+        tokens = _entity_tokens(title)
         if not tokens or not tokens.intersection(question_tokens):
             continue
         # Single-name persons (Hannah, Ruth, Boaz, Samuel) are high-signal;
         # multiword titles require all distinctive tokens to avoid weak hits.
         if len(tokens) > 1 and not tokens.issubset(question_tokens):
             continue
-        found.append({"id": str(object_id), "name": str(getattr(obj, "title", object_id)), "type": category})
+        found.append({"id": object_id, "name": title, "type": category})
     return sorted(found, key=lambda item: (item["type"] != "person", item["name"].lower(), item["id"]))
 
 
@@ -850,6 +873,8 @@ def _rank_retrieval_topics(
         combined = score * 100
         if entity_match:
             combined += 120
+        if str(topic.get("match_type") or "") == "exact_entity" and not broad_question:
+            combined += 150
         if passage_overlap:
             combined += 85
         if category == "book" and not broad_question:
@@ -903,8 +928,9 @@ def build_canonical_context(
     builder = CanonicalContextBuilder(
         library,
         max_topics=search_limit,
-        max_relationship_depth=0,
-        max_expanded_topics=0,
+        max_relationship_depth=1,
+        max_expanded_topics=max_results,
+        min_relationship_weight=6,
     )
     context = builder.build(
         query,
@@ -919,7 +945,21 @@ def build_canonical_context(
     exact_queries = _candidate_exact_queries(question, reference_context, question_context)
     retrieval_entities = _extract_primary_entities(library, question)
     evidence_reference = reference_context
-    broad_question = _is_book_overview_question(question, reference_context)
+    if evidence_reference is None:
+        alias_loader = getattr(library, "book_alias_lookup", None)
+        alias_lookup = alias_loader() if callable(alias_loader) else getattr(library, "_book_alias_lookup", {})
+        structured_query = analyze_structured_query(question, book_alias_lookup=alias_lookup)
+        if structured_query.scripture_references:
+            span = structured_query.scripture_references[0]
+            evidence_reference = ReferenceContext(
+                book=span.book,
+                chapter=span.start_chapter,
+                verse=span.start_verse,
+                verse_end=span.end_verse,
+                is_reference_based=span.start_chapter is not None,
+                confidence=1.0,
+            )
+    broad_question = _is_book_overview_question(question, evidence_reference)
     if not broad_question and not (evidence_reference and evidence_reference.book and evidence_reference.chapter):
         evidence_reference = _infer_passage_from_entities(question, retrieval_entities)
     direct_evidence = _direct_textual_evidence(evidence_reference, question, retrieval_entities)
@@ -960,10 +1000,18 @@ def build_canonical_context(
     # matching book overview is its direct subject, not background material.
     if broad_question:
         normalized_question = normalize_text(question)
-        for object_id, obj in (getattr(library, "objects_by_id", {}) or {}).items():
-            if str(getattr(obj, "type", "") or "").lower() != "book":
-                continue
-            title = normalize_text(str(getattr(obj, "title", "") or ""))
+        header_loader = getattr(library, "object_headers", None)
+        if callable(header_loader):
+            book_headers = header_loader(("book",))
+        else:
+            book_headers = [
+                {"id": object_id, "title": getattr(obj, "title", ""), "type": getattr(obj, "type", "")}
+                for object_id, obj in (getattr(library, "objects_by_id", {}) or {}).items()
+                if str(getattr(obj, "type", "") or "").lower() == "book"
+            ]
+        for header in book_headers:
+            object_id = str(header.get("id") or "")
+            title = normalize_text(str(header.get("title") or ""))
             if not title or title not in normalized_question:
                 continue
             result = library.retrieve_by_id(

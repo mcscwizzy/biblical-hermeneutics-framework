@@ -50,13 +50,24 @@ REFERENCE_PATTERN = re.compile(
 )
 
 
-def getPlacesForPassage(reference: str, period: str | None = None, path: str | Path = DEFAULT_DB_PATH) -> dict[str, Any]:
+def getPlacesForPassage(
+    reference: str,
+    period: str | None = None,
+    path: str | Path = DEFAULT_DB_PATH,
+    *,
+    include_related_passages: bool = True,
+) -> dict[str, Any]:
     """Return curated biblical places for a passage reference."""
 
     parsed = _parse_reference(reference)
     if parsed is None:
         raise ValueError(f"Could not parse passage reference: {reference}")
-    return resolve_places_for_passage(period=period, path=path, **parsed)
+    return resolve_places_for_passage(
+        period=period,
+        path=path,
+        include_related_passages=include_related_passages,
+        **parsed,
+    )
 
 
 def getPlaceDetails(placeId: str, path: str | Path = DEFAULT_DB_PATH) -> dict[str, Any]:
@@ -176,7 +187,12 @@ def build_map_tool_context(
     if resolved_reference:
         context["reference"] = resolved_reference
         try:
-            places = getPlacesForPassage(resolved_reference, period=normalized_period, path=path)
+            places = getPlacesForPassage(
+                resolved_reference,
+                period=normalized_period,
+                path=path,
+                include_related_passages=False,
+            )
         except (BibleError, ValueError):
             places = None
         else:
@@ -190,8 +206,8 @@ def build_map_tool_context(
                 context["place_details"] = [getPlaceDetails(place_id, path=path) for place_id in place_ids[:3]]
                 context["requested_tools"].append("getRelatedPassagesByPlace")
                 context["related_passages_by_place"] = [
-                    getRelatedPassagesByPlace(place_id, period=normalized_period, path=path)
-                    for place_id in place_ids[:3]
+                    details["related_passages"]
+                    for details in context["place_details"]
                 ]
 
         if _question_mentions_archaeology(question):
