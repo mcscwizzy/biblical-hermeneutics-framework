@@ -90,6 +90,23 @@ dimensions. It normalizes only public domain, CC0, CC BY, CC BY-SA, and a
 reviewed explicit attribution-only Commons license as reusable. Unknown and
 non-free metadata remain non-cacheable and non-redistributable.
 
+`data_sources/archaeology/full-coverage-wikimedia-manifest.json` is the
+separately reviewed completion batch for the former text-first records. It
+maps one exact Commons file to every remaining archaeology item. A few entries
+are deliberately labelled as site or visual context rather than as a direct
+photograph of a specific deposit or disputed identification; the caption keeps
+that distinction visible.
+
+Import the completion batch explicitly when initializing an existing local
+study database:
+
+```bash
+python tools/import_archaeology.py \
+  --provider wikimedia \
+  --manifest data_sources/archaeology/full-coverage-wikimedia-manifest.json \
+  --database .bhf/study.sqlite
+```
+
 When adding an image: choose the exact file during review, record it in the
 manifest, run the import against a clean database, inspect the rendered card
 and attribution, and keep the evidence source separate from the image source.
@@ -140,14 +157,14 @@ do not add an image merely because it is visible on a public website.
 
 ## Implementation status
 
-Infrastructure is complete, and the initial curated corpus now has 75
-substantive records across Bronze Age comparative context, the kingdoms,
-Assyrian and Babylonian periods, Persian Yehud, Second Temple Judaism, and the
-Roman worlds of the Gospels, Acts, and Revelation. It has 33 reviewed reusable
-media records (44% item coverage), including two newly reviewed images for
-Magdala and Sardis. The rest of the new text-first records deliberately await
-their own exact-file and rights reviews; a visible card without a picture is
-preferable to incorrectly licensed or merely decorative media.
+Infrastructure is complete, and the curated corpus has 75 substantive records
+across Bronze Age comparative context, the kingdoms, Assyrian and Babylonian
+periods, Persian Yehud, Second Temple Judaism, and the Roman worlds of the
+Gospels, Acts, and Revelation. Each record now has one rights-reviewed,
+reusable image (100% item coverage), including appropriate site-context images
+where no direct image of a particular deposit is available. The caption and
+source record make those limits visible; a visual aid is never evidence beyond
+what it actually depicts.
 
 Current Scripture-link coverage includes 45 OT-linked and 26 NT-linked
 records. Important clusters include 2 Kings 18 / Isaiah 36, Jerusalem's late
