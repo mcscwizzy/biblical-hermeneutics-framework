@@ -54,12 +54,12 @@ const WAITING_MESSAGES = [
 ];
 
 let waitingTimerId = null;
-let waitingMessageIndex = 0;
+let lastWaitingMessage = null;
 let latestStatus = null;
 
 function resetStatus(statusPanel) {
   latestStatus = null;
-  waitingMessageIndex = 0;
+  lastWaitingMessage = null;
   statusPanel.hidden = false;
   statusPanel.classList.remove("complete", "failed");
   statusPanel.querySelector(".status-active").hidden = false;
@@ -98,8 +98,10 @@ function setWaitingMessage(statusPanel) {
   if (!current) {
     return;
   }
-  current.textContent = WAITING_MESSAGES[waitingMessageIndex % WAITING_MESSAGES.length];
-  waitingMessageIndex += 1;
+  const choices = WAITING_MESSAGES.filter((message) => message !== lastWaitingMessage);
+  const message = choices[Math.floor(Math.random() * choices.length)] || WAITING_MESSAGES[0];
+  current.textContent = message;
+  lastWaitingMessage = message;
 }
 
 function scheduleNextWaitingMessage(statusPanel) {

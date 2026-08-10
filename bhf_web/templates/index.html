@@ -110,7 +110,7 @@
         <button type="button" class="secondary" data-notes-view="all" data-testid="all-notes-button">All notes</button>
         <button type="button" class="secondary" data-notes-view="passage" data-testid="passage-notes-button">This passage</button>
       </div>
-      <span class="note-save-status" data-note-save-status role="status" aria-live="polite">Ready</span>
+      <span class="note-save-status" data-note-save-status role="status" aria-live="polite"></span>
     </section>
 
     {% if config_warning %}
@@ -360,6 +360,7 @@
 
                 <div class="action-row">
                   <button type="submit" data-testid="ask-submit">Ask BHF</button>
+                  <button type="button" class="secondary" data-save-study data-testid="ask-save-study" disabled>Save Study</button>
                   <button type="button" class="secondary" data-add-note data-testid="add-note-button">Add note</button>
                 </div>
               </form>
@@ -368,6 +369,7 @@
                 <div class="status-summary" hidden></div>
                 <div class="status-active">
                   <div class="status-topline">
+                    <span class="status-loading-indicator" aria-hidden="true"></span>
                     <div>
                       <div class="status-heading">Agent status</div>
                       <div class="status-current">Preparing request</div>
@@ -696,7 +698,7 @@
                     <div class="panel-heading"><h2 id="map-ai-heading">BHF Geography Fallback</h2></div>
                     <section id="map-ai-status-panel" class="status-panel" aria-live="polite" hidden>
                       <div class="status-summary" hidden></div>
-                      <div class="status-active"><div class="status-topline"><div><div class="status-heading">Agent status</div><div class="status-current">Preparing request</div></div></div></div>
+                      <div class="status-active"><div class="status-topline"><span class="status-loading-indicator" aria-hidden="true"></span><div><div class="status-heading">Agent status</div><div class="status-current">Preparing request</div></div></div></div>
                     </section>
                     <section id="map-ai-answer-panel" class="answer-panel map-ai-answer-panel" aria-live="polite">
                       <p class="empty">If local map data is missing, BHF will add a text-only geography fallback here.</p>

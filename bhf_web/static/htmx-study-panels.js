@@ -688,7 +688,9 @@ async function savePersonalStudyNotes(button) {
 
 function saveLatestStudy(event) {
   const sourceButton = event?.currentTarget || null;
-  const answerPanel = activeLiveAnswerPanel || document.querySelector("[data-device-study]");
+  const answerPanel = sourceButton?.closest(".ask-form")
+    ? document.querySelector("#answer-panel")
+    : activeLiveAnswerPanel || document.querySelector("[data-device-study]");
   const studyNode = answerPanel?.matches?.("[data-device-study]")
     ? answerPanel
     : answerPanel?.querySelector?.("[data-device-study]") || document.querySelector("[data-device-study]");
@@ -736,12 +738,7 @@ function wireAnswerPanelControls(answerPanel) {
   if (!answerPanel) {
     return;
   }
-  answerPanel.querySelectorAll("[data-save-study]").forEach((button) => {
-    if (!button.dataset.saveBound) {
-      button.addEventListener("click", saveLatestStudy);
-      button.dataset.saveBound = "true";
-    }
-  });
+  wireSaveStudyButtons(answerPanel);
   wireCanonicalAnswerPanelControls(answerPanel);
   answerPanel.querySelectorAll("[data-save-personal-notes]").forEach((button) => {
     if (!button.dataset.personalNotesBound) {
@@ -752,10 +749,22 @@ function wireAnswerPanelControls(answerPanel) {
   updateSaveButtons();
 }
 
+function wireSaveStudyButtons(root = document) {
+  root.querySelectorAll("[data-save-study]").forEach((button) => {
+    if (!button.dataset.saveBound) {
+      button.addEventListener("click", saveLatestStudy);
+      button.dataset.saveBound = "true";
+    }
+  });
+}
+
 function updateSaveButtons() {
   document.querySelectorAll("[data-save-study]").forEach((button) => {
     const panel = button.closest(".answer-panel");
-    const isActive = Boolean(activeLiveAnswerPanel) && panel === activeLiveAnswerPanel;
+    const isAskFormButton = Boolean(button.closest(".ask-form"));
+    const isActive = isAskFormButton
+      ? activeLiveAnswerPanel?.id === "answer-panel"
+      : Boolean(activeLiveAnswerPanel) && panel === activeLiveAnswerPanel;
     button.disabled = !(isActive && (button.dataset.jobId || (latestJobId && latestJobComplete)));
   });
 }

@@ -135,9 +135,31 @@ button.danger {
 
 .status-topline {
   display: flex;
-  gap: 16px;
-  justify-content: space-between;
+  gap: 10px;
+  justify-content: flex-start;
   align-items: start;
+}
+
+.status-loading-indicator {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  margin-top: 2px;
+  border: 3px solid #b7cbd9;
+  border-top-color: #246b94;
+  border-radius: 50%;
+  animation: status-loading-rotate 0.8s linear infinite;
+}
+
+@keyframes status-loading-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.status-panel.failed .status-loading-indicator {
+  visibility: hidden;
+  animation: none;
 }
 
 .status-current {
@@ -164,6 +186,12 @@ button.danger {
 
 .status-panel.failed .status-current {
   color: #9a2c2c;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-loading-indicator {
+    animation: none;
+  }
 }
 
 .notice,

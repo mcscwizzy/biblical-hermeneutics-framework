@@ -1074,6 +1074,7 @@ async function initializeReader() {
   });
   wireAnswerPanelControls(document.querySelector("#answer-panel"));
   wireAnswerPanelControls(document.querySelector("#map-ai-answer-panel"));
+  wireSaveStudyButtons(document);
   syncMapWorkspaceEmptyState();
 }
 

@@ -16,8 +16,6 @@
           <p class="saved-study-label">Saved study</p>
           <h2>{{ saved_study.title }}</h2>
         </div>
-      {% else %}
-        <h2>Answer</h2>
       {% endif %}
       {% if can_save_study and reader_reference %}
         <button type="button" class="secondary answer-save" data-save-study>Save Study</button>
