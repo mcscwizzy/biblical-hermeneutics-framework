@@ -197,6 +197,18 @@ button.danger {
   align-items: start;
 }
 
+.answer-actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.answer-actions button {
+  border: 1px solid var(--border-strong);
+}
+
 .saved-study-label {
   margin: 0 0 4px;
   color: #52616f;
@@ -1031,6 +1043,16 @@ html[data-theme="dark"] .app-dock {
   }
 
   .answer-save {
+    width: 100%;
+  }
+
+  .answer-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .answer-actions button {
     width: 100%;
   }
 
