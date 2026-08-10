@@ -56,7 +56,7 @@ class ArchaeologyService:
         biblical_book: str | None = None,
         confidence: str | None = None,
         relationship: str | None = None,
-        limit: int = 25,
+        limit: int = 100,
     ) -> list[dict[str, Any]]:
         """Search independently browsable archaeology records with simple filters."""
 
@@ -138,4 +138,3 @@ class ArchaeologyService:
                 result.append(link)
                 seen.add(key)
         return result
-

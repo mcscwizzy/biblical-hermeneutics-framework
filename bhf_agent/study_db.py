@@ -29,7 +29,7 @@ from .archaeology_content import (
 )
 from .archaeology import attribution_text, validate_media_record
 
-SCHEMA_VERSION = 35
+SCHEMA_VERSION = 36
 OPENBIBLE_PLACES_PATH = Path(__file__).resolve().parent / "data" / "openbible_places.json"
 BROAD_PERIOD_LABEL = "Broad / uncertain period"
 CANONICAL_PERIOD_LABELS = (
@@ -909,6 +909,12 @@ def _ensure_schema(connection: sqlite3.Connection) -> None:
             "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
             (35, _timestamp()),
         )
+    if 36 not in applied:
+        _apply_v36_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (36, _timestamp()),
+        )
     # Older local databases may already record v15 from the period when the
     # map-study table was intentionally removed. Recreate the optional table
     # on demand so the API remains compatible with those databases.
@@ -1740,6 +1746,34 @@ def _apply_v35_schema(connection: sqlite3.Connection) -> None:
         ("pool-of-siloam", "jerusalem", "site-context", "Jerusalem water installation."),
         ("broad-wall-jerusalem", "jerusalem", "site-context", "Iron Age Jerusalem remains."),
         ("siloam-inscription", "jerusalem", "site-context", "Jerusalem water system."),
+    )
+    connection.executemany(
+        """INSERT OR IGNORE INTO archaeology_ckl_links
+           (archaeology_item_id, ckl_object_id, relationship, notes)
+           VALUES (?, ?, ?, ?)""",
+        links,
+    )
+
+
+def _apply_v36_schema(connection: sqlite3.Connection) -> None:
+    """Apply the curated 75-record cross-period archaeology corpus."""
+
+    _upsert_archaeology_content(connection)
+    links = (
+        ("jerusalem-babylonian-destruction", "jeremiah", "historical-evidence", "Late-monarchic destruction context."),
+        ("jehoiachin-ration-tablets", "jeremiah", "historical-evidence", "Named exilic king in Babylonian administration."),
+        ("al-yahudu-tablets", "ezekiel", "historical-setting", "Judean exilic-life context in Babylonia."),
+        ("nazareth-archaeology", "nazareth", "site-context", "Early Roman village context."),
+        ("corinth-excavations", "corinth", "site-context", "Roman Corinth urban evidence."),
+        ("corinth-bema", "corinth", "site-context", "Forum tribunal context."),
+        ("erastus-inscription", "corinth", "historical-evidence", "Civic benefaction inscription, personal identification disputed."),
+        ("corinth-excavations", "paul", "historical-setting", "Acts 18 and Pauline-city context."),
+        ("ephesus-theater", "ephesus", "site-context", "Civic assembly setting."),
+        ("temple-artemis-ephesus", "ephesus", "historical-setting", "Artemis cult setting in Acts 19."),
+        ("ephesus-theater", "acts", "historical-setting", "Acts 19 urban setting."),
+        ("pergamum-imperial-cult", "revelation", "historical-setting", "Pergamum city and imperial-cult context."),
+        ("smyrna-roman-city", "revelation", "historical-setting", "Smyrna city context."),
+        ("laodicea-water-system", "revelation", "historical-setting", "Laodicea water-infrastructure context."),
     )
     connection.executemany(
         """INSERT OR IGNORE INTO archaeology_ckl_links

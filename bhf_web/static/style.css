@@ -182,6 +182,7 @@
 .archaeology-card img, .archaeology-card-image { width: 100%; height: 144px; object-fit: cover; background: #e8eef2; }
 .archaeology-card-image--empty { display: grid; place-items: center; color: #56616c; }
 .archaeology-card strong, .archaeology-card small, .archaeology-card .canonical-browser-kicker { margin: 0 14px; }
+.archaeology-card strong { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; -webkit-line-clamp: 2; line-height: 1.25; min-height: 2.5em; }
 .archaeology-detail-image { width: 100%; max-height: 330px; object-fit: contain; background: #f0f3f5; border-radius: 8px; }
 .archaeology-detail-grid { display: grid; grid-template-columns: minmax(120px, .4fr) 1fr; gap: 9px 16px; }
 .archaeology-detail-grid dt { font-weight: 700; }.archaeology-detail-grid dd { margin: 0; }

@@ -162,6 +162,19 @@ project-level provenance record, not an importer manifest. It documents the
 CC BY 4.0 Open Context Iraq Heritage Program citation used by relevant Nimrud
 evidence cards. No live Open Context fetch is used at startup or study time.
 
+## `report_archaeology_coverage.py`
+
+Reports the deterministic archaeology corpus: record and site totals, reusable
+media coverage, records missing media/Scripture/CKL links, OT/NT balance,
+period and item-type distributions, book coverage, disputed records, and
+source-domain counts. It initializes or migrates the selected local database,
+so it can be run against a fresh path during content review.
+
+```bash
+python3 tools/report_archaeology_coverage.py --database .bhf/study.sqlite
+python3 tools/report_archaeology_coverage.py --database .bhf/study.sqlite --json
+```
+
 ## Code style
 
 Python follows PEP 8 with a 88-column line limit (the common `black` default;

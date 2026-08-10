@@ -1129,3 +1129,18 @@ ARCHAEOLOGY_MEDIA: list[dict[str, Any]] = [
     {"id": "wm-city-of-david-excavation-site", "archaeology_item_id": "city-of-david-excavations", "title": "City of David excavation site", "caption": "General view of an excavated site at the City of David visitor center in Jerusalem.", "source_url": "https://commons.wikimedia.org/wiki/File:City_of_David_Excavation_site.jpg", "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/City%20of%20David%20Excavation%20site.jpg", "creator": "Davidbena", "institution": "City of David, Jerusalem", "license_id": "CC BY-SA 4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0", "rights_status": "cc_by_sa", "can_redistribute": True, "can_cache": True, "can_modify": True, "source_record_id": "File:City of David Excavation site.jpg"},
     {"id": "wm-babylon-ishtar-gate-1932", "archaeology_item_id": "babylon-ishtar-gate-context", "title": "Ishtar Gate at Babylon, Iraq (1932)", "caption": "Library of Congress photograph of the Ishtar Gate at Babylon, Iraq, taken in 1932.", "source_url": "https://commons.wikimedia.org/wiki/File:Ishtar-gate-%D8%A8%D9%88%D8%A7%D8%A8%D8%A9-%D8%B9%D8%B4%D8%AA%D8%A7%D8%B1.jpg", "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ishtar-gate-%D8%A8%D9%88%D8%A7%D8%A8%D8%A9-%D8%B9%D8%B4%D8%AA%D8%A7%D8%B1.jpg", "creator": "Library of Congress Prints and Photographs Division", "institution": "Library of Congress", "license_id": "Public domain", "rights_status": "public_domain", "can_redistribute": True, "can_cache": True, "can_modify": True, "source_record_id": "File:Ishtar-gate-بوابة-عشتار.jpg"},
 ]
+
+
+# The corpus expansion stays additive: the established archaeology domain,
+# its stable IDs, and its database/media import paths remain authoritative.
+from .archaeology_expansion import (  # noqa: E402  (data layer appended after seed)
+    ARCHAEOLOGY_ITEMS as _EXPANSION_ITEMS,
+    ARCHAEOLOGY_MEDIA as _EXPANSION_MEDIA,
+    ARCHAEOLOGY_SCRIPTURE_LINKS as _EXPANSION_SCRIPTURE_LINKS,
+    ARCHAEOLOGY_SITES as _EXPANSION_SITES,
+)
+
+ARCHAEOLOGY_SITES.extend(_EXPANSION_SITES)
+ARCHAEOLOGY_ITEMS.extend(_EXPANSION_ITEMS)
+ARCHAEOLOGY_SCRIPTURE_LINKS.extend(_EXPANSION_SCRIPTURE_LINKS)
+ARCHAEOLOGY_MEDIA.extend(_EXPANSION_MEDIA)

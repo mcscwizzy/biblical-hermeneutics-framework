@@ -256,7 +256,7 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
         biblical_book: str | None = None,
         confidence: str | None = None,
         relationship: str | None = None,
-        limit: int = 25,
+        limit: int = 100,
     ) -> JSONResponse:
         results = archaeology.browse(
             query=q, period=period, item_type=item_type, site=site,
@@ -274,7 +274,7 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
         biblical_book: str | None = None,
         confidence: str | None = None,
         relationship: str | None = None,
-        limit: int = 25,
+        limit: int = 100,
     ) -> JSONResponse:
         results = archaeology.search(
             q, period=period, item_type=item_type, site=site,

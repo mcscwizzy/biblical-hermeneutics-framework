@@ -140,10 +140,32 @@ do not add an image merely because it is visible on a public website.
 
 ## Implementation status
 
-Infrastructure is complete, and the content/media expansion is now populated
-with 31 substantive archaeology records, 31 reviewed media records (28
-Wikimedia Commons files plus 3 Met Open Access public-domain images), and
-reviewed Open Context project-level provenance for three Nimrud records. Every
-current substantive record has one reviewed reusable image. The Babylon/Ishtar
-Gate image is a 1932 public-domain Library of Congress photograph of the gate
-at Babylon, rather than a later museum reconstruction.
+Infrastructure is complete, and the initial curated corpus now has 75
+substantive records across Bronze Age comparative context, the kingdoms,
+Assyrian and Babylonian periods, Persian Yehud, Second Temple Judaism, and the
+Roman worlds of the Gospels, Acts, and Revelation. It has 33 reviewed reusable
+media records (44% item coverage), including two newly reviewed images for
+Magdala and Sardis. The rest of the new text-first records deliberately await
+their own exact-file and rights reviews; a visible card without a picture is
+preferable to incorrectly licensed or merely decorative media.
+
+Current Scripture-link coverage includes 45 OT-linked and 26 NT-linked
+records. Important clusters include 2 Kings 18 / Isaiah 36, Jerusalem's late
+Judah destruction, John’s Second Temple settings, Acts 18–19, and every city
+in Revelation 2–3. The corpus is an ongoing curated expansion, not a complete
+catalogue.
+
+Run the developer report to see the current count, periods, OT/NT balance,
+media coverage, source domains, links, and known gaps:
+
+```bash
+python3 tools/report_archaeology_coverage.py --database .bhf/study.sqlite
+```
+
+The report is a planning aid for the next review batch. New records need a
+specific institutional or academic archaeological source and structured
+evidence/caution fields. New media must be reviewed separately against an
+exact provider file or object ID, imported through a manifest, and remain
+rights-safe for offline use. The Babylon/Ishtar Gate image remains a 1932
+public-domain Library of Congress photograph of the gate at Babylon, rather
+than a later museum reconstruction.
