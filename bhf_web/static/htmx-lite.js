@@ -19,6 +19,8 @@ const READER_SPEECH_AUTO_NEXT_STORAGE_KEY = "bhf-reader-speech-auto-next";
 const READER_SPEECH_RATES = new Set([0.75, 0.9, 1, 1.25, 1.5]);
 const READER_SPEECH_DEFAULT_RATE = 0.9;
 const READER_SPEECH_DEFAULT_AUTO_NEXT = true;
+const READER_SPEECH_HIDE_SCROLL_DELTA_PX = 24;
+const READER_SPEECH_SHOW_SCROLL_DELTA_PX = 8;
 const BHF_TRANSLATION_STORAGE_KEY = "bhf-reader-translation";
 const BHF_TRANSLATION_DOWNLOAD_METADATA_KEY =
   "bhf-translation-download-metadata";
@@ -109,6 +111,8 @@ let readerSpeechContinuationToken = 0;
 let readerSpeechVoicePreference;
 let readerSpeechStatusMessage = "";
 let readerSpeechStartTimer = null;
+let readerSpeechControlsScrollAnchorY = 0;
+let readerSpeechControlsScrollFrame = null;
 let noteContext = null;
 let currentNotes = [];
 let currentHighlights = [];
@@ -1650,6 +1654,66 @@ function initializeReaderSpeechControls() {
   }
   initializeReaderMediaSession();
   updateReaderSpeechControls();
+  readerSpeechControlsScrollAnchorY = readerSpeechScrollY();
+  window.addEventListener("scroll", scheduleReaderSpeechControlsVisibilityUpdate, {
+    passive: true,
+  });
+}
+
+function readerSpeechScrollY() {
+  const scrollingElement =
+    document.scrollingElement || document.documentElement;
+  return Math.max(
+    window.scrollY || window.pageYOffset || 0,
+    scrollingElement?.scrollTop || 0,
+  );
+}
+
+function setReaderSpeechControlsScrolledAway(shouldHide) {
+  const {controls} = readerSpeechElements();
+  if (!controls) {
+    return;
+  }
+  controls.classList.toggle("is-scrolled-away", shouldHide);
+  controls.toggleAttribute("inert", shouldHide);
+  if (shouldHide) {
+    controls.setAttribute("aria-hidden", "true");
+    if (controls.contains(document.activeElement)) {
+      document.activeElement.blur();
+    }
+  } else {
+    controls.removeAttribute("aria-hidden");
+  }
+}
+
+function scheduleReaderSpeechControlsVisibilityUpdate() {
+  if (readerSpeechControlsScrollFrame !== null) {
+    return;
+  }
+  readerSpeechControlsScrollFrame = window.requestAnimationFrame(() => {
+    readerSpeechControlsScrollFrame = null;
+    updateReaderSpeechControlsVisibilityForScroll();
+  });
+}
+
+function updateReaderSpeechControlsVisibilityForScroll() {
+  if (!document.body.classList.contains("reader-mode")) {
+    setReaderSpeechControlsScrolledAway(false);
+    return;
+  }
+
+  const scrollY = readerSpeechScrollY();
+  const scrollDelta = scrollY - readerSpeechControlsScrollAnchorY;
+  if (scrollY <= READER_SPEECH_SHOW_SCROLL_DELTA_PX) {
+    setReaderSpeechControlsScrolledAway(false);
+    readerSpeechControlsScrollAnchorY = scrollY;
+  } else if (scrollDelta >= READER_SPEECH_HIDE_SCROLL_DELTA_PX) {
+    setReaderSpeechControlsScrolledAway(true);
+    readerSpeechControlsScrollAnchorY = scrollY;
+  } else if (scrollDelta <= -READER_SPEECH_SHOW_SCROLL_DELTA_PX) {
+    setReaderSpeechControlsScrolledAway(false);
+    readerSpeechControlsScrollAnchorY = scrollY;
+  }
 }
 
 function updateReaderSpeechControls() {
@@ -2117,6 +2181,8 @@ function applyReaderMode(enabled, options = {}) {
     stopReaderSpeech();
   }
   document.body.classList.toggle("reader-mode", nextEnabled);
+  readerSpeechControlsScrollAnchorY = readerSpeechScrollY();
+  setReaderSpeechControlsScrolledAway(false);
   if (nextEnabled) {
     closeWorkspaceDrawer();
     closeReaderControlsSheet();

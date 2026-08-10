@@ -250,6 +250,13 @@ body.reader-mode .reader-speech-controls {
   background: var(--surface);
   box-shadow: 0 8px 28px rgb(10 24 38 / 14%);
   backdrop-filter: blur(10px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+body.reader-mode .reader-speech-controls.is-scrolled-away {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
 }
 
 .reader-speech-actions {
@@ -282,6 +289,8 @@ body.reader-mode .reader-speech-controls {
 }
 
 .reader-speech-auto-next input {
+  width: auto;
+  flex: 0 0 auto;
   margin: 0;
 }
 
@@ -304,9 +313,20 @@ body.reader-mode .verse.is-speaking {
     border-radius: 16px;
   }
 
+  .reader-speech-auto-next {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
   .reader-speech-status {
     flex-basis: 100%;
     text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.reader-mode .reader-speech-controls {
+    transition: none;
   }
 }
 
