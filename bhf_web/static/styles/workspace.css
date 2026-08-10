@@ -1486,10 +1486,11 @@ body.reader-mode .chapter-text {
   z-index: 5;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 12px;
   margin: 0 0 16px;
-  padding: 10px 12px;
+  height: 40px;
+  padding: 0 1px;
   border: 1px solid var(--border);
   border-radius: 12px;
   background: color-mix(in srgb, var(--surface) 94%, transparent);
@@ -1506,11 +1507,15 @@ body.reader-mode .chapter-text {
   gap: 8px;
 }
 
+.notes-toolbar-actions {
+  justify-content: center;
+}
+
 .notes-icon-button {
   display: inline-grid;
-  width: 40px;
-  min-width: 40px;
-  height: 40px;
+  width: 38px;
+  min-width: 38px;
+  height: 38px;
   padding: 0;
   place-items: center;
 }
@@ -1533,6 +1538,8 @@ body.reader-mode .chapter-text {
 }
 
 .note-save-status {
+  position: absolute;
+  right: 12px;
   min-height: 1.25rem;
   color: var(--muted-text, #52616f);
   font-size: 0.88rem;
@@ -2812,8 +2819,8 @@ html[data-theme="dark"] .map-panel-body {
 
 @media (max-width: 720px) {
   .notes-toolbar {
-    align-items: stretch;
-    flex-direction: column;
+    align-items: center;
+    flex-direction: row;
     top: 4px;
   }
 
