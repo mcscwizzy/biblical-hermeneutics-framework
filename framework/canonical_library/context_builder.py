@@ -287,6 +287,145 @@ def _reference_matches_prefix(reference: Any, prefixes: set[str]) -> bool:
     return any(normalized.startswith(prefix) for prefix in prefixes)
 
 
+def _scripture_span_text(reference: Any) -> str:
+    book = str(getattr(reference, "book", "") or "").strip()
+    chapter = getattr(reference, "start_chapter", None)
+    verse = getattr(reference, "start_verse", None)
+    if not book:
+        return ""
+    if chapter is None:
+        return book
+    return f"{book} {chapter}" + (f":{verse}" if verse is not None else "")
+
+
+def _topic_evidence_coverage(
+    topic: Mapping[str, Any],
+    requested_dimensions: Sequence[str],
+) -> dict[str, dict[str, Any]]:
+    """Build an inspectable map without treating absent CKL data as false."""
+
+    selected_claims = [claim for claim in topic.get("selected_claims", []) if isinstance(claim, Mapping)]
+    field_text = normalize_text(
+        " ".join(
+            str(topic.get(field_name) or "")
+            for field_name in (
+                "summary",
+                "historical_context",
+                "ancient_near_east_context",
+                "second_temple_context",
+                "literary_context",
+                "canonical_context",
+                "covenantal_significance",
+            )
+        )
+    )
+    markers = {
+        "direct textual explanation": ("biblical_text", "literary", "text"),
+        "historical setting": ("historical", "setting"),
+        "cultural practice": ("historical_cultural", "culture", "custom", "kinship", "law"),
+        "ancient near eastern background": ("ancient_near_eastern", "ancient near east"),
+        "second temple context": ("second temple",),
+        "greco roman context": ("greco roman", "roman"),
+        "lexical evidence": ("lexical", "hebrew", "greek"),
+        "manuscript textual evidence": ("manuscript", "textual variant"),
+        "archaeology": ("archaeolog", "artifact", "inscription"),
+        "literary structure": ("literary", "structure", "genre"),
+        "canonical connection": ("canonical", "intertext"),
+        "covenant context": ("covenant",),
+        "biblical theology": ("biblical_theology", "theolog"),
+        "competing interpretations": ("disput", "interpret", "view"),
+        "reception history": ("reception",),
+        "translation differences": ("translation", "render"),
+        "evidence supporting an interpretation": ("source", "rationale", "scripture"),
+    }
+    coverage: dict[str, dict[str, Any]] = {}
+    for dimension in requested_dimensions:
+        normalized_dimension = normalize_text(str(dimension))
+        relevant_claims: list[Mapping[str, Any]] = []
+        for claim in selected_claims:
+            claim_text = normalize_text(
+                " ".join(
+                    str(claim.get(key) or "")
+                    for key in ("claim_type", "claim_text", "rationale", "dispute_status")
+                )
+            )
+            if any(marker in claim_text for marker in markers.get(normalized_dimension, (normalized_dimension,))):
+                relevant_claims.append(claim)
+        references = list(
+            dict.fromkeys(
+                str(reference)
+                for claim in relevant_claims
+                for reference in (claim.get("scripture_references") or [])
+                if str(reference).strip()
+            )
+        )
+        source_ids = list(
+            dict.fromkeys(
+                str(source.get("id") or "")
+                for claim in relevant_claims
+                for source in (claim.get("sources") or [])
+                if isinstance(source, Mapping) and str(source.get("id") or "")
+            )
+        )
+        field_match = any(
+            marker in field_text for marker in markers.get(normalized_dimension, (normalized_dimension,))
+        )
+        if relevant_claims and (references or source_ids):
+            status = "covered"
+        elif relevant_claims or field_match:
+            status = "partially_covered"
+        else:
+            status = "missing"
+        coverage[str(dimension)] = {
+            "status": status,
+            "claim_ids": [str(claim.get("claim_id") or "") for claim in relevant_claims],
+            "scripture_references": references,
+            "source_ids": source_ids,
+        }
+    return coverage
+
+
+def _relationship_independent_relevance(
+    query: str,
+    target: Any,
+    *,
+    requested_dimensions: Sequence[str],
+) -> tuple[float, list[str]]:
+    if not query:
+        return 0.01, []
+    dimension_categories = {
+        "cultural practice": {"cultural_background", "institution", "covenant", "event", "place", "person", "theme"},
+        "historical setting": {"cultural_background", "event", "place", "person", "timeline", "institution"},
+        "ancient near eastern background": {"cultural_background", "institution", "covenant", "place"},
+        "canonical connection": {"book", "theme", "biblical_theology", "covenant", "event", "person"},
+        "covenant context": {"covenant", "theme", "biblical_theology", "book", "event"},
+        "biblical theology": {"biblical_theology", "theme", "theology", "covenant", "book"},
+    }
+    category_sets = [
+        dimension_categories.get(normalize_text(str(dimension)), set())
+        for dimension in requested_dimensions
+    ]
+    allowed_categories = set().union(*category_sets) if category_sets else set()
+    target_type = str(getattr(target, "type", "") or "")
+    if allowed_categories and target_type not in allowed_categories:
+        return 0.0, []
+    query_terms = {term for term in tokenize_query(query) if len(term) > 2}
+    target_text = " ".join(
+        [
+            str(getattr(target, "title", "") or ""),
+            " ".join(getattr(target, "aliases", []) or []),
+            str(getattr(target, "summary", "") or ""),
+            " ".join(getattr(target, "keywords", []) or []),
+            " ".join(getattr(target, "common_questions", []) or []),
+            " ".join(claim.claim for claim in (getattr(target, "claims", []) or [])),
+        ]
+    )
+    matched = sorted(query_terms & set(tokenize_query(target_text)))
+    if not matched:
+        return 0.0, []
+    return round(min(0.8, 0.3 + 0.12 * len(matched)), 4), matched
+
+
 @dataclass
 class CanonicalContextBuilder:
     library: CanonicalLibrary
@@ -356,7 +495,7 @@ class CanonicalContextBuilder:
         expanded: list[dict[str, Any]] = []
         ambiguity = retrieval_trace.pop("ambiguity", None)
         if (
-            analysis.include_related
+            analysis.relationship_expansion_intent
             and self.max_relationship_depth > 0
             and self.max_expanded_topics > 0
             and retrieved
@@ -369,9 +508,26 @@ class CanonicalContextBuilder:
                 exclude_rejected=exclude_rejected,
                 include_placeholders=include_placeholders,
                 allowed_statuses=allowed_statuses,
+                query=question,
+                requested_dimensions=analysis.requested_evidence_dimensions,
             )
             retrieved.extend(expanded)
         _prioritize_query_scripture_references(retrieved, analysis)
+        claim_evidence = self.library.retrieve_claim_evidence(
+            question,
+            [entry["id"] for entry in retrieved],
+            parent_scores={entry["id"]: float(entry.get("ranking_score") or entry.get("score") or 0.0) for entry in retrieved},
+            requested_dimensions=analysis.requested_evidence_dimensions,
+            scripture_references=[_scripture_span_text(reference) for reference in analysis.scripture_references],
+            limit_per_object=3,
+        )
+        for entry in retrieved:
+            selected = claim_evidence.get(entry["id"], [])
+            entry["selected_claims"] = [item.to_dict() for item in selected]
+            entry["evidence_coverage"] = _topic_evidence_coverage(
+                entry,
+                analysis.requested_evidence_dimensions,
+            )
         retrieval_trace["primary_count"] = len(primary_results)
         retrieval_trace["expanded_count"] = len(expanded)
 
@@ -415,6 +571,7 @@ class CanonicalContextBuilder:
                     if str(item.get("id") or "").strip()
                 ],
                 "query_analysis": analysis.to_dict(),
+                "selected_claim_count": sum(len(entry.get("selected_claims") or []) for entry in retrieved),
                 "retrieval": retrieval_trace,
                 "ambiguity": ambiguity.to_dict() if ambiguity is not None else None,
             },
@@ -665,6 +822,8 @@ class CanonicalContextBuilder:
         include_placeholders: bool,
         allowed_statuses: tuple[str, ...] | None,
         token_budget: int | None = None,
+        query: str = "",
+        requested_dimensions: Sequence[str] = (),
     ) -> list[dict[str, Any]]:
         expanded: list[dict[str, Any]] = []
         current_frontier = list(seed_entries)
@@ -676,7 +835,7 @@ class CanonicalContextBuilder:
             and current_depth < max(self.max_relationship_depth, 0)
             and len(expanded) < self.max_expanded_topics
         ):
-            candidates: list[tuple[int, int, str, str, str, str, int]] = []
+            candidates: list[tuple[int, int, int, str, str, str, int, float, list[str]]] = []
             for source_index, source_entry in enumerate(current_frontier):
                 source_obj = self.library.objects_by_id.get(source_entry["id"])
                 if source_obj is None:
@@ -699,6 +858,13 @@ class CanonicalContextBuilder:
                         allowed_statuses=allowed_statuses,
                     ):
                         continue
+                    independent_score, independent_terms = _relationship_independent_relevance(
+                        query,
+                        target_obj,
+                        requested_dimensions=requested_dimensions,
+                    )
+                    if query and current_depth == 0 and independent_score <= 0:
+                        continue
                     candidates.append(
                         (
                             -int(relationship["weight"]),
@@ -708,6 +874,8 @@ class CanonicalContextBuilder:
                             str(relationship["relationship"]),
                             str(relationship["notes"]),
                             int(relationship["weight"]),
+                            independent_score,
+                            independent_terms,
                         )
                     )
 
@@ -716,7 +884,7 @@ class CanonicalContextBuilder:
 
             candidates.sort()
             next_frontier: list[dict[str, Any]] = []
-            for _, source_index, _, target_id, relationship_name, _notes, relationship_weight in candidates:
+            for _, source_index, _, target_id, relationship_name, _notes, relationship_weight, independent_score, independent_terms in candidates:
                 if len(expanded) >= self.max_expanded_topics or target_id in seen_ids:
                     continue
                 source_entry = current_frontier[source_index]
@@ -731,6 +899,9 @@ class CanonicalContextBuilder:
                     seen_ids=seen_ids,
                     score=0.0,
                     match_type="relationship",
+                    matched_terms=independent_terms,
+                    matched_fields=["related_objects", "independent_query_relevance"],
+                    ranking_score=independent_score,
                     included_from=source_entry["id"],
                     relationship=relationship_name,
                     relationship_weight=relationship_weight,
@@ -1116,8 +1287,15 @@ def _build_prompt_context_entry(
     facts: list[str] = []
     selected_references: list[str] = []
     selected_cautions: list[str] = []
+    selected_claim_data = list(topic.get("selected_claims") or [])
+    selected_claim_sources = [
+        source
+        for claim in selected_claim_data
+        if isinstance(claim, Mapping)
+        for source in (claim.get("sources") or [])
+    ]
     source_objects = _select_prompt_sources(
-        topic.get("sources"),
+        selected_claim_sources or topic.get("sources"),
         limit=int(mode_limits["sources"]),
         seen_keys=set(),
     )
@@ -1126,7 +1304,25 @@ def _build_prompt_context_entry(
         sections.append({"heading": "Summary", "items": [summary]})
 
     reference_limit = min(max_scripture_references_per_entry, int(mode_limits["scripture_references"]))
-    reference_candidates = _collect_ranked_scripture_references(
+    claim_reference_candidates = [
+        {
+            "score": 1000 - index,
+            "field_order": -1,
+            "value_index": index,
+            "text": str(reference),
+            "key": normalize_text(str(reference)),
+        }
+        for index, reference in enumerate(
+            dict.fromkeys(
+                str(reference)
+                for claim in selected_claim_data
+                if isinstance(claim, Mapping)
+                for reference in (claim.get("scripture_references") or [])
+                if str(reference).strip()
+            )
+        )
+    ]
+    reference_candidates = claim_reference_candidates + _collect_ranked_scripture_references(
         topic,
         query_terms=query_terms,
         seen_keys=local_seen_references,
@@ -1140,7 +1336,10 @@ def _build_prompt_context_entry(
         sections.append({"heading": "Primary Scripture References", "items": selected_references})
 
     claim_limit = 2 if answer_mode == "scholar" else 1
-    selected_claims = _claim_prompt_texts(topic.get("claims"), limit=claim_limit)
+    selected_claims = _claim_prompt_texts(
+        selected_claim_data or topic.get("claims"),
+        limit=claim_limit,
+    )
     if selected_claims:
         sections.append({"heading": "Sourced Claims", "items": selected_claims})
 
@@ -1262,6 +1461,8 @@ def _build_prompt_context_entry(
         "source_ids": [object_id],
         "sections": sections,
         "sources": source_objects,
+        "selected_claims": selected_claim_data[:claim_limit],
+        "evidence_coverage": dict(topic.get("evidence_coverage") or {}),
     }
 
     entry_tokens = _estimate_prompt_context_entry_tokens(entry)
@@ -1284,7 +1485,7 @@ def _claim_prompt_texts(value: Any, *, limit: int) -> list[str]:
             item = item.to_dict()
         if not isinstance(item, Mapping):
             continue
-        claim = _normalize_prompt_text(item.get("claim"))
+        claim = _normalize_prompt_text(item.get("claim") or item.get("claim_text"))
         if not claim:
             continue
         metadata = [

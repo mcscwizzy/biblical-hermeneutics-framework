@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import re
 import unicodedata
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any, Mapping
 
 from .models import GenreContext, QuestionContext, ReferenceContext
@@ -41,7 +41,8 @@ class AnswerCoverageAssessment:
     covered_dimensions: tuple[str, ...]
     missing_dimensions: tuple[str, ...]
     rationale: str
-    evaluator: str = "deterministic_signal_v1"
+    coverage_map: dict[str, dict[str, Any]] = field(default_factory=dict)
+    evaluator: str = "deterministic_evidence_map_v2"
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -51,6 +52,7 @@ class AnswerCoverageAssessment:
             "research_override": self.research_override,
             "covered_dimensions": list(self.covered_dimensions),
             "missing_dimensions": list(self.missing_dimensions),
+            "coverage_map": {key: dict(value) for key, value in self.coverage_map.items()},
             "rationale": self.rationale,
             "evaluator": self.evaluator,
         }
@@ -184,14 +186,22 @@ def evaluate_answer_coverage(
     )
     requested_dimensions = list(dict.fromkeys(requested_dimensions))
 
-    covered: list[str] = []
-    missing: list[str] = []
-    for dimension in requested_dimensions:
-        markers = _dimension_markers(dimension)
-        if markers and any(marker in evidence_tokens or marker in evidence for marker in markers):
-            covered.append(dimension)
-        else:
-            missing.append(dimension)
+    coverage_map = _build_coverage_map(
+        requested_dimensions,
+        canonical_context=canonical_context,
+        evidence=evidence,
+        evidence_tokens=evidence_tokens,
+    )
+    covered = [
+        dimension
+        for dimension in requested_dimensions
+        if coverage_map[dimension]["status"] == "covered"
+    ]
+    missing = [
+        dimension
+        for dimension in requested_dimensions
+        if coverage_map[dimension]["status"] in {"missing", "partially_covered"}
+    ]
 
     missing = missing[: max(1, int(max_gap_items))]
     if canonical_context:
@@ -261,6 +271,7 @@ def evaluate_answer_coverage(
         covered_dimensions=tuple(covered),
         missing_dimensions=tuple(missing),
         rationale="; ".join(rationale_parts),
+        coverage_map=coverage_map,
     )
 
 
@@ -324,6 +335,101 @@ def format_coverage_prompt(
     if external_research_prompt:
         lines.extend(["", external_research_prompt.strip()])
     return "\n".join(lines)
+
+
+_KNOWN_EVIDENCE_DIMENSIONS: tuple[str, ...] = (
+    "direct textual explanation",
+    "historical setting",
+    "cultural practice",
+    "ancient legal or treaty background",
+    "Second Temple context",
+    "archaeology",
+    "manuscript evidence",
+    "literary structure",
+    "relationship to another passage or topic",
+    "major scholarly interpretations",
+    "reception history",
+    "translation differences",
+    "lexical or translation ambiguity",
+    "evidence for competing views",
+    "exact financial or inheritance risk",
+    "family-line preservation",
+)
+
+
+def _build_coverage_map(
+    requested_dimensions: list[str],
+    *,
+    canonical_context: Mapping[str, Any] | None,
+    evidence: str,
+    evidence_tokens: set[str],
+) -> dict[str, dict[str, Any]]:
+    """Map requested dimensions to concrete local evidence identifiers."""
+
+    dimensions = list(dict.fromkeys([*requested_dimensions, *_KNOWN_EVIDENCE_DIMENSIONS]))
+    structured: dict[str, list[Mapping[str, Any]]] = {}
+    if canonical_context:
+        for topic in canonical_context.get("retrieved_topics", []) or []:
+            if not isinstance(topic, Mapping):
+                continue
+            topic_map = topic.get("evidence_coverage")
+            if not isinstance(topic_map, Mapping):
+                continue
+            for dimension, value in topic_map.items():
+                if isinstance(value, Mapping):
+                    structured.setdefault(str(dimension), []).append(value)
+
+    result: dict[str, dict[str, Any]] = {}
+    requested_set = set(requested_dimensions)
+    for dimension in dimensions:
+        if dimension not in requested_set:
+            result[dimension] = {
+                "status": "not_requested",
+                "object_ids": [],
+                "claim_ids": [],
+                "scripture_references": [],
+                "source_ids": [],
+            }
+            continue
+        entries = structured.get(dimension, [])
+        claim_ids = list(dict.fromkeys(str(value) for entry in entries for value in entry.get("claim_ids", []) if str(value)))
+        references = list(
+            dict.fromkeys(
+                str(value)
+                for entry in entries
+                for value in entry.get("scripture_references", [])
+                if str(value)
+            )
+        )
+        source_ids = list(dict.fromkeys(str(value) for entry in entries for value in entry.get("source_ids", []) if str(value)))
+        statuses = {str(entry.get("status") or "missing") for entry in entries}
+        if "covered" in statuses:
+            status = "covered"
+        elif "partially_covered" in statuses:
+            status = "partially_covered"
+        elif "not_applicable" in statuses and statuses <= {"not_applicable", "missing"}:
+            status = "not_applicable"
+        else:
+            markers = _dimension_markers(dimension)
+            marker_match = bool(markers and any(marker in evidence_tokens or marker in evidence for marker in markers))
+            status = "covered" if marker_match else "missing"
+        object_ids: list[str] = []
+        if canonical_context and status != "missing":
+            object_ids = list(
+                dict.fromkeys(
+                    str(topic.get("id") or "")
+                    for topic in canonical_context.get("retrieved_topics", []) or []
+                    if isinstance(topic, Mapping) and str(topic.get("id") or "")
+                )
+            )
+        result[dimension] = {
+            "status": status,
+            "object_ids": object_ids,
+            "claim_ids": claim_ids,
+            "scripture_references": references,
+            "source_ids": source_ids,
+        }
+    return result
 
 
 def _question_specific_dimensions(

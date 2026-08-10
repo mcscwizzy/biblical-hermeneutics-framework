@@ -61,11 +61,21 @@ temporary database, verifies metadata and integrity, then atomically replaces th
 target path. If validation or verification fails, the previous database remains
 in place.
 
-SQLite stores the full validated canonical object in `payload_json` and indexes
-the fields needed for runtime retrieval: ID, type, normalized title, aliases,
-keywords, relationships, and scripture references. The BHF agent still controls
-query analysis, deterministic CKL retrieval, context package construction, and
+SQLite stores the full validated canonical object in `payload_json` for
+compatibility and also normalizes claims, claim scripture references, sources,
+claim-to-source support, aliases, keywords, relationships, and object scripture
+references. An FTS5 index covers high-signal object and claim text. Runtime
+retrieval fuses deterministic exact/keyword/scripture scoring with bounded BM25
+candidates, then ranks claims inside the selected objects and hydrates only the
+sources linked to those claims. The BHF agent still controls query analysis,
+guarded one-hop relationship expansion, context package construction, and
 language-model prompting. The model does not query SQLite directly.
+
+The current generated database schema is version 3 and the retrieval index is
+version 2. Older artifacts fail with a rebuild command instead of being opened
+silently. The build records both the semantic inventory fingerprint and a cheap
+source inventory signature so normal startup can detect stale artifacts without
+reparsing the complete JSON library.
 
 Configuration example:
 

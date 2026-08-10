@@ -6,7 +6,7 @@ from dataclasses import asdict, dataclass
 import re
 from typing import Mapping
 
-from .normalization import normalize_alias, normalize_text
+from .normalization import STOP_WORDS, normalize_alias, normalize_text, tokenize_query
 from .scripture import ScriptureReferenceSpan, parse_scripture_reference
 
 
@@ -64,6 +64,26 @@ class QueryAnalysis:
     include_related: bool
     comparative: bool
     scripture_references: tuple[ScriptureReferenceSpan, ...] = ()
+    detected_books: tuple[str, ...] = ()
+    concepts: tuple[str, ...] = ()
+    target_terms: tuple[str, ...] = ()
+    question_intent: str = "general"
+    requested_evidence_dimensions: tuple[str, ...] = ()
+    study_action: str = "explain"
+    target_language: str | None = None
+    relationship_expansion_intent: bool = False
+
+    def __post_init__(self) -> None:
+        enrichment = _structured_query_enrichment(
+            self.original_query,
+            entity_candidates=self.entity_candidates,
+            scripture_references=self.scripture_references,
+            relationship=self.include_related,
+        )
+        for field_name, value in enrichment.items():
+            current = getattr(self, field_name)
+            if current in ((), "general", "explain", None, False):
+                object.__setattr__(self, field_name, value)
 
     def to_dict(self) -> dict[str, object]:
         data = asdict(self)
@@ -71,6 +91,11 @@ class QueryAnalysis:
         data["preferred_categories"] = list(self.preferred_categories)
         data["scripture_references"] = [asdict(reference) for reference in self.scripture_references]
         return data
+
+
+# Public conceptual name for callers moving from flattened strings to a
+# structured, deterministic CKL retrieval query.
+CKLQuery = QueryAnalysis
 
 
 @dataclass(frozen=True)
@@ -380,3 +405,99 @@ def _looks_conceptual(normalized: str) -> bool:
         re.search(r"\b(?:scripture|bible|teach|teaches|theme|themes|meaning|doctrine|theology)\b", normalized)
         or re.search(r"\bwhat does\b", normalized)
     )
+
+
+_DIMENSION_PATTERNS: tuple[tuple[str, str], ...] = (
+    (r"\bwhy\b|\bhow\b|\bexplain\b", "direct textual explanation"),
+    (r"\bhistorical\b|\bsetting\b", "historical setting"),
+    (r"\bcultur(?:e|al)\b|\bcustom\b|\bpractice\b", "cultural practice"),
+    (r"\bancient near east(?:ern)?\b|\bane\b", "ancient near eastern background"),
+    (r"\bsecond temple\b", "second temple context"),
+    (r"\bgreco[- ]roman\b|\broman context\b", "greco roman context"),
+    (r"\bhebrew\b|\bgreek\b|\blexical\b|\bword meaning\b", "lexical evidence"),
+    (r"\bmanuscript\b|\btextual variant\b|\btextual evidence\b", "manuscript textual evidence"),
+    (r"\barchaeolog", "archaeology"),
+    (r"\bliterary\b|\bstructure\b|\bgenre\b", "literary structure"),
+    (r"\bcanonical\b|\bconnect(?:s|ed|ion)?\b|\brelat(?:e|ed|ionship)\b", "canonical connection"),
+    (r"\bcovenant\b", "covenant context"),
+    (r"\bbiblical theology\b|\btheological theme\b", "biblical theology"),
+    (r"\binterpretations?\b|\bviews?\b|\bdisagree", "competing interpretations"),
+    (r"\breception\b|\bearly church\b|\bchurch fathers?\b", "reception history"),
+    (r"\btranslation(?:s)?\b|\bversions? differ\b", "translation differences"),
+    (r"\bevidence (?:supports?|for)\b|\bwhat evidence\b", "evidence supporting an interpretation"),
+)
+
+
+def _structured_query_enrichment(
+    question: str,
+    *,
+    entity_candidates: tuple[str, ...],
+    scripture_references: tuple[ScriptureReferenceSpan, ...],
+    relationship: bool,
+) -> dict[str, object]:
+    normalized = normalize_text(question)
+    dimensions = tuple(
+        dimension for pattern, dimension in _DIMENSION_PATTERNS if re.search(pattern, normalized)
+    )
+    detected_books = list(dict.fromkeys(reference.book for reference in scripture_references))
+    if not detected_books:
+        detected_books.extend(
+            entity for entity in entity_candidates if re.search(r"\b(?:genesis|exodus|ruth|psalms?|isaiah|matthew|mark|luke|john|acts|romans|revelation)\b", normalize_alias(entity))
+        )
+    entity_terms = {
+        term
+        for entity in entity_candidates
+        for term in tokenize_query(entity)
+    }
+    concepts = tuple(
+        dict.fromkeys(
+            term
+            for term in tokenize_query(question)
+            if term not in STOP_WORDS
+            and term not in entity_terms
+            and len(term) > 2
+            and not term.isdigit()
+        )
+    )
+    quoted_terms = [match.group(1).strip() for match in re.finditer(r'["“]([^"”]+)["”]', question)]
+    target_terms = tuple(dict.fromkeys(quoted_terms))
+    if re.search(r"\bwhat (?:does|do) .+ (?:mean|represent)\b", normalized):
+        question_intent = "meaning_or_symbol"
+    elif "evidence supporting an interpretation" in dimensions:
+        question_intent = "evidence_evaluation"
+    elif "competing interpretations" in dimensions:
+        question_intent = "interpretive_comparison"
+    elif "cultural practice" in dimensions or "historical setting" in dimensions:
+        question_intent = "contextual_explanation"
+    elif re.search(r"\bwhy\b|\bhow\b", normalized):
+        question_intent = "causal_explanation"
+    elif re.search(r"\bwho\b|\bwhere\b|\bwhen\b", normalized):
+        question_intent = "entity_resolution"
+    else:
+        question_intent = "general"
+    study_action = "compare" if re.search(r"\bcompare|contrast\b", normalized) else (
+        "evaluate_evidence" if "evidence supporting an interpretation" in dimensions else "explain"
+    )
+    target_language = "hebrew" if "hebrew" in normalized else ("greek" if "greek" in normalized else None)
+    return {
+        "detected_books": tuple(detected_books),
+        "concepts": concepts,
+        "target_terms": target_terms,
+        "question_intent": question_intent,
+        "requested_evidence_dimensions": tuple(dict.fromkeys(dimensions)),
+        "study_action": study_action,
+        "target_language": target_language,
+        "relationship_expansion_intent": bool(
+            relationship
+            or set(dimensions).intersection(
+                {
+                    "cultural practice",
+                    "historical setting",
+                    "ancient near eastern background",
+                    "canonical connection",
+                    "covenant context",
+                    "biblical theology",
+                }
+            )
+        ),
+    }

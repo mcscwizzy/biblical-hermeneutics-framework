@@ -183,6 +183,24 @@ def inventory_signature(root: str | Path | None = None) -> str:
     return hashlib.sha256(encoded.encode("utf-8")).hexdigest()
 
 
+def inventory_content_signature(root: str | Path | None = None) -> str:
+    """Hash authored inventory bytes without parsing or validating CKL objects."""
+
+    root_path = _resolve_root(root)
+    digest = hashlib.sha256()
+    for path in _inventory_paths(root_path):
+        try:
+            content = path.read_bytes()
+        except FileNotFoundError:
+            continue
+        relative_path = path.relative_to(root_path).as_posix().encode("utf-8")
+        digest.update(len(relative_path).to_bytes(8, "big"))
+        digest.update(relative_path)
+        digest.update(len(content).to_bytes(8, "big"))
+        digest.update(content)
+    return digest.hexdigest()
+
+
 def load_index(root: str | Path | None = None, *, refresh: bool = False) -> CKLIndex:
     root_path = _resolve_root(root)
     root_key = root_path.resolve().as_posix()

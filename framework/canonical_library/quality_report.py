@@ -746,6 +746,68 @@ def _foundation_migration_metrics(records: Sequence[RawRecord]) -> dict[str, Any
     }
 
 
+def _category_depth_metrics(records: Sequence[RawRecord]) -> dict[str, Any]:
+    """Report evidence depth so content expansion can be reviewed, not fabricated."""
+
+    by_category: dict[str, list[RawRecord]] = defaultdict(list)
+    for record in records:
+        by_category[record.object_type or "<invalid>"].append(record)
+    categories: dict[str, Any] = {}
+    for category, items in sorted(by_category.items()):
+        claim_count = sum(len(item.payload.get("claims", []) or []) for item in items)
+        source_count = sum(len(item.payload.get("sources", []) or []) for item in items)
+        scripture_count = sum(len(item.payload.get("scripture_references", []) or []) for item in items)
+        reviewed_count = sum(
+            str(item.payload.get("review_status") or "") in {"reviewed", "approved"}
+            for item in items
+        )
+        externally_sourced_count = sum(
+            any(
+                isinstance(source, Mapping)
+                and _safe_normalize_id(source.get("source_type", "")) != "scripture"
+                and not _is_internal_source(source)
+                for source in (item.payload.get("sources", []) or [])
+            )
+            for item in items
+        )
+        count = len(items)
+        categories[category] = {
+            "object_count": count,
+            "claim_count": claim_count,
+            "source_count": source_count,
+            "scripture_reference_count": scripture_count,
+            "reviewed_or_approved_count": reviewed_count,
+            "externally_sourced_object_count": externally_sourced_count,
+            "average_claims_per_object": _round_average(claim_count, count),
+            "average_sources_per_object": _round_average(source_count, count),
+            "average_scripture_references_per_object": _round_average(scripture_count, count),
+        }
+    priority_categories = (
+        "cultural_background",
+        "covenant",
+        "biblical_theology",
+        "symbol",
+        "literary_device",
+        "doctrine",
+        "timeline",
+    )
+    high_value_gaps = [
+        {
+            "category": category,
+            "object_count": int(categories.get(category, {}).get("object_count", 0)),
+            "claim_count": int(categories.get(category, {}).get("claim_count", 0)),
+            "externally_sourced_object_count": int(
+                categories.get(category, {}).get("externally_sourced_object_count", 0)
+            ),
+            "recommended_action": "author or review sourced objects using canonical_object_template; retain draft/needs_review until human review",
+        }
+        for category in priority_categories
+        if int(categories.get(category, {}).get("object_count", 0)) < 10
+        or float(categories.get(category, {}).get("average_claims_per_object", 0.0)) < 1.0
+    ]
+    return {"categories": categories, "high_value_gaps": high_value_gaps}
+
+
 def build_quality_report(
     root: Path | str,
     *,
@@ -787,7 +849,7 @@ def build_quality_report(
     ]
 
     return {
-        "report_version": "1.1",
+        "report_version": "1.2",
         "root": str(ckl_root),
         "inventory": {
             "raw_object_count": len(records) + len(parse_failures),
@@ -802,6 +864,7 @@ def build_quality_report(
             "review_status_counts": dict(sorted(audit.review_status_counts.items())),
         },
         "field_coverage_by_category": _field_coverage(records),
+        "category_depth": _category_depth_metrics(records),
         "averages": {
             "summary_characters": _round_average(summary_characters, len(records)),
             "scripture_references": _round_average(scripture_count, len(records)),
