@@ -277,6 +277,30 @@ def test_app_dock_switches_between_bible_and_ask_on_mobile(driver, wait, base_ur
     wait.until(lambda _driver: not _driver.find_element(By.ID, "study-panel").is_displayed())
 
 
+@pytest.mark.parametrize(("width", "height"), [(390, 844), (1440, 1000)])
+def test_app_dock_is_compact_icon_navigation(driver, wait, base_url, width, height):
+    driver.set_window_size(width, height)
+    HomePage(driver, wait, base_url).open().wait_loaded()
+
+    dock = driver.find_element(By.CSS_SELECTOR, "[data-app-dock]")
+    note_button = dock.find_element(By.CSS_SELECTOR, '[data-testid="app-dock-notes"]')
+    metrics = driver.execute_script(
+        """
+        const dock = arguments[0].getBoundingClientRect();
+        const button = arguments[1].getBoundingClientRect();
+        return { dockHeight: dock.height, buttonWidth: button.width };
+        """,
+        dock,
+        note_button,
+    )
+
+    assert note_button.get_attribute("aria-label") == "Notes"
+    assert note_button.find_element(By.CSS_SELECTOR, "svg.app-dock-icon").is_displayed()
+    assert note_button.text == ""
+    assert metrics["dockHeight"] <= 58
+    assert metrics["buttonWidth"] <= 42
+
+
 def test_mobile_ask_submit_still_works(driver, wait, base_url):
     _set_mobile_viewport(driver)
     HomePage(driver, wait, base_url).open().wait_loaded()

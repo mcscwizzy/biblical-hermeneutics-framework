@@ -944,6 +944,8 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("app-dock-notes", response["body"])
         self.assertIn("app-dock-studies", response["body"])
         self.assertIn("app-dock-explore", response["body"])
+        self.assertIn('data-testid="app-dock-notes" aria-pressed="false" aria-label="Notes"', response["body"])
+        self.assertIn('class="app-dock-icon"', response["body"])
         self.assertIn("reader-controls-trigger", response["body"])
         self.assertIn("reader-controls-sheet", response["body"])
         self.assertIn("data-canonical-browser-form", response["body"])

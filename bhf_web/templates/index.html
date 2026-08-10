@@ -29,7 +29,7 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260809b">
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260809c">
   <!-- Legacy cache-key references retained for clients that inspect the shell during upgrades. -->
   <!-- href="/static/style.css?v=20260724c" src="/static/htmx-lite.js?v=20260729b" -->
   {# static_asset('/style.css') }}?v=20260724c #}
@@ -782,18 +782,28 @@
     </div>
   </main>
   <nav class="app-dock" aria-label="Application navigation" data-app-dock>
-    <button type="button" class="app-dock-item is-active" data-app-section="bible" data-testid="app-dock-bible" aria-pressed="true">Bible</button>
-    <button type="button" class="app-dock-item" data-app-section="ask" data-testid="app-dock-ask" aria-pressed="false">Ask</button>
-    <button type="button" class="app-dock-item" data-app-section="notes" data-testid="app-dock-notes" aria-pressed="false">Notes</button>
-    <button type="button" class="app-dock-item" data-app-section="studies" data-testid="app-dock-studies" aria-pressed="false">Studies</button>
-    <button type="button" class="app-dock-item" data-app-section="explore" data-testid="app-dock-explore" aria-pressed="false">Explore</button>
+    <button type="button" class="app-dock-item is-active" data-app-section="bible" data-testid="app-dock-bible" aria-pressed="true" aria-label="Bible" title="Bible">
+      <svg class="app-dock-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M5 4.5h10.5A2.5 2.5 0 0 1 18 7v12H7.5A2.5 2.5 0 0 0 5 21.5v-17Zm0 0v17A2.5 2.5 0 0 1 7.5 19H18M9 8h5m-5 3h5"/></svg>
+    </button>
+    <button type="button" class="app-dock-item" data-app-section="ask" data-testid="app-dock-ask" aria-pressed="false" aria-label="Ask" title="Ask">
+      <svg class="app-dock-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M20 11.5a7.5 7.5 0 0 1-8 7.5 8.5 8.5 0 0 1-3.4-.7L4 20l1.7-4.1A7.2 7.2 0 0 1 4 11.5 7.5 7.5 0 0 1 12 4a7.5 7.5 0 0 1 8 7.5ZM8.5 11.5h.01m3.49 0H12m3.49 0h.01"/></svg>
+    </button>
+    <button type="button" class="app-dock-item" data-app-section="notes" data-testid="app-dock-notes" aria-pressed="false" aria-label="Notes" title="Notes">
+      <svg class="app-dock-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M6 3.5h9l3 3V20a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-15a1.5 1.5 0 0 1 1-1.5Zm8.5 0V7H18M8 11h8m-8 3h8m-8 3h5"/></svg>
+    </button>
+    <button type="button" class="app-dock-item" data-app-section="studies" data-testid="app-dock-studies" aria-pressed="false" aria-label="Studies" title="Studies">
+      <svg class="app-dock-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M5 4.5h10.5A2.5 2.5 0 0 1 18 7v12H7.5A2.5 2.5 0 0 0 5 21.5v-17Zm0 0v17A2.5 2.5 0 0 1 7.5 19H18M9 8h5m-5 3h5m-5 3h4"/></svg>
+    </button>
+    <button type="button" class="app-dock-item" data-app-section="explore" data-testid="app-dock-explore" aria-pressed="false" aria-label="Explore" title="Explore">
+      <svg class="app-dock-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="8"/><path d="m14.5 9.5-1.8 3-3.2 1.8 1.8-3 3.2-1.8Z"/></svg>
+    </button>
     <button type="button" class="app-dock-utility app-dock-workspace-toggle" data-workspace-dock-toggle data-testid="workspace-dock-toggle" aria-controls="study-panel" aria-pressed="true" aria-label="Restore workspace" title="Restore workspace" hidden>
-      <span class="app-dock-utility-icon" aria-hidden="true">▣</span>
-      <span class="app-dock-utility-label" data-control-label>Restore</span>
+      <svg class="app-dock-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><rect x="5" y="5" width="14" height="14" rx="1"/><path d="M9 2.5h10a2.5 2.5 0 0 1 2.5 2.5v10M2.5 9V5A2.5 2.5 0 0 1 5 2.5h4"/></svg>
+      <span class="visually-hidden" data-control-label>Restore workspace</span>
     </button>
     <button type="button" class="app-dock-utility" data-reader-controls-trigger data-testid="reader-controls-trigger" aria-haspopup="dialog" aria-controls="reader-controls-sheet" aria-label="Open settings" title="Open settings">
-      <span class="app-dock-utility-icon" aria-hidden="true">⚙</span>
-      <span class="app-dock-utility-label">Settings</span>
+      <svg class="app-dock-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.1 2.1-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5v.2h-3v-.2a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1-2.1-2.1.1-.1A1.7 1.7 0 0 0 7 15a1.7 1.7 0 0 0-1.5-1H5.3v-3h.2A1.7 1.7 0 0 0 7 10a1.7 1.7 0 0 0-.3-1.9l-.1-.1 2.1-2.1.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.5v-.2h3v.2a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1 2.1 2.1-.1.1A1.7 1.7 0 0 0 19.4 10a1.7 1.7 0 0 0 1.5 1h.2v3h-.2a1.7 1.7 0 0 0-1.5 1Z"/></svg>
+      <span class="visually-hidden">Settings</span>
     </button>
   </nav>
   <dialog id="reader-controls-sheet" class="reader-controls-sheet" data-reader-controls-sheet aria-labelledby="reader-controls-sheet-title">
