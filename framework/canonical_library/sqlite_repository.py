@@ -579,7 +579,11 @@ class SQLiteCanonicalRepository:
                 **filters,
             )
         } if scripture_mode else {}
-        field_terms_by_id = self._field_terms_for_many(sorted(candidate_ids))
+        # Scoring only needs rows for the terms in this query.  Fetching every
+        # indexed term for every candidate made broad queries deserialize most
+        # of ``canonical_keywords`` (hundreds of thousands of rows) even
+        # though nearly all of those terms could not affect the score.
+        field_terms_by_id = self._field_terms_for_query(sorted(candidate_ids), query_terms)
         scoring_rows = self._scoring_rows(sorted(candidate_ids))
         exact_ids = set(self.title_matches(query)) | set(self.alias_matches(query))
         preliminary: list[tuple[float, str]] = []
@@ -690,6 +694,8 @@ class SQLiteCanonicalRepository:
         missing_ids = sorted(candidate_ids - set(objects))
         objects.update(self._objects_by_ids(missing_ids))
         category_set = set(categories or ())
+        query_terms = query_search_terms(query)
+        query_term_set = set(query_terms)
         fused: list[RetrievalResult] = []
         for object_id in sorted(candidate_ids):
             obj = objects.get(object_id)
@@ -699,14 +705,13 @@ class SQLiteCanonicalRepository:
                 continue
             keyword = keyword_by_id.get(object_id)
             rank = fts_rank.get(object_id)
-            query_terms = set(query_search_terms(query))
             title_terms = set(query_search_terms(obj.title))
             alias_exact = any(
-                set(query_search_terms(alias)).issubset(query_terms)
+                set(alias_terms).issubset(query_term_set)
                 for alias in obj.aliases
-                if query_search_terms(alias)
+                if (alias_terms := query_search_terms(alias))
             )
-            entity_bonus = 0.24 if (title_terms and title_terms.issubset(query_terms)) or alias_exact else 0.0
+            entity_bonus = 0.24 if (title_terms and title_terms.issubset(query_term_set)) or alias_exact else 0.0
             if keyword is not None:
                 # A bounded reciprocal-rank boost improves recall but cannot
                 # displace privileged exact/entity/Scripture evidence.
@@ -738,7 +743,7 @@ class SQLiteCanonicalRepository:
                     object=obj,
                     score=score,
                     match_type="keyword",
-                    matched_terms=query_search_terms(query),
+                    matched_terms=query_terms,
                     matched_fields=["fts5"],
                     ranking_score=score,
                 )
@@ -805,17 +810,14 @@ class SQLiteCanonicalRepository:
 
     def _objects_by_ids(self, object_ids: Sequence[str]) -> dict[str, CanonicalObject]:
         ids = sorted({normalize_id(value) for value in object_ids if normalize_id(value)})
-        if not ids:
-            return {}
-        placeholders = ",".join("?" for _ in ids)
-        rows = self._conn.execute(
-            f"SELECT id, payload_json FROM canonical_objects WHERE id IN ({placeholders}) ORDER BY id",
-            tuple(ids),
-        ).fetchall()
         objects: dict[str, CanonicalObject] = {}
-        for row in rows:
-            object_id = str(row["id"])
-            objects[object_id] = validate_object(json.loads(str(row["payload_json"])))
+        # Route hydration through the bounded object cache.  Broad hybrid
+        # queries repeatedly revisit high-value objects; revalidating their
+        # full JSON payload on every query dominated warm retrieval latency.
+        for object_id in ids:
+            obj = self.get_by_id(object_id)
+            if obj is not None:
+                objects[object_id] = obj
         return objects
 
     def _field_terms_for(self, object_id: str) -> dict[str, set[str]]:
@@ -850,6 +852,36 @@ class SQLiteCanonicalRepository:
         result: dict[str, dict[str, set[str]]] = {object_id: {} for object_id in ids}
         for row in rows:
             result[str(row["object_id"])].setdefault(str(row["field_name"]), set()).add(str(row["term"]))
+        return result
+
+    def _field_terms_for_query(
+        self,
+        object_ids: Sequence[str],
+        query_terms: Sequence[str],
+    ) -> dict[str, dict[str, set[str]]]:
+        """Return only indexed field terms that can affect this query's score."""
+
+        ids = sorted({normalize_id(value) for value in object_ids if normalize_id(value)})
+        terms = tuple(dict.fromkeys(str(value) for value in query_terms if str(value)))
+        if not ids or not terms:
+            return {object_id: {} for object_id in ids}
+        id_placeholders = ",".join("?" for _ in ids)
+        term_placeholders = ",".join("?" for _ in terms)
+        rows = self._conn.execute(
+            f"""
+            SELECT object_id, field_name, term
+            FROM canonical_keywords
+            WHERE object_id IN ({id_placeholders})
+              AND term IN ({term_placeholders})
+            ORDER BY object_id, field_name, term
+            """,
+            (*ids, *terms),
+        ).fetchall()
+        result: dict[str, dict[str, set[str]]] = {object_id: {} for object_id in ids}
+        for row in rows:
+            result[str(row["object_id"])].setdefault(str(row["field_name"]), set()).add(
+                str(row["term"])
+            )
         return result
 
     def _scoring_rows(self, object_ids: Sequence[str]) -> dict[str, sqlite3.Row]:

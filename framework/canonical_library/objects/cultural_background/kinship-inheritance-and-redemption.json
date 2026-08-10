@@ -1,0 +1,52 @@
+{
+  "id": "kinship-inheritance-and-redemption",
+  "type": "cultural_background",
+  "title": "Kinship, Inheritance, and Redemption",
+  "aliases": ["kinship redemption", "family inheritance", "kinsman redeemer", "household land redemption"],
+  "summary": "A source-backed guide to the family-line, household, land, marriage, and redemption responsibilities that converge in texts such as Ruth 4 without forcing them into one reconstructed law.",
+  "historical_context": "Israelite landholding, household continuity, marriage, and care for vulnerable relatives could be narrated through overlapping kinship obligations. The surviving texts do not establish that every period or case followed one uniform procedure.",
+  "ancient_near_east_context": "Ancient Near Eastern legal comparisons can illuminate land and household arrangements, but proposed parallels must be dated and compared case by case rather than treated as a single background system.",
+  "literary_context": "In Ruth, the gate scene joins property responsibility, preservation of the deceased's name, marriage, public witnesses, and the nearer redeemer's refusal within the narrative's own sequence.",
+  "covenantal_significance": "Land, family continuity, and care for vulnerable household members belong within Israel's covenantal life, but a text's particular legal and literary claims must control theological synthesis.",
+  "intertextuality": ["Leviticus 25, Deuteronomy 25, and Ruth 4 use related family, land, and continuity concerns without presenting identical cases."],
+  "timeline": [],
+  "maps": [],
+  "archaeology": [],
+  "hebrew_words": ["goel", "yabam"],
+  "greek_words": [],
+  "related_people": ["boaz", "ruth-the-moabite"],
+  "related_places": ["bethlehem-1"],
+  "related_events": [],
+  "related_objects": [
+    {"id": "ruth", "relationship": "primary-text", "weight": 10, "notes": "Ruth 4 narrates the redemption arrangement."},
+    {"id": "boaz", "relationship": "key-person", "weight": 8, "notes": "Boaz accepts the public responsibility."}
+  ],
+  "scripture_references": [
+    {"reference": "Leviticus 25:23-34", "relationship": "background", "notes": "Land redemption within Israel."},
+    {"reference": "Deuteronomy 25:5-10", "relationship": "background", "notes": "Family-line preservation in a distinct case."},
+    {"reference": "Ruth 4:1-12", "relationship": "primary", "notes": "The gate arrangement and public witnesses."}
+  ],
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
+    {"note": "Do not collapse land redemption, levirate marriage, and Ruth's gate transaction into a single timeless procedure.", "note_type": "interpretive-caution", "certainty": "high", "dispute_status": "broad-consensus", "sources": ["hubbard-ruth", "lau-ruth"]}
+  ],
+  "common_questions": ["How are kinship, inheritance, marriage, and redemption related in Ruth 4?", "Why does the nearer redeemer fear damage to his inheritance?"],
+  "sources": [
+    {"id": "ruth-4", "title": "Ruth 4", "author": "", "publisher": "", "year": null, "locator": "Ruth 4:1-12", "url": "", "source_type": "scripture", "supports": ["kinship-ruth-arrangement", "kinship-legal-caution"], "notes": "Primary biblical text."},
+    {"id": "hubbard-ruth", "title": "The Book of Ruth", "author": "Robert L. Hubbard Jr.", "publisher": "Eerdmans", "year": 1989, "locator": "Commentary on Ruth 4", "url": "https://www.eerdmans.com/9780802883315/the-book-of-ruth/", "source_type": "reference-work", "supports": ["kinship-ruth-arrangement", "kinship-legal-caution"], "notes": "Technical commentary on the Hebrew text and legal background."},
+    {"id": "lau-ruth", "title": "The Book of Ruth", "author": "Peter H. W. Lau", "publisher": "Eerdmans", "year": 2023, "locator": "Commentary on Ruth 4", "url": "https://www.eerdmans.com/9780802877260/the-book-of-ruth/", "source_type": "reference-work", "supports": ["kinship-ruth-arrangement", "kinship-legal-caution"], "notes": "NICOT commentary with literary, historical, and cultural analysis."}
+  ],
+  "claims": [
+    {"id": "kinship-ruth-arrangement", "claim": "Ruth 4 publicly joins property responsibility, preservation of the deceased's name, and Boaz's acquisition of Ruth as wife after the nearer redeemer declines.", "claim_type": "biblical_text", "certainty": "textually_explicit", "dispute_status": "major_scholarly_disagreement", "scripture_references": ["Ruth 4:1-12"], "source_ids": ["ruth-4", "hubbard-ruth", "lau-ruth"], "traditions": [], "rationale": "The gate dialogue explicitly joins these elements; the precise legal reconstruction remains debated.", "notes": ""},
+    {"id": "kinship-legal-caution", "claim": "Leviticus 25, Deuteronomy 25, and Ruth 4 address related land and family-continuity concerns but should not be treated as descriptions of one identical legal mechanism.", "claim_type": "historical_cultural", "certainty": "probable", "dispute_status": "major_scholarly_disagreement", "scripture_references": ["Leviticus 25:23-34", "Deuteronomy 25:5-10", "Ruth 4:1-12"], "source_ids": ["hubbard-ruth", "lau-ruth"], "traditions": ["Academic"], "rationale": "The texts differ in parties, circumstances, and narrated procedure.", "notes": "Requires human review before approval."}
+  ],
+  "retrieval_metadata": {"aliases": ["kinship redeemer", "goel", "levirate marriage"], "search_terms": ["Ruth inheritance risk", "family land redemption", "marriage household structure"], "common_questions": ["Why would redemption endanger an inheritance?"], "related_topics": ["Ruth", "Boaz", "land", "marriage"], "frequently_confused_with": ["uniform biblical marriage law"], "semantic_keywords": ["kinship", "inheritance", "redemption", "marriage", "household"]},
+  "importance": 92,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "draft",
+  "review_status": "in_review",
+  "confidence": "medium",
+  "human_review_required": true
+}

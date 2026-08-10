@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "description": "Production CKL claim-ranking and evidence-hydration golden cases.",
+  "queries": [
+    {
+      "id": "ruth-redemption",
+      "parent_object_id": "ruth",
+      "query": "Why would redeeming Ruth endanger his inheritance?",
+      "expected_claim_id": "ruth-redemption-arrangement",
+      "minimum_score": 0.55,
+      "expected_source_ids": ["ruth-1-4", "hubbard-ruth", "lau-ruth"],
+      "expected_scripture_references": ["Ruth 4:1-12"]
+    },
+    {
+      "id": "john-synagogue",
+      "parent_object_id": "john",
+      "query": "What does being put out of the synagogue mean in John?",
+      "expected_claim_id": "john-aposynagogos",
+      "minimum_score": 0.65,
+      "expected_source_ids": ["cambridge-john-companion", "oxford-johannine", "vonwahlde-jews"],
+      "expected_scripture_references": ["John 9:22", "John 12:42-43", "John 16:1-4"]
+    },
+    {
+      "id": "acts-citizenship",
+      "parent_object_id": "acts",
+      "query": "Was Paul really a Roman citizen and how does Acts use that status?",
+      "expected_claim_id": "acts-roman-citizenship",
+      "minimum_score": 0.9,
+      "expected_source_ids": ["acts-greek", "sherwin-white-society"],
+      "expected_scripture_references": ["Acts 16:35-40", "Acts 22:22-29", "Acts 25:10-12"]
+    },
+    {
+      "id": "philemon-debt",
+      "parent_object_id": "philemon",
+      "query": "What debt does Paul take onto his own account for Onesimus?",
+      "expected_claim_id": "phm-debt",
+      "minimum_score": 0.9,
+      "expected_source_ids": ["phm-greek", "saller", "harrill"],
+      "expected_scripture_references": ["Philemon 1:18"]
+    },
+    {
+      "id": "galatians-paidagogos",
+      "parent_object_id": "galatians",
+      "query": "What does paidagogos mean in Galatians?",
+      "expected_claim_id": "gal-pedagogue",
+      "minimum_score": 0.85,
+      "expected_source_ids": ["gal-greek", "bdag"],
+      "expected_scripture_references": ["Galatians 3:23-25"]
+    },
+    {
+      "id": "leviticus-purity",
+      "parent_object_id": "leviticus",
+      "query": "Does ritual impurity in Leviticus always mean personal sin?",
+      "expected_claim_id": "leviticus-purity-distinctions",
+      "minimum_score": 0.9,
+      "expected_source_ids": ["leviticus-1-27", "levine-leviticus", "wenham-leviticus"],
+      "expected_scripture_references": ["Leviticus 11-15", "Leviticus 18-20"]
+    },
+    {
+      "id": "philippians-caesar-household",
+      "parent_object_id": "philippians",
+      "query": "Who were the saints in Caesar's household?",
+      "expected_claim_id": "phl-caesar",
+      "minimum_score": 0.9,
+      "expected_source_ids": ["phl-greek", "flexsenhar-provenance"],
+      "expected_scripture_references": ["Philippians 4:22"]
+    }
+  ]
+}

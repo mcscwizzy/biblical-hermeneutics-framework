@@ -1,0 +1,53 @@
+{
+  "id": "patronage-hospitality-and-debt",
+  "type": "cultural_background",
+  "title": "Patronage, Hospitality, and Debt",
+  "aliases": ["patronage and hospitality", "hospitality and obligation", "debt and reciprocity", "ancient patronage"],
+  "summary": "A controlled social-history lens for gifts, travel support, hierarchy, reciprocity, hospitality, and accounting language in New Testament letters.",
+  "historical_context": "Greco-Roman patronage and friendship practices could bind gifts and services to status and obligation, while household hospitality enabled travel and communication. Each letter may affirm, resist, or reframe those conventions.",
+  "ancient_near_east_context": "Hospitality and obligation have wider ancient histories, but Roman-period evidence is the nearer comparator for Philemon, Philippians, and 3 John.",
+  "literary_context": "Philemon uses accounting language, Philippians frames material aid as gospel partnership, and 3 John commends support for travelers while reporting Diotrephes's refusal.",
+  "covenantal_significance": "Christian texts place material support, welcome, and obligation under fidelity, love, and shared mission rather than treating elite reciprocity as a master key.",
+  "intertextuality": ["Philemon 17-19, Philippians 4:10-20, and 3 John 5-10 use different letter situations and should not be flattened into one patronage script."],
+  "timeline": [],
+  "maps": [],
+  "archaeology": [],
+  "hebrew_words": [],
+  "greek_words": ["koinonia", "xenos"],
+  "related_people": ["paul", "onesimus"],
+  "related_places": ["philippi"],
+  "related_events": [],
+  "related_objects": [
+    {"id": "patronage", "relationship": "institutional-background", "weight": 9, "notes": "Broader patronage object."},
+    {"id": "philemon", "relationship": "primary-text", "weight": 9, "notes": "Debt and intercession language."},
+    {"id": "3-john", "relationship": "primary-text", "weight": 9, "notes": "Travel support and refusal."}
+  ],
+  "scripture_references": [
+    {"reference": "Philemon 1:17-19", "relationship": "primary", "notes": "Paul's reception and accounting request."},
+    {"reference": "Philippians 4:10-20", "relationship": "primary", "notes": "Gift and partnership language."},
+    {"reference": "3 John 1:5-10", "relationship": "primary", "notes": "Support for travelers and refusal of siblings."}
+  ],
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
+    {"note": "Patronage, friendship, and reciprocity are comparative models; no one model should replace close reading of a letter's own rhetoric.", "note_type": "interpretive-caution", "certainty": "high", "dispute_status": "broad-consensus", "sources": ["saller", "lieu"]}
+  ],
+  "common_questions": ["How do patronage and friendship illuminate New Testament gifts?", "What did hospitality for traveling teachers involve?", "What debt does Paul assume in Philemon?"],
+  "sources": [
+    {"id": "philemon-3john", "title": "Philemon 17-19 and 3 John 5-10", "author": "", "publisher": "", "year": null, "locator": "Philemon 1:17-19; 3 John 1:5-10", "url": "", "source_type": "scripture", "supports": ["patronage-debt-account", "hospitality-travel-support"], "notes": "Primary biblical texts."},
+    {"id": "saller", "title": "Personal Patronage under the Early Empire", "author": "Richard P. Saller", "publisher": "Cambridge University Press", "year": 1982, "locator": "Patronage, hierarchy, reciprocity, obligation, and provision", "url": "https://www.cambridge.org/core/books/personal-patronage-under-the-early-empire/46E59A2AE1CD7041307C66F3AA8DDA97", "source_type": "academic-book", "supports": ["patronage-debt-account"], "notes": "Roman social-history comparator, not a direct reconstruction of a particular church."},
+    {"id": "lieu", "title": "I, II, & III John: A Commentary", "author": "Judith M. Lieu", "publisher": "Westminster John Knox Press", "year": 2008, "locator": "3 John 5-10", "url": "https://www.wjkbooks.com/Products/0664220983/i-ii-iii-john.aspx", "source_type": "academic-book", "supports": ["hospitality-travel-support"], "notes": "Literary, historical, theological, and ethical commentary."}
+  ],
+  "claims": [
+    {"id": "patronage-debt-account", "claim": "In Philemon 18-19 Paul conditionally transfers any wrong or debt attributed to Onesimus onto his own account; the text does not specify theft or an amount.", "claim_type": "biblical_text", "certainty": "textually_explicit", "dispute_status": "historical_uncertainty", "scripture_references": ["Philemon 1:18-19"], "source_ids": ["philemon-3john", "saller"], "traditions": ["Academic", "Christian"], "rationale": "The accounting instruction is explicit while the prior circumstances are not narrated.", "notes": ""},
+    {"id": "hospitality-travel-support", "claim": "Third John commends Gaius's support for traveling siblings and reports that Diotrephes refuses the siblings and hinders those who would receive them.", "claim_type": "biblical_text", "certainty": "textually_explicit", "dispute_status": "historical_uncertainty", "scripture_references": ["3 John 1:5-10"], "source_ids": ["philemon-3john", "lieu"], "traditions": ["Academic", "Christian"], "rationale": "The commendation and accusation are explicit; exact offices, procedures, and material arrangements remain uncertain.", "notes": ""}
+  ],
+  "retrieval_metadata": {"aliases": ["gift reciprocity", "traveling teacher hospitality"], "search_terms": ["New Testament patronage friendship", "Philemon debt account", "3 John hospitality"], "common_questions": ["Was the Philippians' gift patronage?"], "related_topics": ["patronage", "hospitality", "Philemon", "3 John"], "frequently_confused_with": ["modern charitable giving"], "semantic_keywords": ["patronage", "hospitality", "debt", "gift", "reciprocity", "household"]},
+  "importance": 90,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "draft",
+  "review_status": "in_review",
+  "confidence": "medium",
+  "human_review_required": true
+}

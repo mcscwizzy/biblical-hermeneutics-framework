@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from collections import Counter
 from dataclasses import asdict, dataclass, field
 import re
 from typing import Any, Iterable, Mapping, Sequence
@@ -44,6 +45,19 @@ _DIMENSION_CLAIM_TYPES: dict[str, tuple[str, ...]] = {
     "reception history": ("reception_history", "reception-history"),
     "translation differences": ("lexical", "textual", "manuscript"),
     "evidence supporting an interpretation": ("biblical_text", "textual", "historical_cultural", "literary"),
+}
+
+_EVIDENCE_STOP_WORDS = STOP_WORDS | {
+    "according",
+    "being",
+    "explain",
+    "mean",
+    "meaning",
+    "means",
+    "out",
+    "put",
+    "say",
+    "says",
 }
 
 
@@ -90,11 +104,33 @@ def rank_claims(
     parent_data = _as_mapping(parent)
     claims = _as_sequence(parent_data.get("claims"))
     sources = _as_sequence(parent_data.get("sources"))
-    query_terms = _meaningful_terms(question)
+    parent_terms = set(
+        _meaningful_terms(
+            " ".join((str(parent_data.get("id") or ""), str(parent_data.get("title") or "")))
+        )
+    )
+    # Once the parent object has been selected, its own title does not
+    # distinguish one claim from another (for example, nearly every claim in
+    # John contains "John").
+    query_terms = [term for term in _meaningful_terms(question) if term not in parent_terms]
     normalized_question = normalize_text(question)
     requested = tuple(normalize_text(value) for value in requested_dimensions if str(value).strip())
     query_refs = tuple(str(value) for value in scripture_references if str(value).strip())
     ranked: list[RetrievedClaimEvidence] = []
+    claim_term_frequency: Counter[str] = Counter()
+    for raw_claim in claims:
+        claim = _as_mapping(raw_claim)
+        searchable = normalize_text(
+            " ".join(
+                (
+                    str(claim.get("claim") or claim.get("claim_text") or ""),
+                    str(claim.get("rationale") or ""),
+                    str(claim.get("notes") or ""),
+                    str(claim.get("claim_type") or ""),
+                )
+            )
+        )
+        claim_term_frequency.update(set(_meaningful_terms(searchable)))
 
     for position, raw_claim in enumerate(claims):
         claim = _as_mapping(raw_claim)
@@ -115,6 +151,13 @@ def rank_claims(
             overlap = len(matched_terms) / max(len(set(query_terms)), 1)
             score += min(0.55, 0.22 + (0.45 * overlap))
             reasons.append("query token overlap: " + ", ".join(matched_terms))
+            rare_cutoff = max(1, len(claims) // 12)
+            specific_matches = [
+                term for term in matched_terms if claim_term_frequency[term] <= rare_cutoff
+            ]
+            if specific_matches:
+                score += min(0.16, 0.08 + (0.02 * len(specific_matches)))
+                reasons.append("claim-specific term: " + ", ".join(specific_matches))
         phrase = _longest_query_phrase(normalized_question, searchable)
         if phrase:
             score += min(0.20, 0.06 + (0.025 * len(phrase.split())))
@@ -246,7 +289,7 @@ def _meaningful_terms(value: str) -> list[str]:
     return [
         _evidence_term(term)
         for term in tokenize_query(value)
-        if len(term) > 1 and term not in STOP_WORDS
+        if len(term) > 1 and term not in _EVIDENCE_STOP_WORDS
     ]
 
 

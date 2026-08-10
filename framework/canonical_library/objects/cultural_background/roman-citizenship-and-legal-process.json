@@ -1,0 +1,51 @@
+{
+  "id": "roman-citizenship-and-legal-process",
+  "type": "cultural_background",
+  "title": "Roman Citizenship and Legal Process",
+  "aliases": ["Paul's citizenship", "Roman courts in Acts", "citizenship and appeal"],
+  "summary": "A source-backed guide to how Acts narrates Paul's citizenship claims, local magistrates, custody, hearings, and appeal without claiming independent proof of his status.",
+  "historical_context": "Roman citizenship carried legal privileges and status, but procedures varied by jurisdiction and circumstance. Acts uses citizenship at specific narrative moments rather than supplying a complete Roman law manual.",
+  "ancient_near_east_context": "The immediate comparator is Roman imperial law and provincial administration, not a generalized ancient Near Eastern legal system.",
+  "literary_context": "Acts connects Paul's citizenship with the Philippian magistrates, an attempted examination by flogging, protective custody, hearings before governors, and appeal to Caesar.",
+  "covenantal_significance": "Acts places legal status within the mission narrative without equating Roman privilege with the gospel or Christian identity.",
+  "intertextuality": ["Acts 16, 22, and 25 narrate different uses of citizenship and legal process."],
+  "timeline": [],
+  "maps": [],
+  "archaeology": [],
+  "hebrew_words": [],
+  "greek_words": ["politeia", "Rhomaios"],
+  "related_people": ["paul"],
+  "related_places": ["philippi", "rome"],
+  "related_events": ["paul-before-agrippa"],
+  "related_objects": [
+    {"id": "roman-citizenship", "relationship": "institutional-overview", "weight": 9, "notes": "Broader citizenship object."},
+    {"id": "acts", "relationship": "primary-text", "weight": 10, "notes": "Narrative evidence for Paul's citizenship."}
+  ],
+  "scripture_references": [
+    {"reference": "Acts 16:35-40", "relationship": "primary", "notes": "Citizenship and the Philippian magistrates."},
+    {"reference": "Acts 22:22-29", "relationship": "primary", "notes": "Citizenship asserted before examination."},
+    {"reference": "Acts 25:10-12", "relationship": "primary", "notes": "Appeal to Caesar."}
+  ],
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
+    {"note": "Legal-historical coherence is not independent biographical proof; Paul's citizenship is directly attested only within Acts.", "note_type": "interpretive-caution", "certainty": "high", "dispute_status": "historical-uncertainty", "sources": ["sherwin-white-society"]}
+  ],
+  "common_questions": ["Was Paul really a Roman citizen?", "What rights does Acts associate with citizenship?", "Why did Paul appeal to Caesar?"],
+  "sources": [
+    {"id": "acts-citizenship-texts", "title": "Acts 16, 22, and 25", "author": "", "publisher": "", "year": null, "locator": "Acts 16:35-40; 22:22-29; 25:10-12", "url": "", "source_type": "scripture", "supports": ["roman-citizenship-portrayal", "roman-procedural-effects"], "notes": "Primary narrative evidence."},
+    {"id": "sherwin-white-society", "title": "Roman Society and Roman Law in the New Testament", "author": "A. N. Sherwin-White", "publisher": "Oxford University Press", "year": 1963, "locator": "Acts, citizenship, provincial administration, and trials", "url": "https://global.oup.com/academic/product/roman-society-and-roman-law-in-the-new-testament-9780198266109", "source_type": "academic-book", "supports": ["roman-citizenship-portrayal", "roman-procedural-effects"], "notes": "Classic legal-historical comparison requiring use alongside newer scholarship."}
+  ],
+  "claims": [
+    {"id": "roman-citizenship-portrayal", "claim": "Acts repeatedly portrays Paul as a Roman citizen, but independent confirmation of that personal status is unavailable.", "claim_type": "historical_cultural", "certainty": "probable", "dispute_status": "historical_uncertainty", "scripture_references": ["Acts 16:35-40", "Acts 22:22-29", "Acts 25:10-12"], "source_ids": ["acts-citizenship-texts", "sherwin-white-society"], "traditions": ["Academic"], "rationale": "The portrayal coheres with some Roman procedures but rests narratively on Acts.", "notes": ""},
+    {"id": "roman-procedural-effects", "claim": "Acts narrates Paul's citizenship as affecting threatened flogging, the Philippian magistrates' response, custody and hearings, and his appeal to Caesar, though these scenes do not define every citizen's rights in every province.", "claim_type": "biblical_text", "certainty": "textually_explicit", "dispute_status": "historical_uncertainty", "scripture_references": ["Acts 16:35-40", "Acts 22:22-29", "Acts 25:10-12"], "source_ids": ["acts-citizenship-texts", "sherwin-white-society"], "traditions": ["Academic", "Christian"], "rationale": "The narrative explicitly connects the status claims to these legal scenes; broader legal generalization requires comparative evidence.", "notes": ""}
+  ],
+  "retrieval_metadata": {"aliases": ["civis Romanus", "Paul Roman citizen"], "search_terms": ["Roman citizenship Acts", "Paul flogging appeal Caesar", "Roman courts Bible"], "common_questions": ["What did Roman citizenship protect?"], "related_topics": ["Acts", "Paul", "Roman Empire", "law"], "frequently_confused_with": ["modern national citizenship"], "semantic_keywords": ["citizenship", "courts", "flogging", "appeal", "Caesar", "province"]},
+  "importance": 90,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "draft",
+  "review_status": "in_review",
+  "confidence": "medium",
+  "human_review_required": true
+}

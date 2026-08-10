@@ -1,0 +1,54 @@
+{
+  "id": "synagogue-life-and-exclusion",
+  "type": "cultural_background",
+  "title": "Synagogue Life and Exclusion",
+  "aliases": ["synagogue life", "synagogue exclusion", "put out of the synagogue", "aposynagogos"],
+  "summary": "A source-backed guide to synagogue settings in the Gospels and Acts and to the disputed historical reconstruction of exclusion language in John.",
+  "historical_context": "Synagogues appear as local settings for Scripture reading, teaching, prayer, communal encounter, and dispute. Practices and authority structures were not necessarily uniform across regions or periods.",
+  "ancient_near_east_context": "The relevant setting is Second Temple and Roman-period Jewish communal life rather than a generalized ancient Near Eastern institution.",
+  "literary_context": "Luke and Acts narrate synagogue scenes directly; John's aposynagogos notices also function within its conflict narrative and cannot alone prove one empire-wide decree or uniform Jewish-Christian rupture.",
+  "covenantal_significance": "Synagogue scenes concern Israel's Scriptures, communal identity, contested claims about Jesus, and mission; interpretation must reject anti-Jewish generalization.",
+  "intertextuality": ["Luke 4, Acts 13 and 17, and John 9, 12, and 16 portray different synagogue-related situations."],
+  "timeline": [],
+  "maps": [],
+  "archaeology": [],
+  "hebrew_words": [],
+  "greek_words": ["synagoge", "aposynagogos"],
+  "related_people": ["jesus", "paul"],
+  "related_places": ["nazareth"],
+  "related_events": [],
+  "related_objects": [
+    {"id": "what-is-the-synagogue", "relationship": "institutional-overview", "weight": 9, "notes": "General synagogue orientation."},
+    {"id": "john", "relationship": "primary-text", "weight": 9, "notes": "Aposynagogos notices and reconstruction debate."}
+  ],
+  "scripture_references": [
+    {"reference": "Luke 4:16-30", "relationship": "primary", "notes": "Reading and teaching in Nazareth."},
+    {"reference": "Acts 13:14-43", "relationship": "primary", "notes": "Diaspora synagogue scene."},
+    {"reference": "John 9:22", "relationship": "primary", "notes": "Aposynagogos notice."},
+    {"reference": "John 12:42-43", "relationship": "supporting", "notes": "Fear of exclusion."},
+    {"reference": "John 16:1-4", "relationship": "supporting", "notes": "Prospective exclusion and persecution."}
+  ],
+  "cross_references": [],
+  "new_testament_connections": [],
+  "interpretive_notes": [
+    {"note": "John's conflict language must not be generalized into a claim about all Jewish people or every synagogue.", "note_type": "interpretive-caution", "certainty": "high", "dispute_status": "broad-consensus", "sources": ["oxford-johannine", "vonwahlde-jews"]}
+  ],
+  "common_questions": ["What happened in ancient synagogues?", "What does being put out of the synagogue mean in John?"],
+  "sources": [
+    {"id": "synagogue-passages", "title": "Luke 4; Acts 13; John 9, 12, and 16", "author": "", "publisher": "", "year": null, "locator": "Luke 4:16-30; Acts 13:14-43; John 9:22; 12:42-43; 16:1-4", "url": "", "source_type": "scripture", "supports": ["synagogue-textual-settings", "synagogue-exclusion-caution"], "notes": "Primary biblical texts."},
+    {"id": "oxford-johannine", "title": "The Oxford Handbook of Johannine Studies", "author": "Judith M. Lieu and Martinus C. de Boer, editors", "publisher": "Oxford University Press", "year": 2018, "locator": "Chapters on community, history, and Jewish characterization", "url": "https://academic.oup.com/edited-volume/38583", "source_type": "academic-book", "supports": ["synagogue-exclusion-caution"], "notes": "Multi-author survey of Johannine scholarship."},
+    {"id": "vonwahlde-jews", "title": "Narrative Criticism of the Religious Authorities as a Group Character in the Gospel of John: Some Problems", "author": "Urban C. von Wahlde", "publisher": "New Testament Studies / Cambridge University Press", "year": 2017, "locator": "New Testament Studies 63", "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/narrative-criticism-of-the-religious-authorities-as-a-group-character-in-the-gospel-of-john-some-problems/19A4E2C20ACFD4DB1E7CFB3A1838024B", "source_type": "journal-article", "supports": ["synagogue-exclusion-caution"], "notes": "Argues for differentiation among Johannine group labels."}
+  ],
+  "claims": [
+    {"id": "synagogue-textual-settings", "claim": "Luke and Acts portray synagogues as settings for Scripture reading, teaching, communal response, and dispute.", "claim_type": "biblical_text", "certainty": "textually_explicit", "dispute_status": "not_disputed", "scripture_references": ["Luke 4:16-30", "Acts 13:14-43", "Acts 17:1-12"], "source_ids": ["synagogue-passages"], "traditions": ["Academic", "Jewish", "Christian"], "rationale": "These activities are directly narrated in multiple scenes.", "notes": "The scenes do not define every synagogue's complete practice."},
+    {"id": "synagogue-exclusion-caution", "claim": "John's aposynagogos notices support historical inquiry but do not by themselves establish one late-first-century decree or a uniform rupture between synagogue and church.", "claim_type": "historical_cultural", "certainty": "plausible", "dispute_status": "major_scholarly_disagreement", "scripture_references": ["John 9:22", "John 12:42-43", "John 16:1-4"], "source_ids": ["synagogue-passages", "oxford-johannine", "vonwahlde-jews"], "traditions": ["Academic"], "rationale": "Narrative notices cannot alone reconstruct a single institutional event across diverse communities.", "notes": "Requires human review before approval."}
+  ],
+  "retrieval_metadata": {"aliases": ["Jewish synagogue", "expulsion from synagogue"], "search_terms": ["synagogue life Bible", "John put out synagogue", "aposynagogos theory"], "common_questions": ["Did a council expel Christians from synagogues?"], "related_topics": ["Second Temple Judaism", "John", "Acts"], "frequently_confused_with": ["church building"], "semantic_keywords": ["synagogue", "Scripture reading", "teaching", "exclusion", "Jewish community"]},
+  "importance": 91,
+  "framework_version": "1.0",
+  "object_version": "1",
+  "content_status": "draft",
+  "review_status": "in_review",
+  "confidence": "medium",
+  "human_review_required": true
+}

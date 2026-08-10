@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "description": "Broad, multi-term CKL queries for repeatable cold/warm hybrid retrieval profiling.",
+  "queries": [
+    {
+      "id": "covenant-story",
+      "query": "covenant Abraham land descendants blessing nations faith promise fulfillment",
+      "limit": 8,
+      "expected_anchors": ["abraham", "abrahamic-covenant", "genesis"]
+    },
+    {
+      "id": "nt-social-world",
+      "query": "How do honor shame patronage hospitality household status and debt shape New Testament letters?",
+      "limit": 8,
+      "expected_anchors": ["honor-and-shame", "philippians"]
+    },
+    {
+      "id": "ruth-kinship",
+      "query": "What cultural legal kinship inheritance redemption marriage customs explain Ruth 4?",
+      "limit": 8,
+      "expected_anchors": ["ruth", "boaz"]
+    },
+    {
+      "id": "levitical-system",
+      "query": "How do temple priesthood sacrifice purity holiness atonement and covenant fit together?",
+      "limit": 8,
+      "expected_anchors": ["leviticus", "priesthood", "temple"]
+    },
+    {
+      "id": "acts-roman-world",
+      "query": "Roman citizenship courts empire travel synagogue diaspora mission in Acts",
+      "limit": 8,
+      "expected_anchors": ["acts", "roman-citizenship", "what-is-the-synagogue"]
+    },
+    {
+      "id": "exile-return",
+      "query": "How do exile temple destruction covenant judgment return restoration and new creation connect?",
+      "limit": 8,
+      "expected_anchors": ["return-from-exile", "exile-and-return-storyline"]
+    },
+    {
+      "id": "wisdom-suffering",
+      "query": "How do Job Proverbs Psalms and Ecclesiastes address wisdom suffering justice mortality and hope?",
+      "limit": 8,
+      "expected_anchors": ["job", "proverbs", "ecclesiastes", "psalms"]
+    },
+    {
+      "id": "gospel-kingdom",
+      "query": "How do kingdom messiah discipleship miracles parables cross resurrection and mission fit together in the Gospels?",
+      "limit": 8,
+      "expected_anchors": ["matthew", "mark", "luke", "john"]
+    },
+    {
+      "id": "pauline-union",
+      "query": "How do justification faith baptism Spirit adoption union with Christ and new creation connect in Paul?",
+      "limit": 8,
+      "expected_anchors": ["paul", "romans", "galatians"]
+    },
+    {
+      "id": "revelation-symbols",
+      "query": "How should temple throne beasts Babylon exodus worship empire judgment and new Jerusalem be read in Revelation?",
+      "limit": 8,
+      "expected_anchors": ["revelation", "daniel"]
+    }
+  ]
+}
