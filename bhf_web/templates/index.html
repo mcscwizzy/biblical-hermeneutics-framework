@@ -105,9 +105,15 @@
 
     <section class="notes-toolbar" aria-label="Notes toolbar" data-notes-toolbar>
       <div class="notes-toolbar-actions">
-        <button type="button" data-new-note data-testid="new-note-button">New note</button>
-        <button type="button" class="secondary" data-notes-view="all" data-testid="all-notes-button">All notes</button>
-        <button type="button" class="secondary" data-notes-view="passage" data-testid="passage-notes-button">This passage</button>
+        <button type="button" class="notes-icon-button" data-new-note data-testid="new-note-button" aria-label="New note" title="New note">
+          <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M6 3.5h8.5L18 7v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1.5 1.5 0 0 1 1-1.5Zm8.5 0V7H18M12 11v6m-3-3h6"/></svg>
+        </button>
+        <button type="button" class="secondary notes-icon-button" data-notes-view="all" data-testid="all-notes-button" aria-label="All notes" title="All notes">
+          <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M7 4.5h10a1 1 0 0 1 1 1V19a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V5.5a1 1 0 0 1 1-1Zm-2 3h-.5a1 1 0 0 0-1 1V20a1 1 0 0 0 1 1H15M9 9h6m-6 3h6m-6 3h4"/></svg>
+        </button>
+        <button type="button" class="secondary notes-icon-button" data-notes-view="passage" data-testid="passage-notes-button" aria-label="Notes for this passage" title="Notes for this passage">
+          <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M4 5.5c2.3-1 4.7-1 7 0v14c-2.3-1-4.7-1-7 0v-14Zm16 0c-2.3-1-4.7-1-7 0v14c2.3-1 4.7-1 7 0v-14ZM11 7.5c.8-.4 1.5-.6 2-.6m-2 4c.8-.4 1.5-.6 2-.6m-2 4c.8-.4 1.5-.6 2-.6"/></svg>
+        </button>
       </div>
       <span class="note-save-status" data-note-save-status role="status" aria-live="polite"></span>
     </section>
@@ -545,8 +551,12 @@
                   <span id="notes-count" class="count">0</span>
                 </div>
                 <div class="notes-view-switcher" role="group" aria-label="Notes view">
-                  <button type="button" class="secondary" data-notes-view="all">All notes</button>
-                  <button type="button" class="secondary" data-notes-view="passage">This passage</button>
+                  <button type="button" class="secondary notes-icon-button" data-notes-view="all" aria-label="All notes" title="All notes">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M7 4.5h10a1 1 0 0 1 1 1V19a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V5.5a1 1 0 0 1 1-1Zm-2 3h-.5a1 1 0 0 0-1 1V20a1 1 0 0 0 1 1H15M9 9h6m-6 3h6m-6 3h4"/></svg>
+                  </button>
+                  <button type="button" class="secondary notes-icon-button" data-notes-view="passage" aria-label="Notes for this passage" title="Notes for this passage">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M4 5.5c2.3-1 4.7-1 7 0v14c-2.3-1-4.7-1-7 0v-14Zm16 0c-2.3-1-4.7-1-7 0v14c2.3-1 4.7-1 7 0v-14ZM11 7.5c.8-.4 1.5-.6 2-.6m-2 4c.8-.4 1.5-.6 2-.6m-2 4c.8-.4 1.5-.6 2-.6"/></svg>
+                  </button>
                 </div>
                 <form id="note-editor" class="note-editor" hidden data-testid="note-editor">
                   <input type="hidden" name="id" value="">

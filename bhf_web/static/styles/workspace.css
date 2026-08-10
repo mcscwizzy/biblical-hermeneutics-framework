@@ -1506,6 +1506,25 @@ body.reader-mode .chapter-text {
   gap: 8px;
 }
 
+.notes-icon-button {
+  display: inline-grid;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  padding: 0;
+  place-items: center;
+}
+
+.notes-icon-button svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
 .notes-toolbar [data-notes-view].is-active,
 .notes-view-switcher [data-notes-view].is-active {
   border-color: var(--accent);
@@ -2804,8 +2823,8 @@ html[data-theme="dark"] .map-panel-body {
     align-items: stretch;
   }
 
-  .notes-toolbar-actions button,
-  .notes-view-switcher button,
+  .notes-toolbar-actions button:not(.notes-icon-button),
+  .notes-view-switcher button:not(.notes-icon-button),
   .note-link-actions button {
     flex: 1 1 auto;
   }
