@@ -13,6 +13,12 @@ const APP_DOCK_BOTTOM_HIDE_THRESHOLD_PX = 24;
 const GENERAL_QUESTION_MODE = "general_question";
 const THEME_STORAGE_KEY = "bhf-theme";
 const READER_MODE_STORAGE_KEY = "bhf-reader-mode";
+const READER_SPEECH_RATE_STORAGE_KEY = "bhf-reader-speech-rate";
+const READER_SPEECH_VOICE_STORAGE_KEY = "bhf-reader-speech-voice";
+const READER_SPEECH_AUTO_NEXT_STORAGE_KEY = "bhf-reader-speech-auto-next";
+const READER_SPEECH_RATES = new Set([0.75, 0.9, 1, 1.25, 1.5]);
+const READER_SPEECH_DEFAULT_RATE = 0.9;
+const READER_SPEECH_DEFAULT_AUTO_NEXT = true;
 const BHF_TRANSLATION_STORAGE_KEY = "bhf-reader-translation";
 const BHF_TRANSLATION_DOWNLOAD_METADATA_KEY =
   "bhf-translation-download-metadata";
@@ -95,6 +101,12 @@ let readerTabs = [];
 let activeReaderTabId = null;
 let readerTabSequence = 0;
 let readerLoadToken = 0;
+let readerSpeechState = "idle";
+let readerSpeechSession = 0;
+let readerSpeechVerseIndex = null;
+let readerSpeechUtterance = null;
+let readerSpeechContinuationToken = 0;
+let readerSpeechVoicePreference;
 let noteContext = null;
 let currentNotes = [];
 let currentHighlights = [];
@@ -258,6 +270,7 @@ function activateReaderPaneForElement(element) {
   if (!tab || tab.id === activeReaderTabId) {
     return tab;
   }
+  stopReaderSpeech();
   saveCurrentReaderTabState();
   activeReaderTabId = tab.id;
   currentChapter = tab.data || null;
@@ -453,6 +466,7 @@ async function selectReaderTab(tabId, options = {}) {
     return false;
   }
   if (activeReaderTabId !== tab.id) {
+    stopReaderSpeech();
     saveCurrentReaderTabState();
     activeReaderTabId = tab.id;
   }
@@ -472,6 +486,7 @@ async function openNewReaderTab() {
     return false;
   }
   saveCurrentReaderTabState();
+  stopReaderSpeech();
   const current = activeReaderTab();
   const tab = normalizeReaderTab({
     id: createReaderTabId(),
@@ -500,6 +515,9 @@ async function closeReaderTab(tabId) {
   }
   saveCurrentReaderTabState();
   const wasActive = activeReaderTabId === tabId;
+  if (wasActive) {
+    stopReaderSpeech();
+  }
   readerTabs.splice(index, 1);
   if (wasActive) {
     const nextTab = readerTabs[Math.min(index, readerTabs.length - 1)];
@@ -1443,6 +1461,7 @@ function initializeTheme() {
 }
 
 function initializeReaderMode() {
+  initializeReaderSpeechControls();
   const toggles = Array.from(
     document.querySelectorAll("[data-reader-mode-toggle]"),
   );
@@ -1460,6 +1479,408 @@ function initializeReaderMode() {
     reader.addEventListener("click", handleReaderSurfaceTap);
   }
   document.addEventListener("keydown", handleReaderModeKeydown);
+}
+
+function supportsReaderSpeech() {
+  return Boolean(
+    window.speechSynthesis &&
+    typeof window.speechSynthesis.speak === "function" &&
+    typeof window.SpeechSynthesisUtterance === "function",
+  );
+}
+
+function supportsReaderMediaSession() {
+  return Boolean("mediaSession" in navigator && navigator.mediaSession);
+}
+
+function readerSpeechVoiceKey(voice) {
+  return String(voice?.voiceURI || `${voice?.name || ""}|${voice?.lang || ""}`);
+}
+
+function readReaderSpeechRate() {
+  try {
+    const saved = Number(window.localStorage.getItem(READER_SPEECH_RATE_STORAGE_KEY));
+    if (READER_SPEECH_RATES.has(saved)) {
+      return saved;
+    }
+  } catch (_error) {
+    // Use the default rate when storage is unavailable.
+  }
+  return READER_SPEECH_DEFAULT_RATE;
+}
+
+function saveReaderSpeechRate(rate) {
+  if (!READER_SPEECH_RATES.has(rate)) {
+    return READER_SPEECH_DEFAULT_RATE;
+  }
+  try {
+    window.localStorage.setItem(READER_SPEECH_RATE_STORAGE_KEY, String(rate));
+  } catch (_error) {
+    // The in-memory selection still applies in restricted environments.
+  }
+  return rate;
+}
+
+function readReaderSpeechAutoNextPreference() {
+  try {
+    const saved = window.localStorage.getItem(READER_SPEECH_AUTO_NEXT_STORAGE_KEY);
+    if (saved === "on" || saved === "off") {
+      return saved === "on";
+    }
+  } catch (_error) {
+    // Use the default when storage is unavailable.
+  }
+  return READER_SPEECH_DEFAULT_AUTO_NEXT;
+}
+
+function saveReaderSpeechAutoNextPreference(enabled) {
+  const nextEnabled = Boolean(enabled);
+  try {
+    window.localStorage.setItem(
+      READER_SPEECH_AUTO_NEXT_STORAGE_KEY,
+      nextEnabled ? "on" : "off",
+    );
+  } catch (_error) {
+    // The in-memory selection still applies in restricted environments.
+  }
+  return nextEnabled;
+}
+
+function selectedReaderSpeechVoice() {
+  if (readerSpeechVoicePreference === undefined) {
+    try {
+      readerSpeechVoicePreference =
+        window.localStorage.getItem(READER_SPEECH_VOICE_STORAGE_KEY) || "";
+    } catch (_error) {
+      readerSpeechVoicePreference = "";
+    }
+  }
+  const voiceKey = readerSpeechVoicePreference;
+  if (!voiceKey || !supportsReaderSpeech()) {
+    return null;
+  }
+  return window.speechSynthesis
+    .getVoices()
+    .find((voice) => readerSpeechVoiceKey(voice) === voiceKey) || null;
+}
+
+function refreshReaderSpeechVoices() {
+  const voiceSelect = document.querySelector("[data-reader-speech-voice]");
+  if (!voiceSelect || !supportsReaderSpeech()) {
+    return;
+  }
+  const voices = window.speechSynthesis
+    .getVoices()
+    .slice()
+    .sort((left, right) => {
+      const leftLabel = `${left.lang} ${left.name}`;
+      const rightLabel = `${right.lang} ${right.name}`;
+      return leftLabel.localeCompare(rightLabel);
+    });
+  const savedVoice = selectedReaderSpeechVoice();
+  voiceSelect.innerHTML = "";
+  const automatic = document.createElement("option");
+  automatic.value = "";
+  automatic.textContent = "Default voice";
+  voiceSelect.appendChild(automatic);
+  for (const voice of voices) {
+    const option = document.createElement("option");
+    option.value = readerSpeechVoiceKey(voice);
+    option.textContent = `${voice.name} (${voice.lang})${voice.default ? " — default" : ""}`;
+    voiceSelect.appendChild(option);
+  }
+  voiceSelect.value = savedVoice ? readerSpeechVoiceKey(savedVoice) : "";
+}
+
+function changeReaderSpeechVoice(event) {
+  const voiceKey = String(event.target.value || "");
+  readerSpeechVoicePreference = voiceKey;
+  try {
+    if (voiceKey) {
+      window.localStorage.setItem(READER_SPEECH_VOICE_STORAGE_KEY, voiceKey);
+    } else {
+      window.localStorage.removeItem(READER_SPEECH_VOICE_STORAGE_KEY);
+    }
+  } catch (_error) {
+    // The selected voice still applies for the current browser session.
+  }
+  if (readerSpeechState !== "idle") {
+    startReaderSpeechAtIndex(readerSpeechVerseIndex || 0);
+  }
+}
+
+function readerSpeechElements() {
+  return {
+    controls: document.querySelector("[data-reader-speech-controls]"),
+    listen: document.querySelector("[data-reader-speech-listen]"),
+    pause: document.querySelector("[data-reader-speech-pause]"),
+    stop: document.querySelector("[data-reader-speech-stop]"),
+    rate: document.querySelector("[data-reader-speech-rate]"),
+    voice: document.querySelector("[data-reader-speech-voice]"),
+    autoNext: document.querySelector("[data-reader-speech-auto-next]"),
+    status: document.querySelector("[data-reader-speech-status]"),
+  };
+}
+
+function initializeReaderSpeechControls() {
+  const {controls, listen, pause, stop, rate, voice, autoNext} = readerSpeechElements();
+  if (!controls || !listen || !pause || !stop || !rate || !voice || !autoNext) {
+    return;
+  }
+  controls.hidden = false;
+  rate.value = String(readReaderSpeechRate());
+  autoNext.checked = readReaderSpeechAutoNextPreference();
+  listen.addEventListener("click", startReaderSpeech);
+  pause.addEventListener("click", toggleReaderSpeechPause);
+  stop.addEventListener("click", stopReaderSpeech);
+  rate.addEventListener("change", changeReaderSpeechRate);
+  voice.addEventListener("change", changeReaderSpeechVoice);
+  autoNext.addEventListener("change", (event) =>
+    saveReaderSpeechAutoNextPreference(event.target.checked),
+  );
+  refreshReaderSpeechVoices();
+  if (supportsReaderSpeech()) {
+    if (typeof window.speechSynthesis.addEventListener === "function") {
+      window.speechSynthesis.addEventListener("voiceschanged", refreshReaderSpeechVoices);
+    } else {
+      window.speechSynthesis.onvoiceschanged = refreshReaderSpeechVoices;
+    }
+  }
+  initializeReaderMediaSession();
+  updateReaderSpeechControls();
+}
+
+function updateReaderSpeechControls() {
+  const {controls, listen, pause, stop, rate, voice, autoNext, status} = readerSpeechElements();
+  if (!controls || !listen || !pause || !stop || !rate || !voice || !autoNext || !status) {
+    return;
+  }
+  controls.hidden = false;
+  const supported = supportsReaderSpeech();
+  const hasVerses = Array.isArray(currentChapter?.verses) && currentChapter.verses.length > 0;
+  const isPlaying = readerSpeechState === "playing";
+  const isPaused = readerSpeechState === "paused";
+  listen.disabled = !supported || !hasVerses || readerSpeechState !== "idle";
+  pause.disabled = !supported || readerSpeechState === "idle";
+  stop.disabled = !supported || readerSpeechState === "idle";
+  rate.disabled = !supported;
+  voice.disabled = !supported;
+  autoNext.disabled = !supported;
+  pause.textContent = isPaused ? "Resume" : "Pause";
+  pause.setAttribute("aria-label", isPaused ? "Resume Scripture reading" : "Pause Scripture reading");
+  pause.setAttribute("aria-pressed", String(isPaused));
+  if (!supported) {
+    status.textContent = "Text-to-speech is not available in this browser.";
+  } else if (isPlaying && Number.isInteger(readerSpeechVerseIndex)) {
+    status.textContent = `Reading verse ${currentChapter.verses[readerSpeechVerseIndex]?.verse || ""}.`;
+  } else if (isPaused) {
+    status.textContent = "Scripture reading paused.";
+  } else {
+    status.textContent = "";
+  }
+  updateReaderMediaSession();
+}
+
+function setReaderMediaSessionAction(action, handler) {
+  if (!supportsReaderMediaSession()) {
+    return;
+  }
+  try {
+    navigator.mediaSession.setActionHandler(action, handler);
+  } catch (_error) {
+    // Browsers expose different subsets of Media Session actions.
+  }
+}
+
+function initializeReaderMediaSession() {
+  if (!supportsReaderMediaSession()) {
+    return;
+  }
+  setReaderMediaSessionAction("play", () => {
+    if (readerSpeechState === "paused") {
+      resumeReaderSpeech();
+    } else if (readerSpeechState === "idle" && document.body.classList.contains("reader-mode")) {
+      startReaderSpeech();
+    }
+  });
+  setReaderMediaSessionAction("pause", pauseReaderSpeech);
+  setReaderMediaSessionAction("stop", stopReaderSpeech);
+}
+
+function updateReaderMediaSession() {
+  if (!supportsReaderMediaSession()) {
+    return;
+  }
+  try {
+    navigator.mediaSession.playbackState =
+      readerSpeechState === "playing"
+        ? "playing"
+        : readerSpeechState === "paused"
+          ? "paused"
+          : "none";
+    if (readerSpeechState === "idle" || !currentChapter) {
+      navigator.mediaSession.metadata = null;
+      return;
+    }
+    if (typeof window.MediaMetadata === "function") {
+      const verse = currentChapter.verses?.[readerSpeechVerseIndex];
+      navigator.mediaSession.metadata = new window.MediaMetadata({
+        title: `${currentChapter.book} ${currentChapter.chapter}${verse ? `:${verse.verse}` : ""}`,
+        artist: String(currentChapter.translation?.name || currentChapter.translation?.id || "BHF Bible Reader"),
+        album: "BHF Bible Reader",
+      });
+    }
+  } catch (_error) {
+    // Media Session integration is optional and must never interrupt speech.
+  }
+}
+
+function setReaderSpeechHighlight(verseNumber) {
+  clearReaderSpeechHighlights();
+  const pane = activeReaderPane();
+  const verse = pane?.querySelector(`.verse[data-verse="${Number(verseNumber)}"]`);
+  verse?.classList.add("is-speaking");
+}
+
+function clearReaderSpeechHighlights() {
+  document
+    .querySelectorAll("#chapter-reader .verse.is-speaking")
+    .forEach((verse) => verse.classList.remove("is-speaking"));
+}
+
+function startReaderSpeech() {
+  if (!supportsReaderSpeech() || !Array.isArray(currentChapter?.verses)) {
+    updateReaderSpeechControls();
+    return;
+  }
+  const visibleVerse = getVisibleReaderVerse();
+  const startIndex = currentChapter.verses.findIndex(
+    (verse) => Number(verse.verse) === Number(visibleVerse),
+  );
+  startReaderSpeechAtIndex(startIndex >= 0 ? startIndex : 0);
+}
+
+function startReaderSpeechAtIndex(startIndex) {
+  if (!supportsReaderSpeech() || !Array.isArray(currentChapter?.verses)) {
+    updateReaderSpeechControls();
+    return;
+  }
+  stopReaderSpeech();
+  readerSpeechState = "playing";
+  readerSpeechVerseIndex = Math.max(0, Number(startIndex) || 0);
+  const session = (readerSpeechSession += 1);
+  updateReaderSpeechControls();
+  speakReaderSpeechVerse(session);
+}
+
+function speakReaderSpeechVerse(session) {
+  if (
+    session !== readerSpeechSession ||
+    readerSpeechState !== "playing" ||
+    !Array.isArray(currentChapter?.verses)
+  ) {
+    return;
+  }
+  const verse = currentChapter.verses[readerSpeechVerseIndex];
+  if (!verse) {
+    finishReaderSpeech(session);
+    return;
+  }
+  const utterance = new window.SpeechSynthesisUtterance();
+  utterance.text = verse.text;
+  utterance.rate = readReaderSpeechRate();
+  const selectedVoice = selectedReaderSpeechVoice();
+  if (selectedVoice) {
+    utterance.voice = selectedVoice;
+  }
+  utterance.onend = () => {
+    if (session !== readerSpeechSession || readerSpeechState !== "playing") {
+      return;
+    }
+    readerSpeechVerseIndex += 1;
+    speakReaderSpeechVerse(session);
+  };
+  utterance.onerror = () => {
+    if (session === readerSpeechSession) {
+      stopReaderSpeech();
+    }
+  };
+  readerSpeechUtterance = utterance;
+  setReaderSpeechHighlight(verse.verse);
+  updateReaderSpeechControls();
+  try {
+    window.speechSynthesis.speak(utterance);
+  } catch (_error) {
+    stopReaderSpeech();
+  }
+}
+
+function pauseReaderSpeech() {
+  if (!supportsReaderSpeech()) {
+    return;
+  }
+  if (readerSpeechState === "playing") {
+    window.speechSynthesis.pause();
+    readerSpeechState = "paused";
+  }
+  updateReaderSpeechControls();
+}
+
+function resumeReaderSpeech() {
+  if (!supportsReaderSpeech()) {
+    return;
+  }
+  if (readerSpeechState === "paused") {
+    window.speechSynthesis.resume();
+    readerSpeechState = "playing";
+  }
+  updateReaderSpeechControls();
+}
+
+function toggleReaderSpeechPause() {
+  if (readerSpeechState === "paused") {
+    resumeReaderSpeech();
+  } else {
+    pauseReaderSpeech();
+  }
+}
+
+function changeReaderSpeechRate(event) {
+  const rate = saveReaderSpeechRate(Number(event.target.value));
+  event.target.value = String(rate);
+  if (readerSpeechState !== "idle") {
+    startReaderSpeechAtIndex(readerSpeechVerseIndex || 0);
+  }
+}
+
+function finishReaderSpeech(session) {
+  if (session !== readerSpeechSession) {
+    return;
+  }
+  readerSpeechState = "idle";
+  readerSpeechVerseIndex = null;
+  readerSpeechUtterance = null;
+  clearReaderSpeechHighlights();
+  updateReaderSpeechControls();
+  if (readReaderSpeechAutoNextPreference()) {
+    const continuationToken = (readerSpeechContinuationToken += 1);
+    goToNextChapter({readerSpeechContinuationToken: continuationToken});
+  }
+}
+
+function stopReaderSpeech(options = {}) {
+  readerSpeechSession += 1;
+  if (!options.preserveReaderSpeechContinuation) {
+    readerSpeechContinuationToken += 1;
+  }
+  if (supportsReaderSpeech()) {
+    window.speechSynthesis.cancel();
+  }
+  readerSpeechState = "idle";
+  readerSpeechVerseIndex = null;
+  readerSpeechUtterance = null;
+  clearReaderSpeechHighlights();
+  updateReaderSpeechControls();
 }
 
 function initializeWorkspaceExpansion() {
@@ -1647,6 +2068,9 @@ function readReaderModePreference() {
 
 function applyReaderMode(enabled, options = {}) {
   const nextEnabled = Boolean(enabled);
+  if (!nextEnabled) {
+    stopReaderSpeech();
+  }
   document.body.classList.toggle("reader-mode", nextEnabled);
   if (nextEnabled) {
     closeWorkspaceDrawer();
@@ -2112,6 +2536,9 @@ function populateChapterOptions(bookSelect, chapterSelect) {
 }
 
 async function loadReaderChapter(book, chapter, options = {}) {
+  const continuationToken = options.readerSpeechContinuationToken;
+  const shouldResumeReaderSpeech = Number.isInteger(continuationToken);
+  stopReaderSpeech({preserveReaderSpeechContinuation: shouldResumeReaderSpeech});
   const reader = document.querySelector("#chapter-reader");
   if (!reader) {
     return;
@@ -2186,6 +2613,13 @@ async function loadReaderChapter(book, chapter, options = {}) {
     syncReaderControlsToActiveTab();
     syncAskFields();
     updateChapterNavigationState();
+    if (
+      shouldResumeReaderSpeech &&
+      continuationToken === readerSpeechContinuationToken &&
+      readReaderSpeechAutoNextPreference()
+    ) {
+      startReaderSpeechAtIndex(0);
+    }
     if (window.BHFCommentary && typeof window.BHFCommentary.loadChapter === "function") {
       void window.BHFCommentary.loadChapter(data.book, data.chapter);
     }
@@ -2317,11 +2751,11 @@ async function navigateToPassage(book, chapter, verseStart, verseEnd, options = 
   scrollToVerse(Number(verseStart));
 }
 
-function goToNextChapter() {
+function goToNextChapter(options = {}) {
   const bookSelect = document.querySelector("[data-reader-book]");
   const chapterSelect = document.querySelector("[data-reader-chapter]");
   if (!bookSelect || !chapterSelect) {
-    return;
+    return false;
   }
   const selectedBook = bookSelect.selectedOptions[0] || bookSelect.options[0];
   const chapterCount = Number(selectedBook?.dataset.chapters || 0);
@@ -2331,7 +2765,7 @@ function goToNextChapter() {
     !currentChapterNumber ||
     currentChapterNumber >= chapterCount
   ) {
-    return;
+    return false;
   }
   const nextChapter = currentChapterNumber + 1;
   chapterSelect.value = String(nextChapter);
@@ -2342,7 +2776,8 @@ function goToNextChapter() {
     tab.selection = null;
     tab.verse = null;
   }
-  loadReaderChapter(bookSelect.value, nextChapter);
+  void loadReaderChapter(bookSelect.value, nextChapter, options);
+  return true;
 }
 
 function goToPreviousChapter() {

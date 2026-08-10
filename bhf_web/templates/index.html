@@ -29,7 +29,7 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260809e">
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260809g">
   <!-- Legacy cache-key references retained for clients that inspect the shell during upgrades. -->
   <!-- href="/static/style.css?v=20260724c" src="/static/htmx-lite.js?v=20260729b" -->
   {# static_asset('/style.css') }}?v=20260724c #}
@@ -41,7 +41,7 @@
   <script src="{{ static_asset('/htmx-status.js') }}" defer></script>
   <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260809a" defer></script>
   <script src="{{ static_asset('/htmx-search.js') }}?v=20260807b" defer></script>
-  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260809b" defer></script>
+  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260809d" defer></script>
   <script src="{{ static_asset('/commentary.js') }}?v=20260808a" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260806a" defer></script>
   {% if not test_mode %}
@@ -191,6 +191,39 @@
         >
           <p class="empty">Loading Scripture text...</p>
         </article>
+        <section
+          class="reader-speech-controls"
+          data-reader-speech-controls
+          aria-label="Reader audio controls"
+          hidden
+        >
+          <div class="reader-speech-actions">
+            <button type="button" class="secondary" data-reader-speech-listen aria-label="Listen to Scripture">Listen</button>
+            <button type="button" class="secondary" data-reader-speech-pause aria-label="Pause Scripture reading" aria-pressed="false" disabled>Pause</button>
+            <button type="button" class="secondary" data-reader-speech-stop aria-label="Stop Scripture reading" disabled>Stop</button>
+          </div>
+          <label class="reader-speech-rate">
+            <span>Speed</span>
+            <select data-reader-speech-rate aria-label="Scripture reading speed">
+              <option value="0.75">0.75x</option>
+              <option value="0.9">0.9x</option>
+              <option value="1">1.0x</option>
+              <option value="1.25">1.25x</option>
+              <option value="1.5">1.5x</option>
+            </select>
+          </label>
+          <label class="reader-speech-voice">
+            <span>Voice</span>
+            <select data-reader-speech-voice aria-label="Scripture reading voice">
+              <option value="">Default voice</option>
+            </select>
+          </label>
+          <label class="reader-speech-auto-next">
+            <input type="checkbox" data-reader-speech-auto-next>
+            <span>Continue chapters</span>
+          </label>
+          <p class="reader-speech-status" data-reader-speech-status aria-live="polite"></p>
+        </section>
       </section>
 
       <aside class="study-panel" id="study-panel" aria-label="Study panel">

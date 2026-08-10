@@ -538,6 +538,49 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("renderBibleSearchResults", search_script)
         self.assertIn("handleBibleSearchResultAction", search_script)
 
+    def test_reader_mode_uses_browser_native_verse_speech_with_cleanup(self):
+        script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
+        index_html = Path("bhf_web/templates/index.html").read_text(encoding="utf-8")
+        style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
+
+        self.assertIn("data-reader-speech-controls", index_html)
+        self.assertIn("data-reader-speech-listen", index_html)
+        self.assertIn("data-reader-speech-pause", index_html)
+        self.assertIn("data-reader-speech-stop", index_html)
+        self.assertIn("data-reader-speech-rate", index_html)
+        self.assertIn("data-reader-speech-voice", index_html)
+        self.assertIn("data-reader-speech-auto-next", index_html)
+        self.assertIn('READER_SPEECH_RATE_STORAGE_KEY = "bhf-reader-speech-rate"', script)
+        self.assertIn('READER_SPEECH_VOICE_STORAGE_KEY = "bhf-reader-speech-voice"', script)
+        self.assertIn('READER_SPEECH_AUTO_NEXT_STORAGE_KEY = "bhf-reader-speech-auto-next"', script)
+        self.assertIn("window.speechSynthesis", script)
+        self.assertIn("window.SpeechSynthesisUtterance", script)
+        self.assertIn("function supportsReaderSpeech()", script)
+        self.assertIn("currentChapter.verses.findIndex", script)
+        self.assertIn("utterance.text = verse.text", script)
+        self.assertNotIn("chapterReader.innerText", script)
+        self.assertIn("function stopReaderSpeech(", script)
+        self.assertIn("readerSpeechSession += 1", script)
+        self.assertIn("function refreshReaderSpeechVoices()", script)
+        self.assertIn("utterance.voice = selectedVoice", script)
+        self.assertIn("function initializeReaderMediaSession()", script)
+        self.assertIn('setReaderMediaSessionAction("play"', script)
+        self.assertIn('setReaderMediaSessionAction("pause"', script)
+        self.assertIn('setReaderMediaSessionAction("stop"', script)
+        self.assertIn("new window.MediaMetadata", script)
+        self.assertIn("readerSpeechContinuationToken", script)
+        self.assertIn("goToNextChapter({readerSpeechContinuationToken: continuationToken})", script)
+        self.assertIn(
+            "stopReaderSpeech({preserveReaderSpeechContinuation: shouldResumeReaderSpeech});",
+            script,
+        )
+        self.assertRegex(
+            script,
+            r"function applyReaderMode[\s\S]*?if \(!nextEnabled\) \{\n    stopReaderSpeech\(\);",
+        )
+        self.assertIn(".reader-speech-controls", style)
+        self.assertIn(".verse.is-speaking", style)
+
         map_script = Path("bhf_web/static/maps/MapPanel.js").read_text(encoding="utf-8")
         self.assertIn("renderSelectedMarker", map_script)
         self.assertIn("buildCautionNote", map_script)
@@ -1014,7 +1057,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v23"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v25"', service_worker["body"])
         self.assertIn("cacheFirstApi", service_worker["body"])
         self.assertIn("isRefreshRequest", service_worker["body"])
         self.assertIn("networkFirstNavigation", service_worker["body"])

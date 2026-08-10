@@ -184,7 +184,7 @@ body.reader-mode .reader-column {
 
 body.reader-mode .page.reader-page {
   width: min(100%, 78ch);
-  padding: clamp(32px, 8vh, 96px) 24px max(48px, env(safe-area-inset-bottom));
+  padding: clamp(32px, 8vh, 96px) 24px max(124px, calc(96px + env(safe-area-inset-bottom)));
 }
 
 body.reader-mode .reader-layout {
@@ -223,6 +223,91 @@ body.reader-mode .chapter-text {
   margin: 0 auto;
   font-size: clamp(1.12rem, 1rem + 0.25vw, 1.3rem);
   line-height: 1.95;
+}
+
+.reader-speech-controls[hidden],
+body:not(.reader-mode) .reader-speech-controls {
+  display: none !important;
+}
+
+body.reader-mode .reader-speech-controls {
+  position: fixed;
+  z-index: 20;
+  right: max(12px, env(safe-area-inset-right));
+  bottom: max(12px, env(safe-area-inset-bottom));
+  left: max(12px, env(safe-area-inset-left));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 12px;
+  width: fit-content;
+  max-width: calc(100vw - 24px);
+  margin: 0 auto;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: 0 8px 28px rgb(10 24 38 / 14%);
+  backdrop-filter: blur(10px);
+}
+
+.reader-speech-actions {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.reader-speech-controls button,
+.reader-speech-rate select {
+  min-height: 32px;
+  padding: 5px 9px;
+  font-size: 0.82rem;
+}
+
+.reader-speech-rate,
+.reader-speech-voice,
+.reader-speech-auto-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--muted-text);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.reader-speech-rate select,
+.reader-speech-voice select {
+  width: auto;
+  max-width: 18ch;
+}
+
+.reader-speech-auto-next input {
+  margin: 0;
+}
+
+.reader-speech-status {
+  max-width: 23ch;
+  margin: 0;
+  color: var(--muted-text);
+  font-size: 0.78rem;
+  line-height: 1.2;
+}
+
+body.reader-mode .verse.is-speaking {
+  background: var(--accent-soft);
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+
+@media (max-width: 560px) {
+  body.reader-mode .reader-speech-controls {
+    flex-wrap: wrap;
+    border-radius: 16px;
+  }
+
+  .reader-speech-status {
+    flex-basis: 100%;
+    text-align: center;
+  }
 }
 
 body.workspace-expanded .reader-layout {
