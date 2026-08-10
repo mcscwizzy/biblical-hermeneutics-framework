@@ -1753,11 +1753,7 @@ function startReaderSpeech() {
     updateReaderSpeechControls();
     return;
   }
-  const visibleVerse = getVisibleReaderVerse();
-  const startIndex = currentChapter.verses.findIndex(
-    (verse) => Number(verse.verse) === Number(visibleVerse),
-  );
-  startReaderSpeechAtIndex(startIndex >= 0 ? startIndex : 0);
+  startReaderSpeechAtIndex(0);
 }
 
 function startReaderSpeechAtIndex(startIndex) {

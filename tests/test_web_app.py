@@ -556,7 +556,11 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("window.speechSynthesis", script)
         self.assertIn("window.SpeechSynthesisUtterance", script)
         self.assertIn("function supportsReaderSpeech()", script)
-        self.assertIn("currentChapter.verses.findIndex", script)
+        reader_speech_start = script.split("function startReaderSpeech()", 1)[1].split(
+            "function startReaderSpeechAtIndex", 1
+        )[0]
+        self.assertIn("startReaderSpeechAtIndex(0);", reader_speech_start)
+        self.assertNotIn("getVisibleReaderVerse", reader_speech_start)
         self.assertIn("utterance.text = verse.text", script)
         self.assertNotIn("chapterReader.innerText", script)
         self.assertIn("function stopReaderSpeech(", script)
@@ -579,6 +583,7 @@ class WebAssetTests(unittest.TestCase):
             r"function applyReaderMode[\s\S]*?if \(!nextEnabled\) \{\n    stopReaderSpeech\(\);",
         )
         self.assertIn(".reader-speech-controls", style)
+        self.assertIn("bottom: max(32px, calc(20px + env(safe-area-inset-bottom)));", style)
         self.assertIn(".verse.is-speaking", style)
 
         map_script = Path("bhf_web/static/maps/MapPanel.js").read_text(encoding="utf-8")
@@ -1057,7 +1062,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v25"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v26"', service_worker["body"])
         self.assertIn("cacheFirstApi", service_worker["body"])
         self.assertIn("isRefreshRequest", service_worker["body"])
         self.assertIn("networkFirstNavigation", service_worker["body"])

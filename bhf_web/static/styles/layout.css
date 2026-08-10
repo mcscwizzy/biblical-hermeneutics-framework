@@ -184,7 +184,7 @@ body.reader-mode .reader-column {
 
 body.reader-mode .page.reader-page {
   width: min(100%, 78ch);
-  padding: clamp(32px, 8vh, 96px) 24px max(124px, calc(96px + env(safe-area-inset-bottom)));
+  padding: clamp(32px, 8vh, 96px) 24px max(164px, calc(136px + env(safe-area-inset-bottom)));
 }
 
 body.reader-mode .reader-layout {
@@ -234,7 +234,7 @@ body.reader-mode .reader-speech-controls {
   position: fixed;
   z-index: 20;
   right: max(12px, env(safe-area-inset-right));
-  bottom: max(12px, env(safe-area-inset-bottom));
+  bottom: max(32px, calc(20px + env(safe-area-inset-bottom)));
   left: max(12px, env(safe-area-inset-left));
   display: flex;
   flex-wrap: wrap;
@@ -300,7 +300,7 @@ body.reader-mode .verse.is-speaking {
 
 @media (max-width: 560px) {
   body.reader-mode .reader-speech-controls {
-    flex-wrap: wrap;
+    bottom: max(28px, calc(16px + env(safe-area-inset-bottom)));
     border-radius: 16px;
   }
 
