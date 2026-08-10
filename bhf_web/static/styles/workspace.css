@@ -1480,25 +1480,6 @@ body.reader-mode .chapter-text {
   box-shadow: 0 12px 24px rgb(26 42 56 / 6%);
 }
 
-.notes-toolbar {
-  position: sticky;
-  top: 8px;
-  z-index: 5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin: 0 0 16px;
-  height: 42px;
-  padding: 0 1px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: color-mix(in srgb, var(--surface) 94%, transparent);
-  box-shadow: 0 8px 20px rgb(26 42 56 / 10%);
-  backdrop-filter: blur(10px);
-}
-
-.notes-toolbar-actions,
 .notes-view-switcher,
 .note-link-actions {
   display: flex;
@@ -1507,30 +1488,6 @@ body.reader-mode .chapter-text {
   gap: 8px;
 }
 
-.notes-toolbar-actions {
-  justify-content: center;
-}
-
-.notes-icon-button {
-  display: inline-grid;
-  width: 38px;
-  min-width: 38px;
-  height: 38px;
-  padding: 0;
-  place-items: center;
-}
-
-.notes-icon-button svg {
-  width: 20px;
-  height: 20px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.8;
-}
-
-.notes-toolbar [data-notes-view].is-active,
 .notes-view-switcher [data-notes-view].is-active {
   border-color: var(--accent);
   background: var(--accent-soft);
@@ -1538,9 +1495,9 @@ body.reader-mode .chapter-text {
 }
 
 .note-save-status {
-  position: absolute;
-  right: 12px;
+  display: block;
   min-height: 1.25rem;
+  margin-top: 8px;
   color: var(--muted-text, #52616f);
   font-size: 0.88rem;
   font-weight: 650;
@@ -2152,10 +2109,6 @@ html[data-theme="dark"] .search-result-card {
 html[data-theme="dark"] .workspace-toolbar {
   background: var(--surface);
   border-bottom-color: var(--border);
-}
-
-html[data-theme="dark"] .notes-toolbar {
-  background: color-mix(in srgb, var(--surface) 92%, transparent);
 }
 
 html[data-theme="dark"] .workspace-tab,
@@ -2818,20 +2771,12 @@ html[data-theme="dark"] .map-panel-body {
 }
 
 @media (max-width: 720px) {
-  .notes-toolbar {
-    align-items: center;
-    flex-direction: row;
-    top: 4px;
-  }
-
-  .notes-toolbar-actions,
   .notes-view-switcher,
   .note-link-actions {
     align-items: stretch;
   }
 
-  .notes-toolbar-actions button:not(.notes-icon-button),
-  .notes-view-switcher button:not(.notes-icon-button),
+  .notes-view-switcher button,
   .note-link-actions button {
     flex: 1 1 auto;
   }

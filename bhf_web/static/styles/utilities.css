@@ -857,14 +857,14 @@ code {
   bottom: max(12px, env(safe-area-inset-bottom));
   z-index: 10002;
   display: flex;
-  align-items: stretch;
+  align-items: flex-end;
   justify-content: safe center;
   flex-wrap: nowrap;
-  gap: 4px;
+  gap: 8px;
   width: max-content;
   max-width: calc(100% - 24px);
   min-height: var(--app-dock-height);
-  padding: 6px;
+  padding: 19px 8px 6px;
   border: 1px solid var(--border);
   border-radius: 14px;
   background: linear-gradient(180deg, rgb(252 253 254 / 98%), rgb(245 249 252 / 98%));
@@ -890,12 +890,13 @@ body:not(.workspace-minimized) .app-dock {
 
 .app-dock-item {
   display: inline-flex;
-  flex: 0 0 42px;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
-  width: 42px;
+  gap: 6px;
+  min-width: 42px;
   min-height: 42px;
-  padding: 0;
+  padding: 0 10px;
   border: 1px solid var(--border-strong);
   border-radius: 12px;
   background: var(--surface);
@@ -904,13 +905,44 @@ body:not(.workspace-minimized) .app-dock {
   scroll-snap-align: start;
 }
 
+.app-dock-group {
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: stretch;
+  gap: 4px;
+}
+
+.app-dock-group + .app-dock-group {
+  padding-left: 8px;
+  border-left: 1px solid var(--border);
+}
+
+.app-dock-group-label {
+  position: absolute;
+  top: -14px;
+  left: 0;
+  color: var(--page-muted);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.app-dock-label {
+  white-space: nowrap;
+  font-size: 0.75rem;
+  font-weight: 750;
+}
+
 .app-dock-link {
   text-decoration: none;
 }
 
 .app-dock-icon {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;
@@ -960,7 +992,7 @@ html[data-theme="dark"] .app-dock {
     width: auto;
     max-width: none;
     min-height: var(--app-dock-height);
-    padding: 6px max(6px, env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) max(6px, env(safe-area-inset-left));
+    padding: 19px max(6px, env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) max(6px, env(safe-area-inset-left));
     border-inline: 0;
     border-bottom: 0;
     border-radius: 0;
@@ -974,8 +1006,8 @@ html[data-theme="dark"] .app-dock {
 
   .app-dock-utility {
     flex: 0 0 auto;
-    width: 44px;
-    padding: 0;
+    width: auto;
+    padding: 0 10px;
     white-space: nowrap;
   }
 
@@ -1465,10 +1497,11 @@ html[data-theme="dark"] .map-panel-status[data-state="error"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex: 0 0 42px;
-  width: 42px;
+  flex: 0 0 auto;
+  gap: 6px;
+  min-width: 42px;
   min-height: 42px;
-  padding: 0;
+  padding: 0 10px;
   border: 1px solid var(--border-strong);
   border-radius: 12px;
   background: var(--surface);
@@ -1915,22 +1948,15 @@ html[data-theme="dark"] button.reader-setting-action:disabled {
 
 @media (max-width: 900px) {
   .app-dock {
+    gap: 8px;
+  }
+
+  .app-dock-group {
     gap: 4px;
   }
 
-  .app-dock-item {
-    flex-basis: 40px;
-    width: 40px;
-    min-height: 40px;
-  }
-
   .app-dock-utility {
-    display: inline-flex;
-    flex-basis: 40px;
-    min-height: 40px;
-    width: 40px;
-    padding: 0;
-    font-size: 1rem;
+    min-height: 42px;
   }
 
 }
@@ -2075,12 +2101,8 @@ html[data-theme="dark"] button.reader-setting-action:disabled {
 
 @media (max-width: 360px) {
   .app-dock {
-    gap: 3px;
+    gap: 8px;
     justify-content: flex-start;
-  }
-
-  .app-dock-item {
-    flex-basis: 40px;
   }
 
   .reader-search-actions button {

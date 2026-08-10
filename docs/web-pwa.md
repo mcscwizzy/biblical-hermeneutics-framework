@@ -74,7 +74,9 @@ instead of substituting a confident definition from model memory.
 
 ## Navigation on desktop and mobile
 
-The application dock has Bible, Ask, Notes, Studies, and Explore destinations.
+The labeled application dock groups actions by purpose: **Read** (Bible),
+**Study** (Ask, Notes, New note, and saved studies), **Explore** (maps and
+archaeology), and **App** (workspace restore and settings).
 On larger screens the reader and study workspace remain side by side. On phones
 and compact tablets the dock switches between full-screen reader and workspace
 views while preserving the current passage and selection.
