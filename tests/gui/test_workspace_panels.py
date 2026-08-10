@@ -78,6 +78,43 @@ def test_app_dock_desktop_preserves_reader_split(driver, wait, base_url):
         assert driver.find_element(By.ID, "study-panel").is_displayed()
 
 
+def test_context_result_header_keeps_title_readable_in_study_panel(driver, wait, base_url):
+    driver.set_window_size(1440, 1000)
+    HomePage(driver, wait, base_url).open().wait_loaded()
+
+    metrics = driver.execute_script(
+        """
+        const output = document.querySelector('[data-testid="answer-output"]');
+        output.innerHTML = `
+          <article class="answer deterministic-study-result context-presentation">
+            <header class="answer-header">
+              <div>
+                <p class="answer-eyebrow">Validated CKL evidence</p>
+                <h2>Full Context for John 1:1</h2>
+              </div>
+              <div class="answer-actions">
+                <button type="button" class="secondary answer-save">Save Study</button>
+                <button type="button" class="secondary">Explain with BHF</button>
+                <button type="button" class="secondary">Ask a Question</button>
+              </div>
+            </header>
+          </article>`;
+        const header = output.querySelector('.answer-header').getBoundingClientRect();
+        const title = output.querySelector('.answer-header > div').getBoundingClientRect();
+        const eyebrow = output.querySelector('.answer-eyebrow').getBoundingClientRect();
+        return {
+          headerWidth: header.width,
+          titleWidth: title.width,
+          eyebrowHeight: eyebrow.height,
+          eyebrowFontSize: parseFloat(getComputedStyle(output.querySelector('.answer-eyebrow')).fontSize),
+        };
+        """
+    )
+
+    assert metrics["titleWidth"] >= min(256, metrics["headerWidth"])
+    assert metrics["eyebrowHeight"] <= metrics["eyebrowFontSize"] * 1.5
+
+
 def test_workspace_expand_and_minimize(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
     page = WorkspacePage(driver, wait, base_url)

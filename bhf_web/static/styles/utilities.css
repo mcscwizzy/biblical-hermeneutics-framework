@@ -220,17 +220,24 @@ button.danger {
 
 .answer-header {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   justify-content: space-between;
   align-items: start;
 }
 
+.answer-header > :first-child {
+  min-width: 0;
+  flex: 1 1 16rem;
+}
+
 .answer-actions {
   display: flex;
-  flex: 0 0 auto;
+  flex: 0 1 auto;
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 8px;
+  max-width: 100%;
 }
 
 .answer-actions button {
@@ -1140,6 +1147,11 @@ html[data-theme="dark"] .app-dock {
     width: 100%;
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .answer-header > :first-child {
+    width: 100%;
+    flex-basis: auto;
   }
 
   .answer-actions button {
