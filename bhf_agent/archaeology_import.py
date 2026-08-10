@@ -28,6 +28,18 @@ class ArchaeologyMediaProvider(ABC):
     def fetch_record(self, external_id: str) -> dict[str, Any]:
         raise NotImplementedError
 
+    def fetch_records(self, external_ids: list[str]) -> dict[str, dict[str, Any]]:
+        """Fetch a reviewed set of records.
+
+        Providers that support a batched lookup can override this to avoid
+        unnecessary requests while preserving the explicit manifest workflow.
+        """
+
+        return {
+            external_id: self.fetch_record(external_id)
+            for external_id in dict.fromkeys(external_ids)
+        }
+
     def normalize_record(self, record: Mapping[str, Any]) -> dict[str, Any]:
         return dict(record)
 
@@ -93,22 +105,42 @@ class WikimediaCommonsProvider(ArchaeologyMediaProvider):
         ]
 
     def fetch_record(self, external_id: str) -> dict[str, Any]:
-        title = self._file_title(external_id)
-        payload = self._request(
-            {
-                "action": "query",
-                "format": "json",
-                "formatversion": "2",
-                "prop": "imageinfo",
-                "iiprop": "url|mime|size|extmetadata",
-                "iiurlwidth": "1200",
-                "titles": title,
+        return self.fetch_records([external_id])[external_id]
+
+    def fetch_records(self, external_ids: list[str]) -> dict[str, dict[str, Any]]:
+        requested = list(dict.fromkeys(external_ids))
+        records: dict[str, dict[str, Any]] = {}
+        for start in range(0, len(requested), 50):
+            batch = requested[start:start + 50]
+            requested_by_title = {
+                self._file_title(external_id): external_id
+                for external_id in batch
             }
-        )
-        pages = payload.get("query", {}).get("pages", [])
-        page = next((candidate for candidate in pages if not candidate.get("missing")), None)
-        if not page:
-            raise ValueError(f"Wikimedia Commons file not found: {title}")
+            payload = self._request(
+                {
+                    "action": "query",
+                    "format": "json",
+                    "formatversion": "2",
+                    "prop": "imageinfo",
+                    "iiprop": "url|mime|size|extmetadata",
+                    "iiurlwidth": "1200",
+                    "titles": "|".join(requested_by_title),
+                }
+            )
+            pages = payload.get("query", {}).get("pages", [])
+            pages_by_title = {
+                str(page.get("title") or ""): page
+                for page in pages
+                if not page.get("missing")
+            }
+            for title, external_id in requested_by_title.items():
+                page = pages_by_title.get(title)
+                if page is None:
+                    raise ValueError(f"Wikimedia Commons file not found: {title}")
+                records[external_id] = self._record_from_page(page, title)
+        return records
+
+    def _record_from_page(self, page: Mapping[str, Any], title: str) -> dict[str, Any]:
         imageinfo = page.get("imageinfo") or []
         if not imageinfo:
             raise ValueError(f"Wikimedia Commons file has no image metadata: {title}")
@@ -319,11 +351,18 @@ def import_archaeology_manifest(
     entries = payload.get("entries", []) if isinstance(payload, Mapping) else payload
     if not isinstance(entries, list):
         raise ValueError("archaeology manifest entries must be a list")
+    external_ids = [
+        str(entry["external_id"])
+        for entry in entries
+        if isinstance(entry, Mapping) and str(entry.get("external_id") or "").strip()
+    ]
+    fetched_records = provider.fetch_records(external_ids)
     imported: list[dict[str, Any]] = []
     for entry in entries:
         if not isinstance(entry, Mapping) or not str(entry.get("external_id") or "").strip():
             raise ValueError("each archaeology manifest entry requires external_id")
-        record = provider.normalize_record(provider.fetch_record(str(entry["external_id"])))
+        external_id = str(entry["external_id"])
+        record = provider.normalize_record(fetched_records[external_id])
         record["id"] = str(entry.get("id") or record.get("id") or entry["external_id"])
         if entry.get("archaeology_item_id"):
             record["archaeology_item_id"] = entry["archaeology_item_id"]

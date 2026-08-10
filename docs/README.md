@@ -1,6 +1,8 @@
 # BHF Documentation
 
-Use this index to find the shortest path for your task.
+BHF is an AI-optional Bible study workspace as well as a hermeneutical
+framework. Start with the guide that matches whether you want to use the app,
+understand its evidence model, or develop and maintain it.
 
 ## Use BHF
 
@@ -29,8 +31,6 @@ Use this index to find the shortest path for your task.
   retrieval, storage, and governance.
 - [Lexicon architecture](lexicon-architecture.md) and
   [word study](word-study.md) — lexical storage and runtime behavior.
-- [Research expansion](research-expansion.md) — answer-coverage routing and
-  optional evidence expansion.
 - [Archaeology evidence and media policy](archaeology.md) — deterministic
   first-class evidence, rights-aware media, importing, presentation, CKL links,
   and offline behavior.

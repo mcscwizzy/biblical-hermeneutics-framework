@@ -1,19 +1,50 @@
 # Biblical Hermeneutics Framework (BHF)
 
-> Teaching AI—and helping people—how to read the Bible carefully.
+> Read Scripture. Explore context. Ask deeper questions.
 
-BHF is an open-source Bible study application and hermeneutics framework. It
-retrieves Scripture, literary and historical context, lexical data, archaeology,
-maps, and curated Canonical Knowledge Library (CKL) material before asking a language
-model to explain the evidence. The model is the explanation layer, not the
-source of the study method.
+BHF is an open-source, local-first Bible study workspace built around a
+hermeneutical method. It brings Scripture, literary and historical context,
+original-language data, archaeology, maps, commentary, and curated research
+together before an AI model is asked to explain the evidence. The model is an
+optional explanation layer—not the source of the study method.
 
-BHF teaches a process—observe, interpret in context, qualify uncertainty, and
-apply last—without prescribing a denomination or doctrinal conclusion.
+What began as a prompt framework has become a full study application: a Bible
+reader, reference library, archaeology explorer, map workspace, and private
+place for notes and saved studies. You can use its reading and research tools
+without connecting AI, or add OpenRouter, Ollama, or another
+OpenAI-compatible service when you want generated study help.
 
-## Start here
+BHF teaches a process: observe, interpret in context, distinguish evidence
+from inference, qualify uncertainty, and apply last. It does this without
+prescribing a denomination or doctrinal conclusion.
 
-Choose the path that matches how you want to use BHF.
+## Install BHF
+
+Docker is the recommended path. It starts the web app and builds the generated
+reference databases for you. The first build takes longer because it prepares
+the lexical and commentary data; later builds can reuse Docker's cache.
+
+```bash
+git clone https://github.com/mcscwizzy/biblical-hermeneutics-framework.git
+cd biblical-hermeneutics-framework
+cp .env.example .env
+docker compose up -d --build
+```
+
+Open <http://localhost:8080>. At first launch, connect OpenRouter, configure a
+local model, or choose **Continue Without AI**. Confirm that the app is running
+at <http://localhost:8080/api/health>.
+
+For a fully local model path using the bundled Ollama service, run:
+
+```bash
+docker compose -f docker-compose.ollama.yml up -d --build
+```
+
+See [Docker installation and operations](docs/docker.md) for prerequisites,
+configuration, updates, data handling, and uninstallation.
+
+## Other ways to use BHF
 
 ### Use the hosted website
 
@@ -25,31 +56,6 @@ The first-launch dialog lets you connect OpenRouter, configure a local AI
 service, or continue without AI. See [Using the website and PWA](docs/web-pwa.md)
 for the reader workflow, privacy boundary, installation steps, and offline
 limitations.
-
-### Run locally with Docker
-
-Docker is the recommended local installation because the image builds the CKL
-and Greek/Hebrew lexical databases for you.
-
-```bash
-git clone https://github.com/mcscwizzy/biblical-hermeneutics-framework.git
-cd biblical-hermeneutics-framework
-cp .env.example .env
-docker compose up -d --build
-```
-
-Open <http://localhost:8080> and verify the service at
-<http://localhost:8080/api/health>.
-
-The default stack uses browser-connected OpenRouter. To run the app and model
-locally with Ollama instead:
-
-```bash
-docker compose -f docker-compose.ollama.yml up -d --build
-```
-
-See [Docker installation and operations](docs/docker.md) for setup,
-configuration, upgrades, data handling, and complete uninstallation.
 
 ### Build and run from source
 
@@ -100,21 +106,41 @@ responses expose validated answer prose, while developer debug routes can show
 controlled retrieval metadata. The detailed component and request-flow diagrams
 are in [Architecture](docs/architecture.md).
 
-## What is included
+## What BHF includes today
 
-- ASV and KJV Bible readers, plus device-local translation import.
-- Passage, literary, historical, cultural, cross-reference, timeline, map, and
-  translation-comparison study actions.
-- Greek and Hebrew lexical lookup when the generated lexical database is present.
-- Curated CKL retrieval with deterministic ranking and evidence packaging.
-- First-class Archaeology exploration with deterministic sites, artifacts,
-  inscriptions, licensed media, provenance, and passage links.
-- Notes, highlights, saved studies, and optional local session memory.
-- Installable PWA shell with offline Bible reading, search, maps, study packs,
+### Study Scripture in context
+
+- ASV and KJV Bible readers, with device-local translation import.
+- Passage, literary, historical, cultural, people, places, theme,
+  cross-reference, timeline, map, and translation-comparison actions.
+- Greek and Hebrew word study when the generated lexical database is present.
+- Tyndale Open Study Notes in a separate, attributed commentary reader.
+
+### Explore evidence
+
+- Curated Canonical Knowledge Library (CKL) retrieval with deterministic
+  ranking and evidence packaging.
+- Archaeology records for sites, artifacts, inscriptions, media, provenance,
+  and related passages.
+- Interactive biblical places, journeys, historical layers, manuscript, and
+  political-context maps.
+
+### Keep your work private and portable
+
+- Notes, highlights, saved studies, map studies, and optional local session
+  memory.
+- Installable PWA with offline Bible reading, search, maps, reference packs,
   and device-local records.
-- OpenRouter, native Ollama, and OpenAI-compatible model adapters.
-- CLI, FastAPI web application, Docker Compose stacks, validation, evaluation,
-  and Selenium test tooling.
+- Encrypted study-vault backup and restore, plus optional OneDrive or iCloud
+  vault sync.
+
+### Choose how AI fits your study
+
+- No AI connection is required for the reader and local research tools.
+- OpenRouter, native Ollama, and OpenAI-compatible model adapters are
+  available for generated study answers.
+- A CLI, FastAPI web app, Docker Compose stacks, validation, evaluation, and
+  browser-test tooling support local use and development.
 
 AI answers are not offline merely because the PWA is installed. They still need
 either an internet-accessible provider or a reachable local model runtime.

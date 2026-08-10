@@ -145,7 +145,9 @@ After Scripture, CKL, lexical, map, genre, and other local context are gathered,
 BHF assigns one of three routing modes: CKL-primary, targeted gap expansion, or
 broad knowledge expansion. Model-knowledge expansion can be disabled, and
 external retrieval requires an explicitly enabled provider. Strict CKL mode
-blocks both. See [Research expansion](research-expansion.md) for configuration.
+blocks both. These runtime settings live in the agent's `knowledge_expansion`
+configuration and are intended for advanced local deployments rather than
+ordinary reader setup.
 
 ## Framework module composition
 

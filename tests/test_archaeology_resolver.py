@@ -209,6 +209,18 @@ def test_cross_period_records_have_reviewed_reusable_media(tmp_path) -> None:
         assert media["attribution_text"]
 
 
+def test_every_seeded_archaeology_record_has_reviewed_image_attribution(tmp_path) -> None:
+    path = tmp_path / "study.sqlite"
+    initialize_database(path)
+
+    items = list_archaeology_items(path=path)
+
+    assert items
+    assert all(item["media"] for item in items)
+    assert all(item["media"][0]["image_url"] for item in items)
+    assert all(item["media"][0]["attribution_text"] for item in items)
+
+
 def test_v20_backfills_cross_period_corpus_for_existing_database(tmp_path) -> None:
     path = tmp_path / "study.sqlite"
     initialize_database(path)

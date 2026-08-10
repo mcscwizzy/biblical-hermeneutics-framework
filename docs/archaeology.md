@@ -97,8 +97,9 @@ are deliberately labelled as site or visual context rather than as a direct
 photograph of a specific deposit or disputed identification; the caption keeps
 that distinction visible.
 
-Import the completion batch explicitly when initializing an existing local
-study database:
+The reviewed completion batch is now included in the built-in seed data and
+is applied automatically to both new and existing local study databases. Use
+the explicit import command only to refresh provider metadata after a review:
 
 ```bash
 python tools/import_archaeology.py \

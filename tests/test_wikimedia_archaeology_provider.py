@@ -61,6 +61,35 @@ def test_wikimedia_fetch_normalizes_reviewed_file_metadata() -> None:
     assert "CC BY-SA 4.0" in record["attribution_text"]
 
 
+def test_wikimedia_batch_fetch_uses_one_request_for_reviewed_files() -> None:
+    payload = {
+        "query": {
+            "pages": [
+                {
+                    "title": f"File:Reviewed archaeology {number}.jpg",
+                    "imageinfo": [
+                        {
+                            "url": f"https://upload.wikimedia.org/{number}.jpg",
+                            "extmetadata": {"LicenseShortName": {"value": "CC0 1.0"}},
+                        }
+                    ],
+                }
+                for number in (1, 2)
+            ]
+        }
+    }
+    requests = []
+    provider = WikimediaCommonsProvider(
+        opener=lambda request, **kwargs: (requests.append(request.full_url) or _Response(payload))
+    )
+
+    records = provider.fetch_records(["Reviewed archaeology 1.jpg", "Reviewed archaeology 2.jpg"])
+
+    assert len(requests) == 1
+    assert records["Reviewed archaeology 1.jpg"]["image_url"].endswith("/1.jpg")
+    assert records["Reviewed archaeology 2.jpg"]["image_url"].endswith("/2.jpg")
+
+
 def test_wikimedia_license_normalization_is_fail_closed_for_nonfree_metadata() -> None:
     provider = WikimediaCommonsProvider(opener=lambda *args, **kwargs: _Response({}))
 

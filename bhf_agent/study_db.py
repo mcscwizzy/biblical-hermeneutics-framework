@@ -29,7 +29,7 @@ from .archaeology_content import (
 )
 from .archaeology import attribution_text, validate_media_record
 
-SCHEMA_VERSION = 36
+SCHEMA_VERSION = 37
 OPENBIBLE_PLACES_PATH = Path(__file__).resolve().parent / "data" / "openbible_places.json"
 BROAD_PERIOD_LABEL = "Broad / uncertain period"
 CANONICAL_PERIOD_LABELS = (
@@ -915,6 +915,12 @@ def _ensure_schema(connection: sqlite3.Connection) -> None:
             "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
             (36, _timestamp()),
         )
+    if 37 not in applied:
+        _apply_v37_schema(connection)
+        connection.execute(
+            "INSERT OR IGNORE INTO schema_migrations (version, applied_at) VALUES (?, ?)",
+            (37, _timestamp()),
+        )
     # Older local databases may already record v15 from the period when the
     # map-study table was intentionally removed. Recreate the optional table
     # on demand so the API remains compatible with those databases.
@@ -1781,6 +1787,12 @@ def _apply_v36_schema(connection: sqlite3.Connection) -> None:
            VALUES (?, ?, ?, ?)""",
         links,
     )
+
+
+def _apply_v37_schema(connection: sqlite3.Connection) -> None:
+    """Seed reviewed Commons media for every archaeology record."""
+
+    _upsert_archaeology_content(connection)
 
 
 def _backfill_source_registry(connection: sqlite3.Connection) -> None:
