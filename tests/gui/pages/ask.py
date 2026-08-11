@@ -7,8 +7,17 @@ from .base import BasePage
 
 
 class AskPage(BasePage):
+    def open_workspace(self):
+        self.driver.execute_script(
+            "window.BHFStudyCompanion && window.BHFStudyCompanion.openResource('ask');"
+        )
+        self.wait.until(
+            EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="question-input"]'))
+        )
+        return self
+
     def ask(self, question: str):
-        self.click('[data-testid="ask-tab"]')
+        self.open_workspace()
         question_box = self.wait.until(
             EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="question-input"]'))
         )

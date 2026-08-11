@@ -29,7 +29,7 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260810b">
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260811a">
   <!-- Legacy cache-key references retained for clients that inspect the shell during upgrades. -->
   <!-- href="/static/style.css?v=20260724c" src="/static/htmx-lite.js?v=20260729b" -->
   {# static_asset('/style.css') }}?v=20260724c #}
@@ -41,7 +41,10 @@
   <script src="{{ static_asset('/htmx-status.js') }}" defer></script>
   <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260809a" defer></script>
   <script src="{{ static_asset('/htmx-search.js') }}?v=20260807b" defer></script>
-  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260809f" defer></script>
+  <script src="{{ static_asset('/reader-selection.js') }}?v=20260811a" defer></script>
+  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260811a" defer></script>
+  <script src="{{ static_asset('/study-recommendations.js') }}?v=20260811a" defer></script>
+  <script src="{{ static_asset('/study-companion.js') }}?v=20260811a" defer></script>
   <script src="{{ static_asset('/commentary.js') }}?v=20260809b" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260806a" defer></script>
   {% if not test_mode %}
@@ -98,8 +101,8 @@
   <main class="page reader-page" data-testid="app-shell">
     <header class="header" data-testid="app-header">
       <div>
-        <h1 data-testid="app-title">BHF Bible Reader</h1>
-        <p class="app-subtitle" data-testid="app-subtitle">Read Scripture. Explore context. Ask deeper questions.</p>
+        <h1 data-testid="app-title"><span aria-hidden="true">BHF</span><span class="visually-hidden">Biblical Hermeneutics Framework</span></h1>
+        <p class="app-subtitle" data-testid="app-subtitle">Biblical Hermeneutics Framework</p>
       </div>
     </header>
 
@@ -191,6 +194,26 @@
         >
           <p class="empty">Loading Scripture text...</p>
         </article>
+        <nav class="passage-action-strip" data-passage-action-strip aria-label="Selected passage actions" hidden>
+          <p class="passage-action-reference" data-passage-action-reference aria-live="polite"></p>
+          <div class="passage-action-list">
+            <button type="button" data-passage-action="explore">
+              <span aria-hidden="true">✦</span><span>Explore</span>
+            </button>
+            <button type="button" data-passage-action="ask">
+              <span aria-hidden="true">?</span><span>Ask</span>
+            </button>
+            <button type="button" data-passage-action="note" data-testid="add-note-button">
+              <span aria-hidden="true">＋</span><span>Note</span>
+            </button>
+            <button type="button" data-passage-action="highlight">
+              <span aria-hidden="true">▰</span><span>Highlight</span>
+            </button>
+            <button type="button" data-passage-action="more" aria-haspopup="menu">
+              <span aria-hidden="true">•••</span><span>More</span>
+            </button>
+          </div>
+        </nav>
         <section
           class="reader-speech-controls"
           data-reader-speech-controls
@@ -226,8 +249,79 @@
         </section>
       </section>
 
-      <aside class="study-panel" id="study-panel" aria-label="Study panel">
-        <div class="workspace-panel" data-workspace-tabs data-default-tab="ask">
+      <aside class="study-panel" id="study-panel" aria-label="Study Companion" data-study-companion data-companion-state="closed">
+        <div class="workspace-panel study-companion" data-workspace-tabs data-default-tab="ask">
+          <button type="button" class="companion-peek" data-companion-state-control="study" aria-controls="companion-overview" hidden>
+            <span><strong data-companion-peek-reference>Chapter Companion</strong><small data-companion-resource-count>Study resources available</small></span>
+            <span aria-hidden="true">⌃</span>
+          </button>
+          <div class="companion-sheet-handle" aria-hidden="true"></div>
+          <header class="companion-header">
+            <div class="companion-heading">
+              <p class="companion-eyebrow">Study Companion</p>
+              <div class="companion-title-row">
+                <button type="button" class="companion-back secondary" data-companion-back hidden aria-label="Back to passage overview">←</button>
+                <h2 data-companion-reference>Chapter Companion</h2>
+              </div>
+              <p class="companion-selected-text" data-companion-selected-text></p>
+            </div>
+            <div class="companion-header-actions">
+              <button type="button" class="companion-icon-button secondary" data-companion-state-control="full" aria-label="Expand Study Companion" title="Expand Study Companion">↗</button>
+              <button type="button" class="companion-icon-button secondary" data-companion-state-control="closed" aria-label="Close Study Companion" title="Close Study Companion">×</button>
+            </div>
+          </header>
+
+          <section class="companion-overview" id="companion-overview" data-companion-overview aria-label="Passage overview">
+            <div class="companion-overview-actions">
+              <button type="button" class="secondary" data-companion-action="note">＋ Add Note</button>
+              <button type="button" class="secondary" data-companion-action="save">☆ Save Passage</button>
+            </div>
+
+            <section class="companion-section" aria-labelledby="companion-recommended-title">
+              <div class="companion-section-heading">
+                <div><span aria-hidden="true">★</span><h3 id="companion-recommended-title">Recommended</h3></div>
+                <p data-companion-recommendation-reason></p>
+              </div>
+              <div class="companion-resource-grid" data-companion-recommended aria-live="polite">
+                <div class="companion-skeleton"></div><div class="companion-skeleton"></div>
+              </div>
+            </section>
+
+            <section class="companion-section" data-companion-entities-section aria-labelledby="companion-entities-title" hidden>
+              <div class="companion-section-heading companion-section-heading-inline">
+                <div><span aria-hidden="true">◎</span><h3 id="companion-entities-title">People &amp; Places</h3></div>
+                <button type="button" class="companion-text-button" data-companion-route="canonical">View All</button>
+              </div>
+              <div class="companion-entity-list" data-companion-entities></div>
+            </section>
+
+            <section class="companion-section companion-ask-card" aria-labelledby="companion-ask-title">
+              <div class="companion-section-heading">
+                <div><span aria-hidden="true">◇</span><h3 id="companion-ask-title">Ask BHF</h3></div>
+                <p>AI explains the local research and Scripture context; it does not replace them.</p>
+              </div>
+              <div class="companion-suggestions" data-companion-suggestions></div>
+              <form class="companion-quick-ask" data-companion-quick-ask>
+                <label for="companion-question" class="visually-hidden">Ask about this passage</label>
+                <input id="companion-question" name="question" type="text" placeholder="Ask about this passage…" autocomplete="off">
+                <button type="submit" aria-label="Open Ask BHF">Ask</button>
+              </form>
+            </section>
+
+            <section class="companion-section" aria-labelledby="companion-deeper-title">
+              <div class="companion-section-heading">
+                <div><span aria-hidden="true">⌄</span><h3 id="companion-deeper-title">Dig Deeper</h3></div>
+              </div>
+              <div class="companion-resource-list" data-companion-deeper></div>
+            </section>
+
+            <section class="companion-advanced-links" aria-label="Advanced research workspaces">
+              <button type="button" class="companion-text-button" data-companion-route="canonical">Open Canonical Knowledge →</button>
+              <button type="button" class="companion-text-button" data-companion-route="maps">Open Maps Explorer →</button>
+              <a class="companion-text-button" href="/archaeology">Open Archaeology Library →</a>
+            </section>
+          </section>
+
           <div class="workspace-toolbar">
             <div class="workspace-tab-bar" data-workspace-tab-bar role="tablist" aria-label="Workspace tabs">
               <button type="button" class="workspace-tab is-commentary" id="workspace-tab-commentary" role="tab" aria-selected="false" aria-controls="workspace-pane-commentary" data-workspace-tab="commentary" tabindex="-1" data-testid="commentary-tab">Tyndale Companion</button>
@@ -384,7 +478,7 @@
                 <div class="action-row">
                   <button type="submit" data-testid="ask-submit">Ask BHF</button>
                   <button type="button" class="secondary" data-save-study data-testid="ask-save-study" disabled>Save Study</button>
-                  <button type="button" class="secondary" data-add-note data-testid="add-note-button">Add note</button>
+                  <button type="button" class="secondary" data-add-note data-testid="ask-add-note-button">Add note</button>
                 </div>
               </form>
 
@@ -564,7 +658,10 @@
               <section class="notes-panel" aria-labelledby="notes-heading">
                 <div class="panel-heading">
                   <h2 id="notes-heading">Notes</h2>
-                  <span id="notes-count" class="count">0</span>
+                  <div class="panel-heading-actions">
+                    <span id="notes-count" class="count">0</span>
+                    <button type="button" class="secondary" data-new-note data-testid="new-note-panel-button">＋ New Note</button>
+                  </div>
                 </div>
                 <div class="notes-view-switcher" role="group" aria-label="Notes view">
                   <button type="button" class="secondary" data-notes-view="all" data-testid="all-notes-button" aria-label="Show all notes" title="Show all notes">All notes</button>
@@ -814,25 +911,25 @@
     </section>
     <section class="app-dock-group" aria-label="Study">
       <span class="app-dock-group-label">Study</span>
-    <button type="button" class="app-dock-item" data-app-section="ask" data-testid="app-dock-ask" aria-pressed="false" aria-label="Ask" title="Ask">
+    <button type="button" class="app-dock-item" data-app-section="ask" data-testid="app-dock-ask" aria-pressed="false" aria-label="Ask" title="Ask" hidden>
       <svg class="app-dock-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M20 11.5a7.5 7.5 0 0 1-8 7.5 8.5 8.5 0 0 1-3.4-.7L4 20l1.7-4.1A7.2 7.2 0 0 1 4 11.5 7.5 7.5 0 0 1 12 4a7.5 7.5 0 0 1 8 7.5ZM8.5 11.5h.01m3.49 0H12m3.49 0h.01"/></svg><span class="app-dock-label">Ask</span>
     </button>
-    <button type="button" class="app-dock-item" data-app-section="notes" data-testid="app-dock-notes" aria-pressed="false" aria-label="Notes" title="Notes">
-      <svg class="app-dock-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M6 3.5h9l3 3V20a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-15a1.5 1.5 0 0 1 1-1.5Zm8.5 0V7H18M8 11h8m-8 3h8m-8 3h5"/></svg><span class="app-dock-label">Notes</span>
+    <button type="button" class="app-dock-item" data-app-section="notes" data-testid="app-dock-notes" aria-pressed="false" aria-label="My Study" title="My Study">
+      <svg class="app-dock-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M6 3.5h9l3 3V20a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-15a1.5 1.5 0 0 1 1-1.5Zm8.5 0V7H18M8 11h8m-8 3h8m-8 3h5"/></svg><span class="app-dock-label">My Study</span>
     </button>
-    <button type="button" class="app-dock-item" data-new-note data-testid="new-note-button" aria-label="Create a new note" title="Create a new note">
+    <button type="button" class="app-dock-item" data-new-note data-testid="new-note-button" aria-label="Create a new note" title="Create a new note" hidden>
       <svg class="app-dock-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M6 3.5h8.5L18 7v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1.5 1.5 0 0 1 1-1.5Zm8.5 0V7H18M12 11v6m-3-3h6"/></svg><span class="app-dock-label">New note</span>
     </button>
-    <button type="button" class="app-dock-item" data-app-section="studies" data-testid="app-dock-studies" aria-pressed="false" aria-label="Studies" title="Studies">
+    <button type="button" class="app-dock-item" data-app-section="studies" data-testid="app-dock-studies" aria-pressed="false" aria-label="Studies" title="Studies" hidden>
       <svg class="app-dock-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M5 4.5h10.5A2.5 2.5 0 0 1 18 7v12H7.5A2.5 2.5 0 0 0 5 21.5v-17Zm0 0v17A2.5 2.5 0 0 1 7.5 19H18M9 8h5m-5 3h5m-5 3h4"/></svg><span class="app-dock-label">Saved</span>
     </button>
     </section>
     <section class="app-dock-group" aria-label="Explore">
       <span class="app-dock-group-label">Explore</span>
     <button type="button" class="app-dock-item" data-app-section="explore" data-testid="app-dock-explore" aria-pressed="false" aria-label="Explore" title="Explore">
-      <svg class="app-dock-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="8"/><path d="m14.5 9.5-1.8 3-3.2 1.8 1.8-3 3.2-1.8Z"/></svg><span class="app-dock-label">Maps</span>
+      <svg class="app-dock-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="8"/><path d="m14.5 9.5-1.8 3-3.2 1.8 1.8-3 3.2-1.8Z"/></svg><span class="app-dock-label">Explore</span>
     </button>
-    <a class="app-dock-item app-dock-link" href="/archaeology" data-testid="app-dock-archaeology" aria-label="Archaeology" title="Archaeology">
+    <a class="app-dock-item app-dock-link" href="/archaeology" data-testid="app-dock-archaeology" aria-label="Archaeology" title="Archaeology" hidden>
       <svg class="app-dock-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M4 20h16M6 20v-7h12v7M4 13h16M7 9h10M9 5h6v4H9z"/></svg><span class="app-dock-label">Archaeology</span>
     </a>
     </section>
@@ -842,9 +939,9 @@
       <svg class="app-dock-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><rect x="5" y="5" width="14" height="14" rx="1"/><path d="M9 2.5h10a2.5 2.5 0 0 1 2.5 2.5v10M2.5 9V5A2.5 2.5 0 0 1 5 2.5h4"/></svg>
       <span class="app-dock-label" data-control-label>Restore</span>
     </button>
-    <button type="button" class="app-dock-utility" data-reader-controls-trigger data-testid="reader-controls-trigger" aria-haspopup="dialog" aria-controls="reader-controls-sheet" aria-label="Open settings" title="Open settings">
+    <button type="button" class="app-dock-utility" data-reader-controls-trigger data-testid="reader-controls-trigger" aria-haspopup="dialog" aria-controls="reader-controls-sheet" aria-label="Open More menu" title="More">
       <svg class="app-dock-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.1 2.1-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5v.2h-3v-.2a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1-2.1-2.1.1-.1A1.7 1.7 0 0 0 7 15a1.7 1.7 0 0 0-1.5-1H5.3v-3h.2A1.7 1.7 0 0 0 7 10a1.7 1.7 0 0 0-.3-1.9l-.1-.1 2.1-2.1.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.5v-.2h3v.2a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1 2.1 2.1-.1.1A1.7 1.7 0 0 0 19.4 10a1.7 1.7 0 0 0 1.5 1h.2v3h-.2a1.7 1.7 0 0 0-1.5 1Z"/></svg>
-      <span class="app-dock-label">Settings</span>
+      <span class="app-dock-label">More</span>
     </button>
     </section>
   </nav>

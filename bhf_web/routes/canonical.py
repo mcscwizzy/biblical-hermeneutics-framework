@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from functools import lru_cache
 from typing import Any
 
@@ -24,6 +25,33 @@ def _canonical_library():
 
 def register_canonical_routes(app: FastAPI, *, study_db_path: str | None = None) -> None:
     archaeology = ArchaeologyService(study_db_path) if study_db_path else ArchaeologyService()
+
+    @app.get("/api/canonical/entities-for-passage", response_class=JSONResponse)
+    async def canonical_entities_for_passage(
+        book: str,
+        chapter: int,
+        verse_start: int | None = None,
+        verse_end: int | None = None,
+        passage_text: str | None = None,
+        limit: int = 12,
+    ) -> JSONResponse:
+        """Return compact, deterministic entity availability without full CKL retrieval."""
+
+        results = _entities_for_passage(
+            _canonical_library(),
+            book=book,
+            chapter=chapter,
+            verse_start=verse_start,
+            verse_end=verse_end,
+            passage_text=passage_text,
+            limit=max(1, min(int(limit), 25)),
+        )
+        return JSONResponse({
+            "reference": _format_passage_reference(book, chapter, verse_start, verse_end),
+            "results": results,
+            "result_count": len(results),
+        })
+
     @app.get("/api/canonical/search", response_class=JSONResponse)
     async def canonical_search(
         q: str | None = None,
@@ -351,6 +379,109 @@ def _serialize_topic(topic: dict[str, Any], library: Any, *, browse: bool) -> di
         payload["reason"] = f"Browse result ranked by importance {obj.importance}."
         payload["match_type"] = "browse"
     return payload
+
+
+def _entities_for_passage(
+    library: Any,
+    *,
+    book: str,
+    chapter: int,
+    verse_start: int | None,
+    verse_end: int | None,
+    passage_text: str | None,
+    limit: int,
+) -> list[dict[str, Any]]:
+    """Rank direct entity mentions and Scripture anchors using compact local data."""
+
+    normalized_text = " ".join(str(passage_text or "").casefold().split())
+    candidates: list[tuple[float, dict[str, Any]]] = []
+    for obj in library.objects_by_id.values():
+        payload = obj.to_dict() if hasattr(obj, "to_dict") else dict(obj)
+        object_type = str(payload.get("type") or getattr(obj, "type", "")).strip().casefold()
+        if object_type not in {"person", "place", "theme"}:
+            continue
+        title = str(payload.get("title") or getattr(obj, "title", "") or payload.get("name") or payload.get("id") or "").strip()
+        aliases = [str(alias).strip() for alias in payload.get("aliases") or [] if str(alias).strip()]
+        references = [
+            str(reference.get("reference") if isinstance(reference, dict) else reference).strip()
+            for reference in payload.get("scripture_references") or []
+        ]
+        direct_reference = any(
+            _reference_overlaps_passage(
+                reference,
+                book=book,
+                chapter=chapter,
+                verse_start=verse_start,
+                verse_end=verse_end,
+            )
+            for reference in references
+        )
+        matched_name = next(
+            (
+                name for name in [title, *aliases]
+                if normalized_text and _entity_name_in_text(name, normalized_text)
+            ),
+            "",
+        )
+        if not direct_reference and not matched_name:
+            continue
+        score = (6.0 if direct_reference else 0.0) + (4.0 if matched_name else 0.0)
+        score += min(float(payload.get("importance") or 0) / 100.0, 1.0)
+        candidates.append((score, {
+            "id": str(payload.get("id") or "").strip(),
+            "title": title,
+            "type": object_type,
+            "summary": str(payload.get("summary") or "").strip(),
+            "relationship": "direct Scripture anchor" if direct_reference else "named in passage",
+            "matched_name": matched_name,
+            "score": round(score, 3),
+        }))
+    candidates.sort(key=lambda item: (-item[0], item[1]["type"], item[1]["title"]))
+    return [payload for _score, payload in candidates[:limit]]
+
+
+def _entity_name_in_text(name: str, normalized_text: str) -> bool:
+    normalized_name = " ".join(str(name or "").casefold().split())
+    if len(normalized_name) < 3:
+        return False
+    return re.search(rf"(?<![\w]){re.escape(normalized_name)}(?![\w])", normalized_text) is not None
+
+
+def _reference_overlaps_passage(
+    reference: str,
+    *,
+    book: str,
+    chapter: int,
+    verse_start: int | None,
+    verse_end: int | None,
+) -> bool:
+    match = re.match(
+        rf"^{re.escape(str(book).strip())}\s+{int(chapter)}(?::(?P<start>\d+)(?:-(?P<end>\d+))?)?(?:\b|$)",
+        str(reference or "").strip(),
+        flags=re.IGNORECASE,
+    )
+    if not match:
+        return False
+    if verse_start is None or match.group("start") is None:
+        return True
+    anchor_start = int(match.group("start"))
+    anchor_end = int(match.group("end") or anchor_start)
+    selected_end = int(verse_end or verse_start)
+    return anchor_start <= selected_end and int(verse_start) <= anchor_end
+
+
+def _format_passage_reference(
+    book: str,
+    chapter: int,
+    verse_start: int | None,
+    verse_end: int | None,
+) -> str:
+    reference = f"{book} {chapter}"
+    if verse_start is None:
+        return reference
+    if verse_end and verse_end != verse_start:
+        return f"{reference}:{verse_start}-{verse_end}"
+    return f"{reference}:{verse_start}"
 
 
 def _serialize_object(obj: Any) -> dict[str, Any]:

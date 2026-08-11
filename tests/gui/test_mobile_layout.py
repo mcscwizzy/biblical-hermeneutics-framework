@@ -201,6 +201,8 @@ def test_mobile_passage_heading_updates_with_translation_badge(driver, wait, bas
         (390, 844, True),
         (430, 932, True),
         (768, 1024, False),
+        (1024, 900, False),
+        (1366, 900, False),
         (1440, 1000, False),
     ],
 )

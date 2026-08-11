@@ -504,6 +504,10 @@ async function openNewReaderTab() {
   if (!tab) {
     return false;
   }
+  // The new tab starts at the same passage, so reuse the already-loaded
+  // chapter while keeping selection state independent. This also prevents a
+  // transient active pane with no verses while the async tab switch settles.
+  tab.data = current?.data || currentChapter || null;
   readerTabs.push(tab);
   activeReaderTabId = tab.id;
   renderReaderTabs();
@@ -1171,6 +1175,9 @@ function initializeAppNavigation() {
   document.addEventListener("bhf:workspace-tab-changed", (event) => {
     const tabId = event.detail?.tabId;
     rememberWorkspaceSubtab(tabId);
+    if (window.BHFStudyCompanion) {
+      return;
+    }
     const nextSection = appSectionFromWorkspaceTab(tabId);
     if (nextSection) {
       activateAppSection(nextSection);
@@ -1195,6 +1202,14 @@ function initializeWorkspaceBridge() {
   window.BHFReader = {
     navigateToPassage,
     openPassageReference,
+    getStudySelection: () => window.BHFStudySelection?.getState?.() || null,
+  };
+  window.BHFStudyActions = {
+    perform: performCompanionStudyAction,
+    openWorkspaceTab: activateWorkspaceTab,
+    openAdvancedMenu: openCompanionAdvancedMenu,
+    openCanonicalQuery,
+    savePassage: saveSelectedPassage,
   };
 }
 
@@ -1221,9 +1236,6 @@ function activateAppSection(sectionId, options = {}) {
     applyCompactSectionLayout(nextSection);
   } else {
     applyDesktopSectionLayout(nextSection, options);
-  }
-  if (nextSection === "explore") {
-    ensureExploreMapBrowserOpen();
   }
   scheduleAppDockVisibilityUpdate();
 }
@@ -1351,7 +1363,7 @@ function appSectionFromWorkspaceTab(tabId) {
     return "notes";
   }
   if (tabId === "saved") {
-    return "studies";
+    return "notes";
   }
   if (tabId === "maps" || tabId === "journey") {
     return "explore";
@@ -1375,7 +1387,8 @@ function appSectionToWorkspaceTab(sectionId) {
     const currentWorkspaceTab = getCurrentWorkspaceTab();
     if (
       currentWorkspaceTab === "notes" ||
-      currentWorkspaceTab === "highlights"
+      currentWorkspaceTab === "highlights" ||
+      currentWorkspaceTab === "saved"
     ) {
       return currentWorkspaceTab;
     }
@@ -1397,7 +1410,7 @@ function appSectionToWorkspaceTab(sectionId) {
 function rememberWorkspaceSubtab(tabId) {
   if (tabId === "ask" || tabId === "lexicon" || tabId === "context") {
     lastAskWorkspaceTab = tabId;
-  } else if (tabId === "notes" || tabId === "highlights") {
+  } else if (tabId === "notes" || tabId === "highlights" || tabId === "saved") {
     lastNotesWorkspaceTab = tabId;
   } else if (tabId === "maps" || tabId === "journey") {
     lastExploreWorkspaceTab = tabId;
@@ -2391,7 +2404,7 @@ function workspaceTabsForSection(sectionId) {
     return ["ask", "lexicon", "context"];
   }
   if (normalized === "notes") {
-    return ["notes", "highlights"];
+    return ["notes", "highlights", "saved"];
   }
   if (normalized === "studies") {
     return ["saved"];
@@ -2577,8 +2590,9 @@ function focusAskPanel() {
     window.BHFMaps.closeMapModal();
   }
 
-  activateAppSection("ask");
+  activateAppSection(window.BHFStudyCompanion ? "bible" : "ask");
   activateWorkspaceTab("ask");
+  window.BHFStudyCompanion?.ensureResourceVisible?.("ask");
 
   const focusQuestion = () => {
     const question = document.querySelector('.ask-form [name="question"]');
@@ -2694,6 +2708,11 @@ async function loadReaderChapter(book, chapter, options = {}) {
     }
     currentChapter = data;
     currentSelection = null;
+    window.BHFStudySelection?.setChapter?.({
+      book: data.book,
+      chapter: Number(data.chapter),
+      translation: String(data.translation?.id || translationId),
+    }, "reader-chapter");
     latestJobId = null;
     latestJobComplete = false;
     currentNotes = [];
@@ -4116,7 +4135,10 @@ function handleReaderActionButtonClick(event) {
   const button = event.target.closest("[data-verse-actions]");
   const verseSelect = event.target.closest("[data-verse-select]");
   if (!button && !verseSelect) {
-    handleHighlightedVerseTap(event);
+    const tappedVerse = event.target.closest("[data-verse]");
+    if (tappedVerse && !event.target.closest("a, button, input, select, textarea")) {
+      handleVerseSelectionClick(event, tappedVerse);
+    }
     return;
   }
   const verse = (button || verseSelect).closest("[data-verse]");
@@ -4686,12 +4708,16 @@ async function copyContextToClipboard(context) {
 function createStudyAction(type, context) {
   const sourceTranslation =
     currentChapter?.translation?.id || selectedTranslationId().toUpperCase();
+  const verseStart = context.startVerse == null ? null : Number(context.startVerse);
+  const verseEnd = context.endVerse == null
+    ? verseStart
+    : Number(context.endVerse);
   return {
     type,
     book: context.book,
     chapter: Number(context.chapter),
-    verseStart: Number(context.startVerse),
-    verseEnd: Number(context.endVerse || context.startVerse),
+    verseStart,
+    verseEnd,
     selectedVerses: selectedVerseNumbers(context),
     selectedText: context.text || "",
     isSelection: Boolean(context.isSelection),
@@ -4748,6 +4774,98 @@ async function dispatchStudyAction(studyAction) {
   }
 }
 
+function companionSelectionContext() {
+  const shared = window.BHFStudySelection?.getState?.();
+  if (!shared?.book || !shared?.chapter) {
+    return currentChapter
+      ? {book: currentChapter.book, chapter: currentChapter.chapter}
+      : null;
+  }
+  return {
+    book: shared.book,
+    chapter: shared.chapter,
+    startVerse: shared.startVerse,
+    endVerse: shared.endVerse,
+    selectedVerses: shared.selectedVerses || [],
+    text: shared.selectedText || "",
+    selectedWord: shared.selectedWord || null,
+    isSelection: (shared.selectedVerses || []).length > 1,
+  };
+}
+
+async function performCompanionStudyAction(type, overrides = {}) {
+  const context = {...(companionSelectionContext() || {}), ...overrides};
+  if (!context.book || !context.chapter) {
+    return false;
+  }
+  await dispatchStudyAction(createStudyAction(type, context));
+  return true;
+}
+
+function openCompanionAdvancedMenu(trigger) {
+  const context = companionSelectionContext();
+  if (!context?.startVerse) {
+    return false;
+  }
+  contextMenuState = context;
+  const rect = trigger?.getBoundingClientRect?.() || {
+    left: window.innerWidth / 2,
+    width: 0,
+    bottom: window.innerHeight / 2,
+  };
+  showContextMenu(rect.left + rect.width / 2, rect.bottom + 8, context);
+  return true;
+}
+
+function openCanonicalQuery(query) {
+  activateWorkspaceTab("context");
+  const form = document.querySelector("[data-canonical-browser-form]");
+  const input = form?.querySelector("[name='q']");
+  if (!form || !input) {
+    return false;
+  }
+  input.value = String(query || "");
+  input.dispatchEvent(new Event("input", {bubbles: true}));
+  if (typeof form.requestSubmit === "function") {
+    form.requestSubmit();
+  } else {
+    form.dispatchEvent(new Event("submit", {bubbles: true, cancelable: true}));
+  }
+  return true;
+}
+
+async function saveSelectedPassage() {
+  const shared = window.BHFStudySelection?.getState?.();
+  if (!shared?.book || !shared?.chapter) {
+    return false;
+  }
+  const title = shared.reference || `${shared.book} ${shared.chapter}`;
+  await requestJson(
+    "/api/saved-studies",
+    {
+      method: "POST",
+      headers: {Accept: "application/json", "Content-Type": "application/json"},
+      body: JSON.stringify({
+        title,
+        book: shared.book,
+        chapter: shared.chapter,
+        start_verse: shared.startVerse,
+        end_verse: shared.endVerse,
+        selected_text: shared.selectedText || "",
+        source_translation: shared.translation || selectedTranslationId(),
+        study_type: "passage",
+        question: title,
+        answer: shared.selectedText || `Saved passage: ${title}`,
+        personal_notes: "",
+        canonical_object_ids: [],
+      }),
+    },
+    "Could not save this passage.",
+  );
+  await loadSavedStudies(shared.book, shared.chapter);
+  return true;
+}
+
 function insertSelectedTextIntoAskQuestion(studyAction) {
   const question = document.querySelector('.ask-form [name="question"]');
   if (!question) {
@@ -4777,6 +4895,16 @@ function insertSelectedTextIntoAskQuestion(studyAction) {
 }
 
 function applyStudyActionContext(studyAction) {
+  if (!studyAction.verseStart) {
+    window.BHFStudySelection?.setChapter?.({
+      book: studyAction.book,
+      chapter: studyAction.chapter,
+      translation: studyAction.sourceTranslation || selectedTranslationId(),
+    }, "study-action-chapter");
+    currentSelection = null;
+    syncAskFields();
+    return;
+  }
   applySelectionContext({
     book: studyAction.book,
     chapter: studyAction.chapter,
@@ -5778,6 +5906,16 @@ function applySelectionContext(context) {
     endVerse: selectedVerses[selectedVerses.length - 1] || Number(context.endVerse || context.startVerse),
     isSelection: selectedVerses.length > 1,
   };
+  window.BHFStudySelection?.setSelection?.({
+    book: currentSelection.book,
+    chapter: currentSelection.chapter,
+    startVerse: currentSelection.startVerse,
+    endVerse: currentSelection.endVerse,
+    selectedVerses: currentSelection.selectedVerses,
+    selectedText: currentSelection.text,
+    translation: currentChapter?.translation?.id || selectedTranslationId(),
+    selectedWord: currentSelection.selectedWord || null,
+  }, "reader-selection");
   const tab = activeReaderTab();
   if (tab) {
     tab.selection = {...currentSelection};
@@ -5832,6 +5970,7 @@ function clearReaderSelection() {
   }
 
   currentSelection = null;
+  window.BHFStudySelection?.clearSelection?.("reader-selection-clear");
   const tab = activeReaderTab();
   if (tab) {
     tab.selection = null;
@@ -5955,34 +6094,44 @@ function syncAskFields() {
   if (!currentChapter) {
     return;
   }
-  setFormValue("reader_book", currentChapter.book);
-  setFormValue("reader_chapter", currentChapter.chapter);
+  const studySelection = window.BHFStudySelection?.getState?.() || {
+    book: currentChapter.book,
+    chapter: currentChapter.chapter,
+    startVerse: currentSelection?.startVerse || null,
+    endVerse: currentSelection?.endVerse || null,
+    selectedVerses: currentSelection?.selectedVerses || [],
+    selectedText: currentSelection?.text || "",
+    translation: selectedTranslationId(),
+    hasPassageSelection: Boolean(currentSelection),
+  };
+  setFormValue("reader_book", studySelection.book || currentChapter.book);
+  setFormValue("reader_chapter", studySelection.chapter || currentChapter.chapter);
   setFormValue(
     "reader_start_verse",
-    currentSelection ? currentSelection.startVerse : "",
+    studySelection.hasPassageSelection ? studySelection.startVerse : "",
   );
   setFormValue(
     "reader_end_verse",
-    currentSelection ? currentSelection.endVerse : "",
+    studySelection.hasPassageSelection ? studySelection.endVerse : "",
   );
   setFormValue(
     "reader_selected_verses",
-    currentSelection ? JSON.stringify(currentSelection.selectedVerses || []) : "",
+    studySelection.hasPassageSelection ? JSON.stringify(studySelection.selectedVerses || []) : "",
   );
   setFormValue(
     "reader_selected_text",
-    currentSelection ? currentSelection.text : "",
+    studySelection.hasPassageSelection ? studySelection.selectedText : "",
   );
-  setFormValue("reader_translation", selectedTranslationId());
+  setFormValue("reader_translation", studySelection.translation || selectedTranslationId());
 
   const summary = document.querySelector("#selection-summary");
   const addNoteButton = document.querySelector("[data-add-note]");
-  if (currentSelection) {
-    const reference = formatReference(
-      currentChapter.book,
-      currentChapter.chapter,
-      currentSelection.startVerse,
-      currentSelection.endVerse,
+  if (studySelection.hasPassageSelection) {
+    const reference = studySelection.reference || formatReference(
+      studySelection.book,
+      studySelection.chapter,
+      studySelection.startVerse,
+      studySelection.endVerse,
     );
     const translationLabel = translationSelectOptionLabel(
       selectedTranslationId(),

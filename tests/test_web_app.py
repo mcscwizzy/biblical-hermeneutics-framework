@@ -920,7 +920,7 @@ class WebAppTests(unittest.TestCase):
 
         self.assertEqual(response["status"], 200)
         self.assertIn("BHF Bible Reader", response["body"])
-        self.assertIn("Read Scripture. Explore context. Ask deeper questions.", response["body"])
+        self.assertIn("Biblical Hermeneutics Framework", response["body"])
         self.assertNotIn("BHF ASV Reader", response["body"])
         self.assertIn("BHFRuntimeConfig", response["body"])
         self.assertIn("manifest.webmanifest", response["body"])
@@ -1007,7 +1007,12 @@ class WebAppTests(unittest.TestCase):
             response["body"].index("app-dock-explore"),
             response["body"].index("app-dock-archaeology"),
         )
-        self.assertIn('data-testid="app-dock-notes" aria-pressed="false" aria-label="Notes"', response["body"])
+        self.assertIn('data-testid="app-dock-notes" aria-pressed="false" aria-label="My Study"', response["body"])
+        self.assertIn("data-study-companion", response["body"])
+        self.assertIn("data-passage-action-strip", response["body"])
+        self.assertIn("data-companion-recommended", response["body"])
+        self.assertIn("reader-selection.js", response["body"])
+        self.assertIn("study-companion.js", response["body"])
         self.assertIn('class="app-dock-icon"', response["body"])
         self.assertIn("reader-controls-trigger", response["body"])
         self.assertIn("reader-controls-sheet", response["body"])
@@ -1071,7 +1076,10 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v26"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v28"', service_worker["body"])
+        self.assertIn('/static/styles/companion.css', service_worker["body"])
+        self.assertIn('/static/reader-selection.js', service_worker["body"])
+        self.assertIn('/static/study-companion.js', service_worker["body"])
         self.assertIn("cacheFirstApi", service_worker["body"])
         self.assertIn("isRefreshRequest", service_worker["body"])
         self.assertIn("networkFirstNavigation", service_worker["body"])
