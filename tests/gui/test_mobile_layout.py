@@ -151,6 +151,33 @@ def test_mobile_reader_settings_sheet_controls_existing_state(driver, wait, base
     wait.until(lambda _driver: "workspace-expanded" in _driver.find_element(By.TAG_NAME, "body").get_attribute("class"))
 
 
+@pytest.mark.parametrize("width", [320, 390])
+def test_reader_settings_sheet_does_not_scroll_horizontally(driver, wait, base_url, width):
+    driver.set_window_size(width, 844)
+    HomePage(driver, wait, base_url).open().wait_loaded()
+
+    wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-testid="reader-controls-trigger"]'))).click()
+    sheet = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#reader-controls-sheet[open]")))
+    sheet.find_element(By.CSS_SELECTOR, ".vault-sync-details summary").click()
+
+    widths = driver.execute_script(
+        """
+        return [
+          arguments[0],
+          arguments[0].querySelector(".reader-controls-sheet-panel"),
+          arguments[0].querySelector(".reader-settings-list"),
+          ...arguments[0].querySelectorAll(".reader-settings-group, .offline-readiness-details")
+        ].map((element) => ({
+          clientWidth: element.clientWidth,
+          scrollWidth: element.scrollWidth
+        }));
+        """,
+        sheet,
+    )
+
+    assert all(item["scrollWidth"] <= item["clientWidth"] for item in widths)
+
+
 def test_mobile_passage_heading_updates_with_translation_badge(driver, wait, base_url):
     _set_mobile_viewport(driver)
     HomePage(driver, wait, base_url).open().wait_loaded()
