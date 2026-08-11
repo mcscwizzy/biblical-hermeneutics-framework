@@ -73,10 +73,13 @@ def test_mobile_branding_and_header_controls_are_compact(driver, wait, base_url)
     HomePage(driver, wait, base_url).open().wait_loaded()
 
     assert "BHF Bible Reader" in driver.title
-    assert "BHF Bible Reader" in driver.find_element(By.CSS_SELECTOR, '[data-testid="app-title"]').text
+    title = driver.find_element(By.CSS_SELECTOR, '[data-testid="app-title"]')
+    assert title.find_element(By.CSS_SELECTOR, '[aria-hidden="true"]').text == "BHF"
+    assert "Biblical Hermeneutics Framework" in title.text
     assert "BHF ASV Reader" not in driver.find_element(By.TAG_NAME, "body").text
-    assert driver.find_element(By.CSS_SELECTOR, '[data-testid="app-subtitle"]').is_displayed()
-    assert "Read Scripture. Explore context. Ask deeper questions." in driver.find_element(By.CSS_SELECTOR, '[data-testid="app-subtitle"]').text
+    subtitle = driver.find_element(By.CSS_SELECTOR, '[data-testid="app-subtitle"]')
+    assert not subtitle.is_displayed()
+    assert subtitle.get_attribute("textContent").strip() == "Biblical Hermeneutics Framework"
     assert _hidden_or_absent(driver, '[data-testid="desktop-reader-controls-trigger"]')
     assert _hidden_or_absent(driver, '[data-testid="theme-toggle"]')
     assert _hidden_or_absent(driver, '[data-testid="reader-mode-toggle"]')
@@ -137,18 +140,8 @@ def test_mobile_reader_settings_sheet_controls_existing_state(driver, wait, base
     wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#reader-controls-sheet[open]")))
     driver.find_element(By.CSS_SELECTOR, '[data-testid="mobile-reader-mode-toggle"]').click()
     wait.until(lambda _driver: "reader-mode" in _driver.find_element(By.TAG_NAME, "body").get_attribute("class"))
-
-    page = WorkspacePage(driver, wait, base_url)
-    page.open_app_section("ask")
-    wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "ask")
-    page.assert_tab_visible("ask")
-    page.open_tab("context")
-    page.assert_tab_visible("context")
-    wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "ask")
-    workspace_toggle = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-testid="workspace-expand-toggle"]')))
-    assert workspace_toggle.is_enabled()
-    workspace_toggle.click()
-    wait.until(lambda _driver: "workspace-expanded" in _driver.find_element(By.TAG_NAME, "body").get_attribute("class"))
+    driver.find_element(By.TAG_NAME, "body").send_keys("\ue00c")
+    wait.until(lambda _driver: "reader-mode" not in _driver.find_element(By.TAG_NAME, "body").get_attribute("class"))
 
 
 @pytest.mark.parametrize("width", [320, 390])
@@ -168,14 +161,19 @@ def test_reader_settings_sheet_does_not_scroll_horizontally(driver, wait, base_u
           arguments[0].querySelector(".reader-settings-list"),
           ...arguments[0].querySelectorAll(".reader-settings-group, .offline-readiness-details")
         ].map((element) => ({
+          className: element.className,
           clientWidth: element.clientWidth,
-          scrollWidth: element.scrollWidth
+          scrollWidth: element.scrollWidth,
+          widestChild: Array.from(element.querySelectorAll('*'))
+            .map((child) => ({className: child.className, scrollWidth: child.scrollWidth, clientWidth: child.clientWidth}))
+            .sort((a, b) => (b.scrollWidth - b.clientWidth) - (a.scrollWidth - a.clientWidth))[0]
         }));
         """,
         sheet,
     )
 
-    assert all(item["scrollWidth"] <= item["clientWidth"] for item in widths)
+    overflowing = [item for item in widths if item["scrollWidth"] > item["clientWidth"]]
+    assert not overflowing, overflowing
 
 
 def test_mobile_passage_heading_updates_with_translation_badge(driver, wait, base_url):
@@ -289,17 +287,19 @@ def test_app_dock_hides_at_page_bottom_on_mobile(driver, wait, base_url):
     )
 
 
-def test_app_dock_switches_between_bible_and_ask_on_mobile(driver, wait, base_url):
+def test_app_dock_switches_between_bible_and_explore_on_mobile(driver, wait, base_url):
     _set_mobile_viewport(driver)
     HomePage(driver, wait, base_url).open().wait_loaded()
 
     page = WorkspacePage(driver, wait, base_url)
     assert page.find('[data-testid="app-dock-bible"]').is_displayed()
 
-    page.open_app_section("ask")
-    wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "ask")
-    wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="question-input"]')))
+    page.open_app_section("explore")
+    wait.until(lambda _driver: _driver.execute_script(
+        "return window.BHFStudyCompanion.getState().mode === 'explore';"
+    ))
     assert page.find("#study-panel").is_displayed()
+    assert page.find("[data-companion-overview]").is_displayed()
 
     page.open_app_section("bible")
     wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "bible")
@@ -323,14 +323,21 @@ def test_app_dock_uses_labeled_groups(driver, wait, base_url, width, height):
         note_button,
     )
 
-    assert note_button.get_attribute("aria-label") == "Notes"
+    assert note_button.get_attribute("aria-label") == "My Study"
     assert note_button.find_element(By.CSS_SELECTOR, "svg.app-dock-icon").is_displayed()
-    assert note_button.text == "Notes"
+    assert note_button.text == "My Study"
     assert metrics["dockHeight"] <= 78
     assert metrics["buttonWidth"] > 42
-    assert [label.text for label in dock.find_elements(By.CSS_SELECTOR, ".app-dock-group-label")] == [
-        "Read", "Study", "Explore", "App"
-    ]
+    visible_labels = driver.execute_script(
+        """
+        return Array.from(arguments[0].querySelectorAll('.app-dock-item, .app-dock-utility'))
+          .filter((item) => item.getClientRects().length)
+          .sort((a, b) => a.getBoundingClientRect().left - b.getBoundingClientRect().left)
+          .map((item) => item.querySelector('.app-dock-label')?.textContent.trim());
+        """,
+        dock,
+    )
+    assert visible_labels == ["Bible", "Explore", "My Study", "More"]
 
     if width < 900:
         scroll_metrics = driver.execute_script(
@@ -345,8 +352,8 @@ def test_app_dock_uses_labeled_groups(driver, wait, base_url, width, height):
             """,
             dock,
         )
-        assert scroll_metrics["scrollWidth"] > scroll_metrics["clientWidth"]
-        assert scroll_metrics["scrollLeft"] > 0
+        assert scroll_metrics["scrollWidth"] <= scroll_metrics["clientWidth"]
+        assert scroll_metrics["scrollLeft"] == 0
 
 
 def test_mobile_ask_submit_still_works(driver, wait, base_url):
@@ -354,7 +361,8 @@ def test_mobile_ask_submit_still_works(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
 
     page = WorkspacePage(driver, wait, base_url)
-    page.open_app_section("ask")
+    driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="1"] .verse-text').click()
+    wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-passage-action="ask"]'))).click()
     question = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="question-input"]')))
     question.clear()
     question.send_keys("What does John 1 emphasize?")
@@ -400,7 +408,7 @@ def test_mobile_verse_actions_support_notes_and_highlights(driver, wait, base_ur
     wait.until(lambda _driver: "highlight-yellow" in _driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="1"]').get_attribute("class"))
 
 
-def test_app_dock_remembers_group_subtabs_on_mobile(driver, wait, base_url):
+def test_my_study_remembers_group_subtabs_on_mobile(driver, wait, base_url):
     _set_mobile_viewport(driver)
     HomePage(driver, wait, base_url).open().wait_loaded()
 
@@ -422,16 +430,9 @@ def test_app_dock_remembers_group_subtabs_on_mobile(driver, wait, base_url):
     page.open_app_section("notes")
     page.assert_tab_visible("notes")
 
-    page.open_app_section("explore")
-    wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "explore")
-    page.assert_tab_visible("maps")
-    wait.until(lambda _driver: not tab_bar().is_displayed())
+    page.open_tab("saved")
+    page.assert_tab_visible("saved")
     page.open_app_section("bible")
     wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "bible")
-    page.open_app_section("explore")
-    page.assert_tab_visible("maps")
-
-    page.open_app_section("studies")
-    wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "studies")
+    page.open_app_section("notes")
     page.assert_tab_visible("saved")
-    wait.until(lambda _driver: not tab_bar().is_displayed())

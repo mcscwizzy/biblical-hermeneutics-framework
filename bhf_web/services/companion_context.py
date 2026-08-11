@@ -74,6 +74,12 @@ class CompanionContextService:
 
         self._canonical_library = None
 
+    def invalidate_translation_cache(self) -> None:
+        """Refresh installed-translation availability after local mutations."""
+
+        self._translation_cache = None
+        self._translation_cache_time = 0.0
+
     def build(
         self,
         *,

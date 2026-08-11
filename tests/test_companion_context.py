@@ -116,6 +116,25 @@ class CompanionContextServiceTests(unittest.TestCase):
         )
         return service, library
 
+    def test_translation_cache_can_be_invalidated_after_local_install(self):
+        installed = [{"translation_id": "asv", "installed": True}]
+        calls = []
+        service = CompanionContextService(
+            study_db_path="unused-study.sqlite",
+            commentary_db_path="unused-commentary.sqlite",
+            commentary_service=_Commentary(),
+            word_study_service=_WordService(0),
+            canonical_library_provider=lambda: _CanonicalLibrary(),
+            translation_provider=lambda: calls.append(True) or list(installed),
+        )
+
+        self.assertEqual(len(service._translations()), 1)
+        installed.append({"translation_id": "kjv", "installed": True})
+        self.assertEqual(len(service._translations()), 1)
+        service.invalidate_translation_cache()
+        self.assertEqual(len(service._translations()), 2)
+        self.assertEqual(len(calls), 2)
+
     @patch("bhf_web.services.companion_context.list_archaeology_passage_summaries")
     @patch("bhf_web.services.companion_context.list_passage_map_summaries")
     def test_single_verse_uses_actual_compact_availability(self, map_lookup, archaeology_lookup):

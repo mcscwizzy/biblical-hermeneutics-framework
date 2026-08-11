@@ -116,6 +116,8 @@ let readerSpeechControlsScrollFrame = null;
 let noteContext = null;
 let currentNotes = [];
 let currentHighlights = [];
+const savedStudiesCache = new Map();
+const savedStudiesRequests = new Map();
 let contextMenuState = null;
 let contextMenuPosition = null;
 let lastMapAIFallbackKey = null;
@@ -1210,6 +1212,7 @@ function initializeWorkspaceBridge() {
     openAdvancedMenu: openCompanionAdvancedMenu,
     openCanonicalQuery,
     savePassage: saveSelectedPassage,
+    getSavedStudies: getSavedStudiesForSelection,
     syncAskSelection: syncAskFields,
   };
 }
@@ -3450,6 +3453,7 @@ async function handleTranslationSelectorDialogClick(event) {
     renderTranslationSelector(translationCatalogState);
     closeTranslationSelector();
     await reloadCurrentReaderChapter();
+    announceStudyResourceChange("translations", "installed");
     return;
   }
   if (select) {
@@ -3477,6 +3481,7 @@ async function handleTranslationSelectorDialogClick(event) {
     translationCatalogState = await loadTranslationState("/api/translations/installed");
     renderTranslationSelector(translationCatalogState);
     await reloadCurrentReaderChapter();
+    announceStudyResourceChange("translations", "removed");
   }
 }
 
@@ -3688,6 +3693,12 @@ async function importTranslationXml() {
   installImportedTranslation(normalized);
   await persistReaderDefaultTranslation(normalized);
   return result;
+}
+
+function announceStudyResourceChange(resource, action) {
+  document.dispatchEvent(new CustomEvent("bhf:study-resources-changed", {
+    detail: {resource, action},
+  }));
 }
 
 function parseDeviceTranslationXml(xmlText, translationId, translationName, sourceFilename) {
@@ -3933,6 +3944,7 @@ async function submitTranslationImportForm(event) {
     await importTranslationXml();
     closeTranslationImportDialog();
     await reloadCurrentReaderChapter();
+    announceStudyResourceChange("translations", "imported");
   } catch (error) {
     const details = form.querySelector("[data-translation-import-details]");
     if (details) {
@@ -4847,6 +4859,19 @@ function openCanonicalQuery(query) {
     form.dispatchEvent(new Event("submit", {bubbles: true, cancelable: true}));
   }
   return true;
+}
+
+function savedStudyChapterKey(value) {
+  return `${String(value?.book || "").trim().toLowerCase()}|${Number(value?.chapter || 0)}`;
+}
+
+function getSavedStudiesForSelection(selection, options = {}) {
+  const key = savedStudyChapterKey(selection);
+  if (!selection?.book || !selection?.chapter) return Promise.resolve([]);
+  if (!options.refresh && savedStudiesCache.has(key)) {
+    return Promise.resolve(savedStudiesCache.get(key));
+  }
+  return loadSavedStudies(selection.book, selection.chapter);
 }
 
 async function saveSelectedPassage() {

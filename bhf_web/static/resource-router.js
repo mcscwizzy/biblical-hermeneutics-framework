@@ -20,6 +20,7 @@
     if (!panel || !shell || !host) return null;
     let sequence = 0;
     let controller = null;
+    let nativeBackView = null;
 
     host.addEventListener("click", handleClick);
     host.addEventListener("keydown", handleKeydown);
@@ -30,6 +31,7 @@
       const requestSequence = sequence;
       controller?.abort();
       controller = new AbortController();
+      nativeBackView = null;
       shell.classList.add("is-native-resource");
       host.hidden = false;
       renderLoading(host);
@@ -53,7 +55,9 @@
       controller = null;
       host.hidden = true;
       host.replaceChildren();
+      host.removeAttribute("aria-busy");
       shell.classList.remove("is-native-resource");
+      nativeBackView = null;
     }
 
     function showLegacy(resourceId) {
@@ -64,7 +68,12 @@
 
     async function renderPassage(resourceId, requestSequence, signal) {
       const selection = options.getSelection?.() || {};
-      const context = options.getContext?.() || {};
+      const selectionKey = window.BHFCompanionContext?.requestKey?.(selection) || "";
+      const contextRecord = options.getContextRecord?.() || {
+        key: selectionKey,
+        status: "ready",
+        context: options.getContext?.() || null,
+      };
       if (resourceId === "commentary") {
         const parameters = new URLSearchParams();
         if (selection.startVerse) parameters.set("start_verse", String(selection.startVerse));
@@ -78,6 +87,15 @@
         renderCommentary(data);
         return;
       }
+      if (contextRecord.status === "error" && contextRecord.key === selectionKey) {
+        renderError(host, contextRecord.error || "Passage resources could not be loaded.");
+        return;
+      }
+      if (!contextRecord.context || contextRecord.status !== "ready" || contextRecord.key !== selectionKey) {
+        renderLoading(host, `Loading ${selection.reference || "passage"} resources…`);
+        return;
+      }
+      const context = contextRecord.context;
       if (resourceId === "maps") {
         renderMaps(context.summaries?.maps || {places: [], routes: []});
       } else if (resourceId === "archaeology") {
@@ -131,7 +149,7 @@
         body.append(card);
       });
       body.append(actionButton("Open full commentary →", "commentary"));
-      host.replaceChildren(body);
+      commit(body);
     }
 
     function renderCommentaryCollection(data) {
@@ -143,7 +161,7 @@
           : "The commentary collection is not installed on this device.",
       );
       (data.sources || []).forEach((source) => body.append(summaryCard(source.name || source.id, source.attribution || source.copyright || "")));
-      host.replaceChildren(body);
+      commit(body);
     }
 
     function renderMaps(data, options = {}) {
@@ -156,7 +174,7 @@
       appendGroup(body, "Places", places.slice(0, 8));
       appendGroup(body, "Journeys & routes", routes.slice(0, 8));
       body.append(actionButton("Open Full Map →", "maps"));
-      host.replaceChildren(body);
+      commit(body);
     }
 
     function renderArchaeology(items, contextual) {
@@ -173,7 +191,7 @@
       link.href = "/archaeology";
       link.textContent = "Open Archaeology Library →";
       body.append(link);
-      host.replaceChildren(body);
+      commit(body);
     }
 
     function renderCanonicalCards(items, label, contextual) {
@@ -186,14 +204,15 @@
       items.slice(0, 12).forEach((item) => {
         const card = summaryCard(item.title || item.name || item.id, item.summary || "", item.type || item.relationship || "");
         if (item.id || item.title) {
-          card.dataset.canonicalQuery = item.id || item.title;
+          card.dataset.canonicalId = item.id || item.title;
           card.tabIndex = 0;
           card.setAttribute("role", "button");
+          card.setAttribute("aria-label", `View ${item.title || item.name || item.id} details`);
         }
         body.append(card);
       });
       body.append(actionButton("Open Canonical Knowledge →", "canonical"));
-      host.replaceChildren(body);
+      commit(body);
     }
 
     function renderCrossReferences(items) {
@@ -206,7 +225,7 @@
         list.append(entry);
       });
       body.append(list);
-      host.replaceChildren(body);
+      commit(body);
     }
 
     function appendGroup(body, label, items) {
@@ -269,6 +288,16 @@
         return;
       }
       const canonical = event.target.closest("[data-canonical-query]");
+      const canonicalCard = event.target.closest("[data-canonical-id]");
+      if (canonicalCard) {
+        void openCanonicalDetail(canonicalCard.dataset.canonicalId);
+        return;
+      }
+      const nativeBack = event.target.closest("[data-native-resource-back]");
+      if (nativeBack) {
+        restoreNativeBackView();
+        return;
+      }
       if (canonical) {
         showLegacy("canonical");
         window.BHFStudyActions?.openCanonicalQuery?.(canonical.dataset.canonicalQuery);
@@ -277,13 +306,80 @@
 
     function handleKeydown(event) {
       if (event.key !== "Enter" && event.key !== " ") return;
-      const canonical = event.target.closest("[data-canonical-query]");
+      const canonical = event.target.closest("[data-canonical-id], [data-canonical-query]");
       if (!canonical) return;
       event.preventDefault();
       canonical.click();
     }
 
-    return Object.freeze({open, close, showLegacy});
+    async function openCanonicalDetail(objectId) {
+      const normalized = String(objectId || "").trim();
+      if (!normalized) return;
+      if (!nativeBackView) {
+        const fragment = document.createDocumentFragment();
+        while (host.firstChild) fragment.append(host.firstChild);
+        nativeBackView = fragment;
+      }
+      sequence += 1;
+      const requestSequence = sequence;
+      controller?.abort();
+      controller = new AbortController();
+      renderLoading(host, "Loading entity details…");
+      try {
+        const detail = await requestJson(`/api/canonical/objects/${encodeURIComponent(normalized)}`, controller.signal);
+        if (requestSequence !== sequence) return;
+        renderCanonicalDetail(detail);
+      } catch (error) {
+        if (error?.name !== "AbortError" && requestSequence === sequence) {
+          renderError(host, error?.message || "This entity could not be loaded.");
+        }
+      }
+    }
+
+    function renderCanonicalDetail(detail) {
+      const body = resourceBody(detail.title || detail.name || detail.id, detail.summary || "Canonical knowledge detail");
+      const sections = [
+        ["Historical context", detail.historical_context],
+        ["Canonical context", detail.canonical_context || detail.canonical_role],
+        ["Literary context", detail.literary_context],
+        ["Covenantal significance", detail.covenantal_significance],
+      ];
+      sections.filter(([, value]) => value).slice(0, 3).forEach(([label, value]) => {
+        const section = document.createElement("section");
+        const heading = document.createElement("h4");
+        heading.textContent = label;
+        const text = document.createElement("p");
+        text.textContent = value;
+        section.append(heading, text);
+        body.append(section);
+      });
+      const references = (detail.scripture_references || []).slice(0, 6)
+        .map((item) => typeof item === "string" ? item : item.reference)
+        .filter(Boolean);
+      if (references.length) appendGroup(body, "Scripture", references.map((reference) => ({title: reference})));
+      const back = actionButton("← Back to results", "");
+      delete back.dataset.openLegacyResource;
+      back.dataset.nativeResourceBack = "";
+      body.append(back, actionButton("Open Canonical Knowledge →", "canonical"));
+      commit(body);
+    }
+
+    function restoreNativeBackView() {
+      if (!nativeBackView) return;
+      sequence += 1;
+      controller?.abort();
+      host.replaceChildren(nativeBackView);
+      host.setAttribute("aria-busy", "false");
+      nativeBackView = null;
+      host.querySelector("[data-canonical-id]")?.focus({preventScroll: true});
+    }
+
+    function commit(content) {
+      host.replaceChildren(content);
+      host.setAttribute("aria-busy", "false");
+    }
+
+    return Object.freeze({open, close, showLegacy, openCanonicalDetail});
   }
 
   async function requestJson(url, signal) {
@@ -296,12 +392,13 @@
     return data;
   }
 
-  function renderLoading(host) {
+  function renderLoading(host, message = "Loading resource…") {
     const status = document.createElement("p");
     status.className = "companion-detail-status";
     status.setAttribute("role", "status");
-    status.textContent = "Loading resource…";
+    status.textContent = message;
     host.replaceChildren(status);
+    host.setAttribute("aria-busy", "true");
   }
 
   function renderError(host, message) {
@@ -314,6 +411,7 @@
     text.textContent = message;
     status.append(title, text);
     host.replaceChildren(status);
+    host.setAttribute("aria-busy", "false");
   }
 
   function titleCase(value) {

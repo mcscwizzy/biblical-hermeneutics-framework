@@ -18,13 +18,16 @@
   let currentMode = "passage";
   let currentResource = null;
   let selection = null;
-  let availabilitySequence = 0;
-  let availabilityTimer = null;
-  let availabilityController = null;
-  let companionContext = null;
+  let contextController = null;
   let sheetController = null;
   let resourceRouter = null;
+  let saveStateController = null;
+  let historyController = null;
+  let viewportController = null;
   let lastTrigger = null;
+  let lastResourceTrigger = null;
+  let lastCompact = null;
+  let resizeFrame = null;
 
   function compactViewport() {
     return window.matchMedia(`(max-width: ${breakpoint}px)`).matches;
@@ -39,11 +42,10 @@
 
     panel.querySelectorAll("[data-companion-state-control]").forEach((button) => {
       button.addEventListener("click", () => {
-        lastTrigger = button;
-        setState(button.dataset.companionStateControl);
+        setState(button.dataset.companionStateControl, {source: "control"});
       });
     });
-    panel.querySelector("[data-companion-back]")?.addEventListener("click", () => showOverview());
+    panel.querySelector("[data-companion-back]")?.addEventListener("click", navigateBackFromResource);
     panel.querySelectorAll("[data-companion-action]").forEach((button) => {
       button.addEventListener("click", () => performPersonalAction(button.dataset.companionAction));
     });
@@ -52,6 +54,7 @@
     actionStrip?.addEventListener("click", handlePassageAction);
     document.querySelector("[data-app-dock]")?.addEventListener("click", handlePrimaryNavigation);
     document.addEventListener("bhf:workspace-tab-changed", handleWorkspaceTabChanged);
+    document.addEventListener("bhf:companion-context-invalidated", handleContextInvalidated);
     window.addEventListener("resize", handleViewportChange);
     document.addEventListener("keydown", handleEscape);
 
@@ -65,26 +68,72 @@
       panel,
       shell,
       getSelection: () => selection,
-      getContext: () => companionContext,
+      getContext: () => contextController?.getRecord?.().context || null,
+      getContextRecord: () => contextController?.getRecord?.(),
       openLegacy: openLegacyResource,
     });
 
+    contextController = window.BHFCompanionContextController?.create?.({
+      onLoading: () => {
+        renderLoadingState();
+        renderEntities([]);
+      },
+      onReady: (context) => {
+        renderRecommendations(context);
+        renderEntities([
+          ...(context.entities?.people || []),
+          ...(context.entities?.places || []),
+          ...(context.entities?.themes || []),
+        ]);
+        if (currentResource && currentMode === "passage") {
+          void resourceRouter?.open?.(currentResource, {mode: currentMode});
+        }
+      },
+      onError: (message) => {
+        renderAvailabilityError(message);
+        if (currentResource && currentMode === "passage") {
+          void resourceRouter?.open?.(currentResource, {mode: currentMode});
+        }
+      },
+    });
+
+    saveStateController = window.BHFSavedPassageState?.create?.({
+      loadStudies: (currentSelection, options) => window.BHFStudyActions?.getSavedStudies?.(currentSelection, options) || [],
+      onChange: renderSaveState,
+    });
+    historyController = window.BHFCompanionHistory?.create?.({apply: applyHistoryState});
+    viewportController = window.BHFCompanionViewport?.create?.({
+      panel,
+      compactViewport,
+      ensureVisible: () => {
+        if (currentState === "closed" || currentState === "peek") {
+          setState("study", {focus: false, history: false, source: "keyboard"});
+          historyController?.replace(historySnapshot());
+        }
+      },
+    });
+
+    lastCompact = compactViewport();
+    setState(lastCompact ? currentState : "study", {focus: false, history: false});
+    historyController?.initialize(historySnapshot());
     if (window.BHFStudySelection?.subscribe) {
       window.BHFStudySelection.subscribe(handleSelectionChange);
     }
-    if (!compactViewport()) setState("study", {focus: false});
 
     window.BHFStudyCompanion = Object.freeze({
       setState,
       showOverview,
       openResource,
       ensureResourceVisible,
+      showPersonalResource,
       getState: () => ({state: currentState, mode: currentMode, resource: currentResource}),
-      getContext: () => companionContext,
+      getContext: () => contextController?.getRecord?.().context || null,
+      getContextRecord: () => contextController?.getRecord?.(),
     });
   }
 
   function setState(nextState, options = {}) {
+    const previousState = currentState;
     let normalized = STATES.has(nextState) ? nextState : "study";
     if (!compactViewport() && normalized === "closed") normalized = "study";
     currentState = normalized;
@@ -94,38 +143,64 @@
     document.body.classList.toggle("companion-sheet-full", compactViewport() && normalized === "full");
     const peek = panel.querySelector("[data-companion-state-control='study'].companion-peek");
     if (peek) peek.hidden = normalized !== "peek";
-    const close = panel.querySelector("[data-companion-state-control='closed']");
-    if (close) close.setAttribute("aria-expanded", String(normalized !== "closed"));
     panel.querySelectorAll("[data-companion-state-control]").forEach((control) => {
-      control.setAttribute("aria-pressed", String(control.dataset.companionStateControl === normalized));
+      control.removeAttribute("aria-pressed");
+      control.setAttribute("aria-controls", panel.id);
+      if (control.dataset.companionStateControl === "full") {
+        control.setAttribute("aria-expanded", String(normalized === "full"));
+      } else if (control.dataset.companionStateControl === "study") {
+        control.setAttribute("aria-expanded", String(normalized === "study" || normalized === "full"));
+      } else {
+        control.removeAttribute("aria-expanded");
+      }
     });
+    panel.inert = normalized === "closed";
+    updateReaderAccessibility(normalized);
     if (options.focus !== false && (normalized === "study" || normalized === "full")) {
       window.requestAnimationFrame(() => {
         const target = currentResource
           ? panel.querySelector("[data-companion-back]")
           : panel.querySelector("[data-companion-reference]");
         if (target) {
-          target.setAttribute("tabindex", "-1");
+          if (target.matches("button, a[href], input, select, textarea, [tabindex]:not([tabindex='-1'])")) {
+            target.removeAttribute("tabindex");
+          } else {
+            target.setAttribute("tabindex", "-1");
+          }
           target.focus({preventScroll: true});
         }
       });
     }
     if (normalized === "closed" && lastTrigger?.isConnected) lastTrigger.focus({preventScroll: true});
+    const transientSource = ["drag", "drag-cancel", "selection", "breakpoint", "keyboard"].includes(options.source);
+    if (historyController && options.history !== false && !transientSource && !currentResource && previousState !== normalized) {
+      const expanding = stateIndex(normalized) > stateIndex(previousState);
+      if (expanding) historyController.push(historySnapshot());
+      else historyController.replace(historySnapshot());
+    } else if (historyController && options.source === "drag" && previousState !== normalized) {
+      historyController.replace(historySnapshot());
+    } else if (historyController && currentResource && options.source === "control" && previousState !== normalized) {
+      historyController.replace(historySnapshot());
+    }
   }
 
   function handleSelectionChange(nextSelection) {
     selection = nextSelection;
+    saveStateController?.setSelection(selection);
+    const contextChange = contextController?.setSelection?.(selection, {load: currentMode !== "explore"}) || {changed: false};
+    if (currentMode === "explore") return;
     currentMode = "passage";
-    renderSelectionContext();
+    if (currentResource) renderResourceHeader(currentResource);
+    else renderSelectionContext();
     if (selection?.hasPassageSelection && compactViewport() && currentState === "closed") {
-      setState("peek", {focus: false});
+      setState("peek", {focus: false, history: false, source: "selection"});
+      historyController?.replace(historySnapshot());
     }
-    if (!compactViewport()) showOverview({focus: false, reload: false});
     if (selection?.book && selection?.chapter) {
-      scheduleAvailabilityLoad();
+      if (currentResource && contextChange.changed) {
+        void resourceRouter?.open?.(currentResource, {mode: currentMode});
+      }
     } else {
-      availabilityController?.abort();
-      companionContext = null;
       renderRecommendations({resources: {}});
       renderEntities([]);
     }
@@ -143,45 +218,17 @@
     renderSuggestions();
   }
 
-  function scheduleAvailabilityLoad() {
-    window.clearTimeout(availabilityTimer);
-    availabilityController?.abort();
-    const sequence = ++availabilitySequence;
-    renderLoadingState();
-    availabilityTimer = window.setTimeout(() => loadAvailability(sequence), 180);
-  }
-
   function renderLoadingState() {
     const recommended = panel.querySelector("[data-companion-recommended]");
     if (recommended) {
-      recommended.replaceChildren(skeleton(), skeleton(), skeleton(), skeleton());
+      const status = document.createElement("p");
+      status.className = "visually-hidden";
+      status.setAttribute("role", "status");
+      status.textContent = `Loading study resources for ${selection?.reference || "this passage"}…`;
+      recommended.replaceChildren(status, skeleton(), skeleton(), skeleton(), skeleton());
     }
     const deeper = panel.querySelector("[data-companion-deeper]");
     if (deeper) deeper.replaceChildren(skeleton("row"), skeleton("row"));
-  }
-
-  async function loadAvailability(sequence) {
-    if (!selection?.book || !selection?.chapter || !window.BHFStudyRecommendations || !window.BHFCompanionContext) return;
-    const requestedSelection = {...selection};
-    const controller = new AbortController();
-    availabilityController = controller;
-    try {
-      const context = await window.BHFCompanionContext.load(requestedSelection, {
-        signal: controller.signal,
-      });
-      if (sequence !== availabilitySequence || controller.signal.aborted) return;
-      companionContext = context;
-      renderRecommendations(context);
-      renderEntities([
-        ...(context.entities?.people || []),
-        ...(context.entities?.places || []),
-        ...(context.entities?.themes || []),
-      ]);
-    } catch (error) {
-      if (error?.name === "AbortError" || sequence !== availabilitySequence) return;
-      companionContext = null;
-      renderAvailabilityError(error?.message || "Study resources could not be checked.");
-    }
   }
 
   function renderRecommendations(availability = {}) {
@@ -238,7 +285,7 @@
       const button = document.createElement("button");
       button.type = "button";
       button.className = "companion-entity-chip";
-      button.dataset.companionEntity = entity.title || entity.name || entity.id;
+      button.dataset.companionEntity = entity.id || entity.title || entity.name;
       const label = document.createElement("strong");
       label.textContent = entity.title || entity.name || entity.id;
       const type = document.createElement("span");
@@ -300,6 +347,11 @@
   }
 
   function showOverview(options = {}) {
+    if (currentResource && options.history !== false) {
+      historyController?.backFromResource(() => showOverview({...options, history: false}));
+      return;
+    }
+    const previousResourceTrigger = lastResourceTrigger;
     resourceRouter?.close?.();
     currentResource = null;
     delete shell.dataset.companionResource;
@@ -313,15 +365,27 @@
       renderExploreOverview();
     } else {
       renderSelectionContext();
-      if (options.reload !== false) scheduleAvailabilityLoad();
+      if (options.reload !== false || !contextController?.matchesSelection?.()) contextController?.schedule?.();
     }
-    setState(options.state || "study", {focus: options.focus});
+    setState(options.state || "study", {
+      focus: options.focus,
+      history: options.history,
+      source: options.source || "navigation",
+    });
+    if (options.focus !== false && previousResourceTrigger?.isConnected) {
+      window.requestAnimationFrame(() => previousResourceTrigger.focus({preventScroll: true}));
+    }
   }
 
   async function openResource(resourceId, options = {}) {
     const engine = window.BHFStudyRecommendations;
     const resource = engine?.resources?.[resourceId] || {label: options.label || "Study Resource"};
-    ensureResourceVisible(resourceId, resource);
+    if (options.trigger) lastResourceTrigger = options.trigger;
+    if (options.mode) currentMode = options.mode;
+    ensureResourceVisible(resourceId, resource, {state: options.state});
+    if (options.history !== false && historyController?.current()?.resource !== resourceId) {
+      historyController?.push(historySnapshot());
+    }
 
     if (await resourceRouter?.open?.(resourceId, {mode: currentMode})) return;
     openLegacyResource(resourceId);
@@ -343,7 +407,7 @@
     }
   }
 
-  function ensureResourceVisible(resourceId, resource = null) {
+  function ensureResourceVisible(resourceId, resource = null, options = {}) {
     const engine = window.BHFStudyRecommendations;
     const resolved = resource || engine?.resources?.[resourceId] || {label: "Study Resource"};
     currentResource = resourceId;
@@ -356,20 +420,25 @@
       back.hidden = false;
       back.setAttribute("aria-label", `Back to ${selection?.reference || "passage"} overview`);
     }
-    setText("[data-companion-reference]", resolved.label);
-    setText("[data-companion-selected-text]", selection?.reference || "Study Companion");
-    setState(compactViewport() ? "full" : "study");
+    renderResourceHeader(resourceId, resolved);
+    setState(options.state || (compactViewport() ? "full" : "study"), {history: false});
+  }
+
+  function showPersonalResource(resourceId, label) {
+    const shouldPush = historyController?.current?.()?.resource !== resourceId;
+    ensureResourceVisible(resourceId, {label: label || "My Study"});
+    if (shouldPush) historyController?.push(historySnapshot());
   }
 
   function handleCompanionClick(event) {
     const resource = event.target.closest("[data-companion-resource]");
     if (resource) {
-      openResource(resource.dataset.companionResource);
+      openResource(resource.dataset.companionResource, {trigger: resource});
       return;
     }
     const route = event.target.closest("[data-companion-route]");
     if (route) {
-      openResource(route.dataset.companionRoute);
+      openResource(route.dataset.companionRoute, {trigger: route});
       return;
     }
     const question = event.target.closest("[data-companion-question]");
@@ -379,7 +448,8 @@
     }
     const entity = event.target.closest("[data-companion-entity]");
     if (entity) {
-      openResource("canonical").then(() => window.BHFStudyActions?.openCanonicalQuery?.(entity.dataset.companionEntity));
+      openResource("canonical", {trigger: entity})
+        .then(() => resourceRouter?.openCanonicalDetail?.(entity.dataset.companionEntity));
     }
   }
 
@@ -403,17 +473,17 @@
   async function performPersonalAction(action) {
     if (action === "note") {
       await window.BHFStudyActions?.perform?.("note");
-      currentResource = "note";
-      shell.dataset.companionResource = "note";
-      shell.classList.add("is-resource-detail");
-      overview.hidden = true;
-      panel.querySelector("[data-companion-back]").hidden = false;
-      setText("[data-companion-reference]", "Note");
-      setState(compactViewport() ? "full" : "study");
+      showPersonalResource("note", "Note");
     } else if (action === "save") {
-      await window.BHFStudyActions?.savePassage?.();
       const button = panel.querySelector('[data-companion-action="save"]');
-      if (button) button.textContent = "✓ Saved";
+      if (button?.dataset.saved === "true") return;
+      renderSaveState({saving: true, selection});
+      try {
+        await window.BHFStudyActions?.savePassage?.();
+        await saveStateController?.refresh?.({refresh: true});
+      } catch (_error) {
+        renderSaveState({saved: false, loading: false, unavailable: true, selection});
+      }
     }
   }
 
@@ -422,7 +492,7 @@
     if (!button) return;
     lastTrigger = button;
     const action = button.dataset.passageAction;
-    if (action === "explore") showOverview({mode: "passage"});
+    if (action === "explore") showOverview({mode: "passage", source: "navigation"});
     else if (action === "ask") openAsk("");
     else if (action === "note") performPersonalAction("note");
     else if (action === "highlight") window.BHFStudyActions?.perform?.("highlight");
@@ -432,12 +502,15 @@
   function handlePrimaryNavigation(event) {
     const button = event.target.closest("[data-app-section]");
     if (!button) return;
+    lastTrigger = button;
     const section = button.dataset.appSection;
     if (section === "bible") {
       currentMode = "passage";
-      showOverview({focus: false, reload: false, state: compactViewport() ? "closed" : "study"});
+      showOverview({focus: false, reload: false, state: compactViewport() ? "closed" : "study", history: false});
+      historyController?.replace(historySnapshot());
     } else if (section === "explore") {
-      showOverview({mode: "explore"});
+      showOverview({mode: "explore", history: false});
+      historyController?.replace(historySnapshot());
     } else if (section === "notes") {
       currentResource = "my-study";
       shell.dataset.companionResource = "my-study";
@@ -446,8 +519,10 @@
       panel.querySelector("[data-companion-back]").hidden = false;
       setText("[data-companion-reference]", "My Study");
       setText("[data-companion-selected-text]", "Notes, highlights, and saved studies on this device");
-      window.BHFStudyActions?.openWorkspaceTab?.("notes");
-      setState(compactViewport() ? "full" : "study");
+      setState(compactViewport() ? "full" : "study", {history: false});
+      if (historyController?.current?.()?.resource !== "my-study") {
+        historyController?.push(historySnapshot());
+      }
     }
   }
 
@@ -461,16 +536,125 @@
   }
 
   function handleViewportChange() {
-    sheetController?.cancel?.();
-    if (!compactViewport()) setState("study", {focus: false});
-    else if (currentState === "study" && !currentResource) setState("study", {focus: false});
+    window.cancelAnimationFrame(resizeFrame);
+    resizeFrame = window.requestAnimationFrame(applyViewportTransition);
   }
 
   function handleEscape(event) {
-    if (event.key !== "Escape" || !compactViewport()) return;
-    if (currentResource) showOverview();
+    if (event.key !== "Escape") return;
+    if (currentResource) navigateBackFromResource();
+    else if (!compactViewport()) return;
     else if (currentState === "full") setState("study");
     else if (currentState === "study") setState(selection?.hasPassageSelection ? "peek" : "closed");
+  }
+
+  function applyViewportTransition() {
+    sheetController?.cancel?.();
+    viewportController?.update?.();
+    const isCompact = compactViewport();
+    if (lastCompact === null) {
+      lastCompact = isCompact;
+      return;
+    }
+    if (isCompact === lastCompact) return;
+    lastCompact = isCompact;
+    if (!isCompact) {
+      setState("study", {focus: false, history: false, source: "breakpoint"});
+    } else if (currentResource) {
+      setState("full", {focus: false, history: false, source: "breakpoint"});
+    } else if (currentMode === "explore") {
+      setState("study", {focus: false, history: false, source: "breakpoint"});
+    } else {
+      setState(selection?.hasPassageSelection ? "peek" : "closed", {
+        focus: false,
+        history: false,
+        source: "breakpoint",
+      });
+    }
+    historyController?.replace(historySnapshot());
+  }
+
+  function navigateBackFromResource() {
+    historyController?.backFromResource(() => showOverview({history: false}));
+  }
+
+  async function applyHistoryState(snapshot) {
+    currentMode = snapshot.mode;
+    if (snapshot.resource) {
+      await openResource(snapshot.resource, {
+        history: false,
+        mode: snapshot.mode,
+        state: snapshot.state,
+      });
+      return;
+    }
+    showOverview({
+      history: false,
+      mode: snapshot.mode,
+      state: snapshot.state,
+      reload: false,
+    });
+  }
+
+  function historySnapshot() {
+    return {state: currentState, mode: currentMode, resource: currentResource};
+  }
+
+  function handleContextInvalidated(event) {
+    const invalidated = contextController?.invalidate?.(event.detail?.key, {load: currentMode === "passage"});
+    if (invalidated && currentMode === "passage" && currentResource) {
+      void resourceRouter?.open?.(currentResource, {mode: currentMode});
+    }
+  }
+
+  function renderResourceHeader(resourceId, resource = null) {
+    const resolved = resource || window.BHFStudyRecommendations?.resources?.[resourceId] || {label: "Study Resource"};
+    setText("[data-companion-reference]", resolved.label || "Study Resource");
+    setText("[data-companion-selected-text]", currentMode === "explore"
+      ? "Explore BHF collections"
+      : selection?.reference || "Study Companion");
+  }
+
+  function renderSaveState(state = {}) {
+    const button = panel?.querySelector('[data-companion-action="save"]');
+    if (!button) return;
+    const reference = state.selection?.reference || selection?.reference || "this passage";
+    const saved = state.saved === true;
+    button.dataset.saved = String(saved);
+    button.disabled = Boolean(state.loading || state.saving || saved);
+    button.setAttribute("aria-busy", String(Boolean(state.loading || state.saving)));
+    button.setAttribute("aria-label", saved
+      ? `${reference} is saved`
+      : state.unavailable
+        ? `Save ${reference}; the previous save attempt failed`
+        : `Save ${reference}`);
+    button.textContent = saved
+      ? "✓ Passage Saved"
+      : state.saving
+        ? "Saving…"
+        : state.loading
+          ? "☆ Save Passage"
+          : state.unavailable
+            ? "☆ Save Passage"
+            : "☆ Save Passage";
+  }
+
+  function updateReaderAccessibility(state) {
+    const reader = document.querySelector(".reader-column");
+    if (!reader) return;
+    const inaccessible = compactViewport() && state === "full";
+    reader.inert = inaccessible;
+    if (inaccessible) {
+      reader.dataset.companionInert = "true";
+      reader.setAttribute("aria-hidden", "true");
+    } else if (reader.dataset.companionInert === "true") {
+      delete reader.dataset.companionInert;
+      reader.removeAttribute("aria-hidden");
+    }
+  }
+
+  function stateIndex(state) {
+    return ["closed", "peek", "study", "full"].indexOf(state);
   }
 
   function setText(selector, value) {

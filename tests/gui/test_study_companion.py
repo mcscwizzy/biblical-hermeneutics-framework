@@ -87,6 +87,11 @@ def test_mobile_selection_opens_accessible_companion_states(driver, wait, base_u
 
     driver.find_element(By.CSS_SELECTOR, '[data-companion-state-control="full"]').click()
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "full")
+    assert all(
+        control.get_attribute("aria-pressed") is None
+        for control in panel.find_elements(By.CSS_SELECTOR, "[data-companion-state-control]")
+    )
+    assert driver.find_element(By.CSS_SELECTOR, ".reader-column").get_attribute("aria-hidden") == "true"
     driver.find_element(By.CSS_SELECTOR, '[data-companion-state-control="closed"]').click()
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "closed")
 
@@ -113,10 +118,12 @@ def test_desktop_companion_is_docked_and_routes_resource_details(driver, wait, b
 
     wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-companion-resource="canonical"]'))).click()
     wait.until(lambda _driver: "is-resource-detail" in _driver.find_element(By.CSS_SELECTOR, ".study-companion").get_attribute("class"))
-    assert driver.find_element(By.CSS_SELECTOR, "[data-companion-back]").is_displayed()
+    back = driver.find_element(By.CSS_SELECTOR, "[data-companion-back]")
+    assert back.is_displayed()
+    assert back.get_attribute("tabindex") != "-1"
     assert driver.find_element(By.CSS_SELECTOR, "#chapter-reader").is_displayed()
 
-    driver.find_element(By.CSS_SELECTOR, "[data-companion-back]").click()
+    back.click()
     wait.until(lambda _driver: "is-resource-detail" not in _driver.find_element(By.CSS_SELECTOR, ".study-companion").get_attribute("class"))
     assert driver.find_element(By.CSS_SELECTOR, "[data-companion-overview]").is_displayed()
 
@@ -284,6 +291,242 @@ def test_stale_context_response_cannot_replace_newer_selection(driver, wait, bas
         assert driver.execute_script("return window.BHFStudyCompanion.getContext().reference;") == "John 1:14"
     finally:
         driver.execute_script("window.fetch = window.__originalCompanionFetch;")
+
+
+def test_native_resource_never_renders_previous_selection_context(driver, wait, base_url):
+    driver.set_window_size(390, 844)
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    wait.until(lambda _driver: _driver.execute_script(
+        "return window.BHFStudyCompanion?.getContext?.()?.scope === 'chapter';"
+    ))
+
+    driver.execute_script(
+        """
+        window.__originalCompanionFetch = window.fetch;
+        window.BHFCompanionContext.clear();
+        window.fetch = async function(url, options = {}) {
+          const value = String(url);
+          if (!value.includes('/api/study/companion-context')) {
+            return window.__originalCompanionFetch(url, options);
+          }
+          const parsed = new URL(value, window.location.origin);
+          const verse = Number(parsed.searchParams.get('verse_start'));
+          if (verse === 5) await new Promise((resolve) => setTimeout(resolve, 450));
+          const label = verse === 4 ? 'A stale place' : 'B current place';
+          return new Response(JSON.stringify({
+            reference: `John 1:${verse}`,
+            scope: 'passage',
+            resources: {maps: {state: 'available', available: true, count: 1}},
+            entities: {people: [], places: [], themes: []},
+            summaries: {maps: {places: [{id: `place-${verse}`, title: label}], routes: []}},
+            subsystems: {},
+          }), {status: 200, headers: {'Content-Type': 'application/json'}});
+        };
+        """
+    )
+    try:
+        driver.execute_script(
+            "window.BHFStudySelection.setSelection({book: 'John', chapter: 1, startVerse: 4, endVerse: 4, selectedVerses: [4], selectedText: 'Selection A', translation: 'asv'}, 'stale-resource-test');"
+        )
+        wait.until(lambda _driver: _driver.execute_script(
+            "return window.BHFStudyCompanion.getContext()?.reference === 'John 1:4';"
+        ))
+
+        driver.execute_script(
+            """
+            window.BHFStudySelection.setSelection({book: 'John', chapter: 1, startVerse: 5, endVerse: 5, selectedVerses: [5], selectedText: 'Selection B', translation: 'asv'}, 'stale-resource-test');
+            window.BHFStudyCompanion.openResource('maps');
+            """
+        )
+        host = driver.find_element(By.CSS_SELECTOR, "[data-companion-resource-host]")
+        wait.until(lambda _driver: "Loading John 1:5 resources" in host.text)
+        assert "A stale place" not in host.text
+        assert driver.execute_script("return window.BHFStudyCompanion.getContext();") is None
+
+        wait.until(lambda _driver: "B current place" in host.text)
+        assert "A stale place" not in host.text
+        assert driver.execute_script("return window.BHFStudyCompanion.getContext().reference;") == "John 1:5"
+    finally:
+        driver.execute_script("window.fetch = window.__originalCompanionFetch;")
+
+
+def test_save_passage_state_follows_exact_current_selection(driver, wait, base_url):
+    driver.set_window_size(390, 844)
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    button = driver.find_element(By.CSS_SELECTOR, '[data-companion-action="save"]')
+
+    def select(verse, text):
+        driver.execute_script(
+            """
+            window.BHFStudySelection.setSelection({
+              book: 'John', chapter: 1,
+              startVerse: arguments[0], endVerse: arguments[0], selectedVerses: [arguments[0]],
+              selectedText: arguments[1], translation: 'asv'
+            }, 'save-state-test');
+            window.BHFStudyCompanion.showOverview({state: 'study', focus: false, reload: false, history: false});
+            """,
+            verse,
+            text,
+        )
+
+    select(33, "Selection A")
+    wait.until(lambda _driver: button.is_enabled())
+    button.click()
+    wait.until(lambda _driver: button.get_attribute("data-saved") == "true")
+    assert "Passage Saved" in button.text
+    assert button.get_attribute("aria-label") == "John 1:33 is saved"
+
+    select(34, "Selection B")
+    wait.until(lambda _driver: button.is_enabled() and button.get_attribute("data-saved") == "false")
+    assert button.text == "☆ Save Passage"
+    assert "John 1:34 is saved" not in button.get_attribute("aria-label")
+
+    select(33, "Selection A")
+    wait.until(lambda _driver: button.get_attribute("data-saved") == "true")
+    assert "Passage Saved" in button.text
+
+
+def test_browser_back_unwinds_resource_then_companion_overview(driver, wait, base_url):
+    driver.set_window_size(390, 844)
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    panel = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
+
+    driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="1"] .verse-text').click()
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "peek")
+    driver.find_element(By.CSS_SELECTOR, '[data-passage-action="explore"]').click()
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
+    driver.execute_script("window.BHFStudyCompanion.openResource('maps');")
+    wait.until(lambda _driver: _driver.execute_script(
+        "return window.BHFStudyCompanion.getState().resource === 'maps';"
+    ))
+
+    driver.back()
+    wait.until(lambda _driver: _driver.execute_script(
+        "return window.BHFStudyCompanion.getState().resource === null;"
+    ))
+    assert panel.get_attribute("data-companion-state") == "study"
+    assert driver.find_element(By.CSS_SELECTOR, "[data-companion-overview]").is_displayed()
+
+    driver.back()
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "peek")
+    assert driver.current_url.startswith(base_url)
+
+
+def test_breakpoint_and_orientation_transitions_preserve_resource_and_selection(driver, wait, base_url):
+    driver.set_window_size(1024, 768)
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    panel = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
+
+    driver.set_window_size(768, 1024)
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "closed")
+    driver.set_window_size(1024, 768)
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
+
+    driver.execute_script(
+        "window.BHFStudySelection.setSelection({book: 'John', chapter: 1, startVerse: 7, endVerse: 7, selectedVerses: [7], selectedText: 'Selection remains', translation: 'asv'}, 'resize-test');"
+    )
+    driver.execute_script("window.BHFStudyCompanion.openResource('canonical');")
+    wait.until(lambda _driver: _driver.execute_script(
+        "return window.BHFStudyCompanion.getState().resource === 'canonical';"
+    ))
+
+    driver.set_window_size(768, 1024)
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "full")
+    assert driver.execute_script("return window.BHFStudySelection.getState().reference;") == "John 1:7"
+    assert driver.execute_script("return window.BHFStudyCompanion.getState().resource;") == "canonical"
+
+    driver.set_window_size(1024, 768)
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
+    assert driver.execute_script("return window.BHFStudyCompanion.getState().resource;") == "canonical"
+    assert driver.execute_script("return window.BHFStudySelection.getState().reference;") == "John 1:7"
+
+
+def test_companion_context_cache_refreshes_after_explicit_invalidation(driver, wait, base_url):
+    driver.set_window_size(390, 844)
+    HomePage(driver, wait, base_url).open().wait_loaded()
+
+    result = driver.execute_async_script(
+        """
+        const done = arguments[0];
+        const selection = {book: 'Romans', chapter: 16, startVerse: 1, endVerse: 1, translation: 'asv'};
+        const originalFetch = window.fetch;
+        let calls = 0;
+        window.fetch = async function(url, options = {}) {
+          if (!String(url).includes('/api/study/companion-context')) return originalFetch(url, options);
+          calls += 1;
+          return new Response(JSON.stringify({
+            reference: 'Romans 16:1', scope: 'passage',
+            resources: {commentary: {state: 'available', available: true, count: calls}},
+            entities: {people: [], places: [], themes: []}, summaries: {}, subsystems: {}
+          }), {status: 200, headers: {'Content-Type': 'application/json'}});
+        };
+        (async () => {
+          window.BHFCompanionContext.clear();
+          const first = await window.BHFCompanionContext.load(selection);
+          const cached = await window.BHFCompanionContext.load(selection);
+          window.BHFCompanionContext.invalidate(selection);
+          const refreshed = await window.BHFCompanionContext.load(selection);
+          window.fetch = originalFetch;
+          done({calls, first: first.resources.commentary.count, cached: cached.resources.commentary.count, refreshed: refreshed.resources.commentary.count});
+        })().catch((error) => {
+          window.fetch = originalFetch;
+          done({error: String(error)});
+        });
+        """
+    )
+    assert result == {"calls": 2, "first": 1, "cached": 1, "refreshed": 2}
+
+
+def test_mobile_companion_input_focus_uses_keyboard_safe_layout(driver, wait, base_url):
+    driver.set_window_size(390, 844)
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="1"] .verse-text').click()
+    driver.find_element(By.CSS_SELECTOR, '[data-passage-action="explore"]').click()
+    quick_ask = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#companion-question")))
+    quick_ask.click()
+    wait.until(lambda _driver: _driver.execute_script(
+        "return document.body.classList.contains('companion-input-focused');"
+    ))
+    metrics = driver.execute_script(
+        """
+        const field = arguments[0].getBoundingClientRect();
+        const panel = document.querySelector('[data-study-companion]').getBoundingClientRect();
+        const dock = document.querySelector('[data-app-dock]');
+        return {
+          fieldBottom: field.bottom, panelBottom: panel.bottom,
+          dockVisibility: getComputedStyle(dock).visibility,
+          scrollWidth: document.documentElement.scrollWidth,
+          clientWidth: document.documentElement.clientWidth,
+        };
+        """,
+        quick_ask,
+    )
+    assert metrics["fieldBottom"] <= metrics["panelBottom"] + 1
+    assert metrics["dockVisibility"] == "hidden"
+    assert metrics["scrollWidth"] <= metrics["clientWidth"]
+
+    driver.find_element(By.CSS_SELECTOR, "[data-companion-quick-ask] button[type='submit']").click()
+    wait.until(lambda _driver: _driver.execute_script(
+        "return window.BHFStudyCompanion.getState().resource === 'ask';"
+    ))
+    textarea = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.ask-form [name="question"]')))
+    wait.until(lambda _driver: _driver.execute_script("return document.activeElement === arguments[0];", textarea))
+    assert driver.find_element(By.CSS_SELECTOR, ".reader-column").get_attribute("inert") is not None
+
+
+def test_explore_canonical_entity_detail_stays_native(driver, wait, base_url):
+    driver.set_window_size(390, 844)
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    driver.find_element(By.CSS_SELECTOR, '[data-testid="app-dock-explore"]').click()
+    wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-companion-resource="places"]'))).click()
+    card = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-companion-resource-host] [data-canonical-id]")))
+    expected = card.find_element(By.CSS_SELECTOR, "h4").text
+    card.click()
+    host = driver.find_element(By.CSS_SELECTOR, "[data-companion-resource-host]")
+    wait.until(lambda _driver: expected in host.text and "Back to results" in host.text)
+    assert "is-native-resource" in driver.find_element(By.CSS_SELECTOR, ".study-companion").get_attribute("class")
+    assert not driver.find_element(By.CSS_SELECTOR, "#workspace-pane-context").is_displayed()
 
 
 def test_ask_fields_follow_exact_shared_selection_and_clear_stale_word(driver, wait, base_url):

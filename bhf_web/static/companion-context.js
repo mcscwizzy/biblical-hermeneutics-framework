@@ -4,6 +4,16 @@
 
   const memoryCache = new Map();
   const MAX_CACHE_ENTRIES = 40;
+  const DEFAULT_TTL_MS = 5 * 60 * 1000;
+  const RESOURCE_CHANGE_EVENTS = [
+    "bhf:study-resources-changed",
+    "bhf:translation-installed",
+    "bhf:translation-removed",
+    "bhf:canonical-changed",
+    "bhf:archaeology-changed",
+    "bhf:commentary-changed",
+    "bhf:offline-pack-changed",
+  ];
 
   function requestKey(selection) {
     return [
@@ -31,7 +41,13 @@
       throw new Error("A book and chapter are required for Study Companion context.");
     }
     const key = requestKey(selection);
-    if (!options.refresh && memoryCache.has(key)) return memoryCache.get(key);
+    const cached = memoryCache.get(key);
+    const ttl = Number.isFinite(Number(options.ttl))
+      ? Math.max(0, Number(options.ttl))
+      : DEFAULT_TTL_MS;
+    if (!options.refresh && cached && Date.now() - cached.cachedAt < ttl) {
+      return cached.value;
+    }
     const url = urlFor(selection);
     document.dispatchEvent(new CustomEvent("bhf:companion-context-request", {
       detail: {url, key},
@@ -44,8 +60,9 @@
       ? await window.BHFApi.requestJson(url, requestOptions, "Study Companion context is unavailable.")
       : await requestWithFetch(url, requestOptions);
     if (options.signal?.aborted) throw new DOMException("Aborted", "AbortError");
-    remember(key, normalize(data));
-    return memoryCache.get(key);
+    const normalized = normalize(data);
+    remember(key, normalized);
+    return normalized;
   }
 
   async function requestWithFetch(url, options) {
@@ -92,16 +109,38 @@
   }
 
   function remember(key, value) {
-    if (memoryCache.size >= MAX_CACHE_ENTRIES) {
+    if (!memoryCache.has(key) && memoryCache.size >= MAX_CACHE_ENTRIES) {
       memoryCache.delete(memoryCache.keys().next().value);
     }
-    memoryCache.set(key, value);
+    memoryCache.set(key, {value, cachedAt: Date.now()});
   }
+
+  function invalidate(target, options = {}) {
+    let removed = 0;
+    if (!target) {
+      removed = memoryCache.size;
+      memoryCache.clear();
+    } else {
+      const key = typeof target === "string" ? target : requestKey(target);
+      removed = memoryCache.delete(key) ? 1 : 0;
+    }
+    if (options.announce !== false) {
+      document.dispatchEvent(new CustomEvent("bhf:companion-context-invalidated", {
+        detail: {key: target ? (typeof target === "string" ? target : requestKey(target)) : null, removed},
+      }));
+    }
+    return removed;
+  }
+
+  RESOURCE_CHANGE_EVENTS.forEach((eventName) => {
+    document.addEventListener(eventName, () => invalidate());
+  });
 
   window.BHFCompanionContext = Object.freeze({
     load,
     urlFor,
     requestKey,
-    clear: () => memoryCache.clear(),
+    invalidate,
+    clear: () => invalidate(null, {announce: false}),
   });
 })();

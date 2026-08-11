@@ -2,7 +2,7 @@
 <html lang="en" data-test-mode="{{ 'true' if test_mode else 'false' }}">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>BHF Bible Reader</title>
   <meta name="theme-color" content="{{ runtime_config.themeColor }}">
   <meta name="mobile-web-app-capable" content="yes">
@@ -29,7 +29,7 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260811a">
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260811c">
   <!-- Legacy cache-key references retained for clients that inspect the shell during upgrades. -->
   <!-- href="/static/style.css?v=20260724c" src="/static/htmx-lite.js?v=20260729b" -->
   {# static_asset('/style.css') }}?v=20260724c #}
@@ -39,15 +39,19 @@
   <script src="{{ static_asset('/model-settings.js') }}?v=20260806a" defer></script>
   <script src="{{ static_asset('/api/http.js') }}?v=20260809a" defer></script>
   <script src="{{ static_asset('/htmx-status.js') }}" defer></script>
-  <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260809a" defer></script>
+  <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260811c" defer></script>
   <script src="{{ static_asset('/htmx-search.js') }}?v=20260807b" defer></script>
   <script src="{{ static_asset('/reader-selection.js') }}?v=20260811a" defer></script>
   <script src="{{ static_asset('/htmx-lite.js') }}?v=20260811a" defer></script>
   <script src="{{ static_asset('/study-recommendations.js') }}?v=20260811a" defer></script>
-  <script src="{{ static_asset('/companion-context.js') }}?v=20260811b" defer></script>
-  <script src="{{ static_asset('/companion-sheet.js') }}?v=20260811b" defer></script>
-  <script src="{{ static_asset('/resource-router.js') }}?v=20260811b" defer></script>
-  <script src="{{ static_asset('/study-companion.js') }}?v=20260811b" defer></script>
+  <script src="{{ static_asset('/companion-context.js') }}?v=20260811c" defer></script>
+  <script src="{{ static_asset('/companion-context-controller.js') }}?v=20260811c" defer></script>
+  <script src="{{ static_asset('/saved-passage-state.js') }}?v=20260811c" defer></script>
+  <script src="{{ static_asset('/companion-history.js') }}?v=20260811c" defer></script>
+  <script src="{{ static_asset('/companion-viewport.js') }}?v=20260811c" defer></script>
+  <script src="{{ static_asset('/companion-sheet.js') }}?v=20260811c" defer></script>
+  <script src="{{ static_asset('/resource-router.js') }}?v=20260811c" defer></script>
+  <script src="{{ static_asset('/study-companion.js') }}?v=20260811c" defer></script>
   <script src="{{ static_asset('/commentary.js') }}?v=20260809b" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260806a" defer></script>
   {% if not test_mode %}
@@ -269,9 +273,9 @@
               <p class="companion-selected-text" data-companion-selected-text></p>
             </div>
             <div class="companion-header-actions">
-              <button type="button" class="companion-icon-button companion-collapse-button secondary" data-companion-state-control="peek" aria-label="Collapse Study Companion" title="Collapse Study Companion">⌄</button>
-              <button type="button" class="companion-icon-button secondary" data-companion-state-control="full" aria-label="Expand Study Companion" title="Expand Study Companion">↗</button>
-              <button type="button" class="companion-icon-button secondary" data-companion-state-control="closed" aria-label="Close Study Companion" title="Close Study Companion">×</button>
+              <button type="button" class="companion-icon-button companion-collapse-button secondary" data-companion-state-control="peek" aria-controls="study-panel" aria-label="Collapse Study Companion" title="Collapse Study Companion">⌄</button>
+              <button type="button" class="companion-icon-button secondary" data-companion-state-control="full" aria-controls="study-panel" aria-expanded="false" aria-label="Expand Study Companion" title="Expand Study Companion">↗</button>
+              <button type="button" class="companion-icon-button secondary" data-companion-state-control="closed" aria-controls="study-panel" aria-label="Close Study Companion" title="Close Study Companion">×</button>
             </div>
           </header>
 
@@ -326,7 +330,7 @@
             </section>
           </section>
 
-          <section class="companion-resource-host" data-companion-resource-host aria-live="polite" hidden></section>
+          <section class="companion-resource-host" data-companion-resource-host role="region" aria-label="Study resource detail" aria-live="polite" hidden></section>
 
           <div class="workspace-toolbar">
             <div class="workspace-tab-bar" data-workspace-tab-bar role="tablist" aria-label="Workspace tabs">

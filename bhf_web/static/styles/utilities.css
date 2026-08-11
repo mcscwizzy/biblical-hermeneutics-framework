@@ -1256,7 +1256,7 @@ html[data-theme="dark"] .app-dock {
   }
 
   .context-menu-submenu {
-    left: calc(100% + 4px);
+    left: calc(100% + 3px);
     min-width: min(190px, calc(100vw - 32px));
     max-height: min(62dvh, calc(100dvh - var(--app-dock-height) - 32px));
   }
@@ -1552,7 +1552,9 @@ html[data-theme="dark"] .map-panel-status[data-state="error"] {
 .reader-controls-sheet-panel {
   display: grid;
   gap: 12px;
+  width: 100%;
   min-width: 0;
+  max-width: 100%;
   max-height: min(82dvh, 820px);
   grid-template-rows: auto auto minmax(0, 1fr);
   padding: 14px 14px calc(14px + env(safe-area-inset-bottom));
@@ -1611,6 +1613,7 @@ html[data-theme="dark"] .map-panel-status[data-state="error"] {
   display: grid;
   gap: 8px;
   min-width: 0;
+  max-width: 100%;
 }
 
 .reader-settings-group-heading {
@@ -1788,6 +1791,7 @@ button.reader-setting-action:disabled .reader-setting-value {
 .offline-readiness-details {
   min-width: 0;
   max-width: 100%;
+  overflow-wrap: anywhere;
   border: 1px solid var(--border);
   border-radius: 8px;
   background: var(--surface);
@@ -1978,6 +1982,20 @@ html[data-theme="dark"] button.reader-setting-action:disabled {
 
   .app-dock-utility {
     min-height: 42px;
+  }
+
+  .reader-controls-sheet .settings-help::after {
+    position: fixed;
+    right: 16px;
+    bottom: calc(var(--app-dock-height) + env(safe-area-inset-bottom) + 16px);
+    left: 16px;
+    width: auto;
+    transform: translateY(4px);
+  }
+
+  .reader-controls-sheet .settings-help:hover::after,
+  .reader-controls-sheet .settings-help:focus::after {
+    transform: none;
   }
 
 }
