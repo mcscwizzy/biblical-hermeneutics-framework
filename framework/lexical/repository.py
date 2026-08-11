@@ -6,6 +6,7 @@ import json
 import sqlite3
 import threading
 from pathlib import Path
+from typing import Any
 
 from framework.canonical_library.lexicon_normalization import (
     normalize_script_form,
@@ -154,6 +155,29 @@ class LexicalRepository:
             ).fetchone()[0]
         )
 
+    def count_passage_words(
+        self,
+        book: str,
+        chapter: int,
+        verse_start: int | None = None,
+        verse_end: int | None = None,
+    ) -> int:
+        """Count indexed verse tokens for a chapter or passage range."""
+
+        if not self._has_table("verse_words"):
+            return 0
+        parameters: list[Any] = [str(book).strip(), int(chapter)]
+        predicate = "book = ? AND chapter = ?"
+        if verse_start is not None:
+            predicate += " AND verse >= ? AND verse <= ?"
+            parameters.extend([int(verse_start), int(verse_end or verse_start)])
+        return int(
+            self._connection.execute(
+                f"SELECT COUNT(*) FROM verse_words WHERE {predicate}",
+                tuple(parameters),
+            ).fetchone()[0]
+        )
+
     def lookup_word_at_position(
         self,
         book: str,
@@ -204,10 +228,14 @@ class LexicalRepository:
         holder = getattr(self._local, "connection_holder", None)
         if holder is None:
             if self.read_only:
-                connection = sqlite3.connect(f"file:{self.path}?mode=ro", uri=True)
+                connection = sqlite3.connect(
+                    f"file:{self.path}?mode=ro",
+                    uri=True,
+                    check_same_thread=False,
+                )
                 connection.execute("PRAGMA query_only = ON")
             else:
-                connection = sqlite3.connect(self.path)
+                connection = sqlite3.connect(self.path, check_same_thread=False)
             connection.row_factory = sqlite3.Row
             holder = _ThreadConnection(connection)
             self._local.connection_holder = holder

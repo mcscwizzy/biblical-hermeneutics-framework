@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v28";
+const CACHE_VERSION = "v30";
 const SHELL_CACHE = `bhf-shell-${CACHE_VERSION}`;
 const STATIC_CACHE = `bhf-static-${CACHE_VERSION}`;
 const API_CACHE = `bhf-api-${CACHE_VERSION}`;
@@ -25,6 +25,9 @@ const STATIC_ASSETS = [
   "/static/htmx-lite.js",
   "/static/reader-selection.js",
   "/static/study-recommendations.js",
+  "/static/companion-context.js",
+  "/static/companion-sheet.js",
+  "/static/resource-router.js",
   "/static/study-companion.js",
   "/static/htmx-status.js",
   "/static/htmx-study-panels.js",
@@ -130,7 +133,9 @@ self.addEventListener("fetch", (event) => {
 
   if (requestUrl.pathname.startsWith("/api/")) {
     if (isCacheableApiRequest(requestUrl)) {
-      event.respondWith(isRefreshRequest(event.request) ? networkFirstApi(event.request) : cacheFirstApi(event.request));
+      const preferNetwork = isRefreshRequest(event.request)
+        || requestUrl.pathname === "/api/study/companion-context";
+      event.respondWith(preferNetwork ? networkFirstApi(event.request) : cacheFirstApi(event.request));
     }
     return;
   }
@@ -241,6 +246,7 @@ function isCacheableApiRequest(url) {
     "/api/bible/",
     "/api/canonical/search",
     "/api/canonical/entities-for-passage",
+    "/api/study/companion-context",
     "/api/canonical/objects/",
     "/api/maps/",
     "/api/map-studies",

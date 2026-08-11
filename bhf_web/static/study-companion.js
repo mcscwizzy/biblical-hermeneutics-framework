@@ -20,6 +20,10 @@
   let selection = null;
   let availabilitySequence = 0;
   let availabilityTimer = null;
+  let availabilityController = null;
+  let companionContext = null;
+  let sheetController = null;
+  let resourceRouter = null;
   let lastTrigger = null;
 
   function compactViewport() {
@@ -51,6 +55,20 @@
     window.addEventListener("resize", handleViewportChange);
     document.addEventListener("keydown", handleEscape);
 
+    sheetController = window.BHFCompanionSheet?.create?.({
+      panel,
+      compactViewport,
+      getState: () => currentState,
+      setState,
+    });
+    resourceRouter = window.BHFResourceRouter?.create?.({
+      panel,
+      shell,
+      getSelection: () => selection,
+      getContext: () => companionContext,
+      openLegacy: openLegacyResource,
+    });
+
     if (window.BHFStudySelection?.subscribe) {
       window.BHFStudySelection.subscribe(handleSelectionChange);
     }
@@ -62,6 +80,7 @@
       openResource,
       ensureResourceVisible,
       getState: () => ({state: currentState, mode: currentMode, resource: currentResource}),
+      getContext: () => companionContext,
     });
   }
 
@@ -70,12 +89,16 @@
     if (!compactViewport() && normalized === "closed") normalized = "study";
     currentState = normalized;
     panel.dataset.companionState = normalized;
+    panel.setAttribute("aria-expanded", String(normalized !== "closed"));
     document.body.classList.toggle("companion-sheet-open", compactViewport() && normalized !== "closed" && normalized !== "peek");
     document.body.classList.toggle("companion-sheet-full", compactViewport() && normalized === "full");
     const peek = panel.querySelector("[data-companion-state-control='study'].companion-peek");
     if (peek) peek.hidden = normalized !== "peek";
     const close = panel.querySelector("[data-companion-state-control='closed']");
     if (close) close.setAttribute("aria-expanded", String(normalized !== "closed"));
+    panel.querySelectorAll("[data-companion-state-control]").forEach((control) => {
+      control.setAttribute("aria-pressed", String(control.dataset.companionStateControl === normalized));
+    });
     if (options.focus !== false && (normalized === "study" || normalized === "full")) {
       window.requestAnimationFrame(() => {
         const target = currentResource
@@ -98,10 +121,12 @@
       setState("peek", {focus: false});
     }
     if (!compactViewport()) showOverview({focus: false, reload: false});
-    if (selection?.hasPassageSelection) {
+    if (selection?.book && selection?.chapter) {
       scheduleAvailabilityLoad();
-    } else if (selection?.book && selection?.chapter && window.BHFStudyRecommendations) {
-      renderRecommendations({});
+    } else {
+      availabilityController?.abort();
+      companionContext = null;
+      renderRecommendations({resources: {}});
       renderEntities([]);
     }
   }
@@ -120,14 +145,10 @@
 
   function scheduleAvailabilityLoad() {
     window.clearTimeout(availabilityTimer);
+    availabilityController?.abort();
     const sequence = ++availabilitySequence;
     renderLoadingState();
     availabilityTimer = window.setTimeout(() => loadAvailability(sequence), 180);
-    window.setTimeout(() => {
-      if (sequence === availabilitySequence && panel.querySelector(".companion-skeleton")) {
-        renderRecommendations({});
-      }
-    }, 420);
   }
 
   function renderLoadingState() {
@@ -140,53 +161,27 @@
   }
 
   async function loadAvailability(sequence) {
-    if (!selection?.book || !selection?.chapter || !window.BHFStudyRecommendations) return;
-    const parameters = new URLSearchParams({
-      book: selection.book,
-      chapter: String(selection.chapter),
-    });
-    if (selection.startVerse) parameters.set("verse_start", String(selection.startVerse));
-    if (selection.endVerse) parameters.set("verse_end", String(selection.endVerse));
-    if (selection.selectedText) parameters.set("passage_text", selection.selectedText);
-    const requests = await Promise.allSettled([
-      requestJson(`/api/commentary/${encodeURIComponent(selection.book)}/${selection.chapter}`),
-      requestJson("/api/lexicon/diagnostics"),
-      requestJson(`/api/maps/places-for-passage?${parameters}`),
-      requestJson(`/api/maps/routes-for-passage?${parameters}`),
-      requestJson(`/api/archaeology/for-passage?${parameters}&limit=6`),
-      requestJson(`/api/canonical/entities-for-passage?${parameters}&limit=12`),
-    ]);
-    if (sequence !== availabilitySequence) return;
-
-    const value = (index) => requests[index].status === "fulfilled" ? requests[index].value : null;
-    const commentary = value(0);
-    const lexicon = value(1);
-    const places = value(2);
-    const routes = value(3);
-    const archaeology = value(4);
-    const canonical = value(5);
-    const entities = Array.isArray(canonical?.results)
-      ? canonical.results.filter((item) => ["person", "place", "theme"].includes(String(item.type || "").toLowerCase()))
-      : [];
-    const archaeologyItems = archaeology?.items || archaeology?.results || archaeology?.evidence || [];
-    const availability = {
-      commentary: commentary ? Boolean(commentary.available && commentary.entries?.length) : false,
-      word_study: lexicon ? Boolean(lexicon.lexical_database_found && lexicon.verse_word_count > 0) : false,
-      maps: Boolean(Number(places?.match_count || 0) + Number(routes?.match_count || 0)),
-      archaeology: Array.isArray(archaeologyItems)
-        ? archaeologyItems.length > 0
-        : Number(archaeology?.match_count || archaeology?.result_count || 0) > 0,
-      people: entities.some((item) => String(item.type).toLowerCase() === "person"),
-      places: entities.some((item) => String(item.type).toLowerCase() === "place") || Number(places?.match_count || 0) > 0,
-      mapCount: Number(places?.match_count || 0) + Number(routes?.match_count || 0),
-      archaeologyCount: Array.isArray(archaeologyItems) ? archaeologyItems.length : Number(archaeology?.match_count || 0),
-      peopleCount: entities.filter((item) => String(item.type).toLowerCase() === "person").length,
-      placeCount: entities.filter((item) => String(item.type).toLowerCase() === "place").length,
-      themeCount: entities.filter((item) => String(item.type).toLowerCase() === "theme").length,
-      canonicalCount: Number(canonical?.results?.length || 0),
-    };
-    renderRecommendations(availability);
-    renderEntities(entities);
+    if (!selection?.book || !selection?.chapter || !window.BHFStudyRecommendations || !window.BHFCompanionContext) return;
+    const requestedSelection = {...selection};
+    const controller = new AbortController();
+    availabilityController = controller;
+    try {
+      const context = await window.BHFCompanionContext.load(requestedSelection, {
+        signal: controller.signal,
+      });
+      if (sequence !== availabilitySequence || controller.signal.aborted) return;
+      companionContext = context;
+      renderRecommendations(context);
+      renderEntities([
+        ...(context.entities?.people || []),
+        ...(context.entities?.places || []),
+        ...(context.entities?.themes || []),
+      ]);
+    } catch (error) {
+      if (error?.name === "AbortError" || sequence !== availabilitySequence) return;
+      companionContext = null;
+      renderAvailabilityError(error?.message || "Study resources could not be checked.");
+    }
   }
 
   function renderRecommendations(availability = {}) {
@@ -196,9 +191,30 @@
     const deeper = panel.querySelector("[data-companion-deeper]");
     const reason = panel.querySelector("[data-companion-recommendation-reason]");
     if (reason) reason.textContent = ranking.reason;
-    if (recommended) recommended.replaceChildren(...ranking.recommended.map((resource) => resourceCard(resource)));
+    if (recommended) {
+      recommended.replaceChildren(...ranking.recommended.map((resource) => resourceCard(resource)));
+      if (!ranking.recommended.length) recommended.append(emptyAvailability("No verified resources are available for this selection."));
+    }
     if (deeper) deeper.replaceChildren(...ranking.deeper.map((resource) => resourceRow(resource)));
     setText("[data-companion-resource-count]", `${ranking.all.length} study resources available`);
+  }
+
+  function renderAvailabilityError(message) {
+    const recommended = panel.querySelector("[data-companion-recommended]");
+    const deeper = panel.querySelector("[data-companion-deeper]");
+    recommended?.replaceChildren(emptyAvailability(message, true));
+    deeper?.replaceChildren();
+    setText("[data-companion-recommendation-reason]", "Local resources remain usable even when availability cannot be refreshed.");
+    setText("[data-companion-resource-count]", "Resource availability unknown");
+    renderEntities([]);
+  }
+
+  function emptyAvailability(message, error = false) {
+    const item = document.createElement("p");
+    item.className = error ? "companion-availability-error" : "companion-availability-empty";
+    if (error) item.setAttribute("role", "alert");
+    item.textContent = message;
+    return item;
   }
 
   function renderExploreOverview() {
@@ -259,7 +275,9 @@
     const label = document.createElement("strong");
     label.textContent = resource.label;
     const description = document.createElement("small");
-    description.textContent = resource.description || "Open this resource";
+    description.textContent = resource.count > 0
+      ? `${resource.description || "Open this resource"} · ${resource.count}`
+      : resource.description || "Open this resource";
     content.append(label, description);
     const arrow = document.createElement("span");
     arrow.setAttribute("aria-hidden", "true");
@@ -282,6 +300,7 @@
   }
 
   function showOverview(options = {}) {
+    resourceRouter?.close?.();
     currentResource = null;
     delete shell.dataset.companionResource;
     currentMode = options.mode || currentMode || "passage";
@@ -304,6 +323,11 @@
     const resource = engine?.resources?.[resourceId] || {label: options.label || "Study Resource"};
     ensureResourceVisible(resourceId, resource);
 
+    if (await resourceRouter?.open?.(resourceId, {mode: currentMode})) return;
+    openLegacyResource(resourceId);
+  }
+
+  async function openLegacyResource(resourceId) {
     const actions = window.BHFStudyActions;
     if (resourceId === "commentary") {
       actions?.openWorkspaceTab?.("commentary");
@@ -323,6 +347,7 @@
     const engine = window.BHFStudyRecommendations;
     const resolved = resource || engine?.resources?.[resourceId] || {label: "Study Resource"};
     currentResource = resourceId;
+    resourceRouter?.close?.();
     shell.dataset.companionResource = resourceId;
     shell.classList.add("is-resource-detail");
     overview.hidden = true;
@@ -366,6 +391,7 @@
   }
 
   function openAsk(question) {
+    window.BHFStudyActions?.syncAskSelection?.();
     const field = document.querySelector('.ask-form [name="question"]');
     if (field && question) {
       field.value = question;
@@ -428,11 +454,14 @@
   function handleWorkspaceTabChanged(event) {
     if (!shell || !event.detail?.tabId || !["ask", "lexicon", "context", "commentary", "notes", "highlights", "saved", "maps"].includes(event.detail.tabId)) return;
     if (!currentResource) return;
+    panel.querySelector("[data-companion-resource-host]")?.setAttribute("hidden", "");
+    shell.classList.remove("is-native-resource");
     shell.classList.add("is-resource-detail");
     overview.hidden = true;
   }
 
   function handleViewportChange() {
+    sheetController?.cancel?.();
     if (!compactViewport()) setState("study", {focus: false});
     else if (currentState === "study" && !currentResource) setState("study", {focus: false});
   }
@@ -447,15 +476,6 @@
   function setText(selector, value) {
     const target = panel?.querySelector(selector) || document.querySelector(selector);
     if (target) target.textContent = String(value || "");
-  }
-
-  async function requestJson(url) {
-    if (window.BHFApi?.requestJson) {
-      return window.BHFApi.requestJson(url, {}, "Resource availability check failed.");
-    }
-    const response = await fetch(url, {headers: {Accept: "application/json"}});
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    return response.json();
   }
 
   document.addEventListener("DOMContentLoaded", init);

@@ -44,7 +44,10 @@
   <script src="{{ static_asset('/reader-selection.js') }}?v=20260811a" defer></script>
   <script src="{{ static_asset('/htmx-lite.js') }}?v=20260811a" defer></script>
   <script src="{{ static_asset('/study-recommendations.js') }}?v=20260811a" defer></script>
-  <script src="{{ static_asset('/study-companion.js') }}?v=20260811a" defer></script>
+  <script src="{{ static_asset('/companion-context.js') }}?v=20260811b" defer></script>
+  <script src="{{ static_asset('/companion-sheet.js') }}?v=20260811b" defer></script>
+  <script src="{{ static_asset('/resource-router.js') }}?v=20260811b" defer></script>
+  <script src="{{ static_asset('/study-companion.js') }}?v=20260811b" defer></script>
   <script src="{{ static_asset('/commentary.js') }}?v=20260809b" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260806a" defer></script>
   {% if not test_mode %}
@@ -251,11 +254,11 @@
 
       <aside class="study-panel" id="study-panel" aria-label="Study Companion" data-study-companion data-companion-state="closed">
         <div class="workspace-panel study-companion" data-workspace-tabs data-default-tab="ask">
-          <button type="button" class="companion-peek" data-companion-state-control="study" aria-controls="companion-overview" hidden>
+          <button type="button" class="companion-peek" data-companion-state-control="study" data-companion-drag-handle aria-controls="companion-overview" hidden>
             <span><strong data-companion-peek-reference>Chapter Companion</strong><small data-companion-resource-count>Study resources available</small></span>
             <span aria-hidden="true">⌃</span>
           </button>
-          <div class="companion-sheet-handle" aria-hidden="true"></div>
+          <div class="companion-sheet-handle" data-companion-drag-handle aria-hidden="true"></div>
           <header class="companion-header">
             <div class="companion-heading">
               <p class="companion-eyebrow">Study Companion</p>
@@ -266,6 +269,7 @@
               <p class="companion-selected-text" data-companion-selected-text></p>
             </div>
             <div class="companion-header-actions">
+              <button type="button" class="companion-icon-button companion-collapse-button secondary" data-companion-state-control="peek" aria-label="Collapse Study Companion" title="Collapse Study Companion">⌄</button>
               <button type="button" class="companion-icon-button secondary" data-companion-state-control="full" aria-label="Expand Study Companion" title="Expand Study Companion">↗</button>
               <button type="button" class="companion-icon-button secondary" data-companion-state-control="closed" aria-label="Close Study Companion" title="Close Study Companion">×</button>
             </div>
@@ -322,6 +326,8 @@
             </section>
           </section>
 
+          <section class="companion-resource-host" data-companion-resource-host aria-live="polite" hidden></section>
+
           <div class="workspace-toolbar">
             <div class="workspace-tab-bar" data-workspace-tab-bar role="tablist" aria-label="Workspace tabs">
               <button type="button" class="workspace-tab is-commentary" id="workspace-tab-commentary" role="tab" aria-selected="false" aria-controls="workspace-pane-commentary" data-workspace-tab="commentary" tabindex="-1" data-testid="commentary-tab">Tyndale Companion</button>
@@ -375,6 +381,7 @@
                 <input type="hidden" name="reader_end_verse" value="">
                 <input type="hidden" name="reader_selected_verses" value="">
                 <input type="hidden" name="reader_selected_text" value="">
+                <input type="hidden" name="reader_selected_word" value="">
                 <input type="hidden" name="reader_translation" value="{{ default_translation }}">
                 <input type="hidden" name="ask_mode" value="">
                 <input type="hidden" name="study_action" value="">

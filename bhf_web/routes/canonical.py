@@ -76,14 +76,18 @@ def register_canonical_routes(app: FastAPI, *, study_db_path: str | None = None)
             )
             retrieved_topics = list(context.get("retrieved_topics") or []) if context else []
             results = [
-                _with_related_archaeology(_serialize_topic(topic, library, browse=False), archaeology)
+                _with_related_archaeology(
+                    _serialize_topic(topic, library, browse=False),
+                    archaeology,
+                    include_media=False,
+                )
                 for topic in retrieved_topics
                 if _topic_matches_filters(topic, object_type, review_status, content_status)
             ]
             metadata = dict(context.get("metadata") or {}) if context else {}
         else:
             results = [
-                _with_related_archaeology(result, archaeology)
+                _with_related_archaeology(result, archaeology, include_media=False)
                 for result in _browse_topics(
                 library,
                 limit=max(1, min(int(limit), 25)),
@@ -130,7 +134,10 @@ def register_canonical_routes(app: FastAPI, *, study_db_path: str | None = None)
         obj = library.objects_by_id.get(normalized_id)
         if obj is None:
             return JSONResponse({"error": "canonical object not found"}, status_code=404)
-        if obj.type == "archaeology":
+        # Draft archaeology compatibility records remain directly inspectable
+        # by the CKL editor until curation is complete. Completed records defer
+        # to the authoritative archaeology domain.
+        if obj.type == "archaeology" and obj.content_status != "placeholder":
             try:
                 item = archaeology.get_item(normalized_id)
             except Exception:
@@ -242,6 +249,10 @@ def register_canonical_editor_routes(app: FastAPI, *, templates: Any) -> None:
                 ckl_module._load_default_canonical_library.cache_clear()
             except AttributeError:
                 pass
+        companion_context = getattr(request.app.state, "companion_context_service", None)
+        invalidate_companion = getattr(companion_context, "invalidate_canonical_cache", None)
+        if callable(invalidate_companion):
+            invalidate_companion()
         return RedirectResponse(
             url=f"/canonical/editor?object_id={validated.id}&saved=1",
             status_code=303,
@@ -394,6 +405,46 @@ def _entities_for_passage(
     """Rank direct entity mentions and Scripture anchors using compact local data."""
 
     normalized_text = " ".join(str(passage_text or "").casefold().split())
+    indexed_lookup = getattr(library, "retrieve_by_scripture_reference", None)
+    if callable(indexed_lookup):
+        reference = _format_passage_reference(book, chapter, verse_start, verse_end)
+        indexed_results = indexed_lookup(
+            reference,
+            limit=max(limit * 4, 50),
+            include_placeholders=False,
+        )
+        ranked: dict[str, tuple[float, dict[str, Any]]] = {}
+        for result in indexed_results:
+            obj = result.object
+            payload = obj.to_dict() if hasattr(obj, "to_dict") else dict(obj)
+            object_type = str(payload.get("type") or getattr(obj, "type", "")).strip().casefold()
+            if object_type not in {"person", "place", "theme"}:
+                continue
+            compact = _compact_passage_entity(payload, direct_reference=True, matched_name="")
+            ranked[compact["id"]] = (6.0 + float(getattr(result, "score", 0.0) or 0.0), compact)
+
+        if normalized_text:
+            for object_id in _indexed_entity_ids_in_text(library, normalized_text):
+                obj = library.objects_by_id.get(object_id)
+                if obj is None:
+                    continue
+                payload = obj.to_dict() if hasattr(obj, "to_dict") else dict(obj)
+                title = str(payload.get("title") or payload.get("name") or payload.get("id") or "").strip()
+                aliases = [str(value).strip() for value in payload.get("aliases") or []]
+                matched_name = next(
+                    (name for name in [title, *aliases] if _entity_name_in_text(name, normalized_text)),
+                    "",
+                )
+                if not matched_name:
+                    continue
+                direct = object_id in ranked
+                compact = _compact_passage_entity(payload, direct_reference=direct, matched_name=matched_name)
+                ranked[object_id] = ((6.0 if direct else 0.0) + 4.0, compact)
+        ordered = sorted(ranked.values(), key=lambda item: (-item[0], item[1]["type"], item[1]["title"]))
+        return [payload for _score, payload in ordered[:limit]]
+
+    # Lightweight test doubles and old third-party library adapters may not
+    # expose the indexed API yet. Keep the compatibility fallback isolated.
     candidates: list[tuple[float, dict[str, Any]]] = []
     for obj in library.objects_by_id.values():
         payload = obj.to_dict() if hasattr(obj, "to_dict") else dict(obj)
@@ -438,6 +489,41 @@ def _entities_for_passage(
         }))
     candidates.sort(key=lambda item: (-item[0], item[1]["type"], item[1]["title"]))
     return [payload for _score, payload in candidates[:limit]]
+
+
+def _compact_passage_entity(
+    payload: dict[str, Any],
+    *,
+    direct_reference: bool,
+    matched_name: str,
+) -> dict[str, Any]:
+    return {
+        "id": str(payload.get("id") or "").strip(),
+        "title": str(payload.get("title") or payload.get("name") or payload.get("id") or "").strip(),
+        "type": str(payload.get("type") or "").strip().casefold(),
+        "summary": str(payload.get("summary") or "").strip(),
+        "relationship": "direct Scripture anchor" if direct_reference else "named in passage",
+        "matched_name": matched_name,
+        "score": round((6.0 if direct_reference else 0.0) + (4.0 if matched_name else 0.0), 3),
+    }
+
+
+def _indexed_entity_ids_in_text(library: Any, normalized_text: str) -> set[str]:
+    """Resolve text mentions through the CKL's cached title/alias indexes."""
+
+    matches: set[str] = set()
+    for normalized_name, object_ids in getattr(library, "_title_index", {}).items():
+        if _entity_name_in_text(normalized_name, normalized_text):
+            matches.update(object_ids)
+    for normalized_alias, entry in getattr(library, "_alias_index", {}).items():
+        if _entity_name_in_text(normalized_alias, normalized_text):
+            matches.add(str(entry[0]))
+    return {
+        object_id
+        for object_id in matches
+        if str(getattr(library.objects_by_id.get(object_id), "type", "")).casefold()
+        in {"person", "place", "theme"}
+    }
 
 
 def _entity_name_in_text(name: str, normalized_text: str) -> bool:
@@ -502,12 +588,20 @@ def _serialize_object(obj: Any) -> dict[str, Any]:
     return payload
 
 
-def _with_related_archaeology(payload: dict[str, Any], archaeology: ArchaeologyService) -> dict[str, Any]:
+def _with_related_archaeology(
+    payload: dict[str, Any],
+    archaeology: ArchaeologyService,
+    *,
+    include_media: bool = True,
+) -> dict[str, Any]:
     """Attach compact archaeology cards without making CKL own their media."""
 
     result = dict(payload)
     try:
-        result["related_archaeology"] = archaeology.related_to_ckl(str(result.get("id") or ""))
+        result["related_archaeology"] = archaeology.related_to_ckl(
+            str(result.get("id") or ""),
+            include_media=include_media,
+        )
     except Exception:  # noqa: BLE001 - an optional evidence domain must not break CKL
         result["related_archaeology"] = []
     return result

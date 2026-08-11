@@ -1210,6 +1210,7 @@ function initializeWorkspaceBridge() {
     openAdvancedMenu: openCompanionAdvancedMenu,
     openCanonicalQuery,
     savePassage: saveSelectedPassage,
+    syncAskSelection: syncAskFields,
   };
 }
 
@@ -4360,13 +4361,17 @@ function selectionContextFromDocument() {
   if (selectedVerses.length === 0) {
     return null;
   }
+  const selectedText = selection.toString().trim();
   return {
     book: currentChapter.book,
     chapter: currentChapter.chapter,
     startVerse: Number(selectedVerses[0].dataset.verse),
     endVerse: Number(selectedVerses[selectedVerses.length - 1].dataset.verse),
     selectedVerses: selectedVerses.map((verse) => Number(verse.dataset.verse)),
-    text: selection.toString().trim(),
+    text: selectedText,
+    selectedWord: selectedVerses.length === 1 && /^\S+$/.test(selectedText)
+      ? {surfaceForm: selectedText}
+      : null,
     isSelection: true,
   };
 }
@@ -4712,6 +4717,9 @@ function createStudyAction(type, context) {
   const verseEnd = context.endVerse == null
     ? verseStart
     : Number(context.endVerse);
+  const selectedWord = context.selectedWord && typeof context.selectedWord === "object"
+    ? context.selectedWord
+    : {};
   return {
     type,
     book: context.book,
@@ -4722,6 +4730,12 @@ function createStudyAction(type, context) {
     selectedText: context.text || "",
     isSelection: Boolean(context.isSelection),
     sourceTranslation,
+    selectedWord: Object.keys(selectedWord).length ? {...selectedWord} : null,
+    wordPosition: selectedWord.wordPosition || selectedWord.position || null,
+    surfaceForm: selectedWord.surfaceForm || selectedWord.surface_form || "",
+    lemma: selectedWord.lemma || "",
+    language: selectedWord.language || "",
+    strongsNumber: selectedWord.strongsNumber || selectedWord.strongs_number || selectedWord.strongs || "",
   };
 }
 
@@ -4789,6 +4803,7 @@ function companionSelectionContext() {
     selectedVerses: shared.selectedVerses || [],
     text: shared.selectedText || "",
     selectedWord: shared.selectedWord || null,
+    translation: shared.translation || selectedTranslationId(),
     isSelection: (shared.selectedVerses || []).length > 1,
   };
 }
@@ -4912,6 +4927,7 @@ function applyStudyActionContext(studyAction) {
     endVerse: studyAction.verseEnd,
     selectedVerses: studyAction.selectedVerses,
     text: studyAction.selectedText,
+    selectedWord: studyAction.selectedWord || null,
     isSelection:
       Boolean(studyAction.isSelection) ||
       studyAction.verseStart !== studyAction.verseEnd,
@@ -5640,6 +5656,7 @@ function restorePreviousWordStudy(answerPanel) {
   if (!previous || !answerPanel) {
     return;
   }
+  applyStudyActionContext(previous.studyAction);
   latestDeterministicStudyResult = previous.result;
   answerPanel.innerHTML = renderDeterministicStudyResult(previous.result, {
     showWordStudyBack: wordStudyNavigationStack.length > 0,
@@ -5664,15 +5681,21 @@ function wireWordStudyChoiceControls(answerPanel, studyAction) {
             studyAction: {...studyAction},
           });
         }
-        await requestDeterministicStudyAction({
-          ...studyAction,
-          type: "word_study",
+        const selectedWord = {
           wordPosition,
           language: button.dataset.wordStudyLanguage || "",
           surfaceForm: button.dataset.wordStudySurface || "",
           lemma: button.dataset.wordStudyLemma || "",
           strongsNumber: button.dataset.wordStudyStrongs || "",
-        }, {fromWordStudyChoice: true});
+        };
+        const nextAction = {
+          ...studyAction,
+          type: "word_study",
+          ...selectedWord,
+          selectedWord,
+        };
+        applyStudyActionContext(nextAction);
+        await requestDeterministicStudyAction(nextAction, {fromWordStudyChoice: true});
       });
     });
 }
@@ -6121,6 +6144,10 @@ function syncAskFields() {
   setFormValue(
     "reader_selected_text",
     studySelection.hasPassageSelection ? studySelection.selectedText : "",
+  );
+  setFormValue(
+    "reader_selected_word",
+    studySelection.selectedWord ? JSON.stringify(studySelection.selectedWord) : "",
   );
   setFormValue("reader_translation", studySelection.translation || selectedTranslationId());
 

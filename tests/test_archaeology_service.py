@@ -13,6 +13,13 @@ def test_archaeology_service_browses_and_resolves_cross_domain_links(tmp_path) -
 
     records = service.search("Pilate", biblical_book="Matthew")
     assert [record["id"] for record in records] == ["pilate-stone"]
+    compact_records = service.search(
+        "Pilate",
+        biblical_book="Matthew",
+        include_media=False,
+    )
+    assert compact_records[0]["media"] == []
+    assert compact_records[0]["primary_media"] is None
     detail = service.get_item("pilate-stone")
     assert any(link["ckl_object_id"] == "pontius-pilate" for link in detail["related_ckl"])
     assert any(record["id"] == "pilate-stone" for record in service.related_to_ckl("pontius-pilate"))
@@ -24,4 +31,3 @@ def test_cross_domain_archaeology_links_validate_against_ckl(tmp_path) -> None:
     validate_cross_domain_archaeology_relationships(
         load_canonical_library().objects_by_id.values(), path=database
     )
-

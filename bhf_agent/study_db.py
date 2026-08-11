@@ -310,6 +310,28 @@ def list_route_references(
     )
 
 
+def list_passage_map_summaries(
+    book: str,
+    chapter: int,
+    verse_start: int,
+    verse_end: int,
+    *,
+    path: str | Path = DEFAULT_DB_PATH,
+    limit: int = 12,
+    prepare_schema: bool = True,
+) -> dict[str, list[dict[str, Any]]]:
+    return _maps_repo.list_passage_map_summaries(
+        book,
+        chapter,
+        verse_start,
+        verse_end,
+        path=path,
+        ensure_schema=_ensure_schema,
+        limit=limit,
+        prepare_schema=prepare_schema,
+    )
+
+
 def list_historical_layers(
     period: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
@@ -415,6 +437,8 @@ def list_manuscript_scripture_links(
 def list_archaeology_sites(
     period: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
+    *,
+    include_details: bool = True,
 ) -> list[dict[str, Any]]:
     return _archaeology_repo.list_archaeology_sites(
         period=period,
@@ -426,6 +450,7 @@ def list_archaeology_sites(
         ),
         period_filter_matches=_period_filter_matches,
         periods_from_value=_periods_from_value,
+        include_details=include_details,
     )
 
 
@@ -446,6 +471,8 @@ def list_archaeology_items(
     site_id: str | None = None,
     period: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
+    *,
+    include_media: bool = True,
 ) -> list[dict[str, Any]]:
     return _archaeology_repo.list_archaeology_items(
         site_id,
@@ -458,10 +485,16 @@ def list_archaeology_items(
         ),
         period_filter_matches=_period_filter_matches,
         periods_from_value=_periods_from_value,
+        include_media=include_media,
     )
 
 
-def get_archaeology_item(item_id: str, path: str | Path = DEFAULT_DB_PATH) -> dict[str, Any]:
+def get_archaeology_item(
+    item_id: str,
+    path: str | Path = DEFAULT_DB_PATH,
+    *,
+    include_media: bool = True,
+) -> dict[str, Any]:
     return _archaeology_repo.get_archaeology_item(
         item_id,
         path=path,
@@ -471,6 +504,7 @@ def get_archaeology_item(item_id: str, path: str | Path = DEFAULT_DB_PATH) -> di
             current_item_id, path=db_path
         ),
         periods_from_value=_periods_from_value,
+        include_media=include_media,
     )
 
 
@@ -485,14 +519,39 @@ def list_archaeology_scripture_links(
     )
 
 
+def list_archaeology_passage_summaries(
+    book: str,
+    chapter: int,
+    verse_start: int,
+    verse_end: int,
+    *,
+    path: str | Path = DEFAULT_DB_PATH,
+    limit: int = 8,
+    prepare_schema: bool = True,
+) -> list[dict[str, Any]]:
+    return _archaeology_repo.list_archaeology_passage_summaries(
+        book,
+        chapter,
+        verse_start,
+        verse_end,
+        path=path,
+        ensure_schema=_ensure_schema,
+        limit=limit,
+        prepare_schema=prepare_schema,
+    )
+
+
 def list_archaeology_ckl_links(
     item_id: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
+    *,
+    ckl_object_id: str | None = None,
 ) -> list[dict[str, str]]:
     """Return explicit cross-domain links owned by archaeology."""
 
     return _archaeology_repo.list_archaeology_ckl_links(
         item_id,
+        ckl_object_id=ckl_object_id,
         path=path,
         ensure_schema=_ensure_schema,
     )

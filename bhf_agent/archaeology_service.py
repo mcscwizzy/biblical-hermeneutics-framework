@@ -57,6 +57,7 @@ class ArchaeologyService:
         confidence: str | None = None,
         relationship: str | None = None,
         limit: int = 100,
+        include_media: bool = True,
     ) -> list[dict[str, Any]]:
         """Search independently browsable archaeology records with simple filters."""
 
@@ -66,9 +67,16 @@ class ArchaeologyService:
         normalized_book = str(biblical_book or "").strip().casefold()
         normalized_confidence = str(confidence or "").strip().casefold()
         normalized_relationship = str(relationship or "").strip().casefold()
-        sites = {record["id"]: record for record in list_archaeology_sites(path=self.path)}
+        sites = {
+            record["id"]: record
+            for record in list_archaeology_sites(path=self.path, include_details=False)
+        }
         results: list[dict[str, Any]] = []
-        for item in list_archaeology_items(period=period, path=self.path):
+        for item in list_archaeology_items(
+            period=period,
+            path=self.path,
+            include_media=include_media,
+        ):
             site_record = sites.get(item.get("site_id"), {})
             links = item.get("scripture_links", [])
             searchable = " ".join(
@@ -90,7 +98,7 @@ class ArchaeologyService:
                 continue
             if normalized_relationship and not any(normalized_relationship == str(link.get("relationship_type") or "").casefold() for link in links):
                 continue
-            results.append(self._card(item, site_record))
+            results.append(self._card(item, site_record, include_media=include_media))
             if len(results) >= max(1, min(int(limit), 100)):
                 break
         return results
@@ -107,23 +115,46 @@ class ArchaeologyService:
     def related_ckl_objects(self, item_id: str) -> list[dict[str, str]]:
         return list_archaeology_ckl_links(item_id, path=self.path)
 
-    def related_to_ckl(self, ckl_object_id: str) -> list[dict[str, Any]]:
+    def related_to_ckl(
+        self,
+        ckl_object_id: str,
+        *,
+        include_media: bool = True,
+    ) -> list[dict[str, Any]]:
         normalized = str(ckl_object_id or "").strip()
         if not normalized:
             return []
         return [
-            self._card(get_archaeology_item(link["archaeology_item_id"], path=self.path), {}) | {"relationship": link["relationship"], "relationship_notes": link["notes"]}
-            for link in list_archaeology_ckl_links(path=self.path)
-            if link["ckl_object_id"] == normalized
+            self._card(
+                get_archaeology_item(
+                    link["archaeology_item_id"],
+                    path=self.path,
+                    include_media=include_media,
+                ),
+                {},
+                include_media=include_media,
+            ) | {"relationship": link["relationship"], "relationship_notes": link["notes"]}
+            for link in list_archaeology_ckl_links(
+                path=self.path,
+                ckl_object_id=normalized,
+            )
         ]
 
-    def _card(self, item: dict[str, Any], site: dict[str, Any]) -> dict[str, Any]:
-        media = list(item.get("media") or self.media_for_item(item["id"]))
+    def _card(
+        self,
+        item: dict[str, Any],
+        site: dict[str, Any],
+        *,
+        include_media: bool = True,
+    ) -> dict[str, Any]:
+        media = list(item.get("media") or self.media_for_item(item["id"])) if include_media else []
         primary_media = next((record for record in media if record.get("thumbnail_url") or record.get("image_url")), None)
         return {
             "id": item["id"], "title": item.get("name", ""), "item_type": item.get("item_type", ""),
             "period": item.get("period", ""), "site_id": item.get("site_id", ""),
             "site_name": site.get("name", ""), "confidence": item.get("confidence", "unknown"),
+            "summary": item.get("why_it_matters", ""),
+            "caution": item.get("bhf_caution", ""),
             "scripture_links": list(item.get("scripture_links") or self.related_passages(item["id"])),
             "media": media, "primary_media": primary_media,
         }

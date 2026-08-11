@@ -525,6 +525,7 @@ def create_app() -> FastAPI:
         templates=templates,
         job_store=job_store,
         context_presenter=present_reader_context,
+        commentary_db_path=str(COMMENTARY_DB_PATH),
     )
     register_debug_routes(web_app)
     register_ask_routes(

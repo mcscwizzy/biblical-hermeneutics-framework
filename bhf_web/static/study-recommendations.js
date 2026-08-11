@@ -67,31 +67,44 @@
     return "default";
   }
 
+  function availabilityEntry(id, availability) {
+    const source = availability?.resources || availability || {};
+    const explicit = source[id];
+    if (explicit === true) return {state: "available", available: true, count: 1};
+    if (explicit === false) return {state: "unavailable", available: false, count: 0};
+    if (!explicit || typeof explicit !== "object") {
+      return {state: "unknown", available: false, count: 0};
+    }
+    const state = String(explicit.state || (explicit.available === true ? "available" : "unknown")).toLowerCase();
+    return {
+      ...explicit,
+      state,
+      available: state === "available" && explicit.available !== false,
+      count: Math.max(0, Number(explicit.count || 0)),
+    };
+  }
+
   function isAvailable(id, availability) {
-    const explicit = availability?.[id];
-    return explicit !== false;
+    return availabilityEntry(id, availability).available;
   }
 
   function rank(selection, availability = {}) {
     const genre = classifyBook(selection?.book);
     const scores = {...BASE_SCORES.default, ...(BASE_SCORES[genre] || {})};
-    const localSignals = {
-      commentary: availability.commentary ? 8 : 0,
-      word_study: availability.word_study ? 8 : 0,
-      maps: Number(availability.mapCount || 0) * 3,
-      archaeology: Number(availability.archaeologyCount || 0) * 3,
-      people: Number(availability.peopleCount || 0) * 3,
-      places: Number(availability.placeCount || 0) * 3,
-      themes: Number(availability.themeCount || 0),
-      canonical: Number(availability.canonicalCount || 0),
-    };
     const ranked = Object.entries(RESOURCES)
       .filter(([id]) => isAvailable(id, availability))
-      .map(([id, resource]) => ({
-        id,
-        ...resource,
-        score: Number(scores[id] || 4) + Number(localSignals[id] || 0),
-      }))
+      .map(([id, resource]) => {
+        const entry = availabilityEntry(id, availability);
+        const countSignal = Math.min(entry.count, 8) * 1.5;
+        const directSignal = Math.min(Number(entry.direct_match_count || 0), 4) * 2;
+        return {
+          id,
+          ...resource,
+          availability: entry,
+          count: entry.count,
+          score: Number(scores[id] || 4) + countSignal + directSignal,
+        };
+      })
       .sort((left, right) => right.score - left.score || left.label.localeCompare(right.label));
     return {
       genre,
@@ -135,6 +148,8 @@
   window.BHFStudyRecommendations = Object.freeze({
     resources: RESOURCES,
     classifyBook,
+    availabilityEntry,
+    isAvailable,
     rank,
     suggestedQuestions,
   });

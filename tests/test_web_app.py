@@ -12,6 +12,7 @@ from types import SimpleNamespace
 from urllib.parse import quote_plus, urlencode
 from unittest.mock import patch
 
+from bhf_agent.archaeology import media_can_bundle
 from bhf_agent.config import AgentConfig, CanonicalLibraryConfig, ConfigError
 from bhf_agent import translation_settings, translation_storage
 from bhf_agent.bible import load_kjv_bible
@@ -1076,9 +1077,12 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v28"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v30"', service_worker["body"])
         self.assertIn('/static/styles/companion.css', service_worker["body"])
         self.assertIn('/static/reader-selection.js', service_worker["body"])
+        self.assertIn('/static/companion-context.js', service_worker["body"])
+        self.assertIn('/static/companion-sheet.js', service_worker["body"])
+        self.assertIn('/static/resource-router.js', service_worker["body"])
         self.assertIn('/static/study-companion.js', service_worker["body"])
         self.assertIn("cacheFirstApi", service_worker["body"])
         self.assertIn("isRefreshRequest", service_worker["body"])
@@ -1309,7 +1313,8 @@ class WebAppTests(unittest.TestCase):
         data = json.loads(response["body"])
         self.assertEqual(data["pack_id"], "archaeology")
         self.assertGreaterEqual(len(data["items"]), 8)
-        self.assertEqual(data["media"], [])
+        self.assertGreater(len(data["media"]), 0)
+        self.assertTrue(all(media_can_bundle(item) for item in data["media"]))
         self.assertIn("/api/maps/archaeology", [entry["url"] for entry in data["responses"]])
 
     def test_get_curation_page_returns_200(self):
@@ -2382,7 +2387,8 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("Rollout mode", result["body"])
         self.assertIn("Shadow Prompt Preview", result["body"])
         self.assertIn("CKL was retrieved in shadow mode", result["body"])
-        self.assertIn("did not find a strong match", result["body"])
+        self.assertIn("Selected Results", result["body"])
+        self.assertIn("## Entry: Shechem", result["body"])
 
     def test_debug_ckl_search_endpoint_is_hidden_without_debug_mode(self):
         response = asgi_request("POST", "/api/debug/ckl-search", json_data={"query": "Shechem"})
@@ -2422,7 +2428,7 @@ class WebAppTests(unittest.TestCase):
         self.assertTrue(payload["prompt"]["preview"])
         self.assertIn("shechem", payload["retrieval"]["selected_entry_ids"])
 
-    def test_reader_ask_job_keeps_typed_prompt_when_selection_fields_are_present(self):
+    def test_reader_ask_job_inherits_selection_fields_with_typed_prompt(self):
         CapturingAgent.questions = []
         data = _valid_form()
         data.update(
@@ -2443,15 +2449,16 @@ class WebAppTests(unittest.TestCase):
         job = json.loads(response["body"])
         status = wait_for_job(job["job_id"])
         self.assertTrue(status["done"])
-        self.assertIsNone(status["reader_reference"])
+        self.assertEqual(status["reader_reference"], "Romans 12:1-2")
         self.assertEqual(len(CapturingAgent.questions), 1)
         question = CapturingAgent.questions[0]
-        self.assertEqual(question, "What should I observe before interpreting?")
+        self.assertIn("Using BHF, explain ASV Romans 12:1-2.", question)
+        self.assertIn("User question: What should I observe before interpreting?", question)
+        self.assertIn("Selected text (ASV Romans 12:1-2):\npresent your bodies a living sacrifice", question)
 
         result = asgi_request("GET", f"/ask/result/{job['job_id']}")
         self.assertEqual(result["status"], 200)
-        self.assertNotIn("ASV Romans 12:1-2", result["body"])
-        self.assertNotIn("Save Study", result["body"])
+        self.assertIn("ASV Romans 12:1-2", result["body"])
 
     def test_ancient_context_reader_job_builds_phase_one_prompt(self):
         CapturingAgent.questions = []
@@ -2775,7 +2782,7 @@ class WebAppTests(unittest.TestCase):
         self.assertNotIn("Save Study", result["body"])
         self.assertNotIn("ASV Romans 12:1-2", result["body"])
 
-    def test_topic_reader_job_without_general_scope_ignores_passage_context(self):
+    def test_topic_reader_job_without_general_scope_inherits_passage_context(self):
         CapturingAgent.questions = []
         data = _valid_form()
         data.update(
@@ -2796,11 +2803,13 @@ class WebAppTests(unittest.TestCase):
         job = json.loads(response["body"])
         status = wait_for_job(job["job_id"])
         self.assertTrue(status["done"])
-        self.assertIsNone(status["reader_reference"])
+        self.assertEqual(status["reader_reference"], "John 1:1")
         question = CapturingAgent.questions[0]
-        self.assertEqual(question, "Who was Samson?")
+        self.assertIn("Using BHF, explain ASV John 1:1.", question)
+        self.assertIn("User question: Who was Samson?", question)
+        self.assertIn("Selected text (ASV John 1:1):\nIn the beginning was the Word", question)
 
-    def test_passage_reader_job_without_study_action_keeps_typed_prompt(self):
+    def test_passage_reader_job_without_study_action_inherits_selection(self):
         CapturingAgent.questions = []
         data = _valid_form()
         data.update(
@@ -2821,9 +2830,11 @@ class WebAppTests(unittest.TestCase):
         job = json.loads(response["body"])
         status = wait_for_job(job["job_id"])
         self.assertTrue(status["done"])
-        self.assertIsNone(status["reader_reference"])
+        self.assertEqual(status["reader_reference"], "John 1:1")
         question = CapturingAgent.questions[0]
-        self.assertEqual(question, "What does this mean?")
+        self.assertIn("Using BHF, explain ASV John 1:1.", question)
+        self.assertIn("User question: What does this mean?", question)
+        self.assertIn("Selected text (ASV John 1:1):\nIn the beginning was the Word", question)
 
     def test_reader_toolbar_omits_duplicate_chapter_buttons(self):
         response = asgi_request("GET", "/")

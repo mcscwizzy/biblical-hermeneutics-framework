@@ -96,6 +96,9 @@ def build_offline_manifest() -> dict[str, Any]:
                     "/static/htmx-study-panels.js",
                     "/static/htmx-search.js",
                     "/static/study-recommendations.js",
+                    "/static/companion-context.js",
+                    "/static/companion-sheet.js",
+                    "/static/resource-router.js",
                     "/static/study-companion.js",
                     "/static/pwa.js",
                     "/static/icons/icon-192.png",
@@ -122,6 +125,7 @@ def build_offline_manifest() -> dict[str, Any]:
                     "/api/canonical/search",
                     "/api/canonical/objects/",
                     "/api/study/actions",
+                    "/api/study/companion-context",
                 ],
             },
             {

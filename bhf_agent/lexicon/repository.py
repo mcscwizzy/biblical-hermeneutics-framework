@@ -145,6 +145,29 @@ class LexiconRepository:
             .fetchone()[0]
         )
 
+    def count_passage_words(
+        self,
+        book: str,
+        chapter: int,
+        verse_start: int | None = None,
+        verse_end: int | None = None,
+    ) -> int:
+        if not self._legacy:
+            return self._backend.count_passage_words(book, chapter, verse_start, verse_end)
+        parameters: list[Any] = [str(book).strip(), int(chapter)]
+        predicate = "book = ? AND chapter = ?"
+        if verse_start is not None:
+            predicate += " AND verse >= ? AND verse <= ?"
+            parameters.extend([int(verse_start), int(verse_end or verse_start)])
+        return int(
+            self._legacy_connection_or_raise()
+            .execute(
+                f"SELECT COUNT(*) FROM verse_words WHERE {predicate}",
+                tuple(parameters),
+            )
+            .fetchone()[0]
+        )
+
     def lookup_word_at_position(
         self,
         book: str,
