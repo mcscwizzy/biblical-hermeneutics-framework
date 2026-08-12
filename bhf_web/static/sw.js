@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v31";
+const CACHE_VERSION = "v32";
 const SHELL_CACHE = `bhf-shell-${CACHE_VERSION}`;
 const STATIC_CACHE = `bhf-static-${CACHE_VERSION}`;
 const API_CACHE = `bhf-api-${CACHE_VERSION}`;

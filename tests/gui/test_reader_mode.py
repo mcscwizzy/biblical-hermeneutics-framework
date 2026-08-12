@@ -74,8 +74,7 @@ def test_escape_restores_controls_and_other_sections_leave_reader_mode(driver, w
 
     WorkspacePage(driver, wait, base_url).toggle_reader_mode()
     wait.until(lambda _driver: "reader-mode" in _driver.find_element(By.TAG_NAME, "body").get_attribute("class"))
-    WorkspacePage(driver, wait, base_url).open_app_section("ask")
-    wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "ask")
+    driver.execute_script("document.querySelector('[data-testid=\"app-dock-notes\"]').click();")
+    wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "notes")
     wait.until(lambda _driver: "reader-mode" not in _driver.find_element(By.TAG_NAME, "body").get_attribute("class"))
-    wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="question-input"]')))
-
+    wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '#workspace-pane-notes')))

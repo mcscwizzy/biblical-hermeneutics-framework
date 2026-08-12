@@ -4,6 +4,7 @@ import pytest
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support import expected_conditions as EC
 
 from .pages import HomePage, NotesPage
 
@@ -36,7 +37,8 @@ def test_add_note_to_current_chapter(driver, wait, base_url):
 def test_standalone_note_can_be_autosaved_and_found_in_all_notes(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
 
-    driver.find_element(By.CSS_SELECTOR, '[data-testid="new-note-button"]').click()
+    driver.find_element(By.CSS_SELECTOR, '[data-testid="app-dock-notes"]').click()
+    wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-testid="new-note-panel-button"]'))).click()
     textarea = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="note-textarea"]')))
     textarea.send_keys("A standalone sermon note")
     wait.until(lambda _driver: "Saved" in _driver.find_element(By.CSS_SELECTOR, "[data-note-save-status]").text)
@@ -70,7 +72,7 @@ def test_highlight_selected_verse_can_be_removed_from_context_menu(driver, wait,
     wait.until(lambda _driver: "highlight-yellow" not in _driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="3"]').get_attribute("class"))
 
 
-def test_highlighted_verse_can_be_removed_by_tapping_verse(driver, wait, base_url):
+def test_highlighted_verse_tap_selects_without_removing_highlight(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
     verse = driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="4"]')
     ActionChains(driver).context_click(verse).perform()
@@ -80,8 +82,15 @@ def test_highlighted_verse_can_be_removed_by_tapping_verse(driver, wait, base_ur
     count_after_create = _highlights_count(driver)
 
     driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="4"] .verse-text').click()
-    wait.until(lambda _driver: "highlight-yellow" not in _driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="4"]').get_attribute("class"))
-    wait.until(lambda _driver: _highlights_count(_driver) < count_after_create)
+    wait.until(
+        lambda _driver: _driver.execute_script(
+            "return window.BHFStudySelection.getState().reference === 'John 1:4';"
+        )
+    )
+    assert "highlight-yellow" in driver.find_element(
+        By.CSS_SELECTOR, '#chapter-reader [data-verse="4"]'
+    ).get_attribute("class")
+    assert _highlights_count(driver) == count_after_create
 
 
 def test_shift_click_range_can_be_highlighted_from_context_menu(driver, wait, base_url):

@@ -4871,12 +4871,12 @@ function getSavedStudiesForSelection(selection, options = {}) {
   if (!options.refresh && savedStudiesCache.has(key)) {
     return Promise.resolve(savedStudiesCache.get(key));
   }
-  return loadSavedStudies(selection.book, selection.chapter);
+  return requestSavedStudies(selection.book, selection.chapter);
 }
 
 async function saveSelectedPassage() {
   const shared = window.BHFStudySelection?.getState?.();
-  if (!shared?.book || !shared?.chapter) {
+  if (!shared?.book || !shared?.chapter || shared.hasPassageSelection !== true) {
     return false;
   }
   const title = shared.reference || `${shared.book} ${shared.chapter}`;
@@ -4902,7 +4902,7 @@ async function saveSelectedPassage() {
     },
     "Could not save this passage.",
   );
-  await loadSavedStudies(shared.book, shared.chapter);
+  await loadSavedStudies(shared.book, shared.chapter, {propagateError: true});
   return true;
 }
 

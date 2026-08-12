@@ -1082,7 +1082,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v31"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v32"', service_worker["body"])
         self.assertIn('/static/styles/companion.css', service_worker["body"])
         self.assertIn('/static/reader-selection.js', service_worker["body"])
         self.assertIn('/static/companion-context.js', service_worker["body"])

@@ -20,7 +20,12 @@
     const method = String(options.method || "GET").toUpperCase();
     if (isDeviceOnlyPersonalPath(url)) {
       if (method === "GET") {
-        return (await localJsonResponse(url)) || emptyDeviceOnlyResponse(url);
+        const local = await localJsonResponse(url, {
+          propagateError: options.requireDeviceData === true,
+        });
+        if (local) return local;
+        if (options.requireDeviceData === true) throw new Error(fallbackMessage);
+        return emptyDeviceOnlyResponse(url);
       }
       if (isOfflineMutation(url, method)) {
         const result = await applyOfflineMutation(url, method, options, window.BHFOfflineDB);
@@ -162,14 +167,16 @@
     }
   }
 
-  async function localJsonResponse(url) {
+  async function localJsonResponse(url, options = {}) {
     const offlineDb = window.BHFOfflineDB;
     if (!offlineDb || typeof offlineDb.readApiResponse !== "function") {
+      if (options.propagateError) throw new Error("Device study storage is unavailable.");
       return null;
     }
     try {
       return await offlineDb.readApiResponse(url);
-    } catch (_error) {
+    } catch (error) {
+      if (options.propagateError) throw error;
       return null;
     }
   }

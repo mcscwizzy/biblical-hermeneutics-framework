@@ -23,7 +23,8 @@ def test_home_page_loads(driver, wait, base_url):
     page = HomePage(driver, wait, base_url)
     page.open().wait_loaded().assert_shell_visible()
     assert "BHF Bible Reader" in page.driver.title
-    assert "BHF Bible Reader" in page.find('[data-testid="app-title"]').text
+    assert "BHF" in page.find('[data-testid="app-title"]').text
+    assert "Biblical Hermeneutics Framework" in page.find('[data-testid="app-title"]').text
 
 
 def test_health_endpoint_available(base_url):

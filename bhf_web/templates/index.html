@@ -37,21 +37,21 @@
   <script src="{{ static_asset('/offline/db.js') }}?v=20260809a" defer></script>
   <script src="{{ static_asset('/study-vault.js') }}?v=20260809a" defer></script>
   <script src="{{ static_asset('/model-settings.js') }}?v=20260806a" defer></script>
-  <script src="{{ static_asset('/api/http.js') }}?v=20260809a" defer></script>
+  <script src="{{ static_asset('/api/http.js') }}?v=20260811a" defer></script>
   <script src="{{ static_asset('/htmx-status.js') }}" defer></script>
-  <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260811c" defer></script>
+  <script src="{{ static_asset('/htmx-study-panels.js') }}?v=20260811d" defer></script>
   <script src="{{ static_asset('/htmx-search.js') }}?v=20260807b" defer></script>
   <script src="{{ static_asset('/reader-selection.js') }}?v=20260811a" defer></script>
-  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260811a" defer></script>
+  <script src="{{ static_asset('/htmx-lite.js') }}?v=20260811b" defer></script>
   <script src="{{ static_asset('/study-recommendations.js') }}?v=20260811a" defer></script>
   <script src="{{ static_asset('/companion-context.js') }}?v=20260811c" defer></script>
   <script src="{{ static_asset('/companion-context-controller.js') }}?v=20260811c" defer></script>
-  <script src="{{ static_asset('/saved-passage-state.js') }}?v=20260811c" defer></script>
+  <script src="{{ static_asset('/saved-passage-state.js') }}?v=20260811d" defer></script>
   <script src="{{ static_asset('/companion-history.js') }}?v=20260811c" defer></script>
   <script src="{{ static_asset('/companion-viewport.js') }}?v=20260811c" defer></script>
   <script src="{{ static_asset('/companion-sheet.js') }}?v=20260811c" defer></script>
   <script src="{{ static_asset('/resource-router.js') }}?v=20260811c" defer></script>
-  <script src="{{ static_asset('/study-companion.js') }}?v=20260811c" defer></script>
+  <script src="{{ static_asset('/study-companion.js') }}?v=20260811e" defer></script>
   <script src="{{ static_asset('/commentary.js') }}?v=20260809b" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260806a" defer></script>
   {% if not test_mode %}
@@ -282,7 +282,7 @@
           <section class="companion-overview" id="companion-overview" data-companion-overview aria-label="Passage overview">
             <div class="companion-overview-actions">
               <button type="button" class="secondary" data-companion-action="note">＋ Add Note</button>
-              <button type="button" class="secondary" data-companion-action="save">☆ Save Passage</button>
+              <button type="button" class="secondary" data-companion-action="save" data-save-state="not-saved" disabled aria-disabled="true" aria-busy="false" aria-label="Save Passage unavailable; select a verse or passage">☆ Save Passage</button>
             </div>
 
             <section class="companion-section" aria-labelledby="companion-recommended-title">

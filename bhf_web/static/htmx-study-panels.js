@@ -560,18 +560,23 @@ function deleteExistingHighlight(highlightId) {
     .then(() => loadHighlights(currentChapter.book, currentChapter.chapter));
 }
 
-function loadSavedStudies(book, chapter) {
-  const list = document.querySelector("#saved-studies-list");
-  const count = document.querySelector("#saved-studies-count");
+function requestSavedStudies(book, chapter) {
   if (!book || !chapter) {
     return Promise.resolve([]);
   }
   const key = savedStudyChapterKey({book, chapter});
   let request = savedStudiesRequests.get(key);
   if (!request) {
-    request = requestJson(`/api/saved-studies?book=${encodeURIComponent(book)}&chapter=${encodeURIComponent(chapter)}`, {}, "Could not load saved studies.")
+    request = requestJson(
+      `/api/saved-studies?book=${encodeURIComponent(book)}&chapter=${encodeURIComponent(chapter)}`,
+      {requireDeviceData: true},
+      "Could not load saved studies.",
+    )
       .then((data) => {
-        const studies = data.saved_studies || [];
+        if (!Array.isArray(data?.saved_studies)) {
+          throw new Error("Could not load saved studies.");
+        }
+        const studies = data.saved_studies;
         savedStudiesCache.set(key, studies);
         document.dispatchEvent(new CustomEvent("bhf:saved-studies-changed", {
           detail: {book, chapter: Number(chapter), studies},
@@ -581,7 +586,17 @@ function loadSavedStudies(book, chapter) {
       .finally(() => savedStudiesRequests.delete(key));
     savedStudiesRequests.set(key, request);
   }
-  return request
+  return request;
+}
+
+function loadSavedStudies(book, chapter, options = {}) {
+  const list = document.querySelector("#saved-studies-list");
+  const count = document.querySelector("#saved-studies-count");
+  if (!book || !chapter) {
+    return Promise.resolve([]);
+  }
+  const key = savedStudyChapterKey({book, chapter});
+  return requestSavedStudies(book, chapter)
     .then((studies) => {
       const isCurrentChapter = savedStudyChapterKey(currentChapter) === key;
       if (list && isCurrentChapter) renderSavedStudies(studies);
@@ -592,6 +607,7 @@ function loadSavedStudies(book, chapter) {
     })
     .catch((error) => {
       if (list) list.innerHTML = errorHtml(error.message || "Could not load saved studies.");
+      if (options.propagateError) throw error;
       return [];
     });
 }

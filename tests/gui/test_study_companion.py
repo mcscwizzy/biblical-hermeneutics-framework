@@ -193,7 +193,19 @@ def test_explore_browses_resources_without_a_verse_selection(driver, wait, base_
     assert driver.execute_script("return window.BHFStudySelection.getState().level;") == "chapter"
 
     driver.find_element(By.CSS_SELECTOR, '[data-testid="app-dock-explore"]').click()
-    wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-companion-resource="people"]'))).click()
+    people = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-companion-resource="people"]')))
+    driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", people)
+    wait.until(
+        lambda _driver: _driver.execute_script(
+            """
+            const resource = arguments[0].getBoundingClientRect();
+            const dock = document.querySelector('[data-app-dock]').getBoundingClientRect();
+            return resource.bottom <= dock.top;
+            """,
+            people,
+        )
+    )
+    people.click()
     wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-companion-resource-host] .companion-detail-body")))
 
     shell_class = driver.find_element(By.CSS_SELECTOR, ".study-companion").get_attribute("class")
@@ -384,6 +396,160 @@ def test_save_passage_state_follows_exact_current_selection(driver, wait, base_u
     select(33, "Selection A")
     wait.until(lambda _driver: button.get_attribute("data-saved") == "true")
     assert "Passage Saved" in button.text
+
+
+def test_save_passage_requires_a_verse_or_range_selection(driver, wait, base_url):
+    driver.set_window_size(390, 844)
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    button = driver.find_element(By.CSS_SELECTOR, '[data-companion-action="save"]')
+
+    assert driver.execute_script(
+        "return window.BHFStudySelection.getState().hasPassageSelection;"
+    ) is False
+    assert not button.is_enabled()
+    assert button.get_attribute("aria-disabled") == "true"
+    assert button.get_attribute("aria-label") == "Save Passage unavailable; select a verse or passage"
+
+    driver.execute_script(
+        """
+        window.BHFStudySelection.setSelection({
+          book: 'John', chapter: 1,
+          startVerse: 45, endVerse: 45, selectedVerses: [45],
+          selectedText: 'Single verse', translation: 'asv'
+        }, 'save-selection-test');
+        """
+    )
+    wait.until(lambda _driver: button.get_attribute("data-save-state") == "not-saved")
+    assert button.is_enabled()
+    assert button.get_attribute("aria-disabled") == "false"
+
+    driver.execute_script(
+        """
+        window.BHFStudySelection.setSelection({
+          book: 'John', chapter: 1,
+          startVerse: 45, endVerse: 46, selectedVerses: [45, 46],
+          selectedText: 'Verse range', translation: 'asv'
+        }, 'save-selection-test');
+        """
+    )
+    wait.until(lambda _driver: button.get_attribute("data-save-state") == "not-saved")
+    assert button.is_enabled()
+    assert button.get_attribute("aria-label") == "Save John 1:45-46"
+
+    driver.execute_script(
+        "window.BHFStudySelection.setChapter({book: 'John', chapter: 1, translation: 'asv'}, 'save-selection-test');"
+    )
+    wait.until(lambda _driver: not button.is_enabled())
+    assert driver.execute_script(
+        "return window.BHFStudySelection.getState().hasPassageSelection;"
+    ) is False
+    assert button.get_attribute("data-save-state") == "not-saved"
+    assert button.get_attribute("aria-disabled") == "true"
+    assert button.get_attribute("aria-label") == "Save Passage unavailable; select a verse or passage"
+
+
+def test_saved_passage_empty_and_unavailable_states_are_distinct(driver, wait, base_url):
+    driver.set_window_size(390, 844)
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    button = driver.find_element(By.CSS_SELECTOR, '[data-companion-action="save"]')
+
+    driver.execute_script(
+        """
+        window.BHFStudySelection.setSelection({
+          book: 'John', chapter: 2,
+          startVerse: 1, endVerse: 1, selectedVerses: [1],
+          selectedText: 'Successful empty lookup', translation: 'asv'
+        }, 'saved-lookup-test');
+        """
+    )
+    wait.until(lambda _driver: button.get_attribute("data-save-state") == "not-saved")
+    assert button.is_enabled()
+    assert button.get_attribute("data-saved") == "false"
+    assert button.get_attribute("aria-label") == "Save John 2:1"
+
+    driver.execute_script(
+        """
+        window.__originalSavedLookupRead = window.BHFOfflineDB.readApiResponse;
+        window.BHFOfflineDB.readApiResponse = function(url) {
+          if (String(url).includes('/api/saved-studies?') && String(url).includes('chapter=3')) {
+            return Promise.reject(new Error('lookup unavailable'));
+          }
+          return window.__originalSavedLookupRead.call(this, url);
+        };
+        window.BHFStudySelection.setSelection({
+          book: 'John', chapter: 3,
+          startVerse: 1, endVerse: 1, selectedVerses: [1],
+          selectedText: 'Failed lookup', translation: 'asv'
+        }, 'saved-lookup-test');
+        """
+    )
+    try:
+        wait.until(lambda _driver: button.get_attribute("data-save-state") == "unavailable")
+        assert not button.is_enabled()
+        assert button.get_attribute("data-saved") == "unknown"
+        assert button.get_attribute("aria-busy") == "false"
+        assert button.get_attribute("aria-disabled") == "true"
+        assert "saved status could not be confirmed" in button.get_attribute("aria-label")
+    finally:
+        driver.execute_script(
+            "window.BHFOfflineDB.readApiResponse = window.__originalSavedLookupRead;"
+        )
+
+
+def test_successful_save_reloads_saved_studies_once(driver, wait, base_url):
+    driver.set_window_size(390, 844)
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    button = driver.find_element(By.CSS_SELECTOR, '[data-companion-action="save"]')
+
+    driver.execute_script(
+        """
+        window.BHFStudySelection.setSelection({
+          book: 'John', chapter: 1,
+          startVerse: 49, endVerse: 49, selectedVerses: [49],
+          selectedText: 'Single reload regression', translation: 'asv'
+        }, 'save-reload-test');
+        window.BHFStudyCompanion.showOverview({
+          state: 'study', focus: false, reload: false, history: false
+        });
+        """
+    )
+    wait.until(
+        lambda _driver: button.is_displayed()
+        and button.is_enabled()
+        and button.get_attribute("data-save-state") == "not-saved"
+    )
+
+    driver.execute_script(
+        """
+        window.__originalSavedStudyRead = window.BHFOfflineDB.readApiResponse;
+        window.__originalSavedStudyUpsert = window.BHFOfflineDB.upsertOfflineSavedStudy;
+        window.__savedStudyReadCount = 0;
+        window.__savedStudyUpsertCount = 0;
+        window.BHFOfflineDB.readApiResponse = function(url) {
+          if (String(url).startsWith('/api/saved-studies?')) window.__savedStudyReadCount += 1;
+          return window.__originalSavedStudyRead.call(this, url);
+        };
+        window.BHFOfflineDB.upsertOfflineSavedStudy = function(payload) {
+          window.__savedStudyUpsertCount += 1;
+          return window.__originalSavedStudyUpsert.call(this, payload);
+        };
+        """
+    )
+    try:
+        button.click()
+        wait.until(lambda _driver: button.get_attribute("data-save-state") == "saved")
+        assert "Passage Saved" in button.text
+        counts = driver.execute_script(
+            "return {reads: window.__savedStudyReadCount, upserts: window.__savedStudyUpsertCount};"
+        )
+        assert counts == {"reads": 1, "upserts": 1}
+    finally:
+        driver.execute_script(
+            """
+            window.BHFOfflineDB.readApiResponse = window.__originalSavedStudyRead;
+            window.BHFOfflineDB.upsertOfflineSavedStudy = window.__originalSavedStudyUpsert;
+            """
+        )
 
 
 def test_browser_back_unwinds_resource_then_companion_overview(driver, wait, base_url):

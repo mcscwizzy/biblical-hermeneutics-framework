@@ -75,10 +75,12 @@
 
     contextController = window.BHFCompanionContextController?.create?.({
       onLoading: () => {
+        if (currentMode !== "passage") return;
         renderLoadingState();
         renderEntities([]);
       },
       onReady: (context) => {
+        if (currentMode !== "passage") return;
         renderRecommendations(context);
         renderEntities([
           ...(context.entities?.people || []),
@@ -90,6 +92,7 @@
         }
       },
       onError: (message) => {
+        if (currentMode !== "passage") return;
         renderAvailabilityError(message);
         if (currentResource && currentMode === "passage") {
           void resourceRouter?.open?.(currentResource, {mode: currentMode});
@@ -98,7 +101,13 @@
     });
 
     saveStateController = window.BHFSavedPassageState?.create?.({
-      loadStudies: (currentSelection, options) => window.BHFStudyActions?.getSavedStudies?.(currentSelection, options) || [],
+      loadStudies: (currentSelection, options) => {
+        const loadStudies = window.BHFStudyActions?.getSavedStudies;
+        if (typeof loadStudies !== "function") {
+          return Promise.reject(new Error("Saved studies are unavailable."));
+        }
+        return loadStudies(currentSelection, options);
+      },
       onChange: renderSaveState,
     });
     historyController = window.BHFCompanionHistory?.create?.({apply: applyHistoryState});
@@ -476,13 +485,19 @@
       showPersonalResource("note", "Note");
     } else if (action === "save") {
       const button = panel.querySelector('[data-companion-action="save"]');
-      if (button?.dataset.saved === "true") return;
-      renderSaveState({saving: true, selection});
+      if (
+        button?.dataset.saved === "true"
+        || button?.disabled
+        || selection?.hasPassageSelection !== true
+      ) return;
+      const requestedPassageKey = window.BHFSavedPassageState?.passageKey?.(selection);
+      renderSaveState({status: "saving", saving: true, selection});
       try {
         await window.BHFStudyActions?.savePassage?.();
-        await saveStateController?.refresh?.({refresh: true});
       } catch (_error) {
-        renderSaveState({saved: false, loading: false, unavailable: true, selection});
+        if (window.BHFSavedPassageState?.passageKey?.(selection) === requestedPassageKey) {
+          renderSaveState({status: "unavailable", unavailable: true, selection});
+        }
       }
     }
   }
@@ -619,24 +634,39 @@
     const button = panel?.querySelector('[data-companion-action="save"]');
     if (!button) return;
     const reference = state.selection?.reference || selection?.reference || "this passage";
-    const saved = state.saved === true;
-    button.dataset.saved = String(saved);
-    button.disabled = Boolean(state.loading || state.saving || saved);
-    button.setAttribute("aria-busy", String(Boolean(state.loading || state.saving)));
-    button.setAttribute("aria-label", saved
-      ? `${reference} is saved`
-      : state.unavailable
-        ? `Save ${reference}; the previous save attempt failed`
-        : `Save ${reference}`);
+    const hasPassageSelection = state.selection?.hasPassageSelection === true;
+    const status = state.status || (state.saved
+      ? "saved"
+      : state.loading
+        ? "loading"
+        : state.unavailable
+          ? "unavailable"
+          : "not-saved");
+    const saved = status === "saved";
+    const loading = status === "loading";
+    const saving = status === "saving" || state.saving === true;
+    const unavailable = status === "unavailable";
+    button.dataset.saved = saved ? "true" : status === "not-saved" ? "false" : "unknown";
+    button.dataset.saveState = status;
+    button.disabled = !hasPassageSelection || loading || saving || saved || unavailable;
+    button.setAttribute("aria-disabled", String(button.disabled));
+    button.setAttribute("aria-busy", String(loading || saving));
+    button.setAttribute("aria-label", !hasPassageSelection
+      ? "Save Passage unavailable; select a verse or passage"
+      : saved
+        ? `${reference} is saved`
+        : loading
+          ? `Checking whether ${reference} is saved`
+          : saving
+            ? `Saving ${reference}`
+            : unavailable
+              ? `Save Passage unavailable for ${reference}; saved status could not be confirmed`
+              : `Save ${reference}`);
     button.textContent = saved
       ? "✓ Passage Saved"
-      : state.saving
+      : saving
         ? "Saving…"
-        : state.loading
-          ? "☆ Save Passage"
-          : state.unavailable
-            ? "☆ Save Passage"
-            : "☆ Save Passage";
+        : "☆ Save Passage";
   }
 
   function updateReaderAccessibility(state) {

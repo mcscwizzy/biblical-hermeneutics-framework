@@ -12,12 +12,20 @@ from .pages import BibleReaderPage, HomePage, WorkspacePage
 pytestmark = [pytest.mark.gui]
 
 
+def _show_canonical_workspace(driver):
+    driver.execute_script(
+        """
+        window.BHFStudyCompanion.showPersonalResource('canonical-browser', 'Canonical Knowledge');
+        window.BHFStudyActions.openWorkspaceTab('context');
+        """
+    )
+
+
 def _open_canonical_browser(driver, wait, base_url, query: str = "Shechem") -> WorkspacePage:
+    driver.set_window_size(1440, 1000)
     HomePage(driver, wait, base_url).open().wait_loaded()
     page = WorkspacePage(driver, wait, base_url)
-    page.open_app_section("ask")
-    wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "ask")
-    page.open_tab("context")
+    _show_canonical_workspace(driver)
     page.assert_tab_visible("context")
 
     search_input = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="canonical-search-input"]')))
@@ -25,16 +33,20 @@ def _open_canonical_browser(driver, wait, base_url, query: str = "Shechem") -> W
     search_input.send_keys(query)
     page.click('[data-testid="canonical-search-button"]')
     wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, '[data-canonical-browser-count]').text.strip() != "0")
-    wait.until(lambda _driver: query.lower() in _driver.find_element(By.CSS_SELECTOR, '[data-canonical-browser-results]').text.lower())
+    wait.until(
+        lambda _driver: query.lower()
+        in _driver.find_element(
+            By.CSS_SELECTOR, '[data-canonical-browser-results]'
+        ).get_attribute("textContent").lower()
+    )
     return page
 
 
 def test_canonical_browser_starts_empty_until_searched(driver, wait, base_url):
+    driver.set_window_size(1440, 1000)
     HomePage(driver, wait, base_url).open().wait_loaded()
     page = WorkspacePage(driver, wait, base_url)
-    page.open_app_section("ask")
-    wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "ask")
-    page.open_tab("context")
+    _show_canonical_workspace(driver)
     page.assert_tab_visible("context")
 
     assert driver.find_element(By.CSS_SELECTOR, '[data-canonical-browser-count]').text.strip() == "0"
@@ -83,10 +95,11 @@ def test_canonical_browser_linking_object_to_note_adds_canonical_ids(driver, wai
     wait.until(lambda _driver: len(_driver.find_elements(By.CSS_SELECTOR, "#notes-list [data-canonical-object-id='shechem']")) > 0)
 
 
-def test_canonical_browser_opens_editor_for_placeholder_object(driver, wait, base_url):
-    page = _open_canonical_browser(driver, wait, base_url, query="Arad Ostraca")
+def test_canonical_browser_opens_editor_for_draft_object(driver, wait, base_url):
+    page = _open_canonical_browser(driver, wait, base_url, query="Joel")
 
-    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, '[data-canonical-detail-title]').text == "Arad Ostraca")
+    page.click('[data-testid="canonical-result-view-button"]')
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, '[data-canonical-detail-title]').text == "Joel")
     editor_link = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="canonical-open-editor"]')))
     assert editor_link.is_displayed()
     editor_link.click()
@@ -97,7 +110,7 @@ def test_canonical_browser_opens_editor_for_placeholder_object(driver, wait, bas
 
     textarea = editor_form.find_element(By.CSS_SELECTOR, '[data-testid="canonical-editor-json"]')
     payload = json.loads(textarea.get_attribute("value"))
-    payload["summary"] = "Arad Ostraca is a draft archaeological record for the southern Judah frontier."
+    payload["summary"] = "Joel is a draft prophetic-book record for the day of the Lord."
     driver.execute_script(
         """
         const textarea = arguments[0];
@@ -110,5 +123,5 @@ def test_canonical_browser_opens_editor_for_placeholder_object(driver, wait, bas
     )
     page.click('[data-testid="canonical-editor-save"]')
 
-    wait.until(lambda _driver: "Saved Arad Ostraca." in _driver.find_element(By.TAG_NAME, "body").text)
+    wait.until(lambda _driver: "Saved Joel." in _driver.find_element(By.TAG_NAME, "body").text)
     wait.until(lambda _driver: payload["summary"] in _driver.find_element(By.TAG_NAME, "body").text)
