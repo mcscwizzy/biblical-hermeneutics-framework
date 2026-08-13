@@ -965,6 +965,12 @@ html[data-theme="dark"] .map-entity-marker--place {
 .map-layer-toggle.is-selected {
   border-color: var(--accent);
   background: var(--accent-soft);
+  color: var(--accent-text);
+}
+
+.map-layer-toggle.is-selected small,
+.map-layer-toggle.is-selected span span {
+  color: var(--accent-text);
 }
 
 .text-button {

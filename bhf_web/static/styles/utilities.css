@@ -1738,6 +1738,13 @@ button.reader-setting-action:focus {
   color: var(--accent-text);
 }
 
+button.reader-setting-action:hover .reader-setting-status,
+button.reader-setting-action:hover .reader-setting-hint,
+button.reader-setting-action:focus .reader-setting-status,
+button.reader-setting-action:focus .reader-setting-hint {
+  color: var(--accent-text);
+}
+
 button.reader-setting-action:disabled {
   border-color: var(--border);
   background: var(--surface-muted);
