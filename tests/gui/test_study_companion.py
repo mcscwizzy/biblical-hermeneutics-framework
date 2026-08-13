@@ -66,6 +66,8 @@ def test_mobile_selection_opens_accessible_companion_states(driver, wait, base_u
 
     driver.find_element(By.CSS_SELECTOR, '[data-passage-action="more"]').click()
     wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#reader-context-menu")))
+    driver.find_element(By.CSS_SELECTOR, '[data-context-submenu="study"]').click()
+    wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[aria-label="Study menu"]')))
     assert driver.find_element(By.CSS_SELECTOR, '[data-context-action="copy"]').is_displayed()
     driver.execute_script("document.querySelector('#reader-context-menu').hidden = true;")
 

@@ -4520,9 +4520,9 @@ function showContextMenu(x, y, context) {
   setContextVisibility("remove_highlight", hasHighlight);
   resetContextSubmenus(menu);
   if (hasHighlight) {
-    const actionsTrigger = menu.querySelector('[data-context-submenu="actions"]');
-    if (actionsTrigger) {
-      openContextSubmenu(actionsTrigger);
+    const studyTrigger = menu.querySelector('[data-context-submenu="study"]');
+    if (studyTrigger) {
+      openContextSubmenu(studyTrigger);
     }
   }
   contextMenuPosition = {x, y};
@@ -4628,6 +4628,8 @@ async function handleContextMenuAction(event) {
   if (!button || !contextMenuState) {
     return;
   }
+  event.preventDefault();
+  event.stopPropagation();
   const actionType = resolveContextAction(button.dataset.contextAction);
   const context = contextMenuState;
   hideContextMenu();

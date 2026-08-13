@@ -858,30 +858,20 @@
     </dialog>
 
     <nav id="reader-context-menu" class="context-menu" aria-label="Verse actions" hidden>
-      <button type="button" role="menuitem" data-context-action="copy">Copy</button>
       <div class="context-menu-section" role="group">
         <button type="button" class="context-menu-trigger" data-context-submenu="study" aria-haspopup="menu" aria-expanded="false">Study</button>
-        <div class="context-menu-submenu" role="menu" aria-label="Study actions">
+        <div class="context-menu-submenu" role="menu" aria-label="Study menu">
+          <button type="button" role="menuitem" data-context-action="copy">Copy</button>
           <button type="button" role="menuitem" data-context-action="ask_bhf">Ask BHF</button>
           <button type="button" role="menuitem" data-context-action="literary_context">Literary Context</button>
           <button type="button" role="menuitem" data-context-action="word_study">Word Study</button>
           <button type="button" role="menuitem" data-context-action="archaeology">Archaeology</button>
-        </div>
-      </div>
-      <div class="context-menu-section" role="group">
-        <button type="button" class="context-menu-trigger" data-context-submenu="context" aria-haspopup="menu" aria-expanded="false">Context</button>
-        <div class="context-menu-submenu" role="menu" aria-label="Context actions">
           <button type="button" role="menuitem" data-context-action="full_context">Full Context</button>
           <button type="button" role="menuitem" data-context-action="historical_context">Historical Context</button>
           <button type="button" role="menuitem" data-context-action="cultural_context">Cultural Context</button>
           <button type="button" role="menuitem" data-context-action="ancient_context" hidden>Ancient Context</button>
           <button type="button" role="menuitem" data-context-action="original_audience">Original Audience</button>
           <button type="button" role="menuitem" data-context-action="covenant_context">Covenant Context</button>
-        </div>
-      </div>
-      <div class="context-menu-section" role="group">
-        <button type="button" class="context-menu-trigger" data-context-submenu="reference" aria-haspopup="menu" aria-expanded="false">Reference</button>
-        <div class="context-menu-submenu" role="menu" aria-label="Reference actions">
           <button type="button" role="menuitem" data-context-action="cross_references">Cross References</button>
           <button type="button" role="menuitem" data-context-action="related_ot_themes">Related OT Themes</button>
           <button type="button" role="menuitem" data-context-action="people">People</button>
@@ -890,11 +880,6 @@
           <button type="button" role="menuitem" data-context-action="fulfillment_nt">Fulfillment in the NT</button>
           <button type="button" role="menuitem" data-context-action="compare_translations">Compare Translations</button>
           <button type="button" role="menuitem" data-context-action="timeline">Timeline</button>
-        </div>
-      </div>
-      <div class="context-menu-section" role="group">
-        <button type="button" class="context-menu-trigger" data-context-submenu="actions" aria-haspopup="menu" aria-expanded="false">Study Actions</button>
-        <div class="context-menu-submenu" role="menu" aria-label="Study management actions">
           <button type="button" role="menuitem" data-context-action="highlight">Highlight Verse</button>
           <button type="button" role="menuitem" data-context-action="remove_highlight" hidden>Remove Highlight</button>
           <button type="button" role="menuitem" data-context-action="note">Add Note</button>

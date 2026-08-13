@@ -46,9 +46,9 @@ def _click_context_action(driver, wait, action: str):
 
 def _assert_mobile_context_menu_leaves_room_for_submenu(driver, wait):
     menu = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#reader-context-menu")))
-    trigger = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-context-submenu="reference"]')))
+    trigger = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-context-submenu="study"]')))
     trigger.click()
-    submenu = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[aria-label="Reference actions"]')))
+    submenu = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[aria-label="Study menu"]')))
     rects = driver.execute_script(
         """
         const menu = arguments[0].getBoundingClientRect();
