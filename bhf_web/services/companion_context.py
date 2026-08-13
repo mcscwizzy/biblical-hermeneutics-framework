@@ -18,6 +18,7 @@ from bhf_agent.study_db import (
 from bhf_agent.translation_installer import list_installed_translations
 from framework.commentary.service import CommentaryService
 from framework.canonical_library import CKLRepositoryConfig
+from framework.canonical_library.narration import CanonicalNarrator
 from framework.lexical.service import DEFAULT_LEXICAL_DATABASE_PATH
 
 
@@ -59,12 +60,14 @@ class CompanionContextService:
         translation_provider: Callable[[], list[dict[str, Any]]] = list_installed_translations,
         word_study_service: WordStudyService | None = None,
         commentary_service: CommentaryService | None = None,
+        canonical_narrator: CanonicalNarrator | None = None,
     ) -> None:
         self.study_db_path = Path(study_db_path)
         self.canonical_library_provider = canonical_library_provider
         self.translation_provider = translation_provider
         self.word_study = word_study_service or _default_word_study_service()
         self.commentary = commentary_service or CommentaryService(commentary_db_path)
+        self.canonical_narrator = canonical_narrator or CanonicalNarrator()
         self._canonical_library: Any | None = None
         self._translation_cache: list[dict[str, Any]] | None = None
         self._translation_cache_time = 0.0
@@ -206,6 +209,7 @@ class CompanionContextService:
             "resources": resources,
             "entities": entities,
             "summaries": summaries,
+            "narration": summaries.get("narration", {"reference": reference, "by_context": {}}),
             "subsystems": subsystems,
         }
 
@@ -339,6 +343,22 @@ class CompanionContextService:
             "original_audience": _resource_from_count(_field_count(objects, ("original_audience",))),
             "covenant_context": _resource_from_count(_field_count(objects, ("covenantal_significance",))),
         }
+        narrations = {}
+        for narration_type in (
+            "historical_context",
+            "cultural_context",
+            "literary_context",
+            "archaeology",
+            "canonical_context",
+            "covenant_context",
+        ):
+            narrated = self.canonical_narrator.narrate(
+                results,
+                reference=reference,
+                context_type=narration_type,
+            )
+            if narrated.has_content:
+                narrations[narration_type] = narrated.to_dict()
         return {
             "entities": entities,
             "resources": resources,
@@ -361,6 +381,10 @@ class CompanionContextService:
                     }
                     for item in objects[:12]
                 ],
+                "narration": {
+                    "reference": reference,
+                    "by_context": narrations,
+                },
             },
         }
 

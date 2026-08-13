@@ -4,7 +4,8 @@
 
   const NATIVE_RESOURCES = new Set([
     "commentary", "canonical", "maps", "archaeology", "people", "places",
-    "themes", "timeline", "cross_references",
+    "themes", "timeline", "cross_references", "historical_context",
+    "cultural_context", "literary_context", "covenant_context",
   ]);
   const CANONICAL_TYPES = {
     people: "person",
@@ -96,10 +97,15 @@
         return;
       }
       const context = contextRecord.context;
-      if (resourceId === "maps") {
+      if (["historical_context", "cultural_context", "literary_context", "covenant_context", "archaeology"].includes(resourceId)) {
+        const narration = context.summaries?.narration?.by_context?.[resourceId];
+        if (resourceId === "archaeology" && !narration) {
+          renderArchaeology(context.summaries?.archaeology || [], true);
+        } else {
+          renderNarration(narration, resourceId, context.summaries?.archaeology || []);
+        }
+      } else if (resourceId === "maps") {
         renderMaps(context.summaries?.maps || {places: [], routes: []});
-      } else if (resourceId === "archaeology") {
-        renderArchaeology(context.summaries?.archaeology || [], true);
       } else if (["people", "places", "themes"].includes(resourceId)) {
         renderCanonicalCards(context.entities?.[resourceId] || [], resourceId, true);
       } else if (resourceId === "canonical") {
@@ -192,6 +198,99 @@
       link.textContent = "Open Archaeology Library →";
       body.append(link);
       commit(body);
+    }
+
+    function renderNarration(narration, resourceId, supplemental = []) {
+      const labels = {
+        historical_context: "Historical Context",
+        cultural_context: "Cultural Context",
+        literary_context: "Literary Context",
+        covenant_context: "Covenant Context",
+        archaeology: "Archaeological Context",
+      };
+      const body = resourceBody(
+        labels[resourceId] || narration?.title || "Context",
+        narration?.source_count
+          ? `Evidence · ${narration.source_count} source${narration.source_count === 1 ? "" : "s"}`
+          : "Deterministic context from the selected CKL evidence",
+      );
+      if (!narration || !narration.has_content) {
+        body.append(summaryCard("No narrated evidence", "The selected CKL records do not support a compact narration for this context."));
+        commit(body);
+        return;
+      }
+      if (narration.lead?.text) {
+        const lead = summaryCard("In brief", narration.lead.text);
+        lead.classList.add("companion-narration-lead");
+        appendEvidenceDisclosure(lead, narration.lead);
+        body.append(lead);
+      }
+      (narration.sections || []).forEach((section) => {
+        const container = document.createElement("section");
+        const heading = document.createElement("h4");
+        heading.textContent = section.heading || "Context";
+        container.append(heading);
+        (section.sentences || []).forEach((sentence) => {
+          const paragraph = document.createElement("p");
+          paragraph.textContent = sentence.text || "";
+          container.append(paragraph);
+          appendEvidenceDisclosure(container, sentence);
+        });
+        body.append(container);
+      });
+      if (resourceId === "archaeology" && supplemental.length) {
+        const related = document.createElement("section");
+        const heading = document.createElement("h4");
+        heading.textContent = "Related archaeology records";
+        related.append(heading);
+        supplemental.slice(0, 2).forEach((item) => {
+          related.append(summaryCard(item.title || item.name || item.id, item.summary || item.why_it_matters || ""));
+        });
+        body.append(related);
+      }
+      if (Number(narration.additional_evidence_count || 0) > 0) {
+        const additional = document.createElement("p");
+        additional.className = "companion-summary-meta";
+        additional.textContent = `${narration.additional_evidence_count} additional related record${narration.additional_evidence_count === 1 ? "" : "s"} available.`;
+        body.append(additional);
+      }
+      commit(body);
+    }
+
+    function appendEvidenceDisclosure(host, sentence) {
+      const claimIds = Array.isArray(sentence?.claim_ids) ? sentence.claim_ids : [];
+      const sourceIds = Array.isArray(sentence?.source_ids) ? sentence.source_ids : [];
+      const sourceDetails = Array.isArray(sentence?.source_details) ? sentence.source_details : [];
+      const references = Array.isArray(sentence?.scripture_references) ? sentence.scripture_references : [];
+      const metadata = [
+        sentence?.certainty ? `Certainty: ${humanizeMetadata(sentence.certainty)}` : "",
+        sentence?.dispute_status ? `Dispute: ${humanizeMetadata(sentence.dispute_status)}` : "",
+        sentence?.content_status ? `Status: ${humanizeMetadata(sentence.content_status)}` : "",
+        sentence?.review_status ? `Review: ${humanizeMetadata(sentence.review_status)}` : "",
+        sentence?.human_review_required ? "Human review required" : "",
+        sentence?.parent_object_id ? `CKL record: ${sentence.parent_object_id}` : "",
+      ].filter(Boolean);
+      if (!claimIds.length && !sourceIds.length && !references.length && !metadata.length) return;
+      const details = document.createElement("details");
+      details.className = "companion-evidence-disclosure";
+      const summary = document.createElement("summary");
+      summary.textContent = `Evidence · ${sourceIds.length || 0} source${sourceIds.length === 1 ? "" : "s"}`;
+      details.append(summary);
+      const list = document.createElement("ul");
+      const sourceLines = sourceDetails.length
+        ? sourceDetails.map((source) => `Source: ${source.title || source.id || "record"}${source.locator ? ` · ${source.locator}` : ""}`)
+        : sourceIds.map((value) => `Source: ${value}`);
+      [...metadata, ...claimIds.map((value) => `Claim: ${value}`), ...sourceLines, ...references.map((value) => `Scripture: ${value}`)].forEach((value) => {
+        const item = document.createElement("li");
+        item.textContent = value;
+        list.append(item);
+      });
+      details.append(list);
+      host.append(details);
+    }
+
+    function humanizeMetadata(value) {
+      return String(value || "").replaceAll("_", " ").replaceAll("-", " ");
     }
 
     function renderCanonicalCards(items, label, contextual) {

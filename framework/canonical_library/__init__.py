@@ -3,6 +3,16 @@
 from __future__ import annotations
 
 from .context_builder import CanonicalContextBuilder, build_canonical_prompt_context
+from .narration import (
+    CanonicalNarrator,
+    ContextNarrator,
+    NarratedSection,
+    NarratedSentence,
+    NarrationLimits,
+    NarrationResult,
+    NarrativeRole,
+    narrate_context,
+)
 from .database_builder import BuildDatabaseResult, build_database, database_info, verify_database
 from .database_schema import CKL_DATABASE_SCHEMA_VERSION, CKL_RETRIEVAL_INDEX_VERSION, DEFAULT_CKL_DATABASE_PATH
 from .evidence import RetrievedClaimEvidence, hydrate_claim_sources, rank_claims
@@ -201,6 +211,14 @@ __all__ = [
     "with_bidirectional_relationships",
     "CanonicalContextBuilder",
     "build_canonical_prompt_context",
+    "CanonicalNarrator",
+    "ContextNarrator",
+    "NarratedSection",
+    "NarratedSentence",
+    "NarrationLimits",
+    "NarrationResult",
+    "NarrativeRole",
+    "narrate_context",
     "CanonicalObject",
     "CanonicalValidationError",
     "CKLIndex",
