@@ -407,6 +407,16 @@
     } else if (resourceId === "canonical") {
       actions?.openWorkspaceTab?.("context");
     } else if (resourceId === "maps") {
+      // The map workspace lives outside the companion. Close the full-screen
+      // resource view before handing off, otherwise mobile keeps the map
+      // underneath the companion sheet and the action appears to do nothing.
+      showOverview({
+        history: false,
+        focus: false,
+        reload: false,
+        state: compactViewport() ? "closed" : "study",
+        source: "navigation",
+      });
       await actions?.perform?.("open_map_panel");
     } else if (resourceId === "ask") {
       actions?.openWorkspaceTab?.("ask");
@@ -511,7 +521,15 @@
     else if (action === "ask") openAsk("");
     else if (action === "note") performPersonalAction("note");
     else if (action === "highlight") window.BHFStudyActions?.perform?.("highlight");
-    else if (action === "more") window.BHFStudyActions?.openAdvancedMenu?.(button);
+    else if (action === "more") {
+      // The context menu is rendered outside the action strip. Without
+      // stopping this click here, the document-level outside-click handler
+      // sees the original button as an outside target and closes the menu
+      // immediately after it opens.
+      event.preventDefault();
+      event.stopPropagation();
+      window.BHFStudyActions?.openAdvancedMenu?.(button);
+    }
   }
 
   function handlePrimaryNavigation(event) {

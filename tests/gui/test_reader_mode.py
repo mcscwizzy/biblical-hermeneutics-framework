@@ -42,7 +42,6 @@ def test_reader_mode_hides_chrome_and_keeps_only_passage_text_visible(driver, wa
         ".reader-chapter-footer",
         ".reader-translation-badge",
         ".verse-number",
-        ".verse-actions-button",
         ".verse-state-indicators",
     ]
     for selector in hidden_chrome:

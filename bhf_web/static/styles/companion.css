@@ -429,11 +429,17 @@
 .companion-resource-card small,
 .companion-resource-row small {
   overflow: hidden;
-  color: var(--page-muted);
+  color: var(--accent-text);
   font-size: 0.72rem;
   font-weight: 500;
   line-height: 1.3;
   text-overflow: ellipsis;
+}
+
+.companion-resource-card > span:last-child,
+.companion-resource-row > span:last-child {
+  color: var(--accent-text);
+  font-weight: 850;
 }
 
 .companion-resource-icon {

@@ -64,6 +64,11 @@ def test_mobile_selection_opens_accessible_companion_states(driver, wait, base_u
     assert shared["reference"] == "John 1:1"
     assert driver.find_element(By.CSS_SELECTOR, "[data-passage-action-strip]").is_displayed()
 
+    driver.find_element(By.CSS_SELECTOR, '[data-passage-action="more"]').click()
+    wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#reader-context-menu")))
+    assert driver.find_element(By.CSS_SELECTOR, '[data-context-action="copy"]').is_displayed()
+    driver.execute_script("document.querySelector('#reader-context-menu').hidden = true;")
+
     driver.find_element(By.CSS_SELECTOR, '[data-passage-action="explore"]').click()
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
     overview = driver.find_element(By.CSS_SELECTOR, "[data-companion-overview]")

@@ -3075,14 +3075,6 @@ function createReaderPane(data, tab) {
       handleVerseSelectionClick(event, verseSpan);
     });
 
-    const actions = document.createElement("button");
-    actions.type = "button";
-    actions.className = "secondary verse-actions-button";
-    actions.dataset.verseActions = "true";
-    actions.textContent = "⋮";
-    actions.setAttribute("aria-label", "Verse actions");
-    actions.title = `Verse actions for ${data.book} ${data.chapter}:${verse.verse}`;
-
     const indicators = document.createElement("span");
     indicators.className = "verse-state-indicators";
     indicators.dataset.verseIndicators = "true";
@@ -3092,7 +3084,6 @@ function createReaderPane(data, tab) {
     text.textContent = verse.text + " ";
 
     verseSpan.appendChild(number);
-    verseSpan.appendChild(actions);
     verseSpan.appendChild(indicators);
     verseSpan.appendChild(text);
     paragraph.appendChild(verseSpan);
@@ -4145,34 +4136,21 @@ function handleVerseSelectionClick(event, verse) {
 
 function handleReaderActionButtonClick(event) {
   activateReaderPaneForElement(event.target);
-  const button = event.target.closest("[data-verse-actions]");
   const verseSelect = event.target.closest("[data-verse-select]");
-  if (!button && !verseSelect) {
+  if (!verseSelect) {
     const tappedVerse = event.target.closest("[data-verse]");
     if (tappedVerse && !event.target.closest("a, button, input, select, textarea")) {
       handleVerseSelectionClick(event, tappedVerse);
     }
     return;
   }
-  const verse = (button || verseSelect).closest("[data-verse]");
+  const verse = verseSelect.closest("[data-verse]");
   if (!verse || !currentChapter) {
     return;
   }
   event.preventDefault();
   event.stopPropagation();
-
-  if (verseSelect) {
-    handleVerseSelectionClick(event, verse);
-    return;
-  }
-
-  const context = contextForVerseAction(verse);
-  if (!context) {
-    return;
-  }
-  contextMenuState = context;
-  const rect = button.getBoundingClientRect();
-  showContextMenu(rect.left + rect.width / 2, rect.bottom + 8, context);
+  handleVerseSelectionClick(event, verse);
 }
 
 async function handleHighlightedVerseTap(event) {
@@ -4823,6 +4801,10 @@ function companionSelectionContext() {
 async function performCompanionStudyAction(type, overrides = {}) {
   const context = {...(companionSelectionContext() || {}), ...overrides};
   if (!context.book || !context.chapter) {
+    if (type === "open_map_panel") {
+      openMapPanel({mode: "browse"});
+      return true;
+    }
     return false;
   }
   await dispatchStudyAction(createStudyAction(type, context));

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import pytest
+from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -371,7 +372,7 @@ def test_mobile_ask_submit_still_works(driver, wait, base_url):
     wait.until(lambda _driver: "Test answer" in _driver.find_element(By.CSS_SELECTOR, '[data-testid="answer-output"]').text)
 
 
-def test_mobile_verse_actions_support_notes_and_highlights(driver, wait, base_url):
+def test_mobile_context_menu_supports_notes_and_highlights_without_per_verse_actions(driver, wait, base_url):
     _set_mobile_viewport(driver)
     HomePage(driver, wait, base_url).open().wait_loaded()
 
@@ -380,13 +381,9 @@ def test_mobile_verse_actions_support_notes_and_highlights(driver, wait, base_ur
     wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "bible")
 
     verse_one = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '#chapter-reader [data-verse="1"]')))
-    action_button = verse_one.find_element(By.CSS_SELECTOR, "[data-verse-actions]")
-    assert action_button.is_displayed()
-    assert action_button.text == "⋮"
-    assert action_button.get_attribute("aria-label") == "Verse actions"
+    assert not verse_one.find_elements(By.CSS_SELECTOR, "[data-verse-actions]")
 
-    _scroll_to_center(driver, action_button)
-    action_button.click()
+    ActionChains(driver).context_click(verse_one).perform()
     wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#reader-context-menu")))
     _assert_mobile_context_menu_leaves_room_for_submenu(driver, wait)
     _click_context_action(driver, wait, "note")
@@ -400,9 +397,7 @@ def test_mobile_verse_actions_support_notes_and_highlights(driver, wait, base_ur
     page.open_app_section("bible")
     wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "bible")
     verse_one = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '#chapter-reader [data-verse="1"]')))
-    action_button = verse_one.find_element(By.CSS_SELECTOR, "[data-verse-actions]")
-    _scroll_to_center(driver, action_button)
-    action_button.click()
+    ActionChains(driver).context_click(verse_one).perform()
     wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#reader-context-menu")))
     _click_context_action(driver, wait, "highlight")
     wait.until(lambda _driver: "highlight-yellow" in _driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="1"]').get_attribute("class"))
