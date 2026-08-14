@@ -114,6 +114,10 @@
   display: none;
 }
 
+body.companion-sheet-full {
+  overflow: hidden;
+}
+
 @media (min-width: 901px) {
   .companion-header-actions [data-companion-state-control="closed"] {
     display: none;
@@ -122,6 +126,24 @@
   .study-panel,
   body[data-app-section] .study-panel {
     display: block;
+  }
+
+  .study-panel[data-companion-state="full"],
+  body[data-app-section] .study-panel[data-companion-state="full"] {
+    position: fixed;
+    inset: 12px;
+    z-index: 10003;
+    width: auto;
+    max-width: none;
+    max-height: none;
+    transform: none;
+    visibility: visible;
+  }
+
+  .study-panel[data-companion-state="full"] .workspace-panel {
+    width: 100%;
+    height: calc(100dvh - 24px);
+    border-radius: 12px;
   }
 
   .app-dock {
@@ -648,10 +670,6 @@
 
   body.workspace-drawer-open:not(.companion-sheet-full) {
     overflow: auto;
-  }
-
-  body.companion-sheet-full {
-    overflow: hidden;
   }
 
   .study-panel,

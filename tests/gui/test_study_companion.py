@@ -111,6 +111,9 @@ def test_mobile_maps_explorer_opens_visible_map_workspace(driver, wait, base_url
     wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "#map-panel").is_displayed())
     assert panel.get_attribute("data-companion-state") == "full"
 
+    driver.find_element(By.CSS_SELECTOR, '[data-companion-state-control="closed"]').click()
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "closed")
+
 
 def test_desktop_companion_is_docked_and_routes_resource_details(driver, wait, base_url):
     driver.set_window_size(1440, 1000)
@@ -131,6 +134,37 @@ def test_desktop_companion_is_docked_and_routes_resource_details(driver, wait, b
         """
     )
     assert metrics["companion"] > metrics["reader"]
+
+    expand = driver.find_element(By.CSS_SELECTOR, '[data-companion-state-control="full"]')
+    expand.click()
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "full")
+    expanded_metrics = driver.execute_script(
+        """
+        const panel = document.querySelector('[data-study-companion]');
+        const rect = panel.getBoundingClientRect();
+        return {
+          position: getComputedStyle(panel).position,
+          left: rect.left,
+          top: rect.top,
+          width: rect.width,
+          viewportWidth: window.innerWidth,
+          bodyOverflow: getComputedStyle(document.body).overflow,
+        };
+        """
+    )
+    assert expanded_metrics["position"] == "fixed"
+    assert expanded_metrics["left"] <= 12
+    assert expanded_metrics["top"] <= 12
+    assert expanded_metrics["width"] >= expanded_metrics["viewportWidth"] - 24
+    assert expanded_metrics["bodyOverflow"] == "hidden"
+    assert expand.get_attribute("aria-label") == "Collapse Study Companion"
+
+    expand.click()
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
+    assert driver.execute_script(
+        "return getComputedStyle(document.querySelector('[data-study-companion]')).position;"
+    ) == "sticky"
+    assert expand.get_attribute("aria-label") == "Expand Study Companion"
 
     wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-companion-resource="canonical"]'))).click()
     wait.until(lambda _driver: "is-resource-detail" in _driver.find_element(By.CSS_SELECTOR, ".study-companion").get_attribute("class"))
@@ -709,6 +743,10 @@ def test_explore_canonical_entity_detail_stays_native(driver, wait, base_url):
     wait.until(lambda _driver: expected in host.text and "Back to results" in host.text)
     assert "is-native-resource" in driver.find_element(By.CSS_SELECTOR, ".study-companion").get_attribute("class")
     assert not driver.find_element(By.CSS_SELECTOR, "#workspace-pane-context").is_displayed()
+
+    panel = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
+    driver.find_element(By.CSS_SELECTOR, '[data-companion-state-control="closed"]').click()
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "closed")
 
 
 def test_ask_fields_follow_exact_shared_selection_and_clear_stale_word(driver, wait, base_url):

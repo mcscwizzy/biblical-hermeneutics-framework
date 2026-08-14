@@ -42,7 +42,11 @@
 
     panel.querySelectorAll("[data-companion-state-control]").forEach((button) => {
       button.addEventListener("click", () => {
-        setState(button.dataset.companionStateControl, {source: "control"});
+        const requestedState = button.dataset.companionStateControl;
+        const nextState = requestedState === "full" && currentState === "full"
+          ? "study"
+          : requestedState;
+        setState(nextState, {source: "control"});
       });
     });
     panel.querySelector("[data-companion-back]")?.addEventListener("click", navigateBackFromResource);
@@ -149,14 +153,20 @@
     panel.dataset.companionState = normalized;
     panel.setAttribute("aria-expanded", String(normalized !== "closed"));
     document.body.classList.toggle("companion-sheet-open", compactViewport() && normalized !== "closed" && normalized !== "peek");
-    document.body.classList.toggle("companion-sheet-full", compactViewport() && normalized === "full");
+    document.body.classList.toggle("companion-sheet-full", normalized === "full");
     const peek = panel.querySelector("[data-companion-state-control='study'].companion-peek");
     if (peek) peek.hidden = normalized !== "peek";
     panel.querySelectorAll("[data-companion-state-control]").forEach((control) => {
       control.removeAttribute("aria-pressed");
       control.setAttribute("aria-controls", panel.id);
       if (control.dataset.companionStateControl === "full") {
-        control.setAttribute("aria-expanded", String(normalized === "full"));
+        const expanded = normalized === "full";
+        const label = expanded
+          ? "Collapse Study Companion"
+          : "Expand Study Companion";
+        control.setAttribute("aria-expanded", String(expanded));
+        control.setAttribute("aria-label", label);
+        control.setAttribute("title", label);
       } else if (control.dataset.companionStateControl === "study") {
         control.setAttribute("aria-expanded", String(normalized === "study" || normalized === "full"));
       } else {
@@ -471,7 +481,7 @@
 
   function handleCompanionClick(event) {
     const resource = event.target.closest("[data-companion-resource]");
-    if (resource) {
+    if (resource && resource !== shell) {
       openResource(resource.dataset.companionResource, {trigger: resource});
       return;
     }
