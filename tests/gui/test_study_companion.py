@@ -96,7 +96,7 @@ def test_mobile_selection_opens_accessible_companion_states(driver, wait, base_u
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "closed")
 
 
-def test_mobile_maps_explorer_opens_the_map_workspace_not_the_companion(driver, wait, base_url):
+def test_mobile_maps_explorer_opens_visible_map_workspace(driver, wait, base_url):
     driver.set_window_size(390, 844)
     HomePage(driver, wait, base_url).open().wait_loaded()
 
@@ -109,7 +109,7 @@ def test_mobile_maps_explorer_opens_the_map_workspace_not_the_companion(driver, 
     driver.find_element(By.CSS_SELECTOR, '[data-companion-route="maps"]').click()
     wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, '[data-workspace-tab="maps"]').get_attribute("aria-selected") == "true")
     wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "#map-panel").is_displayed())
-    assert panel.get_attribute("data-companion-state") == "closed"
+    assert panel.get_attribute("data-companion-state") == "full"
 
 
 def test_desktop_companion_is_docked_and_routes_resource_details(driver, wait, base_url):

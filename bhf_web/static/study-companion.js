@@ -391,6 +391,9 @@
     if (options.mode) currentMode = options.mode;
     if (resourceId === "maps") {
       await openLegacyResource(resourceId);
+      if (options.history !== false && historyController?.current()?.resource !== resourceId) {
+        historyController?.push(historySnapshot());
+      }
       return;
     }
     const engine = window.BHFStudyRecommendations;
@@ -411,17 +414,17 @@
     } else if (resourceId === "canonical") {
       actions?.openWorkspaceTab?.("context");
     } else if (resourceId === "maps") {
-      // The map workspace lives outside the companion. Close the full-screen
-      // resource view before handing off, otherwise mobile keeps the map
-      // underneath the companion sheet and the action appears to do nothing.
-      showOverview({
-        history: false,
-        focus: false,
-        reload: false,
-        state: compactViewport() ? "closed" : "study",
-        source: "navigation",
-      });
-      const mapContext = window.BHFStudySelection?.getState?.();
+      // Maps is one of the legacy workspace panes nested inside the companion.
+      // Mark it as the active resource and keep the companion visible so the
+      // pane is not hidden (or left inside an inert, closed mobile sheet).
+      ensureResourceVisible(
+        resourceId,
+        window.BHFStudyRecommendations?.resources?.maps,
+      );
+      const selectedContext = window.BHFStudySelection?.getState?.();
+      const mapContext = currentMode === "explore"
+        ? {mode: "browse"}
+        : selectedContext;
       if (typeof window.BHFMaps?.openMapPanel === "function") {
         await window.BHFMaps.openMapPanel(
           mapContext?.book && mapContext?.chapter ? mapContext : {mode: "browse"},
@@ -429,7 +432,7 @@
       } else {
         // The MapPanel module can still be loading on a fresh page. The shared
         // action bridge queues the context until it becomes available.
-        await actions?.perform?.("open_map_panel");
+        await actions?.perform?.("open_map_panel", mapContext);
       }
     } else if (resourceId === "ask") {
       actions?.openWorkspaceTab?.("ask");

@@ -27,6 +27,27 @@ def test_maps_tab_loads(driver, wait, base_url):
     assert page.find("#map-panel").is_displayed()
 
 
+def test_explore_maps_card_opens_visible_browse_workspace(driver, wait, base_url):
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    driver.find_element(By.CSS_SELECTOR, '[data-testid="app-dock-explore"]').click()
+    maps_card = wait.until(
+        lambda _driver: next(
+            (
+                item
+                for item in _driver.find_elements(By.CSS_SELECTOR, '[data-companion-resource="maps"]')
+                if item.is_displayed()
+            ),
+            None,
+        )
+    )
+    maps_card.click()
+
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "#map-panel").is_displayed())
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "#map-search-results").is_displayed())
+    assert driver.find_element(By.CSS_SELECTOR, '[data-testid="map-search-input"]').is_displayed()
+    assert driver.execute_script("return document.querySelector('[data-study-companion]').inert") is False
+
+
 def test_map_catalog_search(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
     page = MapsPage(driver, wait, base_url)

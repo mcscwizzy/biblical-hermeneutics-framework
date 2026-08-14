@@ -444,7 +444,9 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn('activateWorkspaceTab("maps");', reader_script)
         self.assertIn('typeof window.BHFMaps?.openMapPanel === "function"', companion_script)
         self.assertIn('await window.BHFMaps.openMapPanel(', companion_script)
-        self.assertIn('await actions?.perform?.("open_map_panel");', companion_script)
+        self.assertIn("ensureResourceVisible(\n        resourceId,", companion_script)
+        self.assertIn('currentMode === "explore"', companion_script)
+        self.assertIn('await actions?.perform?.("open_map_panel", mapContext);', companion_script)
 
     def test_reader_tabs_render_side_by_side_panes_with_independent_scroll(self):
         script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
