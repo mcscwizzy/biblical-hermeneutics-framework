@@ -1075,9 +1075,10 @@ async function initializeReader() {
   if (cancelNote) {
     cancelNote.addEventListener("click", closeNoteEditor);
   }
-  document.addEventListener("bhf:map-panel-opened", () =>
-    activateWorkspaceTab("maps"),
-  );
+  document.addEventListener("bhf:map-panel-opened", () => {
+    activateAppSection("explore");
+    activateWorkspaceTab("maps");
+  });
   document.addEventListener("bhf:map-panel-closed", () => {
     syncMapWorkspaceEmptyState();
     closeWorkspaceDrawer();
@@ -5794,6 +5795,7 @@ function buildReaderMapContext(studyAction) {
 }
 
 function openMapPanel(context) {
+  activateAppSection("explore");
   activateWorkspaceTab("maps");
   if (isCompactViewport()) {
     setWorkspaceDrawerOpen(true);

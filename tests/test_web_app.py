@@ -435,6 +435,17 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn("copyContextToClipboard", script)
         self.assertNotIn("studyAction.type === \"maps\"", script)
 
+    def test_map_workspace_opens_from_map_panel_events(self):
+        reader_script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
+        companion_script = Path("bhf_web/static/study-companion.js").read_text(encoding="utf-8")
+
+        self.assertIn('document.addEventListener("bhf:map-panel-opened", () => {', reader_script)
+        self.assertIn('activateAppSection("explore");', reader_script)
+        self.assertIn('activateWorkspaceTab("maps");', reader_script)
+        self.assertIn('typeof window.BHFMaps?.openMapPanel === "function"', companion_script)
+        self.assertIn('await window.BHFMaps.openMapPanel(', companion_script)
+        self.assertIn('await actions?.perform?.("open_map_panel");', companion_script)
+
     def test_reader_tabs_render_side_by_side_panes_with_independent_scroll(self):
         script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))

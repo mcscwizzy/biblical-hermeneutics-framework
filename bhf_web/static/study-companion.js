@@ -421,7 +421,16 @@
         state: compactViewport() ? "closed" : "study",
         source: "navigation",
       });
-      await actions?.perform?.("open_map_panel");
+      const mapContext = window.BHFStudySelection?.getState?.();
+      if (typeof window.BHFMaps?.openMapPanel === "function") {
+        await window.BHFMaps.openMapPanel(
+          mapContext?.book && mapContext?.chapter ? mapContext : {mode: "browse"},
+        );
+      } else {
+        // The MapPanel module can still be loading on a fresh page. The shared
+        // action bridge queues the context until it becomes available.
+        await actions?.perform?.("open_map_panel");
+      }
     } else if (resourceId === "ask") {
       actions?.openWorkspaceTab?.("ask");
       window.BHFWorkspace?.focusAskPanel?.();
