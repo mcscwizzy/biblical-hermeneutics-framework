@@ -387,10 +387,14 @@
   }
 
   async function openResource(resourceId, options = {}) {
-    const engine = window.BHFStudyRecommendations;
-    const resource = engine?.resources?.[resourceId] || {label: options.label || "Study Resource"};
     if (options.trigger) lastResourceTrigger = options.trigger;
     if (options.mode) currentMode = options.mode;
+    if (resourceId === "maps") {
+      await openLegacyResource(resourceId);
+      return;
+    }
+    const engine = window.BHFStudyRecommendations;
+    const resource = engine?.resources?.[resourceId] || {label: options.label || "Study Resource"};
     ensureResourceVisible(resourceId, resource, {state: options.state});
     if (options.history !== false && historyController?.current()?.resource !== resourceId) {
       historyController?.push(historySnapshot());
@@ -521,15 +525,6 @@
     else if (action === "ask") openAsk("");
     else if (action === "note") performPersonalAction("note");
     else if (action === "highlight") window.BHFStudyActions?.perform?.("highlight");
-    else if (action === "more") {
-      // The context menu is rendered outside the action strip. Without
-      // stopping this click here, the document-level outside-click handler
-      // sees the original button as an outside target and closes the menu
-      // immediately after it opens.
-      event.preventDefault();
-      event.stopPropagation();
-      window.BHFStudyActions?.openAdvancedMenu?.(button);
-    }
   }
 
   function handlePrimaryNavigation(event) {

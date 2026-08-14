@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import pytest
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -23,50 +22,6 @@ def _hidden_or_absent(driver, selector: str) -> bool:
     elements = driver.find_elements(By.CSS_SELECTOR, selector)
     return not elements or not elements[0].is_displayed()
 
-
-def _click_context_action(driver, wait, action: str):
-    button = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, f'[data-context-action="{action}"]')))
-    if not button.is_displayed():
-        trigger = button.find_element(By.XPATH, "ancestor::*[contains(concat(' ', normalize-space(@class), ' '), ' context-menu-section ')][1]//*[@data-context-submenu]")
-        trigger.click()
-        wait.until(lambda _driver: button.is_displayed())
-    driver.execute_script(
-        """
-        const button = arguments[0];
-        const menu = button.closest("#reader-context-menu");
-        if (menu) {
-          menu.scrollTop = button.offsetTop - Math.max(0, (menu.clientHeight - button.offsetHeight) / 2);
-        }
-        """,
-        button,
-    )
-    wait.until(lambda _driver: button.is_displayed() and button.is_enabled())
-    button.click()
-
-
-def _assert_mobile_context_menu_leaves_room_for_submenu(driver, wait):
-    menu = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#reader-context-menu")))
-    trigger = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-context-submenu="study"]')))
-    trigger.click()
-    submenu = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[aria-label="Study menu"]')))
-    rects = driver.execute_script(
-        """
-        const menu = arguments[0].getBoundingClientRect();
-        const submenu = arguments[1].getBoundingClientRect();
-        return {
-          menu: { left: menu.left, right: menu.right },
-          submenu: { left: submenu.left, right: submenu.right },
-          viewportWidth: window.innerWidth,
-          opensLeft: arguments[0].classList.contains("opens-left")
-        };
-        """,
-        menu,
-        submenu,
-    )
-    assert rects["menu"]["left"] <= 12
-    assert rects["submenu"]["left"] >= rects["menu"]["right"] - 4
-    assert rects["submenu"]["right"] <= rects["viewportWidth"] - 8
-    assert rects["opensLeft"] is False
 
 
 def test_mobile_branding_and_header_controls_are_compact(driver, wait, base_url):
@@ -370,37 +325,6 @@ def test_mobile_ask_submit_still_works(driver, wait, base_url):
     page.click('[data-testid="ask-submit"]')
     AskPage(driver, wait, base_url).wait_for_status_started()
     wait.until(lambda _driver: "Test answer" in _driver.find_element(By.CSS_SELECTOR, '[data-testid="answer-output"]').text)
-
-
-def test_mobile_context_menu_supports_notes_and_highlights_without_per_verse_actions(driver, wait, base_url):
-    _set_mobile_viewport(driver)
-    HomePage(driver, wait, base_url).open().wait_loaded()
-
-    page = WorkspacePage(driver, wait, base_url)
-    page.open_app_section("bible")
-    wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "bible")
-
-    verse_one = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '#chapter-reader [data-verse="1"]')))
-    assert not verse_one.find_elements(By.CSS_SELECTOR, "[data-verse-actions]")
-
-    ActionChains(driver).context_click(verse_one).perform()
-    wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#reader-context-menu")))
-    _assert_mobile_context_menu_leaves_room_for_submenu(driver, wait)
-    _click_context_action(driver, wait, "note")
-    note_editor = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="note-editor"]')))
-    textarea = note_editor.find_element(By.CSS_SELECTOR, '[data-testid="note-textarea"]')
-    textarea.clear()
-    textarea.send_keys("Mobile note for John 1")
-    page.click('[data-testid="save-note-button"]')
-    wait.until(lambda _driver: "Mobile note for John 1" in _driver.find_element(By.CSS_SELECTOR, "#notes-list").text)
-
-    page.open_app_section("bible")
-    wait.until(lambda _driver: _driver.execute_script("return document.body.dataset.appSection") == "bible")
-    verse_one = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '#chapter-reader [data-verse="1"]')))
-    ActionChains(driver).context_click(verse_one).perform()
-    wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#reader-context-menu")))
-    _click_context_action(driver, wait, "highlight")
-    wait.until(lambda _driver: "highlight-yellow" in _driver.find_element(By.CSS_SELECTOR, '#chapter-reader [data-verse="1"]').get_attribute("class"))
 
 
 def test_my_study_remembers_group_subtabs_on_mobile(driver, wait, base_url):

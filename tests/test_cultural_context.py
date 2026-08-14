@@ -21,10 +21,10 @@ class CulturalContextTests(unittest.TestCase):
         self.question_context = classify_question_type(self.question, self.reference)
         self.genre = classify_genre(self.reference)
 
-    def test_visible_context_menu_uses_cultural_context_action(self) -> None:
-        template = Path("bhf_web/templates/index.html").read_text(encoding="utf-8")
-        self.assertIn('data-context-action="cultural_context">Cultural Context</button>', template)
-        self.assertNotIn('data-context-action="ancient_context">Ancient Context</button>', template)
+    def test_cultural_context_action_remains_available_to_study_workflows(self) -> None:
+        script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
+        self.assertIn('"cultural_context",', script)
+        self.assertIn('ancient_context: "cultural_context",', script)
 
     @unittest.skipUnless(normalize_study_action is not None, "web dependencies are not installed")
     def test_legacy_actions_normalize_to_cultural_context(self) -> None:

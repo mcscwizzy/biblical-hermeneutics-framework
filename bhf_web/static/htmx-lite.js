@@ -3,8 +3,6 @@
 // map fallback, and search interactions, and the shared request helpers and
 // status helpers have already been split into separate scripts.
 const POLL_INTERVAL_MS = 750;
-const READER_LONG_PRESS_DELAY_MS = 550;
-const READER_LONG_PRESS_MOVE_THRESHOLD_PX = 14;
 const APP_SECTION_STORAGE_KEY = "bhf-app-section";
 const LEGACY_MOBILE_SECTION_STORAGE_KEY = "bhf-mobile-section";
 const BHF_RUNTIME = window.BHFRuntimeConfig || {};
@@ -118,13 +116,9 @@ let currentNotes = [];
 let currentHighlights = [];
 const savedStudiesCache = new Map();
 const savedStudiesRequests = new Map();
-let contextMenuState = null;
-let contextMenuPosition = null;
 let lastMapAIFallbackKey = null;
 let activeLiveAnswerPanel = null;
 let latestDeterministicStudyResult = null;
-let readerLongPressState = null;
-let suppressHighlightedVerseTapUntil = 0;
 let appSection = null;
 let lastAskWorkspaceTab = "ask";
 let lastNotesWorkspaceTab = "notes";
@@ -1020,28 +1014,14 @@ async function initializeReader() {
     });
   }
   document.addEventListener("selectionchange", updateSelectionFromDocument);
-  document.addEventListener("click", closeContextMenuOnOutside);
-  document.addEventListener("keydown", closeContextMenuOnEscape);
-  window.addEventListener("scroll", keepContextMenuVisibleOnReaderScroll, true);
   window.addEventListener("scroll", rememberVisibleReaderVerse, {passive: true});
-  reader.addEventListener("contextmenu", handleReaderContextMenu);
-  reader.addEventListener("pointerdown", handleReaderPointerDown);
-  reader.addEventListener("pointermove", handleReaderPointerMove);
-  reader.addEventListener("pointerup", cancelReaderLongPress);
-  reader.addEventListener("pointercancel", cancelReaderLongPress);
-  reader.addEventListener("pointerleave", handleReaderPointerLeave);
   reader.addEventListener("click", handleReaderActionButtonClick);
   reader.addEventListener("click", handleTranslationSelectorClick);
   document.addEventListener("click", handleChapterNavigationClick);
-  const contextMenu = document.querySelector("#reader-context-menu");
   const searchForm = document.querySelector("[data-bible-search]");
   const searchResultsBody = document.querySelector(
     "#reader-search-results-body",
   );
-  if (contextMenu) {
-    contextMenu.addEventListener("click", handleContextMenuAction);
-    contextMenu.addEventListener("mouseover", handleContextSubmenuHover);
-  }
   if (searchForm) {
     searchForm.addEventListener("submit", submitBibleSearch);
     const queryInput = searchForm.querySelector("[name='query']");
@@ -1209,7 +1189,6 @@ function initializeWorkspaceBridge() {
   window.BHFStudyActions = {
     perform: performCompanionStudyAction,
     openWorkspaceTab: activateWorkspaceTab,
-    openAdvancedMenu: openCompanionAdvancedMenu,
     openCanonicalQuery,
     savePassage: saveSelectedPassage,
     getSavedStudies: getSavedStudiesForSelection,
@@ -2203,7 +2182,6 @@ function applyReaderMode(enabled, options = {}) {
   if (nextEnabled) {
     closeWorkspaceDrawer();
     closeReaderControlsSheet();
-    hideContextMenu();
   }
   const toggles = document.querySelectorAll("[data-reader-mode-toggle]");
   for (const toggle of toggles) {
@@ -2687,7 +2665,6 @@ async function loadReaderChapter(book, chapter, options = {}) {
     tab.translation = translationId;
   }
   reader.setAttribute("aria-busy", "true");
-  hideContextMenu();
   renderChapter(null);
   try {
     let data = null;
@@ -4153,29 +4130,6 @@ function handleReaderActionButtonClick(event) {
   handleVerseSelectionClick(event, verse);
 }
 
-async function handleHighlightedVerseTap(event) {
-  if (Date.now() < suppressHighlightedVerseTapUntil) {
-    return;
-  }
-  const verse = event.target.closest("[data-verse]");
-  const reader = activeReaderPane() || document.querySelector("#chapter-reader");
-  if (!verse || !reader || !reader.contains(verse) || !currentChapter) {
-    return;
-  }
-  const verseNumber = Number(verse.dataset.verse || "0");
-  if (!verseNumber || highlightsForVerse(verseNumber).length === 0) {
-    return;
-  }
-  event.preventDefault();
-  event.stopPropagation();
-  await removeHighlightsForContext({
-    book: currentChapter.book,
-    chapter: currentChapter.chapter,
-    verseStart: verseNumber,
-    verseEnd: verseNumber,
-  });
-}
-
 function collectSelectedVerseText(startVerse, endVerse) {
   const reader = activeReaderPane() || document.querySelector("#chapter-reader");
   if (!reader) {
@@ -4200,125 +4154,6 @@ function scrollToVerse(verseNumber, behavior = "smooth") {
     return;
   }
   verse.scrollIntoView({behavior, block: "center"});
-}
-
-function handleReaderContextMenu(event) {
-  suppressHighlightedVerseTapUntil = Date.now() + 800;
-  activateReaderPaneForElement(event.target);
-  const verse = event.target.closest("[data-verse]");
-  const reader = document.querySelector("#chapter-reader");
-  if (!verse || !reader || !reader.contains(verse) || !currentChapter) {
-    return;
-  }
-
-  let context = contextForVerseAction(verse);
-  const verseNumber = Number(verse.dataset.verse || "0");
-  if (
-    verseNumber &&
-    highlightsForVerse(verseNumber).length > 0 &&
-    highlightsForContext(context).length === 0
-  ) {
-    context = contextFromVerse(verse);
-  }
-  if (!context) {
-    return;
-  }
-
-  event.preventDefault();
-  contextMenuState = context;
-  showContextMenu(event.clientX, event.clientY, context);
-}
-
-function handleReaderPointerDown(event) {
-  if (event.button && event.button !== 0) {
-    suppressHighlightedVerseTapUntil = Date.now() + 800;
-  }
-  if (event.pointerType !== "touch") {
-    cancelReaderLongPress();
-    return;
-  }
-  activateReaderPaneForElement(event.target);
-  const verse = event.target.closest("[data-verse]");
-  const reader = document.querySelector("#chapter-reader");
-  if (!verse || !reader || !reader.contains(verse) || !currentChapter) {
-    cancelReaderLongPress();
-    return;
-  }
-  cancelReaderLongPress();
-  readerLongPressState = {
-    pointerId: event.pointerId,
-    startX: event.clientX,
-    startY: event.clientY,
-    clientX: event.clientX,
-    clientY: event.clientY,
-    verse,
-    triggered: false,
-    timerId: window.setTimeout(() => {
-      triggerReaderLongPress();
-    }, READER_LONG_PRESS_DELAY_MS),
-  };
-}
-
-function handleReaderPointerMove(event) {
-  if (
-    !readerLongPressState ||
-    event.pointerId !== readerLongPressState.pointerId
-  ) {
-    return;
-  }
-  const deltaX = Math.abs(event.clientX - readerLongPressState.startX);
-  const deltaY = Math.abs(event.clientY - readerLongPressState.startY);
-  if (
-    deltaX > READER_LONG_PRESS_MOVE_THRESHOLD_PX ||
-    deltaY > READER_LONG_PRESS_MOVE_THRESHOLD_PX
-  ) {
-    cancelReaderLongPress();
-    return;
-  }
-  readerLongPressState.clientX = event.clientX;
-  readerLongPressState.clientY = event.clientY;
-}
-
-function handleReaderPointerLeave(event) {
-  if (
-    !readerLongPressState ||
-    event.pointerId !== readerLongPressState.pointerId
-  ) {
-    return;
-  }
-  cancelReaderLongPress();
-}
-
-function triggerReaderLongPress() {
-  if (!readerLongPressState || readerLongPressState.triggered) {
-    return;
-  }
-  const context = contextForVerseAction(readerLongPressState.verse);
-  if (!context) {
-    cancelReaderLongPress();
-    return;
-  }
-  readerLongPressState.triggered = true;
-  suppressHighlightedVerseTapUntil = Date.now() + 800;
-  contextMenuState = context;
-  showContextMenu(
-    readerLongPressState.clientX,
-    readerLongPressState.clientY,
-    context,
-  );
-  if (window.navigator?.vibrate) {
-    window.navigator.vibrate(10);
-  }
-}
-
-function cancelReaderLongPress() {
-  if (!readerLongPressState) {
-    return;
-  }
-  if (readerLongPressState.timerId) {
-    window.clearTimeout(readerLongPressState.timerId);
-  }
-  readerLongPressState = null;
 }
 
 function selectionContextFromDocument() {
@@ -4363,22 +4198,6 @@ function selectionContextFromDocument() {
       ? {surfaceForm: selectedText}
       : null,
     isSelection: true,
-  };
-}
-
-function contextFromVerse(verse) {
-  if (!currentChapter) {
-    return null;
-  }
-  const verseNumber = Number(verse.dataset.verse);
-  return {
-    book: currentChapter.book,
-    chapter: currentChapter.chapter,
-    startVerse: verseNumber,
-    endVerse: verseNumber,
-    selectedVerses: [verseNumber],
-    text: verse.querySelector(".verse-text")?.textContent.trim() || "",
-    isSelection: false,
   };
 }
 
@@ -4451,255 +4270,6 @@ function contextFromVerseNumbers(verseNumbers) {
       .join(" "),
     isSelection: selected.length > 1,
   };
-}
-
-function contextForVerseAction(verse) {
-  const verseNumber = Number(verse?.dataset?.verse || "0");
-  const documentContext = selectionContextFromDocument();
-  if (contextIncludesVerse(documentContext, verseNumber)) {
-    return documentContext;
-  }
-  if (contextIncludesVerse(currentSelection, verseNumber)) {
-    return currentSelection;
-  }
-  return contextFromVerse(verse);
-}
-
-function contextIncludesVerse(context, verseNumber) {
-  if (!context || !verseNumber) {
-    return false;
-  }
-  if (Array.isArray(context.selectedVerses) && context.selectedVerses.length > 0) {
-    return selectedVerseNumbers(context).includes(verseNumber);
-  }
-  return Number(context.startVerse) <= verseNumber && verseNumber <= Number(context.endVerse || context.startVerse);
-}
-
-function showContextMenu(x, y, context) {
-  const menu = document.querySelector("#reader-context-menu");
-  if (!menu) {
-    return;
-  }
-  const isSelection = Boolean(context.isSelection);
-  setContextLabel("ask_bhf", "Ask BHF");
-  setContextLabel(
-    "cultural_context",
-    isSelection ? "Cultural Context" : "Cultural Context",
-  );
-  setContextLabel(
-    "literary_context",
-    isSelection ? "Literary Context" : "Literary Context",
-  );
-  setContextLabel(
-    "cross_references",
-    isSelection ? "Cross References" : "Cross References",
-  );
-  setContextLabel(
-    "related_ot_themes",
-    isSelection ? "Related OT Themes" : "Related OT Themes",
-  );
-  setContextLabel("people", isSelection ? "People" : "People");
-  setContextLabel("places", isSelection ? "Places" : "Places");
-  setContextLabel("themes", isSelection ? "Themes" : "Themes");
-  setContextLabel(
-    "fulfillment_nt",
-    isSelection ? "Fulfillment in the NT" : "Fulfillment in the NT",
-  );
-  setContextLabel(
-    "compare_translations",
-    isSelection ? "Compare Translations" : "Compare Translations",
-  );
-  setContextLabel("timeline", isSelection ? "Timeline" : "Timeline");
-  setContextLabel("open_map_panel", isSelection ? "Maps" : "Maps");
-  setContextLabel("compare_archaeology", "Compare with archaeology");
-  setContextLabel("save_study", "Save Study");
-  setContextLabel("note", isSelection ? "Add Note" : "Add Note");
-  setContextLabel("highlight", isSelection ? "Highlight Selection" : "Highlight Verse");
-  setContextLabel("remove_highlight", "Remove Highlight");
-  const hasHighlight = highlightsForContext(context).length > 0;
-  setContextVisibility("remove_highlight", hasHighlight);
-  resetContextSubmenus(menu);
-  if (hasHighlight) {
-    const studyTrigger = menu.querySelector('[data-context-submenu="study"]');
-    if (studyTrigger) {
-      openContextSubmenu(studyTrigger);
-    }
-  }
-  contextMenuPosition = {x, y};
-  menu.hidden = false;
-  positionContextMenu(menu, x, y);
-  const firstButton = menu.querySelector("button");
-  if (firstButton) {
-    firstButton.focus({preventScroll: true});
-  }
-}
-
-function positionContextMenu(menu, x, y) {
-  const rect = menu.getBoundingClientRect();
-  const isNarrowViewport = window.matchMedia("(max-width: 680px)").matches;
-  const submenuWidth = isNarrowViewport ? 190 : 230;
-  const submenuGap = isNarrowViewport ? 4 : 6;
-  const menuWidth = Math.min(rect.width, window.innerWidth - 16);
-  if (isNarrowViewport) {
-    const menuHeight = Math.min(rect.height, window.innerHeight - 16);
-    menu.style.left = "8px";
-    menu.style.top = `${Math.max(8, (window.innerHeight - menuHeight) / 2)}px`;
-    menu.classList.remove("opens-left");
-    return;
-  }
-  const left = Math.min(x, window.innerWidth - menuWidth - 8);
-  const top = Math.min(y, window.innerHeight - rect.height - 8);
-  let clampedLeft = Math.max(8, left);
-  const clampedTop = Math.max(8, top);
-  let opensLeft = false;
-  const rightFlyoutFits =
-    clampedLeft + menuWidth + submenuGap + submenuWidth <=
-    window.innerWidth - 8;
-  const leftFlyoutFits = clampedLeft - submenuGap - submenuWidth >= 8;
-  if (!rightFlyoutFits && leftFlyoutFits) {
-    opensLeft = true;
-  } else if (!rightFlyoutFits && !leftFlyoutFits) {
-    const pairedWidth = menuWidth + submenuGap + submenuWidth;
-    if (pairedWidth <= window.innerWidth - 16) {
-      opensLeft = x > window.innerWidth / 2;
-      clampedLeft = opensLeft ? window.innerWidth - menuWidth - 8 : 8;
-    }
-  }
-  menu.style.left = `${clampedLeft}px`;
-  menu.style.top = `${clampedTop}px`;
-  menu.classList.toggle("opens-left", opensLeft);
-}
-
-function resetContextSubmenus(
-  menu = document.querySelector("#reader-context-menu"),
-) {
-  if (!menu) {
-    return;
-  }
-  menu.querySelectorAll(".context-menu-section.is-open").forEach((section) => {
-    section.classList.remove("is-open");
-  });
-  menu.querySelectorAll("[data-context-submenu]").forEach((trigger) => {
-    trigger.setAttribute("aria-expanded", "false");
-  });
-}
-
-function openContextSubmenu(trigger) {
-  const section = trigger.closest(".context-menu-section");
-  const menu = trigger.closest(".context-menu");
-  if (!section || !menu || section.classList.contains("is-open")) {
-    return;
-  }
-  resetContextSubmenus(menu);
-  section.classList.add("is-open");
-  trigger.setAttribute("aria-expanded", "true");
-}
-
-function handleContextSubmenuHover(event) {
-  const submenuTrigger = event.target.closest("[data-context-submenu]");
-  if (submenuTrigger) {
-    openContextSubmenu(submenuTrigger);
-  }
-}
-
-function setContextLabel(action, label) {
-  const button = document.querySelector(`[data-context-action="${action}"]`);
-  if (button) {
-    button.textContent = label;
-  }
-}
-
-function setContextVisibility(action, visible) {
-  const button = document.querySelector(`[data-context-action="${action}"]`);
-  if (button) {
-    button.hidden = !visible;
-  }
-}
-
-async function handleContextMenuAction(event) {
-  const submenuTrigger = event.target.closest("[data-context-submenu]");
-  if (submenuTrigger) {
-    event.preventDefault();
-    event.stopPropagation();
-    openContextSubmenu(submenuTrigger);
-    return;
-  }
-  const button = event.target.closest("[data-context-action]");
-  if (!button || !contextMenuState) {
-    return;
-  }
-  event.preventDefault();
-  event.stopPropagation();
-  const actionType = resolveContextAction(button.dataset.contextAction);
-  const context = contextMenuState;
-  hideContextMenu();
-  if (actionType === "copy") {
-    await copyContextToClipboard(context);
-    return;
-  }
-  await dispatchStudyAction(createStudyAction(actionType, context));
-}
-
-function resolveContextAction(actionType) {
-  return actionType;
-}
-
-function formatContextReferenceForClipboard(context) {
-  if (!context?.book || !context?.chapter) {
-    return "";
-  }
-  const verses = selectedVerseNumbers(context);
-  if (verses.length === 0) {
-    return `${context.book} ${context.chapter}`;
-  }
-
-  const ranges = [];
-  let rangeStart = verses[0];
-  let rangeEnd = verses[0];
-  verses.slice(1).forEach((verse) => {
-    if (verse === rangeEnd + 1) {
-      rangeEnd = verse;
-      return;
-    }
-    ranges.push(rangeStart === rangeEnd ? String(rangeStart) : `${rangeStart}-${rangeEnd}`);
-    rangeStart = verse;
-    rangeEnd = verse;
-  });
-  ranges.push(rangeStart === rangeEnd ? String(rangeStart) : `${rangeStart}-${rangeEnd}`);
-  return `${context.book} ${context.chapter}:${ranges.join(",")}`;
-}
-
-function formatContextForClipboard(context) {
-  const reference = formatContextReferenceForClipboard(context);
-  const text = String(context?.text || "").trim();
-  return [reference, text].filter(Boolean).join("\n\n");
-}
-
-async function copyContextToClipboard(context) {
-  const text = formatContextForClipboard(context);
-  if (!text) {
-    return false;
-  }
-
-  try {
-    if (window.navigator?.clipboard?.writeText) {
-      await window.navigator.clipboard.writeText(text);
-      return true;
-    }
-  } catch (_error) {
-    // Some browser contexts deny Clipboard API access. Fall back below.
-  }
-
-  const textarea = document.createElement("textarea");
-  textarea.value = text;
-  textarea.setAttribute("readonly", "");
-  textarea.style.position = "fixed";
-  textarea.style.opacity = "0";
-  document.body.append(textarea);
-  textarea.select();
-  const copied = document.execCommand("copy");
-  textarea.remove();
-  return copied;
 }
 
 function createStudyAction(type, context) {
@@ -4810,21 +4380,6 @@ async function performCompanionStudyAction(type, overrides = {}) {
     return false;
   }
   await dispatchStudyAction(createStudyAction(type, context));
-  return true;
-}
-
-function openCompanionAdvancedMenu(trigger) {
-  const context = companionSelectionContext();
-  if (!context?.startVerse) {
-    return false;
-  }
-  contextMenuState = context;
-  const rect = trigger?.getBoundingClientRect?.() || {
-    left: window.innerWidth / 2,
-    width: 0,
-    bottom: window.innerHeight / 2,
-  };
-  showContextMenu(rect.left + rect.width / 2, rect.bottom + 8, context);
   return true;
 }
 
@@ -5871,42 +5426,6 @@ function requestMapAIFallback(mapContext = {}, options = {}) {
   updateSaveButtons();
   submitAskForm();
   return true;
-}
-
-function closeContextMenuOnOutside(event) {
-  const menu = document.querySelector("#reader-context-menu");
-  if (menu && !menu.hidden && !menu.contains(event.target)) {
-    hideContextMenu();
-  }
-}
-
-function closeContextMenuOnEscape(event) {
-  if (event.key === "Escape") {
-    hideContextMenu();
-  }
-}
-
-function keepContextMenuVisibleOnReaderScroll(event) {
-  const menu = document.querySelector("#reader-context-menu");
-  if (
-    !menu ||
-    menu.hidden ||
-    menu.contains(event.target) ||
-    !contextMenuPosition
-  ) {
-    return;
-  }
-  positionContextMenu(menu, contextMenuPosition.x, contextMenuPosition.y);
-}
-
-function hideContextMenu() {
-  const menu = document.querySelector("#reader-context-menu");
-  if (menu) {
-    menu.hidden = true;
-    resetContextSubmenus(menu);
-  }
-  contextMenuState = null;
-  contextMenuPosition = null;
 }
 
 function clearDocumentSelection() {

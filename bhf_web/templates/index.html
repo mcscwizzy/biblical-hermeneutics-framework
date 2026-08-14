@@ -216,9 +216,6 @@
             <button type="button" data-passage-action="highlight">
               <span aria-hidden="true">▰</span><span>Highlight</span>
             </button>
-            <button type="button" data-passage-action="more" aria-haspopup="menu">
-              <span aria-hidden="true">•••</span><span>More</span>
-            </button>
           </div>
         </nav>
         <section
@@ -857,46 +854,6 @@
       </div>
     </dialog>
 
-    <nav id="reader-context-menu" class="context-menu" aria-label="Verse actions" hidden>
-      <div class="context-menu-section" role="group">
-        <button type="button" class="context-menu-trigger" data-context-submenu="study" aria-haspopup="menu" aria-expanded="false">Study</button>
-        <div class="context-menu-submenu" role="menu" aria-label="Study menu">
-          <button type="button" role="menuitem" data-context-action="copy">Copy</button>
-          <button type="button" role="menuitem" data-context-action="ask_bhf">Ask BHF</button>
-          <button type="button" role="menuitem" data-context-action="literary_context">Literary Context</button>
-          <button type="button" role="menuitem" data-context-action="word_study">Word Study</button>
-          <button type="button" role="menuitem" data-context-action="archaeology">Archaeology</button>
-          <button type="button" role="menuitem" data-context-action="full_context">Full Context</button>
-          <button type="button" role="menuitem" data-context-action="historical_context">Historical Context</button>
-          <button type="button" role="menuitem" data-context-action="cultural_context">Cultural Context</button>
-          <button type="button" role="menuitem" data-context-action="ancient_context" hidden>Ancient Context</button>
-          <button type="button" role="menuitem" data-context-action="original_audience">Original Audience</button>
-          <button type="button" role="menuitem" data-context-action="covenant_context">Covenant Context</button>
-          <button type="button" role="menuitem" data-context-action="cross_references">Cross References</button>
-          <button type="button" role="menuitem" data-context-action="related_ot_themes">Related OT Themes</button>
-          <button type="button" role="menuitem" data-context-action="people">People</button>
-          <button type="button" role="menuitem" data-context-action="places">Places</button>
-          <button type="button" role="menuitem" data-context-action="themes">Themes</button>
-          <button type="button" role="menuitem" data-context-action="fulfillment_nt">Fulfillment in the NT</button>
-          <button type="button" role="menuitem" data-context-action="compare_translations">Compare Translations</button>
-          <button type="button" role="menuitem" data-context-action="timeline">Timeline</button>
-          <button type="button" role="menuitem" data-context-action="highlight">Highlight Verse</button>
-          <button type="button" role="menuitem" data-context-action="remove_highlight" hidden>Remove Highlight</button>
-          <button type="button" role="menuitem" data-context-action="note">Add Note</button>
-          <button type="button" role="menuitem" data-context-action="save_study">Save Study</button>
-        </div>
-      </div>
-    </nav>
-    <div hidden aria-hidden="true" data-legacy-map-actions>
-      <button type="button" data-context-action="ask_location">Ask about location</button>
-      <button type="button" data-context-action="open_map_panel">Open map</button>
-      <button type="button" data-context-action="save_map_study">Save map study</button>
-      <button type="button" data-context-action="map_note">Add map note</button>
-      <button type="button" data-context-action="related_passages">Related passages</button>
-      <button type="button" data-context-action="view_historical_layer">Historical layer</button>
-      <span data-route-toggle data-map-journey-search data-map-journey-filter-testament data-map-journey-filter-category data-map-journey-filter-era data-map-journey-count data-map-journey-selector data-map-journey-stop-list data-map-journey-segment-list data-map-journey-detail></span>
-      <span class="saved-map-studies" id="saved-map-studies"></span>
-    </div>
   </main>
   <nav class="app-dock" aria-label="Application navigation" data-app-dock>
     <section class="app-dock-group" aria-label="Read">

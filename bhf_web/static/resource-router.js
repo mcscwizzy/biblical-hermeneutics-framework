@@ -3,7 +3,7 @@
   "use strict";
 
   const NATIVE_RESOURCES = new Set([
-    "commentary", "canonical", "maps", "archaeology", "people", "places",
+    "commentary", "canonical", "archaeology", "people", "places",
     "themes", "timeline", "cross_references", "historical_context",
     "cultural_context", "literary_context", "covenant_context",
   ]);
@@ -104,8 +104,6 @@
         } else {
           renderNarration(narration, resourceId, context.summaries?.archaeology || []);
         }
-      } else if (resourceId === "maps") {
-        renderMaps(context.summaries?.maps || {places: [], routes: []});
       } else if (["people", "places", "themes"].includes(resourceId)) {
         renderCanonicalCards(context.entities?.[resourceId] || [], resourceId, true);
       } else if (resourceId === "canonical") {
@@ -118,12 +116,6 @@
     }
 
     async function renderExplore(resourceId, requestSequence, signal) {
-      if (resourceId === "maps") {
-        const data = await requestJson("/api/maps/catalog", signal);
-        if (requestSequence !== sequence) return;
-        renderMaps({places: data.places || [], routes: data.routes || []}, {collection: true});
-        return;
-      }
       if (resourceId === "archaeology") {
         const data = await requestJson("/api/archaeology?limit=12&include_media=false", signal);
         if (requestSequence !== sequence) return;
@@ -167,19 +159,6 @@
           : "The commentary collection is not installed on this device.",
       );
       (data.sources || []).forEach((source) => body.append(summaryCard(source.name || source.id, source.attribution || source.copyright || "")));
-      commit(body);
-    }
-
-    function renderMaps(data, options = {}) {
-      const places = Array.isArray(data.places) ? data.places : [];
-      const routes = Array.isArray(data.routes) ? data.routes : [];
-      const body = resourceBody(
-        options.collection ? "Map Collections" : "Maps for this passage",
-        `${places.length} place${places.length === 1 ? "" : "s"} and ${routes.length} route${routes.length === 1 ? "" : "s"}`,
-      );
-      appendGroup(body, "Places", places.slice(0, 8));
-      appendGroup(body, "Journeys & routes", routes.slice(0, 8));
-      body.append(actionButton("Open Full Map →", "maps"));
       commit(body);
     }
 

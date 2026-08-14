@@ -64,13 +64,6 @@ def test_mobile_selection_opens_accessible_companion_states(driver, wait, base_u
     assert shared["reference"] == "John 1:1"
     assert driver.find_element(By.CSS_SELECTOR, "[data-passage-action-strip]").is_displayed()
 
-    driver.find_element(By.CSS_SELECTOR, '[data-passage-action="more"]').click()
-    wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#reader-context-menu")))
-    driver.find_element(By.CSS_SELECTOR, '[data-context-submenu="study"]').click()
-    wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[aria-label="Study menu"]')))
-    assert driver.find_element(By.CSS_SELECTOR, '[data-context-action="copy"]').is_displayed()
-    driver.execute_script("document.querySelector('#reader-context-menu').hidden = true;")
-
     driver.find_element(By.CSS_SELECTOR, '[data-passage-action="explore"]').click()
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
     overview = driver.find_element(By.CSS_SELECTOR, "[data-companion-overview]")
@@ -101,6 +94,22 @@ def test_mobile_selection_opens_accessible_companion_states(driver, wait, base_u
     assert driver.find_element(By.CSS_SELECTOR, ".reader-column").get_attribute("aria-hidden") == "true"
     driver.find_element(By.CSS_SELECTOR, '[data-companion-state-control="closed"]').click()
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "closed")
+
+
+def test_mobile_maps_explorer_opens_the_map_workspace_not_the_companion(driver, wait, base_url):
+    driver.set_window_size(390, 844)
+    HomePage(driver, wait, base_url).open().wait_loaded()
+
+    driver.find_element(By.CSS_SELECTOR, '#chapter-reader .reader-pane.is-active [data-verse="1"] .verse-text').click()
+    panel = driver.find_element(By.CSS_SELECTOR, "[data-study-companion]")
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "peek")
+    driver.find_element(By.CSS_SELECTOR, '[data-passage-action="explore"]').click()
+    wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "study")
+
+    driver.find_element(By.CSS_SELECTOR, '[data-companion-route="maps"]').click()
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, '[data-workspace-tab="maps"]').get_attribute("aria-selected") == "true")
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "#map-panel").is_displayed())
+    assert panel.get_attribute("data-companion-state") == "closed"
 
 
 def test_desktop_companion_is_docked_and_routes_resource_details(driver, wait, base_url):
