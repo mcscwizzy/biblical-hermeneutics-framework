@@ -4,10 +4,11 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 import re
-from typing import Any, Iterable, Mapping, Sequence
+from typing import Any, Mapping, Sequence
 
-from .provenance import as_mapping, merge_unique, source_ids_for, strings
+from .provenance import as_mapping, source_ids_for, strings
 from .roles import NarrativeRole, role_for
+from .scripture import PassageScope, parse_scripture_span, passage_scope, references_overlap
 
 
 _FIELD_ORDER = (
@@ -41,6 +42,7 @@ class EvidenceCandidate:
     scripture_references: list[str] = field(default_factory=list)
     certainty: str = ""
     dispute_status: str = ""
+    rationale: str = ""
     content_status: str = ""
     review_status: str = ""
     human_review_required: bool | None = None
@@ -60,51 +62,16 @@ def _key(value: object) -> str:
     return re.sub(r"[^a-z0-9]+", "_", str(value or "").strip().lower()).strip("_")
 
 
-def _scripture_parts(reference: object) -> tuple[str, int, int] | None:
-    text = str(reference or "").strip().replace("–", "-").replace("—", "-")
-    match = re.match(
-        r"^(?P<book>(?:[1-3]\s+)?[A-Za-z][A-Za-z ]*?)\s+"
-        r"(?P<chapter>\d+)"
-        r"(?::(?P<verse>\d+)(?:-(?P<endverse>\d+))?)?"
-        r"(?:-(?P<endchapter>\d+)(?::(?P<endchapterverse>\d+))?)?$",
-        text,
-    )
-    if not match:
-        return None
-    book = re.sub(r"\s+", " ", match.group("book")).strip().casefold()
-    start = int(match.group("chapter"))
-    end = int(match.group("endchapter") or start)
-    return book, start, end
-
-
-def references_overlap(left: object, right: object) -> bool:
-    """Compare book/chapter ranges without introducing a Scripture engine."""
-
-    left_parts = _scripture_parts(left)
-    right_parts = _scripture_parts(right)
-    if left_parts is None or right_parts is None:
-        return str(left or "").strip().casefold() == str(right or "").strip().casefold()
-    return left_parts[0] == right_parts[0] and left_parts[1] <= right_parts[2] and right_parts[1] <= left_parts[2]
-
-
 def _reference_scope(reference: str, references: Sequence[str]) -> int:
-    if not reference:
-        return 3
-    requested = _scripture_parts(reference)
-    for candidate in references:
-        candidate_parts = _scripture_parts(candidate)
-        if not references_overlap(reference, candidate):
-            continue
-        # A whole-book claim is useful background, but it is not a direct
-        # passage observation.  Narrow chapter/range matches get priority.
-        if requested and candidate_parts and candidate_parts[0] == requested[0]:
-            if candidate_parts[1] == candidate_parts[2] or (candidate_parts[2] - candidate_parts[1]) <= 2:
-                return 0
-            continue
-        return 0
-    if requested and any((_scripture_parts(candidate) or ("", 0, 0))[0] == requested[0] for candidate in references):
-        return 2
-    return 3
+    requested = parse_scripture_span(reference)
+    if requested is None or not references:
+        return int(PassageScope.SAME_BOOK)
+    scopes = [
+        passage_scope(requested, candidate)
+        for value in references
+        if (candidate := parse_scripture_span(value)) is not None
+    ]
+    return int(min(scopes, default=PassageScope.UNRELATED))
 
 
 def _topics(context: Any) -> list[Any]:
@@ -135,11 +102,11 @@ def _is_foreign_book_topic(topic: Mapping[str, Any], reference: str) -> bool:
 
     if _key(topic.get("type")) != "book":
         return False
-    requested = _scripture_parts(reference)
+    requested = parse_scripture_span(reference)
     if requested is None:
         return False
     topic_book = re.sub(r"\s+", " ", str(topic.get("title") or "").strip()).casefold()
-    if not topic_book or topic_book == requested[0]:
+    if not topic_book or topic_book == requested.book:
         return False
     for raw_reference in topic.get("scripture_references") or []:
         data = as_mapping(raw_reference)
@@ -251,7 +218,7 @@ def _candidate(
     governance = {"approved": 0.08, "reviewed": 0.06, "in_review": 0.03, "unreviewed": 0.0, "draft": 0.0}
     review_status = str(topic.get("review_status") or "").strip()
     score = raw_score + governance.get(review_status, 0.0)
-    score += max(0.0, 0.04 - (scope * 0.01))
+    score += max(0.0, 0.12 - (scope * 0.025))
     score -= position * 0.0001
     evidence_id = claim_id or f"{parent_id}:{field_name or origin}:{position}"
     candidate_role = role
@@ -275,6 +242,7 @@ def _candidate(
         scripture_references=refs,
         certainty=certainty,
         dispute_status=dispute,
+        rationale=str(data.get("rationale") or data.get("notes") or "").strip(),
         content_status=str(topic.get("content_status") or "").strip(),
         review_status=review_status,
         human_review_required=topic.get("human_review_required") if "human_review_required" in topic else None,
@@ -377,51 +345,22 @@ def collect_evidence(context: Any, *, reference: str = "") -> list[EvidenceCandi
                 if candidate:
                     candidates.append(candidate)
 
-    return _merge_duplicates(candidates)
-
-
-def _merge_duplicates(candidates: Iterable[EvidenceCandidate]) -> list[EvidenceCandidate]:
-    merged: dict[str, EvidenceCandidate] = {}
-    for candidate in candidates:
-        key = re.sub(r"\s+", " ", candidate.text.casefold()).strip()
-        existing = merged.get(key)
-        if existing is None:
-            merged[key] = candidate
-            continue
-        existing.claim_id = existing.claim_id or candidate.claim_id
-        existing.source_ids = merge_unique(existing.source_ids, candidate.source_ids)
-        existing_source_keys = {
-            str(source.get("id") or source.get("title") or "").casefold()
-            for source in existing.source_details
-        }
-        existing.source_details.extend(
-            source
-            for source in candidate.source_details
-            if str(source.get("id") or source.get("title") or "").casefold() not in existing_source_keys
-        )
-        existing.scripture_references = merge_unique(existing.scripture_references, candidate.scripture_references)
-        existing.evidence_id = existing.evidence_id or candidate.evidence_id
-        existing.score = max(existing.score, candidate.score)
-        if existing.scope > candidate.scope:
-            existing.scope = candidate.scope
-        existing.entities = merge_unique(existing.entities, candidate.entities)
-        existing.cross_references = merge_unique(existing.cross_references, candidate.cross_references)
-        if existing.role == NarrativeRole.BACKGROUND and candidate.role != NarrativeRole.BACKGROUND:
-            existing.role = candidate.role
-    return list(merged.values())
+    # Exact and near duplicates are retained until the discourse layer, where
+    # they can be collapsed without discarding either record's provenance.
+    return candidates
 
 
 def rank_evidence(candidates: Sequence[EvidenceCandidate], *, reference: str = "") -> list[EvidenceCandidate]:
     """Use retrieval/review signals and Scripture scope, not a second search engine."""
 
-    direct = any(candidate.scope == 0 for candidate in candidates) if reference else False
+    direct = any(candidate.scope <= PassageScope.SAME_CHAPTER for candidate in candidates) if reference else False
     filtered = [
                 candidate
         for candidate in candidates
         if not direct
         or (
             candidate.field_name != "interpretive_disputes"
-            and (candidate.scope < 2 or not candidate.scripture_references)
+            and (candidate.scope < PassageScope.NEARBY_CHAPTER or not candidate.scripture_references)
         )
     ]
     return sorted(

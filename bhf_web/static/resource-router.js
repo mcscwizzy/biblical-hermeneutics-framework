@@ -209,12 +209,19 @@
         const heading = document.createElement("h4");
         heading.textContent = section.heading || "Context";
         container.append(heading);
-        (section.sentences || []).forEach((sentence) => {
+        const sentences = (section.sentences || []).filter((sentence) => sentence?.text);
+        if (section.type === "caution") {
+          sentences.forEach((sentence) => {
+            const paragraph = document.createElement("p");
+            paragraph.textContent = sentence.text;
+            container.append(paragraph);
+          });
+        } else if (sentences.length) {
           const paragraph = document.createElement("p");
-          paragraph.textContent = sentence.text || "";
+          paragraph.textContent = sentences.map((sentence) => sentence.text).join(" ");
           container.append(paragraph);
-          appendEvidenceDisclosure(container, sentence);
-        });
+        }
+        appendSectionEvidenceDisclosure(container, sentences);
         body.append(container);
       });
       if (resourceId === "archaeology" && supplemental.length) {
@@ -237,35 +244,73 @@
     }
 
     function appendEvidenceDisclosure(host, sentence) {
+      const lines = evidenceLines(sentence);
       const claimIds = Array.isArray(sentence?.claim_ids) ? sentence.claim_ids : [];
       const sourceIds = Array.isArray(sentence?.source_ids) ? sentence.source_ids : [];
-      const sourceDetails = Array.isArray(sentence?.source_details) ? sentence.source_details : [];
       const references = Array.isArray(sentence?.scripture_references) ? sentence.scripture_references : [];
-      const metadata = [
-        sentence?.certainty ? `Certainty: ${humanizeMetadata(sentence.certainty)}` : "",
-        sentence?.dispute_status ? `Dispute: ${humanizeMetadata(sentence.dispute_status)}` : "",
-        sentence?.content_status ? `Status: ${humanizeMetadata(sentence.content_status)}` : "",
-        sentence?.review_status ? `Review: ${humanizeMetadata(sentence.review_status)}` : "",
-        sentence?.human_review_required ? "Human review required" : "",
-        sentence?.parent_object_id ? `CKL record: ${sentence.parent_object_id}` : "",
-      ].filter(Boolean);
-      if (!claimIds.length && !sourceIds.length && !references.length && !metadata.length) return;
+      if (!claimIds.length && !sourceIds.length && !references.length && !lines.length) return;
       const details = document.createElement("details");
       details.className = "companion-evidence-disclosure";
       const summary = document.createElement("summary");
       summary.textContent = `Evidence · ${sourceIds.length || 0} source${sourceIds.length === 1 ? "" : "s"}`;
       details.append(summary);
       const list = document.createElement("ul");
-      const sourceLines = sourceDetails.length
-        ? sourceDetails.map((source) => `Source: ${source.title || source.id || "record"}${source.locator ? ` · ${source.locator}` : ""}`)
-        : sourceIds.map((value) => `Source: ${value}`);
-      [...metadata, ...claimIds.map((value) => `Claim: ${value}`), ...sourceLines, ...references.map((value) => `Scripture: ${value}`)].forEach((value) => {
+      lines.forEach((value) => {
         const item = document.createElement("li");
         item.textContent = value;
         list.append(item);
       });
       details.append(list);
       host.append(details);
+    }
+
+    function appendSectionEvidenceDisclosure(host, sentences) {
+      if (!sentences.length || !sentences.some((sentence) => evidenceLines(sentence).length)) return;
+      const sourceIds = new Set(sentences.flatMap((sentence) => sentence.source_ids || []));
+      const details = document.createElement("details");
+      details.className = "companion-evidence-disclosure companion-section-evidence";
+      const summary = document.createElement("summary");
+      summary.textContent = `Evidence · ${sourceIds.size} source${sourceIds.size === 1 ? "" : "s"}`;
+      details.append(summary);
+      const sentenceList = document.createElement("ol");
+      sentences.forEach((sentence, index) => {
+        const entry = document.createElement("li");
+        const label = document.createElement("strong");
+        label.textContent = `Sentence ${index + 1}`;
+        entry.append(label);
+        const lines = document.createElement("ul");
+        evidenceLines(sentence).forEach((value) => {
+          const item = document.createElement("li");
+          item.textContent = value;
+          lines.append(item);
+        });
+        entry.append(lines);
+        sentenceList.append(entry);
+      });
+      details.append(sentenceList);
+      host.append(details);
+    }
+
+    function evidenceLines(sentence) {
+      const claimIds = Array.isArray(sentence?.claim_ids) ? sentence.claim_ids : [];
+      const sourceIds = Array.isArray(sentence?.source_ids) ? sentence.source_ids : [];
+      const sourceDetails = Array.isArray(sentence?.source_details) ? sentence.source_details : [];
+      const references = Array.isArray(sentence?.scripture_references) ? sentence.scripture_references : [];
+      const parentRecords = Array.isArray(sentence?.parent_records) && sentence.parent_records.length
+        ? sentence.parent_records
+        : sentence?.parent_object_id ? [{id: sentence.parent_object_id, title: sentence.parent_title}] : [];
+      const metadata = [
+        sentence?.certainty ? `Certainty: ${humanizeMetadata(sentence.certainty)}` : "",
+        sentence?.dispute_status ? `Dispute: ${humanizeMetadata(sentence.dispute_status)}` : "",
+        sentence?.content_status ? `Status: ${humanizeMetadata(sentence.content_status)}` : "",
+        sentence?.review_status ? `Review: ${humanizeMetadata(sentence.review_status)}` : "",
+        sentence?.human_review_required ? "Human review required" : "",
+        ...parentRecords.map((record) => `CKL record: ${record.title || record.id || "record"}${record.id && record.title ? ` · ${record.id}` : ""}`),
+      ].filter(Boolean);
+      const sourceLines = sourceDetails.length
+        ? sourceDetails.map((source) => `Source: ${source.title || source.id || "record"}${source.locator ? ` · ${source.locator}` : ""}`)
+        : sourceIds.map((value) => `Source: ${value}`);
+      return [...metadata, ...claimIds.map((value) => `Claim: ${value}`), ...sourceLines, ...references.map((value) => `Scripture: ${value}`)];
     }
 
     function humanizeMetadata(value) {

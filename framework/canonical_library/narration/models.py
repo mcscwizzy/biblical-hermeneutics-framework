@@ -18,6 +18,7 @@ class NarrationLimits:
     max_primary_facts: int = 3
     max_supporting_facts: int = 2
     max_cautions: int = 2
+    max_visible_qualifications_per_section: int = 1
     max_archaeology_items: int = 2
     max_entities: int = 4
     max_cross_references: int = 4
@@ -35,8 +36,11 @@ class NarratedSentence:
     scripture_references: list[str] = field(default_factory=list)
     parent_object_id: str | None = None
     parent_title: str | None = None
+    parent_records: list[dict[str, str | None]] = field(default_factory=list)
     certainty: str | None = None
     dispute_status: str | None = None
+    certainties: list[str] = field(default_factory=list)
+    dispute_statuses: list[str] = field(default_factory=list)
     evidence_ids: list[str] = field(default_factory=list)
     content_status: str | None = None
     review_status: str | None = None
@@ -52,8 +56,11 @@ class NarratedSentence:
             "scripture_references": list(self.scripture_references),
             "parent_object_id": self.parent_object_id,
             "parent_title": self.parent_title,
+            "parent_records": [dict(record) for record in self.parent_records],
             "certainty": self.certainty,
             "dispute_status": self.dispute_status,
+            "certainties": list(self.certainties),
+            "dispute_statuses": list(self.dispute_statuses),
             "evidence_ids": list(self.evidence_ids),
             "content_status": self.content_status,
             "review_status": self.review_status,

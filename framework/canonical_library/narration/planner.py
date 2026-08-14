@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Sequence
 
+from .discourse import aggregate_candidates, select_narrative_units
 from .models import NarratedSection, NarrationLimits
 from .ranking import EvidenceCandidate
 from .realization import realize_candidates
@@ -17,6 +18,8 @@ class PlannedSection:
     heading: str
     candidates: tuple[EvidenceCandidate, ...]
     limit: int
+    qualification_budget: int = 1
+    role_preferences: tuple[str, ...] = ()
 
 
 def _recipe_roles(context_type: str) -> tuple[tuple[str, ...], tuple[str, ...]]:
@@ -84,19 +87,20 @@ def plan_sections(
 
     sections: list[PlannedSection] = []
     primary_candidates = [candidate for candidate in selected if candidate.role in primary_roles]
-    role_priority = {role: index for index, role in enumerate(primary_roles)}
-    primary_candidates.sort(key=lambda candidate: (role_priority.get(candidate.role, len(primary_roles)), -candidate.score, candidate.evidence_id))
+    primary_limit = limits.max_archaeology_items if normalized_type == "archaeology" else limits.max_primary_facts
     if primary_candidates:
-        # A single compact primary section is intentional: the recipe controls
-        # the order through ranking rather than dumping one section per field.
-        primary_role = next((role for role in primary_roles if any(item.role == role for item in primary_candidates)), primary_roles[0])
+        # A single compact primary section is intentional; discourse selection
+        # orders the evidence rather than dumping one section per source field.
+        primary_role = primary_candidates[0].role
         section_type, heading = section_heading(normalized_type, primary_role)
         sections.append(
             PlannedSection(
                 section_type=section_type,
                 heading=heading,
                 candidates=tuple(primary_candidates),
-                limit=limits.max_archaeology_items if normalized_type == "archaeology" else limits.max_primary_facts,
+                limit=primary_limit,
+                qualification_budget=limits.max_visible_qualifications_per_section,
+                role_preferences=primary_roles,
             )
         )
 
@@ -108,7 +112,7 @@ def plan_sections(
             for candidate in caution_candidates
             if any(term in candidate.text.casefold() for term in archaeology_terms)
         ]
-    if caution_candidates:
+    if caution_candidates and sections:
         section_type, heading = section_heading(normalized_type, NarrativeRole.INTERPRETIVE_CAUTION)
         sections.append(
             PlannedSection(
@@ -116,6 +120,8 @@ def plan_sections(
                 heading=heading,
                 candidates=tuple(caution_candidates),
                 limit=limits.max_cautions,
+                qualification_budget=limits.max_visible_qualifications_per_section,
+                role_preferences=caution_roles,
             )
         )
     return sections
@@ -124,7 +130,17 @@ def plan_sections(
 def realize_plan(plan: Sequence[PlannedSection]) -> list[NarratedSection]:
     sections: list[NarratedSection] = []
     for planned in plan:
-        sentences = realize_candidates(planned.candidates, limit=max(0, planned.limit))
+        units = aggregate_candidates(planned.candidates)
+        units = select_narrative_units(
+            units,
+            limit=planned.limit,
+            role_preferences=planned.role_preferences,
+        )
+        sentences = realize_candidates(
+            units,
+            limit=max(0, planned.limit),
+            max_visible_qualifications=planned.qualification_budget,
+        )
         if sentences:
             sections.append(NarratedSection(planned.section_type, planned.heading, sentences))
     return sections

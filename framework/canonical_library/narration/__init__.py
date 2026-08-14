@@ -6,10 +6,13 @@ from collections.abc import Mapping
 from typing import Any, Sequence
 
 from .certainty import CERTAINTY_LANGUAGE, DISPUTE_LANGUAGE, certainty_phrase, dispute_phrase
+from .discourse import NarrativeUnit, aggregate_candidates
 from .models import NarratedSection, NarratedSentence, NarrationLimits, NarrationResult
 from .planner import plan_sections, realize_plan
 from .ranking import EvidenceCandidate, collect_evidence, rank_evidence
 from .roles import NarrativeRole, context_type_alias, role_for
+from .scripture import PassageScope, ScriptureSpan, parse_scripture_span
+from .selection import lead_score, select_lead
 
 
 _RECIPE_TITLES = {
@@ -48,9 +51,27 @@ class CanonicalNarrator:
 
         lead = None
         if sections and self.limits.max_lead_sentences:
-            first = sections[0]
-            if first.sentences:
-                lead = first.sentences[0]
+            selected_evidence_ids = {
+                evidence_id
+                for section in sections
+                for sentence in section.sentences
+                for evidence_id in sentence.evidence_ids
+            }
+            lead_candidate = select_lead(
+                [candidate for candidate in ranked if candidate.evidence_id in selected_evidence_ids],
+                context_type=normalized_type,
+            )
+            if lead_candidate is not None:
+                lead = next(
+                    (
+                        sentence
+                        for section in sections
+                        for sentence in section.sentences
+                        if lead_candidate.evidence_id in sentence.evidence_ids
+                    ),
+                    None,
+                )
+            if lead is not None:
                 remaining: list[NarratedSection] = []
                 lead_removed = False
                 for section in sections:
@@ -141,18 +162,24 @@ __all__ = [
     "CanonicalNarrator",
     "ContextNarrator",
     "EvidenceCandidate",
+    "NarrativeUnit",
     "NarratedSection",
     "NarratedSentence",
     "NarrationLimits",
     "NarrationResult",
     "NarrativeRole",
+    "PassageScope",
+    "ScriptureSpan",
+    "aggregate_candidates",
     "certainty_phrase",
     "collect_evidence",
     "context_type_alias",
     "dispute_phrase",
     "narrate_context",
+    "parse_scripture_span",
     "plan_sections",
     "rank_evidence",
     "realize_plan",
     "role_for",
+    "lead_score",
 ]
