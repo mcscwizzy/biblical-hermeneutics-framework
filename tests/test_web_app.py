@@ -601,6 +601,7 @@ class WebAssetTests(unittest.TestCase):
             r"function applyReaderMode[\s\S]*?if \(!nextEnabled\) \{\n    stopReaderSpeech\(\);",
         )
         self.assertIn(".reader-speech-controls", style)
+        self.assertIn("body.reader-mode .passage-action-strip,", style)
         self.assertIn("bottom: max(32px, calc(20px + env(safe-area-inset-bottom)));", style)
         self.assertIn(".verse.is-speaking", style)
 

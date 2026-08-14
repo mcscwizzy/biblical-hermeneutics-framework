@@ -43,6 +43,7 @@ def test_reader_mode_hides_chrome_and_keeps_only_passage_text_visible(driver, wa
         ".reader-translation-badge",
         ".verse-number",
         ".verse-state-indicators",
+        "[data-passage-action-strip]",
     ]
     for selector in hidden_chrome:
         assert _hidden_or_absent(driver, selector), f"Expected reader mode to hide {selector}"
