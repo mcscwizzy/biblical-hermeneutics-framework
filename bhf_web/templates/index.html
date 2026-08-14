@@ -29,7 +29,7 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260811c">
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260813d">
   <!-- Legacy cache-key references retained for clients that inspect the shell during upgrades. -->
   <!-- href="/static/style.css?v=20260724c" src="/static/htmx-lite.js?v=20260729b" -->
   {# static_asset('/style.css') }}?v=20260724c #}
@@ -57,9 +57,9 @@
   {% if not test_mode %}
     <link rel="stylesheet" href="{{ static_asset('/vendor/leaflet/leaflet.css') }}">
     <script src="{{ static_asset('/vendor/leaflet/leaflet.js') }}" defer></script>
-    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260808a"></script>
+    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260813b"></script>
   {% else %}
-    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260808a"></script>
+    <script type="module" src="{{ static_asset('/maps/MapPanel.js') }}?v=20260813b"></script>
   {% endif %}
 </head>
 <body>

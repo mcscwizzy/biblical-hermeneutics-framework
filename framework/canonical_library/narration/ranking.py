@@ -123,6 +123,41 @@ def _topics(context: Any) -> list[Any]:
     return [context]
 
 
+def _is_foreign_book_topic(topic: Mapping[str, Any], reference: str) -> bool:
+    """Identify book records reached only through another book's cross-reference.
+
+    A book record can legitimately carry cross-book Scripture anchors (for
+    example, John links its Logos prologue to Genesis 1).  Those anchors make
+    the record retrievable for canonical/intertextual evidence, but they do
+    not make John's unscoped literary notes evidence about Genesis.  Explicitly
+    referenced claims remain eligible and are filtered by passage scope later.
+    """
+
+    if _key(topic.get("type")) != "book":
+        return False
+    requested = _scripture_parts(reference)
+    if requested is None:
+        return False
+    topic_book = re.sub(r"\s+", " ", str(topic.get("title") or "").strip()).casefold()
+    if not topic_book or topic_book == requested[0]:
+        return False
+    for raw_reference in topic.get("scripture_references") or []:
+        data = as_mapping(raw_reference)
+        candidate_reference = (
+            data.get("reference")
+            if data
+            else raw_reference if isinstance(raw_reference, str) else ""
+        )
+        relationship = _key(data.get("relationship")) if data else ""
+        if references_overlap(reference, candidate_reference) and relationship in {
+            "",
+            "direct",
+            "primary",
+        }:
+            return False
+    return True
+
+
 def _topic_and_result(item: Any) -> tuple[dict[str, Any], dict[str, Any]]:
     result = as_mapping(item)
     raw_object = result.get("object") or getattr(item, "object", None)
@@ -273,11 +308,14 @@ def collect_evidence(context: Any, *, reference: str = "") -> list[EvidenceCandi
     candidates: list[EvidenceCandidate] = []
     for topic_item in _topics(context):
         topic, result = _topic_and_result(topic_item)
+        foreign_book_topic = _is_foreign_book_topic(topic, reference)
         parent_refs = strings(topic.get("scripture_references"))
         selected = topic.get("selected_claims")
         claims = selected if isinstance(selected, list) and selected else topic.get("claims") or []
         for position, raw_claim in enumerate(claims):
             claim = as_mapping(raw_claim)
+            if foreign_book_topic and not strings(claim.get("scripture_references")):
+                continue
             claim_text = claim.get("claim") or claim.get("claim_text")
             candidate = _candidate(
                 text=claim_text,
@@ -296,6 +334,8 @@ def collect_evidence(context: Any, *, reference: str = "") -> list[EvidenceCandi
         notes = topic.get("interpretive_notes") or []
         for position, raw_note in enumerate(notes):
             note = as_mapping(raw_note)
+            if foreign_book_topic and not strings(note.get("scripture_references")):
+                continue
             note_text = note.get("note") or note.get("text") or (raw_note if isinstance(raw_note, str) else "")
             candidate = _candidate(
                 text=note_text,
@@ -313,6 +353,8 @@ def collect_evidence(context: Any, *, reference: str = "") -> list[EvidenceCandi
 
         for position, field_name in enumerate(_FIELD_ORDER):
             if field_name not in topic:
+                continue
+            if foreign_book_topic:
                 continue
             values = topic.get(field_name)
             if isinstance(values, (list, tuple)):

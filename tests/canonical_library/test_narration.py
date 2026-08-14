@@ -110,6 +110,29 @@ class NarrationTests(unittest.TestCase):
         self.assertNotIn("Hannah's song", text)
         self.assertNotIn("At Endor", text)
 
+    def test_cross_book_anchor_does_not_import_unscoped_john_literary_notes(self) -> None:
+        record = load_object("framework/canonical_library/objects/books/john.json")
+
+        literary = CanonicalNarrator().narrate(
+            record,
+            reference="Genesis 1:1-5",
+            context_type="literary_context",
+        )
+        canonical = CanonicalNarrator().narrate(
+            record,
+            reference="Genesis 1:1-5",
+            context_type="canonical_context",
+        )
+        canonical_text = " ".join(
+            [canonical.lead.text if canonical.lead else ""]
+            + [sentence.text for section in canonical.sections for sentence in section.sentences]
+        )
+
+        self.assertFalse(literary.has_content)
+        self.assertIn("Logos", canonical_text)
+        self.assertNotIn("John 19:35", canonical_text)
+        self.assertNotIn("John the Baptist", canonical_text)
+
     def test_empty_evidence_returns_no_narration(self) -> None:
         result = CanonicalNarrator().narrate({}, context_type="historical_context")
         self.assertFalse(result.has_content)

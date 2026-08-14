@@ -105,10 +105,30 @@ def test_mobile_map_details_can_be_closed(driver, wait, base_url):
     details = driver.find_element(By.CSS_SELECTOR, "#map-details-column")
     open_button = driver.find_element(By.CSS_SELECTOR, "[data-map-details-open]")
     close_button = driver.find_element(By.CSS_SELECTOR, "[data-map-details-close]")
+    maps_pane = driver.find_element(By.CSS_SELECTOR, '#workspace-pane-maps')
 
     open_button.click()
     wait.until(lambda _driver: "is-mobile-open" in details.get_attribute("class"))
     assert close_button.is_displayed()
+    assert driver.execute_script("return getComputedStyle(arguments[0]).position", details) == "static"
+    wait.until(lambda _driver: maps_pane.get_property("scrollTop") > 0)
+
+    driver.execute_script("arguments[0].scrollTop = 0", maps_pane)
+    assert maps_pane.get_property("scrollTop") == 0
+    scroll_metrics = driver.execute_script(
+        """
+        const pane = arguments[0];
+        pane.scrollTop = pane.scrollHeight;
+        return {
+          clientHeight: pane.clientHeight,
+          scrollHeight: pane.scrollHeight,
+          scrollTop: pane.scrollTop,
+        };
+        """,
+        maps_pane,
+    )
+    assert scroll_metrics["scrollHeight"] > scroll_metrics["clientHeight"]
+    assert scroll_metrics["scrollTop"] > 0
 
     close_button.click()
     wait.until(lambda _driver: "is-mobile-open" not in details.get_attribute("class"))

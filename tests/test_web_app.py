@@ -812,6 +812,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn(".map-entity-marker--manuscript", style)
         self.assertIn(".map-shortcut", style)
         self.assertIn(".map-details-card .compact", style)
+        self.assertIn(".map-details-column.is-mobile-open", style)
+        self.assertIn("position: static;", style)
         self.assertIn("@media (max-width: 680px)", style)
         self.assertIn(".map-panel-body {\n    gap: 10px;", style)
         self.assertIn(".map-details-panel,\n  .saved-map-study {\n    padding: 12px;", style)

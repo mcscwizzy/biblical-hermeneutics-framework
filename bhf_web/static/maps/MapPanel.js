@@ -409,6 +409,16 @@ function setMobileDetailsOpen(isOpen) {
   const open = Boolean(isOpen);
   detailsColumn?.classList.toggle("is-mobile-open", open);
   detailsOpen?.setAttribute("aria-expanded", String(open));
+  if (
+    open &&
+    detailsColumn &&
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(max-width: 900px)").matches
+  ) {
+    window.requestAnimationFrame(() => {
+      detailsColumn.scrollIntoView({block: "nearest"});
+    });
+  }
 }
 
 function setBrowseSearchControls({ query = "", kind = "all", period = "all" } = {}) {
