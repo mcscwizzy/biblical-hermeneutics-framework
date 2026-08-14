@@ -44,7 +44,17 @@ def test_explore_maps_card_opens_visible_browse_workspace(driver, wait, base_url
 
     wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "#map-panel").is_displayed())
     wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "#map-search-results").is_displayed())
-    assert driver.find_element(By.CSS_SELECTOR, '[data-testid="map-search-input"]').is_displayed()
+    search_input = driver.find_element(By.CSS_SELECTOR, '[data-testid="map-search-input"]')
+    assert search_input.is_displayed()
+    search_input.click()
+    active_element = driver.switch_to.active_element
+    assert active_element == search_input, active_element.get_attribute("outerHTML")
+    search_input.send_keys("Jerusalem")
+    assert search_input.get_attribute("value") == "Jerusalem"
+    clear_button = driver.find_element(By.CSS_SELECTOR, '[data-testid="map-search-clear"]')
+    clear_button.click()
+    assert driver.switch_to.active_element == clear_button
+    assert search_input.get_attribute("value") == ""
     assert driver.execute_script("return document.querySelector('[data-study-companion]').inert") is False
 
 

@@ -420,6 +420,7 @@
       ensureResourceVisible(
         resourceId,
         window.BHFStudyRecommendations?.resources?.maps,
+        {focus: false},
       );
       const selectedContext = window.BHFStudySelection?.getState?.();
       const mapContext = currentMode === "explore"
@@ -456,7 +457,10 @@
       back.setAttribute("aria-label", `Back to ${selection?.reference || "passage"} overview`);
     }
     renderResourceHeader(resourceId, resolved);
-    setState(options.state || (compactViewport() ? "full" : "study"), {history: false});
+    setState(options.state || (compactViewport() ? "full" : "study"), {
+      focus: options.focus,
+      history: false,
+    });
   }
 
   function showPersonalResource(resourceId, label) {

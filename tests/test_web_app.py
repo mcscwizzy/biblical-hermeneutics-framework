@@ -445,6 +445,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn('typeof window.BHFMaps?.openMapPanel === "function"', companion_script)
         self.assertIn('await window.BHFMaps.openMapPanel(', companion_script)
         self.assertIn("ensureResourceVisible(\n        resourceId,", companion_script)
+        self.assertIn("{focus: false}", companion_script)
+        self.assertIn("focus: options.focus,", companion_script)
         self.assertIn('currentMode === "explore"', companion_script)
         self.assertIn('await actions?.perform?.("open_map_panel", mapContext);', companion_script)
 
