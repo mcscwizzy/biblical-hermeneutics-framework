@@ -153,6 +153,7 @@
     panel.dataset.companionState = normalized;
     panel.setAttribute("aria-expanded", String(normalized !== "closed"));
     document.body.classList.toggle("companion-sheet-open", compactViewport() && normalized !== "closed" && normalized !== "peek");
+    document.body.classList.toggle("companion-sheet-peek", compactViewport() && normalized === "peek");
     document.body.classList.toggle("companion-sheet-full", normalized === "full");
     const peek = panel.querySelector("[data-companion-state-control='study'].companion-peek");
     if (peek) peek.hidden = normalized !== "peek";

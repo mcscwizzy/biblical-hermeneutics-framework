@@ -879,9 +879,13 @@ body.companion-sheet-full {
     position: fixed;
     z-index: 10000;
     right: 10px;
-    bottom: calc(var(--app-dock-height) + 70px + env(safe-area-inset-bottom));
+    bottom: calc(var(--app-dock-height) + 6px + env(safe-area-inset-bottom));
     left: 10px;
     margin: 0 auto;
+  }
+
+  body.companion-sheet-peek .passage-action-strip {
+    bottom: calc(var(--app-dock-height) + 70px + env(safe-area-inset-bottom));
   }
 
   .app-dock {

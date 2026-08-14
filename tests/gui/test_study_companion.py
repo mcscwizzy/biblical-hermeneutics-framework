@@ -94,6 +94,14 @@ def test_mobile_selection_opens_accessible_companion_states(driver, wait, base_u
     assert driver.find_element(By.CSS_SELECTOR, ".reader-column").get_attribute("aria-hidden") == "true"
     driver.find_element(By.CSS_SELECTOR, '[data-companion-state-control="closed"]').click()
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "closed")
+    closed_spacing = driver.execute_script(
+        """
+        const actions = document.querySelector('[data-passage-action-strip]').getBoundingClientRect();
+        const dock = document.querySelector('[data-app-dock]').getBoundingClientRect();
+        return {gap: dock.top - actions.bottom};
+        """
+    )
+    assert 0 <= closed_spacing["gap"] <= 10
 
 
 def test_mobile_maps_explorer_opens_visible_map_workspace(driver, wait, base_url):
