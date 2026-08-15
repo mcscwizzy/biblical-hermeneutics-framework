@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any, Sequence
 
 from .evidence import RetrievedClaimEvidence, rank_claims
+from .evidence_retrieval import RetrievedEvidenceItem, rank_evidence_items
 from .normalization import normalize_alias, normalize_id, tokenize_query
 from .query_analysis import (
     AmbiguousEntityCandidate,
@@ -174,6 +175,16 @@ class CanonicalLibrary:
                     continue
                 parsed_references.append(parsed)
                 self._scripture_book_index.setdefault(parsed.book, set()).add(obj.id)
+            for evidence in obj.evidence_items:
+                for reference in evidence.scripture_references:
+                    parsed = parse_scripture_reference(
+                        reference.reference,
+                        book_alias_lookup=self._book_alias_lookup,
+                    )
+                    if parsed is None or parsed in parsed_references:
+                        continue
+                    parsed_references.append(parsed)
+                    self._scripture_book_index.setdefault(parsed.book, set()).add(obj.id)
             self._scripture_references_by_object[obj.id] = parsed_references
 
         try:
@@ -484,6 +495,34 @@ class CanonicalLibrary:
             if obj is None:
                 continue
             ranked[object_id] = rank_claims(
+                question,
+                obj,
+                parent_relevance=float((parent_scores or {}).get(object_id, 0.0)),
+                requested_dimensions=requested_dimensions,
+                scripture_references=scripture_references,
+                limit=limit_per_object,
+            )
+        return ranked
+
+    def retrieve_evidence_items(
+        self,
+        question: str,
+        object_ids: Sequence[str],
+        *,
+        parent_scores: dict[str, float] | None = None,
+        requested_dimensions: Sequence[str] = (),
+        scripture_references: Sequence[str] = (),
+        limit_per_object: int = 4,
+    ) -> dict[str, list[RetrievedEvidenceItem]]:
+        """Rank auditable evidence records within relevant object candidates."""
+
+        self._ensure_loaded()
+        ranked: dict[str, list[RetrievedEvidenceItem]] = {}
+        for object_id in dict.fromkeys(normalize_id(value) for value in object_ids):
+            obj = self.objects_by_id.get(object_id)
+            if obj is None:
+                continue
+            ranked[object_id] = rank_evidence_items(
                 question,
                 obj,
                 parent_relevance=float((parent_scores or {}).get(object_id, 0.0)),

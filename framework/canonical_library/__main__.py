@@ -9,6 +9,7 @@ from pathlib import Path
 
 from . import CanonicalLibrary, CanonicalValidationError
 from .database_builder import build_database, database_info, verify_database
+from .database_migrations import migrate_database
 from .database_schema import DEFAULT_CKL_DATABASE_PATH
 from .public_cache import (
     load_framework_version,
@@ -41,6 +42,14 @@ def build_parser() -> argparse.ArgumentParser:
         "--json",
         action="store_true",
         help="Emit machine-readable database metadata",
+    )
+
+    migrate_db = subparsers.add_parser("migrate-db", help="Migrate an existing CKL SQLite database")
+    migrate_db.add_argument("--database", default=DEFAULT_CKL_DATABASE_PATH, help="SQLite database path")
+    migrate_db.add_argument(
+        "--no-backup",
+        action="store_true",
+        help="Do not create the default versioned backup before migration",
     )
 
     parser.add_argument(
@@ -116,6 +125,10 @@ def main(argv: list[str] | None = None) -> int:
             else:
                 _print_db_report(report)
             return 0
+        if args.command == "migrate-db":
+            report = migrate_database(args.database, backup=not args.no_backup)
+            print(json.dumps(report, indent=2, ensure_ascii=True))
+            return 0
 
         library = _load_library(args.root)
         report = _build_report(library)
@@ -133,9 +146,13 @@ def main(argv: list[str] | None = None) -> int:
 def _print_db_report(report: dict[str, object]) -> None:
     print(f"Database path: {report.get('database_path') or report.get('path')}")
     print(f"Database schema version: {report.get('database_schema_version')}")
+    print(f"Retrieval index version: {report.get('retrieval_index_version')}")
     print(f"Framework version: {report.get('framework_version')}")
     print(f"CKL schema version: {report.get('schema_version')}")
     print(f"CKL object count: {report.get('object_count')}")
+    print(f"Claim count: {report.get('claim_count')}")
+    print(f"Source count: {report.get('source_count')}")
+    print(f"Evidence count: {report.get('evidence_count')}")
     print(f"Build timestamp: {report.get('build_timestamp')}")
     print(f"Inventory fingerprint: {report.get('inventory_fingerprint')}")
     print(f"Database file size: {report.get('database_file_size') or report.get('file_size')} bytes")

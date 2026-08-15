@@ -51,7 +51,7 @@ class CanonicalReleaseTests(unittest.TestCase):
         self.assertEqual(payload["framework_version"], load_framework_version())
         self.assertEqual(payload["ckl_manifest_framework_version"], "1.0")
         self.assertEqual(payload["ckl_manifest_schema_version"], "1.0")
-        self.assertEqual(payload["ckl_object_count"], 620)
+        self.assertEqual(payload["ckl_object_count"], 625)
         self.assertIn("ckl_inventory_fingerprint", payload)
 
 

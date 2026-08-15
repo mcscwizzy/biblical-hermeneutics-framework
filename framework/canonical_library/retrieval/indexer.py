@@ -56,6 +56,8 @@ class IndexedCKLEntry:
     normalized_keywords: list[str] = field(default_factory=list)
     normalized_themes: list[str] = field(default_factory=list)
     normalized_facts: list[str] = field(default_factory=list)
+    temporal_scope: dict[str, Any] = field(default_factory=dict)
+    evidence_temporal_relations_by_book: dict[str, list[str]] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -75,6 +77,11 @@ class IndexedCKLEntry:
             "review_status": self.review_status,
             "confidence": self.confidence,
             "importance": self.importance,
+            "temporal_scope": dict(self.temporal_scope),
+            "evidence_temporal_relations_by_book": {
+                book: list(values)
+                for book, values in self.evidence_temporal_relations_by_book.items()
+            },
         }
 
 
@@ -253,6 +260,24 @@ def _index_object(
             source_path = path.as_posix()
 
     field_terms = _expand_field_search_terms(collect_field_search_terms(obj))
+    evidence_search_values = [
+        text
+        for item in getattr(obj, "evidence_items", []) or []
+        for text in (
+            item.title,
+            item.description,
+            item.primary_observation,
+            item.scholarly_interpretation,
+            item.passage_relevance,
+            item.confidence_rationale,
+            item.evidence_type,
+        )
+        if text
+    ]
+    if evidence_search_values:
+        field_terms["evidence_items"] = set(
+            normalize_alias(" ".join(evidence_search_values)).split()
+        )
     keywords = sorted({term for terms in field_terms.values() for term in terms})
     normalized_keywords = sorted({normalize_alias(keyword) for keyword in keywords if normalize_alias(keyword)})
 
@@ -265,6 +290,18 @@ def _index_object(
             parsed = parse_scripture_reference(reference_text, book_alias_lookup=book_alias_lookup)
             if parsed is not None:
                 scripture_spans.append(parsed)
+
+    evidence_temporal_relations_by_book: dict[str, list[str]] = {}
+    for item in getattr(obj, "evidence_items", []) or []:
+        for reference in item.scripture_references:
+            parsed = parse_scripture_reference(reference.reference, book_alias_lookup=book_alias_lookup)
+            if parsed is None:
+                continue
+            script_refs.append(reference.reference)
+            scripture_spans.append(parsed)
+            relations = evidence_temporal_relations_by_book.setdefault(parsed.book, [])
+            if reference.temporal_relation not in relations:
+                relations.append(reference.temporal_relation)
 
     related_edges = [_normalize_related_edge(item) for item in getattr(obj, "related_objects", []) or []]
     legacy_related_ids = (
@@ -281,6 +318,9 @@ def _index_object(
                 "notes": "",
             }
         )
+    for item in getattr(obj, "evidence_items", []) or []:
+        for relationship in item.related_objects:
+            related_edges.append(_normalize_related_edge(relationship))
 
     related_entries = sorted(
         {
@@ -324,6 +364,7 @@ def _index_object(
         " ".join(themes),
         " ".join(script_refs),
         " ".join(related_entries),
+        " ".join(evidence_search_values),
     ]
     search_text = normalize_text(" ".join(part for part in search_parts if part.strip()))
     high_signal_parts = [
@@ -365,6 +406,12 @@ def _index_object(
         normalized_keywords=normalized_keywords,
         normalized_themes=[normalize_alias(theme) for theme in themes if normalize_alias(theme)],
         normalized_facts=[normalize_alias(fact) for fact in facts if normalize_alias(fact)],
+        temporal_scope=(
+            obj.temporal_scope.to_dict()
+            if hasattr(getattr(obj, "temporal_scope", None), "to_dict")
+            else dict(getattr(obj, "temporal_scope", {}) or {})
+        ),
+        evidence_temporal_relations_by_book=evidence_temporal_relations_by_book,
     )
 
 
@@ -451,6 +498,17 @@ def _entry_facts(obj: CanonicalObject) -> list[str]:
                 str(claim.get("claim") or ""),
                 str(claim.get("rationale") or ""),
                 str(claim.get("notes") or ""),
+            ]
+        )
+    for item in getattr(obj, "evidence_items", []) or []:
+        candidates.extend(
+            [
+                item.title,
+                item.description,
+                item.primary_observation,
+                item.scholarly_interpretation,
+                item.passage_relevance,
+                item.confidence_rationale,
             ]
         )
     candidates.extend(getattr(obj, "common_questions", []) or [])

@@ -11,8 +11,9 @@ from pathlib import Path
 from typing import Any, Iterator, Sequence
 
 from .database_builder import verify_database
-from .database_schema import CKL_DATABASE_SCHEMA_VERSION
+from .database_schema import CKL_DATABASE_SCHEMA_VERSION, CKL_RETRIEVAL_INDEX_VERSION
 from .evidence import RetrievedClaimEvidence, rank_claims
+from .evidence_retrieval import RetrievedEvidenceItem, rank_evidence_items
 from .loader import CanonicalLibrary
 from .normalization import normalize_alias, normalize_id, tokenize_query
 from .query_analysis import AmbiguousEntityResolution
@@ -326,6 +327,33 @@ class SQLiteCanonicalRepository:
             )
         return ranked
 
+    def retrieve_evidence_items(
+        self,
+        question: str,
+        object_ids: Sequence[str],
+        *,
+        parent_scores: Mapping[str, float] | None = None,
+        requested_dimensions: Sequence[str] = (),
+        scripture_references: Sequence[str] = (),
+        limit_per_object: int = 4,
+    ) -> dict[str, list[RetrievedEvidenceItem]]:
+        ids = sorted({normalize_id(value) for value in object_ids if normalize_id(value)})
+        objects = self._objects_by_ids(ids)
+        ranked: dict[str, list[RetrievedEvidenceItem]] = {}
+        for object_id in ids:
+            obj = objects.get(object_id)
+            if obj is None:
+                continue
+            ranked[object_id] = rank_evidence_items(
+                question,
+                obj,
+                parent_relevance=float((parent_scores or {}).get(object_id, 0.0)),
+                requested_dimensions=requested_dimensions,
+                scripture_references=scripture_references,
+                limit=limit_per_object,
+            )
+        return ranked
+
     def search_fts(self, query: str, *, limit: int = 25) -> list[tuple[str, float]]:
         """Return deterministic FTS5/BM25 candidates (lower raw BM25 is better)."""
 
@@ -492,14 +520,21 @@ class SQLiteCanonicalRepository:
             return []
         rows = self._conn.execute(
             """
-            SELECT object_id, reference_text, book, start_chapter, start_verse, end_chapter, end_verse
+            SELECT object_id, reference_text, book, start_chapter, start_verse,
+                   end_chapter, end_verse, 'object' AS link_kind
             FROM canonical_scripture_references
+            WHERE book = ?
+            UNION ALL
+            SELECT object_id, reference_text, book, start_chapter, start_verse,
+                   end_chapter, end_verse, 'evidence' AS link_kind
+            FROM canonical_evidence_scripture_references
             WHERE book = ?
             ORDER BY object_id, reference_text
             """,
-            (query.book,),
+            (query.book, query.book),
         ).fetchall()
         matches_by_id: dict[str, list[ScriptureReferenceSpan]] = {}
+        evidence_linked_ids: set[str] = set()
         for row in rows:
             candidate = ScriptureReferenceSpan(
                 book=str(row["book"]),
@@ -509,7 +544,11 @@ class SQLiteCanonicalRepository:
                 end_verse=row["end_verse"],
             )
             if scripture_reference_overlaps(query, candidate):
-                matches_by_id.setdefault(str(row["object_id"]), []).append(candidate)
+                object_matches = matches_by_id.setdefault(str(row["object_id"]), [])
+                if candidate not in object_matches:
+                    object_matches.append(candidate)
+                if str(row["link_kind"]) == "evidence":
+                    evidence_linked_ids.add(str(row["object_id"]))
         results: list[RetrievalResult] = []
         for object_id in sorted(matches_by_id):
             obj = self.get_by_id(object_id)
@@ -525,7 +564,11 @@ class SQLiteCanonicalRepository:
                     ),
                     match_type="scripture",
                     matched_terms=scripture_query_terms(query),
-                    matched_fields=["scripture_references"],
+                    matched_fields=(
+                        ["scripture_references", "evidence_items"]
+                        if object_id in evidence_linked_ids
+                        else ["scripture_references"]
+                    ),
                     matched_alias=query.book,
                 )
             )
@@ -559,8 +602,12 @@ class SQLiteCanonicalRepository:
         scripture_mode = bool(scripture_query is not None and scripture_query.start_chapter is not None)
         if scripture_mode:
             rows = self._conn.execute(
-                "SELECT DISTINCT object_id FROM canonical_scripture_references WHERE book = ?",
-                (scripture_query.book,),
+                """
+                SELECT object_id FROM canonical_scripture_references WHERE book = ?
+                UNION
+                SELECT object_id FROM canonical_evidence_scripture_references WHERE book = ?
+                """,
+                (scripture_query.book, scripture_query.book),
             ).fetchall()
             candidate_ids.update(str(row["object_id"]) for row in rows)
         normalized_query = normalize_alias(query)
@@ -788,6 +835,13 @@ class SQLiteCanonicalRepository:
             raise RuntimeError(
                 f"CKL SQLite database schema version {CKL_DATABASE_SCHEMA_VERSION} is required, "
                 f"but version {found or '<missing>'} was found. Rebuild the database with: "
+                "python -m framework.canonical_library build-db"
+            )
+        index_version = self._metadata.get("retrieval_index_version")
+        if index_version != CKL_RETRIEVAL_INDEX_VERSION:
+            raise RuntimeError(
+                f"CKL retrieval index version {CKL_RETRIEVAL_INDEX_VERSION} is required, "
+                f"but version {index_version or '<missing>'} was found. Rebuild the database with: "
                 "python -m framework.canonical_library build-db"
             )
 
@@ -1054,6 +1108,14 @@ class SQLiteCanonicalLibrary(CanonicalLibrary):
         **kwargs: Any,
     ) -> dict[str, list[RetrievedClaimEvidence]]:
         return self.repository.retrieve_claim_evidence(question, object_ids, **kwargs)
+
+    def retrieve_evidence_items(
+        self,
+        question: str,
+        object_ids: Sequence[str],
+        **kwargs: Any,
+    ) -> dict[str, list[RetrievedEvidenceItem]]:
+        return self.repository.retrieve_evidence_items(question, object_ids, **kwargs)
 
     def retrieve_by_scripture_reference(self, reference: Any, limit: int = 10, **filters: Any) -> list[RetrievalResult]:
         return self.repository.retrieve_by_scripture_reference(reference, limit=limit, library=self, **filters)

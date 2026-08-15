@@ -6,7 +6,7 @@ from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
 
-from ..normalization import normalize_alias
+from ..normalization import normalize_alias, normalize_id
 from ..schema import KNOWLEDGE_LAYER_PRIORITY
 from .indexer import CKLIndex, IndexedCKLEntry, load_index
 from .models import CKLIndexStats, CKLSearchResponse, CKLSearchResult, QueryAnalysis
@@ -69,6 +69,8 @@ class CKLRetrievalService:
             scored = score_indexed_entry(analysis, entry, debug=debug)
             if scored is None or scored.score < threshold:
                 continue
+            if not _passes_scripture_noise_guard(analysis, entry, scored):
+                continue
             direct_scores[scored.id] = scored
             result_sources[scored.id] = 0
             if scored.score >= 0.7:
@@ -87,6 +89,8 @@ class CKLRetrievalService:
                     debug=debug,
                 )
                 if scored is None or scored.score < threshold:
+                    continue
+                if not _passes_scripture_noise_guard(analysis, entry, scored):
                     continue
                 if scored.score < 0.1:
                     continue
@@ -324,6 +328,39 @@ def _knowledge_layer_rank(value: str | None) -> int:
         return KNOWLEDGE_LAYER_PRIORITY.index(str(value))
     except ValueError:
         return len(KNOWLEDGE_LAYER_PRIORITY)
+
+
+def _passes_scripture_noise_guard(
+    analysis: QueryAnalysis,
+    entry: IndexedCKLEntry,
+    result: CKLSearchResult,
+) -> bool:
+    """Require an authored passage/cross-period link for passage-scoped hits."""
+
+    passage_queries = [
+        reference
+        for reference in analysis.scripture_references
+        if reference.start_chapter is not None
+    ]
+    if not passage_queries or "scripture_references" in result.matched_fields:
+        return True
+
+    queried_book_ids = {normalize_id(reference.book) for reference in passage_queries}
+    explicit_relationship_markers = {
+        "comparative",
+        "cross-period",
+        "intertext",
+        "quotation",
+        "allusion",
+        "typology",
+    }
+    for edge in entry.related_edges:
+        if normalize_id(str(edge.get("id") or "")) not in queried_book_ids:
+            continue
+        relationship = str(edge.get("relationship") or "").lower()
+        if any(marker in relationship for marker in explicit_relationship_markers):
+            return True
+    return False
 
 
 def load_service(

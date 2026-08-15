@@ -2,13 +2,15 @@
 
 ## Archaeology boundary
 
-CKL is not the authoritative home of archaeological evidence. It stores
-curated biblical context, people, places, events, themes, and interpretation.
+CKL is not the authoritative home of archaeological catalog or media data. It stores
+curated biblical context, people, places, events, themes, claims, and
+passage-specific evidence relationships.
 The Archaeology subsystem owns material evidence and its media/licensing.
 Legacy CKL objects in `objects/archaeology/` remain compatibility records for
-stable historical IDs during migration; new archaeological content must be
-authored in the archaeology domain. CKL UI can show compact related-evidence
-cards without copying archaeological detail or image metadata.
+stable historical IDs during migration. New artifact/site catalog content and
+rights-aware media must be authored in the archaeology domain. CKL evidence
+items may point to those records with `external_references`; they add an
+auditable passage relationship and relevance explanation without copying media.
 
 ## Runtime Storage
 
@@ -46,6 +48,7 @@ Build and verify:
 python -m framework.canonical_library build-db --output .bhf/ckl.sqlite
 python -m framework.canonical_library verify-db --database .bhf/ckl.sqlite
 python -m framework.canonical_library db-info --database .bhf/ckl.sqlite
+python -m framework.canonical_library migrate-db --database .bhf/ckl.sqlite
 ```
 
 Lexical onboarding and smoke checks:
@@ -64,16 +67,23 @@ in place.
 SQLite stores the full validated canonical object in `payload_json` for
 compatibility and also normalizes claims, claim scripture references, sources,
 claim-to-source support, aliases, keywords, relationships, and object scripture
-references. An FTS5 index covers high-signal object and claim text. Runtime
+references. Evidence items, chronology, passage links, evidence-to-claim/source
+links, object/geography/evidence relationships, and external-domain references
+are normalized into indexed tables. An FTS5 index covers high-signal object,
+claim, and evidence text. Runtime
 retrieval fuses deterministic exact/keyword/scripture scoring with bounded BM25
 candidates, then ranks claims inside the selected objects and hydrates only the
 sources linked to those claims. The BHF agent still controls query analysis,
 guarded one-hop relationship expansion, context package construction, and
 language-model prompting. The model does not query SQLite directly.
 
-The current generated database schema is version 3 and the retrieval index is
-version 2. Older artifacts fail with a rebuild command instead of being opened
-silently. The build records both the semantic inventory fingerprint and a cheap
+The current generated database schema is version 4 and the retrieval index is
+version 3. The additive `3 -> 4` migration creates evidence and temporal tables,
+preserves existing rows, and writes a versioned backup by default. It derives
+default object chronology from the stored payload. Rebuild after authoring new
+JSON evidence because a version 3 artifact cannot contain the new normalized
+evidence rows. Versions without a supported migration fail with a rebuild
+instruction rather than being opened silently. The build records both the semantic inventory fingerprint and a cheap
 source inventory signature so normal startup can detect stale artifacts without
 reparsing the complete JSON library.
 
@@ -147,6 +157,53 @@ available.
 
 CKL stores canonical facts, retrieval metadata, and future scholarship in a deterministic format. The CKL layer itself stops at the retrieval foundation: it does not infer theology, generate explanations, or call an LLM.
 
+## Architecture audit (2026-08-14)
+
+The evidence expansion began with a read-only inventory and contract audit:
+
+- The authoritative inventory contains 625 validated objects across 18 object
+  categories. JSON remains the reviewable source of truth; the manifest carries
+  counts and framework/schema versions.
+- `schema.py` already provided a typed canonical object, claims, structured
+  sources, Scripture anchors, governance, knowledge layers, and object
+  relationships. The evidence work extends that model rather than replacing it.
+- `loader.py` and `authoring.py` own JSON discovery, default migration,
+  validation, indexing, fingerprints, templates, reports, and manifest checks.
+- The generated SQLite store already normalized objects, aliases, keywords,
+  relationships, Scripture references, claims, sources, FTS5 documents, and
+  lexicon tables. Schema v4 adds evidence tables without changing JSON
+  authority or deleting legacy tables.
+- Retrieval already combined exact ID/title/alias, Scripture, weighted fields,
+  category and governance signals, guarded object relationships, and optional
+  SQLite BM25. Evidence ranking is now a bounded second stage inside those
+  selected subjects.
+- `context_builder.py` already budgeted and packaged claims, sources, context
+  layers, cautions, relationships, and coverage metadata. It now packages
+  selected evidence and its relevance/chronology labels before model synthesis.
+- Passage linking existed at object and claim levels. Evidence links add an
+  explicit relationship, weight, temporal relation, and relevance rationale;
+  both JSON and SQLite reverse passage lookup include those links.
+- Archaeology was already a mature peer domain with sites, items, Scripture
+  links, details, confidence, stable CKL links, and rights-aware media. It is
+  preserved rather than folded into CKL.
+- Historical/cultural coverage was broad but uneven. Five recently added
+  cultural-background drafts lacked explicit migration provenance; the audit
+  adds that provenance while leaving them in human-review state.
+- Temporal information previously lived mostly in prose, book date ranges, and
+  timeline entries. It could not reliably distinguish artifact date, narrative
+  setting, source composition, or comparative chronological distance.
+- Sources and claims were structured and normalized, but a passage-specific
+  evidence unit had no required “why this matters” field or confidence
+  explanation. The new evidence contract supplies both.
+- FastAPI search/detail routes and prompt packets are additive consumers of the
+  canonical payload. New `temporal_scope`, `evidence_items`,
+  `selected_evidence`, counts, resolved sources, and coverage fields preserve
+  existing keys and older JSON defaults.
+
+This audit also found stale test expectations for the 625-object inventory and
+a golden-claim test coupled to an old local schema-v3 database. Those tests now
+derive a current database and assert the actual manifest inventory.
+
 ## Architectural Role
 
 The long-term flow is:
@@ -169,17 +226,18 @@ When CKL content is prepared for a model prompt, the context builder emits secti
 1. Summary
 2. Primary Scripture References
 3. Sourced Claims
-4. Immediate Literary Context
-5. Historical Context
-6. Ancient Near Eastern Context
-7. Hebraic Worldview
-8. Second Temple Context
-9. Covenant and Canonical Context
-10. Intertextual Connections
-11. New Testament Connections
-12. Interpretive Disputes and Cautions
-13. Later Christian Reception
-14. Sources
+4. Contextual Evidence
+5. Immediate Literary Context
+6. Historical Context
+7. Ancient Near Eastern Context
+8. Hebraic Worldview
+9. Second Temple Context
+10. Covenant and Canonical Context
+11. Intertextual Connections
+12. New Testament Connections
+13. Interpretive Disputes and Cautions
+14. Later Christian Reception
+15. Sources
 
 Each prompt entry also identifies its primary knowledge layer so biblical text,
 historical context, theological synthesis, reception history, and application
@@ -196,6 +254,10 @@ Empty sections are skipped rather than padded with filler prose.
 The CKL lives under `framework/canonical_library/` and is intentionally self-contained.
 
 - `schema.py` defines the canonical object dataclass and validation rules.
+- `evidence_models.py` defines evidence, chronology, passage-link, and cross-domain types.
+- `evidence_retrieval.py` ranks evidence inside selected subjects.
+- `evidence_graph.py` projects graph-shaped audit edges from the authored records.
+- `evidence_audit.py` emits future-review signals without rewriting evidence.
 - `loader.py` discovers JSON files, validates them, and builds in-memory indexes.
 - `normalization.py` provides deterministic text and ID normalization.
 - `retrieval.py` defines exact, hybrid, and future retrieval interfaces.
@@ -264,6 +326,8 @@ Every canonical object uses the same base schema.
 | `new_testament_connections` | array of strings | New Testament connection pointers. |
 | `interpretive_notes` | array of structured note objects | Interpreter notes and cautions with optional note type, certainty, dispute status, and source IDs. Legacy strings are still accepted and normalized on load. |
 | `claims` | array of structured claim objects | Granular claims with controlled type, certainty, dispute status, Scripture anchors, local source IDs, traditions, rationale, and notes. |
+| `temporal_scope` | object | Signed BCE/CE range, named periods, narrative setting, and separate source-composition range. |
+| `evidence_items` | array of evidence objects | Auditable evidence, provenance, confidence rationale, passage relevance, chronology, and relationships. |
 | `section_status` | object | Per-section migration and review state used by type-specific completeness rules. |
 | `knowledge_layers` | object | One primary and zero or more secondary controlled knowledge layers. |
 | `common_questions` | array of strings | Question prompts and FAQs. |
@@ -376,6 +440,154 @@ Granular claims use this shape:
 Claim source IDs resolve against the containing object's `sources` list.
 Approved claims need a rationale and at least one Scripture reference or source
 ID.
+
+## Evidence architecture
+
+CKL remains an evidence system rather than an answer system. JSON is the
+authoritative record and SQLite is a normalized projection. The conceptual
+chain is:
+
+```text
+Passage -> Subject -> Claim -> Evidence -> Source
+                        |         |
+                        |         +-> Location / period / related evidence
+                        +------------> certainty and dispute state
+```
+
+`evidence_graph_edges()` exposes that chain deterministically for audit and
+tooling. Object-local evidence, claim, and source IDs are namespaced in the
+projection so identifiers from different objects cannot collide. No graph
+database, embedding service, or LLM is required.
+
+Evidence types cover artifacts, sites, inscriptions, ancient texts,
+manuscripts, historical events and periods, people and groups, institutions,
+cultural practices, geography/environment, literary conventions, worldview
+concepts, primary and secondary sources, and material culture. A single item
+must not blur observation and interpretation:
+
+```json
+{
+  "id": "cyrus-cylinder-restoration-context",
+  "title": "Cyrus Cylinder imperial restoration rhetoric",
+  "evidence_type": "inscription",
+  "description": "A Babylonian foundation inscription from Cyrus's reign.",
+  "assertion_type": "primary-evidence",
+  "confidence": "high",
+  "confidence_rationale": "The artifact and setting are secure; policy scope requires qualification.",
+  "passage_relevance": "It supplies Persian imperial context for Ezra 1 but is not Ezra's decree.",
+  "certainty": "strong_consensus",
+  "dispute_status": "minor_scholarly_disagreement",
+  "primary_observation": "The inscription reports cult restoration in its Babylonian setting.",
+  "scholarly_interpretation": "Historians compare this rhetoric with wider Achaemenid policy.",
+  "temporal_scope": {
+    "start_year": -539,
+    "end_year": -538,
+    "approximate": false,
+    "periods": ["early Achaemenid period"],
+    "narrative_setting": "Cyrus's conquest of Babylon",
+    "source_composition_start_year": -539,
+    "source_composition_end_year": -538,
+    "source_composition_approximate": false,
+    "notes": ""
+  },
+  "geography_ids": ["babylon-1", "persia"],
+  "related_objects": [],
+  "related_evidence": [],
+  "scripture_references": [{
+    "reference": "Ezra 1:1-11",
+    "relationship": "comparative",
+    "temporal_relation": "near-contemporary",
+    "relevance_rationale": "The sources share an imperial horizon but are not the same decree.",
+    "weight": 8
+  }],
+  "source_ids": ["cyrus-cylinder"],
+  "claim_ids": ["cylinder-babylon-restoration-rhetoric"],
+  "external_references": [{
+    "domain": "archaeology-item",
+    "id": "cyrus-cylinder",
+    "relationship": "same-evidence",
+    "notes": "Media remains in the archaeology domain."
+  }],
+  "metadata": {"archaeological_period": "early Achaemenid period"},
+  "notes": "No modern translation or image is stored."
+}
+```
+
+Every evidence item requires a local `source_id`, at least one structured
+Scripture relationship, an explanation of passage relevance, and an explained
+confidence. Claim and source IDs must resolve inside the containing object;
+geography and related-object IDs must resolve globally. Related-evidence IDs
+must resolve inside the same object.
+
+### Chronology and contamination protection
+
+Signed years use negative values for BCE and positive values for CE; year zero
+is rejected. Narrative setting and source composition are independent because
+a text may describe an earlier setting. Each passage relationship labels its
+chronology as `contemporary`, `near-contemporary`, `earlier-comparative`,
+`later-comparative`, `diachronic`, or `unknown`.
+
+For a passage-scoped evidence query, an item without an authored overlapping
+Scripture link is excluded. That means Johannine material does not enter a
+Genesis packet merely through shared creation vocabulary. Legitimate later
+rabbinic, Second Temple, New Testament, or reception evidence remains eligible
+only when its authored passage link identifies it as later/comparative (or
+another accurate relation) and explains why it matters. Object-level guarded
+relationship expansion likewise requires direct passage overlap or an explicit
+cross-period/intertextual relationship.
+
+Within eligible evidence, ranking is deterministic: query overlap, exact
+passage link and weight, requested evidence dimension, source availability,
+source-type quality, confidence, assertion type, explained rationale, parent relevance, and
+chronological relation contribute bounded signals. Later comparisons are
+retained as labeled comparisons, not silently promoted to contemporary data.
+
+### Provenance, confidence, and disputes
+
+`assertion_type` distinguishes `primary-evidence`, `secondary-evidence`,
+`scholarly-reconstruction`, and `inference`. `primary_observation` records what
+the artifact, text, or excavation actually presents; `scholarly_interpretation`
+records how its significance is reconstructed. Confidence must be one of
+`unrated`, `low`, `medium`, or `high` and must have a rationale. Certainty and
+dispute fields provide a separate scholarly-status vocabulary, so “high
+confidence that an artifact is authentic” need not imply “one uncontested
+interpretation.”
+
+`audit_evidence()` and the `evidence_audit` section of `ckl_report.py` flag
+missing or unknown chronology, weak source types, high-confidence/dispute
+mismatches, possible duplicate evidence, questionable temporal alignment, and
+image URLs without licensing or attribution. These are review signals, not
+automatic conclusions or destructive fixes.
+
+### Archaeology, ancient sources, and image licensing
+
+Ancient texts should normally be stored as bibliographic metadata, concise
+paraphrase, and primary observation. Do not copy modern copyrighted
+translations. Archaeological evidence should record artifact/site name,
+discovery and present location when known, period, culture, geography,
+confidence, source, and a passage-relevance explanation. Detailed catalog and
+media ownership remains in the archaeology domain through stable
+`external_references`.
+
+An internet URL is not a reusable-image license. If an evidence item includes
+`image_source_url`, it must also record `image_license` and
+`image_attribution`; the evidence audit fails those omissions. Prefer public
+domain, CC0, compatible Creative Commons, museum open-access, government, or
+academic open-access material. Link-only non-free media must not be copied or
+cached as CKL content.
+
+### Contributor checklist for evidence
+
+1. Identify the passage and subject before authoring the evidence.
+2. Cite a resolvable structured source; use the most primary reliable source available.
+3. Write `primary_observation` without importing a scholarly conclusion.
+4. Put reconstruction or disagreement in `scholarly_interpretation`, certainty, and dispute fields.
+5. Give artifact/source dates and narrative/composition dates separately.
+6. Label later or earlier evidence as comparative and explain the relationship.
+7. Write `passage_relevance` as historical, cultural, geographic, or literary help—not “therefore the passage means.”
+8. Link archaeology/media by stable external ID and record rights metadata if any image URL is included.
+9. Run validation, the quality report, database build/verification, and focused retrieval tests.
+10. Leave AI-authored material `in_review` with `human_review_required: true` until qualified human review.
 
 `sources` are now stored as structured source objects with this shape:
 
@@ -649,6 +861,27 @@ JSON into the normalized schema. None of the scripts write to disk unless
 Future scholarship must be curated, sourced, and reviewed before it is written into the CKL. Interpretive rules and canonical facts should remain separate so that the hermeneutical framework can guide interpretation without collapsing into the knowledge store itself.
 
 Approved objects should use structured source entries rather than legacy strings, and they should carry substantive source support plus review metadata before they are treated as publishable.
+
+The first structured evidence records deliberately favor depth over count:
+David/Goliath weapon language and Tell es-Safi metallurgy, Sennacherib's Taylor
+Prism, and the Cyrus Cylinder. Next expansion should add reviewed evidence to
+Genesis/ANE contexts, Exodus/Egypt and wilderness geography, settlement and
+Judges, the divided monarchy, exile and Persian restoration, Second Temple
+institutions, first-century Judea/Galilee, Roman administration, and Pauline
+cities. Cultural practices, historical institutions, literary conventions,
+geography/environment, and ancient worldview concepts already have controlled
+evidence types; they need source-backed human-reviewed records rather than
+generated volume.
+
+A future AI-assisted evidence audit should concentrate on: inherited generic
+or internal-only sources; exact artifact/site identification; absolute and
+relative chronology; narrative-setting versus composition-date claims;
+passage-link strength; claims whose confidence exceeds their dispute status;
+duplicate or contradictory evidence; source quality and edition/locator
+precision; geographic overreach; modern translations or images with unclear
+rights; one-position worldview reconstructions; and any relevance statement
+that crosses from context into a prescribed theological conclusion. Automated
+findings must remain review candidates until a qualified human resolves them.
 
 For the current CKL request path and evidence boundary, see
 [`docs/architecture.md`](architecture.md#answer-flow).

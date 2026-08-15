@@ -53,6 +53,8 @@
     "keywords",
     "sources",
     "claims",
+    "temporal_scope",
+    "evidence_items",
     "section_status",
     "knowledge_layers",
     "canonical_story",
@@ -415,6 +417,249 @@
         "notes": {
           "type": "string"
         }
+      }
+    },
+    "temporalScope": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "start_year": {
+          "type": ["integer", "null"]
+        },
+        "end_year": {
+          "type": ["integer", "null"]
+        },
+        "approximate": {
+          "type": "boolean"
+        },
+        "periods": {
+          "$ref": "#/$defs/stringList"
+        },
+        "narrative_setting": {
+          "type": "string"
+        },
+        "source_composition_start_year": {
+          "type": ["integer", "null"]
+        },
+        "source_composition_end_year": {
+          "type": ["integer", "null"]
+        },
+        "source_composition_approximate": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "evidencePassageLink": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reference",
+        "relationship",
+        "temporal_relation",
+        "relevance_rationale"
+      ],
+      "properties": {
+        "reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relationship": {
+          "type": "string",
+          "enum": ["direct", "contextual", "comparative", "contrast", "disputed"]
+        },
+        "temporal_relation": {
+          "type": "string",
+          "enum": [
+            "contemporary",
+            "near-contemporary",
+            "earlier-comparative",
+            "later-comparative",
+            "diachronic",
+            "unknown"
+          ]
+        },
+        "relevance_rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "weight": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        }
+      }
+    },
+    "evidenceRelationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "relationship"],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/canonicalId"
+        },
+        "relationship": {
+          "$ref": "#/$defs/kebabCaseString"
+        },
+        "weight": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "externalEvidenceReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["domain", "id"],
+      "properties": {
+        "domain": {
+          "type": "string",
+          "enum": ["archaeology-item", "archaeology-site", "map-place", "external-dataset"]
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relationship": {
+          "$ref": "#/$defs/kebabCaseString"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "evidenceMetadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "artifact_name": {"type": "string"},
+        "site_name": {"type": "string"},
+        "discovery_location": {"type": "string"},
+        "present_location": {"type": "string"},
+        "archaeological_period": {"type": "string"},
+        "associated_culture": {"type": "string"},
+        "associated_biblical_geography": {"type": "string"},
+        "image_source_url": {"type": "string"},
+        "image_license": {"type": "string"},
+        "image_attribution": {"type": "string"}
+      }
+    },
+    "evidenceItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "evidence_type",
+        "description",
+        "assertion_type",
+        "confidence",
+        "confidence_rationale",
+        "passage_relevance",
+        "scripture_references",
+        "source_ids"
+      ],
+      "properties": {
+        "id": {"$ref": "#/$defs/canonicalId"},
+        "title": {"type": "string", "minLength": 1},
+        "evidence_type": {
+          "type": "string",
+          "enum": [
+            "artifact",
+            "archaeological-site",
+            "inscription",
+            "ancient-text",
+            "manuscript",
+            "historical-event",
+            "person",
+            "people-group",
+            "institution",
+            "cultural-practice",
+            "geography-environment",
+            "historical-period",
+            "literary-convention",
+            "worldview-concept",
+            "primary-source",
+            "secondary-source",
+            "material-culture",
+            "other"
+          ]
+        },
+        "description": {"type": "string", "minLength": 1},
+        "assertion_type": {
+          "type": "string",
+          "enum": ["primary-evidence", "secondary-evidence", "scholarly-reconstruction", "inference"]
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["unrated", "low", "medium", "high"]
+        },
+        "confidence_rationale": {"type": "string", "minLength": 1},
+        "passage_relevance": {"type": "string", "minLength": 1},
+        "certainty": {
+          "type": "string",
+          "enum": [
+            "textually_explicit",
+            "strong_consensus",
+            "probable",
+            "plausible",
+            "disputed",
+            "speculative",
+            "insufficient_evidence"
+          ]
+        },
+        "dispute_status": {
+          "type": "string",
+          "enum": [
+            "not_disputed",
+            "minor_scholarly_disagreement",
+            "major_scholarly_disagreement",
+            "historical_uncertainty",
+            "chronological_uncertainty",
+            "archaeological_uncertainty",
+            "identification_uncertainty",
+            "interpretive_uncertainty"
+          ]
+        },
+        "primary_observation": {"type": "string"},
+        "scholarly_interpretation": {"type": "string"},
+        "temporal_scope": {"$ref": "#/$defs/temporalScope"},
+        "geography_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/canonicalId"}
+        },
+        "related_objects": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/evidenceRelationship"}
+        },
+        "related_evidence": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/evidenceRelationship"}
+        },
+        "scripture_references": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/evidencePassageLink"}
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/canonicalId"}
+        },
+        "claim_ids": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/canonicalId"}
+        },
+        "external_references": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/externalEvidenceReference"}
+        },
+        "metadata": {"$ref": "#/$defs/evidenceMetadata"},
+        "notes": {"type": "string"}
       }
     },
     "sectionStatus": {
@@ -901,6 +1146,15 @@
       "type": "array",
       "items": {
         "$ref": "#/$defs/claim"
+      }
+    },
+    "temporal_scope": {
+      "$ref": "#/$defs/temporalScope"
+    },
+    "evidence_items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidenceItem"
       }
     },
     "section_status": {

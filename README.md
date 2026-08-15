@@ -119,7 +119,8 @@ are in [Architecture](docs/architecture.md).
 ### Explore evidence
 
 - Curated Canonical Knowledge Library (CKL) retrieval with deterministic
-  ranking and evidence packaging.
+  ranking, structured evidence relationships, chronology safeguards,
+  provenance, confidence rationales, and bounded context packaging.
 - Archaeology records for sites, artifacts, inscriptions, media, provenance,
   and related passages.
 - Interactive biblical places, journeys, historical layers, manuscript, and

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import json
 import re
 from typing import Any, Mapping, Sequence
 
@@ -85,14 +86,21 @@ _CLAUSE_SPLIT_RE = re.compile(r"\s*;\s*")
 
 
 def _dedupe_extend(target: list[Any], values: list[Any], *, limit: int | None = None) -> None:
-    seen = set(target)
+    seen = {_dedupe_key(value) for value in target}
     for value in values:
-        if not value or value in seen:
+        key = _dedupe_key(value)
+        if not value or key in seen:
             continue
         target.append(value)
-        seen.add(value)
+        seen.add(key)
         if limit is not None and len(target) >= limit:
             return
+
+
+def _dedupe_key(value: Any) -> str:
+    if isinstance(value, (dict, list, tuple)):
+        return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+    return repr(value)
 
 
 def _dedupe_relationships_extend(target: list[dict[str, Any]], values: list[dict[str, Any]]) -> None:
@@ -185,6 +193,18 @@ def _estimate_text_tokens(value: Any) -> int:
             "source_ids",
             "traditions",
             "rationale",
+            "evidence_id",
+            "evidence_type",
+            "description",
+            "assertion_type",
+            "confidence_rationale",
+            "passage_relevance",
+            "primary_observation",
+            "scholarly_interpretation",
+            "passage_relationship",
+            "chronological_relation",
+            "temporal_scope",
+            "evidence_items",
         ):
             total += _estimate_text_tokens(value.get(key))
         return total
@@ -232,6 +252,8 @@ def _estimate_object_tokens(obj: Any) -> int:
         "common_questions",
         "interpretive_notes",
         "claims",
+        "temporal_scope",
+        "evidence_items",
         "sources",
         "related_objects",
         "hebrew_words",
@@ -305,6 +327,9 @@ def _topic_evidence_coverage(
     """Build an inspectable map without treating absent CKL data as false."""
 
     selected_claims = [claim for claim in topic.get("selected_claims", []) if isinstance(claim, Mapping)]
+    selected_evidence = [
+        item for item in topic.get("selected_evidence", []) if isinstance(item, Mapping)
+    ]
     field_text = normalize_text(
         " ".join(
             str(topic.get(field_name) or "")
@@ -351,6 +376,26 @@ def _topic_evidence_coverage(
             )
             if any(marker in claim_text for marker in markers.get(normalized_dimension, (normalized_dimension,))):
                 relevant_claims.append(claim)
+        relevant_evidence: list[Mapping[str, Any]] = []
+        for item in selected_evidence:
+            evidence_text = normalize_text(
+                " ".join(
+                    str(item.get(key) or "")
+                    for key in (
+                        "evidence_type",
+                        "title",
+                        "description",
+                        "passage_relevance",
+                        "primary_observation",
+                        "scholarly_interpretation",
+                    )
+                )
+            )
+            if any(
+                marker in evidence_text
+                for marker in markers.get(normalized_dimension, (normalized_dimension,))
+            ):
+                relevant_evidence.append(item)
         references = list(
             dict.fromkeys(
                 str(reference)
@@ -367,18 +412,28 @@ def _topic_evidence_coverage(
                 if isinstance(source, Mapping) and str(source.get("id") or "")
             )
         )
+        for item in relevant_evidence:
+            for reference in item.get("scripture_references") or []:
+                if isinstance(reference, Mapping) and str(reference.get("reference") or "").strip():
+                    candidate = str(reference["reference"])
+                    if candidate not in references:
+                        references.append(candidate)
+            for source in item.get("sources") or []:
+                if isinstance(source, Mapping) and str(source.get("id") or "") not in source_ids:
+                    source_ids.append(str(source["id"]))
         field_match = any(
             marker in field_text for marker in markers.get(normalized_dimension, (normalized_dimension,))
         )
-        if relevant_claims and (references or source_ids):
+        if (relevant_claims or relevant_evidence) and (references or source_ids):
             status = "covered"
-        elif relevant_claims or field_match:
+        elif relevant_claims or relevant_evidence or field_match:
             status = "partially_covered"
         else:
             status = "missing"
         coverage[str(dimension)] = {
             "status": status,
             "claim_ids": [str(claim.get("claim_id") or "") for claim in relevant_claims],
+            "evidence_ids": [str(item.get("evidence_id") or "") for item in relevant_evidence],
             "scripture_references": references,
             "source_ids": source_ids,
         }
@@ -424,6 +479,28 @@ def _relationship_independent_relevance(
     if not matched:
         return 0.0, []
     return round(min(0.8, 0.3 + 0.12 * len(matched)), 4), matched
+
+
+def _scripture_relationship_retrieval_requested(
+    question: str,
+    analysis: QueryAnalysis,
+) -> bool:
+    """Keep ordinary book-context lookups precise while enabling evidence traversal."""
+
+    if analysis.question_intent == "evidence_evaluation":
+        return True
+    normalized = normalize_text(question)
+    evidence_markers = (
+        "ancient",
+        "archaeolog",
+        "background",
+        "comparative",
+        "cultural",
+        "evidence",
+        "historical",
+        "source",
+    )
+    return any(marker in normalized for marker in evidence_markers)
 
 
 @dataclass
@@ -521,9 +598,20 @@ class CanonicalContextBuilder:
             scripture_references=[_scripture_span_text(reference) for reference in analysis.scripture_references],
             limit_per_object=3,
         )
+        structured_evidence = self.library.retrieve_evidence_items(
+            question,
+            [entry["id"] for entry in retrieved],
+            parent_scores={entry["id"]: float(entry.get("ranking_score") or entry.get("score") or 0.0) for entry in retrieved},
+            requested_dimensions=analysis.requested_evidence_dimensions,
+            scripture_references=[_scripture_span_text(reference) for reference in analysis.scripture_references],
+            limit_per_object=4,
+        )
         for entry in retrieved:
             selected = claim_evidence.get(entry["id"], [])
             entry["selected_claims"] = [item.to_dict() for item in selected]
+            entry["selected_evidence"] = [
+                item.to_dict() for item in structured_evidence.get(entry["id"], [])
+            ]
             entry["evidence_coverage"] = _topic_evidence_coverage(
                 entry,
                 analysis.requested_evidence_dimensions,
@@ -549,6 +637,7 @@ class CanonicalContextBuilder:
             "related_objects": [],
             "timeline": [],
             "archaeology": [],
+            "evidence_items": [],
             "new_testament_connections": [],
             "metadata": {
                 "retrieval_method": retrieved[0]["match_type"] if retrieved else "none",
@@ -572,6 +661,7 @@ class CanonicalContextBuilder:
                 ],
                 "query_analysis": analysis.to_dict(),
                 "selected_claim_count": sum(len(entry.get("selected_claims") or []) for entry in retrieved),
+                "selected_evidence_count": sum(len(entry.get("selected_evidence") or []) for entry in retrieved),
                 "retrieval": retrieval_trace,
                 "ambiguity": ambiguity.to_dict() if ambiguity is not None else None,
             },
@@ -601,6 +691,7 @@ class CanonicalContextBuilder:
             )
             _dedupe_extend(context["timeline"], obj.timeline, limit=self.max_timeline_entries)
             _dedupe_extend(context["archaeology"], obj.archaeology, limit=self.max_archaeology_entries)
+            _dedupe_extend(context["evidence_items"], list(result.get("selected_evidence") or []))
             _dedupe_extend(context["new_testament_connections"], obj.new_testament_connections)
 
         return context
@@ -636,12 +727,44 @@ class CanonicalContextBuilder:
             if isinstance(resolved, RetrievalResult):
                 trace["method"] = "exact_entity"
                 primary_results.append(resolved)
-                if resolved.match_type in {"id", "title", "alias"}:
+                if analysis.scope != SCRIPTURE and resolved.match_type in {"id", "title", "alias"}:
                     return primary_results
             elif isinstance(resolved, AmbiguousEntityResolution):
                 trace["method"] = "ambiguous_entity"
                 trace["ambiguity"] = resolved
                 return primary_results
+
+        scripture_relationships_requested = _scripture_relationship_retrieval_requested(
+            question,
+            analysis,
+        )
+        if (
+            analysis.scripture_references
+            and scripture_relationships_requested
+            and len(primary_results) < limit
+        ):
+            trace["method"] = (
+                "scripture_relationships" if not primary_results else "exact_plus_scripture_relationships"
+            )
+            seen_scripture_ids = {item.object.id for item in primary_results}
+            for reference in analysis.scripture_references:
+                for result in self.library.retrieve_by_scripture_reference(
+                    reference,
+                    limit=limit,
+                    approved_only=approved_only,
+                    exclude_deprecated=exclude_deprecated,
+                    exclude_rejected=exclude_rejected,
+                    include_placeholders=include_placeholders,
+                    allowed_statuses=allowed_statuses,
+                ):
+                    if result.object.id in seen_scripture_ids:
+                        continue
+                    primary_results.append(result)
+                    seen_scripture_ids.add(result.object.id)
+                    if len(primary_results) >= limit:
+                        return primary_results
+        if analysis.scope == SCRIPTURE and primary_results and not scripture_relationships_requested:
+            return primary_results
 
         if analysis.scope == MULTIPLE_ENTITIES and analysis.entity_candidates:
             trace["method"] = "exact_entities"
@@ -776,6 +899,11 @@ class CanonicalContextBuilder:
                 "claims": [
                     claim.to_dict() if hasattr(claim, "to_dict") else claim
                     for claim in obj.claims
+                ],
+                "temporal_scope": obj.temporal_scope.to_dict(),
+                "evidence_items": [
+                    item.to_dict() if hasattr(item, "to_dict") else item
+                    for item in obj.evidence_items
                 ],
                 "sources": [
                     source.to_dict() if hasattr(source, "to_dict") else source
@@ -1288,14 +1416,21 @@ def _build_prompt_context_entry(
     selected_references: list[str] = []
     selected_cautions: list[str] = []
     selected_claim_data = list(topic.get("selected_claims") or [])
+    selected_evidence_data = list(topic.get("selected_evidence") or [])
     selected_claim_sources = [
         source
         for claim in selected_claim_data
         if isinstance(claim, Mapping)
         for source in (claim.get("sources") or [])
     ]
+    selected_evidence_sources = [
+        source
+        for item in selected_evidence_data
+        if isinstance(item, Mapping)
+        for source in (item.get("sources") or [])
+    ]
     source_objects = _select_prompt_sources(
-        selected_claim_sources or topic.get("sources"),
+        [*selected_evidence_sources, *selected_claim_sources] or topic.get("sources"),
         limit=int(mode_limits["sources"]),
         seen_keys=set(),
     )
@@ -1322,7 +1457,23 @@ def _build_prompt_context_entry(
             )
         )
     ]
-    reference_candidates = claim_reference_candidates + _collect_ranked_scripture_references(
+    evidence_reference_candidates = [
+        {
+            "score": 1100 - index,
+            "field_order": -2,
+            "value_index": index,
+            "text": str(reference.get("reference") or ""),
+            "key": normalize_text(str(reference.get("reference") or "")),
+        }
+        for index, reference in enumerate(
+            reference
+            for item in selected_evidence_data
+            if isinstance(item, Mapping)
+            for reference in (item.get("scripture_references") or [])
+            if isinstance(reference, Mapping) and str(reference.get("reference") or "").strip()
+        )
+    ]
+    reference_candidates = evidence_reference_candidates + claim_reference_candidates + _collect_ranked_scripture_references(
         topic,
         query_terms=query_terms,
         seen_keys=local_seen_references,
@@ -1342,6 +1493,12 @@ def _build_prompt_context_entry(
     )
     if selected_claims:
         sections.append({"heading": "Sourced Claims", "items": selected_claims})
+    selected_evidence_texts = _evidence_prompt_texts(
+        selected_evidence_data,
+        limit=2 if answer_mode == "scholar" else 1,
+    )
+    if selected_evidence_texts:
+        sections.append({"heading": "Contextual Evidence", "items": selected_evidence_texts})
 
     context_section_limit = int(mode_limits["context_sections"])
     context_item_limit = min(max(1, max_facts_per_entry), int(mode_limits["section_items"]))
@@ -1462,6 +1619,7 @@ def _build_prompt_context_entry(
         "sections": sections,
         "sources": source_objects,
         "selected_claims": selected_claim_data[:claim_limit],
+        "selected_evidence": selected_evidence_data[: (2 if answer_mode == "scholar" else 1)],
         "evidence_coverage": dict(topic.get("evidence_coverage") or {}),
     }
 
@@ -1498,6 +1656,35 @@ def _claim_prompt_texts(value: Any, *, limit: int) -> list[str]:
         text = f"[{label}] {claim}" if label else claim
         if rationale:
             text += f" Rationale: {rationale}"
+        rendered.append(text)
+        if len(rendered) >= limit:
+            break
+    return rendered
+
+
+def _evidence_prompt_texts(value: Any, *, limit: int) -> list[str]:
+    if limit <= 0 or not isinstance(value, list):
+        return []
+    rendered: list[str] = []
+    for item in value:
+        if hasattr(item, "to_dict"):
+            item = item.to_dict()
+        if not isinstance(item, Mapping):
+            continue
+        title = _normalize_prompt_text(item.get("title") or item.get("evidence_id"))
+        relevance = _normalize_prompt_text(item.get("passage_relevance"))
+        observation = _normalize_prompt_text(item.get("primary_observation") or item.get("description"))
+        relationship = _normalize_prompt_text(item.get("passage_relationship"))
+        chronology = _normalize_prompt_text(item.get("chronological_relation"))
+        confidence = _normalize_prompt_text(item.get("confidence"))
+        if not title or not relevance:
+            continue
+        labels = "; ".join(part for part in (relationship, chronology, confidence) if part)
+        text = f"{title}: {relevance}"
+        if observation:
+            text += f" Evidence: {observation}"
+        if labels:
+            text += f" [{labels}]"
         rendered.append(text)
         if len(rendered) >= limit:
             break
@@ -1720,6 +1907,8 @@ def _shrink_prompt_context_entry(
         if str(section.get("heading") or "").strip()
     ]
     entry["sources"] = list(entry.get("sources") or [])
+    entry["selected_claims"] = list(entry.get("selected_claims") or [])
+    entry["selected_evidence"] = list(entry.get("selected_evidence") or [])
     entry["summary"] = _normalize_prompt_text(entry.get("summary"))
 
     def entry_tokens() -> int:
@@ -1764,6 +1953,9 @@ def _shrink_prompt_context_entry(
             "source_ids": list(entry.get("source_ids") or []),
             "sections": [],
             "sources": [],
+            "selected_claims": [],
+            "selected_evidence": [],
+            "evidence_coverage": {},
         }
         minimal_tokens = _estimate_prompt_context_entry_tokens(minimal_entry)
         if minimal_tokens <= budget:

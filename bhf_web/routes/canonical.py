@@ -354,6 +354,7 @@ def _serialize_object_detail(obj: Any, library: Any, *, browse: bool = False) ->
     payload["source_count"] = len(payload["sources"])
     payload["scripture_reference_count"] = len(payload["scripture_references"])
     payload["related_object_count"] = len(payload["related_objects"])
+    payload["evidence_count"] = len(payload.get("evidence_items") or [])
     payload["related_object_links"] = _serialize_related_object_links(obj, library)
     payload["browse_url"] = f"/curation?collection={obj.type}"
     return payload
@@ -382,6 +383,10 @@ def _serialize_topic(topic: dict[str, Any], library: Any, *, browse: bool) -> di
             "source_count": len(payload["sources"]),
             "scripture_reference_count": len(payload["scripture_references"]),
             "related_object_count": len(payload["related_objects"]),
+            "evidence_count": len(payload.get("evidence_items") or []),
+            "selected_evidence": list(topic.get("selected_evidence") or []),
+            "selected_claims": list(topic.get("selected_claims") or []),
+            "evidence_coverage": dict(topic.get("evidence_coverage") or {}),
             "related_object_links": _serialize_related_object_links(obj, library),
             "browse_url": f"/curation?collection={obj.type}",
         }
@@ -585,6 +590,8 @@ def _serialize_object(obj: Any) -> dict[str, Any]:
         _serialize_source(source)
         for source in list(payload.get("sources") or [])
     ]
+    payload["evidence_items"] = list(payload.get("evidence_items") or [])
+    payload["temporal_scope"] = dict(payload.get("temporal_scope") or {})
     return payload
 
 
@@ -610,6 +617,7 @@ def _with_related_archaeology(
 def _serialize_source(source: Any) -> dict[str, Any]:
     payload = source.to_dict() if hasattr(source, "to_dict") else dict(source)
     return {
+        "id": str(payload.get("id") or "").strip(),
         "title": str(payload.get("title") or "").strip(),
         "author": str(payload.get("author") or "").strip(),
         "publisher": str(payload.get("publisher") or "").strip(),
@@ -617,6 +625,7 @@ def _serialize_source(source: Any) -> dict[str, Any]:
         "locator": str(payload.get("locator") or "").strip(),
         "url": str(payload.get("url") or "").strip(),
         "source_type": str(payload.get("source_type") or "").strip(),
+        "supports": list(payload.get("supports") or []),
         "notes": str(payload.get("notes") or "").strip(),
     }
 

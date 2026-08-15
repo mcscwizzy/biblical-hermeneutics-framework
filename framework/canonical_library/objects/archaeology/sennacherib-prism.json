@@ -64,16 +64,10 @@
       "notes": ""
     },
     {
-      "id": "joshua",
-      "relationship": "historical-background",
-      "weight": 8,
-      "notes": ""
-    },
-    {
-      "id": "hebrews",
-      "relationship": "historical-background",
-      "weight": 7,
-      "notes": ""
+      "id": "assyria",
+      "relationship": "imperial-context",
+      "weight": 10,
+      "notes": "The prism is a Neo-Assyrian royal inscription."
     }
   ],
   "scripture_references": [
@@ -137,6 +131,27 @@
       "sources": []
     }
   ],
+  "claims": [
+    {
+      "id": "prism-judah-campaign",
+      "claim": "Sennacherib's annals describe his 701 BCE campaign in Judah, tribute from Hezekiah, and Hezekiah's confinement in Jerusalem.",
+      "claim_type": "archaeology",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "2 Kings 18:13-37",
+        "Isaiah 36:1-22"
+      ],
+      "source_ids": [
+        "taylor-prism"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The royal inscription is a primary Assyrian witness to the campaign; translation details and historical synthesis still require comparison with other sources.",
+      "notes": "The annals do not say that Jerusalem was captured."
+    }
+  ],
   "common_questions": [
     "What does Sennacherib Prism teach?",
     "How does Sennacherib Prism fit the biblical storyline?",
@@ -145,14 +160,17 @@
   "sources": [
     {
       "title": "Taylor Prism",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
+      "author": "British Museum",
+      "publisher": "British Museum",
+      "year": -691,
+      "locator": "Museum number 91032; Neo-Assyrian royal annals",
+      "url": "https://www.britishmuseum.org/collection/object/W_1855-1003-1",
+      "source_type": "museum-collection",
+      "supports": [
+        "prism-judah-campaign",
+        "taylor-prism-annals"
+      ],
+      "notes": "Official collection record. The inscription is ancient primary evidence preserved on a museum object; its royal rhetoric must be critically compared.",
       "id": "taylor-prism"
     },
     {
@@ -239,6 +257,122 @@
     "frequently_confused_with": [],
     "semantic_keywords": []
   },
+  "temporal_scope": {
+    "start_year": -691,
+    "end_year": -691,
+    "approximate": false,
+    "periods": [
+      "Neo-Assyrian period",
+      "Assyrian period"
+    ],
+    "narrative_setting": "Sennacherib's 701 BCE campaign in Judah and the siege context surrounding Jerusalem.",
+    "source_composition_start_year": -691,
+    "source_composition_end_year": -691,
+    "source_composition_approximate": false,
+    "notes": "The surviving Taylor Prism copy was produced about a decade after the 701 BCE campaign it recounts."
+  },
+  "evidence_items": [
+    {
+      "id": "taylor-prism-annals",
+      "title": "Taylor Prism account of Sennacherib's Judah campaign",
+      "evidence_type": "inscription",
+      "description": "A six-sided baked-clay prism inscribed in Akkadian with Sennacherib's royal annals, including his campaign against fortified Judahite cities and his treatment of Hezekiah.",
+      "assertion_type": "primary-evidence",
+      "confidence": "high",
+      "confidence_rationale": "The object, text, provenance history, and Neo-Assyrian date are well documented; historical use remains genre-sensitive because royal annals are self-presentation.",
+      "passage_relevance": "The inscription independently anchors Sennacherib, Hezekiah, Judah, tribute, and the 701 BCE campaign that frame 2 Kings 18-19 and Isaiah 36-37, while its different perspective prevents it from being treated as a neutral transcript of the biblical account.",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "primary_observation": "The annals name Hezekiah of Judah, claim the capture of fortified Judahite towns, describe tribute, and portray Hezekiah as confined in Jerusalem; they do not claim Jerusalem's capture.",
+      "scholarly_interpretation": "The text is compared with Kings, Isaiah, Chronicles, other Assyrian inscriptions, and destruction evidence to reconstruct the campaign; harmonization details and rhetorical emphases remain debated.",
+      "temporal_scope": {
+        "start_year": -691,
+        "end_year": -691,
+        "approximate": false,
+        "periods": [
+          "Neo-Assyrian period",
+          "Assyrian period"
+        ],
+        "narrative_setting": "Royal retrospective on the 701 BCE Judah campaign",
+        "source_composition_start_year": -691,
+        "source_composition_end_year": -691,
+        "source_composition_approximate": false,
+        "notes": "Artifact date and recounted campaign date are intentionally distinguished."
+      },
+      "geography_ids": [
+        "nineveh",
+        "jerusalem",
+        "assyria"
+      ],
+      "related_objects": [
+        {
+          "id": "nineveh",
+          "relationship": "production-and-discovery-context",
+          "weight": 9,
+          "notes": "The prism belongs to Sennacherib's Nineveh palace context."
+        },
+        {
+          "id": "jerusalem",
+          "relationship": "campaign-target",
+          "weight": 10,
+          "notes": "Jerusalem and Hezekiah are central to the annal passage compared with Kings and Isaiah."
+        },
+        {
+          "id": "assyria",
+          "relationship": "imperial-source-context",
+          "weight": 10,
+          "notes": "The source speaks from Neo-Assyrian royal ideology."
+        }
+      ],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "2 Kings 18:13-37",
+          "relationship": "contextual",
+          "temporal_relation": "near-contemporary",
+          "relevance_rationale": "Both sources place Sennacherib's campaign against Judah and Hezekiah in the same historical horizon, while narrating it from different perspectives.",
+          "weight": 10
+        },
+        {
+          "reference": "2 Kings 19:1-37",
+          "relationship": "contrast",
+          "temporal_relation": "near-contemporary",
+          "relevance_rationale": "The annals' silence about capturing Jerusalem is relevant comparative evidence but does not itself establish the biblical account's explanation of the outcome.",
+          "weight": 9
+        },
+        {
+          "reference": "Isaiah 36:1-37:38",
+          "relationship": "contextual",
+          "temporal_relation": "near-contemporary",
+          "relevance_rationale": "The inscription supplies Assyrian royal context for the campaign narrated in Isaiah while retaining a distinct genre and viewpoint.",
+          "weight": 9
+        }
+      ],
+      "source_ids": [
+        "taylor-prism"
+      ],
+      "claim_ids": [
+        "prism-judah-campaign"
+      ],
+      "external_references": [
+        {
+          "domain": "archaeology-item",
+          "id": "sennacherib-prism",
+          "relationship": "same-evidence",
+          "notes": "Rights-aware images and fuller archaeological presentation remain in the separate archaeology domain."
+        }
+      ],
+      "metadata": {
+        "artifact_name": "Taylor Prism",
+        "discovery_location": "Nineveh, Iraq",
+        "present_location": "British Museum, London (BM 91032)",
+        "archaeological_period": "Neo-Assyrian period",
+        "associated_culture": "Neo-Assyrian",
+        "associated_biblical_geography": "Judah and Jerusalem"
+      },
+      "notes": "No museum image is copied into CKL; the archaeology domain independently tracks a reviewed public-domain image."
+    }
+  ],
   "importance": 94,
   "framework_version": "1.0",
   "object_version": "1",
@@ -252,7 +386,9 @@
       "date": "2026-07-16"
     }
   ],
-  "edited_by": [],
+  "edited_by": [
+    "codex:evidence-graph-expansion:2026-08-14"
+  ],
   "reviewed_by": [],
   "last_reviewed": "2026-07-16",
   "confidence": "medium",

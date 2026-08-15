@@ -56,6 +56,8 @@ FIELD_WEIGHTS: dict[str, int] = {
     "maps": 3,
     "interpretive_notes": 2,
     "claims": 5,
+    "evidence_items": 8,
+    "temporal_scope": 4,
     "knowledge_layers": 1,
     "canonical_story": 6,
     "hermeneutical_lens": 6,
@@ -550,6 +552,16 @@ def searchable_text_fields(obj: Any) -> dict[str, list[str]]:
                 "certainty",
                 "dispute_status",
                 "rationale",
+                "evidence_type",
+                "description",
+                "assertion_type",
+                "confidence",
+                "confidence_rationale",
+                "passage_relevance",
+                "primary_observation",
+                "scholarly_interpretation",
+                "temporal_relation",
+                "relevance_rationale",
             ):
                 item = value.get(key)
                 if isinstance(item, str) and item.strip():
@@ -597,6 +609,8 @@ def searchable_text_fields(obj: Any) -> dict[str, list[str]]:
         "new_testament_connections",
         "interpretive_notes",
         "claims",
+        "evidence_items",
+        "temporal_scope",
         "knowledge_layers",
         "timeline",
         "maps",
@@ -856,6 +870,77 @@ def field_search_terms(field_name: str, value: Any) -> set[str]:
                             if isinstance(nested, str):
                                 terms.update(canonical_search_terms(nested))
         return terms
+    if field_name == "evidence_items":
+        terms: set[str] = set()
+        if isinstance(value, list):
+            for item in value:
+                terms.update(
+                    canonical_search_terms(
+                        *_mapping_values(
+                            item,
+                            (
+                                "id",
+                                "title",
+                                "evidence_type",
+                                "description",
+                                "assertion_type",
+                                "confidence",
+                                "confidence_rationale",
+                                "passage_relevance",
+                                "primary_observation",
+                                "scholarly_interpretation",
+                                "certainty",
+                                "dispute_status",
+                                "notes",
+                            ),
+                        )
+                    )
+                )
+                if hasattr(item, "to_dict"):
+                    item = item.to_dict()
+                if isinstance(item, Mapping):
+                    for list_field in (
+                        "geography_ids",
+                        "source_ids",
+                        "claim_ids",
+                        "related_objects",
+                        "related_evidence",
+                        "scripture_references",
+                        "external_references",
+                    ):
+                        for nested in item.get(list_field, []) or []:
+                            if isinstance(nested, str):
+                                terms.update(canonical_search_terms(nested))
+                            else:
+                                terms.update(
+                                    canonical_search_terms(
+                                        *_mapping_values(
+                                            nested,
+                                            (
+                                                "id",
+                                                "reference",
+                                                "relationship",
+                                                "temporal_relation",
+                                                "relevance_rationale",
+                                                "domain",
+                                                "notes",
+                                            ),
+                                        )
+                                    )
+                                )
+                    for mapping_field in ("temporal_scope", "metadata"):
+                        nested_mapping = item.get(mapping_field)
+                        if isinstance(nested_mapping, Mapping):
+                            for nested in nested_mapping.values():
+                                if isinstance(nested, str):
+                                    terms.update(canonical_search_terms(nested))
+                                elif isinstance(nested, list):
+                                    terms.update(
+                                        canonical_search_terms(
+                                            *(str(value) for value in nested if str(value).strip())
+                                        )
+                                    )
+        return terms
     if field_name == "related_objects":
         terms: set[str] = set()
         if isinstance(value, list):
@@ -873,6 +958,7 @@ def field_search_terms(field_name: str, value: Any) -> set[str]:
         "canonical_story",
         "hermeneutical_lens",
         "retrieval_metadata",
+        "temporal_scope",
     }:
         if not isinstance(value, Mapping):
             return set()
