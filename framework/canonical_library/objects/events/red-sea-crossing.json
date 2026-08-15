@@ -3,13 +3,13 @@
   "type": "event",
   "title": "Red Sea Crossing",
   "aliases": [
-    "what happened in red sea crossing",
-    "tell me about red sea crossing",
-    "why is red sea crossing important"
+    "crossing of the Sea",
+    "Yam Suph crossing",
+    "Sea of Reeds route"
   ],
-  "summary": "Red Sea Crossing is a redemptive event that marks deliverance, covenant, or wilderness formation.",
-  "historical_context": "Historically, Red Sea Crossing is located by its canonical setting; this entry connects that setting with moses, aaron, passover and related CKL objects for contextual retrieval.",
-  "ancient_near_east_context": "Red Sea Crossing unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage.",
+  "summary": "The Exodus 14 narrative in which Israel passes through the Sea while the pursuing Egyptian force is overwhelmed, followed by the victory song in Exodus 15.",
+  "historical_context": "Exodus names route decisions and camps around the crossing but does not provide modern coordinates. Proposed identifications range across eastern Egyptian lakes, lagoons, and gulfs, so CKL preserves the route markers without selecting a crossing site.",
+  "ancient_near_east_context": "The episode is narrated against Egypt's eastern frontier, chariot pursuit, water, wind, and wilderness movement. Geographic comparison must remain separate from claims that a specific modern landform or alleged artifact proves the event.",
   "hebraic_worldview": "",
   "second_temple_context": "",
   "canonical_context": "",
@@ -22,13 +22,13 @@
     "canonical": false,
     "later_christian_reception": false
   },
-  "literary_context": "Exodus, Numbers, Deuteronomy, and later Scripture use Red Sea Crossing as the defining memory of redemption.",
-  "covenantal_significance": "Red Sea Crossing shows that God saves before he commands and that redemption leads to covenant obedience.",
+  "literary_context": "Exodus 13 describes the route decision and approach to the Sea, Exodus 14 narrates the crossing and pursuit, and Exodus 15 responds in poetic form. Numbers 33 later compresses the movement into itinerary notices.",
+  "covenantal_significance": "The crossing separates departure from the initial wilderness journey; geographic evidence clarifies the setting without deciding the event's theological meaning.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
   "historical_setting": "",
-  "canonical_role": "Red Sea Crossing serves as a canonical event anchor, connecting its key passages, people, places, and theological themes within the biblical storyline.",
+  "canonical_role": "Event anchor linking departure from Egypt, the Sea narrative, the victory song, and the first wilderness stations.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -85,115 +85,156 @@
       "relationship": "related",
       "weight": 9,
       "notes": "Places the crossing within the exodus-to-Sinai timeline anchor."
+    },
+    {
+      "id": "red-sea-1",
+      "relationship": "normalized-place-anchor",
+      "weight": 8,
+      "notes": "Retrieval place anchor; it does not resolve the Hebrew name's modern identification."
+    },
+    {
+      "id": "exodus-wilderness-routes-and-water",
+      "relationship": "geographic-evidence",
+      "weight": 10,
+      "notes": "Preserves route markers, terminology, and identification uncertainty."
     }
   ],
   "scripture_references": [
     {
-      "reference": "Exodus 3:1-15",
+      "reference": "Exodus 13:17-22",
       "relationship": "primary",
-      "notes": "deliverance from Egypt"
+      "notes": "Route decision and movement toward the Sea."
     },
     {
-      "reference": "Exodus 19:1-6",
-      "relationship": "supporting",
-      "notes": "Sinai covenant"
+      "reference": "Exodus 14:1-31",
+      "relationship": "primary",
+      "notes": "Camp markers, pursuit, crossing, and destruction of the pursuing force."
     },
     {
-      "reference": "Deuteronomy 5:1-6",
+      "reference": "Exodus 15:1-21",
       "relationship": "supporting",
-      "notes": "covenant remembrance"
+      "notes": "Poetic response to the crossing."
     },
     {
-      "reference": "Hebrews 3:1-6",
+      "reference": "Numbers 33:5-8",
       "relationship": "supporting",
-      "notes": "wilderness theology"
+      "notes": "Itinerary sequence from departure through the Sea."
     }
   ],
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "The Exodus is both historical rescue and theological pattern.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The camp names and route sequence are textual observations; their identification with modern coordinates is disputed.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "exodus-sea-crossing-text",
+        "numbers-33-sea-itinerary-text",
+        "davies-way-wilderness-1979",
+        "hoffmeier-ancient-israel-sinai-2005"
+      ]
     },
     {
-      "note": "Later biblical texts frequently reuse Exodus language for salvation and return.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The normalized English title 'Red Sea Crossing' is a retrieval convention and should not be used to settle the geographic range of the Hebrew place term.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "lexical_uncertainty",
+      "sources": [
+        "exodus-sea-crossing-text",
+        "propp-exodus-1-18-1999",
+        "hoffmeier-ancient-israel-sinai-2005"
+      ]
     }
   ],
   "common_questions": [
-    "Why does this event matter in the Exodus story?",
-    "How does this event shape covenant identity?",
-    "What does this event reveal about God's deliverance?"
+    "Which route and camp markers does Exodus name around the crossing?",
+    "Why is the modern location of the crossing disputed?",
+    "How do Exodus 14 and the song in Exodus 15 differ in genre?",
+    "What does Numbers 33 add to the route sequence?"
   ],
   "sources": [
     {
-      "title": "Exodus 1-15",
+      "title": "Exodus 13-15",
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "Exodus 13:17-22; 14:1-31; 15:1-21",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "exodus-1-15"
-    },
-    {
-      "title": "Exodus 19-24",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "exodus-19-24"
-    },
-    {
-      "title": "Deuteronomy 5-8",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "deuteronomy-5-8"
-    },
-    {
-      "title": "Hebrews 3-4",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "hebrews-3-4"
-    },
-    {
-      "title": "Canonical historical orientation for Red Sea Crossing",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
       "supports": [
-        "historical_context"
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "interpretive_notes"
       ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
-      "id": "red-sea-crossing-historical-orientation"
+      "notes": "Primary biblical narrative and poetic text; no modern translation is reproduced.",
+      "id": "exodus-sea-crossing-text"
+    },
+    {
+      "title": "Numbers 33",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "Numbers 33:5-8",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [
+        "historical_context",
+        "literary_context",
+        "interpretive_notes"
+      ],
+      "notes": "Primary biblical itinerary text.",
+      "id": "numbers-33-sea-itinerary-text"
+    },
+    {
+      "title": "The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament",
+      "author": "G. I. Davies",
+      "publisher": "Cambridge University Press",
+      "year": 1979,
+      "locator": "Chapters 7-9: route points, Sinai routes, and identification",
+      "url": "https://www.cambridge.org/core/books/way-of-the-wilderness/19AE62B5E4C086F242F5C1F95BCC9CB1",
+      "source_type": "academic-book",
+      "supports": [
+        "historical_context",
+        "ancient_near_east_context",
+        "interpretive_notes"
+      ],
+      "notes": "Historical-geographic survey of Sea and route identifications.",
+      "id": "davies-way-wilderness-1979"
+    },
+    {
+      "title": "Ancient Israel in Sinai: The Evidence for the Authenticity of the Wilderness Traditions",
+      "author": "James K. Hoffmeier",
+      "publisher": "Oxford University Press",
+      "year": 2005,
+      "locator": "Chapters 4-5: route from Rameses and location of the Sea",
+      "url": "https://academic.oup.com/book/36060",
+      "source_type": "academic-book",
+      "supports": [
+        "historical_context",
+        "ancient_near_east_context",
+        "interpretive_notes"
+      ],
+      "notes": "One detailed route reconstruction, retained as a scholarly model rather than CKL's settled map.",
+      "id": "hoffmeier-ancient-israel-sinai-2005"
+    },
+    {
+      "title": "Exodus 1-18",
+      "author": "William H. C. Propp",
+      "publisher": "Yale University Press",
+      "year": 1999,
+      "locator": "Anchor Yale Bible commentary on Exodus 13-15",
+      "url": "https://yalebooks.yale.edu/book/9780300139389/exodus-1-18/",
+      "source_type": "academic-book",
+      "supports": [
+        "literary_context",
+        "interpretive_notes"
+      ],
+      "notes": "Philological, literary, and historical commentary on the route and crossing narratives.",
+      "id": "propp-exodus-1-18-1999"
     }
   ],
   "canonical_story": {

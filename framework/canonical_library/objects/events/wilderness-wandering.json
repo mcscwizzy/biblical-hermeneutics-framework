@@ -3,13 +3,13 @@
   "type": "event",
   "title": "Wilderness Wandering",
   "aliases": [
-    "what happened in wilderness wandering",
-    "tell me about wilderness wandering",
-    "why is wilderness wandering important"
+    "Israel in the wilderness",
+    "Exodus wilderness journey",
+    "wilderness itinerary and water crises"
   ],
-  "summary": "Wilderness Wandering is a redemptive event that marks deliverance, covenant, or wilderness formation.",
-  "historical_context": "The event belongs to Israel's liberation from Egypt and the formation of a covenant nation in the wilderness.",
-  "ancient_near_east_context": "Imperial pressure, ritual memory, and wilderness movement frame the background.",
+  "summary": "Israel's extended journey between Egypt and the Transjordan, narrated through ordered stations, resource crises, covenant episodes, rebellions, and changes of generation.",
+  "historical_context": "Exodus and Numbers preserve narrative episodes and itinerary notices for travel from the Sea toward Sinai and eventually the Transjordan. The sequence is textually important, but most intermediate stations and the complete route cannot be assigned secure modern coordinates.",
+  "ancient_near_east_context": "Travel through arid zones depends on routes, water, pasture, and viable camps. Marah, Elim, Rephidim, Kadesh, and other episodes foreground those constraints without allowing present-day springs or mountains to be identified automatically with biblical stations.",
   "hebraic_worldview": "",
   "second_temple_context": "",
   "canonical_context": "",
@@ -22,13 +22,13 @@
     "canonical": false,
     "later_christian_reception": false
   },
-  "literary_context": "Exodus, Numbers, Deuteronomy, and later Scripture use Wilderness Wandering as the defining memory of redemption.",
-  "covenantal_significance": "Wilderness Wandering shows that God saves before he commands and that redemption leads to covenant obedience.",
+  "literary_context": "Exodus 15-19 narrates the first stages to Sinai; Numbers combines camp lists with episodes of provision, dispute, rebellion, judgment, and movement toward Moab; Numbers 33 later compresses the route into an itinerary.",
+  "covenantal_significance": "The wilderness journey forms the setting for covenant, instruction, testing, and community formation; geographic evidence should clarify that setting without prescribing the passage's theology.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
   "historical_setting": "",
-  "canonical_role": "Wilderness Wandering serves as a canonical event anchor, connecting its key passages, people, places, and theological themes within the biblical storyline.",
+  "canonical_role": "Event anchor for Israel's travel from the Sea through Sinai and the wilderness toward the Transjordan.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -79,115 +79,167 @@
       "relationship": "narrative-context",
       "weight": 8,
       "notes": "curated canonical context"
+    },
+    {
+      "id": "exodus-wilderness-routes-and-water",
+      "relationship": "geographic-evidence",
+      "weight": 10,
+      "notes": "Provides route, station, water, and identification evidence while preserving uncertainty."
     }
   ],
   "scripture_references": [
     {
-      "reference": "Exodus 3:1-15",
+      "reference": "Exodus 15:22-27",
       "relationship": "primary",
-      "notes": "deliverance from Egypt"
+      "notes": "Marah and Elim water stations."
+    },
+    {
+      "reference": "Exodus 16:1-36",
+      "relationship": "primary",
+      "notes": "Travel in the wilderness of Sin and food provision."
+    },
+    {
+      "reference": "Exodus 17:1-7",
+      "relationship": "primary",
+      "notes": "Rephidim and the absence of water."
     },
     {
       "reference": "Exodus 19:1-6",
       "relationship": "supporting",
-      "notes": "Sinai covenant"
+      "notes": "Arrival at Sinai and covenant setting."
     },
     {
-      "reference": "Deuteronomy 5:1-6",
-      "relationship": "supporting",
-      "notes": "covenant remembrance"
+      "reference": "Numbers 10:11-12",
+      "relationship": "primary",
+      "notes": "Departure from Sinai and resumed travel."
     },
     {
-      "reference": "Hebrews 3:1-6",
-      "relationship": "supporting",
-      "notes": "wilderness theology"
+      "reference": "Numbers 20:1-13",
+      "relationship": "primary",
+      "notes": "Kadesh and another water dispute."
+    },
+    {
+      "reference": "Numbers 33:1-49",
+      "relationship": "primary",
+      "notes": "Retrospective itinerary from Egypt to the plains of Moab."
     }
   ],
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "The Exodus is both historical rescue and theological pattern.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The itinerary order is directly available from Exodus and Numbers, but most station-to-site identifications remain uncertain.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "exodus-wilderness-text",
+        "numbers-wilderness-itinerary-text",
+        "davies-way-wilderness-1979",
+        "hoffmeier-ancient-israel-sinai-2005"
+      ]
     },
     {
-      "note": "Later biblical texts frequently reuse Exodus language for salvation and return.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Water shortages and contrasting stations are concrete narrative geography, not permission to identify modern springs by resemblance alone.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "exodus-wilderness-text",
+        "numbers-wilderness-itinerary-text",
+        "meyers-exodus-2005"
+      ]
     }
   ],
   "common_questions": [
-    "Why does this event matter in the Exodus story?",
-    "How does this event shape covenant identity?",
-    "What does this event reveal about God's deliverance?"
+    "How do the narrative episodes and Numbers 33 itinerary relate?",
+    "Why are water sources repeatedly emphasized along the route?",
+    "Which wilderness stations can be identified securely?",
+    "Why do proposed routes to Mount Sinai remain disputed?"
   ],
   "sources": [
     {
-      "title": "Exodus 1-15",
+      "title": "Exodus 15-19",
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "Exodus 15:22-27; 16:1-36; 17:1-7; 19:1-6",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "exodus-1-15"
-    },
-    {
-      "title": "Exodus 19-24",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "exodus-19-24"
-    },
-    {
-      "title": "Deuteronomy 5-8",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "deuteronomy-5-8"
-    },
-    {
-      "title": "Hebrews 3-4",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "hebrews-3-4"
-    },
-    {
-      "title": "Canonical historical orientation for Wilderness Wandering",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
       "supports": [
-        "historical_context"
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "interpretive_notes"
       ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
-      "id": "wilderness-wandering-historical-orientation"
+      "notes": "Primary biblical narrative text; no modern translation is reproduced.",
+      "id": "exodus-wilderness-text"
+    },
+    {
+      "title": "Numbers 10, 20, and 33",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "Numbers 10:11-12; 20:1-13; 33:1-49",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [
+        "summary",
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context",
+        "interpretive_notes"
+      ],
+      "notes": "Primary biblical narrative and itinerary text.",
+      "id": "numbers-wilderness-itinerary-text"
+    },
+    {
+      "title": "The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament",
+      "author": "G. I. Davies",
+      "publisher": "Cambridge University Press",
+      "year": 1979,
+      "locator": "Chapters 7-9: route points, Sinai routes, and identification",
+      "url": "https://www.cambridge.org/core/books/way-of-the-wilderness/19AE62B5E4C086F242F5C1F95BCC9CB1",
+      "source_type": "academic-book",
+      "supports": [
+        "historical_context",
+        "ancient_near_east_context",
+        "interpretive_notes"
+      ],
+      "notes": "Historical-geographic survey of itinerary interpretation and competing routes.",
+      "id": "davies-way-wilderness-1979"
+    },
+    {
+      "title": "Ancient Israel in Sinai: The Evidence for the Authenticity of the Wilderness Traditions",
+      "author": "James K. Hoffmeier",
+      "publisher": "Oxford University Press",
+      "year": 2005,
+      "locator": "Chapters 4-7: route, Sea, mountain, and wilderness travel",
+      "url": "https://academic.oup.com/book/36060",
+      "source_type": "academic-book",
+      "supports": [
+        "historical_context",
+        "ancient_near_east_context",
+        "interpretive_notes"
+      ],
+      "notes": "One detailed route reconstruction, retained as a scholarly model rather than CKL's settled map.",
+      "id": "hoffmeier-ancient-israel-sinai-2005"
+    },
+    {
+      "title": "Exodus",
+      "author": "Carol Meyers",
+      "publisher": "Cambridge University Press",
+      "year": 2005,
+      "locator": "New Cambridge Bible Commentary, Exodus 15-19",
+      "url": "https://www.cambridge.org/core/books/exodus/0BBD532445DFE6B3D2BA9CB53E3E6906",
+      "source_type": "academic-book",
+      "supports": [
+        "literary_context",
+        "interpretive_notes"
+      ],
+      "notes": "Literary, social, and historical commentary on the initial wilderness episodes.",
+      "id": "meyers-exodus-2005"
     }
   ],
   "canonical_story": {

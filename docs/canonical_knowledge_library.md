@@ -161,7 +161,7 @@ CKL stores canonical facts, retrieval metadata, and future scholarship in a dete
 
 The evidence expansion began with a read-only inventory and contract audit:
 
-- The authoritative inventory contains 629 validated objects across 18 object
+- The authoritative inventory contains 631 validated objects across 18 object
   categories. JSON remains the reviewable source of truth; the manifest carries
   counts and framework/schema versions.
 - `schema.py` already provided a typed canonical object, claims, structured
@@ -937,14 +937,15 @@ The structured evidence corpus deliberately favors depth over count. It now
 includes David/Goliath weapon language and Tell es-Safi metallurgy; the Taylor
 Prism and Lachish reliefs; the Cyrus Cylinder; Genesis creation and flood
 comparisons; Psalm 82, Deuteronomy 32, Job, and Ugaritic divine-assembly
-evidence; Egyptian brickmaking comparison; and Thessalonian civic, funerary,
-and arrival-imagery evidence. These 17 items are chronology-controlled,
+evidence; Egyptian brickmaking, royal titulary, and offering-practice
+comparisons; the Exodus-to-Sinai itinerary and water constraints; and
+Thessalonian civic, funerary, and arrival-imagery evidence. These 24 items are chronology-controlled,
 passage-linked, and source-resolvable, but AI-authored additions remain drafts
 until human review.
 
-The next focused expansion should prioritize sacred space and image language in
-Genesis; Egyptian political/religious evidence, wilderness geography, and
-tabernacle context; settlement and household religion in Judges; Assyrian
+The next focused expansion should prioritize settlement, household religion,
+regional cult sites, and the Late Bronze/Iron Age transition in Judges, followed
+by sacred-space and tabernacle comparison; Assyrian
 deportation and tribute; Babylonian exile and Yehud administration; Second
 Temple institutions; first-century Judean and Galilean village life; and one
 additional Pauline city such as Corinth or Ephesus. Cultural practices,

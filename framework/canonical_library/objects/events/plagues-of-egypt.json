@@ -3,32 +3,32 @@
   "type": "event",
   "title": "Plagues of Egypt",
   "aliases": [
-    "what happened in plagues of egypt",
-    "tell me about plagues of egypt",
-    "why is plagues of egypt important"
+    "the ten plagues",
+    "Exodus plague sequence",
+    "judgments on the gods of Egypt"
   ],
-  "summary": "Plagues of Egypt is a redemptive event that marks deliverance, covenant, or wilderness formation.",
-  "historical_context": "Historically, Plagues of Egypt is located by its canonical setting; this entry connects that setting with moses, aaron, passover and related CKL objects for contextual retrieval.",
-  "ancient_near_east_context": "Plagues of Egypt unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage.",
-  "hebraic_worldview": "",
+  "summary": "The escalating sign and plague sequence in Exodus 7-12 that precedes Passover and Pharaoh's release of Israel.",
+  "historical_context": "The narrative is set in Egypt under an unnamed Pharaoh and moves between royal audience scenes and disasters affecting land, animals, households, and cult. The record does not assign the episode to a dynasty or claim that an Egyptian artifact independently verifies the sequence.",
+  "ancient_near_east_context": "Egyptian royal objects show kings represented through divine titulary and temple cult, supplying bounded comparison for Pharaoh's royal-religious role. The evidence does not establish popular plague-to-deity charts as historical fact.",
+  "hebraic_worldview": "Exodus 12:12 and Numbers 33:4 explicitly describe judgment on Egypt's gods, while the narrative repeatedly frames the conflict through recognition of YHWH.",
   "second_temple_context": "",
   "canonical_context": "",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
-    "hebraic_worldview": false,
+    "hebraic_worldview": true,
     "second_temple": false,
     "canonical": false,
     "later_christian_reception": false
   },
-  "literary_context": "Exodus, Numbers, Deuteronomy, and later Scripture use Plagues of Egypt as the defining memory of redemption.",
-  "covenantal_significance": "Plagues of Egypt shows that God saves before he commands and that redemption leads to covenant obedience.",
+  "literary_context": "Exodus 5 introduces Pharaoh's refusal, Exodus 7-11 narrates the escalating signs and plagues, and Exodus 12 places the final plague within Passover and departure preparations.",
+  "covenantal_significance": "The sequence leads into Israel's departure and covenant formation; Egyptian comparison remains contextual evidence rather than the theological conclusion of the record.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
   "historical_setting": "",
-  "canonical_role": "Plagues of Egypt serves as a canonical event anchor, connecting its key passages, people, places, and theological themes within the biblical storyline.",
+  "canonical_role": "Event anchor for the Exodus conflict immediately preceding Passover and departure from Egypt.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -79,115 +79,158 @@
       "relationship": "narrative-context",
       "weight": 8,
       "notes": "curated canonical context"
+    },
+    {
+      "id": "egyptian-kingship-and-divine-order",
+      "relationship": "royal-religious-evidence",
+      "weight": 10,
+      "notes": "Separates Exodus's direct claims from comparative Egyptian royal and cultic evidence."
     }
   ],
   "scripture_references": [
     {
-      "reference": "Exodus 3:1-15",
+      "reference": "Exodus 5:1-5",
       "relationship": "primary",
-      "notes": "deliverance from Egypt"
+      "notes": "Pharaoh's refusal introduces the authority conflict."
     },
     {
-      "reference": "Exodus 19:1-6",
-      "relationship": "supporting",
-      "notes": "Sinai covenant"
+      "reference": "Exodus 7:1-25",
+      "relationship": "primary",
+      "notes": "Signs before Pharaoh and the first plague."
     },
     {
-      "reference": "Deuteronomy 5:1-6",
-      "relationship": "supporting",
-      "notes": "covenant remembrance"
+      "reference": "Exodus 8:1-32",
+      "relationship": "primary",
+      "notes": "Frogs, insects, and continued negotiations."
     },
     {
-      "reference": "Hebrews 3:1-6",
+      "reference": "Exodus 9:1-35",
+      "relationship": "primary",
+      "notes": "Livestock disease, boils, and hail."
+    },
+    {
+      "reference": "Exodus 10:1-29",
+      "relationship": "primary",
+      "notes": "Locusts, darkness, and negotiation."
+    },
+    {
+      "reference": "Exodus 11:1-10",
+      "relationship": "primary",
+      "notes": "Announcement of the final plague."
+    },
+    {
+      "reference": "Exodus 12:1-32",
+      "relationship": "primary",
+      "notes": "Passover instructions, judgment language, and the death of the firstborn."
+    },
+    {
+      "reference": "Numbers 33:3-4",
       "relationship": "supporting",
-      "notes": "wilderness theology"
+      "notes": "The itinerary recalls judgment on Egypt's gods."
     }
   ],
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "The Exodus is both historical rescue and theological pattern.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The sequence is explicit in Exodus, but its historical date, dynasty, and relationship to external Egyptian records remain debated.",
+      "note_type": "interpretive-caution",
+      "certainty": "disputed",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "exodus-plague-sequence-text",
+        "sarna-exodus-1991",
+        "meyers-exodus-2005"
+      ]
     },
     {
-      "note": "Later biblical texts frequently reuse Exodus language for salvation and return.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The text names judgment on Egypt's gods but does not supply a one-to-one list matching every plague with a deity.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "exodus-plague-sequence-text",
+        "numbers-33-judgment-text",
+        "sarna-exodus-1991",
+        "meyers-exodus-2005"
+      ]
     }
   ],
   "common_questions": [
-    "Why does this event matter in the Exodus story?",
-    "How does this event shape covenant identity?",
-    "What does this event reveal about God's deliverance?"
+    "How does the plague sequence escalate across Exodus 7-12?",
+    "What does Pharaoh's repeated negotiation contribute to the narrative?",
+    "What does Exodus actually say about judgment on Egypt's gods?",
+    "Why are plague-to-deity correlation charts disputed?"
   ],
   "sources": [
     {
-      "title": "Exodus 1-15",
+      "title": "Exodus 5 and 7-12",
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "Exodus 5:1-5; 7:1-12:32",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "exodus-1-15"
+      "supports": [
+        "summary",
+        "historical_context",
+        "hebraic_worldview",
+        "literary_context",
+        "interpretive_notes"
+      ],
+      "notes": "Primary biblical text; no modern translation is reproduced.",
+      "id": "exodus-plague-sequence-text"
     },
     {
-      "title": "Exodus 19-24",
+      "title": "Numbers 33",
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "Numbers 33:3-4",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "exodus-19-24"
+      "supports": [
+        "hebraic_worldview",
+        "interpretive_notes"
+      ],
+      "notes": "Itinerary notice repeating the judgment-on-the-gods formulation.",
+      "id": "numbers-33-judgment-text"
     },
     {
-      "title": "Deuteronomy 5-8",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "deuteronomy-5-8"
-    },
-    {
-      "title": "Hebrews 3-4",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "hebrews-3-4"
-    },
-    {
-      "title": "Canonical historical orientation for Plagues of Egypt",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "",
-      "url": "",
+      "title": "The JPS Torah Commentary: Exodus",
+      "author": "Nahum M. Sarna",
+      "publisher": "Jewish Publication Society",
+      "year": 1991,
+      "locator": "Commentary on Exodus 5 and 7-12",
+      "url": "https://jps.org/books/jps-torah-commentary-exodus/",
       "source_type": "reference-work",
       "supports": [
-        "historical_context"
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "literary_context",
+        "interpretive_notes"
       ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
-      "id": "plagues-of-egypt-historical-orientation"
+      "notes": "Academic Jewish commentary used for literary and historical control.",
+      "id": "sarna-exodus-1991"
+    },
+    {
+      "title": "Exodus",
+      "author": "Carol Meyers",
+      "publisher": "Cambridge University Press",
+      "year": 2005,
+      "locator": "New Cambridge Bible Commentary, Exodus 5-12",
+      "url": "https://www.cambridge.org/core/books/exodus/0BBD532445DFE6B3D2BA9CB53E3E6906",
+      "source_type": "academic-book",
+      "supports": [
+        "historical_context",
+        "ancient_near_east_context",
+        "hebraic_worldview",
+        "literary_context",
+        "interpretive_notes"
+      ],
+      "notes": "Historical, social, literary, and religious commentary on Exodus.",
+      "id": "meyers-exodus-2005"
     }
   ],
   "canonical_story": {

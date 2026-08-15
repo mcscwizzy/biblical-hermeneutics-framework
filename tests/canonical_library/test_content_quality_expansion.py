@@ -8,6 +8,8 @@ EXPANSION_OBJECTS = {
     "ancient-divine-assembly-imagery": 4,
     "egyptian-forced-labor-and-brickmaking": 2,
     "thessalonian-civic-and-funerary-context": 3,
+    "egyptian-kingship-and-divine-order": 4,
+    "exodus-wilderness-routes-and-water": 3,
 }
 
 
@@ -136,10 +138,66 @@ def test_exodus_brickmaking_cluster_is_discoverable_by_passage() -> None:
     assert ranked[1].passage_relationship == "comparative"
 
 
+def test_egyptian_kingship_context_keeps_text_and_artifacts_distinct() -> None:
+    library = CanonicalLibrary.load_default()
+    authority = _rank(
+        library,
+        "egyptian-kingship-and-divine-order",
+        "How does Pharaoh's authority compare with Egyptian royal ideology?",
+        "Exodus 5:1-5",
+        "ancient near eastern background",
+        "archaeology",
+    )
+    assert authority[0].evidence_id == "pharaoh-authority-question"
+    assert authority[0].passage_relationship == "direct"
+    assert {
+        item.evidence_id for item in authority[1:]
+    } == {"seti-royal-offering-scene", "seti-son-of-ra-titulary"}
+    assert all(item.passage_relationship == "comparative" for item in authority[1:])
+
+    gods = _rank(
+        library,
+        "egyptian-kingship-and-divine-order",
+        "What does Exodus say about judgment on the gods of Egypt?",
+        "Exodus 12:12",
+        "ancient near eastern background",
+    )
+    assert gods[0].evidence_id == "judgment-on-egypts-gods"
+    assert gods[0].evidence_type == "worldview-concept"
+    assert gods[0].dispute_status == "interpretive_uncertainty"
+
+
+def test_wilderness_geography_prefers_direct_water_data_and_preserves_route_uncertainty() -> None:
+    library = CanonicalLibrary.load_default()
+    water = _rank(
+        library,
+        "exodus-wilderness-routes-and-water",
+        "What do Marah and Elim show about water along the wilderness route?",
+        "Exodus 15:22-27",
+        "historical setting",
+    )
+    assert [item.evidence_id for item in water] == ["marah-elim-water-stations"]
+    assert water[0].passage_relationship == "direct"
+
+    sea = _rank(
+        library,
+        "exodus-wilderness-routes-and-water",
+        "Where was the Sea crossing and how certain is the route?",
+        "Exodus 14:1-31",
+        "historical setting",
+    )
+    assert [item.evidence_id for item in sea] == ["yam-suf-route-identification"]
+    assert sea[0].confidence == "medium"
+    assert sea[0].dispute_status == "identification_uncertainty"
+
+
 def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
     library = CanonicalLibrary.load_default()
     flood = library.objects_by_id["the-flood"]
     thessalonica = library.objects_by_id["thessalonica"]
+    plagues = library.objects_by_id["plagues-of-egypt"]
+    crossing = library.objects_by_id["red-sea-crossing"]
+    wilderness = library.objects_by_id["wilderness-wandering"]
     assert flood.scripture_references[0].reference == "Genesis 6:1-22"
     assert all(reference.reference != "Genesis 11:1-9" for reference in flood.scripture_references)
     assert thessalonica.scripture_references[0].reference == "Acts 17:1-9"
@@ -147,6 +205,11 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
         not reference.reference.startswith(("Matthew", "Mark", "Luke", "John"))
         for reference in thessalonica.scripture_references
     )
+    assert plagues.scripture_references[0].reference == "Exodus 5:1-5"
+    assert crossing.scripture_references[0].reference == "Exodus 13:17-22"
+    assert wilderness.scripture_references[0].reference == "Exodus 15:22-27"
+    assert "Roman administration" not in plagues.ancient_near_east_context
+    assert "Roman administration" not in crossing.ancient_near_east_context
 
     context_fields = {
         "historical": "historical_context",
@@ -165,12 +228,14 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
 def test_corpus_evidence_quality_metrics_have_no_structural_failures() -> None:
     library = CanonicalLibrary.load_default()
     report = audit_evidence(library.objects_by_id.values())
-    assert report["evidence_count"] == 17
-    assert report["evidence_with_primary_sources_count"] == 16
-    assert report["evidence_with_academic_secondary_sources_count"] == 12
-    assert report["evidence_with_chronology_count"] == 17
-    assert report["evidence_with_passage_relevance_count"] == 17
-    assert report["worldview_evidence_count"] == 3
+    assert report["evidence_count"] == 24
+    assert report["evidence_with_primary_sources_count"] == 23
+    assert report["evidence_with_academic_secondary_sources_count"] == 19
+    assert report["evidence_with_chronology_count"] == 24
+    assert report["evidence_with_passage_relevance_count"] == 24
+    assert report["disputed_evidence_count"] == 17
+    assert report["worldview_evidence_count"] == 4
+    assert report["archaeology_linked_evidence_count"] == 3
     assert report["internal_source_only_evidence_count"] == 0
     assert report["missing_source_locator_count"] == 0
     assert report["missing_confidence_rationale_count"] == 0
