@@ -74,7 +74,7 @@ _CONTEXT_FIELD_APPLICABILITY_KEYS: tuple[tuple[str, str], ...] = (
 )
 
 _CONTEXT_APPLICABILITY_DEFAULTS: dict[str, bool] = {
-    applicability_key: True for _, applicability_key in _CONTEXT_FIELD_APPLICABILITY_KEYS
+    applicability_key: False for _, applicability_key in _CONTEXT_FIELD_APPLICABILITY_KEYS
 }
 
 _CONTEXT_FIELD_APPLICABILITY_LOOKUP: dict[str, str] = {

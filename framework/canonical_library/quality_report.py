@@ -243,6 +243,11 @@ def _source_metrics(records: Sequence[RawRecord]) -> dict[str, Any]:
             for claim in payload.get("claims", []) or []
             if isinstance(claim, Mapping)
         )
+        valid_support_targets.update(
+            _safe_normalize_id(item.get("id", ""))
+            for item in payload.get("evidence_items", []) or []
+            if isinstance(item, Mapping)
+        )
         valid_support_targets.discard("")
         for index, note in enumerate(payload.get("interpretive_notes", []) or []):
             if not isinstance(note, Mapping):
@@ -273,6 +278,22 @@ def _source_metrics(records: Sequence[RawRecord]) -> dict[str, Any]:
                         {
                             "object_id": _record_key(record),
                             "reference": f"claims[{index}].source_ids",
+                            "source_id": normalized,
+                        }
+                    )
+        for index, item in enumerate(payload.get("evidence_items", []) or []):
+            if not isinstance(item, Mapping):
+                continue
+            for source_id in item.get("source_ids", []) or []:
+                normalized = _safe_normalize_id(source_id)
+                if not normalized:
+                    continue
+                referenced_source_ids.add(normalized)
+                if normalized not in source_ids:
+                    unresolved.append(
+                        {
+                            "object_id": _record_key(record),
+                            "reference": f"evidence_items[{index}].source_ids",
                             "source_id": normalized,
                         }
                     )
@@ -853,7 +874,7 @@ def build_quality_report(
     ]
 
     return {
-        "report_version": "1.3",
+        "report_version": "1.4",
         "root": str(ckl_root),
         "inventory": {
             "raw_object_count": len(records) + len(parse_failures),
@@ -1012,6 +1033,44 @@ def format_quality_markdown(
         _count_line("Orphaned objects", graph["orphaned_object_count"]),
         _count_line("Structured evidence edges", graph.get("evidence_edge_count", 0)),
         _count_line("Structured evidence items", evidence_audit.get("evidence_count", 0)),
+        _count_line(
+            "Evidence items with primary sources",
+            evidence_audit.get("evidence_with_primary_sources_count", 0),
+        ),
+        _count_line(
+            "Evidence items with academic secondary sources",
+            evidence_audit.get("evidence_with_academic_secondary_sources_count", 0),
+        ),
+        _count_line(
+            "Evidence items with chronology",
+            evidence_audit.get("evidence_with_chronology_count", 0),
+        ),
+        _count_line(
+            "Evidence items with passage relevance",
+            evidence_audit.get("evidence_with_passage_relevance_count", 0),
+        ),
+        _count_line("Disputed evidence", evidence_audit.get("disputed_evidence_count", 0)),
+        _count_line("Worldview evidence", evidence_audit.get("worldview_evidence_count", 0)),
+        _count_line(
+            "Archaeology-linked evidence",
+            evidence_audit.get("archaeology_linked_evidence_count", 0),
+        ),
+        _count_line(
+            "Evidence source locators missing",
+            evidence_audit.get("missing_source_locator_count", 0),
+        ),
+        _count_line(
+            "Evidence relying only on internal sources",
+            evidence_audit.get("internal_source_only_evidence_count", 0),
+        ),
+        _count_line(
+            "Evidence confidence rationales missing",
+            evidence_audit.get("missing_confidence_rationale_count", 0),
+        ),
+        _count_line(
+            "Generic boilerplate fields",
+            evidence_audit.get("generic_boilerplate_count", 0),
+        ),
         _count_line("Evidence audit issues", evidence_audit.get("issue_count", 0)),
         _count_line(
             "Unresolved legacy object references",

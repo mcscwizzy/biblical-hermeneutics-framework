@@ -329,7 +329,10 @@ CONTEXT_APPLICABILITY_FIELDS: tuple[str, ...] = (
 
 
 def default_context_applicability() -> dict[str, bool]:
-    return {field_name: True for field_name in CONTEXT_APPLICABILITY_FIELDS}
+    # Context layers are opt-in.  Older records may still carry explicit true
+    # values, but newly authored or partially migrated records must not imply
+    # that every historical horizon is useful merely because the field exists.
+    return {field_name: False for field_name in CONTEXT_APPLICABILITY_FIELDS}
 
 
 def default_section_status() -> dict[str, str]:

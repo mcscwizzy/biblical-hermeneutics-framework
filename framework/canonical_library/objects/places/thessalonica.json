@@ -7,28 +7,28 @@
     "tell me about thessalonica",
     "why is thessalonica important"
   ],
-  "summary": "Thessalonica is a ministry location in the story of Jesus or the early church.",
-  "historical_context": "Historically, Thessalonica belongs within the scriptural setting around Matthew 28:16-20, where Matthew 28:16-20, Mark 16:19-20, jesus, and acts help locate this biblical place in the Bible's people, places, and events.",
-  "ancient_near_east_context": "Ancient background for Thessalonica includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Matthew 28:16-20, Mark 16:19-20, jesus, and acts without letting comparison replace the biblical witness.",
+  "summary": "Thessalonica was a major Roman Macedonian city where Paul, Silas, and Timothy established a community addressed by First and Second Thessalonians and narrated in Acts 17.",
+  "historical_context": "Located on the Thermaic Gulf and Via Egnatia, Thessalonica was a free city and provincial center with local civic institutions. First-century inscriptions attest politarchs, the title used in Acts 17, while later monuments must be dated separately.",
+  "ancient_near_east_context": "",
   "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "second_temple_context": "Paul begins in the synagogue, reasons from the Scriptures, and forms a mixed community within a first-century Jewish and Greco-Roman setting.",
+  "canonical_context": "Acts 17 narrates the mission and opposition in the city; First and Second Thessalonians address the resulting community's faith, suffering, communal life, and eschatological hope.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
-    "ancient_near_east": true,
-    "hebraic_worldview": true,
+    "ancient_near_east": false,
+    "hebraic_worldview": false,
     "second_temple": true,
     "canonical": true,
-    "later_christian_reception": true
+    "later_christian_reception": false
   },
-  "literary_context": "The Gospels and Acts use Thessalonica as a stage for proclamation, response, and mission.",
-  "covenantal_significance": "Thessalonica helps show how the kingdom of God advances into the nations.",
+  "literary_context": "Acts 17:1-9 compresses the founding conflict into a mission narrative, whereas the Thessalonian letters address the community directly. Narrative and epistolary perspectives should be compared without forcing every detail into one chronology.",
+  "covenantal_significance": "The Thessalonian mission shows Israel's Scriptures being proclaimed in a Macedonian city and a predominantly Gentile assembly learning to serve the living God and await Jesus.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
   "historical_setting": "",
-  "canonical_role": "Thessalonica serves as a canonical place anchor, connecting geography, historical setting, key passages, and related people, events, and themes.",
+  "canonical_role": "Thessalonica connects Luke's Macedonian mission narrative with two letters that preserve the community's pastoral, ethical, and eschatological questions.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -51,160 +51,146 @@
   "related_events": [],
   "related_objects": [
     {
-      "id": "jesus",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "1-thessalonians",
+      "relationship": "letter-addressed-to-local-community",
+      "weight": 10,
+      "notes": "First Thessalonians is the principal epistolary witness to the community."
     },
     {
       "id": "acts",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "relationship": "mission-narrative-context",
+      "weight": 10,
+      "notes": "Acts 17:1-9 narrates Paul's work and opposition in Thessalonica."
     },
     {
       "id": "paul",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "relationship": "missionary-and-letter-author",
+      "weight": 10,
+      "notes": "Paul participates in the mission and co-sends the letters."
     },
     {
-      "id": "kingdom-theme",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "macedonia",
+      "relationship": "regional-context",
+      "weight": 9,
+      "notes": "Thessalonica was a leading city of Roman Macedonia."
     },
     {
-      "id": "new-covenant",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "thessalonian-civic-and-funerary-context",
+      "relationship": "evidence-cluster",
+      "weight": 10,
+      "notes": "Chronology-controlled civic, funerary, and interpretive evidence."
     }
   ],
   "scripture_references": [
     {
-      "reference": "Matthew 28:16-20",
-      "relationship": "supporting",
-      "notes": "Jesus' ministry in the land"
+      "reference": "Acts 17:1-9",
+      "relationship": "primary",
+      "notes": "Paul's mission, local opposition, Jason, and the politarchs."
     },
     {
-      "reference": "Mark 16:19-20",
-      "relationship": "supporting",
-      "notes": "Jesus' ministry and response"
+      "reference": "1 Thessalonians 1:1-10",
+      "relationship": "primary",
+      "notes": "The community, its conversion, and its reputation in Macedonia and Achaia."
     },
     {
-      "reference": "Luke 24:50-53",
+      "reference": "1 Thessalonians 4:13-18",
       "relationship": "supporting",
-      "notes": "ministry and mission"
+      "notes": "Local pastoral context for grief and resurrection hope."
     },
     {
-      "reference": "John 20:17-23",
+      "reference": "2 Thessalonians 1:1-12",
       "relationship": "supporting",
-      "notes": "signs, belief, and mission"
-    },
-    {
-      "reference": "Acts 9:1-19",
-      "relationship": "supporting",
-      "notes": "church mission in place"
+      "notes": "The addressed community's endurance under affliction."
     }
   ],
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "The place matters because the narrative happens there, not only because it is named.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The first-century politarch inscription supports the local appropriateness of Acts' title but does not independently verify every event in Acts 17.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "phi-thessalonica-politarchs-32"
+      ]
     },
     {
-      "note": "Geographic settings often help explain response, conflict, and mission.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Later Roman graves and epitaphs from Thessalonica are local comparisons, not direct evidence of what Paul's audience believed around 50 CE.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "chronological_uncertainty",
+      "sources": [
+        "amth-thessalonian-funerary-context"
+      ]
     }
   ],
   "common_questions": [
-    "Why does this ministry site matter?",
-    "How does this place shape the Gospel or Acts narrative?",
-    "What does this location contribute to mission?"
+    "Where was Thessalonica within Roman Macedonia?",
+    "What happened during Paul's mission in Acts 17?",
+    "What do Thessalonian inscriptions reveal about politarchs?",
+    "Which local funerary evidence is later than Paul's letters?"
   ],
   "sources": [
     {
-      "title": "Matthew",
+      "title": "Acts 17",
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "Acts 17:1-9",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "matthew"
+      "supports": [
+        "summary",
+        "historical_context",
+        "literary_context"
+      ],
+      "notes": "Primary mission narrative; no modern translation is reproduced.",
+      "id": "acts-17-thessalonica"
     },
     {
-      "title": "Mark",
+      "title": "First and Second Thessalonians",
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "1 Thessalonians 1:1-5:28; 2 Thessalonians 1:1-3:18",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "mark"
+      "supports": [
+        "summary",
+        "canonical_context",
+        "covenantal_significance"
+      ],
+      "notes": "Primary letters addressed to the Thessalonian community.",
+      "id": "thessalonian-correspondence"
     },
     {
-      "title": "Luke",
+      "title": "Thessalonian civic inscription IG X,2 1 32",
       "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "luke"
-    },
-    {
-      "title": "John",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "john"
-    },
-    {
-      "title": "Acts",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "acts"
-    },
-    {
-      "title": "Canonical historical orientation for Thessalonica",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
+      "publisher": "Packard Humanities Institute",
+      "year": 75,
+      "locator": "IG X,2 1 32; before the end of the first century CE",
+      "url": "https://inscriptions.packhum.org/text/137214",
+      "source_type": "ancient-primary-source",
       "supports": [
         "historical_context"
       ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
-      "id": "thessalonica-historical-orientation"
+      "notes": "Local inscription naming politarchs and civic-cult officials; year is approximate.",
+      "id": "phi-thessalonica-politarchs-32"
+    },
+    {
+      "title": "Field, House, Garden, Grave",
+      "author": "Archaeological Museum of Thessaloniki",
+      "publisher": "Archaeological Museum of Thessaloniki",
+      "year": null,
+      "locator": "Permanent exhibition: second- to fourth-century CE cemetery and house material",
+      "url": "https://www.amth.gr/en/exhibitions/permanent-exhibitions/field-house-garden-grave",
+      "source_type": "museum-collection",
+      "supports": [
+        "historical_context"
+      ],
+      "notes": "Explicitly later evidence used only for diachronic local context.",
+      "id": "amth-thessalonian-funerary-context"
     }
   ],
   "canonical_story": {
@@ -255,7 +241,9 @@
       "date": "2026-07-16"
     }
   ],
-  "edited_by": [],
+  "edited_by": [
+    "codex:ckl-content-quality-worldview-evidence-pass:2026-08-14"
+  ],
   "reviewed_by": [],
   "last_reviewed": "2026-07-16",
   "confidence": "medium",

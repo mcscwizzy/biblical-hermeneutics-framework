@@ -7,10 +7,10 @@
     "tell me about the flood",
     "why is the flood important"
   ],
-  "summary": "The Flood is a foundational event in the Bible's opening chapters that establishes creation, judgment, or early grace.",
-  "historical_context": "The Flood belongs to the Bible's earliest narrative world, where Genesis explains the beginning of human history theologically.",
-  "ancient_near_east_context": "The primeval narratives use ancient origin language and cosmic imagery common in the wider world, while reworking it around the one God of Israel.",
-  "hebraic_worldview": "",
+  "summary": "Genesis 6-9 narrates divine judgment on pervasive violence, Noah's preservation through a flood, the post-flood human vocation, and God's covenant sign of the bow.",
+  "historical_context": "The narrative belongs to Genesis's primeval history. Its event chronology and literary formation are debated, so the entry distinguishes the narrated world from the dates of surviving Mesopotamian flood witnesses.",
+  "ancient_near_east_context": "Mesopotamian flood traditions such as Atrahasis and Gilgamesh Tablet XI offer specific shared motifs and substantial differences. Comparison establishes an ancient literary environment but does not by itself prove direct borrowing or identify archaeological flood deposits with Genesis.",
+  "hebraic_worldview": "Genesis attributes judgment, preservation, blessing, and covenant to one God and grounds post-flood human accountability in the divine image.",
   "second_temple_context": "",
   "canonical_context": "",
   "later_christian_reception": "",
@@ -18,17 +18,17 @@
     "historical": true,
     "ancient_near_east": true,
     "hebraic_worldview": true,
-    "second_temple": true,
-    "canonical": true,
-    "later_christian_reception": true
+    "second_temple": false,
+    "canonical": false,
+    "later_christian_reception": false
   },
-  "literary_context": "Genesis uses The Flood to set the terms for the rest of Scripture.",
-  "covenantal_significance": "The Flood establishes patterns of human failure and divine response that later covenant history develops.",
+  "literary_context": "Genesis 6-9 moves from human corruption and violence through the ark and receding waters to sacrifice, blessing given again, and covenant. Repeated dates, measurements, divine speeches, and reversals organize the account.",
+  "covenantal_significance": "In Genesis 8:20-9:17, God promises the stability of the earth's cycles, reaffirms human fruitfulness and accountability, and gives the bow as the sign of the covenant with Noah, his descendants, and living creatures.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
   "historical_setting": "",
-  "canonical_role": "The Flood serves as a canonical event anchor, connecting its key passages, people, places, and theological themes within the biblical storyline.",
+  "canonical_role": "The flood closes the first cycle of primeval violence and judgment, leads into the covenant with Noah, and becomes a later biblical analogy for judgment, preservation, and covenant faithfulness.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -69,22 +69,43 @@
       "notes": "curated canonical context"
     },
     {
-      "id": "resurrection-theme",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "noah",
+      "relationship": "principal-person",
+      "weight": 10,
+      "notes": "Noah's family, preservation, sacrifice, and covenant frame the narrative."
+    },
+    {
+      "id": "mesopotamian-creation-and-flood-comparisons",
+      "relationship": "comparative-ancient-text-context",
+      "weight": 9,
+      "notes": "The evidence cluster preserves chronology and limits for Gilgamesh and other Mesopotamian comparisons."
     }
   ],
   "scripture_references": [
     {
-      "reference": "Genesis 11:1-9",
+      "reference": "Genesis 6:1-22",
       "relationship": "primary",
-      "notes": "primeval history"
+      "notes": "Corruption, divine judgment, Noah, and the ark instructions."
     },
     {
-      "reference": "Romans 5:12-21",
+      "reference": "Genesis 7:1-24",
+      "relationship": "primary",
+      "notes": "Entry into the ark and the flood."
+    },
+    {
+      "reference": "Genesis 8:1-22",
+      "relationship": "primary",
+      "notes": "Receding waters, departure, and sacrifice."
+    },
+    {
+      "reference": "Genesis 9:1-29",
+      "relationship": "primary",
+      "notes": "Human vocation, covenant, and aftermath."
+    },
+    {
+      "reference": "Isaiah 54:9-10",
       "relationship": "supporting",
-      "notes": "Adam and sin"
+      "notes": "Later prophetic appeal to the waters of Noah and God's covenant faithfulness."
     },
     {
       "reference": "Hebrews 11:1-7",
@@ -101,60 +122,61 @@
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "Primeval events establish the Bible's opening theological logic.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Read the complete movement from violence and judgment to post-flood blessing and covenant rather than reducing the narrative to a search for a flood deposit.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "genesis-flood-text"
+      ]
     },
     {
-      "note": "Later biblical writers often reuse these events as patterns, not merely history.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Shared flood motifs warrant literary comparison, but a surviving Mesopotamian tablet is neither an eyewitness record of Genesis nor proof of direct dependence.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "genesis-flood-text",
+        "sarna-genesis-flood"
+      ]
     }
   ],
   "common_questions": [
-    "Why does this event matter at the beginning of the Bible?",
-    "How does this event shape the Bible's worldview?",
-    "What theological pattern does this event establish?"
+    "How do violence and corruption lead into the flood narrative?",
+    "What does the Noahic covenant promise in Genesis 8-9?",
+    "Which motifs are shared with Mesopotamian flood traditions?",
+    "Why do shared motifs not establish direct literary dependence?"
   ],
   "sources": [
     {
-      "title": "Genesis 1-11",
+      "title": "Genesis 6-9",
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "Genesis 6:1-9:29",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "genesis-1-11"
-    },
-    {
-      "title": "Romans 5",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "romans-5"
+      "supports": [
+        "summary",
+        "historical_context",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "notes": "Primary biblical narrative; no modern translation is reproduced.",
+      "id": "genesis-flood-text"
     },
     {
       "title": "Hebrews 11",
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "Hebrews 11:7",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
+      "supports": [
+        "canonical_role"
+      ],
+      "notes": "Later canonical reception of Noah's faithful response.",
       "id": "hebrews-11"
     },
     {
@@ -162,26 +184,30 @@
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "2 Peter 3:3-13",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
+      "supports": [
+        "canonical_role"
+      ],
+      "notes": "Later comparison between the flood, judgment, and promised new creation.",
       "id": "2-peter-3"
     },
     {
-      "title": "Canonical historical orientation for The Flood",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "",
-      "url": "",
+      "title": "The JPS Torah Commentary: Genesis",
+      "author": "Nahum M. Sarna",
+      "publisher": "Jewish Publication Society",
+      "year": 1989,
+      "locator": "Commentary on Genesis 6-9",
+      "url": "https://jps.org/books/jps-torah-commentary-genesis/",
       "source_type": "reference-work",
       "supports": [
-        "historical_context"
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context"
       ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
-      "id": "the-flood-historical-orientation"
+      "notes": "Academic Jewish commentary used for literary and comparative orientation.",
+      "id": "sarna-genesis-flood"
     }
   ],
   "canonical_story": {
@@ -232,7 +258,9 @@
       "date": "2026-07-16"
     }
   ],
-  "edited_by": [],
+  "edited_by": [
+    "codex:ckl-content-quality-worldview-evidence-pass:2026-08-14"
+  ],
   "reviewed_by": [],
   "last_reviewed": "2026-07-16",
   "confidence": "medium",

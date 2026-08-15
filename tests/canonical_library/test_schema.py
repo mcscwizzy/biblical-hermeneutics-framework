@@ -34,12 +34,12 @@ def complete_section_status() -> dict[str, str]:
 
 
 EXPECTED_CONTEXT_APPLICABILITY = {
-    "historical": True,
-    "ancient_near_east": True,
-    "hebraic_worldview": True,
-    "second_temple": True,
-    "canonical": True,
-    "later_christian_reception": True,
+    "historical": False,
+    "ancient_near_east": False,
+    "hebraic_worldview": False,
+    "second_temple": False,
+    "canonical": False,
+    "later_christian_reception": False,
 }
 
 SOURCE_TYPE_ALIASES = {
@@ -502,10 +502,10 @@ class CanonicalSchemaTests(unittest.TestCase):
 
         self.assertFalse(obj.context_applicability["historical"])
         self.assertFalse(obj.context_applicability["canonical"])
-        self.assertTrue(obj.context_applicability["ancient_near_east"])
-        self.assertTrue(obj.context_applicability["hebraic_worldview"])
-        self.assertTrue(obj.context_applicability["second_temple"])
-        self.assertTrue(obj.context_applicability["later_christian_reception"])
+        self.assertFalse(obj.context_applicability["ancient_near_east"])
+        self.assertFalse(obj.context_applicability["hebraic_worldview"])
+        self.assertFalse(obj.context_applicability["second_temple"])
+        self.assertFalse(obj.context_applicability["later_christian_reception"])
 
     def test_context_applicability_rejects_unknown_flags(self) -> None:
         data = valid_mapping()

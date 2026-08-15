@@ -311,7 +311,7 @@ class EvidenceArchitectureTests(unittest.TestCase):
             root = Path(tmp) / "ckl"
             write_library(root, evidence_objects())
             report = build_quality_report(root)
-        self.assertEqual(report["report_version"], "1.3")
+        self.assertEqual(report["report_version"], "1.4")
         self.assertIn("evidence_audit", report)
         self.assertEqual(report["category_depth"]["categories"]["cultural_background"]["object_count"], 2)
         self.assertTrue(report["category_depth"]["high_value_gaps"])

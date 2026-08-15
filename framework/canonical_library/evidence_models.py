@@ -64,6 +64,8 @@ EVIDENCE_DISPUTE_STATUS_VALUES: tuple[str, ...] = (
     "not_disputed",
     "minor_scholarly_disagreement",
     "major_scholarly_disagreement",
+    "textual_variant",
+    "lexical_uncertainty",
     "historical_uncertainty",
     "chronological_uncertainty",
     "archaeological_uncertainty",

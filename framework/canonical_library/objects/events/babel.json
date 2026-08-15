@@ -7,10 +7,10 @@
     "tell me about babel",
     "why is babel important"
   ],
-  "summary": "Babel is a foundational event in the Bible's opening chapters that establishes creation, judgment, or early grace.",
-  "historical_context": "Babel belongs to the Bible's earliest narrative world, where Genesis explains the beginning of human history theologically.",
-  "ancient_near_east_context": "The primeval narratives use ancient origin language and cosmic imagery common in the wider world, while reworking it around the one God of Israel.",
-  "hebraic_worldview": "",
+  "summary": "Genesis 11:1-9 narrates a community in Shinar building a city and tower to make a name and avoid dispersion, followed by YHWH's confusion of speech and scattering of the builders.",
+  "historical_context": "The episode belongs to Genesis's primeval history and is geographically associated with Shinar/Babylonia. Its narrative setting, composition, and relationship to Mesopotamian urban monuments are distinct historical questions.",
+  "ancient_near_east_context": "Mesopotamian cities built monumental temple towers, but Genesis does not name a specific excavated ziggurat. The narrative's city, tower, bricks, bitumen, and name-making provide bounded cultural points of comparison.",
+  "hebraic_worldview": "Genesis portrays human urban coordination and technological ability as real goods vulnerable to self-exalting use; YHWH frustrates the attempt to resist dispersion and secure a name autonomously.",
   "second_temple_context": "",
   "canonical_context": "",
   "later_christian_reception": "",
@@ -18,17 +18,17 @@
     "historical": true,
     "ancient_near_east": true,
     "hebraic_worldview": true,
-    "second_temple": true,
-    "canonical": true,
-    "later_christian_reception": true
+    "second_temple": false,
+    "canonical": false,
+    "later_christian_reception": false
   },
-  "literary_context": "Genesis uses Babel to set the terms for the rest of Scripture.",
-  "covenantal_significance": "Babel establishes patterns of human failure and divine response that later covenant history develops.",
+  "literary_context": "Babel follows the table of nations in Genesis 10 and precedes the genealogy and call of Abram in Genesis 11:10-12:3. The builders' desire to make a name contrasts with God's promise to make Abram's name great.",
+  "covenantal_significance": "The scattering at Babel forms the immediate narrative backdrop to God's call of Abram and promise that all families of the earth will be blessed through him.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
   "historical_setting": "",
-  "canonical_role": "Babel serves as a canonical event anchor, connecting its key passages, people, places, and theological themes within the biblical storyline.",
+  "canonical_role": "Babel closes Genesis's primeval dispersal sequence and immediately precedes the genealogy and call through which blessing is promised to all families of the earth.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -63,16 +63,16 @@
       "notes": "curated canonical context"
     },
     {
-      "id": "new-creation-theme",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "babylon-1",
+      "relationship": "geographic-wordplay-context",
+      "weight": 9,
+      "notes": "Babel is associated with Shinar and Babylonian urban imagery."
     },
     {
-      "id": "resurrection-theme",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "call-of-abraham",
+      "relationship": "following-narrative-response",
+      "weight": 9,
+      "notes": "The call and blessing promise follow the scattering narrative."
     }
   ],
   "scripture_references": [
@@ -82,106 +82,82 @@
       "notes": "primeval history"
     },
     {
-      "reference": "Romans 5:12-21",
+      "reference": "Genesis 10:1-32",
       "relationship": "supporting",
-      "notes": "Adam and sin"
+      "notes": "The table of nations frames the dispersal of peoples."
     },
     {
-      "reference": "Hebrews 11:1-7",
+      "reference": "Genesis 11:10-32",
       "relationship": "supporting",
-      "notes": "faith and early witness"
+      "notes": "The genealogy moves from Shem toward Abram."
     },
     {
-      "reference": "2 Peter 3:3-13",
+      "reference": "Genesis 12:1-3",
       "relationship": "supporting",
-      "notes": "creation, judgment, and hope"
+      "notes": "God promises Abram a great name and blessing for all families."
     }
   ],
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "Primeval events establish the Bible's opening theological logic.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The text describes a tower with its top in the heavens, an idiom of monumental height or ambition; it does not say the builders expected to climb into God's dwelling.",
+      "note_type": "interpretive-caution",
+      "certainty": "probable",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "genesis-babel-text",
+        "sarna-genesis-babel"
+      ]
     },
     {
-      "note": "Later biblical writers often reuse these events as patterns, not merely history.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Ziggurats provide a cultural analogy for monumental towers in Babylonia, but identifying the narrative with one excavated structure goes beyond the evidence.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "sarna-genesis-babel"
+      ]
     }
   ],
   "common_questions": [
-    "Why does this event matter at the beginning of the Bible?",
-    "How does this event shape the Bible's worldview?",
-    "What theological pattern does this event establish?"
+    "Why do the builders want to make a name and avoid dispersion?",
+    "How does Babel connect Genesis 10 with the call of Abram?",
+    "What is the relevance of Mesopotamian ziggurats?",
+    "Does Genesis identify the tower with a specific excavated monument?"
   ],
   "sources": [
     {
-      "title": "Genesis 1-11",
+      "title": "Genesis 10-12",
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "Genesis 10:1-12:3",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "genesis-1-11"
+      "supports": [
+        "summary",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "notes": "Primary biblical context; no modern translation is reproduced.",
+      "id": "genesis-babel-text"
     },
     {
-      "title": "Romans 5",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "romans-5"
-    },
-    {
-      "title": "Hebrews 11",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "hebrews-11"
-    },
-    {
-      "title": "2 Peter 3",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "2-peter-3"
-    },
-    {
-      "title": "Canonical historical orientation for Babel",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "",
-      "url": "",
+      "title": "The JPS Torah Commentary: Genesis",
+      "author": "Nahum M. Sarna",
+      "publisher": "Jewish Publication Society",
+      "year": 1989,
+      "locator": "Commentary on Genesis 11:1-9",
+      "url": "https://jps.org/books/jps-torah-commentary-genesis/",
       "source_type": "reference-work",
       "supports": [
-        "historical_context"
+        "historical_context",
+        "ancient_near_east_context",
+        "literary_context"
       ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
-      "id": "babel-historical-orientation"
+      "notes": "Academic Jewish commentary used for literary and Mesopotamian context.",
+      "id": "sarna-genesis-babel"
     }
   ],
   "canonical_story": {
@@ -232,7 +208,9 @@
       "date": "2026-07-16"
     }
   ],
-  "edited_by": [],
+  "edited_by": [
+    "codex:ckl-content-quality-worldview-evidence-pass:2026-08-14"
+  ],
   "reviewed_by": [],
   "last_reviewed": "2026-07-16",
   "confidence": "medium",

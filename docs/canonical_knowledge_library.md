@@ -161,7 +161,7 @@ CKL stores canonical facts, retrieval metadata, and future scholarship in a dete
 
 The evidence expansion began with a read-only inventory and contract audit:
 
-- The authoritative inventory contains 625 validated objects across 18 object
+- The authoritative inventory contains 629 validated objects across 18 object
   categories. JSON remains the reviewable source of truth; the manifest carries
   counts and framework/schema versions.
 - `schema.py` already provided a typed canonical object, claims, structured
@@ -186,9 +186,9 @@ The evidence expansion began with a read-only inventory and contract audit:
 - Archaeology was already a mature peer domain with sites, items, Scripture
   links, details, confidence, stable CKL links, and rights-aware media. It is
   preserved rather than folded into CKL.
-- Historical/cultural coverage was broad but uneven. Five recently added
-  cultural-background drafts lacked explicit migration provenance; the audit
-  adds that provenance while leaving them in human-review state.
+- Historical/cultural coverage remains broad but uneven. Four focused evidence
+  clusters now deepen Genesis/ANE, divine-assembly, Exodus/Egypt, and
+  Thessalonian context while remaining in explicit human-review state.
 - Temporal information previously lived mostly in prose, book date ranges, and
   timeline entries. It could not reliably distinguish artifact date, narrative
   setting, source composition, or comparative chronological distance.
@@ -200,9 +200,9 @@ The evidence expansion began with a read-only inventory and contract audit:
   `selected_evidence`, counts, resolved sources, and coverage fields preserve
   existing keys and older JSON defaults.
 
-This audit also found stale test expectations for the 625-object inventory and
-a golden-claim test coupled to an old local schema-v3 database. Those tests now
-derive a current database and assert the actual manifest inventory.
+This audit also found stale inventory expectations and a golden-claim test
+coupled to an old local schema-v3 database. The current tests assert the
+regenerated manifest and build a fresh database for schema-sensitive checks.
 
 ## Architectural Role
 
@@ -346,7 +346,11 @@ Every canonical object uses the same base schema.
 
 The legacy `related_people`, `related_places`, and `related_events` fields remain supported for now. The context builder normalizes them into typed `related_objects` entries so downstream consumers can adopt the structured form gradually without losing compatibility with the existing inventory.
 
-The `context_applicability` map is defaulted to all `true` on load for older objects. It lets authors suppress context layers that are not relevant to a particular entry without breaking the deterministic retrieval or prompt-construction pipeline.
+The `context_applicability` map defaults every dimension to `false`. Context is
+opt-in: authors enable a layer only when its corresponding field contains
+specific, useful material. Explicit legacy flags remain readable, while the
+corpus audit rejects enabled-but-empty layers and reports suspiciously broad
+template-driven applicability.
 
 `interpretive_notes` are now stored as structured note objects with this shape:
 
@@ -513,6 +517,28 @@ must not blur observation and interpretation:
 }
 ```
 
+### Authoring examples by evidence class
+
+These checked-in records show the intended pattern. Reuse the pattern, not the
+conclusion or confidence label:
+
+| Evidence class | Corpus example | What makes it well formed |
+| --- | --- | --- |
+| Archaeology | `lachish-relief-royal-siege-rhetoric` | Identifies the museum object and installation date, links the archaeology domain, and treats royal imagery as rhetoric rather than a neutral event transcript. |
+| Cultural practice | `exodus-brickmaking-and-quota` | Starts with the actions in Exodus 5, then keeps Egyptian material comparison in a separate item. |
+| Primary ancient text | `gilgamesh-tablet-xi-flood-comparison` | Cites tablet K.3375 and a critical edition, distinguishes the surviving tablet date from the older tradition, and does not claim direct Genesis dependence. |
+| Geography | `thessalonian-politarch-inscription` | Uses the specific city and Roman Macedonian region, not a vague “Mediterranean” association; the evidence is linked to Acts 17 because the title is locally attested. |
+| Literary convention | `parousia-apantesis-civic-arrival-proposal` | Labels civic-reception imagery a scholarly reconstruction and does not turn a proposed social script into a lexical definition. |
+| Worldview concept | `psalm-82-assembly-language` | Records the Psalm's wording first, lists competing identifications separately, and gives no reconstructed ontology canonical status. |
+| Disputed evidence | `deuteronomy-32-8-manuscript-variant` | Names the textual witnesses, uses `textual_variant`, and separates the extant readings from their theological implications. |
+| Later comparative evidence | `later-thessalonian-funerary-comparison` | Uses `later-comparative`, states the century gap, and ranks below contemporary or direct evidence unless later reception is requested. |
+
+For geography/environment evidence authored as its own item, name the actual
+route, site, water system, ecological zone, or boundary; record location
+uncertainty; cite a map, gazetteer, survey, or excavation source; and explain
+why that physical constraint matters for the linked passage. Shared membership
+in a broad region is not enough.
+
 Every evidence item requires a local `source_id`, at least one structured
 Scripture relationship, an explanation of passage relevance, and an explained
 confidence. Claim and source IDs must resolve inside the containing object;
@@ -556,8 +582,41 @@ interpretation.”
 `audit_evidence()` and the `evidence_audit` section of `ckl_report.py` flag
 missing or unknown chronology, weak source types, high-confidence/dispute
 mismatches, possible duplicate evidence, questionable temporal alignment, and
-image URLs without licensing or attribution. These are review signals, not
-automatic conclusions or destructive fixes.
+image URLs without licensing or attribution. They also flag missing source
+locators, high-confidence items supported only by secondary literature,
+internal-only evidence, worldview reconstructions resting on one modern
+source, repeated observation/interpretation text, unsupported cross-period
+links, generic legacy prose, and overbroad context applicability. These are
+review signals, not automatic conclusions or destructive fixes.
+
+## Worldview Evidence Policy
+
+CKL may represent reconstructed ancient worldview concepts, but it does not
+prescribe a worldview model as the meaning of a passage or as mandatory
+theology. A worldview evidence item must:
+
+- begin with identifiable primary textual, inscriptional, iconographic, or
+  material evidence;
+- keep `primary_observation`, `scholarly_interpretation`, and
+  `passage_relevance` genuinely distinct;
+- cite primary ancient evidence where available and use more than one modern
+  scholarly voice for substantive reconstructions;
+- document textual, historical, and interpretive disagreement rather than
+  flattening it into a high-confidence conclusion;
+- state whether evidence is contemporary, near-contemporary, earlier
+  comparative, later comparative, or diachronic;
+- avoid projecting Ugaritic, Mesopotamian, Second Temple, rabbinic, or later
+  Christian material into a biblical passage without an authored comparison;
+- avoid treating one scholar's synthesis as the canonical divine-council,
+  cosmic-geography, sacred-space, kingship, purity, or heavenly-being model;
+- explain exactly why the evidence helps with the linked passage without
+  continuing into “therefore the passage teaches.”
+
+For divine-assembly material in particular, author the chain as separate
+records or fields: biblical textual observation, ancient comparative evidence,
+historical reconstruction, major interpretations, and dispute status. Psalm
+82, Deuteronomy 32, Job 1-2, Ugaritic council texts, and later witnesses must
+retain their separate genres and dates.
 
 ### Archaeology, ancient sources, and image licensing
 
@@ -578,31 +637,43 @@ cached as CKL content.
 
 ### Contributor checklist for evidence
 
-1. Identify the passage and subject before authoring the evidence.
-2. Cite a resolvable structured source; use the most primary reliable source available.
-3. Write `primary_observation` without importing a scholarly conclusion.
-4. Put reconstruction or disagreement in `scholarly_interpretation`, certainty, and dispute fields.
-5. Give artifact/source dates and narrative/composition dates separately.
-6. Label later or earlier evidence as comparative and explain the relationship.
-7. Write `passage_relevance` as historical, cultural, geographic, or literary help—not “therefore the passage means.”
-8. Link archaeology/media by stable external ID and record rights metadata if any image URL is included.
-9. Run validation, the quality report, database build/verification, and focused retrieval tests.
-10. Leave AI-authored material `in_review` with `human_review_required: true` until qualified human review.
+Before adding an item, answer all twelve questions in the record or its review
+notes:
+
+1. What exactly is the evidence: artifact, text, practice, geography, literary convention, or reconstruction?
+2. Where does it come from, including artifact, manuscript, site, corpus, edition, or catalog identifier?
+3. When does the artifact, event, or practice belong, and when was the textual source composed or copied?
+4. Where does it belong geographically, and what part of that location is certain or disputed?
+5. Which exact passage is it relevant to?
+6. Why does it matter for that passage without deciding the passage's theology?
+7. Is the relationship direct, contextual, comparative, contrastive, or disputed—and is it contemporary, earlier, later, or diachronic?
+8. What is the primary observation, and what is the separate scholarly interpretation?
+9. How strong is the evidence, and what explains the chosen confidence and certainty?
+10. Where do scholars disagree about date, identification, reconstruction, or interpretation?
+11. Which resolvable source supports the item, and does it include the best available locator and edition metadata?
+12. Is human review required, and is AI/import provenance kept separate from human approval?
+
+Then verify that every local source and claim ID resolves, archaeology/media is
+linked through a stable external ID, any image has rights metadata, and
+AI-authored material remains `in_review` with
+`human_review_required: true`. Run validation, the quality report, database
+build/verification, and focused retrieval tests. An accurate empty field is
+preferable to unsourced “Bible trivia.”
 
 `sources` are now stored as structured source objects with this shape:
 
 ```json
 {
-  "id": "westermann-genesis",
-  "source_type": "reference-work",
-  "title": "Westermann, Genesis",
+  "id": "gilgamesh-flood-tablet-k3375",
+  "title": "The Flood Tablet: Epic of Gilgamesh, Tablet XI",
   "author": "",
-  "publisher": "",
-  "year": null,
-  "locator": "",
-  "url": "",
-  "supports": [],
-  "notes": ""
+  "publisher": "British Museum",
+  "year": -650,
+  "locator": "Museum number K.3375; Neo-Assyrian, seventh century BCE",
+  "url": "https://www.britishmuseum.org/collection/object/W_K-3375",
+  "source_type": "museum-collection",
+  "supports": ["genesis-gilgamesh-flood-comparison"],
+  "notes": "Artifact date is not treated as the origin date of the flood tradition."
 }
 ```
 
@@ -624,7 +695,7 @@ The CKL validation layer now treats legacy content and new authoring content dif
 
 The deterministic retrieval path also applies a production-oriented review filter:
 
-- `context_applicability` defaults to `true` for older objects so legacy records stay searchable.
+- `context_applicability` defaults to `false`; every emitted context layer must be explicitly enabled and authored.
 - The context builder suppresses inapplicable fields and skips empty prompt sections instead of padding them.
 - The agent configuration defaults to excluding placeholders and unreviewed records unless the caller explicitly opts in with `allowed_statuses`.
 - That keeps normal answers grounded in curated, reviewed material while still allowing development and migration workflows to inspect the fuller inventory.
@@ -862,16 +933,24 @@ Future scholarship must be curated, sourced, and reviewed before it is written i
 
 Approved objects should use structured source entries rather than legacy strings, and they should carry substantive source support plus review metadata before they are treated as publishable.
 
-The first structured evidence records deliberately favor depth over count:
-David/Goliath weapon language and Tell es-Safi metallurgy, Sennacherib's Taylor
-Prism, and the Cyrus Cylinder. Next expansion should add reviewed evidence to
-Genesis/ANE contexts, Exodus/Egypt and wilderness geography, settlement and
-Judges, the divided monarchy, exile and Persian restoration, Second Temple
-institutions, first-century Judea/Galilee, Roman administration, and Pauline
-cities. Cultural practices, historical institutions, literary conventions,
-geography/environment, and ancient worldview concepts already have controlled
-evidence types; they need source-backed human-reviewed records rather than
-generated volume.
+The structured evidence corpus deliberately favors depth over count. It now
+includes David/Goliath weapon language and Tell es-Safi metallurgy; the Taylor
+Prism and Lachish reliefs; the Cyrus Cylinder; Genesis creation and flood
+comparisons; Psalm 82, Deuteronomy 32, Job, and Ugaritic divine-assembly
+evidence; Egyptian brickmaking comparison; and Thessalonian civic, funerary,
+and arrival-imagery evidence. These 17 items are chronology-controlled,
+passage-linked, and source-resolvable, but AI-authored additions remain drafts
+until human review.
+
+The next focused expansion should prioritize sacred space and image language in
+Genesis; Egyptian political/religious evidence, wilderness geography, and
+tabernacle context; settlement and household religion in Judges; Assyrian
+deportation and tribute; Babylonian exile and Yehud administration; Second
+Temple institutions; first-century Judean and Galilean village life; and one
+additional Pauline city such as Corinth or Ephesus. Cultural practices,
+historical institutions, literary conventions, geography/environment, and
+worldview concepts already have controlled types; they need source-backed,
+human-reviewed depth rather than generated volume.
 
 A future AI-assisted evidence audit should concentrate on: inherited generic
 or internal-only sources; exact artifact/site identification; absolute and

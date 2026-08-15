@@ -356,6 +356,62 @@ def test_evidence_audit_flags_confidence_chronology_duplicates_and_image_rights(
     assert "possible-duplicate-evidence" in codes
 
 
+def test_evidence_audit_flags_new_source_worldview_and_legacy_quality_risks() -> None:
+    source = _source(
+        "internal-worldview-source",
+        "Canonical historical orientation for Fixture",
+        "academic-book",
+    )
+    source["publisher"] = "Canonical Knowledge Library"
+    source["locator"] = ""
+    item = _item(
+        "worldview-fixture",
+        "Worldview Fixture",
+        "Genesis 1:1-5",
+        "earlier-comparative",
+        "internal-worldview-source",
+        start_year=-1700,
+        end_year=-1600,
+        evidence_type="worldview-concept",
+    )
+    item["primary_observation"] = "The same unseparated statement."
+    item["scholarly_interpretation"] = "The same unseparated statement."
+    item["scripture_references"][0]["relationship"] = "contextual"  # type: ignore[index]
+    payload = make_object(
+        "audit-risk-fixture",
+        "cultural_background",
+        "Audit Risk Fixture",
+        ["audit risk"],
+        ancient_near_east_context="Background varies depending on the passage.",
+        context_applicability={
+            "historical": True,
+            "ancient_near_east": True,
+            "hebraic_worldview": False,
+            "second_temple": False,
+            "canonical": False,
+            "later_christian_reception": False,
+        },
+        sources=[source],
+        evidence_items=[item],
+    )
+    report = audit_evidence([validate_object(payload)])
+    codes = {issue["code"] for issue in report["issues"]}
+    assert {
+        "generic-legacy-boilerplate",
+        "overbroad-context-applicability",
+        "source-missing-locator",
+        "high-confidence-secondary-only",
+        "internal-source-only",
+        "worldview-single-modern-source",
+        "observation-interpretation-duplicate",
+        "unsupported-cross-period-link",
+    } <= codes
+    assert report["internal_source_only_evidence_count"] == 1
+    assert report["missing_source_locator_count"] == 1
+    assert report["generic_boilerplate_record_count"] == 1
+    assert report["overbroad_context_applicability_count"] == 1
+
+
 def test_version_three_database_migrates_additively_and_old_json_defaults(tmp_path: Path) -> None:
     old_payload = make_object("legacy", "theme", "Legacy", ["legacy topic"])
     old_payload.pop("temporal_scope")
@@ -421,7 +477,7 @@ def test_curated_david_assyrian_and_persian_evidence_records_are_sourced() -> No
     library = CanonicalLibrary.load_default()
     expected = {
         "david-and-goliath": {"goliath-weapon-description", "tell-es-safi-metal-production"},
-        "sennacherib-prism": {"taylor-prism-annals"},
+        "sennacherib-prism": {"taylor-prism-annals", "lachish-relief-royal-siege-rhetoric"},
         "cyrus-cylinder": {"cyrus-cylinder-restoration-context"},
     }
     for object_id, evidence_ids in expected.items():
