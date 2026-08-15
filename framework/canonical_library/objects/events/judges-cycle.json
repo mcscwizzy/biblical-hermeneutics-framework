@@ -3,16 +3,16 @@
   "type": "event",
   "title": "Judges Cycle",
   "aliases": [
-    "what happened in judges cycle",
-    "tell me about judges cycle",
-    "why is judges cycle important"
+    "apostasy oppression deliverance cycle",
+    "recurring pattern in Judges",
+    "Judges 2 cycle"
   ],
-  "summary": "Judges Cycle is a land-taking or kingdom-transition event that marks settlement, victory, or leadership change.",
-  "historical_context": "Historically, Judges Cycle is located by its canonical setting; this entry connects that setting with joshua-son-of-nun, david, jerusalem and related CKL objects for contextual retrieval.",
-  "ancient_near_east_context": "Judges Cycle unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage.",
-  "hebraic_worldview": "",
+  "summary": "Judges 2:6-23 introduces a recurring literary-theological pattern: Israel serves other gods, the LORD gives the people into an oppressor's hand, they suffer, the LORD raises judges and shows compassion, and after a judge's death the people return to still more corrupt practice.",
+  "historical_context": "The central narratives occur in varied regional settings before monarchy and need not form one continuous national chronology. Local opponents, tribal coalitions, highland villages, lowland towns, and Philistine coastal power belong to the broad Late Bronze-Iron I transition, whose absolute correlation with individual stories remains disputed.",
+  "ancient_near_east_context": "The stories reflect decentralized kinship groups, local rulers, seasonal agriculture, raiding and tribute, small military coalitions, and multiple cult settings in the southern Levant. These features contextualize the narratives but do not verify a judge or battle archaeologically.",
+  "hebraic_worldview": "The prologue interprets political subjection through covenant infidelity and divine judgment while grounding deliverance in the LORD's compassion. The judges are agents of rescue, not a uniformly virtuous class or a complete model of governance.",
   "second_temple_context": "",
-  "canonical_context": "",
+  "canonical_context": "The pattern follows Joshua's covenant warnings, organizes much of Judges 3-16, deteriorates as the narratives proceed, and gives way in Judges 17-21 to social collapse without a rescuing judge. First Samuel continues the leadership crisis and introduces the contested transition to monarchy.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
@@ -22,13 +22,13 @@
     "canonical": false,
     "later_christian_reception": false
   },
-  "literary_context": "Joshua, Judges, and Samuel use Judges Cycle to show that land, leadership, and obedience belong together.",
-  "covenantal_significance": "Judges Cycle ties possession of the land to covenant faithfulness rather than raw force.",
+  "literary_context": "Judges 2:11-19 supplies the fullest pattern, but individual judge accounts vary, overlap, omit stages, and increasingly resist a mechanical formula. The cycle is therefore a literary-theological framework, not a claim that every episode is identical.",
+  "covenantal_significance": "The cycle links apostasy, covenant consequences, divine compassion, deliverance, and renewed corruption. It exposes the inadequacy of temporary rescue when communal loyalty and justice continue to deteriorate.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
   "historical_setting": "",
-  "canonical_role": "Judges Cycle serves as a canonical event anchor, connecting its key passages, people, places, and theological themes within the biblical storyline.",
+  "canonical_role": "The cycle organizes Judges' account of recurring apostasy and compassionate deliverance, then exposes the limits of temporary rescue as leaders and communities deteriorate toward the book's final social collapse.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -51,137 +51,185 @@
   "related_events": [],
   "related_objects": [
     {
-      "id": "joshua-son-of-nun",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "judges",
+      "relationship": "primary-book-context",
+      "weight": 10,
+      "notes": "Judges 2 frames the recurring pattern developed across the book."
     },
     {
-      "id": "david",
-      "relationship": "narrative-context",
+      "id": "deborah",
+      "relationship": "judge-example",
       "weight": 8,
-      "notes": "curated canonical context"
+      "notes": "Judges 4-5 adapts the pattern through Deborah, Barak, and Jael."
     },
     {
-      "id": "jerusalem",
-      "relationship": "narrative-context",
+      "id": "gideon",
+      "relationship": "judge-example",
       "weight": 8,
-      "notes": "curated canonical context"
+      "notes": "Judges 6-8 develops the cycle while exposing deterioration within the deliverer."
     },
     {
-      "id": "kingdom-theme",
-      "relationship": "narrative-context",
+      "id": "samson",
+      "relationship": "judge-example",
       "weight": 8,
-      "notes": "curated canonical context"
+      "notes": "Judges 13-16 begins with Philistine oppression and a judge whose compromised life never produces the usual rest notice."
+    },
+    {
+      "id": "late-bronze-iron-transition-and-highland-settlement",
+      "relationship": "historical-setting-context",
+      "weight": 9,
+      "notes": "The cluster supplies regional settlement context without confirming individual cycles."
+    },
+    {
+      "id": "judges-household-religion-and-regional-cult-sites",
+      "relationship": "closing-narrative-context",
+      "weight": 8,
+      "notes": "The household and regional cult evidence illuminates the disorder that follows the central judge narratives."
     }
   ],
   "scripture_references": [
     {
-      "reference": "Joshua 3:1-17",
-      "relationship": "supporting",
-      "notes": "settlement and covenant"
-    },
-    {
       "reference": "Judges 2:6-23",
-      "relationship": "supporting",
-      "notes": "early settlement and instability"
+      "relationship": "primary",
+      "notes": "The theological prologue and fullest statement of the recurring pattern."
     },
     {
-      "reference": "1 Samuel 4:1-11",
-      "relationship": "supporting",
-      "notes": "transition to monarchy"
+      "reference": "Judges 3:7-31",
+      "relationship": "primary",
+      "notes": "Othniel and Ehud display relatively clear forms of the pattern."
     },
     {
-      "reference": "2 Samuel 6:1-15",
-      "relationship": "supporting",
-      "notes": "Jerusalem and covenant"
+      "reference": "Judges 4:1-24",
+      "relationship": "primary",
+      "notes": "Deborah and Barak's cycle is expanded through narrative."
+    },
+    {
+      "reference": "Judges 5:1-31",
+      "relationship": "primary",
+      "notes": "The Song of Deborah gives a poetic account of victory and tribal participation."
+    },
+    {
+      "reference": "Judges 6:1-40",
+      "relationship": "primary",
+      "notes": "Gideon's cycle begins with oppression, prophetic indictment, and call."
+    },
+    {
+      "reference": "Judges 7:1-25",
+      "relationship": "primary",
+      "notes": "The reduced force defeats Midian."
+    },
+    {
+      "reference": "Judges 8:1-35",
+      "relationship": "primary",
+      "notes": "The Gideon narrative ends with deliverance, rest, and escalating leadership failure."
+    },
+    {
+      "reference": "Judges 10:6-16",
+      "relationship": "primary",
+      "notes": "Apostasy, oppression, confession, and divine response before Jephthah."
+    },
+    {
+      "reference": "Judges 13:1-25",
+      "relationship": "primary",
+      "notes": "Philistine oppression and Samson's announced beginning of deliverance."
+    },
+    {
+      "reference": "Judges 16:1-31",
+      "relationship": "primary",
+      "notes": "Samson's compromised life, capture, and death."
     }
   ],
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "Conquest and settlement events are interpreted theologically, not just militarily.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The prologue supplies a recurring pattern, but no individual judge narrative should be forced to contain every stage in the same order.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "judges-1-21",
+        "webb-judges-cycle-2012"
+      ]
     },
     {
-      "note": "Leadership change in these narratives often points toward a larger covenant question.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Settlement archaeology and the Late Bronze-Iron transition provide regional context but do not establish the historicity or date of an individual judge narrative.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "judges-1-21",
+        "butler-judges-cycle-2009",
+        "novacek-judges-cycle-context-2011"
+      ]
     }
   ],
   "common_questions": [
-    "Why does this event matter in Israel's settlement of the land?",
-    "How does this event reveal the need for faithful leadership?",
-    "What covenant theme does this event highlight?"
+    "What stages make up the cycle in Judges 2?",
+    "Does every judge narrative follow the same pattern?",
+    "Why do the deliverers become increasingly compromised?",
+    "How does the cycle relate to the closing chapters without a judge?"
   ],
   "sources": [
-    {
-      "title": "Joshua 1-24",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "joshua-1-24"
-    },
     {
       "title": "Judges 1-21",
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "Judges 2:6-23; 3:7-16:31",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
+      "supports": [
+        "summary",
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "notes": "Primary biblical source for the cycle and its varied narrative development.",
       "id": "judges-1-21"
     },
     {
-      "title": "1 Samuel",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "1-samuel"
+      "title": "The Book of Judges",
+      "author": "Barry G. Webb",
+      "publisher": "Eerdmans",
+      "year": 2012,
+      "locator": "NICOT commentary on Judges 2:6-23 and the major judge narratives",
+      "url": "https://www.eerdmans.com/9780802826282/the-book-of-judges/",
+      "source_type": "academic-book",
+      "supports": [
+        "literary_context",
+        "canonical_context"
+      ],
+      "notes": "Literary and theological analysis of the cycle and its variation.",
+      "id": "webb-judges-cycle-2012"
     },
     {
-      "title": "2 Samuel 6-7",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "2-samuel-6-7"
+      "title": "Judges, Volume 8",
+      "author": "Trent C. Butler",
+      "publisher": "Zondervan Academic",
+      "year": 2009,
+      "locator": "Word Biblical Commentary on Judges 2:6-23 and regional chronology",
+      "url": "https://zondervanacademic.com/products/judges-volume-8",
+      "source_type": "academic-book",
+      "supports": [
+        "historical_context",
+        "interpretive_disputes"
+      ],
+      "notes": "Commentary used for historical, textual, and literary cautions.",
+      "id": "butler-judges-cycle-2009"
     },
     {
-      "title": "Canonical historical orientation for Judges Cycle",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
+      "title": "Ancient Israel: Highlights from the Collections of the Oriental Institute, University of Chicago",
+      "author": "Gabrielle Vera Novacek",
+      "publisher": "Oriental Institute of the University of Chicago",
+      "year": 2011,
+      "locator": "pp. 65-68, Iron I transition and early Israel",
+      "url": "https://oi.uchicago.edu/sites/default/files/uploads/shared/docs/oimp31.pdf",
+      "source_type": "academic-book",
       "supports": [
         "historical_context"
       ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
-      "id": "judges-cycle-historical-orientation"
+      "notes": "Regional archaeological context used without assigning individual stories to strata.",
+      "id": "novacek-judges-cycle-context-2011"
     }
   ],
   "canonical_story": {

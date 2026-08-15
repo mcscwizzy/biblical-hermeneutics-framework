@@ -3,33 +3,32 @@
   "type": "archaeology",
   "title": "Merneptah Stele",
   "aliases": [
-    "merneptah stele artifact",
-    "merneptah stele discovery",
-    "merneptah stele excavation",
-    "merneptah stele find"
+    "Israel Stele",
+    "Merenptah Stele",
+    "Merneptah Israel inscription"
   ],
-  "summary": "A commemorative stele that includes the earliest widely accepted extra-biblical reference to 'Israel'.",
-  "historical_context": "A key Egyptian witness to the historical memory of Israel in the late 13th century BCE.",
-  "ancient_near_east_context": "Ancient background for Merneptah Stele includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Genesis 1:1-2, Psalm 19:1-6, jerusalem, and joshua without letting comparison replace the biblical witness.",
+  "summary": "An Egyptian victory stele conventionally dated about 1208/1207 BCE whose final hymn contains the earliest widely accepted extra-biblical reference to a people called Israel.",
+  "historical_context": "Merneptah reused a monument of Amenhotep III and inscribed a victory text that celebrates campaigns including action in the southern Levant. The Israel entry uses a people determinative rather than the city determinatives attached to several neighboring names.",
+  "ancient_near_east_context": "Egyptian royal victory inscriptions employ ideological and rhetorical conventions; they identify claims made by a royal court more securely than the exact scale of destruction. The inscription supplies a late thirteenth-century external name and social designation, not a narrative of Israel's origins.",
   "hebraic_worldview": "",
   "second_temple_context": "",
-  "canonical_context": "",
+  "canonical_context": "The stele can contextualize the broad transition associated with Joshua and Judges because it locates a group called Israel in the southern Levant. It does not date or verify an exodus route, conquest campaign, tribal allotment, or judge narrative.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
     "hebraic_worldview": false,
     "second_temple": false,
-    "canonical": false,
+    "canonical": true,
     "later_christian_reception": false
   },
-  "literary_context": "Important for the late Bronze Age background of Israel's emergence in Canaan.",
-  "covenantal_significance": "Merneptah Stele helps anchor biblical claims in historical reality while reminding readers that archaeology supports rather than replaces interpretation.",
+  "literary_context": "The inscription is an Egyptian royal victory composition, not a biblical or neutral annalistic account; its wording must be interpreted within that genre.",
+  "covenantal_significance": "The stele is external historical evidence for the name Israel, but it neither affirms nor evaluates the covenant claims by which biblical books interpret land, identity, and deliverance.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
   "historical_setting": "",
-  "canonical_role": "Merneptah Stele serves as a material-culture anchor, connecting archaeological evidence with the biblical places, periods, and passages it helps contextualize.",
+  "canonical_role": "The stele is a bounded extra-biblical chronological anchor for discussion of early Israel, with explicit safeguards against turning it into proof of specific biblical episodes.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -52,145 +51,101 @@
   "related_events": [],
   "related_objects": [
     {
-      "id": "jerusalem",
-      "relationship": "historical-background",
+      "id": "late-bronze-iron-transition-and-highland-settlement",
+      "relationship": "inscription-evidence-anchor",
       "weight": 10,
-      "notes": ""
+      "notes": "The CKL evidence cluster records the inscription's passage relevance and inference limits."
     },
     {
-      "id": "joshua",
-      "relationship": "historical-background",
+      "id": "canaan",
+      "relationship": "southern-levant-context",
       "weight": 9,
-      "notes": ""
+      "notes": "The campaign claims concern the southern Levant at the Late Bronze-Iron transition."
     },
     {
-      "id": "hebrews",
-      "relationship": "historical-background",
+      "id": "judges",
+      "relationship": "bounded-period-context",
       "weight": 8,
-      "notes": ""
+      "notes": "The inscription contextualizes the broad era often associated with Judges but verifies no individual narrative."
     }
   ],
   "scripture_references": [
     {
-      "reference": "Genesis 1:1-2",
-      "relationship": "primary",
-      "notes": ""
+      "reference": "Judges 1:1-36",
+      "relationship": "supporting",
+      "notes": "Near-contemporary external context for a people called Israel; not verification of the settlement catalogue."
     },
     {
-      "reference": "Psalm 19:1-6",
+      "reference": "Judges 2:6-23",
       "relationship": "supporting",
-      "notes": ""
+      "notes": "Broad chronological context only; the inscription does not attest the judges cycle."
     },
     {
-      "reference": "Romans 1:20",
+      "reference": "Joshua 13:1-7",
       "relationship": "supporting",
-      "notes": ""
+      "notes": "External context for the southern Levant, without fixing the date or process of possession."
     }
   ],
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "The reading is broad scholarly consensus, but the term 'Israel' reflects an Egyptian geopolitical label rather than a biblical narrative.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The reading Israel and its classification as a people are strong scholarly consensus, while the group's precise location, scale, and composition are not specified.",
+      "note_type": "historical-context",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "ucl-merneptah-stele",
+        "novacek-merneptah-2011"
+      ]
     },
     {
-      "note": "Egyptian Museum",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "Egyptian Museum, Cairo",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "thebes",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "Use the item as context for the biblical text, not as a shortcut around it.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Royal victory rhetoric cannot be translated directly into an archaeological destruction horizon, and the stele does not establish an exodus, conquest route, tribal territory, or event in Judges.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "ucl-merneptah-stele",
+        "novacek-merneptah-2011"
+      ]
     }
   ],
   "common_questions": [
-    "What does Merneptah Stele teach?",
-    "How does Merneptah Stele fit the biblical storyline?",
-    "What should readers avoid when interpreting Merneptah Stele?"
+    "What exactly does the Merneptah Stele establish about Israel?",
+    "Why is Israel marked as a people rather than a city?",
+    "Does the stele prove an exodus or conquest chronology?",
+    "How can the inscription responsibly contextualize Judges?"
   ],
   "sources": [
     {
-      "title": "Merneptah Stele",
+      "title": "Israel Stela",
       "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "merneptah-stele"
+      "publisher": "University College London Digital Egypt",
+      "year": -1207,
+      "locator": "Final victory-hymn lines; Israel entry and determinative",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/thebes/merenptah/stela.html",
+      "source_type": "ancient-primary-source",
+      "supports": [
+        "summary",
+        "historical_context"
+      ],
+      "notes": "Institutional presentation of the inscription; date approximate.",
+      "id": "ucl-merneptah-stele"
     },
     {
-      "title": "Egyptian Museum",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "egyptian-museum"
-    },
-    {
-      "title": "Egyptian Museum, Cairo",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "egyptian-museum-cairo"
-    },
-    {
-      "title": "Victory stele",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "victory-stele"
-    },
-    {
-      "title": "Genesis 1:1-2",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "genesis-1-1-2"
+      "title": "Ancient Israel: Highlights from the Collections of the Oriental Institute, University of Chicago",
+      "author": "Gabrielle Vera Novacek",
+      "publisher": "Oriental Institute of the University of Chicago",
+      "year": 2011,
+      "locator": "pp. 66-68, Merneptah reference and Iron I context",
+      "url": "https://oi.uchicago.edu/sites/default/files/uploads/shared/docs/oimp31.pdf",
+      "source_type": "academic-book",
+      "supports": [
+        "historical_context",
+        "canonical_context"
+      ],
+      "notes": "Used for date, determinative, and bounded historical significance.",
+      "id": "novacek-merneptah-2011"
     }
   ],
   "canonical_story": {

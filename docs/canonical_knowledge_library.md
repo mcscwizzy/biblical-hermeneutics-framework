@@ -157,11 +157,11 @@ available.
 
 CKL stores canonical facts, retrieval metadata, and future scholarship in a deterministic format. The CKL layer itself stops at the retrieval foundation: it does not infer theology, generate explanations, or call an LLM.
 
-## Architecture audit (2026-08-14)
+## Architecture audit (2026-08-15)
 
 The evidence expansion began with a read-only inventory and contract audit:
 
-- The authoritative inventory contains 631 validated objects across 18 object
+- The authoritative inventory contains 633 validated objects across 18 object
   categories. JSON remains the reviewable source of truth; the manifest carries
   counts and framework/schema versions.
 - `schema.py` already provided a typed canonical object, claims, structured
@@ -939,19 +939,21 @@ Prism and Lachish reliefs; the Cyrus Cylinder; Genesis creation and flood
 comparisons; Psalm 82, Deuteronomy 32, Job, and Ugaritic divine-assembly
 evidence; Egyptian brickmaking, royal titulary, and offering-practice
 comparisons; the Exodus-to-Sinai itinerary and water constraints; and
-Thessalonian civic, funerary, and arrival-imagery evidence. These 24 items are chronology-controlled,
-passage-linked, and source-resolvable, but AI-authored additions remain drafts
-until human review.
+Thessalonian civic, funerary, and arrival-imagery evidence. The Judges-era pass
+adds the regional settlement pattern of Judges 1, the Merneptah people
+reference, Iron I highland village growth and regional continuity/change,
+Micah's household cult, the Danite shrine installation, Shiloh's sanctuary and
+festival setting, and a bounded Bull Site comparison. These 32 items are
+chronology-controlled, passage-linked, and source-resolvable, but AI-authored
+additions remain drafts until human review.
 
-The next focused expansion should prioritize settlement, household religion,
-regional cult sites, and the Late Bronze/Iron Age transition in Judges, followed
-by sacred-space and tabernacle comparison; Assyrian
-deportation and tribute; Babylonian exile and Yehud administration; Second
-Temple institutions; first-century Judean and Galilean village life; and one
-additional Pauline city such as Corinth or Ephesus. Cultural practices,
-historical institutions, literary conventions, geography/environment, and
-worldview concepts already have controlled types; they need source-backed,
-human-reviewed depth rather than generated volume.
+The next focused expansion should prioritize sacred-space and tabernacle
+comparison, followed by Assyrian deportation and tribute; Babylonian exile and
+Yehud administration; Second Temple institutions; first-century Judean and
+Galilean village life; and one additional Pauline city such as Corinth or
+Ephesus. Cultural practices, historical institutions, literary conventions,
+geography/environment, and worldview concepts already have controlled types;
+they need source-backed, human-reviewed depth rather than generated volume.
 
 A future AI-assisted evidence audit should concentrate on: inherited generic
 or internal-only sources; exact artifact/site identification; absolute and
