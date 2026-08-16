@@ -12,6 +12,8 @@ EXPANSION_OBJECTS = {
     "exodus-wilderness-routes-and-water": 3,
     "late-bronze-iron-transition-and-highland-settlement": 4,
     "judges-household-religion-and-regional-cult-sites": 4,
+    "tabernacle-presence-access-and-mobility": 4,
+    "ancient-portable-sanctuaries-and-tabernacle-comparisons": 4,
 }
 
 
@@ -256,6 +258,73 @@ def test_judges_household_religion_keeps_direct_text_ahead_of_cult_site_comparis
     assert shiloh[0].passage_relationship == "direct"
 
 
+def test_tabernacle_presence_evidence_prefers_direct_textual_controls() -> None:
+    library = CanonicalLibrary.load_default()
+    passage_objects = {
+        result.object.id
+        for result in library.retrieve_by_scripture_reference("Exodus 25:1-9", limit=30)
+    }
+    assert "tabernacle-presence-access-and-mobility" in passage_objects
+    ranked = _rank(
+        library,
+        "tabernacle-presence-access-and-mobility",
+        "Why does Exodus build the tabernacle for divine presence?",
+        "Exodus 25:1-9",
+        "ancient near eastern background",
+        "cultural practice",
+    )
+    assert ranked[0].evidence_id == "tabernacle-dwelling-purpose"
+    assert ranked[0].passage_relationship == "direct"
+    assert ranked[0].evidence_type == "worldview-concept"
+
+    access = _rank(
+        library,
+        "tabernacle-presence-access-and-mobility",
+        "How does the veil regulate access to sacred space?",
+        "Exodus 26:31-37",
+        "cultural practice",
+    )
+    assert [item.evidence_id for item in access] == [
+        "tabernacle-graded-sacred-space"
+    ]
+    assert access[0].passage_relationship == "direct"
+
+
+def test_portable_sanctuary_comparisons_remain_comparative_and_nonidentifying() -> None:
+    library = CanonicalLibrary.load_default()
+    ranked = _rank(
+        library,
+        "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+        "What ancient evidence compares with the tabernacle?",
+        "Exodus 26:1-37",
+        "ancient near eastern background",
+        "archaeology",
+    )
+    assert [item.evidence_id for item in ranked] == [
+        "mari-large-public-tent-comparison",
+        "timna-tented-shrine-comparison",
+        "qadesh-royal-tent-comparison",
+    ]
+    assert all(item.passage_relationship == "comparative" for item in ranked)
+    assert all(item.chronological_relation == "earlier-comparative" for item in ranked)
+    timna = ranked[1]
+    assert timna.dispute_status == "archaeological_uncertainty"
+    assert timna.external_references[0]["domain"] == "archaeology-site"
+    assert timna.external_references[0]["id"] == "timna-site-200"
+
+    bark = _rank(
+        library,
+        "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+        "How do Egyptian bark shrines compare with sacred transport?",
+        "Numbers 4:4-20",
+        "archaeology",
+    )
+    assert bark[0].evidence_id == "egyptian-processional-bark-shrine-contrast"
+    assert bark[0].passage_relationship == "contrast"
+    assert bark[1].evidence_id == "timna-tented-shrine-comparison"
+    assert bark[1].passage_relationship == "comparative"
+
+
 def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
     library = CanonicalLibrary.load_default()
     flood = library.objects_by_id["the-flood"]
@@ -268,6 +337,9 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
     dan = library.objects_by_id["dan"]
     shiloh = library.objects_by_id["shiloh"]
     merneptah = library.objects_by_id["merneptah-stele"]
+    tabernacle = library.objects_by_id["tabernacle"]
+    tabernacle_faq = library.objects_by_id["what-is-the-tabernacle"]
+    sanctuary_theme = library.objects_by_id["sanctuary-theme"]
     assert flood.scripture_references[0].reference == "Genesis 6:1-22"
     assert all(reference.reference != "Genesis 11:1-9" for reference in flood.scripture_references)
     assert thessalonica.scripture_references[0].reference == "Acts 17:1-9"
@@ -286,6 +358,14 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
     assert dan.scripture_references[0].reference == "Judges 18:1-31"
     assert shiloh.scripture_references[0].reference == "Joshua 18:1-10"
     assert merneptah.scripture_references[0].reference == "Judges 1:1-36"
+    assert tabernacle.scripture_references[0].reference == "Exodus 25:1-9"
+    assert tabernacle_faq.scripture_references[0].reference == "Exodus 25:1-9"
+    assert sanctuary_theme.scripture_references[0].reference == "Exodus 25:8-9"
+    assert "Roman civic administration" not in tabernacle.ancient_near_east_context
+    assert {
+        "tabernacle-presence-access-and-mobility",
+        "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+    } <= {relationship.id for relationship in tabernacle.related_objects}
 
     context_fields = {
         "historical": "historical_context",
@@ -304,14 +384,14 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
 def test_corpus_evidence_quality_metrics_have_no_structural_failures() -> None:
     library = CanonicalLibrary.load_default()
     report = audit_evidence(library.objects_by_id.values())
-    assert report["evidence_count"] == 32
-    assert report["evidence_with_primary_sources_count"] == 31
-    assert report["evidence_with_academic_secondary_sources_count"] == 27
-    assert report["evidence_with_chronology_count"] == 32
-    assert report["evidence_with_passage_relevance_count"] == 32
-    assert report["disputed_evidence_count"] == 23
-    assert report["worldview_evidence_count"] == 5
-    assert report["archaeology_linked_evidence_count"] == 5
+    assert report["evidence_count"] == 40
+    assert report["evidence_with_primary_sources_count"] == 39
+    assert report["evidence_with_academic_secondary_sources_count"] == 35
+    assert report["evidence_with_chronology_count"] == 40
+    assert report["evidence_with_passage_relevance_count"] == 40
+    assert report["disputed_evidence_count"] == 30
+    assert report["worldview_evidence_count"] == 7
+    assert report["archaeology_linked_evidence_count"] == 6
     assert report["internal_source_only_evidence_count"] == 0
     assert report["missing_source_locator_count"] == 0
     assert report["missing_confidence_rationale_count"] == 0

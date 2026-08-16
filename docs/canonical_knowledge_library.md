@@ -161,7 +161,7 @@ CKL stores canonical facts, retrieval metadata, and future scholarship in a dete
 
 The evidence expansion began with a read-only inventory and contract audit:
 
-- The authoritative inventory contains 633 validated objects across 18 object
+- The authoritative inventory contains 635 validated objects across 18 object
   categories. JSON remains the reviewable source of truth; the manifest carries
   counts and framework/schema versions.
 - `schema.py` already provided a typed canonical object, claims, structured
@@ -943,13 +943,17 @@ Thessalonian civic, funerary, and arrival-imagery evidence. The Judges-era pass
 adds the regional settlement pattern of Judges 1, the Merneptah people
 reference, Iron I highland village growth and regional continuity/change,
 Micah's household cult, the Danite shrine installation, Shiloh's sanctuary and
-festival setting, and a bounded Bull Site comparison. These 32 items are
-chronology-controlled, passage-linked, and source-resolvable, but AI-authored
-additions remain drafts until human review.
+festival setting, and a bounded Bull Site comparison. The sacred-space pass
+adds the tabernacle's dwelling purpose, graded access, instruction-construction
+correspondence, and cloud-governed mobility, followed by bounded comparisons
+with Mari M.6873, Ramesses II's Qadesh camp, Timna Site 200, and an Egyptian
+processional bark shrine. These 40 items are chronology-controlled,
+passage-linked, and source-resolvable, but AI-authored additions remain drafts
+until human review.
 
-The next focused expansion should prioritize sacred-space and tabernacle
-comparison, followed by Assyrian deportation and tribute; Babylonian exile and
-Yehud administration; Second Temple institutions; first-century Judean and
+The next focused expansion should prioritize Assyrian deportation and tribute,
+followed by Babylonian exile and Yehud administration; Second Temple
+institutions; first-century Judean and
 Galilean village life; and one additional Pauline city such as Corinth or
 Ephesus. Cultural practices, historical institutions, literary conventions,
 geography/environment, and worldview concepts already have controlled types;
