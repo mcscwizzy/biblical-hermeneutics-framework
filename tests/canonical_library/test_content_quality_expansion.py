@@ -23,6 +23,7 @@ EXPANSION_OBJECTS = {
     "galilean-villages-households-and-subsistence": 7,
     "judean-pilgrimage-taxation-and-roman-power": 8,
     "roman-corinth-civic-household-and-association-life": 10,
+    "roman-ephesus-civic-cultic-and-household-life": 12,
 }
 
 
@@ -760,6 +761,106 @@ def test_corinthian_slavery_and_athletic_context_resists_endorsement_and_identif
     assert "not making the metaphor exclusive" in athletics[0].passage_relevance
 
 
+def test_ephesian_ritual_and_artisan_evidence_keeps_text_cult_and_economy_distinct() -> None:
+    library = CanonicalLibrary.load_default()
+    ritual = _rank(
+        library,
+        "roman-ephesus-civic-cultic-and-household-life",
+        "What do ritual texts establish about the burned books?",
+        "Acts 19:11-20",
+        "ancient text",
+        "cultural practice",
+    )
+    assert ritual[0].evidence_id == "acts-exorcism-and-book-burning"
+    assert ritual[0].passage_relationship == "direct"
+    assert "neither identify the burned books as Ephesia grammata" in ritual[0].passage_relevance
+
+    artisans = _rank(
+        library,
+        "roman-ephesus-civic-cultic-and-household-life",
+        "How did Artemis craft income relate to cultic honor?",
+        "Acts 19:23-27",
+        "historical setting",
+    )
+    assert artisans[0].evidence_id == "artemis-craft-economy"
+    assert artisans[0].passage_relationship == "direct"
+    assert "without proving a formal guild" in artisans[0].passage_relevance
+
+
+def test_ephesian_theater_and_artemision_evidence_respects_monument_phases() -> None:
+    library = CanonicalLibrary.load_default()
+    ranked = _rank(
+        library,
+        "roman-ephesus-civic-cultic-and-household-life",
+        "What do the theater and civic offices establish about the riot?",
+        "Acts 19:28-41",
+        "archaeology",
+        "institution",
+    )
+    assert [item.evidence_id for item in ranked[:3]] == [
+        "theater-civic-assembly-offices",
+        "artemision-civic-cult",
+        "imperial-cult-and-civic-honor",
+    ]
+    assert ranked[0].passage_relationship == "contextual"
+    assert "preventing the present enlarged theater" in ranked[0].passage_relevance
+    assert "no physical proof for Demetrius" in ranked[1].passage_relevance
+
+
+def test_ephesian_letter_controls_separate_destination_setting_and_opponents() -> None:
+    library = CanonicalLibrary.load_default()
+    destination = _rank(
+        library,
+        "roman-ephesus-civic-cultic-and-household-life",
+        "Was Ephesians certainly addressed to Ephesus?",
+        "Ephesians 1:1",
+        "manuscript",
+        "textual criticism",
+    )
+    assert [item.evidence_id for item in destination] == ["ephesians-destination-variant"]
+    assert destination[0].dispute_status == "textual_variant"
+    assert "possible reception context rather than certain evidence" in destination[0].passage_relevance
+
+    opponents = _rank(
+        library,
+        "roman-ephesus-civic-cultic-and-household-life",
+        "Does Ephesian evidence identify the opponents in First Timothy?",
+        "1 Timothy 1:3-7",
+        "historical setting",
+    )
+    assert [item.evidence_id for item in opponents] == ["first-timothy-ephesian-setting"]
+    assert opponents[0].passage_relationship == "direct"
+    assert "neither dates the letter from Acts nor identifies its teachers" in opponents[0].passage_relevance
+
+
+def test_ephesian_household_and_association_comparisons_resist_endorsement_and_identity() -> None:
+    library = CanonicalLibrary.load_default()
+    household = _rank(
+        library,
+        "roman-ephesus-civic-cultic-and-household-life",
+        "How do household and slavery contexts illuminate the instructions?",
+        "Ephesians 6:1-9",
+        "cultural practice",
+    )
+    assert household[0].evidence_id == "household-slavery-status-comparison"
+    assert household[0].passage_relationship == "comparative"
+    assert "without making hierarchy timeless" in household[0].passage_relevance
+
+    offices = _rank(
+        library,
+        "roman-ephesus-civic-cultic-and-household-life",
+        "What association evidence explains overseers and deacons?",
+        "1 Timothy 3:1-13",
+        "institution",
+    )
+    assert [item.evidence_id for item in offices[:2]] == [
+        "association-benefaction-office-comparison",
+        "household-slavery-status-comparison",
+    ]
+    assert offices[0].passage_relationship == "comparative"
+    assert "without deriving church offices from one cult" in offices[0].passage_relevance
+
+
 def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
     library = CanonicalLibrary.load_default()
     flood = library.objects_by_id["the-flood"]
@@ -807,6 +908,7 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
     phoebe = library.objects_by_id["phoebe-of-cenchreae"]
     patronage = library.objects_by_id["patronage"]
     lords_supper = library.objects_by_id["lords-supper"]
+    ephesus = library.objects_by_id["ephesus"]
     assert flood.scripture_references[0].reference == "Genesis 6:1-22"
     assert all(reference.reference != "Genesis 11:1-9" for reference in flood.scripture_references)
     assert thessalonica.scripture_references[0].reference == "Acts 17:1-9"
@@ -921,6 +1023,17 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
         obj.context_applicability["second_temple"] is True
         for obj in (corinth, phoebe, patronage, lords_supper)
     )
+    assert ephesus.scripture_references[0].reference == "Acts 18:18-28"
+    assert all(
+        not reference.reference.startswith(("Matthew", "Mark", "Luke", "John"))
+        for reference in ephesus.scripture_references
+    )
+    assert ephesus.context_applicability["ancient_near_east"] is False
+    assert ephesus.context_applicability["second_temple"] is True
+    assert "roman-ephesus-civic-cultic-and-household-life" in {
+        relationship.id for relationship in ephesus.related_objects
+    }
+    assert "textually disputed" in ephesus.summary
 
     context_fields = {
         "historical": "historical_context",
@@ -939,14 +1052,14 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
 def test_corpus_evidence_quality_metrics_have_no_structural_failures() -> None:
     library = CanonicalLibrary.load_default()
     report = audit_evidence(library.objects_by_id.values())
-    assert report["evidence_count"] == 90
-    assert report["evidence_with_primary_sources_count"] == 89
-    assert report["evidence_with_academic_secondary_sources_count"] == 85
-    assert report["evidence_with_chronology_count"] == 90
-    assert report["evidence_with_passage_relevance_count"] == 90
-    assert report["disputed_evidence_count"] == 79
+    assert report["evidence_count"] == 102
+    assert report["evidence_with_primary_sources_count"] == 101
+    assert report["evidence_with_academic_secondary_sources_count"] == 97
+    assert report["evidence_with_chronology_count"] == 102
+    assert report["evidence_with_passage_relevance_count"] == 102
+    assert report["disputed_evidence_count"] == 91
     assert report["worldview_evidence_count"] == 7
-    assert report["archaeology_linked_evidence_count"] == 17
+    assert report["archaeology_linked_evidence_count"] == 20
     assert report["internal_source_only_evidence_count"] == 0
     assert report["missing_source_locator_count"] == 0
     assert report["missing_confidence_rationale_count"] == 0

@@ -161,7 +161,7 @@ CKL stores canonical facts, retrieval metadata, and future scholarship in a dete
 
 The evidence expansion began with a read-only inventory and contract audit:
 
-- The authoritative inventory contains 644 validated objects across 18 object
+- The authoritative inventory contains 645 validated objects across 18 object
   categories. JSON remains the reviewable source of truth; the manifest carries
   counts and framework/schema versions.
 - `schema.py` already provided a typed canonical object, claims, structured
@@ -186,7 +186,7 @@ The evidence expansion began with a read-only inventory and contract audit:
 - Archaeology was already a mature peer domain with sites, items, Scripture
   links, details, confidence, stable CKL links, and rights-aware media. It is
   preserved rather than folded into CKL.
-- Historical/cultural coverage remains broad but uneven. Nineteen focused
+- Historical/cultural coverage remains broad but uneven. Twenty focused
   evidence clusters now span Genesis/ANE through first-century Galilee and
   Judea while remaining in explicit human-review state.
 - Temporal information previously lived mostly in prose, book date ranges, and
@@ -991,7 +991,17 @@ hierarchy; and Isthmian athletic comparison. These 90 items are
 chronology-controlled, passage-linked, and source-resolvable, but AI-authored
 additions remain drafts until human review.
 
-The next focused Pauline-city expansion should prioritize Ephesus.
+The Roman Ephesus pass adds passage-bounded evidence for Apollos, Prisca,
+Aquila, Tyrannus, ritual specialists, and burned books; Artemis-linked craft
+income; the Artemision; the theater's phase history; Asiarchs, the town clerk,
+and civic assembly procedure; the harbor and Roman Asian travel network;
+imperial cult and public honor; the Ephesians 1:1 destination variant; First
+Timothy's narrated setting; and bounded household, slavery, association,
+benefaction, and office comparisons. These 102 items are chronology-controlled,
+passage-linked, and source-resolvable, but AI-authored additions remain drafts
+until human review.
+
+The next focused Pauline-city expansion should prioritize Philippi.
 Cultural practices, historical institutions, literary conventions,
 geography/environment, and worldview concepts already have controlled types;
 they need source-backed, human-reviewed depth rather than generated volume.
