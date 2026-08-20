@@ -7,19 +7,19 @@
     "tell me about burial of jesus",
     "why is burial of jesus important"
   ],
-  "summary": "Burial of Jesus is a Gospel event that reveals Jesus' identity, mission, death, or vindication.",
-  "historical_context": "Historically, Burial of Jesus is located by its canonical setting; this entry connects that setting with jesus, messiah-theme, new-covenant and related CKL objects for contextual retrieval.",
-  "ancient_near_east_context": "Burial of Jesus unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "summary": "The Gospel accounts of Jesus's removal from the cross, preparation, and placement in a tomb before Sabbath, followed narratively by discovery of the empty tomb.",
+  "historical_context": "The narratives combine Roman release of an executed body with Jewish concern for burial before Sabbath. Jerusalem rock-cut tombs and ossuary practice provide regional context but cannot identify Jesus's tomb or prove the narrated sequence.",
+  "ancient_near_east_context": "The immediate comparison is Early Roman Judean execution and burial rather than a generalized ancient Near Eastern funerary pattern.",
+  "hebraic_worldview": "Prompt burial, care for the dead, corpse impurity, Sabbath timing, kin and patron obligations, and tomb location shape the narrative setting.",
+  "second_temple_context": "Rock-cut family tombs and secondary ossuary burial were especially associated with Jerusalem-area households possessing the resources and tenure for such tombs; practice varied by region and status.",
+  "canonical_context": "All four Gospels narrate burial between death and the empty-tomb accounts, with variations in named participants, preparation, tomb description, and witnesses.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
-    "ancient_near_east": true,
-    "hebraic_worldview": false,
-    "second_temple": false,
-    "canonical": false,
+    "ancient_near_east": false,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
     "later_christian_reception": false
   },
   "literary_context": "The four Gospels use Burial of Jesus to reveal Jesus and shape discipleship.",
@@ -73,28 +73,40 @@
       "relationship": "narrative-context",
       "weight": 8,
       "notes": "curated canonical context"
+    },
+    {
+      "id": "crucifixion",
+      "relationship": "preceding-event",
+      "weight": 10,
+      "notes": "The body is released following Roman execution."
+    },
+    {
+      "id": "judean-pilgrimage-taxation-and-roman-power",
+      "relationship": "evidence-cluster",
+      "weight": 10,
+      "notes": "The cluster supplies bounded comparative evidence for crucifixion and Jerusalem burial."
     }
   ],
   "scripture_references": [
     {
-      "reference": "Matthew 28:16-20",
-      "relationship": "supporting",
-      "notes": "Gospel narrative"
+      "reference": "Matthew 27:57-61",
+      "relationship": "primary",
+      "notes": "Joseph, the body, a new rock-cut tomb, stone, and women observers."
     },
     {
-      "reference": "Mark 16:19-20",
-      "relationship": "supporting",
-      "notes": "Gospel narrative"
+      "reference": "Mark 15:42-47",
+      "relationship": "primary",
+      "notes": "Body request, death confirmation, linen, tomb, stone, and observers."
     },
     {
-      "reference": "Luke 24:50-53",
-      "relationship": "supporting",
-      "notes": "Gospel narrative"
+      "reference": "Luke 23:50-56",
+      "relationship": "primary",
+      "notes": "Council member, unused tomb, preparation day, women, spices, and Sabbath rest."
     },
     {
-      "reference": "John 20:17-23",
-      "relationship": "supporting",
-      "notes": "Gospel narrative"
+      "reference": "John 19:38-42",
+      "relationship": "primary",
+      "notes": "Joseph and Nicodemus prepare and place the body in a nearby new tomb."
     }
   ],
   "cross_references": [],

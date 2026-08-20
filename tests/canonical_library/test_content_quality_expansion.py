@@ -20,6 +20,8 @@ EXPANSION_OBJECTS = {
     "persian-restoration-and-yehud-administration": 4,
     "second-temple-priesthood-and-temple-authority": 4,
     "second-temple-synagogues-scribes-and-sectarian-groups": 5,
+    "galilean-villages-households-and-subsistence": 7,
+    "judean-pilgrimage-taxation-and-roman-power": 8,
 }
 
 
@@ -551,6 +553,115 @@ def test_second_temple_legal_debate_does_not_identify_4qmmt_with_a_named_group()
     assert "without making its authors" in ranked[0].passage_relevance
 
 
+def test_galilean_household_and_village_evidence_stays_passage_bounded() -> None:
+    library = CanonicalLibrary.load_default()
+    capernaum = _rank(
+        library,
+        "galilean-villages-households-and-subsistence",
+        "What household and roof context helps explain the Capernaum scene?",
+        "Mark 2:1-12",
+        "cultural practice",
+        "archaeology",
+    )
+    assert [item.evidence_id for item in capernaum] == [
+        "gospel-galilean-households",
+        "capernaum-domestic-remains",
+    ]
+    assert capernaum[0].passage_relationship == "direct"
+    assert capernaum[1].passage_relationship == "contextual"
+    assert "local-scale comparison" in capernaum[1].passage_relevance
+
+    nazareth = _rank(
+        library,
+        "galilean-villages-households-and-subsistence",
+        "What archaeological evidence establishes an Early Roman settlement at Nazareth?",
+        "Luke 4:16-30",
+        "archaeology",
+    )
+    assert [item.evidence_id for item in nazareth] == [
+        "nazareth-early-roman-dwelling"
+    ]
+    assert "no evidence for the synagogue speech or a named family home" in nazareth[0].passage_relevance
+
+
+def test_galilean_material_comparisons_do_not_become_gospel_identifications() -> None:
+    library = CanonicalLibrary.load_default()
+    vessels = _rank(
+        library,
+        "galilean-villages-households-and-subsistence",
+        "How do stone vessels contextualize the jars at Cana?",
+        "John 2:1-12",
+        "archaeology",
+    )
+    assert [item.evidence_id for item in vessels] == [
+        "reina-stone-vessel-production"
+    ]
+    assert vessels[0].passage_relationship == "contextual"
+    assert "without identifying" in vessels[0].passage_relevance
+
+    boat = _rank(
+        library,
+        "galilean-villages-households-and-subsistence",
+        "What boat evidence contextualizes the storm crossing?",
+        "Mark 4:35-41",
+        "archaeology",
+    )
+    assert boat[0].evidence_id == "galilee-boat-comparison"
+    assert boat[0].passage_relationship == "contextual"
+    assert "contemporary physical control" in boat[0].passage_relevance
+    assert "the Ginosar vessel was Jesus's boat" in library.objects_by_id[
+        "galilean-villages-households-and-subsistence"
+    ].hermeneutical_lens["common_misinterpretations"]
+
+
+def test_judean_taxation_and_prefectural_evidence_keeps_institutions_distinct() -> None:
+    library = CanonicalLibrary.load_default()
+    tax = _rank(
+        library,
+        "judean-pilgrimage-taxation-and-roman-power",
+        "What explains tribute to Caesar and the denarius?",
+        "Mark 12:13-17",
+        "cultural practice",
+    )
+    assert [item.evidence_id for item in tax] == ["gospel-taxation-distinctions"]
+    assert "flattened into a single tax" in tax[0].passage_relevance
+
+    pilate = _rank(
+        library,
+        "judean-pilgrimage-taxation-and-roman-power",
+        "What evidence contextualizes Pilate's Roman authority?",
+        "John 18:28-40",
+        "historical setting",
+        "archaeology",
+    )
+    assert [item.evidence_id for item in pilate] == [
+        "gospel-roman-hearing",
+        "pilate-prefect-inscription",
+    ]
+    assert pilate[0].passage_relationship == "direct"
+    assert pilate[1].passage_relationship == "contextual"
+    assert "supplies no evidence for Jesus" in pilate[1].passage_relevance
+
+
+def test_crucifixion_and_burial_archaeology_blocks_impossibility_and_proof_claims() -> None:
+    library = CanonicalLibrary.load_default()
+    ranked = _rank(
+        library,
+        "judean-pilgrimage-taxation-and-roman-power",
+        "What evidence contextualizes crucifixion and Jewish burial?",
+        "Mark 15:21-47",
+        "archaeology",
+        "cultural practice",
+    )
+    assert [item.evidence_id for item in ranked] == [
+        "gospel-crucifixion-and-burial",
+        "yehohanan-crucifixion-burial",
+    ]
+    assert ranked[0].passage_relationship == "direct"
+    assert ranked[1].passage_relationship == "comparative"
+    assert "not proving Jesus's case" in ranked[1].passage_relevance
+
+
 def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
     library = CanonicalLibrary.load_default()
     flood = library.objects_by_id["the-flood"]
@@ -586,6 +697,14 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
     scribes = library.objects_by_id["scribes"]
     synagogue = library.objects_by_id["synagogue"]
     sanhedrin = library.objects_by_id["sanhedrin"]
+    pilgrimage_road = library.objects_by_id["pilgrimage-road-in-jerusalem"]
+    capernaum = library.objects_by_id["capernaum"]
+    nazareth = library.objects_by_id["nazareth"]
+    galilee = library.objects_by_id["galilee-1"]
+    judea = library.objects_by_id["judea-1"]
+    burial = library.objects_by_id["burial-of-jesus"]
+    roman_governorship = library.objects_by_id["roman-governorship"]
+    temple_tax = library.objects_by_id["temple-tax"]
     assert flood.scripture_references[0].reference == "Genesis 6:1-22"
     assert all(reference.reference != "Genesis 11:1-9" for reference in flood.scripture_references)
     assert thessalonica.scripture_references[0].reference == "Acts 17:1-9"
@@ -662,6 +781,31 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
         "Canonical Knowledge Library" not in {source.publisher for source in obj.sources}
         for obj in (pharisees, sadducees, scribes, synagogue, sanhedrin)
     )
+    assert pilgrimage_road.scripture_references[0].reference == "Luke 19:28-48"
+    assert "Tell Dan" not in pilgrimage_road.summary
+    assert "judean-pilgrimage-taxation-and-roman-power" in {
+        relationship.id for relationship in pilgrimage_road.related_objects
+    }
+    assert capernaum.scripture_references[0].reference == "Matthew 4:12-17"
+    assert nazareth.scripture_references[1].reference == "Mark 6:1-6"
+    assert galilee.title == "Galilee"
+    assert judea.title == "Judea"
+    assert burial.scripture_references[0].reference == "Matthew 27:57-61"
+    assert roman_governorship.scripture_references[0].reference == "Matthew 27:1-26"
+    assert temple_tax.scripture_references[0].reference == "Exodus 30:11-16"
+    assert all(
+        obj.context_applicability["second_temple"] is True
+        for obj in (
+            pilgrimage_road,
+            capernaum,
+            nazareth,
+            galilee,
+            judea,
+            burial,
+            roman_governorship,
+            temple_tax,
+        )
+    )
 
     context_fields = {
         "historical": "historical_context",
@@ -680,14 +824,14 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
 def test_corpus_evidence_quality_metrics_have_no_structural_failures() -> None:
     library = CanonicalLibrary.load_default()
     report = audit_evidence(library.objects_by_id.values())
-    assert report["evidence_count"] == 65
-    assert report["evidence_with_primary_sources_count"] == 64
-    assert report["evidence_with_academic_secondary_sources_count"] == 60
-    assert report["evidence_with_chronology_count"] == 65
-    assert report["evidence_with_passage_relevance_count"] == 65
-    assert report["disputed_evidence_count"] == 54
+    assert report["evidence_count"] == 80
+    assert report["evidence_with_primary_sources_count"] == 79
+    assert report["evidence_with_academic_secondary_sources_count"] == 75
+    assert report["evidence_with_chronology_count"] == 80
+    assert report["evidence_with_passage_relevance_count"] == 80
+    assert report["disputed_evidence_count"] == 69
     assert report["worldview_evidence_count"] == 7
-    assert report["archaeology_linked_evidence_count"] == 13
+    assert report["archaeology_linked_evidence_count"] == 15
     assert report["internal_source_only_evidence_count"] == 0
     assert report["missing_source_locator_count"] == 0
     assert report["missing_confidence_rationale_count"] == 0

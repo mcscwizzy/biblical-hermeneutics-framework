@@ -1,25 +1,25 @@
 {
   "id": "judea-1",
   "type": "place",
-  "title": "Judea 1",
+  "title": "Judea",
   "aliases": [
-    "where is judea 1",
-    "tell me about judea 1",
-    "why is judea 1 important"
+    "where is judea",
+    "tell me about judea",
+    "why is judea important"
   ],
-  "summary": "Judea is a ministry location in the story of Jesus or the early church.",
-  "historical_context": "Historically, Judea 1 belongs within the scriptural setting around Matthew 28:16-20, where Matthew 28:16-20, Mark 16:19-20, jesus, and acts help locate this biblical place in the Bible's people, places, and events.",
-  "ancient_near_east_context": "Ancient background for Judea 1 includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Matthew 28:16-20, Mark 16:19-20, jesus, and acts without letting comparison replace the biblical witness.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "summary": "The southern region centered on Jerusalem and its temple, governed directly by Rome after 6 CE and central to Gospel passion and Acts narratives.",
+  "historical_context": "Judea's political status changed from Herodian kingdom to Roman prefecture, with Jerusalem's priestly leadership operating under imperial authority. The region must be distinguished chronologically and administratively from Antipas's Galilee.",
+  "ancient_near_east_context": "The relevant setting is the Roman eastern Mediterranean and late Second Temple period rather than generalized ancient geography.",
+  "hebraic_worldview": "Temple pilgrimage, purity, burial, land memory, and covenant identity persisted amid taxation, elite administration, and Roman coercion.",
+  "second_temple_context": "Jerusalem concentrated sacrificial worship and festival pilgrimage while settlements and tomb landscapes extended across the Judean hills and wilderness.",
+  "canonical_context": "The Gospels move toward Judea and Jerusalem for conflict, crucifixion, and burial; Acts begins in Jerusalem before expanding through Judea and beyond.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
-    "ancient_near_east": true,
-    "hebraic_worldview": false,
-    "second_temple": false,
-    "canonical": false,
+    "ancient_near_east": false,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
     "later_christian_reception": false
   },
   "literary_context": "The Gospels and Acts use Judea as a stage for proclamation, response, and mission.",
@@ -79,33 +79,39 @@
       "relationship": "geographic-context",
       "weight": 8,
       "notes": "curated canonical context"
+    },
+    {
+      "id": "judean-pilgrimage-taxation-and-roman-power",
+      "relationship": "evidence-cluster",
+      "weight": 10,
+      "notes": "Evidence for pilgrimage, taxation, prefectural power, execution, and burial."
     }
   ],
   "scripture_references": [
     {
-      "reference": "Matthew 28:16-20",
-      "relationship": "supporting",
-      "notes": "Jesus' ministry in the land"
+      "reference": "Mark 10:1-34",
+      "relationship": "primary",
+      "notes": "Movement into Judea and toward Jerusalem."
     },
     {
-      "reference": "Mark 16:19-20",
-      "relationship": "supporting",
-      "notes": "Jesus' ministry and response"
+      "reference": "Luke 19:28-48",
+      "relationship": "primary",
+      "notes": "Entry into Jerusalem and temple activity."
     },
     {
-      "reference": "Luke 24:50-53",
-      "relationship": "supporting",
-      "notes": "ministry and mission"
+      "reference": "John 18:28-40",
+      "relationship": "primary",
+      "notes": "Roman hearing in Judea under Pilate."
     },
     {
-      "reference": "John 20:17-23",
-      "relationship": "supporting",
-      "notes": "signs, belief, and mission"
+      "reference": "John 19:1-42",
+      "relationship": "primary",
+      "notes": "Execution and burial in the Jerusalem setting."
     },
     {
-      "reference": "Acts 9:1-19",
+      "reference": "Acts 1:1-8",
       "relationship": "supporting",
-      "notes": "church mission in place"
+      "notes": "Jerusalem and Judea in the programmatic geography of Acts."
     }
   ],
   "cross_references": [],

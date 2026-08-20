@@ -161,7 +161,7 @@ CKL stores canonical facts, retrieval metadata, and future scholarship in a dete
 
 The evidence expansion began with a read-only inventory and contract audit:
 
-- The authoritative inventory contains 641 validated objects across 18 object
+- The authoritative inventory contains 643 validated objects across 18 object
   categories. JSON remains the reviewable source of truth; the manifest carries
   counts and framework/schema versions.
 - `schema.py` already provided a typed canonical object, claims, structured
@@ -186,9 +186,9 @@ The evidence expansion began with a read-only inventory and contract audit:
 - Archaeology was already a mature peer domain with sites, items, Scripture
   links, details, confidence, stable CKL links, and rights-aware media. It is
   preserved rather than folded into CKL.
-- Historical/cultural coverage remains broad but uneven. Four focused evidence
-  clusters now deepen Genesis/ANE, divine-assembly, Exodus/Egypt, and
-  Thessalonian context while remaining in explicit human-review state.
+- Historical/cultural coverage remains broad but uneven. Eighteen focused
+  evidence clusters now span Genesis/ANE through first-century Galilee and
+  Judea while remaining in explicit human-review state.
 - Temporal information previously lived mostly in prose, book date ranges, and
   timeline entries. It could not reliably distinguish artifact date, narrative
   setting, source composition, or comparative chronological distance.
@@ -973,8 +973,17 @@ and 4QMMT as evidence for legal disagreement without assigning its authors to a
 named group. These 65 items are chronology-controlled, passage-linked, and
 source-resolvable, but AI-authored additions remain drafts until human review.
 
-The next focused expansion should prioritize first-century Judean and Galilean
-village life and one additional Pauline city such as Corinth or Ephesus.
+The first-century Galilee and Judea pass adds passage-bounded evidence for
+Galilean households and farming, Capernaum domestic remains, an Early Roman
+Nazareth dwelling, Jewish stone-vessel production, Magdala's harbor and fishing
+evidence, the Ginosar boat, Jerusalem pilgrimage and commerce, differentiated
+tax systems, Josephus's census chronology, Pilate's prefectural office, Roman
+execution, and Jewish burial. These 80 items are chronology-controlled,
+passage-linked, and source-resolvable, but AI-authored additions remain drafts
+until human review.
+
+The next focused expansion should prioritize one additional Pauline city such
+as Corinth or Ephesus.
 Cultural practices, historical institutions, literary conventions,
 geography/environment, and worldview concepts already have controlled types;
 they need source-backed, human-reviewed depth rather than generated volume.

@@ -7,19 +7,19 @@
     "tell me about nazareth",
     "why is nazareth important"
   ],
-  "summary": "Nazareth is a ministry location in the story of Jesus or the early church.",
-  "historical_context": "Historically, Nazareth belongs within the scriptural setting around Matthew 28:16-20, where Matthew 28:16-20, Mark 16:19-20, jesus, and acts help locate this biblical place in the Bible's people, places, and events.",
+  "summary": "A small Galilean settlement remembered in the Gospels as Jesus's hometown and the setting of family identity, synagogue reception, and hometown rejection.",
+  "historical_context": "Early Roman remains at Nazareth include a dwelling and subterranean storage installations. They establish a modest inhabited settlement, not the identity of a particular family home.",
   "ancient_near_east_context": "Ancient background for Nazareth includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Matthew 28:16-20, Mark 16:19-20, jesus, and acts without letting comparison replace the biblical witness.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "hebraic_worldview": "Kinship, hometown knowledge, synagogue assembly, and honor shape how the Gospel narratives portray recognition and rejection.",
+  "second_temple_context": "Nazareth was a Jewish Galilean settlement under Herodian rule rather than direct Judean prefectural administration during most of Jesus's ministry.",
+  "canonical_context": "Matthew and Luke connect Nazareth with Jesus's upbringing; Mark and Luke use hometown rejection to develop questions of identity, familiarity, and prophetic reception.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
-    "ancient_near_east": true,
-    "hebraic_worldview": false,
-    "second_temple": false,
-    "canonical": false,
+    "ancient_near_east": false,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
     "later_christian_reception": false
   },
   "literary_context": "The Gospels and Acts use Nazareth as a stage for proclamation, response, and mission.",
@@ -57,25 +57,25 @@
       "notes": "curated canonical context"
     },
     {
-      "id": "acts",
+      "id": "galilee-1",
       "relationship": "geographic-context",
       "weight": 8,
       "notes": "curated canonical context"
     },
     {
-      "id": "paul",
+      "id": "synagogue",
       "relationship": "geographic-context",
       "weight": 8,
       "notes": "curated canonical context"
     },
     {
-      "id": "kingdom-theme",
+      "id": "household",
       "relationship": "geographic-context",
       "weight": 8,
       "notes": "curated canonical context"
     },
     {
-      "id": "new-covenant",
+      "id": "galilean-villages-households-and-subsistence",
       "relationship": "geographic-context",
       "weight": 8,
       "notes": "curated canonical context"
@@ -83,29 +83,29 @@
   ],
   "scripture_references": [
     {
-      "reference": "Matthew 28:16-20",
-      "relationship": "supporting",
-      "notes": "Jesus' ministry in the land"
+      "reference": "Matthew 2:19-23",
+      "relationship": "primary",
+      "notes": "Jesus's family settles in Nazareth."
     },
     {
-      "reference": "Mark 16:19-20",
-      "relationship": "supporting",
-      "notes": "Jesus' ministry and response"
+      "reference": "Mark 6:1-6",
+      "relationship": "primary",
+      "notes": "Hometown recognition, kinship, honor, and rejection."
     },
     {
-      "reference": "Luke 24:50-53",
-      "relationship": "supporting",
-      "notes": "ministry and mission"
+      "reference": "Luke 1:26-38",
+      "relationship": "primary",
+      "notes": "The annunciation is set in Nazareth."
     },
     {
-      "reference": "John 20:17-23",
-      "relationship": "supporting",
-      "notes": "signs, belief, and mission"
+      "reference": "Luke 2:39-52",
+      "relationship": "primary",
+      "notes": "Jesus's upbringing in Nazareth and pilgrimage from home."
     },
     {
-      "reference": "Acts 9:1-19",
-      "relationship": "supporting",
-      "notes": "church mission in place"
+      "reference": "Luke 4:16-30",
+      "relationship": "primary",
+      "notes": "Synagogue reading and hometown rejection."
     }
   ],
   "cross_references": [],
