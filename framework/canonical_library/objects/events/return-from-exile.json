@@ -7,28 +7,28 @@
     "tell me about return from exile",
     "why is return from exile important"
   ],
-  "summary": "Return from Exile is a prophetic or exile-and-restoration event that interprets covenant failure and hope.",
-  "historical_context": "The event belongs to the era of prophetic confrontation, exile, and eventual return.",
-  "ancient_near_east_context": "Imperial campaigns, court politics, and temple memory frame the background.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "summary": "A series of Persian-period movements from Babylonia to Judah, beginning in Ezra's Cyrus-era horizon and continuing through later groups, that restored settlement and worship without emptying the diaspora or restoring an independent monarchy.",
+  "historical_context": "After Cyrus captured Babylon in 539 BCE, Ezra presents authorization and support for return toward Jerusalem. The narrative distinguishes an early return and temple community from Ezra's later Artaxerxes-era journey; dates, group sizes, and the historical form of the decrees remain debated.",
+  "ancient_near_east_context": "Return occurred within Achaemenid imperial government through royal authorization, provincial officials, temple patronage, taxation, written decrees, and travel across imperial routes. The Cyrus Cylinder offers Babylonian comparative restoration rhetoric but does not name Judah.",
+  "hebraic_worldview": "Ezra portrays return as the LORD stirring rulers and people, preserving a remnant, restoring vessels and sacrifice, and calling the community to covenant faithfulness. Imperial permission is a means within that presentation, not its theological source.",
+  "second_temple_context": "Return established and enlarged an early Second Temple community concerned with worship, genealogy, land, Torah, taxation, and boundaries while many Judeans continued living throughout the empire.",
+  "canonical_context": "The event answers exile and restoration promises in a partial form: Jerusalem and temple life resume, but Davidic kingship is not restored, the province remains under empire, and diaspora communities continue.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
-    "hebraic_worldview": false,
-    "second_temple": false,
-    "canonical": false,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
     "later_christian_reception": false
   },
-  "literary_context": "The historical and prophetic books use Return from Exile to explain judgment and restoration.",
-  "covenantal_significance": "Return from Exile shows that covenant judgment is real, but restoration remains possible.",
+  "literary_context": "Ezra 1-6 narrates return and temple restoration across Cyrus and Darius, with a topical survey of opposition in chapter 4. Ezra 7-8 introduces a later journey under Artaxerxes. These are not one simultaneous migration.",
+  "covenantal_significance": "Return is presented as mercy after covenant judgment and a renewal of worship and communal responsibility, yet continuing imperial rule and unresolved conflict keep restoration incomplete.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
   "historical_setting": "",
-  "canonical_role": "Return from Exile serves as a canonical event anchor, connecting its key passages, people, places, and theological themes within the biblical storyline.",
+  "canonical_role": "The return movements turn exile promises toward restored land and worship while their partial scale, continuing empire, and enduring diaspora keep canonical restoration open-ended.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -50,137 +50,52 @@
   "related_places": [],
   "related_events": [],
   "related_objects": [
-    {
-      "id": "elijah",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
-    },
-    {
-      "id": "jeremiah-the-prophet",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
-    },
-    {
-      "id": "exile-theme",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
-    },
-    {
-      "id": "restoration-theme",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
-    }
+    {"id": "ezra", "relationship": "primary-book-context", "weight": 10, "notes": "Ezra narrates distinct return movements and restoration activity."},
+    {"id": "2-chronicles", "relationship": "cyrus-proclamation-context", "weight": 9, "notes": "Chronicles closes with the proclamation repeated at Ezra's opening."},
+    {"id": "babylonian-exile", "relationship": "preceding-displacement", "weight": 10, "notes": "Return follows but does not erase the Babylonian diaspora."},
+    {"id": "rebuilding-the-temple", "relationship": "restoration-process", "weight": 10, "notes": "The early return narrative is oriented toward altar and temple restoration."},
+    {"id": "cyrus-cylinder", "relationship": "comparative-imperial-context", "weight": 8, "notes": "The Babylonian inscription is not the Judean decree."},
+    {"id": "persian-restoration-and-yehud-administration", "relationship": "structured-evidence-cluster", "weight": 10, "notes": "The cluster supplies Cyrus, Yehud, and administrative evidence with chronological limits."},
+    {"id": "exile-theme", "relationship": "canonical-theme", "weight": 8, "notes": "Return is one historically specific development within the exile-restoration theme."}
   ],
   "scripture_references": [
-    {
-      "reference": "2 Kings 17:1-23",
-      "relationship": "supporting",
-      "notes": "prophetic conflict and judgment"
-    },
-    {
-      "reference": "2 Chronicles 30:6-12",
-      "relationship": "supporting",
-      "notes": "reform, decline, and exile"
-    },
-    {
-      "reference": "Jeremiah 25:8-14",
-      "relationship": "supporting",
-      "notes": "judgment and hope in exile"
-    },
-    {
-      "reference": "Haggai 2:6-9",
-      "relationship": "supporting",
-      "notes": "return and temple renewal"
-    }
+    {"reference": "2 Chronicles 36:22-23", "relationship": "primary", "notes": "Cyrus proclamation and canonical transition."},
+    {"reference": "Ezra 1:1-11", "relationship": "primary", "notes": "Authorization, support, return, and temple vessels."},
+    {"reference": "Ezra 2:1-70", "relationship": "primary", "notes": "Returned-community list, settlement, genealogical questions, and gifts."},
+    {"reference": "Ezra 7:1-28", "relationship": "supporting", "notes": "Ezra's later Artaxerxes-era authorization and journey setting."},
+    {"reference": "Ezra 8:1-36", "relationship": "supporting", "notes": "Later return company, travel preparations, gifts, and arrival."}
   ],
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "Exile and restoration events are often read as both history and theological warning.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Return occurred in multiple movements and did not remove every Judean from Babylonia.",
+      "note_type": "historical-context",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": ["ezra-return-text", "williamson-return", "alstola-return-diaspora"],
+      "rationale": "Ezra distinguishes groups and dates, while Babylonian documents continue to attest Judeans under Persian rule."
     },
     {
-      "note": "Prophetic interpretation is central to understanding these events.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The Cyrus Cylinder neither names Jerusalem nor proves the wording or documentary form of Ezra's proclamation.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": ["bm-cyrus-return", "williamson-return"],
+      "rationale": "The cylinder is a Babylonian royal foundation inscription with a different setting and purpose."
     }
   ],
   "common_questions": [
-    "Why does this event matter in the prophetic or exile story?",
-    "How does this event explain judgment and hope?",
-    "What covenant warning or restoration does this event carry?"
+    "Were all Judean exiles part of one return?",
+    "How do the Cyrus and Artaxerxes-era return narratives differ?",
+    "Does the Cyrus Cylinder mention Jerusalem?",
+    "Why is return portrayed as incomplete restoration?"
   ],
   "sources": [
-    {
-      "title": "1 Kings 18-2 Kings 25",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "1-kings-18-2-kings-25"
-    },
-    {
-      "title": "2 Chronicles 29-36",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "2-chronicles-29-36"
-    },
-    {
-      "title": "Jeremiah 25-29",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "jeremiah-25-29"
-    },
-    {
-      "title": "Haggai",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "haggai"
-    },
-    {
-      "title": "Zechariah",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "zechariah"
-    }
+    {"id": "ezra-return-text", "title": "Second Chronicles 36:22-23 and Ezra 1-8", "author": "", "publisher": "", "year": null, "locator": "2 Chronicles 36:22-23; Ezra 1:1-8:36", "url": "", "source_type": "scripture", "supports": ["summary", "historical_context", "literary_context", "interpretive_notes"], "notes": "Primary biblical return narratives; no modern translation is reproduced."},
+    {"id": "williamson-return", "title": "Ezra, Nehemiah", "author": "H. G. M. Williamson", "publisher": "Word Books", "year": 1985, "locator": "Word Biblical Commentary 16, commentary on Ezra 1-8", "url": "https://books.google.com/books?id=7rLLngEACAAJ", "source_type": "academic-book", "supports": ["historical_context", "ancient_near_east_context", "literary_context", "interpretive_notes"], "notes": "Technical commentary on chronology, sources, documents, and return groups."},
+    {"id": "bm-cyrus-return", "title": "The Cyrus Cylinder", "author": "", "publisher": "British Museum", "year": null, "locator": "BM 90920; collection object 1880,0617.1941", "url": "https://www.britishmuseum.org/collection/object/W_1880-0617-1941", "source_type": "museum-collection", "supports": ["ancient_near_east_context", "interpretive_notes"], "notes": "Comparative Babylonian evidence; it does not mention Judah."},
+    {"id": "alstola-return-diaspora", "title": "Judeans in Babylonia: A Study of Deportees in the Sixth and Fifth Centuries BCE", "author": "Tero Alstola", "publisher": "Brill", "year": 2020, "locator": "Chapters on Judeans under Babylonian and Persian rule", "url": "https://doi.org/10.1163/9789004365421", "source_type": "academic-book", "supports": ["historical_context", "second_temple_context", "interpretive_notes"], "notes": "Evidence for continuing Judean communities in Babylonia."}
   ],
   "canonical_story": {
     "phase": "",
@@ -230,9 +145,9 @@
       "date": "2026-07-16"
     }
   ],
-  "edited_by": [],
+  "edited_by": ["codex:ckl-babylon-persia-expansion:2026-08-20"],
   "reviewed_by": [],
-  "last_reviewed": "2026-07-16",
+  "last_reviewed": "2026-08-20",
   "confidence": "medium",
   "human_review_required": true
 }

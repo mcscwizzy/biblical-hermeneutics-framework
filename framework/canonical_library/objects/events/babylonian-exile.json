@@ -7,28 +7,28 @@
     "tell me about babylonian exile",
     "why is babylonian exile important"
   ],
-  "summary": "The deportation of Judah to Babylon, a covenant judgment that reshapes Israel\u2019s identity and hope.",
-  "historical_context": "The exile follows the fall of Jerusalem and the collapse of Judah\u2019s monarchy under Babylonian power.",
-  "ancient_near_east_context": "Babylon\u2019s imperial dominance frames the exile as both historical catastrophe and theological judgment.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "summary": "The forced displacement of Judeans in several Babylonian campaigns, especially the elite deportation of 597 BCE and the removals surrounding Jerusalem's destruction in 587/586 BCE, followed by enduring communities in both Judah and Babylonia.",
+  "historical_context": "Babylon reduced Judah in stages: Jehoiachin and selected royal, military, administrative, and skilled groups were removed in 597 BCE; Zedekiah's revolt led to Jerusalem's destruction and further deportation in 587/586 BCE. Not everyone was removed, and Judean communities persisted in Babylonia after Persian-period returns began.",
+  "ancient_near_east_context": "Neo-Babylonian policy combined vassal kingship, tribute, punitive siege, elite removal, destruction after revolt, and resettlement within imperial agricultural and service systems. Chronicles, ration lists, and private documents illuminate different levels of this system.",
+  "hebraic_worldview": "Biblical writers interpret exile through covenant judgment, lament, repentance, divine presence outside the land, responsibility, and promised restoration. Those theological claims belong to the biblical witnesses rather than the Babylonian records.",
+  "second_temple_context": "Return did not end the Babylonian diaspora. The Al-Yahudu corpus continues into Persian rule, showing that the early Second Temple community in Yehud developed alongside Judean communities that remained abroad.",
+  "canonical_context": "Kings, Chronicles, Jeremiah, Ezekiel, Lamentations, Psalms, Daniel, and Ezra remember exile through distinct genres and settings. The event is historically distinct from Assyria's earlier deportation of northern Israel.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
-    "hebraic_worldview": false,
-    "second_temple": false,
-    "canonical": false,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
     "later_christian_reception": false
   },
-  "literary_context": "Kings, Chronicles, Jeremiah, Lamentations, Ezekiel, Daniel, and the Psalms all interpret the exile in different ways.",
-  "covenantal_significance": "The exile dramatizes covenant curse, corporate discipline, and the need for return and renewal.",
+  "literary_context": "Second Kings 24-25 distinguishes the 597 BCE removal, the later destruction, those left in the land, flight to Egypt, and Jehoiachin's elevation. Jeremiah 29 addresses the earlier deportees before the final catastrophe; Ezekiel dates visions from Jehoiachin's exile.",
+  "covenantal_significance": "The biblical texts present loss of king, temple, and land as covenant judgment while preserving responsibility, remnant, divine presence, and hope. Historical documentation clarifies conditions but cannot establish the covenant interpretation.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
   "historical_setting": "",
-  "canonical_role": "Babylonian Exile serves as a canonical event anchor, connecting its key passages, people, places, and theological themes within the biblical storyline.",
+  "canonical_role": "The event joins Judah's monarchic collapse to exilic prophecy, lament, diaspora life, and later return while preserving the distinct experiences of deportees and those remaining in the land.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -79,11 +79,35 @@
       "relationship": "restoration-horizon",
       "weight": 8,
       "notes": "future city beyond exile"
+    },
+    {
+      "id": "fall-of-jerusalem",
+      "relationship": "destruction-event",
+      "weight": 10,
+      "notes": "The later Babylonian siege and destruction precipitated further displacement."
+    },
+    {
+      "id": "return-from-exile",
+      "relationship": "partial-restoration-event",
+      "weight": 9,
+      "notes": "Persian-period return followed exile without ending the diaspora."
+    },
+    {
+      "id": "babylon-1",
+      "relationship": "imperial-and-diaspora-setting",
+      "weight": 10,
+      "notes": "Babylon was the imperial center and a major deportee setting."
+    },
+    {
+      "id": "babylonian-conquest-deportation-and-judean-diaspora",
+      "relationship": "structured-evidence-cluster",
+      "weight": 10,
+      "notes": "The cluster provides chronicle, ration-list, and Al-Yahudu evidence with chronological safeguards."
     }
   ],
   "scripture_references": [
     {
-      "reference": "2 Kings 24:1-20",
+      "reference": "2 Kings 24:8-20",
       "relationship": "primary",
       "notes": "initial deportation"
     },
@@ -132,122 +156,32 @@
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "Treat exile as both a real historical event and a theological pattern of judgment and restoration.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Do not collapse the 597 BCE deportation, the 587/586 BCE destruction, later removals, life in Babylonia, and Persian-period return into one event.",
+      "note_type": "historical-context",
+      "certainty": "strong_consensus",
+      "dispute_status": "chronological_uncertainty",
+      "sources": ["kings-jeremiah-babylonian-exile", "albertz-israel-exile", "alstola-judeans-babylonia"],
+      "rationale": "Biblical and cuneiform sources preserve multiple dates, groups, and settings."
     },
     {
-      "note": "The exile does not end the story; it intensifies the hope for return, new covenant, and renewed presence.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Deportee documents preserve selected elite and economic settings; they do not show that all Judeans shared one status or that Judah became empty.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": ["albertz-israel-exile", "alstola-judeans-babylonia"],
+      "rationale": "The surviving record is socially and geographically selective."
     }
   ],
   "common_questions": [
-    "Why did the Babylonian exile happen?",
-    "How does exile shape the rest of the Bible?",
-    "What hope is given to exiles?"
+    "How many major Babylonian deportation horizons do the sources distinguish?",
+    "What was life like for documented Judean communities in Babylonia?",
+    "Did the land of Judah become completely empty?",
+    "How did return and continuing diaspora overlap?"
   ],
   "sources": [
-    {
-      "title": "2 Kings 24-25",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "2-kings-24-25"
-    },
-    {
-      "title": "2 Chronicles 36",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "2-chronicles-36"
-    },
-    {
-      "title": "Jeremiah 25",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "jeremiah-25"
-    },
-    {
-      "title": "Jeremiah 29",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "jeremiah-29"
-    },
-    {
-      "title": "Lamentations 1",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "lamentations-1"
-    },
-    {
-      "title": "Ezekiel 1",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "ezekiel-1"
-    },
-    {
-      "title": "Daniel 1",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "daniel-1"
-    },
-    {
-      "title": "Psalm 137",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "psalm-137"
-    }
+    {"id": "kings-jeremiah-babylonian-exile", "title": "Second Kings 24-25; Jeremiah 29, 39, and 52; Ezekiel 1", "author": "", "publisher": "", "year": null, "locator": "2 Kings 24:8-25:30; Jeremiah 29:1-14; 39:1-10; 52:1-34; Ezekiel 1:1-3", "url": "", "source_type": "scripture", "supports": ["summary", "historical_context", "literary_context", "interpretive_notes"], "notes": "Primary biblical witnesses; no modern translation is reproduced."},
+    {"id": "albertz-israel-exile", "title": "Israel in Exile: The History and Literature of the Sixth Century B.C.E.", "author": "Rainer Albertz", "publisher": "Society of Biblical Literature", "year": 2003, "locator": "Studies in Biblical Literature 3, historical reconstruction and social groups in the exile", "url": "https://www.sbl-site.org/wp-content/uploads/2024/11/AlbertzIsrael.pdf", "source_type": "academic-book", "supports": ["historical_context", "ancient_near_east_context", "interpretive_notes"], "notes": "Historical and literary study of sixth-century Judean communities."},
+    {"id": "alstola-judeans-babylonia", "title": "Judeans in Babylonia: A Study of Deportees in the Sixth and Fifth Centuries BCE", "author": "Tero Alstola", "publisher": "Brill", "year": 2020, "locator": "Culture and History of the Ancient Near East 109, chapters 2-5", "url": "https://doi.org/10.1163/9789004365421", "source_type": "academic-book", "supports": ["historical_context", "second_temple_context", "interpretive_notes"], "notes": "Open-access social and economic study of Babylonian Judeans."}
   ],
   "canonical_story": {
     "phase": "",
@@ -297,9 +231,9 @@
       "date": "2026-07-14"
     }
   ],
-  "edited_by": [],
+  "edited_by": ["codex:ckl-babylon-persia-expansion:2026-08-20"],
   "reviewed_by": [],
-  "last_reviewed": "2026-07-14",
+  "last_reviewed": "2026-08-20",
   "confidence": "medium",
   "human_review_required": true
 }

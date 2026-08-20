@@ -7,28 +7,28 @@
     "tell me about assyria",
     "why is assyria important"
   ],
-  "summary": "Assyria is a major imperial or regional power that shapes Israel's history through oppression, exile, diplomacy, or return.",
-  "historical_context": "Assyria appears in conquest, monarchy, exile, or diaspora settings where power and identity collide.",
-  "ancient_near_east_context": "Assyria is read within concrete geography shaped by Levantine routes, imperial borders, settlement patterns, water access, trade movement, and neighboring peoples named in the biblical narrative.",
-  "hebraic_worldview": "",
+  "summary": "A northern Mesopotamian imperial heartland and, in biblical usage, the Neo-Assyrian Empire that dominated the Levant, ended the northern kingdom, and nearly destroyed Judah in the eighth and seventh centuries BCE.",
+  "historical_context": "Neo-Assyrian expansion under Tiglath-pileser III, Shalmaneser V, Sargon II, and Sennacherib transformed Israel and Judah through tribute, annexation, deportation, provincial rule, siege, and destruction. Nineveh fell in 612 BCE and the last Assyrian resistance ended soon afterward.",
+  "ancient_near_east_context": "Assyria was not only a place but an imperial network of capitals, provinces, roads, governors, armies, scribes, tribute, resettlement, temples, and royal media. Inscriptions and reliefs voice elite imperial ideology rather than every inhabitant's experience.",
+  "hebraic_worldview": "Biblical texts can portray Assyria as a historical instrument of judgment, an arrogant power accountable to YHWH, an object of lament or oracle, and in Isaiah 19 even a participant in an eschatological blessing.",
   "second_temple_context": "",
-  "canonical_context": "",
+  "canonical_context": "Kings, Isaiah, Hosea, Micah, Nahum, and Zephaniah present different moments and genres of engagement with Assyria; no single symbolic meaning replaces those historical settings.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
-    "hebraic_worldview": false,
+    "hebraic_worldview": true,
     "second_temple": false,
-    "canonical": false,
+    "canonical": true,
     "later_christian_reception": false
   },
-  "literary_context": "Biblical books use Assyria to contrast human power with divine sovereignty.",
-  "covenantal_significance": "Assyria often marks judgment, testing, or the need for deliverance.",
+  "literary_context": "Assyria appears in regnal narrative, prophetic warning, taunt, lament, salvation oracle, and imperial-crisis story. References must be read by book and period rather than flattened into a timeless cipher.",
+  "covenantal_significance": "Biblical writers place Assyrian power within covenant judgment and divine sovereignty while condemning imperial arrogance and violence.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
-  "historical_setting": "",
-  "canonical_role": "Assyria serves as a canonical place anchor, connecting geography, historical setting, key passages, and related people, events, and themes.",
+  "historical_setting": "Northern Mesopotamia and the Neo-Assyrian imperial system, especially its Levantine expansion from the ninth to seventh centuries BCE.",
+  "canonical_role": "Assyria anchors the northern kingdom's fall, Judah's eighth-century crises, prophetic critique of empire, and the later celebration of Nineveh's downfall.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -75,10 +75,22 @@
       "notes": "curated canonical context"
     },
     {
-      "id": "esther-the-queen",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "fall-of-samaria",
+      "relationship": "conquest-context",
+      "weight": 10,
+      "notes": "Assyrian conquest ended the northern monarchy."
+    },
+    {
+      "id": "assyrian-deportation-and-provincial-incorporation",
+      "relationship": "imperial-administration-context",
+      "weight": 10,
+      "notes": "Evidence for forced transfers and the province of Samaria."
+    },
+    {
+      "id": "assyrian-tribute-and-royal-representation",
+      "relationship": "tribute-and-royal-media-context",
+      "weight": 10,
+      "notes": "Evidence for vassalage, royal inscriptions, and palace art."
     }
   ],
   "scripture_references": [
@@ -88,24 +100,39 @@
       "notes": "table of nations backdrop"
     },
     {
-      "reference": "Exodus 3:1-15",
-      "relationship": "supporting",
-      "notes": "oppression and deliverance"
+      "reference": "2 Kings 17:1-23",
+      "relationship": "primary",
+      "notes": "Samaria's fall and Assyrian deportation."
     },
     {
-      "reference": "2 Kings 25:8-17",
-      "relationship": "supporting",
-      "notes": "imperial conquest and exile"
+      "reference": "2 Kings 18:13-37",
+      "relationship": "primary",
+      "notes": "Sennacherib's Judah campaign and demands at Jerusalem."
     },
     {
-      "reference": "Daniel 11:40-45",
+      "reference": "2 Kings 19:1-37",
       "relationship": "supporting",
-      "notes": "faith under empire"
+      "notes": "Jerusalem's response and survival in the Assyrian crisis."
     },
     {
-      "reference": "Acts 28:11-16",
+      "reference": "Isaiah 10:5-34",
       "relationship": "supporting",
-      "notes": "mission in the imperial world"
+      "notes": "Assyria as instrument and accountable imperial power."
+    },
+    {
+      "reference": "Nahum 1:1-15",
+      "relationship": "supporting",
+      "notes": "Opening oracle, refuge, and the breaking of Assyrian power."
+    },
+    {
+      "reference": "Nahum 2:1-13",
+      "relationship": "supporting",
+      "notes": "Siege taunt, lion imagery, and reversal of Assyrian power."
+    },
+    {
+      "reference": "Nahum 3:1-19",
+      "relationship": "supporting",
+      "notes": "Oracle against Nineveh and Assyrian violence."
     }
   ],
   "cross_references": [],
@@ -127,9 +154,10 @@
     }
   ],
   "common_questions": [
-    "Why is this power or region important in the Bible?",
-    "How does this place shape Israel's history?",
-    "What theological contrast does this place create?"
+    "How did Assyria control Israel and Judah?",
+    "Why did Assyria deport conquered populations?",
+    "How do Kings and Isaiah portray Assyria differently?",
+    "What do Assyrian inscriptions and reliefs contribute?"
   ],
   "sources": [
     {
@@ -257,7 +285,7 @@
   ],
   "edited_by": [],
   "reviewed_by": [],
-  "last_reviewed": "2026-07-16",
+  "last_reviewed": "2026-08-20",
   "confidence": "medium",
   "human_review_required": true
 }

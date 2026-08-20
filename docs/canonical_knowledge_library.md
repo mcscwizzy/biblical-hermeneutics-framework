@@ -161,7 +161,7 @@ CKL stores canonical facts, retrieval metadata, and future scholarship in a dete
 
 The evidence expansion began with a read-only inventory and contract audit:
 
-- The authoritative inventory contains 635 validated objects across 18 object
+- The authoritative inventory contains 639 validated objects across 18 object
   categories. JSON remains the reviewable source of truth; the manifest carries
   counts and framework/schema versions.
 - `schema.py` already provided a typed canonical object, claims, structured
@@ -947,13 +947,24 @@ festival setting, and a bounded Bull Site comparison. The sacred-space pass
 adds the tabernacle's dwelling purpose, graded access, instruction-construction
 correspondence, and cloud-governed mobility, followed by bounded comparisons
 with Mari M.6873, Ramesses II's Qadesh camp, Timna Site 200, and an Egyptian
-processional bark shrine. These 40 items are chronology-controlled,
+processional bark shrine. The Assyrian imperial pass adds the staged reduction
+and fall of Samaria, Sargon II's conquest and deportation claim, forced
+resettlement policy, provincial counter-resettlement, the differentiated tribute
+sequence in Kings, Jehu's Black Obelisk register, Sennacherib's Hezekiah annals,
+and the Lachish royal victory display. These 48 items are chronology-controlled,
 passage-linked, and source-resolvable, but AI-authored additions remain drafts
 until human review.
 
-The next focused expansion should prioritize Assyrian deportation and tribute,
-followed by Babylonian exile and Yehud administration; Second Temple
-institutions; first-century Judean and
+The Babylonian and Persian pass adds the staged 597 and 587/586 BCE conquest
+sequence, the Babylonian Chronicle's bounded 597 notice, Jehoiachin's palace
+ration records, the Al-Yahudu diaspora archive, Ezra's multi-reign restoration
+sequence, the Cyrus Cylinder's Babylonian scope and limits, Yehud stamp
+administration, and the later-comparative Elephantine petition. These 56 items
+are chronology-controlled, passage-linked, and source-resolvable, but
+AI-authored additions remain drafts until human review.
+
+The next focused expansion should prioritize Second Temple institutions;
+first-century Judean and
 Galilean village life; and one additional Pauline city such as Corinth or
 Ephesus. Cultural practices, historical institutions, literary conventions,
 geography/environment, and worldview concepts already have controlled types;

@@ -14,6 +14,10 @@ EXPANSION_OBJECTS = {
     "judges-household-religion-and-regional-cult-sites": 4,
     "tabernacle-presence-access-and-mobility": 4,
     "ancient-portable-sanctuaries-and-tabernacle-comparisons": 4,
+    "assyrian-deportation-and-provincial-incorporation": 4,
+    "assyrian-tribute-and-royal-representation": 4,
+    "babylonian-conquest-deportation-and-judean-diaspora": 4,
+    "persian-restoration-and-yehud-administration": 4,
 }
 
 
@@ -325,6 +329,143 @@ def test_portable_sanctuary_comparisons_remain_comparative_and_nonidentifying() 
     assert bark[1].passage_relationship == "comparative"
 
 
+def test_assyrian_deportation_evidence_keeps_kings_direct_and_sargon_contextual() -> None:
+    library = CanonicalLibrary.load_default()
+    passage_objects = {
+        result.object.id
+        for result in library.retrieve_by_scripture_reference("2 Kings 17:1-6", limit=40)
+    }
+    assert "assyrian-deportation-and-provincial-incorporation" in passage_objects
+    ranked = _rank(
+        library,
+        "assyrian-deportation-and-provincial-incorporation",
+        "What Assyrian evidence helps explain Samaria's fall and deportation?",
+        "2 Kings 17:1-6",
+        "historical setting",
+        "ancient near eastern background",
+    )
+    assert ranked[0].evidence_id == "kings-staged-assyrian-reduction"
+    assert ranked[0].passage_relationship == "direct"
+    sargon = next(
+        item for item in ranked if item.evidence_id == "sargon-samaria-conquest-claim"
+    )
+    assert sargon.passage_relationship == "contextual"
+    assert sargon.chronological_relation == "near-contemporary"
+    assert sargon.dispute_status == "minor_scholarly_disagreement"
+    assert sargon.external_references[0]["domain"] == "external-dataset"
+
+
+def test_assyrian_tribute_evidence_distinguishes_text_artifacts_and_media() -> None:
+    library = CanonicalLibrary.load_default()
+    jehu = _rank(
+        library,
+        "assyrian-tribute-and-royal-representation",
+        "What does the Black Obelisk show about Jehu's tribute?",
+        "2 Kings 9:1-37",
+        "archaeology",
+        "historical setting",
+    )
+    assert [item.evidence_id for item in jehu] == ["black-obelisk-jehu-tribute"]
+    assert jehu[0].passage_relationship == "contextual"
+    assert jehu[0].chronological_relation == "near-contemporary"
+    assert jehu[0].external_references[0]["id"] == "black-obelisk"
+
+    hezekiah = _rank(
+        library,
+        "assyrian-tribute-and-royal-representation",
+        "What Assyrian evidence contextualizes Hezekiah's tribute and Lachish?",
+        "2 Kings 18:13-37",
+        "archaeology",
+        "ancient near eastern background",
+    )
+    assert hezekiah[0].evidence_id == "kings-tribute-vassalage-sequence"
+    assert hezekiah[0].passage_relationship == "direct"
+    assert {item.evidence_id for item in hezekiah[1:]} == {
+        "sennacherib-hezekiah-tribute",
+        "lachish-royal-victory-display",
+    }
+    assert all(item.passage_relationship == "contextual" for item in hezekiah[1:])
+    assert all(item.chronological_relation == "near-contemporary" for item in hezekiah[1:])
+
+
+def test_babylonian_conquest_evidence_distinguishes_597_from_the_later_fall() -> None:
+    library = CanonicalLibrary.load_default()
+    passage_objects = {
+        result.object.id
+        for result in library.retrieve_by_scripture_reference("2 Kings 24:8-17", limit=40)
+    }
+    assert "babylonian-conquest-deportation-and-judean-diaspora" in passage_objects
+    ranked = _rank(
+        library,
+        "babylonian-conquest-deportation-and-judean-diaspora",
+        "What Babylonian evidence helps explain Jerusalem's capture and deportation?",
+        "2 Kings 24:8-17",
+        "historical setting",
+        "archaeology",
+    )
+    assert [item.evidence_id for item in ranked] == [
+        "kings-jeremiah-deportation-sequence",
+        "babylonian-chronicle-597-capture",
+        "jehoiachin-palace-ration-lists",
+    ]
+    assert ranked[0].passage_relationship == "direct"
+    assert ranked[1].passage_relationship == "contextual"
+    assert ranked[1].chronological_relation == "near-contemporary"
+    assert "does not narrate the later temple destruction" in ranked[1].passage_relevance
+
+
+def test_jehoiachin_ration_lists_contextualize_court_life_without_claiming_release() -> None:
+    library = CanonicalLibrary.load_default()
+    ranked = _rank(
+        library,
+        "babylonian-conquest-deportation-and-judean-diaspora",
+        "What do palace ration lists show about Jehoiachin in Babylon?",
+        "2 Kings 25:27-30",
+        "archaeology",
+    )
+    assert [item.evidence_id for item in ranked] == [
+        "jehoiachin-palace-ration-lists",
+        "kings-jeremiah-deportation-sequence",
+    ]
+    assert ranked[0].passage_relationship == "contextual"
+    assert "stopping short of confirming the release scene" in ranked[0].passage_relevance
+
+
+def test_persian_evidence_keeps_cyrus_and_elephantine_comparisons_bounded() -> None:
+    library = CanonicalLibrary.load_default()
+    cyrus = _rank(
+        library,
+        "persian-restoration-and-yehud-administration",
+        "How does the Cyrus Cylinder contextualize the return under Cyrus?",
+        "Ezra 1:1-11",
+        "historical setting",
+        "archaeology",
+    )
+    assert [item.evidence_id for item in cyrus] == [
+        "ezra-persian-return-and-temple-sequence",
+        "cyrus-cylinder-babylonian-restoration-scope",
+    ]
+    assert cyrus[0].passage_relationship == "direct"
+    assert cyrus[1].passage_relationship == "contextual"
+    assert "silence about Judah and Jerusalem" in cyrus[1].passage_relevance
+
+    administration = _rank(
+        library,
+        "persian-restoration-and-yehud-administration",
+        "What evidence contextualizes Persian provincial administration in Judah?",
+        "Nehemiah 5:14-19",
+        "historical setting",
+        "archaeology",
+    )
+    assert [item.evidence_id for item in administration] == [
+        "yehud-stamp-administration",
+        "elephantine-judah-governor-correspondence",
+    ]
+    assert administration[0].chronological_relation == "contemporary"
+    assert administration[1].passage_relationship == "comparative"
+    assert administration[1].chronological_relation == "later-comparative"
+
+
 def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
     library = CanonicalLibrary.load_default()
     flood = library.objects_by_id["the-flood"]
@@ -340,6 +481,19 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
     tabernacle = library.objects_by_id["tabernacle"]
     tabernacle_faq = library.objects_by_id["what-is-the-tabernacle"]
     sanctuary_theme = library.objects_by_id["sanctuary-theme"]
+    black_obelisk = library.objects_by_id["black-obelisk"]
+    lachish_reliefs = library.objects_by_id["lachish-reliefs"]
+    fall_of_samaria = library.objects_by_id["fall-of-samaria"]
+    assyrian_exile = library.objects_by_id["assyrian-exile-of-israel"]
+    assyria = library.objects_by_id["assyria"]
+    babylonian_chronicles = library.objects_by_id["babylonian-chronicles"]
+    cyrus_cylinder = library.objects_by_id["cyrus-cylinder"]
+    babylonian_exile = library.objects_by_id["babylonian-exile"]
+    fall_of_jerusalem = library.objects_by_id["fall-of-jerusalem"]
+    return_from_exile = library.objects_by_id["return-from-exile"]
+    rebuilding_the_temple = library.objects_by_id["rebuilding-the-temple"]
+    babylon = library.objects_by_id["babylon-1"]
+    persia = library.objects_by_id["persia"]
     assert flood.scripture_references[0].reference == "Genesis 6:1-22"
     assert all(reference.reference != "Genesis 11:1-9" for reference in flood.scripture_references)
     assert thessalonica.scripture_references[0].reference == "Acts 17:1-9"
@@ -366,6 +520,37 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
         "tabernacle-presence-access-and-mobility",
         "ancient-portable-sanctuaries-and-tabernacle-comparisons",
     } <= {relationship.id for relationship in tabernacle.related_objects}
+    assert black_obelisk.scripture_references[0].reference == "2 Kings 9:1-37"
+    assert "Greek, or Roman settings" not in black_obelisk.ancient_near_east_context
+    assert lachish_reliefs.scripture_references[0].reference == "2 Kings 18:13-37"
+    assert "CKL archaeology entry focused on" not in lachish_reliefs.summary
+    assert fall_of_samaria.context_applicability["hebraic_worldview"] is True
+    assert assyrian_exile.scripture_references[0].reference == "2 Kings 17:1-23"
+    assert "Roman administration" not in assyrian_exile.ancient_near_east_context
+    assert assyria.scripture_references[1].reference == "2 Kings 17:1-23"
+    assert {
+        "assyrian-deportation-and-provincial-incorporation",
+        "assyrian-tribute-and-royal-representation",
+    } <= {relationship.id for relationship in assyria.related_objects}
+    assert babylonian_chronicles.scripture_references[0].reference == "2 Kings 24:8-17"
+    assert "587/586" in fall_of_jerusalem.historical_context
+    assert babylonian_exile.context_applicability["hebraic_worldview"] is True
+    assert return_from_exile.scripture_references[0].reference == "2 Chronicles 36:22-23"
+    assert rebuilding_the_temple.scripture_references[1].reference == "Ezra 3:1-13"
+    assert cyrus_cylinder.context_applicability["second_temple"] is True
+    assert "neither names Judah or Jerusalem" in cyrus_cylinder.historical_context
+    assert {
+        "babylonian-conquest-deportation-and-judean-diaspora",
+        "persian-restoration-and-yehud-administration",
+    } <= {relationship.id for relationship in babylon.related_objects}
+    assert persia.scripture_references[0].reference == "2 Chronicles 36:22-23"
+    assert all(
+        not reference.reference.startswith(("Genesis", "Exodus", "Acts"))
+        for reference in persia.scripture_references
+    )
+    assert "persian-restoration-and-yehud-administration" in {
+        relationship.id for relationship in persia.related_objects
+    }
 
     context_fields = {
         "historical": "historical_context",
@@ -384,14 +569,14 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
 def test_corpus_evidence_quality_metrics_have_no_structural_failures() -> None:
     library = CanonicalLibrary.load_default()
     report = audit_evidence(library.objects_by_id.values())
-    assert report["evidence_count"] == 40
-    assert report["evidence_with_primary_sources_count"] == 39
-    assert report["evidence_with_academic_secondary_sources_count"] == 35
-    assert report["evidence_with_chronology_count"] == 40
-    assert report["evidence_with_passage_relevance_count"] == 40
-    assert report["disputed_evidence_count"] == 30
+    assert report["evidence_count"] == 56
+    assert report["evidence_with_primary_sources_count"] == 55
+    assert report["evidence_with_academic_secondary_sources_count"] == 51
+    assert report["evidence_with_chronology_count"] == 56
+    assert report["evidence_with_passage_relevance_count"] == 56
+    assert report["disputed_evidence_count"] == 45
     assert report["worldview_evidence_count"] == 7
-    assert report["archaeology_linked_evidence_count"] == 6
+    assert report["archaeology_linked_evidence_count"] == 11
     assert report["internal_source_only_evidence_count"] == 0
     assert report["missing_source_locator_count"] == 0
     assert report["missing_confidence_rationale_count"] == 0

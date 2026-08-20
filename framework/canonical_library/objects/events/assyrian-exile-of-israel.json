@@ -7,28 +7,28 @@
     "tell me about assyrian exile of israel",
     "why is assyrian exile of israel important"
   ],
-  "summary": "Assyrian Exile of Israel is a prophetic or exile-and-restoration event that interprets covenant failure and hope.",
-  "historical_context": "Historically, Assyrian Exile of Israel is located by its canonical setting; this entry connects that setting with elijah, jeremiah-the-prophet, exile-theme and related CKL objects for contextual retrieval.",
-  "ancient_near_east_context": "Assyrian Exile of Israel unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage.",
-  "hebraic_worldview": "",
+  "summary": "The forced removal and imperial resettlement of populations from the northern kingdom during Assyrian expansion, especially the annexations of the 730s BCE and Samaria's fall around 722-720 BCE.",
+  "historical_context": "Tiglath-pileser III deported populations from annexed northern territories before Samaria fell. Second Kings and Sargon II's inscriptions then describe further removal, while surviving populations, incoming settlers, and provincial communities complicate any single-wave or total-disappearance model.",
+  "ancient_near_east_context": "Neo-Assyrian officials used forced resettlement to punish resistance, redistribute labor and expertise, recruit specialists, repopulate strategic places, and incorporate provinces. The policy was organized and coercive, even where deportees received assigned work or settlement.",
+  "hebraic_worldview": "Kings interprets exile as removal from YHWH's land and presence after covenant breach, but also preserves named destinations, imperial agents, and a differentiated aftermath.",
   "second_temple_context": "",
-  "canonical_context": "",
+  "canonical_context": "The Assyrian exile is distinct from Judah's Babylonian exile. Chronicles, prophetic books, and later Israel language preserve northern survivors and ongoing identities rather than treating every tribe as biologically lost.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
-    "hebraic_worldview": false,
+    "hebraic_worldview": true,
     "second_temple": false,
-    "canonical": false,
+    "canonical": true,
     "later_christian_reception": false
   },
-  "literary_context": "The historical and prophetic books use Assyrian Exile of Israel to explain judgment and restoration.",
-  "covenantal_significance": "Assyrian Exile of Israel shows that covenant judgment is real, but restoration remains possible.",
+  "literary_context": "Second Kings 15:29 and 17:1-41 narrate staged deportation and resettlement; 18:9-12 recapitulates Samaria's fall. Prophetic texts anticipate or remember displacement without serving as administrative chronicles.",
+  "covenantal_significance": "The narrator interprets removal as covenant judgment, while remnant and restoration texts prevent exile from becoming a claim that divine purposes or Israelite identity simply ended.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
-  "historical_setting": "",
-  "canonical_role": "Assyrian Exile of Israel serves as a canonical event anchor, connecting its key passages, people, places, and theological themes within the biblical storyline.",
+  "historical_setting": "Northern Israel and Assyrian resettlement destinations during the later eighth and seventh centuries BCE.",
+  "canonical_role": "This event is the historically specific Assyrian layer of the exile theme and a necessary comparison point for, but not synonym of, the Babylonian exile.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -51,41 +51,41 @@
   "related_events": [],
   "related_objects": [
     {
-      "id": "elijah",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "fall-of-samaria",
+      "relationship": "central-conquest-event",
+      "weight": 10,
+      "notes": "Samaria's fall produced a major deportation and provincial reorganization."
     },
     {
-      "id": "jeremiah-the-prophet",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "2-kings",
+      "relationship": "primary-narrative-source",
+      "weight": 10,
+      "notes": "Second Kings narrates deportation, destinations, resettlement, and theological interpretation."
+    },
+    {
+      "id": "assyria",
+      "relationship": "deporting-empire",
+      "weight": 10,
+      "notes": "Assyrian institutions organized conquest and forced transfer."
     },
     {
       "id": "exile-theme",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "relationship": "historical-layer",
+      "weight": 9,
+      "notes": "The event supplies a northern Assyrian layer of canonical exile."
     },
     {
-      "id": "return-from-exile",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
-    },
-    {
-      "id": "restoration-theme",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "assyrian-deportation-and-provincial-incorporation",
+      "relationship": "source-critical-context",
+      "weight": 10,
+      "notes": "Deep evidence for the staged deportations, policy, and provincial aftermath."
     }
   ],
   "scripture_references": [
     {
       "reference": "2 Kings 17:1-23",
-      "relationship": "supporting",
-      "notes": "prophetic conflict and judgment"
+      "relationship": "primary",
+      "notes": "Samaria's fall, removal, destinations, and covenant interpretation."
     },
     {
       "reference": "2 Chronicles 30:6-12",
@@ -93,14 +93,14 @@
       "notes": "reform, decline, and exile"
     },
     {
-      "reference": "Jeremiah 25:8-14",
+      "reference": "2 Kings 15:29",
       "relationship": "supporting",
-      "notes": "judgment and hope in exile"
+      "notes": "Earlier deportation from annexed northern territories."
     },
     {
-      "reference": "Haggai 2:6-9",
+      "reference": "2 Kings 18:9-12",
       "relationship": "supporting",
-      "notes": "return and temple renewal"
+      "notes": "Recapitulation of Samaria's siege and exile."
     }
   ],
   "cross_references": [],
@@ -122,9 +122,10 @@
     }
   ],
   "common_questions": [
-    "Why does this event matter in the prophetic or exile story?",
-    "How does this event explain judgment and hope?",
-    "What covenant warning or restoration does this event carry?"
+    "How many Assyrian deportation waves affected Israel?",
+    "Where does Kings say the deportees were settled?",
+    "Did every northern Israelite disappear?",
+    "How does the Assyrian exile differ from the Babylonian exile?"
   ],
   "sources": [
     {
@@ -238,7 +239,7 @@
   ],
   "edited_by": [],
   "reviewed_by": [],
-  "last_reviewed": "2026-07-16",
+  "last_reviewed": "2026-08-20",
   "confidence": "medium",
   "human_review_required": true
 }

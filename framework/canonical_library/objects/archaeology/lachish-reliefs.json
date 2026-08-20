@@ -8,9 +8,9 @@
     "lachish reliefs excavation",
     "lachish reliefs find"
   ],
-  "summary": "Lachish Reliefs is a CKL archaeology entry focused on lachish-city-gate, isaiah, jeremiah, with links to the passages and related objects that orient interpretation.",
-  "historical_context": "Lachish Reliefs helps anchor the biblical world in physical evidence and archaeological context.",
-  "ancient_near_east_context": "Ancient background for Lachish Reliefs includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to 2 Kings 18:13-37, 2 Kings 19:1-37, lachish-city-gate, and isaiah without letting comparison replace the biblical witness.",
+  "summary": "A Neo-Assyrian palace relief cycle depicting and labeling Sennacherib's capture of Lachish, including assault, captives, booty, executions, and the enthroned king reviewing the victory.",
+  "historical_context": "Sennacherib captured Lachish during his 701 BCE campaign in Judah. The reliefs were installed afterward in Room XXXVI of his Southwest Palace at Nineveh, probably between about 700 and 692 BCE.",
+  "ancient_near_east_context": "Assyrian palace reliefs were curated royal media. The Lachish cycle combines recognizable campaign data with conventional victory imagery to center the king, conquered space, captives, violence, and booty before a court audience.",
   "hebraic_worldview": "",
   "second_temple_context": "",
   "canonical_context": "",
@@ -23,13 +23,13 @@
     "canonical": false,
     "later_christian_reception": false
   },
-  "literary_context": "Literarily, Lachish Reliefs is traced through historical notices, geographic references, royal claims, and material evidence, with 2 Kings 18:13-37, 2 Kings 19:1-37, lachish-city-gate, and isaiah showing how the surrounding passages shape interpretation.",
-  "covenantal_significance": "Lachish Reliefs helps anchor biblical claims in historical reality while reminding readers that archaeology supports rather than replaces interpretation.",
+  "literary_context": "Second Kings 18:13-17 and Isaiah 36:1-2 locate the Assyrian field commander at Lachish during the Judah campaign. The reliefs independently commemorate Lachish's capture but do not depict Jerusalem or reproduce the biblical speeches.",
+  "covenantal_significance": "The artifact anchors the campaign setting while leaving the biblical texts' evaluations of trust, judgment, and deliverance to their own literary and theological arguments.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
   "historical_setting": "",
-  "canonical_role": "Lachish Reliefs serves as a material-culture anchor, connecting archaeological evidence with the biblical places, periods, and passages it helps contextualize.",
+  "canonical_role": "The relief cycle supplies an Assyrian visual perspective on the 701 BCE campaign that can be compared with Kings and Isaiah without treating either as a caption for the other.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -71,9 +71,21 @@
     },
     {
       "id": "2-kings",
-      "relationship": "historical-background",
-      "weight": 7,
-      "notes": ""
+      "relationship": "campaign-narrative-context",
+      "weight": 10,
+      "notes": "Second Kings names Lachish in Sennacherib's campaign."
+    },
+    {
+      "id": "sennacherib-prism",
+      "relationship": "same-campaign-inscription",
+      "weight": 10,
+      "notes": "The annals provide a different royal medium for the same campaign horizon."
+    },
+    {
+      "id": "assyrian-tribute-and-royal-representation",
+      "relationship": "integrated-context-cluster",
+      "weight": 10,
+      "notes": "The cluster distinguishes direct biblical notices, annals, and palace art."
     }
   ],
   "scripture_references": [
@@ -102,55 +114,42 @@
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "The site evidence is strong, but interpretive questions remain about the details of each destruction phase.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "lachish",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "Use the item as context for the biblical text, not as a shortcut around it.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The city label, palace context, and capture scene are secure; scene sequence, topographic reconstruction, and correlation with every excavated feature remain interpretive.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": ["bm-lachish-relief-124911", "ussishkin-lachish-reliefs"]
     }
   ],
   "common_questions": [
-    "What does Lachish Reliefs teach?",
-    "How does Lachish Reliefs fit the biblical storyline?",
-    "What should readers avoid when interpreting Lachish Reliefs?"
+    "What event do the Lachish reliefs depict?",
+    "How do the reliefs relate to 2 Kings 18 and Isaiah 36?",
+    "Do the reliefs depict Jerusalem?",
+    "How does Assyrian royal ideology shape the scenes?"
   ],
   "sources": [
     {
-      "title": "Lachish siege and destruction horizon",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "lachish-siege-and-destruction-horizon"
+      "title": "Sennacherib Watches the Capture of Lachish",
+      "author": "British Museum",
+      "publisher": "British Museum",
+      "year": -696,
+      "locator": "Museum number 124911; Room XXXVI panel 12; catalog date 700-692 BCE",
+      "url": "https://www.britishmuseum.org/collection/object/W_1856-0909-14_7",
+      "source_type": "museum-collection",
+      "supports": ["historical_context", "ancient_near_east_context"],
+      "notes": "Official object record for the labeled throne panel.",
+      "id": "bm-lachish-relief-124911"
     },
     {
       "title": "2 Kings 18:13-37",
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "2 Kings 18:13-37",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
+      "supports": ["literary_context"],
+      "notes": "Primary biblical campaign narrative.",
       "id": "2-kings-18-13-37"
     },
     {
@@ -158,24 +157,24 @@
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "2 Kings 19:1-37",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
+      "supports": ["literary_context"],
+      "notes": "Primary biblical account of Jerusalem's response and survival.",
       "id": "2-kings-19-1-37"
     },
     {
-      "title": "Archaeological survey and historical background",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "archaeological-survey-and-historical-background"
+      "title": "The Conquest of Lachish by Sennacherib",
+      "author": "David Ussishkin",
+      "publisher": "Tel Aviv University Institute of Archaeology",
+      "year": 1982,
+      "locator": "Relief reconstruction and comparison with the excavated siege and Level III destruction",
+      "url": "https://www.britishmuseum.org/collection/term/BIB6499",
+      "source_type": "academic-book",
+      "supports": ["historical_context", "ancient_near_east_context"],
+      "notes": "Specialist archaeological and iconographic study.",
+      "id": "ussishkin-lachish-reliefs"
     }
   ],
   "canonical_story": {
@@ -228,7 +227,7 @@
   ],
   "edited_by": [],
   "reviewed_by": [],
-  "last_reviewed": "2026-07-16",
+  "last_reviewed": "2026-08-20",
   "confidence": "medium",
   "human_review_required": true
 }
