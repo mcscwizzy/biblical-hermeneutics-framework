@@ -27,13 +27,18 @@ def _recipe_roles(context_type: str) -> tuple[tuple[str, ...], tuple[str, ...]]:
 
     if context_type == "historical_context":
         return (
-            (NarrativeRole.SETTING, NarrativeRole.BACKGROUND, NarrativeRole.OBSERVATION, NarrativeRole.COVENANT_CONTEXT),
+            (NarrativeRole.SETTING, NarrativeRole.OBSERVATION),
             (NarrativeRole.INTERPRETIVE_CAUTION, NarrativeRole.DISPUTED_VIEW),
         )
     if context_type == "cultural_context":
         return (
-            (NarrativeRole.CULTURAL_PRACTICE, NarrativeRole.OBSERVATION, NarrativeRole.BACKGROUND, NarrativeRole.COVENANT_CONTEXT),
-            (NarrativeRole.INTERPRETIVE_CAUTION, NarrativeRole.DISPUTED_VIEW),
+            (NarrativeRole.CULTURAL_PRACTICE,),
+            (),
+        )
+    if context_type == "original_audience":
+        return (
+            (NarrativeRole.AUDIENCE,),
+            (),
         )
     if context_type == "literary_context":
         return (

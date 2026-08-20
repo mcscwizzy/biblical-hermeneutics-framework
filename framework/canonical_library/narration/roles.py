@@ -10,6 +10,7 @@ class NarrativeRole:
     OBSERVATION = "OBSERVATION"
     BACKGROUND = "BACKGROUND"
     CULTURAL_PRACTICE = "CULTURAL_PRACTICE"
+    AUDIENCE = "AUDIENCE"
     LITERARY_FUNCTION = "LITERARY_FUNCTION"
     CANONICAL_CONNECTION = "CANONICAL_CONNECTION"
     COVENANT_CONTEXT = "COVENANT_CONTEXT"
@@ -63,13 +64,17 @@ def role_for(
         return NarrativeRole.OBSERVATION
     if note in {"canonical_connection", "later_reception"}:
         return NarrativeRole.CANONICAL_CONNECTION
-    if note in {"historical_context", "ancient_near_east_context", "hebraic_worldview", "second_temple_context"}:
-        return NarrativeRole.BACKGROUND
-
-    if field in {"historical_setting"}:
+    if note == "historical_context":
         return NarrativeRole.SETTING
-    if field in {"historical_context", "date_ranges", "original_audience", "ancient_near_east_context", "hebraic_worldview", "second_temple_context"}:
-        return NarrativeRole.BACKGROUND
+    if note in {"ancient_near_east_context", "hebraic_worldview", "second_temple_context"}:
+        return NarrativeRole.CULTURAL_PRACTICE
+
+    if field in {"historical_setting", "historical_context", "date_ranges"}:
+        return NarrativeRole.SETTING
+    if field == "original_audience":
+        return NarrativeRole.AUDIENCE
+    if field in {"ancient_near_east_context", "hebraic_worldview", "second_temple_context"}:
+        return NarrativeRole.CULTURAL_PRACTICE
     if field in {"cultural_context", "cultural_practice", "custom", "institution"}:
         return NarrativeRole.CULTURAL_PRACTICE
     if field in {"literary_context", "genre", "structure"} or claim in {"literary", "literary_observation"}:
@@ -85,11 +90,20 @@ def role_for(
     if field in {"sources", "primary_sources"}:
         return NarrativeRole.SOURCE_NOTE
 
-    if claim in {"historical_setting", "historical", "historical_cultural", "historical_cultural_context", "ancient_near_eastern", "ancient_near_east"}:
-        return NarrativeRole.BACKGROUND
+    if claim in {"historical_setting", "historical", "historical_cultural_context", "ancient_near_eastern", "ancient_near_east"}:
+        return NarrativeRole.SETTING
+    if claim == "historical_cultural":
+        # The legacy combined type covers both social-history records and
+        # book-level historical claims. Keep a claim in one context lane so
+        # the companion does not repeat it under multiple headings.
+        if object_kind in {"cultural_background", "institution"}:
+            return NarrativeRole.CULTURAL_PRACTICE
+        return NarrativeRole.SETTING
     if claim in {"cultural_practice", "cultural", "custom", "institution"}:
         return NarrativeRole.CULTURAL_PRACTICE
     if claim in {"biblical_text", "textual", "textual_observation", "manuscript", "lexical"}:
+        if object_kind in {"cultural_background", "institution"}:
+            return NarrativeRole.CULTURAL_PRACTICE
         return NarrativeRole.OBSERVATION
     if claim in {"canonical", "biblical_theology", "canonical_connection"}:
         return NarrativeRole.CANONICAL_CONNECTION
@@ -118,6 +132,8 @@ def section_heading(context_type: str, role: str) -> tuple[str, str]:
         if role == NarrativeRole.SIGNIFICANCE:
             return "significance", "Why it matters"
         return "cultural_background", "Cultural Background"
+    if context_type == "original_audience":
+        return "original_audience", "Original Audience"
     if context_type == "literary_context":
         if role == NarrativeRole.SIGNIFICANCE:
             return "significance", "Why it matters"
@@ -131,6 +147,7 @@ def section_heading(context_type: str, role: str) -> tuple[str, str]:
     return {
         NarrativeRole.SETTING: ("setting", "Setting"),
         NarrativeRole.CULTURAL_PRACTICE: ("cultural_background", "Cultural Background"),
+        NarrativeRole.AUDIENCE: ("original_audience", "Original Audience"),
         NarrativeRole.LITERARY_FUNCTION: ("literary_context", "Literary Context"),
         NarrativeRole.ARCHAEOLOGICAL_SUPPORT: ("archaeological_context", "Archaeological Context"),
         NarrativeRole.COVENANT_CONTEXT: ("covenant_context", "Covenant Context"),

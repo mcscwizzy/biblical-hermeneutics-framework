@@ -104,8 +104,9 @@ def lead_score(candidate: EvidenceCandidate, *, context_type: str = "") -> tuple
 
     normalized_type = context_type_alias(context_type)
     preferred_roles = {
-        "historical_context": {NarrativeRole.SETTING, NarrativeRole.OBSERVATION, NarrativeRole.BACKGROUND},
-        "cultural_context": {NarrativeRole.CULTURAL_PRACTICE, NarrativeRole.OBSERVATION},
+        "historical_context": {NarrativeRole.SETTING, NarrativeRole.OBSERVATION},
+        "cultural_context": {NarrativeRole.CULTURAL_PRACTICE},
+        "original_audience": {NarrativeRole.AUDIENCE},
         "literary_context": {NarrativeRole.LITERARY_FUNCTION, NarrativeRole.OBSERVATION},
         "archaeology": {NarrativeRole.ARCHAEOLOGICAL_SUPPORT, NarrativeRole.OBSERVATION},
         "canonical_context": {NarrativeRole.CANONICAL_CONNECTION, NarrativeRole.COVENANT_CONTEXT},

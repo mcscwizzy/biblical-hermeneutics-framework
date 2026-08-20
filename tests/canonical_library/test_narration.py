@@ -51,7 +51,7 @@ class NarrationTests(unittest.TestCase):
         result = CanonicalNarrator().narrate(
             record,
             reference="Ruth 4:1-12",
-            context_type="cultural_context",
+            context_type="historical_context",
         )
 
         self.assertIn("legal reconstruction", result.lead.text)
@@ -75,6 +75,34 @@ class NarrationTests(unittest.TestCase):
         self.assertTrue(result.has_content)
         self.assertIn("imperial administration", result.lead.text)
         self.assertFalse(any("No historical context" in sentence.text for section in result.sections for sentence in section.sentences))
+
+    def test_context_recipes_keep_history_culture_and_audience_distinct(self) -> None:
+        record = {
+            "id": "distinct-contexts",
+            "type": "book",
+            "title": "Distinct Contexts",
+            "historical_context": "The letter was composed during a period of imperial rule.",
+            "ancient_near_east_context": "Public meals expressed household status and hospitality.",
+            "original_audience": "Small assemblies of mixed-status believers received the letter.",
+            "scripture_references": ["Romans 1:1-7"],
+        }
+
+        historical = CanonicalNarrator().narrate(
+            record, reference="Romans 1:1-7", context_type="historical_context"
+        )
+        cultural = CanonicalNarrator().narrate(
+            record, reference="Romans 1:1-7", context_type="cultural_context"
+        )
+        audience = CanonicalNarrator().narrate(
+            record, reference="Romans 1:1-7", context_type="original_audience"
+        )
+
+        self.assertIn("imperial rule", narration_text(historical))
+        self.assertNotIn("household status", narration_text(historical))
+        self.assertIn("household status", narration_text(cultural))
+        self.assertNotIn("mixed-status", narration_text(cultural))
+        self.assertIn("mixed-status believers", narration_text(audience))
+        self.assertNotIn("imperial rule", narration_text(audience))
 
     def test_certainty_and_dispute_language_is_deterministic(self) -> None:
         self.assertEqual(certainty_phrase("probable"), "Likely")

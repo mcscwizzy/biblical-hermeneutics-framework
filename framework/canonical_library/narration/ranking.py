@@ -14,6 +14,8 @@ from .scripture import PassageScope, parse_scripture_span, passage_scope, refere
 _FIELD_ORDER = (
     "historical_setting",
     "historical_context",
+    "date_ranges",
+    "original_audience",
     "cultural_context",
     "ancient_near_east_context",
     "hebraic_worldview",

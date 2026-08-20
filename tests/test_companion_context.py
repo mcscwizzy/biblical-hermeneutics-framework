@@ -170,6 +170,7 @@ class CompanionContextServiceTests(unittest.TestCase):
         self.assertNotIn("media", result["summaries"]["archaeology"][0])
         self.assertIn("narration", result["summaries"])
         self.assertIn("historical_context", result["summaries"]["narration"]["by_context"])
+        self.assertIn("original_audience", result["summaries"]["narration"]["by_context"])
         self.assertEqual(result["narration"], result["summaries"]["narration"])
         self.assertEqual(commentary.calls, [("count_passage", "John", 4, 23, 23)])
         self.assertEqual(library.calls[0][0], "John 4:23")

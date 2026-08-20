@@ -5,7 +5,7 @@
   const NATIVE_RESOURCES = new Set([
     "commentary", "canonical", "archaeology", "people", "places",
     "themes", "timeline", "cross_references", "historical_context",
-    "cultural_context", "literary_context", "covenant_context",
+    "cultural_context", "original_audience", "literary_context", "covenant_context",
   ]);
   const CANONICAL_TYPES = {
     people: "person",
@@ -97,7 +97,7 @@
         return;
       }
       const context = contextRecord.context;
-      if (["historical_context", "cultural_context", "literary_context", "covenant_context", "archaeology"].includes(resourceId)) {
+      if (["historical_context", "cultural_context", "original_audience", "literary_context", "covenant_context", "archaeology"].includes(resourceId)) {
         const narration = context.summaries?.narration?.by_context?.[resourceId];
         if (resourceId === "archaeology" && !narration) {
           renderArchaeology(context.summaries?.archaeology || [], true);
@@ -183,6 +183,7 @@
       const labels = {
         historical_context: "Historical Context",
         cultural_context: "Cultural Context",
+        original_audience: "Original Audience",
         literary_context: "Literary Context",
         covenant_context: "Covenant Context",
         archaeology: "Archaeological Context",

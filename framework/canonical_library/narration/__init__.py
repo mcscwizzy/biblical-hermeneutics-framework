@@ -18,6 +18,7 @@ from .selection import lead_score, select_lead
 _RECIPE_TITLES = {
     "historical_context": "Historical Context",
     "cultural_context": "Cultural Context",
+    "original_audience": "Original Audience",
     "literary_context": "Literary Context",
     "archaeology": "Archaeological Context",
     "canonical_context": "Canonical Context",

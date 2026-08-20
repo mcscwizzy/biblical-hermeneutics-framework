@@ -347,6 +347,7 @@ class CompanionContextService:
         for narration_type in (
             "historical_context",
             "cultural_context",
+            "original_audience",
             "literary_context",
             "archaeology",
             "canonical_context",
