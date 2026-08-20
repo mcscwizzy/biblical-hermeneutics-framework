@@ -450,6 +450,16 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn('currentMode === "explore"', companion_script)
         self.assertIn('await actions?.perform?.("open_map_panel", mapContext);', companion_script)
 
+    def test_explore_questions_use_the_general_question_scope(self):
+        reader_script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
+        companion_script = Path("bhf_web/static/study-companion.js").read_text(encoding="utf-8")
+
+        self.assertIn('return ["maps", "ask"];', reader_script)
+        self.assertIn('function setAskQuestionScope(scope)', reader_script)
+        self.assertIn('questionScope: GENERAL_QUESTION_MODE, appSection: "explore"', reader_script)
+        self.assertIn('questionScope: "general_question", appSection: "explore"', companion_script)
+        self.assertIn('Explore questions are not limited to the selected passage.', companion_script)
+
     def test_reader_tabs_render_side_by_side_panes_with_independent_scroll(self):
         script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
@@ -802,7 +812,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("Loading translations...", index_html)
         self.assertIn('name="reader_translation"', index_html)
         self.assertIn("static_asset('/style.css') }}?v=20260724c", index_html)
-        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260729b", index_html)
+        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260820a", index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
@@ -1008,7 +1018,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("data-testid=\"ask-save-study\"", response["body"])
         self.assertNotIn('data-note-save-status role="status" aria-live="polite">Ready</span>', response["body"])
         self.assertNotIn("data-question-scope", response["body"])
-        self.assertNotIn("name=\"question_scope\"", response["body"])
+        self.assertIn("name=\"question_scope\"", response["body"])
         self.assertNotIn("data-testid=\"chapter-prev\"", response["body"])
         self.assertNotIn("data-testid=\"chapter-next\"", response["body"])
         self.assertIn("status-summary", response["body"])
@@ -1030,7 +1040,7 @@ class WebAppTests(unittest.TestCase):
 
         self.assertEqual(response["status"], 200)
         self.assertIn('href="/static/style.css?v=20260724c"', response["body"])
-        self.assertIn('src="/static/htmx-lite.js?v=20260729b"', response["body"])
+        self.assertIn('src="/static/htmx-lite.js?v=20260820a"', response["body"])
         self.assertIn('href="/static/vendor/leaflet/leaflet.css"', response["body"])
         self.assertNotIn("http://bhf.thewalkerclan.synology.me/static/", response["body"])
 

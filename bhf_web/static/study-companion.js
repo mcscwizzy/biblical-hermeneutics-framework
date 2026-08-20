@@ -293,6 +293,26 @@
     setText("[data-companion-recommendation-reason]", "Browse BHF’s local research collections independently of a selected passage.");
     setText("[data-companion-resource-count]", `${resources.length} research collections`);
     panel.querySelector("[data-companion-entities-section]")?.setAttribute("hidden", "");
+    renderExploreAskCard();
+  }
+
+  function renderExploreAskCard() {
+    setText("#companion-ask-title", "Explore BHF");
+    const card = panel.querySelector(".companion-ask-card");
+    const description = card?.querySelector(".companion-section-heading p");
+    if (description) {
+      description.textContent = "Search across Scripture and BHF’s research collections. Explore questions are not limited to the selected passage.";
+    }
+    const input = panel.querySelector("#companion-question");
+    if (input) {
+      input.placeholder = "Search or ask about the Bible…";
+      input.setAttribute("aria-label", "Search or ask about the Bible");
+    }
+    renderSuggestions([
+      "Who was Paul?",
+      "Where was Nineveh?",
+      "What does covenant mean in the Bible?",
+    ]);
   }
 
   function renderEntities(entities) {
@@ -315,11 +335,12 @@
     }));
   }
 
-  function renderSuggestions() {
+  function renderSuggestions(questions = null) {
     const target = panel.querySelector("[data-companion-suggestions]");
     const engine = window.BHFStudyRecommendations;
     if (!target || !engine) return;
-    target.replaceChildren(...engine.suggestedQuestions(selection).map((question) => {
+    const suggestedQuestions = questions || engine.suggestedQuestions(selection);
+    target.replaceChildren(...suggestedQuestions.map((question) => {
       const button = document.createElement("button");
       button.type = "button";
       button.className = "companion-suggestion";
@@ -385,6 +406,7 @@
       renderExploreOverview();
     } else {
       renderSelectionContext();
+      renderPassageAskCard();
       if (options.reload !== false || !contextController?.matchesSelection?.()) contextController?.schedule?.();
     }
     setState(options.state || "study", {
@@ -394,6 +416,20 @@
     });
     if (options.focus !== false && previousResourceTrigger?.isConnected) {
       window.requestAnimationFrame(() => previousResourceTrigger.focus({preventScroll: true}));
+    }
+  }
+
+  function renderPassageAskCard() {
+    setText("#companion-ask-title", "Ask BHF");
+    const card = panel.querySelector(".companion-ask-card");
+    const description = card?.querySelector(".companion-section-heading p");
+    if (description) {
+      description.textContent = "AI explains the local research and Scripture context; it does not replace them.";
+    }
+    const input = panel.querySelector("#companion-question");
+    if (input) {
+      input.placeholder = "Ask about this passage…";
+      input.setAttribute("aria-label", "Ask about this passage");
     }
   }
 
@@ -415,10 +451,10 @@
     }
 
     if (await resourceRouter?.open?.(resourceId, {mode: currentMode})) return;
-    openLegacyResource(resourceId);
+    openLegacyResource(resourceId, options);
   }
 
-  async function openLegacyResource(resourceId) {
+  async function openLegacyResource(resourceId, options = {}) {
     const actions = window.BHFStudyActions;
     if (resourceId === "commentary") {
       actions?.openWorkspaceTab?.("commentary");
@@ -448,7 +484,10 @@
       }
     } else if (resourceId === "ask") {
       actions?.openWorkspaceTab?.("ask");
-      window.BHFWorkspace?.focusAskPanel?.();
+      window.BHFWorkspace?.focusAskPanel?.({
+        questionScope: options.questionScope,
+        appSection: options.appSection,
+      });
     } else if (RESOURCE_ACTIONS.has(resourceId)) {
       await actions?.perform?.(resourceId);
     }
@@ -511,13 +550,17 @@
   }
 
   function openAsk(question) {
+    const isExploreQuestion = currentMode === "explore";
     window.BHFStudyActions?.syncAskSelection?.();
     const field = document.querySelector('.ask-form [name="question"]');
     if (field && question) {
       field.value = question;
       field.dispatchEvent(new Event("input", {bubbles: true}));
     }
-    openResource("ask").then(() => field?.focus({preventScroll: true}));
+    openResource("ask", isExploreQuestion
+      ? {questionScope: "general_question", appSection: "explore"}
+      : {questionScope: "", appSection: "bible"},
+    ).then(() => field?.focus({preventScroll: true}));
   }
 
   async function performPersonalAction(action) {

@@ -1114,7 +1114,11 @@ function initializeWorkspaceTabs() {
   for (const tab of tabs) {
     tab.addEventListener("click", () => {
       if (tab.dataset.workspaceTab === "ask") {
-        focusAskPanel();
+        focusAskPanel(
+          appSection === "explore"
+            ? {questionScope: GENERAL_QUESTION_MODE, appSection: "explore"}
+            : {},
+        );
         return;
       }
       activateWorkspaceTab(tab.dataset.workspaceTab);
@@ -1383,7 +1387,7 @@ function appSectionToWorkspaceTab(sectionId) {
   }
   if (normalized === "explore") {
     const currentWorkspaceTab = getCurrentWorkspaceTab();
-    if (currentWorkspaceTab === "maps" || currentWorkspaceTab === "journey") {
+    if (currentWorkspaceTab === "maps" || currentWorkspaceTab === "journey" || currentWorkspaceTab === "ask") {
       return currentWorkspaceTab;
     }
     return lastExploreWorkspaceTab || "maps";
@@ -1392,7 +1396,9 @@ function appSectionToWorkspaceTab(sectionId) {
 }
 
 function rememberWorkspaceSubtab(tabId) {
-  if (tabId === "ask" || tabId === "lexicon" || tabId === "context") {
+  if (tabId === "ask" && appSection === "explore") {
+    lastExploreWorkspaceTab = tabId;
+  } else if (tabId === "ask" || tabId === "lexicon" || tabId === "context") {
     lastAskWorkspaceTab = tabId;
   } else if (tabId === "notes" || tabId === "highlights" || tabId === "saved") {
     lastNotesWorkspaceTab = tabId;
@@ -2393,7 +2399,7 @@ function workspaceTabsForSection(sectionId) {
     return ["saved"];
   }
   if (normalized === "explore") {
-    return ["maps"];
+    return ["maps", "ask"];
   }
   return ["ask"];
 }
@@ -2568,12 +2574,15 @@ function activateWorkspaceTab(tabId) {
   );
 }
 
-function focusAskPanel() {
+function focusAskPanel(options = {}) {
   if (window.BHFMaps && typeof window.BHFMaps.closeMapModal === "function") {
     window.BHFMaps.closeMapModal();
   }
 
-  activateAppSection(window.BHFStudyCompanion ? "bible" : "ask");
+  const isGeneralQuestion = options.questionScope === GENERAL_QUESTION_MODE;
+  setAskQuestionScope(isGeneralQuestion ? GENERAL_QUESTION_MODE : "");
+  const targetSection = options.appSection || (window.BHFStudyCompanion ? "bible" : "ask");
+  activateAppSection(targetSection);
   activateWorkspaceTab("ask");
   window.BHFStudyCompanion?.ensureResourceVisible?.("ask");
 
@@ -4307,7 +4316,7 @@ async function dispatchStudyAction(studyAction) {
     BHF_STUDY_ACTION_ALIASES[studyAction.type] || studyAction.type;
   if (studyAction.type === "ask_bhf") {
     applyStudyActionContext(studyAction);
-    focusAskPanel();
+    focusAskPanel({questionScope: ""});
     setFormValue("ask_mode", "");
     setFormValue("study_action", "");
     setFormValue("deterministic_fact_packet", "");
@@ -4318,7 +4327,7 @@ async function dispatchStudyAction(studyAction) {
     await requestDeterministicStudyAction(studyAction);
   } else if (BHF_STUDY_ACTIONS.has(studyAction.type)) {
     applyStudyActionContext(studyAction);
-    focusAskPanel();
+    focusAskPanel({questionScope: ""});
     setFormValue("ask_mode", studyAction.type);
     setFormValue("study_action", studyAction.type);
     setMapContextValue(buildReaderMapContext(studyAction));
@@ -5157,7 +5166,7 @@ function wireDeterministicStudyControls(answerPanel, result, studyAction) {
     .querySelector("[data-deterministic-ask]")
     ?.addEventListener("click", () => {
       setFormValue("deterministic_fact_packet", "");
-      focusAskPanel();
+      focusAskPanel({questionScope: ""});
       const question = document.querySelector('.ask-form [name="question"]');
       if (question) {
         question.value = "";
@@ -5682,7 +5691,14 @@ function syncAskFields() {
 
   const summary = document.querySelector("#selection-summary");
   const addNoteButton = document.querySelector("[data-add-note]");
-  if (studySelection.hasPassageSelection) {
+  if (isGeneralQuestionScope()) {
+    if (summary) {
+      summary.textContent = "Search across Scripture and BHF’s research collections. Your question is not limited to the selected passage.";
+    }
+    if (addNoteButton) {
+      addNoteButton.disabled = false;
+    }
+  } else if (studySelection.hasPassageSelection) {
     const reference = studySelection.reference || formatReference(
       studySelection.book,
       studySelection.chapter,
@@ -5765,6 +5781,42 @@ function setFormValue(name, value) {
   if (input) {
     input.value = value;
   }
+}
+
+function isGeneralQuestionScope() {
+  const input = document.querySelector('.ask-form [name="question_scope"]');
+  return input?.value === GENERAL_QUESTION_MODE;
+}
+
+function setAskQuestionScope(scope) {
+  const form = document.querySelector(".ask-form");
+  const isGeneralQuestion = scope === GENERAL_QUESTION_MODE;
+  setFormValue("question_scope", isGeneralQuestion ? GENERAL_QUESTION_MODE : "");
+  if (form) {
+    form.dataset.questionScope = isGeneralQuestion ? GENERAL_QUESTION_MODE : "passage";
+  }
+
+  const heading = document.querySelector("[data-ask-heading]");
+  const questionLabel = document.querySelector("[data-ask-question-label]");
+  const question = document.querySelector('.ask-form [name="question"]');
+  const submitButton = document.querySelector('[data-testid="ask-submit"]');
+  const summary = document.querySelector("#selection-summary");
+
+  if (heading) heading.textContent = isGeneralQuestion ? "Explore BHF" : "Ask BHF";
+  if (questionLabel) questionLabel.textContent = isGeneralQuestion ? "Search or ask" : "Question";
+  if (question) {
+    question.placeholder = isGeneralQuestion
+      ? "Ask about a person, place, theme, or passage…"
+      : "Ask me a question!";
+  }
+  if (submitButton) {
+    submitButton.dataset.idleLabel = isGeneralQuestion ? "Search BHF" : "Ask BHF";
+    if (!submitButton.disabled) submitButton.textContent = submitButton.dataset.idleLabel;
+  }
+  if (summary && isGeneralQuestion) {
+    summary.textContent = "Search across Scripture and BHF’s research collections. Your question is not limited to the selected passage.";
+  }
+  updateSaveButtons();
 }
 
 function setMapContextValue(context) {

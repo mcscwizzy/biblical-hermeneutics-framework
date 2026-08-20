@@ -23,4 +23,7 @@ class OpenRouterAdapter(OpenAICompatibleAdapter):
             api_key=api_key,
             timeout_seconds=timeout_seconds,
             provider_name="openrouter",
+            max_rate_limit_retries=2,
+            rate_limit_retry_seconds=1.0,
+            max_rate_limit_retry_seconds=10.0,
         )

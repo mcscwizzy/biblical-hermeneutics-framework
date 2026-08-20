@@ -796,10 +796,11 @@ function updateSaveButtons() {
   document.querySelectorAll("[data-save-study]").forEach((button) => {
     const panel = button.closest(".answer-panel");
     const isAskFormButton = Boolean(button.closest(".ask-form"));
+    const isGeneralQuestion = button.closest(".ask-form")?.dataset.questionScope === "general_question";
     const isActive = isAskFormButton
       ? activeLiveAnswerPanel?.id === "answer-panel"
       : Boolean(activeLiveAnswerPanel) && panel === activeLiveAnswerPanel;
-    button.disabled = !(isActive && (button.dataset.jobId || (latestJobId && latestJobComplete)));
+    button.disabled = isGeneralQuestion || !(isActive && (button.dataset.jobId || (latestJobId && latestJobComplete)));
   });
 }
 

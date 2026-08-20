@@ -123,6 +123,30 @@ def test_mobile_maps_explorer_opens_visible_map_workspace(driver, wait, base_url
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "closed")
 
 
+def test_explore_questions_use_general_scope_instead_of_reader_selection(driver, wait, base_url):
+    driver.set_window_size(390, 844)
+    HomePage(driver, wait, base_url).open().wait_loaded()
+
+    driver.find_element(By.CSS_SELECTOR, '[data-testid="app-dock-explore"]').click()
+    wait.until(lambda _driver: _driver.execute_script(
+        "return window.BHFStudyCompanion.getState().mode === 'explore';"
+    ))
+
+    assert driver.find_element(By.CSS_SELECTOR, "#companion-ask-title").text == "Explore BHF"
+    quick_ask = driver.find_element(By.CSS_SELECTOR, "#companion-question")
+    assert quick_ask.get_attribute("placeholder") == "Search or ask about the Bible…"
+    quick_ask.send_keys("Who was Paul?")
+    driver.find_element(By.CSS_SELECTOR, "[data-companion-quick-ask] button[type='submit']").click()
+
+    wait.until(lambda _driver: _driver.execute_script(
+        "return document.querySelector('.ask-form [name=question_scope]').value === 'general_question';"
+    ))
+    assert driver.execute_script("return document.body.dataset.appSection;") == "explore"
+    assert driver.find_element(By.CSS_SELECTOR, '[data-workspace-tab="ask"]').get_attribute("aria-selected") == "true"
+    assert driver.find_element(By.CSS_SELECTOR, "[data-ask-heading]").text == "Explore BHF"
+    assert driver.find_element(By.CSS_SELECTOR, '[data-testid="ask-submit"]').text == "Search BHF"
+
+
 def test_desktop_companion_is_docked_and_routes_resource_details(driver, wait, base_url):
     driver.set_window_size(1440, 1000)
     HomePage(driver, wait, base_url).open().wait_loaded()

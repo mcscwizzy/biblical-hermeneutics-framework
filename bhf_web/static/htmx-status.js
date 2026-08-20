@@ -143,7 +143,10 @@ function setRunning(form, submitButton, running) {
   form.setAttribute("aria-busy", running ? "true" : "false");
   if (submitButton) {
     submitButton.disabled = running;
-    submitButton.textContent = running ? "Asking BHF..." : "Ask BHF";
+    const idleLabel = submitButton.dataset.idleLabel || "Ask BHF";
+    submitButton.textContent = running
+      ? idleLabel === "Search BHF" ? "Searching BHF..." : "Asking BHF..."
+      : idleLabel;
   }
 }
 
