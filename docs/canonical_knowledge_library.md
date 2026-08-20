@@ -161,7 +161,7 @@ CKL stores canonical facts, retrieval metadata, and future scholarship in a dete
 
 The evidence expansion began with a read-only inventory and contract audit:
 
-- The authoritative inventory contains 639 validated objects across 18 object
+- The authoritative inventory contains 641 validated objects across 18 object
   categories. JSON remains the reviewable source of truth; the manifest carries
   counts and framework/schema versions.
 - `schema.py` already provided a typed canonical object, claims, structured
@@ -963,10 +963,19 @@ administration, and the later-comparative Elephantine petition. These 56 items
 are chronology-controlled, passage-linked, and source-resolvable, but
 AI-authored additions remain drafts until human review.
 
-The next focused expansion should prioritize Second Temple institutions;
-first-century Judean and
-Galilean village life; and one additional Pauline city such as Corinth or
-Ephesus. Cultural practices, historical institutions, literary conventions,
+The Second Temple institutions pass adds passage-bounded evidence for temple
+leadership under Herodian and Roman power, Josephus's later account of
+high-priestly appointments, the temple warning inscription, and the cautious
+Caiaphas ossuary identification. A companion cluster adds synagogue reading
+and instruction, the pre-70 Theodotus inscription, Ben Sira's learned-scribe
+ideal, Josephus's selective descriptions of Pharisees, Sadducees, and Essenes,
+and 4QMMT as evidence for legal disagreement without assigning its authors to a
+named group. These 65 items are chronology-controlled, passage-linked, and
+source-resolvable, but AI-authored additions remain drafts until human review.
+
+The next focused expansion should prioritize first-century Judean and Galilean
+village life and one additional Pauline city such as Corinth or Ephesus.
+Cultural practices, historical institutions, literary conventions,
 geography/environment, and worldview concepts already have controlled types;
 they need source-backed, human-reviewed depth rather than generated volume.
 

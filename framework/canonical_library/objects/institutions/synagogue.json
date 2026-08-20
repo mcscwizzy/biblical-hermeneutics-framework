@@ -8,28 +8,28 @@
     "synagogue structure",
     "synagogue role"
   ],
-  "summary": "Synagogue is a community institution that shapes shared life, worship, and instruction among God's people.",
-  "historical_context": "Synagogue belongs to the social fabric of Israel or the early church, where households, assemblies, and shared practices mattered.",
-  "ancient_near_east_context": "Ancient background for Synagogue includes kinship obligations, sanctuary service, village authority, and Greco-Roman civic structures; the entry ties that world to Exodus 19:1-6, Deuteronomy 6:4-9, covenant-assembly, and household without letting comparison replace the biblical witness.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "summary": "A local Jewish assembly and institution used in varied pre-70 settings for Torah reading, instruction, communal affairs, hospitality, prayer, and debate.",
+  "historical_context": "Synagogues are epigraphically, archaeologically, and literarily attested before 70 CE in Judea and the diaspora, but their origin, architecture, leadership, and activities differed by place. An exilic origin is possible but not directly documented.",
+  "ancient_near_east_context": "The relevant evidence belongs to Hellenistic and Roman Jewish communities rather than generic Ancient Near Eastern village or sanctuary institutions.",
+  "hebraic_worldview": "Synagogue gatherings expressed communal identity through Torah, instruction, prayer, hospitality, deliberation, and discipline alongside continued orientation toward Jerusalem's temple.",
+  "second_temple_context": "Theodotus attests a Jerusalem synagogue for Torah reading and teaching before 70 CE; the Gospels and Acts portray diverse local synagogue scenes in Galilee and the diaspora.",
+  "canonical_context": "The Gospels and Acts portray synagogue gatherings as settings for Scripture, teaching, healing, mission, dispute, and discipline. They do not provide one universal liturgical manual.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
-    "ancient_near_east": true,
-    "hebraic_worldview": false,
-    "second_temple": false,
-    "canonical": false,
+    "ancient_near_east": false,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
     "later_christian_reception": false
   },
-  "literary_context": "Scripture uses Synagogue to show how God forms a people, not only isolated individuals.",
-  "covenantal_significance": "Synagogue embodies covenant life in public and communal form.",
+  "literary_context": "Luke-Acts supplies the fullest narrated synagogue scenes; Mark and Matthew add teaching and healing settings; John uses exclusion language whose institutional reconstruction is disputed.",
+  "covenantal_significance": "Synagogues enabled local Torah-centered communal life without simply replacing the Jerusalem temple before 70 CE.",
   "authorship_positions": [],
   "date_ranges": [],
-  "original_audience": "",
-  "historical_setting": "",
-  "canonical_role": "Synagogue serves as an institutional anchor, connecting social practice, worship, leadership, and covenant life across related passages and themes.",
+  "original_audience": "Readers of the Gospels, Acts, and James encountering varied Jewish assembly settings in Judea and the diaspora.",
+  "historical_setting": "Hellenistic and Roman Jewish communities before and after 70 CE, with pre-70 evidence kept distinct from later standardized practice.",
+  "canonical_role": "The record anchors synagogue passages while linked evidence clusters supply Theodotus, chronology, local diversity, and Johannine exclusion cautions.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -74,53 +74,35 @@
       "relationship": "institutional-context",
       "weight": 8,
       "notes": "curated canonical context"
+    },
+    {
+      "id": "synagogue-life-and-exclusion",
+      "relationship": "focused-passage-cluster",
+      "weight": 10,
+      "notes": "Gospel, Acts, and Johannine exclusion contexts."
+    },
+    {
+      "id": "second-temple-synagogues-scribes-and-sectarian-groups",
+      "relationship": "structured-evidence-cluster",
+      "weight": 10,
+      "notes": "Theodotus, Ben Sira, Josephus, and Qumran evidence with chronology safeguards."
     }
   ],
   "scripture_references": [
-    {
-      "reference": "Exodus 19:1-6",
-      "relationship": "supporting",
-      "notes": "assembly at Sinai"
-    },
-    {
-      "reference": "Deuteronomy 6:4-9",
-      "relationship": "supporting",
-      "notes": "communal instruction"
-    },
-    {
-      "reference": "Acts 2:1-47",
-      "relationship": "supporting",
-      "notes": "Spirit-formed community"
-    },
-    {
-      "reference": "1 Corinthians 12:27-31",
-      "relationship": "supporting",
-      "notes": "ordered communal worship"
-    }
+    {"reference": "Mark 1:21-28", "relationship": "primary", "notes": "Teaching and healing in Capernaum's synagogue."},
+    {"reference": "Luke 4:16-30", "relationship": "primary", "notes": "Reading, exposition, and response in Nazareth."},
+    {"reference": "Acts 13:14-43", "relationship": "primary", "notes": "Readings, invitation to speak, address, and response in Pisidian Antioch."},
+    {"reference": "Acts 17:1-12", "relationship": "primary", "notes": "Scriptural reasoning and disputed response in Macedonian synagogues."},
+    {"reference": "John 9:22", "relationship": "supporting", "notes": "Aposynagogos language whose historical reconstruction is disputed."},
+    {"reference": "James 2:1-4", "relationship": "supporting", "notes": "Assembly terminology and status distinctions; precise institutional setting is debated."}
   ],
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
-    {
-      "note": "Community institutions are shaped by both worship and daily life.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "The New Testament often reuses Israel's communal language for the church.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    }
+    {"note": "Pre-70 synagogues varied by place and are not fully described by later rabbinic liturgies.", "note_type": "historical-context", "certainty": "strong_consensus", "dispute_status": "historical_uncertainty", "sources": ["synagogue-historical-orientation"], "rationale": "Literary, epigraphic, and archaeological evidence is local and incomplete."},
+    {"note": "The evidence does not establish a single exilic moment when synagogues began.", "note_type": "interpretive-caution", "certainty": "strong_consensus", "dispute_status": "historical_uncertainty", "sources": ["synagogue-historical-orientation"], "rationale": "The earliest direct evidence is later than the exile."}
   ],
-  "common_questions": [
-    "How does this institution shape shared life?",
-    "Why is this institution important for God's people?",
-    "What communal practice does this institution support?"
-  ],
+  "common_questions": ["What activities are attested in synagogues before 70 CE?", "Does the Theodotus inscription describe every synagogue?", "Did synagogues replace the temple before 70 CE?", "Can synagogue origins be proven in the Babylonian exile?"],
   "sources": [
     {
       "title": "Exodus 19-24",
@@ -171,17 +153,17 @@
       "id": "1-corinthians-11-14"
     },
     {
-      "title": "Canonical historical orientation for Synagogue",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
+      "title": "Invention of the First-Century Synagogue: A Critical Examination of the Archaeological Evidence",
+      "author": "Lidia D. Matassa",
+      "publisher": "Society of Biblical Literature Press",
+      "year": 2018,
+      "locator": "Ancient Near East Monographs 22; literary, epigraphic, and archaeological evidence",
+      "url": "https://www.sbl-site.org/wp-content/uploads/2024/12/9780884143208_OA.pdf",
+      "source_type": "academic-book",
       "supports": [
-        "historical_context"
+        "historical_context", "second_temple_context", "interpretive_notes"
       ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+      "notes": "Open-access critical reassessment of pre-70 synagogue evidence.",
       "id": "synagogue-historical-orientation"
     }
   ],
@@ -235,7 +217,7 @@
   ],
   "edited_by": [],
   "reviewed_by": [],
-  "last_reviewed": "2026-07-16",
+  "last_reviewed": "2026-08-20",
   "confidence": "medium",
   "human_review_required": true
 }

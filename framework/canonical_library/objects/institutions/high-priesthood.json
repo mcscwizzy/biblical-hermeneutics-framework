@@ -9,27 +9,27 @@
     "high priesthood role"
   ],
   "summary": "The supreme priestly office that represents the people before God and oversees the climactic rites of atonement.",
-  "historical_context": "The high priesthood develops from Aaronic leadership in the wilderness and becomes especially important in the second temple period.",
-  "ancient_near_east_context": "High priestly offices were known in the ancient world, but Israel's high priest is defined by covenant holiness and mediation before the LORD.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "historical_context": "The high priesthood develops from Aaronic traditions and the Jerusalem temple. During the Second Temple period it became a central religious and political office whose appointment, tenure, vestments, and jurisdiction were repeatedly affected by Persian, Hellenistic, Hasmonean, Herodian, and Roman power.",
+  "ancient_near_east_context": "Older comparative priestly offices are relevant to the institution's roots, but Herodian high-priestly authority must be reconstructed from Judean and Roman-period sources.",
+  "hebraic_worldview": "The high priest represents priestly holiness, sanctuary access, sacrifice, atonement, and communal leadership, while biblical texts also evaluate officeholders and institutions critically.",
+  "second_temple_context": "Josephus documents changing appointments and external control; the Gospels and Acts portray Caiaphas, Annas, chief priests, and high-priestly families exercising authority under Rome.",
+  "canonical_context": "Exodus and Leviticus define Aaronic service, Zechariah portrays the restored high priest Joshua, the Gospels and Acts depict late Second Temple officeholders, and Hebrews develops a distinct theological comparison with Christ.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
-    "hebraic_worldview": false,
-    "second_temple": false,
-    "canonical": false,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
     "later_christian_reception": false
   },
-  "literary_context": "The high priesthood is central in Exodus, Leviticus, Numbers, Zechariah, and Hebrews.",
+  "literary_context": "Exodus, Leviticus, Numbers, Zechariah, the Gospels, Acts, Josephus, and Hebrews address the office through law, vision, narrative, historiography, and theological argument; their claims should remain genre-specific.",
   "covenantal_significance": "The office shows that covenant life requires representation, holiness, and a means of access for sinful people.",
   "authorship_positions": [],
   "date_ranges": [],
-  "original_audience": "",
-  "historical_setting": "",
-  "canonical_role": "High Priesthood serves as an institutional anchor, connecting social practice, worship, leadership, and covenant life across related passages and themes.",
+  "original_audience": "Readers tracing the office from Torah and restoration texts into the late Second Temple setting and Hebrews.",
+  "historical_setting": "Israelite sanctuary traditions and the Jerusalem temples, with particular development under Second Temple imperial rule.",
+  "canonical_role": "The office links sanctuary access and atonement traditions with restored priesthood, Gospel-Acts leadership conflicts, and Hebrews' christological argument.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -86,6 +86,12 @@
       "relationship": "interpretive-book",
       "weight": 8,
       "notes": "Hebrews develops the theology"
+    },
+    {
+      "id": "second-temple-priesthood-and-temple-authority",
+      "relationship": "structured-evidence-cluster",
+      "weight": 10,
+      "notes": "Josephus, temple-boundary, and Caiaphas evidence with Roman-period chronology."
     }
   ],
   "scripture_references": [
@@ -108,6 +114,16 @@
       "reference": "Zechariah 3:1-10",
       "relationship": "supporting",
       "notes": "priestly cleansing and restoration"
+    },
+    {
+      "reference": "John 11:47-53",
+      "relationship": "primary",
+      "notes": "Caiaphas as high priest in a council deliberation."
+    },
+    {
+      "reference": "Acts 4:1-22",
+      "relationship": "primary",
+      "notes": "High-priestly figures and Jerusalem rulers question Peter and John."
     },
     {
       "reference": "Hebrews 4:14-16",
@@ -215,17 +231,17 @@
       "id": "hebrews-4-10"
     },
     {
-      "title": "Canonical historical orientation for High Priesthood",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
+      "title": "An Introduction to Early Judaism",
+      "author": "James C. VanderKam",
+      "publisher": "Eerdmans",
+      "year": 2022,
+      "locator": "2nd edition, chapters 1 and 4 on period history, leaders, and institutions",
+      "url": "https://www.eerdmans.com/9780802880161/an-introduction-to-early-judaism/",
+      "source_type": "academic-book",
       "supports": [
         "historical_context"
       ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+      "notes": "Scholarly synthesis used to distinguish the changing Second Temple office from its earlier biblical forms.",
       "id": "high-priesthood-historical-orientation"
     }
   ],
@@ -279,7 +295,7 @@
   ],
   "edited_by": [],
   "reviewed_by": [],
-  "last_reviewed": "2026-07-14",
+  "last_reviewed": "2026-08-20",
   "confidence": "medium",
   "human_review_required": true
 }

@@ -18,6 +18,8 @@ EXPANSION_OBJECTS = {
     "assyrian-tribute-and-royal-representation": 4,
     "babylonian-conquest-deportation-and-judean-diaspora": 4,
     "persian-restoration-and-yehud-administration": 4,
+    "second-temple-priesthood-and-temple-authority": 4,
+    "second-temple-synagogues-scribes-and-sectarian-groups": 5,
 }
 
 
@@ -466,6 +468,89 @@ def test_persian_evidence_keeps_cyrus_and_elephantine_comparisons_bounded() -> N
     assert administration[1].chronological_relation == "later-comparative"
 
 
+def test_second_temple_priesthood_keeps_text_artifact_and_later_history_distinct() -> None:
+    library = CanonicalLibrary.load_default()
+    warning = _rank(
+        library,
+        "second-temple-priesthood-and-temple-authority",
+        "What temple boundary explains the accusation against Paul?",
+        "Acts 21:27-36",
+        "archaeology",
+    )
+    assert [item.evidence_id for item in warning] == [
+        "temple-warning-inscription-boundary"
+    ]
+    assert warning[0].passage_relationship == "contextual"
+    assert warning[0].chronological_relation == "contemporary"
+    assert warning[0].external_references[0]["id"] == "temple-warning-inscription"
+
+    caiaphas = _rank(
+        library,
+        "second-temple-priesthood-and-temple-authority",
+        "How did Caiaphas and the high priesthood operate under Rome?",
+        "John 11:47-53",
+        "historical setting",
+        "archaeology",
+    )
+    assert [item.evidence_id for item in caiaphas] == [
+        "caiaphas-ossuary-identification",
+        "gospel-acts-priestly-authority",
+        "josephus-high-priestly-appointments",
+    ]
+    assert caiaphas[0].confidence == "medium"
+    assert caiaphas[1].passage_relationship == "direct"
+    assert caiaphas[2].chronological_relation == "later-comparative"
+
+
+def test_second_temple_synagogue_and_group_evidence_preserves_locality_and_dates() -> None:
+    library = CanonicalLibrary.load_default()
+    synagogue = _rank(
+        library,
+        "second-temple-synagogues-scribes-and-sectarian-groups",
+        "What evidence explains synagogue reading and teaching?",
+        "Luke 4:16-30",
+        "historical setting",
+    )
+    assert [item.evidence_id for item in synagogue] == [
+        "gospel-acts-synagogue-reading",
+        "theodotus-synagogue-inscription",
+    ]
+    assert synagogue[0].passage_relationship == "direct"
+    assert synagogue[1].passage_relationship == "contextual"
+
+    groups = _rank(
+        library,
+        "second-temple-synagogues-scribes-and-sectarian-groups",
+        "What explains the Pharisee Sadducee resurrection dispute?",
+        "Acts 23:1-10",
+        "historical setting",
+    )
+    assert [item.evidence_id for item in groups] == [
+        "josephus-jewish-group-descriptions",
+        "4qmmt-legal-disagreement",
+    ]
+    assert groups[0].chronological_relation == "later-comparative"
+    assert groups[1].chronological_relation == "earlier-comparative"
+    assert groups[1].dispute_status == "major_scholarly_disagreement"
+
+
+def test_second_temple_legal_debate_does_not_identify_4qmmt_with_a_named_group() -> None:
+    library = CanonicalLibrary.load_default()
+    ranked = _rank(
+        library,
+        "second-temple-synagogues-scribes-and-sectarian-groups",
+        "What evidence contextualizes legal and purity disputes?",
+        "Mark 7:1-23",
+        "cultural practice",
+    )
+    assert [item.evidence_id for item in ranked] == [
+        "4qmmt-legal-disagreement",
+        "josephus-jewish-group-descriptions",
+    ]
+    assert all(item.passage_relationship == "comparative" for item in ranked)
+    assert "without making its authors" in ranked[0].passage_relevance
+
+
 def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
     library = CanonicalLibrary.load_default()
     flood = library.objects_by_id["the-flood"]
@@ -494,6 +579,13 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
     rebuilding_the_temple = library.objects_by_id["rebuilding-the-temple"]
     babylon = library.objects_by_id["babylon-1"]
     persia = library.objects_by_id["persia"]
+    temple_warning = library.objects_by_id["temple-warning-inscription"]
+    high_priesthood = library.objects_by_id["high-priesthood"]
+    pharisees = library.objects_by_id["pharisees"]
+    sadducees = library.objects_by_id["sadducees"]
+    scribes = library.objects_by_id["scribes"]
+    synagogue = library.objects_by_id["synagogue"]
+    sanhedrin = library.objects_by_id["sanhedrin"]
     assert flood.scripture_references[0].reference == "Genesis 6:1-22"
     assert all(reference.reference != "Genesis 11:1-9" for reference in flood.scripture_references)
     assert thessalonica.scripture_references[0].reference == "Acts 17:1-9"
@@ -551,6 +643,25 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
     assert "persian-restoration-and-yehud-administration" in {
         relationship.id for relationship in persia.related_objects
     }
+    assert temple_warning.scripture_references[0].reference == "Acts 21:27-36"
+    assert "House of David" not in temple_warning.summary
+    assert "second-temple-priesthood-and-temple-authority" in {
+        relationship.id for relationship in temple_warning.related_objects
+    }
+    assert high_priesthood.context_applicability["second_temple"] is True
+    assert pharisees.scripture_references[0].reference == "Mark 7:1-23"
+    assert sadducees.scripture_references[0].reference == "Matthew 22:23-33"
+    assert scribes.scripture_references[1].reference == "Ezra 7:1-10"
+    assert synagogue.scripture_references[0].reference == "Mark 1:21-28"
+    assert sanhedrin.scripture_references[0].reference == "Mark 14:53-65"
+    assert all(
+        obj.context_applicability["second_temple"] is True
+        for obj in (high_priesthood, pharisees, sadducees, scribes, synagogue, sanhedrin)
+    )
+    assert all(
+        "Canonical Knowledge Library" not in {source.publisher for source in obj.sources}
+        for obj in (pharisees, sadducees, scribes, synagogue, sanhedrin)
+    )
 
     context_fields = {
         "historical": "historical_context",
@@ -569,14 +680,14 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
 def test_corpus_evidence_quality_metrics_have_no_structural_failures() -> None:
     library = CanonicalLibrary.load_default()
     report = audit_evidence(library.objects_by_id.values())
-    assert report["evidence_count"] == 56
-    assert report["evidence_with_primary_sources_count"] == 55
-    assert report["evidence_with_academic_secondary_sources_count"] == 51
-    assert report["evidence_with_chronology_count"] == 56
-    assert report["evidence_with_passage_relevance_count"] == 56
-    assert report["disputed_evidence_count"] == 45
+    assert report["evidence_count"] == 65
+    assert report["evidence_with_primary_sources_count"] == 64
+    assert report["evidence_with_academic_secondary_sources_count"] == 60
+    assert report["evidence_with_chronology_count"] == 65
+    assert report["evidence_with_passage_relevance_count"] == 65
+    assert report["disputed_evidence_count"] == 54
     assert report["worldview_evidence_count"] == 7
-    assert report["archaeology_linked_evidence_count"] == 11
+    assert report["archaeology_linked_evidence_count"] == 13
     assert report["internal_source_only_evidence_count"] == 0
     assert report["missing_source_locator_count"] == 0
     assert report["missing_confidence_rationale_count"] == 0

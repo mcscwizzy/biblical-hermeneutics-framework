@@ -8,28 +8,28 @@
     "pharisees structure",
     "pharisees role"
   ],
-  "summary": "Pharisees is a leadership institution that structures authority, judgment, or communal oversight in Israel or the empire.",
-  "historical_context": "Pharisees belongs to the social and political systems that governed public life in Israel and its neighbors.",
-  "ancient_near_east_context": "Pharisees is framed by specific social practices such as household authority, patronage, public reading, priestly service, temple worship, synagogue order, or Roman civic administration.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "summary": "A diverse late Second Temple Jewish association known especially through Josephus, the New Testament, and later rabbinic memory, with influence in Torah interpretation and public life but no surviving Pharisaic archive.",
+  "historical_context": "Pharisees are securely attested in Hasmonean and Roman-period sources. Their membership, organization, social reach, and relationship to later rabbis remain debated, and Gospel polemic cannot serve as a neutral institutional census.",
+  "ancient_near_east_context": "The operative setting is Hellenistic and Roman Judaism, not generic Ancient Near Eastern leadership.",
+  "hebraic_worldview": "Pharisaic positions in ancient sources concern Torah, ancestral tradition, providence, purity, resurrection, and communal practice within Jewish covenant life.",
+  "second_temple_context": "Josephus distinguishes Pharisees from Sadducees and Essenes; the Gospels narrate both disputes and shared assumptions; Acts identifies Paul with Pharisaic training and resurrection hope.",
+  "canonical_context": "Pharisees appear in the Gospels and Acts as varied interlocutors and opponents. Group labels must not be generalized to all Jews or treated as synonyms for scribes or councils.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
-    "ancient_near_east": true,
-    "hebraic_worldview": false,
-    "second_temple": false,
-    "canonical": false,
+    "ancient_near_east": false,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
     "later_christian_reception": false
   },
-  "literary_context": "Scripture uses Pharisees to describe order, authority, and accountability.",
-  "covenantal_significance": "Pharisees reminds readers that authority is accountable to God's purposes.",
+  "literary_context": "Mark and Matthew emphasize legal disputes, Luke includes hostile and hospitable encounters, John uses the label in Jerusalem controversies, and Acts places Pharisees within council and movement settings.",
+  "covenantal_significance": "Disputes involving Pharisees are internal Jewish arguments about faithful Torah practice, authority, purity, and hope; they should not be recast as Judaism versus grace.",
   "authorship_positions": [],
   "date_ranges": [],
-  "original_audience": "",
-  "historical_setting": "",
-  "canonical_role": "Pharisees serves as an institutional anchor, connecting social practice, worship, leadership, and covenant life across related passages and themes.",
+  "original_audience": "Readers of the Gospels and Acts encountering a named Jewish group through diverse narrative and historical lenses.",
+  "historical_setting": "Judea and Galilee from the Hasmonean period through 70 CE, with Josephus writing after the temple's destruction.",
+  "canonical_role": "The record anchors passage-specific Pharisee references while the linked evidence cluster supplies Josephus, chronology, and comparison with other groups.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -80,52 +80,44 @@
       "relationship": "institutional-context",
       "weight": 8,
       "notes": "curated canonical context"
+    },
+    {
+      "id": "second-temple-synagogues-scribes-and-sectarian-groups",
+      "relationship": "structured-evidence-cluster",
+      "weight": 10,
+      "notes": "Josephus, Acts 23, and 4QMMT comparisons with explicit source limits."
     }
   ],
   "scripture_references": [
-    {
-      "reference": "Exodus 18:1-27",
-      "relationship": "supporting",
-      "notes": "judicial leadership"
-    },
-    {
-      "reference": "Deuteronomy 16:18-20",
-      "relationship": "supporting",
-      "notes": "leaders, judges, and kings"
-    },
-    {
-      "reference": "1 Samuel 8:4-9",
-      "relationship": "supporting",
-      "notes": "monarchy and authority"
-    },
-    {
-      "reference": "Acts 23:1-10",
-      "relationship": "supporting",
-      "notes": "leadership and imperial process"
-    }
+    {"reference": "Mark 7:1-23", "relationship": "primary", "notes": "Dispute involving Pharisees and scribes over ancestral tradition and purity."},
+    {"reference": "Matthew 23:1-36", "relationship": "primary", "notes": "Sustained Matthean polemic requiring literary and anti-Jewish safeguards."},
+    {"reference": "Luke 7:36-50", "relationship": "primary", "notes": "A Pharisee hosts Jesus in a scene of hospitality and dispute."},
+    {"reference": "John 3:1-21", "relationship": "primary", "notes": "Nicodemus is identified as a Pharisee and Jewish ruler."},
+    {"reference": "Acts 5:33-40", "relationship": "primary", "notes": "Gamaliel is presented as a Pharisee and respected law teacher."},
+    {"reference": "Acts 23:1-10", "relationship": "primary", "notes": "Paul identifies with Pharisaic resurrection hope in a council dispute."}
   ],
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "Leadership institutions are evaluated by their faithfulness, not only their structure.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The Pharisees known from Josephus, the New Testament, and later rabbinic literature cannot be treated as one unchanged institution across all periods.",
+      "note_type": "historical-context",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": ["pharisees-historical-orientation"]
     },
     {
-      "note": "Biblical texts often compare human authority with divine rule.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Gospel disputes with particular Pharisees are internal Jewish controversies and do not warrant depicting all Pharisees or Judaism as hypocritical legalism.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": ["pharisees-historical-orientation"]
     }
   ],
   "common_questions": [
-    "How does this leadership institution work?",
-    "Why is this institution important in Scripture?",
-    "What accountability theme does this institution raise?"
+    "What can the earliest sources establish about Pharisees?",
+    "How did Pharisaic views differ from Sadducean views?",
+    "Should Gospel polemic be generalized to every Pharisee?"
   ],
   "sources": [
     {
@@ -177,17 +169,17 @@
       "id": "acts-23-26"
     },
     {
-      "title": "Canonical historical orientation for Pharisees",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
+      "title": "An Introduction to Early Judaism",
+      "author": "James C. VanderKam",
+      "publisher": "Eerdmans",
+      "year": 2022,
+      "locator": "2nd edition, chapter 4, Jewish groups and institutions",
+      "url": "https://www.eerdmans.com/9780802880161/an-introduction-to-early-judaism/",
+      "source_type": "academic-book",
       "supports": [
         "historical_context"
       ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+      "notes": "Source-critical overview of the evidence for Pharisees and other early Jewish groups.",
       "id": "pharisees-historical-orientation"
     }
   ],
@@ -241,7 +233,7 @@
   ],
   "edited_by": [],
   "reviewed_by": [],
-  "last_reviewed": "2026-07-16",
+  "last_reviewed": "2026-08-20",
   "confidence": "medium",
   "human_review_required": true
 }

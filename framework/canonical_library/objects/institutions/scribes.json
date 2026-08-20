@@ -8,28 +8,28 @@
     "scribes structure",
     "scribes role"
   ],
-  "summary": "Scribes is a leadership institution that structures authority, judgment, or communal oversight in Israel or the empire.",
-  "historical_context": "Scribes belongs to the social and political systems that governed public life in Israel and its neighbors.",
-  "ancient_near_east_context": "Ancient background for Scribes includes kinship obligations, sanctuary service, village authority, and Greco-Roman civic structures; the entry ties that world to Exodus 18:1-27, Deuteronomy 16:18-20, kingship, and elders without letting comparison replace the biblical witness.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "summary": "Literate specialists whose work could include administration, document production, textual study, teaching, legal interpretation, counsel, and public authority across different biblical periods.",
+  "historical_context": "The label scribe does not denote one unchanging profession. Royal and administrative scribes, Ezra's priestly-scribal commission, Ben Sira's learned ideal, and Gospel legal experts belong to different periods and institutions.",
+  "ancient_near_east_context": "Writing specialists served courts, temples, and administrations across the ancient world, but late Second Temple scribal roles require direct Jewish and Greco-Roman-period evidence.",
+  "hebraic_worldview": "Scribal learning centers on transmitted instruction, wise judgment, Torah interpretation, teaching, and communal responsibility, while biblical texts also criticize misuse of status and expertise.",
+  "second_temple_context": "Ezra and Ben Sira reflect priestly and learned forms of scribal identity; the Gospels and Acts often associate scribes with legal interpretation, Jerusalem leadership, and public debate.",
+  "canonical_context": "Scribes range from royal officials in Israel's Scriptures to Torah experts in Ezra and the New Testament. Context must determine which role is in view.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
-    "hebraic_worldview": false,
-    "second_temple": false,
-    "canonical": false,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
     "later_christian_reception": false
   },
-  "literary_context": "Scripture uses Scribes to describe order, authority, and accountability.",
-  "covenantal_significance": "Scribes reminds readers that authority is accountable to God's purposes.",
+  "literary_context": "Ezra uses scribe in a Persian-period commission; Gospel passages often pair scribes with Pharisees, chief priests, or elders without making those labels synonymous.",
+  "covenantal_significance": "Scribal transmission and teaching serve communal memory and Torah fidelity, while the texts evaluate how expertise is exercised.",
   "authorship_positions": [],
   "date_ranges": [],
-  "original_audience": "",
-  "historical_setting": "",
-  "canonical_role": "Scribes serves as an institutional anchor, connecting social practice, worship, leadership, and covenant life across related passages and themes.",
+  "original_audience": "Readers distinguishing administrative, literary, priestly, and legal scribal roles across biblical periods.",
+  "historical_setting": "Israelite, Persian-period, Hellenistic, and Roman settings; the office must be dated passage by passage.",
+  "canonical_role": "The record traces changing scribal roles while the linked Second Temple cluster supplies Ben Sira and comparative institutional evidence.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -74,52 +74,44 @@
       "relationship": "institutional-context",
       "weight": 8,
       "notes": "curated canonical context"
+    },
+    {
+      "id": "second-temple-synagogues-scribes-and-sectarian-groups",
+      "relationship": "structured-evidence-cluster",
+      "weight": 10,
+      "notes": "Ben Sira, synagogue, Josephus, and Qumran evidence for changing scribal and legal roles."
     }
   ],
   "scripture_references": [
-    {
-      "reference": "Exodus 18:1-27",
-      "relationship": "supporting",
-      "notes": "judicial leadership"
-    },
-    {
-      "reference": "Deuteronomy 16:18-20",
-      "relationship": "supporting",
-      "notes": "leaders, judges, and kings"
-    },
-    {
-      "reference": "1 Samuel 8:4-9",
-      "relationship": "supporting",
-      "notes": "monarchy and authority"
-    },
-    {
-      "reference": "Acts 23:1-10",
-      "relationship": "supporting",
-      "notes": "leadership and imperial process"
-    }
+    {"reference": "2 Kings 22:3-13", "relationship": "supporting", "notes": "Royal scribal administration and the book found in the temple."},
+    {"reference": "Ezra 7:1-10", "relationship": "primary", "notes": "Ezra is described as priest and skilled scribe in the Torah of Moses."},
+    {"reference": "Nehemiah 8:1-18", "relationship": "primary", "notes": "Ezra reads and explains Torah in public assembly."},
+    {"reference": "Mark 7:1-23", "relationship": "primary", "notes": "Scribes and Pharisees appear in a dispute over ancestral tradition and purity."},
+    {"reference": "Mark 12:28-34", "relationship": "primary", "notes": "A scribe questions Jesus and responds intelligently."},
+    {"reference": "Matthew 23:1-36", "relationship": "primary", "notes": "Scribes and Pharisees are targets of sustained Matthean polemic."}
   ],
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "Leadership institutions are evaluated by their faithfulness, not only their structure.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Scribe is a changing social and literary designation rather than one uniform office: royal administrators, priestly Torah experts, learned authors, and legal interpreters appear in different periods.",
+      "note_type": "historical-context",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": ["scribes-historical-orientation"]
     },
     {
-      "note": "Biblical texts often compare human authority with divine rule.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Ben Sira's learned-scribe portrait shows that Second Temple scribal identity could include study, teaching, counsel, travel, prayer, and composition, not merely copying texts.",
+      "note_type": "historical-context",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": ["scribes-historical-orientation"]
     }
   ],
   "common_questions": [
-    "How does this leadership institution work?",
-    "Why is this institution important in Scripture?",
-    "What accountability theme does this institution raise?"
+    "Did every biblical scribe perform the same role?",
+    "What does Ben Sira reveal about learned scribes?",
+    "Why do scribes appear as both respected teachers and opponents in the Gospels?"
   ],
   "sources": [
     {
@@ -171,17 +163,17 @@
       "id": "acts-23-26"
     },
     {
-      "title": "Canonical historical orientation for Scribes",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
+      "title": "The Wisdom of Sirach: A New Translation with Notes",
+      "author": "Walter T. Wilson",
+      "publisher": "Eerdmans",
+      "year": 2023,
+      "locator": "Commentary on Sirach 38:24-39:11",
+      "url": "https://www.eerdmans.com/9780802881762/the-wisdom-of-sirach/",
+      "source_type": "academic-book",
       "supports": [
         "historical_context"
       ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+      "notes": "Critical translation and commentary used for the Second Temple learned-scribe portrait.",
       "id": "scribes-historical-orientation"
     }
   ],
@@ -235,7 +227,7 @@
   ],
   "edited_by": [],
   "reviewed_by": [],
-  "last_reviewed": "2026-07-16",
+  "last_reviewed": "2026-08-20",
   "confidence": "medium",
   "human_review_required": true
 }
