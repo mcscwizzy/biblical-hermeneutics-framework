@@ -8,19 +8,19 @@
     "patronage structure",
     "patronage role"
   ],
-  "summary": "Patronage is a community institution that shapes shared life, worship, and instruction among God's people.",
-  "historical_context": "Patronage belongs to the social fabric of Israel or the early church, where households, assemblies, and shared practices mattered.",
-  "ancient_near_east_context": "Ancient background for Patronage includes kinship obligations, sanctuary service, village authority, and Greco-Roman civic structures; the entry ties that world to Exodus 19:1-6, Deuteronomy 6:4-9, covenant-assembly, and household without letting comparison replace the biblical witness.",
+  "summary": "Asymmetric relationships through which persons or communities exchanged access, protection, resources, loyalty, service, or public honor; patronage overlaps with but does not exhaust hospitality and benefaction.",
+  "historical_context": "Roman patron-client ties, civic benefaction, friendship, household hosting, and brokerage were related but distinct practices. Interpreters should not label every gift, host, leader, or unequal relationship formal patronage.",
+  "ancient_near_east_context": "The relevant evidence here is Greco-Roman rather than generic Ancient Near Eastern communal life.",
   "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "second_temple_context": "Jewish diaspora and Christ-following communities negotiated reciprocity, almsgiving, hospitality, honor, and benefaction within Roman civic and household systems.",
+  "canonical_context": "Phoebe's prostatis designation, Gaius's hospitality, Paul's refusal or acceptance of support, collection administration, and Philemon's partnership language provide distinct cases rather than one uniform patronage system.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
-    "ancient_near_east": true,
+    "ancient_near_east": false,
     "hebraic_worldview": false,
-    "second_temple": false,
-    "canonical": false,
+    "second_temple": true,
+    "canonical": true,
     "later_christian_reception": false
   },
   "literary_context": "Scripture uses Patronage to show how God forms a people, not only isolated individuals.",
@@ -80,28 +80,34 @@
       "relationship": "institutional-context",
       "weight": 8,
       "notes": "curated canonical context"
+    },
+    {
+      "id": "roman-corinth-civic-household-and-association-life",
+      "relationship": "evidence-cluster",
+      "weight": 10,
+      "notes": "The Corinth cluster distinguishes public benefaction, household hosting, and other unequal relationships."
     }
   ],
   "scripture_references": [
     {
-      "reference": "Exodus 19:1-6",
-      "relationship": "supporting",
-      "notes": "assembly at Sinai"
+      "reference": "Romans 16:1-2",
+      "relationship": "primary",
+      "notes": "Phoebe is commended as diakonos and prostatis."
     },
     {
-      "reference": "Deuteronomy 6:4-9",
+      "reference": "Romans 16:23",
       "relationship": "supporting",
-      "notes": "communal instruction"
+      "notes": "Gaius hosts Paul and the whole assembly; Erastus holds a city-related role."
     },
     {
-      "reference": "Acts 2:1-47",
+      "reference": "2 Corinthians 8:1-24",
       "relationship": "supporting",
-      "notes": "Spirit-formed community"
+      "notes": "Collection administration, voluntary giving, equality, trust, and appointed delegates."
     },
     {
-      "reference": "1 Corinthians 12:27-31",
+      "reference": "Philemon 1:4-22",
       "relationship": "supporting",
-      "notes": "ordered communal worship"
+      "notes": "Partnership, appeal, debt language, hospitality, and power."
     }
   ],
   "cross_references": [],

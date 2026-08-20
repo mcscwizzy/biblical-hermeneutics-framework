@@ -7,23 +7,23 @@
     "tell me about corinth",
     "why is corinth important"
   ],
-  "summary": "Corinth is a ministry location in the story of Jesus or the early church.",
-  "historical_context": "Historically, Corinth is located by its canonical setting; this entry connects that setting with jesus, acts, paul and related CKL objects for contextual retrieval.",
-  "ancient_near_east_context": "Corinth is read within concrete geography shaped by Levantine routes, imperial borders, settlement patterns, water access, trade movement, and neighboring peoples named in the biblical narrative.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "summary": "A Roman colony and capital of Achaia on the Isthmus, connected to Cenchreae and Lechaeum and central to Paul's mission, correspondence, and collection network.",
+  "historical_context": "Julius Caesar refounded Corinth in 44 BCE. By the early 50s CE its colonial institutions, provincial administration, two-port geography, migration, trade, slavery, sanctuaries, households, and economic inequalities formed the setting of Paul's activity and the Corinthian assemblies.",
+  "ancient_near_east_context": "Corinth belongs to the Greco-Roman Mediterranean and should not be interpreted through generic Levantine or Ancient Near Eastern geography.",
+  "hebraic_worldview": "Acts locates Paul's initial activity in a diaspora synagogue, while the letters reason from Israel's Scriptures within mixed urban assemblies. Jewish and Greco-Roman horizons must remain mutually visible.",
+  "second_temple_context": "The city's Jewish diaspora setting, synagogue, and scriptural debates belong to first-century Judaism; later conflict must not be projected backward as a complete Jewish-Christian separation.",
+  "canonical_context": "Acts 18 narrates Paul's residence and Gallio hearing; First and Second Corinthians preserve direct correspondence; Romans 16 links Paul with Cenchreae and names an Erastus whose identification with the pavement donor is disputed.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
-    "ancient_near_east": true,
-    "hebraic_worldview": false,
-    "second_temple": false,
-    "canonical": false,
+    "ancient_near_east": false,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
     "later_christian_reception": false
   },
-  "literary_context": "The Gospels and Acts use Corinth as a stage for proclamation, response, and mission.",
-  "covenantal_significance": "Corinth helps show how the kingdom of God advances into the nations.",
+  "literary_context": "Acts is a later mission narrative; the Corinthian letters are occasional arguments responding to reports, questions, prior contacts, travel, and collection planning. They should not be merged into a seamless chronology.",
+  "covenantal_significance": "Corinth anchors Paul's formation of assemblies across Jewish and gentile identities while the letters contest idolatry, hierarchy, domination, and exclusion through the crucified and risen Messiah.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
@@ -51,160 +51,130 @@
   "related_events": [],
   "related_objects": [
     {
-      "id": "jesus",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "paul",
+      "relationship": "mission-and-correspondence",
+      "weight": 10,
+      "notes": "Paul's Corinthian residence and correspondence are central to the place's canonical role."
     },
     {
       "id": "acts",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "relationship": "mission-narrative",
+      "weight": 10,
+      "notes": "Acts 18 narrates Corinthian work, synagogue activity, households, and Gallio's hearing."
     },
     {
-      "id": "paul",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "1-corinthians",
+      "relationship": "primary-correspondence",
+      "weight": 10,
+      "notes": "The letter addresses assemblies in Corinth."
     },
     {
-      "id": "kingdom-theme",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "2-corinthians",
+      "relationship": "primary-correspondence",
+      "weight": 10,
+      "notes": "The letter addresses Corinth and the saints throughout Achaia."
     },
     {
-      "id": "new-covenant",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "phoebe-of-cenchreae",
+      "relationship": "port-community-context",
+      "weight": 9,
+      "notes": "Romans associates Phoebe with Cenchreae, Corinth's eastern port."
+    },
+    {
+      "id": "roman-corinth-civic-household-and-association-life",
+      "relationship": "evidence-cluster",
+      "weight": 10,
+      "notes": "City-specific evidence for administration, ports, benefaction, cult, meals, households, slavery, and athletics."
     }
   ],
   "scripture_references": [
     {
-      "reference": "Matthew 28:16-20",
-      "relationship": "supporting",
-      "notes": "Jesus' ministry in the land"
+      "reference": "Acts 18:1-18",
+      "relationship": "primary",
+      "notes": "Paul's Corinthian residence, work, synagogue activity, households, Gallio hearing, and departure."
     },
     {
-      "reference": "Mark 16:19-20",
+      "reference": "Romans 16:1-2",
       "relationship": "supporting",
-      "notes": "Jesus' ministry and response"
+      "notes": "Phoebe and the assembly at Cenchreae."
     },
     {
-      "reference": "Luke 24:50-53",
+      "reference": "Romans 16:23",
       "relationship": "supporting",
-      "notes": "ministry and mission"
+      "notes": "Erastus the city oikonomos, without certain inscriptional identification."
     },
     {
-      "reference": "John 20:17-23",
-      "relationship": "supporting",
-      "notes": "signs, belief, and mission"
+      "reference": "1 Corinthians 1:1-9",
+      "relationship": "primary",
+      "notes": "Paul, Sosthenes, and the assembly of God in Corinth."
     },
     {
-      "reference": "Acts 9:1-19",
-      "relationship": "supporting",
-      "notes": "church mission in place"
+      "reference": "2 Corinthians 1:1-2",
+      "relationship": "primary",
+      "notes": "The assembly in Corinth and saints throughout Achaia."
     }
   ],
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "The place matters because the narrative happens there, not only because it is named.",
+      "note": "Corinth's Roman colonial identity and Greek past coexisted; neither label alone explains every conflict in the letters.",
       "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": ["corinth-ascsa", "corinth-evidence-cluster"]
     },
     {
-      "note": "Geographic settings often help explain response, conflict, and mission.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Ancient and modern claims that Corinth was uniquely immoral are stereotypes, not a demographic conclusion warranted by the city's archaeology or Paul's case-specific arguments.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": ["corinth-evidence-cluster"]
     }
   ],
   "common_questions": [
-    "Why does this ministry site matter?",
-    "How does this place shape the Gospel or Acts narrative?",
-    "What does this location contribute to mission?"
+    "How did Corinth's colonial and provincial status shape public life?",
+    "How do Cenchreae and Lechaeum contextualize Pauline travel?",
+    "What does the Gallio inscription establish?",
+    "Does the Erastus pavement name Paul's coworker?",
+    "Why should Corinth not be stereotyped as uniquely immoral?"
   ],
   "sources": [
     {
-      "title": "Matthew",
+      "title": "Acts and Pauline Corinth passages",
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "Acts 18:1-18; Romans 16:1-2, 23; 1 Corinthians 1:1-9; 2 Corinthians 1:1-2",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "matthew"
+      "supports": ["canonical_context", "scripture_references"],
+      "notes": "Primary biblical texts; no modern translation is reproduced.",
+      "id": "corinth-scripture"
     },
     {
-      "title": "Mark",
+      "title": "Ancient Corinth Excavations and Digital Resources",
       "author": "",
-      "publisher": "",
+      "publisher": "American School of Classical Studies at Athens",
       "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "mark"
+      "locator": "Roman Corinth excavation archive, publications, site history, and GIS",
+      "url": "https://www.ascsa.edu.gr/excavations/ancient-corinth/digital-corinth",
+      "source_type": "excavation-report",
+      "supports": ["historical_context", "interpretive_notes"],
+      "notes": "Primary archaeological program and publication gateway.",
+      "id": "corinth-ascsa"
     },
     {
-      "title": "Luke",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "luke"
-    },
-    {
-      "title": "John",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "john"
-    },
-    {
-      "title": "Acts",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "acts"
-    },
-    {
-      "title": "Canonical historical orientation for Corinth",
+      "title": "Roman Corinth: Civic, Household, and Association Life",
       "author": "",
       "publisher": "Canonical Knowledge Library",
       "year": 2026,
-      "locator": "",
+      "locator": "roman-corinth-civic-household-and-association-life",
       "url": "",
       "source_type": "reference-work",
-      "supports": [
-        "historical_context"
-      ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
-      "id": "corinth-historical-orientation"
+      "supports": ["historical_context", "interpretive_notes"],
+      "notes": "Internal pointer to the sourced evidence cluster; substantive claims resolve to that object's external sources.",
+      "id": "corinth-evidence-cluster"
     }
   ],
   "canonical_story": {

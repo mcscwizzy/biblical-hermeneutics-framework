@@ -22,6 +22,7 @@ EXPANSION_OBJECTS = {
     "second-temple-synagogues-scribes-and-sectarian-groups": 5,
     "galilean-villages-households-and-subsistence": 7,
     "judean-pilgrimage-taxation-and-roman-power": 8,
+    "roman-corinth-civic-household-and-association-life": 10,
 }
 
 
@@ -662,6 +663,103 @@ def test_crucifixion_and_burial_archaeology_blocks_impossibility_and_proof_claim
     assert "not proving Jesus's case" in ranked[1].passage_relevance
 
 
+def test_corinthian_gallio_evidence_separates_hearing_from_external_chronology() -> None:
+    library = CanonicalLibrary.load_default()
+    ranked = _rank(
+        library,
+        "roman-corinth-civic-household-and-association-life",
+        "What does the Gallio inscription establish about the Corinthian hearing?",
+        "Acts 18:12-17",
+        "archaeology",
+        "historical setting",
+    )
+    assert [item.evidence_id for item in ranked[:2]] == [
+        "acts-gallio-hearing",
+        "gallio-delphi-inscription",
+    ]
+    assert ranked[0].passage_relationship == "direct"
+    assert ranked[1].passage_relationship == "contextual"
+    assert "does not mention Paul" in ranked[1].passage_relevance
+    assert ranked[1].chronological_relation == "near-contemporary"
+
+
+def test_corinthian_erastus_and_port_evidence_preserves_identification_limits() -> None:
+    library = CanonicalLibrary.load_default()
+    erastus = _rank(
+        library,
+        "roman-corinth-civic-household-and-association-life",
+        "Does the Erastus pavement identify Paul's coworker?",
+        "Romans 16:23",
+        "archaeology",
+    )
+    assert erastus[0].evidence_id == "erastus-benefaction-inscription"
+    assert erastus[0].passage_relationship == "disputed"
+    assert erastus[0].dispute_status == "identification_uncertainty"
+    assert "neither proving the donor is Paul's associate" in erastus[0].passage_relevance
+
+    ports = _rank(
+        library,
+        "roman-corinth-civic-household-and-association-life",
+        "How does Cenchreae contextualize Phoebe and travel?",
+        "Romans 16:1-2",
+        "historical setting",
+    )
+    assert ports[0].evidence_id == "two-harbor-travel-network"
+    assert ports[0].passage_relationship == "direct"
+
+
+def test_corinthian_food_and_meal_context_keeps_settings_and_analogies_distinct() -> None:
+    library = CanonicalLibrary.load_default()
+    food = _rank(
+        library,
+        "roman-corinth-civic-household-and-association-life",
+        "What settings explain idol food, market meat, and private invitations?",
+        "1 Corinthians 10:14-33",
+        "cultural practice",
+    )
+    assert [item.evidence_id for item in food] == ["sanctuary-market-idol-food"]
+    assert "Distinguishing cultic tables" in food[0].passage_relevance
+
+    meal = _rank(
+        library,
+        "roman-corinth-civic-household-and-association-life",
+        "What household and association evidence explains hunger and humiliation at the Lord's supper?",
+        "1 Corinthians 11:17-34",
+        "cultural practice",
+    )
+    assert [item.evidence_id for item in meal[:2]] == [
+        "household-slavery-status",
+        "association-meal-status",
+    ]
+    assert meal[0].passage_relationship == "direct"
+    assert meal[1].passage_relationship == "comparative"
+    assert "without proving the meeting occurred in a known dining room" in meal[1].passage_relevance
+
+
+def test_corinthian_slavery_and_athletic_context_resists_endorsement_and_identification() -> None:
+    library = CanonicalLibrary.load_default()
+    slavery = _rank(
+        library,
+        "roman-corinth-civic-household-and-association-life",
+        "How do slavery and status contextualize remaining in one's calling?",
+        "1 Corinthians 7:17-24",
+        "cultural practice",
+    )
+    assert [item.evidence_id for item in slavery] == ["household-slavery-status"]
+    assert "without turning description into endorsement" in slavery[0].passage_relevance
+
+    athletics = _rank(
+        library,
+        "roman-corinth-civic-household-and-association-life",
+        "Do the Isthmian Games prove that Paul competed there?",
+        "1 Corinthians 9:24-27",
+        "archaeology",
+    )
+    assert athletics[0].evidence_id == "isthmian-athletic-comparison"
+    assert athletics[0].passage_relationship == "contextual"
+    assert "not making the metaphor exclusive" in athletics[0].passage_relevance
+
+
 def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
     library = CanonicalLibrary.load_default()
     flood = library.objects_by_id["the-flood"]
@@ -705,6 +803,10 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
     burial = library.objects_by_id["burial-of-jesus"]
     roman_governorship = library.objects_by_id["roman-governorship"]
     temple_tax = library.objects_by_id["temple-tax"]
+    corinth = library.objects_by_id["corinth"]
+    phoebe = library.objects_by_id["phoebe-of-cenchreae"]
+    patronage = library.objects_by_id["patronage"]
+    lords_supper = library.objects_by_id["lords-supper"]
     assert flood.scripture_references[0].reference == "Genesis 6:1-22"
     assert all(reference.reference != "Genesis 11:1-9" for reference in flood.scripture_references)
     assert thessalonica.scripture_references[0].reference == "Acts 17:1-9"
@@ -806,6 +908,19 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
             temple_tax,
         )
     )
+    assert corinth.scripture_references[0].reference == "Acts 18:1-18"
+    assert "Gospels" not in corinth.literary_context
+    assert "roman-corinth-civic-household-and-association-life" in {
+        relationship.id for relationship in corinth.related_objects
+    }
+    assert phoebe.scripture_references[0].reference == "Romans 16:1-2"
+    assert len(phoebe.scripture_references) == 1
+    assert patronage.scripture_references[0].reference == "Romans 16:1-2"
+    assert lords_supper.scripture_references[0].reference == "Matthew 26:17-30"
+    assert all(
+        obj.context_applicability["second_temple"] is True
+        for obj in (corinth, phoebe, patronage, lords_supper)
+    )
 
     context_fields = {
         "historical": "historical_context",
@@ -824,14 +939,14 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
 def test_corpus_evidence_quality_metrics_have_no_structural_failures() -> None:
     library = CanonicalLibrary.load_default()
     report = audit_evidence(library.objects_by_id.values())
-    assert report["evidence_count"] == 80
-    assert report["evidence_with_primary_sources_count"] == 79
-    assert report["evidence_with_academic_secondary_sources_count"] == 75
-    assert report["evidence_with_chronology_count"] == 80
-    assert report["evidence_with_passage_relevance_count"] == 80
-    assert report["disputed_evidence_count"] == 69
+    assert report["evidence_count"] == 90
+    assert report["evidence_with_primary_sources_count"] == 89
+    assert report["evidence_with_academic_secondary_sources_count"] == 85
+    assert report["evidence_with_chronology_count"] == 90
+    assert report["evidence_with_passage_relevance_count"] == 90
+    assert report["disputed_evidence_count"] == 79
     assert report["worldview_evidence_count"] == 7
-    assert report["archaeology_linked_evidence_count"] == 15
+    assert report["archaeology_linked_evidence_count"] == 17
     assert report["internal_source_only_evidence_count"] == 0
     assert report["missing_source_locator_count"] == 0
     assert report["missing_confidence_rationale_count"] == 0

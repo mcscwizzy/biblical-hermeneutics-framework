@@ -9,18 +9,18 @@
     "lords supper role"
   ],
   "summary": "Lord's Supper is a new covenant practice that marks initiation, remembrance, and communal identity in the church.",
-  "historical_context": "Lord's Supper appears in the New Testament as the church reflects on Jesus' saving work and the shape of the community.",
-  "ancient_near_east_context": "Ritual washing, meal fellowship, and covenant renewal provide the wider background.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "historical_context": "The Synoptic passion narratives and First Corinthians preserve related but distinct meal traditions. First Corinthians embeds the received words within a conflict over unequal access, hunger, humiliation, and communal discernment.",
+  "ancient_near_east_context": "The immediate context is Jewish festival and Greco-Roman communal dining rather than generalized ancient ritual.",
+  "hebraic_worldview": "Blessing, shared bread and cup, covenant memory, Passover chronology, table fellowship, and responsibility for other participants shape the meal traditions.",
+  "second_temple_context": "The Synoptic meals occur in a Jewish festival setting, though their chronology and relationship to Passover differ from John. Early assemblies also ate within hierarchical Roman households and cities.",
+  "canonical_context": "Matthew, Mark, Luke, and First Corinthians transmit meal words with variations. First Corinthians 10-11 connects participation in Christ with rejection of rival cultic tables and correction of class humiliation.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
-    "ancient_near_east": true,
-    "hebraic_worldview": false,
-    "second_temple": false,
-    "canonical": false,
+    "ancient_near_east": false,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
     "later_christian_reception": false
   },
   "literary_context": "Gospels and epistles use Lord's Supper to connect Jesus' work to church practice.",
@@ -68,28 +68,39 @@
       "relationship": "institutional-context",
       "weight": 8,
       "notes": "curated canonical context"
+    },
+    {
+      "id": "roman-corinth-civic-household-and-association-life",
+      "relationship": "evidence-cluster",
+      "weight": 10,
+      "notes": "The Corinth cluster supplies bounded banquet, association, hunger, and status comparisons for First Corinthians 11."
     }
   ],
   "scripture_references": [
     {
-      "reference": "Matthew 28:18-20",
-      "relationship": "supporting",
-      "notes": "baptism and discipleship"
+      "reference": "Matthew 26:17-30",
+      "relationship": "primary",
+      "notes": "Passover preparation and shared bread and cup."
     },
     {
-      "reference": "Acts 2:37-41",
-      "relationship": "supporting",
-      "notes": "baptism and the new community"
+      "reference": "Mark 14:12-26",
+      "relationship": "primary",
+      "notes": "Passover setting and meal words in Mark."
     },
     {
-      "reference": "Romans 6:1-11",
-      "relationship": "supporting",
-      "notes": "union with Christ"
+      "reference": "Luke 22:7-23",
+      "relationship": "primary",
+      "notes": "Passover meal, kingdom language, and bread and cup tradition."
     },
     {
-      "reference": "1 Corinthians 11:23-26",
-      "relationship": "supporting",
-      "notes": "the Lord's Supper"
+      "reference": "1 Corinthians 10:14-22",
+      "relationship": "primary",
+      "notes": "Participation in cup and bread contrasted with rival cultic tables."
+    },
+    {
+      "reference": "1 Corinthians 11:17-34",
+      "relationship": "primary",
+      "notes": "Meal inequality, received tradition, remembrance, proclamation, and discernment."
     }
   ],
   "cross_references": [],
