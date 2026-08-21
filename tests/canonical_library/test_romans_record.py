@@ -127,7 +127,7 @@ class RomansRecordTests(unittest.TestCase):
                 "paul",
                 "abraham",
                 "adam",
-                "phoebe",
+                "phoebe-of-cenchreae",
                 "priscilla",
                 "justification",
                 "faith",

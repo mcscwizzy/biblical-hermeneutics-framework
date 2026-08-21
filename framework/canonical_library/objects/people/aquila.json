@@ -1,252 +1,484 @@
 {
-  "id": "aquila",
-  "type": "person",
-  "title": "Aquila",
-  "aliases": [
-    "who is aquila",
-    "tell me about aquila",
-    "why is aquila important"
-  ],
-  "summary": "Aquila is a first-generation church figure whose ministry supports the spread, instruction, or organization of the gospel.",
-  "historical_context": "Historically, Aquila is located by its canonical setting; this entry connects that setting with acts, paul, pentecost and related CKL objects for contextual retrieval.",
-  "ancient_near_east_context": "Aquila belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
-  "later_christian_reception": "",
-  "context_applicability": {
-    "historical": true,
-    "ancient_near_east": true,
-    "hebraic_worldview": false,
-    "second_temple": false,
-    "canonical": false,
-    "later_christian_reception": false
-  },
-  "literary_context": "Acts and the Epistles use Aquila to display gospel partnership and ecclesial formation.",
-  "covenantal_significance": "Aquila participates in the nations' inclusion and the building up of the body of Christ.",
-  "authorship_positions": [],
-  "date_ranges": [],
-  "original_audience": "",
-  "historical_setting": "",
-  "canonical_role": "Aquila serves as a canonical person anchor, connecting biographical context, key passages, and related places, events, and themes.",
-  "genre": [],
-  "structure": [],
-  "major_themes": [],
-  "canonical_placement": "",
-  "key_people": [],
-  "key_places": [],
-  "key_events": [],
-  "interpretive_disputes": [],
-  "primary_sources": [],
-  "related_entries": [],
-  "keywords": [],
-  "intertextuality": [],
-  "timeline": [],
-  "maps": [],
-  "archaeology": [],
-  "hebrew_words": [],
-  "greek_words": [],
-  "related_people": [],
-  "related_places": [],
-  "related_events": [],
-  "related_objects": [
-    {
-      "id": "acts",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+    "id": "aquila",
+    "type": "person",
+    "title": "Aquila",
+    "aliases": [
+        "Aquila of Pontus",
+        "Aquila husband of Priscilla",
+        "Aquila in Acts 18",
+        "Aquila in Romans 16"
+    ],
+    "summary": "Aquila is a Jewish man from Pontus whom Acts and Pauline greetings portray with Prisca or Priscilla as displaced from Rome, sharing a craft and lodging with Paul at Corinth, traveling to Ephesus, instructing Apollos jointly, risking his life in coworking, and hosting assemblies across cities.",
+    "historical_context": "Acts connects Aquila's arrival at Corinth with Claudius's order concerning Jews at Rome. His Pontic origin, Roman residence, movement through Corinth and Ephesus, shared work, and household hosting show diaspora mobility, but the texts do not state his citizenship, wealth, manumission history, age, or formal office.",
+    "ancient_near_east_context": "Aquila's immediate world is the Roman Mediterranean and Jewish diaspora rather than the Ancient Near East.",
+    "hebraic_worldview": "Acts explicitly calls Aquila Jewish. His diaspora life should be read within Jewish identity and practice without assuming a particular synagogue affiliation or complete Torah observance profile.",
+    "second_temple_context": "Aquila belongs to a mobile Jewish diaspora under Roman rule. Claudian policy and mixed urban networks contextualize his movement, but Chrestus and the scope of the expulsion remain disputed.",
+    "canonical_context": "Acts 18, Romans 16, 1 Corinthians 16, and 2 Timothy 4 preserve selective episodes involving Aquila and Prisca. Together they attest mobility and coworking but not a complete itinerary or biography.",
+    "later_christian_reception": "Later traditions sometimes assign offices, martyrdom, and Roman sites to Aquila and Prisca; those claims extend beyond the canonical evidence and require independent review.",
+    "context_applicability": {
+        "historical": true,
+        "ancient_near_east": false,
+        "hebraic_worldview": true,
+        "second_temple": true,
+        "canonical": true,
+        "later_christian_reception": true
     },
-    {
-      "id": "paul",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+    "literary_context": "Acts introduces the couple at Corinth, narrates travel and Apollos's instruction, and Pauline greetings name their coworking and house assemblies. Each notice serves its own narrative or epistolary purpose.",
+    "covenantal_significance": "Aquila's Jewish diaspora identity and shared work among mixed assemblies participate in the letters' account of Israel and the nations without making his biography a covenant template.",
+    "authorship_positions": [],
+    "date_ranges": [],
+    "original_audience": "Readers seeking a textually controlled profile of Aquila across Acts and Pauline greetings.",
+    "historical_setting": "Rome, Corinth, and Ephesus in the mid-first-century Roman Mediterranean.",
+    "canonical_role": "Aquila anchors displacement, diaspora mobility, shared labor, teaching with Prisca, Pauline coworking, and household assembly networks.",
+    "genre": [
+        "Acts narrative",
+        "Pauline greeting",
+        "person record"
+    ],
+    "structure": [],
+    "major_themes": [
+        "Jewish diaspora",
+        "displacement",
+        "mobility",
+        "shared work",
+        "teaching",
+        "coworking",
+        "risk",
+        "household assemblies"
+    ],
+    "canonical_placement": "Acts 18:1-3, 18-26; Romans 16:3-5; 1 Corinthians 16:19; 2 Timothy 4:19.",
+    "key_people": [
+        "Prisca or Priscilla",
+        "Paul",
+        "Apollos",
+        "Claudius"
+    ],
+    "key_places": [
+        "Pontus",
+        "Rome",
+        "Corinth",
+        "Cenchreae",
+        "Ephesus",
+        "Syria"
+    ],
+    "key_events": [
+        "departure from Rome",
+        "shared craft with Paul",
+        "travel to Ephesus",
+        "instruction of Apollos",
+        "hosting assemblies"
+    ],
+    "interpretive_disputes": [
+        "scope of Claudius's action",
+        "meaning of sk\u0113nopoioi",
+        "chronology of movements",
+        "wealth and household status",
+        "significance of name order",
+        "formal leadership roles"
+    ],
+    "primary_sources": [
+        "Acts 18:1-3, 18-26",
+        "Romans 16:3-5",
+        "1 Corinthians 16:19",
+        "2 Timothy 4:19"
+    ],
+    "related_entries": [],
+    "keywords": [
+        "Aquila",
+        "Pontus",
+        "Prisca",
+        "Priscilla",
+        "Claudius",
+        "Rome",
+        "Corinth",
+        "Ephesus",
+        "tentmaker",
+        "leatherworker",
+        "Apollos",
+        "house assembly"
+    ],
+    "intertextuality": [
+        "Acts names Aquila's Jewish and Pontic origin; the letters do not repeat every detail.",
+        "Romans and 1 Corinthians place assemblies with the couple in different cities.",
+        "Second Timothy's greeting is later and its authorship and setting require separate analysis."
+    ],
+    "timeline": [
+        "approximately 49 CE: conventional horizon for departure from Rome",
+        "early 50s CE: Corinth and Ephesus episodes in Acts",
+        "mid-50s CE: house assembly in Asia and greeting in Romans",
+        "later first century CE: canonical greeting preserved in 2 Timothy"
+    ],
+    "maps": [],
+    "archaeology": [
+        "No securely identified house, workshop, inscription, or tomb belonging to the canonical Aquila"
+    ],
+    "hebrew_words": [],
+    "greek_words": [
+        "Ioudaios: Jewish or Judean",
+        "sk\u0113nopoios: tentmaker or related leather craft, precise trade disputed",
+        "synergos: coworker",
+        "ekkl\u0113sia kat' oikon: assembly in a house"
+    ],
+    "related_people": [
+        "priscilla",
+        "paul"
+    ],
+    "related_places": [
+        "rome",
+        "corinth",
+        "ephesus"
+    ],
+    "related_events": [],
+    "related_objects": [
+        {
+            "id": "priscilla",
+            "relationship": "wife-and-coworker",
+            "weight": 10,
+            "notes": "The canonical texts consistently portray them together."
+        },
+        {
+            "id": "acts",
+            "relationship": "primary-narrative-source",
+            "weight": 10,
+            "notes": "Acts 18 supplies origin, displacement, craft, travel, and instruction."
+        },
+        {
+            "id": "romans",
+            "relationship": "primary-greeting-source",
+            "weight": 10,
+            "notes": "Romans 16 names coworking, risk, gratitude, and a house assembly."
+        },
+        {
+            "id": "paul",
+            "relationship": "coworker-and-craft-partner",
+            "weight": 9,
+            "notes": "Acts and Romans explicitly connect them."
+        },
+        {
+            "id": "rome",
+            "relationship": "residence-and-displacement-setting",
+            "weight": 9,
+            "notes": "Acts links departure from Rome to Claudius; Romans later greets the couple."
+        },
+        {
+            "id": "roman-rome-jewish-civic-household-and-imperial-life",
+            "relationship": "evidence-cluster",
+            "weight": 10,
+            "notes": "The cluster bounds Claudian policy, mobility, house assemblies, and status inference."
+        }
+    ],
+    "scripture_references": [
+        {
+            "reference": "Acts 18:1-3",
+            "relationship": "primary",
+            "notes": "Jewish identity, Pontic origin, Italy, Claudius, Corinth, shared craft, and Paul."
+        },
+        {
+            "reference": "Acts 18:18-26",
+            "relationship": "primary",
+            "notes": "Travel to Ephesus and joint instruction of Apollos."
+        },
+        {
+            "reference": "Romans 16:3-5",
+            "relationship": "primary",
+            "notes": "Coworkers, risk, gratitude, and assembly in their house."
+        },
+        {
+            "reference": "1 Corinthians 16:19",
+            "relationship": "primary",
+            "notes": "Prisca and Aquila and the assembly in their house send greetings from Asia."
+        },
+        {
+            "reference": "2 Timothy 4:19",
+            "relationship": "supporting",
+            "notes": "Later canonical greeting to Prisca and Aquila."
+        }
+    ],
+    "cross_references": [
+        "Romans 16:1-16",
+        "1 Corinthians 1:10-17"
+    ],
+    "new_testament_connections": [
+        "Aquila and Prisca embody translocal coworking, but the canonical notices do not define a universal ministry office or marriage hierarchy."
+    ],
+    "interpretive_notes": [
+        {
+            "note": "Acts' Claudian notice does not prove that every Jew left Rome or that Chrestus unambiguously means Christ.",
+            "note_type": "interpretive-caution",
+            "certainty": "probable",
+            "dispute_status": "major_scholarly_disagreement",
+            "sources": [
+                "acts-aquila",
+                "lampe-aquila"
+            ],
+            "scripture_references": [
+                "Acts 18:1-3"
+            ],
+            "traditions": [
+                "Academic"
+            ],
+            "rationale": "Scope and cause require comparison with later Roman sources."
+        },
+        {
+            "note": "Sk\u0113nopoioi may refer to tentmaking or related leather work and does not establish exact income, workshop ownership, or poverty.",
+            "note_type": "interpretive-caution",
+            "certainty": "probable",
+            "dispute_status": "lexical_uncertainty",
+            "sources": [
+                "acts-aquila",
+                "murphy-o-connor-aquila"
+            ],
+            "scripture_references": [
+                "Acts 18:3"
+            ],
+            "traditions": [
+                "Academic"
+            ],
+            "rationale": "The ancient craft term and economic inference are not identical."
+        },
+        {
+            "note": "The couple's hosting and coworking show agency, but name order and domestic gathering do not by themselves prove a fixed office, wealth level, or marital authority pattern.",
+            "note_type": "interpretive-caution",
+            "certainty": "probable",
+            "dispute_status": "historical_uncertainty",
+            "sources": [
+                "romans-aquila",
+                "cohick-aquila",
+                "sybrandi-aquila"
+            ],
+            "scripture_references": [
+                "Romans 16:3-5",
+                "1 Corinthians 16:19"
+            ],
+            "traditions": [
+                "Academic",
+                "Christian"
+            ],
+            "rationale": "The texts name roles selectively and vary the order of names."
+        }
+    ],
+    "common_questions": [
+        "Who was Aquila?",
+        "Why did Aquila leave Rome?",
+        "What craft did Aquila share with Paul?",
+        "How did Aquila and Prisca teach Apollos?",
+        "Where did they host assemblies?",
+        "Was Aquila wealthy or a formal church leader?"
+    ],
+    "sources": [
+        {
+            "id": "acts-aquila",
+            "title": "Acts 18:1-3, 18-26",
+            "author": "Michael W. Holmes, ed.",
+            "publisher": "Society of Biblical Literature and Logos Bible Software",
+            "year": 2010,
+            "locator": "Acts 18:1-3, 18-26",
+            "url": "https://www.sblgnt.com/download/",
+            "source_type": "scripture",
+            "supports": [
+                "summary",
+                "historical_context",
+                "scripture_references",
+                "interpretive_notes"
+            ],
+            "notes": "Primary narrative source."
+        },
+        {
+            "id": "romans-aquila",
+            "title": "Romans 16:3-5",
+            "author": "Michael W. Holmes, ed.",
+            "publisher": "Society of Biblical Literature and Logos Bible Software",
+            "year": 2010,
+            "locator": "Romans 16:3-5",
+            "url": "https://www.sblgnt.com/download/",
+            "source_type": "scripture",
+            "supports": [
+                "canonical_context",
+                "scripture_references",
+                "interpretive_notes"
+            ],
+            "notes": "Primary Pauline greeting."
+        },
+        {
+            "id": "pauline-aquila",
+            "title": "Pauline greetings to Prisca and Aquila",
+            "author": "Michael W. Holmes, ed.",
+            "publisher": "Society of Biblical Literature and Logos Bible Software",
+            "year": 2010,
+            "locator": "1 Corinthians 16:19; 2 Timothy 4:19",
+            "url": "https://www.sblgnt.com/download/",
+            "source_type": "scripture",
+            "supports": [
+                "canonical_context",
+                "scripture_references"
+            ],
+            "notes": "Distinct greeting contexts."
+        },
+        {
+            "id": "lampe-aquila",
+            "title": "Christians at Rome in the First Two Centuries",
+            "author": "Peter Lampe",
+            "publisher": "Continuum",
+            "year": 2003,
+            "locator": "Claudius, Prisca and Aquila, Roman groups, and topography",
+            "url": "https://www.bloomsbury.com/au/christians-at-rome-in-the-first-two-centuries-9780826481023/",
+            "source_type": "academic-book",
+            "supports": [
+                "historical_context",
+                "interpretive_notes"
+            ],
+            "notes": "Historical reconstruction remains probabilistic."
+        },
+        {
+            "id": "murphy-o-connor-aquila",
+            "title": "Paul: A Critical Life",
+            "author": "Jerome Murphy-O'Connor",
+            "publisher": "Oxford University Press",
+            "year": 1996,
+            "locator": "Corinth, work, Prisca and Aquila, and Pauline chronology",
+            "url": "https://global.oup.com/academic/product/paul-9780198267492",
+            "source_type": "academic-book",
+            "supports": [
+                "historical_context",
+                "interpretive_notes"
+            ],
+            "notes": "Biographical synthesis must remain subordinate to the texts."
+        },
+        {
+            "id": "cohick-aquila",
+            "title": "Women in the World of the Earliest Christians",
+            "author": "Lynn H. Cohick",
+            "publisher": "Baker Academic",
+            "year": 2009,
+            "locator": "Prisca, households, work, patronage, and travel",
+            "url": "https://bakeracademic.com/p/women-in-the-world-of-the-earliest-christians-lynn-h-cohick/230758",
+            "source_type": "academic-book",
+            "supports": [
+                "historical_context",
+                "interpretive_notes"
+            ],
+            "notes": "Social comparison does not establish individual wealth or office."
+        },
+        {
+            "id": "sybrandi-aquila",
+            "title": "Women Leaders Lost in Translation? A Study in Romans 16:1-16",
+            "author": "Marieke Sybrandi",
+            "publisher": "The Expository Times",
+            "year": 2024,
+            "locator": "136.3, pages 92-101",
+            "url": "https://doi.org/10.1177/00145246241287148",
+            "source_type": "journal-article",
+            "supports": [
+                "interpretive_notes"
+            ],
+            "notes": "Examines Prisca and other women coworkers in Romans 16."
+        }
+    ],
+    "canonical_story": {
+        "phase": "apostolic-mission-and-church",
+        "role": "Aquila connects Jewish diaspora displacement with translocal Pauline work, teaching, and household assemblies.",
+        "preceded_by": [
+            "life in Pontus and Rome, details unknown"
+        ],
+        "followed_by": [
+            "work in Corinth and Ephesus",
+            "later Pauline greetings"
+        ]
     },
-    {
-      "id": "pentecost",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+    "hermeneutical_lens": {
+        "immediate_literary_context": "Read each notice in its Acts or letter unit.",
+        "book_context": "Acts and the Pauline greetings are selective witnesses.",
+        "canonical_context": "Compare without constructing an undocumented continuous itinerary.",
+        "covenant_context": "Aquila's Jewish identity belongs within mixed Jewish-gentile assemblies.",
+        "historical_context": "Bound Claudian policy, craft, mobility, and households by date.",
+        "ancient_near_east_context": "Not applicable to the immediate setting.",
+        "second_temple_jewish_context": "Diaspora Jewish identity is explicit for Aquila.",
+        "original_audience": "Do not infer unstated status, wealth, citizenship, or office.",
+        "genre": "Distinguish Acts narrative and letter greeting.",
+        "intertextual_connections": [
+            "Acts 18",
+            "Romans 16",
+            "1 Corinthians 16",
+            "2 Timothy 4"
+        ],
+        "biblical_theology_themes": [
+            "mission",
+            "coworking",
+            "hospitality",
+            "instruction"
+        ],
+        "messianic_christological_trajectory": "The record supplies historical context rather than a separate christological claim.",
+        "major_interpretive_views": [
+            "Claudian action",
+            "craft",
+            "name order",
+            "leadership"
+        ],
+        "historical_interpretation": "The evidence supports mobility and agency while leaving biography incomplete.",
+        "authorial_intent": "Each text names the couple for a local narrative or greeting purpose.",
+        "typological_connections": [],
+        "christological_significance": "Aquila's significance lies in textually named participation in assemblies and mission.",
+        "modern_application_principles": [
+            "Do not erase Prisca's joint agency.",
+            "Do not romanticize displacement or ancient labor."
+        ],
+        "common_misinterpretations": [
+            "Acts identifies Chrestus as Christ",
+            "all Jews were permanently expelled",
+            "tentmaking proves poverty or business ownership",
+            "name order proves fixed marital hierarchy",
+            "their house has been excavated"
+        ]
     },
-    {
-      "id": "spirit-theme",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
-    }
-  ],
-  "scripture_references": [
-    {
-      "reference": "Acts 9:1-19",
-      "relationship": "supporting",
-      "notes": "apostolic mission"
+    "retrieval_metadata": {
+        "aliases": [
+            "Aquila and Priscilla",
+            "Aquila tentmaker",
+            "Aquila of Pontus"
+        ],
+        "search_terms": [
+            "Acts 18 Aquila",
+            "Claudius Rome Aquila",
+            "Prisca Aquila Apollos",
+            "Romans 16 house assembly"
+        ],
+        "common_questions": [
+            "Why did Aquila leave Rome?",
+            "What did Aquila do?"
+        ],
+        "related_topics": [
+            "Jewish diaspora",
+            "craft work",
+            "house assemblies",
+            "Pauline coworkers"
+        ],
+        "frequently_confused_with": [
+            "Aquila the translator associated with Sinope"
+        ],
+        "semantic_keywords": [
+            "Pontus",
+            "Rome",
+            "Corinth",
+            "Ephesus",
+            "coworker"
+        ]
     },
-    {
-      "reference": "Romans 16:1-27",
-      "relationship": "supporting",
-      "notes": "church partners and networks"
-    },
-    {
-      "reference": "1 Corinthians 3:4-9",
-      "relationship": "supporting",
-      "notes": "church life and ministry"
-    },
-    {
-      "reference": "Philippians 1:12-18",
-      "relationship": "supporting",
-      "notes": "gospel partnership"
-    }
-  ],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    {
-      "note": "These figures are best read as part of the church's shared mission rather than isolated heroes.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "Letters often mention them to show partnership, hospitality, and instruction.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    }
-  ],
-  "common_questions": [
-    "Why does this figure matter in the early church?",
-    "How does this figure support the gospel mission?",
-    "What does this figure teach about church life?"
-  ],
-  "sources": [
-    {
-      "title": "Acts 1-28",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "acts-1-28"
-    },
-    {
-      "title": "Romans 16",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "romans-16"
-    },
-    {
-      "title": "1 Corinthians",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "1-corinthians"
-    },
-    {
-      "title": "Philippians",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "philippians"
-    },
-    {
-      "title": "2 Timothy",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "2-timothy"
-    },
-    {
-      "title": "Canonical historical orientation for Aquila",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [
-        "historical_context"
-      ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
-      "id": "aquila-historical-orientation"
-    }
-  ],
-  "canonical_story": {
-    "phase": "",
-    "role": "",
-    "preceded_by": [],
-    "followed_by": []
-  },
-  "hermeneutical_lens": {
-    "immediate_literary_context": "",
-    "book_context": "",
-    "canonical_context": "",
-    "covenant_context": "",
-    "historical_context": "",
-    "ancient_near_east_context": "",
-    "second_temple_jewish_context": "",
-    "original_audience": "",
-    "genre": "",
-    "intertextual_connections": [],
-    "biblical_theology_themes": [],
-    "messianic_christological_trajectory": "",
-    "major_interpretive_views": [],
-    "historical_interpretation": "",
-    "authorial_intent": "",
-    "typological_connections": [],
-    "christological_significance": "",
-    "modern_application_principles": [],
-    "common_misinterpretations": []
-  },
-  "retrieval_metadata": {
-    "aliases": [],
-    "search_terms": [],
-    "common_questions": [],
-    "related_topics": [],
-    "frequently_confused_with": [],
-    "semantic_keywords": []
-  },
-  "importance": 68,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "generated_by": [
-    {
-      "type": "ai",
-      "name": "codex",
-      "workflow": "ane-hebraic-context-expansion",
-      "date": "2026-07-16"
-    }
-  ],
-  "edited_by": [],
-  "reviewed_by": [],
-  "last_reviewed": "2026-07-16",
-  "confidence": "medium",
-  "human_review_required": true
+    "importance": 78,
+    "framework_version": "1.0",
+    "object_version": "1",
+    "content_status": "complete",
+    "review_status": "in_review",
+    "generated_by": [
+        {
+            "type": "ai",
+            "name": "codex",
+            "workflow": "ckl-content-expansion",
+            "date": "2026-08-20"
+        }
+    ],
+    "edited_by": [],
+    "reviewed_by": [],
+    "last_reviewed": "2026-08-20",
+    "confidence": "medium",
+    "human_review_required": true
 }

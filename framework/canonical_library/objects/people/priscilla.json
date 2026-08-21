@@ -1,252 +1,490 @@
 {
-  "id": "priscilla",
-  "type": "person",
-  "title": "Priscilla",
-  "aliases": [
-    "who is priscilla",
-    "tell me about priscilla",
-    "why is priscilla important"
-  ],
-  "summary": "Priscilla is a first-generation church figure whose ministry supports the spread, instruction, or organization of the gospel.",
-  "historical_context": "Historically, Priscilla belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events.",
-  "ancient_near_east_context": "Ancient background for Priscilla includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
-  "later_christian_reception": "",
-  "context_applicability": {
-    "historical": true,
-    "ancient_near_east": true,
-    "hebraic_worldview": false,
-    "second_temple": false,
-    "canonical": false,
-    "later_christian_reception": false
-  },
-  "literary_context": "Acts and the Epistles use Priscilla to display gospel partnership and ecclesial formation.",
-  "covenantal_significance": "Priscilla participates in the nations' inclusion and the building up of the body of Christ.",
-  "authorship_positions": [],
-  "date_ranges": [],
-  "original_audience": "",
-  "historical_setting": "",
-  "canonical_role": "Priscilla serves as a canonical person anchor, connecting biographical context, key passages, and related places, events, and themes.",
-  "genre": [],
-  "structure": [],
-  "major_themes": [],
-  "canonical_placement": "",
-  "key_people": [],
-  "key_places": [],
-  "key_events": [],
-  "interpretive_disputes": [],
-  "primary_sources": [],
-  "related_entries": [],
-  "keywords": [],
-  "intertextuality": [],
-  "timeline": [],
-  "maps": [],
-  "archaeology": [],
-  "hebrew_words": [],
-  "greek_words": [],
-  "related_people": [],
-  "related_places": [],
-  "related_events": [],
-  "related_objects": [
-    {
-      "id": "acts",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+    "id": "priscilla",
+    "type": "person",
+    "title": "Priscilla (Prisca)",
+    "aliases": [
+        "Prisca",
+        "Priscilla",
+        "Prisca wife of Aquila",
+        "Priscilla in Acts 18",
+        "Prisca in Romans 16"
+    ],
+    "summary": "Prisca, called Priscilla in Acts, is portrayed with Aquila as displaced from Rome, traveling through Corinth and Ephesus, jointly instructing Apollos, coworking and risking life with Paul, and hosting assemblies; the texts give her unusual visibility without defining a later formal office.",
+    "historical_context": "Acts introduces Priscilla at Corinth with Aquila after Claudius's action concerning Jews at Rome, then narrates travel and joint instruction at Ephesus. Pauline greetings call Prisca a coworker, remember risk, and name an assembly in the couple's house. Her ethnicity, birthplace, wealth, citizenship, occupation apart from the shared household craft, and formal office are unstated.",
+    "ancient_near_east_context": "Prisca's immediate setting is the Roman Mediterranean, urban households, diaspora networks, craft work, and travel rather than the Ancient Near East.",
+    "hebraic_worldview": "Prisca shares a household and displacement narrative with Aquila, whom Acts explicitly calls Jewish. The text does not separately label her ancestry or define her prior religious identity.",
+    "second_temple_context": "The couple's movement belongs within Jewish diaspora life under Claudian rule, but Prisca's individual ancestry, synagogue affiliation, and response to the decree are not separately narrated.",
+    "canonical_context": "Acts 18, Romans 16, 1 Corinthians 16, and 2 Timothy 4 name Prisca or Priscilla. The shorter name is Paul's usual form and the diminutive occurs in Acts; the variation does not imply two people.",
+    "later_christian_reception": "Later traditions connect Prisca with offices, martyrdom, Roman churches, catacombs, and named sites. These identifications vary in date and cannot be equated automatically with the canonical coworker.",
+    "context_applicability": {
+        "historical": true,
+        "ancient_near_east": false,
+        "hebraic_worldview": true,
+        "second_temple": true,
+        "canonical": true,
+        "later_christian_reception": true
     },
-    {
-      "id": "paul",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+    "literary_context": "Acts narrates Prisca and Aquila as a couple in mission travel and Apollos's instruction; Pauline greetings emphasize coworking, risk, affection, and house assemblies. The name order varies by passage.",
+    "covenantal_significance": "Prisca's work within mixed urban assemblies participates in the mission among Jews and nations without making her marriage, household, or ministry a universal hierarchy template.",
+    "authorship_positions": [],
+    "date_ranges": [],
+    "original_audience": "Readers seeking a textually controlled profile of Prisca or Priscilla and her shared and individual agency.",
+    "historical_setting": "Rome, Corinth, Cenchreae, and Ephesus in the mid-first-century Roman Mediterranean.",
+    "canonical_role": "Prisca anchors women's visible coworking, teaching, risk, mobility, and household assembly leadership while remaining consistently portrayed with Aquila.",
+    "genre": [
+        "Acts narrative",
+        "Pauline greeting",
+        "person record"
+    ],
+    "structure": [],
+    "major_themes": [
+        "women coworkers",
+        "displacement",
+        "mobility",
+        "teaching",
+        "risk",
+        "household assemblies",
+        "shared ministry"
+    ],
+    "canonical_placement": "Acts 18:1-3, 18-26; Romans 16:3-5; 1 Corinthians 16:19; 2 Timothy 4:19.",
+    "key_people": [
+        "Aquila",
+        "Paul",
+        "Apollos",
+        "Claudius"
+    ],
+    "key_places": [
+        "Rome",
+        "Corinth",
+        "Cenchreae",
+        "Ephesus",
+        "Syria"
+    ],
+    "key_events": [
+        "departure from Rome",
+        "shared work and lodging at Corinth",
+        "travel to Ephesus",
+        "instruction of Apollos",
+        "hosting assemblies"
+    ],
+    "interpretive_disputes": [
+        "Prisca's ancestry",
+        "scope of Claudius's action",
+        "chronology of movements",
+        "wealth and household status",
+        "significance of name order",
+        "formal leadership roles",
+        "later site identifications"
+    ],
+    "primary_sources": [
+        "Acts 18:1-3, 18-26",
+        "Romans 16:3-5",
+        "1 Corinthians 16:19",
+        "2 Timothy 4:19"
+    ],
+    "related_entries": [],
+    "keywords": [
+        "Prisca",
+        "Priscilla",
+        "Aquila",
+        "Claudius",
+        "Rome",
+        "Corinth",
+        "Ephesus",
+        "Apollos",
+        "coworker",
+        "teacher",
+        "house assembly"
+    ],
+    "intertextuality": [
+        "Acts uses Priscilla while Pauline greetings use Prisca.",
+        "Acts narrates joint instruction; Romans calls the couple coworkers and names risk.",
+        "Romans and 1 Corinthians locate house assemblies with the couple in different cities."
+    ],
+    "timeline": [
+        "approximately 49 CE: conventional horizon for departure from Rome",
+        "early 50s CE: Corinth and Ephesus episodes in Acts",
+        "mid-50s CE: house assembly in Asia and greeting in Romans",
+        "later first century CE: canonical greeting preserved in 2 Timothy"
+    ],
+    "maps": [],
+    "archaeology": [
+        "No securely identified canonical Prisca house, workshop, inscription, catacomb, church, or tomb"
+    ],
+    "hebrew_words": [],
+    "greek_words": [
+        "Priska and Priskilla: forms of the same Roman name",
+        "synergos: coworker",
+        "akribesteron exethento: explained more accurately",
+        "ekkl\u0113sia kat' oikon: assembly in a house"
+    ],
+    "related_people": [
+        "aquila",
+        "paul"
+    ],
+    "related_places": [
+        "rome",
+        "corinth",
+        "ephesus"
+    ],
+    "related_events": [],
+    "related_objects": [
+        {
+            "id": "aquila",
+            "relationship": "husband-and-coworker",
+            "weight": 10,
+            "notes": "The canonical texts consistently portray them together."
+        },
+        {
+            "id": "acts",
+            "relationship": "primary-narrative-source",
+            "weight": 10,
+            "notes": "Acts 18 supplies displacement, shared craft context, travel, and joint instruction."
+        },
+        {
+            "id": "romans",
+            "relationship": "primary-greeting-source",
+            "weight": 10,
+            "notes": "Romans 16 names coworking, risk, gratitude, and a house assembly."
+        },
+        {
+            "id": "paul",
+            "relationship": "coworker",
+            "weight": 9,
+            "notes": "Romans explicitly calls Prisca and Aquila Paul's coworkers."
+        },
+        {
+            "id": "rome",
+            "relationship": "residence-displacement-and-return-setting",
+            "weight": 9,
+            "notes": "Acts links the couple with departure from Rome; Romans later greets them among Roman recipients."
+        },
+        {
+            "id": "roman-rome-jewish-civic-household-and-imperial-life",
+            "relationship": "evidence-cluster",
+            "weight": 10,
+            "notes": "The cluster bounds Claudian policy, mobility, house assemblies, women coworkers, and status inference."
+        }
+    ],
+    "scripture_references": [
+        {
+            "reference": "Acts 18:1-3",
+            "relationship": "primary",
+            "notes": "Arrival at Corinth with Aquila after Claudius's order and shared household craft context."
+        },
+        {
+            "reference": "Acts 18:18-26",
+            "relationship": "primary",
+            "notes": "Travel to Ephesus and joint instruction of Apollos."
+        },
+        {
+            "reference": "Romans 16:3-5",
+            "relationship": "primary",
+            "notes": "Coworkers, risk, gratitude, and assembly in their house."
+        },
+        {
+            "reference": "1 Corinthians 16:19",
+            "relationship": "primary",
+            "notes": "Prisca and Aquila and the assembly in their house send greetings from Asia."
+        },
+        {
+            "reference": "2 Timothy 4:19",
+            "relationship": "supporting",
+            "notes": "Later canonical greeting to Prisca and Aquila."
+        }
+    ],
+    "cross_references": [
+        "Romans 16:1-16",
+        "1 Corinthians 1:10-17"
+    ],
+    "new_testament_connections": [
+        "Prisca is one of several women named for labor, coworking, ministry, patronage, or apostolic prominence in Romans 16; their distinct descriptions should not be flattened."
+    ],
+    "interpretive_notes": [
+        {
+            "note": "Acts does not separately identify Prisca's ethnicity even though it calls Aquila Jewish and links the couple's move with Claudius's order.",
+            "note_type": "interpretive-caution",
+            "certainty": "textually_explicit",
+            "dispute_status": "historical_uncertainty",
+            "sources": [
+                "acts-prisca",
+                "lampe-prisca"
+            ],
+            "scripture_references": [
+                "Acts 18:1-3"
+            ],
+            "traditions": [
+                "Academic"
+            ],
+            "rationale": "Shared household context does not replace absent individual identification."
+        },
+        {
+            "note": "Acts grammatically presents Prisca and Aquila together as explaining the Way to Apollos more accurately; it does not name either as Apollos's sole teacher.",
+            "note_type": "textual-observation",
+            "certainty": "textually_explicit",
+            "dispute_status": "not_disputed",
+            "sources": [
+                "acts-prisca"
+            ],
+            "scripture_references": [
+                "Acts 18:24-26"
+            ],
+            "traditions": [
+                "Academic",
+                "Christian"
+            ],
+            "rationale": "The plural subject and verb assign joint agency."
+        },
+        {
+            "note": "Prisca's frequent first position and designation as coworker support her prominence, but name order alone cannot establish wealth, social rank, marital authority, or a fixed office.",
+            "note_type": "interpretive-caution",
+            "certainty": "probable",
+            "dispute_status": "major_scholarly_disagreement",
+            "sources": [
+                "romans-prisca",
+                "cohick-prisca",
+                "sybrandi-prisca"
+            ],
+            "scripture_references": [
+                "Romans 16:3-5",
+                "1 Corinthians 16:19"
+            ],
+            "traditions": [
+                "Academic",
+                "Christian"
+            ],
+            "rationale": "Order is meaningful literary evidence but underdetermines a full social biography."
+        },
+        {
+            "note": "Later Roman churches, catacombs, and martyr traditions bearing Prisca or Priscilla names are not secure identifications of the canonical coworker.",
+            "note_type": "later-reception",
+            "certainty": "strong_consensus",
+            "dispute_status": "historical_uncertainty",
+            "sources": [
+                "lampe-prisca"
+            ],
+            "scripture_references": [
+                "Romans 16:3-5"
+            ],
+            "traditions": [
+                "Academic",
+                "Christian"
+            ],
+            "rationale": "Common names and later monuments require independent chronological links."
+        }
+    ],
+    "common_questions": [
+        "Are Prisca and Priscilla the same person?",
+        "Was Priscilla Jewish?",
+        "Did Priscilla teach Apollos?",
+        "Why is Prisca sometimes named first?",
+        "Did Prisca hold a formal office?",
+        "Where did Prisca and Aquila host assemblies?",
+        "Is a Roman church or catacomb hers?"
+    ],
+    "sources": [
+        {
+            "id": "acts-prisca",
+            "title": "Acts 18:1-3, 18-26",
+            "author": "Michael W. Holmes, ed.",
+            "publisher": "Society of Biblical Literature and Logos Bible Software",
+            "year": 2010,
+            "locator": "Acts 18:1-3, 18-26",
+            "url": "https://www.sblgnt.com/download/",
+            "source_type": "scripture",
+            "supports": [
+                "summary",
+                "historical_context",
+                "scripture_references",
+                "interpretive_notes"
+            ],
+            "notes": "Primary narrative source using Priscilla."
+        },
+        {
+            "id": "romans-prisca",
+            "title": "Romans 16:3-5",
+            "author": "Michael W. Holmes, ed.",
+            "publisher": "Society of Biblical Literature and Logos Bible Software",
+            "year": 2010,
+            "locator": "Romans 16:3-5",
+            "url": "https://www.sblgnt.com/download/",
+            "source_type": "scripture",
+            "supports": [
+                "canonical_context",
+                "scripture_references",
+                "interpretive_notes"
+            ],
+            "notes": "Primary Pauline greeting using Prisca."
+        },
+        {
+            "id": "pauline-prisca",
+            "title": "Pauline greetings to Prisca and Aquila",
+            "author": "Michael W. Holmes, ed.",
+            "publisher": "Society of Biblical Literature and Logos Bible Software",
+            "year": 2010,
+            "locator": "1 Corinthians 16:19; 2 Timothy 4:19",
+            "url": "https://www.sblgnt.com/download/",
+            "source_type": "scripture",
+            "supports": [
+                "canonical_context",
+                "scripture_references"
+            ],
+            "notes": "Distinct greeting contexts using Prisca."
+        },
+        {
+            "id": "lampe-prisca",
+            "title": "Christians at Rome in the First Two Centuries",
+            "author": "Peter Lampe",
+            "publisher": "Continuum",
+            "year": 2003,
+            "locator": "Claudius, Prisca and Aquila, Roman groups, topography, and later identifications",
+            "url": "https://www.bloomsbury.com/au/christians-at-rome-in-the-first-two-centuries-9780826481023/",
+            "source_type": "academic-book",
+            "supports": [
+                "historical_context",
+                "later_christian_reception",
+                "interpretive_notes"
+            ],
+            "notes": "Prosopographic and site identifications remain probabilistic."
+        },
+        {
+            "id": "cohick-prisca",
+            "title": "Women in the World of the Earliest Christians",
+            "author": "Lynn H. Cohick",
+            "publisher": "Baker Academic",
+            "year": 2009,
+            "locator": "Prisca, households, work, patronage, and travel",
+            "url": "https://bakeracademic.com/p/women-in-the-world-of-the-earliest-christians-lynn-h-cohick/230758",
+            "source_type": "academic-book",
+            "supports": [
+                "historical_context",
+                "interpretive_notes"
+            ],
+            "notes": "Social comparison does not establish individual wealth or office."
+        },
+        {
+            "id": "sybrandi-prisca",
+            "title": "Women Leaders Lost in Translation? A Study in Romans 16:1-16",
+            "author": "Marieke Sybrandi",
+            "publisher": "The Expository Times",
+            "year": 2024,
+            "locator": "136.3, pages 92-101",
+            "url": "https://doi.org/10.1177/00145246241287148",
+            "source_type": "journal-article",
+            "supports": [
+                "interpretive_notes"
+            ],
+            "notes": "Examines Prisca and other women coworkers in Romans 16."
+        }
+    ],
+    "canonical_story": {
+        "phase": "apostolic-mission-and-church",
+        "role": "Prisca connects displacement and household mobility with women's visible coworking, teaching, and assembly life.",
+        "preceded_by": [
+            "life in Rome before Claudian action, details unknown"
+        ],
+        "followed_by": [
+            "work in Corinth and Ephesus",
+            "later Pauline greetings"
+        ]
     },
-    {
-      "id": "pentecost",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+    "hermeneutical_lens": {
+        "immediate_literary_context": "Read each Prisca or Priscilla notice in its literary unit.",
+        "book_context": "Acts and Pauline greetings emphasize different episodes.",
+        "canonical_context": "Compare without inventing an uninterrupted itinerary or office history.",
+        "covenant_context": "Her household participates in mixed diaspora and gentile mission networks.",
+        "historical_context": "Bound Claudian action, work, mobility, and domestic space by date.",
+        "ancient_near_east_context": "Not applicable to the immediate setting.",
+        "second_temple_jewish_context": "Aquila's Jewish identity and the couple's displacement supply context without separately identifying Prisca's ancestry.",
+        "original_audience": "Do not infer unstated ethnicity, wealth, citizenship, or office.",
+        "genre": "Distinguish Acts narrative and letter greetings.",
+        "intertextual_connections": [
+            "Acts 18",
+            "Romans 16",
+            "1 Corinthians 16",
+            "2 Timothy 4"
+        ],
+        "biblical_theology_themes": [
+            "mission",
+            "coworking",
+            "instruction",
+            "hospitality",
+            "women's agency"
+        ],
+        "messianic_christological_trajectory": "The record supplies historical and canonical context rather than a separate christological conclusion.",
+        "major_interpretive_views": [
+            "ethnicity",
+            "name order",
+            "teaching",
+            "leadership",
+            "later sites"
+        ],
+        "historical_interpretation": "The evidence establishes joint agency and prominence while leaving social biography incomplete.",
+        "authorial_intent": "Each text names Prisca for a local narrative or greeting purpose.",
+        "typological_connections": [],
+        "christological_significance": "Prisca's significance lies in her textually named coworking within Christ-following assemblies.",
+        "modern_application_principles": [
+            "Do not erase women's teaching and coworking.",
+            "Do not force uncertain office labels or marriage hierarchies.",
+            "Do not romanticize displacement."
+        ],
+        "common_misinterpretations": [
+            "Prisca and Priscilla are different people",
+            "the text explicitly calls Prisca Jewish",
+            "she alone taught Apollos",
+            "name order proves a fixed hierarchy",
+            "a later Roman site is certainly hers"
+        ]
     },
-    {
-      "id": "spirit-theme",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
-    }
-  ],
-  "scripture_references": [
-    {
-      "reference": "Acts 9:1-19",
-      "relationship": "supporting",
-      "notes": "apostolic mission"
+    "retrieval_metadata": {
+        "aliases": [
+            "Prisca and Aquila",
+            "Priscilla teacher of Apollos",
+            "Prisca coworker"
+        ],
+        "search_terms": [
+            "Acts 18 Priscilla",
+            "Romans 16 Prisca",
+            "Prisca Aquila Apollos",
+            "women coworkers house assembly"
+        ],
+        "common_questions": [
+            "Did Priscilla teach Apollos?",
+            "Why is Prisca named first?"
+        ],
+        "related_topics": [
+            "women coworkers",
+            "Jewish diaspora",
+            "house assemblies",
+            "Pauline networks"
+        ],
+        "frequently_confused_with": [
+            "later saints and sites named Prisca or Priscilla"
+        ],
+        "semantic_keywords": [
+            "Rome",
+            "Corinth",
+            "Ephesus",
+            "teacher",
+            "coworker"
+        ]
     },
-    {
-      "reference": "Romans 16:1-27",
-      "relationship": "supporting",
-      "notes": "church partners and networks"
-    },
-    {
-      "reference": "1 Corinthians 3:4-9",
-      "relationship": "supporting",
-      "notes": "church life and ministry"
-    },
-    {
-      "reference": "Philippians 1:12-18",
-      "relationship": "supporting",
-      "notes": "gospel partnership"
-    }
-  ],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    {
-      "note": "These figures are best read as part of the church's shared mission rather than isolated heroes.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "Letters often mention them to show partnership, hospitality, and instruction.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    }
-  ],
-  "common_questions": [
-    "Why does this figure matter in the early church?",
-    "How does this figure support the gospel mission?",
-    "What does this figure teach about church life?"
-  ],
-  "sources": [
-    {
-      "title": "Acts 1-28",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "acts-1-28"
-    },
-    {
-      "title": "Romans 16",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "romans-16"
-    },
-    {
-      "title": "1 Corinthians",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "1-corinthians"
-    },
-    {
-      "title": "Philippians",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "philippians"
-    },
-    {
-      "title": "2 Timothy",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "2-timothy"
-    },
-    {
-      "title": "Canonical historical orientation for Priscilla",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [
-        "historical_context"
-      ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
-      "id": "priscilla-historical-orientation"
-    }
-  ],
-  "canonical_story": {
-    "phase": "",
-    "role": "",
-    "preceded_by": [],
-    "followed_by": []
-  },
-  "hermeneutical_lens": {
-    "immediate_literary_context": "",
-    "book_context": "",
-    "canonical_context": "",
-    "covenant_context": "",
-    "historical_context": "",
-    "ancient_near_east_context": "",
-    "second_temple_jewish_context": "",
-    "original_audience": "",
-    "genre": "",
-    "intertextual_connections": [],
-    "biblical_theology_themes": [],
-    "messianic_christological_trajectory": "",
-    "major_interpretive_views": [],
-    "historical_interpretation": "",
-    "authorial_intent": "",
-    "typological_connections": [],
-    "christological_significance": "",
-    "modern_application_principles": [],
-    "common_misinterpretations": []
-  },
-  "retrieval_metadata": {
-    "aliases": [],
-    "search_terms": [],
-    "common_questions": [],
-    "related_topics": [],
-    "frequently_confused_with": [],
-    "semantic_keywords": []
-  },
-  "importance": 68,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "generated_by": [
-    {
-      "type": "ai",
-      "name": "codex",
-      "workflow": "ane-hebraic-context-expansion",
-      "date": "2026-07-16"
-    }
-  ],
-  "edited_by": [],
-  "reviewed_by": [],
-  "last_reviewed": "2026-07-16",
-  "confidence": "medium",
-  "human_review_required": true
+    "importance": 80,
+    "framework_version": "1.0",
+    "object_version": "1",
+    "content_status": "complete",
+    "review_status": "in_review",
+    "generated_by": [
+        {
+            "type": "ai",
+            "name": "codex",
+            "workflow": "ckl-content-expansion",
+            "date": "2026-08-20"
+        }
+    ],
+    "edited_by": [],
+    "reviewed_by": [],
+    "last_reviewed": "2026-08-20",
+    "confidence": "medium",
+    "human_review_required": true
 }

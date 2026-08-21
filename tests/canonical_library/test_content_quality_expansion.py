@@ -25,6 +25,7 @@ EXPANSION_OBJECTS = {
     "roman-corinth-civic-household-and-association-life": 10,
     "roman-ephesus-civic-cultic-and-household-life": 12,
     "roman-philippi-colonial-civic-and-household-life": 12,
+    "roman-rome-jewish-civic-household-and-imperial-life": 17,
 }
 
 
@@ -976,6 +977,168 @@ def test_philippian_women_gifts_and_provenance_resist_speculative_identification
     assert "prevent praetorium from automatically meaning Rome's Praetorian Guard" in provenance[0].passage_relevance
 
 
+def test_roman_claudian_and_jewish_evidence_preserves_scope_and_chronology() -> None:
+    library = CanonicalLibrary.load_default()
+    claudius = _rank(
+        library,
+        "roman-rome-jewish-civic-household-and-imperial-life",
+        "Did Claudius expel every Jew because of Christ and Chrestus?",
+        "Acts 18:1-3",
+        "historical setting",
+    )
+    assert claudius[0].evidence_id == "claudian-action-and-chrestus"
+    assert claudius[0].passage_relationship == "direct"
+    assert "without turning Chrestus into unambiguous proof of Christ" in claudius[0].passage_relevance
+
+    catacombs = _rank(
+        library,
+        "roman-rome-jewish-civic-household-and-imperial-life",
+        "What do later Monteverde Jewish catacomb inscriptions prove?",
+        "Romans 9:1-11:36",
+        "archaeology",
+    )
+    assert [item.evidence_id for item in catacombs[:2]] == [
+        "roman-jewish-communities",
+        "jewish-cemetery-inscriptions-later-control",
+    ]
+    assert catacombs[0].chronological_relation == "near-contemporary"
+    assert catacombs[1].chronological_relation == "later-comparative"
+
+
+def test_roman_people_and_group_evidence_resists_overconfident_biography() -> None:
+    library = CanonicalLibrary.load_default()
+    groupings = _rank(
+        library,
+        "roman-rome-jewish-civic-household-and-imperial-life",
+        "What do those of Aristobulus and Narcissus and the saints with Philologus reveal about multiple groupings?",
+        "Romans 16:3-16",
+        "ancient text",
+    )
+    assert groupings[0].evidence_id == "romans-16-multiple-gatherings"
+    assert "without making every cluster a separate house church" in groupings[0].passage_relevance
+
+    phoebe = _rank(
+        library,
+        "roman-rome-jewish-civic-household-and-imperial-life",
+        "What does the commendation call Phoebe diakonos prostatis sister and what probable carrier role follows?",
+        "Romans 16:1-2",
+        "literary convention",
+    )
+    assert phoebe[0].evidence_id == "phoebe-commendation-and-travel"
+    assert "without treating a likely delivery role" in phoebe[0].passage_relevance
+
+    coworkers = _rank(
+        library,
+        "roman-rome-jewish-civic-household-and-imperial-life",
+        "How did Prisca and Aquila travel from Corinth to Ephesus and teach Apollos?",
+        "Acts 18:18-26",
+        "ancient text",
+    )
+    assert coworkers[0].evidence_id == "prisca-aquila-mobility"
+    assert "from becoming a complete biography" in coworkers[0].passage_relevance
+
+
+def test_roman_authority_practice_and_worldview_evidence_remains_non_prescriptive() -> None:
+    library = CanonicalLibrary.load_default()
+    authority = _rank(
+        library,
+        "roman-rome-jewish-civic-household-and-imperial-life",
+        "Does Romans 13 require obedience to every authoritarian government?",
+        "Romans 12:14-13:10",
+        "institution",
+    )
+    assert authority[0].evidence_id == "authorities-taxes-and-limited-inference"
+    assert "prevent a blanket endorsement" in authority[0].passage_relevance
+
+    practices = _rank(
+        library,
+        "roman-rome-jewish-civic-household-and-imperial-life",
+        "Were the weak and strong simply Jews and gentiles?",
+        "Romans 14:1-23",
+        "cultural practice",
+    )
+    assert practices[0].evidence_id == "weak-strong-food-and-days"
+    assert "without equating weak with Jews" in practices[0].passage_relevance
+
+    imperial = _rank(
+        library,
+        "roman-rome-jewish-civic-household-and-imperial-life",
+        "Does imperial cult make every gospel and Lord title an anti-Caesar polemic?",
+        "Romans 1:1-17",
+        "worldview",
+    )
+    assert imperial[0].evidence_id == "imperial-divine-honors-and-allegiance"
+    assert imperial[0].evidence_type == "worldview-concept"
+    assert "without decoding every title as a Caesar parody" in imperial[0].passage_relevance
+
+
+def test_roman_custody_nero_and_apostolic_memory_stay_in_separate_layers() -> None:
+    library = CanonicalLibrary.load_default()
+    custody = _rank(
+        library,
+        "roman-rome-jewish-civic-household-and-imperial-life",
+        "Can archaeology identify Paul's rented house or Mamertine prison?",
+        "Acts 28:16-31",
+        "archaeology",
+        "institution",
+    )
+    assert custody[0].evidence_id == "acts-28-custody-and-rented-lodging"
+    assert "blocks identification of the Mamertine Prison" in custody[0].passage_relevance
+
+    nero = _rank(
+        library,
+        "roman-rome-jewish-civic-household-and-imperial-life",
+        "Was Nero's persecution after the fire already the setting of Romans?",
+        "Romans 8:17-39",
+        "ancient text",
+    )
+    assert nero[0].evidence_id == "neronian-violence-after-romans"
+    assert nero[0].chronological_relation == "later-comparative"
+    assert "should not be treated as the original crisis" in nero[0].passage_relevance
+
+    memory = _rank(
+        library,
+        "roman-rome-jewish-civic-household-and-imperial-life",
+        "Does 1 Clement identify Peter and Paul's tombs and exact deaths?",
+        "Acts 28:30-31",
+        "ancient text",
+    )
+    assert memory[0].evidence_id == "peter-paul-memory-and-sites"
+    assert memory[0].chronological_relation == "later-comparative"
+
+
+def test_roman_legacy_place_and_coworker_records_are_passage_specific() -> None:
+    library = CanonicalLibrary.load_default()
+    rome = library.objects_by_id["rome"]
+    aquila = library.objects_by_id["aquila"]
+    priscilla = library.objects_by_id["priscilla"]
+
+    assert rome.scripture_references[0].reference == "Romans 1:7-15"
+    assert rome.context_applicability["ancient_near_east"] is False
+    assert "roman-rome-jewish-civic-household-and-imperial-life" in {
+        relationship.id for relationship in rome.related_objects
+    }
+    expected_coworker_references = [
+        "Acts 18:1-3",
+        "Acts 18:18-26",
+        "Romans 16:3-5",
+        "1 Corinthians 16:19",
+        "2 Timothy 4:19",
+    ]
+    assert [reference.reference for reference in aquila.scripture_references] == expected_coworker_references
+    assert [reference.reference for reference in priscilla.scripture_references] == expected_coworker_references
+    assert all(
+        obj.context_applicability["ancient_near_east"] is False
+        and obj.context_applicability["second_temple"] is True
+        for obj in (rome, aquila, priscilla)
+    )
+    assert all(
+        "Canonical historical orientation" not in source.title
+        for obj in (rome, aquila, priscilla)
+        for source in obj.sources
+    )
+
+
 def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
     library = CanonicalLibrary.load_default()
     flood = library.objects_by_id["the-flood"]
@@ -1195,14 +1358,14 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
 def test_corpus_evidence_quality_metrics_have_no_structural_failures() -> None:
     library = CanonicalLibrary.load_default()
     report = audit_evidence(library.objects_by_id.values())
-    assert report["evidence_count"] == 114
-    assert report["evidence_with_primary_sources_count"] == 113
-    assert report["evidence_with_academic_secondary_sources_count"] == 109
-    assert report["evidence_with_chronology_count"] == 114
-    assert report["evidence_with_passage_relevance_count"] == 114
-    assert report["disputed_evidence_count"] == 103
-    assert report["worldview_evidence_count"] == 8
-    assert report["archaeology_linked_evidence_count"] == 20
+    assert report["evidence_count"] == 131
+    assert report["evidence_with_primary_sources_count"] == 130
+    assert report["evidence_with_academic_secondary_sources_count"] == 125
+    assert report["evidence_with_chronology_count"] == 131
+    assert report["evidence_with_passage_relevance_count"] == 131
+    assert report["disputed_evidence_count"] == 120
+    assert report["worldview_evidence_count"] == 9
+    assert report["archaeology_linked_evidence_count"] == 23
     assert report["internal_source_only_evidence_count"] == 0
     assert report["missing_source_locator_count"] == 0
     assert report["missing_confidence_rationale_count"] == 0

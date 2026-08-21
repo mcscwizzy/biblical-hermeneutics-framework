@@ -1013,7 +1013,21 @@ and the inability of `praetorium` or Caesar's household to settle the letter's
 provenance. These 114 items are chronology-controlled, passage-linked, and
 source-resolvable, but AI-authored additions remain drafts until human review.
 
-The next focused Pauline-city expansion should prioritize Rome.
+The Roman Rome pass adds passage-bounded evidence for Puteoli and the Appian
+approach; Claudius's disputed action and the ambiguous `Chrestus` notice;
+first-century Jewish residence, citizenship, synagogues, Sabbath gathering,
+and Jerusalem ties; later Jewish catacomb inscriptions with explicit chronology
+controls; multiple Romans 16 groupings; Prisca and Aquila's mobility; Phoebe's
+commendation and probable letter travel; the limits of social inference from
+names; unequal urban dwellings and unidentified meeting places; hospitality,
+benefaction, slavery, manumission, authorities, taxes, food, and days; bounded
+imperial-divine-honor comparison; Acts 28 custody and rented lodging; the later
+Neronian violence; and distinct layers of Peter-and-Paul memory. These 131
+items are chronology-controlled, passage-linked, and source-resolvable, but
+AI-authored additions remain drafts until human review.
+
+The next focused Pauline-city expansion should deepen Thessalonica's current
+three-item seed into a full city-specific evidence cluster.
 Cultural practices, historical institutions, literary conventions,
 geography/environment, and worldview concepts already have controlled types;
 they need source-backed, human-reviewed depth rather than generated volume.
