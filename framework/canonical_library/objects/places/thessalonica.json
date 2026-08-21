@@ -5,24 +5,27 @@
   "aliases": [
     "where is thessalonica",
     "tell me about thessalonica",
-    "why is thessalonica important"
+    "why is thessalonica important",
+    "Thessalonike",
+    "Salonika",
+    "Thessaloniki"
   ],
-  "summary": "Thessalonica was a major Roman Macedonian city where Paul, Silas, and Timothy established a community addressed by First and Second Thessalonians and narrated in Acts 17.",
-  "historical_context": "Located on the Thermaic Gulf and Via Egnatia, Thessalonica was a free city and provincial center with local civic institutions. First-century inscriptions attest politarchs, the title used in Acts 17, while later monuments must be dated separately.",
+  "summary": "Thessalonica was a free city, provincial center, road junction, and harbor on the Thermaic Gulf in Roman Macedonia. Acts 17 narrates a mission involving Paul and Silas, synagogue hearers, Jason, political accusations, and politarchs; First Thessalonians directly addresses the resulting assembly, while the historical placement of Second Thessalonians depends partly on its disputed authorship and date.",
+  "historical_context": "The city stood on the Via Egnatia at the head of the Thermaic Gulf and retained free-city institutions within Roman provincial rule. Pliny names its status; inscriptions attest politarchs; coins, sanctuaries, votives, associations, and later urban and funerary remains document a socially unequal and religiously plural city. These sources do not identify the assembly's building, full demographics, opponents, or every civic procedure narrated in Acts.",
   "ancient_near_east_context": "",
-  "hebraic_worldview": "",
-  "second_temple_context": "Paul begins in the synagogue, reasons from the Scriptures, and forms a mixed community within a first-century Jewish and Greco-Roman setting.",
-  "canonical_context": "Acts 17 narrates the mission and opposition in the city; First and Second Thessalonians address the resulting community's faith, suffering, communal life, and eschatological hope.",
+  "hebraic_worldview": "The Thessalonian writings combine living-God, resurrection, day-of-the-Lord, trumpet, prophetic, and apocalyptic language with an address to gentiles turning from idols. The city's Roman setting does not cancel the Jewish scriptural world of the mission and letters.",
+  "second_temple_context": "Acts places the mission in a synagogue and names Jewish, God-fearing Greek, and prominent female hearers. First Thessalonians suggests substantial gentile participation, but neither source gives a demographic census or warrants collective Jewish blame for the assembly's affliction.",
+  "canonical_context": "Acts 17 and First Thessalonians are distinct witnesses that overlap in people, city, mission, conflict, and movement but should not be forced into an exhaustive harmonized chronology. Second Thessalonians belongs to the canonical comparison while its authorship, sequence, and early Thessalonian setting remain disputed.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
     "ancient_near_east": false,
-    "hebraic_worldview": false,
+    "hebraic_worldview": true,
     "second_temple": true,
     "canonical": true,
     "later_christian_reception": false
   },
-  "literary_context": "Acts 17:1-9 compresses the founding conflict into a mission narrative, whereas the Thessalonian letters address the community directly. Narrative and epistolary perspectives should be compared without forcing every detail into one chronology.",
+  "literary_context": "Acts 17:1-10 is a later mission narrative, First Thessalonians is early occasional correspondence, and Second Thessalonians has disputed authorship and chronology. Comparison should preserve genre, rhetoric, and source distance rather than treating Acts as a transcript of the letters or local artifacts as proof of every narrated event.",
   "covenantal_significance": "The Thessalonian mission shows Israel's Scriptures being proclaimed in a Macedonian city and a predominantly Gentile assembly learning to serve the living God and await Jesus.",
   "authorship_positions": [],
   "date_ranges": [],
@@ -41,11 +44,32 @@
   "related_entries": [],
   "keywords": [],
   "intertextuality": [],
-  "timeline": [],
-  "maps": [],
-  "archaeology": [],
+  "timeline": [
+    "Second century BCE: construction and development of the Via Egnatia strengthens Thessalonica's east-west connections",
+    "Late first century BCE: free-city privileges and early imperial civic coinage shape the Augustan setting",
+    "Approximately 49-52 CE: conventional horizon for the mission and First Thessalonians",
+    "Before the end of the first century CE: IG X,2 1 32 attests politarchs and civic-cult offices",
+    "Second century CE: the British Museum politarch block supplies later local attestation",
+    "Second through fourth centuries CE: surviving urban-house and funerary material supplies explicitly later comparisons"
+  ],
+  "maps": [
+    "Via Egnatia across Roman Macedonia",
+    "Thessalonica at the head of the Thermaic Gulf"
+  ],
+  "archaeology": [
+    "Thessalonian civic inscriptions including IG X,2 1 32",
+    "Julio-Claudian civic coin types RPC I 1555 and 1566",
+    "The Thessalonian sanctuary of Egyptian gods and its votives",
+    "Later Roman houses, honorific bases, cemeteries, and epitaphs retained as later comparisons"
+  ],
   "hebrew_words": [],
-  "greek_words": [],
+  "greek_words": [
+    "πολιτάρχης (politarchēs): local civic magistrate attested epigraphically",
+    "παρουσία (parousia): presence or arrival, including the Lord's coming",
+    "ἀπάντησις (apantēsis): meeting or reception without a lexically fixed onward destination",
+    "θλῖψις (thlipsis): affliction or distress",
+    "ἀσφάλεια (asphaleia): security or safety"
+  ],
   "related_people": [],
   "related_places": [],
   "related_events": [],
@@ -78,7 +102,25 @@
       "id": "thessalonian-civic-and-funerary-context",
       "relationship": "evidence-cluster",
       "weight": 10,
-      "notes": "Chronology-controlled civic, funerary, and interpretive evidence."
+      "notes": "Chronology-controlled geographic, civic, Jewish-gentile, cultic, household, labor, conflict, funerary, and interpretive evidence."
+    },
+    {
+      "id": "2-thessalonians",
+      "relationship": "disputed-recipient-letter",
+      "weight": 9,
+      "notes": "The canonical destination is Thessalonica, while authorship and date affect historical use."
+    },
+    {
+      "id": "synagogue",
+      "relationship": "narrated-mission-setting",
+      "weight": 8,
+      "notes": "Acts names a synagogue, but no first-century building has been securely identified."
+    },
+    {
+      "id": "household",
+      "relationship": "jason-hospitality-context",
+      "weight": 7,
+      "notes": "Jason's house is narrated without establishing the assembly's sole venue."
     }
   ],
   "scripture_references": [
@@ -101,6 +143,21 @@
       "reference": "2 Thessalonians 1:1-12",
       "relationship": "supporting",
       "notes": "The addressed community's endurance under affliction."
+    },
+    {
+      "reference": "1 Thessalonians 4:9-12",
+      "relationship": "supporting",
+      "notes": "Quiet conduct, manual work, outsiders, and economic need."
+    },
+    {
+      "reference": "1 Thessalonians 5:1-11",
+      "relationship": "supporting",
+      "notes": "Day-of-the-Lord watchfulness and disputed peace-and-security background."
+    },
+    {
+      "reference": "2 Thessalonians 3:6-15",
+      "relationship": "supporting",
+      "notes": "Work and discipline in a letter whose historical date remains disputed."
     }
   ],
   "cross_references": [],
@@ -191,6 +248,66 @@
       ],
       "notes": "Explicitly later evidence used only for diachronic local context.",
       "id": "amth-thessalonian-funerary-context"
+    },
+    {
+      "id": "pliny-thessalonica-free-city",
+      "title": "Natural History",
+      "author": "Pliny the Elder",
+      "publisher": "Perseus Digital Library",
+      "year": 77,
+      "locator": "4.17: Macedonia and Thessalonica as a free city",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.02.0137%3Abook%3D4%3Achapter%3D17",
+      "source_type": "ancient-primary-source",
+      "supports": ["summary", "historical_context", "timeline"],
+      "notes": "First-century geographic witness later than the conventional mission date."
+    },
+    {
+      "id": "cultural-egnatia-thessalonica",
+      "title": "The Via Egnatia through the ages",
+      "author": "Hellenic Ministry of Culture",
+      "publisher": "Cultural Egnatia",
+      "year": null,
+      "locator": "Roman road history, course, and milestones",
+      "url": "https://culturalegnatia.culture.gov.gr/en/the-via-egnatia-through-the-ages/",
+      "source_type": "reference-work",
+      "supports": ["historical_context", "timeline", "maps"],
+      "notes": "Official route orientation; it does not fix Paul's travel schedule."
+    },
+    {
+      "id": "ocd-thessalonica-place",
+      "title": "Thessalonica",
+      "author": "Nicholas Geoffrey Lempriere Hammond",
+      "publisher": "Oxford Classical Dictionary",
+      "year": 2015,
+      "locator": "Foundation, provincial capital, free-city status, Via Egnatia, and prosperity",
+      "url": "https://academic.oup.com/edited-volume/61673/chapter-abstract/548205401",
+      "source_type": "reference-work",
+      "supports": ["summary", "historical_context", "timeline"],
+      "notes": "Concise historical synthesis."
+    },
+    {
+      "id": "amth-thessalonica-metropolis",
+      "title": "Thessaloniki, Metropolis of Macedonia: Museum Highlights",
+      "author": "Archaeological Museum of Thessaloniki",
+      "publisher": "Archaeological Museum of Thessaloniki",
+      "year": null,
+      "locator": "Augustus, Egyptian sanctuary, houses, honorific bases, and later graves",
+      "url": "https://www.amth.gr/en/exhibitions/highlights",
+      "source_type": "museum-collection",
+      "supports": ["historical_context", "archaeology", "timeline"],
+      "notes": "Official museum synthesis with artifacts from distinct periods."
+    },
+    {
+      "id": "rpc-thessalonica-place-1555",
+      "title": "RPC I 1555: Thessalonica, Augustus and Divus Julius",
+      "author": "Roman Provincial Coinage Online",
+      "publisher": "Ashmolean Museum and partners",
+      "year": -20,
+      "locator": "RPC I 1555; local coin type and specimens",
+      "url": "https://rpc.ashmus.ox.ac.uk/coins/1/1555",
+      "source_type": "museum-collection",
+      "supports": ["historical_context", "archaeology", "timeline"],
+      "notes": "Issue date is approximate; coin imagery does not establish individual belief."
     }
   ],
   "canonical_story": {
@@ -242,10 +359,11 @@
     }
   ],
   "edited_by": [
-    "codex:ckl-content-quality-worldview-evidence-pass:2026-08-14"
+    "codex:ckl-content-quality-worldview-evidence-pass:2026-08-14",
+    "codex:thessalonica-city-expansion:2026-08-20"
   ],
   "reviewed_by": [],
-  "last_reviewed": "2026-07-16",
+  "last_reviewed": "2026-08-20",
   "confidence": "medium",
   "human_review_required": true
 }

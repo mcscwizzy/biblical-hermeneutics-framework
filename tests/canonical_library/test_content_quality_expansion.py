@@ -7,7 +7,7 @@ EXPANSION_OBJECTS = {
     "mesopotamian-creation-and-flood-comparisons": 3,
     "ancient-divine-assembly-imagery": 4,
     "egyptian-forced-labor-and-brickmaking": 2,
-    "thessalonian-civic-and-funerary-context": 3,
+    "thessalonian-civic-and-funerary-context": 16,
     "egyptian-kingship-and-divine-order": 4,
     "exodus-wilderness-routes-and-water": 3,
     "late-bronze-iron-transition-and-highland-settlement": 4,
@@ -122,13 +122,52 @@ def test_thessalonian_context_prefers_contemporary_proposal_over_later_funerary_
         "greco roman context",
         "cultural practice",
     )
-    assert [item.evidence_id for item in ranked] == [
-        "parousia-apantesis-civic-arrival-proposal",
-        "later-thessalonian-funerary-comparison",
-    ]
-    assert ranked[0].chronological_relation == "contemporary"
-    assert ranked[1].chronological_relation == "later-comparative"
-    assert ranked[0].retrieval_score > ranked[1].retrieval_score
+    ranked_by_id = {item.evidence_id: item for item in ranked}
+    arrival = ranked_by_id["parousia-apantesis-civic-arrival-proposal"]
+    funerary = ranked_by_id["later-thessalonian-funerary-comparison"]
+    assert arrival.chronological_relation == "contemporary"
+    assert funerary.chronological_relation == "later-comparative"
+    assert arrival.retrieval_score > funerary.retrieval_score
+
+
+def test_thessalonian_city_expansion_covers_geography_civic_process_and_audience_limits() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id["thessalonian-civic-and-funerary-context"]
+    items = {item.id: item for item in cluster.evidence_items}
+    assert {
+        "via-egnatia-port-and-free-city",
+        "thessalonian-politarch-inscription",
+        "jason-house-civic-security",
+        "acts-synagogue-and-audience-limits",
+        "prominent-women-status-limits",
+    } <= set(items)
+    assert items["via-egnatia-port-and-free-city"].evidence_type == "geography-environment"
+    assert items["jason-house-civic-security"].confidence == "medium"
+    assert "proportions" in items["acts-synagogue-and-audience-limits"].confidence_rationale
+    assert "unproven" in items["prominent-women-status-limits"].confidence_rationale
+
+
+def test_thessalonian_cult_and_imperial_evidence_remains_plural_and_nonexclusive() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id["thessalonian-civic-and-funerary-context"]
+    items = {item.id: item for item in cluster.evidence_items}
+    assert items["turning-from-idols-living-god"].evidence_type == "worldview-concept"
+    assert items["julio-claudian-imperial-honors"].evidence_type == "worldview-concept"
+    assert items["julio-claudian-imperial-honors"].dispute_status == "major_scholarly_disagreement"
+    assert "sole cause" in items["julio-claudian-imperial-honors"].scholarly_interpretation
+    assert "No single cult" in items["turning-from-idols-living-god"].notes
+
+
+def test_thessalonian_household_labor_affliction_and_peace_claims_are_bounded() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id["thessalonian-civic-and-funerary-context"]
+    items = {item.id: item for item in cluster.evidence_items}
+    assert "No excavated" in items["household-venue-uncertainty"].notes
+    assert "worker shaming" in items["missionary-manual-labor"].notes
+    assert items["work-instruction-and-patronage-proposal"].confidence == "low"
+    assert "collective Jewish blame" in items["thessalonian-affliction-opponents-uncertain"].passage_relevance
+    assert items["peace-security-competing-backgrounds"].confidence == "low"
+    assert "headline matching" in items["peace-security-competing-backgrounds"].notes
 
 
 def test_exodus_brickmaking_cluster_is_discoverable_by_passage() -> None:
@@ -1358,14 +1397,14 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
 def test_corpus_evidence_quality_metrics_have_no_structural_failures() -> None:
     library = CanonicalLibrary.load_default()
     report = audit_evidence(library.objects_by_id.values())
-    assert report["evidence_count"] == 131
-    assert report["evidence_with_primary_sources_count"] == 130
-    assert report["evidence_with_academic_secondary_sources_count"] == 125
-    assert report["evidence_with_chronology_count"] == 131
-    assert report["evidence_with_passage_relevance_count"] == 131
-    assert report["disputed_evidence_count"] == 120
-    assert report["worldview_evidence_count"] == 9
-    assert report["archaeology_linked_evidence_count"] == 23
+    assert report["evidence_count"] == 144
+    assert report["evidence_with_primary_sources_count"] == 142
+    assert report["evidence_with_academic_secondary_sources_count"] == 137
+    assert report["evidence_with_chronology_count"] == 144
+    assert report["evidence_with_passage_relevance_count"] == 144
+    assert report["disputed_evidence_count"] == 133
+    assert report["worldview_evidence_count"] == 11
+    assert report["archaeology_linked_evidence_count"] == 24
     assert report["internal_source_only_evidence_count"] == 0
     assert report["missing_source_locator_count"] == 0
     assert report["missing_confidence_rationale_count"] == 0

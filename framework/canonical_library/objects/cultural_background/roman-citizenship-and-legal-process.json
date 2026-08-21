@@ -18,6 +18,12 @@
   "related_places": ["philippi", "rome"],
   "related_events": ["paul-before-agrippa"],
   "related_objects": [
+    {
+      "id": "thessalonian-civic-and-funerary-context",
+      "relationship": "local-civic-process-context",
+      "weight": 8,
+      "notes": "Acts 17 presents politarchs, accusations, and security rather than a citizenship appeal or provincial trial."
+    },
     {"id": "roman-citizenship", "relationship": "institutional-overview", "weight": 9, "notes": "Broader citizenship object."},
     {"id": "acts", "relationship": "primary-text", "weight": 10, "notes": "Narrative evidence for Paul's citizenship."},
     {"id": "roman-philippi-colonial-civic-and-household-life", "relationship": "local-case-study", "weight": 10, "notes": "The Philippi cluster supplies colony, magistrate, lictor, public-punishment, custody, and citizenship controls for Acts 16."},

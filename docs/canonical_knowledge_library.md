@@ -1026,8 +1026,22 @@ Neronian violence; and distinct layers of Peter-and-Paul memory. These 131
 items are chronology-controlled, passage-linked, and source-resolvable, but
 AI-authored additions remain drafts until human review.
 
-The next focused Pauline-city expansion should deepen Thessalonica's current
-three-item seed into a full city-specific evidence cluster.
+The Roman Thessalonica pass deepens the former three-item seed with evidence
+for the Via Egnatia, Thermaic Gulf, free-city status, politarchs, Jason's
+hospitality and civic security, synagogue and audience limits, prominent women,
+conversion from idols, the city's plural cult landscape, differentiated
+Julio-Claudian divine honors, associations, unidentified household meeting
+places, missionary and community labor, disputed patronage explanations,
+affliction with unidentified opponents, and competing prophetic and Roman
+backgrounds for "peace and security." Existing funerary and civic-arrival
+comparisons retain explicit chronology and dispute controls. These 144 items
+are chronology-controlled, passage-linked, and source-resolvable, but
+AI-authored additions remain drafts until human review.
+
+The next focused expansion should clean the generic Macedonia place record and
+build a regional evidence cluster connecting the Via Egnatia, provincial
+administration, Philippi, Thessalonica, Berea, and the Acts 16-20 travel
+corridor without flattening the cities into one social setting.
 Cultural practices, historical institutions, literary conventions,
 geography/environment, and worldview concepts already have controlled types;
 they need source-backed, human-reviewed depth rather than generated volume.
