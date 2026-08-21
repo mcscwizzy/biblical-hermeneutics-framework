@@ -3,9 +3,39 @@
 from __future__ import annotations
 
 from .context_builder import CanonicalContextBuilder, build_canonical_prompt_context
+from .narration import (
+    CanonicalNarrator,
+    ContextNarrator,
+    NarratedSection,
+    NarratedSentence,
+    NarrationLimits,
+    NarrationResult,
+    NarrativeRole,
+    narrate_context,
+)
 from .database_builder import BuildDatabaseResult, build_database, database_info, verify_database
+from .database_migrations import migrate_database
 from .database_schema import CKL_DATABASE_SCHEMA_VERSION, CKL_RETRIEVAL_INDEX_VERSION, DEFAULT_CKL_DATABASE_PATH
 from .evidence import RetrievedClaimEvidence, hydrate_claim_sources, rank_claims
+from .evidence_audit import EvidenceAuditIssue, audit_evidence
+from .evidence_graph import EvidenceGraphEdge, evidence_graph_edges
+from .evidence_retrieval import RetrievedEvidenceItem, rank_evidence_items
+from .evidence_models import (
+    EVIDENCE_ASSERTION_TYPE_VALUES,
+    EVIDENCE_CONFIDENCE_VALUES,
+    EVIDENCE_DISPUTE_STATUS_VALUES,
+    EVIDENCE_TYPE_VALUES,
+    TEMPORAL_RELATION_VALUES,
+    CanonicalEvidenceItem,
+    CanonicalEvidencePassageLink,
+    CanonicalEvidenceRelationship,
+    CanonicalExternalEvidenceReference,
+    CanonicalTemporalScope,
+    EvidenceValidationError,
+    validate_evidence_item,
+    validate_evidence_items,
+    validate_temporal_scope,
+)
 from .query_analysis import CKLQuery
 from .graph import (
     CKLGraphAudit,
@@ -186,11 +216,32 @@ __all__ = [
     "BuildDatabaseResult",
     "CKLQuery",
     "RetrievedClaimEvidence",
+    "RetrievedEvidenceItem",
     "rank_claims",
+    "rank_evidence_items",
     "hydrate_claim_sources",
+    "EvidenceAuditIssue",
+    "audit_evidence",
+    "EvidenceGraphEdge",
+    "evidence_graph_edges",
     "build_database",
     "verify_database",
     "database_info",
+    "migrate_database",
+    "CanonicalTemporalScope",
+    "CanonicalEvidenceItem",
+    "CanonicalEvidencePassageLink",
+    "CanonicalEvidenceRelationship",
+    "CanonicalExternalEvidenceReference",
+    "EvidenceValidationError",
+    "EVIDENCE_TYPE_VALUES",
+    "EVIDENCE_ASSERTION_TYPE_VALUES",
+    "EVIDENCE_CONFIDENCE_VALUES",
+    "EVIDENCE_DISPUTE_STATUS_VALUES",
+    "TEMPORAL_RELATION_VALUES",
+    "validate_temporal_scope",
+    "validate_evidence_item",
+    "validate_evidence_items",
     "CKLGraphAudit",
     "GraphEdge",
     "ReverseRelationshipSuggestion",
@@ -201,6 +252,14 @@ __all__ = [
     "with_bidirectional_relationships",
     "CanonicalContextBuilder",
     "build_canonical_prompt_context",
+    "CanonicalNarrator",
+    "ContextNarrator",
+    "NarratedSection",
+    "NarratedSentence",
+    "NarrationLimits",
+    "NarrationResult",
+    "NarrativeRole",
+    "narrate_context",
     "CanonicalObject",
     "CanonicalValidationError",
     "CKLIndex",

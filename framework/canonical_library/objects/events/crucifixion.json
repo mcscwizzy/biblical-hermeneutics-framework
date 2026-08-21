@@ -9,18 +9,18 @@
   ],
   "summary": "The Roman execution of Jesus that Christians interpret as the climactic atoning death of the Messiah.",
   "historical_context": "The crucifixion occurs in first-century Judea under Roman authority and amid Jewish expectations for redemption and deliverance.",
-  "ancient_near_east_context": "The event sits in the broader Roman imperial world but is interpreted through Israel\u2019s sacrificial, covenantal, and prophetic categories.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "ancient_near_east_context": "The execution belongs specifically to Roman imperial punishment while the Gospels interpret it through Israel's scriptural and covenantal categories.",
+  "hebraic_worldview": "The narratives connect death, shame, kingship, lament, covenant, burial duty, and scriptural interpretation without making Roman execution a Jewish institution.",
+  "second_temple_context": "Crucifixion displayed Roman coercive power in Judea. The Yehohanan remains show that at least one crucified person later received Jerusalem tomb and ossuary burial, but no single find defines every execution.",
+  "canonical_context": "Each Gospel narrates Jesus's crucifixion, and later New Testament writings interpret the cross through multiple complementary images including sacrifice, reconciliation, victory, obedience, and example.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
-    "ancient_near_east": true,
+    "ancient_near_east": false,
     "hebraic_worldview": true,
     "second_temple": true,
     "canonical": true,
-    "later_christian_reception": true
+    "later_christian_reception": false
   },
   "literary_context": "The Gospels present the crucifixion with both historical detail and theological meaning, drawing on Psalmic lament and prophetic suffering imagery.",
   "covenantal_significance": "The crucifixion is the covenantal turning point where judgment, sacrifice, and mercy meet in Christ.",
@@ -79,6 +79,18 @@
       "relationship": "atonement-context",
       "weight": 8,
       "notes": "sacrifice and holy presence"
+    },
+    {
+      "id": "burial-of-jesus",
+      "relationship": "following-event",
+      "weight": 10,
+      "notes": "The Gospel narratives proceed from death to burial."
+    },
+    {
+      "id": "judean-pilgrimage-taxation-and-roman-power",
+      "relationship": "evidence-cluster",
+      "weight": 10,
+      "notes": "The cluster supplies bounded Roman and archaeological context."
     }
   ],
   "scripture_references": [

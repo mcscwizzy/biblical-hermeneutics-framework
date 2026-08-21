@@ -7,9 +7,9 @@
     "tell me about david and goliath",
     "why is david and goliath important"
   ],
-  "summary": "David and Goliath is a land-taking or kingdom-transition event that marks settlement, victory, or leadership change.",
-  "historical_context": "Historically, David and Goliath is located by its canonical setting; this entry connects that setting with joshua-son-of-nun, judges-cycle, david and related CKL objects for contextual retrieval.",
-  "ancient_near_east_context": "David and Goliath unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage.",
+  "summary": "First Samuel 17 narrates David's defeat of Goliath during an Israelite-Philistine standoff, emphasizing contrasting weapons, public speech, contested kingship, and confidence in YHWH rather than military stature.",
+  "historical_context": "The narrative is set during Saul's reign amid Israelite-Philistine conflict in the Valley of Elah. Archaeological evidence from Tell es-Safi/Gath supplies regional Iron Age material context but does not identify either combatant.",
+  "ancient_near_east_context": "Single combat, champion rhetoric, armor inventories, captured weapons, and royal rewards are recognizable features of ancient warfare and heroic narrative. The bronze and iron vocabulary requires chronological and archaeological care.",
   "hebraic_worldview": "",
   "second_temple_context": "",
   "canonical_context": "",
@@ -17,18 +17,18 @@
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
-    "hebraic_worldview": true,
-    "second_temple": true,
-    "canonical": true,
-    "later_christian_reception": true
+    "hebraic_worldview": false,
+    "second_temple": false,
+    "canonical": false,
+    "later_christian_reception": false
   },
-  "literary_context": "Joshua, Judges, and Samuel use David and Goliath to show that land, leadership, and obedience belong together.",
-  "covenantal_significance": "David and Goliath ties possession of the land to covenant faithfulness rather than raw force.",
+  "literary_context": "The scene follows David's anointing in 1 Samuel 16 and heightens the contrast between David and Saul. Repeated seeing, hearing, defiance, and deliverance language makes the encounter part of the book's account of emerging kingship.",
+  "covenantal_significance": "David frames the conflict as defiance of the armies of the living God and attributes deliverance to YHWH; the narrative does not offer a generic promise that faithful readers will defeat every personal obstacle.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
   "historical_setting": "",
-  "canonical_role": "David and Goliath serves as a canonical event anchor, connecting its key passages, people, places, and theological themes within the biblical storyline.",
+  "canonical_role": "The encounter publicly advances David within First Samuel's transition from Saul's failed kingship toward David's rise while foregrounding YHWH's deliverance.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -51,143 +51,154 @@
   "related_events": [],
   "related_objects": [
     {
-      "id": "joshua-son-of-nun",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "1-samuel",
+      "relationship": "book-context",
+      "weight": 10,
+      "notes": "The encounter belongs to the book's transition from Saul toward David."
     },
     {
-      "id": "judges-cycle",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "saul",
+      "relationship": "contrasted-king",
+      "weight": 9,
+      "notes": "Saul's stature, armor, and inaction are narratively contrasted with David."
     },
     {
       "id": "david",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "relationship": "principal-person",
+      "weight": 10,
+      "notes": "The narrative develops David's public role after his anointing."
     },
     {
-      "id": "jerusalem",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "david-anointed",
+      "relationship": "preceding-narrative-context",
+      "weight": 9,
+      "notes": "David's anointing in 1 Samuel 16 immediately precedes the encounter."
     },
     {
       "id": "kingdom-theme",
-      "relationship": "narrative-context",
+      "relationship": "kingship-transition-context",
       "weight": 8,
-      "notes": "curated canonical context"
+      "notes": "The episode advances Samuel's contrast between Saul and David."
+    },
+    {
+      "id": "gath-1",
+      "relationship": "philistine-place-context",
+      "weight": 9,
+      "notes": "Goliath is identified with Gath; the site's material culture is contextual, not proof of the combat."
+    },
+    {
+      "id": "philistia",
+      "relationship": "regional-cultural-context",
+      "weight": 9,
+      "notes": "Philistine geography and material culture frame the narrative's opposing force."
     }
   ],
   "scripture_references": [
     {
-      "reference": "Joshua 3:1-17",
-      "relationship": "supporting",
-      "notes": "settlement and covenant"
+      "reference": "1 Samuel 17:1-58",
+      "relationship": "primary",
+      "notes": "The complete encounter, including the weapon descriptions and Gath identification."
     },
     {
-      "reference": "Judges 2:6-23",
+      "reference": "1 Samuel 13:19-23",
       "relationship": "supporting",
-      "notes": "early settlement and instability"
-    },
-    {
-      "reference": "1 Samuel 4:1-11",
-      "relationship": "supporting",
-      "notes": "transition to monarchy"
-    },
-    {
-      "reference": "2 Samuel 6:1-15",
-      "relationship": "supporting",
-      "notes": "Jerusalem and covenant"
+      "notes": "Nearby Samuel context explicitly describes Philistine control of smithing and Israelite weapon scarcity."
     }
   ],
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "Conquest and settlement events are interpreted theologically, not just militarily.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The story contrasts David's trust and YHWH's deliverance with visible military strength; it should not be reduced to a motivational formula about overcoming any obstacle.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "1-samuel-17"
+      ]
     },
     {
-      "note": "Leadership change in these narratives often points toward a larger covenant question.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The Tell es-Safi workshop contextualizes Philistine metal production but does not authenticate Goliath's weapon inventory or prove a Philistine technological monopoly.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "chronological_uncertainty",
+      "sources": [
+        "eliyahu-behar-gath-metallurgy-2012"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "goliath-weapon-inventory",
+      "claim": "1 Samuel 17 describes Goliath with bronze armor and equipment and an iron spearhead.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "1 Samuel 17:4-7"
+      ],
+      "source_ids": [
+        "1-samuel-17"
+      ],
+      "traditions": [],
+      "rationale": "The claim reports the material terms used by the received narrative without inferring a production history.",
+      "notes": "Textual and metrological questions about individual terms remain separate from this inventory-level observation."
+    },
+    {
+      "id": "gath-iron-bronze-workshop",
+      "claim": "Excavated Iron Age IIA workshop contexts at Tell es-Safi/Gath preserve evidence for both iron and bronze production.",
+      "claim_type": "archaeology",
+      "certainty": "strong_consensus",
+      "dispute_status": "chronological_uncertainty",
+      "scripture_references": [
+        "1 Samuel 17:4-7"
+      ],
+      "source_ids": [
+        "eliyahu-behar-gath-metallurgy-2012"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The excavated slag, hammerscale, crucible, and tuyere assemblage supports metal production; its relationship to the narrative is comparative and chronologically approximate.",
+      "notes": "The workshop does not identify Goliath, his equipment, or a Philistine monopoly."
     }
   ],
   "common_questions": [
-    "Why does this event matter in Israel's settlement of the land?",
-    "How does this event reveal the need for faithful leadership?",
-    "What covenant theme does this event highlight?"
+    "How does 1 Samuel 17 contrast David with Saul?",
+    "What does the narrative say about Goliath's armor and weapons?",
+    "What can Tell es-Safi/Gath archaeology responsibly contribute?",
+    "Why is the story more than a lesson about defeating personal giants?"
   ],
   "sources": [
     {
-      "title": "Joshua 1-24",
+      "title": "1 Samuel 17",
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "1 Samuel 17:4-7, 38-54",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "joshua-1-24"
-    },
-    {
-      "title": "Judges 1-21",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "judges-1-21"
-    },
-    {
-      "title": "1 Samuel",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "1-samuel"
-    },
-    {
-      "title": "2 Samuel 6-7",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "2-samuel-6-7"
-    },
-    {
-      "title": "Canonical historical orientation for David and Goliath",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
       "supports": [
-        "historical_context"
+        "goliath-weapon-inventory",
+        "goliath-weapon-description"
       ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
-      "id": "david-and-goliath-historical-orientation"
+      "notes": "Primary textual source for the narrative's weapon vocabulary.",
+      "id": "1-samuel-17"
+    },
+    {
+      "title": "Iron and bronze production in Iron Age IIA Philistia: New evidence from Tell es-Safi/Gath, Israel",
+      "author": "Adi Eliyahu-Behar, Naama Yahalom-Mack, Sana Shilstein, et al.",
+      "publisher": "Journal of Archaeological Science",
+      "year": 2012,
+      "locator": "39.2:255-267; doi:10.1016/j.jas.2011.09.002",
+      "url": "https://doi.org/10.1016/j.jas.2011.09.002",
+      "source_type": "journal-article",
+      "supports": [
+        "gath-iron-bronze-workshop",
+        "tell-es-safi-metal-production"
+      ],
+      "notes": "Reports the metallurgical excavation and analyses; no modern translation or image is reproduced.",
+      "id": "eliyahu-behar-gath-metallurgy-2012"
     }
   ],
   "canonical_story": {
@@ -225,6 +236,190 @@
     "frequently_confused_with": [],
     "semantic_keywords": []
   },
+  "temporal_scope": {
+    "start_year": -1050,
+    "end_year": -950,
+    "approximate": true,
+    "periods": [
+      "Iron Age I-IIA",
+      "early monarchy narrative setting"
+    ],
+    "narrative_setting": "The Valley of Elah and Philistine-Israelite conflict in the early monarchy setting presented by 1 Samuel.",
+    "source_composition_start_year": -800,
+    "source_composition_end_year": -500,
+    "source_composition_approximate": true,
+    "notes": "The event's absolute chronology and the formation dates of Samuel are disputed; this intentionally broad range is a retrieval boundary, not a claim of precision."
+  },
+  "evidence_items": [
+    {
+      "id": "goliath-weapon-description",
+      "title": "Goliath's weapon and armor description",
+      "evidence_type": "ancient-text",
+      "description": "The narrative names bronze body armor, bronze leg protection, a bronze javelin, and an iron spearhead, then describes David taking Goliath's sword.",
+      "assertion_type": "primary-evidence",
+      "confidence": "high",
+      "confidence_rationale": "The material vocabulary is an explicit feature of 1 Samuel 17, although translation and ancient weight conversion require lexical care.",
+      "passage_relevance": "The inventory explains why weapon material, weight, and captured equipment are salient features of the scene before any archaeological comparison is introduced.",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "primary_observation": "1 Samuel 17:4-7 differentiates bronze equipment from an iron spearhead; verses 51 and 54 describe David using and retaining Goliath's equipment.",
+      "scholarly_interpretation": "The list can be studied as literary characterization and as material-culture vocabulary, but the text alone does not establish where or when each item was manufactured.",
+      "temporal_scope": {
+        "start_year": -1050,
+        "end_year": -950,
+        "approximate": true,
+        "periods": [
+          "Iron Age I-IIA narrative setting"
+        ],
+        "narrative_setting": "Early monarchy setting presented by 1 Samuel",
+        "source_composition_start_year": -800,
+        "source_composition_end_year": -500,
+        "source_composition_approximate": true,
+        "notes": "Narrative setting and textual composition are stored separately because neither should be collapsed into a single artifact date."
+      },
+      "geography_ids": [
+        "gath-1",
+        "philistia"
+      ],
+      "related_objects": [
+        {
+          "id": "david",
+          "relationship": "participant",
+          "weight": 10,
+          "notes": "David is the Israelite combatant in the narrative."
+        },
+        {
+          "id": "gath-1",
+          "relationship": "associated-origin",
+          "weight": 9,
+          "notes": "The narrative identifies Goliath as from Gath."
+        }
+      ],
+      "related_evidence": [
+        {
+          "id": "tell-es-safi-metal-production",
+          "relationship": "material-culture-comparison",
+          "weight": 6,
+          "notes": "The workshop is later or overlapping comparative context, not proof of this equipment."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "1 Samuel 17:4-7",
+          "relationship": "direct",
+          "temporal_relation": "diachronic",
+          "relevance_rationale": "This is the passage's own material description; the diachronic label keeps narrative setting distinct from the text's compositional history.",
+          "weight": 10
+        },
+        {
+          "reference": "1 Samuel 17:38-54",
+          "relationship": "direct",
+          "temporal_relation": "diachronic",
+          "relevance_rationale": "These verses contrast Saul's equipment with David's chosen weapon and narrate Goliath's sword changing hands.",
+          "weight": 9
+        }
+      ],
+      "source_ids": [
+        "1-samuel-17"
+      ],
+      "claim_ids": [
+        "goliath-weapon-inventory"
+      ],
+      "external_references": [],
+      "metadata": {
+        "artifact_name": "Narrated weapon assemblage",
+        "archaeological_period": "Iron Age I-IIA narrative setting",
+        "associated_culture": "Philistine and Israelite narrative context",
+        "associated_biblical_geography": "Valley of Elah, Gath, and Philistia"
+      },
+      "notes": "Primary textual observation, not an archaeological find."
+    },
+    {
+      "id": "tell-es-safi-metal-production",
+      "title": "Iron and bronze production at Tell es-Safi/Gath",
+      "evidence_type": "material-culture",
+      "description": "Excavated workshop features and metallurgical residues at Tell es-Safi/Gath document iron and bronze production in Iron Age IIA Philistia.",
+      "assertion_type": "primary-evidence",
+      "confidence": "medium",
+      "confidence_rationale": "The workshop identification rests on excavated production debris and laboratory analysis; the absolute date and relationship to 1 Samuel 17 remain approximate.",
+      "passage_relevance": "The workshop makes Philistine metal production materially plausible within the wider Iron Age setting and helps readers understand why Samuel can foreground weapon materials, while it does not authenticate Goliath's equipment or prove exclusive Philistine technology.",
+      "certainty": "probable",
+      "dispute_status": "chronological_uncertainty",
+      "primary_observation": "The excavated contexts included hammerscale, slag, an upturned crucible with bronze-working residue, and tuyere fragments associated with iron and bronze production.",
+      "scholarly_interpretation": "The excavators identify an Iron Age IIA workshop and discuss the coexistence of iron and copper-alloy working; applying it to the earlier narrative setting is a controlled comparison.",
+      "temporal_scope": {
+        "start_year": -1000,
+        "end_year": -900,
+        "approximate": true,
+        "periods": [
+          "Iron Age IIA"
+        ],
+        "narrative_setting": "Urban Philistine metal production at Tell es-Safi/Gath",
+        "source_composition_start_year": null,
+        "source_composition_end_year": null,
+        "source_composition_approximate": false,
+        "notes": "Broad range used because workshop contexts and Iron IIA subphases require specialist chronological review."
+      },
+      "geography_ids": [
+        "gath-1",
+        "philistia"
+      ],
+      "related_objects": [
+        {
+          "id": "gath-1",
+          "relationship": "excavated-at",
+          "weight": 10,
+          "notes": "Tell es-Safi is widely identified with ancient Gath."
+        },
+        {
+          "id": "philistia",
+          "relationship": "regional-material-culture",
+          "weight": 9,
+          "notes": "The assemblage belongs to the Philistine urban context of the site."
+        }
+      ],
+      "related_evidence": [
+        {
+          "id": "goliath-weapon-description",
+          "relationship": "compared-with-textual-description",
+          "weight": 6,
+          "notes": "Comparison is limited by dating and cannot establish ownership or narrative historicity."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "1 Samuel 17:4-7",
+          "relationship": "comparative",
+          "temporal_relation": "later-comparative",
+          "relevance_rationale": "The later or overlapping Iron IIA workshop provides regional material-culture context for the narrative's bronze and iron vocabulary, not direct evidence for Goliath.",
+          "weight": 6
+        },
+        {
+          "reference": "1 Samuel 13:19-23",
+          "relationship": "comparative",
+          "temporal_relation": "later-comparative",
+          "relevance_rationale": "The production evidence can be compared with Samuel's smithing and weapon-scarcity notice without proving an actual monopoly.",
+          "weight": 6
+        }
+      ],
+      "source_ids": [
+        "eliyahu-behar-gath-metallurgy-2012"
+      ],
+      "claim_ids": [
+        "gath-iron-bronze-workshop"
+      ],
+      "external_references": [],
+      "metadata": {
+        "site_name": "Tell es-Safi/Gath",
+        "discovery_location": "Area A, Tell es-Safi/Gath, Israel",
+        "present_location": "Excavation project collections",
+        "archaeological_period": "Iron Age IIA",
+        "associated_culture": "Philistine urban context",
+        "associated_biblical_geography": "Gath and Philistia"
+      },
+      "notes": "No copyrighted article text or image is stored."
+    }
+  ],
   "importance": 78,
   "framework_version": "1.0",
   "object_version": "1",
@@ -238,7 +433,9 @@
       "date": "2026-07-16"
     }
   ],
-  "edited_by": [],
+  "edited_by": [
+    "codex:evidence-graph-expansion:2026-08-14"
+  ],
   "reviewed_by": [],
   "last_reviewed": "2026-07-16",
   "confidence": "medium",

@@ -46,6 +46,7 @@ def test_agent_status_clears_after_answer(driver, wait, base_url):
 def test_empty_question_validation(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
     page = AskPage(driver, wait, base_url)
+    page.open_workspace()
     page.click('[data-testid="ask-submit"]')
     page.wait_for_answer_or_error()
     answer = driver.find_element(By.CSS_SELECTOR, '[data-testid="answer-output"]').text

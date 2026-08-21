@@ -80,10 +80,14 @@ def test_import_is_safe_attributed_and_normalizes_books(tmp_path):
     source = service.source()
     assert source.license == "CC BY-SA 4.0"
     assert "Tyndale House Publishers" in source.attribution
-    assert [entry.external_id for entry in service.lookup_chapter("Ruth", 3)] == [
+    chapter_entries = service.lookup_chapter("Ruth", 3)
+    passage_entries = service.lookup_passage("Ruth", 3, 4, 4)
+    assert [entry.external_id for entry in chapter_entries] == [
         "ruth-3-4", "ruth-3-4-6", "ruth-intro"
     ]
-    assert {entry.anchor.book for entry in service.lookup_passage("Ruth", 3, 4, 4)} == {"Ruth"}
+    assert {entry.anchor.book for entry in passage_entries} == {"Ruth"}
+    assert service.count_chapter("Ruth", 3) == len(chapter_entries)
+    assert service.count_passage("Ruth", 3, 4, 4) == len(passage_entries)
 
 
 def test_import_maps_official_tyndale_xml_records_and_osis_references(tmp_path):

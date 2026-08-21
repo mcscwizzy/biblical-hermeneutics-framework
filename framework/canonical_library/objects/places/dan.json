@@ -3,32 +3,33 @@
   "type": "place",
   "title": "Dan",
   "aliases": [
-    "where is dan",
-    "tell me about dan",
-    "why is dan important"
+    "Laish",
+    "Leshem",
+    "Tell Dan",
+    "northern Dan"
   ],
-  "summary": "Dan is a broader region or land designation that frames identity, conflict, and hope in the biblical story.",
-  "historical_context": "Historically, Dan is located by its canonical setting; this entry connects that setting with exile-theme, kingdom-theme, new-covenant and related CKL objects for contextual retrieval.",
-  "ancient_near_east_context": "Dan is read within concrete geography shaped by Levantine routes, imperial borders, settlement patterns, water access, trade movement, and neighboring peoples named in the biblical narrative.",
-  "hebraic_worldview": "",
+  "summary": "Dan is the northern city formerly called Laish in Judges 18, renamed after a Danite migration and associated there with a tribal cult installation; later it became a northern royal sanctuary and a boundary marker in the phrase 'from Dan to Beersheba.'",
+  "historical_context": "The site commonly identified as Tell Dan lies near major springs at the northern edge of the Hula Valley. Judges distinguishes the tribe's earlier allotted territory from its later seizure of Laish, and later royal and prophetic texts give the northern city additional roles.",
+  "ancient_near_east_context": "Laish occupied a fertile, well-watered corridor near routes connecting the Jordan Valley, Lebanon, and Syria. Judges 18 portrays geographic distance and weak political protection as important to the Danite assessment of the city.",
+  "hebraic_worldview": "The Danite narrative ties land seeking, kinship identity, violence, priestly patronage, and cult objects together, while the no-king frame and the notice about the image guide readers away from treating success as divine approval.",
   "second_temple_context": "",
-  "canonical_context": "",
+  "canonical_context": "Joshua records Dan's allotted territory; Judges 18 narrates migration to Laish and the shrine installation; 1 Kings 12 gives Dan a later royal-cult role; prophetic texts remember Dan in judgments on northern worship.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
     "hebraic_worldview": true,
-    "second_temple": true,
+    "second_temple": false,
     "canonical": true,
-    "later_christian_reception": true
+    "later_christian_reception": false
   },
-  "literary_context": "Scripture uses Dan to locate people and events within a wider covenant map.",
-  "covenantal_significance": "Dan helps define boundaries, inheritance, or the scope of judgment and restoration.",
+  "literary_context": "Judges 18 moves from scouts and migration to conquest, renaming, and cult installation. Later references to Dan must be distinguished from that episode rather than read back into it without argument.",
+  "covenantal_significance": "Dan's story joins inheritance and tribal survival to a severe critique of predatory violence and disordered worship; later royal use of the city intensifies its association with contested cult practice.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
   "historical_setting": "",
-  "canonical_role": "Dan serves as a canonical place anchor, connecting geography, historical setting, key passages, and related people, events, and themes.",
+  "canonical_role": "Dan anchors a canonical sequence from tribal allotment and migration through a northern sanctuary and later prophetic critique.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -51,131 +52,116 @@
   "related_events": [],
   "related_objects": [
     {
-      "id": "exile-theme",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "judges",
+      "relationship": "migration-and-cult-context",
+      "weight": 10,
+      "notes": "Judges 18 supplies the central narrative of the city's seizure, renaming, and shrine."
     },
     {
-      "id": "kingdom-theme",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
-    },
-    {
-      "id": "new-covenant",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "judges-household-religion-and-regional-cult-sites",
+      "relationship": "cult-evidence-context",
+      "weight": 10,
+      "notes": "The evidence cluster distinguishes the textual installation from archaeological comparison."
     }
   ],
   "scripture_references": [
     {
-      "reference": "Genesis 10:1-32",
-      "relationship": "supporting",
-      "notes": "nations and regions"
+      "reference": "Judges 18:1-31",
+      "relationship": "primary",
+      "notes": "Danite migration, seizure of Laish, renaming, and cult installation."
     },
     {
-      "reference": "Deuteronomy 10:6-9",
+      "reference": "Joshua 19:40-48",
       "relationship": "supporting",
-      "notes": "land and inheritance"
+      "notes": "Dan's allotted towns and the notice about Leshem."
     },
     {
-      "reference": "Isaiah 63:1-6",
+      "reference": "1 Kings 12:25-33",
       "relationship": "supporting",
-      "notes": "judgment and hope across regions"
+      "notes": "Jeroboam's later royal sanctuary at Dan."
     },
     {
-      "reference": "Acts 13:16-22",
+      "reference": "Amos 8:13-14",
       "relationship": "supporting",
-      "notes": "mission across regions"
+      "notes": "Prophetic condemnation associated with the cult of Dan."
     }
   ],
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "Regional names often signal more than geography; they can mark identity and allegiance.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The Judges 18 installation and Jeroboam's later sanctuary belong to different narrative periods and should not be collapsed into one event.",
+      "note_type": "interpretive-caution",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "dan-biblical-texts",
+        "webb-dan-2012"
+      ]
     },
     {
-      "note": "Read them alongside the narrative movement of the text.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Identifying ancient Laish or Dan with Tell Dan is strong scholarly consensus, but excavated cult remains do not by themselves verify Micah's objects or the priestly line in Judges 18.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "archaeological_uncertainty",
+      "sources": [
+        "dan-biblical-texts",
+        "butler-dan-2009"
+      ]
     }
   ],
   "common_questions": [
-    "Why does this region matter in the Bible?",
-    "How does this region frame the narrative?",
-    "What broader theme does this region carry?"
+    "Why did the Danites migrate to Laish?",
+    "How did Laish become Dan?",
+    "What shrine did Judges 18 say was installed at Dan?",
+    "How is the Judges shrine related to Jeroboam's later sanctuary?"
   ],
   "sources": [
     {
-      "title": "Genesis 10",
+      "title": "Biblical Dan Passages",
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "Joshua 19:40-48; Judges 18:1-31; 1 Kings 12:25-33; Amos 8:13-14",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "genesis-10"
-    },
-    {
-      "title": "Deuteronomy",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "deuteronomy"
-    },
-    {
-      "title": "Isaiah 40-66",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "isaiah-40-66"
-    },
-    {
-      "title": "Acts",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "acts"
-    },
-    {
-      "title": "Canonical historical orientation for Dan",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
       "supports": [
-        "historical_context"
+        "summary",
+        "historical_context",
+        "canonical_context"
       ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
-      "id": "dan-historical-orientation"
+      "notes": "Primary biblical texts for the city's changing canonical roles.",
+      "id": "dan-biblical-texts"
+    },
+    {
+      "title": "The Book of Judges",
+      "author": "Barry G. Webb",
+      "publisher": "Eerdmans",
+      "year": 2012,
+      "locator": "NICOT commentary on Judges 17-18",
+      "url": "https://www.eerdmans.com/9780802826282/the-book-of-judges/",
+      "source_type": "academic-book",
+      "supports": [
+        "literary_context",
+        "covenantal_significance"
+      ],
+      "notes": "Literary and theological treatment of migration and cult installation.",
+      "id": "webb-dan-2012"
+    },
+    {
+      "title": "Judges, Volume 8",
+      "author": "Trent C. Butler",
+      "publisher": "Zondervan Academic",
+      "year": 2009,
+      "locator": "Word Biblical Commentary on Judges 18",
+      "url": "https://zondervanacademic.com/products/judges-volume-8",
+      "source_type": "academic-book",
+      "supports": [
+        "historical_context",
+        "ancient_near_east_context"
+      ],
+      "notes": "Historical-geographic and textual discussion of Laish or Dan.",
+      "id": "butler-dan-2009"
     }
   ],
   "canonical_story": {

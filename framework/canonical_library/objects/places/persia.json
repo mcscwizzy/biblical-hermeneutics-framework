@@ -3,16 +3,17 @@
   "type": "place",
   "title": "Persia",
   "aliases": [
-    "where is persia",
-    "tell me about persia",
-    "why is persia important"
+    "Achaemenid Persia",
+    "Persian Empire",
+    "Achaemenid Empire",
+    "Persian-period biblical world"
   ],
-  "summary": "Persia is a major imperial or regional power that shapes Israel's history through oppression, exile, diplomacy, or return.",
-  "historical_context": "Persia appears in conquest, monarchy, exile, or diaspora settings where power and identity collide.",
-  "ancient_near_east_context": "Ancient background for Persia includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 10:1-32, Exodus 3:1-15, babylonian-exile, and fall-of-jerusalem without letting comparison replace the biblical witness.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "summary": "The Achaemenid imperial world that succeeded Babylon in 539 BCE and forms the historical setting for return, Yehud, Ezra-Nehemiah, Esther, and Persian-period visions in Daniel.",
+  "historical_context": "Cyrus II captured Babylon in 539 BCE and inherited its western territories. Judah became the small province of Yehud within the wider imperial system. Biblical narratives span Cyrus, Darius I, Xerxes, and Artaxerxes, whose reigns must not be collapsed into a generic Persian era.",
+  "ancient_near_east_context": "Achaemenid government worked through satrapies and provinces, officials, taxation and service, roads, multilingual written administration, local elites, and selective support of temples. Institutions and policy varied by region and reign.",
+  "hebraic_worldview": "Ezra, Nehemiah, and related prophets portray Persian kings as real imperial authorities whose decisions can serve the God of Israel's purposes without becoming covenant rulers or restoring Davidic sovereignty.",
+  "second_temple_context": "Persian rule supplied the political framework for the early Second Temple, provincial Yehud, governors, priesthood, Torah-centered reforms, economic disputes, and continuing diaspora communities in Babylonia, Susa, and Egypt.",
+  "canonical_context": "Chronicles and Ezra associate Cyrus with return and temple restoration; Nehemiah narrates governorship under Artaxerxes; Esther is set in the imperial court; Daniel reflects on succession and conflict among empires. Each book has its own genre and compositional questions.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
@@ -20,15 +21,15 @@
     "hebraic_worldview": true,
     "second_temple": true,
     "canonical": true,
-    "later_christian_reception": true
+    "later_christian_reception": false
   },
-  "literary_context": "Biblical books use Persia to contrast human power with divine sovereignty.",
-  "covenantal_significance": "Persia often marks judgment, testing, or the need for deliverance.",
+  "literary_context": "Ezra's decrees, letters, and lists; Nehemiah's memoir; Esther's court narrative; and Daniel's visions use Persian settings differently. Historical context should not flatten narrative, memoir, apocalyptic, and documentary forms into one report.",
+  "covenantal_significance": "Biblical writers present Persian authorization as a means of restoration while the community remains responsible for worship, justice, Torah, and covenant identity under foreign rule.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
   "historical_setting": "",
-  "canonical_role": "Persia serves as a canonical place anchor, connecting geography, historical setting, key passages, and related people, events, and themes.",
+  "canonical_role": "Persia is the imperial setting in which biblical return, temple restoration, Yehud governorship, diaspora court life, and apocalyptic reflection unfold across distinct reigns and genres.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -50,161 +51,55 @@
   "related_places": [],
   "related_events": [],
   "related_objects": [
-    {
-      "id": "babylonian-exile",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
-    },
-    {
-      "id": "fall-of-jerusalem",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
-    },
-    {
-      "id": "assyrian-exile-of-israel",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
-    },
-    {
-      "id": "daniel-the-exile",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
-    },
-    {
-      "id": "esther-the-queen",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
-    }
+    {"id": "ezra", "relationship": "primary-persian-period-book", "weight": 10, "notes": "Ezra spans Persian authorizations from Cyrus through Artaxerxes."},
+    {"id": "nehemiah", "relationship": "provincial-governance-book", "weight": 10, "notes": "Nehemiah presents a governor of Yehud under Artaxerxes."},
+    {"id": "esther", "relationship": "imperial-court-book", "weight": 9, "notes": "Esther is set across the empire in Xerxes/Ahasuerus's reign."},
+    {"id": "cyrus-cylinder", "relationship": "early-imperial-inscription", "weight": 10, "notes": "The cylinder witnesses Cyrus's Babylonian legitimation."},
+    {"id": "return-from-exile", "relationship": "restoration-event", "weight": 10, "notes": "Return movements occurred within Persian authorization."},
+    {"id": "rebuilding-the-temple", "relationship": "restoration-event", "weight": 10, "notes": "The Second Temple was completed under Darius I."},
+    {"id": "persian-restoration-and-yehud-administration", "relationship": "structured-evidence-cluster", "weight": 10, "notes": "The cluster supplies Cyrus, Yehud stamp, and Elephantine evidence."},
+    {"id": "susa", "relationship": "imperial-center", "weight": 9, "notes": "Susa is an imperial court setting in Esther and Nehemiah."}
   ],
   "scripture_references": [
-    {
-      "reference": "Genesis 10:1-32",
-      "relationship": "supporting",
-      "notes": "table of nations backdrop"
-    },
-    {
-      "reference": "Exodus 3:1-15",
-      "relationship": "supporting",
-      "notes": "oppression and deliverance"
-    },
-    {
-      "reference": "2 Kings 25:8-17",
-      "relationship": "supporting",
-      "notes": "imperial conquest and exile"
-    },
-    {
-      "reference": "Daniel 11:40-45",
-      "relationship": "supporting",
-      "notes": "faith under empire"
-    },
-    {
-      "reference": "Acts 28:11-16",
-      "relationship": "supporting",
-      "notes": "mission in the imperial world"
-    }
+    {"reference": "2 Chronicles 36:22-23", "relationship": "primary", "notes": "Cyrus proclamation after Babylonian rule."},
+    {"reference": "Ezra 1:1-11", "relationship": "primary", "notes": "Cyrus-era return and temple-vessel restoration."},
+    {"reference": "Ezra 5:1-17", "relationship": "primary", "notes": "Darius-era provincial inquiry."},
+    {"reference": "Ezra 6:1-22", "relationship": "primary", "notes": "Darius's order and temple completion."},
+    {"reference": "Nehemiah 2:1-20", "relationship": "primary", "notes": "Artaxerxes-era commission and provincial relations."},
+    {"reference": "Esther 1:1-22", "relationship": "supporting", "notes": "Xerxes/Ahasuerus's imperial court setting."},
+    {"reference": "Daniel 10:1-21", "relationship": "supporting", "notes": "Vision dated to Cyrus and framed by Persian conflict."}
   ],
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "Imperial powers in Scripture are historical realities and theological contrasts.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Cyrus, Darius I, Xerxes, Artaxerxes I, and Darius II belong to distinct reigns and administrative horizons; Persian-period sources should be dated by ruler where possible.",
+      "note_type": "historical-context",
+      "certainty": "strong_consensus",
+      "dispute_status": "chronological_uncertainty",
+      "sources": ["persian-period-biblical-texts", "grabbe-persia-yehud"],
+      "rationale": "Ezra-Nehemiah and external documents span more than a century of Achaemenid rule."
     },
     {
-      "note": "They often represent the pressure of empire on covenant identity.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The Cyrus Cylinder gives evidence for Cyrus's Babylonian legitimation and local restoration rhetoric, not direct evidence for every province or the text of Ezra's decree.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": ["bm-cyrus-persia", "kuhrt-persia-cylinder"],
+      "rationale": "The inscription does not name Judah or Jerusalem."
     }
   ],
   "common_questions": [
-    "Why is this power or region important in the Bible?",
-    "How does this place shape Israel's history?",
-    "What theological contrast does this place create?"
+    "Which Persian kings appear in Ezra-Nehemiah?",
+    "What was Yehud's place within the Achaemenid Empire?",
+    "Does the Cyrus Cylinder mention Jerusalem?",
+    "How did Persian governors and local temple institutions interact?"
   ],
   "sources": [
-    {
-      "title": "Genesis 10-12",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "genesis-10-12"
-    },
-    {
-      "title": "Exodus 1-15",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "exodus-1-15"
-    },
-    {
-      "title": "2 Kings 17-25",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "2-kings-17-25"
-    },
-    {
-      "title": "Daniel 1-6",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "daniel-1-6"
-    },
-    {
-      "title": "Acts 18-28",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "acts-18-28"
-    },
-    {
-      "title": "Canonical historical orientation for Persia",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [
-        "historical_context"
-      ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
-      "id": "persia-historical-orientation"
+    {"id": "persian-period-biblical-texts", "title": "Second Chronicles 36; Ezra; Nehemiah; Esther; Daniel 10", "author": "", "publisher": "", "year": null, "locator": "2 Chronicles 36:22-23; Ezra 1:1-10:44; Nehemiah 1:1-13:31; Esther 1:1-10:3; Daniel 10:1-21", "url": "", "source_type": "scripture", "supports": ["summary", "historical_context", "canonical_context", "scripture_references"], "notes": "Primary biblical Persian-period settings across several genres."},
+    {"id": "grabbe-persia-yehud", "title": "A History of the Jews and Judaism in the Second Temple Period, Volume 1", "author": "Lester L. Grabbe", "publisher": "T&T Clark", "year": 2004, "locator": "Persian-period chronology, Yehud, administration, and sources", "url": "https://www.bloomsbury.com/ca/history-of-the-jews-and-judaism-in-the-second-temple-period-vol-1-9780567216175/", "source_type": "academic-book", "supports": ["historical_context", "ancient_near_east_context", "second_temple_context", "interpretive_notes"], "notes": "Critical synthesis of Persian-period literary and external evidence."},
+    {"id": "bm-cyrus-persia", "title": "The Cyrus Cylinder", "author": "", "publisher": "British Museum", "year": null, "locator": "BM 90920; collection object 1880,0617.1941", "url": "https://www.britishmuseum.org/collection/object/W_1880-0617-1941", "source_type": "museum-collection", "supports": ["historical_context", "interpretive_notes"], "notes": "Official record for Cyrus's Babylonian inscription."},
+    {"id": "kuhrt-persia-cylinder", "title": "The Cyrus Cylinder and Achaemenid Imperial Policy", "author": "Amélie Kuhrt", "publisher": "Journal for the Study of the Old Testament", "year": 1983, "locator": "JSOT 8.25, pp. 83-97", "url": "https://doi.org/10.1177/030908928300802507", "source_type": "journal-article", "supports": ["ancient_near_east_context", "interpretive_notes"], "notes": "Source-critical boundary for generalizing from the cylinder."
     }
   ],
   "canonical_story": {
@@ -255,9 +150,9 @@
       "date": "2026-07-16"
     }
   ],
-  "edited_by": [],
+  "edited_by": ["codex:ckl-babylon-persia-expansion:2026-08-20"],
   "reviewed_by": [],
-  "last_reviewed": "2026-07-16",
+  "last_reviewed": "2026-08-20",
   "confidence": "medium",
   "human_review_required": true
 }

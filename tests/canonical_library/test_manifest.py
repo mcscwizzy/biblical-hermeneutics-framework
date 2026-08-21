@@ -55,12 +55,12 @@ EXPECTED_GOVERNANCE_VALUES = {
     "human_review_required": True,
 }
 EXPECTED_CONTEXT_APPLICABILITY = {
-    "historical": True,
-    "ancient_near_east": True,
-    "hebraic_worldview": True,
-    "second_temple": True,
-    "canonical": True,
-    "later_christian_reception": True,
+    "historical": False,
+    "ancient_near_east": False,
+    "hebraic_worldview": False,
+    "second_temple": False,
+    "canonical": False,
+    "later_christian_reception": False,
 }
 AI_IMPORT_PREFIXES = {
     "anthropic",

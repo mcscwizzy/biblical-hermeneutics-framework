@@ -365,6 +365,7 @@ function openNoteEditor(existingNote) {
   }
   refreshNoteReferenceActions();
   setNoteSaveStatus(noteContext.id ? "Saved" : "New note");
+  window.BHFStudyCompanion?.showPersonalResource?.("note", "Note");
   editor.elements.body.focus();
 }
 
@@ -559,22 +560,55 @@ function deleteExistingHighlight(highlightId) {
     .then(() => loadHighlights(currentChapter.book, currentChapter.chapter));
 }
 
-function loadSavedStudies(book, chapter) {
+function requestSavedStudies(book, chapter) {
+  if (!book || !chapter) {
+    return Promise.resolve([]);
+  }
+  const key = savedStudyChapterKey({book, chapter});
+  let request = savedStudiesRequests.get(key);
+  if (!request) {
+    request = requestJson(
+      `/api/saved-studies?book=${encodeURIComponent(book)}&chapter=${encodeURIComponent(chapter)}`,
+      {requireDeviceData: true},
+      "Could not load saved studies.",
+    )
+      .then((data) => {
+        if (!Array.isArray(data?.saved_studies)) {
+          throw new Error("Could not load saved studies.");
+        }
+        const studies = data.saved_studies;
+        savedStudiesCache.set(key, studies);
+        document.dispatchEvent(new CustomEvent("bhf:saved-studies-changed", {
+          detail: {book, chapter: Number(chapter), studies},
+        }));
+        return studies;
+      })
+      .finally(() => savedStudiesRequests.delete(key));
+    savedStudiesRequests.set(key, request);
+  }
+  return request;
+}
+
+function loadSavedStudies(book, chapter, options = {}) {
   const list = document.querySelector("#saved-studies-list");
   const count = document.querySelector("#saved-studies-count");
-  if (!list || !book || !chapter) {
-    return Promise.resolve();
+  if (!book || !chapter) {
+    return Promise.resolve([]);
   }
-  return requestJson(`/api/saved-studies?book=${encodeURIComponent(book)}&chapter=${encodeURIComponent(chapter)}`, {}, "Could not load saved studies.")
-    .then((data) => {
-      const studies = data.saved_studies || [];
-      renderSavedStudies(studies);
+  const key = savedStudyChapterKey({book, chapter});
+  return requestSavedStudies(book, chapter)
+    .then((studies) => {
+      const isCurrentChapter = savedStudyChapterKey(currentChapter) === key;
+      if (list && isCurrentChapter) renderSavedStudies(studies);
       if (count) {
-        count.textContent = String(studies.length);
+        if (isCurrentChapter) count.textContent = String(studies.length);
       }
+      return studies;
     })
     .catch((error) => {
-      list.innerHTML = errorHtml(error.message || "Could not load saved studies.");
+      if (list) list.innerHTML = errorHtml(error.message || "Could not load saved studies.");
+      if (options.propagateError) throw error;
+      return [];
     });
 }
 
@@ -762,10 +796,11 @@ function updateSaveButtons() {
   document.querySelectorAll("[data-save-study]").forEach((button) => {
     const panel = button.closest(".answer-panel");
     const isAskFormButton = Boolean(button.closest(".ask-form"));
+    const isGeneralQuestion = button.closest(".ask-form")?.dataset.questionScope === "general_question";
     const isActive = isAskFormButton
       ? activeLiveAnswerPanel?.id === "answer-panel"
       : Boolean(activeLiveAnswerPanel) && panel === activeLiveAnswerPanel;
-    button.disabled = !(isActive && (button.dataset.jobId || (latestJobId && latestJobComplete)));
+    button.disabled = isGeneralQuestion || !(isActive && (button.dataset.jobId || (latestJobId && latestJobComplete)));
   });
 }
 

@@ -65,7 +65,7 @@ class StudyDatabaseTests(unittest.TestCase):
                 )
             ]
 
-        self.assertEqual(versions, list(range(1, 35)))
+        self.assertEqual(versions, list(range(1, 38)))
 
         with connect(self.path) as connection:
             saved_studies = connection.execute(
@@ -112,7 +112,7 @@ class StudyDatabaseTests(unittest.TestCase):
                 """
             ).fetchone()
 
-        self.assertEqual(versions, list(range(1, 35)))
+        self.assertEqual(versions, list(range(1, 38)))
         self.assertIsNotNone(saved_studies)
 
     def test_biblical_places_seed_and_references_load_from_database(self):

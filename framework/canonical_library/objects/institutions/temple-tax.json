@@ -8,12 +8,12 @@
     "temple tax structure",
     "temple tax role"
   ],
-  "summary": "Temple Tax is a cultic institution rooted in Israel's worship life, organizing presence, holiness, mediation, and sacrifice.",
-  "historical_context": "Temple Tax develops from wilderness worship into temple-centered practice and later second-temple memory.",
+  "summary": "A Jewish payment associated with maintaining the Jerusalem temple, distinct from Roman tribute, customs tolls, voluntary offerings, and sacrificial purchases.",
+  "historical_context": "Exodus 30's half-shekel levy became a key scriptural precedent for later temple revenue. By the first century, collection practices were embedded in diaspora and Judean temple support and could create practical and political questions.",
   "ancient_near_east_context": "Temple Tax is framed by specific social practices such as household authority, patronage, public reading, priestly service, temple worship, synagogue order, or Roman civic administration.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "hebraic_worldview": "The payment expresses corporate responsibility for sanctuary worship while remaining distinguishable from gifts, vows, and imperial taxation.",
+  "second_temple_context": "Matthew 17's didrachma collectors presuppose a temple-associated payment; after 70 CE Rome redirected a Jewish tax to Jupiter Capitolinus, a later development not to be imported into Jesus's ministry.",
+  "canonical_context": "Exodus provides the half-shekel precedent and Matthew 17 narrates a temple-tax dispute; Mark 12's tribute to Caesar concerns a different fiscal demand.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
@@ -21,7 +21,7 @@
     "hebraic_worldview": true,
     "second_temple": true,
     "canonical": true,
-    "later_christian_reception": true
+    "later_christian_reception": false
   },
   "literary_context": "The Pentateuch, Psalms, Prophets, Gospels, Hebrews, and Revelation all use Temple Tax language.",
   "covenantal_significance": "Temple Tax gives concrete form to divine presence among a holy people.",
@@ -80,28 +80,34 @@
       "relationship": "institutional-context",
       "weight": 8,
       "notes": "curated canonical context"
+    },
+    {
+      "id": "judean-pilgrimage-taxation-and-roman-power",
+      "relationship": "evidence-cluster",
+      "weight": 10,
+      "notes": "The cluster distinguishes temple revenue from imperial tribute and toll collection."
     }
   ],
   "scripture_references": [
     {
-      "reference": "Exodus 23:14-17",
-      "relationship": "supporting",
-      "notes": "tabernacle and worship"
+      "reference": "Exodus 30:11-16",
+      "relationship": "primary",
+      "notes": "Half-shekel assessment for sanctuary service."
     },
     {
-      "reference": "Leviticus 23:1-8",
+      "reference": "2 Chronicles 24:4-14",
       "relationship": "supporting",
-      "notes": "sacrificial and holiness instruction"
+      "notes": "Collection for repair of the temple."
     },
     {
-      "reference": "1 Kings 8:1-66",
-      "relationship": "supporting",
-      "notes": "temple dedication"
+      "reference": "Matthew 17:24-27",
+      "relationship": "primary",
+      "notes": "The didrachma collectors ask about Jesus's temple payment."
     },
     {
-      "reference": "Hebrews 10:1-18",
+      "reference": "Mark 12:13-17",
       "relationship": "supporting",
-      "notes": "Christ and cultic fulfillment"
+      "notes": "Contrast with imperial tribute owed to Caesar."
     }
   ],
   "cross_references": [],

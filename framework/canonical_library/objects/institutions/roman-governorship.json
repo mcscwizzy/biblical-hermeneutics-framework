@@ -8,20 +8,20 @@
     "roman governorship structure",
     "roman governorship role"
   ],
-  "summary": "Roman Governorship is a leadership institution that structures authority, judgment, or communal oversight in Israel or the empire.",
-  "historical_context": "Roman Governorship belongs to the social and political systems that governed public life in Israel and its neighbors.",
-  "ancient_near_east_context": "Ancient background for Roman Governorship includes kinship obligations, sanctuary service, village authority, and Greco-Roman civic structures; the entry ties that world to Exodus 18:1-27, Deuteronomy 16:18-20, kingship, and elders without letting comparison replace the biblical witness.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "summary": "Roman provincial offices through which prefects, procurators, and governors exercised military, fiscal, judicial, and administrative authority in Judea and the eastern Mediterranean.",
+  "historical_context": "Judea came under direct Roman administration in 6 CE. Pontius Pilate served as prefect in 26-36 CE from Caesarea, with authority expressed in taxation, troops, adjudication, patronage, and capital punishment.",
+  "ancient_near_east_context": "This is a Greco-Roman provincial institution and should not be derived from Israelite elders or monarchy texts.",
+  "hebraic_worldview": "Jewish communities negotiated imperial authority through accommodation, petition, legal appeal, protest, and resistance without a single uniform response.",
+  "second_temple_context": "Prefects governed alongside local priestly and elite institutions while retaining coercive and capital authority; jurisdiction and titles varied over time.",
+  "canonical_context": "The Gospels portray Pilate's role in Jesus's execution, while Acts depicts later governors hearing cases, deploying troops, and receiving appeals.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
-    "ancient_near_east": true,
+    "ancient_near_east": false,
     "hebraic_worldview": true,
     "second_temple": true,
     "canonical": true,
-    "later_christian_reception": true
+    "later_christian_reception": false
   },
   "literary_context": "Scripture uses Roman Governorship to describe order, authority, and accountability.",
   "covenantal_significance": "Roman Governorship reminds readers that authority is accountable to God's purposes.",
@@ -52,13 +52,13 @@
   "related_events": [],
   "related_objects": [
     {
-      "id": "kingship",
+      "id": "pontius-pilate",
       "relationship": "institutional-context",
       "weight": 8,
       "notes": "curated canonical context"
     },
     {
-      "id": "elders",
+      "id": "pilate-stone",
       "relationship": "institutional-context",
       "weight": 8,
       "notes": "curated canonical context"
@@ -70,7 +70,7 @@
       "notes": "curated canonical context"
     },
     {
-      "id": "scribes",
+      "id": "judean-pilgrimage-taxation-and-roman-power",
       "relationship": "institutional-context",
       "weight": 8,
       "notes": "curated canonical context"
@@ -78,24 +78,24 @@
   ],
   "scripture_references": [
     {
-      "reference": "Exodus 18:1-27",
-      "relationship": "supporting",
-      "notes": "judicial leadership"
+      "reference": "Matthew 27:1-26",
+      "relationship": "primary",
+      "notes": "Pilate questions Jesus and authorizes crucifixion."
     },
     {
-      "reference": "Deuteronomy 16:18-20",
-      "relationship": "supporting",
-      "notes": "leaders, judges, and kings"
+      "reference": "John 18:28-40",
+      "relationship": "primary",
+      "notes": "Pilate's hearing and negotiation over the charge."
     },
     {
-      "reference": "1 Samuel 8:4-9",
-      "relationship": "supporting",
-      "notes": "monarchy and authority"
+      "reference": "John 19:1-22",
+      "relationship": "primary",
+      "notes": "Coercion, sentence, execution order, and titulus."
     },
     {
-      "reference": "Acts 23:1-10",
+      "reference": "Acts 24:1-27",
       "relationship": "supporting",
-      "notes": "leadership and imperial process"
+      "notes": "A later governor hears charges, delays judgment, and manages custody."
     }
   ],
   "cross_references": [],

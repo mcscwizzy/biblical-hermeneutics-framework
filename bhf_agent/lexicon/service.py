@@ -40,11 +40,14 @@ class WordStudyService:
     ) -> None:
         self._repository = repository
         repository_path = getattr(repository, "path", None)
-        self.database_path = Path(
+        configured_path = (
             database_path
             or repository_path
             or os.environ.get("BHF_LEXICAL_DATABASE_PATH")
-            or DEFAULT_LEXICAL_DATABASE_PATH
+        )
+        packaged_path = Path(DEFAULT_LEXICAL_DATABASE_PATH)
+        self.database_path = Path(configured_path) if configured_path else (
+            packaged_path if packaged_path.exists() else Path(".bhf/lexicon.sqlite")
         )
 
     @property

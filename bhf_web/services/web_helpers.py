@@ -527,8 +527,8 @@ def build_ask_question(
         return validate_question(form), None
     user_question = str(form.get("question") or "").strip()
     study_action = normalize_study_action(form.get("study_action"))
-    if user_question and not ask_mode and not study_action:
-        return validate_question(form), None
+    if user_question:
+        user_question = validate_question(form)
     if study_action:
         if path is not None:
             record_action(study_action, context, path=path)
@@ -570,6 +570,9 @@ def build_ask_question(
         f"Selected text ({label} {context['reference']}):",
         context["selected_text"],
     ]
+    selected_word_line = selected_word_prompt_line(context)
+    if selected_word_line:
+        lines.extend(["", selected_word_line])
     if context.get("chapter_context"):
         lines.extend(["", f"Full chapter context ({label} {context['book']} {context['chapter']}):", str(context["chapter_context"])])
     lines.extend(["", "Method reminder: observe the text before interpreting it, and apply only after observation and interpretation."])
@@ -609,6 +612,16 @@ def reader_context_from_form(form: dict[str, Any] | Any) -> dict[str, Any] | Non
         selected_verses=selected_verses,
     )
     context.update({"translation_id": translation_id, **reader_translation_metadata(form)})
+    if optional_form_value(form, "reader_start_verse") is None and not selected_verses:
+        context.update({
+            "start_verse": None,
+            "end_verse": None,
+            "selected_verses": [],
+            "reference": f"{context['book']} {context['chapter']}",
+        })
+    selected_word = parse_selected_word(form.get("reader_selected_word"))
+    if selected_word:
+        context["selected_word"] = selected_word
     return context
 
 
@@ -645,6 +658,52 @@ def parse_selected_verses(value: Any) -> list[int] | None:
     return selected or None
 
 
+def parse_selected_word(value: Any) -> dict[str, str] | None:
+    """Parse and constrain optional lexical metadata sent by the reader."""
+
+    if value in (None, "", {}):
+        return None
+    raw = value
+    if isinstance(value, str):
+        try:
+            raw = json.loads(value)
+        except json.JSONDecodeError:
+            raw = {"surface_form": value}
+    if not isinstance(raw, dict):
+        return None
+    aliases = {
+        "surface_form": ("surface_form", "surfaceForm"),
+        "lemma": ("lemma",),
+        "language": ("language",),
+        "strongs_number": ("strongs_number", "strongsNumber", "strongs"),
+        "word_position": ("word_position", "wordPosition", "position"),
+    }
+    selected: dict[str, str] = {}
+    for target, names in aliases.items():
+        for name in names:
+            text = str(raw.get(name) or "").strip()
+            if text:
+                selected[target] = text[:160]
+                break
+    return selected or None
+
+
+def selected_word_prompt_line(context: dict[str, Any]) -> str | None:
+    selected_word = context.get("selected_word")
+    if not isinstance(selected_word, dict):
+        return None
+    surface = str(selected_word.get("surface_form") or "").strip()
+    lemma = str(selected_word.get("lemma") or "").strip()
+    strongs = str(selected_word.get("strongs_number") or "").strip()
+    details = [surface]
+    if lemma and lemma != surface:
+        details.append(f"lemma {lemma}")
+    if strongs:
+        details.append(f"Strong's {strongs}")
+    details = [value for value in details if value]
+    return f"Selected word: {', '.join(details)}" if details else None
+
+
 def _reader_action_question(
     form: dict[str, Any] | Any,
     context: dict[str, Any],
@@ -657,6 +716,9 @@ def _reader_action_question(
     lines = [f"Using BHF, explain the {title} of {label} {context['reference']}."]
     if user_question:
         lines.append(f"User question: {user_question}")
+    selected_word_line = selected_word_prompt_line(context)
+    if selected_word_line:
+        lines.append(selected_word_line)
     lines.extend(["", *instructions, "", f"Selected text ({label} {context['reference']}):", context["selected_text"]])
     if context.get("chapter_context"):
         lines.extend(["", f"Full chapter context ({label} {context['book']} {context['chapter']}):", str(context["chapter_context"])])
@@ -862,6 +924,9 @@ def word_study_question(form: dict[str, Any] | Any, context: dict[str, Any]) -> 
     source_language = "Hebrew" if testament == "Old Testament" else "Greek"
     label = translation_label(context)
     lines = [f"Using BHF, provide a cautious word study helper for {label} {context['reference']}.", f"The selected word or phrase is from the {label} English text: {selected_text}"]
+    selected_word_line = selected_word_prompt_line(context)
+    if selected_word_line:
+        lines.append(selected_word_line)
     if user_question:
         lines.append(f"User question: {user_question}")
     lines.extend(["", f"Testament context: {testament}. Discuss possible {source_language} terms only as possibilities.", f"The selected word is from the {label} English text.", "Do not claim exact Hebrew/Greek alignment unless the app has source-language data.", "Do not invent Strong's numbers.", "Offer likely Hebrew or Greek terms only as possibilities, with uncertainty.", "Recommend checking an actual lexicon/interlinear for confirmation.", "Explain semantic range, usage, and context cautiously.", "", f"Selected text ({label} {context['reference']}):", selected_text])

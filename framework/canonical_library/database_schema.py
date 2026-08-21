@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-CKL_DATABASE_SCHEMA_VERSION = "3"
-CKL_RETRIEVAL_INDEX_VERSION = "2"
+CKL_DATABASE_SCHEMA_VERSION = "4"
+CKL_RETRIEVAL_INDEX_VERSION = "3"
 DEFAULT_CKL_DATABASE_PATH = ".bhf/ckl.sqlite"
 
 
@@ -154,6 +154,126 @@ CREATE TABLE canonical_source_supports (
     PRIMARY KEY (object_id, source_id, supported_item),
     FOREIGN KEY (object_id, source_id)
         REFERENCES canonical_sources(object_id, source_id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE canonical_temporal_scopes (
+    object_id TEXT PRIMARY KEY,
+    start_year INTEGER,
+    end_year INTEGER,
+    approximate INTEGER NOT NULL DEFAULT 0,
+    periods_json TEXT NOT NULL DEFAULT '[]',
+    narrative_setting TEXT NOT NULL DEFAULT '',
+    source_composition_start_year INTEGER,
+    source_composition_end_year INTEGER,
+    source_composition_approximate INTEGER NOT NULL DEFAULT 0,
+    notes TEXT NOT NULL DEFAULT '',
+    FOREIGN KEY (object_id)
+        REFERENCES canonical_objects(id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE canonical_evidence_items (
+    object_id TEXT NOT NULL,
+    evidence_id TEXT NOT NULL,
+    title TEXT NOT NULL,
+    evidence_type TEXT NOT NULL,
+    description TEXT NOT NULL,
+    assertion_type TEXT NOT NULL,
+    confidence TEXT NOT NULL,
+    confidence_rationale TEXT NOT NULL,
+    passage_relevance TEXT NOT NULL,
+    certainty TEXT NOT NULL,
+    dispute_status TEXT NOT NULL,
+    primary_observation TEXT NOT NULL DEFAULT '',
+    scholarly_interpretation TEXT NOT NULL DEFAULT '',
+    start_year INTEGER,
+    end_year INTEGER,
+    approximate INTEGER NOT NULL DEFAULT 0,
+    periods_json TEXT NOT NULL DEFAULT '[]',
+    narrative_setting TEXT NOT NULL DEFAULT '',
+    source_composition_start_year INTEGER,
+    source_composition_end_year INTEGER,
+    source_composition_approximate INTEGER NOT NULL DEFAULT 0,
+    temporal_notes TEXT NOT NULL DEFAULT '',
+    metadata_json TEXT NOT NULL DEFAULT '{}',
+    notes TEXT NOT NULL DEFAULT '',
+    PRIMARY KEY (object_id, evidence_id),
+    FOREIGN KEY (object_id)
+        REFERENCES canonical_objects(id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE canonical_evidence_claims (
+    object_id TEXT NOT NULL,
+    evidence_id TEXT NOT NULL,
+    claim_id TEXT NOT NULL,
+    PRIMARY KEY (object_id, evidence_id, claim_id),
+    FOREIGN KEY (object_id, evidence_id)
+        REFERENCES canonical_evidence_items(object_id, evidence_id)
+        ON DELETE CASCADE,
+    FOREIGN KEY (object_id, claim_id)
+        REFERENCES canonical_claims(object_id, claim_id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE canonical_evidence_sources (
+    object_id TEXT NOT NULL,
+    evidence_id TEXT NOT NULL,
+    source_id TEXT NOT NULL,
+    source_order INTEGER NOT NULL DEFAULT 0,
+    PRIMARY KEY (object_id, evidence_id, source_id),
+    FOREIGN KEY (object_id, evidence_id)
+        REFERENCES canonical_evidence_items(object_id, evidence_id)
+        ON DELETE CASCADE,
+    FOREIGN KEY (object_id, source_id)
+        REFERENCES canonical_sources(object_id, source_id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE canonical_evidence_scripture_references (
+    object_id TEXT NOT NULL,
+    evidence_id TEXT NOT NULL,
+    reference_text TEXT NOT NULL,
+    book TEXT,
+    start_chapter INTEGER,
+    start_verse INTEGER,
+    end_chapter INTEGER,
+    end_verse INTEGER,
+    relationship TEXT NOT NULL,
+    temporal_relation TEXT NOT NULL,
+    relevance_rationale TEXT NOT NULL,
+    weight INTEGER NOT NULL DEFAULT 1,
+    PRIMARY KEY (object_id, evidence_id, reference_text, relationship),
+    FOREIGN KEY (object_id, evidence_id)
+        REFERENCES canonical_evidence_items(object_id, evidence_id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE canonical_evidence_relationships (
+    object_id TEXT NOT NULL,
+    evidence_id TEXT NOT NULL,
+    target_kind TEXT NOT NULL CHECK (target_kind IN ('evidence', 'object', 'geography')),
+    target_id TEXT NOT NULL,
+    relationship TEXT NOT NULL,
+    weight INTEGER NOT NULL DEFAULT 1,
+    notes TEXT NOT NULL DEFAULT '',
+    PRIMARY KEY (object_id, evidence_id, target_kind, target_id, relationship),
+    FOREIGN KEY (object_id, evidence_id)
+        REFERENCES canonical_evidence_items(object_id, evidence_id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE canonical_evidence_external_references (
+    object_id TEXT NOT NULL,
+    evidence_id TEXT NOT NULL,
+    domain TEXT NOT NULL,
+    external_id TEXT NOT NULL,
+    relationship TEXT NOT NULL,
+    notes TEXT NOT NULL DEFAULT '',
+    PRIMARY KEY (object_id, evidence_id, domain, external_id, relationship),
+    FOREIGN KEY (object_id, evidence_id)
+        REFERENCES canonical_evidence_items(object_id, evidence_id)
         ON DELETE CASCADE
 );
 
@@ -347,6 +467,39 @@ ON canonical_claim_sources(object_id, source_id);
 CREATE INDEX idx_source_supports_item
 ON canonical_source_supports(supported_item);
 
+CREATE INDEX idx_temporal_scopes_range
+ON canonical_temporal_scopes(start_year, end_year);
+
+CREATE INDEX idx_temporal_scopes_periods
+ON canonical_temporal_scopes(periods_json);
+
+CREATE INDEX idx_evidence_items_type
+ON canonical_evidence_items(evidence_type);
+
+CREATE INDEX idx_evidence_items_temporal
+ON canonical_evidence_items(start_year, end_year);
+
+CREATE INDEX idx_evidence_items_confidence
+ON canonical_evidence_items(confidence, assertion_type);
+
+CREATE INDEX idx_evidence_claims_claim
+ON canonical_evidence_claims(object_id, claim_id);
+
+CREATE INDEX idx_evidence_sources_source
+ON canonical_evidence_sources(object_id, source_id);
+
+CREATE INDEX idx_evidence_scripture_reference
+ON canonical_evidence_scripture_references(book, start_chapter, start_verse);
+
+CREATE INDEX idx_evidence_scripture_temporal
+ON canonical_evidence_scripture_references(temporal_relation, relationship);
+
+CREATE INDEX idx_evidence_relationships_target
+ON canonical_evidence_relationships(target_kind, target_id);
+
+CREATE INDEX idx_evidence_external_reference
+ON canonical_evidence_external_references(domain, external_id);
+
 CREATE INDEX idx_lexicon_entries_strongs
 ON lexicon_entries(normalized_strongs_number);
 
@@ -424,6 +577,17 @@ REQUIRED_INDEXES = {
     "idx_claim_sources_claim",
     "idx_claim_sources_source",
     "idx_source_supports_item",
+    "idx_temporal_scopes_range",
+    "idx_temporal_scopes_periods",
+    "idx_evidence_items_type",
+    "idx_evidence_items_temporal",
+    "idx_evidence_items_confidence",
+    "idx_evidence_claims_claim",
+    "idx_evidence_sources_source",
+    "idx_evidence_scripture_reference",
+    "idx_evidence_scripture_temporal",
+    "idx_evidence_relationships_target",
+    "idx_evidence_external_reference",
     "idx_lexicon_entries_strongs",
     "idx_lexicon_entries_strongs_digits",
     "idx_lexicon_entries_normalized_lemma",

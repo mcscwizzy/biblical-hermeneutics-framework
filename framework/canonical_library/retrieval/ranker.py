@@ -61,6 +61,7 @@ FIELD_QUALITY_WEIGHTS: dict[str, float] = {
     "related_events": 0.65,
     "interpretive_notes": 0.6,
     "claims": 0.7,
+    "evidence_items": 0.92,
     "knowledge_layers": 0.5,
 }
 

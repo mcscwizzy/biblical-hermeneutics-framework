@@ -2,13 +2,14 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import tempfile
 import unittest
 
+from framework.canonical_library.database_builder import build_database
 from framework.canonical_library.sqlite_repository import SQLiteCanonicalLibrary
 
 
 FIXTURE_PATH = Path(__file__).resolve().parents[1] / "fixtures" / "ckl_claim_golden_queries.json"
-DATABASE_PATH = Path(__file__).resolve().parents[2] / ".bhf" / "ckl.sqlite"
 ROOT = Path(__file__).resolve().parents[2] / "framework" / "canonical_library"
 
 
@@ -16,11 +17,15 @@ class CKLClaimGoldenQueryTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.fixture = json.loads(FIXTURE_PATH.read_text(encoding="utf-8"))
-        cls.library = SQLiteCanonicalLibrary.from_path(DATABASE_PATH, root=ROOT)
+        cls._tmp = tempfile.TemporaryDirectory()
+        database_path = Path(cls._tmp.name) / "ckl.sqlite"
+        build_database(ROOT, database_path)
+        cls.library = SQLiteCanonicalLibrary.from_path(database_path, root=ROOT)
 
     @classmethod
     def tearDownClass(cls) -> None:
         cls.library.close()
+        cls._tmp.cleanup()
 
     def test_claim_ranking_and_hydration_match_golden_cases(self) -> None:
         for case in self.fixture["queries"]:

@@ -120,7 +120,6 @@ button.danger {
 
 .status-panel[hidden],
 .note-editor[hidden],
-.context-menu[hidden],
 .map-panel[hidden],
 .map-panel-status[hidden] {
   display: none;
@@ -762,98 +761,6 @@ code {
   background: #ffdbe7;
 }
 
-.context-menu {
-  position: fixed;
-  z-index: 20;
-  min-width: 180px;
-  max-width: calc(100vw - 16px);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 5px;
-  background: var(--surface);
-  box-shadow: 0 12px 28px rgb(20 31 43 / 18%);
-  overflow: visible;
-}
-
-.context-menu-section {
-  position: relative;
-}
-
-.context-menu-section + .context-menu-section {
-  margin-top: 2px;
-}
-
-.context-menu button {
-  display: block;
-  width: 100%;
-  border-radius: 5px;
-  padding: 7px 10px;
-  color: var(--page-text);
-  background: transparent;
-  text-align: left;
-  font-weight: 650;
-  white-space: nowrap;
-}
-
-.context-menu-trigger {
-  position: relative;
-  padding-right: 28px !important;
-}
-
-.context-menu-trigger::after {
-  content: "›";
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--page-muted);
-  font-size: 1.15rem;
-  line-height: 1;
-}
-
-.context-menu-submenu {
-  position: absolute;
-  left: calc(100% + 6px);
-  top: 0;
-  display: none;
-  min-width: min(210px, calc(100vw - 32px));
-  max-width: calc(100vw - 32px);
-  max-height: min(72vh, 520px);
-  overflow-y: auto;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 5px;
-  background: var(--surface);
-  box-shadow: 0 12px 28px rgb(20 31 43 / 18%);
-}
-
-.context-menu.opens-left .context-menu-submenu {
-  right: calc(100% + 6px);
-  left: auto;
-}
-
-.context-menu-section:hover > .context-menu-submenu,
-.context-menu-section.is-open > .context-menu-submenu {
-  display: block;
-}
-
-.context-menu-section:hover > .context-menu-trigger,
-.context-menu-section.is-open > .context-menu-trigger {
-  color: var(--accent-text);
-  background: var(--accent-soft);
-}
-
-.context-menu-section:hover > .context-menu-trigger::after,
-.context-menu-section.is-open > .context-menu-trigger::after {
-  color: var(--accent-text);
-}
-
-.context-menu button:hover,
-.context-menu button:focus {
-  color: var(--accent-text);
-  background: var(--accent-soft);
-}
-
 .reader-page {
   padding-bottom: calc(24px + var(--app-dock-height) + env(safe-area-inset-bottom));
 }
@@ -1250,42 +1157,6 @@ html[data-theme="dark"] .app-dock {
     min-height: 44px;
   }
 
-  .context-menu {
-    z-index: 10004;
-    min-width: min(170px, calc(100vw - 16px));
-  }
-
-  .context-menu-submenu {
-    left: calc(100% + 4px);
-    min-width: min(190px, calc(100vw - 32px));
-    max-height: min(62dvh, calc(100dvh - var(--app-dock-height) - 32px));
-  }
-
-  .context-menu.opens-left .context-menu-submenu {
-    right: calc(100% + 4px);
-  }
-
-  .context-menu-section:hover > .context-menu-submenu {
-    display: block;
-  }
-
-  .context-menu-section.is-open > .context-menu-submenu {
-    display: block;
-  }
-
-  .context-menu-trigger::after {
-    content: "›";
-  }
-
-  .verse-actions-button {
-    display: inline-flex;
-    width: 36px;
-    min-width: 36px;
-    min-height: 36px;
-    height: 36px;
-    padding: 0;
-  }
-
   .notes-list,
   .highlights-list,
   .saved-studies-list {
@@ -1361,8 +1232,6 @@ html[data-theme="dark"] .source-reference-list,
 html[data-theme="dark"] .map-details-panel,
 html[data-theme="dark"] .map-modal-shell,
 html[data-theme="dark"] .map-pin-hint,
-html[data-theme="dark"] .context-menu,
-html[data-theme="dark"] .context-menu-submenu,
 html[data-theme="dark"] .notice,
 html[data-theme="dark"] .error,
 html[data-theme="dark"] .saved-study,
@@ -1370,21 +1239,6 @@ html[data-theme="dark"] .note,
 html[data-theme="dark"] .highlight-item {
   background: var(--surface);
   border-color: var(--border);
-}
-
-html[data-theme="dark"] .context-menu-trigger::after {
-  color: var(--page-muted);
-}
-
-html[data-theme="dark"] .context-menu button {
-  color: var(--page-text);
-  background: transparent;
-}
-
-html[data-theme="dark"] .context-menu button:hover,
-html[data-theme="dark"] .context-menu button:focus {
-  color: var(--accent-text);
-  background: var(--accent-soft);
 }
 
 html[data-theme="dark"] .workspace-tab[aria-selected="true"] {
@@ -1552,7 +1406,9 @@ html[data-theme="dark"] .map-panel-status[data-state="error"] {
 .reader-controls-sheet-panel {
   display: grid;
   gap: 12px;
+  width: 100%;
   min-width: 0;
+  max-width: 100%;
   max-height: min(82dvh, 820px);
   grid-template-rows: auto auto minmax(0, 1fr);
   padding: 14px 14px calc(14px + env(safe-area-inset-bottom));
@@ -1611,6 +1467,7 @@ html[data-theme="dark"] .map-panel-status[data-state="error"] {
   display: grid;
   gap: 8px;
   min-width: 0;
+  max-width: 100%;
 }
 
 .reader-settings-group-heading {
@@ -1735,6 +1592,13 @@ button.reader-setting-action:focus {
   color: var(--accent-text);
 }
 
+button.reader-setting-action:hover .reader-setting-status,
+button.reader-setting-action:hover .reader-setting-hint,
+button.reader-setting-action:focus .reader-setting-status,
+button.reader-setting-action:focus .reader-setting-hint {
+  color: var(--accent-text);
+}
+
 button.reader-setting-action:disabled {
   border-color: var(--border);
   background: var(--surface-muted);
@@ -1788,6 +1652,7 @@ button.reader-setting-action:disabled .reader-setting-value {
 .offline-readiness-details {
   min-width: 0;
   max-width: 100%;
+  overflow-wrap: anywhere;
   border: 1px solid var(--border);
   border-radius: 8px;
   background: var(--surface);
@@ -1978,6 +1843,20 @@ html[data-theme="dark"] button.reader-setting-action:disabled {
 
   .app-dock-utility {
     min-height: 42px;
+  }
+
+  .reader-controls-sheet .settings-help::after {
+    position: fixed;
+    right: 16px;
+    bottom: calc(var(--app-dock-height) + env(safe-area-inset-bottom) + 16px);
+    left: 16px;
+    width: auto;
+    transform: translateY(4px);
+  }
+
+  .reader-controls-sheet .settings-help:hover::after,
+  .reader-controls-sheet .settings-help:focus::after {
+    transform: none;
   }
 
 }

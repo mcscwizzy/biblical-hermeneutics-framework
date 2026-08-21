@@ -203,13 +203,12 @@ body.reader-mode .reader-chapter-header,
 body.reader-mode .reader-chapter-footer,
 body.reader-mode .reader-translation-badge,
 body.reader-mode .verse-number,
-body.reader-mode .verse-actions-button,
 body.reader-mode .verse-state-indicators,
+body.reader-mode .passage-action-strip,
 body.reader-mode .reader-controls-sheet,
 body.reader-mode .translation-selector-overlay,
 body.reader-mode .ai-setup-dialog,
-body.reader-mode #map-modal,
-body.reader-mode #reader-context-menu {
+body.reader-mode #map-modal {
   display: none !important;
 }
 

@@ -7,6 +7,8 @@ import socket
 import time
 import urllib.error
 import urllib.request
+from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 from typing import Any, Optional
 
 from bhf_agent.models import ChatRequest, ChatResponse
@@ -24,12 +26,21 @@ class OpenAICompatibleAdapter(ChatAdapter):
         timeout_seconds: Optional[float] = 120,
         provider_name: str = "openai_compatible",
         extra_headers: Optional[dict[str, str]] = None,
+        max_rate_limit_retries: int = 0,
+        rate_limit_retry_seconds: float = 1.0,
+        max_rate_limit_retry_seconds: float = 10.0,
     ) -> None:
         self.base_url = base_url.rstrip("/")
         self.api_key = api_key
         self.timeout_seconds = timeout_seconds
         self.provider_name = provider_name
         self.extra_headers = dict(extra_headers or {})
+        self.max_rate_limit_retries = max(0, int(max_rate_limit_retries))
+        self.rate_limit_retry_seconds = max(0.0, float(rate_limit_retry_seconds))
+        self.max_rate_limit_retry_seconds = max(
+            self.rate_limit_retry_seconds,
+            float(max_rate_limit_retry_seconds),
+        )
 
     @property
     def endpoint(self) -> str:
@@ -63,60 +74,76 @@ class OpenAICompatibleAdapter(ChatAdapter):
             method="POST",
         )
         started_at = time.perf_counter()
+        rate_limit_retries = 0
 
-        try:
-            with urllib.request.urlopen(
-                http_request,
-                timeout=self.timeout_seconds,
-            ) as response:
-                raw_body = response.read().decode("utf-8")
-        except urllib.error.HTTPError as exc:
-            error_body = _safe_read_error(exc)
-            hint = _http_error_hint(exc.code, self.base_url)
-            provider_label = self.provider_name.replace("_", " ").title()
-            return ChatResponse(
-                text="",
-                provider=self.provider_name,
-                latency_ms=_elapsed_ms(started_at),
-                errors=[
-                    f"{provider_label} request failed: HTTP {exc.code}: "
-                    f"{_friendly_http_error(exc.code, error_body, exc.reason)}{hint}"
-                ],
-                raw_provider_response=error_body,
-                error_category="provider_failure",
-            )
-        except (TimeoutError, socket.timeout) as exc:
-            return ChatResponse(
-                text="",
-                provider=self.provider_name,
-                latency_ms=_elapsed_ms(started_at),
-                errors=[f"OpenAI-compatible endpoint timed out: {exc}"],
-                error_category="provider_timeout",
-            )
-        except urllib.error.URLError as exc:
-            reason = exc.reason
-            if isinstance(reason, ConnectionRefusedError):
-                message = (
-                    "Connection refused by OpenAI-compatible endpoint. "
-                    "Check that the local model server is running and the base URL is correct."
+        while True:
+            try:
+                with urllib.request.urlopen(
+                    http_request,
+                    timeout=self.timeout_seconds,
+                ) as response:
+                    raw_body = response.read().decode("utf-8")
+                break
+            except urllib.error.HTTPError as exc:
+                error_body = _safe_read_error(exc)
+                if (
+                    exc.code == 429
+                    and rate_limit_retries < self.max_rate_limit_retries
+                ):
+                    delay = _rate_limit_retry_delay(
+                        exc.headers,
+                        retry_number=rate_limit_retries,
+                        base_delay_seconds=self.rate_limit_retry_seconds,
+                        max_delay_seconds=self.max_rate_limit_retry_seconds,
+                    )
+                    rate_limit_retries += 1
+                    time.sleep(delay)
+                    continue
+                hint = _http_error_hint(exc.code, self.base_url)
+                provider_label = self.provider_name.replace("_", " ").title()
+                return ChatResponse(
+                    text="",
+                    provider=self.provider_name,
+                    latency_ms=_elapsed_ms(started_at),
+                    errors=[
+                        f"{provider_label} request failed: HTTP {exc.code}: "
+                        f"{_friendly_http_error(exc.code, error_body, exc.reason)}{hint}"
+                    ],
+                    raw_provider_response=error_body,
+                    error_category="provider_failure",
                 )
-            else:
-                message = f"Could not connect to OpenAI-compatible endpoint: {reason}"
-            return ChatResponse(
-                text="",
-                provider=self.provider_name,
-                latency_ms=_elapsed_ms(started_at),
-                errors=[message],
-                error_category="provider_connection",
-            )
-        except OSError as exc:
-            return ChatResponse(
-                text="",
-                provider=self.provider_name,
-                latency_ms=_elapsed_ms(started_at),
-                errors=[f"OpenAI-compatible endpoint request failed: {exc}"],
-                error_category="provider_failure",
-            )
+            except (TimeoutError, socket.timeout) as exc:
+                return ChatResponse(
+                    text="",
+                    provider=self.provider_name,
+                    latency_ms=_elapsed_ms(started_at),
+                    errors=[f"OpenAI-compatible endpoint timed out: {exc}"],
+                    error_category="provider_timeout",
+                )
+            except urllib.error.URLError as exc:
+                reason = exc.reason
+                if isinstance(reason, ConnectionRefusedError):
+                    message = (
+                        "Connection refused by OpenAI-compatible endpoint. "
+                        "Check that the local model server is running and the base URL is correct."
+                    )
+                else:
+                    message = f"Could not connect to OpenAI-compatible endpoint: {reason}"
+                return ChatResponse(
+                    text="",
+                    provider=self.provider_name,
+                    latency_ms=_elapsed_ms(started_at),
+                    errors=[message],
+                    error_category="provider_connection",
+                )
+            except OSError as exc:
+                return ChatResponse(
+                    text="",
+                    provider=self.provider_name,
+                    latency_ms=_elapsed_ms(started_at),
+                    errors=[f"OpenAI-compatible endpoint request failed: {exc}"],
+                    error_category="provider_failure",
+                )
 
         try:
             data = json.loads(raw_body)
@@ -150,6 +177,13 @@ class OpenAICompatibleAdapter(ChatAdapter):
             latency_ms=_elapsed_ms(started_at),
             usage=data.get("usage"),
             raw_provider_response=data,
+            warnings=(
+                [
+                    "The provider briefly rate-limited this request; BHF retried automatically."
+                ]
+                if rate_limit_retries
+                else []
+            ),
         )
 
     def health_check(self, model: Optional[str] = None) -> dict[str, Any]:
@@ -207,6 +241,35 @@ def _safe_read_error(exc: urllib.error.HTTPError) -> str:
         return ""
     except Exception:
         return ""
+    finally:
+        exc.close()
+
+
+def _rate_limit_retry_delay(
+    headers: Any,
+    *,
+    retry_number: int,
+    base_delay_seconds: float,
+    max_delay_seconds: float,
+) -> float:
+    """Choose a bounded delay, preferring a provider-provided Retry-After."""
+
+    fallback_delay = base_delay_seconds * (2**retry_number)
+    retry_after = headers.get("Retry-After") if headers else None
+    if retry_after:
+        try:
+            delay = float(str(retry_after).strip())
+        except (TypeError, ValueError):
+            try:
+                retry_at = parsedate_to_datetime(str(retry_after))
+                if retry_at.tzinfo is None:
+                    retry_at = retry_at.replace(tzinfo=timezone.utc)
+                delay = (retry_at - datetime.now(timezone.utc)).total_seconds()
+            except (TypeError, ValueError, IndexError, OverflowError):
+                delay = fallback_delay
+    else:
+        delay = fallback_delay
+    return min(max(0.0, delay), max_delay_seconds)
 
 
 def _friendly_http_error(status_code: int, detail: str, reason: object) -> str:

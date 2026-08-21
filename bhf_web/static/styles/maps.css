@@ -965,6 +965,12 @@ html[data-theme="dark"] .map-entity-marker--place {
 .map-layer-toggle.is-selected {
   border-color: var(--accent);
   background: var(--accent-soft);
+  color: var(--accent-text);
+}
+
+.map-layer-toggle.is-selected small,
+.map-layer-toggle.is-selected span span {
+  color: var(--accent-text);
 }
 
 .text-button {
@@ -1073,6 +1079,18 @@ html[data-theme="dark"] .map-stage {
     box-shadow: var(--shadow-strong);
   }
 
+  .map-details-column.is-mobile-open {
+    display: block;
+    position: static;
+    inset: auto;
+    width: auto;
+    max-height: none;
+    margin: 10px;
+    overflow: visible;
+    overscroll-behavior: auto;
+    scroll-margin-block: 10px;
+  }
+
   .map-navigator-close {
     display: inline-grid;
     place-items: center;
@@ -1119,9 +1137,7 @@ html[data-theme="dark"] .map-stage {
   }
 
   .map-details-column.is-mobile-open {
-    inset: auto 8px max(8px, env(safe-area-inset-bottom, 0px)) 8px;
-    width: auto;
-    max-height: 78dvh;
+    margin: 8px;
   }
 
   .map-stage {

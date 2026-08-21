@@ -141,9 +141,6 @@ export async function loadPlacesForPassage(context = {}) {
   if (context.verseEnd || context.endVerse) {
     params.set("verse_end", String(context.verseEnd || context.endVerse));
   }
-  if (context.selectedText || context.passageText || context.text) {
-    params.set("passage_text", context.selectedText || context.passageText || context.text);
-  }
   if (context.period && String(context.period).trim().toLowerCase() !== "all") {
     params.set("period", String(context.period));
   }
@@ -181,9 +178,6 @@ export async function loadRoutesForPassage(context = {}) {
   if (context.verseEnd || context.endVerse) {
     params.set("verse_end", String(context.verseEnd || context.endVerse));
   }
-  if (context.selectedText || context.passageText || context.text) {
-    params.set("passage_text", context.selectedText || context.passageText || context.text);
-  }
   if (context.period && String(context.period).trim().toLowerCase() !== "all") {
     params.set("period", String(context.period));
   }
@@ -220,9 +214,6 @@ export async function loadPoliticalContextForPassage(context = {}) {
   if (context.verseEnd || context.endVerse) {
     params.set("verse_end", String(context.verseEnd || context.endVerse));
   }
-  if (context.selectedText || context.passageText || context.text) {
-    params.set("passage_text", context.selectedText || context.passageText || context.text);
-  }
   if (context.period && String(context.period).trim().toLowerCase() !== "all") {
     params.set("period", String(context.period));
   }
@@ -247,9 +238,6 @@ export async function loadArchaeologyForPassage(context = {}) {
   if (context.verseEnd || context.endVerse) {
     params.set("verse_end", String(context.verseEnd || context.endVerse));
   }
-  if (context.selectedText || context.passageText || context.text) {
-    params.set("passage_text", context.selectedText || context.passageText || context.text);
-  }
   if (context.period && String(context.period).trim().toLowerCase() !== "all") {
     params.set("period", String(context.period));
   }
@@ -273,9 +261,6 @@ export async function loadManuscriptsForPassage(context = {}) {
   }
   if (context.verseEnd || context.endVerse) {
     params.set("verse_end", String(context.verseEnd || context.endVerse));
-  }
-  if (context.selectedText || context.passageText || context.text) {
-    params.set("passage_text", context.selectedText || context.passageText || context.text);
   }
   if (context.period && String(context.period).trim().toLowerCase() !== "all") {
     params.set("period", String(context.period));

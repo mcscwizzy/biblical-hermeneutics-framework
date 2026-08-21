@@ -27,6 +27,37 @@ def test_maps_tab_loads(driver, wait, base_url):
     assert page.find("#map-panel").is_displayed()
 
 
+def test_explore_maps_card_opens_visible_browse_workspace(driver, wait, base_url):
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    driver.find_element(By.CSS_SELECTOR, '[data-testid="app-dock-explore"]').click()
+    maps_card = wait.until(
+        lambda _driver: next(
+            (
+                item
+                for item in _driver.find_elements(By.CSS_SELECTOR, '[data-companion-resource="maps"]')
+                if item.is_displayed()
+            ),
+            None,
+        )
+    )
+    maps_card.click()
+
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "#map-panel").is_displayed())
+    wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, "#map-search-results").is_displayed())
+    search_input = driver.find_element(By.CSS_SELECTOR, '[data-testid="map-search-input"]')
+    assert search_input.is_displayed()
+    search_input.click()
+    active_element = driver.switch_to.active_element
+    assert active_element == search_input, active_element.get_attribute("outerHTML")
+    search_input.send_keys("Jerusalem")
+    assert search_input.get_attribute("value") == "Jerusalem"
+    clear_button = driver.find_element(By.CSS_SELECTOR, '[data-testid="map-search-clear"]')
+    clear_button.click()
+    assert driver.switch_to.active_element == clear_button
+    assert search_input.get_attribute("value") == ""
+    assert driver.execute_script("return document.querySelector('[data-study-companion]').inert") is False
+
+
 def test_map_catalog_search(driver, wait, base_url):
     HomePage(driver, wait, base_url).open().wait_loaded()
     page = MapsPage(driver, wait, base_url)
@@ -74,10 +105,30 @@ def test_mobile_map_details_can_be_closed(driver, wait, base_url):
     details = driver.find_element(By.CSS_SELECTOR, "#map-details-column")
     open_button = driver.find_element(By.CSS_SELECTOR, "[data-map-details-open]")
     close_button = driver.find_element(By.CSS_SELECTOR, "[data-map-details-close]")
+    maps_pane = driver.find_element(By.CSS_SELECTOR, '#workspace-pane-maps')
 
     open_button.click()
     wait.until(lambda _driver: "is-mobile-open" in details.get_attribute("class"))
     assert close_button.is_displayed()
+    assert driver.execute_script("return getComputedStyle(arguments[0]).position", details) == "static"
+    wait.until(lambda _driver: maps_pane.get_property("scrollTop") > 0)
+
+    driver.execute_script("arguments[0].scrollTop = 0", maps_pane)
+    assert maps_pane.get_property("scrollTop") == 0
+    scroll_metrics = driver.execute_script(
+        """
+        const pane = arguments[0];
+        pane.scrollTop = pane.scrollHeight;
+        return {
+          clientHeight: pane.clientHeight,
+          scrollHeight: pane.scrollHeight,
+          scrollTop: pane.scrollTop,
+        };
+        """,
+        maps_pane,
+    )
+    assert scroll_metrics["scrollHeight"] > scroll_metrics["clientHeight"]
+    assert scroll_metrics["scrollTop"] > 0
 
     close_button.click()
     wait.until(lambda _driver: "is-mobile-open" not in details.get_attribute("class"))

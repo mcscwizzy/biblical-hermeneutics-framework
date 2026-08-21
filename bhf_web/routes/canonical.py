@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from functools import lru_cache
 from typing import Any
 
@@ -24,6 +25,33 @@ def _canonical_library():
 
 def register_canonical_routes(app: FastAPI, *, study_db_path: str | None = None) -> None:
     archaeology = ArchaeologyService(study_db_path) if study_db_path else ArchaeologyService()
+
+    @app.get("/api/canonical/entities-for-passage", response_class=JSONResponse)
+    async def canonical_entities_for_passage(
+        book: str,
+        chapter: int,
+        verse_start: int | None = None,
+        verse_end: int | None = None,
+        passage_text: str | None = None,
+        limit: int = 12,
+    ) -> JSONResponse:
+        """Return compact, deterministic entity availability without full CKL retrieval."""
+
+        results = _entities_for_passage(
+            _canonical_library(),
+            book=book,
+            chapter=chapter,
+            verse_start=verse_start,
+            verse_end=verse_end,
+            passage_text=passage_text,
+            limit=max(1, min(int(limit), 25)),
+        )
+        return JSONResponse({
+            "reference": _format_passage_reference(book, chapter, verse_start, verse_end),
+            "results": results,
+            "result_count": len(results),
+        })
+
     @app.get("/api/canonical/search", response_class=JSONResponse)
     async def canonical_search(
         q: str | None = None,
@@ -48,14 +76,18 @@ def register_canonical_routes(app: FastAPI, *, study_db_path: str | None = None)
             )
             retrieved_topics = list(context.get("retrieved_topics") or []) if context else []
             results = [
-                _with_related_archaeology(_serialize_topic(topic, library, browse=False), archaeology)
+                _with_related_archaeology(
+                    _serialize_topic(topic, library, browse=False),
+                    archaeology,
+                    include_media=False,
+                )
                 for topic in retrieved_topics
                 if _topic_matches_filters(topic, object_type, review_status, content_status)
             ]
             metadata = dict(context.get("metadata") or {}) if context else {}
         else:
             results = [
-                _with_related_archaeology(result, archaeology)
+                _with_related_archaeology(result, archaeology, include_media=False)
                 for result in _browse_topics(
                 library,
                 limit=max(1, min(int(limit), 25)),
@@ -102,7 +134,10 @@ def register_canonical_routes(app: FastAPI, *, study_db_path: str | None = None)
         obj = library.objects_by_id.get(normalized_id)
         if obj is None:
             return JSONResponse({"error": "canonical object not found"}, status_code=404)
-        if obj.type == "archaeology":
+        # Draft archaeology compatibility records remain directly inspectable
+        # by the CKL editor until curation is complete. Completed records defer
+        # to the authoritative archaeology domain.
+        if obj.type == "archaeology" and obj.content_status != "placeholder":
             try:
                 item = archaeology.get_item(normalized_id)
             except Exception:
@@ -214,6 +249,10 @@ def register_canonical_editor_routes(app: FastAPI, *, templates: Any) -> None:
                 ckl_module._load_default_canonical_library.cache_clear()
             except AttributeError:
                 pass
+        companion_context = getattr(request.app.state, "companion_context_service", None)
+        invalidate_companion = getattr(companion_context, "invalidate_canonical_cache", None)
+        if callable(invalidate_companion):
+            invalidate_companion()
         return RedirectResponse(
             url=f"/canonical/editor?object_id={validated.id}&saved=1",
             status_code=303,
@@ -315,6 +354,7 @@ def _serialize_object_detail(obj: Any, library: Any, *, browse: bool = False) ->
     payload["source_count"] = len(payload["sources"])
     payload["scripture_reference_count"] = len(payload["scripture_references"])
     payload["related_object_count"] = len(payload["related_objects"])
+    payload["evidence_count"] = len(payload.get("evidence_items") or [])
     payload["related_object_links"] = _serialize_related_object_links(obj, library)
     payload["browse_url"] = f"/curation?collection={obj.type}"
     return payload
@@ -343,6 +383,10 @@ def _serialize_topic(topic: dict[str, Any], library: Any, *, browse: bool) -> di
             "source_count": len(payload["sources"]),
             "scripture_reference_count": len(payload["scripture_references"]),
             "related_object_count": len(payload["related_objects"]),
+            "evidence_count": len(payload.get("evidence_items") or []),
+            "selected_evidence": list(topic.get("selected_evidence") or []),
+            "selected_claims": list(topic.get("selected_claims") or []),
+            "evidence_coverage": dict(topic.get("evidence_coverage") or {}),
             "related_object_links": _serialize_related_object_links(obj, library),
             "browse_url": f"/curation?collection={obj.type}",
         }
@@ -351,6 +395,184 @@ def _serialize_topic(topic: dict[str, Any], library: Any, *, browse: bool) -> di
         payload["reason"] = f"Browse result ranked by importance {obj.importance}."
         payload["match_type"] = "browse"
     return payload
+
+
+def _entities_for_passage(
+    library: Any,
+    *,
+    book: str,
+    chapter: int,
+    verse_start: int | None,
+    verse_end: int | None,
+    passage_text: str | None,
+    limit: int,
+) -> list[dict[str, Any]]:
+    """Rank direct entity mentions and Scripture anchors using compact local data."""
+
+    normalized_text = " ".join(str(passage_text or "").casefold().split())
+    indexed_lookup = getattr(library, "retrieve_by_scripture_reference", None)
+    if callable(indexed_lookup):
+        reference = _format_passage_reference(book, chapter, verse_start, verse_end)
+        indexed_results = indexed_lookup(
+            reference,
+            limit=max(limit * 4, 50),
+            include_placeholders=False,
+        )
+        ranked: dict[str, tuple[float, dict[str, Any]]] = {}
+        for result in indexed_results:
+            obj = result.object
+            payload = obj.to_dict() if hasattr(obj, "to_dict") else dict(obj)
+            object_type = str(payload.get("type") or getattr(obj, "type", "")).strip().casefold()
+            if object_type not in {"person", "place", "theme"}:
+                continue
+            compact = _compact_passage_entity(payload, direct_reference=True, matched_name="")
+            ranked[compact["id"]] = (6.0 + float(getattr(result, "score", 0.0) or 0.0), compact)
+
+        if normalized_text:
+            for object_id in _indexed_entity_ids_in_text(library, normalized_text):
+                obj = library.objects_by_id.get(object_id)
+                if obj is None:
+                    continue
+                payload = obj.to_dict() if hasattr(obj, "to_dict") else dict(obj)
+                title = str(payload.get("title") or payload.get("name") or payload.get("id") or "").strip()
+                aliases = [str(value).strip() for value in payload.get("aliases") or []]
+                matched_name = next(
+                    (name for name in [title, *aliases] if _entity_name_in_text(name, normalized_text)),
+                    "",
+                )
+                if not matched_name:
+                    continue
+                direct = object_id in ranked
+                compact = _compact_passage_entity(payload, direct_reference=direct, matched_name=matched_name)
+                ranked[object_id] = ((6.0 if direct else 0.0) + 4.0, compact)
+        ordered = sorted(ranked.values(), key=lambda item: (-item[0], item[1]["type"], item[1]["title"]))
+        return [payload for _score, payload in ordered[:limit]]
+
+    # Lightweight test doubles and old third-party library adapters may not
+    # expose the indexed API yet. Keep the compatibility fallback isolated.
+    candidates: list[tuple[float, dict[str, Any]]] = []
+    for obj in library.objects_by_id.values():
+        payload = obj.to_dict() if hasattr(obj, "to_dict") else dict(obj)
+        object_type = str(payload.get("type") or getattr(obj, "type", "")).strip().casefold()
+        if object_type not in {"person", "place", "theme"}:
+            continue
+        title = str(payload.get("title") or getattr(obj, "title", "") or payload.get("name") or payload.get("id") or "").strip()
+        aliases = [str(alias).strip() for alias in payload.get("aliases") or [] if str(alias).strip()]
+        references = [
+            str(reference.get("reference") if isinstance(reference, dict) else reference).strip()
+            for reference in payload.get("scripture_references") or []
+        ]
+        direct_reference = any(
+            _reference_overlaps_passage(
+                reference,
+                book=book,
+                chapter=chapter,
+                verse_start=verse_start,
+                verse_end=verse_end,
+            )
+            for reference in references
+        )
+        matched_name = next(
+            (
+                name for name in [title, *aliases]
+                if normalized_text and _entity_name_in_text(name, normalized_text)
+            ),
+            "",
+        )
+        if not direct_reference and not matched_name:
+            continue
+        score = (6.0 if direct_reference else 0.0) + (4.0 if matched_name else 0.0)
+        score += min(float(payload.get("importance") or 0) / 100.0, 1.0)
+        candidates.append((score, {
+            "id": str(payload.get("id") or "").strip(),
+            "title": title,
+            "type": object_type,
+            "summary": str(payload.get("summary") or "").strip(),
+            "relationship": "direct Scripture anchor" if direct_reference else "named in passage",
+            "matched_name": matched_name,
+            "score": round(score, 3),
+        }))
+    candidates.sort(key=lambda item: (-item[0], item[1]["type"], item[1]["title"]))
+    return [payload for _score, payload in candidates[:limit]]
+
+
+def _compact_passage_entity(
+    payload: dict[str, Any],
+    *,
+    direct_reference: bool,
+    matched_name: str,
+) -> dict[str, Any]:
+    return {
+        "id": str(payload.get("id") or "").strip(),
+        "title": str(payload.get("title") or payload.get("name") or payload.get("id") or "").strip(),
+        "type": str(payload.get("type") or "").strip().casefold(),
+        "summary": str(payload.get("summary") or "").strip(),
+        "relationship": "direct Scripture anchor" if direct_reference else "named in passage",
+        "matched_name": matched_name,
+        "score": round((6.0 if direct_reference else 0.0) + (4.0 if matched_name else 0.0), 3),
+    }
+
+
+def _indexed_entity_ids_in_text(library: Any, normalized_text: str) -> set[str]:
+    """Resolve text mentions through the CKL's cached title/alias indexes."""
+
+    matches: set[str] = set()
+    for normalized_name, object_ids in getattr(library, "_title_index", {}).items():
+        if _entity_name_in_text(normalized_name, normalized_text):
+            matches.update(object_ids)
+    for normalized_alias, entry in getattr(library, "_alias_index", {}).items():
+        if _entity_name_in_text(normalized_alias, normalized_text):
+            matches.add(str(entry[0]))
+    return {
+        object_id
+        for object_id in matches
+        if str(getattr(library.objects_by_id.get(object_id), "type", "")).casefold()
+        in {"person", "place", "theme"}
+    }
+
+
+def _entity_name_in_text(name: str, normalized_text: str) -> bool:
+    normalized_name = " ".join(str(name or "").casefold().split())
+    if len(normalized_name) < 3:
+        return False
+    return re.search(rf"(?<![\w]){re.escape(normalized_name)}(?![\w])", normalized_text) is not None
+
+
+def _reference_overlaps_passage(
+    reference: str,
+    *,
+    book: str,
+    chapter: int,
+    verse_start: int | None,
+    verse_end: int | None,
+) -> bool:
+    match = re.match(
+        rf"^{re.escape(str(book).strip())}\s+{int(chapter)}(?::(?P<start>\d+)(?:-(?P<end>\d+))?)?(?:\b|$)",
+        str(reference or "").strip(),
+        flags=re.IGNORECASE,
+    )
+    if not match:
+        return False
+    if verse_start is None or match.group("start") is None:
+        return True
+    anchor_start = int(match.group("start"))
+    anchor_end = int(match.group("end") or anchor_start)
+    selected_end = int(verse_end or verse_start)
+    return anchor_start <= selected_end and int(verse_start) <= anchor_end
+
+
+def _format_passage_reference(
+    book: str,
+    chapter: int,
+    verse_start: int | None,
+    verse_end: int | None,
+) -> str:
+    reference = f"{book} {chapter}"
+    if verse_start is None:
+        return reference
+    if verse_end and verse_end != verse_start:
+        return f"{reference}:{verse_start}-{verse_end}"
+    return f"{reference}:{verse_start}"
 
 
 def _serialize_object(obj: Any) -> dict[str, Any]:
@@ -368,15 +590,25 @@ def _serialize_object(obj: Any) -> dict[str, Any]:
         _serialize_source(source)
         for source in list(payload.get("sources") or [])
     ]
+    payload["evidence_items"] = list(payload.get("evidence_items") or [])
+    payload["temporal_scope"] = dict(payload.get("temporal_scope") or {})
     return payload
 
 
-def _with_related_archaeology(payload: dict[str, Any], archaeology: ArchaeologyService) -> dict[str, Any]:
+def _with_related_archaeology(
+    payload: dict[str, Any],
+    archaeology: ArchaeologyService,
+    *,
+    include_media: bool = True,
+) -> dict[str, Any]:
     """Attach compact archaeology cards without making CKL own their media."""
 
     result = dict(payload)
     try:
-        result["related_archaeology"] = archaeology.related_to_ckl(str(result.get("id") or ""))
+        result["related_archaeology"] = archaeology.related_to_ckl(
+            str(result.get("id") or ""),
+            include_media=include_media,
+        )
     except Exception:  # noqa: BLE001 - an optional evidence domain must not break CKL
         result["related_archaeology"] = []
     return result
@@ -385,6 +617,7 @@ def _with_related_archaeology(payload: dict[str, Any], archaeology: ArchaeologyS
 def _serialize_source(source: Any) -> dict[str, Any]:
     payload = source.to_dict() if hasattr(source, "to_dict") else dict(source)
     return {
+        "id": str(payload.get("id") or "").strip(),
         "title": str(payload.get("title") or "").strip(),
         "author": str(payload.get("author") or "").strip(),
         "publisher": str(payload.get("publisher") or "").strip(),
@@ -392,6 +625,7 @@ def _serialize_source(source: Any) -> dict[str, Any]:
         "locator": str(payload.get("locator") or "").strip(),
         "url": str(payload.get("url") or "").strip(),
         "source_type": str(payload.get("source_type") or "").strip(),
+        "supports": list(payload.get("supports") or []),
         "notes": str(payload.get("notes") or "").strip(),
     }
 

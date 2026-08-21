@@ -1,263 +1,600 @@
 {
-  "id": "rome",
-  "type": "place",
-  "title": "Rome",
-  "aliases": [
-    "where is rome",
-    "tell me about rome",
-    "why is rome important"
-  ],
-  "summary": "Rome is a major imperial or regional power that shapes Israel's history through oppression, exile, diplomacy, or return.",
-  "historical_context": "Rome appears in conquest, monarchy, exile, or diaspora settings where power and identity collide.",
-  "ancient_near_east_context": "Ancient background for Rome includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Genesis 10:1-32, Exodus 3:1-15, babylonian-exile, and fall-of-jerusalem without letting comparison replace the biblical witness.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
-  "later_christian_reception": "",
-  "context_applicability": {
-    "historical": true,
-    "ancient_near_east": true,
-    "hebraic_worldview": true,
-    "second_temple": true,
-    "canonical": true,
-    "later_christian_reception": true
-  },
-  "literary_context": "Biblical books use Rome to contrast human power with divine sovereignty.",
-  "covenantal_significance": "Rome often marks judgment, testing, or the need for deliverance.",
-  "authorship_positions": [],
-  "date_ranges": [],
-  "original_audience": "",
-  "historical_setting": "",
-  "canonical_role": "Rome serves as a canonical place anchor, connecting geography, historical setting, key passages, and related people, events, and themes.",
-  "genre": [],
-  "structure": [],
-  "major_themes": [],
-  "canonical_placement": "",
-  "key_people": [],
-  "key_places": [],
-  "key_events": [],
-  "interpretive_disputes": [],
-  "primary_sources": [],
-  "related_entries": [],
-  "keywords": [],
-  "intertextuality": [],
-  "timeline": [],
-  "maps": [],
-  "archaeology": [],
-  "hebrew_words": [],
-  "greek_words": [],
-  "related_people": [],
-  "related_places": [],
-  "related_events": [],
-  "related_objects": [
-    {
-      "id": "babylonian-exile",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+    "id": "rome",
+    "type": "place",
+    "title": "Rome",
+    "aliases": [
+        "where is Rome",
+        "imperial Rome",
+        "Rome in Acts",
+        "Rome in Romans",
+        "biblical Rome"
+    ],
+    "summary": "Rome was the imperial capital, the named destination and audience city of Romans, and the geographic endpoint of Acts, where Jewish communities, mobile coworkers, multiple Christ-following groups, imperial institutions, unequal households, slavery, and later contested apostolic memory intersect.",
+    "historical_context": "First-century Rome was connected to Italy and the Mediterranean through ports, roads, migration, trade, administration, military power, slavery, and patronage. Jewish residents were established before Paul wrote Romans. Claudian action disrupted some residents and gatherings, but its scope and cause remain disputed; Nero's violence after the fire of 64 belongs later than Romans' probable composition.",
+    "ancient_near_east_context": "Rome is not an Ancient Near Eastern setting. Israel's Scriptures and Jewish diaspora practices are crucial for Romans, but the city's immediate institutions are Roman Mediterranean.",
+    "hebraic_worldview": "Romans addresses Israel's God, Scriptures, Torah, covenant promises, Israel, and the nations within a city containing plural Jewish communities. Jewish practice must not be reduced to a foil for Christianity or assumed uniform.",
+    "second_temple_context": "Philo describes Jewish residents, citizenship, synagogues, Sabbath gathering, and Jerusalem contributions in Rome before Claudius. Romans and Acts belong within this diaspora setting, while later catacomb evidence cannot be projected backward without controls.",
+    "canonical_context": "Romans addresses people in Rome before Paul's visit and names many coworkers and groupings. Acts 18 connects Aquila and Priscilla's move to Claudius's order, and Acts 28 narrates Paul's guarded arrival and rented lodging. Later canonical greetings do not supply a complete Roman church history.",
+    "later_christian_reception": "Tacitus, 1 Clement, catacombs, basilicas, tomb traditions, and later church histories preserve different layers of Roman memory. No traditional prison, lodging, house church, or apostolic tomb should be treated as a first-century identification without independent evidence.",
+    "context_applicability": {
+        "historical": true,
+        "ancient_near_east": false,
+        "hebraic_worldview": true,
+        "second_temple": true,
+        "canonical": true,
+        "later_christian_reception": true
     },
-    {
-      "id": "fall-of-jerusalem",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+    "literary_context": "Romans is an occasional letter to recipients Paul had not visited; Acts is a later narrative that culminates in guarded proclamation at Rome. City archaeology and Roman historians can contextualize but cannot merge both works into an exhaustive biography.",
+    "covenantal_significance": "Romans locates God's faithfulness to Israel and mercy toward the nations within the imperial capital, explicitly warning gentiles against boasting. Roman political status is not a covenant category.",
+    "authorship_positions": [],
+    "date_ranges": [],
+    "original_audience": "Readers seeking a geographically and chronologically controlled setting for Romans, Acts 18, and Acts 28.",
+    "historical_setting": "Central Italy on the Tiber, approached by Mediterranean ports and major roads, especially approximately 40-70 CE.",
+    "canonical_role": "Rome anchors Paul's intended western travel, the recipients of Romans, and Acts' narrative endpoint while later becoming a major center of Christian memory and institutions.",
+    "genre": [
+        "place record",
+        "Pauline letter destination",
+        "Acts narrative destination",
+        "imperial capital",
+        "archaeological and reception landscape"
+    ],
+    "structure": [],
+    "major_themes": [
+        "mission",
+        "Jewish diaspora",
+        "Jews and gentiles",
+        "household assemblies",
+        "imperial power",
+        "slavery",
+        "hospitality",
+        "custody",
+        "witness",
+        "martyrdom memory"
+    ],
+    "canonical_placement": "Romans 1:7-15; 15:22-33; 16:1-16; Acts 18:1-3; 28:11-31.",
+    "key_people": [
+        "Paul",
+        "Phoebe",
+        "Prisca",
+        "Aquila",
+        "Junia",
+        "Andronicus",
+        "Roman Jewish leaders",
+        "Claudius",
+        "Nero",
+        "Peter"
+    ],
+    "key_places": [
+        "Tiber",
+        "Puteoli",
+        "Via Appia",
+        "Forum of Appius",
+        "Three Taverns",
+        "Ostia",
+        "Trastevere"
+    ],
+    "key_events": [
+        "Claudian action concerning Jews",
+        "Romans addressed to Roman groups",
+        "Paul's guarded arrival in Acts",
+        "fire of 64 and Neronian violence",
+        "later commemoration of Peter and Paul"
+    ],
+    "interpretive_disputes": [
+        "scope and cause of Claudius's action",
+        "composition of Roman assemblies",
+        "Romans 16 destination and groupings",
+        "relation of Romans to empire",
+        "form and site of Paul's custody",
+        "apostolic deaths and tomb locations"
+    ],
+    "primary_sources": [
+        "Romans",
+        "Acts 18 and 28",
+        "Philo Embassy 155-158",
+        "Suetonius Claudius 25.4",
+        "Cassius Dio 60.6.6",
+        "Tacitus Annals 15.44",
+        "1 Clement 5-6"
+    ],
+    "related_entries": [],
+    "keywords": [
+        "Rome",
+        "Romans",
+        "imperial capital",
+        "Jewish communities",
+        "Claudius",
+        "Chrestus",
+        "Via Appia",
+        "Prisca",
+        "Aquila",
+        "Phoebe",
+        "house assemblies",
+        "Nero",
+        "custody"
+    ],
+    "intertextuality": [
+        "Romans anticipates a visit to Rome; Acts narrates a later arrival.",
+        "Acts and Suetonius preserve distinct Claudian displacement notices.",
+        "Romans 16 and Pauline greetings trace mobile coworkers without a continuous biography.",
+        "Tacitus and 1 Clement belong to later Roman history and reception."
+    ],
+    "timeline": [
+        "before 41 CE: Philo describes Jewish life in Rome",
+        "approximately 49 CE: conventional date for a Claudian expulsion action, scope disputed",
+        "approximately 56-58 CE: Romans composed",
+        "approximately 60s CE: conventional horizon for Acts' Roman custody",
+        "64 CE: fire and Neronian violence",
+        "late first century CE: 1 Clement remembers Peter, Paul, and other sufferers",
+        "third-fourth centuries CE: most Jewish catacomb inscriptions and major Christian monumental reception"
+    ],
+    "maps": [],
+    "archaeology": [
+        "Via Appia",
+        "Ostia and Portus",
+        "urban dwellings and commercial spaces",
+        "Jewish catacombs",
+        "later basilicas and commemorative sites"
+    ],
+    "hebrew_words": [],
+    "greek_words": [
+        "Rh\u014dm\u0113: Rome",
+        "ekkl\u0113sia: assembly",
+        "misth\u014dma: rented lodging",
+        "exousiai: authorities"
+    ],
+    "related_people": [
+        "paul",
+        "aquila",
+        "priscilla",
+        "phoebe-of-cenchreae"
+    ],
+    "related_places": [],
+    "related_events": [],
+    "related_objects": [
+        {
+            "id": "romans",
+            "relationship": "named-recipient-city",
+            "weight": 10,
+            "notes": "Romans explicitly addresses people in Rome and anticipates Paul's visit."
+        },
+        {
+            "id": "acts",
+            "relationship": "narrative-destination",
+            "weight": 10,
+            "notes": "Acts 28 concludes with Paul's guarded residence at Rome."
+        },
+        {
+            "id": "paul",
+            "relationship": "correspondent-and-guarded-witness",
+            "weight": 9,
+            "notes": "Romans precedes his visit; Acts narrates it."
+        },
+        {
+            "id": "aquila",
+            "relationship": "displaced-and-returned-coworker",
+            "weight": 9,
+            "notes": "Acts and Romans connect Aquila with Rome while leaving a complete itinerary unstated."
+        },
+        {
+            "id": "priscilla",
+            "relationship": "displaced-and-returned-coworker",
+            "weight": 9,
+            "notes": "Prisca or Priscilla is named as coworker and host with Aquila."
+        },
+        {
+            "id": "phoebe-of-cenchreae",
+            "relationship": "commended-to-recipients",
+            "weight": 9,
+            "notes": "Romans asks the recipients to welcome and assist Phoebe."
+        },
+        {
+            "id": "roman-citizenship-and-legal-process",
+            "relationship": "legal-context",
+            "weight": 8,
+            "notes": "Appeal and custody require bounded Roman legal comparison."
+        },
+        {
+            "id": "roman-rome-jewish-civic-household-and-imperial-life",
+            "relationship": "evidence-cluster",
+            "weight": 10,
+            "notes": "Focused textual, historical, archaeological, social, legal, and reception controls for Rome."
+        }
+    ],
+    "scripture_references": [
+        {
+            "reference": "Romans 1:7-15",
+            "relationship": "primary",
+            "notes": "Recipients in Rome and Paul's unrealized desire to visit."
+        },
+        {
+            "reference": "Romans 13:1-14",
+            "relationship": "primary",
+            "notes": "Authorities, taxes, honor, love, and the approaching day."
+        },
+        {
+            "reference": "Romans 14:1-23",
+            "relationship": "primary",
+            "notes": "Food, days, weak and strong, conscience, and welcome."
+        },
+        {
+            "reference": "Romans 15:1-13",
+            "relationship": "primary",
+            "notes": "Bearing with others, welcome, scriptural praise, Israel, and the nations."
+        },
+        {
+            "reference": "Romans 15:22-33",
+            "relationship": "primary",
+            "notes": "Jerusalem, Rome, Spain, mission support, and danger."
+        },
+        {
+            "reference": "Romans 16:1-16",
+            "relationship": "primary",
+            "notes": "Phoebe, coworkers, households, assemblies, and greetings."
+        },
+        {
+            "reference": "Acts 18:1-3",
+            "relationship": "supporting",
+            "notes": "Aquila and Priscilla at Corinth after Claudius's order."
+        },
+        {
+            "reference": "Acts 28:11-16",
+            "relationship": "primary",
+            "notes": "Puteoli, Appian stations, meeting believers, and arrival."
+        },
+        {
+            "reference": "Acts 28:17-31",
+            "relationship": "primary",
+            "notes": "Jewish leaders, guarded residence, visitors, and rented lodging."
+        }
+    ],
+    "cross_references": [
+        "1 Corinthians 16:19",
+        "Philippians 4:22",
+        "2 Timothy 4:19",
+        "1 Peter 5:13",
+        "Revelation 17-18"
+    ],
+    "new_testament_connections": [
+        "Rome is explicit in Romans and Acts; Babylon in 1 Peter and Revelation requires separate literary arguments rather than automatic geographic identity."
+    ],
+    "interpretive_notes": [
+        {
+            "note": "Claudius's action should not be described as a certainly total expulsion caused by Christians; Chrestus, scope, enforcement, and chronology are disputed.",
+            "note_type": "interpretive-caution",
+            "certainty": "strong_consensus",
+            "dispute_status": "major_scholarly_disagreement",
+            "sources": [
+                "acts-rome",
+                "suetonius-claudius-rome",
+                "lampe-rome-place"
+            ],
+            "scripture_references": [
+                "Acts 18:1-3"
+            ],
+            "traditions": [
+                "Academic"
+            ],
+            "rationale": "The ancient notices overlap without forming one unambiguous decree dossier."
+        },
+        {
+            "note": "No archaeological site securely identifies a Romans 16 gathering or Paul's rented lodging in Acts 28.",
+            "note_type": "interpretive-caution",
+            "certainty": "strong_consensus",
+            "dispute_status": "archaeological_uncertainty",
+            "sources": [
+                "rome-cluster-source",
+                "taylor-rome-place"
+            ],
+            "scripture_references": [
+                "Romans 16:3-16",
+                "Acts 28:30-31"
+            ],
+            "traditions": [
+                "Academic",
+                "Christian"
+            ],
+            "rationale": "Textual groupings and later commemorative sites are not physical identifications."
+        },
+        {
+            "note": "Nero's post-fire violence in 64 CE is later than Romans' probable date and cannot be assumed as the letter's original persecution setting.",
+            "note_type": "historical-context",
+            "certainty": "strong_consensus",
+            "dispute_status": "historical_uncertainty",
+            "sources": [
+                "tacitus-rome",
+                "rome-cluster-source"
+            ],
+            "scripture_references": [
+                "Romans 8:17-39",
+                "Romans 12:12-21"
+            ],
+            "traditions": [
+                "Academic"
+            ],
+            "rationale": "The chronology separates the two contexts."
+        },
+        {
+            "note": "Later basilicas, prisons, tombs, and tituli preserve reception but do not independently prove first-century apostolic locations.",
+            "note_type": "later-reception",
+            "certainty": "strong_consensus",
+            "dispute_status": "archaeological_uncertainty",
+            "sources": [
+                "first-clement-rome",
+                "taylor-rome-place"
+            ],
+            "scripture_references": [
+                "Acts 28:30-31"
+            ],
+            "traditions": [
+                "Academic",
+                "Christian"
+            ],
+            "rationale": "Early memory and monumental identification are distinct evidence layers."
+        }
+    ],
+    "common_questions": [
+        "Where was biblical Rome?",
+        "Who received Romans?",
+        "Did Claudius expel every Jew?",
+        "How many Roman assemblies appear in Romans 16?",
+        "How did Paul reach Rome?",
+        "Where was Paul held?",
+        "Was Nero persecuting Christians when Romans was written?",
+        "Have Peter's and Paul's tombs been identified?"
+    ],
+    "sources": [
+        {
+            "id": "romans-rome",
+            "title": "Romans",
+            "author": "Michael W. Holmes, ed.",
+            "publisher": "Society of Biblical Literature and Logos Bible Software",
+            "year": 2010,
+            "locator": "Romans 1-16",
+            "url": "https://www.sblgnt.com/download/",
+            "source_type": "scripture",
+            "supports": [
+                "summary",
+                "canonical_context",
+                "scripture_references"
+            ],
+            "notes": "Primary letter evidence."
+        },
+        {
+            "id": "acts-rome",
+            "title": "Acts 18:1-3 and 28:11-31",
+            "author": "Michael W. Holmes, ed.",
+            "publisher": "Society of Biblical Literature and Logos Bible Software",
+            "year": 2010,
+            "locator": "Acts 18:1-3; 28:11-31",
+            "url": "https://www.sblgnt.com/download/",
+            "source_type": "scripture",
+            "supports": [
+                "summary",
+                "canonical_context",
+                "scripture_references"
+            ],
+            "notes": "Primary narrative evidence."
+        },
+        {
+            "id": "philo-rome",
+            "title": "On the Embassy to Gaius",
+            "author": "Philo of Alexandria",
+            "publisher": "Early Jewish Writings",
+            "year": 40,
+            "locator": "155-158",
+            "url": "https://www.earlyjewishwritings.com/text/philo/book40.html",
+            "source_type": "ancient-primary-source",
+            "supports": [
+                "historical_context",
+                "second_temple_context"
+            ],
+            "notes": "Near-contemporary Jewish evidence."
+        },
+        {
+            "id": "suetonius-claudius-rome",
+            "title": "Life of Claudius",
+            "author": "Suetonius",
+            "publisher": "Perseus Digital Library",
+            "year": 121,
+            "locator": "25.4",
+            "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0061:life=cl.:chapter=25",
+            "source_type": "ancient-primary-source",
+            "supports": [
+                "historical_context",
+                "interpretive_notes"
+            ],
+            "notes": "Later compressed notice."
+        },
+        {
+            "id": "tacitus-rome",
+            "title": "Annals",
+            "author": "Tacitus",
+            "publisher": "Perseus Digital Library",
+            "year": 116,
+            "locator": "15.44",
+            "url": "https://www.perseus.tufts.edu/hopper/text?doc=Tac.+Ann.+15.44",
+            "source_type": "ancient-primary-source",
+            "supports": [
+                "later_christian_reception",
+                "interpretive_notes"
+            ],
+            "notes": "Later report about the fire of 64 and punishments."
+        },
+        {
+            "id": "first-clement-rome",
+            "title": "1 Clement",
+            "author": "Church of Rome",
+            "publisher": "Wikisource, Ante-Nicene Fathers",
+            "year": 96,
+            "locator": "5-6",
+            "url": "https://en.wikisource.org/wiki/Ante-Nicene_Fathers/Volume_IX/The_Epistles_of_Clement/The_First_Epistle_of_Clement_to_the_Corinthians/Chapter_5",
+            "source_type": "ancient-primary-source",
+            "supports": [
+                "later_christian_reception",
+                "interpretive_notes"
+            ],
+            "notes": "Early Roman Christian memory."
+        },
+        {
+            "id": "lampe-rome-place",
+            "title": "Christians at Rome in the First Two Centuries",
+            "author": "Peter Lampe",
+            "publisher": "Continuum",
+            "year": 2003,
+            "locator": "Topography, persons, groups, and social stratification",
+            "url": "https://www.bloomsbury.com/au/christians-at-rome-in-the-first-two-centuries-9780826481023/",
+            "source_type": "academic-book",
+            "supports": [
+                "historical_context",
+                "interpretive_notes"
+            ],
+            "notes": "Reconstruction remains probabilistic."
+        },
+        {
+            "id": "taylor-rome-place",
+            "title": "Rome: An Urban History from Antiquity to the Present",
+            "author": "Rabun Taylor, Katherine Wentworth Rinne, and Spiro Kostof",
+            "publisher": "Cambridge University Press",
+            "year": 2016,
+            "locator": "Ancient urban fabric and pre-Constantinian Christian infrastructure",
+            "url": "https://doi.org/10.1017/CBO9781139012911",
+            "source_type": "academic-book",
+            "supports": [
+                "archaeology",
+                "later_christian_reception",
+                "interpretive_notes"
+            ],
+            "notes": "Specific early house churches remain archaeologically unidentified."
+        },
+        {
+            "id": "rome-cluster-source",
+            "title": "Roman Rome: Jewish, Civic, Household, and Imperial Life",
+            "author": "Canonical Knowledge Library",
+            "publisher": "Canonical Knowledge Library",
+            "year": 2026,
+            "locator": "Evidence cluster with external source provenance",
+            "url": "https://github.com/mcscwizzy/biblical-hermeneutics-framework",
+            "source_type": "reference-work",
+            "supports": [
+                "interpretive_notes"
+            ],
+            "notes": "Orientation pointer only; substantive claims resolve to external sources in the linked cluster."
+        }
+    ],
+    "canonical_story": {
+        "phase": "apostolic-mission-and-church",
+        "role": "Rome is the destination of Paul's letter and Acts' final narrated mission field under imperial power.",
+        "preceded_by": [
+            "eastern Mediterranean mission and Jerusalem collection"
+        ],
+        "followed_by": [
+            "later Roman Christian communities and contested apostolic memory"
+        ]
     },
-    {
-      "id": "assyrian-exile-of-israel",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+    "hermeneutical_lens": {
+        "immediate_literary_context": "Start with the relevant Romans or Acts unit.",
+        "book_context": "Keep Paul's unvisited-letter setting distinct from Acts' later arrival narrative.",
+        "canonical_context": "Use greetings and travel texts without inventing a complete institutional history.",
+        "covenant_context": "Romans warns gentiles against boasting over Israel.",
+        "historical_context": "Control Claudius, Nero, Jewish communities, housing, slavery, and custody by date.",
+        "ancient_near_east_context": "Not applicable to the immediate city setting.",
+        "second_temple_jewish_context": "Roman Jewish life was plural, durable, and connected to Jerusalem.",
+        "original_audience": "Do not homogenize Roman recipients by ethnicity, status, or gathering.",
+        "genre": "Separate letter, narrative, historiography, archaeology, and reception.",
+        "intertextual_connections": [
+            "Romans",
+            "Acts 18",
+            "Acts 28",
+            "1 Corinthians 16",
+            "1 Clement"
+        ],
+        "biblical_theology_themes": [
+            "gospel",
+            "Israel and nations",
+            "mission",
+            "welcome",
+            "witness"
+        ],
+        "messianic_christological_trajectory": "Imperial context may sharpen allegiance language without replacing scriptural exegesis.",
+        "major_interpretive_views": [
+            "Claudian action",
+            "audience composition",
+            "Paul and empire",
+            "custody",
+            "martyrdom memory"
+        ],
+        "historical_interpretation": "City evidence constrains plausible settings but does not prove narrative events or traditional sites.",
+        "authorial_intent": "Romans addresses actual recipients; Acts brings witness to the imperial capital.",
+        "typological_connections": [],
+        "christological_significance": "Rome is a social and political setting, not a shortcut to a prescribed Christological reading.",
+        "modern_application_principles": [
+            "Reject antisemitism, authoritarianism, slavery apologetics, and archaeological proof claims.",
+            "Center people affected by expulsion, dependency, custody, and violence."
+        ],
+        "common_misinterpretations": [
+            "Rome is the same as Babylon in every biblical use",
+            "Claudius expelled every Jew because of Christians",
+            "Romans describes one homogeneous church",
+            "the Mamertine Prison is Paul's Acts 28 lodging",
+            "Nero's fire is the setting of Romans",
+            "later basilicas prove first-century locations"
+        ]
     },
-    {
-      "id": "daniel-the-exile",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+    "retrieval_metadata": {
+        "aliases": [
+            "imperial Rome Bible",
+            "Paul in Rome",
+            "Romans recipient city"
+        ],
+        "search_terms": [
+            "Rome Romans Acts 28",
+            "Claudius Jews Chrestus",
+            "Roman house assemblies",
+            "Paul rented lodging",
+            "Nero Peter Paul"
+        ],
+        "common_questions": [
+            "Did Paul reach Rome?",
+            "Can Paul's prison be located?",
+            "Who were the Roman believers?"
+        ],
+        "related_topics": [
+            "Jewish diaspora",
+            "imperial power",
+            "households",
+            "custody",
+            "martyrdom memory"
+        ],
+        "frequently_confused_with": [
+            "Roman Empire generally",
+            "Caesarea Philippi",
+            "later papal Rome"
+        ],
+        "semantic_keywords": [
+            "capital",
+            "Tiber",
+            "Via Appia",
+            "diaspora",
+            "imperial"
+        ]
     },
-    {
-      "id": "esther-the-queen",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
-    }
-  ],
-  "scripture_references": [
-    {
-      "reference": "Genesis 10:1-32",
-      "relationship": "supporting",
-      "notes": "table of nations backdrop"
-    },
-    {
-      "reference": "Exodus 3:1-15",
-      "relationship": "supporting",
-      "notes": "oppression and deliverance"
-    },
-    {
-      "reference": "2 Kings 25:8-17",
-      "relationship": "supporting",
-      "notes": "imperial conquest and exile"
-    },
-    {
-      "reference": "Daniel 11:40-45",
-      "relationship": "supporting",
-      "notes": "faith under empire"
-    },
-    {
-      "reference": "Acts 28:11-16",
-      "relationship": "supporting",
-      "notes": "mission in the imperial world"
-    }
-  ],
-  "cross_references": [],
-  "new_testament_connections": [],
-  "interpretive_notes": [
-    {
-      "note": "Imperial powers in Scripture are historical realities and theological contrasts.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "They often represent the pressure of empire on covenant identity.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    }
-  ],
-  "common_questions": [
-    "Why is this power or region important in the Bible?",
-    "How does this place shape Israel's history?",
-    "What theological contrast does this place create?"
-  ],
-  "sources": [
-    {
-      "title": "Genesis 10-12",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "genesis-10-12"
-    },
-    {
-      "title": "Exodus 1-15",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "exodus-1-15"
-    },
-    {
-      "title": "2 Kings 17-25",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "2-kings-17-25"
-    },
-    {
-      "title": "Daniel 1-6",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "daniel-1-6"
-    },
-    {
-      "title": "Acts 18-28",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "acts-18-28"
-    },
-    {
-      "title": "Canonical historical orientation for Rome",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [
-        "historical_context"
-      ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
-      "id": "rome-historical-orientation"
-    }
-  ],
-  "canonical_story": {
-    "phase": "",
-    "role": "",
-    "preceded_by": [],
-    "followed_by": []
-  },
-  "hermeneutical_lens": {
-    "immediate_literary_context": "",
-    "book_context": "",
-    "canonical_context": "",
-    "covenant_context": "",
-    "historical_context": "",
-    "ancient_near_east_context": "",
-    "second_temple_jewish_context": "",
-    "original_audience": "",
-    "genre": "",
-    "intertextual_connections": [],
-    "biblical_theology_themes": [],
-    "messianic_christological_trajectory": "",
-    "major_interpretive_views": [],
-    "historical_interpretation": "",
-    "authorial_intent": "",
-    "typological_connections": [],
-    "christological_significance": "",
-    "modern_application_principles": [],
-    "common_misinterpretations": []
-  },
-  "retrieval_metadata": {
-    "aliases": [],
-    "search_terms": [],
-    "common_questions": [],
-    "related_topics": [],
-    "frequently_confused_with": [],
-    "semantic_keywords": []
-  },
-  "importance": 72,
-  "framework_version": "1.0",
-  "object_version": "1",
-  "content_status": "complete",
-  "review_status": "in_review",
-  "generated_by": [
-    {
-      "type": "ai",
-      "name": "codex",
-      "workflow": "ane-hebraic-context-expansion",
-      "date": "2026-07-16"
-    }
-  ],
-  "edited_by": [],
-  "reviewed_by": [],
-  "last_reviewed": "2026-07-16",
-  "confidence": "medium",
-  "human_review_required": true
+    "importance": 88,
+    "framework_version": "1.0",
+    "object_version": "1",
+    "content_status": "complete",
+    "review_status": "in_review",
+    "generated_by": [
+        {
+            "type": "ai",
+            "name": "codex",
+            "workflow": "ckl-content-expansion",
+            "date": "2026-08-20"
+        }
+    ],
+    "edited_by": [],
+    "reviewed_by": [],
+    "last_reviewed": "2026-08-20",
+    "confidence": "medium",
+    "human_review_required": true
 }

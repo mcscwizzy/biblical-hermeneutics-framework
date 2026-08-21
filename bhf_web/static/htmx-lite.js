@@ -3,8 +3,6 @@
 // map fallback, and search interactions, and the shared request helpers and
 // status helpers have already been split into separate scripts.
 const POLL_INTERVAL_MS = 750;
-const READER_LONG_PRESS_DELAY_MS = 550;
-const READER_LONG_PRESS_MOVE_THRESHOLD_PX = 14;
 const APP_SECTION_STORAGE_KEY = "bhf-app-section";
 const LEGACY_MOBILE_SECTION_STORAGE_KEY = "bhf-mobile-section";
 const BHF_RUNTIME = window.BHFRuntimeConfig || {};
@@ -116,13 +114,11 @@ let readerSpeechControlsScrollFrame = null;
 let noteContext = null;
 let currentNotes = [];
 let currentHighlights = [];
-let contextMenuState = null;
-let contextMenuPosition = null;
+const savedStudiesCache = new Map();
+const savedStudiesRequests = new Map();
 let lastMapAIFallbackKey = null;
 let activeLiveAnswerPanel = null;
 let latestDeterministicStudyResult = null;
-let readerLongPressState = null;
-let suppressHighlightedVerseTapUntil = 0;
 let appSection = null;
 let lastAskWorkspaceTab = "ask";
 let lastNotesWorkspaceTab = "notes";
@@ -504,6 +500,10 @@ async function openNewReaderTab() {
   if (!tab) {
     return false;
   }
+  // The new tab starts at the same passage, so reuse the already-loaded
+  // chapter while keeping selection state independent. This also prevents a
+  // transient active pane with no verses while the async tab switch settles.
+  tab.data = current?.data || currentChapter || null;
   readerTabs.push(tab);
   activeReaderTabId = tab.id;
   renderReaderTabs();
@@ -1014,28 +1014,14 @@ async function initializeReader() {
     });
   }
   document.addEventListener("selectionchange", updateSelectionFromDocument);
-  document.addEventListener("click", closeContextMenuOnOutside);
-  document.addEventListener("keydown", closeContextMenuOnEscape);
-  window.addEventListener("scroll", keepContextMenuVisibleOnReaderScroll, true);
   window.addEventListener("scroll", rememberVisibleReaderVerse, {passive: true});
-  reader.addEventListener("contextmenu", handleReaderContextMenu);
-  reader.addEventListener("pointerdown", handleReaderPointerDown);
-  reader.addEventListener("pointermove", handleReaderPointerMove);
-  reader.addEventListener("pointerup", cancelReaderLongPress);
-  reader.addEventListener("pointercancel", cancelReaderLongPress);
-  reader.addEventListener("pointerleave", handleReaderPointerLeave);
   reader.addEventListener("click", handleReaderActionButtonClick);
   reader.addEventListener("click", handleTranslationSelectorClick);
   document.addEventListener("click", handleChapterNavigationClick);
-  const contextMenu = document.querySelector("#reader-context-menu");
   const searchForm = document.querySelector("[data-bible-search]");
   const searchResultsBody = document.querySelector(
     "#reader-search-results-body",
   );
-  if (contextMenu) {
-    contextMenu.addEventListener("click", handleContextMenuAction);
-    contextMenu.addEventListener("mouseover", handleContextSubmenuHover);
-  }
   if (searchForm) {
     searchForm.addEventListener("submit", submitBibleSearch);
     const queryInput = searchForm.querySelector("[name='query']");
@@ -1089,9 +1075,10 @@ async function initializeReader() {
   if (cancelNote) {
     cancelNote.addEventListener("click", closeNoteEditor);
   }
-  document.addEventListener("bhf:map-panel-opened", () =>
-    activateWorkspaceTab("maps"),
-  );
+  document.addEventListener("bhf:map-panel-opened", () => {
+    activateAppSection("explore");
+    activateWorkspaceTab("maps");
+  });
   document.addEventListener("bhf:map-panel-closed", () => {
     syncMapWorkspaceEmptyState();
     closeWorkspaceDrawer();
@@ -1127,7 +1114,11 @@ function initializeWorkspaceTabs() {
   for (const tab of tabs) {
     tab.addEventListener("click", () => {
       if (tab.dataset.workspaceTab === "ask") {
-        focusAskPanel();
+        focusAskPanel(
+          appSection === "explore"
+            ? {questionScope: GENERAL_QUESTION_MODE, appSection: "explore"}
+            : {},
+        );
         return;
       }
       activateWorkspaceTab(tab.dataset.workspaceTab);
@@ -1171,6 +1162,9 @@ function initializeAppNavigation() {
   document.addEventListener("bhf:workspace-tab-changed", (event) => {
     const tabId = event.detail?.tabId;
     rememberWorkspaceSubtab(tabId);
+    if (window.BHFStudyCompanion) {
+      return;
+    }
     const nextSection = appSectionFromWorkspaceTab(tabId);
     if (nextSection) {
       activateAppSection(nextSection);
@@ -1195,6 +1189,15 @@ function initializeWorkspaceBridge() {
   window.BHFReader = {
     navigateToPassage,
     openPassageReference,
+    getStudySelection: () => window.BHFStudySelection?.getState?.() || null,
+  };
+  window.BHFStudyActions = {
+    perform: performCompanionStudyAction,
+    openWorkspaceTab: activateWorkspaceTab,
+    openCanonicalQuery,
+    savePassage: saveSelectedPassage,
+    getSavedStudies: getSavedStudiesForSelection,
+    syncAskSelection: syncAskFields,
   };
 }
 
@@ -1221,9 +1224,6 @@ function activateAppSection(sectionId, options = {}) {
     applyCompactSectionLayout(nextSection);
   } else {
     applyDesktopSectionLayout(nextSection, options);
-  }
-  if (nextSection === "explore") {
-    ensureExploreMapBrowserOpen();
   }
   scheduleAppDockVisibilityUpdate();
 }
@@ -1351,7 +1351,7 @@ function appSectionFromWorkspaceTab(tabId) {
     return "notes";
   }
   if (tabId === "saved") {
-    return "studies";
+    return "notes";
   }
   if (tabId === "maps" || tabId === "journey") {
     return "explore";
@@ -1375,7 +1375,8 @@ function appSectionToWorkspaceTab(sectionId) {
     const currentWorkspaceTab = getCurrentWorkspaceTab();
     if (
       currentWorkspaceTab === "notes" ||
-      currentWorkspaceTab === "highlights"
+      currentWorkspaceTab === "highlights" ||
+      currentWorkspaceTab === "saved"
     ) {
       return currentWorkspaceTab;
     }
@@ -1386,7 +1387,7 @@ function appSectionToWorkspaceTab(sectionId) {
   }
   if (normalized === "explore") {
     const currentWorkspaceTab = getCurrentWorkspaceTab();
-    if (currentWorkspaceTab === "maps" || currentWorkspaceTab === "journey") {
+    if (currentWorkspaceTab === "maps" || currentWorkspaceTab === "journey" || currentWorkspaceTab === "ask") {
       return currentWorkspaceTab;
     }
     return lastExploreWorkspaceTab || "maps";
@@ -1395,9 +1396,11 @@ function appSectionToWorkspaceTab(sectionId) {
 }
 
 function rememberWorkspaceSubtab(tabId) {
-  if (tabId === "ask" || tabId === "lexicon" || tabId === "context") {
+  if (tabId === "ask" && appSection === "explore") {
+    lastExploreWorkspaceTab = tabId;
+  } else if (tabId === "ask" || tabId === "lexicon" || tabId === "context") {
     lastAskWorkspaceTab = tabId;
-  } else if (tabId === "notes" || tabId === "highlights") {
+  } else if (tabId === "notes" || tabId === "highlights" || tabId === "saved") {
     lastNotesWorkspaceTab = tabId;
   } else if (tabId === "maps" || tabId === "journey") {
     lastExploreWorkspaceTab = tabId;
@@ -2186,7 +2189,6 @@ function applyReaderMode(enabled, options = {}) {
   if (nextEnabled) {
     closeWorkspaceDrawer();
     closeReaderControlsSheet();
-    hideContextMenu();
   }
   const toggles = document.querySelectorAll("[data-reader-mode-toggle]");
   for (const toggle of toggles) {
@@ -2391,13 +2393,13 @@ function workspaceTabsForSection(sectionId) {
     return ["ask", "lexicon", "context"];
   }
   if (normalized === "notes") {
-    return ["notes", "highlights"];
+    return ["notes", "highlights", "saved"];
   }
   if (normalized === "studies") {
     return ["saved"];
   }
   if (normalized === "explore") {
-    return ["maps"];
+    return ["maps", "ask"];
   }
   return ["ask"];
 }
@@ -2572,13 +2574,17 @@ function activateWorkspaceTab(tabId) {
   );
 }
 
-function focusAskPanel() {
+function focusAskPanel(options = {}) {
   if (window.BHFMaps && typeof window.BHFMaps.closeMapModal === "function") {
     window.BHFMaps.closeMapModal();
   }
 
-  activateAppSection("ask");
+  const isGeneralQuestion = options.questionScope === GENERAL_QUESTION_MODE;
+  setAskQuestionScope(isGeneralQuestion ? GENERAL_QUESTION_MODE : "");
+  const targetSection = options.appSection || (window.BHFStudyCompanion ? "bible" : "ask");
+  activateAppSection(targetSection);
   activateWorkspaceTab("ask");
+  window.BHFStudyCompanion?.ensureResourceVisible?.("ask");
 
   const focusQuestion = () => {
     const question = document.querySelector('.ask-form [name="question"]');
@@ -2669,7 +2675,6 @@ async function loadReaderChapter(book, chapter, options = {}) {
     tab.translation = translationId;
   }
   reader.setAttribute("aria-busy", "true");
-  hideContextMenu();
   renderChapter(null);
   try {
     let data = null;
@@ -2694,6 +2699,11 @@ async function loadReaderChapter(book, chapter, options = {}) {
     }
     currentChapter = data;
     currentSelection = null;
+    window.BHFStudySelection?.setChapter?.({
+      book: data.book,
+      chapter: Number(data.chapter),
+      translation: String(data.translation?.id || translationId),
+    }, "reader-chapter");
     latestJobId = null;
     latestJobComplete = false;
     currentNotes = [];
@@ -3052,14 +3062,6 @@ function createReaderPane(data, tab) {
       handleVerseSelectionClick(event, verseSpan);
     });
 
-    const actions = document.createElement("button");
-    actions.type = "button";
-    actions.className = "secondary verse-actions-button";
-    actions.dataset.verseActions = "true";
-    actions.textContent = "⋮";
-    actions.setAttribute("aria-label", "Verse actions");
-    actions.title = `Verse actions for ${data.book} ${data.chapter}:${verse.verse}`;
-
     const indicators = document.createElement("span");
     indicators.className = "verse-state-indicators";
     indicators.dataset.verseIndicators = "true";
@@ -3069,7 +3071,6 @@ function createReaderPane(data, tab) {
     text.textContent = verse.text + " ";
 
     verseSpan.appendChild(number);
-    verseSpan.appendChild(actions);
     verseSpan.appendChild(indicators);
     verseSpan.appendChild(text);
     paragraph.appendChild(verseSpan);
@@ -3430,6 +3431,7 @@ async function handleTranslationSelectorDialogClick(event) {
     renderTranslationSelector(translationCatalogState);
     closeTranslationSelector();
     await reloadCurrentReaderChapter();
+    announceStudyResourceChange("translations", "installed");
     return;
   }
   if (select) {
@@ -3457,6 +3459,7 @@ async function handleTranslationSelectorDialogClick(event) {
     translationCatalogState = await loadTranslationState("/api/translations/installed");
     renderTranslationSelector(translationCatalogState);
     await reloadCurrentReaderChapter();
+    announceStudyResourceChange("translations", "removed");
   }
 }
 
@@ -3668,6 +3671,12 @@ async function importTranslationXml() {
   installImportedTranslation(normalized);
   await persistReaderDefaultTranslation(normalized);
   return result;
+}
+
+function announceStudyResourceChange(resource, action) {
+  document.dispatchEvent(new CustomEvent("bhf:study-resources-changed", {
+    detail: {resource, action},
+  }));
 }
 
 function parseDeviceTranslationXml(xmlText, translationId, translationName, sourceFilename) {
@@ -3913,6 +3922,7 @@ async function submitTranslationImportForm(event) {
     await importTranslationXml();
     closeTranslationImportDialog();
     await reloadCurrentReaderChapter();
+    announceStudyResourceChange("translations", "imported");
   } catch (error) {
     const details = form.querySelector("[data-translation-import-details]");
     if (details) {
@@ -4113,54 +4123,21 @@ function handleVerseSelectionClick(event, verse) {
 
 function handleReaderActionButtonClick(event) {
   activateReaderPaneForElement(event.target);
-  const button = event.target.closest("[data-verse-actions]");
   const verseSelect = event.target.closest("[data-verse-select]");
-  if (!button && !verseSelect) {
-    handleHighlightedVerseTap(event);
+  if (!verseSelect) {
+    const tappedVerse = event.target.closest("[data-verse]");
+    if (tappedVerse && !event.target.closest("a, button, input, select, textarea")) {
+      handleVerseSelectionClick(event, tappedVerse);
+    }
     return;
   }
-  const verse = (button || verseSelect).closest("[data-verse]");
+  const verse = verseSelect.closest("[data-verse]");
   if (!verse || !currentChapter) {
     return;
   }
   event.preventDefault();
   event.stopPropagation();
-
-  if (verseSelect) {
-    handleVerseSelectionClick(event, verse);
-    return;
-  }
-
-  const context = contextForVerseAction(verse);
-  if (!context) {
-    return;
-  }
-  contextMenuState = context;
-  const rect = button.getBoundingClientRect();
-  showContextMenu(rect.left + rect.width / 2, rect.bottom + 8, context);
-}
-
-async function handleHighlightedVerseTap(event) {
-  if (Date.now() < suppressHighlightedVerseTapUntil) {
-    return;
-  }
-  const verse = event.target.closest("[data-verse]");
-  const reader = activeReaderPane() || document.querySelector("#chapter-reader");
-  if (!verse || !reader || !reader.contains(verse) || !currentChapter) {
-    return;
-  }
-  const verseNumber = Number(verse.dataset.verse || "0");
-  if (!verseNumber || highlightsForVerse(verseNumber).length === 0) {
-    return;
-  }
-  event.preventDefault();
-  event.stopPropagation();
-  await removeHighlightsForContext({
-    book: currentChapter.book,
-    chapter: currentChapter.chapter,
-    verseStart: verseNumber,
-    verseEnd: verseNumber,
-  });
+  handleVerseSelectionClick(event, verse);
 }
 
 function collectSelectedVerseText(startVerse, endVerse) {
@@ -4187,125 +4164,6 @@ function scrollToVerse(verseNumber, behavior = "smooth") {
     return;
   }
   verse.scrollIntoView({behavior, block: "center"});
-}
-
-function handleReaderContextMenu(event) {
-  suppressHighlightedVerseTapUntil = Date.now() + 800;
-  activateReaderPaneForElement(event.target);
-  const verse = event.target.closest("[data-verse]");
-  const reader = document.querySelector("#chapter-reader");
-  if (!verse || !reader || !reader.contains(verse) || !currentChapter) {
-    return;
-  }
-
-  let context = contextForVerseAction(verse);
-  const verseNumber = Number(verse.dataset.verse || "0");
-  if (
-    verseNumber &&
-    highlightsForVerse(verseNumber).length > 0 &&
-    highlightsForContext(context).length === 0
-  ) {
-    context = contextFromVerse(verse);
-  }
-  if (!context) {
-    return;
-  }
-
-  event.preventDefault();
-  contextMenuState = context;
-  showContextMenu(event.clientX, event.clientY, context);
-}
-
-function handleReaderPointerDown(event) {
-  if (event.button && event.button !== 0) {
-    suppressHighlightedVerseTapUntil = Date.now() + 800;
-  }
-  if (event.pointerType !== "touch") {
-    cancelReaderLongPress();
-    return;
-  }
-  activateReaderPaneForElement(event.target);
-  const verse = event.target.closest("[data-verse]");
-  const reader = document.querySelector("#chapter-reader");
-  if (!verse || !reader || !reader.contains(verse) || !currentChapter) {
-    cancelReaderLongPress();
-    return;
-  }
-  cancelReaderLongPress();
-  readerLongPressState = {
-    pointerId: event.pointerId,
-    startX: event.clientX,
-    startY: event.clientY,
-    clientX: event.clientX,
-    clientY: event.clientY,
-    verse,
-    triggered: false,
-    timerId: window.setTimeout(() => {
-      triggerReaderLongPress();
-    }, READER_LONG_PRESS_DELAY_MS),
-  };
-}
-
-function handleReaderPointerMove(event) {
-  if (
-    !readerLongPressState ||
-    event.pointerId !== readerLongPressState.pointerId
-  ) {
-    return;
-  }
-  const deltaX = Math.abs(event.clientX - readerLongPressState.startX);
-  const deltaY = Math.abs(event.clientY - readerLongPressState.startY);
-  if (
-    deltaX > READER_LONG_PRESS_MOVE_THRESHOLD_PX ||
-    deltaY > READER_LONG_PRESS_MOVE_THRESHOLD_PX
-  ) {
-    cancelReaderLongPress();
-    return;
-  }
-  readerLongPressState.clientX = event.clientX;
-  readerLongPressState.clientY = event.clientY;
-}
-
-function handleReaderPointerLeave(event) {
-  if (
-    !readerLongPressState ||
-    event.pointerId !== readerLongPressState.pointerId
-  ) {
-    return;
-  }
-  cancelReaderLongPress();
-}
-
-function triggerReaderLongPress() {
-  if (!readerLongPressState || readerLongPressState.triggered) {
-    return;
-  }
-  const context = contextForVerseAction(readerLongPressState.verse);
-  if (!context) {
-    cancelReaderLongPress();
-    return;
-  }
-  readerLongPressState.triggered = true;
-  suppressHighlightedVerseTapUntil = Date.now() + 800;
-  contextMenuState = context;
-  showContextMenu(
-    readerLongPressState.clientX,
-    readerLongPressState.clientY,
-    context,
-  );
-  if (window.navigator?.vibrate) {
-    window.navigator.vibrate(10);
-  }
-}
-
-function cancelReaderLongPress() {
-  if (!readerLongPressState) {
-    return;
-  }
-  if (readerLongPressState.timerId) {
-    window.clearTimeout(readerLongPressState.timerId);
-  }
-  readerLongPressState = null;
 }
 
 function selectionContextFromDocument() {
@@ -4338,30 +4196,18 @@ function selectionContextFromDocument() {
   if (selectedVerses.length === 0) {
     return null;
   }
+  const selectedText = selection.toString().trim();
   return {
     book: currentChapter.book,
     chapter: currentChapter.chapter,
     startVerse: Number(selectedVerses[0].dataset.verse),
     endVerse: Number(selectedVerses[selectedVerses.length - 1].dataset.verse),
     selectedVerses: selectedVerses.map((verse) => Number(verse.dataset.verse)),
-    text: selection.toString().trim(),
+    text: selectedText,
+    selectedWord: selectedVerses.length === 1 && /^\S+$/.test(selectedText)
+      ? {surfaceForm: selectedText}
+      : null,
     isSelection: true,
-  };
-}
-
-function contextFromVerse(verse) {
-  if (!currentChapter) {
-    return null;
-  }
-  const verseNumber = Number(verse.dataset.verse);
-  return {
-    book: currentChapter.book,
-    chapter: currentChapter.chapter,
-    startVerse: verseNumber,
-    endVerse: verseNumber,
-    selectedVerses: [verseNumber],
-    text: verse.querySelector(".verse-text")?.textContent.trim() || "",
-    isSelection: false,
   };
 }
 
@@ -4436,266 +4282,32 @@ function contextFromVerseNumbers(verseNumbers) {
   };
 }
 
-function contextForVerseAction(verse) {
-  const verseNumber = Number(verse?.dataset?.verse || "0");
-  const documentContext = selectionContextFromDocument();
-  if (contextIncludesVerse(documentContext, verseNumber)) {
-    return documentContext;
-  }
-  if (contextIncludesVerse(currentSelection, verseNumber)) {
-    return currentSelection;
-  }
-  return contextFromVerse(verse);
-}
-
-function contextIncludesVerse(context, verseNumber) {
-  if (!context || !verseNumber) {
-    return false;
-  }
-  if (Array.isArray(context.selectedVerses) && context.selectedVerses.length > 0) {
-    return selectedVerseNumbers(context).includes(verseNumber);
-  }
-  return Number(context.startVerse) <= verseNumber && verseNumber <= Number(context.endVerse || context.startVerse);
-}
-
-function showContextMenu(x, y, context) {
-  const menu = document.querySelector("#reader-context-menu");
-  if (!menu) {
-    return;
-  }
-  const isSelection = Boolean(context.isSelection);
-  setContextLabel("ask_bhf", "Ask BHF");
-  setContextLabel(
-    "cultural_context",
-    isSelection ? "Cultural Context" : "Cultural Context",
-  );
-  setContextLabel(
-    "literary_context",
-    isSelection ? "Literary Context" : "Literary Context",
-  );
-  setContextLabel(
-    "cross_references",
-    isSelection ? "Cross References" : "Cross References",
-  );
-  setContextLabel(
-    "related_ot_themes",
-    isSelection ? "Related OT Themes" : "Related OT Themes",
-  );
-  setContextLabel("people", isSelection ? "People" : "People");
-  setContextLabel("places", isSelection ? "Places" : "Places");
-  setContextLabel("themes", isSelection ? "Themes" : "Themes");
-  setContextLabel(
-    "fulfillment_nt",
-    isSelection ? "Fulfillment in the NT" : "Fulfillment in the NT",
-  );
-  setContextLabel(
-    "compare_translations",
-    isSelection ? "Compare Translations" : "Compare Translations",
-  );
-  setContextLabel("timeline", isSelection ? "Timeline" : "Timeline");
-  setContextLabel("open_map_panel", isSelection ? "Maps" : "Maps");
-  setContextLabel("compare_archaeology", "Compare with archaeology");
-  setContextLabel("save_study", "Save Study");
-  setContextLabel("note", isSelection ? "Add Note" : "Add Note");
-  setContextLabel("highlight", isSelection ? "Highlight Selection" : "Highlight Verse");
-  setContextLabel("remove_highlight", "Remove Highlight");
-  const hasHighlight = highlightsForContext(context).length > 0;
-  setContextVisibility("remove_highlight", hasHighlight);
-  resetContextSubmenus(menu);
-  if (hasHighlight) {
-    const actionsTrigger = menu.querySelector('[data-context-submenu="actions"]');
-    if (actionsTrigger) {
-      openContextSubmenu(actionsTrigger);
-    }
-  }
-  contextMenuPosition = {x, y};
-  menu.hidden = false;
-  positionContextMenu(menu, x, y);
-  const firstButton = menu.querySelector("button");
-  if (firstButton) {
-    firstButton.focus({preventScroll: true});
-  }
-}
-
-function positionContextMenu(menu, x, y) {
-  const rect = menu.getBoundingClientRect();
-  const isNarrowViewport = window.matchMedia("(max-width: 680px)").matches;
-  const submenuWidth = isNarrowViewport ? 190 : 230;
-  const submenuGap = isNarrowViewport ? 4 : 6;
-  const menuWidth = Math.min(rect.width, window.innerWidth - 16);
-  if (isNarrowViewport) {
-    const menuHeight = Math.min(rect.height, window.innerHeight - 16);
-    menu.style.left = "8px";
-    menu.style.top = `${Math.max(8, (window.innerHeight - menuHeight) / 2)}px`;
-    menu.classList.remove("opens-left");
-    return;
-  }
-  const left = Math.min(x, window.innerWidth - menuWidth - 8);
-  const top = Math.min(y, window.innerHeight - rect.height - 8);
-  let clampedLeft = Math.max(8, left);
-  const clampedTop = Math.max(8, top);
-  let opensLeft = false;
-  const rightFlyoutFits =
-    clampedLeft + menuWidth + submenuGap + submenuWidth <=
-    window.innerWidth - 8;
-  const leftFlyoutFits = clampedLeft - submenuGap - submenuWidth >= 8;
-  if (!rightFlyoutFits && leftFlyoutFits) {
-    opensLeft = true;
-  } else if (!rightFlyoutFits && !leftFlyoutFits) {
-    const pairedWidth = menuWidth + submenuGap + submenuWidth;
-    if (pairedWidth <= window.innerWidth - 16) {
-      opensLeft = x > window.innerWidth / 2;
-      clampedLeft = opensLeft ? window.innerWidth - menuWidth - 8 : 8;
-    }
-  }
-  menu.style.left = `${clampedLeft}px`;
-  menu.style.top = `${clampedTop}px`;
-  menu.classList.toggle("opens-left", opensLeft);
-}
-
-function resetContextSubmenus(
-  menu = document.querySelector("#reader-context-menu"),
-) {
-  if (!menu) {
-    return;
-  }
-  menu.querySelectorAll(".context-menu-section.is-open").forEach((section) => {
-    section.classList.remove("is-open");
-  });
-  menu.querySelectorAll("[data-context-submenu]").forEach((trigger) => {
-    trigger.setAttribute("aria-expanded", "false");
-  });
-}
-
-function openContextSubmenu(trigger) {
-  const section = trigger.closest(".context-menu-section");
-  const menu = trigger.closest(".context-menu");
-  if (!section || !menu || section.classList.contains("is-open")) {
-    return;
-  }
-  resetContextSubmenus(menu);
-  section.classList.add("is-open");
-  trigger.setAttribute("aria-expanded", "true");
-}
-
-function handleContextSubmenuHover(event) {
-  const submenuTrigger = event.target.closest("[data-context-submenu]");
-  if (submenuTrigger) {
-    openContextSubmenu(submenuTrigger);
-  }
-}
-
-function setContextLabel(action, label) {
-  const button = document.querySelector(`[data-context-action="${action}"]`);
-  if (button) {
-    button.textContent = label;
-  }
-}
-
-function setContextVisibility(action, visible) {
-  const button = document.querySelector(`[data-context-action="${action}"]`);
-  if (button) {
-    button.hidden = !visible;
-  }
-}
-
-async function handleContextMenuAction(event) {
-  const submenuTrigger = event.target.closest("[data-context-submenu]");
-  if (submenuTrigger) {
-    event.preventDefault();
-    event.stopPropagation();
-    openContextSubmenu(submenuTrigger);
-    return;
-  }
-  const button = event.target.closest("[data-context-action]");
-  if (!button || !contextMenuState) {
-    return;
-  }
-  const actionType = resolveContextAction(button.dataset.contextAction);
-  const context = contextMenuState;
-  hideContextMenu();
-  if (actionType === "copy") {
-    await copyContextToClipboard(context);
-    return;
-  }
-  await dispatchStudyAction(createStudyAction(actionType, context));
-}
-
-function resolveContextAction(actionType) {
-  return actionType;
-}
-
-function formatContextReferenceForClipboard(context) {
-  if (!context?.book || !context?.chapter) {
-    return "";
-  }
-  const verses = selectedVerseNumbers(context);
-  if (verses.length === 0) {
-    return `${context.book} ${context.chapter}`;
-  }
-
-  const ranges = [];
-  let rangeStart = verses[0];
-  let rangeEnd = verses[0];
-  verses.slice(1).forEach((verse) => {
-    if (verse === rangeEnd + 1) {
-      rangeEnd = verse;
-      return;
-    }
-    ranges.push(rangeStart === rangeEnd ? String(rangeStart) : `${rangeStart}-${rangeEnd}`);
-    rangeStart = verse;
-    rangeEnd = verse;
-  });
-  ranges.push(rangeStart === rangeEnd ? String(rangeStart) : `${rangeStart}-${rangeEnd}`);
-  return `${context.book} ${context.chapter}:${ranges.join(",")}`;
-}
-
-function formatContextForClipboard(context) {
-  const reference = formatContextReferenceForClipboard(context);
-  const text = String(context?.text || "").trim();
-  return [reference, text].filter(Boolean).join("\n\n");
-}
-
-async function copyContextToClipboard(context) {
-  const text = formatContextForClipboard(context);
-  if (!text) {
-    return false;
-  }
-
-  try {
-    if (window.navigator?.clipboard?.writeText) {
-      await window.navigator.clipboard.writeText(text);
-      return true;
-    }
-  } catch (_error) {
-    // Some browser contexts deny Clipboard API access. Fall back below.
-  }
-
-  const textarea = document.createElement("textarea");
-  textarea.value = text;
-  textarea.setAttribute("readonly", "");
-  textarea.style.position = "fixed";
-  textarea.style.opacity = "0";
-  document.body.append(textarea);
-  textarea.select();
-  const copied = document.execCommand("copy");
-  textarea.remove();
-  return copied;
-}
-
 function createStudyAction(type, context) {
   const sourceTranslation =
     currentChapter?.translation?.id || selectedTranslationId().toUpperCase();
+  const verseStart = context.startVerse == null ? null : Number(context.startVerse);
+  const verseEnd = context.endVerse == null
+    ? verseStart
+    : Number(context.endVerse);
+  const selectedWord = context.selectedWord && typeof context.selectedWord === "object"
+    ? context.selectedWord
+    : {};
   return {
     type,
     book: context.book,
     chapter: Number(context.chapter),
-    verseStart: Number(context.startVerse),
-    verseEnd: Number(context.endVerse || context.startVerse),
+    verseStart,
+    verseEnd,
     selectedVerses: selectedVerseNumbers(context),
     selectedText: context.text || "",
     isSelection: Boolean(context.isSelection),
     sourceTranslation,
+    selectedWord: Object.keys(selectedWord).length ? {...selectedWord} : null,
+    wordPosition: selectedWord.wordPosition || selectedWord.position || null,
+    surfaceForm: selectedWord.surfaceForm || selectedWord.surface_form || "",
+    lemma: selectedWord.lemma || "",
+    language: selectedWord.language || "",
+    strongsNumber: selectedWord.strongsNumber || selectedWord.strongs_number || selectedWord.strongs || "",
   };
 }
 
@@ -4704,7 +4316,7 @@ async function dispatchStudyAction(studyAction) {
     BHF_STUDY_ACTION_ALIASES[studyAction.type] || studyAction.type;
   if (studyAction.type === "ask_bhf") {
     applyStudyActionContext(studyAction);
-    focusAskPanel();
+    focusAskPanel({questionScope: ""});
     setFormValue("ask_mode", "");
     setFormValue("study_action", "");
     setFormValue("deterministic_fact_packet", "");
@@ -4715,7 +4327,7 @@ async function dispatchStudyAction(studyAction) {
     await requestDeterministicStudyAction(studyAction);
   } else if (BHF_STUDY_ACTIONS.has(studyAction.type)) {
     applyStudyActionContext(studyAction);
-    focusAskPanel();
+    focusAskPanel({questionScope: ""});
     setFormValue("ask_mode", studyAction.type);
     setFormValue("study_action", studyAction.type);
     setMapContextValue(buildReaderMapContext(studyAction));
@@ -4748,6 +4360,101 @@ async function dispatchStudyAction(studyAction) {
   }
 }
 
+function companionSelectionContext() {
+  const shared = window.BHFStudySelection?.getState?.();
+  if (!shared?.book || !shared?.chapter) {
+    return currentChapter
+      ? {book: currentChapter.book, chapter: currentChapter.chapter}
+      : null;
+  }
+  return {
+    book: shared.book,
+    chapter: shared.chapter,
+    startVerse: shared.startVerse,
+    endVerse: shared.endVerse,
+    selectedVerses: shared.selectedVerses || [],
+    text: shared.selectedText || "",
+    selectedWord: shared.selectedWord || null,
+    translation: shared.translation || selectedTranslationId(),
+    isSelection: (shared.selectedVerses || []).length > 1,
+  };
+}
+
+async function performCompanionStudyAction(type, overrides = {}) {
+  const context = {...(companionSelectionContext() || {}), ...overrides};
+  if (!context.book || !context.chapter) {
+    if (type === "open_map_panel") {
+      openMapPanel({mode: "browse"});
+      return true;
+    }
+    return false;
+  }
+  await dispatchStudyAction(createStudyAction(type, context));
+  return true;
+}
+
+function openCanonicalQuery(query) {
+  activateWorkspaceTab("context");
+  const form = document.querySelector("[data-canonical-browser-form]");
+  const input = form?.querySelector("[name='q']");
+  if (!form || !input) {
+    return false;
+  }
+  input.value = String(query || "");
+  input.dispatchEvent(new Event("input", {bubbles: true}));
+  if (typeof form.requestSubmit === "function") {
+    form.requestSubmit();
+  } else {
+    form.dispatchEvent(new Event("submit", {bubbles: true, cancelable: true}));
+  }
+  return true;
+}
+
+function savedStudyChapterKey(value) {
+  return `${String(value?.book || "").trim().toLowerCase()}|${Number(value?.chapter || 0)}`;
+}
+
+function getSavedStudiesForSelection(selection, options = {}) {
+  const key = savedStudyChapterKey(selection);
+  if (!selection?.book || !selection?.chapter) return Promise.resolve([]);
+  if (!options.refresh && savedStudiesCache.has(key)) {
+    return Promise.resolve(savedStudiesCache.get(key));
+  }
+  return requestSavedStudies(selection.book, selection.chapter);
+}
+
+async function saveSelectedPassage() {
+  const shared = window.BHFStudySelection?.getState?.();
+  if (!shared?.book || !shared?.chapter || shared.hasPassageSelection !== true) {
+    return false;
+  }
+  const title = shared.reference || `${shared.book} ${shared.chapter}`;
+  await requestJson(
+    "/api/saved-studies",
+    {
+      method: "POST",
+      headers: {Accept: "application/json", "Content-Type": "application/json"},
+      body: JSON.stringify({
+        title,
+        book: shared.book,
+        chapter: shared.chapter,
+        start_verse: shared.startVerse,
+        end_verse: shared.endVerse,
+        selected_text: shared.selectedText || "",
+        source_translation: shared.translation || selectedTranslationId(),
+        study_type: "passage",
+        question: title,
+        answer: shared.selectedText || `Saved passage: ${title}`,
+        personal_notes: "",
+        canonical_object_ids: [],
+      }),
+    },
+    "Could not save this passage.",
+  );
+  await loadSavedStudies(shared.book, shared.chapter, {propagateError: true});
+  return true;
+}
+
 function insertSelectedTextIntoAskQuestion(studyAction) {
   const question = document.querySelector('.ask-form [name="question"]');
   if (!question) {
@@ -4777,6 +4484,16 @@ function insertSelectedTextIntoAskQuestion(studyAction) {
 }
 
 function applyStudyActionContext(studyAction) {
+  if (!studyAction.verseStart) {
+    window.BHFStudySelection?.setChapter?.({
+      book: studyAction.book,
+      chapter: studyAction.chapter,
+      translation: studyAction.sourceTranslation || selectedTranslationId(),
+    }, "study-action-chapter");
+    currentSelection = null;
+    syncAskFields();
+    return;
+  }
   applySelectionContext({
     book: studyAction.book,
     chapter: studyAction.chapter,
@@ -4784,6 +4501,7 @@ function applyStudyActionContext(studyAction) {
     endVerse: studyAction.verseEnd,
     selectedVerses: studyAction.selectedVerses,
     text: studyAction.selectedText,
+    selectedWord: studyAction.selectedWord || null,
     isSelection:
       Boolean(studyAction.isSelection) ||
       studyAction.verseStart !== studyAction.verseEnd,
@@ -5448,7 +5166,7 @@ function wireDeterministicStudyControls(answerPanel, result, studyAction) {
     .querySelector("[data-deterministic-ask]")
     ?.addEventListener("click", () => {
       setFormValue("deterministic_fact_packet", "");
-      focusAskPanel();
+      focusAskPanel({questionScope: ""});
       const question = document.querySelector('.ask-form [name="question"]');
       if (question) {
         question.value = "";
@@ -5512,6 +5230,7 @@ function restorePreviousWordStudy(answerPanel) {
   if (!previous || !answerPanel) {
     return;
   }
+  applyStudyActionContext(previous.studyAction);
   latestDeterministicStudyResult = previous.result;
   answerPanel.innerHTML = renderDeterministicStudyResult(previous.result, {
     showWordStudyBack: wordStudyNavigationStack.length > 0,
@@ -5536,15 +5255,21 @@ function wireWordStudyChoiceControls(answerPanel, studyAction) {
             studyAction: {...studyAction},
           });
         }
-        await requestDeterministicStudyAction({
-          ...studyAction,
-          type: "word_study",
+        const selectedWord = {
           wordPosition,
           language: button.dataset.wordStudyLanguage || "",
           surfaceForm: button.dataset.wordStudySurface || "",
           lemma: button.dataset.wordStudyLemma || "",
           strongsNumber: button.dataset.wordStudyStrongs || "",
-        }, {fromWordStudyChoice: true});
+        };
+        const nextAction = {
+          ...studyAction,
+          type: "word_study",
+          ...selectedWord,
+          selectedWord,
+        };
+        applyStudyActionContext(nextAction);
+        await requestDeterministicStudyAction(nextAction, {fromWordStudyChoice: true});
       });
     });
 }
@@ -5713,42 +5438,6 @@ function requestMapAIFallback(mapContext = {}, options = {}) {
   return true;
 }
 
-function closeContextMenuOnOutside(event) {
-  const menu = document.querySelector("#reader-context-menu");
-  if (menu && !menu.hidden && !menu.contains(event.target)) {
-    hideContextMenu();
-  }
-}
-
-function closeContextMenuOnEscape(event) {
-  if (event.key === "Escape") {
-    hideContextMenu();
-  }
-}
-
-function keepContextMenuVisibleOnReaderScroll(event) {
-  const menu = document.querySelector("#reader-context-menu");
-  if (
-    !menu ||
-    menu.hidden ||
-    menu.contains(event.target) ||
-    !contextMenuPosition
-  ) {
-    return;
-  }
-  positionContextMenu(menu, contextMenuPosition.x, contextMenuPosition.y);
-}
-
-function hideContextMenu() {
-  const menu = document.querySelector("#reader-context-menu");
-  if (menu) {
-    menu.hidden = true;
-    resetContextSubmenus(menu);
-  }
-  contextMenuState = null;
-  contextMenuPosition = null;
-}
-
 function clearDocumentSelection() {
   const selection = window.getSelection();
   if (selection) {
@@ -5778,6 +5467,16 @@ function applySelectionContext(context) {
     endVerse: selectedVerses[selectedVerses.length - 1] || Number(context.endVerse || context.startVerse),
     isSelection: selectedVerses.length > 1,
   };
+  window.BHFStudySelection?.setSelection?.({
+    book: currentSelection.book,
+    chapter: currentSelection.chapter,
+    startVerse: currentSelection.startVerse,
+    endVerse: currentSelection.endVerse,
+    selectedVerses: currentSelection.selectedVerses,
+    selectedText: currentSelection.text,
+    translation: currentChapter?.translation?.id || selectedTranslationId(),
+    selectedWord: currentSelection.selectedWord || null,
+  }, "reader-selection");
   const tab = activeReaderTab();
   if (tab) {
     tab.selection = {...currentSelection};
@@ -5832,6 +5531,7 @@ function clearReaderSelection() {
   }
 
   currentSelection = null;
+  window.BHFStudySelection?.clearSelection?.("reader-selection-clear");
   const tab = activeReaderTab();
   if (tab) {
     tab.selection = null;
@@ -5955,34 +5655,55 @@ function syncAskFields() {
   if (!currentChapter) {
     return;
   }
-  setFormValue("reader_book", currentChapter.book);
-  setFormValue("reader_chapter", currentChapter.chapter);
+  const studySelection = window.BHFStudySelection?.getState?.() || {
+    book: currentChapter.book,
+    chapter: currentChapter.chapter,
+    startVerse: currentSelection?.startVerse || null,
+    endVerse: currentSelection?.endVerse || null,
+    selectedVerses: currentSelection?.selectedVerses || [],
+    selectedText: currentSelection?.text || "",
+    translation: selectedTranslationId(),
+    hasPassageSelection: Boolean(currentSelection),
+  };
+  setFormValue("reader_book", studySelection.book || currentChapter.book);
+  setFormValue("reader_chapter", studySelection.chapter || currentChapter.chapter);
   setFormValue(
     "reader_start_verse",
-    currentSelection ? currentSelection.startVerse : "",
+    studySelection.hasPassageSelection ? studySelection.startVerse : "",
   );
   setFormValue(
     "reader_end_verse",
-    currentSelection ? currentSelection.endVerse : "",
+    studySelection.hasPassageSelection ? studySelection.endVerse : "",
   );
   setFormValue(
     "reader_selected_verses",
-    currentSelection ? JSON.stringify(currentSelection.selectedVerses || []) : "",
+    studySelection.hasPassageSelection ? JSON.stringify(studySelection.selectedVerses || []) : "",
   );
   setFormValue(
     "reader_selected_text",
-    currentSelection ? currentSelection.text : "",
+    studySelection.hasPassageSelection ? studySelection.selectedText : "",
   );
-  setFormValue("reader_translation", selectedTranslationId());
+  setFormValue(
+    "reader_selected_word",
+    studySelection.selectedWord ? JSON.stringify(studySelection.selectedWord) : "",
+  );
+  setFormValue("reader_translation", studySelection.translation || selectedTranslationId());
 
   const summary = document.querySelector("#selection-summary");
   const addNoteButton = document.querySelector("[data-add-note]");
-  if (currentSelection) {
-    const reference = formatReference(
-      currentChapter.book,
-      currentChapter.chapter,
-      currentSelection.startVerse,
-      currentSelection.endVerse,
+  if (isGeneralQuestionScope()) {
+    if (summary) {
+      summary.textContent = "Search across Scripture and BHF’s research collections. Your question is not limited to the selected passage.";
+    }
+    if (addNoteButton) {
+      addNoteButton.disabled = false;
+    }
+  } else if (studySelection.hasPassageSelection) {
+    const reference = studySelection.reference || formatReference(
+      studySelection.book,
+      studySelection.chapter,
+      studySelection.startVerse,
+      studySelection.endVerse,
     );
     const translationLabel = translationSelectOptionLabel(
       selectedTranslationId(),
@@ -6062,6 +5783,42 @@ function setFormValue(name, value) {
   }
 }
 
+function isGeneralQuestionScope() {
+  const input = document.querySelector('.ask-form [name="question_scope"]');
+  return input?.value === GENERAL_QUESTION_MODE;
+}
+
+function setAskQuestionScope(scope) {
+  const form = document.querySelector(".ask-form");
+  const isGeneralQuestion = scope === GENERAL_QUESTION_MODE;
+  setFormValue("question_scope", isGeneralQuestion ? GENERAL_QUESTION_MODE : "");
+  if (form) {
+    form.dataset.questionScope = isGeneralQuestion ? GENERAL_QUESTION_MODE : "passage";
+  }
+
+  const heading = document.querySelector("[data-ask-heading]");
+  const questionLabel = document.querySelector("[data-ask-question-label]");
+  const question = document.querySelector('.ask-form [name="question"]');
+  const submitButton = document.querySelector('[data-testid="ask-submit"]');
+  const summary = document.querySelector("#selection-summary");
+
+  if (heading) heading.textContent = isGeneralQuestion ? "Explore BHF" : "Ask BHF";
+  if (questionLabel) questionLabel.textContent = isGeneralQuestion ? "Search or ask" : "Question";
+  if (question) {
+    question.placeholder = isGeneralQuestion
+      ? "Ask about a person, place, theme, or passage…"
+      : "Ask me a question!";
+  }
+  if (submitButton) {
+    submitButton.dataset.idleLabel = isGeneralQuestion ? "Search BHF" : "Ask BHF";
+    if (!submitButton.disabled) submitButton.textContent = submitButton.dataset.idleLabel;
+  }
+  if (summary && isGeneralQuestion) {
+    summary.textContent = "Search across Scripture and BHF’s research collections. Your question is not limited to the selected passage.";
+  }
+  updateSaveButtons();
+}
+
 function setMapContextValue(context) {
   const input = document.querySelector(`.ask-form [name="map_context"]`);
   if (!input) {
@@ -6090,6 +5847,7 @@ function buildReaderMapContext(studyAction) {
 }
 
 function openMapPanel(context) {
+  activateAppSection("explore");
   activateWorkspaceTab("maps");
   if (isCompactViewport()) {
     setWorkspaceDrawerOpen(true);

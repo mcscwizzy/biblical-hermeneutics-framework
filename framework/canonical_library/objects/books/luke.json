@@ -269,7 +269,11 @@
     {"id": "crucifixion", "relationship": "passion-event", "weight": 10, "notes": "Roman execution and Lukan passion narration"},
     {"id": "resurrection", "relationship": "vindication-event", "weight": 10, "notes": "empty tomb and appearance narratives"},
     {"id": "ascension", "relationship": "transition-event", "weight": 9, "notes": "textually qualified ending and Acts resumption"},
-    {"id": "acts", "relationship": "linked-volume", "weight": 10, "notes": "shared addressee, resumptions, themes, and differences"}
+    {"id": "acts", "relationship": "linked-volume", "weight": 10, "notes": "shared addressee, resumptions, themes, and differences"},
+    {"id": "second-temple-priesthood-and-temple-authority", "relationship": "historical-context", "weight": 9, "notes": "Priestly and temple authority context for Luke's temple-framed narrative."},
+    {"id": "second-temple-synagogues-scribes-and-sectarian-groups", "relationship": "historical-context", "weight": 10, "notes": "Synagogue reading, scribal roles, and Jewish-group context for Luke."},
+    {"id": "galilean-villages-households-and-subsistence", "relationship": "historical-context", "weight": 10, "notes": "Nazareth, Capernaum, households, agriculture, and lake work in Luke's Galilean narrative."},
+    {"id": "judean-pilgrimage-taxation-and-roman-power", "relationship": "historical-context", "weight": 10, "notes": "Census chronology, Jerusalem pilgrimage, toll collection, Roman execution, and burial in Luke."}
   ],
   "scripture_references": [
     {"reference": "Luke 1:1-4", "relationship": "primary", "notes": "ancient preface"},

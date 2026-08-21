@@ -7,20 +7,20 @@
     "tell me about phoebe of cenchreae",
     "why is phoebe of cenchreae important"
   ],
-  "summary": "Phoebe of Cenchreae is a first-generation church figure whose ministry supports the spread, instruction, or organization of the gospel.",
-  "historical_context": "Historically, Phoebe of Cenchreae belongs within the scriptural setting around Acts 9:1-19, where Acts 9:1-19, Romans 16:1-27, acts, and paul help locate this biblical figure in the Bible's people, places, and events.",
-  "ancient_near_east_context": "Ancient background for Phoebe of Cenchreae includes family networks, vocation, local authority, travel, and public reputation; the entry ties that world to Acts 9:1-19, Romans 16:1-27, acts, and paul without letting comparison replace the biblical witness.",
+  "summary": "A minister or deacon associated with the assembly at Cenchreae whom Paul commends to the Roman assemblies as a prostatis of many, including himself.",
+  "historical_context": "Romans 16:1-2 is the only secure primary notice. Cenchreae was Corinth's eastern port, making travel toward the Aegean and Rome plausible, but the text does not explicitly call Phoebe the letter carrier, identify her household, or specify a formal office.",
+  "ancient_near_east_context": "Phoebe belongs to a Greco-Roman port and diaspora-Jewish-Christian network rather than a generic Ancient Near Eastern setting.",
   "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "second_temple_context": "The commendation belongs to a first-century Jewish and gentile Christ-following network in Roman Corinthia and Rome, before a complete separation of Judaism and Christianity.",
+  "canonical_context": "Romans names Phoebe before the greetings of chapter 16. Diakonos and prostatis ground debates about ministry, patronage, leadership, and letter delivery, but later titles must not be read back without argument.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
-    "ancient_near_east": true,
-    "hebraic_worldview": true,
+    "ancient_near_east": false,
+    "hebraic_worldview": false,
     "second_temple": true,
     "canonical": true,
-    "later_christian_reception": true
+    "later_christian_reception": false
   },
   "literary_context": "Acts and the Epistles use Phoebe of Cenchreae to display gospel partnership and ecclesial formation.",
   "covenantal_significance": "Phoebe of Cenchreae participates in the nations' inclusion and the building up of the body of Christ.",
@@ -51,10 +51,10 @@
   "related_events": [],
   "related_objects": [
     {
-      "id": "acts",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "romans",
+      "relationship": "primary-letter",
+      "weight": 10,
+      "notes": "Romans 16:1-2 is the primary canonical evidence for Phoebe."
     },
     {
       "id": "paul",
@@ -63,38 +63,35 @@
       "notes": "curated canonical context"
     },
     {
-      "id": "pentecost",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "corinth",
+      "relationship": "regional-context",
+      "weight": 9,
+      "notes": "Cenchreae was Corinth's eastern port."
     },
     {
-      "id": "spirit-theme",
-      "relationship": "narrative-context",
+      "id": "patronage",
+      "relationship": "prostatis-context",
       "weight": 8,
-      "notes": "curated canonical context"
+      "notes": "Patron, benefactor, leader, and helper readings require lexical and social qualification."
+    },
+    {
+      "id": "roman-corinth-civic-household-and-association-life",
+      "relationship": "evidence-cluster",
+      "weight": 10,
+      "notes": "The cluster supplies bounded Cenchreae, travel, household, and patronage context."
+    },
+    {
+      "id": "roman-rome-jewish-civic-household-and-imperial-life",
+      "relationship": "recipient-and-travel-context",
+      "weight": 10,
+      "notes": "The Rome cluster bounds commendation, probable letter travel, reception, hospitality, and title interpretation."
     }
   ],
   "scripture_references": [
     {
-      "reference": "Acts 9:1-19",
-      "relationship": "supporting",
-      "notes": "apostolic mission"
-    },
-    {
-      "reference": "Romans 16:1-27",
-      "relationship": "supporting",
-      "notes": "church partners and networks"
-    },
-    {
-      "reference": "1 Corinthians 3:4-9",
-      "relationship": "supporting",
-      "notes": "church life and ministry"
-    },
-    {
-      "reference": "Philippians 1:12-18",
-      "relationship": "supporting",
-      "notes": "gospel partnership"
+      "reference": "Romans 16:1-2",
+      "relationship": "primary",
+      "notes": "Phoebe, Cenchreae, diakonos, commendation, reception, and prostatis language."
     }
   ],
   "cross_references": [],

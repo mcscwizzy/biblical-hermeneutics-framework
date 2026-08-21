@@ -12,6 +12,7 @@ from types import SimpleNamespace
 from urllib.parse import quote_plus, urlencode
 from unittest.mock import patch
 
+from bhf_agent.archaeology import media_can_bundle
 from bhf_agent.config import AgentConfig, CanonicalLibraryConfig, ConfigError
 from bhf_agent import translation_settings, translation_storage
 from bhf_agent.bible import load_kjv_bible
@@ -408,20 +409,14 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn("progress-track", script)
         self.assertNotIn("toFixed(3)", script)
 
-    def test_reader_script_has_context_menu_and_highlight_actions(self):
+    def test_reader_script_has_study_actions_without_a_context_menu(self):
         script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
 
         self.assertIn("createStudyAction", script)
         self.assertIn("dispatchStudyAction", script)
-        self.assertIn("resolveContextAction", script)
-        self.assertIn("copyContextToClipboard", script)
-        self.assertIn("formatContextReferenceForClipboard", script)
-        self.assertIn("navigator?.clipboard?.writeText", script)
-        self.assertIn('document.execCommand("copy")', script)
         self.assertIn("remove_highlight", script)
         self.assertIn("isContextHighlighted", script)
         self.assertIn("applyVerseStateIndicatorsToReader", script)
-        self.assertIn("contextForVerseAction", script)
         self.assertIn("reader_translation", script)
         self.assertIn("currentChapter?.translation?.id || selectedTranslationId().toUpperCase()", script)
         self.assertIn("ancient_context", script)
@@ -433,12 +428,47 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("timeline", script)
         self.assertIn("openMapPanel", script)
         self.assertIn("BHF_STUDY_ACTIONS", script)
-        self.assertIn("contextmenu", script)
-        self.assertIn("handleReaderContextMenu", script)
-        self.assertIn("closeContextMenuOnEscape", script)
         self.assertIn("word_study", script)
         self.assertIn("open_map_panel", script)
+        self.assertNotIn("reader-context-menu", script)
+        self.assertNotIn("contextmenu", script)
+        self.assertNotIn("copyContextToClipboard", script)
         self.assertNotIn("studyAction.type === \"maps\"", script)
+
+    def test_map_workspace_opens_from_map_panel_events(self):
+        reader_script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
+        companion_script = Path("bhf_web/static/study-companion.js").read_text(encoding="utf-8")
+
+        self.assertIn('document.addEventListener("bhf:map-panel-opened", () => {', reader_script)
+        self.assertIn('activateAppSection("explore");', reader_script)
+        self.assertIn('activateWorkspaceTab("maps");', reader_script)
+        self.assertIn('typeof window.BHFMaps?.openMapPanel === "function"', companion_script)
+        self.assertIn('await window.BHFMaps.openMapPanel(', companion_script)
+        self.assertIn("ensureResourceVisible(\n        resourceId,", companion_script)
+        self.assertIn("{focus: false}", companion_script)
+        self.assertIn("focus: options.focus,", companion_script)
+        self.assertIn('currentMode === "explore"', companion_script)
+        self.assertIn('await actions?.perform?.("open_map_panel", mapContext);', companion_script)
+
+    def test_explore_questions_use_the_general_question_scope(self):
+        reader_script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
+        companion_script = Path("bhf_web/static/study-companion.js").read_text(encoding="utf-8")
+
+        self.assertIn('return ["maps", "ask"];', reader_script)
+        self.assertIn('function setAskQuestionScope(scope)', reader_script)
+        self.assertIn('questionScope: GENERAL_QUESTION_MODE, appSection: "explore"', reader_script)
+        self.assertIn('questionScope: "general_question", appSection: "explore"', companion_script)
+        self.assertIn('Explore questions are not limited to the selected passage.', companion_script)
+
+    def test_companion_archaeology_cards_open_curated_evidence_details(self):
+        router_script = Path("bhf_web/static/resource-router.js").read_text(encoding="utf-8")
+
+        self.assertIn("dataset.archaeologyId", router_script)
+        self.assertIn("function openArchaeologyDetail(itemId)", router_script)
+        self.assertIn("/api/archaeology/items/${encodeURIComponent(normalized)}", router_script)
+        self.assertIn("function renderArchaeologyDetail(detail)", router_script)
+        self.assertIn("What you’re looking at", router_script)
+        self.assertIn("Archaeological caution", router_script)
 
     def test_reader_tabs_render_side_by_side_panes_with_independent_scroll(self):
         script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
@@ -503,10 +533,9 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("original text’s reading order", script)
         self.assertIn("word_position: studyAction.wordPosition", script)
         self.assertIn("surface_form: studyAction.surfaceForm", script)
-        self.assertIn("handleContextSubmenuHover", script)
-        self.assertIn("openContextSubmenu", script)
-        self.assertIn('window.matchMedia("(max-width: 680px)").matches', script)
-        self.assertIn('menu.style.left = "8px";', script)
+        self.assertNotIn("handleContextSubmenuHover", script)
+        self.assertNotIn("openContextSubmenu", script)
+        self.assertNotIn('menu.style.left = "8px";', script)
 
     def test_reader_script_persists_and_restores_last_local_location(self):
         script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
@@ -592,6 +621,7 @@ class WebAssetTests(unittest.TestCase):
             r"function applyReaderMode[\s\S]*?if \(!nextEnabled\) \{\n    stopReaderSpeech\(\);",
         )
         self.assertIn(".reader-speech-controls", style)
+        self.assertIn("body.reader-mode .passage-action-strip,", style)
         self.assertIn("bottom: max(32px, calc(20px + env(safe-area-inset-bottom)));", style)
         self.assertIn(".verse.is-speaking", style)
 
@@ -699,8 +729,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn("restartPlayback", map_script)
         self.assertNotIn("schedulePlaybackAdvance", map_script)
         self.assertIn("selectedJourneySegmentId", map_script)
-        self.assertIn("data-map-journey-search", map_script)
-        self.assertIn("data-map-journey-filter-testament", map_script)
+        self.assertNotIn("data-map-journey-search", map_script)
+        self.assertNotIn("data-map-journey-filter-testament", map_script)
         self.assertNotIn("data-map-reference-layer-controls", map_script)
         self.assertIn("openPassageReference", map_script)
         self.assertIn("applyTimelineOptions", map_script)
@@ -771,18 +801,10 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn("Map3DPanel.js", index_html)
         self.assertNotIn("workspace-tab-journey", index_html)
         self.assertNotIn("workspace-pane-journey", index_html)
-        self.assertNotIn('data-context-action="maps"', index_html)
-        self.assertIn('data-context-action="open_map_panel"', index_html)
-        self.assertNotIn('data-context-action="show_on_map"', index_html)
-        self.assertIn("data-map-journey-search", index_html)
-        self.assertIn("data-map-journey-filter-testament", index_html)
-        self.assertIn("data-map-journey-filter-category", index_html)
-        self.assertIn("data-map-journey-filter-era", index_html)
-        self.assertIn("data-map-journey-count", index_html)
-        self.assertIn("data-map-journey-selector", index_html)
-        self.assertIn("data-map-journey-stop-list", index_html)
-        self.assertIn("data-map-journey-segment-list", index_html)
-        self.assertIn("data-map-journey-detail", index_html)
+        self.assertIn('data-companion-route="maps"', index_html)
+        self.assertIn("data-map-search-query", index_html)
+        self.assertIn("data-map-search-kind", index_html)
+        self.assertIn("data-map-search-submit", index_html)
         self.assertNotIn("data-map-reference-layer-controls", index_html)
         self.assertNotIn("Reference layers", index_html)
         self.assertNotIn("data-journey-", index_html)
@@ -800,7 +822,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("Loading translations...", index_html)
         self.assertIn('name="reader_translation"', index_html)
         self.assertIn("static_asset('/style.css') }}?v=20260724c", index_html)
-        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260729b", index_html)
+        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260820a", index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
@@ -811,6 +833,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn(".map-entity-marker--manuscript", style)
         self.assertIn(".map-shortcut", style)
         self.assertIn(".map-details-card .compact", style)
+        self.assertIn(".map-details-column.is-mobile-open", style)
+        self.assertIn("position: static;", style)
         self.assertIn("@media (max-width: 680px)", style)
         self.assertIn(".map-panel-body {\n    gap: 10px;", style)
         self.assertIn(".map-details-panel,\n  .saved-map-study {\n    padding: 12px;", style)
@@ -857,11 +881,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn("max-height: 50vh;", style)
         self.assertIn("body.workspace-expanded .workspace-pane[data-workspace-pane=\"ask\"] {\n    overflow-y: auto;", style)
         self.assertIn("body.workspace-expanded .answer-panel {\n    max-height: none;\n    height: auto;\n    overflow: visible;", style)
-        self.assertIn(".context-menu-submenu {\n  position: absolute;", style)
-        self.assertIn(".context-menu-section:hover > .context-menu-submenu", style)
         self.assertIn('html[data-theme="dark"] .verse-number {\n  color: #f1f8ff;', style)
-        self.assertNotIn(".context-menu-submenu {\n    position: static;", style)
-        self.assertNotIn(".context-menu-section:hover > .context-menu-submenu {\n    display: none;", style)
+        self.assertNotIn(".context-menu", style)
         self.assertIn(".map-passage-chip", style)
         self.assertIn(".map-journey-passage-row", style)
         self.assertNotIn(".journey-modal", style)
@@ -920,7 +941,7 @@ class WebAppTests(unittest.TestCase):
 
         self.assertEqual(response["status"], 200)
         self.assertIn("BHF Bible Reader", response["body"])
-        self.assertIn("Read Scripture. Explore context. Ask deeper questions.", response["body"])
+        self.assertIn("Biblical Hermeneutics Framework", response["body"])
         self.assertNotIn("BHF ASV Reader", response["body"])
         self.assertIn("BHFRuntimeConfig", response["body"])
         self.assertIn("manifest.webmanifest", response["body"])
@@ -943,41 +964,17 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("workspace-pane-context", response["body"])
         self.assertIn("book-select", response["body"])
         self.assertIn("data-theme-toggle", response["body"])
-        self.assertIn("reader-context-menu", response["body"])
-        self.assertIn("data-context-action=\"copy\"", response["body"])
-        self.assertIn("data-context-action=\"ask_bhf\"", response["body"])
-        self.assertIn("data-context-action=\"ancient_context\"", response["body"])
-        self.assertIn("data-context-action=\"literary_context\"", response["body"])
-        self.assertIn("data-context-action=\"cross_references\"", response["body"])
-        self.assertIn("data-context-action=\"related_ot_themes\"", response["body"])
-        self.assertIn("data-context-action=\"fulfillment_nt\"", response["body"])
-        self.assertIn("data-context-action=\"compare_translations\"", response["body"])
-        self.assertIn("data-context-action=\"timeline\"", response["body"])
-        self.assertIn("data-context-action=\"ask_location\"", response["body"])
-        self.assertIn("data-context-action=\"open_map_panel\"", response["body"])
-        self.assertIn("data-context-action=\"save_map_study\"", response["body"])
-        self.assertIn("data-context-action=\"map_note\"", response["body"])
-        self.assertNotIn("data-context-action=\"compare_archaeology\"", response["body"])
-        self.assertIn("data-context-action=\"related_passages\"", response["body"])
-        self.assertIn("data-context-action=\"view_historical_layer\"", response["body"])
-        self.assertIn("data-context-action=\"save_study\"", response["body"])
-        self.assertIn("data-context-action=\"word_study\"", response["body"])
-        self.assertIn("data-context-action=\"archaeology\"", response["body"])
-        self.assertIn("data-context-submenu=\"study\"", response["body"])
-        self.assertIn("data-context-submenu=\"context\"", response["body"])
-        self.assertIn("data-context-submenu=\"reference\"", response["body"])
-        self.assertIn("data-context-submenu=\"actions\"", response["body"])
+        self.assertNotIn("reader-context-menu", response["body"])
+        self.assertNotIn("data-context-action", response["body"])
+        self.assertNotIn('data-passage-action="more"', response["body"])
+        self.assertIn('data-companion-route="maps"', response["body"])
         self.assertIn("map-panel", response["body"])
         self.assertNotIn("workspace-tab-journey", response["body"])
         self.assertNotIn("workspace-pane-journey", response["body"])
         self.assertNotIn("Map3DPanel.js", response["body"])
-        self.assertIn("data-map-journey-search", response["body"])
-        self.assertIn("data-map-journey-filter-testament", response["body"])
-        self.assertIn("data-map-journey-filter-category", response["body"])
-        self.assertIn("data-map-journey-filter-era", response["body"])
-        self.assertIn("data-map-journey-count", response["body"])
-        self.assertIn("data-map-journey-selector", response["body"])
-        self.assertIn("data-map-journey-stop-list", response["body"])
+        self.assertIn("data-map-search-query", response["body"])
+        self.assertIn("data-map-search-kind", response["body"])
+        self.assertIn("data-map-search-submit", response["body"])
         self.assertNotIn("data-map-reference-layer-controls", response["body"])
         self.assertNotIn("Reference layers", response["body"])
         self.assertIn("map-stage", response["body"])
@@ -985,10 +982,8 @@ class WebAppTests(unittest.TestCase):
         self.assertNotIn("data-archaeology-toggle", response["body"])
         self.assertNotIn("data-manuscript-toggle", response["body"])
         self.assertNotIn("compare_archaeology", response["body"])
-        self.assertIn("data-route-toggle", response["body"])
         self.assertIn("data-historical-period", response["body"])
         self.assertIn("Broad / uncertain period", response["body"])
-        self.assertIn("saved-map-studies", response["body"])
         self.assertIn("map_context", response["body"])
         self.assertIn("/static/vendor/leaflet/leaflet.css", response["body"])
         self.assertIn("/static/vendor/leaflet/leaflet.js", response["body"])
@@ -1007,7 +1002,17 @@ class WebAppTests(unittest.TestCase):
             response["body"].index("app-dock-explore"),
             response["body"].index("app-dock-archaeology"),
         )
-        self.assertIn('data-testid="app-dock-notes" aria-pressed="false" aria-label="Notes"', response["body"])
+        self.assertIn('data-testid="app-dock-notes" aria-pressed="false" aria-label="My Study"', response["body"])
+        self.assertIn("data-study-companion", response["body"])
+        self.assertIn("data-passage-action-strip", response["body"])
+        self.assertIn("data-companion-recommended", response["body"])
+        self.assertIn("reader-selection.js", response["body"])
+        self.assertIn("companion-context-controller.js", response["body"])
+        self.assertIn("saved-passage-state.js", response["body"])
+        self.assertIn("companion-history.js", response["body"])
+        self.assertIn("companion-viewport.js", response["body"])
+        self.assertIn("study-companion.js", response["body"])
+        self.assertIn("viewport-fit=cover", response["body"])
         self.assertIn('class="app-dock-icon"', response["body"])
         self.assertIn("reader-controls-trigger", response["body"])
         self.assertIn("reader-controls-sheet", response["body"])
@@ -1023,7 +1028,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("data-testid=\"ask-save-study\"", response["body"])
         self.assertNotIn('data-note-save-status role="status" aria-live="polite">Ready</span>', response["body"])
         self.assertNotIn("data-question-scope", response["body"])
-        self.assertNotIn("name=\"question_scope\"", response["body"])
+        self.assertIn("name=\"question_scope\"", response["body"])
         self.assertNotIn("data-testid=\"chapter-prev\"", response["body"])
         self.assertNotIn("data-testid=\"chapter-next\"", response["body"])
         self.assertIn("status-summary", response["body"])
@@ -1045,7 +1050,7 @@ class WebAppTests(unittest.TestCase):
 
         self.assertEqual(response["status"], 200)
         self.assertIn('href="/static/style.css?v=20260724c"', response["body"])
-        self.assertIn('src="/static/htmx-lite.js?v=20260729b"', response["body"])
+        self.assertIn('src="/static/htmx-lite.js?v=20260820a"', response["body"])
         self.assertIn('href="/static/vendor/leaflet/leaflet.css"', response["body"])
         self.assertNotIn("http://bhf.thewalkerclan.synology.me/static/", response["body"])
 
@@ -1071,7 +1076,17 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v26"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v34"', service_worker["body"])
+        self.assertIn('/static/styles/companion.css', service_worker["body"])
+        self.assertIn('/static/reader-selection.js', service_worker["body"])
+        self.assertIn('/static/companion-context.js', service_worker["body"])
+        self.assertIn('/static/companion-context-controller.js', service_worker["body"])
+        self.assertIn('/static/saved-passage-state.js', service_worker["body"])
+        self.assertIn('/static/companion-history.js', service_worker["body"])
+        self.assertIn('/static/companion-viewport.js', service_worker["body"])
+        self.assertIn('/static/companion-sheet.js', service_worker["body"])
+        self.assertIn('/static/resource-router.js', service_worker["body"])
+        self.assertIn('/static/study-companion.js', service_worker["body"])
         self.assertIn("cacheFirstApi", service_worker["body"])
         self.assertIn("isRefreshRequest", service_worker["body"])
         self.assertIn("networkFirstNavigation", service_worker["body"])
@@ -1301,7 +1316,8 @@ class WebAppTests(unittest.TestCase):
         data = json.loads(response["body"])
         self.assertEqual(data["pack_id"], "archaeology")
         self.assertGreaterEqual(len(data["items"]), 8)
-        self.assertEqual(data["media"], [])
+        self.assertGreater(len(data["media"]), 0)
+        self.assertTrue(all(media_can_bundle(item) for item in data["media"]))
         self.assertIn("/api/maps/archaeology", [entry["url"] for entry in data["responses"]])
 
     def test_get_curation_page_returns_200(self):
@@ -2374,7 +2390,8 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("Rollout mode", result["body"])
         self.assertIn("Shadow Prompt Preview", result["body"])
         self.assertIn("CKL was retrieved in shadow mode", result["body"])
-        self.assertIn("did not find a strong match", result["body"])
+        self.assertIn("Selected Results", result["body"])
+        self.assertIn("## Entry: Shechem", result["body"])
 
     def test_debug_ckl_search_endpoint_is_hidden_without_debug_mode(self):
         response = asgi_request("POST", "/api/debug/ckl-search", json_data={"query": "Shechem"})
@@ -2414,7 +2431,7 @@ class WebAppTests(unittest.TestCase):
         self.assertTrue(payload["prompt"]["preview"])
         self.assertIn("shechem", payload["retrieval"]["selected_entry_ids"])
 
-    def test_reader_ask_job_keeps_typed_prompt_when_selection_fields_are_present(self):
+    def test_reader_ask_job_inherits_selection_fields_with_typed_prompt(self):
         CapturingAgent.questions = []
         data = _valid_form()
         data.update(
@@ -2435,15 +2452,16 @@ class WebAppTests(unittest.TestCase):
         job = json.loads(response["body"])
         status = wait_for_job(job["job_id"])
         self.assertTrue(status["done"])
-        self.assertIsNone(status["reader_reference"])
+        self.assertEqual(status["reader_reference"], "Romans 12:1-2")
         self.assertEqual(len(CapturingAgent.questions), 1)
         question = CapturingAgent.questions[0]
-        self.assertEqual(question, "What should I observe before interpreting?")
+        self.assertIn("Using BHF, explain ASV Romans 12:1-2.", question)
+        self.assertIn("User question: What should I observe before interpreting?", question)
+        self.assertIn("Selected text (ASV Romans 12:1-2):\npresent your bodies a living sacrifice", question)
 
         result = asgi_request("GET", f"/ask/result/{job['job_id']}")
         self.assertEqual(result["status"], 200)
-        self.assertNotIn("ASV Romans 12:1-2", result["body"])
-        self.assertNotIn("Save Study", result["body"])
+        self.assertIn("ASV Romans 12:1-2", result["body"])
 
     def test_ancient_context_reader_job_builds_phase_one_prompt(self):
         CapturingAgent.questions = []
@@ -2767,7 +2785,7 @@ class WebAppTests(unittest.TestCase):
         self.assertNotIn("Save Study", result["body"])
         self.assertNotIn("ASV Romans 12:1-2", result["body"])
 
-    def test_topic_reader_job_without_general_scope_ignores_passage_context(self):
+    def test_topic_reader_job_without_general_scope_inherits_passage_context(self):
         CapturingAgent.questions = []
         data = _valid_form()
         data.update(
@@ -2788,11 +2806,13 @@ class WebAppTests(unittest.TestCase):
         job = json.loads(response["body"])
         status = wait_for_job(job["job_id"])
         self.assertTrue(status["done"])
-        self.assertIsNone(status["reader_reference"])
+        self.assertEqual(status["reader_reference"], "John 1:1")
         question = CapturingAgent.questions[0]
-        self.assertEqual(question, "Who was Samson?")
+        self.assertIn("Using BHF, explain ASV John 1:1.", question)
+        self.assertIn("User question: Who was Samson?", question)
+        self.assertIn("Selected text (ASV John 1:1):\nIn the beginning was the Word", question)
 
-    def test_passage_reader_job_without_study_action_keeps_typed_prompt(self):
+    def test_passage_reader_job_without_study_action_inherits_selection(self):
         CapturingAgent.questions = []
         data = _valid_form()
         data.update(
@@ -2813,9 +2833,11 @@ class WebAppTests(unittest.TestCase):
         job = json.loads(response["body"])
         status = wait_for_job(job["job_id"])
         self.assertTrue(status["done"])
-        self.assertIsNone(status["reader_reference"])
+        self.assertEqual(status["reader_reference"], "John 1:1")
         question = CapturingAgent.questions[0]
-        self.assertEqual(question, "What does this mean?")
+        self.assertIn("Using BHF, explain ASV John 1:1.", question)
+        self.assertIn("User question: What does this mean?", question)
+        self.assertIn("Selected text (ASV John 1:1):\nIn the beginning was the Word", question)
 
     def test_reader_toolbar_omits_duplicate_chapter_buttons(self):
         response = asgi_request("GET", "/")

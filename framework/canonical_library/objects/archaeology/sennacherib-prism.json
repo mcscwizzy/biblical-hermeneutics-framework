@@ -9,8 +9,8 @@
     "sennacherib prism find"
   ],
   "summary": "A prism inscribed with Sennacherib's annals, including the campaign against Judah.",
-  "historical_context": "A major Assyrian source for imperial campaigns and propaganda.",
-  "ancient_near_east_context": "Ancient background for Sennacherib Prism includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to 2 Kings 18, 2 Kings 19, nineveh, and jerusalem without letting comparison replace the biblical witness.",
+  "historical_context": "The Taylor Prism is a Neo-Assyrian royal account produced about a decade after Sennacherib's 701 BCE campaign in Judah. Lachish palace reliefs provide a distinct royal visual commemoration of the same campaign horizon.",
+  "ancient_near_east_context": "Assyrian annals and palace reliefs are primary imperial self-presentations: they identify places, rulers, tribute, deportation, and victory claims while selecting and arranging events to magnify the king.",
   "hebraic_worldview": "",
   "second_temple_context": "",
   "canonical_context": "",
@@ -18,18 +18,18 @@
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
-    "hebraic_worldview": true,
-    "second_temple": true,
-    "canonical": true,
-    "later_christian_reception": true
+    "hebraic_worldview": false,
+    "second_temple": false,
+    "canonical": false,
+    "later_christian_reception": false
   },
-  "literary_context": "Important for comparing Assyrian royal rhetoric with the biblical account of the siege of Jerusalem.",
-  "covenantal_significance": "Sennacherib Prism helps anchor biblical claims in historical reality while reminding readers that archaeology supports rather than replaces interpretation.",
+  "literary_context": "The prism's annalistic victory rhetoric and the reliefs' visual conquest sequence should be compared with the distinct narrative and prophetic aims of 2 Kings 18-19 and Isaiah 36-37.",
+  "covenantal_significance": "The Assyrian evidence anchors the campaign's political setting but cannot decide the biblical writers' theological explanation of Jerusalem's survival.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
   "historical_setting": "",
-  "canonical_role": "Sennacherib Prism serves as a material-culture anchor, connecting archaeological evidence with the biblical places, periods, and passages it helps contextualize.",
+  "canonical_role": "The prism and Lachish reliefs provide independent Assyrian perspectives on the 701 BCE campaign compared with Second Kings and Isaiah.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -64,16 +64,28 @@
       "notes": ""
     },
     {
-      "id": "joshua",
-      "relationship": "historical-background",
-      "weight": 8,
-      "notes": ""
+      "id": "assyria",
+      "relationship": "imperial-context",
+      "weight": 10,
+      "notes": "The prism is a Neo-Assyrian royal inscription."
     },
     {
-      "id": "hebrews",
-      "relationship": "historical-background",
-      "weight": 7,
-      "notes": ""
+      "id": "lachish",
+      "relationship": "campaign-site",
+      "weight": 10,
+      "notes": "Lachish was captured in the 701 BCE Judah campaign and prominently commemorated in Sennacherib's palace."
+    },
+    {
+      "id": "lachish-reliefs",
+      "relationship": "companion-archaeological-evidence",
+      "weight": 10,
+      "notes": "The relief cycle visually complements the annalistic prism."
+    },
+    {
+      "id": "assyrian-tribute-and-royal-representation",
+      "relationship": "integrated-context-cluster",
+      "weight": 10,
+      "notes": "The cultural-background cluster compares the annals with biblical tribute notices and Assyrian royal media."
     }
   ],
   "scripture_references": [
@@ -102,106 +114,134 @@
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "The prism is genuine, but royal inscriptions are propagandistic and need careful comparison with other sources.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Royal annals and palace reliefs are primary evidence for Assyrian claims and commemorative choices, not neutral transcripts of the entire campaign.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "taylor-prism",
+        "british-museum-lachish-relief-124911",
+        "ussishkin-lachish-reliefs-1982"
+      ]
     },
     {
-      "note": "British Museum",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Sennacherib's failure to claim Jerusalem's capture is historically relevant but does not by itself prove the biblical account's theological explanation.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "taylor-prism",
+        "kings-isaiah-sennacherib-texts"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "prism-judah-campaign",
+      "claim": "Sennacherib's annals describe his 701 BCE campaign in Judah, tribute from Hezekiah, and Hezekiah's confinement in Jerusalem.",
+      "claim_type": "archaeology",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "2 Kings 18:13-37",
+        "Isaiah 36:1-22"
+      ],
+      "source_ids": [
+        "taylor-prism"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The royal inscription is a primary Assyrian witness to the campaign; translation details and historical synthesis still require comparison with other sources.",
+      "notes": "The annals do not say that Jerusalem was captured."
     },
     {
-      "note": "British Museum, London",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "nineveh",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "Use the item as context for the biblical text, not as a shortcut around it.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "id": "lachish-relief-campaign",
+      "claim": "Sennacherib's palace reliefs depict the siege and capture of Lachish, captives, booty, and the enthroned Assyrian king within the 701 BCE Judah campaign.",
+      "claim_type": "archaeology",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "2 Kings 18:13-17",
+        "Isaiah 36:1-2"
+      ],
+      "source_ids": [
+        "british-museum-lachish-relief-124911",
+        "ussishkin-lachish-reliefs-1982"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The labeled palace cycle and its archaeological context identify Lachish and a royal victory display; reconstruction details remain debated.",
+      "notes": "The relief is evidence for Assyrian commemoration of Lachish, not an image of Jerusalem's siege."
     }
   ],
   "common_questions": [
-    "What does Sennacherib Prism teach?",
-    "How does Sennacherib Prism fit the biblical storyline?",
-    "What should readers avoid when interpreting Sennacherib Prism?"
+    "What does the Taylor Prism say about Hezekiah and Jerusalem?",
+    "What do the Lachish reliefs add to the campaign evidence?",
+    "How does Assyrian royal rhetoric differ from the biblical accounts?",
+    "Why does the prism's silence about Jerusalem's capture require caution?"
   ],
   "sources": [
     {
       "title": "Taylor Prism",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
+      "author": "British Museum",
+      "publisher": "British Museum",
+      "year": -691,
+      "locator": "Museum number 91032; Neo-Assyrian royal annals",
+      "url": "https://www.britishmuseum.org/collection/object/W_1855-1003-1",
+      "source_type": "museum-collection",
+      "supports": [
+        "prism-judah-campaign",
+        "taylor-prism-annals"
+      ],
+      "notes": "Official collection record. The inscription is ancient primary evidence preserved on a museum object; its royal rhetoric must be critically compared.",
       "id": "taylor-prism"
     },
     {
-      "title": "British Museum",
+      "title": "Stone panel from the North-West Palace of Sennacherib: the siege of Lachish",
       "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "british-museum"
+      "publisher": "British Museum",
+      "year": -696,
+      "locator": "Museum number 124911; relief 7; dated 700-692 BCE",
+      "url": "https://www.britishmuseum.org/collection/object/W_1856-0909-14_7",
+      "source_type": "museum-collection",
+      "supports": [
+        "lachish-relief-campaign",
+        "lachish-relief-royal-siege-rhetoric"
+      ],
+      "notes": "Official catalog record for one panel in the Lachish relief cycle; year is an approximate midpoint of the catalog range.",
+      "id": "british-museum-lachish-relief-124911"
     },
     {
-      "title": "British Museum, London",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "british-museum-london"
+      "title": "The Conquest of Lachish by Sennacherib",
+      "author": "David Ussishkin",
+      "publisher": "Tel Aviv University Institute of Archaeology",
+      "year": 1982,
+      "locator": "Study of the Lachish reliefs and excavated site context",
+      "url": "https://www.britishmuseum.org/collection/term/BIB6499",
+      "source_type": "academic-book",
+      "supports": [
+        "lachish-relief-campaign",
+        "lachish-relief-royal-siege-rhetoric"
+      ],
+      "notes": "Specialist study used for archaeological and visual reconstruction; no images or copyrighted text are copied.",
+      "id": "ussishkin-lachish-reliefs-1982"
     },
     {
-      "title": "Royal annals prism",
+      "title": "Second Kings 18-19 and Isaiah 36-37",
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "royal-annals-prism"
-    },
-    {
-      "title": "2 Kings 18-19",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
+      "locator": "2 Kings 18:13-19:37; Isaiah 36:1-37:38",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "2-kings-18-19"
+      "supports": [
+        "prism-judah-campaign",
+        "lachish-relief-campaign"
+      ],
+      "notes": "Primary biblical accounts used for comparison; no modern translation is reproduced.",
+      "id": "kings-isaiah-sennacherib-texts"
     }
   ],
   "canonical_story": {
@@ -239,6 +279,237 @@
     "frequently_confused_with": [],
     "semantic_keywords": []
   },
+  "temporal_scope": {
+    "start_year": -691,
+    "end_year": -691,
+    "approximate": false,
+    "periods": [
+      "Neo-Assyrian period",
+      "Assyrian period"
+    ],
+    "narrative_setting": "Sennacherib's 701 BCE campaign in Judah and the siege context surrounding Jerusalem.",
+    "source_composition_start_year": -691,
+    "source_composition_end_year": -691,
+    "source_composition_approximate": false,
+    "notes": "The surviving Taylor Prism copy was produced about a decade after the 701 BCE campaign it recounts."
+  },
+  "evidence_items": [
+    {
+      "id": "taylor-prism-annals",
+      "title": "Taylor Prism account of Sennacherib's Judah campaign",
+      "evidence_type": "inscription",
+      "description": "A six-sided baked-clay prism inscribed in Akkadian with Sennacherib's royal annals, including his campaign against fortified Judahite cities and his treatment of Hezekiah.",
+      "assertion_type": "primary-evidence",
+      "confidence": "high",
+      "confidence_rationale": "The object, text, provenance history, and Neo-Assyrian date are well documented; historical use remains genre-sensitive because royal annals are self-presentation.",
+      "passage_relevance": "The inscription independently anchors Sennacherib, Hezekiah, Judah, tribute, and the 701 BCE campaign that frame 2 Kings 18-19 and Isaiah 36-37, while its different perspective prevents it from being treated as a neutral transcript of the biblical account.",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "primary_observation": "The annals name Hezekiah of Judah, claim the capture of fortified Judahite towns, describe tribute, and portray Hezekiah as confined in Jerusalem; they do not claim Jerusalem's capture.",
+      "scholarly_interpretation": "The text is compared with Kings, Isaiah, Chronicles, other Assyrian inscriptions, and destruction evidence to reconstruct the campaign; harmonization details and rhetorical emphases remain debated.",
+      "temporal_scope": {
+        "start_year": -691,
+        "end_year": -691,
+        "approximate": false,
+        "periods": [
+          "Neo-Assyrian period",
+          "Assyrian period"
+        ],
+        "narrative_setting": "Royal retrospective on the 701 BCE Judah campaign",
+        "source_composition_start_year": -691,
+        "source_composition_end_year": -691,
+        "source_composition_approximate": false,
+        "notes": "Artifact date and recounted campaign date are intentionally distinguished."
+      },
+      "geography_ids": [
+        "nineveh",
+        "jerusalem",
+        "assyria"
+      ],
+      "related_objects": [
+        {
+          "id": "nineveh",
+          "relationship": "production-and-discovery-context",
+          "weight": 9,
+          "notes": "The prism belongs to Sennacherib's Nineveh palace context."
+        },
+        {
+          "id": "jerusalem",
+          "relationship": "campaign-target",
+          "weight": 10,
+          "notes": "Jerusalem and Hezekiah are central to the annal passage compared with Kings and Isaiah."
+        },
+        {
+          "id": "assyria",
+          "relationship": "imperial-source-context",
+          "weight": 10,
+          "notes": "The source speaks from Neo-Assyrian royal ideology."
+        }
+      ],
+      "related_evidence": [
+        {
+          "id": "lachish-relief-royal-siege-rhetoric",
+          "relationship": "same-campaign-different-medium",
+          "weight": 9,
+          "notes": "The palace relief visually complements the annalistic account while retaining its own rhetorical program."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "2 Kings 18:13-37",
+          "relationship": "contextual",
+          "temporal_relation": "near-contemporary",
+          "relevance_rationale": "Both sources place Sennacherib's campaign against Judah and Hezekiah in the same historical horizon, while narrating it from different perspectives.",
+          "weight": 10
+        },
+        {
+          "reference": "2 Kings 19:1-37",
+          "relationship": "contrast",
+          "temporal_relation": "near-contemporary",
+          "relevance_rationale": "The annals' silence about capturing Jerusalem is relevant comparative evidence but does not itself establish the biblical account's explanation of the outcome.",
+          "weight": 9
+        },
+        {
+          "reference": "Isaiah 36:1-37:38",
+          "relationship": "contextual",
+          "temporal_relation": "near-contemporary",
+          "relevance_rationale": "The inscription supplies Assyrian royal context for the campaign narrated in Isaiah while retaining a distinct genre and viewpoint.",
+          "weight": 9
+        }
+      ],
+      "source_ids": [
+        "taylor-prism"
+      ],
+      "claim_ids": [
+        "prism-judah-campaign"
+      ],
+      "external_references": [
+        {
+          "domain": "archaeology-item",
+          "id": "sennacherib-prism",
+          "relationship": "same-evidence",
+          "notes": "Rights-aware images and fuller archaeological presentation remain in the separate archaeology domain."
+        }
+      ],
+      "metadata": {
+        "artifact_name": "Taylor Prism",
+        "discovery_location": "Nineveh, Iraq",
+        "present_location": "British Museum, London (BM 91032)",
+        "archaeological_period": "Neo-Assyrian period",
+        "associated_culture": "Neo-Assyrian",
+        "associated_biblical_geography": "Judah and Jerusalem"
+      },
+      "notes": "No museum image is copied into CKL; the archaeology domain independently tracks a reviewed public-domain image."
+    },
+    {
+      "id": "lachish-relief-royal-siege-rhetoric",
+      "title": "Lachish relief depiction of Sennacherib's Judah campaign",
+      "evidence_type": "artifact",
+      "description": "A palace relief cycle from Nineveh depicts Assyrian assault, captives, booty, and Sennacherib enthroned before Lachish.",
+      "assertion_type": "primary-evidence",
+      "confidence": "high",
+      "confidence_rationale": "The panels, palace provenance, Neo-Assyrian date, and Lachish identification are well documented; individual scene reconstruction remains genre- and context-sensitive.",
+      "passage_relevance": "The relief independently anchors Lachish as a major Assyrian victory in the campaign horizon of 2 Kings 18 and Isaiah 36, while its focus on a captured city contrasts with the prism's treatment of Jerusalem.",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "primary_observation": "The surviving cycle shows a fortified city's assault and aftermath, deportees and booty, and Sennacherib receiving the presentation associated with Lachish.",
+      "scholarly_interpretation": "The cycle is read as a carefully designed royal victory display connected with the 701 BCE campaign; topographic, sequencing, and historical details are reconstructed in dialogue with the excavated site.",
+      "temporal_scope": {
+        "start_year": -700,
+        "end_year": -692,
+        "approximate": true,
+        "periods": [
+          "Neo-Assyrian period"
+        ],
+        "narrative_setting": "Royal visual commemoration of the 701 BCE capture of Lachish",
+        "source_composition_start_year": -700,
+        "source_composition_end_year": -692,
+        "source_composition_approximate": true,
+        "notes": "The relief was installed after the campaign; the artifact and event dates remain distinct."
+      },
+      "geography_ids": [
+        "lachish",
+        "nineveh",
+        "assyria"
+      ],
+      "related_objects": [
+        {
+          "id": "lachish-reliefs",
+          "relationship": "same-artifact-cycle",
+          "weight": 10,
+          "notes": "The archaeology object retains fuller artifact and image presentation."
+        },
+        {
+          "id": "lachish",
+          "relationship": "depicted-campaign-site",
+          "weight": 10,
+          "notes": "The relief cycle commemorates the capture of Lachish."
+        },
+        {
+          "id": "nineveh",
+          "relationship": "palace-display-context",
+          "weight": 9,
+          "notes": "The relief was displayed in Sennacherib's palace at Nineveh."
+        }
+      ],
+      "related_evidence": [
+        {
+          "id": "taylor-prism-annals",
+          "relationship": "same-campaign-different-medium",
+          "weight": 9,
+          "notes": "The annals and reliefs are separate forms of royal self-presentation."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "2 Kings 18:13-17",
+          "relationship": "contextual",
+          "temporal_relation": "near-contemporary",
+          "relevance_rationale": "The relief supplies independent Assyrian evidence for Lachish's capture in the same campaign horizon while not verifying every narrative detail.",
+          "weight": 10
+        },
+        {
+          "reference": "Isaiah 36:1-2",
+          "relationship": "contextual",
+          "temporal_relation": "near-contemporary",
+          "relevance_rationale": "Isaiah places the Assyrian field commander at Lachish; the relief documents the city's royal importance after capture.",
+          "weight": 9
+        }
+      ],
+      "source_ids": [
+        "british-museum-lachish-relief-124911",
+        "ussishkin-lachish-reliefs-1982",
+        "kings-isaiah-sennacherib-texts"
+      ],
+      "claim_ids": [
+        "lachish-relief-campaign"
+      ],
+      "external_references": [
+        {
+          "domain": "archaeology-item",
+          "id": "lachish-reliefs",
+          "relationship": "same-evidence",
+          "notes": "The archaeology domain retains panel-level presentation and rights-aware image metadata."
+        },
+        {
+          "domain": "external-dataset",
+          "id": "british-museum-124911",
+          "relationship": "catalog-record",
+          "notes": "The official catalog retains identity, provenance, date, bibliography, and image rights."
+        }
+      ],
+      "metadata": {
+        "artifact_name": "Lachish relief cycle, panel BM 124911",
+        "site_name": "South-West Palace of Sennacherib, Nineveh",
+        "discovery_location": "Kouyunjik, Nineveh, Iraq",
+        "present_location": "British Museum, London",
+        "archaeological_period": "Neo-Assyrian period",
+        "associated_culture": "Neo-Assyrian",
+        "associated_biblical_geography": "Lachish and Judah"
+      },
+      "notes": "The museum image is linked rather than copied into CKL."
+    }
+  ],
   "importance": 94,
   "framework_version": "1.0",
   "object_version": "1",
@@ -252,9 +523,12 @@
       "date": "2026-07-16"
     }
   ],
-  "edited_by": [],
+  "edited_by": [
+    "codex:evidence-graph-expansion:2026-08-14",
+    "codex:ckl-content-quality-worldview-evidence-pass:2026-08-14"
+  ],
   "reviewed_by": [],
-  "last_reviewed": "2026-07-16",
+  "last_reviewed": "2026-08-20",
   "confidence": "medium",
   "human_review_required": true
 }

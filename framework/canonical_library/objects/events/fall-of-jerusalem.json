@@ -8,27 +8,27 @@
     "why is fall of jerusalem important"
   ],
   "summary": "Babylon destroys Jerusalem and the temple, sending Judah into exile.",
-  "historical_context": "Jerusalem falls in 586 BC after repeated prophetic warnings and Babylonian military pressure.",
-  "ancient_near_east_context": "The event takes place within imperial warfare and deportation, but Scripture interprets it as covenant judgment against Judah.",
-  "hebraic_worldview": "",
+  "historical_context": "After Zedekiah's revolt, Babylon besieged Jerusalem, breached the city, removed and executed officials, burned the temple and major buildings, dismantled defenses, and deported further inhabitants. The absolute date is conventionally 587/586 BCE because regnal-year and calendar calculations differ.",
+  "ancient_near_east_context": "The destruction followed Neo-Babylonian practices of punitive siege, royal removal, plunder, destruction, deportation, and installation of subordinate administration after rebellion. BM 21946 records the earlier 597 BCE capture, not this later catastrophe.",
+  "hebraic_worldview": "Kings and Jeremiah interpret the fall as judgment after persistent covenant breach and rejected prophetic warning; Lamentations voices grief, protest, confession, and appeal from within the catastrophe.",
   "second_temple_context": "",
-  "canonical_context": "",
+  "canonical_context": "The fall closes Judah's monarchy and First Temple era, frames Lamentations and exilic prophecy, and becomes the historical starting point for later return and rebuilding narratives.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
     "hebraic_worldview": true,
-    "second_temple": true,
+    "second_temple": false,
     "canonical": true,
-    "later_christian_reception": true
+    "later_christian_reception": false
   },
-  "literary_context": "2 Kings 25, Jeremiah, and Lamentations read the catastrophe as the theological climax of Judah's disobedience.",
-  "covenantal_significance": "The fall of Jerusalem marks the loss of temple, king, and land, intensifying the need for restoration and new covenant hope.",
+  "literary_context": "Second Kings 25 and Jeremiah 39 and 52 preserve related prose accounts with differences in dates, details, and sequence; Lamentations is poetic testimony, not a campaign chronicle; Psalm 137 remembers displacement from Babylon.",
+  "covenantal_significance": "The biblical witnesses connect the loss of city, temple, king, and land with covenant judgment while preserving lament, remnant, and restoration hope. Babylonian sources do not state that theological meaning.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
   "historical_setting": "",
-  "canonical_role": "Fall of Jerusalem serves as a canonical event anchor, connecting its key passages, people, places, and theological themes within the biblical storyline.",
+  "canonical_role": "Jerusalem's destruction closes the monarchy and First Temple narrative, generates lament and exilic interpretation, and supplies the catastrophe from which return and rebuilding proceed.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -97,6 +97,18 @@
       "relationship": "renewal-horizon",
       "weight": 8,
       "notes": "hope beyond the fall"
+    },
+    {
+      "id": "babylonian-conquest-deportation-and-judean-diaspora",
+      "relationship": "structured-evidence-cluster",
+      "weight": 10,
+      "notes": "The cluster distinguishes the 597 BCE capture from the later destruction and deportations."
+    },
+    {
+      "id": "babylonian-chronicles",
+      "relationship": "earlier-capture-witness",
+      "weight": 8,
+      "notes": "BM 21946 provides chronology for 597 BCE but does not narrate this destruction."
     }
   ],
   "scripture_references": [
@@ -135,18 +147,20 @@
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "The loss is historical and theological; both dimensions matter.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Use 587/586 BCE unless a chronology is explicitly defended; avoid presenting either year as free from regnal and calendrical calculation.",
+      "note_type": "historical-context",
+      "certainty": "strong_consensus",
+      "dispute_status": "chronological_uncertainty",
+      "sources": ["kings-jeremiah-fall-jerusalem", "cogan-tadmor-fall-jerusalem"],
+      "rationale": "The event is secure while absolute-year conventions differ."
     },
     {
-      "note": "Jerusalem's fall is not the end of God's plan but the severe turning point that clarifies the need for renewal.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The Babylonian Chronicle BM 21946 ends before the final destruction and must not be cited as its direct external record.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": ["bm-21946-fall-boundary"],
+      "rationale": "The tablet covers 605-594 BCE and reports the 597 BCE capture."
     }
   ],
   "common_questions": [
@@ -155,66 +169,9 @@
     "How does this event shape the prophets and exile?"
   ],
   "sources": [
-    {
-      "title": "2 Kings 25",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "2-kings-25"
-    },
-    {
-      "title": "Jeremiah 39",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "jeremiah-39"
-    },
-    {
-      "title": "Lamentations 1",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "lamentations-1"
-    },
-    {
-      "title": "Psalm 137",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "psalm-137"
-    },
-    {
-      "title": "Ezra 1",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "ezra-1"
-    }
+    {"id": "kings-jeremiah-fall-jerusalem", "title": "Second Kings 25; Jeremiah 39 and 52; Lamentations 1", "author": "", "publisher": "", "year": null, "locator": "2 Kings 25:1-21; Jeremiah 39:1-10; 52:1-30; Lamentations 1:1-22", "url": "", "source_type": "scripture", "supports": ["summary", "historical_context", "literary_context", "interpretive_notes"], "notes": "Primary biblical witnesses in prose and poetry."},
+    {"id": "cogan-tadmor-fall-jerusalem", "title": "II Kings", "author": "Mordechai Cogan and Hayim Tadmor", "publisher": "Doubleday / Yale University Press", "year": 1988, "locator": "Commentary on 2 Kings 24:18-25:30", "url": "https://yalebooks.yale.edu/book/9780300140743/ii-kings/", "source_type": "academic-book", "supports": ["historical_context", "literary_context", "interpretive_notes"], "notes": "Historical-critical commentary on the final siege, chronology, destruction, and aftermath."},
+    {"id": "bm-21946-fall-boundary", "title": "Babylonian Chronicle for 605-594 BCE", "author": "", "publisher": "British Museum", "year": null, "locator": "BM 21946; date range 605-594 BCE", "url": "https://www.britishmuseum.org/collection/object/W_1896-0409-51", "source_type": "museum-collection", "supports": ["ancient_near_east_context", "interpretive_notes"], "notes": "Used to enforce the boundary between the documented 597 BCE capture and the later destruction."}
   ],
   "canonical_story": {
     "phase": "",
@@ -264,9 +221,9 @@
       "date": "2026-07-14"
     }
   ],
-  "edited_by": [],
+  "edited_by": ["codex:ckl-babylon-persia-expansion:2026-08-20"],
   "reviewed_by": [],
-  "last_reviewed": "2026-07-14",
+  "last_reviewed": "2026-08-20",
   "confidence": "medium",
   "human_review_required": true
 }

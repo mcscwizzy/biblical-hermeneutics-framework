@@ -112,6 +112,13 @@ def verify_database(
                 f"but version {schema_version or '<missing>'} was found. Rebuild the database with: "
                 "python -m framework.canonical_library build-db"
             )
+        retrieval_version = metadata.get("retrieval_index_version")
+        if retrieval_version != CKL_RETRIEVAL_INDEX_VERSION:
+            raise RuntimeError(
+                f"CKL retrieval index version {CKL_RETRIEVAL_INDEX_VERSION} is required, "
+                f"but version {retrieval_version or '<missing>'} was found. Rebuild the database with: "
+                "python -m framework.canonical_library build-db"
+            )
         integrity = conn.execute("PRAGMA integrity_check").fetchone()[0]
         if integrity != "ok":
             raise RuntimeError(f"SQLite integrity check failed: {integrity}")
@@ -125,10 +132,13 @@ def verify_database(
             raise RuntimeError(f"object count mismatch: metadata={metadata_count} actual={object_count}")
         claim_count = int(conn.execute("SELECT COUNT(*) FROM canonical_claims").fetchone()[0])
         source_count = int(conn.execute("SELECT COUNT(*) FROM canonical_sources").fetchone()[0])
+        evidence_count = int(conn.execute("SELECT COUNT(*) FROM canonical_evidence_items").fetchone()[0])
         if claim_count != int(metadata.get("claim_count", "-1")):
             raise RuntimeError("claim count does not match CKL SQLite metadata")
         if source_count != int(metadata.get("source_count", "-1")):
             raise RuntimeError("source count does not match CKL SQLite metadata")
+        if evidence_count != int(metadata.get("evidence_count", "-1")):
+            raise RuntimeError("evidence count does not match CKL SQLite metadata")
         fts_count = int(conn.execute("SELECT COUNT(*) FROM canonical_fts").fetchone()[0])
         if fts_count != object_count:
             raise RuntimeError(f"FTS document count mismatch: objects={object_count} fts={fts_count}")
@@ -154,11 +164,13 @@ def verify_database(
         return {
             "path": str(db_path),
             "database_schema_version": schema_version,
+            "retrieval_index_version": retrieval_version,
             "framework_version": metadata.get("framework_version"),
             "schema_version": metadata.get("schema_version"),
             "object_count": object_count,
             "claim_count": claim_count,
             "source_count": source_count,
+            "evidence_count": evidence_count,
             "build_timestamp": metadata.get("build_timestamp"),
             "inventory_fingerprint": metadata.get("inventory_fingerprint"),
             "file_size": db_path.stat().st_size,
@@ -179,14 +191,17 @@ def database_info(path: str | Path) -> dict[str, Any]:
         object_count = int(conn.execute("SELECT COUNT(*) FROM canonical_objects").fetchone()[0])
         claim_count = int(conn.execute("SELECT COUNT(*) FROM canonical_claims").fetchone()[0])
         source_count = int(conn.execute("SELECT COUNT(*) FROM canonical_sources").fetchone()[0])
+        evidence_count = int(conn.execute("SELECT COUNT(*) FROM canonical_evidence_items").fetchone()[0])
         return {
             "database_path": str(db_path),
             "database_schema_version": metadata.get("database_schema_version"),
+            "retrieval_index_version": metadata.get("retrieval_index_version"),
             "framework_version": metadata.get("framework_version"),
             "schema_version": metadata.get("schema_version"),
             "object_count": object_count,
             "claim_count": claim_count,
             "source_count": source_count,
+            "evidence_count": evidence_count,
             "build_timestamp": metadata.get("build_timestamp"),
             "inventory_fingerprint": metadata.get("inventory_fingerprint"),
             "database_file_size": db_path.stat().st_size,
@@ -229,6 +244,7 @@ def _write_database(
                 _insert_relationships(conn, obj)
                 _insert_scripture_references(conn, obj, book_alias_lookup=book_alias_lookup)
                 _insert_claims_and_sources(conn, obj, book_alias_lookup=book_alias_lookup)
+                _insert_evidence(conn, obj, book_alias_lookup=book_alias_lookup)
                 _insert_fts_document(conn, obj)
             _insert_metadata(
                 conn,
@@ -474,6 +490,165 @@ def _insert_claims_and_sources(
             )
 
 
+def _insert_evidence(
+    sql: sqlite3.Connection,
+    obj: CanonicalObject,
+    *,
+    book_alias_lookup: Mapping[str, str],
+) -> None:
+    """Normalize temporal/evidence records into indexed relationship tables."""
+
+    temporal = obj.temporal_scope
+    sql.execute(
+        """
+        INSERT INTO canonical_temporal_scopes (
+            object_id, start_year, end_year, approximate, periods_json,
+            narrative_setting, source_composition_start_year,
+            source_composition_end_year, source_composition_approximate, notes
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """,
+        (
+            obj.id,
+            temporal.start_year,
+            temporal.end_year,
+            int(temporal.approximate),
+            json.dumps(temporal.periods, sort_keys=True, separators=(",", ":")),
+            temporal.narrative_setting,
+            temporal.source_composition_start_year,
+            temporal.source_composition_end_year,
+            int(temporal.source_composition_approximate),
+            temporal.notes,
+        ),
+    )
+
+    for item in obj.evidence_items:
+        item_temporal = item.temporal_scope
+        sql.execute(
+            """
+            INSERT INTO canonical_evidence_items (
+                object_id, evidence_id, title, evidence_type, description,
+                assertion_type, confidence, confidence_rationale,
+                passage_relevance, certainty, dispute_status,
+                primary_observation, scholarly_interpretation,
+                start_year, end_year, approximate, periods_json,
+                narrative_setting, source_composition_start_year,
+                source_composition_end_year, source_composition_approximate,
+                temporal_notes, metadata_json, notes
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                obj.id,
+                item.id,
+                item.title,
+                item.evidence_type,
+                item.description,
+                item.assertion_type,
+                item.confidence,
+                item.confidence_rationale,
+                item.passage_relevance,
+                item.certainty,
+                item.dispute_status,
+                item.primary_observation,
+                item.scholarly_interpretation,
+                item_temporal.start_year,
+                item_temporal.end_year,
+                int(item_temporal.approximate),
+                json.dumps(item_temporal.periods, sort_keys=True, separators=(",", ":")),
+                item_temporal.narrative_setting,
+                item_temporal.source_composition_start_year,
+                item_temporal.source_composition_end_year,
+                int(item_temporal.source_composition_approximate),
+                item_temporal.notes,
+                json.dumps(item.metadata, sort_keys=True, separators=(",", ":"), ensure_ascii=False),
+                item.notes,
+            ),
+        )
+        for claim_id in item.claim_ids:
+            sql.execute(
+                "INSERT INTO canonical_evidence_claims (object_id, evidence_id, claim_id) VALUES (?, ?, ?)",
+                (obj.id, item.id, claim_id),
+            )
+        for source_order, source_id in enumerate(item.source_ids):
+            sql.execute(
+                """
+                INSERT INTO canonical_evidence_sources (
+                    object_id, evidence_id, source_id, source_order
+                ) VALUES (?, ?, ?, ?)
+                """,
+                (obj.id, item.id, source_id, source_order),
+            )
+        for reference in item.scripture_references:
+            parsed = parse_scripture_reference(reference.reference, book_alias_lookup=book_alias_lookup)
+            sql.execute(
+                """
+                INSERT INTO canonical_evidence_scripture_references (
+                    object_id, evidence_id, reference_text, book, start_chapter,
+                    start_verse, end_chapter, end_verse, relationship,
+                    temporal_relation, relevance_rationale, weight
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    obj.id,
+                    item.id,
+                    reference.reference,
+                    parsed.book if parsed else None,
+                    parsed.start_chapter if parsed else None,
+                    parsed.start_verse if parsed else None,
+                    parsed.end_chapter if parsed else None,
+                    parsed.end_verse if parsed else None,
+                    reference.relationship,
+                    reference.temporal_relation,
+                    reference.relevance_rationale,
+                    reference.weight,
+                ),
+            )
+        relationship_groups: tuple[tuple[str, Any], ...] = (
+            ("evidence", item.related_evidence),
+            ("object", item.related_objects),
+            (
+                "geography",
+                [
+                    {
+                        "id": geography_id,
+                        "relationship": "geographic-context",
+                        "weight": 5,
+                        "notes": "",
+                    }
+                    for geography_id in item.geography_ids
+                ],
+            ),
+        )
+        for target_kind, relationships in relationship_groups:
+            for relationship in relationships:
+                candidate = relationship.to_dict() if hasattr(relationship, "to_dict") else relationship
+                sql.execute(
+                    """
+                    INSERT INTO canonical_evidence_relationships (
+                        object_id, evidence_id, target_kind, target_id,
+                        relationship, weight, notes
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?)
+                    """,
+                    (
+                        obj.id,
+                        item.id,
+                        target_kind,
+                        str(candidate["id"]),
+                        str(candidate["relationship"]),
+                        int(candidate.get("weight") or 1),
+                        str(candidate.get("notes") or ""),
+                    ),
+                )
+        for external in item.external_references:
+            sql.execute(
+                """
+                INSERT INTO canonical_evidence_external_references (
+                    object_id, evidence_id, domain, external_id, relationship, notes
+                ) VALUES (?, ?, ?, ?, ?, ?)
+                """,
+                (obj.id, item.id, external.domain, external.id, external.relationship, external.notes),
+            )
+
+
 def _insert_fts_document(sql: sqlite3.Connection, obj: CanonicalObject) -> None:
     retrieval_metadata = obj.retrieval_metadata if isinstance(obj.retrieval_metadata, Mapping) else {}
     contexts = [
@@ -486,6 +661,19 @@ def _insert_fts_document(sql: sqlite3.Connection, obj: CanonicalObject) -> None:
         obj.covenantal_significance,
         *obj.interpretive_disputes,
         *(note.note for note in obj.interpretive_notes),
+        *(
+            text
+            for item in obj.evidence_items
+            for text in (
+                item.title,
+                item.description,
+                item.primary_observation,
+                item.scholarly_interpretation,
+                item.passage_relevance,
+                item.confidence_rationale,
+            )
+            if text
+        ),
     ]
     sql.execute(
         """
@@ -542,6 +730,7 @@ def _insert_metadata(
         "object_count": str(object_count),
         "claim_count": str(sum(len(obj.claims) for obj in library.objects_by_id.values())),
         "source_count": str(sum(len(obj.sources) for obj in library.objects_by_id.values())),
+        "evidence_count": str(sum(len(obj.evidence_items) for obj in library.objects_by_id.values())),
         "source_manifest_fingerprint": manifest_fingerprint,
         "source_inventory_signature": source_inventory_signature,
     }

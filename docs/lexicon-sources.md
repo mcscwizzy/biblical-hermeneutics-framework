@@ -153,7 +153,7 @@ sample once full production datasets are imported.
 
 `lexicon_onboard.py` checks database coverage directly. `lexicon_smoke.py`
 checks the same `StudyActionRouter -> WordStudyService` path used by the Word
-Study context menu.
+Study workflow.
 
 ## Standalone Runtime Token Import
 

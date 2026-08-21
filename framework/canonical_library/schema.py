@@ -8,6 +8,14 @@ from datetime import date
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
+from .evidence_models import (
+    CanonicalEvidenceItem,
+    CanonicalTemporalScope,
+    EvidenceValidationError,
+    validate_evidence_items,
+    validate_evidence_references,
+    validate_temporal_scope,
+)
 from .normalization import normalize_alias, normalize_id
 
 
@@ -321,7 +329,10 @@ CONTEXT_APPLICABILITY_FIELDS: tuple[str, ...] = (
 
 
 def default_context_applicability() -> dict[str, bool]:
-    return {field_name: True for field_name in CONTEXT_APPLICABILITY_FIELDS}
+    # Context layers are opt-in.  Older records may still carry explicit true
+    # values, but newly authored or partially migrated records must not imply
+    # that every historical horizon is useful merely because the field exists.
+    return {field_name: False for field_name in CONTEXT_APPLICABILITY_FIELDS}
 
 
 def default_section_status() -> dict[str, str]:
@@ -395,6 +406,8 @@ DEFAULT_CANONICAL_METADATA: dict[str, Any] = {
     "scripture_references": [],
     "sources": [],
     "claims": [],
+    "temporal_scope": CanonicalTemporalScope().to_dict(),
+    "evidence_items": [],
     "section_status": default_section_status(),
     "knowledge_layers": default_knowledge_layers(),
     "canonical_story": {
@@ -658,6 +671,10 @@ SOURCE_FIELDS: tuple[str, ...] = ("sources",)
 
 CLAIM_FIELDS: tuple[str, ...] = ("claims",)
 
+TEMPORAL_SCOPE_FIELDS: tuple[str, ...] = ("temporal_scope",)
+
+EVIDENCE_ITEM_FIELDS: tuple[str, ...] = ("evidence_items",)
+
 MAPPING_FIELDS: tuple[str, ...] = (
     "context_applicability",
     "section_status",
@@ -738,6 +755,8 @@ ALL_FIELDS: tuple[str, ...] = (
     + SCRIPTURE_REFERENCE_FIELDS
     + SOURCE_FIELDS
     + CLAIM_FIELDS
+    + TEMPORAL_SCOPE_FIELDS
+    + EVIDENCE_ITEM_FIELDS
     + INT_FIELDS
     + BOOLEAN_FIELDS
     + OPTIONAL_FIELDS
@@ -1057,6 +1076,8 @@ class CanonicalObject:
     common_questions: list[str] = field(default_factory=list)
     sources: list[CanonicalSource] = field(default_factory=list)
     claims: list[CanonicalClaim] = field(default_factory=list)
+    temporal_scope: CanonicalTemporalScope = field(default_factory=CanonicalTemporalScope)
+    evidence_items: list[CanonicalEvidenceItem] = field(default_factory=list)
     section_status: dict[str, str] = field(default_factory=default_section_status)
     knowledge_layers: dict[str, Any] = field(default_factory=default_knowledge_layers)
     canonical_story: dict[str, Any] = field(
@@ -1130,6 +1151,16 @@ class CanonicalObject:
                     path=path,
                     object_id=object_id,
                 )
+            elif field_name == "temporal_scope":
+                try:
+                    values[field_name] = validate_temporal_scope(normalized.get(field_name))
+                except EvidenceValidationError as exc:
+                    raise _error(str(exc), path=path, object_id=object_id) from exc
+            elif field_name == "evidence_items":
+                try:
+                    values[field_name] = validate_evidence_items(normalized.get(field_name))
+                except EvidenceValidationError as exc:
+                    raise _error(str(exc), path=path, object_id=object_id) from exc
             else:
                 values[field_name] = normalized[field_name]
         return cls(**values)
@@ -1728,6 +1759,16 @@ def validate_field_types(
                 path=path,
                 object_id=object_id,
             )
+    if "temporal_scope" in data:
+        try:
+            validate_temporal_scope(data["temporal_scope"])
+        except EvidenceValidationError as exc:
+            raise _error(str(exc), path=path, object_id=object_id) from exc
+    if "evidence_items" in data:
+        try:
+            validate_evidence_items(data["evidence_items"])
+        except EvidenceValidationError as exc:
+            raise _error(str(exc), path=path, object_id=object_id) from exc
     if "context_applicability" in data:
         value = data["context_applicability"]
         if not isinstance(value, Mapping):
@@ -3184,6 +3225,7 @@ def validate_library(
     title_lookup: dict[str, set[str]] = {}
     id_lookup: dict[str, str] = {}
     related_objects_lookup: dict[str, list[CanonicalRelationship]] = {}
+    evidence_lookup: dict[str, list[CanonicalEvidenceItem]] = {}
 
     for obj in items:
         if obj.id in seen_ids:
@@ -3196,6 +3238,7 @@ def validate_library(
                 path=source_paths.get(obj.id) if source_paths else None,
             )
             related_objects_lookup[obj.id] = validated_obj.related_objects
+            evidence_lookup[obj.id] = validated_obj.evidence_items
         except CanonicalValidationError as exc:
             errors.append(str(exc))
         title_key = normalize_alias(obj.title)
@@ -3251,6 +3294,16 @@ def validate_library(
                         )
                     )
                 )
+
+        try:
+            validate_evidence_references(
+                evidence_lookup.get(obj.id, []),
+                object_ids=tuple(seen_ids),
+                claim_ids=tuple(claim.id for claim in obj.claims),
+                source_ids=tuple(source.id for source in obj.sources),
+            )
+        except EvidenceValidationError as exc:
+            errors.append(str(_error(str(exc), path=path, object_id=obj.id)))
 
     counts = {category: 0 for category in SUPPORTED_CATEGORIES}
     for obj in items:

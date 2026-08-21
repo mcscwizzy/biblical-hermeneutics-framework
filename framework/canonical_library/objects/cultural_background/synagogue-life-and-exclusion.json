@@ -19,7 +19,8 @@
   "related_events": [],
   "related_objects": [
     {"id": "what-is-the-synagogue", "relationship": "institutional-overview", "weight": 9, "notes": "General synagogue orientation."},
-    {"id": "john", "relationship": "primary-text", "weight": 9, "notes": "Aposynagogos notices and reconstruction debate."}
+    {"id": "john", "relationship": "primary-text", "weight": 9, "notes": "Aposynagogos notices and reconstruction debate."},
+    {"id": "second-temple-synagogues-scribes-and-sectarian-groups", "relationship": "broader-evidence-cluster", "weight": 10, "notes": "Adds inscriptional evidence and limits claims about uniform pre-70 synagogue practice."}
   ],
   "scripture_references": [
     {"reference": "Luke 4:16-30", "relationship": "primary", "notes": "Reading and teaching in Nazareth."},
@@ -49,6 +50,9 @@
   "object_version": "1",
   "content_status": "draft",
   "review_status": "in_review",
+  "generated_by": [
+    {"type": "migration", "name": "codex", "workflow": "evidence-provenance-normalization", "date": "2026-08-14"}
+  ],
   "confidence": "medium",
   "human_review_required": true
 }

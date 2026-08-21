@@ -2,14 +2,16 @@
 
 from __future__ import annotations
 
+from pathlib import Path
 from typing import Any, Callable, Mapping
 
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 
-from bhf_agent.study_db import StudyDataError
 from bhf_agent.study_actions import StudyActionRouter, compact_fact_packet
+from bhf_agent.study_db import StudyDataError
 
+from ..services.companion_context import CompanionContextService
 from ..services.web_helpers import (
     record_action,
     request_payload,
@@ -24,8 +26,15 @@ def register_study_routes(
     job_store: Any,
     study_action_router: StudyActionRouter | None = None,
     context_presenter: Callable[[Mapping[str, Any]], dict[str, Any]] | None = None,
+    commentary_db_path: str | Path = ".bhf/commentary.sqlite",
+    companion_context_service: CompanionContextService | None = None,
 ) -> None:
     router = study_action_router or StudyActionRouter()
+    companion_context = companion_context_service or CompanionContextService(
+        study_db_path=study_db_path,
+        commentary_db_path=commentary_db_path,
+    )
+    app.state.companion_context_service = companion_context
 
     def device_only_response(label: str) -> JSONResponse:
         return JSONResponse(
@@ -35,6 +44,31 @@ def register_study_routes(
             },
             status_code=410,
         )
+
+    @app.get("/api/study/companion-context", response_class=JSONResponse)
+    async def get_companion_context(
+        book: str,
+        chapter: int,
+        verse_start: int | None = None,
+        verse_end: int | None = None,
+        translation: str | None = None,
+    ) -> JSONResponse:
+        """Return compact resource availability without loading resource bodies."""
+
+        try:
+            return JSONResponse(
+                companion_context.build(
+                    book=book,
+                    chapter=chapter,
+                    verse_start=verse_start,
+                    verse_end=verse_end,
+                    translation=translation,
+                )
+            )
+        except (ValueError, StudyDataError) as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+        except Exception as exc:  # noqa: BLE001 - invalid books surface as a compact client error
+            return JSONResponse({"error": str(exc)}, status_code=400)
 
     @app.post("/api/study/actions", response_class=JSONResponse)
     async def post_study_action(request: Request) -> JSONResponse:

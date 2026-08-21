@@ -7,23 +7,23 @@
     "tell me about capernaum",
     "why is capernaum important"
   ],
-  "summary": "Capernaum is a ministry location in the story of Jesus or the early church.",
-  "historical_context": "Historically, Capernaum is located by its canonical setting; this entry connects that setting with jesus, acts, paul and related CKL objects for contextual retrieval.",
-  "ancient_near_east_context": "Capernaum is read within concrete geography shaped by Levantine routes, imperial borders, settlement patterns, water access, trade movement, and neighboring peoples named in the biblical narrative.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "summary": "A fishing and farming settlement on the northwestern Sea of Galilee that Mark and Matthew present as a principal base for Jesus's Galilean ministry.",
+  "historical_context": "Early Roman Capernaum consisted of basalt-built domestic compounds beside the lake and near regional routes. Archaeology supplies settlement context but cannot identify a particular excavated room as the house in Mark 2.",
+  "ancient_near_east_context": "Capernaum belongs to the Roman-period Galilean lake economy rather than a generalized ancient Near Eastern setting.",
+  "hebraic_worldview": "Homes, Sabbath assembly, healing, hospitality, and communal reputation overlap in the Gospel episodes located here.",
+  "second_temple_context": "The village was a Jewish settlement in the territory of Herod Antipas during Jesus's ministry; its later monumental synagogue must not be treated as the standing building of Mark 1.",
+  "canonical_context": "Mark clusters teaching, healing, controversy, and household scenes at Capernaum; Matthew calls it Jesus's own city, and John associates it with lake crossings and teaching.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
-    "ancient_near_east": true,
+    "ancient_near_east": false,
     "hebraic_worldview": true,
     "second_temple": true,
     "canonical": true,
-    "later_christian_reception": true
+    "later_christian_reception": false
   },
-  "literary_context": "The Gospels and Acts use Capernaum as a stage for proclamation, response, and mission.",
-  "covenantal_significance": "Capernaum helps show how the kingdom of God advances into the nations.",
+  "literary_context": "The Synoptic Gospels use repeated returns to Capernaum to connect public teaching with crowded domestic scenes, healings, disputes, and instruction of disciples.",
+  "covenantal_significance": "Capernaum locates Jesus's kingdom proclamation within ordinary Jewish village life in Galilee.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
@@ -57,55 +57,55 @@
       "notes": "curated canonical context"
     },
     {
-      "id": "acts",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "galilee-1",
+      "relationship": "regional-context",
+      "weight": 10,
+      "notes": "Capernaum lies on the Sea of Galilee."
     },
     {
-      "id": "paul",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "household",
+      "relationship": "social-setting",
+      "weight": 9,
+      "notes": "Several Capernaum episodes occur in or around houses."
     },
     {
-      "id": "kingdom-theme",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "synagogue",
+      "relationship": "communal-setting",
+      "weight": 9,
+      "notes": "Mark locates Sabbath teaching and healing in the synagogue."
     },
     {
-      "id": "new-covenant",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "galilean-villages-households-and-subsistence",
+      "relationship": "evidence-cluster",
+      "weight": 10,
+      "notes": "The cluster supplies passage-bounded domestic and subsistence evidence."
     }
   ],
   "scripture_references": [
     {
-      "reference": "Matthew 28:16-20",
-      "relationship": "supporting",
-      "notes": "Jesus' ministry in the land"
+      "reference": "Matthew 4:12-17",
+      "relationship": "primary",
+      "notes": "Jesus settles in Capernaum at the opening of the Galilean ministry."
     },
     {
-      "reference": "Mark 16:19-20",
-      "relationship": "supporting",
-      "notes": "Jesus' ministry and response"
+      "reference": "Mark 1:21-34",
+      "relationship": "primary",
+      "notes": "Synagogue teaching and a crowded domestic healing sequence."
     },
     {
-      "reference": "Luke 24:50-53",
-      "relationship": "supporting",
-      "notes": "ministry and mission"
+      "reference": "Mark 2:1-12",
+      "relationship": "primary",
+      "notes": "A crowded house and roof-access healing scene in Capernaum."
     },
     {
-      "reference": "John 20:17-23",
-      "relationship": "supporting",
-      "notes": "signs, belief, and mission"
+      "reference": "Mark 9:33-37",
+      "relationship": "primary",
+      "notes": "Private instruction in a Capernaum house."
     },
     {
-      "reference": "Acts 9:1-19",
+      "reference": "John 6:16-24",
       "relationship": "supporting",
-      "notes": "church mission in place"
+      "notes": "Lake travel toward Capernaum."
     }
   ],
   "cross_references": [],

@@ -7,13 +7,13 @@
     "sanctuary pattern",
     "sanctuary thematic thread"
   ],
-  "summary": "Sanctuary Theme is a biblical motif that traces God's dwelling presence among his people across Scripture.",
-  "historical_context": "Sanctuary Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
-  "ancient_near_east_context": "Ancient background for Sanctuary Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 25:8-9, Exodus 40:34-38, temple-theme, and what-is-the-temple without letting comparison replace the biblical witness.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
-  "later_christian_reception": "",
+  "summary": "The sanctuary theme traces changing biblical forms of divine dwelling and holy access from the wilderness tabernacle through Jerusalem's temples, prophetic critique and restoration, and distinct New Testament rereadings.",
+  "historical_context": "Tabernacle, First Temple, exilic loss, Second Temple worship, and Roman-period destruction are different historical settings. A canonical theme connects their texts without treating every sanctuary as the same institution or assuming that archaeology proves theological claims.",
+  "ancient_near_east_context": "Ancient temples and mobile shrines contextualize divine dwelling, restricted access, cult personnel, offerings, and royal patronage. Comparisons must remain feature-specific: no Mari tent, Egyptian royal tent, Timna shrine phase, or bark shrine is the biblical tabernacle.",
+  "hebraic_worldview": "Biblical sanctuary texts repeatedly join divine nearness with holiness, mediation, justice, and the warning that sacred space cannot be possessed as a guarantee against covenant judgment.",
+  "second_temple_context": "Second Temple Jewish communities lived with a rebuilt Jerusalem sanctuary while also developing synagogue, purity, priestly, apocalyptic, and heavenly-temple discourse. Jesus and the New Testament writings emerge within this diverse Jewish setting.",
+  "canonical_context": "Exodus's dwelling, Solomon's temple, prophetic temple critique, Ezekiel's vision, postexilic rebuilding, Gospel temple narratives, community-temple metaphors, Hebrews, and Revelation are linked but literarily and historically distinct.",
+  "later_christian_reception": "Christian readings apply sanctuary language to Christ, communities, worship, and new creation. These interpretations must not support supersessionism, seizure of holy places, antisemitism, or claims that Jewish worship was meaningless.",
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
@@ -22,13 +22,13 @@
     "canonical": true,
     "later_christian_reception": true
   },
-  "literary_context": "Literarily, Sanctuary Theme is traced through repeated images, typological patterns, promise-and-fulfillment movement, and genre shifts, with Exodus 25:8-9, Exodus 40:34-38, temple-theme, and what-is-the-temple showing how the surrounding passages shape interpretation.",
-  "covenantal_significance": "Sanctuary Theme helps show how covenant promises are stated, tested, and fulfilled in Scripture.",
+  "literary_context": "Read each sanctuary passage first within its own instruction, narrative, psalm, oracle, Gospel conflict, letter, homily, or apocalypse. The theme is constructed from those contextual readings, not from isolated shared vocabulary.",
+  "covenantal_significance": "Sanctuary presence is consistently related to covenant holiness and responsibility; Jeremiah 7 and later destruction traditions reject the idea that possession of sacred space guarantees immunity from injustice or judgment.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
   "historical_setting": "",
-  "canonical_role": "Sanctuary Theme serves as a thematic anchor, connecting repeated biblical patterns, key passages, and related theological concepts across the canon.",
+  "canonical_role": "Connects tabernacle, temple, loss, restoration, Christological and communal metaphors, and new creation while preserving their differences in covenant, genre, and historical setting.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -64,9 +64,21 @@
     },
     {
       "id": "tabernacle",
-      "relationship": "related-concept",
+      "relationship": "foundational-sanctuary-form",
+      "weight": 10,
+      "notes": "Exodus, Leviticus, and Numbers ground the theme in dwelling, holiness, access, and mobility."
+    },
+    {
+      "id": "tabernacle-presence-access-and-mobility",
+      "relationship": "structured-textual-evidence",
+      "weight": 10,
+      "notes": "Direct passage evidence for the tabernacle layer of the theme."
+    },
+    {
+      "id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+      "relationship": "bounded-comparative-evidence",
       "weight": 8,
-      "notes": ""
+      "notes": "Ancient comparisons with chronology and non-identification safeguards."
     },
     {
       "id": "hebrews",
@@ -85,61 +97,68 @@
     {
       "reference": "Exodus 25:8-9",
       "relationship": "primary",
-      "notes": ""
+      "notes": "The dwelling purpose of the wilderness sanctuary."
     },
     {
       "reference": "Exodus 40:34-38",
       "relationship": "supporting",
-      "notes": ""
+      "notes": "Glory fills the dwelling and cloud governs movement."
     },
     {
       "reference": "1 Kings 8:10-13",
       "relationship": "supporting",
-      "notes": ""
+      "notes": "Cloud and glory fill the permanent temple."
     },
     {
       "reference": "John 1:14",
       "relationship": "supporting",
-      "notes": ""
+      "notes": "Incarnation expressed with dwelling and glory language."
     },
     {
       "reference": "John 2:19-21",
       "relationship": "supporting",
-      "notes": ""
+      "notes": "The narrator interprets Jesus's body through temple language."
     },
     {
       "reference": "Ephesians 2:19-22",
       "relationship": "supporting",
-      "notes": ""
+      "notes": "A community described as a growing holy temple and divine dwelling."
     },
     {
       "reference": "Revelation 21:1-3",
       "relationship": "supporting",
-      "notes": ""
+      "notes": "New creation and divine dwelling with humanity."
     }
   ],
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "Read Sanctuary Theme in its immediate context before generalizing.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Sanctuary texts share dwelling and holiness language, but tabernacle, First Temple, Second Temple, Christological metaphor, community metaphor, heavenly sanctuary, and new creation remain distinct referents.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": ["exodus-25-40", "1-kings-8", "john-1-2", "ephesians-2", "revelation-21"],
+      "scripture_references": ["Exodus 25:8-9", "1 Kings 8:10-13", "John 2:19-21", "Ephesians 2:19-22", "Revelation 21:1-3"],
+      "traditions": ["Academic", "Jewish", "Christian"],
+      "rationale": "Repeated vocabulary supports a theme, while genre and referent prevent collapse into one undifferentiated sanctuary."
     },
     {
-      "note": "Do not flatten distinct passages into one slogan; let the canon keep its own shape.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Later Christian sanctuary readings cannot authorize antisemitism, replacement claims, destruction or seizure of holy places, or institutional immunity from ethical accountability.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": ["1-kings-8", "john-1-2", "ephesians-2", "revelation-21"],
+      "scripture_references": ["1 Kings 8:27-53", "John 2:13-22", "Ephesians 2:11-22", "Revelation 21:1-27"],
+      "traditions": ["Jewish", "Christian", "Academic"],
+      "rationale": "The texts' theological reuse does not grant modern coercive rights or erase Jewish people and worship."
     }
   ],
   "common_questions": [
-    "What does Sanctuary Theme teach?",
-    "How does Sanctuary Theme fit the biblical storyline?",
-    "What should readers avoid when interpreting Sanctuary Theme?"
+    "How does the tabernacle relate to later temples?",
+    "How do prophetic texts critique confidence in sacred space?",
+    "How do New Testament writings reuse sanctuary language?",
+    "Why must different sanctuary referents remain distinct?"
   ],
   "sources": [
     {
@@ -147,11 +166,11 @@
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "Exodus 25:1-40:38",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
+      "supports": ["historical_context", "literary_context", "canonical_context", "interpretive_notes"],
+      "notes": "Primary tabernacle instruction, construction, and glory texts.",
       "id": "exodus-25-40"
     },
     {
@@ -159,11 +178,11 @@
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "1 Kings 8:1-66",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
+      "supports": ["historical_context", "canonical_context", "interpretive_notes"],
+      "notes": "Primary temple dedication, cloud, glory, prayer, and exile-warning text.",
       "id": "1-kings-8"
     },
     {
@@ -171,11 +190,11 @@
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "John 1:14; 2:13-22",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
+      "supports": ["second_temple_context", "later_christian_reception", "interpretive_notes"],
+      "notes": "Primary Johannine dwelling, glory, and body-temple passages.",
       "id": "john-1-2"
     },
     {
@@ -183,11 +202,11 @@
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "Ephesians 2:11-22",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
+      "supports": ["canonical_context", "later_christian_reception", "interpretive_notes"],
+      "notes": "Primary community-as-temple passage in its Jew-Gentile reconciliation context.",
       "id": "ephesians-2"
     },
     {
@@ -195,26 +214,24 @@
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "Revelation 21:1-27",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
+      "supports": ["canonical_context", "later_christian_reception", "interpretive_notes"],
+      "notes": "Primary new-creation dwelling and no-temple-in-the-city passage.",
       "id": "revelation-21"
     },
     {
-      "title": "Canonical historical orientation for Sanctuary Theme",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [
-        "historical_context"
-      ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
-      "id": "sanctuary-theme-historical-orientation"
+      "title": "Sacred Space and Common Space",
+      "author": "Michael B. Hundley",
+      "publisher": "Oxford University Press",
+      "year": 2020,
+      "locator": "The Oxford Handbook of Ritual and Worship in the Hebrew Bible, chapter 11, pp. 160-178",
+      "url": "https://academic.oup.com/edited-volume/34254/chapter-abstract/290406086",
+      "source_type": "academic-book",
+      "supports": ["historical_context", "ancient_near_east_context", "hebraic_worldview"],
+      "notes": "Comparative synthesis of sacred and common spaces in the ancient Near East and Hebrew Bible.",
+      "id": "hundley-sacred-common-space"
     }
   ],
   "canonical_story": {
@@ -261,13 +278,13 @@
     {
       "type": "ai",
       "name": "codex",
-      "workflow": "ane-hebraic-context-expansion",
-      "date": "2026-07-16"
+      "workflow": "ckl-sacred-space-tabernacle-expansion",
+      "date": "2026-08-15"
     }
   ],
   "edited_by": [],
   "reviewed_by": [],
-  "last_reviewed": "2026-07-16",
+  "last_reviewed": "2026-08-15",
   "confidence": "medium",
   "human_review_required": true
 }

@@ -409,6 +409,16 @@ function setMobileDetailsOpen(isOpen) {
   const open = Boolean(isOpen);
   detailsColumn?.classList.toggle("is-mobile-open", open);
   detailsOpen?.setAttribute("aria-expanded", String(open));
+  if (
+    open &&
+    detailsColumn &&
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(max-width: 900px)").matches
+  ) {
+    window.requestAnimationFrame(() => {
+      detailsColumn.scrollIntoView({block: "nearest"});
+    });
+  }
 }
 
 function setBrowseSearchControls({ query = "", kind = "all", period = "all" } = {}) {
@@ -859,7 +869,6 @@ let selectedJourneySegmentId = null;
 function renderJourneySidebar() { return ""; }
 function selectJourneyStop() {}
 function loadSupplementalMapData() { return Promise.resolve({ journeys: [], mapLayers: [] }); }
-// data-map-journey-search data-map-journey-filter-testament data-map-journey-filter-category
 // Compatibility call signatures retained for clients that use the map panel API.
 // setRouteVisibility(true)
 // setHistoricalLayerVisibility(result.item.id, true)

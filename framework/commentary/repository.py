@@ -143,6 +143,27 @@ class CommentaryRepository:
             rows = connection.execute(sql, (book, chapter, chapter, chapter, chapter)).fetchall()
         return [_entry_from_row(row, match_type="chapter") for row in rows]
 
+    def count_chapter(self, book: str, chapter: int) -> int:
+        """Count matching chapter entries without loading commentary bodies."""
+
+        sql = """
+            SELECT COUNT(*)
+            FROM commentary_entries e
+            LEFT JOIN commentary_anchors a ON a.entry_id = e.id
+            WHERE (a.book = ? AND (
+                COALESCE(a.start_chapter, ?) <= ?
+                AND COALESCE(a.end_chapter, a.start_chapter, ?) >= ?
+            ))
+               OR (a.entry_id IS NULL AND e.kind IN ('book_introduction', 'profile'))
+        """
+        with self.connection() as connection:
+            return int(
+                connection.execute(
+                    sql,
+                    (book, chapter, chapter, chapter, chapter),
+                ).fetchone()[0]
+            )
+
     def lookup_passage(self, book: str, chapter: int, start_verse: int, end_verse: int) -> list[CommentaryEntry]:
         sql = """
             SELECT e.*, s.id AS source_meta_id, s.name AS source_meta_name,
@@ -178,6 +199,36 @@ class CommentaryRepository:
             rows = connection.execute(sql, params).fetchall()
         entries = [_entry_from_row(row, match_type="overlap") for row in rows]
         return entries
+
+    def count_passage(self, book: str, chapter: int, start_verse: int, end_verse: int) -> int:
+        """Count overlapping passage entries without loading commentary bodies."""
+
+        sql = """
+            SELECT COUNT(*)
+            FROM commentary_entries e
+            JOIN commentary_anchors a ON a.entry_id = e.id
+            WHERE a.book = ?
+              AND COALESCE(a.start_chapter, ?) <= ?
+              AND COALESCE(a.end_chapter, a.start_chapter, ?) >= ?
+              AND (
+                a.start_chapter != ? OR a.end_chapter != ? OR
+                COALESCE(a.start_verse, 0) <= ?
+                AND COALESCE(a.end_verse, a.start_verse, 2147483647) >= ?
+              )
+        """
+        params = (
+            book,
+            chapter,
+            chapter,
+            chapter,
+            chapter,
+            chapter,
+            chapter,
+            start_verse,
+            end_verse,
+        )
+        with self.connection() as connection:
+            return int(connection.execute(sql, params).fetchone()[0])
 
 
 def _source_from_row(row: sqlite3.Row) -> CommentarySource:

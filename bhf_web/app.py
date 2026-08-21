@@ -372,6 +372,12 @@ def create_app() -> FastAPI:
             },
         }
 
+    def _invalidate_companion_translation_cache() -> None:
+        companion_context = getattr(web_app.state, "companion_context_service", None)
+        invalidate = getattr(companion_context, "invalidate_translation_cache", None)
+        if callable(invalidate):
+            invalidate()
+
     @web_app.get("/api/translations", response_class=JSONResponse)
     async def translations_index() -> JSONResponse:
         return JSONResponse(_translation_state_payload())
@@ -423,6 +429,7 @@ def create_app() -> FastAPI:
         try:
             payload = dict(download_translation(translation_id))
             payload.setdefault("download_enabled", True)
+            _invalidate_companion_translation_cache()
             return JSONResponse(payload)
         except TranslationInstallError as exc:
             entry = catalog_by_id().get(translation_id.lower())
@@ -442,6 +449,7 @@ def create_app() -> FastAPI:
         try:
             payload = dict(download_translation(translation_id))
             payload.setdefault("download_enabled", True)
+            _invalidate_companion_translation_cache()
             return JSONResponse(payload)
         except TranslationInstallError as exc:
             entry = catalog_by_id().get(translation_id.lower())
@@ -460,13 +468,13 @@ def create_app() -> FastAPI:
     async def translation_import_notice(request: Request) -> JSONResponse:
         payload = await request.json()
         try:
-            return JSONResponse(
-                import_translation(
-                    str(payload.get("translation_id") or ""),
-                    confirmed=bool(payload.get("confirmed", False)),
-                    source_filename=str(payload.get("source_filename") or ""),
-                )
+            result = import_translation(
+                str(payload.get("translation_id") or ""),
+                confirmed=bool(payload.get("confirmed", False)),
+                source_filename=str(payload.get("source_filename") or ""),
             )
+            _invalidate_companion_translation_cache()
+            return JSONResponse(result)
         except ValueError as exc:
             return JSONResponse({"error": str(exc)}, status_code=400)
 
@@ -497,6 +505,8 @@ def create_app() -> FastAPI:
             return JSONResponse({"error": str(exc)}, status_code=400)
         if removed and current_default == translation_id.lower():
             save_reader_settings({"default_translation": "asv"})
+        if removed:
+            _invalidate_companion_translation_cache()
         return JSONResponse({"translation_id": translation_id.lower(), "removed": removed})
 
     @web_app.get("/api/bible/{book}/{chapter}", response_class=JSONResponse)
@@ -525,6 +535,7 @@ def create_app() -> FastAPI:
         templates=templates,
         job_store=job_store,
         context_presenter=present_reader_context,
+        commentary_db_path=str(COMMENTARY_DB_PATH),
     )
     register_debug_routes(web_app)
     register_ask_routes(

@@ -305,6 +305,36 @@
       "relationship": "provides-background-for",
       "weight": 8,
       "notes": "Tabernacle presence and sacred-space patterns provide canonical background for later temple theology."
+    },
+    {
+      "id": "egyptian-forced-labor-and-brickmaking",
+      "relationship": "passage-specific-egyptian-context",
+      "weight": 10,
+      "notes": "Structured textual and material comparison for the forced labor and brickmaking passages."
+    },
+    {
+      "id": "egyptian-kingship-and-divine-order",
+      "relationship": "passage-specific-royal-religious-context",
+      "weight": 10,
+      "notes": "Separates Pharaoh authority, judgment language, and comparative royal artifacts."
+    },
+    {
+      "id": "exodus-wilderness-routes-and-water",
+      "relationship": "passage-specific-geographic-context",
+      "weight": 10,
+      "notes": "Preserves itinerary and water evidence while marking route identifications as disputed."
+    },
+    {
+      "id": "tabernacle-presence-access-and-mobility",
+      "relationship": "passage-specific-sanctuary-context",
+      "weight": 10,
+      "notes": "Direct evidence for dwelling purpose, graded access, construction correspondence, and cloud-governed movement."
+    },
+    {
+      "id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+      "relationship": "bounded-portable-sanctuary-comparison",
+      "weight": 9,
+      "notes": "Mari, Qadesh, Timna, and Egyptian bark comparisons with explicit non-identification safeguards."
     }
   ],
   "scripture_references": [
@@ -800,7 +830,9 @@
       "date": "2026-07-24"
     }
   ],
-  "edited_by": [],
+  "edited_by": [
+    "codex:ckl-content-quality-worldview-evidence-pass:2026-08-14"
+  ],
   "reviewed_by": [],
   "last_reviewed": null,
   "confidence": "medium",

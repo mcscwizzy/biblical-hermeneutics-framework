@@ -18,7 +18,7 @@ class HomePage(BasePage):
     def assert_shell_visible(self):
         self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="app-shell"]')))
         self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="book-select"]')))
-        self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="ask-tab"]')))
-        self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="notes-tab"]')))
-        self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="maps-tab"]')))
+        self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="app-dock-bible"]')))
+        self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="app-dock-explore"]')))
+        self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="app-dock-notes"]')))
         return self

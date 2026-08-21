@@ -23,6 +23,12 @@ def test_pwa_reader_search_context_and_sync_status_work_offline(driver, wait, ba
         HomePage(driver, wait, base_url).wait_loaded()
 
         assert len(driver.find_elements(By.CSS_SELECTOR, "#chapter-reader [data-verse]")) > 0
+        wait.until(lambda _driver: _driver.execute_script(
+            "return window.BHFStudyCompanion?.getContext?.()?.reference === 'John 1';"
+        ))
+        offline_companion = driver.execute_script("return window.BHFStudyCompanion.getContext();")
+        assert offline_companion["scope"] == "chapter"
+        assert offline_companion["resources"]
 
         search_input = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="bible-search-input"]')))
         search_input.clear()
@@ -31,16 +37,16 @@ def test_pwa_reader_search_context_and_sync_status_work_offline(driver, wait, ba
         wait.until(lambda _driver: len(_driver.find_elements(By.CSS_SELECTOR, "#reader-search-results .search-result-card")) > 0)
 
         page = WorkspacePage(driver, wait, base_url)
-        page.open_app_section("ask")
-        page.open_tab("context")
-        page.assert_tab_visible("context")
-
-        canonical_search = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '[data-testid="canonical-search-input"]')))
-        canonical_search.clear()
-        canonical_search.send_keys("Shechem")
-        page.click('[data-testid="canonical-search-button"]')
-        wait.until(lambda _driver: _driver.find_element(By.CSS_SELECTOR, '[data-canonical-browser-count]').text.strip() != "0")
-        wait.until(lambda _driver: "shechem" in _driver.find_element(By.CSS_SELECTOR, '[data-canonical-browser-results]').text.lower())
+        driver.find_element(By.CSS_SELECTOR, '[data-testid="app-dock-explore"]').click()
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-companion-resource="canonical"]'))).click()
+        wait.until(lambda _driver: len(_driver.find_elements(
+            By.CSS_SELECTOR,
+            "[data-companion-resource-host] .companion-summary-card",
+        )) > 0)
+        assert "Canonical Knowledge" in driver.find_element(
+            By.CSS_SELECTOR,
+            "[data-companion-resource-host]",
+        ).text
 
         page.open_reader_settings()
         assert driver.find_element(By.CSS_SELECTOR, '[data-testid="pwa-install"]').is_displayed()

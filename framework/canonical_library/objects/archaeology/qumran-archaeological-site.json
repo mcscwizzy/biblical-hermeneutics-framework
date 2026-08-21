@@ -18,10 +18,10 @@
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
-    "hebraic_worldview": true,
-    "second_temple": true,
-    "canonical": true,
-    "later_christian_reception": true
+    "hebraic_worldview": false,
+    "second_temple": false,
+    "canonical": false,
+    "later_christian_reception": false
   },
   "literary_context": "Literarily, Qumran Archaeological Site is traced through historical notices, geographic references, royal claims, and material evidence, with Isaiah 40, Deuteronomy 32, qumran-caves, and dead-sea-scrolls showing how the surrounding passages shape interpretation.",
   "covenantal_significance": "Qumran Archaeological Site helps anchor biblical claims in historical reality while reminding readers that archaeology supports rather than replaces interpretation.",
@@ -80,6 +80,12 @@
       "relationship": "historical-background",
       "weight": 6,
       "notes": ""
+    },
+    {
+      "id": "second-temple-synagogues-scribes-and-sectarian-groups",
+      "relationship": "disputed-sectarian-context",
+      "weight": 9,
+      "notes": "The cluster separates cave provenance and legal texts from disputed Essene or Sadducean identifications."
     }
   ],
   "scripture_references": [

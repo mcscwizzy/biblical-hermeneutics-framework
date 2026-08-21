@@ -3,33 +3,33 @@
   "type": "archaeology",
   "title": "Cyrus Cylinder",
   "aliases": [
-    "cyrus cylinder artifact",
-    "cyrus cylinder discovery",
-    "cyrus cylinder excavation",
-    "cyrus cylinder find"
+    "BM 90920",
+    "Cyrus foundation cylinder",
+    "Cyrus Cylinder Babylon",
+    "Cyrus inscription"
   ],
-  "summary": "A clay cylinder recording Cyrus's policy after the conquest of Babylon.",
-  "historical_context": "An important witness to Persian imperial ideology and the broader restoration context.",
-  "ancient_near_east_context": "Ancient background for Cyrus Cylinder includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Ezra 1, 2 Chronicles 36, jerusalem, and joshua without letting comparison replace the biblical witness.",
+  "summary": "A Babylonian clay foundation inscription (BM 90920) presenting Cyrus II's 539 BCE conquest, legitimation by Marduk, and restoration of cult images and sanctuaries in a Babylonian setting.",
+  "historical_context": "The cylinder was deposited after Cyrus captured Babylon in 539 BCE. Its royal account criticizes Nabonidus, presents Cyrus as Marduk's chosen ruler, and reports restoration in Babylonia. It neither names Judah or Jerusalem nor reproduces the proclamation in Ezra.",
+  "ancient_near_east_context": "The cylindrical foundation form and rhetoric continue Babylonian royal traditions. The inscription is evidence for Cyrus's legitimation at Babylon; how far its restoration language reflects policy across the Achaemenid Empire requires comparison with local evidence.",
   "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "second_temple_context": "The cylinder is near-contemporary comparative evidence for the imperial transition associated with the early return and temple-restoration story, not a Judean document or a charter for the Second Temple community.",
+  "canonical_context": "Ezra 1 and 2 Chronicles 36 attribute the Judean proclamation to the LORD's stirring and name Jerusalem's temple. The cylinder offers a distinct Babylonian royal and cultic presentation that should remain separate.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
-    "hebraic_worldview": true,
+    "hebraic_worldview": false,
     "second_temple": true,
     "canonical": true,
-    "later_christian_reception": true
+    "later_christian_reception": false
   },
-  "literary_context": "Frequently compared with the Persian return tradition in Ezra.",
-  "covenantal_significance": "Cyrus Cylinder helps anchor biblical claims in historical reality while reminding readers that archaeology supports rather than replaces interpretation.",
+  "literary_context": "The artifact is a royal foundation inscription, not an administrative copy of a provincial decree. Its Babylonian deity language, polemic against Nabonidus, and building context differ from Ezra's narrative and Aramaic documents.",
+  "covenantal_significance": "The cylinder does not express Israel's covenant categories. Biblical writers interpret Cyrus's action theologically; the inscription supplies comparative imperial rhetoric only.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
   "historical_setting": "",
-  "canonical_role": "Cyrus Cylinder serves as a material-culture anchor, connecting archaeological evidence with the biblical places, periods, and passages it helps contextualize.",
+  "canonical_role": "The cylinder provides bounded Babylonian comparative evidence beside Ezra 1 and 2 Chronicles 36 while its silence about Judah prevents treating it as the biblical proclamation.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -58,16 +58,28 @@
       "notes": ""
     },
     {
-      "id": "joshua",
-      "relationship": "historical-background",
+      "id": "babylon-1",
+      "relationship": "discovery-and-imperial-context",
       "weight": 9,
-      "notes": ""
+      "notes": "The cylinder was deposited at Babylon and addresses Babylonian royal legitimacy."
     },
     {
-      "id": "hebrews",
-      "relationship": "historical-background",
+      "id": "persia",
+      "relationship": "imperial-context",
+      "weight": 10,
+      "notes": "The artifact belongs to the opening phase of Achaemenid rule."
+    },
+    {
+      "id": "persian-restoration-and-yehud-administration",
+      "relationship": "structured-evidence-cluster",
+      "weight": 10,
+      "notes": "The cluster compares the artifact with Ezra while enforcing its Babylonian geographical scope."
+    },
+    {
+      "id": "return-from-exile",
+      "relationship": "comparative-restoration-context",
       "weight": 8,
-      "notes": ""
+      "notes": "The relationship is comparative because the cylinder does not name the Judean return."
     }
   ],
   "scripture_references": [
@@ -86,95 +98,65 @@
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "The cylinder is genuine, but it is not a direct copy of the biblical decree.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The cylinder is a Babylonian foundation inscription, not a copy of Ezra's decree and not direct evidence that Jerusalem was named in Cyrus's Babylonian proclamation.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": ["cyrus-cylinder", "kuhrt-cylinder-policy"],
+      "rationale": "The inscription's text, provenance, and genre establish a bounded comparison."
     },
     {
-      "note": "British Museum",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
+      "note": "Modern descriptions of the cylinder as the first human-rights charter do not describe its ancient literary genre or political purpose.",
+      "note_type": "later-reception",
+      "certainty": "strong_consensus",
+      "dispute_status": "disputed",
+      "sources": ["cyrus-cylinder", "kuhrt-cylinder-policy"],
+      "rationale": "The text is a royal legitimation and foundation inscription using Babylonian cultic categories."
+    }
+  ],
+  "claims": [
     {
-      "note": "British Museum, London",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "babylon",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "Use the item as context for the biblical text, not as a shortcut around it.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "id": "cylinder-babylon-restoration-rhetoric",
+      "claim": "The Cyrus Cylinder presents Cyrus as Marduk's chosen ruler and describes restoration of sanctuaries, cult images, and displaced communities in a Babylonian imperial setting.",
+      "claim_type": "archaeology",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "Ezra 1:1-11",
+        "2 Chronicles 36:22-23"
+      ],
+      "source_ids": [
+        "cyrus-cylinder"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The inscription directly supplies Persian-period imperial restoration rhetoric; its connection to Judah is a contextual comparison because it does not name Jerusalem or quote Ezra's decree.",
+      "notes": "The claim summarizes the ancient inscription rather than later claims that it is a modern human-rights charter."
     }
   ],
   "common_questions": [
-    "What does Cyrus Cylinder teach?",
-    "How does Cyrus Cylinder fit the biblical storyline?",
-    "What should readers avoid when interpreting Cyrus Cylinder?"
+    "What does the Cyrus Cylinder actually say about restoration?",
+    "Does the Cyrus Cylinder mention Jerusalem or Judah?",
+    "How should it be compared with Ezra 1?"
   ],
   "sources": [
     {
       "title": "Cyrus Cylinder",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
+      "author": "British Museum",
+      "publisher": "British Museum",
+      "year": -539,
+      "locator": "Museum number 90920; Babylon, after the conquest in 539 BCE",
+      "url": "https://www.britishmuseum.org/collection/object/W_1880-0617-1941",
+      "source_type": "museum-collection",
+      "supports": [
+        "cylinder-babylon-restoration-rhetoric",
+        "cyrus-cylinder-restoration-context"
+      ],
+      "notes": "Official collection record for the object and inscription context; no copyrighted modern translation is reproduced.",
       "id": "cyrus-cylinder"
     },
-    {
-      "title": "British Museum",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "british-museum"
-    },
-    {
-      "title": "British Museum, London",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "british-museum-london"
-    },
-    {
-      "title": "Foundation cylinder",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "foundation-cylinder"
-    },
+    {"id": "kuhrt-cylinder-policy", "title": "The Cyrus Cylinder and Achaemenid Imperial Policy", "author": "Amélie Kuhrt", "publisher": "Journal for the Study of the Old Testament", "year": 1983, "locator": "JSOT 8.25, pp. 83-97", "url": "https://doi.org/10.1177/030908928300802507", "source_type": "journal-article", "supports": ["historical_context", "ancient_near_east_context", "interpretive_notes", "cyrus-cylinder-restoration-context"], "notes": "Source-critical study of the inscription and limits of wider policy claims."},
     {
       "title": "Ezra 1",
       "author": "",
@@ -223,6 +205,115 @@
     "frequently_confused_with": [],
     "semantic_keywords": []
   },
+  "temporal_scope": {
+    "start_year": -539,
+    "end_year": -538,
+    "approximate": false,
+    "periods": [
+      "early Achaemenid period",
+      "Persian period"
+    ],
+    "narrative_setting": "Cyrus's conquest of Babylon and the opening phase of Persian imperial rule.",
+    "source_composition_start_year": -539,
+    "source_composition_end_year": -538,
+    "source_composition_approximate": false,
+    "notes": "The date belongs to the Babylonian foundation inscription, not to the later composition history of Ezra or Chronicles."
+  },
+  "evidence_items": [
+    {
+      "id": "cyrus-cylinder-restoration-context",
+      "title": "Cyrus Cylinder imperial restoration rhetoric",
+      "evidence_type": "inscription",
+      "description": "An Akkadian cuneiform foundation cylinder from Babylon that presents Cyrus's conquest, divine authorization by Marduk, and restoration of cult centers and displaced groups.",
+      "assertion_type": "primary-evidence",
+      "confidence": "high",
+      "confidence_rationale": "The artifact and its Babylonian historical setting are secure; the scope of its policy and its relationship to individual provincial decrees require qualified historical reconstruction.",
+      "passage_relevance": "The cylinder supplies near-contemporary Persian imperial context for the restoration and return policies assumed in Ezra 1 and 2 Chronicles 36, while its silence about Judah and Jerusalem prevents treating it as the biblical decree itself.",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "primary_observation": "The inscription credits Marduk with choosing Cyrus, describes his entry into Babylon, and reports restoration involving sanctuaries, cult images, and displaced populations.",
+      "scholarly_interpretation": "Historians compare this Babylon-focused royal self-presentation with wider Achaemenid governance and the biblical return tradition; how uniform or exceptional particular policies were remains debated.",
+      "temporal_scope": {
+        "start_year": -539,
+        "end_year": -538,
+        "approximate": false,
+        "periods": [
+          "early Achaemenid period",
+          "Persian period"
+        ],
+        "narrative_setting": "Cyrus's conquest and legitimation at Babylon",
+        "source_composition_start_year": -539,
+        "source_composition_end_year": -538,
+        "source_composition_approximate": false,
+        "notes": "The artifact is contemporary with the imperial transition but does not narrate a Judean return."
+      },
+      "geography_ids": [
+        "babylon-1",
+        "persia",
+        "jerusalem"
+      ],
+      "related_objects": [
+        {
+          "id": "babylon-1",
+          "relationship": "foundation-deposit-location",
+          "weight": 10,
+          "notes": "The cylinder's own political and cultic horizon is Babylon."
+        },
+        {
+          "id": "persia",
+          "relationship": "imperial-policy-context",
+          "weight": 10,
+          "notes": "The text belongs to Cyrus's early imperial rule."
+        },
+        {
+          "id": "jerusalem",
+          "relationship": "comparative-return-context",
+          "weight": 6,
+          "notes": "Jerusalem is relevant through Ezra and Chronicles, not because it is named on the cylinder."
+        }
+      ],
+      "related_evidence": [],
+      "scripture_references": [
+        {
+          "reference": "Ezra 1:1-11",
+          "relationship": "comparative",
+          "temporal_relation": "near-contemporary",
+          "relevance_rationale": "The Babylonian inscription shows Cyrus using restoration rhetoric in the same imperial transition, but it neither names Jerusalem nor reproduces Ezra's decree.",
+          "weight": 8
+        },
+        {
+          "reference": "2 Chronicles 36:22-23",
+          "relationship": "contextual",
+          "temporal_relation": "near-contemporary",
+          "relevance_rationale": "The artifact provides external Persian-period context for Cyrus's royal self-presentation while the biblical passage offers its own theological framing.",
+          "weight": 7
+        }
+      ],
+      "source_ids": [
+        "cyrus-cylinder"
+      ],
+      "claim_ids": [
+        "cylinder-babylon-restoration-rhetoric"
+      ],
+      "external_references": [
+        {
+          "domain": "archaeology-item",
+          "id": "cyrus-cylinder",
+          "relationship": "same-evidence",
+          "notes": "Rights-aware images and extended archaeological presentation remain in the separate archaeology domain."
+        }
+      ],
+      "metadata": {
+        "artifact_name": "Cyrus Cylinder",
+        "discovery_location": "Babylon, Iraq",
+        "present_location": "British Museum, London (BM 90920)",
+        "archaeological_period": "early Achaemenid period",
+        "associated_culture": "Achaemenid Persian rule in Babylon",
+        "associated_biblical_geography": "Babylon, Persia, and comparative Jerusalem return context"
+      },
+      "notes": "No modern translation or image is stored in CKL."
+    }
+  ],
   "importance": 94,
   "framework_version": "1.0",
   "object_version": "1",
@@ -236,9 +327,12 @@
       "date": "2026-07-16"
     }
   ],
-  "edited_by": [],
+  "edited_by": [
+    "codex:evidence-graph-expansion:2026-08-14",
+    "codex:ckl-babylon-persia-expansion:2026-08-20"
+  ],
   "reviewed_by": [],
-  "last_reviewed": "2026-07-16",
+  "last_reviewed": "2026-08-20",
   "confidence": "medium",
   "human_review_required": true
 }

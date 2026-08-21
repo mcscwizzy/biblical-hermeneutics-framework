@@ -29,6 +29,29 @@ class CommentaryService:
             raise ValueError("end_verse must be greater than or equal to start_verse")
         return self.repository.lookup_passage(canonical_book, chapter_number, start, end)
 
+    def count_chapter(self, book: str, chapter: int) -> int:
+        canonical_book, chapter_number = _reference(book, chapter)
+        return self.repository.count_chapter(canonical_book, chapter_number)
+
+    def count_passage(
+        self,
+        book: str,
+        chapter: int,
+        start_verse: int,
+        end_verse: int | None = None,
+    ) -> int:
+        canonical_book, chapter_number = _reference(book, chapter)
+        start = _positive_int(start_verse, "start_verse")
+        end = _positive_int(end_verse or start, "end_verse")
+        if end < start:
+            raise ValueError("end_verse must be greater than or equal to start_verse")
+        return self.repository.count_passage(
+            canonical_book,
+            chapter_number,
+            start,
+            end,
+        )
+
     def source(self) -> CommentarySource | None:
         return self.repository.get_source()
 

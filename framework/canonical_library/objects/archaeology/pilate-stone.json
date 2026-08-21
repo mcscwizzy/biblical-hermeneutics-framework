@@ -9,19 +9,19 @@
     "pilate stone find"
   ],
   "summary": "A Latin inscription naming Pontius Pilate and documenting Roman administration in Judea.",
-  "historical_context": "Confirms the historical name and title of Pilate as prefect in Judea.",
-  "ancient_near_east_context": "Ancient background for Pilate Stone includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Matthew 27, Mark 15, caesarea-maritima-excavations, and matthew without letting comparison replace the biblical witness.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "historical_context": "A damaged Latin building inscription from Caesarea names Pontius Pilate and gives his title as prefect of Judea. It independently anchors his office and provincial patronage, not the Gospel hearing itself.",
+  "ancient_near_east_context": "The inscription belongs to Roman provincial administration in the eastern Mediterranean rather than generalized ancient Near Eastern kingship.",
+  "hebraic_worldview": "The stone supplies external evidence for the imperial office with which Judean leaders and populations had to negotiate.",
+  "second_temple_context": "Pilate governed Judea from 26 to 36 CE while Jerusalem's temple and local elite institutions continued under Roman supremacy.",
+  "canonical_context": "The artifact independently attests the Pilate named in the passion narratives but does not mention Jesus, a trial, Jerusalem, or crucifixion.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
-    "ancient_near_east": true,
+    "ancient_near_east": false,
     "hebraic_worldview": true,
     "second_temple": true,
     "canonical": true,
-    "later_christian_reception": true
+    "later_christian_reception": false
   },
   "literary_context": "A key artifact for the historical setting of the Passion narratives.",
   "covenantal_significance": "Pilate Stone helps anchor biblical claims in historical reality while reminding readers that archaeology supports rather than replaces interpretation.",
@@ -68,6 +68,18 @@
       "relationship": "historical-background",
       "weight": 8,
       "notes": ""
+    },
+    {
+      "id": "roman-governorship",
+      "relationship": "office-attestation",
+      "weight": 10,
+      "notes": "The inscription names Pilate's prefectural office."
+    },
+    {
+      "id": "judean-pilgrimage-taxation-and-roman-power",
+      "relationship": "evidence-cluster",
+      "weight": 10,
+      "notes": "The cluster controls what the inscription can and cannot establish."
     }
   ],
   "scripture_references": [

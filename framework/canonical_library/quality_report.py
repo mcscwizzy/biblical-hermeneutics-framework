@@ -17,6 +17,8 @@ from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
 
 from .authoring import COMPLETE_REQUIRED_FIELDS, resolve_authoring_root, scan_library
+from .evidence_audit import audit_evidence
+from .evidence_graph import evidence_graph_edges
 from .graph import graph_audit
 from .normalization import normalize_alias, normalize_id, normalize_text
 from .schema import (
@@ -241,6 +243,11 @@ def _source_metrics(records: Sequence[RawRecord]) -> dict[str, Any]:
             for claim in payload.get("claims", []) or []
             if isinstance(claim, Mapping)
         )
+        valid_support_targets.update(
+            _safe_normalize_id(item.get("id", ""))
+            for item in payload.get("evidence_items", []) or []
+            if isinstance(item, Mapping)
+        )
         valid_support_targets.discard("")
         for index, note in enumerate(payload.get("interpretive_notes", []) or []):
             if not isinstance(note, Mapping):
@@ -271,6 +278,22 @@ def _source_metrics(records: Sequence[RawRecord]) -> dict[str, Any]:
                         {
                             "object_id": _record_key(record),
                             "reference": f"claims[{index}].source_ids",
+                            "source_id": normalized,
+                        }
+                    )
+        for index, item in enumerate(payload.get("evidence_items", []) or []):
+            if not isinstance(item, Mapping):
+                continue
+            for source_id in item.get("source_ids", []) or []:
+                normalized = _safe_normalize_id(source_id)
+                if not normalized:
+                    continue
+                referenced_source_ids.add(normalized)
+                if normalized not in source_ids:
+                    unresolved.append(
+                        {
+                            "object_id": _record_key(record),
+                            "reference": f"evidence_items[{index}].source_ids",
                             "source_id": normalized,
                         }
                     )
@@ -820,6 +843,8 @@ def build_quality_report(
     records, parse_failures = _load_raw_records(ckl_root)
     objects = list(audit.valid_objects.values())
     graph = graph_audit(objects)
+    evidence_audit = audit_evidence(objects)
+    evidence_edges = evidence_graph_edges(objects)
 
     title_exact, title_near = _duplicate_text_groups(records, "title")
     summary_exact, summary_near = _duplicate_text_groups(records, "summary")
@@ -849,7 +874,7 @@ def build_quality_report(
     ]
 
     return {
-        "report_version": "1.2",
+        "report_version": "1.4",
         "root": str(ckl_root),
         "inventory": {
             "raw_object_count": len(records) + len(parse_failures),
@@ -875,6 +900,7 @@ def build_quality_report(
         },
         "graph": {
             "edge_count": graph.edge_count,
+            "evidence_edge_count": len(evidence_edges),
             "dangling_relationship_count": len(graph.unknown_target_edges),
             "dangling_relationships": [
                 edge.to_dict() for edge in graph.unknown_target_edges
@@ -888,6 +914,7 @@ def build_quality_report(
             "orphaned_object_count": len(graph.orphaned_object_ids),
             "orphaned_object_ids": graph.orphaned_object_ids,
         },
+        "evidence_audit": evidence_audit,
         "completeness": complete_gaps,
         "foundation_migration": foundation_migration,
         "governance": governance,
@@ -959,6 +986,7 @@ def format_quality_markdown(
     inventory = report["inventory"]
     averages = report["averages"]
     graph = report["graph"]
+    evidence_audit = report.get("evidence_audit", {})
     completeness = report["completeness"]
     foundation = report["foundation_migration"]
     governance = report["governance"]
@@ -1003,6 +1031,47 @@ def format_quality_markdown(
             graph["missing_reciprocal_relationship_count"],
         ),
         _count_line("Orphaned objects", graph["orphaned_object_count"]),
+        _count_line("Structured evidence edges", graph.get("evidence_edge_count", 0)),
+        _count_line("Structured evidence items", evidence_audit.get("evidence_count", 0)),
+        _count_line(
+            "Evidence items with primary sources",
+            evidence_audit.get("evidence_with_primary_sources_count", 0),
+        ),
+        _count_line(
+            "Evidence items with academic secondary sources",
+            evidence_audit.get("evidence_with_academic_secondary_sources_count", 0),
+        ),
+        _count_line(
+            "Evidence items with chronology",
+            evidence_audit.get("evidence_with_chronology_count", 0),
+        ),
+        _count_line(
+            "Evidence items with passage relevance",
+            evidence_audit.get("evidence_with_passage_relevance_count", 0),
+        ),
+        _count_line("Disputed evidence", evidence_audit.get("disputed_evidence_count", 0)),
+        _count_line("Worldview evidence", evidence_audit.get("worldview_evidence_count", 0)),
+        _count_line(
+            "Archaeology-linked evidence",
+            evidence_audit.get("archaeology_linked_evidence_count", 0),
+        ),
+        _count_line(
+            "Evidence source locators missing",
+            evidence_audit.get("missing_source_locator_count", 0),
+        ),
+        _count_line(
+            "Evidence relying only on internal sources",
+            evidence_audit.get("internal_source_only_evidence_count", 0),
+        ),
+        _count_line(
+            "Evidence confidence rationales missing",
+            evidence_audit.get("missing_confidence_rationale_count", 0),
+        ),
+        _count_line(
+            "Generic boilerplate fields",
+            evidence_audit.get("generic_boilerplate_count", 0),
+        ),
+        _count_line("Evidence audit issues", evidence_audit.get("issue_count", 0)),
         _count_line(
             "Unresolved legacy object references",
             references["unresolved_legacy_object_reference_count"],

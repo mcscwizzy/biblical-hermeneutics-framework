@@ -3,33 +3,33 @@
   "type": "archaeology",
   "title": "Temple Warning Inscription",
   "aliases": [
-    "temple warning inscription artifact",
-    "temple warning inscription discovery",
-    "temple warning inscription excavation",
-    "temple warning inscription find"
+    "soreg inscription",
+    "temple balustrade warning",
+    "Istanbul 2196 T",
+    "Greek temple boundary inscription"
   ],
-  "summary": "An Aramaic inscription that likely contains the earliest extra-biblical reference to the 'House of David'.",
-  "historical_context": "Important for the history of Israel, Aram-Damascus, and debates over dynastic language.",
-  "ancient_near_east_context": "Ancient background for Temple Warning Inscription includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to 2 Samuel 8, 2 Kings 8, tell-dan-excavations, and jerusalem without letting comparison replace the biblical witness.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "summary": "A Greek limestone warning from the Herodian temple complex that prohibited foreigners from crossing the balustrade around the sanctuary under threat of death.",
+  "historical_context": "The complete stone was found in Jerusalem in 1871 and is held by the Istanbul Archaeology Museums as 2196 T; a fragmentary parallel is held by the Israel Museum. The warning belongs to the Herodian temple horizon before its destruction in 70 CE.",
+  "ancient_near_east_context": "The operative setting is Roman-period Jerusalem. The inscription is direct evidence for a locally enforced sacred-space boundary and should not be replaced with generic claims about ancient inscriptions or imperial administration.",
+  "hebraic_worldview": "The warning materializes graded holiness and restricted access within the temple complex while using Greek to address visitors who might not read Hebrew or Aramaic.",
+  "second_temple_context": "The inscription and Josephus independently describe a boundary separating areas open to foreigners from the more restricted sanctuary precinct.",
+  "canonical_context": "Acts 21 narrates an accusation that Paul brought a Greek into the temple. The stone explains the institutional seriousness of the alleged boundary crossing without determining whether it occurred.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
-    "ancient_near_east": true,
+    "ancient_near_east": false,
     "hebraic_worldview": true,
     "second_temple": true,
     "canonical": true,
-    "later_christian_reception": true
+    "later_christian_reception": false
   },
-  "literary_context": "Frequently discussed in connection with Davidic dynasty references in Kings and Samuel.",
-  "covenantal_significance": "Temple Warning Inscription helps anchor biblical claims in historical reality while reminding readers that archaeology supports rather than replaces interpretation.",
+  "literary_context": "Acts 21:27-36 distinguishes the accusation made by Judeans from Asia, the crowd's response, and Roman intervention. The inscription supplies context for the accusation, not proof of its truth.",
+  "covenantal_significance": "The artifact witnesses one historical expression of sacred-space access in late Second Temple Judaism; it does not prescribe a timeless ethnic boundary or settle later theological reuse of temple imagery.",
   "authorship_positions": [],
   "date_ranges": [],
-  "original_audience": "",
-  "historical_setting": "",
-  "canonical_role": "Temple Warning Inscription serves as a material-culture anchor, connecting archaeological evidence with the biblical places, periods, and passages it helps contextualize.",
+  "original_audience": "Greek-reading visitors approaching restricted areas of the Jerusalem temple complex.",
+  "historical_setting": "Herodian temple complex in Jerusalem, approximately 23 BCE-70 CE.",
+  "canonical_role": "The inscription is a contemporary material anchor for the restricted temple boundary presupposed by Acts 21, with explicit limits on what it can verify.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -51,148 +51,27 @@
   "related_places": [],
   "related_events": [],
   "related_objects": [
-    {
-      "id": "tell-dan-excavations",
-      "relationship": "historical-background",
-      "weight": 10,
-      "notes": ""
-    },
-    {
-      "id": "jerusalem",
-      "relationship": "historical-background",
-      "weight": 9,
-      "notes": ""
-    },
-    {
-      "id": "joshua",
-      "relationship": "historical-background",
-      "weight": 8,
-      "notes": ""
-    },
-    {
-      "id": "hebrews",
-      "relationship": "historical-background",
-      "weight": 7,
-      "notes": ""
-    }
+    {"id": "temple", "relationship": "artifact-from-institution", "weight": 10, "notes": "The warning regulated access inside the Herodian temple complex."},
+    {"id": "jerusalem", "relationship": "find-and-original-location", "weight": 10, "notes": "The complete stone was found near the Temple Mount."},
+    {"id": "second-temple-administration", "relationship": "institutional-enforcement-context", "weight": 9, "notes": "Temple authorities and officers maintained access boundaries."},
+    {"id": "second-temple-priesthood-and-temple-authority", "relationship": "structured-evidence-cluster", "weight": 10, "notes": "The cluster owns passage ranking, chronology, and interpretive limits."},
+    {"id": "acts", "relationship": "primary-biblical-context", "weight": 9, "notes": "Acts 21 narrates the accusation concerning a Greek in the temple."}
   ],
   "scripture_references": [
-    {
-      "reference": "2 Samuel 8",
-      "relationship": "primary",
-      "notes": ""
-    },
-    {
-      "reference": "2 Kings 8",
-      "relationship": "supporting",
-      "notes": ""
-    }
+    {"reference": "Acts 21:27-36", "relationship": "primary", "notes": "Contemporary context for the restricted boundary central to the accusation against Paul."},
+    {"reference": "Ephesians 2:11-22", "relationship": "supporting", "notes": "Possible conceptual comparison with dividing-wall imagery; direct dependence is not assumed."}
   ],
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
-    {
-      "note": "The inscription is genuine, but the reconstruction and interpretation of damaged lines remain debated.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "Israel Museum",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "Israel Museum, Jerusalem",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "tel-dan",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "Use the item as context for the biblical text, not as a shortcut around it.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    }
+    {"note": "The complete Istanbul stone is not the Tel Dan Stele and contains no House of David reference.", "note_type": "interpretive-caution", "certainty": "strong_consensus", "dispute_status": "not_disputed", "sources": ["bm-temple-warning-record"], "rationale": "The former record had conflated two unrelated inscriptions."},
+    {"note": "The warning independently attests a boundary but cannot establish whether Paul crossed it or whether the crowd's accusation was correct.", "note_type": "interpretive-caution", "certainty": "strong_consensus", "dispute_status": "minor_scholarly_disagreement", "sources": ["bm-temple-warning-record", "acts-21-temple-boundary"], "rationale": "Artifact and narrative make different claims."}
   ],
-  "common_questions": [
-    "What does Temple Warning Inscription teach?",
-    "How does Temple Warning Inscription fit the biblical storyline?",
-    "What should readers avoid when interpreting Temple Warning Inscription?"
-  ],
+  "common_questions": ["What boundary did the temple warning mark?", "How does the inscription contextualize Acts 21?", "Does the stone prove that Paul crossed the boundary?"],
   "sources": [
-    {
-      "title": "Tel Dan Stele",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "tel-dan-stele"
-    },
-    {
-      "title": "Israel Museum",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "israel-museum"
-    },
-    {
-      "title": "Israel Museum, Jerusalem",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "israel-museum-jerusalem"
-    },
-    {
-      "title": "Inscribed stele",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "inscribed-stele"
-    },
-    {
-      "title": "2 Samuel 8",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "2-samuel-8"
-    }
+    {"id": "bm-temple-warning-record", "title": "Cast of the Temple Warning Inscription", "author": "", "publisher": "British Museum", "year": null, "locator": "Museum C.328; original Istanbul Archaeology Museums 2196 T", "url": "https://www.britishmuseum.org/collection/object/W_C-328", "source_type": "museum-collection", "supports": ["summary", "historical_context", "second_temple_context", "archaeology"], "notes": "Official object record for the cast and original artifact."},
+    {"id": "acts-21-temple-boundary", "title": "Acts 21:27-36", "author": "", "publisher": "", "year": null, "locator": "Acts 21:27-36", "url": "", "source_type": "scripture", "supports": ["literary_context", "canonical_context"], "notes": "Primary biblical narrative."},
+    {"id": "grabbe-temple-warning-context", "title": "An Introduction to Second Temple Judaism", "author": "Lester L. Grabbe", "publisher": "T&T Clark", "year": 2010, "locator": "Chapters on sources, temple, institutions, and Roman-period Judaism", "url": "https://www.bloomsbury.com/us/introduction-to-second-temple-judaism-9780567455017/", "source_type": "academic-book", "supports": ["historical_context", "second_temple_context", "interpretive_notes"], "notes": "Source-critical historical synthesis."}
   ],
   "canonical_story": {
     "phase": "",
@@ -244,7 +123,7 @@
   ],
   "edited_by": [],
   "reviewed_by": [],
-  "last_reviewed": "2026-07-16",
+  "last_reviewed": "2026-08-20",
   "confidence": "medium",
   "human_review_required": true
 }

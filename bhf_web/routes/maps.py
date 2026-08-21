@@ -257,11 +257,12 @@ def register_map_routes(app: FastAPI, *, study_db_path: str, job_store: object |
         confidence: str | None = None,
         relationship: str | None = None,
         limit: int = 100,
+        include_media: bool = True,
     ) -> JSONResponse:
         results = archaeology.browse(
             query=q, period=period, item_type=item_type, site=site,
             biblical_book=biblical_book, confidence=confidence,
-            relationship=relationship, limit=limit,
+            relationship=relationship, limit=limit, include_media=include_media,
         )
         return JSONResponse({"domain": "archaeology", "query": q or "", "results": results, "count": len(results)})
 

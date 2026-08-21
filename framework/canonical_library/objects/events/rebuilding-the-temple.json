@@ -7,12 +7,12 @@
     "tell me about rebuilding the temple",
     "why is rebuilding the temple important"
   ],
-  "summary": "Rebuilding the Temple is a prophetic or exile-and-restoration event that interprets covenant failure and hope.",
-  "historical_context": "Historically, Rebuilding the Temple is located by its canonical setting; this entry connects that setting with elijah, jeremiah-the-prophet, exile-theme and related CKL objects for contextual retrieval.",
-  "ancient_near_east_context": "Rebuilding the Temple unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "summary": "The Persian-period restoration of Jerusalem's altar and temple, begun by the returned community and conventionally completed in 515 BCE under Darius I after interruption, opposition, and prophetic encouragement.",
+  "historical_context": "Ezra 1-6 presents an initial Cyrus-era authorization, altar and foundation work, opposition, renewed construction under Darius I through Haggai and Zechariah, an imperial inquiry, and completion in Darius's sixth year. The exact documentary history and archaeology of each stage remain debated.",
+  "ancient_near_east_context": "Achaemenid rulers governed temples through local elites, grants, taxation, offerings, officials, and written authorizations. Persian support did not grant political independence, and the Cyrus Cylinder's Babylonian restoration rhetoric is comparative rather than a copy of Ezra's decree.",
+  "hebraic_worldview": "Ezra, Haggai, and Zechariah present rebuilding as obedience, renewed divine presence, worship, communal ordering, and providential use of imperial authority, while also portraying scarcity, opposition, and incomplete restoration.",
+  "second_temple_context": "Completion of the sanctuary begins the Second Temple's institutional history, including priestly and Levitical service, sacrifice, Passover, gifts, and continuing negotiation with Persian authorities and neighboring groups.",
+  "canonical_context": "The rebuilt temple answers the destruction at the end of Kings and Chronicles and becomes the setting for Ezra-Nehemiah, later prophets, and subsequent Second Temple history without simply reproducing Solomon's monarchy or temple.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
@@ -20,15 +20,15 @@
     "hebraic_worldview": true,
     "second_temple": true,
     "canonical": true,
-    "later_christian_reception": true
+    "later_christian_reception": false
   },
-  "literary_context": "The historical and prophetic books use Rebuilding the Temple to explain judgment and restoration.",
-  "covenantal_significance": "Rebuilding the Temple shows that covenant judgment is real, but restoration remains possible.",
+  "literary_context": "Ezra 3 and 5-6 narrate foundation, renewed work, inquiry, completion, and dedication; Haggai and Zechariah supply dated prophetic speeches from the Darius-era resumption. Ezra 4's opposition survey is topical, not a simple chronological interruption.",
+  "covenantal_significance": "Rebuilt worship represents covenant mercy and renewed responsibility after judgment, but foreign rule, modest conditions, and ongoing sin prevent treating temple completion as total restoration.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
   "historical_setting": "",
-  "canonical_role": "Rebuilding the Temple serves as a canonical event anchor, connecting its key passages, people, places, and theological themes within the biblical storyline.",
+  "canonical_role": "The rebuilt sanctuary links Ezra with Haggai and Zechariah, begins the Second Temple era, and embodies real yet incomplete restoration under Persian rule.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -50,142 +50,51 @@
   "related_places": [],
   "related_events": [],
   "related_objects": [
-    {
-      "id": "elijah",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
-    },
-    {
-      "id": "jeremiah-the-prophet",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
-    },
-    {
-      "id": "exile-theme",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
-    },
-    {
-      "id": "return-from-exile",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
-    },
-    {
-      "id": "restoration-theme",
-      "relationship": "narrative-context",
-      "weight": 8,
-      "notes": "curated canonical context"
-    }
+    {"id": "ezra", "relationship": "primary-book-context", "weight": 10, "notes": "Ezra 1-6 narrates the rebuilding sequence."},
+    {"id": "haggai", "relationship": "dated-prophetic-context", "weight": 10, "notes": "Haggai urges and dates renewed work under Darius I."},
+    {"id": "zechariah", "relationship": "dated-prophetic-context", "weight": 9, "notes": "Zechariah addresses the same restoration community."},
+    {"id": "return-from-exile", "relationship": "preceding-restoration-movement", "weight": 10, "notes": "Return supplies the community and vessels for restored worship."},
+    {"id": "second-temple-administration", "relationship": "institutional-outcome", "weight": 9, "notes": "Completion enables the temple institutions of later Yehud."},
+    {"id": "persian-restoration-and-yehud-administration", "relationship": "structured-evidence-cluster", "weight": 10, "notes": "The cluster provides Persian and Yehud administrative context."}
   ],
   "scripture_references": [
-    {
-      "reference": "2 Kings 17:1-23",
-      "relationship": "supporting",
-      "notes": "prophetic conflict and judgment"
-    },
-    {
-      "reference": "2 Chronicles 30:6-12",
-      "relationship": "supporting",
-      "notes": "reform, decline, and exile"
-    },
-    {
-      "reference": "Jeremiah 25:8-14",
-      "relationship": "supporting",
-      "notes": "judgment and hope in exile"
-    },
-    {
-      "reference": "Haggai 2:6-9",
-      "relationship": "supporting",
-      "notes": "return and temple renewal"
-    }
+    {"reference": "Ezra 1:1-11", "relationship": "background", "notes": "Authorization and restoration of temple vessels."},
+    {"reference": "Ezra 3:1-13", "relationship": "primary", "notes": "Altar, offerings, foundation, praise, and weeping."},
+    {"reference": "Ezra 5:1-17", "relationship": "primary", "notes": "Prophetic encouragement, resumed work, and imperial inquiry."},
+    {"reference": "Ezra 6:1-22", "relationship": "primary", "notes": "Darius's order, completion, dedication, and Passover."},
+    {"reference": "Haggai 1:1-15", "relationship": "supporting", "notes": "Dated call to resume construction."},
+    {"reference": "Zechariah 4:1-14", "relationship": "supporting", "notes": "Prophetic encouragement concerning Zerubbabel and completion."}
   ],
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "Exile and restoration events are often read as both history and theological warning.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Ezra 4 surveys opposition across several reigns before returning in 4:24 to Darius-era temple work; it is not a simple year-by-year account.",
+      "note_type": "literary-observation",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": ["ezra-haggai-temple-text", "williamson-temple"],
+      "rationale": "The named kings and the resumption formula mark the topical arrangement."
     },
     {
-      "note": "Prophetic interpretation is central to understanding these events.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Persian patronage and authorization contextualize the rebuilding but do not establish that every decree in Ezra is a verbatim archival copy.",
+      "note_type": "interpretive-caution",
+      "certainty": "probable",
+      "dispute_status": "historical_uncertainty",
+      "sources": ["ezra-haggai-temple-text", "williamson-temple", "grabbe-temple-persia"],
+      "rationale": "The final text preserves administrative forms within a shaped restoration narrative."
     }
   ],
   "common_questions": [
-    "Why does this event matter in the prophetic or exile story?",
-    "How does this event explain judgment and hope?",
-    "What covenant warning or restoration does this event carry?"
+    "When was the Second Temple conventionally completed?",
+    "Why does Ezra 4 move across several Persian reigns?",
+    "How do Haggai and Zechariah relate to Ezra's rebuilding account?",
+    "What did Persian authorization mean for Yehud's political status?"
   ],
   "sources": [
-    {
-      "title": "1 Kings 18-2 Kings 25",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "1-kings-18-2-kings-25"
-    },
-    {
-      "title": "2 Chronicles 29-36",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "2-chronicles-29-36"
-    },
-    {
-      "title": "Jeremiah 25-29",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "jeremiah-25-29"
-    },
-    {
-      "title": "Haggai",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "haggai"
-    },
-    {
-      "title": "Zechariah",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "zechariah"
+    {"id": "ezra-haggai-temple-text", "title": "Ezra 1-6; Haggai 1-2; Zechariah 1-8", "author": "", "publisher": "", "year": null, "locator": "Ezra 1:1-6:22; Haggai 1:1-2:23; Zechariah 1:1-8:23", "url": "", "source_type": "scripture", "supports": ["summary", "historical_context", "literary_context", "interpretive_notes"], "notes": "Primary biblical narratives and dated prophetic texts."},
+    {"id": "williamson-temple", "title": "Ezra, Nehemiah", "author": "H. G. M. Williamson", "publisher": "Word Books", "year": 1985, "locator": "Word Biblical Commentary 16, commentary on Ezra 1-6", "url": "https://books.google.com/books?id=7rLLngEACAAJ", "source_type": "academic-book", "supports": ["historical_context", "literary_context", "interpretive_notes"], "notes": "Technical commentary on chronology, documents, opposition, and temple completion."},
+    {"id": "grabbe-temple-persia", "title": "A History of the Jews and Judaism in the Second Temple Period, Volume 1", "author": "Lester L. Grabbe", "publisher": "T&T Clark", "year": 2004, "locator": "Persian-period Yehud, temple, administration, and source criticism", "url": "https://www.bloomsbury.com/ca/history-of-the-jews-and-judaism-in-the-second-temple-period-vol-1-9780567216175/", "source_type": "academic-book", "supports": ["historical_context", "ancient_near_east_context", "second_temple_context", "interpretive_notes"], "notes": "Critical synthesis of literary and external evidence."
     }
   ],
   "canonical_story": {
@@ -236,9 +145,9 @@
       "date": "2026-07-16"
     }
   ],
-  "edited_by": [],
+  "edited_by": ["codex:ckl-babylon-persia-expansion:2026-08-20"],
   "reviewed_by": [],
-  "last_reviewed": "2026-07-16",
+  "last_reviewed": "2026-08-20",
   "confidence": "medium",
   "human_review_required": true
 }

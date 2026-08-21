@@ -28,6 +28,7 @@ def list_archaeology_sites(
     list_archaeology_items: ItemLoader,
     period_filter_matches: PeriodFilter,
     periods_from_value: PeriodsFromValue,
+    include_details: bool = True,
 ) -> list[dict[str, Any]]:
     with connect(path) as connection:
         ensure_schema(connection)
@@ -45,15 +46,16 @@ def list_archaeology_sites(
         )
         for row in rows
     ]
-    for site in sites:
-        site["archaeology_items"] = list_archaeology_items(site["id"], period, path)
-        site["media"] = list_archaeology_media(site_id=site["id"], path=path, ensure_schema=ensure_schema)
-        site["scripture_links"] = [
-            link
-            for item in site["archaeology_items"]
-            for link in item.get("scripture_links", [])
-        ]
-        site["reference_count"] = len(site["scripture_links"])
+    if include_details:
+        for site in sites:
+            site["archaeology_items"] = list_archaeology_items(site["id"], period, path)
+            site["media"] = list_archaeology_media(site_id=site["id"], path=path, ensure_schema=ensure_schema)
+            site["scripture_links"] = [
+                link
+                for item in site["archaeology_items"]
+                for link in item.get("scripture_links", [])
+            ]
+            site["reference_count"] = len(site["scripture_links"])
     return [site for site in sites if period_filter_matches(site["periods"], period)]
 
 
@@ -99,6 +101,7 @@ def list_archaeology_items(
     list_archaeology_scripture_links: LinkLoader,
     period_filter_matches: PeriodFilter,
     periods_from_value: PeriodsFromValue,
+    include_media: bool = True,
 ) -> list[dict[str, Any]]:
     with connect(path) as connection:
         ensure_schema(connection)
@@ -124,7 +127,8 @@ def list_archaeology_items(
     ]
     for item in items:
         item["scripture_links"] = list_archaeology_scripture_links(item["id"], path)
-        item["media"] = list_archaeology_media(item_id=item["id"], path=path, ensure_schema=ensure_schema)
+        if include_media:
+            item["media"] = list_archaeology_media(item_id=item["id"], path=path, ensure_schema=ensure_schema)
         item["reference_count"] = len(item["scripture_links"])
     return [item for item in items if period_filter_matches(item["periods"], period)]
 
@@ -137,6 +141,7 @@ def get_archaeology_item(
     attach_source: AttachSource,
     list_archaeology_scripture_links: LinkLoader,
     periods_from_value: PeriodsFromValue,
+    include_media: bool = True,
 ) -> dict[str, Any]:
     with connect(path) as connection:
         ensure_schema(connection)
@@ -151,7 +156,8 @@ def get_archaeology_item(
         path,
     )
     item["scripture_links"] = list_archaeology_scripture_links(item_id, path)
-    item["media"] = list_archaeology_media(item_id=item_id, path=path, ensure_schema=ensure_schema)
+    if include_media:
+        item["media"] = list_archaeology_media(item_id=item_id, path=path, ensure_schema=ensure_schema)
     item["reference_count"] = len(item["scripture_links"])
     return item
 
@@ -180,9 +186,64 @@ def list_archaeology_scripture_links(
     return [archaeology_scripture_link_from_row(row) for row in rows]
 
 
+def list_archaeology_passage_summaries(
+    book: str,
+    chapter: int,
+    verse_start: int,
+    verse_end: int,
+    *,
+    path: str | Path = DEFAULT_DB_PATH,
+    ensure_schema: EnsureSchema,
+    limit: int = 8,
+    prepare_schema: bool = True,
+) -> list[dict[str, Any]]:
+    """Return compact passage matches without reading archaeology media."""
+
+    bounded_limit = max(1, min(int(limit), 25))
+    with connect(path) as connection:
+        if prepare_schema:
+            ensure_schema(connection)
+        rows = connection.execute(
+            """
+            SELECT i.id, i.name AS title, i.item_type, i.period,
+                   i.why_it_matters AS summary, i.bhf_caution AS caution,
+                   i.confidence, i.site_id, s.name AS site_name,
+                   l.relationship_type, l.verse_start, l.verse_end
+            FROM archaeology_scripture_links AS l
+            JOIN archaeology_items AS i ON i.id = l.item_id
+            LEFT JOIN archaeology_sites AS s ON s.id = i.site_id
+            WHERE lower(l.book) = lower(?)
+              AND l.chapter = ?
+              AND l.verse_start <= ?
+              AND l.verse_end >= ?
+            ORDER BY i.confidence_rank DESC, i.name, i.id
+            LIMIT ?
+            """,
+            (str(book).strip(), int(chapter), int(verse_end), int(verse_start), bounded_limit),
+        ).fetchall()
+    return [
+        {
+            "id": str(row["id"]),
+            "title": str(row["title"]),
+            "item_type": str(row["item_type"]),
+            "period": str(row["period"]),
+            "summary": str(row["summary"]),
+            "caution": str(row["caution"]),
+            "confidence": str(row["confidence"]),
+            "site_id": str(row["site_id"]),
+            "site_name": str(row["site_name"] or ""),
+            "relationship": str(row["relationship_type"]),
+            "verse_start": int(row["verse_start"]),
+            "verse_end": int(row["verse_end"]),
+        }
+        for row in rows
+    ]
+
+
 def list_archaeology_ckl_links(
     item_id: str | None = None,
     *,
+    ckl_object_id: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,
     ensure_schema: EnsureSchema,
 ) -> list[dict[str, str]]:
@@ -196,6 +257,13 @@ def list_archaeology_ckl_links(
                    FROM archaeology_ckl_links WHERE archaeology_item_id = ?
                    ORDER BY ckl_object_id, relationship""",
                 (item_id,),
+            ).fetchall()
+        elif ckl_object_id:
+            rows = connection.execute(
+                """SELECT archaeology_item_id, ckl_object_id, relationship, notes
+                   FROM archaeology_ckl_links WHERE ckl_object_id = ?
+                   ORDER BY archaeology_item_id, relationship""",
+                (ckl_object_id,),
             ).fetchall()
         else:
             rows = connection.execute(

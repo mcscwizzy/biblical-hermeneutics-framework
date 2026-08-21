@@ -20,7 +20,12 @@
     const method = String(options.method || "GET").toUpperCase();
     if (isDeviceOnlyPersonalPath(url)) {
       if (method === "GET") {
-        return (await localJsonResponse(url)) || emptyDeviceOnlyResponse(url);
+        const local = await localJsonResponse(url, {
+          propagateError: options.requireDeviceData === true,
+        });
+        if (local) return local;
+        if (options.requireDeviceData === true) throw new Error(fallbackMessage);
+        return emptyDeviceOnlyResponse(url);
       }
       if (isOfflineMutation(url, method)) {
         const result = await applyOfflineMutation(url, method, options, window.BHFOfflineDB);
@@ -32,14 +37,23 @@
       method === "GET" &&
       isLiveTranslationStateRequest(url) &&
       navigator.onLine !== false;
-    if (method === "GET" && isCacheableOfflineGet(url) && !preferLiveTranslationState) {
+    const preferLiveCompanionContext =
+      method === "GET" &&
+      isCompanionContextRequest(url) &&
+      navigator.onLine !== false;
+    if (
+      method === "GET" &&
+      isCacheableOfflineGet(url) &&
+      !preferLiveTranslationState &&
+      !preferLiveCompanionContext
+    ) {
       const local = await localJsonResponse(url);
       if (local) {
-        return local;
+        return navigator.onLine === false ? markOffline(local) : local;
       }
     }
     try {
-      const requestOptions = preferLiveTranslationState
+      const requestOptions = preferLiveTranslationState || preferLiveCompanionContext
         ? withRefreshHeader(options)
         : options;
       const response = await fetch(resolvedUrl, requestOptions);
@@ -48,17 +62,19 @@
         if (data && data.offline) {
           const fallback = await offlineFallback(url, method, options);
           if (fallback) {
-            return fallback;
+            return markOffline(fallback);
           }
         }
         throw new Error(data.error || fallbackMessage);
       }
       await cacheSuccessfulJson(url, method, data);
-      return data;
+      return response.headers.get("X-BHF-Offline") === "true"
+        ? markOffline(data)
+        : data;
     } catch (error) {
       const fallback = await offlineFallback(url, method, options);
       if (fallback) {
-        return fallback;
+        return markOffline(fallback);
       }
       throw error;
     }
@@ -86,6 +102,13 @@
     const headers = new Headers(options.headers || {});
     headers.set("X-BHF-Refresh", "true");
     return {...options, headers};
+  }
+
+  function markOffline(data) {
+    if (!data || typeof data !== "object" || Array.isArray(data)) {
+      return data;
+    }
+    return {...data, offline: true};
   }
 
   async function requestText(url, options = {}, fallbackMessage = "Request failed.") {
@@ -144,14 +167,16 @@
     }
   }
 
-  async function localJsonResponse(url) {
+  async function localJsonResponse(url, options = {}) {
     const offlineDb = window.BHFOfflineDB;
     if (!offlineDb || typeof offlineDb.readApiResponse !== "function") {
+      if (options.propagateError) throw new Error("Device study storage is unavailable.");
       return null;
     }
     try {
       return await offlineDb.readApiResponse(url);
-    } catch (_error) {
+    } catch (error) {
+      if (options.propagateError) throw error;
       return null;
     }
   }
@@ -258,6 +283,7 @@
       "/api/saved-studies",
       "/api/canonical/search",
       "/api/canonical/objects/",
+      "/api/study/companion-context",
       "/api/maps/",
       "/api/sources",
       "/api/commentary/",
@@ -272,6 +298,11 @@
       || path.startsWith("/api/highlights/")
       || path === "/api/saved-studies"
       || path.startsWith("/api/saved-studies/");
+  }
+
+  function isCompanionContextRequest(url) {
+    const path = new URL(String(url || "/"), window.location.origin).pathname;
+    return path === "/api/study/companion-context";
   }
 
   function emptyDeviceOnlyResponse(url) {

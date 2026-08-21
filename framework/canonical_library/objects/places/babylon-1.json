@@ -9,11 +9,11 @@
     "babylon 1"
   ],
   "summary": "The imperial city that becomes a biblical symbol of exile, judgment, and arrogant worldly power.",
-  "historical_context": "Babylon was the Neo-Babylonian imperial center that destroyed Jerusalem and sent Judah into exile.",
-  "ancient_near_east_context": "As a major Mesopotamian power, Babylon represents empire, monumentality, and the temptation to trust human glory rather than covenant faithfulness.",
-  "hebraic_worldview": "Babylon tests covenant identity in exile, forcing God's people to practice faithful presence while refusing imperial idolatry and human self-exaltation.",
-  "second_temple_context": "Second Temple Jewish memory of Babylon shaped return-from-exile identity, diaspora life, anti-idolatry polemic, and hope for the defeat of oppressive empire.",
-  "canonical_context": "Babylon begins as historical empire and exile destination, then becomes a canonical symbol for arrogant world power judged by God.",
+  "historical_context": "Babylon became the Neo-Babylonian imperial capital under Nabopolassar and Nebuchadnezzar II, received deported Judeans after the campaigns against Jerusalem, and passed to Cyrus in 539 BCE. Judean communities remained in Babylonia through the Persian period.",
+  "ancient_near_east_context": "Babylon was a large Mesopotamian political, cultic, economic, and scribal center. Royal inscriptions, chronicles, palace ration lists, and private legal documents represent different institutions and social locations; none alone describes the whole city or empire.",
+  "hebraic_worldview": "Biblical texts portray Babylon as both a concrete place of displaced life and an imperial power accountable to God. Jeremiah calls deportees to long residence and communal welfare, while laments and prophetic texts preserve loss, protest, and hope.",
+  "second_temple_context": "Persian-period return began from a Babylonian imperial setting but did not end the diaspora. Babylonian Judean documents continuing into the fifth century BCE complicate any picture of universal departure.",
+  "canonical_context": "Historical Babylon anchors Kings, Jeremiah, Ezekiel, Daniel, and Ezra; prophetic and apocalyptic reuse later turns Babylon into a symbol of arrogant or oppressive empire. Historical and symbolic uses should be distinguished.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
@@ -21,10 +21,10 @@
     "hebraic_worldview": true,
     "second_temple": true,
     "canonical": true,
-    "later_christian_reception": true
+    "later_christian_reception": false
   },
-  "literary_context": "The city appears in exile narratives and prophetic critique, then reappears in Revelation as a symbol of idolatrous power.",
-  "covenantal_significance": "Babylon embodies the covenant consequences of rebellion while also highlighting God's power to judge empire and restore his people.",
+  "literary_context": "Kings narrates deportation to Babylon, Jeremiah addresses communities there, Ezekiel dates visions from Babylonia, Psalm 137 laments there, and Ezra opens with movement out of Babylon. Revelation's Babylon is later symbolic reuse rather than a direct description of the excavated city.",
+  "covenantal_significance": "The biblical writers interpret Babylonian conquest as covenant judgment and Persian-period return as mercy; Babylonian texts provide political and social evidence without expressing those covenant claims.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
@@ -108,6 +108,30 @@
       "relationship": "apocalyptic-echo",
       "weight": 7,
       "notes": "symbolic Babylon in the last book"
+    },
+    {
+      "id": "babylonian-chronicles",
+      "relationship": "historiographic-source",
+      "weight": 10,
+      "notes": "Babylonian chronicles preserve a local imperial viewpoint on campaigns and succession."
+    },
+    {
+      "id": "cyrus-cylinder",
+      "relationship": "persian-transition-inscription",
+      "weight": 10,
+      "notes": "The cylinder was deposited at Babylon after Cyrus's conquest."
+    },
+    {
+      "id": "babylonian-conquest-deportation-and-judean-diaspora",
+      "relationship": "structured-evidence-cluster",
+      "weight": 10,
+      "notes": "The cluster connects Babylon with the chronicle, ration lists, and Al-Yahudu documents."
+    },
+    {
+      "id": "persian-restoration-and-yehud-administration",
+      "relationship": "imperial-transition-cluster",
+      "weight": 9,
+      "notes": "The Persian restoration cluster begins with Cyrus's conquest at Babylon."
     }
   ],
   "scripture_references": [
@@ -152,17 +176,19 @@
   "interpretive_notes": [
     {
       "note": "Distinguish historical Babylon from symbolic Babylon in Revelation.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note_type": "canonical-connection",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": ["babylon-biblical-texts"],
+      "rationale": "The texts use the name in different historical, prophetic, and apocalyptic genres."
     },
     {
-      "note": "The city's theological load in Scripture is bound up with exile, arrogance, and divine judgment.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The documented Al-Yahudu communities were located in Babylonia, not necessarily inside Babylon city; city and wider region should not be conflated.",
+      "note_type": "historical-context",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": ["alstola-babylon-judeans"],
+      "rationale": "The documentary settlements belong to rural Babylonian geography with incomplete provenience."
     }
   ],
   "common_questions": [
@@ -171,66 +197,9 @@
     "What does Babylon mean in Revelation?"
   ],
   "sources": [
-    {
-      "title": "2 Kings 24-25",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "2-kings-24-25"
-    },
-    {
-      "title": "Psalm 137",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "psalm-137"
-    },
-    {
-      "title": "Jeremiah 29",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "jeremiah-29"
-    },
-    {
-      "title": "Daniel 1-6",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "daniel-1-6"
-    },
-    {
-      "title": "Revelation 17-18",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "revelation-17-18"
-    }
+    {"id": "babylon-biblical-texts", "title": "Second Kings 24-25; Jeremiah 29; Psalm 137; Daniel 1; Revelation 17-18", "author": "", "publisher": "", "year": null, "locator": "2 Kings 24:8-25:30; Jeremiah 29:1-14; Psalm 137:1-9; Daniel 1:1-7; Revelation 17:1-18:24", "url": "", "source_type": "scripture", "supports": ["historical_context", "literary_context", "canonical_context", "interpretive_notes"], "notes": "Primary biblical uses of historical and symbolic Babylon."},
+    {"id": "alstola-babylon-judeans", "title": "Judeans in Babylonia: A Study of Deportees in the Sixth and Fifth Centuries BCE", "author": "Tero Alstola", "publisher": "Brill", "year": 2020, "locator": "Chapters 2-5 on royal, urban, and rural Judean evidence", "url": "https://doi.org/10.1163/9789004365421", "source_type": "academic-book", "supports": ["historical_context", "second_temple_context", "interpretive_notes"], "notes": "Distinguishes Babylon city evidence from wider Babylonian settlement archives."},
+    {"id": "bm-babylon-chronicle", "title": "Babylonian Chronicle for 605-594 BCE", "author": "", "publisher": "British Museum", "year": null, "locator": "BM 21946; ABC 5", "url": "https://www.britishmuseum.org/collection/object/W_1896-0409-51", "source_type": "museum-collection", "supports": ["historical_context", "ancient_near_east_context"], "notes": "Official object record for Babylonian historiographic evidence."}
   ],
   "canonical_story": {
     "phase": "",
@@ -280,9 +249,9 @@
       "date": "2026-07-14"
     }
   ],
-  "edited_by": [],
+  "edited_by": ["codex:ckl-babylon-persia-expansion:2026-08-20"],
   "reviewed_by": [],
-  "last_reviewed": "2026-07-14",
+  "last_reviewed": "2026-08-20",
   "confidence": "medium",
   "human_review_required": true
 }

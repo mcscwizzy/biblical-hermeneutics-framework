@@ -154,6 +154,88 @@ def list_route_references(
     return [route_reference_from_row(row) for row in rows]
 
 
+def list_passage_map_summaries(
+    book: str,
+    chapter: int,
+    verse_start: int,
+    verse_end: int,
+    *,
+    path: str | Path = DEFAULT_DB_PATH,
+    ensure_schema: EnsureSchema,
+    limit: int = 12,
+    prepare_schema: bool = True,
+) -> dict[str, list[dict[str, Any]]]:
+    """Return linked place and route summaries without geometry or child reads."""
+
+    bounded_limit = max(1, min(int(limit), 25))
+    parameters = (
+        str(book).strip(),
+        int(chapter),
+        int(verse_end),
+        int(verse_start),
+        bounded_limit,
+    )
+    with connect(path) as connection:
+        if prepare_schema:
+            ensure_schema(connection)
+        place_rows = connection.execute(
+            """
+            SELECT p.id, p.name AS title, p.description,
+                   p.modern_location, p.confidence,
+                   MIN(r.relationship_type) AS relationship
+            FROM place_references AS r
+            JOIN biblical_places AS p ON p.id = r.place_id
+            WHERE lower(r.book) = lower(?)
+              AND r.chapter = ?
+              AND r.verse_start <= ?
+              AND r.verse_end >= ?
+            GROUP BY p.id, p.name, p.description, p.modern_location, p.confidence
+            ORDER BY p.confidence_rank DESC, p.name
+            LIMIT ?
+            """,
+            parameters,
+        ).fetchall()
+        route_rows = connection.execute(
+            """
+            SELECT m.id, m.name AS title, m.description, m.confidence,
+                   MIN(r.relationship_type) AS relationship
+            FROM route_references AS r
+            JOIN map_routes AS m ON m.id = r.route_id
+            WHERE lower(r.book) = lower(?)
+              AND r.chapter = ?
+              AND r.verse_start <= ?
+              AND r.verse_end >= ?
+            GROUP BY m.id, m.name, m.description, m.confidence
+            ORDER BY m.confidence_rank DESC, m.name
+            LIMIT ?
+            """,
+            parameters,
+        ).fetchall()
+    return {
+        "places": [
+            {
+                "id": str(row["id"]),
+                "title": str(row["title"]),
+                "type": "place",
+                "summary": str(row["description"] or row["modern_location"] or ""),
+                "confidence": str(row["confidence"] or "unknown"),
+                "relationship": str(row["relationship"] or "map Scripture link"),
+            }
+            for row in place_rows
+        ],
+        "routes": [
+            {
+                "id": str(row["id"]),
+                "title": str(row["title"]),
+                "summary": str(row["description"] or ""),
+                "confidence": str(row["confidence"] or "unknown"),
+                "relationship": str(row["relationship"] or "map Scripture link"),
+            }
+            for row in route_rows
+        ],
+    }
+
+
 def list_historical_layers(
     period: str | None = None,
     path: str | Path = DEFAULT_DB_PATH,

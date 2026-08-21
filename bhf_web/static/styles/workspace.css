@@ -1346,22 +1346,6 @@ body.reader-mode .chapter-text {
   scroll-margin-block: 16px calc(var(--app-dock-height) + 32px);
 }
 
-.verse-actions-button {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  min-width: 34px;
-  min-height: 34px;
-  margin-inline: 2px 4px;
-  padding: 0;
-  border-radius: 999px;
-  font-size: 1.15rem;
-  line-height: 1;
-  scroll-margin-block: 16px calc(var(--app-dock-height) + 32px);
-  vertical-align: middle;
-}
-
 .verse.selected {
   background: #d9ecfa;
 }

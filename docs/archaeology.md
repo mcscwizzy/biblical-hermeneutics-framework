@@ -13,6 +13,14 @@ BHF archaeology has three boundaries:
    authoritative evidence source.
 3. The reader and map workspace present retrieved evidence; AI is optional explanation.
 
+Structured CKL `evidence_items` can reference a record here with an
+`external_references` entry such as `{"domain": "archaeology-item", "id":
+"sennacherib-prism"}`. That link lets CKL explain why the evidence is relevant
+to a passage and label its chronology, while this domain remains authoritative
+for the item description, site, Scripture links, media, rights, and
+attribution. The same artifact should not acquire a second copied image or an
+independent catalog identity in CKL.
+
 Archaeology should be described responsibly. A record may support historical
 context, demonstrate the existence of a person/place/practice, or provide
 comparative evidence. It should not be described as proving a theological

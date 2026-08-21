@@ -170,7 +170,8 @@
     {"id": "resurrection-theme", "relationship": "hope-for-the-dead-in-messiah", "weight": 10, "notes": "Jesus' resurrection grounds consolation concerning deceased believers."},
     {"id": "perseverance", "relationship": "endurance-amid-affliction", "weight": 9, "notes": "The assembly's endurance and stability frame thanksgiving and exhortation."},
     {"id": "faith", "relationship": "faith-and-faithfulness", "weight": 8, "notes": "Faith appears in thanksgiving, Timothy's mission, report, and prayer."},
-    {"id": "grace", "relationship": "prescript-and-benediction", "weight": 8, "notes": "Grace frames the letter's opening and closing."}
+    {"id": "grace", "relationship": "prescript-and-benediction", "weight": 8, "notes": "Grace frames the letter's opening and closing."},
+    {"id": "thessalonian-civic-and-funerary-context", "relationship": "passage-specific-city-evidence", "weight": 10, "notes": "Chronology-controlled geographic, civic, Jewish-gentile, cultic, household, labor, conflict, funerary, and interpretive evidence for the Thessalonian setting."}
   ],
   "scripture_references": [
     {"reference": "1 Thessalonians 1:1-10", "relationship": "primary", "notes": "Prescript, thanksgiving, triad, election, imitation, idols, witness, waiting, and wrath"},
@@ -263,7 +264,7 @@
     {"title": "Codex Ephraemi Rescriptus", "author": "", "publisher": "Bibliothèque nationale de France", "year": null, "locator": "Grec 9", "url": "https://gallica.bnf.fr/ark:/12148/btv1b8470433r", "source_type": "museum-collection", "supports": ["primary_sources"], "notes": "Palimpsest manuscript witness.", "id": "ephraemi"},
     {"title": "Codex Claromontanus", "author": "", "publisher": "Bibliothèque nationale de France", "year": null, "locator": "Grec 107, 1 Thessalonians", "url": "https://gallica.bnf.fr/ark:/12148/btv1b84683111", "source_type": "museum-collection", "supports": ["primary_sources"], "notes": "Greek-Latin Pauline manuscript witness.", "id": "claromontanus"},
     {"title": "The Letters to the Thessalonians", "author": "Abraham J. Malherbe", "publisher": "Yale University Press", "year": 2000, "locator": "Introduction and commentary on 1 Thessalonians", "url": "https://yalebooks.yale.edu/book/9780300139846/the-letters-to-the-thessalonians/", "source_type": "academic-book", "supports": ["historical_context", "literary_context", "claims", "interpretive_notes"], "notes": "Historical, literary, philosophical, and social commentary.", "id": "malherbe"},
-    {"title": "The Epistles to the Thessalonians", "author": "Charles A. Wanamaker", "publisher": "Eerdmans", "year": 1990, "locator": "1 Thessalonians", "url": "https://www.eerdmans.com/9780802823946/the-epistle-to-the-thessalonians/", "source_type": "academic-book", "supports": ["literary_context", "claims", "interpretive_notes"], "notes": "Greek-text and social-science commentary.", "id": "wanamaker"},
+    {"title": "The Epistle to the Thessalonians", "author": "Charles A. Wanamaker", "publisher": "Eerdmans", "year": 1990, "locator": "1 Thessalonians", "url": "https://www.eerdmans.com/9780802823946/the-epistle-to-the-thessalonians/", "source_type": "academic-book", "supports": ["literary_context", "claims", "interpretive_notes"], "notes": "Greek-text and social-science commentary.", "id": "wanamaker"},
     {"title": "The Letters to the Thessalonians", "author": "Gene L. Green", "publisher": "Eerdmans", "year": 2002, "locator": "1 Thessalonians", "url": "https://www.eerdmans.com/9780802837387/the-letters-to-the-thessalonians/", "source_type": "academic-book", "supports": ["historical_context", "historical_setting", "claims", "interpretive_notes"], "notes": "Commentary emphasizing Thessalonian social and archaeological setting.", "id": "green"},
     {"title": "1-2 Thessalonians", "author": "Jeffrey A. D. Weima", "publisher": "Baker Academic", "year": 2014, "locator": "1 Thessalonians", "url": "https://bakeracademic.com/p/1-2-thessalonians-jeffrey-a-d-weima/230711", "source_type": "academic-book", "supports": ["literary_context", "claims", "interpretive_notes"], "notes": "Exegetical and epistolary commentary.", "id": "weima"},
     {"title": "First and Second Thessalonians", "author": "Beverly Roberts Gaventa", "publisher": "Westminster John Knox Press", "year": 1998, "locator": "1 Thessalonians", "url": "https://www.wjkbooks.com/Products/0664236553/first-and-second-thessalonians.aspx", "source_type": "academic-book", "supports": ["canonical_context", "later_christian_reception", "claims", "interpretive_notes"], "notes": "Literary and theological commentary.", "id": "gaventa"},
@@ -333,7 +334,7 @@
     {"type": "ai", "name": "codex", "workflow": "ckl-book-placeholder-completion-pass", "date": "2026-07-23"},
     {"type": "ai", "name": "codex", "workflow": "ckl-phase-5-1-thessalonians-correction-wave", "date": "2026-07-28"}
   ],
-  "edited_by": [],
+  "edited_by": ["codex:ckl-content-quality-worldview-evidence-pass:2026-08-14"],
   "reviewed_by": [],
   "last_reviewed": null,
   "confidence": "medium",

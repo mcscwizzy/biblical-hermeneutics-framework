@@ -54,7 +54,7 @@ def build_bible_search_fallback_payload(
         ),
     )
     query_terms = _query_terms(normalized_query)
-    library = load_canonical_library()
+    library = load_canonical_library(config=config)
     search_results = library.retrieve_hybrid(
         normalized_query,
         limit=max_results * 2,

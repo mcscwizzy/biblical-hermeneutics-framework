@@ -18,6 +18,12 @@
   "related_places": ["philippi"],
   "related_events": [],
   "related_objects": [
+    {
+      "id": "thessalonian-civic-and-funerary-context",
+      "relationship": "city-specific-social-context",
+      "weight": 7,
+      "notes": "Jason's hospitality and disputed patronage explanations for work are kept evidentially distinct."
+    },
     {"id": "patronage", "relationship": "institutional-background", "weight": 9, "notes": "Broader patronage object."},
     {"id": "philemon", "relationship": "primary-text", "weight": 9, "notes": "Debt and intercession language."},
     {"id": "3-john", "relationship": "primary-text", "weight": 9, "notes": "Travel support and refusal."}
@@ -48,6 +54,9 @@
   "object_version": "1",
   "content_status": "draft",
   "review_status": "in_review",
+  "generated_by": [
+    {"type": "migration", "name": "codex", "workflow": "evidence-provenance-normalization", "date": "2026-08-14"}
+  ],
   "confidence": "medium",
   "human_review_required": true
 }

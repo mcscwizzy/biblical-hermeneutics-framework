@@ -117,7 +117,7 @@ class EvidenceArchitectureTests(unittest.TestCase):
             root, database = self.build_fixture(tmp)
             report = verify_database(database, root=root)
             self.assertEqual(report["database_schema_version"], CKL_DATABASE_SCHEMA_VERSION)
-            self.assertEqual(CKL_RETRIEVAL_INDEX_VERSION, "2")
+            self.assertEqual(CKL_RETRIEVAL_INDEX_VERSION, "3")
             connection = sqlite3.connect(database)
             try:
                 self.assertEqual(connection.execute("SELECT COUNT(*) FROM canonical_claims").fetchone()[0], 2)
@@ -311,7 +311,8 @@ class EvidenceArchitectureTests(unittest.TestCase):
             root = Path(tmp) / "ckl"
             write_library(root, evidence_objects())
             report = build_quality_report(root)
-        self.assertEqual(report["report_version"], "1.2")
+        self.assertEqual(report["report_version"], "1.4")
+        self.assertIn("evidence_audit", report)
         self.assertEqual(report["category_depth"]["categories"]["cultural_background"]["object_count"], 2)
         self.assertTrue(report["category_depth"]["high_value_gaps"])
 

@@ -56,6 +56,10 @@ The main workspace contains the Bible reader and a study panel.
    supplies the reader context.
 4. Use the answer's study controls to save work or continue exploring.
 
+The **Explore** section is for free research: ask about any person, place,
+theme, or passage, or browse the research collections. Explore questions are
+not constrained by the verse or chapter currently open in the reader.
+
 ASV and KJV are bundled. The translation manager can install approved sources
 or import a lawfully obtained XML translation into the current browser for
 device-only use. See [Translations](translations.md) for formats and licensing.
@@ -75,8 +79,9 @@ instead of substituting a confident definition from model memory.
 ## Navigation on desktop and mobile
 
 The labeled application dock groups actions by purpose: **Read** (Bible),
-**Study** (Ask, Notes, New note, and saved studies), **Explore** (maps and
-archaeology), and **App** (workspace restore and settings).
+**Study** (Ask, Notes, New note, and saved studies), **Explore** (free BHF
+search, maps, archaeology, and research collections), and **App** (workspace
+restore and settings).
 On larger screens the reader and study workspace remain side by side. On phones
 and compact tablets the dock switches between full-screen reader and workspace
 views while preserving the current passage and selection.

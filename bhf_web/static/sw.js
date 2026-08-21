@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v27";
+const CACHE_VERSION = "v34";
 const SHELL_CACHE = `bhf-shell-${CACHE_VERSION}`;
 const STATIC_CACHE = `bhf-static-${CACHE_VERSION}`;
 const API_CACHE = `bhf-api-${CACHE_VERSION}`;
@@ -17,11 +17,22 @@ const STATIC_ASSETS = [
   "/static/styles/maps.css",
   "/static/styles/utilities.css",
   "/static/styles/workspace.css",
+  "/static/styles/companion.css",
   "/static/api/http.js",
   "/static/offline/db.js",
   "/static/study-vault.js",
   "/static/model-settings.js",
   "/static/htmx-lite.js",
+  "/static/reader-selection.js",
+  "/static/study-recommendations.js",
+  "/static/companion-context.js",
+  "/static/companion-context-controller.js",
+  "/static/saved-passage-state.js",
+  "/static/companion-history.js",
+  "/static/companion-viewport.js",
+  "/static/companion-sheet.js",
+  "/static/resource-router.js",
+  "/static/study-companion.js",
   "/static/htmx-status.js",
   "/static/htmx-study-panels.js",
   "/static/htmx-search.js",
@@ -126,7 +137,9 @@ self.addEventListener("fetch", (event) => {
 
   if (requestUrl.pathname.startsWith("/api/")) {
     if (isCacheableApiRequest(requestUrl)) {
-      event.respondWith(isRefreshRequest(event.request) ? networkFirstApi(event.request) : cacheFirstApi(event.request));
+      const preferNetwork = isRefreshRequest(event.request)
+        || requestUrl.pathname === "/api/study/companion-context";
+      event.respondWith(preferNetwork ? networkFirstApi(event.request) : cacheFirstApi(event.request));
     }
     return;
   }
@@ -236,6 +249,8 @@ function isCacheableApiRequest(url) {
     "/api/bible/search",
     "/api/bible/",
     "/api/canonical/search",
+    "/api/canonical/entities-for-passage",
+    "/api/study/companion-context",
     "/api/canonical/objects/",
     "/api/maps/",
     "/api/map-studies",

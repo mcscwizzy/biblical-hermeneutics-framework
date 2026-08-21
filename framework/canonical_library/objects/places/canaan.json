@@ -3,32 +3,32 @@
   "type": "place",
   "title": "Canaan",
   "aliases": [
-    "where is canaan",
-    "tell me about canaan",
-    "why is canaan important"
+    "land of Canaan",
+    "southern Levant in the biblical world",
+    "Canaanite land"
   ],
-  "summary": "Canaan is a major imperial or regional power that shapes Israel's history through oppression, exile, diplomacy, or return.",
-  "historical_context": "Canaan appears in conquest, monarchy, exile, or diaspora settings where power and identity collide.",
-  "ancient_near_east_context": "Canaan is read within concrete geography shaped by Levantine routes, imperial borders, settlement patterns, water access, trade movement, and neighboring peoples named in the biblical narrative.",
-  "hebraic_worldview": "",
+  "summary": "Canaan is the biblical land west of the Jordan and a broader ancient regional designation whose boundaries and political meaning vary by period and source.",
+  "historical_context": "In the Late Bronze Age, the southern Levant contained Canaanite city-states under substantial Egyptian influence rather than one unified Canaanite empire. The Late Bronze-Iron transition brought uneven political, settlement, and material-cultural changes across highlands, valleys, and coast.",
+  "ancient_near_east_context": "Canaan linked Egypt, Syria, and inland Transjordan through coastal, valley, and highland routes. Egyptian texts, Levantine archives, and archaeology use regional and political labels whose scope should not automatically be equated with every biblical use of the name.",
+  "hebraic_worldview": "The biblical texts portray the land as divine gift and covenant responsibility while also naming its existing peoples, towns, borders, and agricultural character. Geographic description and covenant claim are related but not interchangeable kinds of evidence.",
   "second_temple_context": "",
-  "canonical_context": "",
+  "canonical_context": "Genesis associates Canaan with ancestral promise and sojourning; Exodus anticipates deliverance to the land; Joshua and Judges narrate possession alongside remaining peoples; later texts continue to use Canaan and Canaanite in geographic, ethnic, social, or rhetorical senses.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
     "hebraic_worldview": true,
-    "second_temple": true,
+    "second_temple": false,
     "canonical": true,
-    "later_christian_reception": true
+    "later_christian_reception": false
   },
-  "literary_context": "Biblical books use Canaan to contrast human power with divine sovereignty.",
-  "covenantal_significance": "Canaan often marks judgment, testing, or the need for deliverance.",
+  "literary_context": "The meaning of Canaan must be read at passage scale: it can denote land, inhabitants, a promised destination, remaining populations, or a remembered earlier name for territory.",
+  "covenantal_significance": "Canaan is central to the land promise and to the covenant demands attached to life in the land. This theological role does not erase the region's changing historical geography or its prior populations.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
   "historical_setting": "",
-  "canonical_role": "Canaan serves as a canonical place anchor, connecting geography, historical setting, key passages, and related people, events, and themes.",
+  "canonical_role": "Canaan connects the ancestral promises, exodus destination, conquest and settlement narratives, and later reflection on land, identity, worship, and displacement.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -51,160 +51,140 @@
   "related_events": [],
   "related_objects": [
     {
-      "id": "babylonian-exile",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "genesis",
+      "relationship": "ancestral-promise-context",
+      "weight": 9,
+      "notes": "Genesis locates ancestral travel and land promises in Canaan."
     },
     {
-      "id": "fall-of-jerusalem",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "exodus",
+      "relationship": "deliverance-destination",
+      "weight": 9,
+      "notes": "Exodus repeatedly names Canaan and its peoples as the destination from Egypt."
     },
     {
-      "id": "assyrian-exile-of-israel",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "joshua",
+      "relationship": "land-possession-context",
+      "weight": 10,
+      "notes": "Joshua narrates entry, conflict, allotment, and remaining peoples in the land."
     },
     {
-      "id": "daniel-the-exile",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "judges",
+      "relationship": "incomplete-settlement-context",
+      "weight": 10,
+      "notes": "Judges 1-2 emphasizes regional variation and coexistence within Canaan."
     },
     {
-      "id": "esther-the-queen",
-      "relationship": "geographic-context",
-      "weight": 8,
-      "notes": "curated canonical context"
+      "id": "late-bronze-iron-transition-and-highland-settlement",
+      "relationship": "regional-evidence-context",
+      "weight": 10,
+      "notes": "The cluster documents the transition and settlement evidence with explicit claim limits."
     }
   ],
   "scripture_references": [
     {
-      "reference": "Genesis 10:1-32",
-      "relationship": "supporting",
-      "notes": "table of nations backdrop"
+      "reference": "Genesis 12:5-9",
+      "relationship": "primary",
+      "notes": "Abram enters Canaan and receives the land promise."
     },
     {
-      "reference": "Exodus 3:1-15",
-      "relationship": "supporting",
-      "notes": "oppression and deliverance"
+      "reference": "Exodus 3:7-17",
+      "relationship": "primary",
+      "notes": "Deliverance from Egypt is directed toward the land of Canaanite peoples."
     },
     {
-      "reference": "2 Kings 25:8-17",
-      "relationship": "supporting",
-      "notes": "imperial conquest and exile"
+      "reference": "Joshua 13:1-7",
+      "relationship": "primary",
+      "notes": "The text names land remaining to be possessed and orders allotment."
     },
     {
-      "reference": "Daniel 11:40-45",
-      "relationship": "supporting",
-      "notes": "faith under empire"
+      "reference": "Judges 1:1-36",
+      "relationship": "primary",
+      "notes": "A locality-by-locality account of settlement, non-displacement, and forced labor."
     },
     {
-      "reference": "Acts 28:11-16",
+      "reference": "Judges 2:1-5",
       "relationship": "supporting",
-      "notes": "mission in the imperial world"
+      "notes": "Covenant indictment attached to accommodation with the land's peoples and cults."
     }
   ],
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "Imperial powers in Scripture are historical realities and theological contrasts.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Canaan was a region containing multiple city-states and communities, not a single empire with fixed borders across every biblical period.",
+      "note_type": "historical-context",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "canaan-biblical-texts",
+        "killebrew-canaan-2005",
+        "novacek-canaan-2011"
+      ]
     },
     {
-      "note": "They often represent the pressure of empire on covenant identity.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Modern national borders and modern ethnic identities should not be projected directly onto the ancient regional label.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "killebrew-canaan-2005",
+        "novacek-canaan-2011"
+      ]
     }
   ],
   "common_questions": [
-    "Why is this power or region important in the Bible?",
-    "How does this place shape Israel's history?",
-    "What theological contrast does this place create?"
+    "What geographic area does Canaan denote in a given passage?",
+    "Was Canaan one political empire?",
+    "How do Joshua and Judges portray possession and remaining peoples differently?",
+    "How should ancient Canaan be related to modern geography?"
   ],
   "sources": [
     {
-      "title": "Genesis 10-12",
+      "title": "Biblical Canaan Passages",
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "Genesis 12:5-9; Exodus 3:7-17; Joshua 13:1-7; Judges 1:1-2:5",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "genesis-10-12"
-    },
-    {
-      "title": "Exodus 1-15",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "exodus-1-15"
-    },
-    {
-      "title": "2 Kings 17-25",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "2-kings-17-25"
-    },
-    {
-      "title": "Daniel 1-6",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "daniel-1-6"
-    },
-    {
-      "title": "Acts 18-28",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "acts-18-28"
-    },
-    {
-      "title": "Canonical historical orientation for Canaan",
-      "author": "",
-      "publisher": "Canonical Knowledge Library",
-      "year": 2026,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
       "supports": [
-        "historical_context"
+        "summary",
+        "canonical_context",
+        "covenantal_significance"
       ],
-      "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
-      "id": "canaan-historical-orientation"
+      "notes": "Primary biblical geography and land-theology texts.",
+      "id": "canaan-biblical-texts"
+    },
+    {
+      "title": "Biblical Peoples and Ethnicity: An Archaeological Study of Egyptians, Canaanites, Philistines, and Early Israel, 1300-1100 B.C.E.",
+      "author": "Ann E. Killebrew",
+      "publisher": "Society of Biblical Literature",
+      "year": 2005,
+      "locator": "Archaeology and Biblical Studies 9; Canaanite and early Israelite material culture",
+      "url": "https://cart.sbl-site.org/books/061709E",
+      "source_type": "academic-book",
+      "supports": [
+        "historical_context",
+        "ancient_near_east_context"
+      ],
+      "notes": "Used for regional identity and material-culture cautions.",
+      "id": "killebrew-canaan-2005"
+    },
+    {
+      "title": "Ancient Israel: Highlights from the Collections of the Oriental Institute, University of Chicago",
+      "author": "Gabrielle Vera Novacek",
+      "publisher": "Oriental Institute of the University of Chicago",
+      "year": 2011,
+      "locator": "pp. 1-6 and 65-68, southern Levant geography and the Late Bronze-Iron transition",
+      "url": "https://oi.uchicago.edu/sites/default/files/uploads/shared/docs/oimp31.pdf",
+      "source_type": "academic-book",
+      "supports": [
+        "historical_context",
+        "ancient_near_east_context"
+      ],
+      "notes": "Regional overview used with explicit caution about ethnic inference.",
+      "id": "novacek-canaan-2011"
     }
   ],
   "canonical_story": {

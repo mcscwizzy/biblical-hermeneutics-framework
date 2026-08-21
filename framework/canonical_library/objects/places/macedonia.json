@@ -17,10 +17,10 @@
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
-    "hebraic_worldview": true,
-    "second_temple": true,
-    "canonical": true,
-    "later_christian_reception": true
+    "hebraic_worldview": false,
+    "second_temple": false,
+    "canonical": false,
+    "later_christian_reception": false
   },
   "literary_context": "Biblical books use Macedonia to contrast human power with divine sovereignty.",
   "covenantal_significance": "Macedonia often marks judgment, testing, or the need for deliverance.",
@@ -50,6 +50,12 @@
   "related_places": [],
   "related_events": [],
   "related_objects": [
+    {
+      "id": "thessalonian-civic-and-funerary-context",
+      "relationship": "regional-evidence-cluster",
+      "weight": 9,
+      "notes": "Thessalonica supplies a city-specific Roman Macedonian evidence cluster."
+    },
     {
       "id": "babylonian-exile",
       "relationship": "geographic-context",

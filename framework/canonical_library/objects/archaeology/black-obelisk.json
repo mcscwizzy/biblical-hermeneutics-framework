@@ -3,14 +3,14 @@
   "type": "archaeology",
   "title": "Black Obelisk",
   "aliases": [
-    "black obelisk artifact",
-    "black obelisk discovery",
-    "black obelisk excavation",
-    "black obelisk find"
+    "Black Obelisk of Shalmaneser III",
+    "Jehu tribute relief",
+    "British Museum 118885",
+    "Iaua of the House of Omri"
   ],
-  "summary": "A Neo-Assyrian monument showing tribute scenes, including a figure often identified as Jehu.",
-  "historical_context": "One of the most famous visual sources for biblical-era Near Eastern diplomacy.",
-  "ancient_near_east_context": "Black Obelisk belongs to the material culture of Levantine, Mesopotamian, Egyptian, Persian, Greek, or Roman settings, where inscriptions, architecture, pottery, and administrative remains help contextualize the biblical world.",
+  "summary": "A black limestone monument of Shalmaneser III, produced about 825 BCE, whose captioned tribute registers include payment associated with Iaua or Jehu and the Assyrian designation of Israel by Omri.",
+  "historical_context": "The tribute attributed to Jehu belongs to Shalmaneser III's eighteenth year, conventionally 841 BCE, shortly after Jehu's rise in the biblical chronology. The obelisk was erected later at Kalhu or Nimrud and retrospectively monumentalizes the king's achievements.",
+  "ancient_near_east_context": "The obelisk combines royal inscription, labeled relief, prostration, tribute goods, and ordered delegations to represent peoples from different directions submitting to Assyrian rule. It is both primary historical evidence and a crafted imperial display.",
   "hebraic_worldview": "",
   "second_temple_context": "",
   "canonical_context": "",
@@ -18,18 +18,18 @@
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
-    "hebraic_worldview": true,
-    "second_temple": true,
-    "canonical": true,
-    "later_christian_reception": true
+    "hebraic_worldview": false,
+    "second_temple": false,
+    "canonical": false,
+    "later_christian_reception": false
   },
-  "literary_context": "Frequently linked to the political world of Jehu and the Omride dynasty.",
-  "covenantal_significance": "Black Obelisk helps anchor biblical claims in historical reality while reminding readers that archaeology supports rather than replaces interpretation.",
+  "literary_context": "Second Kings 9-10 narrates Jehu's anointing, coup, violence, cultic action, and regnal evaluation but does not mention tribute to Assyria. The artifact therefore adds external political information rather than illustrating a narrated scene.",
+  "covenantal_significance": "The monument can clarify Jehu's international setting but cannot settle the biblical and prophetic evaluations of his reign.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
   "historical_setting": "",
-  "canonical_role": "Black Obelisk serves as a material-culture anchor, connecting archaeological evidence with the biblical places, periods, and passages it helps contextualize.",
+  "canonical_role": "The artifact supplies a near-contemporary Assyrian witness to Jehu's reign that must be compared critically with Kings and Hosea.",
   "genre": [],
   "structure": [],
   "major_themes": [],
@@ -52,145 +52,94 @@
   "related_events": [],
   "related_objects": [
     {
-      "id": "nineveh",
-      "relationship": "historical-background",
+      "id": "assyria",
+      "relationship": "imperial-production-context",
       "weight": 10,
-      "notes": ""
+      "notes": "Shalmaneser III's court created the monument as a royal victory display."
     },
     {
-      "id": "jerusalem",
-      "relationship": "historical-background",
+      "id": "samaria-1",
+      "relationship": "israelite-kingdom-context",
       "weight": 9,
-      "notes": ""
+      "notes": "Assyrian terminology links Jehu with the land or house named for Omri."
     },
     {
-      "id": "joshua",
-      "relationship": "historical-background",
-      "weight": 8,
-      "notes": ""
+      "id": "2-kings",
+      "relationship": "jehu-narrative-context",
+      "weight": 10,
+      "notes": "Second Kings narrates Jehu's reign without reporting the tribute."
     },
     {
-      "id": "hebrews",
-      "relationship": "historical-background",
-      "weight": 7,
-      "notes": ""
+      "id": "assyrian-tribute-and-royal-representation",
+      "relationship": "integrated-context-cluster",
+      "weight": 10,
+      "notes": "The cluster supplies the artifact's source-critical tribute and royal-media context."
     }
   ],
   "scripture_references": [
     {
-      "reference": "2 Kings 9",
+      "reference": "2 Kings 9:1-37",
       "relationship": "primary",
-      "notes": ""
+      "notes": "Jehu's anointing and coup; the tribute is not narrated."
     },
     {
-      "reference": "2 Kings 10",
+      "reference": "2 Kings 10:1-36",
       "relationship": "supporting",
-      "notes": ""
+      "notes": "Jehu's consolidation and regnal evaluation."
     }
   ],
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "The Jehu identification is widely accepted, but the monument still functions as royal ideology, not neutral reportage.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "British Museum",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "British Museum, London",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "nineveh",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "Use the item as context for the biblical text, not as a shortcut around it.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The Jehu identification is widely accepted, but whether the prostrate person is Jehu or a representative and how the Omri designation functions remain debated; the scene is royal ideology, not neutral portraiture.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": ["black-obelisk-bm", "oracc-black-obelisk"]
     }
   ],
   "common_questions": [
-    "What does Black Obelisk teach?",
-    "How does Black Obelisk fit the biblical storyline?",
-    "What should readers avoid when interpreting Black Obelisk?"
+    "Does the Black Obelisk depict Jehu himself?",
+    "Why is Jehu called son or house of Omri?",
+    "What tribute goods does the monument list?",
+    "Why does Kings omit Jehu's Assyrian tribute?"
   ],
   "sources": [
     {
-      "title": "Black Obelisk",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "black-obelisk"
+      "title": "The Black Obelisk",
+      "author": "British Museum",
+      "publisher": "British Museum",
+      "year": -825,
+      "locator": "Museum number 118885; registration 1848,1104.1; second tribute register",
+      "url": "https://www.britishmuseum.org/collection/object/W_1848-1104-1",
+      "source_type": "museum-collection",
+      "supports": ["historical_context", "ancient_near_east_context"],
+      "notes": "Official object identity, date, provenance, description, and bibliography.",
+      "id": "black-obelisk-bm"
     },
     {
-      "title": "British Museum",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
+      "title": "The Black Obelisk of Shalmaneser III",
+      "author": "Nimrud: Materialities of Assyrian Knowledge Production project",
+      "publisher": "ORACC / University of Pennsylvania",
+      "year": 2019,
+      "locator": "Scene 2: tribute from Iaua of the House of Omri",
+      "url": "https://oracc.museum.upenn.edu/nimrud/livesofobjects/blackobelisk/index.html",
       "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "british-museum"
-    },
-    {
-      "title": "British Museum, London",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "british-museum-london"
-    },
-    {
-      "title": "Royal monument",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "royal-monument"
+      "supports": ["historical_context", "literary_context"],
+      "notes": "Scholarly object biography and scene discussion.",
+      "id": "oracc-black-obelisk"
     },
     {
       "title": "2 Kings 9-10",
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
+      "locator": "2 Kings 9:1-10:36",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
+      "supports": ["literary_context"],
+      "notes": "Primary biblical context; the tribute is not narrated.",
       "id": "2-kings-9-10"
     }
   ],
@@ -244,7 +193,7 @@
   ],
   "edited_by": [],
   "reviewed_by": [],
-  "last_reviewed": "2026-07-16",
+  "last_reviewed": "2026-08-20",
   "confidence": "medium",
   "human_review_required": true
 }

@@ -1,26 +1,26 @@
 {
   "id": "galilee-1",
   "type": "place",
-  "title": "Galilee 1",
+  "title": "Galilee",
   "aliases": [
-    "where is galilee 1",
-    "tell me about galilee 1",
-    "why is galilee 1 important"
+    "where is galilee",
+    "tell me about galilee",
+    "why is galilee important"
   ],
-  "summary": "Galilee is a ministry location in the story of Jesus or the early church.",
-  "historical_context": "Historically, Galilee 1 is located by its canonical setting; this entry connects that setting with jesus, acts, paul and related CKL objects for contextual retrieval.",
-  "ancient_near_east_context": "Galilee 1 is read within concrete geography shaped by Levantine routes, imperial borders, settlement patterns, water access, trade movement, and neighboring peoples named in the biblical narrative.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "summary": "The northern region around the Sea of Galilee where the Gospels locate much of Jesus's proclamation, village ministry, travel, and disciple formation.",
+  "historical_context": "During most of Jesus's ministry Galilee was governed by Herod Antipas, not by the Roman prefect of Judea. Its villages combined farming, fishing, craft production, local markets, and movement along lake and land routes.",
+  "ancient_near_east_context": "The relevant comparative setting is Early Roman Galilee within the southern Levant and Roman eastern Mediterranean.",
+  "hebraic_worldview": "Jewish village, household, synagogue, purity, festival, and subsistence practices shaped life while communities also participated in wider regional exchange.",
+  "second_temple_context": "Archaeology and texts indicate substantial Jewish practice alongside local variation; Galilee should be neither isolated from Judaism nor flattened into Jerusalem's institutions.",
+  "canonical_context": "The Gospels contrast Galilean beginnings and repeated ministry circuits with Jesus's final journey to Jerusalem and later return traditions.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
-    "ancient_near_east": true,
+    "ancient_near_east": false,
     "hebraic_worldview": true,
     "second_temple": true,
     "canonical": true,
-    "later_christian_reception": true
+    "later_christian_reception": false
   },
   "literary_context": "The Gospels and Acts use Galilee as a stage for proclamation, response, and mission.",
   "covenantal_significance": "Galilee helps show how the kingdom of God advances into the nations.",
@@ -79,33 +79,39 @@
       "relationship": "geographic-context",
       "weight": 8,
       "notes": "curated canonical context"
+    },
+    {
+      "id": "galilean-villages-households-and-subsistence",
+      "relationship": "evidence-cluster",
+      "weight": 10,
+      "notes": "Passage-bounded evidence for village life, farming, fishing, and material practice."
     }
   ],
   "scripture_references": [
     {
-      "reference": "Matthew 28:16-20",
-      "relationship": "supporting",
-      "notes": "Jesus' ministry in the land"
+      "reference": "Matthew 4:12-25",
+      "relationship": "primary",
+      "notes": "Opening summary of Jesus's Galilean proclamation and healing."
     },
     {
-      "reference": "Mark 16:19-20",
-      "relationship": "supporting",
-      "notes": "Jesus' ministry and response"
+      "reference": "Mark 1:14-39",
+      "relationship": "primary",
+      "notes": "Galilean proclamation, disciples, synagogue, household, and village movement."
     },
     {
-      "reference": "Luke 24:50-53",
-      "relationship": "supporting",
-      "notes": "ministry and mission"
+      "reference": "Luke 4:14-44",
+      "relationship": "primary",
+      "notes": "Nazareth, Capernaum, synagogues, and movement through Galilee."
     },
     {
-      "reference": "John 20:17-23",
-      "relationship": "supporting",
-      "notes": "signs, belief, and mission"
+      "reference": "John 2:1-12",
+      "relationship": "primary",
+      "notes": "Cana and Capernaum within Galilean geography."
     },
     {
-      "reference": "Acts 9:1-19",
+      "reference": "John 6:1-24",
       "relationship": "supporting",
-      "notes": "church mission in place"
+      "notes": "Sea of Galilee travel and lake craft."
     }
   ],
   "cross_references": [],

@@ -8,23 +8,23 @@
     "pilgrimage road in jerusalem excavation",
     "pilgrimage road in jerusalem find"
   ],
-  "summary": "Pilgrimage Road in Jerusalem is a CKL archaeology entry focused on tell-dan-excavations, city-of-david-excavations, jerusalem, with links to the passages and related objects that orient interpretation.",
-  "historical_context": "Historically, Pilgrimage Road in Jerusalem is located by its canonical setting; this entry connects that setting with tell-dan-excavations, city-of-david-excavations, jerusalem and related CKL objects for contextual retrieval.",
-  "ancient_near_east_context": "Ancient background for Pilgrimage Road in Jerusalem includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to 2 Samuel 8, 2 Kings 8, tell-dan-excavations, and city-of-david-excavations without letting comparison replace the biblical witness.",
-  "hebraic_worldview": "",
-  "second_temple_context": "",
-  "canonical_context": "",
+  "summary": "An Early Roman stepped street ran north from the Pool of Siloam through Jerusalem toward the Temple Mount, providing material context for movement through the festival city without identifying any individual pilgrim's route.",
+  "historical_context": "Excavation places the monumental street within Herodian and Early Roman Jerusalem and documents destruction debris associated with 70 CE. Its paving, drainage, shops, and adjacent buildings illuminate urban movement and commerce.",
+  "ancient_near_east_context": "The street belongs specifically to Roman-period Jerusalem, not to the Iron Age setting of Tell Dan or the monarchy narratives.",
+  "hebraic_worldview": "Pilgrimage brought worshipers into Jerusalem for covenant festivals, but the archaeology cannot identify their motives or ritual status.",
+  "second_temple_context": "The street connected the Siloam area with the vicinity of the Temple Mount during the late Second Temple period. Calling it a pilgrimage road is a functional interpretation, not an inscriptional ancient name.",
+  "canonical_context": "The find contextualizes Gospel accounts of festival travel and temple activity while providing no proof that Jesus or another named person walked on the excavated paving.",
   "later_christian_reception": "",
   "context_applicability": {
     "historical": true,
-    "ancient_near_east": true,
+    "ancient_near_east": false,
     "hebraic_worldview": true,
     "second_temple": true,
     "canonical": true,
-    "later_christian_reception": true
+    "later_christian_reception": false
   },
-  "literary_context": "Literarily, Pilgrimage Road in Jerusalem is read through its literary form and surrounding passages; the entry highlights how tell-dan-excavations, city-of-david-excavations, jerusalem function within the surrounding passages and canonical context.",
-  "covenantal_significance": "Pilgrimage Road in Jerusalem helps anchor biblical claims in historical reality while reminding readers that archaeology supports rather than replaces interpretation.",
+  "literary_context": "Gospel entry and temple narratives arrange Jerusalem geography rhetorically; the excavated street supplies urban context but does not settle a narrated route.",
+  "covenantal_significance": "The street illuminates the built environment surrounding pilgrimage to Israel's temple while remaining distinct from the theological meaning assigned to that pilgrimage.",
   "authorship_positions": [],
   "date_ranges": [],
   "original_audience": "",
@@ -52,152 +52,103 @@
   "related_events": [],
   "related_objects": [
     {
-      "id": "tell-dan-excavations",
-      "relationship": "historical-background",
+      "id": "jerusalem",
+      "relationship": "urban-setting",
       "weight": 10,
-      "notes": ""
+      "notes": "The place record owns Jerusalem's wider canonical geography."
+    },
+    {
+      "id": "pool-of-siloam-discovery",
+      "relationship": "southern-terminus-context",
+      "weight": 10,
+      "notes": "The stepped street begins in the Siloam area."
     },
     {
       "id": "city-of-david-excavations",
-      "relationship": "historical-background",
+      "relationship": "excavation-context",
       "weight": 9,
-      "notes": ""
+      "notes": "The street lies within the City of David excavation area."
     },
     {
-      "id": "jerusalem",
-      "relationship": "historical-background",
-      "weight": 8,
-      "notes": ""
-    },
-    {
-      "id": "hezekiahs-tunnel-inscription-context",
-      "relationship": "historical-background",
-      "weight": 7,
-      "notes": ""
-    },
-    {
-      "id": "isaiah",
-      "relationship": "historical-background",
-      "weight": 6,
-      "notes": ""
+      "id": "judean-pilgrimage-taxation-and-roman-power",
+      "relationship": "evidence-cluster",
+      "weight": 10,
+      "notes": "The cluster distinguishes the excavated street from claims about a specific pilgrimage route."
     }
   ],
   "scripture_references": [
     {
-      "reference": "2 Samuel 8",
-      "relationship": "primary",
-      "notes": ""
+      "reference": "Luke 19:28-48",
+      "relationship": "background",
+      "notes": "Jerusalem entry and temple activity; the narrative does not name this street."
     },
     {
-      "reference": "2 Kings 8",
-      "relationship": "supporting",
-      "notes": ""
+      "reference": "John 12:12-19",
+      "relationship": "background",
+      "notes": "Festival entry into Jerusalem; no excavated route can be assigned to Jesus."
     }
   ],
   "cross_references": [],
   "new_testament_connections": [],
   "interpretive_notes": [
     {
-      "note": "The inscription is genuine, but the reconstruction and interpretation of damaged lines remain debated.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The excavated feature is a stepped urban street, not an inscription; its common label as the pilgrimage road is an archaeological interpretation of location and function.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "archaeological_uncertainty",
+      "sources": ["iaa-jerusalem-stepped-street-2023"]
     },
     {
-      "note": "Israel Museum",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The paving, adjacent structures, drainage installations, and 70 CE destruction deposits illuminate Jerusalem's urban environment.",
+      "note_type": "historical-context",
+      "certainty": "strong_consensus",
+      "dispute_status": "archaeological_uncertainty",
+      "sources": ["iaa-jerusalem-stepped-street-2023"]
     },
     {
-      "note": "Israel Museum, Jerusalem",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "The street cannot establish that Jesus or any other named Gospel figure walked on the exposed stones.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": ["iaa-jerusalem-stepped-street-2023"]
     },
     {
-      "note": "tel-dan",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
-    },
-    {
-      "note": "Use the item as context for the biblical text, not as a shortcut around it.",
-      "note_type": "textual-observation",
-      "certainty": "unknown",
-      "dispute_status": "unknown",
-      "sources": []
+      "note": "Use the street as context for movement, commerce, and monumental Jerusalem, not as proof of a Gospel itinerary.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": ["iaa-jerusalem-stepped-street-2023"]
     }
   ],
   "common_questions": [
-    "What does Pilgrimage Road in Jerusalem teach?",
-    "How does Pilgrimage Road in Jerusalem fit the biblical storyline?",
-    "What should readers avoid when interpreting Pilgrimage Road in Jerusalem?"
+    "Why is the stepped street called a pilgrimage road?",
+    "What does the street reveal about Early Roman Jerusalem?",
+    "Does the archaeology prove that Jesus used this route?"
   ],
   "sources": [
     {
-      "title": "Tel Dan Stele",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "tel-dan-stele"
+      "title": "Jerusalem, City of David, the Stepped Street",
+      "author": "Ari Levy and Yuval Baruch",
+      "publisher": "Israel Antiquities Authority",
+      "year": 2023,
+      "locator": "Hadashot Arkheologiyot 135, Early Roman Stratum VIII",
+      "url": "https://hadashot.iaa.org.il/report_detail_eng.aspx?id=26274&mag_id=135",
+      "source_type": "excavation-report",
+      "supports": ["historical_context", "second_temple_context"],
+      "notes": "Primary excavation report for the street, associated structures, and destruction sequence.",
+      "id": "iaa-jerusalem-stepped-street-2023"
     },
     {
-      "title": "Israel Museum",
+      "title": "Luke and John Jerusalem passages",
       "author": "",
       "publisher": "",
       "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "israel-museum"
-    },
-    {
-      "title": "Israel Museum, Jerusalem",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "israel-museum-jerusalem"
-    },
-    {
-      "title": "Inscribed stele",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
-      "url": "",
-      "source_type": "reference-work",
-      "supports": [],
-      "notes": "",
-      "id": "inscribed-stele"
-    },
-    {
-      "title": "2 Samuel 8",
-      "author": "",
-      "publisher": "",
-      "year": null,
-      "locator": "",
+      "locator": "Luke 19:28-48; John 12:12-19",
       "url": "",
       "source_type": "scripture",
-      "supports": [],
-      "notes": "",
-      "id": "2-samuel-8"
+      "supports": ["canonical_context"],
+      "notes": "Primary biblical texts; neither passage names the excavated street.",
+      "id": "jerusalem-entry-passages"
     }
   ],
   "canonical_story": {

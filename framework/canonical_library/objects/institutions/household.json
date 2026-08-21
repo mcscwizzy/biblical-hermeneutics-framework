@@ -18,10 +18,10 @@
   "context_applicability": {
     "historical": true,
     "ancient_near_east": true,
-    "hebraic_worldview": true,
-    "second_temple": true,
-    "canonical": true,
-    "later_christian_reception": true
+    "hebraic_worldview": false,
+    "second_temple": false,
+    "canonical": false,
+    "later_christian_reception": false
   },
   "literary_context": "Scripture uses Household to show how God forms a people, not only isolated individuals.",
   "covenantal_significance": "Household embodies covenant life in public and communal form.",
@@ -52,6 +52,12 @@
   "related_events": [],
   "related_objects": [
     {
+      "id": "thessalonian-civic-and-funerary-context",
+      "relationship": "hospitality-and-gathering-context",
+      "weight": 8,
+      "notes": "Jason's hospitality is explicit, but the assembly's venue and property profile are not."
+    },
+    {
       "id": "covenant-assembly",
       "relationship": "institutional-context",
       "weight": 8,
@@ -74,28 +80,58 @@
       "relationship": "institutional-context",
       "weight": 8,
       "notes": "curated canonical context"
+    },
+    {
+      "id": "galilean-villages-households-and-subsistence",
+      "relationship": "evidence-cluster",
+      "weight": 10,
+      "notes": "The cluster supplies Gospel and archaeological controls for Galilean domestic space."
+    },
+    {
+      "id": "roman-corinth-civic-household-and-association-life",
+      "relationship": "evidence-cluster",
+      "weight": 10,
+      "notes": "The Corinth cluster bounds household, assembly, slavery, and status comparisons."
+    },
+    {
+      "id": "roman-ephesus-civic-cultic-and-household-life",
+      "relationship": "evidence-cluster",
+      "weight": 10,
+      "notes": "The Ephesus cluster bounds household-code, slavery, gender, wealth, and meeting-place comparisons while preserving destination and chronology disputes."
+    },
+    {
+      "id": "roman-philippi-colonial-civic-and-household-life",
+      "relationship": "evidence-cluster",
+      "weight": 10,
+      "notes": "The Philippi cluster distinguishes Lydia's and the jailer's households, hospitality, baptism, enslavement, profit, and later assembly inferences."
+    },
+    {
+      "id": "roman-rome-jewish-civic-household-and-imperial-life",
+      "relationship": "evidence-cluster",
+      "weight": 10,
+      "notes": "The Rome cluster bounds multiple gatherings, dwelling types, household dependence, enslavement, and unidentified meeting spaces."
     }
   ],
   "scripture_references": [
     {
-      "reference": "Exodus 19:1-6",
-      "relationship": "supporting",
-      "notes": "assembly at Sinai"
+      "reference": "Mark 1:29-34",
+      "relationship": "primary",
+      "notes": "Kin, hospitality, healing, and a crowd at a Capernaum house."
     },
     {
-      "reference": "Deuteronomy 6:4-9",
-      "relationship": "supporting",
-      "notes": "communal instruction"
+      "reference": "Mark 2:1-12",
+      "relationship": "primary",
+      "notes": "Crowded domestic space and roof access."
     },
     {
-      "reference": "Acts 2:1-47",
+      "reference": "Acts 16:25-34",
       "relationship": "supporting",
-      "notes": "Spirit-formed community"
+      "notes": "A jailer's household receives hospitality, care, teaching, and baptism."
     },
     {
-      "reference": "1 Corinthians 12:27-31",
+      "reference": "Romans 16:1-16",
       "relationship": "supporting",
-      "notes": "ordered communal worship"
+      "notes": "Households, patrons, coworkers, and house assemblies in an urban network."
     }
   ],
   "cross_references": [],
