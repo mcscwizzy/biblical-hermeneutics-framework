@@ -22,6 +22,7 @@
     let sequence = 0;
     let controller = null;
     let nativeBackView = null;
+    let nativeBackFocusSelector = "";
 
     host.addEventListener("click", handleClick);
     host.addEventListener("keydown", handleKeydown);
@@ -33,6 +34,7 @@
       controller?.abort();
       controller = new AbortController();
       nativeBackView = null;
+      nativeBackFocusSelector = "";
       shell.classList.add("is-native-resource");
       host.hidden = false;
       renderLoading(host);
@@ -59,6 +61,7 @@
       host.removeAttribute("aria-busy");
       shell.classList.remove("is-native-resource");
       nativeBackView = null;
+      nativeBackFocusSelector = "";
     }
 
     function showLegacy(resourceId) {
@@ -169,7 +172,7 @@
       );
       items.slice(0, 12).forEach((item) => {
         const subtitle = [item.item_type, item.period, item.confidence].filter(Boolean).join(" · ");
-        body.append(summaryCard(item.title || item.name || item.id, item.summary || item.why_it_matters || subtitle, subtitle));
+        body.append(archaeologySummaryCard(item, item.summary || item.why_it_matters || subtitle, subtitle));
       });
       const link = document.createElement("a");
       link.className = "companion-detail-action";
@@ -231,7 +234,7 @@
         heading.textContent = "Related archaeology records";
         related.append(heading);
         supplemental.slice(0, 2).forEach((item) => {
-          related.append(summaryCard(item.title || item.name || item.id, item.summary || item.why_it_matters || ""));
+          related.append(archaeologySummaryCard(item, item.summary || item.why_it_matters || ""));
         });
         body.append(related);
       }
@@ -396,6 +399,17 @@
       return card;
     }
 
+    function archaeologySummaryCard(item, summary, meta = "") {
+      const card = summaryCard(item.title || item.name || item.id, summary, meta);
+      if (item.id) {
+        card.dataset.archaeologyId = item.id;
+        card.tabIndex = 0;
+        card.setAttribute("role", "button");
+        card.setAttribute("aria-label", `View evidence details for ${item.title || item.name || item.id}`);
+      }
+      return card;
+    }
+
     function actionButton(label, resourceId) {
       const button = document.createElement("button");
       button.type = "button";
@@ -413,6 +427,11 @@
       }
       const canonical = event.target.closest("[data-canonical-query]");
       const canonicalCard = event.target.closest("[data-canonical-id]");
+      const archaeologyCard = event.target.closest("[data-archaeology-id]");
+      if (archaeologyCard) {
+        void openArchaeologyDetail(archaeologyCard.dataset.archaeologyId);
+        return;
+      }
       if (canonicalCard) {
         void openCanonicalDetail(canonicalCard.dataset.canonicalId);
         return;
@@ -430,20 +449,16 @@
 
     function handleKeydown(event) {
       if (event.key !== "Enter" && event.key !== " ") return;
-      const canonical = event.target.closest("[data-canonical-id], [data-canonical-query]");
-      if (!canonical) return;
+      const interactiveCard = event.target.closest("[data-archaeology-id], [data-canonical-id], [data-canonical-query]");
+      if (!interactiveCard) return;
       event.preventDefault();
-      canonical.click();
+      interactiveCard.click();
     }
 
     async function openCanonicalDetail(objectId) {
       const normalized = String(objectId || "").trim();
       if (!normalized) return;
-      if (!nativeBackView) {
-        const fragment = document.createDocumentFragment();
-        while (host.firstChild) fragment.append(host.firstChild);
-        nativeBackView = fragment;
-      }
+      saveNativeBackView("[data-canonical-id]");
       sequence += 1;
       const requestSequence = sequence;
       controller?.abort();
@@ -456,6 +471,26 @@
       } catch (error) {
         if (error?.name !== "AbortError" && requestSequence === sequence) {
           renderError(host, error?.message || "This entity could not be loaded.");
+        }
+      }
+    }
+
+    async function openArchaeologyDetail(itemId) {
+      const normalized = String(itemId || "").trim();
+      if (!normalized) return;
+      saveNativeBackView("[data-archaeology-id]");
+      sequence += 1;
+      const requestSequence = sequence;
+      controller?.abort();
+      controller = new AbortController();
+      renderLoading(host, "Loading archaeological evidence…");
+      try {
+        const detail = await requestJson(`/api/archaeology/items/${encodeURIComponent(normalized)}`, controller.signal);
+        if (requestSequence !== sequence) return;
+        renderArchaeologyDetail(detail);
+      } catch (error) {
+        if (error?.name !== "AbortError" && requestSequence === sequence) {
+          renderError(host, error?.message || "This archaeology record could not be loaded.");
         }
       }
     }
@@ -488,6 +523,100 @@
       commit(body);
     }
 
+    function renderArchaeologyDetail(detail) {
+      const evidence = detail?.evidence_details && typeof detail.evidence_details === "object"
+        ? detail.evidence_details
+        : {};
+      const body = resourceBody(
+        detail.name || detail.title || detail.id,
+        detail.why_it_matters || evidence.biblical_relevance || "Curated archaeological evidence",
+      );
+      const metadata = [detail.item_type, evidence.date_display || detail.period, detail.confidence]
+        .filter(Boolean)
+        .join(" · ");
+      if (metadata) {
+        const label = document.createElement("p");
+        label.className = "companion-summary-meta";
+        label.textContent = metadata;
+        body.append(label);
+      }
+      appendDetailSections(body, [
+        ["What you’re looking at", evidence.description],
+        ["Physical evidence", evidence.physical_description],
+        ["Discovery", evidence.discovery_context],
+        ["Dating", evidence.dating_basis],
+        ["Why it matters for this passage", evidence.biblical_relevance || detail.why_it_matters],
+        ["Scholarly context", evidence.scholarly_context],
+        ["Archaeological caution", evidence.interpretive_caution || detail.bhf_caution],
+      ]);
+      const passages = (detail.scripture_links || [])
+        .map(formatArchaeologyPassage)
+        .filter(Boolean);
+      if (passages.length) appendGroup(body, "Related Scripture", passages.map((title) => ({title})));
+      appendArchaeologySource(body, detail.source);
+      const back = actionButton("← Back to evidence", "");
+      delete back.dataset.openLegacyResource;
+      back.dataset.nativeResourceBack = "";
+      body.append(back, actionButton("Open Archaeology Library →", "archaeology"));
+      commit(body);
+    }
+
+    function appendDetailSections(body, sections) {
+      sections.filter(([, value]) => value).forEach(([label, value]) => {
+        const section = document.createElement("section");
+        const heading = document.createElement("h4");
+        const text = document.createElement("p");
+        heading.textContent = label;
+        text.textContent = value;
+        section.append(heading, text);
+        body.append(section);
+      });
+    }
+
+    function formatArchaeologyPassage(link) {
+      if (typeof link === "string") return link;
+      if (!link || !link.book || !link.chapter) return "";
+      const start = Number(link.verse_start || 0);
+      const end = Number(link.verse_end || start);
+      const verses = start ? `:${start}${end > start ? `–${end}` : ""}` : "";
+      return `${link.book} ${link.chapter}${verses}`;
+    }
+
+    function appendArchaeologySource(body, source) {
+      if (!source || (!source.label && !source.url)) return;
+      const section = document.createElement("section");
+      const heading = document.createElement("h4");
+      heading.textContent = "Evidence source";
+      section.append(heading);
+      if (source.url && /^https?:\/\//i.test(source.url)) {
+        const link = document.createElement("a");
+        link.href = source.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = source.label || "View source ↗";
+        section.append(link);
+      } else {
+        const text = document.createElement("p");
+        text.textContent = source.label || "Source record available locally";
+        section.append(text);
+      }
+      if (source.license) {
+        const license = document.createElement("p");
+        license.className = "companion-summary-meta";
+        license.textContent = source.license;
+        section.append(license);
+      }
+      body.append(section);
+    }
+
+    function saveNativeBackView(focusSelector) {
+      if (nativeBackView) return;
+      const fragment = document.createDocumentFragment();
+      while (host.firstChild) fragment.append(host.firstChild);
+      nativeBackView = fragment;
+      nativeBackFocusSelector = focusSelector;
+    }
+
     function restoreNativeBackView() {
       if (!nativeBackView) return;
       sequence += 1;
@@ -495,7 +624,8 @@
       host.replaceChildren(nativeBackView);
       host.setAttribute("aria-busy", "false");
       nativeBackView = null;
-      host.querySelector("[data-canonical-id]")?.focus({preventScroll: true});
+      host.querySelector(nativeBackFocusSelector)?.focus({preventScroll: true});
+      nativeBackFocusSelector = "";
     }
 
     function commit(content) {

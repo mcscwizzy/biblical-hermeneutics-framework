@@ -781,6 +781,38 @@ def test_explore_canonical_entity_detail_stays_native(driver, wait, base_url):
     wait.until(lambda _driver: panel.get_attribute("data-companion-state") == "closed")
 
 
+def test_archaeology_record_opens_its_curated_evidence_detail(driver, wait, base_url):
+    driver.set_window_size(390, 844)
+    HomePage(driver, wait, base_url).open().wait_loaded()
+    driver.execute_script(
+        """
+        window.BHFStudySelection.setSelection({
+          book: "John", chapter: 9, startVerse: 7, endVerse: 11,
+          selectedVerses: [7, 8, 9, 10, 11], selectedText: "John 9:7-11",
+          translation: "KJV", reference: "John 9:7-11", hasPassageSelection: true,
+        }, "archaeology-detail-test");
+        """
+    )
+    driver.execute_async_script(
+        """
+        const done = arguments[arguments.length - 1];
+        window.BHFStudyCompanion.openResource("archaeology", {state: "full"})
+          .then(() => done())
+          .catch((error) => done(String(error)));
+        """
+    )
+    card = wait.until(EC.element_to_be_clickable((
+        By.CSS_SELECTOR,
+        '[data-companion-resource-host] [data-archaeology-id="pool-of-siloam"]',
+    )))
+    card.click()
+    host = driver.find_element(By.CSS_SELECTOR, "[data-companion-resource-host]")
+    wait.until(lambda _driver: "What you’re looking at" in host.text)
+    assert "Pool of Siloam" in host.text
+    assert "Related Scripture" in host.text
+    assert host.find_element(By.CSS_SELECTOR, "[data-native-resource-back]").is_displayed()
+
+
 def test_ask_fields_follow_exact_shared_selection_and_clear_stale_word(driver, wait, base_url):
     driver.set_window_size(390, 844)
     HomePage(driver, wait, base_url).open().wait_loaded()

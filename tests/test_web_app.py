@@ -460,6 +460,16 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn('questionScope: "general_question", appSection: "explore"', companion_script)
         self.assertIn('Explore questions are not limited to the selected passage.', companion_script)
 
+    def test_companion_archaeology_cards_open_curated_evidence_details(self):
+        router_script = Path("bhf_web/static/resource-router.js").read_text(encoding="utf-8")
+
+        self.assertIn("dataset.archaeologyId", router_script)
+        self.assertIn("function openArchaeologyDetail(itemId)", router_script)
+        self.assertIn("/api/archaeology/items/${encodeURIComponent(normalized)}", router_script)
+        self.assertIn("function renderArchaeologyDetail(detail)", router_script)
+        self.assertIn("What you’re looking at", router_script)
+        self.assertIn("Archaeological caution", router_script)
+
     def test_reader_tabs_render_side_by_side_panes_with_independent_scroll(self):
         script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
