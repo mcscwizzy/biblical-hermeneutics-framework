@@ -49,9 +49,9 @@
         baseUrl: openRouterConfig().baseUrl || "https://openrouter.ai/api/v1",
         model: openRouterConfig().defaultModel || "",
         temperature: 0.3,
-        maxTokens: Number(aiDefaults.max_tokens || 4096),
-        contextWindow: Number(aiDefaults.context_window || 16384),
-        timeoutSeconds: 120,
+        maxTokens: Number(aiDefaults.max_tokens || 1536),
+        contextWindow: Number(aiDefaults.context_window || 8192),
+        timeoutSeconds: Number(aiDefaults.timeout_seconds || 120),
         responseFormatPolicy: "auto",
       };
     }

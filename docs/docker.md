@@ -127,8 +127,10 @@ The most useful `.env` settings are:
 | `BHF_BASE_URL` | OpenRouter API | Provider base URL for the default stack. |
 | `BHF_MODEL` | current OpenRouter default | Provider model identifier. |
 | `BHF_API_KEY` | empty | Optional server-side provider key. |
-| `BHF_CONTEXT_WINDOW` | `16384` in `.env.example` | Model context-window budget. |
-| `BHF_MAX_TOKENS` | `4096` | Maximum generated tokens. |
+| `BHF_CONTEXT_WINDOW` | `8192` in `.env.example` | Model context-window budget. |
+| `BHF_MAX_TOKENS` | `1536` | Maximum generated tokens. |
+| `BHF_TIMEOUT_SECONDS` | `120` | Provider request deadline in seconds. |
+| `BHF_JOB_DB_PATH` | next to `study.sqlite` | Durable SQLite state for background jobs. |
 | `BHF_MEMORY_ENABLED` | `false` | Enables local session-memory files. |
 | `BHF_LEXICAL_SEED_POLICY` | `refresh` in Compose | `refresh`, `missing`, or `none`. |
 | `BHF_COMMENTARY_SEED_POLICY` | `refresh` in Compose | `refresh`, `missing`, or `none` for the Tyndale database. |

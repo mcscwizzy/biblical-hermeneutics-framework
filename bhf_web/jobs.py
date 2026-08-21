@@ -2,12 +2,15 @@
 
 from __future__ import annotations
 
+import json
+import sqlite3
 import threading
 import uuid
-from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from dataclasses import asdict, dataclass, field, is_dataclass
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
 from types import SimpleNamespace
-from typing import Any
+from typing import Any, Callable, Mapping
 
 from bhf_agent.config import ConfigError
 from bhf_agent.profiles import ProfileError
@@ -106,9 +109,28 @@ class AskJob:
     elapsed_total_seconds: float = 0.0
     elapsed_current_stage_seconds: float = 0.0
     status: str = "running"
+    created_at: str = field(default_factory=lambda: timestamp())
+    stage_started_at: str = field(default_factory=lambda: timestamp())
+    deadline_at: str | None = None
+    _persist: Callable[["AskJob"], None] | None = field(
+        default=None,
+        repr=False,
+        compare=False,
+    )
 
     def emit(self, event: dict[str, Any]) -> None:
+        if self.done:
+            return
+        if self.is_expired():
+            self.fail(
+                "Request exceeded its configured deadline",
+                status_code=504,
+                failed_stage=self.stage,
+            )
+            return
         entry = StatusEntry.from_event(event)
+        if self.stage != entry.stage:
+            self.stage_started_at = entry.timestamp
         if self.history and self.history[-1].stage == entry.stage:
             self.message = entry.message
             self.history[-1] = entry
@@ -124,6 +146,7 @@ class AskJob:
         self.status = entry.status
         if entry.status == "error":
             self.failed_stage = _failed_stage(entry) or self.stage
+        self._save()
 
     def fail(
         self,
@@ -131,6 +154,8 @@ class AskJob:
         status_code: int = 400,
         failed_stage: str | None = None,
     ) -> None:
+        if self.done:
+            return
         self.failed_stage = failed_stage or self.stage
         self.error = error
         self.status_code = status_code
@@ -152,13 +177,30 @@ class AskJob:
                 details={"failed_stage": self.failed_stage},
             )
         )
+        self._save()
 
     def complete(self, result: Any) -> None:
+        if self.done:
+            return
+        if self.is_expired():
+            self.fail(
+                "Request exceeded its configured deadline",
+                status_code=504,
+                failed_stage=self.stage,
+            )
+            return
         self.result = result
         self.done = True
         self.status = "complete"
+        self._save()
 
     def to_dict(self) -> dict[str, Any]:
+        elapsed_total = self.elapsed_total_seconds
+        elapsed_stage = self.elapsed_current_stage_seconds
+        if not self.done:
+            now = datetime.now(timezone.utc)
+            elapsed_total = max(elapsed_total, _elapsed_since(self.created_at, now))
+            elapsed_stage = max(elapsed_stage, _elapsed_since(self.stage_started_at, now))
         return {
             "job_id": self.job_id,
             "stage": self.stage,
@@ -168,21 +210,70 @@ class AskJob:
             "error": self.error,
             "failed_stage": self.failed_stage,
             "percent_complete": self.percent_complete,
-            "elapsed_total_seconds": self.elapsed_total_seconds,
-            "elapsed_current_stage_seconds": self.elapsed_current_stage_seconds,
+            "elapsed_total_seconds": round(elapsed_total, 1),
+            "elapsed_current_stage_seconds": round(elapsed_stage, 1),
             "status": self.status,
             "reader_reference": self.reader_reference,
             "study_type": self.study_type,
         }
 
+    def _save(self) -> None:
+        if self._persist is not None:
+            self._persist(self)
+
+    def is_expired(self) -> bool:
+        if not self.deadline_at:
+            return False
+        return _elapsed_since(self.deadline_at, datetime.now(timezone.utc)) > 0
+
+
+@dataclass
+class StoredResult:
+    """JSON-safe result facade used when a job is loaded in another process."""
+
+    answer_text: str = ""
+    reference_context: Any = None
+    genre_context: Any = None
+    question_context: Any = None
+    profile_used: str = ""
+    validation_result: Any = None
+    model_metadata: dict[str, Any] = field(default_factory=dict)
+    warnings: list[str] = field(default_factory=list)
+    errors: list[str] = field(default_factory=list)
+    fatal_errors: list[str] = field(default_factory=list)
+    error_category: str | None = None
+    failed_stage: str | None = None
+    repair_applied: bool = False
+    repair_attempted: bool = False
+    repair_reason: str | None = None
+    original_validation_result: Any = None
+    repaired_validation_result: Any = None
+
+    def public_response(self) -> dict[str, str]:
+        return {"answer": self.answer_text}
+
 
 class AskJobStore:
-    def __init__(self) -> None:
-        self._jobs: dict[str, AskJob] = {}
-        self._lock = threading.Lock()
+    """Process-safe SQLite job store for polling and result retrieval."""
 
-    def create(self) -> AskJob:
-        job = AskJob(job_id=uuid.uuid4().hex)
+    def __init__(self, path: str | Path | None = None) -> None:
+        self.path = Path(path or settings.JOB_DB_PATH)
+        self._lock = threading.Lock()
+        self._initialize()
+
+    def create(self, *, deadline_seconds: float | None = None) -> AskJob:
+        now = datetime.now(timezone.utc)
+        deadline_at = None
+        if deadline_seconds is not None:
+            deadline_at = (
+                now + timedelta(seconds=max(1.0, deadline_seconds))
+            ).isoformat().replace("+00:00", "Z")
+        job = AskJob(
+            job_id=uuid.uuid4().hex,
+            created_at=now.isoformat().replace("+00:00", "Z"),
+            stage_started_at=now.isoformat().replace("+00:00", "Z"),
+            deadline_at=deadline_at,
+        )
         job.emit(
             {
                 "stage": "queued",
@@ -196,13 +287,74 @@ class AskJobStore:
                 "status": "running",
             }
         )
-        with self._lock:
-            self._jobs[job.job_id] = job
+        job._persist = self._save
+        self._prune()
+        self._save(job)
         return job
 
     def get(self, job_id: str) -> AskJob | None:
         with self._lock:
-            return self._jobs.get(job_id)
+            with self._connect() as connection:
+                row = connection.execute(
+                    "SELECT payload FROM ask_jobs WHERE job_id = ?",
+                    (job_id,),
+                ).fetchone()
+        if row is None:
+            return None
+        job = _job_from_payload(json.loads(str(row[0])))
+        job._persist = self._save
+        if job.is_expired() and not job.done:
+            job.fail(
+                "Request exceeded its configured deadline",
+                status_code=504,
+                failed_stage=job.stage,
+            )
+        return job
+
+    def _initialize(self) -> None:
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        with self._connect() as connection:
+            connection.execute("PRAGMA journal_mode = WAL")
+            connection.execute(
+                """
+                CREATE TABLE IF NOT EXISTS ask_jobs (
+                    job_id TEXT PRIMARY KEY,
+                    payload TEXT NOT NULL,
+                    updated_at TEXT NOT NULL
+                )
+                """
+            )
+
+    def _connect(self) -> sqlite3.Connection:
+        connection = sqlite3.connect(self.path, timeout=5)
+        connection.execute("PRAGMA busy_timeout = 5000")
+        return connection
+
+    def _save(self, job: AskJob) -> None:
+        payload = json.dumps(_job_payload(job), ensure_ascii=False, default=str)
+        with self._lock:
+            with self._connect() as connection:
+                connection.execute(
+                    """
+                    INSERT INTO ask_jobs (job_id, payload, updated_at)
+                    VALUES (?, ?, ?)
+                    ON CONFLICT(job_id) DO UPDATE SET
+                        payload = excluded.payload,
+                        updated_at = excluded.updated_at
+                    """,
+                    (job.job_id, payload, timestamp()),
+                )
+
+    def _prune(self) -> None:
+        cutoff = (datetime.now(timezone.utc) - timedelta(days=1)).isoformat().replace(
+            "+00:00", "Z"
+        )
+        with self._lock:
+            with self._connect() as connection:
+                connection.execute(
+                    "DELETE FROM ask_jobs WHERE updated_at < ?",
+                    (cutoff,),
+                )
 
 
 job_store = AskJobStore()
@@ -210,6 +362,163 @@ job_store = AskJobStore()
 
 def timestamp() -> str:
     return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def _elapsed_since(value: str, now: datetime) -> float:
+    try:
+        started = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except (TypeError, ValueError):
+        return 0.0
+    return max(0.0, (now - started).total_seconds())
+
+
+def _json_safe(value: Any) -> Any:
+    if is_dataclass(value):
+        return _json_safe(asdict(value))
+    if isinstance(value, Mapping):
+        return {str(key): _json_safe(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple, set)):
+        return [_json_safe(item) for item in value]
+    if value is None or isinstance(value, (str, int, float, bool)):
+        return value
+    if hasattr(value, "to_dict") and callable(value.to_dict):
+        return _json_safe(value.to_dict())
+    if hasattr(value, "__dict__"):
+        return {
+            str(key): _json_safe(item)
+            for key, item in vars(value).items()
+            if not str(key).startswith("_")
+        }
+    return str(value)
+
+
+_RESULT_FIELDS = tuple(StoredResult.__dataclass_fields__)
+
+
+def _result_payload(result: Any) -> dict[str, Any] | None:
+    if result is None:
+        return None
+    if isinstance(result, Mapping):
+        return {"kind": "mapping", "value": _json_safe(result)}
+    return {
+        "kind": "result",
+        "value": {
+            name: _json_safe(
+                getattr(result, name, StoredResult.__dataclass_fields__[name].default)
+            )
+            for name in _RESULT_FIELDS
+            if hasattr(result, name)
+        },
+    }
+
+
+def _namespace(value: Any) -> Any:
+    if isinstance(value, Mapping):
+        return SimpleNamespace(**{str(key): _namespace(item) for key, item in value.items()})
+    if isinstance(value, list):
+        return [_namespace(item) for item in value]
+    return value
+
+
+def _stored_result(payload: Mapping[str, Any] | None) -> Any:
+    if payload is None:
+        return None
+    if payload.get("kind") == "mapping":
+        value = payload.get("value")
+        return dict(value) if isinstance(value, Mapping) else {}
+    raw_values = payload.get("value") if payload.get("kind") == "result" else payload
+    values = dict(raw_values) if isinstance(raw_values, Mapping) else {}
+    for name in (
+        "reference_context",
+        "genre_context",
+        "question_context",
+        "validation_result",
+        "original_validation_result",
+        "repaired_validation_result",
+    ):
+        values[name] = _namespace(values.get(name))
+    values["model_metadata"] = dict(values.get("model_metadata") or {})
+    return StoredResult(
+        **{name: values[name] for name in _RESULT_FIELDS if name in values}
+    )
+
+
+def _job_payload(job: AskJob) -> dict[str, Any]:
+    return {
+        "job_id": job.job_id,
+        "stage": job.stage,
+        "message": job.message,
+        "history": [entry.to_dict() for entry in job.history],
+        "done": job.done,
+        "error": job.error,
+        "failed_stage": job.failed_stage,
+        "result": _result_payload(job.result),
+        "reader_reference": job.reader_reference,
+        "study_type": job.study_type,
+        "question": job.question,
+        "study_context": _json_safe(job.study_context),
+        "status_code": job.status_code,
+        "percent_complete": job.percent_complete,
+        "elapsed_total_seconds": job.elapsed_total_seconds,
+        "elapsed_current_stage_seconds": job.elapsed_current_stage_seconds,
+        "status": job.status,
+        "created_at": job.created_at,
+        "stage_started_at": job.stage_started_at,
+        "deadline_at": job.deadline_at,
+    }
+
+
+def _job_from_payload(payload: Mapping[str, Any]) -> AskJob:
+    history = [
+        StatusEntry(
+            stage=str(entry.get("stage") or "unknown"),
+            message=str(entry.get("message") or "Working"),
+            timestamp=str(entry.get("timestamp") or timestamp()),
+            step_index=_int_value(entry.get("step_index"), 1),
+            total_steps=_int_value(entry.get("total_steps"), 1),
+            percent_complete=_float_value(entry.get("percent_complete"), 0.0),
+            elapsed_total_seconds=_float_value(entry.get("elapsed_total_seconds"), 0.0),
+            elapsed_current_stage_seconds=_float_value(entry.get("elapsed_current_stage_seconds"), 0.0),
+            status=str(entry.get("status") or "running"),
+            details=dict(entry.get("details")) if isinstance(entry.get("details"), Mapping) else None,
+        )
+        for entry in payload.get("history", [])
+        if isinstance(entry, Mapping)
+    ]
+    return AskJob(
+        job_id=str(payload.get("job_id") or ""),
+        stage=str(payload.get("stage") or "queued"),
+        message=str(payload.get("message") or "Queued"),
+        history=history,
+        done=bool(payload.get("done")),
+        error=str(payload["error"]) if payload.get("error") is not None else None,
+        failed_stage=(
+            str(payload["failed_stage"])
+            if payload.get("failed_stage") is not None
+            else None
+        ),
+        result=_stored_result(payload.get("result")),
+        reader_reference=(
+            str(payload["reader_reference"])
+            if payload.get("reader_reference") is not None
+            else None
+        ),
+        study_type=str(payload["study_type"]) if payload.get("study_type") is not None else None,
+        question=str(payload["question"]) if payload.get("question") is not None else None,
+        study_context=dict(payload.get("study_context")) if isinstance(payload.get("study_context"), Mapping) else None,
+        status_code=_int_value(payload.get("status_code"), 200),
+        percent_complete=_float_value(payload.get("percent_complete"), 0.0),
+        elapsed_total_seconds=_float_value(payload.get("elapsed_total_seconds"), 0.0),
+        elapsed_current_stage_seconds=_float_value(payload.get("elapsed_current_stage_seconds"), 0.0),
+        status=str(payload.get("status") or "running"),
+        created_at=str(payload.get("created_at") or timestamp()),
+        stage_started_at=str(payload.get("stage_started_at") or timestamp()),
+        deadline_at=(
+            str(payload["deadline_at"])
+            if payload.get("deadline_at") is not None
+            else None
+        ),
+    )
 
 
 def _int_value(value: Any, default: int) -> int:

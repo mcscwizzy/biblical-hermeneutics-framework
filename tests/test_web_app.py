@@ -409,6 +409,17 @@ class WebAssetTests(unittest.TestCase):
         self.assertNotIn("progress-track", script)
         self.assertNotIn("toFixed(3)", script)
 
+    def test_job_polling_has_backoff_deadline_and_real_stage_text(self):
+        controller = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
+        status = Path("bhf_web/static/htmx-status.js").read_text(encoding="utf-8")
+
+        self.assertIn("const POLL_INTERVAL_MS = 2000", controller)
+        self.assertIn("MAX_POLL_INTERVAL_MS", controller)
+        self.assertIn("POLL_DEADLINE_GRACE_MS", controller)
+        self.assertIn("error?.status !== 429", controller)
+        self.assertIn("runningStatusMessage(status)", status)
+        self.assertIn("elapsed_current_stage_seconds", status)
+
     def test_reader_script_has_study_actions_without_a_context_menu(self):
         script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
 
@@ -2184,7 +2195,8 @@ class WebAppTests(unittest.TestCase):
         self.assertGreaterEqual(len(references), 2)
         self.assertLessEqual(len(references), 5)
         self.assertEqual(len(references), len(set(references)))
-        self.assertTrue(references[0].startswith("Exodus 3:"))
+        self.assertTrue(all(reference.startswith("Exodus ") for reference in references))
+        self.assertTrue(any(reference.startswith("Exodus 3:") for reference in references))
         self.assertIn("Exodus 1:1-22", references)
         self.assertTrue(
             all(

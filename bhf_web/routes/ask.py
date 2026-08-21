@@ -27,6 +27,17 @@ from ..services.web_helpers import (
 )
 
 
+JOB_DEADLINE_GRACE_SECONDS = 15.0
+
+
+def _job_deadline_seconds(form: dict[str, Any]) -> float:
+    try:
+        timeout = float(form.get("timeout_seconds") or 120)
+    except (TypeError, ValueError):
+        timeout = 120.0
+    return max(30.0, timeout) + JOB_DEADLINE_GRACE_SECONDS
+
+
 def _public_answer_text(result: Any) -> str:
     public_response = getattr(result, "public_response", None)
     if callable(public_response):
@@ -240,8 +251,10 @@ def register_ask_routes(
     @app.post("/ask/jobs", response_class=JSONResponse)
     async def create_ask_job(request: Request) -> JSONResponse:
         form = await request.form()
-        job = job_store.create()
         form_values = form_values_for_ask_prompt(form)
+        job = job_store.create(
+            deadline_seconds=_job_deadline_seconds(form_values),
+        )
         transient_api_key = request.headers.get("X-BHF-OpenRouter-Key") or None
         agent_class = agent_factory()
         thread = threading.Thread(
@@ -328,8 +341,10 @@ def register_ask_routes(
     @app.post("/api/bible/search/fallback/jobs", response_class=JSONResponse)
     async def create_bible_search_fallback_job(request: Request) -> JSONResponse:
         form = await request.form()
-        job = job_store.create()
         form_values = dict(form)
+        job = job_store.create(
+            deadline_seconds=_job_deadline_seconds(form_values),
+        )
         transient_api_key = request.headers.get("X-BHF-OpenRouter-Key") or None
         agent_class = agent_factory()
         thread = threading.Thread(

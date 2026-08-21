@@ -21,8 +21,9 @@ WEB_AI_DEFAULTS: dict[str, Any] = {
 }
 
 OPENROUTER_AI_DEFAULTS: dict[str, int] = {
-    "max_tokens": 4096,
-    "context_window": 16384,
+    "max_tokens": 1536,
+    "context_window": 8192,
+    "timeout_seconds": 120,
 }
 
 

@@ -65,7 +65,11 @@
             return markOffline(fallback);
           }
         }
-        throw new Error(data.error || fallbackMessage);
+        const error = new Error(data.error || fallbackMessage);
+        error.status = response.status;
+        const retryAfter = Number(response.headers.get("Retry-After") || 0);
+        error.retryAfterSeconds = Number.isFinite(retryAfter) ? retryAfter : 0;
+        throw error;
       }
       await cacheSuccessfulJson(url, method, data);
       return response.headers.get("X-BHF-Offline") === "true"

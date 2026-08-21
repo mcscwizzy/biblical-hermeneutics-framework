@@ -110,6 +110,8 @@ def load_web_defaults(path: Path | str | None = None) -> LoadedDefaults:
             values["max_tokens"] = OPENROUTER_AI_DEFAULTS["max_tokens"]
         if "context_window" not in config_data and not os.environ.get("BHF_CONTEXT_WINDOW"):
             values["context_window"] = OPENROUTER_AI_DEFAULTS["context_window"]
+        if "timeout_seconds" not in config_data and not os.environ.get("BHF_TIMEOUT_SECONDS"):
+            values["timeout_seconds"] = OPENROUTER_AI_DEFAULTS["timeout_seconds"]
 
     try:
         return LoadedDefaults(AgentConfig.from_mapping(values), warning)

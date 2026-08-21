@@ -22,7 +22,11 @@ class AISetupConfigurationTests(unittest.TestCase):
         self.assertEqual(loaded.config.context_window, 12288)
         self.assertEqual(
             browser_ai_config()["providerDefaults"]["openrouter"],
-            {"max_tokens": 4096, "context_window": 16384},
+            {
+                "max_tokens": 1536,
+                "context_window": 8192,
+                "timeout_seconds": 120,
+            },
         )
         self.assertEqual(loaded.config.runtime_profile_mode, "compact")
         self.assertFalse(loaded.config.memory_enabled)
@@ -60,8 +64,9 @@ class AISetupConfigurationTests(unittest.TestCase):
         ):
             loaded = load_web_defaults(path=ROOT / ".missing-bhf-web-config.json")
         self.assertEqual(loaded.config.adapter, "openrouter")
-        self.assertEqual(loaded.config.max_tokens, 4096)
-        self.assertEqual(loaded.config.context_window, 16384)
+        self.assertEqual(loaded.config.max_tokens, 1536)
+        self.assertEqual(loaded.config.context_window, 8192)
+        self.assertEqual(loaded.config.timeout_seconds, 120)
 
     def test_normal_web_form_does_not_render_removed_controls(self):
         template = (ROOT / "bhf_web" / "templates" / "index.html").read_text(encoding="utf-8")

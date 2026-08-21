@@ -75,8 +75,10 @@ function renderStatus(statusPanel, status) {
   statusPanel.classList.toggle("complete", Boolean(status.done && !status.error));
   if (status.error || status.status === "error") {
     statusPanel.querySelector(".status-current").textContent = "Failed";
-  } else if (status.done) {
-    statusPanel.querySelector(".status-current").textContent = status.message;
+  } else {
+    statusPanel.querySelector(".status-current").textContent = status.done
+      ? status.message
+      : runningStatusMessage(status);
   }
 }
 
@@ -98,10 +100,20 @@ function setWaitingMessage(statusPanel) {
   if (!current) {
     return;
   }
+  if (latestStatus && !latestStatus.done && !latestStatus.error) {
+    current.textContent = runningStatusMessage(latestStatus);
+    return;
+  }
   const choices = WAITING_MESSAGES.filter((message) => message !== lastWaitingMessage);
   const message = choices[Math.floor(Math.random() * choices.length)] || WAITING_MESSAGES[0];
   current.textContent = message;
   lastWaitingMessage = message;
+}
+
+function runningStatusMessage(status) {
+  const message = String(status?.message || "Working");
+  const elapsed = Number(status?.elapsed_current_stage_seconds || 0);
+  return `${message} · ${formatSeconds(elapsed)}`;
 }
 
 function scheduleNextWaitingMessage(statusPanel) {

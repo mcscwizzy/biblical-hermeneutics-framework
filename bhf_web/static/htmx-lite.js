@@ -2,7 +2,10 @@
 // It is the central client-side controller for reader, notes, highlights,
 // map fallback, and search interactions, and the shared request helpers and
 // status helpers have already been split into separate scripts.
-const POLL_INTERVAL_MS = 750;
+const POLL_INTERVAL_MS = 2000;
+const MAX_POLL_INTERVAL_MS = 5000;
+const POLL_REQUEST_TIMEOUT_MS = 10000;
+const POLL_DEADLINE_GRACE_MS = 15000;
 const APP_SECTION_STORAGE_KEY = "bhf-app-section";
 const LEGACY_MOBILE_SECTION_STORAGE_KEY = "bhf-mobile-section";
 const BHF_RUNTIME = window.BHFRuntimeConfig || {};
@@ -5873,19 +5876,52 @@ function openMapPanel(context) {
 }
 
 async function pollJob(form, statusPanel, jobId) {
+  const configuredTimeoutSeconds = Number(
+    form.querySelector('[name="timeout_seconds"]')?.value || 120,
+  );
+  const deadline = Date.now()
+    + Math.max(30, configuredTimeoutSeconds) * 1000
+    + POLL_DEADLINE_GRACE_MS;
+  let pollInterval = POLL_INTERVAL_MS;
   while (true) {
-    const status = await requestJson(
-      form.dataset.statusBase + jobId,
-      {
-        headers: {Accept: "application/json"},
-      },
-      "Could not read request status.",
+    if (Date.now() >= deadline) {
+      throw new Error(
+        `The request exceeded its ${configuredTimeoutSeconds}-second model deadline. Try a shorter answer or another model.`,
+      );
+    }
+    const controller = new AbortController();
+    const requestTimer = window.setTimeout(
+      () => controller.abort(),
+      POLL_REQUEST_TIMEOUT_MS,
     );
+    let status;
+    try {
+      status = await requestJson(
+        form.dataset.statusBase + jobId,
+        {
+          headers: {Accept: "application/json"},
+          signal: controller.signal,
+        },
+        "Could not read request status.",
+      );
+      pollInterval = POLL_INTERVAL_MS;
+    } catch (error) {
+      if (error?.status !== 429) throw error;
+      const retryAfterMs = Number(error.retryAfterSeconds || 0) * 1000;
+      pollInterval = Math.min(
+        MAX_POLL_INTERVAL_MS,
+        Math.max(pollInterval * 2, retryAfterMs, POLL_INTERVAL_MS),
+      );
+      await delay(pollInterval);
+      continue;
+    } finally {
+      window.clearTimeout(requestTimer);
+    }
 
     renderStatus(statusPanel, status);
     if (status.done) {
       return status;
     }
-    await delay(POLL_INTERVAL_MS);
+    await delay(pollInterval);
   }
 }
