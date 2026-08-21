@@ -161,7 +161,7 @@ CKL stores canonical facts, retrieval metadata, and future scholarship in a dete
 
 The evidence expansion began with a read-only inventory and contract audit:
 
-- The authoritative inventory contains 645 validated objects across 18 object
+- The authoritative inventory contains 646 validated objects across 18 object
   categories. JSON remains the reviewable source of truth; the manifest carries
   counts and framework/schema versions.
 - `schema.py` already provided a typed canonical object, claims, structured
@@ -1001,7 +1001,19 @@ benefaction, and office comparisons. These 102 items are chronology-controlled,
 passage-linked, and source-resolvable, but AI-authored additions remain drafts
 until human review.
 
-The next focused Pauline-city expansion should prioritize Philippi.
+The Roman Philippi pass adds passage-bounded evidence for the Neapolis and Via
+Egnatia route; veteran-colony foundations and the phase-controlled forum; the
+riverside Sabbath prayer gathering; Lydia's trade, household, and hospitality;
+the unnamed enslaved diviner's religious and economic exploitation; colonial
+magistrates, lictors, punishment, custody, and citizenship; the later
+traditional prison; civic honor and imperial divine honors; bounded
+`politeuesthe` and `politeuma` comparisons; women benefactors and the named
+coworkers Euodia and Syntyche; gift partnership across varied economic levels;
+and the inability of `praetorium` or Caesar's household to settle the letter's
+provenance. These 114 items are chronology-controlled, passage-linked, and
+source-resolvable, but AI-authored additions remain drafts until human review.
+
+The next focused Pauline-city expansion should prioritize Rome.
 Cultural practices, historical institutions, literary conventions,
 geography/environment, and worldview concepts already have controlled types;
 they need source-backed, human-reviewed depth rather than generated volume.

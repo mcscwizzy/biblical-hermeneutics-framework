@@ -24,6 +24,7 @@ EXPANSION_OBJECTS = {
     "judean-pilgrimage-taxation-and-roman-power": 8,
     "roman-corinth-civic-household-and-association-life": 10,
     "roman-ephesus-civic-cultic-and-household-life": 12,
+    "roman-philippi-colonial-civic-and-household-life": 12,
 }
 
 
@@ -861,6 +862,120 @@ def test_ephesian_household_and_association_comparisons_resist_endorsement_and_i
     assert "without deriving church offices from one cult" in offices[0].passage_relevance
 
 
+def test_philippian_prison_and_colony_evidence_separates_setting_from_identification() -> None:
+    library = CanonicalLibrary.load_default()
+    prison = _rank(
+        library,
+        "roman-philippi-colonial-civic-and-household-life",
+        "Does archaeology identify Paul and Silas's prison at Philippi?",
+        "Acts 16:23-40",
+        "archaeology",
+    )
+    assert prison[0].evidence_id == "custody-and-traditional-prison"
+    assert prison[0].passage_relationship == "disputed"
+    assert prison[0].chronological_relation == "later-comparative"
+    assert "has not found Paul and Silas's prison" in prison[0].passage_relevance
+
+    colony = _rank(
+        library,
+        "roman-philippi-colonial-civic-and-household-life",
+        "What does the Roman colony and forum establish about Acts 16?",
+        "Acts 16:12",
+        "archaeology",
+        "historical setting",
+    )
+    assert colony[0].evidence_id == "philippi-roman-colony-and-forum"
+    assert colony[0].passage_relationship == "contextual"
+    assert "without assuming every recipient" in colony[0].passage_relevance
+
+
+def test_philippian_lydia_and_enslaved_diviner_evidence_centers_agency_and_exploitation() -> None:
+    library = CanonicalLibrary.load_default()
+    lydia = _rank(
+        library,
+        "roman-philippi-colonial-civic-and-household-life",
+        "Was Lydia a wealthy patron because she sold purple goods?",
+        "Acts 16:14-15",
+        "cultural practice",
+    )
+    assert lydia[0].evidence_id == "lydia-trade-household-hospitality"
+    assert lydia[0].passage_relationship == "direct"
+    assert "without converting purple trade into certain elite wealth" in lydia[0].passage_relevance
+
+    exploited = _rank(
+        library,
+        "roman-philippi-colonial-civic-and-household-life",
+        "How did owners profit from the enslaved diviner?",
+        "Acts 16:16-19",
+        "worldview",
+        "cultural practice",
+    )
+    assert exploited[0].evidence_id == "enslaved-diviner-profit-exploitation"
+    assert exploited[0].evidence_type == "worldview-concept"
+    assert "double exploitation" in exploited[0].passage_relevance
+
+
+def test_philippian_legal_and_civic_language_remains_contextual_and_nonexclusive() -> None:
+    library = CanonicalLibrary.load_default()
+    legal = _rank(
+        library,
+        "roman-philippi-colonial-civic-and-household-life",
+        "What explains the magistrates, lictors, and Roman citizenship?",
+        "Acts 16:35-40",
+        "institution",
+        "historical setting",
+    )
+    assert legal[0].evidence_id == "magistrates-lictors-and-citizenship"
+    assert legal[0].passage_relationship == "contextual"
+    assert "complete Roman legal handbook" in legal[0].passage_relevance
+
+    civic = _rank(
+        library,
+        "roman-philippi-colonial-civic-and-household-life",
+        "How do politeuesthe and politeuma resonate in a Roman colony?",
+        "Philippians 3:20-21",
+        "ancient text",
+        "historical setting",
+    )
+    assert civic[0].evidence_id == "politeuesthe-politeuma-colonial-resonance"
+    assert civic[0].passage_relationship == "direct"
+    assert "not reducing the exhortation to local politics" in civic[0].passage_relevance
+
+
+def test_philippian_women_gifts_and_provenance_resist_speculative_identifications() -> None:
+    library = CanonicalLibrary.load_default()
+    women = _rank(
+        library,
+        "roman-philippi-colonial-civic-and-household-life",
+        "Do inscriptions identify Euodia and Syntyche's offices and dispute?",
+        "Philippians 4:2-3",
+        "institution",
+    )
+    assert women[0].evidence_id == "women-public-roles-and-coworkers"
+    assert women[0].passage_relationship == "comparative"
+    assert "without deriving Christian offices from cults" in women[0].passage_relevance
+
+    gift = _rank(
+        library,
+        "roman-philippi-colonial-civic-and-household-life",
+        "Was the Philippians' gift patronage, friendship, or partnership?",
+        "Philippians 4:10-20",
+        "cultural practice",
+    )
+    assert gift[0].evidence_id == "gift-partnership-and-economic-range"
+    assert "without assigning every gift to Lydia" in gift[0].passage_relevance
+
+    provenance = _rank(
+        library,
+        "roman-philippi-colonial-civic-and-household-life",
+        "Do praetorium and Caesar's household prove that Paul wrote from Rome?",
+        "Philippians 1:13",
+        "ancient text",
+    )
+    assert provenance[0].evidence_id == "praetorium-caesars-household-provenance-limit"
+    assert "prevent praetorium from automatically meaning Rome's Praetorian Guard" in provenance[0].passage_relevance
+
+
 def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
     library = CanonicalLibrary.load_default()
     flood = library.objects_by_id["the-flood"]
@@ -909,6 +1024,8 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
     patronage = library.objects_by_id["patronage"]
     lords_supper = library.objects_by_id["lords-supper"]
     ephesus = library.objects_by_id["ephesus"]
+    philippi = library.objects_by_id["philippi"]
+    lydia = library.objects_by_id["lydia"]
     assert flood.scripture_references[0].reference == "Genesis 6:1-22"
     assert all(reference.reference != "Genesis 11:1-9" for reference in flood.scripture_references)
     assert thessalonica.scripture_references[0].reference == "Acts 17:1-9"
@@ -1034,6 +1151,32 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
         relationship.id for relationship in ephesus.related_objects
     }
     assert "textually disputed" in ephesus.summary
+    assert philippi.scripture_references[0].reference == "Acts 16:11-15"
+    assert all(
+        not reference.reference.startswith(("Matthew", "Mark", "Luke", "John"))
+        for reference in philippi.scripture_references
+    )
+    assert philippi.context_applicability["ancient_near_east"] is False
+    assert philippi.context_applicability["second_temple"] is True
+    assert "roman-philippi-colonial-civic-and-household-life" in {
+        relationship.id for relationship in philippi.related_objects
+    }
+    assert any(
+        "Caesarea Philippi" in item
+        for item in philippi.hermeneutical_lens["common_misinterpretations"]
+    )
+    assert [reference.reference for reference in lydia.scripture_references] == [
+        "Acts 16:14-15",
+        "Acts 16:40",
+    ]
+    assert lydia.context_applicability["ancient_near_east"] is False
+    assert "roman-philippi-colonial-civic-and-household-life" in {
+        relationship.id for relationship in lydia.related_objects
+    }
+    assert all(
+        "Canonical Knowledge Library" not in {source.publisher for source in obj.sources}
+        for obj in (philippi, lydia)
+    )
 
     context_fields = {
         "historical": "historical_context",
@@ -1052,13 +1195,13 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
 def test_corpus_evidence_quality_metrics_have_no_structural_failures() -> None:
     library = CanonicalLibrary.load_default()
     report = audit_evidence(library.objects_by_id.values())
-    assert report["evidence_count"] == 102
-    assert report["evidence_with_primary_sources_count"] == 101
-    assert report["evidence_with_academic_secondary_sources_count"] == 97
-    assert report["evidence_with_chronology_count"] == 102
-    assert report["evidence_with_passage_relevance_count"] == 102
-    assert report["disputed_evidence_count"] == 91
-    assert report["worldview_evidence_count"] == 7
+    assert report["evidence_count"] == 114
+    assert report["evidence_with_primary_sources_count"] == 113
+    assert report["evidence_with_academic_secondary_sources_count"] == 109
+    assert report["evidence_with_chronology_count"] == 114
+    assert report["evidence_with_passage_relevance_count"] == 114
+    assert report["disputed_evidence_count"] == 103
+    assert report["worldview_evidence_count"] == 8
     assert report["archaeology_linked_evidence_count"] == 20
     assert report["internal_source_only_evidence_count"] == 0
     assert report["missing_source_locator_count"] == 0

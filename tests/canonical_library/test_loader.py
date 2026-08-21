@@ -33,14 +33,14 @@ class CanonicalLoaderTests(unittest.TestCase):
             "timeline": 1,
             "covenants": 1,
             "biblical_theology": 1,
-            "cultural_background": 26,
+            "cultural_background": 27,
             "symbols": 1,
             "literary_devices": 1,
             "doctrine": 1,
         }
 
-        self.assertEqual(len(library.objects_by_id), 645)
-        self.assertEqual(library.manifest["object_count"], 645)
+        self.assertEqual(len(library.objects_by_id), 646)
+        self.assertEqual(library.manifest["object_count"], 646)
         self.assertEqual(library.manifest["framework_version"], "1.0")
         self.assertEqual(library.manifest["schema_version"], "1.0")
         self.assertEqual(library.manifest["categories"], expected_categories)
