@@ -115,6 +115,7 @@ def _failed_stage_for_category(category: str | None) -> str:
         "provider_timeout": "waiting_for_model_response",
         "provider_connection": "connecting_to_model_backend",
         "provider_failure": "waiting_for_model_response",
+        "provider_rate_limit": "waiting_for_model_response",
         "response_extraction": "extracting_model_response",
         "response_normalization": "normalizing_model_response",
         "response_validation": "validating_model_response",
@@ -129,6 +130,8 @@ def _infer_error_category(errors: list[str]) -> str:
         return "provider_timeout"
     if "could not connect" in text or "connection refused" in text:
         return "provider_connection"
+    if "http 429" in text or "rate limit" in text or "too many requests" in text:
+        return "provider_rate_limit"
     if "http " in text or "endpoint request failed" in text:
         return "provider_failure"
     return "provider_failure"
@@ -2607,6 +2610,13 @@ class BHFAgent:
             ctx.debug_metadata["failed_stage"] = _failed_stage_for_category(
                 category
             )
+            if (
+                category == "provider_rate_limit"
+                and isinstance(chat_response.raw_provider_response, dict)
+            ):
+                ctx.debug_metadata["provider_rate_limit_diagnostics"] = (
+                    chat_response.raw_provider_response
+                )
         if chat_response.errors and not bool(ctx.debug_metadata.get("ckl_context_injected")):
             ctx.raw_answer_text = ""
         if chat_response.provider:
@@ -2742,6 +2752,13 @@ class BHFAgent:
             )
             ctx.debug_metadata["error_category"] = category
             ctx.debug_metadata["failed_stage"] = _failed_stage_for_category(category)
+            if (
+                category == "provider_rate_limit"
+                and isinstance(chat_response.raw_provider_response, dict)
+            ):
+                ctx.debug_metadata["provider_rate_limit_diagnostics"] = (
+                    chat_response.raw_provider_response
+                )
 
         response_validation = self._apply_model_response_validation(
             ctx,
@@ -3084,6 +3101,7 @@ class BHFAgent:
             "provider_timeout",
             "provider_connection",
             "provider_failure",
+            "provider_rate_limit",
             "response_extraction",
             "response_normalization",
             "response_validation",
@@ -3258,6 +3276,15 @@ class BHFAgent:
                 "validation_score": ctx.validation_result.score if ctx.validation_result else None,
                 "request_duration_ms": request_duration_ms,
             }
+            error_category = ctx.debug_metadata.get("error_category")
+            if error_category:
+                record["error_category"] = error_category
+                record["failed_stage"] = ctx.debug_metadata.get("failed_stage")
+            rate_limit_diagnostics = ctx.debug_metadata.get(
+                "provider_rate_limit_diagnostics"
+            )
+            if isinstance(rate_limit_diagnostics, dict):
+                record["provider_rate_limit_diagnostics"] = rate_limit_diagnostics
 
             if error is not None:
                 record["error_type"] = error.__class__.__name__

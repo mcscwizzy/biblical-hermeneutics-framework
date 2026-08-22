@@ -15,7 +15,7 @@ services:
     environment:
       LLM_PROVIDER: "${LLM_PROVIDER:-openrouter}"
       BHF_BASE_URL: "${BHF_BASE_URL:-https://openrouter.ai/api/v1}"
-      BHF_MODEL: "${BHF_MODEL:-google/gemma-4-26b-a4b-it:free}"
+      BHF_MODEL: "${BHF_MODEL:-openrouter/free}"
       BHF_API_KEY: "${BHF_API_KEY:-}"
       BHF_PROFILE: "${BHF_PROFILE:-standard}"
       BHF_ANSWER_MODE: "${BHF_ANSWER_MODE:-study}"

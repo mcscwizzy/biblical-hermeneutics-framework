@@ -113,9 +113,11 @@ class ErrorRecordingAdapter(ChatAdapter):
         error_message: str = "OpenAI-compatible endpoint timed out: timed out",
         *,
         error_category: str | None = None,
+        raw_provider_response: object | None = None,
     ) -> None:
         self.error_message = error_message
         self.error_category = error_category
+        self.raw_provider_response = raw_provider_response
         self.request: ChatRequest | None = None
 
     def chat(self, request: ChatRequest) -> ChatResponse:
@@ -123,7 +125,11 @@ class ErrorRecordingAdapter(ChatAdapter):
         return ChatResponse(
             text="",
             model="fake-model",
-            raw_provider_response={"error": self.error_message},
+            raw_provider_response=(
+                self.raw_provider_response
+                if self.raw_provider_response is not None
+                else {"error": self.error_message}
+            ),
             error_category=self.error_category,
             errors=[self.error_message],
         )
@@ -446,6 +452,54 @@ class RunnerTests(unittest.TestCase):
         self.assertTrue(result.fatal_errors)
         self.assertEqual(result.error_category, "provider_timeout")
         self.assertEqual(result.failed_stage, "waiting_for_model_response")
+
+    def test_provider_rate_limit_is_fatal_and_preserves_primary_error(self):
+        provider_error = (
+            "OpenRouter request failed: HTTP 429: "
+            "Free-model daily request limit reached."
+        )
+        diagnostics = {
+            "error": {"message": "Free-model daily request limit reached."},
+            "rate_limit": {
+                "kind": "quota_exhausted",
+                "scope": "openrouter_account",
+                "retryable": False,
+            },
+        }
+        agent = self.make_agent(
+            ErrorRecordingAdapter(
+                provider_error,
+                error_category="provider_rate_limit",
+                raw_provider_response=diagnostics,
+            ),
+            observability=ObservabilityConfig(
+                enabled=True,
+                verbose=False,
+                redact_sensitive=True,
+            ),
+        )
+        with self.assertLogs("bhf_agent.observability", level="INFO") as captured:
+            result = agent.ask("What does Proverbs 3 mean?")
+
+        self.assertEqual(result.answer_text, "")
+        self.assertEqual(result.errors, [provider_error])
+        self.assertEqual(result.fatal_errors, [provider_error])
+        self.assertEqual(result.error_category, "provider_rate_limit")
+        self.assertEqual(result.failed_stage, "waiting_for_model_response")
+        self.assertEqual(
+            result.model_metadata["pipeline"]["error_category"],
+            "provider_rate_limit",
+        )
+        self.assertEqual(
+            result.model_metadata["pipeline"]["provider_rate_limit_diagnostics"],
+            diagnostics,
+        )
+        log_record = json.loads(captured.records[0].getMessage())
+        self.assertEqual(log_record["error_category"], "provider_rate_limit")
+        self.assertEqual(
+            log_record["provider_rate_limit_diagnostics"],
+            diagnostics,
+        )
 
     def test_status_callback_receives_ordered_pipeline_events(self):
         events = []

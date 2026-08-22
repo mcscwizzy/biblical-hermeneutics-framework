@@ -106,6 +106,8 @@ def load_web_defaults(path: Path | str | None = None) -> LoadedDefaults:
         warning = "; ".join(item for item in (warning, env_warning) if item)
 
     if values.get("adapter") == "openrouter":
+        if "model" not in config_data and not os.environ.get("BHF_MODEL"):
+            values["model"] = DEFAULT_OPENROUTER_MODEL
         if "max_tokens" not in config_data and not os.environ.get("BHF_MAX_TOKENS"):
             values["max_tokens"] = OPENROUTER_AI_DEFAULTS["max_tokens"]
         if "context_window" not in config_data and not os.environ.get("BHF_CONTEXT_WINDOW"):
@@ -155,9 +157,17 @@ def config_from_form(
 
     base = defaults or load_web_defaults().config
     adapter = _optional_text(form, "adapter") or base.adapter
-    model = _optional_text(form, "model") or (
-        DEFAULT_OPENROUTER_MODEL if adapter == "openrouter" else base.model
-    )
+    selected_model = _optional_text(form, "model")
+    if selected_model:
+        model = selected_model
+    elif adapter == "openrouter":
+        model = (
+            base.model
+            if base.adapter == "openrouter" and str(base.model or "").strip()
+            else DEFAULT_OPENROUTER_MODEL
+        )
+    else:
+        model = base.model
     response_format_policy = (
         _optional_text(form, "response_format_policy")
         or base.response_format_policy

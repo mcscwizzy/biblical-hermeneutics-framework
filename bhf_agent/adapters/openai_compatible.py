@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import socket
 import time
 import urllib.error
@@ -85,9 +86,20 @@ class OpenAICompatibleAdapter(ChatAdapter):
                     raw_body = response.read().decode("utf-8")
                 break
             except urllib.error.HTTPError as exc:
-                error_body = _safe_read_error(exc)
+                error_detail, error_diagnostics = _safe_read_error(exc)
+                rate_limit = (
+                    _classify_rate_limit(
+                        error_detail,
+                        exc.headers,
+                        error_diagnostics,
+                        requested_model=request.model,
+                    )
+                    if exc.code == 429
+                    else None
+                )
                 if (
                     exc.code == 429
+                    and _should_retry_rate_limit(rate_limit)
                     and rate_limit_retries < self.max_rate_limit_retries
                 ):
                     delay = _rate_limit_retry_delay(
@@ -100,17 +112,28 @@ class OpenAICompatibleAdapter(ChatAdapter):
                     time.sleep(delay)
                     continue
                 hint = _http_error_hint(exc.code, self.base_url)
-                provider_label = self.provider_name.replace("_", " ").title()
+                provider_label = _provider_label(self.provider_name)
+                if rate_limit is not None:
+                    error_diagnostics["rate_limit"] = rate_limit
+                    error_diagnostics["requested_model"] = request.model
+                    rate_limit_context = _format_rate_limit_context(rate_limit)
+                else:
+                    rate_limit_context = ""
                 return ChatResponse(
                     text="",
                     provider=self.provider_name,
                     latency_ms=_elapsed_ms(started_at),
                     errors=[
                         f"{provider_label} request failed: HTTP {exc.code}: "
-                        f"{_friendly_http_error(exc.code, error_body, exc.reason)}{hint}"
+                        f"{_friendly_http_error(exc.code, error_detail, exc.reason)}"
+                        f"{rate_limit_context}{hint}"
                     ],
-                    raw_provider_response=error_body,
-                    error_category="provider_failure",
+                    raw_provider_response=error_diagnostics,
+                    error_category=(
+                        "provider_rate_limit"
+                        if exc.code == 429
+                        else "provider_failure"
+                    ),
                 )
             except (TimeoutError, socket.timeout) as exc:
                 return ChatResponse(
@@ -224,25 +247,370 @@ class OpenAICompatibleAdapter(ChatAdapter):
         return headers
 
 
-def _safe_read_error(exc: urllib.error.HTTPError) -> str:
+def _safe_read_error(exc: urllib.error.HTTPError) -> tuple[str, dict[str, Any]]:
+    """Return a display-safe reason and structured provider diagnostics."""
+
+    safe_headers = _safe_response_headers(exc.headers)
     try:
         raw = exc.read().decode("utf-8", errors="replace")
         try:
             payload = json.loads(raw)
         except json.JSONDecodeError:
-            return ""
+            detail = _sanitize_provider_detail(raw) if raw.strip() else ""
+            diagnostics: dict[str, Any] = {"error": {"message": detail}}
+            if safe_headers:
+                diagnostics["response_headers"] = safe_headers
+            return detail, diagnostics
         if isinstance(payload, dict):
-            error = payload.get("error")
-            if isinstance(error, dict):
-                message = error.get("message") or error.get("code")
-                return str(message)[:240] if message else ""
-            if isinstance(error, str):
-                return error[:240]
-        return ""
+            diagnostics = _safe_error_diagnostics(payload, safe_headers)
+            detail = _error_detail_from_diagnostics(diagnostics)
+            return detail, diagnostics
+        diagnostics = {"error": {"message": ""}}
+        if safe_headers:
+            diagnostics["response_headers"] = safe_headers
+        return "", diagnostics
     except Exception:
-        return ""
+        diagnostics = {"error": {"message": ""}}
+        if safe_headers:
+            diagnostics["response_headers"] = safe_headers
+        return "", diagnostics
     finally:
         exc.close()
+
+
+def _sanitize_provider_detail(detail: object) -> str:
+    """Keep a short provider message while redacting common credential forms."""
+
+    message = str(detail).strip()[:240]
+    message = re.sub(r"(?i)\bbearer\s+[^\s,;]+", "Bearer [redacted]", message)
+    message = re.sub(
+        r"(?i)\b(authorization|api[-_ ]?key|access[-_ ]?token)\b\s*[:=]\s*[^\s,;]+",
+        r"\1: [redacted]",
+        message,
+    )
+    message = re.sub(r"\bsk-[A-Za-z0-9_-]{8,}\b", "[redacted]", message)
+    return message
+
+
+def _safe_response_headers(headers: Any) -> dict[str, str]:
+    """Keep only non-secret response headers useful for rate-limit diagnosis."""
+
+    if not headers:
+        return {}
+    safe: dict[str, str] = {}
+    try:
+        items = headers.items()
+    except AttributeError:
+        return safe
+    for name, value in items:
+        normalized = str(name).strip().lower()
+        if normalized in {
+            "retry-after",
+            "x-generation-id",
+            "x-request-id",
+            "x-openrouter-request-id",
+        } or "ratelimit" in normalized or "rate-limit" in normalized:
+            safe[str(name)] = _sanitize_provider_detail(value)
+    return safe
+
+
+def _safe_error_diagnostics(
+    payload: dict[str, Any],
+    safe_headers: dict[str, str],
+) -> dict[str, Any]:
+    diagnostics: dict[str, Any] = {}
+    error = payload.get("error")
+    safe_error: dict[str, Any] = {}
+    if isinstance(error, dict):
+        for key in ("code", "type", "param"):
+            value = error.get(key)
+            if isinstance(value, (str, int, float, bool)):
+                safe_error[key] = (
+                    _sanitize_provider_detail(value) if isinstance(value, str) else value
+                )
+        message = error.get("message")
+        if message:
+            safe_error["message"] = _sanitize_provider_detail(message)
+        metadata = _safe_error_metadata(error.get("metadata"))
+        if metadata:
+            safe_error["metadata"] = metadata
+    elif isinstance(error, str):
+        safe_error["message"] = _sanitize_provider_detail(error)
+    else:
+        message = payload.get("message")
+        if message:
+            safe_error["message"] = _sanitize_provider_detail(message)
+    diagnostics["error"] = safe_error or {"message": ""}
+
+    router_metadata = _safe_openrouter_metadata(payload.get("openrouter_metadata"))
+    if router_metadata:
+        diagnostics["openrouter_metadata"] = router_metadata
+    if safe_headers:
+        diagnostics["response_headers"] = safe_headers
+    return diagnostics
+
+
+def _safe_error_metadata(metadata: Any) -> dict[str, Any]:
+    if not isinstance(metadata, dict):
+        return {}
+    safe: dict[str, Any] = {}
+    for key in ("provider_name", "provider", "model", "status", "status_code"):
+        value = metadata.get(key)
+        if isinstance(value, (str, int, float, bool)):
+            safe[key] = _sanitize_provider_detail(value) if isinstance(value, str) else value
+
+    upstream_error = _safe_upstream_error(metadata.get("raw"))
+    if upstream_error:
+        safe["upstream_error"] = upstream_error
+    metadata_headers = _safe_response_headers(metadata.get("headers"))
+    if metadata_headers:
+        safe["response_headers"] = metadata_headers
+    return safe
+
+
+def _safe_upstream_error(raw: Any) -> dict[str, Any]:
+    if raw is None:
+        return {}
+    parsed = raw
+    if isinstance(raw, str):
+        try:
+            parsed = json.loads(raw)
+        except json.JSONDecodeError:
+            message = _sanitize_provider_detail(raw)
+            return {"message": message} if message else {}
+    if not isinstance(parsed, dict):
+        return {}
+    error = parsed.get("error", parsed)
+    if isinstance(error, dict):
+        safe: dict[str, Any] = {}
+        code = error.get("code")
+        if isinstance(code, (str, int, float)):
+            safe["code"] = _sanitize_provider_detail(code) if isinstance(code, str) else code
+        message = error.get("message") or error.get("detail")
+        if message:
+            safe["message"] = _sanitize_provider_detail(message)
+        return safe
+    if isinstance(error, str):
+        return {"message": _sanitize_provider_detail(error)}
+    return {}
+
+
+def _safe_openrouter_metadata(metadata: Any) -> dict[str, Any]:
+    """Summarize routing metadata without retaining prompts or provider headers."""
+
+    if not isinstance(metadata, dict):
+        return {}
+    safe: dict[str, Any] = {}
+    for key in ("requested", "strategy", "attempt"):
+        value = metadata.get(key)
+        if isinstance(value, (str, int, float, bool)):
+            safe[key] = _sanitize_provider_detail(value) if isinstance(value, str) else value
+
+    attempts = _safe_routing_entries(metadata.get("attempts"))
+    if attempts:
+        safe["attempts"] = attempts
+    endpoints = metadata.get("endpoints")
+    if isinstance(endpoints, dict):
+        available = _safe_routing_entries(endpoints.get("available"))
+        safe_endpoints: dict[str, Any] = {}
+        if isinstance(endpoints.get("total"), int):
+            safe_endpoints["total"] = endpoints["total"]
+        if available:
+            safe_endpoints["available"] = available
+        if safe_endpoints:
+            safe["endpoints"] = safe_endpoints
+    return safe
+
+
+def _safe_routing_entries(entries: Any) -> list[dict[str, Any]]:
+    if not isinstance(entries, list):
+        return []
+    safe_entries: list[dict[str, Any]] = []
+    for entry in entries[:10]:
+        if not isinstance(entry, dict):
+            continue
+        safe_entry: dict[str, Any] = {}
+        for key in (
+            "provider",
+            "provider_name",
+            "model",
+            "status",
+            "status_code",
+            "code",
+            "selected",
+        ):
+            value = entry.get(key)
+            if isinstance(value, (str, int, float, bool)):
+                safe_entry[key] = (
+                    _sanitize_provider_detail(value) if isinstance(value, str) else value
+                )
+        error = entry.get("error")
+        if isinstance(error, dict):
+            message = error.get("message") or error.get("detail")
+            if message:
+                safe_entry["error"] = _sanitize_provider_detail(message)
+        elif isinstance(error, str):
+            safe_entry["error"] = _sanitize_provider_detail(error)
+        if safe_entry:
+            safe_entries.append(safe_entry)
+    return safe_entries
+
+
+def _error_detail_from_diagnostics(diagnostics: dict[str, Any]) -> str:
+    error = diagnostics.get("error")
+    if not isinstance(error, dict):
+        return ""
+    detail = str(error.get("message") or error.get("code") or "").strip()
+    metadata = error.get("metadata")
+    upstream_error = metadata.get("upstream_error") if isinstance(metadata, dict) else None
+    upstream_detail = (
+        str(upstream_error.get("message") or upstream_error.get("code") or "").strip()
+        if isinstance(upstream_error, dict)
+        else ""
+    )
+    if upstream_detail and upstream_detail.lower() not in detail.lower():
+        if detail:
+            return f"{detail} Upstream provider reason: {upstream_detail}"
+        return upstream_detail
+    return detail
+
+
+def _provider_label(provider_name: str) -> str:
+    if provider_name.strip().lower() == "openrouter":
+        return "OpenRouter"
+    return provider_name.replace("_", " ").title()
+
+
+def _classify_rate_limit(
+    detail: str,
+    headers: Any,
+    diagnostics: dict[str, Any],
+    *,
+    requested_model: str,
+) -> dict[str, Any]:
+    """Classify 429 origin conservatively, favoring provider routing evidence."""
+
+    normalized = " ".join(str(detail or "").lower().replace("-", " ").split())
+    provider_names = _rate_limit_provider_names(diagnostics)
+    upstream_evidence = bool(provider_names) or "upstream provider" in normalized
+    is_free_model = requested_model.lower().endswith(":free")
+    capacity_markers = (
+        "capacity",
+        "overloaded",
+        "provider busy",
+        "temporarily throttled",
+        "temporarily unavailable",
+    )
+    account_markers = ("account", "workspace", "organization", "credits", "credit balance")
+    api_key_markers = ("api key", "per key", "key quota", "key limit")
+    daily_free_quota = any(
+        marker in normalized
+        for marker in (
+            "free model daily request limit",
+            "daily free model limit",
+            "free model requests per day",
+        )
+    )
+    quota_markers = (
+        "quota",
+        "daily limit",
+        "free model limit",
+        "free tier",
+        "requests per day",
+        "request per day",
+        "allowance exhausted",
+        "exhausted allowance",
+    )
+
+    if upstream_evidence:
+        scope = (
+            "free_model_provider_capacity"
+            if is_free_model and any(marker in normalized for marker in capacity_markers)
+            else "upstream_provider"
+        )
+        kind = "transient_rate_limit"
+        retryable = True
+    elif any(marker in normalized for marker in api_key_markers):
+        scope = "openrouter_api_key"
+        kind = "quota_exhausted"
+        retryable = False
+    elif daily_free_quota or any(marker in normalized for marker in account_markers):
+        scope = "openrouter_account"
+        kind = "quota_exhausted"
+        retryable = False
+    elif any(marker in normalized for marker in capacity_markers):
+        scope = "free_model_provider_capacity" if is_free_model else "upstream_provider"
+        kind = "transient_rate_limit"
+        retryable = True
+    elif any(marker in normalized for marker in quota_markers):
+        scope = "unknown"
+        kind = "quota_exhausted"
+        retryable = False
+    elif (
+        "rate limit" in normalized
+        or "too many requests" in normalized
+        or (headers and headers.get("Retry-After") is not None)
+    ):
+        scope = "unknown"
+        kind = "transient_rate_limit"
+        retryable = True
+    else:
+        scope = "unknown"
+        kind = "unknown_rate_limit"
+        retryable = True
+
+    result: dict[str, Any] = {
+        "kind": kind,
+        "scope": scope,
+        "retryable": retryable,
+        "model": requested_model,
+    }
+    if provider_names:
+        result["providers"] = provider_names
+    return result
+
+
+def _rate_limit_provider_names(diagnostics: dict[str, Any]) -> list[str]:
+    names: list[str] = []
+    error = diagnostics.get("error")
+    metadata = error.get("metadata") if isinstance(error, dict) else None
+    if isinstance(metadata, dict):
+        for key in ("provider_name", "provider"):
+            value = metadata.get(key)
+            if value and str(value) not in names:
+                names.append(str(value))
+    router = diagnostics.get("openrouter_metadata")
+    if isinstance(router, dict):
+        for entry in router.get("attempts") or []:
+            if not isinstance(entry, dict):
+                continue
+            value = entry.get("provider_name") or entry.get("provider")
+            if value and str(value) not in names:
+                names.append(str(value))
+    return [name[:80] for name in names[:5]]
+
+
+def _should_retry_rate_limit(rate_limit: dict[str, Any] | None) -> bool:
+    return bool(rate_limit and rate_limit.get("retryable"))
+
+
+def _format_rate_limit_context(rate_limit: dict[str, Any]) -> str:
+    scope_labels = {
+        "openrouter_account": "OpenRouter account/free-tier quota",
+        "openrouter_api_key": "OpenRouter API-key quota",
+        "upstream_provider": "upstream provider",
+        "free_model_provider_capacity": "free-model upstream provider/capacity",
+        "unknown": "undetermined",
+    }
+    source = scope_labels.get(str(rate_limit.get("scope")), "undetermined")
+    providers = ", ".join(str(value) for value in rate_limit.get("providers") or [])
+    model = str(rate_limit.get("model") or "").strip()
+    details = [f"rate-limit source: {source}"]
+    if providers:
+        details.append(f"provider: {providers}")
+    if model:
+        details.append(f"model: {model}")
+    return f" ({'; '.join(details)})"
 
 
 def _rate_limit_retry_delay(
@@ -273,6 +641,8 @@ def _rate_limit_retry_delay(
 
 
 def _friendly_http_error(status_code: int, detail: str, reason: object) -> str:
+    if detail:
+        return detail
     if status_code == 401:
         return "the saved credential was rejected"
     if status_code == 402:

@@ -221,7 +221,7 @@
     }
     for (const [name, key] of [["max_tokens", "maxTokens"], ["context_window", "contextWindow"], ["timeout_seconds", "timeoutSeconds"]]) {
       const field = providerInput(form, name);
-      if (field && (!field.value || field.dataset.modelSettingsManaged === "true")) {
+      if (field) {
         field.value = saved[key];
         field.dataset.modelSettingsManaged = "true";
       }
@@ -628,7 +628,9 @@
     if (!form) return;
     providerInput(form, "adapter")?.addEventListener("change", async () => {
       await readyPromise;
-      updateSettingsFromForm(form);
+      settings.activeProvider = currentProvider(form);
+      settings.onboardingComplete = true;
+      settings.setupChoice = "provider";
       renderProviderState(form);
       await writeSettings();
     });

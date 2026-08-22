@@ -117,6 +117,32 @@ class OpenAICompatibleAdapterTests(unittest.TestCase):
         self.assertEqual(response.text, "")
         self.assertIn("HTTP 500", response.errors[0])
 
+    def test_http_error_preserves_provider_detail_without_exposing_api_key(self):
+        def fake_urlopen(request, timeout=None):
+            raise urllib.error.HTTPError(
+                request.full_url,
+                401,
+                "unauthorized",
+                hdrs=None,
+                fp=FakeHTTPResponse(
+                    b'{"error":{"message":"Invalid API key sk-secretvalue123 for account."}}'
+                ),
+            )
+
+        adapter = OpenAICompatibleAdapter("http://localhost:1234/v1")
+        request = ChatRequest("system", "user", "local-model")
+
+        with patch("urllib.request.urlopen", fake_urlopen):
+            response = adapter.chat(request)
+
+        self.assertEqual(response.error_category, "provider_failure")
+        self.assertIn("Invalid API key [redacted] for account.", response.errors[0])
+        self.assertNotIn("sk-secretvalue123", response.errors[0])
+        self.assertNotIn(
+            "sk-secretvalue123",
+            json.dumps(response.raw_provider_response),
+        )
+
     def test_timeout_returns_chat_response_error(self):
         def fake_urlopen(request, timeout=None):
             raise socket.timeout("timed out")

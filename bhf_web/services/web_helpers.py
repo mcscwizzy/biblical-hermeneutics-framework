@@ -278,6 +278,7 @@ FATAL_ERROR_CATEGORIES = {
     "provider_timeout",
     "provider_connection",
     "provider_failure",
+    "provider_rate_limit",
     "response_extraction",
     "response_normalization",
     "response_validation",
@@ -303,7 +304,11 @@ def result_has_fatal_error(result: Any) -> bool:
         return False
     metadata = getattr(result, "model_metadata", {}) or {}
     pipeline = metadata.get("pipeline", {}) if isinstance(metadata, dict) else {}
-    category = str(pipeline.get("error_category", "")).strip().lower()
+    category = str(
+        getattr(result, "error_category", None)
+        or metadata.get("error_category")
+        or pipeline.get("error_category", "")
+    ).strip().lower()
     if category in FATAL_ERROR_CATEGORIES or not answer_text:
         return True
     fatal_markers = ("timed out", "timeout", "invalid model output", "no extractable answer", "provider connection", "provider failure")
@@ -314,11 +319,17 @@ def agent_error_status_code(result: Any) -> int:
     """Map controlled agent failures to an HTTP status without exposing internals."""
 
     metadata = getattr(result, "model_metadata", {}) or {}
-    category = str(metadata.get("error_category") or "").strip().lower()
+    category = str(
+        getattr(result, "error_category", None)
+        or metadata.get("error_category")
+        or ""
+    ).strip().lower()
     pipeline = metadata.get("pipeline") if isinstance(metadata.get("pipeline"), dict) else {}
     category = category or str(pipeline.get("error_category") or "").strip().lower()
     errors = " ".join(str(error) for error in (getattr(result, "fatal_errors", None) or getattr(result, "errors", None) or []))
     lowered = f"{category} {errors}".lower()
+    if category == "provider_rate_limit" or "http 429" in lowered:
+        return 429
     if category in {
         "response_extraction",
         "response_normalization",

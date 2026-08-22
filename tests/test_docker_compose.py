@@ -18,7 +18,7 @@ class DockerComposeTests(unittest.TestCase):
 
         self.assertEqual(web["environment"]["LLM_PROVIDER"], "${LLM_PROVIDER:-openrouter}")
         self.assertEqual(web["environment"]["BHF_BASE_URL"], "${BHF_BASE_URL:-https://openrouter.ai/api/v1}")
-        self.assertEqual(web["environment"]["BHF_MODEL"], "${BHF_MODEL:-google/gemma-4-26b-a4b-it:free}")
+        self.assertEqual(web["environment"]["BHF_MODEL"], "${BHF_MODEL:-openrouter/free}")
         self.assertNotIn("depends_on", web)
         self.assertEqual(web["ports"], ["${BHF_HTTP_PORT:-8080}:8080"])
         self.assertNotIn("expose", web)

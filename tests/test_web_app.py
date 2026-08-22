@@ -2891,6 +2891,26 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("timed out", result["body"])
         self.assertIn("failed during waiting for model response", result["body"])
 
+    def test_ask_job_surfaces_provider_rate_limit_with_http_429(self):
+        with patch("bhf_web.app.BHFAgent", RateLimitAgent):
+            response = asgi_request("POST", "/ask/jobs", data=_valid_form())
+
+        self.assertEqual(response["status"], 202)
+        job = json.loads(response["body"])
+        status = wait_for_job(job["job_id"])
+
+        self.assertTrue(status["done"])
+        self.assertEqual(status["error_category"], "provider_rate_limit")
+        self.assertEqual(status["status_code"], 429)
+        self.assertEqual(status["failed_stage"], "waiting_for_model_response")
+        self.assertIn("Free-model daily request limit reached.", status["error"])
+        self.assertIn("OpenRouter account/free-tier quota", status["error"])
+
+        result = asgi_request("GET", f"/ask/result/{job['job_id']}")
+        self.assertEqual(result["status"], 429)
+        self.assertIn("Free-model daily request limit reached.", result["body"])
+        self.assertIn("failed during waiting for model response", result["body"])
+
     def test_ask_job_maps_invalid_model_output_to_unprocessable_entity(self):
         with patch("bhf_web.app.BHFAgent", InvalidOutputAgent):
             response = asgi_request("POST", "/ask/jobs", data=_valid_form())
@@ -2982,6 +3002,25 @@ class InvalidOutputAgent(FakeAgent):
             errors=["Invalid model output: Model response JSON contained no extractable answer text."],
             answer_text="",
             pipeline_overrides={"error_category": "invalid_model_output"},
+        )
+
+
+class RateLimitAgent(FakeAgent):
+    def ask(self, question, status_callback=None, canonical_fact_packet=None):
+        provider_error = (
+            "OpenRouter request failed: HTTP 429: "
+            "Free-model daily request limit reached. "
+            "(rate-limit source: OpenRouter account/free-tier quota; "
+            "model: google/gemma-4-26b-a4b-it:free)"
+        )
+        return fake_result(
+            self.config,
+            errors=[provider_error],
+            answer_text="",
+            pipeline_overrides={
+                "error_category": "provider_rate_limit",
+                "failed_stage": "waiting_for_model_response",
+            },
         )
 
 

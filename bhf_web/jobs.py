@@ -98,6 +98,7 @@ class AskJob:
     history: list[StatusEntry] = field(default_factory=list)
     done: bool = False
     error: str | None = None
+    error_category: str | None = None
     failed_stage: str | None = None
     result: Any = None
     reader_reference: str | None = None
@@ -153,11 +154,13 @@ class AskJob:
         error: str,
         status_code: int = 400,
         failed_stage: str | None = None,
+        error_category: str | None = None,
     ) -> None:
         if self.done:
             return
         self.failed_stage = failed_stage or self.stage
         self.error = error
+        self.error_category = error_category
         self.status_code = status_code
         self.stage = "failed"
         self.message = f"Failed: {error}"
@@ -208,6 +211,8 @@ class AskJob:
             "history": [entry.to_dict() for entry in self.history],
             "done": self.done,
             "error": self.error,
+            "error_category": self.error_category,
+            "status_code": self.status_code,
             "failed_stage": self.failed_stage,
             "percent_complete": self.percent_complete,
             "elapsed_total_seconds": round(elapsed_total, 1),
@@ -451,6 +456,7 @@ def _job_payload(job: AskJob) -> dict[str, Any]:
         "history": [entry.to_dict() for entry in job.history],
         "done": job.done,
         "error": job.error,
+        "error_category": job.error_category,
         "failed_stage": job.failed_stage,
         "result": _result_payload(job.result),
         "reader_reference": job.reader_reference,
@@ -492,6 +498,11 @@ def _job_from_payload(payload: Mapping[str, Any]) -> AskJob:
         history=history,
         done=bool(payload.get("done")),
         error=str(payload["error"]) if payload.get("error") is not None else None,
+        error_category=(
+            str(payload["error_category"])
+            if payload.get("error_category") is not None
+            else None
+        ),
         failed_stage=(
             str(payload["failed_stage"])
             if payload.get("failed_stage") is not None
@@ -505,7 +516,11 @@ def _job_from_payload(payload: Mapping[str, Any]) -> AskJob:
         ),
         study_type=str(payload["study_type"]) if payload.get("study_type") is not None else None,
         question=str(payload["question"]) if payload.get("question") is not None else None,
-        study_context=dict(payload.get("study_context")) if isinstance(payload.get("study_context"), Mapping) else None,
+        study_context=(
+            dict(payload.get("study_context"))
+            if isinstance(payload.get("study_context"), Mapping)
+            else None
+        ),
         status_code=_int_value(payload.get("status_code"), 200),
         percent_complete=_float_value(payload.get("percent_complete"), 0.0),
         elapsed_total_seconds=_float_value(payload.get("elapsed_total_seconds"), 0.0),
@@ -591,9 +606,16 @@ def run_ask_job(
         errors = fatal_errors or getattr(result, "errors", [])
         metadata = getattr(result, "model_metadata", {}) or {}
         pipeline = metadata.get("pipeline") if isinstance(metadata.get("pipeline"), dict) else {}
+        error_category = (
+            getattr(result, "error_category", None)
+            or metadata.get("error_category")
+            or pipeline.get("error_category")
+        )
+        job.result = result
         job.fail(
             "; ".join(str(error) for error in errors),
             status_code=agent_error_status_code(result),
+            error_category=str(error_category) if error_category else None,
             failed_stage=(
                 getattr(result, "failed_stage", None)
                 or metadata.get("failed_stage")
@@ -602,7 +624,6 @@ def run_ask_job(
                 or "building_final_answer"
             ),
         )
-        job.result = result
         return
 
     job.complete(result)
