@@ -1232,7 +1232,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v37"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v38"', service_worker["body"])
         self.assertIn("/static/api/backend-routing.js", service_worker["body"])
         self.assertIn("/static/api/job-flow.js", service_worker["body"])
         self.assertIn("isLiveBackendJobRequest", service_worker["body"])

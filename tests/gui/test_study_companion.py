@@ -269,6 +269,38 @@ def test_chapter_companion_uses_one_compact_context_request(driver, wait, base_u
     assert "passage_text" not in requests[0]
 
 
+def test_bible_reference_follows_selection_while_explore_is_open(driver, wait, base_url):
+    driver.set_window_size(1440, 1000)
+    HomePage(driver, wait, base_url).open().wait_loaded()
+
+    first_verse = driver.find_element(
+        By.CSS_SELECTOR,
+        '#chapter-reader .reader-pane.is-active [data-verse="1"] .verse-text',
+    )
+    first_verse.click()
+    reference = driver.find_element(By.CSS_SELECTOR, "[data-passage-action-reference]")
+    wait.until(lambda _driver: reference.text == "John 1:1")
+
+    driver.execute_script(
+        "window.BHFStudyCompanion.showOverview({mode: 'explore', focus: false, history: false});"
+    )
+    wait.until(
+        lambda _driver: _driver.execute_script(
+            "return window.BHFStudyCompanion.getState().mode === 'explore';"
+        )
+    )
+
+    driver.find_element(
+        By.CSS_SELECTOR,
+        '#chapter-reader .reader-pane.is-active [data-verse="2"] .verse-text',
+    ).click()
+
+    wait.until(lambda _driver: reference.text == "John 1:1-2")
+    assert driver.execute_script(
+        "return window.BHFStudySelection.getState().reference;"
+    ) == "John 1:1-2"
+
+
 def test_explore_browses_resources_without_a_verse_selection(driver, wait, base_url):
     driver.set_window_size(390, 844)
     HomePage(driver, wait, base_url).open().wait_loaded()

@@ -208,6 +208,7 @@
     selection = nextSelection;
     saveStateController?.setSelection(selection);
     const contextChange = contextController?.setSelection?.(selection, {load: currentMode !== "explore"}) || {changed: false};
+    renderPassageActionContext();
     if (currentMode === "explore") return;
     currentMode = "passage";
     if (currentResource) renderResourceHeader(currentResource);
@@ -231,11 +232,15 @@
     const reference = selection.reference || "Chapter Companion";
     setText("[data-companion-reference]", reference);
     setText("[data-companion-peek-reference]", reference);
-    setText("[data-passage-action-reference]", reference);
     const selectedText = selection.selectedText || (selection.chapter ? `Resources for ${reference}` : "");
     setText("[data-companion-selected-text]", selectedText);
-    if (actionStrip) actionStrip.hidden = !selection.hasPassageSelection;
+    renderPassageActionContext();
     renderSuggestions();
+  }
+
+  function renderPassageActionContext() {
+    setText("[data-passage-action-reference]", selection?.reference || "");
+    if (actionStrip) actionStrip.hidden = selection?.hasPassageSelection !== true;
   }
 
   function renderLoadingState() {
