@@ -24,6 +24,10 @@ DEFAULT_BREAKPOINTS: dict[str, int] = {
 BACKEND_CONFIGURATION_MESSAGE = (
     "BHF_API_BASE_URL is required when BHF_BACKEND_MODE=remote."
 )
+SERVERLESS_BACKEND_CONFIGURATION_MESSAGE = (
+    "BHF_BACKEND_MODE=remote and BHF_API_BASE_URL are required on Vercel "
+    "because asynchronous BHF jobs need a durable backend."
+)
 
 
 def load_runtime_config() -> dict[str, Any]:
@@ -38,6 +42,12 @@ def load_runtime_config() -> dict[str, Any]:
         backend_mode,
         api_base_url,
     )
+    if (
+        not backend_config_error
+        and backend_mode == "same-origin"
+        and os.environ.get("VERCEL")
+    ):
+        backend_config_error = SERVERLESS_BACKEND_CONFIGURATION_MESSAGE
     provider_labels = _load_provider_labels()
 
     return {

@@ -18,6 +18,11 @@ These are explicit deployment choices:
 | Local development | `web` | `same-origin` | Unset |
 | Docker | `web` or `pwa` | `same-origin` | Unset |
 
+Vercel is stateless between function invocations. BHF rejects a Vercel
+`same-origin` configuration because asynchronous question jobs cannot safely
+use its local SQLite filesystem; configure the durable remote backend shown
+below.
+
 An installed PWA is not inherently a remote-backend deployment. A NAS can
 serve an installable PWA and its FastAPI backend from the same origin without
 Railway or internet-based API routing.

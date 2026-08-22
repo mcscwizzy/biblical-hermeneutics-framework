@@ -14,6 +14,8 @@
     if (http && typeof http.backendConfigurationError === "function") {
       return http.backendConfigurationError();
     }
+    const configuredError = String(runtime.backendConfigError || "").trim();
+    if (configuredError) return configuredError;
     return String(runtime.backendMode || "same-origin") === "remote"
       ? BACKEND_CONFIGURATION_MESSAGE
       : "";

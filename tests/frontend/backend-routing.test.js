@@ -23,6 +23,20 @@ test("same-origin and NAS PWA backend requests stay relative", () => {
   }
 });
 
+test("an explicit deployment error blocks same-origin routing", () => {
+  const runtime = {
+    backendMode: "same-origin",
+    apiBaseUrl: "",
+    backendConfigError: "A durable backend is required.",
+  };
+
+  assert.equal(routing.configurationError(runtime), runtime.backendConfigError);
+  assert.throws(
+    () => routing.resolveUrl("/ask/jobs", runtime),
+    {name: "BHFBackendConfigurationError", message: routing.CONFIGURATION_MESSAGE},
+  );
+});
+
 test("the full async flow and API calls use the remote backend", () => {
   for (const path of [
     "/ask/jobs",

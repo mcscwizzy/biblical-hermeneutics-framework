@@ -1038,10 +1038,23 @@ comparisons retain explicit chronology and dispute controls. These 144 items
 are chronology-controlled, passage-linked, and source-resolvable, but
 AI-authored additions remain drafts until human review.
 
-The next focused expansion should clean the generic Macedonia place record and
-build a regional evidence cluster connecting the Via Egnatia, provincial
-administration, Philippi, Thessalonica, Berea, and the Acts 16-20 travel
-corridor without flattening the cities into one social setting.
+The Roman Macedonia pass replaces the generic place record and adds regional,
+passage-bounded evidence for the Aegean entry sequence; the measured Via
+Egnatia corridor; Amphipolis and Apollonia as named transit points without
+invented ministry stops; the four-meris settlement, later province, and Acts
+16:12 textual dispute; distinct civic settings at Philippi, Thessalonica, and
+Beroea; Beroea's branch-road position; varied hearers, women, and households;
+Thessalonian regional-report rhetoric; the limits of harmonizing Acts with 1
+Thessalonians; the Acts 20 return party; and Macedonian gift and collection
+rhetoric without romanticizing poverty. These 155 items are
+chronology-controlled, passage-linked, and source-resolvable, but AI-authored
+additions remain drafts until human review.
+
+The next focused expansion should build an Athens evidence cluster for Acts
+17:16-34: city topography, agora and Areopagus settings, altars and cult
+plurality, philosophical schools, disputed inscriptional comparisons, speech
+genre, Scripture and Greek poetic citations, and the limits of reconstructing
+an Athenian assembly from the named hearers.
 Cultural practices, historical institutions, literary conventions,
 geography/environment, and worldview concepts already have controlled types;
 they need source-backed, human-reviewed depth rather than generated volume.

@@ -29,6 +29,16 @@ test("a missing remote backend blocks job startup", () => {
   assert.equal(spinnerRunning, false);
 });
 
+test("an explicit same-origin deployment error blocks job startup", () => {
+  const message = "A durable backend is required.";
+  const error = backendStartError(null, {
+    backendMode: "same-origin",
+    backendConfigError: message,
+  });
+
+  assert.equal(error, message);
+});
+
 test("a missing job stops polling with a useful retry message", () => {
   const message = missingJobStateMessage({
     status: 404,

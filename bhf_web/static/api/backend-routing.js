@@ -43,9 +43,11 @@
 
   function configurationError(runtime = {}) {
     const mode = String(runtime.backendMode || "same-origin").trim().toLowerCase();
+    const configuredError = String(runtime.backendConfigError || "").trim();
+    if (configuredError) return configuredError;
     if (mode === "same-origin") return "";
     if (mode !== "remote" || !validRemoteBaseUrl(runtime.apiBaseUrl)) {
-      return String(runtime.backendConfigError || "").trim() || CONFIGURATION_MESSAGE;
+      return CONFIGURATION_MESSAGE;
     }
     return "";
   }
@@ -55,14 +57,13 @@
     if (isAbsoluteUrl(raw) || !isBackendPath(raw)) return raw;
 
     const mode = String(runtime.backendMode || "same-origin").trim().toLowerCase();
-    if (mode === "same-origin") return raw;
-
     const error = configurationError(runtime);
     if (error) {
       const configurationException = new Error(CONFIGURATION_MESSAGE);
       configurationException.name = "BHFBackendConfigurationError";
       throw configurationException;
     }
+    if (mode === "same-origin") return raw;
 
     const base = String(runtime.apiBaseUrl).replace(/\/+$/, "");
     return raw.startsWith("/") ? `${base}${raw}` : `${base}/${raw}`;

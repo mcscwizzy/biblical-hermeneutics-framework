@@ -26,6 +26,7 @@ EXPANSION_OBJECTS = {
     "roman-ephesus-civic-cultic-and-household-life": 12,
     "roman-philippi-colonial-civic-and-household-life": 12,
     "roman-rome-jewish-civic-household-and-imperial-life": 17,
+    "roman-macedonia-road-network-and-city-diversity": 11,
 }
 
 
@@ -168,6 +169,72 @@ def test_thessalonian_household_labor_affliction_and_peace_claims_are_bounded() 
     assert "collective Jewish blame" in items["thessalonian-affliction-opponents-uncertain"].passage_relevance
     assert items["peace-security-competing-backgrounds"].confidence == "low"
     assert "headline matching" in items["peace-security-competing-backgrounds"].notes
+
+
+def test_macedonian_route_cluster_distinguishes_trunk_stations_and_beroean_branch() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id["roman-macedonia-road-network-and-city-diversity"]
+    items = {item.id: item for item in cluster.evidence_items}
+    assert {
+        "macedonia-call-and-aegean-entry",
+        "via-egnatia-east-macedonian-corridor",
+        "amphipolis-apollonia-named-transit",
+        "beroea-branch-road-constraint",
+    } <= set(items)
+    assert items["via-egnatia-east-macedonian-corridor"].confidence == "high"
+    assert "branch" in items["beroea-branch-road-constraint"].description
+    assert "rather than sitting" in items["beroea-branch-road-constraint"].description
+    assert "preaching" in items["amphipolis-apollonia-named-transit"].passage_relevance
+
+
+def test_macedonian_cluster_preserves_city_and_source_differences() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id["roman-macedonia-road-network-and-city-diversity"]
+    items = {item.id: item for item in cluster.evidence_items}
+    civic = items["philippi-thessalonica-beroea-civic-differences"]
+    itinerary = items["acts-first-thessalonians-itinerary-comparison"]
+    gifts = items["macedonian-gifts-and-collection-rhetoric"]
+    assert civic.confidence == "medium"
+    assert "uniform" in civic.notes
+    assert itinerary.dispute_status == "major_scholarly_disagreement"
+    assert "harmonization" in itinerary.notes
+    assert gifts.dispute_status == "major_scholarly_disagreement"
+    assert "Poverty is not praised" in gifts.notes
+
+
+def test_macedonian_route_evidence_is_discoverable_without_city_flattening() -> None:
+    library = CanonicalLibrary.load_default()
+    passage_objects = {
+        result.object.id
+        for result in library.retrieve_by_scripture_reference("Acts 17:1", limit=30)
+    }
+    assert "roman-macedonia-road-network-and-city-diversity" in passage_objects
+    ranked = _rank(
+        library,
+        "roman-macedonia-road-network-and-city-diversity",
+        "Which Via Egnatia stations connect Philippi and Thessalonica in Acts?",
+        "Acts 17:1",
+        "historical setting",
+    )
+    ranked_by_id = {item.evidence_id: item for item in ranked}
+    assert ranked[0].evidence_id == "amphipolis-apollonia-named-transit"
+    assert "via-egnatia-east-macedonian-corridor" in ranked_by_id
+    assert ranked[0].passage_relationship == "direct"
+    assert ranked_by_id["via-egnatia-east-macedonian-corridor"].passage_relationship == "contextual"
+
+
+def test_macedonia_place_record_replaces_legacy_empire_boilerplate() -> None:
+    library = CanonicalLibrary.load_default()
+    macedonia = library.objects_by_id["macedonia"]
+    assert macedonia.title == "Roman Macedonia"
+    assert macedonia.content_status == "complete"
+    assert macedonia.context_applicability["ancient_near_east"] is False
+    assert "Babylon" not in macedonia.summary
+    assert "Beroea" in macedonia.historical_context
+    assert any(
+        relation.id == "roman-macedonia-road-network-and-city-diversity"
+        for relation in macedonia.related_objects
+    )
 
 
 def test_exodus_brickmaking_cluster_is_discoverable_by_passage() -> None:
@@ -1397,12 +1464,12 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
 def test_corpus_evidence_quality_metrics_have_no_structural_failures() -> None:
     library = CanonicalLibrary.load_default()
     report = audit_evidence(library.objects_by_id.values())
-    assert report["evidence_count"] == 144
-    assert report["evidence_with_primary_sources_count"] == 142
-    assert report["evidence_with_academic_secondary_sources_count"] == 137
-    assert report["evidence_with_chronology_count"] == 144
-    assert report["evidence_with_passage_relevance_count"] == 144
-    assert report["disputed_evidence_count"] == 133
+    assert report["evidence_count"] == 155
+    assert report["evidence_with_primary_sources_count"] == 153
+    assert report["evidence_with_academic_secondary_sources_count"] == 146
+    assert report["evidence_with_chronology_count"] == 155
+    assert report["evidence_with_passage_relevance_count"] == 155
+    assert report["disputed_evidence_count"] == 144
     assert report["worldview_evidence_count"] == 11
     assert report["archaeology_linked_evidence_count"] == 24
     assert report["internal_source_only_evidence_count"] == 0

@@ -365,6 +365,31 @@ class RuntimeConfigTests(unittest.TestCase):
         self.assertEqual(runtime["apiBaseUrl"], "")
         self.assertEqual(runtime["backendConfigError"], "")
 
+    def test_vercel_same_origin_requires_a_durable_remote_backend(self):
+        env = {"VERCEL": "1", "BHF_BACKEND_MODE": "same-origin"}
+        with patch.dict(os.environ, env, clear=True):
+            runtime = load_runtime_config()
+
+        self.assertEqual(runtime["backendMode"], "same-origin")
+        self.assertEqual(runtime["apiBaseUrl"], "")
+        self.assertEqual(
+            runtime["backendConfigError"],
+            "BHF_BACKEND_MODE=remote and BHF_API_BASE_URL are required on "
+            "Vercel because asynchronous BHF jobs need a durable backend.",
+        )
+
+    def test_vercel_remote_backend_is_allowed(self):
+        env = {
+            "VERCEL": "1",
+            "BHF_BACKEND_MODE": "remote",
+            "BHF_API_BASE_URL": "https://backend.example.com",
+        }
+        with patch.dict(os.environ, env, clear=True):
+            runtime = load_runtime_config()
+
+        self.assertEqual(runtime["backendMode"], "remote")
+        self.assertEqual(runtime["backendConfigError"], "")
+
     def test_remote_pwa_exposes_the_configured_backend(self):
         env = {
             "BHF_RUNTIME_MODE": "pwa",
@@ -1208,7 +1233,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v35"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v36"', service_worker["body"])
         self.assertIn("/static/api/backend-routing.js", service_worker["body"])
         self.assertIn("/static/api/job-flow.js", service_worker["body"])
         self.assertIn("isLiveBackendJobRequest", service_worker["body"])
