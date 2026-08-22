@@ -13,21 +13,23 @@ These are explicit deployment choices:
 
 | Deployment | `BHF_RUNTIME_MODE` | `BHF_BACKEND_MODE` | `BHF_API_BASE_URL` |
 |---|---|---|---|
+| Vercel single service | `web` or `pwa` | `same-origin` | Unset |
 | Vercel frontend + Railway backend | `pwa` | `remote` | Railway public HTTPS URL |
 | NAS / self-hosted PWA | `pwa` | `same-origin` | Unset |
 | Local development | `web` | `same-origin` | Unset |
 | Docker | `web` or `pwa` | `same-origin` | Unset |
 
-Vercel is stateless between function invocations. BHF rejects a Vercel
-`same-origin` configuration because asynchronous question jobs cannot safely
-use its local SQLite filesystem; configure the durable remote backend shown
-below.
+Vercel is stateless between function invocations. In Vercel `same-origin`
+mode, BHF therefore sends Ask and fallback-search work through one synchronous
+HTTP request instead of creating a job and polling local SQLite state. A
+durable Railway backend remains available when progress polling and persistent
+server data are required.
 
 An installed PWA is not inherently a remote-backend deployment. A NAS can
 serve an installable PWA and its FastAPI backend from the same origin without
 Railway or internet-based API routing.
 
-In `same-origin` mode, browser requests remain relative:
+In ordinary `same-origin` mode, browser requests remain relative:
 
 ```text
 POST /ask/jobs
@@ -36,6 +38,12 @@ GET  /ask/result/{id}
 GET  /api/health
 ```
 
+On Vercel, the equivalent same-origin Ask request is `POST /ask`; deterministic
+fallback search uses `POST /api/bible/search/fallback`. Vercel Python functions
+using current Fluid Compute defaults provide enough request duration for the
+configured BHF timeout, but operators should still monitor invocation timeouts
+and usage.
+
 In `remote` mode, `/ask*` and `/api*` requests are joined to
 `BHF_API_BASE_URL`. Frontend resources such as `/static/*`,
 `/manifest.webmanifest`, and `/sw.js` always stay on the frontend origin.
@@ -43,8 +51,17 @@ Absolute URLs are not rewritten.
 
 Remote mode requires a valid HTTP(S) `BHF_API_BASE_URL`. If it is blank or
 invalid, the runtime config contains a deterministic configuration error and
-the browser refuses to submit an async job. It does not fall back to the
-frontend origin.
+the browser refuses to submit a request. It does not fall back to the frontend
+origin.
+
+## Vercel same-origin
+
+No routing variables are required for a single Vercel FastAPI deployment.
+Optionally set `BHF_RUNTIME_MODE=pwa` to select the hosted PWA presentation.
+Ask BHF uses a single request, so it does not expose the multi-request progress
+history available from a durable backend. Browser-local notes, highlights,
+and saved studies remain device-only; do not rely on Vercel's ephemeral
+filesystem for durable server data.
 
 ## Vercel + Railway public beta
 

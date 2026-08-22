@@ -56,6 +56,14 @@ async function runBibleSearchFallback(form, query, requestId) {
   const providerHeaders = window.BHFModelSettings
     ? await window.BHFModelSettings.getProviderHeaders()
     : {};
+  if (window.BHFRuntimeConfig?.asyncJobs === false) {
+    const result = await requestJson("/api/bible/search/fallback", {
+      method: "POST",
+      body: payload,
+      headers: { Accept: "application/json", ...providerHeaders },
+    }, "BHF search fallback failed.");
+    return renderBibleSearchFallbackResult(result, query, requestId);
+  }
   const job = await requestJson("/api/bible/search/fallback/jobs", {
     method: "POST",
     body: payload,
@@ -65,6 +73,10 @@ async function runBibleSearchFallback(form, query, requestId) {
     throw new Error("Could not start the BHF search fallback.");
   }
   const result = await pollBibleSearchFallback(job.job_id, requestId);
+  return renderBibleSearchFallbackResult(result, query, requestId);
+}
+
+function renderBibleSearchFallbackResult(result, query, requestId) {
   if (requestId !== BHF_BIBLE_SEARCH_STATE.latestBibleSearchRequestId) {
     return;
   }

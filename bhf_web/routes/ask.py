@@ -13,6 +13,7 @@ from bhf_agent.profiles import ProfileError
 
 from ..forms import config_from_form, form_values_for_ask_prompt, load_web_defaults
 from ..jobs import _fake_result
+from ..services.bible_search_fallback import build_bible_search_fallback_payload
 from ..services.ckl_inspector import build_result_inspector_payload
 from ..services.web_helpers import (
     ask_agent,
@@ -357,6 +358,31 @@ def register_ask_routes(
         )
         thread.start()
         return JSONResponse(job.to_dict(), status_code=202)
+
+    @app.post("/api/bible/search/fallback", response_class=JSONResponse)
+    async def bible_search_fallback(request: Request) -> JSONResponse:
+        """Run deterministic fallback search within one serverless request."""
+
+        form_values = dict(await request.form())
+        query = str(form_values.get("query") or "").strip()
+        if not query:
+            return JSONResponse({"error": "search query is required"}, status_code=400)
+        try:
+            loaded = load_web_defaults()
+            transient_api_key = request.headers.get("X-BHF-OpenRouter-Key") or None
+            config = config_from_form(
+                form_values,
+                loaded.config,
+                transient_api_key=transient_api_key,
+            )
+            payload = build_bible_search_fallback_payload(
+                query,
+                canonical_library=config.canonical_library,
+                limit=config.canonical_library.max_results,
+            )
+        except (ConfigError, ProfileError, ValueError) as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+        return JSONResponse(payload)
 
     @app.get("/api/bible/search/fallback/status/{job_id}", response_class=JSONResponse)
     async def bible_search_fallback_status(job_id: str) -> JSONResponse:

@@ -32,11 +32,16 @@
     return !finalStatus?.error;
   }
 
+  function useSynchronousAsk(runtime = {}) {
+    return runtime.asyncJobs === false;
+  }
+
   return {
     BACKEND_CONFIGURATION_MESSAGE,
     LOST_JOB_MESSAGE,
     backendStartError,
     missingJobStateMessage,
     shouldFetchResult,
+    useSynchronousAsk,
   };
 });

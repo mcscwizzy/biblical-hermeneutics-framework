@@ -143,6 +143,7 @@ const BHF_JOB_FLOW = window.BHFJobFlow || {
       : "",
   missingJobStateMessage: () => "",
   shouldFetchResult: (status) => !status?.error,
+  useSynchronousAsk: () => false,
 };
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -208,6 +209,34 @@ document.addEventListener("submit", async function (event) {
     const providerHeaders = window.BHFModelSettings
       ? await window.BHFModelSettings.getProviderHeaders()
       : {};
+    if (BHF_JOB_FLOW.useSynchronousAsk(BHF_RUNTIME)) {
+      const startedAt = Date.now();
+      const response = await fetch(resolveBackendUrl(form.action || "/ask"), {
+        method: "POST",
+        body: new FormData(form),
+        headers: {Accept: "text/html", ...providerHeaders},
+      });
+      const result = await response.text();
+      if (!result.trim()) {
+        throw new Error(`Could not ask BHF. (HTTP ${response.status}; empty response)`);
+      }
+      answerPanel.innerHTML = result;
+      latestJobId = null;
+      latestJobComplete = response.ok;
+      if (response.ok) {
+        markStatusComplete(statusPanel, {
+          elapsed_total_seconds: (Date.now() - startedAt) / 1000,
+        });
+      } else {
+        markStatusFailed(statusPanel, "Request failed.");
+      }
+      expandWorkspaceForMobileAnswer();
+      addMobileAnswerCloseControl(answerPanel);
+      wireAnswerPanelControls(answerPanel);
+      revealAnswerPanel(answerPanel);
+      await loadSavedStudies(currentChapter?.book, currentChapter?.chapter);
+      return;
+    }
     const job = await requestJson(
       form.dataset.jobPost,
       {

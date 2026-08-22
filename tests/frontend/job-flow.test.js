@@ -7,6 +7,7 @@ const {
   backendStartError,
   missingJobStateMessage,
   shouldFetchResult,
+  useSynchronousAsk,
 } = require("../../bhf_web/static/api/job-flow.js");
 
 test("a missing remote backend blocks job startup", () => {
@@ -29,14 +30,27 @@ test("a missing remote backend blocks job startup", () => {
   assert.equal(spinnerRunning, false);
 });
 
-test("an explicit same-origin deployment error blocks job startup", () => {
-  const message = "A durable backend is required.";
-  const error = backendStartError(null, {
-    backendMode: "same-origin",
-    backendConfigError: message,
-  });
+test("a Vercel same-origin deployment uses the synchronous ask route", () => {
+  assert.equal(
+    useSynchronousAsk({backendMode: "same-origin", asyncJobs: false}),
+    true,
+  );
+  assert.equal(
+    useSynchronousAsk({backendMode: "same-origin", asyncJobs: true}),
+    false,
+  );
+  assert.equal(useSynchronousAsk({backendMode: "remote", asyncJobs: true}), false);
+});
 
-  assert.equal(error, message);
+test("an explicit deployment error still blocks job startup", () => {
+  const message = "Backend routing is invalid.";
+  assert.equal(
+    backendStartError(null, {
+      backendMode: "same-origin",
+      backendConfigError: message,
+    }),
+    message,
+  );
 });
 
 test("a missing job stops polling with a useful retry message", () => {

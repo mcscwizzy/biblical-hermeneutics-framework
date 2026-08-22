@@ -354,6 +354,7 @@ class RuntimeConfigTests(unittest.TestCase):
         self.assertEqual(runtime["backendMode"], "same-origin")
         self.assertEqual(runtime["apiBaseUrl"], "")
         self.assertEqual(runtime["backendConfigError"], "")
+        self.assertTrue(runtime["asyncJobs"])
 
     def test_same_origin_pwa_does_not_require_an_api_url(self):
         env = {"BHF_RUNTIME_MODE": "pwa", "BHF_BACKEND_MODE": "same-origin"}
@@ -365,18 +366,15 @@ class RuntimeConfigTests(unittest.TestCase):
         self.assertEqual(runtime["apiBaseUrl"], "")
         self.assertEqual(runtime["backendConfigError"], "")
 
-    def test_vercel_same_origin_requires_a_durable_remote_backend(self):
+    def test_vercel_same_origin_uses_synchronous_ask(self):
         env = {"VERCEL": "1", "BHF_BACKEND_MODE": "same-origin"}
         with patch.dict(os.environ, env, clear=True):
             runtime = load_runtime_config()
 
         self.assertEqual(runtime["backendMode"], "same-origin")
         self.assertEqual(runtime["apiBaseUrl"], "")
-        self.assertEqual(
-            runtime["backendConfigError"],
-            "BHF_BACKEND_MODE=remote and BHF_API_BASE_URL are required on "
-            "Vercel because asynchronous BHF jobs need a durable backend.",
-        )
+        self.assertEqual(runtime["backendConfigError"], "")
+        self.assertFalse(runtime["asyncJobs"])
 
     def test_vercel_remote_backend_is_allowed(self):
         env = {
@@ -389,6 +387,7 @@ class RuntimeConfigTests(unittest.TestCase):
 
         self.assertEqual(runtime["backendMode"], "remote")
         self.assertEqual(runtime["backendConfigError"], "")
+        self.assertTrue(runtime["asyncJobs"])
 
     def test_remote_pwa_exposes_the_configured_backend(self):
         env = {
@@ -979,7 +978,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("Loading translations...", index_html)
         self.assertIn('name="reader_translation"', index_html)
         self.assertIn("static_asset('/style.css') }}?v=20260724c", index_html)
-        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260821a", index_html)
+        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260822b", index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
@@ -1207,7 +1206,7 @@ class WebAppTests(unittest.TestCase):
 
         self.assertEqual(response["status"], 200)
         self.assertIn('href="/static/style.css?v=20260724c"', response["body"])
-        self.assertIn('src="/static/htmx-lite.js?v=20260821a"', response["body"])
+        self.assertIn('src="/static/htmx-lite.js?v=20260822b"', response["body"])
         self.assertIn('href="/static/vendor/leaflet/leaflet.css"', response["body"])
         self.assertNotIn("http://bhf.thewalkerclan.synology.me/static/", response["body"])
 
@@ -1233,7 +1232,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v36"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v37"', service_worker["body"])
         self.assertIn("/static/api/backend-routing.js", service_worker["body"])
         self.assertIn("/static/api/job-flow.js", service_worker["body"])
         self.assertIn("isLiveBackendJobRequest", service_worker["body"])
@@ -2359,6 +2358,20 @@ class WebAppTests(unittest.TestCase):
             )
         )
 
+    def test_bible_search_fallback_can_run_in_one_serverless_request(self):
+        data = _valid_form()
+        data["query"] = "Egypt in Exodus"
+
+        response = asgi_request("POST", "/api/bible/search/fallback", data=data)
+
+        self.assertEqual(response["status"], 200)
+        payload = json.loads(response["body"])
+        self.assertEqual(payload["source"], "ckl_fallback")
+        self.assertTrue(payload["results"])
+        self.assertTrue(
+            all(item["reference"].startswith("Exodus ") for item in payload["results"])
+        )
+
     def test_post_ask_handles_mocked_agent_result(self):
         with patch("bhf_web.app.BHFAgent", SuccessfulJobAgent):
             response = asgi_request("POST", "/ask", data=_valid_form())
@@ -3469,7 +3482,9 @@ def wait_for_job(job_id):
 
 
 def wait_for_search_job(job_id):
-    for _attempt in range(100):
+    # A cold CKL load can take more than five seconds on CI and small local
+    # runners even though the fallback completes normally.
+    for _attempt in range(600):
         response = asgi_request("GET", f"/api/bible/search/fallback/status/{job_id}")
         status = json.loads(response["body"])
         if status.get("done"):

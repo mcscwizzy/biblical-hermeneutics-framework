@@ -24,10 +24,6 @@ DEFAULT_BREAKPOINTS: dict[str, int] = {
 BACKEND_CONFIGURATION_MESSAGE = (
     "BHF_API_BASE_URL is required when BHF_BACKEND_MODE=remote."
 )
-SERVERLESS_BACKEND_CONFIGURATION_MESSAGE = (
-    "BHF_BACKEND_MODE=remote and BHF_API_BASE_URL are required on Vercel "
-    "because asynchronous BHF jobs need a durable backend."
-)
 
 
 def load_runtime_config() -> dict[str, Any]:
@@ -42,12 +38,9 @@ def load_runtime_config() -> dict[str, Any]:
         backend_mode,
         api_base_url,
     )
-    if (
-        not backend_config_error
-        and backend_mode == "same-origin"
-        and os.environ.get("VERCEL")
-    ):
-        backend_config_error = SERVERLESS_BACKEND_CONFIGURATION_MESSAGE
+    async_jobs = not (
+        backend_mode == "same-origin" and bool(os.environ.get("VERCEL"))
+    )
     provider_labels = _load_provider_labels()
 
     return {
@@ -57,6 +50,11 @@ def load_runtime_config() -> dict[str, Any]:
         "backendMode": backend_mode,
         "apiBaseUrl": api_base_url,
         "backendConfigError": backend_config_error,
+        # Vercel instances cannot reliably preserve an in-memory/SQLite job
+        # between polling requests.  The browser uses the synchronous /ask
+        # route there, while durable and self-hosted backends keep progress
+        # polling through /ask/jobs.
+        "asyncJobs": async_jobs,
         "providerLabels": provider_labels,
         "breakpoints": dict(DEFAULT_BREAKPOINTS),
         "themeColor": "#245b82",
