@@ -46,6 +46,10 @@ class ChatResponse(Serializable):
     latency_ms: Optional[int] = None
     usage: Optional[dict[str, Any]] = None
     raw_provider_response: Optional[Union[dict[str, Any], str]] = None
+    # A deliberately small, sanitized subset of provider routing metadata.
+    # Unlike ``raw_provider_response``, this is safe to expose in normal job
+    # status and observability payloads.
+    provider_diagnostics: Optional[dict[str, Any]] = None
     error_category: Optional[str] = None
     warnings: list[str] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)

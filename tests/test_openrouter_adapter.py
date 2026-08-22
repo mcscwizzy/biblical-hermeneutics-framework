@@ -8,8 +8,9 @@ from bhf_agent.models import ChatRequest
 
 
 class FakeHTTPResponse:
-    def __init__(self, payload):
+    def __init__(self, payload, headers=None):
         self.payload = payload
+        self.headers = headers
 
     def __enter__(self):
         return self
@@ -46,6 +47,122 @@ class OpenRouterAdapterTests(unittest.TestCase):
         self.assertEqual(captured["body"]["model"], "openai/gpt-4o-mini")
         self.assertEqual(response.provider, "openrouter")
         self.assertEqual(response.text, "answer")
+
+    def test_free_router_exposes_safe_selected_model_and_provider(self):
+        payload = {
+            "id": "gen-safe-id",
+            "model": "google/gemma-4-26b-a4b-it:free",
+            "provider": "Google AI Studio",
+            "choices": [{"message": {"content": "answer"}}],
+            "request": {"messages": [{"content": "private prompt"}]},
+            "api_key": "sk-never-display-this",
+        }
+
+        def fake_urlopen(request, timeout=None):
+            return FakeHTTPResponse(
+                json.dumps(payload).encode("utf-8"),
+                headers={"X-OpenRouter-Request-Id": "req-safe-id"},
+            )
+
+        adapter = OpenRouterAdapter(api_key="or-secret", timeout_seconds=7)
+        with patch("urllib.request.urlopen", fake_urlopen):
+            response = adapter.chat(ChatRequest("system", "user", "openrouter/free"))
+
+        self.assertEqual(response.model, "google/gemma-4-26b-a4b-it:free")
+        self.assertEqual(
+            response.provider_diagnostics,
+            {
+                "requested_model": "openrouter/free",
+                "selected_model": "google/gemma-4-26b-a4b-it:free",
+                "selected_provider": "Google AI Studio",
+                "attempts": 1,
+                "rate_limit_retries": 0,
+                "response_headers": {"X-OpenRouter-Request-Id": "req-safe-id"},
+            },
+        )
+        serialized = json.dumps(response.provider_diagnostics)
+        self.assertNotIn("private prompt", serialized)
+        self.assertNotIn("never-display-this", serialized)
+
+    def test_retry_after_sleep_cannot_exceed_overall_deadline(self):
+        calls = 0
+        now = 100.0
+
+        def monotonic():
+            return now
+
+        def sleep(seconds):
+            nonlocal now
+            now += seconds
+
+        def fake_urlopen(request, timeout=None):
+            nonlocal calls, now
+            calls += 1
+            self.assertEqual(timeout, 5)
+            now += 4
+            raise urllib.error.HTTPError(
+                request.full_url,
+                429,
+                "rate limited",
+                hdrs={"Retry-After": "10"},
+                fp=FakeHTTPResponse(b'{"error":{"message":"temporarily busy"}}'),
+            )
+
+        adapter = OpenRouterAdapter(api_key="or-secret", timeout_seconds=5)
+        with (
+            patch("urllib.request.urlopen", fake_urlopen),
+            patch("bhf_agent.adapters.openai_compatible.time.monotonic", monotonic),
+            patch("bhf_agent.adapters.openai_compatible.time.sleep", sleep),
+        ):
+            response = adapter.chat(ChatRequest("system", "user", "openrouter/free"))
+
+        self.assertEqual(calls, 1)
+        self.assertEqual(now, 105.0)
+        self.assertEqual(response.error_category, "provider_timeout")
+        self.assertTrue(response.provider_diagnostics["deadline_exceeded"])
+        self.assertEqual(response.provider_diagnostics["deadline_seconds"], 5)
+        self.assertEqual(response.provider_diagnostics["attempts"], 1)
+
+    def test_subsequent_http_attempt_uses_only_remaining_deadline(self):
+        timeouts = []
+        now = 200.0
+
+        def monotonic():
+            return now
+
+        def sleep(seconds):
+            nonlocal now
+            now += seconds
+
+        def fake_urlopen(request, timeout=None):
+            nonlocal now
+            timeouts.append(timeout)
+            if len(timeouts) == 1:
+                now += 2
+                raise urllib.error.HTTPError(
+                    request.full_url,
+                    429,
+                    "rate limited",
+                    hdrs={"Retry-After": "1"},
+                    fp=FakeHTTPResponse(b'{"error":{"message":"temporarily busy"}}'),
+                )
+            return FakeHTTPResponse(
+                b'{"model":"google/gemma-4-26b-a4b-it:free",'
+                b'"provider":"Google AI Studio",'
+                b'"choices":[{"message":{"content":"answer"}}]}'
+            )
+
+        adapter = OpenRouterAdapter(api_key="or-secret", timeout_seconds=10)
+        with (
+            patch("urllib.request.urlopen", fake_urlopen),
+            patch("bhf_agent.adapters.openai_compatible.time.monotonic", monotonic),
+            patch("bhf_agent.adapters.openai_compatible.time.sleep", sleep),
+        ):
+            response = adapter.chat(ChatRequest("system", "user", "openrouter/free"))
+
+        self.assertEqual(timeouts, [10, 7])
+        self.assertEqual(response.text, "answer")
+        self.assertEqual(response.provider_diagnostics["attempts"], 2)
 
     def test_retries_rate_limit_with_provider_delay(self):
         calls = 0

@@ -2602,6 +2602,10 @@ class BHFAgent:
         ctx.raw_answer_text = chat_response.text
         ctx.warnings.extend(chat_response.warnings)
         ctx.errors.extend(chat_response.errors)
+        if chat_response.provider_diagnostics:
+            ctx.debug_metadata["provider_diagnostics"] = dict(
+                chat_response.provider_diagnostics
+            )
         if chat_response.errors:
             category = chat_response.error_category or _infer_error_category(
                 chat_response.errors
@@ -2610,7 +2614,11 @@ class BHFAgent:
             ctx.debug_metadata["failed_stage"] = _failed_stage_for_category(
                 category
             )
-            if (
+            if isinstance(chat_response.provider_diagnostics, dict):
+                ctx.debug_metadata[f"{category}_diagnostics"] = dict(
+                    chat_response.provider_diagnostics
+                )
+            elif (
                 category == "provider_rate_limit"
                 and isinstance(chat_response.raw_provider_response, dict)
             ):
@@ -2634,13 +2642,17 @@ class BHFAgent:
                 "call_model",
                 event_stage="call_model_complete",
                 message="Model backend returned an error",
-                details={"errors": list(chat_response.errors)},
+                details={
+                    "errors": list(chat_response.errors),
+                    "provider_diagnostics": chat_response.provider_diagnostics,
+                },
             )
         return self._mark_stage(
             ctx,
             "call_model",
             event_stage="call_model_complete",
             message="Model response received",
+            details={"provider_diagnostics": chat_response.provider_diagnostics},
         )
 
     def _clean_output(self, ctx: PipelineContext) -> PipelineContext:
@@ -2746,6 +2758,10 @@ class BHFAgent:
         ctx.debug_metadata["repair_attempted"] = True
         ctx.warnings.extend(chat_response.warnings)
         ctx.errors.extend(chat_response.errors)
+        if chat_response.provider_diagnostics:
+            ctx.debug_metadata["repair_provider_diagnostics"] = dict(
+                chat_response.provider_diagnostics
+            )
         if chat_response.errors:
             category = chat_response.error_category or _infer_error_category(
                 chat_response.errors
@@ -2983,6 +2999,7 @@ class BHFAgent:
             "memory_turns_saved": ctx.debug_metadata.get("memory_turns_saved", 0),
             "model": chat_response.model,
             "usage": chat_response.usage,
+            "provider_diagnostics": chat_response.provider_diagnostics,
             "error_category": ctx.debug_metadata.get("error_category")
             or chat_response.error_category,
             "failed_stage": ctx.debug_metadata.get("failed_stage"),
@@ -3280,6 +3297,9 @@ class BHFAgent:
             if error_category:
                 record["error_category"] = error_category
                 record["failed_stage"] = ctx.debug_metadata.get("failed_stage")
+            provider_diagnostics = ctx.debug_metadata.get("provider_diagnostics")
+            if isinstance(provider_diagnostics, dict):
+                record["provider_diagnostics"] = provider_diagnostics
             rate_limit_diagnostics = ctx.debug_metadata.get(
                 "provider_rate_limit_diagnostics"
             )

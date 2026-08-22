@@ -75,18 +75,64 @@ class OpenAICompatibleAdapter(ChatAdapter):
             method="POST",
         )
         started_at = time.perf_counter()
+        deadline_started_at = time.monotonic()
+        deadline_at = (
+            deadline_started_at + float(self.timeout_seconds)
+            if self.timeout_seconds is not None
+            else None
+        )
         rate_limit_retries = 0
+        attempts = 0
+        last_provider_diagnostics: dict[str, Any] = {}
 
         while True:
+            attempt_timeout = _remaining_timeout(deadline_at)
+            if attempt_timeout is not None and attempt_timeout <= 0:
+                return self._deadline_response(
+                    request,
+                    started_at=started_at,
+                    attempts=attempts,
+                    rate_limit_retries=rate_limit_retries,
+                    last_provider_diagnostics=last_provider_diagnostics,
+                )
+            attempts += 1
             try:
                 with urllib.request.urlopen(
                     http_request,
-                    timeout=self.timeout_seconds,
+                    timeout=attempt_timeout,
                 ) as response:
                     raw_body = response.read().decode("utf-8")
+                    response_headers = getattr(response, "headers", None)
+                if _deadline_expired(deadline_at):
+                    try:
+                        late_payload = json.loads(raw_body)
+                    except json.JSONDecodeError:
+                        late_payload = {}
+                    return self._deadline_response(
+                        request,
+                        started_at=started_at,
+                        attempts=attempts,
+                        rate_limit_retries=rate_limit_retries,
+                        last_provider_diagnostics=_safe_provider_diagnostics(
+                            late_payload if isinstance(late_payload, dict) else {},
+                            requested_model=request.model,
+                            response_headers=response_headers,
+                            attempts=attempts,
+                            rate_limit_retries=rate_limit_retries,
+                        ),
+                    )
                 break
             except urllib.error.HTTPError as exc:
                 error_detail, error_diagnostics = _safe_read_error(exc)
+                last_provider_diagnostics = error_diagnostics
+                if _deadline_expired(deadline_at):
+                    return self._deadline_response(
+                        request,
+                        started_at=started_at,
+                        attempts=attempts,
+                        rate_limit_retries=rate_limit_retries,
+                        last_provider_diagnostics=error_diagnostics,
+                    )
                 rate_limit = (
                     _classify_rate_limit(
                         error_detail,
@@ -108,8 +154,31 @@ class OpenAICompatibleAdapter(ChatAdapter):
                         base_delay_seconds=self.rate_limit_retry_seconds,
                         max_delay_seconds=self.max_rate_limit_retry_seconds,
                     )
+                    error_diagnostics["rate_limit"] = rate_limit
+                    error_diagnostics["requested_model"] = request.model
+                    remaining = _remaining_timeout(deadline_at)
+                    if remaining is not None and remaining <= 0:
+                        return self._deadline_response(
+                            request,
+                            started_at=started_at,
+                            attempts=attempts,
+                            rate_limit_retries=rate_limit_retries,
+                            last_provider_diagnostics=error_diagnostics,
+                        )
                     rate_limit_retries += 1
-                    time.sleep(delay)
+                    sleep_seconds = min(delay, remaining) if remaining is not None else delay
+                    time.sleep(sleep_seconds)
+                    if (
+                        (remaining is not None and delay >= remaining)
+                        or _deadline_expired(deadline_at)
+                    ):
+                        return self._deadline_response(
+                            request,
+                            started_at=started_at,
+                            attempts=attempts,
+                            rate_limit_retries=rate_limit_retries,
+                            last_provider_diagnostics=error_diagnostics,
+                        )
                     continue
                 hint = _http_error_hint(exc.code, self.base_url)
                 provider_label = _provider_label(self.provider_name)
@@ -129,6 +198,12 @@ class OpenAICompatibleAdapter(ChatAdapter):
                         f"{rate_limit_context}{hint}"
                     ],
                     raw_provider_response=error_diagnostics,
+                    provider_diagnostics=_safe_provider_diagnostics(
+                        error_diagnostics,
+                        requested_model=request.model,
+                        attempts=attempts,
+                        rate_limit_retries=rate_limit_retries,
+                    ),
                     error_category=(
                         "provider_rate_limit"
                         if exc.code == 429
@@ -136,15 +211,25 @@ class OpenAICompatibleAdapter(ChatAdapter):
                     ),
                 )
             except (TimeoutError, socket.timeout) as exc:
-                return ChatResponse(
-                    text="",
-                    provider=self.provider_name,
-                    latency_ms=_elapsed_ms(started_at),
-                    errors=[f"OpenAI-compatible endpoint timed out: {exc}"],
-                    error_category="provider_timeout",
+                return self._deadline_response(
+                    request,
+                    started_at=started_at,
+                    attempts=attempts,
+                    rate_limit_retries=rate_limit_retries,
+                    last_provider_diagnostics=last_provider_diagnostics,
+                    cause=exc,
                 )
             except urllib.error.URLError as exc:
                 reason = exc.reason
+                if isinstance(reason, (TimeoutError, socket.timeout)):
+                    return self._deadline_response(
+                        request,
+                        started_at=started_at,
+                        attempts=attempts,
+                        rate_limit_retries=rate_limit_retries,
+                        last_provider_diagnostics=last_provider_diagnostics,
+                        cause=reason,
+                    )
                 if isinstance(reason, ConnectionRefusedError):
                     message = (
                         "Connection refused by OpenAI-compatible endpoint. "
@@ -177,9 +262,23 @@ class OpenAICompatibleAdapter(ChatAdapter):
                 latency_ms=_elapsed_ms(started_at),
                 errors=[f"OpenAI-compatible endpoint returned malformed JSON: {exc}"],
                 raw_provider_response=raw_body,
+                provider_diagnostics=_safe_provider_diagnostics(
+                    {},
+                    requested_model=request.model,
+                    response_headers=response_headers,
+                    attempts=attempts,
+                    rate_limit_retries=rate_limit_retries,
+                ),
                 error_category="provider_failure",
             )
 
+        provider_diagnostics = _safe_provider_diagnostics(
+            data if isinstance(data, dict) else {},
+            requested_model=request.model,
+            response_headers=response_headers,
+            attempts=attempts,
+            rate_limit_retries=rate_limit_retries,
+        )
         text, extraction_error = _extract_text(data)
         if extraction_error:
             return ChatResponse(
@@ -189,6 +288,7 @@ class OpenAICompatibleAdapter(ChatAdapter):
                 latency_ms=_elapsed_ms(started_at),
                 usage=data.get("usage") if isinstance(data, dict) else None,
                 raw_provider_response=data,
+                provider_diagnostics=provider_diagnostics,
                 errors=[extraction_error],
                 error_category="response_extraction",
             )
@@ -200,6 +300,7 @@ class OpenAICompatibleAdapter(ChatAdapter):
             latency_ms=_elapsed_ms(started_at),
             usage=data.get("usage"),
             raw_provider_response=data,
+            provider_diagnostics=provider_diagnostics,
             warnings=(
                 [
                     "The provider briefly rate-limited this request; BHF retried automatically."
@@ -207,6 +308,42 @@ class OpenAICompatibleAdapter(ChatAdapter):
                 if rate_limit_retries
                 else []
             ),
+        )
+
+    def _deadline_response(
+        self,
+        request: ChatRequest,
+        *,
+        started_at: float,
+        attempts: int,
+        rate_limit_retries: int,
+        last_provider_diagnostics: dict[str, Any],
+        cause: BaseException | None = None,
+    ) -> ChatResponse:
+        timeout_seconds = float(self.timeout_seconds or 0)
+        provider_label = _provider_label(self.provider_name)
+        message = (
+            f"{provider_label} model call timed out after the overall "
+            f"{timeout_seconds:g}-second deadline."
+        )
+        if cause and str(cause).strip():
+            message = f"{message} Provider detail: {_sanitize_provider_detail(cause)}"
+        diagnostics = _safe_provider_diagnostics(
+            last_provider_diagnostics,
+            requested_model=request.model,
+            attempts=attempts,
+            rate_limit_retries=rate_limit_retries,
+        )
+        diagnostics["deadline_seconds"] = timeout_seconds
+        diagnostics["deadline_exceeded"] = True
+        return ChatResponse(
+            text="",
+            provider=self.provider_name,
+            latency_ms=_elapsed_ms(started_at),
+            raw_provider_response=last_provider_diagnostics or diagnostics,
+            provider_diagnostics=diagnostics,
+            errors=[message],
+            error_category="provider_timeout",
         )
 
     def health_check(self, model: Optional[str] = None) -> dict[str, Any]:
@@ -314,6 +451,84 @@ def _safe_response_headers(headers: Any) -> dict[str, str]:
     return safe
 
 
+def _safe_provider_diagnostics(
+    payload: dict[str, Any],
+    *,
+    requested_model: str,
+    response_headers: Any = None,
+    attempts: int,
+    rate_limit_retries: int,
+) -> dict[str, Any]:
+    """Return prompt-free routing details suitable for public job status."""
+
+    safe: dict[str, Any] = {
+        "requested_model": _sanitize_provider_detail(requested_model),
+        "attempts": max(0, int(attempts)),
+        "rate_limit_retries": max(0, int(rate_limit_retries)),
+    }
+    selected_model = payload.get("selected_model") or payload.get("model")
+    selected_provider = (
+        payload.get("selected_provider")
+        or payload.get("provider")
+        or payload.get("provider_name")
+    )
+    if isinstance(selected_model, str) and selected_model.strip():
+        safe["selected_model"] = _sanitize_provider_detail(selected_model)
+    if isinstance(selected_provider, str) and selected_provider.strip():
+        safe["selected_provider"] = _sanitize_provider_detail(selected_provider)
+
+    router_metadata = _safe_openrouter_metadata(payload.get("openrouter_metadata"))
+    if not router_metadata and isinstance(payload.get("error"), dict):
+        error_metadata = payload["error"].get("metadata")
+        if isinstance(error_metadata, dict):
+            candidate_provider = error_metadata.get("provider_name") or error_metadata.get(
+                "provider"
+            )
+            candidate_model = error_metadata.get("model")
+            if isinstance(candidate_provider, str) and candidate_provider.strip():
+                safe.setdefault(
+                    "selected_provider",
+                    _sanitize_provider_detail(candidate_provider),
+                )
+            if isinstance(candidate_model, str) and candidate_model.strip():
+                safe.setdefault("selected_model", _sanitize_provider_detail(candidate_model))
+    if router_metadata:
+        safe["openrouter_metadata"] = router_metadata
+        safe.setdefault(
+            "selected_provider",
+            _selected_routing_value(router_metadata, "provider", "provider_name"),
+        )
+        safe.setdefault(
+            "selected_model",
+            _selected_routing_value(router_metadata, "model"),
+        )
+        safe = {key: value for key, value in safe.items() if value not in (None, "")}
+
+    safe_headers = _safe_response_headers(response_headers)
+    if not safe_headers and isinstance(payload.get("response_headers"), dict):
+        safe_headers = _safe_response_headers(payload.get("response_headers"))
+    if safe_headers:
+        safe["response_headers"] = safe_headers
+    return safe
+
+
+def _selected_routing_value(
+    metadata: dict[str, Any],
+    *keys: str,
+) -> str | None:
+    attempts = metadata.get("attempts")
+    if not isinstance(attempts, list):
+        return None
+    selected = [entry for entry in attempts if isinstance(entry, dict) and entry.get("selected")]
+    candidates = selected or [entry for entry in attempts if isinstance(entry, dict)]
+    for entry in reversed(candidates):
+        for key in keys:
+            value = entry.get(key)
+            if isinstance(value, str) and value.strip():
+                return value
+    return None
+
+
 def _safe_error_diagnostics(
     payload: dict[str, Any],
     safe_headers: dict[str, str],
@@ -401,7 +616,16 @@ def _safe_openrouter_metadata(metadata: Any) -> dict[str, Any]:
     if not isinstance(metadata, dict):
         return {}
     safe: dict[str, Any] = {}
-    for key in ("requested", "strategy", "attempt"):
+    for key in (
+        "requested",
+        "strategy",
+        "attempt",
+        "provider",
+        "provider_name",
+        "model",
+        "selected_provider",
+        "selected_model",
+    ):
         value = metadata.get(key)
         if isinstance(value, (str, int, float, bool)):
             safe[key] = _sanitize_provider_detail(value) if isinstance(value, str) else value
@@ -493,7 +717,10 @@ def _classify_rate_limit(
     normalized = " ".join(str(detail or "").lower().replace("-", " ").split())
     provider_names = _rate_limit_provider_names(diagnostics)
     upstream_evidence = bool(provider_names) or "upstream provider" in normalized
-    is_free_model = requested_model.lower().endswith(":free")
+    normalized_model = requested_model.strip().lower()
+    is_free_model = normalized_model == "openrouter/free" or normalized_model.endswith(
+        ":free"
+    )
     capacity_markers = (
         "capacity",
         "overloaded",
@@ -660,6 +887,18 @@ def _friendly_http_error(status_code: int, detail: str, reason: object) -> str:
 
 def _elapsed_ms(started_at: float) -> int:
     return int(round((time.perf_counter() - started_at) * 1000))
+
+
+def _remaining_timeout(
+    deadline_at: float | None,
+) -> float | None:
+    if deadline_at is None:
+        return None
+    return max(0.0, deadline_at - time.monotonic())
+
+
+def _deadline_expired(deadline_at: float | None) -> bool:
+    return deadline_at is not None and time.monotonic() >= deadline_at
 
 
 def _http_error_hint(status_code: int, base_url: str) -> str:

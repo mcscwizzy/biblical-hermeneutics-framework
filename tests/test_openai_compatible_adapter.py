@@ -62,7 +62,8 @@ class OpenAICompatibleAdapterTests(unittest.TestCase):
             response = adapter.chat(request)
 
         self.assertEqual(captured["url"], "http://localhost:1234/v1/chat/completions")
-        self.assertEqual(captured["timeout"], 5)
+        self.assertGreater(captured["timeout"], 0)
+        self.assertLessEqual(captured["timeout"], 5)
         self.assertEqual(captured["headers"]["Authorization"], "Bearer local")
         self.assertEqual(captured["body"]["model"], "local-model")
         self.assertEqual(captured["body"]["messages"][0]["role"], "system")

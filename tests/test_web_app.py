@@ -2883,6 +2883,7 @@ class WebAppTests(unittest.TestCase):
 
         self.assertTrue(status["done"])
         self.assertIn("timed out", status["error"])
+        self.assertEqual(status["error_category"], "provider_timeout")
         self.assertEqual(status["failed_stage"], "waiting_for_model_response")
         self.assertEqual(status["status"], "error")
 
@@ -2992,6 +2993,10 @@ class ErrorAgent(FakeAgent):
         return fake_result(
             self.config,
             errors=["OpenAI-compatible endpoint timed out: timed out"],
+            pipeline_overrides={
+                "error_category": "provider_timeout",
+                "failed_stage": "waiting_for_model_response",
+            },
         )
 
 

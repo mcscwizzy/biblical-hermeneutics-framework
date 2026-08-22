@@ -123,11 +123,7 @@ class AskJob:
         if self.done:
             return
         if self.is_expired():
-            self.fail(
-                "Request exceeded its configured deadline",
-                status_code=504,
-                failed_stage=self.stage,
-            )
+            self.expire()
             return
         entry = StatusEntry.from_event(event)
         if self.stage != entry.stage:
@@ -177,7 +173,10 @@ class AskJob:
                 elapsed_total_seconds=self.elapsed_total_seconds,
                 elapsed_current_stage_seconds=self.elapsed_current_stage_seconds,
                 status="error",
-                details={"failed_stage": self.failed_stage},
+                details={
+                    "failed_stage": self.failed_stage,
+                    "error_category": self.error_category,
+                },
             )
         )
         self._save()
@@ -186,11 +185,7 @@ class AskJob:
         if self.done:
             return
         if self.is_expired():
-            self.fail(
-                "Request exceeded its configured deadline",
-                status_code=504,
-                failed_stage=self.stage,
-            )
+            self.expire()
             return
         self.result = result
         self.done = True
@@ -204,7 +199,7 @@ class AskJob:
             now = datetime.now(timezone.utc)
             elapsed_total = max(elapsed_total, _elapsed_since(self.created_at, now))
             elapsed_stage = max(elapsed_stage, _elapsed_since(self.stage_started_at, now))
-        return {
+        payload = {
             "job_id": self.job_id,
             "stage": self.stage,
             "message": self.message,
@@ -221,6 +216,10 @@ class AskJob:
             "reader_reference": self.reader_reference,
             "study_type": self.study_type,
         }
+        provider_diagnostics = _result_provider_diagnostics(self.result)
+        if provider_diagnostics:
+            payload["provider_diagnostics"] = provider_diagnostics
+        return payload
 
     def _save(self) -> None:
         if self._persist is not None:
@@ -230,6 +229,16 @@ class AskJob:
         if not self.deadline_at:
             return False
         return _elapsed_since(self.deadline_at, datetime.now(timezone.utc)) > 0
+
+    def expire(self) -> None:
+        """Finish an over-deadline job with the model-timeout contract."""
+
+        self.fail(
+            "Model call exceeded its configured deadline (overall)",
+            status_code=504,
+            failed_stage="waiting_for_model_response",
+            error_category="provider_timeout",
+        )
 
 
 @dataclass
@@ -309,11 +318,7 @@ class AskJobStore:
         job = _job_from_payload(json.loads(str(row[0])))
         job._persist = self._save
         if job.is_expired() and not job.done:
-            job.fail(
-                "Request exceeded its configured deadline",
-                status_code=504,
-                failed_stage=job.stage,
-            )
+            job.expire()
         return job
 
     def _initialize(self) -> None:
@@ -548,6 +553,14 @@ def _float_value(value: Any, default: float) -> float:
         return float(value)
     except (TypeError, ValueError):
         return default
+
+
+def _result_provider_diagnostics(result: Any) -> dict[str, Any]:
+    metadata = getattr(result, "model_metadata", None)
+    if not isinstance(metadata, Mapping):
+        return {}
+    diagnostics = metadata.get("provider_diagnostics")
+    return dict(diagnostics) if isinstance(diagnostics, Mapping) else {}
 
 
 def run_ask_job(

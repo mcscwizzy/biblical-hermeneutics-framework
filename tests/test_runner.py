@@ -114,10 +114,12 @@ class ErrorRecordingAdapter(ChatAdapter):
         *,
         error_category: str | None = None,
         raw_provider_response: object | None = None,
+        provider_diagnostics: dict[str, object] | None = None,
     ) -> None:
         self.error_message = error_message
         self.error_category = error_category
         self.raw_provider_response = raw_provider_response
+        self.provider_diagnostics = provider_diagnostics
         self.request: ChatRequest | None = None
 
     def chat(self, request: ChatRequest) -> ChatResponse:
@@ -130,6 +132,7 @@ class ErrorRecordingAdapter(ChatAdapter):
                 if self.raw_provider_response is not None
                 else {"error": self.error_message}
             ),
+            provider_diagnostics=self.provider_diagnostics,
             error_category=self.error_category,
             errors=[self.error_message],
         )
@@ -442,9 +445,16 @@ class RunnerTests(unittest.TestCase):
         self.assertIsNone(result.failed_stage)
 
     def test_provider_timeout_is_fatal_and_keeps_waiting_stage(self):
+        diagnostics = {
+            "requested_model": "openrouter/free",
+            "attempts": 2,
+            "deadline_seconds": 120,
+            "deadline_exceeded": True,
+        }
         result = self.make_agent(
             ErrorRecordingAdapter(
                 error_category="provider_timeout",
+                provider_diagnostics=diagnostics,
             )
         ).ask("What does Proverbs 3 mean?")
 
@@ -452,6 +462,11 @@ class RunnerTests(unittest.TestCase):
         self.assertTrue(result.fatal_errors)
         self.assertEqual(result.error_category, "provider_timeout")
         self.assertEqual(result.failed_stage, "waiting_for_model_response")
+        self.assertEqual(result.model_metadata["provider_diagnostics"], diagnostics)
+        self.assertEqual(
+            result.model_metadata["pipeline"]["provider_timeout_diagnostics"],
+            diagnostics,
+        )
 
     def test_provider_rate_limit_is_fatal_and_preserves_primary_error(self):
         provider_error = (

@@ -18,10 +18,14 @@ class OpenRouterAdapter(OpenAICompatibleAdapter):
         api_key: Optional[str] = None,
         timeout_seconds: Optional[float] = 120,
     ) -> None:
+        # OpenRouter calls must always be bounded.  ``None`` is useful for some
+        # local OpenAI-compatible runtimes, but would let a free-router request
+        # wait forever if an upstream model stopped responding.
+        effective_timeout = 120 if timeout_seconds is None else timeout_seconds
         super().__init__(
             base_url=base_url,
             api_key=api_key,
-            timeout_seconds=timeout_seconds,
+            timeout_seconds=effective_timeout,
             provider_name="openrouter",
             extra_headers={"X-OpenRouter-Metadata": "enabled"},
             max_rate_limit_retries=2,

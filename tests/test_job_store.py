@@ -96,6 +96,40 @@ class AskJobStoreTests(unittest.TestCase):
             self.assertTrue(loaded.done)
             self.assertEqual(loaded.status_code, 504)
             self.assertIn("configured deadline", loaded.error)
+            self.assertEqual(loaded.error_category, "provider_timeout")
+            self.assertEqual(loaded.failed_stage, "waiting_for_model_response")
+            self.assertEqual(loaded.status, "error")
+
+    def test_job_status_exposes_only_provider_diagnostics(self):
+        with tempfile.TemporaryDirectory() as directory:
+            store = AskJobStore(Path(directory) / "jobs.sqlite")
+            job = store.create()
+            job.complete(
+                AgentResult(
+                    answer_text="answer",
+                    reference_context=ReferenceContext(),
+                    genre_context=GenreContext(primary_genre="epistle"),
+                    question_context=QuestionContext(question_type="context"),
+                    profile_used="standard",
+                    validation_result=ValidationResult(passed=True, score=90),
+                    model_metadata={
+                        "provider_diagnostics": {
+                            "requested_model": "openrouter/free",
+                            "selected_model": "google/gemma-4-26b-a4b-it:free",
+                            "selected_provider": "Google AI Studio",
+                        },
+                        "raw_provider_response": {"private": "do not expose"},
+                    },
+                )
+            )
+
+            status = store.get(job.job_id).to_dict()
+
+            self.assertEqual(
+                status["provider_diagnostics"]["selected_model"],
+                "google/gemma-4-26b-a4b-it:free",
+            )
+            self.assertNotIn("raw_provider_response", status)
 
 
 if __name__ == "__main__":
