@@ -1,5 +1,12 @@
 (function () {
   const runtime = window.BHFRuntimeConfig || {};
+  const backendUrl = (url) => {
+    if (window.BHFApi?.resolveUrl) return window.BHFApi.resolveUrl(url);
+    if (String(runtime.backendMode || "same-origin") === "remote") {
+      throw new Error("BHF backend is not configured for this deployment.");
+    }
+    return url;
+  };
   const enableServiceWorker = runtime.enableServiceWorker !== false;
   const CACHE_VERSION = "v18";
   const API_CACHE_PREFIX = "bhf-api-";
@@ -804,7 +811,7 @@
       if (!force && typeof offlineDb.readApiResponse === "function" && await offlineDb.readApiResponse("/api/offline/manifest")) {
         return;
       }
-      const response = await fetch("/api/offline/manifest", {
+      const response = await fetch(backendUrl("/api/offline/manifest"), {
         headers: { Accept: "application/json", ...(force ? {"X-BHF-Refresh": "true"} : {}) },
       });
       if (!response.ok) {
@@ -829,7 +836,7 @@
         data = await offlineDb.readApiResponse("/api/translations/installed");
       }
       if (!data) {
-        const response = await fetch("/api/translations/installed", {
+        const response = await fetch(backendUrl("/api/translations/installed"), {
           headers: {
             Accept: "application/json",
             ...(refreshFromServer ? {"X-BHF-Refresh": "true"} : {}),
@@ -934,7 +941,7 @@
           return;
         }
       }
-      const response = await fetch(url, {
+      const response = await fetch(backendUrl(url), {
         headers: { Accept: "application/json", ...(force ? {"X-BHF-Refresh": "true"} : {}) },
       });
       if (response.ok) {
@@ -967,7 +974,7 @@
     }
     const offlineDb = window.BHFOfflineDB;
     const packUrl = `/api/offline/packs/${encodeURIComponent(normalized)}`;
-    const response = await fetch(packUrl, {
+    const response = await fetch(backendUrl(packUrl), {
       headers: { Accept: "application/json", "X-BHF-Refresh": "true" },
     });
     const pack = await response.json();
@@ -1134,7 +1141,7 @@
     }
     for (const mutation of mutations) {
       try {
-        const response = await fetch(mutation.url, requestOptionsForMutation(mutation));
+        const response = await fetch(backendUrl(mutation.url), requestOptionsForMutation(mutation));
         if (response.ok || (mutation.method === "DELETE" && response.status === 404)) {
           if (typeof offlineDb.markMutationAttempt === "function") {
             await offlineDb.markMutationAttempt(mutation.id, { failed: false });

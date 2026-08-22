@@ -2,6 +2,7 @@ import tempfile
 import unittest
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from unittest.mock import patch
 
 from bhf_agent.models import (
     AgentResult,
@@ -61,6 +62,30 @@ class AskJobStoreTests(unittest.TestCase):
             )
             self.assertEqual(loaded.result.reference_context.book, "John")
             self.assertEqual(loaded.result.model_metadata["provider"], "openrouter")
+
+    def test_unwritable_job_directory_fails_clearly(self):
+        with tempfile.TemporaryDirectory() as directory, patch(
+            "bhf_web.jobs.os.access",
+            return_value=False,
+        ):
+            path = Path(directory) / "jobs.sqlite"
+
+            with self.assertRaisesRegex(
+                RuntimeError,
+                f"BHF job database directory is not writable: {directory}",
+            ):
+                AskJobStore(path)
+
+    def test_invalid_sqlite_database_fails_initialization_clearly(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "jobs.sqlite"
+            path.write_text("not a sqlite database", encoding="utf-8")
+
+            with self.assertRaisesRegex(
+                RuntimeError,
+                "BHF job database could not be opened or initialized",
+            ):
+                AskJobStore(path)
 
     def test_running_job_reports_live_elapsed_time(self):
         with tempfile.TemporaryDirectory() as directory:

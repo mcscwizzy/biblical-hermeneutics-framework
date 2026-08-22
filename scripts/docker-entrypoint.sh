@@ -1,6 +1,14 @@
 #!/bin/sh
 set -eu
 
+# Keep runtime databases together by default. Explicit database paths retain
+# precedence for existing Compose and custom deployments.
+runtime_data_dir="${BHF_DATA_DIR:-.bhf-data}"
+BHF_STUDY_DB_PATH="${BHF_STUDY_DB_PATH:-${runtime_data_dir}/study.sqlite}"
+BHF_JOB_DB_PATH="${BHF_JOB_DB_PATH:-${runtime_data_dir}/jobs.sqlite}"
+BHF_COMMENTARY_DB_PATH="${BHF_COMMENTARY_DB_PATH:-${runtime_data_dir}/commentary.sqlite}"
+export BHF_STUDY_DB_PATH BHF_JOB_DB_PATH BHF_COMMENTARY_DB_PATH
+
 # Apply the current schema before serving requests. This upgrades a persisted
 # study database with reviewed archaeology records and media on container start.
 if [ -n "${BHF_STUDY_DB_PATH:-}" ]; then

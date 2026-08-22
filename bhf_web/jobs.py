@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import sqlite3
 import threading
 import uuid
@@ -268,10 +269,14 @@ class StoredResult:
 
 
 class AskJobStore:
-    """Process-safe SQLite job store for polling and result retrieval."""
+    """Process-safe SQLite job store for polling and result retrieval.
+
+    SQLite is suitable for the public beta's single Railway instance. A
+    multi-replica deployment will require an external shared job store.
+    """
 
     def __init__(self, path: str | Path | None = None) -> None:
-        self.path = Path(path or settings.JOB_DB_PATH)
+        self.path = Path(path) if path is not None else settings.JOB_DB_PATH
         self._lock = threading.Lock()
         self._initialize()
 
@@ -322,18 +327,40 @@ class AskJobStore:
         return job
 
     def _initialize(self) -> None:
-        self.path.parent.mkdir(parents=True, exist_ok=True)
-        with self._connect() as connection:
-            connection.execute("PRAGMA journal_mode = WAL")
-            connection.execute(
-                """
-                CREATE TABLE IF NOT EXISTS ask_jobs (
-                    job_id TEXT PRIMARY KEY,
-                    payload TEXT NOT NULL,
-                    updated_at TEXT NOT NULL
-                )
-                """
+        directory = self.path.parent
+        try:
+            directory.mkdir(parents=True, exist_ok=True)
+        except OSError as exc:
+            raise RuntimeError(
+                f"BHF job database directory could not be created: {directory}"
+            ) from exc
+        if not directory.is_dir() or not os.access(directory, os.W_OK):
+            raise RuntimeError(
+                f"BHF job database directory is not writable: {directory}"
             )
+
+        try:
+            with self._connect() as connection:
+                connection.execute("PRAGMA journal_mode = WAL")
+                connection.execute(
+                    """
+                    CREATE TABLE IF NOT EXISTS ask_jobs (
+                        job_id TEXT PRIMARY KEY,
+                        payload TEXT NOT NULL,
+                        updated_at TEXT NOT NULL
+                    )
+                    """
+                )
+                schema = connection.execute(
+                    "SELECT name FROM sqlite_master "
+                    "WHERE type = 'table' AND name = 'ask_jobs'"
+                ).fetchone()
+                if schema is None:
+                    raise RuntimeError("expected ask_jobs schema was not initialized")
+        except (OSError, sqlite3.Error, RuntimeError) as exc:
+            raise RuntimeError(
+                f"BHF job database could not be opened or initialized: {self.path}"
+            ) from exc
 
     def _connect(self) -> sqlite3.Connection:
         connection = sqlite3.connect(self.path, timeout=5)

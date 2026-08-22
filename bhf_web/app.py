@@ -3,10 +3,12 @@
 from __future__ import annotations
 
 import json
+import logging
 from pathlib import Path
 
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, JSONResponse, Response
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
@@ -67,13 +69,14 @@ from .jobs import (
     run_search_fallback_job as _run_search_fallback_job,
 )
 from .offline import build_offline_manifest, build_offline_pack
-from .runtime import load_runtime_config
+from .runtime import load_cors_origins, load_runtime_config
 
 
 PACKAGE_DIR = Path(__file__).resolve().parent
 templates = Jinja2Templates(directory=str(PACKAGE_DIR / "templates"))
 STUDY_DB_PATH = settings.STUDY_DB_PATH
 COMMENTARY_DB_PATH = settings.COMMENTARY_DB_PATH
+LOGGER = logging.getLogger(__name__)
 
 
 def static_asset(path: str) -> str:
@@ -114,7 +117,29 @@ def _first_forwarded_header_value(headers, name: bytes) -> str:
 
 def create_app() -> FastAPI:
     runtime_config = load_runtime_config()
+    if runtime_config["backendConfigError"]:
+        LOGGER.error(
+            "BHF backend routing configuration error: %s",
+            runtime_config["backendConfigError"],
+        )
     web_app = FastAPI(title="BHF Bible Reader")
+    web_app.state.runtime_config = runtime_config
+    cors_origins = load_cors_origins()
+    if cors_origins:
+        web_app.add_middleware(
+            CORSMiddleware,
+            allow_origins=cors_origins,
+            allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+            allow_headers=[
+                "Accept",
+                "Content-Type",
+                "X-BHF-Offline-Pack",
+                "X-BHF-OpenRouter-Key",
+                "X-BHF-Refresh",
+            ],
+            expose_headers=["Retry-After", "X-BHF-Offline"],
+            allow_credentials=False,
+        )
     web_app.add_middleware(ForwardedProtoMiddleware)
     web_app.mount(
         "/static",
@@ -306,10 +331,17 @@ def create_app() -> FastAPI:
                 }
             ),
         )
-        if any(request.query_params.get(name) for name in ("code", "state", "error", "error_description")):
+        if runtime_config["backendMode"] == "remote" or any(
+            request.query_params.get(name)
+            for name in ("code", "state", "error", "error_description")
+        ):
             response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate"
             response.headers["Pragma"] = "no-cache"
-            response.headers["Referrer-Policy"] = "no-referrer"
+            if any(
+                request.query_params.get(name)
+                for name in ("code", "state", "error", "error_description")
+            ):
+                response.headers["Referrer-Policy"] = "no-referrer"
         return response
 
     @web_app.get("/api/bible/books", response_class=JSONResponse)

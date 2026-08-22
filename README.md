@@ -43,6 +43,8 @@ docker compose -f docker-compose.ollama.yml up -d --build
 
 See [Docker installation and operations](docs/docker.md) for prerequisites,
 configuration, updates, data handling, and uninstallation.
+For split-host production or same-origin PWA settings, see
+[Frontend and backend routing](docs/deployment-routing.md).
 
 ## Other ways to use BHF
 

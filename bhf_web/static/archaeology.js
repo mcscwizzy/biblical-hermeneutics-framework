@@ -2,10 +2,14 @@
   const $ = (selector) => document.querySelector(selector);
   const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (character) => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[character]));
   const request = async (url) => {
-    const response = await fetch(url, {headers: {Accept: "application/json"}});
-    const payload = await response.json();
-    if (!response.ok) throw new Error(payload.error || "Could not load archaeology.");
-    return payload;
+    if (window.BHFApi?.requestJson) {
+      return window.BHFApi.requestJson(
+        url,
+        {headers: {Accept: "application/json"}},
+        "Could not load archaeology.",
+      );
+    }
+    throw new Error("BHF backend is not configured for this deployment.");
   };
   const render = (results) => {
     const container = $("[data-archaeology-results]");

@@ -131,6 +131,9 @@ async function pollBibleSearchFallback(jobId, requestId) {
       return { results: [], message: "" };
     }
     if (status.done) {
+      if (status.error) {
+        throw new Error(status.error);
+      }
       const result = await requestJson(`/api/bible/search/fallback/result/${encodeURIComponent(jobId)}`, {}, "BHF search fallback failed.");
       return result;
     }

@@ -136,6 +136,14 @@ let pendingReaderTabsPersistence = null;
 let wordStudyNavigationStack = [];
 let lastArchaeologyStudyAction = null;
 const BHF_HTTP = window.BHFApi || {};
+const BHF_JOB_FLOW = window.BHFJobFlow || {
+  backendStartError: (_http, runtime) =>
+    String(runtime?.backendMode || "same-origin") === "remote"
+      ? "BHF backend is not configured for this deployment."
+      : "",
+  missingJobStateMessage: () => "",
+  shouldFetchResult: (status) => !status?.error,
+};
 
 document.addEventListener("DOMContentLoaded", function () {
   initializeTheme();
@@ -169,6 +177,20 @@ document.addEventListener("submit", async function (event) {
   const answerPanel = targets.answerPanel;
   const statusPanel = targets.statusPanel;
   const submitButton = form.querySelector("button[type='submit']");
+  const backendStartError = BHF_JOB_FLOW.backendStartError(BHF_HTTP, BHF_RUNTIME);
+  if (backendStartError) {
+    if (answerPanel && statusPanel) {
+      resetStatus(statusPanel);
+      markStatusFailed(statusPanel, backendStartError);
+      answerPanel.innerHTML = errorHtml(backendStartError);
+      answerPanel.removeAttribute("aria-busy");
+      setRunning(form, submitButton, false);
+      revealAnswerPanel(answerPanel);
+    } else {
+      console.error(backendStartError);
+    }
+    return;
+  }
   if (!answerPanel || !statusPanel) {
     form.submit();
     return;
@@ -202,17 +224,21 @@ document.addEventListener("submit", async function (event) {
     latestJobComplete = false;
 
     const finalStatus = await pollJob(form, statusPanel, job.job_id);
-    const result = await requestText(
-      form.dataset.resultBase + finalStatus.job_id,
-      {},
-      "Could not render result.",
-    );
-    answerPanel.innerHTML = result;
-
-    if (finalStatus.error) {
+    if (!BHF_JOB_FLOW.shouldFetchResult(finalStatus)) {
       markStatusFailed(statusPanel, finalStatus.error || "Request failed.");
+      answerPanel.innerHTML = errorHtml(finalStatus.error || "Request failed.");
+      expandWorkspaceForMobileAnswer();
+      addMobileAnswerCloseControl(answerPanel);
+      wireAnswerPanelControls(answerPanel);
+      revealAnswerPanel(answerPanel);
       latestJobComplete = false;
     } else {
+      const result = await requestText(
+        form.dataset.resultBase + finalStatus.job_id,
+        {},
+        "Could not render result.",
+      );
+      answerPanel.innerHTML = result;
       markStatusComplete(statusPanel, finalStatus);
       latestJobComplete = true;
       expandWorkspaceForMobileAnswer();
@@ -2492,7 +2518,11 @@ function requestJson(url, options = {}, fallbackMessage = "Request failed.") {
       throw new Error(`${fallbackMessage} (HTTP ${response.status}; invalid JSON response)`);
     }
     if (!response.ok) {
-      throw new Error(data.error || fallbackMessage);
+      const error = new Error(data.error || fallbackMessage);
+      error.status = response.status;
+      error.errorCategory = data.error_category || "";
+      error.serverMessage = data.message || "";
+      throw error;
     }
     return data;
   });
@@ -2515,22 +2545,13 @@ function resolveBackendUrl(url) {
   if (typeof BHF_HTTP.resolveUrl === "function") {
     return BHF_HTTP.resolveUrl(url);
   }
-  const raw = String(url || "");
-  if (
-    /^(?:[a-z]+:)?\/\//i.test(raw) ||
-    raw.startsWith("data:") ||
-    raw.startsWith("blob:")
-  ) {
-    return raw;
+  if (typeof window.BHFBackendRouting?.resolveUrl === "function") {
+    return window.BHFBackendRouting.resolveUrl(url, BHF_RUNTIME);
   }
-  const base = String(BHF_RUNTIME.apiBaseUrl || "").replace(/\/+$/, "");
-  if (!base) {
-    return raw;
+  if (String(BHF_RUNTIME.backendMode || "same-origin") === "remote") {
+    throw new Error("BHF backend is not configured for this deployment.");
   }
-  if (raw.startsWith("/")) {
-    return `${base}${raw}`;
-  }
-  return `${base}/${raw}`;
+  return String(url || "");
 }
 
 function handleWorkspaceTabKeydown(event, tabs) {
@@ -5906,6 +5927,10 @@ async function pollJob(form, statusPanel, jobId) {
       );
       pollInterval = POLL_INTERVAL_MS;
     } catch (error) {
+      const missingJobMessage = BHF_JOB_FLOW.missingJobStateMessage(error);
+      if (missingJobMessage) {
+        throw new Error(missingJobMessage);
+      }
       if (error?.status !== 429) throw error;
       const retryAfterMs = Number(error.retryAfterSeconds || 0) * 1000;
       pollInterval = Math.min(

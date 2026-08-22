@@ -27,7 +27,7 @@ from bhf_web.forms import config_from_form
 from bhf_web.forms import form_values_for_ask_prompt
 from bhf_web.forms import load_web_defaults
 from bhf_agent.study_db import get_source, initialize_database, list_sources
-from bhf_web.runtime import load_runtime_config
+from bhf_web.runtime import load_cors_origins, load_runtime_config
 
 try:
     from bhf_web.app import AskJob, app, create_app
@@ -347,6 +347,49 @@ class WebFormTests(unittest.TestCase):
 
 
 class RuntimeConfigTests(unittest.TestCase):
+    def test_runtime_config_defaults_to_same_origin_with_no_api_url(self):
+        with patch.dict(os.environ, {}, clear=True):
+            runtime = load_runtime_config()
+
+        self.assertEqual(runtime["backendMode"], "same-origin")
+        self.assertEqual(runtime["apiBaseUrl"], "")
+        self.assertEqual(runtime["backendConfigError"], "")
+
+    def test_same_origin_pwa_does_not_require_an_api_url(self):
+        env = {"BHF_RUNTIME_MODE": "pwa", "BHF_BACKEND_MODE": "same-origin"}
+        with patch.dict(os.environ, env, clear=True):
+            runtime = load_runtime_config()
+
+        self.assertEqual(runtime["mode"], "pwa")
+        self.assertEqual(runtime["backendMode"], "same-origin")
+        self.assertEqual(runtime["apiBaseUrl"], "")
+        self.assertEqual(runtime["backendConfigError"], "")
+
+    def test_remote_pwa_exposes_the_configured_backend(self):
+        env = {
+            "BHF_RUNTIME_MODE": "pwa",
+            "BHF_BACKEND_MODE": "remote",
+            "BHF_API_BASE_URL": "https://backend.example.com",
+        }
+        with patch.dict(os.environ, env, clear=True):
+            runtime = load_runtime_config()
+
+        self.assertEqual(runtime["mode"], "pwa")
+        self.assertEqual(runtime["backendMode"], "remote")
+        self.assertEqual(runtime["apiBaseUrl"], "https://backend.example.com")
+        self.assertEqual(runtime["backendConfigError"], "")
+
+    def test_remote_mode_without_api_url_has_deterministic_error(self):
+        with patch.dict(os.environ, {"BHF_BACKEND_MODE": "remote"}, clear=True):
+            runtime = load_runtime_config()
+
+        self.assertEqual(runtime["backendMode"], "remote")
+        self.assertEqual(runtime["apiBaseUrl"], "")
+        self.assertEqual(
+            runtime["backendConfigError"],
+            "BHF_API_BASE_URL is required when BHF_BACKEND_MODE=remote.",
+        )
+
     def test_runtime_config_defaults_and_overrides(self):
         env = {
             "BHF_RUNTIME_MODE": "capacitor",
@@ -354,15 +397,63 @@ class RuntimeConfigTests(unittest.TestCase):
             "BHF_PROVIDER_LABELS_JSON": '{"local":"On-device","openai":"Cloud"}',
         }
 
-        with patch.dict(os.environ, env, clear=False):
+        with patch.dict(os.environ, env, clear=True):
             runtime = load_runtime_config()
 
         self.assertEqual(runtime["mode"], "capacitor")
+        self.assertEqual(runtime["backendMode"], "same-origin")
         self.assertEqual(runtime["apiBaseUrl"], "https://example.com/bhf")
         self.assertEqual(runtime["providerLabels"]["local"], "On-device")
         self.assertEqual(runtime["providerLabels"]["openai"], "Cloud")
         self.assertEqual(runtime["providerLabels"]["ollama"], "Ollama")
         self.assertEqual(runtime["providerLabels"]["apple-native-placeholder"], "Apple Native Placeholder")
+
+    def test_cors_origins_are_explicit_and_comma_separated(self):
+        origins = load_cors_origins(
+            {"BHF_CORS_ORIGINS": "https://one.example, https://two.example/"}
+        )
+        self.assertEqual(origins, ["https://one.example", "https://two.example"])
+
+        with self.assertRaisesRegex(ValueError, "without paths or wildcards"):
+            load_cors_origins({"BHF_CORS_ORIGINS": "*"})
+
+    @unittest.skipUnless(HAS_WEB_DEPS, "FastAPI dependencies are not installed")
+    def test_cors_preflight_allows_vercel_origin_and_byo_key_header(self):
+        origin = "https://biblical-hermeneutics-framework.vercel.app"
+        with patch.dict(os.environ, {"BHF_CORS_ORIGINS": origin}, clear=False):
+            cors_app = create_app()
+
+        response = asgi_request(
+            "OPTIONS",
+            "/ask/jobs",
+            test_app=cors_app,
+            headers={
+                "Origin": origin,
+                "Access-Control-Request-Method": "POST",
+                "Access-Control-Request-Headers": (
+                    "Accept, Content-Type, X-BHF-OpenRouter-Key, X-BHF-Refresh"
+                ),
+            },
+        )
+
+        self.assertEqual(response["status"], 200)
+        self.assertEqual(response["headers"]["access-control-allow-origin"], origin)
+        self.assertIn(
+            "x-bhf-openrouter-key",
+            response["headers"]["access-control-allow-headers"].lower(),
+        )
+
+        denied = asgi_request(
+            "OPTIONS",
+            "/ask/jobs",
+            test_app=cors_app,
+            headers={
+                "Origin": "https://untrusted.example",
+                "Access-Control-Request-Method": "POST",
+            },
+        )
+        self.assertEqual(denied["status"], 400)
+        self.assertNotIn("access-control-allow-origin", denied["headers"])
 
 
 class WebAssetTests(unittest.TestCase):
@@ -380,7 +471,8 @@ class WebAssetTests(unittest.TestCase):
         dockerignore = Path(".dockerignore").read_text(encoding="utf-8")
 
         self.assertIn("COPY . .", dockerfile)
-        self.assertIn("ENV BHF_STUDY_DB_PATH=/app/.bhf-data/study.sqlite", dockerfile)
+        self.assertIn("ENV BHF_DATA_DIR=/app/.bhf-data", dockerfile)
+        self.assertNotIn("ENV BHF_STUDY_DB_PATH=", dockerfile)
         self.assertIn("initialize_database", entrypoint)
         self.assertIn('os.environ["BHF_STUDY_DB_PATH"]', entrypoint)
         self.assertNotIn("data_sources/", dockerignore)
@@ -419,6 +511,35 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("error?.status !== 429", controller)
         self.assertIn("runningStatusMessage(status)", status)
         self.assertIn("elapsed_current_stage_seconds", status)
+
+    def test_job_polling_handles_lost_and_failed_jobs_without_result_fetch(self):
+        controller = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
+        http = Path("bhf_web/static/api/http.js").read_text(encoding="utf-8")
+
+        failed_branch = controller.index(
+            "if (!BHF_JOB_FLOW.shouldFetchResult(finalStatus))"
+        )
+        submit_handler = controller.index(
+            'document.addEventListener("submit", async function (event)'
+        )
+        configuration_guard = controller.index(
+            "const backendStartError = BHF_JOB_FLOW.backendStartError",
+            submit_handler,
+        )
+        native_submission = controller.index("form.submit();", submit_handler)
+        result_fetch = controller.index(
+            "form.dataset.resultBase + finalStatus.job_id",
+            failed_branch,
+        )
+        self.assertLess(configuration_guard, native_submission)
+        self.assertIn("if (backendStartError)", controller[configuration_guard:native_submission])
+        self.assertLess(failed_branch, result_fetch)
+        self.assertIn("BHF_JOB_FLOW.missingJobStateMessage(error)", controller)
+        self.assertIn("throw new Error(missingJobMessage)", controller)
+        self.assertIn("stopWaiting();", controller)
+        self.assertIn("setRunning(form, submitButton, false);", controller)
+        self.assertIn("error.errorCategory = data.error_category", http)
+        self.assertIn("error.serverMessage = data.message", http)
 
     def test_reader_script_has_study_actions_without_a_context_menu(self):
         script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
@@ -833,7 +954,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("Loading translations...", index_html)
         self.assertIn('name="reader_translation"', index_html)
         self.assertIn("static_asset('/style.css') }}?v=20260724c", index_html)
-        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260820a", index_html)
+        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260821a", index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
@@ -1061,7 +1182,7 @@ class WebAppTests(unittest.TestCase):
 
         self.assertEqual(response["status"], 200)
         self.assertIn('href="/static/style.css?v=20260724c"', response["body"])
-        self.assertIn('src="/static/htmx-lite.js?v=20260820a"', response["body"])
+        self.assertIn('src="/static/htmx-lite.js?v=20260821a"', response["body"])
         self.assertIn('href="/static/vendor/leaflet/leaflet.css"', response["body"])
         self.assertNotIn("http://bhf.thewalkerclan.synology.me/static/", response["body"])
 
@@ -1087,7 +1208,15 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v34"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v35"', service_worker["body"])
+        self.assertIn("/static/api/backend-routing.js", service_worker["body"])
+        self.assertIn("/static/api/job-flow.js", service_worker["body"])
+        self.assertIn("isLiveBackendJobRequest", service_worker["body"])
+        self.assertIn('url.pathname.startsWith("/ask/")', service_worker["body"])
+        self.assertIn(
+            'url.pathname.startsWith("/api/bible/search/fallback/")',
+            service_worker["body"],
+        )
         self.assertIn('/static/styles/companion.css', service_worker["body"])
         self.assertIn('/static/reader-selection.js', service_worker["body"])
         self.assertIn('/static/companion-context.js', service_worker["body"])
@@ -2277,6 +2406,19 @@ class WebAppTests(unittest.TestCase):
         self.assertNotIn("Canonical Context", result["body"])
         self.assertNotIn("Developer Retrieval Inspector", result["body"])
 
+    def test_missing_ask_job_status_and_result_are_actionable(self):
+        for path in (
+            "/ask/status/nonexistent",
+            "/ask/result/nonexistent",
+        ):
+            response = asgi_request("GET", path)
+            payload = json.loads(response["body"])
+
+            self.assertEqual(response["status"], 404)
+            self.assertEqual(payload["error"], "job not found")
+            self.assertEqual(payload["error_category"], "job_state_missing")
+            self.assertIn("Please submit the question again", payload["message"])
+
     def test_ask_result_shows_debug_metadata_when_enabled(self):
         debug_defaults = SimpleNamespace(
             config=AgentConfig(
@@ -2409,6 +2551,28 @@ class WebAppTests(unittest.TestCase):
         response = asgi_request("POST", "/api/debug/ckl-search", json_data={"query": "Shechem"})
 
         self.assertEqual(response["status"], 404)
+
+    def test_runtime_storage_diagnostics_are_available_only_in_debug_mode(self):
+        hidden = asgi_request("GET", "/api/debug/runtime-storage")
+        self.assertEqual(hidden["status"], 404)
+
+        debug_defaults = SimpleNamespace(
+            config=AgentConfig(
+                base_url="http://localhost:11434/v1",
+                model="llama3.1:8b",
+                debug=True,
+            )
+        )
+        with patch(
+            "bhf_web.routes.debug.load_web_defaults",
+            return_value=debug_defaults,
+        ):
+            response = asgi_request("GET", "/api/debug/runtime-storage")
+
+        payload = json.loads(response["body"])
+        self.assertEqual(response["status"], 200)
+        self.assertEqual(payload["job_store"], "sqlite")
+        self.assertTrue(payload["job_database_path"].endswith("jobs.sqlite"))
 
     def test_debug_ckl_search_endpoint_returns_retrieval_trace_when_enabled(self):
         debug_defaults = SimpleNamespace(
@@ -3368,6 +3532,12 @@ async def _asgi_request(target_app, method, path, data=None, json_data=None, hea
     return {
         "status": status,
         "body": b"".join(chunks).decode("utf-8"),
+        "headers": {
+            name.decode("latin-1").lower(): value.decode("latin-1")
+            for message in messages
+            if message["type"] == "http.response.start"
+            for name, value in message.get("headers", [])
+        },
     }
 
 

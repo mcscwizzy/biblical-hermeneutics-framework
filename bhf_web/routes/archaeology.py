@@ -11,5 +11,8 @@ from fastapi.responses import HTMLResponse
 def register_archaeology_routes(app: FastAPI, *, templates: Any) -> None:
     @app.get("/archaeology", response_class=HTMLResponse)
     async def archaeology_explore(request: Request) -> HTMLResponse:
-        return templates.TemplateResponse(request, "archaeology.html", {})
-
+        return templates.TemplateResponse(
+            request,
+            "archaeology.html",
+            {"runtime_config": request.app.state.runtime_config},
+        )

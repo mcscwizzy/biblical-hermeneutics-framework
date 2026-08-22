@@ -130,7 +130,10 @@ The most useful `.env` settings are:
 | `BHF_CONTEXT_WINDOW` | `8192` in `.env.example` | Model context-window budget. |
 | `BHF_MAX_TOKENS` | `1536` | Maximum generated tokens. |
 | `BHF_TIMEOUT_SECONDS` | `120` | Provider request deadline in seconds. |
-| `BHF_JOB_DB_PATH` | next to `study.sqlite` | Durable SQLite state for background jobs. |
+| `BHF_DATA_DIR` | `.bhf-data` outside the image | Shared directory for writable runtime databases. |
+| `BHF_JOB_DB_PATH` | `$BHF_DATA_DIR/jobs.sqlite` | Explicit override for durable background-job state. |
+| `BHF_STUDY_DB_PATH` | `$BHF_DATA_DIR/study.sqlite` | Explicit override for server study data. |
+| `BHF_COMMENTARY_DB_PATH` | `$BHF_DATA_DIR/commentary.sqlite` | Explicit override for commentary data. |
 | `BHF_MEMORY_ENABLED` | `false` | Enables local session-memory files. |
 | `BHF_LEXICAL_SEED_POLICY` | `refresh` in Compose | `refresh`, `missing`, or `none`. |
 | `BHF_COMMENTARY_SEED_POLICY` | `refresh` in Compose | `refresh`, `missing`, or `none` for the Tyndale database. |
@@ -150,6 +153,7 @@ Both app stacks mount the repository's `.bhf/` directory at
 | `.bhf/lexicon.sqlite` | Generated lexical and verse-token database. |
 | `.bhf/commentary.sqlite` | Generated Tyndale Open Study Notes database. |
 | `.bhf/study.sqlite` | Notes, highlights, saved studies, sources, and other server study data. |
+| `.bhf/jobs.sqlite` | Asynchronous question state and completed results. |
 | `.bhf/sessions/` | Optional local agent memory. |
 | `.bhf/translations/` | Server-installed translation data and metadata. |
 | `.bhf/web-config.json` | Optional local web defaults. |
@@ -165,6 +169,33 @@ by an image update; no manual migration command is required after rebuilding.
 PWA data is separate. Each browser profile stores offline packs, device-imported
 translations, notes, highlights, and saved studies in IndexedDB and Cache
 Storage. Back up browser data with the PWA's **Export offline data** action.
+
+## Railway public beta
+
+The current Railway beta supports exactly **one service replica** with a
+persistent Railway volume mounted at `/data`. Set:
+
+```dotenv
+BHF_DATA_DIR=/data
+```
+
+This resolves the asynchronous job database to `/data/jobs.sqlite`, study data
+to `/data/study.sqlite`, and commentary data to `/data/commentary.sqlite`.
+Explicit path settings still take precedence; for example, a deployment may
+instead set:
+
+```dotenv
+BHF_JOB_DB_PATH=/data/jobs.sqlite
+BHF_STUDY_DB_PATH=/data/study.sqlite
+```
+
+The Railway volume must be writable by the image's `bhf` user (UID/GID 1000).
+Configure volume ownership or permissions in Railway if necessary; do not use
+world-writable `chmod 777` permissions.
+
+The SQLite `AskJobStore` uses WAL mode and a busy timeout and is appropriate for
+this single-instance beta. Multi-replica deployments are not supported because
+each replica would require an external shared job store.
 
 ## Lexical image build
 

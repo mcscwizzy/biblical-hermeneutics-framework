@@ -1,18 +1,30 @@
 (function () {
+  const backendRouting = window.BHFBackendRouting || {};
+
   function resolveUrl(url) {
     const raw = String(url || "");
-    if (/^(?:[a-z]+:)?\/\//i.test(raw) || raw.startsWith("data:") || raw.startsWith("blob:")) {
-      return raw;
+    if (typeof backendRouting.resolveUrl === "function") {
+      return backendRouting.resolveUrl(raw, window.BHFRuntimeConfig || {});
+    }
+    // Preserve same-origin behavior if the small routing helper failed to load.
+    // Remote mode is guarded below and must never silently fall back.
+    const runtime = window.BHFRuntimeConfig || {};
+    if (String(runtime.backendMode || "same-origin") === "remote") {
+      throw new Error("BHF backend is not configured for this deployment.");
+    }
+    return raw;
+  }
+
+  function backendConfigurationError() {
+    if (typeof backendRouting.configurationError === "function") {
+      return backendRouting.configurationError(window.BHFRuntimeConfig || {})
+        ? "BHF backend is not configured for this deployment."
+        : "";
     }
     const runtime = window.BHFRuntimeConfig || {};
-    const base = String(runtime.apiBaseUrl || "").replace(/\/+$/, "");
-    if (!base) {
-      return raw;
-    }
-    if (raw.startsWith("/")) {
-      return `${base}${raw}`;
-    }
-    return `${base}/${raw}`;
+    return String(runtime.backendMode || "same-origin") === "remote"
+      ? "BHF backend is not configured for this deployment."
+      : "";
   }
 
   async function requestJson(url, options = {}, fallbackMessage = "Request failed.") {
@@ -65,8 +77,14 @@
             return markOffline(fallback);
           }
         }
-        const error = new Error(data.error || fallbackMessage);
+        const error = new Error(
+          data.error_category === "job_state_missing"
+            ? data.message || data.error || fallbackMessage
+            : data.error || fallbackMessage,
+        );
         error.status = response.status;
+        error.errorCategory = data.error_category || "";
+        error.serverMessage = data.message || "";
         const retryAfter = Number(response.headers.get("Retry-After") || 0);
         error.retryAfterSeconds = Number.isFinite(retryAfter) ? retryAfter : 0;
         throw error;
@@ -366,8 +384,22 @@
   }
 
   window.BHFApi = {
+    backendConfigurationError,
     requestJson,
     requestText,
     resolveUrl,
   };
+
+  const runtime = window.BHFRuntimeConfig || {};
+  const routingError = backendConfigurationError();
+  if (routingError) {
+    console.error(
+      "BHF backend routing configuration error:",
+      runtime.backendConfigError || routingError,
+    );
+  } else if (String(runtime.backendMode || "same-origin") === "remote") {
+    console.info("BHF backend routing: remote ->", runtime.apiBaseUrl);
+  } else {
+    console.info("BHF backend routing: same-origin");
+  }
 })();

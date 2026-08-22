@@ -6,7 +6,7 @@ import threading
 from typing import Any, Callable
 
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.responses import HTMLResponse, JSONResponse, Response
 
 from bhf_agent.config import ConfigError
 from bhf_agent.profiles import ProfileError
@@ -28,6 +28,14 @@ from ..services.web_helpers import (
 
 
 JOB_DEADLINE_GRACE_SECONDS = 15.0
+MISSING_JOB_PAYLOAD = {
+    "error": "job not found",
+    "error_category": "job_state_missing",
+    "message": (
+        "The request state could not be found. The service may have restarted "
+        "or been redeployed. Please submit the question again."
+    ),
+}
 
 
 def _job_deadline_seconds(form: dict[str, Any]) -> float:
@@ -269,21 +277,16 @@ def register_ask_routes(
     async def ask_status(job_id: str) -> JSONResponse:
         job = job_store.get(job_id)
         if job is None:
-            return JSONResponse({"error": "job not found"}, status_code=404)
+            return JSONResponse(MISSING_JOB_PAYLOAD, status_code=404)
         return JSONResponse(job.to_dict())
 
     @app.get("/ask/result/{job_id}", response_class=HTMLResponse)
-    async def ask_result(request: Request, job_id: str) -> HTMLResponse:
-        loaded = load_web_defaults()
-        show_debug = bool(getattr(loaded.config, "debug", False))
+    async def ask_result(request: Request, job_id: str) -> Response:
         job = job_store.get(job_id)
         if job is None:
-            return templates.TemplateResponse(
-                request,
-                "partials/answer.html",
-                _answer_template_context(error="job not found"),
-                status_code=404,
-            )
+            return JSONResponse(MISSING_JOB_PAYLOAD, status_code=404)
+        loaded = load_web_defaults()
+        show_debug = bool(getattr(loaded.config, "debug", False))
         if not job.done:
             return templates.TemplateResponse(
                 request,

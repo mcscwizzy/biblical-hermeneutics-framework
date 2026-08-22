@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v34";
+const CACHE_VERSION = "v35";
 const SHELL_CACHE = `bhf-shell-${CACHE_VERSION}`;
 const STATIC_CACHE = `bhf-static-${CACHE_VERSION}`;
 const API_CACHE = `bhf-api-${CACHE_VERSION}`;
@@ -19,6 +19,8 @@ const STATIC_ASSETS = [
   "/static/styles/workspace.css",
   "/static/styles/companion.css",
   "/static/api/http.js",
+  "/static/api/backend-routing.js",
+  "/static/api/job-flow.js",
   "/static/offline/db.js",
   "/static/study-vault.js",
   "/static/model-settings.js",
@@ -119,11 +121,16 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
+  const requestUrl = new URL(event.request.url);
+  if (isLiveBackendJobRequest(requestUrl)) {
+    event.respondWith(fetch(event.request));
+    return;
+  }
+
   if (event.request.method !== "GET") {
     return;
   }
 
-  const requestUrl = new URL(event.request.url);
   if (requestUrl.origin !== self.location.origin) {
     return;
   }
@@ -232,6 +239,13 @@ function isAuthCallbackUrl(url) {
     || url.searchParams.has("state")
     || url.searchParams.has("error")
     || url.searchParams.has("error_description");
+}
+
+function isLiveBackendJobRequest(url) {
+  return url.pathname === "/ask"
+    || url.pathname.startsWith("/ask/")
+    || url.pathname === "/api/bible/search/fallback"
+    || url.pathname.startsWith("/api/bible/search/fallback/");
 }
 
 function isCacheableApiRequest(url) {

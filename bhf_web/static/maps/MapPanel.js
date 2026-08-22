@@ -54,7 +54,12 @@ function requestJson(url, options = {}, fallbackMessage = "Request failed.") {
   if (typeof BHF_HTTP.requestJson === "function") {
     return BHF_HTTP.requestJson(url, options, fallbackMessage);
   }
-  const resolvedUrl = typeof BHF_HTTP.resolveUrl === "function" ? BHF_HTTP.resolveUrl(url) : url;
+  let resolvedUrl = url;
+  if (typeof BHF_HTTP.resolveUrl === "function") {
+    resolvedUrl = BHF_HTTP.resolveUrl(url);
+  } else if (String(window.BHFRuntimeConfig?.backendMode || "same-origin") === "remote") {
+    throw new Error("BHF backend is not configured for this deployment.");
+  }
   return fetch(resolvedUrl, options).then(async (response) => {
     const data = await response.json();
     if (!response.ok) {

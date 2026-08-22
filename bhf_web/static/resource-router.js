@@ -640,7 +640,16 @@
     if (window.BHFApi?.requestJson) {
       return window.BHFApi.requestJson(url, {signal, headers: {Accept: "application/json"}}, "Resource could not be loaded.");
     }
-    const response = await fetch(url, {signal, headers: {Accept: "application/json"}});
+    let resolvedUrl = url;
+    if (window.BHFBackendRouting?.resolveUrl) {
+      resolvedUrl = window.BHFBackendRouting.resolveUrl(
+        url,
+        window.BHFRuntimeConfig || {},
+      );
+    } else if (String(window.BHFRuntimeConfig?.backendMode || "same-origin") === "remote") {
+      throw new Error("BHF backend is not configured for this deployment.");
+    }
+    const response = await fetch(resolvedUrl, {signal, headers: {Accept: "application/json"}});
     const data = await response.json();
     if (!response.ok) throw new Error(data.error || `HTTP ${response.status}`);
     return data;

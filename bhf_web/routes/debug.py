@@ -5,12 +5,31 @@ from __future__ import annotations
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 
+from .. import settings
 from ..forms import load_web_defaults
 from ..services.ckl_inspector import build_search_inspector_payload
 from ..services.web_helpers import request_payload
 
 
 def register_debug_routes(app: FastAPI) -> None:
+    @app.get(
+        "/api/debug/runtime-storage",
+        response_class=JSONResponse,
+        include_in_schema=False,
+    )
+    async def debug_runtime_storage() -> JSONResponse:
+        loaded = load_web_defaults()
+        if not bool(getattr(loaded.config, "debug", False)):
+            return JSONResponse({"error": "not found"}, status_code=404)
+        return JSONResponse(
+            {
+                "data_directory": str(settings.DATA_DIR),
+                "job_database_path": str(settings.JOB_DB_PATH),
+                "job_store": "sqlite",
+                "deployment_mode": "single_instance",
+            }
+        )
+
     @app.post("/api/debug/ckl-search", response_class=JSONResponse, include_in_schema=False)
     async def debug_ckl_search(request: Request) -> JSONResponse:
         loaded = load_web_defaults()

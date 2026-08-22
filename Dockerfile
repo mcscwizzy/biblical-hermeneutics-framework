@@ -13,9 +13,8 @@ ENV BHF_MEMORY_PATH=/app/.bhf/sessions
 ENV BHF_CKL_BACKEND=sqlite
 ENV BHF_CKL_DATABASE_PATH=/app/.bhf/ckl.sqlite
 ENV BHF_CKL_STALE_DATABASE_POLICY=error
-ENV BHF_COMMENTARY_DB_PATH=/app/.bhf-data/commentary.sqlite
+ENV BHF_DATA_DIR=/app/.bhf-data
 ENV BHF_COMMENTARY_SEED_POLICY=missing
-ENV BHF_STUDY_DB_PATH=/app/.bhf-data/study.sqlite
 # The Docker build generates seeded lexical and commentary databases. At
 # runtime the entrypoint copies them into the mounted .bhf volume according to
 # their respective seed policies and applies study-data migrations, including

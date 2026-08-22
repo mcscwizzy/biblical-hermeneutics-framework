@@ -13,6 +13,10 @@ services:
     ports:
       - "${BHF_HTTP_PORT:-8080}:8080"
     environment:
+      BHF_RUNTIME_MODE: "${BHF_RUNTIME_MODE:-web}"
+      BHF_BACKEND_MODE: "${BHF_BACKEND_MODE:-same-origin}"
+      BHF_API_BASE_URL: "${BHF_API_BASE_URL:-}"
+      BHF_CORS_ORIGINS: "${BHF_CORS_ORIGINS:-}"
       LLM_PROVIDER: "${LLM_PROVIDER:-openrouter}"
       BHF_BASE_URL: "${BHF_BASE_URL:-https://openrouter.ai/api/v1}"
       BHF_MODEL: "${BHF_MODEL:-openrouter/free}"
@@ -24,6 +28,7 @@ services:
       BHF_CONTEXT_WINDOW: "${BHF_CONTEXT_WINDOW:-8192}"
       BHF_TIMEOUT_SECONDS: "${BHF_TIMEOUT_SECONDS:-120}"
       BHF_SHOW_METHOD_NOTES: "${BHF_SHOW_METHOD_NOTES:-true}"
+      BHF_DATA_DIR: /app/.bhf-data
       BHF_MEMORY_ENABLED: "${BHF_MEMORY_ENABLED:-false}"
       BHF_MEMORY_PATH: /app/.bhf-data/sessions
       BHF_LEXICAL_DATABASE_PATH: /app/.bhf-data/lexicon.sqlite

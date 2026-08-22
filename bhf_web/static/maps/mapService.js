@@ -81,7 +81,13 @@ async function fetchJson(url, { forceRefresh = false } = {}) {
   if (forceRefresh) {
     headers["X-BHF-Refresh"] = "true";
   }
-  const response = await fetch(url, {
+  let resolvedUrl = url;
+  if (window.BHFApi?.resolveUrl) {
+    resolvedUrl = window.BHFApi.resolveUrl(url);
+  } else if (String(window.BHFRuntimeConfig?.backendMode || "same-origin") === "remote") {
+    throw new Error("BHF backend is not configured for this deployment.");
+  }
+  const response = await fetch(resolvedUrl, {
     headers,
   });
   const data = await response.json();

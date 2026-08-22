@@ -14,8 +14,10 @@
     })();
   </script>
   <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260809a">
-  <script src="{{ static_asset('/api/http.js') }}" defer></script>
-  <script src="{{ static_asset('/archaeology.js') }}?v=20260809a" defer></script>
+  <script>window.BHFRuntimeConfig = {{ runtime_config|tojson }};</script>
+  <script src="{{ static_asset('/api/backend-routing.js') }}?v=20260821a" defer></script>
+  <script src="{{ static_asset('/api/http.js') }}?v=20260821a" defer></script>
+  <script src="{{ static_asset('/archaeology.js') }}?v=20260821a" defer></script>
 </head>
 <body>
   <main class="page archaeology-explore" data-archaeology-explore>

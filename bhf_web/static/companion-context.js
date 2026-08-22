@@ -66,7 +66,16 @@
   }
 
   async function requestWithFetch(url, options) {
-    const response = await fetch(url, options);
+    let resolvedUrl = url;
+    if (window.BHFBackendRouting?.resolveUrl) {
+      resolvedUrl = window.BHFBackendRouting.resolveUrl(
+        url,
+        window.BHFRuntimeConfig || {},
+      );
+    } else if (String(window.BHFRuntimeConfig?.backendMode || "same-origin") === "remote") {
+      throw new Error("BHF backend is not configured for this deployment.");
+    }
+    const response = await fetch(resolvedUrl, options);
     const data = await response.json();
     if (!response.ok) throw new Error(data.error || `HTTP ${response.status}`);
     return data;
