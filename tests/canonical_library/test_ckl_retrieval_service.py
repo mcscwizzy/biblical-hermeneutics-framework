@@ -153,6 +153,13 @@ class CKLRetrievalServiceTests(unittest.TestCase):
         self.assertIn("books", response.analysis.categories)
         self.assertTrue(any(result.id == "genesis" for result in response.results[:3]))
 
+    def test_explicitly_named_book_outranks_a_complete_place_topic(self) -> None:
+        response = self.service.search(
+            "Galatians Was Galatians addressed to north or south Galatia?"
+        )
+
+        self.assertEqual(response.results[0].id, "galatians")
+
     def test_search_prioritizes_joseph_bones_over_generic_significance_entries(self) -> None:
         response = self.service.search("What is the significance of Joseph's bones?")
         ids = [result.id for result in response.results]

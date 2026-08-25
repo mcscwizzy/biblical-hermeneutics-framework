@@ -113,10 +113,46 @@
     "New Creation Theme"
   ],
   "keywords": [
-    "Galatians", "Paul", "Galatia", "agitators", "circumcision", "Jerusalem", "Antioch", "Cephas", "Titus", "Barnabas",
-    "gospel", "revelation", "justification", "pistis Christou", "works of Torah", "Abraham", "promise", "curse", "seed",
-    "law", "angels", "mediator", "pedagogue", "baptism", "adoption", "elemental powers", "Hagar", "Sarah", "freedom",
-    "flesh", "Spirit", "fruit", "restoration", "burdens", "sowing", "cross", "new creation", "Israel of God", "marks", "grace"
+    "Galatians",
+    "Paul",
+    "Galatia",
+    "agitators",
+    "circumcision",
+    "Jerusalem",
+    "Antioch",
+    "Cephas",
+    "Titus",
+    "Barnabas",
+    "gospel",
+    "revelation",
+    "justification",
+    "pistis Christou",
+    "works of Torah",
+    "Abraham",
+    "promise",
+    "curse",
+    "seed",
+    "law",
+    "angels",
+    "mediator",
+    "pedagogue",
+    "baptism",
+    "adoption",
+    "elemental powers",
+    "Hagar",
+    "Sarah",
+    "freedom",
+    "flesh",
+    "Spirit",
+    "fruit",
+    "restoration",
+    "burdens",
+    "sowing",
+    "cross",
+    "new creation",
+    "Israel of God",
+    "marks",
+    "grace"
   ],
   "intertextuality": [
     "Genesis 12:3; 15:6; 17:1-27; 21:8-14; and 22:18 in Galatians' Abraham, seed, circumcision, and Hagar-Sarah arguments",
@@ -180,36 +216,205 @@
   "related_places": [],
   "related_events": [],
   "related_objects": [
-    {"id": "paul", "relationship": "named-sender", "weight": 10, "notes": "Paul is the named sender and dominant voice."},
-    {"id": "justification", "relationship": "contested-theological-language", "weight": 10, "notes": "Galatians 2-3 concentrates justification language."},
-    {"id": "law-and-gospel", "relationship": "reception-and-doctrinal-comparison", "weight": 8, "notes": "The later category requires historical qualification."},
-    {"id": "faith", "relationship": "faith-and-faithfulness-theme", "weight": 9, "notes": "Faith language includes the disputed pistis Christou construction."},
-    {"id": "spirit-theme", "relationship": "experiential-and-ethical-theme", "weight": 9, "notes": "The Spirit frames reception, adoption, freedom, and fruit."},
-    {"id": "abraham", "relationship": "scriptural-exemplar-and-ancestor", "weight": 9, "notes": "Abraham anchors blessing, faith, promise, seed, and inheritance."},
-    {"id": "torah", "relationship": "scriptural-and-theological-argument", "weight": 9, "notes": "Paul's claims concern Torah's role for gentiles and are disputed."},
-    {"id": "new-creation-theme", "relationship": "closing-canonical-theme", "weight": 8, "notes": "New creation appears in the closing circumcision contrast."}
+    {"id":"pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory","relationship":"greeting-abba-peace-grace-context","weight":9,"notes":"Reciprocal context for greeting, missing thanksgiving, Abba prayer, peace, mercy, and grace."},
+    {"id":"pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation","relationship":"confrontation-gentleness-burdens-and-restoration-cluster","weight":10,"notes":"Connects rival-message rhetoric, former violence, negotiated recognition, Antioch confrontation, mutual harm, gentle restoration, and burdens."},
+    {
+      "id": "paul",
+      "relationship": "named-sender",
+      "weight": 10,
+      "notes": "Paul is the named sender and dominant voice."
+    },
+    {
+      "id": "galatia",
+      "relationship": "disputed-addressed-region",
+      "weight": 10,
+      "notes": "The region record distinguishes Roman provincial from ethnic geography without selecting a destination."
+    },
+    {
+      "id": "roman-galatia-regions-roads-cities-and-audience",
+      "relationship": "historical-geographic-context",
+      "weight": 10,
+      "notes": "North/South destination, audience, illness, and Acts-itinerary evidence remains explicitly disputed."
+    },
+    {
+      "id": "pauline-kinship-guardianship-slavery-and-inheritance",
+      "relationship": "household-status-and-inheritance-context",
+      "weight": 10,
+      "notes": "Paidagogos, minor heirs, guardians, enslavement, adoption, Abba, and inheritance are controlled by direct texts and dated comparanda."
+    },
+    {
+      "id": "justification",
+      "relationship": "contested-theological-language",
+      "weight": 10,
+      "notes": "Galatians 2-3 concentrates justification language."
+    },
+    {
+      "id": "law-and-gospel",
+      "relationship": "reception-and-doctrinal-comparison",
+      "weight": 8,
+      "notes": "The later category requires historical qualification."
+    },
+    {
+      "id": "faith",
+      "relationship": "faith-and-faithfulness-theme",
+      "weight": 9,
+      "notes": "Faith language includes the disputed pistis Christou construction."
+    },
+    {
+      "id": "spirit-theme",
+      "relationship": "experiential-and-ethical-theme",
+      "weight": 9,
+      "notes": "The Spirit frames reception, adoption, freedom, and fruit."
+    },
+    {
+      "id": "abraham",
+      "relationship": "scriptural-exemplar-and-ancestor",
+      "weight": 9,
+      "notes": "Abraham anchors blessing, faith, promise, seed, and inheritance."
+    },
+    {
+      "id": "torah",
+      "relationship": "scriptural-and-theological-argument",
+      "weight": 9,
+      "notes": "Paul's claims concern Torah's role for gentiles and are disputed."
+    },
+    {
+      "id": "new-creation-theme",
+      "relationship": "closing-canonical-theme",
+      "weight": 8,
+      "notes": "New creation appears in the closing circumcision contrast."
+    },
+    {
+      "id": "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration",
+      "relationship": "vice-fruit-and-gentle-restoration-context",
+      "weight": 10,
+      "notes": "Galatians 5-6 is linked to whole-list ethics, Spirit fruit, gentle restoration, self-watch, burdens, safeguarding, and non-selective application."
+    },
+    {
+      "id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+      "relationship": "bodily-weakness-hospitality-and-diagnosis-context",
+      "weight": 10,
+      "notes": "Galatians 4 is linked to unspecified bodily weakness, welcome, eye-language limits, disability inclusion, and rejection of speculative diagnosis."
+    },
+    {
+      "id": "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order",
+      "relationship": "spirit-reception-fruit-and-embodied-ethics-context",
+      "weight": 10,
+      "notes": "Galatians 3 and 5 are linked to Spirit reception, faith, works of power, freedom, relational fruit, flesh-Spirit dispute, body dignity, and anti-coercion controls."
+    },
+    {
+      "id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+      "relationship": "tables-torah-abraham-circumcision-and-identity-context",
+      "weight": 10,
+      "notes": "Galatians 2-5 is linked to Titus, Antioch tables, pistis Christou, works of Torah, Abraham, pedagogue, Jew-gentile belonging, circumcision, freedom, love, chronology, and bodily-consent controls."
+    },
+    {
+      "id": "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status",
+      "relationship": "antioch-table-withdrawal-and-coercive-effect-context",
+      "weight": 10,
+      "notes": "Galatians 2 is linked to Cephas's withdrawal, group pressure, Paul's one-sided testimony, Jewish-food diversity, and Acts chronology controls."
+    },
+    {
+      "id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+      "relationship": "mission-and-interassembly-network-synthesis",
+      "weight": 9,
+      "notes": "Reciprocal link from first-person-chronology-and-negotiated-mission-text."
+    }
   ],
   "scripture_references": [
-    {"reference": "Galatians 1:1-10", "relationship": "primary", "notes": "prescript, astonishment, gospel, and curse"},
-    {"reference": "Galatians 1:11-24", "relationship": "primary", "notes": "revelation, call, Arabia, Damascus, and Jerusalem"},
-    {"reference": "Galatians 2:1-10", "relationship": "primary", "notes": "Jerusalem meeting, Titus, recognized leaders, and poor"},
-    {"reference": "Galatians 2:11-21", "relationship": "primary", "notes": "Antioch confrontation, justification, pistis Christou, and cruciform life"},
-    {"reference": "Galatians 3:1-14", "relationship": "primary", "notes": "Spirit, Abraham, faith, works of Torah, and curse"},
-    {"reference": "Galatians 3:15-29", "relationship": "primary", "notes": "promise, seed, Torah, mediator, pedagogue, baptism, and unity"},
-    {"reference": "Galatians 4:1-11", "relationship": "primary", "notes": "heirs, adoption, Spirit, and elemental powers"},
-    {"reference": "Galatians 4:12-20", "relationship": "primary", "notes": "Paul's weakness, reception, eyes, and maternal labor"},
-    {"reference": "Galatians 4:21-31", "relationship": "primary", "notes": "Hagar-Sarah allegory, Sinai, Jerusalem, slavery, and freedom"},
-    {"reference": "Galatians 5:1-15", "relationship": "primary", "notes": "freedom, circumcision, faith working through love, and neighbor-love"},
-    {"reference": "Galatians 5:16-26", "relationship": "primary", "notes": "flesh, Spirit, works, fruit, and communal conduct"},
-    {"reference": "Galatians 6:1-10", "relationship": "primary", "notes": "restoration, burdens, testing, teaching support, and sowing"},
-    {"reference": "Galatians 6:11-18", "relationship": "primary", "notes": "autograph, cross, new creation, Israel of God, marks, and grace"},
-    {"reference": "Genesis 15:6", "relationship": "quotation", "notes": "Abraham believed and it was reckoned as righteousness"},
-    {"reference": "Habakkuk 2:4", "relationship": "quotation", "notes": "the righteous one will live by faith or faithfulness"},
-    {"reference": "Leviticus 19:18", "relationship": "quotation", "notes": "neighbor-love fulfills Torah"}
+    {
+      "reference": "Galatians 1:1-10",
+      "relationship": "primary",
+      "notes": "prescript, astonishment, gospel, and curse"
+    },
+    {
+      "reference": "Galatians 1:11-24",
+      "relationship": "primary",
+      "notes": "revelation, call, Arabia, Damascus, and Jerusalem"
+    },
+    {
+      "reference": "Galatians 2:1-10",
+      "relationship": "primary",
+      "notes": "Jerusalem meeting, Titus, recognized leaders, and poor"
+    },
+    {
+      "reference": "Galatians 2:11-21",
+      "relationship": "primary",
+      "notes": "Antioch confrontation, justification, pistis Christou, and cruciform life"
+    },
+    {
+      "reference": "Galatians 3:1-14",
+      "relationship": "primary",
+      "notes": "Spirit, Abraham, faith, works of Torah, and curse"
+    },
+    {
+      "reference": "Galatians 3:15-29",
+      "relationship": "primary",
+      "notes": "promise, seed, Torah, mediator, pedagogue, baptism, and unity"
+    },
+    {
+      "reference": "Galatians 4:1-11",
+      "relationship": "primary",
+      "notes": "heirs, adoption, Spirit, and elemental powers"
+    },
+    {
+      "reference": "Galatians 4:12-20",
+      "relationship": "primary",
+      "notes": "Paul's weakness, reception, eyes, and maternal labor"
+    },
+    {
+      "reference": "Galatians 4:21-31",
+      "relationship": "primary",
+      "notes": "Hagar-Sarah allegory, Sinai, Jerusalem, slavery, and freedom"
+    },
+    {
+      "reference": "Galatians 5:1-15",
+      "relationship": "primary",
+      "notes": "freedom, circumcision, faith working through love, and neighbor-love"
+    },
+    {
+      "reference": "Galatians 5:16-26",
+      "relationship": "primary",
+      "notes": "flesh, Spirit, works, fruit, and communal conduct"
+    },
+    {
+      "reference": "Galatians 6:1-10",
+      "relationship": "primary",
+      "notes": "restoration, burdens, testing, teaching support, and sowing"
+    },
+    {
+      "reference": "Galatians 6:11-18",
+      "relationship": "primary",
+      "notes": "autograph, cross, new creation, Israel of God, marks, and grace"
+    },
+    {
+      "reference": "Genesis 15:6",
+      "relationship": "quotation",
+      "notes": "Abraham believed and it was reckoned as righteousness"
+    },
+    {
+      "reference": "Habakkuk 2:4",
+      "relationship": "quotation",
+      "notes": "the righteous one will live by faith or faithfulness"
+    },
+    {
+      "reference": "Leviticus 19:18",
+      "relationship": "quotation",
+      "notes": "neighbor-love fulfills Torah"
+    }
   ],
   "cross_references": [
-    "Genesis 12:3", "Genesis 15:6", "Genesis 17:1-27", "Genesis 21:8-14", "Genesis 22:18",
-    "Leviticus 18:5", "Leviticus 19:18", "Deuteronomy 21:23", "Deuteronomy 27:26", "Habakkuk 2:4", "Isaiah 54:1"
+    "Genesis 12:3",
+    "Genesis 15:6",
+    "Genesis 17:1-27",
+    "Genesis 21:8-14",
+    "Genesis 22:18",
+    "Leviticus 18:5",
+    "Leviticus 19:18",
+    "Deuteronomy 21:23",
+    "Deuteronomy 27:26",
+    "Habakkuk 2:4",
+    "Isaiah 54:1"
   ],
   "new_testament_connections": [
     "Acts 9:1-30; 11:27-30; and 15:1-35 provide distinct narrative comparisons for Galatians 1-2.",
@@ -218,104 +423,1891 @@
     "2 Corinthians 11-12 provides comparison for Pauline autobiography, hardship, weakness, and marks."
   ],
   "claims": [
-    {"id":"gal-sender","claim":"Galatians names Paul as sender to multiple assemblies of Galatia and does not name a co-sender.","claim_type":"biblical_text","certainty":"textually_explicit","dispute_status":"not_disputed","scripture_references":["Galatians 1:1-2"],"source_ids":["gal-greek","p46-csntm"],"traditions":["Academic"],"rationale":"The extant Greek prescript explicitly names Paul and plural assemblies.","notes":""},
-    {"id":"gal-authorship","claim":"Pauline authorship of Galatians is a strong critical consensus, while an unnamed secretary or scribal assistant remains possible.","claim_type":"historical_cultural","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","scripture_references":["Galatians 1:1","Galatians 6:11"],"source_ids":["martyn-galatians","longenecker-galatians"],"traditions":["Academic"],"rationale":"Voice, autobiography, manuscript reception, and comparison with undisputed letters converge; autograph language does not identify the preceding hand.","notes":""},
-    {"id":"gal-audience","claim":"The audience appears substantially gentile, but the letter does not establish that every addressee was gentile or disclose a complete demographic profile.","claim_type":"historical_cultural","certainty":"probable","dispute_status":"historical_uncertainty","scripture_references":["Galatians 4:8-11","Galatians 5:2-3"],"source_ids":["longenecker-galatians","fredriksen-pagans-apostle"],"traditions":["Academic"],"rationale":"Former service to non-gods and prospective circumcision point toward gentiles while plural assemblies could contain diverse members.","notes":""},
-    {"id":"gal-date","claim":"A date between the late 40s and mid-50s CE is plausible, but Galatians supplies no absolute date or named provenance.","claim_type":"historical_cultural","certainty":"probable","dispute_status":"chronological_uncertainty","scripture_references":["Galatians 1:18","Galatians 2:1"],"source_ids":["barclay-crisis","longenecker-galatians"],"traditions":["Academic"],"rationale":"Relative intervals and Pauline comparisons produce ranges dependent on disputed Acts alignments.","notes":""},
-    {"id":"gal-destination","claim":"Both North- and South-Galatian destination theories remain live because Galatia could denote an ethnic region or Roman province.","claim_type":"historical_cultural","certainty":"disputed","dispute_status":"major_scholarly_disagreement","scripture_references":["Galatians 1:2","Galatians 3:1"],"source_ids":["longenecker-galatians","pleiades-galatia","phi-inscriptions"],"traditions":["Academic"],"rationale":"The letter names no city, and changing administrative and ethnic geographies permit competing reconstructions.","notes":""},
-    {"id":"gal-opponents","claim":"The letter indicates teachers pressing circumcision and Torah obligation, but their number, origin, self-description, motives, and full program cannot be recovered from Paul's polemic alone.","claim_type":"historical_cultural","certainty":"probable","dispute_status":"historical_uncertainty","scripture_references":["Galatians 1:7","Galatians 5:2-12","Galatians 6:12-13"],"source_ids":["martyn-galatians","barclay-crisis","nanos-irony"],"traditions":["Academic"],"rationale":"Opponent reconstruction relies on a hostile rhetorical witness rather than their own documents.","notes":""},
-    {"id":"gal-acts","claim":"Acts and Galatians differ in selection, emphasis, and sequence when narrating Paul's call and Jerusalem contacts; exact harmonizations remain disputed.","claim_type":"historical_cultural","certainty":"strong_consensus","dispute_status":"chronological_uncertainty","scripture_references":["Galatians 1:11-2:14","Acts 9:1-30","Acts 11:27-30","Acts 15:1-35"],"source_ids":["gal-greek","longenecker-galatians","barclay-crisis"],"traditions":["Academic"],"rationale":"The accounts overlap but differ over Arabia, visit count, participants, decree, and rhetorical purpose.","notes":""},
-    {"id":"gal-jerusalem","claim":"Paul narrates a Jerusalem visit after three years and another after fourteen years, but the interval's starting point and correspondence with Acts are uncertain.","claim_type":"biblical_text","certainty":"textually_explicit","dispute_status":"chronological_uncertainty","scripture_references":["Galatians 1:18-20","Galatians 2:1-10"],"source_ids":["gal-greek","martyn-galatians"],"traditions":["Academic"],"rationale":"Intervals are textual; their anchors and external alignment are not.","notes":""},
-    {"id":"gal-titus","claim":"Paul presents Titus as an uncircumcised Greek whose status became a test case at Jerusalem, but textual syntax and reconstruction of pressure remain disputed.","claim_type":"biblical_text","certainty":"probable","dispute_status":"textual_variant","scripture_references":["Galatians 2:1-5"],"source_ids":["gal-greek","ntvmr","martyn-galatians"],"traditions":["Academic"],"rationale":"The passage explicitly names Titus and Greek identity, while textual and syntactical questions complicate whether circumcision briefly occurred or was resisted.","notes":""},
-    {"id":"gal-antioch","claim":"Paul says he opposed Cephas at Antioch over withdrawal from gentile table fellowship after people associated with James arrived; the outcome is not narrated.","claim_type":"biblical_text","certainty":"textually_explicit","dispute_status":"historical_uncertainty","scripture_references":["Galatians 2:11-14"],"source_ids":["gal-greek","nanos-irony","fredriksen-pagans-apostle"],"traditions":["Academic"],"rationale":"The conflict is explicit in Paul's account, but motives, James's role, and resolution are reconstructed.","notes":""},
-    {"id":"gal-rhetoric","claim":"Galatians combines letter conventions with rebuke, curse, autobiography, scriptural argument, allegory, exhortation, warning, and autograph; assignment to one classical rhetorical species is disputed.","claim_type":"literary","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","scripture_references":["Galatians 1:1-6:18"],"source_ids":["martyn-galatians","longenecker-galatians"],"traditions":["Academic"],"rationale":"Multiple recognizable strategies occur, but taxonomic models divide the letter differently.","notes":""},
-    {"id":"gal-curse","claim":"The doubled curse in Galatians 1 targets proclamations that overturn Paul's gospel and functions as polemical rhetoric, not authorization for violence against dissenters.","claim_type":"literary","certainty":"textually_explicit","dispute_status":"not_disputed","scripture_references":["Galatians 1:8-9"],"source_ids":["gal-greek","martyn-galatians"],"traditions":["Academic","Christian"],"rationale":"The text pronounces anathema but supplies no coercive enforcement procedure.","notes":""},
-    {"id":"gal-justification","claim":"Galatians 2:16 denies justification by works of Torah and relates it to pistis Christou, whose Christ-genitive syntax supports competing faith-in, Messiah-faithfulness, and mediating readings.","claim_type":"lexical","certainty":"disputed","dispute_status":"lexical_uncertainty","scripture_references":["Galatians 2:15-21"],"source_ids":["gal-greek","bdag","barclay-gift","martyn-galatians"],"traditions":["Academic","Christian"],"rationale":"The clause is explicit, but genitive semantics and the forensic, participatory, and covenantal frames remain contested.","notes":""},
-    {"id":"gal-works-torah","claim":"Works of Torah in Galatians concern practices required by Torah, prominently circumcision in the crisis, but whether the phrase denotes Torah-observance generally, identity practices, human performance, or overlapping categories is disputed.","claim_type":"lexical","certainty":"disputed","dispute_status":"major_scholarly_disagreement","scripture_references":["Galatians 2:16","Galatians 3:2-10","Galatians 5:2-3"],"source_ids":["gal-greek","bdag","thiessen-gentile-problem","barclay-gift"],"traditions":["Academic","Christian"],"rationale":"Immediate and broader Pauline contexts sustain several nonidentical scopes.","notes":""},
-    {"id":"gal-abraham","claim":"Galatians reads Abraham's faith and the blessing of the nations as scriptural grounds for gentile reception of the Spirit and inclusion in the promised family.","claim_type":"biblical_theology","certainty":"textually_explicit","dispute_status":"minor_scholarly_disagreement","scripture_references":["Galatians 3:6-9","Genesis 12:3","Genesis 15:6"],"source_ids":["gal-greek","nets-lxx","martyn-galatians"],"traditions":["Academic","Jewish","Christian"],"rationale":"Paul explicitly quotes Genesis while the precise textual form and hermeneutical logic require comparison.","notes":""},
-    {"id":"gal-curse-law","claim":"Galatians juxtaposes Deuteronomic curse texts, Torah performance, and the Messiah's crucifixion; it does not say that Torah, Jews, or Jewish practice are themselves cursed.","claim_type":"biblical_theology","certainty":"strong_consensus","dispute_status":"major_scholarly_disagreement","scripture_references":["Galatians 3:10-14","Deuteronomy 21:23","Deuteronomy 27:26"],"source_ids":["gal-greek","nets-lxx","thiessen-gentile-problem"],"traditions":["Academic","Jewish","Christian"],"rationale":"The argument's grammar and scriptural citations distinguish curse effects from an ethnic condemnation, though models of Torah remain disputed.","notes":""},
-    {"id":"gal-seed","claim":"Paul exploits the grammatical singular of seed in Genesis to focus the promise christologically and then includes baptized believers as Abraham's seed and heirs.","claim_type":"biblical_theology","certainty":"textually_explicit","dispute_status":"minor_scholarly_disagreement","scripture_references":["Galatians 3:16","Galatians 3:27-29"],"source_ids":["gal-greek","nets-lxx","martyn-galatians"],"traditions":["Academic","Christian"],"rationale":"Both moves are explicit, while ancient collective-singular usage complicates modern grammatical proofs.","notes":""},
-    {"id":"gal-law-added","claim":"Galatians 3:19 says Torah was added because of transgressions until the seed came; whether it restrains, exposes, produces, or addresses transgression is lexically and theologically disputed.","claim_type":"lexical","certainty":"disputed","dispute_status":"major_scholarly_disagreement","scripture_references":["Galatians 3:19"],"source_ids":["gal-greek","bdag","martyn-galatians","thiessen-gentile-problem"],"traditions":["Academic","Christian"],"rationale":"The Greek prepositional construction does not alone determine causal function.","notes":""},
-    {"id":"gal-angels-mediator","claim":"Galatians associates Torah's arrangement with angels through a mediator, but the mediator's identity and Paul's argumentative evaluation are uncertain.","claim_type":"biblical_text","certainty":"textually_explicit","dispute_status":"major_scholarly_disagreement","scripture_references":["Galatians 3:19-20"],"source_ids":["gal-greek","martyn-galatians"],"traditions":["Academic"],"rationale":"Angels and mediator are textual; referent and evaluative force are not explained.","notes":""},
-    {"id":"gal-pedagogue","claim":"Paidagogos names a household guardian responsible for a minor rather than a modern classroom teacher; Paul's analogy marks a temporary custodial relation to Torah.","claim_type":"lexical","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","scripture_references":["Galatians 3:23-25"],"source_ids":["gal-greek","bdag","lsj"],"traditions":["Academic"],"rationale":"Lexical and social evidence controls the metaphor, though its theological valence is debated.","notes":""},
-    {"id":"gal-baptism-unity","claim":"Galatians 3:28 declares baptized unity across Jew-Greek, slave-free, and male-female distinctions; interpreters dispute whether this abolishes hierarchies, relativizes status, or proclaims eschatological solidarity.","claim_type":"biblical_theology","certainty":"textually_explicit","dispute_status":"major_scholarly_disagreement","scripture_references":["Galatians 3:26-29"],"source_ids":["gal-greek","marchal-uncut","den-dulk-ethnicity"],"traditions":["Academic","Christian"],"rationale":"The formula is explicit, but its social entailments and relation to embodied difference require argument.","notes":""},
-    {"id":"gal-adoption","claim":"Galatians uses heir, guardian, household, redemption, adoption, and Spirit language to describe believers' transition from minority and enslavement to filial belonging.","claim_type":"biblical_theology","certainty":"textually_explicit","dispute_status":"minor_scholarly_disagreement","scripture_references":["Galatians 3:23-4:7"],"source_ids":["gal-greek","martyn-galatians"],"traditions":["Academic","Christian"],"rationale":"The metaphorical field is explicit while Roman, Jewish, and theological backgrounds are weighted differently.","notes":""},
-    {"id":"gal-elemental","claim":"Stoicheia tou kosmou in Galatians 4 may denote cosmic powers, elemental constituents, calendrical principles, rudimentary teachings, or overlapping enslaving structures.","claim_type":"lexical","certainty":"disputed","dispute_status":"lexical_uncertainty","scripture_references":["Galatians 4:3","Galatians 4:8-10"],"source_ids":["gal-greek","bdag","martyn-galatians"],"traditions":["Academic"],"rationale":"Ancient usage and the passage's personal language permit several proposals.","notes":""},
-    {"id":"gal-illness","claim":"Paul recalls evangelizing because of bodily weakness and says the Galatians would have given him their eyes; a specific diagnosis cannot be recovered.","claim_type":"historical_cultural","certainty":"textually_explicit","dispute_status":"historical_uncertainty","scripture_references":["Galatians 4:13-15"],"source_ids":["gal-greek","soon-disabled-apostle"],"traditions":["Academic"],"rationale":"Bodily difficulty is explicit, but eye disease, malaria, epilepsy, and other diagnoses exceed the evidence.","notes":""},
-    {"id":"gal-allegory","claim":"Paul explicitly calls his Hagar-Sarah construction an allegory, mapping women, sons, mountains, covenants, and Jerusalems within a polemical argument whose details remain contested.","claim_type":"literary","certainty":"textually_explicit","dispute_status":"major_scholarly_disagreement","scripture_references":["Galatians 4:21-31","Genesis 16:1-21:21","Isaiah 54:1"],"source_ids":["gal-greek","nets-lxx","martyn-galatians"],"traditions":["Academic","Jewish","Christian"],"rationale":"The allegorical label and mapping are textual, but correspondences, textual forms, and ethical reception are disputed.","notes":""},
-    {"id":"gal-freedom","claim":"Galatians frames freedom as release from enslaving obligation toward circumcision and as service to one another through love, not autonomous domination.","claim_type":"biblical_theology","certainty":"textually_explicit","dispute_status":"minor_scholarly_disagreement","scripture_references":["Galatians 5:1","Galatians 5:13-14"],"source_ids":["gal-greek","barclay-gift"],"traditions":["Academic","Christian"],"rationale":"The exhortation explicitly binds freedom, love, and neighbor service.","notes":""},
-    {"id":"gal-circumcision","claim":"Paul opposes circumcision for gentile addressees as a crisis of obligation and allegiance; this is not a blanket condemnation of Jewish circumcision or a warrant for anti-circumcision coercion.","claim_type":"historical_cultural","certainty":"strong_consensus","dispute_status":"major_scholarly_disagreement","scripture_references":["Galatians 5:2-12","Galatians 6:12-15"],"source_ids":["gal-greek","thiessen-gentile-problem","soon-disabled-apostle"],"traditions":["Academic","Jewish","Christian"],"rationale":"The addressed gentile crisis and Paul's Jewish identity delimit the polemic, while its wider implications are debated.","notes":""},
-    {"id":"gal-flesh-spirit","claim":"Flesh and Spirit in Galatians are opposed spheres or orientations expressed in embodied communal action; flesh is not simply the physical body, sexuality, disability, or emotion.","claim_type":"lexical","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","scripture_references":["Galatians 5:16-26"],"source_ids":["gal-greek","bdag","fredriksen-pagans-apostle"],"traditions":["Academic","Christian"],"rationale":"Paul includes relational and religious behaviors in works of flesh and describes embodied Spirit-led practice.","notes":""},
-    {"id":"gal-fruit","claim":"The singular fruit of the Spirit is a nine-term moral and relational catalog contrasting works of flesh; the list is neither an exhaustive diagnostic nor a basis for surveillance.","claim_type":"literary","certainty":"textually_explicit","dispute_status":"not_disputed","scripture_references":["Galatians 5:22-23"],"source_ids":["gal-greek","martyn-galatians"],"traditions":["Academic","Christian"],"rationale":"The catalog is explicit and situated within communal exhortation.","notes":""},
-    {"id":"gal-restoration","claim":"Galatians instructs people who are spiritual to restore a transgressor gently while watching themselves and bearing burdens; it does not prescribe public humiliation or unchecked discipline.","claim_type":"biblical_text","certainty":"textually_explicit","dispute_status":"minor_scholarly_disagreement","scripture_references":["Galatians 6:1-5"],"source_ids":["gal-greek","barclay-gift"],"traditions":["Academic","Christian"],"rationale":"Gentleness, self-scrutiny, mutual burden-bearing, and individual testing constrain the instruction.","notes":""},
-    {"id":"gal-teacher-support","claim":"Galatians 6:6 calls learners to share good things with the one teaching; the scope is debated and cannot license financial extraction or prosperity promises.","claim_type":"biblical_text","certainty":"textually_explicit","dispute_status":"minor_scholarly_disagreement","scripture_references":["Galatians 6:6"],"source_ids":["gal-greek","barclay-gift"],"traditions":["Academic","Christian"],"rationale":"Material sharing is plausible in context, but the terse sentence gives no rate, office, enforcement mechanism, or promised return.","notes":""},
-    {"id":"gal-sowing","claim":"Sowing and reaping in Galatians 6 is an ethical-eschatological analogy about perseverance in communal good, not a formula guaranteeing financial profit.","claim_type":"literary","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","scripture_references":["Galatians 6:7-10"],"source_ids":["gal-greek","martyn-galatians"],"traditions":["Academic","Christian"],"rationale":"The passage concludes with doing good to all, not a donation-for-wealth transaction.","notes":""},
-    {"id":"gal-autograph","claim":"Galatians 6:11 calls attention to Paul's large letters written with his own hand, plausibly marking an autograph section but not proving why the letters were large.","claim_type":"literary","certainty":"probable","dispute_status":"historical_uncertainty","scripture_references":["Galatians 6:11"],"source_ids":["gal-greek","p46-csntm","martyn-galatians"],"traditions":["Academic"],"rationale":"The hand claim is explicit; visual size, rhetorical emphasis, eyesight, and scribal hypotheses remain uncertain.","notes":""},
-    {"id":"gal-cross-new-creation","claim":"The closing contrast denies that circumcision or uncircumcision is decisive and centers boasting in the Messiah's cross and new creation.","claim_type":"biblical_theology","certainty":"textually_explicit","dispute_status":"minor_scholarly_disagreement","scripture_references":["Galatians 6:14-15"],"source_ids":["gal-greek","martyn-galatians"],"traditions":["Academic","Christian"],"rationale":"The contrast is explicit, while cosmic and ecclesial scopes of new creation are interpreted differently.","notes":""},
-    {"id":"gal-israel-god","claim":"Israel of God in Galatians 6:16 may name Jewish Christ-followers, the whole Messiah assembly, Israel more broadly, or another qualified group; grammar and context have not produced consensus.","claim_type":"lexical","certainty":"disputed","dispute_status":"major_scholarly_disagreement","scripture_references":["Galatians 6:16"],"source_ids":["gal-greek","martyn-galatians","nanos-irony"],"traditions":["Academic","Jewish","Christian"],"rationale":"The force of kai and the relation between those following the rule and Israel remain contested.","notes":""},
-    {"id":"gal-marks","claim":"Paul's marks likely refer to bodily scars associated with service to Jesus and persecution, but branding, ownership, stigma, devotional, and medical reconstructions remain debated.","claim_type":"historical_cultural","certainty":"probable","dispute_status":"historical_uncertainty","scripture_references":["Galatians 6:17"],"source_ids":["gal-greek","soon-disabled-apostle","martyn-galatians"],"traditions":["Academic","Christian"],"rationale":"Stigmata denotes marks, while the verse does not describe their cause or appearance.","notes":""}
+    {
+      "id": "gal-sender",
+      "claim": "Galatians names Paul as sender to multiple assemblies of Galatia and does not name a co-sender.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "Galatians 1:1-2"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "p46-csntm"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The extant Greek prescript explicitly names Paul and plural assemblies.",
+      "notes": ""
+    },
+    {
+      "id": "gal-authorship",
+      "claim": "Pauline authorship of Galatians is a strong critical consensus, while an unnamed secretary or scribal assistant remains possible.",
+      "claim_type": "historical_cultural",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "Galatians 1:1",
+        "Galatians 6:11"
+      ],
+      "source_ids": [
+        "martyn-galatians",
+        "longenecker-galatians"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Voice, autobiography, manuscript reception, and comparison with undisputed letters converge; autograph language does not identify the preceding hand.",
+      "notes": ""
+    },
+    {
+      "id": "gal-audience",
+      "claim": "The audience appears substantially gentile, but the letter does not establish that every addressee was gentile or disclose a complete demographic profile.",
+      "claim_type": "historical_cultural",
+      "certainty": "probable",
+      "dispute_status": "historical_uncertainty",
+      "scripture_references": [
+        "Galatians 4:8-11",
+        "Galatians 5:2-3"
+      ],
+      "source_ids": [
+        "longenecker-galatians",
+        "fredriksen-pagans-apostle"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Former service to non-gods and prospective circumcision point toward gentiles while plural assemblies could contain diverse members.",
+      "notes": ""
+    },
+    {
+      "id": "gal-date",
+      "claim": "A date between the late 40s and mid-50s CE is plausible, but Galatians supplies no absolute date or named provenance.",
+      "claim_type": "historical_cultural",
+      "certainty": "probable",
+      "dispute_status": "chronological_uncertainty",
+      "scripture_references": [
+        "Galatians 1:18",
+        "Galatians 2:1"
+      ],
+      "source_ids": [
+        "barclay-crisis",
+        "longenecker-galatians"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Relative intervals and Pauline comparisons produce ranges dependent on disputed Acts alignments.",
+      "notes": ""
+    },
+    {
+      "id": "gal-destination",
+      "claim": "Both North- and South-Galatian destination theories remain live because Galatia could denote an ethnic region or Roman province.",
+      "claim_type": "historical_cultural",
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "Galatians 1:2",
+        "Galatians 3:1"
+      ],
+      "source_ids": [
+        "longenecker-galatians",
+        "pleiades-galatia",
+        "phi-inscriptions"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The letter names no city, and changing administrative and ethnic geographies permit competing reconstructions.",
+      "notes": ""
+    },
+    {
+      "id": "gal-opponents",
+      "claim": "The letter indicates teachers pressing circumcision and Torah obligation, but their number, origin, self-description, motives, and full program cannot be recovered from Paul's polemic alone.",
+      "claim_type": "historical_cultural",
+      "certainty": "probable",
+      "dispute_status": "historical_uncertainty",
+      "scripture_references": [
+        "Galatians 1:7",
+        "Galatians 5:2-12",
+        "Galatians 6:12-13"
+      ],
+      "source_ids": [
+        "martyn-galatians",
+        "barclay-crisis",
+        "nanos-irony"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Opponent reconstruction relies on a hostile rhetorical witness rather than their own documents.",
+      "notes": ""
+    },
+    {
+      "id": "gal-acts",
+      "claim": "Acts and Galatians differ in selection, emphasis, and sequence when narrating Paul's call and Jerusalem contacts; exact harmonizations remain disputed.",
+      "claim_type": "historical_cultural",
+      "certainty": "strong_consensus",
+      "dispute_status": "chronological_uncertainty",
+      "scripture_references": [
+        "Galatians 1:11-2:14",
+        "Acts 9:1-30",
+        "Acts 11:27-30",
+        "Acts 15:1-35"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "longenecker-galatians",
+        "barclay-crisis"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The accounts overlap but differ over Arabia, visit count, participants, decree, and rhetorical purpose.",
+      "notes": ""
+    },
+    {
+      "id": "gal-jerusalem",
+      "claim": "Paul narrates a Jerusalem visit after three years and another after fourteen years, but the interval's starting point and correspondence with Acts are uncertain.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "chronological_uncertainty",
+      "scripture_references": [
+        "Galatians 1:18-20",
+        "Galatians 2:1-10"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Intervals are textual; their anchors and external alignment are not.",
+      "notes": ""
+    },
+    {
+      "id": "gal-titus",
+      "claim": "Paul presents Titus as an uncircumcised Greek whose status became a test case at Jerusalem, but textual syntax and reconstruction of pressure remain disputed.",
+      "claim_type": "biblical_text",
+      "certainty": "probable",
+      "dispute_status": "textual_variant",
+      "scripture_references": [
+        "Galatians 2:1-5"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "ntvmr",
+        "martyn-galatians"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The passage explicitly names Titus and Greek identity, while textual and syntactical questions complicate whether circumcision briefly occurred or was resisted.",
+      "notes": ""
+    },
+    {
+      "id": "gal-antioch",
+      "claim": "Paul says he opposed Cephas at Antioch over withdrawal from gentile table fellowship after people associated with James arrived; the outcome is not narrated.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "historical_uncertainty",
+      "scripture_references": [
+        "Galatians 2:11-14"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "nanos-irony",
+        "fredriksen-pagans-apostle"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The conflict is explicit in Paul's account, but motives, James's role, and resolution are reconstructed.",
+      "notes": ""
+    },
+    {
+      "id": "gal-rhetoric",
+      "claim": "Galatians combines letter conventions with rebuke, curse, autobiography, scriptural argument, allegory, exhortation, warning, and autograph; assignment to one classical rhetorical species is disputed.",
+      "claim_type": "literary",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "Galatians 1:1-6:18"
+      ],
+      "source_ids": [
+        "martyn-galatians",
+        "longenecker-galatians"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Multiple recognizable strategies occur, but taxonomic models divide the letter differently.",
+      "notes": ""
+    },
+    {
+      "id": "gal-curse",
+      "claim": "The doubled curse in Galatians 1 targets proclamations that overturn Paul's gospel and functions as polemical rhetoric, not authorization for violence against dissenters.",
+      "claim_type": "literary",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "Galatians 1:8-9"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The text pronounces anathema but supplies no coercive enforcement procedure.",
+      "notes": ""
+    },
+    {
+      "id": "gal-justification",
+      "claim": "Galatians 2:16 denies justification by works of Torah and relates it to pistis Christou, whose Christ-genitive syntax supports competing faith-in, Messiah-faithfulness, and mediating readings.",
+      "claim_type": "lexical",
+      "certainty": "disputed",
+      "dispute_status": "lexical_uncertainty",
+      "scripture_references": [
+        "Galatians 2:15-21"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "bdag",
+        "barclay-gift",
+        "martyn-galatians"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The clause is explicit, but genitive semantics and the forensic, participatory, and covenantal frames remain contested.",
+      "notes": ""
+    },
+    {
+      "id": "gal-works-torah",
+      "claim": "Works of Torah in Galatians concern practices required by Torah, prominently circumcision in the crisis, but whether the phrase denotes Torah-observance generally, identity practices, human performance, or overlapping categories is disputed.",
+      "claim_type": "lexical",
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "Galatians 2:16",
+        "Galatians 3:2-10",
+        "Galatians 5:2-3"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "bdag",
+        "thiessen-gentile-problem",
+        "barclay-gift"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Immediate and broader Pauline contexts sustain several nonidentical scopes.",
+      "notes": ""
+    },
+    {
+      "id": "gal-abraham",
+      "claim": "Galatians reads Abraham's faith and the blessing of the nations as scriptural grounds for gentile reception of the Spirit and inclusion in the promised family.",
+      "claim_type": "biblical_theology",
+      "certainty": "textually_explicit",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "Galatians 3:6-9",
+        "Genesis 12:3",
+        "Genesis 15:6"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "nets-lxx",
+        "martyn-galatians"
+      ],
+      "traditions": [
+        "Academic",
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "Paul explicitly quotes Genesis while the precise textual form and hermeneutical logic require comparison.",
+      "notes": ""
+    },
+    {
+      "id": "gal-curse-law",
+      "claim": "Galatians juxtaposes Deuteronomic curse texts, Torah performance, and the Messiah's crucifixion; it does not say that Torah, Jews, or Jewish practice are themselves cursed.",
+      "claim_type": "biblical_theology",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "Galatians 3:10-14",
+        "Deuteronomy 21:23",
+        "Deuteronomy 27:26"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "nets-lxx",
+        "thiessen-gentile-problem"
+      ],
+      "traditions": [
+        "Academic",
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "The argument's grammar and scriptural citations distinguish curse effects from an ethnic condemnation, though models of Torah remain disputed.",
+      "notes": ""
+    },
+    {
+      "id": "gal-seed",
+      "claim": "Paul exploits the grammatical singular of seed in Genesis to focus the promise christologically and then includes baptized believers as Abraham's seed and heirs.",
+      "claim_type": "biblical_theology",
+      "certainty": "textually_explicit",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "Galatians 3:16",
+        "Galatians 3:27-29"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "nets-lxx",
+        "martyn-galatians"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Both moves are explicit, while ancient collective-singular usage complicates modern grammatical proofs.",
+      "notes": ""
+    },
+    {
+      "id": "gal-law-added",
+      "claim": "Galatians 3:19 says Torah was added because of transgressions until the seed came; whether it restrains, exposes, produces, or addresses transgression is lexically and theologically disputed.",
+      "claim_type": "lexical",
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "Galatians 3:19"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "bdag",
+        "martyn-galatians",
+        "thiessen-gentile-problem"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The Greek prepositional construction does not alone determine causal function.",
+      "notes": ""
+    },
+    {
+      "id": "gal-angels-mediator",
+      "claim": "Galatians associates Torah's arrangement with angels through a mediator, but the mediator's identity and Paul's argumentative evaluation are uncertain.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "Galatians 3:19-20"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Angels and mediator are textual; referent and evaluative force are not explained.",
+      "notes": ""
+    },
+    {
+      "id": "gal-pedagogue",
+      "claim": "Paidagogos names a household guardian responsible for a minor rather than a modern classroom teacher; Paul's analogy marks a temporary custodial relation to Torah.",
+      "claim_type": "lexical",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "Galatians 3:23-25"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "bdag",
+        "lsj"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Lexical and social evidence controls the metaphor, though its theological valence is debated.",
+      "notes": ""
+    },
+    {
+      "id": "gal-baptism-unity",
+      "claim": "Galatians 3:28 declares baptized unity across Jew-Greek, slave-free, and male-female distinctions; interpreters dispute whether this abolishes hierarchies, relativizes status, or proclaims eschatological solidarity.",
+      "claim_type": "biblical_theology",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "Galatians 3:26-29"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "marchal-uncut",
+        "den-dulk-ethnicity"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The formula is explicit, but its social entailments and relation to embodied difference require argument.",
+      "notes": ""
+    },
+    {
+      "id": "gal-adoption",
+      "claim": "Galatians uses heir, guardian, household, redemption, adoption, and Spirit language to describe believers' transition from minority and enslavement to filial belonging.",
+      "claim_type": "biblical_theology",
+      "certainty": "textually_explicit",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "Galatians 3:23-4:7"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The metaphorical field is explicit while Roman, Jewish, and theological backgrounds are weighted differently.",
+      "notes": ""
+    },
+    {
+      "id": "gal-elemental",
+      "claim": "Stoicheia tou kosmou in Galatians 4 may denote cosmic powers, elemental constituents, calendrical principles, rudimentary teachings, or overlapping enslaving structures.",
+      "claim_type": "lexical",
+      "certainty": "disputed",
+      "dispute_status": "lexical_uncertainty",
+      "scripture_references": [
+        "Galatians 4:3",
+        "Galatians 4:8-10"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "bdag",
+        "martyn-galatians"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Ancient usage and the passage's personal language permit several proposals.",
+      "notes": ""
+    },
+    {
+      "id": "gal-illness",
+      "claim": "Paul recalls evangelizing because of bodily weakness and says the Galatians would have given him their eyes; a specific diagnosis cannot be recovered.",
+      "claim_type": "historical_cultural",
+      "certainty": "textually_explicit",
+      "dispute_status": "historical_uncertainty",
+      "scripture_references": [
+        "Galatians 4:13-15"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "soon-disabled-apostle"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Bodily difficulty is explicit, but eye disease, malaria, epilepsy, and other diagnoses exceed the evidence.",
+      "notes": ""
+    },
+    {
+      "id": "gal-allegory",
+      "claim": "Paul explicitly calls his Hagar-Sarah construction an allegory, mapping women, sons, mountains, covenants, and Jerusalems within a polemical argument whose details remain contested.",
+      "claim_type": "literary",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "Galatians 4:21-31",
+        "Genesis 16:1-21:21",
+        "Isaiah 54:1"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "nets-lxx",
+        "martyn-galatians"
+      ],
+      "traditions": [
+        "Academic",
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "The allegorical label and mapping are textual, but correspondences, textual forms, and ethical reception are disputed.",
+      "notes": ""
+    },
+    {
+      "id": "gal-freedom",
+      "claim": "Galatians frames freedom as release from enslaving obligation toward circumcision and as service to one another through love, not autonomous domination.",
+      "claim_type": "biblical_theology",
+      "certainty": "textually_explicit",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "Galatians 5:1",
+        "Galatians 5:13-14"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "barclay-gift"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The exhortation explicitly binds freedom, love, and neighbor service.",
+      "notes": ""
+    },
+    {
+      "id": "gal-circumcision",
+      "claim": "Paul opposes circumcision for gentile addressees as a crisis of obligation and allegiance; this is not a blanket condemnation of Jewish circumcision or a warrant for anti-circumcision coercion.",
+      "claim_type": "historical_cultural",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "Galatians 5:2-12",
+        "Galatians 6:12-15"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "thiessen-gentile-problem",
+        "soon-disabled-apostle"
+      ],
+      "traditions": [
+        "Academic",
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "The addressed gentile crisis and Paul's Jewish identity delimit the polemic, while its wider implications are debated.",
+      "notes": ""
+    },
+    {
+      "id": "gal-flesh-spirit",
+      "claim": "Flesh and Spirit in Galatians are opposed spheres or orientations expressed in embodied communal action; flesh is not simply the physical body, sexuality, disability, or emotion.",
+      "claim_type": "lexical",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "Galatians 5:16-26"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "bdag",
+        "fredriksen-pagans-apostle"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Paul includes relational and religious behaviors in works of flesh and describes embodied Spirit-led practice.",
+      "notes": ""
+    },
+    {
+      "id": "gal-fruit",
+      "claim": "The singular fruit of the Spirit is a nine-term moral and relational catalog contrasting works of flesh; the list is neither an exhaustive diagnostic nor a basis for surveillance.",
+      "claim_type": "literary",
+      "certainty": "textually_explicit",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "Galatians 5:22-23"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The catalog is explicit and situated within communal exhortation.",
+      "notes": ""
+    },
+    {
+      "id": "gal-restoration",
+      "claim": "Galatians instructs people who are spiritual to restore a transgressor gently while watching themselves and bearing burdens; it does not prescribe public humiliation or unchecked discipline.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "Galatians 6:1-5"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "barclay-gift"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Gentleness, self-scrutiny, mutual burden-bearing, and individual testing constrain the instruction.",
+      "notes": ""
+    },
+    {
+      "id": "gal-teacher-support",
+      "claim": "Galatians 6:6 calls learners to share good things with the one teaching; the scope is debated and cannot license financial extraction or prosperity promises.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "Galatians 6:6"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "barclay-gift"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Material sharing is plausible in context, but the terse sentence gives no rate, office, enforcement mechanism, or promised return.",
+      "notes": ""
+    },
+    {
+      "id": "gal-sowing",
+      "claim": "Sowing and reaping in Galatians 6 is an ethical-eschatological analogy about perseverance in communal good, not a formula guaranteeing financial profit.",
+      "claim_type": "literary",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "Galatians 6:7-10"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The passage concludes with doing good to all, not a donation-for-wealth transaction.",
+      "notes": ""
+    },
+    {
+      "id": "gal-autograph",
+      "claim": "Galatians 6:11 calls attention to Paul's large letters written with his own hand, plausibly marking an autograph section but not proving why the letters were large.",
+      "claim_type": "literary",
+      "certainty": "probable",
+      "dispute_status": "historical_uncertainty",
+      "scripture_references": [
+        "Galatians 6:11"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "p46-csntm",
+        "martyn-galatians"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The hand claim is explicit; visual size, rhetorical emphasis, eyesight, and scribal hypotheses remain uncertain.",
+      "notes": ""
+    },
+    {
+      "id": "gal-cross-new-creation",
+      "claim": "The closing contrast denies that circumcision or uncircumcision is decisive and centers boasting in the Messiah's cross and new creation.",
+      "claim_type": "biblical_theology",
+      "certainty": "textually_explicit",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "Galatians 6:14-15"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The contrast is explicit, while cosmic and ecclesial scopes of new creation are interpreted differently.",
+      "notes": ""
+    },
+    {
+      "id": "gal-israel-god",
+      "claim": "Israel of God in Galatians 6:16 may name Jewish Christ-followers, the whole Messiah assembly, Israel more broadly, or another qualified group; grammar and context have not produced consensus.",
+      "claim_type": "lexical",
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "Galatians 6:16"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians",
+        "nanos-irony"
+      ],
+      "traditions": [
+        "Academic",
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "The force of kai and the relation between those following the rule and Israel remain contested.",
+      "notes": ""
+    },
+    {
+      "id": "gal-marks",
+      "claim": "Paul's marks likely refer to bodily scars associated with service to Jesus and persecution, but branding, ownership, stigma, devotional, and medical reconstructions remain debated.",
+      "claim_type": "historical_cultural",
+      "certainty": "probable",
+      "dispute_status": "historical_uncertainty",
+      "scripture_references": [
+        "Galatians 6:17"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "soon-disabled-apostle",
+        "martyn-galatians"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Stigmata denotes marks, while the verse does not describe their cause or appearance.",
+      "notes": ""
+    }
   ],
   "interpretive_notes": [
-    {"note":"Paul is the sole named sender; possible scribal assistance should not be converted into a named coauthor or used to erase collaborative letter production.","note_type":"literary-observation","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","sources":["gal-greek","martyn-galatians"],"scripture_references":["Galatians 1:1","Galatians 6:11"],"traditions":["Academic"],"rationale":"Prescript and autograph notice support distinct claims."},
-    {"note":"North- and South-Galatian theories remain hypotheses; geography must not invent a city, route, audience ethnicity, or single assembly.","note_type":"historical-context","certainty":"disputed","dispute_status":"historical_uncertainty","sources":["longenecker-galatians","pleiades-galatia","phi-inscriptions"],"scripture_references":["Galatians 1:2"],"traditions":["Academic"],"rationale":"Galatia had ethnic and provincial senses and the letter provides no city names."},
-    {"note":"Dates in the late 40s through 50s depend on disputed Jerusalem and Acts synchronisms and should not be presented as an explicit colophon.","note_type":"historical-context","certainty":"probable","dispute_status":"chronological_uncertainty","sources":["barclay-crisis","longenecker-galatians"],"scripture_references":["Galatians 1:18","Galatians 2:1"],"traditions":["Academic"],"rationale":"The text supplies relative intervals only."},
-    {"note":"Paul's opponents must be reconstructed through his adversarial rhetoric; calling them one settled Jewish-Christian party confuses a scholarly model with direct evidence.","note_type":"interpretive-caution","certainty":"probable","dispute_status":"historical_uncertainty","sources":["martyn-galatians","nanos-irony"],"scripture_references":["Galatians 1:7","Galatians 5:7-12","Galatians 6:12-13"],"traditions":["Academic"],"rationale":"No opponent document or self-designation survives."},
-    {"note":"The doubled curse is forceful boundary rhetoric, not permission for religious violence, forced conversion, public targeting, or authoritarian suppression of questions.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["gal-greek","martyn-galatians"],"scripture_references":["Galatians 1:8-9"],"traditions":["Academic","Christian"],"rationale":"The letter offers no coercive enforcement mandate."},
-    {"note":"Paul describes a divine disclosure and call through scriptural prophetic language; historical description should distinguish his autobiographical claim from later doctrine about revelation.","note_type":"literary-observation","certainty":"textually_explicit","dispute_status":"minor_scholarly_disagreement","sources":["gal-greek","martyn-galatians"],"scripture_references":["Galatians 1:11-17"],"traditions":["Academic","Christian"],"rationale":"Autobiographical rhetoric and confessional evaluation are different claim layers."},
-    {"note":"Galatians and Acts are independent rhetorical narratives; neither automatic harmonization nor automatic contradiction can replace passage-by-passage comparison.","note_type":"canonical-connection","certainty":"strong_consensus","dispute_status":"chronological_uncertainty","sources":["gal-greek","longenecker-galatians"],"scripture_references":["Galatians 1:11-2:14","Acts 9:1-30","Acts 11:27-30","Acts 15:1-35"],"traditions":["Academic","Christian"],"rationale":"Selection and purpose differ even where persons and issues overlap."},
-    {"note":"Paul's oath that he is not lying signals contested autobiography; it strengthens the claim that these are his assertions without independently verifying every itinerary detail.","note_type":"literary-observation","certainty":"textually_explicit","dispute_status":"historical_uncertainty","sources":["gal-greek","martyn-galatians"],"scripture_references":["Galatians 1:20"],"traditions":["Academic"],"rationale":"Rhetorical self-attestation is evidence but not external corroboration."},
-    {"note":"Titus's uncircumcised status functions within a gentile-inclusion dispute; it cannot justify coerced circumcision, coerced anti-circumcision, genital ridicule, or medical interference.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"textual_variant","sources":["gal-greek","ntvmr","soon-disabled-apostle"],"scripture_references":["Galatians 2:1-5"],"traditions":["Academic","Jewish","Christian"],"rationale":"A contested ancient communal practice does not authorize modern bodily coercion."},
-    {"note":"The right-hand fellowship and request to remember the poor indicate negotiated mission partnership; they do not prove full doctrinal uniformity or a centralized ecclesial constitution.","note_type":"historical-context","certainty":"probable","dispute_status":"historical_uncertainty","sources":["gal-greek","barclay-crisis"],"scripture_references":["Galatians 2:7-10"],"traditions":["Academic"],"rationale":"The compact retrospective serves Paul's immediate defense."},
-    {"note":"Paul's report of Cephas's withdrawal is one participant's polemical account; James's intent, the visitors' message, Cephas's rationale, and the dispute's outcome remain unknown.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"historical_uncertainty","sources":["gal-greek","nanos-irony"],"scripture_references":["Galatians 2:11-14"],"traditions":["Academic"],"rationale":"The text supplies Paul's characterization, not every participant's voice."},
-    {"note":"Calling behavior hypocritical in the Antioch narrative must not become an excuse for anti-Jewish table-fellowship caricature, ethnic contempt, or public shaming of modern people.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["gal-greek","den-dulk-ethnicity"],"scripture_references":["Galatians 2:11-14"],"traditions":["Academic","Jewish","Christian"],"rationale":"Historical conflict and modern ethnic stereotyping are not equivalent."},
-    {"note":"The speech boundary after Galatians 2:14 is not marked in ancient punctuation; whether verses 15-21 continue the Antioch speech or become direct address does not erase their argumentative continuity.","note_type":"textual-observation","certainty":"disputed","dispute_status":"minor_scholarly_disagreement","sources":["gal-greek","p46-csntm","martyn-galatians"],"scripture_references":["Galatians 2:14-21"],"traditions":["Academic"],"rationale":"Editorial quotation marks are interpretive."},
-    {"note":"Justification can be described with forensic, covenantal, participatory, apocalyptic, and relational models; one later doctrinal system should not masquerade as the only lexical meaning.","note_type":"theological-interpretation","certainty":"disputed","dispute_status":"denominational_disagreement","sources":["martyn-galatians","barclay-gift","cambridge-gal-rom"],"scripture_references":["Galatians 2:15-21"],"traditions":["Academic","Christian"],"rationale":"The passage combines verdict, Messiah participation, Spirit, and communal boundary questions."},
-    {"note":"Pistis Christou permits faith in Messiah, Messiah's faithfulness, and mediating readings; translations should disclose rather than conceal the Christ-genitive dispute.","note_type":"interpretive-caution","certainty":"disputed","dispute_status":"lexical_uncertainty","sources":["gal-greek","bdag","barclay-gift"],"scripture_references":["Galatians 2:16","Galatians 2:20"],"traditions":["Academic","Christian"],"rationale":"Grammar and Pauline parallels do not yield unanimity."},
-    {"note":"Works of Torah should not be paraphrased as Jewish legalism: the immediate crisis concerns gentile circumcision and obligation, while the phrase's full scope remains debated.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"major_scholarly_disagreement","sources":["thiessen-gentile-problem","fredriksen-pagans-apostle","gal-greek"],"scripture_references":["Galatians 2:16","Galatians 3:2-10","Galatians 5:2-3"],"traditions":["Academic","Jewish","Christian"],"rationale":"Anti-Jewish moral caricature does not follow from Paul's contextual claim."},
-    {"note":"Galatians' Torah argument must not support antisemitism, supersessionism, contempt for Jews or Judaism, or the claim that Torah is intrinsically evil; Paul is a Jewish apostle arguing about gentile inclusion.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["thiessen-gentile-problem","fredriksen-pagans-apostle","den-dulk-ethnicity"],"scripture_references":["Galatians 2:15-3:29","Galatians 5:2-6"],"traditions":["Academic","Jewish","Christian"],"rationale":"Historical location and ethical reception rule out ethnic condemnation."},
-    {"note":"Being crucified with Messiah is participatory and metaphorical theological speech; it must not glorify trauma, encourage self-harm, or demand endurance of abuse.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["gal-greek","barclay-gift"],"scripture_references":["Galatians 2:19-20"],"traditions":["Academic","Christian"],"rationale":"The passage describes transformed allegiance, not a safeguarding exception."},
-    {"note":"Paul's appeal to the Galatians' experience of the Spirit is rhetorical evidence within the letter, not a modern protocol for manipulating testimony, staging miracles, or bypassing verification.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["gal-greek","martyn-galatians"],"scripture_references":["Galatians 3:1-5"],"traditions":["Academic","Christian"],"rationale":"Ancient epistolary appeal and modern claims require distinct evaluation."},
-    {"note":"Genesis 15:6 is quoted within a new gentile-inclusion argument; Jewish readings of Abraham are not invalidated merely because Paul's reading is canonical for Christians.","note_type":"canonical-connection","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","sources":["gal-greek","nets-lxx","martyn-galatians"],"scripture_references":["Galatians 3:6","Genesis 15:6"],"traditions":["Academic","Jewish","Christian"],"rationale":"Intertextual reuse does not exhaust the source text's contexts."},
-    {"note":"Paul's phrase those of faith are Abraham's children is a claim about promised belonging, not a warrant for Christian seizure of Jewish identity or erasure of living Jewish people.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"denominational_disagreement","sources":["gal-greek","thiessen-gentile-problem"],"scripture_references":["Galatians 3:7-9"],"traditions":["Academic","Jewish","Christian"],"rationale":"Gentile inclusion need not entail replacement."},
-    {"note":"The curse sequence draws on Deuteronomy and crucifixion language; it does not declare Jews, Jewish bodies, Torah scrolls, or Torah observance cursed.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["gal-greek","nets-lxx","thiessen-gentile-problem"],"scripture_references":["Galatians 3:10-14"],"traditions":["Academic","Jewish","Christian"],"rationale":"Paul's textual predicates and ethnic generalizations must be distinguished."},
-    {"note":"Seed is grammatically singular yet can be collective in Hebrew and Greek; Paul's christological wordplay is an ancient interpretive move rather than proof that Genesis could only mean one individual.","note_type":"textual-observation","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","sources":["gal-greek","nets-lxx","bdag"],"scripture_references":["Galatians 3:16"],"traditions":["Academic","Jewish","Christian"],"rationale":"Collective-noun grammar and Pauline argument coexist."},
-    {"note":"Because of transgressions in Galatians 3:19 remains semantically disputed; claims that Torah merely restrains, exposes, multiplies, or causes sin must be labeled interpretations.","note_type":"interpretive-caution","certainty":"disputed","dispute_status":"lexical_uncertainty","sources":["gal-greek","bdag","martyn-galatians"],"scripture_references":["Galatians 3:19"],"traditions":["Academic","Christian"],"rationale":"The Greek preposition does not settle the causal model."},
-    {"note":"The angels and mediator of Galatians 3:19-20 are underexplained; identifying Moses is plausible but not explicit, and speculative angelologies should not be presented as fact.","note_type":"interpretive-caution","certainty":"disputed","dispute_status":"historical_uncertainty","sources":["gal-greek","martyn-galatians"],"scripture_references":["Galatians 3:19-20"],"traditions":["Academic"],"rationale":"Referents and evaluative logic remain compressed."},
-    {"note":"Paidagogos denotes a household guardian rather than a modern schoolteacher; the metaphor's temporary custody must not become contempt for Jewish education or children.","note_type":"historical-context","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","sources":["bdag","lsj","martyn-galatians"],"scripture_references":["Galatians 3:23-25"],"traditions":["Academic","Jewish","Christian"],"rationale":"Lexical context controls the analogy and ethical use."},
-    {"note":"Baptismal clothing and unity in Messiah are ecclesial metaphors rooted in a ritual practice; they must not be confused with forced baptism or colonial conversion.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["gal-greek","martyn-galatians"],"scripture_references":["Galatians 3:26-29"],"traditions":["Academic","Christian"],"rationale":"The passage addresses baptized members and provides no coercive mission mandate."},
-    {"note":"Galatians 3:28 challenges status hierarchy but disputed social entailments remain; it must not support gender erasure, misogyny, anti-LGBTQ coercion, racial colorblindness, or denial of embodied difference.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"major_scholarly_disagreement","sources":["marchal-uncut","den-dulk-ethnicity","gal-greek"],"scripture_references":["Galatians 3:28"],"traditions":["Academic","Christian"],"rationale":"Unity and embodied social location must be held together without coercive flattening."},
-    {"note":"Slave and free language names a real ancient status divide while also serving metaphor; spiritualization cannot excuse slavery apologetics, trafficking, worker exploitation, or caste hierarchy.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["gal-greek","marchal-uncut"],"scripture_references":["Galatians 3:28","Galatians 4:1-31"],"traditions":["Academic","Christian"],"rationale":"Metaphor depends on historical domination and cannot morally sanitize it."},
-    {"note":"Adoption and heir language combines household, scriptural, and theological imagery; it should not erase adoptees' experiences or make one Roman legal model exhaustive.","note_type":"theological-interpretation","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","sources":["gal-greek","martyn-galatians"],"scripture_references":["Galatians 4:1-7"],"traditions":["Academic","Christian"],"rationale":"Multiple metaphorical domains overlap."},
-    {"note":"The cry Abba, Father is transmitted Aramaic prayer language; it does not require a childish translation, one gendered image for God, or unsafe submission to human fathers.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","sources":["gal-greek","bdag"],"scripture_references":["Galatians 4:6"],"traditions":["Academic","Christian"],"rationale":"Lexical history and pastoral safeguarding limit overextension."},
-    {"note":"Elemental powers may be personal, cosmic, calendrical, pedagogical, or composite; the phrase cannot validate conspiracy theories, dangerous exorcism, or medical neglect.","note_type":"interpretive-caution","certainty":"disputed","dispute_status":"lexical_uncertainty","sources":["gal-greek","bdag","martyn-galatians"],"scripture_references":["Galatians 4:3","Galatians 4:8-10"],"traditions":["Academic","Christian"],"rationale":"Lexical uncertainty blocks confident modern demonological diagnosis."},
-    {"note":"Paul's comparison of former pagan observance and proposed calendrical practice is rhetorically compressed; it does not equate Jews with pagans or authorize mockery of Jewish festivals.","note_type":"interpretive-caution","certainty":"probable","dispute_status":"major_scholarly_disagreement","sources":["gal-greek","fredriksen-pagans-apostle","thiessen-gentile-problem"],"scripture_references":["Galatians 4:8-11"],"traditions":["Academic","Jewish","Christian"],"rationale":"Audience transition and polemical analogy require historical qualification."},
-    {"note":"Paul's bodily weakness and eye language do not disclose a diagnosis; malaria, eye disease, epilepsy, mental illness, and other proposals remain speculation.","note_type":"historical-context","certainty":"strong_consensus","dispute_status":"historical_uncertainty","sources":["gal-greek","soon-disabled-apostle"],"scripture_references":["Galatians 4:13-15"],"traditions":["Academic"],"rationale":"The text names weakness and hyperbolic generosity but not etiology."},
-    {"note":"Illness and disability in Galatians must not be spiritualized as deficient faith or used to promote disability stigma, forced healing, dangerous exorcism, or medical neglect.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["soon-disabled-apostle","gal-greek"],"scripture_references":["Galatians 4:13-15"],"traditions":["Academic","Christian"],"rationale":"The Galatians' welcome rather than blame is the narrated response."},
-    {"note":"Paul's maternal labor metaphor expresses pastoral anguish; it cannot authorize possessive leadership, reproductive coercion, misogyny, or treating members as a leader's children without boundaries.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["gal-greek","martyn-galatians"],"scripture_references":["Galatians 4:19-20"],"traditions":["Academic","Christian"],"rationale":"Epistolary metaphor is not an institutional governance policy."},
-    {"note":"The Hagar-Sarah passage explicitly signals allegory, but its mapping is rhetorically unstable and has often harmed Jews, women, enslaved people, Muslims, and racialized communities.","note_type":"later-reception","certainty":"strong_consensus","dispute_status":"major_scholarly_disagreement","sources":["gal-greek","riches-reception","martyn-galatians"],"scripture_references":["Galatians 4:21-31"],"traditions":["Academic","Jewish","Christian"],"rationale":"Interpretive history and the text's hierarchical pairings require ethical scrutiny."},
-    {"note":"Cast out the enslaved woman and her son quotes Genesis within an allegory; it must not authorize family expulsion, racism, anti-Muslim hostility, slavery, or violence against marginalized people.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["gal-greek","nets-lxx","riches-reception"],"scripture_references":["Galatians 4:30","Genesis 21:10"],"traditions":["Academic","Jewish","Christian"],"rationale":"Canonical quotation and modern coercive action are distinct."},
-    {"note":"Galatian freedom is ordered toward love and mutual service; it cannot legitimate libertarian domination, spiritual abuse, slavery apologetics, worker exploitation, or abandonment of communal responsibility.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["gal-greek","barclay-gift"],"scripture_references":["Galatians 5:1","Galatians 5:13-14"],"traditions":["Academic","Christian"],"rationale":"The text immediately defines freedom through neighbor-love."},
-    {"note":"Paul's warning about circumcision concerns gentile allegiance in a specific crisis; it must not support antisemitism, anti-Jewish caricature, genital stigma, or coercive anti-circumcision campaigns.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["thiessen-gentile-problem","soon-disabled-apostle","gal-greek"],"scripture_references":["Galatians 5:2-12"],"traditions":["Academic","Jewish","Christian"],"rationale":"Historical audience and bodily ethics delimit application."},
-    {"note":"Paul's wish that agitators mutilate themselves is violent polemical hyperbole and should be named as such, not imitated as ableist, intersex-phobic, sexualized, or retaliatory speech.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","sources":["marchal-uncut","soon-disabled-apostle","gal-greek"],"scripture_references":["Galatians 5:12"],"traditions":["Academic","Christian"],"rationale":"Critical reading need not sanitize harmful rhetoric or reproduce it."},
-    {"note":"Faith working through love resists separating trust from embodied communal practice; it does not establish a merit scale by which leaders control belonging.","note_type":"theological-interpretation","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","sources":["gal-greek","barclay-gift"],"scripture_references":["Galatians 5:6"],"traditions":["Academic","Christian"],"rationale":"The concise formula integrates faith and love without detailing institutional enforcement."},
-    {"note":"Neighbor-love fulfills Torah in Galatians 5:14, complicating any simple law-versus-gospel opposition and preserving Torah's scriptural authority within Paul's exhortation.","note_type":"canonical-connection","certainty":"textually_explicit","dispute_status":"minor_scholarly_disagreement","sources":["gal-greek","nets-lxx","cambridge-gal-rom"],"scripture_references":["Galatians 5:14","Leviticus 19:18"],"traditions":["Academic","Jewish","Christian"],"rationale":"Paul explicitly quotes a Torah command as summary."},
-    {"note":"Flesh is not a synonym for body, sex, disability, emotion, or LGBTQ identity; such equations enable shame and anti-LGBTQ coercion beyond the text's relational catalog.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["gal-greek","bdag","marchal-uncut"],"scripture_references":["Galatians 5:16-26"],"traditions":["Academic","Christian"],"rationale":"The catalog includes social hostility, rivalry, and factionalism alongside sexual conduct."},
-    {"note":"The works-of-flesh catalog is vice-list rhetoric, not a complete clinical, criminal, or membership-screening instrument; translation and social context require review.","note_type":"literary-observation","certainty":"strong_consensus","dispute_status":"lexical_uncertainty","sources":["gal-greek","bdag","martyn-galatians"],"scripture_references":["Galatians 5:19-21"],"traditions":["Academic","Christian"],"rationale":"Catalog conventions and ambiguous terms resist exhaustive modern mapping."},
-    {"note":"The fruit of the Spirit names communal virtues, not a tool for leaders to surveil emotion, demand constant pleasantness, blame trauma survivors, or stigmatize mental illness.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["gal-greek","martyn-galatians"],"scripture_references":["Galatians 5:22-23"],"traditions":["Academic","Christian"],"rationale":"Virtue exhortation does not erase safety, lament, diagnosis, or care."},
-    {"note":"Against such things there is no law is rhetorical affirmation, not evidence that Spirit-led people are exempt from civil accountability, safeguarding rules, or institutional oversight.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["gal-greek","martyn-galatians"],"scripture_references":["Galatians 5:23"],"traditions":["Academic","Christian"],"rationale":"The phrase praises virtues rather than creating legal immunity."},
-    {"note":"Crucifying flesh with its passions is metaphorical moral language; it cannot sanction self-harm, conversion therapy, bodily hatred, sexual abuse, fasting injury, or trauma glorification.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["gal-greek","marchal-uncut"],"scripture_references":["Galatians 5:24"],"traditions":["Academic","Christian"],"rationale":"Metaphor must be applied within non-harm and consent boundaries."},
-    {"note":"Gentle restoration in Galatians 6 requires self-watch and burden-bearing; it must not become public shaming, authoritarian discipline, coerced confession, surveillance, or forced reconciliation without safety and repair.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["gal-greek","barclay-gift"],"scripture_references":["Galatians 6:1-5"],"traditions":["Academic","Christian"],"rationale":"Gentleness and reciprocal vulnerability constrain authority."},
-    {"note":"Bearing one another's burdens and carrying one's own load are adjacent but use different terms; interpretation should preserve mutual aid and responsible self-assessment rather than weaponizing either.","note_type":"textual-observation","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","sources":["gal-greek","bdag"],"scripture_references":["Galatians 6:2","Galatians 6:5"],"traditions":["Academic","Christian"],"rationale":"Distinct nouns and contexts prevent a flat contradiction."},
-    {"note":"Sharing all good things with a teacher supports reciprocity but supplies no tithe rate, prosperity promise, collection pressure, leader entitlement, or exemption from financial accountability.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","sources":["gal-greek","barclay-gift"],"scripture_references":["Galatians 6:6"],"traditions":["Academic","Christian"],"rationale":"The brief instruction cannot bear an extractive financial system."},
-    {"note":"God is not mocked and sowing-reaping language must not be used for victim blame, health-and-wealth promises, disability stigma, disaster explanation, or coercive fundraising.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["gal-greek","martyn-galatians"],"scripture_references":["Galatians 6:7-10"],"traditions":["Academic","Christian"],"rationale":"The paragraph concerns sustained ethical good rather than causal prediction of every outcome."},
-    {"note":"Doing good especially to the household of faith creates a community priority without permitting sectarian neglect, ethnic favoritism, or refusal of aid to outsiders.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","sources":["gal-greek","barclay-gift"],"scripture_references":["Galatians 6:10"],"traditions":["Academic","Christian"],"rationale":"The verse first says good toward all."},
-    {"note":"Large letters may signal emphasis, handwriting, eyesight, or another circumstance; Galatians 6:11 cannot diagnose Paul or prove the size of the entire original letter.","note_type":"textual-observation","certainty":"probable","dispute_status":"historical_uncertainty","sources":["gal-greek","p46-csntm","soon-disabled-apostle"],"scripture_references":["Galatians 6:11"],"traditions":["Academic"],"rationale":"The autograph comment is explicit but its cause is not."},
-    {"note":"Boasting only in the cross is theological rhetoric about allegiance and status; it must not glorify suffering, demand abuse endurance, or turn trauma into spiritual prestige.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["gal-greek","barclay-gift"],"scripture_references":["Galatians 6:14"],"traditions":["Academic","Christian"],"rationale":"Cross-centered identity does not remove duties of safety and care."},
-    {"note":"New creation in Galatians 6:15 carries cosmic and communal possibilities; it is not merely private self-improvement or permission to discard embodied, Jewish, or ecological histories.","note_type":"theological-interpretation","certainty":"textually_explicit","dispute_status":"minor_scholarly_disagreement","sources":["gal-greek","martyn-galatians"],"scripture_references":["Galatians 6:15"],"traditions":["Academic","Christian"],"rationale":"Creation language exceeds an individual interior change."},
-    {"note":"Israel of God remains grammatically and theologically disputed; using it as an uncomplicated synonym for the church can fuel supersessionism, while excluding every gentile is also an argued inference.","note_type":"interpretive-caution","certainty":"disputed","dispute_status":"major_scholarly_disagreement","sources":["gal-greek","nanos-irony","martyn-galatians"],"scripture_references":["Galatians 6:16"],"traditions":["Academic","Jewish","Christian"],"rationale":"The conjunction and referent do not command consensus."},
-    {"note":"Paul's marks likely evoke scars or branding, but Paul's marks must not romanticize trauma, stigmatize disability, promote medical neglect, or demand that leaders prove authority through suffering.","note_type":"interpretive-caution","certainty":"probable","dispute_status":"historical_uncertainty","sources":["soon-disabled-apostle","gal-greek"],"scripture_references":["Galatians 6:17"],"traditions":["Academic","Christian"],"rationale":"The marks are unexplained and cannot become a modern leadership test."},
-    {"note":"Grace in the closing benediction addresses siblings without resolving every dispute; benediction must not be used to bypass accountability, safety, restitution, or repair.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["gal-greek","martyn-galatians"],"scripture_references":["Galatians 6:18"],"traditions":["Academic","Christian"],"rationale":"Liturgical closure does not erase the letter's unresolved conflict."},
-    {"note":"Galatians cannot authorize nationalism, ethnic supremacy, conspiracy theories, partisan capture, colonial mission, forced conversion, religious violence, or ecological neglect; those modern systems require independent ethical evaluation.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["riches-reception","den-dulk-ethnicity","gal-greek"],"scripture_references":["Galatians 3:28","Galatians 5:13-26","Galatians 6:10-15"],"traditions":["Academic","Christian"],"rationale":"Canonical application must preserve neighbor-love, noncoercion, truthfulness, and creation care."}
+    {
+      "note": "Paul is the sole named sender; possible scribal assistance should not be converted into a named coauthor or used to erase collaborative letter production.",
+      "note_type": "literary-observation",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 1:1",
+        "Galatians 6:11"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Prescript and autograph notice support distinct claims."
+    },
+    {
+      "note": "North- and South-Galatian theories remain hypotheses; geography must not invent a city, route, audience ethnicity, or single assembly.",
+      "note_type": "historical-context",
+      "certainty": "disputed",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "longenecker-galatians",
+        "pleiades-galatia",
+        "phi-inscriptions"
+      ],
+      "scripture_references": [
+        "Galatians 1:2"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Galatia had ethnic and provincial senses and the letter provides no city names."
+    },
+    {
+      "note": "Dates in the late 40s through 50s depend on disputed Jerusalem and Acts synchronisms and should not be presented as an explicit colophon.",
+      "note_type": "historical-context",
+      "certainty": "probable",
+      "dispute_status": "chronological_uncertainty",
+      "sources": [
+        "barclay-crisis",
+        "longenecker-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 1:18",
+        "Galatians 2:1"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The text supplies relative intervals only."
+    },
+    {
+      "note": "Paul's opponents must be reconstructed through his adversarial rhetoric; calling them one settled Jewish-Christian party confuses a scholarly model with direct evidence.",
+      "note_type": "interpretive-caution",
+      "certainty": "probable",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "martyn-galatians",
+        "nanos-irony"
+      ],
+      "scripture_references": [
+        "Galatians 1:7",
+        "Galatians 5:7-12",
+        "Galatians 6:12-13"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "No opponent document or self-designation survives."
+    },
+    {
+      "note": "The doubled curse is forceful boundary rhetoric, not permission for religious violence, forced conversion, public targeting, or authoritarian suppression of questions.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 1:8-9"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The letter offers no coercive enforcement mandate."
+    },
+    {
+      "note": "Paul describes a divine disclosure and call through scriptural prophetic language; historical description should distinguish his autobiographical claim from later doctrine about revelation.",
+      "note_type": "literary-observation",
+      "certainty": "textually_explicit",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 1:11-17"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Autobiographical rhetoric and confessional evaluation are different claim layers."
+    },
+    {
+      "note": "Galatians and Acts are independent rhetorical narratives; neither automatic harmonization nor automatic contradiction can replace passage-by-passage comparison.",
+      "note_type": "canonical-connection",
+      "certainty": "strong_consensus",
+      "dispute_status": "chronological_uncertainty",
+      "sources": [
+        "gal-greek",
+        "longenecker-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 1:11-2:14",
+        "Acts 9:1-30",
+        "Acts 11:27-30",
+        "Acts 15:1-35"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Selection and purpose differ even where persons and issues overlap."
+    },
+    {
+      "note": "Paul's oath that he is not lying signals contested autobiography; it strengthens the claim that these are his assertions without independently verifying every itinerary detail.",
+      "note_type": "literary-observation",
+      "certainty": "textually_explicit",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 1:20"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Rhetorical self-attestation is evidence but not external corroboration."
+    },
+    {
+      "note": "Titus's uncircumcised status functions within a gentile-inclusion dispute; it cannot justify coerced circumcision, coerced anti-circumcision, genital ridicule, or medical interference.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "textual_variant",
+      "sources": [
+        "gal-greek",
+        "ntvmr",
+        "soon-disabled-apostle"
+      ],
+      "scripture_references": [
+        "Galatians 2:1-5"
+      ],
+      "traditions": [
+        "Academic",
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "A contested ancient communal practice does not authorize modern bodily coercion."
+    },
+    {
+      "note": "The right-hand fellowship and request to remember the poor indicate negotiated mission partnership; they do not prove full doctrinal uniformity or a centralized ecclesial constitution.",
+      "note_type": "historical-context",
+      "certainty": "probable",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "gal-greek",
+        "barclay-crisis"
+      ],
+      "scripture_references": [
+        "Galatians 2:7-10"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The compact retrospective serves Paul's immediate defense."
+    },
+    {
+      "note": "Paul's report of Cephas's withdrawal is one participant's polemical account; James's intent, the visitors' message, Cephas's rationale, and the dispute's outcome remain unknown.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "gal-greek",
+        "nanos-irony"
+      ],
+      "scripture_references": [
+        "Galatians 2:11-14"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The text supplies Paul's characterization, not every participant's voice."
+    },
+    {
+      "note": "Calling behavior hypocritical in the Antioch narrative must not become an excuse for anti-Jewish table-fellowship caricature, ethnic contempt, or public shaming of modern people.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "gal-greek",
+        "den-dulk-ethnicity"
+      ],
+      "scripture_references": [
+        "Galatians 2:11-14"
+      ],
+      "traditions": [
+        "Academic",
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "Historical conflict and modern ethnic stereotyping are not equivalent."
+    },
+    {
+      "note": "The speech boundary after Galatians 2:14 is not marked in ancient punctuation; whether verses 15-21 continue the Antioch speech or become direct address does not erase their argumentative continuity.",
+      "note_type": "textual-observation",
+      "certainty": "disputed",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "gal-greek",
+        "p46-csntm",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 2:14-21"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Editorial quotation marks are interpretive."
+    },
+    {
+      "note": "Justification can be described with forensic, covenantal, participatory, apocalyptic, and relational models; one later doctrinal system should not masquerade as the only lexical meaning.",
+      "note_type": "theological-interpretation",
+      "certainty": "disputed",
+      "dispute_status": "denominational_disagreement",
+      "sources": [
+        "martyn-galatians",
+        "barclay-gift",
+        "cambridge-gal-rom"
+      ],
+      "scripture_references": [
+        "Galatians 2:15-21"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The passage combines verdict, Messiah participation, Spirit, and communal boundary questions."
+    },
+    {
+      "note": "Pistis Christou permits faith in Messiah, Messiah's faithfulness, and mediating readings; translations should disclose rather than conceal the Christ-genitive dispute.",
+      "note_type": "interpretive-caution",
+      "certainty": "disputed",
+      "dispute_status": "lexical_uncertainty",
+      "sources": [
+        "gal-greek",
+        "bdag",
+        "barclay-gift"
+      ],
+      "scripture_references": [
+        "Galatians 2:16",
+        "Galatians 2:20"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Grammar and Pauline parallels do not yield unanimity."
+    },
+    {
+      "note": "Works of Torah should not be paraphrased as Jewish legalism: the immediate crisis concerns gentile circumcision and obligation, while the phrase's full scope remains debated.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "thiessen-gentile-problem",
+        "fredriksen-pagans-apostle",
+        "gal-greek"
+      ],
+      "scripture_references": [
+        "Galatians 2:16",
+        "Galatians 3:2-10",
+        "Galatians 5:2-3"
+      ],
+      "traditions": [
+        "Academic",
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "Anti-Jewish moral caricature does not follow from Paul's contextual claim."
+    },
+    {
+      "note": "Galatians' Torah argument must not support antisemitism, supersessionism, contempt for Jews or Judaism, or the claim that Torah is intrinsically evil; Paul is a Jewish apostle arguing about gentile inclusion.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "thiessen-gentile-problem",
+        "fredriksen-pagans-apostle",
+        "den-dulk-ethnicity"
+      ],
+      "scripture_references": [
+        "Galatians 2:15-3:29",
+        "Galatians 5:2-6"
+      ],
+      "traditions": [
+        "Academic",
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "Historical location and ethical reception rule out ethnic condemnation."
+    },
+    {
+      "note": "Being crucified with Messiah is participatory and metaphorical theological speech; it must not glorify trauma, encourage self-harm, or demand endurance of abuse.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "gal-greek",
+        "barclay-gift"
+      ],
+      "scripture_references": [
+        "Galatians 2:19-20"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The passage describes transformed allegiance, not a safeguarding exception."
+    },
+    {
+      "note": "Paul's appeal to the Galatians' experience of the Spirit is rhetorical evidence within the letter, not a modern protocol for manipulating testimony, staging miracles, or bypassing verification.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 3:1-5"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Ancient epistolary appeal and modern claims require distinct evaluation."
+    },
+    {
+      "note": "Genesis 15:6 is quoted within a new gentile-inclusion argument; Jewish readings of Abraham are not invalidated merely because Paul's reading is canonical for Christians.",
+      "note_type": "canonical-connection",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "gal-greek",
+        "nets-lxx",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 3:6",
+        "Genesis 15:6"
+      ],
+      "traditions": [
+        "Academic",
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "Intertextual reuse does not exhaust the source text's contexts."
+    },
+    {
+      "note": "Paul's phrase those of faith are Abraham's children is a claim about promised belonging, not a warrant for Christian seizure of Jewish identity or erasure of living Jewish people.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "denominational_disagreement",
+      "sources": [
+        "gal-greek",
+        "thiessen-gentile-problem"
+      ],
+      "scripture_references": [
+        "Galatians 3:7-9"
+      ],
+      "traditions": [
+        "Academic",
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "Gentile inclusion need not entail replacement."
+    },
+    {
+      "note": "The curse sequence draws on Deuteronomy and crucifixion language; it does not declare Jews, Jewish bodies, Torah scrolls, or Torah observance cursed.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "gal-greek",
+        "nets-lxx",
+        "thiessen-gentile-problem"
+      ],
+      "scripture_references": [
+        "Galatians 3:10-14"
+      ],
+      "traditions": [
+        "Academic",
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "Paul's textual predicates and ethnic generalizations must be distinguished."
+    },
+    {
+      "note": "Seed is grammatically singular yet can be collective in Hebrew and Greek; Paul's christological wordplay is an ancient interpretive move rather than proof that Genesis could only mean one individual.",
+      "note_type": "textual-observation",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "gal-greek",
+        "nets-lxx",
+        "bdag"
+      ],
+      "scripture_references": [
+        "Galatians 3:16"
+      ],
+      "traditions": [
+        "Academic",
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "Collective-noun grammar and Pauline argument coexist."
+    },
+    {
+      "note": "Because of transgressions in Galatians 3:19 remains semantically disputed; claims that Torah merely restrains, exposes, multiplies, or causes sin must be labeled interpretations.",
+      "note_type": "interpretive-caution",
+      "certainty": "disputed",
+      "dispute_status": "lexical_uncertainty",
+      "sources": [
+        "gal-greek",
+        "bdag",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 3:19"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The Greek preposition does not settle the causal model."
+    },
+    {
+      "note": "The angels and mediator of Galatians 3:19-20 are underexplained; identifying Moses is plausible but not explicit, and speculative angelologies should not be presented as fact.",
+      "note_type": "interpretive-caution",
+      "certainty": "disputed",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 3:19-20"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Referents and evaluative logic remain compressed."
+    },
+    {
+      "note": "Paidagogos denotes a household guardian rather than a modern schoolteacher; the metaphor's temporary custody must not become contempt for Jewish education or children.",
+      "note_type": "historical-context",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "bdag",
+        "lsj",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 3:23-25"
+      ],
+      "traditions": [
+        "Academic",
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "Lexical context controls the analogy and ethical use."
+    },
+    {
+      "note": "Baptismal clothing and unity in Messiah are ecclesial metaphors rooted in a ritual practice; they must not be confused with forced baptism or colonial conversion.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 3:26-29"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The passage addresses baptized members and provides no coercive mission mandate."
+    },
+    {
+      "note": "Galatians 3:28 challenges status hierarchy but disputed social entailments remain; it must not support gender erasure, misogyny, anti-LGBTQ coercion, racial colorblindness, or denial of embodied difference.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "marchal-uncut",
+        "den-dulk-ethnicity",
+        "gal-greek"
+      ],
+      "scripture_references": [
+        "Galatians 3:28"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Unity and embodied social location must be held together without coercive flattening."
+    },
+    {
+      "note": "Slave and free language names a real ancient status divide while also serving metaphor; spiritualization cannot excuse slavery apologetics, trafficking, worker exploitation, or caste hierarchy.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "gal-greek",
+        "marchal-uncut"
+      ],
+      "scripture_references": [
+        "Galatians 3:28",
+        "Galatians 4:1-31"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Metaphor depends on historical domination and cannot morally sanitize it."
+    },
+    {
+      "note": "Adoption and heir language combines household, scriptural, and theological imagery; it should not erase adoptees' experiences or make one Roman legal model exhaustive.",
+      "note_type": "theological-interpretation",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 4:1-7"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Multiple metaphorical domains overlap."
+    },
+    {
+      "note": "The cry Abba, Father is transmitted Aramaic prayer language; it does not require a childish translation, one gendered image for God, or unsafe submission to human fathers.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "gal-greek",
+        "bdag"
+      ],
+      "scripture_references": [
+        "Galatians 4:6"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Lexical history and pastoral safeguarding limit overextension."
+    },
+    {
+      "note": "Elemental powers may be personal, cosmic, calendrical, pedagogical, or composite; the phrase cannot validate conspiracy theories, dangerous exorcism, or medical neglect.",
+      "note_type": "interpretive-caution",
+      "certainty": "disputed",
+      "dispute_status": "lexical_uncertainty",
+      "sources": [
+        "gal-greek",
+        "bdag",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 4:3",
+        "Galatians 4:8-10"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Lexical uncertainty blocks confident modern demonological diagnosis."
+    },
+    {
+      "note": "Paul's comparison of former pagan observance and proposed calendrical practice is rhetorically compressed; it does not equate Jews with pagans or authorize mockery of Jewish festivals.",
+      "note_type": "interpretive-caution",
+      "certainty": "probable",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "gal-greek",
+        "fredriksen-pagans-apostle",
+        "thiessen-gentile-problem"
+      ],
+      "scripture_references": [
+        "Galatians 4:8-11"
+      ],
+      "traditions": [
+        "Academic",
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "Audience transition and polemical analogy require historical qualification."
+    },
+    {
+      "note": "Paul's bodily weakness and eye language do not disclose a diagnosis; malaria, eye disease, epilepsy, mental illness, and other proposals remain speculation.",
+      "note_type": "historical-context",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "gal-greek",
+        "soon-disabled-apostle"
+      ],
+      "scripture_references": [
+        "Galatians 4:13-15"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The text names weakness and hyperbolic generosity but not etiology."
+    },
+    {
+      "note": "Illness and disability in Galatians must not be spiritualized as deficient faith or used to promote disability stigma, forced healing, dangerous exorcism, or medical neglect.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "soon-disabled-apostle",
+        "gal-greek"
+      ],
+      "scripture_references": [
+        "Galatians 4:13-15"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The Galatians' welcome rather than blame is the narrated response."
+    },
+    {
+      "note": "Paul's maternal labor metaphor expresses pastoral anguish; it cannot authorize possessive leadership, reproductive coercion, misogyny, or treating members as a leader's children without boundaries.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 4:19-20"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Epistolary metaphor is not an institutional governance policy."
+    },
+    {
+      "note": "The Hagar-Sarah passage explicitly signals allegory, but its mapping is rhetorically unstable and has often harmed Jews, women, enslaved people, Muslims, and racialized communities.",
+      "note_type": "later-reception",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "gal-greek",
+        "riches-reception",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 4:21-31"
+      ],
+      "traditions": [
+        "Academic",
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "Interpretive history and the text's hierarchical pairings require ethical scrutiny."
+    },
+    {
+      "note": "Cast out the enslaved woman and her son quotes Genesis within an allegory; it must not authorize family expulsion, racism, anti-Muslim hostility, slavery, or violence against marginalized people.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "gal-greek",
+        "nets-lxx",
+        "riches-reception"
+      ],
+      "scripture_references": [
+        "Galatians 4:30",
+        "Genesis 21:10"
+      ],
+      "traditions": [
+        "Academic",
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "Canonical quotation and modern coercive action are distinct."
+    },
+    {
+      "note": "Galatian freedom is ordered toward love and mutual service; it cannot legitimate libertarian domination, spiritual abuse, slavery apologetics, worker exploitation, or abandonment of communal responsibility.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "gal-greek",
+        "barclay-gift"
+      ],
+      "scripture_references": [
+        "Galatians 5:1",
+        "Galatians 5:13-14"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The text immediately defines freedom through neighbor-love."
+    },
+    {
+      "note": "Paul's warning about circumcision concerns gentile allegiance in a specific crisis; it must not support antisemitism, anti-Jewish caricature, genital stigma, or coercive anti-circumcision campaigns.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "thiessen-gentile-problem",
+        "soon-disabled-apostle",
+        "gal-greek"
+      ],
+      "scripture_references": [
+        "Galatians 5:2-12"
+      ],
+      "traditions": [
+        "Academic",
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "Historical audience and bodily ethics delimit application."
+    },
+    {
+      "note": "Paul's wish that agitators mutilate themselves is violent polemical hyperbole and should be named as such, not imitated as ableist, intersex-phobic, sexualized, or retaliatory speech.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "marchal-uncut",
+        "soon-disabled-apostle",
+        "gal-greek"
+      ],
+      "scripture_references": [
+        "Galatians 5:12"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Critical reading need not sanitize harmful rhetoric or reproduce it."
+    },
+    {
+      "note": "Faith working through love resists separating trust from embodied communal practice; it does not establish a merit scale by which leaders control belonging.",
+      "note_type": "theological-interpretation",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "gal-greek",
+        "barclay-gift"
+      ],
+      "scripture_references": [
+        "Galatians 5:6"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The concise formula integrates faith and love without detailing institutional enforcement."
+    },
+    {
+      "note": "Neighbor-love fulfills Torah in Galatians 5:14, complicating any simple law-versus-gospel opposition and preserving Torah's scriptural authority within Paul's exhortation.",
+      "note_type": "canonical-connection",
+      "certainty": "textually_explicit",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "gal-greek",
+        "nets-lxx",
+        "cambridge-gal-rom"
+      ],
+      "scripture_references": [
+        "Galatians 5:14",
+        "Leviticus 19:18"
+      ],
+      "traditions": [
+        "Academic",
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "Paul explicitly quotes a Torah command as summary."
+    },
+    {
+      "note": "Flesh is not a synonym for body, sex, disability, emotion, or LGBTQ identity; such equations enable shame and anti-LGBTQ coercion beyond the text's relational catalog.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "gal-greek",
+        "bdag",
+        "marchal-uncut"
+      ],
+      "scripture_references": [
+        "Galatians 5:16-26"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The catalog includes social hostility, rivalry, and factionalism alongside sexual conduct."
+    },
+    {
+      "note": "The works-of-flesh catalog is vice-list rhetoric, not a complete clinical, criminal, or membership-screening instrument; translation and social context require review.",
+      "note_type": "literary-observation",
+      "certainty": "strong_consensus",
+      "dispute_status": "lexical_uncertainty",
+      "sources": [
+        "gal-greek",
+        "bdag",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 5:19-21"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Catalog conventions and ambiguous terms resist exhaustive modern mapping."
+    },
+    {
+      "note": "The fruit of the Spirit names communal virtues, not a tool for leaders to surveil emotion, demand constant pleasantness, blame trauma survivors, or stigmatize mental illness.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 5:22-23"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Virtue exhortation does not erase safety, lament, diagnosis, or care."
+    },
+    {
+      "note": "Against such things there is no law is rhetorical affirmation, not evidence that Spirit-led people are exempt from civil accountability, safeguarding rules, or institutional oversight.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 5:23"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The phrase praises virtues rather than creating legal immunity."
+    },
+    {
+      "note": "Crucifying flesh with its passions is metaphorical moral language; it cannot sanction self-harm, conversion therapy, bodily hatred, sexual abuse, fasting injury, or trauma glorification.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "gal-greek",
+        "marchal-uncut"
+      ],
+      "scripture_references": [
+        "Galatians 5:24"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Metaphor must be applied within non-harm and consent boundaries."
+    },
+    {
+      "note": "Gentle restoration in Galatians 6 requires self-watch and burden-bearing; it must not become public shaming, authoritarian discipline, coerced confession, surveillance, or forced reconciliation without safety and repair.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "gal-greek",
+        "barclay-gift"
+      ],
+      "scripture_references": [
+        "Galatians 6:1-5"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Gentleness and reciprocal vulnerability constrain authority."
+    },
+    {
+      "note": "Bearing one another's burdens and carrying one's own load are adjacent but use different terms; interpretation should preserve mutual aid and responsible self-assessment rather than weaponizing either.",
+      "note_type": "textual-observation",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "gal-greek",
+        "bdag"
+      ],
+      "scripture_references": [
+        "Galatians 6:2",
+        "Galatians 6:5"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Distinct nouns and contexts prevent a flat contradiction."
+    },
+    {
+      "note": "Sharing all good things with a teacher supports reciprocity but supplies no tithe rate, prosperity promise, collection pressure, leader entitlement, or exemption from financial accountability.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "gal-greek",
+        "barclay-gift"
+      ],
+      "scripture_references": [
+        "Galatians 6:6"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The brief instruction cannot bear an extractive financial system."
+    },
+    {
+      "note": "God is not mocked and sowing-reaping language must not be used for victim blame, health-and-wealth promises, disability stigma, disaster explanation, or coercive fundraising.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 6:7-10"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The paragraph concerns sustained ethical good rather than causal prediction of every outcome."
+    },
+    {
+      "note": "Doing good especially to the household of faith creates a community priority without permitting sectarian neglect, ethnic favoritism, or refusal of aid to outsiders.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "gal-greek",
+        "barclay-gift"
+      ],
+      "scripture_references": [
+        "Galatians 6:10"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The verse first says good toward all."
+    },
+    {
+      "note": "Large letters may signal emphasis, handwriting, eyesight, or another circumstance; Galatians 6:11 cannot diagnose Paul or prove the size of the entire original letter.",
+      "note_type": "textual-observation",
+      "certainty": "probable",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "gal-greek",
+        "p46-csntm",
+        "soon-disabled-apostle"
+      ],
+      "scripture_references": [
+        "Galatians 6:11"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The autograph comment is explicit but its cause is not."
+    },
+    {
+      "note": "Boasting only in the cross is theological rhetoric about allegiance and status; it must not glorify suffering, demand abuse endurance, or turn trauma into spiritual prestige.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "gal-greek",
+        "barclay-gift"
+      ],
+      "scripture_references": [
+        "Galatians 6:14"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Cross-centered identity does not remove duties of safety and care."
+    },
+    {
+      "note": "New creation in Galatians 6:15 carries cosmic and communal possibilities; it is not merely private self-improvement or permission to discard embodied, Jewish, or ecological histories.",
+      "note_type": "theological-interpretation",
+      "certainty": "textually_explicit",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 6:15"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Creation language exceeds an individual interior change."
+    },
+    {
+      "note": "Israel of God remains grammatically and theologically disputed; using it as an uncomplicated synonym for the church can fuel supersessionism, while excluding every gentile is also an argued inference.",
+      "note_type": "interpretive-caution",
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "gal-greek",
+        "nanos-irony",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 6:16"
+      ],
+      "traditions": [
+        "Academic",
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "The conjunction and referent do not command consensus."
+    },
+    {
+      "note": "Paul's marks likely evoke scars or branding, but Paul's marks must not romanticize trauma, stigmatize disability, promote medical neglect, or demand that leaders prove authority through suffering.",
+      "note_type": "interpretive-caution",
+      "certainty": "probable",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "soon-disabled-apostle",
+        "gal-greek"
+      ],
+      "scripture_references": [
+        "Galatians 6:17"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The marks are unexplained and cannot become a modern leadership test."
+    },
+    {
+      "note": "Grace in the closing benediction addresses siblings without resolving every dispute; benediction must not be used to bypass accountability, safety, restitution, or repair.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "scripture_references": [
+        "Galatians 6:18"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Liturgical closure does not erase the letter's unresolved conflict."
+    },
+    {
+      "note": "Galatians cannot authorize nationalism, ethnic supremacy, conspiracy theories, partisan capture, colonial mission, forced conversion, religious violence, or ecological neglect; those modern systems require independent ethical evaluation.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "riches-reception",
+        "den-dulk-ethnicity",
+        "gal-greek"
+      ],
+      "scripture_references": [
+        "Galatians 3:28",
+        "Galatians 5:13-26",
+        "Galatians 6:10-15"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Canonical application must preserve neighbor-love, noncoercion, truthfulness, and creation care."
+    }
   ],
   "common_questions": [
     "Who wrote Galatians and did Paul use a scribe?",
@@ -337,42 +2329,486 @@
     "How can Galatians be read without antisemitism, supersessionism, coercion, or abuse?"
   ],
   "sources": [
-    {"id":"gal-greek","title":"The Greek New Testament: SBL Edition","author":"Michael W. Holmes, ed.","publisher":"Society of Biblical Literature and Logos Bible Software","year":2010,"locator":"Galatians 1-6","url":"https://www.sblgnt.com/download/","source_type":"scripture","supports":["scripture_references","claims","interpretive_notes","greek_words"],"notes":"Critical Greek base text, checked alongside manuscript resources."},
-    {"id":"nets-lxx","title":"A New English Translation of the Septuagint","author":"Albert Pietersma and Benjamin G. Wright, eds.","publisher":"Oxford University Press","year":2007,"locator":"Genesis, Leviticus, Deuteronomy, Habakkuk, Isaiah","url":"https://ccat.sas.upenn.edu/nets/edition/","source_type":"ancient-primary-source","supports":["intertextuality","claims","interpretive_notes"],"notes":"Greek scriptural comparanda; translations and textual forms require review."},
-    {"id":"ntvmr","title":"New Testament Virtual Manuscript Room","author":"Institut für Neutestamentliche Textforschung","publisher":"University of Münster","year":null,"locator":"Galatians manuscript witnesses and apparatus data","url":"https://ntvmr.uni-muenster.de/","source_type":"reference-work","supports":["primary_sources","claims","interpretive_notes"],"notes":"Manuscript catalog and digital-workspace control."},
-    {"id":"p46-csntm","title":"GA P46 Digital Images and Metadata","author":"Center for the Study of New Testament Manuscripts","publisher":"CSNTM","year":null,"locator":"Galatians portions","url":"https://manuscripts.csntm.org/manuscript/View/GA_P46","source_type":"museum-collection","supports":["primary_sources","claims","interpretive_notes"],"notes":"Early papyrus witness; surviving extent and readings require folio-level review."},
-    {"id":"p51-csntm","title":"GA P51 Digital Images and Metadata","author":"Center for the Study of New Testament Manuscripts","publisher":"CSNTM","year":null,"locator":"Galatians 1:2-10, 13, 16-20","url":"https://manuscripts.csntm.org/manuscript/View/GA_P51","source_type":"museum-collection","supports":["primary_sources","interpretive_notes"],"notes":"Fragmentary Galatians papyrus witness; exact contents and dating require verification."},
-    {"id":"sinaiticus","title":"Codex Sinaiticus","author":"","publisher":"Codex Sinaiticus Project","year":null,"locator":"Galatians","url":"https://www.codexsinaiticus.org/en/","source_type":"museum-collection","supports":["primary_sources","interpretive_notes"],"notes":"Fourth-century witness with corrections; readings require folio-level review."},
-    {"id":"vaticanus","title":"Codex Vaticanus Graecus 1209","author":"","publisher":"Biblioteca Apostolica Vaticana","year":null,"locator":"Galatians","url":"https://digi.vatlib.it/view/MSS_Vat.gr.1209","source_type":"museum-collection","supports":["primary_sources","interpretive_notes"],"notes":"Fourth-century witness; exact readings require image and apparatus review."},
-    {"id":"alexandrinus","title":"Codex Alexandrinus, Royal MS 1 D VIII","author":"","publisher":"British Library","year":null,"locator":"Galatians","url":"https://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Royal_MS_1_D_VIII","source_type":"museum-collection","supports":["primary_sources","interpretive_notes"],"notes":"Fifth-century witness; lacunae and readings require verification."},
-    {"id":"ephraemi","title":"Codex Ephraemi Rescriptus, Grec 9","author":"","publisher":"Bibliothèque nationale de France","year":null,"locator":"Pauline Epistles","url":"https://gallica.bnf.fr/ark:/12148/btv1b8470433r","source_type":"museum-collection","supports":["primary_sources","interpretive_notes"],"notes":"Palimpsest witness; Galatians contents and readings require specialist verification."},
-    {"id":"claromontanus","title":"Codex Claromontanus","author":"","publisher":"Bibliothèque nationale de France","year":null,"locator":"Galatians","url":"https://gallica.bnf.fr/ark:/12148/btv1b84683111","source_type":"museum-collection","supports":["primary_sources","interpretive_notes"],"notes":"Greek-Latin Pauline witness; exact variants require apparatus review."},
-    {"id":"phi-inscriptions","title":"Searchable Greek Inscriptions","author":"Packard Humanities Institute","publisher":"Cornell University and Ohio State University","year":null,"locator":"Galatia and Anatolia","url":"https://inscriptions.packhum.org/","source_type":"ancient-primary-source","supports":["historical_context","archaeology","claims"],"notes":"Epigraphic comparanda for geography, institutions, ethnicity, status, and names."},
-    {"id":"edh-inscriptions","title":"Epigraphic Database Heidelberg","author":"Heidelberg Academy of Sciences and Humanities","publisher":"Heidelberg University","year":null,"locator":"Roman Galatia and Asia Minor","url":"https://edh.ub.uni-heidelberg.de/","source_type":"ancient-primary-source","supports":["historical_context","archaeology"],"notes":"Latin and Greek inscription metadata and images where available."},
-    {"id":"pleiades-galatia","title":"Pleiades: A Gazetteer of Past Places","author":"Ancient World Mapping Center and Institute for the Study of the Ancient World","publisher":"Pleiades","year":null,"locator":"Galatia and Asia Minor","url":"https://pleiades.stoa.org/","source_type":"reference-work","supports":["key_places","maps","claims"],"notes":"Geographic control; specific place identifiers and ancient boundaries require review."},
-    {"id":"orbis","title":"ORBIS: The Stanford Geospatial Network Model of the Roman World","author":"Walter Scheidel, Elijah Meeks, and collaborators","publisher":"Stanford University","year":null,"locator":"Anatolian and eastern Mediterranean routes","url":"https://orbis.stanford.edu/","source_type":"reference-work","supports":["maps","historical_context"],"notes":"Model-based travel comparanda, not proof of Paul's itinerary."},
-    {"id":"martyn-galatians","title":"Galatians: A New Translation with Introduction and Commentary","author":"J. Louis Martyn","publisher":"Yale University Press","year":2004,"locator":"Anchor Yale Bible 33A","url":"https://yalebooks.yale.edu/9780300139853/galatians/","source_type":"academic-book","supports":["claims","interpretive_notes","literary_context","historical_context"],"notes":"Major apocalyptic commentary; used alongside competing views."},
-    {"id":"barclay-crisis","title":"Paul: Crisis in Galatia, Second Edition","author":"John M. G. Barclay","publisher":"Cambridge University Press","year":2002,"locator":"Galatian crisis, opponents, chronology, Torah","url":"https://www.cambridge.org/core/books/paul-crisis-in-galatia/0FEBDAE0C710746C0685D5A70913F9BE","source_type":"academic-book","supports":["claims","interpretive_notes","historical_context"],"notes":"Reconstruction of the crisis; hypotheses remain contestable."},
-    {"id":"longenecker-galatians","title":"Galatians","author":"Bruce W. Longenecker","publisher":"Cambridge University Press","year":2003,"locator":"The Cambridge Companion to St Paul, chapter 4","url":"https://www.cambridge.org/core/books/cambridge-companion-to-st-paul/galatians/405399A77EA4FE97DF9270CB98D95903","source_type":"academic-book","supports":["claims","interpretive_notes","historical_context"],"notes":"Concise orientation to audience, crisis, rhetoric, and theology."},
-    {"id":"cambridge-gal-rom","title":"Galatians and Romans","author":"Beverly Roberts Gaventa","publisher":"Cambridge University Press","year":2020,"locator":"The New Cambridge Companion to St. Paul, chapter 5","url":"https://www.cambridge.org/core/books/new-cambridge-companion-to-st-paul/galatians-and-romans/439561D0587775DEC6E3E6DF74DC1DD5","source_type":"academic-book","supports":["canonical_context","claims","interpretive_notes"],"notes":"Pauline-letter comparison without collapsing the two occasions."},
-    {"id":"barclay-gift","title":"Paul and the Gift","author":"John M. G. Barclay","publisher":"Eerdmans","year":2015,"locator":"Galatians; grace, gift, and community","url":"https://www.eerdmans.com/9780802875327/paul-and-the-gift/","source_type":"academic-book","supports":["claims","interpretive_notes","covenantal_significance"],"notes":"Grace and gift analysis used alongside apocalyptic, covenantal, and participation readings."},
-    {"id":"thiessen-gentile-problem","title":"Paul and the Gentile Problem","author":"Matthew Thiessen","publisher":"Oxford University Press","year":2016,"locator":"Galatians; circumcision, Torah, and gentile identity","url":"https://academic.oup.com/book/10657","source_type":"academic-book","supports":["claims","interpretive_notes","second_temple_context"],"notes":"Paul-within-Judaism account used alongside competing constructions."},
-    {"id":"fredriksen-pagans-apostle","title":"Paul: The Pagans' Apostle","author":"Paula Fredriksen","publisher":"Yale University Press","year":2017,"locator":"Mission, persecution, circumcision, flesh, and Spirit","url":"https://academic.oup.com/yale-scholarship-online/book/14424","source_type":"academic-book","supports":["claims","interpretive_notes","historical_context"],"notes":"Historical reconstruction of Paul's gentile mission."},
-    {"id":"nanos-irony","title":"The Irony of Galatians: Paul's Letter in First-Century Context","author":"Mark D. Nanos","publisher":"Fortress Press","year":2002,"locator":"Opponents, irony, Jewish context, Israel of God","url":"https://www.fortresspress.com/store/product/9781451413762/The-Irony-of-Galatians","source_type":"academic-book","supports":["claims","interpretive_notes"],"notes":"Revisionist Jewish-context reading used as a contested position."},
-    {"id":"marchal-uncut","title":"Uncut Galatians: Intersex/Eunuch","author":"Joseph A. Marchal","publisher":"Oxford University Press","year":2019,"locator":"Appalling Bodies, chapter 3, pp. 68-112","url":"https://academic.oup.com/book/32366/chapter-abstract/268640211","source_type":"academic-book","supports":["claims","interpretive_notes","later_christian_reception"],"notes":"Queer and intersex-critical analysis of bodies, circumcision, castration, and Galatians 3:28."},
-    {"id":"soon-disabled-apostle","title":"A Disabling Gospel","author":"Isaac T. Soon","publisher":"Oxford University Press","year":2023,"locator":"A Disabled Apostle, chapter 7, pp. 129-151","url":"https://academic.oup.com/book/46798/chapter/413428553","source_type":"academic-book","supports":["claims","interpretive_notes","later_christian_reception"],"notes":"Disability-critical analysis of circumcision, impairment, and Pauline rhetoric."},
-    {"id":"den-dulk-ethnicity","title":"Foolish Galatians","author":"Matthijs den Dulk","publisher":"Cambridge University Press","year":2026,"locator":"Ethnic Stereotypes and the Letters of Paul, chapter 4","url":"https://www.cambridge.org/core/books/ethnic-stereotypes-and-the-letters-of-paul/foolish-galatians/12BA96C6F5F884696C77BAF3412BF4BD","source_type":"academic-book","supports":["claims","interpretive_notes","later_christian_reception"],"notes":"Reception-historical and ethnic-stereotype control."},
-    {"id":"riches-reception","title":"Galatians Through the Centuries","author":"John Riches","publisher":"Wiley-Blackwell","year":2008,"locator":"Reception history","url":"https://onlinelibrary.wiley.com/doi/book/10.1002/9780470773956","source_type":"academic-book","supports":["later_christian_reception","interpretive_notes"],"notes":"Reception history used to identify influential and harmful trajectories."},
-    {"id":"augustine-galatians","title":"Augustine's Commentary on Galatians: Introduction, Text, Translation, and Notes","author":"Eric Plumer","publisher":"Oxford University Press","year":2003,"locator":"Complete commentary","url":"https://academic.oup.com/book/3945","source_type":"academic-book","supports":["later_christian_reception","interpretive_notes"],"notes":"Primary-reception translation and study; not treated as modern historical control."},
-    {"id":"bdag","title":"A Greek-English Lexicon of the New Testament and Other Early Christian Literature, Third Edition","author":"Walter Bauer; Frederick W. Danker, rev. and ed.","publisher":"University of Chicago Press","year":2000,"locator":"Galatians lexical entries","url":"https://press.uchicago.edu/ucp/books/book/chicago/G/bo3622275.html","source_type":"lexicon","supports":["greek_words","claims","interpretive_notes"],"notes":"Lexical control; entries do not independently settle contextual disputes."},
-    {"id":"lsj","title":"Liddell-Scott-Jones Greek-English Lexicon","author":"Henry George Liddell, Robert Scott, Henry Stuart Jones, and Roderick McKenzie","publisher":"Perseus Digital Library","year":null,"locator":"paidagogos, stoicheion, stigmata, and related entries","url":"https://www.perseus.tufts.edu/hopper/resolveform?redirect=true","source_type":"lexicon","supports":["greek_words","claims","interpretive_notes"],"notes":"Diachronic Greek comparanda; New Testament context remains controlling."},
-    {"id":"british-museum-galatia","title":"Collection Online","author":"","publisher":"The British Museum","year":null,"locator":"Galatia and Roman Anatolia material culture","url":"https://www.britishmuseum.org/collection","source_type":"museum-collection","supports":["archaeology","historical_context"],"notes":"Material comparanda; objects require item-level provenance review."}
+    {
+      "id": "gal-greek",
+      "title": "The Greek New Testament: SBL Edition",
+      "author": "Michael W. Holmes, ed.",
+      "publisher": "Society of Biblical Literature and Logos Bible Software",
+      "year": 2010,
+      "locator": "Galatians 1-6",
+      "url": "https://www.sblgnt.com/download/",
+      "source_type": "scripture",
+      "supports": [
+        "scripture_references",
+        "claims",
+        "interpretive_notes",
+        "greek_words"
+      ],
+      "notes": "Critical Greek base text, checked alongside manuscript resources."
+    },
+    {
+      "id": "nets-lxx",
+      "title": "A New English Translation of the Septuagint",
+      "author": "Albert Pietersma and Benjamin G. Wright, eds.",
+      "publisher": "Oxford University Press",
+      "year": 2007,
+      "locator": "Genesis, Leviticus, Deuteronomy, Habakkuk, Isaiah",
+      "url": "https://ccat.sas.upenn.edu/nets/edition/",
+      "source_type": "ancient-primary-source",
+      "supports": [
+        "intertextuality",
+        "claims",
+        "interpretive_notes"
+      ],
+      "notes": "Greek scriptural comparanda; translations and textual forms require review."
+    },
+    {
+      "id": "ntvmr",
+      "title": "New Testament Virtual Manuscript Room",
+      "author": "Institut für Neutestamentliche Textforschung",
+      "publisher": "University of Münster",
+      "year": null,
+      "locator": "Galatians manuscript witnesses and apparatus data",
+      "url": "https://ntvmr.uni-muenster.de/",
+      "source_type": "reference-work",
+      "supports": [
+        "primary_sources",
+        "claims",
+        "interpretive_notes"
+      ],
+      "notes": "Manuscript catalog and digital-workspace control."
+    },
+    {
+      "id": "p46-csntm",
+      "title": "GA P46 Digital Images and Metadata",
+      "author": "Center for the Study of New Testament Manuscripts",
+      "publisher": "CSNTM",
+      "year": null,
+      "locator": "Galatians portions",
+      "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46",
+      "source_type": "museum-collection",
+      "supports": [
+        "primary_sources",
+        "claims",
+        "interpretive_notes"
+      ],
+      "notes": "Early papyrus witness; surviving extent and readings require folio-level review."
+    },
+    {
+      "id": "p51-csntm",
+      "title": "GA P51 Digital Images and Metadata",
+      "author": "Center for the Study of New Testament Manuscripts",
+      "publisher": "CSNTM",
+      "year": null,
+      "locator": "Galatians 1:2-10, 13, 16-20",
+      "url": "https://manuscripts.csntm.org/manuscript/View/GA_P51",
+      "source_type": "museum-collection",
+      "supports": [
+        "primary_sources",
+        "interpretive_notes"
+      ],
+      "notes": "Fragmentary Galatians papyrus witness; exact contents and dating require verification."
+    },
+    {
+      "id": "sinaiticus",
+      "title": "Codex Sinaiticus",
+      "author": "",
+      "publisher": "Codex Sinaiticus Project",
+      "year": null,
+      "locator": "Galatians",
+      "url": "https://www.codexsinaiticus.org/en/",
+      "source_type": "museum-collection",
+      "supports": [
+        "primary_sources",
+        "interpretive_notes"
+      ],
+      "notes": "Fourth-century witness with corrections; readings require folio-level review."
+    },
+    {
+      "id": "vaticanus",
+      "title": "Codex Vaticanus Graecus 1209",
+      "author": "",
+      "publisher": "Biblioteca Apostolica Vaticana",
+      "year": null,
+      "locator": "Galatians",
+      "url": "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
+      "source_type": "museum-collection",
+      "supports": [
+        "primary_sources",
+        "interpretive_notes"
+      ],
+      "notes": "Fourth-century witness; exact readings require image and apparatus review."
+    },
+    {
+      "id": "alexandrinus",
+      "title": "Codex Alexandrinus, Royal MS 1 D VIII",
+      "author": "",
+      "publisher": "British Library",
+      "year": null,
+      "locator": "Galatians",
+      "url": "https://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Royal_MS_1_D_VIII",
+      "source_type": "museum-collection",
+      "supports": [
+        "primary_sources",
+        "interpretive_notes"
+      ],
+      "notes": "Fifth-century witness; lacunae and readings require verification."
+    },
+    {
+      "id": "ephraemi",
+      "title": "Codex Ephraemi Rescriptus, Grec 9",
+      "author": "",
+      "publisher": "Bibliothèque nationale de France",
+      "year": null,
+      "locator": "Pauline Epistles",
+      "url": "https://gallica.bnf.fr/ark:/12148/btv1b8470433r",
+      "source_type": "museum-collection",
+      "supports": [
+        "primary_sources",
+        "interpretive_notes"
+      ],
+      "notes": "Palimpsest witness; Galatians contents and readings require specialist verification."
+    },
+    {
+      "id": "claromontanus",
+      "title": "Codex Claromontanus",
+      "author": "",
+      "publisher": "Bibliothèque nationale de France",
+      "year": null,
+      "locator": "Galatians",
+      "url": "https://gallica.bnf.fr/ark:/12148/btv1b84683111",
+      "source_type": "museum-collection",
+      "supports": [
+        "primary_sources",
+        "interpretive_notes"
+      ],
+      "notes": "Greek-Latin Pauline witness; exact variants require apparatus review."
+    },
+    {
+      "id": "phi-inscriptions",
+      "title": "Searchable Greek Inscriptions",
+      "author": "Packard Humanities Institute",
+      "publisher": "Cornell University and Ohio State University",
+      "year": null,
+      "locator": "Galatia and Anatolia",
+      "url": "https://inscriptions.packhum.org/",
+      "source_type": "ancient-primary-source",
+      "supports": [
+        "historical_context",
+        "archaeology",
+        "claims"
+      ],
+      "notes": "Epigraphic comparanda for geography, institutions, ethnicity, status, and names."
+    },
+    {
+      "id": "edh-inscriptions",
+      "title": "Epigraphic Database Heidelberg",
+      "author": "Heidelberg Academy of Sciences and Humanities",
+      "publisher": "Heidelberg University",
+      "year": null,
+      "locator": "Roman Galatia and Asia Minor",
+      "url": "https://edh.ub.uni-heidelberg.de/",
+      "source_type": "ancient-primary-source",
+      "supports": [
+        "historical_context",
+        "archaeology"
+      ],
+      "notes": "Latin and Greek inscription metadata and images where available."
+    },
+    {
+      "id": "pleiades-galatia",
+      "title": "Pleiades: A Gazetteer of Past Places",
+      "author": "Ancient World Mapping Center and Institute for the Study of the Ancient World",
+      "publisher": "Pleiades",
+      "year": null,
+      "locator": "Galatia and Asia Minor",
+      "url": "https://pleiades.stoa.org/",
+      "source_type": "reference-work",
+      "supports": [
+        "key_places",
+        "maps",
+        "claims"
+      ],
+      "notes": "Geographic control; specific place identifiers and ancient boundaries require review."
+    },
+    {
+      "id": "orbis",
+      "title": "ORBIS: The Stanford Geospatial Network Model of the Roman World",
+      "author": "Walter Scheidel, Elijah Meeks, and collaborators",
+      "publisher": "Stanford University",
+      "year": null,
+      "locator": "Anatolian and eastern Mediterranean routes",
+      "url": "https://orbis.stanford.edu/",
+      "source_type": "reference-work",
+      "supports": [
+        "maps",
+        "historical_context"
+      ],
+      "notes": "Model-based travel comparanda, not proof of Paul's itinerary."
+    },
+    {
+      "id": "martyn-galatians",
+      "title": "Galatians: A New Translation with Introduction and Commentary",
+      "author": "J. Louis Martyn",
+      "publisher": "Yale University Press",
+      "year": 2004,
+      "locator": "Anchor Yale Bible 33A",
+      "url": "https://yalebooks.yale.edu/9780300139853/galatians/",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "literary_context",
+        "historical_context"
+      ],
+      "notes": "Major apocalyptic commentary; used alongside competing views."
+    },
+    {
+      "id": "barclay-crisis",
+      "title": "Paul: Crisis in Galatia, Second Edition",
+      "author": "John M. G. Barclay",
+      "publisher": "Cambridge University Press",
+      "year": 2002,
+      "locator": "Galatian crisis, opponents, chronology, Torah",
+      "url": "https://www.cambridge.org/core/books/paul-crisis-in-galatia/0FEBDAE0C710746C0685D5A70913F9BE",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "historical_context"
+      ],
+      "notes": "Reconstruction of the crisis; hypotheses remain contestable."
+    },
+    {
+      "id": "longenecker-galatians",
+      "title": "Galatians",
+      "author": "Bruce W. Longenecker",
+      "publisher": "Cambridge University Press",
+      "year": 2003,
+      "locator": "The Cambridge Companion to St Paul, chapter 4",
+      "url": "https://www.cambridge.org/core/books/cambridge-companion-to-st-paul/galatians/405399A77EA4FE97DF9270CB98D95903",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "historical_context"
+      ],
+      "notes": "Concise orientation to audience, crisis, rhetoric, and theology."
+    },
+    {
+      "id": "cambridge-gal-rom",
+      "title": "Galatians and Romans",
+      "author": "Beverly Roberts Gaventa",
+      "publisher": "Cambridge University Press",
+      "year": 2020,
+      "locator": "The New Cambridge Companion to St. Paul, chapter 5",
+      "url": "https://www.cambridge.org/core/books/new-cambridge-companion-to-st-paul/galatians-and-romans/439561D0587775DEC6E3E6DF74DC1DD5",
+      "source_type": "academic-book",
+      "supports": [
+        "canonical_context",
+        "claims",
+        "interpretive_notes"
+      ],
+      "notes": "Pauline-letter comparison without collapsing the two occasions."
+    },
+    {
+      "id": "barclay-gift",
+      "title": "Paul and the Gift",
+      "author": "John M. G. Barclay",
+      "publisher": "Eerdmans",
+      "year": 2015,
+      "locator": "Galatians; grace, gift, and community",
+      "url": "https://www.eerdmans.com/9780802875327/paul-and-the-gift/",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "covenantal_significance"
+      ],
+      "notes": "Grace and gift analysis used alongside apocalyptic, covenantal, and participation readings."
+    },
+    {
+      "id": "thiessen-gentile-problem",
+      "title": "Paul and the Gentile Problem",
+      "author": "Matthew Thiessen",
+      "publisher": "Oxford University Press",
+      "year": 2016,
+      "locator": "Galatians; circumcision, Torah, and gentile identity",
+      "url": "https://academic.oup.com/book/10657",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "second_temple_context"
+      ],
+      "notes": "Paul-within-Judaism account used alongside competing constructions."
+    },
+    {
+      "id": "fredriksen-pagans-apostle",
+      "title": "Paul: The Pagans' Apostle",
+      "author": "Paula Fredriksen",
+      "publisher": "Yale University Press",
+      "year": 2017,
+      "locator": "Mission, persecution, circumcision, flesh, and Spirit",
+      "url": "https://academic.oup.com/yale-scholarship-online/book/14424",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "historical_context"
+      ],
+      "notes": "Historical reconstruction of Paul's gentile mission."
+    },
+    {
+      "id": "nanos-irony",
+      "title": "The Irony of Galatians: Paul's Letter in First-Century Context",
+      "author": "Mark D. Nanos",
+      "publisher": "Fortress Press",
+      "year": 2002,
+      "locator": "Opponents, irony, Jewish context, Israel of God",
+      "url": "https://www.fortresspress.com/store/product/9781451413762/The-Irony-of-Galatians",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes"
+      ],
+      "notes": "Revisionist Jewish-context reading used as a contested position."
+    },
+    {
+      "id": "marchal-uncut",
+      "title": "Uncut Galatians: Intersex/Eunuch",
+      "author": "Joseph A. Marchal",
+      "publisher": "Oxford University Press",
+      "year": 2019,
+      "locator": "Appalling Bodies, chapter 3, pp. 68-112",
+      "url": "https://academic.oup.com/book/32366/chapter-abstract/268640211",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "later_christian_reception"
+      ],
+      "notes": "Queer and intersex-critical analysis of bodies, circumcision, castration, and Galatians 3:28."
+    },
+    {
+      "id": "soon-disabled-apostle",
+      "title": "A Disabling Gospel",
+      "author": "Isaac T. Soon",
+      "publisher": "Oxford University Press",
+      "year": 2023,
+      "locator": "A Disabled Apostle, chapter 7, pp. 129-151",
+      "url": "https://academic.oup.com/book/46798/chapter/413428553",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "later_christian_reception"
+      ],
+      "notes": "Disability-critical analysis of circumcision, impairment, and Pauline rhetoric."
+    },
+    {
+      "id": "den-dulk-ethnicity",
+      "title": "Foolish Galatians",
+      "author": "Matthijs den Dulk",
+      "publisher": "Cambridge University Press",
+      "year": 2026,
+      "locator": "Ethnic Stereotypes and the Letters of Paul, chapter 4",
+      "url": "https://www.cambridge.org/core/books/ethnic-stereotypes-and-the-letters-of-paul/foolish-galatians/12BA96C6F5F884696C77BAF3412BF4BD",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "later_christian_reception"
+      ],
+      "notes": "Reception-historical and ethnic-stereotype control."
+    },
+    {
+      "id": "riches-reception",
+      "title": "Galatians Through the Centuries",
+      "author": "John Riches",
+      "publisher": "Wiley-Blackwell",
+      "year": 2008,
+      "locator": "Reception history",
+      "url": "https://onlinelibrary.wiley.com/doi/book/10.1002/9780470773956",
+      "source_type": "academic-book",
+      "supports": [
+        "later_christian_reception",
+        "interpretive_notes"
+      ],
+      "notes": "Reception history used to identify influential and harmful trajectories."
+    },
+    {
+      "id": "augustine-galatians",
+      "title": "Augustine's Commentary on Galatians: Introduction, Text, Translation, and Notes",
+      "author": "Eric Plumer",
+      "publisher": "Oxford University Press",
+      "year": 2003,
+      "locator": "Complete commentary",
+      "url": "https://academic.oup.com/book/3945",
+      "source_type": "academic-book",
+      "supports": [
+        "later_christian_reception",
+        "interpretive_notes"
+      ],
+      "notes": "Primary-reception translation and study; not treated as modern historical control."
+    },
+    {
+      "id": "bdag",
+      "title": "A Greek-English Lexicon of the New Testament and Other Early Christian Literature, Third Edition",
+      "author": "Walter Bauer; Frederick W. Danker, rev. and ed.",
+      "publisher": "University of Chicago Press",
+      "year": 2000,
+      "locator": "Galatians lexical entries",
+      "url": "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3622275.html",
+      "source_type": "lexicon",
+      "supports": [
+        "greek_words",
+        "claims",
+        "interpretive_notes"
+      ],
+      "notes": "Lexical control; entries do not independently settle contextual disputes."
+    },
+    {
+      "id": "lsj",
+      "title": "Liddell-Scott-Jones Greek-English Lexicon",
+      "author": "Henry George Liddell, Robert Scott, Henry Stuart Jones, and Roderick McKenzie",
+      "publisher": "Perseus Digital Library",
+      "year": null,
+      "locator": "paidagogos, stoicheion, stigmata, and related entries",
+      "url": "https://www.perseus.tufts.edu/hopper/resolveform?redirect=true",
+      "source_type": "lexicon",
+      "supports": [
+        "greek_words",
+        "claims",
+        "interpretive_notes"
+      ],
+      "notes": "Diachronic Greek comparanda; New Testament context remains controlling."
+    },
+    {
+      "id": "british-museum-galatia",
+      "title": "Collection Online",
+      "author": "",
+      "publisher": "The British Museum",
+      "year": null,
+      "locator": "Galatia and Roman Anatolia material culture",
+      "url": "https://www.britishmuseum.org/collection",
+      "source_type": "museum-collection",
+      "supports": [
+        "archaeology",
+        "historical_context"
+      ],
+      "notes": "Material comparanda; objects require item-level provenance review."
+    }
   ],
   "canonical_story": {
     "phase": "apostolic-witness-and-gentile-mission",
     "role": "Defends gentile participation in Abraham's promise through the Messiah and Spirit and calls the assemblies to cruciform, loving freedom and new creation.",
-    "preceded_by": ["2-corinthians"],
-    "followed_by": ["ephesians"]
+    "preceded_by": [
+      "2-corinthians"
+    ],
+    "followed_by": [
+      "ephesians"
+    ]
   },
   "hermeneutical_lens": {
     "immediate_literary_context": "Track the shift from prescript to curse, autobiography, scriptural argument, exhortation, and autograph; identify changes among autobiographical narration, direct rebuke, scriptural voice, allegory, and communal instruction.",
@@ -393,8 +2829,15 @@
       "Romans 3-8 and 9-11"
     ],
     "biblical_theology_themes": [
-      "promise and blessing", "faith and faithfulness", "justification", "Torah", "Messiah and cross",
-      "Spirit and adoption", "gentile inclusion", "freedom and love", "new creation"
+      "promise and blessing",
+      "faith and faithfulness",
+      "justification",
+      "Torah",
+      "Messiah and cross",
+      "Spirit and adoption",
+      "gentile inclusion",
+      "freedom and love",
+      "new creation"
     ],
     "messianic_christological_trajectory": "The crucified and risen Messiah is Abraham's seed, the giver of self, the locus of faith or faithfulness, the one in whom baptized people share belonging, and the center of Paul's new-creation boast.",
     "major_interpretive_views": [
@@ -500,8 +2943,20 @@
       "Does Galatians authorize nationalism, conspiracy theories, or partisan capture?"
     ],
     "related_topics": [
-      "Paul", "Galatia", "circumcision", "gentile mission", "Jerusalem", "Antioch", "justification",
-      "Torah", "Abraham", "Spirit", "baptism", "adoption", "freedom", "new creation"
+      "Paul",
+      "Galatia",
+      "circumcision",
+      "gentile mission",
+      "Jerusalem",
+      "Antioch",
+      "justification",
+      "Torah",
+      "Abraham",
+      "Spirit",
+      "baptism",
+      "adoption",
+      "freedom",
+      "new creation"
     ],
     "frequently_confused_with": [
       "Romans as a fuller but differently occasioned Pauline argument",
@@ -510,12 +2965,47 @@
       "modern Galatia or ethnic stereotypes projected backward"
     ],
     "semantic_keywords": [
-      "Pauline authorship", "scribal assistance", "North Galatia", "South Galatia", "agitators", "opponents",
-      "Jerusalem chronology", "Titus", "Cephas", "Antioch", "justification", "pistis Christou",
-      "works of Torah", "Abraham", "promise", "curse", "seed", "law added", "angels", "mediator",
-      "pedagogue", "Galatians 3:28", "adoption", "elemental powers", "illness", "eyes", "Hagar Sarah",
-      "freedom", "circumcision", "flesh Spirit", "fruit", "restoration", "burdens", "teacher support",
-      "sowing reaping", "autograph", "new creation", "Israel of God", "marks", "grace", "safeguarding"
+      "Pauline authorship",
+      "scribal assistance",
+      "North Galatia",
+      "South Galatia",
+      "agitators",
+      "opponents",
+      "Jerusalem chronology",
+      "Titus",
+      "Cephas",
+      "Antioch",
+      "justification",
+      "pistis Christou",
+      "works of Torah",
+      "Abraham",
+      "promise",
+      "curse",
+      "seed",
+      "law added",
+      "angels",
+      "mediator",
+      "pedagogue",
+      "Galatians 3:28",
+      "adoption",
+      "elemental powers",
+      "illness",
+      "eyes",
+      "Hagar Sarah",
+      "freedom",
+      "circumcision",
+      "flesh Spirit",
+      "fruit",
+      "restoration",
+      "burdens",
+      "teacher support",
+      "sowing reaping",
+      "autograph",
+      "new creation",
+      "Israel of God",
+      "marks",
+      "grace",
+      "safeguarding"
     ]
   },
   "section_status": {

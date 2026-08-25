@@ -27,6 +27,21 @@ EXPANSION_OBJECTS = {
     "roman-philippi-colonial-civic-and-household-life": 12,
     "roman-rome-jewish-civic-household-and-imperial-life": 17,
     "roman-macedonia-road-network-and-city-diversity": 11,
+    "roman-athens-agora-cult-and-philosophy": 16,
+    "roman-galatia-regions-roads-cities-and-audience": 19,
+    "pauline-kinship-guardianship-slavery-and-inheritance": 19,
+    "ritual-purity-and-communal-holiness": 20,
+    "patronage-hospitality-and-debt": 20,
+    "pauline-women-coworkers-prophecy-and-assembly-authority": 20,
+    "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration": 23,
+    "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy": 28,
+    "pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead": 30,
+    "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order": 34,
+    "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel": 40,
+    "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status": 49,
+    "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity": 50,
+    "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance": 52,
+    "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory": 54,
 }
 
 
@@ -235,6 +250,276 @@ def test_macedonia_place_record_replaces_legacy_empire_boilerplate() -> None:
         relation.id == "roman-macedonia-road-network-and-city-diversity"
         for relation in macedonia.related_objects
     )
+
+
+def test_athens_cluster_distinguishes_public_spaces_and_areopagus_uncertainty() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id["roman-athens-agora-cult-and-philosophy"]
+    items = {item.id: item for item in cluster.evidence_items}
+    assert {
+        "acts-synagogue-agora-sequence",
+        "classical-agora-mixed-public-space",
+        "roman-athens-layered-urban-center",
+        "areopagus-place-council-and-procedure-ambiguity",
+    } <= set(items)
+    assert items["classical-agora-mixed-public-space"].confidence == "high"
+    assert "distinct Roman Agora" in items["classical-agora-mixed-public-space"].notes
+    areopagus = items["areopagus-place-council-and-procedure-ambiguity"]
+    assert areopagus.confidence == "medium"
+    assert areopagus.dispute_status == "major_scholarly_disagreement"
+    assert "formal criminal trial" in areopagus.passage_relevance
+
+
+def test_athens_unknown_god_and_philosophical_comparisons_remain_bounded() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id["roman-athens-agora-cult-and-philosophy"]
+    items = {item.id: item for item in cluster.evidence_items}
+    altar = items["unknown-god-literary-comparanda"]
+    assert altar.dispute_status == "identification_uncertainty"
+    assert altar.scripture_references[0].temporal_relation == "later-comparative"
+    assert "No exact singular" in altar.notes
+    assert items["epicurean-gods-death-and-providence-comparison"].evidence_type == "worldview-concept"
+    assert "simple atheism" in items["epicurean-gods-death-and-providence-comparison"].notes
+    assert items["stoic-providence-and-aratean-poetry-comparison"].evidence_type == "worldview-concept"
+    assert "neither simple endorsement" in items["stoic-providence-and-aratean-poetry-comparison"].scholarly_interpretation
+
+
+def test_athens_poetry_speech_and_named_hearer_limits_are_explicit() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id["roman-athens-agora-cult-and-philosophy"]
+    items = {item.id: item for item in cluster.evidence_items}
+    poetry = items["aratus-offspring-quotation-and-first-clause-uncertainty"]
+    assert poetry.confidence == "high"
+    assert "Epimenides" in poetry.notes
+    assert items["acts-speech-as-literary-composition"].confidence == "medium"
+    assert "verbatim" in items["acts-speech-as-literary-composition"].notes
+    hearers = items["dionysius-damaris-and-audience-limits"]
+    assert hearers.evidence_type == "people-group"
+    assert "not defined through a man" in hearers.notes
+    assert "Pseudo-Dionysius" in hearers.notes
+
+
+def test_athens_evidence_is_discoverable_by_passage_and_place_is_reviewable() -> None:
+    library = CanonicalLibrary.load_default()
+    passage_objects = {
+        result.object.id
+        for result in library.retrieve_by_scripture_reference("Acts 17:22-34", limit=30)
+    }
+    assert "athens" in passage_objects
+    assert "roman-athens-agora-cult-and-philosophy" in passage_objects
+    ranked = _rank(
+        library,
+        "roman-athens-agora-cult-and-philosophy",
+        "What can be known about Dionysius, Damaris, and the resurrection response?",
+        "Acts 17:32-34",
+        "historical setting",
+        "direct textual explanation",
+    )
+    assert ranked[0].evidence_id == "dionysius-damaris-and-audience-limits"
+    assert ranked[0].passage_relationship == "direct"
+    athens = library.objects_by_id["athens"]
+    assert athens.title == "Roman Athens"
+    assert athens.content_status == "complete"
+    assert athens.context_applicability["ancient_near_east"] is False
+    assert any(
+        "Mars Hill" in item
+        for item in athens.hermeneutical_lens["common_misinterpretations"]
+    )
+    assert "roman-athens-agora-cult-and-philosophy" in {
+        relationship.id for relationship in athens.related_objects
+    }
+
+
+def test_galatia_cluster_distinguishes_province_roads_and_city_status() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id["roman-galatia-regions-roads-cities-and-audience"]
+    items = {item.id: item for item in cluster.evidence_items}
+    assert {
+        "roman-province-and-ethnic-galatia",
+        "via-sebaste-material-road-network",
+        "pisidian-antioch-colony-and-road-center",
+        "iconium-regional-and-civic-ambiguity",
+        "lystra-roman-colony-and-local-diversity",
+        "derbe-name-and-site-identification-limits",
+    } <= set(items)
+    assert items["via-sebaste-material-road-network"].confidence == "high"
+    assert "not a GPS record" in items["via-sebaste-material-road-network"].notes
+    assert items["iconium-regional-and-civic-ambiguity"].dispute_status == "major_scholarly_disagreement"
+    assert items["derbe-name-and-site-identification-limits"].dispute_status == "identification_uncertainty"
+    assert "uniform" in items["lystra-roman-colony-and-local-diversity"].scholarly_interpretation
+
+
+def test_galatia_cluster_bounds_lystra_language_cult_disability_and_violence() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id["roman-galatia-regions-roads-cities-and-audience"]
+    items = {item.id: item for item in cluster.evidence_items}
+    language = items["lycaonian-language-and-multilingual-interaction"]
+    cult = items["lystra-zeus-hermes-and-sacrifice-comparanda"]
+    healing = items["lystra-healing-disability-and-agency"]
+    violence = items["lystra-crowd-reversal-and-stoning-limits"]
+    assert language.confidence == "medium"
+    assert "primitiveness" in language.passage_relevance
+    assert cult.evidence_type == "worldview-concept"
+    assert cult.dispute_status == "major_scholarly_disagreement"
+    assert "Ovid" in cult.notes
+    assert healing.evidence_type == "person"
+    assert "forced healing" in healing.notes
+    assert "unanimous crowd" in violence.notes
+
+
+def test_galatia_destination_audience_illness_and_itinerary_remain_disputed() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id["roman-galatia-regions-roads-cities-and-audience"]
+    items = {item.id: item for item in cluster.evidence_items}
+    destination = items["north-south-galatia-destination-dispute"]
+    audience = items["galatians-plural-assemblies-and-demographic-limits"]
+    weakness = items["galatians-bodily-weakness-and-route-diagnosis-limits"]
+    comparison = items["acts-and-galatians-distinct-itinerary-witnesses"]
+    assert destination.dispute_status == "major_scholarly_disagreement"
+    assert "no city" in destination.description
+    assert "not a uniform ethnic or social type" in audience.notes
+    assert "malaria" in weakness.notes
+    assert comparison.dispute_status == "major_scholarly_disagreement"
+    assert "harmonization" in comparison.notes
+
+
+def test_galatia_evidence_is_discoverable_and_place_record_controls_overreach() -> None:
+    library = CanonicalLibrary.load_default()
+    passage_objects = {
+        result.object.id
+        for result in library.retrieve_by_scripture_reference("Acts 14:8-20", limit=40)
+    }
+    assert "galatia" in passage_objects
+    assert "roman-galatia-regions-roads-cities-and-audience" in passage_objects
+    ranked = _rank(
+        library,
+        "roman-galatia-regions-roads-cities-and-audience",
+        "Why did the Lystra crowd call Barnabas Zeus and Paul Hermes?",
+        "Acts 14:11-18",
+        "historical setting",
+        "worldview",
+    )
+    ranked_by_id = {item.evidence_id: item for item in ranked}
+    assert "lystra-zeus-hermes-and-sacrifice-comparanda" in ranked_by_id
+    assert ranked_by_id["lystra-zeus-hermes-and-sacrifice-comparanda"].passage_relationship == "direct"
+    galatia = library.objects_by_id["galatia"]
+    assert galatia.title == "Roman and Ethnic Galatia"
+    assert galatia.content_status == "complete"
+    assert galatia.context_applicability["ancient_near_east"] is False
+    assert "roman-galatia-regions-roads-cities-and-audience" in {
+        relationship.id for relationship in galatia.related_objects
+    }
+    assert any(
+        "uniform" in item
+        for item in galatia.hermeneutical_lens["common_misinterpretations"]
+    )
+
+
+def test_pauline_kinship_cluster_bounds_paidagogos_guardians_and_roman_law() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-kinship-guardianship-slavery-and-inheritance"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    assert {
+        "paidagogos-household-role",
+        "minor-heir-analogy",
+        "guardians-and-estate-managers",
+        "father-appointed-time",
+        "roman-adoption-bounded-comparison",
+    } <= set(items)
+    assert "modern schoolteacher" in items["paidagogos-household-role"].notes
+    guardians = items["guardians-and-estate-managers"]
+    assert guardians.confidence == "medium"
+    assert guardians.dispute_status == "major_scholarly_disagreement"
+    assert guardians.scripture_references[0].temporal_relation == "later-comparative"
+    adoption = items["roman-adoption-bounded-comparison"]
+    assert all(
+        link.temporal_relation == "later-comparative"
+        for link in adoption.scripture_references
+    )
+    assert "modern welfare-centered adoption" in adoption.notes
+
+
+def test_pauline_kinship_cluster_preserves_status_slavery_and_torah_ethics() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-kinship-guardianship-slavery-and-inheritance"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    status = items["galatians-status-triad"]
+    slavery = items["slave-son-heir-and-real-slavery"]
+    torah = items["torah-temporality-and-anti-jewish-limits"]
+    assert status.dispute_status == "major_scholarly_disagreement"
+    assert "erase race" in status.notes
+    assert "historical abolition" in slavery.passage_relevance
+    assert "trafficking" in slavery.notes
+    assert "anti-Jewish" in torah.title
+    assert "Judaism is primitive" in torah.notes
+
+
+def test_pauline_kinship_cluster_keeps_abba_suffering_and_adoption_embodied() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-kinship-guardianship-slavery-and-inheritance"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    abba = items["abba-bilingual-prayer"]
+    suffering = items["coheirs-suffering-and-safeguarding"]
+    embodied = items["creation-groaning-and-bodily-adoption"]
+    comparison = items["distinct-pauline-metaphor-networks"]
+    assert "Daddy" in abba.passage_relevance
+    assert {link.reference for link in abba.scripture_references} == {
+        "Mark 14:36",
+        "Galatians 4:6",
+        "Romans 8:15",
+    }
+    assert "safeguarding" in suffering.notes
+    assert "redemption of the body" in embodied.primary_observation
+    assert embodied.evidence_type == "worldview-concept"
+    assert "universal Roman family-law system" in comparison.passage_relevance
+
+
+def test_pauline_kinship_cluster_is_discoverable_and_cross_linked() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster_id = "pauline-kinship-guardianship-slavery-and-inheritance"
+    galatians_objects = {
+        result.object.id
+        for result in library.retrieve_by_scripture_reference(
+            "Galatians 4:1-7", limit=40
+        )
+    }
+    romans_objects = {
+        result.object.id
+        for result in library.retrieve_by_scripture_reference(
+            "Romans 8:12-25", limit=40
+        )
+    }
+    assert cluster_id in galatians_objects
+    assert cluster_id in romans_objects
+    ranked = _rank(
+        library,
+        cluster_id,
+        "What did a paidagogos do, and was that person a modern teacher?",
+        "Galatians 3:24-25",
+        "historical setting",
+        "lexical evidence",
+    )
+    ranked_by_id = {item.evidence_id: item for item in ranked}
+    assert "paidagogos-household-role" in ranked_by_id
+    assert ranked_by_id["paidagogos-household-role"].passage_relationship == "comparative"
+    assert cluster_id in {
+        relationship.id
+        for relationship in library.objects_by_id["galatians"].related_objects
+    }
+    assert cluster_id in {
+        relationship.id
+        for relationship in library.objects_by_id["romans"].related_objects
+    }
+    assert cluster_id in {
+        relationship.id
+        for relationship in library.objects_by_id["adoption"].related_objects
+    }
 
 
 def test_exodus_brickmaking_cluster_is_discoverable_by_passage() -> None:
@@ -1245,6 +1530,116 @@ def test_roman_legacy_place_and_coworker_records_are_passage_specific() -> None:
     )
 
 
+def test_mark_7_retrieval_preserves_handwashing_and_syntax_dispute() -> None:
+    library = CanonicalLibrary.load_default()
+    ranked = _rank(
+        library,
+        "ritual-purity-and-communal-holiness",
+        "Does Mark 7 abolish Jewish food law, or address handwashing and defilement?",
+        "Mark 7:1-23",
+        "second temple",
+        "literary convention",
+    )
+    items = {item.evidence_id: item for item in ranked}
+    assert {"mark-handwashing-trigger", "mark-7-19-syntax-dispute"} <= set(items)
+    syntax = items["mark-7-19-syntax-dispute"]
+    assert syntax.confidence == "low"
+    assert syntax.dispute_status == "major_scholarly_disagreement"
+    cluster_items = {
+        item.id: item
+        for item in library.objects_by_id[
+            "ritual-purity-and-communal-holiness"
+        ].evidence_items
+    }
+    assert "rather than deciding a modern diet" in cluster_items[syntax.evidence_id].notes
+
+
+def test_acts_vision_and_decree_retrieval_keeps_people_and_variants_visible() -> None:
+    library = CanonicalLibrary.load_default()
+    vision = _rank(
+        library,
+        "ritual-purity-and-communal-holiness",
+        "How does Acts interpret the animal vision through people, hospitality, and Spirit?",
+        "Acts 10:24-48",
+        "cultural practice",
+        "historical setting",
+    )
+    assert vision[0].evidence_id == "acts-people-hospitality-spirit"
+    assert "gentile persons" in vision[0].passage_relevance
+
+    decree = _rank(
+        library,
+        "ritual-purity-and-communal-holiness",
+        "What textual variants and legal backgrounds affect the apostolic decree?",
+        "Acts 15:19-29",
+        "manuscript",
+        "second temple",
+    )
+    assert decree[0].evidence_id == "apostolic-decree-forms-and-backgrounds"
+    assert decree[0].dispute_status == "textual_variant"
+    cluster_items = {
+        item.id: item
+        for item in library.objects_by_id[
+            "ritual-purity-and-communal-holiness"
+        ].evidence_items
+    }
+    assert "later manuscript" in cluster_items[decree[0].evidence_id].notes
+
+
+def test_romans_14_retrieval_limits_group_labels_and_food_coercion() -> None:
+    library = CanonicalLibrary.load_default()
+    ranked = _rank(
+        library,
+        "ritual-purity-and-communal-holiness",
+        "Were the Romans 14 groups simply Jews and gentiles, and may someone be forced to eat?",
+        "Romans 14:1-23",
+        "cultural practice",
+    )
+    items = {item.evidence_id: item for item in ranked}
+    assert {"romans-practices-identity-limits", "romans-conscience-noncoercion"} <= set(items)
+    assert "Blocks automatic equations" in items["romans-practices-identity-limits"].passage_relevance
+    cluster_items = {
+        item.id: item
+        for item in library.objects_by_id[
+            "ritual-purity-and-communal-holiness"
+        ].evidence_items
+    }
+    assert "must not be coerced" in cluster_items["romans-conscience-noncoercion"].notes
+
+
+def test_corinth_retrieval_distinguishes_cult_market_home_and_later_comparison() -> None:
+    library = CanonicalLibrary.load_default()
+    ranked = _rank(
+        library,
+        "ritual-purity-and-communal-holiness",
+        "How does First Corinthians distinguish idol temples, market meat, and private meals?",
+        "1 Corinthians 10:14-33",
+        "worldview",
+        "cultural practice",
+    )
+    items = {item.evidence_id: item for item in ranked}
+    assert {"corinth-idol-ontology-cultic-table", "corinth-market-home-disclosure"} <= set(items)
+    sarapis = items["later-sarapis-meal-comparison"]
+    assert sarapis.chronological_relation == "later-comparative"
+    assert "later and non-Corinthian" in sarapis.passage_relevance
+
+
+def test_food_cluster_rejects_universal_menu_and_is_bidirectionally_discoverable() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id["ritual-purity-and-communal-holiness"]
+    items = {item.id: item for item in cluster.evidence_items}
+    safeguard = items["cross-passage-diet-code-limit"]
+    assert "timeless diet rule" in safeguard.passage_relevance
+    assert "not a prescribed modern diet" in safeguard.notes
+
+    linked_ids = {"mark", "acts", "romans", "1-corinthians", "leviticus", "lords-supper"}
+    for object_id in linked_ids:
+        assert cluster.id in {
+            relation.id
+            for relation in library.objects_by_id[object_id].related_objects
+        }
+
+
 def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
     library = CanonicalLibrary.load_default()
     flood = library.objects_by_id["the-flood"]
@@ -1461,17 +1856,1435 @@ def test_legacy_passages_and_context_applicability_are_cleaned() -> None:
                 assert str(getattr(obj, field_name)).strip(), f"{obj.id}: {flag}"
 
 
+def test_pauline_economic_cluster_distinguishes_categories_rights_and_nonuse() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id["patronage-hospitality-and-debt"]
+    items = {item.id: item for item in cluster.evidence_items}
+    categories = items["economic-categories-not-synonyms"]
+    maintenance = items["corinthian-maintenance-right-and-nonuse"]
+    assert categories.evidence_type == "worldview-concept"
+    assert "master key" in categories.passage_relevance
+    assert "right" in maintenance.description
+    assert "nonuse" in maintenance.description
+    assert "unpaid-labor mandate" in maintenance.notes
+
+
+def test_pauline_collection_evidence_preserves_capacity_accountability_and_pressure() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id["patronage-hospitality-and-debt"]
+    items = {item.id: item for item in cluster.evidence_items}
+    willingness = items["collection-willingness-capacity"]
+    delegates = items["collection-delegates-accountability"]
+    pressure = items["collection-readiness-shame-pressure"]
+    cheerful = items["collection-cheerful-noncompulsion"]
+    assert "what one has" in willingness.description
+    assert "independent oversight" in delegates.notes
+    assert "manipulated shame" in pressure.notes
+    assert "guaranteed investment return" in cheerful.passage_relevance
+
+
+def test_pauline_gift_and_labor_evidence_rejects_poverty_and_worker_harm() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id["patronage-hospitality-and-debt"]
+    items = {item.id: item for item in cluster.evidence_items}
+    assert "neither romanticized nor prescribed" in items["macedonian-poverty-rhetoric"].notes
+    assert "not medical neglect" in items["philippian-need-contentment"].notes
+    assert items["thessalonian-community-work"].confidence == "low"
+    assert "disability" in items["thessalonian-community-work"].notes
+    assert "guaranteed financial return" in items["philippian-giving-receiving-account"].notes
+
+
+def test_acts_economic_evidence_controls_trade_delegation_and_narrative_chronology() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id["patronage-hospitality-and-debt"]
+    items = {item.id: item for item in cluster.evidence_items}
+    workshop = items["acts-corinth-workshop"]
+    return_party = items["acts-return-party-collection-limit"]
+    farewell = items["acts-miletus-labor-support"]
+    assert workshop.scripture_references[0].temporal_relation == "diachronic"
+    assert "No exact material" in workshop.notes
+    assert return_party.confidence == "low"
+    assert "Plausibility is not identification" in return_party.notes
+    assert "supported, not blamed" in farewell.notes
+
+
+def test_pauline_economic_cluster_is_retrievable_and_bidirectionally_linked() -> None:
+    library = CanonicalLibrary.load_default()
+    ranked = _rank(
+        library,
+        "patronage-hospitality-and-debt",
+        "How did Paul organize the Jerusalem collection without coercion?",
+        "2 Corinthians 8:1-24",
+        "historical institution",
+        "worldview concept",
+    )
+    assert ranked[0].evidence_id in {
+        "collection-willingness-capacity",
+        "collection-delegates-accountability",
+    }
+    cluster = library.objects_by_id["patronage-hospitality-and-debt"]
+    linked_books = {
+        "romans",
+        "1-corinthians",
+        "2-corinthians",
+        "philippians",
+        "1-thessalonians",
+        "acts",
+    }
+    assert linked_books <= {relation.id for relation in cluster.related_objects}
+    for book_id in linked_books:
+        assert cluster.id in {
+            relation.id for relation in library.objects_by_id[book_id].related_objects
+        }
+
+
+def test_pauline_women_cluster_keeps_roles_and_later_offices_distinct() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-women-coworkers-prophecy-and-assembly-authority"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    roles = items["role-categories-not-synonyms"]
+    phoebe = items["romans-phoebe-commendation"]
+    junia = items["romans-junia-name-and-apostleship"]
+    assert "own evidentiary weight" in roles.passage_relevance
+    assert "later office" in phoebe.passage_relevance
+    assert junia.confidence == "medium"
+    assert "Gender and apostolic syntax are separate" in junia.notes
+
+
+def test_corinthian_women_prophecy_speech_and_silence_evidence_is_textually_controlled() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-women-coworkers-prophecy-and-assembly-authority"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    speech = items["corinthian-women-pray-prophesy"]
+    silence = items["corinthian-three-silence-contexts"]
+    variant = items["corinthian-silence-textual-displacement"]
+    control = items["corinthian-chapters-eleven-fourteen-control"]
+    assert speech.confidence == "medium"
+    assert "primary evidence" in speech.passage_relevance
+    assert "three times" in silence.primary_observation
+    assert variant.evidence_type == "manuscript"
+    assert variant.dispute_status == "textual_variant"
+    assert variant.scripture_references[0].temporal_relation == "later-comparative"
+    assert "total speech ban" in control.passage_relevance
+
+
+def test_pauline_women_cluster_blocks_gender_essentialism_and_clerical_immunity() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-women-coworkers-prophecy-and-assembly-authority"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    assert "gender essentialism" in items["corinthian-kephale-dispute"].notes
+    assert "no immunity" in items["corinthian-prophecy-edification-testing"].notes
+    assert "abuse" in items["corinthian-three-silence-contexts"].notes
+    assert "coerced proximity" in items["philippian-reconciliation-role-limits"].notes
+
+
+def test_acts_women_evidence_bounds_wealth_teaching_and_source_chronology() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-women-coworkers-prophecy-and-assembly-authority"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    lydia = items["acts-lydia-household-agency"]
+    prisca = items["acts-prisca-aquila-instruction"]
+    chronology = items["acts-letter-chronology-control"]
+    assert lydia.confidence == "medium"
+    assert "elite wealth" in lydia.passage_relevance
+    assert "still teaching" in prisca.notes
+    assert chronology.evidence_type == "historical-period"
+    assert "Narrated event dates" in chronology.notes
+
+
+def test_pauline_women_cluster_is_retrievable_and_bidirectionally_linked() -> None:
+    library = CanonicalLibrary.load_default()
+    ranked = _rank(
+        library,
+        "pauline-women-coworkers-prophecy-and-assembly-authority",
+        "Did Paul command all women to be silent even though women prophesied?",
+        "1 Corinthians 14:26-40",
+        "literary context",
+        "historical institution",
+    )
+    assert ranked[0].evidence_id in {
+        "corinthian-three-silence-contexts",
+        "corinthian-chapters-eleven-fourteen-control",
+        "corinthian-silence-textual-displacement",
+    }
+    cluster = library.objects_by_id[
+        "pauline-women-coworkers-prophecy-and-assembly-authority"
+    ]
+    linked_books = {"romans", "1-corinthians", "philippians", "acts"}
+    assert linked_books <= {relation.id for relation in cluster.related_objects}
+    for book_id in linked_books:
+        assert cluster.id in {
+            relation.id for relation in library.objects_by_id[book_id].related_objects
+        }
+
+
+def test_pauline_bodies_cluster_keeps_rhetoric_categories_and_identity_mapping_bounded() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    assert "own evidentiary weight" not in items["categories-remain-distinct"].passage_relevance
+    assert "each passage" in items["categories-remain-distinct"].passage_relevance
+    assert "Romans 1-3" in items["romans-vice-rhetoric-universal-turn"].passage_relevance
+    identity = items["romans-same-sex-acts-identity-limit"]
+    assert identity.evidence_type == "worldview-concept"
+    assert identity.confidence == "medium"
+    assert "LGBTQ dehumanization" in identity.passage_relevance
+
+
+def test_corinthian_body_marriage_and_discipline_evidence_controls_consent_and_power() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    labels = items["corinthian-vice-labels-disputed"]
+    marriage = items["corinthian-marriage-mutuality-consent"]
+    mixed = items["corinthian-mixed-marriage-separation-safety"]
+    assert labels.dispute_status == "lexical_uncertainty"
+    assert "modern identity label" in labels.passage_relevance
+    assert "marital rape" in marriage.notes
+    assert "Protective separation" in mixed.notes
+    assert "consent" in items["corinthian-incest-case-bounds"].passage_relevance
+    assert "sex-worker stigma" in items["corinthian-prostitution-power-and-body"].passage_relevance
+
+
+def test_pauline_discipline_evidence_ends_excess_without_erasing_safeguarding() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    identity = items["second-corinthians-offender-identity-limit"]
+    comfort = items["second-corinthians-sufficient-discipline-comfort"]
+    grief = items["second-corinthians-grief-repentance"]
+    restoration = items["galatians-gentle-restoration-burdens"]
+    assert identity.confidence == "medium"
+    assert identity.scripture_references[1].relationship == "disputed"
+    assert "automatic restoration" in comfort.passage_relevance
+    assert "self-harm" in grief.notes
+    assert "safeguarding" in restoration.passage_relevance
+
+
+def test_acts_decree_evidence_preserves_gentile_inclusion_dispute_and_chronology() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    decree = items["acts-gentile-inclusion-decree"]
+    porneia = items["acts-decree-porneia-legal-dispute"]
+    chronology = items["acts-paul-chronology-control"]
+    assert "complete sexuality code" in decree.passage_relevance
+    assert porneia.confidence == "low"
+    assert porneia.scripture_references[1].temporal_relation == "earlier-comparative"
+    assert chronology.evidence_type == "historical-period"
+    assert "Narrated event dates" in chronology.temporal_scope.notes
+
+
+def test_pauline_bodies_cluster_is_retrievable_and_bidirectionally_linked() -> None:
+    library = CanonicalLibrary.load_default()
+    ranked = _rank(
+        library,
+        "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration",
+        "How should discipline lead to forgiveness and restoration without unsafe access?",
+        "2 Corinthians 2:5-11",
+        "historical institution",
+        "worldview concept",
+    )
+    assert {
+        "second-corinthians-sufficient-discipline-comfort",
+    } <= {item.evidence_id for item in ranked[:3]}
+    cluster = library.objects_by_id[
+        "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration"
+    ]
+    linked_books = {"romans", "1-corinthians", "2-corinthians", "galatians", "acts"}
+    assert linked_books <= {relation.id for relation in cluster.related_objects}
+    for book_id in linked_books:
+        assert cluster.id in {
+            relation.id for relation in library.objects_by_id[book_id].related_objects
+        }
+
+
+def test_pauline_suffering_cluster_distinguishes_weakness_disability_and_diagnosis() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    assert items["categories-remain-distinct"].evidence_type == "worldview-concept"
+    assert "generic suffering praise" in items["categories-remain-distinct"].passage_relevance
+    thorn = items["thorn-diagnosis-limit"]
+    galatians = items["galatians-illness-eyes-limit"]
+    assert thorn.confidence == "medium"
+    assert thorn.scripture_references[1].relationship == "disputed"
+    assert "Speculative diagnoses" in thorn.notes
+    assert "ophthalmia" in galatians.passage_relevance
+    assert "diagnosing" in items["acts-letter-chronology-control"].passage_relevance
+
+
+def test_pauline_suffering_cluster_rejects_coerced_harm_and_founder_immunity() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    power = items["power-in-weakness-not-coercion"]
+    signs = items["signs-authority-accountability"]
+    leadership = items["leadership-hardship-not-immunity"]
+    assert "escape" in power.passage_relevance
+    assert "medical neglect" in power.notes
+    assert "founder status" in signs.passage_relevance
+    assert "Retaliation" in signs.notes
+    assert "founder immunity" in leadership.passage_relevance
+    assert leadership.confidence == "medium"
+
+
+def test_pauline_suffering_cluster_controls_prison_labor_illness_and_crisis_care() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    support = items["support-right-not-extraction"]
+    prison = items["philippians-prison-life-death"]
+    illness = items["epaphroditus-illness-recovery"]
+    despair = items["despair-death-sentence-honesty"]
+    assert "compulsory unpaid labor" in support.passage_relevance
+    assert "self-harm risk" in prison.passage_relevance
+    assert "forced-healing" in illness.passage_relevance
+    assert "immediate competent support" in despair.notes
+
+
+def test_pauline_suffering_cluster_bounds_acts_violence_recovery_and_advocacy() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    damascus = items["acts-damascus-blindness-recovery"]
+    lystra = items["acts-lystra-stoning-recovery"]
+    philippi = items["acts-philippi-beating-custody-protest"]
+    chronology = items["acts-letter-chronology-control"]
+    assert "thorn" in damascus.passage_relevance
+    assert lystra.scripture_references[1].relationship == "disputed"
+    assert "legal protest" in philippi.passage_relevance
+    assert "Narrated event dates" in chronology.temporal_scope.notes
+
+
+def test_pauline_suffering_cluster_is_retrievable_and_bidirectionally_linked() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster_id = (
+        "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+    )
+    ranked = _rank(
+        library,
+        cluster_id,
+        "What was Paul's thorn in the flesh, and does power in weakness require refusing care?",
+        "2 Corinthians 12:7-10",
+        "disability",
+        "worldview concept",
+    )
+    assert {"thorn-diagnosis-limit", "power-in-weakness-not-coercion"} <= {
+        item.evidence_id for item in ranked[:5]
+    }
+    cluster = library.objects_by_id[cluster_id]
+    reciprocal_ids = {
+        "1-corinthians",
+        "2-corinthians",
+        "galatians",
+        "philippians",
+        "acts",
+        "apostleship",
+        "theology-of-suffering",
+        "theology-of-the-cross",
+    }
+    assert reciprocal_ids <= {relation.id for relation in cluster.related_objects}
+    for object_id in reciprocal_ids:
+        assert cluster_id in {
+            relation.id for relation in library.objects_by_id[object_id].related_objects
+        }
+
+
+def test_pauline_resurrection_cluster_distinguishes_participation_death_and_proxy_baptism() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    categories = items["death-life-categories-distinct"]
+    romans = items["romans-baptismal-participation"]
+    proxy = items["baptism-for-dead-underdetermined"]
+    assert categories.evidence_type == "worldview-concept"
+    assert "suppressing grief" in categories.passage_relevance
+    assert romans.scripture_references[1].relationship == "contrast"
+    assert "proxy baptism" in romans.notes
+    assert proxy.confidence == "low"
+    assert proxy.certainty == "insufficient_evidence"
+    assert proxy.assertion_type == "scholarly-reconstruction"
+    assert "override consent" in proxy.notes
+
+
+def test_pauline_resurrection_cluster_keeps_transformation_embodied_and_inclusive() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    spiritual = items["spiritual-body-spirit-animated"]
+    flesh = items["flesh-blood-transformation"]
+    diversity = items["created-body-diversity"]
+    identity = items["embodied-identity-no-exclusion"]
+    assert "anti-body dualism" in spiritual.passage_relevance
+    assert "same noun soma" in spiritual.primary_observation
+    assert "sex traits" in flesh.passage_relevance
+    assert "binary" in diversity.passage_relevance
+    assert identity.assertion_type == "secondary-evidence"
+    assert "forced normalization" in identity.passage_relevance
+
+
+def test_pauline_resurrection_cluster_preserves_grief_and_rejects_date_setting() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    grief = items["thessalonian-grief-with-hope"]
+    parousia = items["thessalonian-parousia-sequence"]
+    timing = items["thessalonian-day-no-date-setting"]
+    assert "grief suppression" in grief.passage_relevance
+    assert "Lament" in grief.notes
+    assert "together language" in parousia.primary_observation
+    assert "subsequent direction" in parousia.notes
+    assert "failed predictions" in timing.passage_relevance
+    assert "accountability" in timing.notes
+
+
+def test_pauline_resurrection_cluster_labels_intermediate_state_and_acts_chronology() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    intermediate = items["second-corinthians-clothing-intermediate"]
+    acts = items["acts-letter-chronology-resurrection"]
+    assert intermediate.assertion_type == "scholarly-reconstruction"
+    assert "explicit chronological chart" in intermediate.description
+    assert "No single intermediate-state proposal" in intermediate.notes
+    assert acts.evidence_type == "historical-period"
+    assert "verbatim Pauline transcripts" in acts.passage_relevance
+    assert "Narrated event dates" in acts.temporal_scope.notes
+
+
+def test_pauline_resurrection_cluster_is_retrievable_and_bidirectionally_linked() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster_id = (
+        "pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead"
+    )
+    ranked = _rank(
+        library,
+        cluster_id,
+        "Does spiritual body mean disembodied, and what is baptism for the dead?",
+        "1 Corinthians 15:29",
+        "worldview concept",
+        "cultural practice",
+    )
+    assert "baptism-for-dead-underdetermined" in {
+        item.evidence_id for item in ranked[:5]
+    }
+    cluster = library.objects_by_id[cluster_id]
+    reciprocal_ids = {
+        "romans",
+        "1-corinthians",
+        "2-corinthians",
+        "philippians",
+        "1-thessalonians",
+        "acts",
+        "resurrection-theme",
+        "resurrection-doctrine",
+        "eschatology",
+        "final-judgment",
+    }
+    assert reciprocal_ids <= {relation.id for relation in cluster.related_objects}
+    for object_id in reciprocal_ids:
+        assert cluster_id in {
+            relation.id for relation in library.objects_by_id[object_id].related_objects
+        }
+
+
+def test_pauline_spirit_cluster_distinguishes_gifts_fruit_roles_and_healings() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    categories = items["spirit-categories-distinct"]
+    distribution = items["corinthian-distributed-not-entitled"]
+    fruit = items["galatian-fruit-communal-ethics"]
+    healing = items["corinthian-healings-plural-limits"]
+    assert categories.evidence_type == "worldview-concept"
+    assert "compulsory hierarchy" in categories.passage_relevance
+    assert "compulsory tongues" in distribution.passage_relevance
+    assert "personality" in fruit.passage_relevance
+    assert "guaranteed technique" in healing.title
+    assert "medication withdrawal" in healing.passage_relevance
+
+
+def test_pauline_spirit_cluster_controls_tongues_prophecy_and_order() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    tongues = items["corinthian-tongues-underdetermined"]
+    interpretation = items["corinthian-interpretation-required"]
+    prophecy = items["corinthian-prophecy-weighed"]
+    order = items["corinthian-peace-order-not-suppression"]
+    assert tongues.certainty == "disputed"
+    assert "Acts 2" in tongues.passage_relevance
+    assert "silence instructions" in interpretation.confidence_rationale
+    assert "leader immunity" in prophecy.passage_relevance
+    assert "suppress dissent" in order.passage_relevance
+
+
+def test_pauline_spirit_cluster_preserves_indwelling_fruit_and_testing() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    romans = items["romans-indwelling-adoption-prayer"]
+    flesh = items["galatian-flesh-spirit-not-body-hatred"]
+    thessalonians = items["thessalonian-prophecy-test-hold"]
+    assert "wordless" in romans.passage_relevance
+    assert "medical neglect" in flesh.passage_relevance
+    assert "automatic dismissal" in thessalonians.passage_relevance
+    assert "evidence" in thessalonians.notes
+
+
+def test_pauline_spirit_cluster_controls_acts_sequences_and_chronology() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    pentecost = items["acts-pentecost-languages-joel"]
+    samaria = items["acts-samaria-power-not-for-sale"]
+    sequences = items["acts-variable-reception-sequences"]
+    chronology = items["acts-letters-chronology-spirit"]
+    assert "multilingual" in pentecost.passage_relevance
+    assert "selling" in samaria.passage_relevance
+    assert len(sequences.scripture_references) == 4
+    assert "verbatim Pauline manual" in chronology.passage_relevance
+    assert "Narrated Acts dates" in chronology.temporal_scope.notes
+
+
+def test_pauline_spirit_cluster_enforces_medical_and_reception_boundaries() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    medical = items["modern-medical-discernment-boundary"]
+    reception = items["later-continuation-cessation-dispute"]
+    assert medical.confidence == "high"
+    assert "seizure" in medical.passage_relevance
+    assert "qualified clinicians" in medical.notes
+    assert reception.evidence_type == "historical-period"
+    assert reception.certainty == "disputed"
+    assert "modern system" in reception.passage_relevance
+
+
+def test_pauline_spirit_cluster_is_retrievable_and_bidirectionally_linked() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster_id = (
+        "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order"
+    )
+    ranked = _rank(
+        library,
+        cluster_id,
+        "Must every Christian speak in tongues, and how should prophecy be tested?",
+        "1 Corinthians 14:26-33",
+        "worldview concept",
+        "cultural practice",
+    )
+    assert {"corinthian-prophecy-weighed", "corinthian-interpretation-required"} & {
+        item.evidence_id for item in ranked[:6]
+    }
+    cluster = library.objects_by_id[cluster_id]
+    reciprocal_ids = {
+        "romans",
+        "1-corinthians",
+        "galatians",
+        "1-thessalonians",
+        "acts",
+        "spirit-theme",
+        "spiritual-gifts",
+        "prophets",
+        "worship-theme",
+    }
+    assert reciprocal_ids <= {relation.id for relation in cluster.related_objects}
+    for object_id in reciprocal_ids:
+        assert cluster_id in {
+            relation.id for relation in library.objects_by_id[object_id].related_objects
+        }
+
+
+def test_pauline_israel_cluster_distinguishes_identity_justification_and_abraham() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    categories = items["pauline-identity-categories-distinct"]
+    pistis = items["romans-justification-pistis-christou"]
+    abraham = items["romans-abraham-father-both"]
+    assert categories.evidence_type == "worldview-concept"
+    assert "replacement ownership" in categories.passage_relevance
+    assert pistis.certainty == "disputed"
+    assert "faith in messiah" in pistis.scholarly_interpretation.lower()
+    assert "dispossess" in abraham.passage_relevance
+
+
+def test_pauline_israel_cluster_controls_election_olive_tree_and_all_israel() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    election = items["romans-election-scriptural-examples"]
+    olive = items["romans-olive-root-anti-boast"]
+    israel = items["romans-all-israel-disputed"]
+    mercy = items["romans-mercy-all"]
+    assert election.certainty == "disputed"
+    assert "deterministic system" in election.passage_relevance
+    assert "supersessionist" in olive.passage_relevance
+    assert israel.confidence == "low"
+    assert "No timetable" in israel.temporal_scope.notes
+    assert "Christian superiority" in mercy.passage_relevance
+
+
+def test_pauline_israel_cluster_preserves_torah_circumcision_and_jewish_identity() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    works = items["galatians-works-torah-scope"]
+    pedagogue = items["galatians-torah-pedagogue"]
+    identity = items["galatians-neither-jew-greek"]
+    circumcision = items["galatians-gentile-circumcision-obligation"]
+    assert "merit earning" in works.passage_relevance
+    assert "childish" in pedagogue.passage_relevance
+    assert "identity erasure" in identity.title
+    assert "Neither cutting nor non-cutting" in circumcision.notes
+
+
+def test_pauline_israel_cluster_bounds_calling_accommodation_and_polemic() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    calling = items["corinthians-circumcision-calling"]
+    mission = items["corinthians-mission-accommodation"]
+    philippians = items["philippians-israelite-polemic"]
+    assert "forced surgical reversal" in calling.passage_relevance
+    assert "colonial mimicry" in mission.passage_relevance
+    assert "Paul's Jewish identity" in philippians.passage_relevance
+    assert "ableist and antisemitic" in philippians.notes
+
+
+def test_pauline_israel_cluster_controls_acts_chronology_and_modern_harm() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    chronology = items["acts-letters-chronology-israel"]
+    reception = items["later-supersessionism-antisemitism-boundary"]
+    body = items["circumcision-intersex-consent-boundary"]
+    assert "verbatim Pauline transcript" in chronology.passage_relevance
+    assert "Narrated event dates" in chronology.temporal_scope.notes
+    assert "living Jewish communities" in reception.passage_relevance
+    assert "nonconsensual intersex normalization" in body.passage_relevance
+    assert "lawful consent" in body.notes
+
+
+def test_pauline_israel_cluster_is_retrievable_and_bidirectionally_linked() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster_id = (
+        "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel"
+    )
+    ranked = _rank(
+        library,
+        cluster_id,
+        "Does the olive tree mean the church replaced Israel, and who is all Israel?",
+        "Romans 11:25-27",
+        "worldview concept",
+        "literary convention",
+    )
+    assert {"romans-all-israel-disputed", "romans-olive-root-anti-boast"} & {
+        item.evidence_id for item in ranked[:6]
+    }
+    cluster = library.objects_by_id[cluster_id]
+    reciprocal_ids = {
+        "romans",
+        "galatians",
+        "1-corinthians",
+        "philippians",
+        "acts",
+        "abraham",
+        "torah",
+        "justification",
+        "faith",
+        "covenant-theme",
+    }
+    assert reciprocal_ids <= {relation.id for relation in cluster.related_objects}
+    for object_id in reciprocal_ids:
+        assert cluster_id in {
+            relation.id for relation in library.objects_by_id[object_id].related_objects
+        }
+
+
+def test_pauline_food_cluster_distinguishes_ontology_participation_and_venues() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    ontology = items["corinth-idol-and-one-god-confession"]
+    tables = items["corinth-incompatible-cups-tables"]
+    market = items["corinth-market-food-case"]
+    private = items["corinth-private-host-case"]
+    assert "cultic participation" in ontology.passage_relevance
+    assert "ordinary market purchase" in tables.passage_relevance
+    assert "all or most meat" in market.temporal_scope.notes
+    assert "freedom not to attend" in private.passage_relevance
+
+
+def test_pauline_food_cluster_preserves_conscience_love_and_noncoercion() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    conscience = items["syneidesis-awareness-self-perception"]
+    love = items["corinth-knowledge-love-known"]
+    weak = items["corinth-former-idol-association"]
+    harm = items["corinth-destroyed-sibling-wounded-conscience"]
+    assert conscience.certainty == "disputed"
+    assert "infallible inner oracle" in conscience.passage_relevance
+    assert "override" in love.passage_relevance
+    assert "stupid" in weak.passage_relevance
+    assert "blank check" in harm.notes
+
+
+def test_pauline_food_cluster_limits_weak_strong_labels_and_accommodation() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    identities = items["romans-practice-labels-identity-limit"]
+    strong = items["romans-strong-bear-upbuild"]
+    accommodation = items["corinth-bounded-mission-accommodation"]
+    assert "equating weak with Jews" in identities.passage_relevance
+    assert "demanding that vulnerable people adapt" in strong.passage_relevance
+    assert "colonial mimicry" in accommodation.passage_relevance
+    assert "transparency and consent" in accommodation.temporal_scope.notes
+
+
+def test_pauline_food_cluster_keeps_supper_tradition_and_economic_rebuke_together() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    hunger = items["corinth-own-meal-hunger-intoxication"]
+    humiliation = items["corinth-humiliating-have-nots"]
+    tradition = items["corinth-received-supper-tradition"]
+    manner = items["corinth-unworthy-manner-grammar"]
+    body = items["corinth-discern-body-views"]
+    assert "material inequality" in hunger.passage_relevance
+    assert "poverty and class humiliation" in humiliation.passage_relevance
+    assert "economic rebuke" in tradition.passage_relevance
+    assert "unworthy-person category" in manner.passage_relevance
+    assert body.certainty == "disputed"
+
+
+def test_pauline_food_cluster_controls_acts_chronology_and_modern_access() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    chronology = items["acts-pauline-letters-chronology"]
+    access = items["modern-access-care-table-boundary"]
+    illness = items["corinth-sickness-death-causation-limit"]
+    assert "silently overwriting" in chronology.passage_relevance
+    assert "Narrated dates" in chronology.temporal_scope.notes
+    assert "allergy" in access.description.lower()
+    assert "safe alternatives" in access.notes
+    assert "Rejects blaming sick" in illness.passage_relevance
+
+
+def test_pauline_food_cluster_is_retrievable_and_bidirectionally_linked() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster_id = (
+        "pauline-idols-sacrificed-food-market-temple-meals-conscience-knowledge-love-weak-strong-stumbling-participation-lords-supper-shared-table-and-economic-status"
+    )
+    ranked = _rank(
+        library,
+        cluster_id,
+        "How are idol temple dining, market meat, and a private invitation different?",
+        "1 Corinthians 10:14-30",
+        "cultural practice",
+        "institution",
+    )
+    assert {"corinth-market-food-case", "corinth-private-host-case", "corinth-incompatible-cups-tables"} & {
+        item.evidence_id for item in ranked[:8]
+    }
+    cluster = library.objects_by_id[cluster_id]
+    reciprocal_ids = {
+        "romans",
+        "1-corinthians",
+        "galatians",
+        "acts",
+        "lords-supper",
+        "ritual-purity-and-communal-holiness",
+        "worship-theme",
+        "household",
+        "patronage",
+    }
+    assert reciprocal_ids <= {relation.id for relation in cluster.related_objects}
+    for object_id in reciprocal_ids:
+        assert cluster_id in {
+            relation.id for relation in library.objects_by_id[object_id].related_objects
+        }
+
+
+def test_pauline_economics_cluster_keeps_support_rights_and_nonuse_together() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    rights = items["first-corinth-apostolic-rights"]
+    nonuse = items["first-corinth-nonuse-avoid-obstacle"]
+    thess = items["second-thess-example-right-not-burden"]
+    assert "compensation" in rights.passage_relevance
+    assert "compulsory unpaid labor" in nonuse.passage_relevance
+    assert "retain a right" in thess.description
+    assert "employers cannot impose" in nonuse.notes
+
+
+def test_pauline_economics_cluster_distinguishes_unwillingness_from_inability() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    maxim = items["second-thess-unwilling-not-unable"]
+    good = items["second-thess-do-not-weary-good"]
+    sibling = items["second-thess-sibling-not-enemy"]
+    assert "unable" in maxim.description
+    assert "disabled" in maxim.passage_relevance
+    assert "mutual aid" in good.passage_relevance
+    assert "permanent ostracism" in sibling.passage_relevance
+
+
+def test_pauline_economics_cluster_limits_collection_pressure_by_capacity_and_consent() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    capacity = items["second-corinth-readiness-according-has"]
+    equality = items["second-corinth-relief-equality-not-affliction"]
+    consent = items["second-corinth-heart-not-compulsion"]
+    pressure = items["second-corinth-readiness-boasting-pressure"]
+    assert "borrowing" in capacity.passage_relevance
+    assert "enforced destitution" in equality.passage_relevance
+    assert "compulsory tithes" in consent.passage_relevance
+    assert "private no" in pressure.notes
+
+
+def test_pauline_economics_cluster_requires_shared_and_honorable_administration() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    carriers = items["first-corinth-approved-carriers-letters"]
+    delegates = items["second-corinth-titus-brothers-administration"]
+    honor = items["second-corinth-avoid-blame-honorable"]
+    assert "shared custody" in carriers.passage_relevance
+    assert "multiple accountable agents" in delegates.passage_relevance
+    assert "independent review" in honor.notes
+
+
+def test_pauline_economics_cluster_rejects_prosperity_extraction_and_controls_acts() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    sowing = items["second-corinth-sowing-reaping-metaphor"]
+    philippians = items["philippians-gift-sacrifice-provision"]
+    acts = items["acts-ephesian-farewell-hands-weak"]
+    modern = items["modern-worker-donor-governance-boundary"]
+    assert "investment contract" in sowing.passage_relevance
+    assert "donor-return promises" in philippians.passage_relevance
+    assert acts.scripture_references[0].temporal_relation == "diachronic"
+    assert "direct-letter rights" in acts.passage_relevance
+    assert "restricted funds" in modern.description
+    assert "United States example" in modern.temporal_scope.notes
+
+
+def test_pauline_economics_cluster_is_retrievable_and_bidirectionally_linked() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster_id = (
+        "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity"
+    )
+    ranked = _rank(
+        library,
+        cluster_id,
+        "Was Paul's collection voluntary, capacity-sensitive, and transparently administered?",
+        "2 Corinthians 8:1-9:15",
+        "cultural practice",
+        "institution",
+    )
+    assert {
+        "second-corinth-readiness-according-has",
+        "second-corinth-heart-not-compulsion",
+        "second-corinth-titus-brothers-administration",
+        "second-corinth-avoid-blame-honorable",
+    } & {item.evidence_id for item in ranked[:10]}
+    cluster = library.objects_by_id[cluster_id]
+    reciprocal_ids = {
+        "1-thessalonians",
+        "2-thessalonians",
+        "1-corinthians",
+        "2-corinthians",
+        "romans",
+        "philippians",
+        "acts",
+        "apostleship",
+        "patronage",
+        "diaconate",
+        "household",
+        "patronage-hospitality-and-debt",
+    }
+    assert reciprocal_ids <= {relation.id for relation in cluster.related_objects}
+    for object_id in reciprocal_ids:
+        assert cluster_id in {
+            relation.id for relation in library.objects_by_id[object_id].related_objects
+        }
+
+
+def test_pauline_politics_cluster_bounds_authority_by_enemy_care_love_and_nonharm() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    unit = items["romans-unit-blessing-through-love"]
+    submission = items["romans-every-person-submit"]
+    rulers = items["romans-rulers-good-evil-claim"]
+    sword = items["romans-sword-coercive-power"]
+    assert "one sustained exhortation" in unit.description
+    assert "worship" in submission.passage_relevance
+    assert "empirical guarantee" in rulers.passage_relevance
+    assert "no use-of-force policy" in sword.notes
+
+
+def test_pauline_politics_cluster_does_not_hide_abuse_inside_church_mediation() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    dispute = items["corinth-lawsuits-insider-dispute"]
+    boundary = items["corinth-mediation-reporting-boundary"]
+    assert "mandatory reporting" in dispute.passage_relevance
+    assert "voluntary" in boundary.passage_relevance
+    assert "Never force mediation" in boundary.notes
+
+
+def test_pauline_politics_cluster_keeps_imperial_and_warfare_images_nonliteral() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    triumph = items["corinth-triumph-procession-ambiguity"]
+    warfare = items["corinth-warfare-not-fleshly"]
+    strongholds = items["corinth-strongholds-arguments"]
+    armor = items["thess-ethical-armor"]
+    assert "captive" in triumph.passage_relevance
+    assert "literal militarization" in warfare.passage_relevance
+    assert "People are not strongholds" in strongholds.notes
+    assert "Metaphorical defense does not authorize attack" in armor.notes
+
+
+def test_pauline_politics_cluster_preserves_civic_resonance_and_imperial_disputes() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    conduct = items["philippians-live-as-citizens-worthy"]
+    commonwealth = items["philippians-heavenly-commonwealth"]
+    household = items["philippians-caesar-household-limit"]
+    peace = items["thess-peace-security-disputed"]
+    assert "Roman colony" in conduct.passage_relevance
+    assert "statelessness romanticization" in commonwealth.passage_relevance
+    assert "Roman provenance certainty" in household.passage_relevance
+    assert "without treating" in peace.passage_relevance
+    assert peace.dispute_status != "consensus"
+
+
+def test_pauline_politics_cluster_controls_acts_chronology_and_modern_rights() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    prison = items["philippians-prison-praetorium-uncertain"]
+    philippi = items["acts-philippi-beating-custody-rights"]
+    custody = items["acts-citizenship-hearings-appeal-custody"]
+    modern = items["modern-political-detention-safeguard"]
+    assert "not approval of prison conditions" in prison.notes
+    assert philippi.scripture_references[0].temporal_relation == "diachronic"
+    assert "status-dependent" in custody.notes
+    assert "statelessness" in modern.description
+    assert "current law" in modern.notes
+
+
+def test_pauline_politics_cluster_is_retrievable_and_bidirectionally_linked() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster_id = (
+        "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance"
+    )
+    ranked = _rank(
+        library,
+        cluster_id,
+        "Does Romans 13 require unconditional obedience and approve every use of state violence?",
+        "Romans 12:14-13:14",
+        "cultural practice",
+        "institution",
+    )
+    assert {
+        "romans-unit-blessing-through-love",
+        "romans-every-person-submit",
+        "romans-rulers-good-evil-claim",
+        "romans-sword-coercive-power",
+    } & {item.evidence_id for item in ranked[:10]}
+    reciprocal_ids = {
+        "romans",
+        "1-corinthians",
+        "2-corinthians",
+        "philippians",
+        "1-thessalonians",
+        "acts",
+        "roman-rome-jewish-civic-household-and-imperial-life",
+        "roman-corinth-civic-household-and-association-life",
+        "roman-philippi-colonial-civic-and-household-life",
+        "thessalonian-civic-and-funerary-context",
+        "roman-citizenship-and-legal-process",
+        "peace-theme",
+    }
+    cluster = library.objects_by_id[cluster_id]
+    assert reciprocal_ids <= {relation.id for relation in cluster.related_objects}
+    for object_id in reciprocal_ids:
+        assert cluster_id in {
+            relation.id for relation in library.objects_by_id[object_id].related_objects
+        }
+
+
+def test_pauline_mission_cluster_preserves_letter_first_chronology() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    galatians = items["galatians-call-independent-chronology"]
+    acts = items["acts-galatians-chronology-control"]
+    farewell = items["acts-miletus-farewell-later-witness"]
+    assert "earlier direct letter" in galatians.passage_relevance
+    assert acts.scripture_references[0].temporal_relation == "diachronic"
+    assert "forcing every visit" in acts.passage_relevance
+    assert "not a verbatim transcript" in farewell.passage_relevance
+
+
+def test_pauline_mission_cluster_preserves_coworker_and_womens_agency() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    phoebe = items["romans-phoebe-recommendation"]
+    women = items["romans-women-laborers"]
+    apollos = items["corinth-apollos-agency"]
+    coworkers = items["philippians-euodia-syntyche-coworkers"]
+    assert "likely letter-carrier role as an inference" in phoebe.passage_relevance
+    assert "male-only" in women.passage_relevance
+    assert "decline" in apollos.passage_relevance
+    assert "mission agency" in coworkers.passage_relevance
+
+
+def test_pauline_mission_cluster_bounds_adaptability_and_conversion_by_consent() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    adaptation = items["corinth-bounded-adaptability"]
+    household = items["acts-household-baptism-consent-gap"]
+    modern = items["modern-religious-consent"]
+    assert "deceptive identity" in adaptation.passage_relevance
+    assert "forced baptism" in household.passage_relevance
+    assert "aid-conditioned belief" in modern.passage_relevance
+    assert "decline belief" in modern.notes
+
+
+def test_pauline_mission_cluster_limits_hospitality_travel_and_hardship_pressure() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    lydia = items["acts-lydia-hospitality-boundary"]
+    illness = items["philippians-epaphroditus-envoy-illness"]
+    danger = items["corinth-travel-hardship-catalogue"]
+    travel = items["modern-travel-migration-safety"]
+    assert "right to withdraw access" in lydia.notes
+    assert "medical care" in illness.notes
+    assert "loyalty test" in danger.notes
+    assert "unpenalized right to pause or leave" in travel.passage_relevance
+
+
+def test_pauline_mission_cluster_requires_fair_support_access_and_accountability() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    support = items["corinth-support-right-nonuse"]
+    domination = items["corinth-paul-not-lord-faith"]
+    access = items["modern-fair-support-accessibility"]
+    colonial = items["modern-anticolonial-local-accountability"]
+    assert "unpaid ministry compulsory" in support.passage_relevance
+    assert "founder domination" in domination.passage_relevance
+    assert "communication access" in access.passage_relevance
+    assert "founder or apostolic immunity" in colonial.passage_relevance
+
+
+def test_pauline_mission_cluster_is_retrievable_and_bidirectionally_linked() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster_id = (
+        "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+    )
+    ranked = _rank(
+        library,
+        cluster_id,
+        "Did Phoebe carry Romans, and did Paul control coworkers and house assemblies?",
+        "Romans 16:1-16",
+        "cultural practice",
+        "institution",
+    )
+    assert {
+        "romans-phoebe-recommendation",
+        "romans-prisca-aquila-house",
+        "romans-women-laborers",
+        "romans-multiple-house-groups",
+    } & {item.evidence_id for item in ranked[:10]}
+    reciprocal_ids = {
+        "romans",
+        "1-corinthians",
+        "2-corinthians",
+        "galatians",
+        "philippians",
+        "1-thessalonians",
+        "acts",
+        "phoebe-of-cenchreae",
+        "priscilla",
+        "lydia",
+        "apostleship",
+        "household",
+        "patronage-hospitality-and-debt",
+    }
+    cluster = library.objects_by_id[cluster_id]
+    assert reciprocal_ids <= {relation.id for relation in cluster.related_objects}
+    for object_id in reciprocal_ids:
+        assert cluster_id in {
+            relation.id for relation in library.objects_by_id[object_id].related_objects
+        }
+
+
+def test_pauline_conflict_cluster_preserves_letter_first_chronology_and_missing_voices() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    sexual_case = items["corinth-reported-sexual-case"]
+    antioch = items["antioch-public-confrontation-limit"]
+    council = items["acts-council-later-comparator"]
+    rupture = items["acts-coworker-rupture-unresolved"]
+    assert "woman is not addressed" in sexual_case.description
+    assert "only Paul's retrospective account" in antioch.description
+    assert council.scripture_references[0].temporal_relation == "diachronic"
+    assert "not a verbatim meeting record" in council.scholarly_interpretation
+    assert "safe separation" in rupture.passage_relevance
+
+
+def test_pauline_conflict_cluster_makes_discipline_proportionate_and_revisable() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    removal = items["corinth-mourning-removal-dispute"]
+    majority = items["majority-punishment-evidence-gap"]
+    forgiveness = items["forgive-comfort-excess-grief"]
+    reaffirm = items["reaffirm-love-revisable-boundary"]
+    assert removal.confidence == "low"
+    assert "permanent expulsion" in removal.passage_relevance
+    assert "minority" in majority.description
+    assert "proportionality" in forgiveness.passage_relevance
+    assert "reviewable action" in reaffirm.passage_relevance
+
+
+def test_pauline_conflict_cluster_rejects_apostolic_immunity_and_humiliation() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    domination = items["corinth-not-lord-faith"]
+    signs = items["signs-no-apostolic-immunity"]
+    irony = items["apostolic-irony-status"]
+    confrontation = items["antioch-public-confrontation-limit"]
+    assert "apostolic immunity" in domination.passage_relevance
+    assert "independent review" in signs.passage_relevance
+    assert "demanding apostolic misery" in irony.notes
+    assert "humiliation" in confrontation.passage_relevance
+
+
+def test_pauline_conflict_cluster_separates_forgiveness_reconciliation_and_contact() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    modern = items["modern-forgiveness-not-forced-reconciliation"]
+    access = items["modern-access-restoration-without-contact"]
+    grief = items["grief-repentance-causation-limit"]
+    assert "different timelines" in modern.description
+    assert "no joint meeting" in modern.passage_relevance
+    assert "no forced encounter" in access.passage_relevance
+    assert "not a harm method" in grief.title
+
+
+def test_pauline_conflict_cluster_requires_safe_reporting_due_process_and_access() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    confidentiality = items["modern-confidentiality-not-concealment"]
+    process = items["modern-due-process-proportion-review"]
+    trauma = items["modern-trauma-aware-communication"]
+    reporting = items["modern-independent-reporting-nonretaliation"]
+    access = items["modern-access-restoration-without-contact"]
+    assert "institutional reputation" in confidentiality.notes
+    assert "appeal" in process.passage_relevance
+    assert "retraumatization" in trauma.title
+    assert "outside the accused person's authority" in reporting.description
+    assert "asynchronous participation" in access.passage_relevance
+
+
+def test_pauline_conflict_cluster_is_retrievable_and_bidirectionally_linked() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster_id = (
+        "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+    )
+    ranked = _rank(
+        library,
+        cluster_id,
+        "Does forgiveness require reconciliation, restored trust, or contact after church discipline?",
+        "2 Corinthians 2:5-11",
+        "cultural practice",
+        "institution",
+    )
+    assert {
+        "forgive-comfort-excess-grief",
+        "reaffirm-love-revisable-boundary",
+        "modern-forgiveness-not-forced-reconciliation",
+        "modern-access-restoration-without-contact",
+    } & {item.evidence_id for item in ranked[:10]}
+    reciprocal_ids = {
+        "1-corinthians",
+        "2-corinthians",
+        "galatians",
+        "philippians",
+        "1-thessalonians",
+        "acts",
+        "apostleship",
+        "honor-and-shame",
+        "restoration-theme",
+        "peace-theme",
+        "theology-of-the-cross",
+        "theology-of-suffering",
+    }
+    cluster = library.objects_by_id[cluster_id]
+    assert reciprocal_ids <= {relation.id for relation in cluster.related_objects}
+    for object_id in reciprocal_ids:
+        assert cluster_id in {
+            relation.id for relation in library.objects_by_id[object_id].related_objects
+        }
+
+
+def test_pauline_prayer_cluster_holds_lament_groaning_hope_and_uncertainty_together() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    assert items["believers-groan-bodied-redemption"].confidence == "high"
+    assert "cure guarantee" in items["believers-groan-bodied-redemption"].scholarly_interpretation
+    assert "silence" in items["not-knowing-how-to-pray"].passage_relevance
+    assert items["spirit-inexpressible-groans"].dispute_status == "major_scholarly_disagreement"
+    assert "does not rename harm as good" in items["all-things-not-called-good"].title
+    assert "anti-Jewish" in items["romans-israel-lament"].passage_relevance
+
+
+def test_pauline_prayer_cluster_rejects_compulsory_positivity_and_outcome_promises() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    rejoice = items["philippian-rejoice-not-compulsory-positivity"]
+    anxiety = items["philippian-anxiety-prayer-no-shame"]
+    thanks = items["thess-joy-prayer-thanks-context"]
+    rescue = items["corinth-prayer-thanksgiving-rescue"]
+    assert "enforced cheerfulness" in rejoice.passage_relevance
+    assert "clinical assessment" in anxiety.passage_relevance
+    assert "gratitude for abuse" in thanks.passage_relevance
+    assert "failed prayer" in rescue.passage_relevance
+
+
+def test_pauline_prayer_cluster_joins_prayer_to_material_and_clinical_care() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    material = items["corinth-material-aid-thanksgiving"]
+    safety = items["modern-prayer-not-safety-substitute"]
+    access = items["modern-access-referral-material-aid"]
+    assert "food, housing, healthcare" in material.passage_relevance
+    assert "independent investigation" in safety.description
+    assert "qualified referral" in access.description
+    assert "Never promise cure" in access.notes
+
+
+def test_pauline_prayer_cluster_requires_consent_confidentiality_access_and_nonretaliation() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    consent = items["modern-public-prayer-consent"]
+    privacy = items["modern-prayer-confidentiality-not-surveillance"]
+    reading = items["thess-prayer-greeting-reading-access"]
+    benediction = items["modern-benediction-no-leader-immunity"]
+    assert "no surprise prayer circle" in consent.passage_relevance
+    assert "data governance" in privacy.temporal_scope.narrative_setting
+    assert "sign language" in reading.notes
+    assert "Nonretaliation" in benediction.notes
+
+
+def test_pauline_prayer_cluster_preserves_acts_as_later_narrative_comparator() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster = library.objects_by_id[
+        "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+    ]
+    items = {item.id: item for item in cluster.evidence_items}
+    lydia = items["acts-prayer-place-lydia-later"]
+    miletus = items["acts-miletus-prayer-farewell-later"]
+    assert lydia.scripture_references[0].temporal_relation == "diachronic"
+    assert "universal conversion" in lydia.passage_relevance
+    assert miletus.scripture_references[0].temporal_relation == "diachronic"
+    assert "descriptive, not transferable consent" in miletus.notes
+
+
+def test_pauline_prayer_cluster_is_retrievable_and_bidirectionally_linked() -> None:
+    library = CanonicalLibrary.load_default()
+    cluster_id = (
+        "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+    )
+    ranked = _rank(
+        library,
+        cluster_id,
+        "Does Romans 8 promise a cure, or can faithful prayer include groaning and uncertainty?",
+        "Romans 8:23-27",
+        "worldview concept",
+        "cultural practice",
+    )
+    assert {
+        "believers-groan-bodied-redemption",
+        "hope-unseen-patient-waiting",
+        "not-knowing-how-to-pray",
+        "spirit-inexpressible-groans",
+        "modern-access-referral-material-aid",
+    } & {item.evidence_id for item in ranked[:10]}
+    reciprocal_ids = {
+        "romans",
+        "1-corinthians",
+        "2-corinthians",
+        "galatians",
+        "philippians",
+        "1-thessalonians",
+        "acts",
+        "prayer-theme",
+        "peace-theme",
+        "hope-theme",
+        "worship-theme",
+        "theology-of-prayer",
+        "theology-of-suffering",
+    }
+    cluster = library.objects_by_id[cluster_id]
+    assert reciprocal_ids <= {relation.id for relation in cluster.related_objects}
+    for object_id in reciprocal_ids:
+        assert cluster_id in {
+            relation.id for relation in library.objects_by_id[object_id].related_objects
+        }
+
+
 def test_corpus_evidence_quality_metrics_have_no_structural_failures() -> None:
     library = CanonicalLibrary.load_default()
     report = audit_evidence(library.objects_by_id.values())
-    assert report["evidence_count"] == 155
-    assert report["evidence_with_primary_sources_count"] == 153
-    assert report["evidence_with_academic_secondary_sources_count"] == 146
-    assert report["evidence_with_chronology_count"] == 155
-    assert report["evidence_with_passage_relevance_count"] == 155
-    assert report["disputed_evidence_count"] == 144
-    assert report["worldview_evidence_count"] == 11
-    assert report["archaeology_linked_evidence_count"] == 24
+    assert report["evidence_count"] == 773
+    assert report["evidence_with_primary_sources_count"] == 771
+    assert report["evidence_with_academic_secondary_sources_count"] == 758
+    assert report["evidence_with_chronology_count"] == 773
+    assert report["evidence_with_passage_relevance_count"] == 773
+    assert report["disputed_evidence_count"] == 761
+    assert report["worldview_evidence_count"] == 198
+    assert report["archaeology_linked_evidence_count"] == 31
     assert report["internal_source_only_evidence_count"] == 0
     assert report["missing_source_locator_count"] == 0
     assert report["missing_confidence_rationale_count"] == 0

@@ -118,12 +118,37 @@
     "spirit-theme"
   ],
   "keywords": [
-    "2 Corinthians", "Paul", "Timothy", "Titus", "Corinth", "Achaia", "Macedonia",
-    "comfort", "painful visit", "severe letter", "forgiveness", "triumph", "aroma",
-    "new covenant", "letter and Spirit", "Moses' veil", "earthen vessels",
-    "new creation", "reconciliation", "ambassadors", "godly grief", "collection",
-    "equality", "cheerful giver", "super apostles", "fool's speech", "third heaven",
-    "thorn in the flesh", "power in weakness", "self examination", "benediction"
+    "2 Corinthians",
+    "Paul",
+    "Timothy",
+    "Titus",
+    "Corinth",
+    "Achaia",
+    "Macedonia",
+    "comfort",
+    "painful visit",
+    "severe letter",
+    "forgiveness",
+    "triumph",
+    "aroma",
+    "new covenant",
+    "letter and Spirit",
+    "Moses' veil",
+    "earthen vessels",
+    "new creation",
+    "reconciliation",
+    "ambassadors",
+    "godly grief",
+    "collection",
+    "equality",
+    "cheerful giver",
+    "super apostles",
+    "fool's speech",
+    "third heaven",
+    "thorn in the flesh",
+    "power in weakness",
+    "self examination",
+    "benediction"
   ],
   "intertextuality": [
     "2 Corinthians 3:3 evokes Exodus stone tablets while contrasting inscription by the Spirit on human hearts.",
@@ -198,32 +223,181 @@
   "related_places": [],
   "related_events": [],
   "related_objects": [
-    {"id": "paul", "relationship": "principal-sender", "weight": 10, "notes": "Paul is the dominant autobiographical and rhetorical voice."},
-    {"id": "corinth", "relationship": "recipient-setting", "weight": 10, "notes": "Corinth and Achaia form the recipient setting."},
-    {"id": "new-covenant", "relationship": "scriptural-ministry-framework", "weight": 10, "notes": "New-covenant ministry and Spirit-written hearts anchor chapter 3."},
-    {"id": "theology-of-suffering", "relationship": "affliction-comfort-and-endurance", "weight": 10, "notes": "Affliction, comfort, mortality, and weakness recur throughout."},
-    {"id": "theology-of-the-cross", "relationship": "power-in-weakness", "weight": 9, "notes": "Messiah's death and life pattern Paul's account of ministry."},
-    {"id": "moses", "relationship": "scriptural-figure", "weight": 9, "notes": "Moses, glory, and veil anchor the scriptural exposition in chapter 3."},
-    {"id": "resurrection-theme", "relationship": "mortality-and-future-life", "weight": 9, "notes": "Resurrection hope frames earthen vessels and heavenly dwelling."},
-    {"id": "spirit-theme", "relationship": "new-covenant-and-transformation", "weight": 9, "notes": "The Spirit writes, gives life, brings freedom, and transforms."},
-    {"id": "roman-corinth-civic-household-and-association-life", "relationship": "historical-context", "weight": 10, "notes": "Corinthian travel, benefaction, status, household, association, and collection context."}
+    {"id":"pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory","relationship":"comfort-prayer-gift-benediction-context","weight":10,"notes":"Reciprocal context for blessing, comfort, despair, intercession, material generosity, restoration, and benediction."},
+    {"id":"pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation","relationship":"grief-forgiveness-reconciliation-weakness-and-restoration-cluster","weight":10,"notes":"Letter-first synthesis of painful communication, forgiveness, reconciliation, boasting, weakness, testing, and restoration with no apostolic immunity."},
+    {
+      "id": "paul",
+      "relationship": "principal-sender",
+      "weight": 10,
+      "notes": "Paul is the dominant autobiographical and rhetorical voice."
+    },
+    {
+      "id": "corinth",
+      "relationship": "recipient-setting",
+      "weight": 10,
+      "notes": "Corinth and Achaia form the recipient setting."
+    },
+    {
+      "id": "new-covenant",
+      "relationship": "scriptural-ministry-framework",
+      "weight": 10,
+      "notes": "New-covenant ministry and Spirit-written hearts anchor chapter 3."
+    },
+    {
+      "id": "theology-of-suffering",
+      "relationship": "affliction-comfort-and-endurance",
+      "weight": 10,
+      "notes": "Affliction, comfort, mortality, and weakness recur throughout."
+    },
+    {
+      "id": "theology-of-the-cross",
+      "relationship": "power-in-weakness",
+      "weight": 9,
+      "notes": "Messiah's death and life pattern Paul's account of ministry."
+    },
+    {
+      "id": "moses",
+      "relationship": "scriptural-figure",
+      "weight": 9,
+      "notes": "Moses, glory, and veil anchor the scriptural exposition in chapter 3."
+    },
+    {
+      "id": "resurrection-theme",
+      "relationship": "mortality-and-future-life",
+      "weight": 9,
+      "notes": "Resurrection hope frames earthen vessels and heavenly dwelling."
+    },
+    {
+      "id": "spirit-theme",
+      "relationship": "new-covenant-and-transformation",
+      "weight": 9,
+      "notes": "The Spirit writes, gives life, brings freedom, and transforms."
+    },
+    {
+      "id": "roman-corinth-civic-household-and-association-life",
+      "relationship": "historical-context",
+      "weight": 10,
+      "notes": "Corinthian travel, benefaction, status, household, association, and collection context."
+    },
+    {
+      "id": "patronage-hospitality-and-debt",
+      "relationship": "collection-poverty-equality-and-accountability-context",
+      "weight": 10,
+      "notes": "Second Corinthians 8-9 is linked to willingness, capacity, equality, delegates, pressure, non-compulsion, service, and thanksgiving safeguards."
+    },
+    {
+      "id": "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration",
+      "relationship": "grief-forgiveness-and-restoration-context",
+      "weight": 10,
+      "notes": "Second Corinthians 2 and 7 are linked to uncertain offender identity, sufficient discipline, comfort, grief, repentance, renewed relationship, and safety limits."
+    },
+    {
+      "id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+      "relationship": "affliction-boasting-thorn-and-legitimacy-context",
+      "weight": 10,
+      "notes": "Second Corinthians 1, 4-6, and 10-13 are linked to comfort, embodied affliction, disputed boasting, undiagnosed thorn language, power in weakness, and accountable authority."
+    },
+    {
+      "id": "pauline-death-resurrection-transformed-embodiment-grief-hope-judgment-and-baptism-for-the-dead",
+      "relationship": "mortality-clothing-presence-and-judgment-context",
+      "weight": 10,
+      "notes": "Second Corinthians 4-5 is linked to embodied mortality, renewal, tent and clothing imagery, disputed intermediate-state sequencing, presence, and judgment."
+    },
+    {
+      "id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+      "relationship": "collection-capacity-equality-consent-and-administration-context",
+      "weight": 10,
+      "notes": "Second Corinthians 8-9 is linked to poor-donor agency, capacity, equality, noncommand and noncompulsion, honor pressure, accountable delegates, recipient need, and anti-prosperity safeguards."
+    },
+    {
+      "id": "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance",
+      "relationship": "triumph-warfare-and-nonmilitarization-context",
+      "weight": 10,
+      "notes": "Second Corinthians 2 and 10 are linked to disputed triumph imagery, non-fleshly warfare, arguments, thought, obedience, and punishment language without authorizing literal violence, coercive control, or militarized ministry."
+    },
+    {
+      "id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+      "relationship": "mission-and-interassembly-network-synthesis",
+      "weight": 9,
+      "notes": "Reciprocal link from itinerary-letter-delegate-and-hardship-text."
+    }
   ],
   "scripture_references": [
-    {"reference": "2 Corinthians 1:1-24", "relationship": "primary", "notes": "opening anchor for the 1:1-2:13 unit: senders, blessing, affliction, travel, painful correspondence, forgiveness, Troas, and Titus"},
-    {"reference": "2 Corinthians 2:14-17", "relationship": "primary", "notes": "opening anchor for the 2:14-7:4 unit: triumph, aroma, sufficiency, letter and Spirit, covenant, Moses, veil, glory, and transformation"},
-    {"reference": "2 Corinthians 4:1-18", "relationship": "primary", "notes": "earthen vessels, death and life, resurrection, heavenly dwelling, judgment, new creation, and reconciliation"},
-    {"reference": "2 Corinthians 6:1-18", "relationship": "primary", "notes": "ministry hardship, openhearted appeal, holiness, temple, and renewed reconciliation appeal"},
-    {"reference": "2 Corinthians 7:5-16", "relationship": "primary", "notes": "Titus's return, grief, repentance, comfort, and confidence"},
-    {"reference": "2 Corinthians 8:1-24", "relationship": "primary", "notes": "opening anchor for the 8:1-9:15 unit: collection, Macedonia, grace, equality, delegates, accountability, generosity, and thanksgiving"},
-    {"reference": "2 Corinthians 10:1-18", "relationship": "primary", "notes": "opening anchor for the 10:1-13:10 unit: authority, boasting, rivals, commendation, irony, and super-apostles"},
-    {"reference": "2 Corinthians 11:16-33", "relationship": "primary", "notes": "fool's speech, hardships, escape, visions, thorn, signs, weakness, and planned visit"},
-    {"reference": "2 Corinthians 13:1-14", "relationship": "primary", "notes": "witnesses, warning, self-examination, restoration, greeting, and benediction"},
-    {"reference": "Exodus 34:29-35", "relationship": "quotation", "notes": "Moses, glory, and veil reread in 2 Corinthians 3"},
-    {"reference": "Jeremiah 31:31-34", "relationship": "allusion", "notes": "new covenant and hearts in 2 Corinthians 3"},
-    {"reference": "Exodus 16:18", "relationship": "quotation", "notes": "manna sufficiency and equality in 2 Corinthians 8"},
-    {"reference": "Isaiah 49:8", "relationship": "quotation", "notes": "acceptable time in 2 Corinthians 6"},
-    {"reference": "Psalm 112:9", "relationship": "quotation", "notes": "generosity in 2 Corinthians 9"},
-    {"reference": "Jeremiah 9:24", "relationship": "quotation", "notes": "boasting in the Lord in 2 Corinthians 10"}
+    {
+      "reference": "2 Corinthians 1:1-24",
+      "relationship": "primary",
+      "notes": "opening anchor for the 1:1-2:13 unit: senders, blessing, affliction, travel, painful correspondence, forgiveness, Troas, and Titus"
+    },
+    {
+      "reference": "2 Corinthians 2:14-17",
+      "relationship": "primary",
+      "notes": "opening anchor for the 2:14-7:4 unit: triumph, aroma, sufficiency, letter and Spirit, covenant, Moses, veil, glory, and transformation"
+    },
+    {
+      "reference": "2 Corinthians 4:1-18",
+      "relationship": "primary",
+      "notes": "earthen vessels, death and life, resurrection, heavenly dwelling, judgment, new creation, and reconciliation"
+    },
+    {
+      "reference": "2 Corinthians 6:1-18",
+      "relationship": "primary",
+      "notes": "ministry hardship, openhearted appeal, holiness, temple, and renewed reconciliation appeal"
+    },
+    {
+      "reference": "2 Corinthians 7:5-16",
+      "relationship": "primary",
+      "notes": "Titus's return, grief, repentance, comfort, and confidence"
+    },
+    {
+      "reference": "2 Corinthians 8:1-24",
+      "relationship": "primary",
+      "notes": "opening anchor for the 8:1-9:15 unit: collection, Macedonia, grace, equality, delegates, accountability, generosity, and thanksgiving"
+    },
+    {
+      "reference": "2 Corinthians 10:1-18",
+      "relationship": "primary",
+      "notes": "opening anchor for the 10:1-13:10 unit: authority, boasting, rivals, commendation, irony, and super-apostles"
+    },
+    {
+      "reference": "2 Corinthians 11:16-33",
+      "relationship": "primary",
+      "notes": "fool's speech, hardships, escape, visions, thorn, signs, weakness, and planned visit"
+    },
+    {
+      "reference": "2 Corinthians 13:1-14",
+      "relationship": "primary",
+      "notes": "witnesses, warning, self-examination, restoration, greeting, and benediction"
+    },
+    {
+      "reference": "Exodus 34:29-35",
+      "relationship": "quotation",
+      "notes": "Moses, glory, and veil reread in 2 Corinthians 3"
+    },
+    {
+      "reference": "Jeremiah 31:31-34",
+      "relationship": "allusion",
+      "notes": "new covenant and hearts in 2 Corinthians 3"
+    },
+    {
+      "reference": "Exodus 16:18",
+      "relationship": "quotation",
+      "notes": "manna sufficiency and equality in 2 Corinthians 8"
+    },
+    {
+      "reference": "Isaiah 49:8",
+      "relationship": "quotation",
+      "notes": "acceptable time in 2 Corinthians 6"
+    },
+    {
+      "reference": "Psalm 112:9",
+      "relationship": "quotation",
+      "notes": "generosity in 2 Corinthians 9"
+    },
+    {
+      "reference": "Jeremiah 9:24",
+      "relationship": "quotation",
+      "notes": "boasting in the Lord in 2 Corinthians 10"
+    }
   ],
   "cross_references": [
     "Exodus 16; 34",
@@ -247,123 +421,2172 @@
     "Gospel passion and resurrection traditions illuminate Messiah's death-and-life pattern without erasing Paul's occasional rhetoric."
   ],
   "claims": [
-    {"id":"2cor-senders","claim":"2 Corinthians names Paul and Timothy as senders to the Corinthian assembly and all the saints throughout Achaia.","claim_type":"biblical_text","certainty":"textually_explicit","dispute_status":"minor_scholarly_disagreement","scripture_references":["2 Corinthians 1:1-2"],"source_ids":["2cor-greek","furnish-2cor"],"traditions":["Academic"],"rationale":"The prescript is explicit; Timothy's compositional agency is not.","notes":""},
-    {"id":"2cor-authorship","claim":"Pauline authorship of the materials in canonical 2 Corinthians enjoys strong critical consensus even though their number and arrangement remain disputed.","claim_type":"historical_cultural","certainty":"strong_consensus","dispute_status":"major_scholarly_disagreement","scripture_references":["2 Corinthians 1:1","2 Corinthians 10:1"],"source_ids":["furnish-2cor","seifrid-2cor"],"traditions":["Academic"],"rationale":"Voice, biography, language, and reception converge on Paul while partition theories concern composition history.","notes":""},
-    {"id":"2cor-date","claim":"2 Corinthians is commonly dated in the mid-50s CE after 1 Corinthians and before Romans.","claim_type":"historical_cultural","certainty":"probable","dispute_status":"chronological_uncertainty","scripture_references":["2 Corinthians 1:15-2:13","2 Corinthians 8:1-9:15"],"source_ids":["furnish-2cor","harris-2cor"],"traditions":["Academic"],"rationale":"Relative travel and collection evidence is substantial, but no calendar date appears.","notes":""},
-    {"id":"2cor-provenance","claim":"Macedonia is the probable composition region because Paul narrates arrival there and Titus's return before the collection appeal.","claim_type":"historical_cultural","certainty":"probable","dispute_status":"historical_uncertainty","scripture_references":["2 Corinthians 2:13","2 Corinthians 7:5-16","2 Corinthians 8:1"],"source_ids":["2cor-greek","thrall-2cor"],"traditions":["Academic"],"rationale":"Narrative sequence supports Macedonia while partition theories complicate a single place-date.","notes":""},
-    {"id":"2cor-integrity","claim":"Canonical 2 Corinthians has abrupt transitions that sustain both unity readings and multi-letter partition theories; no detailed reconstruction is certain.","claim_type":"literary","certainty":"disputed","dispute_status":"major_scholarly_disagreement","scripture_references":["2 Corinthians 2:13-14","2 Corinthians 6:14-7:2","2 Corinthians 9:1-10:1"],"source_ids":["furnish-2cor","long-apology","jones-unity"],"traditions":["Academic"],"rationale":"Real seams admit multiple literary and historical explanations, while manuscript tradition transmits the received order.","notes":""},
-    {"id":"2cor-manuscripts","claim":"P46 preserves most of 2 Corinthians and P99 preserves portions; major codices provide further witnesses with distinct textual profiles.","claim_type":"archaeology","certainty":"strong_consensus","dispute_status":"not_disputed","scripture_references":["2 Corinthians 1:1-13:14"],"source_ids":["p46-csntm","ntvmr","sinaiticus","vaticanus"],"traditions":["Textual criticism"],"rationale":"Catalogued artifacts directly attest the letter's early transmission.","notes":""},
-    {"id":"2cor-travel","claim":"Paul explains that a changed travel plan was intended to spare the Corinthians rather than display fickleness.","claim_type":"biblical_text","certainty":"textually_explicit","dispute_status":"chronological_uncertainty","scripture_references":["2 Corinthians 1:15-2:4"],"source_ids":["2cor-greek","furnish-2cor"],"traditions":["Academic"],"rationale":"The apology is explicit, but the precise sequence of visits and letters is reconstructed.","notes":""},
-    {"id":"2cor-offender","claim":"The offender, injured party, and punished majority in 2 Corinthians 2 and 7 cannot be securely identified with the incest case of 1 Corinthians 5.","claim_type":"historical_cultural","certainty":"insufficient_evidence","dispute_status":"historical_uncertainty","scripture_references":["2 Corinthians 2:5-11","2 Corinthians 7:8-12","1 Corinthians 5:1-13"],"source_ids":["furnish-2cor","thrall-2cor"],"traditions":["Academic"],"rationale":"The texts omit names and offense details, and proposed identifications create unresolved tensions.","notes":""},
-    {"id":"2cor-forgiveness","claim":"Paul asks the majority to forgive, comfort, and reaffirm love toward the punished person so that excessive grief does not overwhelm them.","claim_type":"biblical_text","certainty":"textually_explicit","dispute_status":"minor_scholarly_disagreement","scripture_references":["2 Corinthians 2:5-11"],"source_ids":["2cor-greek","seifrid-2cor"],"traditions":["Academic","Christian"],"rationale":"The actions are explicit; their application requires safeguarding and repair beyond the text's missing case details.","notes":""},
-    {"id":"2cor-triumph","claim":"Paul's triumph-procession metaphor may portray ministers as captives displayed by God, participants in victory, or both, and its affect is intentionally paradoxical.","claim_type":"lexical","certainty":"disputed","dispute_status":"lexical_uncertainty","scripture_references":["2 Corinthians 2:14-16"],"source_ids":["bdag","furnish-2cor","hafemann-suffering"],"traditions":["Academic"],"rationale":"Thriambeuo and Roman triumph imagery support competing subject positions.","notes":""},
-    {"id":"2cor-aroma","claim":"The aroma metaphor describes one proclamation producing opposed perceptions of life and death; it does not identify ethnic or disabled bodies as contaminating smells.","claim_type":"literary","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","scripture_references":["2 Corinthians 2:14-16"],"source_ids":["2cor-greek","furnish-2cor"],"traditions":["Academic"],"rationale":"The metaphor concerns reception of ministry, while its cultic and triumphal backgrounds are debated.","notes":""},
-    {"id":"2cor-sufficiency","claim":"Paul denies self-generated sufficiency and locates competence for new-covenant ministry in God.","claim_type":"biblical_text","certainty":"textually_explicit","dispute_status":"minor_scholarly_disagreement","scripture_references":["2 Corinthians 2:16","2 Corinthians 3:4-6"],"source_ids":["2cor-greek","seifrid-2cor"],"traditions":["Academic","Christian"],"rationale":"The repeated sufficiency vocabulary and divine attribution are explicit.","notes":""},
-    {"id":"2cor-letter-spirit","claim":"The statement that letter kills and Spirit gives life belongs to Paul's contrast of ministries and cannot simply equate all written Scripture or law with death.","claim_type":"literary","certainty":"strong_consensus","dispute_status":"major_scholarly_disagreement","scripture_references":["2 Corinthians 3:1-11"],"source_ids":["2cor-greek","hafemann-covenant","furnish-2cor"],"traditions":["Academic","Christian"],"rationale":"Immediate context concerns covenantal ministries, inscriptions, competence, condemnation, and righteousness.","notes":""},
-    {"id":"2cor-veil","claim":"Paul rereads Moses' veil in a complex argument about glory, hardening, reading, Messiah, and Spirit that has generated sharply different Jewish and Christian interpretations.","claim_type":"biblical_theology","certainty":"disputed","dispute_status":"major_scholarly_disagreement","scripture_references":["2 Corinthians 3:7-18","Exodus 34:29-35"],"source_ids":["2cor-greek","nets-lxx","thiessen-jewish-paul"],"traditions":["Academic","Christian","Jewish"],"rationale":"Paul's wording and Exodus intertext are visible, but subject, referent, tense, and theological implications are contested.","notes":""},
-    {"id":"2cor-transformation","claim":"The unveiled beholding or reflecting of glory in 2 Corinthians 3:18 describes Spirit-enabled transformation, while the participle's precise visual sense is disputed.","claim_type":"lexical","certainty":"probable","dispute_status":"lexical_uncertainty","scripture_references":["2 Corinthians 3:18"],"source_ids":["bdag","furnish-2cor"],"traditions":["Academic","Christian"],"rationale":"Transformation is explicit; katoptrizomai may emphasize beholding as in a mirror or reflecting.","notes":""},
-    {"id":"2cor-earthen","claim":"Treasure in earthen vessels contrasts divine light and power with fragile mortal messengers rather than making bodily vulnerability morally defective.","claim_type":"literary","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","scripture_references":["2 Corinthians 4:6-12"],"source_ids":["2cor-greek","savage-weakness","basselin-disability"],"traditions":["Academic","Christian"],"rationale":"The metaphor explicitly attributes extraordinary power to God amid bodily affliction.","notes":""},
-    {"id":"2cor-outer-inner","claim":"The outer and inner person contrast addresses mortality and renewal under affliction and should not be reduced to a Greek body-versus-soul dualism.","claim_type":"biblical_theology","certainty":"probable","dispute_status":"major_scholarly_disagreement","scripture_references":["2 Corinthians 4:16-18"],"source_ids":["furnish-2cor","savage-weakness"],"traditions":["Academic","Christian"],"rationale":"Paul holds bodily decay, resurrection, and renewal together, while anthropological models differ.","notes":""},
-    {"id":"2cor-dwelling","claim":"The earthly tent, heavenly building, clothing, mortality, and Spirit in 2 Corinthians 5 generate disputed intermediate-state and resurrection interpretations.","claim_type":"biblical_theology","certainty":"disputed","dispute_status":"denominational_disagreement","scripture_references":["2 Corinthians 5:1-10"],"source_ids":["furnish-2cor","harris-2cor"],"traditions":["Academic","Christian"],"rationale":"The mixed metaphors and chronology do not map neatly onto one later system.","notes":""},
-    {"id":"2cor-judgment","claim":"Paul says all must appear before Messiah's judgment seat to receive for embodied deeds, but the passage does not specify a full mechanics of final judgment.","claim_type":"biblical_text","certainty":"textually_explicit","dispute_status":"denominational_disagreement","scripture_references":["2 Corinthians 5:10"],"source_ids":["2cor-greek","harris-2cor"],"traditions":["Academic","Christian"],"rationale":"Universal appearance and accountability are explicit; relation to justification and reward systems is debated.","notes":""},
-    {"id":"2cor-flesh","claim":"Knowing Messiah according to flesh most likely contrasts evaluative modes rather than denying Jesus' historical embodiment.","claim_type":"literary","certainty":"probable","dispute_status":"major_scholarly_disagreement","scripture_references":["2 Corinthians 5:16"],"source_ids":["furnish-2cor","seifrid-2cor"],"traditions":["Academic","Christian"],"rationale":"The phrase follows transformed perception and precedes new creation, but its exact object and temporal force are debated.","notes":""},
-    {"id":"2cor-new-creation","claim":"The compressed phrase new creation may describe a person in Messiah, a transformed mode of perception and relation, or the inbreaking renewal of creation.","claim_type":"biblical_theology","certainty":"disputed","dispute_status":"major_scholarly_disagreement","scripture_references":["2 Corinthians 5:17","Isaiah 65:17"],"source_ids":["2cor-greek","seifrid-2cor"],"traditions":["Academic","Christian"],"rationale":"Greek syntax lacks an explicit verb and permits personal and cosmic construals.","notes":""},
-    {"id":"2cor-reconciliation","claim":"Paul attributes reconciliation to God's action in Messiah and describes a commissioned ministry and message of reconciliation.","claim_type":"biblical_text","certainty":"textually_explicit","dispute_status":"denominational_disagreement","scripture_references":["2 Corinthians 5:18-21"],"source_ids":["2cor-greek","furnish-2cor"],"traditions":["Academic","Christian"],"rationale":"Divine agency and commissioned appeal are explicit, while atonement models differ.","notes":""},
-    {"id":"2cor-ambassadors","claim":"Ambassador or envoy language marks authorized appeal but does not transfer unlimited diplomatic, imperial, or coercive power to later leaders.","claim_type":"historical_cultural","certainty":"probable","dispute_status":"minor_scholarly_disagreement","scripture_references":["2 Corinthians 5:20"],"source_ids":["bdag","winter-welfare"],"traditions":["Academic","Christian"],"rationale":"Presbeuo denotes representative action, whose ancient social resonances and later application require qualification.","notes":""},
-    {"id":"2cor-yoke","claim":"The unequal-yoke unit warns against partnership with unbelief and idolatry, but its referent, relation to its context, and modern scope remain disputed.","claim_type":"literary","certainty":"disputed","dispute_status":"major_scholarly_disagreement","scripture_references":["2 Corinthians 6:14-7:1"],"source_ids":["furnish-2cor","thrall-2cor"],"traditions":["Academic","Christian"],"rationale":"Abrupt vocabulary and scriptural catena invite interpolation and contextual readings; the text names no modern marriage policy.","notes":""},
-    {"id":"2cor-grief","claim":"Paul distinguishes grief according to God that produces repentance from grief of the world, while celebrating Titus's report of renewed relationship.","claim_type":"biblical_text","certainty":"textually_explicit","dispute_status":"major_scholarly_disagreement","scripture_references":["2 Corinthians 7:5-16"],"source_ids":["2cor-greek","furnish-2cor"],"traditions":["Academic","Christian"],"rationale":"The contrast is explicit; psychological, pastoral, and correspondence reconstructions remain uncertain.","notes":""},
-    {"id":"2cor-collection","claim":"Chapters 8-9 renew a collection for Jerusalem through Macedonian example, Messiah's grace, equality, delegated administration, and thanksgiving.","claim_type":"historical_cultural","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","scripture_references":["2 Corinthians 8:1-9:15","Romans 15:25-32"],"source_ids":["2cor-greek","longenecker-poor","downs-collection"],"traditions":["Academic","Christian"],"rationale":"The project's existence and destination are clear; arrangement and rhetorical strategy are debated.","notes":""},
-    {"id":"2cor-macedonia","claim":"Paul praises Macedonian generosity amid affliction and deep poverty, but the description is rhetorical and cannot establish exact household incomes or universalize poverty.","claim_type":"historical_cultural","certainty":"strong_consensus","dispute_status":"historical_uncertainty","scripture_references":["2 Corinthians 8:1-5"],"source_ids":["2cor-greek","friesen-poverty"],"traditions":["Academic"],"rationale":"The language is explicit while social levels and material effects remain unquantified.","notes":""},
-    {"id":"2cor-equality","claim":"Paul invokes present reciprocity and Exodus manna so that another's relief does not produce the Corinthians' affliction and there may be equality.","claim_type":"biblical_theology","certainty":"textually_explicit","dispute_status":"major_scholarly_disagreement","scripture_references":["2 Corinthians 8:13-15","Exodus 16:18"],"source_ids":["2cor-greek","nets-lxx","downs-collection"],"traditions":["Academic","Christian"],"rationale":"Isotes and reciprocity are explicit, while economic models of equality differ.","notes":""},
-    {"id":"2cor-accountability","claim":"Paul emphasizes honorable administration before both Lord and people by involving Titus and assembly-appointed delegates in carrying the gift.","claim_type":"biblical_text","certainty":"textually_explicit","dispute_status":"historical_uncertainty","scripture_references":["2 Corinthians 8:16-24"],"source_ids":["2cor-greek","downs-collection"],"traditions":["Academic","Christian"],"rationale":"Plural delegation and public honor are explicit; the unnamed brothers cannot be securely identified.","notes":""},
-    {"id":"2cor-sowing","claim":"Sowing and reaping imagery in chapter 9 urges willing generosity that produces provision and thanksgiving, not a guaranteed personal wealth return.","claim_type":"literary","certainty":"strong_consensus","dispute_status":"denominational_disagreement","scripture_references":["2 Corinthians 9:6-15"],"source_ids":["2cor-greek","bruehler-giving"],"traditions":["Academic","Christian"],"rationale":"The paragraph emphasizes sufficiency, good works, service, thanksgiving, and relationship rather than donor enrichment.","notes":""},
-    {"id":"2cor-opponents","claim":"The opponents in chapters 10-13 are characterized through Paul's polemic, but their number, origin, theology, and relation to Corinthian members cannot be securely recovered.","claim_type":"historical_cultural","certainty":"insufficient_evidence","dispute_status":"historical_uncertainty","scripture_references":["2 Corinthians 10:1-13:10"],"source_ids":["furnish-2cor","long-apology"],"traditions":["Academic"],"rationale":"Labels and charges come from contested rhetoric rather than neutral profiles.","notes":""},
-    {"id":"2cor-superapostles","claim":"Paul's super-apostles label is ironic and may refer to rivals in Corinth rather than the Jerusalem apostles, though identity remains disputed.","claim_type":"literary","certainty":"probable","dispute_status":"historical_uncertainty","scripture_references":["2 Corinthians 11:5","2 Corinthians 12:11"],"source_ids":["2cor-greek","furnish-2cor"],"traditions":["Academic"],"rationale":"The ironic comparison is clear, but the persons behind it are unnamed.","notes":""},
-    {"id":"2cor-fool","claim":"The fool's speech parodies competitive boasting while reproducing its danger, culminating in hardships and weakness rather than conventional honor.","claim_type":"literary","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","scripture_references":["2 Corinthians 11:16-12:13"],"source_ids":["2cor-greek","forbes-rhetoric","andrews-hardships"],"traditions":["Academic"],"rationale":"Repeated fool and boast markers frame a recognizable ironic performance.","notes":""},
-    {"id":"2cor-hardships","claim":"Paul's hardship catalog includes imprisonment, beatings, stoning, shipwrecks, danger, labor, hunger, exposure, and anxiety as an apostolic counter-boast.","claim_type":"biblical_text","certainty":"textually_explicit","dispute_status":"historical_uncertainty","scripture_references":["2 Corinthians 11:23-33"],"source_ids":["2cor-greek","andrews-hardships"],"traditions":["Academic"],"rationale":"The list is textual; external verification and its rhetorical shaping remain limited.","notes":""},
-    {"id":"2cor-vision","claim":"Paul reports in third person that a person in Messiah was caught to the third heaven and paradise fourteen years earlier, whether in or out of body unknown.","claim_type":"biblical_text","certainty":"textually_explicit","dispute_status":"historical_uncertainty","scripture_references":["2 Corinthians 12:1-6"],"source_ids":["2cor-greek","gooder-heaven"],"traditions":["Academic","Christian"],"rationale":"The qualified report is explicit; the experience's physiology, cosmology, and content are not disclosed.","notes":""},
-    {"id":"2cor-thorn","claim":"Paul never identifies the thorn in the flesh, so medical, psychological, opponent, persecution, temptation, and spiritual-agent proposals remain speculative.","claim_type":"historical_cultural","certainty":"insufficient_evidence","dispute_status":"historical_uncertainty","scripture_references":["2 Corinthians 12:7-10"],"source_ids":["furnish-2cor","basselin-disability"],"traditions":["Academic","Christian"],"rationale":"The metaphor and messenger of Satan are named, but no diagnosis or event is supplied.","notes":""},
-    {"id":"2cor-weakness","claim":"Power perfected in weakness locates Messiah's power amid Paul's limitations and afflictions, not in their denial or automatic removal.","claim_type":"biblical_theology","certainty":"textually_explicit","dispute_status":"major_scholarly_disagreement","scripture_references":["2 Corinthians 12:8-10","2 Corinthians 13:3-4"],"source_ids":["2cor-greek","savage-weakness","basselin-disability"],"traditions":["Academic","Christian"],"rationale":"The paradox is explicit while theological and disability readings debate its scope.","notes":""},
-    {"id":"2cor-signs","claim":"Paul names endurance, signs, wonders, and powerful deeds as signs of an apostle, but the phrase does not define a transferable credential checklist.","claim_type":"biblical_text","certainty":"textually_explicit","dispute_status":"denominational_disagreement","scripture_references":["2 Corinthians 12:12"],"source_ids":["2cor-greek","furnish-2cor"],"traditions":["Academic","Christian"],"rationale":"The retrospective claim is explicit and rhetorically embedded in a dispute over commendation.","notes":""},
-    {"id":"2cor-examine","claim":"The command to examine yourselves tests communal relation to Messiah within Paul's disputed authority encounter, not an invitation to obsessive or abusive surveillance.","claim_type":"literary","certainty":"probable","dispute_status":"major_scholarly_disagreement","scripture_references":["2 Corinthians 13:5-10"],"source_ids":["2cor-greek","seifrid-2cor"],"traditions":["Academic","Christian"],"rationale":"Plural imperatives and the apostolic test frame the command; later sacramental and introspective uses extend it.","notes":""},
-    {"id":"2cor-benediction","claim":"The closing benediction coordinates the grace of Jesus Messiah, love of God, and fellowship of the Holy Spirit without presenting a later technical doctrine of the Trinity.","claim_type":"biblical_theology","certainty":"textually_explicit","dispute_status":"denominational_disagreement","scripture_references":["2 Corinthians 13:14"],"source_ids":["2cor-greek","furnish-2cor"],"traditions":["Academic","Christian"],"rationale":"The triadic wording is explicit; its role in later Trinitarian doctrine belongs to reception and synthesis.","notes":""}
+    {
+      "id": "2cor-senders",
+      "claim": "2 Corinthians names Paul and Timothy as senders to the Corinthian assembly and all the saints throughout Achaia.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 1:1-2"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The prescript is explicit; Timothy's compositional agency is not.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-authorship",
+      "claim": "Pauline authorship of the materials in canonical 2 Corinthians enjoys strong critical consensus even though their number and arrangement remain disputed.",
+      "claim_type": "historical_cultural",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 1:1",
+        "2 Corinthians 10:1"
+      ],
+      "source_ids": [
+        "furnish-2cor",
+        "seifrid-2cor"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Voice, biography, language, and reception converge on Paul while partition theories concern composition history.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-date",
+      "claim": "2 Corinthians is commonly dated in the mid-50s CE after 1 Corinthians and before Romans.",
+      "claim_type": "historical_cultural",
+      "certainty": "probable",
+      "dispute_status": "chronological_uncertainty",
+      "scripture_references": [
+        "2 Corinthians 1:15-2:13",
+        "2 Corinthians 8:1-9:15"
+      ],
+      "source_ids": [
+        "furnish-2cor",
+        "harris-2cor"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Relative travel and collection evidence is substantial, but no calendar date appears.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-provenance",
+      "claim": "Macedonia is the probable composition region because Paul narrates arrival there and Titus's return before the collection appeal.",
+      "claim_type": "historical_cultural",
+      "certainty": "probable",
+      "dispute_status": "historical_uncertainty",
+      "scripture_references": [
+        "2 Corinthians 2:13",
+        "2 Corinthians 7:5-16",
+        "2 Corinthians 8:1"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "thrall-2cor"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Narrative sequence supports Macedonia while partition theories complicate a single place-date.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-integrity",
+      "claim": "Canonical 2 Corinthians has abrupt transitions that sustain both unity readings and multi-letter partition theories; no detailed reconstruction is certain.",
+      "claim_type": "literary",
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 2:13-14",
+        "2 Corinthians 6:14-7:2",
+        "2 Corinthians 9:1-10:1"
+      ],
+      "source_ids": [
+        "furnish-2cor",
+        "long-apology",
+        "jones-unity"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Real seams admit multiple literary and historical explanations, while manuscript tradition transmits the received order.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-manuscripts",
+      "claim": "P46 preserves most of 2 Corinthians and P99 preserves portions; major codices provide further witnesses with distinct textual profiles.",
+      "claim_type": "archaeology",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "scripture_references": [
+        "2 Corinthians 1:1-13:14"
+      ],
+      "source_ids": [
+        "p46-csntm",
+        "ntvmr",
+        "sinaiticus",
+        "vaticanus"
+      ],
+      "traditions": [
+        "Textual criticism"
+      ],
+      "rationale": "Catalogued artifacts directly attest the letter's early transmission.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-travel",
+      "claim": "Paul explains that a changed travel plan was intended to spare the Corinthians rather than display fickleness.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "chronological_uncertainty",
+      "scripture_references": [
+        "2 Corinthians 1:15-2:4"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The apology is explicit, but the precise sequence of visits and letters is reconstructed.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-offender",
+      "claim": "The offender, injured party, and punished majority in 2 Corinthians 2 and 7 cannot be securely identified with the incest case of 1 Corinthians 5.",
+      "claim_type": "historical_cultural",
+      "certainty": "insufficient_evidence",
+      "dispute_status": "historical_uncertainty",
+      "scripture_references": [
+        "2 Corinthians 2:5-11",
+        "2 Corinthians 7:8-12",
+        "1 Corinthians 5:1-13"
+      ],
+      "source_ids": [
+        "furnish-2cor",
+        "thrall-2cor"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The texts omit names and offense details, and proposed identifications create unresolved tensions.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-forgiveness",
+      "claim": "Paul asks the majority to forgive, comfort, and reaffirm love toward the punished person so that excessive grief does not overwhelm them.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 2:5-11"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "seifrid-2cor"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The actions are explicit; their application requires safeguarding and repair beyond the text's missing case details.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-triumph",
+      "claim": "Paul's triumph-procession metaphor may portray ministers as captives displayed by God, participants in victory, or both, and its affect is intentionally paradoxical.",
+      "claim_type": "lexical",
+      "certainty": "disputed",
+      "dispute_status": "lexical_uncertainty",
+      "scripture_references": [
+        "2 Corinthians 2:14-16"
+      ],
+      "source_ids": [
+        "bdag",
+        "furnish-2cor",
+        "hafemann-suffering"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Thriambeuo and Roman triumph imagery support competing subject positions.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-aroma",
+      "claim": "The aroma metaphor describes one proclamation producing opposed perceptions of life and death; it does not identify ethnic or disabled bodies as contaminating smells.",
+      "claim_type": "literary",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 2:14-16"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The metaphor concerns reception of ministry, while its cultic and triumphal backgrounds are debated.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-sufficiency",
+      "claim": "Paul denies self-generated sufficiency and locates competence for new-covenant ministry in God.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 2:16",
+        "2 Corinthians 3:4-6"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "seifrid-2cor"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The repeated sufficiency vocabulary and divine attribution are explicit.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-letter-spirit",
+      "claim": "The statement that letter kills and Spirit gives life belongs to Paul's contrast of ministries and cannot simply equate all written Scripture or law with death.",
+      "claim_type": "literary",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 3:1-11"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "hafemann-covenant",
+        "furnish-2cor"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Immediate context concerns covenantal ministries, inscriptions, competence, condemnation, and righteousness.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-veil",
+      "claim": "Paul rereads Moses' veil in a complex argument about glory, hardening, reading, Messiah, and Spirit that has generated sharply different Jewish and Christian interpretations.",
+      "claim_type": "biblical_theology",
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 3:7-18",
+        "Exodus 34:29-35"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "nets-lxx",
+        "thiessen-jewish-paul"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian",
+        "Jewish"
+      ],
+      "rationale": "Paul's wording and Exodus intertext are visible, but subject, referent, tense, and theological implications are contested.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-transformation",
+      "claim": "The unveiled beholding or reflecting of glory in 2 Corinthians 3:18 describes Spirit-enabled transformation, while the participle's precise visual sense is disputed.",
+      "claim_type": "lexical",
+      "certainty": "probable",
+      "dispute_status": "lexical_uncertainty",
+      "scripture_references": [
+        "2 Corinthians 3:18"
+      ],
+      "source_ids": [
+        "bdag",
+        "furnish-2cor"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Transformation is explicit; katoptrizomai may emphasize beholding as in a mirror or reflecting.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-earthen",
+      "claim": "Treasure in earthen vessels contrasts divine light and power with fragile mortal messengers rather than making bodily vulnerability morally defective.",
+      "claim_type": "literary",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 4:6-12"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "savage-weakness",
+        "basselin-disability"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The metaphor explicitly attributes extraordinary power to God amid bodily affliction.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-outer-inner",
+      "claim": "The outer and inner person contrast addresses mortality and renewal under affliction and should not be reduced to a Greek body-versus-soul dualism.",
+      "claim_type": "biblical_theology",
+      "certainty": "probable",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 4:16-18"
+      ],
+      "source_ids": [
+        "furnish-2cor",
+        "savage-weakness"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Paul holds bodily decay, resurrection, and renewal together, while anthropological models differ.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-dwelling",
+      "claim": "The earthly tent, heavenly building, clothing, mortality, and Spirit in 2 Corinthians 5 generate disputed intermediate-state and resurrection interpretations.",
+      "claim_type": "biblical_theology",
+      "certainty": "disputed",
+      "dispute_status": "denominational_disagreement",
+      "scripture_references": [
+        "2 Corinthians 5:1-10"
+      ],
+      "source_ids": [
+        "furnish-2cor",
+        "harris-2cor"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The mixed metaphors and chronology do not map neatly onto one later system.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-judgment",
+      "claim": "Paul says all must appear before Messiah's judgment seat to receive for embodied deeds, but the passage does not specify a full mechanics of final judgment.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "denominational_disagreement",
+      "scripture_references": [
+        "2 Corinthians 5:10"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "harris-2cor"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Universal appearance and accountability are explicit; relation to justification and reward systems is debated.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-flesh",
+      "claim": "Knowing Messiah according to flesh most likely contrasts evaluative modes rather than denying Jesus' historical embodiment.",
+      "claim_type": "literary",
+      "certainty": "probable",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 5:16"
+      ],
+      "source_ids": [
+        "furnish-2cor",
+        "seifrid-2cor"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The phrase follows transformed perception and precedes new creation, but its exact object and temporal force are debated.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-new-creation",
+      "claim": "The compressed phrase new creation may describe a person in Messiah, a transformed mode of perception and relation, or the inbreaking renewal of creation.",
+      "claim_type": "biblical_theology",
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 5:17",
+        "Isaiah 65:17"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "seifrid-2cor"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Greek syntax lacks an explicit verb and permits personal and cosmic construals.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-reconciliation",
+      "claim": "Paul attributes reconciliation to God's action in Messiah and describes a commissioned ministry and message of reconciliation.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "denominational_disagreement",
+      "scripture_references": [
+        "2 Corinthians 5:18-21"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Divine agency and commissioned appeal are explicit, while atonement models differ.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-ambassadors",
+      "claim": "Ambassador or envoy language marks authorized appeal but does not transfer unlimited diplomatic, imperial, or coercive power to later leaders.",
+      "claim_type": "historical_cultural",
+      "certainty": "probable",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 5:20"
+      ],
+      "source_ids": [
+        "bdag",
+        "winter-welfare"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Presbeuo denotes representative action, whose ancient social resonances and later application require qualification.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-yoke",
+      "claim": "The unequal-yoke unit warns against partnership with unbelief and idolatry, but its referent, relation to its context, and modern scope remain disputed.",
+      "claim_type": "literary",
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 6:14-7:1"
+      ],
+      "source_ids": [
+        "furnish-2cor",
+        "thrall-2cor"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Abrupt vocabulary and scriptural catena invite interpolation and contextual readings; the text names no modern marriage policy.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-grief",
+      "claim": "Paul distinguishes grief according to God that produces repentance from grief of the world, while celebrating Titus's report of renewed relationship.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 7:5-16"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The contrast is explicit; psychological, pastoral, and correspondence reconstructions remain uncertain.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-collection",
+      "claim": "Chapters 8-9 renew a collection for Jerusalem through Macedonian example, Messiah's grace, equality, delegated administration, and thanksgiving.",
+      "claim_type": "historical_cultural",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 8:1-9:15",
+        "Romans 15:25-32"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "longenecker-poor",
+        "downs-collection"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The project's existence and destination are clear; arrangement and rhetorical strategy are debated.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-macedonia",
+      "claim": "Paul praises Macedonian generosity amid affliction and deep poverty, but the description is rhetorical and cannot establish exact household incomes or universalize poverty.",
+      "claim_type": "historical_cultural",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "scripture_references": [
+        "2 Corinthians 8:1-5"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "friesen-poverty"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The language is explicit while social levels and material effects remain unquantified.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-equality",
+      "claim": "Paul invokes present reciprocity and Exodus manna so that another's relief does not produce the Corinthians' affliction and there may be equality.",
+      "claim_type": "biblical_theology",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 8:13-15",
+        "Exodus 16:18"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "nets-lxx",
+        "downs-collection"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Isotes and reciprocity are explicit, while economic models of equality differ.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-accountability",
+      "claim": "Paul emphasizes honorable administration before both Lord and people by involving Titus and assembly-appointed delegates in carrying the gift.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "historical_uncertainty",
+      "scripture_references": [
+        "2 Corinthians 8:16-24"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "downs-collection"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Plural delegation and public honor are explicit; the unnamed brothers cannot be securely identified.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-sowing",
+      "claim": "Sowing and reaping imagery in chapter 9 urges willing generosity that produces provision and thanksgiving, not a guaranteed personal wealth return.",
+      "claim_type": "literary",
+      "certainty": "strong_consensus",
+      "dispute_status": "denominational_disagreement",
+      "scripture_references": [
+        "2 Corinthians 9:6-15"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "bruehler-giving"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The paragraph emphasizes sufficiency, good works, service, thanksgiving, and relationship rather than donor enrichment.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-opponents",
+      "claim": "The opponents in chapters 10-13 are characterized through Paul's polemic, but their number, origin, theology, and relation to Corinthian members cannot be securely recovered.",
+      "claim_type": "historical_cultural",
+      "certainty": "insufficient_evidence",
+      "dispute_status": "historical_uncertainty",
+      "scripture_references": [
+        "2 Corinthians 10:1-13:10"
+      ],
+      "source_ids": [
+        "furnish-2cor",
+        "long-apology"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Labels and charges come from contested rhetoric rather than neutral profiles.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-superapostles",
+      "claim": "Paul's super-apostles label is ironic and may refer to rivals in Corinth rather than the Jerusalem apostles, though identity remains disputed.",
+      "claim_type": "literary",
+      "certainty": "probable",
+      "dispute_status": "historical_uncertainty",
+      "scripture_references": [
+        "2 Corinthians 11:5",
+        "2 Corinthians 12:11"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The ironic comparison is clear, but the persons behind it are unnamed.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-fool",
+      "claim": "The fool's speech parodies competitive boasting while reproducing its danger, culminating in hardships and weakness rather than conventional honor.",
+      "claim_type": "literary",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 11:16-12:13"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "forbes-rhetoric",
+        "andrews-hardships"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Repeated fool and boast markers frame a recognizable ironic performance.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-hardships",
+      "claim": "Paul's hardship catalog includes imprisonment, beatings, stoning, shipwrecks, danger, labor, hunger, exposure, and anxiety as an apostolic counter-boast.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "historical_uncertainty",
+      "scripture_references": [
+        "2 Corinthians 11:23-33"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "andrews-hardships"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The list is textual; external verification and its rhetorical shaping remain limited.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-vision",
+      "claim": "Paul reports in third person that a person in Messiah was caught to the third heaven and paradise fourteen years earlier, whether in or out of body unknown.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "historical_uncertainty",
+      "scripture_references": [
+        "2 Corinthians 12:1-6"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "gooder-heaven"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The qualified report is explicit; the experience's physiology, cosmology, and content are not disclosed.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-thorn",
+      "claim": "Paul never identifies the thorn in the flesh, so medical, psychological, opponent, persecution, temptation, and spiritual-agent proposals remain speculative.",
+      "claim_type": "historical_cultural",
+      "certainty": "insufficient_evidence",
+      "dispute_status": "historical_uncertainty",
+      "scripture_references": [
+        "2 Corinthians 12:7-10"
+      ],
+      "source_ids": [
+        "furnish-2cor",
+        "basselin-disability"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The metaphor and messenger of Satan are named, but no diagnosis or event is supplied.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-weakness",
+      "claim": "Power perfected in weakness locates Messiah's power amid Paul's limitations and afflictions, not in their denial or automatic removal.",
+      "claim_type": "biblical_theology",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 12:8-10",
+        "2 Corinthians 13:3-4"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "savage-weakness",
+        "basselin-disability"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The paradox is explicit while theological and disability readings debate its scope.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-signs",
+      "claim": "Paul names endurance, signs, wonders, and powerful deeds as signs of an apostle, but the phrase does not define a transferable credential checklist.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "denominational_disagreement",
+      "scripture_references": [
+        "2 Corinthians 12:12"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The retrospective claim is explicit and rhetorically embedded in a dispute over commendation.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-examine",
+      "claim": "The command to examine yourselves tests communal relation to Messiah within Paul's disputed authority encounter, not an invitation to obsessive or abusive surveillance.",
+      "claim_type": "literary",
+      "certainty": "probable",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 13:5-10"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "seifrid-2cor"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Plural imperatives and the apostolic test frame the command; later sacramental and introspective uses extend it.",
+      "notes": ""
+    },
+    {
+      "id": "2cor-benediction",
+      "claim": "The closing benediction coordinates the grace of Jesus Messiah, love of God, and fellowship of the Holy Spirit without presenting a later technical doctrine of the Trinity.",
+      "claim_type": "biblical_theology",
+      "certainty": "textually_explicit",
+      "dispute_status": "denominational_disagreement",
+      "scripture_references": [
+        "2 Corinthians 13:14"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The triadic wording is explicit; its role in later Trinitarian doctrine belongs to reception and synthesis.",
+      "notes": ""
+    }
   ],
   "interpretive_notes": [
-    {"note":"Paul and Timothy are named senders, but Paul remains the dominant voice; co-sender language should neither erase Timothy nor invent equal authorship.","note_type":"literary-observation","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","sources":["2cor-greek","furnish-2cor"],"scripture_references":["2 Corinthians 1:1"],"traditions":["Academic"],"rationale":"Prescript and first-person usage support a differentiated collaborative model."},
-    {"note":"The mid-50s date and Macedonian provenance are probable reconstructions, not explicit colophons.","note_type":"historical-context","certainty":"probable","dispute_status":"chronological_uncertainty","sources":["furnish-2cor","harris-2cor"],"scripture_references":["2 Corinthians 7:5-16"],"traditions":["Academic"],"rationale":"Travel comparison provides relative rather than absolute dating."},
-    {"note":"Canonical 2 Corinthians may preserve one letter or multiple Pauline letter units; abrupt seams justify investigation but not certainty about scissors-and-paste reconstruction.","note_type":"literary-observation","certainty":"disputed","dispute_status":"major_scholarly_disagreement","sources":["jones-unity","long-apology","furnish-2cor"],"scripture_references":["2 Corinthians 1:1","2 Corinthians 13:14"],"traditions":["Academic"],"rationale":"Unity and partition models explain different features with unavoidable conjecture."},
-    {"note":"P46 and P99 attest early transmission, but manuscript evidence does not independently prove the original unity or partition of the letter.","note_type":"textual-observation","certainty":"strong_consensus","dispute_status":"major_scholarly_disagreement","sources":["p46-csntm","ntvmr"],"scripture_references":["2 Corinthians 1:1","2 Corinthians 13:14"],"traditions":["Textual criticism"],"rationale":"Extant witnesses transmit forms later than composition and do not preserve proposed separate letters."},
-    {"note":"Paul's claim of sincerity and clear conscience is self-presentation within damaged trust, not neutral proof that every decision was beyond criticism.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","sources":["2cor-greek","long-apology"],"scripture_references":["2 Corinthians 1:12-24"],"traditions":["Academic","Christian"],"rationale":"Travel apology is persuasive rhetoric as well as autobiographical report."},
-    {"note":"The changed itinerary should be reconstructed cautiously because 1 Corinthians, 2 Corinthians, Romans, and Acts do not provide a complete shared calendar.","note_type":"historical-context","certainty":"probable","dispute_status":"chronological_uncertainty","sources":["furnish-2cor","2cor-greek"],"scripture_references":["2 Corinthians 1:15-2:4"],"traditions":["Academic"],"rationale":"Each source is selective and differs in genre and purpose."},
-    {"note":"The painful visit and severe or tearful letter are strongly implied, but their dates, contents, delivery, and relation to chapters 10-13 remain disputed.","note_type":"historical-context","certainty":"probable","dispute_status":"historical_uncertainty","sources":["furnish-2cor","thrall-2cor"],"scripture_references":["2 Corinthians 2:1-4","2 Corinthians 7:8-12"],"traditions":["Academic"],"rationale":"The correspondence is incomplete and retrospective."},
-    {"note":"The offender and injured party are unnamed; identifying them with 1 Corinthians 5, an insult to Paul, or another case exceeds the evidence.","note_type":"interpretive-caution","certainty":"insufficient_evidence","dispute_status":"historical_uncertainty","sources":["furnish-2cor","thrall-2cor"],"scripture_references":["2 Corinthians 2:5-11","2 Corinthians 7:12"],"traditions":["Academic"],"rationale":"No proposed incident fits every clue without inference."},
-    {"note":"Forgiveness in 2 Corinthians 2 aims to prevent overwhelming grief and restore love, but it cannot require reconciliation without safety, truth, consent, accountability, restitution, and repair.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["2cor-greek","furnish-2cor"],"scripture_references":["2 Corinthians 2:5-11"],"traditions":["Academic","Christian"],"rationale":"Unknown case details cannot override modern safeguarding duties or erase consequences."},
-    {"note":"Satan language in the forgiveness appeal cannot justify dangerous exorcism, blaming survivors, denying medical care, or treating disagreement as demonic possession.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["2cor-greek","seifrid-2cor"],"scripture_references":["2 Corinthians 2:10-11"],"traditions":["Academic","Christian"],"rationale":"The text warns against destructive advantage without prescribing coercive ritual."},
-    {"note":"Paul's restless departure from Troas shows relational anxiety within mission and resists triumphalist portraits of uninterrupted certainty.","note_type":"literary-observation","certainty":"textually_explicit","dispute_status":"minor_scholarly_disagreement","sources":["2cor-greek","furnish-2cor"],"scripture_references":["2 Corinthians 2:12-13"],"traditions":["Academic","Christian"],"rationale":"An open door and lack of inner rest coexist."},
-    {"note":"Triumph imagery may cast Paul as captive, participant, spectacle, or a deliberately unstable combination; Roman military violence should remain visible.","note_type":"historical-context","certainty":"disputed","dispute_status":"lexical_uncertainty","sources":["bdag","hafemann-suffering"],"scripture_references":["2 Corinthians 2:14"],"traditions":["Academic"],"rationale":"Ancient triumphs displayed conquered bodies and thriambeuo has debated voice and force."},
-    {"note":"The aroma of Messiah is a metaphor for divergent reception; it must not stigmatize race, ethnicity, poverty, disability, illness, hygiene, or bodies as spiritually foul.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["2cor-greek","furnish-2cor"],"scripture_references":["2 Corinthians 2:14-16"],"traditions":["Academic","Christian"],"rationale":"The metaphor concerns proclamation and judgment, not embodied prejudice."},
-    {"note":"Not peddling God's word challenges corrupt ministry, but should not become an unproved accusation against all paid teaching or a cover for unpaid labor.","note_type":"interpretive-caution","certainty":"probable","dispute_status":"minor_scholarly_disagreement","sources":["2cor-greek","friesen-poverty"],"scripture_references":["2 Corinthians 2:17"],"traditions":["Academic","Christian"],"rationale":"Commercial metaphor and apostolic economics require contextual rather than slogan-level application."},
-    {"note":"Letters of commendation belonged to ancient networks; Paul's living-letter metaphor does not abolish transparent references, safeguarding checks, or professional accountability.","note_type":"historical-context","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","sources":["winter-welfare","2cor-greek"],"scripture_references":["2 Corinthians 3:1-3"],"traditions":["Academic","Christian"],"rationale":"Rhetorical contrast with rivals is not a ban on accountable credentialing."},
-    {"note":"Letter kills but Spirit gives life belongs to a covenant-ministry contrast and cannot authorize anti-intellectualism, rejection of written Scripture, contempt for law, or leaders who evade policy and evidence.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"major_scholarly_disagreement","sources":["hafemann-covenant","2cor-greek"],"scripture_references":["2 Corinthians 3:4-11"],"traditions":["Academic","Christian"],"rationale":"The immediate argument contrasts ministries of condemnation and righteousness through scriptural exposition."},
-    {"note":"Old and new covenant rhetoric has been organized differently by dispensational, covenantal, sacramental, supersessionist, and other traditions; those systems should not be silently attributed to Paul.","note_type":"theological-interpretation","certainty":"tradition_dependent","dispute_status":"denominational_disagreement","sources":["hafemann-covenant","seifrid-2cor"],"scripture_references":["2 Corinthians 3:6-14"],"traditions":["Christian"],"rationale":"Later systems synthesize texts beyond this occasional passage."},
-    {"note":"Moses' veil and hardened-mind language cannot justify antisemitism, supersessionism, describing Jews as spiritually blind, or treating living Judaism as a dead religion.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"major_scholarly_disagreement","sources":["thiessen-jewish-paul","2cor-greek","nets-lxx"],"scripture_references":["2 Corinthians 3:7-18","Exodus 34:29-35"],"traditions":["Academic","Christian","Jewish"],"rationale":"Paul's Jewish scriptural rereading is contested and includes no license for ethnic or religious harm."},
-    {"note":"The subject who turns to the Lord in 3:16 and the identity of the Lord in 3:17 are grammatically and theologically disputed.","note_type":"literary-observation","certainty":"disputed","dispute_status":"major_scholarly_disagreement","sources":["furnish-2cor","2cor-greek"],"scripture_references":["2 Corinthians 3:16-17"],"traditions":["Academic","Christian"],"rationale":"Exodus intertext, pronouns, and Pauline christology permit several readings."},
-    {"note":"Where the Spirit of the Lord is, there is freedom concerns unveiled access and transformation; it cannot legitimate antinomianism, abuse of authority, or disregard for others' safety.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"denominational_disagreement","sources":["2cor-greek","seifrid-2cor"],"scripture_references":["2 Corinthians 3:17-18"],"traditions":["Academic","Christian"],"rationale":"Freedom is embedded in accountable ministry and transformation rather than autonomy from ethics."},
-    {"note":"Katoptrizomai may mean beholding as in a mirror or reflecting glory; translations should disclose the lexical uncertainty.","note_type":"textual-observation","certainty":"disputed","dispute_status":"lexical_uncertainty","sources":["bdag","furnish-2cor"],"scripture_references":["2 Corinthians 3:18"],"traditions":["Academic"],"rationale":"Rare middle-voice usage and context allow both emphases."},
-    {"note":"God shining light in hearts revoices creation and prophetic light language; it is theological metaphor, not a scientific account of cognition or vision.","note_type":"canonical-connection","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","sources":["2cor-greek","nets-lxx"],"scripture_references":["2 Corinthians 4:6","Genesis 1:3"],"traditions":["Academic","Christian"],"rationale":"Scriptural creation imagery supports the claim's rhetorical function."},
-    {"note":"Treasure in earthen vessels honors fragile bodies as bearers of divine power and cannot justify body shame, disability stigma, medical neglect, or treating workers as disposable containers.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["basselin-disability","2cor-greek"],"scripture_references":["2 Corinthians 4:7-12"],"traditions":["Academic","Christian"],"rationale":"Power belongs to God while vulnerability remains real and embodied."},
-    {"note":"Afflicted but not crushed is Paul's rhetorical testimony, not a promise that faithful people will never experience breakdown, trauma, depression, disability, or death.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["basselin-disability","savage-weakness"],"scripture_references":["2 Corinthians 4:8-12"],"traditions":["Academic","Christian"],"rationale":"The same argument acknowledges mortality, fear, and death."},
-    {"note":"Carrying Jesus' death in the body cannot authorize trauma glorification, self-harm, persecution seeking, medical neglect, or blaming victims for insufficient resilience.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["basselin-disability","2cor-greek"],"scripture_references":["2 Corinthians 4:10-15"],"traditions":["Academic","Christian"],"rationale":"Paul interprets harms endured; he does not command their production."},
-    {"note":"The outer and inner person contrast should not make matter evil or the body expendable, since Paul also expects embodied resurrection and accountability.","note_type":"theological-interpretation","certainty":"probable","dispute_status":"major_scholarly_disagreement","sources":["furnish-2cor","harris-2cor"],"scripture_references":["2 Corinthians 4:16-5:10"],"traditions":["Academic","Christian"],"rationale":"Mortality and renewal belong within a resurrection argument."},
-    {"note":"Light momentary affliction is a comparative claim by an afflicted speaker and must not be used by outsiders to minimize abuse, genocide, grief, chronic illness, disability, or structural oppression.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["2cor-greek","basselin-disability"],"scripture_references":["2 Corinthians 4:16-18"],"traditions":["Academic","Christian"],"rationale":"Hope does not authorize minimizing another person's harm."},
-    {"note":"Earthly tent, heavenly building, nakedness, clothing, mortality, and Spirit form overlapping metaphors; one diagram of the intermediate state should not be presented as textually certain.","note_type":"theological-interpretation","certainty":"disputed","dispute_status":"denominational_disagreement","sources":["harris-2cor","furnish-2cor"],"scripture_references":["2 Corinthians 5:1-10"],"traditions":["Academic","Christian"],"rationale":"Spatial, architectural, and clothing images do not yield one uncontested chronology."},
-    {"note":"Walking by faith rather than sight does not mean ignoring observable evidence, medical diagnosis, financial records, abuse reports, or empirical reality.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["2cor-greek","furnish-2cor"],"scripture_references":["2 Corinthians 5:7"],"traditions":["Academic","Christian"],"rationale":"The contrast concerns present absence from the Lord within eschatological hope."},
-    {"note":"The judgment seat affirms accountability but cannot justify terrorizing children, trauma survivors, disabled people, or mentally ill people with speculative punishments.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"denominational_disagreement","sources":["harris-2cor","2cor-greek"],"scripture_references":["2 Corinthians 5:10-11"],"traditions":["Academic","Christian"],"rationale":"Pastoral application must preserve proportionality, capacity, and safety beyond disputed systems."},
-    {"note":"Knowing Messiah according to flesh most likely concerns modes of evaluation; it cannot deny Jesus' Jewish body, historical life, or the value of embodied existence.","note_type":"interpretive-caution","certainty":"probable","dispute_status":"major_scholarly_disagreement","sources":["furnish-2cor","2cor-greek"],"scripture_references":["2 Corinthians 5:16"],"traditions":["Academic","Christian"],"rationale":"Paul's resurrection and embodiment claims constrain anti-body readings."},
-    {"note":"New creation may be personal, communal, epistemic, and cosmic; reducing it to private self-improvement or disembodied escape narrows the phrase prematurely.","note_type":"theological-interpretation","certainty":"disputed","dispute_status":"major_scholarly_disagreement","sources":["seifrid-2cor","2cor-greek"],"scripture_references":["2 Corinthians 5:17"],"traditions":["Academic","Christian"],"rationale":"Compressed syntax and Isaiah resonances sustain multiple dimensions."},
-    {"note":"Reconciliation begins with divine initiative and commissioned appeal, but it cannot be weaponized as reconciliation without safety, truth, consent, accountability, restitution, boundaries, and repair.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["2cor-greek","furnish-2cor"],"scripture_references":["2 Corinthians 5:18-21"],"traditions":["Academic","Christian"],"rationale":"Theological reconciliation does not erase the ethical conditions of safe human relationship."},
-    {"note":"God made the sinless one to be sin is a compressed claim with sacrifice, representative, participation, and exchange readings; no single atonement system exhausts it.","note_type":"theological-interpretation","certainty":"disputed","dispute_status":"denominational_disagreement","sources":["seifrid-2cor","furnish-2cor"],"scripture_references":["2 Corinthians 5:21"],"traditions":["Academic","Christian"],"rationale":"Poetic antithesis supports several doctrinal constructions."},
-    {"note":"Ambassador language indicates representative appeal and cannot grant later missionaries diplomatic immunity, colonial authority, forced conversion, or power over local communities.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["bdag","winter-welfare"],"scripture_references":["2 Corinthians 5:20"],"traditions":["Academic","Christian"],"rationale":"Ancient envoy language does not authorize modern coercive expansion."},
-    {"note":"Now is the day of salvation is an urgent appeal, not a warrant for manipulative altar calls, sleep deprivation, crisis pressure, threats, or bypassing informed consent.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["2cor-greek","nets-lxx"],"scripture_references":["2 Corinthians 6:1-2","Isaiah 49:8"],"traditions":["Academic","Christian"],"rationale":"Urgency never removes consent and safeguarding obligations."},
-    {"note":"Paul's hardship catalog in chapter 6 commends endurance but cannot make suffering, poverty, sleeplessness, hunger, or beatings leadership qualifications to reproduce.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["andrews-hardships","2cor-greek"],"scripture_references":["2 Corinthians 6:3-10"],"traditions":["Academic","Christian"],"rationale":"Rhetorical testimony interprets affliction and does not command abuse."},
-    {"note":"The openhearted appeal is relational rhetoric and cannot excuse leaders who demand emotional access, loyalty, disclosure, or affection from people under their authority.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["2cor-greek","furnish-2cor"],"scripture_references":["2 Corinthians 6:11-13","2 Corinthians 7:2-4"],"traditions":["Academic","Christian"],"rationale":"Reciprocity language does not cancel power analysis or consent."},
-    {"note":"Unequal yoking may address idolatrous association, opponents, communal boundaries, or a separate letter unit; it does not directly name interracial marriage, interfaith marriage, business contracts, or friendship.","note_type":"interpretive-caution","certainty":"disputed","dispute_status":"major_scholarly_disagreement","sources":["thrall-2cor","furnish-2cor"],"scripture_references":["2 Corinthians 6:14-7:1"],"traditions":["Academic","Christian"],"rationale":"Modern applications require analogical arguments and cannot be treated as lexical definitions."},
-    {"note":"Temple and purity language cannot authorize racism, caste, misogyny, anti-LGBTQ coercion, social isolation, or treating other people as contamination.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"denominational_disagreement","sources":["2cor-greek","thiessen-jewish-paul"],"scripture_references":["2 Corinthians 6:14-7:1"],"traditions":["Academic","Christian"],"rationale":"A holiness appeal does not define marginalized identities as idols or impurity."},
-    {"note":"Godly grief is evaluated by movement toward repair, not by emotional intensity, public humiliation, self-hatred, or compliance with an authority figure.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","sources":["2cor-greek","furnish-2cor"],"scripture_references":["2 Corinthians 7:8-12"],"traditions":["Academic","Christian"],"rationale":"Paul lists earnest action and relational change rather than celebrating pain for itself."},
-    {"note":"Titus's report is filtered through Paul's retelling; the Corinthians' and Titus's independent words are unavailable.","note_type":"historical-context","certainty":"strong_consensus","dispute_status":"historical_uncertainty","sources":["2cor-greek","furnish-2cor"],"scripture_references":["2 Corinthians 7:5-16"],"traditions":["Academic"],"rationale":"Epistolary narration supplies one situated perspective."},
-    {"note":"Macedonian deep poverty and generosity cannot be romanticized or used to pressure people in poverty to give beyond basic needs.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["friesen-poverty","2cor-greek"],"scripture_references":["2 Corinthians 8:1-5"],"traditions":["Academic","Christian"],"rationale":"Voluntary participation and relief rather than affliction frame the larger appeal."},
-    {"note":"Messiah becoming poor is christological rhetoric within the collection appeal; its incarnation, crucifixion, status, and economic senses are debated.","note_type":"theological-interpretation","certainty":"disputed","dispute_status":"denominational_disagreement","sources":["seifrid-2cor","furnish-2cor"],"scripture_references":["2 Corinthians 8:9"],"traditions":["Academic","Christian"],"rationale":"The compressed contrast supports overlapping theological readings."},
-    {"note":"Equality in 2 Corinthians 8 concerns mutual relief and sufficiency, while exact distributive, reciprocal, or egalitarian economic implications remain debated.","note_type":"theological-interpretation","certainty":"strong_consensus","dispute_status":"major_scholarly_disagreement","sources":["downs-collection","longenecker-poor"],"scripture_references":["2 Corinthians 8:13-15"],"traditions":["Academic","Christian"],"rationale":"Isotes and manna frame the goal without a complete economic constitution."},
-    {"note":"The collection is material solidarity among assemblies and cannot justify financial coercion, prosperity promises, donor threats, collection quotas, opaque accounts, or enrichment of leaders; financial accountability is integral to responsible application.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["downs-collection","2cor-greek"],"scripture_references":["2 Corinthians 8:1-9:15"],"traditions":["Academic","Christian"],"rationale":"Voluntariness, equality, plural delegation, public honor, service, and thanksgiving oppose extraction."},
-    {"note":"Paul's use of Macedonian and Corinthian eagerness creates social pressure and deserves ethical scrutiny even while he explicitly rejects compulsion.","note_type":"interpretive-caution","certainty":"probable","dispute_status":"minor_scholarly_disagreement","sources":["bruehler-giving","downs-collection"],"scripture_references":["2 Corinthians 8:1-5","2 Corinthians 9:1-7"],"traditions":["Academic","Christian"],"rationale":"Rhetorical comparison can motivate and pressure simultaneously."},
-    {"note":"Titus and unnamed brothers model plural financial accountability, but their anonymity prevents confident identification with Luke or another known coworker.","note_type":"historical-context","certainty":"strong_consensus","dispute_status":"historical_uncertainty","sources":["downs-collection","furnish-2cor"],"scripture_references":["2 Corinthians 8:16-24"],"traditions":["Academic"],"rationale":"The delegates' functions are clearer than their names."},
-    {"note":"God loves a cheerful giver describes willing disposition and cannot justify forced cheerfulness, shame, debt-financed giving, or withholding care from reluctant people.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["2cor-greek","bruehler-giving"],"scripture_references":["2 Corinthians 9:5-7"],"traditions":["Academic","Christian"],"rationale":"Paul explicitly contrasts voluntary decision with reluctance and compulsion."},
-    {"note":"Sowing and reaping imagery culminates in sufficiency, righteousness, service, thanksgiving, and fellowship, not guaranteed personal wealth or immunity from hardship.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"denominational_disagreement","sources":["bruehler-giving","2cor-greek"],"scripture_references":["2 Corinthians 9:6-15"],"traditions":["Academic","Christian"],"rationale":"The paragraph names communal and doxological outcomes rather than a prosperity contract."},
-    {"note":"Chapters 10-13's sharp tone may follow new information, address another audience segment, or preserve a different letter; certainty about sequence should remain limited.","note_type":"literary-observation","certainty":"disputed","dispute_status":"major_scholarly_disagreement","sources":["jones-unity","long-apology"],"scripture_references":["2 Corinthians 10:1-13:10"],"traditions":["Academic"],"rationale":"Tone alone cannot determine editorial history."},
-    {"note":"Paul's opponents are visible only through polemic; reconstructing one coherent heresy, ethnicity, class, gender, or institution risks circular caricature.","note_type":"interpretive-caution","certainty":"insufficient_evidence","dispute_status":"historical_uncertainty","sources":["furnish-2cor","forbes-rhetoric"],"scripture_references":["2 Corinthians 10:1-13:10"],"traditions":["Academic"],"rationale":"The rivals left no independent testimony in the record."},
-    {"note":"Paul's claim that his authority is for building up rather than tearing down provides an ethical criterion but not immunity from evaluating his threats, rhetoric, or effects.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","sources":["2cor-greek","long-apology"],"scripture_references":["2 Corinthians 10:8","2 Corinthians 13:10"],"traditions":["Academic","Christian"],"rationale":"Stated purpose and accountable impact must both be examined."},
-    {"note":"Taking every thought captive is martial metaphor in an apostolic dispute and cannot authorize mind control, censorship, anti-intellectualism, conspiracy thinking, or punishment for questions.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["2cor-greek","forbes-rhetoric"],"scripture_references":["2 Corinthians 10:3-6"],"traditions":["Academic","Christian"],"rationale":"Polemic against boasting does not grant total control over another person's cognition."},
-    {"note":"Paul's boasting in assigned spheres negotiates honor and jurisdiction; it cannot validate territorial ministry monopolies, celebrity brands, or colonial possession of communities.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","sources":["forbes-rhetoric","2cor-greek"],"scripture_references":["2 Corinthians 10:12-18"],"traditions":["Academic","Christian"],"rationale":"The argument limits self-commendation even while defending mission reach."},
-    {"note":"The super-apostles are unnamed and the phrase is ironic; it should not be confidently mapped onto the Jerusalem apostles or a modern denomination.","note_type":"historical-context","certainty":"probable","dispute_status":"historical_uncertainty","sources":["furnish-2cor","2cor-greek"],"scripture_references":["2 Corinthians 11:5","2 Corinthians 12:11"],"traditions":["Academic"],"rationale":"Identity proposals exceed the available descriptors."},
-    {"note":"Satan disguising as an angel of light is polemical metaphor and cannot justify dangerous exorcism, paranoia, conspiracy theories, or treating all critics as demonic agents.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["2cor-greek","furnish-2cor"],"scripture_references":["2 Corinthians 11:13-15"],"traditions":["Academic","Christian"],"rationale":"Rhetorical denunciation does not provide a diagnostic method for persons or illness."},
-    {"note":"Paul's fool's speech parodies boasting while also exercising power through it; interpreters should attend to irony, escalation, and possible harm rather than imitate invective.","note_type":"literary-observation","certainty":"strong_consensus","dispute_status":"minor_scholarly_disagreement","sources":["forbes-rhetoric","andrews-hardships"],"scripture_references":["2 Corinthians 11:16-12:13"],"traditions":["Academic"],"rationale":"Repeated metacommentary marks a deliberately unstable performance."},
-    {"note":"Paul's ethnicity claims in the fool's speech are defensive rhetoric and cannot authorize antisemitism, ethnic ranking, racial purity, or Christian appropriation of Jewish identity.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["thiessen-jewish-paul","2cor-greek"],"scripture_references":["2 Corinthians 11:21-22"],"traditions":["Academic","Christian","Jewish"],"rationale":"A Jewish apostle contests rivals without granting later racial hierarchy."},
-    {"note":"The hardship catalog cannot justify exploiting workers, demanding unpaid ministry, concealing unsafe travel, ignoring trauma, or making injury proof of spiritual authority.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["andrews-hardships","friesen-poverty"],"scripture_references":["2 Corinthians 11:23-33"],"traditions":["Academic","Christian"],"rationale":"Counter-boast describes endured harms rather than a leadership employment standard."},
-    {"note":"The escape through a window in Damascus reverses triumphal honor, but coordinating Aretas, the ethnarch, Acts, and external chronology remains historically uncertain.","note_type":"historical-context","certainty":"probable","dispute_status":"chronological_uncertainty","sources":["furnish-2cor","2cor-greek"],"scripture_references":["2 Corinthians 11:32-33"],"traditions":["Academic"],"rationale":"The episode is narrated briefly and surviving external evidence does not settle every office and date."},
-    {"note":"Third heaven and paradise reflect ancient cosmological and visionary discourse; the report does not supply a map of heaven, a reproducible ascent method, or authorization to rank modern visionaries.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"historical_uncertainty","sources":["gooder-heaven","2cor-greek"],"scripture_references":["2 Corinthians 12:1-6"],"traditions":["Academic","Christian"],"rationale":"Paul withholds content and twice confesses ignorance about bodily mode."},
-    {"note":"The thorn in the flesh is deliberately unidentified; diagnosing it as a specific disease, disability, temptation, opponent, mental illness, or demon should be labeled speculative.","note_type":"interpretive-caution","certainty":"insufficient_evidence","dispute_status":"historical_uncertainty","sources":["furnish-2cor","basselin-disability"],"scripture_references":["2 Corinthians 12:7-10"],"traditions":["Academic","Christian"],"rationale":"No symptom, duration, or concrete referent is named."},
-    {"note":"The thorn in the flesh cannot justify disability stigma, refusing treatment, medical neglect, dangerous exorcism, blaming patients, or claiming all illness must remain unhealed.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["basselin-disability","2cor-greek"],"scripture_references":["2 Corinthians 12:7-10"],"traditions":["Academic","Christian"],"rationale":"An unidentified Pauline metaphor supplies no universal medical rule."},
-    {"note":"Power in weakness can resist prestige and domination, but it must not glorify suffering, silence a victim, romanticize poverty, or pressure people to remain in danger.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["savage-weakness","basselin-disability"],"scripture_references":["2 Corinthians 12:8-10","2 Corinthians 13:3-4"],"traditions":["Academic","Christian"],"rationale":"Divine solidarity amid limitation is not moral approval of preventable harm."},
-    {"note":"Signs of an apostle occur in retrospective polemic and cannot serve as a simple modern test that excuses failed predictions, unsafe miracles, medical neglect, or financial exploitation.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"denominational_disagreement","sources":["2cor-greek","furnish-2cor"],"scripture_references":["2 Corinthians 12:11-13"],"traditions":["Academic","Christian"],"rationale":"Endurance and contested rhetoric surround the phrase; safeguarding remains independent."},
-    {"note":"Paul's parental spending metaphor cannot justify leaders who infantilize adults, erase consent, demand loyalty, or conceal financial dependence and conflicts of interest.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["2cor-greek","friesen-poverty"],"scripture_references":["2 Corinthians 12:14-18"],"traditions":["Academic","Christian"],"rationale":"Affectionate metaphor does not transfer parental control to institutions."},
-    {"note":"Warnings about impurity in 12:21 cannot authorize public shaming, sexual abuse, misogyny, anti-LGBTQ coercion, conversion practices, or denial of civil and medical care.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"denominational_disagreement","sources":["2cor-greek","furnish-2cor"],"scripture_references":["2 Corinthians 12:19-21"],"traditions":["Academic","Christian"],"rationale":"Ancient vice language is not a mandate to harm modern persons."},
-    {"note":"Two or three witnesses in chapter 13 belongs to a planned encounter and cannot replace trauma-informed investigation, due process, mandatory reporting, or evidence standards in abuse cases.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["2cor-greek","nets-lxx"],"scripture_references":["2 Corinthians 13:1","Deuteronomy 19:15"],"traditions":["Academic","Christian"],"rationale":"Scriptural legal analogy does not exhaust modern safeguarding obligations."},
-    {"note":"Examine yourselves is plural and rhetorically turns the demand for proof back on the community; it cannot authorize scrupulosity, coercive confession, surveillance, or mental-health stigma.","note_type":"interpretive-caution","certainty":"probable","dispute_status":"major_scholarly_disagreement","sources":["2cor-greek","seifrid-2cor"],"scripture_references":["2 Corinthians 13:5-6"],"traditions":["Academic","Christian"],"rationale":"Communal apostolic dispute differs from compulsive private self-monitoring."},
-    {"note":"Paul's threatened discipline must be held with his stated aim of restoration and building up; it cannot legitimate authoritarian discipline, public shaming, violence, or retaliation against critics.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["2cor-greek","long-apology"],"scripture_references":["2 Corinthians 13:1-10"],"traditions":["Academic","Christian"],"rationale":"Power is expressly limited by constructive purpose and accountable truth."},
-    {"note":"The final appeal to restoration, comfort, shared mind, and peace is not a command to preserve institutional unity by suppressing truth, dissent, survivor testimony, or just conflict.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["2cor-greek","furnish-2cor"],"scripture_references":["2 Corinthians 13:11-12"],"traditions":["Academic","Christian"],"rationale":"Peace without justice and repair would contradict the letter's concern for truth and accountable ministry."},
-    {"note":"The grace-love-fellowship benediction is important to later Trinitarian reception but does not by itself articulate Nicene terminology or settle every doctrinal relation.","note_type":"later-reception","certainty":"strong_consensus","dispute_status":"denominational_disagreement","sources":["2cor-greek","furnish-2cor"],"scripture_references":["2 Corinthians 13:14"],"traditions":["Academic","Christian"],"rationale":"Triadic liturgical wording precedes later technical doctrinal formulation."},
-    {"note":"Nothing in 2 Corinthians authorizes nationalism, partisan capture, conspiracy theories, religious violence, forced conversion, colonial mission, or contempt for Romans, Greeks, Jews, or any modern people.","note_type":"interpretive-caution","certainty":"strong_consensus","dispute_status":"not_disputed","sources":["2cor-greek","thiessen-jewish-paul"],"scripture_references":["2 Corinthians 4:1-6","2 Corinthians 5:18-20"],"traditions":["Academic","Christian"],"rationale":"Occasional apostolic polemic and ambassador metaphor provide no modern ethnic or state mandate."},
-    {"note":"New creation, bodily renewal, material collection, and accountable stewardship resist ecological neglect, though specific environmental policies require arguments beyond direct textual command.","note_type":"canonical-connection","certainty":"probable","dispute_status":"minor_scholarly_disagreement","sources":["2cor-greek","harris-2cor"],"scripture_references":["2 Corinthians 4:7-5:17","2 Corinthians 8:1-9:15"],"traditions":["Academic","Christian"],"rationale":"Embodied and material horizons support care for created life without yielding a policy blueprint."}
+    {
+      "note": "Paul and Timothy are named senders, but Paul remains the dominant voice; co-sender language should neither erase Timothy nor invent equal authorship.",
+      "note_type": "literary-observation",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 1:1"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Prescript and first-person usage support a differentiated collaborative model."
+    },
+    {
+      "note": "The mid-50s date and Macedonian provenance are probable reconstructions, not explicit colophons.",
+      "note_type": "historical-context",
+      "certainty": "probable",
+      "dispute_status": "chronological_uncertainty",
+      "sources": [
+        "furnish-2cor",
+        "harris-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 7:5-16"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Travel comparison provides relative rather than absolute dating."
+    },
+    {
+      "note": "Canonical 2 Corinthians may preserve one letter or multiple Pauline letter units; abrupt seams justify investigation but not certainty about scissors-and-paste reconstruction.",
+      "note_type": "literary-observation",
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "jones-unity",
+        "long-apology",
+        "furnish-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 1:1",
+        "2 Corinthians 13:14"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Unity and partition models explain different features with unavoidable conjecture."
+    },
+    {
+      "note": "P46 and P99 attest early transmission, but manuscript evidence does not independently prove the original unity or partition of the letter.",
+      "note_type": "textual-observation",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "p46-csntm",
+        "ntvmr"
+      ],
+      "scripture_references": [
+        "2 Corinthians 1:1",
+        "2 Corinthians 13:14"
+      ],
+      "traditions": [
+        "Textual criticism"
+      ],
+      "rationale": "Extant witnesses transmit forms later than composition and do not preserve proposed separate letters."
+    },
+    {
+      "note": "Paul's claim of sincerity and clear conscience is self-presentation within damaged trust, not neutral proof that every decision was beyond criticism.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "2cor-greek",
+        "long-apology"
+      ],
+      "scripture_references": [
+        "2 Corinthians 1:12-24"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Travel apology is persuasive rhetoric as well as autobiographical report."
+    },
+    {
+      "note": "The changed itinerary should be reconstructed cautiously because 1 Corinthians, 2 Corinthians, Romans, and Acts do not provide a complete shared calendar.",
+      "note_type": "historical-context",
+      "certainty": "probable",
+      "dispute_status": "chronological_uncertainty",
+      "sources": [
+        "furnish-2cor",
+        "2cor-greek"
+      ],
+      "scripture_references": [
+        "2 Corinthians 1:15-2:4"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Each source is selective and differs in genre and purpose."
+    },
+    {
+      "note": "The painful visit and severe or tearful letter are strongly implied, but their dates, contents, delivery, and relation to chapters 10-13 remain disputed.",
+      "note_type": "historical-context",
+      "certainty": "probable",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "furnish-2cor",
+        "thrall-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 2:1-4",
+        "2 Corinthians 7:8-12"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The correspondence is incomplete and retrospective."
+    },
+    {
+      "note": "The offender and injured party are unnamed; identifying them with 1 Corinthians 5, an insult to Paul, or another case exceeds the evidence.",
+      "note_type": "interpretive-caution",
+      "certainty": "insufficient_evidence",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "furnish-2cor",
+        "thrall-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 2:5-11",
+        "2 Corinthians 7:12"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "No proposed incident fits every clue without inference."
+    },
+    {
+      "note": "Forgiveness in 2 Corinthians 2 aims to prevent overwhelming grief and restore love, but it cannot require reconciliation without safety, truth, consent, accountability, restitution, and repair.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 2:5-11"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Unknown case details cannot override modern safeguarding duties or erase consequences."
+    },
+    {
+      "note": "Satan language in the forgiveness appeal cannot justify dangerous exorcism, blaming survivors, denying medical care, or treating disagreement as demonic possession.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "2cor-greek",
+        "seifrid-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 2:10-11"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The text warns against destructive advantage without prescribing coercive ritual."
+    },
+    {
+      "note": "Paul's restless departure from Troas shows relational anxiety within mission and resists triumphalist portraits of uninterrupted certainty.",
+      "note_type": "literary-observation",
+      "certainty": "textually_explicit",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 2:12-13"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "An open door and lack of inner rest coexist."
+    },
+    {
+      "note": "Triumph imagery may cast Paul as captive, participant, spectacle, or a deliberately unstable combination; Roman military violence should remain visible.",
+      "note_type": "historical-context",
+      "certainty": "disputed",
+      "dispute_status": "lexical_uncertainty",
+      "sources": [
+        "bdag",
+        "hafemann-suffering"
+      ],
+      "scripture_references": [
+        "2 Corinthians 2:14"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Ancient triumphs displayed conquered bodies and thriambeuo has debated voice and force."
+    },
+    {
+      "note": "The aroma of Messiah is a metaphor for divergent reception; it must not stigmatize race, ethnicity, poverty, disability, illness, hygiene, or bodies as spiritually foul.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 2:14-16"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The metaphor concerns proclamation and judgment, not embodied prejudice."
+    },
+    {
+      "note": "Not peddling God's word challenges corrupt ministry, but should not become an unproved accusation against all paid teaching or a cover for unpaid labor.",
+      "note_type": "interpretive-caution",
+      "certainty": "probable",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "2cor-greek",
+        "friesen-poverty"
+      ],
+      "scripture_references": [
+        "2 Corinthians 2:17"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Commercial metaphor and apostolic economics require contextual rather than slogan-level application."
+    },
+    {
+      "note": "Letters of commendation belonged to ancient networks; Paul's living-letter metaphor does not abolish transparent references, safeguarding checks, or professional accountability.",
+      "note_type": "historical-context",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "winter-welfare",
+        "2cor-greek"
+      ],
+      "scripture_references": [
+        "2 Corinthians 3:1-3"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Rhetorical contrast with rivals is not a ban on accountable credentialing."
+    },
+    {
+      "note": "Letter kills but Spirit gives life belongs to a covenant-ministry contrast and cannot authorize anti-intellectualism, rejection of written Scripture, contempt for law, or leaders who evade policy and evidence.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "hafemann-covenant",
+        "2cor-greek"
+      ],
+      "scripture_references": [
+        "2 Corinthians 3:4-11"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The immediate argument contrasts ministries of condemnation and righteousness through scriptural exposition."
+    },
+    {
+      "note": "Old and new covenant rhetoric has been organized differently by dispensational, covenantal, sacramental, supersessionist, and other traditions; those systems should not be silently attributed to Paul.",
+      "note_type": "theological-interpretation",
+      "certainty": "tradition_dependent",
+      "dispute_status": "denominational_disagreement",
+      "sources": [
+        "hafemann-covenant",
+        "seifrid-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 3:6-14"
+      ],
+      "traditions": [
+        "Christian"
+      ],
+      "rationale": "Later systems synthesize texts beyond this occasional passage."
+    },
+    {
+      "note": "Moses' veil and hardened-mind language cannot justify antisemitism, supersessionism, describing Jews as spiritually blind, or treating living Judaism as a dead religion.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "thiessen-jewish-paul",
+        "2cor-greek",
+        "nets-lxx"
+      ],
+      "scripture_references": [
+        "2 Corinthians 3:7-18",
+        "Exodus 34:29-35"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian",
+        "Jewish"
+      ],
+      "rationale": "Paul's Jewish scriptural rereading is contested and includes no license for ethnic or religious harm."
+    },
+    {
+      "note": "The subject who turns to the Lord in 3:16 and the identity of the Lord in 3:17 are grammatically and theologically disputed.",
+      "note_type": "literary-observation",
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "furnish-2cor",
+        "2cor-greek"
+      ],
+      "scripture_references": [
+        "2 Corinthians 3:16-17"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Exodus intertext, pronouns, and Pauline christology permit several readings."
+    },
+    {
+      "note": "Where the Spirit of the Lord is, there is freedom concerns unveiled access and transformation; it cannot legitimate antinomianism, abuse of authority, or disregard for others' safety.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "denominational_disagreement",
+      "sources": [
+        "2cor-greek",
+        "seifrid-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 3:17-18"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Freedom is embedded in accountable ministry and transformation rather than autonomy from ethics."
+    },
+    {
+      "note": "Katoptrizomai may mean beholding as in a mirror or reflecting glory; translations should disclose the lexical uncertainty.",
+      "note_type": "textual-observation",
+      "certainty": "disputed",
+      "dispute_status": "lexical_uncertainty",
+      "sources": [
+        "bdag",
+        "furnish-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 3:18"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Rare middle-voice usage and context allow both emphases."
+    },
+    {
+      "note": "God shining light in hearts revoices creation and prophetic light language; it is theological metaphor, not a scientific account of cognition or vision.",
+      "note_type": "canonical-connection",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "2cor-greek",
+        "nets-lxx"
+      ],
+      "scripture_references": [
+        "2 Corinthians 4:6",
+        "Genesis 1:3"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Scriptural creation imagery supports the claim's rhetorical function."
+    },
+    {
+      "note": "Treasure in earthen vessels honors fragile bodies as bearers of divine power and cannot justify body shame, disability stigma, medical neglect, or treating workers as disposable containers.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "basselin-disability",
+        "2cor-greek"
+      ],
+      "scripture_references": [
+        "2 Corinthians 4:7-12"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Power belongs to God while vulnerability remains real and embodied."
+    },
+    {
+      "note": "Afflicted but not crushed is Paul's rhetorical testimony, not a promise that faithful people will never experience breakdown, trauma, depression, disability, or death.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "basselin-disability",
+        "savage-weakness"
+      ],
+      "scripture_references": [
+        "2 Corinthians 4:8-12"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The same argument acknowledges mortality, fear, and death."
+    },
+    {
+      "note": "Carrying Jesus' death in the body cannot authorize trauma glorification, self-harm, persecution seeking, medical neglect, or blaming victims for insufficient resilience.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "basselin-disability",
+        "2cor-greek"
+      ],
+      "scripture_references": [
+        "2 Corinthians 4:10-15"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Paul interprets harms endured; he does not command their production."
+    },
+    {
+      "note": "The outer and inner person contrast should not make matter evil or the body expendable, since Paul also expects embodied resurrection and accountability.",
+      "note_type": "theological-interpretation",
+      "certainty": "probable",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "furnish-2cor",
+        "harris-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 4:16-5:10"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Mortality and renewal belong within a resurrection argument."
+    },
+    {
+      "note": "Light momentary affliction is a comparative claim by an afflicted speaker and must not be used by outsiders to minimize abuse, genocide, grief, chronic illness, disability, or structural oppression.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "2cor-greek",
+        "basselin-disability"
+      ],
+      "scripture_references": [
+        "2 Corinthians 4:16-18"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Hope does not authorize minimizing another person's harm."
+    },
+    {
+      "note": "Earthly tent, heavenly building, nakedness, clothing, mortality, and Spirit form overlapping metaphors; one diagram of the intermediate state should not be presented as textually certain.",
+      "note_type": "theological-interpretation",
+      "certainty": "disputed",
+      "dispute_status": "denominational_disagreement",
+      "sources": [
+        "harris-2cor",
+        "furnish-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 5:1-10"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Spatial, architectural, and clothing images do not yield one uncontested chronology."
+    },
+    {
+      "note": "Walking by faith rather than sight does not mean ignoring observable evidence, medical diagnosis, financial records, abuse reports, or empirical reality.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 5:7"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The contrast concerns present absence from the Lord within eschatological hope."
+    },
+    {
+      "note": "The judgment seat affirms accountability but cannot justify terrorizing children, trauma survivors, disabled people, or mentally ill people with speculative punishments.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "denominational_disagreement",
+      "sources": [
+        "harris-2cor",
+        "2cor-greek"
+      ],
+      "scripture_references": [
+        "2 Corinthians 5:10-11"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Pastoral application must preserve proportionality, capacity, and safety beyond disputed systems."
+    },
+    {
+      "note": "Knowing Messiah according to flesh most likely concerns modes of evaluation; it cannot deny Jesus' Jewish body, historical life, or the value of embodied existence.",
+      "note_type": "interpretive-caution",
+      "certainty": "probable",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "furnish-2cor",
+        "2cor-greek"
+      ],
+      "scripture_references": [
+        "2 Corinthians 5:16"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Paul's resurrection and embodiment claims constrain anti-body readings."
+    },
+    {
+      "note": "New creation may be personal, communal, epistemic, and cosmic; reducing it to private self-improvement or disembodied escape narrows the phrase prematurely.",
+      "note_type": "theological-interpretation",
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "seifrid-2cor",
+        "2cor-greek"
+      ],
+      "scripture_references": [
+        "2 Corinthians 5:17"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Compressed syntax and Isaiah resonances sustain multiple dimensions."
+    },
+    {
+      "note": "Reconciliation begins with divine initiative and commissioned appeal, but it cannot be weaponized as reconciliation without safety, truth, consent, accountability, restitution, boundaries, and repair.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 5:18-21"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Theological reconciliation does not erase the ethical conditions of safe human relationship."
+    },
+    {
+      "note": "God made the sinless one to be sin is a compressed claim with sacrifice, representative, participation, and exchange readings; no single atonement system exhausts it.",
+      "note_type": "theological-interpretation",
+      "certainty": "disputed",
+      "dispute_status": "denominational_disagreement",
+      "sources": [
+        "seifrid-2cor",
+        "furnish-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 5:21"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Poetic antithesis supports several doctrinal constructions."
+    },
+    {
+      "note": "Ambassador language indicates representative appeal and cannot grant later missionaries diplomatic immunity, colonial authority, forced conversion, or power over local communities.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "bdag",
+        "winter-welfare"
+      ],
+      "scripture_references": [
+        "2 Corinthians 5:20"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Ancient envoy language does not authorize modern coercive expansion."
+    },
+    {
+      "note": "Now is the day of salvation is an urgent appeal, not a warrant for manipulative altar calls, sleep deprivation, crisis pressure, threats, or bypassing informed consent.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "2cor-greek",
+        "nets-lxx"
+      ],
+      "scripture_references": [
+        "2 Corinthians 6:1-2",
+        "Isaiah 49:8"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Urgency never removes consent and safeguarding obligations."
+    },
+    {
+      "note": "Paul's hardship catalog in chapter 6 commends endurance but cannot make suffering, poverty, sleeplessness, hunger, or beatings leadership qualifications to reproduce.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "andrews-hardships",
+        "2cor-greek"
+      ],
+      "scripture_references": [
+        "2 Corinthians 6:3-10"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Rhetorical testimony interprets affliction and does not command abuse."
+    },
+    {
+      "note": "The openhearted appeal is relational rhetoric and cannot excuse leaders who demand emotional access, loyalty, disclosure, or affection from people under their authority.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 6:11-13",
+        "2 Corinthians 7:2-4"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Reciprocity language does not cancel power analysis or consent."
+    },
+    {
+      "note": "Unequal yoking may address idolatrous association, opponents, communal boundaries, or a separate letter unit; it does not directly name interracial marriage, interfaith marriage, business contracts, or friendship.",
+      "note_type": "interpretive-caution",
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "thrall-2cor",
+        "furnish-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 6:14-7:1"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Modern applications require analogical arguments and cannot be treated as lexical definitions."
+    },
+    {
+      "note": "Temple and purity language cannot authorize racism, caste, misogyny, anti-LGBTQ coercion, social isolation, or treating other people as contamination.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "denominational_disagreement",
+      "sources": [
+        "2cor-greek",
+        "thiessen-jewish-paul"
+      ],
+      "scripture_references": [
+        "2 Corinthians 6:14-7:1"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "A holiness appeal does not define marginalized identities as idols or impurity."
+    },
+    {
+      "note": "Godly grief is evaluated by movement toward repair, not by emotional intensity, public humiliation, self-hatred, or compliance with an authority figure.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 7:8-12"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Paul lists earnest action and relational change rather than celebrating pain for itself."
+    },
+    {
+      "note": "Titus's report is filtered through Paul's retelling; the Corinthians' and Titus's independent words are unavailable.",
+      "note_type": "historical-context",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 7:5-16"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Epistolary narration supplies one situated perspective."
+    },
+    {
+      "note": "Macedonian deep poverty and generosity cannot be romanticized or used to pressure people in poverty to give beyond basic needs.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "friesen-poverty",
+        "2cor-greek"
+      ],
+      "scripture_references": [
+        "2 Corinthians 8:1-5"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Voluntary participation and relief rather than affliction frame the larger appeal."
+    },
+    {
+      "note": "Messiah becoming poor is christological rhetoric within the collection appeal; its incarnation, crucifixion, status, and economic senses are debated.",
+      "note_type": "theological-interpretation",
+      "certainty": "disputed",
+      "dispute_status": "denominational_disagreement",
+      "sources": [
+        "seifrid-2cor",
+        "furnish-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 8:9"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The compressed contrast supports overlapping theological readings."
+    },
+    {
+      "note": "Equality in 2 Corinthians 8 concerns mutual relief and sufficiency, while exact distributive, reciprocal, or egalitarian economic implications remain debated.",
+      "note_type": "theological-interpretation",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "downs-collection",
+        "longenecker-poor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 8:13-15"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Isotes and manna frame the goal without a complete economic constitution."
+    },
+    {
+      "note": "The collection is material solidarity among assemblies and cannot justify financial coercion, prosperity promises, donor threats, collection quotas, opaque accounts, or enrichment of leaders; financial accountability is integral to responsible application.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "downs-collection",
+        "2cor-greek"
+      ],
+      "scripture_references": [
+        "2 Corinthians 8:1-9:15"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Voluntariness, equality, plural delegation, public honor, service, and thanksgiving oppose extraction."
+    },
+    {
+      "note": "Paul's use of Macedonian and Corinthian eagerness creates social pressure and deserves ethical scrutiny even while he explicitly rejects compulsion.",
+      "note_type": "interpretive-caution",
+      "certainty": "probable",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "bruehler-giving",
+        "downs-collection"
+      ],
+      "scripture_references": [
+        "2 Corinthians 8:1-5",
+        "2 Corinthians 9:1-7"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Rhetorical comparison can motivate and pressure simultaneously."
+    },
+    {
+      "note": "Titus and unnamed brothers model plural financial accountability, but their anonymity prevents confident identification with Luke or another known coworker.",
+      "note_type": "historical-context",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "downs-collection",
+        "furnish-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 8:16-24"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The delegates' functions are clearer than their names."
+    },
+    {
+      "note": "God loves a cheerful giver describes willing disposition and cannot justify forced cheerfulness, shame, debt-financed giving, or withholding care from reluctant people.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "2cor-greek",
+        "bruehler-giving"
+      ],
+      "scripture_references": [
+        "2 Corinthians 9:5-7"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Paul explicitly contrasts voluntary decision with reluctance and compulsion."
+    },
+    {
+      "note": "Sowing and reaping imagery culminates in sufficiency, righteousness, service, thanksgiving, and fellowship, not guaranteed personal wealth or immunity from hardship.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "denominational_disagreement",
+      "sources": [
+        "bruehler-giving",
+        "2cor-greek"
+      ],
+      "scripture_references": [
+        "2 Corinthians 9:6-15"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The paragraph names communal and doxological outcomes rather than a prosperity contract."
+    },
+    {
+      "note": "Chapters 10-13's sharp tone may follow new information, address another audience segment, or preserve a different letter; certainty about sequence should remain limited.",
+      "note_type": "literary-observation",
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "jones-unity",
+        "long-apology"
+      ],
+      "scripture_references": [
+        "2 Corinthians 10:1-13:10"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Tone alone cannot determine editorial history."
+    },
+    {
+      "note": "Paul's opponents are visible only through polemic; reconstructing one coherent heresy, ethnicity, class, gender, or institution risks circular caricature.",
+      "note_type": "interpretive-caution",
+      "certainty": "insufficient_evidence",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "furnish-2cor",
+        "forbes-rhetoric"
+      ],
+      "scripture_references": [
+        "2 Corinthians 10:1-13:10"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The rivals left no independent testimony in the record."
+    },
+    {
+      "note": "Paul's claim that his authority is for building up rather than tearing down provides an ethical criterion but not immunity from evaluating his threats, rhetoric, or effects.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "2cor-greek",
+        "long-apology"
+      ],
+      "scripture_references": [
+        "2 Corinthians 10:8",
+        "2 Corinthians 13:10"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Stated purpose and accountable impact must both be examined."
+    },
+    {
+      "note": "Taking every thought captive is martial metaphor in an apostolic dispute and cannot authorize mind control, censorship, anti-intellectualism, conspiracy thinking, or punishment for questions.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "2cor-greek",
+        "forbes-rhetoric"
+      ],
+      "scripture_references": [
+        "2 Corinthians 10:3-6"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Polemic against boasting does not grant total control over another person's cognition."
+    },
+    {
+      "note": "Paul's boasting in assigned spheres negotiates honor and jurisdiction; it cannot validate territorial ministry monopolies, celebrity brands, or colonial possession of communities.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "forbes-rhetoric",
+        "2cor-greek"
+      ],
+      "scripture_references": [
+        "2 Corinthians 10:12-18"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "The argument limits self-commendation even while defending mission reach."
+    },
+    {
+      "note": "The super-apostles are unnamed and the phrase is ironic; it should not be confidently mapped onto the Jerusalem apostles or a modern denomination.",
+      "note_type": "historical-context",
+      "certainty": "probable",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "furnish-2cor",
+        "2cor-greek"
+      ],
+      "scripture_references": [
+        "2 Corinthians 11:5",
+        "2 Corinthians 12:11"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Identity proposals exceed the available descriptors."
+    },
+    {
+      "note": "Satan disguising as an angel of light is polemical metaphor and cannot justify dangerous exorcism, paranoia, conspiracy theories, or treating all critics as demonic agents.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 11:13-15"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Rhetorical denunciation does not provide a diagnostic method for persons or illness."
+    },
+    {
+      "note": "Paul's fool's speech parodies boasting while also exercising power through it; interpreters should attend to irony, escalation, and possible harm rather than imitate invective.",
+      "note_type": "literary-observation",
+      "certainty": "strong_consensus",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "forbes-rhetoric",
+        "andrews-hardships"
+      ],
+      "scripture_references": [
+        "2 Corinthians 11:16-12:13"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Repeated metacommentary marks a deliberately unstable performance."
+    },
+    {
+      "note": "Paul's ethnicity claims in the fool's speech are defensive rhetoric and cannot authorize antisemitism, ethnic ranking, racial purity, or Christian appropriation of Jewish identity.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "thiessen-jewish-paul",
+        "2cor-greek"
+      ],
+      "scripture_references": [
+        "2 Corinthians 11:21-22"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian",
+        "Jewish"
+      ],
+      "rationale": "A Jewish apostle contests rivals without granting later racial hierarchy."
+    },
+    {
+      "note": "The hardship catalog cannot justify exploiting workers, demanding unpaid ministry, concealing unsafe travel, ignoring trauma, or making injury proof of spiritual authority.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "andrews-hardships",
+        "friesen-poverty"
+      ],
+      "scripture_references": [
+        "2 Corinthians 11:23-33"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Counter-boast describes endured harms rather than a leadership employment standard."
+    },
+    {
+      "note": "The escape through a window in Damascus reverses triumphal honor, but coordinating Aretas, the ethnarch, Acts, and external chronology remains historically uncertain.",
+      "note_type": "historical-context",
+      "certainty": "probable",
+      "dispute_status": "chronological_uncertainty",
+      "sources": [
+        "furnish-2cor",
+        "2cor-greek"
+      ],
+      "scripture_references": [
+        "2 Corinthians 11:32-33"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "The episode is narrated briefly and surviving external evidence does not settle every office and date."
+    },
+    {
+      "note": "Third heaven and paradise reflect ancient cosmological and visionary discourse; the report does not supply a map of heaven, a reproducible ascent method, or authorization to rank modern visionaries.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "gooder-heaven",
+        "2cor-greek"
+      ],
+      "scripture_references": [
+        "2 Corinthians 12:1-6"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Paul withholds content and twice confesses ignorance about bodily mode."
+    },
+    {
+      "note": "The thorn in the flesh is deliberately unidentified; diagnosing it as a specific disease, disability, temptation, opponent, mental illness, or demon should be labeled speculative.",
+      "note_type": "interpretive-caution",
+      "certainty": "insufficient_evidence",
+      "dispute_status": "historical_uncertainty",
+      "sources": [
+        "furnish-2cor",
+        "basselin-disability"
+      ],
+      "scripture_references": [
+        "2 Corinthians 12:7-10"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "No symptom, duration, or concrete referent is named."
+    },
+    {
+      "note": "The thorn in the flesh cannot justify disability stigma, refusing treatment, medical neglect, dangerous exorcism, blaming patients, or claiming all illness must remain unhealed.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "basselin-disability",
+        "2cor-greek"
+      ],
+      "scripture_references": [
+        "2 Corinthians 12:7-10"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "An unidentified Pauline metaphor supplies no universal medical rule."
+    },
+    {
+      "note": "Power in weakness can resist prestige and domination, but it must not glorify suffering, silence a victim, romanticize poverty, or pressure people to remain in danger.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "savage-weakness",
+        "basselin-disability"
+      ],
+      "scripture_references": [
+        "2 Corinthians 12:8-10",
+        "2 Corinthians 13:3-4"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Divine solidarity amid limitation is not moral approval of preventable harm."
+    },
+    {
+      "note": "Signs of an apostle occur in retrospective polemic and cannot serve as a simple modern test that excuses failed predictions, unsafe miracles, medical neglect, or financial exploitation.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "denominational_disagreement",
+      "sources": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 12:11-13"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Endurance and contested rhetoric surround the phrase; safeguarding remains independent."
+    },
+    {
+      "note": "Paul's parental spending metaphor cannot justify leaders who infantilize adults, erase consent, demand loyalty, or conceal financial dependence and conflicts of interest.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "2cor-greek",
+        "friesen-poverty"
+      ],
+      "scripture_references": [
+        "2 Corinthians 12:14-18"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Affectionate metaphor does not transfer parental control to institutions."
+    },
+    {
+      "note": "Warnings about impurity in 12:21 cannot authorize public shaming, sexual abuse, misogyny, anti-LGBTQ coercion, conversion practices, or denial of civil and medical care.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "denominational_disagreement",
+      "sources": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 12:19-21"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Ancient vice language is not a mandate to harm modern persons."
+    },
+    {
+      "note": "Two or three witnesses in chapter 13 belongs to a planned encounter and cannot replace trauma-informed investigation, due process, mandatory reporting, or evidence standards in abuse cases.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "2cor-greek",
+        "nets-lxx"
+      ],
+      "scripture_references": [
+        "2 Corinthians 13:1",
+        "Deuteronomy 19:15"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Scriptural legal analogy does not exhaust modern safeguarding obligations."
+    },
+    {
+      "note": "Examine yourselves is plural and rhetorically turns the demand for proof back on the community; it cannot authorize scrupulosity, coercive confession, surveillance, or mental-health stigma.",
+      "note_type": "interpretive-caution",
+      "certainty": "probable",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "2cor-greek",
+        "seifrid-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 13:5-6"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Communal apostolic dispute differs from compulsive private self-monitoring."
+    },
+    {
+      "note": "Paul's threatened discipline must be held with his stated aim of restoration and building up; it cannot legitimate authoritarian discipline, public shaming, violence, or retaliation against critics.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "2cor-greek",
+        "long-apology"
+      ],
+      "scripture_references": [
+        "2 Corinthians 13:1-10"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Power is expressly limited by constructive purpose and accountable truth."
+    },
+    {
+      "note": "The final appeal to restoration, comfort, shared mind, and peace is not a command to preserve institutional unity by suppressing truth, dissent, survivor testimony, or just conflict.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 13:11-12"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Peace without justice and repair would contradict the letter's concern for truth and accountable ministry."
+    },
+    {
+      "note": "The grace-love-fellowship benediction is important to later Trinitarian reception but does not by itself articulate Nicene terminology or settle every doctrinal relation.",
+      "note_type": "later-reception",
+      "certainty": "strong_consensus",
+      "dispute_status": "denominational_disagreement",
+      "sources": [
+        "2cor-greek",
+        "furnish-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 13:14"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Triadic liturgical wording precedes later technical doctrinal formulation."
+    },
+    {
+      "note": "Nothing in 2 Corinthians authorizes nationalism, partisan capture, conspiracy theories, religious violence, forced conversion, colonial mission, or contempt for Romans, Greeks, Jews, or any modern people.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "not_disputed",
+      "sources": [
+        "2cor-greek",
+        "thiessen-jewish-paul"
+      ],
+      "scripture_references": [
+        "2 Corinthians 4:1-6",
+        "2 Corinthians 5:18-20"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Occasional apostolic polemic and ambassador metaphor provide no modern ethnic or state mandate."
+    },
+    {
+      "note": "New creation, bodily renewal, material collection, and accountable stewardship resist ecological neglect, though specific environmental policies require arguments beyond direct textual command.",
+      "note_type": "canonical-connection",
+      "certainty": "probable",
+      "dispute_status": "minor_scholarly_disagreement",
+      "sources": [
+        "2cor-greek",
+        "harris-2cor"
+      ],
+      "scripture_references": [
+        "2 Corinthians 4:7-5:17",
+        "2 Corinthians 8:1-9:15"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Embodied and material horizons support care for created life without yielding a policy blueprint."
+    }
   ],
   "common_questions": [
     "Who wrote 2 Corinthians and when?",
@@ -373,42 +2596,488 @@
     "How should the collection, fool's speech, visions, thorn, and weakness be interpreted?"
   ],
   "sources": [
-    {"id":"2cor-greek","title":"The Greek New Testament: SBL Edition","author":"Michael W. Holmes, ed.","publisher":"Society of Biblical Literature and Logos Bible Software","year":2010,"locator":"2 Corinthians 1-13","url":"https://www.sblgnt.com/download/","source_type":"scripture","supports":["scripture_references","claims","interpretive_notes","greek_words"],"notes":"Critical Greek base text used with textual apparatus resources."},
-    {"id":"nets-lxx","title":"A New English Translation of the Septuagint","author":"Albert Pietersma and Benjamin G. Wright, eds.","publisher":"Oxford University Press","year":2007,"locator":"Exodus, Psalms, Isaiah, Jeremiah","url":"https://ccat.sas.upenn.edu/nets/edition/","source_type":"ancient-primary-source","supports":["intertextuality","claims","interpretive_notes"],"notes":"Greek scriptural comparanda."},
-    {"id":"ntvmr","title":"New Testament Virtual Manuscript Room","author":"","publisher":"Institut für Neutestamentliche Textforschung","year":null,"locator":"2 Corinthians witnesses including P99","url":"https://ntvmr.uni-muenster.de/","source_type":"reference-work","supports":["claims","archaeology","timeline"],"notes":"Manuscript catalog, images, and textual workspace."},
-    {"id":"p46-csntm","title":"GA P46 Digital Images and Metadata","author":"","publisher":"Center for the Study of New Testament Manuscripts","year":null,"locator":"2 Corinthians","url":"https://manuscripts.csntm.org/manuscript/View/GA_P46","source_type":"museum-collection","supports":["claims","archaeology","timeline"],"notes":"Early Pauline codex images and metadata."},
-    {"id":"sinaiticus","title":"Codex Sinaiticus","author":"","publisher":"Codex Sinaiticus Project","year":null,"locator":"2 Corinthians","url":"https://www.codexsinaiticus.org/en/","source_type":"museum-collection","supports":["claims","archaeology"],"notes":"Fourth-century manuscript images and transcription."},
-    {"id":"vaticanus","title":"Codex Vaticanus Graecus 1209","author":"","publisher":"Biblioteca Apostolica Vaticana","year":null,"locator":"2 Corinthians","url":"https://digi.vatlib.it/view/MSS_Vat.gr.1209","source_type":"museum-collection","supports":["claims","archaeology"],"notes":"Digital manuscript images."},
-    {"id":"alexandrinus","title":"Codex Alexandrinus, Royal MS 1 D VIII","author":"","publisher":"British Library","year":null,"locator":"2 Corinthians","url":"https://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Royal_MS_1_D_VIII","source_type":"museum-collection","supports":["claims","archaeology"],"notes":"Digital catalog and images."},
-    {"id":"claromontanus","title":"Codex Claromontanus","author":"","publisher":"Bibliothèque nationale de France","year":null,"locator":"2 Corinthians","url":"https://gallica.bnf.fr/ark:/12148/btv1b84683111","source_type":"museum-collection","supports":["claims","archaeology"],"notes":"Greek-Latin Pauline manuscript images."},
-    {"id":"ascsa-corinth","title":"Ancient Corinth Excavations","author":"","publisher":"American School of Classical Studies at Athens","year":null,"locator":"Corinth","url":"https://www.ascsa.edu.gr/excavations/ancient-corinth","source_type":"excavation-report","supports":["historical_context","archaeology"],"notes":"Primary archaeological program and publication gateway."},
-    {"id":"phi-inscriptions","title":"Searchable Greek Inscriptions","author":"","publisher":"Packard Humanities Institute","year":null,"locator":"Achaia and Macedonia","url":"https://inscriptions.packhum.org/","source_type":"ancient-primary-source","supports":["historical_context","archaeology"],"notes":"Searchable epigraphic corpus."},
-    {"id":"furnish-2cor","title":"II Corinthians","author":"Victor Paul Furnish","publisher":"Yale University Press","year":1984,"locator":"passim","url":"https://yalebooks.yale.edu/book/9780300139839/ii-corinthians/","source_type":"academic-book","supports":["claims","interpretive_notes","literary_context"],"notes":"Major historical-critical commentary."},
-    {"id":"seifrid-2cor","title":"The Second Letter to the Corinthians","author":"Mark A. Seifrid","publisher":"Eerdmans","year":2014,"locator":"passim","url":"https://www.eerdmans.com/9780802837394/the-second-letter-to-the-corinthians/","source_type":"academic-book","supports":["claims","interpretive_notes","canonical_context"],"notes":"Detailed exegetical commentary with a unity reading."},
-    {"id":"harris-2cor","title":"The Second Epistle to the Corinthians","author":"Murray J. Harris","publisher":"Eerdmans","year":2005,"locator":"passim","url":"https://www.eerdmans.com/9780802823939/the-second-epistle-to-the-corinthians/","source_type":"academic-book","supports":["claims","interpretive_notes","greek_words"],"notes":"Detailed Greek-text commentary."},
-    {"id":"thrall-2cor","title":"A Critical and Exegetical Commentary on the Second Epistle to the Corinthians","author":"Margaret E. Thrall","publisher":"Bloomsbury T&T Clark","year":2004,"locator":"passim","url":"https://www.bloomsbury.com/us/critical-and-exegetical-commentary-on-the-second-epistle-to-the-corinthians-9780567084354/","source_type":"academic-book","supports":["claims","interpretive_notes","literary_context"],"notes":"Two-volume critical commentary."},
-    {"id":"long-apology","title":"Ancient Rhetoric and Paul's Apology","author":"Fredrick J. Long","publisher":"Cambridge University Press","year":2004,"locator":"passim","url":"https://www.cambridge.org/core/books/ancient-rhetoric-and-pauls-apology/03B345935C4E9DCCC7478EF3EC600925","source_type":"academic-book","supports":["claims","interpretive_notes","literary_context"],"notes":"Rhetorical argument for compositional unity."},
-    {"id":"jones-unity","title":"Rhetorical Criticism and the Unity of 2 Corinthians: One Epilogue, or More?","author":"Ivor H. Jones","publisher":"New Testament Studies","year":2008,"locator":"54:496-524","url":"https://www.cambridge.org/core/journals/new-testament-studies/article/rhetorical-criticism-and-the-unity-of-2-corinthians-one-epilogue-or-more/6EB24A7B281F015F5570DA26DEE9E2F4","source_type":"journal-article","supports":["claims","interpretive_notes","literary_context"],"notes":"Critical assessment of unity arguments."},
-    {"id":"savage-weakness","title":"Power through Weakness","author":"Timothy B. Savage","publisher":"Cambridge University Press","year":1996,"locator":"passim","url":"https://www.cambridge.org/core/books/power-through-weakness/C5352F788140662D2B765DDB27743A9C","source_type":"academic-book","supports":["claims","interpretive_notes","historical_context"],"notes":"Study of ministry, weakness, and first-century values."},
-    {"id":"basselin-disability","title":"Fleshing Out the Strength of Weakness: Intercorporeality in the Theological Discourse on Disability","author":"Tim Basselin","publisher":"Harvard Theological Review","year":2024,"locator":"2 Corinthians 12","url":"https://www.cambridge.org/core/journals/harvard-theological-review/article/fleshing-out-the-strength-of-weakness-intercorporeality-in-the-theological-discourse-on-disability/C56B395F36B3208ABE55C6AA4896263C","source_type":"journal-article","supports":["claims","interpretive_notes"],"notes":"Disability-critical theological analysis of weakness."},
-    {"id":"andrews-hardships","title":"Too Weak Not to Lead: The Form and Function of 2 Cor 11.23b-33","author":"Scott B. Andrews","publisher":"New Testament Studies","year":1995,"locator":"41:263-276","url":"https://www.cambridge.org/core/journals/new-testament-studies/article/too-weak-not-to-lead-the-form-and-function-of-2-cor-1123b33/42E3F7821F156CAE3DAA04622C7DE1BB","source_type":"journal-article","supports":["claims","interpretive_notes","literary_context"],"notes":"Study of hardship catalogs and apostolic weakness."},
-    {"id":"bruehler-giving","title":"Proverbs, Persuasion and People: A Three-Dimensional Investigation of 2 Cor 9.6-15","author":"Bart B. Bruehler","publisher":"New Testament Studies","year":2002,"locator":"48:209-224","url":"https://www.cambridge.org/core/journals/new-testament-studies/article/abs/proverbs-persuasion-and-people-a-threedimensional-investigation-of-2-cor-9615/4C8B2912AD33F2E5879D2244BE96A88D","source_type":"journal-article","supports":["claims","interpretive_notes"],"notes":"Sapiential, rhetorical, and socioeconomic analysis of giving."},
-    {"id":"downs-collection","title":"The Offering of the Gentiles","author":"David J. Downs","publisher":"Mohr Siebeck","year":2008,"locator":"2 Corinthians 8-9","url":"https://www.mohrsiebeck.com/en/book/the-offering-of-the-gentiles-9783161496073","source_type":"academic-book","supports":["claims","interpretive_notes","historical_context"],"notes":"Study of the collection's chronology and theology."},
-    {"id":"longenecker-poor","title":"Remember the Poor","author":"Bruce W. Longenecker","publisher":"Eerdmans","year":2010,"locator":"Pauline collection and economics","url":"https://www.eerdmans.com/9780802863737/remember-the-poor/","source_type":"academic-book","supports":["claims","interpretive_notes","historical_context"],"notes":"Early Christian economic practice and the collection."},
-    {"id":"friesen-poverty","title":"Paul and Economics","author":"Steven J. Friesen","publisher":"Fortress Press","year":2017,"locator":"Corinthian assemblies and collection","url":"https://www.fortresspress.com/store/product/9781451481662/Paul-and-Economics","source_type":"academic-book","supports":["claims","interpretive_notes","historical_context"],"notes":"Economic stratification and Pauline practice."},
-    {"id":"hafemann-covenant","title":"Paul, Moses, and the History of Israel","author":"Scott J. Hafemann","publisher":"Mohr Siebeck","year":1995,"locator":"2 Corinthians 3","url":"https://www.mohrsiebeck.com/en/book/paul-moses-and-the-history-of-israel-9783161462702/","source_type":"academic-book","supports":["claims","interpretive_notes","intertextuality"],"notes":"Study of Moses, covenant, and suffering."},
-    {"id":"hafemann-suffering","title":"Suffering and Ministry in the Spirit","author":"Scott J. Hafemann","publisher":"Eerdmans","year":1990,"locator":"2 Corinthians 2:14-3:3","url":"https://wipfandstock.com/9781610970860/suffering-and-the-spirit/","source_type":"academic-book","supports":["claims","interpretive_notes"],"notes":"Triumph, suffering, and apostolic ministry; linked to the available reprint."},
-    {"id":"thiessen-jewish-paul","title":"A Jewish Paul","author":"Matthew Thiessen","publisher":"Baker Academic","year":2023,"locator":"Paul, Israel, and Scripture","url":"https://bakeracademic.com/p/a-jewish-paul-matthew-thiessen/542258","source_type":"academic-book","supports":["claims","interpretive_notes","second_temple_context"],"notes":"Paul's Jewish identity and scriptural reasoning."},
-    {"id":"winter-welfare","title":"Seek the Welfare of the City","author":"Bruce W. Winter","publisher":"Eerdmans","year":1994,"locator":"Pauline public and civic life","url":"https://www.eerdmans.com/9780802840912/seek-the-welfare-of-the-city/","source_type":"academic-book","supports":["claims","interpretive_notes","historical_context"],"notes":"Greco-Roman public, civic, and social context."},
-    {"id":"forbes-rhetoric","title":"Comparison, Self-Praise and Irony","author":"Christopher Forbes","publisher":"New Testament Studies","year":1986,"locator":"32:1-30","url":"https://doi.org/10.1017/S0028688500013485","source_type":"journal-article","supports":["claims","interpretive_notes","literary_context"],"notes":"Ancient rhetoric, comparison, and Pauline boasting."},
-    {"id":"gooder-heaven","title":"Only the Third Heaven? 2 Corinthians 12.1-10 and Heavenly Ascent","author":"Paula Gooder","publisher":"T&T Clark","year":2006,"locator":"2 Corinthians 12:1-10","url":"https://www.bloomsbury.com/us/only-the-third-heaven-9780567042446/","source_type":"academic-book","supports":["claims","interpretive_notes","second_temple_context"],"notes":"Jewish and Greco-Roman heavenly ascent traditions."},
-    {"id":"bdag","title":"A Greek-English Lexicon of the New Testament and Other Early Christian Literature","author":"Frederick W. Danker, ed.","publisher":"University of Chicago Press","year":2000,"locator":"relevant lemmas","url":"https://press.uchicago.edu/ucp/books/book/chicago/G/bo3620484.html","source_type":"lexicon","supports":["greek_words","claims","interpretive_notes"],"notes":"Standard historical Greek lexicon."}
+    {
+      "id": "2cor-greek",
+      "title": "The Greek New Testament: SBL Edition",
+      "author": "Michael W. Holmes, ed.",
+      "publisher": "Society of Biblical Literature and Logos Bible Software",
+      "year": 2010,
+      "locator": "2 Corinthians 1-13",
+      "url": "https://www.sblgnt.com/download/",
+      "source_type": "scripture",
+      "supports": [
+        "scripture_references",
+        "claims",
+        "interpretive_notes",
+        "greek_words"
+      ],
+      "notes": "Critical Greek base text used with textual apparatus resources."
+    },
+    {
+      "id": "nets-lxx",
+      "title": "A New English Translation of the Septuagint",
+      "author": "Albert Pietersma and Benjamin G. Wright, eds.",
+      "publisher": "Oxford University Press",
+      "year": 2007,
+      "locator": "Exodus, Psalms, Isaiah, Jeremiah",
+      "url": "https://ccat.sas.upenn.edu/nets/edition/",
+      "source_type": "ancient-primary-source",
+      "supports": [
+        "intertextuality",
+        "claims",
+        "interpretive_notes"
+      ],
+      "notes": "Greek scriptural comparanda."
+    },
+    {
+      "id": "ntvmr",
+      "title": "New Testament Virtual Manuscript Room",
+      "author": "",
+      "publisher": "Institut für Neutestamentliche Textforschung",
+      "year": null,
+      "locator": "2 Corinthians witnesses including P99",
+      "url": "https://ntvmr.uni-muenster.de/",
+      "source_type": "reference-work",
+      "supports": [
+        "claims",
+        "archaeology",
+        "timeline"
+      ],
+      "notes": "Manuscript catalog, images, and textual workspace."
+    },
+    {
+      "id": "p46-csntm",
+      "title": "GA P46 Digital Images and Metadata",
+      "author": "",
+      "publisher": "Center for the Study of New Testament Manuscripts",
+      "year": null,
+      "locator": "2 Corinthians",
+      "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46",
+      "source_type": "museum-collection",
+      "supports": [
+        "claims",
+        "archaeology",
+        "timeline"
+      ],
+      "notes": "Early Pauline codex images and metadata."
+    },
+    {
+      "id": "sinaiticus",
+      "title": "Codex Sinaiticus",
+      "author": "",
+      "publisher": "Codex Sinaiticus Project",
+      "year": null,
+      "locator": "2 Corinthians",
+      "url": "https://www.codexsinaiticus.org/en/",
+      "source_type": "museum-collection",
+      "supports": [
+        "claims",
+        "archaeology"
+      ],
+      "notes": "Fourth-century manuscript images and transcription."
+    },
+    {
+      "id": "vaticanus",
+      "title": "Codex Vaticanus Graecus 1209",
+      "author": "",
+      "publisher": "Biblioteca Apostolica Vaticana",
+      "year": null,
+      "locator": "2 Corinthians",
+      "url": "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
+      "source_type": "museum-collection",
+      "supports": [
+        "claims",
+        "archaeology"
+      ],
+      "notes": "Digital manuscript images."
+    },
+    {
+      "id": "alexandrinus",
+      "title": "Codex Alexandrinus, Royal MS 1 D VIII",
+      "author": "",
+      "publisher": "British Library",
+      "year": null,
+      "locator": "2 Corinthians",
+      "url": "https://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Royal_MS_1_D_VIII",
+      "source_type": "museum-collection",
+      "supports": [
+        "claims",
+        "archaeology"
+      ],
+      "notes": "Digital catalog and images."
+    },
+    {
+      "id": "claromontanus",
+      "title": "Codex Claromontanus",
+      "author": "",
+      "publisher": "Bibliothèque nationale de France",
+      "year": null,
+      "locator": "2 Corinthians",
+      "url": "https://gallica.bnf.fr/ark:/12148/btv1b84683111",
+      "source_type": "museum-collection",
+      "supports": [
+        "claims",
+        "archaeology"
+      ],
+      "notes": "Greek-Latin Pauline manuscript images."
+    },
+    {
+      "id": "ascsa-corinth",
+      "title": "Ancient Corinth Excavations",
+      "author": "",
+      "publisher": "American School of Classical Studies at Athens",
+      "year": null,
+      "locator": "Corinth",
+      "url": "https://www.ascsa.edu.gr/excavations/ancient-corinth",
+      "source_type": "excavation-report",
+      "supports": [
+        "historical_context",
+        "archaeology"
+      ],
+      "notes": "Primary archaeological program and publication gateway."
+    },
+    {
+      "id": "phi-inscriptions",
+      "title": "Searchable Greek Inscriptions",
+      "author": "",
+      "publisher": "Packard Humanities Institute",
+      "year": null,
+      "locator": "Achaia and Macedonia",
+      "url": "https://inscriptions.packhum.org/",
+      "source_type": "ancient-primary-source",
+      "supports": [
+        "historical_context",
+        "archaeology"
+      ],
+      "notes": "Searchable epigraphic corpus."
+    },
+    {
+      "id": "furnish-2cor",
+      "title": "II Corinthians",
+      "author": "Victor Paul Furnish",
+      "publisher": "Yale University Press",
+      "year": 1984,
+      "locator": "passim",
+      "url": "https://yalebooks.yale.edu/book/9780300139839/ii-corinthians/",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "literary_context"
+      ],
+      "notes": "Major historical-critical commentary."
+    },
+    {
+      "id": "seifrid-2cor",
+      "title": "The Second Letter to the Corinthians",
+      "author": "Mark A. Seifrid",
+      "publisher": "Eerdmans",
+      "year": 2014,
+      "locator": "passim",
+      "url": "https://www.eerdmans.com/9780802837394/the-second-letter-to-the-corinthians/",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "canonical_context"
+      ],
+      "notes": "Detailed exegetical commentary with a unity reading."
+    },
+    {
+      "id": "harris-2cor",
+      "title": "The Second Epistle to the Corinthians",
+      "author": "Murray J. Harris",
+      "publisher": "Eerdmans",
+      "year": 2005,
+      "locator": "passim",
+      "url": "https://www.eerdmans.com/9780802823939/the-second-epistle-to-the-corinthians/",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "greek_words"
+      ],
+      "notes": "Detailed Greek-text commentary."
+    },
+    {
+      "id": "thrall-2cor",
+      "title": "A Critical and Exegetical Commentary on the Second Epistle to the Corinthians",
+      "author": "Margaret E. Thrall",
+      "publisher": "Bloomsbury T&T Clark",
+      "year": 2004,
+      "locator": "passim",
+      "url": "https://www.bloomsbury.com/us/critical-and-exegetical-commentary-on-the-second-epistle-to-the-corinthians-9780567084354/",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "literary_context"
+      ],
+      "notes": "Two-volume critical commentary."
+    },
+    {
+      "id": "long-apology",
+      "title": "Ancient Rhetoric and Paul's Apology",
+      "author": "Fredrick J. Long",
+      "publisher": "Cambridge University Press",
+      "year": 2004,
+      "locator": "passim",
+      "url": "https://www.cambridge.org/core/books/ancient-rhetoric-and-pauls-apology/03B345935C4E9DCCC7478EF3EC600925",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "literary_context"
+      ],
+      "notes": "Rhetorical argument for compositional unity."
+    },
+    {
+      "id": "jones-unity",
+      "title": "Rhetorical Criticism and the Unity of 2 Corinthians: One Epilogue, or More?",
+      "author": "Ivor H. Jones",
+      "publisher": "New Testament Studies",
+      "year": 2008,
+      "locator": "54:496-524",
+      "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/rhetorical-criticism-and-the-unity-of-2-corinthians-one-epilogue-or-more/6EB24A7B281F015F5570DA26DEE9E2F4",
+      "source_type": "journal-article",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "literary_context"
+      ],
+      "notes": "Critical assessment of unity arguments."
+    },
+    {
+      "id": "savage-weakness",
+      "title": "Power through Weakness",
+      "author": "Timothy B. Savage",
+      "publisher": "Cambridge University Press",
+      "year": 1996,
+      "locator": "passim",
+      "url": "https://www.cambridge.org/core/books/power-through-weakness/C5352F788140662D2B765DDB27743A9C",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "historical_context"
+      ],
+      "notes": "Study of ministry, weakness, and first-century values."
+    },
+    {
+      "id": "basselin-disability",
+      "title": "Fleshing Out the Strength of Weakness: Intercorporeality in the Theological Discourse on Disability",
+      "author": "Tim Basselin",
+      "publisher": "Harvard Theological Review",
+      "year": 2024,
+      "locator": "2 Corinthians 12",
+      "url": "https://www.cambridge.org/core/journals/harvard-theological-review/article/fleshing-out-the-strength-of-weakness-intercorporeality-in-the-theological-discourse-on-disability/C56B395F36B3208ABE55C6AA4896263C",
+      "source_type": "journal-article",
+      "supports": [
+        "claims",
+        "interpretive_notes"
+      ],
+      "notes": "Disability-critical theological analysis of weakness."
+    },
+    {
+      "id": "andrews-hardships",
+      "title": "Too Weak Not to Lead: The Form and Function of 2 Cor 11.23b-33",
+      "author": "Scott B. Andrews",
+      "publisher": "New Testament Studies",
+      "year": 1995,
+      "locator": "41:263-276",
+      "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/too-weak-not-to-lead-the-form-and-function-of-2-cor-1123b33/42E3F7821F156CAE3DAA04622C7DE1BB",
+      "source_type": "journal-article",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "literary_context"
+      ],
+      "notes": "Study of hardship catalogs and apostolic weakness."
+    },
+    {
+      "id": "bruehler-giving",
+      "title": "Proverbs, Persuasion and People: A Three-Dimensional Investigation of 2 Cor 9.6-15",
+      "author": "Bart B. Bruehler",
+      "publisher": "New Testament Studies",
+      "year": 2002,
+      "locator": "48:209-224",
+      "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/abs/proverbs-persuasion-and-people-a-threedimensional-investigation-of-2-cor-9615/4C8B2912AD33F2E5879D2244BE96A88D",
+      "source_type": "journal-article",
+      "supports": [
+        "claims",
+        "interpretive_notes"
+      ],
+      "notes": "Sapiential, rhetorical, and socioeconomic analysis of giving."
+    },
+    {
+      "id": "downs-collection",
+      "title": "The Offering of the Gentiles",
+      "author": "David J. Downs",
+      "publisher": "Mohr Siebeck",
+      "year": 2008,
+      "locator": "2 Corinthians 8-9",
+      "url": "https://www.mohrsiebeck.com/en/book/the-offering-of-the-gentiles-9783161496073",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "historical_context"
+      ],
+      "notes": "Study of the collection's chronology and theology."
+    },
+    {
+      "id": "longenecker-poor",
+      "title": "Remember the Poor",
+      "author": "Bruce W. Longenecker",
+      "publisher": "Eerdmans",
+      "year": 2010,
+      "locator": "Pauline collection and economics",
+      "url": "https://www.eerdmans.com/9780802863737/remember-the-poor/",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "historical_context"
+      ],
+      "notes": "Early Christian economic practice and the collection."
+    },
+    {
+      "id": "friesen-poverty",
+      "title": "Paul and Economics",
+      "author": "Steven J. Friesen",
+      "publisher": "Fortress Press",
+      "year": 2017,
+      "locator": "Corinthian assemblies and collection",
+      "url": "https://www.fortresspress.com/store/product/9781451481662/Paul-and-Economics",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "historical_context"
+      ],
+      "notes": "Economic stratification and Pauline practice."
+    },
+    {
+      "id": "hafemann-covenant",
+      "title": "Paul, Moses, and the History of Israel",
+      "author": "Scott J. Hafemann",
+      "publisher": "Mohr Siebeck",
+      "year": 1995,
+      "locator": "2 Corinthians 3",
+      "url": "https://www.mohrsiebeck.com/en/book/paul-moses-and-the-history-of-israel-9783161462702/",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "intertextuality"
+      ],
+      "notes": "Study of Moses, covenant, and suffering."
+    },
+    {
+      "id": "hafemann-suffering",
+      "title": "Suffering and Ministry in the Spirit",
+      "author": "Scott J. Hafemann",
+      "publisher": "Eerdmans",
+      "year": 1990,
+      "locator": "2 Corinthians 2:14-3:3",
+      "url": "https://wipfandstock.com/9781610970860/suffering-and-the-spirit/",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes"
+      ],
+      "notes": "Triumph, suffering, and apostolic ministry; linked to the available reprint."
+    },
+    {
+      "id": "thiessen-jewish-paul",
+      "title": "A Jewish Paul",
+      "author": "Matthew Thiessen",
+      "publisher": "Baker Academic",
+      "year": 2023,
+      "locator": "Paul, Israel, and Scripture",
+      "url": "https://bakeracademic.com/p/a-jewish-paul-matthew-thiessen/542258",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "second_temple_context"
+      ],
+      "notes": "Paul's Jewish identity and scriptural reasoning."
+    },
+    {
+      "id": "winter-welfare",
+      "title": "Seek the Welfare of the City",
+      "author": "Bruce W. Winter",
+      "publisher": "Eerdmans",
+      "year": 1994,
+      "locator": "Pauline public and civic life",
+      "url": "https://www.eerdmans.com/9780802840912/seek-the-welfare-of-the-city/",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "historical_context"
+      ],
+      "notes": "Greco-Roman public, civic, and social context."
+    },
+    {
+      "id": "forbes-rhetoric",
+      "title": "Comparison, Self-Praise and Irony",
+      "author": "Christopher Forbes",
+      "publisher": "New Testament Studies",
+      "year": 1986,
+      "locator": "32:1-30",
+      "url": "https://doi.org/10.1017/S0028688500013485",
+      "source_type": "journal-article",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "literary_context"
+      ],
+      "notes": "Ancient rhetoric, comparison, and Pauline boasting."
+    },
+    {
+      "id": "gooder-heaven",
+      "title": "Only the Third Heaven? 2 Corinthians 12.1-10 and Heavenly Ascent",
+      "author": "Paula Gooder",
+      "publisher": "T&T Clark",
+      "year": 2006,
+      "locator": "2 Corinthians 12:1-10",
+      "url": "https://www.bloomsbury.com/us/only-the-third-heaven-9780567042446/",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "interpretive_notes",
+        "second_temple_context"
+      ],
+      "notes": "Jewish and Greco-Roman heavenly ascent traditions."
+    },
+    {
+      "id": "bdag",
+      "title": "A Greek-English Lexicon of the New Testament and Other Early Christian Literature",
+      "author": "Frederick W. Danker, ed.",
+      "publisher": "University of Chicago Press",
+      "year": 2000,
+      "locator": "relevant lemmas",
+      "url": "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3620484.html",
+      "source_type": "lexicon",
+      "supports": [
+        "greek_words",
+        "claims",
+        "interpretive_notes"
+      ],
+      "notes": "Standard historical Greek lexicon."
+    }
   ],
   "canonical_story": {
     "phase": "Messiah communities among Israel and the nations",
     "role": "Damaged relationship renegotiated through accountable ministry, material solidarity, reconciliation, and power in weakness",
-    "preceded_by": ["1-corinthians"],
-    "followed_by": ["galatians"]
+    "preceded_by": [
+      "1-corinthians"
+    ],
+    "followed_by": [
+      "galatians"
+    ]
   },
   "hermeneutical_lens": {
     "immediate_literary_context": "Track shifts among travel apology, painful correspondence, forgiveness, ministry exposition, scriptural rereading, Titus's report, collection appeal, ironic counter-boasting, vision, warning, restoration, and blessing.",
@@ -491,8 +3160,12 @@
   },
   "retrieval_metadata": {
     "aliases": [
-      "2 Cor", "2 Cor.", "Second Cor", "Second Corinthians",
-      "Paul's second canonical letter to Corinth", "Corinthian correspondence",
+      "2 Cor",
+      "2 Cor.",
+      "Second Cor",
+      "Second Corinthians",
+      "Paul's second canonical letter to Corinth",
+      "Corinthian correspondence",
       "What does new creation mean in 2 Corinthians?"
     ],
     "search_terms": [
@@ -510,10 +3183,19 @@
       "How should the collection, fool's speech, thorn, and power in weakness be interpreted?"
     ],
     "related_topics": [
-      "Roman Corinth", "Macedonia", "Pauline correspondence", "new covenant",
-      "Jewish interpretation", "apostolic rhetoric", "trauma and disability",
-      "reconciliation and safeguarding", "Jerusalem collection", "financial accountability",
-      "visions", "authority", "weakness"
+      "Roman Corinth",
+      "Macedonia",
+      "Pauline correspondence",
+      "new covenant",
+      "Jewish interpretation",
+      "apostolic rhetoric",
+      "trauma and disability",
+      "reconciliation and safeguarding",
+      "Jerusalem collection",
+      "financial accountability",
+      "visions",
+      "authority",
+      "weakness"
     ],
     "frequently_confused_with": [
       "1 Corinthians and its earlier reported crises",

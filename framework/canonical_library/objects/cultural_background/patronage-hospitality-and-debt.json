@@ -1,62 +1,2696 @@
 {
   "id": "patronage-hospitality-and-debt",
   "type": "cultural_background",
-  "title": "Patronage, Hospitality, and Debt",
-  "aliases": ["patronage and hospitality", "hospitality and obligation", "debt and reciprocity", "ancient patronage"],
-  "summary": "A controlled social-history lens for gifts, travel support, hierarchy, reciprocity, hospitality, and accounting language in New Testament letters.",
-  "historical_context": "Greco-Roman patronage and friendship practices could bind gifts and services to status and obligation, while household hospitality enabled travel and communication. Each letter may affirm, resist, or reframe those conventions.",
-  "ancient_near_east_context": "Hospitality and obligation have wider ancient histories, but Roman-period evidence is the nearer comparator for Philemon, Philippians, and 3 John.",
-  "literary_context": "Philemon uses accounting language, Philippians frames material aid as gospel partnership, and 3 John commends support for travelers while reporting Diotrephes's refusal.",
-  "covenantal_significance": "Christian texts place material support, welcome, and obligation under fidelity, love, and shared mission rather than treating elite reciprocity as a master key.",
-  "intertextuality": ["Philemon 17-19, Philippians 4:10-20, and 3 John 5-10 use different letter situations and should not be flattened into one patronage script."],
-  "timeline": [],
+  "title": "Pauline Economic Life, Patronage, Gifts, Collections, Labor, and Poverty",
+  "aliases": [
+    "patronage and hospitality",
+    "Paul and money",
+    "Jerusalem collection",
+    "Pauline gift exchange",
+    "Pauline manual labor",
+    "Macedonian poverty",
+    "Philippian gift"
+  ],
+  "summary": "A passage-controlled evidence cluster for gift, wage, maintenance, hospitality, patronage, benefaction, reciprocity, manual labor, collection logistics, poverty rhetoric, and material accountability across Romans, the Corinthian letters, Philippians, First Thessalonians, and Acts.",
+  "historical_context": "Early Roman economic life joined households, workshops, markets, slavery, travel, civic benefaction, friendship, patron-client relations, hospitality, and uneven subsistence. These practices overlapped without becoming synonyms. Paul's letters disclose specific gifts, rights, refusals, hosts, work, and collection arrangements but do not yield a complete income history or one social rank for every participant.",
+  "ancient_near_east_context": "Israel's manna tradition and scriptural obligations toward poor people matter directly in Second Corinthians, while generic ancient Near Eastern economics is too remote to control first-century practices. Roman-period Jewish and Greco-Roman evidence is the nearer comparison.",
+  "hebraic_worldview": "Pauline economic language connects grace, fellowship, service, obligation, equality, sufficiency, thanksgiving, work, and care for people in need. Divine gift is not a commercial payment, and material reciprocity does not make salvation, healing, office, or blessing purchasable.",
+  "second_temple_context": "The Jerusalem collection links predominantly gentile assemblies with impoverished Judean believers within a Jewish mission and scriptural world. Its chronology, recipients, cultic significance, relationship to Galatians 2, delivery, and reception remain partly reconstructed.",
+  "canonical_context": "Romans 15 describes a collection and a material-spiritual obligation; Romans 16 commends travelers, hosts, and civic figures. First Corinthians differentiates a missionary right from Paul's nonuse and gives collection instructions. Second Corinthians 8-9 uses grace, poverty, willingness, equality, accountability, readiness, and thanksgiving. Philippians 4 frames a recurring gift through partnership and accounting language. First Thessalonians recalls labor and urges responsible work. Acts later narrates workshop partnership, labor, support for the weak, and a return-party itinerary without naming the Jerusalem fund.",
+  "later_christian_reception": "These passages have supported mutual aid, transparent administration, dignified work, and care for poor people. They have also been used for prosperity extraction, coerced pledges, compulsory unpaid ministry, worker shaming, patron control, and romanticized deprivation. Responsible reception protects donor freedom, recipient dignity, fair labor, truthful accounting, and people whose disability, illness, caregiving, unemployment, migration, or exploitation constrains work or giving.",
+  "context_applicability": {
+    "historical": true,
+    "ancient_near_east": false,
+    "hebraic_worldview": true,
+    "second_temple": true,
+    "canonical": true,
+    "later_christian_reception": true
+  },
+  "literary_context": "The cluster compares occasional letters, self-defense, collection appeal, commendation, thanksgiving, ethical exhortation, and a later narrative farewell. A right, remembered practice, fundraising appeal, and narrative speech do not carry the same rhetorical force.",
+  "covenantal_significance": "Material sharing participates in Paul's account of gentile-Jewish fellowship and service, but the texts do not turn grace into a transaction or replace Israel with donors. Competing theological accounts of the collection remain interpretations rather than recovered financial records.",
+  "authorship_positions": [
+    "Undisputed Pauline letters provide the principal evidence; Acts is a later anonymous narrative and must be compared rather than silently harmonized."
+  ],
+  "date_ranges": [
+    "First Thessalonians: approximately 49-52 CE",
+    "First Corinthians: approximately 53-55 CE",
+    "Second Corinthians: approximately 54-56 CE, with integrity disputed",
+    "Philippians: approximately 50-62 CE, with provenance disputed",
+    "Romans: approximately 56-58 CE",
+    "Acts: approximately 70-95 CE",
+    "Seneca, On Benefits: approximately 56-64 CE",
+    "Erastus pavement: early Roman Imperial date, precise date and identification disputed"
+  ],
+  "original_audience": "Readers comparing Pauline money, work, poverty, gifts, and collection passages without collapsing their distinct occasions or importing modern nonprofit, wage, tax, tithe, or investment categories.",
+  "historical_setting": "Early Roman assemblies and mission networks connecting Judea, Achaia, Macedonia, Asia, and Italy through households, ports, roads, workshops, envoys, hospitality, and material transfers.",
+  "canonical_role": "This cluster anchors passage-level economic claims in direct texts and dated social comparisons while separating stated practice, reconstructed logistics, rhetoric, and modern application.",
+  "genre": [
+    "Pauline letter",
+    "apostolic self-defense",
+    "collection appeal",
+    "commendation",
+    "gift acknowledgment",
+    "ethical exhortation",
+    "Acts travel narrative and farewell speech",
+    "inscription and philosophical comparison"
+  ],
+  "structure": [
+    "Romans 15-16: Jerusalem service, obligation, commendation, hosting, and civic office",
+    "1 Corinthians 9 and 16: missionary maintenance and collection planning",
+    "2 Corinthians 8-9: Macedonian example, willingness, equality, delegates, readiness, and thanksgiving",
+    "Philippians 4: need, contentment, partnership, account, offering, and divine provision",
+    "1 Thessalonians 2 and 4: missionary labor and community work",
+    "Acts 18 and 20: workshop partnership, laboring hands, support for the weak, and return travel"
+  ],
+  "major_themes": [
+    "gift and grace",
+    "missionary maintenance",
+    "hospitality and travel",
+    "patronage and benefaction",
+    "collection logistics",
+    "voluntary participation",
+    "poverty and agency",
+    "equality and sufficiency",
+    "manual work",
+    "financial accountability",
+    "reciprocity and thanksgiving",
+    "Jewish-gentile material fellowship"
+  ],
+  "canonical_placement": "Romans 15:25-16:23; 1 Corinthians 9:1-18; 16:1-4; 2 Corinthians 8:1-9:15; Philippians 4:10-20; 1 Thessalonians 2:5-12; 4:9-12; Acts 18:1-4; 20:1-6, 17-38",
+  "key_people": [
+    "Paul",
+    "Phoebe",
+    "Gaius",
+    "Erastus",
+    "Titus",
+    "unnamed appointed delegates",
+    "the Philippians",
+    "the Macedonian assemblies",
+    "Priscilla",
+    "Aquila",
+    "Jerusalem believers"
+  ],
+  "key_places": [
+    "Jerusalem",
+    "Rome",
+    "Corinth",
+    "Achaia",
+    "Macedonia",
+    "Philippi",
+    "Thessalonica",
+    "Ephesus",
+    "Miletus"
+  ],
+  "key_events": [
+    "Jerusalem collection",
+    "Corinthian collection preparation",
+    "Philippian material support",
+    "Paul's Corinthian workshop activity",
+    "Acts return journey",
+    "Miletus farewell"
+  ],
+  "interpretive_disputes": [
+    "collection chronology and relation to Galatians 2",
+    "gift, friendship, partnership, patronage, and benefaction models",
+    "Phoebe's prostatis and social role",
+    "Erastus inscription and Romans 16 identity",
+    "Paul's reasons for refusing Corinthian support",
+    "social profile of Macedonians and Corinthians",
+    "meaning and scope of equality",
+    "integrity of 2 Corinthians 8-9",
+    "Philippians provenance and gift rhetoric",
+    "cause of Thessalonian work instruction",
+    "Acts-Paul chronology and historicity",
+    "meaning of skenopoios and Paul's precise trade"
+  ],
+  "primary_sources": [
+    "Romans 15:25-16:23",
+    "1 Corinthians 9:1-18; 16:1-4",
+    "2 Corinthians 8:1-9:15",
+    "Philippians 4:10-20",
+    "1 Thessalonians 2:5-12; 4:9-12",
+    "Acts 18:1-4; 20:1-6, 17-38",
+    "Exodus 16:18",
+    "Seneca, On Benefits",
+    "Corinth VIII.2 no. 111"
+  ],
+  "related_entries": [
+    "Romans",
+    "1 Corinthians",
+    "2 Corinthians",
+    "Philippians",
+    "1 Thessalonians",
+    "Acts",
+    "Patronage",
+    "Household",
+    "Phoebe",
+    "Corinth",
+    "Philippi",
+    "Macedonia"
+  ],
+  "keywords": [
+    "charis",
+    "koinonia",
+    "diakonia",
+    "leitourgia",
+    "opheiletes",
+    "prostatis",
+    "exousia",
+    "misthos",
+    "logeia",
+    "isotes",
+    "authairetos",
+    "ananke",
+    "hilaros",
+    "dosis",
+    "lempsis",
+    "ergazomai",
+    "skenopoios"
+  ],
+  "intertextuality": [
+    "Romans 15, 1 Corinthians 16, and 2 Corinthians 8-9 likely concern the same Jerusalem project but present different stages and rhetorical aims.",
+    "Second Corinthians 8 quotes Exodus 16:18 to frame sufficiency and equality rather than prescribing one administrative formula.",
+    "Philippians 4 and 2 Corinthians 8-9 both use gift language while addressing different donors, recipients, occasions, and relationships.",
+    "First Thessalonians and Acts both depict Paul working, but Acts alone supplies the skenopoios label and a Corinthian workshop partnership.",
+    "Acts 20 names a return party and later presents a farewell about labor; it does not explicitly call the companions collection delegates or narrate delivery of the fund."
+  ],
+  "timeline": [
+    "approximately 49-52 CE: First Thessalonians recalls missionary labor",
+    "approximately 50-62 CE: Philippian gift acknowledgment under disputed provenance",
+    "approximately 53-55 CE: First Corinthians asserts maintenance rights and plans regular collection",
+    "approximately 54-56 CE: Second Corinthians renews the collection appeal and names delegates",
+    "approximately 56-58 CE: Romans anticipates delivery to Jerusalem and commends Phoebe",
+    "approximately 70-95 CE: Acts composes workshop, return-party, and Miletus-farewell narratives",
+    "1931 CE: primary publication of the excavated Erastus pavement inscription"
+  ],
   "maps": [],
-  "archaeology": [],
-  "hebrew_words": [],
-  "greek_words": ["koinonia", "xenos"],
-  "related_people": ["paul", "onesimus"],
-  "related_places": ["philippi"],
+  "archaeology": [
+    "The in-situ Corinthian Erastus pavement illustrates civic office and benefaction but cannot securely identify Romans 16:23 or determine an assembly-wide social profile."
+  ],
+  "hebrew_words": [
+    "מָן (man): manna, invoked through Exodus 16:18 in 2 Corinthians 8:15"
+  ],
+  "greek_words": [
+    "χάρις (charis): favor, grace, gracious act, or collection-related gift",
+    "κοινωνία (koinonia): sharing, participation, or partnership",
+    "διακονία (diakonia): service or ministry",
+    "λειτουργία (leitourgia): public or sacred service",
+    "ὀφειλέτης (opheiletes): debtor or obligated person",
+    "προστάτις (prostatis): patron, benefactor, protector, or helper; sense disputed in Romans 16:2",
+    "ἐξουσία (exousia): right or authority",
+    "μισθός (misthos): wage or recompense",
+    "λογία (logeia): collection",
+    "ἰσότης (isotes): equality, fairness, or balance",
+    "αὐθαίρετος (authairetos): self-chosen or voluntary",
+    "ἀνάγκη (ananke): compulsion or necessity",
+    "ἱλαρός (hilaros): cheerful or glad",
+    "δόσις καὶ λῆμψις (dosis kai lempsis): giving and receiving",
+    "ἐργάζομαι (ergazomai): work or labor",
+    "σκηνοποιός (skenopoios): tentmaker or leatherworker; precise trade debated"
+  ],
+  "related_people": [
+    "paul",
+    "phoebe",
+    "priscilla",
+    "aquila"
+  ],
+  "related_places": [
+    "jerusalem",
+    "rome",
+    "corinth",
+    "philippi",
+    "thessalonica",
+    "macedonia",
+    "ephesus"
+  ],
   "related_events": [],
   "related_objects": [
     {
-      "id": "thessalonian-civic-and-funerary-context",
-      "relationship": "city-specific-social-context",
-      "weight": 7,
-      "notes": "Jason's hospitality and disputed patronage explanations for work are kept evidentially distinct."
+      "id": "romans",
+      "relationship": "collection-commendation-and-hosting-text",
+      "weight": 10,
+      "notes": "Romans 15-16 supplies Jerusalem service, obligation, Phoebe, Gaius, and Erastus."
     },
-    {"id": "patronage", "relationship": "institutional-background", "weight": 9, "notes": "Broader patronage object."},
-    {"id": "philemon", "relationship": "primary-text", "weight": 9, "notes": "Debt and intercession language."},
-    {"id": "3-john", "relationship": "primary-text", "weight": 9, "notes": "Travel support and refusal."}
+    {
+      "id": "1-corinthians",
+      "relationship": "maintenance-and-collection-text",
+      "weight": 10,
+      "notes": "First Corinthians 9 and 16 distinguish missionary rights, nonuse, and collection planning."
+    },
+    {
+      "id": "2-corinthians",
+      "relationship": "collection-appeal-and-administration-text",
+      "weight": 10,
+      "notes": "Second Corinthians 8-9 supplies willingness, equality, delegates, persuasion, and thanksgiving."
+    },
+    {
+      "id": "philippians",
+      "relationship": "gift-partnership-text",
+      "weight": 10,
+      "notes": "Philippians 4 supplies need, contentment, recurring support, account, and offering language."
+    },
+    {
+      "id": "1-thessalonians",
+      "relationship": "missionary-and-community-labor-text",
+      "weight": 10,
+      "notes": "First Thessalonians 2 and 4 supplies labor memory and work exhortation."
+    },
+    {
+      "id": "acts",
+      "relationship": "later-work-and-travel-narrative",
+      "weight": 10,
+      "notes": "Acts 18 and 20 supplies workshop partnership, laboring hands, support, and return travel."
+    },
+    {
+      "id": "patronage",
+      "relationship": "institutional-comparison",
+      "weight": 9,
+      "notes": "Keeps patronage distinct from friendship, hospitality, wage, gift, and civic benefaction."
+    },
+    {
+      "id": "household",
+      "relationship": "hosting-and-work-setting",
+      "weight": 8,
+      "notes": "Households could enable travel, assembly, production, care, dependence, and coercion."
+    },
+    {
+      "id": "roman-corinth-civic-household-and-association-life",
+      "relationship": "city-specific-corinthian-context",
+      "weight": 10,
+      "notes": "Owns fuller evidence for Erastus, associations, status, markets, and collection conditions."
+    },
+    {
+      "id": "roman-philippi-colonial-civic-and-household-life",
+      "relationship": "city-specific-philippian-context",
+      "weight": 10,
+      "notes": "Owns fuller evidence for gift partnership and limits on elite-status inference."
+    },
+    {
+      "id": "thessalonian-civic-and-funerary-context",
+      "relationship": "city-specific-labor-context",
+      "weight": 10,
+      "notes": "Owns fuller labor, household, and disputed patronage comparisons."
+    },
+    {
+      "id": "roman-macedonia-road-network-and-city-diversity",
+      "relationship": "regional-travel-and-gift-context",
+      "weight": 9,
+      "notes": "Keeps Macedonian cities and gift situations differentiated."
+    },
+    {
+      "id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+      "relationship": "focused-labor-collection-and-solidarity-cluster",
+      "weight": 10,
+      "notes": "Deepens the cross-letter economic evidence with Second Thessalonians, passage-level rights and consent distinctions, modern labor and disability safeguards, and nonprofit governance boundaries."
+    },
+    {
+      "id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+      "relationship": "mission-and-interassembly-network-synthesis",
+      "weight": 9,
+      "notes": "Reciprocal link from hospitality-support-and-boundary-context."
+    }
   ],
   "scripture_references": [
-    {"reference": "Philemon 1:17-19", "relationship": "primary", "notes": "Paul's reception and accounting request."},
-    {"reference": "Philippians 4:10-20", "relationship": "primary", "notes": "Gift and partnership language."},
-    {"reference": "3 John 1:5-10", "relationship": "primary", "notes": "Support for travelers and refusal of siblings."}
+    {
+      "reference": "Romans 15:25-32",
+      "relationship": "primary",
+      "notes": "Jerusalem service, Macedonia and Achaia, sharing, obligation, poverty, travel, and uncertain reception."
+    },
+    {
+      "reference": "Romans 16:1-2",
+      "relationship": "primary",
+      "notes": "Phoebe's commendation, reception, assistance, diakonos, and prostatis."
+    },
+    {
+      "reference": "Romans 16:23",
+      "relationship": "primary",
+      "notes": "Gaius as host and Erastus as city oikonomos."
+    },
+    {
+      "reference": "1 Corinthians 9:1-18",
+      "relationship": "primary",
+      "notes": "Missionary rights, food, family, labor, Torah, sacred service, nonuse, and recompense."
+    },
+    {
+      "reference": "1 Corinthians 16:1-4",
+      "relationship": "primary",
+      "notes": "Regular setting aside, capacity, approved persons, letters, and possible travel."
+    },
+    {
+      "reference": "2 Corinthians 8:1-24",
+      "relationship": "primary",
+      "notes": "Macedonian example, grace, poverty, willingness, capacity, equality, delegates, and accountability."
+    },
+    {
+      "reference": "2 Corinthians 9:1-15",
+      "relationship": "primary",
+      "notes": "Readiness, boasting, possible shame, compulsion, cheerful giving, sufficiency, service, and thanksgiving."
+    },
+    {
+      "reference": "Philippians 4:10-20",
+      "relationship": "primary",
+      "notes": "Need and abundance, learned contentment, partnership, recurring gifts, account, offering, and provision."
+    },
+    {
+      "reference": "1 Thessalonians 2:5-12",
+      "relationship": "primary",
+      "notes": "Greed denial, nonburden, affection, night-and-day labor, and family metaphors."
+    },
+    {
+      "reference": "1 Thessalonians 4:9-12",
+      "relationship": "primary",
+      "notes": "Sibling love, quiet conduct, manual work, outsiders, and need."
+    },
+    {
+      "reference": "Acts 18:1-4",
+      "relationship": "primary",
+      "notes": "Priscilla, Aquila, shared trade, association, work, and synagogue reasoning."
+    },
+    {
+      "reference": "Acts 20:1-6",
+      "relationship": "supporting",
+      "notes": "Return party and travel without an explicit collection label."
+    },
+    {
+      "reference": "Acts 20:17-38",
+      "relationship": "primary",
+      "notes": "Miletus farewell, coveting denial, working hands, support for the weak, and a Jesus saying."
+    },
+    {
+      "reference": "Exodus 16:18",
+      "relationship": "quotation",
+      "notes": "Manna sufficiency cited in 2 Corinthians 8:15."
+    }
   ],
-  "cross_references": [],
-  "new_testament_connections": [],
+  "cross_references": [
+    "Deuteronomy 15:1-11",
+    "Proverbs 11:24-26",
+    "Psalm 112:9",
+    "Galatians 2:1-10",
+    "Galatians 6:6-10",
+    "Philemon 1:17-22",
+    "3 John 1:5-10"
+  ],
+  "new_testament_connections": [
+    "Galatians 2:10 may relate to collection history, but its exact chronological and institutional relationship remains disputed.",
+    "Philemon's account and hospitality language supplies another unequal relationship that should not be merged with the Jerusalem collection.",
+    "Third John commends itinerant support in a later and different letter conflict.",
+    "Second Thessalonians 3 contains related labor instruction whose authorship and date require separate analysis."
+  ],
   "interpretive_notes": [
-    {"note": "Patronage, friendship, and reciprocity are comparative models; no one model should replace close reading of a letter's own rhetoric.", "note_type": "interpretive-caution", "certainty": "high", "dispute_status": "broad-consensus", "sources": ["saller", "lieu"]}
+    {
+      "note": "Gift, wage, maintenance, hospitality, patronage, civic benefaction, friendship, partnership, alms, and collection are overlapping comparison categories, not interchangeable labels.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "sources": [
+        "pauline-economic-texts",
+        "saller-patronage",
+        "downs-offering",
+        "briones-financial",
+        "blanton-spiritual-economy"
+      ],
+      "rationale": "The passages use differentiated terms, actors, directions of transfer, obligations, and rhetorical aims."
+    },
+    {
+      "note": "Poverty language cannot prescribe deprivation, shame recipients, or imply that people must give beyond food, housing, health, safety, disability, caregiving, or dependent needs.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "denominational_disagreement",
+      "sources": [
+        "second-corinthians-collection",
+        "barclay-rich-poverty",
+        "longenecker-poor"
+      ],
+      "rationale": "Second Corinthians joins willingness to what one has and explicitly rejects compulsion."
+    },
+    {
+      "note": "Collection appeals require informed consent, truthful accounting, independent oversight, freedom from retaliation, and protection against public comparison, leader pressure, manipulated shame, or promised supernatural return.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "denominational_disagreement",
+      "sources": [
+        "first-corinthians-economic",
+        "second-corinthians-collection",
+        "downs-offering",
+        "furnish-second-corinthians"
+      ],
+      "rationale": "Paul names approved carriers, appointed delegates, honorable administration, willingness, and non-compulsion even within forceful persuasion."
+    },
+    {
+      "note": "Work instruction must not shame unemployed, underpaid, disabled, ill, exploited, caregiving, enslaved, or precariously housed people or excuse unsafe work and wage theft.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "denominational_disagreement",
+      "sources": [
+        "first-thessalonians-economic",
+        "acts-economic",
+        "hock-tentmaking",
+        "longenecker-poor"
+      ],
+      "rationale": "The texts disclose particular mission and assembly problems, not every cause of material dependence."
+    },
+    {
+      "note": "Grace and divine provision are not financial instruments. Giving does not purchase salvation, healing, office, access, public honor, or a guaranteed monetary return.",
+      "note_type": "interpretive-caution",
+      "certainty": "strong_consensus",
+      "dispute_status": "denominational_disagreement",
+      "sources": [
+        "second-corinthians-collection",
+        "philippians-gift",
+        "barclay-gift",
+        "blanton-spiritual-economy"
+      ],
+      "rationale": "Paul relates divine and human gifts while resisting compulsion and locating outcomes in thanksgiving rather than a donor contract."
+    }
   ],
-  "common_questions": ["How do patronage and friendship illuminate New Testament gifts?", "What did hospitality for traveling teachers involve?", "What debt does Paul assume in Philemon?"],
+  "common_questions": [
+    "Was the Jerusalem collection a tax, tithe, gift, or act of fellowship?",
+    "Did Paul reject all financial support?",
+    "Were the Macedonians destitute?",
+    "Does cheerful giving permit fundraising pressure?",
+    "Was the Philippians' gift patronage or friendship?",
+    "Was Phoebe Paul's patron?",
+    "Does the Erastus inscription identify Romans 16:23?",
+    "Was Paul a tentmaker?",
+    "Do the work passages condemn everyone without paid employment?"
+  ],
   "sources": [
-    {"id": "philemon-3john", "title": "Philemon 17-19 and 3 John 5-10", "author": "", "publisher": "", "year": null, "locator": "Philemon 1:17-19; 3 John 1:5-10", "url": "", "source_type": "scripture", "supports": ["patronage-debt-account", "hospitality-travel-support"], "notes": "Primary biblical texts."},
-    {"id": "saller", "title": "Personal Patronage under the Early Empire", "author": "Richard P. Saller", "publisher": "Cambridge University Press", "year": 1982, "locator": "Patronage, hierarchy, reciprocity, obligation, and provision", "url": "https://www.cambridge.org/core/books/personal-patronage-under-the-early-empire/46E59A2AE1CD7041307C66F3AA8DDA97", "source_type": "academic-book", "supports": ["patronage-debt-account"], "notes": "Roman social-history comparator, not a direct reconstruction of a particular church."},
-    {"id": "lieu", "title": "I, II, & III John: A Commentary", "author": "Judith M. Lieu", "publisher": "Westminster John Knox Press", "year": 2008, "locator": "3 John 5-10", "url": "https://www.wjkbooks.com/Products/0664220983/i-ii-iii-john.aspx", "source_type": "academic-book", "supports": ["hospitality-travel-support"], "notes": "Literary, historical, theological, and ethical commentary."}
+    {
+      "id": "pauline-economic-texts",
+      "title": "Romans 15:25-16:23",
+      "author": "Paul, with Tertius named as scribe",
+      "publisher": "Society of Biblical Literature",
+      "year": 2010,
+      "locator": "Romans 15:25-16:23",
+      "url": "https://www.sblgnt.com/download/",
+      "source_type": "scripture",
+      "supports": [
+        "claims",
+        "evidence_items"
+      ],
+      "notes": "Primary Greek literary evidence; no modern translation is reproduced."
+    },
+    {
+      "id": "first-corinthians-economic",
+      "title": "1 Corinthians 9:1-18 and 16:1-4",
+      "author": "Paul, with Sosthenes named as co-sender",
+      "publisher": "Society of Biblical Literature",
+      "year": 2010,
+      "locator": "1 Corinthians 9:1-18; 16:1-4",
+      "url": "https://www.sblgnt.com/download/",
+      "source_type": "scripture",
+      "supports": [
+        "claims",
+        "evidence_items"
+      ],
+      "notes": "Primary Greek literary evidence; the two passages have different rhetorical functions."
+    },
+    {
+      "id": "second-corinthians-collection",
+      "title": "2 Corinthians 8:1-9:15",
+      "author": "Paul, with Timothy named as co-sender",
+      "publisher": "Society of Biblical Literature",
+      "year": 2010,
+      "locator": "2 Corinthians 8:1-9:15",
+      "url": "https://www.sblgnt.com/download/",
+      "source_type": "scripture",
+      "supports": [
+        "claims",
+        "evidence_items"
+      ],
+      "notes": "Primary Greek literary evidence; integrity and rhetorical situation remain disputed."
+    },
+    {
+      "id": "philippians-gift",
+      "title": "Philippians 4:10-20",
+      "author": "Paul, with Timothy named as co-sender",
+      "publisher": "Society of Biblical Literature",
+      "year": 2010,
+      "locator": "Philippians 4:10-20",
+      "url": "https://www.sblgnt.com/download/",
+      "source_type": "scripture",
+      "supports": [
+        "claims",
+        "evidence_items"
+      ],
+      "notes": "Primary Greek gift-acknowledgment evidence; provenance is disputed."
+    },
+    {
+      "id": "first-thessalonians-economic",
+      "title": "1 Thessalonians 2:5-12 and 4:9-12",
+      "author": "Paul, Silvanus, and Timothy",
+      "publisher": "Society of Biblical Literature",
+      "year": 2010,
+      "locator": "1 Thessalonians 2:5-12; 4:9-12",
+      "url": "https://www.sblgnt.com/download/",
+      "source_type": "scripture",
+      "supports": [
+        "claims",
+        "evidence_items"
+      ],
+      "notes": "Primary Greek labor evidence; occupation and recipient profiles are not named."
+    },
+    {
+      "id": "acts-economic",
+      "title": "Acts 18:1-4 and 20:1-38",
+      "author": "Anonymous",
+      "publisher": "Society of Biblical Literature",
+      "year": 2010,
+      "locator": "Acts 18:1-4; 20:1-6, 17-38",
+      "url": "https://www.sblgnt.com/download/",
+      "source_type": "scripture",
+      "supports": [
+        "claims",
+        "evidence_items"
+      ],
+      "notes": "Later narrative evidence; narrative setting, composition, and Pauline letters remain distinct."
+    },
+    {
+      "id": "exodus-manna",
+      "title": "Exodus 16:18",
+      "author": "",
+      "publisher": "",
+      "year": null,
+      "locator": "Exodus 16:18; cited in 2 Corinthians 8:15",
+      "url": "",
+      "source_type": "scripture",
+      "supports": [
+        "collection-equality-manna"
+      ],
+      "notes": "Primary scriptural intertext; no modern translation is reproduced."
+    },
+    {
+      "id": "seneca-benefits",
+      "title": "On Benefits",
+      "author": "Seneca",
+      "publisher": "University of Chicago LacusCurtius",
+      "year": 60,
+      "locator": "Books 1-7; gifts, gratitude, reciprocity, and accounts",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Seneca/De_Beneficiis/home.html",
+      "source_type": "ancient-primary-source",
+      "supports": [
+        "economic-categories-not-synonyms",
+        "philippian-giving-receiving-account"
+      ],
+      "notes": "Approximately contemporary Roman elite moral discourse, not a transcript of assembly practice."
+    },
+    {
+      "id": "kent-erastus",
+      "title": "Latin Inscriptions, 1896-1926",
+      "author": "Allen Brown West",
+      "publisher": "American School of Classical Studies at Athens",
+      "year": 1931,
+      "locator": "Corinth VIII.2, no. 111; supplemented by Corinth VIII.3, no. 232",
+      "url": "https://www.ascsa.edu.gr/uploads/media/oa_ebooks/oa_corinth/Corinth_VIII_2.pdf",
+      "source_type": "excavation-report",
+      "supports": [
+        "gaius-erastus-status-limits"
+      ],
+      "notes": "Primary publication of the in-situ pavement; restoration, date, office equivalence, and New Testament identity require qualification."
+    },
+    {
+      "id": "saller-patronage",
+      "title": "Personal Patronage under the Early Empire",
+      "author": "Richard P. Saller",
+      "publisher": "Cambridge University Press",
+      "year": 1982,
+      "locator": "Patronage, friendship, hierarchy, access, reciprocity, and terminology",
+      "url": "https://www.cambridge.org/core/books/personal-patronage-under-the-early-empire/46E59A2AE1CD7041307C66F3AA8DDA97",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "evidence_items"
+      ],
+      "notes": "Roman social-history comparator; not every gift or host is a formal patron-client tie."
+    },
+    {
+      "id": "downs-offering",
+      "title": "The Offering of the Gentiles",
+      "author": "David J. Downs",
+      "publisher": "Mohr Siebeck",
+      "year": 2008,
+      "locator": "Paul's collection in chronological, cultural, and cultic contexts",
+      "url": "https://www.mohrsiebeck.com/en/book/the-offering-of-the-gentiles-9783161515910/",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "evidence_items"
+      ],
+      "notes": "Reconstructs collection chronology and compares associations, benefaction, common funds, poor relief, and translocal links."
+    },
+    {
+      "id": "briones-financial",
+      "title": "Paul's Financial Policy: A Socio-Theological Approach",
+      "author": "David E. Briones",
+      "publisher": "T&T Clark",
+      "year": 2013,
+      "locator": "Paul's support, work, reciprocity, and theological framing",
+      "url": "https://www.bloomsbury.com/au/pauls-financial-policy-9780567623782/",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "evidence_items"
+      ],
+      "notes": "Argues for coherence across varied support practices; individual passage differences remain controlling."
+    },
+    {
+      "id": "barclay-rich-poverty",
+      "title": "Rich Poverty: 2 Corinthians 8.1-15 and the Social Meaning of Poverty and Wealth",
+      "author": "John M. G. Barclay",
+      "publisher": "New Testament Studies",
+      "year": 2023,
+      "locator": "69.3, pages 243-257",
+      "url": "https://doi.org/10.1017/S002868852200039X",
+      "source_type": "journal-article",
+      "supports": [
+        "macedonian-poverty-rhetoric",
+        "collection-equality-manna",
+        "collection-willingness-capacity"
+      ],
+      "notes": "Open-access analysis of agency, giving, poverty, wealth, mutuality, and rhetoric."
+    },
+    {
+      "id": "barclay-gift",
+      "title": "Paul and the Gift",
+      "author": "John M. G. Barclay",
+      "publisher": "Eerdmans",
+      "year": 2015,
+      "locator": "Ancient gift, grace, reciprocity, and Pauline theology",
+      "url": "https://www.eerdmans.com/9780802875327/paul-and-the-gift/",
+      "source_type": "academic-book",
+      "supports": [
+        "gift-grace-nontransaction"
+      ],
+      "notes": "Analyzes divine gift and grace; it is not a handbook for modern fundraising."
+    },
+    {
+      "id": "longenecker-poor",
+      "title": "Remember the Poor: Paul, Poverty, and the Greco-Roman World",
+      "author": "Bruce W. Longenecker",
+      "publisher": "Eerdmans",
+      "year": 2010,
+      "locator": "Greco-Roman poverty, Pauline communities, and care for poor people",
+      "url": "https://www.eerdmans.com/9780802863737/remember-the-poor/",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "evidence_items"
+      ],
+      "notes": "Economic reconstruction with explicit debate over poverty scales and Pauline concern for poor people."
+    },
+    {
+      "id": "furnish-second-corinthians",
+      "title": "II Corinthians",
+      "author": "Victor Paul Furnish",
+      "publisher": "Yale University Press",
+      "year": 1984,
+      "locator": "2 Corinthians 8-9",
+      "url": "https://yalebooks.yale.edu/book/9780300139839/ii-corinthians/",
+      "source_type": "academic-book",
+      "supports": [
+        "claims",
+        "evidence_items"
+      ],
+      "notes": "Literary, historical, rhetorical, and theological commentary."
+    },
+    {
+      "id": "reumann-philippians",
+      "title": "Philippians",
+      "author": "John Reumann",
+      "publisher": "Yale University Press",
+      "year": 2008,
+      "locator": "Philippians 4:10-20",
+      "url": "https://yalebooks.yale.edu/book/9780300140453/philippians/",
+      "source_type": "academic-book",
+      "supports": [
+        "philippian-need-contentment",
+        "philippian-giving-receiving-account"
+      ],
+      "notes": "Commentary emphasizing social world, house assemblies, mission, and gift relations."
+    },
+    {
+      "id": "briones-philippians",
+      "title": "Paul's Intentional 'Thankless Thanks' in Philippians 4.10-20",
+      "author": "David E. Briones",
+      "publisher": "Journal for the Study of the New Testament",
+      "year": 2011,
+      "locator": "34.1, pages 47-69",
+      "url": "https://doi.org/10.1177/0142064X11415319",
+      "source_type": "journal-article",
+      "supports": [
+        "philippian-giving-receiving-account"
+      ],
+      "notes": "Treats brokerage, friendship, patronage, and transformed reciprocity as debated models."
+    },
+    {
+      "id": "blanton-spiritual-economy",
+      "title": "A Spiritual Economy",
+      "author": "Thomas R. Blanton IV",
+      "publisher": "Yale University Press",
+      "year": 2017,
+      "locator": "Gift exchange, religious discourse, hierarchy, honor, and Pauline letters",
+      "url": "https://yalebooks.yale.edu/book/9780300220407/a-spiritual-economy/",
+      "source_type": "academic-book",
+      "supports": [
+        "economic-categories-not-synonyms",
+        "corinthian-maintenance-right-and-nonuse",
+        "collection-cheerful-noncompulsion",
+        "philippian-giving-receiving-account",
+        "gift-grace-nontransaction"
+      ],
+      "notes": "Interdisciplinary analysis of gift exchange and hierarchy; individual passages remain distinct."
+    },
+    {
+      "id": "hock-tentmaking",
+      "title": "The Social Context of Paul's Ministry: Tentmaking and Apostleship",
+      "author": "Ronald F. Hock",
+      "publisher": "Fortress Press",
+      "year": 1980,
+      "locator": "Chapters 2-4: workshop, trade, support, and apostolic labor",
+      "url": "https://books.google.com/books/about/The_Social_Context_of_Paul_s_Ministry.html?id=nWkRAQAAIAAJ",
+      "source_type": "academic-book",
+      "supports": [
+        "thessalonian-missionary-labor",
+        "thessalonian-community-work",
+        "acts-corinth-workshop",
+        "acts-miletus-labor-support"
+      ],
+      "notes": "Workshop reconstruction; Acts' trade term does not settle material, status, hours, or every mission setting."
+    }
   ],
   "claims": [
-    {"id": "patronage-debt-account", "claim": "In Philemon 18-19 Paul conditionally transfers any wrong or debt attributed to Onesimus onto his own account; the text does not specify theft or an amount.", "claim_type": "biblical_text", "certainty": "textually_explicit", "dispute_status": "historical_uncertainty", "scripture_references": ["Philemon 1:18-19"], "source_ids": ["philemon-3john", "saller"], "traditions": ["Academic", "Christian"], "rationale": "The accounting instruction is explicit while the prior circumstances are not narrated.", "notes": ""},
-    {"id": "hospitality-travel-support", "claim": "Third John commends Gaius's support for traveling siblings and reports that Diotrephes refuses the siblings and hinders those who would receive them.", "claim_type": "biblical_text", "certainty": "textually_explicit", "dispute_status": "historical_uncertainty", "scripture_references": ["3 John 1:5-10"], "source_ids": ["philemon-3john", "lieu"], "traditions": ["Academic", "Christian"], "rationale": "The commendation and accusation are explicit; exact offices, procedures, and material arrangements remain uncertain.", "notes": ""}
+    {
+      "id": "economic-categories-not-synonyms",
+      "claim": "Pauline passages distinguish gift, missionary maintenance, wage imagery, hospitality, partnership, collection, civic benefaction, obligation, and labor rather than naming one universal patronage arrangement.",
+      "claim_type": "historical_cultural",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "Romans 15:25-16:23",
+        "1 Corinthians 9:1-18",
+        "2 Corinthians 8:1-9:15",
+        "Philippians 4:10-20",
+        "1 Thessalonians 2:5-12"
+      ],
+      "source_ids": [
+        "pauline-economic-texts",
+        "first-corinthians-economic",
+        "second-corinthians-collection",
+        "philippians-gift",
+        "first-thessalonians-economic",
+        "saller-patronage",
+        "downs-offering",
+        "briones-financial"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Different terms, actors, directions, occasions, and obligations are explicit; social models remain debated.",
+      "notes": "No one economic metaphor becomes a master key."
+    },
+    {
+      "id": "romans-collection-service-obligation",
+      "claim": "Romans 15 describes Macedonia and Achaia as making a sharing for poor believers in Jerusalem and states a material obligation grounded in gentile sharing in spiritual things.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "Romans 15:25-32"
+      ],
+      "source_ids": [
+        "pauline-economic-texts",
+        "downs-offering",
+        "longenecker-poor"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian",
+        "Jewish"
+      ],
+      "rationale": "The project and rationale are explicit; chronology, politics, delivery, and reception are reconstructed.",
+      "notes": "Obligation is not collective ethnic debt or supersessionism."
+    },
+    {
+      "id": "phoebe-commendation-role",
+      "claim": "Romans 16 commends Phoebe as diakonos and prostatis and asks the recipients to welcome and assist her, while her wealth, office, patronage form, and role in carrying or interpreting Romans remain debated.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "Romans 16:1-2"
+      ],
+      "source_ids": [
+        "pauline-economic-texts",
+        "saller-patronage",
+        "briones-financial"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Titles and commendation are explicit; social biography is underdetermined.",
+      "notes": "Her aid is not reduced to wealth or domestic service."
+    },
+    {
+      "id": "gaius-erastus-status-limits",
+      "claim": "Romans names Gaius as host and Erastus as city oikonomos, while property ownership, patronal office, assembly-wide status, and identity with the Corinthian pavement's Erastus remain uncertain.",
+      "claim_type": "historical_cultural",
+      "certainty": "probable",
+      "dispute_status": "archaeological_uncertainty",
+      "scripture_references": [
+        "Romans 16:23"
+      ],
+      "source_ids": [
+        "pauline-economic-texts",
+        "kent-erastus",
+        "saller-patronage"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Text and inscription are secure separately; social biography and personal identification are reconstructed.",
+      "notes": "One host and one inscription cannot define the assembly's class profile."
+    },
+    {
+      "id": "corinthian-maintenance-right-and-nonuse",
+      "claim": "First Corinthians 9 argues for apostolic material maintenance and then emphasizes Paul's nonuse of that right in Corinth; neither move establishes a universal ban on support or a right to opaque extraction.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "1 Corinthians 9:1-18"
+      ],
+      "source_ids": [
+        "first-corinthians-economic",
+        "briones-financial",
+        "hock-tentmaking",
+        "blanton-spiritual-economy"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Right and nonuse are both explicit; motive, scope, and wider funding mix are debated.",
+      "notes": "No compulsory unpaid labor follows."
+    },
+    {
+      "id": "corinthian-weekly-collection-logistics",
+      "claim": "First Corinthians 16 directs regular setting aside according to prosperity and anticipates approved carriers and letters, without naming a percentage, universal tithe, or centralized storage mechanism.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "historical_uncertainty",
+      "scripture_references": [
+        "1 Corinthians 16:1-4"
+      ],
+      "source_ids": [
+        "first-corinthians-economic",
+        "downs-offering",
+        "furnish-second-corinthians"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Preparation and approved transmission are explicit; exact logistics are not.",
+      "notes": "No fixed modern fundraising formula is supplied."
+    },
+    {
+      "id": "macedonian-poverty-rhetoric",
+      "claim": "Second Corinthians 8 depicts Macedonian affliction, deep poverty, generosity, giving according to and beyond capacity, and self-chosen participation as a rhetorically crafted example rather than a demographic survey.",
+      "claim_type": "literary",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 8:1-5"
+      ],
+      "source_ids": [
+        "second-corinthians-collection",
+        "barclay-rich-poverty",
+        "longenecker-poor",
+        "furnish-second-corinthians"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Descriptors are explicit; material level, amount, reach, and idealization remain debated.",
+      "notes": "Poverty itself is not praised or prescribed."
+    },
+    {
+      "id": "collection-willingness-capacity",
+      "claim": "Second Corinthians 8 appeals to willingness and measures acceptability by what a person has rather than what they do not have, even while Paul strongly persuades the Corinthians.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 8:3",
+        "2 Corinthians 8:8-12"
+      ],
+      "source_ids": [
+        "second-corinthians-collection",
+        "barclay-rich-poverty",
+        "furnish-second-corinthians"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Willingness, capacity, and persuasion coexist; ancient and modern voluntariness differ.",
+      "notes": "The stated limit rules out coerced deprivation."
+    },
+    {
+      "id": "collection-equality-manna",
+      "claim": "Second Corinthians 8 links present surplus and need to isotes and cites Exodus 16:18, while the duration, mechanism, and economic scope of the envisioned equality remain disputed.",
+      "claim_type": "biblical_theology",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 8:13-15",
+        "Exodus 16:18"
+      ],
+      "source_ids": [
+        "second-corinthians-collection",
+        "exodus-manna",
+        "barclay-rich-poverty",
+        "downs-offering"
+      ],
+      "traditions": [
+        "Academic",
+        "Jewish",
+        "Christian"
+      ],
+      "rationale": "Surplus, need, equality, and quotation are explicit; distributive model and meaning are debated.",
+      "notes": "Recipient agency is retained."
+    },
+    {
+      "id": "collection-delegates-accountability",
+      "claim": "Second Corinthians 8 names Titus and appointed companions, joint travel, and concern for what is honorable before God and people as collection-accountability features.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "historical_uncertainty",
+      "scripture_references": [
+        "2 Corinthians 8:16-24"
+      ],
+      "source_ids": [
+        "second-corinthians-collection",
+        "downs-offering",
+        "furnish-second-corinthians"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Delegation and reputation safeguards are explicit; identities and complete procedures remain unknown.",
+      "notes": "Named trust does not eliminate independent oversight."
+    },
+    {
+      "id": "collection-readiness-shame-pressure",
+      "claim": "Second Corinthians 9 uses prior boasting, advance preparation, and possible shame if the Corinthians are unready, revealing persuasive pressure that must be held beside the rejection of compulsion.",
+      "claim_type": "literary",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 9:1-5"
+      ],
+      "source_ids": [
+        "second-corinthians-collection",
+        "downs-offering",
+        "furnish-second-corinthians"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Pressure is explicit; its ancient acceptability and ethical reception are disputed.",
+      "notes": "Modern public donor comparison and manipulated shame are rejected."
+    },
+    {
+      "id": "collection-cheerful-noncompulsion",
+      "claim": "Second Corinthians 9 asks each person to give as decided in the heart, not from grief or compulsion, and traces the service toward sufficiency, recipient need, prayer, and thanksgiving rather than a guaranteed donor return.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "2 Corinthians 9:6-15"
+      ],
+      "source_ids": [
+        "second-corinthians-collection",
+        "downs-offering",
+        "furnish-second-corinthians",
+        "blanton-spiritual-economy"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Decision, non-compulsion, material service, and thanksgiving are explicit; sowing and reciprocity are interpreted differently.",
+      "notes": "No prosperity contract is supplied."
+    },
+    {
+      "id": "philippian-need-contentment",
+      "claim": "Philippians 4 says Paul learned to live in lowered and abundant conditions and had real need, so contentment names learned endurance rather than denial that food, shelter, safety, or support matter.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "Philippians 4:10-14"
+      ],
+      "source_ids": [
+        "philippians-gift",
+        "reumann-philippians",
+        "longenecker-poor"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Contrasting circumstances and need are explicit; philosophical comparison and imprisonment setting are disputed.",
+      "notes": "Contentment does not romanticize deprivation."
+    },
+    {
+      "id": "philippian-giving-receiving-account",
+      "claim": "Philippians 4 describes recurring support through partnership, giving and receiving, account, fruit, fragrant offering, and divine provision, language compared variously with friendship, partnership, commerce, patronage, and worship.",
+      "claim_type": "literary",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "Philippians 4:14-20"
+      ],
+      "source_ids": [
+        "philippians-gift",
+        "seneca-benefits",
+        "reumann-philippians",
+        "briones-philippians",
+        "blanton-spiritual-economy"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Mixed vocabulary is explicit; no single social model exhausts it.",
+      "notes": "Divine provision is not a purchasable return."
+    },
+    {
+      "id": "thessalonian-missionary-labor",
+      "claim": "First Thessalonians recalls the senders working night and day so as not to burden recipients while sharing gospel and selves, without naming a trade, wage, workshop, or complete funding mix.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "historical_uncertainty",
+      "scripture_references": [
+        "1 Thessalonians 2:5-12"
+      ],
+      "source_ids": [
+        "first-thessalonians-economic",
+        "hock-tentmaking",
+        "briones-financial"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Labor and nonburden are explicit; occupation and other support remain uncertain.",
+      "notes": "Family metaphors do not authorize leader control."
+    },
+    {
+      "id": "thessalonian-community-work",
+      "claim": "First Thessalonians urges quiet conduct, attention to one's affairs, manual work, honorable outsider conduct, and material nondependence, but does not identify the cause, occupations, capacities, or every person addressed.",
+      "claim_type": "biblical_text",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "1 Thessalonians 4:9-12"
+      ],
+      "source_ids": [
+        "first-thessalonians-economic",
+        "hock-tentmaking",
+        "longenecker-poor"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Instructions are explicit; eschatology, patronage, disorder, poverty, and workshop explanations compete.",
+      "notes": "No worker shaming or anti-disability use follows."
+    },
+    {
+      "id": "acts-corinth-workshop",
+      "claim": "Acts 18 associates Paul with Priscilla and Aquila because of a shared skenopoios trade and depicts work alongside synagogue reasoning, while precise craft, business arrangement, ownership, and status remain uncertain.",
+      "claim_type": "biblical_text",
+      "certainty": "probable",
+      "dispute_status": "historical_uncertainty",
+      "scripture_references": [
+        "Acts 18:1-4"
+      ],
+      "source_ids": [
+        "acts-economic",
+        "hock-tentmaking",
+        "briones-financial"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Acts states shared trade and work; lexical range and historical reconstruction remain debated.",
+      "notes": "Tentmaking is shorthand, not proof of elite entrepreneurship."
+    },
+    {
+      "id": "acts-return-party-collection-limit",
+      "claim": "Acts 20 names companions on the return through Macedonia but does not state that they carried the Jerusalem collection, so delegate identification remains plausible reconstruction rather than narrative fact.",
+      "claim_type": "historical_cultural",
+      "certainty": "probable",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "Acts 20:1-6",
+        "1 Corinthians 16:3-4",
+        "2 Corinthians 8:16-24"
+      ],
+      "source_ids": [
+        "acts-economic",
+        "first-corinthians-economic",
+        "second-corinthians-collection",
+        "downs-offering"
+      ],
+      "traditions": [
+        "Academic"
+      ],
+      "rationale": "Companions and earlier delegate plans are explicit in separate texts; their equation is not.",
+      "notes": "Acts-Paul harmonization remains qualified."
+    },
+    {
+      "id": "acts-miletus-labor-support",
+      "claim": "Acts' Miletus farewell portrays Paul denying covetousness, pointing to his hands as serving needs, urging support for the weak, and citing a Jesus saying otherwise unattested in the Gospels.",
+      "claim_type": "literary",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "scripture_references": [
+        "Acts 20:17-38"
+      ],
+      "source_ids": [
+        "acts-economic",
+        "hock-tentmaking",
+        "briones-financial",
+        "longenecker-poor"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Speech claims are explicit; historical memory, Lukan shaping, and saying origin remain debated.",
+      "notes": "Support for vulnerable people cannot become compulsory unpaid labor."
+    },
+    {
+      "id": "gift-grace-nontransaction",
+      "claim": "Across collection and Philippian gift passages, divine grace and provision generate human sharing and thanksgiving without becoming a commercial exchange in which money purchases divine favor or guarantees wealth.",
+      "claim_type": "biblical_theology",
+      "certainty": "strong_consensus",
+      "dispute_status": "denominational_disagreement",
+      "scripture_references": [
+        "2 Corinthians 8:1-9",
+        "2 Corinthians 9:6-15",
+        "Philippians 4:14-20"
+      ],
+      "source_ids": [
+        "second-corinthians-collection",
+        "philippians-gift",
+        "barclay-gift",
+        "blanton-spiritual-economy",
+        "briones-financial"
+      ],
+      "traditions": [
+        "Academic",
+        "Christian"
+      ],
+      "rationale": "Grace, gift, provision, service, and thanksgiving are linked while decided giving and non-compulsion resist a purchase contract.",
+      "notes": "Prosperity extraction is excluded."
+    }
   ],
-  "retrieval_metadata": {"aliases": ["gift reciprocity", "traveling teacher hospitality"], "search_terms": ["New Testament patronage friendship", "Philemon debt account", "3 John hospitality"], "common_questions": ["Was the Philippians' gift patronage?"], "related_topics": ["patronage", "hospitality", "Philemon", "3 John"], "frequently_confused_with": ["modern charitable giving"], "semantic_keywords": ["patronage", "hospitality", "debt", "gift", "reciprocity", "household"]},
-  "importance": 90,
+  "temporal_scope": {
+    "start_year": 45,
+    "end_year": 95,
+    "approximate": true,
+    "periods": [
+      "early Roman Pauline mission and correspondence",
+      "early Roman Acts composition"
+    ],
+    "narrative_setting": "Pauline assemblies and travel networks across Judea, Achaia, Macedonia, Asia, and Italy",
+    "source_composition_start_year": 49,
+    "source_composition_end_year": 95,
+    "source_composition_approximate": true,
+    "notes": "The Erastus inscription and Seneca are bounded comparanda; Acts narrates earlier settings from a later composition horizon."
+  },
+  "evidence_items": [
+    {
+      "id": "economic-categories-not-synonyms",
+      "title": "Economic relationships overlap without becoming synonyms",
+      "evidence_type": "worldview-concept",
+      "description": "The corpus differentiates gift, maintenance, wage analogy, hospitality, partnership, collection, obligation, civic benefaction, and labor.",
+      "assertion_type": "secondary-evidence",
+      "confidence": "medium",
+      "confidence_rationale": "Lexical and situational differences are explicit, but social classification is debated.",
+      "passage_relevance": "Prevents patronage from becoming a master key that erases each passage's direction of transfer, actors, occasion, and rhetoric.",
+      "certainty": "strong_consensus",
+      "dispute_status": "major_scholarly_disagreement",
+      "primary_observation": "Different passages use distinct terms for rights, gifts, sharing, service, accounts, hosting, obligation, and work.",
+      "scholarly_interpretation": "Patronage, friendship, partnership, benefaction, brokerage, and association models illuminate selected features but compete in scope.",
+      "temporal_scope": {
+        "start_year": 45,
+        "end_year": 95,
+        "approximate": true,
+        "periods": [
+          "early Roman mission and correspondence"
+        ],
+        "narrative_setting": "Translocal Pauline economic relationships",
+        "source_composition_start_year": 49,
+        "source_composition_end_year": 95,
+        "source_composition_approximate": true,
+        "notes": "Seneca is an approximately contemporary elite comparator."
+      },
+      "related_objects": [
+        {
+          "id": "patronage",
+          "relationship": "bounded-institutional-comparison",
+          "weight": 9,
+          "notes": "One model among several."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "Romans 15:25-16:23",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "Names sharing, service, obligation, welcome, assistance, and hosting.",
+          "weight": 9
+        },
+        {
+          "reference": "Philippians 4:10-20",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "Mixes partnership, account, gift, offering, and provision.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "pauline-economic-texts",
+        "philippians-gift",
+        "seneca-benefits",
+        "saller-patronage",
+        "briones-financial",
+        "blanton-spiritual-economy"
+      ],
+      "claim_ids": [
+        "economic-categories-not-synonyms"
+      ],
+      "external_references": [],
+      "metadata": {
+        "associated_culture": "early Roman Jewish and gentile assemblies",
+        "associated_biblical_geography": "eastern Mediterranean and Rome"
+      },
+      "notes": "Modern charity, salary, tax, and nonprofit categories are not projected backward."
+    },
+    {
+      "id": "romans-collection-service-obligation",
+      "title": "Jerusalem service, sharing, and material obligation",
+      "evidence_type": "worldview-concept",
+      "description": "Romans presents the Macedonia-Achaia sharing as service for poor Jerusalem believers and connects material obligation to gentile participation in spiritual things.",
+      "assertion_type": "primary-evidence",
+      "confidence": "medium",
+      "confidence_rationale": "Project and rationale are explicit; political, cultic, and chronological meanings remain debated.",
+      "passage_relevance": "Centers Jewish-gentile material fellowship without turning obligation into ethnic blame or a universal church tax.",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "primary_observation": "Romans names participants, poor saints, koinonia, debt language, material things, travel, danger, and uncertain acceptance.",
+      "scholarly_interpretation": "Scholars read relief, reciprocity, unity, eschatology, cultic offering, and mission politics in different combinations.",
+      "temporal_scope": {
+        "start_year": 56,
+        "end_year": 58,
+        "approximate": true,
+        "periods": [
+          "late Pauline mission"
+        ],
+        "narrative_setting": "Paul preparing to travel to Jerusalem",
+        "source_composition_start_year": 56,
+        "source_composition_end_year": 58,
+        "source_composition_approximate": true,
+        "notes": "Delivery and reception are not narrated in Romans."
+      },
+      "related_objects": [
+        {
+          "id": "romans",
+          "relationship": "primary-text",
+          "weight": 10,
+          "notes": "Supplies the stated rationale."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "Romans 15:25-32",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "Directly names project, participants, recipients, rationale, and travel concern.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "pauline-economic-texts",
+        "downs-offering",
+        "longenecker-poor"
+      ],
+      "claim_ids": [
+        "romans-collection-service-obligation"
+      ],
+      "external_references": [],
+      "metadata": {
+        "associated_culture": "Pauline Jewish-gentile mission networks",
+        "associated_biblical_geography": "Macedonia, Achaia, and Jerusalem"
+      },
+      "notes": "No supersessionist transfer or collective debt is inferred."
+    },
+    {
+      "id": "phoebe-commendation-role",
+      "title": "Phoebe's commendation and disputed prostatis role",
+      "evidence_type": "institution",
+      "description": "Romans asks recipients to welcome and assist Phoebe, naming her diakonos and prostatis while leaving her full economic and ministerial biography unstated.",
+      "assertion_type": "primary-evidence",
+      "confidence": "medium",
+      "confidence_rationale": "Titles and request are explicit; lexical force, office, wealth, travel task, and patronal form are disputed.",
+      "passage_relevance": "Recognizes women's translocal agency without reducing Phoebe to a wealthy patron or denying possible authority.",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "primary_observation": "Romans names Phoebe, Cenchreae, diakonos, reception, needed assistance, prostatis of many, and Paul.",
+      "scholarly_interpretation": "Proposals include patron, benefactor, protector, leader, helper, envoy, and letter carrier or interpreter.",
+      "temporal_scope": {
+        "start_year": 56,
+        "end_year": 58,
+        "approximate": true,
+        "periods": [
+          "late Pauline mission"
+        ],
+        "narrative_setting": "Commendation from Corinth's region toward Rome",
+        "source_composition_start_year": 56,
+        "source_composition_end_year": 58,
+        "source_composition_approximate": true,
+        "notes": "Her later journey is not independently documented."
+      },
+      "related_objects": [
+        {
+          "id": "phoebe",
+          "relationship": "named-person",
+          "weight": 10,
+          "notes": "Owns fuller person-level evidence."
+        },
+        {
+          "id": "patronage",
+          "relationship": "disputed-role-comparison",
+          "weight": 8,
+          "notes": "Patronage is one model."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "Romans 16:1-2",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "The commendation supplies every named role and requested action.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "pauline-economic-texts",
+        "saller-patronage",
+        "briones-financial"
+      ],
+      "claim_ids": [
+        "phoebe-commendation-role"
+      ],
+      "external_references": [],
+      "metadata": {
+        "associated_culture": "early Roman commendation and mission travel",
+        "associated_biblical_geography": "Cenchreae and Rome"
+      },
+      "notes": "Her aid is not reduced to wealth or domestic service."
+    },
+    {
+      "id": "gaius-erastus-status-limits",
+      "title": "Gaius, Erastus, hosting, civic office, and status limits",
+      "evidence_type": "material-culture",
+      "description": "Romans names Gaius as host and Erastus as city oikonomos; a Corinthian Erastus pavement illustrates civic benefaction but does not securely identify the person.",
+      "assertion_type": "primary-evidence",
+      "confidence": "medium",
+      "confidence_rationale": "Text, artifact, and benefaction are secure separately; venue, ownership, offices, date, and personal identity remain debated.",
+      "passage_relevance": "Provides hospitality and civic material context while blocking a circular elite-profile proof.",
+      "certainty": "probable",
+      "dispute_status": "archaeological_uncertainty",
+      "primary_observation": "Romans 16:23 names host and civic role; Corinth VIII.2 no. 111 preserves an Erastus name and office-related paving gift.",
+      "scholarly_interpretation": "Interpreters debate house-assembly scale and whether the inscription's aedile is Romans' oikonomos.",
+      "temporal_scope": {
+        "start_year": -27,
+        "end_year": 100,
+        "approximate": true,
+        "periods": [
+          "early Roman Imperial Corinth"
+        ],
+        "narrative_setting": "Corinthian household hosting and civic benefaction",
+        "source_composition_start_year": 56,
+        "source_composition_end_year": 58,
+        "source_composition_approximate": true,
+        "notes": "The inscription's precise ancient date is disputed."
+      },
+      "related_objects": [
+        {
+          "id": "roman-corinth-civic-household-and-association-life",
+          "relationship": "full-local-context",
+          "weight": 10,
+          "notes": "Owns detailed inscription controls."
+        },
+        {
+          "id": "household",
+          "relationship": "hosting-context",
+          "weight": 8,
+          "notes": "Hosting involved space and labor."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "Romans 16:23",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "Names Gaius and Erastus; inscription comparison does not prove identity.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "pauline-economic-texts",
+        "kent-erastus",
+        "saller-patronage"
+      ],
+      "claim_ids": [
+        "gaius-erastus-status-limits"
+      ],
+      "external_references": [],
+      "metadata": {
+        "artifact_name": "Erastus pavement inscription",
+        "site_name": "Roman Corinth",
+        "discovery_location": "east of the theater at Corinth",
+        "present_location": "in situ at Ancient Corinth",
+        "archaeological_period": "early Roman Imperial",
+        "associated_culture": "Roman Corinthian hospitality and benefaction",
+        "associated_biblical_geography": "Corinth"
+      },
+      "notes": "One host and one inscription cannot determine assembly demographics or erase household workers."
+    },
+    {
+      "id": "corinthian-maintenance-right-and-nonuse",
+      "title": "Apostolic maintenance right and situational nonuse",
+      "evidence_type": "institution",
+      "description": "First Corinthians 9 builds a right to material support through work, Torah, sacred-service, and Jesus-tradition analogies, then emphasizes Paul's nonuse in Corinth.",
+      "assertion_type": "primary-evidence",
+      "confidence": "medium",
+      "confidence_rationale": "Right and nonuse are explicit; analogies, motives, duration, other support, and normative scope are disputed.",
+      "passage_relevance": "Blocks both prosperity extraction and the opposite claim that all ministers or volunteers must work without support.",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "primary_observation": "Paul asks about food and family, uses work and sacred-service analogies, asserts a right, and repeatedly says he did not use it.",
+      "scholarly_interpretation": "Proposed motives include gospel access, freedom, patronal independence, status negotiation, solidarity, and rhetorical imitation.",
+      "temporal_scope": {
+        "start_year": 53,
+        "end_year": 55,
+        "approximate": true,
+        "periods": [
+          "Roman Corinth and Pauline correspondence"
+        ],
+        "narrative_setting": "Apostolic defense within a rights argument",
+        "source_composition_start_year": 53,
+        "source_composition_end_year": 55,
+        "source_composition_approximate": true,
+        "notes": "The chapter does not narrate a modern employment contract."
+      },
+      "related_objects": [
+        {
+          "id": "1-corinthians",
+          "relationship": "primary-text",
+          "weight": 10,
+          "notes": "Supplies right and nonuse."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "1 Corinthians 9:1-18",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "Directly argues the right and describes nonuse.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "first-corinthians-economic",
+        "briones-financial",
+        "hock-tentmaking",
+        "blanton-spiritual-economy"
+      ],
+      "claim_ids": [
+        "corinthian-maintenance-right-and-nonuse"
+      ],
+      "external_references": [],
+      "metadata": {
+        "associated_culture": "Pauline mission support and Roman Corinth",
+        "associated_biblical_geography": "Corinth"
+      },
+      "notes": "Support requires transparency; nonuse creates no compulsory unpaid-labor mandate."
+    },
+    {
+      "id": "corinthian-weekly-collection-logistics",
+      "title": "Regular preparation and approved collection carriers",
+      "evidence_type": "cultural-practice",
+      "description": "First Corinthians 16 instructs regular setting aside according to prosperity and anticipates approved persons, letters, and possibly Paul traveling with them.",
+      "assertion_type": "primary-evidence",
+      "confidence": "medium",
+      "confidence_rationale": "Preparation and approval are explicit; percentage, storage, currency, carrier identities, and final route are unknown.",
+      "passage_relevance": "Supplies concrete logistics without turning the instruction into a universal tithe or modern banking system.",
+      "certainty": "textually_explicit",
+      "dispute_status": "historical_uncertainty",
+      "primary_observation": "The text names first-of-week action, capacity, no collection on arrival, approved persons, letters, conveyance, and conditional joint travel.",
+      "scholarly_interpretation": "Scholars debate household storage, assembly gathering, week rhythms, and coordination with Galatia.",
+      "temporal_scope": {
+        "start_year": 53,
+        "end_year": 55,
+        "approximate": true,
+        "periods": [
+          "Roman Corinth and Pauline correspondence"
+        ],
+        "narrative_setting": "Advance preparation for a Jerusalem-bound collection",
+        "source_composition_start_year": 53,
+        "source_composition_end_year": 55,
+        "source_composition_approximate": true,
+        "notes": "Successful delivery is not stated."
+      },
+      "related_objects": [
+        {
+          "id": "1-corinthians",
+          "relationship": "primary-text",
+          "weight": 10,
+          "notes": "Supplies planning instructions."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "1 Corinthians 16:1-4",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "Directly names regular preparation and approved transmission.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "first-corinthians-economic",
+        "downs-offering",
+        "furnish-second-corinthians"
+      ],
+      "claim_ids": [
+        "corinthian-weekly-collection-logistics"
+      ],
+      "external_references": [],
+      "metadata": {
+        "associated_culture": "translocal Pauline collection network",
+        "associated_biblical_geography": "Galatia, Corinth, and Jerusalem"
+      },
+      "notes": "Approval and letters support accountability, not leader immunity."
+    },
+    {
+      "id": "macedonian-poverty-rhetoric",
+      "title": "Macedonian poverty and giving are rhetorically configured",
+      "evidence_type": "literary-convention",
+      "description": "Second Corinthians portrays afflicted and deeply poor Macedonians as abundantly generous, self-chosen participants who gave according to and beyond capacity.",
+      "assertion_type": "primary-evidence",
+      "confidence": "medium",
+      "confidence_rationale": "Descriptors and agency are explicit; amount, distribution, demographic reach, and idealization are unknown.",
+      "passage_relevance": "Preserves poor participants' agency while preventing a fundraising example from becoming a census or command to endanger basic needs.",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "primary_observation": "The passage stacks affliction, deep poverty, generosity, capacity, willingness, request, partnership, and self-gift language.",
+      "scholarly_interpretation": "Interpreters debate economic level, honor, performance of wealth, rhetorical comparison, and collection crisis.",
+      "temporal_scope": {
+        "start_year": 54,
+        "end_year": 56,
+        "approximate": true,
+        "periods": [
+          "Macedonian mission and Corinthian correspondence"
+        ],
+        "narrative_setting": "Paul reports Macedonian giving to Corinthians",
+        "source_composition_start_year": 54,
+        "source_composition_end_year": 56,
+        "source_composition_approximate": true,
+        "notes": "Macedonia included differentiated cities and households."
+      },
+      "related_objects": [
+        {
+          "id": "roman-macedonia-road-network-and-city-diversity",
+          "relationship": "regional-difference-context",
+          "weight": 9,
+          "notes": "Blocks a uniform regional profile."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "2 Corinthians 8:1-5",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "Directly supplies the rhetorical portrait.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "second-corinthians-collection",
+        "barclay-rich-poverty",
+        "longenecker-poor",
+        "furnish-second-corinthians"
+      ],
+      "claim_ids": [
+        "macedonian-poverty-rhetoric"
+      ],
+      "external_references": [],
+      "metadata": {
+        "associated_culture": "Pauline Macedonian assemblies",
+        "associated_biblical_geography": "Macedonia and Corinth"
+      },
+      "notes": "Poverty is neither romanticized nor prescribed."
+    },
+    {
+      "id": "collection-willingness-capacity",
+      "title": "Willingness and capacity constrain the appeal",
+      "evidence_type": "worldview-concept",
+      "description": "Second Corinthians joins strong persuasion to self-chosen participation, readiness, and acceptability according to what one has rather than what one lacks.",
+      "assertion_type": "primary-evidence",
+      "confidence": "medium",
+      "confidence_rationale": "Constraints are explicit; ancient voluntariness and rhetorical pressure require ethical interpretation.",
+      "passage_relevance": "Makes willingness and material capacity essential whenever the appeal is applied to modern giving.",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "primary_observation": "The passage uses self-chosen, willingness, not-command, capacity, and what-one-has language.",
+      "scholarly_interpretation": "Scholars debate voluntariness within ancient honor, authority, and reciprocity systems.",
+      "temporal_scope": {
+        "start_year": 54,
+        "end_year": 56,
+        "approximate": true,
+        "periods": [
+          "Pauline Corinthian collection appeal"
+        ],
+        "narrative_setting": "Paul persuading Corinthians to complete a prior intention",
+        "source_composition_start_year": 54,
+        "source_composition_end_year": 56,
+        "source_composition_approximate": true,
+        "notes": "The letter's integrity is disputed."
+      },
+      "related_objects": [
+        {
+          "id": "2-corinthians",
+          "relationship": "primary-text",
+          "weight": 10,
+          "notes": "Supplies constraints."
+        }
+      ],
+      "related_evidence": [
+        {
+          "id": "collection-readiness-shame-pressure",
+          "relationship": "ethically-constrains",
+          "weight": 10,
+          "notes": "Limits govern pressure rhetoric."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "2 Corinthians 8:3-12",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "Directly names willingness, persuasion, capacity, and acceptability.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "second-corinthians-collection",
+        "barclay-rich-poverty",
+        "furnish-second-corinthians"
+      ],
+      "claim_ids": [
+        "collection-willingness-capacity"
+      ],
+      "external_references": [],
+      "metadata": {
+        "associated_culture": "Pauline collection rhetoric",
+        "associated_biblical_geography": "Macedonia and Corinth"
+      },
+      "notes": "Food, housing, health, safety, disability, caregiving, and dependent needs cannot be overridden."
+    },
+    {
+      "id": "collection-equality-manna",
+      "title": "Equality, surplus, need, and manna",
+      "evidence_type": "worldview-concept",
+      "description": "Second Corinthians connects present surplus and need to isotes and cites the manna statement that the one with much had no excess and the one with little no lack.",
+      "assertion_type": "primary-evidence",
+      "confidence": "medium",
+      "confidence_rationale": "Terms and quotation are explicit; economic mechanism, temporal reciprocity, and theological scope remain debated.",
+      "passage_relevance": "Places sufficiency and mutual need at the center without pretending the passage supplies a complete fiscal program.",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "primary_observation": "The passage names relief, pressure, equality, present abundance, need, possible reversal, and Exodus 16:18.",
+      "scholarly_interpretation": "Readings range across balance, fairness, redistribution, mutual assistance, eschatological manna, and reciprocal exchange.",
+      "temporal_scope": {
+        "start_year": -600,
+        "end_year": 56,
+        "approximate": true,
+        "periods": [
+          "Israelite wilderness tradition and Pauline reuse"
+        ],
+        "narrative_setting": "Pauline collection appeal invoking manna",
+        "source_composition_start_year": 54,
+        "source_composition_end_year": 56,
+        "source_composition_approximate": true,
+        "notes": "Exodus is earlier intertextual evidence."
+      },
+      "related_objects": [
+        {
+          "id": "2-corinthians",
+          "relationship": "primary-text",
+          "weight": 10,
+          "notes": "Supplies Pauline reuse."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "2 Corinthians 8:13-15",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "Directly applies equality and manna to the collection.",
+          "weight": 10
+        },
+        {
+          "reference": "Exodus 16:18",
+          "relationship": "comparative",
+          "temporal_relation": "earlier-comparative",
+          "relevance_rationale": "Explicit scriptural source for sufficiency.",
+          "weight": 9
+        }
+      ],
+      "source_ids": [
+        "second-corinthians-collection",
+        "exodus-manna",
+        "barclay-rich-poverty",
+        "downs-offering"
+      ],
+      "claim_ids": [
+        "collection-equality-manna"
+      ],
+      "external_references": [],
+      "metadata": {
+        "associated_culture": "Pauline scriptural and economic reasoning",
+        "associated_biblical_geography": "wilderness Israel, Corinth, and Jerusalem"
+      },
+      "notes": "Recipient dignity and structural analysis remain necessary."
+    },
+    {
+      "id": "collection-delegates-accountability",
+      "title": "Appointed delegates and honorable administration",
+      "evidence_type": "institution",
+      "description": "Second Corinthians names Titus and assembly-appointed companions who travel with the gift so administration appears honorable before God and people.",
+      "assertion_type": "primary-evidence",
+      "confidence": "medium",
+      "confidence_rationale": "Delegation and stated accountability are explicit; identities, records, custody, and audit procedures are unknown.",
+      "passage_relevance": "Provides a transparency pattern while refusing to romanticize trusted leaders as beyond verification.",
+      "certainty": "textually_explicit",
+      "dispute_status": "historical_uncertainty",
+      "primary_observation": "The text names initiative, an acclaimed companion, congregational appointment, joint administration, avoidance of blame, and another tested companion.",
+      "scholarly_interpretation": "Scholars reconstruct envoy identity, selection, collection custody, letter partition, and interassembly authority.",
+      "temporal_scope": {
+        "start_year": 54,
+        "end_year": 56,
+        "approximate": true,
+        "periods": [
+          "Pauline collection administration"
+        ],
+        "narrative_setting": "Delegates sent toward Corinth",
+        "source_composition_start_year": 54,
+        "source_composition_end_year": 56,
+        "source_composition_approximate": true,
+        "notes": "No delegate can be securely named beyond Titus."
+      },
+      "related_objects": [
+        {
+          "id": "2-corinthians",
+          "relationship": "primary-text",
+          "weight": 10,
+          "notes": "Supplies accountability rhetoric."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "2 Corinthians 8:16-24",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "Directly names delegates and safeguards.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "second-corinthians-collection",
+        "downs-offering",
+        "furnish-second-corinthians"
+      ],
+      "claim_ids": [
+        "collection-delegates-accountability"
+      ],
+      "external_references": [],
+      "metadata": {
+        "associated_culture": "translocal Pauline collection administration",
+        "associated_biblical_geography": "Macedonia, Corinth, and Jerusalem"
+      },
+      "notes": "Modern application favors independent oversight, records, and conflict-of-interest controls."
+    },
+    {
+      "id": "collection-readiness-shame-pressure",
+      "title": "Readiness rhetoric includes honor and shame pressure",
+      "evidence_type": "literary-convention",
+      "description": "Second Corinthians 9 invokes prior boasting, Macedonian observers, advance preparation, embarrassment, and risk that a gift appear extracted rather than generous.",
+      "assertion_type": "primary-evidence",
+      "confidence": "medium",
+      "confidence_rationale": "Pressure is explicit; precise situation, letter integrity, and ethical evaluation are debated.",
+      "passage_relevance": "Requires readers to acknowledge rather than sanitize Paul's pressure and constrain modern imitation by non-compulsion.",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "primary_observation": "Paul anticipates possible shame and sends people ahead so the promised gift will be ready.",
+      "scholarly_interpretation": "Researchers analyze deliberative rhetoric, honor competition, collection crisis, and the relation of chapters 8 and 9.",
+      "temporal_scope": {
+        "start_year": 54,
+        "end_year": 56,
+        "approximate": true,
+        "periods": [
+          "Pauline Corinthian collection appeal"
+        ],
+        "narrative_setting": "Advance preparation before Paul's arrival",
+        "source_composition_start_year": 54,
+        "source_composition_end_year": 56,
+        "source_composition_approximate": true,
+        "notes": "Partition theories complicate sequence."
+      },
+      "related_objects": [
+        {
+          "id": "2-corinthians",
+          "relationship": "primary-text",
+          "weight": 10,
+          "notes": "Supplies readiness rhetoric."
+        }
+      ],
+      "related_evidence": [
+        {
+          "id": "collection-willingness-capacity",
+          "relationship": "constrained-by",
+          "weight": 10,
+          "notes": "Willingness governs application."
+        },
+        {
+          "id": "collection-cheerful-noncompulsion",
+          "relationship": "constrained-by",
+          "weight": 10,
+          "notes": "The next unit rejects compulsion."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "2 Corinthians 9:1-5",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "Directly supplies honor, shame, preparation, and extraction contrasts.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "second-corinthians-collection",
+        "downs-offering",
+        "furnish-second-corinthians"
+      ],
+      "claim_ids": [
+        "collection-readiness-shame-pressure"
+      ],
+      "external_references": [],
+      "metadata": {
+        "associated_culture": "early Roman honor rhetoric and Pauline fundraising",
+        "associated_biblical_geography": "Macedonia and Achaia"
+      },
+      "notes": "Public donor comparison, retaliation, and manipulated shame are rejected."
+    },
+    {
+      "id": "collection-cheerful-noncompulsion",
+      "title": "Decided giving, non-compulsion, service, and thanksgiving",
+      "evidence_type": "worldview-concept",
+      "description": "Second Corinthians 9 joins sowing imagery to heart-decided and non-compelled giving, then describes sufficiency, generosity, recipient need, confession, prayer, and thanksgiving.",
+      "assertion_type": "primary-evidence",
+      "confidence": "medium",
+      "confidence_rationale": "Sequence is explicit; reciprocity, reward, prosperity, and rhetorical integration are disputed.",
+      "passage_relevance": "Prevents sowing language from functioning as a guaranteed investment return or license for pressure.",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "primary_observation": "The passage names decision, grief, compulsion, cheerfulness, sufficiency, service, need, thanksgiving, prayer, and gift.",
+      "scholarly_interpretation": "Interpreters debate wisdom, benefaction, reciprocity, divine reward, and social effects.",
+      "temporal_scope": {
+        "start_year": 54,
+        "end_year": 56,
+        "approximate": true,
+        "periods": [
+          "Pauline Corinthian collection appeal"
+        ],
+        "narrative_setting": "Collection exhortation and anticipated outcomes",
+        "source_composition_start_year": 54,
+        "source_composition_end_year": 56,
+        "source_composition_approximate": true,
+        "notes": "No modern return rate is supplied."
+      },
+      "related_objects": [
+        {
+          "id": "2-corinthians",
+          "relationship": "primary-text",
+          "weight": 10,
+          "notes": "Supplies the sequence."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "2 Corinthians 9:6-15",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "Directly states decision, non-compulsion, service, and thanksgiving.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "second-corinthians-collection",
+        "downs-offering",
+        "furnish-second-corinthians",
+        "blanton-spiritual-economy"
+      ],
+      "claim_ids": [
+        "collection-cheerful-noncompulsion"
+      ],
+      "external_references": [],
+      "metadata": {
+        "associated_culture": "Pauline gift and collection discourse",
+        "associated_biblical_geography": "Corinth and Jerusalem"
+      },
+      "notes": "Money does not purchase healing, salvation, status, or wealth."
+    },
+    {
+      "id": "philippian-need-contentment",
+      "title": "Learned contentment does not erase material need",
+      "evidence_type": "worldview-concept",
+      "description": "Philippians names lowered and abundant conditions, hunger and fullness, learned endurance, and the Philippians' good action in sharing Paul's distress.",
+      "assertion_type": "primary-evidence",
+      "confidence": "medium",
+      "confidence_rationale": "Contrasts and need are explicit; prison setting, philosophical parallels, chronology, and exact deprivation are disputed.",
+      "passage_relevance": "Keeps contentment from becoming a demand that poor, incarcerated, exploited, or ill people deny need or refuse support.",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "primary_observation": "Paul says he learned contentment across abundance and lack and calls sharing in affliction good.",
+      "scholarly_interpretation": "Scholars compare philosophical autarkeia while emphasizing Christological, relational, and gift context.",
+      "temporal_scope": {
+        "start_year": 50,
+        "end_year": 62,
+        "approximate": true,
+        "periods": [
+          "Pauline imprisonment and Philippian relationship"
+        ],
+        "narrative_setting": "Gift acknowledgment under disputed imprisonment provenance",
+        "source_composition_start_year": 50,
+        "source_composition_end_year": 62,
+        "source_composition_approximate": true,
+        "notes": "Rome, Ephesus, and Caesarea remain proposed provenances."
+      },
+      "related_objects": [
+        {
+          "id": "philippians",
+          "relationship": "primary-text",
+          "weight": 10,
+          "notes": "Supplies contentment and need."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "Philippians 4:10-14",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "Directly names circumstances, learning, need, and shared affliction.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "philippians-gift",
+        "reumann-philippians",
+        "longenecker-poor"
+      ],
+      "claim_ids": [
+        "philippian-need-contentment"
+      ],
+      "external_references": [],
+      "metadata": {
+        "associated_culture": "Pauline imprisonment and Macedonian gift network",
+        "associated_biblical_geography": "Philippi and disputed place of imprisonment"
+      },
+      "notes": "Contentment is not medical neglect, austerity coercion, or trauma glorification."
+    },
+    {
+      "id": "philippian-giving-receiving-account",
+      "title": "Partnership, account, offering, and provision",
+      "evidence_type": "literary-convention",
+      "description": "Philippians mixes recurring support, partnership, giving and receiving, account, fruit, fragrant offering, sacrifice, and divine provision.",
+      "assertion_type": "primary-evidence",
+      "confidence": "medium",
+      "confidence_rationale": "Vocabulary is explicit; gift history and the best friendship, patronage, partnership, commerce, or cult model remain disputed.",
+      "passage_relevance": "Explains why no single ancient exchange convention or modern donation receipt exhausts Paul's rhetoric.",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "primary_observation": "The passage recalls gifts at Thessalonica and through Epaphroditus, then redirects account and offering language toward fruit, God, and provision.",
+      "scholarly_interpretation": "Readings emphasize friendship, patronal negotiation, partnership, brokerage, worship, transformed reciprocity, or combinations.",
+      "temporal_scope": {
+        "start_year": 50,
+        "end_year": 62,
+        "approximate": true,
+        "periods": [
+          "Pauline-Philippian gift relationship"
+        ],
+        "narrative_setting": "Acknowledgment of a recurring material relationship",
+        "source_composition_start_year": 50,
+        "source_composition_end_year": 62,
+        "source_composition_approximate": true,
+        "notes": "Seneca is contemporary comparison, not direct evidence of Philippian terms."
+      },
+      "related_objects": [
+        {
+          "id": "roman-philippi-colonial-civic-and-household-life",
+          "relationship": "city-specific-gift-context",
+          "weight": 10,
+          "notes": "Owns local-status controls."
+        }
+      ],
+      "related_evidence": [
+        {
+          "id": "corinthian-maintenance-right-and-nonuse",
+          "relationship": "distinct-policy-comparison",
+          "weight": 8,
+          "notes": "Acceptance here differs from Corinthian nonuse."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "Philippians 4:14-20",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "Directly supplies mixed gift vocabulary.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "philippians-gift",
+        "seneca-benefits",
+        "reumann-philippians",
+        "briones-philippians",
+        "blanton-spiritual-economy"
+      ],
+      "claim_ids": [
+        "philippian-giving-receiving-account"
+      ],
+      "external_references": [],
+      "metadata": {
+        "associated_culture": "Roman gift exchange and Pauline mission partnership",
+        "associated_biblical_geography": "Philippi, Thessalonica, and disputed imprisonment location"
+      },
+      "notes": "Provision is not a guaranteed financial return."
+    },
+    {
+      "id": "thessalonian-missionary-labor",
+      "title": "Missionary labor, nonburden, and shared selves",
+      "evidence_type": "cultural-practice",
+      "description": "First Thessalonians recalls night-and-day labor within a defense that denies greed and glory seeking and uses maternal and paternal care metaphors.",
+      "assertion_type": "primary-evidence",
+      "confidence": "medium",
+      "confidence_rationale": "Labor and rhetoric are explicit; trade, workshop, income, schedule, and other support are unreported.",
+      "passage_relevance": "Situates self-support within mission integrity without making one funding policy or leader-family metaphor universal.",
+      "certainty": "textually_explicit",
+      "dispute_status": "historical_uncertainty",
+      "primary_observation": "The senders deny a greed pretext, recall affection and self-sharing, mention labor to avoid burden, and describe exhortation.",
+      "scholarly_interpretation": "Workshop, philosophical, patronage, rhetorical-defense, and solidarity readings overlap and compete.",
+      "temporal_scope": {
+        "start_year": 49,
+        "end_year": 52,
+        "approximate": true,
+        "periods": [
+          "early Pauline Thessalonian mission"
+        ],
+        "narrative_setting": "Retrospective mission defense",
+        "source_composition_start_year": 49,
+        "source_composition_end_year": 52,
+        "source_composition_approximate": true,
+        "notes": "No trade is named in the letter."
+      },
+      "related_objects": [
+        {
+          "id": "thessalonian-civic-and-funerary-context",
+          "relationship": "full-city-labor-context",
+          "weight": 10,
+          "notes": "Owns fuller comparisons."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "1 Thessalonians 2:5-12",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "Directly names labor, burden, affection, integrity, and exhortation.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "first-thessalonians-economic",
+        "hock-tentmaking",
+        "briones-financial"
+      ],
+      "claim_ids": [
+        "thessalonian-missionary-labor"
+      ],
+      "external_references": [],
+      "metadata": {
+        "associated_culture": "Roman urban mission and artisan comparison",
+        "associated_biblical_geography": "Thessalonica"
+      },
+      "notes": "No worker shaming or unaccountable parental authority is authorized."
+    },
+    {
+      "id": "thessalonian-community-work",
+      "title": "Community work instruction and uncertain diagnosis",
+      "evidence_type": "cultural-practice",
+      "description": "First Thessalonians joins sibling love to quiet conduct, one's affairs, manual work, outsider relations, and material nondependence.",
+      "assertion_type": "primary-evidence",
+      "confidence": "low",
+      "confidence_rationale": "Instruction is explicit, but target, behavior, capacities, class distribution, and patronage relation are unknown.",
+      "passage_relevance": "Requires restraint before diagnosing laziness, eschatological excitement, patron dependence, or a whole class.",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "primary_observation": "The passage gives coordinated conduct, work, outsider, and need instructions without describing an incident.",
+      "scholarly_interpretation": "Proposals include idleness, meddling, dependence, patronage, apocalyptic expectation, and general moral formation.",
+      "temporal_scope": {
+        "start_year": 49,
+        "end_year": 52,
+        "approximate": true,
+        "periods": [
+          "early Pauline Thessalonian assembly"
+        ],
+        "narrative_setting": "Community exhortation",
+        "source_composition_start_year": 49,
+        "source_composition_end_year": 52,
+        "source_composition_approximate": true,
+        "notes": "Second Thessalonians must not be imported without authorship controls."
+      },
+      "related_objects": [
+        {
+          "id": "1-thessalonians",
+          "relationship": "primary-text",
+          "weight": 10,
+          "notes": "Supplies the instruction."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "1 Thessalonians 4:9-12",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "Directly supplies each instruction but not its diagnosis.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "first-thessalonians-economic",
+        "hock-tentmaking",
+        "longenecker-poor"
+      ],
+      "claim_ids": [
+        "thessalonian-community-work"
+      ],
+      "external_references": [],
+      "metadata": {
+        "associated_culture": "Roman urban assembly and artisan comparison",
+        "associated_biblical_geography": "Thessalonica"
+      },
+      "notes": "Unemployment, disability, illness, caregiving, exploitation, and unsafe labor are not condemned."
+    },
+    {
+      "id": "acts-corinth-workshop",
+      "title": "Shared skenopoios trade in Acts 18",
+      "evidence_type": "cultural-practice",
+      "description": "Acts associates Paul with Priscilla and Aquila through a shared skenopoios trade and portrays work alongside synagogue activity.",
+      "assertion_type": "primary-evidence",
+      "confidence": "medium",
+      "confidence_rationale": "Narrative statement is clear; historicity, lexical precision, workshop ownership, materials, and status are debated.",
+      "passage_relevance": "Supplies Acts' trade claim without retrojecting tentmaking into every Pauline letter or assuming entrepreneurial wealth.",
+      "certainty": "probable",
+      "dispute_status": "historical_uncertainty",
+      "primary_observation": "Acts joins arrival, association with the couple, same trade, work, and Sabbath reasoning.",
+      "scholarly_interpretation": "Skenopoios is rendered tentmaker or leatherworker; workshop mission and social mobility are reconstructed differently.",
+      "temporal_scope": {
+        "start_year": 49,
+        "end_year": 95,
+        "approximate": true,
+        "periods": [
+          "narrated Claudian Corinth and Acts composition"
+        ],
+        "narrative_setting": "Paul with Priscilla and Aquila in Corinth",
+        "source_composition_start_year": 70,
+        "source_composition_end_year": 95,
+        "source_composition_approximate": true,
+        "notes": "Narrative setting and composition differ."
+      },
+      "related_objects": [
+        {
+          "id": "acts",
+          "relationship": "primary-narrative",
+          "weight": 10,
+          "notes": "Acts alone names the trade."
+        },
+        {
+          "id": "priscilla",
+          "relationship": "named-coworker",
+          "weight": 9,
+          "notes": "Agency is shared."
+        },
+        {
+          "id": "aquila",
+          "relationship": "named-coworker",
+          "weight": 9,
+          "notes": "Agency is shared."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "Acts 18:1-4",
+          "relationship": "direct",
+          "temporal_relation": "diachronic",
+          "relevance_rationale": "The later narrative directly supplies trade and work.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "acts-economic",
+        "hock-tentmaking",
+        "briones-financial"
+      ],
+      "claim_ids": [
+        "acts-corinth-workshop"
+      ],
+      "external_references": [],
+      "metadata": {
+        "associated_culture": "Roman Corinthian artisan and household economy",
+        "associated_biblical_geography": "Corinth"
+      },
+      "notes": "No exact material, shop address, ownership structure, or income is known."
+    },
+    {
+      "id": "acts-return-party-collection-limit",
+      "title": "Acts' return party is not explicitly a collection delegation",
+      "evidence_type": "literary-convention",
+      "description": "Acts names companions on the return through Macedonia and toward Asia but does not identify them as collection carriers.",
+      "assertion_type": "scholarly-reconstruction",
+      "confidence": "low",
+      "confidence_rationale": "Companions and earlier delegate plans are explicit in separate sources; their identification and route function are inferred.",
+      "passage_relevance": "Keeps plausible collection logistics from becoming narrative fact through Acts-Paul harmonization.",
+      "certainty": "disputed",
+      "dispute_status": "major_scholarly_disagreement",
+      "primary_observation": "Acts lists companions; First and Second Corinthians independently mention approved or appointed collection travelers.",
+      "scholarly_interpretation": "Many reconstruct a representative delegation; others stress Acts' silence about the collection and source differences.",
+      "temporal_scope": {
+        "start_year": 53,
+        "end_year": 95,
+        "approximate": true,
+        "periods": [
+          "Pauline collection planning, narrated return, and Acts composition"
+        ],
+        "narrative_setting": "Return through Macedonia and onward travel",
+        "source_composition_start_year": 53,
+        "source_composition_end_year": 95,
+        "source_composition_approximate": true,
+        "notes": "Sources have different dates and genres."
+      },
+      "related_objects": [
+        {
+          "id": "acts",
+          "relationship": "later-narrative",
+          "weight": 9,
+          "notes": "Names companions but not the fund."
+        }
+      ],
+      "related_evidence": [
+        {
+          "id": "corinthian-weekly-collection-logistics",
+          "relationship": "possible-development",
+          "weight": 7,
+          "notes": "Earlier plans anticipated approved persons."
+        },
+        {
+          "id": "collection-delegates-accountability",
+          "relationship": "possible-development",
+          "weight": 7,
+          "notes": "Second Corinthians names companions."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "Acts 20:1-6",
+          "relationship": "disputed",
+          "temporal_relation": "diachronic",
+          "relevance_rationale": "Names return party but not a collection role.",
+          "weight": 8
+        },
+        {
+          "reference": "1 Corinthians 16:3-4",
+          "relationship": "comparative",
+          "temporal_relation": "earlier-comparative",
+          "relevance_rationale": "Earlier letter anticipates approved carriers.",
+          "weight": 8
+        },
+        {
+          "reference": "2 Corinthians 8:16-24",
+          "relationship": "comparative",
+          "temporal_relation": "earlier-comparative",
+          "relevance_rationale": "Earlier letter names appointed companions.",
+          "weight": 8
+        }
+      ],
+      "source_ids": [
+        "acts-economic",
+        "first-corinthians-economic",
+        "second-corinthians-collection",
+        "downs-offering"
+      ],
+      "claim_ids": [
+        "acts-return-party-collection-limit"
+      ],
+      "external_references": [],
+      "metadata": {
+        "associated_culture": "Pauline travel and collection networks",
+        "associated_biblical_geography": "Macedonia, Achaia, Asia, and Jerusalem"
+      },
+      "notes": "Plausibility is not identification."
+    },
+    {
+      "id": "acts-miletus-labor-support",
+      "title": "Laboring hands and support for the weak",
+      "evidence_type": "literary-convention",
+      "description": "Acts' farewell has Paul deny coveting, point to his hands serving needs, urge labor for the weak, and cite a Jesus saying absent from the canonical Gospels.",
+      "assertion_type": "primary-evidence",
+      "confidence": "medium",
+      "confidence_rationale": "Speech content is explicit; historical memory, Lukan composition, saying origin, and relation to letters are disputed.",
+      "passage_relevance": "Shows Acts integrating self-support with care for vulnerable people rather than making work mere independence or austerity.",
+      "certainty": "textually_explicit",
+      "dispute_status": "major_scholarly_disagreement",
+      "primary_observation": "Acts joins no coveting, hands, needs of Paul and companions, labor, weak people, giving, and a remembered Jesus saying.",
+      "scholarly_interpretation": "Interpreters compare Pauline self-defense and work traditions while debating Lukan speech composition.",
+      "temporal_scope": {
+        "start_year": 50,
+        "end_year": 95,
+        "approximate": true,
+        "periods": [
+          "narrated Pauline mission and Acts composition"
+        ],
+        "narrative_setting": "Miletus farewell to Ephesian elders",
+        "source_composition_start_year": 70,
+        "source_composition_end_year": 95,
+        "source_composition_approximate": true,
+        "notes": "Narrated event and composition differ."
+      },
+      "related_objects": [
+        {
+          "id": "acts",
+          "relationship": "primary-narrative",
+          "weight": 10,
+          "notes": "Supplies the farewell."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "Acts 20:17-38",
+          "relationship": "direct",
+          "temporal_relation": "diachronic",
+          "relevance_rationale": "Directly supplies Acts' speech linking labor and support.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "acts-economic",
+        "hock-tentmaking",
+        "briones-financial",
+        "longenecker-poor"
+      ],
+      "claim_ids": [
+        "acts-miletus-labor-support"
+      ],
+      "external_references": [],
+      "metadata": {
+        "associated_culture": "Luke-Acts mission leadership and economic ethics",
+        "associated_biblical_geography": "Miletus and Ephesus"
+      },
+      "notes": "The weak are supported, not blamed or compelled into unsafe labor."
+    },
+    {
+      "id": "gift-grace-nontransaction",
+      "title": "Grace, gift, provision, and thanksgiving are not a purchase contract",
+      "evidence_type": "worldview-concept",
+      "description": "Second Corinthians and Philippians relate divine grace and provision to human sharing, service, and thanksgiving while retaining decided giving and non-compulsion.",
+      "assertion_type": "secondary-evidence",
+      "confidence": "medium",
+      "confidence_rationale": "Connections and non-compulsion are explicit; theories of gift, reciprocity, and grace remain disputed.",
+      "passage_relevance": "Blocks money from being represented as payment for salvation, healing, leadership access, honor, or guaranteed prosperity.",
+      "certainty": "strong_consensus",
+      "dispute_status": "interpretive_uncertainty",
+      "primary_observation": "Grace, gift, provision, service, generosity, prayer, and thanksgiving occur without a stated donor return rate or purchase mechanism.",
+      "scholarly_interpretation": "Scholars debate reciprocity, incongruity, circularity, patronage, and transformed gift economies.",
+      "temporal_scope": {
+        "start_year": 50,
+        "end_year": 62,
+        "approximate": true,
+        "periods": [
+          "Pauline Corinthian and Philippian correspondence"
+        ],
+        "narrative_setting": "Collection appeal and gift acknowledgment",
+        "source_composition_start_year": 50,
+        "source_composition_end_year": 62,
+        "source_composition_approximate": true,
+        "notes": "Canonical synthesis follows passage-level interpretation."
+      },
+      "related_objects": [
+        {
+          "id": "grace",
+          "relationship": "theological-language-context",
+          "weight": 8,
+          "notes": "Grace cannot be commercialized."
+        }
+      ],
+      "related_evidence": [
+        {
+          "id": "collection-cheerful-noncompulsion",
+          "relationship": "grounded-in",
+          "weight": 10,
+          "notes": "Decision and non-compulsion constrain application."
+        },
+        {
+          "id": "philippian-giving-receiving-account",
+          "relationship": "compared-with",
+          "weight": 9,
+          "notes": "Account language is redirected toward fruit, offering, and provision."
+        }
+      ],
+      "scripture_references": [
+        {
+          "reference": "2 Corinthians 8:1-9",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "Connects divine grace, collection participation, and Messiah's self-giving.",
+          "weight": 10
+        },
+        {
+          "reference": "2 Corinthians 9:6-15",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "Connects decided giving, provision, service, prayer, and thanksgiving.",
+          "weight": 10
+        },
+        {
+          "reference": "Philippians 4:14-20",
+          "relationship": "direct",
+          "temporal_relation": "contemporary",
+          "relevance_rationale": "Connects gift, account, offering, fruit, and provision.",
+          "weight": 10
+        }
+      ],
+      "source_ids": [
+        "second-corinthians-collection",
+        "philippians-gift",
+        "barclay-gift",
+        "blanton-spiritual-economy",
+        "briones-financial"
+      ],
+      "claim_ids": [
+        "gift-grace-nontransaction"
+      ],
+      "external_references": [],
+      "metadata": {
+        "associated_culture": "Pauline gift and grace discourse",
+        "associated_biblical_geography": "Corinth, Philippi, and Jerusalem"
+      },
+      "notes": "Prosperity extraction and transactional salvation are explicitly excluded."
+    }
+  ],
+  "canonical_story": {
+    "phase": "early church mission",
+    "role": "Material resources, labor, hospitality, and collection networks support mission and Jewish-gentile fellowship under contested social conditions.",
+    "preceded_by": [
+      "Israelite manna and poor-care traditions"
+    ],
+    "followed_by": [
+      "later Christian mutual aid, patronage, and institutional finance"
+    ]
+  },
+  "hermeneutical_lens": {
+    "immediate_literary_context": "Read each right, gift, work statement, commendation, and appeal within its local defense, relationship, and collection stage.",
+    "book_context": "Romans, the Corinthian letters, Philippians, First Thessalonians, and Acts disclose different occasions and narratorial interests.",
+    "canonical_context": "Compare economic practices after preserving sequence, authorship, chronology, rhetoric, and explicit silences.",
+    "covenant_context": "The Jerusalem collection concerns Jewish-gentile fellowship and must not become supersessionist transfer, ethnic debt, or donor ownership.",
+    "historical_context": "Distinguish household hospitality, workshop labor, patronage, friendship, civic benefaction, association funds, and translocal collection.",
+    "ancient_near_east_context": "Use Exodus manna where Paul cites it; do not substitute generic ancient economics for Roman-period evidence.",
+    "second_temple_jewish_context": "Jerusalem recipients and Paul's scriptural reasoning remain Jewish contexts, even where gentile assemblies contribute.",
+    "original_audience": "Modern application needs safeguards for poor people, donors, workers, dependents, disabled people, caregivers, volunteers, and recipients.",
+    "genre": "Distinguish letter appeal, self-defense, commendation, acknowledgment, exhortation, travel narrative, farewell speech, inscription, and philosophical comparison.",
+    "intertextual_connections": [
+      "Exodus 16 and 2 Corinthians 8",
+      "1 Corinthians 16 and 2 Corinthians 8-9",
+      "Romans 15 and Galatians 2",
+      "Philippians 4 and 1 Corinthians 9",
+      "1 Thessalonians 2 and Acts 18 and 20"
+    ],
+    "biblical_theology_themes": [
+      "grace",
+      "fellowship",
+      "service",
+      "sufficiency",
+      "equality",
+      "labor",
+      "care for poor and weak people",
+      "thanksgiving"
+    ],
+    "messianic_christological_trajectory": "Second Corinthians relates Messiah's self-giving to collection rhetoric, but this cannot coerce donor self-harm or turn divine grace into financial exchange.",
+    "major_interpretive_views": [
+      "patronage versus friendship or partnership",
+      "relief versus cultic or political collection meanings",
+      "redistribution versus reciprocal equality",
+      "self-support versus accepted mission support",
+      "Acts-Paul continuity versus narrative shaping"
+    ],
+    "historical_interpretation": "Direct texts control; social models and collection chronology remain bounded reconstructions.",
+    "authorial_intent": "The passages address concrete mission, relationship, reputation, need, and collection problems rather than writing a timeless financial code.",
+    "typological_connections": [],
+    "christological_significance": "Messiah's self-giving and divine provision shape Pauline appeals without creating a donor investment contract.",
+    "modern_application_principles": [
+      "Require informed and unretaliated donor consent.",
+      "Use transparent records, independent oversight, and conflict-of-interest controls.",
+      "Protect food, housing, health, safety, disability, caregiving, and dependent needs.",
+      "Pay fairly and reject compulsory unpaid labor.",
+      "Preserve recipient dignity and agency.",
+      "Reject prosperity promises and purchased access."
+    ],
+    "common_misinterpretations": [
+      "every gift is formal patronage",
+      "Paul rejected all financial support",
+      "Macedonian poverty is an ideal",
+      "cheerful giving excuses leader pressure",
+      "sowing guarantees monetary return",
+      "contentment means denying need",
+      "Phoebe's role is certainly elite patronage or mere domestic help",
+      "the Erastus inscription proves Romans' identity",
+      "Acts' companions are explicitly collection couriers",
+      "work instruction condemns everyone without paid employment"
+    ]
+  },
+  "retrieval_metadata": {
+    "aliases": [
+      "Pauline economics",
+      "Paul and money",
+      "Jerusalem offering",
+      "Macedonian giving",
+      "Philippian support",
+      "Paul tentmaker"
+    ],
+    "search_terms": [
+      "Romans 15 Jerusalem collection debt material spiritual",
+      "Romans 16 Phoebe prostatis Gaius host Erastus",
+      "1 Corinthians 9 apostle support rights free of charge",
+      "1 Corinthians 16 weekly collection approved carriers",
+      "2 Corinthians 8 9 poverty equality cheerful compulsion delegates",
+      "Philippians 4 giving receiving account contentment gift",
+      "1 Thessalonians 2 4 manual work burden",
+      "Acts 18 tentmaker Acts 20 hands weak collection delegation"
+    ],
+    "common_questions": [
+      "How did Paul fund his mission?",
+      "What safeguards appear in the Jerusalem collection?",
+      "What did poverty and work mean in Paul's assemblies?"
+    ],
+    "related_topics": [
+      "patronage",
+      "hospitality",
+      "benefaction",
+      "manual labor",
+      "poverty",
+      "gift exchange",
+      "Jerusalem",
+      "Phoebe"
+    ],
+    "frequently_confused_with": [
+      "modern tithe mandate",
+      "tax",
+      "salary contract",
+      "investment return",
+      "one formal patron-client system",
+      "poverty census",
+      "universal work test"
+    ],
+    "semantic_keywords": [
+      "charis",
+      "koinonia",
+      "diakonia",
+      "isotes",
+      "logeia",
+      "exousia",
+      "misthos",
+      "authairetos",
+      "ananke",
+      "dosis",
+      "lempsis",
+      "skenopoios"
+    ]
+  },
+  "importance": 97,
   "framework_version": "1.0",
   "object_version": "1",
   "content_status": "draft",
   "review_status": "in_review",
   "generated_by": [
-    {"type": "migration", "name": "codex", "workflow": "evidence-provenance-normalization", "date": "2026-08-14"}
+    {
+      "type": "migration",
+      "name": "codex",
+      "workflow": "evidence-provenance-normalization",
+      "date": "2026-08-14"
+    },
+    {
+      "type": "ai",
+      "name": "codex",
+      "workflow": "pauline-economic-life-patronage-collection-labor-poverty-expansion",
+      "date": "2026-08-24"
+    }
   ],
+  "reviewed_by": [],
   "confidence": "medium",
   "human_review_required": true
 }

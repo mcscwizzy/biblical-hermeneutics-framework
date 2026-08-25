@@ -22,7 +22,7 @@ class CanonicalLoaderTests(unittest.TestCase):
             "theology": 50,
             "themes": 50,
             "people": 101,
-            "places": 75,
+            "places": 77,
             "events": 76,
             "books": 66,
             "word_studies": 50,
@@ -33,14 +33,14 @@ class CanonicalLoaderTests(unittest.TestCase):
             "timeline": 1,
             "covenants": 1,
             "biblical_theology": 1,
-            "cultural_background": 29,
+            "cultural_background": 44,
             "symbols": 1,
             "literary_devices": 1,
             "doctrine": 1,
         }
 
-        self.assertEqual(len(library.objects_by_id), 648)
-        self.assertEqual(library.manifest["object_count"], 648)
+        self.assertEqual(len(library.objects_by_id), 665)
+        self.assertEqual(library.manifest["object_count"], 665)
         self.assertEqual(library.manifest["framework_version"], "1.0")
         self.assertEqual(library.manifest["schema_version"], "1.0")
         self.assertEqual(library.manifest["categories"], expected_categories)

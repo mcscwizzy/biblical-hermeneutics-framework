@@ -51,6 +51,7 @@
   "related_places": [],
   "related_events": [],
   "related_objects": [
+    {"id":"pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation","relationship":"authority-rhetoric-and-accountability-cluster","weight":10,"notes":"Apostolic defense, signs, suffering, commendation, and boasting remain subject to testing and cannot create founder immunity."},
     {
       "id": "covenant-assembly",
       "relationship": "institutional-context",
@@ -74,6 +75,30 @@
       "relationship": "institutional-context",
       "weight": 8,
       "notes": "curated canonical context"
+    },
+    {
+      "id": "pauline-women-coworkers-prophecy-and-assembly-authority",
+      "relationship": "junia-and-role-evidence",
+      "weight": 10,
+      "notes": "The cluster preserves Junia's feminine name and the disputed inclusive or elative apostolic syntax."
+    },
+    {
+      "id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+      "relationship": "contested-legitimacy-and-accountability-evidence",
+      "weight": 10,
+      "notes": "The cluster distinguishes hardship, irony, signs, weakness, and apostolic claims while rejecting founder immunity and retaliatory discipline."
+    },
+    {
+      "id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+      "relationship": "support-rights-nonuse-and-accountability-evidence",
+      "weight": 10,
+      "notes": "The cluster keeps apostolic compensation rights beside voluntary contextual nonuse, collective fund administration, and safeguards against compulsory unpaid labor or leader enrichment."
+    },
+    {
+      "id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+      "relationship": "mission-and-interassembly-network-synthesis",
+      "weight": 9,
+      "notes": "Reciprocal link from sending-founder-and-accountability-institution."
     }
   ],
   "scripture_references": [

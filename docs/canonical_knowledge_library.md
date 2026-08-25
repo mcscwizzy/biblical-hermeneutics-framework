@@ -1050,11 +1050,456 @@ rhetoric without romanticizing poverty. These 155 items are
 chronology-controlled, passage-linked, and source-resolvable, but AI-authored
 additions remain drafts until human review.
 
-The next focused expansion should build an Athens evidence cluster for Acts
-17:16-34: city topography, agora and Areopagus settings, altars and cult
-plurality, philosophical schools, disputed inscriptional comparisons, speech
-genre, Scripture and Greek poetic citations, and the limits of reconstructing
-an Athenian assembly from the named hearers.
+The Roman Athens pass adds a complete city record and passage-bounded evidence
+for the Classical Agora as a mixed public space; the distinct Roman Agora and
+other early imperial changes; Areopagus place, council, and procedure
+ambiguities; cult plurality without an idol census; later and non-identical
+unknown-god comparanda; bounded Epicurean and Stoic comparisons; the disputed
+force of `deisidaimonesterous`; the speech's creator, temple, idol, human-unity,
+repentance, judgment, and resurrection argument; Aratus's secure offspring
+parallel without assigning the first poetic clause to a lost source; Acts'
+historiographic speech form; mixed resurrection responses; the limits of
+reconstructing Dionysius, Damaris, or an Athenian assembly; and the distinct
+Acts and First Thessalonians itinerary witnesses. These 171 items are
+chronology-controlled, passage-linked, and source-resolvable, but AI-authored
+additions remain drafts until human review.
+
+The Roman Galatia pass adds a complete regional record and passage-bounded
+evidence for Roman provincial versus ethnic geography; the Perga-to-Antioch
+highland sequence; the material Via Sebaste network without an exact Pauline
+route claim; Pisidian Antioch's colony, road, inscriptional, and synagogue
+settings; Iconium's changing regional and civic classification; Lystra's
+colonial and local diversity, Lycaonian language, bounded Zeus-Hermes
+comparanda, disability agency, and crowd-violence limits; Derbe identification
+uncertainty; the reverse journey and assembly appointments; Timothy's
+Derbe-Lystra household limits; Acts' disputed Phrygian-Galatian wording; the
+north/south destination debate; plural-audience limits; bodily weakness without
+diagnosis; and Acts-Galatians itinerary independence. These 190 items are
+chronology-controlled, passage-linked, and source-resolvable, but AI-authored
+additions remain drafts until human review.
+
+The Pauline kinship pass adds passage-bounded evidence for custody and the
+ancient `paidagogos`; baptismal kinship and the Jew-Greek, enslaved-free, and
+male-female formula; Abrahamic seed and inheritance; the minor-heir analogy;
+guardians, estate managers, and the father's appointed time; disputed
+`stoicheia`; birth under Torah; redemption, adoption, Spirit, Abba, and
+heirship; bounded Roman adoption comparison; the captive body and slavery's
+continuing violence; Romans 8's Spirit witness, co-heirship, suffering,
+creation's groaning, and bodily redemption; and the literary differences
+between Galatians and Romans. Plato is earlier comparative evidence, while
+Gaius and P.Ryl. 2.153 are explicitly later comparanda rather than the exact law
+behind Galatians. These 209 items are chronology-controlled, passage-linked,
+and source-resolvable, but AI-authored additions remain drafts until human
+review.
+
+The ritual-purity and food pass deepens the former Levitical seed with
+passage-bounded evidence for ritual and moral impurity; food, carcass, and
+holiness distinctions; diverse Second Temple purity reasoning; Mark 7's
+handwashing dispute, heart language, and contested `katharizon panta ta
+bromata`; Acts 10's animal vision, human application, hospitality, and Spirit
+reception; Acts 15's gentile question, decree forms, and disputed legal
+backgrounds; the Antioch table comparison; Romans 14's underdetermined group
+identities, welcome, conscience, and non-coercion; and First Corinthians
+8-10's differentiation of idol claims, cultic participation, market purchase,
+private invitations, and disclosure. The later Mishnah, Codex Bezae, and
+Sarapis invitation remain explicitly dated comparanda rather than direct
+first-century descriptions. These 229 items are chronology-controlled,
+passage-linked, and source-resolvable, but AI-authored additions remain drafts
+until human review. Safeguards reject antisemitism, forced eating, romanticized
+harm, and flattening the four passage complexes into a universal modern menu.
+
+The Pauline economic-life pass deepens the former patronage and hospitality
+seed with passage-bounded evidence for gift, wage analogy, missionary
+maintenance, hospitality, patronage, civic benefaction, reciprocity, manual
+labor, collection logistics, poverty rhetoric, equality, accountability, and
+material-spiritual obligation. Romans 15-16, 1 Corinthians 9 and 16,
+2 Corinthians 8-9, Philippians 4, 1 Thessalonians 2 and 4, and Acts 18 and 20
+remain distinct literary and chronological witnesses. Seneca and the Erastus
+pavement are bounded comparanda rather than keys to every assembly
+relationship. These 249 items are chronology-controlled, passage-linked, and
+source-resolvable, but AI-authored additions remain drafts until human review.
+Safeguards reject transactional grace, prosperity extraction, coerced giving,
+romanticized deprivation, status overclaiming, compulsory unpaid labor, and
+worker or recipient shaming.
+
+The Pauline women-coworkers and assembly-authority pass adds passage-bounded
+evidence for Phoebe's commendation, diakonia, and prostatis; Prisca's
+coworking, hosting, and teaching; Junia's feminine name and disputed apostolic
+syntax; multiple women laborers and Roman greeting groups; Corinthian women's
+prayer and prophecy; kephale, head presentation, mutuality, exousia,
+intelligibility, discernment, and three contextual silence instructions;
+1 Corinthians 14:34-35's manuscript relocation; Euodia and Syntyche's honored
+gospel labor and reconciliation appeal; and Lydia's household agency. Romans,
+First Corinthians, Philippians, and Acts remain distinct literary and
+chronological witnesses. These 269 items are chronology-controlled,
+passage-linked, and source-resolvable, but AI-authored additions remain drafts
+until human review. Safeguards reject gender essentialism, silencing of harm
+reports, tokenism, coerced reconciliation, clerical immunity, wealth and
+marital overclaiming, and anachronistic modern-office equivalence.
+
+The Pauline bodies, marriage, sexual-ethics, discipline, and restoration pass
+adds passage-bounded evidence for Romans 1's rhetorical movement into universal
+accountability; ancient act descriptions and modern identity limits; embodied
+worship, love, non-harm, welcome, and conscience; the unnamed people and
+household-power gaps in First Corinthians 5; insider-bounded discipline;
+`malakoi`, `arsenokoitai`, washing language, disputed slogans, prostitution,
+slavery-aware bodily belonging, mutual marital clauses, consent, differentiated
+marriage and singleness gifts, mixed marriage, protective separation, present
+distress, and disputed virgin or betrothed language. It also keeps the Second
+Corinthians offender's identity uncertain while tracing sufficient discipline,
+forgiveness, comfort, grief, repentance, and restored relationship; reads
+Galatians 5's whole vice-and-fruit contrast before gentle restoration and
+burden bearing; and treats Acts 15 as a later gentile-inclusion narrative whose
+decree and `porneia` rationale remain disputed. These 292 items are
+chronology-controlled, passage-linked, and source-resolvable, but AI-authored
+additions remain drafts until human review. Safeguards reject LGBTQ
+dehumanization, purity shame, coerced marriage or celibacy, marital ownership,
+domestic and sexual violence, sex-worker stigma, public humiliation, permanent
+ostracism, automatic restoration to office or access, retaliation, and
+confidential concealment.
+
+The Pauline suffering, weakness, disability, healing, power, boasting, and
+apostolic-legitimacy pass adds passage-bounded evidence for the cross's
+power-and-status reversal; ironic apostolic spectacle and bounded imitation;
+compensation rights, contextual nonuse, and mission accommodation; affliction,
+comfort, despair, fragile bodies, embodied hope, reconciliation, hardship, and
+relational boundaries; contested bodily presence and speech; foolish boasting,
+violence and precarity, visions, the unidentified thorn, power in weakness,
+signs, and accountable authority. It also keeps Galatians 4's bodily weakness
+and eye language undiagnosed; reads Philippians from an imprisoned and dependent
+body while distinguishing shared conflict, Epaphroditus's illness and recovery,
+and resurrection hope; and treats Acts 9, 14, and 16 as later narratives of
+blindness, care, recovery, stoning, beating, custody, suicide prevention, and
+civic protest rather than a diagnostic key to the letters. These 320 items are
+chronology-controlled, passage-linked, and source-resolvable, but AI-authored
+additions remain drafts until human review. Safeguards reject ableism,
+faith-deficit blame, forced healing, speculative diagnosis, medical or mental-
+health neglect, trauma spiritualization, martyrdom pressure, romanticized
+violence, prison, poverty, and overwork, compulsory unpaid labor, prosperity
+extraction, coerced access, retaliatory discipline, miracle-based exemption,
+and founder immunity.
+
+The Pauline death, resurrection, transformed-embodiment, grief, hope, judgment,
+and baptism-for-the-dead pass adds passage-bounded evidence for Romans 6's
+baptismal participation and embodied ethics; Romans 7's disputed first-person
+sin-and-death personification; Romans 8's Spirit-given life, mortal bodies,
+threefold groaning, bodily redemption, hope, uncertain prayer, and inseparable
+love; and Romans 14's welcome-framed living, dying, and judgment. It traces
+First Corinthians 15's received proclamation, conditional refutation,
+firstfruits order, death as enemy, severely underdetermined baptism-for-the-dead
+clause, bounded danger rhetoric, seed continuity and transformation, created
+body diversity, Spirit-characterized body, flesh-and-blood perishability
+parallel, death-defeat intertexts, and non-extractive labor conclusion. It also
+keeps Second Corinthians 4-5's mortality, renewal, tent, clothing, nakedness,
+presence, intermediate-state proposals, and judgment distinct; reads
+Philippians 3 as transformed embodied hope; treats First Thessalonians 4-5 as
+grief-aware consolation with an underdetermined meeting route and an explicit
+anti-date-setting turn toward mutual care; and treats Acts 17, 23, and 24 as
+later narrative witnesses to Athenian and intra-Jewish resurrection disputes.
+These 350 items are chronology-controlled, passage-linked, and
+source-resolvable, but AI-authored additions remain drafts until human review.
+Safeguards reject anti-body dualism, grief suppression, date setting, failed-
+prediction manipulation, corpse and funeral coercion, compulsory postmortem
+proxy claims, suicide and martyrdom romanticization, medical neglect, and
+exclusion or forced normalization of disabled, intersex, scarred, aging, or
+medically altered bodies.
+
+The Pauline Spirit, gifts, tongues, prophecy, discernment, healing, worship,
+and assembly-order pass adds passage-bounded evidence for Romans 8's
+indwelling, adoption, hope, groaning, and uncertain prayer; Romans 12's sober
+discernment, differentiated service, material care, and hospitality; First
+Corinthians 2's Spirit-disclosed wisdom; and First Corinthians 12-14's
+confession, diverse manifestations, common good, one body, honor for apparently
+weaker members, love, partial knowledge, underdetermined tongues,
+interpretation, spirit and mind, prophecy, weighing, outsider intelligibility,
+participatory order, and three contextual silence instructions. It distinguishes
+Galatians 3's Spirit-reception appeal from Galatians 5's relational fruit and
+flesh-Spirit conflict, joins First Thessalonians 5's non-quenching to testing,
+and keeps First Corinthians' gifts of healings free of guaranteed techniques.
+Acts 2, 8, 10, and 19 remain later narrative witnesses with different reception
+sequences, a multilingual Pentecost scene, and an explicit rejection of
+purchased power. These 384 items are chronology-controlled, passage-linked,
+and source-resolvable, but AI-authored additions remain drafts until human
+review. Safeguards reject compulsory tongues, unreviewable prophecy,
+manufactured manifestations, monetized healing or anointing, faith-deficit
+blame, seizure and disability stigma, medical or psychiatric misdiagnosis,
+forced exorcism or medication withdrawal, leader immunity, gendered silencing,
+suppression of dissent or harm reports, and prophecy used to override consent,
+evidence, safeguarding, clinical care, or law. Continuationism and cessationism
+remain labeled as later disputed syntheses.
+
+The Pauline Israel, Jewish-gentile relations, Abraham, Torah, circumcision,
+justification, faith, election, hardening, remnant, olive-tree, and all-Israel
+pass adds passage-bounded evidence for Romans 2's impartial judgment and
+disputed heart-circumcision language; Romans 3's Jewish advantage, entrusted
+oracles, universal accountability, justification, pistis Christou, one God,
+and anti-boasting argument; and Romans 4's pre-circumcision Abraham, double
+fatherhood, promise, and trust. It reads Romans 9's lament, Israelite
+privileges, word-failure frame, scriptural election examples, mercy, hardening,
+vessels, and Hosea-Isaiah rereadings through the sustained argument; keeps
+Christ as telos of Torah lexically disputed in Romans 10; and traces Romans
+11's Israelite remnant, stumble-not-fall answer, dependent wild branches,
+natural-branch regrafting, partial hardening, underdetermined all-Israel claim,
+beloved status, irrevocable gifts and calling, mercy, and doxological humility.
+Galatians 2-5 contributes Titus, the Antioch table conflict, justification,
+pistis Christou, works-of-Torah scope, Abrahamic promise and seed, the
+pedagogue metaphor, equal belonging without identity erasure, a specifically
+gentile circumcision crisis, freedom, and love. First Corinthians 7 and 9 keep
+circumcised and uncircumcised callings differentiated and mission
+accommodation bounded; Philippians 3 keeps sharp rival-body polemic beside
+Paul's continuing Israelite identity; and Acts 15 remains a later narrative
+witness rather than a verbatim transcript of Galatians. These 424 items are
+chronology-controlled, passage-linked, and source-resolvable, but AI-authored
+additions remain drafts until human review. Safeguards reject Judaism-as-
+legalism caricatures, collective Jewish blame, supersessionism, antisemitism,
+Christian ethnic triumphalism, conversion coercion, end-times
+instrumentalization, forced circumcision or reversal, nonconsensual intersex
+normalization, ableist body mockery, colonial mission logic, and theological
+erasure of living Jewish communities.
+
+The Pauline idols, sacrificed-food, conscience, shared-table, and economic-
+status pass adds passage-bounded evidence for Romans 14-15's welcome without
+quarrel, underdetermined weak-strong identities, differentiated food and day
+practice, reciprocal noncontempt, thanksgiving, divine judgment, nonstumbling,
+peace, upbuilding, burden bearing, Messiah-shaped welcome, and gentile hope.
+First Corinthians 8-10 now keeps Corinthian slogan boundaries, knowledge under
+love, idol ontology, one-God and one-Lord confession, former cult association,
+vulnerable conscience, visible temple reclining, material-support rights,
+contextual rights nonuse, bounded mission accommodation, wilderness warnings,
+cultic participation, market purchase, private invitations, sacrificial-
+provenance disclosure, and another-oriented liberty distinct. First
+Corinthians 11 joins the received bread-and-cup tradition to divisions, hunger,
+intoxication, humiliation of people who have nothing, remembrance,
+proclamation, the adverbial unworthy-manner warning, disputed body discernment,
+underdetermined sickness-and-death causation, waiting, and shared provision.
+Galatians 2 remains earlier one-sided first-person testimony to the Antioch
+withdrawal and its coercive effect; Acts 15 remains a later narrative witness
+with decree variants and disputed legal rationale. These 473 items are
+chronology-controlled, passage-linked, and source-resolvable, but AI-authored
+additions remain drafts until human review. Safeguards reject antisemitic
+food-practice caricatures, forced consumption or abstention, allergy exposure,
+alcohol pressure, eating-disorder and addiction neglect, disability exclusion,
+poverty and class humiliation, interfaith-family coercion, purity surveillance,
+sacramental gatekeeping, compulsory disclosure, deceptive accommodation, and
+leader-controlled tables.
+
+The Pauline work, labor, wages, maintenance, poverty, wealth, collection,
+giving, reciprocity, equality, partnership, idleness, need, and economic-
+solidarity pass adds passage-bounded evidence for First Thessalonians' greed
+denial, gentle authority, sharing of selves, night-and-day labor, regional
+sibling love, quietness, handwork, outsider conduct, and disputed need clause.
+It treats Second Thessalonians 3 under explicit authorship controls, preserving
+support rights alongside contextual nonuse, unwillingness rather than
+inability, busybody wordplay, quiet work, continued good action, and sibling
+rather than enemy treatment. First Corinthians 9 now keeps compensation
+rights, worker and Torah analogies, spiritual-material sharing, contextual
+nonuse, sacred-service and Jesus-tradition warrants, and free-of-charge
+proclamation together; First Corinthians 16 keeps weekly means-sensitive
+preparation, arrival-pressure avoidance, approved carriers, letters, and
+shared custody visible.
+
+Second Corinthians 8-9 receives the fullest treatment: poor-donor agency,
+voluntary exceptional giving, self-giving without leader ownership, Titus's
+delegated work, noncommand rhetoric, Messiah's rich-poor movement without a
+prosperity formula, readiness according to present means, relief without donor
+affliction, disputed equality and manna enoughness, assembly-appointed
+delegates, blame avoidance, public honor, readiness and shame pressure,
+blessing rather than extraction, sowing without guaranteed return, heart-
+decided noncompulsion, sufficiency for good work, recipient need, thanksgiving,
+and translocal relationship. Romans 15 preserves named regions, poor Jerusalem
+recipients, voluntary and obligation language, an uncertain reception, and a
+planned rather than completed journey. Philippians 4 joins renewed aid,
+learned contentment, hunger and abundance, giving-and-receiving partnership,
+account language, repeated gifts, receipt, sacrifice, provision, and doxology.
+Acts 18 and 20 remain later narrative witnesses to a shared trade and farewell
+labor portrait rather than a transcript of every direct-letter practice. These
+575 items are chronology-controlled, passage-linked, and source-resolvable,
+but AI-authored additions remain drafts until human review. Safeguards require
+timely worker pay, rest, safety, freely chosen labor, disability and caregiver
+access, unemployment and housing support, donor privacy, revisable consent,
+restricted-fund integrity, multiple custodians, records, conflicts controls,
+independent review, whistleblower protection, and nonretaliation; they reject
+wage theft, unsafe overwork, compulsory tithing or unpaid labor, debt-financed
+giving, poverty shame, prosperity promises, donor domination, financial
+secrecy, and leader enrichment.
+
+The political-power expansion adds 52 evidence items across Romans 12:14-13:14,
+First Corinthians 6:1-11, Second Corinthians 2:14-17 and 10:1-6, Philippians
+1:12-30, 2:5-11, 3:17-4:1 and 4:20-23, First Thessalonians 4:13-5:11, and Acts
+16-17, 19, and 21-28. Romans 13 remains inside the sustained exhortation from
+enemy blessing and nonretaliation through taxes, differentiated honor, neighbor
+love, nonharm, and the armor of light. Submission is not expanded into worship,
+moral agreement, silence, or obedience to every command; ruler-as-servant and
+ruler-as-terror statements are not empirical guarantees, and the sword supplies
+neither a modern use-of-force policy nor immunity for state agents. Tax payment
+does not endorse every regime, budget, or expenditure.
+
+First Corinthians 6 is bounded to an unidentified insider dispute and cannot
+conceal crime, abuse, safeguarding duties, labor violations, or mandatory
+reporting. Second Corinthians' triumph, warfare, weapon, stronghold, captivity,
+obedience, and punishment images retain their rhetorical ambiguity and cannot
+be literalized into weapons, violent exorcism, conquered people or places,
+harassment, or coercive control. Philippians preserves uncertain prison
+provenance, colonial civic resonance, Messiah's status reversal and lordship,
+heavenly commonwealth language, and the limited evidence of Caesar's household;
+none proves a complete anti-imperial code, nationalism, civic withdrawal, or
+imperial access. The Thessalonian arrival and peace-and-security comparisons
+remain disputed, while armor is explicitly ethical. Acts is a later narrative
+witness to civic accusation, public disorder, beating, custody, citizenship,
+hearings, appeal, and constrained travel, not direct-letter evidence or a claim
+that status-dependent Roman process reliably produced justice.
+
+Modern application requires current legal and qualified human-rights,
+disability, trauma, and safeguarding expertise. It protects survivors,
+protesters, religious and ethnic minorities, migrants and stateless people,
+incarcerated and surveilled people, conscientious objectors, disabled people,
+and people exposed to police, military, domestic, employer, or state violence.
+It rejects authoritarian proof-texting, torture, racialized enforcement,
+retaliation, forced patriotism, partisan capture, prison romanticization, and
+claims that every regime or violent act has divine approval.
+
+The Pauline mission and interassembly-network expansion adds 74 evidence items
+across Romans 1 and 15-16; First Corinthians 1-4, 9, and 16; Second Corinthians
+1-3, 8, and 11; Galatians 1-2; Philippians 1-2 and 4; First Thessalonians 1-3;
+and Acts 13-20. Romans now keeps calling, mutual encouragement, priestly
+metaphor, pioneer ambition, completed eastern claims, proposed Spain travel,
+Jerusalem danger, Phoebe's recommendation, Prisca and Aquila, Junia, named
+women laborers, multiple Roman groupings, and Tertius's writing distinct.
+Phoebe's role as carrier remains a well-supported inference rather than an
+explicit sentence, Junia's relation to the apostles remains disputed, and the
+greeting list is neither a male-only story nor an exhaustive organization
+chart.
+
+First Corinthians separates cross-shaped proclamation from inaccessible or
+manipulative communication; Paul, Apollos, and other builders remain servants
+under divine growth and testing. Material-support rights remain beside Paul's
+contextual nonuse, while becoming as others is bounded against deceptive
+identity, covert targeting, surveillance, and colonial mimicry. Timothy's
+safety, Apollos's refusal of Paul's requested visit, contingent itineraries,
+local household service, returning envoys, and Prisca and Aquila's house
+assembly preserve coworker and local agency. Second Corinthians keeps changed
+plans, painful communication, peddling rhetoric, living-letter metaphor,
+non-domination, divine sufficiency, assembly-chosen delegates, Titus's
+partnership, and travel danger under impact, governance, and worker-safety
+controls.
+
+Galatians supplies the chronological base for Arabia, Damascus, Jerusalem,
+Syria-Cilicia, the later partnership meeting, Titus's noncompulsion, leader
+status, poor care, and the Antioch confrontation. Acts remains a later
+diachronic witness and does not silently decide disputed visit correlations.
+Philippians and First Thessalonians add sustained partnership, mixed
+proclamation motives, Timothy's care, Epaphroditus's delegated agency and
+illness, Euodia and Syntyche's mission labor, plural senders, local onward
+witness, gentle self-sharing, contextual labor, blocked visits, Timothy's
+embassy, reporting, and affliction without founder ownership or martyrdom
+pressure. Acts 13-20 contributes later narrative scenes of collective sending,
+diaspora synagogue settings, revisits, local elders, Lydia's hospitality,
+compressed household baptisms, marketplace dialogue, shared work, varied
+venues, persuasion, conflict, and the Miletus farewell.
+
+These 773 corpus evidence items are chronology-controlled, passage-linked, and
+source-resolvable, but AI-authored additions remain drafts until human review.
+The Pauline conflict-and-accountability cluster adds 70 evidence items and 20
+sources across First Corinthians 1-6 and 10-14; Second Corinthians 1-7 and
+10-13; Galatians 1-6; Philippians 1-4; First Thessalonians 2-5; and Acts 15 as
+a later narrative comparator. Direct letters retain chronological priority,
+Second Corinthians' composition and visit sequence remain disputed, and Acts
+does not become a verbatim meeting record or chronology master.
+
+First Corinthians keeps Chloe's named reporting channel, incomplete faction
+evidence, cross-shaped status reversal, servants rather than community owners,
+apostolic judgment, irony, a case-bound and disputed removal instruction, the
+absent woman's voice in chapter 5, insider-law-court limits, table humiliation,
+greater honor for members treated as weaker, plural weighing of prophecy, love,
+and peace-oriented order. Second Corinthians keeps changed-plan impact,
+non-domination, a lost painful letter, an unidentified offender, majority-action
+gaps, sufficient and revisable action, forgiveness, comfort, reaffirmed love,
+divine reconciliation, grief without harm causation, Titus's mediated report,
+nonliteral warfare, explicitly foolish boasting, unknown rivals, an unidentified
+thorn, and testing and restoration without apostolic immunity.
+
+Galatians preserves high-intensity curse rhetoric, Paul's admission of former
+violence, negotiated recognition, Titus's noncompulsion, Paul's one-sided public
+Antioch account, mutual-destruction warning, gentle restoration, burden bearing,
+and self-testing. Philippians preserves rival motives without approving them,
+unidentified opponents, humility bounded against survivor self-erasure, and
+Euodia and Syntyche as equally addressed coworkers whose conflict content and
+blame remain unknown. First Thessalonians keeps boldness beside denials of
+deceit, flattery, and greed; parental metaphors beside gentleness and labor;
+leader esteem beside communal testing; and differentiated admonition,
+encouragement, support, and patience. Acts' later council and Paul-Barnabas
+rupture remain diachronic comparisons, including a separation without an
+invented reconciliation scene.
+
+Modern safeguards distinguish correction from coercive control, community
+boundaries from shunning and deprivation, forgiveness from compelled
+reconciliation, confidentiality from concealment, and accountability from
+public humiliation. They require survivor safety, due process, proportionate
+and revisable action, trauma-aware communication, independent internal and
+external reporting, protection from retaliation, record integrity, disability
+and communication access, support persons, and restoration without forced
+contact. Leader or institutional reputation is never a reason to suppress harm.
+
+The Pauline prayer-and-communal-memory cluster adds 54 evidence items and 21
+sources across Romans 1, 8-9, and 15-16; First Corinthians 1 and 16; Second
+Corinthians 1, 9, and 13; Galatians 1, 4, and 6; Philippians 1 and 4; First
+Thessalonians 1, 3, and 5; and Acts only as a later narrative comparator.
+Pauline thanksgivings, prayer reports, wishes, requests, blessings, and
+doxologies remain shaped epistolary communication rather than recordings of
+private devotion. Acts' prayer-place and Miletus-farewell scenes remain later
+diachronic narrative witnesses.
+
+Romans now holds thanksgiving and mutual encouragement beside contingent
+travel prayer; Spirit-enabled Abba address beside freedom from fear; creation's,
+believers', and the Spirit's groaning beside embodied hope; admitted uncertainty
+about prayer beside intercession; and great sorrow concerning Israel beside
+Israel's named privileges. Romans 8:28 does not rename each harmful event good,
+hope does not become present possession or a cure schedule, and the final
+doxology retains its mobile manuscript history. First Corinthians' thanksgiving
+does not approve every later-corrected practice or deny reported conflict, while
+closing strength remains bounded by love and embodied greeting by consent.
+
+Second Corinthians keeps blessing and circulated comfort beside overwhelming
+distress, prayer and anticipated thanksgiving beside uncertain rescue, and
+material provision beside generosity and reciprocal prayer. Prayer does not
+replace concrete aid, fundraising does not purchase intercession or access, and
+the final benediction stays connected to right action and restoration rather
+than apostolic performance. Galatians preserves its significant missing
+thanksgiving without treating the audience as worthless, retains disputed
+Israel-of-God syntax, and does not let final grace bypass conflict. Philippians
+keeps joy beside suffering, illness, anxiety, material need, and disagreement;
+prayer is not a clinical protocol, peace is not a symptom guarantee, and divine
+provision is not an unrestricted prosperity promise. First Thessalonians keeps
+plural remembrance, mediated reporting, reciprocal prayer, joy, thanksgiving,
+testing, sanctification, public reading, greeting, and grace without turning
+communal memory into surveillance or gratitude into approval of harm.
+
+Modern controls require informed opt-in disclosure, specific and reversible
+consent for touch or public prayer, confidentiality without concealment,
+data minimization, accessible communication and worship, chosen support,
+trauma-aware lament and grief care, material aid, qualified medical and
+mental-health referral, independent reporting and investigation, restitution,
+safety planning, and protection from retaliation. Prayer, hope, peace, and
+benediction never replace emergency action, treatment, evidence preservation,
+accountability, or the freedom to decline prayer, touch, testimony, contact, or
+reconciliation.
+
+The next focused expansion should build a Pauline Scripture, tradition,
+teaching, memory, imitation, conscience, discernment, wisdom, knowledge, and
+communal-formation cluster across Romans 4, 9-12, and 15; First Corinthians
+1-3, 7-11, and 14-15; Second Corinthians 3-4; Galatians 3-4; Philippians 2-3;
+First Thessalonians 2 and 4-5; and Acts only as a later narrative comparator.
+It should distinguish citation from contextual interpretation, tradition from
+unaccountable traditionalism, imitation from leader cloning, conscience from
+coercive scruple enforcement, discernment from suspicion, knowledge from
+elitism, wisdom from credentialism, and formation from indoctrination.
+Required safeguards include source transparency, multiple-view labeling,
+anti-Jewish and anti-disability controls, media and information literacy,
+freedom of conscience and inquiry, accessible teaching, age-appropriate and
+trauma-aware pedagogy, correction without humiliation, independent review,
+nonretaliation, and refusal to use divine authority claims to block questions,
+evidence, reporting, or professional expertise.
+
 Cultural practices, historical institutions, literary conventions,
 geography/environment, and worldview concepts already have controlled types;
 they need source-backed, human-reviewed depth rather than generated volume.

@@ -199,6 +199,11 @@ class CKLRetrievalService:
                 query_alignment.get(result.id, 3),
                 (result_sources or {}).get(result.id, 1),
                 _focused_category_rank(query, result),
+                _named_book_rank(
+                    result,
+                    named_books,
+                    has_scripture_reference=has_scripture_reference,
+                ),
                 -(
                     result.score
                     - _draft_score_penalty(
@@ -321,6 +326,29 @@ def _focused_category_rank(query: str, result: CKLSearchResult) -> int:
         if query_tokens.intersection(terms):
             return 0 if result.category == category else 1
     return 0
+
+
+def _named_book_rank(
+    result: CKLSearchResult,
+    named_books: Sequence[str],
+    *,
+    has_scripture_reference: bool = False,
+) -> int:
+    """Prefer an explicitly named book after honoring an object-type request."""
+
+    if has_scripture_reference or not named_books:
+        return 0
+    normalized_named_books = {
+        normalize_query(book).lower()
+        for book in named_books
+        if normalize_query(book)
+    }
+    if (
+        result.category == "book"
+        and normalize_query(result.title).lower() in normalized_named_books
+    ):
+        return 0
+    return 1
 
 
 def _knowledge_layer_rank(value: str | None) -> int:
