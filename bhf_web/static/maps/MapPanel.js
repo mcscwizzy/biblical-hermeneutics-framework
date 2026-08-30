@@ -657,6 +657,10 @@ async function openMapPanel(context = {}) {
     );
     syncHistoricalPeriod();
 
+    if (!browseMode) {
+      applyRequestedMapFocus(context);
+    }
+
     if (browseMode) {
       clearStatus();
       if (browseSearchResults.length > 0) {
@@ -890,6 +894,32 @@ function focusMapSelection(result) {
   if (mapController.map && Number.isFinite(result.item?.latitude) && Number.isFinite(result.item?.longitude)) {
     mapController.map.setView([result.item.latitude, result.item.longitude], 9);
   }
+}
+
+function applyRequestedMapFocus(context = {}) {
+  const placeId = String(context.focusPlaceId || "").trim();
+  const routeId = String(context.focusRouteId || "").trim();
+  const marker = placeId
+    ? loadedMarkers.find((item) => String(item?.id || "") === placeId)
+    : null;
+  const route = routeId
+    ? loadedRoutes.find((item) => String(item?.id || "") === routeId)
+    : null;
+  if (marker) {
+    selectedMarker = marker;
+    selectedRoute = null;
+    renderSelectedMarker(marker, context);
+    focusMapSelection({kind: "place", item: marker});
+    return true;
+  }
+  if (route) {
+    selectedRoute = route;
+    selectedMarker = null;
+    renderSelectedRoute(route, context);
+    focusMapSelection({kind: "route", item: route});
+    return true;
+  }
+  return false;
 }
 
 function activateAskWorkspace() {

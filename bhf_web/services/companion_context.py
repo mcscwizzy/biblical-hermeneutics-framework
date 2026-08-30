@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import os
+import threading
 import time
 from collections.abc import Callable, Iterable
 from pathlib import Path
@@ -11,6 +12,14 @@ from typing import Any
 from bhf_agent.bible import normalize_book_name
 from bhf_agent.ckl import load_canonical_library
 from bhf_agent.lexicon import WordStudyService
+from bhf_agent.presentation import (
+    PresentationEngine,
+    PresentationResult,
+    SQLitePresentationCache,
+    build_evidence_bundle,
+    default_presentation_cache_path,
+    deterministic_presentation,
+)
 from bhf_agent.study_db import (
     list_archaeology_passage_summaries,
     list_passage_map_summaries,
@@ -61,6 +70,8 @@ class CompanionContextService:
         word_study_service: WordStudyService | None = None,
         commentary_service: CommentaryService | None = None,
         canonical_narrator: CanonicalNarrator | None = None,
+        presentation_engine: PresentationEngine | None = None,
+        presentation_cache_path: str | Path | None = None,
     ) -> None:
         self.study_db_path = Path(study_db_path)
         self.canonical_library_provider = canonical_library_provider
@@ -68,20 +79,35 @@ class CompanionContextService:
         self.word_study = word_study_service or _default_word_study_service()
         self.commentary = commentary_service or CommentaryService(commentary_db_path)
         self.canonical_narrator = canonical_narrator or CanonicalNarrator()
+        if presentation_engine is not None:
+            self.presentation_engine = presentation_engine
+        else:
+            configured_cache = str(
+                presentation_cache_path
+                or os.environ.get("BHF_PRESENTATION_CACHE_PATH")
+                or default_presentation_cache_path(self.study_db_path)
+            ).strip()
+            self.presentation_engine = PresentationEngine(
+                cache=SQLitePresentationCache(configured_cache)
+            )
         self._canonical_library: Any | None = None
         self._translation_cache: list[dict[str, Any]] | None = None
         self._translation_cache_time = 0.0
+        self._canonical_cache_lock = threading.RLock()
+        self._translation_cache_lock = threading.RLock()
 
     def invalidate_canonical_cache(self) -> None:
         """Drop the cached CKL view after local curation changes."""
 
-        self._canonical_library = None
+        with self._canonical_cache_lock:
+            self._canonical_library = None
 
     def invalidate_translation_cache(self) -> None:
         """Refresh installed-translation availability after local mutations."""
 
-        self._translation_cache = None
-        self._translation_cache_time = 0.0
+        with self._translation_cache_lock:
+            self._translation_cache = None
+            self._translation_cache_time = 0.0
 
     def build(
         self,
@@ -155,6 +181,7 @@ class CompanionContextService:
             lambda: self._canonical_context(reference),
         )
         if canonical is None:
+            canonical_results: list[Any] = []
             entities = {"people": [], "places": [], "themes": []}
             for resource_id in (
                 "canonical",
@@ -171,6 +198,7 @@ class CompanionContextService:
                 resources[resource_id] = _resource(UNKNOWN, 0, error="canonical_unavailable")
             canonical_places: list[dict[str, Any]] = []
         else:
+            canonical_results = list(canonical.pop("_results", []))
             entities = canonical["entities"]
             canonical_places = entities["places"]
             resources.update(canonical["resources"])
@@ -203,6 +231,29 @@ class CompanionContextService:
         if translation:
             resources["compare_translations"]["selected_translation"] = str(translation).strip().casefold()
 
+        evidence_bundle = build_evidence_bundle(
+            reference,
+            canonical_results=canonical_results,
+            geography=map_context or {},
+            archaeology=archaeology or [],
+        )
+        presentation = self._probe(
+            "presentation",
+            subsystems,
+            lambda: self.presentation_engine.present(evidence_bundle),
+        )
+        if presentation is None:
+            presentation = PresentationResult(
+                packet=deterministic_presentation(
+                    evidence_bundle,
+                    [],
+                    maximum_cards=0,
+                ),
+                mode="deterministic_fallback",
+                diagnostics=("presentation subsystem unavailable",),
+            )
+        resources["discoveries"] = _resource_from_count(len(presentation.packet.cards))
+
         return {
             "reference": reference,
             "scope": "passage" if start is not None else "chapter",
@@ -210,6 +261,8 @@ class CompanionContextService:
             "entities": entities,
             "summaries": summaries,
             "narration": summaries.get("narration", {"reference": reference, "by_context": {}}),
+            "evidence_bundle": evidence_bundle.to_dict(),
+            "presentation_packet": presentation.to_dict(include_diagnostics=False),
             "subsystems": subsystems,
         }
 
@@ -281,16 +334,18 @@ class CompanionContextService:
         return self.commentary.count_chapter(book, chapter)
 
     def _translations(self) -> list[dict[str, Any]]:
-        now = time.monotonic()
-        if self._translation_cache is None or now - self._translation_cache_time >= 30:
-            self._translation_cache = self.translation_provider()
-            self._translation_cache_time = now
-        return self._translation_cache
+        with self._translation_cache_lock:
+            now = time.monotonic()
+            if self._translation_cache is None or now - self._translation_cache_time >= 30:
+                self._translation_cache = self.translation_provider()
+                self._translation_cache_time = now
+            return self._translation_cache
 
     def _canonical_context(self, reference: str) -> dict[str, Any]:
-        if self._canonical_library is None:
-            self._canonical_library = self.canonical_library_provider()
-        library = self._canonical_library
+        with self._canonical_cache_lock:
+            if self._canonical_library is None:
+                self._canonical_library = self.canonical_library_provider()
+            library = self._canonical_library
         lookup = getattr(library, "retrieve_by_scripture_reference", None)
         if not callable(lookup):
             raise RuntimeError("canonical Scripture index is unavailable")
@@ -361,6 +416,7 @@ class CompanionContextService:
             if narrated.has_content:
                 narrations[narration_type] = narrated.to_dict()
         return {
+            "_results": results,
             "entities": entities,
             "resources": resources,
             "summaries": {

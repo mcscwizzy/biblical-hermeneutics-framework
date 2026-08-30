@@ -29,7 +29,7 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260814c">
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260826a">
   <!-- Legacy cache-key references retained for clients that inspect the shell during upgrades. -->
   <!-- href="/static/style.css?v=20260724c" src="/static/htmx-lite.js?v=20260729b" -->
   {# static_asset('/style.css') }}?v=20260724c #}
@@ -53,7 +53,8 @@
   <script src="{{ static_asset('/companion-viewport.js') }}?v=20260811c" defer></script>
   <script src="{{ static_asset('/companion-sheet.js') }}?v=20260811c" defer></script>
   <script src="{{ static_asset('/resource-router.js') }}?v=20260820b" defer></script>
-  <script src="{{ static_asset('/study-companion.js') }}?v=20260822a" defer></script>
+  <script src="{{ static_asset('/companion-discoveries.js') }}?v=20260826c" defer></script>
+  <script src="{{ static_asset('/study-companion.js') }}?v=20260826a" defer></script>
   <script src="{{ static_asset('/commentary.js') }}?v=20260809b" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260806a" defer></script>
   {% if not test_mode %}
@@ -283,6 +284,30 @@
               <button type="button" class="secondary" data-companion-action="note">＋ Add Note</button>
               <button type="button" class="secondary" data-companion-action="save" data-save-state="not-saved" disabled aria-disabled="true" aria-busy="false" aria-label="Save Passage unavailable; select a verse or passage">☆ Save Passage</button>
             </div>
+
+            <section class="companion-section companion-discoveries companion-land" data-companion-land-section aria-labelledby="companion-land-title" hidden>
+              <div class="companion-section-heading">
+                <div><span aria-hidden="true">⌖</span><h3 id="companion-land-title">Walk the Land</h3></div>
+                <p>Explore a place or route linked directly to this passage.</p>
+              </div>
+              <div class="companion-discovery-list" data-companion-land></div>
+            </section>
+
+            <section class="companion-section companion-discoveries" data-companion-discoveries-section aria-labelledby="companion-discoveries-title" hidden>
+              <div class="companion-section-heading">
+                <div><span aria-hidden="true">✦</span><h3 id="companion-discoveries-title">Did You Know?</h3></div>
+                <p>Concise discoveries grounded in BHF evidence.</p>
+              </div>
+              <div class="companion-discovery-list" data-companion-discoveries></div>
+            </section>
+
+            <section class="companion-section companion-discoveries companion-significance" data-companion-significance-section aria-labelledby="companion-significance-title" hidden>
+              <div class="companion-section-heading">
+                <div><span aria-hidden="true">◇</span><h3 id="companion-significance-title">Why It Matters Here</h3></div>
+                <p>An evidence-authored connection to the selected passage.</p>
+              </div>
+              <div class="companion-discovery-list" data-companion-significance></div>
+            </section>
 
             <section class="companion-section" aria-labelledby="companion-recommended-title">
               <div class="companion-section-heading">

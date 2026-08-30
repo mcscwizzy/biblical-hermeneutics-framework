@@ -181,7 +181,8 @@ def list_passage_map_summaries(
         place_rows = connection.execute(
             """
             SELECT p.id, p.name AS title, p.description,
-                   p.modern_location, p.confidence,
+                   p.modern_location, p.ancient_region, p.confidence,
+                   p.source_name, p.source_url,
                    MIN(r.relationship_type) AS relationship
             FROM place_references AS r
             JOIN biblical_places AS p ON p.id = r.place_id
@@ -189,7 +190,8 @@ def list_passage_map_summaries(
               AND r.chapter = ?
               AND r.verse_start <= ?
               AND r.verse_end >= ?
-            GROUP BY p.id, p.name, p.description, p.modern_location, p.confidence
+            GROUP BY p.id, p.name, p.description, p.modern_location,
+                     p.ancient_region, p.confidence, p.source_name, p.source_url
             ORDER BY p.confidence_rank DESC, p.name
             LIMIT ?
             """,
@@ -198,6 +200,7 @@ def list_passage_map_summaries(
         route_rows = connection.execute(
             """
             SELECT m.id, m.name AS title, m.description, m.confidence,
+                   m.route_type, m.source_name, m.source_url,
                    MIN(r.relationship_type) AS relationship
             FROM route_references AS r
             JOIN map_routes AS m ON m.id = r.route_id
@@ -205,7 +208,8 @@ def list_passage_map_summaries(
               AND r.chapter = ?
               AND r.verse_start <= ?
               AND r.verse_end >= ?
-            GROUP BY m.id, m.name, m.description, m.confidence
+            GROUP BY m.id, m.name, m.description, m.confidence,
+                     m.route_type, m.source_name, m.source_url
             ORDER BY m.confidence_rank DESC, m.name
             LIMIT ?
             """,
@@ -218,8 +222,12 @@ def list_passage_map_summaries(
                 "title": str(row["title"]),
                 "type": "place",
                 "summary": str(row["description"] or row["modern_location"] or ""),
+                "modern_location": str(row["modern_location"] or ""),
+                "ancient_region": str(row["ancient_region"] or ""),
                 "confidence": str(row["confidence"] or "unknown"),
                 "relationship": str(row["relationship"] or "map Scripture link"),
+                "source_name": str(row["source_name"] or ""),
+                "source_url": str(row["source_url"] or ""),
             }
             for row in place_rows
         ],
@@ -228,8 +236,11 @@ def list_passage_map_summaries(
                 "id": str(row["id"]),
                 "title": str(row["title"]),
                 "summary": str(row["description"] or ""),
+                "route_type": str(row["route_type"] or ""),
                 "confidence": str(row["confidence"] or "unknown"),
                 "relationship": str(row["relationship"] or "map Scripture link"),
+                "source_name": str(row["source_name"] or ""),
+                "source_url": str(row["source_url"] or ""),
             }
             for row in route_rows
         ],

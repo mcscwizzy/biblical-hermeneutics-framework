@@ -7,6 +7,7 @@ from typing import Any, Callable, Mapping
 
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
+from starlette.concurrency import run_in_threadpool
 
 from bhf_agent.study_actions import StudyActionRouter, compact_fact_packet
 from bhf_agent.study_db import StudyDataError
@@ -56,15 +57,15 @@ def register_study_routes(
         """Return compact resource availability without loading resource bodies."""
 
         try:
-            return JSONResponse(
-                companion_context.build(
-                    book=book,
-                    chapter=chapter,
-                    verse_start=verse_start,
-                    verse_end=verse_end,
-                    translation=translation,
-                )
+            context = await run_in_threadpool(
+                companion_context.build,
+                book=book,
+                chapter=chapter,
+                verse_start=verse_start,
+                verse_end=verse_end,
+                translation=translation,
             )
+            return JSONResponse(context)
         except (ValueError, StudyDataError) as exc:
             return JSONResponse({"error": str(exc)}, status_code=400)
         except Exception as exc:  # noqa: BLE001 - invalid books surface as a compact client error
@@ -100,7 +101,10 @@ def register_study_routes(
                 and result.evidence_packet
                 and result.action != "archaeology"
             ):
-                result.presentation = context_presenter(result.evidence_packet)
+                result.presentation = await run_in_threadpool(
+                    context_presenter,
+                    result.evidence_packet,
+                )
             data = result.to_dict()
             data["fact_packet"] = compact_fact_packet(result)
             record_action(result.action, result.metadata, path=study_db_path)

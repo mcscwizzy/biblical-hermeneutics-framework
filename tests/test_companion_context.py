@@ -1,4 +1,5 @@
 import tempfile
+import threading
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
@@ -7,6 +8,12 @@ from unittest.mock import patch
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
+from bhf_agent.presentation import (
+    PresentationResult,
+    SQLitePresentationCache,
+    deterministic_presentation,
+)
+from bhf_agent.study_actions import StudyActionResult
 from bhf_agent.study_db import (
     initialize_database,
     list_archaeology_passage_summaries,
@@ -101,7 +108,15 @@ def _canonical_objects():
 
 
 class CompanionContextServiceTests(unittest.TestCase):
-    def _service(self, *, commentary=None, word_count=9, objects=None, translations=2):
+    def _service(
+        self,
+        *,
+        commentary=None,
+        word_count=9,
+        objects=None,
+        translations=2,
+        presentation_engine=None,
+    ):
         library = _CanonicalLibrary(_canonical_objects() if objects is None else objects)
         service = CompanionContextService(
             study_db_path="unused-study.sqlite",
@@ -113,8 +128,31 @@ class CompanionContextServiceTests(unittest.TestCase):
                 {"translation_id": f"translation-{index}", "installed": True}
                 for index in range(translations)
             ],
+            presentation_engine=presentation_engine,
         )
         return service, library
+
+    def test_default_engine_uses_lazy_cache_outside_study_database(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            study_path = root / "study.sqlite"
+            cache_path = root / "custom-presentation-cache.sqlite"
+            service = CompanionContextService(
+                study_db_path=study_path,
+                commentary_db_path=root / "commentary.sqlite",
+                commentary_service=_Commentary(),
+                word_study_service=_WordService(0),
+                canonical_library_provider=lambda: _CanonicalLibrary(),
+                translation_provider=lambda: [],
+                presentation_cache_path=cache_path,
+            )
+
+            self.assertIsInstance(
+                service.presentation_engine.cache,
+                SQLitePresentationCache,
+            )
+            self.assertEqual(service.presentation_engine.cache.path, cache_path)
+            self.assertFalse(cache_path.exists())
 
     def test_translation_cache_can_be_invalidated_after_local_install(self):
         installed = [{"translation_id": "asv", "installed": True}]
@@ -169,6 +207,12 @@ class CompanionContextServiceTests(unittest.TestCase):
         self.assertEqual(result["resources"]["compare_translations"]["selected_translation"], "asv")
         self.assertNotIn("media", result["summaries"]["archaeology"][0])
         self.assertIn("narration", result["summaries"])
+        self.assertEqual(result["evidence_bundle"]["version"], "1.0")
+        self.assertEqual(
+            result["presentation_packet"]["generated_from"]["evidence_hash"],
+            result["evidence_bundle"]["evidence_hash"],
+        )
+        self.assertLessEqual(len(result["presentation_packet"]["cards"]), 3)
         self.assertIn("historical_context", result["summaries"]["narration"]["by_context"])
         self.assertIn("original_audience", result["summaries"]["narration"]["by_context"])
         self.assertEqual(result["narration"], result["summaries"]["narration"])
@@ -244,6 +288,78 @@ class CompanionContextServiceTests(unittest.TestCase):
         self.assertTrue(result["resources"]["word_study"]["available"])
         self.assertTrue(result["resources"]["canonical"]["available"])
 
+    @patch(
+        "bhf_web.services.companion_context.list_archaeology_passage_summaries",
+        return_value=[],
+    )
+    @patch(
+        "bhf_web.services.companion_context.list_passage_map_summaries",
+        return_value={"places": [], "routes": []},
+    )
+    def test_unexpected_presentation_failure_does_not_fail_context(
+        self,
+        _map_lookup,
+        _archaeology_lookup,
+    ):
+        class BrokenPresentationEngine:
+            def present(self, _bundle):
+                raise RuntimeError("unexpected renderer failure")
+
+        service, _library = self._service(
+            presentation_engine=BrokenPresentationEngine(),
+        )
+
+        result = service.build(book="John", chapter=4, verse_start=23)
+
+        packet = result["presentation_packet"]
+        self.assertEqual(packet["presentation_mode"], "deterministic_fallback")
+        self.assertEqual(packet["cards"], [])
+        self.assertEqual(
+            packet["generated_from"]["evidence_hash"],
+            result["evidence_bundle"]["evidence_hash"],
+        )
+        self.assertEqual(result["resources"]["discoveries"]["state"], "unavailable")
+        self.assertEqual(result["subsystems"]["presentation"]["status"], "unknown")
+        self.assertEqual(result["subsystems"]["presentation"]["error"], "RuntimeError")
+        self.assertTrue(result["resources"]["commentary"]["available"])
+        self.assertTrue(result["resources"]["canonical"]["available"])
+
+    @patch(
+        "bhf_web.services.companion_context.list_archaeology_passage_summaries",
+        return_value=[],
+    )
+    @patch(
+        "bhf_web.services.companion_context.list_passage_map_summaries",
+        return_value={"places": [], "routes": []},
+    )
+    def test_presentation_diagnostics_do_not_leak_into_reader_context(
+        self,
+        _map_lookup,
+        _archaeology_lookup,
+    ):
+        secret = "private-provider-detail-123"
+
+        class DiagnosticPresentationEngine:
+            def present(self, bundle):
+                return PresentationResult(
+                    packet=deterministic_presentation(bundle),
+                    mode="deterministic_fallback",
+                    diagnostics=(f"provider failure: {secret}",),
+                )
+
+        service, _library = self._service(
+            presentation_engine=DiagnosticPresentationEngine(),
+        )
+
+        result = service.build(book="John", chapter=4, verse_start=23)
+
+        self.assertNotIn("diagnostics", result["presentation_packet"])
+        self.assertNotIn(secret, str(result))
+        self.assertEqual(
+            result["presentation_packet"]["presentation_mode"],
+            "deterministic_fallback",
+        )
+
 
 class CompactPassageRepositoryTests(unittest.TestCase):
     def test_map_and_archaeology_summaries_use_passage_links_without_heavy_payloads(self):
@@ -259,6 +375,7 @@ class CompactPassageRepositoryTests(unittest.TestCase):
             )
 
         self.assertIn("caesarea-maritima", [item["id"] for item in maps["places"]])
+        self.assertTrue(all("source_name" in item for item in maps["places"]))
         self.assertIn("pool-of-siloam", [item["id"] for item in archaeology])
         self.assertTrue(all("geojson" not in item for item in maps["routes"]))
         self.assertTrue(all("media" not in item for item in archaeology))
@@ -315,6 +432,90 @@ class CompanionContextRouteTests(unittest.TestCase):
             }],
         )
         self.assertNotIn("selected_text", response.json())
+
+    def test_companion_build_runs_outside_the_event_loop_thread(self):
+        class ThreadRecordingService:
+            def __init__(self):
+                self.thread_id = None
+
+            def build(self, **values):
+                self.thread_id = threading.get_ident()
+                return {"reference": "John 4", "resources": {}}
+
+        service = ThreadRecordingService()
+        app = FastAPI()
+
+        @app.get("/event-loop-thread")
+        async def event_loop_thread():
+            return {"thread_id": threading.get_ident()}
+
+        register_study_routes(
+            app,
+            study_db_path="unused.sqlite",
+            templates=None,
+            job_store=None,
+            companion_context_service=service,
+        )
+
+        with TestClient(app) as client:
+            event_loop_id = client.get("/event-loop-thread").json()["thread_id"]
+            response = client.get(
+                "/api/study/companion-context",
+                params={"book": "John", "chapter": 4},
+            )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIsNotNone(service.thread_id)
+        self.assertNotEqual(service.thread_id, event_loop_id)
+
+    def test_ai_context_presenter_runs_outside_the_event_loop_thread(self):
+        class FakeRouter:
+            def execute(self, action, **values):
+                return StudyActionResult(
+                    action="cultural_context",
+                    status="complete",
+                    source="ckl",
+                    title="Cultural Context",
+                    evidence_packet={"reference": "John 4", "evidence": []},
+                )
+
+        presenter_thread = []
+
+        def presenter(packet):
+            presenter_thread.append(threading.get_ident())
+            return {"mode": "ai", "sections": []}
+
+        app = FastAPI()
+
+        @app.get("/event-loop-thread")
+        async def event_loop_thread():
+            return {"thread_id": threading.get_ident()}
+
+        register_study_routes(
+            app,
+            study_db_path="unused.sqlite",
+            templates=None,
+            job_store=None,
+            study_action_router=FakeRouter(),
+            context_presenter=presenter,
+        )
+
+        with patch("bhf_web.routes.study.record_action"):
+            with TestClient(app) as client:
+                event_loop_id = client.get("/event-loop-thread").json()["thread_id"]
+                response = client.post(
+                    "/api/study/actions",
+                    json={
+                        "action": "cultural_context",
+                        "book": "John",
+                        "chapter": 4,
+                        "presentation": "ai",
+                    },
+                )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(presenter_thread), 1)
+        self.assertNotEqual(presenter_thread[0], event_loop_id)
 
 
 class AskSelectionContextTests(unittest.TestCase):

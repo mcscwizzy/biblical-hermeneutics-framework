@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v38";
+const CACHE_VERSION = "v41";
 const SHELL_CACHE = `bhf-shell-${CACHE_VERSION}`;
 const STATIC_CACHE = `bhf-static-${CACHE_VERSION}`;
 const API_CACHE = `bhf-api-${CACHE_VERSION}`;
@@ -18,6 +18,7 @@ const STATIC_ASSETS = [
   "/static/styles/utilities.css",
   "/static/styles/workspace.css",
   "/static/styles/companion.css",
+  "/static/styles/discoveries.css",
   "/static/api/http.js",
   "/static/api/backend-routing.js",
   "/static/api/job-flow.js",
@@ -34,6 +35,7 @@ const STATIC_ASSETS = [
   "/static/companion-viewport.js",
   "/static/companion-sheet.js",
   "/static/resource-router.js",
+  "/static/companion-discoveries.js",
   "/static/study-companion.js",
   "/static/htmx-status.js",
   "/static/htmx-study-panels.js",

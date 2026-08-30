@@ -1,0 +1,90 @@
+.companion-discovery-list {
+  display: grid;
+  gap: 12px;
+}
+
+.companion-discovery-card {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid color-mix(in srgb, var(--accent, #245b82) 28%, transparent);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--accent, #245b82) 7%, var(--surface, #fff));
+}
+
+.companion-land-card {
+  border-color: color-mix(in srgb, #7a5b2d 38%, transparent);
+  background: color-mix(in srgb, #b88943 9%, var(--surface, #fff));
+}
+
+.companion-significance-card {
+  border-color: color-mix(in srgb, #6b4f87 34%, transparent);
+  background: color-mix(in srgb, #8a68a8 8%, var(--surface, #fff));
+}
+
+.companion-discovery-card h4,
+.companion-discovery-card p {
+  margin: 0;
+}
+
+.companion-discovery-card h4 {
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.companion-discovery-card > p:not(.companion-discovery-meta) {
+  line-height: 1.5;
+}
+
+.companion-discovery-meta {
+  color: var(--muted, #64707c);
+  font-size: .76rem;
+}
+
+.companion-discovery-details {
+  border-top: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+  padding-top: 8px;
+}
+
+.companion-discovery-details summary {
+  width: fit-content;
+  color: var(--accent-text, #18496d);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.companion-discovery-evidence {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.companion-evidence-detail {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--surface, #fff) 82%, transparent);
+}
+
+.companion-evidence-detail p {
+  font-size: .88rem;
+}
+
+.companion-evidence-detail small {
+  color: var(--muted, #64707c);
+  line-height: 1.35;
+}
+
+.companion-discovery-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.companion-discovery-action {
+  min-height: 36px;
+  padding: 7px 10px;
+  font-size: .8rem;
+}

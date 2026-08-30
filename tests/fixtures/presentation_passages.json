@@ -1,0 +1,181 @@
+[
+  {
+    "reference": "1 Samuel 25",
+    "expected_categories": ["culture", "economics"],
+    "presentation_expectations": {
+      "required_categories": ["economics"],
+      "required_card_types": ["did_you_know"],
+      "forbidden_card_types": ["walk_the_land", "why_it_matters"],
+      "required_cited_evidence_ids": ["abigail-gift-economics", "nabal-shearing-provisioning"],
+      "minimum_cards": 2,
+      "maximum_cards": 2,
+      "expected_mode": "deterministic_fallback"
+    },
+    "objects": [
+      {
+        "id": "abigail",
+        "type": "person",
+        "title": "Abigail",
+        "importance": 88,
+        "confidence": "high",
+        "scripture_references": [{"reference": "1 Samuel 25:3-42", "relationship": "primary"}],
+        "sources": [{"id": "samuel-hebrew", "title": "1 Samuel 25", "source_type": "scripture"}],
+        "claims": [],
+        "evidence_items": []
+      },
+      {
+        "id": "david-nabal-provisioning",
+        "type": "cultural_background",
+        "title": "Hospitality, protection, and provisioning",
+        "importance": 94,
+        "confidence": "medium",
+        "scripture_references": [{"reference": "1 Samuel 25:2-35", "relationship": "primary"}],
+        "sources": [
+          {"id": "samuel-hebrew", "title": "1 Samuel 25", "source_type": "scripture"},
+          {"id": "ancient-pastoral-economy", "title": "Pastoral Economies in the Iron Age", "source_type": "academic-book"}
+        ],
+        "claims": [],
+        "evidence_items": [
+          {
+            "id": "nabal-shearing-provisioning",
+            "title": "Sheep shearing and provisioning",
+            "evidence_type": "cultural-practice",
+            "description": "Sheep shearing was a season of increased food, labor, and household provisioning, which gives economic weight to David's request.",
+            "assertion_type": "secondary-evidence",
+            "confidence": "medium",
+            "certainty": "probable",
+            "dispute_status": "not_disputed",
+            "source_ids": ["samuel-hebrew", "ancient-pastoral-economy"],
+            "claim_ids": [],
+            "related_objects": [{"id": "abigail", "relationship": "participant"}],
+            "scripture_references": [{"reference": "1 Samuel 25:2-8", "relationship": "direct", "temporal_relation": "contemporary", "weight": 10}]
+          },
+          {
+            "id": "abigail-gift-economics",
+            "title": "Abigail's substantial gift",
+            "evidence_type": "material-culture",
+            "description": "The quantities in Abigail's gift portray rapid access to substantial household provisions rather than a symbolic snack.",
+            "assertion_type": "primary-evidence",
+            "confidence": "high",
+            "certainty": "textually_explicit",
+            "dispute_status": "not_disputed",
+            "source_ids": ["samuel-hebrew"],
+            "claim_ids": [],
+            "related_objects": [{"id": "abigail", "relationship": "participant"}],
+            "scripture_references": [{"reference": "1 Samuel 25:18", "relationship": "direct", "temporal_relation": "contemporary", "weight": 10}]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "reference": "Mark 5:1-20",
+    "expected_categories": ["geography", "culture"],
+    "presentation_expectations": {
+      "required_categories": ["geography"],
+      "required_card_types": ["did_you_know", "walk_the_land"],
+      "forbidden_card_types": ["why_it_matters"],
+      "required_cited_evidence_ids": ["gerasene-eastern-shore", "tombs-pigs-boundary-markers"],
+      "required_action_types": ["open_map", "show_evidence"],
+      "minimum_cards": 2,
+      "maximum_cards": 2,
+      "expected_mode": "deterministic_fallback"
+    },
+    "objects": [
+      {
+        "id": "gerasene-region",
+        "type": "place",
+        "title": "Region of the Gerasenes",
+        "importance": 86,
+        "confidence": "medium",
+        "scripture_references": [{"reference": "Mark 5:1", "relationship": "primary"}],
+        "sources": [{"id": "mark-greek", "title": "Mark 5:1-20", "source_type": "scripture"}],
+        "claims": [
+          {
+            "id": "gerasene-eastern-shore",
+            "claim": "The episode is set across the Sea of Galilee from Jesus' preceding departure, on its eastern side.",
+            "claim_type": "geography",
+            "certainty": "textually_explicit",
+            "dispute_status": "identification_uncertainty",
+            "scripture_references": ["Mark 5:1-20"],
+            "source_ids": ["mark-greek"]
+          }
+        ],
+        "evidence_items": []
+      },
+      {
+        "id": "gerasene-boundary-setting",
+        "type": "cultural_background",
+        "title": "Gerasene boundary setting",
+        "importance": 91,
+        "confidence": "medium",
+        "scripture_references": [{"reference": "Mark 5:1-20", "relationship": "primary"}],
+        "sources": [{"id": "mark-greek", "title": "Mark 5:1-20", "source_type": "scripture"}],
+        "claims": [
+          {
+            "id": "tombs-pigs-boundary-markers",
+            "claim": "Tombs, a large pig herd, and the journey across the lake combine several boundary markers in the narrative setting.",
+            "claim_type": "historical_cultural",
+            "certainty": "textually_explicit",
+            "dispute_status": "not_disputed",
+            "scripture_references": ["Mark 5:1-20"],
+            "source_ids": ["mark-greek"]
+          }
+        ],
+        "evidence_items": []
+      }
+    ],
+    "geography": {
+      "places": [{"id": "gerasene-region", "title": "Region of the Gerasenes", "region": "eastern Sea of Galilee"}],
+      "routes": []
+    }
+  },
+  {
+    "reference": "1 Corinthians 8",
+    "expected_categories": ["social", "culture"],
+    "presentation_expectations": {
+      "required_categories": ["culture"],
+      "required_card_types": ["did_you_know"],
+      "forbidden_card_types": ["walk_the_land", "why_it_matters"],
+      "required_cited_evidence_ids": ["corinth-visible-temple-dining", "corinth-former-idol-association"],
+      "minimum_cards": 2,
+      "maximum_cards": 2,
+      "expected_mode": "deterministic_fallback"
+    },
+    "objects": [
+      {
+        "id": "corinth-idol-food",
+        "type": "cultural_background",
+        "title": "Idol food and social pressure in Corinth",
+        "importance": 96,
+        "confidence": "medium",
+        "scripture_references": [{"reference": "1 Corinthians 8:1-13", "relationship": "primary"}],
+        "sources": [
+          {"id": "first-corinthians-greek", "title": "1 Corinthians 8", "source_type": "scripture"},
+          {"id": "corinth-meals-study", "title": "Cult Meals in Roman Corinth", "source_type": "journal-article"}
+        ],
+        "claims": [
+          {
+            "id": "corinth-visible-temple-dining",
+            "claim": "Paul imagines another believer seeing a knowledgeable Christian reclining in an idol's temple, so visibility and social influence belong to the problem.",
+            "claim_type": "historical_cultural",
+            "certainty": "textually_explicit",
+            "dispute_status": "not_disputed",
+            "scripture_references": ["1 Corinthians 8:10"],
+            "source_ids": ["first-corinthians-greek"]
+          },
+          {
+            "id": "corinth-former-idol-association",
+            "claim": "Some Corinthians still associated the food with their former relationship to idols, making conscience an embodied social history rather than mere lack of information.",
+            "claim_type": "historical_cultural",
+            "certainty": "probable",
+            "dispute_status": "minor_scholarly_disagreement",
+            "scripture_references": ["1 Corinthians 8:7"],
+            "source_ids": ["first-corinthians-greek", "corinth-meals-study"]
+          }
+        ],
+        "evidence_items": []
+      }
+    ]
+  }
+]
