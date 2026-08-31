@@ -46,7 +46,7 @@
     const evidenceList = document.createElement("div");
     evidenceList.className = "companion-discovery-evidence";
     evidenceList.replaceChildren(
-      ...evidenceForCard(card, context.evidence_bundle)
+      ...evidenceForCard(card, context)
         .map((item) => evidenceDetail(item, document)),
     );
     const actions = document.createElement("div");
@@ -61,8 +61,17 @@
     return article;
   }
 
-  function evidenceForCard(card, bundle) {
+  function evidenceForCard(card, context) {
     const wanted = new Set(Array.isArray(card.evidence_ids) ? card.evidence_ids : []);
+    if (Array.isArray(context?.presentation_evidence)) {
+      return context.presentation_evidence
+        .filter((item) => wanted.has(item.id))
+        .map((item) => ({
+          ...item,
+          sourceLabels: (item.sources || []).map((source) => source?.title || source?.id),
+        }));
+    }
+    const bundle = context?.evidence_bundle;
     const sources = new Map(
       (Array.isArray(bundle?.provenance?.sources) ? bundle.provenance.sources : [])
         .map((source) => [source.id, source]),

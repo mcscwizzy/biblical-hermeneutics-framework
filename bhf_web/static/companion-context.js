@@ -65,6 +65,41 @@
     return normalized;
   }
 
+  async function enhance(selection, context, options = {}) {
+    const evidenceHash = String(
+      context?.presentation_enhancement?.evidence_hash
+      || context?.evidence_bundle?.evidence_hash
+      || "",
+    ).trim();
+    if (!selection?.book || !selection?.chapter || !evidenceHash) {
+      throw new Error("Passage evidence is required for presentation enhancement.");
+    }
+    const requestOptions = {
+      method: "POST",
+      headers: {Accept: "application/json", "Content-Type": "application/json"},
+      signal: options.signal,
+      body: JSON.stringify({
+        book: selection.book,
+        chapter: selection.chapter,
+        verse_start: selection.startVerse || null,
+        verse_end: selection.endVerse || null,
+        evidence_hash: evidenceHash,
+      }),
+    };
+    document.dispatchEvent(new CustomEvent("bhf:companion-presentation-request", {
+      detail: {key: requestKey(selection), evidenceHash},
+    }));
+    const data = window.BHFApi?.requestJson
+      ? await window.BHFApi.requestJson(
+        "/api/study/presentation",
+        requestOptions,
+        "Presentation enhancement is unavailable.",
+      )
+      : await requestWithFetch("/api/study/presentation", requestOptions);
+    if (options.signal?.aborted) throw new DOMException("Aborted", "AbortError");
+    return data && typeof data === "object" ? data : {};
+  }
+
   async function requestWithFetch(url, options) {
     let resolvedUrl = url;
     if (window.BHFBackendRouting?.resolveUrl) {
@@ -108,6 +143,8 @@
         people: array(source.entities?.people),
         places: array(source.entities?.places),
         themes: array(source.entities?.themes),
+        groups: array(source.entities?.groups),
+        events: array(source.entities?.events),
       },
       summaries: source.summaries && typeof source.summaries === "object" ? source.summaries : {},
     };
@@ -146,6 +183,7 @@
   });
 
   window.BHFCompanionContext = Object.freeze({
+    enhance,
     load,
     urlFor,
     requestKey,

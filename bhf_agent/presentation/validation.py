@@ -19,7 +19,11 @@ from .models import (
 )
 
 
-_YEAR_RE = re.compile(r"\b(?:[1-9]\d{2,3})(?:\s*(?:BCE|BC|CE|AD))?\b", re.IGNORECASE)
+_DATE_RE = re.compile(
+    r"(?<!\w)(?:(?:c\.?|ca\.?|circa|approximately|about)\s+)?"
+    r"(?:(?:AD|CE|BC|BCE)\s+[1-9]\d{0,3}|[1-9]\d{0,3}\s*(?:AD|CE|BC|BCE))(?!\w)",
+    re.IGNORECASE,
+)
 _CONFIDENCE_RANK = {"low": 0, "medium": 1, "high": 2}
 
 
@@ -322,9 +326,24 @@ def _validate_new_dates(text: str, evidence: list[Any], label: str, errors: list
         [item.claim for item in evidence]
         + [str(value) for item in evidence for value in item.relevance_metadata.values()]
     )
-    unsupported = sorted({match.group(0) for match in _YEAR_RE.finditer(text) if match.group(0) not in supplied_text})
+    supplied_dates = {_date_key(match.group(0)) for match in _DATE_RE.finditer(supplied_text)}
+    unsupported = sorted(
+        {
+            match.group(0)
+            for match in _DATE_RE.finditer(text)
+            if _date_key(match.group(0)) not in supplied_dates
+        }
+    )
     if unsupported:
         errors.append(f"{label} introduces unsupported date(s): {', '.join(unsupported)}")
+
+
+def _date_key(value: str) -> tuple[str, int]:
+    era_match = re.search(r"\b(BCE|BC|CE|AD)\b", value, re.IGNORECASE)
+    number_match = re.search(r"\b([1-9]\d{0,3})\b", value)
+    era = str(era_match.group(1) if era_match else "").upper()
+    normalized_era = "BC" if era in {"BC", "BCE"} else "AD"
+    return normalized_era, int(number_match.group(1) if number_match else 0)
 
 
 def _is_disputed(metadata: Mapping[str, Any]) -> bool:

@@ -107,7 +107,12 @@ def _provider_packet(
         for entity_id in value.item.related_entity_ids
     }
     entities = [
-        entity.to_dict()
+        {
+            "id": entity.id,
+            "title": entity.title,
+            "type": entity.type,
+            **({"aliases": entity.aliases} if entity.aliases else {}),
+        }
         for entity_id, entity in bundle.entities_by_id.items()
         if entity_id in entity_ids
     ]
@@ -122,7 +127,7 @@ def _provider_packet(
         ),
         "passage_ref": bundle.passage_ref,
         "generated_from_must_equal": generated_from.to_dict(),
-        "evidence": [value.to_dict() for value in ranked],
+        "evidence": [_provider_evidence(value) for value in ranked],
         "entities": entities,
         "geography": _available_geography(bundle, ranked),
         "available_actions": _available_actions(bundle, ranked),
@@ -158,6 +163,38 @@ def _provider_packet(
             ],
             "generated_from": generated_from.to_dict(),
         },
+    }
+
+
+def _provider_evidence(value: RankedEvidence) -> dict[str, Any]:
+    """Expose claims and validation controls, not arbitrary factual metadata."""
+
+    item = value.item
+    allowed_metadata = {
+        "passage_relationship",
+        "anchor_specificity",
+        "certainty",
+        "dispute_status",
+        "assertion_type",
+        "presentation_role",
+        "supports_evidence_ids",
+        "map_resource_kind",
+        "map_resource_id",
+    }
+    return {
+        "id": item.id,
+        "claim": item.claim,
+        "category": item.category,
+        "source_ids": item.source_ids,
+        "related_entity_ids": item.related_entity_ids,
+        "passage_anchors": item.passage_anchors,
+        "confidence": item.confidence,
+        "relevance_metadata": {
+            key: item.relevance_metadata[key]
+            for key in allowed_metadata
+            if item.relevance_metadata.get(key) not in (None, "", [])
+        },
+        "salience": {"score": value.score, "reasons": list(value.reasons)},
     }
 
 
@@ -215,7 +252,11 @@ def _available_geography(
     resource_ids.discard("")
     return {
         kind: [
-            dict(item)
+            {
+                "id": str(item.get("id") or ""),
+                "title": str(item.get("title") or item.get("name") or item.get("id") or ""),
+                "kind": kind[:-1] if kind.endswith("s") else kind,
+            }
             for item in bundle.geography.get(kind) or []
             if str(item.get("id") or "") in resource_ids
         ]

@@ -14,9 +14,15 @@ passage selection
   -> CKL/map/archaeology resolvers
   -> EvidenceBundle V1
   -> deterministic salience ranker
-  -> Presentation Engine
+  -> cache / bundled packet / deterministic presentation
   -> validated PresentationPacket V1
   -> Did You Know? / Walk the Land / Why It Matters Here / Dig In
+
+optional browser request
+  -> POST /api/study/presentation with the evidence fingerprint
+  -> cache / bundled packet / provider / deterministic fallback
+  -> strict validation
+  -> replace cards only if passage and evidence fingerprint still match
 ```
 
 ## EvidenceBundle V1
@@ -44,10 +50,11 @@ evidence it interprets. BHF does not synthesize significance from an unrelated
 fact. Passage-indexed archaeology summaries use the same significance role
 because their underlying database field is already `why_it_matters`.
 
-The bundle hash is SHA-256 over a canonical serialization with the hash field
-blanked. Thus identical evidence produces an identical fingerprint, while
-changes in a source, claim, entity, or geography record make presentations
-stale naturally.
+The bundle hash is SHA-256 over a canonical, grounding-focused serialization.
+Only contributing evidence, eligible entity identity, used geography, and
+relevant source/canonical provenance enter that payload. Unrelated broad
+retrieval results and presentation-only entity metadata therefore do not
+invalidate packets, while changes to claims or their relevant provenance do.
 
 ## Ranking
 
@@ -68,15 +75,15 @@ presentation stays narrow.
 
 `PresentationProvider` is independent of OpenRouter, Ollama, or any other
 runtime. `AdapterPresentationProvider` can use any existing BHF `ChatAdapter`.
-It sends only ranked evidence, exact evidence IDs, related entity metadata,
-available action targets, expected version fields, and strict grounding
+It sends only ranked evidence, exact evidence IDs, entity identity/navigation
+fields, minimal map action targets, expected version fields, and strict grounding
 instructions. It requests schema-constrained JSON when the adapter supports
 that feature and never requests Markdown.
 
 Model output is untrusted. Validation rejects unknown fields, stale hashes,
 invalid enums, unsupported evidence/entity IDs, unavailable actions or map
 targets, overlong content, too many cards, confidence inflation, disputed
-evidence presented as fact, and new numeric dates not found in cited evidence.
+evidence presented as fact, and new clearly era-marked dates not found in cited evidence.
 Validation never guesses or repairs an evidence ID.
 
 An empty card list is valid. The instruction to providers is explicit: if the
@@ -161,11 +168,11 @@ the source SQLite cache itself, even with `--force`. Exported prose remains
 disposable presentation output; the file does not become CKL evidence. Full
 evidence grounding is checked again when each packet is selected at runtime.
 
-The failure order is:
+The generation order is:
 
-1. a newly generated and validated packet;
-2. a validated cache entry;
-3. a validated bundled/pre-generated packet;
+1. a validated cache entry;
+2. a validated bundled/pre-generated packet;
+3. a newly generated and validated packet;
 4. deterministic cards from the highest-ranked evidence.
 
 The Study Companion uses the deterministic provider-free path by default. To
@@ -192,12 +199,19 @@ missing model or invalid provider configuration also leaves Bible reading on
 the deterministic path. Adapter construction performs no network request.
 Provider errors, timeouts, malformed JSON, or grounding validation failures
 cannot interrupt the reader.
-The companion also treats the entire presentation stage as non-critical. An
-unexpected renderer exception is recorded as an unavailable subsystem and
-returns a valid zero-card packet while the rest of the passage context remains
-available.
-The synchronous context and provider pipeline runs in the web server's worker
-pool so a slow optional provider does not block FastAPI's event loop.
+The Companion context endpoint never calls the provider. It returns validated
+cache or bundled output when present and otherwise renders deterministic cards.
+Its compact `presentation_evidence` contains only claims and source summaries
+cited by those visible cards; the full internal EvidenceBundle stays on the
+server. When enhancement is configured, the browser makes a separate lazy
+request after rendering this local result. A slow or failed provider therefore
+cannot delay Scripture or initial Companion context.
+
+The lazy request rebuilds local evidence and requires the browser's evidence
+hash to match before generation. The browser also checks selection and hash
+again before replacing cards, so a late response from an earlier chapter is
+ignored. Unexpected local presentation errors still return a valid zero-card
+packet while the rest of the passage context remains available.
 Provider generation is also limited to two simultaneous requests per server
 process by default. The limit can be set from 1 through 16 with
 `BHF_PRESENTATION_MAX_CONCURRENT_REQUESTS`. Requests above the limit skip the

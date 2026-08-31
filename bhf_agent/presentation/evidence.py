@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-import hashlib
-import json
 from dataclasses import replace
 from typing import Any, Iterable, Mapping, Sequence
 
@@ -20,6 +18,8 @@ from .evidence_normalization import (
     text as _text,
     unique as _unique,
 )
+from .evidence_hash import calculate_evidence_hash
+from .eligibility import canonical_object_anchors, is_canonical_object_passage_eligible
 from .models import EVIDENCE_BUNDLE_VERSION, EntityRef, EvidenceBundle, EvidenceItem, mapping
 from .references import anchor_specificity, reference_distance, references_overlap
 
@@ -60,15 +60,7 @@ def build_evidence_bundle(
         prepared_objects.append((data, score))
 
         object_id = _text(data.get("id"))
-        parent_anchors = _object_anchors(data)
-        matching_anchors = [
-            anchor for anchor in parent_anchors if references_overlap(normalized_reference, anchor)
-        ]
-        target_specificity = anchor_specificity(normalized_reference)
-        eligible = bool(matching_anchors) and (
-            target_specificity == "book"
-            or any(anchor_specificity(anchor) != "book" for anchor in matching_anchors)
-        )
+        eligible = is_canonical_object_passage_eligible(normalized_reference, data)
         bucket = _ENTITY_BUCKET_BY_TYPE.get(_text(data.get("type")).casefold())
         if bucket and eligible and object_id:
             entities[bucket][object_id] = _entity_from_object(data, score)
@@ -180,6 +172,32 @@ def build_evidence_bundle(
                 },
             )
 
+    contributing_object_ids = {
+        str(item.relevance_metadata.get("parent_object_id") or "")
+        for item in evidence.values()
+    }
+    contributing_object_ids.update(
+        entity.id
+        for bucket in entities.values()
+        for entity in bucket.values()
+    )
+    contributing_object_ids.discard("")
+    referenced_source_ids = {
+        source_id for item in evidence.values() for source_id in item.source_ids
+    }
+    contributing_sources: dict[str, dict[str, Any]] = {}
+    for data, _score in prepared_objects:
+        if _text(data.get("id")) in contributing_object_ids:
+            _register_object_sources(data, contributing_sources)
+    normalized_sources = {
+        source_id: (
+            contributing_sources[source_id]
+            if source_id in contributing_sources
+            else sources[source_id]
+        )
+        for source_id in referenced_source_ids
+        if source_id in contributing_sources or source_id in sources
+    }
     bundle = EvidenceBundle(
         passage_ref=normalized_reference,
         entities={
@@ -189,13 +207,26 @@ def build_evidence_bundle(
         evidence_items=sorted(evidence.values(), key=lambda item: item.id),
         geography=normalized_geography,
         provenance={
-            "sources": sorted(sources.values(), key=lambda item: _text(item.get("id"))),
-            "canonical_objects": sorted(object_provenance, key=lambda item: item["id"]),
+            "sources": sorted(
+                (
+                    source
+                    for source_id, source in normalized_sources.items()
+                ),
+                key=lambda item: _text(item.get("id")),
+            ),
+            "canonical_objects": sorted(
+                (
+                    item
+                    for item in object_provenance
+                    if item["id"] in contributing_object_ids
+                ),
+                key=lambda item: item["id"],
+            ),
             "resolvers": ["canonical_knowledge_library", "passage_maps", "archaeology"],
         },
         version=EVIDENCE_BUNDLE_VERSION,
     )
-    return replace(bundle, evidence_hash=_evidence_hash(bundle))
+    return replace(bundle, evidence_hash=calculate_evidence_hash(bundle))
 
 
 def _append_geography_evidence(
@@ -458,10 +489,7 @@ def _legacy_relevance_metadata(
 
 
 def _object_anchors(data: Mapping[str, Any]) -> list[str]:
-    return _unique(
-        _text(mapping(value).get("reference") if not isinstance(value, str) else value)
-        for value in _sequence(data.get("scripture_references"))
-    )
+    return canonical_object_anchors(data)
 
 
 def _evidence_anchors(data: Mapping[str, Any]) -> list[str]:
@@ -479,12 +507,15 @@ def _register_object_sources(data: Mapping[str, Any], target: dict[str, dict[str
         source_id = _text(source.get("id") or source.get("source_id"))
         if not source_id:
             continue
-        normalized = dict(source)
-        normalized["id"] = source_id
-        normalized.setdefault("canonical_object_ids", [])
-        if object_id and object_id not in normalized["canonical_object_ids"]:
-            normalized["canonical_object_ids"].append(object_id)
-        target.setdefault(source_id, normalized)
+        if source_id not in target:
+            normalized = dict(source)
+            normalized["id"] = source_id
+            normalized["canonical_object_ids"] = []
+            target[source_id] = normalized
+        canonical_ids = target[source_id].setdefault("canonical_object_ids", [])
+        if object_id and object_id not in canonical_ids:
+            canonical_ids.append(object_id)
+            canonical_ids.sort()
 
 
 def _internal_source(object_id: str, data: Mapping[str, Any], target: dict[str, dict[str, Any]]) -> str:
@@ -588,10 +619,3 @@ def _add_evidence(target: dict[str, EvidenceItem], item: EvidenceItem) -> None:
     if not item.id or not item.claim or item.id in target:
         return
     target[item.id] = item
-
-
-def _evidence_hash(bundle: EvidenceBundle) -> str:
-    payload = bundle.to_dict()
-    payload["evidence_hash"] = ""
-    encoded = json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
-    return hashlib.sha256(encoded).hexdigest()

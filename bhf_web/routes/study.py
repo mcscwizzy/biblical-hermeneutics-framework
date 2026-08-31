@@ -12,7 +12,10 @@ from starlette.concurrency import run_in_threadpool
 from bhf_agent.study_actions import StudyActionRouter, compact_fact_packet
 from bhf_agent.study_db import StudyDataError
 
-from ..services.companion_context import CompanionContextService
+from ..services.companion_context import (
+    CompanionContextService,
+    StalePresentationEvidenceError,
+)
 from ..services.web_helpers import (
     record_action,
     request_payload,
@@ -70,6 +73,33 @@ def register_study_routes(
             return JSONResponse({"error": str(exc)}, status_code=400)
         except Exception as exc:  # noqa: BLE001 - invalid books surface as a compact client error
             return JSONResponse({"error": str(exc)}, status_code=400)
+
+    @app.post("/api/study/presentation", response_class=JSONResponse)
+    async def post_study_presentation(request: Request) -> JSONResponse:
+        """Lazily enhance an already-loaded passage presentation."""
+
+        try:
+            payload = await request_payload(request)
+            presentation = await run_in_threadpool(
+                companion_context.enhance_presentation,
+                book=payload.get("book"),
+                chapter=payload.get("chapter"),
+                verse_start=payload.get("verse_start"),
+                verse_end=payload.get("verse_end"),
+                evidence_hash=payload.get("evidence_hash"),
+            )
+            return JSONResponse(presentation)
+        except StalePresentationEvidenceError as exc:
+            return JSONResponse(
+                {"error": str(exc), "code": "stale_evidence"}, status_code=409
+            )
+        except (ValueError, StudyDataError) as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+        except Exception as exc:  # noqa: BLE001 - optional generation fails independently
+            return JSONResponse(
+                {"error": "Presentation enhancement is unavailable.", "detail": type(exc).__name__},
+                status_code=503,
+            )
 
     @app.post("/api/study/actions", response_class=JSONResponse)
     async def post_study_action(request: Request) -> JSONResponse:

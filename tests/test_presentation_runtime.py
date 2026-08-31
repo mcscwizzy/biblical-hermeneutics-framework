@@ -253,7 +253,7 @@ def test_disabled_runtime_can_use_a_valid_local_presentation_bundle(tmp_path):
     assert "error" not in diagnostics
 
 
-def test_provider_failure_uses_valid_bundle_before_deterministic_fallback(tmp_path):
+def test_valid_bundle_avoids_provider_request(tmp_path):
     bundle = _bundle()
     bundle_path = tmp_path / "presentation-bundle.json"
     _write_bundle(bundle_path, bundle)
@@ -271,8 +271,8 @@ def test_provider_failure_uses_valid_bundle_before_deterministic_fallback(tmp_pa
     result = runtime.engine.present(bundle)
 
     assert result.mode == "bundled"
-    assert len(adapter.requests) == 1
-    assert any("provider failure: TimeoutError" in item for item in result.diagnostics)
+    assert len(adapter.requests) == 0
+    assert result.diagnostics == ()
     assert runtime.diagnostics()["activity"]["outcomes"]["bundled"] == 1
 
 

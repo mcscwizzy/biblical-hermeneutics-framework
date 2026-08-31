@@ -81,18 +81,13 @@ test("discovery cards render bounded sections with grounded Dig In evidence", ()
         card("meaning", "why_it_matters"),
       ],
     },
-    evidence_bundle: {
-      evidence_items: [{
+    presentation_evidence: [{
         id: "evidence-1",
         claim: "The supplied evidence claim.",
         category: "geography",
         confidence: "high",
-        source_ids: ["source-1"],
-      }],
-      provenance: {
         sources: [{id: "source-1", title: "Curated map source"}],
-      },
-    },
+      }],
   };
 
   discoveries.render(panel, context);

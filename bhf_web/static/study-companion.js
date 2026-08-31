@@ -97,6 +97,10 @@
           void resourceRouter?.open?.(currentResource, {mode: currentMode});
         }
       },
+      onEnhanced: (context) => {
+        if (currentMode !== "passage") return;
+        renderDiscoveries(context);
+      },
       onError: (message) => {
         if (currentMode !== "passage") return;
         renderDiscoveries({});

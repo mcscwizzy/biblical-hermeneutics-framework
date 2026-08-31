@@ -41,6 +41,7 @@
         if (requestSequence !== sequence || requestController.signal.aborted || requestedKey !== keyFor(selection)) return;
         record = {key: requestedKey, status: "ready", context, error: ""};
         options.onReady?.(context, requestedSelection, record);
+        await enhance(context, requestedSelection, requestedKey, requestSequence, requestController);
       } catch (error) {
         if (error?.name === "AbortError" || requestSequence !== sequence) return;
         record = {
@@ -50,6 +51,37 @@
           error: error?.message || "Study resources could not be checked.",
         };
         options.onError?.(record.error, requestedSelection, record);
+      }
+    }
+
+    async function enhance(context, requestedSelection, requestedKey, requestSequence, requestController) {
+      const enhancement = context?.presentation_enhancement;
+      if (
+        enhancement?.available !== true
+        || context?.presentation_packet?.presentation_mode !== "deterministic_fallback"
+        || typeof window.BHFCompanionContext?.enhance !== "function"
+      ) return;
+      const requestedHash = String(enhancement.evidence_hash || "");
+      try {
+        const result = await window.BHFCompanionContext.enhance(
+          requestedSelection,
+          context,
+          {signal: requestController.signal},
+        );
+        const responseHash = String(result?.evidence_bundle?.evidence_hash || "");
+        if (
+          requestSequence !== sequence
+          || requestController.signal.aborted
+          || requestedKey !== keyFor(selection)
+          || !requestedHash
+          || responseHash !== requestedHash
+        ) return;
+        const enhancedContext = {...context, ...result, presentation_enhancement: enhancement};
+        record = {key: requestedKey, status: "ready", context: enhancedContext, error: ""};
+        options.onEnhanced?.(enhancedContext, requestedSelection, record);
+      } catch (error) {
+        if (error?.name === "AbortError" || requestSequence !== sequence) return;
+        options.onEnhancementError?.(error, requestedSelection, record);
       }
     }
 

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import copy
 import json
 import threading
 from concurrent.futures import ThreadPoolExecutor
@@ -84,6 +85,92 @@ def test_evidence_ids_and_hash_are_stable():
 
     assert [item.id for item in first.evidence_items] == [item.id for item in second.evidence_items]
     assert first.evidence_hash == second.evidence_hash
+
+
+def test_unrelated_retrieval_does_not_change_evidence_hash():
+    fixture = FIXTURES[0]
+    unrelated = {
+        "id": "cornelius",
+        "type": "person",
+        "title": "Cornelius",
+        "scripture_references": [{"reference": "Acts 10:1-48"}],
+        "historical_context": "A centurion in Caesarea.",
+        "sources": [{"id": "unrelated-source", "title": "Unrelated source"}],
+    }
+    baseline = build_evidence_bundle(
+        fixture["reference"], canonical_results=_results(fixture["objects"])
+    )
+    with_unrelated = build_evidence_bundle(
+        fixture["reference"],
+        canonical_results=_results([*fixture["objects"], unrelated]),
+    )
+
+    assert with_unrelated.evidence_hash == baseline.evidence_hash
+    assert "cornelius" not in {
+        item["id"] for item in with_unrelated.provenance["canonical_objects"]
+    }
+
+
+def test_relevant_claim_and_source_changes_invalidate_evidence_hash():
+    fixture = FIXTURES[0]
+    changed_claim = copy.deepcopy(fixture["objects"])
+    changed_claim[1]["evidence_items"][0]["description"] += " Changed."
+    changed_source = copy.deepcopy(fixture["objects"])
+    changed_source[1]["sources"][1]["title"] += " Revised"
+
+    baseline = build_evidence_bundle(
+        fixture["reference"], canonical_results=_results(fixture["objects"])
+    )
+    claim_bundle = build_evidence_bundle(
+        fixture["reference"], canonical_results=_results(changed_claim)
+    )
+    source_bundle = build_evidence_bundle(
+        fixture["reference"], canonical_results=_results(changed_source)
+    )
+
+    assert claim_bundle.evidence_hash != baseline.evidence_hash
+    assert source_bundle.evidence_hash != baseline.evidence_hash
+
+
+def test_entity_presentation_metadata_does_not_change_evidence_hash():
+    fixture = FIXTURES[0]
+    changed = copy.deepcopy(fixture["objects"])
+    changed[0]["terrain"] = "New presentation-only terrain description"
+    changed[0]["modern_identification"] = "New presentation-only label"
+
+    baseline = build_evidence_bundle(
+        fixture["reference"], canonical_results=_results(fixture["objects"])
+    )
+    rebuilt = build_evidence_bundle(
+        fixture["reference"], canonical_results=_results(changed)
+    )
+
+    assert rebuilt.evidence_hash == baseline.evidence_hash
+
+
+def test_map_presentation_metadata_does_not_change_evidence_hash():
+    base_place = {
+        "id": "jerusalem",
+        "title": "Jerusalem",
+        "summary": "Jerusalem is the passage setting.",
+        "source_name": "Curated map source",
+        "coordinates": [31.7, 35.2],
+        "marker_color": "blue",
+    }
+    changed_place = {
+        **base_place,
+        "coordinates": [31.8, 35.3],
+        "marker_color": "gold",
+    }
+
+    baseline = build_evidence_bundle(
+        "Acts 2:1", geography={"places": [base_place], "routes": []}
+    )
+    rebuilt = build_evidence_bundle(
+        "Acts 2:1", geography={"places": [changed_place], "routes": []}
+    )
+
+    assert rebuilt.evidence_hash == baseline.evidence_hash
 
 
 def test_passage_map_place_becomes_grounded_walk_the_land_card():
@@ -347,6 +434,43 @@ def test_detectable_unsupported_model_date_is_rejected():
     assert any("unsupported date" in error for error in invalid.errors)
 
 
+@pytest.mark.parametrize(
+    "date_text",
+    ["70 AD", "70 CE", "586 BC", "586 BCE", "AD 70", "BC 586", "c. 586 BC", "approximately 586 BC"],
+)
+def test_date_validator_recognizes_only_clear_era_dates(date_text):
+    bundle = build_evidence_bundle(
+        "2 Kings 25:1",
+        geography={
+            "places": [{
+                "id": "jerusalem",
+                "title": "Jerusalem",
+                "summary": "Jerusalem has evidence associated with 70 AD and 586 BC.",
+            }],
+            "routes": [],
+        },
+    )
+    packet = deterministic_presentation(bundle).to_dict()
+    packet["cards"][0]["body"] = f"The supplied chronology includes {date_text}."
+
+    result = validate_presentation_packet(packet, bundle)
+
+    assert result.valid, result.errors
+
+
+def test_plain_quantity_is_not_treated_as_a_date():
+    fixture = FIXTURES[2]
+    bundle = build_evidence_bundle(
+        fixture["reference"], canonical_results=_results(fixture["objects"])
+    )
+    packet = deterministic_presentation(bundle).to_dict()
+    packet["cards"][0]["body"] += " The account mentions 500 people."
+
+    result = validate_presentation_packet(packet, bundle)
+
+    assert result.valid, result.errors
+
+
 class _InvalidProvider(PresentationProvider):
     model = "fixture-model"
 
@@ -383,11 +507,11 @@ def test_invalid_generation_falls_back_to_valid_versioned_cache():
 
     assert result.mode == "cached"
     assert result.packet.cards
-    assert any("unsupported evidence IDs" in error for error in result.diagnostics)
+    assert result.diagnostics == ()
     assert engine.diagnostics()["provider"] == {
-        "attempts": 1,
+        "attempts": 0,
         "failures": 0,
-        "rejections": 1,
+        "rejections": 0,
         "saturated": 0,
     }
 
@@ -548,7 +672,7 @@ def test_durable_cache_survives_provider_failure(tmp_path):
     assert generated.mode == "generated"
     assert cached.mode == "cached"
     assert cached.packet.to_dict() == generated.packet.to_dict()
-    assert any("provider failure: RuntimeError" in item for item in cached.diagnostics)
+    assert cached.diagnostics == ()
 
 
 def test_provider_exception_payload_is_not_retained_or_logged(caplog):
@@ -788,6 +912,27 @@ def test_adapter_provider_receives_only_ranked_evidence_and_strict_grounding_pro
 
     assert result["cards"] == []
     assert len(json.loads(requests[0].user_prompt)["evidence"]) == 1
+    supplied = json.loads(requests[0].user_prompt)
+    assert all(
+        set(entity).issubset({"id", "title", "type", "aliases"})
+        for entity in supplied["entities"]
+    )
+    assert all("metadata" not in entity for entity in supplied["entities"])
+    assert all(
+        set(item["relevance_metadata"]).issubset({
+            "passage_relationship",
+            "anchor_specificity",
+            "certainty",
+            "dispute_status",
+            "assertion_type",
+            "presentation_role",
+            "supports_evidence_ids",
+            "map_resource_kind",
+            "map_resource_id",
+        })
+        for item in supplied["evidence"]
+    )
+    assert all("parent_title" not in item["relevance_metadata"] for item in supplied["evidence"])
     assert ranked[0].item.id in requests[0].user_prompt
     assert "use model memory as a factual source" in requests[0].system_prompt
     assert "return no card" in requests[0].system_prompt
@@ -834,6 +979,8 @@ def test_provider_receives_only_ranked_geography_resources():
 
     assert len(supplied["geography"]["places"]) == 1
     assert supplied["geography"]["places"][0]["id"] == ranked[0].item.relevance_metadata["map_resource_id"]
+    assert set(supplied["geography"]["places"][0]) == {"id", "title", "kind"}
+    assert "summary" not in supplied["geography"]["places"][0]
     assert supplied["limits"]["card_types"] == [
         "did_you_know",
         "walk_the_land",

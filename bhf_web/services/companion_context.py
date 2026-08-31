@@ -13,6 +13,7 @@ from bhf_agent.bible import normalize_book_name
 from bhf_agent.ckl import load_canonical_library
 from bhf_agent.lexicon import WordStudyService
 from bhf_agent.presentation import (
+    EvidenceBundle,
     PresentationEngine,
     PresentationResult,
     SQLitePresentationCache,
@@ -20,6 +21,7 @@ from bhf_agent.presentation import (
     default_presentation_cache_path,
     deterministic_presentation,
 )
+from bhf_agent.presentation.eligibility import is_canonical_object_passage_eligible
 from bhf_agent.study_db import (
     list_archaeology_passage_summaries,
     list_passage_map_summaries,
@@ -35,12 +37,19 @@ AVAILABLE = "available"
 UNAVAILABLE = "unavailable"
 UNKNOWN = "unknown"
 
-_ENTITY_TYPES = {"person", "place", "theme"}
+_ENTITY_TYPES = {
+    "person", "place", "theme", "people_group", "people-group", "group",
+    "institution", "event", "timeline",
+}
 _CULTURAL_FIELDS = (
     "ancient_near_east_context",
     "hebraic_worldview",
     "second_temple_context",
 )
+
+
+class StalePresentationEvidenceError(ValueError):
+    """The browser requested presentation for an evidence fingerprint that changed."""
 
 
 def _default_canonical_library() -> Any:
@@ -182,7 +191,9 @@ class CompanionContextService:
         )
         if canonical is None:
             canonical_results: list[Any] = []
-            entities = {"people": [], "places": [], "themes": []}
+            entities = {
+                "people": [], "places": [], "themes": [], "groups": [], "events": []
+            }
             for resource_id in (
                 "canonical",
                 "people",
@@ -240,7 +251,7 @@ class CompanionContextService:
         presentation = self._probe(
             "presentation",
             subsystems,
-            lambda: self.presentation_engine.present(evidence_bundle),
+            lambda: self._local_presentation(evidence_bundle),
         )
         if presentation is None:
             presentation = PresentationResult(
@@ -254,6 +265,7 @@ class CompanionContextService:
             )
         resources["discoveries"] = _resource_from_count(len(presentation.packet.cards))
 
+        presentation_payload = _presentation_payload(evidence_bundle, presentation)
         return {
             "reference": reference,
             "scope": "passage" if start is not None else "chapter",
@@ -261,10 +273,72 @@ class CompanionContextService:
             "entities": entities,
             "summaries": summaries,
             "narration": summaries.get("narration", {"reference": reference, "by_context": {}}),
-            "evidence_bundle": evidence_bundle.to_dict(),
-            "presentation_packet": presentation.to_dict(include_diagnostics=False),
+            **presentation_payload,
+            "presentation_enhancement": {
+                "available": bool(
+                    getattr(self.presentation_engine, "enhancement_available", False)
+                ),
+                "evidence_hash": evidence_bundle.evidence_hash,
+            },
             "subsystems": subsystems,
         }
+
+    def enhance_presentation(
+        self,
+        *,
+        book: str,
+        chapter: int,
+        evidence_hash: str,
+        verse_start: int | None = None,
+        verse_end: int | None = None,
+    ) -> dict[str, Any]:
+        """Generate optional prose only after an explicit browser request."""
+
+        canonical_book = normalize_book_name(str(book))
+        chapter_number = _positive_int(chapter, "chapter")
+        start = _optional_positive_int(verse_start, "verse_start")
+        end = _optional_positive_int(verse_end, "verse_end") or start
+        if start is not None and end is not None and end < start:
+            raise ValueError("verse_end must be greater than or equal to verse_start")
+        expected_hash = str(evidence_hash or "").strip()
+        if not expected_hash:
+            raise ValueError("evidence_hash is required")
+        range_start, range_end = (start or 1), (end or 9999)
+        reference = _format_reference(canonical_book, chapter_number, start, end)
+        bundle = build_evidence_bundle(
+            reference,
+            canonical_results=self._canonical_results(reference),
+            geography=self._map_context(
+                canonical_book, chapter_number, range_start, range_end
+            ),
+            archaeology=list_archaeology_passage_summaries(
+                canonical_book,
+                chapter_number,
+                range_start,
+                range_end,
+                path=self.study_db_path,
+                limit=8,
+                prepare_schema=False,
+            ),
+        )
+        if bundle.evidence_hash != expected_hash:
+            raise StalePresentationEvidenceError(
+                "Passage evidence changed; reload Companion context before enhancing it."
+            )
+        presentation = self.presentation_engine.present(bundle)
+        return {
+            "reference": reference,
+            **_presentation_payload(bundle, presentation),
+        }
+
+    def _local_presentation(self, bundle: EvidenceBundle) -> PresentationResult:
+        local = getattr(self.presentation_engine, "present_local", None)
+        if callable(local):
+            return local(bundle)
+        return PresentationResult(
+            packet=deterministic_presentation(bundle),
+            mode="deterministic_fallback",
+        )
 
     @staticmethod
     def _probe(
@@ -342,27 +416,32 @@ class CompanionContextService:
             return self._translation_cache
 
     def _canonical_context(self, reference: str) -> dict[str, Any]:
-        with self._canonical_cache_lock:
-            if self._canonical_library is None:
-                self._canonical_library = self.canonical_library_provider()
-            library = self._canonical_library
-        lookup = getattr(library, "retrieve_by_scripture_reference", None)
-        if not callable(lookup):
-            raise RuntimeError("canonical Scripture index is unavailable")
-        results = lookup(reference, limit=100, include_placeholders=False)
+        results = self._canonical_results(reference)
         objects = [item.object for item in results]
+        eligible_objects = [
+            item
+            for item in objects
+            if is_canonical_object_passage_eligible(reference, item)
+        ]
+
         entities: dict[str, list[dict[str, Any]]] = {
             "people": [],
             "places": [],
             "themes": [],
+            "groups": [],
+            "events": [],
+        }
+        eligible_ids = {
+            str(getattr(item, "id", "") or "") for item in eligible_objects
         }
         for item, result in zip(objects, results):
             object_type = str(getattr(item, "type", "") or "").casefold()
-            if object_type not in _ENTITY_TYPES:
+            object_id = str(getattr(item, "id", "") or "")
+            if object_type not in _ENTITY_TYPES or object_id not in eligible_ids:
                 continue
             entities[_entity_bucket(object_type)].append(
                 {
-                    "id": str(getattr(item, "id", "") or ""),
+                    "id": object_id,
                     "title": str(getattr(item, "title", "") or ""),
                     "type": object_type,
                     "summary": str(getattr(item, "summary", "") or ""),
@@ -382,7 +461,7 @@ class CompanionContextService:
         )
         timeline_objects = [
             item
-            for item in objects
+            for item in eligible_objects
             if str(getattr(item, "type", "") or "").casefold() in {"event", "timeline"}
         ]
         resources = {
@@ -445,6 +524,16 @@ class CompanionContextService:
             },
         }
 
+    def _canonical_results(self, reference: str) -> list[Any]:
+        with self._canonical_cache_lock:
+            if self._canonical_library is None:
+                self._canonical_library = self.canonical_library_provider()
+            library = self._canonical_library
+        lookup = getattr(library, "retrieve_by_scripture_reference", None)
+        if not callable(lookup):
+            raise RuntimeError("canonical Scripture index is unavailable")
+        return list(lookup(reference, limit=100, include_placeholders=False))
+
 
 def _resource(state: str, count: int, *, error: str | None = None) -> dict[str, Any]:
     value: dict[str, Any] = {
@@ -506,7 +595,83 @@ def _unique_summaries(values: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def _entity_bucket(object_type: str) -> str:
-    return {"person": "people", "place": "places", "theme": "themes"}[object_type]
+    return {
+        "person": "people",
+        "place": "places",
+        "theme": "themes",
+        "people_group": "groups",
+        "people-group": "groups",
+        "group": "groups",
+        "institution": "groups",
+        "event": "events",
+        "timeline": "events",
+    }[object_type]
+
+
+def _presentation_payload(
+    bundle: EvidenceBundle,
+    presentation: PresentationResult,
+) -> dict[str, Any]:
+    """Serialize only evidence required by the cards visible to the reader."""
+
+    evidence_ids = {
+        evidence_id
+        for card in presentation.packet.cards
+        for evidence_id in card.evidence_ids
+    }
+    sources_by_id = {
+        str(source.get("id") or ""): source
+        for source in bundle.provenance.get("sources", [])
+    }
+    compact_evidence = []
+    for item in bundle.evidence_items:
+        if item.id not in evidence_ids:
+            continue
+        compact_evidence.append(
+            {
+                "id": item.id,
+                "claim": item.claim,
+                "category": item.category,
+                "confidence": item.confidence,
+                "sources": [
+                    {
+                        "id": source_id,
+                        "title": str(
+                            sources_by_id.get(source_id, {}).get("title") or source_id
+                        ),
+                        "source_type": str(
+                            sources_by_id.get(source_id, {}).get("source_type") or ""
+                        ),
+                    }
+                    for source_id in item.source_ids
+                ],
+            }
+        )
+    return {
+        # A compatibility shell retains fingerprint and map navigation fields
+        # without exposing the full internal EvidenceBundle to the browser.
+        "evidence_bundle": {
+            "passage_ref": bundle.passage_ref,
+            "version": bundle.version,
+            "evidence_hash": bundle.evidence_hash,
+            "compact": True,
+            "entities": {
+                bucket: [
+                    {"id": entity.id, "title": entity.title, "type": entity.type}
+                    for entity in bundle.entities.get(bucket, [])
+                ]
+                for bucket in bundle.entities
+            },
+            "geography": {
+                "map_location_refs": list(
+                    bundle.geography.get("map_location_refs") or []
+                ),
+                "map_route_refs": list(bundle.geography.get("map_route_refs") or []),
+            },
+        },
+        "presentation_packet": presentation.to_dict(include_diagnostics=False),
+        "presentation_evidence": compact_evidence,
+    }
 
 
 def _positive_int(value: Any, label: str) -> int:

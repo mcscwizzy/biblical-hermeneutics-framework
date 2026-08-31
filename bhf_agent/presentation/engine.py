@@ -88,49 +88,61 @@ class PresentationEngine:
         self.metrics.record_result(result.mode, time.perf_counter() - started)
         return result
 
+    def present_local(self, bundle: EvidenceBundle) -> PresentationResult:
+        """Return cache, bundled, or deterministic output without a provider call."""
+
+        started = time.perf_counter()
+        try:
+            result = self._present_local(bundle)
+        except BaseException:
+            self.metrics.record_unhandled_failure(time.perf_counter() - started)
+            raise
+        self.metrics.record_result(result.mode, time.perf_counter() - started)
+        return result
+
+    @property
+    def enhancement_available(self) -> bool:
+        return self.provider is not None
+
     def _present(self, bundle: EvidenceBundle) -> PresentationResult:
         ranked = rank_evidence(bundle, limit=self.candidate_limit)
         cache_key = presentation_cache_key(bundle, prompt_version=self.prompt_version)
         diagnostics: list[str] = []
 
-        if self.prefer_cached_packets:
-            cached_result = self._read_cached(bundle, cache_key, diagnostics)
-            if cached_result is not None:
-                return cached_result
-
-            if self.provider is not None and ranked:
-                return self._generation_requests.run(
-                    cache_key,
-                    lambda: self._present_after_preferred_cache(
-                        bundle,
-                        ranked,
-                        cache_key,
-                        diagnostics,
-                        recheck_cache=True,
-                    ),
-                )
-
-        return self._present_after_preferred_cache(
-            bundle,
-            ranked,
+        local = self._read_reusable(bundle, cache_key, diagnostics)
+        if local is not None:
+            return local
+        if self.provider is None or not ranked:
+            return self._deterministic(bundle, ranked, diagnostics)
+        return self._generation_requests.run(
             cache_key,
-            diagnostics,
-            recheck_cache=False,
+            lambda: self._generate_after_recheck(
+                bundle,
+                ranked,
+                cache_key,
+                diagnostics,
+            ),
         )
 
-    def _present_after_preferred_cache(
+    def _present_local(self, bundle: EvidenceBundle) -> PresentationResult:
+        ranked = rank_evidence(bundle, limit=self.candidate_limit)
+        cache_key = presentation_cache_key(bundle, prompt_version=self.prompt_version)
+        diagnostics: list[str] = []
+        reusable = self._read_reusable(bundle, cache_key, diagnostics)
+        if reusable is not None:
+            return reusable
+        return self._deterministic(bundle, ranked, diagnostics)
+
+    def _generate_after_recheck(
         self,
         bundle: EvidenceBundle,
         ranked: list[RankedEvidence],
         cache_key: str,
         diagnostics: list[str],
-        *,
-        recheck_cache: bool,
     ) -> PresentationResult:
-        if recheck_cache:
-            cached_result = self._read_cached(bundle, cache_key, diagnostics)
-            if cached_result is not None:
-                return cached_result
+        reusable = self._read_reusable(bundle, cache_key, diagnostics)
+        if reusable is not None:
+            return reusable
 
         if self.provider is not None and ranked:
             expected = GeneratedFrom(
@@ -193,11 +205,17 @@ class PresentationEngine:
                     len(diagnostics),
                 )
 
-        if not self.prefer_cached_packets:
-            cached_result = self._read_cached(bundle, cache_key, diagnostics)
-            if cached_result is not None:
-                return cached_result
+        return self._deterministic(bundle, ranked, diagnostics)
 
+    def _read_reusable(
+        self,
+        bundle: EvidenceBundle,
+        cache_key: str,
+        diagnostics: list[str],
+    ) -> PresentationResult | None:
+        cached_result = self._read_cached(bundle, cache_key, diagnostics)
+        if cached_result is not None:
+            return cached_result
         bundled = self.bundled_packets.get(cache_key)
         if bundled is not None:
             validation = validate_presentation_packet(
@@ -209,7 +227,14 @@ class PresentationEngine:
                 return PresentationResult(validation.packet, "bundled", tuple(diagnostics))
             self.metrics.record_event("bundle_rejections")
             diagnostics.extend(f"bundled: {error}" for error in validation.errors)
+        return None
 
+    def _deterministic(
+        self,
+        bundle: EvidenceBundle,
+        ranked: list[RankedEvidence],
+        diagnostics: list[str],
+    ) -> PresentationResult:
         fallback = deterministic_presentation(
             bundle,
             ranked,
