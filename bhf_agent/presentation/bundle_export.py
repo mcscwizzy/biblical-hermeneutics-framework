@@ -9,6 +9,8 @@ import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 
+from bhf_agent.config import ALLOWED_ADAPTERS
+
 from .bundles import (
     MAXIMUM_PRESENTATION_BUNDLE_BYTES,
     build_presentation_bundle,
@@ -69,15 +71,22 @@ def export_cached_presentations(
             )
             derived_key = next(iter(packet_index))
             generated = packet["generated_from"]
-            profiled_key = presentation_cache_key_for_versions(
-                passage_ref=packet["passage_ref"],
-                evidence_hash=generated["evidence_hash"],
-                evidence_bundle_version=generated["evidence_bundle_version"],
-                presentation_schema_version=generated["presentation_schema_version"],
-                prompt_version=generated["prompt_version"],
-                generation_profile=generated["model"],
-            )
-            if stored_key not in {derived_key, profiled_key}:
+            compatible_keys = {derived_key}
+            for profile in (
+                generated["model"],
+                *(f"{adapter}:{generated['model']}" for adapter in ALLOWED_ADAPTERS),
+            ):
+                compatible_keys.add(
+                    presentation_cache_key_for_versions(
+                        passage_ref=packet["passage_ref"],
+                        evidence_hash=generated["evidence_hash"],
+                        evidence_bundle_version=generated["evidence_bundle_version"],
+                        presentation_schema_version=generated["presentation_schema_version"],
+                        prompt_version=generated["prompt_version"],
+                        generation_profile=profile,
+                    )
+                )
+            if stored_key not in compatible_keys:
                 raise PresentationBundleExportError(
                     "presentation cache fingerprint does not match packet metadata"
                 )

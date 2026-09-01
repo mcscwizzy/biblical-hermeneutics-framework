@@ -66,6 +66,35 @@ def test_exported_cache_round_trips_through_bundle_loader(tmp_path):
     assert cache.entries_for_export() == [(cache_key, packet)]
 
 
+def test_export_accepts_adapter_and_model_profiled_cache_key(tmp_path):
+    cache_path = tmp_path / "presentation.sqlite"
+    output_path = tmp_path / "presentation-bundle.json"
+    _, packet = _cached_packet()
+    metadata = packet["generated_from"]
+    cache_key = presentation_cache_key_for_versions(
+        passage_ref=packet["passage_ref"],
+        evidence_hash=metadata["evidence_hash"],
+        evidence_bundle_version=metadata["evidence_bundle_version"],
+        presentation_schema_version=metadata["presentation_schema_version"],
+        prompt_version=metadata["prompt_version"],
+        generation_profile=f"openrouter:{metadata['model']}",
+    )
+    SQLitePresentationCache(cache_path).put(cache_key, packet)
+
+    result = export_cached_presentations(cache_path, output_path)
+
+    assert result.packet_count == 1
+    assert load_presentation_bundle(output_path) == {
+        presentation_cache_key_for_versions(
+            passage_ref=packet["passage_ref"],
+            evidence_hash=packet["generated_from"]["evidence_hash"],
+            evidence_bundle_version=packet["generated_from"]["evidence_bundle_version"],
+            presentation_schema_version=packet["generated_from"]["presentation_schema_version"],
+            prompt_version=packet["generated_from"]["prompt_version"],
+        ): packet
+    }
+
+
 def test_export_refuses_overwrite_unless_force_is_explicit(tmp_path):
     cache_path = tmp_path / "presentation.sqlite"
     output_path = tmp_path / "presentation-bundle.json"

@@ -32,6 +32,15 @@ def _failure_diagnostic(stage: str, exc: BaseException) -> str:
     return f"{stage}: {type(exc).__name__}"
 
 
+def _provider_generation_profile(provider: PresentationProvider | None) -> str | None:
+    """Return a credential-free cache identity, preserving generic providers."""
+
+    if provider is None:
+        return None
+    configured = str(getattr(provider, "generation_profile", "") or "").strip()
+    return configured or str(provider.model)
+
+
 @dataclass(frozen=True)
 class PresentationResult:
     packet: PresentationPacket
@@ -125,7 +134,7 @@ class PresentationEngine:
         generation_profile: str | None,
     ) -> PresentationResult:
         ranked = rank_evidence(bundle, limit=self.candidate_limit)
-        profile = generation_profile or (provider.model if provider is not None else None)
+        profile = generation_profile or _provider_generation_profile(provider)
         cache_key = presentation_cache_key(
             bundle,
             prompt_version=self.prompt_version,
@@ -156,7 +165,7 @@ class PresentationEngine:
         cache_key = presentation_cache_key(
             bundle,
             prompt_version=self.prompt_version,
-            generation_profile=(self.provider.model if self.provider is not None else None),
+            generation_profile=_provider_generation_profile(self.provider),
         )
         bundle_key = presentation_cache_key(bundle, prompt_version=self.prompt_version)
         diagnostics: list[str] = []

@@ -1,3 +1,4 @@
+import asyncio
 import tempfile
 import threading
 import time
@@ -8,6 +9,7 @@ from unittest.mock import patch
 
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
+import httpx
 
 from bhf_agent.presentation import (
     PresentationEngine,
@@ -22,6 +24,7 @@ from bhf_agent.study_db import (
     list_archaeology_passage_summaries,
     list_passage_map_summaries,
 )
+from bhf_web.presentation_runtime import configure_presentation_runtime
 from bhf_web.routes.study import register_study_routes
 from bhf_web.services.companion_context import (
     CompanionContextService,
@@ -818,6 +821,65 @@ class CompanionContextRouteTests(unittest.TestCase):
         self.assertEqual(response.json()["evidence_bundle"]["evidence_hash"], "abc123")
         self.assertEqual(service.calls[0]["book"], "John")
         self.assertEqual(service.calls[0]["chapter"], 4)
+
+    def test_lazy_presentation_endpoint_rejects_unsupported_request_provider(self):
+        class FakeService:
+            def __init__(self):
+                self.calls = []
+
+            def build(self, **_values):
+                return {}
+
+            def enhance_presentation(self, **values):
+                self.calls.append(values)
+                return {}
+
+        service = FakeService()
+        adapter_calls = []
+        app = FastAPI()
+        register_study_routes(
+            app,
+            study_db_path="unused.sqlite",
+            templates=None,
+            job_store=None,
+            companion_context_service=service,
+        )
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            app.state.presentation_runtime = configure_presentation_runtime(
+                study_db_path=Path(temporary_directory) / "study.sqlite",
+                environ={},
+                adapter_factory=lambda config: adapter_calls.append(config),
+            )
+            async def request_presentation():
+                transport = httpx.ASGITransport(app=app)
+                async with httpx.AsyncClient(
+                    transport=transport,
+                    base_url="http://testserver",
+                ) as client:
+                    return await client.post(
+                        "/api/study/presentation",
+                        headers={"X-BHF-OpenRouter-Key": "transient-key"},
+                        json={
+                            "book": "John",
+                            "chapter": 4,
+                            "evidence_hash": "abc123",
+                            "ai_profile": {
+                                "adapter": "openai_compatible",
+                                "model": "test-model",
+                                "base_url": "http://169.254.169.254/",
+                            },
+                        },
+                    )
+
+            response = asyncio.run(request_presentation())
+
+        self.assertEqual(response.status_code, 400)
+        self.assertEqual(
+            response.json()["error"],
+            "Request-scoped presentation supports OpenRouter browser credentials only.",
+        )
+        self.assertEqual(adapter_calls, [])
+        self.assertEqual(service.calls, [])
 
     def test_ai_context_presenter_runs_outside_the_event_loop_thread(self):
         class FakeRouter:

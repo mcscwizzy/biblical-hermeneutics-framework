@@ -41,6 +41,15 @@ _SERVER_PROVIDER_ENV_FIELDS = {
     "OLLAMA_BASE_URL",
     "OLLAMA_MODEL",
 }
+_REQUEST_OPENROUTER_PROFILE_FIELDS = {
+    "adapter",
+    "model",
+    "temperature",
+    "max_tokens",
+    "context_window",
+    "timeout_seconds",
+    "response_format_policy",
+}
 
 
 @dataclass(frozen=True)
@@ -99,14 +108,29 @@ class PresentationRuntime:
     ) -> tuple[AdapterPresentationProvider | None, str | None]:
         """Build a provider that lives only for this HTTP request."""
 
-        if not ai_profile and not transient_api_key:
+        if not transient_api_key:
             provider = self.engine.provider
-            profile = self.model if provider is not None else None
+            profile = (
+                str(getattr(provider, "generation_profile", "") or "") or None
+                if provider is not None
+                else None
+            )
             return provider, profile
 
-        values = dict(ai_profile or {})
-        if transient_api_key and not values.get("adapter"):
-            values["adapter"] = "openrouter"
+        submitted = dict(ai_profile or {})
+        requested_adapter = str(submitted.get("adapter") or "openrouter").strip()
+        if requested_adapter != "openrouter":
+            raise ValueError(
+                "Request-scoped presentation supports OpenRouter browser credentials only."
+            )
+        values = {
+            key: submitted[key]
+            for key in _REQUEST_OPENROUTER_PROFILE_FIELDS
+            if key in submitted
+        }
+        # config_from_form pins this adapter to the shared OpenRouter endpoint;
+        # connection targets and credentials are deliberately absent above.
+        values["adapter"] = "openrouter"
         config = config_from_form(
             values,
             load_web_defaults().config,
@@ -117,9 +141,7 @@ class PresentationRuntime:
             self.settings,
             adapter_factory=self.adapter_factory,
         )
-        # Model ID plus the engine's prompt version form the disposable cache
-        # profile. Credentials never participate in cache identity.
-        return provider, str(config.model)
+        return provider, provider.generation_profile
 
 
 def load_presentation_runtime_settings(
@@ -212,6 +234,9 @@ def configure_presentation_runtime(
     engine_options = {
         "cache": cache,
         "bundled_packets": bundled_packets,
+        "maximum_concurrent_provider_requests": (
+            settings.maximum_concurrent_requests
+        ),
     }
     runtime_options = {
         "bundle_path": bundle_path or None,
@@ -249,9 +274,6 @@ def configure_presentation_runtime(
     return PresentationRuntime(
         engine=PresentationEngine(
             provider=provider,
-            maximum_concurrent_provider_requests=(
-                settings.maximum_concurrent_requests
-            ),
             **engine_options,
         ),
         settings=settings,
@@ -298,6 +320,7 @@ def _provider_from_config(
     adapter = adapter_factory(bounded_config)
     return AdapterPresentationProvider(
         adapter,
+        adapter_name=config.adapter,
         model=model,
         temperature=min(float(config.temperature), 0.2),
         max_tokens=min(int(config.max_tokens), 900),

@@ -1,9 +1,14 @@
 from __future__ import annotations
 
 import json
+import threading
+from concurrent.futures import ThreadPoolExecutor
+
+import pytest
 
 from bhf_agent.config import AgentConfig
 from bhf_agent.models import ChatResponse
+from bhf_agent.providers.openrouter_config import OPENROUTER_BASE_URL
 from bhf_agent.presentation import (
     PRESENTATION_BUNDLE_FORMAT,
     PRESENTATION_BUNDLE_VERSION,
@@ -30,9 +35,9 @@ def _agent_config(*, timeout_seconds: float = 600) -> AgentConfig:
     )
 
 
-def _bundle():
+def _bundle(reference="Mark 5:1"):
     return build_evidence_bundle(
-        "Mark 5:1",
+        reference,
         geography={
             "places": [
                 {
@@ -331,7 +336,13 @@ def test_transient_openrouter_key_builds_request_scoped_provider_without_leaking
     )
 
     provider, profile = runtime.provider_for_request(
-        {"adapter": "openrouter", "model": "openrouter/free"},
+        {
+            "adapter": "openrouter",
+            "model": "openrouter/free",
+            "base_url": "http://127.0.0.1:1234",
+            "api_key": "request-body-secret",
+            "headers": {"Authorization": "also-untrusted"},
+        },
         secret,
     )
     result = runtime.engine.present_with_provider(
@@ -339,7 +350,9 @@ def test_transient_openrouter_key_builds_request_scoped_provider_without_leaking
     )
 
     assert configured[-1].adapter == "openrouter"
+    assert configured[-1].base_url == OPENROUTER_BASE_URL
     assert configured[-1].api_key == secret
+    assert profile == "openrouter:openrouter/free"
     assert result.mode == "generated"
     public_values = {
         "response": result.to_dict(),
@@ -349,3 +362,192 @@ def test_transient_openrouter_key_builds_request_scoped_provider_without_leaking
     }
     assert secret not in json.dumps(public_values)
     assert secret not in caplog.text
+
+
+@pytest.mark.parametrize(
+    ("adapter_name", "base_url"),
+    [
+        ("openai_compatible", "http://127.0.0.1:1234"),
+        ("openai_compatible", "http://169.254.169.254/"),
+        ("ollama", "http://internal-service/"),
+    ],
+)
+def test_request_scoped_provider_rejects_client_controlled_connection_targets(
+    tmp_path, adapter_name, base_url
+):
+    configured = []
+    runtime = configure_presentation_runtime(
+        study_db_path=tmp_path / "study.sqlite",
+        environ={},
+        adapter_factory=lambda config: configured.append(config),
+    )
+
+    with pytest.raises(
+        ValueError,
+        match="supports OpenRouter browser credentials only",
+    ):
+        runtime.provider_for_request(
+            {"adapter": adapter_name, "model": "test-model", "base_url": base_url},
+            "transient-key",
+        )
+
+    assert configured == []
+
+
+def test_request_profiles_without_browser_credentials_cannot_override_server_provider(
+    tmp_path,
+):
+    adapter = _ValidAdapter()
+    configured = []
+    runtime = configure_presentation_runtime(
+        study_db_path=tmp_path / "study.sqlite",
+        environ={},
+        agent_config=_agent_config(),
+        adapter_factory=lambda config: configured.append(config) or adapter,
+    )
+
+    provider, profile = runtime.provider_for_request(
+        {
+            "adapter": "ollama",
+            "model": "attacker-model",
+            "base_url": "http://internal-service/",
+        },
+        None,
+    )
+
+    assert provider is runtime.engine.provider
+    assert profile == "openai_compatible:fixture-model"
+    assert len(configured) == 1
+    assert configured[0].base_url == "https://provider.invalid/v1"
+
+
+def test_openrouter_cache_profile_uses_adapter_and_model_but_not_browser_key(tmp_path):
+    configured = []
+    adapter = _ValidAdapter()
+    runtime = configure_presentation_runtime(
+        study_db_path=tmp_path / "study.sqlite",
+        environ={},
+        adapter_factory=lambda config: configured.append(config) or adapter,
+    )
+
+    first_provider, first_profile = runtime.provider_for_request(
+        {"adapter": "openrouter", "model": "test-model"},
+        "first-secret",
+    )
+    second_provider, second_profile = runtime.provider_for_request(
+        {"adapter": "openrouter", "model": "test-model"},
+        "second-secret",
+    )
+    _, other_model_profile = runtime.provider_for_request(
+        {"adapter": "openrouter", "model": "other-model"},
+        "first-secret",
+    )
+
+    assert first_profile == second_profile == "openrouter:test-model"
+    assert other_model_profile == "openrouter:other-model"
+    assert first_profile != other_model_profile
+    first = runtime.engine.present_with_provider(
+        _bundle(), first_provider, generation_profile=first_profile
+    )
+    second = runtime.engine.present_with_provider(
+        _bundle(), second_provider, generation_profile=second_profile
+    )
+    assert first.mode == "generated"
+    assert second.mode == "cached"
+    assert len(adapter.requests) == 1
+    assert [config.api_key for config in configured] == [
+        "first-secret",
+        "second-secret",
+        "first-secret",
+    ]
+    assert all(config.base_url == OPENROUTER_BASE_URL for config in configured)
+
+
+def test_request_scoped_openrouter_uses_shared_provider_gate_without_server_provider(
+    tmp_path,
+):
+    two_active = threading.Event()
+    release = threading.Event()
+    lock = threading.Lock()
+
+    class BlockingAdapter(_ValidAdapter):
+        def __init__(self):
+            super().__init__()
+            self.active = 0
+            self.peak_active = 0
+
+        def chat(self, request):
+            with lock:
+                self.active += 1
+                self.peak_active = max(self.peak_active, self.active)
+                if self.active == 2:
+                    two_active.set()
+            try:
+                if not release.wait(timeout=3):
+                    raise TimeoutError("test did not release provider")
+                return super().chat(request)
+            finally:
+                with lock:
+                    self.active -= 1
+
+    adapter = BlockingAdapter()
+    runtime = configure_presentation_runtime(
+        study_db_path=tmp_path / "study.sqlite",
+        environ={"BHF_PRESENTATION_MAX_CONCURRENT_REQUESTS": "2"},
+        adapter_factory=lambda config: adapter,
+    )
+    providers = [
+        runtime.provider_for_request(
+            {"adapter": "openrouter", "model": "test-model"},
+            f"transient-key-{index}",
+        )
+        for index in range(5)
+    ]
+    bundles = [_bundle(f"Mark 5:{index + 1}") for index in range(5)]
+
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        first_futures = [
+            executor.submit(
+                runtime.engine.present_with_provider,
+                bundles[index],
+                providers[index][0],
+                generation_profile=providers[index][1],
+            )
+            for index in range(2)
+        ]
+        assert two_active.wait(timeout=3)
+        saturated_futures = [
+            executor.submit(
+                runtime.engine.present_with_provider,
+                bundles[index],
+                providers[index][0],
+                generation_profile=providers[index][1],
+            )
+            for index in range(2, 5)
+        ]
+        saturated = [future.result(timeout=3) for future in saturated_futures]
+        release.set()
+        generated = [future.result(timeout=3) for future in first_futures]
+
+    assert runtime.configured is False
+    assert runtime.engine.provider is None
+    assert adapter.peak_active == 2
+    assert all(result.mode == "generated" for result in generated)
+    assert all(result.mode == "deterministic_fallback" for result in saturated)
+    assert all(
+        any("provider capacity unavailable" in item for item in result.diagnostics)
+        for result in saturated
+    )
+    activity = runtime.diagnostics()["activity"]
+    assert activity["provider"] == {
+        "attempts": 2,
+        "failures": 0,
+        "rejections": 0,
+        "saturated": 3,
+    }
+    assert activity["provider_gate"] == {
+        "enabled": True,
+        "limit": 2,
+        "active": 0,
+        "peak_active": 2,
+    }

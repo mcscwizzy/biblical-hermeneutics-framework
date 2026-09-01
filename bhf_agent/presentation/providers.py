@@ -68,12 +68,17 @@ class AdapterPresentationProvider(PresentationProvider):
         adapter: ChatAdapter,
         *,
         model: str,
+        adapter_name: str | None = None,
         temperature: float = 0.2,
         max_tokens: int = 900,
         context_window: int = 4096,
     ) -> None:
         self.adapter = adapter
         self.model = model
+        self.adapter_name = str(adapter_name) if adapter_name else None
+        self.generation_profile = (
+            f"{self.adapter_name}:{self.model}" if self.adapter_name else self.model
+        )
         self.temperature = temperature
         self.max_tokens = max_tokens
         self.context_window = context_window

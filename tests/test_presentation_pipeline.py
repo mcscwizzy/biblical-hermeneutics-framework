@@ -773,8 +773,9 @@ class _FailingProvider(PresentationProvider):
 
 
 class _ProfileProvider(PresentationProvider):
-    def __init__(self, model):
+    def __init__(self, model, adapter="openrouter"):
         self.model = model
+        self.generation_profile = f"{adapter}:{model}"
         self.calls = 0
 
     def generate(self, bundle, ranked, generated_from):
@@ -794,14 +795,33 @@ def test_switching_models_uses_a_distinct_credential_free_cache_profile():
     model_a = _ProfileProvider("model-a")
     model_b = _ProfileProvider("model-b")
 
-    first = engine.present_with_provider(bundle, model_a, generation_profile=model_a.model)
-    second = engine.present_with_provider(bundle, model_b, generation_profile=model_b.model)
+    first = engine.present_with_provider(bundle, model_a)
+    second = engine.present_with_provider(bundle, model_b)
 
     assert first.mode == "generated"
     assert second.mode == "generated"
     assert model_a.calls == model_b.calls == 1
     assert len(cache._values) == 2
     assert "api-key" not in json.dumps(cache._values)
+
+
+def test_same_model_through_different_adapters_uses_distinct_cache_profiles():
+    fixture = FIXTURES[2]
+    bundle = build_evidence_bundle(
+        fixture["reference"], canonical_results=_results(fixture["objects"])
+    )
+    cache = MemoryPresentationCache()
+    engine = PresentationEngine(cache=cache)
+    openrouter = _ProfileProvider("test-model", adapter="openrouter")
+    compatible = _ProfileProvider("test-model", adapter="openai_compatible")
+
+    first = engine.present_with_provider(bundle, openrouter)
+    second = engine.present_with_provider(bundle, compatible)
+
+    assert first.mode == "generated"
+    assert second.mode == "generated"
+    assert openrouter.calls == compatible.calls == 1
+    assert len(cache._values) == 2
 
 
 def test_durable_cache_survives_provider_failure(tmp_path):
