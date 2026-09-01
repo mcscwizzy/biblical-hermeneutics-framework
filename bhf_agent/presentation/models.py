@@ -128,6 +128,7 @@ class PresentationCard:
     evidence_ids: list[str]
     confidence: str
     interpretation_level: str
+    dig_in_summary: str | None = None
     related_entity_ids: list[str] = field(default_factory=list)
     map_focus: dict[str, Any] | None = None
     dig_deeper_actions: list[DigDeeperAction] = field(default_factory=list)

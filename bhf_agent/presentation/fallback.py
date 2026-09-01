@@ -17,7 +17,7 @@ from .walk_the_land import build_walk_the_land_card
 from .why_it_matters import build_why_it_matters_card
 
 
-DETERMINISTIC_PROMPT_VERSION = "deterministic-v3"
+DETERMINISTIC_PROMPT_VERSION = "deterministic-v4"
 
 
 def deterministic_presentation(
@@ -27,33 +27,40 @@ def deterministic_presentation(
     maximum_cards: int = 3,
 ) -> PresentationPacket:
     candidates = list(ranked if ranked is not None else rank_evidence(bundle))
-    walk_card = (
-        build_walk_the_land_card(bundle, candidates) if maximum_cards > 0 else None
-    )
-    why_card = (
-        build_why_it_matters_card(bundle, candidates)
-        if maximum_cards > int(walk_card is not None)
-        else None
-    )
-    used_evidence = {
-        evidence_id
-        for card in (walk_card, why_card)
-        if card is not None
-        for evidence_id in card.evidence_ids
-    }
-    remaining = [
+    ordinary = [
         value
         for value in candidates
-        if value.item.id not in used_evidence
-        and not str(value.item.relevance_metadata.get("source_kind") or "").startswith(
-            "passage_map_"
-        )
+        if not _is_map_candidate(bundle, value)
         and value.item.relevance_metadata.get("presentation_role") != "significance"
     ]
-    reserved = int(walk_card is not None) + int(why_card is not None)
-    selected = _diverse_candidates(remaining, maximum_cards - reserved)
-    cards = [card for card in (walk_card, why_card) if card is not None]
-    cards.extend(_card(bundle, candidate) for candidate in selected)
+    # Reserve the first slot for ordinary context whenever it exists. Map and
+    # significance cards must not crowd useful Did You Know evidence out.
+    selected = _diverse_candidates(ordinary, 1 if maximum_cards > 0 else 0)
+    cards = [_card(bundle, candidate) for candidate in selected]
+    used_evidence = {item.item.id for item in selected}
+
+    walk_card = (
+        build_walk_the_land_card(bundle, candidates)
+        if len(cards) < maximum_cards
+        else None
+    )
+    if walk_card is not None:
+        cards.append(walk_card)
+        used_evidence.update(walk_card.evidence_ids)
+    why_card = (
+        build_why_it_matters_card(bundle, candidates)
+        if len(cards) < maximum_cards
+        else None
+    )
+    if why_card is not None:
+        cards.append(why_card)
+        used_evidence.update(why_card.evidence_ids)
+
+    remaining = [value for value in ordinary if value.item.id not in used_evidence]
+    cards.extend(
+        _card(bundle, candidate)
+        for candidate in _diverse_candidates(remaining, maximum_cards - len(cards))
+    )
     return PresentationPacket(
         passage_ref=bundle.passage_ref,
         cards=cards,
@@ -64,6 +71,23 @@ def deterministic_presentation(
             prompt_version=DETERMINISTIC_PROMPT_VERSION,
             model="deterministic",
         ),
+    )
+
+
+def _is_map_candidate(bundle: EvidenceBundle, value: RankedEvidence) -> bool:
+    item = value.item
+    if item.category != "geography":
+        return False
+    metadata = item.relevance_metadata
+    if str(metadata.get("source_kind") or "").startswith("passage_map_"):
+        return True
+    resource_id = str(metadata.get("map_resource_id") or "")
+    available = {
+        *bundle.geography.get("map_location_refs", []),
+        *bundle.geography.get("map_route_refs", []),
+    }
+    return resource_id in available or any(
+        entity_id in available for entity_id in item.related_entity_ids
     )
 
 

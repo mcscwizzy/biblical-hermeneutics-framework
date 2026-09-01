@@ -7,7 +7,7 @@ import math
 import os
 from dataclasses import dataclass, replace
 from pathlib import Path
-from typing import Callable, Mapping
+from typing import Any, Callable, Mapping
 
 from bhf_agent.adapters import ChatAdapter, build_chat_adapter
 from bhf_agent.config import AgentConfig
@@ -19,7 +19,11 @@ from bhf_agent.presentation import (
     load_presentation_bundle,
 )
 
-from .forms import load_web_defaults
+from .forms import (
+    WEB_CONFIG_PATH,
+    config_from_form,
+    load_web_defaults,
+)
 
 
 LOGGER = logging.getLogger(__name__)
@@ -29,6 +33,14 @@ DEFAULT_MAXIMUM_CONCURRENT_PRESENTATION_REQUESTS = 2
 MAXIMUM_CONCURRENT_PRESENTATION_REQUESTS = 16
 _TRUE_VALUES = {"1", "true", "yes", "on"}
 _FALSE_VALUES = {"0", "false", "no", "off"}
+_SERVER_PROVIDER_ENV_FIELDS = {
+    "LLM_PROVIDER",
+    "BHF_BASE_URL",
+    "BHF_MODEL",
+    "BHF_API_KEY",
+    "OLLAMA_BASE_URL",
+    "OLLAMA_MODEL",
+}
 
 
 @dataclass(frozen=True)
@@ -50,10 +62,12 @@ class PresentationRuntime:
     bundle_path: str | None = None
     bundled_packet_count: int = 0
     bundle_error: str | None = None
+    adapter_factory: Callable[[AgentConfig], ChatAdapter] = build_chat_adapter
 
     def diagnostics(self) -> dict[str, object]:
         result: dict[str, object] = {
             "enabled": self.settings.enabled,
+            "legacy_default_enabled": self.settings.enabled,
             "configured": self.configured,
             "timeout_seconds": self.settings.timeout_seconds,
             "maximum_concurrent_requests": self.settings.maximum_concurrent_requests,
@@ -78,11 +92,40 @@ class PresentationRuntime:
         result["activity"] = self.engine.diagnostics()
         return result
 
+    def provider_for_request(
+        self,
+        ai_profile: Mapping[str, Any] | None,
+        transient_api_key: str | None,
+    ) -> tuple[AdapterPresentationProvider | None, str | None]:
+        """Build a provider that lives only for this HTTP request."""
+
+        if not ai_profile and not transient_api_key:
+            provider = self.engine.provider
+            profile = self.model if provider is not None else None
+            return provider, profile
+
+        values = dict(ai_profile or {})
+        if transient_api_key and not values.get("adapter"):
+            values["adapter"] = "openrouter"
+        config = config_from_form(
+            values,
+            load_web_defaults().config,
+            transient_api_key=transient_api_key,
+        )
+        provider = _provider_from_config(
+            config,
+            self.settings,
+            adapter_factory=self.adapter_factory,
+        )
+        # Model ID plus the engine's prompt version form the disposable cache
+        # profile. Credentials never participate in cache identity.
+        return provider, str(config.model)
+
 
 def load_presentation_runtime_settings(
     environ: Mapping[str, str] | None = None,
 ) -> PresentationRuntimeSettings:
-    """Read the explicit generation gate and a bounded request deadline."""
+    """Read the legacy client default and bounded provider controls."""
 
     values = os.environ if environ is None else environ
     raw_enabled = str(values.get("BHF_PRESENTATION_ENABLED") or "").strip().lower()
@@ -95,7 +138,7 @@ def load_presentation_runtime_settings(
         enabled = False
     else:
         enabled = False
-        warning = "BHF_PRESENTATION_ENABLED was invalid; generation remains disabled."
+        warning = "BHF_PRESENTATION_ENABLED was invalid; the browser default remains off."
 
     timeout = DEFAULT_PRESENTATION_TIMEOUT_SECONDS
     raw_timeout = str(values.get("BHF_PRESENTATION_TIMEOUT_SECONDS") or "").strip()
@@ -175,33 +218,22 @@ def configure_presentation_runtime(
         "bundled_packet_count": len(bundled_packets),
         "bundle_error": bundle_error,
     }
-    if not settings.enabled:
+    if not _server_provider_is_explicit(values, agent_config):
         return PresentationRuntime(
             engine=PresentationEngine(**engine_options),
             settings=settings,
             configured=False,
+            adapter_factory=adapter_factory,
             **runtime_options,
         )
-
     try:
         config = agent_config or load_web_defaults().config
-        model = str(config.model or "").strip()
-        if not model:
-            raise ValueError("the configured model is blank")
-        configured_timeout = config.timeout_seconds
-        effective_timeout = settings.timeout_seconds
-        if configured_timeout is not None:
-            effective_timeout = min(effective_timeout, float(configured_timeout))
-        bounded_config = replace(config, timeout_seconds=effective_timeout)
-        bounded_config.validate()
-        adapter = adapter_factory(bounded_config)
-        provider = AdapterPresentationProvider(
-            adapter,
-            model=model,
-            temperature=min(float(config.temperature), 0.2),
-            max_tokens=min(int(config.max_tokens), 900),
-            context_window=min(int(config.context_window), 4096),
+        provider = _provider_from_config(
+            config,
+            settings,
+            adapter_factory=adapter_factory,
         )
+        model = provider.model
     except Exception as exc:  # noqa: BLE001 - bad optional AI config must not break reading
         error = f"{type(exc).__name__}: {exc}"
         LOGGER.warning("presentation generation is not configured: %s", error)
@@ -210,6 +242,7 @@ def configure_presentation_runtime(
             settings=settings,
             configured=False,
             error=error,
+            adapter_factory=adapter_factory,
             **runtime_options,
         )
 
@@ -225,5 +258,48 @@ def configure_presentation_runtime(
         configured=True,
         adapter_name=config.adapter,
         model=model,
+        adapter_factory=adapter_factory,
         **runtime_options,
+    )
+
+
+def _server_provider_is_explicit(
+    values: Mapping[str, str],
+    agent_config: AgentConfig | None,
+) -> bool:
+    if agent_config is not None:
+        return True
+    adapter = str(values.get("LLM_PROVIDER") or "").strip().casefold()
+    if adapter == "openrouter" and not str(values.get("BHF_API_KEY") or "").strip():
+        return False
+    if any(
+        str(values.get(name) or "").strip()
+        for name in _SERVER_PROVIDER_ENV_FIELDS
+    ):
+        return True
+    return WEB_CONFIG_PATH.is_file()
+
+
+def _provider_from_config(
+    config: AgentConfig,
+    settings: PresentationRuntimeSettings,
+    *,
+    adapter_factory: Callable[[AgentConfig], ChatAdapter],
+) -> AdapterPresentationProvider:
+    model = str(config.model or "").strip()
+    if not model:
+        raise ValueError("the configured model is blank")
+    configured_timeout = config.timeout_seconds
+    effective_timeout = settings.timeout_seconds
+    if configured_timeout is not None:
+        effective_timeout = min(effective_timeout, float(configured_timeout))
+    bounded_config = replace(config, timeout_seconds=effective_timeout)
+    bounded_config.validate()
+    adapter = adapter_factory(bounded_config)
+    return AdapterPresentationProvider(
+        adapter,
+        model=model,
+        temperature=min(float(config.temperature), 0.2),
+        max_tokens=min(int(config.max_tokens), 900),
+        context_window=min(int(config.context_window), 4096),
     )

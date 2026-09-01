@@ -43,9 +43,20 @@
     details.className = "companion-discovery-details";
     const summary = document.createElement("summary");
     summary.textContent = "Dig In";
+    const explanation = card.dig_in_summary
+      ? labeledSection(
+        "Why this is worth noticing",
+        card.dig_in_summary,
+        "companion-discovery-explanation",
+        document,
+      )
+      : null;
     const evidenceList = document.createElement("div");
     evidenceList.className = "companion-discovery-evidence";
-    evidenceList.replaceChildren(
+    const evidenceHeading = document.createElement("h5");
+    evidenceHeading.textContent = "Evidence";
+    evidenceList.append(evidenceHeading);
+    evidenceList.append(
       ...evidenceForCard(card, context)
         .map((item) => evidenceDetail(item, document)),
     );
@@ -54,11 +65,28 @@
     const usefulActions = Array.isArray(card.dig_deeper_actions)
       ? card.dig_deeper_actions.filter((action) => action?.type !== "show_evidence")
       : [];
-    actions.replaceChildren(...usefulActions.map((action) => actionButton(action, document)));
-    details.append(summary, evidenceList);
+    if (usefulActions.length) {
+      const actionsHeading = document.createElement("h5");
+      actionsHeading.textContent = "Actions";
+      actions.append(actionsHeading, ...usefulActions.map((action) => actionButton(action, document)));
+    }
+    details.append(summary);
+    if (explanation) details.append(explanation);
+    details.append(evidenceList);
     if (usefulActions.length) details.append(actions);
     article.append(headline, body, meta, details);
     return article;
+  }
+
+  function labeledSection(label, text, className, document) {
+    const section = document.createElement("section");
+    section.className = className;
+    const heading = document.createElement("h5");
+    heading.textContent = label;
+    const body = document.createElement("p");
+    body.textContent = text;
+    section.append(heading, body);
+    return section;
   }
 
   function evidenceForCard(card, context) {

@@ -14,7 +14,7 @@ from .bundles import (
     build_presentation_bundle,
     index_presentation_bundle,
 )
-from .cache import SQLitePresentationCache
+from .cache import SQLitePresentationCache, presentation_cache_key_for_versions
 
 
 class PresentationBundleExportError(ValueError):
@@ -68,7 +68,16 @@ def export_cached_presentations(
                 build_presentation_bundle([packet])
             )
             derived_key = next(iter(packet_index))
-            if stored_key != derived_key:
+            generated = packet["generated_from"]
+            profiled_key = presentation_cache_key_for_versions(
+                passage_ref=packet["passage_ref"],
+                evidence_hash=generated["evidence_hash"],
+                evidence_bundle_version=generated["evidence_bundle_version"],
+                presentation_schema_version=generated["presentation_schema_version"],
+                prompt_version=generated["prompt_version"],
+                generation_profile=generated["model"],
+            )
+            if stored_key not in {derived_key, profiled_key}:
                 raise PresentationBundleExportError(
                     "presentation cache fingerprint does not match packet metadata"
                 )

@@ -14,13 +14,19 @@ from typing import Any
 from .models import PRESENTATION_SCHEMA_VERSION, EvidenceBundle
 
 
-def presentation_cache_key(bundle: EvidenceBundle, *, prompt_version: str) -> str:
+def presentation_cache_key(
+    bundle: EvidenceBundle,
+    *,
+    prompt_version: str,
+    generation_profile: str | None = None,
+) -> str:
     return presentation_cache_key_for_versions(
         passage_ref=bundle.passage_ref,
         evidence_hash=bundle.evidence_hash,
         evidence_bundle_version=bundle.version,
         presentation_schema_version=PRESENTATION_SCHEMA_VERSION,
         prompt_version=prompt_version,
+        generation_profile=generation_profile,
     )
 
 
@@ -31,8 +37,9 @@ def presentation_cache_key_for_versions(
     evidence_bundle_version: str,
     presentation_schema_version: str,
     prompt_version: str,
+    generation_profile: str | None = None,
 ) -> str:
-    """Build the shared packet fingerprint from explicit version metadata."""
+    """Build a credential-free packet fingerprint from versions and model profile."""
 
     payload = {
         "passage_ref": passage_ref,
@@ -41,6 +48,8 @@ def presentation_cache_key_for_versions(
         "presentation_schema_version": presentation_schema_version,
         "prompt_version": prompt_version,
     }
+    if generation_profile:
+        payload["generation_profile"] = str(generation_profile)
     encoded = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
     return hashlib.sha256(encoded).hexdigest()
 

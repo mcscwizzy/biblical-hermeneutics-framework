@@ -91,8 +91,10 @@ evidence cannot support a genuinely useful discovery, return no card.
 
 ## Cache and fallback
 
-Presentation fingerprints include passage reference, evidence hash,
-EvidenceBundle version, PresentationPacket version, and prompt version. The
+Generated-presentation fingerprints include passage reference, evidence hash,
+EvidenceBundle version, PresentationPacket version, prompt version, and the
+selected model ID. Switching models therefore creates a new disposable cache
+entry. Credentials never enter fingerprints or cache keys. The
 engine accepts cache and bundled-packet interfaces so browser/PWA stores can
 use the same identifiers.
 
@@ -132,7 +134,7 @@ use this versioned envelope:
         "evidence_hash": "0000000000000000000000000000000000000000000000000000000000000000",
         "evidence_bundle_version": "1.0",
         "presentation_schema_version": "1.0",
-        "prompt_version": "presentation-v3",
+        "prompt_version": "presentation-v4",
         "model": "pre-generated"
       }
     }
@@ -143,6 +145,11 @@ use this versioned envelope:
 The zero hash above is illustrative; a usable packet must contain the exact
 current EvidenceBundle hash. BHF derives cache
 fingerprints from that metadata rather than accepting keys from the file. The
+deployment bundle index is intentionally model-independent: a reviewed,
+pre-generated packet may be reused across configured providers, while mutable
+runtime-generated cache entries remain model-aware. Existing tests verify that
+a valid deployment bundle avoids a provider call even when its authored model
+differs from the current runtime model. The
 loader rejects malformed, unsupported, oversized, or duplicate packs
 atomically. When a packet is selected, the normal grounding validator still
 checks it against the current EvidenceBundle before rendering it. A missing or
@@ -175,26 +182,34 @@ The generation order is:
 3. a newly generated and validated packet;
 4. deterministic cards from the highest-ranked evidence.
 
-The Study Companion uses the deterministic provider-free path by default. To
-opt in to model-generated discovery cards on a server with an already
-configured BHF model adapter, set:
+The Study Companion uses the deterministic provider-free path immediately.
+Readers opt into later model-generated discovery cards with **AI passage
+summaries** in the normal More Settings sheet. That preference is stored with
+the existing browser model settings and defaults off for a reader who has not
+chosen it.
+
+`BHF_PRESENTATION_ENABLED` is retained only as a backwards-compatible initial
+browser preference for self-hosted deployments. It is not a server generation
+gate and ordinary readers do not need it. Provider safety controls remain
+available to deployment operators:
 
 ```bash
-BHF_PRESENTATION_ENABLED=true
 BHF_PRESENTATION_TIMEOUT_SECONDS=20
 BHF_PRESENTATION_MAX_CONCURRENT_REQUESTS=2
 ```
 
 The presentation deadline defaults to 20 seconds and is capped at 30 seconds,
-even when the general model timeout is higher. Enabling this option can send
+even when the general model timeout is higher. Enabling the reader setting can send
 the passage reference, ranked evidence claims, provenance IDs, related entity
 metadata, and available exploration targets to the server-configured model
 provider. It never sends the full CKL payload. It can incur provider usage or
-cost. Browser-only/transient credentials are not used for automatic cards;
-the backend must already have valid adapter configuration and credentials.
+cost. The lazy endpoint can also reuse the reader's selected browser provider,
+model, and existing transient `X-BHF-OpenRouter-Key`. The key is used only to
+construct that request's adapter; it is not logged, serialized, cached, added
+to evidence hashes, returned to the browser, or stored in CKL.
 
-The enable flag accepts `true`, `false`, `1`, `0`, `yes`, `no`, `on`, and
-`off`. An absent or invalid value fails closed to deterministic rendering. A
+The legacy default accepts `true`, `false`, `1`, `0`, `yes`, `no`, `on`, and
+`off`. An absent or invalid value defaults the browser preference off. A
 missing model or invalid provider configuration also leaves Bible reading on
 the deterministic path. Adapter construction performs no network request.
 Provider errors, timeouts, malformed JSON, or grounding validation failures
@@ -220,15 +235,15 @@ fallback path, preventing optional discovery cards from exhausting workers or
 creating an unbounded provider-cost burst. An invalid limit uses the safe
 two-request default.
 
-When enabled, the runtime checks the versioned presentation cache before
+When requested, the runtime checks the versioned, model-aware presentation cache before
 making a model call. Valid packets are reused across requests; evidence or
 prompt changes, eviction, or explicit cache removal naturally allow a new
 generation. Concurrent cache misses for the same fingerprint are coalesced
 within each server process so simultaneous page loads do not duplicate model
 requests. The cache remains lazy while model generation is disabled.
 `BHF_PRESENTATION_CACHE_PATH` still overrides its location. Debug-only
-runtime-storage diagnostics report whether generation was enabled and
-successfully configured. They also report process-local request outcomes,
+runtime-storage diagnostics report the legacy browser default and whether a
+server provider was successfully configured. They also report process-local request outcomes,
 provider attempts, failures, saturation, current/peak concurrency, cache
 failures, coalesced requests, and
 aggregate latency. These diagnostics retain no passage references, evidence,
@@ -236,11 +251,18 @@ prompts, generated prose, or credentials.
 
 ## Presentation slices
 
-The first UI slice renders `did_you_know` cards. “Dig In” expands the exact
-cited claims and source labels. Other action buttons appear only when BHF has a
+The first UI slice renders `did_you_know` cards. When ordinary context and map
+or significance evidence all exist, the deterministic selector reserves room
+for at least one ordinary discovery rather than letting the special cards use
+all three slots. Map-only evidence does not manufacture trivia.
+
+“Dig In” first renders an optional, bounded two-to-four-sentence
+`dig_in_summary`, generated in the same provider request and grounded by the
+card's visible `evidence_ids`. It then renders the exact cited claims and source
+labels. Other action buttons appear only when BHF has a
 real target and route to existing canonical entity, maps, archaeology,
 language, history, or related-passage views. Dig In does not trigger another
-long-form model answer.
+model request; without AI it simply shows evidence, sources, and actions.
 
 The next incremental slice, `walk_the_land`, selects at most one salient
 passage-linked place or route. Its action opens the existing map workspace,
@@ -302,7 +324,7 @@ without making a provider or network call:
 ```bash
 python tools/validate_presentation_bundle.py \
   --bundle deployment/presentation-bundle.json \
-  --expect-prompt-version deterministic-v3 \
+  --expect-prompt-version deterministic-v4 \
   --expect-model deterministic
 ```
 

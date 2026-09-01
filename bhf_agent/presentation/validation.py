@@ -40,6 +40,7 @@ def validate_presentation_packet(
     *,
     maximum_cards: int = 3,
     maximum_body_length: int = 420,
+    maximum_dig_in_summary_length: int = 800,
     expected_prompt_version: str | None = None,
     expected_model: str | None = None,
 ) -> PresentationValidationResult:
@@ -75,6 +76,7 @@ def validate_presentation_packet(
             bundle,
             errors,
             maximum_body_length=maximum_body_length,
+            maximum_dig_in_summary_length=maximum_dig_in_summary_length,
         )
         if card is None:
             continue
@@ -138,6 +140,7 @@ def _parse_card(
     errors: list[str],
     *,
     maximum_body_length: int,
+    maximum_dig_in_summary_length: int,
 ) -> PresentationCard | None:
     label = f"card[{index}]"
     if not isinstance(raw, Mapping):
@@ -145,13 +148,14 @@ def _parse_card(
         return None
     fields = {
         "id", "type", "headline", "body", "evidence_ids", "confidence",
-        "interpretation_level", "related_entity_ids", "map_focus", "dig_deeper_actions",
+        "interpretation_level", "dig_in_summary", "related_entity_ids", "map_focus", "dig_deeper_actions",
     }
     _unknown(raw, fields, label, errors)
     card_id = _required_text(raw, "id", label, errors)
     card_type = _required_text(raw, "type", label, errors)
     headline = _required_text(raw, "headline", label, errors)
     body = _required_text(raw, "body", label, errors)
+    dig_in_summary = str(raw.get("dig_in_summary") or "").strip() or None
     confidence = _required_text(raw, "confidence", label, errors)
     interpretation = _required_text(raw, "interpretation_level", label, errors)
     if card_type not in CARD_TYPES:
@@ -164,6 +168,10 @@ def _parse_card(
         errors.append(f"{label}.headline exceeds 100 characters")
     if len(body) > maximum_body_length:
         errors.append(f"{label}.body exceeds {maximum_body_length} characters")
+    if dig_in_summary and len(dig_in_summary) > maximum_dig_in_summary_length:
+        errors.append(
+            f"{label}.dig_in_summary exceeds {maximum_dig_in_summary_length} characters"
+        )
 
     evidence_ids = _string_list(raw.get("evidence_ids"), f"{label}.evidence_ids", errors)
     related_ids = _string_list(raw.get("related_entity_ids", []), f"{label}.related_entity_ids", errors)
@@ -183,7 +191,12 @@ def _parse_card(
             errors.append(f"{label}.confidence exceeds its cited evidence")
     if interpretation == "fact" and any(_is_disputed(item.relevance_metadata) for item in supplied):
         errors.append(f"{label} turns disputed evidence into fact")
-    _validate_new_dates(headline + " " + body, supplied, label, errors)
+    _validate_new_dates(
+        " ".join(value for value in (headline, body, dig_in_summary) if value),
+        supplied,
+        label,
+        errors,
+    )
 
     actions_raw = raw.get("dig_deeper_actions", [])
     if not isinstance(actions_raw, list):
@@ -241,6 +254,7 @@ def _parse_card(
         evidence_ids=evidence_ids,
         confidence=confidence,
         interpretation_level=interpretation,
+        dig_in_summary=dig_in_summary,
         related_entity_ids=related_ids,
         map_focus=map_focus,
         dig_deeper_actions=actions,

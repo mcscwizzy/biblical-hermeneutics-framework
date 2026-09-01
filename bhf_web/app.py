@@ -129,6 +129,13 @@ def create_app() -> FastAPI:
     presentation_runtime = configure_presentation_runtime(
         study_db_path=STUDY_DB_PATH,
     )
+    runtime_config["ai"]["presentationDefaultEnabled"] = (
+        presentation_runtime.settings.enabled
+    )
+    runtime_config["ai"]["presentationSupported"] = True
+    runtime_config["ai"]["presentationServerConfigured"] = (
+        presentation_runtime.configured
+    )
     web_app.state.presentation_runtime = presentation_runtime
     cors_origins = load_cors_origins()
     if cors_origins:

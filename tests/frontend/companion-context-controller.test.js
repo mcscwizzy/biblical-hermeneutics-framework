@@ -112,3 +112,83 @@ test("late presentation for a previous chapter cannot replace current discoverie
   assert.deepEqual(enhanced, ["ai-26"]);
   assert.equal(controller.getRecord().context.reference, "1 Samuel 26:1");
 });
+
+
+test("disabled AI presentation renders deterministic context without an enhancement request", async () => {
+  let requests = 0;
+  const ready = [];
+  const api = {
+    requestKey: passageKey,
+    load: async (value) => initialContext(value.chapter),
+    canEnhance: async () => false,
+    enhance: async () => { requests += 1; },
+  };
+  const controller = loadController(api).create({
+    delay: 0,
+    onReady: (context) => ready.push(context.presentation_packet.cards[0].id),
+  });
+
+  controller.setSelection(selection(25));
+  await settle();
+
+  assert.deepEqual(ready, ["local-25"]);
+  assert.equal(requests, 0);
+});
+
+
+test("turning AI presentation on enhances the already-loaded passage", async () => {
+  let enabled = false;
+  let requests = 0;
+  const enhanced = [];
+  const api = {
+    requestKey: passageKey,
+    load: async (value) => initialContext(value.chapter),
+    canEnhance: async () => enabled,
+    enhance: async (value) => {
+      requests += 1;
+      return enhancedContext(value.chapter);
+    },
+  };
+  const controller = loadController(api).create({
+    delay: 0,
+    onEnhanced: (context) => enhanced.push(context.presentation_packet.cards[0].id),
+  });
+
+  controller.setSelection(selection(25));
+  await settle();
+  assert.equal(requests, 0);
+
+  enabled = true;
+  assert.equal(controller.refreshEnhancement(), true);
+  await settle();
+  assert.equal(requests, 1);
+  assert.deepEqual(enhanced, ["ai-25"]);
+
+  controller.cancelEnhancement();
+  assert.equal(controller.getRecord().context.presentation_packet.cards[0].id, "local-25");
+});
+
+
+test("turning AI presentation off aborts a late optional response", async () => {
+  let finishEnhancement;
+  const enhanced = [];
+  const api = {
+    requestKey: passageKey,
+    load: async (value) => initialContext(value.chapter),
+    canEnhance: async () => true,
+    enhance: async () => new Promise((resolve) => { finishEnhancement = resolve; }),
+  };
+  const controller = loadController(api).create({
+    delay: 0,
+    onEnhanced: (context) => enhanced.push(context.presentation_packet.cards[0].id),
+  });
+
+  controller.setSelection(selection(25));
+  await settle();
+  controller.cancelEnhancement();
+  finishEnhancement(enhancedContext(25));
+  await settle();
+
+  assert.deepEqual(enhanced, []);
+  assert.equal(controller.getRecord().context.presentation_packet.cards[0].id, "local-25");
+});

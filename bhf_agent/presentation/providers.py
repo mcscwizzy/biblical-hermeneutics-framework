@@ -13,7 +13,7 @@ from .models import EvidenceBundle, GeneratedFrom
 from .ranking import RankedEvidence
 
 
-PRESENTATION_PROMPT_VERSION = "presentation-v3"
+PRESENTATION_PROMPT_VERSION = "presentation-v4"
 
 PRESENTATION_SYSTEM_PROMPT = """You curate concise discoveries for the BHF Bible reader.
 BHF has supplied all factual material you may use. Return one JSON object matching the
@@ -28,6 +28,15 @@ fact; state doctrinal conclusions; sermonize; or write commentary paragraphs. Ev
 must cite the exact supplied evidence IDs that support it. Preserve qualifications and
 confidence. If the supplied evidence is not sufficient to create a genuinely useful
 discovery, return no card. Zero cards is valid. Do not force trivia.
+
+When suitable ranked contextual evidence exists, prefer at least one did_you_know card,
+without manufacturing one from map-only or significance-only material. For every card,
+write dig_in_summary in the same response as a concise two-to-four-sentence explanation,
+or null when the evidence cannot support a useful explanation. It may connect and explain
+the card's cited evidence, but every historical, cultural, geographical, archaeological,
+chronological, linguistic, or social factual statement must be supported by those same
+evidence IDs. Do not add facts, dates, people, places, customs, doctrine, application, or
+sermon material from model memory.
 
 Use why_it_matters only when a supplied evidence item has presentation_role=significance.
 Keep that card to the authored passage significance: do not add application, doctrine,
@@ -135,6 +144,7 @@ def _provider_packet(
             "card_count": 3,
             "headline_characters": 100,
             "body_characters": 420,
+            "dig_in_summary_characters": 800,
             "card_types": ["did_you_know", "walk_the_land", "why_it_matters"],
         },
         "output_shape": {
@@ -145,6 +155,7 @@ def _provider_packet(
                     "type": "did_you_know|walk_the_land|why_it_matters",
                     "headline": "string",
                     "body": "string",
+                    "dig_in_summary": "2-4 sentence string or null",
                     "evidence_ids": ["supplied evidence id"],
                     "confidence": "high|medium|low",
                     "interpretation_level": "fact|inference|disputed",
@@ -282,7 +293,7 @@ def _response_format() -> dict[str, Any]:
         "additionalProperties": False,
         "required": [
             "id", "type", "headline", "body", "evidence_ids", "confidence",
-            "interpretation_level", "related_entity_ids", "map_focus", "dig_deeper_actions",
+            "interpretation_level", "dig_in_summary", "related_entity_ids", "map_focus", "dig_deeper_actions",
         ],
         "properties": {
             "id": {"type": "string"},
@@ -292,6 +303,7 @@ def _response_format() -> dict[str, Any]:
             },
             "headline": {"type": "string"},
             "body": {"type": "string"},
+            "dig_in_summary": {"type": ["string", "null"], "maxLength": 800},
             "evidence_ids": {"type": "array", "items": {"type": "string"}},
             "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
             "interpretation_level": {"type": "string", "enum": ["fact", "inference", "disputed"]},

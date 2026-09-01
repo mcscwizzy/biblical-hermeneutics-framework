@@ -16,6 +16,7 @@ from bhf_agent.presentation import (
     EvidenceBundle,
     PresentationEngine,
     PresentationResult,
+    PresentationProvider,
     SQLitePresentationCache,
     build_evidence_bundle,
     default_presentation_cache_path,
@@ -278,6 +279,11 @@ class CompanionContextService:
             "narration": summaries.get("narration", {"reference": reference, "by_context": {}}),
             **presentation_payload,
             "presentation_enhancement": {
+                "supported": True,
+                "server_configured": bool(
+                    getattr(self.presentation_engine, "enhancement_available", False)
+                ),
+                # Older clients only understand server-side availability.
                 "available": bool(
                     getattr(self.presentation_engine, "enhancement_available", False)
                 ),
@@ -294,6 +300,8 @@ class CompanionContextService:
         evidence_hash: str,
         verse_start: int | None = None,
         verse_end: int | None = None,
+        provider: PresentationProvider | None = None,
+        generation_profile: str | None = None,
     ) -> dict[str, Any]:
         """Generate optional prose only after an explicit browser request."""
 
@@ -328,7 +336,11 @@ class CompanionContextService:
             raise StalePresentationEvidenceError(
                 "Passage evidence changed; reload Companion context before enhancing it."
             )
-        presentation = self.presentation_engine.present(bundle)
+        presentation = self.presentation_engine.present_with_provider(
+            bundle,
+            provider if provider is not None else self.presentation_engine.provider,
+            generation_profile=generation_profile,
+        )
         return {
             "reference": reference,
             **_presentation_payload(bundle, presentation),

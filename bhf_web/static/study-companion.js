@@ -59,6 +59,7 @@
     document.querySelector("[data-app-dock]")?.addEventListener("click", handlePrimaryNavigation);
     document.addEventListener("bhf:workspace-tab-changed", handleWorkspaceTabChanged);
     document.addEventListener("bhf:companion-context-invalidated", handleContextInvalidated);
+    document.addEventListener("bhf:ai-presentation-setting-changed", handleAiPresentationSettingChanged);
     window.addEventListener("resize", handleViewportChange);
     document.addEventListener("keydown", handleEscape);
 
@@ -98,6 +99,10 @@
         }
       },
       onEnhanced: (context) => {
+        if (currentMode !== "passage") return;
+        renderDiscoveries(context);
+      },
+      onPresentationReset: (context) => {
         if (currentMode !== "passage") return;
         renderDiscoveries(context);
       },
@@ -150,6 +155,14 @@
       getContext: () => contextController?.getRecord?.().context || null,
       getContextRecord: () => contextController?.getRecord?.(),
     });
+  }
+
+  function handleAiPresentationSettingChanged(event) {
+    if (event?.detail?.enabled === true) {
+      contextController?.refreshEnhancement?.();
+    } else {
+      contextController?.cancelEnhancement?.();
+    }
   }
 
   function setState(nextState, options = {}) {

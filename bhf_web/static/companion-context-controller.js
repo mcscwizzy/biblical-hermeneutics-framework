@@ -7,7 +7,10 @@
     let sequence = 0;
     let timer = null;
     let controller = null;
+    let enhancementController = null;
+    let enhancementSequence = 0;
     let record = emptyRecord();
+    let localContext = null;
 
     function setSelection(nextSelection, behavior = {}) {
       const nextKey = keyFor(nextSelection);
@@ -22,7 +25,11 @@
       if (!keyFor(selection)) return;
       window.clearTimeout(timer);
       controller?.abort();
+      enhancementController?.abort();
+      enhancementController = null;
+      enhancementSequence += 1;
       const requestSequence = ++sequence;
+      localContext = null;
       record = {key: keyFor(selection), status: "loading", context: null, error: ""};
       options.onLoading?.(record);
       timer = window.setTimeout(() => load(requestSequence), Number(options.delay ?? 180));
@@ -39,9 +46,10 @@
           signal: requestController.signal,
         });
         if (requestSequence !== sequence || requestController.signal.aborted || requestedKey !== keyFor(selection)) return;
+        localContext = context;
         record = {key: requestedKey, status: "ready", context, error: ""};
         options.onReady?.(context, requestedSelection, record);
-        await enhance(context, requestedSelection, requestedKey, requestSequence, requestController);
+        await enhance(context, requestedSelection, requestedKey, requestSequence);
       } catch (error) {
         if (error?.name === "AbortError" || requestSequence !== sequence) return;
         record = {
@@ -54,13 +62,32 @@
       }
     }
 
-    async function enhance(context, requestedSelection, requestedKey, requestSequence, requestController) {
+    async function enhance(context, requestedSelection, requestedKey, requestSequence) {
       const enhancement = context?.presentation_enhancement;
+      const eligibilitySequence = enhancementSequence;
       if (
-        enhancement?.available !== true
-        || context?.presentation_packet?.presentation_mode !== "deterministic_fallback"
+        (enhancement?.supported !== true && enhancement?.available !== true)
+        || context?.presentation_packet?.presentation_mode === "generated"
         || typeof window.BHFCompanionContext?.enhance !== "function"
       ) return;
+      try {
+        if (
+          typeof window.BHFCompanionContext?.canEnhance === "function"
+          && await window.BHFCompanionContext.canEnhance(context) !== true
+        ) return;
+      } catch (error) {
+        options.onEnhancementError?.(error, requestedSelection, record);
+        return;
+      }
+      if (
+        requestSequence !== sequence
+        || eligibilitySequence !== enhancementSequence
+        || requestedKey !== keyFor(selection)
+      ) return;
+      enhancementController?.abort();
+      const requestController = new AbortController();
+      enhancementController = requestController;
+      const currentEnhancementSequence = ++enhancementSequence;
       const requestedHash = String(enhancement.evidence_hash || "");
       try {
         const result = await window.BHFCompanionContext.enhance(
@@ -71,6 +98,7 @@
         const responseHash = String(result?.evidence_bundle?.evidence_hash || "");
         if (
           requestSequence !== sequence
+          || currentEnhancementSequence !== enhancementSequence
           || requestController.signal.aborted
           || requestedKey !== keyFor(selection)
           || !requestedHash
@@ -85,6 +113,23 @@
       }
     }
 
+    function refreshEnhancement() {
+      if (!matchesSelection()) return false;
+      const requestedSelection = {...selection};
+      void enhance(record.context, requestedSelection, keyFor(requestedSelection), sequence);
+      return true;
+    }
+
+    function cancelEnhancement() {
+      enhancementSequence += 1;
+      enhancementController?.abort();
+      enhancementController = null;
+      if (matchesSelection() && localContext) {
+        record = {key: keyFor(selection), status: "ready", context: localContext, error: ""};
+        options.onPresentationReset?.(localContext, selection, record);
+      }
+    }
+
     function invalidate(key, behavior = {}) {
       const currentKey = keyFor(selection);
       if (!currentKey || (key && key !== currentKey)) return false;
@@ -96,8 +141,12 @@
     function markStale(key) {
       window.clearTimeout(timer);
       controller?.abort();
+      enhancementController?.abort();
       controller = null;
+      enhancementController = null;
       sequence += 1;
+      enhancementSequence += 1;
+      localContext = null;
       record = {key: key || "", status: key ? "loading" : "idle", context: null, error: ""};
     }
 
@@ -109,7 +158,16 @@
       return {...record, context: matchesSelection() ? record.context : null};
     }
 
-    return Object.freeze({setSelection, schedule, invalidate, matchesSelection, getRecord, keyFor});
+    return Object.freeze({
+      setSelection,
+      schedule,
+      invalidate,
+      refreshEnhancement,
+      cancelEnhancement,
+      matchesSelection,
+      getRecord,
+      keyFor,
+    });
   }
 
   function keyFor(selection) {

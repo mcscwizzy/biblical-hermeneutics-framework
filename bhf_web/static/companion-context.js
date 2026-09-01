@@ -74,9 +74,19 @@
     if (!selection?.book || !selection?.chapter || !evidenceHash) {
       throw new Error("Passage evidence is required for presentation enhancement.");
     }
+    const providerOptions = window.BHFModelSettings?.getPresentationRequestOptions
+      ? await window.BHFModelSettings.getPresentationRequestOptions(
+        context?.presentation_enhancement?.server_configured === true,
+      )
+      : {enabled: false, headers: {}, profile: null};
+    if (providerOptions.enabled !== true) return null;
     const requestOptions = {
       method: "POST",
-      headers: {Accept: "application/json", "Content-Type": "application/json"},
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        ...(providerOptions.headers || {}),
+      },
       signal: options.signal,
       body: JSON.stringify({
         book: selection.book,
@@ -84,6 +94,7 @@
         verse_start: selection.startVerse || null,
         verse_end: selection.endVerse || null,
         evidence_hash: evidenceHash,
+        ai_profile: providerOptions.profile || null,
       }),
     };
     document.dispatchEvent(new CustomEvent("bhf:companion-presentation-request", {
@@ -98,6 +109,17 @@
       : await requestWithFetch("/api/study/presentation", requestOptions);
     if (options.signal?.aborted) throw new DOMException("Aborted", "AbortError");
     return data && typeof data === "object" ? data : {};
+  }
+
+  async function canEnhance(context) {
+    const enhancement = context?.presentation_enhancement;
+    if (enhancement?.supported !== true && enhancement?.available !== true) return false;
+    if (navigator.onLine === false) return false;
+    if (!window.BHFModelSettings?.getPresentationRequestOptions) return false;
+    const options = await window.BHFModelSettings.getPresentationRequestOptions(
+      enhancement?.server_configured === true,
+    );
+    return options.enabled === true;
   }
 
   async function requestWithFetch(url, options) {
@@ -183,6 +205,7 @@
   });
 
   window.BHFCompanionContext = Object.freeze({
+    canEnhance,
     enhance,
     load,
     urlFor,

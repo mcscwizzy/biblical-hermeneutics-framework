@@ -297,21 +297,70 @@ def test_explicit_ckl_passage_relevance_becomes_why_it_matters_card():
 
     significance = bundle.evidence_by_id["corinth-meal-visibility:passage-relevance"]
     packet = deterministic_presentation(bundle)
-    card = packet.cards[0]
+    card = next(card for card in packet.cards if card.type == "why_it_matters")
 
     assert significance.relevance_metadata["presentation_role"] == "significance"
     assert significance.relevance_metadata["supports_evidence_ids"] == ["corinth-meal-visibility"]
     assert card.type == "why_it_matters"
     assert card.evidence_ids == ["corinth-meal-visibility", significance.id]
     assert card.interpretation_level == "inference"
-    assert len(packet.cards) == 1
+    assert [card.type for card in packet.cards] == ["did_you_know", "why_it_matters"]
     assert validate_presentation_packet(packet.to_dict(), bundle).valid
 
     as_fact = packet.to_dict()
-    as_fact["cards"][0]["interpretation_level"] = "fact"
+    next(
+        card for card in as_fact["cards"] if card["type"] == "why_it_matters"
+    )["interpretation_level"] = "fact"
     invalid = validate_presentation_packet(as_fact, bundle)
     assert not invalid.valid
     assert any("inference or disputed" in error for error in invalid.errors)
+
+
+def test_did_you_know_keeps_a_slot_when_map_and_significance_evidence_exist():
+    objects = copy.deepcopy(FIXTURES[0]["objects"])
+    objects[1]["evidence_items"][0]["passage_relevance"] = (
+        "The provisioning custom explains why the request carries social weight here."
+    )
+    bundle = build_evidence_bundle(
+        "1 Samuel 25",
+        canonical_results=_results(objects),
+        geography={
+            "places": [{
+                "id": "carmel-judah",
+                "title": "Carmel in Judah",
+                "summary": "Carmel was near the setting of Nabal's flocks.",
+                "confidence": "strong",
+            }],
+            "routes": [],
+        },
+    )
+
+    packet = deterministic_presentation(bundle, maximum_cards=3)
+
+    assert [card.type for card in packet.cards] == [
+        "did_you_know",
+        "walk_the_land",
+        "why_it_matters",
+    ]
+    assert validate_presentation_packet(packet.to_dict(), bundle).valid
+
+
+def test_map_only_evidence_does_not_manufacture_did_you_know():
+    bundle = build_evidence_bundle(
+        "Mark 5:1",
+        geography={
+            "places": [{
+                "id": "gerasa",
+                "title": "Gerasa",
+                "summary": "Gerasa lies east of the Sea of Galilee.",
+            }],
+            "routes": [],
+        },
+    )
+
+    packet = deterministic_presentation(bundle, maximum_cards=3)
+
+    assert [card.type for card in packet.cards] == ["walk_the_land"]
 
 
 def test_archaeology_passage_significance_uses_existing_archaeology_explorer():
@@ -477,6 +526,34 @@ def test_detectable_unsupported_model_date_is_rejected():
     assert any("unsupported date" in error for error in invalid.errors)
 
 
+def test_dig_in_summary_is_optional_bounded_and_checked_against_cited_evidence():
+    fixture = FIXTURES[2]
+    bundle = build_evidence_bundle(
+        fixture["reference"], canonical_results=_results(fixture["objects"])
+    )
+    packet = deterministic_presentation(bundle).to_dict()
+    packet["cards"][0]["dig_in_summary"] = (
+        "The cited evidence connects visibility and social influence in the setting. "
+        "It helps explain why the action was not merely private."
+    )
+
+    assert validate_presentation_packet(packet, bundle).valid
+
+    too_long = copy.deepcopy(packet)
+    too_long["cards"][0]["dig_in_summary"] = "x" * 801
+    assert any(
+        "dig_in_summary exceeds 800" in error
+        for error in validate_presentation_packet(too_long, bundle).errors
+    )
+
+    unsupported = copy.deepcopy(packet)
+    unsupported["cards"][0]["dig_in_summary"] += " This began in AD 325."
+    assert any(
+        "unsupported date" in error
+        for error in validate_presentation_packet(unsupported, bundle).errors
+    )
+
+
 @pytest.mark.parametrize(
     "date_text",
     ["70 AD", "70 CE", "586 BC", "586 BCE", "AD 70", "BC 586", "c. 586 BC", "approximately 586 BC"],
@@ -536,7 +613,7 @@ class _InvalidProvider(PresentationProvider):
         }
 
 
-def test_invalid_generation_falls_back_to_valid_versioned_cache():
+def test_cache_from_a_different_model_is_not_reused():
     fixture = FIXTURES[2]
     bundle = build_evidence_bundle(fixture["reference"], canonical_results=_results(fixture["objects"]))
     cached = deterministic_presentation(bundle).to_dict()
@@ -548,13 +625,13 @@ def test_invalid_generation_falls_back_to_valid_versioned_cache():
     engine = PresentationEngine(provider=_InvalidProvider(), cache=cache)
     result = engine.present(bundle)
 
-    assert result.mode == "cached"
+    assert result.mode == "deterministic_fallback"
     assert result.packet.cards
-    assert result.diagnostics == ()
+    assert any("unsupported evidence IDs" in item for item in result.diagnostics)
     assert engine.diagnostics()["provider"] == {
-        "attempts": 0,
+        "attempts": 1,
         "failures": 0,
-        "rejections": 0,
+        "rejections": 1,
         "saturated": 0,
     }
 
@@ -693,6 +770,38 @@ class _FailingProvider(PresentationProvider):
 
     def generate(self, bundle, ranked, generated_from):
         raise RuntimeError("provider unavailable")
+
+
+class _ProfileProvider(PresentationProvider):
+    def __init__(self, model):
+        self.model = model
+        self.calls = 0
+
+    def generate(self, bundle, ranked, generated_from):
+        self.calls += 1
+        packet = deterministic_presentation(bundle).to_dict()
+        packet["generated_from"] = generated_from.to_dict()
+        return packet
+
+
+def test_switching_models_uses_a_distinct_credential_free_cache_profile():
+    fixture = FIXTURES[2]
+    bundle = build_evidence_bundle(
+        fixture["reference"], canonical_results=_results(fixture["objects"])
+    )
+    cache = MemoryPresentationCache()
+    engine = PresentationEngine(cache=cache)
+    model_a = _ProfileProvider("model-a")
+    model_b = _ProfileProvider("model-b")
+
+    first = engine.present_with_provider(bundle, model_a, generation_profile=model_a.model)
+    second = engine.present_with_provider(bundle, model_b, generation_profile=model_b.model)
+
+    assert first.mode == "generated"
+    assert second.mode == "generated"
+    assert model_a.calls == model_b.calls == 1
+    assert len(cache._values) == 2
+    assert "api-key" not in json.dumps(cache._values)
 
 
 def test_durable_cache_survives_provider_failure(tmp_path):
@@ -980,6 +1089,10 @@ def test_adapter_provider_receives_only_ranked_evidence_and_strict_grounding_pro
     assert "return no card" in requests[0].system_prompt
     assert "Use why_it_matters only" in requests[0].system_prompt
     assert "do not add application, doctrine" in requests[0].system_prompt
+    assert "dig_in_summary" in supplied["output_shape"]["cards"][0]
+    assert supplied["limits"]["dig_in_summary_characters"] == 800
+    assert "same response" in requests[0].system_prompt
+    assert "those same" in requests[0].system_prompt
 
 
 def test_provider_receives_only_ranked_geography_resources():

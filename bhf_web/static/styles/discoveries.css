@@ -59,6 +59,28 @@
   margin-top: 10px;
 }
 
+.companion-discovery-explanation {
+  display: grid;
+  gap: 5px;
+  margin-top: 12px;
+  padding: 11px;
+  border-left: 3px solid color-mix(in srgb, var(--accent, #245b82) 52%, transparent);
+  border-radius: 0 10px 10px 0;
+  background: color-mix(in srgb, var(--accent, #245b82) 6%, var(--surface, #fff));
+}
+
+.companion-discovery-details h5 {
+  margin: 0;
+  color: var(--muted, #64707c);
+  font-size: .72rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.companion-discovery-explanation p {
+  line-height: 1.5;
+}
+
 .companion-evidence-detail {
   display: grid;
   gap: 4px;
@@ -81,6 +103,10 @@
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 10px;
+}
+
+.companion-discovery-actions h5 {
+  flex-basis: 100%;
 }
 
 .companion-discovery-action {

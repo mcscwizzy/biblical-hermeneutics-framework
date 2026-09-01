@@ -80,6 +80,18 @@ def register_study_routes(
 
         try:
             payload = await request_payload(request)
+            transient_api_key = request.headers.get("X-BHF-OpenRouter-Key") or None
+            profile = payload.get("ai_profile")
+            if profile is not None and not isinstance(profile, Mapping):
+                raise ValueError("ai_profile must be an object")
+            runtime = getattr(request.app.state, "presentation_runtime", None)
+            provider = None
+            generation_profile = None
+            if runtime is not None:
+                provider, generation_profile = runtime.provider_for_request(
+                    profile,
+                    transient_api_key,
+                )
             presentation = await run_in_threadpool(
                 companion_context.enhance_presentation,
                 book=payload.get("book"),
@@ -87,6 +99,8 @@ def register_study_routes(
                 verse_start=payload.get("verse_start"),
                 verse_end=payload.get("verse_end"),
                 evidence_hash=payload.get("evidence_hash"),
+                provider=provider,
+                generation_profile=generation_profile,
             )
             return JSONResponse(presentation)
         except StalePresentationEvidenceError as exc:

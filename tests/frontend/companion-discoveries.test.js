@@ -56,6 +56,7 @@ function card(id, type, action = null) {
     type,
     headline: `Headline ${id}`,
     body: `Body ${id}`,
+    dig_in_summary: id === "place" ? "A grounded explanation from the same evidence." : null,
     evidence_ids: ["evidence-1"],
     confidence: "high",
     interpretation_level: type === "why_it_matters" ? "inference" : "fact",
@@ -101,15 +102,47 @@ test("discovery cards render bounded sections with grounded Dig In evidence", ()
 
   const rendered = selectors["[data-companion-land]"].children[0];
   const details = rendered.children[3];
-  const evidence = details.children[1].children[0];
-  const actions = details.children[2];
+  const explanation = details.children[1];
+  const evidenceList = details.children[2];
+  const evidence = evidenceList.children[1];
+  const actions = details.children[3];
   assert.equal(details.tagName, "DETAILS");
   assert.equal(details.children[0].textContent, "Dig In");
+  assert.equal(explanation.children[0].textContent, "Why this is worth noticing");
+  assert.equal(explanation.children[1].textContent, "A grounded explanation from the same evidence.");
+  assert.equal(evidenceList.children[0].textContent, "Evidence");
   assert.equal(evidence.children[0].textContent, "The supplied evidence claim.");
   assert.match(evidence.children[1].textContent, /Sources: Curated map source/);
-  assert.equal(actions.children.length, 1);
-  assert.equal(actions.children[0].dataset.presentationAction, "open_map");
-  assert.equal(actions.children[0].dataset.presentationTarget, "gerasene-region");
+  assert.equal(actions.children[0].textContent, "Actions");
+  assert.equal(actions.children.length, 2);
+  assert.equal(actions.children[1].dataset.presentationAction, "open_map");
+  assert.equal(actions.children[1].dataset.presentationTarget, "gerasene-region");
+});
+
+
+test("Dig In fallback keeps evidence and actions when no AI explanation exists", () => {
+  const {panel, selectors} = fixturePanel();
+  const fallback = card("fallback", "did_you_know", {
+    type: "explore_history",
+    label: "Explore the historical setting",
+  });
+  fallback.dig_in_summary = null;
+  discoveries.render(panel, {
+    presentation_packet: {cards: [fallback]},
+    presentation_evidence: [{
+      id: "evidence-1",
+      claim: "Visible raw evidence remains available.",
+      category: "history",
+      confidence: "high",
+      sources: [{title: "Curated source"}],
+    }],
+  });
+
+  const details = selectors["[data-companion-discoveries]"].children[0].children[3];
+  assert.equal(details.children.length, 3);
+  assert.equal(details.children[1].children[0].textContent, "Evidence");
+  assert.equal(details.children[1].children[1].children[0].textContent, "Visible raw evidence remains available.");
+  assert.equal(details.children[2].children[1].dataset.presentationAction, "explore_history");
 });
 
 

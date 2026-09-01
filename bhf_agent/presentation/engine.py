@@ -77,9 +77,24 @@ class PresentationEngine:
         self._generation_requests = RequestCoalescer[PresentationResult]()
 
     def present(self, bundle: EvidenceBundle) -> PresentationResult:
+        return self.present_with_provider(bundle, self.provider)
+
+    def present_with_provider(
+        self,
+        bundle: EvidenceBundle,
+        provider: PresentationProvider | None,
+        *,
+        generation_profile: str | None = None,
+    ) -> PresentationResult:
+        """Generate with a request-scoped provider on the shared guarded engine."""
+
         started = time.perf_counter()
         try:
-            result = self._present(bundle)
+            result = self._present(
+                bundle,
+                provider,
+                generation_profile=generation_profile,
+            )
         except BaseException:
             self.metrics.record_unhandled_failure(time.perf_counter() - started)
             raise
@@ -102,15 +117,27 @@ class PresentationEngine:
     def enhancement_available(self) -> bool:
         return self.provider is not None
 
-    def _present(self, bundle: EvidenceBundle) -> PresentationResult:
+    def _present(
+        self,
+        bundle: EvidenceBundle,
+        provider: PresentationProvider | None,
+        *,
+        generation_profile: str | None,
+    ) -> PresentationResult:
         ranked = rank_evidence(bundle, limit=self.candidate_limit)
-        cache_key = presentation_cache_key(bundle, prompt_version=self.prompt_version)
+        profile = generation_profile or (provider.model if provider is not None else None)
+        cache_key = presentation_cache_key(
+            bundle,
+            prompt_version=self.prompt_version,
+            generation_profile=profile,
+        )
+        bundle_key = presentation_cache_key(bundle, prompt_version=self.prompt_version)
         diagnostics: list[str] = []
 
-        local = self._read_reusable(bundle, cache_key, diagnostics)
+        local = self._read_reusable(bundle, cache_key, bundle_key, diagnostics)
         if local is not None:
             return local
-        if self.provider is None or not ranked:
+        if provider is None or not ranked:
             return self._deterministic(bundle, ranked, diagnostics)
         return self._generation_requests.run(
             cache_key,
@@ -118,15 +145,22 @@ class PresentationEngine:
                 bundle,
                 ranked,
                 cache_key,
+                bundle_key,
                 diagnostics,
+                provider,
             ),
         )
 
     def _present_local(self, bundle: EvidenceBundle) -> PresentationResult:
         ranked = rank_evidence(bundle, limit=self.candidate_limit)
-        cache_key = presentation_cache_key(bundle, prompt_version=self.prompt_version)
+        cache_key = presentation_cache_key(
+            bundle,
+            prompt_version=self.prompt_version,
+            generation_profile=(self.provider.model if self.provider is not None else None),
+        )
+        bundle_key = presentation_cache_key(bundle, prompt_version=self.prompt_version)
         diagnostics: list[str] = []
-        reusable = self._read_reusable(bundle, cache_key, diagnostics)
+        reusable = self._read_reusable(bundle, cache_key, bundle_key, diagnostics)
         if reusable is not None:
             return reusable
         return self._deterministic(bundle, ranked, diagnostics)
@@ -136,19 +170,21 @@ class PresentationEngine:
         bundle: EvidenceBundle,
         ranked: list[RankedEvidence],
         cache_key: str,
+        bundle_key: str,
         diagnostics: list[str],
+        provider: PresentationProvider,
     ) -> PresentationResult:
-        reusable = self._read_reusable(bundle, cache_key, diagnostics)
+        reusable = self._read_reusable(bundle, cache_key, bundle_key, diagnostics)
         if reusable is not None:
             return reusable
 
-        if self.provider is not None and ranked:
+        if provider is not None and ranked:
             expected = GeneratedFrom(
                 evidence_hash=bundle.evidence_hash,
                 evidence_bundle_version=bundle.version,
                 presentation_schema_version=PRESENTATION_SCHEMA_VERSION,
                 prompt_version=self.prompt_version,
-                model=self.provider.model,
+                model=provider.model,
             )
             provider_slot_acquired = (
                 self._provider_requests is None
@@ -162,7 +198,7 @@ class PresentationEngine:
             else:
                 self.metrics.record_event("provider_attempts")
                 try:
-                    generated = self.provider.generate(bundle, ranked, expected)
+                    generated = provider.generate(bundle, ranked, expected)
                     generated_value = (
                         generated.to_dict() if hasattr(generated, "to_dict") else generated
                     )
@@ -171,7 +207,7 @@ class PresentationEngine:
                         bundle,
                         maximum_cards=self.maximum_cards,
                         expected_prompt_version=self.prompt_version,
-                        expected_model=self.provider.model,
+                        expected_model=provider.model,
                     )
                     if validation.valid and validation.packet is not None:
                         try:
@@ -209,12 +245,13 @@ class PresentationEngine:
         self,
         bundle: EvidenceBundle,
         cache_key: str,
+        bundle_key: str,
         diagnostics: list[str],
     ) -> PresentationResult | None:
         cached_result = self._read_cached(bundle, cache_key, diagnostics)
         if cached_result is not None:
             return cached_result
-        bundled = self.bundled_packets.get(cache_key)
+        bundled = self.bundled_packets.get(bundle_key)
         if bundled is not None:
             validation = validate_presentation_packet(
                 bundled,

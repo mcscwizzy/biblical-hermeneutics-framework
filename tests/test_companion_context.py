@@ -397,6 +397,8 @@ class CompanionContextServiceTests(unittest.TestCase):
         self.assertLess(elapsed, 0.5)
         self.assertEqual(provider.calls, 0)
         self.assertTrue(result["presentation_enhancement"]["available"])
+        self.assertTrue(result["presentation_enhancement"]["supported"])
+        self.assertTrue(result["presentation_enhancement"]["server_configured"])
 
     @patch("bhf_web.services.companion_context.list_archaeology_passage_summaries", return_value=[])
     @patch("bhf_web.services.companion_context.list_passage_map_summaries", return_value={"places": [], "routes": []})
