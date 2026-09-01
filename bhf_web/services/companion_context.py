@@ -21,7 +21,10 @@ from bhf_agent.presentation import (
     default_presentation_cache_path,
     deterministic_presentation,
 )
-from bhf_agent.presentation.eligibility import is_canonical_object_passage_eligible
+from bhf_agent.presentation.eligibility import (
+    canonical_narration_material,
+    is_canonical_object_passage_eligible,
+)
 from bhf_agent.study_db import (
     list_archaeology_passage_summaries,
     list_passage_map_summaries,
@@ -418,11 +421,12 @@ class CompanionContextService:
     def _canonical_context(self, reference: str) -> dict[str, Any]:
         results = self._canonical_results(reference)
         objects = [item.object for item in results]
-        eligible_objects = [
-            item
-            for item in objects
+        eligible_pairs = [
+            (item, result)
+            for item, result in zip(objects, results)
             if is_canonical_object_passage_eligible(reference, item)
         ]
+        eligible_objects = [item for item, _result in eligible_pairs]
 
         entities: dict[str, list[dict[str, Any]]] = {
             "people": [],
@@ -431,13 +435,10 @@ class CompanionContextService:
             "groups": [],
             "events": [],
         }
-        eligible_ids = {
-            str(getattr(item, "id", "") or "") for item in eligible_objects
-        }
-        for item, result in zip(objects, results):
+        for item, result in eligible_pairs:
             object_type = str(getattr(item, "type", "") or "").casefold()
             object_id = str(getattr(item, "id", "") or "")
-            if object_type not in _ENTITY_TYPES or object_id not in eligible_ids:
+            if object_type not in _ENTITY_TYPES:
                 continue
             entities[_entity_bucket(object_type)].append(
                 {
@@ -453,7 +454,7 @@ class CompanionContextService:
 
         cross_references = _unique_strings(
             value
-            for item in objects
+            for item in eligible_objects
             for value in [
                 *list(getattr(item, "cross_references", []) or []),
                 *list(getattr(item, "intertextuality", []) or []),
@@ -464,20 +465,9 @@ class CompanionContextService:
             for item in eligible_objects
             if str(getattr(item, "type", "") or "").casefold() in {"event", "timeline"}
         ]
-        resources = {
-            "canonical": _resource_from_count(len(objects)),
-            "people": _resource_from_count(len(entities["people"])),
-            "places": _resource_from_count(len(entities["places"])),
-            "themes": _resource_from_count(len(entities["themes"])),
-            "timeline": _resource_from_count(len(timeline_objects)),
-            "cross_references": _resource_from_count(len(cross_references)),
-            "historical_context": _resource_from_count(_field_count(objects, ("historical_context", "historical_setting", "date_ranges"))),
-            "cultural_context": _resource_from_count(_field_count(objects, _CULTURAL_FIELDS)),
-            "literary_context": _resource_from_count(_field_count(objects, ("literary_context", "genre", "structure"))),
-            "original_audience": _resource_from_count(_field_count(objects, ("original_audience",))),
-            "covenant_context": _resource_from_count(_field_count(objects, ("covenantal_significance",))),
-        }
+        narration_input = canonical_narration_material(reference, results)
         narrations = {}
+        narration_counts = {}
         for narration_type in (
             "historical_context",
             "cultural_context",
@@ -488,12 +478,41 @@ class CompanionContextService:
             "covenant_context",
         ):
             narrated = self.canonical_narrator.narrate(
-                results,
+                narration_input,
                 reference=reference,
                 context_type=narration_type,
             )
             if narrated.has_content:
                 narrations[narration_type] = narrated.to_dict()
+                narration_counts[narration_type] = _narration_evidence_count(narrated)
+        resources = {
+            "canonical": _resource_from_count(len(eligible_objects)),
+            "people": _resource_from_count(len(entities["people"])),
+            "places": _resource_from_count(len(entities["places"])),
+            "themes": _resource_from_count(len(entities["themes"])),
+            "timeline": _resource_from_count(len(timeline_objects)),
+            "cross_references": _resource_from_count(len(cross_references)),
+            "historical_context": _resource_from_count(_context_resource_count(
+                _field_count(eligible_objects, ("historical_context", "historical_setting", "date_ranges")),
+                narration_counts.get("historical_context", 0),
+            )),
+            "cultural_context": _resource_from_count(_context_resource_count(
+                _field_count(eligible_objects, _CULTURAL_FIELDS),
+                narration_counts.get("cultural_context", 0),
+            )),
+            "literary_context": _resource_from_count(_context_resource_count(
+                _field_count(eligible_objects, ("literary_context", "genre", "structure")),
+                narration_counts.get("literary_context", 0),
+            )),
+            "original_audience": _resource_from_count(_context_resource_count(
+                _field_count(eligible_objects, ("original_audience",)),
+                narration_counts.get("original_audience", 0),
+            )),
+            "covenant_context": _resource_from_count(_context_resource_count(
+                _field_count(eligible_objects, ("covenantal_significance",)),
+                narration_counts.get("covenant_context", 0),
+            )),
+        }
         return {
             "_results": results,
             "entities": entities,
@@ -515,7 +534,7 @@ class CompanionContextService:
                         "type": str(getattr(item, "type", "") or ""),
                         "summary": str(getattr(item, "summary", "") or ""),
                     }
-                    for item in objects[:12]
+                    for item in eligible_objects[:12]
                 ],
                 "narration": {
                     "reference": reference,
@@ -569,6 +588,27 @@ def _field_count(objects: Iterable[Any], fields: Iterable[str]) -> int:
         for item in objects
         if any(bool(getattr(item, field, None)) for field in fields)
     )
+
+
+def _narration_evidence_count(narration: Any) -> int:
+    sentences = []
+    lead = getattr(narration, "lead", None)
+    if lead is not None:
+        sentences.append(lead)
+    sentences.extend(
+        sentence
+        for section in getattr(narration, "sections", ())
+        for sentence in getattr(section, "sentences", ())
+    )
+    return len({
+        evidence_id
+        for sentence in sentences
+        for evidence_id in getattr(sentence, "evidence_ids", ())
+    })
+
+
+def _context_resource_count(field_count: int, narration_count: int) -> int:
+    return field_count if field_count else narration_count
 
 
 def _unique_strings(values: Iterable[Any]) -> list[str]:

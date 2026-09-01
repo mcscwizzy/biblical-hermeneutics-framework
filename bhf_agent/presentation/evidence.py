@@ -19,7 +19,12 @@ from .evidence_normalization import (
     unique as _unique,
 )
 from .evidence_hash import calculate_evidence_hash
-from .eligibility import canonical_object_anchors, is_canonical_object_passage_eligible
+from .eligibility import (
+    canonical_object_anchors,
+    is_canonical_object_passage_eligible,
+    passage_matching_scripture_anchors,
+    scripture_anchors,
+)
 from .models import EVIDENCE_BUNDLE_VERSION, EntityRef, EvidenceBundle, EvidenceItem, mapping
 from .references import anchor_specificity, reference_distance, references_overlap
 
@@ -299,8 +304,13 @@ def _append_object_evidence(
         item_id = _text(item.get("id"))
         if not item_id:
             continue
-        anchors = _evidence_anchors(item) or parent_anchors
-        matched = [anchor for anchor in anchors if references_overlap(passage_ref, anchor)]
+        declared_anchors = _evidence_anchors(item)
+        anchors = declared_anchors or parent_anchors
+        matched = (
+            passage_matching_scripture_anchors(passage_ref, item)
+            if declared_anchors
+            else [anchor for anchor in anchors if references_overlap(passage_ref, anchor)]
+        )
         if not matched:
             continue
         linked_claims.update(_strings(item.get("claim_ids")))
@@ -375,8 +385,13 @@ def _append_object_evidence(
         claim_id = _text(claim.get("id") or claim.get("claim_id"))
         if not claim_id or claim_id in linked_claims:
             continue
-        anchors = _strings(claim.get("scripture_references")) or parent_anchors
-        matched = [anchor for anchor in anchors if references_overlap(passage_ref, anchor)]
+        declared_anchors = _strings(claim.get("scripture_references"))
+        anchors = declared_anchors or parent_anchors
+        matched = (
+            passage_matching_scripture_anchors(passage_ref, claim)
+            if declared_anchors
+            else [anchor for anchor in anchors if references_overlap(passage_ref, anchor)]
+        )
         if not matched:
             continue
         related = [object_id] if object_id in known_entity_ids else []
@@ -493,11 +508,7 @@ def _object_anchors(data: Mapping[str, Any]) -> list[str]:
 
 
 def _evidence_anchors(data: Mapping[str, Any]) -> list[str]:
-    anchors: list[str] = []
-    for value in _sequence(data.get("scripture_references")):
-        entry = mapping(value)
-        anchors.append(_text(entry.get("reference") if entry else value))
-    return _unique(anchors)
+    return scripture_anchors(data)
 
 
 def _register_object_sources(data: Mapping[str, Any], target: dict[str, dict[str, Any]]) -> None:

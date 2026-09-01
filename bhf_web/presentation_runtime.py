@@ -169,7 +169,6 @@ def configure_presentation_runtime(
     engine_options = {
         "cache": cache,
         "bundled_packets": bundled_packets,
-        "prefer_cached_packets": settings.enabled,
     }
     runtime_options = {
         "bundle_path": bundle_path or None,

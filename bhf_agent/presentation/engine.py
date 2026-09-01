@@ -60,7 +60,6 @@ class PresentationEngine:
         prompt_version: str = PRESENTATION_PROMPT_VERSION,
         maximum_cards: int = 3,
         candidate_limit: int = 8,
-        prefer_cached_packets: bool = False,
         maximum_concurrent_provider_requests: int | None = None,
     ) -> None:
         self.provider = provider
@@ -69,7 +68,6 @@ class PresentationEngine:
         self.prompt_version = prompt_version
         self.maximum_cards = max(0, int(maximum_cards))
         self.candidate_limit = max(1, int(candidate_limit))
-        self.prefer_cached_packets = bool(prefer_cached_packets)
         self._provider_requests = (
             ProviderRequestGate(maximum_concurrent_provider_requests)
             if maximum_concurrent_provider_requests is not None

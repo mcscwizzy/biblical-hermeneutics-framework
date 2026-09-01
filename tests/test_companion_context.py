@@ -445,6 +445,121 @@ class CompanionContextServiceTests(unittest.TestCase):
 
     @patch("bhf_web.services.companion_context.list_archaeology_passage_summaries", return_value=[])
     @patch("bhf_web.services.companion_context.list_passage_map_summaries", return_value={"places": [], "routes": []})
+    def test_unrelated_canonical_result_cannot_leak_through_companion_side_doors(
+        self,
+        _map_lookup,
+        _archaeology_lookup,
+    ):
+        objects = [
+            SimpleNamespace(
+                id="ruth-reader-context",
+                title="Ruth's setting",
+                type="theme",
+                summary="Ruth arrives in Bethlehem.",
+                historical_context="A relevant historical setting.",
+                ancient_near_east_context="A relevant cultural setting.",
+                literary_context="A relevant literary setting.",
+                original_audience="A relevant audience.",
+                covenantal_significance="A relevant covenant setting.",
+                cross_references=["Ruth 2:1"],
+                intertextuality=[],
+                scripture_references=[{"reference": "Ruth 1:19"}],
+            ),
+            SimpleNamespace(
+                id="cornelius",
+                title="Cornelius",
+                type="person",
+                summary="UNRELATED CORNELIUS SUMMARY",
+                historical_context="UNRELATED CORNELIUS HISTORY",
+                ancient_near_east_context="UNRELATED CORNELIUS CULTURE",
+                literary_context="UNRELATED CORNELIUS LITERARY CONTEXT",
+                original_audience="UNRELATED CORNELIUS AUDIENCE",
+                covenantal_significance="UNRELATED CORNELIUS COVENANT",
+                cross_references=["Acts 10:1"],
+                intertextuality=["Acts 10:2"],
+                claims=[{
+                    "id": "cornelius-centurion",
+                    "claim": "UNRELATED CORNELIUS NARRATION",
+                    "claim_type": "historical",
+                    "scripture_references": ["Acts 10:1"],
+                }],
+                scripture_references=[{"reference": "Acts 10:1-48"}],
+            ),
+        ]
+        service, _library = self._service(objects=objects)
+
+        result = service.build(book="Ruth", chapter=1, verse_start=19)
+
+        self.assertNotIn("cornelius", {
+            item["id"] for item in result["entities"]["people"]
+        })
+        self.assertEqual(
+            [item["id"] for item in result["summaries"]["canonical"]],
+            ["ruth-reader-context"],
+        )
+        self.assertEqual(result["summaries"]["cross_references"], ["Ruth 2:1"])
+        for resource_id in (
+            "historical_context",
+            "cultural_context",
+            "literary_context",
+            "original_audience",
+            "covenant_context",
+        ):
+            self.assertTrue(result["resources"][resource_id]["available"])
+            self.assertEqual(result["resources"][resource_id]["count"], 1)
+        serialized = str(result).casefold()
+        self.assertNotIn("unrelated cornelius", serialized)
+        self.assertNotIn("acts 10", serialized)
+
+        unrelated_only_service, _library = self._service(objects=[objects[1]])
+        unrelated_only = unrelated_only_service.build(
+            book="Ruth",
+            chapter=1,
+            verse_start=19,
+        )
+        self.assertFalse(unrelated_only["resources"]["canonical"]["available"])
+        for resource_id in (
+            "historical_context",
+            "cultural_context",
+            "literary_context",
+            "original_audience",
+            "covenant_context",
+        ):
+            self.assertFalse(unrelated_only["resources"][resource_id]["available"])
+
+    @patch("bhf_web.services.companion_context.list_archaeology_passage_summaries", return_value=[])
+    @patch("bhf_web.services.companion_context.list_passage_map_summaries", return_value={"places": [], "routes": []})
+    def test_broad_parent_contributes_only_its_passage_specific_claim_to_narration(
+        self,
+        _map_lookup,
+        _archaeology_lookup,
+    ):
+        objects = [SimpleNamespace(
+            id="ruth-book-background",
+            title="Ruth",
+            type="book",
+            summary="BROAD PARENT SUMMARY",
+            historical_context="BROAD PARENT HISTORICAL FIELD",
+            scripture_references=[{"reference": "Ruth"}],
+            claims=[{
+                "id": "ruth-return-claim",
+                "claim": "Naomi and Ruth reached Bethlehem at the barley harvest.",
+                "claim_type": "historical",
+                "scripture_references": ["Ruth 1:19-22"],
+            }],
+        )]
+        service, _library = self._service(objects=objects)
+
+        result = service.build(book="Ruth", chapter=1, verse_start=19, verse_end=22)
+
+        self.assertEqual(result["summaries"]["canonical"], [])
+        narration = str(result["summaries"]["narration"])
+        self.assertIn("barley harvest", narration)
+        self.assertNotIn("BROAD PARENT HISTORICAL FIELD", narration)
+        self.assertTrue(result["resources"]["historical_context"]["available"])
+
+    @patch("bhf_web.services.companion_context.list_archaeology_passage_summaries", return_value=[])
+    @patch("bhf_web.services.companion_context.list_passage_map_summaries", return_value={"places": [], "routes": []})
     def test_lazy_enhancement_generates_and_returns_only_visible_evidence(self, _map_lookup, _archaeology_lookup):
         class WorkingProvider(PresentationProvider):
             model = "fixture-model"

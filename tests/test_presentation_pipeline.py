@@ -383,6 +383,49 @@ def test_unrelated_entities_and_evidence_are_suppressed_before_ranking():
     assert all("Cornelius" not in item.claim for item in bundle.evidence_items)
 
 
+def test_broad_parent_retains_explicit_passage_specific_evidence():
+    broad_parent = {
+        "id": "ruth-book-background",
+        "type": "person",
+        "title": "Broad Ruth background",
+        "scripture_references": [{"reference": "Ruth"}],
+        "historical_context": "Broad book-level context must not become evidence.",
+        "sources": [{"id": "ruth-source", "title": "Ruth source"}],
+        "claims": [],
+        "evidence_items": [{
+            "id": "ruth-1-specific-evidence",
+            "evidence_type": "historical-event",
+            "description": "Naomi and Ruth arrived in Bethlehem together.",
+            "passage_relevance": "The arrival establishes the passage's immediate setting.",
+            "confidence": "high",
+            "certainty": "textually_explicit",
+            "dispute_status": "not_disputed",
+            "source_ids": ["ruth-source"],
+            "scripture_references": [{
+                "reference": "Ruth 1:19-22",
+                "relationship": "direct",
+            }],
+        }],
+    }
+
+    bundle = build_evidence_bundle(
+        "Ruth 1:19-22",
+        canonical_results=_results([broad_parent]),
+    )
+    packet = deterministic_presentation(bundle)
+
+    assert "ruth-book-background" not in bundle.entities_by_id
+    assert "ruth-1-specific-evidence" in bundle.evidence_by_id
+    assert all(
+        "Broad book-level context" not in item.claim
+        for item in bundle.evidence_items
+    )
+    assert any(
+        "ruth-1-specific-evidence" in card.evidence_ids
+        for card in packet.cards
+    )
+
+
 @pytest.mark.parametrize(
     ("target_reference", "entity_id", "entity_title", "unrelated_anchor"),
     [
@@ -805,7 +848,6 @@ def test_cache_first_engine_coalesces_simultaneous_generation_requests():
     engine = PresentationEngine(
         provider=provider,
         cache=SimultaneousMissCache(),
-        prefer_cached_packets=True,
     )
 
     with ThreadPoolExecutor(max_workers=worker_count) as executor:
