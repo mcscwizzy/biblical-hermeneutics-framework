@@ -631,6 +631,7 @@ def test_cache_from_a_different_model_is_not_reused():
     assert engine.diagnostics()["provider"] == {
         "attempts": 1,
         "failures": 0,
+        "parse_failures": 0,
         "rejections": 1,
         "saturated": 0,
     }
@@ -1040,6 +1041,7 @@ def test_provider_gate_rejects_distinct_concurrent_miss_and_preserves_fallback()
     assert activity["provider"] == {
         "attempts": 1,
         "failures": 0,
+        "parse_failures": 0,
         "rejections": 0,
         "saturated": 1,
     }
