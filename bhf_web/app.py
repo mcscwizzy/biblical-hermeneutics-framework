@@ -126,6 +126,7 @@ def create_app() -> FastAPI:
         )
     web_app = FastAPI(title="BHF Bible Reader")
     web_app.state.runtime_config = runtime_config
+    web_app.state.job_store = job_store
     presentation_runtime = configure_presentation_runtime(
         study_db_path=STUDY_DB_PATH,
     )

@@ -28,13 +28,21 @@ class RuntimeDataPaths:
     commentary_db_path: Path
 
 
+def _default_data_dir(environ: Mapping[str, str]) -> Path:
+    """Return the deployment's writable runtime-data directory."""
+
+    if environ.get("VERCEL"):
+        return Path("/tmp/bhf-data")
+    return Path(".bhf-data")
+
+
 def resolve_runtime_data_paths(
     environ: Mapping[str, str] | None = None,
 ) -> RuntimeDataPaths:
     """Resolve writable database paths, preserving explicit path overrides."""
 
     values = os.environ if environ is None else environ
-    data_dir = Path(values.get("BHF_DATA_DIR") or ".bhf-data")
+    data_dir = Path(values.get("BHF_DATA_DIR") or _default_data_dir(values))
     return RuntimeDataPaths(
         data_dir=data_dir,
         study_db_path=Path(

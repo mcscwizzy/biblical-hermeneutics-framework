@@ -15,7 +15,7 @@ from bhf_agent.bible import normalize_book_name
 from bhf_agent.study_actions import StudyActionRouter, compact_fact_packet
 from bhf_agent.study_db import StudyDataError
 
-from ..jobs import run_presentation_job
+from ..jobs import JobStoreUnavailableError, run_presentation_job
 from ..services.companion_context import (
     CompanionContextService,
     StalePresentationEvidenceError,
@@ -262,7 +262,16 @@ def register_study_routes(
         response_class=JSONResponse,
     )
     async def get_study_presentation_job(job_id: str) -> JSONResponse:
-        job = job_store.get_presentation(job_id)
+        try:
+            job = job_store.get_presentation(job_id)
+        except JobStoreUnavailableError:
+            return JSONResponse(
+                {
+                    "error": "Durable presentation jobs are unavailable.",
+                    "error_category": "presentation_unavailable",
+                },
+                status_code=503,
+            )
         if job is None:
             return JSONResponse(
                 {

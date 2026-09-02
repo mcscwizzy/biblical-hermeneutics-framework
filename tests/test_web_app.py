@@ -381,6 +381,41 @@ class RuntimeConfigTests(unittest.TestCase):
         self.assertEqual(runtime["presentationTransport"], "synchronous")
         self.assertFalse(runtime["presentationJobs"])
 
+    @unittest.skipUnless(HAS_WEB_DEPS, "FastAPI dependencies are not installed")
+    def test_app_health_boots_without_initializing_invalid_job_storage(self):
+        from bhf_web.jobs import LazyAskJobStore
+
+        factory_calls = []
+
+        def invalid_store():
+            factory_calls.append(True)
+            raise RuntimeError("simulated unwritable storage")
+
+        lazy_store = LazyAskJobStore(invalid_store)
+        with patch("bhf_web.app.job_store", lazy_store):
+            test_app = create_app()
+
+        self.assertEqual(factory_calls, [])
+        health = asgi_request("GET", "/api/health", test_app=test_app)
+        self.assertEqual(health["status"], 200)
+        self.assertEqual(json.loads(health["body"])["status"], "ok")
+        reader_shell = asgi_request("GET", "/", test_app=test_app)
+        self.assertEqual(reader_shell["status"], 200)
+        self.assertEqual(factory_calls, [])
+
+        unavailable = asgi_request(
+            "POST",
+            "/ask/jobs",
+            test_app=test_app,
+            data={"question": "What does John 1 mean?"},
+        )
+        self.assertEqual(unavailable["status"], 503)
+        self.assertEqual(
+            json.loads(unavailable["body"])["error_category"],
+            "job_persistence_unavailable",
+        )
+        self.assertEqual(len(factory_calls), 1)
+
     def test_vercel_config_keeps_function_ceiling_above_presentation_deadline(self):
         config = json.loads(Path("vercel.json").read_text(encoding="utf-8"))
 

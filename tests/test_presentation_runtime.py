@@ -119,6 +119,19 @@ def test_legacy_environment_flag_is_only_an_off_browser_default(tmp_path):
     assert result.mode == "generated"
 
 
+def test_runtime_construction_does_not_create_presentation_cache(tmp_path):
+    cache_path = tmp_path / "missing" / "presentation.sqlite"
+
+    runtime = configure_presentation_runtime(
+        study_db_path=tmp_path / "study.sqlite",
+        environ={"BHF_PRESENTATION_CACHE_PATH": str(cache_path)},
+    )
+
+    assert runtime.engine.cache.path == cache_path
+    assert not cache_path.parent.exists()
+    assert not cache_path.exists()
+
+
 def test_legacy_enabled_default_does_not_invent_a_server_provider(tmp_path):
     adapter_calls = []
     runtime = configure_presentation_runtime(

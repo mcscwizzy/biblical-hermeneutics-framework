@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import logging
 import os
 import sqlite3
 import threading
@@ -33,6 +34,9 @@ from .services.web_helpers import (
     reader_context_from_form as _reader_context_from_form,
     study_type_from_form as _study_type_from_form,
 )
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 @dataclass
@@ -578,7 +582,119 @@ class AskJobStore:
                 )
 
 
-job_store = AskJobStore()
+class JobStoreUnavailableError(RuntimeError):
+    """Raised when durable job persistence cannot be initialized or used."""
+
+
+class LazyAskJobStore:
+    """Thread-safe facade that leaves SQLite unopened until a job route is used."""
+
+    def __init__(
+        self,
+        factory: Callable[[], AskJobStore] | None = None,
+    ) -> None:
+        self._factory = factory
+        self._store: AskJobStore | None = None
+        self._persistence_error: Exception | None = None
+        self._lock = threading.Lock()
+
+    def get_store(self) -> AskJobStore:
+        if self._persistence_error is not None:
+            raise JobStoreUnavailableError(
+                "Durable job persistence is unavailable."
+            ) from self._persistence_error
+        store = self._store
+        if store is not None:
+            return store
+        with self._lock:
+            if self._persistence_error is not None:
+                raise JobStoreUnavailableError(
+                    "Durable job persistence is unavailable."
+                ) from self._persistence_error
+            if self._store is not None:
+                return self._store
+            try:
+                factory = self._factory or AskJobStore
+                self._store = factory()
+            except Exception as exc:  # noqa: BLE001 - optional storage fails closed
+                self._persistence_error = exc
+                self._log_unavailable(exc)
+                raise JobStoreUnavailableError(
+                    "Durable job persistence is unavailable."
+                ) from exc
+            return self._store
+
+    def create(self, *, deadline_seconds: float | None = None) -> AskJob:
+        return self._call("create", deadline_seconds=deadline_seconds)
+
+    def create_presentation(
+        self,
+        *,
+        reference: str,
+        evidence_hash: str,
+        deadline_seconds: float,
+    ) -> PresentationJob:
+        return self._call(
+            "create_presentation",
+            reference=reference,
+            evidence_hash=evidence_hash,
+            deadline_seconds=deadline_seconds,
+        )
+
+    def get(self, job_id: str) -> AskJob | None:
+        return self._call("get", job_id)
+
+    def get_presentation(self, job_id: str) -> PresentationJob | None:
+        return self._call("get_presentation", job_id)
+
+    def _call(self, method_name: str, *args: Any, **kwargs: Any) -> Any:
+        try:
+            method = getattr(self.get_store(), method_name)
+            return method(*args, **kwargs)
+        except JobStoreUnavailableError:
+            raise
+        except (OSError, sqlite3.Error, RuntimeError) as exc:
+            with self._lock:
+                if self._persistence_error is None:
+                    self._persistence_error = exc
+                    self._log_unavailable(exc)
+            raise JobStoreUnavailableError(
+                "Durable job persistence is unavailable."
+            ) from exc
+
+    @staticmethod
+    def _log_unavailable(exc: Exception) -> None:
+        LOGGER.error(
+            "durable job persistence is unavailable (%s)",
+            type(exc).__name__,
+        )
+
+    def diagnostics(self) -> dict[str, Any]:
+        """Return content-free state without triggering SQLite initialization."""
+
+        return {
+            "backend": "sqlite",
+            "initialized": self._store is not None,
+            "available": (
+                None
+                if self._store is None and self._persistence_error is None
+                else self._persistence_error is None
+            ),
+            "error_type": (
+                type(self._persistence_error).__name__
+                if self._persistence_error is not None
+                else None
+            ),
+        }
+
+
+job_store = LazyAskJobStore()
+
+
+def get_job_store() -> AskJobStore:
+    """Return the process job store, initializing its schemas on first use."""
+
+    return job_store.get_store()
 
 
 def timestamp() -> str:

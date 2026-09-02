@@ -12,7 +12,7 @@ from bhf_agent.config import ConfigError
 from bhf_agent.profiles import ProfileError
 
 from ..forms import config_from_form, form_values_for_ask_prompt, load_web_defaults
-from ..jobs import _fake_result
+from ..jobs import JobStoreUnavailableError, _fake_result
 from ..services.bible_search_fallback import build_bible_search_fallback_payload
 from ..services.ckl_inspector import build_result_inspector_payload
 from ..services.web_helpers import (
@@ -36,6 +36,11 @@ MISSING_JOB_PAYLOAD = {
         "The request state could not be found. The service may have restarted "
         "or been redeployed. Please submit the question again."
     ),
+}
+JOB_STORE_UNAVAILABLE_PAYLOAD = {
+    "error": "Durable job persistence is unavailable.",
+    "error_category": "job_persistence_unavailable",
+    "message": "Use the synchronous request path or try again later.",
 }
 
 
@@ -261,9 +266,12 @@ def register_ask_routes(
     async def create_ask_job(request: Request) -> JSONResponse:
         form = await request.form()
         form_values = form_values_for_ask_prompt(form)
-        job = job_store.create(
-            deadline_seconds=_job_deadline_seconds(form_values),
-        )
+        try:
+            job = job_store.create(
+                deadline_seconds=_job_deadline_seconds(form_values),
+            )
+        except JobStoreUnavailableError:
+            return JSONResponse(JOB_STORE_UNAVAILABLE_PAYLOAD, status_code=503)
         transient_api_key = request.headers.get("X-BHF-OpenRouter-Key") or None
         agent_class = agent_factory()
         thread = threading.Thread(
@@ -276,14 +284,20 @@ def register_ask_routes(
 
     @app.get("/ask/status/{job_id}", response_class=JSONResponse)
     async def ask_status(job_id: str) -> JSONResponse:
-        job = job_store.get(job_id)
+        try:
+            job = job_store.get(job_id)
+        except JobStoreUnavailableError:
+            return JSONResponse(JOB_STORE_UNAVAILABLE_PAYLOAD, status_code=503)
         if job is None:
             return JSONResponse(MISSING_JOB_PAYLOAD, status_code=404)
         return JSONResponse(job.to_dict())
 
     @app.get("/ask/result/{job_id}", response_class=HTMLResponse)
     async def ask_result(request: Request, job_id: str) -> Response:
-        job = job_store.get(job_id)
+        try:
+            job = job_store.get(job_id)
+        except JobStoreUnavailableError:
+            return JSONResponse(JOB_STORE_UNAVAILABLE_PAYLOAD, status_code=503)
         if job is None:
             return JSONResponse(MISSING_JOB_PAYLOAD, status_code=404)
         loaded = load_web_defaults()
@@ -346,9 +360,12 @@ def register_ask_routes(
     async def create_bible_search_fallback_job(request: Request) -> JSONResponse:
         form = await request.form()
         form_values = dict(form)
-        job = job_store.create(
-            deadline_seconds=_job_deadline_seconds(form_values),
-        )
+        try:
+            job = job_store.create(
+                deadline_seconds=_job_deadline_seconds(form_values),
+            )
+        except JobStoreUnavailableError:
+            return JSONResponse(JOB_STORE_UNAVAILABLE_PAYLOAD, status_code=503)
         transient_api_key = request.headers.get("X-BHF-OpenRouter-Key") or None
         agent_class = agent_factory()
         thread = threading.Thread(
@@ -386,14 +403,20 @@ def register_ask_routes(
 
     @app.get("/api/bible/search/fallback/status/{job_id}", response_class=JSONResponse)
     async def bible_search_fallback_status(job_id: str) -> JSONResponse:
-        job = job_store.get(job_id)
+        try:
+            job = job_store.get(job_id)
+        except JobStoreUnavailableError:
+            return JSONResponse(JOB_STORE_UNAVAILABLE_PAYLOAD, status_code=503)
         if job is None:
             return JSONResponse({"error": "job not found"}, status_code=404)
         return JSONResponse(job.to_dict())
 
     @app.get("/api/bible/search/fallback/result/{job_id}", response_class=JSONResponse)
     async def bible_search_fallback_result(job_id: str) -> JSONResponse:
-        job = job_store.get(job_id)
+        try:
+            job = job_store.get(job_id)
+        except JobStoreUnavailableError:
+            return JSONResponse(JOB_STORE_UNAVAILABLE_PAYLOAD, status_code=503)
         if job is None:
             return JSONResponse({"error": "job not found"}, status_code=404)
         if not job.done:

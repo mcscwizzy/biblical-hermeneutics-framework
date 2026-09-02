@@ -34,6 +34,15 @@ def register_debug_routes(app: FastAPI) -> None:
                 "data_directory": str(settings.DATA_DIR),
                 "job_database_path": str(settings.JOB_DB_PATH),
                 "job_store": "sqlite",
+                "job_store_status": (
+                    app.state.job_store.diagnostics()
+                    if getattr(app.state, "job_store", None) is not None
+                    else {
+                        "backend": "sqlite",
+                        "initialized": False,
+                        "available": None,
+                    }
+                ),
                 "presentation_cache": SQLitePresentationCache(
                     presentation_cache_path
                 ).diagnostics(),

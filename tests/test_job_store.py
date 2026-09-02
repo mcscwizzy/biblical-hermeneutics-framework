@@ -1,5 +1,7 @@
+import sqlite3
 import tempfile
 import unittest
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from unittest.mock import patch
@@ -11,10 +13,90 @@ from bhf_agent.models import (
     ReferenceContext,
     ValidationResult,
 )
-from bhf_web.jobs import AskJobStore
+from bhf_web.jobs import AskJobStore, JobStoreUnavailableError, LazyAskJobStore
 
 
 class AskJobStoreTests(unittest.TestCase):
+    def test_lazy_store_initializes_once_under_concurrent_first_use(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "jobs.sqlite"
+            factory_calls = []
+
+            def factory():
+                factory_calls.append(True)
+                return AskJobStore(path)
+
+            lazy_store = LazyAskJobStore(factory)
+            self.assertEqual(
+                lazy_store.diagnostics(),
+                {
+                    "backend": "sqlite",
+                    "initialized": False,
+                    "available": None,
+                    "error_type": None,
+                },
+            )
+
+            with ThreadPoolExecutor(max_workers=8) as executor:
+                stores = list(executor.map(lambda _: lazy_store.get_store(), range(24)))
+
+            self.assertEqual(len(factory_calls), 1)
+            self.assertTrue(all(store is stores[0] for store in stores))
+            self.assertTrue(lazy_store.diagnostics()["available"])
+
+    def test_lazy_store_caches_initialization_failure_without_sensitive_details(self):
+        factory_calls = []
+
+        def factory():
+            factory_calls.append(True)
+            raise RuntimeError("secret-path/provider-input")
+
+        lazy_store = LazyAskJobStore(factory)
+
+        for _ in range(2):
+            with self.assertRaisesRegex(
+                JobStoreUnavailableError,
+                "Durable job persistence is unavailable",
+            ) as raised:
+                lazy_store.get_store()
+            self.assertNotIn("secret-path", str(raised.exception))
+
+        self.assertEqual(len(factory_calls), 1)
+        self.assertEqual(lazy_store.diagnostics()["error_type"], "RuntimeError")
+
+    def test_lazy_store_disables_persistence_after_operational_failure(self):
+        class BrokenStore:
+            def create(self, *, deadline_seconds=None):
+                raise sqlite3.OperationalError("disk became read-only")
+
+        lazy_store = LazyAskJobStore(lambda: BrokenStore())
+
+        with self.assertRaises(JobStoreUnavailableError):
+            lazy_store.create()
+        with self.assertRaises(JobStoreUnavailableError):
+            lazy_store.get_store()
+
+        diagnostics = lazy_store.diagnostics()
+        self.assertTrue(diagnostics["initialized"])
+        self.assertFalse(diagnostics["available"])
+        self.assertEqual(diagnostics["error_type"], "OperationalError")
+
+    def test_initialization_creates_ask_and_presentation_schemas(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "jobs.sqlite"
+
+            AskJobStore(path)
+
+            with sqlite3.connect(path) as connection:
+                tables = {
+                    row[0]
+                    for row in connection.execute(
+                        "SELECT name FROM sqlite_master WHERE type = 'table'"
+                    )
+                }
+            self.assertIn("ask_jobs", tables)
+            self.assertIn("presentation_jobs", tables)
+
     def test_job_and_result_are_visible_from_another_store_instance(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "jobs.sqlite"
