@@ -7,11 +7,15 @@ from typing import Any, Callable, Mapping
 
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
+from starlette.concurrency import run_in_threadpool
 
 from bhf_agent.study_actions import StudyActionRouter, compact_fact_packet
 from bhf_agent.study_db import StudyDataError
 
-from ..services.companion_context import CompanionContextService
+from ..services.companion_context import (
+    CompanionContextService,
+    StalePresentationEvidenceError,
+)
 from ..services.web_helpers import (
     record_action,
     request_payload,
@@ -56,19 +60,60 @@ def register_study_routes(
         """Return compact resource availability without loading resource bodies."""
 
         try:
-            return JSONResponse(
-                companion_context.build(
-                    book=book,
-                    chapter=chapter,
-                    verse_start=verse_start,
-                    verse_end=verse_end,
-                    translation=translation,
-                )
+            context = await run_in_threadpool(
+                companion_context.build,
+                book=book,
+                chapter=chapter,
+                verse_start=verse_start,
+                verse_end=verse_end,
+                translation=translation,
             )
+            return JSONResponse(context)
         except (ValueError, StudyDataError) as exc:
             return JSONResponse({"error": str(exc)}, status_code=400)
         except Exception as exc:  # noqa: BLE001 - invalid books surface as a compact client error
             return JSONResponse({"error": str(exc)}, status_code=400)
+
+    @app.post("/api/study/presentation", response_class=JSONResponse)
+    async def post_study_presentation(request: Request) -> JSONResponse:
+        """Lazily enhance an already-loaded passage presentation."""
+
+        try:
+            payload = await request_payload(request)
+            transient_api_key = request.headers.get("X-BHF-OpenRouter-Key") or None
+            profile = payload.get("ai_profile")
+            if profile is not None and not isinstance(profile, Mapping):
+                raise ValueError("ai_profile must be an object")
+            runtime = getattr(request.app.state, "presentation_runtime", None)
+            provider = None
+            generation_profile = None
+            if runtime is not None:
+                provider, generation_profile = runtime.provider_for_request(
+                    profile,
+                    transient_api_key,
+                )
+            presentation = await run_in_threadpool(
+                companion_context.enhance_presentation,
+                book=payload.get("book"),
+                chapter=payload.get("chapter"),
+                verse_start=payload.get("verse_start"),
+                verse_end=payload.get("verse_end"),
+                evidence_hash=payload.get("evidence_hash"),
+                provider=provider,
+                generation_profile=generation_profile,
+            )
+            return JSONResponse(presentation)
+        except StalePresentationEvidenceError as exc:
+            return JSONResponse(
+                {"error": str(exc), "code": "stale_evidence"}, status_code=409
+            )
+        except (ValueError, StudyDataError) as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
+        except Exception as exc:  # noqa: BLE001 - optional generation fails independently
+            return JSONResponse(
+                {"error": "Presentation enhancement is unavailable.", "detail": type(exc).__name__},
+                status_code=503,
+            )
 
     @app.post("/api/study/actions", response_class=JSONResponse)
     async def post_study_action(request: Request) -> JSONResponse:
@@ -100,7 +145,10 @@ def register_study_routes(
                 and result.evidence_packet
                 and result.action != "archaeology"
             ):
-                result.presentation = context_presenter(result.evidence_packet)
+                result.presentation = await run_in_threadpool(
+                    context_presenter,
+                    result.evidence_packet,
+                )
             data = result.to_dict()
             data["fact_packet"] = compact_fact_packet(result)
             record_action(result.action, result.metadata, path=study_db_path)

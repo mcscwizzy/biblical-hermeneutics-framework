@@ -59,6 +59,7 @@
     document.querySelector("[data-app-dock]")?.addEventListener("click", handlePrimaryNavigation);
     document.addEventListener("bhf:workspace-tab-changed", handleWorkspaceTabChanged);
     document.addEventListener("bhf:companion-context-invalidated", handleContextInvalidated);
+    document.addEventListener("bhf:ai-presentation-setting-changed", handleAiPresentationSettingChanged);
     window.addEventListener("resize", handleViewportChange);
     document.addEventListener("keydown", handleEscape);
 
@@ -80,11 +81,15 @@
     contextController = window.BHFCompanionContextController?.create?.({
       onLoading: () => {
         if (currentMode !== "passage") return;
+        renderPresentationStatus("idle");
         renderLoadingState();
+        renderDiscoveries({});
         renderEntities([]);
       },
       onReady: (context) => {
         if (currentMode !== "passage") return;
+        renderPresentationStatus("idle");
+        renderDiscoveries(context);
         renderRecommendations(context);
         renderEntities([
           ...(context.entities?.people || []),
@@ -95,8 +100,36 @@
           void resourceRouter?.open?.(currentResource, {mode: currentMode});
         }
       },
+      onEnhanced: (context) => {
+        if (currentMode !== "passage") return;
+        renderDiscoveries(context);
+        renderPresentationStatus("generated");
+      },
+      onEnhancementLoading: () => {
+        if (currentMode !== "passage") return;
+        renderPresentationStatus("generating");
+      },
+      onEnhancementUnavailable: (reason) => {
+        if (currentMode !== "passage") return;
+        renderPresentationStatus("unavailable", reason);
+      },
+      onEnhancementError: () => {
+        if (currentMode !== "passage") return;
+        renderPresentationStatus("failed");
+      },
+      onEnhancementCancelled: () => {
+        if (currentMode !== "passage") return;
+        renderPresentationStatus("idle");
+      },
+      onPresentationReset: (context) => {
+        if (currentMode !== "passage") return;
+        renderDiscoveries(context);
+        renderPresentationStatus("idle");
+      },
       onError: (message) => {
         if (currentMode !== "passage") return;
+        renderPresentationStatus("idle");
+        renderDiscoveries({});
         renderAvailabilityError(message);
         if (currentResource && currentMode === "passage") {
           void resourceRouter?.open?.(currentResource, {mode: currentMode});
@@ -143,6 +176,14 @@
       getContext: () => contextController?.getRecord?.().context || null,
       getContextRecord: () => contextController?.getRecord?.(),
     });
+  }
+
+  function handleAiPresentationSettingChanged(event) {
+    if (event?.detail?.enabled === true) {
+      contextController?.refreshEnhancement?.();
+    } else {
+      contextController?.cancelEnhancement?.();
+    }
   }
 
   function setState(nextState, options = {}) {
@@ -223,6 +264,8 @@
       }
     } else {
       renderRecommendations({resources: {}});
+      renderDiscoveries({});
+      renderPresentationStatus("idle");
       renderEntities([]);
     }
   }
@@ -298,7 +341,19 @@
     setText("[data-companion-recommendation-reason]", "Browse BHF’s local research collections independently of a selected passage.");
     setText("[data-companion-resource-count]", `${resources.length} research collections`);
     panel.querySelector("[data-companion-entities-section]")?.setAttribute("hidden", "");
+    renderDiscoveries({});
+    renderPresentationStatus("idle");
     renderExploreAskCard();
+  }
+
+  function renderDiscoveries(context = {}) {
+    window.BHFCompanionDiscoveries?.render?.(panel, context, {
+      visible: currentMode === "passage",
+    });
+  }
+
+  function renderPresentationStatus(state, reason = "") {
+    window.BHFCompanionDiscoveries?.renderStatus?.(panel, state, reason);
   }
 
   function renderExploreAskCard() {
@@ -442,7 +497,7 @@
     if (options.trigger) lastResourceTrigger = options.trigger;
     if (options.mode) currentMode = options.mode;
     if (resourceId === "maps") {
-      await openLegacyResource(resourceId);
+      await openLegacyResource(resourceId, options);
       if (options.history !== false && historyController?.current()?.resource !== resourceId) {
         historyController?.push(historySnapshot());
       }
@@ -475,9 +530,19 @@
         {focus: false},
       );
       const selectedContext = window.BHFStudySelection?.getState?.();
-      const mapContext = currentMode === "explore"
+      const baseMapContext = currentMode === "explore"
         ? {mode: "browse"}
         : selectedContext;
+      const mapFocus = options.mapFocus || {};
+      const mapContext = {
+        ...(baseMapContext || {}),
+        ...(mapFocus.kind === "route" && mapFocus.targetId
+          ? {focusRouteId: mapFocus.targetId}
+          : {}),
+        ...(mapFocus.kind === "place" && mapFocus.targetId
+          ? {focusPlaceId: mapFocus.targetId}
+          : {}),
+      };
       if (typeof window.BHFMaps?.openMapPanel === "function") {
         await window.BHFMaps.openMapPanel(
           mapContext?.book && mapContext?.chapter ? mapContext : {mode: "browse"},
@@ -525,6 +590,11 @@
   }
 
   function handleCompanionClick(event) {
+    const presentationAction = event.target.closest("[data-presentation-action]");
+    if (presentationAction) {
+      handlePresentationAction(presentationAction);
+      return;
+    }
     const resource = event.target.closest("[data-companion-resource]");
     if (resource && resource !== shell) {
       openResource(resource.dataset.companionResource, {trigger: resource});
@@ -545,6 +615,20 @@
       openResource("canonical", {trigger: entity})
         .then(() => resourceRouter?.openCanonicalDetail?.(entity.dataset.companionEntity));
     }
+  }
+
+  function handlePresentationAction(button) {
+    void window.BHFCompanionDiscoveries?.dispatchAction?.(button, {
+      openResource,
+      openArchaeologyDetail: (target) => resourceRouter?.openArchaeologyDetail?.(target),
+      openCanonicalDetail: (target) => resourceRouter?.openCanonicalDetail?.(target),
+      mapPlaceIds: currentMapPlaceIds(),
+    });
+  }
+
+  function currentMapPlaceIds() {
+    const context = contextController?.getRecord?.().context;
+    return new Set(context?.evidence_bundle?.geography?.map_location_refs || []);
   }
 
   function handleQuickAsk(event) {

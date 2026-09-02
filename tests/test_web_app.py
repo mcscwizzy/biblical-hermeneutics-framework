@@ -621,6 +621,7 @@ class WebAssetTests(unittest.TestCase):
 
         self.assertIn("dataset.archaeologyId", router_script)
         self.assertIn("function openArchaeologyDetail(itemId)", router_script)
+        self.assertIn("openArchaeologyDetail,", router_script)
         self.assertIn("/api/archaeology/items/${encodeURIComponent(normalized)}", router_script)
         self.assertIn("function renderArchaeologyDetail(detail)", router_script)
         self.assertIn("What you’re looking at", router_script)
@@ -787,6 +788,16 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("renderSelectedRoute", map_script)
         self.assertIn("buildRouteCautionNote", map_script)
         self.assertIn("loadRoutesForPassage", map_script)
+        self.assertIn("applyRequestedMapFocus", map_script)
+        self.assertIn("focusPlaceId", map_script)
+        self.assertIn("focusRouteId", map_script)
+        self.assertIn("data-companion-land-section", index_html)
+        self.assertIn("data-companion-significance-section", index_html)
+        discoveries_script = Path("bhf_web/static/companion-discoveries.js").read_text(encoding="utf-8")
+        self.assertIn('"walk_the_land"', discoveries_script)
+        self.assertIn('"why_it_matters"', discoveries_script)
+        companion_script = Path("bhf_web/static/study-companion.js").read_text(encoding="utf-8")
+        self.assertIn("mapFocus", companion_script)
         self.assertIn("renderSelectedHistoricalLayer", map_script)
         self.assertIn("buildHistoricalLayerCautionNote", map_script)
         self.assertIn("loadHistoricalLayers", map_script)
@@ -1232,7 +1243,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v38"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v41"', service_worker["body"])
         self.assertIn("/static/api/backend-routing.js", service_worker["body"])
         self.assertIn("/static/api/job-flow.js", service_worker["body"])
         self.assertIn("isLiveBackendJobRequest", service_worker["body"])
@@ -1242,6 +1253,7 @@ class WebAppTests(unittest.TestCase):
             service_worker["body"],
         )
         self.assertIn('/static/styles/companion.css', service_worker["body"])
+        self.assertIn('/static/styles/discoveries.css', service_worker["body"])
         self.assertIn('/static/reader-selection.js', service_worker["body"])
         self.assertIn('/static/companion-context.js', service_worker["body"])
         self.assertIn('/static/companion-context-controller.js', service_worker["body"])
@@ -1250,6 +1262,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn('/static/companion-viewport.js', service_worker["body"])
         self.assertIn('/static/companion-sheet.js', service_worker["body"])
         self.assertIn('/static/resource-router.js', service_worker["body"])
+        self.assertIn('/static/companion-discoveries.js', service_worker["body"])
         self.assertIn('/static/study-companion.js', service_worker["body"])
         self.assertIn("cacheFirstApi", service_worker["body"])
         self.assertIn("isRefreshRequest", service_worker["body"])
@@ -2601,16 +2614,31 @@ class WebAppTests(unittest.TestCase):
                 debug=True,
             )
         )
-        with patch(
-            "bhf_web.routes.debug.load_web_defaults",
-            return_value=debug_defaults,
-        ):
-            response = asgi_request("GET", "/api/debug/runtime-storage")
+        with tempfile.TemporaryDirectory() as temporary:
+            cache_path = str(Path(temporary) / "presentation-cache.sqlite")
+            with (
+                patch(
+                    "bhf_web.routes.debug.load_web_defaults",
+                    return_value=debug_defaults,
+                ),
+                patch.dict(
+                    os.environ,
+                    {"BHF_PRESENTATION_CACHE_PATH": cache_path},
+                    clear=False,
+                ),
+            ):
+                response = asgi_request("GET", "/api/debug/runtime-storage")
 
         payload = json.loads(response["body"])
         self.assertEqual(response["status"], 200)
         self.assertEqual(payload["job_store"], "sqlite")
         self.assertTrue(payload["job_database_path"].endswith("jobs.sqlite"))
+        self.assertEqual(payload["presentation_cache"]["path"], cache_path)
+        self.assertEqual(payload["presentation_cache"]["entry_count"], 0)
+        activity = payload["presentation_generation"]["activity"]
+        self.assertIn("requests_total", activity)
+        self.assertIn("provider", activity)
+        self.assertIn("latency_ms", activity)
 
     def test_debug_ckl_search_endpoint_returns_retrieval_trace_when_enabled(self):
         debug_defaults = SimpleNamespace(

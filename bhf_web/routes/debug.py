@@ -2,8 +2,12 @@
 
 from __future__ import annotations
 
+import os
+
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
+
+from bhf_agent.presentation import SQLitePresentationCache, default_presentation_cache_path
 
 from .. import settings
 from ..forms import load_web_defaults
@@ -21,11 +25,23 @@ def register_debug_routes(app: FastAPI) -> None:
         loaded = load_web_defaults()
         if not bool(getattr(loaded.config, "debug", False)):
             return JSONResponse({"error": "not found"}, status_code=404)
+        presentation_cache_path = (
+            str(os.environ.get("BHF_PRESENTATION_CACHE_PATH") or "").strip()
+            or str(default_presentation_cache_path(settings.STUDY_DB_PATH))
+        )
         return JSONResponse(
             {
                 "data_directory": str(settings.DATA_DIR),
                 "job_database_path": str(settings.JOB_DB_PATH),
                 "job_store": "sqlite",
+                "presentation_cache": SQLitePresentationCache(
+                    presentation_cache_path
+                ).diagnostics(),
+                "presentation_generation": (
+                    app.state.presentation_runtime.diagnostics()
+                    if getattr(app.state, "presentation_runtime", None) is not None
+                    else {"enabled": False, "configured": False}
+                ),
                 "deployment_mode": "single_instance",
             }
         )

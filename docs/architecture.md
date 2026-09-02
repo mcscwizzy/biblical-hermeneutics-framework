@@ -66,6 +66,15 @@ The Bible-search fallback is a separate deterministic path. It searches local
 Bible and CKL data for likely passages and returns structured suggestions
 without calling a model.
 
+Reader discoveries use a separate exploration-first path. Passage-scoped CKL,
+map, and archaeology records are normalized into an `EvidenceBundle`, narrowed
+by deterministic salience ranking, and rendered as a validated structured
+`PresentationPacket`. This path may use a provider as a curator, but works
+offline with no model. Valid generated packets use a separate disposable
+SQLite cache keyed by evidence and presentation versions; they are never
+written into CKL. See
+[`contextual-presentation.md`](contextual-presentation.md).
+
 ## What each layer owns
 
 ```mermaid
@@ -116,6 +125,7 @@ offline exports, or service-worker caches.
 | `bhf_agent/runner.py` | Orchestrates the end-to-end evidence, cache, prompt, model, cleanup, validation, repair, and result pipeline. |
 | `bhf_agent/prompts.py` | Constructs the unified runtime prompt and answer contract. |
 | `bhf_agent/adapters/` | Implements OpenRouter, native Ollama, and OpenAI-compatible HTTP calls. |
+| `bhf_agent/presentation/` | Normalizes evidence, ranks salience, constrains optional presentation generation, validates cards/actions, versions caches, and renders deterministic fallback discoveries. |
 | `framework/canonical_library/` | Loads, ranks, validates, relates, and serializes curated CKL objects. |
 | `framework/lexical/` | Builds and queries the generated lexical and verse-token database. |
 | `framework/core/`, `genres/`, `books/`, `context/`, `language/` | Stores the portable Markdown hermeneutics framework. |
@@ -181,6 +191,8 @@ legacy profile and answer-mode values only for compatibility.
 
 - `.bhf/study.sqlite` stores server-side study data in a source checkout.
 - `.bhf/ckl.sqlite` is the generated local CKL database.
+- `<study-db-stem>.presentation-cache.sqlite` stores disposable, validated
+  presentation packets separately from CKL when optional generation is enabled.
 - `framework/lexical/database/lexicon.sqlite` is the default source-run lexical
   database; Docker uses `.bhf/lexicon.sqlite` on the host mount.
 - `.bhf/sessions/` stores optional local agent memory.

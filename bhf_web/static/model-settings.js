@@ -20,10 +20,11 @@
   function defaultSettings() {
     return {
       id: SETTINGS_ID,
-      version: 2,
+      version: 3,
       activeProvider: null,
       onboardingComplete: false,
       setupChoice: null,
+      aiPresentationEnabled: Boolean(runtimeAi().presentationDefaultEnabled),
       providers: {},
     };
   }
@@ -88,13 +89,18 @@
   function migrateSettings(value) {
     const migrated = value && typeof value === "object" ? {...value} : defaultSettings();
     migrated.id = SETTINGS_ID;
-    migrated.version = 2;
+    migrated.version = 3;
     migrated.providers = migrated.providers && typeof migrated.providers === "object" ? migrated.providers : {};
     if (!Object.prototype.hasOwnProperty.call(migrated, "onboardingComplete")) {
       migrated.onboardingComplete = Boolean(migrated.activeProvider);
     }
     if (!Object.prototype.hasOwnProperty.call(migrated, "setupChoice")) {
       migrated.setupChoice = migrated.activeProvider ? "provider" : null;
+    }
+    if (!Object.prototype.hasOwnProperty.call(migrated, "aiPresentationEnabled")) {
+      migrated.aiPresentationEnabled = Boolean(runtimeAi().presentationDefaultEnabled);
+    } else {
+      migrated.aiPresentationEnabled = migrated.aiPresentationEnabled === true;
     }
     for (const provider of Object.keys(migrated.providers)) {
       migrated.providers[provider] = {
@@ -285,6 +291,88 @@
       node.textContent = message || label;
       node.dataset.status = message ? "error" : (provider && (provider !== OPENROUTER || openRouterToken) ? "connected" : "disconnected");
     });
+    renderPresentationSetting();
+  }
+
+  function presentationProviderReady() {
+    const provider = settings?.activeProvider;
+    return Boolean(provider && (provider !== OPENROUTER || openRouterToken));
+  }
+
+  function renderPresentationSetting() {
+    const enabled = settings?.aiPresentationEnabled === true;
+    const providerReady = presentationProviderReady()
+      || runtimeAi().presentationServerConfigured === true;
+    document.querySelectorAll("[data-ai-presentation-toggle]").forEach((control) => {
+      control.setAttribute("aria-pressed", String(enabled));
+      const label = control.querySelector("[data-control-label]");
+      const status = control.querySelector("[data-control-status]");
+      if (label) label.textContent = enabled ? "Turn off" : "Turn on";
+      if (status) {
+        status.textContent = enabled
+          ? providerReady
+            ? "On · Uses your selected AI provider"
+            : "Connect an AI provider to use AI passage summaries."
+          : "Off · No AI summary requests";
+      }
+    });
+  }
+
+  async function setAiPresentationEnabled(enabled) {
+    await readyPromise;
+    settings.aiPresentationEnabled = enabled === true;
+    await writeSettings();
+    renderPresentationSetting();
+    document.dispatchEvent(new CustomEvent("bhf:ai-presentation-setting-changed", {
+      detail: {enabled: settings.aiPresentationEnabled},
+    }));
+    return settings.aiPresentationEnabled;
+  }
+
+  function selectedPresentationProfile() {
+    const provider = settings?.activeProvider;
+    if (!provider) return null;
+    const saved = providerState(provider);
+    return {
+      adapter: provider,
+      model: saved.model,
+      base_url: saved.baseUrl,
+      temperature: saved.temperature,
+      max_tokens: saved.maxTokens,
+      context_window: saved.contextWindow,
+      timeout_seconds: saved.timeoutSeconds,
+      response_format_policy: saved.responseFormatPolicy,
+    };
+  }
+
+  async function getPresentationRequestOptions(serverConfigured = false) {
+    await readyPromise;
+    if (settings?.aiPresentationEnabled !== true) {
+      return {enabled: false, reason: "disabled", headers: {}, profile: null};
+    }
+    if (navigator.onLine === false) {
+      return {enabled: false, reason: "offline", headers: {}, profile: null};
+    }
+    const profile = selectedPresentationProfile();
+    if (!profile) {
+      return {
+        enabled: serverConfigured === true,
+        reason: serverConfigured === true ? "" : "provider_unavailable",
+        headers: {},
+        profile: null,
+      };
+    }
+    if (profile.adapter === OPENROUTER && !openRouterToken) {
+      return {enabled: false, reason: "provider_unavailable", headers: {}, profile: null};
+    }
+    return {
+      enabled: true,
+      reason: "",
+      headers: profile.adapter === OPENROUTER
+        ? {"X-BHF-OpenRouter-Key": openRouterToken}
+        : {},
+      profile,
+    };
   }
 
   async function ensureKey() {
@@ -534,6 +622,7 @@
     settings.setupChoice = "without_ai";
     settings.activeProvider = null;
     writeSettings().catch(() => undefined);
+    updateConnectionStatus();
     closeSetup();
   }
 
@@ -588,6 +677,7 @@
         settings.onboardingComplete = true;
         settings.setupChoice = "provider";
         await writeSettings();
+        updateConnectionStatus();
         closeSetup();
       } catch (error) {
         showSetup(friendlyStorageError(error));
@@ -604,6 +694,7 @@
         settings.onboardingComplete = true;
         settings.setupChoice = "provider";
         await writeSettings();
+        updateConnectionStatus();
         closeSetup();
       } catch (error) {
         showSetup(friendlyStorageError(error));
@@ -625,6 +716,10 @@
       removeToken().catch((error) => updateConnectionStatus(friendlyStorageError(error)));
     }));
     document.querySelectorAll("[data-ai-settings-open]").forEach((button) => button.addEventListener("click", () => showSetup()));
+    document.querySelectorAll("[data-ai-presentation-toggle]").forEach((button) => button.addEventListener("click", () => {
+      setAiPresentationEnabled(settings?.aiPresentationEnabled !== true)
+        .catch((error) => updateConnectionStatus(friendlyStorageError(error)));
+    }));
     if (!form) return;
     providerInput(form, "adapter")?.addEventListener("change", async () => {
       await readyPromise;
@@ -673,6 +768,7 @@
       if (providerInput(form, "base_url")) providerInput(form, "base_url").value = saved.baseUrl;
     }
     renderProviderState(form);
+    renderPresentationSetting();
     try {
       await handleAuthCallback();
     } catch (error) {
@@ -710,6 +806,12 @@
       }
       return {"X-BHF-OpenRouter-Key": openRouterToken};
     },
+    getPresentationRequestOptions,
+    isAiPresentationEnabled: async () => {
+      await readyPromise;
+      return settings?.aiPresentationEnabled === true;
+    },
+    setAiPresentationEnabled,
     persistFormSettings,
     openSetup: showSetup,
     ready: () => readyPromise,

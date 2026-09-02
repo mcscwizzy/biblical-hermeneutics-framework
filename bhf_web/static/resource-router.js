@@ -633,7 +633,13 @@
       host.setAttribute("aria-busy", "false");
     }
 
-    return Object.freeze({open, close, showLegacy, openCanonicalDetail});
+    return Object.freeze({
+      open,
+      close,
+      showLegacy,
+      openCanonicalDetail,
+      openArchaeologyDetail,
+    });
   }
 
   async function requestJson(url, signal) {

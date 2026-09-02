@@ -29,14 +29,14 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260814c">
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260901b">
   <!-- Legacy cache-key references retained for clients that inspect the shell during upgrades. -->
   <!-- href="/static/style.css?v=20260724c" src="/static/htmx-lite.js?v=20260729b" -->
   {# static_asset('/style.css') }}?v=20260724c #}
   {# static_asset('/htmx-lite.js') }}?v=20260729b #}
   <script src="{{ static_asset('/offline/db.js') }}?v=20260809a" defer></script>
   <script src="{{ static_asset('/study-vault.js') }}?v=20260809a" defer></script>
-  <script src="{{ static_asset('/model-settings.js') }}?v=20260806a" defer></script>
+  <script src="{{ static_asset('/model-settings.js') }}?v=20260901b" defer></script>
   <script src="{{ static_asset('/api/backend-routing.js') }}?v=20260822a" defer></script>
   <script src="{{ static_asset('/api/http.js') }}?v=20260821a" defer></script>
   <script src="{{ static_asset('/api/job-flow.js') }}?v=20260822b" defer></script>
@@ -46,14 +46,15 @@
   <script src="{{ static_asset('/reader-selection.js') }}?v=20260811a" defer></script>
   <script src="{{ static_asset('/htmx-lite.js') }}?v=20260822b" defer></script>
   <script src="{{ static_asset('/study-recommendations.js') }}?v=20260811a" defer></script>
-  <script src="{{ static_asset('/companion-context.js') }}?v=20260811c" defer></script>
-  <script src="{{ static_asset('/companion-context-controller.js') }}?v=20260811c" defer></script>
+  <script src="{{ static_asset('/companion-context.js') }}?v=20260901b" defer></script>
+  <script src="{{ static_asset('/companion-context-controller.js') }}?v=20260901b" defer></script>
   <script src="{{ static_asset('/saved-passage-state.js') }}?v=20260811d" defer></script>
   <script src="{{ static_asset('/companion-history.js') }}?v=20260811c" defer></script>
   <script src="{{ static_asset('/companion-viewport.js') }}?v=20260811c" defer></script>
   <script src="{{ static_asset('/companion-sheet.js') }}?v=20260811c" defer></script>
   <script src="{{ static_asset('/resource-router.js') }}?v=20260820b" defer></script>
-  <script src="{{ static_asset('/study-companion.js') }}?v=20260822a" defer></script>
+  <script src="{{ static_asset('/companion-discoveries.js') }}?v=20260901b" defer></script>
+  <script src="{{ static_asset('/study-companion.js') }}?v=20260901b" defer></script>
   <script src="{{ static_asset('/commentary.js') }}?v=20260809b" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260806a" defer></script>
   {% if not test_mode %}
@@ -283,6 +284,32 @@
               <button type="button" class="secondary" data-companion-action="note">＋ Add Note</button>
               <button type="button" class="secondary" data-companion-action="save" data-save-state="not-saved" disabled aria-disabled="true" aria-busy="false" aria-label="Save Passage unavailable; select a verse or passage">☆ Save Passage</button>
             </div>
+
+            <section class="companion-section companion-discoveries companion-land" data-companion-land-section aria-labelledby="companion-land-title" hidden>
+              <div class="companion-section-heading">
+                <div><span aria-hidden="true">⌖</span><h3 id="companion-land-title">Walk the Land</h3></div>
+                <p>Explore a place or route linked directly to this passage.</p>
+              </div>
+              <div class="companion-discovery-list" data-companion-land></div>
+            </section>
+
+            <section class="companion-section companion-discoveries" data-companion-discoveries-section aria-labelledby="companion-discoveries-title" hidden>
+              <div class="companion-section-heading">
+                <div><span aria-hidden="true">✦</span><h3 id="companion-discoveries-title">Did You Know?</h3></div>
+                <p>Concise discoveries grounded in BHF evidence.</p>
+              </div>
+              <div class="companion-discovery-list" data-companion-discoveries></div>
+            </section>
+
+            <p class="companion-presentation-status" data-companion-presentation-status data-enhancement-state="idle" role="status" aria-live="polite" aria-atomic="true" hidden></p>
+
+            <section class="companion-section companion-discoveries companion-significance" data-companion-significance-section aria-labelledby="companion-significance-title" hidden>
+              <div class="companion-section-heading">
+                <div><span aria-hidden="true">◇</span><h3 id="companion-significance-title">Why It Matters Here</h3></div>
+                <p>An evidence-authored connection to the selected passage.</p>
+              </div>
+              <div class="companion-discovery-list" data-companion-significance></div>
+            </section>
 
             <section class="companion-section" aria-labelledby="companion-recommended-title">
               <div class="companion-section-heading">
@@ -929,6 +956,20 @@
           </span>
           <span class="reader-setting-value" data-control-label>Reader mode</span>
         </button>
+        </section>
+        <section class="reader-settings-group" aria-labelledby="settings-ai-title">
+          <div class="reader-settings-group-heading">
+            <p class="eyebrow">Optional AI</p>
+            <h3 id="settings-ai-title">Passage help</h3>
+            <p>Choose whether AI adds concise explanations after local study context is ready.</p>
+          </div>
+          <button type="button" class="reader-setting-action" data-ai-presentation-toggle data-testid="ai-presentation-toggle" aria-pressed="false">
+            <span class="reader-setting-copy">
+              <span class="reader-setting-title">AI passage summaries <span class="settings-help" tabindex="0" role="img" aria-label="Help: Use your selected AI provider to turn BHF evidence into concise Did You Know and Dig In explanations. Source evidence remains available underneath." data-tooltip="Use your selected AI provider to turn BHF evidence into concise Did You Know and Dig In explanations. Source evidence remains available underneath.">?</span></span>
+              <span class="reader-setting-status" data-control-status>Off · No AI summary requests</span>
+            </span>
+            <span class="reader-setting-value" data-control-label>Turn on</span>
+          </button>
         </section>
         <section class="reader-settings-group" aria-labelledby="settings-app-title">
           <div class="reader-settings-group-heading">

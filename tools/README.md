@@ -188,6 +188,40 @@ python3 tools/report_archaeology_coverage.py --database .bhf/study.sqlite
 python3 tools/report_archaeology_coverage.py --database .bhf/study.sqlite --json
 ```
 
+## `export_presentation_bundle.py`
+
+Exports validated generated discovery packets from the separate disposable
+presentation cache into the versioned offline bundle format. It performs no
+provider or network calls, refuses accidental overwrite, writes atomically,
+and verifies the written bundle by loading it again.
+
+```bash
+python tools/export_presentation_bundle.py \
+  --cache .bhf/study.presentation-cache.sqlite \
+  --output deployment/presentation-bundle.json
+```
+
+Use `--force` only when intentionally replacing an existing deployment
+bundle. The output is a presentation artifact, not canonical knowledge.
+
+## `validate_presentation_bundle.py`
+
+Checks an offline bundle before deployment without loading CKL, contacting a
+provider, or printing generated card content. It validates the bundle envelope,
+size and packet limits, schema versions, fingerprints, and duplicate packets.
+Empty bundles fail by default.
+
+```bash
+python tools/validate_presentation_bundle.py \
+  --bundle deployment/presentation-bundle.json \
+  --expect-prompt-version deterministic-v3 \
+  --expect-model deterministic
+```
+
+Add `--json` for automation. This is a structural deployment check; the engine
+still validates evidence IDs, entities, actions, and card claims against the
+current EvidenceBundle before selecting a bundled packet.
+
 ## Code style
 
 Python follows PEP 8 with a 88-column line limit (the common `black` default;

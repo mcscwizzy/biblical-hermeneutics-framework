@@ -11,9 +11,7 @@ import uuid
 from datetime import datetime, timezone
 from typing import Any, Callable, Mapping, Optional
 
-from .adapters import ChatAdapter, OllamaAdapter, OpenAICompatibleAdapter
-from .adapters import OpenRouterAdapter
-from .adapters.openrouter import OPENROUTER_BASE_URL
+from .adapters import ChatAdapter, OllamaAdapter, build_chat_adapter
 from .bible import BibleError, build_interpretation_context
 from .ckl import (
     CULTURAL_CONTEXT_MAX_OUTPUT_TOKENS,
@@ -24,7 +22,7 @@ from .ckl import (
     format_canonical_context_for_prompt,
     load_canonical_library,
 )
-from .config import AgentConfig, ConfigError
+from .config import AgentConfig
 from .coverage import (
     AnswerCoverageAssessment,
     BROAD_KNOWLEDGE_EXPANSION,
@@ -3464,25 +3462,4 @@ class BHFAgent:
         self._status_callback(event)
 
     def _build_adapter(self, config: AgentConfig) -> ChatAdapter:
-        if config.adapter == "openai_compatible":
-            if not config.base_url:
-                raise ConfigError("base_url is required for openai_compatible adapter")
-            return OpenAICompatibleAdapter(
-                base_url=config.base_url,
-                api_key=config.api_key,
-                timeout_seconds=config.timeout_seconds,
-            )
-        if config.adapter == "ollama":
-            if not config.base_url:
-                raise ConfigError("base_url is required for ollama adapter")
-            return OllamaAdapter(
-                base_url=config.base_url,
-                timeout_seconds=config.timeout_seconds,
-            )
-        if config.adapter == "openrouter":
-            return OpenRouterAdapter(
-                base_url=config.base_url or OPENROUTER_BASE_URL,
-                api_key=config.api_key,
-                timeout_seconds=config.timeout_seconds,
-            )
-        raise ConfigError(f"unsupported adapter: {config.adapter}")
+        return build_chat_adapter(config)

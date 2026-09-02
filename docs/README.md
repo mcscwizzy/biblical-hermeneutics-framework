@@ -25,6 +25,8 @@ understand its evidence model, or develop and maintain it.
 
 - [Architecture](architecture.md) — components, trust boundaries, and the full
   path from a question to a validated answer.
+- [Contextual presentation](contextual-presentation.md) — EvidenceBundle,
+  salience ranking, validated discovery cards, Dig In, caching, and fallback.
 - [Philosophy](philosophy.md) — why BHF teaches method rather than conclusions.
 - [Glossary](glossary.md) — project terminology.
 - [Framework module specification](module-spec.md) — authoritative Markdown

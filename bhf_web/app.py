@@ -69,7 +69,9 @@ from .jobs import (
     run_search_fallback_job as _run_search_fallback_job,
 )
 from .offline import build_offline_manifest, build_offline_pack
+from .presentation_runtime import configure_presentation_runtime
 from .runtime import load_cors_origins, load_runtime_config
+from .services.companion_context import CompanionContextService
 
 
 PACKAGE_DIR = Path(__file__).resolve().parent
@@ -124,6 +126,17 @@ def create_app() -> FastAPI:
         )
     web_app = FastAPI(title="BHF Bible Reader")
     web_app.state.runtime_config = runtime_config
+    presentation_runtime = configure_presentation_runtime(
+        study_db_path=STUDY_DB_PATH,
+    )
+    runtime_config["ai"]["presentationDefaultEnabled"] = (
+        presentation_runtime.settings.enabled
+    )
+    runtime_config["ai"]["presentationSupported"] = True
+    runtime_config["ai"]["presentationServerConfigured"] = (
+        presentation_runtime.configured
+    )
+    web_app.state.presentation_runtime = presentation_runtime
     cors_origins = load_cors_origins()
     if cors_origins:
         web_app.add_middleware(
@@ -568,6 +581,11 @@ def create_app() -> FastAPI:
         job_store=job_store,
         context_presenter=present_reader_context,
         commentary_db_path=str(COMMENTARY_DB_PATH),
+        companion_context_service=CompanionContextService(
+            study_db_path=STUDY_DB_PATH,
+            commentary_db_path=COMMENTARY_DB_PATH,
+            presentation_engine=presentation_runtime.engine,
+        ),
     )
     register_debug_routes(web_app)
     register_ask_routes(

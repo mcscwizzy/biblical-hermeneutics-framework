@@ -374,6 +374,7 @@
       "/api/llm/health",
       "/api/bible/search/fallback",
       "/api/debug/ckl-search",
+      "/api/study/presentation",
     ].some((prefix) => path === prefix || path.startsWith(prefix));
   }
 

@@ -183,6 +183,16 @@ class AISetupConfigurationTests(unittest.TestCase):
         )
         self.assertIn("settings.activeProvider = currentProvider(form)", model_settings)
 
+    def test_more_settings_exposes_plain_language_ai_passage_summary_control(self):
+        template = (ROOT / "bhf_web" / "templates" / "index.html").read_text(
+            encoding="utf-8"
+        )
+
+        self.assertIn("data-ai-presentation-toggle", template)
+        self.assertIn("AI passage summaries", template)
+        self.assertIn("Source evidence remains available underneath.", template)
+        self.assertNotIn("BHF_PRESENTATION_ENABLED", template)
+
 
 if __name__ == "__main__":
     unittest.main()
