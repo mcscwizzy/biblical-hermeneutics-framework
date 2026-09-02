@@ -9,7 +9,7 @@ understand its evidence model, or develop and maintain it.
 - [Website and PWA](web-pwa.md) — use the hosted or self-hosted application,
   connect AI, install the PWA, and understand what works offline.
 - [Frontend and backend routing](deployment-routing.md) — configure same-origin
-  deployments or a Vercel frontend with a Railway backend.
+  deployments, same-origin Vercel, or an optional durable remote backend.
 - [Study Vault Sync](study-vault-sync.md) — encrypt, back up, share, and
   configure OneDrive or iCloud synchronization for personal study records.
 - [Docker](docker.md) — install, configure, operate, update, reset, and uninstall

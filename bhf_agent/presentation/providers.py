@@ -3,8 +3,9 @@
 from __future__ import annotations
 
 import json
+import re
 from abc import ABC, abstractmethod
-from typing import Any
+from typing import Any, Mapping
 
 from bhf_agent.adapters import ChatAdapter
 from bhf_agent.models import ChatRequest
@@ -14,6 +15,100 @@ from .ranking import RankedEvidence
 
 
 PRESENTATION_PROMPT_VERSION = "presentation-v4"
+
+
+class PresentationResponseParseError(ValueError):
+    """A provider response was not exactly one valid JSON object."""
+
+    def __init__(self) -> None:
+        super().__init__("presentation response was not one valid JSON object")
+
+
+_OUTER_JSON_FENCE_RE = re.compile(
+    r"\A```(?:json)?[ \t]*\r?\n(?P<body>.*)\r?\n```\Z",
+    re.IGNORECASE | re.DOTALL,
+)
+
+
+def parse_presentation_json_response(text: str) -> Mapping[str, Any]:
+    """Parse one JSON object, tolerating only harmless outer presentation text."""
+
+    source = str(text).strip()
+    if not source:
+        raise PresentationResponseParseError()
+
+    parsed, was_json = _try_parse_json(source)
+    if was_json:
+        return _require_json_object(parsed)
+
+    fence = _OUTER_JSON_FENCE_RE.fullmatch(source)
+    if fence is not None:
+        source = fence.group("body").strip()
+        parsed, was_json = _try_parse_json(source)
+        if was_json:
+            return _require_json_object(parsed)
+
+    candidate = _extract_single_balanced_object(source)
+    try:
+        parsed = json.loads(candidate)
+    except (json.JSONDecodeError, TypeError, ValueError):
+        raise PresentationResponseParseError() from None
+    return _require_json_object(parsed)
+
+
+def _try_parse_json(source: str) -> tuple[Any, bool]:
+    try:
+        return json.loads(source), True
+    except (json.JSONDecodeError, TypeError, ValueError):
+        return None, False
+
+
+def _require_json_object(value: Any) -> Mapping[str, Any]:
+    if not isinstance(value, dict):
+        raise PresentationResponseParseError()
+    return value
+
+
+def _extract_single_balanced_object(source: str) -> str:
+    candidates: list[str] = []
+    start: int | None = None
+    depth = 0
+    in_string = False
+    escaped = False
+
+    for index, character in enumerate(source):
+        if start is None:
+            if character == "{":
+                start = index
+                depth = 1
+                in_string = False
+                escaped = False
+            elif character in "}[]":
+                raise PresentationResponseParseError()
+            continue
+
+        if in_string:
+            if escaped:
+                escaped = False
+            elif character == "\\":
+                escaped = True
+            elif character == '"':
+                in_string = False
+            continue
+
+        if character == '"':
+            in_string = True
+        elif character == "{":
+            depth += 1
+        elif character == "}":
+            depth -= 1
+            if depth == 0:
+                candidates.append(source[start : index + 1])
+                start = None
+
+    if start is not None or len(candidates) != 1:
+        raise PresentationResponseParseError()
+    return candidates[0]
 
 PRESENTATION_SYSTEM_PROMPT = """You curate concise discoveries for the BHF Bible reader.
 BHF has supplied all factual material you may use. Return one JSON object matching the
@@ -107,7 +202,7 @@ class AdapterPresentationProvider(PresentationProvider):
                 response_format=response_format,
             )
         )
-        return json.loads(response.text)
+        return parse_presentation_json_response(response.text)
 
 
 def _provider_packet(

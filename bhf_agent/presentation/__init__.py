@@ -50,7 +50,12 @@ from .models import (
     PresentationCard,
     PresentationPacket,
 )
-from .providers import AdapterPresentationProvider, PresentationProvider
+from .providers import (
+    AdapterPresentationProvider,
+    PresentationProvider,
+    PresentationResponseParseError,
+    parse_presentation_json_response,
+)
 from .ranking import RankedEvidence, rank_evidence
 from .validation import PresentationValidationResult, validate_presentation_packet
 from .walk_the_land import build_walk_the_land_card
@@ -80,6 +85,7 @@ __all__ = [
     "PresentationEvalSuiteResult",
     "PresentationPacket",
     "PresentationProvider",
+    "PresentationResponseParseError",
     "PresentationResult",
     "PresentationValidationResult",
     "RankedEvidence",
@@ -100,6 +106,7 @@ __all__ = [
     "load_presentation_bundle",
     "presentation_cache_key",
     "presentation_cache_key_for_versions",
+    "parse_presentation_json_response",
     "rank_evidence",
     "validate_presentation_packet",
 ]

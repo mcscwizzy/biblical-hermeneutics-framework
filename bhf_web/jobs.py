@@ -242,6 +242,113 @@ class AskJob:
         )
 
 
+PRESENTATION_ERROR_MESSAGES = {
+    "provider_unavailable": "AI presentation provider is unavailable.",
+    "provider_timeout": "AI presentation generation timed out.",
+    "provider_failure": "AI presentation generation failed.",
+    "validation_rejected": "AI presentation output was rejected.",
+    "capacity_unavailable": "AI presentation capacity is unavailable.",
+    "stale_evidence": "Passage evidence changed before presentation generation.",
+    "presentation_unavailable": "AI presentation enhancement is unavailable.",
+}
+
+
+@dataclass
+class PresentationJob:
+    """Small public lifecycle record for optional presentation enhancement."""
+
+    job_id: str
+    reference: str
+    evidence_hash: str
+    status: str = "queued"
+    done: bool = False
+    result: dict[str, Any] | None = None
+    error_category: str | None = None
+    created_at: str = field(default_factory=lambda: timestamp())
+    updated_at: str = field(default_factory=lambda: timestamp())
+    deadline_at: str | None = None
+    _persist: Callable[["PresentationJob"], None] | None = field(
+        default=None,
+        repr=False,
+        compare=False,
+    )
+
+    def start(self) -> None:
+        if self.done:
+            return
+        if self.is_expired():
+            self.expire()
+            return
+        self.status = "running"
+        self.updated_at = timestamp()
+        self._save()
+
+    def succeed(self, result: Mapping[str, Any]) -> None:
+        if self.done:
+            return
+        if self.is_expired():
+            self.expire()
+            return
+        self.result = _sanitized_presentation_result(result)
+        self.status = "succeeded"
+        self.done = True
+        self.updated_at = timestamp()
+        self._save()
+
+    def fail(
+        self,
+        error_category: str,
+        *,
+        result: Mapping[str, Any] | None = None,
+    ) -> None:
+        if self.done:
+            return
+        category = (
+            error_category
+            if error_category in PRESENTATION_ERROR_MESSAGES
+            else "presentation_unavailable"
+        )
+        self.error_category = category
+        self.result = _sanitized_presentation_result(result) if result is not None else None
+        self.status = "failed"
+        self.done = True
+        self.updated_at = timestamp()
+        self._save()
+
+    def expire(self) -> None:
+        if self.done:
+            return
+        self.error_category = "provider_timeout"
+        self.status = "expired"
+        self.done = True
+        self.updated_at = timestamp()
+        self._save()
+
+    def is_expired(self) -> bool:
+        if not self.deadline_at:
+            return False
+        return _elapsed_since(self.deadline_at, datetime.now(timezone.utc)) > 0
+
+    def to_dict(self) -> dict[str, Any]:
+        payload: dict[str, Any] = {
+            "job_id": self.job_id,
+            "status": self.status,
+            "done": self.done,
+            "reference": self.reference,
+            "evidence_hash": self.evidence_hash,
+        }
+        if self.error_category:
+            payload["error_category"] = self.error_category
+            payload["message"] = PRESENTATION_ERROR_MESSAGES[self.error_category]
+        if self.result is not None:
+            payload["result"] = self.result
+        return payload
+
+    def _save(self) -> None:
+        if self._persist is not None:
+            self._persist(self)
+
+
 @dataclass
 class StoredResult:
     """JSON-safe result facade used when a job is loaded in another process."""
@@ -269,7 +376,7 @@ class StoredResult:
 
 
 class AskJobStore:
-    """Process-safe SQLite job store for polling and result retrieval.
+    """Process-safe SQLite store for Ask and presentation job polling.
 
     SQLite is suitable for the public beta's single Railway instance. A
     multi-replica deployment will require an external shared job store.
@@ -311,6 +418,32 @@ class AskJobStore:
         self._save(job)
         return job
 
+    def create_presentation(
+        self,
+        *,
+        reference: str,
+        evidence_hash: str,
+        deadline_seconds: float,
+    ) -> PresentationJob:
+        """Create presentation state without serializing execution inputs."""
+
+        now = datetime.now(timezone.utc)
+        deadline_at = (
+            now + timedelta(seconds=max(1.0, deadline_seconds))
+        ).isoformat().replace("+00:00", "Z")
+        job = PresentationJob(
+            job_id=uuid.uuid4().hex,
+            reference=reference,
+            evidence_hash=evidence_hash,
+            created_at=now.isoformat().replace("+00:00", "Z"),
+            updated_at=now.isoformat().replace("+00:00", "Z"),
+            deadline_at=deadline_at,
+        )
+        job._persist = self._save_presentation
+        self._prune()
+        self._save_presentation(job)
+        return job
+
     def get(self, job_id: str) -> AskJob | None:
         with self._lock:
             with self._connect() as connection:
@@ -322,6 +455,21 @@ class AskJobStore:
             return None
         job = _job_from_payload(json.loads(str(row[0])))
         job._persist = self._save
+        if job.is_expired() and not job.done:
+            job.expire()
+        return job
+
+    def get_presentation(self, job_id: str) -> PresentationJob | None:
+        with self._lock:
+            with self._connect() as connection:
+                row = connection.execute(
+                    "SELECT payload FROM presentation_jobs WHERE job_id = ?",
+                    (job_id,),
+                ).fetchone()
+        if row is None:
+            return None
+        job = _presentation_job_from_payload(json.loads(str(row[0])))
+        job._persist = self._save_presentation
         if job.is_expired() and not job.done:
             job.expire()
         return job
@@ -351,12 +499,25 @@ class AskJobStore:
                     )
                     """
                 )
-                schema = connection.execute(
+                connection.execute(
+                    """
+                    CREATE TABLE IF NOT EXISTS presentation_jobs (
+                        job_id TEXT PRIMARY KEY,
+                        payload TEXT NOT NULL,
+                        updated_at TEXT NOT NULL
+                    )
+                    """
+                )
+                ask_schema = connection.execute(
                     "SELECT name FROM sqlite_master "
                     "WHERE type = 'table' AND name = 'ask_jobs'"
                 ).fetchone()
-                if schema is None:
-                    raise RuntimeError("expected ask_jobs schema was not initialized")
+                presentation_schema = connection.execute(
+                    "SELECT name FROM sqlite_master "
+                    "WHERE type = 'table' AND name = 'presentation_jobs'"
+                ).fetchone()
+                if ask_schema is None or presentation_schema is None:
+                    raise RuntimeError("expected job schemas were not initialized")
         except (OSError, sqlite3.Error, RuntimeError) as exc:
             raise RuntimeError(
                 f"BHF job database could not be opened or initialized: {self.path}"
@@ -382,6 +543,25 @@ class AskJobStore:
                     (job.job_id, payload, timestamp()),
                 )
 
+    def _save_presentation(self, job: PresentationJob) -> None:
+        payload = json.dumps(
+            _presentation_job_payload(job),
+            ensure_ascii=False,
+            default=str,
+        )
+        with self._lock:
+            with self._connect() as connection:
+                connection.execute(
+                    """
+                    INSERT INTO presentation_jobs (job_id, payload, updated_at)
+                    VALUES (?, ?, ?)
+                    ON CONFLICT(job_id) DO UPDATE SET
+                        payload = excluded.payload,
+                        updated_at = excluded.updated_at
+                    """,
+                    (job.job_id, payload, timestamp()),
+                )
+
     def _prune(self) -> None:
         cutoff = (datetime.now(timezone.utc) - timedelta(days=1)).isoformat().replace(
             "+00:00", "Z"
@@ -390,6 +570,10 @@ class AskJobStore:
             with self._connect() as connection:
                 connection.execute(
                     "DELETE FROM ask_jobs WHERE updated_at < ?",
+                    (cutoff,),
+                )
+                connection.execute(
+                    "DELETE FROM presentation_jobs WHERE updated_at < ?",
                     (cutoff,),
                 )
 
@@ -568,6 +752,69 @@ def _job_from_payload(payload: Mapping[str, Any]) -> AskJob:
     )
 
 
+def _presentation_job_payload(job: PresentationJob) -> dict[str, Any]:
+    return {
+        "job_id": job.job_id,
+        "reference": job.reference,
+        "evidence_hash": job.evidence_hash,
+        "status": job.status,
+        "done": job.done,
+        "result": _sanitized_presentation_result(job.result),
+        "error_category": job.error_category,
+        "created_at": job.created_at,
+        "updated_at": job.updated_at,
+        "deadline_at": job.deadline_at,
+    }
+
+
+def _presentation_job_from_payload(payload: Mapping[str, Any]) -> PresentationJob:
+    result = payload.get("result")
+    return PresentationJob(
+        job_id=str(payload.get("job_id") or ""),
+        reference=str(payload.get("reference") or ""),
+        evidence_hash=str(payload.get("evidence_hash") or ""),
+        status=str(payload.get("status") or "queued"),
+        done=bool(payload.get("done")),
+        result=(
+            _sanitized_presentation_result(result)
+            if isinstance(result, Mapping)
+            else None
+        ),
+        error_category=(
+            str(payload["error_category"])
+            if payload.get("error_category") in PRESENTATION_ERROR_MESSAGES
+            else None
+        ),
+        created_at=str(payload.get("created_at") or timestamp()),
+        updated_at=str(payload.get("updated_at") or timestamp()),
+        deadline_at=(
+            str(payload["deadline_at"])
+            if payload.get("deadline_at") is not None
+            else None
+        ),
+    )
+
+
+def _sanitized_presentation_result(
+    result: Mapping[str, Any] | None,
+) -> dict[str, Any] | None:
+    """Keep only the already-public Companion presentation response fields."""
+
+    if result is None:
+        return None
+    allowed = (
+        "reference",
+        "evidence_bundle",
+        "presentation_packet",
+        "presentation_evidence",
+    )
+    return {
+        key: _json_safe(result[key])
+        for key in allowed
+        if key in result
+    }
+
+
 def _int_value(value: Any, default: int) -> int:
     try:
         return int(value)
@@ -667,6 +914,44 @@ def run_ask_job(
         return
 
     job.complete(result)
+
+
+def run_presentation_job(
+    job: PresentationJob,
+    companion_context_service: Any,
+    request_values: Mapping[str, Any],
+    provider: Any,
+    generation_profile: str | None,
+) -> None:
+    """Run existing presentation generation with memory-only provider state."""
+
+    from .services.companion_context import StalePresentationEvidenceError
+
+    job.start()
+    if job.done:
+        return
+    try:
+        result = companion_context_service.enhance_presentation(
+            **dict(request_values),
+            provider=provider,
+            generation_profile=generation_profile,
+        )
+    except StalePresentationEvidenceError:
+        job.fail("stale_evidence")
+        return
+    except TimeoutError:
+        job.fail("provider_timeout")
+        return
+    except Exception:  # noqa: BLE001 - provider internals are deliberately not retained
+        job.fail("provider_failure")
+        return
+
+    packet = result.get("presentation_packet") if isinstance(result, Mapping) else None
+    mode = str(packet.get("presentation_mode") or "") if isinstance(packet, Mapping) else ""
+    if mode in {"generated", "cached", "bundled"}:
+        job.succeed(result)
+        return
+    job.fail("presentation_unavailable", result=result)
 
 
 def _fake_result(question: str | None, reader_reference: str | None) -> Any:

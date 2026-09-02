@@ -169,6 +169,7 @@ def test_enabled_generation_uses_bounded_shared_adapter_and_reuses_cache(tmp_pat
     assert activity["provider"] == {
         "attempts": 1,
         "failures": 0,
+        "parse_failures": 0,
         "rejections": 0,
         "saturated": 0,
     }
@@ -542,6 +543,7 @@ def test_request_scoped_openrouter_uses_shared_provider_gate_without_server_prov
     assert activity["provider"] == {
         "attempts": 2,
         "failures": 0,
+        "parse_failures": 0,
         "rejections": 0,
         "saturated": 3,
     }

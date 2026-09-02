@@ -24,6 +24,9 @@ classifiers = [
 ckl-version = "framework.canonical_library.__main__:main"
 ckl = "framework.canonical_library.__main__:main"
 
+[tool.vercel]
+entrypoint = "bhf_web.app:app"
+
 [tool.setuptools]
 include-package-data = true
 

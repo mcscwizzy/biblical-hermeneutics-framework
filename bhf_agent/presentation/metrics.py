@@ -67,6 +67,7 @@ class PresentationMetrics:
                 "provider": {
                     "attempts": self._events["provider_attempts"],
                     "failures": self._events["provider_failures"],
+                    "parse_failures": self._events["provider_parse_failures"],
                     "rejections": self._events["provider_rejections"],
                     "saturated": self._events["provider_saturation"],
                 },

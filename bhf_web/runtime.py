@@ -38,9 +38,18 @@ def load_runtime_config() -> dict[str, Any]:
         backend_mode,
         api_base_url,
     )
-    async_jobs = not (
+    is_vercel_same_origin = (
         backend_mode == "same-origin" and bool(os.environ.get("VERCEL"))
     )
+    async_jobs = not is_vercel_same_origin
+    if backend_config_error:
+        presentation_transport = "unavailable"
+    elif backend_mode == "remote":
+        presentation_transport = "job"
+    elif is_vercel_same_origin:
+        presentation_transport = "synchronous"
+    else:
+        presentation_transport = "job"
     provider_labels = _load_provider_labels()
 
     return {
@@ -55,6 +64,12 @@ def load_runtime_config() -> dict[str, Any]:
         # route there, while durable and self-hosted backends keep progress
         # polling through /ask/jobs.
         "asyncJobs": async_jobs,
+        # Presentation transport is explicit so the browser never has to infer
+        # deployment topology. Persistent backends use durable local jobs;
+        # same-origin Vercel keeps generation attached to one bounded request.
+        "presentationTransport": presentation_transport,
+        # Backwards compatibility for clients that only know the old job flag.
+        "presentationJobs": presentation_transport == "job",
         "providerLabels": provider_labels,
         "breakpoints": dict(DEFAULT_BREAKPOINTS),
         "themeColor": "#245b82",

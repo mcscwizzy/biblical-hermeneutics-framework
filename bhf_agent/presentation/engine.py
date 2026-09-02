@@ -17,7 +17,11 @@ from .models import (
     GeneratedFrom,
     PresentationPacket,
 )
-from .providers import PRESENTATION_PROMPT_VERSION, PresentationProvider
+from .providers import (
+    PRESENTATION_PROMPT_VERSION,
+    PresentationProvider,
+    PresentationResponseParseError,
+)
 from .provider_gate import ProviderRequestGate
 from .ranking import RankedEvidence, rank_evidence
 from .validation import validate_presentation_packet
@@ -30,6 +34,26 @@ def _failure_diagnostic(stage: str, exc: BaseException) -> str:
     """Describe a failure without retaining arbitrary exception payload text."""
 
     return f"{stage}: {type(exc).__name__}"
+
+
+def _diagnostic_log_summary(
+    diagnostics: list[str],
+    *,
+    maximum_items: int = 4,
+    maximum_item_characters: int = 240,
+) -> str:
+    """Compact BHF-authored diagnostics and neutralize control-character noise."""
+
+    visible = []
+    for diagnostic in diagnostics[:maximum_items]:
+        compact = " ".join(str(diagnostic).split())
+        if len(compact) > maximum_item_characters:
+            compact = f"{compact[:maximum_item_characters - 3]}..."
+        visible.append(compact)
+    omitted = len(diagnostics) - len(visible)
+    if omitted:
+        visible.append(f"... (+{omitted} more)")
+    return "; ".join(visible)
 
 
 def _provider_generation_profile(provider: PresentationProvider | None) -> str | None:
@@ -236,7 +260,15 @@ class PresentationEngine:
                             tuple(diagnostics),
                         )
                     self.metrics.record_event("provider_rejections")
-                    diagnostics.extend(validation.errors)
+                    diagnostics.extend(
+                        f"validation rejection: {error}"
+                        for error in validation.errors
+                    )
+                except PresentationResponseParseError as exc:
+                    self.metrics.record_event("provider_parse_failures")
+                    diagnostics.append(
+                        _failure_diagnostic("provider response parse failure", exc)
+                    )
                 except Exception as exc:  # noqa: BLE001
                     self.metrics.record_event("provider_failures")
                     diagnostics.append(_failure_diagnostic("provider failure", exc))
@@ -244,8 +276,9 @@ class PresentationEngine:
                     if self._provider_requests is not None:
                         self._provider_requests.release()
                 LOGGER.warning(
-                    "presentation generation rejected; falling back (%d diagnostic(s))",
+                    "presentation generation rejected; falling back (%d): %s",
                     len(diagnostics),
+                    _diagnostic_log_summary(diagnostics),
                 )
 
         return self._deterministic(bundle, ranked, diagnostics)

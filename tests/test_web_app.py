@@ -355,6 +355,8 @@ class RuntimeConfigTests(unittest.TestCase):
         self.assertEqual(runtime["apiBaseUrl"], "")
         self.assertEqual(runtime["backendConfigError"], "")
         self.assertTrue(runtime["asyncJobs"])
+        self.assertEqual(runtime["presentationTransport"], "job")
+        self.assertTrue(runtime["presentationJobs"])
 
     def test_same_origin_pwa_does_not_require_an_api_url(self):
         env = {"BHF_RUNTIME_MODE": "pwa", "BHF_BACKEND_MODE": "same-origin"}
@@ -365,6 +367,7 @@ class RuntimeConfigTests(unittest.TestCase):
         self.assertEqual(runtime["backendMode"], "same-origin")
         self.assertEqual(runtime["apiBaseUrl"], "")
         self.assertEqual(runtime["backendConfigError"], "")
+        self.assertEqual(runtime["presentationTransport"], "job")
 
     def test_vercel_same_origin_uses_synchronous_ask(self):
         env = {"VERCEL": "1", "BHF_BACKEND_MODE": "same-origin"}
@@ -375,6 +378,22 @@ class RuntimeConfigTests(unittest.TestCase):
         self.assertEqual(runtime["apiBaseUrl"], "")
         self.assertEqual(runtime["backendConfigError"], "")
         self.assertFalse(runtime["asyncJobs"])
+        self.assertEqual(runtime["presentationTransport"], "synchronous")
+        self.assertFalse(runtime["presentationJobs"])
+
+    def test_vercel_config_keeps_function_ceiling_above_presentation_deadline(self):
+        config = json.loads(Path("vercel.json").read_text(encoding="utf-8"))
+
+        self.assertTrue(config["fluid"])
+        self.assertEqual(config["framework"], "fastapi")
+        self.assertGreater(
+            config["functions"]["bhf_web/app.py"]["maxDuration"],
+            30,
+        )
+        self.assertIn(
+            'entrypoint = "bhf_web.app:app"',
+            Path("pyproject.toml").read_text(encoding="utf-8"),
+        )
 
     def test_vercel_remote_backend_is_allowed(self):
         env = {
@@ -388,6 +407,8 @@ class RuntimeConfigTests(unittest.TestCase):
         self.assertEqual(runtime["backendMode"], "remote")
         self.assertEqual(runtime["backendConfigError"], "")
         self.assertTrue(runtime["asyncJobs"])
+        self.assertEqual(runtime["presentationTransport"], "job")
+        self.assertTrue(runtime["presentationJobs"])
 
     def test_remote_pwa_exposes_the_configured_backend(self):
         env = {
@@ -413,6 +434,8 @@ class RuntimeConfigTests(unittest.TestCase):
             runtime["backendConfigError"],
             "BHF_API_BASE_URL is required when BHF_BACKEND_MODE=remote.",
         )
+        self.assertEqual(runtime["presentationTransport"], "unavailable")
+        self.assertFalse(runtime["presentationJobs"])
 
     def test_runtime_config_defaults_and_overrides(self):
         env = {
