@@ -26,12 +26,8 @@ WORKDIR /app
 RUN groupadd --gid 1000 bhf \
     && useradd --uid 1000 --gid bhf --home-dir /app --shell /usr/sbin/nologin bhf
 
-COPY tools/requirements.txt /tmp/requirements.txt
-RUN pip install --no-cache-dir -r /tmp/requirements.txt
-
-# Copy the repository content after dependency install so image builds pick up
-# new runtime assets, profiles, docs, and frontend source files together.
 COPY . .
+RUN pip install --no-cache-dir .
 
 RUN chmod +x /app/scripts/docker-entrypoint.sh \
     && chmod +x /app/scripts/build-tyndale-database.sh \

@@ -19,6 +19,26 @@ classifiers = [
   "Programming Language :: Python :: 3 :: Only",
   "Topic :: Religion",
 ]
+dependencies = [
+  "fastapi>=0.115,<0.116",
+  "jinja2>=3.1,<4",
+  "python-multipart>=0.0.9",
+  "uvicorn>=0.30,<0.35",
+]
+
+[project.optional-dependencies]
+dev = [
+  "httpx>=0.27,<1",
+  "pytest>=8.0",
+  "pytest-xdist>=3.5",
+  "PyYAML>=6.0",
+  "tomli>=2.0; python_version < '3.11'",
+]
+gui = [
+  "requests>=2.31",
+  "selenium>=4.20,<5",
+  "webdriver-manager>=4.0",
+]
 
 [project.scripts]
 ckl-version = "framework.canonical_library.__main__:main"
@@ -41,3 +61,4 @@ namespaces = true
 "framework.canonical_library" = ["manifest.json", "objects/**/*.json", "schema/*.json", "benchmarks/*.json", "data/*.sqlite"]
 "framework.lexical" = ["schema/*.json", "database/*.sqlite"]
 "bhf_agent" = ["data/*.json"]
+"bhf_web" = ["templates/*.html", "static/**/*"]

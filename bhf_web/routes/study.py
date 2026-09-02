@@ -8,8 +8,8 @@ from pathlib import Path
 from typing import Any, Callable, Mapping
 
 from fastapi import FastAPI, Request
+from fastapi.concurrency import run_in_threadpool
 from fastapi.responses import JSONResponse
-from starlette.concurrency import run_in_threadpool
 
 from bhf_agent.bible import normalize_book_name
 from bhf_agent.study_actions import StudyActionRouter, compact_fact_packet

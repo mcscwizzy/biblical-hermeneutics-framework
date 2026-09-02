@@ -67,8 +67,7 @@ cd biblical-hermeneutics-framework
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install -r tools/requirements.txt
-python -m pip install -e .
+python -m pip install -e ".[dev,gui]"
 python -m framework.canonical_library build-db --output .bhf/ckl.sqlite
 uvicorn bhf_web.app:app --reload --host 127.0.0.1 --port 8000
 ```

@@ -53,6 +53,8 @@ jobs:
               sdist_names = set(archive.getnames())
 
           required_wheel_files = {
+              "bhf_web/static/sw.js",
+              "bhf_web/templates/index.html",
               "framework/canonical_library/manifest.json",
           }
           required_wheel_prefixes = {
@@ -63,6 +65,8 @@ jobs:
               "VERSION",
               "pyproject.toml",
               "MANIFEST.in",
+              "bhf_web/static/sw.js",
+              "bhf_web/templates/index.html",
               "framework/canonical_library/manifest.json",
           }
           required_sdist_prefixes = {
@@ -94,6 +98,7 @@ jobs:
           /tmp/bhf-wheel-venv/bin/python -m pip install --upgrade pip
           /tmp/bhf-wheel-venv/bin/python -m pip install "$GITHUB_WORKSPACE"/dist/*.whl
           /tmp/bhf-wheel-venv/bin/ckl-version --json
+          VERCEL=1 /tmp/bhf-wheel-venv/bin/python -c "from bhf_web.app import app; print(app)"
           /tmp/bhf-wheel-venv/bin/python - <<'PY'
           from framework.canonical_library import CanonicalLibrary
 

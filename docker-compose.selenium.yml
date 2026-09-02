@@ -26,7 +26,7 @@ services:
     image: python:3.12-slim
     working_dir: /workspace
     command: >
-      sh -lc "pip install --no-cache-dir -r /workspace/tools/requirements.txt -r /workspace/requirements-gui.txt
+      sh -lc "pip install --no-cache-dir -r /workspace/requirements-gui.txt
       && pytest /workspace/tests/gui -m 'not slow'"
     environment:
       BHF_GUI_BASE_URL: http://bhf-web:8080

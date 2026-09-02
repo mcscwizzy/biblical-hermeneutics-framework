@@ -23,8 +23,7 @@ cd biblical-hermeneutics-framework
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install -r tools/requirements.txt
-python -m pip install -e .
+python -m pip install -e ".[dev,gui]"
 ```
 
 On Windows PowerShell, activate with:

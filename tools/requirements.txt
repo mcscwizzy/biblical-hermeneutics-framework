@@ -1,7 +1,3 @@
-# BHF tooling dependencies (MIT-licensed code). Python 3.9+.
-PyYAML>=6.0
-fastapi>=0.111,<0.116
-uvicorn>=0.30,<0.35
-Jinja2>=3.1
-python-multipart>=0.0.9
-selenium>=4.20,<5
+# Compatibility entry point for local tooling and CI.
+# Dependency versions are authoritative in pyproject.toml.
+-e .[dev,gui]

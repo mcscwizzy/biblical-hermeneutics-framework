@@ -8,3 +8,5 @@ include framework/canonical_library/manifest.json
 recursive-include framework/canonical_library/schema *.json
 recursive-include framework/lexical/schema *.json
 recursive-include bhf_agent/data *.json
+recursive-include bhf_web/templates *.html
+recursive-include bhf_web/static *
