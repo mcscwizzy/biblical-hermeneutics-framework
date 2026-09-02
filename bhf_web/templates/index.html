@@ -29,14 +29,14 @@
     window.BHFTestMode = {{ test_mode|tojson }};
     window.BHFRuntimeConfig = {{ runtime_config|tojson }};
   </script>
-  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260901a">
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}?v=20260901b">
   <!-- Legacy cache-key references retained for clients that inspect the shell during upgrades. -->
   <!-- href="/static/style.css?v=20260724c" src="/static/htmx-lite.js?v=20260729b" -->
   {# static_asset('/style.css') }}?v=20260724c #}
   {# static_asset('/htmx-lite.js') }}?v=20260729b #}
   <script src="{{ static_asset('/offline/db.js') }}?v=20260809a" defer></script>
   <script src="{{ static_asset('/study-vault.js') }}?v=20260809a" defer></script>
-  <script src="{{ static_asset('/model-settings.js') }}?v=20260901a" defer></script>
+  <script src="{{ static_asset('/model-settings.js') }}?v=20260901b" defer></script>
   <script src="{{ static_asset('/api/backend-routing.js') }}?v=20260822a" defer></script>
   <script src="{{ static_asset('/api/http.js') }}?v=20260821a" defer></script>
   <script src="{{ static_asset('/api/job-flow.js') }}?v=20260822b" defer></script>
@@ -46,15 +46,15 @@
   <script src="{{ static_asset('/reader-selection.js') }}?v=20260811a" defer></script>
   <script src="{{ static_asset('/htmx-lite.js') }}?v=20260822b" defer></script>
   <script src="{{ static_asset('/study-recommendations.js') }}?v=20260811a" defer></script>
-  <script src="{{ static_asset('/companion-context.js') }}?v=20260901a" defer></script>
-  <script src="{{ static_asset('/companion-context-controller.js') }}?v=20260901a" defer></script>
+  <script src="{{ static_asset('/companion-context.js') }}?v=20260901b" defer></script>
+  <script src="{{ static_asset('/companion-context-controller.js') }}?v=20260901b" defer></script>
   <script src="{{ static_asset('/saved-passage-state.js') }}?v=20260811d" defer></script>
   <script src="{{ static_asset('/companion-history.js') }}?v=20260811c" defer></script>
   <script src="{{ static_asset('/companion-viewport.js') }}?v=20260811c" defer></script>
   <script src="{{ static_asset('/companion-sheet.js') }}?v=20260811c" defer></script>
   <script src="{{ static_asset('/resource-router.js') }}?v=20260820b" defer></script>
-  <script src="{{ static_asset('/companion-discoveries.js') }}?v=20260901a" defer></script>
-  <script src="{{ static_asset('/study-companion.js') }}?v=20260901a" defer></script>
+  <script src="{{ static_asset('/companion-discoveries.js') }}?v=20260901b" defer></script>
+  <script src="{{ static_asset('/study-companion.js') }}?v=20260901b" defer></script>
   <script src="{{ static_asset('/commentary.js') }}?v=20260809b" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260806a" defer></script>
   {% if not test_mode %}
@@ -300,6 +300,8 @@
               </div>
               <div class="companion-discovery-list" data-companion-discoveries></div>
             </section>
+
+            <p class="companion-presentation-status" data-companion-presentation-status data-enhancement-state="idle" role="status" aria-live="polite" aria-atomic="true" hidden></p>
 
             <section class="companion-section companion-discoveries companion-significance" data-companion-significance-section aria-labelledby="companion-significance-title" hidden>
               <div class="companion-section-heading">

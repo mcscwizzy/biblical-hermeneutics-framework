@@ -14,6 +14,7 @@ class FakeElement {
     this.hidden = false;
     this.textContent = "";
     this.type = "";
+    this.attributes = {};
     this.classList = {
       add: (...names) => {
         const values = new Set(this.className.split(/\s+/).filter(Boolean));
@@ -30,6 +31,10 @@ class FakeElement {
   replaceChildren(...children) {
     this.children = children;
   }
+
+  setAttribute(name, value) {
+    this.attributes[name] = String(value);
+  }
 }
 
 
@@ -42,6 +47,7 @@ function fixturePanel() {
     selectors[`[data-companion-${name}-section]`] = new FakeElement("section", document);
     selectors[`[data-companion-${name}]`] = new FakeElement("div", document);
   }
+  selectors["[data-companion-presentation-status]"] = new FakeElement("p", document);
   return {
     document,
     selectors,
@@ -72,6 +78,7 @@ test("discovery cards render bounded sections with grounded Dig In evidence", ()
   const {panel, selectors} = fixturePanel();
   const context = {
     presentation_packet: {
+      presentation_mode: "generated",
       cards: [
         card("place", "walk_the_land", {
           type: "open_map",
@@ -117,6 +124,38 @@ test("discovery cards render bounded sections with grounded Dig In evidence", ()
   assert.equal(actions.children.length, 2);
   assert.equal(actions.children[1].dataset.presentationAction, "open_map");
   assert.equal(actions.children[1].dataset.presentationTarget, "gerasene-region");
+});
+
+
+test("presentation lifecycle status is polite and never replaces deterministic cards", () => {
+  const {panel, selectors} = fixturePanel();
+  discoveries.render(panel, {
+    presentation_packet: {cards: [card("local", "did_you_know")]},
+  });
+  const list = selectors["[data-companion-discoveries]"];
+  const status = selectors["[data-companion-presentation-status]"];
+
+  discoveries.renderStatus(panel, "generating");
+  assert.equal(list.children[0].children[0].textContent, "Headline local");
+  assert.equal(status.textContent, "Adding AI context…");
+  assert.equal(status.hidden, false);
+  assert.equal(status.attributes.role, "status");
+  assert.equal(status.attributes["aria-live"], "polite");
+
+  discoveries.renderStatus(panel, "failed");
+  assert.equal(status.textContent, "AI summary unavailable — showing BHF evidence.");
+  assert.equal(list.children.length, 1);
+
+  discoveries.renderStatus(panel, "unavailable", "provider_unavailable");
+  assert.equal(status.textContent, "Connect an AI provider to add AI passage summaries.");
+
+  discoveries.renderStatus(panel, "generated");
+  assert.equal(status.textContent, "AI-assisted summary");
+
+  discoveries.renderStatus(panel, "cancelled");
+  assert.equal(status.textContent, "");
+  assert.equal(status.hidden, true);
+  assert.equal(list.children.length, 1);
 });
 
 

@@ -3,6 +3,17 @@
   gap: 12px;
 }
 
+.companion-presentation-status {
+  margin: 10px 0 0;
+  color: var(--muted, #64707c);
+  font-size: .78rem;
+  line-height: 1.4;
+}
+
+.companion-presentation-status[data-enhancement-state="generated"] {
+  color: var(--accent-text, #18496d);
+}
+
 .companion-discovery-card {
   display: grid;
   gap: 8px;

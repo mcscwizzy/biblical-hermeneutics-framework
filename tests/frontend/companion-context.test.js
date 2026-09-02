@@ -93,3 +93,26 @@ test("disabled presentation preference makes no network request", async () => {
   assert.equal(result, null);
   assert.equal(requests, 0);
 });
+
+
+test("enhancement availability preserves provider-unavailable reason without requesting", async () => {
+  let requests = 0;
+  const api = loadContextApi({
+    presentationOptions: {
+      enabled: false,
+      reason: "provider_unavailable",
+      headers: {},
+      profile: null,
+    },
+    fetchImpl: async () => { requests += 1; },
+  });
+  const context = {
+    presentation_enhancement: {supported: true, server_configured: false},
+  };
+
+  const availability = await api.getEnhancementAvailability(context);
+
+  assert.equal(availability.available, false);
+  assert.equal(availability.reason, "provider_unavailable");
+  assert.equal(requests, 0);
+});

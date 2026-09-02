@@ -30,7 +30,14 @@
       enhancementSequence += 1;
       const requestSequence = ++sequence;
       localContext = null;
-      record = {key: keyFor(selection), status: "loading", context: null, error: ""};
+      record = {
+        key: keyFor(selection),
+        status: "loading",
+        context: null,
+        error: "",
+        enhancementStatus: "idle",
+        enhancementReason: "",
+      };
       options.onLoading?.(record);
       timer = window.setTimeout(() => load(requestSequence), Number(options.delay ?? 180));
     }
@@ -47,7 +54,7 @@
         });
         if (requestSequence !== sequence || requestController.signal.aborted || requestedKey !== keyFor(selection)) return;
         localContext = context;
-        record = {key: requestedKey, status: "ready", context, error: ""};
+        record = readyRecord(requestedKey, context);
         options.onReady?.(context, requestedSelection, record);
         await enhance(context, requestedSelection, requestedKey, requestSequence);
       } catch (error) {
@@ -57,6 +64,8 @@
           status: "error",
           context: null,
           error: error?.message || "Study resources could not be checked.",
+          enhancementStatus: "idle",
+          enhancementReason: "",
         };
         options.onError?.(record.error, requestedSelection, record);
       }
@@ -67,15 +76,26 @@
       const eligibilitySequence = enhancementSequence;
       if (
         (enhancement?.supported !== true && enhancement?.available !== true)
-        || context?.presentation_packet?.presentation_mode === "generated"
         || typeof window.BHFCompanionContext?.enhance !== "function"
       ) return;
+      let availability = {available: true, reason: ""};
       try {
-        if (
-          typeof window.BHFCompanionContext?.canEnhance === "function"
-          && await window.BHFCompanionContext.canEnhance(context) !== true
-        ) return;
+        if (typeof window.BHFCompanionContext?.getEnhancementAvailability === "function") {
+          availability = await window.BHFCompanionContext.getEnhancementAvailability(context);
+        } else if (typeof window.BHFCompanionContext?.canEnhance === "function") {
+          availability = {
+            available: await window.BHFCompanionContext.canEnhance(context) === true,
+            reason: "unavailable",
+          };
+        }
       } catch (error) {
+        if (
+          error?.name === "AbortError"
+          || requestSequence !== sequence
+          || eligibilitySequence !== enhancementSequence
+          || requestedKey !== keyFor(selection)
+        ) return;
+        record = {...record, enhancementStatus: "failed", enhancementReason: ""};
         options.onEnhancementError?.(error, requestedSelection, record);
         return;
       }
@@ -84,16 +104,33 @@
         || eligibilitySequence !== enhancementSequence
         || requestedKey !== keyFor(selection)
       ) return;
+      if (availability?.reason === "disabled") return;
+      if (isEnhancedPresentation(context)) {
+        record = {...record, enhancementStatus: "generated", enhancementReason: ""};
+        options.onEnhanced?.(context, requestedSelection, record);
+        return;
+      }
+      if (availability?.available !== true) {
+        const reason = String(availability?.reason || "unavailable");
+        record = {...record, enhancementStatus: "unavailable", enhancementReason: reason};
+        options.onEnhancementUnavailable?.(reason, requestedSelection, record);
+        return;
+      }
       enhancementController?.abort();
       const requestController = new AbortController();
       enhancementController = requestController;
       const currentEnhancementSequence = ++enhancementSequence;
       const requestedHash = String(enhancement.evidence_hash || "");
+      record = {...record, enhancementStatus: "generating", enhancementReason: ""};
+      options.onEnhancementLoading?.(context, requestedSelection, record);
       try {
         const result = await window.BHFCompanionContext.enhance(
           requestedSelection,
           context,
-          {signal: requestController.signal},
+          {
+            signal: requestController.signal,
+            presentationOptions: availability?.requestOptions,
+          },
         );
         const responseHash = String(result?.evidence_bundle?.evidence_hash || "");
         if (
@@ -104,12 +141,33 @@
           || !requestedHash
           || responseHash !== requestedHash
         ) return;
+        if (!isEnhancedPresentation(result)) {
+          record = {...record, enhancementStatus: "failed", enhancementReason: "fallback"};
+          options.onEnhancementError?.(
+            new Error("Presentation enhancement returned local fallback content."),
+            requestedSelection,
+            record,
+          );
+          return;
+        }
         const enhancedContext = {...context, ...result, presentation_enhancement: enhancement};
-        record = {key: requestedKey, status: "ready", context: enhancedContext, error: ""};
+        record = {
+          ...readyRecord(requestedKey, enhancedContext),
+          enhancementStatus: "generated",
+        };
         options.onEnhanced?.(enhancedContext, requestedSelection, record);
       } catch (error) {
-        if (error?.name === "AbortError" || requestSequence !== sequence) return;
+        if (
+          error?.name === "AbortError"
+          || requestSequence !== sequence
+          || currentEnhancementSequence !== enhancementSequence
+          || requestController.signal.aborted
+          || requestedKey !== keyFor(selection)
+        ) return;
+        record = {...record, enhancementStatus: "failed", enhancementReason: ""};
         options.onEnhancementError?.(error, requestedSelection, record);
+      } finally {
+        if (enhancementController === requestController) enhancementController = null;
       }
     }
 
@@ -125,9 +183,10 @@
       enhancementController?.abort();
       enhancementController = null;
       if (matchesSelection() && localContext) {
-        record = {key: keyFor(selection), status: "ready", context: localContext, error: ""};
+        record = readyRecord(keyFor(selection), localContext);
         options.onPresentationReset?.(localContext, selection, record);
       }
+      options.onEnhancementCancelled?.(selection, record);
     }
 
     function invalidate(key, behavior = {}) {
@@ -147,7 +206,14 @@
       sequence += 1;
       enhancementSequence += 1;
       localContext = null;
-      record = {key: key || "", status: key ? "loading" : "idle", context: null, error: ""};
+      record = {
+        key: key || "",
+        status: key ? "loading" : "idle",
+        context: null,
+        error: "",
+        enhancementStatus: "idle",
+        enhancementReason: "",
+      };
     }
 
     function matchesSelection() {
@@ -176,7 +242,41 @@
   }
 
   function emptyRecord() {
-    return {key: "", status: "idle", context: null, error: ""};
+    return {
+      key: "",
+      status: "idle",
+      context: null,
+      error: "",
+      enhancementStatus: "idle",
+      enhancementReason: "",
+    };
+  }
+
+  function readyRecord(key, context) {
+    return {
+      key,
+      status: "ready",
+      context,
+      error: "",
+      enhancementStatus: "idle",
+      enhancementReason: "",
+    };
+  }
+
+  function isEnhancedPresentation(context) {
+    const packet = context?.presentation_packet;
+    const mode = String(packet?.presentation_mode || "");
+    if (mode === "generated") return true;
+    if (mode !== "cached" && mode !== "bundled") return false;
+    const generated = packet?.generated_from;
+    const model = String(generated?.model || "").trim().toLowerCase();
+    const promptVersion = String(generated?.prompt_version || "").trim().toLowerCase();
+    return Boolean(
+      model
+      && promptVersion
+      && model !== "deterministic"
+      && !promptVersion.startsWith("deterministic"),
+    );
   }
 
   window.BHFCompanionContextController = Object.freeze({create});

@@ -347,22 +347,27 @@
 
   async function getPresentationRequestOptions(serverConfigured = false) {
     await readyPromise;
-    if (settings?.aiPresentationEnabled !== true || navigator.onLine === false) {
-      return {enabled: false, headers: {}, profile: null};
+    if (settings?.aiPresentationEnabled !== true) {
+      return {enabled: false, reason: "disabled", headers: {}, profile: null};
+    }
+    if (navigator.onLine === false) {
+      return {enabled: false, reason: "offline", headers: {}, profile: null};
     }
     const profile = selectedPresentationProfile();
     if (!profile) {
       return {
         enabled: serverConfigured === true,
+        reason: serverConfigured === true ? "" : "provider_unavailable",
         headers: {},
         profile: null,
       };
     }
     if (profile.adapter === OPENROUTER && !openRouterToken) {
-      return {enabled: false, headers: {}, profile: null};
+      return {enabled: false, reason: "provider_unavailable", headers: {}, profile: null};
     }
     return {
       enabled: true,
+      reason: "",
       headers: profile.adapter === OPENROUTER
         ? {"X-BHF-OpenRouter-Key": openRouterToken}
         : {},

@@ -88,3 +88,23 @@ test("legacy deployment setting is only a default for users without a saved pref
   await reloaded.api.ready();
   assert.equal(await reloaded.api.isAiPresentationEnabled(), false);
 });
+
+
+test("presentation request options distinguish disabled preference from missing provider", async () => {
+  const records = new Map();
+  const settings = loadModelSettings(records);
+  await settings.api.ready();
+
+  const disabled = await settings.api.getPresentationRequestOptions(false);
+  assert.equal(disabled.enabled, false);
+  assert.equal(disabled.reason, "disabled");
+
+  await settings.api.setAiPresentationEnabled(true);
+  const unavailable = await settings.api.getPresentationRequestOptions(false);
+  assert.equal(unavailable.enabled, false);
+  assert.equal(unavailable.reason, "provider_unavailable");
+
+  const serverConfigured = await settings.api.getPresentationRequestOptions(true);
+  assert.equal(serverConfigured.enabled, true);
+  assert.equal(serverConfigured.reason, "");
+});

@@ -74,11 +74,12 @@
     if (!selection?.book || !selection?.chapter || !evidenceHash) {
       throw new Error("Passage evidence is required for presentation enhancement.");
     }
-    const providerOptions = window.BHFModelSettings?.getPresentationRequestOptions
-      ? await window.BHFModelSettings.getPresentationRequestOptions(
-        context?.presentation_enhancement?.server_configured === true,
-      )
-      : {enabled: false, headers: {}, profile: null};
+    const providerOptions = options.presentationOptions
+      || (window.BHFModelSettings?.getPresentationRequestOptions
+        ? await window.BHFModelSettings.getPresentationRequestOptions(
+          context?.presentation_enhancement?.server_configured === true,
+        )
+        : {enabled: false, reason: "provider_unavailable", headers: {}, profile: null});
     if (providerOptions.enabled !== true) return null;
     const requestOptions = {
       method: "POST",
@@ -111,15 +112,26 @@
     return data && typeof data === "object" ? data : {};
   }
 
-  async function canEnhance(context) {
+  async function getEnhancementAvailability(context) {
     const enhancement = context?.presentation_enhancement;
-    if (enhancement?.supported !== true && enhancement?.available !== true) return false;
-    if (navigator.onLine === false) return false;
-    if (!window.BHFModelSettings?.getPresentationRequestOptions) return false;
+    if (enhancement?.supported !== true && enhancement?.available !== true) {
+      return {available: false, reason: "unsupported", requestOptions: null};
+    }
+    if (!window.BHFModelSettings?.getPresentationRequestOptions) {
+      return {available: false, reason: "provider_unavailable", requestOptions: null};
+    }
     const options = await window.BHFModelSettings.getPresentationRequestOptions(
       enhancement?.server_configured === true,
     );
-    return options.enabled === true;
+    return {
+      available: options.enabled === true,
+      reason: options.enabled === true ? "" : String(options.reason || "unavailable"),
+      requestOptions: options,
+    };
+  }
+
+  async function canEnhance(context) {
+    return (await getEnhancementAvailability(context)).available;
   }
 
   async function requestWithFetch(url, options) {
@@ -207,6 +219,7 @@
   window.BHFCompanionContext = Object.freeze({
     canEnhance,
     enhance,
+    getEnhancementAvailability,
     load,
     urlFor,
     requestKey,

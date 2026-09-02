@@ -81,12 +81,14 @@
     contextController = window.BHFCompanionContextController?.create?.({
       onLoading: () => {
         if (currentMode !== "passage") return;
+        renderPresentationStatus("idle");
         renderLoadingState();
         renderDiscoveries({});
         renderEntities([]);
       },
       onReady: (context) => {
         if (currentMode !== "passage") return;
+        renderPresentationStatus("idle");
         renderDiscoveries(context);
         renderRecommendations(context);
         renderEntities([
@@ -101,13 +103,32 @@
       onEnhanced: (context) => {
         if (currentMode !== "passage") return;
         renderDiscoveries(context);
+        renderPresentationStatus("generated");
+      },
+      onEnhancementLoading: () => {
+        if (currentMode !== "passage") return;
+        renderPresentationStatus("generating");
+      },
+      onEnhancementUnavailable: (reason) => {
+        if (currentMode !== "passage") return;
+        renderPresentationStatus("unavailable", reason);
+      },
+      onEnhancementError: () => {
+        if (currentMode !== "passage") return;
+        renderPresentationStatus("failed");
+      },
+      onEnhancementCancelled: () => {
+        if (currentMode !== "passage") return;
+        renderPresentationStatus("idle");
       },
       onPresentationReset: (context) => {
         if (currentMode !== "passage") return;
         renderDiscoveries(context);
+        renderPresentationStatus("idle");
       },
       onError: (message) => {
         if (currentMode !== "passage") return;
+        renderPresentationStatus("idle");
         renderDiscoveries({});
         renderAvailabilityError(message);
         if (currentResource && currentMode === "passage") {
@@ -244,6 +265,7 @@
     } else {
       renderRecommendations({resources: {}});
       renderDiscoveries({});
+      renderPresentationStatus("idle");
       renderEntities([]);
     }
   }
@@ -320,6 +342,7 @@
     setText("[data-companion-resource-count]", `${resources.length} research collections`);
     panel.querySelector("[data-companion-entities-section]")?.setAttribute("hidden", "");
     renderDiscoveries({});
+    renderPresentationStatus("idle");
     renderExploreAskCard();
   }
 
@@ -327,6 +350,10 @@
     window.BHFCompanionDiscoveries?.render?.(panel, context, {
       visible: currentMode === "passage",
     });
+  }
+
+  function renderPresentationStatus(state, reason = "") {
+    window.BHFCompanionDiscoveries?.renderStatus?.(panel, state, reason);
   }
 
   function renderExploreAskCard() {

@@ -17,6 +17,28 @@
     renderSection(panel, "[data-companion-significance-section]", "[data-companion-significance]", cards, "why_it_matters", 1, context);
   }
 
+  function renderStatus(panel, state = "idle", reason = "") {
+    const status = panel?.querySelector("[data-companion-presentation-status]");
+    if (!status) return;
+    const normalized = ["idle", "generating", "generated", "unavailable", "failed", "cancelled"].includes(state)
+      ? state
+      : "idle";
+    const message = normalized === "generating"
+      ? "Adding AI context…"
+      : normalized === "generated"
+        ? "AI-assisted summary"
+        : normalized === "unavailable" && reason === "provider_unavailable"
+          ? "Connect an AI provider to add AI passage summaries."
+          : normalized === "unavailable" || normalized === "failed"
+            ? "AI summary unavailable — showing BHF evidence."
+            : "";
+    status.dataset.enhancementState = normalized;
+    status.setAttribute("role", "status");
+    status.setAttribute("aria-live", "polite");
+    status.textContent = message;
+    status.hidden = !message;
+  }
+
   function renderSection(panel, sectionSelector, listSelector, cards, type, maximum, context) {
     const section = panel?.querySelector(sectionSelector);
     const list = panel?.querySelector(listSelector);
@@ -185,5 +207,5 @@
     return true;
   }
 
-  return Object.freeze({dispatchAction, render});
+  return Object.freeze({dispatchAction, render, renderStatus});
 });
