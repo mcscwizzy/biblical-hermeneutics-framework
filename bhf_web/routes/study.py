@@ -18,6 +18,7 @@ from bhf_agent.study_db import StudyDataError
 from ..jobs import run_presentation_job
 from ..services.companion_context import (
     CompanionContextService,
+    StalePresentationEvidenceError,
 )
 from ..services.web_helpers import (
     record_action,
@@ -95,7 +96,7 @@ def register_study_routes(
     commentary_db_path: str | Path = ".bhf/commentary.sqlite",
     companion_context_service: CompanionContextService | None = None,
     presentation_job_runner: Callable[..., None] = run_presentation_job,
-    presentation_jobs_enabled: bool = True,
+    presentation_transport: str = "job",
 ) -> None:
     router = study_action_router or StudyActionRouter()
     companion_context = companion_context_service or CompanionContextService(
@@ -103,6 +104,10 @@ def register_study_routes(
         commentary_db_path=commentary_db_path,
     )
     app.state.companion_context_service = companion_context
+    if presentation_transport not in {"job", "synchronous", "unavailable"}:
+        raise ValueError(
+            "presentation_transport must be job, synchronous, or unavailable"
+        )
 
     def device_only_response(label: str) -> JSONResponse:
         return JSONResponse(
@@ -140,14 +145,14 @@ def register_study_routes(
 
     @app.post("/api/study/presentation", response_class=JSONResponse)
     async def post_study_presentation(request: Request) -> JSONResponse:
-        """Validate and queue optional enhancement without waiting for its model."""
+        """Run optional enhancement using the deployment's explicit transport."""
 
         try:
             payload = await request_payload(request)
-            if not presentation_jobs_enabled:
+            if presentation_transport == "unavailable":
                 return JSONResponse(
                     {
-                        "error": "Presentation jobs require a durable BHF backend.",
+                        "error": "Presentation enhancement is unavailable.",
                         "error_category": "presentation_unavailable",
                     },
                     status_code=503,
@@ -182,6 +187,42 @@ def register_study_routes(
                     },
                     status_code=400,
                 )
+            if presentation_transport == "synchronous":
+                try:
+                    presentation = await run_in_threadpool(
+                        companion_context.enhance_presentation,
+                        **request_values,
+                        provider=provider,
+                        generation_profile=generation_profile,
+                    )
+                except StalePresentationEvidenceError:
+                    return JSONResponse(
+                        {
+                            "error": (
+                                "Passage evidence changed; reload Companion context "
+                                "before enhancing it."
+                            ),
+                            "error_category": "stale_evidence",
+                        },
+                        status_code=409,
+                    )
+                except TimeoutError:
+                    return JSONResponse(
+                        {
+                            "error": "The presentation provider timed out.",
+                            "error_category": "provider_timeout",
+                        },
+                        status_code=503,
+                    )
+                except Exception:  # noqa: BLE001 - never expose provider internals
+                    return JSONResponse(
+                        {
+                            "error": "Presentation enhancement is unavailable.",
+                            "error_category": "provider_failure",
+                        },
+                        status_code=503,
+                    )
+                return JSONResponse(presentation)
             deadline_seconds = min(30.0, float(runtime.settings.timeout_seconds)) + 5.0
             job = job_store.create_presentation(
                 reference=reference,

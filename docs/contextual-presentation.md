@@ -20,8 +20,8 @@ passage selection
 
 optional browser request
   -> POST /api/study/presentation with the evidence fingerprint
-  -> 202 queued presentation job
-  -> bounded GET /api/study/presentation/jobs/{job_id} polling
+  -> persistent backend: 202 queued job + bounded status polling
+  -> same-origin Vercel: 200 final result in one bounded request
   -> cache / bundled packet / provider / deterministic fallback
   -> strict validation
   -> replace cards only if passage and evidence fingerprint still match
@@ -205,11 +205,12 @@ even when the general model timeout is higher. Enabling the reader setting can s
 the passage reference, ranked evidence claims, provenance IDs, related entity
 metadata, and available exploration targets to the server-configured model
 provider. It never sends the full CKL payload. It can incur provider usage or
-cost. The job submission endpoint can also reuse the reader's selected browser provider,
-model, and existing transient `X-BHF-OpenRouter-Key`. The key is used only to
-construct the immediately started job's in-memory adapter; it is not logged,
-serialized, cached, added
-to evidence hashes, returned to the browser, or stored in CKL.
+cost. The presentation endpoint can also reuse the reader's selected browser
+provider, model, and existing transient `X-BHF-OpenRouter-Key`. In job mode the
+key is captured only by the immediately started in-memory execution closure. In
+synchronous mode it remains attached to the HTTP request and provider call. It
+is not logged, serialized, cached, added to evidence hashes, returned to the
+browser, persisted in job metadata, stored in Vercel storage, or written to CKL.
 
 The legacy default accepts `true`, `false`, `1`, `0`, `yes`, `no`, `on`, and
 `off`. An absent or invalid value defaults the browser preference off. A
@@ -221,12 +222,13 @@ The Companion context endpoint never calls the provider. It returns validated
 cache or bundled output when present and otherwise renders deterministic cards.
 Its compact `presentation_evidence` contains only claims and source summaries
 cited by those visible cards; the full internal EvidenceBundle stays on the
-server. When enhancement is configured, the browser submits a separate job
-after rendering this local result, then polls at a bounded cadence. A slow or
-failed provider therefore cannot delay Scripture or initial Companion context,
-and no browser request remains open for the complete model call.
+server. When enhancement is configured, the browser starts a separate request
+after rendering this local result. Persistent deployments submit a job and poll
+at a bounded cadence. Same-origin Vercel awaits the final result in that one
+optional request. A slow or failed provider therefore cannot delay Scripture or
+initial Companion context.
 
-The job rebuilds local evidence and requires the browser's evidence
+Each transport rebuilds local evidence and requires the browser's evidence
 hash to match before generation. The browser also checks selection and hash
 again before replacing cards, so a late response from an earlier chapter is
 ignored. Unexpected local presentation errors still return a valid zero-card
@@ -236,11 +238,18 @@ Docker, NAS, and other persistent single-process deployments execute these
 jobs with the same immediate daemon-thread plus process-safe SQLite lifecycle
 used by Ask BHF. A Vercel frontend configured with a durable remote BHF backend
 uses that backend in the same way. Same-origin Vercel functions cannot safely
-retain SQLite state or a browser credential after returning; presentation jobs
-therefore fail closed to deterministic evidence and the UI reports the provider
-as unavailable. Operators who need AI passage summaries on Vercel must use the
-documented remote durable-backend topology. BHF does not start a detached
-serverless thread and pretend it is durable.
+retain local SQLite job state or detached threads across invocations, so they
+use a bounded synchronous transport instead. The FastAPI request remains open
+for the provider call and returns the same final presentation shape the job
+transport produces after polling. BHF does not start detached serverless work,
+and a remote backend is not required merely to enable AI passage summaries.
+
+The runtime publishes `presentationTransport` explicitly. Local, Docker, NAS,
+and valid remote backends use `job`; same-origin Vercel uses `synchronous`; only
+invalid or technically unsupported routing uses `unavailable`. Both execution
+paths call `CompanionContextService.enhance_presentation()` and therefore share
+the same evidence rebuild, strict validation, model-aware cache, request
+coalescing, and `PresentationEngine` provider-concurrency gate.
 
 Provider response parsing remains intentionally strict: the adapter applies
 `json.loads(response.text)`, so prose fences or malformed JSON fail safely to

@@ -64,7 +64,7 @@ class _Service:
         return self.operation(values)
 
 
-def _app(tmp_path, service, runtime=None, *, jobs_enabled=True):
+def _app(tmp_path, service, runtime=None, *, transport="job"):
     store = AskJobStore(tmp_path / "jobs.sqlite")
     app = FastAPI()
     app.state.presentation_runtime = runtime or _Runtime()
@@ -74,7 +74,7 @@ def _app(tmp_path, service, runtime=None, *, jobs_enabled=True):
         templates=None,
         job_store=store,
         companion_context_service=service,
-        presentation_jobs_enabled=jobs_enabled,
+        presentation_transport=transport,
     )
     return app, store
 
@@ -111,6 +111,30 @@ def _wait_for_done(store, job_id, timeout=2.0):
             return job
         time.sleep(0.01)
     raise AssertionError("presentation job did not finish")
+
+
+@pytest.fixture
+def synchronous_threadpool(monkeypatch):
+    """Exercise attached thread execution without AnyIO's test-process worker."""
+
+    async def run(callable_, *args, **kwargs):
+        outcome = []
+        errors = []
+
+        def invoke():
+            try:
+                outcome.append(callable_(*args, **kwargs))
+            except BaseException as exc:  # noqa: BLE001 - re-raise on request task
+                errors.append(exc)
+
+        worker = threading.Thread(target=invoke)
+        worker.start()
+        worker.join()
+        if errors:
+            raise errors[0]
+        return outcome[0]
+
+    monkeypatch.setattr("bhf_web.routes.study.run_in_threadpool", run)
 
 
 def test_submission_returns_before_blocking_provider_and_context_stays_immediate(tmp_path):
@@ -305,14 +329,164 @@ def test_browser_provider_ssrf_profiles_are_rejected_before_job_creation(
     assert count == 0
 
 
-def test_same_origin_serverless_mode_refuses_detached_presentation_work(tmp_path):
+def test_unavailable_transport_refuses_presentation_work(tmp_path):
     runtime = _Runtime()
     service = _Service()
-    app, store = _app(tmp_path, service, runtime, jobs_enabled=False)
+    app, store = _app(tmp_path, service, runtime, transport="unavailable")
     response = _submit(app)
 
     assert response.status_code == 503
     assert response.json()["error_category"] == "presentation_unavailable"
+    assert runtime.calls == []
+    assert service.calls == []
+    with sqlite3.connect(store.path) as connection:
+        count = connection.execute("SELECT COUNT(*) FROM presentation_jobs").fetchone()[0]
+    assert count == 0
+
+
+def test_synchronous_success_returns_final_presentation_without_creating_a_job(
+    tmp_path, synchronous_threadpool,
+):
+    runtime = _Runtime()
+    service = _Service()
+    app, store = _app(tmp_path, service, runtime, transport="synchronous")
+
+    response = _submit(app)
+
+    assert response.status_code == 200
+    assert response.json()["presentation_packet"]["presentation_mode"] == "generated"
+    assert len(service.calls) == 1
+    with sqlite3.connect(store.path) as connection:
+        count = connection.execute("SELECT COUNT(*) FROM presentation_jobs").fetchone()[0]
+    assert count == 0
+
+
+def test_synchronous_cache_hit_returns_cached_packet_without_job_or_provider_call(
+    tmp_path, synchronous_threadpool,
+):
+    class ProviderThatMustNotRun:
+        def generate(self, *_args, **_kwargs):
+            raise AssertionError("cached presentation should not call provider")
+
+    service = _Service(lambda _values: _presentation_payload("cached"))
+    app, store = _app(
+        tmp_path,
+        service,
+        _Runtime(ProviderThatMustNotRun()),
+        transport="synchronous",
+    )
+
+    response = _submit(app)
+
+    assert response.status_code == 200
+    assert response.json()["presentation_packet"]["presentation_mode"] == "cached"
+    with sqlite3.connect(store.path) as connection:
+        count = connection.execute("SELECT COUNT(*) FROM presentation_jobs").fetchone()[0]
+    assert count == 0
+
+
+def test_synchronous_provider_timeout_returns_controlled_failure_without_job(
+    tmp_path, synchronous_threadpool
+):
+    def timeout(_values):
+        raise TimeoutError("secret provider detail")
+
+    app, store = _app(
+        tmp_path,
+        _Service(timeout),
+        transport="synchronous",
+    )
+
+    response = _submit(app)
+
+    assert response.status_code == 503
+    assert response.status_code != 504
+    assert response.json()["error_category"] == "provider_timeout"
+    assert "secret provider detail" not in response.text
+    with sqlite3.connect(store.path) as connection:
+        count = connection.execute("SELECT COUNT(*) FROM presentation_jobs").fetchone()[0]
+    assert count == 0
+
+
+def test_synchronous_validation_fallback_is_returned_for_deterministic_ui(
+    tmp_path, synchronous_threadpool
+):
+    service = _Service(lambda _values: _presentation_payload("deterministic_fallback"))
+    app, store = _app(tmp_path, service, transport="synchronous")
+
+    response = _submit(app)
+
+    assert response.status_code == 200
+    assert (
+        response.json()["presentation_packet"]["presentation_mode"]
+        == "deterministic_fallback"
+    )
+    with sqlite3.connect(store.path) as connection:
+        count = connection.execute("SELECT COUNT(*) FROM presentation_jobs").fetchone()[0]
+    assert count == 0
+
+
+def test_synchronous_browser_key_stays_request_scoped_and_out_of_public_state(
+    tmp_path, caplog, synchronous_threadpool
+):
+    secret = "sk-or-synchronous-transient-secret"
+
+    def fail_with_secret(_values):
+        raise RuntimeError(f"provider rejected {secret}")
+
+    runtime = _Runtime(provider=SimpleNamespace(memory_only_secret=secret))
+    app, store = _app(
+        tmp_path,
+        _Service(fail_with_secret),
+        runtime,
+        transport="synchronous",
+    )
+    response = _request(
+        app,
+        "POST",
+        "/api/study/presentation",
+        headers={"X-BHF-OpenRouter-Key": secret},
+        json={
+            "book": "John",
+            "chapter": 4,
+            "verse_start": 23,
+            "verse_end": 23,
+            "evidence_hash": EVIDENCE_HASH,
+            "ai_profile": {"adapter": "openrouter", "model": "test:model"},
+        },
+    )
+
+    assert response.status_code == 503
+    assert response.json()["error_category"] == "provider_failure"
+    assert runtime.calls[0][1] == secret
+    assert secret not in response.text
+    assert secret not in caplog.text
+    with sqlite3.connect(store.path) as connection:
+        count = connection.execute("SELECT COUNT(*) FROM presentation_jobs").fetchone()[0]
+    assert count == 0
+
+
+@pytest.mark.parametrize(
+    ("adapter", "base_url"),
+    [
+        ("openai_compatible", "http://127.0.0.1:8000/v1"),
+        ("openai_compatible", "http://169.254.169.254/latest/meta-data"),
+        ("ollama", "http://nas.internal:11434"),
+    ],
+)
+def test_synchronous_ssrf_profiles_are_rejected_before_provider_creation(
+    tmp_path, adapter, base_url, synchronous_threadpool
+):
+    runtime = _Runtime()
+    service = _Service()
+    app, store = _app(tmp_path, service, runtime, transport="synchronous")
+
+    response = _submit(
+        app,
+        ai_profile={"adapter": adapter, "model": "bad", "base_url": base_url},
+    )
+
+    assert response.status_code == 400
     assert runtime.calls == []
     assert service.calls == []
     with sqlite3.connect(store.path) as connection:

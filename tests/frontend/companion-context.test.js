@@ -4,7 +4,11 @@ const fs = require("node:fs");
 const vm = require("node:vm");
 
 
-function loadContextApi({presentationOptions, fetchImpl, runtime = {presentationJobs: true}}) {
+function loadContextApi({
+  presentationOptions,
+  fetchImpl,
+  runtime = {presentationTransport: "job", presentationJobs: true},
+}) {
   const document = {
     addEventListener: () => {},
     dispatchEvent: () => {},
@@ -141,10 +145,50 @@ test("enhancement availability preserves provider-unavailable reason without req
 });
 
 
-test("same-origin serverless runtime retains deterministic presentation without submitting", async () => {
+test("synchronous transport returns the final presentation without polling", async () => {
+  const requests = [];
+  const api = loadContextApi({
+    runtime: {presentationTransport: "synchronous", presentationJobs: false},
+    presentationOptions: {
+      enabled: true,
+      headers: {"X-BHF-OpenRouter-Key": "transient-secret"},
+      profile: {adapter: "openrouter", model: "test:model"},
+    },
+    fetchImpl: async (url, options) => {
+      requests.push({url, options});
+      return {
+        ok: true,
+        json: async () => ({
+          evidence_bundle: {evidence_hash: "hash-4"},
+          presentation_packet: {
+            cards: [{id: "ai-card"}],
+            presentation_mode: "generated",
+          },
+        }),
+      };
+    },
+  });
+
+  const availability = await api.getEnhancementAvailability({
+    presentation_enhancement: {supported: true, server_configured: false},
+  });
+  const result = await api.enhance(
+    {book: "John", chapter: 4},
+    {presentation_enhancement: {evidence_hash: "hash-4"}},
+  );
+
+  assert.equal(availability.available, true);
+  assert.equal(result.presentation_packet.cards[0].id, "ai-card");
+  assert.equal(requests.length, 1);
+  assert.equal(requests[0].url, "/api/study/presentation");
+  assert.equal(requests[0].options.headers["X-BHF-OpenRouter-Key"], "transient-secret");
+});
+
+
+test("unavailable presentation transport retains deterministic presentation", async () => {
   let requests = 0;
   const api = loadContextApi({
-    runtime: {presentationJobs: false},
+    runtime: {presentationTransport: "unavailable", presentationJobs: false},
     presentationOptions: {
       enabled: true,
       headers: {"X-BHF-OpenRouter-Key": "transient-secret"},
@@ -165,4 +209,37 @@ test("same-origin serverless runtime retains deterministic presentation without 
   assert.equal(availability.reason, "presentation_unavailable");
   assert.equal(result, null);
   assert.equal(requests, 0);
+});
+
+
+test("aborting a synchronous presentation aborts its one fetch silently", async () => {
+  let fetchSignal;
+  const controller = new AbortController();
+  const api = loadContextApi({
+    runtime: {presentationTransport: "synchronous", presentationJobs: false},
+    presentationOptions: {
+      enabled: true,
+      headers: {},
+      profile: null,
+    },
+    fetchImpl: async (_url, options) => {
+      fetchSignal = options.signal;
+      return new Promise((_resolve, reject) => {
+        options.signal.addEventListener("abort", () => {
+          reject(new DOMException("Aborted", "AbortError"));
+        }, {once: true});
+      });
+    },
+  });
+
+  const pending = api.enhance(
+    {book: "John", chapter: 4},
+    {presentation_enhancement: {evidence_hash: "hash-4"}},
+    {signal: controller.signal},
+  );
+  await new Promise((resolve) => setImmediate(resolve));
+  controller.abort();
+
+  await assert.rejects(pending, (error) => error.name === "AbortError");
+  assert.equal(fetchSignal.aborted, true);
 });

@@ -14,22 +14,24 @@ These are explicit deployment choices:
 | Deployment | `BHF_RUNTIME_MODE` | `BHF_BACKEND_MODE` | `BHF_API_BASE_URL` |
 |---|---|---|---|
 | Vercel single service | `web` or `pwa` | `same-origin` | Unset |
-| Vercel frontend + Railway backend | `pwa` | `remote` | Railway public HTTPS URL |
+| Vercel frontend + durable backend | `pwa` | `remote` | Backend public HTTPS URL |
 | NAS / self-hosted PWA | `pwa` | `same-origin` | Unset |
 | Local development | `web` | `same-origin` | Unset |
 | Docker | `web` or `pwa` | `same-origin` | Unset |
 
 Vercel is stateless between function invocations. In Vercel `same-origin`
-mode, BHF therefore sends Ask and fallback-search work through one synchronous
-HTTP request instead of creating a job and polling local SQLite state. A
-durable Railway backend remains available when progress polling and persistent
-server data are required.
+mode, BHF therefore sends Ask, fallback-search, and optional AI-presentation
+work through bounded synchronous HTTP requests instead of returning before a
+detached thread finishes. Scripture and deterministic Companion evidence render
+before the separate presentation request begins. In `remote` mode the browser
+submits and polls presentation jobs on the configured durable backend. Docker,
+NAS, and local persistent servers use the same job transport on their origin.
 
-Optional AI passage summaries do not use a synchronous fallback because doing
-so would recreate the proxy-timeout failure that their job transport is meant
-to avoid. They remain deterministic-only in Vercel `same-origin` mode. In
-`remote` mode they submit and poll presentation jobs on the durable backend;
-Docker, NAS, and local persistent servers do the same on their own origin.
+The rendered runtime exposes this decision directly as
+`presentationTransport: "job" | "synchronous" | "unavailable"`. The browser
+does not infer it from hosting names. A broken remote configuration fails closed
+as `unavailable`; a valid remote configuration is `job` even when the frontend
+runs on Vercel.
 
 An installed PWA is not inherently a remote-backend deployment. A NAS can
 serve an installable PWA and its FastAPI backend from the same origin without
@@ -47,10 +49,19 @@ GET  /api/study/presentation/jobs/{id}
 ```
 
 On Vercel, the equivalent same-origin Ask request is `POST /ask`; deterministic
-fallback search uses `POST /api/bible/search/fallback`. Vercel Python functions
-using current Fluid Compute defaults provide enough request duration for the
-configured BHF timeout, but operators should still monitor invocation timeouts
-and usage.
+fallback search uses `POST /api/bible/search/fallback`; AI presentation uses one
+`POST /api/study/presentation` and does not poll. The repository pins the
+FastAPI entrypoint in `pyproject.toml` and configures Fluid Compute plus a
+60-second `maxDuration` in `vercel.json`. BHF's presentation-provider deadline
+defaults to 20 seconds and is capped at 30 seconds, so BHF returns a controlled
+fallback before Vercel's invocation ceiling.
+
+Vercel documents `functions.*.maxDuration` as the supported Python/FastAPI
+configuration and `fluid` as the repository-controlled Fluid Compute setting:
+[function duration](https://vercel.com/docs/functions/configuring-functions/duration)
+and [Fluid Compute](https://vercel.com/docs/fluid-compute). Existing projects
+should redeploy this configuration and confirm the deployment's function detail
+shows a 60-second maximum. No dashboard-only toggle is required by this repo.
 
 In `remote` mode, `/ask*` and `/api*` requests are joined to
 `BHF_API_BASE_URL`. Frontend resources such as `/static/*`,
@@ -70,10 +81,17 @@ Ask BHF uses a single request, so it does not expose the multi-request progress
 history available from a durable backend. Browser-local notes, highlights,
 and saved studies remain device-only; do not rely on Vercel's ephemeral
 filesystem for durable server data.
-AI passage summaries remain unavailable in this topology, while deterministic
-Did You Know / Walk the Land / Why It Matters content continues to render.
+Deterministic Did You Know / Walk the Land / Why It Matters content renders
+first. When the reader enables AI passage summaries, the browser then makes one
+bounded synchronous presentation request. Provider timeout, invalid model
+output, abort, or infrastructure failure leaves the deterministic cards intact.
+The transient browser OpenRouter key exists only in that request and provider
+call; it is not placed in SQLite or any Vercel storage service.
 
-## Vercel + Railway public beta
+## Vercel + optional durable backend
+
+Remote mode is optional. Railway is one deployment example, not a requirement
+for AI passage summaries.
 
 Set these variables for the Vercel frontend:
 
@@ -133,7 +151,8 @@ After deploying both services:
 1. Open the Vercel production site and force a normal refresh so the latest
    service worker and shell are active.
 2. In DevTools Console, evaluate `window.BHFRuntimeConfig`. Confirm the relevant
-   values are `mode: "pwa"`, `backendMode: "remote"`, and
+   values are `mode: "pwa"`, `backendMode: "remote"`,
+   `presentationTransport: "job"`, and
    `apiBaseUrl: "https://<railway-public-domain>"`.
 3. Evaluate `window.BHFRuntimeConfig.apiBaseUrl` separately and confirm it is
    the Railway URL.
@@ -155,7 +174,12 @@ After deploying both services:
    spinner running.
 7. On a NAS/self-hosted PWA configured for `same-origin`, repeat the submission
    and confirm the Network panel shows relative `/ask/jobs`, `/ask/status/{id}`,
-   and `/ask/result/{id}` requests against the NAS origin.
+   and `/ask/result/{id}` requests against the NAS origin. Confirm presentation
+   uses `POST /api/study/presentation` followed by
+   `GET /api/study/presentation/jobs/{id}`.
+8. On a same-origin Vercel deployment, confirm
+   `presentationTransport: "synchronous"` and one presentation `POST` with no
+   presentation-job polling.
 
 Async job and fallback-search endpoints are always live-network requests in the
 service worker. They are not served from an offline cache. The application

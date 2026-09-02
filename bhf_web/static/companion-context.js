@@ -74,7 +74,8 @@
     if (!selection?.book || !selection?.chapter || !evidenceHash) {
       throw new Error("Passage evidence is required for presentation enhancement.");
     }
-    if (window.BHFRuntimeConfig?.presentationJobs === false) return null;
+    const transport = presentationTransport();
+    if (transport === "unavailable") return null;
     const providerOptions = options.presentationOptions
       || (window.BHFModelSettings?.getPresentationRequestOptions
         ? await window.BHFModelSettings.getPresentationRequestOptions(
@@ -110,6 +111,9 @@
       )
       : await requestWithFetch("/api/study/presentation", requestOptions);
     if (options.signal?.aborted) throw new DOMException("Aborted", "AbortError");
+    if (transport === "synchronous") {
+      return submission && typeof submission === "object" ? submission : {};
+    }
     if (String(submission?.status || "") === "succeeded") {
       return submission?.result || {};
     }
@@ -142,7 +146,7 @@
     if (enhancement?.supported !== true && enhancement?.available !== true) {
       return {available: false, reason: "unsupported", requestOptions: null};
     }
-    if (window.BHFRuntimeConfig?.presentationJobs === false) {
+    if (presentationTransport() === "unavailable") {
       return {available: false, reason: "presentation_unavailable", requestOptions: null};
     }
     if (!window.BHFModelSettings?.getPresentationRequestOptions) {
@@ -160,6 +164,18 @@
 
   async function canEnhance(context) {
     return (await getEnhancementAvailability(context)).available;
+  }
+
+  function presentationTransport() {
+    const configured = String(
+      window.BHFRuntimeConfig?.presentationTransport || "",
+    ).trim().toLowerCase();
+    if (["job", "synchronous", "unavailable"].includes(configured)) {
+      return configured;
+    }
+    return window.BHFRuntimeConfig?.presentationJobs === false
+      ? "unavailable"
+      : "job";
   }
 
   async function requestWithFetch(url, options) {
