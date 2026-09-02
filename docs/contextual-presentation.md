@@ -20,6 +20,8 @@ passage selection
 
 optional browser request
   -> POST /api/study/presentation with the evidence fingerprint
+  -> 202 queued presentation job
+  -> bounded GET /api/study/presentation/jobs/{job_id} polling
   -> cache / bundled packet / provider / deterministic fallback
   -> strict validation
   -> replace cards only if passage and evidence fingerprint still match
@@ -203,9 +205,10 @@ even when the general model timeout is higher. Enabling the reader setting can s
 the passage reference, ranked evidence claims, provenance IDs, related entity
 metadata, and available exploration targets to the server-configured model
 provider. It never sends the full CKL payload. It can incur provider usage or
-cost. The lazy endpoint can also reuse the reader's selected browser provider,
+cost. The job submission endpoint can also reuse the reader's selected browser provider,
 model, and existing transient `X-BHF-OpenRouter-Key`. The key is used only to
-construct that request's adapter; it is not logged, serialized, cached, added
+construct the immediately started job's in-memory adapter; it is not logged,
+serialized, cached, added
 to evidence hashes, returned to the browser, or stored in CKL.
 
 The legacy default accepts `true`, `false`, `1`, `0`, `yes`, `no`, `on`, and
@@ -218,15 +221,31 @@ The Companion context endpoint never calls the provider. It returns validated
 cache or bundled output when present and otherwise renders deterministic cards.
 Its compact `presentation_evidence` contains only claims and source summaries
 cited by those visible cards; the full internal EvidenceBundle stays on the
-server. When enhancement is configured, the browser makes a separate lazy
-request after rendering this local result. A slow or failed provider therefore
-cannot delay Scripture or initial Companion context.
+server. When enhancement is configured, the browser submits a separate job
+after rendering this local result, then polls at a bounded cadence. A slow or
+failed provider therefore cannot delay Scripture or initial Companion context,
+and no browser request remains open for the complete model call.
 
-The lazy request rebuilds local evidence and requires the browser's evidence
+The job rebuilds local evidence and requires the browser's evidence
 hash to match before generation. The browser also checks selection and hash
 again before replacing cards, so a late response from an earlier chapter is
 ignored. Unexpected local presentation errors still return a valid zero-card
 packet while the rest of the passage context remains available.
+
+Docker, NAS, and other persistent single-process deployments execute these
+jobs with the same immediate daemon-thread plus process-safe SQLite lifecycle
+used by Ask BHF. A Vercel frontend configured with a durable remote BHF backend
+uses that backend in the same way. Same-origin Vercel functions cannot safely
+retain SQLite state or a browser credential after returning; presentation jobs
+therefore fail closed to deterministic evidence and the UI reports the provider
+as unavailable. Operators who need AI passage summaries on Vercel must use the
+documented remote durable-backend topology. BHF does not start a detached
+serverless thread and pretend it is durable.
+
+Provider response parsing remains intentionally strict: the adapter applies
+`json.loads(response.text)`, so prose fences or malformed JSON fail safely to
+deterministic evidence. This transport patch does not add permissive repair or
+weaken presentation validation.
 Provider generation is also limited to two simultaneous requests per server
 process by default. The limit can be set from 1 through 16 with
 `BHF_PRESENTATION_MAX_CONCURRENT_REQUESTS`. Requests above the limit skip the

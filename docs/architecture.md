@@ -121,7 +121,7 @@ offline exports, or service-worker caches.
 |---|---|
 | `bhf_web/app.py` | Creates the FastAPI app, mounts assets, and exposes health, PWA, Bible, and supporting API routes. |
 | `bhf_web/routes/ask.py` | Accepts synchronous and background ask requests and returns public answer prose. |
-| `bhf_web/jobs.py` | Tracks in-memory request progress and runs ask or deterministic search-fallback jobs. |
+| `bhf_web/jobs.py` | Persists bounded Ask and presentation lifecycle state in SQLite and runs Ask, presentation, or deterministic search-fallback jobs. |
 | `bhf_agent/runner.py` | Orchestrates the end-to-end evidence, cache, prompt, model, cleanup, validation, repair, and result pipeline. |
 | `bhf_agent/prompts.py` | Constructs the unified runtime prompt and answer contract. |
 | `bhf_agent/adapters/` | Implements OpenRouter, native Ollama, and OpenAI-compatible HTTP calls. |

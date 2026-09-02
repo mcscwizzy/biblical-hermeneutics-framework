@@ -586,6 +586,7 @@ def create_app() -> FastAPI:
             commentary_db_path=COMMENTARY_DB_PATH,
             presentation_engine=presentation_runtime.engine,
         ),
+        presentation_jobs_enabled=bool(runtime_config["presentationJobs"]),
     )
     register_debug_routes(web_app)
     register_ask_routes(

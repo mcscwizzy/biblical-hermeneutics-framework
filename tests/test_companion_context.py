@@ -25,6 +25,7 @@ from bhf_agent.study_db import (
     list_passage_map_summaries,
 )
 from bhf_web.presentation_runtime import configure_presentation_runtime
+from bhf_web.jobs import AskJobStore
 from bhf_web.routes.study import register_study_routes
 from bhf_web.services.companion_context import (
     CompanionContextService,
@@ -719,16 +720,28 @@ class CompanionContextRouteTests(unittest.TestCase):
             companion_context_service=service,
         )
 
-        response = TestClient(app).get(
-            "/api/study/companion-context",
-            params={
-                "book": "John",
-                "chapter": 4,
-                "verse_start": 23,
-                "verse_end": 23,
-                "translation": "asv",
-            },
-        )
+        async def request_context():
+            transport = httpx.ASGITransport(app=app)
+            async with httpx.AsyncClient(
+                transport=transport,
+                base_url="http://testserver",
+            ) as client:
+                return await client.get(
+                    "/api/study/companion-context",
+                    params={
+                        "book": "John",
+                        "chapter": 4,
+                        "verse_start": 23,
+                        "verse_end": 23,
+                        "translation": "asv",
+                    },
+                )
+
+        async def test_threadpool(callable_, *args, **kwargs):
+            return callable_(*args, **kwargs)
+
+        with patch("bhf_web.routes.study.run_in_threadpool", new=test_threadpool):
+            response = asyncio.run(request_context())
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()["reference"], "John 4:23")
@@ -768,12 +781,32 @@ class CompanionContextRouteTests(unittest.TestCase):
             companion_context_service=service,
         )
 
-        with TestClient(app) as client:
-            event_loop_id = client.get("/event-loop-thread").json()["thread_id"]
-            response = client.get(
-                "/api/study/companion-context",
-                params={"book": "John", "chapter": 4},
+        async def request_context():
+            transport = httpx.ASGITransport(app=app)
+            async with httpx.AsyncClient(
+                transport=transport,
+                base_url="http://testserver",
+            ) as client:
+                event_loop_id = (
+                    await client.get("/event-loop-thread")
+                ).json()["thread_id"]
+                response = await client.get(
+                    "/api/study/companion-context",
+                    params={"book": "John", "chapter": 4},
+                )
+                return event_loop_id, response
+
+        async def test_threadpool(callable_, *args, **kwargs):
+            outcome = []
+            worker = threading.Thread(
+                target=lambda: outcome.append(callable_(*args, **kwargs))
             )
+            worker.start()
+            worker.join()
+            return outcome[0]
+
+        with patch("bhf_web.routes.study.run_in_threadpool", new=test_threadpool):
+            event_loop_id, response = asyncio.run(request_context())
 
         self.assertEqual(response.status_code, 200)
         self.assertIsNotNone(service.thread_id)
@@ -797,28 +830,57 @@ class CompanionContextRouteTests(unittest.TestCase):
                 }
 
         service = FakeService()
-        app = FastAPI()
-        register_study_routes(
-            app,
-            study_db_path="unused.sqlite",
-            templates=None,
-            job_store=None,
-            companion_context_service=service,
-        )
+        with tempfile.TemporaryDirectory() as directory:
+            store = AskJobStore(Path(directory) / "jobs.sqlite")
+            app = FastAPI()
+            app.state.presentation_runtime = SimpleNamespace(
+                settings=SimpleNamespace(timeout_seconds=20),
+                provider_for_request=lambda _profile, _key: (object(), "test:model"),
+            )
+            register_study_routes(
+                app,
+                study_db_path="unused.sqlite",
+                templates=None,
+                job_store=store,
+                companion_context_service=service,
+            )
 
-        response = TestClient(app).post(
-            "/api/study/presentation",
-            json={
-                "book": "John",
-                "chapter": 4,
-                "verse_start": 23,
-                "verse_end": 23,
-                "evidence_hash": "abc123",
-            },
-        )
+            async def request_presentation():
+                transport = httpx.ASGITransport(app=app)
+                async with httpx.AsyncClient(
+                    transport=transport,
+                    base_url="http://testserver",
+                ) as client:
+                    response = await client.post(
+                        "/api/study/presentation",
+                        json={
+                            "book": "John",
+                            "chapter": 4,
+                            "verse_start": 23,
+                            "verse_end": 23,
+                            "evidence_hash": "a" * 64,
+                        },
+                    )
+                    job_id = response.json()["job_id"]
+                    for _attempt in range(100):
+                        status = (
+                            await client.get(
+                                f"/api/study/presentation/jobs/{job_id}"
+                            )
+                        ).json()
+                        if status["done"]:
+                            return response, status
+                        await asyncio.sleep(0.01)
+                    raise AssertionError("presentation job did not finish")
 
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.json()["evidence_bundle"]["evidence_hash"], "abc123")
+            response, status = asyncio.run(request_presentation())
+            self.assertEqual(response.status_code, 202)
+
+        self.assertEqual(status["status"], "succeeded")
+        self.assertEqual(
+            status["result"]["evidence_bundle"]["evidence_hash"],
+            "a" * 64,
+        )
         self.assertEqual(service.calls[0]["book"], "John")
         self.assertEqual(service.calls[0]["chapter"], 4)
 
@@ -862,7 +924,7 @@ class CompanionContextRouteTests(unittest.TestCase):
                         json={
                             "book": "John",
                             "chapter": 4,
-                            "evidence_hash": "abc123",
+                            "evidence_hash": "a" * 64,
                             "ai_profile": {
                                 "adapter": "openai_compatible",
                                 "model": "test-model",
@@ -913,10 +975,16 @@ class CompanionContextRouteTests(unittest.TestCase):
             context_presenter=presenter,
         )
 
-        with patch("bhf_web.routes.study.record_action"):
-            with TestClient(app) as client:
-                event_loop_id = client.get("/event-loop-thread").json()["thread_id"]
-                response = client.post(
+        async def request_action():
+            transport = httpx.ASGITransport(app=app)
+            async with httpx.AsyncClient(
+                transport=transport,
+                base_url="http://testserver",
+            ) as client:
+                event_loop_id = (
+                    await client.get("/event-loop-thread")
+                ).json()["thread_id"]
+                response = await client.post(
                     "/api/study/actions",
                     json={
                         "action": "cultural_context",
@@ -925,6 +993,22 @@ class CompanionContextRouteTests(unittest.TestCase):
                         "presentation": "ai",
                     },
                 )
+                return event_loop_id, response
+
+        async def test_threadpool(callable_, *args, **kwargs):
+            outcome = []
+            worker = threading.Thread(
+                target=lambda: outcome.append(callable_(*args, **kwargs))
+            )
+            worker.start()
+            worker.join()
+            return outcome[0]
+
+        with patch("bhf_web.routes.study.record_action"), patch(
+            "bhf_web.routes.study.run_in_threadpool",
+            new=test_threadpool,
+        ):
+            event_loop_id, response = asyncio.run(request_action())
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(presenter_thread), 1)

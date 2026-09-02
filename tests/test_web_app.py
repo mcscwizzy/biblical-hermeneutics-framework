@@ -355,6 +355,7 @@ class RuntimeConfigTests(unittest.TestCase):
         self.assertEqual(runtime["apiBaseUrl"], "")
         self.assertEqual(runtime["backendConfigError"], "")
         self.assertTrue(runtime["asyncJobs"])
+        self.assertTrue(runtime["presentationJobs"])
 
     def test_same_origin_pwa_does_not_require_an_api_url(self):
         env = {"BHF_RUNTIME_MODE": "pwa", "BHF_BACKEND_MODE": "same-origin"}
@@ -375,6 +376,7 @@ class RuntimeConfigTests(unittest.TestCase):
         self.assertEqual(runtime["apiBaseUrl"], "")
         self.assertEqual(runtime["backendConfigError"], "")
         self.assertFalse(runtime["asyncJobs"])
+        self.assertFalse(runtime["presentationJobs"])
 
     def test_vercel_remote_backend_is_allowed(self):
         env = {
@@ -388,6 +390,7 @@ class RuntimeConfigTests(unittest.TestCase):
         self.assertEqual(runtime["backendMode"], "remote")
         self.assertEqual(runtime["backendConfigError"], "")
         self.assertTrue(runtime["asyncJobs"])
+        self.assertTrue(runtime["presentationJobs"])
 
     def test_remote_pwa_exposes_the_configured_backend(self):
         env = {

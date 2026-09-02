@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v42";
+const CACHE_VERSION = "v43";
 const SHELL_CACHE = `bhf-shell-${CACHE_VERSION}`;
 const STATIC_CACHE = `bhf-static-${CACHE_VERSION}`;
 const API_CACHE = `bhf-api-${CACHE_VERSION}`;
@@ -247,7 +247,9 @@ function isLiveBackendJobRequest(url) {
   return url.pathname === "/ask"
     || url.pathname.startsWith("/ask/")
     || url.pathname === "/api/bible/search/fallback"
-    || url.pathname.startsWith("/api/bible/search/fallback/");
+    || url.pathname.startsWith("/api/bible/search/fallback/")
+    || url.pathname === "/api/study/presentation"
+    || url.pathname.startsWith("/api/study/presentation/");
 }
 
 function isCacheableApiRequest(url) {
@@ -280,6 +282,7 @@ function isAiOnlyApiRequest(url) {
     "/api/llm/health",
     "/api/bible/search/fallback",
     "/api/debug/ckl-search",
+    "/api/study/presentation",
     "/ask",
   ].some((path) => url.pathname === path || url.pathname.startsWith(path));
 }

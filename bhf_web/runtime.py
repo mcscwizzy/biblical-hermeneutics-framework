@@ -55,6 +55,9 @@ def load_runtime_config() -> dict[str, Any]:
         # route there, while durable and self-hosted backends keep progress
         # polling through /ask/jobs.
         "asyncJobs": async_jobs,
+        # Presentation enhancement has no synchronous serverless fallback: it
+        # remains deterministic-only when durable polling state is unavailable.
+        "presentationJobs": async_jobs,
         "providerLabels": provider_labels,
         "breakpoints": dict(DEFAULT_BREAKPOINTS),
         "themeColor": "#245b82",

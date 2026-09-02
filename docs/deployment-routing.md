@@ -25,6 +25,12 @@ HTTP request instead of creating a job and polling local SQLite state. A
 durable Railway backend remains available when progress polling and persistent
 server data are required.
 
+Optional AI passage summaries do not use a synchronous fallback because doing
+so would recreate the proxy-timeout failure that their job transport is meant
+to avoid. They remain deterministic-only in Vercel `same-origin` mode. In
+`remote` mode they submit and poll presentation jobs on the durable backend;
+Docker, NAS, and local persistent servers do the same on their own origin.
+
 An installed PWA is not inherently a remote-backend deployment. A NAS can
 serve an installable PWA and its FastAPI backend from the same origin without
 Railway or internet-based API routing.
@@ -36,6 +42,8 @@ POST /ask/jobs
 GET  /ask/status/{id}
 GET  /ask/result/{id}
 GET  /api/health
+POST /api/study/presentation
+GET  /api/study/presentation/jobs/{id}
 ```
 
 On Vercel, the equivalent same-origin Ask request is `POST /ask`; deterministic
@@ -62,6 +70,8 @@ Ask BHF uses a single request, so it does not expose the multi-request progress
 history available from a durable backend. Browser-local notes, highlights,
 and saved studies remain device-only; do not rely on Vercel's ephemeral
 filesystem for durable server data.
+AI passage summaries remain unavailable in this topology, while deterministic
+Did You Know / Walk the Land / Why It Matters content continues to render.
 
 ## Vercel + Railway public beta
 
@@ -133,6 +143,8 @@ After deploying both services:
    POST https://<railway>/ask/jobs
    GET  https://<railway>/ask/status/{id}
    GET  https://<railway>/ask/result/{id}
+   POST https://<railway>/api/study/presentation
+   GET  https://<railway>/api/study/presentation/jobs/{id}
    ```
 
 5. Confirm no `/ask/*` request goes to
