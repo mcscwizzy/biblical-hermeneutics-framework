@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from bhf_agent.config import AgentConfig, ConfigError
 
+from .anthropic_direct import AnthropicDirectAdapter
 from .base import ChatAdapter
 from .ollama import OllamaAdapter
 from .openai_compatible import OpenAICompatibleAdapter
@@ -13,6 +14,14 @@ from .openrouter import OPENROUTER_BASE_URL, OpenRouterAdapter
 def build_chat_adapter(config: AgentConfig) -> ChatAdapter:
     """Build the configured adapter without making a provider request."""
 
+    if config.adapter == "anthropic":
+        if not config.api_key:
+            raise ConfigError("api_key is required for anthropic adapter")
+        return AnthropicDirectAdapter(
+            api_key=config.api_key,
+            model=config.model or "claude-3-5-haiku-20241022",
+            timeout_seconds=config.timeout_seconds,
+        )
     if config.adapter == "openai_compatible":
         if not config.base_url:
             raise ConfigError("base_url is required for openai_compatible adapter")

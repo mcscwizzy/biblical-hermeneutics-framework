@@ -38,7 +38,14 @@ class CommentaryBuilder:
         config: AgentConfig | None = None,
     ):
         self.storage_dir = Path(storage_dir)
-        self.config = config or AgentConfig()
+        if config is None:
+            # Try to load from .bhf/config.json
+            config_path = Path(".bhf/config.json")
+            if config_path.exists():
+                config = AgentConfig.from_json_file(config_path)
+            else:
+                config = AgentConfig()
+        self.config = config
         self.generator = CommentaryGenerator(config)
         self.progress_file = self.storage_dir / PROGRESS_FILE
 
@@ -104,7 +111,7 @@ class CommentaryBuilder:
             progress = self.initialize_progress(len(chapters))
 
         processed = 0
-        for book, chapter_num in chapters:
+        for idx, (book, chapter_num) in enumerate(chapters, start=1):
             if limit and processed >= limit:
                 break
 
@@ -128,19 +135,24 @@ class CommentaryBuilder:
             # Generate or regenerate
             result = self._generate_and_save(book, chapter_num, reference)
 
-            # Update progress
+            # Update progress immediately
             if existing:
                 progress = self._decrement_old_status(progress, existing.status)
 
             if result.commentary:
-                progress = self._increment_new_status(progress, result.commentary.status)
+                # Save commentary atomically
                 save_commentary(result.commentary, self.storage_dir)
+                # Update progress stat
+                progress = self._increment_new_status(progress, result.commentary.status)
+
+            # CRITICAL: Persist progress durably immediately after each chapter
+            self.save_progress(progress)
 
             processed += 1
-            if processed % 10 == 0:
-                self.save_progress(progress)
+            if idx % 50 == 0:
+                # Status update every 50 chapters
+                print(f"Progress: {idx}/{len(chapters)} chapters")
 
-        self.save_progress(progress)
         return progress
 
     def build_book(self, book: str) -> CommentaryProgress:
