@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import logging
 from datetime import datetime
 from typing import Any
 
@@ -18,7 +19,14 @@ from .models import (
     CommentaryGenerationResult,
     CommentaryStatus,
 )
+from .prompts import (
+    CHAPTER_COMMENTARY_SYSTEM_PROMPT,
+    build_user_prompt,
+)
 from .validation import validate_chapter_commentary
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 class CommentaryGenerator:
@@ -46,13 +54,34 @@ class CommentaryGenerator:
                     error="Evidence hash mismatch - commentary is stale",
                 )
 
-            # NOTE: This is a placeholder. Real implementation would call AI model
-            # to generate commentary based on bundle evidence.
-            # For now, return a minimal valid structure for testing.
-            commentary = self._generate_minimal_commentary(request, bundle)
+            # Generate using AI model
+            try:
+                chapter_data = bible.resolve_chapter(request.book, request.chapter)
+                canonical_text = bible.passage_text(chapter_data.get("verses", []))
+            except bible.BibleError:
+                canonical_text = ""
+
+            user_prompt = build_user_prompt(
+                request.reference,
+                request.book,
+                request.chapter,
+                canonical_text,
+                bundle,
+            )
+
+            response_text = self._call_model(user_prompt)
+            commentary_dict = self._parse_response(response_text)
+
+            if not commentary_dict:
+                # Model failed to generate valid JSON
+                return CommentaryGenerationResult(
+                    reference=request.reference,
+                    status=CommentaryStatus.NEEDS_REVIEW.value,
+                    error="Model did not generate valid JSON response",
+                )
 
             validation_result = validate_chapter_commentary(
-                commentary.to_dict(),
+                commentary_dict,
                 bundle,
                 expected_evidence_hash=bundle.evidence_hash,
                 expected_prompt_version=COMMENTARY_PROMPT_VERSION,
@@ -65,30 +94,70 @@ class CommentaryGenerator:
             else:
                 status = CommentaryStatus.NEEDS_REVIEW.value
 
-            final_commentary = ChapterCommentary(
-                reference=commentary.reference,
-                book=commentary.book,
-                chapter=commentary.chapter,
-                status=status,
-                sections=validation_result.accepted_sections,
-                generated_metadata=validation_result.commentary.generated_metadata
-                if validation_result.commentary
-                else None,
-                validation_errors=list(validation_result.errors),
-            )
+            if validation_result.commentary:
+                final_commentary = ChapterCommentary(
+                    reference=validation_result.commentary.reference,
+                    book=validation_result.commentary.book,
+                    chapter=validation_result.commentary.chapter,
+                    status=status,
+                    sections=validation_result.accepted_sections,
+                    generated_metadata=validation_result.commentary.generated_metadata,
+                    validation_errors=list(validation_result.errors),
+                )
+            else:
+                final_commentary = None
 
             return CommentaryGenerationResult(
                 reference=request.reference,
                 status=status,
                 commentary=final_commentary,
+                error=None if final_commentary else "Validation failed with no salvageable sections",
             )
 
         except Exception as exc:
+            LOGGER.exception(f"Error generating commentary for {request.reference}")
             return CommentaryGenerationResult(
                 reference=request.reference,
                 status=CommentaryStatus.FAILED.value,
                 error=f"Generation failed: {str(exc)}",
             )
+
+    def _call_model(self, user_prompt: str) -> str:
+        """Call configured AI model to generate commentary."""
+        from bhf_agent.adapters import create_adapter
+
+        try:
+            adapter = create_adapter(self.config)
+            messages = [
+                {"role": "user", "content": user_prompt}
+            ]
+            response = adapter.chat(
+                messages=messages,
+                system=CHAPTER_COMMENTARY_SYSTEM_PROMPT,
+                max_tokens=2000,
+            )
+            return response.get("content", "")
+        except Exception as exc:
+            LOGGER.error(f"Model call failed: {exc}")
+            raise
+
+    def _parse_response(self, response_text: str) -> dict[str, Any] | None:
+        """Parse JSON response from model."""
+        if not response_text:
+            return None
+
+        try:
+            # Try to extract JSON if wrapped in markdown code blocks
+            if "```json" in response_text:
+                start = response_text.find("```json") + 7
+                end = response_text.find("```", start)
+                if end > start:
+                    response_text = response_text[start:end]
+
+            return json.loads(response_text.strip())
+        except (json.JSONDecodeError, ValueError) as exc:
+            LOGGER.error(f"Failed to parse response JSON: {exc}")
+            return None
 
     def _generate_minimal_commentary(
         self, request: CommentaryGenerationRequest, bundle: Any
