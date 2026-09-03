@@ -65,6 +65,27 @@ def _provider_generation_profile(provider: PresentationProvider | None) -> str |
     return configured or str(provider.model)
 
 
+def _provider_log_metadata(
+    provider: PresentationProvider,
+    bundle: EvidenceBundle,
+) -> dict[str, str]:
+    return {
+        "evidence_hash_prefix": bundle.evidence_hash[:12],
+        "model": str(getattr(provider, "model", "") or ""),
+        "provider": str(
+            getattr(provider, "adapter_name", "")
+            or type(provider).__name__
+        ),
+        "reference": bundle.passage_ref,
+    }
+
+
+def _is_rate_limit_error(exc: BaseException) -> bool:
+    name = type(exc).__name__.casefold()
+    status_code = getattr(exc, "status_code", None)
+    return "ratelimit" in name or "rate_limit" in name or status_code == 429
+
+
 @dataclass(frozen=True)
 class PresentationResult:
     packet: PresentationPacket
@@ -228,9 +249,23 @@ class PresentationEngine:
                 diagnostics.append(
                     "provider capacity unavailable: concurrent request limit reached"
                 )
+                LOGGER.warning(
+                    "presentation provider capacity unavailable; deterministic fallback used",
+                    extra={
+                        "event": "presentation_provider_request",
+                        **_provider_log_metadata(provider, bundle),
+                    },
+                )
             else:
                 self.metrics.record_event("provider_attempts")
                 try:
+                    LOGGER.info(
+                        "presentation provider request started",
+                        extra={
+                            "event": "presentation_provider_request",
+                            **_provider_log_metadata(provider, bundle),
+                        },
+                    )
                     generated = provider.generate(bundle, ranked, expected)
                     generated_value = (
                         generated.to_dict() if hasattr(generated, "to_dict") else generated
@@ -264,14 +299,43 @@ class PresentationEngine:
                         f"validation rejection: {error}"
                         for error in validation.errors
                     )
+                    LOGGER.warning(
+                        "presentation provider output failed validation; deterministic fallback used",
+                        extra={
+                            "event": "presentation_validation",
+                            "validation_error_count": len(validation.errors),
+                            **_provider_log_metadata(provider, bundle),
+                        },
+                    )
                 except PresentationResponseParseError as exc:
                     self.metrics.record_event("provider_parse_failures")
                     diagnostics.append(
                         _failure_diagnostic("provider response parse failure", exc)
                     )
+                    LOGGER.warning(
+                        "presentation provider returned malformed structured output; deterministic fallback used",
+                        extra={
+                            "event": "presentation_provider_parse",
+                            "exception_class": type(exc).__name__,
+                            **_provider_log_metadata(provider, bundle),
+                        },
+                    )
                 except Exception as exc:  # noqa: BLE001
                     self.metrics.record_event("provider_failures")
                     diagnostics.append(_failure_diagnostic("provider failure", exc))
+                    message = (
+                        "presentation provider rate limited; deterministic fallback used"
+                        if _is_rate_limit_error(exc)
+                        else "presentation provider request failed; deterministic fallback used"
+                    )
+                    LOGGER.warning(
+                        message,
+                        extra={
+                            "event": "presentation_provider_request",
+                            "exception_class": type(exc).__name__,
+                            **_provider_log_metadata(provider, bundle),
+                        },
+                    )
                 finally:
                     if self._provider_requests is not None:
                         self._provider_requests.release()
@@ -312,6 +376,16 @@ class PresentationEngine:
         ranked: list[RankedEvidence],
         diagnostics: list[str],
     ) -> PresentationResult:
+        if diagnostics:
+            LOGGER.warning(
+                "presentation deterministic fallback selected",
+                extra={
+                    "event": "presentation_fallback",
+                    "diagnostic_count": len(diagnostics),
+                    "evidence_hash_prefix": bundle.evidence_hash[:12],
+                    "reference": bundle.passage_ref,
+                },
+            )
         fallback = deterministic_presentation(
             bundle,
             ranked,

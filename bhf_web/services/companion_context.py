@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import logging
 import os
 import threading
 import time
@@ -26,6 +27,7 @@ from bhf_agent.presentation.eligibility import (
     canonical_narration_material,
     is_canonical_object_passage_eligible,
 )
+from bhf_agent.runtime_paths import RUNTIME_DATA_PATHS
 from bhf_agent.study_db import (
     list_archaeology_passage_summaries,
     list_passage_map_summaries,
@@ -40,6 +42,7 @@ from framework.lexical.service import DEFAULT_LEXICAL_DATABASE_PATH
 AVAILABLE = "available"
 UNAVAILABLE = "unavailable"
 UNKNOWN = "unknown"
+LOGGER = logging.getLogger(__name__)
 
 _ENTITY_TYPES = {
     "person", "place", "theme", "people_group", "people-group", "group",
@@ -65,7 +68,7 @@ def _default_canonical_library() -> Any:
 def _default_word_study_service() -> WordStudyService:
     configured = str(os.environ.get("BHF_LEXICAL_DATABASE_PATH") or "").strip()
     packaged = Path(DEFAULT_LEXICAL_DATABASE_PATH)
-    local_runtime = Path(".bhf/lexicon.sqlite")
+    local_runtime = RUNTIME_DATA_PATHS.data_dir / "lexicon.sqlite"
     path = Path(configured) if configured else packaged if packaged.exists() else local_runtime
     return WordStudyService(database_path=path)
 
@@ -316,13 +319,20 @@ class CompanionContextService:
             raise ValueError("evidence_hash is required")
         range_start, range_end = (start or 1), (end or 9999)
         reference = _format_reference(canonical_book, chapter_number, start, end)
-        bundle = build_evidence_bundle(
-            reference,
-            canonical_results=self._canonical_results(reference),
-            geography=self._map_context(
+        evidence_subsystems: dict[str, dict[str, Any]] = {}
+        geography = self._probe(
+            "map",
+            evidence_subsystems,
+            lambda: self._map_context(
                 canonical_book, chapter_number, range_start, range_end
             ),
-            archaeology=list_archaeology_passage_summaries(
+            presentation_evidence=True,
+            fallback={},
+        )
+        archaeology = self._probe(
+            "archaeology",
+            evidence_subsystems,
+            lambda: list_archaeology_passage_summaries(
                 canonical_book,
                 chapter_number,
                 range_start,
@@ -331,8 +341,38 @@ class CompanionContextService:
                 limit=8,
                 prepare_schema=False,
             ),
+            presentation_evidence=True,
+            fallback=[],
         )
+        try:
+            bundle = build_evidence_bundle(
+                reference,
+                canonical_results=self._canonical_results(reference),
+                geography=geography,
+                archaeology=archaeology,
+            )
+        except Exception as exc:
+            LOGGER.error(
+                "presentation evidence build failed: %s",
+                type(exc).__name__,
+                extra={
+                    "event": "presentation_evidence_build",
+                    "exception_class": type(exc).__name__,
+                    "reference": reference,
+                    "subsystem": "canonical_or_bundle",
+                },
+            )
+            raise
         if bundle.evidence_hash != expected_hash:
+            LOGGER.warning(
+                "presentation evidence changed before provider request",
+                extra={
+                    "event": "presentation_evidence_build",
+                    "evidence_hash_prefix": bundle.evidence_hash[:12],
+                    "reference": reference,
+                    "subsystem": "fingerprint",
+                },
+            )
             raise StalePresentationEvidenceError(
                 "Passage evidence changed; reload Companion context before enhancing it."
             )
@@ -360,6 +400,9 @@ class CompanionContextService:
         name: str,
         subsystems: dict[str, dict[str, Any]],
         operation: Callable[[], Any],
+        *,
+        presentation_evidence: bool = False,
+        fallback: Any = None,
     ) -> Any | None:
         try:
             value = operation()
@@ -368,7 +411,19 @@ class CompanionContextService:
                 "status": UNKNOWN,
                 "error": type(exc).__name__,
             }
-            return None
+            if presentation_evidence:
+                LOGGER.warning(
+                    "presentation %s evidence unavailable: %s; continuing without %s evidence",
+                    name,
+                    type(exc).__name__,
+                    name,
+                    extra={
+                        "event": "presentation_evidence_build",
+                        "exception_class": type(exc).__name__,
+                        "subsystem": name,
+                    },
+                )
+            return fallback
         subsystems[name] = {"status": AVAILABLE}
         return value
 

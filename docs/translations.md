@@ -29,7 +29,7 @@ be installed or imported first.
 
 ## Server Storage
 
-The default storage root is `.bhf/translations/`. It contains only bundled or
+The default storage root is `.bhf-data/translations/`. It contains only bundled or
 server-managed translation data; the web application does not upload or store
 user-imported XML files there.
 
@@ -39,8 +39,8 @@ Environment override:
 
 Bundled files are stored as:
 
-- `.bhf/translations/kjv.json`
-- `.bhf/translations/kjv.metadata.json`
+- `.bhf-data/translations/kjv.json`
+- `.bhf-data/translations/kjv.metadata.json`
 
 The JSON file is the normalized Bible dataset. The metadata file records source
 and validation details, including SHA-256 hashes, counts, source URL, and

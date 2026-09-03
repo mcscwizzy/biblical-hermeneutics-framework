@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import json
-import os
 import re
 from functools import lru_cache
 from pathlib import Path
@@ -24,9 +23,6 @@ from .bible_support import (
 
 DATA_PATH = Path(__file__).resolve().parent / "data" / "asv_bible.json"
 KJV_DATA_PATH = Path(__file__).resolve().parent / "data" / "kjv_bible.json"
-IMPORTED_TRANSLATIONS_DIR = Path(
-    os.environ.get("BHF_TRANSLATIONS_PATH", str(translation_storage.TRANSLATIONS_PATH))
-)
 
 
 class BibleError(ValueError):

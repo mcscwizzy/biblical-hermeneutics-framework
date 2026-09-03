@@ -1,8 +1,10 @@
 import asyncio
+import sqlite3
 import tempfile
 import threading
 import time
 import unittest
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
@@ -20,6 +22,7 @@ from bhf_agent.presentation import (
 )
 from bhf_agent.study_actions import StudyActionResult
 from bhf_agent.study_db import (
+    SCHEMA_VERSION,
     initialize_database,
     list_archaeology_passage_summaries,
     list_passage_map_summaries,
@@ -185,6 +188,73 @@ class CompanionContextServiceTests(unittest.TestCase):
         service.invalidate_translation_cache()
         self.assertEqual(len(service._translations()), 2)
         self.assertEqual(len(calls), 2)
+
+    def test_compact_readers_bootstrap_a_fresh_study_database_once(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            database = Path(temporary) / "study.sqlite"
+
+            maps = list_passage_map_summaries(
+                "Exodus", 1, 1, 9999, path=database, prepare_schema=False
+            )
+            archaeology = list_archaeology_passage_summaries(
+                "Exodus", 1, 1, 9999, path=database, prepare_schema=False
+            )
+
+            self.assertTrue(database.is_file())
+            self.assertEqual(set(maps), {"places", "routes"})
+            self.assertIsInstance(archaeology, list)
+            with sqlite3.connect(database) as connection:
+                tables = {
+                    row[0]
+                    for row in connection.execute(
+                        "SELECT name FROM sqlite_master WHERE type = 'table'"
+                    )
+                }
+                migration = connection.execute(
+                    "SELECT MAX(version) FROM schema_migrations"
+                ).fetchone()[0]
+            self.assertIn("place_references", tables)
+            self.assertIn("archaeology_scripture_links", tables)
+            self.assertEqual(migration, SCHEMA_VERSION)
+
+    def test_compact_reader_bootstrap_is_thread_safe(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            database = Path(temporary) / "study.sqlite"
+            calls = 0
+            calls_lock = threading.Lock()
+
+            def initialize_once(path):
+                nonlocal calls
+                with calls_lock:
+                    calls += 1
+                initialize_database(path)
+
+            def read_maps(_index):
+                return list_passage_map_summaries(
+                    "Exodus", 1, 1, 9999, path=database, prepare_schema=False
+                )
+
+            with patch(
+                "bhf_agent.study_db.initialize_database",
+                side_effect=initialize_once,
+            ), ThreadPoolExecutor(max_workers=6) as executor:
+                results = list(executor.map(read_maps, range(12)))
+
+            self.assertEqual(calls, 1)
+            self.assertTrue(all(set(result) == {"places", "routes"} for result in results))
+
+    def test_fresh_study_database_keeps_companion_context_available(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            service, _library = self._service()
+            service.study_db_path = Path(temporary) / "study.sqlite"
+
+            result = service.build(book="Exodus", chapter=1)
+
+            self.assertEqual(result["reference"], "Exodus 1")
+            self.assertEqual(result["subsystems"]["canonical"]["status"], "available")
+            self.assertEqual(result["subsystems"]["maps"]["status"], "available")
+            self.assertEqual(result["subsystems"]["archaeology"]["status"], "available")
+            self.assertTrue(service.study_db_path.is_file())
 
     @patch("bhf_web.services.companion_context.list_archaeology_passage_summaries")
     @patch("bhf_web.services.companion_context.list_passage_map_summaries")
@@ -606,6 +676,62 @@ class CompanionContextServiceTests(unittest.TestCase):
         self.assertNotIn("evidence_items", enhanced["evidence_bundle"])
         self.assertNotIn("provenance", enhanced["evidence_bundle"])
 
+    def test_lazy_enhancement_reaches_provider_when_optional_evidence_fails(self):
+        class WorkingProvider(PresentationProvider):
+            model = "fixture-model"
+
+            def __init__(self):
+                self.calls = 0
+
+            def generate(self, bundle, ranked, generated_from):
+                self.calls += 1
+                packet = deterministic_presentation(bundle, ranked).to_dict()
+                packet["generated_from"] = generated_from.to_dict()
+                return packet
+
+        failures = ("map", "archaeology", "both")
+        for failure in failures:
+            with self.subTest(failure=failure):
+                provider = WorkingProvider()
+                service, _library = self._service(
+                    presentation_engine=PresentationEngine(provider=provider),
+                )
+
+                def map_lookup(*_args, **_kwargs):
+                    if failure in {"map", "both"}:
+                        raise sqlite3.OperationalError(
+                            "no such table: place_references"
+                        )
+                    return {"places": [], "routes": []}
+
+                def archaeology_lookup(*_args, **_kwargs):
+                    if failure in {"archaeology", "both"}:
+                        raise sqlite3.OperationalError(
+                            "no such table: archaeology_items"
+                        )
+                    return []
+
+                with patch(
+                    "bhf_web.services.companion_context.list_passage_map_summaries",
+                    side_effect=map_lookup,
+                ), patch(
+                    "bhf_web.services.companion_context.list_archaeology_passage_summaries",
+                    side_effect=archaeology_lookup,
+                ):
+                    initial = service.build(book="John", chapter=4, verse_start=23)
+                    enhanced = service.enhance_presentation(
+                        book="John",
+                        chapter=4,
+                        verse_start=23,
+                        evidence_hash=initial["evidence_bundle"]["evidence_hash"],
+                    )
+
+                self.assertEqual(provider.calls, 1)
+                self.assertEqual(
+                    enhanced["presentation_packet"]["presentation_mode"],
+                    "generated",
+                )
+
     @patch("bhf_web.services.companion_context.list_archaeology_passage_summaries", return_value=[])
     @patch("bhf_web.services.companion_context.list_passage_map_summaries", return_value={"places": [], "routes": []})
     def test_groups_and_events_use_the_same_passage_eligibility(self, _map_lookup, _archaeology_lookup):
@@ -694,6 +820,59 @@ class CompactPassageRepositoryTests(unittest.TestCase):
 
 
 class CompanionContextRouteTests(unittest.TestCase):
+    def test_fresh_study_database_returns_http_200_with_canonical_context(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            database = Path(temporary) / "study.sqlite"
+            library = _CanonicalLibrary(_canonical_objects())
+            service = CompanionContextService(
+                study_db_path=database,
+                commentary_db_path=Path(temporary) / "commentary.sqlite",
+                commentary_service=_Commentary(),
+                word_study_service=_WordService(0),
+                canonical_library_provider=lambda: library,
+                translation_provider=lambda: [
+                    {"translation_id": "asv", "installed": True},
+                    {"translation_id": "kjv", "installed": True},
+                ],
+            )
+            app = FastAPI()
+            register_study_routes(
+                app,
+                study_db_path=str(database),
+                templates=None,
+                job_store=None,
+                companion_context_service=service,
+            )
+
+            async def request_context():
+                transport = httpx.ASGITransport(app=app)
+                async with httpx.AsyncClient(
+                    transport=transport,
+                    base_url="http://testserver",
+                ) as client:
+                    return await client.get(
+                        "/api/study/companion-context",
+                        params={"book": "Exodus", "chapter": 1},
+                    )
+
+            async def test_threadpool(callable_, *args, **kwargs):
+                return callable_(*args, **kwargs)
+
+            with patch("bhf_web.routes.study.run_in_threadpool", new=test_threadpool):
+                response = asyncio.run(request_context())
+
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(response.json()["reference"], "Exodus 1")
+            self.assertEqual(
+                response.json()["subsystems"]["canonical"]["status"],
+                "available",
+            )
+            self.assertNotIn(
+                "OperationalError",
+                str(response.json()["subsystems"]),
+            )
+            self.assertTrue(database.is_file())
+
     def test_api_accepts_reference_fields_and_returns_compact_context(self):
         class FakeService:
             def __init__(self):

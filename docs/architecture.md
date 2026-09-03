@@ -189,13 +189,13 @@ legacy profile and answer-mode values only for compatibility.
 
 ## Storage and process boundaries
 
-- `.bhf/study.sqlite` stores server-side study data in a source checkout.
+- `.bhf-data/study.sqlite` stores server-side study data in a source checkout.
 - `.bhf/ckl.sqlite` is the generated local CKL database.
 - `<study-db-stem>.presentation-cache.sqlite` stores disposable, validated
   presentation packets separately from CKL when optional generation is enabled.
 - `framework/lexical/database/lexicon.sqlite` is the default source-run lexical
   database; Docker uses `.bhf/lexicon.sqlite` on the host mount.
-- `.bhf/sessions/` stores optional local agent memory.
+- `.bhf-data/sessions/` stores optional web-agent session memory.
 - Browser IndexedDB and Cache Storage contain PWA data for that browser profile.
 - Background ask-job progress is process memory and disappears on restart.
 

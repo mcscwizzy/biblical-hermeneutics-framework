@@ -1055,10 +1055,29 @@ def run_presentation_job(
     except StalePresentationEvidenceError:
         job.fail("stale_evidence")
         return
-    except TimeoutError:
+    except TimeoutError as exc:
+        LOGGER.warning(
+            "presentation provider request timed out",
+            extra={
+                "event": "presentation_provider_request",
+                "exception_class": type(exc).__name__,
+                "evidence_hash_prefix": str(request_values.get("evidence_hash") or "")[:12],
+                "reference": job.reference,
+            },
+        )
         job.fail("provider_timeout")
         return
-    except Exception:  # noqa: BLE001 - provider internals are deliberately not retained
+    except Exception as exc:  # noqa: BLE001 - provider internals are deliberately not retained
+        LOGGER.warning(
+            "presentation background request failed: %s",
+            type(exc).__name__,
+            extra={
+                "event": "presentation_provider_request",
+                "exception_class": type(exc).__name__,
+                "evidence_hash_prefix": str(request_values.get("evidence_hash") or "")[:12],
+                "reference": job.reference,
+            },
+        )
         job.fail("provider_failure")
         return
 

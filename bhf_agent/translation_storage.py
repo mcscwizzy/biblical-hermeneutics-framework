@@ -12,11 +12,12 @@ from typing import Any
 from xml.etree import ElementTree
 
 from .references import BOOK_ALIASES, BOOKS
+from .runtime_paths import RUNTIME_DATA_PATHS
 
 
 DATA_PATH = Path(__file__).resolve().parent / "data" / "asv_bible.json"
 LEGACY_KJV_DATA_PATH = Path(__file__).resolve().parent / "data" / "kjv_bible.json"
-TRANSLATIONS_PATH = Path(os.environ.get("BHF_TRANSLATIONS_PATH", ".bhf/translations"))
+TRANSLATIONS_PATH = RUNTIME_DATA_PATHS.translations_path
 
 
 class TranslationStorageError(ValueError):

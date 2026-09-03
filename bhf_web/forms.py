@@ -70,8 +70,10 @@ DEFAULT_CONFIG_VALUES: dict[str, Any] = {
     "runtime_profile_mode": WEB_AI_DEFAULTS["runtime_profile_mode"],
     "memory_enabled": WEB_AI_DEFAULTS["memory_enabled"],
     "session_id": None,
-    "memory_path": None,
+    "memory_path": str(settings.MEMORY_PATH),
     "memory_max_turns": 8,
+    "commentary": {"database_path": str(settings.COMMENTARY_DB_PATH)},
+    "public_cache": {"path": str(settings.PUBLIC_CACHE_PATH)},
 }
 
 

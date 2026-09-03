@@ -3,17 +3,16 @@
 from __future__ import annotations
 
 import json
-import os
-from pathlib import Path
 from typing import Any
 
+from .runtime_paths import RUNTIME_DATA_PATHS
 from .translation_storage import normalize_translation_id, write_json_atomic
 from .translation_installer import get_translation_installation
 from .translation_registry import set_default_translation as set_registry_default_translation
 
 
 DEFAULT_READER_TRANSLATION_ID = "asv"
-SETTINGS_PATH = Path(os.environ.get("BHF_READER_SETTINGS_PATH", ".bhf/reader-settings.json"))
+SETTINGS_PATH = RUNTIME_DATA_PATHS.reader_settings_path
 
 
 def load_reader_settings() -> dict[str, Any]:

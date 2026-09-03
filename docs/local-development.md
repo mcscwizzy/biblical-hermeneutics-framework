@@ -113,7 +113,7 @@ the server. Example agent configurations live in [`examples/`](../examples/).
 ### Persistent local defaults
 
 Instead of exporting variables every time, create the ignored file
-`.bhf/web-config.json`:
+`.bhf-data/web-config.json`:
 
 ```json
 {

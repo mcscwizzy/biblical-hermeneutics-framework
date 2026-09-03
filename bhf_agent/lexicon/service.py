@@ -12,6 +12,7 @@ from typing import Any, Mapping
 from framework.lexical.service import DEFAULT_LEXICAL_DATABASE_PATH
 
 from bhf_agent.bible import BibleError, normalize_book_name
+from bhf_agent.runtime_paths import RUNTIME_DATA_PATHS
 
 from .models import WORD_STUDY_GUARDRAILS, LexicalEntry, WordOccurrence, WordStudyResult
 from .normalization import (
@@ -47,7 +48,9 @@ class WordStudyService:
         )
         packaged_path = Path(DEFAULT_LEXICAL_DATABASE_PATH)
         self.database_path = Path(configured_path) if configured_path else (
-            packaged_path if packaged_path.exists() else Path(".bhf/lexicon.sqlite")
+            packaged_path
+            if packaged_path.exists()
+            else RUNTIME_DATA_PATHS.data_dir / "lexicon.sqlite"
         )
 
     @property

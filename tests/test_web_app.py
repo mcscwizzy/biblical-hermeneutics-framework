@@ -28,6 +28,7 @@ from bhf_web.forms import form_values_for_ask_prompt
 from bhf_web.forms import load_web_defaults
 from bhf_agent.study_db import get_source, initialize_database, list_sources
 from bhf_web.runtime import load_cors_origins, load_runtime_config
+from bhf_web.settings import resolve_runtime_data_paths
 
 try:
     from bhf_web.app import AskJob, app, create_app
@@ -2259,6 +2260,52 @@ class WebAppTests(unittest.TestCase):
         self.assertTrue(next(entry for entry in translations["translations"] if entry["id"] == "kjv")["default"])
         self.assertIn('data-default-translation="kjv"', index_response["body"])
         self.assertIn('name="reader_translation" value="kjv"', index_response["body"])
+
+    def test_fresh_vercel_reader_settings_returns_safe_default(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            paths = resolve_runtime_data_paths(
+                {"VERCEL": "1", "BHF_DATA_DIR": temporary}
+            )
+            with patch.object(
+                translation_settings,
+                "SETTINGS_PATH",
+                paths.reader_settings_path,
+            ):
+                response = asgi_request("GET", "/api/settings/reader")
+
+            self.assertEqual(response["status"], 200)
+            self.assertEqual(
+                json.loads(response["body"])["default_translation"],
+                "asv",
+            )
+            self.assertFalse(paths.reader_settings_path.exists())
+
+    def test_fresh_vercel_translation_endpoint_discovers_built_ins(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            paths = resolve_runtime_data_paths(
+                {"VERCEL": "1", "BHF_DATA_DIR": temporary}
+            )
+            with patch.object(
+                translation_storage,
+                "TRANSLATIONS_PATH",
+                paths.translations_path,
+            ), patch.object(
+                translation_settings,
+                "SETTINGS_PATH",
+                paths.reader_settings_path,
+            ):
+                response = asgi_request("GET", "/api/translations/installed")
+
+            self.assertEqual(response["status"], 200)
+            payload = json.loads(response["body"])
+            self.assertEqual(payload["default_translation"], "asv")
+            self.assertEqual(
+                [item["id"] for item in payload["translations"]],
+                ["asv", "kjv"],
+            )
+            self.assertTrue(
+                (paths.translations_path / "translations.sqlite").is_file()
+            )
 
     def test_translation_catalog_route_returns_curated_sections(self):
         with tempfile.TemporaryDirectory() as tmpdir, patch.object(

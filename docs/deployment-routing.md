@@ -81,6 +81,12 @@ Ask BHF uses a single request, so it does not expose the multi-request progress
 history available from a durable backend. Browser-local notes, highlights,
 and saved studies remain device-only; do not rely on Vercel's ephemeral
 filesystem for durable server data.
+Writable server defaults resolve beneath `/tmp/bhf-data` on Vercel, including
+the study database, presentation cache, translations registry, and reader
+settings. A cold instance reconstructs the built-in study schema and seed data
+on first use. `BHF_DATA_DIR` and the individual `BHF_*_PATH` overrides remain
+available, but Vercel local files are still transient and are not cloud
+persistence.
 Deterministic Did You Know / Walk the Land / Why It Matters content renders
 first. When the reader enables AI passage summaries, the browser then makes one
 bounded synchronous presentation request. Provider timeout, invalid model

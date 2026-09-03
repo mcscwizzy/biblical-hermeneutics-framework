@@ -199,7 +199,7 @@ when the shell or installed data packs need to be rebuilt.
   person explicitly shares.
 - Device-imported translations and offline records are not included in Git or
   a Docker image.
-- Server-side `.bhf/study.sqlite` data and browser IndexedDB are separate
+- Server-side `.bhf-data/study.sqlite` data and browser IndexedDB are separate
   storage layers. Export browser data before clearing site storage.
 - Map-note mutations may queue for replay when connectivity returns. Notes,
   highlights, and saved studies are treated as device-local PWA records.

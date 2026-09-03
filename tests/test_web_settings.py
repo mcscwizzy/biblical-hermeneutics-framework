@@ -15,6 +15,17 @@ class RuntimeDataPathTests(unittest.TestCase):
             paths.commentary_db_path,
             Path("/tmp/test-data/commentary.sqlite"),
         )
+        self.assertEqual(paths.translations_path, Path("/tmp/test-data/translations"))
+        self.assertEqual(
+            paths.reader_settings_path,
+            Path("/tmp/test-data/reader-settings.json"),
+        )
+        self.assertEqual(paths.web_config_path, Path("/tmp/test-data/web-config.json"))
+        self.assertEqual(paths.memory_path, Path("/tmp/test-data/sessions"))
+        self.assertEqual(
+            paths.public_cache_path,
+            Path("/tmp/test-data/public-answer-cache.json"),
+        )
 
     def test_explicit_job_path_overrides_data_directory(self):
         paths = resolve_runtime_data_paths(
@@ -36,6 +47,16 @@ class RuntimeDataPathTests(unittest.TestCase):
             paths.commentary_db_path,
             Path(".bhf-data/commentary.sqlite"),
         )
+        self.assertEqual(paths.translations_path, Path(".bhf-data/translations"))
+        self.assertEqual(
+            paths.reader_settings_path,
+            Path(".bhf-data/reader-settings.json"),
+        )
+        self.assertEqual(paths.web_config_path, Path(".bhf-data/web-config.json"))
+        self.assertEqual(
+            paths.public_cache_path,
+            Path(".bhf-data/public-answer-cache.json"),
+        )
 
     def test_vercel_defaults_to_tmp_runtime_data(self):
         paths = resolve_runtime_data_paths({"VERCEL": "1"})
@@ -46,6 +67,17 @@ class RuntimeDataPathTests(unittest.TestCase):
         self.assertEqual(
             paths.commentary_db_path,
             Path("/tmp/bhf-data/commentary.sqlite"),
+        )
+        self.assertEqual(paths.translations_path, Path("/tmp/bhf-data/translations"))
+        self.assertEqual(
+            paths.reader_settings_path,
+            Path("/tmp/bhf-data/reader-settings.json"),
+        )
+        self.assertEqual(paths.web_config_path, Path("/tmp/bhf-data/web-config.json"))
+        self.assertEqual(paths.memory_path, Path("/tmp/bhf-data/sessions"))
+        self.assertEqual(
+            paths.public_cache_path,
+            Path("/tmp/bhf-data/public-answer-cache.json"),
         )
 
     def test_explicit_data_directory_beats_vercel_default(self):
@@ -75,6 +107,24 @@ class RuntimeDataPathTests(unittest.TestCase):
         self.assertEqual(paths.study_db_path, Path("/custom/study.db"))
         self.assertEqual(paths.job_db_path, Path("/custom/jobs.db"))
         self.assertEqual(paths.commentary_db_path, Path("/custom/commentary.db"))
+
+    def test_individual_writable_path_overrides_beat_vercel_defaults(self):
+        paths = resolve_runtime_data_paths(
+            {
+                "VERCEL": "1",
+                "BHF_TRANSLATIONS_PATH": "/custom/translations",
+                "BHF_READER_SETTINGS_PATH": "/custom/reader.json",
+                "BHF_WEB_CONFIG_PATH": "/custom/web.json",
+                "BHF_MEMORY_PATH": "/custom/sessions",
+                "BHF_PUBLIC_CACHE_PATH": "/custom/public-cache.json",
+            }
+        )
+
+        self.assertEqual(paths.translations_path, Path("/custom/translations"))
+        self.assertEqual(paths.reader_settings_path, Path("/custom/reader.json"))
+        self.assertEqual(paths.web_config_path, Path("/custom/web.json"))
+        self.assertEqual(paths.memory_path, Path("/custom/sessions"))
+        self.assertEqual(paths.public_cache_path, Path("/custom/public-cache.json"))
 
 
 if __name__ == "__main__":

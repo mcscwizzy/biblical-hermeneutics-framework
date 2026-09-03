@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import logging
 import re
 import threading
 from pathlib import Path
@@ -12,6 +13,7 @@ from fastapi.concurrency import run_in_threadpool
 from fastapi.responses import JSONResponse
 
 from bhf_agent.bible import normalize_book_name
+from bhf_agent.runtime_paths import RUNTIME_DATA_PATHS
 from bhf_agent.study_actions import StudyActionRouter, compact_fact_packet
 from bhf_agent.study_db import StudyDataError
 
@@ -27,6 +29,7 @@ from ..services.web_helpers import (
 
 
 _EVIDENCE_HASH_PATTERN = re.compile(r"^[0-9a-f]{64}$", re.IGNORECASE)
+LOGGER = logging.getLogger(__name__)
 
 
 def _validated_presentation_request(
@@ -93,7 +96,7 @@ def register_study_routes(
     job_store: Any,
     study_action_router: StudyActionRouter | None = None,
     context_presenter: Callable[[Mapping[str, Any]], dict[str, Any]] | None = None,
-    commentary_db_path: str | Path = ".bhf/commentary.sqlite",
+    commentary_db_path: str | Path | None = None,
     companion_context_service: CompanionContextService | None = None,
     presentation_job_runner: Callable[..., None] = run_presentation_job,
     presentation_transport: str = "job",
@@ -101,7 +104,7 @@ def register_study_routes(
     router = study_action_router or StudyActionRouter()
     companion_context = companion_context_service or CompanionContextService(
         study_db_path=study_db_path,
-        commentary_db_path=commentary_db_path,
+        commentary_db_path=commentary_db_path or RUNTIME_DATA_PATHS.commentary_db_path,
     )
     app.state.companion_context_service = companion_context
     if presentation_transport not in {"job", "synchronous", "unavailable"}:
@@ -206,7 +209,16 @@ def register_study_routes(
                         },
                         status_code=409,
                     )
-                except TimeoutError:
+                except TimeoutError as exc:
+                    LOGGER.warning(
+                        "presentation provider request timed out",
+                        extra={
+                            "event": "presentation_provider_request",
+                            "exception_class": type(exc).__name__,
+                            "evidence_hash_prefix": request_values["evidence_hash"][:12],
+                            "reference": reference,
+                        },
+                    )
                     return JSONResponse(
                         {
                             "error": "The presentation provider timed out.",
@@ -214,7 +226,17 @@ def register_study_routes(
                         },
                         status_code=503,
                     )
-                except Exception:  # noqa: BLE001 - never expose provider internals
+                except Exception as exc:  # noqa: BLE001 - never expose provider internals
+                    LOGGER.warning(
+                        "presentation synchronous request failed: %s",
+                        type(exc).__name__,
+                        extra={
+                            "event": "presentation_provider_request",
+                            "exception_class": type(exc).__name__,
+                            "evidence_hash_prefix": request_values["evidence_hash"][:12],
+                            "reference": reference,
+                        },
+                    )
                     return JSONResponse(
                         {
                             "error": "Presentation enhancement is unavailable.",
@@ -248,7 +270,15 @@ def register_study_routes(
             return JSONResponse(response, status_code=202)
         except (ValueError, StudyDataError) as exc:
             return JSONResponse({"error": str(exc)}, status_code=400)
-        except Exception:  # noqa: BLE001 - optional generation fails independently
+        except Exception as exc:  # noqa: BLE001 - optional generation fails independently
+            LOGGER.warning(
+                "presentation request unavailable: %s",
+                type(exc).__name__,
+                extra={
+                    "event": "presentation_provider_request",
+                    "exception_class": type(exc).__name__,
+                },
+            )
             return JSONResponse(
                 {
                     "error": "Presentation enhancement is unavailable.",

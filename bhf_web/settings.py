@@ -3,9 +3,13 @@
 from __future__ import annotations
 
 import os
-from dataclasses import dataclass
-from pathlib import Path
-from typing import Mapping
+
+from bhf_agent.runtime_paths import (
+    RUNTIME_DATA_PATHS,
+    RuntimeDataPaths,
+    default_runtime_data_dir,
+    resolve_runtime_data_paths,
+)
 
 
 def _env_bool(name: str, default: bool = False) -> bool:
@@ -20,45 +24,16 @@ def _env_bool(name: str, default: bool = False) -> bool:
     return default
 
 
-@dataclass(frozen=True)
-class RuntimeDataPaths:
-    data_dir: Path
-    study_db_path: Path
-    job_db_path: Path
-    commentary_db_path: Path
-
-
-def _default_data_dir(environ: Mapping[str, str]) -> Path:
-    """Return the deployment's writable runtime-data directory."""
-
-    if environ.get("VERCEL"):
-        return Path("/tmp/bhf-data")
-    return Path(".bhf-data")
-
-
-def resolve_runtime_data_paths(
-    environ: Mapping[str, str] | None = None,
-) -> RuntimeDataPaths:
-    """Resolve writable database paths, preserving explicit path overrides."""
-
-    values = os.environ if environ is None else environ
-    data_dir = Path(values.get("BHF_DATA_DIR") or _default_data_dir(values))
-    return RuntimeDataPaths(
-        data_dir=data_dir,
-        study_db_path=Path(
-            values.get("BHF_STUDY_DB_PATH") or data_dir / "study.sqlite"
-        ),
-        job_db_path=Path(values.get("BHF_JOB_DB_PATH") or data_dir / "jobs.sqlite"),
-        commentary_db_path=Path(
-            values.get("BHF_COMMENTARY_DB_PATH") or data_dir / "commentary.sqlite"
-        ),
-    )
-
-
-RUNTIME_DATA_PATHS = resolve_runtime_data_paths()
 DATA_DIR = RUNTIME_DATA_PATHS.data_dir
 STUDY_DB_PATH = RUNTIME_DATA_PATHS.study_db_path
 JOB_DB_PATH = RUNTIME_DATA_PATHS.job_db_path
 COMMENTARY_DB_PATH = RUNTIME_DATA_PATHS.commentary_db_path
-WEB_CONFIG_PATH = Path(os.environ.get("BHF_WEB_CONFIG_PATH", ".bhf/web-config.json"))
+TRANSLATIONS_PATH = RUNTIME_DATA_PATHS.translations_path
+READER_SETTINGS_PATH = RUNTIME_DATA_PATHS.reader_settings_path
+WEB_CONFIG_PATH = RUNTIME_DATA_PATHS.web_config_path
+MEMORY_PATH = RUNTIME_DATA_PATHS.memory_path
+PUBLIC_CACHE_PATH = RUNTIME_DATA_PATHS.public_cache_path
 TEST_MODE = _env_bool("BHF_TEST_MODE", False)
+
+
+_default_data_dir = default_runtime_data_dir

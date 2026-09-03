@@ -9,7 +9,7 @@ ARG BHF_TYNDALE_ARCHIVE_SHA256=7b4d5ae088449d5a6925170c4b89b978acee2f78f73dc6b8a
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-ENV BHF_MEMORY_PATH=/app/.bhf/sessions
+ENV BHF_MEMORY_PATH=/app/.bhf-data/sessions
 ENV BHF_CKL_BACKEND=sqlite
 ENV BHF_CKL_DATABASE_PATH=/app/.bhf/ckl.sqlite
 ENV BHF_CKL_STALE_DATABASE_POLICY=error
@@ -73,7 +73,7 @@ RUN chmod +x /app/scripts/docker-entrypoint.sh \
     && rm -rf /tmp/bhf-lexical-sources /tmp/bhf-commentary \
     && apt-get purge -y --auto-remove git \
     && rm -rf /var/lib/apt/lists/* \
-    && mkdir -p /app/.bhf/sessions /app/.bhf/exports /app/.bhf-data/sessions \
+    && mkdir -p /app/.bhf /app/.bhf-data/sessions \
     && python -m framework.canonical_library build-db --output /app/.bhf/ckl.sqlite \
     && python -m framework.canonical_library verify-db --database /app/.bhf/ckl.sqlite --skip-fingerprint \
     && chown -R bhf:bhf /app

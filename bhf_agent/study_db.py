@@ -3,8 +3,9 @@
 from __future__ import annotations
 
 import json
-import sqlite3
 import re
+import sqlite3
+import threading
 import uuid
 from pathlib import Path
 from typing import Any
@@ -30,6 +31,19 @@ from .archaeology_content import (
 from .archaeology import attribution_text, validate_media_record
 
 SCHEMA_VERSION = 37
+_FAST_READER_TABLES = frozenset(
+    {
+        "archaeology_items",
+        "archaeology_scripture_links",
+        "archaeology_sites",
+        "biblical_places",
+        "map_routes",
+        "place_references",
+        "route_references",
+    }
+)
+_READY_DATABASES: dict[Path, tuple[int, int]] = {}
+_READY_DATABASES_LOCK = threading.RLock()
 OPENBIBLE_PLACES_PATH = Path(__file__).resolve().parent / "data" / "openbible_places.json"
 BROAD_PERIOD_LABEL = "Broad / uncertain period"
 CANONICAL_PERIOD_LABELS = (
@@ -109,6 +123,53 @@ _MANUSCRIPT_PERIODS = {
 
 def initialize_database(path: str | Path = DEFAULT_DB_PATH) -> None:
     _reader_state_repo.initialize_database(path=path, ensure_schema=_ensure_schema)
+
+
+def ensure_study_database_ready(path: str | Path = DEFAULT_DB_PATH) -> Path:
+    """Prepare a study database once per process/path for schema-free readers."""
+
+    database_path = Path(path).expanduser().resolve(strict=False)
+    signature = _database_file_signature(database_path)
+    with _READY_DATABASES_LOCK:
+        if signature is not None and _READY_DATABASES.get(database_path) == signature:
+            return database_path
+        if not _study_database_schema_is_current(database_path):
+            initialize_database(database_path)
+        signature = _database_file_signature(database_path)
+        if signature is None:
+            raise OSError(f"study database was not created: {database_path}")
+        _READY_DATABASES[database_path] = signature
+    return database_path
+
+
+def _database_file_signature(path: Path) -> tuple[int, int] | None:
+    try:
+        stat = path.stat()
+    except FileNotFoundError:
+        return None
+    return stat.st_dev, stat.st_ino
+
+
+def _study_database_schema_is_current(path: Path) -> bool:
+    if not path.is_file():
+        return False
+    try:
+        uri = f"{path.as_uri()}?mode=ro"
+        with sqlite3.connect(uri, uri=True) as connection:
+            migration = connection.execute(
+                "SELECT MAX(version) FROM schema_migrations"
+            ).fetchone()
+            if not migration or int(migration[0] or 0) < SCHEMA_VERSION:
+                return False
+            tables = {
+                str(row[0])
+                for row in connection.execute(
+                    "SELECT name FROM sqlite_master WHERE type = 'table'"
+                )
+            }
+    except (OSError, sqlite3.DatabaseError):
+        return False
+    return _FAST_READER_TABLES.issubset(tables)
 
 
 def list_notes(
@@ -320,6 +381,8 @@ def list_passage_map_summaries(
     limit: int = 12,
     prepare_schema: bool = True,
 ) -> dict[str, list[dict[str, Any]]]:
+    if not prepare_schema:
+        ensure_study_database_ready(path)
     return _maps_repo.list_passage_map_summaries(
         book,
         chapter,
@@ -529,6 +592,8 @@ def list_archaeology_passage_summaries(
     limit: int = 8,
     prepare_schema: bool = True,
 ) -> list[dict[str, Any]]:
+    if not prepare_schema:
+        ensure_study_database_ready(path)
     return _archaeology_repo.list_archaeology_passage_summaries(
         book,
         chapter,

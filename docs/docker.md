@@ -130,10 +130,13 @@ The most useful `.env` settings are:
 | `BHF_CONTEXT_WINDOW` | `8192` in `.env.example` | Model context-window budget. |
 | `BHF_MAX_TOKENS` | `1536` | Maximum generated tokens. |
 | `BHF_TIMEOUT_SECONDS` | `120` | Provider request deadline in seconds. |
-| `BHF_DATA_DIR` | `.bhf-data` outside the image | Shared directory for writable runtime databases. |
+| `BHF_DATA_DIR` | `.bhf-data` outside the image | Shared directory for writable runtime state. |
 | `BHF_JOB_DB_PATH` | `$BHF_DATA_DIR/jobs.sqlite` | Explicit override for durable background-job state. |
 | `BHF_STUDY_DB_PATH` | `$BHF_DATA_DIR/study.sqlite` | Explicit override for server study data. |
 | `BHF_COMMENTARY_DB_PATH` | `$BHF_DATA_DIR/commentary.sqlite` | Explicit override for commentary data. |
+| `BHF_TRANSLATIONS_PATH` | `$BHF_DATA_DIR/translations` | Explicit override for transient/server-installed translation data. |
+| `BHF_READER_SETTINGS_PATH` | `$BHF_DATA_DIR/reader-settings.json` | Explicit override for reader defaults. |
+| `BHF_WEB_CONFIG_PATH` | `$BHF_DATA_DIR/web-config.json` | Explicit override for local web defaults. |
 | `BHF_MEMORY_ENABLED` | `false` | Enables local session-memory files. |
 | `BHF_LEXICAL_SEED_POLICY` | `refresh` in Compose | `refresh`, `missing`, or `none`. |
 | `BHF_COMMENTARY_SEED_POLICY` | `refresh` in Compose | `refresh`, `missing`, or `none` for the Tyndale database. |
