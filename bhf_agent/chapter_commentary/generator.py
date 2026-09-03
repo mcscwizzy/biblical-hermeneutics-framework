@@ -124,10 +124,10 @@ class CommentaryGenerator:
 
     def _call_model(self, user_prompt: str) -> str:
         """Call configured AI model to generate commentary."""
-        from bhf_agent.adapters import create_adapter
+        from bhf_agent.adapters.factory import build_chat_adapter
 
         try:
-            adapter = create_adapter(self.config)
+            adapter = build_chat_adapter(self.config)
             messages = [
                 {"role": "user", "content": user_prompt}
             ]
