@@ -34,7 +34,7 @@ Structure commentary adaptively:
 The commentary should sound like an excellent historical/cultural Bible study guide.
 Avoid robotic language. Prefer natural explanation over repetitive evidence citations."""
 
-CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE = """Generate BHF chapter commentary for {reference}.
+CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE = """TASK: Generate BHF chapter commentary for {reference}.
 
 CANONICAL TEXT:
 {canonical_text}
@@ -42,7 +42,9 @@ CANONICAL TEXT:
 SUPPLIED EVIDENCE:
 {evidence_summary}
 
-OUTPUT FORMAT (as JSON):
+RESPOND WITH ONLY VALID JSON - NO PREAMBLE, NO EXPLANATION, NO TEXT BEFORE OR AFTER.
+
+The JSON must have this exact structure:
 {{
   "reference": "{reference}",
   "book": "{book}",
@@ -50,16 +52,16 @@ OUTPUT FORMAT (as JSON):
   "status": "pending",
   "sections": [
     {{
-      "kind": "chapter_overview|historical_context|people_places|archaeology_geography|language_literary|chronology|interpretive_questions|things_easy_to_miss|dig_deeper",
-      "title": "Section title",
+      "kind": "chapter_overview",
+      "title": "Overview",
       "blocks": [
         {{
           "id": "block_1",
-          "text": "Clear, grounded prose block",
-          "verse_refs": ["Genesis 1:1", "Genesis 1:5"],
-          "evidence_ids": ["evidence-id-1", "evidence-id-2"],
-          "confidence": "high|medium|low",
-          "interpretation_level": "fact|inference|disputed"
+          "text": "Prose grounded in supplied evidence only",
+          "verse_refs": ["Genesis 1:1"],
+          "evidence_ids": ["evidence-id-from-supplied-list"],
+          "confidence": "high",
+          "interpretation_level": "fact"
         }}
       ]
     }}
@@ -73,17 +75,15 @@ OUTPUT FORMAT (as JSON):
   }}
 }}
 
-CONSTRAINTS:
-- Each block must cite at least one evidence_id from the supplied evidence
-- confidence must match or be lower than cited evidence confidence
-- disputed evidence cannot become "fact" interpretation
-- Do NOT invent evidence IDs - only use ones provided
-- Section kinds must be from the allowed list
-- Block text must not exceed 2000 characters
-- Generate only sections with genuine supporting evidence
-- It is OK to have few or zero sections if evidence is sparse
+RULES:
+1. Return ONLY JSON - nothing else
+2. Each block.evidence_ids must contain actual IDs from supplied evidence
+3. confidence <= evidence confidence
+4. disputed evidence cannot be "fact"
+5. text <= 2000 chars
+6. Only sections with real evidence
 
-Begin your response with the JSON object only - no preamble."""
+DO NOT RESPOND WITH EXPLANATIONS OR PREAMBLE. JSON ONLY."""
 
 
 def generate_evidence_summary(bundle) -> str:

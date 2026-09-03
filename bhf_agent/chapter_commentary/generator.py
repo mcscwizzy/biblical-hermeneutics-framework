@@ -74,6 +74,7 @@ class CommentaryGenerator:
 
             if not commentary_dict:
                 # Model failed to generate valid JSON
+                LOGGER.error(f"Model response for {request.reference}: {response_text[:500]}")
                 return CommentaryGenerationResult(
                     reference=request.reference,
                     status=CommentaryStatus.NEEDS_REVIEW.value,
