@@ -21,7 +21,7 @@ class ConfigError(ValueError):
 
 
 ALLOWED_ANSWER_MODES = ("concise", "study", "teaching", "scholar")
-ALLOWED_ADAPTERS = ("openai_compatible", "ollama", "openrouter")
+ALLOWED_ADAPTERS = ("claude_cli", "anthropic", "openai_compatible", "ollama", "openrouter")
 ALLOWED_RESPONSE_FORMAT_POLICIES = ("auto", "json_schema", "json_object", "off")
 ALLOWED_RUNTIME_PROFILE_MODES = ("compact", "full")
 

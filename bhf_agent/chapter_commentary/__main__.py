@@ -6,7 +6,6 @@ import argparse
 import sys
 from pathlib import Path
 
-from bhf_agent.config import AgentConfig
 from bhf_agent.runtime_paths import RUNTIME_DATA_PATHS
 
 from .builder import CommentaryBuilder
@@ -19,8 +18,8 @@ def main(argv: list[str] | None = None) -> int:
 
     storage_dir = Path(args.storage_dir) if args.storage_dir else RUNTIME_DATA_PATHS.data_dir / "bhf-commentary"
 
-    config = AgentConfig()
-    builder = CommentaryBuilder(storage_dir, config)
+    # Let builder load config from .bhf/config.json if it exists
+    builder = CommentaryBuilder(storage_dir, config=None)
 
     try:
         if args.command == "build":
