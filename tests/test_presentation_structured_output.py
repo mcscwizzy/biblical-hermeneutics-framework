@@ -22,6 +22,7 @@ class CaptureAdapter:
     def __init__(self, supports_structured: bool = False):
         self._supports_structured = supports_structured
         self.captured_request = None
+        self.captured_payload = None
 
     def supports_json_schema_response_format(self) -> bool:
         return self._supports_structured
@@ -29,6 +30,56 @@ class CaptureAdapter:
     def chat(self, request):
         self.captured_request = request
         from bhf_agent.models import ChatResponse
+
+        return ChatResponse(
+            text=json.dumps({
+                "passage_ref": "Mark 5:1",
+                "cards": [],
+                "generated_from": {
+                    "evidence_hash": request.metadata.get("evidence_hash", "test"),
+                    "evidence_bundle_version": "1.0",
+                    "presentation_schema_version": "1.0",
+                    "prompt_version": request.metadata.get("prompt_version", "test"),
+                    "model": "test-model",
+                },
+            })
+        )
+
+
+class CaptureHTTPAdapter:
+    """Adapter that captures the HTTP payload for inspection."""
+
+    def __init__(self, supports_structured: bool = False, base_adapter_class=None):
+        self._supports_structured = supports_structured
+        self.captured_request = None
+        self.captured_payload = None
+        self.base_adapter_class = base_adapter_class or OpenAICompatibleAdapter
+
+    def supports_json_schema_response_format(self) -> bool:
+        return self._supports_structured
+
+    def _augment_payload(self, payload, request):
+        """Hook to capture payload after augmentation."""
+        self.captured_payload = payload.copy()
+        return payload
+
+    def chat(self, request):
+        self.captured_request = request
+        from bhf_agent.models import ChatResponse
+
+        if self.captured_request.response_format is not None:
+            payload = {
+                "model": request.model,
+                "messages": [
+                    {"role": message.role, "content": message.content}
+                    for message in request.messages()
+                ],
+                "temperature": request.temperature,
+                "max_tokens": request.max_tokens,
+            }
+            if request.response_format is not None:
+                payload["response_format"] = request.response_format
+            self.captured_payload = self._augment_payload(payload, request)
 
         return ChatResponse(
             text=json.dumps({
@@ -153,3 +204,124 @@ def test_response_format_is_strict():
 
     json_schema = adapter.captured_request.response_format["json_schema"]
     assert json_schema.get("strict") is True
+
+
+def test_openrouter_adds_require_parameters_for_structured_output():
+    """OpenRouter should add provider.require_parameters for structured output requests."""
+    from unittest.mock import patch
+
+    class OpenRouterCaptureAdapter(OpenRouterAdapter):
+        """OpenRouter adapter that captures the outgoing payload."""
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.captured_payload = None
+
+        def _augment_payload(self, payload, request):
+            payload = super()._augment_payload(payload, request)
+            self.captured_payload = payload.copy()
+            return payload
+
+    def fake_urlopen(request, timeout=None):
+        from unittest.mock import MagicMock
+        response = MagicMock()
+        response.read.return_value = json.dumps({
+            "model": "test-model",
+            "choices": [{"message": {"content": json.dumps({
+                "passage_ref": "Mark 5:1",
+                "cards": [],
+                "generated_from": {
+                    "evidence_hash": "test",
+                    "evidence_bundle_version": "1.0",
+                    "presentation_schema_version": "1.0",
+                    "prompt_version": "test",
+                    "model": "test-model",
+                },
+            })}}],
+        }).encode("utf-8")
+        response.__enter__ = lambda self: response
+        response.__exit__ = lambda self, *args: None
+        response.headers = {}
+        return response
+
+    adapter = OpenRouterCaptureAdapter(api_key="test")
+    provider = AdapterPresentationProvider(adapter, model="test-model")
+
+    bundle = build_evidence_bundle("Mark 5:1")
+    ranked = rank_evidence(bundle)
+    generated_from = GeneratedFrom(
+        evidence_hash=bundle.evidence_hash,
+        evidence_bundle_version=bundle.version,
+        presentation_schema_version="1.0",
+        prompt_version="test",
+        model="test-model",
+    )
+
+    with patch("urllib.request.urlopen", fake_urlopen):
+        provider.generate(bundle, ranked, generated_from)
+
+    assert adapter.captured_payload is not None
+    assert "provider" in adapter.captured_payload
+    assert "require_parameters" in adapter.captured_payload["provider"]
+    assert adapter.captured_payload["provider"]["require_parameters"] is True
+
+
+def test_openrouter_preserves_existing_provider_options():
+    """OpenRouter should preserve other provider options when adding require_parameters."""
+    from unittest.mock import patch, MagicMock
+
+    class OpenRouterWithProviderOptions(OpenRouterAdapter):
+        """OpenRouter adapter with pre-existing provider options."""
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.captured_payload = None
+
+        def _augment_payload(self, payload, request):
+            if request.response_format is not None and "provider" not in payload:
+                payload["provider"] = {"sort": "latency"}
+            payload = super()._augment_payload(payload, request)
+            self.captured_payload = payload.copy()
+            return payload
+
+    def fake_urlopen(request, timeout=None):
+        response = MagicMock()
+        response.read.return_value = json.dumps({
+            "model": "test-model",
+            "choices": [{"message": {"content": json.dumps({
+                "passage_ref": "Mark 5:1",
+                "cards": [],
+                "generated_from": {
+                    "evidence_hash": "test",
+                    "evidence_bundle_version": "1.0",
+                    "presentation_schema_version": "1.0",
+                    "prompt_version": "test",
+                    "model": "test-model",
+                },
+            })}}],
+        }).encode("utf-8")
+        response.__enter__ = lambda self: response
+        response.__exit__ = lambda self, *args: None
+        response.headers = {}
+        return response
+
+    adapter = OpenRouterWithProviderOptions(api_key="test")
+    provider = AdapterPresentationProvider(adapter, model="test-model")
+
+    bundle = build_evidence_bundle("Mark 5:1")
+    ranked = rank_evidence(bundle)
+    generated_from = GeneratedFrom(
+        evidence_hash=bundle.evidence_hash,
+        evidence_bundle_version=bundle.version,
+        presentation_schema_version="1.0",
+        prompt_version="test",
+        model="test-model",
+    )
+
+    with patch("urllib.request.urlopen", fake_urlopen):
+        provider.generate(bundle, ranked, generated_from)
+
+    assert adapter.captured_payload is not None
+    assert "provider" in adapter.captured_payload
+    provider_opts = adapter.captured_payload["provider"]
+    assert provider_opts.get("require_parameters") is True
+    if "sort" in provider_opts:
+        assert provider_opts["sort"] == "latency"

@@ -62,6 +62,7 @@ class OpenAICompatibleAdapter(ChatAdapter):
         }
         if request.response_format is not None:
             payload["response_format"] = request.response_format
+        payload = self._augment_payload(payload, request)
         body = json.dumps(payload).encode("utf-8")
         headers = {"Content-Type": "application/json"}
         headers.update(self.extra_headers)
@@ -376,6 +377,16 @@ class OpenAICompatibleAdapter(ChatAdapter):
             "model_present": model is None or model in available_models,
             "available_models": available_models,
         }
+
+    def _augment_payload(
+        self, payload: dict[str, Any], request: ChatRequest
+    ) -> dict[str, Any]:
+        """Hook for subclasses to augment the API payload.
+
+        By default, returns the payload unchanged. Subclasses may override to add
+        provider-specific fields or routing options.
+        """
+        return payload
 
     def _headers(self) -> dict[str, str]:
         headers = dict(self.extra_headers)

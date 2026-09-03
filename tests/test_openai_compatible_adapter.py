@@ -243,6 +243,50 @@ class OpenAICompatibleAdapterTests(unittest.TestCase):
         adapter = OpenAICompatibleAdapter("http://localhost:1234/v1")
         self.assertFalse(adapter.supports_json_schema_response_format())
 
+    def test_generic_adapter_does_not_emit_provider_routing_fields(self):
+        """Test that generic OpenAI-compatible adapter doesn't add OpenRouter-specific provider fields."""
+        captured = {}
+
+        def fake_urlopen(request, timeout=None):
+            captured["body"] = json.loads(request.data.decode("utf-8"))
+            return FakeHTTPResponse(
+                json.dumps(
+                    {
+                        "model": "local-model",
+                        "choices": [{"message": {"content": "answer"}}],
+                        "usage": {"total_tokens": 3},
+                    }
+                ).encode("utf-8")
+            )
+
+        adapter = OpenAICompatibleAdapter(
+            "http://localhost:1234/v1",
+            api_key="local",
+            timeout_seconds=5,
+        )
+        response_format = {
+            "type": "json_schema",
+            "json_schema": {
+                "name": "test_schema",
+                "strict": True,
+                "schema": {"type": "object"},
+            },
+        }
+        request = ChatRequest(
+            "system",
+            "user",
+            "local-model",
+            response_format=response_format,
+        )
+
+        with patch("urllib.request.urlopen", fake_urlopen):
+            adapter.chat(request)
+
+        self.assertIn("response_format", captured["body"])
+        self.assertEqual(captured["body"]["response_format"], response_format)
+        if "provider" in captured["body"]:
+            self.assertNotIn("require_parameters", captured["body"]["provider"])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -463,6 +463,97 @@ class OpenRouterAdapterTests(unittest.TestCase):
         self.assertEqual(captured["body"]["response_format"], response_format)
         self.assertEqual(response.text, "answer")
 
+    def test_structured_openrouter_request_includes_require_parameters(self):
+        """Test that OpenRouter adds provider.require_parameters=true for structured output."""
+        captured = {}
+
+        def fake_urlopen(request, timeout=None):
+            captured["body"] = json.loads(request.data.decode("utf-8"))
+            return FakeHTTPResponse(
+                b'{"model":"openai/gpt-4o-mini","choices":[{"message":{"content":"answer"}}]}'
+            )
+
+        adapter = OpenRouterAdapter(api_key="or-secret", timeout_seconds=7)
+        response_format = {
+            "type": "json_schema",
+            "json_schema": {
+                "name": "test_schema",
+                "strict": True,
+                "schema": {"type": "object"},
+            },
+        }
+        with patch("urllib.request.urlopen", fake_urlopen):
+            response = adapter.chat(
+                ChatRequest(
+                    "system",
+                    "user",
+                    "openai/gpt-4o-mini",
+                    response_format=response_format,
+                )
+            )
+
+        self.assertIn("response_format", captured["body"])
+        self.assertEqual(captured["body"]["response_format"], response_format)
+        self.assertIn("provider", captured["body"])
+        self.assertIsInstance(captured["body"]["provider"], dict)
+        self.assertTrue(captured["body"]["provider"].get("require_parameters"))
+        self.assertEqual(response.text, "answer")
+
+    def test_non_structured_openrouter_request_no_require_parameters(self):
+        """Test that OpenRouter doesn't add require_parameters for non-structured requests."""
+        captured = {}
+
+        def fake_urlopen(request, timeout=None):
+            captured["body"] = json.loads(request.data.decode("utf-8"))
+            return FakeHTTPResponse(
+                b'{"model":"openai/gpt-4o-mini","choices":[{"message":{"content":"answer"}}]}'
+            )
+
+        adapter = OpenRouterAdapter(api_key="or-secret", timeout_seconds=7)
+        with patch("urllib.request.urlopen", fake_urlopen):
+            response = adapter.chat(ChatRequest("system", "user", "openai/gpt-4o-mini"))
+
+        self.assertNotIn("response_format", captured["body"])
+        if "provider" in captured["body"]:
+            self.assertNotIn("require_parameters", captured["body"]["provider"])
+        self.assertEqual(response.text, "answer")
+
+    def test_openrouter_preserves_existing_provider_options(self):
+        """Test that OpenRouter preserves other provider routing options."""
+        captured = {}
+
+        def fake_urlopen(request, timeout=None):
+            captured["body"] = json.loads(request.data.decode("utf-8"))
+            return FakeHTTPResponse(
+                b'{"model":"openai/gpt-4o-mini","choices":[{"message":{"content":"answer"}}]}'
+            )
+
+        adapter = OpenRouterAdapter(api_key="or-secret", timeout_seconds=7)
+        response_format = {
+            "type": "json_schema",
+            "json_schema": {
+                "name": "test_schema",
+                "strict": True,
+                "schema": {"type": "object"},
+            },
+        }
+        request = ChatRequest(
+            "system",
+            "user",
+            "openai/gpt-4o-mini",
+            response_format=response_format,
+        )
+        request.metadata = {"provider": {"sort": "latency"}}
+        with patch("urllib.request.urlopen", fake_urlopen):
+            response = adapter.chat(request)
+
+        self.assertIn("provider", captured["body"])
+        provider_opts = captured["body"]["provider"]
+        if "sort" in provider_opts:
+            self.assertEqual(provider_opts["sort"], "latency")
+        self.assertTrue(provider_opts.get("require_parameters"))
+        self.assertEqual(response.text, "answer")
+
 
 if __name__ == "__main__":
     unittest.main()

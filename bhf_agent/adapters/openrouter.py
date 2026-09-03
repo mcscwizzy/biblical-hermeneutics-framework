@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
-from typing import Optional
+from typing import Any, Optional
+
+from bhf_agent.models import ChatRequest
 
 from .openai_compatible import OpenAICompatibleAdapter
 from bhf_agent.providers.openrouter_config import OPENROUTER_BASE_URL
@@ -35,3 +37,16 @@ class OpenRouterAdapter(OpenAICompatibleAdapter):
 
     def supports_json_schema_response_format(self) -> bool:
         return True
+
+    def _augment_payload(
+        self, payload: dict[str, Any], request: ChatRequest
+    ) -> dict[str, Any]:
+        """Add OpenRouter provider routing for structured output requests."""
+        payload = super()._augment_payload(payload, request)
+
+        if request.response_format is not None:
+            provider_options = dict(payload.get("provider") or {})
+            provider_options["require_parameters"] = True
+            payload["provider"] = provider_options
+
+        return payload
