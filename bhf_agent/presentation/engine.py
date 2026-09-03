@@ -277,7 +277,48 @@ class PresentationEngine:
                         expected_prompt_version=self.prompt_version,
                         expected_model=provider.model,
                     )
-                    if validation.valid and validation.packet is not None:
+                    generated_card_count = (
+                        len(generated_value.get("cards"))
+                        if isinstance(generated_value, Mapping)
+                        and isinstance(generated_value.get("cards"), list)
+                        else 0
+                    )
+                    accepted_card_count = len(validation.accepted_cards)
+                    rejected_card_count = len(
+                        [result for result in validation.card_results if not result.valid]
+                    )
+                    for index, card_result in enumerate(validation.card_results):
+                        if card_result.valid:
+                            continue
+                        reason = (
+                            card_result.reason_codes[0]
+                            if card_result.reason_codes
+                            else "MALFORMED_CARD"
+                        )
+                        LOGGER.warning(
+                            "presentation card rejected",
+                            extra={
+                                "event": "presentation_card_rejected",
+                                "card_index": index,
+                                "reason": reason,
+                                **_provider_log_metadata(provider, bundle),
+                            },
+                        )
+                    if validation.packet is not None and accepted_card_count:
+                        diagnostics.extend(
+                            f"validation rejection: {error}"
+                            for error in validation.errors
+                        )
+                        LOGGER.info(
+                            "presentation generation completed",
+                            extra={
+                                "event": "presentation_generation_completed",
+                                "generated_cards": generated_card_count,
+                                "accepted_cards": accepted_card_count,
+                                "rejected_cards": rejected_card_count,
+                                **_provider_log_metadata(provider, bundle),
+                            },
+                        )
                         try:
                             self.cache.put(cache_key, validation.packet.to_dict())
                         except Exception as exc:  # noqa: BLE001 - cache is optional
@@ -295,6 +336,8 @@ class PresentationEngine:
                             tuple(diagnostics),
                         )
                     self.metrics.record_event("provider_rejections")
+                    if validation.packet is not None and not accepted_card_count:
+                        diagnostics.append("provider returned no valid cards")
                     diagnostics.extend(
                         f"validation rejection: {error}"
                         for error in validation.errors
@@ -304,6 +347,10 @@ class PresentationEngine:
                         extra={
                             "event": "presentation_validation",
                             "validation_error_count": len(validation.errors),
+                            "generated_cards": generated_card_count,
+                            "accepted_cards": accepted_card_count,
+                            "rejected_cards": rejected_card_count,
+                            "packet_valid": validation.packet_valid,
                             **_provider_log_metadata(provider, bundle),
                         },
                     )
@@ -426,7 +473,7 @@ class PresentationEngine:
             maximum_cards=self.maximum_cards,
             expected_prompt_version=self.prompt_version,
         )
-        if validation.valid and validation.packet is not None:
+        if validation.packet is not None and validation.packet.cards:
             return PresentationResult(validation.packet, "cached", tuple(diagnostics))
 
         diagnostics.extend(f"cached: {error}" for error in validation.errors)

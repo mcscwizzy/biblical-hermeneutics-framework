@@ -78,11 +78,25 @@ class _ValidAdapter:
     def chat(self, request):
         self.requests.append(request)
         supplied = json.loads(request.user_prompt)
+        evidence = supplied["evidence"][0]
+        constraints = evidence["output_constraints"]
         return ChatResponse(
             text=json.dumps(
                 {
                     "passage_ref": supplied["passage_ref"],
-                    "cards": [],
+                    "cards": [{
+                        "id": "fixture-card",
+                        "type": "did_you_know",
+                        "headline": "A supplied detail",
+                        "body": evidence["claim"],
+                        "dig_in_summary": None,
+                        "evidence_ids": [evidence["id"]],
+                        "confidence": constraints["maximum_card_confidence"],
+                        "interpretation_level": constraints["allowed_interpretation_levels"][0],
+                        "related_entity_ids": [],
+                        "map_focus": None,
+                        "dig_deeper_actions": [],
+                    }],
                     "generated_from": supplied["generated_from_must_equal"],
                 }
             )

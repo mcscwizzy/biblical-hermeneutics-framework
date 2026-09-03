@@ -1083,7 +1083,7 @@ def run_presentation_job(
 
     packet = result.get("presentation_packet") if isinstance(result, Mapping) else None
     mode = str(packet.get("presentation_mode") or "") if isinstance(packet, Mapping) else ""
-    if mode in {"generated", "cached", "bundled"}:
+    if mode in {"generated", "cached", "bundled", "deterministic_fallback"}:
         job.succeed(result)
         return
     job.fail("presentation_unavailable", result=result)

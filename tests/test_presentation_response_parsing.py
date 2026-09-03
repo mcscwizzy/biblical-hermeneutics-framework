@@ -123,7 +123,7 @@ def _valid_packet(supplied):
     }
 
 
-def test_fenced_provider_packet_is_validated_generated_and_cached():
+def test_fenced_provider_packet_with_zero_cards_uses_deterministic_fallback():
     adapter = _ResponseAdapter(
         lambda supplied: f"```json\n{json.dumps(_valid_packet(supplied))}\n```"
     )
@@ -133,15 +133,15 @@ def test_fenced_provider_packet_is_validated_generated_and_cached():
 
     result = engine.present(_bundle())
 
-    assert result.mode == "generated"
-    assert result.diagnostics == ()
-    assert len(cache._values) == 1
+    assert result.mode == "deterministic_fallback"
+    assert "provider returned no valid cards" in result.diagnostics
+    assert len(cache._values) == 0
     assert len(adapter.requests) == 1
     assert engine.diagnostics()["provider"] == {
         "attempts": 1,
         "failures": 0,
         "parse_failures": 0,
-        "rejections": 0,
+        "rejections": 1,
         "saturated": 0,
     }
 

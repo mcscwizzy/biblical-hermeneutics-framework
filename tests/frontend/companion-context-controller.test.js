@@ -77,7 +77,7 @@ function cachedContext(chapter) {
     evidence_hash: `hash-${chapter}`,
     evidence_bundle_version: "evidence-bundle-v1",
     presentation_schema_version: "presentation-packet-v1",
-    prompt_version: "presentation-v4",
+    prompt_version: "presentation-v5",
     model: "cached-provider-model",
   };
   return context;
@@ -143,9 +143,9 @@ test("HTTP enhancement failure keeps deterministic presentation and reports fail
 });
 
 
-test("HTTP 200 deterministic fallback is not treated as an AI enhancement", async () => {
+test("HTTP 200 deterministic fallback uses fallback state, not failure", async () => {
   const enhanced = [];
-  const failures = [];
+  const fallbacks = [];
   const api = {
     requestKey: passageKey,
     load: async (value) => initialContext(value.chapter),
@@ -154,15 +154,16 @@ test("HTTP 200 deterministic fallback is not treated as an AI enhancement", asyn
   const controller = loadController(api).create({
     delay: 0,
     onEnhanced: (context) => enhanced.push(context.presentation_packet.cards[0].id),
-    onEnhancementError: (_error, _selection, record) => failures.push(record.enhancementReason),
+    onEnhancementFallback: (_context, _selection, record) => fallbacks.push(record.enhancementReason),
   });
 
   controller.setSelection(selection(25));
   await settle();
 
   assert.deepEqual(enhanced, []);
-  assert.deepEqual(failures, ["fallback"]);
+  assert.deepEqual(fallbacks, ["fallback"]);
   assert.equal(controller.getRecord().context.presentation_packet.cards[0].id, "local-25");
+  assert.equal(controller.getRecord().enhancementStatus, "fallback");
 });
 
 
@@ -278,8 +279,8 @@ test("disabled AI presentation renders deterministic context without an enhancem
 
   assert.deepEqual(ready, ["local-25"]);
   assert.equal(requests, 0);
-  assert.deepEqual(enhancementEvents, []);
-  assert.equal(controller.getRecord().enhancementStatus, "idle");
+  assert.deepEqual(enhancementEvents, ["unavailable"]);
+  assert.equal(controller.getRecord().enhancementStatus, "unavailable");
 });
 
 
@@ -405,7 +406,7 @@ test("cached deterministic metadata is not presented as AI-generated", async () 
   const result = cachedContext(25);
   result.presentation_packet.generated_from.prompt_version = "deterministic-v4";
   result.presentation_packet.generated_from.model = "deterministic";
-  const failures = [];
+  const fallbacks = [];
   const api = {
     requestKey: passageKey,
     load: async (value) => initialContext(value.chapter),
@@ -413,12 +414,12 @@ test("cached deterministic metadata is not presented as AI-generated", async () 
   };
   const controller = loadController(api).create({
     delay: 0,
-    onEnhancementError: () => failures.push("failed"),
+    onEnhancementFallback: () => fallbacks.push("fallback"),
   });
 
   controller.setSelection(selection(25));
   await settle();
 
-  assert.deepEqual(failures, ["failed"]);
+  assert.deepEqual(fallbacks, ["fallback"]);
   assert.equal(controller.getRecord().context.presentation_packet.cards[0].id, "local-25");
 });

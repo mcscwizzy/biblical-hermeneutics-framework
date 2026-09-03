@@ -57,7 +57,15 @@ from .providers import (
     parse_presentation_json_response,
 )
 from .ranking import RankedEvidence, rank_evidence
-from .validation import PresentationValidationResult, validate_presentation_packet
+from .validation import (
+    GeneratedMetadataValidationResult,
+    PresentationCardValidationResult,
+    PresentationRejectionCode,
+    PresentationValidationResult,
+    validate_generated_metadata,
+    validate_presentation_card,
+    validate_presentation_packet,
+)
 from .walk_the_land import build_walk_the_land_card
 from .why_it_matters import build_why_it_matters_card
 
@@ -78,6 +86,7 @@ __all__ = [
     "PresentationBundleExportError",
     "PresentationBundleExportResult",
     "PresentationBundleInspection",
+    "PresentationCardValidationResult",
     "PresentationCard",
     "PresentationEngine",
     "PresentationEvalCaseResult",
@@ -85,9 +94,11 @@ __all__ = [
     "PresentationEvalSuiteResult",
     "PresentationPacket",
     "PresentationProvider",
+    "PresentationRejectionCode",
     "PresentationResponseParseError",
     "PresentationResult",
     "PresentationValidationResult",
+    "GeneratedMetadataValidationResult",
     "RankedEvidence",
     "SQLitePresentationCache",
     "build_evidence_bundle",
@@ -109,4 +120,6 @@ __all__ = [
     "parse_presentation_json_response",
     "rank_evidence",
     "validate_presentation_packet",
+    "validate_generated_metadata",
+    "validate_presentation_card",
 ]

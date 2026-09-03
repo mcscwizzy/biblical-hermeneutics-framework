@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
+from enum import Enum
 from typing import Any, Mapping
 
 from .models import (
@@ -27,11 +28,63 @@ _DATE_RE = re.compile(
 _CONFIDENCE_RANK = {"low": 0, "medium": 1, "high": 2}
 
 
+class PresentationRejectionCode(str, Enum):
+    """Stable codes for safe diagnostics about rejected generated cards."""
+
+    MALFORMED_CARD = "MALFORMED_CARD"
+    INVALID_CARD_TYPE = "INVALID_CARD_TYPE"
+    INVALID_CONFIDENCE = "INVALID_CONFIDENCE"
+    INVALID_INTERPRETATION_LEVEL = "INVALID_INTERPRETATION_LEVEL"
+    CARD_LENGTH_EXCEEDED = "CARD_LENGTH_EXCEEDED"
+    UNKNOWN_EVIDENCE_ID = "UNKNOWN_EVIDENCE_ID"
+    UNKNOWN_ENTITY_ID = "UNKNOWN_ENTITY_ID"
+    CONFIDENCE_EXCEEDS_EVIDENCE = "CONFIDENCE_EXCEEDS_EVIDENCE"
+    DISPUTED_AS_FACT = "DISPUTED_AS_FACT"
+    UNSUPPORTED_DATE = "UNSUPPORTED_DATE"
+    INVALID_MAP_REFERENCE = "INVALID_MAP_REFERENCE"
+    INVALID_ACTION_REFERENCE = "INVALID_ACTION_REFERENCE"
+    MISSING_MAP_INFORMATION = "MISSING_MAP_INFORMATION"
+    MISSING_MAP_ACTION = "MISSING_MAP_ACTION"
+    MISSING_SIGNIFICANCE_EVIDENCE = "MISSING_SIGNIFICANCE_EVIDENCE"
+    WHY_IT_MATTERS_AS_FACT = "WHY_IT_MATTERS_AS_FACT"
+    DUPLICATE_CARD_ID = "DUPLICATE_CARD_ID"
+    DUPLICATE_CARD_TYPE = "DUPLICATE_CARD_TYPE"
+
+
+@dataclass(frozen=True)
+class GeneratedMetadataValidationResult:
+    valid: bool
+    generated_from: GeneratedFrom | None
+    errors: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True)
+class PresentationCardValidationResult:
+    valid: bool
+    card: PresentationCard | None
+    errors: tuple[str, ...] = ()
+    reason_codes: tuple[str, ...] = ()
+
+
 @dataclass(frozen=True)
 class PresentationValidationResult:
     valid: bool
     packet: PresentationPacket | None
     errors: tuple[str, ...]
+    card_results: tuple[PresentationCardValidationResult, ...] = ()
+    packet_errors: tuple[str, ...] = ()
+
+    @property
+    def packet_valid(self) -> bool:
+        """Whether packet provenance and structure passed independently of cards."""
+
+        return self.packet is not None
+
+    @property
+    def accepted_cards(self) -> tuple[PresentationCard, ...]:
+        if self.packet is None:
+            return ()
+        return tuple(self.packet.cards)
 
 
 def validate_presentation_packet(
@@ -44,7 +97,11 @@ def validate_presentation_packet(
     expected_prompt_version: str | None = None,
     expected_model: str | None = None,
 ) -> PresentationValidationResult:
-    """Parse and validate a provider or cache result without repairing it."""
+    """Validate packet integrity, then validate each card independently.
+
+    A packet with valid provenance may return a partial ``packet`` even when
+    individual cards are rejected. Packet-level failures never return cards.
+    """
 
     errors: list[str] = []
     if not isinstance(value, Mapping):
@@ -60,55 +117,86 @@ def validate_presentation_packet(
     if len(cards_raw) > maximum_cards:
         errors.append(f"packet.cards exceeds the configured maximum of {maximum_cards}")
 
-    generated = _parse_generated_from(
+    generated_result = validate_generated_metadata(
         value.get("generated_from"),
         bundle,
-        errors,
         expected_prompt_version=expected_prompt_version,
         expected_model=expected_model,
     )
+    errors.extend(generated_result.errors)
+    if errors or not generated_result.valid or generated_result.generated_from is None:
+        return PresentationValidationResult(
+            False,
+            None,
+            tuple(errors),
+            packet_errors=tuple(errors),
+        )
+
+    card_results: list[PresentationCardValidationResult] = []
     cards: list[PresentationCard] = []
     card_ids: set[str] = set()
     for index, raw_card in enumerate(cards_raw):
-        card = _parse_card(
+        card_result = validate_presentation_card(
             raw_card,
             index,
             bundle,
-            errors,
             maximum_body_length=maximum_body_length,
             maximum_dig_in_summary_length=maximum_dig_in_summary_length,
         )
-        if card is None:
-            continue
-        if card.id in card_ids:
-            errors.append(f'card[{index}] duplicates card id "{card.id}"')
-        card_ids.add(card.id)
-        cards.append(card)
-    if sum(card.type == "walk_the_land" for card in cards) > 1:
-        errors.append("packet.cards may contain at most one walk_the_land card")
-    if sum(card.type == "why_it_matters" for card in cards) > 1:
-        errors.append("packet.cards may contain at most one why_it_matters card")
+        if card_result.card is not None:
+            if card_result.card.id in card_ids:
+                card_result = _reject_card(
+                    card_result,
+                    f'card[{index}] duplicates card id "{card_result.card.id}"',
+                    PresentationRejectionCode.DUPLICATE_CARD_ID,
+                )
+            elif card_result.card.type == "walk_the_land" and any(
+                card.type == "walk_the_land" for card in cards
+            ):
+                card_result = _reject_card(
+                    card_result,
+                    "packet.cards may contain at most one walk_the_land card",
+                    PresentationRejectionCode.DUPLICATE_CARD_TYPE,
+                )
+            elif card_result.card.type == "why_it_matters" and any(
+                card.type == "why_it_matters" for card in cards
+            ):
+                card_result = _reject_card(
+                    card_result,
+                    "packet.cards may contain at most one why_it_matters card",
+                    PresentationRejectionCode.DUPLICATE_CARD_TYPE,
+                )
+        card_results.append(card_result)
+        if card_result.card is not None:
+            card_ids.add(card_result.card.id)
+            cards.append(card_result.card)
 
-    if errors or generated is None:
-        return PresentationValidationResult(False, None, tuple(errors))
+    card_errors = tuple(error for result in card_results for error in result.errors)
+    all_errors = tuple(errors) + card_errors
     return PresentationValidationResult(
-        True,
-        PresentationPacket(passage_ref=passage_ref, cards=cards, generated_from=generated),
+        not card_errors,
+        PresentationPacket(
+            passage_ref=passage_ref,
+            cards=cards,
+            generated_from=generated_result.generated_from,
+        ),
+        all_errors,
+        tuple(card_results),
         (),
     )
 
 
-def _parse_generated_from(
+def validate_generated_metadata(
     raw: Any,
     bundle: EvidenceBundle,
-    errors: list[str],
     *,
-    expected_prompt_version: str | None,
-    expected_model: str | None,
-) -> GeneratedFrom | None:
+    expected_prompt_version: str | None = None,
+    expected_model: str | None = None,
+) -> GeneratedMetadataValidationResult:
+    errors: list[str] = []
     if not isinstance(raw, Mapping):
         errors.append("packet.generated_from must be an object")
-        return None
+        return GeneratedMetadataValidationResult(False, None, tuple(errors))
     fields = {
         "evidence_hash",
         "evidence_bundle_version",
@@ -129,28 +217,37 @@ def _parse_generated_from(
     if expected_model and values["model"] != expected_model:
         errors.append("generated_from.model does not match")
     if any(not value for value in values.values()):
-        return None
-    return GeneratedFrom(**values)
+        return GeneratedMetadataValidationResult(False, None, tuple(errors))
+    if errors:
+        return GeneratedMetadataValidationResult(False, None, tuple(errors))
+    return GeneratedMetadataValidationResult(True, GeneratedFrom(**values), ())
 
 
-def _parse_card(
+def validate_presentation_card(
     raw: Any,
     index: int,
     bundle: EvidenceBundle,
-    errors: list[str],
     *,
-    maximum_body_length: int,
-    maximum_dig_in_summary_length: int,
-) -> PresentationCard | None:
+    maximum_body_length: int = 420,
+    maximum_dig_in_summary_length: int = 800,
+) -> PresentationCardValidationResult:
     label = f"card[{index}]"
     if not isinstance(raw, Mapping):
-        errors.append(f"{label} must be an object")
-        return None
+        return PresentationCardValidationResult(
+            False,
+            None,
+            (f"{label} must be an object",),
+            (PresentationRejectionCode.MALFORMED_CARD.value,),
+        )
+    errors: list[str] = []
+    reason_codes: list[str] = []
     fields = {
         "id", "type", "headline", "body", "evidence_ids", "confidence",
         "interpretation_level", "dig_in_summary", "related_entity_ids", "map_focus", "dig_deeper_actions",
     }
     _unknown(raw, fields, label, errors)
+    if any(key not in fields for key in raw):
+        reason_codes.append(PresentationRejectionCode.MALFORMED_CARD)
     card_id = _required_text(raw, "id", label, errors)
     card_type = _required_text(raw, "type", label, errors)
     headline = _required_text(raw, "headline", label, errors)
@@ -160,18 +257,24 @@ def _parse_card(
     interpretation = _required_text(raw, "interpretation_level", label, errors)
     if card_type not in CARD_TYPES:
         errors.append(f"{label}.type is invalid")
+        reason_codes.append(PresentationRejectionCode.INVALID_CARD_TYPE)
     if confidence not in CONFIDENCE_VALUES:
         errors.append(f"{label}.confidence is invalid")
+        reason_codes.append(PresentationRejectionCode.INVALID_CONFIDENCE)
     if interpretation not in INTERPRETATION_LEVELS:
         errors.append(f"{label}.interpretation_level is invalid")
+        reason_codes.append(PresentationRejectionCode.INVALID_INTERPRETATION_LEVEL)
     if len(headline) > 100:
         errors.append(f"{label}.headline exceeds 100 characters")
+        reason_codes.append(PresentationRejectionCode.CARD_LENGTH_EXCEEDED)
     if len(body) > maximum_body_length:
         errors.append(f"{label}.body exceeds {maximum_body_length} characters")
+        reason_codes.append(PresentationRejectionCode.CARD_LENGTH_EXCEEDED)
     if dig_in_summary and len(dig_in_summary) > maximum_dig_in_summary_length:
         errors.append(
             f"{label}.dig_in_summary exceeds {maximum_dig_in_summary_length} characters"
         )
+        reason_codes.append(PresentationRejectionCode.CARD_LENGTH_EXCEEDED)
 
     evidence_ids = _string_list(raw.get("evidence_ids"), f"{label}.evidence_ids", errors)
     related_ids = _string_list(raw.get("related_entity_ids", []), f"{label}.related_entity_ids", errors)
@@ -180,32 +283,38 @@ def _parse_card(
     unknown_evidence = [item_id for item_id in evidence_ids if item_id not in bundle.evidence_by_id]
     if unknown_evidence:
         errors.append(f"{label} cites unsupported evidence IDs: {', '.join(unknown_evidence)}")
+        reason_codes.append(PresentationRejectionCode.UNKNOWN_EVIDENCE_ID)
     unknown_entities = [item_id for item_id in related_ids if item_id not in bundle.entities_by_id]
     if unknown_entities:
         errors.append(f"{label} cites unsupported entity IDs: {', '.join(unknown_entities)}")
+        reason_codes.append(PresentationRejectionCode.UNKNOWN_ENTITY_ID)
 
     supplied = [bundle.evidence_by_id[item_id] for item_id in evidence_ids if item_id in bundle.evidence_by_id]
     if supplied and confidence in _CONFIDENCE_RANK:
         maximum_supported = min(_CONFIDENCE_RANK.get(item.confidence, 0) for item in supplied)
         if _CONFIDENCE_RANK[confidence] > maximum_supported:
             errors.append(f"{label}.confidence exceeds its cited evidence")
+            reason_codes.append(PresentationRejectionCode.CONFIDENCE_EXCEEDS_EVIDENCE)
     if interpretation == "fact" and any(_is_disputed(item.relevance_metadata) for item in supplied):
         errors.append(f"{label} turns disputed evidence into fact")
+        reason_codes.append(PresentationRejectionCode.DISPUTED_AS_FACT)
     _validate_new_dates(
         " ".join(value for value in (headline, body, dig_in_summary) if value),
         supplied,
         label,
         errors,
+        reason_codes,
     )
 
     actions_raw = raw.get("dig_deeper_actions", [])
     if not isinstance(actions_raw, list):
         errors.append(f"{label}.dig_deeper_actions must be a list")
+        reason_codes.append(PresentationRejectionCode.MALFORMED_CARD)
         actions_raw = []
     actions = [
         action
         for action_index, raw_action in enumerate(actions_raw)
-        if (action := _parse_action(raw_action, label, action_index, bundle, supplied, errors)) is not None
+        if (action := _parse_action(raw_action, label, action_index, bundle, supplied, errors, reason_codes)) is not None
     ]
 
     map_focus_raw = raw.get("map_focus")
@@ -213,6 +322,7 @@ def _parse_card(
     if map_focus_raw is not None:
         if not isinstance(map_focus_raw, Mapping):
             errors.append(f"{label}.map_focus must be an object or null")
+            reason_codes.append(PresentationRejectionCode.INVALID_MAP_REFERENCE)
         else:
             _unknown(map_focus_raw, {"kind", "target_id", "place_id"}, f"{label}.map_focus", errors)
             target_id = str(map_focus_raw.get("target_id") or map_focus_raw.get("place_id") or "").strip()
@@ -224,12 +334,15 @@ def _parse_card(
             )
             if kind not in {"place", "route"}:
                 errors.append(f"{label}.map_focus kind is invalid")
+                reason_codes.append(PresentationRejectionCode.INVALID_MAP_REFERENCE)
             elif not target_id or target_id not in available:
                 errors.append(f"{label}.map_focus references an unavailable map resource")
+                reason_codes.append(PresentationRejectionCode.INVALID_MAP_REFERENCE)
             map_focus = {"kind": kind, "target_id": target_id}
     if card_type == "walk_the_land":
         if map_focus is None:
             errors.append(f"{label}.walk_the_land requires map_focus")
+            reason_codes.append(PresentationRejectionCode.MISSING_MAP_INFORMATION)
         else:
             expected_action = "show_route" if map_focus["kind"] == "route" else "open_map"
             if not any(
@@ -237,16 +350,19 @@ def _parse_card(
                 for action in actions
             ):
                 errors.append(f"{label}.walk_the_land requires a matching map action")
+                reason_codes.append(PresentationRejectionCode.MISSING_MAP_ACTION)
     if card_type == "why_it_matters":
         if not any(
             item.relevance_metadata.get("presentation_role") == "significance"
             for item in supplied
         ):
             errors.append(f"{label}.why_it_matters requires explicit significance evidence")
+            reason_codes.append(PresentationRejectionCode.MISSING_SIGNIFICANCE_EVIDENCE)
         if interpretation == "fact":
             errors.append(f"{label}.why_it_matters must be labeled inference or disputed")
+            reason_codes.append(PresentationRejectionCode.WHY_IT_MATTERS_AS_FACT)
 
-    return PresentationCard(
+    card = PresentationCard(
         id=card_id,
         type=card_type,
         headline=headline,
@@ -259,6 +375,13 @@ def _parse_card(
         map_focus=map_focus,
         dig_deeper_actions=actions,
     )
+    if errors and not reason_codes:
+        reason_codes.append(PresentationRejectionCode.MALFORMED_CARD)
+    if errors:
+        return PresentationCardValidationResult(
+            False, None, tuple(errors), _normalized_reason_codes(reason_codes)
+        )
+    return PresentationCardValidationResult(True, card, (), ())
 
 
 def _parse_action(
@@ -268,13 +391,17 @@ def _parse_action(
     bundle: EvidenceBundle,
     evidence: list[Any],
     errors: list[str],
+    reason_codes: list[str],
 ) -> DigDeeperAction | None:
     label = f"{card_label}.dig_deeper_actions[{index}]"
     if not isinstance(raw, Mapping):
         errors.append(f"{label} must be an object")
+        reason_codes.append(PresentationRejectionCode.MALFORMED_CARD)
         return None
     fields = {"type", "label", "target_id", "reference", "parameters"}
     _unknown(raw, fields, label, errors)
+    if any(key not in fields for key in raw):
+        reason_codes.append(PresentationRejectionCode.MALFORMED_CARD)
     action_type = _required_text(raw, "type", label, errors)
     action_label = _required_text(raw, "label", label, errors)
     target_id = str(raw.get("target_id") or "").strip() or None
@@ -282,11 +409,14 @@ def _parse_action(
     parameters_raw = raw.get("parameters", {})
     if not isinstance(parameters_raw, Mapping):
         errors.append(f"{label}.parameters must be an object")
+        reason_codes.append(PresentationRejectionCode.MALFORMED_CARD)
         parameters_raw = {}
     if action_type not in ACTION_TYPES:
         errors.append(f"{label}.type is invalid")
+        reason_codes.append(PresentationRejectionCode.INVALID_ACTION_REFERENCE)
     elif not _action_is_fulfillable(action_type, target_id, reference, bundle, evidence):
         errors.append(f"{label} references a resource BHF cannot fulfill")
+        reason_codes.append(PresentationRejectionCode.INVALID_ACTION_REFERENCE)
     return DigDeeperAction(
         type=action_type,
         label=action_label,
@@ -335,7 +465,13 @@ def _action_is_fulfillable(
     return False
 
 
-def _validate_new_dates(text: str, evidence: list[Any], label: str, errors: list[str]) -> None:
+def _validate_new_dates(
+    text: str,
+    evidence: list[Any],
+    label: str,
+    errors: list[str],
+    reason_codes: list[str],
+) -> None:
     supplied_text = " ".join(
         [item.claim for item in evidence]
         + [str(value) for item in evidence for value in item.relevance_metadata.values()]
@@ -350,6 +486,7 @@ def _validate_new_dates(text: str, evidence: list[Any], label: str, errors: list
     )
     if unsupported:
         errors.append(f"{label} introduces unsupported date(s): {', '.join(unsupported)}")
+        reason_codes.append(PresentationRejectionCode.UNSUPPORTED_DATE)
 
 
 def _date_key(value: str) -> tuple[str, int]:
@@ -375,6 +512,27 @@ def _unknown(value: Mapping[str, Any], allowed: set[str], label: str, errors: li
     unknown = sorted(str(key) for key in value if key not in allowed)
     if unknown:
         errors.append(f"{label} has unknown field(s): {', '.join(unknown)}")
+
+
+def _reject_card(
+    result: PresentationCardValidationResult,
+    error: str,
+    reason_code: str,
+) -> PresentationCardValidationResult:
+    return PresentationCardValidationResult(
+        False,
+        None,
+        (*result.errors, error),
+        (*result.reason_codes, _code_value(reason_code)),
+    )
+
+
+def _normalized_reason_codes(values: list[str]) -> tuple[str, ...]:
+    return tuple(dict.fromkeys(_code_value(value) for value in values))
+
+
+def _code_value(value: str) -> str:
+    return value.value if isinstance(value, PresentationRejectionCode) else str(value)
 
 
 def _required_text(value: Mapping[str, Any], field: str, label: str, errors: list[str]) -> str:

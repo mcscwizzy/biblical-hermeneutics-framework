@@ -142,6 +142,9 @@ test("presentation lifecycle status is polite and never replaces deterministic c
   assert.equal(status.attributes.role, "status");
   assert.equal(status.attributes["aria-live"], "polite");
 
+  discoveries.renderStatus(panel, "fallback");
+  assert.equal(status.textContent, "BHF evidence summary");
+
   discoveries.renderStatus(panel, "failed");
   assert.equal(status.textContent, "AI summary unavailable — showing BHF evidence.");
   assert.equal(list.children.length, 1);

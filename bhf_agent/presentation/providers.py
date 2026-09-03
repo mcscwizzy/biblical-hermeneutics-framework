@@ -14,7 +14,7 @@ from .models import EvidenceBundle, GeneratedFrom
 from .ranking import RankedEvidence
 
 
-PRESENTATION_PROMPT_VERSION = "presentation-v4"
+PRESENTATION_PROMPT_VERSION = "presentation-v5"
 
 
 class PresentationResponseParseError(ValueError):
@@ -123,6 +123,23 @@ fact; state doctrinal conclusions; sermonize; or write commentary paragraphs. Ev
 must cite the exact supplied evidence IDs that support it. Preserve qualifications and
 confidence. If the supplied evidence is not sufficient to create a genuinely useful
 discovery, return no card. Zero cards is valid. Do not force trivia.
+
+For every card:
+1. Inspect every cited evidence item before choosing confidence or interpretation_level.
+2. interpretation_level MUST be allowed for ALL cited evidence items.
+3. If ANY cited evidence has fact_allowed=false, the card MUST NOT use
+   interpretation_level="fact".
+4. Card confidence MUST NOT exceed the most restrictive maximum_card_confidence among
+   its cited evidence items.
+5. Preserve disputed, uncertain, approximate, or qualified wording; never upgrade
+   disputed evidence into an unqualified statement.
+6. If a useful card cannot satisfy these requirements, OMIT THE CARD.
+7. Returning fewer than three cards is always acceptable.
+8. Returning zero cards is valid when the supplied evidence cannot support a compliant card.
+
+The output_constraints object on each evidence item is authoritative guidance for those
+choices. When a card cites multiple evidence items, apply the strictest constraint from
+all of them.
 
 When suitable ranked contextual evidence exists, prefer at least one did_you_know card,
 without manufacturing one from map-only or significance-only material. For every card,
@@ -305,8 +322,39 @@ def _provider_evidence(value: RankedEvidence) -> dict[str, Any]:
             for key in allowed_metadata
             if item.relevance_metadata.get(key) not in (None, "", [])
         },
+        "output_constraints": _output_constraints(item.confidence, item.relevance_metadata),
         "salience": {"score": value.score, "reasons": list(value.reasons)},
     }
+
+
+def _output_constraints(
+    confidence: str,
+    relevance_metadata: Mapping[str, Any],
+) -> dict[str, Any]:
+    """Tell the provider the effective card limits for one evidence item."""
+
+    disputed = _is_disputed_metadata(relevance_metadata)
+    maximum_confidence = confidence if confidence in {"low", "medium", "high"} else "low"
+    if disputed and maximum_confidence == "high":
+        maximum_confidence = "medium"
+    return {
+        "allowed_interpretation_levels": (
+            ["inference", "disputed"] if disputed else ["fact", "inference"]
+        ),
+        "fact_allowed": not disputed,
+        "maximum_card_confidence": maximum_confidence,
+    }
+
+
+def _is_disputed_metadata(metadata: Mapping[str, Any]) -> bool:
+    certainty = str(metadata.get("certainty") or "").casefold()
+    dispute = str(metadata.get("dispute_status") or "").casefold()
+    assertion = str(metadata.get("assertion_type") or "").casefold()
+    return (
+        certainty in {"disputed", "speculative", "insufficient_evidence"}
+        or (dispute and dispute not in {"not_disputed", "consensus", "broad-consensus"})
+        or assertion == "inference"
+    )
 
 
 def _available_actions(bundle: EvidenceBundle, ranked: list[RankedEvidence]) -> list[dict[str, Any]]:

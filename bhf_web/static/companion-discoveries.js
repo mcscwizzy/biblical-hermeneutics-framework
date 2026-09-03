@@ -20,16 +20,20 @@
   function renderStatus(panel, state = "idle", reason = "") {
     const status = panel?.querySelector("[data-companion-presentation-status]");
     if (!status) return;
-    const normalized = ["idle", "generating", "generated", "unavailable", "failed", "cancelled"].includes(state)
+    const normalized = ["idle", "generating", "generated", "fallback", "unavailable", "failed", "cancelled"].includes(state)
       ? state
       : "idle";
     const message = normalized === "generating"
       ? "Adding AI context…"
       : normalized === "generated"
         ? "AI-assisted summary"
+        : normalized === "fallback"
+          ? "BHF evidence summary"
         : normalized === "unavailable" && reason === "provider_unavailable"
           ? "Connect an AI provider to add AI passage summaries."
-          : normalized === "unavailable" || normalized === "failed"
+        : normalized === "unavailable"
+          ? "AI enhancement unavailable — showing BHF evidence."
+        : normalized === "failed"
             ? "AI summary unavailable — showing BHF evidence."
             : "";
     status.dataset.enhancementState = normalized;

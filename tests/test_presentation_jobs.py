@@ -26,7 +26,7 @@ def _presentation_payload(mode="generated", evidence_hash=EVIDENCE_HASH):
             "presentation_mode": mode,
             "generated_from": {
                 "evidence_hash": evidence_hash,
-                "prompt_version": "presentation-v4",
+                "prompt_version": "presentation-v5",
                 "model": "test:model",
             },
         },
@@ -219,14 +219,14 @@ def test_stale_evidence_fails_without_returning_a_mismatched_packet(tmp_path):
     assert "result" not in payload
 
 
-def test_deterministic_fallback_is_a_failed_enhancement_not_a_success(tmp_path):
+def test_deterministic_fallback_completes_as_a_successful_degradation(tmp_path):
     service = _Service(lambda _values: _presentation_payload("deterministic_fallback"))
     app, store = _app(tmp_path, service)
     submission = _submit(app)
     job = _wait_for_done(store, submission.json()["job_id"])
 
-    assert job.status == "failed"
-    assert job.error_category == "presentation_unavailable"
+    assert job.status == "succeeded"
+    assert job.error_category is None
     assert job.result["presentation_packet"]["presentation_mode"] == "deterministic_fallback"
 
 

@@ -77,7 +77,13 @@
       if (
         (enhancement?.supported !== true && enhancement?.available !== true)
         || typeof window.BHFCompanionContext?.enhance !== "function"
-      ) return;
+      ) {
+        if (enhancement) {
+          record = {...record, enhancementStatus: "unavailable", enhancementReason: "unsupported"};
+          options.onEnhancementUnavailable?.("unsupported", requestedSelection, record);
+        }
+        return;
+      }
       let availability = {available: true, reason: ""};
       try {
         if (typeof window.BHFCompanionContext?.getEnhancementAvailability === "function") {
@@ -104,7 +110,11 @@
         || eligibilitySequence !== enhancementSequence
         || requestedKey !== keyFor(selection)
       ) return;
-      if (availability?.reason === "disabled") return;
+      if (availability?.reason === "disabled") {
+        record = {...record, enhancementStatus: "unavailable", enhancementReason: "disabled"};
+        options.onEnhancementUnavailable?.("disabled", requestedSelection, record);
+        return;
+      }
       if (isEnhancedPresentation(context)) {
         record = {...record, enhancementStatus: "generated", enhancementReason: ""};
         options.onEnhanced?.(context, requestedSelection, record);
@@ -142,12 +152,8 @@
           || responseHash !== requestedHash
         ) return;
         if (!isEnhancedPresentation(result)) {
-          record = {...record, enhancementStatus: "failed", enhancementReason: "fallback"};
-          options.onEnhancementError?.(
-            new Error("Presentation enhancement returned local fallback content."),
-            requestedSelection,
-            record,
-          );
+          record = {...record, enhancementStatus: "fallback", enhancementReason: "fallback"};
+          options.onEnhancementFallback?.(result, requestedSelection, record);
           return;
         }
         const enhancedContext = {...context, ...result, presentation_enhancement: enhancement};
@@ -164,8 +170,19 @@
           || requestController.signal.aborted
           || requestedKey !== keyFor(selection)
         ) return;
-        record = {...record, enhancementStatus: "failed", enhancementReason: ""};
-        options.onEnhancementError?.(error, requestedSelection, record);
+        const unavailable = ["provider_unavailable", "presentation_unavailable"].includes(
+          String(error?.errorCategory || ""),
+        );
+        record = {
+          ...record,
+          enhancementStatus: unavailable ? "unavailable" : "failed",
+          enhancementReason: unavailable ? String(error?.errorCategory || "") : "",
+        };
+        if (unavailable) {
+          options.onEnhancementUnavailable?.(record.enhancementReason, requestedSelection, record);
+        } else {
+          options.onEnhancementError?.(error, requestedSelection, record);
+        }
       } finally {
         if (enhancementController === requestController) enhancementController = null;
       }

@@ -113,6 +113,10 @@
         if (currentMode !== "passage") return;
         renderPresentationStatus("unavailable", reason);
       },
+      onEnhancementFallback: () => {
+        if (currentMode !== "passage") return;
+        renderPresentationStatus("fallback");
+      },
       onEnhancementError: () => {
         if (currentMode !== "passage") return;
         renderPresentationStatus("failed");
