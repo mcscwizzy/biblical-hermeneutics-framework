@@ -3,9 +3,18 @@
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
+from enum import Enum
 from typing import Any, Optional
 
 from bhf_agent.models import ChatRequest, ChatResponse
+
+
+class ResponseFormatCapability(str, Enum):
+    """Structured output capability level for a model."""
+
+    JSON_SCHEMA = "json_schema"
+    JSON_OBJECT = "json_object"
+    NONE = "none"
 
 
 class ChatAdapterError(RuntimeError):
@@ -26,6 +35,19 @@ class ChatAdapter(ABC):
 
     def supports_json_schema_response_format(self) -> bool:
         return False
+
+    def presentation_response_format_capability(
+        self, model: Optional[str] = None
+    ) -> ResponseFormatCapability:
+        """Return the structured output capability for presentation generation.
+
+        By default, uses the legacy supports_json_schema_response_format() method
+        for backwards compatibility. Subclasses should override to provide
+        model-aware capability detection.
+        """
+        if self.supports_json_schema_response_format():
+            return ResponseFormatCapability.JSON_SCHEMA
+        return ResponseFormatCapability.NONE
 
     def health_check(self, model: Optional[str] = None) -> dict[str, Any]:
         return {

@@ -5,9 +5,10 @@ from __future__ import annotations
 import json
 import re
 from abc import ABC, abstractmethod
-from typing import Any, Mapping
+from typing import Any, Mapping, Optional
 
 from bhf_agent.adapters import ChatAdapter
+from bhf_agent.adapters.base import ResponseFormatCapability
 from bhf_agent.models import ChatRequest, ChatResponse
 
 from .models import EvidenceBundle, GeneratedFrom
@@ -210,7 +211,8 @@ class AdapterPresentationProvider(PresentationProvider):
         generated_from: GeneratedFrom,
     ) -> Any:
         packet = _provider_packet(bundle, ranked, generated_from)
-        response_format = _response_format() if self.adapter.supports_json_schema_response_format() else None
+        capability = self.adapter.presentation_response_format_capability(self.model)
+        response_format = _build_response_format(capability)
         response = self.adapter.chat(
             ChatRequest(
                 system_prompt=PRESENTATION_SYSTEM_PROMPT,
@@ -434,6 +436,21 @@ def _available_geography(
         ]
         for kind in ("places", "routes")
     }
+
+
+def _build_response_format(capability: ResponseFormatCapability) -> Optional[dict[str, Any]]:
+    """Build response_format based on model capability.
+
+    - JSON_SCHEMA: strict JSON Schema with full validation.
+    - JSON_OBJECT: JSON object format (no strict schema enforcement).
+    - NONE: no response format specified (prompt-only fallback).
+    """
+    if capability == ResponseFormatCapability.JSON_SCHEMA:
+        return _response_format()
+    elif capability == ResponseFormatCapability.JSON_OBJECT:
+        return {"type": "json_object"}
+    else:
+        return None
 
 
 def _response_format() -> dict[str, Any]:
