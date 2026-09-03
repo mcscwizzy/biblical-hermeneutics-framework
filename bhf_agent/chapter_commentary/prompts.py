@@ -91,14 +91,17 @@ def generate_evidence_summary(bundle) -> str:
     if not bundle.evidence_items:
         return "No contextual evidence provided."
 
-    lines = []
+    lines = ["AVAILABLE EVIDENCE (use these IDs in your blocks):"]
     for item in bundle.evidence_items:
-        lines.append(f"- {item.claim} (ID: {item.id}, confidence: {item.confidence})")
+        lines.append(f"- ID: {item.id}")
+        lines.append(f"  Claim: {item.claim}")
+        lines.append(f"  Confidence: {item.confidence}")
+        lines.append("")
 
     if bundle.entities.get("people"):
-        lines.append(f"\nPeople mentioned: {len(bundle.entities['people'])}")
+        lines.append(f"People entities: {len(bundle.entities['people'])}")
     if bundle.entities.get("places"):
-        lines.append(f"Places mentioned: {len(bundle.entities['places'])}")
+        lines.append(f"Place entities: {len(bundle.entities['places'])}")
 
     return "\n".join(lines)
 

@@ -1,0 +1,45 @@
+{
+  "reference": "Genesis 6",
+  "book": "Genesis",
+  "chapter": 6,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Literary and Historical Context",
+      "blocks": [
+        {
+          "id": "block_1a",
+          "text": "Genesis 6 belongs to the primeval history of Genesis 1-11, which traces universal origins before transitioning to the ancestral narratives in chapters 12-50. This primeval section is situated within an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building were shared narrative topics across multiple cultures and texts.",
+          "verse_refs": [
+            "Genesis 6:1",
+            "Genesis 6:11-13"
+          ],
+          "evidence_ids": [
+            "genesis-literary-movement",
+            "genesis-ane-comparative-context"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "08d966850df0a47e874da11e32a5feeca914e67e02b6b35e05bfe08f249d3833",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[1].interpretation_level is invalid",
+    "section[1].kind is unsupported: theological_framework",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: comparative_literature",
+    "section[2].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}
