@@ -32,3 +32,6 @@ class OpenRouterAdapter(OpenAICompatibleAdapter):
             rate_limit_retry_seconds=1.0,
             max_rate_limit_retry_seconds=30.0,
         )
+
+    def supports_json_schema_response_format(self) -> bool:
+        return True

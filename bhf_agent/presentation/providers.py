@@ -8,7 +8,7 @@ from abc import ABC, abstractmethod
 from typing import Any, Mapping
 
 from bhf_agent.adapters import ChatAdapter
-from bhf_agent.models import ChatRequest
+from bhf_agent.models import ChatRequest, ChatResponse
 
 from .models import EvidenceBundle, GeneratedFrom
 from .ranking import RankedEvidence
@@ -22,6 +22,14 @@ class PresentationResponseParseError(ValueError):
 
     def __init__(self) -> None:
         super().__init__("presentation response was not one valid JSON object")
+
+
+class PresentationProviderError(RuntimeError):
+    """Provider-level error that precedes JSON parsing."""
+
+    def __init__(self, error_category: str, message: str) -> None:
+        self.error_category = error_category
+        super().__init__(f"presentation provider {error_category}: {message}")
 
 
 _OUTER_JSON_FENCE_RE = re.compile(
@@ -219,6 +227,11 @@ class AdapterPresentationProvider(PresentationProvider):
                 response_format=response_format,
             )
         )
+        if response.errors or response.error_category:
+            raise PresentationProviderError(
+                response.error_category or "unknown",
+                "; ".join(response.errors) if response.errors else "no details available",
+            )
         return parse_presentation_json_response(response.text)
 
 

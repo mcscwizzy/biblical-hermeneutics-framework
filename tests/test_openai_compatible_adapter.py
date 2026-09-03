@@ -239,6 +239,10 @@ class OpenAICompatibleAdapterTests(unittest.TestCase):
 
         self.assertEqual(captured["body"]["response_format"], {"type": "json_object"})
 
+    def test_generic_openai_compatible_adapter_does_not_support_json_schema(self):
+        adapter = OpenAICompatibleAdapter("http://localhost:1234/v1")
+        self.assertFalse(adapter.supports_json_schema_response_format())
+
 
 if __name__ == "__main__":
     unittest.main()

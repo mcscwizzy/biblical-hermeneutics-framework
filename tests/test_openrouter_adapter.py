@@ -427,6 +427,42 @@ class OpenRouterAdapterTests(unittest.TestCase):
         self.assertIn("rate limit reached; try again shortly", response.errors[0])
         self.assertIn("rate-limit source: undetermined", response.errors[0])
 
+    def test_supports_json_schema_response_format(self):
+        adapter = OpenRouterAdapter(api_key="or-secret")
+        self.assertTrue(adapter.supports_json_schema_response_format())
+
+    def test_sends_structured_output_format_when_requested(self):
+        captured = {}
+
+        def fake_urlopen(request, timeout=None):
+            captured["body"] = json.loads(request.data.decode("utf-8"))
+            return FakeHTTPResponse(
+                b'{"model":"openai/gpt-4o-mini","choices":[{"message":{"content":"answer"}}]}'
+            )
+
+        adapter = OpenRouterAdapter(api_key="or-secret", timeout_seconds=7)
+        response_format = {
+            "type": "json_schema",
+            "json_schema": {
+                "name": "test_schema",
+                "strict": True,
+                "schema": {"type": "object"},
+            },
+        }
+        with patch("urllib.request.urlopen", fake_urlopen):
+            response = adapter.chat(
+                ChatRequest(
+                    "system",
+                    "user",
+                    "openai/gpt-4o-mini",
+                    response_format=response_format,
+                )
+            )
+
+        self.assertIn("response_format", captured["body"])
+        self.assertEqual(captured["body"]["response_format"], response_format)
+        self.assertEqual(response.text, "answer")
+
 
 if __name__ == "__main__":
     unittest.main()

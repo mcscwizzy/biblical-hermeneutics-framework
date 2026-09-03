@@ -20,6 +20,7 @@ from .models import (
 from .providers import (
     PRESENTATION_PROMPT_VERSION,
     PresentationProvider,
+    PresentationProviderError,
     PresentationResponseParseError,
 )
 from .provider_gate import ProviderRequestGate
@@ -351,6 +352,25 @@ class PresentationEngine:
                             "accepted_cards": accepted_card_count,
                             "rejected_cards": rejected_card_count,
                             "packet_valid": validation.packet_valid,
+                            **_provider_log_metadata(provider, bundle),
+                        },
+                    )
+                except PresentationProviderError as exc:
+                    self.metrics.record_event("provider_failures")
+                    diagnostics.append(
+                        _failure_diagnostic(f"provider {exc.error_category}", exc)
+                    )
+                    message = (
+                        "presentation provider rate limited; deterministic fallback used"
+                        if exc.error_category == "provider_rate_limit"
+                        else f"presentation provider {exc.error_category}; deterministic fallback used"
+                    )
+                    LOGGER.warning(
+                        message,
+                        extra={
+                            "event": "presentation_provider_request",
+                            "exception_class": type(exc).__name__,
+                            "error_category": exc.error_category,
                             **_provider_log_metadata(provider, bundle),
                         },
                     )
