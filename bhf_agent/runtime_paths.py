@@ -16,6 +16,7 @@ class RuntimeDataPaths:
     study_db_path: Path
     job_db_path: Path
     commentary_db_path: Path
+    bhf_commentary_storage_path: Path
     translations_path: Path
     reader_settings_path: Path
     web_config_path: Path
@@ -46,6 +47,10 @@ def resolve_runtime_data_paths(
         job_db_path=Path(values.get("BHF_JOB_DB_PATH") or data_dir / "jobs.sqlite"),
         commentary_db_path=Path(
             values.get("BHF_COMMENTARY_DB_PATH") or data_dir / "commentary.sqlite"
+        ),
+        bhf_commentary_storage_path=Path(
+            values.get("BHF_COMMENTARY_STORAGE_PATH")
+            or data_dir / "bhf-commentary"
         ),
         translations_path=Path(
             values.get("BHF_TRANSLATIONS_PATH") or data_dir / "translations"

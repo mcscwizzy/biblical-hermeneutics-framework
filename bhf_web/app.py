@@ -54,6 +54,7 @@ from .forms import (
 )
 from . import settings
 from .routes.ask import register_ask_routes
+from .routes.bhf_commentary import register_bhf_commentary_routes
 from .routes.canonical import register_canonical_routes
 from .routes.canonical import register_canonical_editor_routes
 from .routes.curation import register_curation_routes
@@ -78,6 +79,7 @@ PACKAGE_DIR = Path(__file__).resolve().parent
 templates = Jinja2Templates(directory=str(PACKAGE_DIR / "templates"))
 STUDY_DB_PATH = settings.STUDY_DB_PATH
 COMMENTARY_DB_PATH = settings.COMMENTARY_DB_PATH
+BHF_COMMENTARY_STORAGE_PATH = settings.BHF_COMMENTARY_STORAGE_PATH
 LOGGER = logging.getLogger(__name__)
 
 
@@ -575,6 +577,7 @@ def create_app() -> FastAPI:
     register_map_routes(web_app, study_db_path=str(STUDY_DB_PATH))
     register_archaeology_routes(web_app, templates=templates)
     register_commentary_routes(web_app, database_path=str(COMMENTARY_DB_PATH))
+    register_bhf_commentary_routes(web_app, storage_dir=str(BHF_COMMENTARY_STORAGE_PATH))
     register_study_routes(
         web_app,
         study_db_path=str(STUDY_DB_PATH),
