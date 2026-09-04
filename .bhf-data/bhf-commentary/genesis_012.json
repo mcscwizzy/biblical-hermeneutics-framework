@@ -2,107 +2,36 @@
   "reference": "Genesis 12",
   "book": "Genesis",
   "chapter": 12,
-  "status": "partial",
+  "status": "validated",
   "sections": [
     {
-      "kind": "passage_section",
-      "title": "The Call and Promise (Genesis 12:1-3)",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_3",
-          "text": "The covenant frames Abraham's household identity as a received promise: they live as sojourners who trust God's word before possessing the inheritance. Abraham's story frames faith as trusting God's promise, receiving covenant identity, practicing hospitality, and living as a sojourner before the promised inheritance. For Israel remembering its identity as a people formed by divine promise, this narrative shapes how the nation understands its origins and relationship to God.",
+          "id": "overview",
+          "text": "Genesis 12 begins with Jehovah\u2019s call and promise to Abram: land, a great nation, blessing, and blessing for all families of the earth. Abram travels through Canaan, builds altars at Shechem and between Bethel and Ai, then goes to Egypt during famine. His fear leads him to call Sarai his sister; Pharaoh takes her, but Jehovah plagues Pharaoh\u2019s house and Abram leaves with Sarai and his possessions.",
           "verse_refs": [
-            "Genesis 12:1-3"
+            "Genesis 12:1-20"
           ],
           "evidence_ids": [
-            "abrahamic-covenant-framework:hebraic_worldview:0",
-            "abraham:hebraic_worldview:0",
-            "abrahamic-covenant-framework:original_audience:0"
+            "genesis-literary-movement"
           ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "passage_section",
-      "title": "Journey through Canaan (Genesis 12:4-9)",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "Abram's obedience to the call is immediate and comprehensive. He journeys with his household\u2014Sarai, Lot, and his servants\u2014into Canaan. The narrative world includes household religion, kinship loyalty, land inheritance, and covenant-making patterns familiar across the ancient Near East. As Abram travels through the land, he receives God's word at significant places, marking them with altars as sites of worship and covenant remembrance.",
-          "verse_refs": [
-            "Genesis 12:4-5"
-          ],
-          "evidence_ids": [
-            "abraham:ancient_near_east_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_5",
-          "text": "At Shechem, Abram encounters a theophany\u2014God appears and promises to give the land to his seed. The biblical texts portray the land as divine gift and covenant responsibility while also naming its existing peoples, towns, borders, and agricultural character. The text notes that 'the Canaanite was then in the land,' acknowledging the existing population while affirming the divine promise. Shechem functions as remembered geography where covenant promise, household allegiance, burial, and public renewal are tied to a concrete place in the land.",
-          "verse_refs": [
-            "Genesis 12:6-7"
-          ],
-          "evidence_ids": [
-            "canaan:hebraic_worldview:0",
-            "shechem:hebraic_worldview:0",
-            "shechem:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_6",
-          "text": "Abram continues southward, building altars at each sacred site. Bethel, where he builds an altar between Bethel and Ai, becomes a location that appears throughout patriarchal, monarchic, and later narratives as a theological marker for the people of God. These altars mark Abram's worship and testimony to God's promise as he journeys through the promised land.",
-          "verse_refs": [
-            "Genesis 12:8-9"
-          ],
-          "evidence_ids": [
-            "bethel-1:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "passage_section",
-      "title": "Testing and the Journey to Egypt (Genesis 12:10-14)",
-      "blocks": [
-        {
-          "id": "block_7",
-          "text": "A famine strikes the land, driving Abram to seek provision in Egypt. As a powerful Nile-based empire, Egypt represents political might, agricultural abundance, and the temptation of security apart from covenant trust. Egypt is remembered in Scripture through dependence, oppression, deliverance, and warning: a place where God hears suffering and calls his people away from false security. This journey marks a turning point where Abram faces a test of faith.",
-          "verse_refs": [
-            "Genesis 12:10"
-          ],
-          "evidence_ids": [
-            "egypt:ancient_near_east_context:0",
-            "egypt:hebraic_worldview:0"
-          ],
-          "confidence": "medium",
+          "confidence": "high",
           "interpretation_level": "fact"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "4cb63ff3bf9a168fed8940fd95a872ccaac9df11d3ea50d0d6a112e9f98fd611",
+    "evidence_hash": "4a397402d768005f80ceb520826b13a624da5aa8980d11d1eadfec66fa403401",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T16:11:41.644328+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0].confidence exceeds its cited evidence",
-    "section[1].kind is unsupported: passage_section",
-    "section[1].block[0].confidence exceeds its cited evidence",
-    "section[2].kind is unsupported: passage_section",
-    "section[3].kind is unsupported: passage_section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
