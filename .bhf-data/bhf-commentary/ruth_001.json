@@ -2,19 +2,18 @@
   "reference": "Ruth 1",
   "book": "Ruth",
   "chapter": 1,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Opening the Arc of Redemption",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Ruth 1 opens a narrative arc that progresses from famine, death, and Naomi's emptiness toward restoration and communal blessing. The chapter establishes the condition of loss\u2014famine in the land, Elimelech's death, the deaths of both sons\u2014that creates the desperate need addressed throughout the remainder of the book. Naomi's devastation sets the trajectory that will move toward harvest, kinship redemption, and renewal.",
+          "id": "overview",
+          "text": "Ruth 1 contains 22 verses. It opens with: And it came to pass in the days when the judges judged, that there was a famine in the land. And a certain man of Bethlehem-judah went to sojourn in the country of Moab, he, and his wife, and his two sons. It concludes with: So Naomi returned, and Ruth the Moabitess, her daughter-in-law, with her, who returned out of the country of Moab: and they came to Bethlehem in the beginning of barley harvest.",
           "verse_refs": [
-            "Ruth 1:1",
-            "Ruth 1:3",
-            "Ruth 1:5"
+            "Ruth 1:1-22"
           ],
           "evidence_ids": [
             "ruth-literary-movement"
@@ -23,58 +22,17 @@
           "interpretation_level": "fact"
         }
       ]
-    },
-    {
-      "kind": "historical_social_world",
-      "title": "Ruth and the Moabite World",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "Ruth enters the narrative as a Moabite woman belonging to an ancient social world structured by kinship obligations, household economy, and interwoven family responsibilities. Her marriage to Mahlon bound her to Naomi's family, creating relational ties that transcend national identity. This social context\u2014where family loyalty, inheritance rights, and mutual obligation are fundamental\u2014provides the framework for understanding the redemption plot that unfolds in the chapters ahead.",
-          "verse_refs": [
-            "Ruth 1:4"
-          ],
-          "evidence_ids": [
-            "ruth-the-moabite:ancient_near_east_context:0",
-            "ruth-the-moabite:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "theological_language",
-      "title": "Hesed: Covenant Loyalty and God's Character",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "When Naomi blesses her daughters-in-law, wishing that Jehovah deal kindly with them, she invokes hesed\u2014a term rooted in ancient covenant and kinship language. Rather than describing fleeting emotion, hesed denotes enduring relational commitment and faithfulness. By framing Naomi's language within this ancient Near Eastern understanding of loyalty and obligation, the chapter establishes the relational world in which God's character and human obligation intertwine.",
-          "verse_refs": [
-            "Ruth 1:8"
-          ],
-          "evidence_ids": [
-            "what-does-hesed-mean:ancient_near_east_context:0",
-            "what-does-hesed-mean:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "ebc198bcac806f8e0830a4440d58ecf042ffdb0081ea3eaef8cae207dabff25f",
+    "evidence_hash": "6aacf1eaaedf19deea3bbce787097c8f84ba0ca8ce3393c326c85380f93ff8a1",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:04:15.241080+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: historical_social_world",
-    "section[2].kind is unsupported: theological_language"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
