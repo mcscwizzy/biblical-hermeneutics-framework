@@ -3,20 +3,20 @@
   "book": "1 Kings",
   "chapter": 14,
   "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "This chapter unfolds during Jeroboam's reign over the newly divided northern kingdom of Israel. The kingdom's division reflects a pattern common in the ancient Near East of dynastic fracture, though the biblical text interprets this split as a covenant consequence rather than mere political pragmatism. Jeroboam's position emerges from the political grievances and labor disputes that followed Solomon's reign, compounded by fragility in the succession itself. The events of this chapter occur within this context of a recently divided monarchy.",
+          "id": "overview",
+          "text": "1 Kings 14 contains 31 verses. It opens with: At that time Abijah the son of Jeroboam fell sick. It concludes with: And Rehoboam slept with his fathers, and was buried with his fathers in the city of David: and his mother's name was Naamah the Ammonitess. And Abijam his son reigned in his stead.",
           "verse_refs": [
-            "1 Kings 14:1-2"
+            "1 Kings 14:1-31"
           ],
           "evidence_ids": [
-            "division-of-the-kingdom:ancient_near_east_context:0",
-            "division-of-the-kingdom:historical_context:0"
+            "division-of-the-kingdom:ancient_near_east_context:0"
           ],
           "confidence": "medium",
           "interpretation_level": "fact"
@@ -28,9 +28,9 @@
     "evidence_hash": "2fbbce41a2bb275f2323cc44cd9e65cd729cac2bc8c160871038418a82e3fd5d",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:08:40.293506+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

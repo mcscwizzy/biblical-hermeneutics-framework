@@ -2,38 +2,37 @@
   "reference": "1 Kings 17",
   "book": "1 Kings",
   "chapter": 17,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "THIN",
   "sections": [
     {
-      "kind": "tradition_and_reception",
-      "title": "Later Biblical Reception",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "The epistle of James portrays Elijah as a human being like the audience, whose prayer was associated with both drought and the subsequent return of rain.",
+          "id": "overview",
+          "text": "1 Kings 17 contains 24 verses. It opens with: And Elijah the Tishbite, who was of the sojourners of Gilead, said unto Ahab, As Jehovah, the God of Israel, liveth, before whom I stand, there shall not be dew nor rain these years, but according to my word. It concludes with: And the woman said to Elijah, Now I know that thou art a man of God, and that the word of Jehovah in thy mouth is truth.",
           "verse_refs": [
-            "James 5:17-18"
+            "1 Kings 17:1-24"
           ],
           "evidence_ids": [
             "jas-elijah"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "eaa30d84b6bcb7d3a18e5d2c2700f7471d0bea51f708539b6335df465b832c61",
+    "evidence_hash": "c936d91ebf08258a6d623b220e9293eba5d69cd3b5d81d36e562dc4c17cde82d",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:08:40.396678+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].kind is unsupported: tradition_and_reception"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

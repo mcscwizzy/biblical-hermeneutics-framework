@@ -2,58 +2,24 @@
   "reference": "1 Kings 8",
   "book": "1 Kings",
   "chapter": 8,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "The Temple Dedication and Ark Installation",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Solomon gathers Israel's leadership\u2014elders, tribal heads, and princes\u2014at Jerusalem to formally install the ark in the newly completed temple. The ceremony transfers the ark from the City of David (Zion) into the temple's inner sanctuary, accompanied by the tent of meeting and sacred vessels. This event marks the establishment of a fixed cultic center, distinct from the earlier mobile sanctuary tradition.",
+          "id": "overview",
+          "text": "1 Kings 8 contains 66 verses. It opens with: Then Solomon assembled the elders of Israel, and all the heads of the tribes, the princes of the fathers' `houses' of the children of Israel, unto king Solomon in Jerusalem, to bring up the ark of the covenant of Jehovah out of the city of David, which is Zion. It concludes with: On the eighth day he sent the people away; and they blessed the king, and went unto their tents joyful and glad of heart for all the goodness that Jehovah had showed unto David his servant, and to Israel his people.",
           "verse_refs": [
-            "1 Kings 8:1-4"
+            "1 Kings 8:1-66"
           ],
           "evidence_ids": [
-            "city-of-david:historical_context:0",
-            "zion:historical_context:0",
-            "jerusalem:historical_context:0",
-            "dedication-of-solomons-temple:historical_context:0",
-            "sanctuary-theme:historical_context:0",
-            "tabernacle:timeline:2"
+            "first-kings-temple-prayer-warning"
           ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_2",
-          "text": "The ceremony involves Levitical and priestly personnel performing ritual actions\u2014carrying the ark, making sacrifices, and conducting the sacred rites. This priestly service represents the continuation and development of wilderness worship practices into the temple-centered institutional form characteristic of the monarchic period.",
-          "verse_refs": [
-            "1 Kings 8:3-5"
-          ],
-          "evidence_ids": [
-            "levitical-service:historical_context:0",
-            "priestly-service:historical_context:0",
-            "dedication-of-solomons-temple:ancient_near_east_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_3",
-          "text": "When the ark enters the Most Holy Place beneath the cherubim, the temple becomes filled with cloud, and the divine glory occupies the building so completely that the priests cannot remain inside. This manifestation signals divine acceptance of the sanctuary and echoes Israel's earlier experiences of God's presence with the mobile tent of meeting.",
-          "verse_refs": [
-            "1 Kings 8:6-11"
-          ],
-          "evidence_ids": [
-            "divine-presence:historical_context:0",
-            "glory-theme:historical_context:0",
-            "presence-theme:historical_context:0",
-            "most-holy-place-2:historical_context:0",
-            "sanctuary-theme:hebraic_worldview:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "confidence": "high",
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -62,13 +28,11 @@
     "evidence_hash": "88e330f167659cd91376ee11134ec68740c505dd7cae63037f35c4726722b1ac",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:08:40.093248+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[3].confidence exceeds its cited evidence"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

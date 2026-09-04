@@ -3,19 +3,19 @@
   "book": "1 Kings",
   "chapter": 11,
   "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "First Kings 11 marks a critical turning point in the royal narrative, documenting Solomon's departure from faithfulness to God through foreign marriages and idolatry. Within the book's broader literary movement from contested succession through Solomon's wisdom and temple achievements to his failure, this chapter shows the spiritual compromise that incurs divine judgment. The announced judgment on Solomon's disloyalty for breaking covenant and pursuing other gods sets the stage for the kingdom's division under his successor. Though God delays the kingdom's division out of respect for David and Jerusalem, Solomon's violation of God's explicit commands establishes the narrative foundation for the events that follow.",
+          "id": "overview",
+          "text": "1 Kings 11 contains 43 verses. It opens with: Now king Solomon loved many foreign women, together with the daughter of Pharaoh, women of the Moabites, Ammonites, Edomites, Sidonians, and Hittites; It concludes with: And Solomon slept with his fathers, and was buried in the city of David his father: and Rehoboam his son reigned in his stead.",
           "verse_refs": [
-            "1 Kings 11:1-13"
+            "1 Kings 11:1-43"
           ],
           "evidence_ids": [
-            "first-kings-literary-movement",
             "first-kings-kingdom-division"
           ],
           "confidence": "high",
@@ -28,9 +28,9 @@
     "evidence_hash": "4f4299246a283d757973cb09b50667f134d16f5dffef1ed0cc375ece1e2605cf",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:08:40.191216+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],
