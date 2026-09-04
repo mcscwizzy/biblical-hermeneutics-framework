@@ -115,6 +115,16 @@ def test_scripture_lookup_requires_book_and_overlapping_chapter(tmp_path) -> Non
     library = _fixture_library(tmp_path)
     ids = {result.object.id for result in library.retrieve_by_scripture_reference("Genesis 13", limit=20)}
     assert ids == {"genesis-exact", "genesis-verse", "genesis-spanning"}
+    bundle = build_evidence_bundle(
+        "Genesis 13",
+        canonical_results=library.retrieve_by_scripture_reference("Genesis 13", limit=20),
+    )
+    assert "genesis-exact-claim" in {item.id for item in bundle.evidence_items}
+
+
+def test_zero_anchored_chapter_returns_no_scripture_results(tmp_path) -> None:
+    library = _fixture_library(tmp_path)
+    assert library.retrieve_by_scripture_reference("Genesis 99", limit=20) == []
 
 
 def test_scripture_aliases_and_cross_book_collisions(tmp_path) -> None:
