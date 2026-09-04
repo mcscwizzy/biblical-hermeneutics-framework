@@ -38,7 +38,16 @@ class CommentaryBuilder:
         self.storage_dir = Path(storage_dir)
         if config is None:
             config_path = Path(".bhf/config.json")
-            config = AgentConfig.from_json_file(config_path) if config_path.exists() else AgentConfig()
+            if config_path.exists():
+                config = AgentConfig.from_json_file(config_path)
+            else:
+                # Commentary is another BHF model consumer. When no explicit
+                # agent config is present, use the same environment-backed web
+                # defaults that configure the rest of the application rather
+                # than falling back to the unconfigured AgentConfig defaults.
+                from bhf_web.forms import load_web_defaults
+
+                config = load_web_defaults().config
         self.config = config
         self.generator = CommentaryGenerator(config)
         self.progress_file = self.storage_dir / PROGRESS_FILE

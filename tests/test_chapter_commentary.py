@@ -28,6 +28,7 @@ from bhf_agent.chapter_commentary import (
 from bhf_agent.chapter_commentary.evidence_bundling import get_chapter_evidence_bundle
 from bhf_agent.chapter_commentary.prompts import build_user_prompt
 from bhf_agent.chapter_commentary.validation import CommentaryRejectionCode
+from bhf_agent.config import AgentConfig
 from bhf_agent.presentation.models import EvidenceBundle
 from bhf_agent.presentation.models import EvidenceItem
 from bhf_agent.chapter_commentary.models import GeneratedMetadata
@@ -129,6 +130,27 @@ def test_chapter_discovery():
     assert len(chapters) == 1189
     assert ("Genesis", 1) in chapters
     assert ("Revelation", 22) in chapters
+
+
+def test_builder_uses_shared_bhf_environment_defaults_without_explicit_config(
+    monkeypatch, tmp_path
+):
+    """The commentary CLI must use BHF's normal provider configuration."""
+    expected = AgentConfig(
+        adapter="openrouter",
+        base_url="https://openrouter.ai/api/v1",
+        api_key="test-key",
+        model="test/model",
+    )
+
+    monkeypatch.setattr(
+        "bhf_web.forms.load_web_defaults",
+        lambda: SimpleNamespace(config=expected),
+    )
+
+    builder = CommentaryBuilder(tmp_path)
+
+    assert builder.config is expected
 
 
 def test_generate_minimal_commentary(monkeypatch):
