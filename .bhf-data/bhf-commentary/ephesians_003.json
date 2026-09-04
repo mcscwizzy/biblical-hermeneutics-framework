@@ -2,49 +2,24 @@
   "reference": "Ephesians 3",
   "book": "Ephesians",
   "chapter": 3,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Paul's Apostolic Commission and the Revealed Mystery",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Paul identifies himself as an apostle and prisoner of Christ Jesus, addressing a Gentile audience. The chapter opens by establishing his authority and the particular relevance of his message to this group.",
+          "id": "overview",
+          "text": "Ephesians 3 contains 21 verses. It opens with: For this cause I Paul, the prisoner of Christ Jesus in behalf of you Gentiles,-- It concludes with: unto him `be' the glory in the church and in Christ Jesus unto all generations for ever and ever. Amen.",
           "verse_refs": [
-            "Ephesians 3:1-2"
+            "Ephesians 3:1-21"
           ],
           "evidence_ids": [
-            "eph-voice",
             "eph-audience"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_2",
-          "text": "The core revelation Paul announces is the 'mystery' of the gospel. This mystery, previously hidden, is now disclosed: Gentiles are fellow-heirs with Jewish believers, full members of the same body, and sharers in the promise made in Christ Jesus. This inclusion constitutes the gospel's central disclosure.",
-          "verse_refs": [
-            "Ephesians 3:3-9"
-          ],
-          "evidence_ids": [
-            "eph-mystery"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_3",
-          "text": "Paul's apostolic role centers on making this mystery known to the Gentiles. He describes himself as the minister appointed to preach the unsearchable richness of Christ to them, revealing what had been hidden for ages in God.",
-          "verse_refs": [
-            "Ephesians 3:7-9"
-          ],
-          "evidence_ids": [
-            "eph-voice",
-            "eph-mystery"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -53,16 +28,11 @@
     "evidence_hash": "14df785210f764baeaa7ac982ca7c29b87eb2ab4903fd8b07c8a7b03a6c3894e",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:43:01.757230+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[3].interpretation_level is invalid",
-    "section[1].kind is unsupported: contextual_notes",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[1].block[1].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

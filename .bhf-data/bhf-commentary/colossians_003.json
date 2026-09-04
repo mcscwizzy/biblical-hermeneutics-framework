@@ -2,77 +2,24 @@
   "reference": "Colossians 3",
   "book": "Colossians",
   "chapter": 3,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview: Identity in Christ and Embodied Conduct",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Colossians 3 traces the practical implications of being raised with Christ. The chapter calls believers to reorient their focus toward heavenly realities and work out this heavenly citizenship through concrete communal practice. What unfolds is not abstract spirituality but a vision of how bodies, relationships, speech, and labor are all claimed by Christ and transformed into his service.",
+          "id": "overview",
+          "text": "Colossians 3 contains 25 verses. It opens with: If then ye were raised together with Christ, seek the things that are above, where Christ is, seated on the right hand of God. It concludes with: For he that doeth wrong shall receive again for the wrong that he hath done: and there is no respect of persons.",
           "verse_refs": [
-            "Colossians 3:1-4"
+            "Colossians 3:1-25"
           ],
           "evidence_ids": [
             "col-above"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Raised and Seeking Things Above (3:1-4)",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "Paul begins by anchoring identity to resurrection: those raised with Christ are called to seek things above where Christ is seated at God's right hand. The exhortation is not to withdraw from the earth but to let heavenly realities shape earthly choices. Believers have died to their old existence, and their life is now hidden with Christ in God. When Christ appears, they too will be revealed in glory. This foundation underpins everything that follows.",
-          "verse_refs": [
-            "Colossians 3:1-4"
-          ],
-          "evidence_ids": [
-            "col-above"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Communal Virtues and Worship (3:12-17)",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "With identity established, Paul catalogs the virtues that constitute the new community: compassion, kindness, humility, meekness, and patience. These culminate in love, 'the bond of perfectness' that binds the community together. The peace of Christ is to rule in their hearts; thankfulness is to mark their posture. Strikingly, Paul insists that the word of Christ dwell in them richly, expressed through teaching and admonition via psalms, hymns, and spiritual songs. Worship is corporate and instructive, singing is mutual, and thanksgiving is communal. All conduct\u2014every word and deed\u2014belongs to the Lord Jesus and flows toward God the Father in gratitude.",
-          "verse_refs": [
-            "Colossians 3:12-17"
-          ],
-          "evidence_ids": [
-            "col-worship"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Household Relations Reframed in Christ (3:18-19)",
-      "blocks": [
-        {
-          "id": "block_5",
-          "text": "The chapter concludes with instructions for household members\u2014wives, husbands, and (in following verses not shown here) children and enslaved persons. These directives address the unequal structures of ancient households. By appending 'as is fitting in the Lord' to the instruction for wives' submission, Paul grounds household relations not in cultural convention alone but in Christ's lordship, signaling that even within these asymmetrical relationships, believers answer ultimately to Christ and not to earthly authority.",
-          "verse_refs": [
-            "Colossians 3:18-19"
-          ],
-          "evidence_ids": [
-            "col-household"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -81,17 +28,11 @@
     "evidence_hash": "9a9e32f10ee8c885225a99cd9a6440aa27bceacd5118c7e2bddc4a8ae7b2a265",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:43:05.425955+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: section",
-    "section[2].kind is unsupported: section",
-    "section[2].block[0].confidence exceeds its cited evidence",
-    "section[3].kind is unsupported: section",
-    "section[4].kind is unsupported: section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

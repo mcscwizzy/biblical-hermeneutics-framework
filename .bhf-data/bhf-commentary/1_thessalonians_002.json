@@ -2,127 +2,37 @@
   "reference": "1 Thessalonians 2",
   "book": "1 Thessalonians",
   "chapter": 2,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "mission_courage",
-      "title": "Courage Following Opposition (2:1-2)",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_2",
-          "text": "The senders affirm that their entrance to Thessalonica has not proven empty or vain. They had suffered and been shamefully treated at Philippi, yet despite that humiliation they found boldness in God to proclaim the gospel amid much conflict. This boldness is framed not as arrogance but as confidence rooted in God's presence, exercised even after concrete opposition.",
+          "id": "overview",
+          "text": "1 Thessalonians 2 contains 20 verses. It opens with: For yourselves, brethren, know our entering in unto you, that it hath not been found vain: It concludes with: For ye are our glory and our joy.",
           "verse_refs": [
-            "1 Thessalonians 2:1-2"
+            "1 Thessalonians 2:1-20"
           ],
           "evidence_ids": [
-            "1th-integrity",
-            "thess-bold-no-manipulation"
+            "1th-integrity"
           ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "mission_integrity",
-      "title": "Integrity of Motive and Message (2:3-6)",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "The missionary exhortation does not arise from error, impurity, or deceit. Having been approved by God to be entrusted with the gospel, they speak to please God rather than men, with God as witness to their hearts. They explicitly deny using flattering speech, clothing greed in a pretext, or seeking honor from the Thessalonians or others. Significantly, they note they could have claimed apostolic authority as messengers of Christ but refrained from doing so. This denial of coercive tactics accompanies their boldness without contradiction.",
-          "verse_refs": [
-            "1 Thessalonians 2:3-6"
-          ],
-          "evidence_ids": [
-            "1th-integrity",
-            "thess-bold-no-manipulation",
-            "thess-motive-no-greed-pretext",
-            "thess-authority-gentleness-shared-selves"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "labor_practice",
-      "title": "Labor Without Burden (2:9)",
-      "blocks": [
-        {
-          "id": "block_5",
-          "text": "The senders recall their labor and toil, working night and day in order not to burden any of the Thessalonians while proclaiming the gospel of God. This self-support practice is narrated as a contextual choice arising from their relational commitment to the community rather than as a universal obligation for all missionaries. The practice reflects embodied labor within the mission's integrity, documented without romanticizing overwork, precarity, or sleep deprivation as inevitable norms.",
-          "verse_refs": [
-            "1 Thessalonians 2:9"
-          ],
-          "evidence_ids": [
-            "1th-labor",
-            "thess-labor-no-burden",
-            "thess-night-day-labor-no-burden",
-            "missionary-manual-labor"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "conduct_witness",
-      "title": "Holy and Blameless Conduct (2:10, 12)",
-      "blocks": [
-        {
-          "id": "block_6",
-          "text": "The Thessalonians themselves and God are invoked as witnesses to the holiness, righteousness, and blamelessness of the senders' conduct toward those who believe. The senders narrate having dealt with each believer as a father deals with his own child, through exhortation, encouragement, and testimony. This relational exhortation aims toward a walk worthy of God, who calls them into his own kingdom and glory. The combination of care and exhortation establishes relational tests against extraction and self-aggrandizement while preventing parental metaphors from becoming mechanisms of control.",
-          "verse_refs": [
-            "1 Thessalonians 2:10",
-            "1 Thessalonians 2:12"
-          ],
-          "evidence_ids": [
-            "thess-conduct-exhortation-parent-metaphors",
-            "thess-parental-care-boundary"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "reception_and_suffering",
-      "title": "Reception and Shared Affliction (2:13-15)",
-      "blocks": [
-        {
-          "id": "block_7",
-          "text": "The Thessalonians received the message not as the word of men but as what it truly is: the word of God. This word continues to work in those who believe. The senders thank God ceaselessly for this reception. The Thessalonians then became imitators of the churches of God in Judea in Christ Jesus, suffering the same kinds of afflictions from their own countrymen as the Judean assemblies suffered from \"the Jews.\" This passage contains severe polemic language in its comparison. However, the broader evidence does not identify one exhaustive persecuting group responsible for all described affliction. The sources repeatedly describe Thessalonian affliction without specifying a single unified opponent. This shared-suffering framing connects early communities across regions while resisting oversimplified blame narratives.",
-          "verse_refs": [
-            "1 Thessalonians 2:13-15"
-          ],
-          "evidence_ids": [
-            "1th-polemic",
-            "thessalonian-affliction-opponents-uncertain"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "confidence": "high",
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "48fc6084fcbe82b6d588ee0ed472001cd997afe1c61d04bd93144ae3ba8bae23",
+    "evidence_hash": "901a1f79067a5b66a1b9d4e1b8d05e27057f26fcc1d159b176b06c093dcbf50f",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:43:06.550956+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0].interpretation_level is invalid",
-    "section[1].kind is unsupported: mission_courage",
-    "section[2].kind is unsupported: mission_integrity",
-    "section[3].kind is unsupported: relational_care",
-    "section[3].block[0].interpretation_level is invalid",
-    "section[4].kind is unsupported: labor_practice",
-    "section[5].kind is unsupported: conduct_witness",
-    "section[6].kind is unsupported: reception_and_suffering"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

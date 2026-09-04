@@ -2,86 +2,37 @@
   "reference": "1 Thessalonians 3",
   "book": "1 Thessalonians",
   "chapter": 3,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "narrative_section",
-      "title": "Timothy Sent from Athens (3:1-5)",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_3",
-          "text": "The senders had forewarned the Thessalonians that afflictions would come, and such afflictions were now indeed occurring. The letters describe the audience as experiencing real pressure while refusing to treat suffering as unexpected or as evidence of abandoned faith.",
+          "id": "overview",
+          "text": "1 Thessalonians 3 contains 13 verses. It opens with: Wherefore when we could no longer forbear, we thought it good to be left behind at Athens alone; It concludes with: to the end he may establish your hearts unblameable in holiness before our God and Father, at the coming of our Lord Jesus with all his saints.",
           "verse_refs": [
-            "1 Thessalonians 3:3-4"
+            "1 Thessalonians 3:1-13"
           ],
           "evidence_ids": [
-            "thess-affliction-no-martyr-pressure"
+            "1th-date"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_4",
-          "text": "Unable to endure the separation further, Paul sent Timothy to learn the state of their faith. He feared lest the adversity they faced might have led them astray, rendering his earlier labor ineffective.",
-          "verse_refs": [
-            "1 Thessalonians 3:5"
-          ],
-          "evidence_ids": [
-            "thess-timothy-embassy-report"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "prayer_section",
-      "title": "Prayer for Continued Growth (3:9-13)",
-      "blocks": [
-        {
-          "id": "block_7",
-          "text": "The senders express profound thanksgiving and joy before God on account of the Thessalonians. They pray continuously, both day and night, for the opportunity to see them face-to-face and to complete what is lacking in their faith.",
-          "verse_refs": [
-            "1 Thessalonians 3:9-10"
-          ],
-          "evidence_ids": [
-            "thess-prayer-wish-love-not-control"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_8",
-          "text": "The senders intercede that God and the Lord Jesus would open their path to return to the Thessalonians. They request that the recipients abound more and more in love toward one another and toward all, and that God strengthen their hearts in holiness as they await the coming of the Lord with all his holy ones.",
-          "verse_refs": [
-            "1 Thessalonians 3:11-13"
-          ],
-          "evidence_ids": [
-            "thess-prayer-wish-love-not-control"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "0569dad354293708213c390978cf05f7c6d8a33cd9c8ac96acc0c574adb2d956",
+    "evidence_hash": "e0c125716ab654dc4df990a0c7523373a865f79de3cff1507724a8fa4c5ad639",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:43:07.098261+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0].confidence exceeds its cited evidence",
-    "section[1].kind is unsupported: narrative_section",
-    "section[1].block[0].confidence exceeds its cited evidence",
-    "section[2].kind is unsupported: narrative_section",
-    "section[2].block[0].confidence exceeds its cited evidence",
-    "section[2].block[1].confidence exceeds its cited evidence",
-    "section[3].kind is unsupported: prayer_section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

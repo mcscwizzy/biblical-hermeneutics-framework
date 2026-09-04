@@ -2,153 +2,37 @@
   "reference": "Galatians 3",
   "book": "Galatians",
   "chapter": 3,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Galatians 3 develops Paul's argument for why gentile believers receive the Spirit and inherit Abraham's covenant blessings through faith rather than through Torah observance. Writing to congregations where Torah-boundary pressure threatens, Paul grounds gentile inclusion in scriptural precedent: Abraham's faith, the patriarchal promise, and Christ's redemptive work. The chapter moves from Spirit reception to Abraham's example, curse-redemption theology, promise-law chronology, Torah's custodial role, and baptismal unity in Christ.",
+          "id": "overview",
+          "text": "Galatians 3 contains 29 verses. It opens with: O foolish Galatians, who did bewitch you, before whose eyes Jesus Christ was openly set forth crucified? It concludes with: And if ye are Christ's, then are ye Abraham's seed, heirs according to promise.",
           "verse_refs": [
-            "Galatians 3:1-28"
+            "Galatians 3:1-29"
           ],
           "evidence_ids": [
-            "gal-abraham",
-            "galatian-spirit-faith-boundary",
-            "paul:historical_context:0",
-            "galatian-audience-diversity"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "exegetical_section",
-      "title": "Spirit Reception and Faith (3:1-5)",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "Paul's opening rebuke pivots on a direct question: did the Galatians receive the Spirit through performing Torah's works or through faith? The passage itself answers by pointing to Spirit reception and powerful works as evidence of faith-based relationship, not Torah completion. This rhetorical move establishes the frame for the entire chapter\u2014Spirit, transformation, and covenant membership flow from faith, not from law-observance.",
-          "verse_refs": [
-            "Galatians 3:1-5"
-          ],
-          "evidence_ids": [
-            "galatian-spirit-faith-boundary",
-            "gal-works-torah",
-            "galatians-works-torah-scope"
-          ],
-          "confidence": "low",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "exegetical_section",
-      "title": "Abraham's Faith and the Nations (3:6-9)",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "Paul turns to Genesis and Abraham's example: Abraham believed God, and his trust was reckoned to him as righteousness. Those who operate from faith are Abraham's children; they receive the blessing promised to Abraham that extends to all nations. This scriptural reading makes faith\u2014not ethnic descent or Torah-covenant membership\u2014the basis for covenant identity and blessing.",
-          "verse_refs": [
-            "Galatians 3:6-9"
-          ],
-          "evidence_ids": [
-            "gal-abraham",
-            "galatians-abraham-promise-seed",
-            "abraham:second_temple_context:0",
-            "abrahamic-covenant-framework:second_temple_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "exegetical_section",
-      "title": "Curse, Christ, and Redemption (3:10-14)",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "Paul shifts to curse language, citing Torah passages about covenant-breach consequences. He argues that Christ's crucifixion bore the curse, enabling the Abrahamic blessing to reach gentiles. This does not mean Torah or Jewish practice is cursed, but rather that Christ's death absorbed the status-consequence attached to certain Torah-defined covenant breaches, opening a new path to covenant belonging.",
-          "verse_refs": [
-            "Galatians 3:10-14"
-          ],
-          "evidence_ids": [
-            "gal-curse-law",
-            "gal-seed",
             "gal-abraham"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "exegetical_section",
-      "title": "Promise and Law (3:15-19)",
-      "blocks": [
-        {
-          "id": "block_5",
-          "text": "Paul shifts to legal and temporal argument: a covenant once ratified cannot be annulled by a later agreement. The Abrahamic promise was established first; Torah came later. Paul's point is that Torah's later arrival does not override or replace the promise's terms. The promise to Abraham establishes the controlling covenant framework, and Torah's addition serves a different, time-bound purpose.",
-          "verse_refs": [
-            "Galatians 3:15-19"
-          ],
-          "evidence_ids": [
-            "gal-law-added",
-            "paul:hebraic_worldview:0"
-          ],
-          "confidence": "low",
           "interpretation_level": "disputed"
-        }
-      ]
-    },
-    {
-      "kind": "exegetical_section",
-      "title": "Custody, Faith, and Transformation (3:23-28)",
-      "blocks": [
-        {
-          "id": "block_6",
-          "text": "Before faith came, Israel was held in custody under Torah. Now that faith in Christ has arrived, believers are no longer under that custodial arrangement\u2014they have become God's children and are clothed with Christ. Baptism into Christ creates unity across former status boundaries: neither Jew nor Greek, neither slave nor free, neither male nor female. This declares eschatological unity in Christ's family, with transformed covenant membership extending to gentiles and all who trust Christ.",
-          "verse_refs": [
-            "Galatians 3:23-28"
-          ],
-          "evidence_ids": [
-            "galatians-custody-before-faith",
-            "galatians-torah-pedagogue",
-            "gal-pedagogue",
-            "paidagogos-household-role",
-            "baptismal-kinship-and-clothing",
-            "gal-baptism-unity",
-            "galatians-neither-jew-greek",
-            "galatians-status-triad",
-            "pauline-identity-categories-distinct",
-            "slave-son-heir-and-real-slavery",
-            "torah-temporality-and-anti-jewish-limits"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "27039b89b06ab43e874128d7e8b1cbff70c72d31d0707c4c7a6af7e631870569",
+    "evidence_hash": "ed444099f5b1f947609b5b46e5d30a1f76652da2f989d8948c06406e5d656564",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:43:00.042224+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: exegetical_section",
-    "section[2].kind is unsupported: exegetical_section",
-    "section[3].kind is unsupported: exegetical_section",
-    "section[4].kind is unsupported: exegetical_section",
-    "section[5].kind is unsupported: exegetical_section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

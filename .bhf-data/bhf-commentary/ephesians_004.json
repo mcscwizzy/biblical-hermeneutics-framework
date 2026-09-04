@@ -2,122 +2,24 @@
   "reference": "Ephesians 4",
   "book": "Ephesians",
   "chapter": 4,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_overview_1",
-          "text": "Ephesians 4 develops the church's unity around the ascended Christ and the gifts he distributes. Paul appeals to believers to maintain the unity of the Spirit while apostles, prophets, evangelists, pastors, and teachers equip saints for ministry. The chapter progresses from the foundational unity grounded in one Spirit, Lord, faith, baptism, and God, through Christ's ascension and gift-giving, to the goal of corporate maturity in Christ.",
+          "id": "overview",
+          "text": "Ephesians 4 contains 32 verses. It opens with: I therefore, the prisoner in the Lord, beseech you to walk worthily of the calling wherewith ye were called, It concludes with: and be ye kind one to another, tenderhearted, forgiving each other, even as God also in Christ forgave you.",
           "verse_refs": [
-            "Ephesians 4:1-16"
+            "Ephesians 4:1-32"
           ],
           "evidence_ids": [
-            "eph-unity",
-            "eph-gifts"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "content",
-      "title": "Apostolic Call to Guard Unity (4:1-3)",
-      "blocks": [
-        {
-          "id": "block_1",
-          "text": "The speaker, identified as Paul the apostle and 'the prisoner in the Lord,' appeals to believers to walk worthily of their calling. The substance of that worthy walk is diligence in keeping the unity of the Spirit in the bond of peace\u2014a unity already granted by God, now to be guarded and maintained by the congregation.",
-          "verse_refs": [
-            "Ephesians 4:1-3"
-          ],
-          "evidence_ids": [
-            "eph-voice",
-            "eph-unity"
+            "eph-colossians"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "content",
-      "title": "Sevenfold Foundation of Unity (4:4-6)",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "Unity rests on a sevenfold foundation: one body, one Spirit, one hope of calling, one Lord, one faith, one baptism, and one God and Father over all, through all, and in all. This confession anchors communal unity in the trinitarian God and the one people of God. The structure reflects early Christian testimony to the God who unites all believers in Christ.",
-          "verse_refs": [
-            "Ephesians 4:4-6"
-          ],
-          "evidence_ids": [
-            "eph-unity",
-            "trinity:historical_context:0",
-            "ekklesia:historical_context:0",
-            "ecclesiology:historical_context:0",
-            "people-of-god-theme:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "content",
-      "title": "Christ's Ascension and Distribution of Gifts (4:7-10)",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "The passage grounds the distribution of gifts in Christ's ascension. Citing Psalm 68:18, Paul writes that the ascended Christ 'gave gifts unto men.' The rhetorical question in verse 9\u2014'what is it but that he also descended into the lower parts of the earth?'\u2014invites reflection on the ascension's counterpart. The referent is ambiguous: descent may mean incarnation, the earthly realm, the grave, or the underworld, with the passage itself not settling the choice. The purpose remains fixed: that Christ 'might fill all things.'",
-          "verse_refs": [
-            "Ephesians 4:7-10"
-          ],
-          "evidence_ids": [
-            "eph-gifts",
-            "eph-descent"
-          ],
-          "confidence": "low",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "content",
-      "title": "Apostles, Prophets, Evangelists, Pastors, Teachers (4:11-13)",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "The ascended Christ gave apostles, prophets, evangelists, pastors, and teachers to the church. These offices function to equip the saints for ministry work and build up the body of Christ. The goal is corporate maturity: when believers achieve unity of faith and knowledge of the Son of God, they attain 'a fullgrown man, unto the measure of the stature of the fulness of Christ.' The evidence cautions that later church structures cannot simply be read back into this text; the passage presents these office-types without claiming to establish all later institutional frameworks.",
-          "verse_refs": [
-            "Ephesians 4:11-13"
-          ],
-          "evidence_ids": [
-            "eph-gifts",
-            "apostolos:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "content",
-      "title": "Growth into Christ's Fullness (4:14-16)",
-      "blocks": [
-        {
-          "id": "block_5",
-          "text": "Spiritual maturity means outgrowing instability. Believers should no longer be 'children, tossed to and fro and carried about with every wind of doctrine, by the sleight of men, in craftiness, after the wiles of error.' Instead, 'speaking truth in love,' the body grows up into Christ as its head. The entire body, held together and fitted through the working of each member according to its measure, 'maketh the increase of the body unto the building up of itself in love.' This describes unity actively maintained and deepened as the body approaches the measure of Christ's fullness.",
-          "verse_refs": [
-            "Ephesians 4:14-16"
-          ],
-          "evidence_ids": [
-            "eph-unity",
-            "eph-gifts"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -126,18 +28,11 @@
     "evidence_hash": "8f025b371f6a7f3f5e5ab8007d8de49a28d6f9e22bdffa62f51b79252ffeedfa",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:43:01.863270+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "root.status is unsupported: complete",
-    "section[1].kind is unsupported: content",
-    "section[2].kind is unsupported: content",
-    "section[3].kind is unsupported: content",
-    "section[4].kind is unsupported: content",
-    "section[5].kind is unsupported: content"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

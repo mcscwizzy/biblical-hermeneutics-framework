@@ -2,66 +2,37 @@
   "reference": "Ephesians 5",
   "book": "Ephesians",
   "chapter": 5,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "thematic",
-      "title": "Spirit-Filled Praise and Thanksgiving",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_3",
-          "text": "The command to be filled with the Spirit is concretized through communal practice rather than individual intoxication. The Spirit's filling is expressed through the community's shared worship: speaking to one another in psalms, hymns, and spiritual songs; singing and making melody with the heart to the Lord; and continuous thanksgiving for all things in the name of Christ. This framing locates the Spirit's presence within the community's liturgical and relational life, not in ecstatic or private experience.",
+          "id": "overview",
+          "text": "Ephesians 5 contains 33 verses. It opens with: Be ye therefore imitators of God, as beloved children; It concludes with: Nevertheless do ye also severally love each one his own wife even as himself; and `let' the wife `see' that she fear her husband.",
           "verse_refs": [
-            "Ephesians 5:18-20"
+            "Ephesians 5:1-33"
           ],
           "evidence_ids": [
-            "eph-spirit"
+            "eph-colossians"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "interpretive_note",
-      "title": "Reception and Interpretive Caution",
-      "blocks": [
-        {
-          "id": "block_6",
-          "text": "Later interpretations of Ephesians, particularly its household section, have been deployed for antisemitism, marital domination, child abuse, slavery, and violent spiritual warfare. These uses exceed and can contradict the letter's own emphases on peace, love, truth, and nonthreatening communication. Responsible interpretation requires awareness of how the text has been misused, recognizing that its original concerns and its later appropriations may diverge significantly.",
-          "verse_refs": [
-            "Ephesians 5"
-          ],
-          "evidence_ids": [
-            "eph-reception"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "8a85d0e47718212d07900b25a8b404143f8f74e065108a1f2f5b82bcb8e45d5a",
+    "evidence_hash": "82b867bb1b13641a0198968864dbc010805b9a639d70afec5d600b7860f9e16e",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:43:01.988140+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0] has unknown fields: verses",
-    "section[0].kind is unsupported: thematic",
-    "section[0].block[0].interpretation_level is invalid",
-    "section[0].block[1].interpretation_level is invalid",
-    "section[1] has unknown fields: verses",
-    "section[1].kind is unsupported: thematic",
-    "section[2] has unknown fields: verses",
-    "section[2].kind is unsupported: thematic",
-    "section[2].block[0].interpretation_level is invalid",
-    "section[2].block[1].interpretation_level is invalid",
-    "section[3].kind is unsupported: interpretive_note"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

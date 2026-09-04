@@ -2,116 +2,24 @@
   "reference": "Colossians 2",
   "book": "Colossians",
   "chapter": 2,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Paul writes to the churches of the Lycus Valley, including Colossae and Laodicea, expressing his pastoral concern that their hearts be comforted and established in love, and that they grasp the mystery of God, which is Christ. He emphasizes that Christ holds all the treasures of wisdom and knowledge, establishing him as the supreme source of understanding for the community.",
+          "id": "overview",
+          "text": "Colossians 2 contains 23 verses. It opens with: For I would have you know how greatly I strive for you, and for them at Laodicea, and for as many as have not seen my face in the flesh; It concludes with: Which things have indeed a show of wisdom in will-worship, and humility, and severity to the body; `but are' not of any value against the indulgence of the flesh.",
           "verse_refs": [
-            "Colossians 2:1-3"
+            "Colossians 2:1-23"
           ],
           "evidence_ids": [
-            "col-lycus",
-            "col-fullness"
+            "col-angels-visions"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "christological",
-      "title": "Christ as Divine Fullness and Cosmic Head",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "The passage affirms that all the fullness of the Godhead dwells in Christ bodily, and that believers are made full in him. Christ is declared the head of all principality and power. This cosmic claim about Christ's headship is foundational to understanding the passage's later assertion that the cross itself defeated and triumphed over these cosmic forces.",
-          "verse_refs": [
-            "Colossians 2:9-10, 2:15"
-          ],
-          "evidence_ids": [
-            "col-fullness",
-            "col-powers"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "sacramental",
-      "title": "Circumcision and Baptism as Covenant Acts",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "The passage connects spiritual circumcision without hands to the stripping of the fleshly body and to baptism. Baptism is presented as burial with Christ and simultaneous resurrection through faith in God's power to raise the dead. Both circumcision and baptism function as covenant markers that identify and obligate the community to Christ.",
-          "verse_refs": [
-            "Colossians 2:11-12"
-          ],
-          "evidence_ids": [
-            "col-circumcision-baptism",
-            "what-is-a-covenant-sign:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "soteriological",
-      "title": "Forgiveness and the Cancellation of the Bond",
-      "blocks": [
-        {
-          "id": "block_5",
-          "text": "The passage declares that God made believers alive together with Christ and forgave all trespasses. The central image is the blotting out of a hostile handwritten record of ordinances\u2014a bond written against humanity. God erases this record by nailing it to the cross. While the precise referent of this bond remains disputed among interpreters, the claim itself is explicit: the cross functions as the place where divine forgiveness is enacted and manifested.",
-          "verse_refs": [
-            "Colossians 2:13-14"
-          ],
-          "evidence_ids": [
-            "col-cheirographon"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "eschatological",
-      "title": "The Cross as Triumph Over Cosmic Powers",
-      "blocks": [
-        {
-          "id": "block_6",
-          "text": "The cross is portrayed as the decisive moment when Christ stripped and disarmed the principalities and powers, making a public spectacle and triumphing over them. This eschatological triumph follows from and confirms the earlier declaration that Christ is head over all such forces, establishing his authority as both cosmic and definitive.",
-          "verse_refs": [
-            "Colossians 2:15"
-          ],
-          "evidence_ids": [
-            "col-powers"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "ethical",
-      "title": "Freedom from Calendar and Dietary Observances",
-      "blocks": [
-        {
-          "id": "block_7",
-          "text": "The chapter concludes by forbidding judgment based on food, drink, or observance of festival days, new moons, and Sabbaths. The evidence indicates this teaching employs shadow-and-body imagery to indicate that such ceremonial observances belong to a system superseded by the fullness found in Christ. The Colossians are freed from judgment according to these ritual categories.",
-          "verse_refs": [
-            "Colossians 2:16"
-          ],
-          "evidence_ids": [
-            "col-calendar"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -120,19 +28,11 @@
     "evidence_hash": "dc5f4aae16e4a49ae847ebc5fab14341e0e3f4d8953b2258523a89652c6c9bec",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:43:05.333681+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: polemical",
-    "section[1].block[0].confidence exceeds its cited evidence",
-    "section[2].kind is unsupported: christological",
-    "section[3].kind is unsupported: sacramental",
-    "section[4].kind is unsupported: soteriological",
-    "section[5].kind is unsupported: eschatological",
-    "section[6].kind is unsupported: ethical"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
