@@ -80,7 +80,8 @@ NEXT = {
 def block(book, ch, evidence):
     d = bible.resolve_chapter(book, ch)
     refs = [f'{book} {ch}:1-{len(d["verses"])}']
-    return {'id': 'overview', 'text': TEXT[ch], 'verse_refs': refs, 'evidence_ids': [evidence], 'confidence': 'high', 'interpretation_level': 'fact'}
+    text = TEXT[ch] if book == 'Genesis' and ch in TEXT else NEXT[(book, ch)]
+    return {'id': 'overview', 'text': text, 'verse_refs': refs, 'evidence_ids': [evidence], 'confidence': 'high', 'interpretation_level': 'fact'}
 
 def run():
     config = AgentConfig(adapter='openai_compatible', base_url='luna-development://local', model='luna-codex-development')
