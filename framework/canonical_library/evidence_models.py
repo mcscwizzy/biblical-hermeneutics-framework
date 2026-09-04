@@ -12,7 +12,7 @@ import re
 from typing import Any, Mapping, Sequence
 
 from .normalization import normalize_id
-from .scripture import build_book_alias_lookup, parse_scripture_reference
+from .scripture import build_book_alias_lookup, parse_scripture_references
 
 
 EVIDENCE_TYPE_VALUES: tuple[str, ...] = (
@@ -434,7 +434,7 @@ def _passage_links(value: Any) -> list[CanonicalEvidencePassageLink]:
         if not 1 <= weight <= 10:
             raise EvidenceValidationError("evidence Scripture reference weight must be between 1 and 10")
         reference = _required_string(raw, "reference")
-        if parse_scripture_reference(reference, book_alias_lookup=_BOOK_ALIAS_LOOKUP) is None:
+        if not parse_scripture_references(reference, book_alias_lookup=_BOOK_ALIAS_LOOKUP):
             raise EvidenceValidationError(
                 f'evidence Scripture reference is not parseable: "{reference}"'
             )

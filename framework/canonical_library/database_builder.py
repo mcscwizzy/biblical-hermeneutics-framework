@@ -21,7 +21,11 @@ from .loader import CanonicalLibrary, _stable_json_fingerprint
 from .normalization import normalize_alias, normalize_id
 from .retrieval import FIELD_WEIGHTS, collect_field_search_terms
 from .retrieval.indexer import inventory_content_signature
-from .scripture import build_book_alias_lookup, parse_scripture_reference
+from .scripture import (
+    build_book_alias_lookup,
+    format_scripture_reference,
+    parse_scripture_references,
+)
 from .schema import CanonicalObject
 
 
@@ -359,29 +363,30 @@ def _insert_scripture_references(
     book_alias_lookup: Mapping[str, str],
 ) -> None:
     for reference in obj.scripture_references:
-        parsed = parse_scripture_reference(reference.reference, book_alias_lookup=book_alias_lookup)
-        if parsed is None:
-            continue
-        sql.execute(
-            """
-            INSERT INTO canonical_scripture_references (
-                object_id, reference_text, book, start_chapter, start_verse,
-                end_chapter, end_verse, relationship, notes
+        for parsed in parse_scripture_references(
+            reference.reference,
+            book_alias_lookup=book_alias_lookup,
+        ):
+            sql.execute(
+                """
+                INSERT INTO canonical_scripture_references (
+                    object_id, reference_text, book, start_chapter, start_verse,
+                    end_chapter, end_verse, relationship, notes
+                )
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    obj.id,
+                    format_scripture_reference(parsed),
+                    parsed.book,
+                    parsed.start_chapter,
+                    parsed.start_verse,
+                    parsed.end_chapter,
+                    parsed.end_verse,
+                    reference.relationship,
+                    reference.notes,
+                ),
             )
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """,
-            (
-                obj.id,
-                reference.reference,
-                parsed.book,
-                parsed.start_chapter,
-                parsed.start_verse,
-                parsed.end_chapter,
-                parsed.end_verse,
-                reference.relationship,
-                reference.notes,
-            ),
-        )
 
 
 def _insert_claims_and_sources(
@@ -414,25 +419,25 @@ def _insert_claims_and_sources(
             ),
         )
         for reference_text in claim.scripture_references:
-            parsed = parse_scripture_reference(reference_text, book_alias_lookup=book_alias_lookup)
-            sql.execute(
-                """
-                INSERT INTO canonical_claim_scripture_references (
-                    object_id, claim_id, reference_text, book, start_chapter,
-                    start_verse, end_chapter, end_verse
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-                """,
-                (
-                    obj.id,
-                    claim.id,
-                    reference_text,
-                    parsed.book if parsed else None,
-                    parsed.start_chapter if parsed else None,
-                    parsed.start_verse if parsed else None,
-                    parsed.end_chapter if parsed else None,
-                    parsed.end_verse if parsed else None,
-                ),
-            )
+            for parsed in parse_scripture_references(reference_text, book_alias_lookup=book_alias_lookup):
+                sql.execute(
+                    """
+                    INSERT INTO canonical_claim_scripture_references (
+                        object_id, claim_id, reference_text, book, start_chapter,
+                        start_verse, end_chapter, end_verse
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                    """,
+                    (
+                        obj.id,
+                        claim.id,
+                        format_scripture_reference(parsed),
+                        parsed.book,
+                        parsed.start_chapter,
+                        parsed.start_verse,
+                        parsed.end_chapter,
+                        parsed.end_verse,
+                    ),
+                )
 
     for source in obj.sources:
         sql.execute(
@@ -578,30 +583,30 @@ def _insert_evidence(
                 (obj.id, item.id, source_id, source_order),
             )
         for reference in item.scripture_references:
-            parsed = parse_scripture_reference(reference.reference, book_alias_lookup=book_alias_lookup)
-            sql.execute(
-                """
-                INSERT INTO canonical_evidence_scripture_references (
-                    object_id, evidence_id, reference_text, book, start_chapter,
-                    start_verse, end_chapter, end_verse, relationship,
-                    temporal_relation, relevance_rationale, weight
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                """,
-                (
-                    obj.id,
-                    item.id,
-                    reference.reference,
-                    parsed.book if parsed else None,
-                    parsed.start_chapter if parsed else None,
-                    parsed.start_verse if parsed else None,
-                    parsed.end_chapter if parsed else None,
-                    parsed.end_verse if parsed else None,
-                    reference.relationship,
-                    reference.temporal_relation,
-                    reference.relevance_rationale,
-                    reference.weight,
-                ),
-            )
+            for parsed in parse_scripture_references(reference.reference, book_alias_lookup=book_alias_lookup):
+                sql.execute(
+                    """
+                    INSERT INTO canonical_evidence_scripture_references (
+                        object_id, evidence_id, reference_text, book, start_chapter,
+                        start_verse, end_chapter, end_verse, relationship,
+                        temporal_relation, relevance_rationale, weight
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """,
+                    (
+                        obj.id,
+                        item.id,
+                        format_scripture_reference(parsed),
+                        parsed.book,
+                        parsed.start_chapter,
+                        parsed.start_verse,
+                        parsed.end_chapter,
+                        parsed.end_verse,
+                        reference.relationship,
+                        reference.temporal_relation,
+                        reference.relevance_rationale,
+                        reference.weight,
+                    ),
+                )
         relationship_groups: tuple[tuple[str, Any], ...] = (
             ("evidence", item.related_evidence),
             ("object", item.related_objects),

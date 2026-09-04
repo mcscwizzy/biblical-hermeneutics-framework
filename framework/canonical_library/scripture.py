@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import ast
+import re
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable, Mapping
@@ -96,6 +97,12 @@ def parse_scripture_reference(
 ) -> ScriptureReferenceSpan | None:
     """Parse a scripture reference string into a normalized span."""
 
+    # A semicolon separates multiple references.  It must not be silently
+    # normalized into a four-number cross-chapter range (for example,
+    # ``Genesis 12:3; 15:6`` must not become Genesis 12:3-15:6).
+    if not isinstance(value, str) or re.search(r"[;,]", value):
+        return None
+
     normalized = normalize_alias(value)
     if not normalized:
         return None
@@ -138,6 +145,61 @@ def parse_scripture_reference(
             end_verse=numbers[3],
         )
     return None
+
+
+def parse_scripture_references(
+    value: str,
+    *,
+    book_alias_lookup: Mapping[str, str],
+) -> list[ScriptureReferenceSpan]:
+    """Parse one or more semicolon-separated Scripture references.
+
+    CKL stores some compound references in one field and abbreviates the book
+    on subsequent clauses (``Genesis 12:3; 15:6``).  This helper expands those
+    clauses into independent spans.  The singular parser remains strict so a
+    compound value cannot accidentally become one artificial range.
+    """
+
+    if not isinstance(value, str) or not value.strip():
+        return []
+
+    parts = [part.strip() for part in re.split(r";", value) if part.strip()]
+    if not parts:
+        return []
+
+    first = parse_scripture_reference(parts[0], book_alias_lookup=book_alias_lookup)
+    if first is None:
+        return []
+
+    spans = [first]
+    current_book = first.book
+    for part in parts[1:]:
+        normalized = normalize_alias(part)
+        if _match_book_alias(normalized, book_alias_lookup) is None:
+            part = f"{current_book} {part}"
+        parsed = parse_scripture_reference(part, book_alias_lookup=book_alias_lookup)
+        if parsed is None:
+            return []
+        spans.append(parsed)
+        current_book = parsed.book
+    return spans
+
+
+def format_scripture_reference(span: ScriptureReferenceSpan) -> str:
+    """Render a parsed Scripture span in the canonical compact form."""
+
+    if span.start_chapter is None:
+        return span.book
+    value = f"{span.book} {span.start_chapter}"
+    if span.start_verse is not None:
+        value += f":{span.start_verse}"
+    if span.end_chapter is not None:
+        value += f"-{span.end_chapter}"
+        if span.end_verse is not None:
+            value += f":{span.end_verse}"
+    elif span.end_verse is not None:
+        value += f"-{span.end_verse}"
+    return value
 
 
 def parse_scripture_query(
