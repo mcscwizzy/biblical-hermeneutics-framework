@@ -60,9 +60,13 @@ async function loadCommentarySearch(query, requestId) {
   if (!panel || !body) return;
   const filter = document.querySelector("[data-commentary-availability-filter]")?.value || "";
   const category = document.querySelector("[data-commentary-category-filter]")?.value || "";
+  const entity = document.querySelector("[data-commentary-entity-filter]")?.value.trim() || "";
+  const period = document.querySelector("[data-commentary-period-filter]")?.value.trim() || "";
   const parameters = new URLSearchParams({q: query, limit: "25"});
   if (filter) parameters.set("availability", filter);
   if (category) parameters.set("category", category);
+  if (entity) parameters.set("entity", entity);
+  if (period) parameters.set("period", period);
   panel.hidden = false;
   if (summary) summary.textContent = "Searching BHF Context…";
   if (status) {

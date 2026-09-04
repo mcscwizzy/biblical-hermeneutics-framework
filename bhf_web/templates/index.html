@@ -179,6 +179,14 @@
                 <option value="social">Social</option>
               </select>
             </label>
+            <label class="reader-search-context-filter">
+              <span>People or places</span>
+              <input type="search" name="commentary_entity" data-commentary-entity-filter placeholder="e.g. Abram" aria-label="Filter BHF Context by person or place">
+            </label>
+            <label class="reader-search-context-filter">
+              <span>Period</span>
+              <input type="search" name="commentary_period" data-commentary-period-filter placeholder="e.g. exile" aria-label="Filter BHF Context by period">
+            </label>
             <input type="hidden" name="adapter" value="{{ form.adapter }}">
             <input type="hidden" name="model" value="{{ form.model }}">
             <input type="hidden" name="base_url" value="{{ form.base_url }}">
