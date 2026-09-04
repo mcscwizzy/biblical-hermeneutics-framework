@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BHF Commentary Coverage</title>
+  <link rel="stylesheet" href="{{ static_asset('/style.css') }}">
+  <script src="{{ static_asset('/commentary-coverage.js') }}" defer></script>
+</head>
+<body>
+  <main class="page commentary-coverage-page" data-commentary-coverage>
+    <header class="header commentary-coverage-header">
+      <div>
+        <p class="eyebrow">Local admin · read-only</p>
+        <h1>BHF Commentary Coverage</h1>
+        <p>Review corpus health and strict CKL coverage gaps. This dashboard does not edit commentary or add evidence.</p>
+      </div>
+      <nav class="page-links" aria-label="Coverage navigation">
+        <a class="secondary-link" href="/">Reader</a>
+        <a class="secondary-link" href="/api/internal/bhf-commentary/coverage">JSON</a>
+      </nav>
+    </header>
+
+    <section class="commentary-coverage-controls" aria-label="Coverage filters">
+      <label>
+        <span>Scope</span>
+        <input type="text" data-commentary-coverage-scope placeholder="Genesis or Leviticus 1-27">
+      </label>
+      <button type="button" data-commentary-coverage-refresh>Refresh report</button>
+    </section>
+    <p class="commentary-coverage-status" data-commentary-coverage-status role="status" aria-live="polite">Loading coverage…</p>
+
+    <section class="commentary-coverage-grid" data-commentary-coverage-summary hidden>
+      <article class="commentary-coverage-card"><h2>Commentary corpus</h2><dl data-commentary-corpus></dl></article>
+      <article class="commentary-coverage-card"><h2>CKL scope</h2><dl data-commentary-ckl></dl></article>
+      <article class="commentary-coverage-card"><h2>Availability</h2><dl data-commentary-availability></dl></article>
+    </section>
+
+    <section class="commentary-coverage-section" data-commentary-coverage-details hidden>
+      <h2>Priority coverage candidates</h2>
+      <p>Chapters below have no or limited strictly anchored CKL evidence. They are data-coverage signals, not theological priorities.</p>
+      <div class="commentary-coverage-table-wrap"><table><thead><tr><th>Chapter</th><th>Status</th><th>Anchored evidence</th><th>Categories</th></tr></thead><tbody data-commentary-expansion-list></tbody></table></div>
+    </section>
+  </main>
+</body>
+</html>

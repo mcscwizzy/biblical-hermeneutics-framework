@@ -362,6 +362,94 @@ body.workspace-minimized .study-panel {
   width: min(1320px, calc(100% - 32px));
 }
 
+.commentary-coverage-page {
+  max-width: 1180px;
+}
+
+.commentary-coverage-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.commentary-coverage-controls label {
+  display: grid;
+  gap: 5px;
+  min-width: min(360px, 100%);
+}
+
+.commentary-coverage-controls span,
+.commentary-coverage-section > p,
+.commentary-coverage-status {
+  color: var(--muted-text);
+}
+
+.commentary-coverage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.commentary-coverage-card,
+.commentary-coverage-section {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface-raised, var(--surface));
+}
+
+.commentary-coverage-card h2,
+.commentary-coverage-section h2 {
+  margin-top: 0;
+}
+
+.commentary-coverage-card dl {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 14px;
+  margin: 0;
+}
+
+.commentary-coverage-card dt {
+  color: var(--muted-text);
+  text-transform: capitalize;
+}
+
+.commentary-coverage-card dd {
+  margin: 0;
+  font-weight: 750;
+}
+
+.commentary-coverage-section {
+  margin-top: 18px;
+}
+
+.commentary-coverage-table-wrap {
+  overflow-x: auto;
+}
+
+.commentary-coverage-section table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.commentary-coverage-section th,
+.commentary-coverage-section td {
+  padding: 9px 8px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+@media (max-width: 760px) {
+  .commentary-coverage-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .curation-header {
   align-items: center;
 }
