@@ -2,86 +2,36 @@
   "reference": "Exodus 25",
   "book": "Exodus",
   "chapter": 25,
-  "status": "partial",
+  "status": "validated",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Exodus 25 marks a decisive turn in the Exodus narrative. After deliverance from Egypt and the establishment of covenant at Sinai, God commands Israel to construct a sanctuary. This chapter inaugurates the detailed priestly instructions that occupy the remainder of Exodus. The tabernacle section connects to the larger movement of Exodus: from oppression and deliverance to covenant, covenant breach and renewal, tabernacle construction, and finally the arrival of divine glory filling the completed dwelling. The tabernacle's explicit purpose is the realization of covenant life\u2014God dwelling among Israel and meeting with them in mediated, ordered communion.",
+          "id": "overview",
+          "text": "Exodus 25 begins instructions for offerings and the sanctuary. It describes the ark with its mercy-seat and cherubim, the table for the bread of the Presence, and the lampstand. The stated purpose is that Jehovah may dwell among the people, according to the pattern shown to Moses.",
           "verse_refs": [
-            "Exodus 25:1-9",
-            "Exodus 40:34-38"
+            "Exodus 25:1-40"
           ],
           "evidence_ids": [
-            "exodus-literary-movement",
-            "exodus-tabernacle-presence",
-            "tabernacle-dwelling-purpose"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "The Offering and Sanctuary Purpose (vv. 1-8)",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "The chapter opens with an invitation rather than a demand: Israel is to bring an offering for God's sanctuary from every person whose heart moves them willingly. The materials\u2014gold, silver, bronze, fine linens, precious stones, oils, and spices\u2014represent the wealth and resources of the community. This voluntary collection frames the tabernacle not as an external imposition but as a communal act of devotion. The stated purpose is unambiguous: 'Let them make me a sanctuary, that I may dwell among them.' The tabernacle exists so that YHWH may reside in the midst of Israel. This dwelling represents the fulfillment of covenant relationship\u2014God's presence made tangible and mobile with Israel's journey.",
-          "verse_refs": [
-            "Exodus 25:1-8"
-          ],
-          "evidence_ids": [
-            "tabernacle-dwelling-purpose",
-            "tabernacle-dwelling-purpose:passage-relevance"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Pattern and Construction (vv. 9-19)",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "God instructs Moses that the sanctuary and all its furnishings must be built 'according to all that I show thee, the pattern of the tabernacle.' This phrase establishes a crucial principle: the sanctuary is not to be built by human invention but according to a divinely shown pattern. The detailed specifications that follow\u2014the ark of acacia wood overlaid with pure gold, the mercy-seat (kapporet), and the gold cherubim\u2014form the innermost and most sacred elements of the dwelling. The acacia wood suggests strength and durability, while the pure gold signifies holiness and divine worth. The mercy-seat, positioned above the ark, becomes the place where God's presence visibly meets Israel's worship and intercession.",
-          "verse_refs": [
-            "Exodus 25:9-19"
-          ],
-          "evidence_ids": [
-            "tabernacle-command-construction-correspondence",
-            "tabernacle:hebraic_worldview:0"
+            "exodus-ane-context"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "555224d5106738195df4ec476ba63405e93b1b41591ea87cb3a76071a0e84a72",
+    "evidence_hash": "4ffb2943e61f7e9c8ce5fbe3bf1027c3019739822603b988fbabba993394f3fd",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T16:48:37.118453+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: section",
-    "section[2].kind is unsupported: section",
-    "section[3].kind is unsupported: section",
-    "section[3].block[0].interpretation_level is invalid",
-    "section[4].kind is unsupported: section",
-    "section[4].block[0].interpretation_level is invalid",
-    "section[5].kind is unsupported: section",
-    "section[5].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

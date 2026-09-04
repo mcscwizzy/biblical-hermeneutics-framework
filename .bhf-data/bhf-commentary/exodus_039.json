@@ -6,44 +6,30 @@
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Completion of Tabernacle Construction",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Exodus 39 narrates the fulfillment of the tabernacle construction project, following the command structure established in earlier chapters. The chapter documents the making of priestly garments\u2014the ephod, breastplate, and related vestments\u2014along with sanctuary furnishings. A distinctive feature is the repeated phrase 'as Jehovah commanded Moses' (appearing in verses 1, 5, 7, and throughout the chapter). This refrain establishes the narrative pattern Exodus employs: divine instruction followed by meticulous execution. Each garment's construction is traceable to its corresponding command, demonstrating that the work represents authorized fulfillment rather than independent craftsmanship. The materials\u2014beaten gold, precious stones, fine linen in blue, purple, and scarlet\u2014are transformed through skilled labor into objects designed for sanctuary worship.",
+          "id": "overview",
+          "text": "Exodus 39 records the making of the priestly garments and their components. The work is inspected and found to correspond to Jehovah\u2019s commands through Moses. Moses blesses the workers after seeing that the tabernacle and its furnishings are complete.",
           "verse_refs": [
-            "Exodus 39:1",
-            "Exodus 39:5",
-            "Exodus 39:7"
+            "Exodus 39:1-43"
           ],
           "evidence_ids": [
-            "tabernacle-command-construction-correspondence"
+            "exodus-ane-context"
           ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_2",
-          "text": "The persistent emphasis on compliance formulas within Exodus 39 serves Exodus's larger literary agenda: to present the tabernacle as an authorized, communally-undertaken, and completed construction. Rather than treating the tabernacle's creation as a straightforward building project, the text repeatedly validates it against divine mandate. This dual narration\u2014command followed by execution\u2014accomplishes several rhetorical aims. It establishes that the sanctuary's authority derives from God's word to Moses. It demonstrates the community's commitment to precise compliance. And it structures the narrative toward a final inspection, which validates that the work is complete and according to specification. The detailed enumeration of materials, techniques, and components all function within this larger framework of authorized completion.",
-          "verse_refs": [
-            "Exodus 39:1-13"
-          ],
-          "evidence_ids": [
-            "tabernacle-command-construction-correspondence:passage-relevance"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "confidence": "medium",
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "e488cc32098a3ec6dd9b707654971520eb296a27228b8d90b355eae5e3a83778",
+    "evidence_hash": "06e75a181b5b9f9fb82431aa90c044c3d344283fe4054127b500a812893b7f98",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T16:48:38.515111+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

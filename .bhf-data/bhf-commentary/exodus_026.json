@@ -2,62 +2,36 @@
   "reference": "Exodus 26",
   "book": "Exodus",
   "chapter": 26,
-  "status": "partial",
+  "status": "validated",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Portable Sacred Architecture",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Exodus 26 specifies the components of the tabernacle dwelling, the sanctuary that accompanied Israel through the wilderness. The chapter describes layered curtains and coverings as modular, transportable elements: an inner structure of fine linen curtains embroidered with cherubim, and an outer protection of goat-hair fabric. Each layer is assembled through a system of loops and clasps, enabling the entire sanctuary to be dismantled, transported, and re-erected. This modular construction reflects the narrative's portrayal of a sanctuary that moved with Israel's journey.",
+          "id": "overview",
+          "text": "Exodus 26 gives the construction of the tabernacle curtains, boards, sockets, bars, and the veil separating the holy place from the most holy place. The arrangement encloses the ark and defines the dwelling according to the pattern shown on the mountain.",
           "verse_refs": [
-            "Exodus 26:1-13"
+            "Exodus 26:1-37"
           ],
           "evidence_ids": [
-            "biblical-portable-sanctuary-description"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "narrative_context",
-      "title": "Sinai Instructions and Construction Narrative",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "Exodus 26 presents the instruction for the tabernacle's manufacture, given by the Lord to Moses at Sinai. The narrative locates these specifications within Israel's encampment at the mountain and their preparation for wilderness journeying. The detailed prescriptions in this chapter are later echoed in Exodus 35-36, where the Israelite community constructs the dwelling according to the revealed plan. This pattern of instruction followed by construction is characteristic of Exodus's literary presentation of the sanctuary's authorized design and communal completion.",
-          "verse_refs": [
-            "Exodus 26"
-          ],
-          "evidence_ids": [
-            "tabernacle-command-construction-correspondence",
-            "tabernacle:historical_setting:0",
-            "tabernacle:timeline:0"
+            "exodus-ane-context"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "44c8dd4d83764a0395d1b3cd46c767fb1731bdf28019a01e1b11b4af0f1f62ba",
+    "evidence_hash": "a5056b0b3cb8e1223c984a2bb8bfc964c814ddffc0cb7087bdfd8225cf4e1155",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T16:48:37.237340+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: theological_context",
-    "section[1].block[0].confidence exceeds its cited evidence",
-    "section[2].kind is unsupported: narrative_context",
-    "section[3].kind is unsupported: historiographical_note",
-    "section[3].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

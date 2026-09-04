@@ -2,48 +2,36 @@
   "reference": "Exodus 19",
   "book": "Exodus",
   "chapter": 19,
-  "status": "partial",
+  "status": "validated",
   "sections": [
     {
-      "kind": "section",
-      "title": "The Covenant Proposal: Treasured Possession and Priestly Kingdom",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_2",
-          "text": "Moses ascends the mountain and receives words from God to speak to the people. The heart of this message rests on a foundation of memory: God reminds Israel of what has already transpired\u2014deliverance from Egypt and safe passage through the wilderness. On this solid ground of prior deliverance, God makes a conditional offer: if Israel obeys God's voice and keeps the covenant, then Israel shall be God's own possession from among all peoples, a kingdom of priests, and a holy nation. This identification of Israel occurs before the legal requirements are spelled out, establishing that election and possession are God's gift; obedience and law follow as Israel's response to grace already received.",
+          "id": "overview",
+          "text": "Exodus 19 brings Israel to Sinai. Jehovah offers a covenant identity as a treasured possession, kingdom of priests, and holy nation if Israel obeys. The people prepare themselves, boundaries are set around the mountain, and Jehovah descends in cloud, thunder, fire, and trumpet sound.",
           "verse_refs": [
-            "Exodus 19:3-6"
+            "Exodus 19:1-25"
           ],
           "evidence_ids": [
-            "exodus-priestly-kingdom"
+            "exodus-ane-context"
           ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "confidence": "medium",
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "b79e5c6a7bbe1dbd28a4da78002b3fde0d2e08751b00f3d4255525fb3af10c9e",
+    "evidence_hash": "2372dfcadefafd2d01f9ba53b0b98466e7c4216ea025c9fe6673205a82ab5d8b",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T16:48:36.422703+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0].interpretation_level is invalid",
-    "section[1].kind is unsupported: section",
-    "section[1].block[1].interpretation_level is invalid",
-    "section[2].kind is unsupported: section",
-    "section[2].block[0].interpretation_level is invalid",
-    "section[2].block[1].interpretation_level is invalid",
-    "section[3].kind is unsupported: section",
-    "section[3].block[0].interpretation_level is invalid",
-    "section[3].block[1].interpretation_level is invalid",
-    "section[4].kind is unsupported: section",
-    "section[4].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

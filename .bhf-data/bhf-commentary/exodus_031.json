@@ -2,43 +2,36 @@
   "reference": "Exodus 31",
   "book": "Exodus",
   "chapter": 31,
-  "status": "partial",
+  "status": "validated",
   "sections": [
     {
-      "kind": "passage_section",
-      "title": "The Sabbath as a Perpetual Covenant Sign (Exodus 31:12-16)",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_2",
-          "text": "God commands Israel to observe the Sabbath as an eternal sign of the covenant relationship. Sabbath observance marks covenant fidelity and serves as a sign of God's sanctification of Israel. Violation carries capital punishment, reflecting the Sabbath's fundamental importance to Israel's covenant identity and obligation.",
+          "id": "overview",
+          "text": "Exodus 31 names Bezalel and Oholiab as craftsmen appointed and filled with skill for the sanctuary work. Jehovah gives the Sabbath as a sign between himself and Israel, writes the tablets of testimony, and gives them to Moses on the mountain.",
           "verse_refs": [
-            "Exodus 31:13-15"
+            "Exodus 31:1-18"
           ],
           "evidence_ids": [
-            "what-is-a-covenant-sign:historical_context:0",
-            "what-is-the-significance-of-the-sabbath:historical_context:0"
+            "exodus-ane-context"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "7c79b39840fee1dcd52b3a2ff03b6dc6c6f2542ede9323854c6ec39f8b059084",
+    "evidence_hash": "23c9334b569f3eba4ea1ae7f91886d6aadba7db31b58e0c1ff61c3c90022ccdb",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T16:48:37.753979+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].kind is unsupported: passage_section",
-    "section[0].block[0].interpretation_level is invalid",
-    "section[1].kind is unsupported: passage_section",
-    "section[1].block[1].interpretation_level is invalid",
-    "section[1].block[2].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

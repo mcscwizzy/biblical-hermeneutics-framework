@@ -2,39 +2,36 @@
   "reference": "Exodus 35",
   "book": "Exodus",
   "chapter": 35,
-  "status": "partial",
+  "status": "validated",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview: Mobilizing the Sanctuary Community",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Exodus 35 initiates the execution of the sanctuary instructions given at Sinai. After establishing Sabbath observance as binding law (35:1-3), Moses calls the assembled community to bring materials and to perform the construction work (35:4-19). This two-phase presentation\u2014first commands, then the calling forth of communal participation\u2014reflects Exodus's literary structure of divine instruction followed by completion.",
+          "id": "overview",
+          "text": "Exodus 35 repeats the Sabbath command and calls Israel to bring willing offerings for the tabernacle. The people bring materials, and skilled men and women work with yarn, cloth, leather, wood, precious materials, and oil. Bezalel and Oholiab lead the appointed craftsmanship.",
           "verse_refs": [
-            "Exodus 35:1-19"
+            "Exodus 35:1-35"
           ],
           "evidence_ids": [
-            "tabernacle-command-construction-correspondence"
+            "exodus-ane-context"
           ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "confidence": "medium",
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "41b37ca068d862510d52ab7beb2d10199690741ddb397b7f63edd6caf250d6a1",
+    "evidence_hash": "8027db6ac4fbd16c926c5663228acd8ac1c58a7f848721aafeb22fc8a456c710",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T16:48:38.257492+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[1].confidence exceeds its cited evidence",
-    "section[0].block[2].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

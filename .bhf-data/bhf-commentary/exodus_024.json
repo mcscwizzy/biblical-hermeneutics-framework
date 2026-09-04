@@ -2,101 +2,36 @@
   "reference": "Exodus 24",
   "book": "Exodus",
   "chapter": 24,
-  "status": "partial",
+  "status": "validated",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "This chapter records the formal ratification of God's covenant with Israel at Mount Sinai. The passage unfolds through preparation, ceremonial acceptance, sacrificial ritual, and covenant sealing\u2014all coordinated by Moses as mediator between God and the people. It represents the culmination of the Exodus narrative's arc: deliverance from Egypt finds its true purpose and shape in binding covenant before the LORD. The covenant, in biblical understanding, is a corporate relationship of oath, loyalty, and mutual blessing established through formal rite and sworn commitment.",
+          "id": "overview",
+          "text": "Exodus 24 records the covenant confirmation at Sinai. Moses reads the book, the people promise obedience, and blood is put on the people. Moses, Aaron, Nadab, Abihu, and elders see the God of Israel, after which Moses ascends the mountain into the cloud for forty days and nights.",
           "verse_refs": [
-            "Exodus 24:1-14"
+            "Exodus 24:1-18"
           ],
           "evidence_ids": [
-            "exodus-literary-movement",
-            "sinai-covenant:historical_context:0",
-            "covenant-theme:hebraic_worldview:0"
+            "exodus-ane-context"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "passage_analysis",
-      "title": "The People's Covenant Acceptance",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "The ceremony begins with Moses recounting to the assembled people 'all the words of the LORD and all the ordinances,' and they respond with unanimous commitment: 'All the words which the LORD has spoken will we do.' This sworn acceptance is repeated after the blood ritual. In biblical understanding, covenant is not a unilateral decree but a binding relationship constituted by the people's oath of loyalty and obedience. The repeated affirmation throughout the passage\u2014at verses 3 and 7\u2014underscores that covenant life requires conscious commitment to God's instruction and shared responsibility as a covenant community before the LORD.",
-          "verse_refs": [
-            "Exodus 24:3",
-            "Exodus 24:7"
-          ],
-          "evidence_ids": [
-            "covenant-theme:hebraic_worldview:0",
-            "what-is-covenant:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "passage_analysis",
-      "title": "The Sacrificial Ratification",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "The covenant's formal ratification is enacted through sacrifice. Moses builds an altar with twelve pillars\u2014representing all of Israel's tribes\u2014and oversees burnt and peace offerings from young Israelites. The blood ritual that follows is central to the rite's meaning: Moses collects half the blood in basins, applies half to the altar, then sprinkles the remainder on the people themselves. His declaration crystallizes the significance: 'Behold the blood of the covenant which the LORD has made with you concerning all these words.' Throughout biblical tradition, sacrifice organizes worship around restored access to God and the sealing of covenant bond. Here, the blood\u2014offered both to altar and people\u2014makes the covenant tangible and binding, symbolizing that sanctuary and community alike stand bound in covenant relationship with the LORD.",
-          "verse_refs": [
-            "Exodus 24:4-8"
-          ],
-          "evidence_ids": [
-            "what-is-sacrifice-in-the-bible:ancient_near_east_context:0",
-            "what-is-sacrifice-in-the-bible:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "passage_analysis",
-      "title": "Moses as Covenant Mediator",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "The opening verses establish a decisive hierarchy of access to divine holiness. The LORD calls Moses, Aaron, Nadab, Abihu, and seventy elders to ascend, yet specifies that 'Moses alone shall come near unto the LORD.' This pattern reflects Moses' singular role throughout the Exodus narrative: he receives God's words and conveys them to the people. The covenant is enacted through his mediatorial work\u2014he announces the law, leads the people's responsive affirmation, performs the sacrificial rite, and sprinkles the blood that binds community to covenant. After the ratification ceremony, the elders remain while Moses alone ascends to receive the written tablets. This structure embodies the theological reality shaping Israel's covenant life: a Torah-shaped community formed through divine instruction mediated by Moses, who uniquely approaches the holy God on Israel's behalf.",
-          "verse_refs": [
-            "Exodus 24:1-2",
-            "Exodus 24:12-13"
-          ],
-          "evidence_ids": [
-            "moses:hebraic_worldview:0",
-            "moses:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "49b55a80a6309a08bf6d1b551d90166ea69f6de54e6b1c136dac70f88172b8c8",
+    "evidence_hash": "0228e7ce2853bde3849cb4697dfe997b7ea354ce7b59697b5acc50b8564284ea",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T16:48:36.926590+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: passage_analysis",
-    "section[2].kind is unsupported: passage_analysis",
-    "section[3].kind is unsupported: passage_analysis"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

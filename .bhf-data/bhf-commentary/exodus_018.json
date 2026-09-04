@@ -2,41 +2,36 @@
   "reference": "Exodus 18",
   "book": "Exodus",
   "chapter": 18,
-  "status": "partial",
+  "status": "validated",
   "sections": [
     {
-      "kind": "leadership",
-      "title": "The Elders in Israel's Community",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Exodus 18:12 presents Aaron and the elders of Israel gathering with Jethro for a sacrificial meal before God. This scene identifies the elders as key participants in Israel's religious occasions and public worship. The evidence indicates that elders belonged to the social and political systems that governed Israel and its neighbors, functioning within contexts that combined sanctuary service with communal authority. Their formal participation in this covenant meal marks their place as recognized leaders in Israel's institutional structure.",
+          "id": "overview",
+          "text": "Exodus 18 tells of Jethro bringing Zipporah and Moses\u2019 sons to the camp. After hearing what Jehovah did, Jethro blesses God and offers sacrifice. He advises Moses to appoint capable judges over groups so that only difficult cases come to Moses.",
           "verse_refs": [
-            "Exodus 18:12"
+            "Exodus 18:1-27"
           ],
           "evidence_ids": [
-            "elders:ancient_near_east_context:0",
-            "elders:historical_context:0",
-            "village-elders:ancient_near_east_context:0",
-            "village-elders:historical_context:0"
+            "exodus-ane-context"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "532ee23185aa697207effb344f0759096cf58203b7bcd828998deec2241f1d71",
+    "evidence_hash": "3ffb55b84a5cf68bcc77a32a01b4528a007c5a0d1fbd483dfc8cbf23500e206b",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T16:48:35.937587+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].kind is unsupported: leadership"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
