@@ -8,6 +8,7 @@
     DATA_GAP: "Contextual evidence not currently available",
   });
   const cache = new Map();
+  const evidenceCache = new Map();
 
   function availabilityLabel(availability) {
     return AVAILABILITY_LABELS[availability] || "Context status not recorded";
@@ -53,6 +54,34 @@
     return normalizePayload(payload);
   }
 
+  function normalizeEvidencePayload(payload) {
+    const source = payload && typeof payload === "object" ? payload : {};
+    const items = Array.isArray(source.evidence_items)
+      ? source.evidence_items.filter((item) => item && typeof item === "object" && typeof item.id === "string")
+      : [];
+    const unavailableIds = Array.isArray(source.unavailable_ids)
+      ? source.unavailable_ids.filter((value) => typeof value === "string" && value.trim())
+      : [];
+    const evidenceCount = Number(source.evidence_count);
+    return Object.freeze({
+      available: source.available === true,
+      evidenceItems: Object.freeze(items),
+      unavailableIds: Object.freeze(unavailableIds),
+      evidenceCount: Number.isFinite(evidenceCount) && evidenceCount >= 0 ? evidenceCount : 0,
+    });
+  }
+
+  async function requestEvidence(selection, signal) {
+    const path = `/api/bhf-commentary/${encodeURIComponent(selection.book)}/${encodeURIComponent(selection.chapter)}/evidence`;
+    if (typeof window.BHFApi?.requestJson === "function") {
+      return normalizeEvidencePayload(await window.BHFApi.requestJson(path, {signal}, "BHF evidence could not be loaded."));
+    }
+    const response = await fetch(path, {signal, headers: {Accept: "application/json"}});
+    const payload = await response.json();
+    if (!response.ok) throw new Error(payload.error || "BHF evidence could not be loaded.");
+    return normalizeEvidencePayload(payload);
+  }
+
   function elements(root) {
     return {
       card: root,
@@ -63,6 +92,10 @@
       meta: root.querySelector("[data-bhf-commentary-meta]"),
       verseRefs: root.querySelector("[data-bhf-commentary-verse-refs]"),
       evidenceCount: root.querySelector("[data-bhf-commentary-evidence-count]"),
+      evidenceToggle: root.querySelector("[data-bhf-commentary-evidence-toggle]"),
+      evidencePanel: root.querySelector("[data-bhf-commentary-evidence-panel]"),
+      evidenceStatus: root.querySelector("[data-bhf-commentary-evidence-status]"),
+      evidenceList: root.querySelector("[data-bhf-commentary-evidence-list]"),
     };
   }
 
@@ -74,6 +107,16 @@
     if (element) element.textContent = value || "";
   }
 
+  function resetEvidence(parts) {
+    if (parts.evidenceToggle) {
+      parts.evidenceToggle.hidden = true;
+      parts.evidenceToggle.setAttribute("aria-expanded", "false");
+    }
+    if (parts.evidencePanel) parts.evidencePanel.hidden = true;
+    setText(parts.evidenceStatus, "");
+    clearChildren(parts.evidenceList);
+  }
+
   function renderLoading(parts, selection) {
     parts.card.hidden = false;
     parts.card.dataset.state = "loading";
@@ -83,6 +126,7 @@
     setText(parts.status, "Loading BHF context…");
     clearChildren(parts.body);
     parts.meta.hidden = true;
+    resetEvidence(parts);
   }
 
   function renderUnavailable(parts, model) {
@@ -96,6 +140,7 @@
       : "BHF Commentary is not available for this chapter.");
     clearChildren(parts.body);
     parts.meta.hidden = true;
+    resetEvidence(parts);
   }
 
   function renderError(parts, selection) {
@@ -107,6 +152,7 @@
     setText(parts.status, "BHF Context is unavailable right now.");
     clearChildren(parts.body);
     parts.meta.hidden = true;
+    resetEvidence(parts);
   }
 
   function renderReady(parts, model) {
@@ -143,6 +189,88 @@
         ? "No anchored evidence cited"
         : `${model.evidenceCount} evidence item${model.evidenceCount === 1 ? "" : "s"}`);
     parts.meta.hidden = model.verseReferences.length === 0 && model.evidenceCount === null;
+    resetEvidence(parts);
+    if (parts.evidenceToggle && model.evidenceCount > 0) {
+      parts.evidenceToggle.hidden = false;
+    }
+  }
+
+  function readableCategory(category) {
+    return String(category || "Context").replace(/_/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+  }
+
+  function confidenceLabel(confidence) {
+    const labels = {high: "High confidence", medium: "Moderate confidence", low: "Limited confidence"};
+    return labels[String(confidence || "").toLowerCase()] || "Confidence not recorded";
+  }
+
+  function renderEvidenceItem(item) {
+    const article = document.createElement("article");
+    article.className = "bhf-commentary-evidence-item";
+    const heading = document.createElement("div");
+    heading.className = "bhf-commentary-evidence-heading";
+    const category = document.createElement("span");
+    category.className = "bhf-commentary-evidence-category";
+    category.textContent = readableCategory(item.category);
+    heading.appendChild(category);
+    const confidence = document.createElement("span");
+    confidence.className = "bhf-commentary-evidence-confidence";
+    confidence.textContent = confidenceLabel(item.confidence);
+    heading.appendChild(confidence);
+    article.appendChild(heading);
+
+    const claim = document.createElement("p");
+    claim.className = "bhf-commentary-evidence-claim";
+    claim.textContent = item.claim || "Evidence claim unavailable.";
+    article.appendChild(claim);
+
+    if (item.dispute_status) {
+      const dispute = document.createElement("p");
+      dispute.className = "bhf-commentary-evidence-dispute";
+      dispute.textContent = `Interpretation note: ${item.dispute_status}`;
+      article.appendChild(dispute);
+    }
+    const anchors = Array.isArray(item.scripture_anchors) ? item.scripture_anchors : [];
+    if (anchors.length) {
+      const anchor = document.createElement("p");
+      anchor.className = "bhf-commentary-evidence-anchor";
+      anchor.textContent = `Scripture anchor: ${anchors.join(", ")}`;
+      article.appendChild(anchor);
+    }
+
+    const details = document.createElement("details");
+    details.className = "bhf-commentary-evidence-details";
+    const summary = document.createElement("summary");
+    summary.textContent = "Advanced details";
+    details.appendChild(summary);
+    const detailText = document.createElement("p");
+    const sources = Array.isArray(item.sources) ? item.sources : [];
+    const entities = Array.isArray(item.related_entities) ? item.related_entities : [];
+    const levels = Array.isArray(item.interpretation_levels) ? item.interpretation_levels : [];
+    detailText.textContent = [
+      `Evidence ID: ${item.id}`,
+      item.assertion_type ? `Assertion: ${item.assertion_type}` : "",
+      levels.length ? `Allowed interpretation: ${levels.join(", ")}` : "",
+      sources.length ? `Sources: ${sources.map((source) => source.title || source.id).join(", ")}` : "",
+      entities.length ? `Related entities: ${entities.map((entity) => entity.title || entity.id).join(", ")}` : "",
+    ].filter(Boolean).join("\n");
+    details.appendChild(detailText);
+    article.appendChild(details);
+    return article;
+  }
+
+  function renderEvidence(parts, evidence) {
+    if (!parts.evidencePanel) return;
+    parts.evidencePanel.hidden = false;
+    setText(parts.evidenceStatus, evidence.available ? "Evidence cited by this context" : "Cited evidence is unavailable in this release.");
+    clearChildren(parts.evidenceList);
+    evidence.evidenceItems.forEach((item) => parts.evidenceList.appendChild(renderEvidenceItem(item)));
+    if (evidence.unavailableIds.length) {
+      const unavailable = document.createElement("p");
+      unavailable.className = "bhf-commentary-evidence-unavailable";
+      unavailable.textContent = "Some referenced evidence is unavailable in this release.";
+      parts.evidenceList.appendChild(unavailable);
+    }
   }
 
   function parseVerseReference(reference, selection) {
@@ -170,10 +298,43 @@
       ?.scrollIntoView?.({behavior: "smooth", block: "center"});
   }
 
+  function handleEvidenceToggle(event, parts, selection, model, state) {
+    const toggle = event.target.closest?.("[data-bhf-commentary-evidence-toggle]");
+    if (!toggle || !model || model.evidenceCount <= 0) return;
+    const expanded = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", expanded ? "false" : "true");
+    if (expanded) {
+      parts.evidencePanel.hidden = true;
+      return;
+    }
+    parts.evidencePanel.hidden = false;
+    setText(parts.evidenceStatus, "Loading evidence…");
+    const key = chapterKey(selection);
+    const cached = evidenceCache.get(key);
+    if (cached) {
+      renderEvidence(parts, cached);
+      return;
+    }
+    state.evidenceController?.abort();
+    state.evidenceController = new AbortController();
+    void requestEvidence(selection, state.evidenceController.signal)
+      .then((evidence) => {
+        evidenceCache.set(key, evidence);
+        renderEvidence(parts, evidence);
+      })
+      .catch((error) => {
+        if (error?.name === "AbortError") return;
+        setText(parts.evidenceStatus, "Evidence is unavailable right now.");
+        clearChildren(parts.evidenceList);
+      });
+  }
+
   function init(root) {
     const parts = elements(root);
     let sequence = 0;
     let controller = null;
+    let currentModel = null;
+    const state = {evidenceController: null};
 
     async function load(selection) {
       const key = chapterKey(selection);
@@ -192,6 +353,7 @@
           cache.set(key, model);
         }
         if (requestSequence !== sequence) return;
+        currentModel = model;
         if (!model.available) renderUnavailable(parts, {...model, book: selection.book, chapter: selection.chapter});
         else renderReady(parts, model);
       } catch (error) {
@@ -203,9 +365,16 @@
     root.addEventListener("click", (event) => {
       const selection = window.BHFStudySelection?.getState?.() || {};
       handleVerseReference(event, selection);
+      handleEvidenceToggle(event, parts, selection, currentModel, state);
     });
     window.BHFStudySelection?.subscribe?.((selection) => { void load(selection); });
-    return {load, render: (payload) => renderReady(parts, normalizePayload(payload))};
+    return {
+      load,
+      render: (payload) => {
+        currentModel = normalizePayload(payload);
+        renderReady(parts, currentModel);
+      },
+    };
   }
 
   window.BHFCommentaryCard = Object.freeze({

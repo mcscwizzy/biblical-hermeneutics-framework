@@ -427,6 +427,90 @@ body.companion-sheet-full {
   box-shadow: 0 0 0 2px var(--accent-soft);
 }
 
+.bhf-commentary-evidence-explorer {
+  margin-top: 14px;
+}
+
+.bhf-commentary-evidence-toggle {
+  min-height: 36px;
+  width: 100%;
+  text-align: left;
+  font-weight: 750;
+}
+
+.bhf-commentary-evidence-panel {
+  margin-top: 10px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.bhf-commentary-evidence-status {
+  margin: 0 0 10px;
+  color: var(--muted-text);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.bhf-commentary-evidence-item + .bhf-commentary-evidence-item {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.bhf-commentary-evidence-heading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  align-items: baseline;
+}
+
+.bhf-commentary-evidence-category,
+.bhf-commentary-evidence-confidence {
+  color: var(--muted-text);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.bhf-commentary-evidence-claim {
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+.bhf-commentary-evidence-dispute,
+.bhf-commentary-evidence-anchor,
+.bhf-commentary-evidence-unavailable {
+  margin: 6px 0 0;
+  color: var(--muted-text);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.bhf-commentary-evidence-dispute {
+  font-weight: 700;
+}
+
+.bhf-commentary-evidence-details {
+  margin-top: 8px;
+  font-size: 0.76rem;
+}
+
+.bhf-commentary-evidence-details summary {
+  color: var(--accent-text);
+  cursor: pointer;
+  font-weight: 750;
+}
+
+.bhf-commentary-evidence-details p {
+  margin: 8px 0 0;
+  white-space: pre-line;
+  color: var(--muted-text);
+  line-height: 1.45;
+}
+
 @media (max-width: 520px) {
   .bhf-commentary-card {
     padding: 14px;

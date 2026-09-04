@@ -6,11 +6,22 @@ from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
+from starlette.concurrency import run_in_threadpool
 
-from bhf_web.services.bhf_commentary import COMMENTARY_RELEASE, load_commentary_projection
+from bhf_agent.chapter_commentary.storage import load_commentary
+from bhf_web.services.bhf_commentary import (
+    COMMENTARY_RELEASE,
+    load_commentary_projection,
+    project_commentary_evidence,
+)
 
 
-def register_bhf_commentary_routes(app: FastAPI, *, storage_dir: str | Path) -> None:
+def register_bhf_commentary_routes(
+    app: FastAPI,
+    *,
+    storage_dir: str | Path,
+    companion_context_service=None,
+) -> None:
     """Register routes for BHF-generated commentary."""
 
     storage_path = Path(storage_dir)
@@ -55,7 +66,6 @@ def register_bhf_commentary_routes(app: FastAPI, *, storage_dir: str | Path) -> 
                     **commentary,
                 }
             )
-
         except Exception:
             return JSONResponse(
                 {
@@ -65,4 +75,47 @@ def register_bhf_commentary_routes(app: FastAPI, *, storage_dir: str | Path) -> 
                     "book": book,
                     "chapter": chapter,
                 }
+            )
+
+    @app.get("/api/bhf-commentary/{book}/{chapter}/evidence", response_class=JSONResponse)
+    async def bhf_commentary_evidence(book: str, chapter: int) -> JSONResponse:
+        """Return only evidence explicitly cited by the stored commentary."""
+        try:
+            commentary = load_commentary(storage_path, book, chapter)
+            if commentary is None:
+                return JSONResponse(
+                    {
+                        "available": False,
+                        "reason": "bhf_commentary_not_available",
+                        "release": COMMENTARY_RELEASE,
+                        "book": book,
+                        "chapter": chapter,
+                        "evidence_items": [],
+                        "unavailable_ids": [],
+                        "evidence_count": 0,
+                    }
+                )
+            if companion_context_service is None:
+                return JSONResponse(
+                    {"available": False, "reason": "commentary_evidence_unavailable"},
+                    status_code=503,
+                )
+            bundle = await run_in_threadpool(
+                companion_context_service.build_evidence_bundle_for_passage,
+                book=book,
+                chapter=chapter,
+            )
+            return JSONResponse(
+                {"available": True, **project_commentary_evidence(commentary, bundle)}
+            )
+        except Exception:
+            return JSONResponse(
+                {
+                    "available": False,
+                    "reason": "commentary_evidence_error",
+                    "release": COMMENTARY_RELEASE,
+                    "book": book,
+                    "chapter": chapter,
+                },
+                status_code=503,
             )

@@ -577,7 +577,16 @@ def create_app() -> FastAPI:
     register_map_routes(web_app, study_db_path=str(STUDY_DB_PATH))
     register_archaeology_routes(web_app, templates=templates)
     register_commentary_routes(web_app, database_path=str(COMMENTARY_DB_PATH))
-    register_bhf_commentary_routes(web_app, storage_dir=str(BHF_COMMENTARY_STORAGE_PATH))
+    companion_context_service = CompanionContextService(
+        study_db_path=STUDY_DB_PATH,
+        commentary_db_path=COMMENTARY_DB_PATH,
+        presentation_engine=presentation_runtime.engine,
+    )
+    register_bhf_commentary_routes(
+        web_app,
+        storage_dir=str(BHF_COMMENTARY_STORAGE_PATH),
+        companion_context_service=companion_context_service,
+    )
     register_study_routes(
         web_app,
         study_db_path=str(STUDY_DB_PATH),
@@ -585,11 +594,7 @@ def create_app() -> FastAPI:
         job_store=job_store,
         context_presenter=present_reader_context,
         commentary_db_path=str(COMMENTARY_DB_PATH),
-        companion_context_service=CompanionContextService(
-            study_db_path=STUDY_DB_PATH,
-            commentary_db_path=COMMENTARY_DB_PATH,
-            presentation_engine=presentation_runtime.engine,
-        ),
+        companion_context_service=companion_context_service,
         presentation_transport=str(runtime_config["presentationTransport"]),
     )
     register_debug_routes(web_app)

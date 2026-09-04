@@ -31,11 +31,18 @@ class FakeElement {
     this.attributes[name] = String(value);
   }
 
+  getAttribute(name) {
+    return Object.prototype.hasOwnProperty.call(this.attributes, name) ? this.attributes[name] : null;
+  }
+
   removeAttribute(name) {
     delete this.attributes[name];
   }
 
-  addEventListener() {}
+  addEventListener(name, handler) {
+    this.listeners = this.listeners || {};
+    this.listeners[name] = handler;
+  }
 }
 
 
@@ -72,6 +79,10 @@ function makeRoot() {
     "[data-bhf-commentary-meta]",
     "[data-bhf-commentary-verse-refs]",
     "[data-bhf-commentary-evidence-count]",
+    "[data-bhf-commentary-evidence-toggle]",
+    "[data-bhf-commentary-evidence-panel]",
+    "[data-bhf-commentary-evidence-status]",
+    "[data-bhf-commentary-evidence-list]",
   ].forEach((selector) => { selectors[selector] = new FakeElement(); });
   return new FakeElement(selectors);
 }
@@ -148,6 +159,54 @@ test("thin card exposes its limitation without hiding the commentary", () => {
   assert.equal(root.selectors["[data-bhf-commentary-availability]"].textContent, "Limited contextual evidence");
   assert.equal(root.selectors["[data-bhf-commentary-body]"].textContent, "A concise contextual observation.");
   assert.equal(root.selectors["[data-bhf-commentary-evidence-count]"].textContent, "1 evidence item");
+});
+
+
+test("evidence explorer shows beginner claim and advanced details only for cited evidence", async () => {
+  const api = loadCard({requestJson: async (path) => {
+    assert.match(path, /Genesis\/13\/evidence$/);
+    return {
+      available: true,
+      evidence_count: 2,
+      evidence_items: [{
+        id: "ckl-1",
+        claim: "A supplied contextual claim.",
+        category: "culture",
+        confidence: "medium",
+        scripture_anchors: ["Genesis 13:5-12"],
+        dispute_status: "interpretation_disputed",
+        assertion_type: "interpretive",
+        interpretation_levels: ["inference", "disputed"],
+        sources: [{id: "source-1", title: "A source"}],
+        related_entities: [{id: "place-1", title: "A Place"}],
+      }],
+      unavailable_ids: ["ckl-2"],
+    };
+  }});
+  const root = makeRoot();
+  const instance = api.init(root);
+  instance.render({
+    available: true,
+    release: "commentary-v1.0",
+    book: "Genesis",
+    chapter: 13,
+    availability: "AVAILABLE",
+    commentary: "Context.",
+    verse_references: [],
+    evidence_count: 2,
+  });
+  const toggle = root.selectors["[data-bhf-commentary-evidence-toggle]"];
+  const panel = root.selectors["[data-bhf-commentary-evidence-panel]"];
+  assert.equal(toggle.hidden, false);
+  root.listeners.click({target: {
+    closest: (selector) => selector === "[data-bhf-commentary-evidence-toggle]" ? toggle : null,
+  }});
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(panel.hidden, false);
+  assert.match(root.selectors["[data-bhf-commentary-evidence-status]"].textContent, /Evidence cited/);
+  assert.equal(root.selectors["[data-bhf-commentary-evidence-list]"].children.length, 2);
+  assert.equal(root.selectors["[data-bhf-commentary-evidence-list]"].children[0].children[1].textContent, "A supplied contextual claim.");
+  assert.match(root.selectors["[data-bhf-commentary-evidence-list]"].children[1].textContent, /unavailable/);
 });
 
 

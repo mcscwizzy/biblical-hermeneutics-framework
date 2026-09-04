@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from bhf_agent.chapter_commentary.models import ChapterCommentary
+from bhf_agent.presentation.models import EvidenceBundle
 from bhf_agent.chapter_commentary.storage import load_commentary
 
 
@@ -64,3 +65,71 @@ def load_commentary_projection(
     """Load one immutable corpus artifact and return its UI projection."""
     commentary = load_commentary(storage_dir, book, chapter)
     return project_commentary(commentary) if commentary is not None else None
+
+
+def project_commentary_evidence(
+    commentary: ChapterCommentary,
+    bundle: EvidenceBundle,
+) -> dict[str, Any]:
+    """Project only the evidence IDs cited by a frozen commentary artifact.
+
+    The browser must never receive a substitute search result when a stored
+    citation is unavailable. Unknown citations are reported explicitly so the
+    evidence explorer remains honest without exposing the whole CKL bundle.
+    """
+    cited_ids = _unique(
+        [evidence_id for section in commentary.sections for block in section.blocks for evidence_id in block.evidence_ids]
+    )
+    sources = {
+        str(source.get("id") or ""): source
+        for source in bundle.provenance.get("sources", [])
+        if isinstance(source, dict) and str(source.get("id") or "")
+    }
+    entities = bundle.entities_by_id
+    items: list[dict[str, Any]] = []
+    unavailable_ids: list[str] = []
+    for evidence_id in cited_ids:
+        item = bundle.evidence_by_id.get(evidence_id)
+        if item is None:
+            unavailable_ids.append(evidence_id)
+            continue
+        metadata = item.relevance_metadata or {}
+        items.append(
+            {
+                "id": item.id,
+                "claim": item.claim,
+                "category": item.category,
+                "confidence": item.confidence,
+                "scripture_anchors": list(item.passage_anchors),
+                "dispute_status": str(metadata.get("dispute_status") or "") or None,
+                "assertion_type": str(metadata.get("assertion_type") or "") or None,
+                "interpretation_levels": list(metadata.get("allowed_interpretation_levels") or []),
+                "source_ids": list(item.source_ids),
+                "sources": [
+                    {
+                        "id": source_id,
+                        "title": str(sources.get(source_id, {}).get("title") or source_id),
+                        "source_type": str(sources.get(source_id, {}).get("source_type") or ""),
+                    }
+                    for source_id in item.source_ids
+                ],
+                "related_entities": [
+                    {
+                        "id": entity_id,
+                        "title": entities[entity_id].title,
+                        "type": entities[entity_id].type,
+                    }
+                    for entity_id in item.related_entity_ids
+                    if entity_id in entities
+                ],
+            }
+        )
+    return {
+        "release": COMMENTARY_RELEASE,
+        "book": commentary.book,
+        "chapter": commentary.chapter,
+        "availability": commentary.evidence_availability,
+        "evidence_items": items,
+        "unavailable_ids": unavailable_ids,
+        "evidence_count": len(cited_ids),
+    }
