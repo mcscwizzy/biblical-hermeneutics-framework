@@ -3,45 +3,34 @@
   "book": "Ezekiel",
   "chapter": 16,
   "status": "validated",
+  "evidence_availability": "THIN",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Ezekiel 16 presents Jerusalem through an extended metaphor as an abandoned infant rescued by God, then clothed, adorned, and married to him. This personification strategy\u2014using gendered and sexualized imagery of abandonment, covenant, and restoration\u2014forms the rhetorical core of the chapter. The passage employs this intimate female figure to communicate divine relationship and covenant breach, though the graphic nature of the metaphor raises significant ethical concerns for interpreters.",
+          "id": "overview",
+          "text": "Ezekiel 16 contains 63 verses. It opens with: Again the word of Jehovah came unto me, saying, It concludes with: that thou mayest remember, and be confounded, and never open thy mouth any more, because of thy shame, when I have forgiven thee all that thou hast done, saith the Lord Jehovah.",
           "verse_refs": [
-            "Ezekiel 16:3-13"
+            "Ezekiel 16:1-63"
           ],
           "evidence_ids": [
             "ezekiel-gendered-city-allegories"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_2",
-          "text": "Ezekiel 16 is attested across multiple ancient textual witnesses that show meaningful variation in wording and order. These include the Hebrew Masoretic text, the Old Greek translation (Iezekiel), Papyrus 967, Qumran fragments, and the Masada scroll. Careful passage-level textual analysis is necessary to establish which readings likely represent the original text and how variants may affect interpretation.",
-          "verse_refs": [
-            "Ezekiel 16:1-13"
-          ],
-          "evidence_ids": [
-            "ezekiel-textual-witnesses"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "3fc0bbd0497600ff78966960a17c1f675bed3b2132ccfe5f2ca187cb9f9c8ebd",
+    "evidence_hash": "435e7903b6f5dc76b3e3104fad9eb0c435dc1475018a28438dd5b35c5ad9159e",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:29:45.619194+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

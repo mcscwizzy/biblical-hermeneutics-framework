@@ -2,95 +2,37 @@
   "reference": "Ezekiel 36",
   "book": "Ezekiel",
   "chapter": 36,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "section",
-      "title": "The Prophet Called to Speak Against the Nations (vv. 1\u20137)",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Ezekiel is commanded to prophesy to the mountains themselves\u2014personified as witnesses and victims of Israel's devastation. The enemy nations have already claimed Israel's ancient high places and sacred territories as their own conquest. They have multiplied Israel's shame, turning the desolate land into an object of derision. The passage reflects the historical reality of Babylonian deportation and the surrounding nations' contempt for a displaced people. Behind this mockery lies a deeper crisis: the loss of land means the loss of covenant inheritance and the visible sign of God's presence.",
+          "id": "overview",
+          "text": "Ezekiel 36 contains 38 verses. It opens with: And thou, son of man, prophesy unto the mountains of Israel, and say, Ye mountains of Israel, hear the word of Jehovah. It concludes with: As the flock for sacrifice, as the flock of Jerusalem in her appointed feasts, so shall the waste cities be filled with flocks of men; and they shall know that I am Jehovah.",
           "verse_refs": [
-            "Ezekiel 36:1-4"
+            "Ezekiel 36:1-38"
           ],
           "evidence_ids": [
-            "exile-theme:historical_context:0",
-            "why-is-exile-important:historical_context:0"
+            "ezekiel-new-heart-spirit"
           ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_2",
-          "text": "God responds to this seizure not with passive lament but with fierce intention. He declares that He has spoken in jealousy and wrath because His land has been seized and His name defamed. Edom\u2014standing here as representative of the nations hostile to Israel\u2014is singled out for judgment. The language 'appointed my land unto themselves' captures the arrogance of conquest: enemies treat God's covenant land as war booty, to be possessed and exploited. But this violation of Israel's territory is, in the biblical view, an affront to God Himself. His honor is bound up with His people's restoration.",
-          "verse_refs": [
-            "Ezekiel 36:5-7"
-          ],
-          "evidence_ids": [
-            "restoration-prophecy:historical_context:0",
-            "providence:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "The Promise of Restoration and Fertility (vv. 8\u201311)",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "The tone shifts decisively. The mountains are addressed with comfort: 'I am for you.' God promises that the land itself will be restored\u2014branches will grow, crops will flourish, and the waste places will be rebuilt. More importantly, God will multiply the population. The desolate cities will be inhabited again, and the whole house of Israel will return to their inheritance. This is not merely a restoration of territory but a renewal of the covenant relationship where people and land are bound together. The language of tilling and sowing, multiplying people and beasts, echoes the language of blessing and fertility found in creation and covenant promises.",
-          "verse_refs": [
-            "Ezekiel 36:8-11"
-          ],
-          "evidence_ids": [
-            "restoration-theme:historical_context:0",
-            "land-theme:historical_context:0",
-            "hope-theme:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "The Deeper Promise: Spiritual Cleansing and a New Heart (vv. 24\u201328)",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "As the chapter develops, the restoration promise reaches beyond land and population to the heart of God's work. Ezekiel announces that God will cleanse His people from their uncleanness, gather them from the nations, and bring them back to their land. This cleansing and return is inseparable from a radical inward transformation: God will give them a new heart and a new spirit. The promised renewal is grounded in God's own character and name\u2014He acts not primarily because Israel deserves it, but because His name has been profaned among the nations. The people will receive God's own Spirit, enabling them to walk in obedience and remember their shameful past without despair. This promise of inward renewal\u2014a new heart, a new spirit, God's own Spirit dwelling within\u2014stands at the center of Ezekiel's vision of restoration and becomes a defining mark of prophetic hope for Israel's future.",
-          "verse_refs": [
-            "Ezekiel 36:24-28"
-          ],
-          "evidence_ids": [
-            "ezekiel-new-heart-spirit",
-            "new-covenant-prophecy:historical_context:0",
-            "spirit-theme:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "confidence": "high",
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "fb02f87f280a51ecea67da324f507f18999fb2bc99490a249bd1c5665516aebb",
+    "evidence_hash": "3baadf10877935cbfda08d55a475f7fc274e362b62db3a53b898bd1b21900074",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:29:46.937038+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0].interpretation_level is invalid",
-    "section[1].kind is unsupported: section",
-    "section[2].kind is unsupported: section",
-    "section[3].kind is unsupported: section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

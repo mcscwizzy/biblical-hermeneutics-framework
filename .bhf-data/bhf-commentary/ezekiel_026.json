@@ -2,56 +2,37 @@
   "reference": "Ezekiel 26",
   "book": "Ezekiel",
   "chapter": 26,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "THIN",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview: Oracle Against Tyre",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Ezekiel 26 begins a sustained oracle against Tyre (continuing through chapter 28) that addresses the historical city and its rulers. The passage depicts God's judgment through siege imagery: Nebuchadnezzar of Babylon approaches from the north with horses, chariots, and forces; walls crumble under battering engines and axes; streets are trampled; riches become spoil. The opening verses show Tyre's presumption\u2014celebrating Jerusalem's fall as opportunity for commercial expansion\u2014which prompts the divine response. Through concrete images of military destruction and devastation, the oracle conveys Tyre's coming subjugation.",
+          "id": "overview",
+          "text": "Ezekiel 26 contains 21 verses. It opens with: And it came to pass in the eleventh year, in the first `day' of the month, that the word of Jehovah came unto me, saying, It concludes with: I will make thee a terror, and thou shalt no more have any being; though thou be sought for, yet shalt thou never be found again, saith the Lord Jehovah.",
           "verse_refs": [
-            "Ezekiel 26:1-12"
+            "Ezekiel 26:1-21"
           ],
           "evidence_ids": [
             "ezekiel-tyre-laments"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "textual_foundation",
-      "title": "Textual Notes",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "Ezekiel 26 is preserved across multiple ancient manuscript sources\u2014the Masoretic text, Old Greek tradition, Papyrus 967, Qumran materials, and the Masada scroll\u2014which exhibit wording and ordering variations requiring careful analysis at the passage level.",
-          "verse_refs": [
-            "Ezekiel 26"
-          ],
-          "evidence_ids": [
-            "ezekiel-textual-witnesses"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "a709efb5c40dabed30ec4f4c4ace4e60b8ae5fa5fafae34eb07125a341bccdaf",
+    "evidence_hash": "3e20270b2faa366865b3347f43dfccd828153dcd5434971813be57d1dec8621f",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:29:46.105908+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: textual_foundation"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

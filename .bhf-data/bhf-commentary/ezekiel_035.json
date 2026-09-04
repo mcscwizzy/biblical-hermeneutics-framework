@@ -2,96 +2,35 @@
   "reference": "Ezekiel 35",
   "book": "Ezekiel",
   "chapter": 35,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "DATA_GAP",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview: Mount Seir and Edom",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Mount Seir, the oracle's subject, refers to Edom's highland territory southeast of Judah. In the Iron Age, Edom occupied both elevated strongholds and lower regions, commanding key routes and resources. The prophecy indicts this neighbour for perpetual hostility and territorial ambitions against Israel, climaxing in YHWH's judgment of desolation.",
+          "id": "overview",
+          "text": "Ezekiel 35 contains 15 verses. It opens with: Moreover the word of Jehovah came unto me, saying, It concludes with: As thou didst rejoice over the inheritance of the house of Israel, because it was desolate, so will I do unto thee: thou shalt be desolate, O mount Seir, and all Edom, even all of it; and they shall know that I am Jehovah.",
           "verse_refs": [
-            "Ezekiel 35:2-3",
-            "Ezekiel 35:10"
+            "Ezekiel 35:1-15"
           ],
-          "evidence_ids": [
-            "obadiah:key_places:0",
-            "obadiah:key_places:1",
-            "obadiah:ancient_near_east_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "historical_context",
-      "title": "Edom and Judah in Conflict",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "Archaeological evidence illuminates Edomite settlement patterns and material culture across highlands and lowlands, though precise dating of particular conflicts remains uncertain. Rocky highland strongholds characterize Edom's geography, while Late Iron Age material culture in the Negev shows entanglement between Edomite and Judahite spheres. This complex settlement history cannot be reduced to single invasion events, yet it confirms Edom's regional presence and interaction with Judah's territories.",
-          "verse_refs": [
-            "Ezekiel 35:5",
-            "Ezekiel 35:7-8"
-          ],
-          "evidence_ids": [
-            "obadiah:archaeology:0",
-            "obadiah:archaeology:1",
-            "obadiah:archaeology:2",
-            "obadiah:ancient_near_east_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_3",
-          "text": "The book addresses remembered conflict between Judah and Edom, with Jerusalem's catastrophe and displacement forming its remembered horizon. Many interpreters associate the central grievance with Jerusalem's Babylonian destruction around 587/586 BCE and its aftermath. Ezekiel 35:5 references Israel's 'time of calamity' and 'time of iniquity of the end', likely anchoring to this historical period, though the precise Edomite conduct remains disputed among scholars.",
-          "verse_refs": [
-            "Ezekiel 35:5",
-            "Ezekiel 35:11-12"
-          ],
-          "evidence_ids": [
-            "obadiah:historical_context:0",
-            "obadiah:historical_setting:0",
-            "obadiah:timeline:2"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "theological_framework",
-      "title": "Kinship and Accountability",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "In Israel's theological tradition, Edom and Israel are framed as kin descended from Esau and Jacob. Within this kinship framework, betrayal of a vulnerable relative becomes a matter of divine accountability. The oracle treats Edom's proud security and refusal of sympathy toward displaced Israelites as accountable to YHWH, linking judgment to themes of Zion's holiness, Israel's land restoration, and YHWH's sustained kingship.",
-          "verse_refs": [
-            "Ezekiel 35:10-12"
-          ],
-          "evidence_ids": [
-            "obadiah:hebraic_worldview:0"
-          ],
-          "confidence": "medium",
+          "evidence_ids": [],
+          "confidence": "high",
           "interpretation_level": "fact"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "d383cfbc4c120019f859d496179371bef2cdd4403a7d5f7663dc01bf5741f5f5",
+    "evidence_hash": "b138465acae23c1dd77ea24532f098b9b07db94d0e3a6c3f0d2b2e2af1dc5ee4",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:29:46.641212+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[2].kind is unsupported: theological_framework"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

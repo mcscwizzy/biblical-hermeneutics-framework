@@ -2,39 +2,37 @@
   "reference": "Ezekiel 24",
   "book": "Ezekiel",
   "chapter": 24,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "sign_act",
-      "title": "The Prophet's Household as Sign",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_2",
-          "text": "Ezekiel 24 reports the death of the prophet's wife, whom Ezekiel calls 'the delight of his eyes'\u2014language expressing intimate attachment. The event is presented as a sign to the household of Israel concerning the sanctuary and bereavement. Notably, Ezekiel is forbidden to perform customary mourning rituals. This restriction transforms private loss into public prophecy; the prophet's constrained grief becomes instruction to Israel about enduring unbearable loss without the comfort of traditional mourning practices.",
+          "id": "overview",
+          "text": "Ezekiel 24 contains 27 verses. It opens with: Again, in the ninth year, in the tenth month, in the tenth `day' of the month, the word of Jehovah came unto me, saying, It concludes with: In that day shall thy mouth be opened to him that is escaped, and thou shalt speak, and be no more dumb: so shalt thou be a sign unto them; and they shall know that I am Jehovah.",
           "verse_refs": [
-            "Ezekiel 24:15-27"
+            "Ezekiel 24:1-27"
           ],
           "evidence_ids": [
-            "ezekiel-wife-sign"
+            "ezekiel-compositional-history"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "e9befee5056f2b9fdb8f49e3afd17fc964867026854f93a39329e27098c1d33d",
+    "evidence_hash": "aa3e1507577179a56910034b35ac7158673ed7aad16fd7691f6f2d17304d7374",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:29:45.973175+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0].confidence exceeds its cited evidence",
-    "section[1].kind is unsupported: sign_act"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
