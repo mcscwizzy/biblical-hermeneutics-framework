@@ -2,39 +2,37 @@
   "reference": "2 Kings 14",
   "book": "2 Kings",
   "chapter": 14,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "verse_commentary",
-      "title": "Jonah the Prophet (v. 25)",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "The chapter mentions Jonah son of Amittai, the prophet, whose patronymic matches the identification in Jonah 1:1. This shared naming provides an external biblical reference to a prophetic figure active during the eighth century.",
+          "id": "overview",
+          "text": "2 Kings 14 contains 29 verses. It opens with: In the second year of Joash son of Joahaz king of Israel began Amaziah the son of Joash king of Judah to reign. It concludes with: And Jeroboam slept with his fathers, even with the kings of Israel; and Zechariah his son reigned in his stead.",
           "verse_refs": [
-            "2 Kings 14:25",
-            "Jonah 1:1"
+            "2 Kings 14:1-29"
           ],
           "evidence_ids": [
-            "jonah-identity-2-kings"
+            "amos-rulers-date"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "aed9605690353a838d7bba7384c8b37549539954be62e5f33845112dbbc4750d",
+    "evidence_hash": "c96a394255f325e93e89a6c26e3d9a7d71e45621ee84f3f633a9755b3e95b529",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:09:28.498993+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].kind is unsupported: verse_commentary"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

@@ -3,36 +3,23 @@
   "book": "1 Chronicles",
   "chapter": 1,
   "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Genealogical Connection from Adam to Abraham",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "1 Chronicles 1 opens a genealogical record tracing the restored community's ancestry back to humanity's beginning. Starting with Adam (v. 1) and continuing through the patriarchs, it connects the world's earliest inhabitants to Abraham (v. 27), the covenant ancestor through whom God's promises would flow to Israel. The genealogy encompasses both universal ancestral lines (Noah's three sons and their descendants) and the specific lineage chosen for divine covenant.",
+          "id": "overview",
+          "text": "1 Chronicles 1 contains 54 verses. It opens with: Adam, Seth, Enosh, It concludes with: chief Magdiel, chief Iram. These are the chiefs of Edom.",
           "verse_refs": [
-            "1 Chronicles 1:1",
-            "1 Chronicles 1:27"
+            "1 Chronicles 1:1-54"
           ],
           "evidence_ids": [
             "first-chronicles-genealogical-identity"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_2",
-          "text": "Genealogies in the ancient Near East served a standard function: preserving family identity, marks of belonging, and inheritance rights. In Scripture, however, genealogy carries deeper significance. These genealogies trace the continuity of God's covenant promises and divine providence through history. Chapter 1 demonstrates how that providence connects from the earliest human ancestor through successive generations to the covenantal people of Israel.",
-          "verse_refs": [
-            "1 Chronicles 1:1-27"
-          ],
-          "evidence_ids": [
-            "why-are-genealogies-included:ancient_near_east_context:0",
-            "why-are-genealogies-included:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -41,9 +28,9 @@
     "evidence_hash": "3c9eadc2ed4795de0f13cbdd158cf5c0ef5afe8a8b28b84a840c22adfca7fab5",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:09:29.853907+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

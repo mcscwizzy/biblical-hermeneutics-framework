@@ -3,22 +3,23 @@
   "book": "1 Chronicles",
   "chapter": 3,
   "status": "validated",
+  "evidence_availability": "THIN",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "First Chronicles 3 presents a selective genealogy of David's dynasty, beginning with his sons born in Hebron and extending through the monarchy to the post-exilic restoration. This lineage functions within the broader genealogical project of 1 Chronicles 1-9, which systematically connects the restored community to Israel's founding patriarchs, tribes, and preexilic institutions. By tracing the royal succession from David through Solomon to Zerubbabel, the chapter demonstrates historical and covenantal continuity between the preexilic kingdom and the community that returned from exile, establishing the restored people's legitimate connection to their ancestral heritage.",
+          "id": "overview",
+          "text": "1 Chronicles 3 contains 24 verses. It opens with: Now these were the sons of David, that were born unto him in Hebron: the first-born, Amnon, of Ahinoam the Jezreelitess; the second, Daniel, of Abigail the Carmelitess; It concludes with: And the sons of Elioenai: Hodaviah, and Eliashib, and Pelaiah, and Akkub, and Johanan, and Delaiah, and Anani, seven.",
           "verse_refs": [
-            "1 Chronicles 3:1-23"
+            "1 Chronicles 3:1-24"
           ],
           "evidence_ids": [
             "first-chronicles-genealogical-identity"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -27,9 +28,9 @@
     "evidence_hash": "536dfcb198b75f5891c96de2472d97c6e8b45e6c856ccfd498419c319c279956",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:09:29.882022+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

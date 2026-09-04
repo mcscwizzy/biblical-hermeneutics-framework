@@ -2,65 +2,37 @@
   "reference": "2 Kings 19",
   "book": "2 Kings",
   "chapter": 19,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_overview_1",
-          "text": "This chapter records Judah's response to Sennacherib's invasion during the 701 BCE campaign in Judah. The narrative centers on Hezekiah's religious response through prayer and consultation with the prophet Isaiah, who delivers an oracle of divine protection against the Assyrian threat.",
+          "id": "overview",
+          "text": "2 Kings 19 contains 37 verses. It opens with: And it came to pass, when king Hezekiah heard it, that he rent his clothes, and covered himself with sackcloth, and went into the house of Jehovah. It concludes with: And it came to pass, as he was worshipping in the house of Nisroch his god, that Adrammelech and Sharezer smote him with the sword: and they escaped into the land of Ararat. And Esar-haddon his son reigned in his stead.",
           "verse_refs": [
             "2 Kings 19:1-37"
           ],
           "evidence_ids": [
-            "second-kings-jerusalem-delivered",
-            "taylor-prism-annals"
+            "second-kings-jerusalem-delivered"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "narrative_section",
-      "title": "Assyrian Propaganda and Invocation of Conquered Lands (2 Kings 19:10-12)",
-      "blocks": [
-        {
-          "id": "block_propaganda_1",
-          "text": "Sennacherib dispatches a second message designed to break Judean resistance through psychological pressure. He marshals rhetorical force by invoking Assyrian victories over other lands and their gods: \"Behold, thou hast heard what the kings of Assyria have done to all lands, by destroying them utterly.\" He catalogs Gozan, Haran, Rezeph, and the children of Eden in Telassar, along with Hamath and Arpad, as proof that no deity could resist Assyrian power. This propaganda strategy reflects the Assyrian imperial system, which combined military conquest with controlled messaging to assert dominance. Sennacherib's annals record his campaigns and claims of submission, though the annals and the biblical narrative present different emphases and sequences, suggesting that each source served its own rhetorical and political purposes.",
-          "verse_refs": [
-            "2 Kings 19:10-12"
-          ],
-          "evidence_ids": [
-            "assyria:ancient_near_east_context:0",
-            "assyria:historical_context:0",
-            "taylor-prism-annals:passage-relevance",
-            "sennacherib-hezekiah-tribute:passage-relevance"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "6e161bceabebcb0396bc243afa6c77e5dc006414a948ce0f3b8d2d91afefd605",
+    "evidence_hash": "2e9bf4590f753d8dc28bc5f4b3a1902a6d8a98eb8f884692b2dd83d4e69138aa",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:09:29.101449+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: narrative_section",
-    "section[1].block[0].confidence exceeds its cited evidence",
-    "section[1].block[1].confidence exceeds its cited evidence",
-    "section[2].kind is unsupported: narrative_section",
-    "section[2].block[0].confidence exceeds its cited evidence",
-    "section[3].kind is unsupported: narrative_section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

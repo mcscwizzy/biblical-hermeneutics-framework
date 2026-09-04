@@ -2,25 +2,24 @@
   "reference": "2 Kings 18",
   "book": "2 Kings",
   "chapter": 18,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "textual_analysis",
-      "title": "Sennacherib's Campaign Against Judah",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_8",
-          "text": "In the fourteenth year of Hezekiah's reign, Sennacherib king of Assyria advanced against the fortified cities of Judah. The text signals a climactic encounter between the Judahite king (who has rebelled against Assyrian rule) and one of history's most powerful imperial rulers. Sennacherib's administrative records, preserved on the Taylor Prism and other Assyrian inscriptions, confirm the 701 BCE campaign in Judah, documenting the capture of fortified cities and the extraction of tribute. Archaeological evidence from Lachish, one of Judah's major strongholds, is depicted in Sennacherib's palace reliefs at Nineveh as a significant Assyrian victory. However, the biblical account and Assyrian records diverge in their treatment of Jerusalem's ultimate fate\u2014a discrepancy that the following narrative will address.",
+          "id": "overview",
+          "text": "2 Kings 18 contains 37 verses. It opens with: Now it came to pass in the third year of Hoshea son of Elah king of Israel, that Hezekiah the son of Ahaz king of Judah began to reign. It concludes with: Then came Eliakim the son of Hilkiah, who was over the household, and Shebna the scribe, and Joah the son of Asaph the recorder, to Hezekiah with their clothes rent, and told him the words of Rabshakeh.",
           "verse_refs": [
-            "2 Kings 18:13"
+            "2 Kings 18:1-37"
           ],
           "evidence_ids": [
-            "sennacherib-hezekiah-tribute:passage-relevance",
-            "taylor-prism-annals:passage-relevance",
-            "lachish-relief-royal-siege-rhetoric:passage-relevance"
+            "second-kings-jerusalem-delivered"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -29,21 +28,11 @@
     "evidence_hash": "6f067395beeffd16d007b03dd65ae6dcc826747b5afabed6b30b0071eab4ceba",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:09:28.945807+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0].interpretation_level is invalid",
-    "section[0].block[1].interpretation_level is invalid",
-    "section[0].block[2].interpretation_level is invalid",
-    "section[0].block[3].interpretation_level is invalid",
-    "section[1].kind is unsupported: textual_analysis",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[1].block[1].interpretation_level is invalid",
-    "section[1].block[2].interpretation_level is invalid",
-    "section[2].kind is unsupported: textual_analysis"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

@@ -3,14 +3,15 @@
   "book": "2 Kings",
   "chapter": 5,
   "status": "validated",
+  "evidence_availability": "THIN",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "The chapter centers on Naaman, an Aramean military commander, who encounters Israel's prophet Elisha and is healed after following his instruction. This narrative demonstrates the God of Israel's power operating across political and national boundaries. Naaman's healing culminates in a significant confession: there is no God in all the earth except the God of Israel. This acknowledgment from a foreign military figure marks a turning point in the narrative, showing how divine power transcends expected boundaries and compels recognition from outside Israel's covenant community.",
+          "id": "overview",
+          "text": "2 Kings 5 contains 27 verses. It opens with: Now Naaman, captain of the host of the king of Syria, was a great man with his master, and honorable, because by him Jehovah had given victory unto Syria: he was also a mighty man of valor, `but he was' a leper. It concludes with: The leprosy therefore of Naaman shall cleave unto thee, and unto thy seed for ever. And he went out from his presence a leper `as white' as snow.",
           "verse_refs": [
             "2 Kings 5:1-27"
           ],
@@ -27,9 +28,9 @@
     "evidence_hash": "f096d677f27b9bbc6279f37c57c8f1dc01b516572dee809f1703965dad8826b0",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:09:28.196604+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

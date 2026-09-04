@@ -2,53 +2,37 @@
   "reference": "2 Kings 24",
   "book": "2 Kings",
   "chapter": 24,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Babylon's Campaign and Jehoiachin's Capture",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_3",
-          "text": "The fall of Jehoiachin was not Judah's final destruction. Babylon's imperial policy involved reducing the kingdom in stages: first, in 597 BCE, Jehoiachin and selected groups of royal, military, administrative, and skilled personnel were removed from Jerusalem; later, when Zedekiah revolted, Jerusalem itself was destroyed and additional deportations occurred in 587/586 BCE. This staged process, preserved in both Kings and Jeremiah, prevents readers from treating the Babylonian exile as a single undifferentiated event.",
+          "id": "overview",
+          "text": "2 Kings 24 contains 20 verses. It opens with: In his days Nebuchadnezzar king of Babylon came up, and Jehoiakim became his servant three years: then he turned and rebelled against him. It concludes with: For through the anger of Jehovah did it come to pass in Jerusalem and Judah, until he had cast them out from his presence. And Zedekiah rebelled against the king of Babylon.",
           "verse_refs": [
-            "2 Kings 24:10-12"
+            "2 Kings 24:1-20"
           ],
           "evidence_ids": [
-            "babylonian-exile:historical_context:0",
-            "kings-jeremiah-deportation-sequence:passage-relevance"
+            "babylon-1:ancient_near_east_context:0"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_4",
-          "text": "Palace ration lists recovered from Nebuchadnezzar's reign provide archaeological evidence that Jehoiachin, identified as king of Judah, continued to receive maintenance and food allocations in Babylon along with his dependents and other Judeans. These tablets confirm his official recognition in the Babylonian court after deportation, though they do not address the circumstances of his later release recorded in 2 Kings 25.",
-          "verse_refs": [
-            "2 Kings 24:8-12"
-          ],
-          "evidence_ids": [
-            "jehoiachin-palace-ration-lists",
-            "jehoiachin-palace-ration-lists:passage-relevance"
-          ],
-          "confidence": "high",
           "interpretation_level": "fact"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "15376895c9151176a6dd17b6782803dfe8d14087318b6e791736757154090703",
+    "evidence_hash": "8dc200a3cb30e506eca1acbac7c08ff39acad1661a09d660299974d6a46cc3a0",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:09:29.376823+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0].interpretation_level is invalid",
-    "section[0].block[1].confidence exceeds its cited evidence"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

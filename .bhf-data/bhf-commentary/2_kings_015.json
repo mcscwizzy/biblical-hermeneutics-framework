@@ -2,37 +2,23 @@
   "reference": "2 Kings 15",
   "book": "2 Kings",
   "chapter": 15,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "narrative_context",
-      "title": "Israel's Political Fragmentation and the Tributary Pattern",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Second Kings 15 opens Israel's final decades through a sequence of rapid leadership changes and violent power transfers. In the space of five years, the northern kingdom experiences three different kings: Zechariah reigns six months before Shallum's public assassination, and Shallum himself lasts only one month before Menahem seizes power. This accelerating instability marks the beginning of Israel's staged decline as documented by Kings. Rather than presenting territorial loss, siege, and deportation as a single catastrophic event, Kings distributes these stages across multiple notices, each revealing a new phase of vulnerability. Verse 14's account of Menahem's violent seizure of power from Shallum inaugurates Israel's tributary relationship with Assyria and represents a crucial stage in this documented sequence of decline.",
+          "id": "overview",
+          "text": "2 Kings 15 contains 38 verses. It opens with: In the twenty and seventh year of Jeroboam king of Israel began Azariah son of Amaziah king of Judah to reign. It concludes with: And Jotham slept with his fathers, and was buried with his fathers in the city of David his father: and Ahaz his son reigned in his stead.",
           "verse_refs": [
-            "2 Kings 15:8-14"
+            "2 Kings 15:1-38"
           ],
           "evidence_ids": [
-            "kings-staged-assyrian-reduction",
-            "kings-staged-assyrian-reduction:passage-relevance",
-            "kings-tribute-vassalage-sequence"
+            "assyrian-exile-of-israel:ancient_near_east_context:0"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_2",
-          "text": "Menahem's emergence as king from the provincial city of Tirzah marks a departure from established royal continuity. His position outside traditional centers of power, combined with his violent seizure of the throne, reflects desperation and fragmentation within Israel's leadership. The tributary sequence documented throughout this period of Kings shows that Menahem's reign will be defined not by military strength or independent policy, but by financial obligations to Assyrian overlords. His rise inaugurates the transition from Israel as an independent kingdom to Israel as a vassal state, where tributary payments become a matter of political survival.",
-          "verse_refs": [
-            "2 Kings 15:14"
-          ],
-          "evidence_ids": [
-            "kings-tribute-vassalage-sequence",
-            "kings-tribute-vassalage-sequence:passage-relevance"
-          ],
-          "confidence": "high",
           "interpretation_level": "fact"
         }
       ]
@@ -42,13 +28,11 @@
     "evidence_hash": "30fd87d79291f8652dc556cc608b75f2bdf5d90b8d811f510f2e9777bf819d50",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:09:28.560999+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].kind is unsupported: narrative_context"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

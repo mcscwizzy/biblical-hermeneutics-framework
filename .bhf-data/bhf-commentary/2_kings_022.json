@@ -3,29 +3,17 @@
   "book": "2 Kings",
   "chapter": 22,
   "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "The Discovery of the Book of the Law",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "In the eighteenth year of his reign, King Josiah dispatches his scribe Shaphan to manage temple finances and oversee repairs. Shaphan operates as a royal administrative scribe\u2014a recognized institutional role in ancient Israel that required transmitted instruction, wise judgment, and responsibility for significant court and temple matters. Scribal learning centered on the interpretation of sacred texts and teaching, making such officials indispensable intermediaries between the king and the priesthood.",
+          "id": "overview",
+          "text": "2 Kings 22 contains 20 verses. It opens with: Josiah was eight years old when he began to reign; and he reigned thirty and one years in Jerusalem: and his mother's name was Jedidah the daughter of Adaiah of Bozkath. It concludes with: Therefore, behold, I will gather thee to thy fathers, and thou shalt be gathered to thy grave in peace, neither shall thine eyes see all the evil which I will bring upon this place. And they brought the king word again.",
           "verse_refs": [
-            "2 Kings 22:3\u20137"
-          ],
-          "evidence_ids": [
-            "scribes:historical_context:0",
-            "scribes:hebraic_worldview:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_2",
-          "text": "During the repair work, the high priest Hilkiah discovers a scroll identified as 'the book of the law' in the temple and delivers it to Shaphan, who reads it aloud before the king. The scroll's contents deeply disturb Josiah, causing him to tear his garments and command an immediate inquiry into its meaning. This discovery initiates a comprehensive response: Josiah seeks prophetic counsel, renews the covenant with Yahweh, removes prohibited worship practices, and celebrates Passover. Yet the narrative preserves a sobering theological note\u2014despite Josiah's reforms, the accumulated judgment upon Judah will not be averted.",
-          "verse_refs": [
-            "2 Kings 22:8\u201313"
+            "2 Kings 22:1-20"
           ],
           "evidence_ids": [
             "second-kings-josiah-reform"
@@ -40,9 +28,9 @@
     "evidence_hash": "68b272842e3547d0cd5857cd8f6fba948e5bc49fc7a2f691f7a0089f9163721e",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:09:29.203458+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

@@ -3,21 +3,20 @@
   "book": "2 Kings",
   "chapter": 8,
   "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Archaeological Context",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Archaeological discoveries from Tel Dan and related sites in the Levant provide material evidence\u2014including inscriptions and excavated remains\u2014that illuminate the political and cultural context of the ancient world depicted in 2 Kings 8, particularly regarding the region around Damascus where Elisha encounters Hazael and Ben-Hadad.",
+          "id": "overview",
+          "text": "2 Kings 8 contains 29 verses. It opens with: Now Elisha had spoken unto the woman, whose son he had restored to life, saying, Arise, and go thou and thy household, and sojourn wheresoever thou canst sojourn: for Jehovah hath called for a famine; and it shall also come upon the land seven years. It concludes with: And king Joram returned to be healed in Jezreel of the wounds which the Syrians had given him at Ramah, when he fought against Hazael king of Syria. And Ahaziah the son of Jehoram king of Judah went down to see Joram the son of Ahab in Jezreel, because he was sick.",
           "verse_refs": [
-            "2 Kings 8:7-15"
+            "2 Kings 8:1-29"
           ],
           "evidence_ids": [
-            "tell-dan-excavations:ancient_near_east_context:0",
-            "tel-dan-stele:ancient_near_east_context:0",
-            "tel-rehov-honey-workshop:ancient_near_east_context:0"
+            "balaam-inscription:ancient_near_east_context:0"
           ],
           "confidence": "medium",
           "interpretation_level": "fact"
@@ -29,9 +28,9 @@
     "evidence_hash": "8ef50471bc99d8153f205fe47064f127d3bc7472765d4a94d916a6578e0b2438",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:09:28.258927+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

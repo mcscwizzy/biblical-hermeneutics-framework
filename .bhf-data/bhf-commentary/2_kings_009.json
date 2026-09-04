@@ -2,47 +2,37 @@
   "reference": "2 Kings 9",
   "book": "2 Kings",
   "chapter": 9,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "historical_context",
-      "title": "External Evidence for Jehu",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_5",
-          "text": "Outside the biblical narrative, Jehu appears in Assyrian records as a tributary king submitting to Shalmaneser III. The Black Obelisk of Shalmaneser III, erected at the palace complex of Kalhu/Nimrud, depicts labeled reliefs of subject peoples. One register presents 'Iaua, son of Omri' in Levantine dress, prostrating before the Assyrian king with tribute bearers presenting luxury goods. This inscription dates to Shalmaneser III's 18th regnal year, shortly after the biblical chronology places Jehu's coup. The obelisk supplies near-contemporary, external corroboration that Jehu ruled and submitted to Assyrian dominion, though it does not detail the coup narrative itself.",
+          "id": "overview",
+          "text": "2 Kings 9 contains 37 verses. It opens with: And Elisha the prophet called one of the sons of the prophets, and said unto him, Gird up thy loins, and take this vial of oil in thy hand, and go to Ramoth-gilead. It concludes with: and the body of Jezebel shall be as dung upon the face of the field in the portion of Jezreel, so that they shall not say, This is Jezebel.",
           "verse_refs": [
-            "2 Kings 9:1-13"
+            "2 Kings 9:1-37"
           ],
           "evidence_ids": [
-            "black-obelisk-jehu-tribute",
-            "black-obelisk:historical_context:0",
-            "black-obelisk:ancient_near_east_context:0",
-            "black-obelisk-jehu-tribute:passage-relevance"
+            "black-obelisk-jehu-tribute"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "6f35d8795ce736da6a11d41606a855f66057e9ac7d10b26c724d0f417399e891",
+    "evidence_hash": "494848b844e7dce5a097070cc27702332bd5444176006498f23286c9ffdcf608",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:09:28.315461+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0].confidence exceeds its cited evidence",
-    "section[1].kind is unsupported: narrative_section",
-    "section[1].block[0].confidence exceeds its cited evidence",
-    "section[2].kind is unsupported: narrative_section",
-    "section[2].block[0].confidence exceeds its cited evidence",
-    "section[3].kind is unsupported: narrative_section",
-    "section[3].block[0].confidence exceeds its cited evidence"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
