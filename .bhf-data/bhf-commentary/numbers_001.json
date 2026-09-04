@@ -1,0 +1,38 @@
+{
+  "reference": "Numbers 1",
+  "book": "Numbers",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Numbers 1 contains 54 verses. It opens with: And Jehovah spake unto Moses in the wilderness of Sinai, in the tent of meeting, on the first day of the second month, in the second year after they were come out of the land of Egypt, saying, It concludes with: Thus did the children of Israel; according to all that Jehovah commanded Moses, so did they.",
+          "verse_refs": [
+            "Numbers 1:1-54"
+          ],
+          "evidence_ids": [
+            "numbers-literary-journey"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "92580349fabbbb31adebefa0046957f9ffb21aa79277b310e9930dfcc1f1b6e1",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T17:59:05.295438+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}
