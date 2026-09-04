@@ -1,0 +1,38 @@
+{
+  "reference": "Job 12",
+  "book": "Job",
+  "chapter": 12,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Job 12 contains 25 verses. It opens with: Then Job answered and said, It concludes with: They grope in the dark without light; And he maketh them to stagger like a drunken man.",
+          "verse_refs": [
+            "Job 12:1-25"
+          ],
+          "evidence_ids": [
+            "job-lament-dialogues"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "36de92b7a81f22a192a76ea68d284ca47f65d6c7ce6345ab06bb724fc6d7b72b",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:14:28.089927+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}
