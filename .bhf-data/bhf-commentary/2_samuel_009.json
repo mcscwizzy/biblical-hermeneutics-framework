@@ -2,43 +2,35 @@
   "reference": "2 Samuel 9",
   "book": "2 Samuel",
   "chapter": 9,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "DATA_GAP",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "This chapter occupies a significant place in David's reign over united Israel. Positioned chronologically during David's military consolidation and territorial expansion, the narrative presents an act of kindness toward Mephibosheth, Jonathan's son. The episode demonstrates how the king managed relationships with the residual house of Saul through sustained acts of loyalty and material provision, establishing a permanent arrangement that integrated the former enemy household into the royal household.",
+          "id": "overview",
+          "text": "2 Samuel 9 contains 13 verses. It opens with: And David said, Is there yet any that is left of the house of Saul, that I may show him kindness for Jonathan's sake? It concludes with: So Mephibosheth dwelt in Jerusalem; for he did eat continually at the king's table. And he was lame in both his feet.",
           "verse_refs": [
-            "2 Samuel 9:1",
-            "2 Samuel 9:7",
-            "2 Samuel 9:10"
+            "2 Samuel 9:1-13"
           ],
-          "evidence_ids": [
-            "2-samuel:timeline:4",
-            "2-samuel:historical_setting:0"
-          ],
-          "confidence": "medium",
+          "evidence_ids": [],
+          "confidence": "high",
           "interpretation_level": "fact"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "6469660b59ae8b512de3c6514365903d3892298010e621fa42a328ac6c6c14a7",
+    "evidence_hash": "1d4b3fcc8f8858d90d0a7f41e04d6d80a6bee32bba574ab30f5c2aa9d26f7fe7",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:07:48.524972+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: cultural_worldview",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[2].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

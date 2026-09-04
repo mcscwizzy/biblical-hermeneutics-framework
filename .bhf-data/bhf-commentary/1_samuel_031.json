@@ -2,81 +2,21 @@
   "reference": "1 Samuel 31",
   "book": "1 Samuel",
   "chapter": 31,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "The Death of Saul at Mount Gilboa",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "This chapter narrates the culminating battle between Israel and the Philistines at Mount Gilboa, which ends with Saul's death and the collapse of his military forces. The narrative presents this as the decisive moment in the regional conflict that has driven the entire preceding account of escalating Philistine pressure and Saul's reign.",
+          "id": "overview",
+          "text": "1 Samuel 31 contains 13 verses. It opens with: Now the Philistines fought against Israel: and the men of Israel fled from before the Philistines, and fell down slain in mount Gilboa. It concludes with: And they took their bones, and buried them under the tamarisk-tree in Jabesh, and fasted seven days.",
           "verse_refs": [
-            "1 Samuel 31:1"
+            "1 Samuel 31:1-13"
           ],
           "evidence_ids": [
-            "1-samuel:timeline:7",
-            "1-samuel:key_places:18",
-            "1-samuel:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "narrative_section",
-      "title": "The Battle and Saul's Death (31:1-6)",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "The Israelite forces are routed at Mount Gilboa with significant casualties, including Saul's three sons: Jonathan, Abinadab, and Malchishua. Pressed by Philistine archers and severely wounded, Saul requests his armor-bearer to kill him to prevent capture and abuse by uncircumcised enemies. When the armor-bearer refuses, Saul falls on his own sword. The armor-bearer follows suit, dying with his king. The passage emphasizes capture and ritual humiliation as catastrophic outcomes in ancient Near Eastern warfare, shaping how the narrative presents Saul's final choice.",
-          "verse_refs": [
-            "1 Samuel 31:1-6"
-          ],
-          "evidence_ids": [
-            "1-samuel:ancient_near_east_context:0",
-            "1-samuel:hebraic_worldview:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "narrative_section",
-      "title": "Philistine Treatment of the Slain (31:8-10)",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "The Philistines, upon discovering Saul's body the following day, undertake systematic desecration: decapitation, armor removal, and display of the corpse on the wall of Beth-shean, a major regional fortification. His armor is distributed to Philistine sanctuaries and messengers carry tidings of the victory throughout the region. This treatment reflects ancient Near Eastern practices for trophy-taking and public demonstration of military dominance, with Beth-shean serving as a significant center for such displays.",
-          "verse_refs": [
-            "1 Samuel 31:8-10"
-          ],
-          "evidence_ids": [
-            "beth-shean-excavations:historical_context:0",
-            "1-samuel:ancient_near_east_context:0",
-            "1-samuel:archaeology:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "narrative_section",
-      "title": "Recovery and Burial by Jabesh-gilead (31:11-13)",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "The inhabitants of Jabesh-gilead, upon hearing of the Philistine desecration, mobilize their valiant men for a dangerous nighttime retrieval mission. They recover Saul's body and those of his three sons from the wall of Beth-shean, return them to Jabesh, cremate the remains, and bury the bones beneath a tamarisk tree. They observe a seven-day fast in mourning. The narrative presents this action as embodying communal honor and care for the dead despite military defeat, reflecting the values that shape its evaluation of human conduct.",
-          "verse_refs": [
-            "1 Samuel 31:11-13"
-          ],
-          "evidence_ids": [
-            "1-samuel:key_places:9",
-            "1-samuel:ancient_near_east_context:0",
-            "1-samuel:hebraic_worldview:0"
+            "beth-shean-excavations:ancient_near_east_context:0"
           ],
           "confidence": "medium",
           "interpretation_level": "fact"
@@ -85,18 +25,14 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "be6f187ca3967640d8b4f13530be07f28cceef0ed396d8f9cf2a0332782a52a8",
+    "evidence_hash": "2655ccbc444d3e1858e087dfe0177c3fa086d646511e3f8dd2fb130c8f2226b6",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:07:48.017775+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: narrative_section",
-    "section[2].kind is unsupported: narrative_section",
-    "section[3].kind is unsupported: narrative_section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

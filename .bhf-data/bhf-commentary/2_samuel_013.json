@@ -2,39 +2,35 @@
   "reference": "2 Samuel 13",
   "book": "2 Samuel",
   "chapter": 13,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "DATA_GAP",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "This chapter records an episode of household violence within David's royal family, specifically involving Amnon, Tamar, and Absalom. The narrative appears in the textual sequence of David's reign documenting royal household dynamics and internal conflict.",
+          "id": "overview",
+          "text": "2 Samuel 13 contains 39 verses. It opens with: And it came to pass after this, that Absalom the son of David had a fair sister, whose name was Tamar; and Amnon the son of David loved her. It concludes with: And `the soul of' king David longed to go forth unto Absalom: for he was comforted concerning Amnon, seeing he was dead.",
           "verse_refs": [
-            "2 Samuel 13"
+            "2 Samuel 13:1-39"
           ],
-          "evidence_ids": [
-            "2-samuel:timeline:6"
-          ],
-          "confidence": "medium",
+          "evidence_ids": [],
+          "confidence": "high",
           "interpretation_level": "fact"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "996df95e6905e323979e0c4a7b723db93baae686d1cc1a526498d6f29a49e9c2",
+    "evidence_hash": "3ed2e50ebe877ba11133a9657cb33b1270d47e9353974ff37ed5090640632a2d",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:07:48.606478+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: theological_context",
-    "section[1].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

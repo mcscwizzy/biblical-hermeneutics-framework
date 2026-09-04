@@ -3,21 +3,20 @@
   "book": "2 Samuel",
   "chapter": 8,
   "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Archaeological Context",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "The events of 2 Samuel 8 are situated within the ancient Near Eastern world. Archaeological sites such as Tel Dan and Tel Rehov provide material evidence through inscriptions, artifacts, excavation layers, and administrative remains that contextualize the cultural and political setting of this period. These excavations help illuminate the broader world in which the biblical narrative is set.",
+          "id": "overview",
+          "text": "2 Samuel 8 contains 18 verses. It opens with: And after this it came to pass, that David smote the Philistines, and subdued them: and David took the bridle of the mother city out of the hand of the Philistines. It concludes with: and Benaiah the son of Jehoiada `was over' the Cherethites and the Pelethites; and David's sons were chief ministers.",
           "verse_refs": [
-            "2 Samuel 8:1-14"
+            "2 Samuel 8:1-18"
           ],
           "evidence_ids": [
-            "tel-dan-stele:ancient_near_east_context:0",
-            "tel-rehov-honey-workshop:ancient_near_east_context:0",
-            "tell-dan-excavations:ancient_near_east_context:0"
+            "balaam-inscription:ancient_near_east_context:0"
           ],
           "confidence": "medium",
           "interpretation_level": "fact"
@@ -29,9 +28,9 @@
     "evidence_hash": "f5469df21898b2c8a0d45c76b51168713a0fe3d261a65506e0108e79843a8150",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:07:48.501351+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

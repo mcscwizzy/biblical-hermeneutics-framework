@@ -2,17 +2,18 @@
   "reference": "2 Samuel 6",
   "book": "2 Samuel",
   "chapter": 6,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "David's transport of the ark to Jerusalem represents a transformative moment in establishing the city as Israel's religious center. The narrative unfolds in two movements: an initial attempt that ends in tragedy when Uzzah dies attempting to steady the ark as oxen stumble, and a second, successful journey after the ark rests three months in Obed-edom's household, where God brings blessing. This arc demonstrates both the sacred significance of the ark to David's vision and the complex protocols governing approach to this object of divine presence.",
+          "id": "overview",
+          "text": "2 Samuel 6 contains 23 verses. It opens with: And David again gathered together all the chosen men of Israel, thirty thousand. It concludes with: And Michal the daughter of Saul had no child unto the day of her death.",
           "verse_refs": [
-            "2 Samuel 6:1-13"
+            "2 Samuel 6:1-23"
           ],
           "evidence_ids": [
             "second-samuel-jerusalem-ark"
@@ -27,18 +28,11 @@
     "evidence_hash": "7d76ed9971ebe41b292f615b9b66761b68a68c184794682c4eeeca7881a72553",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:07:48.305460+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: narrative_section",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[2].kind is unsupported: narrative_section",
-    "section[2].block[0].interpretation_level is invalid",
-    "section[3].kind is unsupported: context_section",
-    "section[3].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

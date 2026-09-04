@@ -2,53 +2,18 @@
   "reference": "2 Samuel 18",
   "book": "2 Samuel",
   "chapter": 18,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "THIN",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "The Battle of the Forest of Ephraim concludes the conflict of Absalom's rebellion, in which Absalom had built popular support against David and declared himself king, successfully driving David from Jerusalem. The chapter narrates the devastating military encounter between David's forces and Absalom's army, where the terrain itself becomes as destructive as combat. David's explicit command to his commanders to deal gently with the young man Absalom reflects the painful complexity of a father-king facing his rebellious son. However, Joab, David's commander, ultimately disregards this command with fatal consequences for Absalom, resulting in the end of the rebellion through the death of its leader.",
+          "id": "overview",
+          "text": "2 Samuel 18 contains 33 verses. It opens with: And David numbered the people that were with him, and set captains of thousands and captains of hundreds over them. It concludes with: And the king was much moved, and went up to the chamber over the gate, and wept: and as he went, thus he said, O my son Absalom, my son, my son Absalom! would I had died for thee, O Absalom, my son, my son!",
           "verse_refs": [
-            "2 Samuel 18"
-          ],
-          "evidence_ids": [
-            "second-samuel-absalom-rebellion"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "exegetical",
-      "title": "David's Conflicted Command",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "David's instruction to all three commanders\u2014Joab, Abishai, and Ittai\u2014to 'deal gently' with Absalom reveals the internal conflict of a king confronting his son's rebellion. This command is heard by all the people and therefore carries public significance. The tension between military necessity and paternal mercy becomes the moral center of the chapter: David seeks the defeat of the rebellion while seeking to spare the life of his son. That Joab chooses to ignore this direct order demonstrates both the autonomy of military commanders in this period and the tragic breakdown of obedience within David's own house.",
-          "verse_refs": [
-            "2 Samuel 18:5"
-          ],
-          "evidence_ids": [
-            "second-samuel-absalom-rebellion"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "narrative",
-      "title": "The End of the Rebellion",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "The confrontation between Absalom and David's servants in the forest of Ephraim proves decisive. Absalom dies when his head catches in the branches of a great oak as his mule passes beneath it\u2014a moment of apparent accident that Joab converts into deliberate action. By killing Absalom despite David's explicit command, Joab ends both the military conflict and the rebellion's focal point. The death of Absalom, son and rebel, represents the tragic resolution of a family divided against itself and a kingdom at war with itself.",
-          "verse_refs": [
-            "2 Samuel 18:6-15"
+            "2 Samuel 18:1-33"
           ],
           "evidence_ids": [
             "second-samuel-absalom-rebellion"
@@ -63,14 +28,11 @@
     "evidence_hash": "2634bf81581633a09d8313326ed5f06dfac87c60f5ce3847d45c245680e8a4b7",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:07:48.680146+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: exegetical",
-    "section[2].kind is unsupported: narrative"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
