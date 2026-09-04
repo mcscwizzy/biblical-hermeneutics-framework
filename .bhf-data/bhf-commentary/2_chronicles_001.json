@@ -3,40 +3,17 @@
   "book": "2 Chronicles",
   "chapter": 1,
   "status": "validated",
+  "evidence_availability": "THIN",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Second Chronicles 1 opens by establishing Solomon's secure position as king, with divine favor explicitly upon him. The chapter presents Solomon gathering Israel's leadership\u2014military commanders, judges, and tribal heads\u2014demonstrating his authority over the unified kingdom he has inherited from David.",
+          "id": "overview",
+          "text": "2 Chronicles 1 contains 17 verses. It opens with: And Solomon the son of David was strengthened in his kingdom, and Jehovah his God was with him, and magnified him exceedingly. It concludes with: And they fetched up and brought out of Egypt a chariot for six hundred `shekels' of silver, and a horse for a hundred and fifty: and so for all the kings of the Hittites, and the kings of Syria, did they bring them out by their means.",
           "verse_refs": [
-            "2 Chronicles 1:1-2"
-          ],
-          "evidence_ids": [
-            "second-chronicles-solomon-temple"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_2",
-          "text": "The narrative centers on Solomon's journey to Gibeon with this assembly to encounter God at the tabernacle (the tent of meeting), where the bronze altar crafted by Bezalel stands. This detail is significant: while the ark itself has been brought to Jerusalem by David, the primary place of sacrificial worship remains at Gibeon. Solomon's massive offering of a thousand burnt offerings demonstrates both his devotion and his role as the kingdom's religious leader.",
-          "verse_refs": [
-            "2 Chronicles 1:3-5"
-          ],
-          "evidence_ids": [
-            "second-chronicles-solomon-temple"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_3",
-          "text": "In response to Solomon's sacrifice and prayer, God appears to him by night and invites him to request whatever he desires. Solomon's response reflects his character: rather than asking for military power, wealth, or victory over enemies, he requests wisdom and knowledge to govern Israel faithfully. God commends this choice and grants not only the requested wisdom but also unprecedented riches, wealth, and honor\u2014surpassing all kings before and after him. This exchange establishes the theological framework for the subsequent narrative of temple building and national prosperity.",
-          "verse_refs": [
-            "2 Chronicles 1:6-12"
+            "2 Chronicles 1:1-17"
           ],
           "evidence_ids": [
             "second-chronicles-solomon-temple"
@@ -51,13 +28,11 @@
     "evidence_hash": "9ba1160a0cd92258465fdb48d16e33b53d6c4a3b742f9f5e1400df847bfa3668",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:11:23.353714+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "root.status is unsupported: complete"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

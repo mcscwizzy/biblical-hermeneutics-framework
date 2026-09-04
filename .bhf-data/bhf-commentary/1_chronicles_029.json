@@ -3,58 +3,23 @@
   "book": "1 Chronicles",
   "chapter": 29,
   "status": "validated",
+  "evidence_availability": "THIN",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "First Chronicles 29 records David's comprehensive preparation for Solomon's temple construction. Though David himself will not build the temple, he orchestrates an extensive effort to ensure that Solomon inherits both the materials and infrastructure necessary for the work. David frames this not as his private project but as a public assembly responsibility, emphasizing that the temple belongs to God, not merely to the monarchy.",
+          "id": "overview",
+          "text": "1 Chronicles 29 contains 30 verses. It opens with: And David the king said unto all the assembly, Solomon my son, whom alone God hath chosen, is yet young and tender, and the work is great; for the palace is not for man, but for Jehovah God. It concludes with: with all his reign and his might, and the times that went over him, and over Israel, and over all the kingdoms of the countries.",
           "verse_refs": [
-            "1 Chronicles 29:1"
+            "1 Chronicles 29:1-30"
           ],
           "evidence_ids": [
             "first-chronicles-david-prepares"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_2",
-          "text": "David catalogs the materials he has amassed for the temple: gold, silver, bronze, iron, wood, onyx stones, and various precious and colored stones suitable for construction and decoration. Beyond these prepared resources, David makes a personal contribution of gold and silver from his own treasury, emphasizing his personal commitment to the project. This accumulation represents both the practical necessities of construction and the grandeur befitting a temple to God.",
-          "verse_refs": [
-            "1 Chronicles 29:2-4"
-          ],
-          "evidence_ids": [
-            "first-chronicles-david-prepares"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_3",
-          "text": "David's preparation extends beyond materials to the organizational infrastructure: he has established priests, Levites, musicians, gatekeepers, treasurers, and other leaders necessary for the temple's operation and maintenance. By organizing this framework in advance, David ensures that when Solomon begins construction, the human structures for worship, governance, and ritual are already in place and ready to serve.",
-          "verse_refs": [
-            "1 Chronicles 29:1-5"
-          ],
-          "evidence_ids": [
-            "first-chronicles-david-prepares"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_4",
-          "text": "The assembly's response demonstrates public support for the temple project. Princes, military leaders, and rulers voluntarily contribute vast quantities of precious metals and materials according to verse 6-7. This collective giving reflects willing participation rather than obligation, emphasized by David's repeated challenge asking who will offer willingly. The assembly's joy in their own generous giving reveals the spiritual dimension undergirding the material preparation effort.",
-          "verse_refs": [
-            "1 Chronicles 29:5-9"
-          ],
-          "evidence_ids": [
-            "first-chronicles-david-prepares"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -63,9 +28,9 @@
     "evidence_hash": "87950d32b7036a5a334c2eb5170873d210198f5a4d9442ee63450a44cc0a6676",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:11:23.319698+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

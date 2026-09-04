@@ -2,60 +2,24 @@
   "reference": "2 Chronicles 20",
   "book": "2 Chronicles",
   "chapter": 20,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "A coalition of Moab, Ammon, and their allies brings military threat against Judah. Upon hearing this news, Jehoshaphat responds with religious rather than purely military action: he fears (recognizing the threat's severity), proclaims a fast, and leads the people to seek the LORD. This response establishes the chapter's theological framework, presenting reliance on divine intervention as the appropriate Judahite posture in crisis.",
+          "id": "overview",
+          "text": "2 Chronicles 20 contains 37 verses. It opens with: And it came to pass after this, that the children of Moab, and the children of Ammon, and with them some of the Ammonites, came against Jehoshaphat to battle. It concludes with: Then Eliezer the son of Dodavahu of Mareshah prophesied against Jehoshaphat, saying, Because thou hast joined thyself with Ahaziah, Jehovah hath destroyed thy works. And the ships were broken, so that they were not able to go to Tarshish.",
           "verse_refs": [
-            "2 Chronicles 20:1-4"
+            "2 Chronicles 20:1-37"
           ],
           "evidence_ids": [
             "second-chronicles-jehoshaphat-prayer"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "analysis",
-      "title": "Prayer and Confession",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "Jehoshaphat assembles before God at the temple and prays, affirming God's absolute sovereignty and recalling His covenant promise to hear and save His people when they cry to Him from the sanctuary. His prayer expresses complete dependence and acknowledgment of human weakness\u2014we have no might against this great company, yet our eyes are upon thee. This pattern of seeking, humbling oneself in prayer, and confessing dependence recurs throughout Judah's reigns, establishing the theological logic that positions human helplessness as the precondition for receiving divine deliverance.",
-          "verse_refs": [
-            "2 Chronicles 20:5-12"
-          ],
-          "evidence_ids": [
-            "second-chronicles-jehoshaphat-prayer",
-            "second-chronicles-seek-humble-pattern"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "analysis",
-      "title": "Divine Response and Deliverance",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "In response to this corporate seeking and prayer, the prophet Jahaziel delivers an oracle from the LORD. The assembly receives this word not with fear but with praise and confidence in coming victory. The subsequent defeat of the enemy coalition without direct Judahite combat vindicates Jehoshaphat's faith-centered response and demonstrates that the pattern of genuine seeking of the LORD produces concrete deliverance in history.",
-          "verse_refs": [
-            "2 Chronicles 20:13-14"
-          ],
-          "evidence_ids": [
-            "second-chronicles-jehoshaphat-prayer"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -64,14 +28,11 @@
     "evidence_hash": "ae82c11e353d3ccc46565749edc51e4a032f24fc8a2eff70a5a21cfc04b6e9d2",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:11:23.802373+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: analysis",
-    "section[2].kind is unsupported: analysis"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

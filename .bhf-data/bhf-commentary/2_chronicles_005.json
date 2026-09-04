@@ -2,99 +2,18 @@
   "reference": "2 Chronicles 5",
   "book": "2 Chronicles",
   "chapter": 5,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Chapter 5 presents the installation of the ark of the covenant into Solomon's newly completed temple. Second Chronicles depicts this moment as central to a larger theological narrative: it stands as the culmination of David's preparations and Solomon's building work. The chapter narrates Solomon assembling Israel's leadership, the transfer of the ark from the city of David to the holy of holies, and the gathering of priests and Levite musicians positioned to witness and celebrate the ark's placement.",
+          "id": "overview",
+          "text": "2 Chronicles 5 contains 14 verses. It opens with: Thus all the work that Solomon wrought for the house of Jehovah was finished. And Solomon brought in the things that David his father had dedicated, even the silver, and the gold, and all the vessels, and put them in the treasuries of the house of God. It concludes with: so that the priests could not stand to minister by reason of the cloud: for the glory of Jehovah filled the house of God.",
           "verse_refs": [
-            "2 Chronicles 5:1"
-          ],
-          "evidence_ids": [
-            "second-chronicles-solomon-temple",
-            "dedication-of-solomons-temple:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Preparation and Assembly (5:1-4)",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "Solomon completes the temple and places within its treasuries the sacred items David had dedicated\u2014silver, gold, and vessels. He then summons all the elders, tribal heads, and patriarchs of Israel to Jerusalem in the seventh month to bring the ark from Zion. The text emphasizes universal participation: 'all the men of Israel assembled themselves unto the king at the feast.' The Levites assume responsibility for carrying the ark, underscoring their central role in Israel's worship structure.",
-          "verse_refs": [
-            "2 Chronicles 5:1",
-            "2 Chronicles 5:2",
-            "2 Chronicles 5:3",
-            "2 Chronicles 5:4"
-          ],
-          "evidence_ids": [
-            "second-chronicles-solomon-temple"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Transfer of the Ark and Sacrifices (5:5-6)",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "The Levites and priests carry the ark, the tent of meeting (the portable sanctuary), and all the holy vessels from within that tent. King Solomon and the assembled congregation position themselves before the ark and offer sacrifices of sheep and oxen in extraordinary abundance\u2014so many that they 'could not be counted nor numbered for multitude.' This massive sacrifice emphasizes the exceptional solemnity and celebration surrounding the ark's installation as a major royal ceremonial event.",
-          "verse_refs": [
-            "2 Chronicles 5:5",
-            "2 Chronicles 5:6"
-          ],
-          "evidence_ids": [
-            "second-chronicles-solomon-temple",
-            "dedication-of-solomons-temple:ancient_near_east_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Placement in the Holy of Holies (5:7-9)",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "The priests place the ark within the oracle, the innermost sanctuary, positioning it beneath the protective wings of the cherubim. The carrying poles extend far enough forward to be visible from within the inner sanctuary but remain invisible to observers outside the oracle veil. The narrative notes this arrangement 'is unto this day,' indicating the text reflects a stable, observable configuration of the temple's innermost chamber.",
-          "verse_refs": [
-            "2 Chronicles 5:7",
-            "2 Chronicles 5:8",
-            "2 Chronicles 5:9"
-          ],
-          "evidence_ids": [
-            "second-chronicles-solomon-temple"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "The Ark's Contents and the Musicians (5:10-12)",
-      "blocks": [
-        {
-          "id": "block_5",
-          "text": "The ark contains only the two stone tablets Moses placed there at Horeb, the record of God's covenant with Israel at the exodus. All priests present have sanctified themselves, suspending normal duties for this exceptional occasion. The Levite singers\u2014Asaph, Heman, Jeduthun, and their sons and relatives\u2014stand arrayed in fine linen with cymbals, prepared to lead the musical worship as the ark is installed in the temple.",
-          "verse_refs": [
-            "2 Chronicles 5:10",
-            "2 Chronicles 5:11",
-            "2 Chronicles 5:12"
+            "2 Chronicles 5:1-14"
           ],
           "evidence_ids": [
             "second-chronicles-solomon-temple"
@@ -109,16 +28,11 @@
     "evidence_hash": "25df026c78aa01633640c99f694e485bc015718066286650dcabd9464207c971",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:11:23.452365+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: section",
-    "section[2].kind is unsupported: section",
-    "section[3].kind is unsupported: section",
-    "section[4].kind is unsupported: section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

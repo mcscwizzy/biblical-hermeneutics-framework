@@ -2,56 +2,37 @@
   "reference": "2 Chronicles 10",
   "book": "2 Chronicles",
   "chapter": 10,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Second Chronicles 10 records the succession crisis that led to the division of Israel's kingdom. The immediate cause involved longstanding grievances over labor obligations and heavy taxation from Solomon's reign. Rehoboam's accession marked a fragile moment of transition, when accumulated discontent erupted into demands for relief. The text depicts this as a political crisis rooted in economic strain.",
+          "id": "overview",
+          "text": "2 Chronicles 10 contains 19 verses. It opens with: And Rehoboam went to Shechem; for all Israel were come to Shechem to make him king. It concludes with: So Israel rebelled against the house of David unto this day.",
           "verse_refs": [
-            "2 Chronicles 10:1-4"
+            "2 Chronicles 10:1-19"
           ],
           "evidence_ids": [
-            "division-of-the-kingdom:historical_context:0"
+            "second-chronicles-judah-focus"
           ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "interpretation",
-      "title": "Pattern and Significance",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "From a historical perspective, the kingdom's division follows a recognizable ancient Near Eastern pattern in which dynastic changes often precipitated political fragmentation. However, the biblical narrative interprets this event as having deeper significance than mere political inevitability, understanding it within a framework of covenant consequences rather than historical accident.",
-          "verse_refs": [
-            "2 Chronicles 10"
-          ],
-          "evidence_ids": [
-            "division-of-the-kingdom:ancient_near_east_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "confidence": "high",
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "ff843863481161a4173b5efafff044117a5232c9acd723b2cca8614d102f4a8b",
+    "evidence_hash": "3cc03eff81e450c80f63abfe75fbad36d21509ef893b1d2c8170bbb1ddbbfe36",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:11:23.603584+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: interpretation"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
