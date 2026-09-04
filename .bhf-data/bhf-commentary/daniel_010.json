@@ -3,47 +3,34 @@
   "book": "Daniel",
   "chapter": 10,
   "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Daniel 10:1 dates the revelation to \"the third year of Cyrus king of Persia.\" This places the chapter within the Persian period after Cyrus II's conquest of Babylon in 539 BCE, when Judah became the small province of Yehud within the broader imperial administrative system. The Persian empire supplied the political framework for the early Second Temple era, characterized by provincial governance structures, the role of the priesthood, and Torah-centered religious life. Daniel's visions thus emerge from a community living under imperial rule, where Jewish religious and civic life was reconstructed within the constraints and possibilities of Achaemenid policy.",
+          "id": "overview",
+          "text": "Daniel 10 contains 21 verses. It opens with: In the third year of Cyrus king of Persia a thing was revealed unto Daniel, whose name was called Belteshazzar; and the thing was true, even a great warfare: and he understood the thing, and had understanding of the vision. It concludes with: But I will tell thee that which is inscribed in the writing of truth: and there is none that holdeth with me against these, but Michael your prince.",
           "verse_refs": [
-            "Daniel 10:1"
-          ],
-          "evidence_ids": [
-            "persia:historical_context:0",
-            "persia:second_temple_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_2",
-          "text": "Daniel 10 presents a vision of history shaped by conflict between heavenly powers. An angelic messenger appears to Daniel bearing a revelation about coming events and conflicts among earthly kingdoms. The messenger's own journey embodies this heavenly drama: he was delayed by the \"prince of Persia\" but was aided by Michael in overcoming that resistance. The chapter frames history as a cosmos where divine and demonic beings actively engage in the course of human affairs, particularly the rise and fall of great kingdoms and their wars. Through the revelation, the hidden dimensions of earthly political change are disclosed\u2014the spiritual warfare underlying the visible events of history.",
-          "verse_refs": [
-            "Daniel 10:1",
-            "Daniel 10:13"
+            "Daniel 10:1-21"
           ],
           "evidence_ids": [
             "daniel-heavenly-conflict"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "02019c9b6c1e634649c4bb7a1594fd8c99ba5bca553eeabfe224472b10d4e07b",
+    "evidence_hash": "496e4466a6cb2971ded4a3a2cbd52e45af5a0a4e1f136b567d749452af9b0531",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:30:34.506829+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

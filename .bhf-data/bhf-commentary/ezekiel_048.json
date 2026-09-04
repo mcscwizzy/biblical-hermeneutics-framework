@@ -2,152 +2,37 @@
   "reference": "Ezekiel 48",
   "book": "Ezekiel",
   "chapter": 48,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Ezekiel 48 presents the final allocation of the restored land among the tribes of Israel. Following the detailed measurements and descriptions of the sanctuary in chapters 40-47, this chapter organizes the entire territory around the sacred center. The vision integrates tribal lands, sacred spaces for priests and Levites, offerings to sustain the sanctuary, resident aliens, and the city itself into one comprehensive whole, all structured around God's direct presence.",
+          "id": "overview",
+          "text": "Ezekiel 48 contains 35 verses. It opens with: Now these are the names of the tribes: From the north end, beside the way of Hethlon to the entrance of Hamath, Hazar-enan at the border of Damascus, northward beside Hamath, (and they shall have their sides east `and' west,) Dan, one `portion'. It concludes with: It shall be eighteen thousand `reeds' round about: and the name of the city from that day shall be, Jehovah is there.",
           "verse_refs": [
             "Ezekiel 48:1-35"
           ],
           "evidence_ids": [
-            "ezekiel-temple-vision"
+            "ezekiel-compositional-history"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "tribal_allocations",
-      "title": "Tribal Land Division",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "The chapter arranges the twelve tribes in a geographical pattern extending from north to south. Each tribe receives an equal portion of land, creating a symmetrical distribution that emphasizes the ordered restoration of Israel's territorial inheritance. This allocation follows the sanctuary and priestly zones at the center, positioning the tribes as the outermost ring of the restoration vision.",
-          "verse_refs": [
-            "Ezekiel 48:1-7"
-          ],
-          "evidence_ids": [
-            "ezekiel-temple-vision"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "sacred_spaces",
-      "title": "Sacred Oblation and Priestly Allocation",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "At the center of the restoration lies the sacred oblation, a measured rectangular zone set aside for the sanctuary itself, with separate allocations for priests and Levites. The priests, specifically those of Zadokite lineage who kept God's charge and remained faithful during Israel's apostasy, receive their own portion. The Levites receive a parallel allocation adjacent to the priestly land. This concentric arrangement places the sanctuary and its personnel at the spiritual and spatial heart of the restored community.",
-          "verse_refs": [
-            "Ezekiel 48:8-13"
-          ],
-          "evidence_ids": [
-            "ezekiel-temple-vision"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "sustaining_offerings",
-      "title": "Offerings and Community Support",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "The vision designates specific portions of the land as an oblation offered to God, supporting the sanctuary and those who serve in it. These offerings, distinct from tribal lands and measured with precision, represent the material basis for ongoing cultic life. The detailed measurements demonstrate that restoration involves not merely spiritual renewal but the entire economic and spatial ordering of the community around the sanctuary's central purpose.",
-          "verse_refs": [
-            "Ezekiel 48:8-12"
-          ],
-          "evidence_ids": [
-            "ezekiel-temple-vision"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "compositional_location",
-      "title": "Ezekiel's Structure",
-      "blocks": [
-        {
-          "id": "block_5",
-          "text": "Ezekiel 48 concludes the fivefold arrangement of the book, forming the final section that presents the restoration vision (chapters 40-48). This placement makes the land allocation the culmination of Ezekiel's prophetic testimony, positioning the restoration of God's presence with the people as the ultimate resolution of the book's theological and historical arc.",
-          "verse_refs": [
-            "Ezekiel 48:1"
-          ],
-          "evidence_ids": [
-            "ezekiel-practical-outline"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "theological_transformation",
-      "title": "Transformation of Temple and City Imagery",
-      "blocks": [
-        {
-          "id": "block_6",
-          "text": "The vision draws on temple and city imagery familiar throughout the ancient world but transforms it fundamentally around God's direct presence. Rather than the sanctuary and city functioning as separate entities within a larger territory, the entire restored land becomes organized as concentric zones radiating outward from the sanctuary. This restructuring subordinates all spatial, political, and economic organization to the central reality of God dwelling with the people.",
-          "verse_refs": [
-            "Ezekiel 48:8",
-            "Ezekiel 48:35"
-          ],
-          "evidence_ids": [
-            "new-jerusalem:ancient_near_east_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "exile_and_return",
-      "title": "Hope and Restoration After Exile",
-      "blocks": [
-        {
-          "id": "block_7",
-          "text": "The restoration vision of Ezekiel 48 represents the final biblical articulation of Jerusalem's renewal following judgment and exile. It reshapes earlier Zion theology into a comprehensive vision centered on the return of God's presence and the reconstitution of the people's land and sanctuary. The detailed, orderly nature of this vision projects certainty that restoration is not merely hoped for but divinely ordered and assured.",
-          "verse_refs": [
-            "Ezekiel 48:35"
-          ],
-          "evidence_ids": [
-            "new-jerusalem:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "b23bef70b7a5753fccbdf8da0758b80ffffe4a81d1aab5ff362e11f5a5574714",
+    "evidence_hash": "f3e0489827af7b0bc8139373dc4ae7d9916544c68d20fcf08be4083277e19791",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:30:33.330694+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: tribal_allocations",
-    "section[2].kind is unsupported: sacred_spaces",
-    "section[3].kind is unsupported: sustaining_offerings",
-    "section[4].kind is unsupported: compositional_location",
-    "section[5].kind is unsupported: theological_transformation",
-    "section[6].kind is unsupported: exile_and_return"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

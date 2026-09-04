@@ -2,80 +2,37 @@
   "reference": "Daniel 12",
   "book": "Daniel",
   "chapter": 12,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Core Vision",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Daniel 12 presents visions of the end times in which Michael stands for Israel's people. The chapter anticipates deliverance and the awakening of many from death to differentiated destinies\u2014some to everlasting life and others to shame and everlasting contempt. The wise are presented as shining brilliantly, like the brightness of the firmament.",
+          "id": "overview",
+          "text": "Daniel 12 contains 13 verses. It opens with: And at that time shall Michael stand up, the great prince who standeth for the children of thy people; and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book. It concludes with: But go thou thy way till the end be; for thou shalt rest, and shalt stand in thy lot, at the end of the days.",
           "verse_refs": [
-            "Daniel 12:1",
-            "Daniel 12:2",
-            "Daniel 12:3"
+            "Daniel 12:1-13"
           ],
           "evidence_ids": [
-            "daniel-resurrection"
+            "daniel-practical-outline"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "context",
-      "title": "Apocalyptic Imagery and Purpose",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "Apocalyptic literature like Daniel 12 employs symbolic imagery\u2014numbers, cosmic figures, beasts, and temporal language\u2014as vehicles for speaking about empires and divine sovereignty. This literary form typically emerges in contexts of pressure, exile, or persecution, when faithful communities seek to understand how God will act in their circumstances. The symbolic character of apocalyptic writing reflects its origin in moments of severe challenge.",
-          "verse_refs": [
-            "Daniel 12"
-          ],
-          "evidence_ids": [
-            "how-should-i-read-apocalyptic-literature:ancient_near_east_context:0",
-            "how-should-i-read-apocalyptic-literature:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "textual_witnesses",
-      "title": "Textual Transmission",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "Multiple Qumran manuscripts preserve portions of Daniel in Hebrew and Aramaic, providing early textual witnesses to how the book was transmitted and preserved in Jewish communities.",
-          "verse_refs": [
-            "Daniel 12"
-          ],
-          "evidence_ids": [
-            "daniel-qumran-witnesses"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "c2e54eb8a1fbd47c4588531016c244bea6e3e1973641fd3d7d8ec66387e9bdc5",
+    "evidence_hash": "6f51a281746f3333b558d71dad8f11644dd3d32547a66f3072a3ce4636cd6e66",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:30:34.881843+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: theme",
-    "section[1].block[0].confidence exceeds its cited evidence",
-    "section[2].kind is unsupported: context",
-    "section[3].kind is unsupported: textual_witnesses"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

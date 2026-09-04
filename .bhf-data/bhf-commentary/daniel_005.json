@@ -3,60 +3,34 @@
   "book": "Daniel",
   "chapter": 5,
   "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Historical and Textual Context",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Daniel 5 presents Belshazzar as Babylon's reigning king at the empire's final banquet. Cuneiform inscriptions, however, identify a different historical picture: Belshazzar was the son of Nabonidus with substantial authority, yet not Babylon's final sovereign in the standard royal succession. This discrepancy between biblical narrative and external documentation significantly affects how we understand the historical framework of the chapter.",
+          "id": "overview",
+          "text": "Daniel 5 contains 31 verses. It opens with: Belshazzar the king made a great feast to a thousand of his lords, and drank wine before the thousand. It concludes with: And Darius the Mede received the kingdom, being about threescore and two years old.",
           "verse_refs": [
-            "Daniel 5:1",
-            "Daniel 5:30"
+            "Daniel 5:1-31"
           ],
           "evidence_ids": [
             "daniel-belshazzar"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_2",
-          "text": "The narrative concludes with Babylon falling to Darius the Mede, who reappears in Daniel 6. Despite extensive historical research, no ruler has been securely identified who fully matches all the biblical descriptions of this figure. The historical identity of Darius the Mede therefore remains uncertain and contested.",
-          "verse_refs": [
-            "Daniel 5:30",
-            "Daniel 5:31"
-          ],
-          "evidence_ids": [
-            "daniel-darius-mede"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_3",
-          "text": "The text of Daniel survives in substantially different ancient forms. The Old Greek and Theodotionic versions diverge significantly in chapters 4-6, including Daniel 5. Qumran manuscripts preserve Hebrew and Aramaic witnesses to these traditions, while related texts like the Prayer of Nabonidus appear in the same collection, revealing the complex literary and textual history surrounding Danielic narratives.",
-          "verse_refs": [
-            "Daniel 5:1"
-          ],
-          "evidence_ids": [
-            "daniel-greek-versions",
-            "daniel-qumran-witnesses"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "37479d4ac2cdfc74dc557e9bef43153f7a07c74719f5219807056ca35693479f",
+    "evidence_hash": "91736042c8471d82a6d8e998e32d799c0f9d81b1bdcaab66d77712d5d85cd47b",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:30:33.677464+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

@@ -2,63 +2,37 @@
   "reference": "Daniel 9",
   "book": "Daniel",
   "chapter": 9,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "textual_tradition",
-      "title": "Manuscript Witnesses",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_4",
-          "text": "Daniel's text survives in multiple manuscripts from Qumran, preserved in both Hebrew and Aramaic, attesting to its circulation and authority in late Second Temple Judaism. Similarly, Jeremiah\u2014the text Daniel reads and reinterprets\u2014is known from five Qumran manuscripts (conventionally designated 4QJer-a through 4QJer-e), which contain readings that differ at points from later Masoretic and Greek forms. These witnesses document how both texts were transmitted and engaged during this period. Other Qumran literature preserves related but distinct Danielic traditions, such as the Prayer of Nabonidus, suggesting a broader Danielic literary corpus.",
+          "id": "overview",
+          "text": "Daniel 9 contains 27 verses. It opens with: In the first year of Darius the son of Ahasuerus, of the seed of the Medes, who was made king over the realm of the Chaldeans, It concludes with: And he shall make a firm covenant with many for one week: and in the midst of the week he shall cause the sacrifice and the oblation to cease; and upon the wing of abominations `shall come' one that maketh desolate; and even unto the full end, and that determined, shall `wrath' be poured out upon the desolate.",
           "verse_refs": [
-            "Daniel 9:1-2"
+            "Daniel 9:1-27"
           ],
           "evidence_ids": [
-            "daniel-qumran-witnesses",
-            "jeremiah-qumran-witnesses"
+            "daniel-seventy-weeks"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "tradition_history",
-      "title": "Prayer and Liturgical Expansion",
-      "blocks": [
-        {
-          "id": "block_5",
-          "text": "Daniel's prayer in chapter 9 established a model of Danielic intercession that later traditions expanded significantly. Greek manuscripts of Daniel preserve additional material\u2014the Prayer of Azariah and the Song of the Three, the narrative of Susanna, and Bel and the Dragon\u2014that enlarge the Danielic corpus. These additions emphasize extended prayer and praise, wisdom and justice, and strong anti-idolatry polemic. They attest to the flexibility of Danielic tradition in Jewish religious practice, where the figure and writings of Daniel served as a vehicle for liturgical reflection on divine justice and vindication.",
-          "verse_refs": [
-            "Daniel 9:3-11"
-          ],
-          "evidence_ids": [
-            "daniel-greek-additions"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "ccced86613e06f2a3f8e1da78683001a3ab49e521852ef819ae5890fd6e73c2f",
+    "evidence_hash": "d460f0367cf71a5794967ec4d3607026cee4de8c54ba70059adc4121e2a526e0",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:30:34.411312+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0].interpretation_level is invalid",
-    "section[1].kind is unsupported: textual_background",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[2].kind is unsupported: theological_interpretation",
-    "section[2].block[0].interpretation_level is invalid",
-    "section[3].kind is unsupported: textual_tradition",
-    "section[4].kind is unsupported: tradition_history"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

@@ -2,71 +2,37 @@
   "reference": "Daniel 8",
   "book": "Daniel",
   "chapter": 8,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "textual_tradition",
-      "title": "Textual Witnesses and Language Structure",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_2",
-          "text": "The opening of Daniel 8 marks a significant linguistic transition. After an Aramaic section spanning from Daniel 2:4b through chapter 7, the text returns to Hebrew at 8:1. This language shift appears to reflect the book's compositional structure, distinguishing narrative material from vision accounts. Multiple Qumran manuscripts preserve Daniel 8 in both Hebrew and Aramaic, confirming its presence in ancient manuscript traditions and demonstrating textual continuity across early witnesses.",
+          "id": "overview",
+          "text": "Daniel 8 contains 27 verses. It opens with: In the third year of the reign of king Belshazzar a vision appeared unto me, even unto me, Daniel, after that which appeared unto me at the first. It concludes with: And I, Daniel, fainted, and was sick certain days; then I rose up, and did the king's business: and I wondered at the vision, but none understood it.",
           "verse_refs": [
-            "Daniel 8:1"
+            "Daniel 8:1-27"
           ],
           "evidence_ids": [
-            "daniel-language-structure",
-            "daniel-qumran-witnesses"
+            "daniel-language-structure"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "vision_interpretation",
-      "title": "Symbolic Identification and Historical Referent",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "The vision identifies the two-horned ram with Media and Persia, and the he-goat with Greece. The conflict between these two symbolic powers represents a succession of imperial dominance. The breaking of the goat's great horn and its replacement by four horns signals a fragmentation into multiple realms distributed toward the four winds of heaven, corresponding to the historical division of empire.",
-          "verse_refs": [
-            "Daniel 8:3-8"
-          ],
-          "evidence_ids": [
-            "daniel-ram-goat-antiochus"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_4",
-          "text": "From among the four horns emerges a small horn that grows exceedingly great, extending toward the south, east, and the glorious land. Critically, this horn rises against the sanctuary itself, ceasing the continual burnt offering and causing desolation. The vision's portrayal of this horn's specific attack on the sanctuary aligns most closely with the persecution under Antiochus IV Epiphanes, whose campaign targeted Jewish religious practice and the functioning of the Temple.",
-          "verse_refs": [
-            "Daniel 8:8-11"
-          ],
-          "evidence_ids": [
-            "daniel-ram-goat-antiochus"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "2e88bc39cdc166880f34660967aeed6bd078303b41ba92c893b159ad5d005fed",
+    "evidence_hash": "7bfc46884ecf2cb64bc5101a6b276afbb72ad23b6967fa1b41e163d30675009c",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:30:34.271615+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0] must cite at least one evidence item",
-    "section[1].kind is unsupported: textual_tradition",
-    "section[2].kind is unsupported: vision_interpretation"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

@@ -2,21 +2,20 @@
   "reference": "Ezekiel 46",
   "book": "Ezekiel",
   "chapter": 46,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "DATA_GAP",
   "sections": [
     {
-      "kind": "textual_notes",
-      "title": "Textual Witnesses",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Multiple ancient textual witnesses attest to Ezekiel 46, including the Masoretic Text, the Old Greek version (Iezekiel), Papyrus 967, Qumran fragments, and the Masada scroll. These sources preserve variations in wording and order, requiring careful passage-level textual analysis to determine the most reliable reading of this chapter.",
+          "id": "overview",
+          "text": "Ezekiel 46 contains 24 verses. It opens with: Thus saith the Lord Jehovah: The gate of the inner court that looketh toward the east shall be shut the six working days; but on the sabbath day it shall be opened, and on the day of the new moon it shall be opened. It concludes with: Then said he unto me, These are the boiling-houses, where the ministers of the house shall boil the sacrifice of the people.",
           "verse_refs": [
-            "Ezekiel 46:1-11"
+            "Ezekiel 46:1-24"
           ],
-          "evidence_ids": [
-            "ezekiel-textual-witnesses"
-          ],
+          "evidence_ids": [],
           "confidence": "high",
           "interpretation_level": "fact"
         }
@@ -24,16 +23,14 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "0dbbfc7fa134a275417c85258c53b353453d380e6bc55303906536a1c7750b34",
+    "evidence_hash": "09924c97bcf1efb9b72b313c7859d771d5969a99b8e00ab9859593d3bbdfc01b",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:30:33.134792+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].kind is unsupported: textual_notes"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

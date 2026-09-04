@@ -3,20 +3,19 @@
   "book": "Ezekiel",
   "chapter": 42,
   "status": "validated",
+  "evidence_availability": "DATA_GAP",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Textual Tradition and Witnesses",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Ezekiel 42 survives in multiple ancient textual witnesses including the Masoretic Text, the Old Greek translation (Iezekiel), Papyrus 967, Qumran fragments, and the Masada scroll. These witnesses show variations in wording and word order throughout the passage. The presence of these multiple traditions indicates that careful textual analysis at the passage level is necessary to understand how Ezekiel's vision of the temple chambers was preserved and transmitted in antiquity.",
+          "id": "overview",
+          "text": "Ezekiel 42 contains 20 verses. It opens with: Then he brought me forth into the outer court, the way toward the north: and he brought me into the chamber that was over against the separate place, and which was over against the building toward the north. It concludes with: He measured it on the four sides: it had a wall round about, the length five hundred, and the breadth five hundred, to make a separation between that which was holy and that which was common.",
           "verse_refs": [
-            "Ezekiel 42:1-13"
+            "Ezekiel 42:1-20"
           ],
-          "evidence_ids": [
-            "ezekiel-textual-witnesses"
-          ],
+          "evidence_ids": [],
           "confidence": "high",
           "interpretation_level": "fact"
         }
@@ -24,12 +23,12 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "3eefabcb5229ecc564a56aa47b5ab30ff500c76788695c3ba3a20753ad6a054d",
+    "evidence_hash": "c8501b132a45adb6124345c2a3c61ecc9a1e4afa8a9799ff3453e382931aaa82",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:30:32.854368+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

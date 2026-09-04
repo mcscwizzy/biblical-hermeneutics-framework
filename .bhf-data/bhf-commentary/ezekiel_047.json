@@ -2,43 +2,37 @@
   "reference": "Ezekiel 47",
   "book": "Ezekiel",
   "chapter": 47,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "THIN",
   "sections": [
     {
-      "kind": "textual_context",
-      "title": "Textual Transmission",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_4",
-          "text": "Ezekiel 47 is preserved in the Masoretic Hebrew text, the Old Greek Iezekiel, Papyrus 967, Qumran fragments, and the Masada scroll. These witnesses exhibit variation in wording and textual detail requiring passage-level analysis to evaluate fully.",
+          "id": "overview",
+          "text": "Ezekiel 47 contains 23 verses. It opens with: And he brought me back unto the door of the house; and, behold, waters issued out from under the threshold of the house eastward; (for the forefront of the house was toward the east;) and the waters came down from under, from the right side of the house, on the south of the altar. It concludes with: And it shall come to pass, that in what tribe the stranger sojourneth, there shall ye give him his inheritance, saith the Lord Jehovah.",
           "verse_refs": [
-            "Ezekiel 47"
+            "Ezekiel 47:1-23"
           ],
           "evidence_ids": [
-            "ezekiel-textual-witnesses"
+            "ezekiel-temple-vision"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "7f82ce0624c7c1c0bde9b04ac8b86a1896b1e8aaed81182c49c5cb9a38d52cba",
+    "evidence_hash": "7a8219700d49788775300e246990708d93f1ecdd5e1fe2907b323d73549aee67",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:30:33.255049+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0].interpretation_level is invalid",
-    "section[1].kind is unsupported: interpretation",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[2].kind is unsupported: interpretation",
-    "section[2].block[0].interpretation_level is invalid",
-    "section[3].kind is unsupported: textual_context"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

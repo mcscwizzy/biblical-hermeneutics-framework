@@ -2,43 +2,37 @@
   "reference": "Daniel 11",
   "book": "Daniel",
   "chapter": 11,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "textual_transmission",
-      "title": "Qumran Witnesses and Textual Transmission",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_4",
-          "text": "Multiple manuscripts from Qumran preserve portions of Daniel in Hebrew and Aramaic, documenting the book's transmission through Second Temple communities and confirming its circulation among Jewish scribal circles.",
+          "id": "overview",
+          "text": "Daniel 11 contains 45 verses. It opens with: And as for me, in the first year of Darius the Mede, I stood up to confirm and strengthen him. It concludes with: And he shall plant the tents of his palace between the sea and the glorious holy mountain; yet he shall come to his end, and none shall help him.",
           "verse_refs": [
-            "Daniel 11"
+            "Daniel 11:1-45"
           ],
           "evidence_ids": [
-            "daniel-qumran-witnesses"
+            "daniel-compositional-horizons"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "62845384e0932da7ab80da549f978a1877495b466b9c45f28686f8a5371d159a",
+    "evidence_hash": "1c6df5694ed678cc343187004b01f9f6531d3e3d5353a26cb73e456d3f796a34",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:30:34.677013+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0].interpretation_level is invalid",
-    "section[1].kind is unsupported: compositional_context",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[2].kind is unsupported: imperial_resistance",
-    "section[2].block[0].interpretation_level is invalid",
-    "section[3].kind is unsupported: textual_transmission"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
