@@ -2,17 +2,18 @@
   "reference": "1 Samuel 13",
   "book": "1 Samuel",
   "chapter": 13,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "First Samuel 13 records a critical moment in Saul's reign. When Jonathan strikes the Philistine garrison at Geba, the Philistines mobilize in overwhelming response. Israel gathers at Gilgal to resist, but under military pressure and with Samuel's delayed arrival, Saul makes a fateful decision: he performs the burnt offering himself, an act that violates proper religious authority. This transgression marks the beginning of Saul's rejection from enduring kingship.",
+          "id": "overview",
+          "text": "1 Samuel 13 contains 23 verses. It opens with: Saul was `forty' years old when he began to reign; and when he had reigned two years over Israel, It concludes with: And the garrison of the Philistines went out unto the pass of Michmash.",
           "verse_refs": [
-            "1 Samuel 13:1-10"
+            "1 Samuel 13:1-23"
           ],
           "evidence_ids": [
             "first-samuel-saul-rejected"
@@ -27,15 +28,11 @@
     "evidence_hash": "8c997a9bef4885a6a51fc5f32731c3c808ed20b1d1b7fb069e5871d34076fdcc",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:05:08.985413+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].block[0].interpretation_level is invalid",
-    "section[2].kind is unsupported: theological_analysis",
-    "section[2].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

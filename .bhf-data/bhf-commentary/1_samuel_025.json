@@ -2,43 +2,35 @@
   "reference": "1 Samuel 25",
   "book": "1 Samuel",
   "chapter": 25,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "DATA_GAP",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Opening: Samuel's Death and David's Wilderness Years",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Samuel's death at Ramah and burial marks a transitional moment in the narrative. David's subsequent movement into the wilderness of Paran reflects his position as leader of an armed following during a period of flight from Saul. The text places this within Israel's transition from judges-era decentralized leadership toward monarchy, a context where regional leaders with military retinues operated with considerable independence.",
+          "id": "overview",
+          "text": "1 Samuel 25 contains 44 verses. It opens with: And Samuel died; and all Israel gathered themselves together, and lamented him, and buried him in his house at Ramah. And David arose, and went down to the wilderness of Paran. It concludes with: Now Saul had given Michal his daughter, David's wife, to Palti the son of Laish, who was of Gallim.",
           "verse_refs": [
-            "1 Samuel 25:1"
+            "1 Samuel 25:1-44"
           ],
-          "evidence_ids": [
-            "1-samuel:key_places:0",
-            "1-samuel:timeline:5",
-            "1-samuel:historical_setting:0"
-          ],
-          "confidence": "medium",
+          "evidence_ids": [],
+          "confidence": "high",
           "interpretation_level": "fact"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "080560c6417590082aadd00bf35b835cf2c29bee74f2113e47dc37ba00d9a90a",
+    "evidence_hash": "628c1175bf64904caebabdf9c8be326830f9e23a83efdda6d4de6879969c7484",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:05:09.350184+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: section",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[2].kind is unsupported: section",
-    "section[2].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

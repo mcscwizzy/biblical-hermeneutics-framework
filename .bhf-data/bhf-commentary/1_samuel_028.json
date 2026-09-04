@@ -2,100 +2,35 @@
   "reference": "1 Samuel 28",
   "book": "1 Samuel",
   "chapter": 28,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "DATA_GAP",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "First Samuel 28 depicts Saul facing his final military crisis as Philistine forces mobilize for war. The narrative presents the transition point where Saul's kingship\u2014marked by initial mobilization against regional Philistine pressure\u2014encounters both divine silence and Saul's desperate recourse to forbidden means of seeking guidance.",
+          "id": "overview",
+          "text": "1 Samuel 28 contains 25 verses. It opens with: And it came to pass in those days, that the Philistines gathered their hosts together for warfare, to fight with Israel. And Achish said unto David, Know thou assuredly, that thou shalt go out with me in the host, thou and thy men. It concludes with: and she brought it before Saul, and before his servants; and they did eat. Then they rose up, and went away that night.",
           "verse_refs": [
-            "1 Samuel 28:1-4"
+            "1 Samuel 28:1-25"
           ],
-          "evidence_ids": [
-            "1-samuel:historical_context:0",
-            "1-samuel:historical_setting:0",
-            "1-samuel:timeline:7"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "textual_section",
-      "title": "Samuel's Death and Saul's Prior Rejection of Mediums",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "The chapter opens by establishing that Samuel has died and been buried in his hometown Ramah, with all Israel having mourned him. Saul's previous rejection of those with familiar spirits and wizards from the land frames his earlier attempt to maintain religious authority and communal holiness. This setting establishes the irony of what follows: Saul, who once enforced prohibition against divination, will soon seek exactly such means when divine channels remain closed to him.",
-          "verse_refs": [
-            "1 Samuel 28:3"
-          ],
-          "evidence_ids": [
-            "1-samuel:key_places:0",
-            "1-samuel:hebraic_worldview:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "textual_section",
-      "title": "Saul's Military Crisis and Divine Silence",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "Saul's forces are arrayed at Mount Gilboa as the Philistines encamped at Shunem. The text emphasizes Saul's fear and emotional state when he perceives the Philistine host. His inquiry of the LORD through established channels\u2014dreams, Urim, and prophets\u2014receives no response. This divine silence marks a rupture in the prophetic-royal relationship central to Saul's legitimacy. In the Hebraic worldview of First Samuel, the LORD's communication is fundamental to accountable leadership; silence itself becomes a form of rejection.",
-          "verse_refs": [
-            "1 Samuel 28:4-6"
-          ],
-          "evidence_ids": [
-            "1-samuel:key_places:18",
-            "1-samuel:hebraic_worldview:0",
-            "1-samuel:timeline:7"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "textual_section",
-      "title": "The Woman at En-dor",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "Saul's servants direct him to a woman with a familiar spirit at En-dor. The text portrays Saul disguising himself and approaching by night\u2014measures suggesting both his awareness of legal risk and the clandestine nature of what he seeks. The woman's immediate caution about Saul's edict against such practitioners reflects the real danger she faces. In the ancient Near Eastern context of divination and kingship, consulting those with familiar spirits was a known institutional practice, even as Saul's own authority had formally prohibited it in Israel. Saul's oath to protect the woman from consequences allows the consultation to proceed.",
-          "verse_refs": [
-            "1 Samuel 28:7-10"
-          ],
-          "evidence_ids": [
-            "1-samuel:key_places:17",
-            "1-samuel:ancient_near_east_context:0"
-          ],
-          "confidence": "medium",
+          "evidence_ids": [],
+          "confidence": "high",
           "interpretation_level": "fact"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "7ba8c0efc4781d9ab428dda48cf1a28d2764cd7bb0784b0b5e1d5f31055254a4",
+    "evidence_hash": "bd2e411f65dfce235cb1c885d38122bebfd4041c67e3d24eba0d3f6ba8e77958",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:05:09.412822+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: textual_section",
-    "section[2].kind is unsupported: textual_section",
-    "section[3].kind is unsupported: textual_section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

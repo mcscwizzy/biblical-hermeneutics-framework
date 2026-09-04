@@ -3,16 +3,17 @@
   "book": "1 Samuel",
   "chapter": 24,
   "status": "validated",
+  "evidence_availability": "THIN",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "In 1 Samuel 24, David confronts a defining moment of conscience when opportunity to strike Saul presents itself in the cave at En-gedi. Though his men urge him to act, David refuses, bound by conviction that the LORD's anointed cannot be harmed by his own hand. Even his symbolic cutting of Saul's robe sleeve disturbs him deeply, revealing the strength of his moral restraint. David's refusal grounds itself explicitly in Saul's status as the anointed one\u2014a theological principle that outweighs both personal safety and political advantage. This episode establishes David as someone whose character is defined not by opportunism but by deference to the LORD's choice.",
+          "id": "overview",
+          "text": "1 Samuel 24 contains 22 verses. It opens with: And it came to pass, when Saul was returned from following the Philistines, that it was told him, saying, Behold, David is in the wilderness of En-gedi. It concludes with: And David sware unto Saul. And Saul went home; but David and his men gat them up unto the stronghold.",
           "verse_refs": [
-            "1 Samuel 24:1-11"
+            "1 Samuel 24:1-22"
           ],
           "evidence_ids": [
             "first-samuel-david-spares-saul"
@@ -27,9 +28,9 @@
     "evidence_hash": "5b40fcc738f9cfae56a93a445aa3db1dd5b279319f5c1edeedc746ac1a879759",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:05:09.323933+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

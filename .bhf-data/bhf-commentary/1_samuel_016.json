@@ -2,60 +2,21 @@
   "reference": "1 Samuel 16",
   "book": "1 Samuel",
   "chapter": 16,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "This chapter narrates the pivotal transition from Saul to David in Israel's monarchy. Samuel receives a divine commission to anoint a new king from among the sons of Jesse in Bethlehem, following Saul's rejection by the Lord. This mission initiates events that reshape Israel's leadership and establish the foundation of David's rise to prominence during the period of early monarchic transition amid Philistine pressure.",
+          "id": "overview",
+          "text": "1 Samuel 16 contains 23 verses. It opens with: And Jehovah said unto Samuel, How long wilt thou mourn for Saul, seeing I have rejected him from being king over Israel? fill thy horn with oil, and go: I will send thee to Jesse the Beth-lehemite; for I have provided me a king among his sons. It concludes with: And it came to pass, when the `evil' spirit from God was upon Saul, that David took the harp, and played with his hand: so Saul was refreshed, and was well, and the evil spirit departed from him.",
           "verse_refs": [
-            "1 Samuel 16:1-13"
+            "1 Samuel 16:1-23"
           ],
           "evidence_ids": [
-            "1-samuel:timeline:4",
-            "1-samuel:historical_context:0",
-            "1-samuel:key_places:11"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "ritual_and_mediation",
-      "title": "Anointing, Prophetic Mediation, and Kingship",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "The anointing ritual reflects ancient Near Eastern kingship ideology, where anointing signified both divine selection and empowerment. Samuel's procedure demonstrates the prophet's role as mediator between divine will and human kingship. He approaches the situation by framing his mission under the cover of a sacrifice, invites Jesse and his household to the ritual, and through systematic examination of the sons, identifies the one chosen by the Lord. This pattern illustrates how prophetic authority functioned during Israel's transition from decentralized judges-era leadership to monarchy.",
-          "verse_refs": [
-            "1 Samuel 16:2-13"
-          ],
-          "evidence_ids": [
-            "1-samuel:ancient_near_east_context:0",
-            "1-samuel:hebraic_worldview:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "theological_principle",
-      "title": "Divine Selection: The Heart Over Appearance",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "The chapter emphasizes a fundamental distinction between human assessment and divine knowledge. When Samuel observes Eliab, Jesse's firstborn, his physical stature and appearance lead him to assume this is the Lord's chosen king. The divine word immediately corrects him: the Lord does not judge by outward appearance but examines the heart. This principle reflects the Hebraic worldview's core conviction that authentic kingship rests not upon charisma or physical bearing but upon alignment with God's values and accountability before the divine standard.",
-          "verse_refs": [
-            "1 Samuel 16:6-7"
-          ],
-          "evidence_ids": [
-            "1-samuel:hebraic_worldview:0",
-            "david:hebraic_worldview:0"
+            "david:ancient_near_east_context:0"
           ],
           "confidence": "medium",
           "interpretation_level": "fact"
@@ -64,17 +25,14 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "afc7a23d9041566331489c8d4c4921549334e5f0b67badf9a6aa7a5ba6418a70",
+    "evidence_hash": "1cd00e1d00252d6fa62fc6bf961069ea2c8ecec6ab8c12c6886508d4af823171",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:05:09.078564+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: ritual_and_mediation",
-    "section[2].kind is unsupported: theological_principle"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
