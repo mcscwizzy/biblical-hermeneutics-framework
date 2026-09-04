@@ -511,6 +511,21 @@ body.companion-sheet-full {
   line-height: 1.45;
 }
 
+.bhf-commentary-evidence-actions,
+.bhf-commentary-study-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.bhf-commentary-evidence-actions button,
+.bhf-commentary-study-actions button {
+  min-height: 34px;
+  padding: 5px 9px;
+  font-size: 0.76rem;
+}
+
 @media (max-width: 520px) {
   .bhf-commentary-card {
     padding: 14px;

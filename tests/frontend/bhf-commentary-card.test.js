@@ -46,7 +46,7 @@ class FakeElement {
 }
 
 
-function loadCard({requestJson} = {}) {
+function loadCard({requestJson, companion, studyActions} = {}) {
   const document = {
     readyState: "loading",
     querySelector: () => null,
@@ -55,6 +55,8 @@ function loadCard({requestJson} = {}) {
   };
   const window = {
     BHFApi: requestJson ? {requestJson} : undefined,
+    BHFStudyCompanion: companion,
+    BHFStudyActions: studyActions,
     BHFStudySelection: {
       subscribe: () => {},
       getState: () => ({book: "Genesis", chapter: 13}),
@@ -178,7 +180,7 @@ test("evidence explorer shows beginner claim and advanced details only for cited
         assertion_type: "interpretive",
         interpretation_levels: ["inference", "disputed"],
         sources: [{id: "source-1", title: "A source"}],
-        related_entities: [{id: "place-1", title: "A Place"}],
+        related_entities: [{id: "place-1", title: "A Place", type: "place"}],
       }],
       unavailable_ids: ["ckl-2"],
     };
@@ -207,6 +209,44 @@ test("evidence explorer shows beginner claim and advanced details only for cited
   assert.equal(root.selectors["[data-bhf-commentary-evidence-list]"].children.length, 2);
   assert.equal(root.selectors["[data-bhf-commentary-evidence-list]"].children[0].children[1].textContent, "A supplied contextual claim.");
   assert.match(root.selectors["[data-bhf-commentary-evidence-list]"].children[1].textContent, /unavailable/);
+  const evidenceActions = root.selectors["[data-bhf-commentary-evidence-list]"].children[0].children[5];
+  assert.equal(evidenceActions.children.length, 2);
+  assert.equal(evidenceActions.children[0].textContent, "Open in Maps");
+  assert.equal(evidenceActions.children[1].textContent, "Open Culture");
+});
+
+
+test("evidence and study actions use existing BHF destinations", () => {
+  const opened = [];
+  const performed = [];
+  const api = loadCard({
+    companion: {openResource: (resource, options) => opened.push({resource, options})},
+    studyActions: {perform: (action) => performed.push(action)},
+  });
+  const root = makeRoot();
+  api.init(root).render({
+    available: true,
+    release: "commentary-v1.0",
+    book: "Genesis",
+    chapter: 13,
+    availability: "AVAILABLE",
+    commentary: "Context.",
+    verse_references: [],
+    evidence_count: 1,
+  });
+  const target = {closest: (selector) => selector === "[data-bhf-commentary-tool]"
+    ? {dataset: {bhfCommentaryTool: "maps", bhfCommentaryTarget: "place-1"}}
+    : null};
+  root.listeners.click({target});
+  assert.equal(opened[0].resource, "maps");
+  assert.equal(opened[0].options.mapFocus.targetId, "place-1");
+
+  root.listeners.click({target: {
+    closest: (selector) => selector === "[data-bhf-commentary-personal-action]"
+      ? {dataset: {bhfCommentaryPersonalAction: "note"}}
+      : null,
+  }});
+  assert.deepEqual(performed, ["note"]);
 });
 
 

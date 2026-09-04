@@ -256,7 +256,58 @@
     ].filter(Boolean).join("\n");
     details.appendChild(detailText);
     article.appendChild(details);
+    const actions = renderToolActions(item);
+    if (actions) article.appendChild(actions);
     return article;
+  }
+
+  function renderToolActions(item) {
+    const actions = toolActions(item);
+    if (!actions.length) return null;
+    const container = document.createElement("div");
+    container.className = "bhf-commentary-evidence-actions";
+    actions.forEach((action) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "secondary bhf-commentary-tool-action";
+      button.dataset.bhfCommentaryTool = action.tool;
+      if (action.target) button.dataset.bhfCommentaryTarget = action.target;
+      if (action.query) button.dataset.bhfCommentaryQuery = action.query;
+      button.textContent = action.label;
+      button.setAttribute("aria-label", `${action.label} for supplied evidence`);
+      container.appendChild(button);
+    });
+    return container;
+  }
+
+  function toolActions(item) {
+    const actions = [];
+    const seen = new Set();
+    const add = (action) => {
+      const key = `${action.tool}:${action.target || action.query || ""}`;
+      if (seen.has(key)) return;
+      seen.add(key);
+      actions.push(action);
+    };
+    (Array.isArray(item.related_entities) ? item.related_entities : []).forEach((entity) => {
+      const type = String(entity.type || "").toLowerCase();
+      if (type === "place") add({tool: "maps", target: entity.id, label: "Open in Maps"});
+      else if (["person", "people_group", "group", "institution"].includes(type)) {
+        add({tool: "canonical", query: entity.title || entity.id, label: "Open in Context"});
+      } else if (["event", "timeline"].includes(type)) {
+        add({tool: "timeline", label: "Open Timeline"});
+      }
+    });
+    const category = String(item.category || "").toLowerCase();
+    const categoryActions = {
+      archaeology: {tool: "archaeology", label: "Open Archaeology"},
+      language: {tool: "word_study", label: "Open Lexicon"},
+      chronology: {tool: "timeline", label: "Open Timeline"},
+      history: {tool: "historical_context", label: "Open History"},
+      culture: {tool: "cultural_context", label: "Open Culture"},
+    };
+    if (categoryActions[category]) add(categoryActions[category]);
+    return actions;
   }
 
   function renderEvidence(parts, evidence) {
@@ -329,6 +380,31 @@
       });
   }
 
+  function handleToolAction(event) {
+    const button = event.target.closest?.("[data-bhf-commentary-tool]");
+    if (!button) return;
+    const tool = button.dataset.bhfCommentaryTool;
+    const target = button.dataset.bhfCommentaryTarget;
+    const query = button.dataset.bhfCommentaryQuery;
+    const companion = window.BHFStudyCompanion;
+    if (tool === "maps") {
+      void companion?.openResource?.("maps", {trigger: button, mapFocus: {kind: "place", targetId: target}});
+    } else if (tool === "canonical") {
+      window.BHFWorkspace?.openCanonicalQuery?.(query || target);
+    } else {
+      void companion?.openResource?.(tool, {trigger: button});
+    }
+  }
+
+  function handlePersonalAction(event) {
+    const button = event.target.closest?.("[data-bhf-commentary-personal-action]");
+    if (!button) return;
+    const action = button.dataset.bhfCommentaryPersonalAction;
+    if (action === "note" || action === "highlight" || action === "compare_translations") {
+      void window.BHFStudyActions?.perform?.(action);
+    }
+  }
+
   function init(root) {
     const parts = elements(root);
     let sequence = 0;
@@ -366,6 +442,8 @@
       const selection = window.BHFStudySelection?.getState?.() || {};
       handleVerseReference(event, selection);
       handleEvidenceToggle(event, parts, selection, currentModel, state);
+      handleToolAction(event);
+      handlePersonalAction(event);
     });
     window.BHFStudySelection?.subscribe?.((selection) => { void load(selection); });
     return {
@@ -380,6 +458,7 @@
   window.BHFCommentaryCard = Object.freeze({
     init,
     normalizePayload,
+    normalizeEvidencePayload,
     availabilityLabel,
   });
 
