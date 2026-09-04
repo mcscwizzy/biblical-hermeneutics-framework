@@ -39,7 +39,7 @@ class FakeElement {
 }
 
 
-function loadCard() {
+function loadCard({requestJson} = {}) {
   const document = {
     readyState: "loading",
     querySelector: () => null,
@@ -47,12 +47,13 @@ function loadCard() {
     addEventListener: () => {},
   };
   const window = {
+    BHFApi: requestJson ? {requestJson} : undefined,
     BHFStudySelection: {
       subscribe: () => {},
       getState: () => ({book: "Genesis", chapter: 13}),
     },
   };
-  const context = vm.createContext({document, window, fetch: async () => {}});
+  const context = vm.createContext({AbortController, document, window, fetch: async () => {}});
   vm.runInContext(
     fs.readFileSync("bhf_web/static/bhf-commentary-card.js", "utf8"),
     context,
@@ -147,4 +148,19 @@ test("thin card exposes its limitation without hiding the commentary", () => {
   assert.equal(root.selectors["[data-bhf-commentary-availability]"].textContent, "Limited contextual evidence");
   assert.equal(root.selectors["[data-bhf-commentary-body]"].textContent, "A concise contextual observation.");
   assert.equal(root.selectors["[data-bhf-commentary-evidence-count]"].textContent, "1 evidence item");
+});
+
+
+test("card exposes loading and error states without presenting stale content", async () => {
+  const api = loadCard({requestJson: async () => { throw new Error("offline"); }});
+  const root = makeRoot();
+  const instance = api.init(root);
+  const pending = instance.load({book: "Genesis", chapter: 13});
+
+  assert.equal(root.dataset.state, "loading");
+  assert.equal(root.selectors["[data-bhf-commentary-status]"].textContent, "Loading BHF context…");
+  await pending;
+  assert.equal(root.dataset.state, "error");
+  assert.equal(root.selectors["[data-bhf-commentary-status]"].textContent, "BHF Context is unavailable right now.");
+  assert.equal(root.selectors["[data-bhf-commentary-body]"].textContent, "");
 });
