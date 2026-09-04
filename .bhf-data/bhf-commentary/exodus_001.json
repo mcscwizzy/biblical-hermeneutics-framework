@@ -1,0 +1,116 @@
+{
+  "reference": "Exodus 1",
+  "book": "Exodus",
+  "chapter": 1,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Exodus 1 marks a turning point in Israel's story. The chapter records the descendants of Jacob multiplying abundantly in Egypt, then pivots to oppression when a new pharaoh, indifferent to Joseph's legacy, views Israel as a demographic threat. The narrative unfolds as a reversal: from security to peril, from divine blessing to human affliction. This movement establishes the frame for the exodus account that follows.",
+          "verse_refs": [
+            "Exodus 1:1-18"
+          ],
+          "evidence_ids": [
+            "exodus-literary-movement"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "Israel in Egypt (vv. 1-5)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Exodus opens with the names of Jacob's sons who came to Egypt, recording that seventy souls entered the land with Joseph already present. This genealogy anchors Israel's Egyptian sojourn within the patriarchal narrative. Egypt itself was a major ancient civilization whose political and economic power shaped the contexts of the patriarchal sojourn, Joseph's rise, and the later exodus from slavery.",
+          "verse_refs": [
+            "Exodus 1:1-5"
+          ],
+          "evidence_ids": [
+            "egypt:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "From Favor to Oppression (vv. 6-11)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Joseph's death closes an era of favor. A new king arises 'who knew not Joseph'\u2014he did not recognize or honor Joseph's service to Egypt. Instead, he perceived Israel's continued growth as a political danger: a numerous people who might ally with Egypt's enemies in war. His response was to place taskmasters over Israel to afflict them with labor, setting them to work on building projects at Pithom and Raamses. Oppression, in the king's calculation, would both control and subordinate this population.",
+          "verse_refs": [
+            "Exodus 1:6-11"
+          ],
+          "evidence_ids": [
+            "egypt:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "Escalating Labor (vv. 12-14)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The Pharaoh's plan backfired. Despite intensified oppression, Israel multiplied and spread further, which grieved the Egyptians. The text specifies the nature of Israel's bondage: coerced brick-making labor performed under taskmasters, along with work in mortar, stone, and field service\u2014all 'with rigor.' The passage presents the economic and administrative reality of this subjugation: supervised forced labor, quotas, and relentless demands. Yet the harder they were pressed, the more they multiplied.",
+          "verse_refs": [
+            "Exodus 1:12-14"
+          ],
+          "evidence_ids": [
+            "exodus-brickmaking-and-quota",
+            "exodus-brickmaking-and-quota:passage-relevance"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "Resistance of the Midwives (vv. 15-18)",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "Frustrated by Israel's continued growth, Pharaoh commanded the Hebrew midwives Shiphrah and Puah to kill all male infants born to Hebrew women. But these midwives 'feared God' and did not obey the king's order; instead they let the male children live. When summoned and questioned, they gave an explanation: Hebrew women gave birth so quickly they arrived before the midwives could intervene. The passage shows these two women acting against royal command in protection of the vulnerable.",
+          "verse_refs": [
+            "Exodus 1:15-18"
+          ],
+          "evidence_ids": [
+            "egypt:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "66220c1ceeefb533cade34b80eabf6a2dafaa7f43bb781380bb592de95855635",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "root.status is unsupported: completed",
+    "section[1].kind is unsupported: narrative_section",
+    "section[2].kind is unsupported: narrative_section",
+    "section[3].kind is unsupported: narrative_section",
+    "section[4].kind is unsupported: narrative_section"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,77 @@
+{
+  "reference": "Deuteronomy 34",
+  "book": "Deuteronomy",
+  "chapter": 34,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Deuteronomy 34 closes the Torah with Moses's death, using this narrative to accomplish two things: transferring Israel's public leadership to Joshua, and cementing Moses's unique remembered status as an incomparable prophet and mediator. The chapter preserves both the succession and the singular authority of the one through whom God performed his greatest signs and wonders.",
+          "verse_refs": [
+            "Deuteronomy 34"
+          ],
+          "evidence_ids": [
+            "deuteronomy-moses-joshua-transition"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "The Uniqueness of Moses (vv. 10-12)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Moses stands apart in Israel's history. No prophet ever arose who knew God face to face as Moses did, nor who performed the signs, wonders, mighty hand, and terror that attended his work. He was a prophet and covenant mediator in a category by himself\u2014shaped by his confrontation with Pharaoh, his leadership of the exodus, and his mediation of the covenant at Sinai. Even as leadership passes to Joshua, this incomparable status marks Moses permanently in Israel's memory.",
+          "verse_refs": [
+            "Deuteronomy 34:10-12"
+          ],
+          "evidence_ids": [
+            "who-was-moses:ancient_near_east_context:0",
+            "who-was-moses:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "The Succession to Joshua (v. 9)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Joshua becomes Israel's new leader, filled with the spirit of wisdom because Moses had laid his hands upon him. The people recognize his authority and obey him just as they had obeyed Moses's commands from God. The chapter thus effects a smooth transition of public leadership while preserving the memory of Moses's unrepeatable prophetic role.",
+          "verse_refs": [
+            "Deuteronomy 34:9"
+          ],
+          "evidence_ids": [
+            "deuteronomy-moses-joshua-transition"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "9473eec0e68a4d68eabb88c643f54229f8a0fe079a650da17bea8afe8ebb7e69",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: narrative_section",
+    "section[2].kind is unsupported: narrative_section"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,120 @@
+{
+  "reference": "Exodus 14",
+  "book": "Exodus",
+  "chapter": 14,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview: The Sea Crossing",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Exodus 14 narrates the climactic moment of Israel's escape from Egypt. Israel, having left Egypt after the Passover, becomes trapped at the sea when Pharaoh's army pursues them. This episode stands as a central moment in the exodus narrative, positioned within Israel's journey from slavery under Egyptian rule toward covenant formation at Mount Sinai. The passage presents the sea crossing as God's definitive act of deliverance, demonstrating divine power over Egypt's imperial authority.",
+          "verse_refs": [
+            "Exodus 14"
+          ],
+          "evidence_ids": [
+            "exodus-to-sinai-timeline:timeline:5",
+            "the-exodus:ancient_near_east_context:0",
+            "exodus-to-sinai-timeline:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_development",
+      "title": "God's Command to Encamp (vv. 1-4)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "God directs Moses to position Israel at specific locations: Pihahiroth, between Migdol and the sea, before Baal-zephon. God announces that Pharaoh will pursue this encampment and that through Pharaoh's pursuit and defeat, the LORD will gain honor and Egypt will know divine identity. The passage thus frames the coming pursuit as integral to God's purpose of self-revelation through the overthrow of Egyptian power.",
+          "verse_refs": [
+            "Exodus 14:1-4"
+          ],
+          "evidence_ids": [
+            "the-exodus:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_development",
+      "title": "Pharaoh's Decision to Pursue (vv. 5-9)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Pharaoh learns that Israel has fled and reverses his earlier decision to release them. He mobilizes his military forces: six hundred chosen chariots and all Egypt's chariots with captains over them. Pharaoh pursues Israel with his chariot force, horsemen, and army. The passage emphasizes the vast military power arrayed against Israel, highlighting the magnitude of the threat faced by the people trapped between advancing army and sea.",
+          "verse_refs": [
+            "Exodus 14:5-9"
+          ],
+          "evidence_ids": [
+            "red-sea-crossing:ancient_near_east_context:0",
+            "the-exodus:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_development",
+      "title": "Israel's Fear and Complaint (vv. 10-12)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "When Israel sees Pharaoh's advancing army, they become very afraid and cry out to the LORD. They accuse Moses of bringing them out to die in the wilderness, claiming it would have been better to remain slaves in Egypt. This moment captures Israel's terror as they face the advancing military power of Egypt while trapped in a desperate position between army and sea.",
+          "verse_refs": [
+            "Exodus 14:10-12"
+          ],
+          "evidence_ids": [
+            "red-sea-crossing:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_note",
+      "title": "Geographic Setting and Camp Names",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "Exodus preserves an ordered sequence of place names for Israel's encampment: Pihahiroth, Migdol, and Baal-zephon. These names represent the actual geographic vocabulary of the route tradition. However, the biblical text does not provide modern geographic coordinates. Modern proposals for identifying these sites in relation to Egypt's eastern frontier remain contested among scholars. The passage's geographic markers should be read as preserving the tradition's route memory without assuming identification with a particular modern location.",
+          "verse_refs": [
+            "Exodus 14:2, 9"
+          ],
+          "evidence_ids": [
+            "yam-suf-route-identification",
+            "yam-suf-route-identification:passage-relevance",
+            "red-sea-crossing:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "2915a87999ddc4cfc7295fb65c9956942f223abfd3ad73488796fdd65585e415",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "root.status is unsupported: complete",
+    "section[1].kind is unsupported: narrative_development",
+    "section[2].kind is unsupported: narrative_development",
+    "section[3].kind is unsupported: narrative_development",
+    "section[4].kind is unsupported: historical_note"
+  ],
+  "validation_warnings": []
+}

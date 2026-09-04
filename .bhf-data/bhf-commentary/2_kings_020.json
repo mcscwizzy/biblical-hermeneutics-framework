@@ -1,0 +1,42 @@
+{
+  "reference": "2 Kings 20",
+  "book": "2 Kings",
+  "chapter": 20,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "2 Kings 20 recounts Hezekiah's critical illness and divine healing, confirmed by a miraculous sign involving the sundial of Ahaz, followed by diplomatic contact with Babylon. The chapter occurs within the context of Hezekiah's reign during a period of significant infrastructure development and military defense of Jerusalem. Archaeological evidence from the city of David provides material documentation of Jerusalem during Hezekiah's era, including inscriptional and structural remains.",
+          "verse_refs": [
+            "2 Kings 20:1-13"
+          ],
+          "evidence_ids": [
+            "hezekiahs-tunnel-inscription-context:historical_context:0",
+            "pool-of-siloam-discovery:historical_context:0",
+            "siloam-inscription:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "3424592c53b6823a8def966d102fc10d216ce618ce38a249ef67066375348e7c",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section",
+    "section[1].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

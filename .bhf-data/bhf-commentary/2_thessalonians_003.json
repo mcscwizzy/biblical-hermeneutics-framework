@@ -1,0 +1,72 @@
+{
+  "reference": "2 Thessalonians 3",
+  "book": "2 Thessalonians",
+  "chapter": 3,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "section",
+      "title": "Prayer for Word and Protection (3:1-2)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The writers request prayer that 'the word of the Lord may run and be glorified,' just as it is already doing among the Thessalonians. They ask for deliverance from unreasonable and wicked people, noting that not all possess faith. This opening frames the chapter's concerns with both the gospel's progress and the community's protection.",
+          "verse_refs": [
+            "2 Thessalonians 3:1-2"
+          ],
+          "evidence_ids": [
+            "2th-word-run"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Closing: Peace and Authentication (3:16-18)",
+      "blocks": [
+        {
+          "id": "block_8",
+          "text": "The letter closes with a prayer that 'the Lord of peace himself' grant peace at all times in all ways and be with all recipients. The final greeting is written in the sender's own hand, presented as the authenticating mark of every epistle. This personal sign grounds the authority of the letter's instructions in the writer's direct participation and presence.",
+          "verse_refs": [
+            "2 Thessalonians 3:16-18"
+          ],
+          "evidence_ids": [
+            "2th-peace",
+            "2th-autograph"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "48420c6a5abb6c1270fe3338d8bec3f83f124c1d8448841a3bcb060ec0e7c370",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[2].block[0] cites unsupported evidence IDs: 2th-example-right-not-burden",
+    "section[3].kind is unsupported: section",
+    "section[3].block[0] cites unsupported evidence IDs: 2th-disorder-busybodies, 2th-quiet-work-own-bread",
+    "section[3].block[1].interpretation_level is invalid",
+    "section[3].block[1] cites unsupported evidence IDs: 2th-unwilling-not-unable",
+    "section[4].kind is unsupported: section",
+    "section[4].block[0].interpretation_level is invalid",
+    "section[4].block[0] cites unsupported evidence IDs: 2th-do-not-weary-good",
+    "section[5].kind is unsupported: section",
+    "section[5].block[0].interpretation_level is invalid",
+    "section[5].block[0] cites unsupported evidence IDs: 2th-sibling-not-enemy",
+    "section[6].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

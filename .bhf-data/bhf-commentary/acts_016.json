@@ -1,0 +1,131 @@
+{
+  "reference": "Acts 16",
+  "book": "Acts",
+  "chapter": 16,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "section",
+      "title": "Timothy's Recruitment and Mixed Parentage (16:1-5)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Paul encountered Timothy in Lystra and Derbe, finding him well-respected by the brothers in both cities. Timothy's mother was a believing Jewess, while his father was a Greek. Acts provides no further elaboration on family background beyond this parentage statement and Timothy's social reputation.",
+          "verse_refs": [
+            "Acts 16:1-2"
+          ],
+          "evidence_ids": [
+            "timothy-derbe-lystra-household-and-origin-limits"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_3",
+          "text": "Paul circumcised Timothy before taking him as a traveling companion. Acts explicitly states the reason: the Jewish communities in those regions knew Timothy's father was Greek. This decision reflects Paul's attention to local Jewish context rather than a universal principle.",
+          "verse_refs": [
+            "Acts 16:3"
+          ],
+          "evidence_ids": [
+            "timothy-derbe-lystra-household-and-origin-limits"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_4",
+          "text": "As the group traveled through the cities, they delivered the decrees established by the apostles and elders in Jerusalem. The churches were strengthened in faith and increased in number daily.",
+          "verse_refs": [
+            "Acts 16:4-5"
+          ],
+          "evidence_ids": [
+            "acts-and-galatians-distinct-itinerary-witnesses"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "The Macedonian Vision and Sea Journey (16:9-12)",
+      "blocks": [
+        {
+          "id": "block_7",
+          "text": "They sailed from Troas, reaching Samothrace the same day and Neapolis the following day. From the port of Neapolis, they traveled inland to Philippi, identified as the leading city of the district and a Roman colony. They stayed in Philippi for several days. The Via Egnatia provided the main east-west corridor connecting the Aegean coast through Macedonia's principal cities.",
+          "verse_refs": [
+            "Acts 16:11-12"
+          ],
+          "evidence_ids": [
+            "acts-neapolis-via-egnatia-route",
+            "philippi-roman-colony-and-forum",
+            "via-egnatia-east-macedonian-corridor"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Prayer by the River and Lydia's Conversion (16:13-15)",
+      "blocks": [
+        {
+          "id": "block_9",
+          "text": "On the Sabbath, Paul and his companions went outside the city gate to a riverside location where they expected to find a place of prayer. Women had gathered there. Paul sat down and spoke to the women assembled.",
+          "verse_refs": [
+            "Acts 16:13"
+          ],
+          "evidence_ids": [
+            "riverside-prayer-gathering"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_10",
+          "text": "Among those present was Lydia from Thyatira, a seller of purple goods and a worshiper of God. As Paul spoke, the Lord opened her heart to attend to his message. The designation \"worshiper of God\" indicates her attachment to Israel's God within the diaspora context, though Acts does not specify her conversion status prior to this encounter, her ancestry, or formal community membership.",
+          "verse_refs": [
+            "Acts 16:14"
+          ],
+          "evidence_ids": [
+            "lydia:historical_context:0",
+            "acts-lydia-household-agency"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "34fffaf1d3415c02ba55abcc5d58cfd0f897d0b7af6df031e688bffbd697270c",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[3].kind is unsupported: section",
+    "section[3].block[0].interpretation_level is invalid",
+    "section[3].block[2].interpretation_level is invalid",
+    "section[4].kind is unsupported: section",
+    "section[4].block[2].interpretation_level is invalid",
+    "section[5].kind is unsupported: section",
+    "section[5].block[0].interpretation_level is invalid",
+    "section[6].kind is unsupported: section",
+    "section[6].block[0].interpretation_level is invalid",
+    "section[6].block[1].interpretation_level is invalid",
+    "section[6].block[2].interpretation_level is invalid",
+    "section[6].block[3].interpretation_level is invalid",
+    "section[7].kind is unsupported: section",
+    "section[7].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

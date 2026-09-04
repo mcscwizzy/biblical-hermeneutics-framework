@@ -1,0 +1,47 @@
+{
+  "reference": "Acts 18",
+  "book": "Acts",
+  "chapter": 18,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Paul in Corinth: From Workshop to Tribunal",
+      "blocks": [
+        {
+          "id": "block_1_arrival_aquila_priscilla",
+          "text": "Paul encounters Aquila, a Jew from Pontus, and his wife Priscilla in Corinth. Acts connects their presence to a Claudian action affecting Jews at Rome, from which they had recently come. The couple's shared trade as tentmakers provides the basis for Paul's living arrangement with them. The scope and specific cause of the Claudian disruption remain disputed in our sources, but the couple's movement from Rome through Corinth illustrates diaspora mobility across the mid-first-century Mediterranean.",
+          "verse_refs": [
+            "Acts 18:1-3"
+          ],
+          "evidence_ids": [
+            "acts-corinth-coworkers-trade",
+            "aquila:historical_context:0",
+            "priscilla:historical_context:0",
+            "claudian-action-and-chrestus"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "842785f7e4b419821ed9964a303f4137bb37fe01c1187acd319aac9a816b4483",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "root.status is unsupported: complete",
+    "section[0].block[1].interpretation_level is invalid",
+    "section[0].block[2].interpretation_level is invalid",
+    "section[0].block[3].interpretation_level is invalid",
+    "section[0].block[4].interpretation_level is invalid",
+    "section[0].block[5].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

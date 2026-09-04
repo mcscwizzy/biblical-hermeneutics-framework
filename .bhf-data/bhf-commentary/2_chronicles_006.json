@@ -1,0 +1,40 @@
+{
+  "reference": "2 Chronicles 6",
+  "book": "2 Chronicles",
+  "chapter": 6,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Solomon narrates God's sovereign choices: Jerusalem as the place where God's name dwells, and the house of David as the dynasty God appointed to rule Israel. This is not Solomon claiming credit but rehearsing how God's word has come to pass. God told David that David's son would build the house. Solomon's presence on the throne, his hands spread before the altar, and the completed temple confirm that promise. The structure embodies continuity of God's covenant, made visible through the appointed leaders, the appointed people, and the appointed place.",
+          "verse_refs": [
+            "2 Chronicles 6:4-11"
+          ],
+          "evidence_ids": [
+            "second-chronicles-solomon-temple"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f4c6c9a20fcedb729c269ce38346310a2b9b748ecf43ac58d6f2c1e733d297ae",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[0].block[1].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

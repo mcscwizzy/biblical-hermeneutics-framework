@@ -1,0 +1,133 @@
+{
+  "reference": "Exodus 3",
+  "book": "Exodus",
+  "chapter": 3,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Exodus 3 marks the turning point in Israel's deliverance story, when Moses encounters God at the burning bush in the wilderness. This narrative opens the sequence from oppression to deliverance that leads to covenant assembly at Sinai. Moses stands at the center of the exodus, wilderness, and covenant-making narratives; his role frames Israel as a redeemed people shaped by divine instruction and holy presence.",
+          "verse_refs": [
+            "Exodus 3:1"
+          ],
+          "evidence_ids": [
+            "moses:historical_context:0",
+            "exodus-to-sinai-timeline:historical_context:0",
+            "exodus-literary-movement"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "The Burning Bush Encounter (Exodus 3:1-6)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Moses tends his father-in-law Jethro's flocks in Midian when an extraordinary sight arrests his attention: a bush ablaze with fire yet not consumed. Midian appears as a region marked by roads, water sources, and borders in the ancient world. Moses' wilderness setting, far from Egypt's imperial power, becomes the environment of his formation and call. The burning bush unfolds within concrete Israelite kinship life and wilderness travel.",
+          "verse_refs": [
+            "Exodus 3:1-3"
+          ],
+          "evidence_ids": [
+            "midian:ancient_near_east_context:0",
+            "moses:ancient_near_east_context:0",
+            "burning-bush:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_3",
+          "text": "God calls Moses by name from the bush; Moses responds with readiness. The divine presence encounters him in this wilderness moment, revealing the character of covenant encounter: the holy God meeting his redeemed people in a moment both terrifying and transformative. Moses hides his face in fear as he learns that holiness demands reverence. Divine presence marks revelation as the LORD's covenant encounter with his people, where they gather to encounter the holy God directly.",
+          "verse_refs": [
+            "Exodus 3:4-6"
+          ],
+          "evidence_ids": [
+            "divine-presence:ancient_near_east_context:0",
+            "presence-theme:ancient_near_east_context:0",
+            "mount-sinai:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "God's Covenant Concern and Mission (Exodus 3:7-10)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "God declares that he has seen Israel's affliction and heard their cry under Egypt's taskmasters. Egypt, as a powerful Nile-based empire, represents the political might from which God calls his people away. Egypt is remembered through oppression and deliverance: a place where God hears suffering and calls his people to escape false security. God announces his intention to bring Israel out of Egypt to a land flowing with milk and honey, inhabited by Canaanites and other peoples. The biblical texts portray this land as divine gift and covenant responsibility while also naming its existing peoples and borders.",
+          "verse_refs": [
+            "Exodus 3:7-8"
+          ],
+          "evidence_ids": [
+            "egypt:hebraic_worldview:0",
+            "egypt:ancient_near_east_context:0",
+            "canaan:hebraic_worldview:0",
+            "the-exodus:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_5",
+          "text": "God commissions Moses directly: 'Come now therefore, and I will send thee unto Pharaoh, that thou mayest bring forth my people the children of Israel out of Egypt.' This command places Moses at the center of the exodus narrative, where his ministry will present covenant life as redeemed worship, mediated presence, and Torah-shaped community. The entire sequence belongs to Israel's wilderness narrative, moving from slavery under Pharaoh to covenant assembly before the LORD at Sinai.",
+          "verse_refs": [
+            "Exodus 3:9-10"
+          ],
+          "evidence_ids": [
+            "moses:hebraic_worldview:0",
+            "exodus-to-sinai-timeline:historical_context:0",
+            "who-was-moses:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "The Promise and Sign (Exodus 3:11-12)",
+      "blocks": [
+        {
+          "id": "block_6",
+          "text": "Moses protests his inadequacy: 'Who am I, that I should go unto Pharaoh?' God's answer secures the mission in divine presence itself: 'Certainly I will be with thee; and this shall be the token unto thee, that I have sent thee: when thou hast brought forth the people out of Egypt, ye shall serve God upon this mountain.' The sign points forward to Sinai, where revelation unfolds as covenant encounter. Israel will gather before the holy God to receive instruction and learn worshipful fear and obedience. Mount Sinai marks the wilderness setting where Israel's covenant formation and Torah instruction occur through Moses.",
+          "verse_refs": [
+            "Exodus 3:11-12"
+          ],
+          "evidence_ids": [
+            "moses:hebraic_worldview:0",
+            "mount-sinai:hebraic_worldview:0",
+            "mount-sinai:historical_context:0",
+            "exodus-to-sinai-timeline:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "2d5521973da14ffc911610fb6066b79813e8003e8cbe24b51f5dd0bd8f39adfb",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[3].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,81 @@
+{
+  "reference": "Daniel 12",
+  "book": "Daniel",
+  "chapter": 12,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Core Vision",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Daniel 12 presents visions of the end times in which Michael stands for Israel's people. The chapter anticipates deliverance and the awakening of many from death to differentiated destinies\u2014some to everlasting life and others to shame and everlasting contempt. The wise are presented as shining brilliantly, like the brightness of the firmament.",
+          "verse_refs": [
+            "Daniel 12:1",
+            "Daniel 12:2",
+            "Daniel 12:3"
+          ],
+          "evidence_ids": [
+            "daniel-resurrection"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "context",
+      "title": "Apocalyptic Imagery and Purpose",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Apocalyptic literature like Daniel 12 employs symbolic imagery\u2014numbers, cosmic figures, beasts, and temporal language\u2014as vehicles for speaking about empires and divine sovereignty. This literary form typically emerges in contexts of pressure, exile, or persecution, when faithful communities seek to understand how God will act in their circumstances. The symbolic character of apocalyptic writing reflects its origin in moments of severe challenge.",
+          "verse_refs": [
+            "Daniel 12"
+          ],
+          "evidence_ids": [
+            "how-should-i-read-apocalyptic-literature:ancient_near_east_context:0",
+            "how-should-i-read-apocalyptic-literature:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_witnesses",
+      "title": "Textual Transmission",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Multiple Qumran manuscripts preserve portions of Daniel in Hebrew and Aramaic, providing early textual witnesses to how the book was transmitted and preserved in Jewish communities.",
+          "verse_refs": [
+            "Daniel 12"
+          ],
+          "evidence_ids": [
+            "daniel-qumran-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "c2e54eb8a1fbd47c4588531016c244bea6e3e1973641fd3d7d8ec66387e9bdc5",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: theme",
+    "section[1].block[0].confidence exceeds its cited evidence",
+    "section[2].kind is unsupported: context",
+    "section[3].kind is unsupported: textual_witnesses"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,97 @@
+{
+  "reference": "Acts 25",
+  "book": "Acts",
+  "chapter": 25,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_25_1",
+          "text": "Acts 25 narrates Paul's legal proceedings under Festus, the new governor. The chapter documents a hearing at Caesarea, accusations by Jewish leaders, and Paul's appeal to Caesar. This sequence exemplifies Acts' broader narrative of hearings, transfers, custody, and appeal to the imperial court.",
+          "verse_refs": [
+            "Acts 25:1-12"
+          ],
+          "evidence_ids": [
+            "acts-citizenship-hearings-appeal-custody"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "The Plot and Festus's Response",
+      "blocks": [
+        {
+          "id": "block_25_2",
+          "text": "Upon Festus's arrival in the province, Jewish leaders present accusations against Paul and request his transfer to Jerusalem, revealing a plot to kill him during the journey. Festus refuses, maintaining Paul in custody at Caesarea. This exchange illustrates the constrained mobility that characterizes Paul's legal situation\u2014the prisoner remains under official custody while the governor retains control over procedural decisions.",
+          "verse_refs": [
+            "Acts 25:1-6"
+          ],
+          "evidence_ids": [
+            "acts-citizenship-hearings-appeal-custody",
+            "acts-citizenship-hearings-appeal-custody:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "The Hearing and Unsubstantiated Charges",
+      "blocks": [
+        {
+          "id": "block_25_3",
+          "text": "At Caesarea, before Festus's judgment-seat, the accusers bring many charges against Paul which they cannot prove. Paul responds that he has not sinned against Jewish law, the temple, or Caesar. Acts presents this hearing as a procedural examination of Paul's conduct and legal standing before Roman authority.",
+          "verse_refs": [
+            "Acts 25:6-8"
+          ],
+          "evidence_ids": [
+            "acts-citizenship-hearings-appeal-custody"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "Paul's Appeal to Caesar",
+      "blocks": [
+        {
+          "id": "block_25_4",
+          "text": "When Festus proposes moving the case to Jerusalem, Paul invokes his right to stand before Caesar's judgment-seat. Acts narrates this as Paul's appeal to Caesar\u2014a legal action that redirects his case from provincial jurisdiction to the imperial court. This appeal represents the culmination of the procedural steps documented throughout Acts' account of Paul's custody and hearings.",
+          "verse_refs": [
+            "Acts 25:9-12"
+          ],
+          "evidence_ids": [
+            "acts-citizenship-hearings-appeal-custody",
+            "roman-procedural-effects"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a6e99ac4f479d73a86cde059fea28774822db236f13183d2e7dfc84d5ab6e726",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: narrative_section",
+    "section[2].kind is unsupported: narrative_section",
+    "section[3].kind is unsupported: narrative_section"
+  ],
+  "validation_warnings": []
+}

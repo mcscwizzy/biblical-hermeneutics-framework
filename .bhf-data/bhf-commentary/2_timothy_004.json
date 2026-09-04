@@ -1,0 +1,131 @@
+{
+  "reference": "2 Timothy 4",
+  "book": "2 Timothy",
+  "chapter": 4,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "passage_section",
+      "title": "The Final Charge (4:1-5)",
+      "blocks": [
+        {
+          "id": "block_charge_1",
+          "text": "The text presents a solemn charge to Timothy before God and Christ Jesus, calling him to proclaim the word persistently in all circumstances, to reprove and rebuke, to exhort, and to teach with all longsuffering. Timothy is commanded to remain sober in all things, endure hardship, do the work of an evangelist, and fulfill his ministry fully.",
+          "verse_refs": [
+            "2 Timothy 4:1-5"
+          ],
+          "evidence_ids": [
+            "2tim-proclaim"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "passage_section",
+      "title": "The Decline of Sound Teaching (4:3-4)",
+      "blocks": [
+        {
+          "id": "block_decline_1",
+          "text": "The passage prophesies a future time when people will reject sound doctrine. The imagery of itching ears criticizes the practice of accumulating teachers according to personal desires and lusts, turning away from truth toward myths and fables.",
+          "verse_refs": [
+            "2 Timothy 4:3-4"
+          ],
+          "evidence_ids": [
+            "2tim-itching"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "passage_section",
+      "title": "The Writer's Approaching End (4:6-8)",
+      "blocks": [
+        {
+          "id": "block_end_1",
+          "text": "The speaker declares himself being poured out as a libation and his departure imminent. He claims to have fought the good fight, finished the course, and kept the faith. Confident in a crown of righteousness laid up for him from the Lord as righteous judge, he extends this hope to all who have loved Christ's appearing.",
+          "verse_refs": [
+            "2 Timothy 4:6-8"
+          ],
+          "evidence_ids": [
+            "2tim-departure"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "passage_section",
+      "title": "Personal Circumstances and Requests (4:9-13)",
+      "blocks": [
+        {
+          "id": "block_circumstances_1",
+          "text": "The letter names multiple coworkers in various locations: Demas abandoned the writer for Thessalonica, Crescens went to Galatia, and Titus to Dalmatia. Luke alone remained with the writer. Mark is requested for his usefulness to ministry, while Tychicus was sent to Ephesus. The full closing greetings invoke Prisca, Aquila, Erastus, Trophimus, Eubulus, Pudens, Linus, and Claudia.",
+          "verse_refs": [
+            "2 Timothy 4:9-12, 4:19"
+          ],
+          "evidence_ids": [
+            "2tim-coworkers"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_requests_1",
+          "text": "The writer urgently requests Timothy come soon and bring Mark. He also asks for a cloak left with Carpus at Troas and requests books, especially parchments.",
+          "verse_refs": [
+            "2 Timothy 4:9-13"
+          ],
+          "evidence_ids": [
+            "2tim-requests"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "passage_section",
+      "title": "The First Defense (4:16-18)",
+      "blocks": [
+        {
+          "id": "block_defense_1",
+          "text": "The writer recounts a first legal defense where no one stood with him and all abandoned him. He reports that the Lord stood by him and strengthened him, enabling the message to be fully proclaimed to all Gentiles. He describes deliverance from the lion's mouth and expresses confidence that the Lord will deliver him from every evil work and bring him safely to his heavenly kingdom.",
+          "verse_refs": [
+            "2 Timothy 4:16-18"
+          ],
+          "evidence_ids": [
+            "2tim-defense"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ca523a91d5395096a0b272c86d0ec4282d98e61f5c2dc539aebfb6caed226269",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[0].block[1].interpretation_level is invalid",
+    "section[1].kind is unsupported: passage_section",
+    "section[2].kind is unsupported: passage_section",
+    "section[3].kind is unsupported: passage_section",
+    "section[4].kind is unsupported: passage_section",
+    "section[5].kind is unsupported: passage_section",
+    "section[6].kind is unsupported: passage_section",
+    "section[6].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

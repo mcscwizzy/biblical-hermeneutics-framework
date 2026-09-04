@@ -1,0 +1,56 @@
+{
+  "reference": "Genesis 9",
+  "book": "Genesis",
+  "chapter": 9,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Blessing, Covenant, and Human Accountability",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "After the flood, God blesses Noah and his sons with the command to be fruitful, multiply, and fill the earth (vv. 1-2). As bearers of God's image, humans are given dominion over animals and plants for food (vv. 2-3). However, the consumption of blood is prohibited (v. 4), establishing a dietary boundary that treats life distinctly from other sustenance.",
+          "verse_refs": [
+            "Genesis 9:1-4"
+          ],
+          "evidence_ids": [
+            "image-of-god-theme:historical_context:0",
+            "covenant-theme:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_2",
+          "text": "Genesis 9:5-6 establishes accountability for human bloodshed: God will require the life of any creature that sheds human blood, and among humans, murder is reciprocal\u2014the murderer's blood shall be shed. The foundation for this prohibition is remarkable: humans alone bear the image of God. This extends the dignity associated with kingship in the ancient world to all humanity, grounding human worth not in political status but in divine representation.",
+          "verse_refs": [
+            "Genesis 9:5-6"
+          ],
+          "evidence_ids": [
+            "image-of-god-theme:ancient_near_east_context:0",
+            "what-is-the-image-of-god:ancient_near_east_context:0",
+            "what-is-the-image-of-god:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f591c66015b2379ab3ce1563c22c389881f66abdb23f106d2cee4d9668d872a2",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "root.status is unsupported: completed",
+    "section[0].block[2].interpretation_level is invalid",
+    "section[0].block[2] cites unsupported evidence IDs: what-is-a-covenant:ancient_near_east_context:0"
+  ],
+  "validation_warnings": []
+}

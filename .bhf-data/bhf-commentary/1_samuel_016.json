@@ -1,0 +1,80 @@
+{
+  "reference": "1 Samuel 16",
+  "book": "1 Samuel",
+  "chapter": 16,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "This chapter narrates the pivotal transition from Saul to David in Israel's monarchy. Samuel receives a divine commission to anoint a new king from among the sons of Jesse in Bethlehem, following Saul's rejection by the Lord. This mission initiates events that reshape Israel's leadership and establish the foundation of David's rise to prominence during the period of early monarchic transition amid Philistine pressure.",
+          "verse_refs": [
+            "1 Samuel 16:1-13"
+          ],
+          "evidence_ids": [
+            "1-samuel:timeline:4",
+            "1-samuel:historical_context:0",
+            "1-samuel:key_places:11"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "ritual_and_mediation",
+      "title": "Anointing, Prophetic Mediation, and Kingship",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The anointing ritual reflects ancient Near Eastern kingship ideology, where anointing signified both divine selection and empowerment. Samuel's procedure demonstrates the prophet's role as mediator between divine will and human kingship. He approaches the situation by framing his mission under the cover of a sacrifice, invites Jesse and his household to the ritual, and through systematic examination of the sons, identifies the one chosen by the Lord. This pattern illustrates how prophetic authority functioned during Israel's transition from decentralized judges-era leadership to monarchy.",
+          "verse_refs": [
+            "1 Samuel 16:2-13"
+          ],
+          "evidence_ids": [
+            "1-samuel:ancient_near_east_context:0",
+            "1-samuel:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "theological_principle",
+      "title": "Divine Selection: The Heart Over Appearance",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "The chapter emphasizes a fundamental distinction between human assessment and divine knowledge. When Samuel observes Eliab, Jesse's firstborn, his physical stature and appearance lead him to assume this is the Lord's chosen king. The divine word immediately corrects him: the Lord does not judge by outward appearance but examines the heart. This principle reflects the Hebraic worldview's core conviction that authentic kingship rests not upon charisma or physical bearing but upon alignment with God's values and accountability before the divine standard.",
+          "verse_refs": [
+            "1 Samuel 16:6-7"
+          ],
+          "evidence_ids": [
+            "1-samuel:hebraic_worldview:0",
+            "david:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "afc7a23d9041566331489c8d4c4921549334e5f0b67badf9a6aa7a5ba6418a70",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: ritual_and_mediation",
+    "section[2].kind is unsupported: theological_principle"
+  ],
+  "validation_warnings": []
+}

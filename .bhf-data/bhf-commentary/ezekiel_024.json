@@ -1,0 +1,40 @@
+{
+  "reference": "Ezekiel 24",
+  "book": "Ezekiel",
+  "chapter": 24,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "sign_act",
+      "title": "The Prophet's Household as Sign",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Ezekiel 24 reports the death of the prophet's wife, whom Ezekiel calls 'the delight of his eyes'\u2014language expressing intimate attachment. The event is presented as a sign to the household of Israel concerning the sanctuary and bereavement. Notably, Ezekiel is forbidden to perform customary mourning rituals. This restriction transforms private loss into public prophecy; the prophet's constrained grief becomes instruction to Israel about enduring unbearable loss without the comfort of traditional mourning practices.",
+          "verse_refs": [
+            "Ezekiel 24:15-27"
+          ],
+          "evidence_ids": [
+            "ezekiel-wife-sign"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e9befee5056f2b9fdb8f49e3afd17fc964867026854f93a39329e27098c1d33d",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].confidence exceeds its cited evidence",
+    "section[1].kind is unsupported: sign_act"
+  ],
+  "validation_warnings": []
+}

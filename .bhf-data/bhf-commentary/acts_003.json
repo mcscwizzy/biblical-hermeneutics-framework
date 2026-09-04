@@ -1,0 +1,59 @@
+{
+  "reference": "Acts 3",
+  "book": "Acts",
+  "chapter": 3,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "textual_transmission",
+      "title": "Textual Evidence",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Acts 3 survives in multiple early witnesses, including papyri (P45, P53, P74) and major Greek codices (Sinaiticus, Vaticanus, and Bezae). Codex Bezae preserves a distinctive Western text of Acts, whose individual readings require careful evaluation rather than blanket acceptance or rejection.",
+          "verse_refs": [
+            "Acts 3:1"
+          ],
+          "evidence_ids": [
+            "acts-text-witnesses",
+            "acts-western-text"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical Approach",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Evaluating the historical claims in Acts 3 requires comparing them against independent evidence rather than assigning uniform reliability to the entire narrative. Each claim should be assessed on its specific merits.",
+          "verse_refs": [
+            "Acts 3:1"
+          ],
+          "evidence_ids": [
+            "acts-historical-method"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e7e2c798e920198c2fba4929fdfa8bcc2a3174ba458b48746e2c0552eea876f8",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: textual_transmission",
+    "section[2].block[0].confidence exceeds its cited evidence"
+  ],
+  "validation_warnings": []
+}

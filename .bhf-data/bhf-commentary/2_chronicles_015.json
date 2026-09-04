@@ -1,0 +1,76 @@
+{
+  "reference": "2 Chronicles 15",
+  "book": "2 Chronicles",
+  "chapter": 15,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "A Covenant to Seek the LORD",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Chapter 15 depicts a pivotal covenant renewal centered on Judah's commitment to seek the LORD. The prophet Azariah approaches King Asa with instruction grounded in a theological principle: the LORD is present with those who seek him, and he abandons those who abandon him (vv. 1-2). This prophetic word initiates a sustained reform campaign in which Asa removes idolatrous practices from the land and gathers the people for covenant renewal. The gathering at Jerusalem in the fifteenth year of Asa's reign (v. 10) results in a solemn oath: the people commit to seeking the LORD with full devotion, with severe penalties prescribed for those who refuse to seek him (vv. 12-13). This episode exemplifies the pattern of prophetic instruction leading to national turning and renewed seeking of the LORD.",
+          "verse_refs": [
+            "2 Chronicles 15:1-13"
+          ],
+          "evidence_ids": [
+            "second-chronicles-seek-humble-pattern"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "prophetic_foundation",
+      "title": "The Prophetic Instruction",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Azariah's prophecy frames the covenant renewal as a response to divine principle. He recalls that Israel experienced a period without the true God, without teaching priests, and without law (v. 3), yet when they turned to the LORD in their distress, he was found by them (v. 4). He describes the chaos that accompanies abandonment of the LORD (vv. 5-6), then encourages strength and perseverance, assuring that work in seeking the LORD will be rewarded (v. 7). This prophecy demonstrates the reception of divine instruction as part of the broader pattern of covenant faithfulness.",
+          "verse_refs": [
+            "2 Chronicles 15:1-7"
+          ],
+          "evidence_ids": [
+            "second-chronicles-seek-humble-pattern"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "covenant_renewal",
+      "title": "The Commitment to Seek",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Following the prophetic instruction, Asa responds by removing abominations from the land and renewing the altar (v. 8). He gathers representatives from Judah, Benjamin, and the northern tribes who had migrated south (v. 9), and together they assemble in Jerusalem to offer sacrifice and enter covenant (vv. 10-11). The covenant itself is explicit: the people pledge to seek the LORD God with their entire heart and soul (v. 12). This commitment extends to enforcement, with provisions for death to any who refuse to seek the LORD (v. 13). The pattern of seeking, reinforced by prophetic instruction and formalized by covenant, structures the entire episode.",
+          "verse_refs": [
+            "2 Chronicles 15:8-13"
+          ],
+          "evidence_ids": [
+            "second-chronicles-seek-humble-pattern"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "0dd50f96ee6eace6454241dc619151649168404362f70321c42c1f105c1ac852",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: prophetic_foundation",
+    "section[2].kind is unsupported: covenant_renewal"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,53 @@
+{
+  "reference": "1 Samuel 15",
+  "book": "1 Samuel",
+  "chapter": 15,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "The Command and Its Breach",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Samuel announces that God has commanded Saul to completely destroy Amalek and all their possessions\u2014'utterly destroy all that they have, and spare them not; but slay both man and woman, infant and suckling, ox and sheep, camel and ass' (1 Samuel 15:1-3). The command is total and unambiguous. Saul then assembles two hundred ten thousand troops and engages the Amalekites militarily, destroying them from Havilah to Shur (1 Samuel 15:4-8).",
+          "verse_refs": [
+            "1 Samuel 15:1-3",
+            "1 Samuel 15:4-8"
+          ],
+          "evidence_ids": [
+            "first-samuel-saul-rejected"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_2",
+          "text": "Despite the comprehensive defeat, Saul preserves Agag the king alive and keeps 'the best of the sheep, and of the oxen, and of the fatlings, and the lambs' (1 Samuel 15:9). He destroys only 'everything that was vile and refuse.' This selective mercy directly contradicts the command for total destruction. God responds by telling Samuel, 'It repenteth me that I have set up Saul to be king; for he is turned back from following me, and hath not performed my commandments' (1 Samuel 15:10-11).",
+          "verse_refs": [
+            "1 Samuel 15:9",
+            "1 Samuel 15:10-11"
+          ],
+          "evidence_ids": [
+            "first-samuel-saul-rejected"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "2f422df440c1e8c7cca50a102f3ee597c08caef74e0f392bbace6436a68dbc66",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[2].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

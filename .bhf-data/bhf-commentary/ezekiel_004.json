@@ -1,0 +1,39 @@
+{
+  "reference": "Ezekiel 4",
+  "book": "Ezekiel",
+  "chapter": 4,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "textual_witnesses",
+      "title": "Textual Witnesses",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ezekiel 4 is attested in multiple ancient textual sources: the Masoretic Text, the Old Greek translation, Papyrus 967, Qumran fragments, and the Masada scroll. These witnesses exhibit variations in wording and order, requiring passage-level textual analysis.",
+          "verse_refs": [
+            "Ezekiel 4"
+          ],
+          "evidence_ids": [
+            "ezekiel-textual-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e7cd6c413caced311cc6756f423e79ec5332e24559e9628741e68f3b21a3eb03",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: textual_witnesses"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,42 @@
+{
+  "reference": "2 Chronicles 32",
+  "book": "2 Chronicles",
+  "chapter": 32,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Chapter 32 narrates Sennacherib's invasion of Judah and Hezekiah's response to this extraordinary test of faith. Following his religious reforms of the previous chapter, Hezekiah confronts a military crisis that unfolds in two phases: first, strategic preparation for siege conditions, and second, confrontation with Sennacherib's psychological and theological assault on the city's confidence. The narrative exemplifies a recurring pattern in Chronicles where Judah's leaders and people respond to existential threats by seeking God's deliverance.",
+          "verse_refs": [
+            "2 Chronicles 32:1-8"
+          ],
+          "evidence_ids": [
+            "second-chronicles-seek-humble-pattern"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "2aa6cd8930a2c19042a41e9ca0a56dfb166324e7917c7fe5e8c4fa6330ba02a1",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: section",
+    "section[2].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,82 @@
+{
+  "reference": "Acts 23",
+  "book": "Acts",
+  "chapter": 23,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Acts 23 presents Paul's appearance before the Jerusalem council. Paul asserts his clear conscience before God, but the high priest Ananias orders him struck. The hearing becomes pivotal when Paul identifies himself as a Pharisee and invokes resurrection\u2014the fundamental theological divide between Pharisees and Sadducees. Pharisees affirm resurrection and believe in angels and spirits; Sadducees deny all three. This division fractures the council, with Pharisaic scribes rising to defend Paul while Roman soldiers must intervene to prevent his death.",
+          "verse_refs": [
+            "Acts 23:1-10"
+          ],
+          "evidence_ids": [
+            "acts-pharisee-sadducee-dispute",
+            "sanhedrin:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "pharisee_sadducee_dispute",
+      "title": "The Pharisee-Sadducee Divide",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "According to Acts, the core theological disagreement between Pharisees and Sadducees concerns resurrection, angels, and spirits. Acts depicts Pharisees affirming belief in all three, while Sadducees explicitly deny them. Paul strategically shifts the hearing from personal accusations toward this theological fault line, immediately alienating the Sadducees and attracting Pharisaic support. Pharisaic scribes argue that they 'find no evil in this man' and suggest that perhaps 'a spirit or an angel' has spoken to him, demonstrating how deeply embedded this difference is in Jewish institutional life.",
+          "verse_refs": [
+            "Acts 23:6-9"
+          ],
+          "evidence_ids": [
+            "acts-pharisee-sadducee-dispute"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "institutional_and_military_context",
+      "title": "The Council and Roman Presence",
+      "blocks": [
+        {
+          "id": "block_7",
+          "text": "Acts depicts the chief captain (chiliarch), a Roman military officer commanding soldiers stationed in Jerusalem, intervening to rescue Paul from the fractious council. This reflects the Roman military's role within the social and political systems governing first-century Judea, including responsibility for maintaining order when local assemblies became violent.",
+          "verse_refs": [
+            "Acts 23:10"
+          ],
+          "evidence_ids": [
+            "roman-army:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "aa277e1bf2faf0d4655c870839fe938e45db173ef827432f3792c47cddfd9bef",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: pharisee_sadducee_dispute",
+    "section[1].block[1].interpretation_level is invalid",
+    "section[2].kind is unsupported: jewish_diversity_and_sources",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[2].block[1].interpretation_level is invalid",
+    "section[3].kind is unsupported: institutional_and_military_context",
+    "section[3].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

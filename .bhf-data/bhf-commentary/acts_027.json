@@ -1,0 +1,63 @@
+{
+  "reference": "Acts 27",
+  "book": "Acts",
+  "chapter": 27,
+  "status": "validated",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview: The Voyage to Rome",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Acts 27 narrates Paul's voyage to Rome in the first-person plural ('we'), following his appeal to Caesar. The account exhibits detailed knowledge of ancient Mediterranean sailing, including specific port locations, seasonal considerations, and nautical practices. Yet the precise wreck location and the degree to which the narrative depends on eyewitness testimony remain uncertain.",
+          "verse_refs": [
+            "Acts 27:1-2"
+          ],
+          "evidence_ids": [
+            "acts-voyage",
+            "acts-we-passages"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_2",
+          "text": "Evaluating Acts 27 historically requires comparing specific claims with independent evidence rather than assigning blanket reliability or unreliability to the entire chapter. Such methodological rigor allows readers to assess individual voyage details on their historical merits.",
+          "verse_refs": [
+            "Acts 27"
+          ],
+          "evidence_ids": [
+            "acts-historical-method"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_3",
+          "text": "Acts 27 is preserved in early papyri (P45, P53, P74) and major Greek codices including Sinaiticus, Vaticanus, and Bezae. The Western text tradition, preserved particularly in Codex Bezae, contains readings that differ substantially from other manuscript families. Individual textual variants require case-by-case judgment rather than wholesale acceptance or rejection.",
+          "verse_refs": [
+            "Acts 27"
+          ],
+          "evidence_ids": [
+            "acts-text-witnesses",
+            "acts-western-text"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "46b36af4940508b324571a9d63b520294c1679e3ebfbae194eca67b1911b0d1b",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

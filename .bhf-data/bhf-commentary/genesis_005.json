@@ -1,0 +1,98 @@
+{
+  "reference": "Genesis 5",
+  "book": "Genesis",
+  "chapter": 5,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Genesis 5 opens by restating the image of God from creation, then traces the genealogy from Adam through Enoch. The chapter weaves together two foundational themes: the enduring dignity of humanity and the continuity of the covenant line through successive generations.",
+          "verse_refs": [
+            "Genesis 5:1",
+            "Genesis 5:2"
+          ],
+          "evidence_ids": [
+            "image-of-god-theme:ancient_near_east_context:0",
+            "why-are-genealogies-included:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "content",
+      "title": "The Image of God and Human Dignity (5:1-2)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The chapter opens by reasserting that humanity bears God's image. While royal imagery was known in the ancient Near East, Genesis extends this representational dignity beyond kings to all people. After the fall, this image remains inscribed in human nature, though marred by sin. The Hebraic worldview grounded in this image emphasizes human vocation, relational responsibility, moral accountability, and stewardship\u2014dimensions that persist even in a fallen condition.",
+          "verse_refs": [
+            "Genesis 5:1",
+            "Genesis 5:2"
+          ],
+          "evidence_ids": [
+            "image-of-god-theme:ancient_near_east_context:0",
+            "what-is-the-image-of-god:ancient_near_east_context:0",
+            "image-of-god-theme:historical_context:0",
+            "image-of-god-theme:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_3",
+          "text": "Jewish interpreters in the Second Temple period developed this theme further, connecting the image of God with wisdom, holiness, and the restoration of humanity. This reading shows how Genesis's opening claim\u2014that human beings reflect God's character\u2014became a cornerstone for later theological reflection on human dignity, purpose, and eschatological hope.",
+          "verse_refs": [
+            "Genesis 5:1",
+            "Genesis 5:2"
+          ],
+          "evidence_ids": [
+            "image-of-god-theme:second_temple_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "content",
+      "title": "Genealogy as Covenant Record (5:3-23)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Genesis 5 presents a genealogy following the conventions of ancient family records. In the broader ancient world, genealogy served to establish belonging, secure legal rights, and preserve collective memory. Scripture adopts this form but directs it toward covenant continuity and divine providence. The line traced here\u2014from Adam through Enoch to Noah\u2014anchors God's purpose across generations, demonstrating that the post-fall narrative remains held within God's intentional design.",
+          "verse_refs": [
+            "Genesis 5:3",
+            "Genesis 5:5",
+            "Genesis 5:23"
+          ],
+          "evidence_ids": [
+            "why-are-genealogies-included:ancient_near_east_context:0",
+            "why-are-genealogies-included:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f9a351a57c79b53415bdde7b85ad154b939602901d08e54f95efb7d165e6a9dd",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: content",
+    "section[2].kind is unsupported: content"
+  ],
+  "validation_warnings": []
+}

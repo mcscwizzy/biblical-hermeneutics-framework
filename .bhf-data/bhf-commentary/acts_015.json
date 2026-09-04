@@ -1,0 +1,128 @@
+{
+  "reference": "Acts 15",
+  "book": "Acts",
+  "chapter": 15,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "The Question of Gentile Inclusion",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Acts 15 presents the early church's deliberation over a fundamental question: whether Gentiles who believe in Jesus must first undergo circumcision and observe the law of Moses. The conflict begins when certain believers from Judea arrive in Antioch teaching that circumcision is required for salvation. This triggers significant disagreement with Paul and Barnabas, leading the assembly to send representatives to Jerusalem to consult the apostles and elders on the matter.",
+          "verse_refs": [
+            "Acts 15:1-2"
+          ],
+          "evidence_ids": [
+            "acts-15-gentile-question",
+            "acts-15-gentile-question:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "Journey to Jerusalem and Reception",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "As Paul, Barnabas, and other delegates travel through Phoenicia and Samaria toward Jerusalem, they report the conversion of Gentiles to the believers they encounter, bringing great joy to the churches along the way. In Jerusalem, the apostles, elders, and church community receive the delegation and hear a full account of what God has accomplished through them among the Gentile peoples.",
+          "verse_refs": [
+            "Acts 15:3-4"
+          ],
+          "evidence_ids": [
+            "acts-gentile-inclusion-council"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "The Central Dispute",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "The council convenes to address the question. Believers from the Pharisaic sect insist that circumcision is necessary and that Gentiles must be charged to keep the law of Moses. The apostles and elders gather to deliberate on this matter, which centers on the obligation of Torah observance as a condition for Gentile salvation.",
+          "verse_refs": [
+            "Acts 15:5-6"
+          ],
+          "evidence_ids": [
+            "acts-gentile-inclusion-council",
+            "acts-gentile-inclusion-decree"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "Peter's Argument from Experience",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Peter addresses the assembly, reminding them that God chose him to preach the gospel to Gentiles long ago, and that God gave them the Holy Spirit as testimony to their faith. God, who knows the heart, made no distinction between Jewish believers and Gentiles by cleansing their hearts through faith. Peter questions why the assembly should impose on Gentile believers a yoke that neither their Jewish fathers nor the current generation has been able to bear. He concludes that salvation comes through grace in the Lord Jesus, the same for both Jews and Gentiles.",
+          "verse_refs": [
+            "Acts 15:7-11"
+          ],
+          "evidence_ids": [
+            "acts-gentile-inclusion-council"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "The Apostolic and Missionary Testimony",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "Peter's argument silences opposition. The assembly then listens as Barnabas and Paul recount the signs and wonders God performed among the Gentiles through their ministry, providing concrete evidence of divine validation for Gentile conversion and inclusion.",
+          "verse_refs": [
+            "Acts 15:12"
+          ],
+          "evidence_ids": [
+            "acts-gentile-inclusion-council",
+            "acts-council-later-comparator"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "852204f96a1388c573c28fa111345c6452c183d43cd3a8c5f85e27ba36d8975a",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: narrative_section",
+    "section[2].kind is unsupported: narrative_section",
+    "section[3].kind is unsupported: narrative_section",
+    "section[4].kind is unsupported: narrative_section",
+    "section[5].kind is unsupported: narrative_section",
+    "section[5].block[0].confidence exceeds its cited evidence",
+    "section[6].kind is unsupported: thematic_section",
+    "section[6].block[0].interpretation_level is invalid",
+    "section[7].kind is unsupported: contextual_section",
+    "section[7].block[0].interpretation_level is invalid",
+    "section[8].kind is unsupported: methodological_section",
+    "section[8].block[0].interpretation_level is invalid",
+    "section[9].kind is unsupported: methodological_section",
+    "section[9].block[0].interpretation_level is invalid",
+    "section[9].block[0].confidence exceeds its cited evidence"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,43 @@
+{
+  "reference": "Exodus 17",
+  "book": "Exodus",
+  "chapter": 17,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "thematic_section",
+      "title": "Water Supply as a Recurring Pattern",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The water crisis at Rephidim is part of a documented pattern in Exodus. Earlier in the journey, the people first encountered undrinkable water at Marah, then abundant fresh water with palm trees at Elim. This sequence appears not only in Exodus but is preserved identically in the itinerary recorded in Numbers 33, indicating that water availability and location are core elements of the journey rather than incidental narrative details. Rephidim represents yet another episode where this geographic constraint determines the course of events.",
+          "verse_refs": [
+            "Exodus 17:1-7"
+          ],
+          "evidence_ids": [
+            "marah-elim-water-stations",
+            "marah-elim-water-stations:passage-relevance"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "1f4bf703d2e378dbc703928a3486af238f7329a74738ce79de7c85dd22b9d511",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].confidence exceeds its cited evidence",
+    "section[1].kind is unsupported: thematic_section",
+    "section[2].kind is unsupported: interpretive_section",
+    "section[2].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

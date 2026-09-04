@@ -1,0 +1,59 @@
+{
+  "reference": "Deuteronomy 28",
+  "book": "Deuteronomy",
+  "chapter": 28,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Deuteronomy 28 appears within the section on 'future ceremony, consequences, renewal, and choice' spanning chapters 27-30. It presents covenant consequences through blessings and curses, employing the blessing and curse formula characteristic of ancient Near Eastern covenant and treaty rhetoric. The narrated setting is the plains of Moab, where Moses addresses the generation preparing to enter the promised land.",
+          "verse_refs": [
+            "Deuteronomy 28"
+          ],
+          "evidence_ids": [
+            "deuteronomy:timeline:3",
+            "deuteronomy:ancient_near_east_context:0",
+            "deuteronomy:historical_setting:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_analysis",
+      "title": "The Blessings of Covenant Obedience",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Deuteronomy 28:1-14 presents an extended promise of blessings contingent on 'hearken[ing] diligently unto the voice of Jehovah thy God, to observe to do all his commandments.' The blessings span multiple dimensions of life: bodily fertility, agricultural and animal prosperity, domestic security, military triumph, and economic preeminence among nations. This comprehensive scope reflects the hebraic worldview underlying Deuteronomy, wherein covenant loyalty\u2014understood as exclusive allegiance to the LORD, obedience, remembrance, and just action\u2014shapes every aspect of communal and personal existence in the land.",
+          "verse_refs": [
+            "Deuteronomy 28:1-14"
+          ],
+          "evidence_ids": [
+            "deuteronomy:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "538fe979857a770d788b6417d04876c45d80b65f65121988c5bfd4fd5437f5f0",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: textual_analysis"
+  ],
+  "validation_warnings": []
+}

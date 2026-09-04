@@ -1,0 +1,168 @@
+{
+  "reference": "2 Thessalonians 2",
+  "book": "2 Thessalonians",
+  "chapter": 2,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "This chapter addresses false teachings claiming that the day of the Lord has already arrived. Paul's response anchors the readers in a larger eschatological framework where Jesus' coming and the gathering of the faithful form a coordinated future event. Rather than succumb to alarm, the community is reassured through specific prophetic events that must precede the end and through the reminder that God has chosen them unto salvation.",
+          "verse_refs": [
+            "2 Thessalonians 2:1-15"
+          ],
+          "evidence_ids": [
+            "2th-coming-gathering",
+            "2th-alarm",
+            "2th-election"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "The False Alarm (2:1-2)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The community has been disturbed by claims that the day of the Lord is present\u2014claims circulated through spiritual utterances, oral reports, or even a forged letter attributed to Paul. The apostle explicitly commands the readers not to be shaken or alarmed by these various sources of false teaching.",
+          "verse_refs": [
+            "2 Thessalonians 2:1-2"
+          ],
+          "evidence_ids": [
+            "2th-alarm"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_3",
+          "text": "The discussion centers on two linked future events: the coming of Jesus Christ and the gathering of the recipients to him. These are presented as coordinated elements of the eschatological hope that structure the entire response.",
+          "verse_refs": [
+            "2 Thessalonians 2:1"
+          ],
+          "evidence_ids": [
+            "2th-coming-gathering"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "The Eschatological Framework (2:3-10)",
+      "blocks": [
+        {
+          "id": "block_6",
+          "text": "The text describes the lawless one as sitting 'in the temple of God, setting himself forth as God.' Whether this temple is earthly, heavenly, communal, or symbolic\u2014and what its significance is\u2014remains disputed among interpreters.",
+          "verse_refs": [
+            "2 Thessalonians 2:4"
+          ],
+          "evidence_ids": [
+            "2th-temple"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "block_7",
+          "text": "The passage twice refers to a restraining force and a restraining agent that currently prevent the man of lawlessness from being revealed. However, the text itself does not identify either the restraining power or the restrainer for readers, making this one of the most intensely debated elements of the passage.",
+          "verse_refs": [
+            "2 Thessalonians 2:6-7"
+          ],
+          "evidence_ids": [
+            "2th-restrainer"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_9",
+          "text": "The coming of the lawless one is characterized by Satanic activity, power, signs, and false wonders\u2014all oriented toward unrighteous deception. These supernatural displays are designed to deceive those who are perishing, particularly those who have rejected the love of truth that leads to salvation.",
+          "verse_refs": [
+            "2 Thessalonians 2:9-10"
+          ],
+          "evidence_ids": [
+            "2th-signs"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Election and Salvation (2:13-14)",
+      "blocks": [
+        {
+          "id": "block_10",
+          "text": "The readers are reminded that God chose them from the beginning unto salvation. This election involves sanctification by the Spirit and belief in the truth, and was accomplished through the gospel calling that grants them the glory of Jesus Christ. This assurance stands in sharp contrast to the fate of those deceived by false signs.",
+          "verse_refs": [
+            "2 Thessalonians 2:13-14"
+          ],
+          "evidence_ids": [
+            "2th-election"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_11",
+          "text": "Early manuscript witnesses differ between 'from the beginning' and 'as firstfruits' in describing God's election of the recipients, representing different but related ways of articulating their status within God's redemptive purposes.",
+          "verse_refs": [
+            "2 Thessalonians 2:13"
+          ],
+          "evidence_ids": [
+            "2th-election-variant"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Standing in Traditions (2:15)",
+      "blocks": [
+        {
+          "id": "block_12",
+          "text": "The chapter concludes by exhorting the community to stand firm and hold fast to the traditions they have been taught through both spoken word and apostolic letter. This emphasis on stability and faithfulness to transmitted teaching frames the apostolic response to false eschatological claims.",
+          "verse_refs": [
+            "2 Thessalonians 2:15"
+          ],
+          "evidence_ids": [
+            "2th-tradition"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "baf045534fcc1bc62a1a212bf75471af11a944d9521653a471137b2c9b6775de",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[2].block[1].interpretation_level is invalid",
+    "section[2].block[1].confidence exceeds its cited evidence",
+    "section[2].block[4].interpretation_level is invalid",
+    "section[3].kind is unsupported: section",
+    "section[4].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,62 @@
+{
+  "reference": "2 Kings 25",
+  "book": "2 Kings",
+  "chapter": 25,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview: Jerusalem's Fall",
+      "blocks": [
+        {
+          "id": "block_overview_1",
+          "text": "Second Kings 25 narrates the culmination of Judah's political and religious crisis: Nebuchadnezzar's siege of Jerusalem, the city's breach and destruction, the capture and blinding of King Zedekiah, the burning of the temple and royal palace, the dismantling of the city's defenses, and the deportation of the surviving population. This chapter stands at the threshold between the end of Judean kingship in the land and the beginning of diaspora existence that would reshape Jewish identity and theology for generations to come.",
+          "verse_refs": [
+            "2 Kings 25:1-30"
+          ],
+          "evidence_ids": [
+            "second-kings-jerusalem-falls",
+            "second-kings-literary-movement"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "90d629805523a9d78336d238b215d3e02af9f4c45fccd5810502928dfbda5c1c",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "root.status is unsupported: complete",
+    "section[1].kind is unsupported: section",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[1].block[0] cites unsupported evidence IDs: fall-of-jerusalem:ancient_near_east_context, babylonian-exile:ancient_near_east_context",
+    "section[2].kind is unsupported: section",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[2].block[0] cites unsupported evidence IDs: fall-of-jerusalem:ancient_near_east_context, jericho-1:historical_context",
+    "section[2].block[1].interpretation_level is invalid",
+    "section[2].block[1] cites unsupported evidence IDs: babylonian-exile:ancient_near_east_context",
+    "section[3].kind is unsupported: section",
+    "section[3].block[0].interpretation_level is invalid",
+    "section[3].block[0] cites unsupported evidence IDs: fall-of-jerusalem:ancient_near_east_context, fall-of-jerusalem:historical_context, city-of-david-excavations:historical_context",
+    "section[3].block[1].interpretation_level is invalid",
+    "section[3].block[1] cites unsupported evidence IDs: babylonian-exile:ancient_near_east_context, babylonian-exile:historical_context",
+    "section[4].kind is unsupported: section",
+    "section[4].block[0].interpretation_level is invalid",
+    "section[4].block[0] cites unsupported evidence IDs: fall-of-jerusalem:hebraic_worldview, babylonian-exile:hebraic_worldview",
+    "section[4].block[1].interpretation_level is invalid",
+    "section[4].block[1] cites unsupported evidence IDs: exile-and-return-storyline:hebraic_worldview, exile-theme:hebraic_worldview",
+    "section[5].kind is unsupported: section",
+    "section[5].block[0].interpretation_level is invalid",
+    "section[5].block[0] cites unsupported evidence IDs: babylon-1:historical_context, babylon-1:ancient_near_east_context",
+    "section[5].block[1].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

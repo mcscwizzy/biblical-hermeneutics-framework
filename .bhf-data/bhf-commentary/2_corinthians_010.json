@@ -1,0 +1,108 @@
+{
+  "reference": "2 Corinthians 10",
+  "book": "2 Corinthians",
+  "chapter": 10,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview: Paul's Defense of Apostolic Authority",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Paul opens with an appeal to the meekness and gentleness of Christ, acknowledging a paradox: he is lowly in their presence but emboldened in absence. He requests they not force him to display that boldness when present, as he anticipates confronting those who dismiss the apostolic mission on fleshly grounds.",
+          "verse_refs": [
+            "2 Corinthians 10:1-2"
+          ],
+          "evidence_ids": [
+            "2cor-authorship",
+            "corinth-warfare-not-fleshly"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "main_discourse",
+      "title": "Spiritual Warfare and Intellectual Authority",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Paul reframes the conflict as spiritual, not fleshly. Though the mission operates within physical existence, its weapons are not physical but divinely powerful, aimed at demolishing strongholds. He immediately clarifies that these strongholds are intellectual and theological: arguments and every high pretension opposed to knowledge of God. The apostolic task involves bringing every thought into captivity to Christ's obedience.",
+          "verse_refs": [
+            "2 Corinthians 10:3-5"
+          ],
+          "evidence_ids": [
+            "corinth-warfare-not-fleshly",
+            "corinth-strongholds-arguments",
+            "warfare-metaphor-nonviolence",
+            "corinth-captive-thought-obedience-punishment"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "main_discourse",
+      "title": "Presence, Speech, and Contested Reputation",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Paul calls the Corinthians to examine visible realities before them. He reframes his authority: yes, he could boast extensively about the apostolic authority the Lord gave, but this authority exists to build up, not tear down. He refuses to be shamed by this restraint and counters that what he demonstrates through letters in absence, he will demonstrate in deed when present.",
+          "verse_refs": [
+            "2 Corinthians 10:7-11"
+          ],
+          "evidence_ids": [
+            "foolish-boasting-irony",
+            "self-commendation-contested",
+            "corinthian-presence-speech-contest"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "main_discourse",
+      "title": "Against Self-Comparison and Self-Commendation",
+      "blocks": [
+        {
+          "id": "block_6",
+          "text": "Paul explicitly refuses to engage in comparison with rivals who measure and compare themselves by themselves\u2014a practice he labels self-deceiving. Instead, Paul measures by the standard God assigned to him as an apostle: the sphere or province that extends to the Corinthians themselves, whom he reached with the gospel. He avoids self-praise as proof of legitimacy, resisting the comparison culture that his opponents practice.",
+          "verse_refs": [
+            "2 Corinthians 10:12-14"
+          ],
+          "evidence_ids": [
+            "self-commendation-contested",
+            "self-commendation-contested:passage-relevance",
+            "foolish-boasting-irony",
+            "foolish-boasting-irony:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d7ca27b815988e9d1f54d239d1b4407fe26bffc4894795588b8c6c454e18c9f0",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: main_discourse",
+    "section[1].block[1].interpretation_level is invalid",
+    "section[2].kind is unsupported: main_discourse",
+    "section[2].block[1].interpretation_level is invalid",
+    "section[3].kind is unsupported: main_discourse",
+    "section[4].kind is unsupported: interpretive_note",
+    "section[4].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

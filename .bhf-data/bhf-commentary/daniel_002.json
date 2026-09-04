@@ -1,0 +1,61 @@
+{
+  "reference": "Daniel 2",
+  "book": "Daniel",
+  "chapter": 2,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Narrative Setting and Vision",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Daniel 2 opens with Nebuchadnezzar troubled by a forgotten dream, demanding that his Babylonian court magicians, enchanters, and sorcerers recall and interpret it without being told what it was. When they protest the impossibility of the task, the king's fury escalates to a death sentence. This narrative of human wisdom's inadequacy sets the stage for divine revelation. The chapter's climax is a vision of a multi-metal statue\u2014gold, silver, bronze, iron, and iron mixed with clay\u2014representing successive kingdoms. All these earthly powers are destroyed by a stone cut without hands, which represents a kingdom established by God alone. The vision establishes a central conviction: earthly dominion, no matter how powerful, stands under divine judgment and will be replaced by an eternal kingdom rooted in God's sovereignty.",
+          "verse_refs": [
+            "Daniel 2:1-45"
+          ],
+          "evidence_ids": [
+            "daniel-statue-four-kingdoms"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_witnesses",
+      "title": "Language and Textual Structure",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "A significant linguistic transition marks Daniel 2:4b, where the text shifts from Hebrew to Aramaic. This signals the beginning of an extended Aramaic section that encompasses Daniel 2 through 7, crossing both narrative material and visionary content. This deliberate structural choice indicates intentional literary architecture in the book's composition. Multiple Qumran manuscript witnesses preserve portions of Daniel in both Hebrew and Aramaic, confirming the book's complex textual history and the significance of this linguistic boundary.",
+          "verse_refs": [
+            "Daniel 2:4b",
+            "Daniel 8:1"
+          ],
+          "evidence_ids": [
+            "daniel-language-structure",
+            "daniel-qumran-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d2c0eccf7b54d93953dd9c3572a5bd2216881557fca0a9c7f4091c6b23c31d39",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: textual_witnesses",
+    "section[2].kind is unsupported: theological_context",
+    "section[2].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

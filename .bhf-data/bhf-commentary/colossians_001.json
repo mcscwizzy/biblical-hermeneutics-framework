@@ -1,0 +1,104 @@
+{
+  "reference": "Colossians 1",
+  "book": "Colossians",
+  "chapter": 1,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "salutation",
+      "title": "Senders and Greeting (1:1-2)",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Paul identifies himself as an apostle of Christ Jesus appointed by God's will, and includes Timothy as a fellow believer and co-sender. Though Paul's apostolic authority shapes the letter\u2014evidenced by his dominant singular voice and eventual autograph\u2014Timothy shares in the greeting to the saints at Colossae, establishing shared responsibility for the letter's spiritual direction.",
+          "verse_refs": [
+            "Colossians 1:1-2"
+          ],
+          "evidence_ids": [
+            "col-senders"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "thanksgiving",
+      "title": "Gospel Witness Through Epaphras (1:3-8)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Paul's thanksgiving centers on a spiritual report from Epaphras, the missionary who first brought the gospel to Colossae. Epaphras taught the recipients, carries news of their faith and love back to the apostles, and labors in prayer both for them and for neighboring communities. His role bridges Paul's apostolic authority and the local church's spiritual life, demonstrating how the gospel spreads and takes root through faithful ministry.",
+          "verse_refs": [
+            "Colossians 1:3-8"
+          ],
+          "evidence_ids": [
+            "col-epaphras"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "christology",
+      "title": "Christ's Cosmic Supremacy (1:15-20)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Christ is presented as the image of the invisible God, expressing his role as the visible manifestation of transcendent divinity. Through this designation, the text establishes Christ's supreme position as the one through whom God's nature and character are made known.",
+          "verse_refs": [
+            "Colossians 1:15"
+          ],
+          "evidence_ids": [
+            "col-image"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_5",
+          "text": "The text ascribes all creation to Christ: all things in heaven and earth, visible and invisible\u2014including celestial powers and authorities\u2014were created in him, through him, and for him. He precedes all things and holds creation's coherence and unity. This integration of creation language with Christology presents Christ as the eternal agent and sustainer of creation rather than as a creature.",
+          "verse_refs": [
+            "Colossians 1:16-17"
+          ],
+          "evidence_ids": [
+            "col-creation"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_6",
+          "text": "All the fullness of God dwells in Christ bodily. Through his blood and cross, Christ establishes peace and accomplishes reconciliation for all things in heaven and on earth. This grounds cosmic redemption in the historical reality of Christ's crucifixion, connecting his pre-cosmic creative role with his redemptive work on behalf of the church.",
+          "verse_refs": [
+            "Colossians 1:19-20"
+          ],
+          "evidence_ids": [
+            "col-fullness",
+            "col-reconciliation"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "2b61fe569a54434a29d5c8c70a2825d928a95a64e59e3d01a915030c56b69421",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: salutation",
+    "section[1].kind is unsupported: thanksgiving",
+    "section[2].kind is unsupported: christology",
+    "section[2].block[1].interpretation_level is invalid",
+    "section[2].block[4].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

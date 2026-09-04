@@ -1,0 +1,158 @@
+{
+  "reference": "1 Corinthians 8",
+  "book": "1 Corinthians",
+  "chapter": 8,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "exegetical",
+      "title": "Knowledge, Love, and Being Known (8:1-3)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Paul opens with a diagnosis: knowledge inflates, but love builds. Anyone who claims complete knowledge of a matter still does not know as they should. True knowledge, by contrast, is relational\u2014the knower is known by God. This framing rejects the use of expertise to override or shame people who carry embodied histories of worship. The strong person's intellectual correctness does not license dismissing the weak person's embodied concern.",
+          "verse_refs": [
+            "1 Corinthians 8:1-3"
+          ],
+          "evidence_ids": [
+            "corinth-knowledge-love-known",
+            "corinth-knowledge-love-known:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "exegetical",
+      "title": "The Reality of Idols and Confession (8:4-6)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Paul affirms that an idol has no independent existence: no god in the world but one. Yet he also acknowledges the Corinthian reality\u2014many so-called gods and lords populate the city. Against this landscape, Paul confesses one God (the Father, source of all) and one Lord (Jesus Christ, through whom all things exist). This theological claim denies idols' divine status without yet addressing cultic participation. It explains why Paul can deny an idol's ontological reality while later rejecting temple dining without treating every market purchase as forbidden.",
+          "verse_refs": [
+            "1 Corinthians 8:4-6"
+          ],
+          "evidence_ids": [
+            "corinth-idol-and-one-god-confession",
+            "corinth-idol-ontology-cultic-table"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "exegetical",
+      "title": "The Weak Person's Conscience (8:7)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Not all Corinthians share this knowledge. Some have eaten their whole lives within idol worship and carry that association into the present. When they eat sacrificial meat now, their conscience\u2014aware of the idol association\u2014becomes defiled. Weakness here is not stupidity but the persistence of embodied history. Syneidesis (conscience/awareness) tracks prior association and the person's self-perception, not an infallible inner compass or a license to control others.",
+          "verse_refs": [
+            "1 Corinthians 8:7"
+          ],
+          "evidence_ids": [
+            "corinth-former-idol-association",
+            "syneidesis-awareness-self-perception"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "exegetical",
+      "title": "Food and Spiritual Status (8:8)",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "Paul clarifies: food itself does not determine spiritual status. Eating sacrificial meat does not make a person worse before God; not eating does not make them better. This statement prevents ranking believers by diet. But it sets up the next claim: even though food has no intrinsic power, the social and personal consequences for the weak person remain serious.",
+          "verse_refs": [
+            "1 Corinthians 8:8"
+          ],
+          "evidence_ids": [
+            "corinth-food-does-not-commend"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "exegetical",
+      "title": "The Danger of Visible Temple Participation (8:9-10)",
+      "blocks": [
+        {
+          "id": "block_6",
+          "text": "The ethical problem crystallizes when weak believers witness the strong eating in an idol's temple. Seeing someone with knowledge recline there can embolden a weak person to eat sacrificial food despite their troubled conscience. The Corinthian landscape included real cultic venues and temple meals as social and religious events. Distinguishing temple dining from market purchase and private-home meals prevents collapsing all idol-food cases into a single rule.",
+          "verse_refs": [
+            "1 Corinthians 8:9-10"
+          ],
+          "evidence_ids": [
+            "corinth-visible-temple-reclining",
+            "sanctuary-market-idol-food"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "exegetical",
+      "title": "Harm to the Brother and Sin Against Messiah (8:11-12)",
+      "blocks": [
+        {
+          "id": "block_7",
+          "text": "The consequence is grave. Through the strong person's knowledge-based choice, the weak sibling\u2014for whom Messiah died\u2014is destroyed. Wounding a weak person's conscience in this manner constitutes sin against Messiah himself. The text centers the vulnerable person's experience and harm, not the right-holder's intellectual correctness or freedom.",
+          "verse_refs": [
+            "1 Corinthians 8:11-12"
+          ],
+          "evidence_ids": [
+            "corinth-destroyed-sibling-wounded-conscience"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "exegetical",
+      "title": "Paul's Own Restraint (8:13)",
+      "blocks": [
+        {
+          "id": "block_8",
+          "text": "Paul's own resolution models the principle. He declares: if eating meat causes his sibling to stumble, he will eat no flesh forever. This emphatic conditional frames restraint not as compulsion imposed by the weak but as the strong person's own responsible choice. Paul exercises his liberty-holder's agency by choosing care.",
+          "verse_refs": [
+            "1 Corinthians 8:13"
+          ],
+          "evidence_ids": [
+            "corinth-conditional-never-meat"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "2b3606e1b99a6b10efc1d7bf762aae70322638238e4e399063f69c259f8ee4e2",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0] cites unsupported evidence IDs: corinth-idol-food",
+    "section[1].kind is unsupported: exegetical",
+    "section[2].kind is unsupported: exegetical",
+    "section[3].kind is unsupported: exegetical",
+    "section[4].kind is unsupported: exegetical",
+    "section[5].kind is unsupported: exegetical",
+    "section[6].kind is unsupported: exegetical",
+    "section[7].kind is unsupported: exegetical"
+  ],
+  "validation_warnings": []
+}

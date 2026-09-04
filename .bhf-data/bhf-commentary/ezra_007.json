@@ -1,0 +1,103 @@
+{
+  "reference": "Ezra 7",
+  "book": "Ezra",
+  "chapter": 7,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ezra 7 introduces Ezra the scribe as the central figure in a major return from Babylon under the Persian king Artaxerxes. The chapter traces his genealogy through the high priesthood back to Aaron, presents his expertise in the law of Moses, and records the royal decree granting him authority to establish and administer Jewish religious and civil life in Jerusalem.",
+          "verse_refs": [
+            "Ezra 7:1-15"
+          ],
+          "evidence_ids": [
+            "return-from-exile:ancient_near_east_context:0",
+            "return-from-exile:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "content",
+      "title": "Ezra's Priestly Genealogy and Scribal Vocation",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The genealogy in verses 1\u20135 establishes Ezra's priestly standing by tracing his descent through the high priesthood from Eleazar son of Aaron. Yet the text does not present Ezra primarily as a cultic priest. Rather, verses 6\u201310 define him as a scribe\u2014specifically, one 'ready in the law of Moses' and one who 'set his heart to seek the law of the LORD, and to do it, and to teach in Israel statutes and ordinances.' This threefold commitment\u2014to study, practice, and teach Torah\u2014shaped the priestly-scribal form of Second Temple leadership. The scribal role encompassed far more than copying: it involved sustained study of inherited texts, the development of wise judgment, Torah interpretation, and public teaching\u2014responsibilities that positioned the scribe as a figure of authority within the community.",
+          "verse_refs": [
+            "Ezra 7:1-10"
+          ],
+          "evidence_ids": [
+            "ezra-torah-vocation",
+            "scribes:second_temple_context:0",
+            "scribes:hebraic_worldview:0",
+            "ben-sira-scribal-vocation"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "content",
+      "title": "Return and Royal Authorization",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Ezra's return to Jerusalem occurs not as an independent venture but within the Persian imperial administration. The narrative presents the return theologically\u2014'the good hand of his God upon him'\u2014emphasizing divine providence. Yet this theological frame does not exclude imperial politics. Return from exile occurred through Achaemenid imperial authorization, provincial administration, written decrees, and authorized travel across imperial routes. These returns established and enlarged early Second Temple communities concerned with worship, genealogy, land, Torah, proper boundaries, and taxation. Yet many Judeans continued living throughout the Persian empire, making this return movement one part of ongoing diaspora existence.",
+          "verse_refs": [
+            "Ezra 7:6-9"
+          ],
+          "evidence_ids": [
+            "return-from-exile:hebraic_worldview:0",
+            "return-from-exile:ancient_near_east_context:0",
+            "return-from-exile:second_temple_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "content",
+      "title": "The Royal Decree: Authority over Torah and Community",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The king's letter (vv. 11\u201315) grants Ezra sweeping authority: to inquire into Judah and Jerusalem 'according to the law of thy God which is in thy hand,' to transport temple offerings, and to appoint magistrates and judges throughout the province. This administrative structure illustrates Persian provincial practice\u2014delegating power to appointed representatives who could administer local law, collect resources, and report to imperial authorities. The arrangement reveals how Judean religious and civil institutions developed under Persian rule: Torah teaching and priestly authority became integral to provincial governance, even as Jerusalem remained subject to imperial oversight and priorities.",
+          "verse_refs": [
+            "Ezra 7:11-15"
+          ],
+          "evidence_ids": [
+            "return-from-exile:ancient_near_east_context:0",
+            "second-temple-administration:ancient_near_east_context:0",
+            "second-temple-administration:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "460e46850a51fb213c79beb78974aab6e0d199811aaa5cf2ef754967fa7ecc03",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: content",
+    "section[2].kind is unsupported: content",
+    "section[3].kind is unsupported: content"
+  ],
+  "validation_warnings": []
+}

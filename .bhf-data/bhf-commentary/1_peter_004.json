@@ -1,0 +1,100 @@
+{
+  "reference": "1 Peter 4",
+  "book": "1 Peter",
+  "chapter": 4,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "First Peter 4 weaves together several core themes through paraenetical exhortation: Christ's suffering as the foundational pattern, the contrast between Christian conduct and pagan social pressure, the imminence of divine judgment, and practical guidance for community life. The chapter moves from christological grounding through persecution and eschatology to concrete ethics and consolation regarding suffering.",
+          "verse_refs": [
+            "1 Peter 4:1-15"
+          ],
+          "evidence_ids": [
+            "1pet-genre"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "exegesis",
+      "title": "Conversion and Social Hostility (4:3-4)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "The passage catalogs past participation in Gentile excess: lasciviousness, winebibbings, revelries, and idolatries. The addressees' refusal to continue in these practices now generates astonishment and reproach from their former associates. This attests to genuine social resistance arising from the addressees' religious reorientation. The letter documents this hostility without specifying its scale, nature, or institutional source.",
+          "verse_refs": [
+            "1 Peter 4:3-4"
+          ],
+          "evidence_ids": [
+            "1pet-persecution"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "exegesis",
+      "title": "Judgment and Gospel to the Dead (4:5-6)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Peter summons accountability before one ready to judge the living and the dead. Verse 6 introduces the claim that the gospel was proclaimed even to the dead, that they might face judgment according to human standards in the flesh but live according to God in the spirit. The letter does not identify these dead or specify when or how the proclamation occurred. This passage anchors the epistle's eschatological worldview, in which judgment is imminent and comprehensive.",
+          "verse_refs": [
+            "1 Peter 4:5-6"
+          ],
+          "evidence_ids": [
+            "1pet-judgment",
+            "1pet-dead"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "exegesis",
+      "title": "The Fiery Trial and Suffering for the Faith (4:12-15)",
+      "blocks": [
+        {
+          "id": "block_6",
+          "text": "Peter addresses his readers as beloved and instructs them not to regard fiery trial as a strange intrusion. This testing is meant to prove faith. Crucially, he distinguishes between suffering for Christ and suffering for wrongdoing: believers are to rejoice when reproached for the name of Christ, with the Spirit of glory resting upon them. Conversely, no blessing attends suffering as a murderer, thief, evildoer, or meddler. The passage draws a sharp line between persecution as a Christian and punishment for actual crimes.",
+          "verse_refs": [
+            "1 Peter 4:12-15"
+          ],
+          "evidence_ids": [
+            "1pet-fiery-trial"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "cc1fcb09803b65bda4e57620e788dc104809f7c10afec2d248c3dd9f18019f37",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: exegesis",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: exegesis",
+    "section[3].kind is unsupported: exegesis",
+    "section[4].kind is unsupported: exegesis",
+    "section[4].block[0].interpretation_level is invalid",
+    "section[5].kind is unsupported: exegesis"
+  ],
+  "validation_warnings": []
+}

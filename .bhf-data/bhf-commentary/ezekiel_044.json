@@ -1,0 +1,39 @@
+{
+  "reference": "Ezekiel 44",
+  "book": "Ezekiel",
+  "chapter": 44,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "textual_notes",
+      "title": "Textual Witnesses and Manuscript Tradition",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ezekiel 44 is preserved across multiple ancient textual witnesses including the Masoretic text, the Old Greek translation (Iezekiel), Papyrus 967, Qumran fragments, and the Masada scroll. These sources witness variations in wording and textual order, requiring careful passage-level textual analysis to establish the textual tradition of this chapter and identify any significant divergences between witnesses.",
+          "verse_refs": [
+            "Ezekiel 44:1-11"
+          ],
+          "evidence_ids": [
+            "ezekiel-textual-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "8c1b1612ca3f043e0c1fac8a8c141a6ea4d35b6289947ef5adf6bec70dafad4b",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: textual_notes"
+  ],
+  "validation_warnings": []
+}

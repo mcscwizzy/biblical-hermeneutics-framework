@@ -1,0 +1,117 @@
+{
+  "reference": "1 Peter 5",
+  "book": "1 Peter",
+  "chapter": 5,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "First Peter 5 concludes the letter with pastoral exhortation, a coherent final movement employing paraenesis and apocalyptic consolation. The chapter addresses elders, younger members, and all believers facing social hostility, calling them to humility, watchfulness, and endurance under the mighty hand of God.",
+          "verse_refs": [
+            "1 Peter 5:1-14"
+          ],
+          "evidence_ids": [
+            "1pet-genre",
+            "1pet-persecution"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Exhortation to Elders: Shepherding with Willing Service",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The author addresses elders as a fellow-elder and witness to Christ's suffering, exhorting them to tend the flock willingly and eagerly rather than under constraint, motivated by genuine care rather than financial gain. They are called to lead by example rather than dominating those entrusted to their care, looking forward to receiving an unfading crown of glory when the chief Shepherd is manifested.",
+          "verse_refs": [
+            "1 Peter 5:1-4"
+          ],
+          "evidence_ids": [
+            "1pet-elders"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Mutual Humility and Trust",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "The passage transitions from elder leadership to address all believers, calling younger members to submission and all to gird themselves with humility in mutual service. This humility is grounded in the conviction that God resists the proud but grants grace to the humble. Believers are exhorted to humble themselves under God's mighty hand, trusting that he will exalt them in due time, and to cast their anxiety upon him because he cares for them.",
+          "verse_refs": [
+            "1 Peter 5:5-7"
+          ],
+          "evidence_ids": [
+            "1pet-humility"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Vigilance Against Adversity",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The call to sobriety and watchfulness is grounded in the presence of an adversary, the devil, portrayed as a roaring lion seeking someone to devour. Believers are urged to withstand him steadfast in faith, finding encouragement in the knowledge that the same sufferings are being accomplished in believers throughout the world. God, who called them to eternal glory in Christ, will perfect, establish, and strengthen them after they have suffered a little while.",
+          "verse_refs": [
+            "1 Peter 5:8-10"
+          ],
+          "evidence_ids": [
+            "1pet-adversary",
+            "1pet-persecution"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "The Letter's Close and Greetings",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "The letter concludes with a doxology ascribing dominion to God forever. The author notes that the letter was written through Silvanus, their faithful brother, as a brief exhortation and testimony to the true grace of God. The closing greetings mention 'she that is in Babylon' and Mark, extending peace to all in Christ. The reference to Babylon likely carries symbolic significance, though the text does not explicitly define the identities or roles of these figures.",
+          "verse_refs": [
+            "1 Peter 5:11-14"
+          ],
+          "evidence_ids": [
+            "1pet-closing",
+            "1pet-babylon"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "c27f1f40adb1b6a241055cc49b72379e51b7ffe1cac4d6c12a6a3c9ebabce951",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[3].kind is unsupported: section",
+    "section[4].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

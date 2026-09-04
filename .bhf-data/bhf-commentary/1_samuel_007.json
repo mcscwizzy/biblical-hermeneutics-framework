@@ -1,0 +1,45 @@
+{
+  "reference": "1 Samuel 7",
+  "book": "1 Samuel",
+  "chapter": 7,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "setting",
+      "title": "Setting and Geographic Framework",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The chapter unfolds at Mizpah and references Kiriath-jearim, both significant sites within 1 Samuel's geographic framework. These locations situate the narrative within early Iron Age Israel's regional communities during a period marked by expanding Philistine power and Israelite vulnerability. This context necessitates prophetic mediation and communal covenant response as central to Israel's continuity.",
+          "verse_refs": [
+            "1 Samuel 7:1",
+            "1 Samuel 7:5-6"
+          ],
+          "evidence_ids": [
+            "1-samuel:key_places:5",
+            "1-samuel:key_places:6",
+            "1-samuel:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "8520daa30f18c28d03b9e7860c5e748fad1dee8466c621470d952b7b08c709f2",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: setting",
+    "section[2].kind is unsupported: theological_pattern",
+    "section[2].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,43 @@
+{
+  "reference": "Genesis 4",
+  "book": "Genesis",
+  "chapter": 4,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "character_study",
+      "title": "Cain and Abel: Negative and Positive Examples",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Genesis 4 introduces Cain and Abel as the first pair of siblings whose moral distinction becomes the chapter's organizing principle. Abel keeps flocks while Cain tills the ground, but their occupational difference gives way to a more fundamental contrast. When both present offerings to Jehovah, Abel's receives divine favor while Cain's does not. This rejection triggers Cain's escalating anger and culminates in his murder of Abel\u2014establishing him as the negative sibling exemplar whose deeds were evil, against his brother's righteousness.",
+          "verse_refs": [
+            "Genesis 4:2",
+            "Genesis 4:3-5",
+            "Genesis 4:8"
+          ],
+          "evidence_ids": [
+            "1jn-cain"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ccf7f85d015c4439287b531917a7a8d8c00213662b4b383212282fc1362ae804",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: character_study",
+    "section[1].kind is unsupported: cultural_context",
+    "section[1].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

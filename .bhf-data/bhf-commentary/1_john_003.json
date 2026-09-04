@@ -1,0 +1,100 @@
+{
+  "reference": "1 John 3",
+  "book": "1 John",
+  "chapter": 3,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "context",
+      "title": "The Anonymous Letter",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "The First Letter of John does not identify its author, readers, or destination. This anonymity means we approach the text on its own terms, without relying on external authorial biography or specific historical addresses to guide our interpretation.",
+          "verse_refs": [
+            "1 John 3:1"
+          ],
+          "evidence_ids": [
+            "1jn-anonymous"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "sin_and_righteousness",
+      "title": "Sin as Lawlessness, Righteousness as Abiding",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Chapter 3 draws a sharp contrast between sin and righteousness. Sin is defined as lawlessness\u2014a fundamental violation of order. Christ was manifested precisely to remove sins; he himself contains no sin. The passage then makes a challenging claim: whoever abides in Christ does not sin; whoever sins has neither seen nor known him. God's seed abiding in such a person is incompatible with sinning. This creates an apparent tension that the letter itself recognizes: it elsewhere acknowledges that Christians do sin, yet here describes those born of God as unable to sin.",
+          "verse_refs": [
+            "1 John 3:4",
+            "1 John 3:5",
+            "1 John 3:6",
+            "1 John 3:9"
+          ],
+          "evidence_ids": [
+            "1jn-sin-denial",
+            "1jn-seed"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "community_ethics",
+      "title": "The Cain Example and Love as Deed",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The letter illustrates the divide between God's children and the devil's through the example of Cain. Cain 'was of the evil one' and murdered his brother\u2014Cain's works were evil, his brother's righteous. This negative model highlights the positive command announced 'from the beginning': love one another. The world will hate the community just as it rejected Christ, but those who love the brothers have passed from death into life, while those who hate remain in death. Hatred of a brother is itself called murder and destroys any claim to eternal life.",
+          "verse_refs": [
+            "1 John 3:11",
+            "1 John 3:12",
+            "1 John 3:13",
+            "1 John 3:14",
+            "1 John 3:15"
+          ],
+          "evidence_ids": [
+            "1jn-cain"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_5",
+          "text": "Love is defined not as sentiment but as concrete action. Jesus laid down his life for believers\u2014this supreme sacrifice is the measure and model for Christian love. Believers are called to the same willingness: to lay down their lives for one another. Love also means sharing material resources with brothers in need. The test of love is not what we feel but what we do, measured by Christ's self-giving and embodied in the community's shared life.",
+          "verse_refs": [
+            "1 John 3:16",
+            "1 John 3:17"
+          ],
+          "evidence_ids": [
+            "1jn-love-deed"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "34c766b78b6e66d291ea22a557a410eb132c27b6c2f3f330d5fd229ff4feb00b",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: context",
+    "section[1].kind is unsupported: identity_and_eschatology",
+    "section[1].block[0].confidence exceeds its cited evidence",
+    "section[2].kind is unsupported: sin_and_righteousness",
+    "section[3].kind is unsupported: community_ethics"
+  ],
+  "validation_warnings": []
+}

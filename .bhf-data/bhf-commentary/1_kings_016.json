@@ -1,0 +1,42 @@
+{
+  "reference": "1 Kings 16",
+  "book": "1 Kings",
+  "chapter": 16,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "narrative_context",
+      "title": "Tirzah as Royal Center",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Tirzah serves as the focal point for the chapter's succession events. The narrative locates King Elah's residence and assassination there and establishes Tirzah as the base from which Zimri orchestrated his coup. The repeated placement of power transfers at this location underscores its significance as a royal administrative center in the northern kingdom.",
+          "verse_refs": [
+            "1 Kings 16:8-10"
+          ],
+          "evidence_ids": [
+            "1-kings:key_places:9"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e1ab09724ef952bdf76b6bbd32726e70eb3f322f9cb61ea22981906dc0ae6f89",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: narrative_context",
+    "section[2].kind is unsupported: theological_framework",
+    "section[2].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

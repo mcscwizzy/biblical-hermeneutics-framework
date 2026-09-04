@@ -1,0 +1,39 @@
+{
+  "reference": "Ezekiel 20",
+  "book": "Ezekiel",
+  "chapter": 20,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "textual_witnesses",
+      "title": "Textual Witnesses and Transmission",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ezekiel 20 survives in multiple ancient manuscript traditions: the Masoretic Text, the Old Greek Septuagint translation (Iezekiel), Papyrus 967, Qumran fragments, and the Masada scroll. These witnesses exhibit variations in wording and word order, requiring careful passage-level textual analysis to trace how this chapter was transmitted across different textual traditions and communities.",
+          "verse_refs": [
+            "Ezekiel 20:1-13"
+          ],
+          "evidence_ids": [
+            "ezekiel-textual-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b09b770d1c3b8df656076b992c2eba4d6d2764fbdbe801588c612ab6d80a0f54",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: textual_witnesses"
+  ],
+  "validation_warnings": []
+}

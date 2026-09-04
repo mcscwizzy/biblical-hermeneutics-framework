@@ -1,0 +1,57 @@
+{
+  "reference": "Esther 2",
+  "book": "Esther",
+  "chapter": 2,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "After King Ahasuerus removes Queen Vashti, his servants initiate a search for a new queen throughout his kingdom. Among the young women gathered to the palace in Shushan is Esther, a Jewish woman also known by her birth name Hadassah, who is under the guardianship of her cousin Mordecai. When brought into the royal custody under Hegai's oversight, Esther gains favor and eventually rises to become queen.",
+          "verse_refs": [
+            "Esther 2:1-9"
+          ],
+          "evidence_ids": [
+            "esther-queen-hidden-identity"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "The Concealment of Identity",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Mordecai instructs Esther not to disclose her people or her family background to anyone at court. This deliberate concealment of her Jewish heritage is a defining feature of her position. Despite this hidden identity, Esther finds favor with those around her and secures her place as queen in the seventh year of Ahasuerus's reign.",
+          "verse_refs": [
+            "Esther 2:10"
+          ],
+          "evidence_ids": [
+            "esther-queen-hidden-identity"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "625725c29dff30d7391730a98d1766a5b91bfb0e4cf0da9755dd3f0bc3f9a7cd",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

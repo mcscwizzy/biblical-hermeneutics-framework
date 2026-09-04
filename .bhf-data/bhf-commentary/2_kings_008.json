@@ -1,0 +1,39 @@
+{
+  "reference": "2 Kings 8",
+  "book": "2 Kings",
+  "chapter": 8,
+  "status": "validated",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Archaeological Context",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Archaeological discoveries from Tel Dan and related sites in the Levant provide material evidence\u2014including inscriptions and excavated remains\u2014that illuminate the political and cultural context of the ancient world depicted in 2 Kings 8, particularly regarding the region around Damascus where Elisha encounters Hazael and Ben-Hadad.",
+          "verse_refs": [
+            "2 Kings 8:7-15"
+          ],
+          "evidence_ids": [
+            "tell-dan-excavations:ancient_near_east_context:0",
+            "tel-dan-stele:ancient_near_east_context:0",
+            "tel-rehov-honey-workshop:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "8ef50471bc99d8153f205fe47064f127d3bc7472765d4a94d916a6578e0b2438",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

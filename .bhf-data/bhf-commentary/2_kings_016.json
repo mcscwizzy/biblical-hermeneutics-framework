@@ -1,0 +1,40 @@
+{
+  "reference": "2 Kings 16",
+  "book": "2 Kings",
+  "chapter": 16,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "narrative_section",
+      "title": "Ahaz's Appeal to Assyria (verses 7-9)",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Facing invasion by the allied forces of Syria and Israel, Ahaz sends messengers to Tiglath-pileser declaring himself Assyrian vassal ('I am thy servant and thy son') and dispatches temple and palace wealth as a gift to secure military intervention. The Assyrian king responds, marches against Damascus, captures it, and executes Rezin. Second Kings preserves this transaction as one distinct moment within a broader sequence: Menahem purchasing Assyrian support, Ahaz appealing for rescue with wealth, Hoshea later paying then withholding tribute, and Hezekiah paying after invasion. This textual sequence reveals that each payment served its own political function. Ahaz's appeal, unlike later tributary arrangements, represents immediate crisis management. The pattern prevents interpreting all Judean-Assyrian transactions as identical relationships and instead shows how 2 Kings narrates different political motivations and outcomes for each engagement.",
+          "verse_refs": [
+            "2 Kings 16:7-9"
+          ],
+          "evidence_ids": [
+            "kings-tribute-vassalage-sequence",
+            "kings-tribute-vassalage-sequence:passage-relevance"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "2fd6b6ab48933ae4392ab829daff81194566f2718d6534dfddbc2e8ce2af12ba",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: narrative_section"
+  ],
+  "validation_warnings": []
+}

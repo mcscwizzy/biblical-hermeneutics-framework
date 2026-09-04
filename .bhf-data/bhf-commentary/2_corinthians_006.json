@@ -1,0 +1,43 @@
+{
+  "reference": "2 Corinthians 6",
+  "book": "2 Corinthians",
+  "chapter": 6,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "section",
+      "title": "Warning Against Unequal Partnership (6:14-18)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "The final section warns the Corinthians not to be unequally yoked with unbelievers (6:14-18). A series of rhetorical questions poses the incompatibility of righteousness with iniquity, light with darkness, Christ with Belial, and believers with unbelievers. The passage concludes with assertions that believers form a temple of the living God and that God will dwell in and walk among them. This unit functions as a boundary-setting exhortation, though its precise historical referent, its relationship to the surrounding appeal for openness, and the scope of its application remain disputed among interpreters.",
+          "verse_refs": [
+            "2 Corinthians 6:14-18"
+          ],
+          "evidence_ids": [
+            "2cor-yoke"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "736cdbb878b78dd73789bf416eae05bbbe93cdb3ab8797e580d1c18c87db4d7b",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: section",
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: section",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

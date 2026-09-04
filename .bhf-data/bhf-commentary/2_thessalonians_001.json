@@ -1,0 +1,83 @@
+{
+  "reference": "2 Thessalonians 1",
+  "book": "2 Thessalonians",
+  "chapter": 1,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Opening and Senders",
+      "blocks": [
+        {
+          "id": "block_opening_1",
+          "text": "Paul, Silvanus, and Timothy are named jointly as senders of this letter to the Thessalonian assembly. The letter opens with a conventional greeting of grace and peace from God the Father and the Lord Jesus Christ. This tripartite authorship attribution reflects collaborative mission practice, though modern scholarship debates the degree and nature of each sender's participation in composition.",
+          "verse_refs": [
+            "2 Thessalonians 1:1-2"
+          ],
+          "evidence_ids": [
+            "2th-senders"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Thanksgiving for Faith, Love, and Perseverance",
+      "blocks": [
+        {
+          "id": "block_thanksgiving_1",
+          "text": "The letter opens with thanksgiving to God for the Thessalonians' growth in faith and their increasing mutual love toward one another. This praise is anchored in observable community behaviors: the assembly's faith is flourishing, and their communal love is abundant. The thanksgiving framework emphasizes endurance amid persecution and affliction as the concrete context within which this spiritual growth occurs.",
+          "verse_refs": [
+            "2 Thessalonians 1:3-4"
+          ],
+          "evidence_ids": [
+            "2th-thanksgiving"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Judgment, Righteousness, and Reversal of Roles",
+      "blocks": [
+        {
+          "id": "block_judgment_1",
+          "text": "The passage frames the Thessalonians' suffering as a sign of God's righteous judgment and their worthiness for the kingdom. The logic reverses present roles: those who afflict will receive repayment when the Lord Jesus is revealed from heaven with his angels, while those currently afflicted will receive rest alongside the apostles. This describes eschatological recompense tied to Christ's coming, not immediate relief.",
+          "verse_refs": [
+            "2 Thessalonians 1:5-7"
+          ],
+          "evidence_ids": [
+            "2th-judgment"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "6334ee0c3ced685c0924d0af40f89d09ee96e9717472756e69c855216953c2a0",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[2].block[1].interpretation_level is invalid",
+    "section[3].kind is unsupported: section",
+    "section[3].block[0].interpretation_level is invalid",
+    "section[4].kind is unsupported: background",
+    "section[4].block[0].interpretation_level is invalid",
+    "section[5].kind is unsupported: background",
+    "section[5].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

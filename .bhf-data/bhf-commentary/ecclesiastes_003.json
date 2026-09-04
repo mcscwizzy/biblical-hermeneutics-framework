@@ -1,0 +1,131 @@
+{
+  "reference": "Ecclesiastes 3",
+  "book": "Ecclesiastes",
+  "chapter": 3,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "section",
+      "title": "The Time Poem: Paired Seasons of Life (3:1-8)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The opening verses present an antithetical poem enumerating paired human experiences: birth and death, planting and uprooting, killing and healing, weeping and laughing, mourning and dancing, gathering and scattering stones, embracing and refraining, seeking and losing, keeping and discarding, tearing and sewing, silence and speech, love and hate, war and peace. This is a descriptive catalog of times in human experience rather than a command authorizing each action. The paired structure emphasizes that life unfolds through appropriate seasons and opposites, each with its moment.",
+          "verse_refs": [
+            "Ecclesiastes 3:1-8"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-time-poem-description"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "The Profit Question and Human Limitation (3:9-11)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Immediately after the time poem, Qohelet asks a penetrating question: 'What profit has the worker in that wherein he labors?' This recurring inquiry uses the Hebrew term yitron\u2014asking what lasting advantage or surplus humans can secure from their toil under the sun. The question gains weight from the reality that time and chance disrupt the expected link between skill and achievement. Death claims both the accomplished and the incompetent; remembrance is uncertain; outcomes lie beyond human control.",
+          "verse_refs": [
+            "Ecclesiastes 3:9"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-yitron-under-sun",
+            "ecclesiastes-death-time-chance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_4",
+          "text": "Qohelet acknowledges that God has made everything beautiful in its time and has set eternity in the human heart. Yet humans cannot find out the work that God has done from beginning to end. This tension is foundational to Ecclesiastes: God's enduring action shapes all events, and humans sense divine purposes, yet they are excluded from mastery or comprehensive understanding of how God's work unfolds. Humans remain inscrutably limited, capable only of reverence before what they cannot fathom.",
+          "verse_refs": [
+            "Ecclesiastes 3:11"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-god-fear-gift-judgment"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Enjoyment and Labor as God's Gift (3:12-13)",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "In response to uncertainty about profit, Qohelet commends a distinctive life stance: nothing is better than to rejoice and do good as long as one lives, and every person should eat, drink, and enjoy the good in all their labor. These practices\u2014eating, drinking, working, finding joy in daily life and companionship\u2014are framed as gifts enabled by God. This affirmation does not deny human inability to control ultimate outcomes. Rather, it insists that present enjoyment, meaningful work, and the fruits of labor remain accessible, divinely sanctioned, and worthy amid human limitation.",
+          "verse_refs": [
+            "Ecclesiastes 3:12-13"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-enjoyment-divine-gift"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "God's Enduring Work and Human Reverence (3:14-15)",
+      "blocks": [
+        {
+          "id": "block_6",
+          "text": "Qohelet asserts that whatever God does endures forever: nothing can be added, nothing removed. God has ordained this permanence so humans should fear (revere) him. The past recurs; the future has already been ordained; God seeks again what is passed away. This statement underscores the immutability and inscrutability of God's action. Humans exist within divinely ordered cycles that exceed their comprehension and agency, a reality evoking reverence rather than presumption.",
+          "verse_refs": [
+            "Ecclesiastes 3:14-15"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-god-fear-gift-judgment"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Corruption and Divine Judgment (3:16-17)",
+      "blocks": [
+        {
+          "id": "block_7",
+          "text": "Qohelet reports a concrete observation: in the place of justice, wickedness stands; in the place of righteousness, wickedness stands. This is not abstract philosophy but a witness to corrupted judgment, oppression, and tears without comfort. Power rests in the oppressors' hands, and institutions of justice fail the vulnerable. In response, Qohelet expresses faith that God will judge both righteous and wicked, that there is a time and purpose for every work. Yet this affirmation sits alongside the acknowledgment that justice is delayed, power imbalances persist, and human courts remain compromised. God's ultimate judgment is certain; immediate relief is not.",
+          "verse_refs": [
+            "Ecclesiastes 3:16-17"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-oppression-injustice",
+            "ecclesiastes-god-fear-gift-judgment"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "dc157dab6422fb361ef71361b628f3368cff7f725a81ded523884b7f38bfb010",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "root.status is unsupported: complete",
+    "section[0].block[0].confidence exceeds its cited evidence",
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[3].kind is unsupported: section",
+    "section[4].kind is unsupported: section",
+    "section[5].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

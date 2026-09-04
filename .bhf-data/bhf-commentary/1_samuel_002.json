@@ -1,0 +1,59 @@
+{
+  "reference": "1 Samuel 2",
+  "book": "1 Samuel",
+  "chapter": 2,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "1 Samuel 2 records Hannah's prayer following the birth of Samuel. Verses 1-10 present Hannah's song, a poem celebrating divine reversal of human fortune. The chapter continues with Samuel's placement at Shiloh and observations about priestly practice.",
+          "verse_refs": [
+            "1 Samuel 2:1-14"
+          ],
+          "evidence_ids": [
+            "hannah:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Hannah's Song: Divine Reversal and Sovereignty (1 Samuel 2:1-10)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Hannah's song praises the Lord for overturning human status. The mighty are broken; the hungry are fed; the barren conceives while the fertile languish. Throughout the prayer, social reversals are presented as acts of divine judgment and grace. The Lord raises the poor from the dust to sit with princes, strengthens his king with might, and silences the wicked. The song emphasizes that human fortune is not fixed but determined by the Lord's sovereign judgment.",
+          "verse_refs": [
+            "1 Samuel 2:1-10"
+          ],
+          "evidence_ids": [
+            "first-samuel-hannah-reversal"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "67eca6e477a13e81ef7d2513eab3b10cf5d1e3ff53cb5bc7aa733c853cfbd571",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "root.status is unsupported: complete",
+    "section[1].kind is unsupported: section",
+    "section[1].block[1].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

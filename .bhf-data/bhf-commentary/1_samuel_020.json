@@ -1,0 +1,44 @@
+{
+  "reference": "1 Samuel 20",
+  "book": "1 Samuel",
+  "chapter": 20,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "narrative_analysis",
+      "title": "The Test and Strategy",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "David proposes a test centered on the new moon feast, when the king's table gathers his household and military officers. David will claim he has journeyed to Bethlehem for the yearly family sacrifice, absenting himself for three days. By monitoring Saul's reaction to this absence, Jonathan can determine whether the king's intent toward David is murderous or merely suspicious. The strategy exploits both the religious festival calendar and legitimate family obligation as plausible cover.",
+          "verse_refs": [
+            "1 Samuel 20:5-7"
+          ],
+          "evidence_ids": [
+            "1-samuel:key_places:11"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "99f9da7460a6d1667c28704199001e0e25bbfc4ae882e296cca2f37af42428f7",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: narrative_analysis",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: narrative_analysis",
+    "section[3].kind is unsupported: narrative_analysis",
+    "section[3].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

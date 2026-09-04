@@ -1,0 +1,96 @@
+{
+  "reference": "Genesis 10",
+  "book": "Genesis",
+  "chapter": 10,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview: Genealogy and the Ancient Near East",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Genesis 10 traces the descendants of Noah's three sons in the generation following the flood. This genealogical form reflects how ancient families preserved lineages to mark belonging, rights, and memory within their communities. The Bible employs genealogy to trace covenant promise and divine providence across generations, though the structure and scope here also reflect the broader ancient Near Eastern context in which these records were preserved.",
+          "verse_refs": [
+            "Genesis 10:1-5",
+            "Genesis 10:6-20",
+            "Genesis 10:21-32"
+          ],
+          "evidence_ids": [
+            "why-are-genealogies-included:ancient_near_east_context:0",
+            "why-are-genealogies-included:historical_context:0",
+            "what-is-the-ancient-near-east:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "Nimrod and the Founding of Mesopotamian Kingdoms",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Among Ham's descendants, Nimrod emerges as a significant figure whose might is expressed through the establishment of kingdoms. The text locates the beginning of his kingdom in Babel, Erech, Accad, and Calneh in the land of Shinar\u2014locations associated with Mesopotamian urban development. Mesopotamian cities built monumental temple towers, and while Genesis does not identify a specific excavated structure, the narrative's reference to city-building with bricks and coordinate human effort reflects real patterns of urban coordination and technological achievement in the ancient world.",
+          "verse_refs": [
+            "Genesis 10:8-10"
+          ],
+          "evidence_ids": [
+            "babel:ancient_near_east_context:0",
+            "babel:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_3",
+          "text": "The text records that Nimrod subsequently expanded into Assyria, where he built Nineveh, Rehoboth-ir, Calah, and Resen. This narrative sequence\u2014moving from Shinar into the Assyrian region\u2014reflects a real geography of ancient Mesopotamian power centers. Neo-Assyrian expansion would later transform the Levantine world through tributary networks, provincial administration, and imperial consolidation, though the primeval narrative here simply records these place-founding deeds as part of human expansion after the flood.",
+          "verse_refs": [
+            "Genesis 10:11-12"
+          ],
+          "evidence_ids": [
+            "assyria:ancient_near_east_context:0",
+            "assyria:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "The Peoples of Canaan",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Canaan's descendants are listed with their geographic distribution, from Sidon in the north to Gaza and the cities of the Plain in the south. The text identifies the ancestral peoples inhabiting the land that would become central to Israel's later history\u2014Hivites, Amorites, Jebusites, and others. These place names anchor the genealogy within a concrete geography shaped by routes, borders, settlements, water sources, and the movement of neighboring peoples, all elements that will bear on later biblical narratives of conquest and coexistence.",
+          "verse_refs": [
+            "Genesis 10:15-19"
+          ],
+          "evidence_ids": [
+            "what-is-the-ancient-near-east:ancient_near_east_context:0",
+            "sodom:ancient_near_east_context:0",
+            "gomorrah:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "6cbe3cee84bdd32fa6b31d63d03097aa53e6396f3b53362416a1d00343cbc90f",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: narrative_section",
+    "section[2].kind is unsupported: narrative_section"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,57 @@
+{
+  "reference": "Ezekiel 23",
+  "book": "Ezekiel",
+  "chapter": 23,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ezekiel 23 develops an allegory of two sisters, Oholah and Oholibah, representing Samaria and Jerusalem respectively. The prophet employs an extended metaphor grounded in sexualized language, depicting marriage, prostitution, exposure, and divine judgment. This rhetorical approach frames the nations' political entanglements and religious unfaithfulness through disturbing gendered imagery. Both sisters are portrayed as engaging in defiling relationships with imperial powers represented as lovers.",
+          "verse_refs": [
+            "Ezekiel 23:1-15"
+          ],
+          "evidence_ids": [
+            "ezekiel-gendered-city-allegories"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_notes",
+      "title": "Textual Witnesses and Variations",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The text of Ezekiel 23 survives in multiple ancient witnesses including the Masoretic Text, Old Greek Iezekiel, Papyrus 967, Qumran fragments, and the Masada scroll. These manuscripts preserve variant readings and differences in verse arrangement. Close textual analysis at the passage level is necessary to evaluate these variations and determine the most reliable textual foundation for interpretation.",
+          "verse_refs": [
+            "Ezekiel 23"
+          ],
+          "evidence_ids": [
+            "ezekiel-textual-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "5fbd5a62609743fb7a94a4040c73d0a363569a5f11414c26285ff548458d28db",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: textual_notes"
+  ],
+  "validation_warnings": []
+}

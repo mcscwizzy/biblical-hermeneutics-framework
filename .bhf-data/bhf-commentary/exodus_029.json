@@ -1,0 +1,79 @@
+{
+  "reference": "Exodus 29",
+  "book": "Exodus",
+  "chapter": 29,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Exodus 29 prescribes the formal consecration of Aaron and his sons as priests, the individuals who will mediate between YHWH and the Israelite community in the tabernacle system. Through washing, investiture with priestly garments, anointing, and sacrificial offerings, the text establishes these persons in an enduring priestly office shaped by the covenant holiness that characterizes Israel's relationship with God.",
+          "verse_refs": [
+            "Exodus 29:1-9"
+          ],
+          "evidence_ids": [
+            "what-is-the-role-of-priests:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_analysis",
+      "title": "The Priestly Mediation Role",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Israel's priesthood operates within a distinctive covenantal framework. Priestly service is grounded not in local political deity relationships, as in neighboring cultures, but in covenant holiness. Exodus 29 embodies this distinction through ritual consecration\u2014the washing, anointing, and clothing invest Aaron and his sons with a sacred status that aligns them with the sanctuary's structure. Their preparation reflects the sanctuary's principle of ordered, restricted access to the divine, making the priests themselves living markers of that holy order.",
+          "verse_refs": [
+            "Exodus 29:4-9"
+          ],
+          "evidence_ids": [
+            "what-is-the-role-of-priests:ancient_near_east_context:0",
+            "tabernacle:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "ritual_details",
+      "title": "The Sacrifice and Offerings",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The ritual prescribes specific animal offerings as part of the priests' formal inauguration: a bullock presented as a sin offering, with its blood applied to the altar's horns and base and its fat burned. These actions formalize the priests' entry into covenant service through prescribed sacrifice. While the supplied evidence does not detail the theological meaning of each offering component, the text's structured presentation emphasizes that priestly authority emerges through ordered ritual action, consistent with the sanctuary system's orderly approach to divine access.",
+          "verse_refs": [
+            "Exodus 29:10-14"
+          ],
+          "evidence_ids": [
+            "tabernacle:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b0949b89ed143fbc96586e84e7a191783a052217d2e724361ff4abbc396d6138",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: textual_analysis",
+    "section[2].kind is unsupported: ritual_setting",
+    "section[2].block[0].confidence exceeds its cited evidence",
+    "section[3].kind is unsupported: ritual_details"
+  ],
+  "validation_warnings": []
+}

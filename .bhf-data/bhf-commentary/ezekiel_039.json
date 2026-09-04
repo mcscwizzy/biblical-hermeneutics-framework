@@ -1,0 +1,58 @@
+{
+  "reference": "Ezekiel 39",
+  "book": "Ezekiel",
+  "chapter": 39,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview: Gog's Defeat",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ezekiel 39 depicts the destruction of Gog and his coalition arrayed against restored Israel, accomplished through divine intervention. The narrative details the defeat of Gog's military forces, the exposure of his army to birds and beasts, and the devastation of his homeland, while establishing that God's name will be vindicated among both Israel and the nations through this triumph.",
+          "verse_refs": [
+            "Ezekiel 39:1-7"
+          ],
+          "evidence_ids": [
+            "ezekiel-gog"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_notes",
+      "title": "Textual Transmission",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Papyrus 967, an ancient Greek manuscript, places Ezekiel 38-39 before chapter 37, representing a different textual ordering than the Masoretic tradition. Multiple textual witnesses including the Greek version, Qumran fragments, and other Hebrew manuscripts show variations in both wording and sequence, requiring passage-level textual analysis for precise interpretation.",
+          "verse_refs": [
+            "Ezekiel 39"
+          ],
+          "evidence_ids": [
+            "ezekiel-p967-order",
+            "ezekiel-textual-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "8d808c519e7aeb7c61f8551ad9e1095b04a7cb8a3907d4b5147c85b9e6462ab5",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: textual_notes"
+  ],
+  "validation_warnings": []
+}

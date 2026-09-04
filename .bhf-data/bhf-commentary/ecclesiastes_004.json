@@ -1,0 +1,41 @@
+{
+  "reference": "Ecclesiastes 4",
+  "book": "Ecclesiastes",
+  "chapter": 4,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "section",
+      "title": "Oppression and Injustice (vv. 1-3)",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Qohelet opens this section surveying human oppression ('all the oppressions that are done under the sun'). He observes tears of the oppressed without comforters, and oppressors who wield power yet also lack comfort. This symmetry underscores oppression's moral emptiness. The evidence shows Qohelet documenting multiple dimensions of this injustice: tears without comfort, concentrated power in oppressors' hands, corrupted places of judgment, entrenched political hierarchy, delayed justice, and the fragility of wisdom unable to challenge these systems. From this dark landscape, Qohelet reaches a stark conclusion: the long dead are preferable to the living, and best is one not yet born - one who will never witness 'the evil work that is done under the sun.' His logic is straightforward: without remedy, injustice makes non-existence preferable to existence.",
+          "verse_refs": [
+            "Ecclesiastes 4:1",
+            "Ecclesiastes 4:2",
+            "Ecclesiastes 4:3"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-oppression-injustice"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "5ff3956ac8c23fc39d61195e8a2253e816c09a192837014639a5ff0ea5f76c70",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

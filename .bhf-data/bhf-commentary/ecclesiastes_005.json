@@ -1,0 +1,108 @@
+{
+  "reference": "Ecclesiastes 5",
+  "book": "Ecclesiastes",
+  "chapter": 5,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ecclesiastes 5 opens with instruction on worship and speech, emphasizing reverence before God and restraint in words. The chapter then turns to concrete observations: the futility of accumulating wealth, the injustice visible in human systems, and the inescapable reality that death strips away all possessions. Throughout, the text assumes a God who judges and holds humans accountable, while acknowledging the limits of what humans can control or understand about God's full work.",
+          "verse_refs": [
+            "Ecclesiastes 5:1-2",
+            "Ecclesiastes 5:7"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-god-fear-gift-judgment"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Vows and Accountability",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The passage warns against rash words and unfulfilled vows before God. Verses 3-6 counsel that a hasty vow made carelessly and then broken compounds the original thoughtlessness with broken trust. Better not to vow at all than to promise and fail. This instruction presumes God judges and holds humans accountable\u2014a conviction running throughout Ecclesiastes even when the world appears chaotic or unjust.",
+          "verse_refs": [
+            "Ecclesiastes 5:3-6"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-god-fear-gift-judgment"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Oppression and Hidden Justice",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Verse 8 confronts social reality directly: the author has seen the poor oppressed, justice violently overturned, and judgment corrupted in provincial authority. Rather than exhorting the reader to remedy these wrongs, the text directs attention beyond the visible corruption to a higher, unseen authority. This acknowledges the experience of injustice while appealing to transcendent oversight\u2014a recurring move in Ecclesiastes when confronting what power and circumstance can do to the vulnerable.",
+          "verse_refs": [
+            "Ecclesiastes 5:8"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-oppression-injustice"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Wealth, Toil, and What Endures",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Verses 9-15 address Ecclesiastes' central question: what lasting surplus or advantage can a person secure from their toil under the sun? The text observes that increasing wealth increases those who consume it\u2014offering no net gain to the owner. Even at rest, riches bring anxiety rather than peace. Hoarded wealth may perish by misfortune, or be left behind at death. In the end, humans are born naked and depart naked, carrying nothing of their labor away.",
+          "verse_refs": [
+            "Ecclesiastes 5:9-15"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-yitron-under-sun"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_5",
+          "text": "In this passage, the laborer's sleep stands in quiet contrast\u2014the one who works and eats simply rests well, whether food is scanty or ample. The text does not explicitly commend this condition, yet it suggests that simpler circumstances may permit what wealth anxiously prevents. Ecclesiastes elsewhere commends eating, drinking, and labor itself as gifts from God, received within limits humans cannot control, which provides a counterpoint to the book's darker inventory of loss and futility.",
+          "verse_refs": [
+            "Ecclesiastes 5:12"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-enjoyment-divine-gift"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "55c4ed0e5e9c53e52578c66f65668691cdb61eef7063abb3b9e30b166320f35a",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[3].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

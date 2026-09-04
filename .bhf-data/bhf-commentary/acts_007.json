@@ -1,0 +1,40 @@
+{
+  "reference": "Acts 7",
+  "book": "Acts",
+  "chapter": 7,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "narrative_section",
+      "title": "Joseph's Elevation and God's Preservation (7:9-16)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The famine struck both Egypt and Canaan, forcing Jacob to seek grain in Egypt. Joseph revealed his identity to his brothers and summoned the entire household to Egypt. Jacob and the patriarchs descended to Egypt with seventy-five people, died there, and were carried to Shechem for burial. Stephen uses this sequence to demonstrate divine providence: God used famine and migration to bring Israel's ancestors to Egypt, where Joseph's position in the court administration could secure their survival and settlement.",
+          "verse_refs": [
+            "Acts 7:11-16"
+          ],
+          "evidence_ids": [
+            "joseph-interprets-pharaohs-dreams:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "53c3d8bdc9df301a57783c9f64cf5c0ba1cf45522aec294852ce3c2d46738924",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: narrative_section",
+    "section[0].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

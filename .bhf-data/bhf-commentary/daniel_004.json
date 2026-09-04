@@ -1,0 +1,101 @@
+{
+  "reference": "Daniel 4",
+  "book": "Daniel",
+  "chapter": 4,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Daniel 4 is narrated as a royal proclamation from Nebuchadnezzar himself, recounting a visionary dream of a great tree and the sequence of events that followed: his removal from human society, a period of animal-like existence, recognition of God's heavenly dominion, and his ultimate restoration to power. The chapter presents a theological narrative of divine humiliation and redemption, anchored in the king's personal testimony to God's signs and wonders.",
+          "verse_refs": [
+            "Daniel 4:1-3",
+            "Daniel 4:4-12",
+            "Daniel 4:31-37"
+          ],
+          "evidence_ids": [
+            "daniel-royal-humiliation"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_tradition",
+      "title": "Textual Witnesses and Versions",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Daniel survives in substantially distinct Greek versions: the Old Greek and the Theodotionic text, which show particularly significant differences in chapters 4-6. These variant traditions reflect how different Greek-speaking communities understood and transmitted the narrative. Hebrew and Aramaic witnesses from Qumran also preserve portions of Daniel, attesting to the text's transmission within Hebrew-reading Jewish communities.",
+          "verse_refs": [
+            "Daniel 4:1"
+          ],
+          "evidence_ids": [
+            "daniel-greek-versions",
+            "daniel-qumran-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "related_traditions",
+      "title": "Related Traditions",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "The Prayer of Nabonidus, preserved in Qumran manuscripts, presents a related but distinct royal-affliction narrative involving judgment on a Mesopotamian ruler. While its specific details differ from Daniel 4's account, it attests to the circulation of similar traditions within Jewish Danielic literature, suggesting a broader pattern of narratives addressing divine judgment upon gentile royal pride and subsequent recognition of heavenly authority.",
+          "verse_refs": [
+            "Daniel 4:31-37"
+          ],
+          "evidence_ids": [
+            "daniel-royal-humiliation",
+            "daniel-qumran-witnesses"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "prayer_praise_tradition",
+      "title": "Prayer and Praise Traditions",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The Greek additions to Daniel\u2014the Prayer of Azariah and Song of the Three, Susanna, and Bel and the Dragon\u2014expand the prophetic wisdom and theological confession found in the narratives themselves. These additions develop themes already present in Daniel 4 through Nebuchadnezzar's recognition of divine supremacy and his public proclamation of praise to the Most High God, extending patterns of prayer, praise, and resistance to idolatry across the wider Danielic tradition.",
+          "verse_refs": [
+            "Daniel 4:2-3",
+            "Daniel 4:34-37"
+          ],
+          "evidence_ids": [
+            "daniel-greek-additions",
+            "daniel-royal-humiliation"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e5ca599a8636bac3cc235648564d4c784bc478bdb0998e4dc65ba6a334b2f7e1",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: textual_tradition",
+    "section[2].kind is unsupported: related_traditions",
+    "section[3].kind is unsupported: prayer_praise_tradition"
+  ],
+  "validation_warnings": []
+}

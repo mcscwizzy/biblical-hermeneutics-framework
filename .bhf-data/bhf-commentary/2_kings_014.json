@@ -1,0 +1,40 @@
+{
+  "reference": "2 Kings 14",
+  "book": "2 Kings",
+  "chapter": 14,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "verse_commentary",
+      "title": "Jonah the Prophet (v. 25)",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "The chapter mentions Jonah son of Amittai, the prophet, whose patronymic matches the identification in Jonah 1:1. This shared naming provides an external biblical reference to a prophetic figure active during the eighth century.",
+          "verse_refs": [
+            "2 Kings 14:25",
+            "Jonah 1:1"
+          ],
+          "evidence_ids": [
+            "jonah-identity-2-kings"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "aed9605690353a838d7bba7384c8b37549539954be62e5f33845112dbbc4750d",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: verse_commentary"
+  ],
+  "validation_warnings": []
+}

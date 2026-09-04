@@ -1,0 +1,99 @@
+{
+  "reference": "Esther 4",
+  "book": "Esther",
+  "chapter": 4,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "narrative",
+      "title": "Mordecai's Mourning and the Jewish Response",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Mordecai's response to Haman's edict\u2014tearing his clothes, donning sackcloth and ashes, and crying out with bitter lamentation\u2014expresses profound grief within the ancient Near Eastern world he inhabited, one shaped by kinship obligations and hierarchical imperial administration. His actions trigger a response throughout the provinces: fasting, weeping, wailing, and widespread wearing of sackcloth and ashes among the Jews. These are not merely individual expressions but collective acts embedded in a social fabric where household, community, and obligation intersect.",
+          "verse_refs": [
+            "Esther 4:1-3"
+          ],
+          "evidence_ids": [
+            "mordecai:ancient_near_east_context:0",
+            "mordecai:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative",
+      "title": "Communication and Authority Within the Royal Household",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "When news of Mordecai's distress reaches Esther through her servants and chamberlains, she attempts to provide him with proper clothing to remove his sackcloth\u2014an act of care constrained by the formal protocols of the Persian court. Mordecai refuses and instead sends Hathach, the chamberlain assigned to serve Esther, to communicate directly with her. This exchange reveals the carefully structured channels of communication within the royal household: servants report to the queen, the queen's appointed chamberlain serves as intermediary, and information flows through designated figures. Mordecai transmits not only his situation but the precise financial terms of Haman's arrangement and a copy of the written decree itself.",
+          "verse_refs": [
+            "Esther 4:4-9"
+          ],
+          "evidence_ids": [
+            "esther-the-queen:ancient_near_east_context:0",
+            "mordecai:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative",
+      "title": "Esther's Constrained Position",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Esther's response through Hathach reveals a critical constraint on her authority: she cannot simply approach the king without being summoned. The law of the realm dictates death for anyone\u2014man or woman\u2014who enters the inner court uninvited, with no exception except for those to whom the king extends his golden scepter. Esther underscores the severity of this restriction by noting it has been thirty days since the king called for her. Despite her position as queen within the household and imperial administration, her access to the king's presence remains subject to his will and the formal protocols that govern the court.",
+          "verse_refs": [
+            "Esther 4:10-11"
+          ],
+          "evidence_ids": [
+            "esther-the-queen:ancient_near_east_context:0",
+            "esther-the-queen:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative",
+      "title": "The Path Forward",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Mordecai's warning shifts the situation decisively: silence will not preserve Esther's safety. She resolves to act despite the legal risk. She calls the Jews of Susa to fast for three days while she and her young women do likewise, then she will approach the king without invitation. This decision represents a calculated risk\u2014choosing to mobilize her community in religious practice before taking the dangerous step of violating court protocol.",
+          "verse_refs": [
+            "Esther 4:15-17"
+          ],
+          "evidence_ids": [
+            "esther-fast-risk-appeal"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "1b84fe9f4bb29f0ee0ff0c0fb71be370ee6486786cb3c4603c7bbeab6a6beb83",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: narrative",
+    "section[1].kind is unsupported: narrative",
+    "section[2].kind is unsupported: narrative",
+    "section[3].kind is unsupported: narrative"
+  ],
+  "validation_warnings": []
+}

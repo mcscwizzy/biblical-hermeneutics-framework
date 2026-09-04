@@ -1,0 +1,46 @@
+{
+  "reference": "Deuteronomy 4",
+  "book": "Deuteronomy",
+  "chapter": 4,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "section",
+      "title": "Torah as Covenant Instruction (4:1-2, 5-8)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Verses 5-8 present covenant obedience itself as Israel's wisdom in the eyes of the nations. The righteous statutes and the proximity of Israel's God to them in response to prayer are the marks that distinguish Israel as a great nation. This framing connects law-keeping to relational nearness with God rather than treating statutes as burdensome obligation alone.",
+          "verse_refs": [
+            "Deuteronomy 4:5-8"
+          ],
+          "evidence_ids": [
+            "torah:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "1146b810f2ec666dc5a79301d71c4f9b430db000483b926f682a66a667c9bfae",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].confidence exceeds its cited evidence",
+    "section[1].kind is unsupported: section",
+    "section[1].block[0].confidence exceeds its cited evidence",
+    "section[2].kind is unsupported: section",
+    "section[2].block[0].confidence exceeds its cited evidence",
+    "section[3].kind is unsupported: section",
+    "section[3].block[0].interpretation_level is invalid",
+    "section[3].block[0] must cite at least one evidence item"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,59 @@
+{
+  "reference": "2 Samuel 21",
+  "book": "2 Samuel",
+  "chapter": 21,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Second Samuel 21 presents a crisis and its resolution during David's reign: a three-year famine that Yahweh attributes to Saul's breach of covenant with the Gibeonites. David inquires of the Lord and then engages with the Gibeonites, who demand restitution. The narrative centers on how the king must address historical wrongs that affect the whole people and shows royal justice operating through dialogue and accountability to those bound by oath.",
+          "verse_refs": [
+            "2 Samuel 21:1-6"
+          ],
+          "evidence_ids": [
+            "2-samuel:key_places:3"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "text_description",
+      "title": "Household Complexity and Covenant Tension",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "The narrative involves kinship relationships within David's household, particularly Mephibosheth son of Jonathan. His treatment stands apart from others affected by the Gibeonite restitution, illustrating how personal covenants and multiple layers of obligation\u2014David's oath with Jonathan and his duty as king\u2014shape decisions that affect the royal house and the kingdom. The passage shows royal justice navigating competing but binding relationships.",
+          "verse_refs": [
+            "2 Samuel 21:7-8"
+          ],
+          "evidence_ids": [
+            "2-samuel:timeline:4"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "57b53fc8b2894c0c637b9d871006f63fbda381ceec975ff87a0dcdd6f1b7ff65",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: narrative_theology",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: text_description"
+  ],
+  "validation_warnings": []
+}

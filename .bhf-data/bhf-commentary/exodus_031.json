@@ -1,0 +1,44 @@
+{
+  "reference": "Exodus 31",
+  "book": "Exodus",
+  "chapter": 31,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "passage_section",
+      "title": "The Sabbath as a Perpetual Covenant Sign (Exodus 31:12-16)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "God commands Israel to observe the Sabbath as an eternal sign of the covenant relationship. Sabbath observance marks covenant fidelity and serves as a sign of God's sanctification of Israel. Violation carries capital punishment, reflecting the Sabbath's fundamental importance to Israel's covenant identity and obligation.",
+          "verse_refs": [
+            "Exodus 31:13-15"
+          ],
+          "evidence_ids": [
+            "what-is-a-covenant-sign:historical_context:0",
+            "what-is-the-significance-of-the-sabbath:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "7c79b39840fee1dcd52b3a2ff03b6dc6c6f2542ede9323854c6ec39f8b059084",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: passage_section",
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: passage_section",
+    "section[1].block[1].interpretation_level is invalid",
+    "section[1].block[2].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,65 @@
+{
+  "reference": "Acts 9",
+  "book": "Acts",
+  "chapter": 9,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "The Damascus Encounter and Conversion",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Saul appears at the opening of Acts 9 as an active persecutor, breathing threat against disciples of the Way and carrying official letters to arrest them in Damascus. As Paul's later self-identification makes clear, he was transformed from this role into the apostle who would carry the gospel to Gentiles and establish communities across the Mediterranean world.",
+          "verse_refs": [
+            "Acts 9:1-2"
+          ],
+          "evidence_ids": [
+            "who-was-paul:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_2",
+          "text": "Acts narrates Saul's encounter with the risen Jesus on the Damascus road three separate times (ch. 9, 22, 26), with rhetorical differences in each telling. Scholars debate whether to call this a conversion, a prophetic call, or a commissioning\u2014these are overlapping but distinct conceptual frameworks. The encounter itself\u2014light, voice, and Saul's fall\u2014is the narrative core.",
+          "verse_refs": [
+            "Acts 9:3-6"
+          ],
+          "evidence_ids": [
+            "acts-paul-call"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_3",
+          "text": "Following the encounter, Saul is blinded and fasts for three days. Ananias, a disciple in Damascus, receives a vision directing him to find Saul at a house on the street called Straight. Though hesitant because of Saul's reputation for persecution, Ananias obeys. He touches Saul, who regains his sight, is baptized, and receives food. The narrative portrays this period of blindness and care as integral to Saul's commissioning rather than as a problem to overcome before his vocation truly begins.",
+          "verse_refs": [
+            "Acts 9:8-17"
+          ],
+          "evidence_ids": [
+            "acts-damascus-blindness-recovery",
+            "acts-damascus-blindness-recovery:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "fc1a0ec6ea82da123cef28df7b3bdfafd1cb6fafce7836cb364c3311f7c24f20",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].block[0].interpretation_level is invalid",
+    "section[1].block[1].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

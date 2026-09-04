@@ -1,0 +1,76 @@
+{
+  "reference": "1 Thessalonians 1",
+  "book": "1 Thessalonians",
+  "chapter": 1,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "expository",
+      "title": "Reception, Imitation, and Affliction (1:5-6)",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "The senders recall how they presented themselves to the Thessalonians 'for your sake,' and the community became imitators 'of us, and of the Lord, having received the word in much affliction, with joy of the Holy Spirit.' Reception of the gospel brought real social pressure to the Thessalonians\u2014they are repeatedly described as afflicted throughout the letters. Yet their response was not withdrawal but imitation of the missionary example and of the Lord himself. The paradox of receiving the word in affliction while experiencing joy of the Spirit defines their early discipleship. Acts narrates one civic disturbance; First Thessalonians speaks of ongoing pressure; the sources do not identify one exhaustive persecuting group or singular cause, but rather a real social-pressure setting.",
+          "verse_refs": [
+            "1 Thessalonians 1:5-6"
+          ],
+          "evidence_ids": [
+            "thess-reception-sounding-word",
+            "thessalonian-affliction-opponents-uncertain",
+            "thessalonian-affliction-opponents-uncertain:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "expository",
+      "title": "Local Example and Spreading Witness (1:7-8)",
+      "blocks": [
+        {
+          "id": "block_6",
+          "text": "The Thessalonians 'became an ensample to all that believe in Macedonia and in Achaia,' and 'from you hath sounded forth the word of the Lord, not only in Macedonia and Achaia, but in every place your faith to God-ward is gone forth.' This language attributes the spread of faith to the local community itself rather than only to traveling missionaries. Thessalonica's position at the Thermaic Gulf on the Via Egnatia, combined with its free-city status and regional communication networks, makes such spreading reports plausible. The letter's praise remains regional rhetoric rather than a literal network census, yet the infrastructure of ports and roads explains why news from a Macedonian assembly could circulate through neighboring provinces.",
+          "verse_refs": [
+            "1 Thessalonians 1:7-8"
+          ],
+          "evidence_ids": [
+            "thess-reception-sounding-word",
+            "thess-reception-sounding-word:passage-relevance",
+            "macedonia-regional-language",
+            "thessalonian-regional-report-rhetoric",
+            "thessalonian-regional-report-rhetoric:passage-relevance",
+            "via-egnatia-port-and-free-city",
+            "via-egnatia-port-and-free-city:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f5e5a4952ac024c50c3b45bbc20d239f4b79b499e42a8a0b4c3abecc83800f28",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "root.status is unsupported: complete",
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: expository",
+    "section[1].block[0].confidence exceeds its cited evidence",
+    "section[2].kind is unsupported: expository",
+    "section[2].block[0].confidence exceeds its cited evidence",
+    "section[3].kind is unsupported: expository",
+    "section[3].block[0].confidence exceeds its cited evidence",
+    "section[4].kind is unsupported: expository",
+    "section[5].kind is unsupported: expository",
+    "section[6].kind is unsupported: expository",
+    "section[6].block[0].confidence exceeds its cited evidence"
+  ],
+  "validation_warnings": []
+}

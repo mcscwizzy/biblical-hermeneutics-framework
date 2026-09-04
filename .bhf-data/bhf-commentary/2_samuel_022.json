@@ -1,0 +1,79 @@
+{
+  "reference": "2 Samuel 22",
+  "book": "2 Samuel",
+  "chapter": 22,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Second Samuel 22 presents David's psalm of praise positioned within his reign as described in the larger narrative. David's song appears at a point of consolidation within the account of his rule from Hebron to Jerusalem, conflict with rival powers, and court administration. The psalm expresses thanksgiving for deliverance, reflecting the Hebraic worldview in which kingship is understood as a divine trust ordered toward justice and righteousness, with lament as a recognized practice of accountability and petition before God.",
+          "verse_refs": [
+            "2 Samuel 22:1-21"
+          ],
+          "evidence_ids": [
+            "2-samuel:historical_setting:0",
+            "2-samuel:historical_context:0",
+            "2-samuel:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "literary_and_textual",
+      "title": "Composition and Transmission History",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Poems and poetic passages in Second Samuel may have different compositional histories from surrounding narrative material. Final-form proposals for the book itself range across monarchic and exilic settings, with the book itself providing no explicit composition date. This distinction between the narrated period of David's reign and the time of composition and transmission affects how readers approach the psalm within its literary frame.",
+          "verse_refs": [
+            "2 Samuel 22"
+          ],
+          "evidence_ids": [
+            "2-samuel:date_ranges:1",
+            "2-samuel:date_ranges:2"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "audience_and_reception",
+      "title": "Original Audience and Reading",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "The first audience of Second Samuel's final form is unknown. The book addresses Israelite or Judean readers reflecting on Davidic kingship, covenant promise, royal justice, judgment, mercy, and national identity. Readers encounter this psalm within that larger arc of reflection on David's reign, its promises, and its complications.",
+          "verse_refs": [
+            "2 Samuel 22"
+          ],
+          "evidence_ids": [
+            "2-samuel:original_audience:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "01b1dc1b51551caeb693e0e0a41e13713480f301a4ab6ed4d7ac51e5ac69508f",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: literary_and_textual",
+    "section[2].kind is unsupported: audience_and_reception"
+  ],
+  "validation_warnings": []
+}

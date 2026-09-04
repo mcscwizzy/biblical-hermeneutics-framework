@@ -1,0 +1,97 @@
+{
+  "reference": "1 Peter 3",
+  "book": "1 Peter",
+  "chapter": 3,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "First Peter 3 forms part of a coherent letter employing household discourse and paraenesis to address believers facing social hostility. The chapter moves from specific instructions for wives and husbands within Greco-Roman household structures to broader calls for mutual compassion, blessing, and faithful witness.",
+          "verse_refs": [
+            "1 Peter 3:1-15"
+          ],
+          "evidence_ids": [
+            "1pet-genre",
+            "1pet-households"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Wives and Husbands (3:1-7)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Wives and husbands receive separate instruction within an unequal Greco-Roman household setting. Wives are called to be subject to their husbands; husbands are instructed to dwell with their wives according to knowledge and give them honor as joint-heirs of grace. This differentiated address reflects the social structures of the time.",
+          "verse_refs": [
+            "1 Peter 3:1-7"
+          ],
+          "evidence_ids": [
+            "1pet-households"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Blessing Instead of Retaliation (3:8-9)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Believers are called to compassion, tenderness of heart, and humility toward one another. The letter explicitly instructs them not to repay evil with evil or reviling with reviling, but instead to bless. This reversal of natural retaliation is presented as the path to receiving a blessing.",
+          "verse_refs": [
+            "1 Peter 3:8-9"
+          ],
+          "evidence_ids": [
+            "1pet-blessing"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Suffering and Witness (3:13-15)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The passage acknowledges that believers may suffer for righteousness, yet assures them of blessing in such circumstances. They are called to sanctify Christ as Lord in their hearts and to be ready always to give an answer for the hope within them, speaking with gentleness and respect and maintaining a good conscience.",
+          "verse_refs": [
+            "1 Peter 3:13-15"
+          ],
+          "evidence_ids": [
+            "1pet-persecution",
+            "1pet-defense"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "09221c690bc39bad347dcde3f64b5205d4afdcc1c08b5a1336e3ab21d2baa8b9",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[3].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

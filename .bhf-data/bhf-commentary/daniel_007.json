@@ -1,0 +1,81 @@
+{
+  "reference": "Daniel 7",
+  "book": "Daniel",
+  "chapter": 7,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Vision and Setting",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Daniel 7 introduces the extended vision sequence (chapters 7-12) and marks a structural transition from court narratives to first-person visions. The chapter is written entirely in Aramaic, the same language as the earlier court tales. The vision occurs in the first year of Belshazzar king of Babylon, when Daniel receives a comprehensive night vision concerning world powers and divine judgment.",
+          "verse_refs": [
+            "Daniel 7:1"
+          ],
+          "evidence_ids": [
+            "daniel-practical-outline",
+            "daniel-language-structure"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "content_analysis",
+      "title": "The Four Beasts from the Sea",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The vision presents four great beasts rising from the sea, driven by winds from heaven. Each beast is distinct: the first, like a lion with eagle's wings, has its wings plucked and is made to stand like a man with a human heart. The second, resembling a bear raised up on one side with three ribs in its mouth, is commanded to devour much flesh. The third, like a leopard with four bird-wings and four heads, receives dominion. The fourth beast, terrible and exceedingly powerful, bears great iron teeth and ten horns\u2014this one is fundamentally different from all the others.",
+          "verse_refs": [
+            "Daniel 7:2-7"
+          ],
+          "evidence_ids": [
+            "daniel-four-beasts-humanlike"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "content_analysis",
+      "title": "The Little Horn and the Heavenly Judgment",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Among the ten horns of the fourth beast, a little horn arises with human-like eyes and a mouth speaking great things, before which three of the first horns are plucked up by their roots. The vision then shifts to a celestial courtroom: thrones are placed, and the Ancient of Days sits in judgment clothed in white like snow, with hair like pure wool, enthroned in fiery flames with burning wheels. Thousands upon thousands minister before him, and ten thousand times ten thousand stand in his presence as the judgment is set and books are opened.",
+          "verse_refs": [
+            "Daniel 7:8-10"
+          ],
+          "evidence_ids": [
+            "daniel-four-beasts-humanlike"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "93330ee3da63f6489d445fdaaa75c078073c0fe8c04904fe8a5375269dbf26b6",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: content_analysis",
+    "section[2].kind is unsupported: content_analysis",
+    "section[3].kind is unsupported: interpretive_context",
+    "section[3].block[0].interpretation_level is invalid",
+    "section[4].kind is unsupported: interpretive_context",
+    "section[4].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

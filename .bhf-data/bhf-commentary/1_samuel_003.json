@@ -1,0 +1,45 @@
+{
+  "reference": "1 Samuel 3",
+  "book": "1 Samuel",
+  "chapter": 3,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview: Samuel's Service at Shiloh",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Samuel serves as a child minister at Shiloh during Eli's priesthood, positioned within Israel's transition from judges-era decentralized leadership toward kingship amid sustained Philistine pressure. The narrative locates him in a functioning priestly sanctuary where he dwells and serves in direct proximity to sacred space and covenant symbols\u2014a setting that situates his calling within the temple community rather than apart from it.",
+          "verse_refs": [
+            "1 Samuel 3:1-3"
+          ],
+          "evidence_ids": [
+            "hannah:historical_context:0",
+            "1-samuel:timeline:0",
+            "1-samuel:historical_setting:0",
+            "1-samuel:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "40ebfa1d43ef6518bf71135f9b80f1b68b2e213979abf7d10ff75e2b02992351",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: narrative_section",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: message_section",
+    "section[2].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

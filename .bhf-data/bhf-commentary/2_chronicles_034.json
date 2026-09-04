@@ -1,0 +1,76 @@
+{
+  "reference": "2 Chronicles 34",
+  "book": "2 Chronicles",
+  "chapter": 34,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Josiah became king at eight years old and established himself as devoted to God and to the Davidic standard of worship. His reign unfolds as a comprehensive religious reform spanning three phases: personal spiritual seeking in his eighth year, systematic purification of idolatry from years twelve through seventeen, and temple restoration beginning in year eighteen that triggers the discovery of the law book and a profound covenant renewal.",
+          "verse_refs": [
+            "2 Chronicles 34:1-2"
+          ],
+          "evidence_ids": [
+            "second-chronicles-josiah-reform"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative",
+      "title": "Religious Purification Campaign",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Starting in his twelfth year, Josiah undertook systematic destruction of idolatrous religious infrastructure. Altars to Baalim were broken down, sun-images were hewn from their elevated positions, and wooden Asherim poles along with carved and cast images were shattered into dust. The remains were scattered over graves of those who had sacrificed to these gods, a ritual desecration marking the rejection of false worship. This purification extended through the northern territories, demonstrating the scope of Josiah's commitment to removing abominations from Israel.",
+          "verse_refs": [
+            "2 Chronicles 34:3-7"
+          ],
+          "evidence_ids": [
+            "second-chronicles-josiah-reform"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative",
+      "title": "Temple Restoration and Covenant Renewal",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "In his eighteenth year, after completing the land's purification, Josiah commissioned restoration of the house of God. This administrative initiative became the catalyst for discovering the law book during repair work. The book's public reading before the king prompted prophetic inquiry through Huldah, whose oracle concerning national unfaithfulness led to formal covenant renewal. The discovered law became the charter for comprehensive religious reformation across Judah.",
+          "verse_refs": [
+            "2 Chronicles 34:8-33"
+          ],
+          "evidence_ids": [
+            "second-chronicles-josiah-reform"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f8740cad701aa8d5d16ea8a3fed4f595db8968b85bb9ca564eb0fec588a89ad2",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: narrative",
+    "section[2].kind is unsupported: narrative"
+  ],
+  "validation_warnings": []
+}

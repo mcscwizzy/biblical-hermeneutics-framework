@@ -1,0 +1,57 @@
+{
+  "reference": "Ezekiel 26",
+  "book": "Ezekiel",
+  "chapter": 26,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview: Oracle Against Tyre",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ezekiel 26 begins a sustained oracle against Tyre (continuing through chapter 28) that addresses the historical city and its rulers. The passage depicts God's judgment through siege imagery: Nebuchadnezzar of Babylon approaches from the north with horses, chariots, and forces; walls crumble under battering engines and axes; streets are trampled; riches become spoil. The opening verses show Tyre's presumption\u2014celebrating Jerusalem's fall as opportunity for commercial expansion\u2014which prompts the divine response. Through concrete images of military destruction and devastation, the oracle conveys Tyre's coming subjugation.",
+          "verse_refs": [
+            "Ezekiel 26:1-12"
+          ],
+          "evidence_ids": [
+            "ezekiel-tyre-laments"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_foundation",
+      "title": "Textual Notes",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Ezekiel 26 is preserved across multiple ancient manuscript sources\u2014the Masoretic text, Old Greek tradition, Papyrus 967, Qumran materials, and the Masada scroll\u2014which exhibit wording and ordering variations requiring careful analysis at the passage level.",
+          "verse_refs": [
+            "Ezekiel 26"
+          ],
+          "evidence_ids": [
+            "ezekiel-textual-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a709efb5c40dabed30ec4f4c4ace4e60b8ae5fa5fafae34eb07125a341bccdaf",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: textual_foundation"
+  ],
+  "validation_warnings": []
+}

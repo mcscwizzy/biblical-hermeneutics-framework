@@ -1,0 +1,39 @@
+{
+  "reference": "Ezekiel 5",
+  "book": "Ezekiel",
+  "chapter": 5,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "textual_criticism",
+      "title": "Textual Witnesses and Transmission",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ezekiel 5 survives in multiple textual witnesses representing different transmission lines: the Masoretic text, the Old Greek version (Iezekiel), Papyrus 967, Qumran fragmentary sources, and the Masada scroll. These witnesses exhibit variation in wording and word order throughout this passage, requiring careful passage-level textual analysis to establish a reliable reading of this chapter's symbolic judgment oracle against Jerusalem.",
+          "verse_refs": [
+            "Ezekiel 5"
+          ],
+          "evidence_ids": [
+            "ezekiel-textual-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b1fb0ee0956a80684fce2a6bede9de3110b82b8bfb7b15d4a2376beacaa26a62",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: textual_criticism"
+  ],
+  "validation_warnings": []
+}

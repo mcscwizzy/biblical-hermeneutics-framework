@@ -1,0 +1,49 @@
+{
+  "reference": "2 Kings 18",
+  "book": "2 Kings",
+  "chapter": 18,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "textual_analysis",
+      "title": "Sennacherib's Campaign Against Judah",
+      "blocks": [
+        {
+          "id": "block_8",
+          "text": "In the fourteenth year of Hezekiah's reign, Sennacherib king of Assyria advanced against the fortified cities of Judah. The text signals a climactic encounter between the Judahite king (who has rebelled against Assyrian rule) and one of history's most powerful imperial rulers. Sennacherib's administrative records, preserved on the Taylor Prism and other Assyrian inscriptions, confirm the 701 BCE campaign in Judah, documenting the capture of fortified cities and the extraction of tribute. Archaeological evidence from Lachish, one of Judah's major strongholds, is depicted in Sennacherib's palace reliefs at Nineveh as a significant Assyrian victory. However, the biblical account and Assyrian records diverge in their treatment of Jerusalem's ultimate fate\u2014a discrepancy that the following narrative will address.",
+          "verse_refs": [
+            "2 Kings 18:13"
+          ],
+          "evidence_ids": [
+            "sennacherib-hezekiah-tribute:passage-relevance",
+            "taylor-prism-annals:passage-relevance",
+            "lachish-relief-royal-siege-rhetoric:passage-relevance"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "6f067395beeffd16d007b03dd65ae6dcc826747b5afabed6b30b0071eab4ceba",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[0].block[1].interpretation_level is invalid",
+    "section[0].block[2].interpretation_level is invalid",
+    "section[0].block[3].interpretation_level is invalid",
+    "section[1].kind is unsupported: textual_analysis",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[1].block[1].interpretation_level is invalid",
+    "section[1].block[2].interpretation_level is invalid",
+    "section[2].kind is unsupported: textual_analysis"
+  ],
+  "validation_warnings": []
+}

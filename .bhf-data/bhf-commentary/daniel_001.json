@@ -1,0 +1,70 @@
+{
+  "reference": "Daniel 1",
+  "book": "Daniel",
+  "chapter": 1,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "imperial_integration",
+      "title": "Renaming and Court Identity",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Renaming represented formal incorporation into the Babylonian system. Daniel became Belteshazzar, Hananiah became Shadrach, Mishael became Meshach, and Azariah became Abed-nego. These new names signaled transformation of identity within the imperial household. Alongside renaming came provision of royal food and wine, further marking their status and integration into court life. Such reidentification was typical of imperial practice for displaced elite transferred into service.",
+          "verse_refs": [
+            "Daniel 1:6-7"
+          ],
+          "evidence_ids": [
+            "daniel-court-identity"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "compositional_considerations",
+      "title": "Textual and Compositional Horizons",
+      "blocks": [
+        {
+          "id": "block_6",
+          "text": "While Daniel 1 presents a narrative set in sixth-century Babylon during Nebuchadnezzar's reign, the composition and shaping of these traditions developed across Persian and Hellenistic periods, with the book reaching received form during the Antiochene crisis. Chapters 1-6 function as court tales exploring questions of identity, resistance, and faithfulness under imperial rule. The text exists in Hebrew-Aramaic Masoretic form widely attested in manuscripts; Greek additions (Prayer of Azariah, Song of the Three, Susanna, Bel and the Dragon) expand Danielic traditions in some manuscript witnesses.",
+          "verse_refs": [
+            "Daniel 1:1"
+          ],
+          "evidence_ids": [
+            "daniel-compositional-horizons",
+            "daniel-practical-outline",
+            "daniel-language-structure",
+            "daniel-greek-additions"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "5ca6436931ce65c6be13baee88eb22c03f4e47eef837cdbcdae516b6d2c5ff69",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].confidence exceeds its cited evidence",
+    "section[1].kind is unsupported: historical_setting",
+    "section[1].block[0].confidence exceeds its cited evidence",
+    "section[2].kind is unsupported: royal_education",
+    "section[2].block[0].confidence exceeds its cited evidence",
+    "section[3].kind is unsupported: imperial_integration",
+    "section[4].kind is unsupported: narrative_resistance",
+    "section[4].block[0].confidence exceeds its cited evidence",
+    "section[5].kind is unsupported: compositional_considerations",
+    "section[6].kind is unsupported: biblical_interpretation",
+    "section[6].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

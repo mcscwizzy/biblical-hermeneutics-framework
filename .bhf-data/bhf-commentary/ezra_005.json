@@ -1,0 +1,45 @@
+{
+  "reference": "Ezra 5",
+  "book": "Ezra",
+  "chapter": 5,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "narrative_scene",
+      "title": "Prophetic Encouragement and Work Resumption (5:1-2)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Haggai and Zechariah emerge as God's spokesmen to the Jewish community of Judah and Jerusalem. Their prophecies energize Zerubbabel (governor) and Jeshua (high priest) to commence construction of the temple. Notably, the prophets remain actively involved in the building effort itself, suggesting their words carried both religious authority and sustained commitment to the project during this critical Persian-period restoration.",
+          "verse_refs": [
+            "Ezra 5:1-2"
+          ],
+          "evidence_ids": [
+            "ezra-opposition-darius",
+            "haggai:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "8cd531276b8bb2a8b970806192097c1f89374b2ebfba5042221e258d9cdcf810",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: narrative_scene",
+    "section[2].kind is unsupported: narrative_scene",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[3].kind is unsupported: imperial_correspondence",
+    "section[3].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

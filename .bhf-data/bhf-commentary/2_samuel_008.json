@@ -1,0 +1,39 @@
+{
+  "reference": "2 Samuel 8",
+  "book": "2 Samuel",
+  "chapter": 8,
+  "status": "validated",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Archaeological Context",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "The events of 2 Samuel 8 are situated within the ancient Near Eastern world. Archaeological sites such as Tel Dan and Tel Rehov provide material evidence through inscriptions, artifacts, excavation layers, and administrative remains that contextualize the cultural and political setting of this period. These excavations help illuminate the broader world in which the biblical narrative is set.",
+          "verse_refs": [
+            "2 Samuel 8:1-14"
+          ],
+          "evidence_ids": [
+            "tel-dan-stele:ancient_near_east_context:0",
+            "tel-rehov-honey-workshop:ancient_near_east_context:0",
+            "tell-dan-excavations:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f5469df21898b2c8a0d45c76b51168713a0fe3d261a65506e0108e79843a8150",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

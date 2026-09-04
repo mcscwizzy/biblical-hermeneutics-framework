@@ -1,0 +1,132 @@
+{
+  "reference": "2 Timothy 3",
+  "book": "2 Timothy",
+  "chapter": 3,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Second Timothy 3 addresses the challenge of false teaching in the last days. The letter presents a vice list characterizing the dangerous conduct of those who oppose the truth, then moves to establish Timothy's foundation in true teaching and the sufficiency of Scripture for equipping God's servant.",
+          "verse_refs": [
+            "2 Timothy 3:1-17"
+          ],
+          "evidence_ids": [
+            "2tim-last-days"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "The Danger of False Teachers (3:1-9)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The letter opens by describing 'grievous times' that shall come, depicting a comprehensive vice list of those corrupted by self-love, avarice, boastfulness, slander, disobedience, ingratitude, and lack of self-control. These figures maintain an outward form of godliness while denying its transformative power. The polemic identifies them as those who infiltrate households, specifically targeting vulnerable or spiritually burdened women who are caught in cycles of learning yet never arriving at genuine knowledge of truth.",
+          "verse_refs": [
+            "2 Timothy 3:1-7"
+          ],
+          "evidence_ids": [
+            "2tim-last-days",
+            "2tim-women"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_3",
+          "text": "The writer compares these false teachers to Jannes and Jambres, the traditional names given to Pharaoh's magicians who opposed Moses. This analogy establishes a parallel between ancient resistance to God's spokesman and contemporary opposition to truth. Just as those magicians were eventually exposed as fraudulent, the letter asserts these modern opponents will be revealed as foolish and morally corrupted, having repudiated the faith itself.",
+          "verse_refs": [
+            "2 Timothy 3:8-9"
+          ],
+          "evidence_ids": [
+            "2tim-jannes"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "Timothy's Inheritance and Persecutions (3:10-13)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The letter shifts to direct appeal, contrasting Timothy's faithful inheritance with the corruption just described. Timothy has followed the writer's teaching, conduct, purpose, faith, patience, and love. The letter specifically recalls persecutions endured at Antioch, Iconium, and Lystra, testifying that the Lord delivered from them all. This pattern of affliction becomes normative: all who pursue godly living in Christ Jesus will encounter persecution, while those engaged in deception deteriorate progressively, deceiving and being deceived in turn.",
+          "verse_refs": [
+            "2 Timothy 3:10-13"
+          ],
+          "evidence_ids": [
+            "2tim-persecution"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "theological_section",
+      "title": "The Authority and Purpose of Scripture (3:14-17)",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "The letter calls Timothy to remain steadfast in what he has learned and been assured of, grounding this charge in the trustworthiness of his teachers and in his lifelong familiarity with the sacred writings. From childhood, Timothy has known these writings, and the letter affirms their power: they are able to make one wise for salvation through faith in Christ Jesus.",
+          "verse_refs": [
+            "2 Timothy 3:14-15"
+          ],
+          "evidence_ids": [
+            "2tim-sacred-writings"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_6",
+          "text": "The passage articulates a foundational claim: every scripture that is theopneustos (inspired by God) is profitable for teaching, reproof, correction, and instruction in righteousness. This four-fold characterization describes Scripture's practical utility in spiritual formation, correction, and moral development. The Greek term theopneustos grounds this utility in Scripture's divine origin, establishing both its character and its purpose within the Christian community.",
+          "verse_refs": [
+            "2 Timothy 3:16"
+          ],
+          "evidence_ids": [
+            "2tim-theopneustos"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_7",
+          "text": "The chapter concludes by connecting Scripture's divine origin to the completion and equipping of God's servant. Through these God-inspired writings, the person of God becomes complete and fully furnished for every good work. This statement expresses Scripture's sufficiency for spiritual maturity and comprehensive readiness in the work of obedience.",
+          "verse_refs": [
+            "2 Timothy 3:17"
+          ],
+          "evidence_ids": [
+            "2tim-equipped"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "23d44c0e3342855e7d251f71a4a16262d18df63691403c16668003e71c473955",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: narrative_section",
+    "section[2].kind is unsupported: narrative_section",
+    "section[3].kind is unsupported: theological_section"
+  ],
+  "validation_warnings": []
+}

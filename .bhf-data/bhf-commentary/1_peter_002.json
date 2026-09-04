@@ -1,0 +1,134 @@
+{
+  "reference": "1 Peter 2",
+  "book": "1 Peter",
+  "chapter": 2,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "First Peter 2 exemplifies the letter's paraenetic structure, combining direct imperatives for Christian conduct with scriptural interpretation and household ethics. The chapter moves progressively from spiritual purification to corporate identity formation, then to visible ethical conduct in a hostile social setting. Throughout, the addressees are being reassured and reoriented in light of their new status and calling.",
+          "verse_refs": [
+            "1 Peter 2:1-16"
+          ],
+          "evidence_ids": [
+            "1pet-genre"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "spiritual_transformation",
+      "title": "Spiritual Cleansing and Growth (vv. 1-3)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The chapter opens with a call to radical moral purification\u2014removal of all wickedness, guile, hypocrisies, envy, and evil speakings. Believers are then invited to long for 'spiritual milk which is without guile' so they may grow unto salvation, having tasted that the Lord is gracious. This imperatively frames spiritual formation as foundational, establishing the internal spiritual state that must precede the identity and conduct claims that follow.",
+          "verse_refs": [
+            "1 Peter 2:1-3"
+          ],
+          "evidence_ids": [
+            "1pet-genre"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "christology",
+      "title": "Living Stones and Christ's Identity (vv. 4-8)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Christ is presented as a 'living stone'\u2014rejected by human builders yet elect and precious before God. Believers function as 'living stones' themselves, built into a spiritual house that constitutes a holy priesthood offering spiritual sacrifices acceptable to God through Christ. Scripture is invoked to reframe human rejection as divine vindication: the passage combines the cornerstone prophecy with the stone-rejected-by-builders motif, establishing that what people reject, God elects. For believers, the stone yields preciousness; for the disobedient, it becomes an obstacle. The passage thus holds together human rejection and divine validation without harmonizing them.",
+          "verse_refs": [
+            "1 Peter 2:4-8"
+          ],
+          "evidence_ids": [
+            "1pet-stones"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "identity_and_vocation",
+      "title": "Priestly Identity and People of God (vv. 9-10)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The addressees are addressed with language drawn from Israel's own scriptures: 'an elect race, a royal priesthood, a holy nation, a people for God's own possession.' They are called to 'show forth the excellencies of him who called you out of darkness into his marvellous light.' The passage then explicitly reframes their history: 'In time past were no people, but now are the people of God; who had not obtained mercy, but now have obtained mercy.' This transfer of Israel's covenant titles and identity language to the addressees represents a major theological claim about who they have become as a corporate body.",
+          "verse_refs": [
+            "1 Peter 2:9-10"
+          ],
+          "evidence_ids": [
+            "1pet-priesthood"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "ethics_and_conduct",
+      "title": "Conduct Among Strangers (vv. 11-12)",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "The addressees are exhorted as 'sojourners and pilgrims' to abstain from 'fleshly lusts, which war against the soul.' More pointedly, they must maintain honorable behavior among Gentiles so that when outsiders slander them as evil-doers, they will instead 'glorify God in the day of visitation' by witnessing the believers' good works. The passage binds ethical conduct directly to anticipated divine judgment: visible, blameless behavior serves as a response to slander and as a form of testimony when God acts.",
+          "verse_refs": [
+            "1 Peter 2:11-12"
+          ],
+          "evidence_ids": [
+            "1pet-conduct"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "ethics_and_conduct",
+      "title": "Submission to Human Authorities (vv. 13-16)",
+      "blocks": [
+        {
+          "id": "block_6",
+          "text": "Believers are commanded to subject themselves to 'every ordinance of man' explicitly 'for the Lord's sake.' This includes the king as supreme authority and governors 'sent by him for vengeance on evil-doers and for praise to them that do well.' The passage teaches that well-doing will 'put to silence the ignorance of foolish men.' Though addressed as free people, believers must not use freedom 'as a cloak of wickedness.' The passage thus establishes a paradoxical dual loyalty: submission to human institutions and authorities is reframed as obedience to God, establishing a principle that undergirds the entire household code framework. [Note: The canonical text provided ends mid-verse at 2:16.]",
+          "verse_refs": [
+            "1 Peter 2:13-16"
+          ],
+          "evidence_ids": [
+            "1pet-authorities"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "aed0944a53594b74344148a57ccb49a4bf13c6e28590478401f1334cda6bf45a",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "root.status is unsupported: complete",
+    "section[1].kind is unsupported: spiritual_transformation",
+    "section[2].kind is unsupported: christology",
+    "section[3].kind is unsupported: identity_and_vocation",
+    "section[4].kind is unsupported: ethics_and_conduct",
+    "section[5].kind is unsupported: ethics_and_conduct"
+  ],
+  "validation_warnings": []
+}

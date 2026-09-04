@@ -1,0 +1,70 @@
+{
+  "reference": "Ecclesiastes 1",
+  "book": "Ecclesiastes",
+  "chapter": 1,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview and Structure",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ecclesiastes opens with a speaker identified as Qohelet, described as 'the son of David, king in Jerusalem' (1:1). This royal persona recurs in verse 12: 'I the Preacher was king over Israel in Jerusalem.' Yet the text never names this figure Solomon, despite the royal lineage and Davidic association. This anonymous royal voice frames Ecclesiastes as a systematic experiment conducted from a position of unprecedented power and resources. Structurally, the book is framed by third-person introduction and conclusion that bracket Qohelet's extended first-person discourse, creating a layered composition where an editorial voice introduces, witnesses, and then evaluates the Preacher's investigation into the nature of human existence.",
+          "verse_refs": [
+            "Ecclesiastes 1:1",
+            "Ecclesiastes 1:12"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-royal-persona-not-named-solomon",
+            "ecclesiastes-frame-qohelet-epilogue"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "exposition",
+      "title": "The Royal Investigation (1:12-17)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Verse 12 marks a transition: 'I the Preacher was king over Israel in Jerusalem.' From this vantage point of royal power, Qohelet describes a methodical investigation. His position as king grants access to resources and knowledge unavailable to ordinary people. He claims to have 'gotten me great wisdom above all that were before me in Jerusalem' and to have examined both wisdom and folly comprehensively (1:13-16). Yet despite\u2014or perhaps because of\u2014this royal privilege and exhaustive inquiry, his conclusion remains consistent with the opening thesis: 'all is vanity and a striving after wind' (1:14). His systematic pursuit, conducted from the highest social station with the greatest opportunities, cannot discover lasting yitron. The royal experiment effectively demonstrates that even privileged access to knowledge, power, and resources yields the same fundamental futility that characterizes all human existence. If a king, with unparalleled ability to pursue wisdom, finds all is vanity, what hope remains for ordinary human toil?",
+          "verse_refs": [
+            "Ecclesiastes 1:12",
+            "Ecclesiastes 1:13",
+            "Ecclesiastes 1:14",
+            "Ecclesiastes 1:15",
+            "Ecclesiastes 1:16",
+            "Ecclesiastes 1:17"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-royal-persona-not-named-solomon"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "685ded6067ab12127f9c69a0cba5d7c5ed4c8dc690f47e9dc60eafe5829317e3",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: exposition",
+    "section[1].block[0].confidence exceeds its cited evidence",
+    "section[2].kind is unsupported: exposition",
+    "section[2].block[0].confidence exceeds its cited evidence",
+    "section[3].kind is unsupported: exposition",
+    "section[4].kind is unsupported: textual_notes",
+    "section[4].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

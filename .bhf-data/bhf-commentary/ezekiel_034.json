@@ -1,0 +1,95 @@
+{
+  "reference": "Ezekiel 34",
+  "book": "Ezekiel",
+  "chapter": 34,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ezekiel 34 presents YHWH's indictment of Israel's shepherds\u2014the political and religious leaders responsible for the community's welfare. The chapter condemns them as self-serving exploiters who profit from their position while their charges suffer abandonment and abuse. In response, YHWH assumes the shepherd's role directly, promising to seek, gather, and restore the scattered flock.",
+          "verse_refs": [
+            "Ezekiel 34:1-34"
+          ],
+          "evidence_ids": [
+            "ezekiel-shepherd-david"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "pericope",
+      "title": "The Charge Against the Shepherds (34:2-6)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "YHWH indicts the shepherds for exploiting rather than serving their flock. They consume the fat, clothe themselves with wool, and slaughter choice animals for themselves while failing in every shepherding duty: they do not strengthen the weak, heal the sick, bind the broken, restore the scattered, or search for the lost. Instead, they rule with force and cruelty. The result is inevitable\u2014the sheep scatter without a true shepherd and become prey to wild beasts, wandering across mountains and high places with no one to search or seek them.",
+          "verse_refs": [
+            "Ezekiel 34:2-6"
+          ],
+          "evidence_ids": [
+            "ezekiel-shepherd-david"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "pericope",
+      "title": "YHWH's Judgment and Intervention (34:7-12)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "YHWH pronounces irrevocable judgment: the negligent shepherds will be removed from their office and prevented from feeding themselves any longer. YHWH will rescue the flock from their grasp. More importantly, YHWH personally becomes the shepherd, actively searching for scattered sheep as a devoted shepherd gathers a dispersed flock. This direct divine intervention reverses the abandonment and restores what the human leaders have destroyed.",
+          "verse_refs": [
+            "Ezekiel 34:7-12"
+          ],
+          "evidence_ids": [
+            "ezekiel-shepherd-david"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_note",
+      "title": "Textual Witnesses",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The text of Ezekiel circulated in several ancient forms. The Masoretic Hebrew, the Old Greek translation (Iezekiel), Papyrus 967, Qumran fragments, and the Masada scroll all witness to Ezekiel's transmission, with variations in wording and word order that require careful textual analysis when interpreting specific passages.",
+          "verse_refs": [
+            "Ezekiel 34"
+          ],
+          "evidence_ids": [
+            "ezekiel-textual-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ec902f982d363bb8fc0a806cf88452eb7719cffbdd5c0f2785591d381f8e50c4",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: pericope",
+    "section[2].kind is unsupported: pericope",
+    "section[3].kind is unsupported: textual_note"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,44 @@
+{
+  "reference": "Exodus 8",
+  "book": "Exodus",
+  "chapter": 8,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Divine Confrontation in the Exodus",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Exodus 8 presents the second plague within the exodus narrative, in which YHWH directly confronts Pharaoh through escalating disaster. This episode operates within the larger story where divine acts accomplish Israel's deliverance from imperial Egyptian power. The Hebraic scriptural worldview explicitly frames the plagues as judgment against Egypt's gods, with each divine intervention demonstrating YHWH's absolute authority over the forces that Egypt depended upon.",
+          "verse_refs": [
+            "Exodus 8:1-4",
+            "Exodus 8:8"
+          ],
+          "evidence_ids": [
+            "the-exodus:ancient_near_east_context:0",
+            "plagues-of-egypt:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "601f42fcd338eed03425c8eeb5a2d7dd5b553128625178369161b37078f68c00",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: narrative_structure",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: cultural_context",
+    "section[2].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

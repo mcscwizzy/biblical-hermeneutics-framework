@@ -1,0 +1,97 @@
+{
+  "reference": "Ezekiel 28",
+  "book": "Ezekiel",
+  "chapter": 28,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ezekiel 28 contains two oracles addressing Tyre through the voices of its ruler and king. Rather than explicitly naming supernatural figures, the passage employs lament form and elaborate symbolic imagery\u2014including references to garden, precious stones, and cherub\u2014as the means of addressing the historical city and its leadership.",
+          "verse_refs": [
+            "Ezekiel 28:1-10",
+            "Ezekiel 28:11-28"
+          ],
+          "evidence_ids": [
+            "ezekiel-tyre-laments"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Oracle Against the Prince of Tyre",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The first oracle (vv. 1-10) addresses the prince of Tyre through indictment of pride. The ruler claims divine status\u2014\"I am a god, I sit in the seat of God, in the midst of the seas\"\u2014but the oracle asserts he is man, not God. His wisdom and commercial success in accumulating gold and silver have become the source of his pride. The passage concludes by announcing judgment: strangers will draw swords against his beauty and wisdom, bringing him down to the pit to die the death of the slain in the heart of the seas.",
+          "verse_refs": [
+            "Ezekiel 28:1-10"
+          ],
+          "evidence_ids": [
+            "ezekiel-tyre-laments"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Lament Over the King of Tyre",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "The second oracle (vv. 11-14) shifts to lament form, addressing the king of Tyre through richly symbolic language. It describes him as one who \"sealest up the sum, full of wisdom, and perfect in beauty.\" The lament employs garden imagery, placing him in \"Eden, the garden of God,\" and precious-stone imagery, depicting his covering with nine precious stones: sardius, topaz, diamond, beryl, onyx, jasper, sapphire, emerald, and carbuncle, plus gold. The passage describes elaborate workmanship of tabrets and pipes prepared for him at his creation, and references him as an anointed cherub who covereth, set upon the holy mountain of God.",
+          "verse_refs": [
+            "Ezekiel 28:12-14"
+          ],
+          "evidence_ids": [
+            "ezekiel-tyre-laments"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Textual Witnesses",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Ezekiel 28 is preserved in multiple textual witnesses: the Masoretic tradition, Old Greek Iezekiel, Papyrus 967, Qumran fragments, and the Masada scroll. These sources exhibit variations in wording and verse order, requiring careful passage-level textual analysis to trace the transmission and interpretation history of this chapter.",
+          "verse_refs": [
+            "Ezekiel 28"
+          ],
+          "evidence_ids": [
+            "ezekiel-textual-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a87c29cfff43e9b02a45daffca9e31aee8abc3ba7487c8328338f34c5f0702a0",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "root.status is unsupported: completed",
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[3].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

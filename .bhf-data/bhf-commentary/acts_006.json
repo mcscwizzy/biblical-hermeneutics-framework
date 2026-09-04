@@ -1,0 +1,45 @@
+{
+  "reference": "Acts 6",
+  "book": "Acts",
+  "chapter": 6,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "textual_notes",
+      "title": "Textual Witnesses",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Acts 6 is attested in early papyrus manuscripts (P45, P53, P74) and major Greek codices including Sinaiticus, Vaticanus, and Bezae. These witnesses contribute different textual profiles and readings. Codex Bezae and related versions preserve a substantially distinctive text of Acts known as the Western text. Individual readings in the Western witnesses must be evaluated case-by-case, as they sometimes preserve unique information and sometimes diverge from the broader Greek manuscript tradition. Interpreters should recognize that textual variation in Acts 6 may reflect these legitimate alternative manuscript traditions.",
+          "verse_refs": [
+            "Acts 6:1-15"
+          ],
+          "evidence_ids": [
+            "acts-text-witnesses",
+            "acts-western-text"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "c46bd6381fb8eb2940aa0c864b1bdd8773d649ea624dcc25470c63f47e484967",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: setting_and_context",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: narrative_analysis",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[3].kind is unsupported: textual_notes"
+  ],
+  "validation_warnings": []
+}

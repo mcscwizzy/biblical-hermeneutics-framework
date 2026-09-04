@@ -1,0 +1,124 @@
+{
+  "reference": "1 Thessalonians 5",
+  "book": "1 Thessalonians",
+  "chapter": 5,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "thematic_section",
+      "title": "The Day of the Lord: Watchfulness Over Prediction",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Paul begins by assuring the Thessalonians that they need no letter about 'times and seasons.' They already know perfectly that the day of the Lord comes as a thief in the night: suddenly, without warning. This imagery redirects attention away from date-setting calculations toward a posture of readiness. The metaphor is not a prediction of when, but a reminder of how: the day is not scheduled or announced.",
+          "verse_refs": [
+            "1 Thessalonians 5:1-2"
+          ],
+          "evidence_ids": [
+            "1th-day"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "thematic_section",
+      "title": "Children of Light: Ethical Vigilance and Armor",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Unlike those dwelling in darkness, the community belong to the day and to light. They are not to sleep as others do, nor to be drunk; instead, they are called to sobriety and wakefulness. This antithesis between dark and light, sleep and vigilance, intoxication and clarity frames ethical consciousness as the proper stance before the day of the Lord. The metaphors are moral and spiritual, not merely temporal.",
+          "verse_refs": [
+            "1 Thessalonians 5:4-7"
+          ],
+          "evidence_ids": [
+            "1th-day"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "thematic_section",
+      "title": "Community Care and Differentiated Support",
+      "blocks": [
+        {
+          "id": "block_7",
+          "text": "The exhortation continues: pursue peace with one another; render no one evil for evil; always pursue what is good toward each other and toward all. These imperatives build on the prior commands for watchfulness and mutual recognition, grounding the community's common life in practices of peace-seeking, justice-refusing, and goodness-pursuing rather than retaliation or harm.",
+          "verse_refs": [
+            "1 Thessalonians 5:14-15"
+          ],
+          "evidence_ids": [
+            "1th-care"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "thematic_section",
+      "title": "Rejoicing, Prayer, and Thanksgiving",
+      "blocks": [
+        {
+          "id": "block_8",
+          "text": "The community is commanded to rejoice always, to pray without ceasing, and to give thanks in all circumstances\u2014declaring this to be the will of God in Christ Jesus. These commands frame an active, continuous spiritual practice: joy, intercession, and gratitude are not moods dependent on circumstances but commitments enacted in every moment.",
+          "verse_refs": [
+            "1 Thessalonians 5:16-18"
+          ],
+          "evidence_ids": [
+            "thess-joy-prayer-thanks-context"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "thematic_section",
+      "title": "Public Access to the Letter",
+      "blocks": [
+        {
+          "id": "block_11",
+          "text": "The letter includes a solemn charge that it be read to all the siblings in the assembly. This command ensures that Paul's words reach the entire community, not merely leadership or a select group, and establishes the letter as communal property and instruction.",
+          "verse_refs": [
+            "1 Thessalonians 5:27"
+          ],
+          "evidence_ids": [
+            "1th-public-reading"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f25c8de33bd3ed6d963849bbedd907f92804423194c7d9d3c2ed682ecb8c939e",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "root.status is unsupported: complete",
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: thematic_section",
+    "section[1].block[1].interpretation_level is invalid",
+    "section[2].kind is unsupported: thematic_section",
+    "section[2].block[1].interpretation_level is invalid",
+    "section[3].kind is unsupported: thematic_section",
+    "section[3].block[0].interpretation_level is invalid",
+    "section[4].kind is unsupported: thematic_section",
+    "section[5].kind is unsupported: thematic_section",
+    "section[5].block[0].interpretation_level is invalid",
+    "section[6].kind is unsupported: thematic_section",
+    "section[6].block[0].interpretation_level is invalid",
+    "section[7].kind is unsupported: thematic_section"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,39 @@
+{
+  "reference": "Ezekiel 46",
+  "book": "Ezekiel",
+  "chapter": 46,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "textual_notes",
+      "title": "Textual Witnesses",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Multiple ancient textual witnesses attest to Ezekiel 46, including the Masoretic Text, the Old Greek version (Iezekiel), Papyrus 967, Qumran fragments, and the Masada scroll. These sources preserve variations in wording and order, requiring careful passage-level textual analysis to determine the most reliable reading of this chapter.",
+          "verse_refs": [
+            "Ezekiel 46:1-11"
+          ],
+          "evidence_ids": [
+            "ezekiel-textual-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "0dbbfc7fa134a275417c85258c53b353453d380e6bc55303906536a1c7750b34",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: textual_notes"
+  ],
+  "validation_warnings": []
+}

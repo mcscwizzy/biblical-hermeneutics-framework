@@ -1,0 +1,103 @@
+{
+  "reference": "Ecclesiastes 7",
+  "book": "Ecclesiastes",
+  "chapter": 7,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ecclesiastes 7 confronts the question of how wisdom guides human living in a world of uncertain outcomes. The chapter repeatedly contrasts wise and foolish approaches to life's fundamental experiences\u2014mortality, grief, anger, success, and failure. Throughout, wisdom is presented as genuinely superior to folly, yet consistently shown to lack the power to guarantee favorable outcomes or reveal the full scope of God's intentions.",
+          "verse_refs": [
+            "Ecclesiastes 7:1-17"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-wisdom-relative-not-control",
+            "ecclesiastes-god-fear-gift-judgment"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "analysis",
+      "title": "Wisdom's Perspective on Life",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The chapter opens with a series of contrasts that establish wisdom's orientation toward reality rather than escape from it. A good reputation, preparing oneself to face death, serious reflection on sorrow, and receptiveness to genuine criticism all represent the wise approach. By contrast, endless feasting, indiscriminate laughter, and false comfort from fools' approval represent foolish alternatives. These verses illustrate Ecclesiastes' fundamental insight: wisdom is better than folly because it aligns with reality, yet it does not change reality's fundamental conditions.",
+          "verse_refs": [
+            "Ecclesiastes 7:1-7"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-wisdom-relative-not-control"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_3",
+          "text": "Verses 8-12 continue this theme with additional wisdom sayings. Patience in spirit proves superior to pride, and restraint from hasty anger reflects the wise, while anger lodges in fools' hearts. The foolish mistake of assuming past times were better is presented as unwise reflection. The explicit claim follows that wisdom functions like an inheritance and like money as a defense; yet crucially, wisdom's excellence lies in preserving life, not guaranteeing it. This formulation maintains Ecclesiastes' consistent position: wisdom is genuinely valuable and beneficial, yet operates within limits it cannot transcend.",
+          "verse_refs": [
+            "Ecclesiastes 7:8-12"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-wisdom-relative-not-control"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "analysis",
+      "title": "God's Work and Human Limitation",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "A crucial theological statement appears in verses 13-14: 'Consider the work of God: for who can make that straight, which he hath made crooked?' This invocation of God's sovereignty establishes both divine action and human incapacity. The reader is directed to observe prosperity and adversity as both products of God's design, arranged deliberately 'to the end that man should not find out anything that shall be after him.' This passage expresses a dual reality in Ecclesiastes' thought: God actively governs creation and human experience, yet God's complete purposes remain beyond human comprehension. Wisdom cannot penetrate what God has chosen to obscure.",
+          "verse_refs": [
+            "Ecclesiastes 7:13-14"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-god-fear-gift-judgment",
+            "ecclesiastes-wisdom-relative-not-control"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_5",
+          "text": "Verses 15-17 present the observation that precipitates Ecclesiastes' inquiry: righteous people perish in their righteousness, while wicked people prolong their lives through wickedness. This phenomenon contradicts any simple theory that virtue produces reward or vice produces punishment in the visible world. The author's response is not despair but realism: neither excessive righteousness nor overconfidence in one's own wisdom should be pursued as strategies for security. This counsel does not deny God's judgment but acknowledges that judgment operates beyond human prediction or control. Humans remain accountable to God, yet the connection between their deeds and their fates remains obscured.",
+          "verse_refs": [
+            "Ecclesiastes 7:15-17"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-god-fear-gift-judgment",
+            "ecclesiastes-wisdom-relative-not-control"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "6aad2e141d8215de0e2789fc0227102ca9c4979b4cb8802fc559b1cab6f78f2b",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: analysis",
+    "section[2].kind is unsupported: analysis"
+  ],
+  "validation_warnings": []
+}

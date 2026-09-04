@@ -1,0 +1,79 @@
+{
+  "reference": "2 Samuel 23",
+  "book": "2 Samuel",
+  "chapter": 23,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Chapter 23 comprises two distinct literary forms from David's reign. Verses 1-7 record David's final words as a poetic oracle, in which he reflects on his reign and covenant with God, emphasizing righteous rule and divine favor. Verses 8 onward present a roster of David's mighty warriors with accounts of their military deeds. Within the narrative framework of 2 Samuel, David's court administration and military leadership are portrayed as central features of his reign consolidation.",
+          "verse_refs": [
+            "2 Samuel 23:1-7",
+            "2 Samuel 23:8+"
+          ],
+          "evidence_ids": [
+            "2-samuel:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "thematic_section",
+      "title": "Righteous Rule: The Framework of Davidic Kingship",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "David's closing testimony in verses 1-7 emphasizes righteous rule and the fear of God. The narrative presents this within a Hebraic worldview in which kingship operates as a divine trust ordered toward justice and righteousness, not as autonomous possession. David's reflection on his house and covenant reflects this theological framework, connecting his reign to broader accountability before God and principles of equitable rule. The passage depicts the king's obligation to order his household and rule in alignment with divine justice.",
+          "verse_refs": [
+            "2 Samuel 23:1-7"
+          ],
+          "evidence_ids": [
+            "2-samuel:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "context_section",
+      "title": "Composition and Transmission History",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Chapter 23 appears within the later-reign appendix section of 2 Samuel. The poetic oracle and the warrior roster likely represent distinct traditional materials preserved and combined in the final form. The text itself does not provide composition dates. Poetry, lists, and narrative traditions may have separate transmission histories. Scholarly proposals for the final form of 2 Samuel generally range across the monarchic period or later exilic contexts, though chronological precision remains contested.",
+          "verse_refs": [
+            "2 Samuel 23"
+          ],
+          "evidence_ids": [
+            "2-samuel:timeline:8",
+            "2-samuel:date_ranges:1",
+            "2-samuel:date_ranges:2"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "306afba99e91e2d81e9651612a0240a0eeb78ed1884207b3726c3c96c2dddb17",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: thematic_section",
+    "section[2].kind is unsupported: context_section"
+  ],
+  "validation_warnings": []
+}

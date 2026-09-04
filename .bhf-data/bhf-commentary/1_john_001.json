@@ -1,0 +1,102 @@
+{
+  "reference": "1 John 1",
+  "book": "1 John",
+  "chapter": 1,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "First John opens with an unusual proclamation: a plural voice claims to have heard, seen with eyes, beheld, and handled something concerning the Word of life. The letter itself remains anonymous\u2014the writer identifies neither themselves nor the intended readers\u2014yet speaks with authority grounded in direct encounter with the subject matter. This opening sets the pattern for the entire chapter: the authority to speak comes from what has been witnessed and experienced, not from explicit credentials or formal identification.",
+          "verse_refs": [
+            "1 John 1:1"
+          ],
+          "evidence_ids": [
+            "1jn-word-life",
+            "1jn-anonymous"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "The Proclamation and Its Purpose (1:2\u20134)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The letter emphasizes that this life\u2014described as eternal and previously with the Father\u2014has now been revealed. The writers proclaim what they have seen and heard, and their purpose is explicit: to create fellowship. This fellowship reaches in two directions, toward both the audience and toward the Father and Jesus Christ. The writing itself is framed not as doctrine or instruction, but as an instrument of connection\u2014'that our joy may be made full.'",
+          "verse_refs": [
+            "1 John 1:2-4"
+          ],
+          "evidence_ids": [
+            "1jn-fellowship"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Walking in Light and the Problem of Darkness (1:6\u20137)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The passage immediately applies this claim about God's nature to human relationships. Those who claim fellowship with God while walking in darkness are liars and do not live by the truth. But those who walk in light as God is in light achieve genuine fellowship with one another, and crucially, the blood of Jesus\u2014God's Son\u2014cleanses them from all sin. The logic is tight: alignment with God's light nature produces both horizontal fellowship (with others) and vertical cleansing (through Christ's atonement).",
+          "verse_refs": [
+            "1 John 1:6-7"
+          ],
+          "evidence_ids": [
+            "1jn-light",
+            "1jn-blood",
+            "1jn-fellowship"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Sin, Self-Deception, and Confession (1:8\u201310)",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "The letter addresses a claim it finds contradictory: that someone has no sin. This claim appears at multiple points in verses 8 and 10, each time rejected as self-deception or calling God a liar. Yet the passage also hints at complexity later in the letter\u2014those born of God are described as not sinning, creating an apparent tension about the status of believers and sin that deserves careful reading of the full work. For now, the emphasis falls on the path forward: confess your sins, and God\u2014described as faithful and just\u2014will forgive and cleanse you. Confession becomes the hinge between denial and restoration.",
+          "verse_refs": [
+            "1 John 1:8-10"
+          ],
+          "evidence_ids": [
+            "1jn-sin-denial",
+            "1jn-confession"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "2a800eaaf0284fb63cbdf7a51cc8676acfdbafa75135e16df0a5bc4a5f4eb61e",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "root.status is unsupported: complete",
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[2].block[0].confidence exceeds its cited evidence",
+    "section[3].kind is unsupported: section",
+    "section[4].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,58 @@
+{
+  "reference": "Acts 11",
+  "book": "Acts",
+  "chapter": 11,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Acts 11 presents Peter's retelling of a transformative encounter to the Jerusalem church leadership. The chapter recounts a vision Peter received in Joppa and his subsequent visit to a Gentile household, concluding with the Jerusalem community's recognition that God had granted repentance and salvation to non-Jewish believers.",
+          "verse_refs": [
+            "Acts 11:1-18"
+          ],
+          "evidence_ids": [
+            "acts-11-retelling"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "The Vision and Gentile Reception",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Peter describes a heavenly vision in Joppa followed by his visit to a Gentile household. The passage demonstrates that Gentile believers received the same Holy Spirit gift as Jewish believers at Pentecost. This account confirms gentile religious inclusion rather than presenting the vision merely as a teaching about permitted foods.",
+          "verse_refs": [
+            "Acts 11:5-15"
+          ],
+          "evidence_ids": [
+            "acts-11-retelling:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "7992d7af7b6c5135da6dc7bf26ceff2882b4e47a1f612705ce5549e3023c8d1e",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: narrative_section",
+    "section[2].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,130 @@
+{
+  "reference": "1 Timothy 5",
+  "book": "1 Timothy",
+  "chapter": 5,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "section",
+      "title": "True Widows and Family Obligations",
+      "blocks": [
+        {
+          "id": "block_widows_1",
+          "text": "The letter distinguishes between widows with family resources and those truly desolate. When a widow has children or grandchildren, her family bears the primary responsibility to support her and honor her through care\u2014an obligation that honors God. Only the widow truly without family support becomes the church's responsibility. This pattern reflects the economic and kinship structures of Roman households, where family members held interdependent obligations toward one another.",
+          "verse_refs": [
+            "1 Timothy 5:3-4",
+            "1 Timothy 5:8"
+          ],
+          "evidence_ids": [
+            "1tim-widows",
+            "household-slavery-status-comparison"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_widows_2",
+          "text": "A true widow's spiritual condition mirrors her material state. She sets her hope entirely on God, devoting herself to continuous prayer and supplication day and night. This sustained devotion defines genuine widowhood. By contrast, a widow who pursues pleasure and indulgence is described as spiritually dead despite remaining physically alive\u2014her spiritual state reflects her priorities.",
+          "verse_refs": [
+            "1 Timothy 5:5-6"
+          ],
+          "evidence_ids": [
+            "1tim-widows"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Enrollment Criteria for Widow Support",
+      "blocks": [
+        {
+          "id": "block_enrollment_1",
+          "text": "The church established specific requirements for women to be enrolled in the widow support system. A candidate must be at least sixty years old and have been the wife of one man\u2014indicating either continuous monogamy or fidelity within marriage. Enrollment requires more than age and marital status: she must have a demonstrated record of good works including raising children, showing hospitality to strangers, washing believers' feet, caring for the afflicted, and diligently pursuing every good work.",
+          "verse_refs": [
+            "1 Timothy 5:9-10"
+          ],
+          "evidence_ids": [
+            "1tim-widows"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Younger Widows: Marriage and Household Responsibility",
+      "blocks": [
+        {
+          "id": "block_young_widows_1",
+          "text": "The letter advises against enrolling younger widows in the support system despite potential immediate need. Younger women who commit to widowhood under church care may later desire to marry, and remarriage would break that pledge. Beyond this concern lies a practical reality: younger widows without structured work and household responsibilities can drift into idleness, becoming busybodies and gossips who go house to house speaking inappropriately. The preferred path for younger widows is marriage, bearing children, and managing their own households\u2014activities that give no cause for outsiders to criticize the church.",
+          "verse_refs": [
+            "1 Timothy 5:11-15"
+          ],
+          "evidence_ids": [
+            "1tim-widows"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Believers' Responsibility for Widow Support",
+      "blocks": [
+        {
+          "id": "block_support_1",
+          "text": "Women in the congregation who have means bear a direct obligation to support widows within the community. When believers fulfill this responsibility, the burden shifts from the church's collective resources, allowing the church to concentrate its support on widows who are truly alone and destitute.",
+          "verse_refs": [
+            "1 Timothy 5:16"
+          ],
+          "evidence_ids": [
+            "1tim-widows"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Elder Compensation: Honor and Material Support",
+      "blocks": [
+        {
+          "id": "block_elder_1",
+          "text": "Elders who lead the congregation faithfully merit honor and compensation. Those who labor particularly in preaching and teaching deserve what is called double honor\u2014recognition that combines both respect and material support. This principle draws on scriptural precedent: just as an ox working to thresh grain should not be muzzled but may eat freely from its labor, those who labor in God's work are entitled to sustenance from that labor.",
+          "verse_refs": [
+            "1 Timothy 5:17-18"
+          ],
+          "evidence_ids": [
+            "1tim-elder-pay"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "093e85e6ae53e4cf10b15e20362111ee952f22aa528164ca0612b5c67dacd3f0",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[3].kind is unsupported: section",
+    "section[4].kind is unsupported: section",
+    "section[5].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

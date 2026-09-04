@@ -1,0 +1,46 @@
+{
+  "reference": "2 Corinthians 7",
+  "book": "2 Corinthians",
+  "chapter": 7,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "section",
+      "title": "Textual Witnesses",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "The early papyrus P46 preserves most of 2 Corinthians, including chapter 7, with portions in P99. These witnesses provide distinct textual profiles that allow scholars to trace the transmission of this text through early communities.",
+          "verse_refs": [
+            "2 Corinthians 7:1-13"
+          ],
+          "evidence_ids": [
+            "2cor-manuscripts"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "0ad0c7445697c58ffa919a7181f1e3b8d20b7785225222c2b2012eca1a981a34",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: section",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: section",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[3].kind is unsupported: section",
+    "section[3].block[0].interpretation_level is invalid",
+    "section[4].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

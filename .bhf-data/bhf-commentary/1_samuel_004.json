@@ -1,0 +1,58 @@
+{
+  "reference": "1 Samuel 4",
+  "book": "1 Samuel",
+  "chapter": 4,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "This chapter is set during the early monarchy period, when Israel was consolidating its life in the land through military campaigns and tribal conflict against neighboring powers like the Philistines. The narrative opens with Israel meeting the Philistines in battle at Eben-ezer and Aphek, where they suffer an initial and significant defeat.",
+          "verse_refs": [
+            "1 Samuel 4:1-2"
+          ],
+          "evidence_ids": [
+            "rise-of-saul:historical_context:0",
+            "rise-of-saul:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "thematic",
+      "title": "The Ark as a Guarantee of Victory",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Facing defeat, the Israelite elders interpret their loss as divine judgment and decide to bring the Ark of the Covenant from Shiloh to the battlefield, expecting it will secure victory. Their strategy assumes the Ark functions as a protective guarantor of divine favor. However, the narrative's outcome directly contradicts this expectation. Despite Israel's jubilation when the Ark arrives and the Philistines' initial fear, Israel suffers a far greater catastrophe\u2014thirty thousand soldiers are slain and the Ark itself is captured. The text thus demonstrates that possession of the Ark does not automatically ensure victory. Rather, God's judgment operates independently of Israel's control over sacred objects, and God's power extends over Philistine gods and communities without requiring an Israelite military rescue of the Ark. The narrative rejects any view that institutional possession of sacred things guarantees divine protection.",
+          "verse_refs": [
+            "1 Samuel 4:3-11"
+          ],
+          "evidence_ids": [
+            "first-samuel-ark-not-talisman"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4766c8cdaaaeef5af4898df4ff173c342402df439491b47658b5804db6559c38",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: thematic"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,57 @@
+{
+  "reference": "1 Kings 18",
+  "book": "1 Kings",
+  "chapter": 18,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview: Elijah and the Restoration of Rain",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "First Kings 18 presents the confrontation between the prophet Elijah and King Ahab during a severe drought affecting the land. The chapter demonstrates the LORD's sovereign power over creation and tests whether the people will recognize the true God. James later characterizes Elijah as a human figure whose prayer was directly associated with both the onset of drought and the return of rain, a portrait consistent with the events recorded here.",
+          "verse_refs": [
+            "1 Kings 18"
+          ],
+          "evidence_ids": [
+            "jas-elijah"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_climax",
+      "title": "The Carmel Event and Divine Demonstration",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The climactic moment at Mount Carmel reveals the LORD answering with fire from heaven, consuming the offering and demonstrating divine power unmistakably. The assembled people witness this sign and confess that the LORD is God. Following this public recognition of the LORD's identity and authority, rain returns to the land, breaking the drought and vindicating both Elijah and the LORD's promise.",
+          "verse_refs": [
+            "1 Kings 18"
+          ],
+          "evidence_ids": [
+            "first-kings-carmel-confession"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d3813cc6541634e718524bb98aa9ec1454afb00a3aa7781996aebaaad528288a",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: narrative_climax"
+  ],
+  "validation_warnings": []
+}

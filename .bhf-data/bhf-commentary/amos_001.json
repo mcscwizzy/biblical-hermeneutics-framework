@@ -1,0 +1,80 @@
+{
+  "reference": "Amos 1",
+  "book": "Amos",
+  "chapter": 1,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "superscription",
+      "title": "Superscription: Amos of Tekoa",
+      "blocks": [
+        {
+          "id": "block_1_2",
+          "text": "The Masoretic Hebrew text and Old Greek version of Amos, along with Qumran Hebrew witnesses including 4Q78 and 4Q82, preserve related but sometimes divergent textual forms, attesting the book's transmission through the Second Temple period.",
+          "verse_refs": [
+            "Amos 1:1"
+          ],
+          "evidence_ids": [
+            "amos-hebrew-greek-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "oracle",
+      "title": "Divine Voice and Judgment Frame",
+      "blocks": [
+        {
+          "id": "block_2_1",
+          "text": "Amos 1:2 announces YHWH's utterance emanating from Zion and Jerusalem, introducing the divine judgment that follows. The proclamation echoes through creation: shepherds' pastures mourn, Carmel's vegetation withers. This opening frames the subsequent oracles within the prophetic form of covenant lawsuit, reflecting Israelite tradition shaped by temple worship, royal courts, and the moral accountability of nations to YHWH.",
+          "verse_refs": [
+            "Amos 1:2"
+          ],
+          "evidence_ids": [
+            "judgment-against-the-nations:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "oracle",
+      "title": "Nations Under Judgment: The Transgressions Formula",
+      "blocks": [
+        {
+          "id": "block_3_2",
+          "text": "These judgments respond to transgressions rooted in the imperial and regional conflicts of the mid-eighth-century Levant. The accumulated accusations reveal YHWH holding all nations accountable for conduct toward one another\u2014violence, betrayal of covenant obligation, and perpetual hostility. This universalizing of judgment to the nations, while ultimately targeting Israel, embeds the theological conviction that a transcendent moral order governs international affairs.",
+          "verse_refs": [
+            "Amos 1:3-12"
+          ],
+          "evidence_ids": [
+            "amos-nations-sequence",
+            "judgment-against-the-nations:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "378f161cd16180125e0108f765c8fc2eed796b7e6696adfcbe1f3a966d0929c5",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: superscription",
+    "section[0].block[0].confidence exceeds its cited evidence",
+    "section[1].kind is unsupported: oracle",
+    "section[2].kind is unsupported: oracle",
+    "section[2].block[0].confidence exceeds its cited evidence"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,122 @@
+{
+  "reference": "1 Timothy 6",
+  "book": "1 Timothy",
+  "chapter": 6,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "passage_section",
+      "title": "Conduct of Enslaved People (6:1-2)",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "The passage instructs enslaved people to regard their masters as worthy of honor, placing this conduct within the broader concern that God's name and true doctrine not be blasphemed through disrespect. Those serving believing masters are told not to despise them despite their common faith, but rather to serve them more earnestly precisely because both master and servant are believers sharing in the benefit of faithful service.",
+          "verse_refs": [
+            "1 Timothy 6:1-2"
+          ],
+          "evidence_ids": [
+            "1tim-slavery",
+            "household-slavery-status-comparison:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "passage_section",
+      "title": "False Teaching and Speculative Inquiry (6:3-5)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The letter condemns those teaching contrary to sound doctrine and the words of Christ, describing them as puffed up with empty knowledge while obsessing over questionings and word disputes. Such preoccupation generates envy, conflict, slander, and mutual suspicion. The passage identifies these teachers as mentally corrupted, cut off from truth, and treating godliness as a means to financial profit.",
+          "verse_refs": [
+            "1 Timothy 6:3-5"
+          ],
+          "evidence_ids": [
+            "1tim-opponents"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "passage_section",
+      "title": "Godliness and Contentment versus Acquisitive Desire (6:6-10)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Against the false teaching equating godliness with financial gain, the passage teaches that true gain lies in godliness paired with contentment. Basic provision\u2014food and shelter\u2014provides adequate grounds for satisfaction, making the pursuit of wealth unnecessary. The text warns that desire to become rich entraps people in temptation and harmful, foolish desires that lead to ruin and spiritual destruction.",
+          "verse_refs": [
+            "1 Timothy 6:6-9"
+          ],
+          "evidence_ids": [
+            "1tim-contentment",
+            "1tim-money"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_4",
+          "text": "More broadly, love of money serves as a root from which many kinds of evil grow. Some, in their pursuit of wealth, have abandoned the faith and inflicted numerous sorrows upon themselves through this wandering.",
+          "verse_refs": [
+            "1 Timothy 6:10"
+          ],
+          "evidence_ids": [
+            "1tim-money"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "passage_section",
+      "title": "Timothy's Charge (6:11-15)",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "Timothy is charged as a man of God to flee from wealth-seeking and pursue righteousness, godliness, faith, love, patience, and meekness. He is called to fight the good fight of faith, to lay hold of eternal life, and to recall the public confession of faith he made before many witnesses. The charge is solemnly given before God, who gives life to all things, and before Christ Jesus, who bore a good confession before Pontius Pilate.",
+          "verse_refs": [
+            "1 Timothy 6:11-13"
+          ],
+          "evidence_ids": [
+            "1tim-trust"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_6",
+          "text": "Timothy is further charged to keep the commandment without spot or reproach until the appearing of Christ, who will reveal the blessed and only Potentate, King of kings and Lord of lords, at the proper time.",
+          "verse_refs": [
+            "1 Timothy 6:14-15"
+          ],
+          "evidence_ids": [
+            "1tim-trust"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b3847ef10eb250aff76cd55f2ddb902b93cb87c560fa949f5675892723c8a91f",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: passage_section",
+    "section[1].kind is unsupported: passage_section",
+    "section[2].kind is unsupported: passage_section",
+    "section[3].kind is unsupported: passage_section"
+  ],
+  "validation_warnings": []
+}

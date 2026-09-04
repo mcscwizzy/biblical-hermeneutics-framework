@@ -1,0 +1,82 @@
+{
+  "reference": "Ezra 3",
+  "book": "Ezra",
+  "chapter": 3,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "passage_section",
+      "title": "Rebuilding the Altar and Restoring Worship (3:1-6)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "The community continues its religious observance by celebrating the Feast of Tabernacles and maintaining the prescribed daily burnt offerings. They offer sacrifices for new moons and all other established feasts, and accept freewill offerings from willing contributors. The passage emphasizes that this entire cycle of regular worship unfolds before the temple structure's foundation is established, suggesting that the reconstruction of the altar and regularization of worship constituted the spiritual framework within which the larger architectural project would proceed.",
+          "verse_refs": [
+            "Ezra 3:4-6"
+          ],
+          "evidence_ids": [
+            "ezra-altar-temple"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "passage_section",
+      "title": "Imperial Support and Procurement of Materials (3:7)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The temple project required substantial material resources and skilled labor. The community provided payment to masons and carpenters, and supplied provisions to workers from the Phoenician cities of Sidon and Tyre who facilitated the crucial shipment of cedar wood from Lebanon. The passage explicitly links this procurement to a formal grant from Cyrus, king of Persia, demonstrating how the Persian imperial system\u2014operating through written authorizations, taxation, and coordination with local elites\u2014enabled the reconstruction of the Jerusalem sanctuary.",
+          "verse_refs": [
+            "Ezra 3:7"
+          ],
+          "evidence_ids": [
+            "rebuilding-the-temple:ancient_near_east_context:0",
+            "rebuilding-the-temple:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "passage_section",
+      "title": "Foundation Work and Levitical Organization (3:8-9)",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "In the second year following the initial return, the project advances to laying the temple foundation. Zerubbabel, Jeshua, and their companions\u2014including priests and Levites\u2014organize the workforce. Levites aged twenty and upward are formally appointed to oversee the construction of the Lord's house. Jeshua leads with his sons and kinsmen, joined by Kadmiel and his descendants, all coordinating the supervision of workers. This passage marks the transition from altar reconstruction to the larger structural project, with established hierarchical leadership through priestly and Levitical organization.",
+          "verse_refs": [
+            "Ezra 3:8-9"
+          ],
+          "evidence_ids": [
+            "ezra-altar-temple",
+            "rebuilding-the-temple:second_temple_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "518ea69481e211b2cf3964929f66d7052cb5f45a989365fed8b38832b29be933",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[0].block[0].confidence exceeds its cited evidence",
+    "section[1].kind is unsupported: passage_section",
+    "section[1].block[0].confidence exceeds its cited evidence",
+    "section[2].kind is unsupported: passage_section",
+    "section[3].kind is unsupported: passage_section"
+  ],
+  "validation_warnings": []
+}

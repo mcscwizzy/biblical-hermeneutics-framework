@@ -1,0 +1,46 @@
+{
+  "reference": "Genesis 11",
+  "book": "Genesis",
+  "chapter": 11,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Genesis 11 contains two distinct sections: the Babel tower narrative (verses 1-9) and the genealogy of Shem (verses 10-19). The tower episode caps Genesis's primeval history before the narrative transitions to the ancestral family stories beginning in chapter 12.",
+          "verse_refs": [
+            "Genesis 11:1-9",
+            "Genesis 11:10-19"
+          ],
+          "evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "dee18d3179ad83de7968db91f24c8cbd6d0c1332001ef984424634fb7fe71f8e",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: babel_narrative",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[1].block[1].interpretation_level is invalid",
+    "section[1].block[2].interpretation_level is invalid",
+    "section[1].block[2].confidence exceeds its cited evidence",
+    "section[2].kind is unsupported: genealogy_bridge",
+    "section[2].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

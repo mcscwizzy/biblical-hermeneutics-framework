@@ -1,0 +1,39 @@
+{
+  "reference": "1 Kings 17",
+  "book": "1 Kings",
+  "chapter": 17,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "tradition_and_reception",
+      "title": "Later Biblical Reception",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "The epistle of James portrays Elijah as a human being like the audience, whose prayer was associated with both drought and the subsequent return of rain.",
+          "verse_refs": [
+            "James 5:17-18"
+          ],
+          "evidence_ids": [
+            "jas-elijah"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "eaa30d84b6bcb7d3a18e5d2c2700f7471d0bea51f708539b6335df465b832c61",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: tradition_and_reception"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,57 @@
+{
+  "reference": "Ezekiel 8",
+  "book": "Ezekiel",
+  "chapter": 8,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview: The Vision Initiates YHWH's Departure",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ezekiel 8 opens the visionary sequence narrating YHWH's glory moving from the defiled Jerusalem temple. The chapter transports the prophet to the sanctuary and reveals abominations within it, initiating the divine departure that unfolds through chapters 8-11. The accumulation of violations shown here establishes the cause for YHWH's withdrawal of presence from both the temple and the city.",
+          "verse_refs": [
+            "Ezekiel 8:1-12"
+          ],
+          "evidence_ids": [
+            "ezekiel-glory-departure-return"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_transmission",
+      "title": "Textual Witnesses",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Ezekiel 8 is preserved across multiple manuscript traditions: the Masoretic text, the Old Greek (Iezekiel), Papyrus 967, Qumran fragments, and the Masada scroll. These witnesses exhibit wording and order variations requiring passage-level analysis to evaluate the text's transmission history.",
+          "verse_refs": [
+            "Ezekiel 8"
+          ],
+          "evidence_ids": [
+            "ezekiel-textual-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "080e52f91e013c4e0a19e8120c44defccdb5bf71504a934168ffd8c2c7c8a6e7",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: textual_transmission"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,44 @@
+{
+  "reference": "Exodus 34",
+  "book": "Exodus",
+  "chapter": 34,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "The Renewal of Covenant After Breach",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Exodus 34 stands within the larger literary movement of Exodus, which traces Israel's story from oppression and deliverance through covenant establishment, covenant breach and renewal, tabernacle construction, and the arrival of divine glory. Chapter 34 specifically depicts the renewal of covenant after the golden calf incident. Moses returns to Mount Sinai to receive newly hewn tablets of stone, where God renews the covenant and reaffirms divine commitment to Israel despite their unfaithfulness. This episode illustrates how covenant, once broken by human rebellion, may be restored through divine grace and initiative.",
+          "verse_refs": [
+            "Exodus 34:1-4",
+            "Exodus 32"
+          ],
+          "evidence_ids": [
+            "exodus-literary-movement"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4d365b5948fd59abd2658d8463c5f9ce892b751243335717ac07a40ca44e809f",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: thematic",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[1].block[1].interpretation_level is invalid",
+    "section[2].kind is unsupported: historical_background",
+    "section[2].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

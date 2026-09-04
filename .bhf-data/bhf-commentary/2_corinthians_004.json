@@ -1,0 +1,44 @@
+{
+  "reference": "2 Corinthians 4",
+  "book": "2 Corinthians",
+  "chapter": 4,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "textual_witnesses",
+      "title": "Textual Witnesses",
+      "blocks": [
+        {
+          "id": "block_manuscripts",
+          "text": "The text of 2 Corinthians 4 appears in major early papyri and codices. P46 preserves most of 2 Corinthians; P99 preserves portions of the epistle. The principal codices\u2014Sinaiticus, Vaticanus, and Alexandrinus\u2014provide substantial additional witness. This textual evidence demonstrates broad early attestation to the chapter's theological message across distinct manuscript traditions.",
+          "verse_refs": [],
+          "evidence_ids": [
+            "2cor-manuscripts"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "09bb8ae0c6fac8a64fb4d9f2657c5c6c6546c481f9d39f7ffc260c7e226c276f",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: verse_group",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: verse_group",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[3].kind is unsupported: verse_group",
+    "section[3].block[0].interpretation_level is invalid",
+    "section[4].kind is unsupported: textual_witnesses"
+  ],
+  "validation_warnings": []
+}

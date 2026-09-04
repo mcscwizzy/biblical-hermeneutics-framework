@@ -1,0 +1,53 @@
+{
+  "reference": "1 Corinthians 9",
+  "book": "1 Corinthians",
+  "chapter": 9,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "exegetical",
+      "title": "Apostolic Freedom and Authority (vv. 1\u20133)",
+      "blocks": [
+        {
+          "id": "block_2_freedom",
+          "text": "Paul opens by asserting apostolic freedom and legitimacy through two claims: his encounter with the risen Lord and the Corinthians' existence as evidence of his apostolic work. The rapid rhetorical questions suggest his apostolic status was contested in Corinth. By framing his response as a defense to those who examine his claim, Paul signals he is answering challengers who question his right to demand support.",
+          "verse_refs": [
+            "1 Corinthians 9:1\u20133"
+          ],
+          "evidence_ids": [
+            "first-corinth-apostolic-rights"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "501eed900031e32ced18bda096d0cb7ce564c53f00bff78bd43443a6832c112d",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "root.status is unsupported: complete",
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: exegetical",
+    "section[2].kind is unsupported: exegetical",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[3].kind is unsupported: exegetical",
+    "section[3].block[0].interpretation_level is invalid",
+    "section[4].kind is unsupported: exegetical",
+    "section[4].block[0].interpretation_level is invalid",
+    "section[5].kind is unsupported: exegetical",
+    "section[5].block[0].interpretation_level is invalid",
+    "section[6].kind is unsupported: exegetical",
+    "section[6].block[0].interpretation_level is invalid",
+    "section[7].kind is unsupported: exegetical",
+    "section[7].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

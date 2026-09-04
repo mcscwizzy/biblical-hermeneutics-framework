@@ -1,0 +1,101 @@
+{
+  "reference": "Daniel 3",
+  "book": "Daniel",
+  "chapter": 3,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview: Coerced Worship Under Imperial Rule",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Daniel 3 depicts imperial religious coercion in Babylon. Nebuchadnezzar erects a towering golden image and commands all officials and subjects to worship it at the sound of musical instruments, with death by fire as punishment for refusal. The narrative shows how faithful individuals could resist such pressure\u2014one among several approaches to religious endurance under imperial domination that the book of Daniel illustrates.",
+          "verse_refs": [
+            "Daniel 3:1-7"
+          ],
+          "evidence_ids": [
+            "daniel-imperial-resistance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "The Three's Refusal and Deliverance",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Three Jewish officials\u2014Hananiah, Mishael, and Azariah\u2014refuse to worship the image. When brought before the king, they acknowledge that while God could rescue them, they accept the possibility of death without presuming divine intervention. They declare their willingness to face the furnace rather than compromise their religious practice.",
+          "verse_refs": [
+            "Daniel 3:8-12",
+            "Daniel 3:16-18"
+          ],
+          "evidence_ids": [
+            "daniel-furnace-resistance"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_3",
+          "text": "When cast into the furnace, the three are delivered unharmed. A fourth figure appears with them in the flames, described as having a divine appearance. Nebuchadnezzar witnesses this and releases them, then issues a decree protecting their God and people.",
+          "verse_refs": [
+            "Daniel 3:24-27"
+          ],
+          "evidence_ids": [
+            "daniel-furnace-resistance"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_traditions",
+      "title": "Textual and Canonical Witnesses",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Multiple Hebrew and Aramaic manuscripts from Qumran preserve portions of Daniel, including this chapter. These witnesses attest to the narrative's presence in early Jewish communities, while other Qumran texts preserve related Danielic traditions\u2014showing how the stories developed and circulated among different groups.",
+          "verse_refs": [
+            "Daniel 3"
+          ],
+          "evidence_ids": [
+            "daniel-qumran-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_5",
+          "text": "In some canonical traditions, the Prayer of Azariah and the Song of the Three are inserted into the narrative between verses 23 and 24. These and other Greek additions to Daniel (such as Susanna and Bel and the Dragon) expand themes of faithful prayer, divine justice, and resistance to idolatry, though they have different canonical status across Christian traditions.",
+          "verse_refs": [
+            "Daniel 3:23-24"
+          ],
+          "evidence_ids": [
+            "daniel-greek-additions"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "5cb8d5e630f231e22ef9fc7309688a186eba331348a2c6c90b09042e9fbf1338",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: narrative_section",
+    "section[2].kind is unsupported: textual_traditions"
+  ],
+  "validation_warnings": []
+}

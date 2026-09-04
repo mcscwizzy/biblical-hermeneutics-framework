@@ -1,0 +1,125 @@
+{
+  "reference": "Ecclesiastes 12",
+  "book": "Ecclesiastes",
+  "chapter": 12,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview: The Book's Conclusion",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ecclesiastes 12 forms the book's conclusion, structured in distinct parts. After Qohelet's final exhortation to remember the Creator in youth (vv. 1\u20137) and his closing declaration that all is hebel (v. 8), a third-person narrator takes over to describe Qohelet as a wise teacher and to offer the book's ultimate resolution. This epilogue structure frames Qohelet's extended first-person discourse and reorients the reader toward fear of God and obedience as the ultimate human duty.",
+          "verse_refs": [
+            "Ecclesiastes 12:1-14"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-frame-qohelet-epilogue"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Remember the Creator Before the Inevitability of Death (vv. 1\u20137)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Qohelet's opening command to remember the Creator in youth before 'the evil days come' confronts a central reality that runs throughout Ecclesiastes: death is a universal and inevitable fate that disrupts all human achievement and remembrance. The vivid metaphors that follow\u2014darkened lights, trembling limbs, silent mills, closed doors, and broken vessels\u2014describe aging and the approach of death. They reflect Qohelet's repeated observation that time and chance operate independently of human skill or effort. No amount of wisdom, wealth, or accomplishment can secure a person against the arrival of old age and death.",
+          "verse_refs": [
+            "Ecclesiastes 12:1-7"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-death-time-chance"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_3",
+          "text": "Beneath the physical description of decline lies a deeper dimension: these images embody hebel, the central concept of Ecclesiastes. Hebel is not a single idea but overlapping meanings: the transience of breath and vapor, the frustration of striving that yields no lasting result, the enigma of existence, and the insubstantiality of human pursuits. The almond tree that blossoms white and the grasshopper becoming a burden speak to the absurd mismatch between youth's vitality and aging's reality. This poetic language captures what Qohelet has explored throughout: the way hebel\u2014in all its dimensions\u2014characterizes the human condition.",
+          "verse_refs": [
+            "Ecclesiastes 12:2-6"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-hebel-multivalent",
+            "ecclesiastes-death-time-chance"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "The Closing Declaration: All Is Hebel (v. 8)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Verse 8 returns to the refrain that frames much of Ecclesiastes: 'Vanity of vanities, all is vanity.' This marks the end of Qohelet's main discourse. The repetition of hebel (vapor or breath) is not a single philosophical claim but a multivalent assertion. Throughout the book, hebel captures transience, frustration, enigma, and insubstantiality\u2014what we mistake for solid and permanent proves to be as fleeting and elusive as breath. The declaration encapsulates Qohelet's investigation and the restless questioning that has driven the entire book.",
+          "verse_refs": [
+            "Ecclesiastes 12:8"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-hebel-multivalent",
+            "ecclesiastes-frame-qohelet-epilogue"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "The Epilogue: Qohelet as a Wise Teacher (vv. 9\u201312)",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "With verse 9, a third-person voice describes Qohelet as one who 'was wise' and 'still taught the people knowledge.' The epilogue establishes Qohelet not as a skeptic but as a teacher working within the wisdom tradition\u2014one who pondered, investigated, and organized his insights into proverbs. He 'sought to find acceptable words' and words of truth, presenting his teaching as carefully crafted and morally serious.",
+          "verse_refs": [
+            "Ecclesiastes 12:9-10"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-frame-qohelet-epilogue"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_6",
+          "text": "Verses 11\u201312 compare the words of the wise to goads and nails\u2014tools that correct direction and hold firm. This metaphor reflects a wider ancient wisdom tradition in which Israel participated, though Israel's wisdom was distinctively anchored in covenant loyalty and the fear of the LORD. Wisdom teaching aims to redirect the hearer and provide an enduring hold on truth. The reference to 'masters of assemblies' suggests a community of instruction, yet the epilogue immediately tempers expectations: 'of making many books there is no end, and much study is a weariness of the flesh.' The endless proliferation of study does not itself secure wisdom or lasting meaning\u2014a fitting conclusion from one whose inquiry has been so extensive.",
+          "verse_refs": [
+            "Ecclesiastes 12:11-12"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-frame-qohelet-epilogue",
+            "what-is-biblical-wisdom:ancient_near_east_context:0",
+            "what-is-biblical-wisdom:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e6d1b4422197087f5bfb883b26b8683ce9bf7686acb03499aee1969304889bb5",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[3].kind is unsupported: section",
+    "section[4].kind is unsupported: section",
+    "section[4].block[0].confidence exceeds its cited evidence"
+  ],
+  "validation_warnings": []
+}

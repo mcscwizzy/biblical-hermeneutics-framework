@@ -1,0 +1,151 @@
+{
+  "reference": "Galatians 6",
+  "book": "Galatians",
+  "chapter": 6,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Galatians 6 combines practical instruction for community life with a final confrontation over the circumcision controversy that drives the entire letter. The chapter opens with restoration and mutual care, moves through ethical exhortation grounded in sowing and reaping, marks a deliberate autograph section, and closes with Paul's assertion of his marks and a final blessing.",
+          "verse_refs": [
+            "Galatians 6:1",
+            "Galatians 6:11",
+            "Galatians 6:17",
+            "Galatians 6:18"
+          ],
+          "evidence_ids": [
+            "gal-rhetoric",
+            "gal-restoration",
+            "gal-circumcision"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_section",
+      "title": "Restoration and Community (6:1-6)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "When a believer is caught in transgression, those recognized as spiritual are instructed to restore that person gently, while carefully watching themselves against the same temptation. This restoration is grounded in mutual burden-bearing, which the text identifies as fulfilling the law of Christ. The framework prevents both harsh condemnation and self-righteous judgment by making the corrector's own vulnerability explicit.",
+          "verse_refs": [
+            "Galatians 6:1-2"
+          ],
+          "evidence_ids": [
+            "gal-restoration",
+            "galatians-gentle-restoration-burdens",
+            "gentle-restoration-self-watch",
+            "mutual-burden-bearing"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_3",
+          "text": "The passage then addresses the danger of self-deception. Claiming to be something when one is nothing deceives only oneself. Each person must test their own work and find their boasting in their own conduct rather than in comparison with others. This individualized accountability runs alongside the command to bear one another's burdens; each carries their own load while also sharing in the weight of others' struggles.",
+          "verse_refs": [
+            "Galatians 6:3-5"
+          ],
+          "evidence_ids": [
+            "self-test-and-own-load"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_4",
+          "text": "The instruction that learners share good things with those who teach them reflects a material and relational interdependence within the community. While the precise scope of this exchange is debated, it acknowledges that teaching and learning create bonds of gratitude and practical care.",
+          "verse_refs": [
+            "Galatians 6:6"
+          ],
+          "evidence_ids": [
+            "gal-teacher-support"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_section",
+      "title": "Ethical Perseverance (6:7-10)",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "Paul employs the metaphor of sowing and reaping to articulate an ethical-eschatological principle: what one sows now shapes what one will harvest. This is not a formula guaranteeing financial profit or personal advantage, but rather an exhortation to persevere in communal good. Those who invest in the flesh reap corruption; those who invest in the Spirit reap eternal life. Therefore, as opportunity permits, believers should work that which is good toward all people, with special concern for the household of faith.",
+          "verse_refs": [
+            "Galatians 6:7-10"
+          ],
+          "evidence_ids": [
+            "gal-sowing"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_section",
+      "title": "The Circumcision Crisis (6:11-15)",
+      "blocks": [
+        {
+          "id": "block_8",
+          "text": "Paul's boasting rests not in circumcision or uncircumcision but solely in the cross of Jesus Christ. Through the cross, both the world and Paul himself have been crucified to the old order. Neither circumcision nor its absence is what matters; what matters is new creation. This centers the entire dispute not on ethnic practice or body marking but on allegiance to the Messiah's redemptive work.",
+          "verse_refs": [
+            "Galatians 6:14-15"
+          ],
+          "evidence_ids": [
+            "gal-circumcision",
+            "gal-cross-new-creation"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_section",
+      "title": "Conclusion (6:16-18)",
+      "blocks": [
+        {
+          "id": "block_11",
+          "text": "The final blessing invokes grace upon the addressees' spirit. This closing grace wish comes after a letter of sustained dispute and exhortation, neither erasing what precedes it nor binding the recipients beyond what they freely choose.",
+          "verse_refs": [
+            "Galatians 6:18"
+          ],
+          "evidence_ids": [
+            "galatians-grace-no-bypass"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "dc46701c68c25c8d90fbb1278444cbeab3035c0e6195ca4e4f1d584bd7590f0e",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: textual_section",
+    "section[2].kind is unsupported: textual_section",
+    "section[3].kind is unsupported: textual_section",
+    "section[3].block[0].interpretation_level is invalid",
+    "section[3].block[1].interpretation_level is invalid",
+    "section[4].kind is unsupported: textual_section",
+    "section[4].block[0].interpretation_level is invalid",
+    "section[4].block[1].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

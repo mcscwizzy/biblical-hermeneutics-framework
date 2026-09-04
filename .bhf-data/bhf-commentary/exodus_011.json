@@ -1,0 +1,40 @@
+{
+  "reference": "Exodus 11",
+  "book": "Exodus",
+  "chapter": 11,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Exodus 11 stands as the announcement of the final plague. The narrative unfolds within Egypt under an unnamed Pharaoh, with action alternating between royal audience scenes\u2014where God speaks to Moses and Moses reports to Pharaoh\u2014and catastrophic events affecting land, animals, and households. This chapter marks the climactic moment where divine compulsion will finally force Pharaoh to release Israel from Egyptian control.",
+          "verse_refs": [
+            "Exodus 11:1-10"
+          ],
+          "evidence_ids": [
+            "plagues-of-egypt:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "84af8cc3bed6e7a2451aad43e90aea2a39de0cd842d0e4e83af9338f51fe74c5",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[1].interpretation_level is invalid",
+    "section[0].block[2].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

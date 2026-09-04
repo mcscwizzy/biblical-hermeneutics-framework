@@ -1,0 +1,121 @@
+{
+  "reference": "1 Timothy 3",
+  "book": "1 Timothy",
+  "chapter": 3,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "First Timothy 3 prescribes qualifications for two church roles: overseers (or bishops) and deacons. The chapter opens with commendation for aspiring to the overseer office, then catalogs the character and household standards required of such leaders. Deacons receive parallel but distinct qualifications. The passage closes with theological reflection on the church's role and a confessional statement about divine mystery and manifestation.",
+          "verse_refs": [
+            "1 Timothy 3:1-16"
+          ],
+          "evidence_ids": [
+            "1tim-overseer",
+            "1tim-deacons"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "structural_analysis",
+      "title": "The Overseer's Qualifications",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The passage lists the overseer's required qualities: moral character (blamelessness, gentleness, non-violence), family and household competence (husband of one wife, ruling children well), personal habits (sobriety, temperance, orderliness), and relational skills (hospitality, teaching ability, freedom from contentiousness and financial corruption). Central is the principle stated in verse 5: household management capacity serves as the basis for trustworthiness in managing the church. Maturity (not a novice) and external reputation (good testimony from outsiders) provide protective measures against spiritual pride and public scandal.",
+          "verse_refs": [
+            "1 Timothy 3:1-7"
+          ],
+          "evidence_ids": [
+            "1tim-overseer"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "structural_analysis",
+      "title": "The Deacons' Qualifications",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Deacons receive character standards closely parallel to overseers but with some emphases distinct. They must be grave (serious, dignified), not double-tongued (honest and consistent), not addicted to wine, and not greedy. Crucially, they are held to doctrinal accountability: they must hold the mystery of the faith in a pure conscience. Like overseers, deacons require testing before service and must rule their households and manage children well. Those who serve well gain standing and boldness in faith, suggesting the role carried spiritual authority and community respect.",
+          "verse_refs": [
+            "1 Timothy 3:8-13"
+          ],
+          "evidence_ids": [
+            "1tim-deacons"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_evidence",
+      "title": "Textual Transmission",
+      "blocks": [
+        {
+          "id": "block_6",
+          "text": "A third-century papyrus fragment designated P133 preserves portions of 1 Timothy 3:13 through 4:8, providing early manuscript evidence for the text around this chapter. This attestation confirms the chapter's place in the early textual tradition and establishes the stability of its wording in the pre-fourth-century period.",
+          "verse_refs": [
+            "1 Timothy 3:13"
+          ],
+          "evidence_ids": [
+            "1tim-p133"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "closing_section",
+      "title": "The Mystery of Godliness",
+      "blocks": [
+        {
+          "id": "block_7",
+          "text": "The chapter culminates in a confessional statement proclaimed as a great mystery of godliness. The passage presents six parallel lines describing divine manifestation: manifestation in flesh, justification in spirit, seen by angels, preached among nations, believed on in the world, and received up in glory. This unit employs liturgical language and structure, presenting a summary of Christian proclamation about Christ. The confession marks the theological culmination of practical exhortation about church leadership, grounding leadership standards in the church's identity as pillar and ground of truth.",
+          "verse_refs": [
+            "1 Timothy 3:14-16"
+          ],
+          "evidence_ids": [
+            "1tim-confession"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b54c616b10e9f202dfe5ce994e7382b3ddc7a54b16c116f7975cab9363766508",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: structural_analysis",
+    "section[1].block[1].interpretation_level is invalid",
+    "section[2].kind is unsupported: structural_analysis",
+    "section[3].kind is unsupported: disputed_interpretation",
+    "section[3].block[0].interpretation_level is invalid",
+    "section[4].kind is unsupported: textual_evidence",
+    "section[5].kind is unsupported: closing_section",
+    "section[6].block[0].interpretation_level is invalid",
+    "section[7].kind is unsupported: comparative_context",
+    "section[7].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

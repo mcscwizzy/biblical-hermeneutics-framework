@@ -1,0 +1,40 @@
+{
+  "reference": "2 Samuel 13",
+  "book": "2 Samuel",
+  "chapter": 13,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "This chapter records an episode of household violence within David's royal family, specifically involving Amnon, Tamar, and Absalom. The narrative appears in the textual sequence of David's reign documenting royal household dynamics and internal conflict.",
+          "verse_refs": [
+            "2 Samuel 13"
+          ],
+          "evidence_ids": [
+            "2-samuel:timeline:6"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "996df95e6905e323979e0c4a7b723db93baae686d1cc1a526498d6f29a49e9c2",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: theological_context",
+    "section[1].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

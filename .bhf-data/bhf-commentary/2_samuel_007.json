@@ -1,0 +1,46 @@
+{
+  "reference": "2 Samuel 7",
+  "book": "2 Samuel",
+  "chapter": 7,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "This chapter records a pivotal moment in Israel's history: David proposes to build a permanent temple for God, but the LORD responds with something more consequential. Rather than accepting the building project, God redirects the promise. David will not build a house for God; instead, God will establish a house for David. The LORD promises David an enduring dynasty, an offspring who will build the temple, and a covenant of loyalty that will persist even through discipline. This divine counter-offer transforms the nature of Israel's faith: the promise is now bound to a royal line and a future heir.",
+          "verse_refs": [
+            "2 Samuel 7:1-13"
+          ],
+          "evidence_ids": [
+            "second-samuel-davidic-house"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "bff84cd1ca642eae52520ff6966208ee74a8c0382a15b72bfee6c8a53b49e64e",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: narrative_analysis",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[3].kind is unsupported: theological_theme",
+    "section[3].block[0].interpretation_level is invalid",
+    "section[3].block[0].confidence exceeds its cited evidence",
+    "section[4].kind is unsupported: canonical_significance",
+    "section[4].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

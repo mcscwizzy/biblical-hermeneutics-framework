@@ -1,0 +1,58 @@
+{
+  "reference": "2 Chronicles 33",
+  "book": "2 Chronicles",
+  "chapter": 33,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "analysis",
+      "title": "Manasseh's Transformation Through Captivity",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Manasseh's account in Second Chronicles records a striking reversal. After decades of leading Judah into systematic idolatry\u2014rebuilding pagan high places, installing altars in the Temple itself, practicing child sacrifice, and engaging in divination and sorcery\u2014he was captured by Assyrian forces and carried into exile. This captivity became the occasion for transformation. In his distress, Manasseh sought the LORD his God and humbled himself greatly before the God of his fathers. Through prayer, he experienced divine restoration: God returned him to Jerusalem, where Manasseh underwent genuine religious reform, recognizing God's lordship over the kingdom.",
+          "verse_refs": [
+            "2 Chronicles 33:1-13"
+          ],
+          "evidence_ids": [
+            "second-chronicles-manasseh-humbles"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "analysis",
+      "title": "Manasseh's Story Within Chronicles' Theological Vision",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The cycle of seeking the LORD, humbling oneself, praying, and turning from apostasy appears repeatedly across the narratives of Judah's kings in Chronicles. Manasseh's experience exemplifies this pattern: his profound transgression and subsequent distress prompted genuine repentance, which God met with restoration. This recurring theological perspective\u2014that even severe rebellion against God need not be final if accompanied by sincere humility and prayer\u2014shapes the Chronicler's interpretation of the kingdom's history. The pattern emphasizes the possibility of reversal and reform within the covenant relationship between God and Judah's monarchy.",
+          "verse_refs": [
+            "2 Chronicles 33"
+          ],
+          "evidence_ids": [
+            "second-chronicles-seek-humble-pattern"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "fbad84566c6250d2b48c3c43c0ab39ee0bdf1cddb71f18b678c65bcded41913b",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: analysis",
+    "section[1].kind is unsupported: analysis"
+  ],
+  "validation_warnings": []
+}

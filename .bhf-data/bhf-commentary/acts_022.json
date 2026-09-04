@@ -1,0 +1,53 @@
+{
+  "reference": "Acts 22",
+  "book": "Acts",
+  "chapter": 22,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "narrative_section",
+      "title": "The Damascus Road: Vision and Transformation",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Paul recounts a sudden encounter on the road to Damascus: a blinding light from heaven and a voice identifying itself as Jesus of Nazareth. His traveling companions witness the light but do not hear the voice, a detail that marks the experience as distinctly Paul's. Unable to see in the aftermath of this overwhelming brightness, he is led by hand into Damascus.",
+          "verse_refs": [
+            "Acts 22:6-11"
+          ],
+          "evidence_ids": [
+            "acts-damascus-blindness-recovery"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_2",
+          "text": "Paul enters a period of blindness and fasting in Damascus lasting three days. Ananias, a devout and respected Jewish observer, visits him and addresses him as 'Brother Saul.' Through Ananias's touch, Paul's sight returns. He then receives baptism and food, formally joining the community and receiving his commission as a witness. Acts portrays this recovery not as incidental healing but as integral to his calling\u2014dependency, care, and community acceptance form part of the vocational narrative itself.",
+          "verse_refs": [
+            "Acts 22:12-15"
+          ],
+          "evidence_ids": [
+            "acts-damascus-blindness-recovery",
+            "acts-damascus-blindness-recovery:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f4186eeee86eca6ce6c8459ef06746ac6f6f5863dbe63d5468f9067bee2b41ef",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0] has unknown fields: verse_range",
+    "section[0].kind is unsupported: narrative_section"
+  ],
+  "validation_warnings": []
+}

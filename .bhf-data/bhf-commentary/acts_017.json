@@ -1,0 +1,133 @@
+{
+  "reference": "Acts 17",
+  "book": "Acts",
+  "chapter": 17,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "section",
+      "title": "The Thessalonian Mission: Synagogue and Marketplace",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Paul enters the Thessalonian synagogue and reasons for three Sabbath days from the Scriptures, arguing that the Messiah must suffer, rise from the dead, and that Jesus is that Messiah. Synagogue gatherings in the diaspora combined Scripture reading, teaching, and communal deliberation\u2014the natural venue for scriptural argument. Acts then portrays Paul speaking daily in the agora (marketplace), a mixed public space serving commercial, civic, and social functions where such conversation could occur.",
+          "verse_refs": [
+            "Acts 17:2-3"
+          ],
+          "evidence_ids": [
+            "gospel-acts-synagogue-reading",
+            "gospel-acts-synagogue-reading:passage-relevance",
+            "acts-synagogue-agora-sequence",
+            "acts-synagogue-agora-sequence:passage-relevance",
+            "classical-agora-mixed-public-space",
+            "classical-agora-mixed-public-space:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_3",
+          "text": "The persuaded include Jews from the synagogue, gentiles who worshiped with them (termed 'devout Greeks' or God-fearers), and prominent women. Acts does not provide names, titles, or complete biographical detail for these women, but their inclusion among believers demonstrates that the gospel reached across gender and status lines within the Thessalonian community.",
+          "verse_refs": [
+            "Acts 17:4"
+          ],
+          "evidence_ids": [
+            "acts-synagogue-and-audience-limits",
+            "acts-synagogue-and-audience-limits:passage-relevance",
+            "prominent-women-status-limits",
+            "prominent-women-status-limits:passage-relevance",
+            "macedonian-hearers-women-and-households",
+            "macedonian-hearers-women-and-households:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Opposition and Civic Response",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Opposition emerges from jealous Jews who recruit troublemakers and gather a crowd, assaulting Jason's house\u2014likely a gathering place for believers\u2014and dragging Jason and others before the city's magistrates. The charges combine political language: the defendants acted 'contrary to the decrees of Caesar' and advocated 'another king, Jesus.' These accusations reflect tensions around civic loyalty and the relationship between local assemblies and imperial authority.",
+          "verse_refs": [
+            "Acts 17:5-7"
+          ],
+          "evidence_ids": [
+            "jason-house-civic-security",
+            "jason-house-civic-security:passage-relevance",
+            "acts-thessalonica-ephesus-civic-accusations",
+            "acts-thessalonica-ephesus-civic-accusations:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_5",
+          "text": "The magistrates are identified as politarchs, a civic title confirmed by first-century Thessalonian inscriptions. After the magistrates are troubled by the crowd, they take security (likely a pledge or bond) from Jason and the others before releasing them. This resolution reflects local civic procedure and does not constitute a formal Roman trial or permanent conviction.",
+          "verse_refs": [
+            "Acts 17:6-9"
+          ],
+          "evidence_ids": [
+            "thessalonian-politarch-inscription",
+            "thessalonian-politarch-inscription:passage-relevance"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "The Beroean Reception",
+      "blocks": [
+        {
+          "id": "block_7",
+          "text": "Many Beroeans believed, including prominent Greek women and men. As in Thessalonica, Acts notes the participation of women of standing without providing names or titles. The repeated pattern across Macedonian cities demonstrates women's significant participation in receiving the gospel, though their specific later roles remain unspecified in the Acts narrative.",
+          "verse_refs": [
+            "Acts 17:12"
+          ],
+          "evidence_ids": [
+            "prominent-women-status-limits",
+            "prominent-women-status-limits:passage-relevance",
+            "macedonian-hearers-women-and-households",
+            "macedonian-hearers-women-and-households:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_8",
+          "text": "When the Thessalonian Jews learn that Paul is proclaiming the gospel at Beroea, they travel there to stir up and trouble the crowds. The believers respond by immediately sending Paul toward the sea, while Silas and Timothy remain. This continuation shows opposition as persistent and mobile, following the missionary activity across cities rather than remaining localized.",
+          "verse_refs": [
+            "Acts 17:13-14"
+          ],
+          "evidence_ids": [
+            "acts-persuasion-conflict-noncoercion",
+            "acts-persuasion-conflict-noncoercion:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a16ac4d462a96fcee6ae84035a9db28d00b1d0d2f879f75bcab014956aef8355",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].confidence exceeds its cited evidence",
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[3].kind is unsupported: section",
+    "section[3].block[0].confidence exceeds its cited evidence"
+  ],
+  "validation_warnings": []
+}

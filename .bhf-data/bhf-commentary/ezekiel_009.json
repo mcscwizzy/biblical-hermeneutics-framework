@@ -1,0 +1,57 @@
+{
+  "reference": "Ezekiel 9",
+  "book": "Ezekiel",
+  "chapter": 9,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "The Departure of YHWH's Glory",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ezekiel 9 presents a vision in which YHWH's glory begins its departure from the Jerusalem temple. In verse 3, the text records that 'the glory of the God of Israel was gone up from the cherub, whereupon it was, to the threshold of the house,' marking the initial movement of the divine presence away from its traditional sanctuary location. This episode is situated within the larger visionary sequence spanning chapters 8-11, in which Ezekiel witnesses the progressive departure of God's glory from the defiled temple and city of Jerusalem. According to the supplied evidence, this withdrawal is part of a complete pattern in which the glory eventually returns to a visionary sanctuary in chapter 43.",
+          "verse_refs": [
+            "Ezekiel 9:3"
+          ],
+          "evidence_ids": [
+            "ezekiel-glory-departure-return"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_notes",
+      "title": "Textual Witnesses and Variation",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Ezekiel 9 is attested in multiple ancient textual traditions: the Masoretic Text, the Old Greek (Iezekiel), Papyrus 967, Qumran fragments, and the Masada scroll. These witnesses exhibit variation in wording and word order, indicating that interpretation of this chapter requires careful passage-level textual analysis to establish the most reliable form of the transmitted text.",
+          "verse_refs": [
+            "Ezekiel 9"
+          ],
+          "evidence_ids": [
+            "ezekiel-textual-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "93b684b83bb5f44f22656fbe1caa2759119d1aed1975c2851c39c983e3fe3523",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: textual_notes"
+  ],
+  "validation_warnings": []
+}

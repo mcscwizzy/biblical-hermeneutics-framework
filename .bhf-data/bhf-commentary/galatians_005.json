@@ -1,0 +1,54 @@
+{
+  "reference": "Galatians 5",
+  "book": "Galatians",
+  "chapter": 5,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "section",
+      "title": "Freedom from Circumcision Obligation (5:1-12)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Paul's warning in verse 3 sharpens the stakes: if gentiles accept circumcision within the present conflict, they become debtors to keep the whole law. The problem is not the rite in isolation but the total obligation system it represents\u2014full Torah observance\u2014which Paul sees as contrary to Spirit-reception and faith-based justification. This is the concrete crisis driving the entire letter.",
+          "verse_refs": [
+            "Galatians 5:3"
+          ],
+          "evidence_ids": [
+            "galatians-gentile-circumcision-obligation"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e8b304047eb5e359816a93c1f066c26f955e910b4d4456a66adbfa51e3facf4d",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[0].block[0].confidence exceeds its cited evidence",
+    "section[1].kind is unsupported: section",
+    "section[1].block[0].confidence exceeds its cited evidence",
+    "section[1].block[2].interpretation_level is invalid",
+    "section[1].block[2].confidence exceeds its cited evidence",
+    "section[2].kind is unsupported: section",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[2].block[0].confidence exceeds its cited evidence",
+    "section[3].kind is unsupported: section",
+    "section[3].block[0].interpretation_level is invalid",
+    "section[4].kind is unsupported: section",
+    "section[4].block[0].confidence exceeds its cited evidence",
+    "section[4].block[1].interpretation_level is invalid",
+    "section[4].block[1].confidence exceeds its cited evidence",
+    "section[4].block[2].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,49 @@
+{
+  "reference": "Exodus 19",
+  "book": "Exodus",
+  "chapter": 19,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "section",
+      "title": "The Covenant Proposal: Treasured Possession and Priestly Kingdom",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Moses ascends the mountain and receives words from God to speak to the people. The heart of this message rests on a foundation of memory: God reminds Israel of what has already transpired\u2014deliverance from Egypt and safe passage through the wilderness. On this solid ground of prior deliverance, God makes a conditional offer: if Israel obeys God's voice and keeps the covenant, then Israel shall be God's own possession from among all peoples, a kingdom of priests, and a holy nation. This identification of Israel occurs before the legal requirements are spelled out, establishing that election and possession are God's gift; obedience and law follow as Israel's response to grace already received.",
+          "verse_refs": [
+            "Exodus 19:3-6"
+          ],
+          "evidence_ids": [
+            "exodus-priestly-kingdom"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b79e5c6a7bbe1dbd28a4da78002b3fde0d2e08751b00f3d4255525fb3af10c9e",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: section",
+    "section[1].block[1].interpretation_level is invalid",
+    "section[2].kind is unsupported: section",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[2].block[1].interpretation_level is invalid",
+    "section[3].kind is unsupported: section",
+    "section[3].block[0].interpretation_level is invalid",
+    "section[3].block[1].interpretation_level is invalid",
+    "section[4].kind is unsupported: section",
+    "section[4].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,143 @@
+{
+  "reference": "Acts 14",
+  "book": "Acts",
+  "chapter": 14,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Acts 14 narrates Paul and Barnabas's missionary journey through a sequence of southern Anatolian cities\u2014Iconium, Lystra, and Derbe\u2014encountering both response and violent opposition. The Via Sebaste road network, completed in 6 BCE and attested through milestones and survey, connected these provincial centers and made such regional travel feasible, though Acts does not preserve details of every stopping point along the route.",
+          "verse_refs": [
+            "Acts 14:1",
+            "Acts 14:5-7"
+          ],
+          "evidence_ids": [
+            "acts-highland-sequence",
+            "via-sebaste-material-road-network",
+            "via-sebaste-material-road-network:passage-relevance"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Iconium Mission and Opposition",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "In Iconium, Paul and Barnabas enter the synagogue and speak with such effect that a large number of both Jewish and Greek believers respond positively. However, Jewish opponents deliberately stir opposition among the non-Jewish population, creating a divided city where some side with the missionaries and others with their opponents. The pair remain in the city for an extended period, speaking boldly while the Lord grants signs and wonders through their hands. This pattern\u2014initial success followed by organized opposition and flight\u2014is independently corroborated in Paul's second letter to Timothy, which recalls the persecutions he experienced at Antioch, Iconium, and Lystra, crediting the Lord with deliverance from each.",
+          "verse_refs": [
+            "Acts 14:1-4"
+          ],
+          "evidence_ids": [
+            "2tim-persecution"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Flight into Lycaonia",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "When opposition escalates to violence\u2014both Gentiles and Jews with their leaders plot to abuse and stone the apostles\u2014Paul and Barnabas learn of the threat and flee to the Lycaonian cities of Lystra and Derbe and their surrounding region. This flight marks a meaningful geographical shift. Iconium's position and civic identity appear ambiguously within Phrygian, Lycaonian, and Roman provincial frameworks across ancient sources, which explains why Acts can narrate departure from Iconium into Lycaonian cities as a distinct regional transition rather than arbitrary flight.",
+          "verse_refs": [
+            "Acts 14:5-7"
+          ],
+          "evidence_ids": [
+            "acts-highland-sequence",
+            "iconium-regional-and-civic-ambiguity",
+            "iconium-regional-and-civic-ambiguity:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "The Healing in Lystra",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "In Lystra, a man sits who has been crippled in his feet from birth\u2014he has never walked. This man listens intently as Paul speaks. Observing him with fixed attention and seeing that he has faith to be made whole, Paul speaks directly to him with a loud voice: 'Stand upright on your feet.' The man immediately springs up and walks. Acts presents him not as a passive recipient of divine action but as a listener and actor with his own responsive faith\u2014a portrayal that centers his agency while avoiding the stigmatization sometimes attached to disability in ancient sources.",
+          "verse_refs": [
+            "Acts 14:8-10"
+          ],
+          "evidence_ids": [
+            "lystra-healing-disability-and-agency",
+            "lystra-healing-disability-and-agency:passage-relevance"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Divine Misidentification and Cultural Context",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "The crowd witnessing the healing cries out in Lycaonian that 'the gods have come down to us in human form,' identifying Barnabas as Zeus and Paul, the principal speaker, as Hermes. The priest of the Zeus temple brings oxen and garlands, preparing to offer sacrifice. Acts marks this cry as Lycaonian\u2014granting the crowd their own local voice and explaining the delayed comprehension. Regional inscriptional and literary evidence provides examples of Zeus-Hermes associations and divine-appearance narratives in Anatolian contexts, making the crowd's interpretation culturally comprehensible, though no single source proves this event occurred.",
+          "verse_refs": [
+            "Acts 14:11-13"
+          ],
+          "evidence_ids": [
+            "lycaonian-language-and-multilingual-interaction",
+            "lycaonian-language-and-multilingual-interaction:passage-relevance",
+            "lystra-zeus-hermes-and-sacrifice-comparanda",
+            "lystra-zeus-hermes-and-sacrifice-comparanda:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Lystra as Roman Colony and Anatolian Society",
+      "blocks": [
+        {
+          "id": "block_6",
+          "text": "Lystra held the formal status of a Roman colony\u2014Colonia Iulia Felix Gemina\u2014as attested by colonial titulature and Latin inscriptions. Yet this administrative status did not erase Lycaonian language, religious practice, or cultural continuity. The simultaneous presence of Roman civic institutions and living Lycaonian speech indicates a society where colonial identity and local Anatolian identity coexisted. This cultural complexity\u2014neither purely Roman nor purely Lycaonian\u2014illuminates the crowd's reaction: they interpret the healing through their own religious vocabulary while residing in a Roman-administered city.",
+          "verse_refs": [
+            "Acts 14:8-13"
+          ],
+          "evidence_ids": [
+            "lystra-roman-colony-and-local-diversity",
+            "lystra-roman-colony-and-local-diversity:passage-relevance"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "2304316653f523907d931e137fb0e2422167269103000720fe26d665451675f3",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[3].kind is unsupported: section",
+    "section[4].kind is unsupported: section",
+    "section[5].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

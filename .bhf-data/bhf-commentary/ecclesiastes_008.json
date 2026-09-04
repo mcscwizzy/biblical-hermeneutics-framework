@@ -1,0 +1,122 @@
+{
+  "reference": "Ecclesiastes 8",
+  "book": "Ecclesiastes",
+  "chapter": 8,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ecclesiastes 8 places wisdom in its proper yet limited place. The wise person discerns what is fitting and bears this wisdom visibly (v1), yet wisdom cannot control rulers, prevent death, predict the future, or guarantee that justice will prevail. The chapter observes power imbalances and delayed justice with unflinching realism, while affirming that fear of God and attentiveness to one's circumstances remain the wise response. The passage concludes by commending joy as a gift, grounded not in the world's order but in gratitude for what one is given to enjoy.",
+          "verse_refs": [
+            "Ecclesiastes 8:1-15"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-wisdom-relative-not-control",
+            "ecclesiastes-oppression-injustice",
+            "ecclesiastes-enjoyment-divine-gift"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Wisdom and Kingship (8:1-4)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Wisdom manifests outwardly in the bearing of the wise person, making the face shine and transforming one's countenance (v1). Yet wisdom's reach has a boundary: the king's word carries absolute power (v4), and no subject can legitimately challenge the monarch's actions. The wise course is to keep the king's command in regard of the oath before God (v2), to avoid hasty departure from his presence, and to refrain from persisting in rebellion (v3). Wisdom here means reading the constraints of authority and acting prudently within them.",
+          "verse_refs": [
+            "Ecclesiastes 8:1-4"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-wisdom-relative-not-control"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Mortality and Powerlessness (8:5-9)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Though the wise person's heart discerns time and judgment (v5), this discernment cannot overcome fundamental human constraints. No one has power over the spirit to retain it; no one controls the day of death (v8). The future remains opaque\u2014no one can predict how things shall be (v7). There is no discharge from the warfare of existence; wickedness cannot deliver those who practice it (v8). Yet the observer testifies to a lived reality: power imbalances are real and cause real harm, with some wielding authority over others to their hurt (v9).",
+          "verse_refs": [
+            "Ecclesiastes 8:5-9"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-wisdom-relative-not-control",
+            "ecclesiastes-god-fear-gift-judgment",
+            "ecclesiastes-oppression-injustice"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Justice Delayed and Inverted (8:10-13)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The observer witnesses an inversion of justice that troubles conscience: the wicked are buried with honor and forgotten in the city, while the righteous depart from the holy place unnoticed (v10). This reversal is called vanity (v10). The cause is identified: judgment against evil is not executed swiftly (v11), and this delay corrupts the human heart, leading people to set themselves fully to do evil (v11). Yet the passage asserts that those who fear God will ultimately fare well, while the wicked will not prolong their days (v12-13). This affirmation of moral accountability stands alongside the stubborn fact of visible injustice\u2014a tension the passage does not resolve but holds.",
+          "verse_refs": [
+            "Ecclesiastes 8:10-13"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-oppression-injustice",
+            "ecclesiastes-god-fear-gift-judgment",
+            "ecclesiastes-hebel-multivalent"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Vanity and the Gift of Mirth (8:14-15)",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "The observer names another vanity: the righteous sometimes receive the wage of the wicked, and the wicked the wage of the righteous (v14). No cosmic justice restores the balance. Against this backdrop of irreducible injustice and human powerlessness, the sage turns to commend mirth (v15). This is not naive optimism or escape but a recognition that joy, work, and companionship are gifts. In a world humans cannot master or fully understand, gratitude for what one is given\u2014and fear before God\u2014constitute the wise life.",
+          "verse_refs": [
+            "Ecclesiastes 8:14-15"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-hebel-multivalent",
+            "ecclesiastes-enjoyment-divine-gift",
+            "ecclesiastes-oppression-injustice"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e40c878ff3906bb378a5b2a4bf41dbc25d494d3840badf614688242c89308b05",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[3].kind is unsupported: section",
+    "section[4].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

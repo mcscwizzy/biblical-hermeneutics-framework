@@ -1,0 +1,42 @@
+{
+  "reference": "Exodus 18",
+  "book": "Exodus",
+  "chapter": 18,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "leadership",
+      "title": "The Elders in Israel's Community",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Exodus 18:12 presents Aaron and the elders of Israel gathering with Jethro for a sacrificial meal before God. This scene identifies the elders as key participants in Israel's religious occasions and public worship. The evidence indicates that elders belonged to the social and political systems that governed Israel and its neighbors, functioning within contexts that combined sanctuary service with communal authority. Their formal participation in this covenant meal marks their place as recognized leaders in Israel's institutional structure.",
+          "verse_refs": [
+            "Exodus 18:12"
+          ],
+          "evidence_ids": [
+            "elders:ancient_near_east_context:0",
+            "elders:historical_context:0",
+            "village-elders:ancient_near_east_context:0",
+            "village-elders:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "532ee23185aa697207effb344f0759096cf58203b7bcd828998deec2241f1d71",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: leadership"
+  ],
+  "validation_warnings": []
+}

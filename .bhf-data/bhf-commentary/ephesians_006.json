@@ -1,0 +1,111 @@
+{
+  "reference": "Ephesians 6",
+  "book": "Ephesians",
+  "chapter": 6,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ephesians 6 addresses three household relationships: children and parents, enslaved people and slave-owners, and believers positioned against spiritual opposition. The passage emphasizes reciprocal obligations, truth-telling, and ultimately prayer and vigilance as the stance of faith.",
+          "verse_refs": [
+            "Ephesians 6:1-18"
+          ],
+          "evidence_ids": [
+            "eph-children",
+            "eph-slavery",
+            "eph-armor"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Children and Parents (6:1-4)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The passage directly addresses children as moral agents, commanding them to obey their parents as right and grounded in the Decalogue. Notably, fathers are forbidden to provoke children to anger; instead, they are charged with nurturing them in the discipline and instruction of the Lord. This framework constrains parental authority and establishes children's protection from paternal wrath as a Christian ethical concern.",
+          "verse_refs": [
+            "Ephesians 6:1-4"
+          ],
+          "evidence_ids": [
+            "eph-children"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Enslaved People and Enslavers (6:5-9)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Ephesians addresses both enslaved persons and those who hold slaves within the Roman household structure. Enslaved people are called to serve with sincere heart as to Christ; enslavers are commanded to treat enslaved people justly and to forbear threatening, knowing both answer to a Master in heaven who shows no partiality. The passage does not abolish slavery but places mutual obligations within a theological framework.",
+          "verse_refs": [
+            "Ephesians 6:5-9"
+          ],
+          "evidence_ids": [
+            "eph-slavery",
+            "household-slavery-status-comparison:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_4",
+          "text": "This passage cannot legitimate slavery or modern worker exploitation. Later tradition has sometimes misapplied it to defend such systems, but these uses contradict the letter's core emphases on peace, love, truth, and nonthreatening speech.",
+          "verse_refs": [
+            "Ephesians 6:5-9"
+          ],
+          "evidence_ids": [
+            "eph-reception"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Spiritual Armor (6:10-18)",
+      "blocks": [
+        {
+          "id": "block_6",
+          "text": "Later interpretations have sometimes weaponized this passage, construing it as justifying violent spiritual warfare or aggressive tactics. Such readings exceed the text's defensive posture, truth-telling, and prayer emphasis, and contradict Ephesians' broader themes of peace, love, and nonthreatening conduct.",
+          "verse_refs": [
+            "Ephesians 6:10-18"
+          ],
+          "evidence_ids": [
+            "eph-reception"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "99e9f94514fe540c23da647e3d641d65ab1017d544a61960ae526c50a1ddd8fb",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[3].kind is unsupported: section",
+    "section[3].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

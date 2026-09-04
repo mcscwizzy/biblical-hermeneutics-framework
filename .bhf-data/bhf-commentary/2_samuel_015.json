@@ -1,0 +1,95 @@
+{
+  "reference": "2 Samuel 15",
+  "book": "2 Samuel",
+  "chapter": 15,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "2 Samuel 15 opens the account of Absalom's rebellion against King David. The chapter documents the initial phases of a calculated coup: Absalom's systematic effort to win the people's allegiance through the royal gate, his orchestrated declaration as king in Hebron, and the resulting collapse of David's support that forces the king to flee Jerusalem.",
+          "verse_refs": [
+            "2 Samuel 15:1-14"
+          ],
+          "evidence_ids": [
+            "second-samuel-absalom-rebellion"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "Absalom's Campaign for Popular Support (15:1-6)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Absalom launches a deliberate strategy to undermine David's authority. He displays royal insignia\u2014a chariot, horses, and fifty runners\u2014and positions himself at the gate where petitioners come seeking the king's judgment. His approach combines flattery (kissing those who bow to him) with subtle criticism of David's accessibility. By telling each petitioner 'your matters are good and right; but there is no man deputed of the king to hear you,' he skillfully portrays himself as more attentive to the people's needs. The text explicitly states that by these methods 'Absalom stole the hearts of the men of Israel.'",
+          "verse_refs": [
+            "2 Samuel 15:1-6"
+          ],
+          "evidence_ids": [
+            "second-samuel-absalom-rebellion"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "The Conspiracy Mobilizes (15:7-12)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "After establishing widespread support, Absalom executes his coup. He obtains David's permission to travel to Hebron on the pretense of fulfilling a vow made during his previous exile in Geshur. Once there, however, Absalom openly declares himself king. He sends messengers throughout Israel announcing that when they hear the trumpet, they should proclaim 'Absalom is king in Hebron.' Crucially, he secures the defection of Ahithophel, David's trusted counselor. The text notes that 'the conspiracy was strong; for the people increased continually with Absalom,' indicating his rebellion quickly gains momentum and widespread acceptance.",
+          "verse_refs": [
+            "2 Samuel 15:7-12"
+          ],
+          "evidence_ids": [
+            "second-samuel-absalom-rebellion"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "David's Forced Departure (15:13-14)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The rebellion's effectiveness becomes immediately apparent. A messenger reaches David with devastating news: 'The hearts of the men of Israel are after Absalom.' Facing the loss of both popular support and military advantage, David confronts an impossible situation in Jerusalem. His response\u2014to evacuate the city and flee\u2014marks the point where Absalom's conspiracy has forced the sitting king from his capital.",
+          "verse_refs": [
+            "2 Samuel 15:13-14"
+          ],
+          "evidence_ids": [
+            "second-samuel-absalom-rebellion"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a887af803040ed14c288d288c1dd68f7c3037a973bc7f8c7567d571163a19801",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: narrative_section",
+    "section[2].kind is unsupported: narrative_section",
+    "section[3].kind is unsupported: narrative_section"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,40 @@
+{
+  "reference": "Exodus 35",
+  "book": "Exodus",
+  "chapter": 35,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview: Mobilizing the Sanctuary Community",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Exodus 35 initiates the execution of the sanctuary instructions given at Sinai. After establishing Sabbath observance as binding law (35:1-3), Moses calls the assembled community to bring materials and to perform the construction work (35:4-19). This two-phase presentation\u2014first commands, then the calling forth of communal participation\u2014reflects Exodus's literary structure of divine instruction followed by completion.",
+          "verse_refs": [
+            "Exodus 35:1-19"
+          ],
+          "evidence_ids": [
+            "tabernacle-command-construction-correspondence"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "41b37ca068d862510d52ab7beb2d10199690741ddb397b7f63edd6caf250d6a1",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[1].confidence exceeds its cited evidence",
+    "section[0].block[2].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,61 @@
+{
+  "reference": "2 Kings 21",
+  "book": "2 Kings",
+  "chapter": 21,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Period and Chronological Context",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Chapter 21 narrates events during the period conventionally designated as the reigns of Manasseh through Josiah, placing this account within the later monarchic period of Judah. The chapter's position within 2 Kings marks a critical moment in the larger narrative of the kingdom's religious trajectory and its relationship to the covenant.",
+          "verse_refs": [
+            "2 Kings 21:1"
+          ],
+          "evidence_ids": [
+            "2-kings:timeline:5"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "theological_framework",
+      "title": "Evaluating Rulers Through Covenant and Prophecy",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The book of 2 Kings assesses rulers according to their covenant fidelity and response to the prophetic word. In this framework, political longevity and apparent stability do not constitute success; rather, they are evaluated against standards of obedience to the covenant made with David and Israel. Chapter 21 follows this pattern: it narrates a ruler's religious practices and then presents a prophetic judgment declaring divine response to those practices. For readers of Kings, this evaluative lens remains constant regardless of political circumstances.",
+          "verse_refs": [
+            "2 Kings 21:2-10"
+          ],
+          "evidence_ids": [
+            "2-kings:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "768bcd3cdf605869ea855b6d7f0a492e21c4a88f811b2cd5171754c9f7fbd519",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: theological_framework",
+    "section[2].kind is unsupported: composition_and_audience",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[3].kind is unsupported: political_context",
+    "section[3].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

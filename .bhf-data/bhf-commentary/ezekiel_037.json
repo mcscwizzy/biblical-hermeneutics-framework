@@ -1,0 +1,123 @@
+{
+  "reference": "Ezekiel 37",
+  "book": "Ezekiel",
+  "chapter": 37,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ezekiel 37 presents one of Scripture's most vivid images of divine restoration. Through the vision of dry bones returning to life, the prophet communicates to Israel in exile a message of hope: the LORD will restore his displaced people to their land and renew them by his Spirit. The passage stands in the context of restoration prophecy\u2014oracles that speak to exile, displacement, and the rebuilding of life under God's mercy. As an ancient prophecy, it uses the forms and language of the ancient Near East familiar to its audience, including the speech patterns of royal courts and covenant renewal, yet does so to convey the LORD's authoritative word.",
+          "verse_refs": [
+            "Ezekiel 37"
+          ],
+          "evidence_ids": [
+            "ezekiel-dry-bones",
+            "restoration-prophecy:historical_context:0",
+            "how-should-i-read-prophecy:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "passage_analysis",
+      "title": "The Vision Restored (37:1-10)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Ezekiel is transported by the Spirit to a valley completely filled with bones, described as 'very dry'\u2014a stark image of absolute death. At the LORD's command, he speaks over them, and they begin to move: bone joins to bone, sinews appear, flesh covers them, and skin encloses them. Yet they remain lifeless. Only when the prophet calls upon the breath (ruach) to come from the four winds does life enter them: they breathe, stand upon their feet, and form 'an exceeding great army.' The vision unfolds restoration in its completeness\u2014the reassembly of what was broken, the recovery of physical form, and the gift of life itself. In the ancient world, wind and breath were familiar images for life and invisible power. Scripture uses this language to speak of God's power to animate and restore.",
+          "verse_refs": [
+            "Ezekiel 37:1-10"
+          ],
+          "evidence_ids": [
+            "ezekiel-dry-bones",
+            "what-does-ruach-mean:ancient_near_east_context:0",
+            "what-does-ruach-mean:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "passage_analysis",
+      "title": "The Interpretation (37:11-13)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "The vision receives its explicit interpretation from the LORD: 'these bones are the whole house of Israel.' The people's own words explain their condition\u2014'Our bones are dried up, and our hope is lost; we are clean cut off.' They understand themselves as dead, as finished. But the LORD's word reverses this: he will open their graves, raise them from death, and bring them into the land of Israel. The metaphor of death and resurrection carries profound theological weight. In the ancient world, death was understood as final\u2014a boundary that could not be crossed. The Bible's claim that God has power over death and can restore his dead people represents a striking assertion about God's power and the scope of his faithfulness.",
+          "verse_refs": [
+            "Ezekiel 37:11-13"
+          ],
+          "evidence_ids": [
+            "ezekiel-dry-bones",
+            "resurrection-theme:ancient_near_east_context:0",
+            "resurrection-theme:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "passage_analysis",
+      "title": "Spirit and Covenant Renewal (37:13-14)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The restoration that follows the opening of graves includes the LORD's gift of his Spirit: 'I will put my Spirit in you, and ye shall live.' In Scripture, the Spirit is not an impersonal force but the presence and power of God bound to his holiness, creation, covenant renewal, and mission. Spirit language runs throughout Scripture from creation through prophecy, the ministry of Jesus, Pentecost, and the ongoing life of the church. Here, the gift of the Spirit signifies that restoration is not merely physical return to a land but spiritual renewal\u2014the restoration of covenant relationship between God and his people.",
+          "verse_refs": [
+            "Ezekiel 37:13-14"
+          ],
+          "evidence_ids": [
+            "spirit-theme:ancient_near_east_context:0",
+            "spirit-theme:historical_context:0",
+            "restoration-prophecy:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_note",
+      "title": "Textual Traditions",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "The text of Ezekiel in ancient sources shows interesting variation. Papyrus 967, one of the oldest surviving witnesses to Ezekiel, preserves the material now numbered Ezekiel 38-39 before chapter 37\u2014a different arrangement than the familiar Masoretic order. The Masoretic Text, the Old Greek version, Qumran fragments, and the Masada scroll all preserve evidence of textual variation in Ezekiel's wording and arrangement. This manuscript diversity reflects the complex history through which biblical texts were copied and transmitted, reminding us that the text we read represents careful work by many ancient copyists.",
+          "verse_refs": [
+            "Ezekiel 37"
+          ],
+          "evidence_ids": [
+            "ezekiel-p967-order",
+            "ezekiel-textual-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d12eb67df9c029c5ed846dcc8527dd12dfc7ab4ba41eb377b7089911b0ad6cc3",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: passage_analysis",
+    "section[2].kind is unsupported: passage_analysis",
+    "section[3].kind is unsupported: passage_analysis",
+    "section[4].kind is unsupported: textual_note"
+  ],
+  "validation_warnings": []
+}

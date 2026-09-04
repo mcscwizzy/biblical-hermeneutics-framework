@@ -1,0 +1,42 @@
+{
+  "reference": "Deuteronomy 32",
+  "book": "Deuteronomy",
+  "chapter": 32,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "textual_notes",
+      "title": "Textual Variant: Deuteronomy 32:8",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Verse 8 contains a significant textual variant across the Masoretic, Qumran, and Greek manuscript traditions. The passage describes God's allocation of nations to peoples, but the traditions differ in the specific phrasing that determines whether the allocation is described as 'according to the number of the children of Israel' or according to divine beings. This variant directly affects the worldview the passage reflects and must precede any historical or theological reconstruction.",
+          "verse_refs": [
+            "Deuteronomy 32:8"
+          ],
+          "evidence_ids": [
+            "deuteronomy-32-8-manuscript-variant",
+            "deuteronomy-32-8-manuscript-variant:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e00ee4b52e27d6d5f5a1131d9f401ac7869db1ff8c5359c9dc59089c07824ac6",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: textual_notes",
+    "section[1].kind is unsupported: thematic_analysis",
+    "section[1].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

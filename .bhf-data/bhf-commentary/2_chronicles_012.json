@@ -1,0 +1,58 @@
+{
+  "reference": "2 Chronicles 12",
+  "book": "2 Chronicles",
+  "chapter": 12,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "A Cycle of Abandonment, Judgment, and Partial Restoration",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "This chapter exemplifies a recurring theological pattern in Judah's history: a cycle of abandoning the LORD, receiving divine judgment and prophetic instruction, and achieving partial restoration through humbling and repentance. When Rehoboam's kingdom became established, he and all Israel forsook the law of the LORD. This abandonment brought swift divine judgment in the form of an invasion from Egypt in the fifth year of his reign.",
+          "verse_refs": [
+            "2 Chronicles 12:1-2"
+          ],
+          "evidence_ids": [
+            "second-chronicles-seek-humble-pattern"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative_section",
+      "title": "Prophetic Confrontation and the Response of Humbling",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The prophet Shemaiah delivered God's message to Rehoboam and the assembled princes: because they had abandoned the LORD, He had left them to face Shishak. This prophetic confrontation prompted immediate humbling. The king and princes acknowledged God's righteousness in the judgment. Their response of humbling reversed God's course: rather than complete destruction, God would grant them deliverance. Though they would serve Shishak and learn the distinction between God's service and foreign rule, Jerusalem itself would not be destroyed.",
+          "verse_refs": [
+            "2 Chronicles 12:5-8"
+          ],
+          "evidence_ids": [
+            "second-chronicles-seek-humble-pattern"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "6417d134117a1b39541a90cd6d7348901e4ad035c57d774114867111c9c9684b",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "root.status is unsupported: complete",
+    "section[1].kind is unsupported: narrative_section"
+  ],
+  "validation_warnings": []
+}

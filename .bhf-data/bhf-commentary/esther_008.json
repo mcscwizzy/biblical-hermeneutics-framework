@@ -1,0 +1,39 @@
+{
+  "reference": "Esther 8",
+  "book": "Esther",
+  "chapter": 8,
+  "status": "validated",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "The Counter-Edict",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "After Haman's execution and confiscation of his estate, the king faces a critical legal obstacle: Haman's sealed decree ordering Jewish destruction remains irrevocable under Persian law, since documents sealed with the royal signet cannot be annulled. Rather than invalidate the original edict, the king authorizes Esther and Mordecai to compose and issue a counter-edict bearing the royal name and seal. This new decree is distributed throughout all 127 provinces, permitting the Jewish people to assemble and defend themselves against armed attack, effectively neutralizing the threat of Haman's original order.",
+          "verse_refs": [
+            "Esther 8:5",
+            "Esther 8:8",
+            "Esther 8:9"
+          ],
+          "evidence_ids": [
+            "esther-counter-edict-defense"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d13ed47709ce6ece802feb5eaa8bea731dee91fb0bb26620dd2971714a8320a6",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

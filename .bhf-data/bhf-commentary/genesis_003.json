@@ -1,0 +1,57 @@
+{
+  "reference": "Genesis 3",
+  "book": "Genesis",
+  "chapter": 3,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Genesis 3 records humanity's first transgression and its immediate consequences. The chapter unfolds through a dialogue between the serpent and the woman, in which the serpent questions God's word about the tree in the midst of the garden. The woman, attracted by the tree's appearance and potential for wisdom, takes its fruit and shares it with her husband. Both eat, and their eyes are opened to their nakedness. Shame follows, and they hide from God's presence in the garden. When God confronts them, each assigns blame: the man to the woman, the woman to the serpent. This narrative establishes the pattern of human estrangement from God, mortality, and the rupture in the created order. Genesis 3 functions as the interpretive root for understanding why redemption becomes necessary throughout Scripture.",
+          "verse_refs": [
+            "Genesis 3:1-13"
+          ],
+          "evidence_ids": [
+            "the-fall:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "setting_and_context",
+      "title": "Sacred Space and Moral Order",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The garden narrative employs imagery familiar from the ancient Near East: a sacred space with guarded boundaries and an established moral order. What distinguishes Genesis is its monotheistic framework. Rather than a pantheon negotiating divine will, there is one sovereign God who establishes both the boundary (the tree's prohibition) and the moral principle underlying it. The serpent's strategy is to undermine God's word by questioning its binding authority and suggesting that transgression carries no real consequence. The woman's reasoning reflects human desire for autonomy and wisdom, but positioned against obedience to the single God whose command defines the relationship. The tree's appeal\u2014as food, beauty, and source of knowledge\u2014expresses legitimate human longings directed toward a illegitimate end.",
+          "verse_refs": [
+            "Genesis 3:1-6"
+          ],
+          "evidence_ids": [
+            "the-fall:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ce5a912bdc4ba7085215aaf1bbf850519c1e774647d60f1964866369b4e99fa4",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: setting_and_context"
+  ],
+  "validation_warnings": []
+}

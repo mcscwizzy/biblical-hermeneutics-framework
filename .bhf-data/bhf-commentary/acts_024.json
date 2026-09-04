@@ -1,0 +1,81 @@
+{
+  "reference": "Acts 24",
+  "book": "Acts",
+  "chapter": 24,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview: Trial Before the Governor",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Paul's trial unfolds before Felix, a Roman governor, in a formal legal proceeding at Caesarea. The high priest Ananias, accompanied by elders and a professional orator named Tertullus, presents charges against Paul. This scene illustrates Roman provincial governance, where governors administered justice alongside local Jewish priestly and elite institutions. The governor retained capital authority and adjudication over disputes involving local populations.",
+          "verse_refs": [
+            "Acts 24:1"
+          ],
+          "evidence_ids": [
+            "roman-governorship:second_temple_context:0",
+            "roman-governorship:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "The Accusation: Acts' Rhetorical Composition",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Tertullus presents three main charges: Paul is a pestilent troublemaker, a stirrer of insurrection among Jews worldwide, and a ringleader of the Nazarene sect; he also claims Paul attempted to profane the temple. This speech should be understood as Acts' own literary composition of the accusation, not a transcription of Tertullus's exact words. Acts characteristically constructs speeches and trial scenes with rhetorical aims that differ from Paul's letters written to communities.",
+          "verse_refs": [
+            "Acts 24:2-6"
+          ],
+          "evidence_ids": [
+            "acts-letter-chronology-resurrection",
+            "acts-letter-chronology-resurrection:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Paul's Defense: Temporal and Chronological Argument",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Paul begins by emphasizing the brevity of his presence in Jerusalem\u2014only twelve days since his arrival to worship. During that time, no one found him disputing with anyone in the temple, stirring up crowds in the synagogues, or agitating in the city. This chronological argument rebuts the charges of widespread insurrection and systematic agitation. The factual specificity aims to demonstrate his accusers cannot substantiate their claims.",
+          "verse_refs": [
+            "Acts 24:10-12"
+          ],
+          "evidence_ids": [
+            "acts-resurrection-judgment-conscience"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4676cff186d6469af030b7f18b781b6018e7a0898755968119732025e97e31b5",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[3].kind is unsupported: section",
+    "section[3].block[0].confidence exceeds its cited evidence",
+    "section[3].block[1].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

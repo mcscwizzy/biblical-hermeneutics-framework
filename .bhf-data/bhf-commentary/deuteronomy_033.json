@@ -1,0 +1,43 @@
+{
+  "reference": "Deuteronomy 33",
+  "book": "Deuteronomy",
+  "chapter": 33,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "tribal_blessing",
+      "title": "The Blessing of Levi (Verses 8-11)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Levi's blessing identifies the tribe with sacred mediation and religious instruction. Levi possesses the Thummim and Urim\u2014divination instruments associated with priestly judgment\u2014and is consecrated to teach Jacob's ordinances and Israel's law. The text emphasizes their covenant loyalty: they separated from family obligations to observe God's word and keep his covenant. Their responsibilities centered on two core functions: placing incense before God and offering burnt offerings on the altar. These were central to maintaining Israel's covenant relationship with God.",
+          "verse_refs": [
+            "Deuteronomy 33:8-11"
+          ],
+          "evidence_ids": [
+            "priesthood:hebraic_worldview:0",
+            "priesthood:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "5f1275fb7bb3f853274940a59f357f456fcb51c27a87962ebd526f5aec4d9b2b",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: tribal_blessing",
+    "section[2].kind is unsupported: theological_context",
+    "section[2].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

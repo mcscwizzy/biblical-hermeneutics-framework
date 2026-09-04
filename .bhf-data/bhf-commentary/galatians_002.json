@@ -1,0 +1,92 @@
+{
+  "reference": "Galatians 2",
+  "book": "Galatians",
+  "chapter": 2,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "narrative",
+      "title": "The Jerusalem Meeting (verses 1-10)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Paul reports traveling to Jerusalem with Barnabas and Titus after an interval of fourteen years and presenting his gospel privately to those reputed to be leaders. The presentation's purpose was to ensure that his apostolic work was not futile or in vain\u2014a concern suggesting that Paul sought recognition and alignment, not autonomous independence. The record that follows shows negotiation and acknowledgment rather than a self-authorized founder operating outside peer scrutiny.",
+          "verse_refs": [
+            "Galatians 2:1-2"
+          ],
+          "evidence_ids": [
+            "galatians-fourteen-years-meeting",
+            "gal-jerusalem",
+            "recognized-leaders-negotiation"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_4",
+          "text": "James, Cephas (Peter), and John, acknowledged as reputed pillars, recognized the grace given to Paul and extended him and Barnabas the right hand of fellowship. The agreement differentiated their mission fields: Paul and Barnabas would take the gentiles; the pillars would focus on those circumcised. The agreement also included a request that Paul remember the poor\u2014a material and communal responsibility alongside the doctrinal clarity. This arrangement joined both theological recognition and social obligation.",
+          "verse_refs": [
+            "Galatians 2:9-10"
+          ],
+          "evidence_ids": [
+            "galatians-handshake-poor",
+            "recognized-leaders-negotiation"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "narrative",
+      "title": "The Antioch Confrontation (verses 11-14)",
+      "blocks": [
+        {
+          "id": "block_6",
+          "text": "After the Jerusalem meeting, Paul reports a later encounter at Antioch involving Peter. Initially, Peter ate at table with gentiles, but after people associated with James arrived, he withdrew and separated himself, fearing those who belonged to the circumcision faction. His withdrawal signaled table boundary, with embodied consequences: gentiles experienced separation from table fellowship. Other Jews joined the withdrawal, and even Barnabas was carried along with the dissimulation. The issue was not a dispute about whether Jewish food law itself was valid, but rather whether shared table participation would be maintained in mixed assemblies.",
+          "verse_refs": [
+            "Galatians 2:11-13"
+          ],
+          "evidence_ids": [
+            "gal-antioch",
+            "galatians-antioch-withdrawal",
+            "galatians-antioch-tables",
+            "pauline-distinct-meal-settings"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_8",
+          "text": "Paul observes that the separation was joined by others, including Barnabas, his former travel companion. He describes this as hypocrisy or dissimulation\u2014other Jews knowing the gospel's freedom yet following Peter's withdrawal. The text suggests the social power of a respected leader's stance to reshape community behavior even when those following know the separation contradicts their convictions about the gospel. Only Paul's account of this episode survives; the outcome and Peter's response are not narrated.",
+          "verse_refs": [
+            "Galatians 2:13"
+          ],
+          "evidence_ids": [
+            "galatians-hypocrisy-and-pressure"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b932daf109523926cd679f1bb415d09f35a4b9f4b52e4e978e1dc652b17be7e4",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].confidence exceeds its cited evidence",
+    "section[1].kind is unsupported: narrative",
+    "section[1].block[1].interpretation_level is invalid",
+    "section[1].block[3].interpretation_level is invalid",
+    "section[2].kind is unsupported: narrative",
+    "section[2].block[1].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

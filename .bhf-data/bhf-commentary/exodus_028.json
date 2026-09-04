@@ -1,0 +1,42 @@
+{
+  "reference": "Exodus 28",
+  "book": "Exodus",
+  "chapter": 28,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Exodus 28 constitutes part of the detailed instruction narrative for the sanctuary. The chapter establishes Aaron and his sons in priestly office and prescribes the holy garments they must wear. This instruction exemplifies the pattern of authorized, detailed command that Exodus uses when narrating the sanctuary's institution.",
+          "verse_refs": [
+            "Exodus 28:1-4"
+          ],
+          "evidence_ids": [
+            "tabernacle-command-construction-correspondence"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "fa31221ab11b054217d8410be66faa2a964d9d35751af4c0c677b3c91de71703",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: section",
+    "section[2].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

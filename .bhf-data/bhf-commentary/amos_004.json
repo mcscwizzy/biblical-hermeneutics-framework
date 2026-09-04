@@ -1,0 +1,76 @@
+{
+  "reference": "Amos 4",
+  "book": "Amos",
+  "chapter": 4,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Amos 4 directly addresses the prosperous elites of the northern kingdom, particularly those in Samaria, with a two-part judgment. The chapter opens with a fierce indictment of wealthy oppressors, then shifts to ironic mockery of religious observance that masks injustice, and concludes with a catalog of divine punishments that remain unanswered by repentance. Throughout, the passage assumes a setting of territorial strength and elite prosperity alongside systematic exploitation of the vulnerable.",
+          "verse_refs": [
+            "Amos 4:1-11"
+          ],
+          "evidence_ids": [
+            "amos:historical_setting:0",
+            "amos:original_audience:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "refusal_to_return",
+      "title": "Divine Punishment and Israel's Obstinacy (4:6-11)",
+      "blocks": [
+        {
+          "id": "block_6",
+          "text": "The passage catalogs a series of divine punishments, each ending with the refrain 'yet have ye not returned unto me.' God has sent famine ('cleanness of teeth' and 'want of bread'), selective drought (rain withheld for three months before harvest, then sent to some cities but not others), blight and mildew consuming gardens and vineyards, pestilence 'after the manner of Egypt,' and military slaughter with the stench of death overwhelming the camps. Each punishment stands as a call to repentance; each is rejected.",
+          "verse_refs": [
+            "Amos 4:6-10"
+          ],
+          "evidence_ids": [
+            "amos:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_7",
+          "text": "The final judgment invokes the overthrow of Sodom and Gomorrah, a paradigmatic destruction in Israelite tradition. Israel has been snatched 'as a brand plucked out of the burning'\u2014rescued from destruction. Yet this divine rescue has not produced repentance either. The escalating catalogue and the repeated refrain underscore both the persistence of judgment and the stubborn refusal of the people to acknowledge the God who acts through history and binds moral, communal, and ecological life into a single judgment.",
+          "verse_refs": [
+            "Amos 4:11"
+          ],
+          "evidence_ids": [
+            "amos:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4defa5926413c14bdce7f0aa823e26c15bd202041ffe154fc51be359647b614e",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: judgment_oracle",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[1].block[1].interpretation_level is invalid",
+    "section[2].kind is unsupported: ironic_summons",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[2].block[1].interpretation_level is invalid",
+    "section[3].kind is unsupported: refusal_to_return"
+  ],
+  "validation_warnings": []
+}

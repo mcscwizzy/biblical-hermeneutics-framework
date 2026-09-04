@@ -1,0 +1,44 @@
+{
+  "reference": "Daniel 11",
+  "book": "Daniel",
+  "chapter": 11,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "textual_transmission",
+      "title": "Qumran Witnesses and Textual Transmission",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Multiple manuscripts from Qumran preserve portions of Daniel in Hebrew and Aramaic, documenting the book's transmission through Second Temple communities and confirming its circulation among Jewish scribal circles.",
+          "verse_refs": [
+            "Daniel 11"
+          ],
+          "evidence_ids": [
+            "daniel-qumran-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "62845384e0932da7ab80da549f978a1877495b466b9c45f28686f8a5371d159a",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: compositional_context",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: imperial_resistance",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[3].kind is unsupported: textual_transmission"
+  ],
+  "validation_warnings": []
+}

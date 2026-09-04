@@ -1,0 +1,48 @@
+{
+  "reference": "2 Kings 3",
+  "book": "2 Kings",
+  "chapter": 3,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "historical_context",
+      "title": "Moab, Tribute, and External Evidence",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The narrative describes Mesha of Moab as a sheep-master who rendered Israel heavy annual tribute: the wool of one hundred thousand lambs and one hundred thousand rams. Upon Ahab's death, Mesha rebels against Israelite overlordship. This Moab-Israel conflict finds corroboration in the Mesha Stele, a major Iron Age West Semitic inscription providing external historical testimony to Moabite-Israelite relations during this period. The stele confirms the pattern of tribute and vassalage typical of ancient Near Eastern political relationships.",
+          "verse_refs": [
+            "2 Kings 3:4-5"
+          ],
+          "evidence_ids": [
+            "2-kings:archaeology:0",
+            "mesha-stele:historical_context:0",
+            "2-kings:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4ed3b8d1d2a0b00c89a5e10c568c14c2c959c25e0ca597a2ccfbaa213c11da46",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[0].block[1].interpretation_level is invalid",
+    "section[1].kind is unsupported: exposition",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[3].kind is unsupported: narrative_flow",
+    "section[3].block[0].interpretation_level is invalid",
+    "section[4].kind is unsupported: theological_context",
+    "section[4].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

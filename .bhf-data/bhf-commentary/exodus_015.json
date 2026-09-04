@@ -1,0 +1,118 @@
+{
+  "reference": "Exodus 15",
+  "book": "Exodus",
+  "chapter": 15,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Exodus 15 records the song Moses and the Israelites sang immediately after crossing the Red Sea. This celebratory hymn marks a pivotal moment in Israel's memory\u2014the exodus becomes the defining act of redemption and the foundation for covenant nationhood. The song functions simultaneously as thanksgiving, theological proclamation, and worship response to YHWH's direct intervention against Egyptian imperial power.",
+          "verse_refs": [
+            "Exodus 15:1-18"
+          ],
+          "evidence_ids": [
+            "the-exodus:ancient_near_east_context:0",
+            "the-exodus:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "The Song as Worship Response",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The Israelites' immediate response to deliverance is spontaneous song and worship. They declare YHWH as their 'strength and song' and proclaim 'this is my God.' This worship occurs not in a temple but in the wilderness following a crisis, establishing a pattern: covenant renewal and theological affirmation are expressed through worship that rehearses YHWH's saving acts. The song exemplifies how Israel's worship formed covenant memory and proclaimed their faith in YHWH's uniqueness and power.",
+          "verse_refs": [
+            "Exodus 15:1-3"
+          ],
+          "evidence_ids": [
+            "theology-of-worship:ancient_near_east_context:0",
+            "worship-theme:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Divine Warrior and Victory",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "The song narrates YHWH's military victory in vivid language: chariots and captains cast into the sea, waters piling up and congealing, enemies sinking as lead. This divine-warrior imagery\u2014combining military, storm, and cosmic themes\u2014presents YHWH as the one who defeats human power. The depiction of YHWH acting through natural forces (wind, water, blast of nostrils) to accomplish both judgment and salvation reflects patterns found in other biblical texts describing YHWH's theophanic power and intervention in history.",
+          "verse_refs": [
+            "Exodus 15:4-12"
+          ],
+          "evidence_ids": [
+            "red-sea-crossing:ancient_near_east_context:0",
+            "habakkuk-theophany"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "YHWH's Incomparability",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The rhetorical question 'Who is like you, YHWH, among the gods?' asserts YHWH's uniqueness and supremacy. Described as 'glorious in holiness, fearful in praises, doing wonders,' YHWH transcends all earthly powers and judges all nations. Against the backdrop of Egypt's polytheism, this song makes a radical theological claim: YHWH alone reigns and his rule transcends the imperial systems that claimed absolute power.",
+          "verse_refs": [
+            "Exodus 15:11-12"
+          ],
+          "evidence_ids": [
+            "kingdom-theme:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "The Covenant Journey Ahead",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "The song concludes by pivoting from past deliverance to future destiny. YHWH's 'lovingkindness' (hesed) will guide the redeemed people toward his 'holy habitation'\u2014Sinai initially, ultimately Canaan. The enumeration of terrified surrounding nations (Philistines, Edomites, Moabites, Canaanites) anticipates conflicts ahead and reinforces that YHWH secures Israel's inheritance. The exodus thus stands as the beginning of the broader narrative of covenant nationhood.",
+          "verse_refs": [
+            "Exodus 15:13-18"
+          ],
+          "evidence_ids": [
+            "the-exodus:historical_context:0",
+            "wilderness-wandering:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "0ab5d7d5a97a41a78b3fbf1cad93c42a2377f7d11e9dfa0aa9beebad4855fd46",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[3].kind is unsupported: section",
+    "section[4].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

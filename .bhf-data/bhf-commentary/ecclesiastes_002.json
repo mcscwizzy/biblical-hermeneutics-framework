@@ -1,0 +1,120 @@
+{
+  "reference": "Ecclesiastes 2",
+  "book": "Ecclesiastes",
+  "chapter": 2,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview: The Royal Experiment",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ecclesiastes 2 presents the Qohelet's systematic experiment with achievement and pleasure. Identifying himself as a royal figure in Jerusalem with unprecedented resources, Qohelet tests whether accumulation, wisdom, and personal satisfaction yield lasting benefit. The chapter frames this as an ordered investigation: first pursuing pleasure and mirth, then executing massive projects, and finally reflecting on whether any of this produces substantive gain or mere frustration.",
+          "verse_refs": [
+            "Ecclesiastes 2:1-3",
+            "Ecclesiastes 2:4-10",
+            "Ecclesiastes 2:11"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-royal-persona-not-named-solomon"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "The Experiment: Accumulation and Achievement (2:4-10)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The Qohelet catalogs his accomplishments: great building projects, agricultural enterprises, resource accumulation including gold and treasures, and access to music and entertainment. Verse 9 notes his wisdom remained intact throughout this pursuit. Verse 10 records that he kept nothing from his own eyes or heart from any joy; his heart rejoiced because of his labor. Importantly, he describes this satisfaction as 'my portion from all my labor'\u2014genuine enjoyment that a person actually possesses and experiences in the present.",
+          "verse_refs": [
+            "Ecclesiastes 2:4-10"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-royal-persona-not-named-solomon",
+            "ecclesiastes-enjoyment-divine-gift"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "The Verdict: Vanity and Wind (2:11)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Verse 11 marks the pivot. Qohelet contemplates all he has accomplished and declares: 'all was vanity and a striving after wind, and there was no profit under the sun.' The term vanity translates Hebrew hebel, an image of vapor or breath. Across Ecclesiastes, hebel carries overlapping resonances: transience, frustration, insubstantiality, enigma, and a sense of absurdity or mismatch. Applied here, the word suggests that achievement, however genuinely satisfying in the moment, lacks lasting substance or ultimate gain.",
+          "verse_refs": [
+            "Ecclesiastes 2:11"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-hebel-multivalent"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Wisdom and Folly: Superior Yet Insufficient (2:12-14)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Qohelet examines wisdom and folly directly. Verse 13 affirms that wisdom excels folly as light exceeds darkness\u2014a clear comparative judgment favoring wisdom. Yet this advantage proves insufficient. Verse 14 states that the wise and the fool face the same event. The evidence shows that within Ecclesiastes' worldview, wisdom cannot prevent death, guarantee lasting recognition, control outcomes, or overcome the leveling force of mortality that makes a common fate befall all people regardless of their wisdom.",
+          "verse_refs": [
+            "Ecclesiastes 2:12-14"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-wisdom-relative-not-control",
+            "ecclesiastes-death-time-chance"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "The Chapter's Logic: Achievement, Mortality, and What Remains",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "Chapter 2 crystallizes Ecclesiastes' central insight. Qohelet's royal experiment demonstrates that achievement, pleasure, and wisdom are genuine goods\u2014he experienced them and found real joy in his labor. Yet all lie under the shadow of death and human inability to control fundamental outcomes. The solution is not to abandon these goods, but to recognize them rightly: joy, work, companionship, and present satisfaction constitute a person's portion and represent a gift enabled by God precisely because they alone lie within the realm of what humans can actually secure and enjoy now, before the common fate of mortality overtakes all.",
+          "verse_refs": [
+            "Ecclesiastes 2:1-14"
+          ],
+          "evidence_ids": [
+            "ecclesiastes-enjoyment-divine-gift",
+            "ecclesiastes-death-time-chance",
+            "ecclesiastes-wisdom-relative-not-control"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "83b0aacdbac29bf0765f1ec07ec5365772d5293590d5bfdb626474cbfac9b282",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[3].kind is unsupported: section",
+    "section[4].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

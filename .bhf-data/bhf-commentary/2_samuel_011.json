@@ -1,0 +1,40 @@
+{
+  "reference": "2 Samuel 11",
+  "book": "2 Samuel",
+  "chapter": 11,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "theological_frame",
+      "title": "Narratorial Judgment",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "The narrative of 2 Samuel 11 is framed by the narrator's judgment that David's actions are displeasing to the LORD. This framework becomes explicit in the following chapter when Nathan confronts David with a parable identifying him with a wealthy man who wrongfully took the sole possession of a poor man. The parable encompasses both the taking of Bathsheba and the orchestration of Uriah's death, establishing the narrative's moral evaluation of these events as violations of justice under divine scrutiny.",
+          "verse_refs": [
+            "2 Samuel 11",
+            "2 Samuel 12"
+          ],
+          "evidence_ids": [
+            "second-samuel-david-condemned"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "441a02276339133e2e9036ffe8268fb6639ecacc7d11a47718ae97bb8b3857bb",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: theological_frame"
+  ],
+  "validation_warnings": []
+}

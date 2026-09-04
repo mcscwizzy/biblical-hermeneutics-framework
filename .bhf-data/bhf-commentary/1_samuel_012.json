@@ -1,0 +1,59 @@
+{
+  "reference": "1 Samuel 12",
+  "book": "1 Samuel",
+  "chapter": 12,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Samuel 12 presents the establishment of Israel's monarchy within a covenantal framework. The Lord grants Saul kingship, but as First Samuel emphasizes, both king and people remain bound by obligations to fear, serve, and obey the Lord. This covenantal accountability shapes Samuel's address: he defends his own integrity as judge and recounts God's sustained faithfulness through history to establish the precedent for obedience.",
+          "verse_refs": [
+            "1 Samuel 12:1-5",
+            "1 Samuel 12:6-11"
+          ],
+          "evidence_ids": [
+            "first-samuel-accountable-monarchy"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_section",
+      "title": "The Historical Testimony (12:6-11)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Samuel recounts Israel's covenant history from Egypt through the period of judges. The judges he names belonged to a pre-monarchic era characterized by tribal governance, local conflict, and recurring patterns of covenant faithlessness met with divine deliverance. By rehearsing this history, Samuel emphasizes that Israel's relationship with the Lord transcends political structure: whether under judges or kings, the people remain called to covenant obedience.",
+          "verse_refs": [
+            "1 Samuel 12:6-11"
+          ],
+          "evidence_ids": [
+            "gideon:historical_context:0",
+            "samson:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "8327d02012a7ec5a180d51d4a581101bb2412e5f9863a0a76ad0a3eed66e1438",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: interpretive_section"
+  ],
+  "validation_warnings": []
+}

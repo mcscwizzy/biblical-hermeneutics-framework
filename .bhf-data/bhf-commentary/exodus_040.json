@@ -1,0 +1,66 @@
+{
+  "reference": "Exodus 40",
+  "book": "Exodus",
+  "chapter": 40,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview: Tabernacle Completion and Dedication",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Exodus 40 narrates the completion and dedication of the tabernacle, the culmination of Exodus's movement from oppression through covenant renewal to the construction of God's dwelling place among Israel. Moses receives the command to erect the tabernacle on the first day of the first month, and the chapter emphasizes through repeated compliance statements that the construction follows divine instruction precisely. The completed sanctuary becomes the focal point where ordered approach, priestly mediation, and God's presence converge.",
+          "verse_refs": [
+            "Exodus 40:1-2",
+            "Exodus 40:16-17"
+          ],
+          "evidence_ids": [
+            "exodus-literary-movement",
+            "exodus-tabernacle-presence",
+            "tabernacle-command-construction-correspondence"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Completion and Divine Authorization (Verses 16-17)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The chapter records that Moses carried out all the Lord's commands: 'According to all that Jehovah commanded him, so did he.' This compliance formula appears repeatedly in Exodus's account of tabernacle construction, underlining that the work is authorized and complete. The text dates the tabernacle's erection to the first day of the first month in the second year\u2014precisely marking the transition from covenant establishment at Sinai to the indwelling of God's presence among Israel. The completed tabernacle stands ready as the dwelling that Exodus has promised.",
+          "verse_refs": [
+            "Exodus 40:16-17"
+          ],
+          "evidence_ids": [
+            "tabernacle-command-construction-correspondence",
+            "tabernacle-command-construction-correspondence:passage-relevance",
+            "exodus-tabernacle-presence"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "9bc8e5b7b5b933ba95a4684963149c8099ea940ab3e505f39cbcacacc558d5df",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: section",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[3].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

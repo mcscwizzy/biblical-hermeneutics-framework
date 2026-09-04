@@ -1,0 +1,87 @@
+{
+  "reference": "Amos 5",
+  "book": "Amos",
+  "chapter": 5,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "section",
+      "title": "Economic Exploitation and Covenant Violation (5:11\u201312)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Amos's accusation against Israel's powerful is specific and damning. They trample the poor and exact grain levies from them, corrupt justice at the city gate, seize pledged garments, and use dishonest measures in trade. These are not abstract ethical failures but concrete acts of systemic oppression. The prophet couples each charge with its reversal: those who build houses of hewn stone will not dwell in them; those who plant pleasant vineyards will not drink their wine. This juridical reversal\u2014in which the fruits of injustice are stripped away\u2014expresses covenant judgment: YHWH himself stands against those who abandon the justice the covenant demands.",
+          "verse_refs": [
+            "Amos 5:11",
+            "Amos 5:12"
+          ],
+          "evidence_ids": [
+            "amos-economic-exploitation"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Justice as the Only Acceptable Worship (5:21\u201324)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "At the heart of Amos's indictment stands a direct rejection of Israel's religious observance. YHWH abhors the festivals, assemblies, burnt offerings, grain offerings, and sacred music by which Israel approaches him. This blanket condemnation is shocking\u2014yet Amos makes clear why: these worship acts are presented by a people who practice systematic injustice. Worship itself is severed from covenant faithfulness. Instead of offerings and songs, Amos demands that justice roll down like waters and righteousness like an ever-flowing stream. He frames social righteousness not as a supplement to worship but as its sole acceptable form: a people cannot come before YHWH while trampling the poor.",
+          "verse_refs": [
+            "Amos 5:21",
+            "Amos 5:22",
+            "Amos 5:23",
+            "Amos 5:24"
+          ],
+          "evidence_ids": [
+            "amos-worship-justice"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "New Testament Reception: Amos in Stephen's Witness (5:25\u201327)",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "The final verses of Amos's oracle, which reference Israel's wilderness period and invoke foreign deities, were later cited by Stephen in his defense before the Jerusalem council. Acts 7:42\u201343 quotes a Greek form of Amos 5:25\u201327 to argue that Israel's pattern of turning from YHWH reaches back to the exodus itself. This reuse shows how later Jewish and Christian interpreters understood Amos's warnings as part of a continuous history of covenant disobedience. The quotation links Israel's rejection of YHWH in Amos's time to the wilderness generation, drawing a line of accountability across centuries.",
+          "verse_refs": [
+            "Amos 5:25",
+            "Amos 5:26",
+            "Amos 5:27"
+          ],
+          "evidence_ids": [
+            "amos-acts7-reuse"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "cc9fbf3d32f11ee229f6f8c5248a5666c0b4b29faf15fe4296cb8f0cc944a08a",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "root.status is unsupported: complete",
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[2].block[0].confidence exceeds its cited evidence",
+    "section[3].kind is unsupported: section",
+    "section[4].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

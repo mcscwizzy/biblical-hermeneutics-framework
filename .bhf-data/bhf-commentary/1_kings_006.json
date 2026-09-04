@@ -1,0 +1,47 @@
+{
+  "reference": "1 Kings 6",
+  "book": "1 Kings",
+  "chapter": 6,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "section",
+      "title": "Covenant Framework",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "After describing the temple's completion, the narrative shifts to a divine oracle to Solomon. This word establishes a conditional relationship: if Solomon walks in the LORD's statutes, executes his ordinances, and keeps all his commandments, then the divine word spoken to David will be established through him. This framing reflects a fundamental Hebraic perspective in which kingship, the temple, and land tenure are evaluated through the lens of covenant loyalty to the LORD. The temple's existence does not guarantee divine presence but depends upon the king's sustained obedience.",
+          "verse_refs": [
+            "1 Kings 6:11-12"
+          ],
+          "evidence_ids": [
+            "1-kings:hebraic_worldview:0",
+            "solomon-builds-the-temple:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "88618aa92e7938431edf1e31776dfd02d01c21373ca1ec32eee0a84f6a044e9b",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: section",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: section",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[3].kind is unsupported: section",
+    "section[3].block[0].interpretation_level is invalid",
+    "section[4].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

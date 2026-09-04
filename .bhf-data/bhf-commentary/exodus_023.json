@@ -1,0 +1,38 @@
+{
+  "reference": "Exodus 23",
+  "book": "Exodus",
+  "chapter": 23,
+  "status": "validated",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Feast Calendar and Temple Practice",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "The chapter concludes with prescription of three annual feasts (verses 14-16). Feast calendars in ancient practice developed from wilderness worship traditions into temple-centered religious practice, operating within frameworks of household authority, patronage, priestly service, and temple worship.",
+          "verse_refs": [
+            "Exodus 23:14-16"
+          ],
+          "evidence_ids": [
+            "feast-calendar:ancient_near_east_context:0",
+            "feast-calendar:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a6cac80201b7a95d9d1e9b0e969d867318fabd12c1c796886c7f93ee5664f574",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

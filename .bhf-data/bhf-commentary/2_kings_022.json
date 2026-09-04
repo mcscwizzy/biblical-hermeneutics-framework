@@ -1,0 +1,50 @@
+{
+  "reference": "2 Kings 22",
+  "book": "2 Kings",
+  "chapter": 22,
+  "status": "validated",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "The Discovery of the Book of the Law",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "In the eighteenth year of his reign, King Josiah dispatches his scribe Shaphan to manage temple finances and oversee repairs. Shaphan operates as a royal administrative scribe\u2014a recognized institutional role in ancient Israel that required transmitted instruction, wise judgment, and responsibility for significant court and temple matters. Scribal learning centered on the interpretation of sacred texts and teaching, making such officials indispensable intermediaries between the king and the priesthood.",
+          "verse_refs": [
+            "2 Kings 22:3\u20137"
+          ],
+          "evidence_ids": [
+            "scribes:historical_context:0",
+            "scribes:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_2",
+          "text": "During the repair work, the high priest Hilkiah discovers a scroll identified as 'the book of the law' in the temple and delivers it to Shaphan, who reads it aloud before the king. The scroll's contents deeply disturb Josiah, causing him to tear his garments and command an immediate inquiry into its meaning. This discovery initiates a comprehensive response: Josiah seeks prophetic counsel, renews the covenant with Yahweh, removes prohibited worship practices, and celebrates Passover. Yet the narrative preserves a sobering theological note\u2014despite Josiah's reforms, the accumulated judgment upon Judah will not be averted.",
+          "verse_refs": [
+            "2 Kings 22:8\u201313"
+          ],
+          "evidence_ids": [
+            "second-kings-josiah-reform"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "68b272842e3547d0cd5857cd8f6fba948e5bc49fc7a2f691f7a0089f9163721e",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

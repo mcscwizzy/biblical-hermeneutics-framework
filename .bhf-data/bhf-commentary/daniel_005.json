@@ -1,0 +1,64 @@
+{
+  "reference": "Daniel 5",
+  "book": "Daniel",
+  "chapter": 5,
+  "status": "validated",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Historical and Textual Context",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Daniel 5 presents Belshazzar as Babylon's reigning king at the empire's final banquet. Cuneiform inscriptions, however, identify a different historical picture: Belshazzar was the son of Nabonidus with substantial authority, yet not Babylon's final sovereign in the standard royal succession. This discrepancy between biblical narrative and external documentation significantly affects how we understand the historical framework of the chapter.",
+          "verse_refs": [
+            "Daniel 5:1",
+            "Daniel 5:30"
+          ],
+          "evidence_ids": [
+            "daniel-belshazzar"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_2",
+          "text": "The narrative concludes with Babylon falling to Darius the Mede, who reappears in Daniel 6. Despite extensive historical research, no ruler has been securely identified who fully matches all the biblical descriptions of this figure. The historical identity of Darius the Mede therefore remains uncertain and contested.",
+          "verse_refs": [
+            "Daniel 5:30",
+            "Daniel 5:31"
+          ],
+          "evidence_ids": [
+            "daniel-darius-mede"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_3",
+          "text": "The text of Daniel survives in substantially different ancient forms. The Old Greek and Theodotionic versions diverge significantly in chapters 4-6, including Daniel 5. Qumran manuscripts preserve Hebrew and Aramaic witnesses to these traditions, while related texts like the Prayer of Nabonidus appear in the same collection, revealing the complex literary and textual history surrounding Danielic narratives.",
+          "verse_refs": [
+            "Daniel 5:1"
+          ],
+          "evidence_ids": [
+            "daniel-greek-versions",
+            "daniel-qumran-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "37479d4ac2cdfc74dc557e9bef43153f7a07c74719f5219807056ca35693479f",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

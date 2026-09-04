@@ -1,0 +1,43 @@
+{
+  "reference": "Exodus 27",
+  "book": "Exodus",
+  "chapter": 27,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview: Tabernacle Instruction and Divine Dwelling",
+      "blocks": [
+        {
+          "id": "block_overview_1",
+          "text": "Exodus 27 presents instructions for the altar of burnt offering and the surrounding court. These specifications continue Exodus's distinctive literary pattern of narrating the sanctuary twice\u2014first as divine instruction, then as construction by the community. This repeated narration emphasizes the authorized and communal nature of building the tabernacle as the dwelling of God.",
+          "verse_refs": [
+            "Exodus 27:1-15"
+          ],
+          "evidence_ids": [
+            "tabernacle-command-construction-correspondence"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d80499ad162d3bbb8be8f220e335f94f7a8a05d31b8f0fb22d5017df619467e9",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "root.status is unsupported: complete",
+    "section[1].kind is unsupported: section",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: section",
+    "section[2].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

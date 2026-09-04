@@ -1,0 +1,69 @@
+{
+  "reference": "Ezekiel 3",
+  "book": "Ezekiel",
+  "chapter": 3,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ezekiel 3 opens with the prophet's consumption of the scroll, which tastes like honey despite containing prophecy of judgment. This scroll-eating sequence (verses 1-3) establishes the internalization of God's word before its proclamation. The chapter then specifies Ezekiel's commission: he is sent to Israel, a single people with a comprehensible language, not to foreign nations whose speech would be incomprehensible to him (verses 4-7). However, Israel itself will resist, being described as hard-foreheaded and stiff-hearted. In response, God hardens Ezekiel's own face and forehead to withstand their opposition (verses 8-9).",
+          "verse_refs": [
+            "Ezekiel 3:1-9"
+          ],
+          "evidence_ids": [
+            "ezekiel-call-watchman"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_2",
+          "text": "Ezekiel is instructed to receive God's words into his heart and ears (verse 10) and to proceed to the exiled community to declare God's message, whether they hear or refuse (verse 11). The narrative then shifts to a theophanic sequence in which the Spirit lifts Ezekiel aloft. He hears the divine glory speaking and perceives the overwhelming sensory phenomena of the living creatures and wheels described in Ezekiel 1 (verses 12-13). This encounter fills Ezekiel with emotional intensity\u2014bitterness and heat of spirit\u2014yet the hand of the Lord strengthens him for the mission ahead (verses 14-15).",
+          "verse_refs": [
+            "Ezekiel 3:10-15"
+          ],
+          "evidence_ids": [
+            "ezekiel-call-watchman"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_notes",
+      "title": "Textual Witnesses",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Ezekiel 3 is preserved in multiple ancient textual witnesses: the Masoretic Text, the Old Greek version (Iezekiel), Papyrus 967, Qumran fragments, and the Masada scroll. These sources exhibit variation in wording and verse order that require passage-level analysis to clarify the textual history of this chapter.",
+          "verse_refs": [
+            "Ezekiel 3"
+          ],
+          "evidence_ids": [
+            "ezekiel-textual-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "8429226f13c94e4497761b1b5316af1ce0d54e2f03c64df1387bcd2b0ded679e",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: textual_notes"
+  ],
+  "validation_warnings": []
+}

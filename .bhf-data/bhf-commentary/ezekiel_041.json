@@ -1,0 +1,39 @@
+{
+  "reference": "Ezekiel 41",
+  "book": "Ezekiel",
+  "chapter": 41,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "textual_witnesses",
+      "title": "Textual Witnesses and Transmission",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ezekiel 41 is attested in multiple ancient textual witnesses, including the Masoretic Hebrew text, the Old Greek Iezekiel translation, Papyrus 967, Qumran fragments, and the Masada scroll. These witnesses show variation in wording and order that requires careful textual analysis to establish the most reliable reading of this chapter's architectural description.",
+          "verse_refs": [
+            "Ezekiel 41:1-11"
+          ],
+          "evidence_ids": [
+            "ezekiel-textual-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "788937c0864cdffeecf85840b33691b47eda3dfb7d5f564a9e5513c686ac1e1c",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: textual_witnesses"
+  ],
+  "validation_warnings": []
+}

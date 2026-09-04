@@ -1,0 +1,45 @@
+{
+  "reference": "Acts 28",
+  "book": "Acts",
+  "chapter": 28,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "narrative",
+      "title": "Custody and Lodging",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "Acts 28 describes Paul's Roman situation as a distinctive arrangement. Rather than confinement in a prison cell, Paul lived in his own rented lodging under guard by a Roman soldier. This guarded residence permitted Paul to welcome visitors, to summon Jewish leaders for meetings, and to teach openly. His status as a prisoner appealing to Caesar thus did not mean isolation from the communities he sought to reach.",
+          "verse_refs": [
+            "Acts 28:16"
+          ],
+          "evidence_ids": [
+            "acts-28-custody-and-rented-lodging"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "91a575ff5a90e415c4998ed2e089920ce7a2e1788cc90769e96c34ba08b29e19",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: narrative",
+    "section[0].block[0].confidence exceeds its cited evidence",
+    "section[0].block[1].confidence exceeds its cited evidence",
+    "section[1].kind is unsupported: narrative",
+    "section[1].block[0].confidence exceeds its cited evidence",
+    "section[1].block[1].confidence exceeds its cited evidence",
+    "section[2].kind is unsupported: narrative"
+  ],
+  "validation_warnings": []
+}

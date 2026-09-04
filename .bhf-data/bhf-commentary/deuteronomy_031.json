@@ -1,0 +1,90 @@
+{
+  "reference": "Deuteronomy 31",
+  "book": "Deuteronomy",
+  "chapter": 31,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Deuteronomy 31 presents the climactic transition of Israel's leadership from Moses to Joshua. Moses, at 120 years old, announces his impending departure and explicitly commissions Joshua in a public ceremony before all Israel. This transfer is profoundly theological: God promises to go with the people and Joshua just as He went with Moses. The chapter crystallizes Deuteronomy's closure of Torah by transferring both public leadership to Joshua and the written covenant text to the priesthood, while preserving Moses's foundational role through the law he commits to permanent form.",
+          "verse_refs": [
+            "Deuteronomy 31:1-3",
+            "Deuteronomy 31:7-9"
+          ],
+          "evidence_ids": [
+            "deuteronomy-moses-joshua-transition"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Moses's Farewell and Joshua's Commission (31:1-8)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Moses announces that he stands at a threshold: at 120 years, he can no longer lead Israel. God has explicitly told him he will not cross the Jordan. Yet this is not an ending but a handing-off. Joshua is publicly commissioned to lead the people into Canaan, carrying forward the wilderness journey into settlement and inheritance. Joshua stands at the transition from wandering to permanence in the land promised to the patriarchs, tasked with implementing the covenant in a new context of territorial possession and governance.",
+          "verse_refs": [
+            "Deuteronomy 31:1-3",
+            "Deuteronomy 31:7"
+          ],
+          "evidence_ids": [
+            "joshua-son-of-nun:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_3",
+          "text": "The passage repeatedly assures Joshua and Israel that God will go before them and give them victory, grounding this promise in past faithfulness: the Lord defeated Sihon and Og, the Amorite kings, and will do likewise in Canaan. Yet the world Joshua inherits involves tribal settlement, fortified cities, and real territorial claims. The theological insistence cuts through the practical challenges: inheritance of the land depends ultimately not on military calculation but on the Lord's covenant fidelity accompanying the people forward.",
+          "verse_refs": [
+            "Deuteronomy 31:4-8"
+          ],
+          "evidence_ids": [
+            "joshua-son-of-nun:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "The Law Preserved Through Writing (31:9-13)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Immediately after commissioning Joshua, Moses writes the law and delivers it to the Levitical priests and the elders of Israel. This written text becomes the continuity mechanism: though Moses departs, his teaching endures in permanent, public form. The law is to be read publicly every seven years at the Feast of Tabernacles before all Israel\u2014men, women, children, and sojourners\u2014ensuring every generation hears and learns to fear the Lord and obey His commands. This arrangement crystallizes Deuteronomy's dual closure: Joshua assumes public leadership of the nation while Moses's authority continues through the written covenant entrusted to the priesthood.",
+          "verse_refs": [
+            "Deuteronomy 31:9-13"
+          ],
+          "evidence_ids": [
+            "deuteronomy-moses-joshua-transition"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "01013283ad429a20af7e1e222a2602061e4c73220fa2ea5af9ef6f7b7b6eaa72",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

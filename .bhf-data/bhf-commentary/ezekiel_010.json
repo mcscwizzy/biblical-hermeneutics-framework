@@ -1,0 +1,47 @@
+{
+  "reference": "Ezekiel 10",
+  "book": "Ezekiel",
+  "chapter": 10,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ezekiel 10 continues the narrative of YHWH's glory moving from the defiled Jerusalem temple described in chapters 8-11. The chapter presents a continuation of the throne-chariot vision from Ezekiel's inaugural experience, employing the same imagery of the sapphire-like throne, cherubim, and wheels. The central action centers on the command to scatter coals of fire over the city and the mounting up of God's glory from the cherub toward the temple threshold, dramatizing the withdrawal of divine presence from the sanctuary.",
+          "verse_refs": [
+            "Ezekiel 10:1-7",
+            "Ezekiel 10:4"
+          ],
+          "evidence_ids": [
+            "ezekiel-glory-departure-return",
+            "ezekiel-throne-vision"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "76c003da6062fdd5767d6917ace654a0b37555505b27f92b420c6e17fcbbcf2b",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "root.status is unsupported: completed",
+    "section[1].kind is unsupported: section",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: section",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[3].kind is unsupported: textual_note",
+    "section[3].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

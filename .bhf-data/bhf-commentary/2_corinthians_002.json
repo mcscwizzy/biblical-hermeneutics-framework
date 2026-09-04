@@ -1,0 +1,113 @@
+{
+  "reference": "2 Corinthians 2",
+  "book": "2 Corinthians",
+  "chapter": 2,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "textual_section",
+      "title": "Painful Letter and Changed Plans (vv. 1\u20134)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Paul opens by announcing a decision to spare the Corinthians another visit marked by sorrow. This reflects an intentional change to his travel plans, motivated by pastoral concern rather than fickleness. Rather than risk mutual sadness from an in-person encounter, Paul chose the medium of a letter. He frames this written communication as emerging from profound emotional and spiritual crisis\u2014much affliction, anguish of heart, and many tears. Critically, Paul clarifies his intent: the letter was not designed to inflict pain but to make known his abundant love for them. This framing distinguishes between the emotional intensity of communication and its ultimate purpose, which is relational restoration and transparency of care.",
+          "verse_refs": [
+            "2 Corinthians 2:1-4"
+          ],
+          "evidence_ids": [
+            "2cor-travel",
+            "corinth-changed-plans-impact",
+            "corinth-painful-letter",
+            "painful-letter-intent-impact"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_section",
+      "title": "Forgiveness, Comfort, and Restoration (vv. 5\u201311)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Paul situates this practice of forgiveness within a larger theological vision. He positions himself as part of the forgiving community, indicating that he too has extended forgiveness for the sake of Christ and community integrity. Paul emphasizes that obedience to his instruction\u2014granting forgiveness and reaffirming love\u2014is a measure of the community's faithfulness. In doing so, Paul integrates several dimensions of community life: the specific case involves discipline, the emotional reality of grief, the active practice of forgiveness, and the path toward restoration. By treating these as interconnected rather than sequential stages, Paul offers a model where accountability includes both initial consequences and subsequent reintegration.",
+          "verse_refs": [
+            "2 Corinthians 2:9-11"
+          ],
+          "evidence_ids": [
+            "2cor-forgiveness",
+            "categories-remain-distinct"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_section",
+      "title": "Travel to Macedonia and Theological Reflection (vv. 12\u201317)",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "Paul narrates his arrival in Troas, where he found a door opened for gospel work. Yet despite this opportunity, his spirit found no rest because Titus, whom Paul expected to encounter, was absent. This anxiety over his colleague's whereabouts was significant enough for Paul to abandon a promising ministry opportunity and travel onward to Macedonia. The account illustrates the weight Paul placed on his relationships with his co-workers and his deep concern for developments in the Corinthian situation. His willingness to leave Troas demonstrates that pastoral concern for his team and the distant congregation took precedence over immediate evangelistic prospects.",
+          "verse_refs": [
+            "2 Corinthians 2:12-13"
+          ],
+          "evidence_ids": [
+            "2cor-provenance",
+            "2cor-travel"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_6",
+          "text": "Paul gives thanks to God, who always leads the apostolic team in triumph through Christ and manifests knowledge of Christ through them in every place. He then introduces a central metaphor: the mission team constitutes a sweet aroma of Christ to God. Significantly, this single aroma produces opposed perceptions depending on the spiritual state of those encountering it. For those being saved, it registers as an aroma from life to life; for those perishing, as an aroma from death to death. The metaphor describes not the preacher's group identity but the polarized spiritual response to one proclamation. This duality reflects the redemptive divisions that gospel proclamation creates. Paul's rhetorical question\u2014\"Who is sufficient for these things?\"\u2014expresses both the weight of this responsibility and his conviction that adequacy for such ministry derives not from human credentials but from God.",
+          "verse_refs": [
+            "2 Corinthians 2:14-16"
+          ],
+          "evidence_ids": [
+            "corinth-triumph-procession-ambiguity",
+            "2cor-aroma",
+            "corinth-aroma-life-death",
+            "2cor-sufficiency"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_7",
+          "text": "Paul concludes by distinguishing his apostolic team from many others who peddle God's word. Paul and his associates, by contrast, speak from sincerity, commissioned by God, and conscious of standing before God in Christ. This contrast underscores the difference between ministry motivated by genuine integrity and that driven by profit or self-promotion. Paul's language suggests defense against criticism concerning the financial and motional dimensions of his leadership. By emphasizing sincere commission and divine oversight, he locates the legitimacy of apostolic authority not in self-attestation or popular approval but in transparent accountability before God.",
+          "verse_refs": [
+            "2 Corinthians 2:17"
+          ],
+          "evidence_ids": [
+            "corinth-not-peddlers-commission",
+            "corinth-not-peddling-word",
+            "nonpeddling-sincerity-scrutiny"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "be89ea4e3d94d3f91c235044c8b5bc2f5529924411929db2730150d6e99d1d14",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: textual_section",
+    "section[2].kind is unsupported: textual_section",
+    "section[2].block[0].confidence exceeds its cited evidence",
+    "section[3].kind is unsupported: textual_section"
+  ],
+  "validation_warnings": []
+}

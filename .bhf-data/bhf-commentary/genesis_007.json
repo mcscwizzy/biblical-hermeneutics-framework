@@ -1,0 +1,55 @@
+{
+  "reference": "Genesis 7",
+  "book": "Genesis",
+  "chapter": 7,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "ancient_parallels",
+      "title": "Mesopotamian Flood Traditions",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Mesopotamian flood traditions preserved in texts like Atrahasis and Gilgamesh Tablet XI establish an ancient Near Eastern literary environment where divinely sent floods and human survival narratives circulated. These parallels offer important comparative material but do not by themselves prove direct literary borrowing or identify specific archaeological flood deposits with Genesis's narrative.",
+          "verse_refs": [
+            "Genesis 7:1-15"
+          ],
+          "evidence_ids": [
+            "the-flood:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_4",
+          "text": "The Standard Babylonian Epic of Gilgamesh recounts Uta-napishti's survival of a divine flood, providing concrete parallel material for comparing key narrative elements: boat construction, methods of preserving life, the inclusion of animals and birds, landing and grounding procedures, and post-flood sacrifice\u2014all motifs present in Genesis 6-9.",
+          "verse_refs": [
+            "Genesis 7:7-15"
+          ],
+          "evidence_ids": [
+            "gilgamesh-tablet-xi-flood-comparison",
+            "gilgamesh-tablet-xi-flood-comparison:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "6ef747dffe5c8589ba4144df13599d3f52737c1493ed1f2ca23cdab68f136c82",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].confidence exceeds its cited evidence",
+    "section[1].kind is unsupported: theological_framework",
+    "section[1].block[0].confidence exceeds its cited evidence",
+    "section[2].kind is unsupported: ancient_parallels"
+  ],
+  "validation_warnings": []
+}

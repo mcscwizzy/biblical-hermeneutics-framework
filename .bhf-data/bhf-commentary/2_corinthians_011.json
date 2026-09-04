@@ -1,0 +1,60 @@
+{
+  "reference": "2 Corinthians 11",
+  "book": "2 Corinthians",
+  "chapter": 11,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "exposition",
+      "title": "Paul's Reluctant Boasting (vv. 1-12)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Paul requests the Corinthians' forbearance with his foolishness, observing they already bear with him. His pastoral concern frames the boasting: he fears deceptive rivals will corrupt their minds from simplicity toward Christ, as the serpent deceived Eve. He then asserts he does not fall short of the super-apostles, conceding his speech may seem contemptible yet claiming proven knowledge and conduct. His refusal to accept financial support\u2014supported instead through labor and aid from other churches\u2014becomes his counter-boast: a demonstration of care for community dignity and apostolic freedom rather than conventional honor.",
+          "verse_refs": [
+            "2 Corinthians 11:1-9"
+          ],
+          "evidence_ids": [
+            "foolish-boasting-irony",
+            "corinthian-presence-speech-contest",
+            "2cor-superapostles"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_3",
+          "text": "Paul's boasting transforms competitive self-praise into a question of care and freedom. He invokes divine judgment on his motives and commits to continuing his practice of not burdening the Corinthians financially, though he supplies aid from other churches when he is in want. This rhetorical move shifts the grounds of legitimacy from speech quality or financial support received to voluntary self-support and community service, contesting what rival standards demand for apostolic authentication.",
+          "verse_refs": [
+            "2 Corinthians 11:7-12"
+          ],
+          "evidence_ids": [
+            "foolish-boasting-rhetoric",
+            "leadership-hardship-not-immunity"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ab5bff67d9a0335a4f5fae1e378a8c05d72a5099469cbd8367f659dfb13cdabd",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: exposition",
+    "section[2].kind is unsupported: exposition",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[3].kind is unsupported: exposition",
+    "section[3].block[0].interpretation_level is invalid",
+    "section[3].block[0].confidence exceeds its cited evidence"
+  ],
+  "validation_warnings": []
+}

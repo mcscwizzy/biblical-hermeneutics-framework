@@ -1,0 +1,64 @@
+{
+  "reference": "1 Corinthians 3",
+  "book": "1 Corinthians",
+  "chapter": 3,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "exegesis",
+      "title": "Foundation and Tested Work (3:10-15)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Paul describes himself as a wise masterbuilder who laid a foundation, with others building upon it. Jesus Christ is the sole unalterable foundation. Each builder's materials\u2014gold, silver, costly stone, wood, hay, stubble\u2014face testing by fire. The framework places founder activity under judgment and rejects founder immunity and proprietary branding. Those whose work endures receive reward; those whose work burns suffer loss, though they themselves are saved through fire.",
+          "verse_refs": [
+            "1 Corinthians 3:10-15"
+          ],
+          "evidence_ids": [
+            "corinth-foundation-builder-accountability",
+            "corinth-foundation-builder-accountability:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "exegesis",
+      "title": "Temple Holiness and Judgment (3:16-17)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The community itself constitutes God's temple, indwelt by God's Spirit. Temple symbolism joins space, holiness, priesthood, sacrifice, and divine presence. Access to the Holy requires consecrated approach, not casual familiarity. Destruction of God's temple brings divine judgment because the temple is holy and the community itself is that sacred space.",
+          "verse_refs": [
+            "1 Corinthians 3:16-17"
+          ],
+          "evidence_ids": [
+            "temple-symbol:hebraic_worldview:0",
+            "temple-symbol:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "bf2bf2b9cc9a94816b6893e6a43b6e5dc9b75bbb32ff82f960ca1831f5586ea7",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: exegesis",
+    "section[0].block[0].confidence exceeds its cited evidence",
+    "section[1].kind is unsupported: exegesis",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: exegesis",
+    "section[3].kind is unsupported: exegesis"
+  ],
+  "validation_warnings": []
+}

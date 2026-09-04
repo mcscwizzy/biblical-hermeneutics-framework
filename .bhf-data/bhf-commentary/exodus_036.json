@@ -1,0 +1,59 @@
+{
+  "reference": "Exodus 36",
+  "book": "Exodus",
+  "chapter": 36,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview: Construction of the Sanctuary",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Exodus 36 opens the narrative of the sanctuary's actual construction. Bezalel, Oholiab, and the wise-hearted craftsmen receive the materials contributed by the Israelite community\u2014offerings so generous that Moses must order a halt to further giving. The text then details the construction of the tabernacle, beginning with the ten curtains fashioned from fine linen and dyed materials. This construction account follows the detailed instructions of Exodus 35, embodying the literary pattern that structures the sanctuary narrative: divine command stated, then executed through the authorized work of designated craftsmen and communal participation.",
+          "verse_refs": [
+            "Exodus 36:1-12"
+          ],
+          "evidence_ids": [
+            "tabernacle-command-construction-correspondence",
+            "tabernacle-command-construction-correspondence:passage-relevance"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "cultural_context",
+      "title": "The Tabernacle as a Large Public Structure",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The project described in Exodus 36 represents a substantial communal undertaking. Comparative evidence from the ancient Near East shows that large, elaborately constructed tents could function as structures of significant social and ritual importance. While this evidence does not provide direct architectural parallels to the Exodus sanctuary, it establishes that such ambitious tent projects were culturally intelligible and valued in antiquity, contextualizing the scale of community investment evident in the multiple cartloads of materials described in this chapter.",
+          "verse_refs": [
+            "Exodus 36:1-7"
+          ],
+          "evidence_ids": [
+            "mari-large-public-tent-comparison",
+            "mari-large-public-tent-comparison:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "cb4c0fdd62d0f3fb60725353d0aebb17e8c41acf17529b03df703573ae08541d",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: cultural_context"
+  ],
+  "validation_warnings": []
+}

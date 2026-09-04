@@ -1,0 +1,44 @@
+{
+  "reference": "2 Samuel 9",
+  "book": "2 Samuel",
+  "chapter": 9,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "This chapter occupies a significant place in David's reign over united Israel. Positioned chronologically during David's military consolidation and territorial expansion, the narrative presents an act of kindness toward Mephibosheth, Jonathan's son. The episode demonstrates how the king managed relationships with the residual house of Saul through sustained acts of loyalty and material provision, establishing a permanent arrangement that integrated the former enemy household into the royal household.",
+          "verse_refs": [
+            "2 Samuel 9:1",
+            "2 Samuel 9:7",
+            "2 Samuel 9:10"
+          ],
+          "evidence_ids": [
+            "2-samuel:timeline:4",
+            "2-samuel:historical_setting:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "6469660b59ae8b512de3c6514365903d3892298010e621fa42a328ac6c6c14a7",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: cultural_worldview",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

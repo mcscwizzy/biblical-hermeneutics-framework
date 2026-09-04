@@ -1,0 +1,48 @@
+{
+  "reference": "Acts 21",
+  "book": "Acts",
+  "chapter": 21,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Acts 21 narrates Paul's final journey to Jerusalem in the first-person plural voice characteristic of sections of Acts depicting travel and key moments.",
+          "verse_refs": [
+            "Acts 21:1-15"
+          ],
+          "evidence_ids": [
+            "acts-we-passages"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "91ea9a85897f6049859739f1ee10a6a49b7bc1fa6fd5079850fcddccb40f37e6",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: narrative_section",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: narrative_section",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[3].kind is unsupported: narrative_section",
+    "section[3].block[0].interpretation_level is invalid",
+    "section[4].kind is unsupported: narrative_section",
+    "section[4].block[0].interpretation_level is invalid",
+    "section[5].kind is unsupported: narrative_section",
+    "section[5].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

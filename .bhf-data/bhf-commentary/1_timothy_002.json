@@ -1,0 +1,101 @@
+{
+  "reference": "1 Timothy 2",
+  "book": "1 Timothy",
+  "chapter": 2,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Prayer for All People and Rulers",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "The chapter opens with an urgent call to varied prayer\u2014supplications, prayers, intercessions, thanksgivings\u2014for all people, especially those in positions of authority. The stated purpose is to enable believers to live in peace and dignity within godly conduct. This prayer mandate is grounded in God's redemptive will: God desires all people to be saved and come to knowledge of truth. Christ Jesus serves as the one mediator between God and humanity, having given himself as a ransom for all people, making universal intercession theologically consistent with God's salvific purpose.",
+          "verse_refs": [
+            "1 Timothy 2:1-7"
+          ],
+          "evidence_ids": [
+            "1tim-prayer",
+            "1tim-mediator"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "exegetical_section",
+      "title": "Prayer Practice and Posture",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Men are instructed to pray in every location with hands lifted in a holy manner, while avoiding wrath and disputation. The lifted hands gesture conveys an attitude of sincere, earnest prayer, while the prohibition of anger and contention emphasizes prayer conducted in inner peace and communal harmony rather than conflict.",
+          "verse_refs": [
+            "1 Timothy 2:8"
+          ],
+          "evidence_ids": [
+            "1tim-prayer"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "exegetical_section",
+      "title": "Women's Adornment and Good Works",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Women are encouraged toward respectable, modest dress marked by self-control and shame-facedness, avoiding costly display through braided hair, gold, pearls, or expensive garments. The passage redirects focus from external adornment to inner qualities and good deeds as the authentic expression of religious devotion.",
+          "verse_refs": [
+            "1 Timothy 2:9-10"
+          ],
+          "evidence_ids": [
+            "1tim-dress"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "exegetical_section",
+      "title": "Women's Learning",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "A woman is instructed to learn in quietness with full submission. The passage explicitly permits and expects women to receive instruction before addressing any restrictions on particular roles.",
+          "verse_refs": [
+            "1 Timothy 2:11"
+          ],
+          "evidence_ids": [
+            "1tim-women-learn"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "7af2ce1e7adfe65f9683c5f21c3850f835a05560b0ddf9c6f4309f865e2b282e",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: exegetical_section",
+    "section[2].kind is unsupported: exegetical_section",
+    "section[3].kind is unsupported: exegetical_section",
+    "section[4].kind is unsupported: exegetical_section",
+    "section[4].block[0].interpretation_level is invalid",
+    "section[4].block[0].confidence exceeds its cited evidence",
+    "section[5].kind is unsupported: exegetical_section",
+    "section[5].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

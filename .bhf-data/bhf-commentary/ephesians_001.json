@@ -1,0 +1,127 @@
+{
+  "reference": "Ephesians 1",
+  "book": "Ephesians",
+  "chapter": 1,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "overview_1",
+          "text": "Ephesians presents itself as a letter from Paul, apostle of Christ Jesus, to communities of saints and faithful believers. The canonical voice explicitly identifies Paul as both apostle and prisoner, though direct Pauline authorship is substantially disputed among scholars, with proposals ranging from Paul himself to secretary-mediated composition, associates, or a later Pauline school. The letter opens with a sustained blessing that announces God's comprehensive action in Christ: election from before creation, adoption as God's sons, redemption through Christ's blood, forgiveness of sins, revelation of God's hidden will, cosmic summing-up of all things in Christ, inheritance, and sealing with the Holy Spirit. These themes frame the entire letter's theological argument and ethical exhortation.",
+          "verse_refs": [
+            "Ephesians 1:1",
+            "Ephesians 1:3-14"
+          ],
+          "evidence_ids": [
+            "eph-voice",
+            "eph-authorship",
+            "eph-blessing"
+          ],
+          "confidence": "low",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Verses 1-2: Address and Greeting",
+      "blocks": [
+        {
+          "id": "address_1",
+          "text": "Paul identifies himself as an apostle of Christ Jesus, asserting a commission through God's will. He addresses 'the saints that are at Ephesus, and the faithful in Christ Jesus.' However, the phrase 'in Ephesus' is absent from important early Greek witnesses, making the letter's destination and possibly its circulation uncertain. Early transmission and later title traditions associate it with Ephesus, but the textual evidence suggests it may have been addressed to a broader audience.",
+          "verse_refs": [
+            "Ephesians 1:1"
+          ],
+          "evidence_ids": [
+            "eph-voice",
+            "eph-destination",
+            "ephesians-destination-variant",
+            "ephesians-destination-variant:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "address_2",
+          "text": "Paul offers the conventional blessing: 'Grace to you and peace from God our Father and the Lord Jesus Christ.' This greeting introduces the letter's dominant themes of God's gracious action and the peace that flows from union with Christ, anchoring the letter's proclamation in both divine gift and apostolic prayer.",
+          "verse_refs": [
+            "Ephesians 1:2"
+          ],
+          "evidence_ids": [
+            "eph-voice"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Verses 3-14: The Blessing and Spiritual Status",
+      "blocks": [
+        {
+          "id": "blessing_1",
+          "text": "Paul breaks into an extended blessing: 'Blessed be the God and Father of our Lord Jesus Christ, who hath blessed us with every spiritual blessing in the heavenly places in Christ.' The blessing announces God's comprehensive action on behalf of believers. Running from verse 3 through verse 14, this single theological statement embraces election from before creation, adoption as God's sons, redemption through Christ's blood, forgiveness of sins, revelation of God's mysterious will for all things, inheritance, and sealing with the Holy Spirit. This blessing forms the theological foundation of the entire letter.",
+          "verse_refs": [
+            "Ephesians 1:3-14"
+          ],
+          "evidence_ids": [
+            "eph-blessing"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "blessing_4",
+          "text": "The blessing concludes with sealing and pledge: 'In whom ye also, having heard the word of the truth, the gospel of your salvation, in whom, having also believed, ye were sealed with the Holy Spirit of promise, which is an earnest of our inheritance, unto the redemption of God's own possession, unto the praise of his glory.' The seal marks believers as God's property; the Holy Spirit serves as earnest or down payment, guaranteeing the future inheritance. This conclusion holds together hearing, believing, sealing, and the promised completion of God's plan.",
+          "verse_refs": [
+            "Ephesians 1:13-14"
+          ],
+          "evidence_ids": [
+            "eph-blessing"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Verses 15-17: Prayer and Petition",
+      "blocks": [
+        {
+          "id": "prayer_1",
+          "text": "Paul shifts to prayer: 'For this cause I also, having heard of the faith in the Lord Jesus which is among you, and the love which ye show toward all the saints, cease not to give thanks for you, making mention of you in my prayers.' The apostle responds to reports of faith and love among the addressees with continuous thanksgiving. He then petitions: 'that the God of our Lord Jesus Christ, the Father of glory, may give unto you a spirit of wisdom and revelation in the knowledge of him.' The prayer seeks deeper spiritual understanding and knowledge of God.",
+          "verse_refs": [
+            "Ephesians 1:15-17"
+          ],
+          "evidence_ids": [
+            "eph-voice"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "264b5e73b2a5764d85ddd5f92109408c7bf0b95c44492da546514daea31634b1",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section",
+    "section[2].kind is unsupported: section",
+    "section[2].block[1].interpretation_level is invalid",
+    "section[2].block[2].interpretation_level is invalid",
+    "section[3].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

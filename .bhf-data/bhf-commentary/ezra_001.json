@@ -1,0 +1,48 @@
+{
+  "reference": "Ezra 1",
+  "book": "Ezra",
+  "chapter": 1,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "section",
+      "title": "The Proclamation and Divine Stirring (vv. 1-2)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Archaeological and epigraphic evidence shows that Cyrus pursued a consistent policy of restoration. The Cyrus Cylinder (BM 90920), an Akkadian cuneiform foundation text from Babylon, presents Cyrus as Marduk's chosen ruler and describes his restoration of cult images and sanctuaries within Babylon itself. While the cylinder supplies near-contemporary imperial context for Ezra's account of restoration and return policies, it remains silent about Judah and Jerusalem. This silence prevents treating the cylinder as a direct copy or confirmation of the specific proclamation in Ezra 1, yet the documented pattern of imperial restoration is consistent with Ezra's narrative.",
+          "verse_refs": [
+            "Ezra 1:1-2"
+          ],
+          "evidence_ids": [
+            "cyrus-cylinder-babylonian-restoration-scope",
+            "cyrus-cylinder-babylonian-restoration-scope:passage-relevance"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "743052af6b0ed1232bfaceb4d5810345291284b0862ad441142dc642cb291231",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0] cites unsupported evidence IDs: persia:historical_context, return-from-exile:historical_context",
+    "section[1].kind is unsupported: section",
+    "section[1].block[0] cites unsupported evidence IDs: return-from-exile:hebraic_worldview, persia:hebraic_worldview",
+    "section[2].kind is unsupported: section",
+    "section[2].block[0] cites unsupported evidence IDs: return-from-exile:hebraic_worldview",
+    "section[2].block[1] cites unsupported evidence IDs: rebuilding-the-temple:ancient_near_east_context",
+    "section[3].kind is unsupported: section",
+    "section[3].block[0] cites unsupported evidence IDs: rebuilding-the-temple:ancient_near_east_context",
+    "section[3].block[1] cites unsupported evidence IDs: rebuilding-the-temple:second_temple_context"
+  ],
+  "validation_warnings": []
+}

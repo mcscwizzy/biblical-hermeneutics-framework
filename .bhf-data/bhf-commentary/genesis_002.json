@@ -1,0 +1,105 @@
+{
+  "reference": "Genesis 2",
+  "book": "Genesis",
+  "chapter": 2,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "exposition",
+      "title": "The Seventh Day and Rest (2:1\u20133)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The passage presents God's rest on the seventh day as foundational to creation's rhythm. This rest is neither inactivity nor divine weariness, but the completion and sanctification of all God had made. The seventh day is blessed and set apart\u2014hallowed\u2014because it marks the completion of ordered creation. In Israel's later covenant life, this creation rhythm becomes a weekly sign of trust in the LORD rather than endless production, setting God's people apart from surrounding cultures by establishing a distinct day of rest that signals dependence on God.",
+          "verse_refs": [
+            "Genesis 2:1-3"
+          ],
+          "evidence_ids": [
+            "creation-doctrine-framework:timeline:0",
+            "sabbath-theme:hebraic_worldview:0",
+            "sabbath-theme:historical_context:0",
+            "what-is-the-significance-of-the-sabbath:ancient_near_east_context:0",
+            "what-is-the-significance-of-the-sabbath:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "exposition",
+      "title": "The Creation of Humanity (2:4\u20137)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "The passage describes humanity's formation from dust and the divine breath. Jehovah God forms the human from the ground itself, then breathes into the human's nostrils the breath of life, making the human a living soul. In ancient usage, wind and breath were familiar images for invisible life-giving action, and Scripture employs these images to speak of God's action. The human does not create himself but receives both material form from the earth and life from God's own breath, establishing humanity's dependent creaturely status within an ordered creation.",
+          "verse_refs": [
+            "Genesis 2:4-7"
+          ],
+          "evidence_ids": [
+            "creation:hebraic_worldview:0",
+            "what-does-ruach-mean:ancient_near_east_context:0",
+            "what-does-ruach-mean:historical_context:0",
+            "creation-doctrine-framework:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "exposition",
+      "title": "The Garden and Human Vocation (2:8\u201315)",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "God plants a garden in Eden and places the human there to tend and keep it. The garden contains every tree pleasant to sight and good for food, including the tree of life and the tree of knowledge of good and evil. A river waters the garden and divides into four heads: the Pishon, Gihon, Hiddekel, and Euphrates. The human is given a vocation\u2014to dress and keep the garden\u2014receiving creaturely dignity and responsibility within the created order rather than autonomous self-definition. Humanity's role is to care for and sustain the ordered world God has established.",
+          "verse_refs": [
+            "Genesis 2:8-15"
+          ],
+          "evidence_ids": [
+            "creation-doctrine-framework:timeline:1",
+            "creation-doctrine-framework:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "exposition",
+      "title": "The Command and Prohibition (2:16\u201317)",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "God commands the human to eat freely from every tree of the garden, but prohibits eating from the tree of the knowledge of good and evil, declaring that death will follow such disobedience. This command establishes the human's accountability to God within the created order and marks the boundary of human freedom within divine governance.",
+          "verse_refs": [
+            "Genesis 2:16-17"
+          ],
+          "evidence_ids": [
+            "creation-doctrine-framework:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e3ff616ffc947e85d6a6ecb642b51cb1784721c786250502f9a5c4a3a7017d3e",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].confidence exceeds its cited evidence",
+    "section[1].kind is unsupported: exposition",
+    "section[2].kind is unsupported: exposition",
+    "section[3].kind is unsupported: exposition",
+    "section[4].kind is unsupported: exposition"
+  ],
+  "validation_warnings": []
+}

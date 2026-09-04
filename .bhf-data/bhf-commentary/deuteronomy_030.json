@@ -1,0 +1,44 @@
+{
+  "reference": "Deuteronomy 30",
+  "book": "Deuteronomy",
+  "chapter": 30,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "The Covenant Choice: Life, Death, Blessing, and Curse",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Deuteronomy 30 presents the fundamental choice at the heart of covenant relationship: blessing or curse, life or death. When Moses tells Israel 'when all these things are come upon thee, the blessing and the curse, which I have set before thee,' he frames a future crisis in which the people will be scattered among the nations and called to remember the covenant. The passage does not ask whether this crisis will come but assumes it and commands the people to choose their response: return to the Lord and obey his voice with all their heart and soul. This is the core of what it means to choose life.",
+          "verse_refs": [
+            "Deuteronomy 30:1-2"
+          ],
+          "evidence_ids": [
+            "deuteronomy-choose-life"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e42ac758c42d70388cc3e4237482bc18a0532c0e95d73136c5dec83d07317488",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[1].interpretation_level is invalid",
+    "section[0].block[2].interpretation_level is invalid",
+    "section[0].block[3].interpretation_level is invalid",
+    "section[0].block[4].interpretation_level is invalid",
+    "section[0].block[5].interpretation_level is invalid",
+    "section[0].block[6].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

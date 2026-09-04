@@ -1,0 +1,61 @@
+{
+  "reference": "Daniel 6",
+  "book": "Daniel",
+  "chapter": 6,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Court Tale and Historical Context",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Daniel 6 continues the court tales of chapters 1-6, establishing Daniel as a figure of exceptional competence and integrity within imperial bureaucracy. The chapter presents Daniel in service to Darius the Mede, described as ruler following Babylon's fall. However, historical research has found no securely identified ruler matching all the book's descriptions of 'Darius the Mede' independently attested in external historical sources. This gap between the narrative frame and recoverable historical records deserves note when reading this chapter.",
+          "verse_refs": [
+            "Daniel 6:1-3"
+          ],
+          "evidence_ids": [
+            "daniel-practical-outline",
+            "daniel-darius-mede"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_transmission",
+      "title": "Manuscript Witnesses and Textual Variation",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "The text of Daniel 6 survives in substantially different forms across ancient versions. The Old Greek and Theodotionic Greek versions show especially significant textual variations precisely in chapters 4-6, the section containing this narrative. At Qumran, multiple Hebrew and Aramaic manuscripts preserve portions of Daniel, providing multiple independent ancient witnesses to the chapter's early circulation. These varied transmission channels attest both to the chapter's prominence in early Jewish communities and to the absence of a single standardized textual form.",
+          "verse_refs": [
+            "Daniel 6"
+          ],
+          "evidence_ids": [
+            "daniel-greek-versions",
+            "daniel-qumran-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "29e282d1d94b4e93c9b9120507852a04cd22f5456f07d3602f8f48724131c9dc",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: narrative_theme",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: textual_transmission"
+  ],
+  "validation_warnings": []
+}

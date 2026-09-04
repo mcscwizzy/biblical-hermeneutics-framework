@@ -1,0 +1,44 @@
+{
+  "reference": "Ezekiel 47",
+  "book": "Ezekiel",
+  "chapter": 47,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "textual_context",
+      "title": "Textual Transmission",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Ezekiel 47 is preserved in the Masoretic Hebrew text, the Old Greek Iezekiel, Papyrus 967, Qumran fragments, and the Masada scroll. These witnesses exhibit variation in wording and textual detail requiring passage-level analysis to evaluate fully.",
+          "verse_refs": [
+            "Ezekiel 47"
+          ],
+          "evidence_ids": [
+            "ezekiel-textual-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "7f82ce0624c7c1c0bde9b04ac8b86a1896b1e8aaed81182c49c5cb9a38d52cba",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: interpretation",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: interpretation",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[3].kind is unsupported: textual_context"
+  ],
+  "validation_warnings": []
+}

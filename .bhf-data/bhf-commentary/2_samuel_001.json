@@ -1,0 +1,58 @@
+{
+  "reference": "2 Samuel 1",
+  "book": "2 Samuel",
+  "chapter": 1,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview: The Transition of Israel's Throne",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "2 Samuel 1 opens a pivotal moment in Israel's narrative. With Saul's death at Mount Gilboa, David transitions from fugitive status toward royal power. This chapter marks the beginning of a new phase that moves through David's accession and consolidation of the kingdom, establishing the foundation for the developments that follow in subsequent chapters.",
+          "verse_refs": [
+            "2 Samuel 1:1-4"
+          ],
+          "evidence_ids": [
+            "second-samuel-literary-movement"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "David's Public Mourning and Lament for Saul and Jonathan",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Upon receiving news of Saul and Jonathan's deaths, David responds with public grief and mourning. He composes a formal lament that praises both men for their valor and celebrates their love. Notably, David commands that this lament be taught throughout Judah, preserving their memory as part of the kingdom's formal record. This public act of honoring his predecessor establishes David's respect for those who came before and legitimizes his succession.",
+          "verse_refs": [
+            "2 Samuel 1:11-12",
+            "2 Samuel 1:17-27"
+          ],
+          "evidence_ids": [
+            "second-samuel-david-lament"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "46c9738ec2fb84a224e8a2ad2c99bf80a50ec5a643a268f97500c34fe544799e",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section"
+  ],
+  "validation_warnings": []
+}

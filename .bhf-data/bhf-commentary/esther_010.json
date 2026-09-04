@@ -1,0 +1,46 @@
+{
+  "reference": "Esther 10",
+  "book": "Esther",
+  "chapter": 10,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Royal Archive and the Appeal to External Record",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Esther's conclusion directs readers outward to an external document: 'the book of the chronicles of the kings of Media and Persia.' This appeal to written records fits squarely within the Achaemenid administrative world the narrative depicts. The Persian imperial system was indeed organized around scribal authority, multilingual administration, sealed decrees, and systematized record-keeping. However, the text itself makes no independent claim that Mordecai's or Esther's deeds were actually recorded there; it asserts only that such a chronicle exists and invites readers to consult it. No recovered inscription or artifact independently verifies the characters, the decree, or the narrative's events.",
+          "verse_refs": [
+            "Esther 10:2"
+          ],
+          "evidence_ids": [
+            "esther:ancient_near_east_context:0",
+            "esther:historical_context:0",
+            "esther:archaeology:1",
+            "esther:archaeology:4"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "136cee354738cbb5747b2510c4fc4ac3de0364a51ee00445fb39d8197d8b998b",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: character_study",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].block[0].interpretation_level is invalid",
+    "section[3].kind is unsupported: textual_note",
+    "section[3].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

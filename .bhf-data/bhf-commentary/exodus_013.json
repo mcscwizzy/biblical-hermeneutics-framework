@@ -1,0 +1,65 @@
+{
+  "reference": "Exodus 13",
+  "book": "Exodus",
+  "chapter": 13,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Exodus 13 consolidates Israel's identity as a redeemed people through two interlocking ordinances. The dedication of all firstborn\u2014human and animal\u2014to the LORD establishes God's perpetual claim on the nation's future generations (vv. 1-2, 11-13). The Feast of Unleavened Bread, observed annually in the month Abib, becomes the vehicle for intergenerational remembrance of the exodus (vv. 3-10). Together, these laws embed the deliverance from Egypt not as a historical memory but as the constitutive act of covenant nationhood, to be rehearsed, taught, and visibly performed in each generation.",
+          "verse_refs": [
+            "Exodus 13:1-14"
+          ],
+          "evidence_ids": [
+            "the-exodus:historical_context:0",
+            "passover:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "passage_exegesis",
+      "title": "Passover and Annual Remembrance",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Verses 3-10 prescribe the Feast of Unleavened Bread as perpetual observance, tied to Abib, the month of departure. The feast embeds the exodus story in the ritual calendar and, critically, mandates parental teaching: children must be told 'It is because of that which Jehovah did for me when I came forth out of Egypt.' This pedagogical requirement transforms the feast from ritual into a covenant meal that transmits the redemptive narrative across generations.",
+          "verse_refs": [
+            "Exodus 13:3-10"
+          ],
+          "evidence_ids": [
+            "passover:historical_context:0",
+            "passover:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "49829b3efd191a5d02230392a229b0e5b7ff4abfd61c82e71d280374ddf974a0",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: passage_exegesis",
+    "section[1].block[0].interpretation_level is invalid",
+    "section[2].kind is unsupported: passage_exegesis",
+    "section[3].kind is unsupported: passage_exegesis",
+    "section[3].block[0].interpretation_level is invalid",
+    "section[4].kind is unsupported: passage_exegesis",
+    "section[4].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

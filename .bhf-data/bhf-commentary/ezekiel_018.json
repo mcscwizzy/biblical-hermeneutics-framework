@@ -1,0 +1,80 @@
+{
+  "reference": "Ezekiel 18",
+  "book": "Ezekiel",
+  "chapter": 18,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ezekiel 18 addresses a proverb circulating among Israelite exiles: 'The fathers have eaten sour grapes, and the children's teeth are set on edge.' This saying expresses a fatalistic worldview in which individuals suffer for their ancestors' sins, beyond their own control or ability to respond. God explicitly rejects this framework through Ezekiel, asserting that each person is accountable for their own conduct. The passage redirects the community's understanding away from inherited guilt toward personal responsibility, the possibility of repentance, and the call to life.",
+          "verse_refs": [
+            "Ezekiel 18:1-4"
+          ],
+          "evidence_ids": [
+            "ezekiel-responsibility"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "themes",
+      "title": "Individual Accountability and Moral Choice",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Ezekiel demonstrates personal accountability through three generations: a righteous father, a wicked son, and the wicked son's righteous son. Each individual's fate depends on their own choices, not family history. The righteous person 'shall surely live,' while the wicked person 'shall surely die.' Critically, even a son born to a wicked father can reverse his family's trajectory through right conduct and 'shall surely live.' This structure proves that no person is locked into a predetermined path by ancestry. Each generation stands before God accountable for its own choices.",
+          "verse_refs": [
+            "Ezekiel 18:5-9",
+            "Ezekiel 18:10-13",
+            "Ezekiel 18:14-17"
+          ],
+          "evidence_ids": [
+            "ezekiel-responsibility"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "textual_witnesses",
+      "title": "Textual Tradition",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "Ezekiel 18 is preserved in multiple ancient witnesses: the Masoretic Text, Old Greek Iezekiel, Papyrus 967, Qumran fragments, and the Masada scroll. These sources exhibit variation in wording and verse order at the passage level, reflecting the complex textual history of Ezekiel. Close reading requires awareness of these differences, as they can affect the precise formulation of key concepts in the chapter's discussion of accountability and moral transformation.",
+          "verse_refs": [
+            "Ezekiel 18"
+          ],
+          "evidence_ids": [
+            "ezekiel-textual-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "8b55008805b569ff46e5fcc8ddd5201f785dcbff7a10eee4526da85e50fa995e",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: themes",
+    "section[2].kind is unsupported: themes",
+    "section[2].block[0].confidence exceeds its cited evidence",
+    "section[3].kind is unsupported: textual_witnesses"
+  ],
+  "validation_warnings": []
+}

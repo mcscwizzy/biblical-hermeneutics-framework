@@ -1,0 +1,43 @@
+{
+  "reference": "Esther 6",
+  "book": "Esther",
+  "chapter": 6,
+  "status": "validated",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "The Reversal",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "A sleepless night precipitates the turning point of the narrative. As the king reviews the official records, he discovers an entry recording Mordecai's uncovered assassination plot against him, an act for which Mordecai has never been publicly honored. This oversight stands unaddressed when Haman enters the palace courtyard with murderous intent. The king, unaware of Haman's purpose, asks him what should be done for a man whom the king wishes to honor. Haman, believing the question concerns himself, describes an elaborate public ceremony: royal garments, the king's horse with a crown, and a proclamation through the city streets. The king then commands Haman to execute these very honors for Mordecai. In a devastating reversal, Haman must himself conduct the public ceremony he had imagined for his own exaltation, now performing it on behalf of the man he plotted to destroy. This public vindication of Mordecai's loyalty sets the stage for the exposure of Haman's conspiracy.",
+          "verse_refs": [
+            "Esther 6:1",
+            "Esther 6:2",
+            "Esther 6:3",
+            "Esther 6:4",
+            "Esther 6:6",
+            "Esther 6:8-9",
+            "Esther 6:10-11"
+          ],
+          "evidence_ids": [
+            "esther-honor-reversal"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "274a7e47d5df433e671cff2a119f8c33a33226e3b0e6f8ab635da3d43a3251ec",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

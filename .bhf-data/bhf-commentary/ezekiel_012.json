@@ -1,0 +1,39 @@
+{
+  "reference": "Ezekiel 12",
+  "book": "Ezekiel",
+  "chapter": 12,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "textual_notes",
+      "title": "Textual Witnesses",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Ezekiel 12 is attested across multiple ancient textual witnesses: the Masoretic Text, the Old Greek translation (Iezekiel), Papyrus 967, Qumran fragments, and the Masada scroll. These sources exhibit variation in wording and verse order, requiring passage-level textual analysis to evaluate their relationships and establish a reliable text base for interpretation.",
+          "verse_refs": [
+            "Ezekiel 12:1-14"
+          ],
+          "evidence_ids": [
+            "ezekiel-textual-witnesses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "5b41b9b0547d0fca52e283bb681bcb4fdeebf8df7ab4e2bb81f30a0150985f51",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].kind is unsupported: textual_notes"
+  ],
+  "validation_warnings": []
+}

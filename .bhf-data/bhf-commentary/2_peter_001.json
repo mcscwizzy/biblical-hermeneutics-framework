@@ -1,0 +1,143 @@
+{
+  "reference": "2 Peter 1",
+  "book": "2 Peter",
+  "chapter": 1,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "address",
+      "title": "Address and Greeting (1:1-2)",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The letter opens with the sender identifying himself as Simon Peter, described as servant and apostle of Jesus Christ. He addresses readers who have obtained faith of equal honor with his own circle, united in faith through the righteousness of God and Jesus Christ as Savior.",
+          "verse_refs": [
+            "2 Peter 1:1"
+          ],
+          "evidence_ids": [
+            "2pet-sender",
+            "2pet-equal-faith"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "theological_foundation",
+      "title": "Divine Power and the Knowledge of Christ (1:3-4)",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "The letter grounds Christian life in divine power, which grants the audience everything needed for life and godliness through the knowledge of the one who called them through his own glory and virtue. This divine power operates through knowledge\u2014specifically, intimate relational knowledge of Jesus Christ the caller.",
+          "verse_refs": [
+            "2 Peter 1:3"
+          ],
+          "evidence_ids": [
+            "2pet-divine-power"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_4",
+          "text": "Through the precious and exceeding great promises granted by God, believers become participants in divine nature itself, having escaped the corruption present in the world through selfish desire. This transformation happens not through human effort alone but through God's promises received by faith.",
+          "verse_refs": [
+            "2 Peter 1:4"
+          ],
+          "evidence_ids": [
+            "2pet-divine-nature"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "ethical_development",
+      "title": "The Chain of Virtues (1:5-9)",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "The letter prescribes a deliberate sequence of spiritual qualities for the audience to cultivate: beginning with faith, add excellence; in excellence, knowledge; in knowledge, self-control; in self-control, endurance; in endurance, godliness; in godliness, mutual affection; and in mutual affection, love. This progression is not automatic; it requires the audience's diligent effort on their own part, building each quality upon the previous one.",
+          "verse_refs": [
+            "2 Peter 1:5-7"
+          ],
+          "evidence_ids": [
+            "2pet-virtue-chain"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "eschatology",
+      "title": "Calling, Election, and Future Inheritance (1:10-11)",
+      "blocks": [
+        {
+          "id": "block_7",
+          "text": "The audience is urged to make their calling and election firm through diligent practice of these virtues. If they do so, they will not stumble. This stability is connected to a future promise: faithful practice will result in a rich welcome into the eternal kingdom of Jesus Christ their Lord and Savior, indicating both present security and assured future inheritance.",
+          "verse_refs": [
+            "2 Peter 1:10-11"
+          ],
+          "evidence_ids": [
+            "2pet-election"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "pastoral_urgency",
+      "title": "The Letter's Purpose and the Sender's Urgency (1:12-15)",
+      "blocks": [
+        {
+          "id": "block_8",
+          "text": "The sender declares his purpose in writing: to provide repeated reminders about these matters, even though the audience already knows them and is established in the truth. The letter's value lies not in introducing new knowledge but in keeping essential truths present in the audience's mind.",
+          "verse_refs": [
+            "2 Peter 1:12"
+          ],
+          "evidence_ids": [
+            "2pet-memory"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_9",
+          "text": "The sender expresses urgency rooted in his awareness of approaching death. He describes his remaining time as dwelling in a tent and foresees the removal of this tent swiftly, using imagery of exodus. Knowing his death is near, he is determined to ensure that after his decease, the audience will retain the ability to remember and practice these teachings. His written word extends his pastoral presence beyond his death.",
+          "verse_refs": [
+            "2 Peter 1:13-15"
+          ],
+          "evidence_ids": [
+            "2pet-memory",
+            "2pet-tent-exodus"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "434f7a102bcd8cfac083c231cb1b4f01f443a73a62d158967d58a20e78fb3389",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[0].interpretation_level is invalid",
+    "section[1].kind is unsupported: address",
+    "section[2].kind is unsupported: theological_foundation",
+    "section[3].kind is unsupported: ethical_development",
+    "section[3].block[1].interpretation_level is invalid",
+    "section[4].kind is unsupported: eschatology",
+    "section[5].kind is unsupported: pastoral_urgency"
+  ],
+  "validation_warnings": []
+}

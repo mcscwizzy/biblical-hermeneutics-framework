@@ -1,0 +1,79 @@
+{
+  "reference": "Acts 8",
+  "book": "Acts",
+  "chapter": 8,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Acts 8 chronicles the beginning of gospel expansion beyond Jerusalem, sparked by persecution of the early church. The chapter centers on Philip's mission to Samaria, where his proclamation of Christ and miraculous signs lead to widespread belief and baptism, including the conversion of Simon, who had previously commanded the city's attention through sorcery. A crucial narrative development follows: after initial baptism into the name of Jesus, the Jerusalem apostles Peter and John travel to Samaria to pray for and lay hands on the believers, mediating the gift of the Holy Spirit. This sequence establishes how the gospel moves into new territory and how apostolic authority structures the reception of the Spirit.",
+          "verse_refs": [
+            "Acts 8:1-17"
+          ],
+          "evidence_ids": [
+            "acts-samaria-power-not-for-sale"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "exegetical_section",
+      "title": "The Separation of Baptism and Spirit Reception",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "The narrative structure of Samaria distinctly separates water baptism from Spirit reception. Philip's preaching brings the Samaritans\u2014men and women alike\u2014to faith in Jesus Christ and baptism in his name. Yet Acts explicitly states that the Holy Spirit had not yet come upon any of them; they had only been baptized into Jesus' name. This gap is not accidental. It creates narrative and theological space for Peter and John's arrival and role: to pray for the Samaritan believers and lay hands on them so they might receive the Holy Spirit. The separation prevents conflating water baptism with Spirit reception and establishes apostolic laying on of hands as a distinct mediation of the Spirit.",
+          "verse_refs": [
+            "Acts 8:12-17"
+          ],
+          "evidence_ids": [
+            "acts-samaria-power-not-for-sale"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "exegetical_section",
+      "title": "Simon and the Non-Commodification of Spiritual Authority",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Simon's arc illuminates the nature of apostolic authority. He initially held the city's wonder through sorcery, commanding reverence as 'the power of God which is called Great.' When Philip proclaims the kingdom of God and Jesus Christ, the people convert\u2014and remarkably, so does Simon. He believes, is baptized, and travels with Philip, amazed at the signs and miracles. Yet his conversion proves incomplete. When Peter and John lay hands on believers for Spirit reception, Simon perceives the power being mediated and attempts to purchase it with money, seeking to acquire the authority to confer the Holy Spirit. The evidence indicates this offer provokes apostolic rebuke and establishes a hard boundary: the mediating authority to give the Spirit cannot be sold, transferred, or commodified. It rejects any exchange of money for anointing, donor access to spiritual credentials, prophecy, healing, or Spirit power. Simon's attempted purchase marks a fundamental misunderstanding of the gospel's economy.",
+          "verse_refs": [
+            "Acts 8:9-13"
+          ],
+          "evidence_ids": [
+            "acts-samaria-power-not-for-sale",
+            "acts-samaria-power-not-for-sale:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b301060d517e5b05baef0d14399ffa0ebc4e72ffbd3de8827cf6864a6393158b",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: exegetical_section",
+    "section[2].kind is unsupported: exegetical_section",
+    "section[3].kind is unsupported: theological_section",
+    "section[3].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

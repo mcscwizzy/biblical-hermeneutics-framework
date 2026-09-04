@@ -1,0 +1,114 @@
+{
+  "reference": "2 Chronicles 7",
+  "book": "2 Chronicles",
+  "chapter": 7,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "The opening of 2 Chronicles 7 narrates the climactic moment of Solomon's temple dedication. After Solomon completes his prayer before the altar, fire comes down from heaven and consumes the burnt offerings and sacrifices, while the glory of God fills the completed temple. This culminates the temple-building project presented in 2 Chronicles 1-7, showing Solomon's wisdom and work as completing the preparations David had made. The visible signs of fire and divine glory serve as God's response to and validation of the temple as the center of Israel's worship.",
+          "verse_refs": [
+            "2 Chronicles 7:1-2"
+          ],
+          "evidence_ids": [
+            "second-chronicles-solomon-temple"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_2",
+          "text": "The arrival of God's glory is so overwhelming that the priests cannot enter the house. The assembled people, witnessing the fire descending and the glory resting on the temple, respond with corporate worship. They bow to the ground and give thanks, declaring 'He is good; His steadfast love endures forever.' This public acknowledgment reflects the covenant relationship that gives the temple its meaning in Israel's religious life.",
+          "verse_refs": [
+            "2 Chronicles 7:1-3"
+          ],
+          "evidence_ids": [
+            "second-chronicles-solomon-temple"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_background",
+      "title": "Historical and Theological Context",
+      "blocks": [
+        {
+          "id": "block_3",
+          "text": "Temple dedication ceremonies in the ancient Near East were typically major royal events showcasing a king's power and piety. The biblical account, however, prioritizes a different emphasis: the presence and covenant favor of God himself. Israel's temple stands apart from other ancient Near Eastern temples because it foregrounds covenant holiness and atonement under the one God, rather than functioning primarily as a royal and cultic center. This dedication narrative emphasizes God's acceptance and presence rather than Solomon's architectural achievement or wealth.",
+          "verse_refs": [
+            "2 Chronicles 7:1-3"
+          ],
+          "evidence_ids": [
+            "dedication-of-solomons-temple:ancient_near_east_context:0",
+            "temple:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_4",
+          "text": "This dedication belongs to the united monarchy period, when royal power, worship, and Jerusalem became closely linked in Israel's political and religious identity. The gathering of Israel for the celebration and the massive sacrificial offerings presented demonstrate the central importance of Jerusalem's temple to the nation's religious life during this era.",
+          "verse_refs": [
+            "2 Chronicles 7:4-8"
+          ],
+          "evidence_ids": [
+            "dedication-of-solomons-temple:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "sacrifice_and_celebration",
+      "title": "The Celebration and Religious Significance",
+      "blocks": [
+        {
+          "id": "block_5",
+          "text": "Following the divine affirmation, the king and all Israel participate in the dedication through sacrificial offerings. Solomon presents 22,000 oxen and 120,000 sheep, numbers emphasizing the magnitude of this commitment. Because the bronze altar cannot accommodate this volume, Solomon consecrates the middle of the courtyard as additional sacred space. The celebration extends for seven days, with a solemn assembly on the eighth day. The people are dismissed on the twenty-third of the seventh month, joyful and glad for the goodness God has shown to David, Solomon, and Israel.",
+          "verse_refs": [
+            "2 Chronicles 7:4-10"
+          ],
+          "evidence_ids": [
+            "second-chronicles-solomon-temple"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "block_6",
+          "text": "The Second Chronicles account of Solomon's temple (chapters 1-7) presents the dedication as culminating not only in celebration but also in divine promise and warning. The divine response encompasses both the possibility of forgiveness and healing when the covenant people humble themselves and a stern warning that apostasy can lead to exile and temple destruction. This dual message establishes the theological framework through which Chronicles invites readers to understand both the temple's existence and its eventual fate, grounding both in the covenant relationship with God.",
+          "verse_refs": [
+            "2 Chronicles 7:1-10"
+          ],
+          "evidence_ids": [
+            "second-chronicles-fire-warning",
+            "second-chronicles-solomon-temple"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "571911ec25909d5a06dce71771dc99cc5a9bdc2093a3b0f80a4c3599d70a59f3",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: historical_background",
+    "section[2].kind is unsupported: sacrifice_and_celebration"
+  ],
+  "validation_warnings": []
+}

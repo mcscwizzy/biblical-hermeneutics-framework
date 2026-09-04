@@ -1,0 +1,83 @@
+{
+  "reference": "Exodus 5",
+  "book": "Exodus",
+  "chapter": 5,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Exodus 5 opens with Moses and Aaron's direct petition to Pharaoh for release of the Israelites to hold a feast in the wilderness. The chapter presents a collision between the demand for recognition of YHWH's authority and Pharaoh's refusal both to acknowledge it and to release the people. Instead of acquiescing, Pharaoh intensifies the labor burden, removing the supply of straw while maintaining the brick quota, thereby punishing the people for the religious request.",
+          "verse_refs": [
+            "Exodus 5:1-14"
+          ],
+          "evidence_ids": [
+            "pharaoh-authority-question",
+            "pharaoh-authority-question:passage-relevance"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Pharaoh's Rejection and Authority",
+      "blocks": [
+        {
+          "id": "block_2",
+          "text": "Pharaoh's opening response frames the conflict as one of authority and recognition. He explicitly denies knowing Jehovah and refuses to release the people, directly challenging the authority invoked by Moses and Aaron. In his view, the Israelites' request is merely an excuse for idleness\u2014a reframing that justifies administrative retaliation. The narrative presents this as a fundamental political clash over whose authority Pharaoh must acknowledge and obey.",
+          "verse_refs": [
+            "Exodus 5:1-5"
+          ],
+          "evidence_ids": [
+            "pharaoh-authority-question",
+            "pharaoh-authority-question:passage-relevance"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "The Brick Labor System and Pharaoh's Response",
+      "blocks": [
+        {
+          "id": "block_4",
+          "text": "The passage provides detailed description of an organized brick-production system under state supervision. Workers are assigned daily quotas, supplied with straw as a material input, and overseen by taskmasters and officers. When Pharaoh responds to the religious petition, he directly targets this system: straw supply ceases, yet the daily brick output remains unchanged. The laborers must now gather their own straw while meeting the same production demands, intensifying the workload as political and religious punishment.",
+          "verse_refs": [
+            "Exodus 5:6-13"
+          ],
+          "evidence_ids": [
+            "exodus-brickmaking-and-quota",
+            "exodus-brickmaking-and-quota:passage-relevance"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "bd8a7793e5e0ee02cb9e163d0fec826494572df83523d458e29260040a0bab83",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[1].kind is unsupported: section",
+    "section[1].block[1].interpretation_level is invalid",
+    "section[2].kind is unsupported: section",
+    "section[2].block[1].interpretation_level is invalid",
+    "section[3].kind is unsupported: section",
+    "section[3].block[0].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}

@@ -1,0 +1,43 @@
+{
+  "reference": "2 Kings 10",
+  "book": "2 Kings",
+  "chapter": 10,
+  "status": "partial",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "id": "block_1",
+          "text": "Second Kings 10 narrates Jehu's consolidation of power following his anointing and the death of Ahab's heirs. The chapter depicts the elimination of rival claimants to the throne through coordinated action with local officials in Samaria and the gathering of forces at Jezreel. This account belongs to the broader chronicle of Jehu's coup and dynasty, a central episode in Israel's history during the ninth century.",
+          "verse_refs": [
+            "2 Kings 10:1-11"
+          ],
+          "evidence_ids": [
+            "2-kings:timeline:2",
+            "2-kings:key_places:0",
+            "2-kings:key_places:8"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "7e990eebe1e8e4e64e0ad02e75bcf46fa33d8e4f3a1cc5e61d6bd36b872cff93",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.0",
+    "model": "haiku",
+    "generated_timestamp": null
+  },
+  "failure_reason": null,
+  "validation_errors": [
+    "section[0].block[1].interpretation_level is invalid",
+    "section[0].block[2].interpretation_level is invalid",
+    "section[0].block[3].interpretation_level is invalid"
+  ],
+  "validation_warnings": []
+}
